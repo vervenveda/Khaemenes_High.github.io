@@ -47,7 +47,7 @@ function templateKey(v){
     .trim();
 }
 function pct(n,d){return d?Number((100*n/d).toFixed(1)):0}
-function itemMetrics(items){
+function itemMetrics(items,accumulate=true){
   const exact=new Map(),templates=new Map();
   let explanations=0,four=0,uniqueOptions=0,validAnswers=0,perDistractor=0;
   const positions=[0,0,0,0];
@@ -82,12 +82,14 @@ function itemMetrics(items){
     perDistractorRationaleCoveragePct:pct(perDistractor,items.length),
     authoredAnswerPositions:positions
   };
-  report.totals.auditedObjectiveItems+=items.length;
-  report.totals.exactDuplicateItems+=exactDuplicateItems;
-  report.totals.itemsWithExplanations+=explanations;
-  report.totals.fourOptionItems+=four;
-  report.totals.validAnswerItems+=validAnswers;
-  report.totals.itemsWithPerDistractorRationales+=perDistractor;
+  if(accumulate){
+    report.totals.auditedObjectiveItems+=items.length;
+    report.totals.exactDuplicateItems+=exactDuplicateItems;
+    report.totals.itemsWithExplanations+=explanations;
+    report.totals.fourOptionItems+=four;
+    report.totals.validAnswerItems+=validAnswers;
+    report.totals.itemsWithPerDistractorRationales+=perDistractor;
+  }
   return out;
 }
 function addFinding(area,id,status,detail,metrics={}){
@@ -234,7 +236,7 @@ const mcBalanced=mc.includes("function balancedOptionOrders")&&mc.includes("opti
       usesMC&&mcBalanced?"PASS":"FAIL",
       `Authored answer positions are diagnostic only for public Monte Carlo practice: ${m.authoredAnswerPositions.join("/")}. The shared engine materializes a balanced option order and remaps the answer before display.`));
   }
-  const m=itemMetrics(combined);
+  const m=itemMetrics(combined,false);
   area("Upper Science",`${ordinaryPassing}/${ordinaryTotal} ordinary instructional weeks satisfy the transfer-item requirement; ${blueprints}/3 secure blueprints are linked and bounded.`,{...m,courseMetrics,ordinaryWeeksPassing:ordinaryPassing,ordinaryWeeksTotal:ordinaryTotal,blueprintsPassing:blueprints,publicMonteCarloCourses:publicMonteCarlo},checks);
 }
 
