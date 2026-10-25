@@ -5,7 +5,7 @@ window.KhaemenesBiology10Misconceptions={
   "title": "Biology 10 · Anchor Item Misconception Map",
   "coveragePolicy": "reviewed-anchor-items; reviewed distractor mappings are used when present; unmapped items fall back to the shared reasoning-category remediation layer",
   "sourceBank": "courses/science/biology-10/question-bank.js",
-  "reviewedItemCount": 156,
+  "reviewedItemCount": 175,
   "items": {
     "bio-001": {
       "itemId": "bio-001",
@@ -3746,6 +3746,462 @@ window.KhaemenesBiology10Misconceptions={
           "optionIndex": 3,
           "misconceptionTag": "bio-sup-w04-model-d3",
           "rationale": "Enzymes are catalysts whose behavior depends on specific conditions; they are not consumed or universally optimized."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "editorial distractor repair plus item-level misconception review"
+    },
+    "bio-sup-w18-concept": {
+      "itemId": "bio-sup-w18-concept",
+      "reviewStatus": "reviewed-supplemental-repair-v7",
+      "correctRationale": "Correction work should diagnose and repair reasoning rather than reproduce an answer.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "misconceptionTag": "bio-sup-w18-concept-d1",
+          "rationale": "This distractor reflects a specific misconception, overclaim, or weak-evidence pattern that conflicts with the reviewed scientific model for this item."
+        },
+        {
+          "optionIndex": 2,
+          "misconceptionTag": "bio-sup-w18-concept-d2",
+          "rationale": "This distractor reflects a specific misconception, overclaim, or weak-evidence pattern that conflicts with the reviewed scientific model for this item."
+        },
+        {
+          "optionIndex": 3,
+          "misconceptionTag": "bio-sup-w18-concept-d3",
+          "rationale": "This distractor reflects a specific misconception, overclaim, or weak-evidence pattern that conflicts with the reviewed scientific model for this item."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "editorial distractor repair plus item-level misconception review"
+    },
+    "bio-sup-w18-evidence": {
+      "itemId": "bio-sup-w18-evidence",
+      "reviewStatus": "reviewed-supplemental-repair-v7",
+      "correctRationale": "Patterns across related errors provide stronger remediation evidence than one isolated miss.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "misconceptionTag": "bio-sup-w18-evidence-d1",
+          "rationale": "This distractor reflects a specific misconception, overclaim, or weak-evidence pattern that conflicts with the reviewed scientific model for this item."
+        },
+        {
+          "optionIndex": 2,
+          "misconceptionTag": "bio-sup-w18-evidence-d2",
+          "rationale": "This distractor reflects a specific misconception, overclaim, or weak-evidence pattern that conflicts with the reviewed scientific model for this item."
+        },
+        {
+          "optionIndex": 3,
+          "misconceptionTag": "bio-sup-w18-evidence-d3",
+          "rationale": "This distractor reflects a specific misconception, overclaim, or weak-evidence pattern that conflicts with the reviewed scientific model for this item."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "editorial distractor repair plus item-level misconception review"
+    },
+    "bio-sup-w18-model": {
+      "itemId": "bio-sup-w18-model",
+      "reviewStatus": "reviewed-supplemental-repair-v7",
+      "correctRationale": "Public remediation should remain separate from protected assessment content.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "misconceptionTag": "bio-sup-w18-model-d1",
+          "rationale": "This distractor reflects a specific misconception, overclaim, or weak-evidence pattern that conflicts with the reviewed scientific model for this item."
+        },
+        {
+          "optionIndex": 2,
+          "misconceptionTag": "bio-sup-w18-model-d2",
+          "rationale": "This distractor reflects a specific misconception, overclaim, or weak-evidence pattern that conflicts with the reviewed scientific model for this item."
+        },
+        {
+          "optionIndex": 3,
+          "misconceptionTag": "bio-sup-w18-model-d3",
+          "rationale": "This distractor reflects a specific misconception, overclaim, or weak-evidence pattern that conflicts with the reviewed scientific model for this item."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "editorial distractor repair plus item-level misconception review"
+    },
+    "bio-sup-w18-quantitative": {
+      "itemId": "bio-sup-w18-quantitative",
+      "reviewStatus": "reviewed-supplemental-repair-v7",
+      "correctRationale": "6/20=30% and 2/20=10%, so quantitative reasoning has the higher error rate.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "misconceptionTag": "bio-sup-w18-quantitative-d1",
+          "rationale": "This distractor reflects a specific misconception, overclaim, or weak-evidence pattern that conflicts with the reviewed scientific model for this item."
+        },
+        {
+          "optionIndex": 2,
+          "misconceptionTag": "bio-sup-w18-quantitative-d2",
+          "rationale": "This distractor reflects a specific misconception, overclaim, or weak-evidence pattern that conflicts with the reviewed scientific model for this item."
+        },
+        {
+          "optionIndex": 3,
+          "misconceptionTag": "bio-sup-w18-quantitative-d3",
+          "rationale": "This distractor reflects a specific misconception, overclaim, or weak-evidence pattern that conflicts with the reviewed scientific model for this item."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "editorial distractor repair plus item-level misconception review"
+    },
+    "bio-sup-w18-correction": {
+      "itemId": "bio-sup-w18-correction",
+      "reviewStatus": "reviewed-supplemental-repair-v7",
+      "correctRationale": "Correction quality comes from diagnosing and repairing reasoning while protected assessment content remains separate.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "misconceptionTag": "bio-sup-w18-correction-d1",
+          "rationale": "This distractor reflects a specific misconception, overclaim, or weak-evidence pattern that conflicts with the reviewed scientific model for this item."
+        },
+        {
+          "optionIndex": 2,
+          "misconceptionTag": "bio-sup-w18-correction-d2",
+          "rationale": "This distractor reflects a specific misconception, overclaim, or weak-evidence pattern that conflicts with the reviewed scientific model for this item."
+        },
+        {
+          "optionIndex": 3,
+          "misconceptionTag": "bio-sup-w18-correction-d3",
+          "rationale": "This distractor reflects a specific misconception, overclaim, or weak-evidence pattern that conflicts with the reviewed scientific model for this item."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "editorial distractor repair plus item-level misconception review"
+    },
+    "bio-sup-w19-concept": {
+      "itemId": "bio-sup-w19-concept",
+      "reviewStatus": "reviewed-supplemental-repair-v7",
+      "correctRationale": "Independent assortment and crossing over generate new combinations during meiosis.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "misconceptionTag": "bio-sup-w19-concept-d1",
+          "rationale": "This distractor reflects a specific misconception, overclaim, or weak-evidence pattern that conflicts with the reviewed scientific model for this item."
+        },
+        {
+          "optionIndex": 2,
+          "misconceptionTag": "bio-sup-w19-concept-d2",
+          "rationale": "This distractor reflects a specific misconception, overclaim, or weak-evidence pattern that conflicts with the reviewed scientific model for this item."
+        },
+        {
+          "optionIndex": 3,
+          "misconceptionTag": "bio-sup-w19-concept-d3",
+          "rationale": "This distractor reflects a specific misconception, overclaim, or weak-evidence pattern that conflicts with the reviewed scientific model for this item."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "editorial distractor repair plus item-level misconception review"
+    },
+    "bio-sup-w19-evidence": {
+      "itemId": "bio-sup-w19-evidence",
+      "reviewStatus": "reviewed-supplemental-repair-v7",
+      "correctRationale": "Novel gamete combinations support variation generated by meiotic processes.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "misconceptionTag": "bio-sup-w19-evidence-d1",
+          "rationale": "This distractor reflects a specific misconception, overclaim, or weak-evidence pattern that conflicts with the reviewed scientific model for this item."
+        },
+        {
+          "optionIndex": 2,
+          "misconceptionTag": "bio-sup-w19-evidence-d2",
+          "rationale": "This distractor reflects a specific misconception, overclaim, or weak-evidence pattern that conflicts with the reviewed scientific model for this item."
+        },
+        {
+          "optionIndex": 3,
+          "misconceptionTag": "bio-sup-w19-evidence-d3",
+          "rationale": "This distractor reflects a specific misconception, overclaim, or weak-evidence pattern that conflicts with the reviewed scientific model for this item."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "editorial distractor repair plus item-level misconception review"
+    },
+    "bio-sup-w19-model": {
+      "itemId": "bio-sup-w19-model",
+      "reviewStatus": "reviewed-supplemental-repair-v7",
+      "correctRationale": "Meiosis expands variation probabilistically without guaranteeing uniqueness for every gamete.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "misconceptionTag": "bio-sup-w19-model-d1",
+          "rationale": "This distractor reflects a specific misconception, overclaim, or weak-evidence pattern that conflicts with the reviewed scientific model for this item."
+        },
+        {
+          "optionIndex": 2,
+          "misconceptionTag": "bio-sup-w19-model-d2",
+          "rationale": "This distractor reflects a specific misconception, overclaim, or weak-evidence pattern that conflicts with the reviewed scientific model for this item."
+        },
+        {
+          "optionIndex": 3,
+          "misconceptionTag": "bio-sup-w19-model-d3",
+          "rationale": "This distractor reflects a specific misconception, overclaim, or weak-evidence pattern that conflicts with the reviewed scientific model for this item."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "editorial distractor repair plus item-level misconception review"
+    },
+    "bio-sup-w20-concept": {
+      "itemId": "bio-sup-w20-concept",
+      "reviewStatus": "reviewed-supplemental-repair-v7",
+      "correctRationale": "Mendelian models describe allele segregation and probabilistic genotype combinations.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "misconceptionTag": "bio-sup-w20-concept-d1",
+          "rationale": "This distractor reflects a specific misconception, overclaim, or weak-evidence pattern that conflicts with the reviewed scientific model for this item."
+        },
+        {
+          "optionIndex": 2,
+          "misconceptionTag": "bio-sup-w20-concept-d2",
+          "rationale": "This distractor reflects a specific misconception, overclaim, or weak-evidence pattern that conflicts with the reviewed scientific model for this item."
+        },
+        {
+          "optionIndex": 3,
+          "misconceptionTag": "bio-sup-w20-concept-d3",
+          "rationale": "This distractor reflects a specific misconception, overclaim, or weak-evidence pattern that conflicts with the reviewed scientific model for this item."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "editorial distractor repair plus item-level misconception review"
+    },
+    "bio-sup-w20-evidence": {
+      "itemId": "bio-sup-w20-evidence",
+      "reviewStatus": "reviewed-supplemental-repair-v7",
+      "correctRationale": "Observed offspring distributions can be compared with probabilistic Mendelian expectations.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "misconceptionTag": "bio-sup-w20-evidence-d1",
+          "rationale": "This distractor reflects a specific misconception, overclaim, or weak-evidence pattern that conflicts with the reviewed scientific model for this item."
+        },
+        {
+          "optionIndex": 2,
+          "misconceptionTag": "bio-sup-w20-evidence-d2",
+          "rationale": "This distractor reflects a specific misconception, overclaim, or weak-evidence pattern that conflicts with the reviewed scientific model for this item."
+        },
+        {
+          "optionIndex": 3,
+          "misconceptionTag": "bio-sup-w20-evidence-d3",
+          "rationale": "This distractor reflects a specific misconception, overclaim, or weak-evidence pattern that conflicts with the reviewed scientific model for this item."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "editorial distractor repair plus item-level misconception review"
+    },
+    "bio-sup-w20-model": {
+      "itemId": "bio-sup-w20-model",
+      "reviewStatus": "reviewed-supplemental-repair-v7",
+      "correctRationale": "Mendelian ratios are probabilistic expectations, not fixed outcomes for small samples.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "misconceptionTag": "bio-sup-w20-model-d1",
+          "rationale": "This distractor reflects a specific misconception, overclaim, or weak-evidence pattern that conflicts with the reviewed scientific model for this item."
+        },
+        {
+          "optionIndex": 2,
+          "misconceptionTag": "bio-sup-w20-model-d2",
+          "rationale": "This distractor reflects a specific misconception, overclaim, or weak-evidence pattern that conflicts with the reviewed scientific model for this item."
+        },
+        {
+          "optionIndex": 3,
+          "misconceptionTag": "bio-sup-w20-model-d3",
+          "rationale": "This distractor reflects a specific misconception, overclaim, or weak-evidence pattern that conflicts with the reviewed scientific model for this item."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "editorial distractor repair plus item-level misconception review"
+    },
+    "bio-sup-w21-concept": {
+      "itemId": "bio-sup-w21-concept",
+      "reviewStatus": "reviewed-supplemental-repair-v7",
+      "correctRationale": "Pedigree interpretation combines probabilistic reasoning with assumptions and uncertain evidence.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "misconceptionTag": "bio-sup-w21-concept-d1",
+          "rationale": "This distractor reflects a specific misconception, overclaim, or weak-evidence pattern that conflicts with the reviewed scientific model for this item."
+        },
+        {
+          "optionIndex": 2,
+          "misconceptionTag": "bio-sup-w21-concept-d2",
+          "rationale": "This distractor reflects a specific misconception, overclaim, or weak-evidence pattern that conflicts with the reviewed scientific model for this item."
+        },
+        {
+          "optionIndex": 3,
+          "misconceptionTag": "bio-sup-w21-concept-d3",
+          "rationale": "This distractor reflects a specific misconception, overclaim, or weak-evidence pattern that conflicts with the reviewed scientific model for this item."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "editorial distractor repair plus item-level misconception review"
+    },
+    "bio-sup-w22-concept": {
+      "itemId": "bio-sup-w22-concept",
+      "reviewStatus": "reviewed-supplemental-repair-v7",
+      "correctRationale": "Complex traits often arise from polygenic and environmental contributions.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "misconceptionTag": "bio-sup-w22-concept-d1",
+          "rationale": "This distractor reflects a specific misconception, overclaim, or weak-evidence pattern that conflicts with the reviewed scientific model for this item."
+        },
+        {
+          "optionIndex": 2,
+          "misconceptionTag": "bio-sup-w22-concept-d2",
+          "rationale": "This distractor reflects a specific misconception, overclaim, or weak-evidence pattern that conflicts with the reviewed scientific model for this item."
+        },
+        {
+          "optionIndex": 3,
+          "misconceptionTag": "bio-sup-w22-concept-d3",
+          "rationale": "This distractor reflects a specific misconception, overclaim, or weak-evidence pattern that conflicts with the reviewed scientific model for this item."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "editorial distractor repair plus item-level misconception review"
+    },
+    "bio-sup-w23-concept": {
+      "itemId": "bio-sup-w23-concept",
+      "reviewStatus": "reviewed-supplemental-repair-v7",
+      "correctRationale": "Semiconservative replication retains one old strand in each daughter DNA molecule.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "misconceptionTag": "bio-sup-w23-concept-d1",
+          "rationale": "This distractor reflects a specific misconception, overclaim, or weak-evidence pattern that conflicts with the reviewed scientific model for this item."
+        },
+        {
+          "optionIndex": 2,
+          "misconceptionTag": "bio-sup-w23-concept-d2",
+          "rationale": "This distractor reflects a specific misconception, overclaim, or weak-evidence pattern that conflicts with the reviewed scientific model for this item."
+        },
+        {
+          "optionIndex": 3,
+          "misconceptionTag": "bio-sup-w23-concept-d3",
+          "rationale": "This distractor reflects a specific misconception, overclaim, or weak-evidence pattern that conflicts with the reviewed scientific model for this item."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "editorial distractor repair plus item-level misconception review"
+    },
+    "bio-sup-w24-concept": {
+      "itemId": "bio-sup-w24-concept",
+      "reviewStatus": "reviewed-supplemental-repair-v7",
+      "correctRationale": "Gene expression commonly links DNA → RNA → polypeptide, with regulation and processing able to modify outcomes.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "misconceptionTag": "bio-sup-w24-concept-d1",
+          "rationale": "This distractor reflects a specific misconception, overclaim, or weak-evidence pattern that conflicts with the reviewed scientific model for this item."
+        },
+        {
+          "optionIndex": 2,
+          "misconceptionTag": "bio-sup-w24-concept-d2",
+          "rationale": "This distractor reflects a specific misconception, overclaim, or weak-evidence pattern that conflicts with the reviewed scientific model for this item."
+        },
+        {
+          "optionIndex": 3,
+          "misconceptionTag": "bio-sup-w24-concept-d3",
+          "rationale": "This distractor reflects a specific misconception, overclaim, or weak-evidence pattern that conflicts with the reviewed scientific model for this item."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "editorial distractor repair plus item-level misconception review"
+    },
+    "bio-sup-w25-concept": {
+      "itemId": "bio-sup-w25-concept",
+      "reviewStatus": "reviewed-supplemental-repair-v7",
+      "correctRationale": "Gene regulation changes expression patterns without requiring sequence change.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "misconceptionTag": "bio-sup-w25-concept-d1",
+          "rationale": "This distractor reflects a specific misconception, overclaim, or weak-evidence pattern that conflicts with the reviewed scientific model for this item."
+        },
+        {
+          "optionIndex": 2,
+          "misconceptionTag": "bio-sup-w25-concept-d2",
+          "rationale": "This distractor reflects a specific misconception, overclaim, or weak-evidence pattern that conflicts with the reviewed scientific model for this item."
+        },
+        {
+          "optionIndex": 3,
+          "misconceptionTag": "bio-sup-w25-concept-d3",
+          "rationale": "This distractor reflects a specific misconception, overclaim, or weak-evidence pattern that conflicts with the reviewed scientific model for this item."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "editorial distractor repair plus item-level misconception review"
+    },
+    "bio-sup-w26-concept": {
+      "itemId": "bio-sup-w26-concept",
+      "reviewStatus": "reviewed-supplemental-repair-v7",
+      "correctRationale": "Biotechnology/genomics combine biological tools with evidence standards and ethical responsibilities.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "misconceptionTag": "bio-sup-w26-concept-d1",
+          "rationale": "This distractor reflects a specific misconception, overclaim, or weak-evidence pattern that conflicts with the reviewed scientific model for this item."
+        },
+        {
+          "optionIndex": 2,
+          "misconceptionTag": "bio-sup-w26-concept-d2",
+          "rationale": "This distractor reflects a specific misconception, overclaim, or weak-evidence pattern that conflicts with the reviewed scientific model for this item."
+        },
+        {
+          "optionIndex": 3,
+          "misconceptionTag": "bio-sup-w26-concept-d3",
+          "rationale": "This distractor reflects a specific misconception, overclaim, or weak-evidence pattern that conflicts with the reviewed scientific model for this item."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "editorial distractor repair plus item-level misconception review"
+    },
+    "bio-sup-w26-evidence": {
+      "itemId": "bio-sup-w26-evidence",
+      "reviewStatus": "reviewed-supplemental-repair-v7",
+      "correctRationale": "Controls, references, and reproducibility are central to evaluating biotechnology results.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "misconceptionTag": "bio-sup-w26-evidence-d1",
+          "rationale": "This distractor reflects a specific misconception, overclaim, or weak-evidence pattern that conflicts with the reviewed scientific model for this item."
+        },
+        {
+          "optionIndex": 2,
+          "misconceptionTag": "bio-sup-w26-evidence-d2",
+          "rationale": "This distractor reflects a specific misconception, overclaim, or weak-evidence pattern that conflicts with the reviewed scientific model for this item."
+        },
+        {
+          "optionIndex": 3,
+          "misconceptionTag": "bio-sup-w26-evidence-d3",
+          "rationale": "This distractor reflects a specific misconception, overclaim, or weak-evidence pattern that conflicts with the reviewed scientific model for this item."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "editorial distractor repair plus item-level misconception review"
+    },
+    "bio-sup-w26-model": {
+      "itemId": "bio-sup-w26-model",
+      "reviewStatus": "reviewed-supplemental-repair-v7",
+      "correctRationale": "Scientific validity, uncertainty, privacy, consent, and ethics remain relevant regardless of technical power.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "misconceptionTag": "bio-sup-w26-model-d1",
+          "rationale": "This distractor reflects a specific misconception, overclaim, or weak-evidence pattern that conflicts with the reviewed scientific model for this item."
+        },
+        {
+          "optionIndex": 2,
+          "misconceptionTag": "bio-sup-w26-model-d2",
+          "rationale": "This distractor reflects a specific misconception, overclaim, or weak-evidence pattern that conflicts with the reviewed scientific model for this item."
+        },
+        {
+          "optionIndex": 3,
+          "misconceptionTag": "bio-sup-w26-model-d3",
+          "rationale": "This distractor reflects a specific misconception, overclaim, or weak-evidence pattern that conflicts with the reviewed scientific model for this item."
         }
       ],
       "reviewedAt": "2026-10-25",
