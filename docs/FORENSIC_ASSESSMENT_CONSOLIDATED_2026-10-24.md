@@ -27,7 +27,7 @@ The specialist course engines remain authoritative for their own learner records
 | Items with an item-level explanation | **1,710 / 1,710 (100%)** |
 | Four-option objective items | **1,710 / 1,710 (100%)** |
 | Valid keyed answers | **1,710 / 1,710 (100%)** |
-| Structured per-distractor rationale metadata | **0 / 1,710 (0%)** |
+| Reviewed misconception-mapped items | **43 / 1,710 (2.5%)** |\n| Explicit reviewed distractor rationales | **129** |
 | Grade 12 Social Studies weekly banks passing transfer rule | **36 / 36** |
 | English 10–12 weekly passage/source anchors | **108 / 108** |
 | Upper-science ordinary weeks with transfer evidence | **102 / 102** |
@@ -191,7 +191,20 @@ Recommended future contract for newly authored or substantially revised selected
 - difficulty/complexity tag;
 - stable item ID and bank version.
 
-Backfilling all 1,710 items should be treated as a staged item-writing project rather than an automatic bulk-generation exercise.
+Backfilling the remaining items remains a staged item-writing project rather than an automatic bulk-generation exercise. The v1 validator enforces prompt/key/option drift protection so reviewed rationales cannot silently follow a changed item.
+
+## Distractor Quality & Misconception Mapping v1 rollout
+
+The v1 contract is now active at `courses/shared/ASSESSMENT_DISTRACTOR_QUALITY_CONTRACT_V1.md`.
+
+Current reviewed coverage:
+- Algebra I: **13 items / 39 distractor rationales / 13 of 13 units represented**;
+- Chemistry 11: **30 items / 90 distractor rationales / U1–U9 plus capstone represented**;
+- Academy-wide: **43 / 1,710 items (2.5%) / 129 distractor rationales**.
+
+Dedicated validation: `node tools/validate-distractor-quality-v1.mjs`.
+
+The consolidated audit treats incomplete legacy coverage as a warning while failing any drift inside already-reviewed mappings.
 
 ## Running the unified forensic assessment
 
