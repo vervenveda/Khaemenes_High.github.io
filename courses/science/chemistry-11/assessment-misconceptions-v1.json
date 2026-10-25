@@ -3,10 +3,10 @@
   "schemaVersion": "1.0",
   "courseId": "KH-SCI-CHEM11",
   "title": "Chemistry 11 · Legacy Concept Spine Misconception Map",
-  "coveragePolicy": "reviewed-subset; concept spine plus twenty-five high-repetition quantitative families; newly authored or substantially revised selected-response items should include complete mapping",
+  "coveragePolicy": "reviewed-subset; concept spine, all high-repetition quantitative families, and repeated concept/model/evidence families; newly authored or substantially revised selected-response items should include complete mapping",
   "sourceBank": "courses/science/chemistry-11/question-bank.js",
-  "reviewedItemCount": 205,
-  "distractorRationaleCount": 615,
+  "reviewedItemCount": 273,
+  "distractorRationaleCount": 819,
   "items": {
     "legacy-01": {
       "itemId": "legacy-01",
@@ -5952,6 +5952,1978 @@
       ],
       "reviewedAt": "2026-10-25",
       "reviewMethod": "human-authored quantitative-family misconception review"
+    },
+    "w05-trend-1": {
+      "itemId": "w05-trend-1",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "Which element is expected to have the greater atomic radius: Na or Cl?",
+      "answerIndex": 0,
+      "correctRationale": "Across Period 3, effective nuclear attraction generally increases and radius decreases.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "Cl",
+          "misconceptionTag": "periodic-trend-direction-reversed",
+          "rationale": "This chooses the comparison element in the direction opposite the established periodic trend for the property being asked about."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "They must be identical",
+          "misconceptionTag": "periodic-trend-equality-assumption",
+          "rationale": "This assumes the compared elements must have identical values and ignores the systematic periodic trend described by their positions."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "The periodic table cannot inform this comparison",
+          "misconceptionTag": "periodic-model-rejected",
+          "rationale": "The periodic table can support a trend-based prediction here; rejecting all predictive value ignores the stated periodic pattern model."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored concept-model-evidence misconception review"
+    },
+    "w05-trend-2": {
+      "itemId": "w05-trend-2",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "Which element is expected to have the greater first ionization energy: Mg or S?",
+      "answerIndex": 0,
+      "correctRationale": "Across a period, first ionization energy generally rises with effective nuclear attraction.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "Mg",
+          "misconceptionTag": "periodic-trend-direction-reversed",
+          "rationale": "This chooses the comparison element in the direction opposite the established periodic trend for the property being asked about."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "They must be identical",
+          "misconceptionTag": "periodic-trend-equality-assumption",
+          "rationale": "This assumes the compared elements must have identical values and ignores the systematic periodic trend described by their positions."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "The periodic table cannot inform this comparison",
+          "misconceptionTag": "periodic-model-rejected",
+          "rationale": "The periodic table can support a trend-based prediction here; rejecting all predictive value ignores the stated periodic pattern model."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored concept-model-evidence misconception review"
+    },
+    "w05-trend-3": {
+      "itemId": "w05-trend-3",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "Which element is expected to have the greater electronegativity: F or I?",
+      "answerIndex": 0,
+      "correctRationale": "Electronegativity generally decreases down a group.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "I",
+          "misconceptionTag": "periodic-trend-direction-reversed",
+          "rationale": "This chooses the comparison element in the direction opposite the established periodic trend for the property being asked about."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "They must be identical",
+          "misconceptionTag": "periodic-trend-equality-assumption",
+          "rationale": "This assumes the compared elements must have identical values and ignores the systematic periodic trend described by their positions."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "The periodic table cannot inform this comparison",
+          "misconceptionTag": "periodic-model-rejected",
+          "rationale": "The periodic table can support a trend-based prediction here; rejecting all predictive value ignores the stated periodic pattern model."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored concept-model-evidence misconception review"
+    },
+    "w05-trend-4": {
+      "itemId": "w05-trend-4",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "Which element is expected to have the greater atomic radius: K or Na?",
+      "answerIndex": 0,
+      "correctRationale": "Atomic radius generally increases down Group 1.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "Na",
+          "misconceptionTag": "periodic-trend-direction-reversed",
+          "rationale": "This chooses the comparison element in the direction opposite the established periodic trend for the property being asked about."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "They must be identical",
+          "misconceptionTag": "periodic-trend-equality-assumption",
+          "rationale": "This assumes the compared elements must have identical values and ignores the systematic periodic trend described by their positions."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "The periodic table cannot inform this comparison",
+          "misconceptionTag": "periodic-model-rejected",
+          "rationale": "The periodic table can support a trend-based prediction here; rejecting all predictive value ignores the stated periodic pattern model."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored concept-model-evidence misconception review"
+    },
+    "w05-trend-5": {
+      "itemId": "w05-trend-5",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "Which element is expected to have the greater first ionization energy: Cl or Br?",
+      "answerIndex": 0,
+      "correctRationale": "Ionization energy generally decreases down a group.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "Br",
+          "misconceptionTag": "periodic-trend-direction-reversed",
+          "rationale": "This chooses the comparison element in the direction opposite the established periodic trend for the property being asked about."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "They must be identical",
+          "misconceptionTag": "periodic-trend-equality-assumption",
+          "rationale": "This assumes the compared elements must have identical values and ignores the systematic periodic trend described by their positions."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "The periodic table cannot inform this comparison",
+          "misconceptionTag": "periodic-model-rejected",
+          "rationale": "The periodic table can support a trend-based prediction here; rejecting all predictive value ignores the stated periodic pattern model."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored concept-model-evidence misconception review"
+    },
+    "w05-trend-6": {
+      "itemId": "w05-trend-6",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "Which element is expected to have the greater electronegativity: O or S?",
+      "answerIndex": 0,
+      "correctRationale": "Electronegativity generally decreases down Group 16.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "S",
+          "misconceptionTag": "periodic-trend-direction-reversed",
+          "rationale": "This chooses the comparison element in the direction opposite the established periodic trend for the property being asked about."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "They must be identical",
+          "misconceptionTag": "periodic-trend-equality-assumption",
+          "rationale": "This assumes the compared elements must have identical values and ignores the systematic periodic trend described by their positions."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "The periodic table cannot inform this comparison",
+          "misconceptionTag": "periodic-model-rejected",
+          "rationale": "The periodic table can support a trend-based prediction here; rejecting all predictive value ignores the stated periodic pattern model."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored concept-model-evidence misconception review"
+    },
+    "w05-trend-7": {
+      "itemId": "w05-trend-7",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "Which element is expected to have the greater atomic radius: Li or Cs?",
+      "answerIndex": 0,
+      "correctRationale": "Additional occupied shells increase radius down Group 1.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "Li",
+          "misconceptionTag": "periodic-trend-direction-reversed",
+          "rationale": "This chooses the comparison element in the direction opposite the established periodic trend for the property being asked about."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "They must be identical",
+          "misconceptionTag": "periodic-trend-equality-assumption",
+          "rationale": "This assumes the compared elements must have identical values and ignores the systematic periodic trend described by their positions."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "The periodic table cannot inform this comparison",
+          "misconceptionTag": "periodic-model-rejected",
+          "rationale": "The periodic table can support a trend-based prediction here; rejecting all predictive value ignores the stated periodic pattern model."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored concept-model-evidence misconception review"
+    },
+    "w06-formula-1": {
+      "itemId": "w06-formula-1",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "What is the simplest neutral formula formed from Mg²⁺ and Cl⁻?",
+      "answerIndex": 0,
+      "correctRationale": "Subscripts must make total positive and negative charge equal.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "MgCl",
+          "misconceptionTag": "ionic-charge-balance-incomplete",
+          "rationale": "This formula does not correctly reduce the ion ratio needed for total positive and negative charge to balance."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "Mg₂Cl",
+          "misconceptionTag": "ionic-subscript-charge-role-confusion",
+          "rationale": "This assigns subscripts from the ion charges incorrectly, producing a ratio that does not give a neutral formula unit."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "Mg₂Cl₂",
+          "misconceptionTag": "ionic-formula-simplest-ratio-error",
+          "rationale": "This mishandles charge balance, simplification, or polyatomic grouping instead of writing the simplest neutral whole-number ratio."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored concept-model-evidence misconception review"
+    },
+    "w06-formula-2": {
+      "itemId": "w06-formula-2",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "What is the simplest neutral formula formed from Al³⁺ and O²⁻?",
+      "answerIndex": 0,
+      "correctRationale": "Subscripts must make total positive and negative charge equal.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "AlO",
+          "misconceptionTag": "ionic-charge-balance-incomplete",
+          "rationale": "This formula does not correctly reduce the ion ratio needed for total positive and negative charge to balance."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "Al₃O₂",
+          "misconceptionTag": "ionic-subscript-charge-role-confusion",
+          "rationale": "This assigns subscripts from the ion charges incorrectly, producing a ratio that does not give a neutral formula unit."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "AlO₃",
+          "misconceptionTag": "ionic-formula-simplest-ratio-error",
+          "rationale": "This mishandles charge balance, simplification, or polyatomic grouping instead of writing the simplest neutral whole-number ratio."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored concept-model-evidence misconception review"
+    },
+    "w06-formula-3": {
+      "itemId": "w06-formula-3",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "What is the simplest neutral formula formed from Ca²⁺ and N³⁻?",
+      "answerIndex": 0,
+      "correctRationale": "Subscripts must make total positive and negative charge equal.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "CaN",
+          "misconceptionTag": "ionic-charge-balance-incomplete",
+          "rationale": "This formula does not correctly reduce the ion ratio needed for total positive and negative charge to balance."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "Ca₂N₃",
+          "misconceptionTag": "ionic-subscript-charge-role-confusion",
+          "rationale": "This assigns subscripts from the ion charges incorrectly, producing a ratio that does not give a neutral formula unit."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "Ca₃N",
+          "misconceptionTag": "ionic-formula-simplest-ratio-error",
+          "rationale": "This mishandles charge balance, simplification, or polyatomic grouping instead of writing the simplest neutral whole-number ratio."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored concept-model-evidence misconception review"
+    },
+    "w06-formula-4": {
+      "itemId": "w06-formula-4",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "What is the simplest neutral formula formed from Na⁺ and S²⁻?",
+      "answerIndex": 0,
+      "correctRationale": "Subscripts must make total positive and negative charge equal.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "Na₂S₂",
+          "misconceptionTag": "ionic-charge-balance-incomplete",
+          "rationale": "This formula does not correctly reduce the ion ratio needed for total positive and negative charge to balance."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "Na₂S₃",
+          "misconceptionTag": "ionic-subscript-charge-role-confusion",
+          "rationale": "This assigns subscripts from the ion charges incorrectly, producing a ratio that does not give a neutral formula unit."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "Na⁺S²⁻",
+          "misconceptionTag": "ionic-formula-simplest-ratio-error",
+          "rationale": "This mishandles charge balance, simplification, or polyatomic grouping instead of writing the simplest neutral whole-number ratio."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored concept-model-evidence misconception review"
+    },
+    "w06-formula-5": {
+      "itemId": "w06-formula-5",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "What is the simplest neutral formula formed from Fe³⁺ and O²⁻?",
+      "answerIndex": 0,
+      "correctRationale": "Subscripts must make total positive and negative charge equal.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "FeO",
+          "misconceptionTag": "ionic-charge-balance-incomplete",
+          "rationale": "This formula does not correctly reduce the ion ratio needed for total positive and negative charge to balance."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "Fe₃O₂",
+          "misconceptionTag": "ionic-subscript-charge-role-confusion",
+          "rationale": "This assigns subscripts from the ion charges incorrectly, producing a ratio that does not give a neutral formula unit."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "FeO₃",
+          "misconceptionTag": "ionic-formula-simplest-ratio-error",
+          "rationale": "This mishandles charge balance, simplification, or polyatomic grouping instead of writing the simplest neutral whole-number ratio."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored concept-model-evidence misconception review"
+    },
+    "w06-formula-6": {
+      "itemId": "w06-formula-6",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "What is the simplest neutral formula formed from Ba²⁺ and PO₄³⁻?",
+      "answerIndex": 0,
+      "correctRationale": "Subscripts must make total positive and negative charge equal.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "BaPO₄",
+          "misconceptionTag": "ionic-charge-balance-incomplete",
+          "rationale": "This formula does not correctly reduce the ion ratio needed for total positive and negative charge to balance."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "Ba₂(PO₄)₃",
+          "misconceptionTag": "ionic-subscript-charge-role-confusion",
+          "rationale": "This assigns subscripts from the ion charges incorrectly, producing a ratio that does not give a neutral formula unit."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "Ba₃PO₄",
+          "misconceptionTag": "ionic-formula-simplest-ratio-error",
+          "rationale": "This mishandles charge balance, simplification, or polyatomic grouping instead of writing the simplest neutral whole-number ratio."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored concept-model-evidence misconception review"
+    },
+    "w06-formula-7": {
+      "itemId": "w06-formula-7",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "What is the simplest neutral formula formed from NH₄⁺ and SO₄²⁻?",
+      "answerIndex": 0,
+      "correctRationale": "Subscripts must make total positive and negative charge equal.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "NH₄SO₄",
+          "misconceptionTag": "ionic-charge-balance-incomplete",
+          "rationale": "This formula does not correctly reduce the ion ratio needed for total positive and negative charge to balance."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "(NH₄)₂SO₃",
+          "misconceptionTag": "ionic-subscript-charge-role-confusion",
+          "rationale": "This assigns subscripts from the ion charges incorrectly, producing a ratio that does not give a neutral formula unit."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "(NH₄)₃SO₄",
+          "misconceptionTag": "ionic-formula-simplest-ratio-error",
+          "rationale": "This mishandles charge balance, simplification, or polyatomic grouping instead of writing the simplest neutral whole-number ratio."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored concept-model-evidence misconception review"
+    },
+    "w07-valence-1": {
+      "itemId": "w07-valence-1",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "How many total valence electrons are counted when constructing a Lewis model for CO₂?",
+      "answerIndex": 0,
+      "correctRationale": "Sum valence electrons from each atom and adjust for overall charge.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "18",
+          "misconceptionTag": "valence-electron-overcount",
+          "rationale": "This total is two electrons too high, indicating an extra pair was counted or the ionic charge was adjusted in the wrong direction."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "14",
+          "misconceptionTag": "valence-electron-undercount",
+          "rationale": "This total is two electrons too low, indicating a missing electron pair or an incorrect ionic-charge adjustment."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "32",
+          "misconceptionTag": "valence-electron-double-count",
+          "rationale": "This doubles the correct valence-electron total instead of summing each atom's valence contribution once."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored concept-model-evidence misconception review"
+    },
+    "w07-valence-2": {
+      "itemId": "w07-valence-2",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "How many total valence electrons are counted when constructing a Lewis model for NH₃?",
+      "answerIndex": 0,
+      "correctRationale": "Sum valence electrons from each atom and adjust for overall charge.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "10",
+          "misconceptionTag": "valence-electron-overcount",
+          "rationale": "This total is two electrons too high, indicating an extra pair was counted or the ionic charge was adjusted in the wrong direction."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "6",
+          "misconceptionTag": "valence-electron-undercount",
+          "rationale": "This total is two electrons too low, indicating a missing electron pair or an incorrect ionic-charge adjustment."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "16",
+          "misconceptionTag": "valence-electron-double-count",
+          "rationale": "This doubles the correct valence-electron total instead of summing each atom's valence contribution once."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored concept-model-evidence misconception review"
+    },
+    "w07-valence-3": {
+      "itemId": "w07-valence-3",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "How many total valence electrons are counted when constructing a Lewis model for H₂O?",
+      "answerIndex": 0,
+      "correctRationale": "Sum valence electrons from each atom and adjust for overall charge.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "10",
+          "misconceptionTag": "valence-electron-overcount",
+          "rationale": "This total is two electrons too high, indicating an extra pair was counted or the ionic charge was adjusted in the wrong direction."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "6",
+          "misconceptionTag": "valence-electron-undercount",
+          "rationale": "This total is two electrons too low, indicating a missing electron pair or an incorrect ionic-charge adjustment."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "16",
+          "misconceptionTag": "valence-electron-double-count",
+          "rationale": "This doubles the correct valence-electron total instead of summing each atom's valence contribution once."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored concept-model-evidence misconception review"
+    },
+    "w07-valence-4": {
+      "itemId": "w07-valence-4",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "How many total valence electrons are counted when constructing a Lewis model for CH₄?",
+      "answerIndex": 0,
+      "correctRationale": "Sum valence electrons from each atom and adjust for overall charge.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "10",
+          "misconceptionTag": "valence-electron-overcount",
+          "rationale": "This total is two electrons too high, indicating an extra pair was counted or the ionic charge was adjusted in the wrong direction."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "6",
+          "misconceptionTag": "valence-electron-undercount",
+          "rationale": "This total is two electrons too low, indicating a missing electron pair or an incorrect ionic-charge adjustment."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "16",
+          "misconceptionTag": "valence-electron-double-count",
+          "rationale": "This doubles the correct valence-electron total instead of summing each atom's valence contribution once."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored concept-model-evidence misconception review"
+    },
+    "w07-valence-5": {
+      "itemId": "w07-valence-5",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "How many total valence electrons are counted when constructing a Lewis model for SO₂?",
+      "answerIndex": 0,
+      "correctRationale": "Sum valence electrons from each atom and adjust for overall charge.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "20",
+          "misconceptionTag": "valence-electron-overcount",
+          "rationale": "This total is two electrons too high, indicating an extra pair was counted or the ionic charge was adjusted in the wrong direction."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "16",
+          "misconceptionTag": "valence-electron-undercount",
+          "rationale": "This total is two electrons too low, indicating a missing electron pair or an incorrect ionic-charge adjustment."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "36",
+          "misconceptionTag": "valence-electron-double-count",
+          "rationale": "This doubles the correct valence-electron total instead of summing each atom's valence contribution once."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored concept-model-evidence misconception review"
+    },
+    "w07-valence-6": {
+      "itemId": "w07-valence-6",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "How many total valence electrons are counted when constructing a Lewis model for NO₃⁻?",
+      "answerIndex": 0,
+      "correctRationale": "Sum valence electrons from each atom and adjust for overall charge.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "26",
+          "misconceptionTag": "valence-electron-overcount",
+          "rationale": "This total is two electrons too high, indicating an extra pair was counted or the ionic charge was adjusted in the wrong direction."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "22",
+          "misconceptionTag": "valence-electron-undercount",
+          "rationale": "This total is two electrons too low, indicating a missing electron pair or an incorrect ionic-charge adjustment."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "48",
+          "misconceptionTag": "valence-electron-double-count",
+          "rationale": "This doubles the correct valence-electron total instead of summing each atom's valence contribution once."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored concept-model-evidence misconception review"
+    },
+    "w07-valence-7": {
+      "itemId": "w07-valence-7",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "How many total valence electrons are counted when constructing a Lewis model for NH₄⁺?",
+      "answerIndex": 0,
+      "correctRationale": "Sum valence electrons from each atom and adjust for overall charge.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "10",
+          "misconceptionTag": "valence-electron-overcount",
+          "rationale": "This total is two electrons too high, indicating an extra pair was counted or the ionic charge was adjusted in the wrong direction."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "6",
+          "misconceptionTag": "valence-electron-undercount",
+          "rationale": "This total is two electrons too low, indicating a missing electron pair or an incorrect ionic-charge adjustment."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "16",
+          "misconceptionTag": "valence-electron-double-count",
+          "rationale": "This doubles the correct valence-electron total instead of summing each atom's valence contribution once."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored concept-model-evidence misconception review"
+    },
+    "w08-vsepr-1": {
+      "itemId": "w08-vsepr-1",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "What molecular geometry is predicted for CO₂ in the standard VSEPR model?",
+      "answerIndex": 0,
+      "correctRationale": "VSEPR geometry follows the number of bonding and lone-pair electron domains around the central atom.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "tetrahedral",
+          "misconceptionTag": "vsepr-linear-overgeneralization",
+          "rationale": "This overgeneralizes a linear arrangement without counting all bonding and lone-pair electron domains around the central atom."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "bent",
+          "misconceptionTag": "electron-domain-molecular-geometry-confusion",
+          "rationale": "This confuses a common electron-domain arrangement with the actual molecular geometry after lone pairs and domain count are considered."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "octahedral",
+          "misconceptionTag": "vsepr-lone-pair-or-expanded-octet-error",
+          "rationale": "This assigns a geometry inconsistent with the molecule's bonding/lone-pair domain pattern or expanded-valence structure."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored concept-model-evidence misconception review"
+    },
+    "w08-vsepr-2": {
+      "itemId": "w08-vsepr-2",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "What molecular geometry is predicted for H₂O in the standard VSEPR model?",
+      "answerIndex": 0,
+      "correctRationale": "VSEPR geometry follows the number of bonding and lone-pair electron domains around the central atom.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "linear",
+          "misconceptionTag": "vsepr-linear-overgeneralization",
+          "rationale": "This overgeneralizes a linear arrangement without counting all bonding and lone-pair electron domains around the central atom."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "tetrahedral",
+          "misconceptionTag": "electron-domain-molecular-geometry-confusion",
+          "rationale": "This confuses a common electron-domain arrangement with the actual molecular geometry after lone pairs and domain count are considered."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "octahedral",
+          "misconceptionTag": "vsepr-lone-pair-or-expanded-octet-error",
+          "rationale": "This assigns a geometry inconsistent with the molecule's bonding/lone-pair domain pattern or expanded-valence structure."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored concept-model-evidence misconception review"
+    },
+    "w08-vsepr-3": {
+      "itemId": "w08-vsepr-3",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "What molecular geometry is predicted for BF₃ in the standard VSEPR model?",
+      "answerIndex": 0,
+      "correctRationale": "VSEPR geometry follows the number of bonding and lone-pair electron domains around the central atom.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "linear",
+          "misconceptionTag": "vsepr-linear-overgeneralization",
+          "rationale": "This overgeneralizes a linear arrangement without counting all bonding and lone-pair electron domains around the central atom."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "tetrahedral",
+          "misconceptionTag": "electron-domain-molecular-geometry-confusion",
+          "rationale": "This confuses a common electron-domain arrangement with the actual molecular geometry after lone pairs and domain count are considered."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "bent",
+          "misconceptionTag": "vsepr-lone-pair-or-expanded-octet-error",
+          "rationale": "This assigns a geometry inconsistent with the molecule's bonding/lone-pair domain pattern or expanded-valence structure."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored concept-model-evidence misconception review"
+    },
+    "w08-vsepr-4": {
+      "itemId": "w08-vsepr-4",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "What molecular geometry is predicted for CH₄ in the standard VSEPR model?",
+      "answerIndex": 0,
+      "correctRationale": "VSEPR geometry follows the number of bonding and lone-pair electron domains around the central atom.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "linear",
+          "misconceptionTag": "vsepr-linear-overgeneralization",
+          "rationale": "This overgeneralizes a linear arrangement without counting all bonding and lone-pair electron domains around the central atom."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "bent",
+          "misconceptionTag": "electron-domain-molecular-geometry-confusion",
+          "rationale": "This confuses a common electron-domain arrangement with the actual molecular geometry after lone pairs and domain count are considered."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "octahedral",
+          "misconceptionTag": "vsepr-lone-pair-or-expanded-octet-error",
+          "rationale": "This assigns a geometry inconsistent with the molecule's bonding/lone-pair domain pattern or expanded-valence structure."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored concept-model-evidence misconception review"
+    },
+    "w08-vsepr-5": {
+      "itemId": "w08-vsepr-5",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "What molecular geometry is predicted for NH₃ in the standard VSEPR model?",
+      "answerIndex": 0,
+      "correctRationale": "VSEPR geometry follows the number of bonding and lone-pair electron domains around the central atom.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "linear",
+          "misconceptionTag": "vsepr-linear-overgeneralization",
+          "rationale": "This overgeneralizes a linear arrangement without counting all bonding and lone-pair electron domains around the central atom."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "tetrahedral",
+          "misconceptionTag": "electron-domain-molecular-geometry-confusion",
+          "rationale": "This confuses a common electron-domain arrangement with the actual molecular geometry after lone pairs and domain count are considered."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "bent",
+          "misconceptionTag": "vsepr-lone-pair-or-expanded-octet-error",
+          "rationale": "This assigns a geometry inconsistent with the molecule's bonding/lone-pair domain pattern or expanded-valence structure."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored concept-model-evidence misconception review"
+    },
+    "w08-vsepr-6": {
+      "itemId": "w08-vsepr-6",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "What molecular geometry is predicted for PCl₅ in the standard VSEPR model?",
+      "answerIndex": 0,
+      "correctRationale": "VSEPR geometry follows the number of bonding and lone-pair electron domains around the central atom.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "linear",
+          "misconceptionTag": "vsepr-linear-overgeneralization",
+          "rationale": "This overgeneralizes a linear arrangement without counting all bonding and lone-pair electron domains around the central atom."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "tetrahedral",
+          "misconceptionTag": "electron-domain-molecular-geometry-confusion",
+          "rationale": "This confuses a common electron-domain arrangement with the actual molecular geometry after lone pairs and domain count are considered."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "bent",
+          "misconceptionTag": "vsepr-lone-pair-or-expanded-octet-error",
+          "rationale": "This assigns a geometry inconsistent with the molecule's bonding/lone-pair domain pattern or expanded-valence structure."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored concept-model-evidence misconception review"
+    },
+    "w08-vsepr-7": {
+      "itemId": "w08-vsepr-7",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "What molecular geometry is predicted for SF₆ in the standard VSEPR model?",
+      "answerIndex": 0,
+      "correctRationale": "VSEPR geometry follows the number of bonding and lone-pair electron domains around the central atom.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "linear",
+          "misconceptionTag": "vsepr-linear-overgeneralization",
+          "rationale": "This overgeneralizes a linear arrangement without counting all bonding and lone-pair electron domains around the central atom."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "tetrahedral",
+          "misconceptionTag": "electron-domain-molecular-geometry-confusion",
+          "rationale": "This confuses a common electron-domain arrangement with the actual molecular geometry after lone pairs and domain count are considered."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "bent",
+          "misconceptionTag": "vsepr-lone-pair-or-expanded-octet-error",
+          "rationale": "This assigns a geometry inconsistent with the molecule's bonding/lone-pair domain pattern or expanded-valence structure."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored concept-model-evidence misconception review"
+    },
+    "w10-imf-1": {
+      "itemId": "w10-imf-1",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "Two similar-size molecular liquids have boiling points A: 65°C and B: 98°C. Which has stronger overall intermolecular attractions, based on this evidence?",
+      "answerIndex": 0,
+      "correctRationale": "Within a comparable pair, a higher boiling point is consistent with stronger intermolecular attractions.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "A",
+          "misconceptionTag": "boiling-point-imf-direction-reversed",
+          "rationale": "For comparable molecular liquids, this chooses the lower-boiling liquid even though the higher boiling point is evidence of stronger overall intermolecular attractions."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "They must be equal",
+          "misconceptionTag": "boiling-point-equality-assumption",
+          "rationale": "Different boiling points in a comparable pair provide evidence of different overall attraction strengths; they need not be equal."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "Boiling point gives no relevant evidence",
+          "misconceptionTag": "boiling-point-evidence-rejected",
+          "rationale": "Boiling point is relevant evidence for relative intermolecular attraction strength when the compared liquids are otherwise suitably comparable."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored concept-model-evidence misconception review"
+    },
+    "w10-imf-2": {
+      "itemId": "w10-imf-2",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "Two similar-size molecular liquids have boiling points C: 35°C and D: 78°C. Which has stronger overall intermolecular attractions, based on this evidence?",
+      "answerIndex": 0,
+      "correctRationale": "Within a comparable pair, a higher boiling point is consistent with stronger intermolecular attractions.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "C",
+          "misconceptionTag": "boiling-point-imf-direction-reversed",
+          "rationale": "For comparable molecular liquids, this chooses the lower-boiling liquid even though the higher boiling point is evidence of stronger overall intermolecular attractions."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "They must be equal",
+          "misconceptionTag": "boiling-point-equality-assumption",
+          "rationale": "Different boiling points in a comparable pair provide evidence of different overall attraction strengths; they need not be equal."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "Boiling point gives no relevant evidence",
+          "misconceptionTag": "boiling-point-evidence-rejected",
+          "rationale": "Boiling point is relevant evidence for relative intermolecular attraction strength when the compared liquids are otherwise suitably comparable."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored concept-model-evidence misconception review"
+    },
+    "w10-imf-3": {
+      "itemId": "w10-imf-3",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "Two similar-size molecular liquids have boiling points E: 112°C and F: 84°C. Which has stronger overall intermolecular attractions, based on this evidence?",
+      "answerIndex": 0,
+      "correctRationale": "Within a comparable pair, a higher boiling point is consistent with stronger intermolecular attractions.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "F",
+          "misconceptionTag": "boiling-point-imf-direction-reversed",
+          "rationale": "For comparable molecular liquids, this chooses the lower-boiling liquid even though the higher boiling point is evidence of stronger overall intermolecular attractions."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "They must be equal",
+          "misconceptionTag": "boiling-point-equality-assumption",
+          "rationale": "Different boiling points in a comparable pair provide evidence of different overall attraction strengths; they need not be equal."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "Boiling point gives no relevant evidence",
+          "misconceptionTag": "boiling-point-evidence-rejected",
+          "rationale": "Boiling point is relevant evidence for relative intermolecular attraction strength when the compared liquids are otherwise suitably comparable."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored concept-model-evidence misconception review"
+    },
+    "w10-imf-4": {
+      "itemId": "w10-imf-4",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "Two similar-size molecular liquids have boiling points G: 58°C and H: 101°C. Which has stronger overall intermolecular attractions, based on this evidence?",
+      "answerIndex": 0,
+      "correctRationale": "Within a comparable pair, a higher boiling point is consistent with stronger intermolecular attractions.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "G",
+          "misconceptionTag": "boiling-point-imf-direction-reversed",
+          "rationale": "For comparable molecular liquids, this chooses the lower-boiling liquid even though the higher boiling point is evidence of stronger overall intermolecular attractions."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "They must be equal",
+          "misconceptionTag": "boiling-point-equality-assumption",
+          "rationale": "Different boiling points in a comparable pair provide evidence of different overall attraction strengths; they need not be equal."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "Boiling point gives no relevant evidence",
+          "misconceptionTag": "boiling-point-evidence-rejected",
+          "rationale": "Boiling point is relevant evidence for relative intermolecular attraction strength when the compared liquids are otherwise suitably comparable."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored concept-model-evidence misconception review"
+    },
+    "w10-imf-5": {
+      "itemId": "w10-imf-5",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "Two similar-size molecular liquids have boiling points I: 72°C and J: 120°C. Which has stronger overall intermolecular attractions, based on this evidence?",
+      "answerIndex": 0,
+      "correctRationale": "Within a comparable pair, a higher boiling point is consistent with stronger intermolecular attractions.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "I",
+          "misconceptionTag": "boiling-point-imf-direction-reversed",
+          "rationale": "For comparable molecular liquids, this chooses the lower-boiling liquid even though the higher boiling point is evidence of stronger overall intermolecular attractions."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "They must be equal",
+          "misconceptionTag": "boiling-point-equality-assumption",
+          "rationale": "Different boiling points in a comparable pair provide evidence of different overall attraction strengths; they need not be equal."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "Boiling point gives no relevant evidence",
+          "misconceptionTag": "boiling-point-evidence-rejected",
+          "rationale": "Boiling point is relevant evidence for relative intermolecular attraction strength when the compared liquids are otherwise suitably comparable."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored concept-model-evidence misconception review"
+    },
+    "w10-imf-6": {
+      "itemId": "w10-imf-6",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "Two similar-size molecular liquids have boiling points K: 145°C and L: 90°C. Which has stronger overall intermolecular attractions, based on this evidence?",
+      "answerIndex": 0,
+      "correctRationale": "Within a comparable pair, a higher boiling point is consistent with stronger intermolecular attractions.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "L",
+          "misconceptionTag": "boiling-point-imf-direction-reversed",
+          "rationale": "For comparable molecular liquids, this chooses the lower-boiling liquid even though the higher boiling point is evidence of stronger overall intermolecular attractions."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "They must be equal",
+          "misconceptionTag": "boiling-point-equality-assumption",
+          "rationale": "Different boiling points in a comparable pair provide evidence of different overall attraction strengths; they need not be equal."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "Boiling point gives no relevant evidence",
+          "misconceptionTag": "boiling-point-evidence-rejected",
+          "rationale": "Boiling point is relevant evidence for relative intermolecular attraction strength when the compared liquids are otherwise suitably comparable."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored concept-model-evidence misconception review"
+    },
+    "w10-imf-7": {
+      "itemId": "w10-imf-7",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "Two similar-size molecular liquids have boiling points M: 44°C and N: 69°C. Which has stronger overall intermolecular attractions, based on this evidence?",
+      "answerIndex": 0,
+      "correctRationale": "Within a comparable pair, a higher boiling point is consistent with stronger intermolecular attractions.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "M",
+          "misconceptionTag": "boiling-point-imf-direction-reversed",
+          "rationale": "For comparable molecular liquids, this chooses the lower-boiling liquid even though the higher boiling point is evidence of stronger overall intermolecular attractions."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "They must be equal",
+          "misconceptionTag": "boiling-point-equality-assumption",
+          "rationale": "Different boiling points in a comparable pair provide evidence of different overall attraction strengths; they need not be equal."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "Boiling point gives no relevant evidence",
+          "misconceptionTag": "boiling-point-evidence-rejected",
+          "rationale": "Boiling point is relevant evidence for relative intermolecular attraction strength when the compared liquids are otherwise suitably comparable."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored concept-model-evidence misconception review"
+    },
+    "w14-balance-1": {
+      "itemId": "w14-balance-1",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "Which coefficient set balances H₂ + O₂ → H₂O?",
+      "answerIndex": 0,
+      "correctRationale": "Balanced coefficients conserve the number of atoms of every element.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "1,1,1,1",
+          "misconceptionTag": "all-coefficients-one-assumption",
+          "rationale": "Setting all coefficients to one without checking atom counts does not generally conserve each element across the equation."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "2,2,2,2",
+          "misconceptionTag": "uniform-coefficient-scaling-without-balance",
+          "rationale": "Applying the same coefficient pattern broadly does not guarantee atom conservation and may also fail to use the simplest whole-number ratio."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "3,1,3,1",
+          "misconceptionTag": "arbitrary-coefficient-pattern",
+          "rationale": "This coefficient pattern is not supported by an element-by-element atom count and fails the conservation test for the stated equation."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored concept-model-evidence misconception review"
+    },
+    "w14-balance-2": {
+      "itemId": "w14-balance-2",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "Which coefficient set balances N₂ + H₂ → NH₃?",
+      "answerIndex": 0,
+      "correctRationale": "Balanced coefficients conserve the number of atoms of every element.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "1,1,1,1",
+          "misconceptionTag": "all-coefficients-one-assumption",
+          "rationale": "Setting all coefficients to one without checking atom counts does not generally conserve each element across the equation."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "2,2,2,2",
+          "misconceptionTag": "uniform-coefficient-scaling-without-balance",
+          "rationale": "Applying the same coefficient pattern broadly does not guarantee atom conservation and may also fail to use the simplest whole-number ratio."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "3,1,3,1",
+          "misconceptionTag": "arbitrary-coefficient-pattern",
+          "rationale": "This coefficient pattern is not supported by an element-by-element atom count and fails the conservation test for the stated equation."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored concept-model-evidence misconception review"
+    },
+    "w14-balance-3": {
+      "itemId": "w14-balance-3",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "Which coefficient set balances CH₄ + O₂ → CO₂ + H₂O?",
+      "answerIndex": 0,
+      "correctRationale": "Balanced coefficients conserve the number of atoms of every element.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "1,1,1,1",
+          "misconceptionTag": "all-coefficients-one-assumption",
+          "rationale": "Setting all coefficients to one without checking atom counts does not generally conserve each element across the equation."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "2,2,2,2",
+          "misconceptionTag": "uniform-coefficient-scaling-without-balance",
+          "rationale": "Applying the same coefficient pattern broadly does not guarantee atom conservation and may also fail to use the simplest whole-number ratio."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "3,1,3,1",
+          "misconceptionTag": "arbitrary-coefficient-pattern",
+          "rationale": "This coefficient pattern is not supported by an element-by-element atom count and fails the conservation test for the stated equation."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored concept-model-evidence misconception review"
+    },
+    "w14-balance-4": {
+      "itemId": "w14-balance-4",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "Which coefficient set balances Fe + O₂ → Fe₂O₃?",
+      "answerIndex": 0,
+      "correctRationale": "Balanced coefficients conserve the number of atoms of every element.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "1,1,1,1",
+          "misconceptionTag": "all-coefficients-one-assumption",
+          "rationale": "Setting all coefficients to one without checking atom counts does not generally conserve each element across the equation."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "2,2,2,2",
+          "misconceptionTag": "uniform-coefficient-scaling-without-balance",
+          "rationale": "Applying the same coefficient pattern broadly does not guarantee atom conservation and may also fail to use the simplest whole-number ratio."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "3,1,3,1",
+          "misconceptionTag": "arbitrary-coefficient-pattern",
+          "rationale": "This coefficient pattern is not supported by an element-by-element atom count and fails the conservation test for the stated equation."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored concept-model-evidence misconception review"
+    },
+    "w14-balance-5": {
+      "itemId": "w14-balance-5",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "Which coefficient set balances Al + Cl₂ → AlCl₃?",
+      "answerIndex": 0,
+      "correctRationale": "Balanced coefficients conserve the number of atoms of every element.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "1,1,1,1",
+          "misconceptionTag": "all-coefficients-one-assumption",
+          "rationale": "Setting all coefficients to one without checking atom counts does not generally conserve each element across the equation."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "2,2,2,2",
+          "misconceptionTag": "uniform-coefficient-scaling-without-balance",
+          "rationale": "Applying the same coefficient pattern broadly does not guarantee atom conservation and may also fail to use the simplest whole-number ratio."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "3,1,3,1",
+          "misconceptionTag": "arbitrary-coefficient-pattern",
+          "rationale": "This coefficient pattern is not supported by an element-by-element atom count and fails the conservation test for the stated equation."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored concept-model-evidence misconception review"
+    },
+    "w14-balance-6": {
+      "itemId": "w14-balance-6",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "Which coefficient set balances C₃H₈ + O₂ → CO₂ + H₂O?",
+      "answerIndex": 0,
+      "correctRationale": "Balanced coefficients conserve the number of atoms of every element.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "1,1,1,1",
+          "misconceptionTag": "all-coefficients-one-assumption",
+          "rationale": "Setting all coefficients to one without checking atom counts does not generally conserve each element across the equation."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "2,2,2,2",
+          "misconceptionTag": "uniform-coefficient-scaling-without-balance",
+          "rationale": "Applying the same coefficient pattern broadly does not guarantee atom conservation and may also fail to use the simplest whole-number ratio."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "3,1,3,1",
+          "misconceptionTag": "arbitrary-coefficient-pattern",
+          "rationale": "This coefficient pattern is not supported by an element-by-element atom count and fails the conservation test for the stated equation."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored concept-model-evidence misconception review"
+    },
+    "w14-balance-7": {
+      "itemId": "w14-balance-7",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "Which coefficient set balances KClO₃ → KCl + O₂?",
+      "answerIndex": 0,
+      "correctRationale": "Balanced coefficients conserve the number of atoms of every element.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "1,1,1,1",
+          "misconceptionTag": "all-coefficients-one-assumption",
+          "rationale": "Setting all coefficients to one without checking atom counts does not generally conserve each element across the equation."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "2,2,2,2",
+          "misconceptionTag": "uniform-coefficient-scaling-without-balance",
+          "rationale": "Applying the same coefficient pattern broadly does not guarantee atom conservation and may also fail to use the simplest whole-number ratio."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "3,1,3,1",
+          "misconceptionTag": "arbitrary-coefficient-pattern",
+          "rationale": "This coefficient pattern is not supported by an element-by-element atom count and fails the conservation test for the stated equation."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored concept-model-evidence misconception review"
+    },
+    "w15-mole-1": {
+      "itemId": "w15-mole-1",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "H₂O has molar mass 18 g/mol. How many moles are in 36 g?",
+      "answerIndex": 0,
+      "correctRationale": "n = m/M = 36/18 = 2 mol.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "4 mol",
+          "misconceptionTag": "mole-result-double",
+          "rationale": "This is twice the correct number of moles, indicating an unnecessary factor of two after applying n=m/M."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "1 mol",
+          "misconceptionTag": "mole-result-half",
+          "rationale": "This is half the correct mole amount, indicating an unnecessary division by two after the mass-to-molar-mass calculation."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "0.5 mol",
+          "misconceptionTag": "molar-mass-ratio-inverted",
+          "rationale": "This is the reciprocal-style result from reversing the mass/molar-mass relationship instead of using n=m/M."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored concept-model-evidence misconception review"
+    },
+    "w15-mole-2": {
+      "itemId": "w15-mole-2",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "CO₂ has molar mass 44 g/mol. How many moles are in 88 g?",
+      "answerIndex": 0,
+      "correctRationale": "n = m/M = 88/44 = 2 mol.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "4 mol",
+          "misconceptionTag": "mole-result-double",
+          "rationale": "This is twice the correct number of moles, indicating an unnecessary factor of two after applying n=m/M."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "1 mol",
+          "misconceptionTag": "mole-result-half",
+          "rationale": "This is half the correct mole amount, indicating an unnecessary division by two after the mass-to-molar-mass calculation."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "0.5 mol",
+          "misconceptionTag": "molar-mass-ratio-inverted",
+          "rationale": "This is the reciprocal-style result from reversing the mass/molar-mass relationship instead of using n=m/M."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored concept-model-evidence misconception review"
+    },
+    "w15-mole-3": {
+      "itemId": "w15-mole-3",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "NaCl has molar mass 58.5 g/mol. How many moles are in 117 g?",
+      "answerIndex": 0,
+      "correctRationale": "n = m/M = 117/58.5 = 2 mol.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "4 mol",
+          "misconceptionTag": "mole-result-double",
+          "rationale": "This is twice the correct number of moles, indicating an unnecessary factor of two after applying n=m/M."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "1 mol",
+          "misconceptionTag": "mole-result-half",
+          "rationale": "This is half the correct mole amount, indicating an unnecessary division by two after the mass-to-molar-mass calculation."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "0.5 mol",
+          "misconceptionTag": "molar-mass-ratio-inverted",
+          "rationale": "This is the reciprocal-style result from reversing the mass/molar-mass relationship instead of using n=m/M."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored concept-model-evidence misconception review"
+    },
+    "w15-mole-4": {
+      "itemId": "w15-mole-4",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "O₂ has molar mass 32 g/mol. How many moles are in 64 g?",
+      "answerIndex": 0,
+      "correctRationale": "n = m/M = 64/32 = 2 mol.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "4 mol",
+          "misconceptionTag": "mole-result-double",
+          "rationale": "This is twice the correct number of moles, indicating an unnecessary factor of two after applying n=m/M."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "1 mol",
+          "misconceptionTag": "mole-result-half",
+          "rationale": "This is half the correct mole amount, indicating an unnecessary division by two after the mass-to-molar-mass calculation."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "0.5 mol",
+          "misconceptionTag": "molar-mass-ratio-inverted",
+          "rationale": "This is the reciprocal-style result from reversing the mass/molar-mass relationship instead of using n=m/M."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored concept-model-evidence misconception review"
+    },
+    "w15-mole-5": {
+      "itemId": "w15-mole-5",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "NH₃ has molar mass 17 g/mol. How many moles are in 51 g?",
+      "answerIndex": 0,
+      "correctRationale": "n = m/M = 51/17 = 3 mol.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "6 mol",
+          "misconceptionTag": "mole-result-double",
+          "rationale": "This is twice the correct number of moles, indicating an unnecessary factor of two after applying n=m/M."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "1.5 mol",
+          "misconceptionTag": "mole-result-half",
+          "rationale": "This is half the correct mole amount, indicating an unnecessary division by two after the mass-to-molar-mass calculation."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "0.33 mol",
+          "misconceptionTag": "molar-mass-ratio-inverted",
+          "rationale": "This is the reciprocal-style result from reversing the mass/molar-mass relationship instead of using n=m/M."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored concept-model-evidence misconception review"
+    },
+    "w15-mole-6": {
+      "itemId": "w15-mole-6",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "CaCO₃ has molar mass 100 g/mol. How many moles are in 250 g?",
+      "answerIndex": 0,
+      "correctRationale": "n = m/M = 250/100 = 2.5 mol.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "5 mol",
+          "misconceptionTag": "mole-result-double",
+          "rationale": "This is twice the correct number of moles, indicating an unnecessary factor of two after applying n=m/M."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "1.25 mol",
+          "misconceptionTag": "mole-result-half",
+          "rationale": "This is half the correct mole amount, indicating an unnecessary division by two after the mass-to-molar-mass calculation."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "0.4 mol",
+          "misconceptionTag": "molar-mass-ratio-inverted",
+          "rationale": "This is the reciprocal-style result from reversing the mass/molar-mass relationship instead of using n=m/M."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored concept-model-evidence misconception review"
+    },
+    "w15-mole-7": {
+      "itemId": "w15-mole-7",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "CH₄ has molar mass 16 g/mol. How many moles are in 40 g?",
+      "answerIndex": 0,
+      "correctRationale": "n = m/M = 40/16 = 2.5 mol.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "5 mol",
+          "misconceptionTag": "mole-result-double",
+          "rationale": "This is twice the correct number of moles, indicating an unnecessary factor of two after applying n=m/M."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "1.25 mol",
+          "misconceptionTag": "mole-result-half",
+          "rationale": "This is half the correct mole amount, indicating an unnecessary division by two after the mass-to-molar-mass calculation."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "0.4 mol",
+          "misconceptionTag": "molar-mass-ratio-inverted",
+          "rationale": "This is the reciprocal-style result from reversing the mass/molar-mass relationship instead of using n=m/M."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored concept-model-evidence misconception review"
+    },
+    "w22-inquiry-1": {
+      "itemId": "w22-inquiry-1",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "A team wants to test how temperature affects rate. Which design choice most strengthens causal interpretation?",
+      "answerIndex": 0,
+      "correctRationale": "A controlled comparison changes the target factor while holding plausible confounders stable.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "Change temperature and concentration together",
+          "misconceptionTag": "confounded-variable-change",
+          "rationale": "This changes the target factor and another relevant variable together, so any rate difference cannot be attributed cleanly to the intended cause."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "Keep no comparison condition",
+          "misconceptionTag": "missing-comparison-condition",
+          "rationale": "Without a comparison/control condition, the design cannot isolate the effect of the factor being tested."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "Discard trials that disagree with the expected trend",
+          "misconceptionTag": "confirmation-bias-data-discarding",
+          "rationale": "Discarding trials only because they disagree with the expected trend biases the evidence rather than testing the hypothesis fairly."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored concept-model-evidence misconception review"
+    },
+    "w22-inquiry-2": {
+      "itemId": "w22-inquiry-2",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "A team wants to test how concentration affects rate. Which design choice most strengthens causal interpretation?",
+      "answerIndex": 0,
+      "correctRationale": "A controlled comparison changes the target factor while holding plausible confounders stable.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "Change concentration and temperature together",
+          "misconceptionTag": "confounded-variable-change",
+          "rationale": "This changes the target factor and another relevant variable together, so any rate difference cannot be attributed cleanly to the intended cause."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "Keep no comparison condition",
+          "misconceptionTag": "missing-comparison-condition",
+          "rationale": "Without a comparison/control condition, the design cannot isolate the effect of the factor being tested."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "Discard trials that disagree with the expected trend",
+          "misconceptionTag": "confirmation-bias-data-discarding",
+          "rationale": "Discarding trials only because they disagree with the expected trend biases the evidence rather than testing the hypothesis fairly."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored concept-model-evidence misconception review"
+    },
+    "w22-inquiry-3": {
+      "itemId": "w22-inquiry-3",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "A team wants to test how surface area affects rate. Which design choice most strengthens causal interpretation?",
+      "answerIndex": 0,
+      "correctRationale": "A controlled comparison changes the target factor while holding plausible confounders stable.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "Change surface area and temperature together",
+          "misconceptionTag": "confounded-variable-change",
+          "rationale": "This changes the target factor and another relevant variable together, so any rate difference cannot be attributed cleanly to the intended cause."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "Keep no comparison condition",
+          "misconceptionTag": "missing-comparison-condition",
+          "rationale": "Without a comparison/control condition, the design cannot isolate the effect of the factor being tested."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "Discard trials that disagree with the expected trend",
+          "misconceptionTag": "confirmation-bias-data-discarding",
+          "rationale": "Discarding trials only because they disagree with the expected trend biases the evidence rather than testing the hypothesis fairly."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored concept-model-evidence misconception review"
+    },
+    "w22-inquiry-4": {
+      "itemId": "w22-inquiry-4",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "A team wants to test how catalyst presence affects rate. Which design choice most strengthens causal interpretation?",
+      "answerIndex": 0,
+      "correctRationale": "A controlled comparison changes the target factor while holding plausible confounders stable.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "Change catalyst presence and concentration together",
+          "misconceptionTag": "confounded-variable-change",
+          "rationale": "This changes the target factor and another relevant variable together, so any rate difference cannot be attributed cleanly to the intended cause."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "Keep no comparison condition",
+          "misconceptionTag": "missing-comparison-condition",
+          "rationale": "Without a comparison/control condition, the design cannot isolate the effect of the factor being tested."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "Discard trials that disagree with the expected trend",
+          "misconceptionTag": "confirmation-bias-data-discarding",
+          "rationale": "Discarding trials only because they disagree with the expected trend biases the evidence rather than testing the hypothesis fairly."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored concept-model-evidence misconception review"
+    },
+    "w22-inquiry-5": {
+      "itemId": "w22-inquiry-5",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "A team wants to test how pH affects rate. Which design choice most strengthens causal interpretation?",
+      "answerIndex": 0,
+      "correctRationale": "A controlled comparison changes the target factor while holding plausible confounders stable.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "Change pH and temperature together",
+          "misconceptionTag": "confounded-variable-change",
+          "rationale": "This changes the target factor and another relevant variable together, so any rate difference cannot be attributed cleanly to the intended cause."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "Keep no comparison condition",
+          "misconceptionTag": "missing-comparison-condition",
+          "rationale": "Without a comparison/control condition, the design cannot isolate the effect of the factor being tested."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "Discard trials that disagree with the expected trend",
+          "misconceptionTag": "confirmation-bias-data-discarding",
+          "rationale": "Discarding trials only because they disagree with the expected trend biases the evidence rather than testing the hypothesis fairly."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored concept-model-evidence misconception review"
+    },
+    "w22-inquiry-6": {
+      "itemId": "w22-inquiry-6",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "A team wants to test how ionic strength affects rate. Which design choice most strengthens causal interpretation?",
+      "answerIndex": 0,
+      "correctRationale": "A controlled comparison changes the target factor while holding plausible confounders stable.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "Change ionic strength and concentration together",
+          "misconceptionTag": "confounded-variable-change",
+          "rationale": "This changes the target factor and another relevant variable together, so any rate difference cannot be attributed cleanly to the intended cause."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "Keep no comparison condition",
+          "misconceptionTag": "missing-comparison-condition",
+          "rationale": "Without a comparison/control condition, the design cannot isolate the effect of the factor being tested."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "Discard trials that disagree with the expected trend",
+          "misconceptionTag": "confirmation-bias-data-discarding",
+          "rationale": "Discarding trials only because they disagree with the expected trend biases the evidence rather than testing the hypothesis fairly."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored concept-model-evidence misconception review"
+    },
+    "w22-inquiry-7": {
+      "itemId": "w22-inquiry-7",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "A team wants to test how light intensity affects rate. Which design choice most strengthens causal interpretation?",
+      "answerIndex": 0,
+      "correctRationale": "A controlled comparison changes the target factor while holding plausible confounders stable.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "Change light intensity and temperature together",
+          "misconceptionTag": "confounded-variable-change",
+          "rationale": "This changes the target factor and another relevant variable together, so any rate difference cannot be attributed cleanly to the intended cause."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "Keep no comparison condition",
+          "misconceptionTag": "missing-comparison-condition",
+          "rationale": "Without a comparison/control condition, the design cannot isolate the effect of the factor being tested."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "Discard trials that disagree with the expected trend",
+          "misconceptionTag": "confirmation-bias-data-discarding",
+          "rationale": "Discarding trials only because they disagree with the expected trend biases the evidence rather than testing the hypothesis fairly."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored concept-model-evidence misconception review"
+    },
+    "w29-acid-1": {
+      "itemId": "w29-acid-1",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "In the reaction HCl + H₂O → H₃O⁺ + Cl⁻, which listed reactant acts as the Brønsted–Lowry acid?",
+      "answerIndex": 0,
+      "correctRationale": "The Brønsted–Lowry acid is the proton donor in the written reaction.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "H₂O",
+          "misconceptionTag": "bronsted-acid-base-role-reversal",
+          "rationale": "This selects a species that is not the proton donor in the written reaction, confusing acid and base roles."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "Cl⁻",
+          "misconceptionTag": "spectator-or-nonparticipant-as-acid",
+          "rationale": "This selects a listed ion or species that is not the proton-donating reactant in the written reaction."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "OH⁻",
+          "misconceptionTag": "product-or-conjugate-base-as-reactant-acid",
+          "rationale": "This selects a product or base-like species rather than identifying the reactant that donates the proton."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored concept-model-evidence misconception review"
+    },
+    "w29-acid-2": {
+      "itemId": "w29-acid-2",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "In the reaction NH₃ + H₂O ⇌ NH₄⁺ + OH⁻, which listed reactant acts as the Brønsted–Lowry acid?",
+      "answerIndex": 0,
+      "correctRationale": "The Brønsted–Lowry acid is the proton donor in the written reaction.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "NH₃",
+          "misconceptionTag": "bronsted-acid-base-role-reversal",
+          "rationale": "This selects a species that is not the proton donor in the written reaction, confusing acid and base roles."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "Cl⁻",
+          "misconceptionTag": "spectator-or-nonparticipant-as-acid",
+          "rationale": "This selects a listed ion or species that is not the proton-donating reactant in the written reaction."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "OH⁻",
+          "misconceptionTag": "product-or-conjugate-base-as-reactant-acid",
+          "rationale": "This selects a product or base-like species rather than identifying the reactant that donates the proton."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored concept-model-evidence misconception review"
+    },
+    "w29-acid-3": {
+      "itemId": "w29-acid-3",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "In the reaction H₂SO₄ + H₂O → H₃O⁺ + HSO₄⁻, which listed reactant acts as the Brønsted–Lowry acid?",
+      "answerIndex": 0,
+      "correctRationale": "The Brønsted–Lowry acid is the proton donor in the written reaction.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "H₂O",
+          "misconceptionTag": "bronsted-acid-base-role-reversal",
+          "rationale": "This selects a species that is not the proton donor in the written reaction, confusing acid and base roles."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "Cl⁻",
+          "misconceptionTag": "spectator-or-nonparticipant-as-acid",
+          "rationale": "This selects a listed ion or species that is not the proton-donating reactant in the written reaction."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "OH⁻",
+          "misconceptionTag": "product-or-conjugate-base-as-reactant-acid",
+          "rationale": "This selects a product or base-like species rather than identifying the reactant that donates the proton."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored concept-model-evidence misconception review"
+    },
+    "w29-acid-4": {
+      "itemId": "w29-acid-4",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "In the reaction CH₃COOH + H₂O ⇌ H₃O⁺ + CH₃COO⁻, which listed reactant acts as the Brønsted–Lowry acid?",
+      "answerIndex": 0,
+      "correctRationale": "The Brønsted–Lowry acid is the proton donor in the written reaction.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "H₂O",
+          "misconceptionTag": "bronsted-acid-base-role-reversal",
+          "rationale": "This selects a species that is not the proton donor in the written reaction, confusing acid and base roles."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "Cl⁻",
+          "misconceptionTag": "spectator-or-nonparticipant-as-acid",
+          "rationale": "This selects a listed ion or species that is not the proton-donating reactant in the written reaction."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "OH⁻",
+          "misconceptionTag": "product-or-conjugate-base-as-reactant-acid",
+          "rationale": "This selects a product or base-like species rather than identifying the reactant that donates the proton."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored concept-model-evidence misconception review"
+    },
+    "w29-acid-5": {
+      "itemId": "w29-acid-5",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "In the reaction HCO₃⁻ + H₂O ⇌ H₂CO₃ + OH⁻, which listed reactant acts as the Brønsted–Lowry acid?",
+      "answerIndex": 0,
+      "correctRationale": "The Brønsted–Lowry acid is the proton donor in the written reaction.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "NH₃",
+          "misconceptionTag": "bronsted-acid-base-role-reversal",
+          "rationale": "This selects a species that is not the proton donor in the written reaction, confusing acid and base roles."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "Cl⁻",
+          "misconceptionTag": "spectator-or-nonparticipant-as-acid",
+          "rationale": "This selects a listed ion or species that is not the proton-donating reactant in the written reaction."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "OH⁻",
+          "misconceptionTag": "product-or-conjugate-base-as-reactant-acid",
+          "rationale": "This selects a product or base-like species rather than identifying the reactant that donates the proton."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored concept-model-evidence misconception review"
+    },
+    "w29-acid-6": {
+      "itemId": "w29-acid-6",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "In the reaction NH₄⁺ + H₂O ⇌ NH₃ + H₃O⁺, which listed reactant acts as the Brønsted–Lowry acid?",
+      "answerIndex": 0,
+      "correctRationale": "The Brønsted–Lowry acid is the proton donor in the written reaction.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "H₂O",
+          "misconceptionTag": "bronsted-acid-base-role-reversal",
+          "rationale": "This selects a species that is not the proton donor in the written reaction, confusing acid and base roles."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "Cl⁻",
+          "misconceptionTag": "spectator-or-nonparticipant-as-acid",
+          "rationale": "This selects a listed ion or species that is not the proton-donating reactant in the written reaction."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "OH⁻",
+          "misconceptionTag": "product-or-conjugate-base-as-reactant-acid",
+          "rationale": "This selects a product or base-like species rather than identifying the reactant that donates the proton."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored concept-model-evidence misconception review"
+    },
+    "w29-acid-7": {
+      "itemId": "w29-acid-7",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "In the reaction H₂PO₄⁻ + H₂O ⇌ H₃O⁺ + HPO₄²⁻, which listed reactant acts as the Brønsted–Lowry acid?",
+      "answerIndex": 0,
+      "correctRationale": "The Brønsted–Lowry acid is the proton donor in the written reaction.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "H₂O",
+          "misconceptionTag": "bronsted-acid-base-role-reversal",
+          "rationale": "This selects a species that is not the proton donor in the written reaction, confusing acid and base roles."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "Cl⁻",
+          "misconceptionTag": "spectator-or-nonparticipant-as-acid",
+          "rationale": "This selects a listed ion or species that is not the proton-donating reactant in the written reaction."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "OH⁻",
+          "misconceptionTag": "product-or-conjugate-base-as-reactant-acid",
+          "rationale": "This selects a product or base-like species rather than identifying the reactant that donates the proton."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored concept-model-evidence misconception review"
+    },
+    "concept-w01": {
+      "itemId": "concept-w01",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "A balance repeatedly reads 0.18 g high when checked with a certified mass. What kind of issue is most strongly suggested?",
+      "answerIndex": 0,
+      "correctRationale": "A repeatable offset from a trusted reference is evidence of systematic bias.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "Random scatter only",
+          "misconceptionTag": "random-vs-systematic-error",
+          "rationale": "A repeatable offset in the same direction is evidence of systematic bias, not random scatter alone."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "A nuclear change",
+          "misconceptionTag": "measurement-vs-nuclear-change",
+          "rationale": "A balance calibration offset does not indicate a nuclear transformation in the sample."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "A change in Avogadro's constant",
+          "misconceptionTag": "constant-change-impossibility",
+          "rationale": "A local instrument offset cannot change the physical value of Avogadro's constant."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored concept-model-evidence misconception review"
+    },
+    "concept-w22": {
+      "itemId": "concept-w22",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "Two proposed rate laws fit the first three data points equally well. What is the strongest next step?",
+      "answerIndex": 0,
+      "correctRationale": "A discriminating condition tests competing predictions rather than selecting a model by preference.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "Choose the simpler graph color",
+          "misconceptionTag": "aesthetic-model-selection",
+          "rationale": "Graph color has no evidentiary power for distinguishing two competing rate laws."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "Average the two rate laws",
+          "misconceptionTag": "averaging-incompatible-models",
+          "rationale": "Averaging two competing laws does not test which model better predicts new observations."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "Declare both mechanisms proven",
+          "misconceptionTag": "premature-proof-claim",
+          "rationale": "Fitting the same initial points does not prove both mechanisms; a discriminating prediction is needed."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored concept-model-evidence misconception review"
+    },
+    "concept-w28": {
+      "itemId": "concept-w28",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "A precipitate forms when ionic concentrations are mixed. Which comparison is most useful for predicting precipitation?",
+      "answerIndex": 0,
+      "correctRationale": "Precipitation is predicted by comparing the reaction/ion quotient with the solubility-product constant.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "Atomic number compared with mass number",
+          "misconceptionTag": "nuclear-identity-vs-solubility",
+          "rationale": "Atomic number and mass number do not determine whether an ionic mixture exceeds its solubility-product condition."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "pH compared with density",
+          "misconceptionTag": "ph-density-category-error",
+          "rationale": "pH and density are not the governing comparison for precipitation in a Ksp model."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "Molar mass compared with temperature",
+          "misconceptionTag": "molar-mass-temperature-category-error",
+          "rationale": "Molar mass and temperature alone do not replace the ion-product versus Ksp comparison required for this prediction."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored concept-model-evidence misconception review"
+    },
+    "concept-w29": {
+      "itemId": "concept-w29",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "In the Brønsted–Lowry model, an acid is a species that",
+      "answerIndex": 0,
+      "correctRationale": "A Brønsted–Lowry acid donates H+ to a base.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "accepts an electron pair only",
+          "misconceptionTag": "lewis-vs-bronsted-definition",
+          "rationale": "Accepting an electron pair is a Lewis-base description, not the Brønsted–Lowry definition of an acid."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "always contains oxygen",
+          "misconceptionTag": "oxygen-required-acid-misconception",
+          "rationale": "Brønsted–Lowry acids need not contain oxygen; the defining behavior is proton donation."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "must have pH exactly 1",
+          "misconceptionTag": "ph-one-acid-misconception",
+          "rationale": "An acid is not required to produce a solution with pH exactly 1; acid strength and concentration vary."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored concept-model-evidence misconception review"
+    },
+    "concept-w32": {
+      "itemId": "concept-w32",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "At constant temperature and pressure, a process with ΔG < 0 is thermodynamically",
+      "answerIndex": 0,
+      "correctRationale": "Negative Gibbs free-energy change indicates thermodynamic favorability, not reaction speed.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "guaranteed to be fast",
+          "misconceptionTag": "thermodynamics-kinetics-confusion",
+          "rationale": "A negative ΔG indicates thermodynamic favorability, not that the process is guaranteed to occur rapidly."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "at equilibrium",
+          "misconceptionTag": "negative-deltag-equilibrium-confusion",
+          "rationale": "A negative ΔG indicates a forward thermodynamic driving force under the stated conditions, not equilibrium."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "impossible",
+          "misconceptionTag": "negative-deltag-impossible-reversal",
+          "rationale": "A negative ΔG does not make the process impossible; it indicates the forward direction is thermodynamically favored under the stated conditions."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored concept-model-evidence misconception review"
     }
   },
   "reviewedFamilies": [
@@ -5980,6 +7952,16 @@
     "thermodynamic favorability from ΔG sign",
     "galvanic-cell potential",
     "radioactive half-life",
-    "weighted engineering decision score"
+    "weighted engineering decision score",
+    "periodic-trend comparisons",
+    "ionic formula charge balance",
+    "Lewis valence-electron totals",
+    "VSEPR molecular geometry",
+    "intermolecular-force boiling-point evidence",
+    "chemical-equation balancing",
+    "mole calculations",
+    "controlled kinetics inquiry",
+    "Brønsted–Lowry acid identification",
+    "standalone evidence/model anchors"
   ]
 }
