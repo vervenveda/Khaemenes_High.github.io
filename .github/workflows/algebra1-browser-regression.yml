@@ -34,6 +34,7 @@ jobs:
           node --check courses/mathematics/algebra-1/tools/test-locked-evidence-units10-13.mjs
           node --check courses/mathematics/algebra-1/tools/validate-late-unit-abundance.mjs
           node --check courses/mathematics/algebra-1/tools/validate-late-unit-misconceptions.mjs
+          node --check courses/mathematics/algebra-1/tools/validate-unit13-capstone-depth.mjs
           node --check courses/mathematics/algebra-1/tools/validate-assessment-depth.mjs
 
       - name: Install Playwright Chromium
@@ -52,6 +53,9 @@ jobs:
 
       - name: Validate late-unit misconception coverage
         run: node courses/mathematics/algebra-1/tools/validate-late-unit-misconceptions.mjs
+
+      - name: Validate Unit 13 capstone depth
+        run: node courses/mathematics/algebra-1/tools/validate-unit13-capstone-depth.mjs
 
       - name: Validate full assessment depth
         run: node courses/mathematics/algebra-1/tools/validate-assessment-depth.mjs
