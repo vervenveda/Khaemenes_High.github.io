@@ -1,0 +1,50 @@
+name: High School Vocabulary Forensic Audit
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'courses/language-arts/**/curriculum.json'
+      - 'courses/language-arts/**/vocabulary.json'
+      - 'courses/mathematics/**/vocabulary.json'
+      - 'courses/mathematics/tools/vocabulary-studio.html'
+      - 'courses/shared/math-lesson-vocabulary-link.js'
+      - 'courses/science/**'
+      - 'courses/social-studies/**'
+      - 'tests/vocabulary-studio-four-grade-regression.cjs'
+      - 'tools/audit-high-school-vocabulary.mjs'
+      - 'tools/validate-math-vocabulary.mjs'
+      - 'tools/validate-math-lesson-vocabulary.mjs'
+      - '.github/workflows/high-school-vocabulary-forensic-audit.yml'
+  pull_request:
+    paths:
+      - 'courses/language-arts/**/curriculum.json'
+      - 'courses/language-arts/**/vocabulary.json'
+      - 'courses/mathematics/**/vocabulary.json'
+      - 'courses/mathematics/tools/vocabulary-studio.html'
+      - 'courses/shared/math-lesson-vocabulary-link.js'
+      - 'courses/science/**'
+      - 'courses/social-studies/**'
+      - 'tests/vocabulary-studio-four-grade-regression.cjs'
+      - 'tools/audit-high-school-vocabulary.mjs'
+      - 'tools/validate-math-vocabulary.mjs'
+      - 'tools/validate-math-lesson-vocabulary.mjs'
+      - '.github/workflows/high-school-vocabulary-forensic-audit.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Run academy-wide vocabulary audit
+        run: node tools/audit-high-school-vocabulary.mjs
+      - name: Re-run existing vocabulary regressions
+        run: |
+          node tests/vocabulary-studio-four-grade-regression.cjs
+          node tools/validate-math-vocabulary.mjs
+          node tools/validate-math-lesson-vocabulary.mjs
