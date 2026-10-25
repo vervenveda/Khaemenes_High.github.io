@@ -17,7 +17,7 @@ const report={
   scope:[
     "Grade 12 Social Studies weekly transfer assessments",
     "English 10–12 weekly passage/source anchors",
-    "Algebra I lesson-check option balance",
+    "Algebra I dedicated/runtime banks, shared late-unit bank, option balance, fresh retakes and selected-answer evidence",
     "Biology 10 / Chemistry 11 / Physics & Engineering 12 public banks and secure assessment blueprints"
   ],
   areas:[],
@@ -218,20 +218,83 @@ const mcBalanced=mc.includes("function balancedOptionOrders")&&mc.includes("opti
   const balanced=core.includes("const correctPositions=shuffle(selection.map((_,i)=>i%4));");
   const marked=core.includes('group.dataset.balancedOptionOrder="true"');
   const protectedDom=loader.includes('if(group.dataset.balancedOptionOrder==="true")return;');
+
+  const dedicated=[],runtimeIssues=[],dedicatedIds=new Set(),authoredDedicatedPositions=[0,0,0,0];
+  let dedicatedLessons=0,alignedLessons=0,alignedAlternates=0,runtimeProtectedUnits=0,snapshotUnits=0;
+  for(let unit=1;unit<=9;unit++){
+    const u=String(unit).padStart(2,"0");
+    const rel=`courses/mathematics/algebra-1/units/unit-${u}/assets/unit${u}-data.js`;
+    const ctx={window:{}};vm.createContext(ctx);vm.runInContext(read(rel),ctx,{filename:rel});
+    const keys=Object.keys(ctx.window),data=ctx.window[keys[0]]||{},questions=Array.isArray(data.questions)?data.questions:[],lessons=Array.isArray(data.lessons)?data.lessons:[];
+    dedicated.push(...questions);dedicatedLessons+=lessons.length;
+    for(const q of questions){
+      if(q.id)dedicatedIds.add(q.id);
+      if(Number.isInteger(q.answer)&&q.answer>=0&&q.answer<4)authoredDedicatedPositions[q.answer]++;
+    }
+    for(const lesson of lessons){
+      const rows=questions.filter(q=>Number(q.lesson)===Number(lesson.number));
+      if(rows.length!==10)runtimeIssues.push(`Unit ${u} lesson ${lesson.number}: ${rows.length} dedicated questions`);
+      if(unit>=2){
+        const alt=bank.filter(q=>Number(q.unit)===unit&&Number(q.lesson)===Number(lesson.number));
+        if(alt.length===5){alignedLessons++;alignedAlternates+=alt.length}else runtimeIssues.push(`Unit ${u} lesson ${lesson.number}: ${alt.length} aligned alternate items`);
+        if(rows.length+alt.length!==15)runtimeIssues.push(`Unit ${u} lesson ${lesson.number}: runtime pool ${rows.length+alt.length}, expected 15`);
+      }
+    }
+    if(unit===1){
+      const u1=read("courses/mathematics/algebra-1/units/unit-01/assets/unit01.js");
+      if(!u1.includes('chosen.length>10')||!u1.includes('chosen.slice(0,10)')||u1.includes('chosen.slice(0,8)'))runtimeIssues.push("Unit 01 lesson runtime is not on the 10-question contract");
+    }else{
+      const unitCore=read(`courses/mathematics/algebra-1/units/unit-${u}/assets/unit${u}-core.js`);
+      const unitLoader=read(`courses/mathematics/algebra-1/units/unit-${u}/assets/unit${u}.js`);
+      const protectedForm=["function balanceOptions","supplementalCount",'_formSource:"aligned-alternate"',"fresh();"].every(x=>unitCore.includes(x))
+        &&unitLoader.includes("../../../assets/question-bank.js")
+        &&unitLoader.includes("Array.isArray(window.ALGEBRA1_QUESTIONS)");
+      if(protectedForm)runtimeProtectedUnits++;else runtimeIssues.push(`Unit ${u}: balanced/fresh-form runtime contract incomplete`);
+      const snapshot=["answerSnapshot:snapshots","selectedOriginalIndex","correctOriginalIndex",'formVersion:"algebra1-runtime-balanced-v2"'].every(x=>unitCore.includes(x));
+      if(snapshot)snapshotUnits++;else runtimeIssues.push(`Unit ${u}: selected-answer snapshot contract incomplete`);
+    }
+  }
+  const dm=itemMetrics(dedicated,false);
+  const dedicatedMapped=[...dedicatedIds].filter(id=>Object.prototype.hasOwnProperty.call(readJSON("courses/mathematics/algebra-1/assets/assessment-misconceptions-v1.json").items||{},id)).length;
   const checks=[];
-  checks.push(addFinding("Algebra I","algebra1-lesson-bank-contract",
+  checks.push(addFinding("Algebra I","algebra1-shared-bank-contract",
     by.size===87&&bank.length===435&&contractFailures.length===0?"PASS":"FAIL",
-    `${by.size} lessons / ${bank.length} lesson-check items; answer-contract failures ${contractFailures.length}.`));
-  checks.push(addFinding("Algebra I","algebra1-first-form-answer-balance",
+    `Shared bank: ${by.size} lessons / ${bank.length} items; answer-contract failures ${contractFailures.length}.`));
+  checks.push(addFinding("Algebra I","algebra1-shared-late-unit-first-form-balance",
     balanced&&marked&&protectedDom?"PASS":"FAIL",
-    "Five-question lesson checks use a randomized 2/1/1/1 correct-position schedule before first render; the later DOM shuffler preserves that mapped order."));
-  checks.push(addFinding("Algebra I","algebra1-misconception-map-v1",
+    "The shared late-unit renderer balances learner-visible answer positions and preserves mapped correctness."));
+  checks.push(addFinding("Algebra I","algebra1-runtime-dedicated-bank-contract",
+    dedicated.length===610&&dedicatedLessons===61&&runtimeIssues.filter(x=>/dedicated questions/.test(x)).length===0?"PASS":"FAIL",
+    `Runtime-authoritative Units 01–09: ${dedicated.length} dedicated items across ${dedicatedLessons} lessons; every lesson is required to expose 10 authored questions. Authored answer positions remain diagnostic only: ${authoredDedicatedPositions.join("/")}.`,
+    {items:dedicated.length,lessons:dedicatedLessons,authoredAnswerPositions:authoredDedicatedPositions,metrics:dm}));
+  checks.push(addFinding("Algebra I","algebra1-runtime-first-form-balance",
+    runtimeProtectedUnits===8?"PASS":"FAIL",
+    `${runtimeProtectedUnits}/8 dedicated Unit 02–09 cores now construct balanced learner-visible option positions on first render and retakes; stored authored bank order is unchanged.`));
+  checks.push(addFinding("Algebra I","algebra1-runtime-fresh-retake-pools",
+    alignedLessons===55&&alignedAlternates===275&&runtimeIssues.filter(x=>/aligned alternate|runtime pool/.test(x)).length===0?"PASS":"FAIL",
+    `${alignedLessons}/55 Unit 02–09 lessons have a 15-item aligned runtime pool: 10 dedicated questions plus 5 shared alternate questions. Retakes draw 5 aligned alternates plus 5 dedicated items rather than merely moving the same option labels.`,
+    {alignedLessons,alignedAlternates,poolPerLesson:15}));
+  checks.push(addFinding("Algebra I","algebra1-runtime-answer-snapshots",
+    snapshotUnits===8?"PASS":"FAIL",
+    `${snapshotUnits}/8 Unit 02–09 cores save versioned immutable answer snapshots containing selected/correct delivered indexes and original-option indexes for future misconception analysis.`));
+  checks.push(addFinding("Algebra I","algebra1-runtime-offline-alternate-bank",
+    read("courses/mathematics/algebra-1/service-worker.js").includes("assets/question-bank.js")&&read("courses/mathematics/algebra-1/service-worker-precache-v1.js").includes("assets/question-bank.js")?"PASS":"FAIL",
+    "The aligned alternate bank is included in both Algebra I offline cache manifests."));
+  checks.push(addFinding("Algebra I","algebra1-misconception-map-v1-shared-bank",
     dq.issues.length===0&&dq.reviewedItems===271&&dq.distractorRationales===813?"PASS":"FAIL",
-    `${dq.reviewedItems}/${dq.bankItems} items are reviewed in the v1 companion map, providing ${dq.distractorRationales} explicit distractor rationales. All detected repeated prompt families of three or more items are mapped across all 13 units. Drift issues: ${dq.issues.length}.`,dq));
+    `${dq.reviewedItems}/${dq.bankItems} shared-bank items are reviewed in the v1 companion map with ${dq.distractorRationales} explicit distractor rationales. Drift issues: ${dq.issues.length}.`,dq));
+  checks.push(addFinding("Algebra I","algebra1-dedicated-misconception-coverage",
+    dedicatedMapped===dedicated.length?"PASS":"WARN",
+    `${dedicatedMapped}/${dedicated.length} runtime-authoritative dedicated Unit 01–09 item IDs currently have direct misconception-map entries. The forensic blind spot is repaired because this coverage is now reported explicitly rather than being inferred from the shared bank.`,
+    {mapped:dedicatedMapped,total:dedicated.length,coveragePct:pct(dedicatedMapped,dedicated.length)}));
   checks.push(addFinding("Algebra I","algebra1-prompt-diversity",
     m.exactDuplicateItems===0?"PASS":"FAIL",
-    `Exact duplicate prompts: ${m.exactDuplicateItems}. Template-similarity signal: ${m.templateClusterPct}% (diagnostic only; repeated mathematical structures are not automatically defects).`,m));
-  area("Algebra I","Lesson checks retain valid answer mappings while balancing the learner-visible first form and retakes.",{...m,misconceptionMap:dq,lessons:by.size,renderedDistribution:"2/1/1/1 for five-question lesson forms"},checks);
+    `Shared-bank exact duplicate prompts: ${m.exactDuplicateItems}. Template-similarity signal: ${m.templateClusterPct}% (diagnostic only; repeated mathematical structures are not automatically defects).`,m));
+  if(runtimeIssues.length)checks.push(addFinding("Algebra I","algebra1-runtime-contract-regressions","FAIL",runtimeIssues.join("; "),{issues:runtimeIssues}));
+  area("Algebra I",
+    `Runtime-aware certification now distinguishes 610 dedicated Units 01–09 items from the 435-item shared bank; Unit 02–09 retakes use 55 aligned 15-item lesson pools and preserve selected-answer evidence.`,
+    {...m,misconceptionMap:dq,sharedBankItems:bank.length,dedicatedRuntimeItems:dedicated.length,dedicatedLessons,alignedAlternateItems:alignedAlternates,dedicatedAuthoredAnswerPositions:authoredDedicatedPositions,dedicatedMisconceptionCoveragePct:pct(dedicatedMapped,dedicated.length)},
+    checks);
 }
 
 /* 4. Upper science */
