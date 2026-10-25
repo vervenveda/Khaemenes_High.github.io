@@ -3,10 +3,10 @@
   "schemaVersion": "1.0",
   "courseId": "KH-SCI-CHEM11",
   "title": "Chemistry 11 · Legacy Concept Spine Misconception Map",
-  "coveragePolicy": "reviewed-subset; concept spine, all high-repetition quantitative families, and repeated concept/model/evidence families; newly authored or substantially revised selected-response items should include complete mapping",
+  "coveragePolicy": "complete-public-bank; every public Chemistry 11 selected-response item is misconception-mapped; newly authored or substantially revised items must include complete mapping",
   "sourceBank": "courses/science/chemistry-11/question-bank.js",
-  "reviewedItemCount": 303,
-  "distractorRationaleCount": 909,
+  "reviewedItemCount": 339,
+  "distractorRationaleCount": 1017,
   "items": {
     "legacy-01": {
       "itemId": "legacy-01",
@@ -8794,6 +8794,1050 @@
       ],
       "reviewedAt": "2026-10-25",
       "reviewMethod": "human-authored unit-evidence-model misconception review"
+    },
+    "u5-ev-1": {
+      "itemId": "u5-ev-1",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "A concentration-time graph becomes less steep over time. What evidence does the changing slope provide?",
+      "answerIndex": 0,
+      "correctRationale": "Slope magnitude on concentration-time data represents rate of concentration change.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "Concentration is increasing",
+          "misconceptionTag": "rate-slope-direction-misread",
+          "rationale": "A less-steep concentration-time curve means the magnitude of concentration change per unit time is smaller, not that concentration is increasing."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "Time is reversing",
+          "misconceptionTag": "time-reversal-nonphysical",
+          "rationale": "A changing graph slope does not imply time reverses; it reflects a changing reaction rate."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "Activation energy is zero",
+          "misconceptionTag": "zero-activation-energy-overclaim",
+          "rationale": "A decreasing rate does not establish zero activation energy and is inconsistent with the idea that there is no kinetic barrier."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored unit-evidence-model misconception review"
+    },
+    "u5-ev-2": {
+      "itemId": "u5-ev-2",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "A reaction runs faster at higher temperature in repeated controlled trials. Which additional evidence would best support collision-theory reasoning?",
+      "answerIndex": 0,
+      "correctRationale": "Collision theory links temperature to collision energies and successful collision fraction.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "The reactants change identity before colliding",
+          "misconceptionTag": "reactant-identity-change-before-collision",
+          "rationale": "Collision theory does not require reactants to change identity before colliding; successful collisions are part of the process that can lead to reaction."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "Particle number becomes zero",
+          "misconceptionTag": "particle-number-zero",
+          "rationale": "Higher temperature does not make the reactant particle number become zero."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "Temperature has no effect on motion",
+          "misconceptionTag": "temperature-motion-effect-denied",
+          "rationale": "Temperature directly affects the distribution of particle kinetic energies, so claiming no effect on motion contradicts collision-theory reasoning."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored unit-evidence-model misconception review"
+    },
+    "u5-ev-3": {
+      "itemId": "u5-ev-3",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "Two rate models fit early data similarly, but one shows systematic residuals later. Which model is better supported?",
+      "answerIndex": 0,
+      "correctRationale": "Residual structure is direct evidence of model adequacy.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "The model with more adjustable constants regardless of fit",
+          "misconceptionTag": "complexity-over-fit-evidence",
+          "rationale": "More adjustable constants do not by themselves make a model better supported; residual quality across the full range is stronger evidence."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "The model chosen first",
+          "misconceptionTag": "first-model-anchoring-bias",
+          "rationale": "Choosing the model selected first ignores later residual evidence and introduces anchoring rather than evaluation."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "Both are proven identical",
+          "misconceptionTag": "model-equivalence-overclaim",
+          "rationale": "Different residual patterns mean the two models are not proven identical in adequacy."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored unit-evidence-model misconception review"
+    },
+    "u5-md-1": {
+      "itemId": "u5-md-1",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "Why can increasing concentration increase reaction rate?",
+      "answerIndex": 0,
+      "correctRationale": "More reactant particles per volume can increase collision frequency.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "It lowers all particle energies to zero",
+          "misconceptionTag": "concentration-lowers-energy-to-zero",
+          "rationale": "Increasing concentration changes collision frequency, not by lowering every particle's energy to zero."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "It changes every reaction into equilibrium",
+          "misconceptionTag": "concentration-forces-equilibrium",
+          "rationale": "A concentration change can affect rate and equilibrium position, but it does not convert every reaction into equilibrium."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "It guarantees a catalyst is present",
+          "misconceptionTag": "concentration-guarantees-catalyst",
+          "rationale": "Higher concentration does not imply that a catalyst is present."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored unit-evidence-model misconception review"
+    },
+    "u5-md-2": {
+      "itemId": "u5-md-2",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "How does a catalyst increase reaction rate?",
+      "answerIndex": 0,
+      "correctRationale": "Catalysts alter pathway kinetics without changing overall reaction thermodynamics.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "It raises product energy permanently",
+          "misconceptionTag": "catalyst-changes-product-energy",
+          "rationale": "A catalyst changes the reaction pathway and activation barrier, not the permanent thermodynamic energy of the products."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "It changes equilibrium into complete conversion",
+          "misconceptionTag": "catalyst-forces-complete-conversion",
+          "rationale": "Catalysts speed approach to equilibrium but do not change the equilibrium composition into complete conversion."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "It is consumed stoichiometrically",
+          "misconceptionTag": "catalyst-consumed-stoichiometrically",
+          "rationale": "A catalyst is regenerated through the mechanism and is not consumed as a net stoichiometric reactant."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored unit-evidence-model misconception review"
+    },
+    "u5-md-3": {
+      "itemId": "u5-md-3",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "Why can the slowest elementary step influence overall rate?",
+      "answerIndex": 0,
+      "correctRationale": "A slow step can limit throughput through the full mechanism.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "It contains the most atoms",
+          "misconceptionTag": "slow-step-most-atoms-fallacy",
+          "rationale": "The rate-limiting influence of a step is not determined by how many atoms appear in that elementary step."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "It has the highest coefficient by definition",
+          "misconceptionTag": "slow-step-largest-coefficient-fallacy",
+          "rationale": "A slow step is not defined by having the largest stoichiometric coefficient."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "It always occurs last",
+          "misconceptionTag": "slow-step-always-last-fallacy",
+          "rationale": "The kinetically limiting step can occur anywhere in a mechanism; it is not required to be the final step."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored unit-evidence-model misconception review"
+    },
+    "u6-ev-1": {
+      "itemId": "u6-ev-1",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "A coffee-cup calorimeter shows the solution warms during reaction. What sign is most consistent for heat flow of the reaction system?",
+      "answerIndex": 0,
+      "correctRationale": "Warming surroundings are consistent with an exothermic system process.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "The reaction absorbs heat from the surroundings",
+          "misconceptionTag": "exothermic-endothermic-direction-reversed",
+          "rationale": "If the surroundings warm, heat has flowed from the reaction system to the surroundings rather than being absorbed by the reaction."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "No energy transfer occurred",
+          "misconceptionTag": "energy-transfer-denied",
+          "rationale": "A measured temperature rise in the surroundings is evidence that energy transfer occurred."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "Temperature and heat are identical",
+          "misconceptionTag": "temperature-heat-conflation",
+          "rationale": "Temperature is a state variable related to thermal energy distribution, while heat is energy transferred because of a temperature difference; they are not identical."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored unit-evidence-model misconception review"
+    },
+    "u6-ev-2": {
+      "itemId": "u6-ev-2",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "Two independent reaction pathways lead between the same initial and final states. What should happen to total enthalpy change?",
+      "answerIndex": 0,
+      "correctRationale": "Enthalpy is a state function, so ΔH depends on initial and final states.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "It depends only on the number of steps",
+          "misconceptionTag": "enthalpy-step-count-dependence",
+          "rationale": "Because enthalpy is a state function, total ΔH does not depend on the number of steps used between the same initial and final states."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "It must change sign randomly",
+          "misconceptionTag": "enthalpy-random-sign",
+          "rationale": "The sign of total enthalpy change is determined by the chosen initial/final states and reaction direction, not random pathway variation."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "It is always zero",
+          "misconceptionTag": "enthalpy-always-zero",
+          "rationale": "A state function can have a nonzero change between different states; path independence does not mean ΔH must be zero."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored unit-evidence-model misconception review"
+    },
+    "u6-ev-3": {
+      "itemId": "u6-ev-3",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "A process occurs spontaneously at one temperature but not another. What does this evidence suggest?",
+      "answerIndex": 0,
+      "correctRationale": "Temperature changes the TΔS term in Gibbs free energy.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "Only enthalpy can matter",
+          "misconceptionTag": "enthalpy-only-spontaneity",
+          "rationale": "Temperature-dependent spontaneity is evidence that the TΔS contribution matters; enthalpy alone cannot explain the change with temperature."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "Temperature has no thermodynamic role",
+          "misconceptionTag": "temperature-role-denied",
+          "rationale": "Temperature directly multiplies the entropy term in ΔG=ΔH−TΔS, so it can alter thermodynamic favorability."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "Spontaneous means infinitely fast",
+          "misconceptionTag": "spontaneous-equals-instantaneous",
+          "rationale": "Thermodynamic spontaneity does not imply an infinitely fast process; kinetics and activation barriers still matter."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored unit-evidence-model misconception review"
+    },
+    "u6-md-1": {
+      "itemId": "u6-md-1",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "Why is q=mcΔT a model rather than a universal identity for every calorimeter?",
+      "answerIndex": 0,
+      "correctRationale": "Real calorimetry requires system boundaries and accounting for additional heat capacities/losses.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "It works without units",
+          "misconceptionTag": "calorimetry-units-ignored",
+          "rationale": "The relation q=mcΔT requires consistent physical units and material properties; it does not work meaningfully without units."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "It proves no heat is lost",
+          "misconceptionTag": "calorimetry-perfect-insulation-assumption",
+          "rationale": "Using q=mcΔT does not prove that no heat is lost; real calorimeters require explicit boundary and loss accounting."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "It applies only to gases",
+          "misconceptionTag": "calorimetry-gases-only",
+          "rationale": "The heat-capacity model applies to appropriate materials with known c values and is not restricted to gases."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored unit-evidence-model misconception review"
+    },
+    "u6-md-2": {
+      "itemId": "u6-md-2",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "Why is breaking a bond endothermic in the bond-energy model?",
+      "answerIndex": 0,
+      "correctRationale": "Separating bonded atoms requires energy input.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "Bond breaking releases all stored energy automatically",
+          "misconceptionTag": "bond-breaking-releases-energy-misconception",
+          "rationale": "Breaking a bond requires energy input to overcome attraction; bond formation, not breaking, is the energy-releasing direction in the simple model."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "Atoms lose mass",
+          "misconceptionTag": "bond-breaking-mass-loss",
+          "rationale": "Ordinary bond breaking rearranges electronic interactions and does not make atoms lose measurable rest mass."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "Electrons disappear",
+          "misconceptionTag": "bond-breaking-electron-disappearance",
+          "rationale": "Electrons do not disappear when a bond breaks; the electronic arrangement changes."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored unit-evidence-model misconception review"
+    },
+    "u6-md-3": {
+      "itemId": "u6-md-3",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "What does higher entropy generally represent in a molecular model?",
+      "answerIndex": 0,
+      "correctRationale": "Entropy is linked to multiplicity/accessibility of microscopic states.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "A lower temperature by definition",
+          "misconceptionTag": "entropy-lower-temperature-definition",
+          "rationale": "Higher entropy is not defined as lower temperature; entropy concerns the number and distribution of accessible microscopic states."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "Zero particle motion",
+          "misconceptionTag": "entropy-zero-motion",
+          "rationale": "Entropy does not require particles to stop moving; zero motion is not the defining condition."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "Perfect order in every case",
+          "misconceptionTag": "entropy-perfect-order",
+          "rationale": "Higher entropy generally corresponds to more accessible arrangements, not perfect order in every case."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored unit-evidence-model misconception review"
+    },
+    "u7-ev-1": {
+      "itemId": "u7-ev-1",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "Forward and reverse reaction rates become equal while concentrations remain constant. What does this support?",
+      "answerIndex": 0,
+      "correctRationale": "At dynamic equilibrium, both directions continue at equal rates.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "Reaction completion with no molecular change",
+          "misconceptionTag": "equilibrium-completion-misconception",
+          "rationale": "Dynamic equilibrium is not reaction completion; forward and reverse molecular events continue."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "Zero reaction rates",
+          "misconceptionTag": "equilibrium-zero-rate-misconception",
+          "rationale": "At equilibrium the forward and reverse rates are equal, not zero."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "A closed system with no particles",
+          "misconceptionTag": "equilibrium-no-particles",
+          "rationale": "A closed equilibrium system still contains particles and ongoing collisions/reactions."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored unit-evidence-model misconception review"
+    },
+    "u7-ev-2": {
+      "itemId": "u7-ev-2",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "After adding reactant, product concentration rises and a new constant composition is reached. What is the strongest interpretation?",
+      "answerIndex": 0,
+      "correctRationale": "A concentration disturbance can shift composition while K remains unchanged at constant temperature.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "Equilibrium was permanently destroyed",
+          "misconceptionTag": "equilibrium-destroyed-permanently",
+          "rationale": "A concentration disturbance can shift the system and then a new equilibrium is established; equilibrium is not permanently destroyed."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "The equilibrium constant necessarily changed at constant temperature",
+          "misconceptionTag": "equilibrium-constant-changes-with-concentration",
+          "rationale": "At constant temperature, changing concentration shifts equilibrium composition but does not change K."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "All reactant vanished",
+          "misconceptionTag": "complete-reactant-consumption-overclaim",
+          "rationale": "A shift toward products does not imply all reactant must disappear at equilibrium."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored unit-evidence-model misconception review"
+    },
+    "u7-ev-3": {
+      "itemId": "u7-ev-3",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "A solution becomes cloudy after adding a common ion. Which evidence-based interpretation is strongest?",
+      "answerIndex": 0,
+      "correctRationale": "Common ions can reduce solubility and promote precipitation.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "All ions became neutral atoms",
+          "misconceptionTag": "ions-become-neutral-atoms",
+          "rationale": "Precipitation forms an ionic solid; it does not require all dissolved ions to become neutral atoms."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "Temperature must have risen",
+          "misconceptionTag": "temperature-change-assumed",
+          "rationale": "Cloudiness after adding a common ion does not by itself establish that temperature rose."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "The solvent disappeared",
+          "misconceptionTag": "solvent-disappearance",
+          "rationale": "Precipitation does not mean the solvent disappeared; the observation is consistent with reduced solubility of the salt."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored unit-evidence-model misconception review"
+    },
+    "u7-md-1": {
+      "itemId": "u7-md-1",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "Why can macroscopic concentrations stay constant while reactions continue?",
+      "answerIndex": 0,
+      "correctRationale": "Equal opposing rates produce no net concentration change.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "All molecular motion stops",
+          "misconceptionTag": "equilibrium-motion-stops",
+          "rationale": "Molecules continue moving at dynamic equilibrium; constant concentrations arise from equal opposing rates."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "Reactants and products become identical",
+          "misconceptionTag": "reactant-product-identical",
+          "rationale": "Reactants and products remain chemically distinct species even when their concentrations are constant at equilibrium."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "No collisions occur",
+          "misconceptionTag": "equilibrium-no-collisions",
+          "rationale": "Collisions and microscopic reactions continue at equilibrium rather than stopping."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored unit-evidence-model misconception review"
+    },
+    "u7-md-2": {
+      "itemId": "u7-md-2",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "What does Le Châtelier's principle predict?",
+      "answerIndex": 0,
+      "correctRationale": "It is a qualitative response model for equilibrium disturbances.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "The exact reaction mechanism",
+          "misconceptionTag": "le-chatelier-exact-mechanism",
+          "rationale": "Le Châtelier's principle predicts qualitative equilibrium response, not the exact elementary reaction mechanism."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "The exact reaction rate constant",
+          "misconceptionTag": "le-chatelier-rate-constant",
+          "rationale": "The principle does not calculate an exact kinetic rate constant."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "The atomic masses",
+          "misconceptionTag": "le-chatelier-atomic-mass",
+          "rationale": "Atomic masses are nuclear/elemental properties and are unrelated to qualitative equilibrium-shift predictions."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored unit-evidence-model misconception review"
+    },
+    "u7-md-3": {
+      "itemId": "u7-md-3",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "Why can adding a common ion lower the solubility of a sparingly soluble salt?",
+      "answerIndex": 0,
+      "correctRationale": "The added ion changes equilibrium composition according to the common-ion effect.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "It removes all water molecules",
+          "misconceptionTag": "common-ion-removes-water",
+          "rationale": "Adding a common ion shifts an equilibrium; it does not work by removing all water molecules."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "It changes protons into neutrons",
+          "misconceptionTag": "common-ion-nuclear-change",
+          "rationale": "The common-ion effect is a chemical equilibrium phenomenon and does not convert protons into neutrons."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "It always increases temperature",
+          "misconceptionTag": "common-ion-always-heats",
+          "rationale": "A common ion can alter solubility without necessarily increasing temperature."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored unit-evidence-model misconception review"
+    },
+    "u8-ev-1": {
+      "itemId": "u8-ev-1",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "A solution conducts electricity and turns a suitable indicator acidic. What additional evidence is most useful before identifying the acid strength?",
+      "answerIndex": 0,
+      "correctRationale": "Acid strength requires quantitative equilibrium evidence, not just presence of acidity.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "The solution color alone",
+          "misconceptionTag": "color-alone-acid-strength",
+          "rationale": "Indicator color can show acidity over a range but does not by itself quantify acid strength."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "Container shape",
+          "misconceptionTag": "container-shape-irrelevant",
+          "rationale": "Container geometry does not identify acid strength in the solution."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "Sample mass without volume",
+          "misconceptionTag": "mass-without-volume-insufficient",
+          "rationale": "Sample mass without a defined volume or equilibrium measurement cannot establish acid strength."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored unit-evidence-model misconception review"
+    },
+    "u8-ev-2": {
+      "itemId": "u8-ev-2",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "A titration curve shows a sharp pH change near the stoichiometric point. What does the inflection region help identify?",
+      "answerIndex": 0,
+      "correctRationale": "The steep/inflection region helps locate the stoichiometric equivalence region.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "The molar mass directly",
+          "misconceptionTag": "titration-inflection-molar-mass",
+          "rationale": "The inflection region identifies the equivalence region, not molar mass directly."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "The exact reaction mechanism",
+          "misconceptionTag": "titration-curve-mechanism-overclaim",
+          "rationale": "A titration curve does not reveal an exact molecular reaction mechanism."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "The indicator color only",
+          "misconceptionTag": "equivalence-vs-indicator-color",
+          "rationale": "Indicator color can help locate an endpoint, but the curve's steep/inflection region is broader evidence for the equivalence region."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored unit-evidence-model misconception review"
+    },
+    "u8-ev-3": {
+      "itemId": "u8-ev-3",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "Two solutions receive the same small acid addition; one changes pH far less. What evidence does this provide?",
+      "answerIndex": 0,
+      "correctRationale": "Resistance to pH change is direct evidence of buffering capacity.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "Both have identical buffer capacity",
+          "misconceptionTag": "buffer-capacity-equality-contradicted",
+          "rationale": "Different pH responses to the same acid addition are direct evidence that the two solutions do not have identical buffering capacity under those conditions."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "pH cannot be measured",
+          "misconceptionTag": "ph-measurability-denied",
+          "rationale": "The comparison itself depends on measured pH change, so saying pH cannot be measured contradicts the evidence."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "The acid was not added",
+          "misconceptionTag": "acid-addition-denied",
+          "rationale": "The scenario specifies the same acid addition to both solutions; denying the addition ignores the experimental condition."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored unit-evidence-model misconception review"
+    },
+    "u8-md-1": {
+      "itemId": "u8-md-1",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "In the Brønsted–Lowry model, an acid is best described as",
+      "answerIndex": 0,
+      "correctRationale": "Brønsted–Lowry acids donate protons.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "An electron donor only",
+          "misconceptionTag": "bronsted-vs-electron-donor",
+          "rationale": "Electron donation describes a different acid-base framework and is not the Brønsted–Lowry definition of an acid."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "Any substance with oxygen",
+          "misconceptionTag": "oxygen-required-acid",
+          "rationale": "Brønsted–Lowry acids are defined by proton donation and need not contain oxygen."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "A neutral salt",
+          "misconceptionTag": "neutral-salt-as-acid",
+          "rationale": "A neutral salt is not automatically a proton donor and therefore is not necessarily a Brønsted acid."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored unit-evidence-model misconception review"
+    },
+    "u8-md-2": {
+      "itemId": "u8-md-2",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "Why is the pH scale logarithmic rather than linear?",
+      "answerIndex": 0,
+      "correctRationale": "A logarithmic scale compactly represents orders-of-magnitude concentration differences.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "Every acid has the same concentration",
+          "misconceptionTag": "same-acid-concentration-misconception",
+          "rationale": "Different acids and solutions can have very different hydrogen-ion concentrations; pH is logarithmic precisely because those concentrations span orders of magnitude."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "pH measures temperature",
+          "misconceptionTag": "ph-temperature-confusion",
+          "rationale": "pH measures hydrogen-ion activity/concentration behavior, not temperature."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "Logarithms eliminate units from all chemistry",
+          "misconceptionTag": "logarithms-remove-all-units-overclaim",
+          "rationale": "The logarithmic pH definition does not make units irrelevant throughout chemistry; it specifically compresses orders-of-magnitude hydrogen-ion variation."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored unit-evidence-model misconception review"
+    },
+    "u8-md-3": {
+      "itemId": "u8-md-3",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "How does a buffer resist a small acid addition?",
+      "answerIndex": 0,
+      "correctRationale": "A buffer pair consumes added acid/base and limits concentration change.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "It prevents any reaction",
+          "misconceptionTag": "buffer-prevents-all-reaction",
+          "rationale": "A buffer works by reacting with added acid/base; it does not prevent chemical reaction entirely."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "It converts all water to gas",
+          "misconceptionTag": "buffer-converts-water-to-gas",
+          "rationale": "Buffer action involves conjugate acid-base chemistry, not conversion of all water to gas."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "It fixes pH at exactly 7",
+          "misconceptionTag": "buffer-fixed-at-seven",
+          "rationale": "Buffers resist change around their operating range and are not required to hold pH exactly at 7."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored unit-evidence-model misconception review"
+    },
+    "u9-ev-1": {
+      "itemId": "u9-ev-1",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "A reaction has negative ΔG under specified conditions. What conclusion is supported?",
+      "answerIndex": 0,
+      "correctRationale": "ΔG addresses thermodynamic direction, not kinetic speed or safety.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "The reaction must be fast",
+          "misconceptionTag": "negative-deltag-means-fast",
+          "rationale": "Thermodynamic favorability does not determine reaction speed; a large activation barrier can make a favorable process slow."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "The reaction has zero activation energy",
+          "misconceptionTag": "negative-deltag-zero-barrier",
+          "rationale": "A favorable ΔG does not imply activation energy is zero."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "The products are always safe",
+          "misconceptionTag": "thermodynamic-favorability-safety",
+          "rationale": "Energetic favorability does not establish that products are safe or nonhazardous."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored unit-evidence-model misconception review"
+    },
+    "u9-ev-2": {
+      "itemId": "u9-ev-2",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "A galvanic cell produces a positive measured voltage under spontaneous operating conditions. What does this support?",
+      "answerIndex": 0,
+      "correctRationale": "Positive cell potential for the defined spontaneous direction is consistent with favorable redox energy conversion.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "No electron transfer",
+          "misconceptionTag": "positive-cell-voltage-no-electron-transfer",
+          "rationale": "A working galvanic cell voltage arises from a redox process involving electron transfer, so denying electron transfer contradicts the observation."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "A nonspontaneous cell by definition",
+          "misconceptionTag": "positive-cell-voltage-nonspontaneous",
+          "rationale": "For the defined galvanic direction, a positive cell potential is consistent with spontaneous thermodynamic driving force rather than nonspontaneity."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "Nuclear fission",
+          "misconceptionTag": "electrochemistry-vs-nuclear-fission",
+          "rationale": "Cell voltage from a galvanic setup is evidence of chemical redox energy conversion, not nuclear fission."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored unit-evidence-model misconception review"
+    },
+    "u9-ev-3": {
+      "itemId": "u9-ev-3",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "Repeated samples of the same isotope show the same fractional decay over equal time intervals. What model does this support?",
+      "answerIndex": 0,
+      "correctRationale": "Constant fractional decay over equal times is characteristic of exponential radioactive decay.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "Linear loss of a fixed mass each interval",
+          "misconceptionTag": "half-life-linear-loss-model",
+          "rationale": "A constant fractional loss over equal intervals supports exponential decay, not loss of a fixed mass each interval."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "No statistical variation",
+          "misconceptionTag": "radioactive-decay-no-variation",
+          "rationale": "Radioactive decay is statistical; the half-life model does not imply zero variation among finite samples."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "Chemical equilibrium",
+          "misconceptionTag": "half-life-vs-chemical-equilibrium",
+          "rationale": "Repeated fractional nuclear decay is not a chemical equilibrium process."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored unit-evidence-model misconception review"
+    },
+    "u9-md-1": {
+      "itemId": "u9-md-1",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "What does ΔG combine conceptually?",
+      "answerIndex": 0,
+      "correctRationale": "Gibbs free energy combines enthalpy and entropy-temperature contributions.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "Only reaction rate",
+          "misconceptionTag": "gibbs-vs-rate-only",
+          "rationale": "ΔG is a thermodynamic state-function combination and is not simply a reaction-rate measure."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "Only pressure",
+          "misconceptionTag": "gibbs-pressure-only",
+          "rationale": "Pressure can matter to thermodynamic states, but ΔG conceptually combines enthalpy and entropy-temperature contributions rather than pressure alone."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "Only atomic number",
+          "misconceptionTag": "gibbs-atomic-number",
+          "rationale": "Atomic number is a nuclear identity property and is not a component of Gibbs free energy."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored unit-evidence-model misconception review"
+    },
+    "u9-md-2": {
+      "itemId": "u9-md-2",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "What physically carries charge through the external wire of a simple galvanic cell?",
+      "answerIndex": 0,
+      "correctRationale": "Electrons move through the external electronic conductor.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "Protons moving through copper metal",
+          "misconceptionTag": "protons-in-metal-wire",
+          "rationale": "In an ordinary metallic external wire, electrons carry charge; protons do not flow through the copper lattice as the current carrier."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "Neutrons",
+          "misconceptionTag": "neutrons-carry-current",
+          "rationale": "Neutrons are electrically neutral and do not carry the external circuit current."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "Salt crystals",
+          "misconceptionTag": "salt-crystals-in-wire",
+          "rationale": "Salt ions move in the electrolyte/salt bridge where applicable, not as salt crystals carrying charge through the metallic wire."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored unit-evidence-model misconception review"
+    },
+    "u9-md-3": {
+      "itemId": "u9-md-3",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "Why is radioactive half-life largely unaffected by ordinary chemical conditions?",
+      "answerIndex": 0,
+      "correctRationale": "Radioactive decay originates in unstable nuclei and is largely independent of ordinary chemical bonding.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "Atoms stop moving",
+          "misconceptionTag": "nuclear-decay-motion-stops",
+          "rationale": "Radioactive half-life is not protected by atoms stopping motion; nuclear instability persists under ordinary conditions."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "Chemical bonds contain all nuclear energy",
+          "misconceptionTag": "chemical-bonds-contain-all-nuclear-energy",
+          "rationale": "Chemical bonds involve valence electrons and do not contain or control all nuclear decay energy/processes."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "Temperature is always zero",
+          "misconceptionTag": "temperature-zero-requirement",
+          "rationale": "Radioactive half-life does not require zero temperature and is largely insensitive to ordinary temperature changes."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored unit-evidence-model misconception review"
+    },
+    "cap-ev-1": {
+      "itemId": "cap-ev-1",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "A material has lower manufacturing emissions but much shorter service life. What evidence is needed for a fair sustainability comparison?",
+      "answerIndex": 0,
+      "correctRationale": "Lifecycle evidence prevents optimizing one stage while ignoring impacts elsewhere.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "Manufacturing emissions alone",
+          "misconceptionTag": "single-stage-lifecycle-boundary",
+          "rationale": "Manufacturing emissions alone can miss use-phase durability and end-of-life impacts, so it is too narrow for a fair lifecycle comparison."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "Color and brand",
+          "misconceptionTag": "aesthetic-brand-evidence",
+          "rationale": "Color and brand do not constitute lifecycle sustainability evidence."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "Purchase price only",
+          "misconceptionTag": "purchase-price-only-decision",
+          "rationale": "Purchase price alone omits environmental performance, service life, safety, and end-of-life impacts."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored unit-evidence-model misconception review"
+    },
+    "cap-ev-2": {
+      "itemId": "cap-ev-2",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "A capstone prototype meets four criteria but repeatedly violates a safety constraint. What conclusion is strongest?",
+      "answerIndex": 0,
+      "correctRationale": "Hard constraints must be satisfied regardless of weighted preference scores.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "The high criterion score overrides safety",
+          "misconceptionTag": "criteria-score-overrides-hard-constraint",
+          "rationale": "A high weighted score cannot compensate for violating a hard safety constraint."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "The constraint can be ignored if performance is high",
+          "misconceptionTag": "safety-constraint-ignored",
+          "rationale": "Ignoring a stated safety constraint makes the design unacceptable regardless of other performance."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "More trials are unnecessary",
+          "misconceptionTag": "repeatability-evidence-dismissed",
+          "rationale": "Repeated safety failures are evidence requiring revision; additional or corrective testing remains relevant."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored unit-evidence-model misconception review"
+    },
+    "cap-ev-3": {
+      "itemId": "cap-ev-3",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "Two revisions improve average performance, but one also doubles variability. Which evidence should guide selection?",
+      "answerIndex": 0,
+      "correctRationale": "Engineering evidence should include central performance and reliability/repeatability.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "Average alone",
+          "misconceptionTag": "average-only-reliability-blindness",
+          "rationale": "Average performance alone misses the doubled variability and therefore cannot assess reliability against criteria."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "The newest revision automatically",
+          "misconceptionTag": "newest-is-best-recency-bias",
+          "rationale": "A newer revision is not automatically superior; selection should be evidence-based."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "A single best trial",
+          "misconceptionTag": "single-best-trial-cherry-picking",
+          "rationale": "Choosing a revision from one best trial ignores repeatability and invites cherry-picking."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored unit-evidence-model misconception review"
+    },
+    "cap-md-1": {
+      "itemId": "cap-md-1",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "What is the role of weights in a decision matrix?",
+      "answerIndex": 0,
+      "correctRationale": "Weights encode priorities and should be justified.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "They prove one design is objectively best for all stakeholders",
+          "misconceptionTag": "weights-as-objective-proof",
+          "rationale": "Weights encode chosen priorities and do not prove one design is objectively best for every stakeholder."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "They replace constraints",
+          "misconceptionTag": "weights-replace-constraints",
+          "rationale": "Preference weights do not eliminate hard constraints that every acceptable design must satisfy."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "They remove uncertainty",
+          "misconceptionTag": "weights-remove-uncertainty",
+          "rationale": "Assigning weights does not remove uncertainty in measurements, impacts, or stakeholder priorities."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored unit-evidence-model misconception review"
+    },
+    "cap-md-2": {
+      "itemId": "cap-md-2",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "Why is a lifecycle model useful in sustainable chemistry?",
+      "answerIndex": 0,
+      "correctRationale": "Lifecycle thinking broadens the system boundary across production, use, and disposal/recovery.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "It guarantees zero environmental impact",
+          "misconceptionTag": "lifecycle-zero-impact-guarantee",
+          "rationale": "Lifecycle analysis broadens the system boundary but cannot guarantee zero environmental impact."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "It ignores resource extraction",
+          "misconceptionTag": "lifecycle-extraction-omitted",
+          "rationale": "Resource extraction is part of the lifecycle boundary and should not be ignored."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "It measures only laboratory yield",
+          "misconceptionTag": "lifecycle-lab-yield-only",
+          "rationale": "Laboratory yield is only one possible metric and does not capture production, use, and end-of-life impacts."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored unit-evidence-model misconception review"
+    },
+    "cap-md-3": {
+      "itemId": "cap-md-3",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "What does optimization mean in the capstone context?",
+      "answerIndex": 0,
+      "correctRationale": "Optimization is constrained and priority-dependent.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "Maximizing every variable simultaneously",
+          "misconceptionTag": "optimization-maximize-everything",
+          "rationale": "Real design variables and objectives conflict; optimization seeks the best feasible tradeoff rather than maximizing every variable simultaneously."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "Choosing the cheapest option automatically",
+          "misconceptionTag": "optimization-cheapest-only",
+          "rationale": "Cost may be one criterion, but optimization does not automatically choose the cheapest option when other priorities and constraints matter."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "Removing all tradeoffs",
+          "misconceptionTag": "optimization-removes-tradeoffs",
+          "rationale": "Optimization manages tradeoffs under constraints; it does not make all tradeoffs disappear."
+        }
+      ],
+      "reviewedAt": "2026-10-25",
+      "reviewMethod": "human-authored unit-evidence-model misconception review"
     }
   },
   "reviewedFamilies": [
@@ -8832,6 +9876,9 @@
     "mole calculations",
     "controlled kinetics inquiry",
     "Brønsted–Lowry acid identification",
-    "standalone evidence/model anchors"
-  ]
+    "standalone evidence/model anchors",
+    "U0–U9 evidence/model spine",
+    "capstone evidence/model spine"
+  ],
+  "distractorMappingRequired": true
 }
