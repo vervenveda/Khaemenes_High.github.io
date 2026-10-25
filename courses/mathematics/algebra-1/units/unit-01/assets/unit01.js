@@ -38,7 +38,7 @@ function bind(items,key){
  function fresh(){
   const previous=current.map(q=>q.id).join("|");
   let chosen=shuffle(questionBank);
-  if(key.startsWith("lesson-")&&chosen.length>8)chosen=chosen.slice(0,8);
+  if(key.startsWith("lesson-")&&chosen.length>10)chosen=chosen.slice(0,10);
   if(questionBank.length>chosen.length&&previous===chosen.map(q=>q.id).join("|"))chosen=shuffle(questionBank).slice(-chosen.length);
   current=chosen.map(q=>{
    const options=shuffle(q.options.map((text,i)=>({text,i})));
