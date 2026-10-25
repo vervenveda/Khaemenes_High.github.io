@@ -3,7 +3,7 @@
 const current=document.currentScript;
 const base=new URL(".",current?.src||location.href);
 const reviewedStatuses=new Set(["reviewed-v1","lesson-family-reviewed-v1"]);
-let status="loading",dedicated=new Map(),shared=new Map(),versions={dedicated:null,shared:null};
+let status="loading",dedicated=new Map(),late=new Map(),shared=new Map(),versions={dedicated:null,late:null,shared:null};
 function rows(json){return Array.isArray(json?.items)?json.items:Object.values(json?.items||{})}
 async function readJson(url){
  const response=await fetch(url,{cache:"no-cache"});
@@ -12,11 +12,13 @@ async function readJson(url){
 }
 const ready=Promise.all([
  readJson(new URL("../units/dedicated-assessment-misconceptions-v1.json",base)),
+ readJson(new URL("late-unit-misconceptions-v1.json",base)),
  readJson(new URL("assessment-misconceptions-v1.json",base))
-]).then(([d,s])=>{
+]).then(([d,l,s])=>{
  dedicated=new Map(rows(d).map(x=>[x.itemId,x]));
+ late=new Map(rows(l).map(x=>[x.itemId,x]));
  shared=new Map(rows(s).map(x=>[x.itemId,x]));
- versions={dedicated:d.schemaVersion||d.schema||"1",shared:s.schemaVersion||s.schema||"1"};
+ versions={dedicated:d.schemaVersion||d.schema||"1",late:l.schemaVersion||l.schema||"1",shared:s.schemaVersion||s.schema||"1"};
  status="ready";
  return true;
 }).catch(error=>{
@@ -25,11 +27,11 @@ const ready=Promise.all([
  return false;
 });
 function lookup(itemId,selectedOriginalIndex){
- const rec=dedicated.get(itemId)||shared.get(itemId);
+ const rec=dedicated.get(itemId)||late.get(itemId)||shared.get(itemId);
  if(!rec||!Number.isInteger(Number(selectedOriginalIndex)))return null;
  const distractor=(Array.isArray(rec.distractors)?rec.distractors:[]).find(x=>Number(x.optionIndex)===Number(selectedOriginalIndex));
  if(!distractor)return null;
- const source=dedicated.has(itemId)?"dedicated":"shared";
+ const source=dedicated.has(itemId)?"dedicated":late.has(itemId)?"late":"shared";
  return {
   itemId,
   misconceptionTag:distractor.misconceptionTag||null,
