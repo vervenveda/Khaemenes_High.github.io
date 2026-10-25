@@ -40,16 +40,21 @@ const lateById=new Map(lateRows.map(x=>[String(x.itemId),x]));
 const poolById=new Map(pool.map(q=>[String(q.id),q]));
 const reviewedStatuses=new Set(["reviewed-v1","lesson-family-reviewed-v1"]);
 
-assert.equal(lateRows.length,248,"late provisional misconception map count drift");
-assert.equal(late.provisionalItemCount,248,"late provisional metadata count drift");
-assert.equal(late.provisionalDistractorRationaleCount,744,"late provisional distractor count drift");
+assert.equal(lateRows.length,267,"late provisional misconception map count drift");
+assert.equal(late.provisionalItemCount,267,"late provisional metadata count drift");
+assert.equal(late.provisionalDistractorRationaleCount,801,"late provisional distractor count drift");
 assert.equal(late.lateFormalPoolItemCount,300,"late formal pool metadata drift");
-assert.equal(late.reviewedCoverageFromSharedMap,52,"reviewed shared coverage metadata drift");
-assert.equal([...lateById.keys()].filter(id=>sharedById.has(id)).length,0,"late provisional map must not duplicate shared-map records");
+assert.equal(late.reviewedCoverageFromSharedMap,33,"reviewed shared coverage metadata drift");
+const overrides=[...lateById.keys()].filter(id=>sharedById.has(id));
+assert.equal(overrides.length,19,"late provisional map must override exactly the 19 rebuilt Unit 11 ID collisions");
+for(const id of overrides){
+ const q=poolById.get(id),old=sharedById.get(id);
+ assert.ok(q&&old&&(old.prompt!==q.prompt||Number(old.answerIndex)!==Number(q.answer)||old.correctRationale!==q.explanation),id+": late override exists without active-content drift");
+}
 
 let reviewed=0,provisional=0,reviewedRationales=0,provisionalRationales=0;
 for(const q of pool){
- const id=String(q.id),rec=sharedById.get(id)||lateById.get(id);
+ const id=String(q.id),rec=lateById.get(id)||sharedById.get(id);
  assert.ok(rec,"late formal item missing misconception coverage: "+id);
  assert.equal(rec.prompt,q.prompt,id+": prompt drift");
  assert.equal(Number(rec.answerIndex),Number(q.answer),id+": answer-key drift");
@@ -69,10 +74,10 @@ for(const q of pool){
    provisional++;provisionalRationales+=ds.length;
  }
 }
-assert.equal(reviewed,52,"late reviewed misconception coverage drift");
-assert.equal(provisional,248,"late provisional misconception coverage drift");
+assert.equal(reviewed,33,"late reviewed misconception coverage drift");
+assert.equal(provisional,267,"late provisional misconception coverage drift");
 assert.equal(reviewedRationales,156,"late reviewed distractor rationale count drift");
-assert.equal(provisionalRationales,744,"late provisional distractor rationale count drift");
+assert.equal(provisionalRationales,801,"late provisional distractor rationale count drift");
 
 const resolver=read("assets/misconception-resolver-v1.js");
 for(const marker of [
@@ -109,4 +114,4 @@ for(const rel of ["service-worker.js","service-worker-precache-v1.js"]){
  assert.ok(src.includes("assets/late-unit-misconceptions-v1.json"),rel+" does not cache the late misconception map");
 }
 
-console.log("PASS Units 10–13 misconception coverage: 300/300 mapped = 52 reviewed + 248 provisional; learner-facing feedback remains reviewed-only");
+console.log("PASS Units 10–13 misconception coverage: 300/300 active items mapped = 33 exact reviewed + 267 provisional, including 19 stale-ID overrides; learner-facing feedback remains reviewed-only");
