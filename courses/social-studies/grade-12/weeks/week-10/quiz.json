@@ -2,116 +2,157 @@
   "title": "Week 10 Mastery Quiz · Voting, Representation, and Public Opinion",
   "questions": [
     {
-      "question": "Which definition best matches “franchise”?",
+      "id": "ss12-w10-transfer-v2-01",
+      "question": "A fictional survey reports 64% policy support from 400 online volunteers. What claim is appropriately limited?",
       "options": [
-        "A state with capacity and policy commitment to direct long-term development.",
-        "The legal right to vote.",
-        "Systematic comparison used to describe, classify, explain, or evaluate cases.",
-        "An approach emphasizing cooperation, institutions, interdependence, and domestic constraints."
+        "A sample of 400 respondents automatically yields a nationally representative margin of error.",
+        "Sampling bias and recruitment prevent treating this as a representative national estimate",
+        "The numerical estimate must be discarded because the sample was online.",
+        "The high observed support percentage compensates for self-selection bias."
       ],
       "answer": 1,
-      "explanation": "Franchise means the legal right to vote."
+      "explanation": "Sampling bias and recruitment prevent treating this as a representative national estimate",
+      "skill": "source-interpretation",
+      "sourceType": "fictional-instructional-stimulus",
+      "version": 2
     },
     {
-      "question": "Which definition best matches “turnout”?",
+      "id": "ss12-w10-transfer-v2-02",
+      "question": "A national poll estimates 52% support with an approximate 4-point sampling margin, ignoring other errors. Which interpretation is defensible?",
       "options": [
-        "Unequal conditions structured by historical and institutional racial classification.",
-        "Evidence or circumstances that would require changing a claim or plan.",
-        "Management of relations through communication, representation, negotiation, and agreement.",
-        "The share of eligible or registered voters who cast ballots."
-      ],
-      "answer": 3,
-      "explanation": "Turnout means the share of eligible or registered voters who cast ballots."
-    },
-    {
-      "question": "Which definition best matches “sample”?",
-      "options": [
-        "Standards protecting integrity, people, communities, and the accuracy of knowledge.",
-        "An assurance others believe will be honored despite future incentives to defect.",
-        "A subset studied to estimate characteristics of a larger population.",
-        "Rules and coordination addressing transnational issues without a world government."
+        "Support is exactly 52%",
+        "Support certainly exceeds 50%",
+        "The estimate is uncertain and alone does not establish support above 50%",
+        "Every respondent supports the policy"
       ],
       "answer": 2,
-      "explanation": "Sample means a subset studied to estimate characteristics of a larger population."
+      "explanation": "The estimate is uncertain and alone does not establish support above 50%",
+      "skill": "sampling-and-measurement",
+      "sourceType": "fictional-instructional-stimulus",
+      "version": 2
     },
     {
-      "question": "Which definition best matches “margin of error”?",
+      "id": "ss12-w10-transfer-v2-03",
+      "question": "District A has 900 registered voters and 630 votes cast; B has 1,200 registered voters and 660 cast. Which comparison is accurate?",
       "options": [
-        "An estimate of sampling uncertainty around a survey result.",
-        "Historically shaped assumptions about security, force, risk, and international role.",
-        "Requirements attached to financial assistance, membership, or cooperation.",
-        "Systematic collection and evaluation of evidence about rights conditions."
+        "A turnout is 70% and B turnout is 55%",
+        "A turnout is 55% and B is 70%",
+        "Both have 65% turnout",
+        "A turnout is 30% and B is 45%"
       ],
       "answer": 0,
-      "explanation": "Margin of error means an estimate of sampling uncertainty around a survey result."
+      "explanation": "A turnout is 70% and B turnout is 55%",
+      "skill": "quantitative-transfer",
+      "sourceType": "fictional-instructional-stimulus",
+      "version": 2
     },
     {
-      "question": "Which definition best matches “representation”?",
+      "id": "ss12-w10-transfer-v2-04",
+      "question": "A registration law changes two months before voting. Which records best test its participation effects?",
       "options": [
-        "An arrangement treating aggression against one as a concern of all.",
-        "A test asking whether a restriction is suitable, necessary, and balanced.",
-        "The process by which officials act for people, places, groups, or interests.",
-        "Deprivation measured in relation to prevailing standards in a society."
-      ],
-      "answer": 2,
-      "explanation": "Representation means the process by which officials act for people, places, groups, or interests."
-    },
-    {
-      "question": "Which definition best matches “political efficacy”?",
-      "options": [
-        "Belief that participation can matter and institutions may respond.",
-        "Expansion of people’s capabilities, health, education, and meaningful choices.",
-        "A fundamental entitlement claimed for every person by virtue of being human.",
-        "Fair distribution of environmental benefits, burdens, participation, and remedies."
-      ],
-      "answer": 0,
-      "explanation": "Political efficacy means belief that participation can matter and institutions may respond."
-    },
-    {
-      "question": "Which statement is most consistent with the Week 10 analysis?",
-      "options": [
-        "The most confident source should be accepted without examining authority or method.",
-        "A single vivid example proves a universal conclusion without qualification.",
-        "Participation rates depend partly on institutional design and social conditions.",
-        "Political labels have exactly the same meaning in every country and period."
-      ],
-      "answer": 2,
-      "explanation": "Participation rates depend partly on institutional design and social conditions."
-    },
-    {
-      "question": "Which statement is most consistent with the Week 10 analysis?",
-      "options": [
-        "The most confident source should be accepted without examining authority or method.",
-        "Political labels have exactly the same meaning in every country and period.",
-        "A single vivid example proves a universal conclusion without qualification.",
-        "Survey results require attention to sampling, question wording, timing, and nonresponse."
+        "Only the law's title",
+        "Only candidate speeches",
+        "Only past election winners",
+        "Registration trends, rejected applications, demographic coverage, and administrative capacity"
       ],
       "answer": 3,
-      "explanation": "Survey results require attention to sampling, question wording, timing, and nonresponse."
+      "explanation": "Registration trends, rejected applications, demographic coverage, and administrative capacity",
+      "skill": "institutional-reasoning",
+      "sourceType": "fictional-instructional-stimulus",
+      "version": 2
     },
     {
-      "question": "Which research practice is most appropriate for Voting, Representation, and Public Opinion?",
+      "id": "ss12-w10-transfer-v2-05",
+      "question": "A fictional election offers voting to all adults by law, but polling sites are inaccessible to disabled residents. What does the case show?",
       "options": [
-        "Choose only evidence that supports the preferred conclusion.",
-        "Trace claims to Election administration data, public-opinion methodology reports, and representation statistics, evaluate authority and context, corroborate material facts, and state limitations.",
-        "Replace documentary evidence with political identity or intuition.",
-        "Use the first search result and treat its summary as conclusive."
+        "Formal franchise alone guarantees equal opportunity",
+        "Practical accessibility must be evaluated alongside legal eligibility",
+        "Accessibility is unrelated to turnout",
+        "Only ballots counted matter"
       ],
       "answer": 1,
-      "explanation": "Trace claims to Election administration data, public-opinion methodology reports, and representation statistics, evaluate authority and context, corroborate material facts, and state limitations."
+      "explanation": "Practical accessibility must be evaluated alongside legal eligibility",
+      "skill": "rights-in-practice",
+      "sourceType": "fictional-instructional-stimulus",
+      "version": 2
     },
     {
-      "question": "Which response most clearly demonstrates senior-level mastery?",
+      "id": "ss12-w10-transfer-v2-06",
+      "question": "A survey underrepresents rural respondents and weights them upward. What information is necessary to judge the correction?",
       "options": [
-        "Define the terms, compare evidence, explain reasoning, address a serious alternative, and name a revision condition.",
-        "Use a slogan as the conclusion and omit uncertainties.",
-        "List facts without connecting them to a claim.",
-        "Treat legal, causal, and moral claims as interchangeable."
+        "The survey logo",
+        "The newest news headline",
+        "Sampling method, weighting variables, effective sample size, and design effects",
+        "Whether respondents voted in the past"
+      ],
+      "answer": 2,
+      "explanation": "Sampling method, weighting variables, effective sample size, and design effects",
+      "skill": "methods",
+      "sourceType": "fictional-instructional-stimulus",
+      "version": 2
+    },
+    {
+      "id": "ss12-w10-transfer-v2-07",
+      "question": "Poll A asks 'Do you support a necessary security law?' while Poll B asks 'Do you support expanded state surveillance?' What is the central concern?",
+      "options": [
+        "Question wording and framing may affect responses, even when referring to a related proposal",
+        "The polls are necessarily identical",
+        "Neither poll can be published",
+        "The larger font is more reliable"
       ],
       "answer": 0,
-      "explanation": "Define the terms, compare evidence, explain reasoning, address a serious alternative, and name a revision condition."
+      "explanation": "Question wording and framing may affect responses, even when referring to a related proposal",
+      "skill": "framing-analysis",
+      "sourceType": "fictional-instructional-stimulus",
+      "version": 2
+    },
+    {
+      "id": "ss12-w10-transfer-v2-08",
+      "question": "Turnout rises from 60% to 72%, but voter eligibility rules change. What additional analysis is required?",
+      "options": [
+        "Only seat totals",
+        "A partisan endorsement",
+        "Only a new poll",
+        "Compare eligible populations, rule changes, and comparable turnout denominators"
+      ],
+      "answer": 3,
+      "explanation": "Compare eligible populations, rule changes, and comparable turnout denominators",
+      "skill": "causal-limits",
+      "sourceType": "fictional-instructional-stimulus",
+      "version": 2
+    },
+    {
+      "id": "ss12-w10-transfer-v2-09",
+      "question": "A movement claims young people have no political voice because they hold few elected offices. What richer measure is needed?",
+      "options": [
+        "Only ages of cabinet ministers",
+        "Participation in organizing, policy consultation, voting, representation, and institutional responsiveness",
+        "Only social media posts",
+        "A slogan about generation"
+      ],
+      "answer": 1,
+      "explanation": "Participation in organizing, policy consultation, voting, representation, and institutional responsiveness",
+      "skill": "verification",
+      "sourceType": "fictional-instructional-stimulus",
+      "version": 2
+    },
+    {
+      "id": "ss12-w10-transfer-v2-10",
+      "question": "A government reports public approval from telephone surveys, but many residents have no phone access. Which limitation is most relevant?",
+      "options": [
+        "A survey can have no limitations",
+        "Only translations matter",
+        "Coverage bias may systematically exclude part of the population",
+        "Every telephone response is false"
+      ],
+      "answer": 2,
+      "explanation": "Coverage bias may systematically exclude part of the population",
+      "skill": "synthesis",
+      "sourceType": "fictional-instructional-stimulus",
+      "version": 2
     }
   ],
   "shortResponse": "How can citizens and analysts determine whether political participation is meaningful, equal, informed, and representative?",
-  "rubric": "10 points: precise claim (2), accurate concepts (2), two specific pieces of evidence (2), reasoning (2), counterargument or limitation (1), revision condition (1)."
+  "rubric": "10 points: precise claim (2), accurate concepts (2), two specific pieces of evidence (2), reasoning (2), counterargument or limitation (1), revision condition (1).",
+  "bankVersion": "transfer-v3"
 }
