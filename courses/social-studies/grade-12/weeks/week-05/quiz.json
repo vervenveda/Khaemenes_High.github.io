@@ -2,116 +2,157 @@
   "title": "Week 5 Mastery Quiz · Regimes, Democracy, and Authoritarianism",
   "questions": [
     {
-      "question": "Which definition best matches “regime”?",
+      "id": "ss12-w05-transfer-v2-01",
+      "question": "Simulated election record: Party A wins 54% of votes but 82% of seats under district plurality rules. What can be concluded?",
       "options": [
-        "The durable rules and institutions governing access to and exercise of political power.",
-        "Rules converting votes into offices or seats.",
-        "An organization seeking to influence public decisions without directly becoming the government.",
-        "The statutory distribution of powers to Scotland, Wales, and Northern Ireland."
+        "The system translated votes into a disproportionate seat share; fairness needs further institutional analysis",
+        "The disproportionate seat share independently establishes ballot-count manipulation.",
+        "Because Party A gained more than half the votes, it is entitled to every seat.",
+        "District-level plurality counts require no further evidence about geographic vote distribution."
       ],
       "answer": 0,
-      "explanation": "Regime means the durable rules and institutions governing access to and exercise of political power."
+      "explanation": "The system translated votes into a disproportionate seat share; fairness needs further institutional analysis",
+      "skill": "electoral-data",
+      "sourceType": "fictional-instructional-stimulus",
+      "version": 2
     },
     {
-      "question": "Which definition best matches “democracy”?",
+      "id": "ss12-w05-transfer-v2-02",
+      "question": "A fictional state holds regular elections but bans independent opposition newspapers. Which additional regime dimension is most directly at issue?",
       "options": [
-        "A system in which citizens meaningfully choose leaders and can contest public power.",
-        "Belief that participation can matter and institutions may respond.",
-        "A Leninist principle combining internal discussion with enforced unity after a decision.",
-        "The principle that Parliament is the supreme lawmaking authority in the UK constitutional order."
-      ],
-      "answer": 0,
-      "explanation": "Democracy means a system in which citizens meaningfully choose leaders and can contest public power."
-    },
-    {
-      "question": "Which definition best matches “authoritarianism”?",
-      "options": [
-        "Systematic comparison used to describe, classify, explain, or evaluate cases.",
-        "Selection and presentation that shape how an issue is interpreted.",
-        "Rule that sharply restricts political competition, accountability, or civil liberty.",
-        "A state with capacity and policy commitment to direct long-term development."
-      ],
-      "answer": 2,
-      "explanation": "Authoritarianism means rule that sharply restricts political competition, accountability, or civil liberty."
-    },
-    {
-      "question": "Which definition best matches “rule of law”?",
-      "options": [
-        "Unequal conditions structured by historical and institutional racial classification.",
-        "Evidence or circumstances that would require changing a claim or plan.",
-        "The principle that public and private actors are governed by known, generally applicable law.",
-        "An alliance of parties or groups cooperating to govern or pursue policy."
-      ],
-      "answer": 2,
-      "explanation": "Rule of law means the principle that public and private actors are governed by known, generally applicable law."
-    },
-    {
-      "question": "Which definition best matches “accountability”?",
-      "options": [
-        "The obligation to explain conduct and face consequences for misuse or failure.",
-        "Presidential governance dependent on multiparty legislative coalitions.",
-        "Standards protecting integrity, people, communities, and the accuracy of knowledge.",
-        "An assurance others believe will be honored despite future incentives to defect."
-      ],
-      "answer": 0,
-      "explanation": "Accountability means the obligation to explain conduct and face consequences for misuse or failure."
-    },
-    {
-      "question": "Which definition best matches “democratic erosion”?",
-      "options": [
-        "Incremental weakening of competitive elections, rights, checks, or lawful accountability.",
-        "Historically shaped assumptions about security, force, risk, and international role.",
-        "Requirements attached to financial assistance, membership, or cooperation.",
-        "Whether a project can be completed ethically with available time, evidence, and skills."
-      ],
-      "answer": 0,
-      "explanation": "Democratic erosion means incremental weakening of competitive elections, rights, checks, or lawful accountability."
-    },
-    {
-      "question": "Which statement is most consistent with the Week 5 analysis?",
-      "options": [
-        "A single vivid example proves a universal conclusion without qualification.",
-        "Elections alone do not establish a constitutional democracy.",
-        "The most confident source should be accepted without examining authority or method.",
-        "Political labels have exactly the same meaning in every country and period."
+        "National population",
+        "Civil liberties and meaningful political competition",
+        "Whether the constitution has a preamble",
+        "The number of official holidays"
       ],
       "answer": 1,
-      "explanation": "Elections alone do not establish a constitutional democracy."
+      "explanation": "Civil liberties and meaningful political competition",
+      "skill": "regime-classification",
+      "sourceType": "fictional-instructional-stimulus",
+      "version": 2
     },
     {
-      "question": "Why is a multidimensional framework more useful than a single spectrum when classifying political regimes?",
+      "id": "ss12-w05-transfer-v2-03",
+      "question": "Document A reports 80% turnout; Document B documents opposition candidate exclusions. What is the defensible synthesis?",
       "options": [
-        "A single vivid example proves a universal conclusion without qualification.",
-        "The most confident source should be accepted without examining authority or method.",
-        "Political labels have exactly the same meaning in every country and period.",
-        "Regimes vary across multiple dimensions rather than a single democracy–dictatorship line."
+        "Turnout proves a liberal democracy",
+        "Excluded candidates prove that nobody voted",
+        "Participation and competition measure distinct conditions; evaluate both",
+        "No comparison is possible"
+      ],
+      "answer": 2,
+      "explanation": "Participation and competition measure distinct conditions; evaluate both",
+      "skill": "corroboration",
+      "sourceType": "fictional-instructional-stimulus",
+      "version": 2
+    },
+    {
+      "id": "ss12-w05-transfer-v2-04",
+      "question": "Simulated 12-year institutional timeline: elected officials increasingly ignore adverse court decisions. Which trend does this best suggest?",
+      "options": [
+        "Growth in judicial independence",
+        "A guaranteed coup",
+        "Proof of constitutional amendment",
+        "Potential erosion of checks and accountability requiring corroboration"
       ],
       "answer": 3,
-      "explanation": "Regimes vary across multiple dimensions rather than a single democracy–dictatorship line."
+      "explanation": "Potential erosion of checks and accountability requiring corroboration",
+      "skill": "democratic-erosion",
+      "sourceType": "fictional-instructional-stimulus",
+      "version": 2
     },
     {
-      "question": "Which research practice is most appropriate for Regimes, Democracy, and Authoritarianism?",
+      "id": "ss12-w05-transfer-v2-05",
+      "question": "A state constitution guarantees assembly rights, while verified municipal ordinances prohibit peaceful gatherings. What question comes first?",
       "options": [
-        "Replace documentary evidence with political identity or intuition.",
-        "Use the first search result and treat its summary as conclusive.",
-        "Trace claims to Freedom House methodology, V-Dem indicators, constitutional rules, and election-observer reports, evaluate authority and context, corroborate material facts, and state limitations.",
-        "Choose only evidence that supports the preferred conclusion."
+        "Whether legal guarantees are meaningfully implemented and enforceable",
+        "Whether the flag has changed",
+        "How many parties use the word freedom",
+        "Whether assembly rights appear in a textbook"
       ],
-      "answer": 2,
-      "explanation": "Trace claims to Freedom House methodology, V-Dem indicators, constitutional rules, and election-observer reports, evaluate authority and context, corroborate material facts, and state limitations."
+      "answer": 0,
+      "explanation": "Whether legal guarantees are meaningfully implemented and enforceable",
+      "skill": "rights-implementation",
+      "sourceType": "fictional-instructional-stimulus",
+      "version": 2
     },
     {
-      "question": "Which response most clearly demonstrates senior-level mastery?",
+      "id": "ss12-w05-transfer-v2-06",
+      "question": "Two authoritarian systems differ: one is dominated by a military council and another by a single family. Which evidence distinguishes the mechanisms?",
       "options": [
-        "Use a slogan as the conclusion and omit uncertainties.",
-        "List facts without connecting them to a claim.",
-        "Define the terms, compare evidence, explain reasoning, address a serious alternative, and name a revision condition.",
-        "Treat legal, causal, and moral claims as interchangeable."
+        "Climate data",
+        "Decision-making appointments, coercive organizations, and succession records",
+        "Only voting age",
+        "The national anthem"
+      ],
+      "answer": 1,
+      "explanation": "Decision-making appointments, coercive organizations, and succession records",
+      "skill": "institutional-comparison",
+      "sourceType": "fictional-instructional-stimulus",
+      "version": 2
+    },
+    {
+      "id": "ss12-w05-transfer-v2-07",
+      "question": "An election-monitoring report covers only urban polling sites. Which limitation matters for a national fairness claim?",
+      "options": [
+        "There are no relevant limitations",
+        "Urban results must match rural ones",
+        "Geographic coverage may miss rural irregularities or distinct conditions",
+        "Observers always know every outcome"
       ],
       "answer": 2,
-      "explanation": "Define the terms, compare evidence, explain reasoning, address a serious alternative, and name a revision condition."
+      "explanation": "Geographic coverage may miss rural irregularities or distinct conditions",
+      "skill": "sampling",
+      "sourceType": "fictional-instructional-stimulus",
+      "version": 2
+    },
+    {
+      "id": "ss12-w05-transfer-v2-08",
+      "question": "Fictional policy record: the election commission is legally independent but its budget is controlled by the incumbent cabinet. What must an analyst investigate?",
+      "options": [
+        "Only its official name",
+        "Whether its offices have security guards",
+        "The number of ballot colors",
+        "Whether financial control affects operational autonomy and enforcement"
+      ],
+      "answer": 3,
+      "explanation": "Whether financial control affects operational autonomy and enforcement",
+      "skill": "institutional-independence",
+      "sourceType": "fictional-instructional-stimulus",
+      "version": 2
+    },
+    {
+      "id": "ss12-w05-transfer-v2-09",
+      "question": "A historian compares a 1990 decree and 2020 election law but omits interim amendments. What is the strongest correction?",
+      "options": [
+        "Reconstruct the legal chronology before asserting continuity or change",
+        "Treat the newer law as unchanged by definition",
+        "Use slogans to fill the gap",
+        "Remove all dates"
+      ],
+      "answer": 0,
+      "explanation": "Reconstruct the legal chronology before asserting continuity or change",
+      "skill": "chronology",
+      "sourceType": "fictional-instructional-stimulus",
+      "version": 2
+    },
+    {
+      "id": "ss12-w05-transfer-v2-10",
+      "question": "A government cites high economic growth as proof that its elections are competitive. Which analytical correction is appropriate?",
+      "options": [
+        "Growth proves electoral integrity",
+        "Economic performance and political competition require separate evidence",
+        "Competitive elections always lower growth",
+        "One indicator measures all regime dimensions"
+      ],
+      "answer": 1,
+      "explanation": "Economic performance and political competition require separate evidence",
+      "skill": "indicator-validity",
+      "sourceType": "fictional-instructional-stimulus",
+      "version": 2
     }
   ],
   "shortResponse": "Which institutional evidence distinguishes democracy, hybrid regimes, and authoritarian rule?",
-  "rubric": "10 points: precise claim (2), accurate concepts (2), two specific pieces of evidence (2), reasoning (2), counterargument or limitation (1), revision condition (1)."
+  "rubric": "10 points: precise claim (2), accurate concepts (2), two specific pieces of evidence (2), reasoning (2), counterargument or limitation (1), revision condition (1).",
+  "bankVersion": "transfer-v3"
 }
