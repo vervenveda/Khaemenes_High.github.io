@@ -20,7 +20,14 @@ function buildDraft(){
  const d=day();
  const draft={version:1,learnerId:id,grade:grade(),week:week(),day:d,course:course(),title,sourceUrl:location.href,createdAt:new Date().toISOString(),question:objective,method:"",evidence:"",analysis:"",claim:"",limitations:"",next:""};
  const cid=draft.course;
- if(cid==="chemistry-11"){
+ if(cid==="physics-engineering-12"){
+  if(d===1){draft.question=objective;draft.analysis=main;draft.limitations=thought;draft.evidence=main}
+  else if(d===2){draft.analysis=main;draft.evidence=main;draft.limitations=thought}
+  else if(d===3){draft.analysis=main;draft.evidence=main;draft.limitations=thought}
+  else if(d===4){draft.prediction=main;draft.variables=main;draft.method=main;draft.analysis=main;draft.evidence=main;draft.limitations=thought}
+  else if(d===5){draft.claim=main;draft.analysis=main;draft.evidence=main;draft.limitations=thought;draft.next=thought}
+  else{draft.evidence=main;draft.limitations=thought}
+ }else if(cid==="chemistry-11"){
   if(d===1){draft.prediction=main;draft.variables=main;draft.limitations=thought;draft.evidence=main}
   else if(d===2){draft.method=main;draft.analysis=main;draft.limitations=thought}
   else if(d===3){draft.analysis=main;draft.evidence=main;draft.limitations=thought}
