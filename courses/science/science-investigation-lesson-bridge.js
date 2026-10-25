@@ -12,7 +12,7 @@ function grade(){
  if(m)return Number(m[1]);
  return location.pathname.toLowerCase().includes("/integrated-science-9/")?9:0;
 }
-function week(){const m=(document.querySelector(".eyebrow")?.textContent||"").match(/Week\s+(\d{1,2})/i);return m?Number(m[1]):0}
+function week(){const m=(document.querySelector(".eyebrow")?.textContent||"").match(/Week\s+(\d{1,2})/i);return m?Number(m[1]):0}\nfunction unit(){const m=location.pathname.match(/unit-(\\d{1,2})/i);return m?Number(m[1]):0}
 function day(){
  const direct=Number(document.body?.dataset?.day);if(direct)return direct;
  const m=(document.querySelector(".eyebrow")?.textContent||document.title||"").match(/Day\s*(\d{1,2})/i);
