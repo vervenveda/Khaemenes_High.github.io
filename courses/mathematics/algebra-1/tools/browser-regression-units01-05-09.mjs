@@ -83,7 +83,7 @@ const cases=[
    unit:"01",
    file:"lesson-01-algebraic-habits-notation-mathematical-argument.html",
    key:"khaemenes-algebra1-unit01-a3-v1",
-   runtime:"unit01"
+   runtime:"abundant-v2"
  },
  {
    unit:"05",
@@ -165,12 +165,24 @@ for(const test of cases){
   assert.equal(a1.total,10,`Unit ${test.unit}: first attempt did not grade 10 items`);
   assert.equal(a1.answerSnapshot?.length,10,`Unit ${test.unit}: answerSnapshot missing or incomplete`);
 
-  if(test.runtime==="dedicated-v2"){
+  if(test.runtime==="dedicated-v2"||test.runtime==="abundant-v2"){
     assert.equal(a1.formVersion,"algebra1-runtime-balanced-v2",`Unit ${test.unit}: runtime form version missing`);
     assert.ok(a1.answerSnapshot.every(x=>Number.isInteger(x.selectedDisplayIndex)&&Number.isInteger(x.selectedOriginalIndex)&&Number.isInteger(x.correctDisplayIndex)&&Number.isInteger(x.correctOriginalIndex)),`Unit ${test.unit}: delivered/original answer mapping incomplete`);
     const counts=distribution(a1.answerSnapshot.map(x=>x.correctDisplayIndex));
     assert.ok(Math.max(...counts)-Math.min(...counts)<=1,`Unit ${test.unit}: learner-visible correct positions are not balanced: ${counts.join("/")}`);
     assert.deepEqual(a1.formSources,["dedicated"],`Unit ${test.unit}: first form should use dedicated items only`);
+    const wrong=a1.answerSnapshot.filter(x=>x.selectedDisplayIndex!==x.correctDisplayIndex);
+    assert.ok(wrong.length>0,`Unit ${test.unit}: representative first form did not exercise wrong-answer feedback`);
+    assert.ok(wrong.every(x=>x.misconceptionTag&&x.misconceptionMapVersion&&x.misconceptionMapSource==="dedicated"&&x.misconceptionLearnerFeedback===true),`Unit ${test.unit}: reviewed wrong-answer misconception evidence is incomplete`);
+    const misconceptionFeedback=await page.locator(".feedback.bad").allTextContents();
+    assert.equal(misconceptionFeedback.length,wrong.length,`Unit ${test.unit}: wrong-answer feedback count does not match saved evidence`);
+    assert.ok(misconceptionFeedback.every(text=>/Misconception check:/i.test(text)),`Unit ${test.unit}: reviewed misconception correction was not shown to the learner`);
+  }
+  if(test.runtime==="abundant-v2"){
+    assert.equal(a1.evidenceSchema,"algebra1-answer-evidence-v2",`Unit ${test.unit}: answer evidence schema missing`);
+    assert.equal(a1.bankVersion,"unit01-abundant-v1",`Unit ${test.unit}: abundant bank version missing`);
+    assert.equal(a1.selectionPolicy,"blueprint-low-overlap-v1",`Unit ${test.unit}: selection policy missing`);
+    assert.equal(a1.eligiblePoolSize,30,`Unit ${test.unit}: expected 30 eligible questions for Lesson 01`);
   }
 
   await retry.click();
@@ -182,6 +194,10 @@ for(const test of cases){
     const changed=retakePrompts.filter((p,i)=>p!==initialPrompts[i]).length;
     assert.ok(changed>0,`Unit ${test.unit}: retake did not change delivered question form`);
     assert.match(await page.locator("#result").innerText(),/aligned alternate items included/i,`Unit ${test.unit}: retake does not report aligned alternate items`);
+  }else if(test.runtime==="abundant-v2"){
+    const changed=retakePrompts.filter((p,i)=>p!==initialPrompts[i]).length;
+    assert.ok(changed>0,`Unit ${test.unit}: abundant retake did not change delivered question form`);
+    assert.match(await page.locator("#result").innerText(),/blueprint-balanced questions from 30 eligible items/i,`Unit ${test.unit}: retake does not report the 30-item abundant pool`);
   }else{
     const changed=retakePrompts.some((p,i)=>p!==initialPrompts[i])||retakeFirstOptions.some((p,i)=>p!==initialFirstOptions[i]);
     assert.ok(changed,`Unit ${test.unit}: retake did not randomize question/choice delivery`);
@@ -197,6 +213,14 @@ for(const test of cases){
     assert.ok(secondRecord.attempts[1].formSources.includes("aligned-alternate"),`Unit ${test.unit}: retake evidence does not identify aligned alternates`);
     assert.ok(new Set(secondRecord.attempts[0].items).size===10&&new Set(secondRecord.attempts[1].items).size===10,`Unit ${test.unit}: form item IDs are not stable/unique`);
     assert.notDeepEqual(secondRecord.attempts[0].items,secondRecord.attempts[1].items,`Unit ${test.unit}: retake item set/order is identical to first attempt`);
+  }
+  if(test.runtime==="abundant-v2"){
+    const firstIds=new Set(secondRecord.attempts[0].items);
+    const overlap=secondRecord.attempts[1].items.filter(id=>firstIds.has(id)).length;
+    assert.ok(overlap<=2,`Unit ${test.unit}: abundant retake repeated ${overlap}/10 items from the immediately prior form`);
+    assert.equal(secondRecord.attempts[1].eligiblePoolSize,30,`Unit ${test.unit}: retake evidence lost eligible-pool size`);
+    assert.equal(secondRecord.attempts[1].selectionPolicy,"blueprint-low-overlap-v1",`Unit ${test.unit}: retake evidence lost selection policy`);
+    assert.ok(new Set(secondRecord.attempts[1].items).size===10,`Unit ${test.unit}: retake item IDs are not unique`);
   }
 
   const bestBeforeReload=secondRecord.best?.["lesson-1"];
@@ -229,8 +253,10 @@ console.log(JSON.stringify({
   checks:[
     "10-question first form",
     "submit and immutable lock",
-    "answerSnapshot persistence",
-    "balanced learner-visible positions for dedicated-v2 units",
+    "answerSnapshot persistence with delivered/original option identity",
+    "reviewed misconception-aware learner feedback on wrong answers",
+    "balanced learner-visible correct positions",
+    "Unit 01 30-item abundant pool with low-overlap blueprint retake",
     "fresh retake with aligned alternates for Units 05 and 09",
     "reload preserves attempt history and best score",
     "no browser/page console errors"
