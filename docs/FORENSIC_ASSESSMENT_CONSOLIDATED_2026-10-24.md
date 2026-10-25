@@ -156,7 +156,7 @@ and:
 
 The Playwright/Chromium journey opens the actual representative Unit 01, Unit 05, and Unit 09 lesson pages and verifies first attempt → submit → immutable answer lock → fresh retake → saved evidence → reload. The workflow also runs the runtime-bank and dedicated-misconception validators before browser execution, so a source-contract failure prevents a misleading browser PASS.
 
-**Certified browser run 40167547597: PASS.** Unit 01, Unit 05, and Unit 09 each rendered ten-question first forms and ten-question retakes, preserved two attempts through reload, and produced no browser/page console errors. Unit 05 and Unit 09 retakes explicitly contained both dedicated and aligned-alternate items.
+**Certified integrated run 40167818241: PASS.** The consolidated forensic instrument reported **PASS WITH WARNINGS · 33 PASS / 2 WARN / 0 FAIL**, followed by a successful real-browser regression. Unit 01, Unit 05, and Unit 09 each rendered ten-question first forms and ten-question retakes, preserved two attempts through reload, and produced no browser/page console errors. Unit 05 and Unit 09 retakes explicitly contained both dedicated and aligned-alternate items.
 
 ## 4. Upper Science
 
