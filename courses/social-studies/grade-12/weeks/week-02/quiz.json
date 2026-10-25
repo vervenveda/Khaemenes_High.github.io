@@ -2,116 +2,157 @@
   "title": "Week 2 Mastery Quiz · Evidence, Methodology, and Academic Integrity",
   "questions": [
     {
-      "question": "Which definition best matches “authority”?",
+      "id": "ss12-w02-transfer-v2-01",
+      "question": "A student paraphrases three sentences from a report but cites only the agency name, not the exact report. What repair makes the claim auditable?",
       "options": [
-        "The principle that public and private actors are governed by known, generally applicable law.",
-        "Organizations and officials that administer laws and public programs.",
-        "A minimum share of votes required to qualify for representation.",
-        "The expertise, responsibility, or firsthand access that makes a source relevant."
-      ],
-      "answer": 3,
-      "explanation": "Authority means the expertise, responsibility, or firsthand access that makes a source relevant."
-    },
-    {
-      "question": "Which definition best matches “corroboration”?",
-      "options": [
-        "A set of familiar strategies used by movements or political actors.",
-        "A system in which the executive depends on legislative confidence.",
-        "The number of representatives elected from a district.",
-        "Independent evidence that supports, qualifies, or contradicts a claim."
-      ],
-      "answer": 3,
-      "explanation": "Corroboration means independent evidence that supports, qualifies, or contradicts a claim."
-    },
-    {
-      "question": "Which definition best matches “triangulation”?",
-      "options": [
-        "Using different sources or methods to examine the same question.",
-        "A rule in which the candidate with the most votes wins, even without a majority.",
-        "A sustained collective effort seeking social, cultural, or political change.",
-        "Mexico’s six-year presidential term without immediate reelection."
-      ],
-      "answer": 0,
-      "explanation": "Triangulation means using different sources or methods to examine the same question."
-    },
-    {
-      "question": "Which definition best matches “plagiarism”?",
-      "options": [
-        "A politically binding practice not ordinarily enforced as a legal rule.",
-        "Voluntary organizations and networks operating between private life, markets, and the state.",
-        "Concentration of authority around an individual leader rather than autonomous institutions.",
-        "Presenting another person’s words, ideas, or work as one’s own."
-      ],
-      "answer": 3,
-      "explanation": "Plagiarism means presenting another person’s words, ideas, or work as one’s own."
-    },
-    {
-      "question": "Which definition best matches “fabrication”?",
-      "options": [
-        "Testing a claim through source tracing, corroboration, context, and evidence.",
-        "A system in which a ruling party is interwoven with state institutions.",
-        "Inventing evidence, data, sources, quotations, or results.",
-        "The reasoned choice of cases appropriate to a research question."
-      ],
-      "answer": 2,
-      "explanation": "Fabrication means inventing evidence, data, sources, quotations, or results."
-    },
-    {
-      "question": "Which definition best matches “disclosure”?",
-      "options": [
-        "A court with special responsibility for constitutional interpretation.",
-        "A transparent statement of assistance, methods, conflicts, or limitations.",
-        "A durable unwritten rule or practice shaping behavior.",
-        "An approach emphasizing power, security, states, and competition under anarchy."
+        "Citing the department homepage adequately identifies any report issued there.",
+        "Identify the specific report, authoring body, year, page or section, and traceable quotation context",
+        "Citing the report's title without edition, date, or relevant section fully documents the paraphrase.",
+        "A bibliography entry alone guarantees that the paraphrase accurately represents the source."
       ],
       "answer": 1,
-      "explanation": "Disclosure means a transparent statement of assistance, methods, conflicts, or limitations."
+      "explanation": "Identify the specific report, authoring body, year, page or section, and traceable quotation context",
+      "skill": "source-custody",
+      "sourceType": "fictional-instructional-stimulus",
+      "version": 2
     },
     {
-      "question": "Which statement is most consistent with the Week 2 analysis?",
+      "id": "ss12-w02-transfer-v2-02",
+      "question": "Fictional research notebook: the data table shows 23 interviews, but the methodology describes 30. Which first response protects integrity?",
       "options": [
-        "Credibility depends on authority, method, evidence, transparency, and corroboration rather than appearance alone.",
-        "A single vivid example proves a universal conclusion without qualification.",
-        "Political labels have exactly the same meaning in every country and period.",
-        "The most confident source should be accepted without examining authority or method."
+        "Reconcile exclusions and missing records in a dated methods note before drawing conclusions",
+        "Silently change the table to 30",
+        "Keep both counts without discussion",
+        "Delete the methodology"
       ],
       "answer": 0,
-      "explanation": "Credibility depends on authority, method, evidence, transparency, and corroboration rather than appearance alone."
+      "explanation": "Reconcile exclusions and missing records in a dated methods note before drawing conclusions",
+      "skill": "data-integrity",
+      "sourceType": "fictional-instructional-stimulus",
+      "version": 2
     },
     {
-      "question": "A polished website makes a strong factual claim but supplies no method or corroboration. What should determine credibility?",
+      "id": "ss12-w02-transfer-v2-03",
+      "question": "An analyst compares a government press release and a watchdog report on the same election. How should their disagreement be investigated?",
       "options": [
-        "The most confident source should be accepted without examining authority or method.",
-        "A single vivid example proves a universal conclusion without qualification.",
-        "Primary sources are not automatically accurate or complete; they require context and evaluation.",
-        "Political labels have exactly the same meaning in every country and period."
+        "Average their conclusions",
+        "Assume the watchdog is always correct",
+        "Ignore primary records",
+        "Compare each document's evidence, methods, dates, definitions, and independently verifiable claims"
+      ],
+      "answer": 3,
+      "explanation": "Compare each document's evidence, methods, dates, definitions, and independently verifiable claims",
+      "skill": "triangulation",
+      "sourceType": "fictional-instructional-stimulus",
+      "version": 2
+    },
+    {
+      "id": "ss12-w02-transfer-v2-04",
+      "question": "A fictional school survey recruits respondents through a voluntary public link. Which limitation belongs beside its results?",
+      "options": [
+        "No limitation because the link is public",
+        "Its exact sampling bias is zero",
+        "Volunteer and access biases limit population-wide claims",
+        "Every public survey is fraudulent"
       ],
       "answer": 2,
-      "explanation": "Primary sources are not automatically accurate or complete; they require context and evaluation."
+      "explanation": "Volunteer and access biases limit population-wide claims",
+      "skill": "sampling-limits",
+      "sourceType": "fictional-instructional-stimulus",
+      "version": 2
     },
     {
-      "question": "Which research practice is most appropriate for Evidence, Methodology, and Academic Integrity?",
+      "id": "ss12-w02-transfer-v2-05",
+      "question": "A student uses an AI tool to outline an argument, then verifies every cited document independently. Which disclosure is academically appropriate?",
       "options": [
-        "Trace claims to Stanford Civic Online Reasoning, research ethics protocols, and citation standards, evaluate authority and context, corroborate material facts, and state limitations.",
-        "Replace documentary evidence with political identity or intuition.",
-        "Use the first search result and treat its summary as conclusive.",
-        "Choose only evidence that supports the preferred conclusion."
-      ],
-      "answer": 0,
-      "explanation": "Trace claims to Stanford Civic Online Reasoning, research ethics protocols, and citation standards, evaluate authority and context, corroborate material facts, and state limitations."
-    },
-    {
-      "question": "Which response most clearly demonstrates senior-level mastery?",
-      "options": [
-        "List facts without connecting them to a claim.",
-        "Define the terms, compare evidence, explain reasoning, address a serious alternative, and name a revision condition.",
-        "Use a slogan as the conclusion and omit uncertainties.",
-        "Treat legal, causal, and moral claims as interchangeable."
+        "Present the outline as entirely unaided",
+        "Disclose the tool's assistance and independently verify sources and final reasoning",
+        "List the AI tool as author of every historical source",
+        "Omit all citations"
       ],
       "answer": 1,
-      "explanation": "Define the terms, compare evidence, explain reasoning, address a serious alternative, and name a revision condition."
+      "explanation": "Disclose the tool's assistance and independently verify sources and final reasoning",
+      "skill": "ai-disclosure",
+      "sourceType": "fictional-instructional-stimulus",
+      "version": 2
+    },
+    {
+      "id": "ss12-w02-transfer-v2-06",
+      "question": "A case study relies on confidential interviews. Which protocol best protects participants and the reliability of evidence?",
+      "options": [
+        "Publish identifying transcripts automatically",
+        "Claim anonymity while saving full names publicly",
+        "Collect information without consent",
+        "Obtain appropriate consent, minimize identifiers, safeguard notes, and disclose methods without exposing identities"
+      ],
+      "answer": 3,
+      "explanation": "Obtain appropriate consent, minimize identifiers, safeguard notes, and disclose methods without exposing identities",
+      "skill": "research-ethics",
+      "sourceType": "fictional-instructional-stimulus",
+      "version": 2
+    },
+    {
+      "id": "ss12-w02-transfer-v2-07",
+      "question": "Simulated archive log: Document A is dated 2018; Document B quotes it but is dated 2016. What should the researcher do?",
+      "options": [
+        "Flag the chronology conflict and verify the document dates and editions",
+        "Assume the quotation proves the earlier date",
+        "Discard all records from both years",
+        "Rewrite the document date silently"
+      ],
+      "answer": 0,
+      "explanation": "Flag the chronology conflict and verify the document dates and editions",
+      "skill": "provenance",
+      "sourceType": "fictional-instructional-stimulus",
+      "version": 2
+    },
+    {
+      "id": "ss12-w02-transfer-v2-08",
+      "question": "A report finds a statistical relationship between youth voting and school completion. Which study design would better examine competing explanations?",
+      "options": [
+        "One more anecdote",
+        "A campaign slogan",
+        "A pre-specified analysis controlling for relevant confounders and examining alternative mechanisms",
+        "Only a vocabulary quiz"
+      ],
+      "answer": 2,
+      "explanation": "A pre-specified analysis controlling for relevant confounders and examining alternative mechanisms",
+      "skill": "methodology",
+      "sourceType": "fictional-instructional-stimulus",
+      "version": 2
+    },
+    {
+      "id": "ss12-w02-transfer-v2-09",
+      "question": "A source is an official budget table but does not specify whether amounts are nominal or inflation-adjusted. What is the defensible inference?",
+      "options": [
+        "Its change over time is fully explained",
+        "The table needs currency basis, coverage, and price adjustment clarified before real-trend claims",
+        "Official sources have no limitations",
+        "Inflation has no relationship to public budgets"
+      ],
+      "answer": 1,
+      "explanation": "The table needs currency basis, coverage, and price adjustment clarified before real-trend claims",
+      "skill": "quantitative-source-evaluation",
+      "sourceType": "fictional-instructional-stimulus",
+      "version": 2
+    },
+    {
+      "id": "ss12-w02-transfer-v2-10",
+      "question": "A senior changes the interpretation of a treaty after locating a newer authenticated translation. What should the research notebook preserve?",
+      "options": [
+        "Only the replacement claim",
+        "Neither version",
+        "A revised title without evidence",
+        "Earlier interpretation, changed passage, translation provenance, date, and reason for revision"
+      ],
+      "answer": 3,
+      "explanation": "Earlier interpretation, changed passage, translation provenance, date, and reason for revision",
+      "skill": "revision-trail",
+      "sourceType": "fictional-instructional-stimulus",
+      "version": 2
     }
   ],
   "shortResponse": "What procedures make research credible, ethical, reproducible, and honest?",
-  "rubric": "10 points: precise claim (2), accurate concepts (2), two specific pieces of evidence (2), reasoning (2), counterargument or limitation (1), revision condition (1)."
+  "rubric": "10 points: precise claim (2), accurate concepts (2), two specific pieces of evidence (2), reasoning (2), counterargument or limitation (1), revision condition (1).",
+  "bankVersion": "transfer-v3"
 }
