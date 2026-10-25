@@ -52,7 +52,23 @@ await context.addInitScript(()=>{
  }
  const weeks={};for(let week=27;week<=36;week++)weeks[week]={best:100,attempts:[{mastery_met:true}]};
  localStorage.setItem(scoped("khaemenes-algebra1-weekly-mastery-v2"),JSON.stringify({weeks}));
- localStorage.setItem(scoped("khaemenes-algebra1-midterm-result-v1"),JSON.stringify({attempt_history:[{mastery:true,legacy_selected_only:false,overall_percent:100,constructed_response:{review_complete:true}}]}));
+ localStorage.setItem(scoped("khaemenes-algebra1-midterm-result-v1"),JSON.stringify({attempt_history:[{mastery:true,
+      legacy_selected_only:false,
+      overall_percent:100,
+      constructed_response:{review_complete:true,review_id:"a1-review-browser-seed-midterm"},
+      evaluator_review:{
+        schema:"khaemenes-algebra1-evaluator-review-v1",
+        review_id:"a1-review-browser-seed-midterm",
+        reviewer_name:"Browser Regression Reviewer",
+        reviewer_role:"teacher",
+        reviewer_note:"Seeded structured Midterm review for browser progression regression.",
+        attestation:true,
+        review_complete:true,
+        reviewed_at:"2026-10-25T16:00:00.000Z",
+        authoritative:false,
+        identity_authenticated:false,
+        digitally_signed:false
+      }}]}));
 });
 
 async function answerAllFirst(page){
