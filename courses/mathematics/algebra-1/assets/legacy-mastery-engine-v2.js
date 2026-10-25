@@ -97,13 +97,13 @@ function run(){
    attemptNumber=record.attempts.length+1;
    $("#scoreMsg").innerHTML=`<span class="score">${pct}%</span> · ${correct}/${items.length} correct · Best ${record.scores.mastery}% saved.${pct>=MASTERY?" · Mastery demonstrated.":" · Review, correct, and begin a new attempt."}`;
   }else{
+   attemptNumber+=1;
    $("#scoreMsg").innerHTML=`<span class="score">${pct}%</span> · ${correct}/${items.length} correct · <strong>No mastery credit was recorded because this browser could not save the attempt.</strong> Export evidence if needed, then restore browser storage before retrying.`;
   }
  }
  function reset(){
   if(graded){
    graded=false;
-   attemptNumber+=1;
    document.querySelectorAll('#questions input[type="radio"]').forEach(input=>{input.checked=false;input.disabled=false});
    document.querySelectorAll(".feedback").forEach(x=>x.hidden=true);
    const scoreButton=$("#score"),resetButton=$("#reset");
