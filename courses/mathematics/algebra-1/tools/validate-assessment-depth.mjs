@@ -91,28 +91,32 @@ const legacyData=legacyContext.window.ALGEBRA1_DATA,legacyBaseQuestions=[...lega
 ok(Boolean(legacyData)&&Array.isArray(legacyBaseQuestions),"shared late-unit curriculum and base question bank are executable");
 vm.runInContext(read("assets/late-unit-abundant-bank-v1.js"),legacyContext,{filename:"assets/late-unit-abundant-bank-v1.js"});
 const lateAbundant=legacyContext.window.ALGEBRA1_LATE_ABUNDANT_QUESTIONS||[];
+vm.runInContext(read("assets/unit13-capstone-depth-bank-v1.js"),legacyContext,{filename:"assets/unit13-capstone-depth-bank-v1.js"});
+const unit13CapstoneDepth=legacyContext.window.ALGEBRA1_UNIT13_CAPSTONE_DEPTH||[];
 vm.runInContext(read("assets/unit-11-content-upgrade.js"),legacyContext,{filename:"assets/unit-11-content-upgrade.js"});
 const upgradedLegacyQuestions=legacyContext.window.ALGEBRA1_QUESTIONS;
 ok(Array.isArray(lateAbundant)&&lateAbundant.length===80,"late-unit abundance bank contributes 80 stable items");
 ok((upgradedLegacyQuestions||[]).filter(q=>Number(q.unit)===11).length===120,"Unit 11 formal mastery loads the 120-question rebuild");
+ok(unit13CapstoneDepth.length===20&&[1,2,3,4,5].every(lesson=>unit13CapstoneDepth.filter(q=>Number(q.lesson)===lesson&&q.capstoneDepth==="quantitative").length===4),"Unit 13 capstone depth bank supplies four quantitative items per lesson");
 const legacyMasteryRel="assets/legacy-mastery-engine-v2.js",legacyMastery=read(legacyMasteryRel);ok(exists(legacyMasteryRel),"dedicated late-unit mastery engine exists");ok(legacyMastery.includes("MASTERY=80")&&legacyMastery.includes("COUNT=20"),"late-unit engine fixes delivered formal mastery at 20 questions / 80%");
-ok(legacyMastery.includes("randomSeed()")&&legacyMastery.includes("selectForm(previousIds,seed)")&&legacyMastery.includes('selectionPolicy:"lesson-balanced-low-overlap-v1"'),"late-unit engine uses seeded lesson-balanced low-overlap Monte Carlo selection");
-ok(legacyMastery.includes("targetPoolSize=Number(R.unit)===11?120:60")&&legacyMastery.includes("x.available>=x.need*2"),"late-unit engine fails closed unless the abundant pool can support an immediate zero-overlap retake");
+ok(legacyMastery.includes("randomSeed()")&&legacyMastery.includes("selectForm(previousIds,seed)")&&legacyMastery.includes('"lesson-balanced-low-overlap-v1"'),"late-unit engine uses seeded lesson-balanced low-overlap Monte Carlo selection");
+ok(legacyMastery.includes("selectCapstoneLesson")&&legacyMastery.includes('"lesson-balanced-capstone-depth-low-overlap-v1"')&&legacyMastery.includes("capstoneQuantitativeMinimum:Number(R.unit)===13?10:null"),"Unit 13 mastery guarantees the quantitative capstone-depth blueprint");
+ok(legacyMastery.includes("targetPoolSize=Number(R.unit)===11?120:Number(R.unit)===13?80:60")&&legacyMastery.includes("x.available>=x.need*2"),"late-unit engine fails closed unless the abundant pool can support an immediate zero-overlap retake");
 ok(/\.scores\.mastery/.test(legacyMastery)&&/\.attempts\.push/.test(legacyMastery),"late-unit engine preserves best score and attempt history");
 ok(legacyMastery.includes("if(graded)return")&&legacyMastery.includes("scoreButton.disabled=true")&&legacyMastery.includes("input.disabled=true"),"late-unit formal mastery locks graded answers and requires a fresh attempt");
 ok(legacyMastery.includes('evidenceSchema:"algebra1-answer-evidence-v2"')&&legacyMastery.includes("selectedDisplayIndex")&&legacyMastery.includes("selectedOriginalIndex")&&legacyMastery.includes("correctDisplayIndex")&&legacyMastery.includes("correctOriginalIndex")&&legacyMastery.includes("formSeed")&&legacyMastery.includes("immediatePriorOverlap"),"late-unit formal mastery stores reconstructable v2 answer and Monte Carlo form evidence");
 ok(legacyMastery.includes("return true}catch{return false}")&&legacyMastery.includes("No mastery credit was recorded")&&legacyMastery.includes("if(persisted){"),"late-unit formal mastery fails closed when browser storage cannot persist evidence");
 ok(legacyMastery.includes("KhaemenesAlgebra1MasteryAuthority")&&legacyMastery.includes("A.unitMastered(R.unit-1)")&&legacyMastery.includes("A.midtermMastered()")&&legacyMastery.includes("A.lessonMastered")&&legacyMastery.includes("A.weekMastered"),"late-unit formal mastery requires canonical prior-unit, Midterm, lesson, and weekly evidence");
-const lateExpectedPools={10:60,11:120,12:60,13:60};
+const lateExpectedPools={10:60,11:120,12:60,13:80};
 for(let unit=10;unit<=13;unit++){
  const id=String(unit).padStart(2,"0"),base=`units/unit-${id}`,page=read(`${base}/assessment/mastery-check.html`),mapUnit=(courseMap.units||[]).find(u=>Number(u.number)===unit),unitLessons=(legacyData?.lessons||[]).filter(l=>Number(l.unit)===unit);
  ok(page.includes("legacy-mastery-engine-v2.js")&&!page.includes("assets/unit-page.js"),`Unit ${id} formal page uses the dedicated Monte Carlo mastery engine`);ok(unitLessons.length===Number(mapUnit?.lesson_count),`Unit ${id} shared lesson count matches course map`);
- const pool=unit===11?(upgradedLegacyQuestions||[]).filter(q=>Number(q.unit)===unit):[...legacyBaseQuestions.filter(q=>Number(q.unit)===unit),...lateAbundant.filter(q=>Number(q.unit)===unit)];
+ const pool=unit===11?(upgradedLegacyQuestions||[]).filter(q=>Number(q.unit)===unit):[...legacyBaseQuestions.filter(q=>Number(q.unit)===unit),...lateAbundant.filter(q=>Number(q.unit)===unit),...(unit===13?unit13CapstoneDepth:[])];
  ok(pool.length===lateExpectedPools[unit],`Unit ${id} exposes the certified ${lateExpectedPools[unit]}-item mastery pool`);
  ok(new Set(pool.map(q=>q.id)).size===pool.length,`Unit ${id} mastery pool IDs are unique`);
  const baseQuota=Math.floor(20/unitLessons.length),remainder=20%unitLessons.length;unitLessons.forEach((l,i)=>{const need=baseQuota+(i<remainder?1:0),count=pool.filter(q=>Number(q.lesson)===Number(l.number)).length;ok(count>=need*2,`Unit ${id} Lesson ${l.number} supplies at least double its form quota for immediate zero-overlap retakes`)});
  if(unit===11)ok(page.indexOf("assets/unit-11-content-upgrade.js")>page.indexOf("assets/question-bank.js")&&page.indexOf("assets/unit-11-content-upgrade.js")<page.indexOf("assets/legacy-mastery-engine-v2.js"),"Unit 11 loads its 120-question rebuild before formal mastery");
- else ok(page.indexOf("assets/late-unit-abundant-bank-v1.js")>page.indexOf("assets/question-bank.js")&&page.indexOf("assets/late-unit-abundant-bank-v1.js")<page.indexOf("assets/legacy-mastery-engine-v2.js"),`Unit ${id} loads the late-unit abundance bank before formal mastery`);
+ else {ok(page.indexOf("assets/late-unit-abundant-bank-v1.js")>page.indexOf("assets/question-bank.js")&&page.indexOf("assets/late-unit-abundant-bank-v1.js")<page.indexOf("assets/legacy-mastery-engine-v2.js"),`Unit ${id} loads the late-unit abundance bank before formal mastery`);if(unit===13)ok(page.indexOf("assets/unit13-capstone-depth-bank-v1.js")>page.indexOf("assets/late-unit-abundant-bank-v1.js")&&page.indexOf("assets/unit13-capstone-depth-bank-v1.js")<page.indexOf("assets/legacy-mastery-engine-v2.js"),"Unit 13 loads its quantitative capstone-depth bank before formal mastery");}
 }
 ok(!exists("units/unit-12/unit-12"),"orphan nested Unit 12 subtree is removed");ok(!exists("assessments/unit-13-mastery-blueprint.js"),"unused Unit 13 mastery override is removed");
 
