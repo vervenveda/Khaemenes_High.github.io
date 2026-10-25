@@ -1,0 +1,21 @@
+name: Vocabulary Studio Four-Grade Regression
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'courses/mathematics/tools/vocabulary-studio.html'
+      - 'courses/language-arts/english-*/curriculum.json'
+      - 'courses/language-arts/english-*/units/unit-*/vocabulary.json'
+      - 'tests/vocabulary-studio-four-grade-regression.cjs'
+      - '.github/workflows/vocabulary-studio-four-grade-regression.yml'
+  workflow_dispatch:
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: node tests/vocabulary-studio-four-grade-regression.cjs
