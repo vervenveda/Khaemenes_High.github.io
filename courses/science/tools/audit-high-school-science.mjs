@@ -19,6 +19,9 @@ need(exists(sharedFormative),"shared formative evidence layer exists");
 if(exists(sharedFormative))need(read(sharedFormative).includes("attachScienceInvestigationNotebook"),"science investigation loader exists in shared formative layer");
 const sharedInquiry=path.join(scienceRoot,"inquiry-ledger","index.html");
 need(exists(sharedInquiry),"shared Grades 10–12 inquiry ledger exists");
+const misconceptionGuidance=path.join(scienceRoot,"science-misconception-guidance-v1.js");
+need(exists(misconceptionGuidance),"shared science misconception guidance exists");
+if(exists(misconceptionGuidance)){const g=read(misconceptionGuidance);need(!g.includes("Day 02/03 correction"),"reviewed misconception routing is not hard-coded");need(g.includes("byType[String(q?.type||\"concept\").toLowerCase()]"),"reviewed misconception routing follows question type");}
 
 function parseAssignedArray(file){
   const raw=read(file),m=raw.match(/=\s*(\[[\s\S]*\]);?\s*$/);
@@ -98,6 +101,11 @@ function auditUpperCourse(slug,label){
     const expectedGlobal=slug==="biology-10"?"KhaemenesBiology10Misconceptions":slug==="chemistry-11"?"KhaemenesChemistry11Misconceptions":"KhaemenesPhysics12Misconceptions";
     need(c.includes(expectedGlobal),label+" practice corrections use reviewed misconception map");
     need(c.includes("KhaeScienceMisconceptionGuidance?.reviewed"),label+" practice corrections prefer reviewed option-specific diagnosis");
+    need(c.includes("diagnosticMisses"),label+" assessment history persists diagnostic misses");
+    need(c.includes("misconceptionHistory"),label+" portal maintains longitudinal misconception history");
+    need(c.includes("misconceptionHistory.slice(-240)"),label+" longitudinal misconception history is bounded");
+    need(c.includes("function misconceptionSummary()"),label+" report summarizes recurring reasoning patterns");
+    need(c.includes("Reasoning Pattern History"),label+" report exposes reasoning pattern history");
     const misconceptionFile=path.join(root,"assessment-misconceptions-v1.json");
     need(exists(misconceptionFile),label+" reviewed misconception map exists");
     if(exists(misconceptionFile)){
