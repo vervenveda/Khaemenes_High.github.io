@@ -246,7 +246,7 @@ const mcBalanced=mc.includes("function balancedOptionOrders")&&mc.includes("opti
     }else{
       const unitCore=read(`courses/mathematics/algebra-1/units/unit-${u}/assets/unit${u}-core.js`);
       const unitLoader=read(`courses/mathematics/algebra-1/units/unit-${u}/assets/unit${u}.js`);
-      const protectedForm=["function balanceOptions","supplementalCount",'_formSource:"aligned-alternate"',"fresh();"].every(x=>unitCore.includes(x))
+      const protectedForm=["const balanceOptions=(chosen)=>","supplementalCount",'_formSource:"aligned-alternate"',"fresh();"].every(x=>unitCore.includes(x))
         &&unitLoader.includes("../../../assets/question-bank.js")
         &&unitLoader.includes("Array.isArray(window.ALGEBRA1_QUESTIONS)");
       if(protectedForm)runtimeProtectedUnits++;else runtimeIssues.push(`Unit ${u}: balanced/fresh-form runtime contract incomplete`);
