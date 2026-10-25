@@ -60,8 +60,10 @@ function run(){
  if(!complete){$("#printButton")?.addEventListener("click",()=>print());return}
  function renderForm(){const form=prepareForm(previousIds);formSeed=form.seed;current=form.items;$("#questions").innerHTML=current.map((q,i)=>`<article class="question"><fieldset><legend>${i+1}. ${esc(q.prompt)}</legend><div class="options">${q._optionOrder.map(j=>`<label class="option"><input type="radio" name="q${i}" value="${j}"><span>${esc(q.options[j])}</span></label>`).join("")}</div><div class="feedback" id="fb${i}" hidden></div></fieldset></article>`).join("");const previousSet=new Set(previousIds),overlap=current.filter(q=>previousSet.has(q.id)).length;$("#formMeta").textContent=`Attempt ${attemptNumber} · 20 questions from ${eligiblePool.length} eligible items · immediate prior-form overlap: ${overlap}/20.`}
  function beginAttempt(){graded=false;renderForm();$("#score").disabled=false;$("#score").textContent="Submit & Score";$("#reset").textContent="Clear current answers";$("#scoreMsg").textContent=""}
- function score(){
+ async function score(){
   if(graded)return;
+  const resolver=window.KhaemenesAlgebra1Misconceptions;
+  if(resolver?.ready)await resolver.ready;
   let correct=0,all=true;
   const answerSnapshot=[];
   current.forEach((q,i)=>{
@@ -69,9 +71,10 @@ function run(){
    f.hidden=false;
    if(!selected){all=false;f.className="feedback bad";f.textContent="Choose an answer.";return}
    const selectedOriginalIndex=Number(selected.value),order=q._optionOrder,selectedDisplayIndex=order.indexOf(selectedOriginalIndex),correctOriginalIndex=Number(q.answer),correctDisplayIndex=order.indexOf(correctOriginalIndex),right=selectedOriginalIndex===correctOriginalIndex;
+   const diagnostic=!right?resolver?.lookup?.(q.id,selectedOriginalIndex):null;
    if(right)correct++;
    f.className=`feedback ${right?"good":"bad"}`;
-   f.textContent=`${right?"Correct.":"Review."} ${q.explanation}`;
+   f.textContent=`${right?"Correct.":"Review."} ${q.explanation}${!right&&diagnostic?.learnerFeedbackEligible&&diagnostic.rationale?" Misconception check: "+diagnostic.rationale:""}`;
    answerSnapshot.push({
     id:q.id,
     lesson:Number(q.lesson),
@@ -85,11 +88,11 @@ function run(){
     optionOrder:[...order],
     selectedText:q.options[selectedOriginalIndex]??null,
     correctText:q.options[correctOriginalIndex]??q.answer_text??null,
-    misconceptionTag:q.misconceptionTag||null,
-    misconceptionMapVersion:null,
-    misconceptionMapSource:null,
-    misconceptionReviewStatus:q.reviewStatus||null,
-    misconceptionLearnerFeedback:false,
+    misconceptionTag:diagnostic?.misconceptionTag||q.misconceptionTag||null,
+    misconceptionMapVersion:diagnostic?.mapVersion||null,
+    misconceptionMapSource:diagnostic?.mapSource||null,
+    misconceptionReviewStatus:diagnostic?.reviewStatus||q.reviewStatus||null,
+    misconceptionLearnerFeedback:Boolean(diagnostic?.learnerFeedbackEligible),
     generatorId:q.generatorId||null,
     generatorVersion:q.generatorVersion||null,
     seed:q.seed??null
