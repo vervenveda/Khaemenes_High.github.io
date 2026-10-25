@@ -71,10 +71,16 @@ global.KhaemenesHighFormativeEvidence=Object.freeze({version:VERSION,dailyKey:DA
    on those evidence-rich days without editing 108 lesson files individually. */
 function attachScienceInvestigationNotebook(){
  const path=String(global.location?.pathname||"").toLowerCase();
- const match=path.match(/\/courses\/science\/(biology-10|chemistry-11|physics-engineering-12)\/weeks\/week-\d{2}\/lessons\/day-(\d{2})\.html$/);
- if(!match)return;
- const day=Number(match[2]);
- if(day<3||day>5)return;
+ const upper=path.match(/\/courses\/science\/(biology-10|chemistry-11|physics-engineering-12)\/weeks\/week-\d{2}\/lessons\/day-(\d{2})\.html$/);
+ const grade9=path.match(/\/courses\/science\/integrated-science-9\/units\/unit-(\d{2})\/lessons\/day-(\d{2})\.html$/);
+ if(!upper&&!grade9)return;
+ if(upper){
+   const day=Number(upper[2]);if(day<3||day>5)return;
+ }else{
+   const day=Number(grade9[2]);if(day!==5&&day!==10)return;
+   const evidenceText=String(global.document?.querySelector("h1")?.textContent||"")+" "+String(global.document?.querySelector(".unit-lead")?.textContent||"");
+   if(!/(laboratory|investigation|survey|design|evidence|data|model|capstone)/i.test(evidenceText))return;
+ }
  if(global.document.querySelector('script[src*="science-investigation-lesson-bridge.js"]'))return;
  const script=global.document.createElement("script");
  script.src=new URL("../science/science-investigation-lesson-bridge.js",global.document.currentScript?.src||global.location.href).href;
