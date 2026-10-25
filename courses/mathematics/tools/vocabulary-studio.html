@@ -185,6 +185,7 @@ function render(){
    if(Array.isArray(item.wordFamily)&&item.wordFamily.length)card.append(addText("p","Related forms: "+item.wordFamily.join(", "),"meta"));
    if(item.applicationPrompt)card.append(addText("p","Apply: "+item.applicationPrompt,"description"));
    if(item.reviewStatus==="editorial-draft")card.append(addText("p","Definition draft · educator review pending","meta"));
+   if(item.extension)card.append(addText("p","Extension term · beyond this week’s five assigned terms","meta"));
    frag.append(card);
  }
  list.append(frag);
@@ -219,7 +220,8 @@ async function load(){
     data.terms=[...terms.values()];
     if(["english-9","english-10"].includes(course.value)&&Number(unit.value)>=1&&Number(unit.value)<=12){
       const response=await fetch("../../language-arts/"+course.value+"/units/unit-"+unit.value+"/vocabulary.json",{credentials:"same-origin"});
-      if(response.ok){const bank=await response.json();const byTerm=new Map((bank.terms||[]).map(t=>[String(t.term).toLocaleLowerCase(),t]));data.terms=data.terms.map(t=>{const entry=byTerm.get(t.term.toLocaleLowerCase());return entry?{...t,definition:entry.definition,context:entry.context,reviewStatus:entry.reviewStatus,wordFamily:entry.wordFamily,applicationPrompt:entry.applicationPrompt}:t})}
+      if(response.ok){const bank=await response.json();const byTerm=new Map((bank.terms||[]).map(t=>[String(t.term).toLocaleLowerCase(),t]));data.terms=data.terms.map(t=>{const entry=byTerm.get(t.term.toLocaleLowerCase());return entry?{...t,definition:entry.definition,context:entry.context,reviewStatus:entry.reviewStatus,wordFamily:entry.wordFamily,applicationPrompt:entry.applicationPrompt}:t});
+      if(course.value==="english-10"&&weekControl.value&&data.terms.length===5){const extension=(bank.terms||[]).find(t=>!data.terms.some(x=>x.term.toLocaleLowerCase()===String(t.term).toLocaleLowerCase())&&t.definition&&!t.definition.startsWith("Definition awaiting"));if(extension)data.terms.push({en:extension.term,term:extension.term,definition:extension.definition,context:"Unit enrichment · extension term",weeks:[Number(weekControl.value)],reviewStatus:"editorial-draft",extension:true})}}
     }
     data.title=(data.units||[]).find(u=>Number(u.unit||u.n)===Number(unit.value))?.title||"Unit "+unit.value;
   }
