@@ -239,6 +239,12 @@ function withMentorTimeout(promise,ms=8000){
 }
 function localResponse(text){
  const i=intent(text),label=subject==="general"?"this subject":subject.replace(/-/g," ");
+ // Reuse the existing published lesson guide; never import question banks,
+ // answer keys, selections, or teacher-only grading materials.
+ const lesson=window.KhaemenesArchaemenesLessonGuide?.lesson?.(source)||null;
+ const lessonReview=lesson
+   ? ` Current lesson: ${lesson.title} (Algebra I · Unit ${lesson.unit}). Objective: ${lesson.objective} Verification: ${lesson.verification}`
+   : "";
  // Current lesson metadata is instructional, not an access-unlock assertion.
  // No lesson information is used for protected, assessment, or progress queries.
  const guided=(!["protected","assessment","progress","review"].includes(i))?window.KhaemenesArchaemenesLessonGuide?.respond?.(source,text):null;
@@ -251,12 +257,12 @@ function localResponse(text){
  }
  if(i==="review"){
   const skills=Array.isArray(latestVerified?.reviewSkills)?latestVerified.reviewSkills.filter(Boolean):[];
-  if(skills.length)return`Your latest verified assessment suggests reviewing ${skills.slice(0,5).join(", ")}. I can teach those skills with fresh examples without reproducing the assessment questions, choices, learner selections, or answer key.`;
-  return"I do not have a recent review-skill summary yet. Tell me the current course and concept that feels uncertain, and we will work from a fresh example.";
+  if(skills.length)return`Your latest recorded assessment suggests reviewing ${skills.slice(0,5).join(", ")}. I can teach those skills with fresh examples without reproducing assessment questions, choices, learner selections, or the answer key.${lessonReview}`;
+  return "I do not have a recent review-skill summary yet. Tell me the current course and concept that feels uncertain, and we will work from a fresh example."+lessonReview;
  }
  if(i==="assessment"){
   const evidence=latestVerified?` Your latest verified summary is ${latestVerified.score}% in ${latestVerified.courseId}.`:"";
-  return`Use the assessment as evidence: identify the skill being tested, what you did correctly, where the reasoning changed, and one similar problem or prompt you can now complete without help.${evidence} I can help with reasoning, but the course engine remains the authority for the recorded score and 80% mastery gate.`;
+  return`Use the assessment as evidence: identify the skill being tested, what you did correctly, where the reasoning changed, and one similar problem or prompt you can now complete without help.${evidence} I can help with reasoning, but the course engine remains the authority for the recorded score and 80% mastery gate.${lessonReview}`;
  }
  if(i==="mistake")return"Good place to start. Show me the step, sentence, claim, calculation, or evidence choice that was marked wrong—or describe what you expected to happen. We will compare your reasoning with the rule or evidence one step at a time instead of jumping straight to an answer.";
  if(i==="study"){const skill=latestVerified?.reviewSkills?.[0];return`For ${label}, choose one unlocked skill.${skill?` The latest verified summary identifies ${skill} as a review area.`:""} First explain it from memory in your own words, then do one fresh example without looking at the model, then check the result and write the specific correction you would make.`;}
