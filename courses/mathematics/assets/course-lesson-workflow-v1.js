@@ -123,7 +123,7 @@ function enhance(){
     if(cfg.enableStageNavigation!==true)return;
     section.classList.add("khae-workflow-navigation");
     const root=document.getElementById("main")||document.getElementById("lessonMain")||document.body;
-    const visible=el=>!!el&&el.isConnected&&!section.contains(el)&&!el.closest("[hidden]");
+    const visible=el=>!!el&&el.isConnected&&!section.contains(el)&&!el.closest("[hidden],dialog:not([open]),details:not([open])");
     const find=(...selectors)=>selectors.map(sel=>root.querySelector(sel)).find(visible)||null;
     const cards=[...root.querySelectorAll("article.card,.deep-section")].filter(visible);
     const titled=re=>cards.find(el=>re.test(el.querySelector("h2,h3,h4")?.textContent||""))||null;
