@@ -35,6 +35,25 @@ const origin="http://127.0.0.1:"+server.address().port;
 let browser;
 try{
  browser=await chromium.launch({headless:true,args:["--no-sandbox"]});
+ // Public reading must still show Lesson 01 without inventing a learner.
+ {
+   const context=await browser.newContext({viewport:{width:1200,height:820},serviceWorkers:"block"});
+   const page=await context.newPage();
+   await page.route("**/*",route=>route.request().url().startsWith(origin)?route.continue():route.abort());
+   await page.goto(origin+"/"+unit+"/lessons/"+D.lessons[0].file,{waitUntil:"domcontentloaded",timeout:15000});
+   await page.waitForFunction(()=>["ready","error"].includes(document.body.dataset.algebra1LessonRender||""),{timeout:12000});
+   const publicPage=await page.evaluate(()=>{
+     const main=document.querySelector("#main");
+     return {status:document.body.dataset.algebra1LessonRender,
+       visible:!!main&&main.getBoundingClientRect().height>0,
+       heading:main?.querySelector("h1")?.textContent||"",
+       hasLessonCheck:!!main?.querySelector("#score")};
+   });
+   assert.equal(publicPage.status,"ready","Public Lesson 01 did not launch: "+JSON.stringify(publicPage));
+   assert(publicPage.visible&&publicPage.hasLessonCheck,"Public Lesson 01 lost instruction or assessment");
+   console.log("PASS: public no-profile Lesson 01 displays actual instruction and assessment");
+   await context.close();
+ }
  for(const lesson of D.lessons){
   const context=await browser.newContext({viewport:{width:1200,height:820},serviceWorkers:"block"});
   const page=await context.newPage(),errors=[];
