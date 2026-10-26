@@ -102,13 +102,13 @@ function bind(items,key){
   if(graded)return;
   const resolver=window.KhaemenesAlgebra1Misconceptions;
   if(resolver?.ready)await resolver.ready;
-  const result=document.getElementById("result");
+  const preflightResult=document.getElementById("result");
   // Do not disclose graded feedback until the whole form is complete.
    const unanswered=current.findIndex((q,i)=>!container.querySelector('input[name="q'+i+'"]:checked'));
    if(unanswered!==-1){
     const missing=container.querySelectorAll(".question")[unanswered];
     const prompt=missing?.querySelector('input[type="radio"]');
-    if(result)result.textContent="Answer every item before submitting. Nothing has been graded or revealed.";
+    if(preflightResult)preflightResult.textContent="Answer every item before submitting. Nothing has been graded or revealed.";
     prompt?.focus();
     return;
    }
