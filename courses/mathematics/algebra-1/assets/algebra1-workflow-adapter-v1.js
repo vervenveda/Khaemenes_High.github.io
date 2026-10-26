@@ -18,7 +18,7 @@ function fallbackEvidence(x){
   }catch{return {best:null,mastery:false,source:null}}
 }
 window.KhaemenesLessonWorkflowConfig={
-  courseId:"KH-MATH-A1",courseTitle:"Algebra I",filePrefix:"algebra1",storageKey:"khaemenes-algebra1-lesson-workflow-v1",masteryTarget:80,
+  courseId:"KH-MATH-A1",courseTitle:"Algebra I",filePrefix:"algebra1",storageKey:"khaemenes-algebra1-lesson-workflow-v1",masteryTarget:80,enableStageNavigation:true,
   getIdentity:identity,
   canRender:()=>!!document.querySelector("#main #score,#main .question"),
   getMastery:x=>window.KhaemenesAlgebra1MasteryAuthority?.lessonEvidence?.(x.unit,x.lesson,x.id)||fallbackEvidence(x),
