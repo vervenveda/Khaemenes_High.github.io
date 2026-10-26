@@ -1,0 +1,59 @@
+/* Grade 10 U.S. History Honors — focused lesson layout.
+   Only the optional course drawer can display student records.
+   Existing grading/lesson logic is untouched. */
+html body .app{display:block!important;grid-template-columns:minmax(0,1fr)!important;max-width:100%!important}
+html body .app>.main{width:min(100%,1440px)!important;max-width:1440px!important;margin:auto!important;padding:clamp(16px,3vw,38px)!important;padding-bottom:100px!important}
+html body .app>.sidebar{
+  position:fixed!important;top:0!important;bottom:0!important;left:0!important;
+  width:min(375px,calc(100vw - 28px))!important;max-width:100%!important;
+  height:100dvh!important;max-height:100dvh!important;overflow-y:auto!important;
+  z-index:2147483000!important;transform:translateX(-110%)!important;
+  visibility:hidden!important;pointer-events:none!important;
+  transition:transform .22s ease,visibility .22s!important;
+  background:#faf8f2!important;border-right:1px solid #bca77c!important;
+  box-shadow:10px 0 42px rgba(13,33,29,.22)!important;
+  padding:18px 16px 26px!important;overscroll-behavior:contain
+}
+html body .app>.sidebar[data-open="true"]{
+  transform:translateX(0)!important;visibility:visible!important;pointer-events:auto!important
+}
+html body .app>.sidebar :is(h2,h3,p,label,.small){color:#253b35!important;font-weight:400!important}
+html body .app>.sidebar .brand,html body .app>.sidebar .panel{
+  background:#fffdfa!important;border:1px solid #dbd3c3!important;box-shadow:none!important;border-radius:7px!important
+}
+html body .app>.sidebar :is(.navBtn,.weekBtn,.navBtn.active,.weekBtn.active){
+  min-height:42px;color:#233b32!important;background:#f6f3ec!important;
+  border:1px solid #d8cdb8!important;border-radius:7px!important
+}
+html body .app>.sidebar :is(.navBtn.active,.weekBtn.active){background:#e9dfcb!important;border-color:#ab9162!important}
+#ss10CloseDrawer{width:100%;min-height:44px;margin-bottom:14px;border:1px solid #bca77c!important;border-radius:7px!important;background:#e9dfcb!important;color:#213a32!important;font-weight:400!important}
+#ss10OpenDrawer{min-height:44px;border-radius:7px!important;font-weight:400!important}
+#ss10DrawerBackdrop{position:fixed;inset:0;z-index:2147482999;background:rgba(10,22,28,.7);backdrop-filter:blur(3px)}
+#ss10DrawerBackdrop[hidden]{display:none!important}
+body.ss10-drawer-open{overflow:hidden!important}
+html body .app>.main .hero{padding:clamp(26px,4vw,48px)!important;border-radius:7px!important}
+html body .app>.main .hero h1{font-size:clamp(2rem,4.6vw,3.5rem)!important;line-height:1.12!important;font-weight:400!important}
+html body .app>.main .hero .actions{align-items:center;justify-content:center;flex-wrap:wrap}
+html body .app>.main .hero .actions :is(button,a){border-radius:7px!important;min-height:44px}
+html body .app>.main #content{min-height:260px;max-width:100%;overflow-wrap:break-word}
+html body .app>.main #content .ss10-public-entry{
+  max-width:1000px;margin:26px auto;padding:clamp(24px,5vw,48px)!important;
+  border-radius:7px!important;text-align:center!important;color:#213b32!important;
+  background:linear-gradient(160deg,#fffdfa,#f4efe4)!important
+}
+html body .app>.main #content .ss10-public-entry h2{font:400 clamp(1.7rem,3vw,2.6rem)/1.25 Georgia,serif!important}
+html body .app>.main #content .ss10-public-entry p{line-height:1.7!important}
+html body .app>.main #content .ss10-public-entry .actions{display:flex;justify-content:center;gap:10px;flex-wrap:wrap}
+html body .app>.main #content .ss10-public-entry .actions a{min-height:44px;display:inline-flex;align-items:center;padding:10px 15px;border-radius:7px;text-decoration:none}
+html body .app>.main :is(.card,.panel,.ss10-tools-shelf){border-radius:7px!important}
+@media(max-width:700px){
+ html body .app>.main{padding:12px!important;padding-bottom:90px!important}
+ html body .app>.main .hero{padding:22px 15px!important}
+ html body .app>.main #content .ss10-public-entry .actions{flex-direction:column}
+ html body .app>.main #content .ss10-public-entry .actions>*{width:100%}
+}
+@media(prefers-reduced-motion:reduce){html body .app>.sidebar{transition:none!important}}
+@media print{
+ html body .app>.sidebar,#ss10DrawerBackdrop,#ss10OpenDrawer{display:none!important}
+ html body .app>.main{max-width:none!important;padding:0!important}
+}
