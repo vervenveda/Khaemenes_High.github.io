@@ -160,10 +160,12 @@ a{color:#625034!important}a:focus-visible,button:focus-visible{outline:2px solid
 @media print{body{background:#fff!important}.hero{border:0!important;box-shadow:none!important}.sidebar,.tabs{display:none!important}.main{padding:0!important}}
 </style>
 <style id="ss10-prealgebra-navigation-v1">.ss10-tools-shelf{border:1px solid #88745c;border-radius:7px;padding:16px;margin:15px 0}.ss10-tools-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}.ss10-tools-grid a{display:block;border:1px solid #88745c;border-radius:7px;padding:12px;color:inherit;text-decoration:none;background:rgba(125,108,82,.09);min-width:0;overflow-wrap:anywhere}.ss10-tools-grid a:focus-visible,.ss10-tools-grid a:hover{outline:2px solid #ae864c;outline-offset:2px}.ss10-tools-grid small{display:block;line-height:1.5;opacity:.86}.ss10-tools-shelf h2{font-family:Cinzel,Georgia,serif;font-weight:400;font-size:1.4rem}.ss10-helper{font-size:.92rem}@media(max-width:650px){.ss10-tools-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}@media(max-width:320px){.ss10-tools-grid{grid-template-columns:1fr}.ss10-tools-shelf{padding:10px}.ss10-tools-grid a{padding:9px}}@media print{.ss10-tools-shelf{display:none!important}}</style><style id="ss10-255px-overflow-repair">@media(max-width:320px){html,body{max-width:100%;overflow-x:clip}.app,.main,.sidebar,.hero,.panel,.card,.tabs,#content{min-width:0!important;max-width:100%!important;box-sizing:border-box!important}.app{display:block!important}.sidebar{width:100%!important}.main{width:100%!important;padding:8px!important}.hero,.panel,.card{padding:9px!important}button,input,select,textarea,a{max-width:100%;overflow-wrap:anywhere;white-space:normal}.actions{flex-wrap:wrap}.actions>*{flex:1 1 100%}.tabs{flex-wrap:wrap}.tabs button{flex:1 1 100%}pre,table{max-width:100%;overflow:auto}}</style><link rel="stylesheet" href="../../../assets/high-navigation-v1.css" data-high-navigation-css>
+<link rel="stylesheet" href="assets/grade10-course-focus-v1.css">
 </head>
 <body>
 <div class="app">
-<aside class="sidebar">
+<aside class="sidebar" id="ss10CourseDrawer" aria-label="Optional course navigation and student records" aria-hidden="true" inert>
+<button type="button" id="ss10CloseDrawer" class="secondary" aria-label="Close course menu">Close course menu ×</button>
 <div class="brand">
 <div class="seal">X</div>
 <h2>U.S. History Honors</h2>
@@ -192,7 +194,7 @@ a{color:#625034!important}a:focus-visible,button:focus-visible{outline:2px solid
 <div class="eyebrow">Khaemenes Academy</div>
 <h1>Grade 10 · United States History Honors</h1>
 <p>A polished, self-contained student portal for investigating the American story through evidence, constitutional ideas, civic institutions, economics, geography, media literacy, Florida connections, and a nonpartisan civic capstone.</p>
-<div class="actions"><a class="button" href="unit-01/evidence-lab.html">Unit 1 Learning Resources</a><a class="button" href="../../mathematics/tools/vocabulary-studio.html?course=social-studies-10&amp;unit=01">Vocabulary Studio</a><button data-go="week">Open Lessons</button><button class="secondary" data-go="scope">View Scope</button><button class="ghost" data-go="reports">Progress Reports</button></div>
+<div class="actions"><button type="button" id="ss10OpenDrawer" class="secondary" aria-controls="ss10CourseDrawer" aria-expanded="false">Course menu &amp; student records</button><a class="button" href="unit-01/evidence-lab.html">Unit 1 Learning Resources</a><a class="button" href="../../mathematics/tools/vocabulary-studio.html?course=social-studies-10&amp;unit=01">Vocabulary Studio</a><button data-go="week">Open Lessons</button><button class="secondary" data-go="scope">View Scope</button><button class="ghost" data-go="reports">Progress Reports</button></div>
 <p class="khaemenes-original-tools" style="margin:12px 0;padding:12px;border:1px solid currentColor;border-radius:7px"><a href="../tools/visual-studio.html" style="font:inherit;text-decoration:underline">Open Khaemenes Original Visual Studio — maps, timelines, graphs &amp; source documents</a></p><p class="academy-evidence-portal-link" style="margin:12px 0;padding:12px;border:1px solid currentColor;border-radius:7px"><a href="../tools/academic-evidence-printout.html?grade=10" style="color:inherit;text-decoration:underline">Academic Evidence Portfolio — printable homeschool record (Grade 10)</a></p></header><aside class="khaemenes-source-quality" aria-label="Common source quality checkpoint" style="margin:12px 0;padding:12px;border:1px solid #a5947d;border-radius:7px;overflow-wrap:anywhere"><p style="margin:0 0 5px;font-weight:400">Grades 9–12 · Source Quality Checkpoint</p><p style="margin:0 0 6px">Check author, date, direct support, corroboration and uncertainty before using a source in a visual investigation or portfolio. Works offline; print or export your own worksheet.</p><a href="../tools/source-quality-lab.html" style="color:inherit;text-decoration:underline">Open original Academy Source Quality Lab</a></aside><aside class="khaemenes-unified-evidence" aria-label="Unified academic evidence ledger" style="margin:14px 0;padding:12px;border:1px solid #a5947d;border-radius:7px;overflow-wrap:anywhere"><p style="margin:0 0 6px"><strong>Grades 9–12 · Common Evidence Ledger</strong></p><p style="margin:0 0 6px">Document sources, dates, visual accuracy, claims and limitations. Save locally, export JSON, or print with student, grade and lesson identifiers.</p><a href="../tools/evidence-ledger.html" style="color:inherit;text-decoration:underline">Open original Academy Evidence Ledger</a></aside>
 <section class="ss10-tools-shelf" id="ss10-tools" aria-labelledby="ss10-tools-heading"><h2 id="ss10-tools-heading">Khaemenes Original History Tools</h2><p class="ss10-helper">Study with original maps, historical timelines, source records and quantitative graphics. Research and practice tools remain available without altering assessed grades.</p><div class="ss10-tools-grid"><a href="../tools/visual-studio.html">Atlas, Graphs &amp; Timelines<small>Explore and create original visual evidence</small></a><a href="unit-01/evidence-lab.html">U.S. History Evidence Lab<small>Study early American historical sources</small></a><a href="resources/map-data-analysis.html">Map &amp; Data Analysis<small>Read geography and historical measurements</small></a><a href="../../mathematics/tools/vocabulary-studio.html?course=social-studies-10&amp;unit=01">Academy Vocabulary Studio<small>Historical concepts and terms</small></a><a href="docs/CURRICULUM_MAP.md">36-Week Course Map<small>Plan the complete learning sequence</small></a><a href="../index.html">Social Studies Department<small>Explore all four grade pathways</small></a></div></section>
 <nav class="tabs"><button class="tab active" data-view="dashboard">Dashboard</button><button class="tab" data-view="week">Lessons</button><button class="tab" data-view="scope">Scope</button><button class="tab" data-view="exams">Assessments</button><button class="tab" data-view="capstone">Capstone</button><button class="tab" data-view="reports">Reports</button><button class="tab" data-view="standards">Standards</button></nav>
@@ -265,9 +267,34 @@ function stats(s){
 
 /* 4. Render router */
 function render(){
-  if(student()&&!canOpenWeek(student(),activeWeek))activeWeek=highestUnlocked(student());
-  renderStudents(); renderWeeks(); setActiveTabs();
+  const learner=student();
+  if(learner&&!canOpenWeek(learner,activeWeek))activeWeek=highestUnlocked(learner);
+  renderStudents();renderWeeks();setActiveTabs();
+  // A public visitor must never trigger learner-scoped writes or a blank pane.
+  // Public scope/standards stay readable; protected grade/lesson records remain
+  // unavailable until the Academy learner identity is selected.
+  if(!learner){
+    if(view==="scope")scope();
+    else if(view==="standards")standards();
+    else renderPublicEntrance();
+    return;
+  }
   ({dashboard,week,scope,exams,capstone,reports,standards}[view])();
+}
+function renderPublicEntrance(){
+  const heading=view==="week"?"Browse the lesson sequence":view==="reports"?"Learner reports are protected":view==="exams"?"Mastery assessments require a learner":view==="capstone"?"Civic capstone workspace":"Welcome to U.S. History Honors";
+  $("content").innerHTML=`<section class="card ss10-public-entry" aria-labelledby="ss10-public-title">
+    <p class="eyebrow">KHAEMENES ACADEMY · GRADE 10</p>
+    <h2 id="ss10-public-title">${heading}</h2>
+    <p>This is the public course entrance. Select your Academy student profile to open a personal lesson workspace, track progress, and save evidence. No placeholder student or grades are created.</p>
+    <div class="actions">
+      <a class="button" href="https://vervenveda.com/Khaemenes_Academy.github.io/student/">Open Academy Student Portal</a>
+      <a class="button secondary" href="week-01/student-packet.html">Read Week 01 lesson packet</a>
+      <button class="secondary" type="button" data-go="scope">Browse 36-week scope</button>
+    </div>
+    <p class="small">The lesson packet and curriculum map are available for reading without signing in. Academic evidence, scores and mastery gates remain tied to an authorized Academy learner.</p>
+  </section>`;
+  $("content").querySelector('[data-go="scope"]').addEventListener("click",()=>{view="scope";render()});
 }
 function setActiveTabs(){ document.querySelectorAll("[data-view]").forEach(b=>b.classList.toggle("active",b.dataset.view===view)) }
 function renderStudents(){ $("studentSelect").innerHTML=state.students.map(s=>`<option value="${s.id}" ${s.id===state.activeId?"selected":""}>${esc(s.name)}</option>`).join("") }
@@ -362,15 +389,21 @@ document.querySelectorAll("[data-view]").forEach(b=>b.onclick=()=>{view=b.datase
 document.querySelectorAll("[data-go]").forEach(b=>b.onclick=()=>{view=b.dataset.go;render()});
 $("addStudent").onclick=()=>{let n=$("studentName").value.trim(); if(!n)return alert("Enter a student name."); addStudent(n); $("studentName").value=""};
 $("studentSelect").onchange=e=>{state.activeId=e.target.value; save(); render()};
-$("deleteStudent").onclick=()=>{let s=student(); if(!s)return; if(!confirm(`Delete ${s.name}?`))return; state.students=state.students.filter(x=>x.id!==s.id); state.activeId=state.students[0]?.id||null; if(!state.students.length)addStudent("First Student"); save(); render()};
+$("deleteStudent").onclick=()=>{let s=student(); if(!s)return; if(!confirm(`Delete ${s.name}?`))return; state.students=state.students.filter(x=>x.id!==s.id); state.activeId=state.students[0]?.id||null; save(); render()};
 $("demo").onclick=()=>{addStudent("Demo Student"); let s=student(); for(let i=1;i<=3;i++){let r=weekRec(s,i); ["Monday","Tuesday","Wednesday"].forEach(d=>r.lessons[d]=true); r.assignments[0]=true; r.quiz.best=[80,72,88][i-1]; r.quiz.attempts.push({date:new Date().toISOString(),score:r.quiz.best})} save(); render()};
-if(!state.students.length)addStudent("First Student"); else render();
+// Do not invent a student when the Academy learner-scope layer denies writes.
+const academyProfile=window.KhaemenesCourseEntryContract?.readAcademyProfile?.();
+if(academyProfile&&!state.students.length){
+  try{addStudent(academyProfile.name||"Academy Learner")}
+  catch(error){console.warn("Academy learner record unavailable:",error.message);render()}
+}else render();
 </script>
 <!-- Grade 10 course navigation belongs to the host document, never to reportHTML(). -->
 <script src="../../../assets/high-school-return-to-classes.js" data-grade="10" defer></script>
 <script src="../../../assets/high-navigation-v1.js" defer></script>
 <script src="assets/grade10-socialstudies-unified-upgrade.js"></script>
 <script src="assets/socialstudies-beta-bridge.js"></script>
+<script src="assets/grade10-course-focus-v1.js"></script>
 <script src="https://vervenveda.com/assets/vnv-beta-link.js" defer></script>
 </body>
 </html>
