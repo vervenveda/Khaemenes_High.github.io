@@ -1,6 +1,6 @@
 (()=>{
 "use strict";
-const VERSION="1.2.0";
+const VERSION="1.1.0";
 const esc=v=>String(v??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
 const now=()=>new Date().toISOString();
 const safeJSON=(raw,fallback)=>{try{const v=JSON.parse(raw||"null");return v&&typeof v==="object"?v:fallback}catch{return fallback}};
@@ -117,67 +117,6 @@ function enhance(){
       badge.textContent=state.label;
     }
   }
-  /* Optional in-page navigation for Algebra I's lesson workflow.
-     It does not submit, grade, mark complete or change mastery authority. */
-  function syncStageNavigation(mastered){
-    if(cfg.enableStageNavigation!==true)return;
-    section.classList.add("khae-workflow-navigation");
-    const root=document.getElementById("main")||document.getElementById("lessonMain")||document.body;
-    const visible=el=>!!el&&el.isConnected&&!section.contains(el)&&!el.closest("[hidden],dialog:not([open]),details:not([open])");
-    const find=(...selectors)=>selectors.map(sel=>root.querySelector(sel)).find(visible)||null;
-    const cards=[...root.querySelectorAll("article.card,.deep-section")].filter(visible);
-    const titled=re=>cards.find(el=>re.test(el.querySelector("h2,h3,h4")?.textContent||""))||null;
-    const targets={
-      learn:titled(/objectives|the idea|lesson reading|learn/i)||find("#lessonReading"),
-      example:find(".deep-worked,.worked-example,.worked,.example-card,[data-worked-example]")||titled(/worked example|worked steps|worked solution/i),
-      practice:titled(/guided practice|practice|laboratory|experiment|wrong answer museum/i)||find(".card.lab,.practice-card"),
-      game:find(".math-shared-game-companion,[data-game-companion],[data-launch-title],[data-launch-url]"),
-      video:find(".math-video-companion,.video-companion,[data-video-companion],iframe[src*='youtube-nocookie.com'],iframe[src*='youtube.com/embed']"),
-      submit:visible(cfg.getSubmitButton?.())?cfg.getSubmitButton?.():null,
-      mastery:$("khaeWorkflowScore"),
-      review:reflection,
-      evidence:$("khaeWorkflowExport"),
-      continue:mastered&&!$("khaeWorkflowContinue").hidden?$("khaeWorkflowContinue"):null
-    };
-    for(const original of [...section.querySelectorAll(".khae-workflow-stage")]){
-      const key=original.dataset.stage,target=targets[key];
-      const active=!!target&&target.isConnected&&
-        (key!=="continue"||mastered);
-      let card=original;
-      if(active&&card.tagName!=="A"){
-        const link=document.createElement("a");
-        for(const attr of [...card.attributes])link.setAttribute(attr.name,attr.value);
-        while(card.firstChild)link.appendChild(card.firstChild);
-        card.replaceWith(link);card=link;
-      }else if(!active&&card.tagName==="A"){
-        const inert=document.createElement("article");
-        for(const attr of [...card.attributes])if(attr.name!=="href"&&attr.name!=="aria-label")inert.setAttribute(attr.name,attr.value);
-        while(card.firstChild)inert.appendChild(card.firstChild);
-        card.replaceWith(inert);card=inert;
-      }
-      if(active){
-        if(!target.id)target.id="khaeWorkflowTarget"+key.charAt(0).toUpperCase()+key.slice(1);
-        if(!/^(A|BUTTON|INPUT|SELECT|TEXTAREA)$/.test(target.tagName)&&!target.hasAttribute("tabindex"))target.tabIndex=-1;
-        card.setAttribute("href","#"+encodeURIComponent(target.id));
-        card.setAttribute("aria-label","Jump to "+(card.querySelector("strong")?.textContent||key));
-        card.removeAttribute("aria-disabled");
-      }else{
-        card.removeAttribute("href");
-        card.removeAttribute("aria-label");
-        if(["game","video","continue","example"].includes(key))card.setAttribute("aria-disabled","true");
-        else card.removeAttribute("aria-disabled");
-      }
-    }
-  }
-  if(cfg.enableStageNavigation===true){
-    section.addEventListener("click",e=>{
-      const link=e.target.closest?.("a.khae-workflow-stage[href^='#']");
-      if(!link||!section.contains(link)||e.metaKey||e.ctrlKey||e.shiftKey||e.altKey)return;
-      const id=decodeURIComponent(link.getAttribute("href").slice(1));
-      const target=document.getElementById(id);
-      if(target)setTimeout(()=>target.focus({preventScroll:true}),0);
-    });
-  }
   function refresh(){
     bindSubmit();
     const rec=read(),ev=canonical();
@@ -192,7 +131,7 @@ function enhance(){
     $("khaeWorkflowSubmitJump").disabled=!native;
     $("khaeWorkflowSaveReview").disabled=!submitted&&!scored;
     const c=continueLink(),a=$("khaeWorkflowContinue");
-    if(mastered&&c?.href){a.href=c.href;a.textContent=c.label||"Continue to next required step";a.hidden=false}else a.hidden=true;syncSupportStages(mastered);syncStageNavigation(mastered);
+    if(mastered&&c?.href){a.href=c.href;a.textContent=c.label||"Continue to next required step";a.hidden=false}else a.hidden=true;syncSupportStages(mastered);
     status.textContent=mastered?(reviewed?"Mastery and local review are recorded. Continue using the course’s existing gate.":"Mastery is recorded. A local review note may be saved before continuing."):(submitted?(scored?"Assignment scored below mastery; corrections and a new submission are available.":"Assignment submitted; awaiting a recorded score."):"Work remains in draft until the assignment is submitted.");
   }
   $("khaeWorkflowLearn").addEventListener("click",()=>{write({learnComplete:true,learnCompletedAt:now()});refresh()});
