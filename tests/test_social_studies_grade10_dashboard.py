@@ -34,6 +34,21 @@ def test_entrance_and_original_tools(browser,site,width):
  assert all("Select an Academy learner before saving course work." in error for error in errors),errors
 
  ctx.close()
+
+def test_grade10_portal_does_not_expose_javascript_as_lesson_text(browser,site):
+ ctx=browser.new_context(viewport={"width":375,"height":850})
+ page=ctx.new_page()
+ page.goto(site+BASE+"index.html",wait_until="domcontentloaded")
+ # Earlier a literal </script> inside printable reportHTML cut the main JS
+ # short and surfaced the remaining JavaScript as visible page text.
+ assert page.evaluate("typeof reportHTML")== "function"
+ assert page.evaluate("typeof printReport")== "function"
+ assert page.evaluate("typeof downloadReport")== "function"
+ assert not page.evaluate("document.body.innerText.includes('function printReport(){')")
+ assert not page.evaluate("document.body.innerText.includes('function downloadCSV(){')")
+ assert page.locator('button[data-view="week"]').count()>=1
+ ctx.close()
+
 def test_resources_are_local_and_present(browser,site):
  ctx=browser.new_context();page=ctx.new_page()
  page.goto(site+BASE+"index.html",wait_until="domcontentloaded")
