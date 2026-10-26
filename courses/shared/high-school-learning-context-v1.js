@@ -82,6 +82,17 @@ function recordAssessment(event){
 function recordFormative(event){
   return recordEvent(Object.assign({},event,{formative:true,affectsGrade:false,kind:event?.kind||"formative"}));
 }
+function releasedMathLesson(){
+  // Use the already-authored Algebra I lesson data, not the assessment bank.
+  const page=String(global.location?.pathname||'').toLowerCase();
+  if(!page.endsWith('/courses/mathematics/algebra-1/units/unit-01/lessons/lesson-01-algebraic-habits-notation-mathematical-argument.html'))return null;
+  const record=global.KHAE_UNIT01?.lessons?.find?.(x=>x.number===1);
+  if(!record||record.title!=='Algebraic Habits, Notation & Mathematical Argument')return null;
+  return {subject:'mathematics',courseId:'math-algebra1-integrated1',
+    lessonId:'u01-l01',title:record.title,
+    objective:String(record.objectives?.[0]||'').slice(0,200),
+    focus:'mathematical claims, justification, and counterexamples'};
+}
 function summary(l=learner()){
   if(!l)return null;
   const record=learnerRecord(l),events=(record?.events||[]).filter(e=>e.learnerId===l.learnerId);
@@ -107,6 +118,7 @@ function summary(l=learner()){
     recentFormatives:formatives.slice(-20),
     latestAssessment:recentAssessment,
     latestFormative:recentFormative,
+    currentLessonContext:releasedMathLesson(),
     evidencePrivacy:{
       assessmentQuestionTextPublished:false,
       assessmentOptionsPublished:false,
