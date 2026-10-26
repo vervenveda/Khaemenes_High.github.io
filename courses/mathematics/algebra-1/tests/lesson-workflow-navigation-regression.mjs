@@ -18,7 +18,7 @@ assert(adapter.includes("enableStageNavigation:true"),"Algebra I stage navigatio
 assert(workflow.includes('cfg.enableStageNavigation===true'),"Shared workflow opt-in guard missing");
 assert(workflow.includes('function syncStageNavigation(mastered)'),"Real-anchor navigation engine missing");
 assert(workflow.includes('card.setAttribute("href","#"+encodeURIComponent(target.id))'),"Stage links must target actual lesson elements");
-assert(workflow.includes('current.removeAttribute("href")')===false||workflow.includes('card.removeAttribute("href")'),"Unavailable stage cards must not link");
+assert(workflow.includes('card.removeAttribute("href")'),"Unavailable stage cards must not link");
 assert(workflow.includes('continue:mastered&&!$("khaeWorkflowContinue").hidden'),"Mastery-locked Continue may bypass the gate");
 assert(workflow.includes('key!=="continue"||mastered'),"Continue must require canonical mastery");
 const expected=["learn","example","practice","game","video","submit","mastery","review","evidence","continue"];
