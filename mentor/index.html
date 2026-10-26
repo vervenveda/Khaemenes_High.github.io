@@ -145,6 +145,7 @@ html:root:root body :is(.hero, .header, .page-header, .section-head, .lesson-hea
 <script src="../assets/khaemenes-archaemenes-voice.js"></script>
 <script src="../assets/khaemenes-verified-mentor-boundary-v1.js"></script>
 <script src="../assets/khaemenes-archaemenes-assessment-policy-v1.js"></script>
+<script src="../assets/khaemenes-archaemenes-lesson-guide-v1.js"></script>
 <script>
 (()=>{
 "use strict";
@@ -238,6 +239,10 @@ function withMentorTimeout(promise,ms=8000){
 }
 function localResponse(text){
  const i=intent(text),label=subject==="general"?"this subject":subject.replace(/-/g," ");
+ // Current lesson metadata is instructional, not an access-unlock assertion.
+ // No lesson information is used for protected, assessment, or progress queries.
+ const guided=(!["protected","assessment","progress","review"].includes(i))?window.KhaemenesArchaemenesLessonGuide?.respond?.(source,text):null;
+ if(guided)return guided;
  if(i==="protected")return"I can help you prepare, but I cannot reveal locked future quiz or test questions, protected answer keys, or bypass a prerequisite. Tell me the concept or skill you are preparing for, and we can practice it with a fresh example inside your current learning scope.";
  if(i==="progress"){
   if(!learningSummary)return"I do not have a learner-scoped High School evidence summary in this browser yet. Open the registered course, complete or review the current learning evidence, and then reopen Mentor.";
