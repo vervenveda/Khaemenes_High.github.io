@@ -144,6 +144,7 @@ html:root:root body :is(.hero, .header, .page-header, .section-head, .lesson-hea
 <script src="/stos/khaemenes/assets/khaemenes-naib-mentor-router.js"></script>
 <script src="../assets/khaemenes-archaemenes-voice.js"></script>
 <script src="../assets/khaemenes-verified-mentor-boundary-v1.js"></script>
+<script src="../assets/khaemenes-archaemenes-assessment-policy-v1.js"></script>
 <script>
 (()=>{
 "use strict";
@@ -219,6 +220,7 @@ function add(who,text,{autoVoice=false}={}){
 add("mentor",mentor.intro||"Tell me where the reasoning became unclear, and we will work from there.");
 function intent(text){const t=text.toLowerCase();if(/locked|future|next quiz|next test|answer key|test answers|quiz answers|exam answers|give me the answer/.test(t))return"protected";if(/how am i doing|my progress|what did i do|recent progress|current progress/.test(t))return"progress";if(/what should i review|where did i struggle|what did i miss|weak skill|review skill/.test(t))return"review";if(/quiz|test|exam|assessment|score|grade/.test(t))return"assessment";if(/mistake|wrong|missed|error|diagnose/.test(t))return"mistake";if(/study|review|remember|practice/.test(t))return"study";if(/plan|next step|behind|schedule/.test(t))return"plan";return"concept"}
 const transportableIntents=new Set(["concept","mistake","study","plan"]);
+const assessmentPolicy=window.KhaemenesArchaemenesAssessmentPolicy;
 const mentorPolicy=Object.freeze({
  version:"archaemenes-high-mentor-policy-v3",
  masteryThreshold:80,
@@ -260,9 +262,11 @@ async function ask(text){
  if(mentorRequestInFlight||!verifyLearnerSession())return;
  const cleaned=safe(text,1200).trim();if(!cleaned)return;
  const kind=intent(cleaned);
+ const assessmentDecision=assessmentPolicy?.request?.(cleaned,kind)||{allowTransport:false,restricted:true};
  add("student",cleaned);question.value="";
+ if(assessmentDecision.restricted){add("mentor",assessmentPolicy?.refusal||localResponse("locked answer key"),{autoVoice:true});status.textContent="";return;}
  // Assessment/protected requests and guest previews stay local-only.
- if(!transportableIntents.has(kind)||!pageLearnerId||!window.KhaemenesVerifiedMentorBoundary?.ask){
+ if(!assessmentDecision.allowTransport||!transportableIntents.has(kind)||!pageLearnerId||!window.KhaemenesVerifiedMentorBoundary?.ask){
   add("mentor",localResponse(cleaned),{autoVoice:true});status.textContent="";return;
  }
  mentorRequestInFlight=true;if(sendButton)sendButton.disabled=true;
@@ -277,7 +281,9 @@ async function ask(text){
   if(!verifyLearnerSession())return;
   // Only a validated answer from the authenticated boundary is displayed.
   if(response?.authorized!==true||typeof response.text!=="string"||!response.text.trim())throw Error("mentor-boundary-rejected");
-  add("mentor",safe(response.text,4000),{autoVoice:true});
+  const checkedReply=assessmentPolicy?.response?.(response.text);
+  if(!checkedReply?.allowed)throw Error("mentor-assessment-response-rejected");
+  add("mentor",safe(checkedReply.text,4000),{autoVoice:true});
  }catch{
   if(!learnerSessionBlocked)add("mentor",localResponse(cleaned),{autoVoice:true});
  }finally{
