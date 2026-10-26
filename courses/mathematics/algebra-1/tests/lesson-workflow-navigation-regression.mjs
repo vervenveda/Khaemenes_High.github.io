@@ -51,6 +51,65 @@ for(let unit=1;unit<=13;unit++){
   countByUnit[number]=lessons.length;
 }
 assert(Object.values(countByUnit).reduce((a,b)=>a+b,0)>=80,"Expected full Algebra I lesson coverage");
+// Isolated DOM-behavior check: a real destination becomes a keyboard anchor,
+// while an unavailable video or mastery-locked Continue remains inert.
+const navBegin=workflow.indexOf("  function syncStageNavigation(mastered){");
+const navEnd=workflow.indexOf("  if(cfg.enableStageNavigation===true){",navBegin);
+assert(navBegin>=0&&navEnd>navBegin,"Navigation implementation missing");
+class Tile {
+ constructor(tag,stage=null){
+  this.tagName=tag;this.attrs={};this.dataset={};this.isConnected=true;
+  this.children=[];this.hidden=false;this.id="";
+  this.classList={add:()=>{}};
+  if(stage)this.setAttribute("data-stage",stage);
+  const textNode={textContent:stage||tag,_parent:this};this.children.push(textNode);
+ }
+ get attributes(){return Object.entries(this.attrs).map(([name,value])=>({name,value}))}
+ get firstChild(){return this.children[0]}
+ appendChild(node){
+  if(node._parent){const siblings=node._parent.children,index=siblings.indexOf(node);if(index>=0)siblings.splice(index,1)}
+  node._parent=this;this.children.push(node);
+ }
+ setAttribute(name,value){this.attrs[name]=String(value);if(name==="id")this.id=value;if(name.startsWith("data-"))this.dataset[name.slice(5)]=String(value)}
+ getAttribute(name){return this.attrs[name]??null}
+ removeAttribute(name){delete this.attrs[name]}
+ hasAttribute(name){return name in this.attrs}
+ querySelector(selector){return selector==="strong"?this.children[0]:null}
+ replaceWith(next){if(this.parent){next.parent=this.parent;this.parent.nodes[this.parent.nodes.indexOf(this)]=next}this.isConnected=false}
+ closest(){return null}
+}
+const holder={nodes:[],classList:{add:()=>{}},contains:()=>false,querySelectorAll:()=>holder.nodes};
+holder.nodes=expected.map(stage=>{const el=new Tile("ARTICLE",stage);el.parent=holder;return el});
+const make=tag=>new Tile(tag),objectives=make("SECTION"),worked=make("SECTION"),practice=make("SECTION"),game=make("SECTION");
+const score=make("BUTTON"),status=make("SECTION"),review=make("TEXTAREA"),evidence=make("BUTTON"),continueButton=make("A");
+continueButton.hidden=true;
+objectives.querySelector=()=>({textContent:"Objectives"});
+worked.querySelector=()=>({textContent:"Worked example"});
+practice.querySelector=()=>({textContent:"Guided practice"});
+const destinations={
+ ".deep-worked,.worked-example,.worked,.example-card,[data-worked-example]":worked,
+ ".card.lab,.practice-card":practice,
+ ".math-shared-game-companion,[data-game-companion],[data-launch-title],[data-launch-url]":game
+};
+const fakeMain={querySelectorAll:()=>[objectives,worked,practice],querySelector:selector=>destinations[selector]||null};
+const fakeDoc={getElementById:id=>id==="main"?fakeMain:null,createElement:tag=>new Tile(tag.toUpperCase())};
+const get=id=>({"khaeWorkflowScore":status,"khaeWorkflowExport":evidence,"khaeWorkflowContinue":continueButton})[id];
+const navigate=vm.runInNewContext(workflow.slice(navBegin,navEnd)+";syncStageNavigation",{
+ cfg:{enableStageNavigation:true,getSubmitButton:()=>score},section:holder,document:fakeDoc,reflection:review,$:get
+});
+const snapshot=()=>Object.fromEntries(holder.nodes.map(el=>[el.dataset.stage,{tag:el.tagName,href:el.getAttribute("href")}]));
+navigate(false);
+const locked=snapshot();
+assert.equal(locked.learn.tag,"A","Learn should be a clickable anchor");
+assert.equal(locked.learn.href,"#khaeWorkflowTargetLearn");
+assert.equal(locked.submit.tag,"A","Submit should jump to the real score button");
+assert.equal(locked.video.tag,"ARTICLE","Unavailable video must not be linked");
+assert.equal(locked.continue.tag,"ARTICLE","Continue must not bypass the 80% authority");
+continueButton.hidden=false;
+navigate(true);
+assert.equal(snapshot().continue.tag,"A","Continue action may become navigable only after mastery");
+assert.equal(snapshot().continue.href,"#khaeWorkflowTargetContinue");
+
 console.log("PASS: ten conditional workflow destinations, anchors and keyboard focus guards");
 console.log("PASS: locked Continue, optional support fallback, unchanged grading path");
 console.log("PASS: parchment + charcoal scoped to Algebra I workflow");
