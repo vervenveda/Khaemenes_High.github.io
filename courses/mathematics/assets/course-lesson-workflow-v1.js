@@ -157,7 +157,7 @@ function enhance(){
       }
       if(active){
         if(!target.id)target.id="khaeWorkflowTarget"+key.charAt(0).toUpperCase()+key.slice(1);
-        target.setAttribute("tabindex",target.getAttribute("tabindex")||"-1");
+        if(!/^(A|BUTTON|INPUT|SELECT|TEXTAREA)$/.test(target.tagName)&&!target.hasAttribute("tabindex"))target.tabIndex=-1;
         card.setAttribute("href","#"+encodeURIComponent(target.id));
         card.setAttribute("aria-label","Jump to "+(card.querySelector("strong")?.textContent||key));
         card.removeAttribute("aria-disabled");
