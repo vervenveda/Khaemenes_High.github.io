@@ -13,6 +13,11 @@ expect(main.includes('src="./assets/vnv-beta-link.js"'),"High School front door 
 expect(main.includes('src="./assets/vnv-language.js"')&&main.includes('data-official-vnv-language="true"'),"High School front door loads the official translator");
 expect(main.includes('data-vnv-ecosystem-slot')&&main.includes('High Directory</button>'),"High School landing uses one far-right ecosystem hamburger and preserves its labeled High Directory control");
 expect(main.includes('khaemenes-landing-standard.css')&&main.includes('khaemenes-landing-toolbar.js'),"High School landing shares the Academy Home header and utility dock standard");
+expect(main.includes('data-khae-campus-front-desk="true"'),"High School root marks its front desk to avoid student-rail collisions");
+expect(rail.includes('if(document.body?.dataset?.khaeCampusFrontDesk==="true")return null;'),"learner rail does not mount on front desk");
+expect(rail.includes('if(document.body?.dataset?.khaeCampusFrontDesk==="true")return; // Full student controls'),"front desk does not spawn a student profile floating button");
+expect(rail.includes('if(document.body?.dataset?.khaeCampusFrontDesk==="true")return; // Do not mix'),"front desk does not spawn learner-only action buttons");
+expect(main.includes('src="./assets/vnv-beta-link.js"'),"Beta program existing action is preserved and available to campus utility dock");
 
 const expectedRail=["Student Profile","Search","Archaemenes","Contribute","Beta Program"];
 for(const label of expectedRail)expect(rail.includes(label),"learner rail contains "+label);
