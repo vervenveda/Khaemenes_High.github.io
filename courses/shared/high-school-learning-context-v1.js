@@ -83,8 +83,25 @@ function recordFormative(event){
   return recordEvent(Object.assign({},event,{formative:true,affectsGrade:false,kind:event?.kind||"formative"}));
 }
 function releasedMathLesson(){
-  // Use the already-authored Algebra I lesson data, not the assessment bank.
   const page=String(global.location?.pathname||'').toLowerCase();
+  // These three public lesson routes are released; no bank or teacher key is read.
+  const mapped=[
+    {path:'/courses/mathematics/pre-algebra/units/unit-01/lessons/lesson-01-number-systems.html',
+      courseId:'pre-algebra',title:'Number Families & the Real Number System',
+      objective:'classify numbers into real-number families with multiple memberships',
+      focus:'whole, integer, rational and irrational numbers'},
+    {path:'/courses/mathematics/geometry/units/unit-01/lessons/u01-l01.html',
+      courseId:'geometry',title:'Points, Lines, Planes & Defined Terms',
+      objective:'use definitions and logical statements to establish a geometric argument',
+      focus:'points, lines, segments, rays and planes'},
+    {path:'/courses/mathematics/algebra-2/units/unit-01/lessons/u01-l01.html',
+      courseId:'algebra-2',title:'Function Language, Notation & Evaluation',
+      objective:'evaluate functions through valid input substitution',
+      focus:'function inputs, outputs and substitution'}
+  ].find(x=>page.endsWith(x.path));
+  if(mapped)return {subject:'mathematics',courseId:mapped.courseId,lessonId:'u01-l01',
+    title:mapped.title,objective:mapped.objective,focus:mapped.focus};
+  // Existing Algebra I course-owned lesson-data lookup is kept unchanged.
   if(!page.endsWith('/courses/mathematics/algebra-1/units/unit-01/lessons/lesson-01-algebraic-habits-notation-mathematical-argument.html'))return null;
   const record=global.KHAE_UNIT01?.lessons?.find?.(x=>x.number===1);
   if(!record||record.title!=='Algebraic Habits, Notation & Mathematical Argument')return null;
@@ -93,6 +110,7 @@ function releasedMathLesson(){
     objective:String(record.objectives?.[0]||'').slice(0,200),
     focus:'mathematical claims, justification, and counterexamples'};
 }
+
 function summary(l=learner()){
   if(!l)return null;
   const record=learnerRecord(l),events=(record?.events||[]).filter(e=>e.learnerId===l.learnerId);
