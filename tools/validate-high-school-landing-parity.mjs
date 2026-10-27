@@ -11,7 +11,8 @@ const gradeCss=read("assets/khaemenes-grade-landing-v1.css");
 expect(main.includes('id="menuButton"')&&main.includes('id="drawerBg"'),"High School front door keeps its native hamburger and drawer");
 expect(main.includes('src="./assets/vnv-beta-link.js"'),"High School front door uses the canonical local learner rail");
 expect(main.includes('src="./assets/vnv-language.js"')&&main.includes('data-official-vnv-language="true"'),"High School front door loads the official translator");
-expect(!main.includes('data-vnv-ecosystem-slot'),"High School front door does not add a second ecosystem menu beside its native drawer");
+expect(main.includes('data-vnv-ecosystem-slot')&&main.includes('High Directory</button>'),"High School landing uses one far-right ecosystem hamburger and preserves its labeled High Directory control");
+expect(main.includes('khaemenes-landing-standard.css')&&main.includes('khaemenes-landing-toolbar.js'),"High School landing shares the Academy Home header and utility dock standard");
 
 const expectedRail=["Student Profile","Search","Archaemenes","Contribute","Beta Program"];
 for(const label of expectedRail)expect(rail.includes(label),"learner rail contains "+label);
