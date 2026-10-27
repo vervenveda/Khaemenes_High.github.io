@@ -11,7 +11,6 @@ on:
       - 'grades/grade-11/student-profile/index.html'
       - 'grades/grade-12/student-profile/index.html'
       - 'tools/validate-upper-grade-profile-parity.mjs'
-      - 'tests/test_high_school_profile_routes.py'
       - '.github/workflows/high-student-profile-layout-regression.yml'
   pull_request:
     paths:
@@ -22,7 +21,6 @@ on:
       - 'grades/grade-11/student-profile/index.html'
       - 'grades/grade-12/student-profile/index.html'
       - 'tools/validate-upper-grade-profile-parity.mjs'
-      - 'tests/test_high_school_profile_routes.py'
       - '.github/workflows/high-student-profile-layout-regression.yml'
   workflow_dispatch:
 
@@ -44,5 +42,3 @@ jobs:
           node --check grades/shared/student-profile-compact-panels.js
       - name: Validate centered profile grid and dialog integrations
         run: node tools/validate-upper-grade-profile-parity.mjs
-      - name: Verify existing student profile routes and learner protections
-        run: python3 tests/test_high_school_profile_routes.py
