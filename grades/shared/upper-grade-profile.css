@@ -121,3 +121,171 @@ body:has([data-khae-header]) .ug-top .ug-hero{padding-top:8px!important;padding-
 }
 @media(max-width:340px){.ug-popup-rail{grid-template-columns:minmax(0,1fr)}}
 @media print {.ug-popup-rail,.ug-profile-dialog:not([open]){display:none!important}}
+
+
+/* Profile accessibility / theme harmonization: dialogs follow the learner's background,
+   but contrast is calculated separately so every color choice remains readable. */
+:root{
+  --ug-control-bg:#f9f7f0;
+  --ug-control-ink:#172536;
+  --ug-button-text:#f0e9d9;
+}
+html[data-khae-profile-theme] body{
+  background:var(--ug-bg)!important;
+  color:var(--ug-ink);
+}
+html[data-khae-profile-theme] .ug-top{
+  background:var(--ug-panel)!important;
+}
+html[data-khae-profile-theme] :is(.ug-card,.ug-class,#profile-overview,#learning-today){
+  background:var(--ug-panel)!important;
+  color:var(--ug-ink)!important;
+}
+html[data-khae-profile-theme] :is(.ug-card,.ug-class,#profile-overview,#learning-today) p,
+html[data-khae-profile-theme] :is(.ug-card,.ug-class,#profile-overview,#learning-today) small{
+  color:var(--ug-muted);
+}
+html[data-khae-profile-theme] #seven-classes article{
+  background:var(--ug-panel2);
+  border-color:var(--ug-line);
+  color:var(--ug-ink);
+}
+html[data-khae-profile-theme] .ug-priority-nav a,
+html[data-khae-profile-theme] #upperClasses > label{
+  color:var(--ug-ink);
+}
+/* Full-width with a consistent 7px scholastic border; native dialog keeps its own scroll. */
+html body dialog.ug-profile-dialog{
+  width:min(1060px,calc(100vw - 28px))!important;
+  max-width:min(1060px,calc(100vw - 28px))!important;
+  min-width:0!important;
+  max-height:calc(100dvh - 28px)!important;
+  box-sizing:border-box!important;
+  background:var(--ug-bg)!important;
+  color:var(--ug-ink)!important;
+  border:1px solid var(--ug-line)!important;
+  font:400 17px/1.65 var(--ug-body)!important;
+}
+html body dialog.ug-profile-dialog .ug-dialog-head{
+  padding:17px 24px;
+  background:var(--ug-panel)!important;
+  border-bottom-color:var(--ug-line);
+}
+html body dialog.ug-profile-dialog .ug-dialog-head h2{
+  color:var(--ug-ink)!important;
+  font:500 clamp(20px,2.2vw,26px)/1.3 var(--ug-display)!important;
+}
+html body dialog.ug-profile-dialog .ug-dialog-body{
+  padding:23px 28px 32px;
+  background:var(--ug-bg)!important;
+  color:var(--ug-ink)!important;
+  font:400 17px/1.65 var(--ug-body)!important;
+}
+html body dialog.ug-profile-dialog .ug-dialog-body > *,
+html body dialog.ug-profile-dialog .ug-dialog-body :is(#my-evidence-overview,#my-profile-extras,#studentCourseProgress,#grade10Personalize,#upperGradePersonalize,#khaeDreamsAchievements,#khaeStickerBox,#khaeStudentEcosystemTools){
+  background:var(--ug-panel)!important;
+  color:var(--ug-ink)!important;
+  border-color:var(--ug-line)!important;
+  box-sizing:border-box;
+}
+html body dialog.ug-profile-dialog .ug-dialog-body :is(p,li,label,legend,small,span,strong,summary){
+  color:var(--ug-ink)!important;
+  font-size:max(16px,1em);
+  line-height:1.65;
+}
+html body dialog.ug-profile-dialog .ug-dialog-body :is(h2,h3,h4){
+  color:var(--ug-ink)!important;
+  line-height:1.35;
+}
+html body dialog.ug-profile-dialog .ug-dialog-body h2{font-size:23px!important}
+html body dialog.ug-profile-dialog .ug-dialog-body h3{font-size:20px!important}
+html body dialog.ug-profile-dialog .ug-dialog-body :is(a,a:visited){
+  color:var(--ug-gold)!important;
+  text-decoration:underline;
+  text-underline-offset:3px;
+  font-size:16px;
+  overflow-wrap:anywhere;
+}
+html body dialog.ug-profile-dialog .ug-dialog-body :is(input:not([type="color"]):not([type="checkbox"]):not([type="file"]),textarea,select){
+  background:var(--ug-control-bg)!important;
+  color:var(--ug-control-ink)!important;
+  border:1px solid #89959e!important;
+  border-radius:7px;
+  padding:10px!important;
+  font:400 17px/1.5 var(--ug-body)!important;
+  max-width:100%;
+}
+html body dialog.ug-profile-dialog .ug-dialog-body input::placeholder,
+html body dialog.ug-profile-dialog .ug-dialog-body textarea::placeholder{
+  color:#505b66!important;
+  opacity:1;
+}
+html body dialog.ug-profile-dialog .ug-dialog-body :is(button,input[type="file"]::file-selector-button),
+html body dialog.ug-profile-dialog .ug-dialog-head button{
+  background:var(--ug-panel2)!important;
+  color:var(--ug-ink)!important;
+  border:1px solid var(--ug-line)!important;
+  border-radius:7px;
+  padding:9px 13px;
+  font:500 16px/1.4 var(--ug-body)!important;
+  min-height:43px;
+  max-width:100%;
+}
+html body dialog.ug-profile-dialog :is(button,input,textarea,select):disabled{
+  opacity:.72;
+  cursor:not-allowed;
+}
+html body dialog.ug-profile-dialog :focus-visible,
+html body #myLearningJourney :focus-visible{
+  outline:3px solid var(--ug-gold)!important;
+  outline-offset:3px!important;
+}
+/* Fixed inline backgrounds in independent widgets must not defeat profile color themes. */
+html[data-khae-profile-theme] dialog.ug-profile-dialog #my-profile-extras :is(section,fieldset){
+  background:transparent!important;
+  border-color:var(--ug-line)!important;
+}
+html[data-khae-profile-theme] dialog.ug-profile-dialog #khaeStudentEcosystemTools a{
+  background:var(--ug-panel2)!important;
+  color:var(--ug-ink)!important;
+  border-color:var(--ug-line)!important;
+}
+html[data-khae-profile-theme] dialog.ug-profile-dialog #khaeStudentEcosystemTools a span{
+  color:var(--ug-ink)!important;
+}
+/* The independent Learning Journey popup is included in the same accessible palette. */
+html[data-khae-profile-theme] body #myLearningJourney{
+  width:min(1060px,calc(100vw - 28px))!important;
+  max-width:min(1060px,calc(100vw - 28px))!important;
+  max-height:calc(100dvh - 28px)!important;
+  background:var(--ug-panel)!important;
+  color:var(--ug-ink)!important;
+  border-color:var(--ug-line)!important;
+  font:400 17px/1.65 var(--ug-body)!important;
+}
+html[data-khae-profile-theme] body #myLearningJourney :is(h2,h3,p,li,label,span){
+  color:var(--ug-ink)!important;
+}
+html[data-khae-profile-theme] body #myLearningJourney :is(textarea,input){
+  background:var(--ug-control-bg)!important;
+  color:var(--ug-control-ink)!important;
+}
+html[data-khae-profile-theme] body #myLearningJourney button{
+  background:var(--ug-panel2)!important;
+  color:var(--ug-ink)!important;
+  border:1px solid var(--ug-line)!important;
+  min-height:42px;
+}
+@media(max-width:600px){
+  html body dialog.ug-profile-dialog{
+    width:calc(100vw - 16px)!important;
+    max-width:calc(100vw - 16px)!important;
+  }
+  html body dialog.ug-profile-dialog .ug-dialog-head{padding:12px}
+  html body dialog.ug-profile-dialog .ug-dialog-body{padding:14px;font-size:16px!important}
+  html body dialog.ug-profile-dialog .ug-dialog-body :is(h2,h3){overflow-wrap:anywhere}
+  html[data-khae-profile-theme] body #myLearningJourney{
+    width:calc(100vw - 16px)!important;
+    max-width:calc(100vw - 16px)!important;
+  }
+}
