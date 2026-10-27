@@ -46,6 +46,8 @@ const setBackground=value=>{
   "--ug-ink":light?"#182631":"#fffdf6",
   "--ug-muted":light?"#334657":"#ecf2f5",
   "--ug-gold":light?"#5a3913":"#ffe1aa",
+  "--ug-forest":light?"#275c46":"#c9f1e2",
+  "--ug-danger":light?"#902f36":"#ffc4c4",
   "--ug-line":light?"rgba(24,38,49,.35)":"rgba(255,249,234,.48)",
   "--ug-control-bg":"#fffefa",
   "--ug-control-ink":"#172536"
