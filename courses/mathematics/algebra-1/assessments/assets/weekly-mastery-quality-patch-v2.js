@@ -23,6 +23,7 @@ patch("a1-w18-q07",{
   explanation:"0.18(650)+24=117+24=141 dollars."
 });
 patch("a1-w09-q10",{
+  prompt:"Two plans charge the same amount per unit but different fixed fees. What determines which is cheaper for identical usage?",
   options:["Which plan has the lower fixed fee","The color of the bill","Whether the rates are integers","The letter used for the variable"],
   answer:0,
   explanation:"With equal per-unit rates, the lower fixed fee makes a plan cheaper at every equal usage level; usage does not change their cost difference."
