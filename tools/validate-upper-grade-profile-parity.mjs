@@ -9,6 +9,7 @@ const expect=(value,message)=>{if(!value)failures.push(message)};
 
 const shared=read("grades/shared/upper-grade-seven-class.js");
 const css=read("grades/shared/upper-grade-profile.css");
+const compact=read("grades/shared/student-profile-compact-panels.js");
 const pins=read("courses/shared/high-school-course-pins.js");
 const grade9Quick=read("grades/grade-09/student-profile/student-quick-pins.js");
 const grade9Grades=read("grades/grade-09/student-profile/grades/index.html");
@@ -27,6 +28,14 @@ for(const token of [
 
 expect(css.includes("@media(max-width:520px)"),"upper-grade profile has narrow mobile layout");
 expect(css.includes("font-weight:500"),"upper-grade profile avoids bulky bold typography");
+expect(css.includes("#upperClasses > *"),"all direct upper-grade grid sections must be full-width lanes");
+expect(css.includes("grid-column: 1 / -1"),"upper-grade direct children must span the full 12-column grid");
+expect(css.includes("min(100%,240px)"),"class tiles fit narrow student devices without fixed minimum overflow");
+expect(!shared.includes("holder.prepend(list)"),"upper-grade engine must not reorder the class grid ahead of learner identity");
+for(const token of ["showModal()","dialog.close()","MutationObserver(sync)","grade10Personalize","upperGradePersonalize","studentCourseProgress","my-profile-extras","quick-pins","khaeStickerBox","khaeDreamsAchievements","khaeStudentEcosystemTools"]){
+  expect(compact.includes(token),"compact profile dialog steward includes "+token);
+}
+expect(!compact.includes("localStorage.setItem("),"layout dialogs must not write grades, mastery or preferences");
 
 for(const grade of ["10","11","12"]){
   const html=read("grades/grade-"+grade+"/student-profile/index.html");
@@ -37,6 +46,8 @@ for(const grade of ["10","11","12"]){
   expect(html.includes("khaemenes-student-quick-pins-v1.js"),"Grade "+grade+" loads Academy Quick Pins");
   expect(html.includes("khaemenes-student-workspace-v2.js"),"Grade "+grade+" loads workspace preferences");
   expect(html.includes("upper-grade-seven-class.js"),"Grade "+grade+" uses shared learner engine");
+  expect(html.includes("student-profile-compact-panels.js"),"Grade "+grade+" loads compact profile dialogs");
+  expect(html.indexOf("student-profile-compact-panels.js")>html.indexOf("student-ecosystem-tools.js"),"Grade "+grade+" initializes dialogs after secondary panels");
   expect(html.includes("vnv-language.js"),"Grade "+grade+" keeps official translator");
 }
 
