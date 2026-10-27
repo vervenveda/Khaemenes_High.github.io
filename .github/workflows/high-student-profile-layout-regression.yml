@@ -7,6 +7,8 @@ on:
       - 'grades/shared/upper-grade-profile.css'
       - 'grades/shared/upper-grade-seven-class.js'
       - 'grades/shared/student-profile-compact-panels.js'
+      - 'grades/shared/student-profile-theme-photo.js'
+      - 'tools/validate-upper-grade-profile-theme-contrast.mjs'
       - 'grades/grade-10/student-profile/index.html'
       - 'grades/grade-11/student-profile/index.html'
       - 'grades/grade-12/student-profile/index.html'
@@ -17,6 +19,8 @@ on:
       - 'grades/shared/upper-grade-profile.css'
       - 'grades/shared/upper-grade-seven-class.js'
       - 'grades/shared/student-profile-compact-panels.js'
+      - 'grades/shared/student-profile-theme-photo.js'
+      - 'tools/validate-upper-grade-profile-theme-contrast.mjs'
       - 'grades/grade-10/student-profile/index.html'
       - 'grades/grade-11/student-profile/index.html'
       - 'grades/grade-12/student-profile/index.html'
@@ -40,5 +44,8 @@ jobs:
         run: |
           node --check grades/shared/upper-grade-seven-class.js
           node --check grades/shared/student-profile-compact-panels.js
+          node --check grades/shared/student-profile-theme-photo.js
       - name: Validate centered profile grid and dialog integrations
         run: node tools/validate-upper-grade-profile-parity.mjs
+      - name: Check readable contrast for light, dark and vivid student colors
+        run: node tools/validate-upper-grade-profile-theme-contrast.mjs
