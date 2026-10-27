@@ -60,7 +60,7 @@ function render(){
  const learner=profile?.activeLearner?.(),name=learner?.nickname||learner?.displayName||learner?.name||"Student";
  const identity=el("section");identity.id="profile-overview";identity.style.cssText="border:1px solid #b6a787;border-radius:7px;padding:18px;margin-bottom:16px;background:#15243a";
  identity.append(el("h2",name),el("p","Grade "+grade+" · learner-owned schedule and continuation workspace"));
- const profileLink=el("a","Open Academy Learning Profile");profileLink.href="https://vervenveda.com/Khaemenes_Academy.github.io/student/";identity.append(profileLink);holder.append(identity);
+ const profileLink=el("a","Open Academy Learning Profile");profileLink.href="https://vervenveda.com/Khaemenes_Academy.github.io/student/profile.html";identity.append(profileLink);holder.append(identity);
  const steps=courses.map(([subject,route,id],i)=>({subject,route,id,i,step:stepFor(id,subject,route,i)}));
  const priority=steps.find(x=>x.step.snapshot&&x.step.status!=="complete")||steps[0];
  const today=el("section");today.id="learning-today";today.style.cssText="border:1px solid #b6a787;border-radius:7px;padding:18px;margin-bottom:16px;background:#1b2d46";
@@ -112,8 +112,8 @@ function render(){
   });
  }
  quickSection.append(quickGrid);holder.append(quickSection);
- // Student-first order: class schedule, learning today, pinned tools, then profile overview.
- holder.prepend(list);holder.insertBefore(label,list);holder.insertBefore(today,quickSection);holder.append(identity);
+ // Keep the original clear hierarchy: identity, today's step, language, seven classes, then Quick Pins.
+ // All direct children occupy full-width lanes via the shared profile stylesheet.
 }
 render();
 window.addEventListener("storage",event=>{
