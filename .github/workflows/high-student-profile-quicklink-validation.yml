@@ -9,6 +9,7 @@ on:
       - 'grades/grade-09/student-profile/**'
       - 'grades/shared/upper-grade-seven-class.js'
       - 'grades/shared/upper-grade-profile.css'
+      - 'grades/shared/student-profile-compact-panels.js'
       - 'courses/shared/high-school-course-pins.js'
       - 'courses/**/index.html'
       - 'assets/vnv-beta-link.js'
@@ -29,6 +30,7 @@ on:
       - 'grades/grade-09/student-profile/**'
       - 'grades/shared/upper-grade-seven-class.js'
       - 'grades/shared/upper-grade-profile.css'
+      - 'grades/shared/student-profile-compact-panels.js'
       - 'courses/shared/high-school-course-pins.js'
       - 'courses/**/index.html'
       - 'assets/vnv-beta-link.js'
@@ -60,6 +62,8 @@ jobs:
         run: node --check courses/shared/high-school-course-pins.js
       - name: Syntax check upper-grade profile engine
         run: node --check grades/shared/upper-grade-seven-class.js
+      - name: Syntax check compact profile dialogs
+        run: node --check grades/shared/student-profile-compact-panels.js
       - name: Syntax check student personalization scripts
         run: |
           node --check grades/grade-09/student-profile/student-quick-pins.js
