@@ -189,6 +189,7 @@
   };
 
   function ensureEducationToolbar(){
+    if(document.body?.dataset?.khaeCampusFrontDesk==="true")return null; // Campus home uses its dedicated five-control rail.
     if(!educationProfileConfig()||!document.body)return null;
     let toolbar=document.getElementById(EDUCATION_TOOLBAR_ID);
     if(!document.getElementById(EDUCATION_TOOLBAR_STYLE_ID)){
@@ -286,6 +287,7 @@
   }
 
   function ensureHighStudentUtilityButtons(){
+    if(document.body?.dataset?.khaeCampusFrontDesk==="true")return; // Do not mix Student Profile / My Work with campus utilities.
     if(!isHighStudentSurface()||!document.body)return;
     const toolbar=ensureEducationToolbar();if(!toolbar)return;
     const profileUrl=highStudentProfileUrl();
@@ -349,6 +351,7 @@
   }
 
   function mountHighStudentProfile(){
+    if(document.body?.dataset?.khaeCampusFrontDesk==="true")return; // Full student controls remain on grade/profile routes.
     const config=educationProfileConfig();
     if(!config||!document.body)return;
 
