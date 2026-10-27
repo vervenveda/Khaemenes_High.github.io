@@ -660,12 +660,14 @@ body :is(p,li,small,label,button,input,select,textarea,figcaption,caption,td,th,
 .hero h1 .high-hero-school{font-size:calc(.64em - 6px)!important}
 @media(max-width:560px){.hero h1{font-size:clamp(34.6px,calc(9vw - 3px),53px)!important}}
 </style>
+<link rel="stylesheet" href="https://vervenveda.com/Khaemenes_Academy.github.io/assets/khaemenes-landing-standard.css">
+<link rel="stylesheet" href="https://vervenveda.com/Khaemenes_Academy.github.io/assets/khaemenes-landing-toolbar.css">
 </head>
 <body id="top">
 
 <a class="skip-link" href="#main">Skip to main content</a>
 
-<div class="network-ticker" id="ticker">
+<div class="network-ticker" id="ticker"><span id="khaeNetworkTicker" hidden aria-hidden="true"></span>
   <div class="network-ticker-viewport">
     <div class="network-ticker-track">
       <div class="network-ticker-set">
@@ -693,31 +695,33 @@ body :is(p,li,small,label,button,input,select,textarea,figcaption,caption,td,th,
   <button class="ticker-control" id="tickerControl" aria-label="Pause network ticker">Ⅱ</button>
 </div>
 
-<header class="site-header">
-  <div class="shell header-inner">
-    <a class="brand" href="#top" aria-label="Khaemenes Academy High School home">
-      <span class="brand-mark">K</span>
+<header class="site-header" data-khae-header>
+  <div class="shell header-inner" data-khae-header-inner>
+    <a class="brand" data-khae-brand href="https://vervenveda.com/Khaemenes_Academy.github.io/" aria-label="Khaemenes Academy Home">
+      <span class="brand-mark" data-khae-brand-mark>KA</span>
       <span class="brand-copy">
-        <span class="brand-name">Khaemenes Academy</span>
-        <span class="brand-sub">High School · Grades 9–12</span>
+        <span class="brand-name" data-khae-brand-name>Khaemenes Academy</span>
+        <span class="brand-sub" data-khae-brand-sub>High School · Grades 9–12</span>
       </span>
     </a>
 
-    <nav class="header-links" aria-label="Primary navigation">
+    <nav class="header-links" data-khae-nav aria-label="Primary navigation">
       <a href="#student-portal">Student</a>
       <a href="#parent-portal">Family</a>
       <a href="#grades">Grades 9–12</a>
       <a href="#departments">Departments</a>
       <a class="career-link" href="https://vervenveda.com/Khaemenes_Higher_Learning.github.io/Career/">Career</a>
       <a href="#library">Resources</a>
+      <button class="menu-button" id="menuButton" type="button" aria-label="Open High School directory" aria-expanded="false" aria-controls="drawerBg">High Directory</button>
     </nav>
 
-    <div class="header-actions">
+    <div class="header-actions" data-khae-actions>
+      <a href="#student-portal">Student Entry</a>
+      <a href="https://vervenveda.com/Khaemenes_Academy.github.io/family/">Create / Manage Account</a>
+      <a href="https://vervenveda.com/Khaemenes_Academy.github.io/adult/">Adult Scholar</a>
       <button class="install-button" id="installButton" type="button" hidden>Install</button>
-      <button class="menu-button" id="menuButton" type="button" aria-label="Open High School directory" aria-expanded="false" aria-controls="drawerBg">
-        <span class="menu-lines" aria-hidden="true"></span>
-      </button>
     </div>
+    <div data-vnv-ecosystem-slot aria-label="Ecosystem menu"></div>
   </div>
 </header>
 
@@ -1506,5 +1510,6 @@ links.forEach(a=>{a.href=destination;if(destination==="#student-portal")a.title=
 <script src="https://vervenveda.com/Khaemenes_Academy.github.io/assets/khaemenes-global-header.js" defer></script>
 
 <script src="assets/high-navigation-v1.js" defer></script>
+<script src="https://vervenveda.com/Khaemenes_Academy.github.io/assets/khaemenes-landing-toolbar.js" defer></script>
 </body>
 </html>
