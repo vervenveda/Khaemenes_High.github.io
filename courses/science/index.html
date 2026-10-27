@@ -59,6 +59,30 @@ html:root:root body :is(.hero, .header, .page-header, .section-head, .lesson-hea
 }
 </style>
 <link rel="stylesheet" href="https://vervenveda.com/Khaemenes_Academy.github.io/assets/khaemenes-global-header.css"><link rel="stylesheet" href="https://vervenveda.com/assets/vnv-ecosystem-menu.css"><link rel="stylesheet" href="../../assets/high-navigation-v1.css" data-high-navigation-css>
+<style id="science-department-contrast-20261027">
+/* Science Department contrast repair.
+   The legacy dark palette and the shared parchment layer must not disagree.
+   Presentation only: no routes, learner records, or script changes. */
+html:root:root body .wrap :is(.hero,.card,.ext,.links a,.note){
+  background:#fffefa!important;
+  color:#20241f!important;
+  border-color:#c8beab!important;
+}
+html:root:root body .wrap :is(.hero small,.hero h1,.hero p,
+  .card .grade,.card h2,.card p,.card ul,.card li,.card b,
+  .ext h2,.ext p,.links a,.links strong,.links small,
+  .note,.note strong){
+  color:#20241f!important;
+}
+html:root:root body .wrap .card {border-top:4px solid var(--accent)!important;}
+html:root:root body .wrap .links a {border:1px solid #c8beab!important;}
+html:root:root body .wrap a:focus-visible{outline:3px solid #2b5f85!important;outline-offset:3px;}
+@media print {
+ html:root:root body .wrap :is(.card,.hero,.ext,.links a,.note){
+  background:#fff!important;color:#111!important;box-shadow:none!important;
+ }
+}
+</style>
 </head>
 <body>
 <header data-khae-header class="khae-global-campus-header"><div data-khae-header-inner><a data-khae-brand href="https://vervenveda.com/Khaemenes_Academy.github.io/"><span data-khae-brand-mark>9–12</span><span><strong data-khae-brand-name>Khaemenes Academy</strong><small data-khae-brand-sub>High School · Grades 9–12</small></span></a><nav data-khae-nav><a href="https://vervenveda.com/Khaemenes_Academy.github.io/">Academy</a><a href="https://vervenveda.com/Khaemenes_Academy.github.io/student/">Student</a><a href="https://vervenveda.com/Khaemenes_Academy.github.io/family/">Family</a><a href="https://vervenveda.com/Khaemenes_Higher_Learning.github.io/">Higher Learning</a></nav><div data-khae-actions><a data-khae-secondary href="https://vervenveda.com/Khaemenes_Academy.github.io/student/">Student Profile</a></div><div data-vnv-ecosystem-slot aria-label="Ecosystem menu"></div></div></header><main class="wrap"><section class="hero"><small>Khaemenes Academy · Grades 9–12</small><h1>Science Department</h1><p>A four-year laboratory-science pathway built around phenomena, modeling, quantitative evidence, safe investigation, Claim–Evidence–Reasoning, engineering design, and cumulative mastery.</p></section>
