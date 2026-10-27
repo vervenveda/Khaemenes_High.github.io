@@ -154,6 +154,17 @@ html[data-khae-profile-theme] .ug-priority-nav a,
 html[data-khae-profile-theme] #upperClasses > label{
   color:var(--ug-ink);
 }
+html[data-khae-profile-theme] .ug-popup-rail button{
+  background:var(--ug-panel2)!important;
+  color:var(--ug-ink)!important;
+  border-color:var(--ug-line)!important;
+}
+html[data-khae-profile-theme] .ug-popup-rail button:hover,
+html[data-khae-profile-theme] .ug-popup-rail button:focus-visible{
+  background:var(--ug-panel)!important;
+  outline:2px solid var(--ug-gold);
+  outline-offset:2px;
+}
 /* Full-width with a consistent 7px scholastic border; native dialog keeps its own scroll. */
 html body dialog.ug-profile-dialog{
   width:min(1060px,calc(100vw - 28px))!important;
@@ -220,7 +231,8 @@ html body dialog.ug-profile-dialog .ug-dialog-body textarea::placeholder{
   color:#505b66!important;
   opacity:1;
 }
-html body dialog.ug-profile-dialog .ug-dialog-body :is(button,input[type="file"]::file-selector-button),
+html body dialog.ug-profile-dialog .ug-dialog-body button,
+html body dialog.ug-profile-dialog .ug-dialog-body input[type="file"]::file-selector-button,
 html body dialog.ug-profile-dialog .ug-dialog-head button{
   background:var(--ug-panel2)!important;
   color:var(--ug-ink)!important;
