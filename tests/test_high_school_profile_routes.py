@@ -8,7 +8,7 @@ for grade in range(9,13):
     landing=(prefix/"index.html").read_text(encoding="utf-8")
     profile=(prefix/"student-profile/index.html").read_text(encoding="utf-8")
     assert 'data-khae-secondary href="student-profile/"' in landing, f"Grade {grade} landing points away from profile"
-    assert 'data-khae-secondary href="./"' in profile, f"Grade {grade} dashboard loops to portal"
+    assert 'data-khae-secondary href="https://vervenveda.com/Khaemenes_Academy.github.io/student/profile.html"' in profile, f"Grade {grade} must link to the canonical learner profile"
     assert (prefix/"student-profile/index.html").is_file()
     if grade==9:
         assert (prefix/"student-profile/profile/index.html").is_file(), "Grade 9 editor missing"
