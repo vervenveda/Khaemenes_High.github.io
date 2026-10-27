@@ -1,0 +1,48 @@
+name: High School Profile Layout Regression
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'grades/shared/upper-grade-profile.css'
+      - 'grades/shared/upper-grade-seven-class.js'
+      - 'grades/shared/student-profile-compact-panels.js'
+      - 'grades/grade-10/student-profile/index.html'
+      - 'grades/grade-11/student-profile/index.html'
+      - 'grades/grade-12/student-profile/index.html'
+      - 'tools/validate-upper-grade-profile-parity.mjs'
+      - 'tests/test_high_school_profile_routes.py'
+      - '.github/workflows/high-student-profile-layout-regression.yml'
+  pull_request:
+    paths:
+      - 'grades/shared/upper-grade-profile.css'
+      - 'grades/shared/upper-grade-seven-class.js'
+      - 'grades/shared/student-profile-compact-panels.js'
+      - 'grades/grade-10/student-profile/index.html'
+      - 'grades/grade-11/student-profile/index.html'
+      - 'grades/grade-12/student-profile/index.html'
+      - 'tools/validate-upper-grade-profile-parity.mjs'
+      - 'tests/test_high_school_profile_routes.py'
+      - '.github/workflows/high-student-profile-layout-regression.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  layout-regression:
+    runs-on: ubuntu-latest
+    timeout-minutes: 6
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Check the profile engine and dialog syntax
+        run: |
+          node --check grades/shared/upper-grade-seven-class.js
+          node --check grades/shared/student-profile-compact-panels.js
+      - name: Validate centered profile grid and dialog integrations
+        run: node tools/validate-upper-grade-profile-parity.mjs
+      - name: Verify existing student profile routes and learner protections
+        run: python3 tests/test_high_school_profile_routes.py
