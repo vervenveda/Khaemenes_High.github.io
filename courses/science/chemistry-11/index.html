@@ -90,6 +90,38 @@ html:root:root body :is(.hero, .header, .page-header, .section-head, .lesson-hea
 }
 </style>
 <script defer src="../../../assets/academy-unified-print-header.js"></script><link rel="stylesheet" href="../../../assets/high-navigation-v1.css" data-high-navigation-css>
+<style id="upper-science-contrast-20261027">
+/* Upper Science color standard · presentation only · Grades 10–12
+   Original course accents describe borders; readable student text is charcoal
+   on parchment. This layer is confined to the existing .app course shell. */
+html:root:root body .app :is(.side,.box,.card,.lesson,.question,.notice,.hero,.weekBtn,.nav,.tab,.seal,.pill){
+  color:#20241f!important;
+  border-color:#c8beab!important;
+}
+html:root:root body .app :is(h1,h2,h3,h4,h5,h6,p,li,small,
+  strong,b,em,span,label,a,summary,td,th,.crumbs,.kicker,.status,
+  .pill,.nav,.tab,.weekBtn,.seal,.metric strong,.metric span,.lesson .day){
+  color:#20241f!important;
+}
+html:root:root body .app :is(input,select,textarea,button){
+  color:#20241f!important;
+}
+html:root:root body .app .weekBtn[aria-disabled="true"]{
+  opacity:1!important;background:#eee9de!important;
+  color:#20241f!important;border-style:dashed;
+}
+html:root:root body .app .weekBtn[aria-disabled="true"] small{
+  color:#20241f!important;
+}
+html:root:root body .app :is(a,button,input,select,textarea,summary):focus-visible{
+  outline:3px solid #245786!important;outline-offset:3px!important;
+}
+@media print {
+ html:root:root body .app :is(.card,.lesson,.question,.hero,.box){
+   background:#fff!important;color:#111!important;
+ }
+}
+</style>
 </head>
 <body>
 <div class="app">
