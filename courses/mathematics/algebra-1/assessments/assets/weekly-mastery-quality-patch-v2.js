@@ -27,4 +27,8 @@ patch("a1-w09-q10",{
   answer:0,
   explanation:"With equal per-unit rates, the lower fixed fee makes a plan cheaper at every equal usage level; usage does not change their cost difference."
 });
+patch("a1-w10-q10",{
+  prompt:"Which inequality is obtained directly by subtracting 12 from both sides of x<5?",
+  explanation:"Subtract 12 on each side: x−12<5−12, so x−12<−7. Adding 12 would produce a different equivalent inequality, not the requested step."
+});
 })();
