@@ -662,7 +662,7 @@ body :is(p,li,small,label,button,input,select,textarea,figcaption,caption,td,th,
 </style>
 <link rel="stylesheet" href="https://vervenveda.com/Khaemenes_Academy.github.io/assets/khaemenes-landing-standard.css">
 <link rel="stylesheet" href="https://vervenveda.com/Khaemenes_Academy.github.io/assets/khaemenes-landing-toolbar.css">
-</head>
+<style id="high-legacy-family-tools-v1">.legacy-family-tools{margin-top:14px;border:1px solid var(--line,#d7d2c4);border-radius:7px;padding:10px 12px;background:rgba(255,255,255,.48)}.legacy-family-tools>summary{cursor:pointer;font-size:14px;font-weight:600}.legacy-family-tools .portal-links{margin-top:10px}</style></head>
 <body id="top" data-khae-campus-front-desk="true">
 
 <a class="skip-link" href="#main">Skip to main content</a>
@@ -847,11 +847,15 @@ body :is(p,li,small,label,button,input,select,textarea,figcaption,caption,td,th,
             <a href="#library">Resource Library</a>
             <a href="#transition">Higher Learning</a>
           </div>
-          <div class="portal-links">
-            <button id="exportProfileButton" type="button">Export Legacy Local Profile</button>
-            <button id="clearProfileButton" type="button">Clear Legacy Profile &amp; Pins</button>
-          </div>
-          <p class="portal-note">The public landing page does not need to transmit student records. Export remains an explicit family action.</p>
+          <details class="legacy-family-tools">
+            <summary>Family Tools · Legacy Local Profile</summary>
+            <p class="portal-note">These controls are only for an older browser-local High School profile. Current enrolled students use the Academy learner profile above.</p>
+            <div class="portal-links">
+              <button id="exportProfileButton" type="button">Export Legacy Local Profile</button>
+              <button id="clearProfileButton" type="button">Clear Legacy Profile &amp; Pins</button>
+            </div>
+          </details>
+          <p class="portal-note">Current student identity, grade placement, daily classes, and records belong to the Academy learner profile. Legacy export remains an explicit family action.</p>
         </article>
       </div>
     </div>
