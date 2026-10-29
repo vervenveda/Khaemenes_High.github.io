@@ -41,7 +41,36 @@ main :is(.front-grid,.course-grid,.support-grid){justify-content:center;align-it
 .grade09-local-links{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:8px;padding:12px 16px;background:#f5f0e6;border-bottom:1px solid #c7c5b9}
 .grade09-local-links a{display:inline-flex;align-items:center;justify-content:center;min-height:38px;min-width:0;padding:7px 11px;border-radius:7px;border:1px solid #b9c6bc;background:#fffdf8;color:#17392f;font:400 11px/1.25 "Brandon Grotesque","Avenir Next",Arial,sans-serif;text-decoration:none}
 .grade09-local-links a:focus-visible{outline:3px solid #b48b45;outline-offset:2px}
-</style></head>
+</style><style id="grade09-home-parity-20261029">
+/* Grade 9 landing-only standard; course and assessment views are unchanged. */
+:root{--grade09-charcoal:#243038;--grade09-parchment:#f4f0e7;--grade09-light:#fff8e9}
+html body [data-khae-header] [data-khae-header-inner]{display:flex!important;justify-content:space-between!important;align-items:center!important;gap:14px!important;width:100%!important;padding:0 clamp(12px,2vw,28px)!important}
+html body [data-khae-header] [data-khae-nav],
+html body [data-khae-header] [data-khae-actions]{display:none!important}
+html body [data-khae-header] [data-khae-brand]{margin-right:auto!important}
+html body [data-khae-header] [data-khae-brand-mark]{width:52px!important;height:52px!important;flex:0 0 52px!important;display:grid!important;place-items:center!important;border-radius:7px!important;background:var(--grade09-charcoal)!important;color:var(--grade09-light)!important;font:400 14px Cinzel,Georgia,serif!important}
+html body [data-khae-header] [data-vnv-ecosystem-slot]{margin-left:auto!important;flex:0 0 auto!important}
+html body [data-khae-header] #vnvEcosystemMenuButton{position:static!important;right:auto!important;top:auto!important;width:52px!important;height:52px!important;min-width:52px!important;min-height:52px!important;border-radius:7px!important;background:var(--grade09-charcoal)!important;color:var(--grade09-light)!important}
+html body #khaeNetworkTicker{display:grid!important;grid-template-columns:minmax(0,1fr) 44px!important;background:#10243b!important;color:var(--grade09-light)!important}
+html body #khaeNetworkTicker .khae-network-ticker-track{animation:khaeNetworkTickerMove 20s linear infinite!important}
+html body #khaeNetworkTicker[data-paused="true"] .khae-network-ticker-track{animation-play-state:paused!important}
+/* The same restrained title/section hierarchy and alternating high contrast. */
+html body main :is(h1,h2,h3),html body .hero :is(h1,.grade-title){font-family:Cinzel,Georgia,serif!important;font-weight:400!important}
+html body .hero{background:linear-gradient(125deg,#234059,#102b43 70%,#101f2b)!important;color:var(--grade09-light)!important}
+html body .hero :is(h1,h2,.eyebrow,.hero-lead){color:var(--grade09-light)!important;opacity:1!important}
+html body .hero h1{font-size:clamp(36px,calc(5.1vw - 6px),66px)!important;line-height:1.08!important}
+html body main .heading h2{font-size:clamp(33px,calc(5.1vw - 9px),63px)!important;line-height:1.15!important}
+html body main>.section{background:var(--grade09-parchment);color:var(--grade09-charcoal)}
+html body main>.section.paper,html body main>.section.dark{background:var(--grade09-charcoal)!important;color:var(--grade09-light)!important}
+html body main>.section.paper .heading :is(h2,p,.kicker),html body main>.section.dark .heading :is(h2,p,.kicker){color:var(--grade09-light)!important}
+html body main :is(.front-card,.course-card,.support-card){border-radius:7px!important;background:#fffdf8!important;color:var(--grade09-charcoal)!important}
+html body main :is(.front-card,.course-card,.support-card) :is(h3,p,small){color:var(--grade09-charcoal)!important;opacity:1!important}
+html body main :is(.front-card,.course-card,.support-card) :is(a.btn,button.btn){border-radius:7px!important;min-height:44px!important;background:var(--grade09-charcoal)!important;color:var(--grade09-light)!important;border:1px solid var(--grade09-charcoal)!important}
+html body .grade09-unified-footer{display:flex!important;flex-direction:column!important;gap:5px!important;align-items:center!important;justify-content:center!important;text-align:center!important;padding:26px 16px!important;background:var(--grade09-charcoal)!important;color:var(--grade09-light)!important;border-top:1px solid #b48b45!important;font:400 16px/1.4 Cinzel,Georgia,serif!important}
+html body .grade09-unified-footer small{color:#e5d6ba!important;font:400 12px/1.5 "Brandon Grotesque",Nunito,Arial,sans-serif!important}
+@media(max-width:450px){html body [data-khae-header] [data-khae-brand-mark],html body [data-khae-header] #vnvEcosystemMenuButton{width:44px!important;height:44px!important;min-width:44px!important;min-height:44px!important;flex-basis:44px!important}}
+</style>
+</head>
 <body id="top">
 <header data-khae-header class="khae-global-campus-header"><div data-khae-header-inner><a data-khae-brand href="https://vervenveda.com/Khaemenes_Academy.github.io/"><span data-khae-brand-mark>9–12</span><span><strong data-khae-brand-name>Khaemenes Academy</strong><small data-khae-brand-sub>High School · Grades 9–12</small></span></a><nav data-khae-nav><a href="https://vervenveda.com/Khaemenes_Academy.github.io/">Academy</a><a href="https://vervenveda.com/Khaemenes_Academy.github.io/student/">Student</a><a href="https://vervenveda.com/Khaemenes_Academy.github.io/family/">Family</a><a href="https://vervenveda.com/Khaemenes_Higher_Learning.github.io/">Higher Learning</a></nav><div data-khae-actions><a data-khae-secondary href="student-profile/">Student Profile</a></div><div data-vnv-ecosystem-slot aria-label="Ecosystem menu"></div></div></header>
 <a class="skip" href="#main">Skip to main content</a>
@@ -138,7 +167,7 @@ main :is(.front-grid,.course-grid,.support-grid){justify-content:center;align-it
   </div>
 </section>
 </main>
-<footer class="footer"><strong>Khaemenes Academy · High School · Grade 09</strong><br>Centered learning pathways · readable course access · mastery remains course-authoritative</footer>
+<footer class="footer grade09-unified-footer"><div>Verve N Veda · Khaemenes Academy</div><small>Jennifer Kay Pearl · 2026</small></footer>
 <script>
 (()=>{"use strict";const read=(k,f)=>{try{const r=localStorage.getItem(k);return r?JSON.parse(r):f}catch{return f}};let learner=null;try{const id=JSON.parse(localStorage.getItem("khaemenes_active_learner_v1")||"null"),family=JSON.parse(localStorage.getItem("khaemenes_family_registry_v1")||"null");learner=typeof id==="string"&&family?.learners?.[id]?.learnerId===id?family.learners[id]:null}catch{}const key=learner?`khaemenes-high-profile-v1:learner:${encodeURIComponent(learner.learnerId)}`:"khaemenes-high-profile-v1";const p=read(key,null)||(!learner?read("khaemenes-grade09-profile-v1",null):null)||{};const name=p.displayName||p.name||p.nickname||learner?.nickname||"Freshman Home";const node=document.getElementById("studentName");if(node)node.textContent=name;})();
 </script>
