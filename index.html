@@ -1554,5 +1554,49 @@ body[data-khae-campus-front-desk="true"] #khaemenesLearnerUtilityToolbar,
 body[data-khae-campus-front-desk="true"] #vnvBetaProgramLink{display:none!important}
 </style>
 <script src="https://vervenveda.com/assets/vnv-ecosystem-toolbar.js" defer data-vnv-ecosystem-toolbar="1"></script>
+<!-- High School landing-only navigation and contrast repair; no shared ecosystem files modified. -->
+<style id="high-home-priority-repair-20261029">
+/* Keep the existing single shared Academy ticker; give priority links visible contrast. */
+body #khaeNetworkTicker{background:#10243b!important;color:#fff4dc!important;overflow:hidden}
+body #khaeNetworkTicker .khae-network-ticker-viewport{overflow:hidden;min-width:0}
+body #khaeNetworkTicker .khae-network-ticker-track{display:flex!important;align-items:center;white-space:nowrap}
+body #khaeNetworkTicker :is(.khae-network-ticker-app,.khae-network-ticker-call,.khae-network-ticker-label){color:#fff4dc!important;opacity:1!important;visibility:visible!important;font-size:11px!important;white-space:nowrap!important}
+/* Offline-learning announcement: charcoal with fully readable parchment text. */
+body main .high-offline-aside{background:#25313a!important;color:#fff8e9!important;border:1px solid #b48b45!important;border-radius:7px!important;box-shadow:0 9px 24px rgba(10,27,33,.12)}
+body main .high-offline-aside :is(h2,p){color:#fff8e9!important;opacity:1!important}
+body main .high-offline-aside a{color:#ffe1a3!important;text-decoration:underline;text-underline-offset:3px}
+/* Academic and Applied Departments: consistent charcoal buttons. */
+body main #departments .department-card :is(a.department-link,button.department-link){background:#25313a!important;color:#fff8e9!important;border:1px solid #25313a!important;border-radius:7px!important}
+body main #departments .department-card :is(a.department-link,button.department-link):hover{background:#344a55!important;border-color:#b48b45!important}
+body main #departments .department-card :is(a.department-link,button.department-link):focus-visible{outline:3px solid #b48b45!important;outline-offset:3px}
+</style>
+<script>
+/* Site-local recovery for the shared quick-links/utility dock. Never create a second ticker. */
+window.addEventListener("load",()=>{
+ const ticker=document.getElementById("khaeNetworkTicker");
+ if(ticker){
+   const priority=[
+     ["Student Profile","https://vervenveda.com/Khaemenes_Academy.github.io/student/"],
+     ["Family Portal","https://vervenveda.com/Khaemenes_Academy.github.io/family/"],
+     ["Grades 9–12","#grades"],
+     ["Departments","#departments"],
+     ["All Courses","./courses/"],
+     ["Linguistics","https://vervenveda.com/Khaemenes_Linguistics.github.io/"],
+     ["Arcade","https://vervenveda.com/arcade.github.io/"],
+     ["ProReSources","https://vervenveda.com/proresource_hub.github.io/"],
+     ["Beta","https://vervenveda.com/beta/"],
+     ["Search","https://vervenveda.com/PLERASearch.github.io/"],
+     ["Support","https://vervenveda.com/#support"]
+   ];
+   const sets=ticker.querySelectorAll(".khae-network-ticker-set");
+   sets.forEach((set,i)=>{
+     const label=set.querySelector(".khae-network-ticker-label");
+     const labelText=label?.outerHTML||'<span class="khae-network-ticker-label">High School Quick Links</span>';
+     set.innerHTML=labelText+priority.map(([name,url])=>'<a class="khae-network-ticker-app" href="'+url+'"'+(i?' tabindex="-1"':'')+'>'+name+'</a>').join("");
+   });
+ }
+ if(window.VNVEcosystemToolbar?.mount)window.VNVEcosystemToolbar.mount();
+});
+</script>
 </body>
 </html>
