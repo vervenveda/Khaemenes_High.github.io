@@ -631,7 +631,12 @@
     observer.observe(document.documentElement,{childList:true,subtree:true});
   }
 
-  function start(){mount();mountHighStudentProfile();ensureHighStudentUtilityButtons();ensureEducationWorkspace();ensureEducationContinuationPublisher();ensureLinguisticsContinuation();ensureEcosystemMenu();ensureSupportComponent();bindVisibleFrames();enhanceBazaarLanding()}
+  function start(){
+    // The High School front desk has one canonical ecosystem utility dock.
+    // Do not create the legacy floating Beta or learner rails on this page.
+    if(document.body?.dataset?.khaeCampusFrontDesk==="true")return;
+    mount();mountHighStudentProfile();ensureHighStudentUtilityButtons();ensureEducationWorkspace();ensureEducationContinuationPublisher();ensureLinguisticsContinuation();ensureEcosystemMenu();ensureSupportComponent();bindVisibleFrames();enhanceBazaarLanding();
+  }
   if(document.readyState==="loading")document.addEventListener("DOMContentLoaded",start,{once:true});
   else start();
 
