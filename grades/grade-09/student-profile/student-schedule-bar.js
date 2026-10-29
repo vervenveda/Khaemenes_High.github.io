@@ -17,6 +17,48 @@ async function renderHost(host){
  copy.append(el("strong","","My Schedule"),el("span","","Seven classes stay academic. Quick Pins are personal shortcuts and do not change enrollment, grades, or mastery."));
  const status=el("span","schedule-status");
  intro.append(copy,status);host.append(intro);
+
+ // Keep the foreign-language choice available on the dashboard itself.
+ // Previously this selector existed only in My Profile, so the schedule tile
+ // looked fixed even though the learner was allowed to choose a language.
+ const controls=el("div","schedule-choice-row");
+ controls.style.cssText="display:flex;flex-wrap:wrap;align-items:center;gap:9px;margin:12px 0 16px";
+ const langLabel=el("label","schedule-language-label","Foreign language");
+ langLabel.setAttribute("for","grade09DashboardLanguageChoice");
+ const langSelect=el("select","schedule-language-select");
+ langSelect.id="grade09DashboardLanguageChoice";
+ langSelect.setAttribute("aria-label","Choose Grade 09 foreign language");
+ languages.forEach(([value,label])=>{
+   const option=el("option","",label);
+   option.value=value;
+   langSelect.append(option);
+ });
+ langSelect.value=language();
+ langSelect.addEventListener("change",()=>{
+   const previous=language();
+   const choices=pins.readLanguageChoices();
+   choices["9"]=langSelect.value;
+   if(!pins.writeLanguageChoices(choices)){
+     langSelect.value=previous;
+     status.textContent="Language choice could not be saved on this device.";
+     return;
+   }
+   const oldId="world-language-9-"+previous;
+   const nextId="world-language-9-"+langSelect.value;
+   if(registry.isPinned(oldId)){
+     registry.setPinned(oldId,false);
+     registry.setPinned(nextId,true);
+   }
+   window.dispatchEvent(new CustomEvent("khaemenes-grade09-language-changed",{detail:{grade:"9",language:langSelect.value}}));
+   void renderAll();
+ });
+ langLabel.append(langSelect);
+ controls.append(langLabel);
+ const profileLink=el("a","schedule-open","Language details");
+ profileLink.href="profile/";
+ controls.append(profileLink);
+ host.append(controls);
+
  const rail=el("div","schedule-rail");rail.setAttribute("aria-label","Grade 09 schedule");
  let pinnedCount=0;
  for(let index=0;index<slots.length;index++){
@@ -65,5 +107,6 @@ window.addEventListener("storage",event=>{
 });
 window.addEventListener("khaemenes-grade09-quick-pins-changed",()=>void renderAll());
 window.addEventListener("khaemenes-course-pins-changed",()=>void renderAll());
+window.addEventListener("khaemenes-grade09-language-changed",()=>void renderAll());
 void renderAll();
 })();
