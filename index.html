@@ -1773,5 +1773,24 @@ html:root:root body footer.high-school-footer .high-footer-inquiry{font-size:12p
 @media(max-width:860px){html:root:root body main #whole-student .whole-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:480px){html:root:root body main #whole-student .whole-grid{grid-template-columns:1fr}}
 </style>
+<style id="high-final-text-contrast-fix-20261029">
+/* Specificity above legacy high-school dark-section rules; only the final section. */
+html:root:root body main > section.section.final,
+html:root:root body main > section.section.final .section-inner{
+  color:#243038!important;background-color:#f4f0e7!important;
+}
+html:root:root body main > section.section.final .section-inner :is(.kicker,h2,p){
+  color:#243038!important;-webkit-text-fill-color:#243038!important;
+  opacity:1!important;visibility:visible!important;text-shadow:none!important;
+}
+html:root:root body main > section.section.final .section-inner .button-primary{
+  background:#243038!important;color:#fff8e9!important;-webkit-text-fill-color:#fff8e9!important;
+  border:1px solid #243038!important;
+}
+html:root:root body main > section.section.final .section-inner .button-secondary{
+  background:#fffdf8!important;color:#243038!important;-webkit-text-fill-color:#243038!important;
+  border:1px solid #b48b45!important;
+}
+</style>
 </body>
 </html>
