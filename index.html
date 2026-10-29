@@ -1550,55 +1550,6 @@ body[data-khae-campus-front-desk="true"] #khaemenesFamilyBridge{display:none!imp
 body[data-khae-campus-front-desk="true"] #khaemenesLearnerUtilityToolbar,
 body[data-khae-campus-front-desk="true"] #vnvBetaProgramLink{display:none!important}
 </style>
-<style id="khaemenes-home-toolbar-parity">
-/* Isolated copy of the Academy home six-control toolbar geometry. */
-#khaemenesHomeUtilityDock{position:fixed;right:max(12px,env(safe-area-inset-right));bottom:max(12px,env(safe-area-inset-bottom));z-index:2147482500;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));align-items:stretch;justify-content:stretch;width:min(354px,calc(100vw - 24px));max-width:calc(100vw - 24px);gap:7px;padding:10px;border:1px solid rgba(180,139,69,.48);border-radius:7px;background:rgba(255,253,248,.97);box-shadow:0 10px 30px rgba(15,25,37,.17);backdrop-filter:blur(10px);box-sizing:border-box}
-#khaemenesHomeUtilityDock>a,#khaemenesHomeUtilityDock>button{position:static!important;width:100%!important;min-width:0!important;max-width:100%!important;height:42px!important;min-height:42px!important;max-height:42px!important;box-sizing:border-box!important;display:flex!important;justify-content:center!important;align-items:center!important;padding:8px 5px!important;gap:3px!important;overflow:hidden!important;text-overflow:clip!important;white-space:nowrap!important;border-radius:7px!important;font:400 9px/1.1 Arial,sans-serif!important;letter-spacing:0!important;text-decoration:none!important;cursor:pointer!important;margin:0!important}
-#khaemenesHomeUtilityDock>#khaemenesHomeProfileButton{color:#17392f!important;background:#fffdf8!important;border:1px solid rgba(180,139,69,.72)!important}
-#khaemenesHomeUtilityDock>#khaemenesHomeSearchButton{color:#17392f!important;background:#f5f8f6!important;border:1px solid rgba(23,57,47,.35)!important}
-#khaemenesHomeUtilityDock>#khaemenesHomeUpdatesButton{color:#17392f!important;background:#f8f4e9!important;border:1px solid rgba(114,95,130,.35)!important}
-#khaemenesHomeUtilityDock>#khaemenesHomeMentorButton{color:#493719!important;background:#fff4d8!important;border:1px solid #b48b45!important}
-#khaemenesHomeUtilityDock>#khaemenesHomeContributeButton{color:#fff!important;background:#6d8374!important;border:1px solid #516b5b!important}
-#khaemenesHomeUtilityDock>#khaemenesHomeBetaButton{color:#f7efe0!important;background:#0f1925!important;border:1px solid rgba(183,147,77,.72)!important}
-#khaemenesHomeUtilityDock>a:focus-visible,#khaemenesHomeUtilityDock>button:focus-visible{outline:3px solid #b48b45!important;outline-offset:2px!important}
-#khaemenesHomeUpdatesDialog{border-radius:7px;border:1px solid #b48b45;background:#fffdf8;color:#17352d;padding:22px;max-width:min(560px,calc(100vw - 28px))}
-#khaemenesHomeUpdatesDialog::backdrop{background:rgba(7,21,33,.52)}
-#khaemenesHomeUpdatesDialog a{color:#17352d}
-@media(max-width:380px){#khaemenesHomeUtilityDock{width:min(230px,calc(100vw - 16px));grid-template-columns:repeat(2,minmax(0,1fr));right:8px;bottom:8px;padding:8px;gap:6px}#khaemenesHomeUtilityDock>a,#khaemenesHomeUtilityDock>button{font-size:8px!important;padding:6px 3px!important}}
-@media print{#khaemenesHomeUtilityDock{display:none!important}}
-</style>
-<script id="khaemenes-home-toolbar-parity-script">
-(()=>{"use strict";
-const A="https://vervenveda.com/Khaemenes_Academy.github.io/";
-function init(){
- if(document.getElementById("khaemenesHomeUtilityDock"))return;
- const dock=document.createElement("nav");dock.id="khaemenesHomeUtilityDock";dock.setAttribute("aria-label","Academy quick utilities");
- const add=(tag,id,label,url)=>{
-  const n=document.createElement(tag);n.id=id;n.textContent=label;
-  if(url)n.href=url;else n.type="button";
-  dock.append(n);return n;
- };
- const profile=add("a","khaemenesHomeProfileButton","Profile",A+"student/");
- const findProfile=()=>{const selected=document.querySelector("[data-high-profile-door]");if(selected?.href&&selected.getAttribute("href")!=="#student-portal")profile.href=selected.href;};
- findProfile();window.addEventListener("khaemenes-family-changed",findProfile);
- add("a","khaemenesHomeSearchButton","Search","https://vervenveda.com/PLERASearch.github.io/");
- const updates=add("button","khaemenesHomeUpdatesButton","Updates");
- add("a","khaemenesHomeMentorButton","Mentor","https://vervenveda.com/Khaemenes_High.github.io/mentor/?stage=high&subject=general&source=student-utility-rail");
- add("a","khaemenesHomeContributeButton","Support","https://buy.stripe.com/aFa8wQ5xf9Scf65caT4AU0s");
- const beta=add("a","khaemenesHomeBetaButton","Beta","https://vervenveda.com/beta/");
- const dialog=document.createElement("dialog");dialog.id="khaemenesHomeUpdatesDialog";
- dialog.innerHTML='<h2>Academy Updates &amp; Help</h2><p>Find school information, report an issue, or return to your learner entrance.</p><p><a href="'+A+'#help">Academy Help Desk</a> · <a href="'+A+'student/">Student Portal</a> · <a href="https://vervenveda.com/beta/">Beta Feedback</a></p><button type="button" data-close>Close</button>';
- updates.addEventListener("click",()=>{if(!dialog.open)dialog.showModal()});
- dialog.querySelector("[data-close]").addEventListener("click",()=>dialog.close());
- dialog.addEventListener("click",e=>{if(e.target===dialog)dialog.close()});
- document.body.append(dock,dialog);
- // The beta SDK may insert its own fixed launcher. Keep only one visible entrance.
- const suppressDuplicate=()=>{const original=document.getElementById("vnvBetaProgramLink");if(original&&original!==beta){original.style.setProperty("display","none","important")}};
- suppressDuplicate();
- const mo=new MutationObserver(suppressDuplicate);mo.observe(document.body,{childList:true,subtree:false});
-}
-if(document.readyState==="loading")document.addEventListener("DOMContentLoaded",init,{once:true});else init();
-})();
-</script>
+<script src="https://vervenveda.com/assets/vnv-ecosystem-toolbar.js" defer data-vnv-ecosystem-toolbar="1"></script>
 </body>
 </html>
