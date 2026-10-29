@@ -1617,5 +1617,57 @@ html body #khaeNetworkTicker .khae-network-ticker-set{display:flex!important;ali
 html body #khaeNetworkTicker .khae-ticker-control{display:grid!important;place-items:center!important;color:#fff8e9!important;background:#10243b!important;visibility:visible!important}
 @media(prefers-reduced-motion:reduce){html body #khaeNetworkTicker .khae-network-ticker-track{animation:none!important}}
 </style>
+
+<style id="high-toolbar-recovery-20261029">
+/* High School front desk: the support link sits inside the hamburger, and both end controls align with the KA mark. */
+html body [data-khae-header] [data-khae-brand-mark]{width:52px!important;height:52px!important;flex:0 0 52px!important;border-radius:7px!important;display:grid!important;place-items:center!important}
+html body [data-khae-header] #menuButton{width:52px!important;height:52px!important;min-width:52px!important;min-height:52px!important;flex:0 0 52px!important;border-radius:7px!important}
+html body [data-khae-header] [data-khae-actions]{display:flex!important;align-items:center!important;gap:9px!important}
+html body [data-khae-header] #vnv-global-support-top{order:1!important}
+html body [data-khae-header] #menuButton{order:2!important}
+/* Canonical dock visibility and isolated recovery styling. */
+html body #vnvEcosystemUtilityDock{position:fixed!important;right:max(12px,env(safe-area-inset-right))!important;bottom:max(12px,env(safe-area-inset-bottom))!important;z-index:2147482500!important;display:grid!important;grid-template-columns:repeat(3,minmax(0,1fr))!important;gap:7px!important;width:min(354px,calc(100vw - 24px))!important;padding:10px!important;background:#fffdf8!important;border:1px solid #b48b45!important;border-radius:7px!important;box-shadow:0 10px 30px rgba(15,25,37,.17)!important;box-sizing:border-box!important}
+html body #vnvEcosystemUtilityDock > :is(a,button){all:unset!important;box-sizing:border-box!important;display:flex!important;align-items:center!important;justify-content:center!important;min-width:0!important;min-height:42px!important;padding:5px!important;border:1px solid #b6c2b9!important;border-radius:7px!important;background:#f4f0e7!important;color:#17392f!important;text-align:center!important;font:400 11px/1.2 "Brandon Grotesque",Nunito,Arial,sans-serif!important;cursor:pointer!important}
+html body #vnvEcosystemUtilityDock > :is(a,button):focus-visible{outline:3px solid #b48b45!important;outline-offset:2px!important}
+html body #vnvEcosystemUtilityDock [data-vnv-tool="beta"]{background:#152538!important;color:#fff8e9!important}
+html body #vnvEcosystemUtilityDock [data-vnv-tool="support"]{background:#294c40!important;color:#fff!important}
+@media(max-width:380px){html body #vnvEcosystemUtilityDock{grid-template-columns:repeat(2,minmax(0,1fr))!important;width:min(230px,calc(100vw - 16px))!important}}
+@media print{html body #vnvEcosystemUtilityDock{display:none!important}}
+</style>
+<script>
+/* Keep the header order stable after the shared support script inserts its link. */
+(function(){
+  const headerActions=document.querySelector('[data-khae-header] [data-khae-actions]');
+  const hamburger=document.getElementById('menuButton');
+  if(headerActions&&hamburger)headerActions.appendChild(hamburger);
+  /* The shared canonical dock mounts on DOMContentLoaded. Only recover if it failed. */
+  window.addEventListener('load',()=>{
+    if(document.getElementById('vnvEcosystemUtilityDock'))return;
+    if(window.VNVEcosystemToolbar?.mount){
+      try{window.VNVEcosystemToolbar.mount()}catch(e){console.warn('Canonical toolbar mount failed',e)}
+    }
+    if(document.getElementById('vnvEcosystemUtilityDock'))return;
+    const dock=document.createElement('nav');
+    dock.id='vnvEcosystemUtilityDock';
+    dock.setAttribute('aria-label','Verve N Veda ecosystem utilities');
+    const A='https://vervenveda.com/Khaemenes_Academy.github.io/';
+    const link=(key,label,url)=>{
+      const a=document.createElement('a');a.dataset.vnvTool=key;a.textContent=label;a.href=url;dock.appendChild(a);
+    };
+    link('profile','Profile',A+'student/');
+    link('search','Search','https://vervenveda.github.io/PLERASearch.github.io/');
+    const updates=document.createElement('button');updates.type='button';updates.dataset.vnvTool='updates';updates.textContent='Updates';dock.appendChild(updates);
+    link('mentor','Mentor',A+'mentor/');
+    link('support','Support','https://vervenveda.com/#support');
+    link('beta','Beta','https://vervenveda.com/beta/');
+    const dialog=document.createElement('dialog');dialog.id='vnvEcosystemUtilityUpdates';dialog.innerHTML='<h2>Updates &amp; Help</h2><p>Academy information and assistance.</p><p><a href="'+A+'#help">Academy Help Desk</a></p>';
+    const close=document.createElement('button');close.type='button';close.textContent='Close';dialog.appendChild(close);
+    close.addEventListener('click',()=>dialog.close());
+    updates.addEventListener('click',()=>dialog.showModal());
+    document.body.append(dock,dialog);
+    console.info('High School canonical toolbar recovery mounted');
+  },{once:true});
+})();
+</script>
 </body>
 </html>
