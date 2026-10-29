@@ -775,7 +775,30 @@ body main .high-frontdesk-hero .hero-actions{gap:10px;justify-content:center}
         <h2>One campus. Four distinct stages.</h2>
         <p>Each grade has a clear landing point, while department doors, research resources, and career preparation remain available across the full secondary sequence.</p>
       </div>
-      <div class="grade-grid" id="gradeGrid"></div>
+      <div class="grade-grid" id="gradeGrid">
+        <!-- Accessible grade entrances remain available even when optional enhanced rendering fails.
+             renderGrades() replaces these with the richer language/pinning cards when ready. -->
+        <article class="grade-card" style="--accent:#315b7b">
+          <span class="grade-emblem">9</span><h3>Grade Nine</h3><span class="grade-range">Foundations</span>
+          <p>Build strong foundations in mathematics, English, science, social studies, wellness, and research.</p>
+          <div class="grade-card-actions"><a href="grades/grade-09/index.html">Grade 9 Classes</a><a href="grades/grade-09/student-profile/">Student Profile</a></div>
+        </article>
+        <article class="grade-card" style="--accent:#4f7f7a">
+          <span class="grade-emblem">10</span><h3>Grade Ten</h3><span class="grade-range">Sophomore Depth</span>
+          <p>Develop your academic skills through deeper study, research, technology, and career exploration.</p>
+          <div class="grade-card-actions"><a href="grades/grade-10/index.html">Grade 10 Classes</a><a href="grades/grade-10/student-profile/">Student Profile</a></div>
+        </article>
+        <article class="grade-card" style="--accent:#6e5f7f">
+          <span class="grade-emblem">11</span><h3>Grade Eleven</h3><span class="grade-range">Junior Analysis</span>
+          <p>Advance in academic reasoning, research, evidence, civic learning, and future planning.</p>
+          <div class="grade-card-actions"><a href="grades/grade-11/index.html">Grade 11 Classes</a><a href="grades/grade-11/student-profile/">Student Profile</a></div>
+        </article>
+        <article class="grade-card" style="--accent:#96594e">
+          <span class="grade-emblem">12</span><h3>Grade Twelve</h3><span class="grade-range">Senior Synthesis</span>
+          <p>Complete senior studies and research while preparing for higher learning and career pathways.</p>
+          <div class="grade-card-actions"><a href="grades/grade-12/index.html">Grade 12 Classes</a><a href="grades/grade-12/student-profile/">Student Profile</a></div>
+        </article>
+      </div>
     </div>
   </section>
 
