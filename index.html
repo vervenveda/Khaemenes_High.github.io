@@ -676,7 +676,37 @@ body :is(p,li,small,label,button,input,select,textarea,figcaption,caption,td,th,
 </style>
 <link rel="stylesheet" href="https://vervenveda.com/Khaemenes_Academy.github.io/assets/khaemenes-landing-standard.css">
 
-<style id="high-legacy-family-tools-v1">.legacy-family-tools{margin-top:14px;border:1px solid var(--line,#d7d2c4);border-radius:7px;padding:10px 12px;background:rgba(255,255,255,.48)}.legacy-family-tools>summary{cursor:pointer;font-size:14px;font-weight:600}.legacy-family-tools .portal-links{margin-top:10px}</style></head>
+<style id="high-legacy-family-tools-v1">.legacy-family-tools{margin-top:14px;border:1px solid var(--line,#d7d2c4);border-radius:7px;padding:10px 12px;background:rgba(255,255,255,.48)}.legacy-family-tools>summary{cursor:pointer;font-size:14px;font-weight:600}.legacy-family-tools .portal-links{margin-top:10px}</style><style id="high-home-approved-design-20261029">
+/* High School homepage only: Academy Front Desk typography and centered visual rhythm. */
+:root{--paper:#f4f0e7;--paper-bright:#fffdf8;--ink-soft:#384b42}
+body{font-family:"Brandon Grotesque",Nunito,"Avenir Next",Arial,sans-serif}
+body main :is(h1,h2,h3){font-family:Cinzel,Georgia,serif!important;font-weight:400!important;letter-spacing:0!important}
+body main :is(p,a,button,small,span){font-family:"Brandon Grotesque",Nunito,"Avenir Next",Arial,sans-serif}
+body main>.section,body main>.high-frontdesk{box-sizing:border-box;padding:clamp(52px,6.5vw,88px) 20px!important}
+body main>.section :is(.section-inner,.shell),body main>.high-frontdesk>.shell{width:min(100%,1120px);margin-inline:auto}
+body main>.section .heading,body main>.section.final .section-inner{text-align:center}
+body main>.section .heading h2{font-size:clamp(31px,3.9vw,48px)!important;line-height:1.2!important}
+body main>.section .heading p{font-size:14px!important;line-height:1.65!important}
+body main>#grades,body main>#departments,body main>#pathways,body main>#transition,body main>.high-frontdesk{background:#f4f0e7!important;color:#1d3029!important}
+body main>#portals,body main>#whole-student,body main>#library,body main>#network,body main>.section.final{background:linear-gradient(135deg,#2c3a41,#192b34)!important;color:#fff8ea!important}
+body main :is(#portals,#whole-student,#library,#network,.section.final) :is(.heading h2,.section-inner>h2){color:#fff8eb!important}
+body main :is(#portals,#whole-student,#library,#network,.section.final) :is(.heading>p,.section-inner>p){color:#e6e6df!important;opacity:1!important}
+body main :is(.grade-card,.portal-card,.department-card,.pathway-card,.network-card,.course-card,.high-quick-grid>a){box-sizing:border-box;min-width:0;background:#fffdf8!important;color:#19382f!important;border:1px solid #bfcbc1!important;border-radius:7px!important;box-shadow:0 7px 22px rgba(13,35,32,.1);text-align:center}
+body main :is(.grade-card,.portal-card,.department-card,.pathway-card,.network-card,.course-card) :is(h2,h3,p,small){color:#234237!important;opacity:1!important}
+body main :is(.grade-grid,.portal-grid,.department-grid,.pathway-grid,.network-grid,.high-quick-grid){align-items:stretch;justify-content:center}
+body main :is(.grade-card,.portal-card,.department-card,.pathway-card,.network-card,.course-card) :is(.actions,.grade-card-actions,.portal-links){margin-top:auto;align-items:stretch;gap:8px}
+body main :is(.grade-card,.portal-card,.department-card,.pathway-card,.network-card,.course-card,.high-desk) :is(.button,.btn,.card-link,.portal-links a,.portal-links button),body main .hero-actions .button,body main>.section.final .button{box-sizing:border-box!important;min-width:0!important;min-height:42px!important;height:auto!important;padding:9px 10px!important;border-radius:7px!important;font:400 11px/1.3 "Brandon Grotesque",Nunito,Arial,sans-serif!important;letter-spacing:0!important;white-space:normal!important;text-align:center!important;display:inline-flex;align-items:center;justify-content:center;overflow-wrap:normal}
+body main :is(.grade-card,.portal-card,.department-card,.pathway-card,.network-card,.course-card,.high-desk) :is(.button-primary,.btn.primary,.card-link.primary){background:#294c40!important;color:#fff!important;border:1px solid #294c40!important}
+body main :is(.grade-card,.portal-card,.department-card,.pathway-card,.network-card,.course-card,.high-desk) :is(.button-secondary,.btn.secondary,.card-link:not(.primary)){background:#eee5d4!important;color:#19382f!important;border:1px solid #ae9979!important}
+body main #grades .grade-card-actions{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;width:100%}
+body main #grades .grade-card-actions>a{width:100%!important}
+body main #portals .portal-links :is(a,button){background:#f4efe4!important;color:#19382f!important}
+body main .high-desk{width:min(100%,980px);margin-inline:auto}
+body main .high-desk .high-quick-grid>a{min-height:120px}
+body main .high-frontdesk-hero .hero-actions{gap:10px;justify-content:center}
+@media(max-width:600px){body main>.section,body main>.high-frontdesk{padding:48px 12px!important}body main #grades .grade-card-actions{grid-template-columns:1fr}}
+</style>
+</head>
 <body id="top" data-khae-campus-front-desk="true">
 
 <a class="skip-link" href="#main">Skip to main content</a>
@@ -684,26 +714,8 @@ body :is(p,li,small,label,button,input,select,textarea,figcaption,caption,td,th,
 <div class="network-ticker" id="ticker"><span id="khaeNetworkTicker" hidden aria-hidden="true"></span>
   <div class="network-ticker-viewport">
     <div class="network-ticker-track">
-      <div class="network-ticker-set">
-        <span class="network-ticker-label">Khaemenes Network</span>
-        <a class="network-ticker-app" href="https://vervenveda.com/">Verve N Veda</a>
-        <a class="network-ticker-app" href="https://vervenveda.com/Khaemenes_Academy.github.io/">Academy</a>
-        <a class="network-ticker-app" href="./courses/mathematics/index.html">Mathematics</a>
-        <a class="network-ticker-app" href="./courses/language-arts/index.html">Language Arts</a>
-        <a class="network-ticker-app" href="./courses/social-studies/index.html">Social Studies</a>
-        <a class="network-ticker-app" href="https://vervenveda.com/Khaemenes_Higher_Learning.github.io/Career/">Career Portal</a>
-        <a class="network-ticker-app" href="https://vervenveda.com/Khaemenes_Higher_Learning.github.io/">Higher Learning</a>
-      </div>
-      <div class="network-ticker-set" aria-hidden="true">
-        <span class="network-ticker-label">Khaemenes Network</span>
-        <a tabindex="-1" class="network-ticker-app" href="https://vervenveda.com/">Verve N Veda</a>
-        <a tabindex="-1" class="network-ticker-app" href="https://vervenveda.com/Khaemenes_Academy.github.io/">Academy</a>
-        <a tabindex="-1" class="network-ticker-app" href="./courses/mathematics/index.html">Mathematics</a>
-        <a tabindex="-1" class="network-ticker-app" href="./courses/language-arts/index.html">Language Arts</a>
-        <a tabindex="-1" class="network-ticker-app" href="./courses/social-studies/index.html">Social Studies</a>
-        <a tabindex="-1" class="network-ticker-app" href="https://vervenveda.com/Khaemenes_Higher_Learning.github.io/Career/">Career Portal</a>
-        <a tabindex="-1" class="network-ticker-app" href="https://vervenveda.com/Khaemenes_Higher_Learning.github.io/">Higher Learning</a>
-      </div>
+      <div class="network-ticker-set"><span class="network-ticker-label">High School Quick Links</span><a class="network-ticker-app" href="https://vervenveda.com/Khaemenes_Academy.github.io/">Academy</a><a class="network-ticker-app" href="./grades/grade-09/">Grade 9</a><a class="network-ticker-app" href="./grades/grade-10/">Grade 10</a><a class="network-ticker-app" href="./grades/grade-11/">Grade 11</a><a class="network-ticker-app" href="./grades/grade-12/">Grade 12</a><a class="network-ticker-app" href="./courses/mathematics/">Mathematics</a><a class="network-ticker-app" href="./courses/language-arts/">English</a><a class="network-ticker-app" href="./courses/science/">Science</a><a class="network-ticker-app" href="./courses/social-studies/">Social Studies</a><a class="network-ticker-app" href="./courses/physical-education/">PE</a><a class="network-ticker-app" href="https://vervenveda.com/Khaemenes_Linguistics.github.io/">Languages</a><a class="network-ticker-app" href="./electives/grades/grade-09/psych-101/">Psychology</a><a class="network-ticker-app" href="https://vervenveda.com/Khaemenes_Academy.github.io/student/">Student</a><a class="network-ticker-app" href="https://vervenveda.com/Khaemenes_Academy.github.io/family/">Family</a><a class="network-ticker-app" href="https://vervenveda.com/Khaemenes_Higher_Learning.github.io/">Higher Learning</a></div>
+      <div class="network-ticker-set" aria-hidden="true"><span class="network-ticker-label">High School Quick Links</span><a tabindex="-1" class="network-ticker-app" href="https://vervenveda.com/Khaemenes_Academy.github.io/">Academy</a><a tabindex="-1" class="network-ticker-app" href="./grades/grade-09/">Grade 9</a><a tabindex="-1" class="network-ticker-app" href="./grades/grade-10/">Grade 10</a><a tabindex="-1" class="network-ticker-app" href="./grades/grade-11/">Grade 11</a><a tabindex="-1" class="network-ticker-app" href="./grades/grade-12/">Grade 12</a><a tabindex="-1" class="network-ticker-app" href="./courses/mathematics/">Mathematics</a><a tabindex="-1" class="network-ticker-app" href="./courses/language-arts/">English</a><a tabindex="-1" class="network-ticker-app" href="./courses/science/">Science</a><a tabindex="-1" class="network-ticker-app" href="./courses/social-studies/">Social Studies</a><a tabindex="-1" class="network-ticker-app" href="./courses/physical-education/">PE</a><a tabindex="-1" class="network-ticker-app" href="https://vervenveda.com/Khaemenes_Linguistics.github.io/">Languages</a><a tabindex="-1" class="network-ticker-app" href="./electives/grades/grade-09/psych-101/">Psychology</a><a tabindex="-1" class="network-ticker-app" href="https://vervenveda.com/Khaemenes_Academy.github.io/student/">Student</a><a tabindex="-1" class="network-ticker-app" href="https://vervenveda.com/Khaemenes_Academy.github.io/family/">Family</a><a tabindex="-1" class="network-ticker-app" href="https://vervenveda.com/Khaemenes_Higher_Learning.github.io/">Higher Learning</a></div>
     </div>
   </div>
   <button class="ticker-control" id="tickerControl" aria-label="Pause network ticker">Ⅱ</button>
