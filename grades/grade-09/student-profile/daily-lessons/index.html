@@ -62,9 +62,18 @@ html:root:root body :is(.hero, .header, .page-header, .section-head, .lesson-hea
   html:root:root body { font-size: 14px !important; }
 }
 </style>
+<link rel="stylesheet" href="https://vervenveda.com/Khaemenes_Academy.github.io/assets/khaemenes-global-header.css">
 </head>
 <body>
-<header class="top">
+<header data-khae-header class="khae-global-campus-header">
+  <div data-khae-header-inner>
+    <a data-khae-brand href="https://vervenveda.com/Khaemenes_Academy.github.io/" aria-label="Khaemenes Academy home"><span data-khae-brand-mark>9</span><span><strong data-khae-brand-name>Khaemenes Academy</strong><small data-khae-brand-sub>Grade 09 Student Profile</small></span></a>
+    <nav data-khae-nav aria-label="Academy global navigation"><a href="https://vervenveda.com/Khaemenes_Academy.github.io/">Academy</a><a href="https://vervenveda.com/Khaemenes_Academy.github.io/student/">Student</a><a href="https://vervenveda.com/Khaemenes_Academy.github.io/family/">Family</a><a href="https://vervenveda.com/Khaemenes_Academy.github.io/teacher-admin/">Teacher</a></nav>
+    <div data-khae-actions><a data-khae-secondary href="https://vervenveda.com/Khaemenes_Academy.github.io/student/profile.html">My Academy Profile</a><a href="https://vervenveda.com/Khaemenes_High.github.io/">High School</a></div>
+    <div data-vnv-ecosystem-slot aria-label="Ecosystem menu"></div>
+  </div>
+</header>
+<div class="top grade09-local-masthead">
   <div class="shell nav">
     <a class="brand" href="../"><span class="mark">IX</span><span><strong>Daily Lessons</strong><small>Grade 09 Student Dashboard</small></span></a>
     <nav class="navlinks" aria-label="Daily lessons navigation">
@@ -84,7 +93,7 @@ html:root:root body :is(.hero, .header, .page-header, .section-head, .lesson-hea
       <a class="btn secondary" href="../">Student Home</a>
     </div>
   </div>
-</header>
+</div>
 <main>
   <div class="shell crumbs"><a href="../../../../">High School</a><span>›</span><a href="../../">Grade 09</a><span>›</span><a href="../">Student Dashboard</a><span>›</span><strong>Daily Lessons</strong></div>
   <section class="section">
@@ -286,5 +295,7 @@ html:root:root body :is(.hero, .header, .page-header, .section-head, .lesson-hea
 <script src="../seven-class-schedule.js"></script>
 <script src="../../../../assets/vnv-language.js" defer data-official-vnv-language="true"></script>
 <script src="https://vervenveda.com/assets/vnv-ecosystem-toolbar.js" defer data-vnv-ecosystem-toolbar="1"></script>
+<script src="https://vervenveda.com/Khaemenes_Academy.github.io/assets/khaemenes-global-header.js" defer></script>
+<script src="https://vervenveda.com/assets/vnv-ecosystem-menu.js" defer></script>
 </body>
 </html>
