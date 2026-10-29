@@ -952,7 +952,12 @@ body main .high-frontdesk-hero .hero-actions{gap:10px;justify-content:center}
   <section class="section section-dark" id="network">
     <div class="section-inner">
       <div class="heading"><p class="kicker">Connected Learning Halls</p><h2>One High School inside a larger learning network.</h2><p>Research, professional tools, health, creative practice, Career exploration, and advanced study remain connected without overcrowding the core course path.</p></div>
-      <div class="network-grid" id="networkGrid"></div>
+      <div class="network-grid" id="networkGrid">
+    <a class="network-card" href="https://vervenveda.com/Khaemenes_Academy.github.io/"><span class="network-icon">KA</span><h3>Khaemenes Academy</h3><p>The wider lifelong educational network.</p><small>Academy</small></a>
+    <a class="network-card" href="https://vervenveda.github.io/proresource_hub.github.io/ProReSources_updated_index.html"><span class="network-icon">PR</span><h3>ProReSources</h3><p>Professional, technical, writing, design, and productivity tools.</p><small>Professional tools</small></a>
+    <a class="network-card" href="https://vervenveda.com/Khaemenes_Higher_Learning.github.io/Career/"><span class="network-icon">C</span><h3>Career Portal</h3><p>Career assessment, professional skills, and future planning.</p><small>Career & transition</small></a>
+    <a class="network-card" href="https://vervenveda.com/Khaemenes_Higher_Learning.github.io/"><span class="network-icon">HL</span><h3>Higher Learning</h3><p>Collegiate study, research, and advanced learning.</p><small>Next academic stage</small></a>
+  </div>
     </div>
   </section>
 
@@ -1710,6 +1715,25 @@ html:root:root body .high-frontdesk-hero .high-hero-sub{
   margin-top:16px!important;
   margin-bottom:3px!important;
 }
+</style>
+<style id="high-network-final-support-20261029">
+/* Accessible connected-hall fallback, with the same cards upgraded by the existing renderer. */
+html:root:root body main #network .network-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;align-items:stretch}
+html:root:root body main #network .network-card{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;min-width:0;min-height:200px;padding:23px 16px;background:#fffdf8!important;border:1px solid #aebcb5!important;border-radius:7px;color:#243038!important}
+html:root:root body main #network .network-card :is(h3,p,small){color:#243038!important;opacity:1!important}
+html:root:root body main #network .network-card small{margin-top:auto;color:#67522f!important}
+html:root:root body main #network .network-card:hover{border-color:#b48b45!important;box-shadow:0 8px 25px rgba(0,0,0,.19)}
+/* The immediately following closing section must remain readable. */
+html:root:root body main > section.final{background:#f4f0e7!important;color:#243038!important}
+html:root:root body main > section.final :is(.kicker,h2,p){color:#243038!important;opacity:1!important;text-shadow:none!important}
+html:root:root body main > section.final .button-primary{background:#243038!important;color:#fff8e9!important;border:1px solid #243038!important}
+html:root:root body main > section.final .button-secondary{background:#fffdf8!important;color:#243038!important;border:1px solid #b48b45!important}
+/* Compact voluntary-support card (the shared component retains its original functionality). */
+html:root:root body #vnv-global-support{width:min(calc(100% - 32px),680px)!important;margin:24px auto!important;padding:19px 23px!important;background:#243038!important;background-image:none!important;border:1px solid #b48b45!important;border-radius:7px!important;color:#fff8e9!important;box-shadow:0 8px 24px rgba(15,25,37,.13)!important}
+html:root:root body #vnv-global-support :is(h2,p,small,.vnv-support-kicker){color:#fff8e9!important;opacity:1!important}
+html:root:root body #vnv-global-support .vnv-support-button{background:#f4f0e7!important;color:#243038!important;border:1px solid #e1c994!important;border-radius:7px!important}
+@media(max-width:850px){html:root:root body main #network .network-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:460px){html:root:root body main #network .network-grid{grid-template-columns:1fr}html:root:root body #vnv-global-support{padding:17px 15px!important}}
 </style>
 </body>
 </html>
