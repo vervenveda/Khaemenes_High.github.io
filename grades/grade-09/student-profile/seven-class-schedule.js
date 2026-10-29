@@ -26,7 +26,7 @@ const languageStarts={
  arabic:"Halls/courses/arabic-1/week-01/",
  russian:"Halls/courses/russian-1/week-01/"
 };
-function languageStart(id){const code=id.replace("world-language-9-","");return languageStarts[code]?"https://vervenveda.github.io/Khaemenes_Linguistics.github.io/"+languageStarts[code]:null}
+function languageStart(id){const code=id.replace("world-language-9-","");return languageStarts[code]?"https://vervenveda.com/Khaemenes_Linguistics.github.io/"+languageStarts[code]:null}
 function firstLessonFor(id){const route=firstLessons[id];return route?repositoryRoot()+route:null}
 const el=(tag,txt)=>{const e=document.createElement(tag);if(txt!==undefined)e.textContent=txt;return e};
 function language(){const value=pins.readLanguageChoices()["9"];return languages.some(([id])=>id===value)?value:"spanish"}
