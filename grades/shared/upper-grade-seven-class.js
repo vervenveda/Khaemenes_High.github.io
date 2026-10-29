@@ -35,7 +35,14 @@ const ids=()=>courses.map(item=>item[2]);
 const legacyIds=()=>courses.map((_,i)=>"grade-"+grade+"-period-"+(i+1));
 function languageRoute(){
  const id=selected(),params=new URLSearchParams({language:id,source:"khaemenes-high-grade"+grade});
- if(["arabic","russian"].includes(id))params.set("mode","atlas");
+ // Grades 10–12 continue the formal High School language sequence.
+ // Supplying the course parameter makes the Linguistics Hall open the
+ // learner's actual course panel instead of stopping at the generic hall.
+ if(["arabic","russian"].includes(id)){
+   params.set("mode","atlas");
+ }else{
+   params.set("course","hs"+String(grade-8));
+ }
  return "https://vervenveda.com/Khaemenes_Linguistics.github.io/Halls/index.html?"+params.toString();
 }
 function migrateLegacyPins(){
@@ -51,6 +58,12 @@ function snapshotFor(id,subject){
 }
 function stepFor(id,subject,route,index){
  const s=snapshotFor(id,subject),fallback=index===5?languageRoute():(route.startsWith("https:")?route:root+route);
+ // The language selector owns the Grade 10–12 language doorway. Do not let
+ // an older continuation snapshot send a newly selected language to a stale
+ // or different course URL.
+ if(index===5){
+   return {href:fallback,label:"Open language course",detail:(selected()[0].toUpperCase()+selected().slice(1))+" · open the selected Grade "+grade+" language pathway.",status:"continue",snapshot:s};
+ }
  return {href:s?.nextHref||fallback,label:s?.stale?"Refresh":({corrections:"Review",mastery:"Mastery",assessment:"Assessment",complete:"Review Record"})[s?.status]||"Open class",detail:s?.stale?"Progress changed in the course. Open it to refresh this summary.":(s?.nextTitle||s?.summary||"Ready to open."),status:s?.status||"continue",snapshot:s};
 }
 const holder=document.getElementById("upperClasses"),feedback=document.getElementById("status");
@@ -70,7 +83,9 @@ function render(){
  for(const x of languageOptions){const o=el("option",x[0].toUpperCase()+x.slice(1));o.value=x;lang.append(o)}
  lang.value=selected();lang.addEventListener("change",()=>{
   const next=pin.readLanguageChoices();next[String(grade)]=lang.value;
-  feedback.textContent=pin.writeLanguageChoices(next)?"Language choice saved.":"Unable to save language choice.";
+  const saved=pin.writeLanguageChoices(next);
+  feedback.textContent=saved?"Language choice saved. Use Open language course to enter the selected pathway.":"Unable to save language choice.";
+  if(saved)window.dispatchEvent(new CustomEvent("khaemenes-upper-grade-language-changed",{detail:{grade,language:lang.value}}));
   render();
  });
  const label=el("label","Language choice ");label.append(lang);holder.append(label);
@@ -124,4 +139,5 @@ window.addEventListener("khaemenes-course-pins-changed",render);
 window.addEventListener("khaemenes-learning-continuation-changed",render);
 window.addEventListener("khaemenes-student-profile-changed",render);
 window.addEventListener("khaemenes-student-quick-pins-changed",render);
+window.addEventListener("khaemenes-upper-grade-language-changed",render);
 })();
