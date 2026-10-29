@@ -11,7 +11,8 @@ for(let unit=2;unit<=13;unit++){
  assert.ok(wrapper.includes("loadAnswerDraft"),"Unit "+unit+" core must launch recovery after reading gate");
 }
 const backing=new Map([["official-mastered","88"]]);
-function open(unit,id){
+function open(unit,id,learner="student-a"){
+ backing.set("KHAE_OPEN_PREALGEBRA_FORGE_V2",JSON.stringify({activeId:learner,students:[{id:learner,name:learner}]}));
  const options=Array.from({length:20},()=>({options:["A","B","C","D"]}));
  let chosen={};const listeners={};
  const host={parentNode:{insertBefore(){}},querySelector(selector){
@@ -41,13 +42,19 @@ assert.equal(reopened.chosen[0],2);
 assert.equal(reopened.chosen[3],1);
 assert.equal(reopened.chosen[19],0);
 assert.ok(reopened.notice.textContent.includes("restored"));
+const otherLearner=open(2,"l01","student-b");
+assert.deepEqual(otherLearner.chosen,{},"another learner must not inherit unfinished choices");
+const backToA=open(2,"l01","student-a");
+assert.equal(backToA.chosen[0],2,"returning to first learner restores only their own drafts");
 const another=open(3,"l01");
 assert.deepEqual(another.chosen,{},"different unit cannot inherit old drafts");
 const otherLesson=open(2,"l03");
 assert.deepEqual(otherLesson.chosen,{},"different lesson cannot inherit old drafts");
 reopened.resetListeners.click();
-assert.ok(!backing.has("khaemenes-prealgebra-lesson-draft-v1:u02:l01"),"reset removes only local unscored choices");
+assert.ok(!backing.has("khaemenes-prealgebra-lesson-draft-v2:student-a:u02:l01"),"reset removes only local unscored choices");
 assert.equal(backing.get("official-mastered"),"88");
-backing.set("khaemenes-prealgebra-lesson-draft-v1:u02:l02",'{"schema":1,"lesson":"l02","unit":2,"answers":[999]}');
+backing.set("khaemenes-prealgebra-lesson-draft-v2:student-a:u02:l02",'{"schema":2,"learner":"student-a","lesson":"l02","unit":2,"answers":[999]}');
+backing.set("khaemenes-prealgebra-lesson-draft-v1:u02:l02",'{"schema":1,"lesson":"l02","unit":2,"answers":[1]}');
 const bad=open(2,"l02");assert.deepEqual(bad.chosen,{},"tampered or malformed draft cannot be applied");
-console.log("PASS Pre-Algebra Units 02–13 draft recovery: per-lesson/per-unit keys, shuffled original option IDs, reset behavior, malformed draft rejection, official score separation.");
+assert.ok(backing.has("khaemenes-prealgebra-lesson-draft-v1:u02:l02"),"old ambiguous draft must remain untouched for review");
+console.log("PASS Pre-Algebra Units 02–13 draft recovery: per-learner/per-unit/lesson isolation, old unassigned preservation, shuffled option IDs, reset behavior, malformed draft rejection, official score separation.");

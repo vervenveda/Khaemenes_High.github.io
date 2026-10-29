@@ -24,9 +24,21 @@ function migrateLegacyDiagnosticWeek(){
   if(!progress||progress.placementWeekMigrationV1)return;
   progress.placement??={};
   if(progress.weeks?.[1]){
-   progress.placement.legacyDiagnosticWeekRecord=progress.weeks[1];
-   progress.placement.migratedAt=new Date().toISOString();
-   delete progress.weeks[1];
+   const prior=progress.weeks[1];
+   // Only a positively identified Unit 00 record can be moved automatically.
+   // A legacy Week 1 record without provenance may be genuine earned course work.
+   const explicitDiagnostic=prior?.unitId==="u00"||prior?.unitNumber===0||
+     prior?.assessmentId==="KH-MATH-PA-READINESS-GATEWAY"||
+     prior?.source==="pre-course-diagnostic";
+   if(explicitDiagnostic){
+     progress.placement.legacyDiagnosticWeekRecord=JSON.parse(JSON.stringify(prior));
+     progress.placement.migratedAt=new Date().toISOString();
+     delete progress.weeks[1];
+     progress.placementWeekMigrationStatus="explicit-diagnostic-migrated";
+   }else{
+     progress.placementWeekMigrationStatus="manual-review-required-week1-provenance";
+     progress.placement.legacyWeek1Preserved=true;
+   }
   }
   progress.placementWeekMigrationV1=true;
   changed=true;

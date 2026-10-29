@@ -101,7 +101,7 @@ Lesson completion is mastery-based rather than checkbox-based. The shared lesson
 # Official 36-Week Course Map
 
 ## Unit 01 — Number Systems, Factors & Estimation
-**2 weeks**
+**3 weeks**
 
 Number classification, factors and multiples, primes and divisibility, GCF/LCM, estimation, reasonableness, and order of operations.
 
@@ -161,11 +161,11 @@ Perimeter, area, surface area, volume, angle relationships, scale, similarity, c
 Distributions, measures of center, variability, data displays, simple and compound probability, sampling, and misleading representations.
 
 ## Unit 13 — Mathematical Modelling Capstone
-**2 weeks**
+**1 week**
 
 Students define a meaningful and safe problem, select variables and representations, build and verify a model, test assumptions and uncertainty, revise from evidence, communicate limitations, present a defensible conclusion, and reflect on Algebra I readiness.
 
-The second capstone week protects time for project development, verification, revision, presentation, defence, and reflection rather than adding another five content-heavy lessons.
+The capstone's official week protects time for project development, verification, revision, presentation, defence, and reflection. An optional additional project week may be assigned locally but is not part of the 36-week canonical map.
 
 **Official Units 1–13 total: 36 weeks.**
 
@@ -270,3 +270,9 @@ Khaemenes Global Pre-Algebra is part of the Khaemenes Academy mathematics progra
 The course is intended to combine rigorous mathematics, transparent assessment practices, learner dignity, practical application, and clear evidence of progress.
 
 **Course Code:** `KH-MATH-PA`
+
+### Readiness evidence migration safety (2026-10-29)
+When legacy Week 1 data is clearly tagged as the pre-course diagnostic, it may be copied to placement history and removed from the newly official Week 1 slot. Untagged Week 1 data is never deleted or reassigned automatically: it remains in its original course record and is flagged for a supervised provenance review.
+
+### Per-learner local unfinished practice (2026-10-29)
+The Units 02–13 answer-draft helper now uses the selected course learner ID in its storage key. Existing unscoped `draft-v1` records are not silently attributed to any student or deleted. Learners need to select their own profile on the course dashboard before opening lessons. This update changes only unfinished selections; it does not migrate or rewrite unit mastery scores, which require a separate coordinated multi-learner audit.

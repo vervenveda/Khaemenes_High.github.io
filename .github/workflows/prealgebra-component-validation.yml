@@ -21,6 +21,8 @@ jobs:
     steps:
       - name: Check out repository
         uses: actions/checkout@v6
+      - name: Validate Pre-Algebra entry runtime and legacy Week 1 evidence safety
+        run: node courses/mathematics/pre-algebra/tools/validate-entry-and-legacy-week.mjs
       - name: Validate Pre-Algebra component hashes
         run: node courses/mathematics/pre-algebra/tools/validate-components.mjs
       - name: Validate Pre-Algebra assessment depth
