@@ -1537,6 +1537,17 @@ links.forEach(a=>{a.href=destination;if(destination==="#student-portal")a.title=
 <script src="https://vervenveda.com/assets/vnv-ecosystem-menu.js" defer></script>
 <script src="assets/high-navigation-v1.js" defer></script>
 
+<style id="high-campus-topology-polish">
+/* Uniform dark breadcrumb band and deliberate space before the High School Front Desk. */
+body .breadcrumb-bar,html:root:root body .breadcrumb-bar{background:#243038!important;border-bottom:1px solid #384951!important;color:#f3ede0!important}
+body .breadcrumb-bar .breadcrumbs,body .breadcrumb-bar .breadcrumbs a,body .breadcrumb-bar .breadcrumbs span{color:#f3ede0!important;font-weight:400!important}
+body .breadcrumb-bar .breadcrumbs a:hover,body .breadcrumb-bar .breadcrumbs a:focus-visible{color:#f1cc84!important}
+html:root:root body .high-frontdesk{margin-top:28px!important;padding-top:0!important;position:relative}
+html:root:root body .high-desk{border-radius:7px;box-shadow:0 9px 24px rgba(10,27,33,.09)}
+/* Old beta/learner rails are retained by their scripts, but never compete with the canonical homepage dock. */
+body[data-khae-campus-front-desk="true"] #khaemenesLearnerUtilityToolbar,
+body[data-khae-campus-front-desk="true"] #vnvBetaProgramLink{display:none!important}
+</style>
 <style id="khaemenes-home-toolbar-parity">
 /* Isolated copy of the Academy home six-control toolbar geometry. */
 #khaemenesHomeUtilityDock{position:fixed;right:max(12px,env(safe-area-inset-right));bottom:max(12px,env(safe-area-inset-bottom));z-index:2147482500;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));align-items:stretch;justify-content:stretch;width:min(354px,calc(100vw - 24px));max-width:calc(100vw - 24px);gap:7px;padding:10px;border:1px solid rgba(180,139,69,.48);border-radius:7px;background:rgba(255,253,248,.97);box-shadow:0 10px 30px rgba(15,25,37,.17);backdrop-filter:blur(10px);box-sizing:border-box}
