@@ -330,3 +330,16 @@ html body #khaemenesLearnerUtilityToolbar > :is(a,button){
    padding:7px 3px!important;font-size:10px!important
  }
 }
+
+
+/* Grade 09 learner dashboard clarity: distinctive surfaces, legible actions. */
+body{background:linear-gradient(180deg,#e5ebe7 0%,#f3f0e8 48%,#e7ece7 100%);color:#17251f}
+.card{background:#fffdf8;border:1px solid #b7c8bc;border-radius:7px;box-shadow:0 8px 22px rgba(17,38,31,.11)}
+.card h2,.card h3{color:#183c31}
+.card p,.card small{color:#435a50}
+.card .btn,.card a.btn,.card button.btn{box-sizing:border-box;min-width:0;min-height:44px;height:auto;padding:9px 12px;border-radius:7px;font:400 11px/1.35 "Brandon Grotesque","Avenir Next",Arial,sans-serif;letter-spacing:0;white-space:normal;overflow-wrap:normal;text-align:center}
+.card .btn:not(.secondary):not(.gold):not(.warn){color:#fff;background:#214b3e;border-color:#214b3e}
+.card .btn.secondary{color:#17392f;background:#fffdf8;border-color:#708e81}
+.card .btn.gold{color:#17251f;background:#ead09b;border-color:#a48546}
+.card :is(a,button,input,select):focus-visible{outline:3px solid #b48b45;outline-offset:2px}
+@media(max-width:420px){.card{padding:16px}.card .btn{font-size:10px}}
