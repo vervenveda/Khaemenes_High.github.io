@@ -700,23 +700,11 @@ body main .high-frontdesk-hero .hero-actions{gap:10px;justify-content:center}
       </span>
     </a>
 
-    <nav class="header-links" data-khae-nav aria-label="Primary navigation">
-      <a href="#student-portal">Student</a>
-      <a href="#parent-portal">Family</a>
-      <a href="#grades">Grades 9–12</a>
-      <a href="#departments">Departments</a>
-      <a class="career-link" href="https://vervenveda.com/Khaemenes_Higher_Learning.github.io/Career/">Career</a>
-      <a href="#library">Resources</a>
-      <button class="menu-button" id="menuButton" type="button" aria-label="Open High School directory" aria-expanded="false" aria-controls="drawerBg">High Directory</button>
-    </nav>
-
     <div class="header-actions" data-khae-actions>
-      <a href="#student-portal" data-high-profile-door="1">😊 My Profile / Continue Learning</a>
-      <a href="https://vervenveda.com/Khaemenes_Academy.github.io/family/">Family / Account</a>
-      <a href="https://vervenveda.com/Khaemenes_Academy.github.io/adult/">Adult Scholar</a>
-      <button class="install-button" id="installButton" type="button" hidden>Install</button>
+      <button class="menu-button" id="menuButton" type="button" aria-label="Open High School directory" aria-expanded="false" aria-controls="drawerBg">
+        <span class="menu-lines" aria-hidden="true"></span>
+      </button>
     </div>
-    <div data-vnv-ecosystem-slot aria-label="Ecosystem menu"></div>
   </div>
 </header>
 
@@ -1598,5 +1586,36 @@ window.addEventListener("load",()=>{
  if(window.VNVEcosystemToolbar?.mount)window.VNVEcosystemToolbar.mount();
 });
 </script>
+<style id="high-header-ticker-separation-20261029">
+/* High School only: exactly the Academy logo/wordmark and one directory hamburger. */
+html body [data-khae-header] [data-khae-header-inner]{
+  display:flex!important;align-items:center!important;justify-content:space-between!important;
+  gap:14px!important;padding-inline:clamp(12px,2vw,28px)!important;width:100%!important;
+}
+html body [data-khae-header] [data-khae-brand]{flex:0 1 auto!important;max-width:calc(100% - 66px)!important}
+html body [data-khae-header] [data-khae-actions]{margin-left:auto!important;flex:0 0 auto!important;display:flex!important}
+html body [data-khae-header] #menuButton{
+  display:grid!important;place-items:center!important;width:44px!important;height:44px!important;
+  min-width:44px!important;padding:0!important;border:1px solid #b48b45!important;
+  border-radius:7px!important;background:#243038!important;color:#fff8e9!important;
+  font-size:0!important;
+}
+html body [data-khae-header] #menuButton .menu-lines,
+html body [data-khae-header] #menuButton .menu-lines:before,
+html body [data-khae-header] #menuButton .menu-lines:after{background:#fff8e9!important}
+html body [data-khae-header] #menuButton[aria-expanded="true"] .menu-lines{background:transparent!important}
+/* Do not display a competing floating ecosystem hamburger on this landing page. */
+html body[data-khae-campus-front-desk="true"] :is(#vnvEcosystemMenuButton,.vnv-ecosystem-nav){display:none!important}
+/* Ticker remains the one existing shared Academy ticker, with moving clickable links and pause. */
+html body #khaeNetworkTicker{display:grid!important;grid-template-columns:minmax(0,1fr) 44px!important;height:33px!important;visibility:visible!important}
+html body #khaeNetworkTicker .khae-network-ticker-viewport{display:block!important;overflow:hidden!important;min-width:0!important}
+html body #khaeNetworkTicker .khae-network-ticker-track{display:flex!important;width:max-content!important;height:100%!important;animation:khaeNetworkTickerMove 20s linear infinite!important}
+html body #khaeNetworkTicker[data-paused="true"] .khae-network-ticker-track,
+html body #khaeNetworkTicker:hover .khae-network-ticker-track,
+html body #khaeNetworkTicker:focus-within .khae-network-ticker-track{animation-play-state:paused!important}
+html body #khaeNetworkTicker .khae-network-ticker-set{display:flex!important;align-items:center!important;flex:0 0 auto!important;gap:14px!important;height:100%!important}
+html body #khaeNetworkTicker .khae-ticker-control{display:grid!important;place-items:center!important;color:#fff8e9!important;background:#10243b!important;visibility:visible!important}
+@media(prefers-reduced-motion:reduce){html body #khaeNetworkTicker .khae-network-ticker-track{animation:none!important}}
+</style>
 </body>
 </html>
