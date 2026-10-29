@@ -810,7 +810,7 @@ body :is(p,li,small,label,button,input,select,textarea,figcaption,caption,td,th,
     </div>
   </section>
 
-  <section class="section section-alt" id="portals">
+  <section class="section section-dark" id="portals">
     <div class="section-inner">
       <div class="heading">
         <p class="kicker">High School Portal Center</p>
@@ -920,7 +920,7 @@ body :is(p,li,small,label,button,input,select,textarea,figcaption,caption,td,th,
     </div>
   </section>
 
-  <section class="section section-alt" id="library">
+  <section class="section section-dark" id="library">
     <div class="section-inner">
       <div class="heading">
         <p class="kicker">Live High School Resource Directory</p>
@@ -1537,6 +1537,20 @@ links.forEach(a=>{a.href=destination;if(destination==="#student-portal")a.title=
 <script src="https://vervenveda.com/assets/vnv-ecosystem-menu.js" defer></script>
 <script src="assets/high-navigation-v1.js" defer></script>
 
+<style id="high-school-alternating-section-bands">
+/* High School only: parchment / charcoal section rhythm, scoped to section containers. */
+#grades,#departments,#pathways,#transition{background:#f4f0e7;color:#17211d}
+#portals,#library{background:linear-gradient(135deg,#29343b,#1b2931);color:#f6f0e5;border-block:1px solid #53616a}
+#portals .heading h2,#library .heading h2{color:#fff9ef!important}
+#portals .heading>p,#library .heading>p{color:#e2dfd7!important}
+#portals .heading .kicker,#library .heading .kicker{color:#e9c88f!important}
+#portals .portal-card,#library .catalog{color:#17211d;background:#fffdf8;border-radius:7px}
+#portals .portal-card p,#library .catalog p{color:#405149}
+#library .catalog :is(input,select,button){color:#17211d;background:#fffdf8}
+#library .catalog :is(.status,.empty){color:#34473c}
+#portals .portal-card a,#library .catalog a{color:#17392f}
+#portals .portal-card :is(a,button):focus-visible,#library .catalog :is(a,button,input,select):focus-visible{outline:3px solid #b48b45;outline-offset:2px}
+</style>
 <style id="high-campus-topology-polish">
 /* Uniform dark breadcrumb band and deliberate space before the High School Front Desk. */
 body .breadcrumb-bar,html:root:root body .breadcrumb-bar{background:#243038!important;border-bottom:1px solid #384951!important;color:#f3ede0!important}
