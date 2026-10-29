@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0",
   "component_set": "KH-MATH-PA",
-  "release": "2026.10.15-applied-mission-studio-v1.7-popout-evidence-recovery",
+  "release": "2026.10.29-prealgebra-safe-entry-learner-drafts",
   "hash_format": "git-blob-sha1",
   "components": [
     {
@@ -14,7 +14,7 @@
     },
     {
       "path": "assets/prealgebra-archaemenes-upgrade.js",
-      "sha": "4f026783317bff8d295dd2eff562360ecd1b7bf5"
+      "sha": "5ea02c03a18a0b3c128c1d73f497a49c5945c4e4"
     },
     {
       "path": "assets/prealgebra-archaemenes-upgrade-core.js",
@@ -222,7 +222,7 @@
     },
     {
       "path": "assets/prealgebra-answer-draft-v1.js",
-      "sha": "2f984a70c2f28b979a6a0a75906a92f3bcac758d"
+      "sha": "ee1f8643993ac0105de5321d03392082fab6cf14"
     }
   ]
 }

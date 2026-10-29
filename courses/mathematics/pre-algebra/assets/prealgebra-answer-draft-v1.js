@@ -4,7 +4,19 @@
 const lesson=window.LESSON_DATA,map=window.UNIT_MAP_FALLBACK,host=document.getElementById("questionList");
 const unit=Number(map?.unit?.number);
 if(!lesson?.id||!Array.isArray(lesson.questions)||!host||!(unit>=2&&unit<=13))return;
-const key="khaemenes-prealgebra-lesson-draft-v1:u"+String(unit).padStart(2,"0")+":"+lesson.id;
+// Course learner ID is the authority for this course's local drafts.
+function learnerScope(){
+ try{
+  const course=JSON.parse(localStorage.getItem("KHAE_OPEN_PREALGEBRA_FORGE_V2")||"null");
+  if(course&&Array.isArray(course.students)&&typeof course.activeId==="string"&&course.students.some(s=>s.id===course.activeId))
+    return course.activeId.slice(0,90);
+ }catch{}
+ // Deliberately do not infer ownership of an old unscoped draft.
+ // Siblings must select an actual learner before their work is attributable.
+ return "unassigned";
+}
+const activeLearner=learnerScope();
+const key="khaemenes-prealgebra-lesson-draft-v2:"+activeLearner+":u"+String(unit).padStart(2,"0")+":"+lesson.id;
 const count=lesson.questions.length;
 const choices=()=>Array.from({length:count},(_,i)=>{
  const input=host.querySelector('input[name="q'+i+'"]:checked');
@@ -14,7 +26,7 @@ const choices=()=>Array.from({length:count},(_,i)=>{
 function read(){
  try{
   const record=JSON.parse(localStorage.getItem(key)||"null");
-  if(record?.schema!==1||record.lesson!==lesson.id||record.unit!==unit||
+  if(record?.schema!==2||record.learner!==activeLearner||record.lesson!==lesson.id||record.unit!==unit||
     !Array.isArray(record.answers)||record.answers.length!==count)return null;
   return record.answers.every((v,i)=>v===null||(Number.isInteger(v)&&v>=0&&v<lesson.questions[i].options.length))
     ?record.answers:null;
@@ -24,7 +36,7 @@ function save(){
  const answers=choices();
  try{
   if(answers.every(v=>v===null)){localStorage.removeItem(key);return;}
-  localStorage.setItem(key,JSON.stringify({schema:1,unit,lesson:lesson.id,answers,savedAt:Date.now()}));
+  localStorage.setItem(key,JSON.stringify({schema:2,learner:activeLearner,unit,lesson:lesson.id,answers,savedAt:Date.now()}));
  }catch{
   const notice=document.getElementById("preAlgebraDraftStatus");
   if(notice)notice.textContent="Local draft storage unavailable. Keep this page open or print your work.";
@@ -43,7 +55,7 @@ function restore(){
 const status=document.createElement("p");status.id="preAlgebraDraftStatus";status.setAttribute("role","status");
 status.setAttribute("aria-live","polite");
 status.style.cssText="font-size:14px;line-height:1.5;opacity:.86;margin:10px 0;";
-status.textContent="Unscored selections are saved locally while you work. Scores remain in the original assessment engine.";
+status.textContent=(activeLearner==="unassigned"?"Select a learner on the course dashboard to associate drafts with a student. ":"") + "Unscored selections stay locally scoped to this learner; official grades are unchanged. Older unassigned drafts remain preserved for manual review.";
 host.parentNode?.insertBefore(status,host);
 restore();
 host.addEventListener("change",event=>{
