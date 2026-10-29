@@ -928,8 +928,8 @@ body main .high-frontdesk-hero .hero-actions{gap:10px;justify-content:center}
           <button class="tool-button" id="favorites" type="button" aria-pressed="false">♡ My Shelf <span id="favoriteCount">0</span></button>
           <button class="tool-button" id="random" type="button">Surprise Me ✦</button>
         </div>
-        <p class="status" id="status" aria-live="polite">Loading resource federation…</p>
-        <div class="tool-grid" id="toolGrid"></div>
+        <p class="status" id="status" aria-live="polite">Choose a category or enter a search to browse resources.</p>
+        <div class="tool-grid" id="toolGrid" aria-live="polite"></div>
         <div class="empty" id="empty">No connected resource matched that search.</div>
       </div>
     </div>
@@ -1395,10 +1395,11 @@ body main .high-frontdesk-hero .hero-actions{gap:10px;justify-content:center}
   }
   function renderResources(){
     const list=filteredResources(),favorites=getFavorites();
-    $("toolGrid").innerHTML=list.slice(0,120).map(r=>`<article class="tool-card"><div class="tool-top"><span class="tool-icon">${escapeHTML(r.icon||"R")}</span><button class="favorite" type="button" data-favorite="${escapeHTML(r.id)}" aria-pressed="${favorites.includes(r.id)}" aria-label="${favorites.includes(r.id)?"Remove":"Add"} ${escapeHTML(r.title)} ${favorites.includes(r.id)?"from":"to"} My Shelf">${favorites.includes(r.id)?"★":"☆"}</button></div><span class="badge">${escapeHTML(r.kind||"Resource")}</span><h3>${escapeHTML(r.title)}</h3><p>${escapeHTML(r.description||"Connected learning resource.")}</p><span class="destination">${escapeHTML(RESOURCE_CATEGORIES[r.category]||r.category)}</span><a class="tool-link" href="${r.url}">Open Resource</a></article>`).join("");
+    const browsing=Boolean(resourceState.query || resourceState.category!=="all" || resourceState.favorites);
+    $("toolGrid").innerHTML=(browsing?list.slice(0,36):[]).map(r=>`<article class="tool-card"><div class="tool-top"><span class="tool-icon">${escapeHTML(r.icon||"R")}</span><button class="favorite" type="button" data-favorite="${escapeHTML(r.id)}" aria-pressed="${favorites.includes(r.id)}" aria-label="${favorites.includes(r.id)?"Remove":"Add"} ${escapeHTML(r.title)} ${favorites.includes(r.id)?"from":"to"} My Shelf">${favorites.includes(r.id)?"★":"☆"}</button></div><span class="badge">${escapeHTML(r.kind||"Resource")}</span><h3>${escapeHTML(r.title)}</h3><p>${escapeHTML(r.description||"Connected learning resource.")}</p><span class="destination">${escapeHTML(RESOURCE_CATEGORIES[r.category]||r.category)}</span><a class="tool-link" href="${r.url}">Open Resource</a></article>`).join("");
     const source=federationMeta.generatedAt?` · federation ${new Date(federationMeta.generatedAt).toLocaleString()}`:federationMeta.error?" · core fallback":"";
-    $("status").textContent=`Showing ${list.length} of ${resources.length} eligible High School resources${source}.`;
-    $("empty").classList.toggle("show",list.length===0);
+    $("status").textContent=browsing?`Showing ${Math.min(list.length,36)} of ${list.length} matching resources (${resources.length} indexed)${source}.`:`${resources.length} High School resources indexed${source}. Search or select a category to view matching cards.`;
+    $("empty").classList.toggle("show",browsing && list.length===0);
     $("favoriteCount").textContent=favorites.length;
     $$("[data-favorite]").forEach(button=>button.addEventListener("click",()=>{
       const next=getFavorites(),id=button.dataset.favorite,idx=next.indexOf(id);
@@ -1498,7 +1499,7 @@ body main .high-frontdesk-hero .hero-actions{gap:10px;justify-content:center}
 
 <script src="https://vervenveda.com/Khaemenes_Academy.github.io/assets/khaemenes-family-registry.js"></script>
 <script src="https://vervenveda.com/Khaemenes_Academy.github.io/assets/khaemenes-family-school-bridge.js" data-khaemenes-stage="high"></script>
-<script src="./assets/vnv-beta-link.js" defer></script>
+<!-- Legacy Beta launcher retired on the High School homepage; canonical ecosystem dock owns Beta. -->
 <script src="https://vervenveda.com/assets/vnv-support.js" defer></script>
 <script src="./assets/vnv-language.js" defer data-official-vnv-language="true"></script>
 <script>
