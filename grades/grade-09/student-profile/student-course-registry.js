@@ -107,12 +107,25 @@ const COURSES=Object.freeze([
     ["arabic","Arabic"],["russian","Russian"]
   ].map(([id,name])=>{
     const formal=!["arabic","russian"].includes(id);
-    const handoff=`https://vervenveda.com/Khaemenes_Linguistics.github.io/Halls/index.html?language=${encodeURIComponent(id)}&${formal?"course=hs1":"mode=atlas"}&source=khaemenes-high-grade09`;
+    // French 101 is the canonical Grade 09 French doorway. Keeping this here
+    // makes every Grade 09 surface (dashboard, seven-class profile, pins and
+    // continuation) resolve to the same course entrance without bypassing the
+    // lesson-level 80% mastery gates inside French 101.
+    const french101="https://vervenveda.com/Khaemenes_Linguistics.github.io/apps/French_101_index.html";
+    const handoff=id==="french"
+      ? french101
+      : `https://vervenveda.com/Khaemenes_Linguistics.github.io/Halls/index.html?language=${encodeURIComponent(id)}&${formal?"course=hs1":"mode=atlas"}&source=khaemenes-high-grade09`;
     return Object.freeze({
-      id:"world-language-9-"+id,title:formal?name+" I":name+" · Exploration",subject:"World Languages",
-      short:name,className:"ela",home:handoff,defaultContinue:handoff,
-      prefix:"https://vervenveda.com/Khaemenes_Linguistics.github.io/Halls/",
-      mentorSubject:"language-arts",courseMode:formal?"formal":"exploration"
+      id:"world-language-9-"+id,
+      title:id==="french"?"French 101":(formal?name+" I":name+" · Exploration"),
+      subject:"World Languages",
+      short:name,
+      className:"ela",
+      home:handoff,
+      defaultContinue:handoff,
+      prefix:id==="french"?french101:"https://vervenveda.com/Khaemenes_Linguistics.github.io/Halls/",
+      mentorSubject:"language-arts",
+      courseMode:formal?"formal":"exploration"
     });
   })
 ]);
