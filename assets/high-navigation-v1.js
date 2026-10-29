@@ -112,6 +112,8 @@
   ["Higher Learning","https://vervenveda.com/Khaemenes_Higher_Learning.github.io/"]
  ];
  function fallbackMenu(){
+   // Canonical Grade 9 header already loads the shared ecosystem menu; never inject a competing hamburger.
+   if(document.body?.dataset?.grade09CanonicalChrome==="true")return;
    if(document.getElementById("menuButton") && (document.getElementById("drawerBg")||document.getElementById("menuOverlay")))return;
    if(document.getElementById("vnvEcosystemMenuButton")||
       document.getElementById("vnvEcosystemMenuOverlay")||
@@ -168,6 +170,7 @@
   if(!high)return;
   // High School front desk uses the canonical ecosystem dock, not the legacy Beta rail.
   if(document.body?.dataset?.khaeCampusFrontDesk==="true")return;
+  if(document.body?.dataset?.grade09CanonicalChrome==="true")return; // Canonical Grade 9 toolbar replaces legacy Beta.
   const already=document.getElementById("vnvBetaProgramLink")||Array.from(document.scripts).some(s=>String(s.src||"").includes("/assets/vnv-beta-link.js"));
   if(already)return;
   const s=document.createElement("script");s.src="https://vervenveda.com/Khaemenes_High.github.io/assets/vnv-beta-link.js";s.defer=true;s.dataset.khaemenesStudentToolbar="persistent-v1";(document.head||document.documentElement).append(s);
