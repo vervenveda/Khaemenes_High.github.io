@@ -67,24 +67,6 @@ button{cursor:pointer}
 .skip-link{position:fixed;top:9px;left:9px;z-index:4000;transform:translateY(-170%);padding:9px 14px;border-radius:var(--radius);color:#fff;background:var(--ink)}
 .skip-link:focus{transform:none}
 
-/* VNV shared network ticker */
-.network-ticker{
-  position:sticky;top:0;z-index:1500;height:var(--ticker-height);display:grid;
-  grid-template-columns:minmax(0,1fr) 40px;overflow:hidden;color:#f4ead1;
-  background:linear-gradient(90deg,#07101d,#10243b 48%,#07101d);
-  border-bottom:1px solid rgba(255,255,255,.13);box-shadow:0 4px 14px rgba(6,15,27,.15)
-}
-.network-ticker-viewport{min-width:0;overflow:hidden;mask-image:linear-gradient(90deg,transparent 0,#000 27px,#000 calc(100% - 27px),transparent 100%)}
-.network-ticker-track{width:max-content;height:100%;display:flex;align-items:center;white-space:nowrap;animation:ticker 28s linear infinite}
-.network-ticker:hover .network-ticker-track,.network-ticker:focus-within .network-ticker-track,.network-ticker[data-paused="true"] .network-ticker-track{animation-play-state:paused}
-.network-ticker-set{height:100%;display:flex;align-items:center;gap:22px;padding-inline:11px}
-.network-ticker-label{color:var(--gold-pale);font-family:var(--ceremonial);font-size:10px;letter-spacing:.25em;text-transform:uppercase}
-.network-ticker-app{min-height:28px;display:inline-flex;align-items:center;gap:7px;padding:0;border:0;background:transparent;color:#eef3f7;font-size:11px;letter-spacing:.1em;text-transform:uppercase;white-space:nowrap}
-.network-ticker-app::before{content:"";width:3px;height:3px;border-radius:50%;background:var(--gold)}
-.network-ticker-app:hover{color:#fff;text-decoration:underline;text-underline-offset:3px}
-.ticker-control{width:40px;height:var(--ticker-height);display:grid;place-items:center;border:0;border-left:1px solid rgba(255,255,255,.13);color:#f4ead1;background:rgba(0,0,0,.14)}
-@keyframes ticker{from{transform:translateX(0)}to{transform:translateX(-50%)}}
-
 /* VNV header standard */
 .site-header{
   position:sticky;top:var(--ticker-height);z-index:1400;height:var(--header-height);
@@ -655,9 +637,6 @@ html:root:root body #grades{padding-top:52px}
 .site-header .brand{justify-self:start;max-width:100%;min-width:0}
 .site-header .header-actions{justify-self:end;margin-left:auto}
 .site-header .menu-button{flex:none}
-.network-ticker-track{display:flex;width:max-content;min-width:max-content}
-.network-ticker-set{flex:0 0 auto;white-space:nowrap;gap:16px;padding-inline:8px}
-.network-ticker-app{flex:0 0 auto}
 .hero h1{font-size:clamp(2.6rem,5.1vw,4.7rem);line-height:1.08;max-width:100%;text-wrap:balance}
 .high-hero-school{display:block;font-size:.64em;letter-spacing:.015em;margin-top:.12em}
 @media(max-width:1080px){.site-header .header-inner{grid-template-columns:minmax(0,1fr) auto}.site-header .header-links{display:none}.site-header .header-actions{grid-column:2}}
@@ -710,16 +689,6 @@ body main .high-frontdesk-hero .hero-actions{gap:10px;justify-content:center}
 <body id="top" data-khae-campus-front-desk="true">
 
 <a class="skip-link" href="#main">Skip to main content</a>
-
-<div class="network-ticker" id="ticker"><span id="khaeNetworkTicker" hidden aria-hidden="true"></span>
-  <div class="network-ticker-viewport">
-    <div class="network-ticker-track">
-      <div class="network-ticker-set"><span class="network-ticker-label">High School Quick Links</span><a class="network-ticker-app" href="https://vervenveda.com/Khaemenes_Academy.github.io/">Academy</a><a class="network-ticker-app" href="./grades/grade-09/">Grade 9</a><a class="network-ticker-app" href="./grades/grade-10/">Grade 10</a><a class="network-ticker-app" href="./grades/grade-11/">Grade 11</a><a class="network-ticker-app" href="./grades/grade-12/">Grade 12</a><a class="network-ticker-app" href="./courses/mathematics/">Mathematics</a><a class="network-ticker-app" href="./courses/language-arts/">English</a><a class="network-ticker-app" href="./courses/science/">Science</a><a class="network-ticker-app" href="./courses/social-studies/">Social Studies</a><a class="network-ticker-app" href="./courses/physical-education/">PE</a><a class="network-ticker-app" href="https://vervenveda.com/Khaemenes_Linguistics.github.io/">Languages</a><a class="network-ticker-app" href="./electives/grades/grade-09/psych-101/">Psychology</a><a class="network-ticker-app" href="https://vervenveda.com/Khaemenes_Academy.github.io/student/">Student</a><a class="network-ticker-app" href="https://vervenveda.com/Khaemenes_Academy.github.io/family/">Family</a><a class="network-ticker-app" href="https://vervenveda.com/Khaemenes_Higher_Learning.github.io/">Higher Learning</a></div>
-      <div class="network-ticker-set" aria-hidden="true"><span class="network-ticker-label">High School Quick Links</span><a tabindex="-1" class="network-ticker-app" href="https://vervenveda.com/Khaemenes_Academy.github.io/">Academy</a><a tabindex="-1" class="network-ticker-app" href="./grades/grade-09/">Grade 9</a><a tabindex="-1" class="network-ticker-app" href="./grades/grade-10/">Grade 10</a><a tabindex="-1" class="network-ticker-app" href="./grades/grade-11/">Grade 11</a><a tabindex="-1" class="network-ticker-app" href="./grades/grade-12/">Grade 12</a><a tabindex="-1" class="network-ticker-app" href="./courses/mathematics/">Mathematics</a><a tabindex="-1" class="network-ticker-app" href="./courses/language-arts/">English</a><a tabindex="-1" class="network-ticker-app" href="./courses/science/">Science</a><a tabindex="-1" class="network-ticker-app" href="./courses/social-studies/">Social Studies</a><a tabindex="-1" class="network-ticker-app" href="./courses/physical-education/">PE</a><a tabindex="-1" class="network-ticker-app" href="https://vervenveda.com/Khaemenes_Linguistics.github.io/">Languages</a><a tabindex="-1" class="network-ticker-app" href="./electives/grades/grade-09/psych-101/">Psychology</a><a tabindex="-1" class="network-ticker-app" href="https://vervenveda.com/Khaemenes_Academy.github.io/student/">Student</a><a tabindex="-1" class="network-ticker-app" href="https://vervenveda.com/Khaemenes_Academy.github.io/family/">Family</a><a tabindex="-1" class="network-ticker-app" href="https://vervenveda.com/Khaemenes_Higher_Learning.github.io/">Higher Learning</a></div>
-    </div>
-  </div>
-  <button class="ticker-control" id="tickerControl" aria-label="Pause network ticker">Ⅱ</button>
-</div>
 
 <header class="site-header" data-khae-header>
   <div class="shell header-inner" data-khae-header-inner>
@@ -1502,13 +1471,6 @@ body main .high-frontdesk-hero .hero-actions{gap:10px;justify-content:center}
   $("installButton").addEventListener("click",async()=>{if(!deferredInstall)return;deferredInstall.prompt();await deferredInstall.userChoice;deferredInstall=null;$("installButton").hidden=true;});
   window.addEventListener("appinstalled",()=>{$("installButton").hidden=true;toast("Khaemenes High installed.");});
   if("serviceWorker" in navigator){window.addEventListener("load",()=>navigator.serviceWorker.register("./service-worker.js").catch(()=>{}));}
-
-  $("tickerControl").addEventListener("click",()=>{
-    const paused=$("ticker").dataset.paused==="true";
-    $("ticker").dataset.paused=paused?"false":"true";
-    $("tickerControl").textContent=paused?"Ⅱ":"▶";
-    $("tickerControl").setAttribute("aria-label",paused?"Pause network ticker":"Resume network ticker");
-  });
 
   $("year").textContent=new Date().getFullYear();
   renderGrades();
