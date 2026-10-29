@@ -851,7 +851,7 @@ body :is(p,li,small,label,button,input,select,textarea,figcaption,caption,td,th,
           <h3>Family &amp; Educator Portal</h3>
           <p>Review grade pathways, courses, health and PE, career preparation, connected learning resources, and family-controlled records.</p>
           <div class="portal-links">
-            <a href="./stos/khaemenes/family/">Future Family Account · Not Active</a>
+            <a href="https://vervenveda.com/Khaemenes_Academy.github.io/family/">Open Academy Family Portal</a>
             <a href="./courses/">Course Directory</a>
             <a href="./mentor/?stage=high&amp;subject=general&amp;source=family-front-hall">Mentor · Get Instruction</a>
             <a href="#grades">Grades 9–12</a>
@@ -1538,6 +1538,21 @@ links.forEach(a=>{a.href=destination;if(destination==="#student-portal")a.title=
 <script src="assets/high-navigation-v1.js" defer></script>
 
 <style id="high-school-alternating-section-bands">
+/* High School Portal Center — verified contrast and card legibility. */
+html body main #portals.section{background:#27343c!important;background-image:linear-gradient(135deg,#303e45,#18272f)!important;color:#f7f3e9!important;border-block:1px solid #53636a!important}
+html body main #portals .heading h2{color:#fff9ed!important;text-shadow:none!important}
+html body main #portals .heading .kicker{color:#ebca8b!important}
+html body main #portals .heading p:not(.kicker){color:#e4e8e5!important;opacity:1!important}
+html body main #portals .portal-grid{align-items:stretch;justify-content:center;gap:16px}
+html body main #portals .portal-card{min-width:0;height:100%;background:#fffdf8!important;color:#17251f!important;border:1px solid #aebcb5!important;border-top:4px solid var(--portal-accent,#315b7b)!important;border-radius:7px!important;box-shadow:0 9px 26px rgba(0,0,0,.19)!important}
+html body main #portals .portal-card h3{color:#193d32!important}
+html body main #portals .portal-card :is(p,.portal-note,.profile-summary){color:#42564d!important;opacity:1!important;line-height:1.55}
+html body main #portals .portal-links{align-items:stretch}
+html body main #portals .portal-links :is(a,button){box-sizing:border-box;display:flex;align-items:center;justify-content:center;min-width:0;min-height:42px;height:auto;padding:9px 10px;border:1px solid #aebdb5;border-radius:7px;background:#f5f1e8;color:#17392f!important;font:400 11px/1.32 "Brandon Grotesque","Avenir Next",Arial,sans-serif!important;letter-spacing:0;white-space:normal;overflow-wrap:normal;text-align:center}
+html body main #portals .portal-links :is(a,button):hover{background:#e9eee7;border-color:#597867}
+html body main #portals .legacy-family-tools>summary{color:#193d32;cursor:pointer}
+@media(max-width:740px){html body main #portals .portal-grid{grid-template-columns:1fr}html body main #portals .portal-card{padding:22px 16px}}
+
 /* High School only: parchment / charcoal section rhythm, scoped to section containers. */
 #grades,#departments,#pathways,#transition{background:#f4f0e7;color:#17211d}
 #portals,#library{background:linear-gradient(135deg,#29343b,#1b2931);color:#f6f0e5;border-block:1px solid #53616a}
