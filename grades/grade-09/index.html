@@ -177,5 +177,62 @@ html body .grade09-unified-footer small{color:#e5d6ba!important;font:400 12px/1.
 <script src="https://vervenveda.com/Khaemenes_Academy.github.io/assets/khaemenes-global-header.js" defer></script><script src="https://vervenveda.com/assets/vnv-ecosystem-menu.js" defer></script><script src="../../assets/high-navigation-v1.js" defer></script>
 
 <script src="https://vervenveda.com/assets/vnv-ecosystem-toolbar.js" defer data-vnv-ecosystem-toolbar="1"></script>
+<style id="grade09-navigation-hero-recovery">
+/* Only the Grade 9 header-adjacent ticker and hero, plus the canonical utility dock. */
+html body > section.hero{background:#243038!important;background-image:linear-gradient(125deg,#244258,#152b3c 65%,#17242e)!important;color:#fff8e9!important}
+html body > section.hero :is(.eyebrow,h1,h2,.hero-lead){color:#fff8e9!important;-webkit-text-fill-color:#fff8e9!important;opacity:1!important;text-shadow:none!important}
+html body > section.hero .btn.primary{background:#243038!important;color:#fff8e9!important;-webkit-text-fill-color:#fff8e9!important;border:1px solid #b48b45!important}
+html body #khaeNetworkTicker .khae-network-ticker-viewport{display:block!important;overflow:hidden!important}
+html body #khaeNetworkTicker .khae-network-ticker-set{display:flex!important;align-items:center!important;gap:14px!important;flex:0 0 auto!important;height:100%!important}
+html body #khaeNetworkTicker :is(.khae-network-ticker-label,.khae-network-ticker-app,.khae-network-ticker-call){color:#fff8e9!important;visibility:visible!important;opacity:1!important;white-space:nowrap!important;font-size:11px!important}
+html body #khaeNetworkTicker .khae-ticker-control{display:grid!important;color:#fff8e9!important;visibility:visible!important}
+html body #vnvEcosystemUtilityDock{position:fixed!important;right:12px!important;bottom:12px!important;z-index:2147482500!important;display:grid!important;grid-template-columns:repeat(3,minmax(0,1fr))!important;gap:7px!important;width:min(354px,calc(100vw - 24px))!important;padding:10px!important;border:1px solid #b48b45!important;border-radius:7px!important;background:#fffdf8!important;box-sizing:border-box!important;box-shadow:0 10px 30px rgba(15,25,37,.17)!important}
+html body #vnvEcosystemUtilityDock > :is(a,button){all:unset!important;box-sizing:border-box!important;display:flex!important;justify-content:center!important;align-items:center!important;min-width:0!important;min-height:42px!important;padding:5px!important;border:1px solid #bac8be!important;border-radius:7px!important;background:#f4f0e7!important;color:#243038!important;text-align:center!important;font:400 11px/1.2 "Brandon Grotesque",Nunito,Arial,sans-serif!important;cursor:pointer!important}
+html body #vnvEcosystemUtilityDock [data-vnv-tool="beta"]{background:#152538!important;color:#fff8e9!important}
+html body #vnvEcosystemUtilityDock [data-vnv-tool="support"]{background:#294c40!important;color:#fff8e9!important}
+html body #vnvEcosystemUtilityDock :is(a,button):focus-visible{outline:3px solid #b48b45!important;outline-offset:2px!important}
+html body :is(#vnvBetaProgramLink,#khaemenesLearnerUtilityToolbar){display:none!important}
+@media(max-width:380px){html body #vnvEcosystemUtilityDock{grid-template-columns:repeat(2,minmax(0,1fr))!important;width:min(230px,calc(100vw - 16px))!important}}
+@media print{html body #vnvEcosystemUtilityDock{display:none!important}}
+</style>
+<script>
+window.addEventListener("load",()=>{
+  /* Populate the existing shared ticker sets; do not create a second ticker. */
+  const ticker=document.getElementById("khaeNetworkTicker");
+  if(ticker){
+    const base="https://vervenveda.com/Khaemenes_High.github.io/";
+    const academy="https://vervenveda.com/Khaemenes_Academy.github.io/";
+    const links=[
+      ["Grade 9 Home",base+"grades/grade-09/"],["My Profile",base+"grades/grade-09/student-profile/"],
+      ["Grade 9 Courses","#courses"],["Mathematics",base+"courses/mathematics/"],
+      ["Science",base+"courses/science/"],["English",base+"courses/language-arts/"],
+      ["Social Studies",base+"courses/social-studies/"],["Mentor",base+"mentor/"],
+      ["Family Portal",academy+"family/"],["All Courses",base+"courses/"],
+      ["High School",base],["Beta","https://vervenveda.com/beta/"],
+      ["Search","https://vervenveda.com/PLERASearch.github.io/"]
+    ];
+    ticker.querySelectorAll(".khae-network-ticker-set").forEach((set,i)=>{
+      set.innerHTML='<span class="khae-network-ticker-label">Grade 9 Quick Links</span>'+links.map(([label,url])=>'<a class="khae-network-ticker-app" href="'+url+'"'+(i?' tabindex="-1"':'')+'>'+label+'</a>').join("");
+    });
+  }
+  /* Prefer the official shared toolbar. If unavailable, preserve identical destinations. */
+  if(document.getElementById("vnvEcosystemUtilityDock"))return;
+  try{window.VNVEcosystemToolbar?.mount?.()}catch(e){console.warn("Shared toolbar",e)}
+  if(document.getElementById("vnvEcosystemUtilityDock"))return;
+  const dock=document.createElement("nav");dock.id="vnvEcosystemUtilityDock";dock.setAttribute("aria-label","Verve N Veda ecosystem utilities");
+  const add=(key,label,url)=>{const el=document.createElement("a");el.dataset.vnvTool=key;el.href=url;el.textContent=label;dock.append(el)};
+  add("profile","Profile","https://vervenveda.com/Khaemenes_Academy.github.io/student/");
+  add("search","Search","https://vervenveda.com/PLERASearch.github.io/");
+  const updates=document.createElement("button");updates.type="button";updates.dataset.vnvTool="updates";updates.textContent="Updates";dock.append(updates);
+  add("mentor","Mentor","https://vervenveda.com/Khaemenes_Academy.github.io/mentor/");
+  add("support","Support","https://vervenveda.com/#support");
+  add("beta","Beta","https://vervenveda.com/beta/");
+  const dialog=document.createElement("dialog");dialog.id="vnvEcosystemUtilityUpdates";
+  const title=document.createElement("h2");title.textContent="Updates & Help";dialog.append(title);
+  const help=document.createElement("a");help.href="https://vervenveda.com/Khaemenes_Academy.github.io/#help";help.textContent="Academy Help Desk";dialog.append(help);
+  const close=document.createElement("button");close.type="button";close.textContent="Close";close.addEventListener("click",()=>dialog.close());dialog.append(close);
+  updates.addEventListener("click",()=>dialog.showModal());document.body.append(dock,dialog);
+},{once:true});
+</script>
 </body>
 </html>
