@@ -175,31 +175,36 @@
  else init();
 })();
 
-/* Khaemenes High persistent learner toolbar bootstrap · Student Profile + Beta rail */
+/* Khaemenes High · canonical lower-right ecosystem toolbar */
 (()=>{try{
-  const host=String(location.hostname||"").toLowerCase(),path=String(location.pathname||"").toLowerCase();
-  const high=host.includes("khaemenes-high")||path.includes("/khaemenes_high.github.io/");
-  if(!high)return;
-  // High School front desk uses the canonical ecosystem dock, not the legacy Beta rail.
-  if(document.body?.dataset?.khaeCampusFrontDesk==="true")return;
-  if(document.body?.dataset?.grade09CanonicalChrome==="true")return; // Canonical Grade 9 toolbar replaces legacy Beta.
-  const already=document.getElementById("vnvBetaProgramLink")||Array.from(document.scripts).some(s=>String(s.src||"").includes("/assets/vnv-beta-link.js"));
-  if(already)return;
-  const s=document.createElement("script");s.src="https://vervenveda.com/Khaemenes_High.github.io/assets/vnv-beta-link.js";s.defer=true;s.dataset.khaemenesStudentToolbar="persistent-v1";(document.head||document.documentElement).append(s);
-}catch{}})();
-
-
-/* Khaemenes High · legacy standalone Beta retirement guard */
-(()=>{try{
-  const retire=()=>{
-    document.getElementById("vnvBetaProgramLink")?.remove();
-    document.getElementById("vnvBetaProgramFallback")?.remove();
+  const OFFICIAL="https://vervenveda.com/assets/vnv-ecosystem-toolbar.js";
+  const LEGACY=["vnvBetaProgramLink","vnvBetaProgramFallback","khaemenesLearnerUtilityToolbar","khaeLandingUtilityDock","khaemenesHomeUtilityDock"];
+  const cleanup=()=>{
+    if(!document.getElementById("vnvEcosystemUtilityDock"))return;
+    for(const id of LEGACY)document.getElementById(id)?.remove();
+  };
+  const mount=()=>{
+    try{window.VNVEcosystemToolbar?.mount?.()}catch{}
+    cleanup();
+    if(typeof MutationObserver==="function"&&document.documentElement?.dataset?.highUtilityConflictGuard!=="1"){
+      document.documentElement.dataset.highUtilityConflictGuard="1";
+      new MutationObserver(cleanup).observe(document.documentElement,{childList:true,subtree:true});
+    }
   };
   const start=()=>{
-    retire();
-    if(typeof MutationObserver!=="function"||document.documentElement?.dataset?.highSoloBetaRetirement==="1")return;
-    document.documentElement.dataset.highSoloBetaRetirement="1";
-    new MutationObserver(retire).observe(document.documentElement,{childList:true,subtree:true});
+    const host=String(location.hostname||"").toLowerCase(),path=String(location.pathname||"").toLowerCase();
+    if(!(host.includes("khaemenes-high")||path.includes("/khaemenes_high.github.io/")))return;
+    if(window.VNVEcosystemToolbar){mount();return;}
+    let script=document.querySelector('script[src="https://vervenveda.com/assets/vnv-ecosystem-toolbar.js"]');
+    if(!script){
+      script=document.createElement("script");
+      script.src=OFFICIAL;
+      script.defer=true;
+      script.dataset.vnvEcosystemToolbar="1";
+      (document.head||document.documentElement).append(script);
+    }
+    script.addEventListener("load",mount,{once:true});
+    setTimeout(mount,120);
   };
   if(document.readyState==="loading")document.addEventListener("DOMContentLoaded",start,{once:true});
   else start();
