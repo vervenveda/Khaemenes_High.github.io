@@ -5,6 +5,7 @@
  if(!script?.src)return;
  const root=new URL("../",script.src);
  const page=location.pathname.startsWith(root.pathname)?location.pathname.slice(root.pathname.length):"";
+ const ACADEMY_EXPLORE="https://vervenveda.com/Khaemenes_Academy.github.io/?explore=1";
  const names={"mathematics":"Mathematics","language-arts":"Language Arts","science":"Science","social-studies":"Social Studies","physical-education":"Physical Education","electives":"Electives"};
  const read=k=>{try{return JSON.parse(localStorage.getItem(k)||"null");}catch{return null;}};
  const gradeFrom=value=>{
@@ -23,7 +24,18 @@
    const dest=grade?"grades/grade-"+String(grade).padStart(2,"0")+"/student-profile/":"index.html#student-portal";
    return new URL(dest,root).href;
  }
+ function enforceAcademyExploreLinks(){
+   document.querySelectorAll("a[href]").forEach(a=>{
+     try{
+       const u=new URL(a.href,location.href);
+       if(u.origin==="https://vervenveda.com"&&u.pathname==="/Khaemenes_Academy.github.io/"&&!u.searchParams.has("explore")){
+         u.searchParams.set("explore","1");a.href=u.href;a.dataset.highAcademyExplore="true";
+       }
+     }catch{}
+   });
+ }
  function updateProfiles(){
+   enforceAcademyExploreLinks();
    const shortcuts=document.querySelector("#highNavigationBreadcrumbs .high-nav-shortcuts");
    if(shortcuts){
      const grade=activeGrade();
@@ -104,7 +116,7 @@
    document.body.insertBefore(a,document.body.firstChild);
  }
  const links=[
-  ["Verve N Veda","https://vervenveda.com/"],["Khaemenes Academy","https://vervenveda.com/Khaemenes_Academy.github.io/"],
+  ["Verve N Veda","https://vervenveda.com/"],["Khaemenes Academy",ACADEMY_EXPLORE],
   ["High School","index.html"],["High School Courses","courses/"],["Mathematics","courses/mathematics/"],
   ["Academy Arcade","https://vervenveda.com/arcade.github.io/"],
   ["ProResource Hub","https://vervenveda.com/proresource_hub.github.io/"],
@@ -148,7 +160,7 @@
    wrap.append(button,panel);slot.appendChild(wrap);
  }
  function init(){
-   updateProfiles();skip();breadcrumbs();fallbackMenu();
+   updateProfiles();skip();breadcrumbs();fallbackMenu();enforceAcademyExploreLinks();
  }
  window.addEventListener("pageshow",updateProfiles);
  window.addEventListener("storage",event=>{
@@ -158,7 +170,7 @@
    const a=event.target?.closest?.("a[data-high-profile-resolved]");
    if(a)a.href=profileHref();
  },true);
- window.KhaemenesHighNavigation=Object.freeze({activeGrade,profileHref,crumbList,init});
+ window.KhaemenesHighNavigation=Object.freeze({activeGrade,profileHref,crumbList,enforceAcademyExploreLinks,init});
  if(document.readyState==="loading")document.addEventListener("DOMContentLoaded",init,{once:true});
  else init();
 })();
