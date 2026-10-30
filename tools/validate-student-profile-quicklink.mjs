@@ -41,7 +41,7 @@ let failed=false;
 const ok=(value,message)=>{if(value)console.log("OK "+message);else{failed=true;console.error("FAIL "+message)}};
 
 const widget=read("assets/vnv-beta-link.js");
-ok(widget.includes('version:"1.8.0"'),"beta/profile widget is v1.8.0");
+ok(widget.includes('version:"1.9.1"'),"learner utility widget is v1.9.1");
 ok(widget.includes('khaemenesHighStudentProfileLink'),"student profile quick link exists");
 ok(widget.includes('highStudentProfileUrl'),"High School profile button resolves the active learner's grade profile");
 for(const grade of ["09","10","11","12"]){
@@ -54,7 +54,7 @@ ok(widget.includes('khaemenesLearnerUtilityToolbar'),"student profile and beta c
 ok(widget.includes('learnerRecordNoticeButton')&&widget.includes('khaemenesStudentWorkButton'),"My Work reuses preserved-work recovery when available");
 ok(widget.includes('khaemenesStudentSearchButton')&&widget.includes('VNVEcosystemMenu'),"Search opens the shared ecosystem search drawer");
 ok(widget.includes('isClosedBookAssessmentSurface')&&widget.includes('search.disabled=closedBook'),"Search remains visible but is disabled on closed-book exam surfaces");
-ok(widget.includes('vnvBetaProgramLink'),"Beta Program remains in the learner rail");
+ok(widget.includes('retireLegacyBetaButton')&&!widget.includes('label.textContent="Beta Program"'),"legacy standalone Beta launcher remains retired");
 ok(widget.includes('khaemenesStudentContributeButton')&&widget.includes('#support'),"Contribute opens centralized voluntary-support information");
 ok(widget.includes('order:50')&&widget.includes('order:40')&&widget.includes('order:30'),"five-button rail has deterministic control ordering");
 ok(widget.includes('border-radius:7px'),"student utility controls keep the Khaemenes 7px radius");
