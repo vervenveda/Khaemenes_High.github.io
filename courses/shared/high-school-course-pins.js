@@ -19,7 +19,7 @@ const COURSE_META=Object.freeze({
  "physical-education-9":Object.freeze({title:"Physical Education 9",subtitle:"Physical Education · Grade 09",href:"https://vervenveda.com/Khaemenes_High.github.io/courses/physical-education/"}),
  "psychology-101":Object.freeze({title:"Psychology 101",subtitle:"Elective · Grade 09",href:"https://vervenveda.com/Khaemenes_High.github.io/electives/grades/grade-09/psych-101/"}),
  "world-language-9-spanish":Object.freeze({title:"Spanish I",subtitle:"World Language · Grade 09",href:"https://vervenveda.com/Khaemenes_Linguistics.github.io/Halls/index.html?language=spanish&course=hs1&source=khaemenes-high-grade09"}),
- "world-language-9-french":Object.freeze({title:"French I",subtitle:"World Language · Grade 09",href:"https://vervenveda.com/Khaemenes_Linguistics.github.io/Halls/index.html?language=french&course=hs1&source=khaemenes-high-grade09"}),
+ "world-language-9-french":Object.freeze({title:"French 101",subtitle:"World Language · Grade 09",href:"https://vervenveda.com/Khaemenes_Linguistics.github.io/apps/French_101_index.html"}),
  "world-language-9-german":Object.freeze({title:"German I",subtitle:"World Language · Grade 09",href:"https://vervenveda.com/Khaemenes_Linguistics.github.io/Halls/index.html?language=german&course=hs1&source=khaemenes-high-grade09"}),
  "world-language-9-mandarin":Object.freeze({title:"Mandarin Chinese I",subtitle:"World Language · Grade 09",href:"https://vervenveda.com/Khaemenes_Linguistics.github.io/Halls/index.html?language=mandarin&course=hs1&source=khaemenes-high-grade09"}),
  "world-language-9-japanese":Object.freeze({title:"Japanese I",subtitle:"World Language · Grade 09",href:"https://vervenveda.com/Khaemenes_Linguistics.github.io/Halls/index.html?language=japanese&course=hs1&source=khaemenes-high-grade09"}),
@@ -127,27 +127,71 @@ function syncAcademyPins(ids,id=activeLearner()){
   return true;
  }catch{return false}
 }
+const GRADE09_PREFIX="world-language-9-";
+const GRADE09_LANGUAGES=Object.freeze(["spanish","french","german","mandarin","japanese","arabic","russian"]);
+const validGrade09=code=>GRADE09_LANGUAGES.includes(code);
+const languageFromPin=pin=>pin.startsWith(GRADE09_PREFIX)&&validGrade09(pin.slice(GRADE09_PREFIX.length))?pin.slice(GRADE09_PREFIX.length):null;
+function storedPins(){
+ return cleanPins([...read(PIN_KEY,[]),...academyRecognizedPins()]);
+}
+function storedLanguages(pins){return [...new Set(pins.map(languageFromPin).filter(Boolean))]}
+function readLanguageChoices(){
+ const choices=read(LANGUAGE_KEY,{});
+ const output=choices&&typeof choices==="object"&&!Array.isArray(choices)?{...choices}:{};
+ const local=storedLanguages(cleanPins(read(PIN_KEY,[])));
+ const merged=storedLanguages(storedPins());
+ // A single explicitly pinned course takes priority over a stale dropdown value.
+ if(local.length===1)output["9"]=local[0];
+ else if(!validGrade09(output["9"])&&merged.length===1)output["9"]=merged[0];
+ return output;
+}
+function reconcileLanguagePins(all,choices=readLanguageChoices()){
+ const languagePins=all.filter(pin=>languageFromPin(pin));
+ if(!languagePins.length)return all;
+ const languages=storedLanguages(all),chosen=validGrade09(choices["9"])?choices["9"]:languages.length===1?languages[0]:null;
+ // An ambiguous legacy state must be resolved by the learner, not guessed.
+ if(!chosen)return all;
+ const distinct=all.filter(pin=>!languageFromPin(pin));
+ const selectedPin=GRADE09_PREFIX+chosen;
+ const first=all.findIndex(pin=>languageFromPin(pin));
+ distinct.splice(Math.min(first,distinct.length),0,selectedPin);
+ return cleanPins(distinct);
+}
 function readPins(){
  const local=cleanPins(read(PIN_KEY,[]));
  const academy=academyRecognizedPins();
- const merged=cleanPins([...local,...academy]);
+ const merged=reconcileLanguagePins(cleanPins([...local,...academy]));
  if(merged.join("|")!==local.join("|"))write(PIN_KEY,merged);
  syncAcademyPins(merged);
  return merged;
 }
 function writePins(value){
- const clean=cleanPins(value);
- if(!write(PIN_KEY,clean))return false;
- return syncAcademyPins(clean);
-}
-function hasPinRecord(){try{return storage().getItem(scopedKey(PIN_KEY))!==null}catch{return false}}
-function readLanguageChoices(){
- const choices=read(LANGUAGE_KEY,{});
- return choices&&typeof choices==="object"&&!Array.isArray(choices)?{...choices}:{};
+ const input=cleanPins(value);
+ const next=reconcileLanguagePins(input);
+ if(!write(PIN_KEY,next))return false;
+ const chosen=storedLanguages(next);
+ if(chosen.length===1){
+  const choices=read(LANGUAGE_KEY,{});
+  const updated=choices&&typeof choices==="object"&&!Array.isArray(choices)?{...choices}:{};
+  if(updated["9"]!==chosen[0]){updated["9"]=chosen[0];write(LANGUAGE_KEY,updated)}
+ }
+ return syncAcademyPins(next);
 }
 function writeLanguageChoices(choices){
- return choices&&typeof choices==="object"&&!Array.isArray(choices)?write(LANGUAGE_KEY,choices):false;
+ if(!choices||typeof choices!=="object"||Array.isArray(choices))return false;
+ const next={...choices},selected=next["9"];
+ if(selected!==undefined&&!validGrade09(selected))return false;
+ // Preserve existing pin intent, replacing the prior language, not adding a second.
+ const existing=storedPins(),hadPin=existing.some(pin=>languageFromPin(pin));
+ if(!write(LANGUAGE_KEY,next))return false;
+ if(hadPin&&selected){
+  const filtered=existing.filter(pin=>!languageFromPin(pin));
+  const updated=[...filtered,GRADE09_PREFIX+selected];
+  if(!writePins(updated))return false;
+ }
+ return true;
 }
+function hasPinRecord(){try{return storage().getItem(scopedKey(PIN_KEY))!==null}catch{return false}}
 // Identified learners never inherit another learner's legacy unscoped values.
 // Legacy records remain untouched for explicit migration or archival recovery.
 window.KhaemenesHighCoursePins=Object.freeze({
