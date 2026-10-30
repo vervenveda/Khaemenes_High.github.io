@@ -29,8 +29,8 @@ const languageStarts={
 function languageStart(id){const code=id.replace("world-language-9-","");return languageStarts[code]?"https://vervenveda.com/Khaemenes_Linguistics.github.io/"+languageStarts[code]:null}
 function firstLessonFor(id){const route=firstLessons[id];return route?repositoryRoot()+route:null}
 const el=(tag,txt)=>{const e=document.createElement(tag);if(txt!==undefined)e.textContent=txt;return e};
-function language(){const value=pins.readLanguageChoices()["9"];return languages.some(([id])=>id===value)?value:"spanish"}
-function idFor(index){return index===0?(registry.mathPathway()||"pre-algebra"):index===5?"world-language-9-"+language():slots[index][1]}
+function language(){const value=pins.readLanguageChoices()["9"];return languages.some(([id])=>id===value)?value:""}
+function idFor(index){return index===0?(registry.mathPathway()||"pre-algebra"):index===5?(language()?"world-language-9-"+language():null):slots[index][1]}
 function render(){
  host.replaceChildren();
  const intro=el("p","Your seven Grade 09 classes. Pin the classes you study; choices are saved for the selected learner on this device. Course mastery and assessments remain independent.");
@@ -44,9 +44,11 @@ function render(){
  mathLabel.append(math);config.append(mathLabel);
  const langLabel=el("label","Foreign language ");
  const select=el("select");select.setAttribute("aria-label","Choose Grade 09 foreign language");
+ const placeholder=el("option","Choose a language");placeholder.value="";select.append(placeholder);
  languages.forEach(([v,t])=>{let o=el("option",t);o.value=v;select.append(o)});
  select.value=language();
  select.addEventListener("change",()=>{
+  if(!languages.some(([id])=>id===select.value))return;
   const old="world-language-9-"+language(),next="world-language-9-"+select.value;
   const choices=pins.readLanguageChoices();choices["9"]=select.value;
   if(!pins.writeLanguageChoices(choices)){alert("Language choice could not be saved on this device.");return}
@@ -56,7 +58,7 @@ function render(){
  langLabel.append(select);config.append(langLabel);host.append(config);
  const list=el("div");list.style.cssText="display:grid;grid-template-columns:repeat(auto-fit,minmax(235px,1fr));gap:12px";
  slots.forEach(([subject],index)=>{
-  const id=idFor(index),course=registry.getCourse(id);
+  const id=idFor(index),course=id?registry.getCourse(id):null;
   const card=el("article");card.style.cssText="border:1px solid #c6b99e;border-radius:7px;padding:16px;background:rgba(255,255,255,.06)";
   const title=el("h3",(index+1)+". "+subject);title.style.cssText="font-size:19px;margin:0 0 7px";
   card.append(title,el("p",course?.title||"Choose a course"));
@@ -75,6 +77,11 @@ function render(){
  const setup=el("button","Pin all seven classes");
  setup.type="button";setup.style.cssText="margin-top:16px;padding:11px 16px;border-radius:7px";
  setup.addEventListener("click",()=>{
+  if(!language()){
+   const feedback=document.getElementById("grade09ScheduleSaveStatus");
+   if(feedback)feedback.textContent="Choose a foreign language before pinning all seven classes.";
+   select.focus();return;
+  }
   let successful=0;
   for(let i=0;i<slots.length;i++){
    const id=idFor(i);
