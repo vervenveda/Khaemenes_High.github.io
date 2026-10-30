@@ -1,4 +1,4 @@
-/* Verve N Veda · Khaemenes learner utilities · v1.9.1 · legacy solo Beta retired */
+/* Verve N Veda · Khaemenes learner utilities · v1.9.2 · canonical ecosystem dock */
 (() => {
   "use strict";
 
@@ -10,6 +10,7 @@
   const SCRIPT_URL="https://vervenveda.com/assets/vnv-beta-link.js";
   const ECOSYSTEM_MENU_URL="https://vervenveda.com/assets/vnv-ecosystem-menu.js";
   const SUPPORT_URL="https://vervenveda.com/assets/vnv-support.js";
+  const OFFICIAL_TOOLBAR_URL="https://vervenveda.com/assets/vnv-ecosystem-toolbar.js";
   const KHAEMENES_WORKSPACE_URL="https://vervenveda.com/assets/khaemenes-student-workspace-v2.js";
   const BAZAAR_LIVE_URL="https://vervenveda.github.io/333.github.io/app/Bazaar_Art_Live_index.html";
   const HIGH_PROFILE_ID="khaemenesHighStudentProfileLink";
@@ -75,6 +76,38 @@
       root.dataset.vnvSoloBetaRetirement="1";
       const observer=new MutationObserver(()=>retireLegacyBetaButton());
       observer.observe(root,{childList:true,subtree:true});
+    }catch{}
+  };
+
+  const removeLegacyUtilitySurfaces=()=>{
+    try{
+      if(!document.getElementById("vnvEcosystemUtilityDock"))return;
+      for(const id of [ID,FALLBACK_ID,EDUCATION_TOOLBAR_ID,"khaeLandingUtilityDock","khaemenesHomeUtilityDock"]){
+        document.getElementById(id)?.remove();
+      }
+    }catch{}
+  };
+
+  const ensureOfficialEcosystemToolbar=()=>{
+    try{
+      if(window.VNVEcosystemToolbar?.mount){
+        window.VNVEcosystemToolbar.mount();
+        removeLegacyUtilitySurfaces();
+        return;
+      }
+      if(!document.querySelector('script[src="https://vervenveda.com/assets/vnv-ecosystem-toolbar.js"]')){
+        const script=document.createElement("script");
+        script.src=OFFICIAL_TOOLBAR_URL;
+        script.defer=true;
+        script.dataset.vnvEcosystemToolbar="1";
+        script.addEventListener("load",()=>{
+          try{window.VNVEcosystemToolbar?.mount?.()}catch{}
+          removeLegacyUtilitySurfaces();
+        },{once:true});
+        (document.head||document.documentElement).append(script);
+      }
+      setTimeout(removeLegacyUtilitySurfaces,0);
+      setTimeout(removeLegacyUtilitySurfaces,120);
     }catch{}
   };
 
@@ -307,8 +340,9 @@
   }
 
   function ensureHighStudentUtilityButtons(){
-    if(document.body?.dataset?.khaeCampusFrontDesk==="true")return; // Do not mix Student Profile / My Work with campus utilities.
-    if(!isHighStudentSurface()||!document.body)return;
+    if(isHighStudentSurface()){ensureOfficialEcosystemToolbar();return;}
+    if(document.body?.dataset?.khaeCampusFrontDesk==="true")return;
+    if(!document.body)return;
     const toolbar=ensureEducationToolbar();if(!toolbar)return;
     const profileUrl=highStudentProfileUrl();
 
@@ -370,7 +404,8 @@
   }
 
   function mountHighStudentProfile(){
-    if(document.body?.dataset?.khaeCampusFrontDesk==="true")return; // Full student controls remain on grade/profile routes.
+    if(isHighStudentSurface()){ensureOfficialEcosystemToolbar();return;}
+    if(document.body?.dataset?.khaeCampusFrontDesk==="true")return;
     const config=educationProfileConfig();
     if(!config||!document.body)return;
 
@@ -566,6 +601,7 @@
 
   function mount(){
     bindLegacyBetaRetirement();
+    ensureOfficialEcosystemToolbar();
   }
 
   function attachToFrame(frame){
@@ -604,13 +640,17 @@
   }
 
   function start(){
-    // The High School front desk has one canonical ecosystem utility dock.
-    // Do not create the legacy floating Beta or learner rails on this page.
-    if(document.body?.dataset?.khaeCampusFrontDesk==="true")return;
-    mount();mountHighStudentProfile();ensureHighStudentUtilityButtons();ensureEducationWorkspace();ensureEducationContinuationPublisher();ensureLinguisticsContinuation();ensureEcosystemMenu();ensureSupportComponent();bindVisibleFrames();enhanceBazaarLanding();
+    // High School lower-right UI is single-source: the official ecosystem dock.
+    mount();
+    ensureEducationWorkspace();
+    ensureEducationContinuationPublisher();
+    ensureLinguisticsContinuation();
+    ensureEcosystemMenu();
+    ensureSupportComponent();
+    enhanceBazaarLanding();
   }
   if(document.readyState==="loading")document.addEventListener("DOMContentLoaded",start,{once:true});
   else start();
 
-  window.VNVBetaProgram=Object.freeze({version:"1.9.1",mount,source:safeSource,surface:safeSurface,href:betaHref,studentProfile:mountHighStudentProfile,educationProfile:educationProfileConfig,highStudentProfileUrl,openStudentSearch,isClosedBookAssessmentSurface});
+  window.VNVBetaProgram=Object.freeze({version:"1.9.2",mount,source:safeSource,surface:safeSurface,href:betaHref,studentProfile:mountHighStudentProfile,educationProfile:educationProfileConfig,highStudentProfileUrl,openStudentSearch,isClosedBookAssessmentSurface});
 })();
