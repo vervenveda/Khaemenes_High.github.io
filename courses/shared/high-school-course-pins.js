@@ -141,8 +141,9 @@ function readLanguageChoices(){
  const local=storedLanguages(cleanPins(read(PIN_KEY,[])));
  const merged=storedLanguages(storedPins());
  // A single explicitly pinned course takes priority over a stale dropdown value.
- if(validGrade09(output["9"])&&merged.includes(output["9"]))return output;
+ // A single explicitly pinned High course is stronger than a stale dropdown label.
  if(local.length===1)output["9"]=local[0];
+ else if(validGrade09(output["9"])&&merged.includes(output["9"]))return output;
  else if(!validGrade09(output["9"])&&merged.length===1)output["9"]=merged[0];
  return output;
 }
