@@ -1,4 +1,4 @@
-/* Verve N Veda · Beta Program + Khaemenes learner rail widget · v1.9.0 */
+/* Verve N Veda · Khaemenes learner utilities · v1.9.1 · legacy solo Beta retired */
 (() => {
   "use strict";
 
@@ -57,6 +57,26 @@
   };
 
   const betaHref=()=>`${BETA_URL}?source=${encodeURIComponent(safeSource())}&surface=${encodeURIComponent(safeSurface())}`;
+
+  /* The old floating #vnvBetaProgramLink was propagated across the High School
+     by a one-time coverage pass. Beta now belongs to the canonical ecosystem
+     toolbar, so this widget actively retires only that legacy standalone ID. */
+  const retireLegacyBetaButton=()=>{
+    try{
+      document.getElementById(ID)?.remove();
+      document.getElementById(FALLBACK_ID)?.remove();
+    }catch{}
+  };
+  const bindLegacyBetaRetirement=()=>{
+    retireLegacyBetaButton();
+    try{
+      const root=document.documentElement;
+      if(!root||root.dataset.vnvSoloBetaRetirement==="1"||typeof MutationObserver!=="function")return;
+      root.dataset.vnvSoloBetaRetirement="1";
+      const observer=new MutationObserver(()=>retireLegacyBetaButton());
+      observer.observe(root,{childList:true,subtree:true});
+    }catch{}
+  };
 
   const isBazaarLanding=()=>{
     try{
@@ -325,7 +345,7 @@
     }
     dockEducationUtility(contribute,40);
 
-    const beta=document.getElementById(ID);if(beta)dockEducationUtility(beta,50);
+    retireLegacyBetaButton();
   }
 
   function alignHighProfileSurface(){
@@ -333,10 +353,9 @@
     if(!config||!document.body)return false;
     const bridge=document.getElementById("khaemenesFamilyBridge");
     const quick=document.getElementById(HIGH_PROFILE_ID);
-    const beta=document.getElementById(ID);
+    retireLegacyBetaButton();
 
     if(quick)dockEducationUtility(quick,10);
-    if(beta)dockEducationUtility(beta,isHighStudentSurface()?50:30);
     ensureHighStudentUtilityButtons();
 
     const panel=document.getElementById("learnerRecordNoticePanel");
@@ -546,54 +565,7 @@
   }
 
   function mount(){
-    if(document.getElementById(ID)||!document.body)return;
-
-    if(!document.getElementById(STYLE_ID)){
-      const style=document.createElement("style");
-      style.id=STYLE_ID;
-      style.textContent=`
-        #${ID}{position:fixed;right:max(12px,env(safe-area-inset-right));bottom:max(12px,env(safe-area-inset-bottom));z-index:2147482000;display:inline-flex;align-items:center;justify-content:center;gap:7px;min-height:40px;padding:8px 12px;border:1px solid rgba(183,147,77,.72);border-radius:999px;color:#f7efe0;background:rgba(15,25,37,.94);box-shadow:0 8px 24px rgba(0,0,0,.18);font:600 10px/1.2 "Avenir Next","Segoe UI",Arial,sans-serif;letter-spacing:.045em;text-decoration:none;backdrop-filter:blur(9px);cursor:pointer;-webkit-tap-highlight-color:transparent}
-        #${ID}:hover{transform:translateY(-1px);border-color:#dfc48e;background:#152538}
-        #${ID}:focus-visible{outline:3px solid #dfc48e;outline-offset:3px}
-        #${ID} .vnv-beta-mark{font:600 15px/1 Georgia,serif;color:#dfc48e}
-        #${FALLBACK_ID}{display:none!important}
-        @media(max-width:520px){#${ID}{right:max(8px,env(safe-area-inset-right));bottom:max(8px,env(safe-area-inset-bottom));min-height:38px;padding:7px 10px}}
-        @media print{#${ID},#${FALLBACK_ID}{display:none!important}}
-        @media(prefers-reduced-motion:reduce){#${ID}{transition:none!important;transform:none!important}}
-      `;
-      (document.head||document.documentElement).append(style);
-    }
-
-    const fallback=document.getElementById(FALLBACK_ID);
-    if(fallback){
-      fallback.setAttribute("href",betaHref());
-      fallback.setAttribute("aria-hidden","true");
-      fallback.tabIndex=-1;
-    }
-
-    /* A button is intentional: several Verve N Veda surfaces guard anchor
-       navigation. Programmatic same-origin navigation avoids interfering with
-       those link policies while remaining keyboard accessible. */
-    const button=document.createElement("button");
-    button.id=ID;
-    button.type="button";
-    button.dataset.betaSurface=safeSurface();
-    button.setAttribute("aria-label","Open the Verve N Veda Beta Program for this page");
-
-    const mark=document.createElement("span");
-    mark.className="vnv-beta-mark";
-    mark.setAttribute("aria-hidden","true");
-    mark.textContent="β";
-    const label=document.createElement("span");
-    label.textContent="Beta Program";
-    button.append(mark,label);
-
-    button.addEventListener("click",()=>{
-      try{window.location.assign(betaHref())}catch{window.location.href=BETA_URL}
-    });
-    const toolbar=ensureEducationToolbar();
-    (toolbar||document.body).append(button);
-    if(toolbar)dockEducationUtility(button,30);
+    bindLegacyBetaRetirement();
   }
 
   function attachToFrame(frame){
@@ -640,5 +612,5 @@
   if(document.readyState==="loading")document.addEventListener("DOMContentLoaded",start,{once:true});
   else start();
 
-  window.VNVBetaProgram=Object.freeze({version:"1.9.0",mount,source:safeSource,surface:safeSurface,href:betaHref,studentProfile:mountHighStudentProfile,educationProfile:educationProfileConfig,highStudentProfileUrl,openStudentSearch,isClosedBookAssessmentSurface});
+  window.VNVBetaProgram=Object.freeze({version:"1.9.1",mount,source:safeSource,surface:safeSurface,href:betaHref,studentProfile:mountHighStudentProfile,educationProfile:educationProfileConfig,highStudentProfileUrl,openStudentSearch,isClosedBookAssessmentSurface});
 })();
