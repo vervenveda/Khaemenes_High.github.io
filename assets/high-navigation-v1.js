@@ -187,3 +187,20 @@
   if(already)return;
   const s=document.createElement("script");s.src="https://vervenveda.com/Khaemenes_High.github.io/assets/vnv-beta-link.js";s.defer=true;s.dataset.khaemenesStudentToolbar="persistent-v1";(document.head||document.documentElement).append(s);
 }catch{}})();
+
+
+/* Khaemenes High · legacy standalone Beta retirement guard */
+(()=>{try{
+  const retire=()=>{
+    document.getElementById("vnvBetaProgramLink")?.remove();
+    document.getElementById("vnvBetaProgramFallback")?.remove();
+  };
+  const start=()=>{
+    retire();
+    if(typeof MutationObserver!=="function"||document.documentElement?.dataset?.highSoloBetaRetirement==="1")return;
+    document.documentElement.dataset.highSoloBetaRetirement="1";
+    new MutationObserver(retire).observe(document.documentElement,{childList:true,subtree:true});
+  };
+  if(document.readyState==="loading")document.addEventListener("DOMContentLoaded",start,{once:true});
+  else start();
+}catch{}})();
