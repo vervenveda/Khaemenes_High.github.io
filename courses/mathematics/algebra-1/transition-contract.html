@@ -85,5 +85,6 @@ fetch('readiness/transition-contract.json',{cache:'no-store'}).then(r=>{if(!r.ok
  document.getElementById('status').hidden=true;document.getElementById('content').hidden=false;
 }).catch(err=>{document.getElementById('status').textContent='The transition contract could not be loaded. Open readiness/transition-contract.json directly or use the Readiness Bridge. '+err.message;});
 </script>
+<script src="https://vervenveda.com/assets/vnv-ecosystem-toolbar.js"></script>
 </body>
 </html>

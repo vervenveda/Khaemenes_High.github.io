@@ -189,5 +189,6 @@ function exportResult(){if(!completed)completed=read(RESULT_KEY);if(!completed){
 el.start.onclick=begin;el.overviewStart.onclick=begin;el.resume.onclick=resume;el.options.onchange=e=>{const i=e.target.closest('input[name="answer"]');if(!i)return;answers[index]=Number(i.value);renderProgress();saveDraft()};el.prev.onclick=()=>{if(index>0){index--;renderQuestion();saveDraft()}};el.next.onclick=()=>index<Q.length-1?(index++,renderQuestion(),saveDraft()):openReview();el.dots.onclick=e=>{const b=e.target.closest("[data-i]");if(b)openQ(Number(b.dataset.i))};el.reviewBtn.onclick=openReview;el.clear.onclick=()=>{if(confirm("Clear this saved readiness attempt?")){clearDraft();show(el.intro)}};el.reviewGrid.onclick=e=>{const b=e.target.closest("[data-r]");if(b)openQ(Number(b.dataset.r))};el.returnQuestions.onclick=()=>{show(el.diagnostic);renderQuestion()};el.submit.onclick=submit;el.saveCorrections.onclick=saveCorrections;el.exportBtn.onclick=exportResult;el.printBtn.onclick=()=>window.print();el.retake.onclick=()=>{if(confirm("Begin a new readiness attempt?"))begin()};el.name.onchange=()=>{if(validDraft(read(DRAFT_KEY)))saveDraft()};updateResume();
 })();
 </script>
+<script src="https://vervenveda.com/assets/vnv-ecosystem-toolbar.js"></script>
 </body>
 </html>
