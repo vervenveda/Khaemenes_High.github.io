@@ -1208,8 +1208,14 @@ html:root:root body main > .high-frontdesk .high-desk h2 {
       selector.addEventListener("change",()=>{
         const grade=selector.dataset.worldLanguageGrade;
         if(!WORLD_LANGUAGES.some(x=>x.id===selector.value))return;
+        const previous=chosenLanguages[grade];
         chosenLanguages[grade]=selector.value;
-        PIN_STORE.writeLanguageChoices(chosenLanguages);
+        if(!PIN_STORE.writeLanguageChoices(chosenLanguages)){
+          chosenLanguages[grade]=previous;
+          selector.value=previous||"spanish";
+          toast("The foreign language selection could not be saved. Your existing courses and records are unchanged.");
+          return;
+        }
         const oldPins=getPinned();
         const clean=oldPins.filter(id=>!id.startsWith("world-language-"+grade+"-")||id==="world-language-"+grade+"-"+selector.value);
         if(clean.length!==oldPins.length)setPinned(clean);
@@ -1226,8 +1232,7 @@ html:root:root body main > .high-frontdesk .high-desk h2 {
         const already=current.includes(id);
         const next=current.filter(courseId=>!courseId.startsWith("world-language-"+grade+"-"));
         if(!already)next.push(id);
-        setPinned(next);
-        toast(already?"World language removed from the student shelf.":"World language pinned to the student shelf.");
+        if(setPinned(next))toast(already?"World language removed from the student shelf.":"World language pinned to the student shelf.");
       });
     });
   }
@@ -1249,9 +1254,10 @@ html:root:root body main > .high-frontdesk .high-desk h2 {
 
   function setPinned(value){
     // Preserve pins not present in this particular front-hall catalog.
-    if(!PIN_STORE.writePins(value)){toast("Unable to save course pins; earlier choices were preserved.");return;}
+    if(!PIN_STORE.writePins(value)){toast("Unable to save course pins; earlier choices were preserved.");return false;}
     renderAllCourses();
     renderProfile();
+    return true;
   }
 
   function renderCourseGrid(grade){
