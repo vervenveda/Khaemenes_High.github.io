@@ -4,6 +4,9 @@ on:
     branches: [main]
     paths:
       - 'courses/shared/high-school-course-pins.js'
+      - 'index.html'
+      - 'grades/grade-09/student-profile/student-course-registry.js'
+      - 'grades/grade-09/student-profile/seven-class-schedule.js'
       - 'tests/high-language-pin-regression.cjs'
       - '.github/workflows/high-language-pin-regression.yml'
   workflow_dispatch:
