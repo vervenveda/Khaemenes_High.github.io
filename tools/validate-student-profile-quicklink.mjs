@@ -41,7 +41,7 @@ let failed=false;
 const ok=(value,message)=>{if(value)console.log("OK "+message);else{failed=true;console.error("FAIL "+message)}};
 
 const widget=read("assets/vnv-beta-link.js");
-ok(widget.includes('version:"1.9.1"'),"learner utility widget is v1.9.1");
+ok(widget.includes('version:"1.9.2"'),"learner utility widget is v1.9.2");
 ok(widget.includes('khaemenesHighStudentProfileLink'),"student profile quick link exists");
 ok(widget.includes('highStudentProfileUrl'),"High School profile button resolves the active learner's grade profile");
 for(const grade of ["09","10","11","12"]){
