@@ -1,10 +1,10 @@
 import path from "node:path";
 
-export const TOOLBAR_SRC="https://vervenveda.com/Khaemenes_High.github.io/assets/vnv-beta-link.js";
-export const TOOLBAR_TAG='<script src="'+TOOLBAR_SRC+'" defer data-khaemenes-student-toolbar="v1.8"></script>';
+export const TOOLBAR_SRC="https://vervenveda.com/assets/vnv-ecosystem-toolbar.js";
+export const TOOLBAR_TAG='<script src="'+TOOLBAR_SRC+'" defer data-vnv-ecosystem-toolbar="1"></script>';
 
 export const sharedPattern=/course-entry-contract\.js|high-school-learning-context-v1\.js|(?:geometry|algebra-2)\/assets\/lesson-tools\.js|src=["'][^"']*\/assets\/lesson-tools\.js/i;
-export const directPattern=/vnv-beta-link\.js/i;
+export const directPattern=/vnv-ecosystem-toolbar\.js/i;
 
 const nonStudentPath=/(^|\/)(?:teacher|teachers|teacher-resources|staff|admin|faculty|instructor|answer-keys?|answer_keys?|private)(?:\/|$)/i;
 const nonStudentFile=/(?:^|\/)(?:404|HIGH_SCHOOL_PROFILE_SNIPPET|[^/]*(?:teacher[-_ ]?guide|answer[-_ ]?key|solutions?[-_ ]?key)[^/]*)\.html$/i;
