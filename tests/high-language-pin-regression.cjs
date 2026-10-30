@@ -61,4 +61,10 @@ assert.deepEqual([...p.readPins()].filter(x=>x.startsWith("world-language-9-")),
 assert.equal(p.writePins(["english-9"]),true);
 assert.equal(p.readPins().some(x=>x.startsWith("world-language-9-")),false);
 assert.equal(t.parse("fictional-course-mastery").completed,true);
+const schedule=fs.readFileSync(path.join(__dirname,"..","grades","grade-09","student-profile","seven-class-schedule.js"),"utf8");
+const registry=fs.readFileSync(path.join(__dirname,"..","grades","grade-09","student-profile","student-course-registry.js"),"utf8");
+assert.match(schedule,/placeholder=el\("option","Choose a language"\)/);
+assert.match(schedule,/if\(!language\(\)\)/);
+assert.match(schedule,/return languages\.some\(\(\[id\]\)=>id===value\)\?value:""/);
+assert.match(registry,/readLanguageChoices\(\)\?\.\["9"\]\|\|null/);
 console.log("HIGH_LANGUAGE_PIN_REGRESSION=PASS; French survives Spanish legacy, per-learner isolation and unpin preserved.");
