@@ -10,6 +10,7 @@ on:
       - 'stos/khaemenes/assets/vnv-beta-link.js'
       - 'tools/student-toolbar-policy.mjs'
       - 'tools/audit-student-toolbar-coverage.mjs'
+      - 'tools/audit-lower-right-utility-conflicts.mjs'
       - '.github/workflows/high-profile-toolbar-coverage.yml'
   workflow_dispatch:
 permissions:
@@ -22,7 +23,9 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: '22'
-      - name: Verify every student-facing High School page has the learner rail
+      - name: Verify one canonical lower-right ecosystem toolbar
+        run: node tools/audit-lower-right-utility-conflicts.mjs
+      - name: Verify every student-facing High School page has a toolbar path
         env:
           REQUIRE_FULL_TOOLBAR_COVERAGE: '1'
         run: node tools/audit-student-toolbar-coverage.mjs
