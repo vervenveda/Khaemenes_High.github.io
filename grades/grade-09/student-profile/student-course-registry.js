@@ -391,7 +391,7 @@ window.KhaemenesGrade09Courses=Object.freeze({
   PIN_KEY,MATH_PATHWAY_KEY,PREALGEBRA_CONTINUE_KEY,LAST_LAUNCH_KEY,A1_DIAGNOSTIC_RESULT_KEY,A1_WEEKLY_KEY,A1_MIDTERM_KEY,A1_FINAL_KEY,
   get courses(){
     const pins=new Set(pinnedIds());
-    const selected=pinStore?.readLanguageChoices()?.["9"]||"spanish";
+    const selected=pinStore?.readLanguageChoices()?.["9"]||null;
     return COURSES.filter(c=>["pre-algebra","algebra-1","english-9","integrated-science-9","global-studies-9","physical-education-9","psychology-101","world-language-9-"+selected].includes(c.id)||pins.has(c.id));
   },
   getCourse,pinnedIds,pinnedCourses,isPinned,isMathCourse,setPinned,togglePinned,setMathPathway,mathPathway,continueFor,resolveContinueFor,resumePriorityCourse,recordLaunch,mentorFor,shouldRefreshForStorageKey
