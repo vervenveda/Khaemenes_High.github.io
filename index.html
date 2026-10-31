@@ -625,10 +625,6 @@ html:root:root body #grades{padding-top:52px}
 @media(max-width:1120px){#grades .grade-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:600px){#grades{padding:44px 12px 52px}#grades .grade-grid{grid-template-columns:1fr}.grade-card-actions,.grade-language-actions{grid-template-columns:1fr}}
 </style>
-<link rel="stylesheet" href="https://vervenveda.com/Khaemenes_Academy.github.io/assets/khaemenes-global-header.css">
-<link rel="stylesheet" href="https://vervenveda.com/assets/vnv-ecosystem-menu.css">
-
-
 <link rel="stylesheet" href="assets/high-navigation-v1.css" data-high-navigation-css>
 <style id="high-home-layout-symmetry-20261025">
 /* High School front desk: single header, fluid edges, compact utility controls */
@@ -708,24 +704,6 @@ html:root:root body main > .high-frontdesk .high-desk h2 {
 <body id="top" data-khae-campus-front-desk="true">
 
 <a class="skip-link" href="#main">Skip to main content</a>
-
-<header class="site-header" data-khae-header>
-  <div class="shell header-inner" data-khae-header-inner>
-    <a class="brand" data-khae-brand href="https://vervenveda.com/Khaemenes_Academy.github.io/?explore=1" aria-label="Khaemenes Academy Home">
-      <span class="brand-mark" data-khae-brand-mark>KA</span>
-      <span class="brand-copy">
-        <span class="brand-name" data-khae-brand-name>Khaemenes Academy</span>
-        <span class="brand-sub" data-khae-brand-sub>High School · Grades 9–12</span>
-      </span>
-    </a>
-
-    <div class="header-actions" data-khae-actions>
-      <button class="menu-button" id="menuButton" type="button" aria-label="Open High School directory" aria-expanded="false" aria-controls="drawerBg">
-        <span class="menu-lines" aria-hidden="true"></span>
-      </button>
-    </div>
-  </div>
-</header>
 
 <div class="breadcrumb-bar">
   <nav class="shell breadcrumbs" aria-label="Breadcrumb">
@@ -1483,13 +1461,19 @@ html:root:root body main > .high-frontdesk .high-desk h2 {
   }
 
   function openDrawer(){
-    $("drawerBg").classList.add("open");$("drawerBg").setAttribute("aria-hidden","false");$("menuButton").setAttribute("aria-expanded","true");document.body.classList.add("menu-open");
+    $("drawerBg").classList.add("open");$("drawerBg").setAttribute("aria-hidden","false");$("menuButton")?.setAttribute("aria-expanded","true");document.body.classList.add("menu-open");
     renderDirectory($("drawerSearch").value.trim());setTimeout(()=>$("drawerSearch").focus(),40);
   }
   function closeDrawer(){
-    $("drawerBg").classList.remove("open");$("drawerBg").setAttribute("aria-hidden","true");$("menuButton").setAttribute("aria-expanded","false");document.body.classList.remove("menu-open");
+    $("drawerBg").classList.remove("open");$("drawerBg").setAttribute("aria-hidden","true");$("menuButton")?.setAttribute("aria-expanded","false");document.body.classList.remove("menu-open");
   }
-  $("menuButton").addEventListener("click",openDrawer);
+  $("menuButton")?.addEventListener("click",openDrawer);
+  document.addEventListener("click",e=>{
+    const link=e.target.closest?.('a[href="#high-school-directory"]');
+    if(!link)return;
+    e.preventDefault();
+    openDrawer();
+  });
   $("closeButton").addEventListener("click",closeDrawer);
   $("drawerBg").addEventListener("click",e=>{if(e.target===$("drawerBg"))closeDrawer();});
   $("drawerSearch").addEventListener("input",e=>renderDirectory(e.target.value.trim()));
@@ -1552,7 +1536,6 @@ const destination=Number.isInteger(grade)&&grade>=9&&grade<=12
 links.forEach(a=>{a.href=destination;if(destination==="#student-portal")a.title="Choose your grade in the High School student portal below";});
 })();
 </script>
-<script src="https://vervenveda.com/assets/vnv-ecosystem-menu.js" defer></script>
 <script src="assets/high-navigation-v1.js?v=20261030-open-campus" defer></script>
 
 <style id="high-school-alternating-section-bands">
@@ -1596,12 +1579,12 @@ body[data-khae-campus-front-desk="true"] #khaemenesFamilyBridge{display:none!imp
 /* Old beta/learner rails are retained by their scripts, but never compete with the canonical homepage dock. */
 </style>
 
+<script src="https://vervenveda.com/assets/vnv-header-autopopulate.js"></script>
+<script>VNV_HEADER.mount({"title":"Khaemenes Academy","subtitle":"High School · Grades 9–12","icon":"KA","home":"https://vervenveda.com/Khaemenes_Academy.github.io/?explore=1","actions":[{"label":"My Profile","href":"#student-portal"},{"label":"Grades 9–12","href":"#grades"},{"label":"All Courses","href":"./courses/"},{"label":"Directory","href":"#high-school-directory"},{"label":"Family","href":"https://vervenveda.com/Khaemenes_Academy.github.io/family/"}]});</script>
 <script src="https://vervenveda.com/assets/vnv-333-ticker.js"></script>
 <script src="https://vervenveda.com/assets/vnv-ticker-autopopulate.js" data-vnv-ticker-autopopulate></script>
 <script>VNV_TICKER.autoPopulate({label:"High School Quick Links",max:12});</script>
-
-<script src="https://vervenveda.com/assets/vnv-header-autopopulate.js"></script>
-<script>VNV_HEADER.mount({replaceLegacy:true});</script>
+<script>VNV_HEADER.mount({"title":"Khaemenes Academy","subtitle":"High School · Grades 9–12","icon":"KA","home":"https://vervenveda.com/Khaemenes_Academy.github.io/?explore=1","actions":[{"label":"My Profile","href":"#student-portal"},{"label":"Grades 9–12","href":"#grades"},{"label":"All Courses","href":"./courses/"},{"label":"Directory","href":"#high-school-directory"},{"label":"Family","href":"https://vervenveda.com/Khaemenes_Academy.github.io/family/"}]});</script>
 <script src="https://vervenveda.com/assets/vnv-ecosystem-toolbar.js"></script>
 <!-- High School landing-only navigation and contrast repair; no shared ecosystem files modified. -->
 <style id="high-home-priority-repair-20261029">
