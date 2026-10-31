@@ -51,9 +51,9 @@ html body [data-khae-header] [data-khae-brand]{margin-right:auto!important}
 html body [data-khae-header] [data-khae-brand-mark]{width:52px!important;height:52px!important;flex:0 0 52px!important;display:grid!important;place-items:center!important;border-radius:7px!important;background:var(--grade09-charcoal)!important;color:var(--grade09-light)!important;font:400 14px Cinzel,Georgia,serif!important}
 html body [data-khae-header] [data-vnv-ecosystem-slot]{margin-left:auto!important;flex:0 0 auto!important}
 html body [data-khae-header] #vnvEcosystemMenuButton{position:static!important;right:auto!important;top:auto!important;width:52px!important;height:52px!important;min-width:52px!important;min-height:52px!important;border-radius:7px!important;background:var(--grade09-charcoal)!important;color:var(--grade09-light)!important}
-html body #khaeNetworkTicker{display:grid!important;grid-template-columns:minmax(0,1fr) 44px!important;background:#10243b!important;color:var(--grade09-light)!important}
-html body #khaeNetworkTicker .khae-network-ticker-track{animation:khaeNetworkTickerMove 20s linear infinite!important}
-html body #khaeNetworkTicker[data-paused="true"] .khae-network-ticker-track{animation-play-state:paused!important}
+
+
+
 /* The same restrained title/section hierarchy and alternating high contrast. */
 html body main :is(h1,h2,h3),html body .hero :is(h1,.grade-title){font-family:Cinzel,Georgia,serif!important;font-weight:400!important}
 html body .hero{background:linear-gradient(125deg,#234059,#102b43 70%,#101f2b)!important;color:var(--grade09-light)!important}
@@ -190,18 +190,22 @@ html body main .front-grid > .front-card > a.btn:focus-visible{outline:3px solid
 <!-- Grade 9 uses the canonical ecosystem toolbar; legacy Beta launcher removed. -->
 <script src="../../assets/vnv-language.js" defer data-official-vnv-language="true"></script>
 <script defer src="../../courses/mathematics/algebra-1/assets/learning-tools-menu-v1.js" data-academy-learning-tools="v1"></script>
-<script src="https://vervenveda.com/Khaemenes_Academy.github.io/assets/khaemenes-global-header.js" defer></script><script src="https://vervenveda.com/assets/vnv-ecosystem-menu.js" defer></script><script src="../../assets/high-navigation-v1.js" defer></script>
+<script src="https://vervenveda.com/assets/vnv-ecosystem-menu.js" defer></script><script src="../../assets/high-navigation-v1.js" defer></script>
 
+
+<script src="https://vervenveda.com/assets/vnv-333-ticker.js"></script>
+<script src="https://vervenveda.com/assets/vnv-ticker-autopopulate.js" data-vnv-ticker-autopopulate></script>
+<script>VNV_TICKER.autoPopulate({label:"Grade 9 Quick Links",max:14});</script>
 <script src="https://vervenveda.com/assets/vnv-ecosystem-toolbar.js"></script>
 <style id="grade09-navigation-hero-recovery">
 /* Only the Grade 9 header-adjacent ticker and hero, plus the canonical utility dock. */
 html body > section.hero{background:#243038!important;background-image:linear-gradient(125deg,#244258,#152b3c 65%,#17242e)!important;color:#fff8e9!important}
 html body > section.hero :is(.eyebrow,h1,h2,.hero-lead){color:#fff8e9!important;-webkit-text-fill-color:#fff8e9!important;opacity:1!important;text-shadow:none!important}
 html body > section.hero .btn.primary{background:#243038!important;color:#fff8e9!important;-webkit-text-fill-color:#fff8e9!important;border:1px solid #b48b45!important}
-html body #khaeNetworkTicker .khae-network-ticker-viewport{display:block!important;overflow:hidden!important}
-html body #khaeNetworkTicker .khae-network-ticker-set{display:flex!important;align-items:center!important;gap:14px!important;flex:0 0 auto!important;height:100%!important}
-html body #khaeNetworkTicker :is(.khae-network-ticker-label,.khae-network-ticker-app,.khae-network-ticker-call){color:#fff8e9!important;visibility:visible!important;opacity:1!important;white-space:nowrap!important;font-size:11px!important}
-html body #khaeNetworkTicker .khae-ticker-control{display:grid!important;color:#fff8e9!important;visibility:visible!important}
+
+
+
+
 html body #vnvEcosystemUtilityDock{position:fixed!important;right:12px!important;bottom:12px!important;z-index:2147482500!important;display:grid!important;grid-template-columns:repeat(3,minmax(0,1fr))!important;gap:7px!important;width:min(354px,calc(100vw - 24px))!important;padding:10px!important;border:1px solid #b48b45!important;border-radius:7px!important;background:#fffdf8!important;box-sizing:border-box!important;box-shadow:0 10px 30px rgba(15,25,37,.17)!important}
 html body #vnvEcosystemUtilityDock > :is(a,button){all:unset!important;box-sizing:border-box!important;display:flex!important;justify-content:center!important;align-items:center!important;min-width:0!important;min-height:42px!important;padding:5px!important;border:1px solid #bac8be!important;border-radius:7px!important;background:#f4f0e7!important;color:#243038!important;text-align:center!important;font:400 11px/1.2 "Brandon Grotesque",Nunito,Arial,sans-serif!important;cursor:pointer!important}
 html body #vnvEcosystemUtilityDock [data-vnv-tool="beta"]{background:#152538!important;color:#fff8e9!important}
@@ -213,24 +217,7 @@ html body :is(#vnvBetaProgramLink,#khaemenesLearnerUtilityToolbar){display:none!
 </style>
 <script>
 window.addEventListener("load",()=>{
-  /* Populate the existing shared ticker sets; do not create a second ticker. */
-  const ticker=document.getElementById("khaeNetworkTicker");
-  if(ticker){
-    const base="https://vervenveda.com/Khaemenes_High.github.io/";
-    const academy="https://vervenveda.com/Khaemenes_Academy.github.io/";
-    const links=[
-      ["Grade 9 Home",base+"grades/grade-09/"],["My Profile",base+"grades/grade-09/student-profile/"],
-      ["Grade 9 Courses","#courses"],["Mathematics",base+"courses/mathematics/"],
-      ["Science",base+"courses/science/"],["English",base+"courses/language-arts/"],
-      ["Social Studies",base+"courses/social-studies/"],["Mentor",base+"mentor/"],
-      ["Family Portal",academy+"family/"],["All Courses",base+"courses/"],
-      ["High School",base],["Beta","https://vervenveda.com/beta/"],
-      ["Search","https://vervenveda.com/PLERASearch.github.io/"]
-    ];
-    ticker.querySelectorAll(".khae-network-ticker-set").forEach((set,i)=>{
-      set.innerHTML='<span class="khae-network-ticker-label">Grade 9 Quick Links</span>'+links.map(([label,url])=>'<a class="khae-network-ticker-app" href="'+url+'"'+(i?' tabindex="-1"':'')+'>'+label+'</a>').join("");
-    });
-  }
+}
   /* Prefer the official shared toolbar. If unavailable, preserve identical destinations. */
   if(document.getElementById("vnvEcosystemUtilityDock"))return;
   try{window.VNVEcosystemToolbar?.mount?.()}catch(e){console.warn("Shared toolbar",e)}
