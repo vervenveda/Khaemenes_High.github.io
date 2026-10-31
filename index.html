@@ -760,8 +760,8 @@ html:root:root body main > .high-frontdesk .high-desk h2 {
         <p class="hero-lead">Choose your grade to begin studying, return to your student profile, or open the full course directory. Every learning pathway begins with a clear doorway.</p>
         <div class="hero-actions">
           <a class="button button-primary" href="#student-portal" data-high-profile-door="1">😊 My Profile / Continue Learning</a>
-          <a class="button button-secondary" href="#grades">Find My Classes</a>
-          <a class="button button-secondary" href="./courses/">All Courses</a>
+          <a class="button button-secondary" href="#grades" data-ticker data-ticker-label="Grades 9–12">Find My Classes</a>
+          <a class="button button-secondary" href="./courses/" data-ticker data-ticker-label="All Courses">All Courses</a>
         </div>
       </div>
     </div>
@@ -780,7 +780,7 @@ html:root:root body main > .high-frontdesk .high-desk h2 {
         <nav class="high-quick-grid" aria-label="High School quick access">
           <a href="#grades"><span class="high-quick-mark">9–12</span><strong>My Grade</strong><small>Enter your classes</small></a>
           <a href="#student-portal" data-high-profile-door="1"><span class="high-quick-mark">S</span><strong>My Profile</strong><small>Continue with your active grade</small></a>
-          <a href="https://vervenveda.com/Khaemenes_Academy.github.io/family/"><span class="high-quick-mark">F</span><strong>Family</strong><small>Records, placement and support</small></a>
+          <a href="https://vervenveda.com/Khaemenes_Academy.github.io/family/" data-ticker data-ticker-label="Family Portal"><span class="high-quick-mark">F</span><strong>Family</strong><small>Records, placement and support</small></a>
           <a href="./courses/"><span class="high-quick-mark">C</span><strong>Courses</strong><small>Browse every subject</small></a>
         </nav>
       </div>
@@ -866,7 +866,7 @@ html:root:root body main > .high-frontdesk .high-desk h2 {
             <a href="./courses/">Course Directory</a>
             <a href="./mentor/?stage=high&amp;subject=general&amp;source=family-front-hall">Mentor · Get Instruction</a>
             <a href="#grades">Grades 9–12</a>
-            <a href="#departments">Departments</a>
+            <a href="#departments" data-ticker data-ticker-label="Departments">Departments</a>
             <a href="#whole-student">Health &amp; PE</a>
             <a href="https://vervenveda.com/Khaemenes_Higher_Learning.github.io/Career/">Career Portal</a>
             <a href="#library">Resource Library</a>
@@ -973,7 +973,7 @@ html:root:root body main > .high-frontdesk .high-desk h2 {
       <div class="heading"><p class="kicker">Connected Learning Halls</p><h2>One High School inside a larger learning network.</h2><p>Research, professional tools, health, creative practice, Career exploration, and advanced study remain connected without overcrowding the core course path.</p></div>
       <div class="network-grid" id="networkGrid">
     <a class="network-card" href="https://vervenveda.com/Khaemenes_Academy.github.io/?explore=1"><span class="network-icon">KA</span><h3>Khaemenes Academy</h3><p>The wider lifelong educational network.</p><small>Academy</small></a>
-    <a class="network-card" href="https://vervenveda.github.io/proresource_hub.github.io/ProReSources_updated_index.html"><span class="network-icon">PR</span><h3>ProReSources</h3><p>Professional, technical, writing, design, and productivity tools.</p><small>Professional tools</small></a>
+    <a class="network-card" href="https://vervenveda.github.io/proresource_hub.github.io/ProReSources_updated_index.html" data-ticker data-ticker-label="ProReSources"><span class="network-icon">PR</span><h3>ProReSources</h3><p>Professional, technical, writing, design, and productivity tools.</p><small>Professional tools</small></a>
     <a class="network-card" href="https://vervenveda.com/Khaemenes_Higher_Learning.github.io/Career/"><span class="network-icon">C</span><h3>Career Portal</h3><p>Career assessment, professional skills, and future planning.</p><small>Career & transition</small></a>
     <a class="network-card" href="https://vervenveda.com/Khaemenes_Higher_Learning.github.io/"><span class="network-icon">HL</span><h3>Higher Learning</h3><p>Collegiate study, research, and advanced learning.</p><small>Next academic stage</small></a>
   </div>
@@ -1597,14 +1597,11 @@ html:root:root body .high-desk{border-radius:7px;box-shadow:0 9px 24px rgba(10,2
 body[data-khae-campus-front-desk="true"] #khaemenesFamilyBridge{display:none!important}
 /* Old beta/learner rails are retained by their scripts, but never compete with the canonical homepage dock. */
 </style>
+<script src="https://vervenveda.com/assets/vnv-ticker-autopopulate.js" data-vnv-ticker-autopopulate></script>
+<script>VNV_TICKER.autoPopulate({label:"High School Quick Links",max:12});</script>
 <script src="https://vervenveda.com/assets/vnv-ecosystem-toolbar.js"></script>
 <!-- High School landing-only navigation and contrast repair; no shared ecosystem files modified. -->
 <style id="high-home-priority-repair-20261029">
-/* Keep the existing single shared Academy ticker; give priority links visible contrast. */
-body #khaeNetworkTicker{background:#10243b!important;color:#fff4dc!important;overflow:hidden}
-body #khaeNetworkTicker .khae-network-ticker-viewport{overflow:hidden;min-width:0}
-body #khaeNetworkTicker .khae-network-ticker-track{display:flex!important;align-items:center;white-space:nowrap}
-body #khaeNetworkTicker :is(.khae-network-ticker-app,.khae-network-ticker-call,.khae-network-ticker-label){color:#fff4dc!important;opacity:1!important;visibility:visible!important;font-size:11px!important;white-space:nowrap!important}
 /* Offline-learning announcement: charcoal with fully readable parchment text. */
 body main .high-offline-aside{background:#25313a!important;color:#fff8e9!important;border:1px solid #b48b45!important;border-radius:7px!important;box-shadow:0 9px 24px rgba(10,27,33,.12)}
 body main .high-offline-aside :is(h2,p){color:#fff8e9!important;opacity:1!important}
@@ -1614,34 +1611,6 @@ body main #departments .department-card :is(a.department-link,button.department-
 body main #departments .department-card :is(a.department-link,button.department-link):hover{background:#344a55!important;border-color:#b48b45!important}
 body main #departments .department-card :is(a.department-link,button.department-link):focus-visible{outline:3px solid #b48b45!important;outline-offset:3px}
 </style>
-<script>
-/* Site-local recovery for the shared quick-links/utility dock. Never create a second ticker. */
-window.addEventListener("load",()=>{
- const ticker=document.getElementById("khaeNetworkTicker");
- if(ticker){
-   const priority=[
-     ["Student Profile","https://vervenveda.com/Khaemenes_Academy.github.io/student/"],
-     ["Family Portal","https://vervenveda.com/Khaemenes_Academy.github.io/family/"],
-     ["Grades 9–12","#grades"],
-     ["Departments","#departments"],
-     ["All Courses","./courses/"],
-     ["Linguistics","https://vervenveda.com/Khaemenes_Linguistics.github.io/"],
-     ["Arcade","https://vervenveda.github.io/arcade.github.io/"],
-     ["ProReSources","https://vervenveda.github.io/proresource_hub.github.io/ProReSources_updated_index.html"],
-     ["Beta","https://vervenveda.com/beta/"],
-     ["Search","https://vervenveda.github.io/PLERASearch.github.io/"],
-     ["Support","https://vervenveda.com/#support"]
-   ];
-   const sets=ticker.querySelectorAll(".khae-network-ticker-set");
-   sets.forEach((set,i)=>{
-     const label=set.querySelector(".khae-network-ticker-label");
-     const labelText=label?.outerHTML||'<span class="khae-network-ticker-label">High School Quick Links</span>';
-     set.innerHTML=labelText+priority.map(([name,url])=>'<a class="khae-network-ticker-app" href="'+url+'"'+(i?' tabindex="-1"':'')+'>'+name+'</a>').join("");
-   });
- }
- if(window.VNVEcosystemToolbar?.mount)window.VNVEcosystemToolbar.mount();
-});
-</script>
 <style id="high-header-ticker-separation-20261029">
 /* High School only: exactly the Academy logo/wordmark and one directory hamburger. */
 html body [data-khae-header] [data-khae-header-inner]{
@@ -1662,16 +1631,6 @@ html body [data-khae-header] #menuButton .menu-lines:after{background:#fff8e9!im
 html body [data-khae-header] #menuButton[aria-expanded="true"] .menu-lines{background:transparent!important}
 /* Do not display a competing floating ecosystem hamburger on this landing page. */
 html body[data-khae-campus-front-desk="true"] :is(#vnvEcosystemMenuButton,.vnv-ecosystem-nav){display:none!important}
-/* Ticker remains the one existing shared Academy ticker, with moving clickable links and pause. */
-html body #khaeNetworkTicker{display:grid!important;grid-template-columns:minmax(0,1fr) 44px!important;height:33px!important;visibility:visible!important}
-html body #khaeNetworkTicker .khae-network-ticker-viewport{display:block!important;overflow:hidden!important;min-width:0!important}
-html body #khaeNetworkTicker .khae-network-ticker-track{display:flex!important;width:max-content!important;height:100%!important;animation:khaeNetworkTickerMove 20s linear infinite!important}
-html body #khaeNetworkTicker[data-paused="true"] .khae-network-ticker-track,
-html body #khaeNetworkTicker:hover .khae-network-ticker-track,
-html body #khaeNetworkTicker:focus-within .khae-network-ticker-track{animation-play-state:paused!important}
-html body #khaeNetworkTicker .khae-network-ticker-set{display:flex!important;align-items:center!important;flex:0 0 auto!important;gap:14px!important;height:100%!important}
-html body #khaeNetworkTicker .khae-ticker-control{display:grid!important;place-items:center!important;color:#fff8e9!important;background:#10243b!important;visibility:visible!important}
-@media(prefers-reduced-motion:reduce){html body #khaeNetworkTicker .khae-network-ticker-track{animation:none!important}}
 </style>
 
 <style id="high-hero-type-spacing-20261029">
