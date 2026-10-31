@@ -759,7 +759,7 @@ html:root:root body main > .high-frontdesk .high-desk h2 {
         </div>
         <p class="hero-lead">Choose your grade to begin studying, return to your student profile, or open the full course directory. Every learning pathway begins with a clear doorway.</p>
         <div class="hero-actions">
-          <a class="button button-primary" href="#student-portal" data-high-profile-door="1">😊 My Profile / Continue Learning</a>
+          <a class="button button-primary" href="#student-portal" data-high-profile-door="1" data-ticker data-ticker-label="Student Profile">😊 My Profile / Continue Learning</a>
           <a class="button button-secondary" href="#grades" data-ticker data-ticker-label="Grades 9–12">Find My Classes</a>
           <a class="button button-secondary" href="./courses/" data-ticker data-ticker-label="All Courses">All Courses</a>
         </div>
@@ -852,7 +852,7 @@ html:root:root body main > .high-frontdesk .high-desk h2 {
             <a href="https://vervenveda.com/Khaemenes_Academy.github.io/family/enroll/">Create or Select Academy Learner</a>
             <a href="./courses/">Course Directory</a>
             <a href="./mentor/?stage=high&amp;subject=general&amp;source=front-hall">Mentor · Get Instruction</a>
-            <a href="#library">Study Resources</a>
+            <a href="#library" data-ticker data-ticker-label="Resources">Study Resources</a>
           </div>
           <p class="portal-note">Learner identity and placement come from the Academy Family Registry. An older High School local profile, if present on this browser, is retained only as legacy migration data.</p>
         </article>
@@ -975,7 +975,7 @@ html:root:root body main > .high-frontdesk .high-desk h2 {
     <a class="network-card" href="https://vervenveda.com/Khaemenes_Academy.github.io/?explore=1"><span class="network-icon">KA</span><h3>Khaemenes Academy</h3><p>The wider lifelong educational network.</p><small>Academy</small></a>
     <a class="network-card" href="https://vervenveda.github.io/proresource_hub.github.io/ProReSources_updated_index.html" data-ticker data-ticker-label="ProReSources"><span class="network-icon">PR</span><h3>ProReSources</h3><p>Professional, technical, writing, design, and productivity tools.</p><small>Professional tools</small></a>
     <a class="network-card" href="https://vervenveda.com/Khaemenes_Higher_Learning.github.io/Career/"><span class="network-icon">C</span><h3>Career Portal</h3><p>Career assessment, professional skills, and future planning.</p><small>Career & transition</small></a>
-    <a class="network-card" href="https://vervenveda.com/Khaemenes_Higher_Learning.github.io/"><span class="network-icon">HL</span><h3>Higher Learning</h3><p>Collegiate study, research, and advanced learning.</p><small>Next academic stage</small></a>
+    <a class="network-card" href="https://vervenveda.com/Khaemenes_Higher_Learning.github.io/" data-ticker data-ticker-label="Higher Learning"><span class="network-icon">HL</span><h3>Higher Learning</h3><p>Collegiate study, research, and advanced learning.</p><small>Next academic stage</small></a>
   </div>
     </div>
   </section>
@@ -1168,7 +1168,7 @@ html:root:root body main > .high-frontdesk .high-desk h2 {
               <label for="grade${item.grade}Language">World language · ${gradeLanguageLevelLabel(item.grade)}</label>
               <select id="grade${item.grade}Language" data-world-language-grade="${item.grade}" aria-label="Choose Grade ${item.grade} world language">${options}</select>
               <div class="grade-language-actions">
-                <a href="${LINGUISTICS_CAMPUS}">Open Language Hall</a>
+                <a href="${LINGUISTICS_CAMPUS}" data-ticker data-ticker-label="Linguistics">Open Language Hall</a>
                 <button type="button" data-grade-language-pin="${item.grade}" aria-pressed="${isPinned}">${isPinned?"★ Pinned":"☆ Pin Language"}</button>
               </div>
               <div class="grade-language-panel" style="border:1px solid var(--line);border-radius:7px;padding:10px;margin-top:5px">
