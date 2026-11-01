@@ -711,10 +711,6 @@ body .breadcrumb-bar,html:root:root body .breadcrumb-bar{box-sizing:border-box;w
 body .breadcrumb-bar .shell{width:100%!important;max-width:none!important;background:transparent!important;margin:0 auto!important;justify-content:center!important}
 body .breadcrumb-bar :is(a,span){color:#fff8e9!important}
 body .breadcrumb-bar a:hover{color:#f1cc84!important}
-body [class*="vnv-header"] .vnv-header-menu-button,body .vnv-header-menu-button{background:#243038!important;color:#fff8e9!important;border:1px solid #b48b45!important;opacity:1!important}
-body .vnv-header-menu-button :is(span,svg){color:#fff8e9!important;stroke:#fff8e9!important}
-body .vnv-header-menu-button:focus-visible{outline:3px solid #f1cc84!important;outline-offset:3px!important}
-/* Canonical menu already owns the ecosystem; hide only the redundant shortcut. */
 body .vnv-header-actions a:is([href="#ecosystem"],[href="#vnv-ecosystem-menu"]),body .vnv-header-actions button[data-ecosystem-shortcut]{display:none!important}
 </style><style id="high-frontdesk-grades-color-separation-20261101">
 /* Two adjacent sections, clearly separated without changing campus hero or app UI. */
@@ -1680,16 +1676,6 @@ html:root:root body footer.high-school-footer .high-footer-inquiry{font-size:12p
 @media(max-width:860px){html:root:root body main #whole-student .whole-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:480px){html:root:root body main #whole-student .whole-grid{grid-template-columns:1fr}}
 </style>
-<style id="high-canonical-header-specific-20261101">
-/* Override only the canonical injected header, not its enriched dropdown. */
-#vnvHeaderAutoPopulate .vnv-header-menu-button{background:#243038!important;color:#fff8e9!important;border:1px solid #b48b45!important}
-#vnvHeaderAutoPopulate .vnv-header-lines,#vnvHeaderAutoPopulate .vnv-header-lines::before,#vnvHeaderAutoPopulate .vnv-header-lines::after{background:#fff8e9!important}
-#vnvHeaderAutoPopulate .vnv-header-actions a{background:#243038!important;border:1px solid #b48b45!important;min-height:34px!important;border-radius:7px!important}
-#vnvHeaderAutoPopulate .vnv-header-actions a:hover{background:#3a4d56!important}
-#vnvHeaderAutoPopulate .vnv-header-inner{gap:12px!important}
-#vnvHeaderAutoPopulate .vnv-header-menu-button:focus-visible{outline:3px solid #f1cc84!important;outline-offset:3px!important}
-</style>
-<script id="high-retire-redundant-ecosystem-shortcut-20261101">
-(()=>{const h=document.getElementById('vnvHeaderAutoPopulate');if(!h)return;h.querySelectorAll('.vnv-header-actions a,.vnv-header-actions button').forEach(el=>{if(/^\s*(?:☰\s*)?ecosystem\s*$/i.test(el.textContent||''))el.remove();});})();
-</script></body>
+
+</body>
 </html>
