@@ -871,8 +871,9 @@ body main>.high-frontdesk .high-quick-grid a{min-width:0!important}
             <a href="https://vervenveda.com/Khaemenes_Higher_Learning.github.io/Career/">Career Portal</a>
             <a href="#library">Resource Library</a>
             <a href="#transition">Higher Learning</a>
+            <a href="#legacyFamilyTools" id="highFamilyToolsShortcut" aria-controls="legacyFamilyTools" aria-expanded="false">Family Tools · Legacy Profile</a>
           </div>
-          <details class="legacy-family-tools">
+          <details class="legacy-family-tools" id="legacyFamilyTools">
             <summary>Family Tools · Legacy Local Profile</summary>
             <p class="portal-note">These controls are only for an older browser-local High School profile. Current enrolled students use the Academy learner profile above.</p>
             <div class="portal-links">
@@ -1677,5 +1678,27 @@ html:root:root body footer.high-school-footer .high-footer-inquiry{font-size:12p
 @media(max-width:480px){html:root:root body main #whole-student .whole-grid{grid-template-columns:1fr}}
 </style>
 
-</body>
+<style id="high-family-parchment-text-audit-20261101">
+/* Approved high-school palette retained elsewhere: focus only on family buttons,
+   adjacent offline/departments parchment, and readable campus content. */
+html:root:root body main #parent-portal>.portal-links{display:grid!important;grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:9px!important;align-items:stretch!important;width:100%!important}
+html:root:root body main #parent-portal>.portal-links>a{box-sizing:border-box;display:flex!important;align-items:center!important;justify-content:center!important;min-height:52px!important;padding:10px 12px!important;white-space:normal!important;overflow-wrap:anywhere;text-align:center!important}
+html:root:root body main #parent-portal #highFamilyToolsShortcut{background:#f0e4d5!important;color:#263c46!important;border:1px solid #a99180!important}
+html:root:root body main #parent-portal .legacy-family-tools{width:100%!important;margin-top:13px!important}
+html:root:root body .high-offline-aside{box-sizing:border-box!important;width:min(calc(100% - 32px),1050px)!important;max-width:1050px!important;background:#fffdf6!important;background-image:none!important;border:2px solid #b6a081!important;color:#233640!important;box-shadow:0 10px 26px rgba(28,41,50,.1)!important;padding:29px 30px!important;margin:25px auto!important}
+html:root:root body .high-offline-aside :is(h2,p,a){color:#233640!important;opacity:1!important;font-size:16px!important;line-height:1.6!important}
+html:root:root body .high-offline-aside h2{font-size:clamp(24px,2.8vw,34px)!important;line-height:1.24!important}
+html:root:root body .high-offline-aside a{display:inline-flex;align-items:center;justify-content:center;background:#273f44!important;color:#fffdf6!important;border-radius:7px;padding:10px 16px;text-decoration:none!important;min-height:44px!important}
+html:root:root body main #departments{background:#eee3d1!important;background-image:linear-gradient(140deg,#f2e9da,#e9dfcf)!important;border-top:2px solid #bba58b!important}
+html:root:root body main #departments .heading :is(h2,p){color:#293b41!important;opacity:1!important}
+html:root:root body main :is(.section,.high-frontdesk) :is(p:not(.kicker),li,small:not(.eyebrow),label,summary,td,th,.portal-note,.profile-summary,.pinned-chip,.grade-range,.course-status,.department-status,.high-quick-grid small,.high-quick-mark,.destination,.tool-card small,.tool-card p){font-size:16px!important;line-height:1.55!important}
+html:root:root body main :is(.section,.high-frontdesk,.hero) :is(a.button,.button,.btn,button,.portal-button,.portal-links a,.portal-links button,.course-actions a,.card-link,.department-link,.tool-link,.grade-actions a,.high-quick-grid a small){font-size:16px!important;line-height:1.35!important;white-space:normal!important;overflow-wrap:break-word}
+html:root:root body main .section .kicker{font-size:16px!important;line-height:1.4!important}
+html:root:root body main #whole-student .whole-card a{font-size:16px!important}
+html:root:root body footer.high-school-footer :is(a,small,.high-footer-inquiry){font-size:16px!important;line-height:1.5!important}
+@media(max-width:620px){html:root:root body main #parent-portal>.portal-links{gap:7px!important}html:root:root body .high-offline-aside{padding:23px 17px!important}}
+</style>
+<script id="high-family-tools-shortcut-binding-20261101">
+(()=>{const shortcut=document.getElementById('highFamilyToolsShortcut'),details=document.getElementById('legacyFamilyTools');if(!shortcut||!details)return;shortcut.addEventListener('click',event=>{event.preventDefault();details.open=true;shortcut.setAttribute('aria-expanded','true');details.scrollIntoView({behavior:'smooth',block:'nearest'});});details.addEventListener('toggle',()=>shortcut.setAttribute('aria-expanded',String(details.open)));})();
+</script></body>
 </html>
