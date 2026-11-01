@@ -700,7 +700,23 @@ html:root:root body main > .high-frontdesk .high-desk h2 {
   text-wrap:balance;
 }
 </style>
-</head>
+<style id="high-typography-header-refresh-20261101">
+/* High School-only typography and canonical-header presentation; never change shared scripts. */
+body main .section>.section-inner>.heading>h2{font-size:clamp(32px,4vw,52px)!important;line-height:1.16!important;font-weight:400!important}
+body main .section>.section-inner>.heading>.kicker{font-size:12px!important;font-weight:400!important;line-height:1.4!important}
+body main .section p:not(.kicker),body main .section li,body main .section .portal-card>p,body main .section .grade-card p,body main .section .department-card p,body main .section .course-card p,body main .section .pathway-card p,body main .section .network-card p,body main .section .whole-card p,body main .section .profile-summary,body main .section .portal-note,body main .section .status,body main .section .tool-card p,body main .high-frontdesk p:not(.kicker),body main .hero p:not(.eyebrow){font-size:16px!important;line-height:1.6!important}
+body main .section :is(a.button,button,.button,.portal-button,.card-link,.department-link,.tool-link),body main .section .course-actions a,body main .section .portal-links :is(a,button),body main .hero :is(a.button,button),body main .high-frontdesk :is(a,button){font-size:16px!important;line-height:1.35!important;min-height:44px;white-space:normal;overflow-wrap:break-word}
+html:root:root body main #whole-student .whole-card a{font-size:16px!important;line-height:1.35!important}
+body .breadcrumb-bar,html:root:root body .breadcrumb-bar{box-sizing:border-box;width:100%!important;max-width:none!important;background:#243038!important;color:#fff8e9!important;border-bottom:1px solid #b48b45!important}
+body .breadcrumb-bar .shell{width:100%!important;max-width:none!important;background:transparent!important;margin:0 auto!important;justify-content:center!important}
+body .breadcrumb-bar :is(a,span){color:#fff8e9!important}
+body .breadcrumb-bar a:hover{color:#f1cc84!important}
+body [class*="vnv-header"] .vnv-header-menu-button,body .vnv-header-menu-button{background:#243038!important;color:#fff8e9!important;border:1px solid #b48b45!important;opacity:1!important}
+body .vnv-header-menu-button :is(span,svg){color:#fff8e9!important;stroke:#fff8e9!important}
+body .vnv-header-menu-button:focus-visible{outline:3px solid #f1cc84!important;outline-offset:3px!important}
+/* Canonical menu already owns the ecosystem; hide only the redundant shortcut. */
+body .vnv-header-actions a:is([href="#ecosystem"],[href="#vnv-ecosystem-menu"]),body .vnv-header-actions button[data-ecosystem-shortcut]{display:none!important}
+</style></head>
 <body id="top" data-khae-campus-front-desk="true">
 
 <a class="skip-link" href="#main">Skip to main content</a>
@@ -768,8 +784,7 @@ html:root:root body main > .high-frontdesk .high-desk h2 {
   <section class="section" id="grades">
     <div class="section-inner">
       <div class="heading">
-        <p class="kicker">Four Connected Grade Years</p>
-        <h2>One campus. Four distinct stages.</h2>
+        <p class="kicker">One campus. Four distinct stages.</p><h2>Grades 9–12 · Curriculum Pathways</h2>
         <p>Each grade has a clear landing point, while department doors, research resources, and career preparation remain available across the full secondary sequence.</p>
       </div>
       <div class="grade-grid" id="gradeGrid">
@@ -802,8 +817,7 @@ html:root:root body main > .high-frontdesk .high-desk h2 {
   <section class="section section-dark" id="portals">
     <div class="section-inner">
       <div class="heading">
-        <p class="kicker">High School Portal Center</p>
-        <h2>Students and families begin here.</h2>
+        <p class="kicker">Students and families begin here.</p><h2>High School Portal Center</h2>
         <p>Keep a local starting point for the learner while the central Khaemenes family bridge handles shared family identity across school stages.</p>
       </div>
       <div class="portal-grid">
@@ -873,8 +887,7 @@ html:root:root body main > .high-frontdesk .high-desk h2 {
   <section class="section section-alt" id="departments">
     <div class="section-inner">
       <div class="heading">
-        <p class="kicker">Academic &amp; Applied Departments</p>
-        <h2>Core academics remain central. The wider student remains connected.</h2>
+        <p class="kicker">Core academics remain central. The wider student remains connected.</p><h2>Academic &amp; Applied Departments</h2>
         <p>Academic departments open their course homes directly. Health, arts, technology, and Career are connected as federated learning halls rather than being mislabeled as missing departments.</p>
       </div>
       <div class="department-grid" id="departmentGrid"></div>
@@ -884,8 +897,7 @@ html:root:root body main > .high-frontdesk .high-desk h2 {
   <section class="section section-dark" id="whole-student">
     <div class="section-inner">
       <div class="heading">
-        <p class="kicker">Whole-Student Federation</p>
-        <h2>Movement, health, electives, and future planning.</h2>
+        <p class="kicker">Movement, health, electives, and future planning.</p><h2>Whole-Student Federation</h2>
         <p>Specialist repositories keep ownership of their subject expertise while Khaemenes High provides the organized academic route.</p>
       </div>
       <div class="whole-grid">
@@ -899,7 +911,7 @@ html:root:root body main > .high-frontdesk .high-desk h2 {
 
   <section class="section" id="pathways">
     <div class="section-inner">
-      <div class="heading"><p class="kicker">Adaptable Academic Pathways</p><h2>Different levels without limiting potential.</h2><p>Foundation, Core, Extended, and Capstone routes let learners work at an appropriate depth without losing access to the larger academic horizon.</p></div>
+      <div class="heading"><p class="kicker">Different levels without limiting potential.</p><h2>Adaptable Academic Pathways</h2><p>Foundation, Core, Extended, and Capstone routes let learners work at an appropriate depth without losing access to the larger academic horizon.</p></div>
       <div class="pathway-grid">
         <article class="pathway-card"><span class="department-number">01</span><h3>Foundation</h3><p>Clear instruction, smaller steps, repeated practice, visual support, and flexible pacing.</p><ul><li>Prerequisite review</li><li>Guided examples</li><li>Accessible assessment</li></ul></article>
         <article class="pathway-card"><span class="department-number">02</span><h3>Core</h3><p>A complete grade-level route balancing knowledge, communication, problem solving, and application.</p><ul><li>Full course sequence</li><li>Projects and assessments</li><li>Portfolio-ready work</li></ul></article>
@@ -912,8 +924,7 @@ html:root:root body main > .high-frontdesk .high-desk h2 {
   <section class="section section-dark" id="library">
     <div class="section-inner">
       <div class="heading">
-        <p class="kicker">Live High School Resource Directory</p>
-        <h2>The ecosystem can grow without rewriting this page.</h2>
+        <p class="kicker">The ecosystem can grow without rewriting this page.</p><h2>High School Resource Directory</h2>
         <p>The library reads the central Verve N Veda resource federation, filters for High School relevance, and sorts eligible tools, apps, games, and halls into useful study categories. A small core fallback remains available if the registry cannot load.</p>
       </div>
       <div class="catalog">
@@ -935,8 +946,7 @@ html:root:root body main > .high-frontdesk .high-desk h2 {
   <section class="section" id="transition">
     <div class="section-inner">
       <div class="heading">
-        <p class="kicker">Graduation &amp; Next Stage</p>
-        <h2>High School should point somewhere.</h2>
+        <p class="kicker">High School should point somewhere.</p><h2>Graduation &amp; Next Stage</h2>
         <p>The senior year now has a visible bridge to Career exploration and Khaemenes Higher Learning rather than ending at the edge of the repository.</p>
       </div>
       <div class="transition-grid">
@@ -948,7 +958,7 @@ html:root:root body main > .high-frontdesk .high-desk h2 {
 
   <section class="section section-dark" id="network">
     <div class="section-inner">
-      <div class="heading"><p class="kicker">Connected Learning Halls</p><h2>One High School inside a larger learning network.</h2><p>Research, professional tools, health, creative practice, Career exploration, and advanced study remain connected without overcrowding the core course path.</p></div>
+      <div class="heading"><p class="kicker">One High School inside a larger learning network.</p><h2>Connected Learning Halls</h2><p>Research, professional tools, health, creative practice, Career exploration, and advanced study remain connected without overcrowding the core course path.</p></div>
       <div class="network-grid" id="networkGrid">
     <a class="network-card" href="https://vervenveda.com/Khaemenes_Academy.github.io/?explore=1"><span class="network-icon">KA</span><h3>Khaemenes Academy</h3><p>The wider lifelong educational network.</p><small>Academy</small></a>
     <a class="network-card" href="https://vervenveda.github.io/proresource_hub.github.io/ProReSources_updated_index.html" data-ticker data-ticker-label="ProReSources"><span class="network-icon">PR</span><h3>ProReSources</h3><p>Professional, technical, writing, design, and productivity tools.</p><small>Professional tools</small></a>
