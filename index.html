@@ -1794,5 +1794,27 @@ html:root:root body footer.high-school-footer :is(a,small,.high-footer-inquiry){
 </style>
 <script id="high-family-tools-shortcut-binding-20261101">
 (()=>{const shortcut=document.getElementById('highFamilyToolsShortcut'),details=document.getElementById('legacyFamilyTools');if(!shortcut||!details)return;shortcut.addEventListener('click',event=>{event.preventDefault();details.open=true;shortcut.setAttribute('aria-expanded','true');details.scrollIntoView({behavior:'smooth',block:'nearest'});});details.addEventListener('toggle',()=>shortcut.setAttribute('aria-expanded',String(details.open)));})();
-</script></body>
+</script><style id="high-footer-dark-and-legibility-20261101">
+/* Closing-campus finishing pass. No shared component or academic logic changes. */
+html:root:root body footer.high-school-footer{background:#172832!important;background-image:none!important;color:#fff8eb!important;border-top:4px solid #be963b!important;text-align:center!important;padding:35px 18px 45px!important}
+html:root:root body footer.high-school-footer .footer-inner{display:flex!important;flex-direction:column!important;align-items:center!important;justify-content:center!important;gap:13px!important;margin:0 auto!important;max-width:1120px!important;text-align:center!important}
+html:root:root body footer.high-school-footer :is(span,small,a,.high-footer-inquiry){color:#fff8eb!important;-webkit-text-fill-color:#fff8eb!important;font-size:16px!important;line-height:1.6!important;opacity:1!important}
+html:root:root body footer.high-school-footer .footer-links{display:flex!important;flex-wrap:wrap!important;justify-content:center!important;gap:9px 20px!important}
+html:root:root body footer.high-school-footer a:hover{color:#f3cc77!important;-webkit-text-fill-color:#f3cc77!important}
+html:root:root body footer.high-school-footer a:focus-visible{outline:3px solid #f3cc77!important;outline-offset:3px!important}
+/* Page copy and controls: readable 16px floor. Scope excludes the ecosystem header and ticker. */
+html:root:root body main :is(p,li,small,summary,label,td,th,figcaption,blockquote,.profile-summary,.portal-note,.department-status,.grade-range,.status,.card-description,.tool-description){font-size:max(16px,1rem)!important;line-height:1.55!important}
+html:root:root body main :is(a.button,.button,.btn,button:not(.pinned-chip button),.portal-links a,.department-link,.grade-actions a,.course-actions a,.transition-actions a,.tool-link,.high-quick-grid a){font-size:max(16px,1rem)!important;line-height:1.35!important;white-space:normal!important}
+html:root:root body main :is(input,select,textarea){font-size:16px!important}
+html:root:root body main :is(.kicker,.eyebrow){font-size:16px!important;line-height:1.4!important}
+/* Canonical six-control dock stays six controls; High School color treatment only. */
+html:root:root body #vnvEcosystemUtilityDock{background:#172832!important;border:1px solid #be963b!important;box-shadow:0 11px 32px rgba(0,0,0,.3)!important;width:min(396px,calc(100vw - 24px))!important}
+html:root:root body #vnvEcosystemUtilityDock>a,html:root:root body #vnvEcosystemUtilityDock>button{box-sizing:border-box!important;min-height:52px!important;height:auto!important;max-height:none!important;font:400 16px/1.15 Nunito,Arial,sans-serif!important;white-space:normal!important;overflow-wrap:break-word!important;padding:8px 5px!important;color:#fffaf0!important;-webkit-text-fill-color:#fffaf0!important;background:#284653!important;border-color:#66808a!important}
+html:root:root body #vnvEcosystemUtilityDock [data-vnv-tool="profile"]{background:#315e86!important;border-color:#8aa5b9!important;color:#fff!important;-webkit-text-fill-color:#fff!important}
+html:root:root body #vnvEcosystemUtilityDock [data-vnv-tool="updates"]{background:#63394f!important;border-color:#aa8299!important;color:#fff!important;-webkit-text-fill-color:#fff!important}
+html:root:root body #vnvEcosystemUtilityDock [data-vnv-tool="mentor"]{background:#765626!important;border-color:#c29a4e!important;color:#fff!important;-webkit-text-fill-color:#fff!important}
+html:root:root body #vnvEcosystemUtilityDock [data-vnv-tool="support"]{background:#28634e!important;border-color:#6c9986!important;color:#fff!important;-webkit-text-fill-color:#fff!important}
+html:root:root body #vnvEcosystemUtilityDock [data-vnv-tool="beta"]{background:#1e263b!important;border-color:#b29a58!important;color:#fff!important;-webkit-text-fill-color:#fff!important}
+@media(max-width:390px){html:root:root body #vnvEcosystemUtilityDock{width:min(354px,calc(100vw - 16px))!important;padding:7px!important;gap:5px!important}html:root:root body #vnvEcosystemUtilityDock>a,html:root:root body #vnvEcosystemUtilityDock>button{font-size:16px!important;padding:6px 3px!important}}
+</style></body>
 </html>
