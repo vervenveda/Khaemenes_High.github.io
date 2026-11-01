@@ -724,6 +724,20 @@ body main>#grades .grade-card{background:#fffdf8!important;border:1px solid #b5a
 body main>#grades .grade-card :is(h3,p,strong,small){color:#283d46!important;opacity:1!important}
 body main>.high-frontdesk .high-quick-grid a{min-width:0!important}
 @media(max-width:650px){body main>.high-frontdesk{padding-block:28px!important}}
+</style><style id="high-offline-departments-and-official-chrome-20261101">
+/* Offline: dark scholarly band and explicit button ink (including Safari text fill). */
+html:root:root body .high-offline-aside{background:#24323c!important;background-image:none!important;color:#fffaf1!important;border:2px solid #bb9b62!important;box-shadow:0 12px 30px rgba(15,25,33,.18)!important}
+html:root:root body .high-offline-aside h2,html:root:root body .high-offline-aside p{color:#fffaf1!important;-webkit-text-fill-color:#fffaf1!important;opacity:1!important}
+html:root:root body .high-offline-aside a,html:root:root body .high-offline-aside a:visited{color:#fffaf1!important;-webkit-text-fill-color:#fffaf1!important;background:#426a61!important;border:1px solid #e0c587!important;text-decoration:none!important;font-size:16px!important}
+html:root:root body .high-offline-aside a:hover{background:#31544d!important}
+html:root:root body #departments{background:linear-gradient(145deg,#eee3d1,#f7eedf)!important}
+html:root:root body #departments .department-grid{display:grid!important;grid-template-columns:repeat(4,minmax(0,1fr))!important;gap:16px!important;margin-top:28px!important;align-items:stretch!important}
+html:root:root body #departments .department-card{display:flex!important;flex-direction:column!important;min-width:0!important;min-height:240px!important;background:#fffdf7!important;color:#263d40!important;border:1px solid #bea98a!important;border-top:5px solid #385c56!important}
+html:root:root body #departments .department-card :is(p,h3,span){color:#263d40!important;opacity:1!important}
+html:root:root body #departments .department-card p{font-size:16px!important;line-height:1.55!important}
+html:root:root body #departments .department-card .department-link{margin-top:auto!important;font-size:16px!important;min-height:44px!important}
+@media(max-width:940px){html:root:root body #departments .department-grid{grid-template-columns:repeat(2,minmax(0,1fr))!important}}
+@media(max-width:540px){html:root:root body #departments .department-grid{grid-template-columns:1fr!important}}
 </style></head>
 <body id="top" data-khae-campus-front-desk="true">
 
@@ -899,7 +913,16 @@ body main>.high-frontdesk .high-quick-grid a{min-width:0!important}
         <p class="kicker">Core academics remain central. The wider student remains connected.</p><h2>Academic &amp; Applied Departments</h2>
         <p>Academic departments open their course homes directly. Health, arts, technology, and Career are connected as federated learning halls rather than being mislabeled as missing departments.</p>
       </div>
-      <div class="department-grid" id="departmentGrid"></div>
+      <div class="department-grid" id="departmentGrid">
+<article class="department-card department-static" data-department-fallback="true"><span class="department-number">01</span><h3>Mathematics</h3><p>Number, algebra, geometry, trigonometry, statistics, calculus, and problem solving.</p><a class="department-link" href="courses/mathematics/index.html">Open Department</a></article>
+<article class="department-card department-static" data-department-fallback="true"><span class="department-number">02</span><h3>Science</h3><p>Biology, chemistry, physics, Earth systems, laboratory inquiry, and evidence.</p><a class="department-link" href="courses/science/index.html">Open Department</a></article>
+<article class="department-card department-static" data-department-fallback="true"><span class="department-number">03</span><h3>Language Arts</h3><p>Literature, composition, research, speaking, and media literacy.</p><a class="department-link" href="courses/language-arts/index.html">Open Department</a></article>
+<article class="department-card department-static" data-department-fallback="true"><span class="department-number">04</span><h3>History & Society</h3><p>History, civics, geography, government, economics, and culture.</p><a class="department-link" href="courses/social-studies/index.html">Open Department</a></article>
+<article class="department-card department-static" data-department-fallback="true"><span class="department-number">05</span><h3>Technology & Engineering</h3><p>Digital literacy, coding, engineering, and responsible technology use.</p><a class="department-link" href="#library">Browse Connected Resources</a></article>
+<article class="department-card department-static" data-department-fallback="true"><span class="department-number">06</span><h3>Arts & Music</h3><p>Visual arts, music, design, composition, and creative portfolios.</p><a class="department-link" href="#library">Browse Connected Resources</a></article>
+<article class="department-card department-static" data-department-fallback="true"><span class="department-number">07</span><h3>Health & Wellness</h3><p>Physical education, health literacy, safety, and wellness.</p><a class="department-link" href="https://vervenveda.com/medicament-hub.github.io/academy/high-school-health/">Open Department</a></article>
+<article class="department-card department-static" data-department-fallback="true"><span class="department-number">08</span><h3>Career & Life</h3><p>Career planning, professional skills, finance, and transition to adult life.</p><a class="department-link" href="https://vervenveda.com/Khaemenes_Higher_Learning.github.io/Career/">Open Department</a></article>
+</div>
     </div>
   </section>
 
@@ -1598,13 +1621,13 @@ body[data-khae-campus-front-desk="true"] #khaemenesFamilyBridge{display:none!imp
 /* Old beta/learner rails are retained by their scripts, but never compete with the canonical homepage dock. */
 </style>
 
-<script src="https://vervenveda.com/assets/vnv-header-autopopulate.js"></script>
+<script src="https://vervenveda.com/assets/vnv-header-autopopulate.js?v=2.0.0"></script>
 
 <script src="https://vervenveda.com/assets/vnv-333-ticker.js"></script>
 <script src="https://vervenveda.com/assets/vnv-ticker-autopopulate.js" data-vnv-ticker-autopopulate></script>
 <script>VNV_TICKER.autoPopulate({label:"High School Quick Links",max:12});</script>
 <script>VNV_HEADER.mount({"title":"Khaemenes Academy","subtitle":"High School · Grades 9–12","icon":"KA","home":"https://vervenveda.com/Khaemenes_Academy.github.io/?explore=1","actions":[{"label":"My Profile","href":"#student-portal"},{"label":"Grades 9–12","href":"#grades"},{"label":"All Courses","href":"./courses/"},{"label":"Directory","href":"#high-school-directory"},{"label":"Family","href":"https://vervenveda.com/Khaemenes_Academy.github.io/family/"}]});</script>
-<script src="https://vervenveda.com/assets/vnv-ecosystem-toolbar.js"></script>
+<script src="https://vervenveda.com/assets/vnv-ecosystem-toolbar.js?v=1.0.3"></script>
 <!-- High School landing-only navigation and contrast repair; no shared ecosystem files modified. -->
 <style id="high-home-priority-repair-20261029">
 /* Offline-learning announcement: charcoal with fully readable parchment text. */
