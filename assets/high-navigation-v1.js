@@ -124,6 +124,9 @@
   ["Higher Learning","https://vervenveda.com/Khaemenes_Higher_Learning.github.io/"]
  ];
  function fallbackMenu(){
+   // The campus homepage uses the official shared header exclusively.
+   if(!page||page==="index.html")return;
+   if(document.getElementById("vnvHeaderAutoPopulate")||window.VNV_HEADER?.mount)return;
    // Canonical Grade 9 header already loads the shared ecosystem menu; never inject a competing hamburger.
    if(document.body?.dataset?.grade09CanonicalChrome==="true")return;
    if(document.getElementById("menuButton") && (document.getElementById("drawerBg")||document.getElementById("menuOverlay")))return;
