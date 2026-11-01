@@ -716,6 +716,18 @@ body .vnv-header-menu-button :is(span,svg){color:#fff8e9!important;stroke:#fff8e
 body .vnv-header-menu-button:focus-visible{outline:3px solid #f1cc84!important;outline-offset:3px!important}
 /* Canonical menu already owns the ecosystem; hide only the redundant shortcut. */
 body .vnv-header-actions a:is([href="#ecosystem"],[href="#vnv-ecosystem-menu"]),body .vnv-header-actions button[data-ecosystem-shortcut]{display:none!important}
+</style><style id="high-frontdesk-grades-color-separation-20261101">
+/* Two adjacent sections, clearly separated without changing campus hero or app UI. */
+body main>.high-frontdesk{background:linear-gradient(135deg,#e4eee9 0%,#eff2e8 51%,#dfe9ee 100%)!important;border-top:3px solid #7aa497!important;border-bottom:3px solid #7aa497!important;padding-block:clamp(32px,4vw,58px)!important}
+body main>.high-frontdesk .high-desk{background:#fffdf7!important;border:1px solid #9bbeb2!important;border-top:5px solid #387c70!important;box-shadow:0 15px 34px rgba(19,49,49,.12)!important;border-radius:7px!important}
+body main>.high-frontdesk .high-desk :is(h2,p,strong,small){color:#203b38!important;opacity:1!important}
+body main>#grades{background:linear-gradient(140deg,#f5e8d5 0%,#f0e9df 52%,#eee5f2 100%)!important;border-bottom:3px solid #a89bb5!important}
+body main>#grades .heading h2{color:#273d52!important}
+body main>#grades .heading>p:not(.kicker){color:#354b52!important}
+body main>#grades .grade-card{background:#fffdf8!important;border:1px solid #b5a9b9!important;border-top:4px solid #9b7f60!important;box-shadow:0 8px 23px rgba(37,43,61,.09)!important}
+body main>#grades .grade-card :is(h3,p,strong,small){color:#283d46!important;opacity:1!important}
+body main>.high-frontdesk .high-quick-grid a{min-width:0!important}
+@media(max-width:650px){body main>.high-frontdesk{padding-block:28px!important}}
 </style></head>
 <body id="top" data-khae-campus-front-desk="true">
 
@@ -1672,7 +1684,7 @@ html:root:root body footer.high-school-footer .high-footer-inquiry{font-size:12p
 /* Override only the canonical injected header, not its enriched dropdown. */
 #vnvHeaderAutoPopulate .vnv-header-menu-button{background:#243038!important;color:#fff8e9!important;border:1px solid #b48b45!important}
 #vnvHeaderAutoPopulate .vnv-header-lines,#vnvHeaderAutoPopulate .vnv-header-lines::before,#vnvHeaderAutoPopulate .vnv-header-lines::after{background:#fff8e9!important}
-#vnvHeaderAutoPopulate .vnv-header-actions a{color:#fff8e9!important;background:#243038!important;border:1px solid #b48b45!important;min-height:34px!important;border-radius:7px!important}
+#vnvHeaderAutoPopulate .vnv-header-actions a{background:#243038!important;border:1px solid #b48b45!important;min-height:34px!important;border-radius:7px!important}
 #vnvHeaderAutoPopulate .vnv-header-actions a:hover{background:#3a4d56!important}
 #vnvHeaderAutoPopulate .vnv-header-inner{gap:12px!important}
 #vnvHeaderAutoPopulate .vnv-header-menu-button:focus-visible{outline:3px solid #f1cc84!important;outline-offset:3px!important}
