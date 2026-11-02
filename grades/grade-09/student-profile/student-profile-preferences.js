@@ -52,7 +52,7 @@ function apply(value=read()){
 function write(value){
  try{
   const owner=activeLearner(),p=normalize(value);
-  if(activeLearner()!==owner)return false;
+  if(!owner||activeLearner()!==owner)return false;
   localStorage.setItem(key(),JSON.stringify({...p,updatedAt:new Date().toISOString()}));
   window.KhaemenesStudentProfileV2?.updateWorkspace?.({theme:p.theme,density:p.density},owner);
   apply(p);
@@ -65,6 +65,7 @@ function write(value){
 function clear(){
  try{
   const owner=activeLearner();
+  if(!owner)return false;
   localStorage.removeItem(key());
   window.KhaemenesStudentProfileV2?.updateWorkspace?.({theme:"academy",density:"comfortable"},owner);
   apply(DEFAULT);return true;
