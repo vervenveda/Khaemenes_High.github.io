@@ -108,7 +108,9 @@ function data(){
   return p;
 }
 document.getElementById('saveProfile').onclick=()=>{
-  const learner=activeLearner(),p=data();
+  const learner=activeLearner();
+  if(!learner?.learnerId){status.hidden=false;status.textContent='Choose your existing Academy learner profile before saving. Your entries remain on this page; nothing was overwritten.';return}
+  const p=data();
   if(!write(profileKey(),p)){status.hidden=false;status.textContent='Profile could not be saved on this device.';return}
   const list=value=>String(value||'').split(/[\n,]+/).map(x=>x.trim()).filter(Boolean);
   if(learner?.learnerId&&window.KhaemenesStudentProfileV2){
@@ -142,8 +144,8 @@ load();
   }
   function sync(p=design.read()){Object.entries(controls).forEach(([key,node])=>node.value=p[key]);mark.textContent=design.avatarText(initials(),p)}
   document.getElementById('previewDesign').onclick=()=>{const p=values();design.apply(p);mark.textContent=design.avatarText(initials(),p);status.hidden=false;status.textContent='Preview applied. Save My Design to keep it for this learner.'};
-  document.getElementById('saveDesign').onclick=()=>{const p=values();const ok=design.write(p);mark.textContent=design.avatarText(initials(),p);status.hidden=false;status.textContent=ok?'Design saved for the active learner.':'Design could not be saved on this device.'};
-  document.getElementById('resetDesign').onclick=()=>{design.clear();sync(design.read());status.hidden=false;status.textContent='Academy layout restored for this learner.'};
+  document.getElementById('saveDesign').onclick=()=>{const p=values();const ok=design.write(p);mark.textContent=design.avatarText(initials(),p);status.hidden=false;status.textContent=ok?'Design saved for the active learner.':'Choose your existing learner profile and ensure browser storage is available before saving.'};
+  document.getElementById('resetDesign').onclick=()=>{const ok=design.clear();if(ok)sync(design.read());status.hidden=false;status.textContent=ok?'Academy layout restored for this learner.':'Select your existing Academy learner profile before resetting design.'};
   document.getElementById('name').addEventListener('input',()=>{mark.textContent=design.avatarText(initials(),values())});
   sync();
 })();
