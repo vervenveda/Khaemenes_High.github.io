@@ -1113,6 +1113,7 @@ html:root:root body main>.section.final .section-inner>.kicker{font-size:16px!im
   const PINNED_KEY = "khaemenes-high-pinned-courses-v2";
   const FAVORITES_KEY = "khaemenes-high-resource-favorites-v2";
   const REGISTRY_URL = "https://vervenveda.com/assessment-engine/mentor/registry/ecosystem-resources.json";
+  const LOCAL_MANIFEST_URL = "./mentor-manifest.json";
   const $ = id => document.getElementById(id);
   const $$ = (selector,root=document) => [...root.querySelectorAll(selector)];
 
@@ -1198,6 +1199,7 @@ html:root:root body main>.section.final .section-inner>.kicker{font-size:16px!im
   ];
 
   const RESOURCE_CATEGORIES = {
+    courses:"High School Courses",
     all:"All High School Resources",
     research:"Research & Humanities",
     professional:"Writing, Technology & Professional",
@@ -1231,7 +1233,7 @@ html:root:root body main>.section.final .section-inner>.kicker{font-size:16px!im
 
   const BLOCKED = new Set(["admin-only","restricted","archived","campaign","unclassified"]);
   let resources = [...CORE_RESOURCES];
-  let federationMeta = {generatedAt:null,error:null};
+  let federationMeta = {generatedAt:null,error:null,localManifest:false};
 
   const readJSON = (key,fallback) => { try{ const raw=localStorage.getItem(key); return raw?JSON.parse(raw):fallback; }catch{return fallback;} };
   const writeJSON = (key,value) => { try{ localStorage.setItem(key,JSON.stringify(value)); return true; }catch{return false;} };
@@ -1443,7 +1445,9 @@ html:root:root body main>.section.final .section-inner>.kicker{font-size:16px!im
 
   function classifyResource(r){
     const text=resourceText(r);
+    const type=normalize(r?.resourceType);
     const has=(...terms)=>terms.some(term=>text.includes(normalize(term)));
+    if(type.includes("course")) return "courses";
     if(has("career","employment","resume","interview","professional development","career readiness")) return "career";
     if(has("art","artist","music","audio","video","media","creative","gallery","composition")) return "creative";
     if(has("health","medicine","wellness","biology","science","environment","weather","fitness","physical education")) return "stem";
@@ -1482,37 +1486,81 @@ html:root:root body main>.section.final .section-inner>.kicker{font-size:16px!im
     return [...map.values()];
   }
 
+  function mapDirectoryResource(r,{repositoryFallback="Verve N Veda",manifestPath=null}={}){
+    return {
+      id:r.id||`resource-${Math.random().toString(36).slice(2)}`,
+      title:r.title||"Connected Resource",
+      category:classifyResource(r),
+      kind:r.resourceType||r.classification||"Resource",
+      icon:(r.title||"R").replace(/[^A-Za-z0-9]/g,"").slice(0,2).toUpperCase()||"R",
+      url:r.url,
+      description:r.description||"Connected Verve N Veda learning resource.",
+      repository:r.repository||r.sourceId||repositoryFallback,
+      classification:r.classification||"",
+      resourceType:r.resourceType||"",
+      learningValue:r.learningValue||"",
+      subjects:[...(r.subjects||[])],
+      domains:[...(r.domains||[])],
+      skills:[...(r.skills||[])],
+      tags:[...(r.tags||[])],
+      manifestPath:r.manifestPath||manifestPath
+    };
+  }
+
   async function loadFederation(){
-    try{
-      const response=await fetch(REGISTRY_URL,{cache:"no-store"});
-      if(!response.ok) throw new Error(`registry ${response.status}`);
-      const payload=await response.json();
-      const dynamic=(Array.isArray(payload.resources)?payload.resources:[])
+    const errors=[];
+    let registryGeneratedAt=null;
+    let localLoaded=false;
+    const dynamic=[];
+
+    const [localResult,registryResult]=await Promise.allSettled([
+      fetch(LOCAL_MANIFEST_URL,{cache:"no-store"}).then(async response=>{
+        if(!response.ok) throw new Error(`local manifest ${response.status}`);
+        return response.json();
+      }),
+      fetch(REGISTRY_URL,{cache:"no-store"}).then(async response=>{
+        if(!response.ok) throw new Error(`registry ${response.status}`);
+        return response.json();
+      })
+    ]);
+
+    if(localResult.status==="fulfilled"){
+      localLoaded=true;
+      const payload=localResult.value||{};
+      (Array.isArray(payload.resources)?payload.resources:[])
         .filter(federationEligible)
-        .map(r=>({
-          id:r.id||`registry-${Math.random().toString(36).slice(2)}`,
-          title:r.title||"Connected Resource",
-          category:classifyResource(r),
-          kind:r.resourceType||r.classification||"Resource",
-          icon:(r.title||"R").replace(/[^A-Za-z0-9]/g,"").slice(0,2).toUpperCase()||"R",
-          url:r.url,
-          description:r.description||"Connected Verve N Veda learning resource.",
-          repository:r.repository||r.sourceId||"Verve N Veda",
-          tags:[...(r.tags||[]),...(r.skills||[]),...(r.domains||[])],
-          manifestPath:r.manifestPath||null
-        }));
-      resources=mergeResources(dynamic);
-      federationMeta={generatedAt:payload.generatedAt||null,error:null};
-    }catch(error){
-      resources=[...CORE_RESOURCES];
-      federationMeta={generatedAt:null,error:String(error?.message||error)};
+        .forEach(r=>dynamic.push(mapDirectoryResource(
+          {...r,repository:payload.repository||"vervenveda/Khaemenes_High.github.io",sourceId:payload.sourceId||"khaemenes.high"},
+          {repositoryFallback:"vervenveda/Khaemenes_High.github.io",manifestPath:"mentor-manifest.json"}
+        )));
+    }else{
+      errors.push(String(localResult.reason?.message||localResult.reason||"local manifest unavailable"));
     }
+
+    if(registryResult.status==="fulfilled"){
+      const payload=registryResult.value||{};
+      registryGeneratedAt=payload.generatedAt||null;
+      (Array.isArray(payload.resources)?payload.resources:[])
+        .filter(r=>!localLoaded || r.repository!=="vervenveda/Khaemenes_High.github.io")
+        .filter(federationEligible)
+        .forEach(r=>dynamic.push(mapDirectoryResource(r,{manifestPath:r.manifestPath||null})));
+    }else{
+      errors.push(String(registryResult.reason?.message||registryResult.reason||"ecosystem registry unavailable"));
+    }
+
+    resources=mergeResources(dynamic);
+    federationMeta={
+      generatedAt:registryGeneratedAt,
+      error:errors.length?errors.join("; "):null,
+      localManifest:localLoaded
+    };
+
     renderResources();
     renderDirectory($("drawerSearch").value.trim());
     window.dispatchEvent(new CustomEvent("khaemenes-high-directory-ready",{detail:directorySummary()}));
   }
 
-  const resourceState={query:"",category:"all",favorites:false};
+  const resourceState={query:"",category:"courses",favorites:false};
   function getFavorites(){ const raw=readJSON(FAVORITES_KEY,[]); return Array.isArray(raw)?raw:[]; }
   function setFavorites(value){ writeJSON(FAVORITES_KEY,[...new Set(value)]); $("favoriteCount").textContent=getFavorites().length; }
   function filteredResources(){
@@ -1524,12 +1572,17 @@ html:root:root body main>.section.final .section-inner>.kicker{font-size:16px!im
   }
   function renderCategoryOptions(){
     $("category").innerHTML=Object.entries(RESOURCE_CATEGORIES).map(([v,l])=>`<option value="${v}">${l}</option>`).join("");
+    $("category").value=resourceState.category;
   }
   function renderResources(){
     const list=filteredResources(),favorites=getFavorites();
     const browsing=Boolean(resourceState.query || resourceState.category!=="all" || resourceState.favorites);
     $("toolGrid").innerHTML=(browsing?list.slice(0,36):[]).map(r=>`<article class="tool-card"><div class="tool-top"><span class="tool-icon">${escapeHTML(r.icon||"R")}</span><button class="favorite" type="button" data-favorite="${escapeHTML(r.id)}" aria-pressed="${favorites.includes(r.id)}" aria-label="${favorites.includes(r.id)?"Remove":"Add"} ${escapeHTML(r.title)} ${favorites.includes(r.id)?"from":"to"} My Shelf">${favorites.includes(r.id)?"★":"☆"}</button></div><span class="badge">${escapeHTML(r.kind||"Resource")}</span><h3>${escapeHTML(r.title)}</h3><p>${escapeHTML(r.description||"Connected learning resource.")}</p><span class="destination">${escapeHTML(RESOURCE_CATEGORIES[r.category]||r.category)}</span><a class="tool-link" href="${r.url}">Open Resource</a></article>`).join("");
-    const source=federationMeta.generatedAt?` · federation ${new Date(federationMeta.generatedAt).toLocaleString()}`:federationMeta.error?" · core fallback":"";
+    const source=federationMeta.localManifest
+      ? (federationMeta.generatedAt?" · course manifest + ecosystem federation":" · course manifest")
+      : federationMeta.generatedAt
+        ? ` · ecosystem federation ${new Date(federationMeta.generatedAt).toLocaleString()}`
+        : federationMeta.error?" · core fallback":"";
     $("status").textContent=browsing?`Showing ${Math.min(list.length,36)} of ${list.length} matching resources (${resources.length} indexed)${source}.`:`${resources.length} High School resources indexed${source}. Search or select a category to view matching cards.`;
     $("empty").classList.toggle("show",browsing && list.length===0);
     $("favoriteCount").textContent=favorites.length;
