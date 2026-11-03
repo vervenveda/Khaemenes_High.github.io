@@ -301,12 +301,11 @@ html:root:root body #grades{padding-top:52px}
 #grades{padding:clamp(48px,5vw,68px) 20px;scroll-margin-top:95px}
 #grades .heading{margin-bottom:28px}
 #grades .grade-grid{align-items:stretch}
-#grades .grade-card{min-height:390px;display:flex;flex-direction:column;gap:9px;padding:23px 19px;border-radius:7px;text-align:center}
+#grades .grade-card{min-height:248px;display:flex;flex-direction:column;gap:14px;padding:23px 19px;border-radius:7px;text-align:center}
 #grades .grade-card h3{margin-top:8px;font-size:25px;line-height:1.1}
 #grades .grade-card>p{margin:4px auto 0;max-width:30rem;line-height:1.6}
 .grade-card-actions{width:100%;display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:auto}
 .grade-card-actions a{min-height:42px;display:flex;align-items:center;justify-content:center;padding:8px 10px;border:1px solid var(--line-strong);border-radius:7px;color:var(--forest-deep);background:#faf8f2;font-size:10px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;text-align:center}
-.grade-card-actions a:first-child{border-color:rgba(180,139,69,.38);background:linear-gradient(145deg,#ead9b8,#caa96d);color:#14283d}
 .grade-language-slot{width:100%;margin-top:2px}
 .grade-language-details{width:100%;border:1px solid var(--line);border-radius:7px;background:#fffdf9;overflow:hidden}
 .grade-language-details summary{min-height:39px;display:flex;align-items:center;justify-content:center;padding:8px 11px;cursor:pointer;color:var(--forest-deep);font-size:10px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;list-style:none}
