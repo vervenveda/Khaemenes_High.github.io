@@ -281,15 +281,6 @@ body > #vnv-language-switch{
   min-height:40px;width:fit-content;max-width:calc(100% - 20px);
   margin:8px auto 10px;
 }
-/* High School homepage only: one charcoal translation toolbar beneath the header. */
-body[data-khae-campus-front-desk="true"] > #vnv-language-switch{
-  width:100%;max-width:100%;margin:0 auto;min-height:48px;
-  border-color:#202724;border-radius:0;background:#202724;
-  color:#fff8e9;box-shadow:none;
-}
-body[data-khae-campus-front-desk="true"] > #vnv-language-switch label{
-  color:#fff8e9;
-}
 #vnv-language-select{
   min-height:40px;min-width:104px;max-width:155px;
   padding:5px 8px;border-color:rgba(87,74,48,.26);background:#fffdf9;
