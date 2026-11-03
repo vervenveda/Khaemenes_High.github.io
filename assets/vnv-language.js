@@ -307,8 +307,11 @@ function makeSelector(){
  select.setAttribute("aria-label","Choose interface language");
  for(const c of CODES){const opt=document.createElement("option");opt.value=c;opt.textContent=META[c][0];select.append(opt)}
  select.value=lang;wrap.append(label,select);addCoverageControl(wrap);
+ const explicitMount=document.querySelector("[data-vnv-language-mount]");
  let target;
- if(document.querySelector(".site-header .header-inner")){
+ if(explicitMount){
+  explicitMount.append(wrap);
+ }else if(document.querySelector(".site-header .header-inner")){
   const main=document.querySelector("main");
   if(main)main.before(wrap);else document.body.append(wrap);
   const drawer=document.getElementById("menuDrawer");
