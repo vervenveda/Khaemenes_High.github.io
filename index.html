@@ -690,12 +690,15 @@ html body main > section.section.final .section-inner .button-primary{background
 html body main > section.section.final .section-inner .button-secondary{background:#fffdf8!important;color:#243038!important;-webkit-text-fill-color:#243038!important;border:1px solid #b48b45!important}
 </style>
 <style id="high-section-title-hierarchy-20261029">
-/* Section headings follow the same fluid scale as the Academy hero, exactly 3px smaller. */
+/* Major High School section headings are 44px Cinzel.
+   Preserve card headings and the independent directory drawer sizes. */
 html:root:root body main > .section .heading h2,
 html:root:root body main > .section.final .section-inner > h2,
-html:root:root body main > .high-frontdesk .high-desk h2 {
-  font-size:clamp(33px,calc(5.1vw - 9px),63px)!important;
-  line-height:1.15!important;
+html:root:root body main > .high-frontdesk .high-desk h2,
+html:root:root body main > .high-offline-aside h2 {
+  font-size:44px!important;
+  line-height:1.16!important;
+  font-family:var(--ceremonial)!important;
   font-weight:400!important;
   text-wrap:balance;
 }
@@ -810,7 +813,7 @@ html:root:root body main #pathways .pathway-link :is(p,li){font-size:16px!import
 html:root:root body main #whole-student .whole-card>a{min-height:60px!important;width:100%!important;font-size:16px!important}
 @media(max-width:540px){html:root:root body main #departments .department-card{min-height:300px!important}html:root:root body main #pathways .pathway-link{min-height:310px!important}}
 </style><style id="high-closing-heading-hierarchy-20261101">
-html:root:root body main>.section.final .section-inner>h2{font-size:clamp(34px,4.2vw,56px)!important;line-height:1.18!important;color:#243038!important}
+html:root:root body main>.section.final .section-inner>h2{font-size:44px!important;line-height:1.16!important;font-family:var(--ceremonial)!important;color:#243038!important}
 html:root:root body main>.section.final .section-inner>.kicker{font-size:16px!important;line-height:1.5!important;letter-spacing:.055em!important;text-transform:none!important;color:#6b5031!important;margin:0 auto 12px!important}
 </style></head>
 <body id="top" data-khae-campus-front-desk="true">
@@ -1685,9 +1688,15 @@ html body main #portals .legacy-family-tools>summary{color:#193d32;cursor:pointe
 </style>
 <style id="high-campus-topology-polish">
 /* Uniform dark breadcrumb band and deliberate space before the High School Front Desk. */
-body .breadcrumb-bar,html:root:root body .breadcrumb-bar{background:#243038!important;border-bottom:1px solid #384951!important;color:#f3ede0!important}
-body .breadcrumb-bar .breadcrumbs,body .breadcrumb-bar .breadcrumbs a,body .breadcrumb-bar .breadcrumbs span{color:#f3ede0!important;font-weight:400!important}
-body .breadcrumb-bar .breadcrumbs a:hover,body .breadcrumb-bar .breadcrumbs a:focus-visible{color:#f1cc84!important}
+/* Only the High School breadcrumb strip; global header and translation UI are unchanged. */
+html:root:root body > .breadcrumb-bar{background:#202724!important;background-image:none!important;border-bottom:1px solid #384951!important;color:#fff8e9!important}
+html:root:root body > .breadcrumb-bar .breadcrumbs,
+html:root:root body > .breadcrumb-bar .breadcrumbs a,
+html:root:root body > .breadcrumb-bar .breadcrumbs span{color:#fff8e9!important;-webkit-text-fill-color:#fff8e9!important;font-weight:400!important}
+html:root:root body > .breadcrumb-bar .breadcrumbs a{margin-inline:2px!important}
+html:root:root body > .breadcrumb-bar .breadcrumbs a:hover,
+html:root:root body > .breadcrumb-bar .breadcrumbs a:focus-visible{color:#f1cc84!important;-webkit-text-fill-color:#f1cc84!important}
+html:root:root body #vnvHeaderAutoPopulate .vnv-header-actions a{margin-inline:2px!important}
 html:root:root body .high-frontdesk{margin-top:28px!important;padding-top:0!important;position:relative}
 html:root:root body .high-desk{border-radius:7px;box-shadow:0 9px 24px rgba(10,27,33,.09)}
 /* The family-school bridge keeps learner continuity active, but its floating notice duplicates the header and Front Desk on this homepage. */
@@ -1715,7 +1724,7 @@ body main #departments .department-card :is(a.department-link,button.department-
 </style>
 <style id="high-hero-type-spacing-20261029">
 /* Khaemenes High canonical hero: preserve the approved dark backdrop and geometry.
-   Typography only: institutional eyebrow 33px Cinzel, page title 44px Cinzel,
+   Typography only: institutional eyebrow 33px Cinzel, page title 55px Cinzel,
    supporting copy Brandon Grotesque / Nunito >=16px. */
 html:root:root body .high-frontdesk-hero .eyebrow{
   font:400 33px/1.18 var(--ceremonial)!important;
@@ -1724,7 +1733,7 @@ html:root:root body .high-frontdesk-hero .eyebrow{
   margin-bottom:3px!important;
 }
 html:root:root body .high-frontdesk-hero h1{
-  font:400 44px/1.16 var(--ceremonial)!important;
+  font:400 55px/1.16 var(--ceremonial)!important;
   letter-spacing:.01em!important;
   margin-top:13px!important;
   margin-bottom:3px!important;
@@ -1735,6 +1744,9 @@ html:root:root body .high-frontdesk-hero .high-hero-sub{
   text-transform:none!important;
   margin-top:16px!important;
   margin-bottom:3px!important;
+}
+@media(max-width:430px){
+  html:root:root body .high-frontdesk-hero h1{font-size:clamp(38px,11vw,55px)!important}
 }
 html:root:root body .high-frontdesk-hero .hero-lead{
   font:400 18px/1.6 var(--sans)!important;
