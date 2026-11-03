@@ -27,7 +27,33 @@ body main :is(.grade-card,.portal-card,.department-card,.pathway-card,.network-c
 body main :is(.grade-card,.portal-card,.department-card,.pathway-card,.network-card,.course-card,.high-desk) :is(.button-primary,.btn.primary,.card-link.primary){background:#294c40!important;color:#fff!important;border:1px solid #294c40!important}
 body main :is(.grade-card,.portal-card,.department-card,.pathway-card,.network-card,.course-card,.high-desk) :is(.button-secondary,.btn.secondary,.card-link:not(.primary)){background:#eee5d4!important;color:#19382f!important;border:1px solid #ae9979!important}
 body main #grades .grade-card-actions{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;width:100%}
-body main #grades .grade-card-actions>a{width:100%!important}
+/* Equal High School grade actions: a single source for both CLASSES and PROFILE. */
+html:root:root body main #grades .grade-card-actions>a{
+  box-sizing:border-box!important;display:flex!important;align-items:center!important;
+  justify-content:center!important;width:100%!important;min-width:0!important;
+  min-height:48px!important;height:48px!important;padding:9px 7px!important;
+  border:1px solid #27343c!important;border-radius:7px!important;
+  background:#27343c!important;color:#fff8e9!important;
+  -webkit-text-fill-color:#fff8e9!important;
+  font:400 16px/1.2 "Brandon Grotesque",Nunito,Arial,sans-serif!important;
+  letter-spacing:.025em!important;white-space:nowrap!important;text-align:center!important;
+  text-decoration:none!important;
+}
+html:root:root body main #grades .grade-card-actions>a:hover,
+html:root:root body main #grades .grade-card-actions>a:focus-visible{
+  background:#344954!important;color:#fff8e9!important;
+  -webkit-text-fill-color:#fff8e9!important;border-color:#b48b45!important;
+}
+html:root:root body main #grades .grade-card h3{
+  min-height:0!important;margin:2px 0 12px!important;
+  font:400 26px/1.2 var(--ceremonial)!important;
+  color:#243038!important;
+}
+html:root:root body main #grades .grade-card .grade-card-actions{
+  margin-top:auto!important;grid-template-columns:repeat(2,minmax(0,1fr))!important;
+}
+@media(max-width:540px){html:root:root body main #grades .grade-card .grade-card-actions{grid-template-columns:repeat(2,minmax(0,1fr))!important}}
+
 body main #portals .portal-links :is(a,button){background:#f4efe4!important;color:#19382f!important}
 body main .high-desk{width:min(100%,980px);margin-inline:auto}
 body main .high-desk .high-quick-grid>a{min-height:120px}
