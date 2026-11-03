@@ -1560,7 +1560,7 @@ html:root:root body main>.section.final .section-inner>.kicker{font-size:16px!im
     window.dispatchEvent(new CustomEvent("khaemenes-high-directory-ready",{detail:directorySummary()}));
   }
 
-  const resourceState={query:"",category:"courses",favorites:false};
+  const resourceState={query:"",category:"all",favorites:false};
   function getFavorites(){ const raw=readJSON(FAVORITES_KEY,[]); return Array.isArray(raw)?raw:[]; }
   function setFavorites(value){ writeJSON(FAVORITES_KEY,[...new Set(value)]); $("favoriteCount").textContent=getFavorites().length; }
   function filteredResources(){
