@@ -1,0 +1,205 @@
+/* ----- Original CSS block 8: high-legacy-family-tools-v1 ----- */
+
+.legacy-family-tools{margin-top:14px;border:1px solid var(--line,#d7d2c4);border-radius:7px;padding:10px 12px;background:rgba(255,255,255,.48)}.legacy-family-tools>summary{cursor:pointer;font-size:14px;font-weight:600}.legacy-family-tools .portal-links{margin-top:10px}
+
+/* ----- Original CSS block 9: high-home-approved-design-20261029 ----- */
+
+
+/* High School homepage only: Academy Front Desk typography and centered visual rhythm. */
+:root{--paper:#f4f0e7;--paper-bright:#fffdf8;--ink-soft:#384b42}
+body{font-family:"Brandon Grotesque",Nunito,"Avenir Next",Arial,sans-serif}
+body main :is(h1,h2,h3){font-family:Cinzel,Georgia,serif!important;font-weight:400!important;letter-spacing:0!important}
+body main :is(p,a,button,small,span){font-family:"Brandon Grotesque",Nunito,"Avenir Next",Arial,sans-serif}
+body main>.section,body main>.high-frontdesk{box-sizing:border-box;padding:clamp(52px,6.5vw,88px) 20px!important}
+body main>.section :is(.section-inner,.shell),body main>.high-frontdesk>.shell{width:min(100%,1120px);margin-inline:auto}
+body main>.section .heading,body main>.section.final .section-inner{text-align:center}
+body main>.section .heading h2{font-size:clamp(31px,3.9vw,48px)!important;line-height:1.2!important}
+body main>.section .heading p{font-size:14px!important;line-height:1.65!important}
+body main>#grades,body main>#departments,body main>#pathways,body main>#transition,body main>.high-frontdesk{background:#f4f0e7!important;color:#1d3029!important}
+body main>#portals,body main>#whole-student,body main>#library,body main>#network{background:linear-gradient(135deg,#2c3a41,#192b34)!important;color:#fff8ea!important}
+body main :is(#portals,#whole-student,#library,#network) :is(.heading h2,.section-inner>h2){color:#fff8eb!important}
+body main :is(#portals,#whole-student,#library,#network) :is(.heading>p,.section-inner>p){color:#e6e6df!important;opacity:1!important}
+body main :is(.grade-card,.portal-card,.department-card,.pathway-card,.network-card,.course-card,.high-quick-grid>a){box-sizing:border-box;min-width:0;background:#fffdf8!important;color:#19382f!important;border:1px solid #bfcbc1!important;border-radius:7px!important;box-shadow:0 7px 22px rgba(13,35,32,.1);text-align:center}
+body main :is(.grade-card,.portal-card,.department-card,.pathway-card,.network-card,.course-card) :is(h2,h3,p,small){color:#234237!important;opacity:1!important}
+body main :is(.grade-grid,.portal-grid,.department-grid,.pathway-grid,.network-grid,.high-quick-grid){align-items:stretch;justify-content:center}
+body main :is(.grade-card,.portal-card,.department-card,.pathway-card,.network-card,.course-card) :is(.actions,.grade-card-actions,.portal-links){margin-top:auto;align-items:stretch;gap:8px}
+body main :is(.grade-card,.portal-card,.department-card,.pathway-card,.network-card,.course-card,.high-desk) :is(.button,.btn,.card-link,.portal-links a,.portal-links button),body main .hero-actions .button,body main>.section.final .button{box-sizing:border-box!important;min-width:0!important;min-height:42px!important;height:auto!important;padding:9px 10px!important;border-radius:7px!important;font:400 11px/1.3 "Brandon Grotesque",Nunito,Arial,sans-serif!important;letter-spacing:0!important;white-space:normal!important;text-align:center!important;display:inline-flex;align-items:center;justify-content:center;overflow-wrap:normal}
+body main :is(.grade-card,.portal-card,.department-card,.pathway-card,.network-card,.course-card,.high-desk) :is(.button-primary,.btn.primary,.card-link.primary){background:#294c40!important;color:#fff!important;border:1px solid #294c40!important}
+body main :is(.grade-card,.portal-card,.department-card,.pathway-card,.network-card,.course-card,.high-desk) :is(.button-secondary,.btn.secondary,.card-link:not(.primary)){background:#eee5d4!important;color:#19382f!important;border:1px solid #ae9979!important}
+body main #grades .grade-card-actions{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;width:100%}
+body main #grades .grade-card-actions>a{width:100%!important}
+body main #portals .portal-links :is(a,button){background:#f4efe4!important;color:#19382f!important}
+body main .high-desk{width:min(100%,980px);margin-inline:auto}
+body main .high-desk .high-quick-grid>a{min-height:120px}
+body main .high-frontdesk-hero .hero-actions{gap:10px;justify-content:center}
+@media(max-width:600px){body main>.section,body main>.high-frontdesk{padding:48px 12px!important}body main #grades .grade-card-actions{grid-template-columns:1fr}}
+
+
+/* ----- Original CSS block 10: high-final-authoritative-style ----- */
+
+
+/* Single authoritative closing-section definition, present before first paint. */
+html body main > section.section.final{background:#f4f0e7!important;background-image:none!important;color:#243038!important}
+html body main > section.section.final .section-inner :is(.kicker,h2,p){color:#243038!important;-webkit-text-fill-color:#243038!important;opacity:1!important;text-shadow:none!important}
+html body main > section.section.final .section-inner p:not(.kicker){color:#384b42!important;-webkit-text-fill-color:#384b42!important}
+html body main > section.section.final .section-inner .button-primary{background:#243038!important;color:#fff8e9!important;-webkit-text-fill-color:#fff8e9!important;border:1px solid #243038!important}
+html body main > section.section.final .section-inner .button-secondary{background:#fffdf8!important;color:#243038!important;-webkit-text-fill-color:#243038!important;border:1px solid #b48b45!important}
+
+
+/* ----- Original CSS block 11: high-section-title-hierarchy-20261029 ----- */
+
+
+/* Major High School section headings are 44px Cinzel.
+   Preserve card headings and the independent directory drawer sizes. */
+html:root:root body main > .section .heading h2,
+html:root:root body main > .section.final .section-inner > h2,
+html:root:root body main > .high-frontdesk .high-desk h2,
+html:root:root body main > .high-offline-aside h2 {
+  font-size:44px!important;
+  line-height:1.16!important;
+  font-family:var(--ceremonial)!important;
+  font-weight:400!important;
+  text-wrap:balance;
+}
+
+
+/* ----- Original CSS block 12: high-typography-header-refresh-20261101 ----- */
+
+
+/* High School-only typography and canonical-header presentation; never change shared scripts. */
+body main .section>.section-inner>.heading>h2{font-size:clamp(32px,4vw,52px)!important;line-height:1.16!important;font-weight:400!important}
+body main .section>.section-inner>.heading>.kicker{font-size:12px!important;font-weight:400!important;line-height:1.4!important}
+body main .section p:not(.kicker),body main .section li,body main .section .portal-card>p,body main .section .grade-card p,body main .section .department-card p,body main .section .course-card p,body main .section .pathway-card p,body main .section .network-card p,body main .section .whole-card p,body main .section .profile-summary,body main .section .portal-note,body main .section .status,body main .section .tool-card p,body main .high-frontdesk p:not(.kicker),body main .hero p:not(.eyebrow){font-size:16px!important;line-height:1.6!important}
+body main .section :is(a.button,button,.button,.portal-button,.card-link,.department-link,.tool-link),body main .section .course-actions a,body main .section .portal-links :is(a,button),body main .hero :is(a.button,button),body main .high-frontdesk :is(a,button){font-size:16px!important;line-height:1.35!important;min-height:44px;white-space:normal;overflow-wrap:break-word}
+html:root:root body main #whole-student .whole-card a{font-size:16px!important;line-height:1.35!important}
+body .breadcrumb-bar,html:root:root body .breadcrumb-bar{box-sizing:border-box;width:100%!important;max-width:none!important;background:#243038!important;color:#fff8e9!important;border-bottom:1px solid #b48b45!important}
+body .breadcrumb-bar .shell{width:100%!important;max-width:none!important;background:transparent!important;margin:0 auto!important;justify-content:center!important}
+body .breadcrumb-bar :is(a,span){color:#fff8e9!important}
+body .breadcrumb-bar a:hover{color:#f1cc84!important}
+body .vnv-header-actions a:is([href="#ecosystem"],[href="#vnv-ecosystem-menu"]),body .vnv-header-actions button[data-ecosystem-shortcut]{display:none!important}
+
+
+/* ----- Original CSS block 13: high-frontdesk-grades-color-separation-20261101 ----- */
+
+
+/* Two adjacent sections, clearly separated without changing campus hero or app UI. */
+body main>.high-frontdesk{background:linear-gradient(135deg,#225b50 0%,#194c59 55%,#173c5c 100%)!important;border-top:3px solid #c9a044!important;border-bottom:3px solid #c9a044!important;padding-block:clamp(32px,4vw,58px)!important}
+body main>.high-frontdesk .high-desk{background:#fffdf7!important;border:1px solid #c9a044!important;border-top:5px solid #7e344d!important;box-shadow:0 15px 34px rgba(19,49,49,.12)!important;border-radius:7px!important}
+body main>.high-frontdesk .high-desk :is(h2,p,strong,small){color:#203b38!important;opacity:1!important}
+body main>#grades{background:linear-gradient(135deg,#173d60 0%,#294965 52%,#542d48 100%)!important;border-bottom:3px solid #c9a044!important}
+body main>#grades .heading h2{color:#fff8ed!important}
+body main>#grades .heading>p:not(.kicker){color:#fff8ed!important}
+body main>#grades .grade-card{background:#fffdf8!important;border:1px solid #d4b879!important;border-top:4px solid #c49a37!important;box-shadow:0 8px 23px rgba(37,43,61,.09)!important}
+body main>#grades .grade-card :is(h3,p,strong,small){color:#283d46!important;opacity:1!important}
+body main>.high-frontdesk .high-quick-grid a{min-width:0!important}\nbody main>#grades .heading>.kicker{color:#f6c85f!important}\nbody main>#grades .grade-card:nth-child(1){border-top-color:#28634e!important}\nbody main>#grades .grade-card:nth-child(2){border-top-color:#315e94!important}\nbody main>#grades .grade-card:nth-child(3){border-top-color:#863e54!important}\nbody main>#grades .grade-card:nth-child(4){border-top-color:#c49a37!important}
+@media(max-width:650px){body main>.high-frontdesk{padding-block:28px!important}}
+
+
+/* ----- Original CSS block 14: high-offline-departments-and-official-chrome-20261101 ----- */
+
+
+/* Offline: dark scholarly band and explicit button ink (including Safari text fill). */
+html:root:root body .high-offline-aside{background:#183d32!important;background-image:none!important;color:#fffaf0!important;border:2px solid #bb9b62!important;box-shadow:0 12px 30px rgba(15,25,33,.18)!important}
+html:root:root body .high-offline-aside h2,html:root:root body .high-offline-aside p{color:#fffaf1!important;-webkit-text-fill-color:#fffaf1!important;opacity:1!important}
+html:root:root body .high-offline-aside a,html:root:root body .high-offline-aside a:visited{color:#fffaf1!important;-webkit-text-fill-color:#fffaf1!important;background:#243038!important;border:1px solid #e0c587!important;text-decoration:none!important;font-size:16px!important}
+html:root:root body .high-offline-aside a:hover{background:#31544d!important}
+html:root:root body #departments{background:linear-gradient(145deg,#eee3d1,#f7eedf)!important}
+html:root:root body #departments .department-grid{display:grid!important;grid-template-columns:repeat(4,minmax(0,1fr))!important;gap:16px!important;margin-top:28px!important;align-items:stretch!important}
+html:root:root body #departments .department-card{display:flex!important;flex-direction:column!important;min-width:0!important;min-height:240px!important;background:#fffdf7!important;color:#263d40!important;border:1px solid #bea98a!important;border-top:5px solid #385c56!important}
+html:root:root body #departments .department-card :is(p,h3,span){color:#263d40!important;opacity:1!important}
+html:root:root body #departments .department-card p{font-size:16px!important;line-height:1.55!important}
+html:root:root body #departments .department-card .department-link{margin-top:auto!important;font-size:16px!important;min-height:44px!important}
+@media(max-width:940px){html:root:root body #departments .department-grid{grid-template-columns:repeat(2,minmax(0,1fr))!important}}
+@media(max-width:540px){html:root:root body #departments .department-grid{grid-template-columns:1fr!important}}
+
+
+/* ----- Original CSS block 15: high-whole-student-even-cards-20261101 ----- */
+
+
+/* Only the four Whole-Student Federation cards; retain all link destinations. */
+html:root:root body main #whole-student .whole-grid{align-items:stretch!important}
+html:root:root body main #whole-student .whole-card{min-height:350px!important;height:100%!important;padding:24px 18px!important;display:flex!important;flex-direction:column!important}
+html:root:root body main #whole-student .whole-card p{font-size:16px!important;line-height:1.6!important}
+html:root:root body main #whole-student .whole-card>a{
+  box-sizing:border-box!important;width:100%!important;min-height:60px!important;
+  margin-top:auto!important;padding:12px 10px!important;
+  display:flex!important;justify-content:center!important;align-items:center!important;
+  text-align:center!important;white-space:normal!important;overflow-wrap:break-word!important;
+  font-size:16px!important;line-height:1.3!important;font-weight:400!important;
+  color:#fff!important;-webkit-text-fill-color:#fff!important;border-radius:7px!important
+}
+html:root:root body main #whole-student .whole-card:nth-child(1)>a{background:#244f45!important;border:1px solid #244f45!important}
+html:root:root body main #whole-student .whole-card:nth-child(2)>a{background:#63394f!important;border:1px solid #63394f!important}
+html:root:root body main #whole-student .whole-card:nth-child(3)>a{background:#293f71!important;border:1px solid #293f71!important}
+html:root:root body main #whole-student .whole-card:nth-child(4)>a{background:#7b4438!important;border:1px solid #7b4438!important}
+html:root:root body main #whole-student .whole-card>a:hover{filter:brightness(1.13)}
+html:root:root body main #whole-student .whole-card>a:focus-visible{outline:3px solid #edc979!important;outline-offset:3px!important}
+@media(max-width:620px){html:root:root body main #whole-student .whole-card{min-height:310px!important}}
+
+
+/* ----- Original CSS block 16: high-pathways-accessible-connectivity-20261101 ----- */
+
+
+/* Linked, equal-height pathways; grounded existing campus destinations. */
+html:root:root body main #pathways{background:linear-gradient(135deg,#eee7d8 0%,#e5ece7 51%,#e6e2ed 100%)!important;border-top:2px solid #b2a388!important;border-bottom:2px solid #9faeac!important}
+html:root:root body main #pathways .heading h2{color:#243947!important}
+html:root:root body main #pathways .heading>p{color:#35484a!important;font-size:16px!important}
+html:root:root body main #pathways .pathway-grid{display:grid!important;grid-template-columns:repeat(4,minmax(0,1fr))!important;align-items:stretch!important;gap:16px!important}
+html:root:root body main #pathways .pathway-link{box-sizing:border-box!important;display:flex!important;flex-direction:column!important;min-width:0!important;width:100%!important;min-height:385px!important;height:100%!important;padding:24px 19px!important;text-decoration:none!important;text-align:center!important;background:#fffdf7!important;border:2px solid #acb9b0!important;border-top:6px solid #244f45!important;border-radius:7px!important;box-shadow:0 8px 22px rgba(28,38,46,.1)!important;color:#263a42!important}
+html:root:root body main #pathways .pathway-link:nth-child(2){border-top-color:#63394f!important}
+html:root:root body main #pathways .pathway-link:nth-child(3){border-top-color:#293f71!important}
+html:root:root body main #pathways .pathway-link:nth-child(4){border-top-color:#7b4438!important}
+html:root:root body main #pathways .pathway-link :is(h3,p,li,.department-number){color:#263a42!important;-webkit-text-fill-color:#263a42!important;opacity:1!important}
+html:root:root body main #pathways .pathway-link h3{font-size:clamp(23px,2.2vw,29px)!important;line-height:1.2!important;min-height:0!important}
+html:root:root body main #pathways .pathway-link :is(p,li){font-size:16px!important;line-height:1.55!important}
+html:root:root body main #pathways .pathway-link ul{width:100%!important;padding-left:20px!important;text-align:left!important;margin:13px 0 19px!important}
+html:root:root body main #pathways .pathway-cta{box-sizing:border-box;display:flex;align-items:center;justify-content:center;min-height:57px;width:100%;margin-top:auto;padding:12px;border-radius:7px;background:#244f45;color:#fff!important;-webkit-text-fill-color:#fff!important;font-size:16px!important;line-height:1.25!important;text-align:center}
+html:root:root body main #pathways .pathway-link:nth-child(2) .pathway-cta{background:#63394f}
+html:root:root body main #pathways .pathway-link:nth-child(3) .pathway-cta{background:#293f71}
+html:root:root body main #pathways .pathway-link:nth-child(4) .pathway-cta{background:#7b4438}
+html:root:root body main #pathways .pathway-link:hover{transform:translateY(-3px);box-shadow:0 12px 29px rgba(28,38,46,.18)!important}
+html:root:root body main #pathways .pathway-link:focus-visible{outline:4px solid #b48b45!important;outline-offset:4px!important}
+@media(max-width:950px){html:root:root body main #pathways .pathway-grid{grid-template-columns:repeat(2,minmax(0,1fr))!important}}
+@media(max-width:560px){html:root:root body main #pathways .pathway-grid{grid-template-columns:1fr!important}html:root:root body main #pathways .pathway-link{min-height:310px!important}}
+@media(prefers-reduced-motion:reduce){html:root:root body main #pathways .pathway-link:hover{transform:none}}
+
+
+/* ----- Original CSS block 17: high-crisp-parchment-departments-pathways-20261101 ----- */
+
+
+/* Scholarly cream, no pastel wash. Restrict changes to three established campus sections. */
+html:root:root body main #departments{background:#f7f1e4!important;background-image:none!important;border-top:3px solid #c49a37!important;border-bottom:2px solid #cdbb9a!important}
+html:root:root body main #departments .department-card{background:#fff9ef!important;border:1px solid #d8c6a3!important;min-height:350px!important;height:100%!important;padding:23px 15px!important}
+html:root:root body main #departments .department-card:nth-child(8n+1){border-top:5px solid #315e94!important}
+html:root:root body main #departments .department-card:nth-child(8n+2){border-top:5px solid #28634e!important}
+html:root:root body main #departments .department-card:nth-child(8n+3){border-top:5px solid #863e54!important}
+html:root:root body main #departments .department-card:nth-child(8n+4){border-top:5px solid #8b652c!important}
+html:root:root body main #departments .department-card:nth-child(8n+5){border-top:5px solid #24636a!important}
+html:root:root body main #departments .department-card:nth-child(8n+6){border-top:5px solid #624679!important}
+html:root:root body main #departments .department-card:nth-child(8n+7){border-top:5px solid #35614a!important}
+html:root:root body main #departments .department-card:nth-child(8n+8){border-top:5px solid #884337!important}
+html:root:root body main #departments .department-card :is(h3,p,.department-status){color:#25363c!important;opacity:1!important}
+html:root:root body main #departments .department-card p{font-size:16px!important;line-height:1.55!important}
+html:root:root body main #departments .department-card .department-link{box-sizing:border-box!important;width:100%!important;min-height:60px!important;margin-top:auto!important;padding:10px!important;display:flex!important;align-items:center!important;justify-content:center!important;text-align:center!important;font-size:16px!important;line-height:1.3!important;font-weight:400!important;white-space:normal!important;overflow-wrap:break-word!important;color:#fff!important;-webkit-text-fill-color:#fff!important}
+html:root:root body main #departments .department-card:nth-child(8n+1) .department-link{background:#315e94!important;border-color:#315e94!important}
+html:root:root body main #departments .department-card:nth-child(8n+2) .department-link{background:#28634e!important;border-color:#28634e!important}
+html:root:root body main #departments .department-card:nth-child(8n+3) .department-link{background:#863e54!important;border-color:#863e54!important}
+html:root:root body main #departments .department-card:nth-child(8n+4) .department-link{background:#805b24!important;border-color:#805b24!important}
+html:root:root body main #departments .department-card:nth-child(8n+5) .department-link{background:#24636a!important;border-color:#24636a!important}
+html:root:root body main #departments .department-card:nth-child(8n+6) .department-link{background:#624679!important;border-color:#624679!important}
+html:root:root body main #departments .department-card:nth-child(8n+7) .department-link{background:#35614a!important;border-color:#35614a!important}
+html:root:root body main #departments .department-card:nth-child(8n+8) .department-link{background:#884337!important;border-color:#884337!important}
+html:root:root body main #pathways{background:#f4efe4!important;background-image:none!important;border-top:2px solid #c49a37!important;border-bottom:2px solid #cdbb9a!important}
+html:root:root body main #pathways .pathway-link{background:#fff9ef!important;border-color:#d8c6a3!important;min-height:390px!important}
+html:root:root body main #pathways .pathway-link :is(p,li){font-size:16px!important;line-height:1.55!important}
+html:root:root body main #whole-student .whole-card>a{min-height:60px!important;width:100%!important;font-size:16px!important}
+@media(max-width:540px){html:root:root body main #departments .department-card{min-height:300px!important}html:root:root body main #pathways .pathway-link{min-height:310px!important}}
+
+
+/* ----- Original CSS block 18: high-closing-heading-hierarchy-20261101 ----- */
+
+
+html:root:root body main>.section.final .section-inner>h2{font-size:44px!important;line-height:1.16!important;font-family:var(--ceremonial)!important;color:#243038!important}
+html:root:root body main>.section.final .section-inner>.kicker{font-size:16px!important;line-height:1.5!important;letter-spacing:.055em!important;text-transform:none!important;color:#6b5031!important;margin:0 auto 12px!important}
+
+
