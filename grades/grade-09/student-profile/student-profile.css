@@ -470,3 +470,109 @@ body{background:linear-gradient(180deg,#e5ebe7 0%,#f3f0e8 48%,#e7ece7 100%);colo
 @media(max-width:690px){
   .grade09-profile-first .grade09-profile-actions{justify-content:center!important;}
 }
+
+
+/* Grade 09 photo-card compact layout 20261103 */
+/* Leave a distinct name/grade area for future learner personal information. */
+.grade09-profile-first .profile-row{
+  grid-template-columns:152px minmax(0,1fr)!important;
+  column-gap:18px!important;
+  row-gap:10px!important;
+}
+.grade09-profile-first .grade09-identity-details{
+  display:flex!important;flex-direction:column!important;align-items:flex-start!important;
+  gap:0!important;min-width:0!important;
+}
+.grade09-profile-first .grade09-identity-details > .profile-name{margin:0 0 2px!important;}
+.grade09-profile-first .grade09-identity-details > .subline{
+  margin:0 0 12px!important;
+  padding:0 0 7px!important;
+  min-height:28px!important;
+  line-height:1.4!important;
+}
+/* Keep the avatar prominent while the controls fit neatly beside it. */
+.grade09-profile-first #avatar.grade09-avatar-enhanced{
+  width:146px!important;height:146px!important;min-width:146px!important;min-height:146px!important;
+}
+.grade09-profile-first .grade09-photo-controls{
+  display:grid!important;
+  gap:5px!important;
+  margin-top:0!important;
+  width:100%!important;
+}
+.grade09-profile-first .grade09-photo-heading,
+.grade09-profile-first .grade09-photo-label{
+  font-size:15px!important;line-height:1.3!important;
+}
+.grade09-profile-first .grade09-photo-actions,
+.grade09-profile-first .grade09-frame-options{
+  display:flex!important;
+  flex-wrap:wrap!important;
+  align-items:center!important;
+  justify-content:flex-start!important;
+  gap:6px!important;
+}
+.grade09-profile-first .grade09-photo-button,
+.grade09-profile-first .grade09-frame-choice{
+  min-width:0!important;
+  width:105px!important;
+  height:35px!important;min-height:35px!important;
+  padding:5px 8px!important;
+  font-size:14px!important;line-height:1.25!important;
+  border-radius:7px!important;
+}
+.grade09-profile-first .grade09-photo-status{
+  min-height:0!important;margin:0!important;
+  font-size:14px!important;line-height:1.3!important;
+}
+.grade09-profile-first .grade09-photo-status:empty{display:none!important;}
+/* Only two deliberate identity actions, no oversized horizontal strip. */
+.grade09-profile-first .grade09-profile-actions{
+  display:flex!important;flex-wrap:wrap!important;
+  justify-content:flex-start!important;align-items:center!important;
+  width:auto!important;
+  max-width:100%!important;
+  gap:7px!important;
+  margin:9px 0 3px!important;
+  padding:0!important;
+  background:transparent!important;
+}
+.grade09-profile-first .grade09-profile-actions > :is(a,button),
+.grade09-profile-first .grade09-profile-actions > #openLearningJourney{
+  flex:0 0 auto!important;
+  min-width:0!important;
+  width:150px!important;
+  height:36px!important;min-height:36px!important;
+  padding:6px 9px!important;
+  font:400 14px/1.25 "Brandon Grotesque",Nunito,Arial,sans-serif!important;
+  color:#f8f0e3!important;
+  -webkit-text-fill-color:#f8f0e3!important;
+  background:#24372f!important;
+  border:1px solid #24372f!important;
+  border-radius:7px!important;
+  box-shadow:none!important;
+  opacity:1!important;
+  visibility:visible!important;
+}
+.grade09-profile-first .grade09-profile-actions > #openLearningJourney{
+  text-shadow:none!important;
+}
+.grade09-profile-first .grade09-identity-details > div:not(.grade09-photo-controls){
+  max-width:100%!important;
+}
+@media(max-width:690px){
+  .grade09-profile-first .profile-row{
+    grid-template-columns:1fr!important;
+    row-gap:12px!important;justify-items:center!important;
+  }
+  .grade09-profile-first .grade09-identity-details{
+    align-items:center!important;
+    text-align:center!important;
+    width:100%!important;
+  }
+  .grade09-profile-first .grade09-photo-actions,
+  .grade09-profile-first .grade09-frame-options,
+  .grade09-profile-first .grade09-profile-actions{
+    justify-content:center!important;
+  }
+}
