@@ -733,3 +733,47 @@ html:root{
     width:100%!important;
   }
 }
+
+/* Grade 09 unified background controls 20261103: matches identity control sizing. */
+html body .grade09-profile-first .grade09-background-controls{
+  display:flex!important;align-items:center!important;
+  gap:7px!important;flex-wrap:wrap!important;
+  margin:8px 0 0!important;
+  padding:0!important;
+  width:100%!important;
+  background:transparent!important;
+}
+html body .grade09-profile-first .grade09-background-label{
+  display:inline-flex!important;
+  gap:8px!important;align-items:center!important;
+  color:#30483d!important;
+  font:400 16px/1.35 "Brandon Grotesque",Nunito,Arial,sans-serif!important;
+}
+html body .grade09-profile-first .grade09-background-label input[type="color"]{
+  box-sizing:border-box!important;
+  width:46px!important;height:40px!important;min-width:46px!important;
+  padding:4px!important;cursor:pointer!important;
+  border:1px solid #b7a283!important;border-radius:7px!important;
+  background:#f8f3e9!important;
+}
+html body .grade09-profile-first .grade09-background-button{
+  box-sizing:border-box!important;
+  display:inline-flex!important;
+  align-items:center!important;justify-content:center!important;
+  min-width:94px!important;
+  height:40px!important;min-height:40px!important;
+  padding:7px 10px!important;
+  border:1px solid #b7a283!important;border-radius:7px!important;
+  background:#f8f3e9!important;color:#283b32!important;
+  font:400 16px/1.2 "Brandon Grotesque",Nunito,Arial,sans-serif!important;
+  cursor:pointer!important;
+}
+html body .grade09-profile-first .grade09-background-status{
+  flex:1 1 100%!important;
+  color:#43574d!important;
+  font:400 16px/1.35 "Brandon Grotesque",Nunito,Arial,sans-serif!important;
+}
+html body .grade09-profile-first .grade09-background-status:empty{display:none!important;}
+@media(max-width:760px){
+  html body .grade09-profile-first .grade09-background-controls{justify-content:center!important;}
+}
