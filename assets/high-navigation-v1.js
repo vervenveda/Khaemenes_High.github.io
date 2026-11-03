@@ -84,6 +84,8 @@
    return list;
  }
  function breadcrumbs(){
+   // Profiles have their own canonical five-link header; avoid duplicate breadcrumb shortcuts.
+   if(document.body?.dataset.highHideBreadcrumbs==="true")return;
    if(!page||document.querySelector('[aria-label="Breadcrumb"],[aria-label="Breadcrumbs"],.breadcrumb,.breadcrumbs,#highNavigationBreadcrumbs'))return;
    const entries=crumbList(),main=document.querySelector("main,[role=main]");
    if(entries.length<2||!main?.parentNode)return;
