@@ -1436,7 +1436,7 @@ html:root:root body main>.section.final .section-inner>.kicker{font-size:16px!im
 
   function renderDepartments(){
     $("departmentGrid").innerHTML=DEPARTMENTS.map(item=>`<article class="department-card ${item.mode}"><span class="department-number">${item.number}</span><h3>${escapeHTML(item.title)}</h3><span class="department-status">${escapeHTML(item.status)}</span><p>${escapeHTML(item.description)}</p>${item.url?`<a class="department-link" href="${item.url}">${escapeHTML(item.buttonLabel||item.title)}</a>`:`<button class="department-link" type="button" data-resource-category="${item.category}">${escapeHTML(item.buttonLabel||item.title)}</button>`}</article>`).join("");
-    $("[data-resource-category]").forEach(btn=>btn.addEventListener("click",()=>scrollToLibraryCategory(btn.dataset.resourceCategory)));
+    document.querySelectorAll("[data-resource-category]").forEach(btn=>btn.addEventListener("click",()=>scrollToLibraryCategory(btn.dataset.resourceCategory)));
   }
 
   function resourceText(r){
