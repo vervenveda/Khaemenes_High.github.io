@@ -354,3 +354,92 @@ body{background:linear-gradient(180deg,#e5ebe7 0%,#f3f0e8 48%,#e7ece7 100%);colo
 .top .hero h1{color:#fff9ed}
 .top .hero p{color:#e6ece7}
 @media(max-width:540px){.top .nav{justify-content:center}.top .navlinks{width:100%}.top .navlinks>a{flex:1 1 125px}}
+
+
+/* Grade 09 profile picture editor v1 — self-contained; no global toolbar/header changes. */
+.grade09-profile-first .profile-row{
+  display:grid!important;
+  grid-template-columns:158px minmax(0,1fr)!important;
+  align-items:start!important;
+  gap:26px!important;
+  text-align:left!important;
+}
+.grade09-profile-first #avatar.grade09-avatar-enhanced{
+  box-sizing:border-box!important;
+  width:150px!important;height:150px!important;min-width:150px!important;
+  min-height:150px!important;
+  margin:0!important;
+  border:4px solid #bd9555!important;
+  background:linear-gradient(145deg,#fff7df,#d7b56f)!important;
+  border-radius:50%!important;
+  font:400 52px/1 Cinzel,Georgia,serif!important;
+  display:grid!important;place-items:center!important;overflow:hidden!important;
+}
+.grade09-profile-first #avatar.grade09-avatar-enhanced[data-profile-frame="square"]{
+  border-radius:7px!important;
+}
+.grade09-profile-first #avatar.grade09-avatar-enhanced[data-profile-frame="heart"]{
+  border-radius:0!important;
+  clip-path:polygon(50% 95%,43% 88%,31% 76%,20% 64%,10% 51%,4% 39%,4% 25%,10% 13%,21% 7%,32% 7%,42% 13%,50% 24%,58% 13%,68% 7%,79% 7%,90% 13%,96% 25%,96% 39%,90% 51%,80% 64%,69% 76%,57% 88%)!important;
+}
+.grade09-profile-first #avatar.grade09-avatar-enhanced[data-profile-frame="star"]{
+  border-radius:0!important;
+  clip-path:polygon(50% 2%,63% 34%,98% 36%,71% 58%,80% 94%,50% 75%,20% 94%,29% 58%,2% 36%,37% 34%)!important;
+}
+.grade09-profile-first #avatar.grade09-avatar-enhanced .grade09-student-photo{
+  display:block!important;width:100%!important;height:100%!important;
+  max-width:none!important;object-fit:cover!important;
+  border-radius:inherit!important;
+}
+.grade09-profile-first .grade09-identity-details{min-width:0;}
+.grade09-profile-first .grade09-photo-controls{display:grid;gap:10px;margin-top:18px;min-width:0;}
+.grade09-profile-first .grade09-photo-heading,
+.grade09-profile-first .grade09-photo-label{
+  margin:0!important;color:#30483d!important;
+  font:400 16px/1.35 "Brandon Grotesque",Nunito,Arial,sans-serif!important;
+}
+.grade09-profile-first .grade09-photo-actions,
+.grade09-profile-first .grade09-frame-options{
+  display:flex!important;align-items:stretch!important;flex-wrap:wrap!important;
+  gap:8px!important;
+}
+.grade09-profile-first .grade09-photo-button,
+.grade09-profile-first .grade09-frame-choice{
+  box-sizing:border-box!important;min-height:42px!important;min-width:118px!important;
+  display:inline-flex!important;align-items:center!important;justify-content:center!important;
+  padding:9px 13px!important;border:1px solid #b7a283!important;border-radius:7px!important;
+  background:#f8f3e9!important;color:#283b32!important;
+  font:400 16px/1.3 "Brandon Grotesque",Nunito,Arial,sans-serif!important;
+  text-align:center!important;cursor:pointer!important;
+}
+.grade09-profile-first .grade09-photo-button:hover,
+.grade09-profile-first .grade09-frame-choice:hover{border-color:#b48b45!important;background:#f0e6d2!important;}
+.grade09-profile-first .grade09-frame-choice[aria-pressed="true"]{
+  border-color:#b48b45!important;background:#26372f!important;color:#fff7e9!important;
+  outline:2px solid #b48b45!important;outline-offset:1px!important;
+}
+.grade09-profile-first :is(.grade09-frame-choice,.grade09-photo-button):focus-visible{
+  outline:3px solid #b48b45!important;outline-offset:3px!important;
+}
+.grade09-profile-first .grade09-photo-button.is-disabled,
+.grade09-profile-first .grade09-frame-choice:disabled{
+  opacity:.55!important;cursor:not-allowed!important;
+}
+.grade09-profile-first .grade09-photo-file-input{
+  position:absolute!important;width:1px!important;height:1px!important;
+  opacity:0!important;overflow:hidden!important;
+}
+.grade09-profile-first .grade09-photo-status{
+  min-height:1.2em!important;margin:0!important;
+  font:400 16px/1.4 "Brandon Grotesque",Nunito,Arial,sans-serif!important;color:#4e6257!important;
+}
+@media(max-width:690px){
+  .grade09-profile-first .profile-row{
+    grid-template-columns:1fr!important;justify-items:center!important;gap:16px!important;
+  }
+  .grade09-profile-first #avatar.grade09-avatar-enhanced{margin-inline:auto!important;}
+  .grade09-profile-first .grade09-identity-details{width:100%;text-align:center;}
+  .grade09-profile-first .grade09-photo-actions,.grade09-profile-first .grade09-frame-options{
+    justify-content:center!important;
+  }
+}
