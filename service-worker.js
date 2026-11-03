@@ -1,6 +1,6 @@
 "use strict";
 
-const CACHE_VERSION = "khaemenes-high-v38-profile-navigation-20261023";
+const CACHE_VERSION = "khaemenes-high-v39-resource-directory-20261103";
 // Generated from canonical game-registry.json; validated by tools/test-math-game-offline-cache.mjs.
 // Every canonical game and its shared runtime must be available on a newly installed offline worker.
 const GAME_PRECACHE_FILES = [
@@ -101,6 +101,7 @@ const OTHER_PRECACHE_FILES = [
   "./courses/shared/upper-english-records.js",
   "./assets/vervenveda-parchment.css",
   "./index.html",
+  "./mentor-manifest.json",
   "./README.md",
   "./LICENSE",
   "./SECURITY.md",
