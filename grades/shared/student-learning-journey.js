@@ -3,7 +3,7 @@
 const m=location.pathname.match(/\/grade-(09|10|11|12)\/student-profile\//);if(!m)return;
 const grade=m[1],profile=window.KhaemenesStudentProfileV2,contract=window.KhaemenesCourseEntryContract;
 const element=(t,s)=>{const x=document.createElement(t);if(s!==undefined)x.textContent=s;return x};
-const nav=document.querySelector(".ug-priority-nav")||document.querySelector(".grade09-priority")||document.querySelector(".ug-navlinks")||document.querySelector(".navlinks");
+const nav=(grade==="09"?document.querySelector(".grade09-profile-actions"):null)||document.querySelector(".ug-priority-nav")||document.querySelector(".grade09-priority")||document.querySelector(".ug-navlinks")||document.querySelector(".navlinks");
 if(!nav||document.getElementById("openLearningJourney"))return;
 const button=element("button","✦ My Learning Journey");button.type="button";button.id="openLearningJourney";button.style.cssText="padding:9px 13px;border:1px solid #ab9772;border-radius:7px;background:#eedfba;color:#202934;font:inherit;cursor:pointer";nav.append(button);
 const dialog=element("dialog");dialog.id="myLearningJourney";dialog.setAttribute("aria-label","My Learning Journey");dialog.style.cssText="width:min(94vw,860px);max-height:88vh;overflow:auto;border:1px solid #b9a37f;border-radius:7px;padding:22px;background:#f6f0e5;color:#222931;font:400 17px/1.55 Arial,sans-serif;box-shadow:0 25px 90px #0008";
