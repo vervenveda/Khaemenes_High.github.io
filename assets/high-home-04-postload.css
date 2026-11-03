@@ -34,7 +34,7 @@ html body main #portals .legacy-family-tools>summary{color:#193d32;cursor:pointe
 
 
 /* Uniform dark breadcrumb band and deliberate space before the High School Front Desk. */
-/* Only the High School breadcrumb strip; global header and translation UI are unchanged. */
+/* High School secondary navigation and single page-language toolbar. Preserve global header and shared scripts. */
 html:root:root body > .breadcrumb-bar{background:#202724!important;background-image:none!important;border-bottom:1px solid #384951!important;color:#fff8e9!important}
 html:root:root body > .breadcrumb-bar .breadcrumbs,
 html:root:root body > .breadcrumb-bar .breadcrumbs a,
@@ -50,3 +50,31 @@ body[data-khae-campus-front-desk="true"] #khaemenesFamilyBridge{display:none!imp
 /* Old beta/learner rails are retained by their scripts, but never compete with the canonical homepage dock. */
 
 
+
+/* High School: charcoal band directly beneath header, including the sole translator toolbar.
+   The shared language script still creates and controls the interface; only its presentation is scoped here. */
+html:root:root body > .breadcrumb-bar{
+  background-color:#202724!important;background-image:none!important;
+  color:#fff8e9!important;
+}
+html:root:root body > #vnv-language-switch{
+  box-sizing:border-box!important;display:flex!important;justify-content:center!important;
+  width:100%!important;max-width:100%!important;min-height:54px!important;
+  padding:8px 14px!important;margin:0 auto!important;
+  border:0!important;border-radius:0!important;
+  background:#202724!important;background-image:none!important;
+  color:#fff8e9!important;box-shadow:none!important;
+  font:400 16px/1.35 "Brandon Grotesque",Nunito,Arial,sans-serif!important;
+}
+html:root:root body > #vnv-language-switch label{
+  color:#fff8e9!important;-webkit-text-fill-color:#fff8e9!important;
+  font-size:16px!important;
+}
+html:root:root body > #vnv-language-switch :is(select,button){
+  box-sizing:border-box!important;min-height:38px!important;
+  border:1px solid #bba16f!important;border-radius:7px!important;
+  background:#fff9ed!important;color:#202724!important;
+  -webkit-text-fill-color:#202724!important;
+  font:400 16px/1.3 "Brandon Grotesque",Nunito,Arial,sans-serif!important;
+}
+@media(max-width:570px){html:root:root body > #vnv-language-switch{gap:6px!important;padding:9px 10px!important}}
