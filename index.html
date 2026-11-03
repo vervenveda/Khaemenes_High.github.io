@@ -843,8 +843,8 @@ html:root:root body main>.section.final .section-inner>.kicker{font-size:16px!im
     <div class="shell hero-inner">
       <div class="hero-stage">
         <div>
-          <p class="eyebrow">Welcome</p>
-          <h1>Khaemenes Academy <span class="high-hero-school">High School</span></h1>
+          <p class="eyebrow">Khaemenes Academy</p>
+          <h1>High School</h1>
           <p class="high-hero-sub">Your Classes. Your Profile. Your Path Forward.</p>
         </div>
         <p class="hero-lead">Choose your grade to begin studying, return to your student profile, or open the full course directory. Every learning pathway begins with a clear doorway.</p>
@@ -1714,21 +1714,34 @@ body main #departments .department-card :is(a.department-link,button.department-
 body main #departments .department-card :is(a.department-link,button.department-link):focus-visible{outline:3px solid #b48b45!important;outline-offset:3px}
 </style>
 <style id="high-hero-type-spacing-20261029">
-/* Surgical hero typography refinement, scoped exclusively to the High School landing. */
+/* Khaemenes High canonical hero: preserve the approved dark backdrop and geometry.
+   Typography only: institutional eyebrow 33px Cinzel, page title 44px Cinzel,
+   supporting copy Brandon Grotesque / Nunito >=16px. */
 html:root:root body .high-frontdesk-hero .eyebrow{
-  font-size:17px!important;
-  line-height:1.5!important;
+  font:400 33px/1.18 var(--ceremonial)!important;
+  letter-spacing:.025em!important;
+  text-transform:none!important;
   margin-bottom:3px!important;
 }
 html:root:root body .high-frontdesk-hero h1{
-  font-size:clamp(36px,calc(5.1vw - 6px),66px)!important;
-  line-height:1.08!important;
+  font:400 44px/1.16 var(--ceremonial)!important;
+  letter-spacing:.01em!important;
   margin-top:13px!important;
   margin-bottom:3px!important;
 }
 html:root:root body .high-frontdesk-hero .high-hero-sub{
+  font:400 18px/1.5 var(--sans)!important;
+  letter-spacing:.03em!important;
+  text-transform:none!important;
   margin-top:16px!important;
   margin-bottom:3px!important;
+}
+html:root:root body .high-frontdesk-hero .hero-lead{
+  font:400 18px/1.6 var(--sans)!important;
+}
+html:root:root body .high-frontdesk-hero .hero-actions .button{
+  font-family:var(--sans)!important;
+  font-size:16px!important;
 }
 </style>
 <style id="high-network-final-support-20261029">
