@@ -1456,8 +1456,13 @@ html:root:root body main>.section.final .section-inner>.kicker{font-size:16px!im
   }
 
   function renderDepartments(){
-    $("departmentGrid").innerHTML=DEPARTMENTS.map(item=>`<article class="department-card ${item.mode}"><span class="department-number">${item.number}</span><h3>${escapeHTML(item.title)}</h3><span class="department-status">${escapeHTML(item.status)}</span><p>${escapeHTML(item.description)}</p>${item.url?`<a class="department-link" href="${item.url}">${escapeHTML(item.buttonLabel||item.title)}</a>`:`<button class="department-link" type="button" data-resource-category="${item.category}">${escapeHTML(item.buttonLabel||item.title)}</button>`}</article>`).join("");
-    document.querySelectorAll("[data-resource-category]").forEach(btn=>btn.addEventListener("click",()=>scrollToLibraryCategory(btn.dataset.resourceCategory)));
+    // Intentionally non-destructive.
+    // The department cards are hand-authored/proofed in the HTML and must not be regenerated.
+    document.querySelectorAll("#departmentGrid [data-resource-category]").forEach(btn=>{
+      if(btn.dataset.proseBound==="1") return;
+      btn.dataset.proseBound="1";
+      btn.addEventListener("click",()=>scrollToLibraryCategory(btn.dataset.resourceCategory));
+    });
   }
 
   function resourceText(r){
@@ -1735,7 +1740,7 @@ html:root:root body main>.section.final .section-inner>.kicker{font-size:16px!im
   if(yearNode)yearNode.textContent=new Date().getFullYear();
   renderGrades();
   renderAllCourses();
-  renderDepartments();
+  // Department cards are authored and proofed directly in HTML; do not rebuild them at runtime.
   renderProfile();
   renderCategoryOptions();
   renderResources();
