@@ -443,3 +443,30 @@ body{background:linear-gradient(180deg,#e5ebe7 0%,#f3f0e8 48%,#e7ece7 100%);colo
     justify-content:center!important;
   }
 }
+
+/* Grade 09 identity-card quick actions 20261103: two buttons, no duplicate row. */
+.grade09-profile-first .grade09-profile-actions{
+  display:flex!important;align-items:center!important;gap:10px!important;
+  flex-wrap:wrap!important;margin-top:16px!important;
+}
+.grade09-profile-first .grade09-profile-actions > :is(a,button){
+  box-sizing:border-box!important;
+  display:inline-flex!important;align-items:center!important;justify-content:center!important;
+  min-width:168px!important;min-height:42px!important;
+  padding:9px 15px!important;
+  border:1px solid #24372f!important;border-radius:7px!important;
+  background:#24372f!important;color:#f8f0e3!important;
+  -webkit-text-fill-color:#f8f0e3!important;
+  text-align:center!important;text-decoration:none!important;
+  font:400 16px/1.35 "Brandon Grotesque",Nunito,Arial,sans-serif!important;
+  cursor:pointer!important;
+}
+.grade09-profile-first .grade09-profile-actions > :is(a,button):is(:hover,:focus-visible){
+  background:#3a4a40!important;border-color:#b48b45!important;
+}
+.grade09-profile-first .grade09-profile-actions > :is(a,button):focus-visible{
+  outline:3px solid #b48b45!important;outline-offset:2px!important;
+}
+@media(max-width:690px){
+  .grade09-profile-first .grade09-profile-actions{justify-content:center!important;}
+}
