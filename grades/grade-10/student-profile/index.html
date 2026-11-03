@@ -21,7 +21,7 @@ body :is(.hero,.ug-hero,.mast) :is(.eyebrow,.ug-eyebrow),body main>.eyebrow{font
 <style id="khae-high-profile-uniform-header-20261103">
   /* Profile-only refinement: five compact, uniform charcoal shortcuts. */
   #vnvHeaderAutoPopulate .vnv-header-inner{
-    grid-template-columns:minmax(180px,1fr) auto 40px!important;
+    grid-template-columns:minmax(180px,1fr) auto minmax(180px,1fr)!important;
     gap:10px!important;
     align-items:center!important;
   }
@@ -93,6 +93,27 @@ body :is(.hero,.ug-hero,.mast) :is(.eyebrow,.ug-eyebrow),body main>.eyebrow{font
     }
     #vnvHeaderAutoPopulate .vnv-header-actions{display:none!important;}
   }
+
+  /* Text inside a separate span prevents the shared auto-contrast
+     initializer from giving cream-on-charcoal buttons dark lettering. */
+  #vnvHeaderAutoPopulate .vnv-header-actions > a > .khae-profile-action-label{
+    display:block!important;
+    color:#f8f0e3!important;
+    -webkit-text-fill-color:#f8f0e3!important;
+    font:400 14px/1.15 "Brandon Grotesque",Nunito,Arial,sans-serif!important;
+    white-space:nowrap!important;
+    text-align:center!important;
+    opacity:1!important;
+  }
+</style>
+
+<!-- Upper-grade hero only; preserves schedule, learner panels and navigation. -->
+<style id="khae-profile-charcoal-hero-20261103">
+  .ug-top{background:#242c29!important;color:#f8f0e3!important;border-bottom:1px solid #b48b45!important;}
+  .ug-top .ug-hero{background:#242c29!important;color:#f8f0e3!important;}
+  .ug-top .ug-hero h1{color:#f8f0e3!important;}
+  .ug-top .ug-hero .ug-eyebrow{color:#e0bf83!important;font-size:16px!important;}
+  .ug-top .ug-hero > p:not(.ug-eyebrow){color:#f8f0e3!important;}
 </style>
 </head>
 <body data-grade="10">
@@ -152,6 +173,14 @@ body :is(.hero,.ug-hero,.mast) :is(.eyebrow,.ug-eyebrow),body main>.eyebrow{font
       {label:"Academy Profile",href:"https://vervenveda.com/Khaemenes_Academy.github.io/student/profile.html"},
       {label:"High School",href:"../../../"}
     ]
+  });
+  // Page-specific cream text labels; no shared component modifications.
+  document.querySelectorAll("#vnvHeaderAutoPopulate .vnv-header-actions > a").forEach((link,index)=>{
+    if(index>=5 || link.querySelector(".khae-profile-action-label"))return;
+    const label=document.createElement("span");
+    label.className="khae-profile-action-label";
+    label.textContent=link.textContent;
+    link.replaceChildren(label);
   });
 </script>
 <script src="https://vervenveda.com/assets/vnv-ecosystem-toolbar.js"></script>
