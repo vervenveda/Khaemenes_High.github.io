@@ -18,30 +18,14 @@ body :is(.hero,.ug-hero,.mast) h1{font-size:clamp(30px,4.4vw,52px)!important;lin
 body :is(.hero,.ug-hero,.mast) :is(.eyebrow,.ug-eyebrow),body main>.eyebrow{font-size:16px!important;letter-spacing:.045em!important;line-height:1.4!important}
 </style></head>
 <body data-grade="11">
-<header data-khae-header class="khae-global-campus-header">
-  <div data-khae-header-inner>
-    <a data-khae-brand href="https://vervenveda.com/Khaemenes_Academy.github.io/?explore=1" aria-label="Khaemenes Academy home"><span data-khae-brand-mark>11</span><span><strong data-khae-brand-name>Khaemenes Academy</strong><small data-khae-brand-sub>Grade 11 Student Profile</small></span></a>
-    <nav data-khae-nav aria-label="Academy global navigation"><a href="https://vervenveda.com/Khaemenes_Academy.github.io/?explore=1">Academy</a><a href="https://vervenveda.com/Khaemenes_Academy.github.io/student/">Student</a><a href="https://vervenveda.com/Khaemenes_Academy.github.io/family/">Family</a><a href="https://vervenveda.com/Khaemenes_Academy.github.io/teacher-admin/">Teacher</a></nav>
-    <div data-khae-actions><a data-khae-secondary href="https://vervenveda.com/Khaemenes_Academy.github.io/student/profile.html">My Academy Profile</a><a href="https://vervenveda.com/Khaemenes_High.github.io/">High School</a></div>
-    <div data-vnv-ecosystem-slot aria-label="Ecosystem menu"></div>
-  </div>
-</header>
-<header class="ug-top">
-  <div class="ug-shell ug-nav">
-    <span class="ug-brand">Khaemenes Academy · Grade 11</span>
-    <nav class="ug-navlinks" aria-label="Student profile navigation">
-      <a href="#upperGradePersonalize">Edit My Profile</a>
-      <a href="../">Grade 11 Entrance</a>
-      <a href="../../../">High School</a>
-      <a href="https://vervenveda.com/Khaemenes_Academy.github.io/student/profile.html">Academy Learning Profile</a>
-    </nav>
-  </div>
+
+<section class="ug-top">
   <div class="ug-shell ug-hero">
     <p class="ug-eyebrow">Khaemenes Academy · Grade 11 Learning</p>
     <h1>My Student Profile · Grade 11</h1>
     <p>This is your daily High School home. Keep seven academic classes in one calm view, continue source-course work, choose a language, and carry learner-owned preferences without changing grades, mastery, placement, or prerequisites.</p>
   </div>
-</header>
+</section>
 <main class="ug-shell">
   <nav class="ug-priority-nav" aria-label="Student dashboard shortcuts"><a href="#seven-classes">My Schedule</a><a href="#learning-today">Learning Today</a><a href="#upperGradePersonalize">Edit My Profile</a><a href="#my-evidence-overview">My Portfolio</a><a href="#khaeDreamsAchievements">Achievements &amp; Dreams</a></nav>
   <div id="upperClasses" class="ug-grid" aria-live="polite"></div>
@@ -65,7 +49,7 @@ body :is(.hero,.ug-hero,.mast) :is(.eyebrow,.ug-eyebrow),body main>.eyebrow{font
 <script src="../../shared/upper-grade-personalize.js"></script>
 <script src="../../shared/student-profile-theme-photo.js"></script>
 <script src="../../../assets/vnv-language.js" defer data-official-vnv-language="true"></script>
-<script src="https://vervenveda.com/assets/vnv-ecosystem-menu.js" defer></script>
+<!-- Branched ecosystem menu is owned by the canonical idempotent header. -->
 <script src="../../shared/student-course-progress-bars.js"></script>
 <script src="../../shared/student-sticker-box.js"></script>
 <script src="../../shared/student-ecosystem-tools.js"></script>
@@ -75,6 +59,23 @@ body :is(.hero,.ug-hero,.mast) :is(.eyebrow,.ug-eyebrow),body main>.eyebrow{font
 <script src="https://vervenveda.com/assets/vnv-333-ticker.js"></script>
 <script src="https://vervenveda.com/assets/vnv-ticker-autopopulate.js" data-vnv-ticker-autopopulate></script>
 <script>VNV_TICKER.autoPopulate({label:"Grade 11 Profile Quick Links",max:14});</script>
+<script src="https://vervenveda.com/assets/vnv-header-autopopulate.js"></script>
+<script>
+  VNV_HEADER.mount({
+    replaceLegacy:true,
+    title:"Grade 11 Student Profile",
+    subtitle:"Khaemenes Academy · High School",
+    icon:"11",
+    home:"https://vervenveda.com/Khaemenes_Academy.github.io/",
+    actions:[
+      {label:"My Schedule",href:"#seven-classes"},
+      {label:"Learning Today",href:"#learning-today"},
+      {label:"Customize",href:"#upperGradePersonalize"},
+      {label:"Academy Profile",href:"https://vervenveda.com/Khaemenes_Academy.github.io/student/profile.html"},
+      {label:"High School",href:"../../../"}
+    ]
+  });
+</script>
 <script src="https://vervenveda.com/assets/vnv-ecosystem-toolbar.js"></script>
 </body>
 </html>
