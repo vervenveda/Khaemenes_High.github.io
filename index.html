@@ -940,7 +940,7 @@ html:root:root body main>.section.final .section-inner>.kicker{font-size:16px!im
           </form>
           <div class="profile-summary" id="profileSummary" aria-live="polite">Use your Academy learner profile for identity, grade placement, daily classes, and records.</div>
           <div class="portal-links"><a href="#student-portal" data-high-profile-door="1">My Student Profile</a><a href="#grades">Go to My Classes</a>
-            <a id="openMyGrade" href="#grades" data-high-profile-door="1">My Daily Schedule</a>
+            <a id="openMyGrade" href="#grades" data-high-schedule-door="1">My Daily Schedule</a>
             <a href="https://vervenveda.com/Khaemenes_Academy.github.io/family/enroll/">Academy Learners</a>
             <a href="./courses/">Course Directory</a>
             <a href="./mentor/?stage=high&amp;subject=general&amp;source=front-hall">Mentor · Get Instruction</a>
@@ -1712,7 +1712,8 @@ html:root:root body main>.section.final .section-inner>.kicker{font-size:16px!im
 <script src="./assets/vnv-language.js" defer data-official-vnv-language="true"></script>
 <script>
 (()=>{"use strict";
-const links=document.querySelectorAll('[data-high-profile-door]');
+const profileLinks=document.querySelectorAll('[data-high-profile-door]');
+const scheduleLinks=document.querySelectorAll('[data-high-schedule-door]');
 const read=k=>{try{return JSON.parse(localStorage.getItem(k)||"null")}catch{return null}};
 const older=read("khaemenes-high-profile-v1");
 const active=read("khaemenes_active_learner_v1");
@@ -1720,10 +1721,30 @@ const registry=read("khaemenes_family_registry_v1");
 const id=typeof active==="string"?active:active?.learnerId;
 const record=id?registry?.learners?.[id]:null;
 const grade=Number(record?.grade||older?.grade);
-const destination=Number.isInteger(grade)&&grade>=9&&grade<=12
- ?"grades/grade-"+String(grade).padStart(2,"0")+"/student-profile/"
- :"#student-portal";
-links.forEach(a=>{a.href=destination;if(destination==="#student-portal")a.title="Choose your grade in the High School student portal below";});
+const validGrade=Number.isInteger(grade)&&grade>=9&&grade<=12;
+const gradeCode=validGrade?String(grade).padStart(2,"0"):"";
+
+const profileDestination=validGrade
+  ?"grades/grade-"+gradeCode+"/student-profile/"
+  :"#student-portal";
+
+const scheduleDestination=!validGrade
+  ?"#student-portal"
+  :grade===9
+    ?"grades/grade-09/student-profile/daily-lessons/"
+    :"grades/grade-"+gradeCode+"/student-profile/#seven-classes";
+
+profileLinks.forEach(a=>{
+  a.href=profileDestination;
+  if(!validGrade)a.title="Choose your grade in the High School student portal below";
+});
+
+scheduleLinks.forEach(a=>{
+  a.href=scheduleDestination;
+  a.title=validGrade
+    ?(grade===9?"Open Grade 9 Daily Lessons":"Open Grade "+grade+" My Schedule")
+    :"Choose your grade in the High School student portal below";
+});
 })();
 </script>
 <script src="assets/high-navigation-v1.js?v=20261030-open-campus" defer></script>
