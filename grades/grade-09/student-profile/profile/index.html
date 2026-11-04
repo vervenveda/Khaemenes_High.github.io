@@ -45,7 +45,10 @@ html:root:root body main>.crumbs{
  color:#f8f0e3!important;font-size:16px!important;
  padding:15px 0!important;border-bottom:1px solid rgba(218,193,144,.36)
 }
-html:root:root body main>.crumbs a{color:#f1ce91!important;text-decoration:underline;text-underline-offset:3px}
+html:root:root body main>.crumbs :is(a,span,strong){
+ color:#fff8e9!important;-webkit-text-fill-color:#fff8e9!important
+}
+html:root:root body main>.crumbs a{text-decoration:underline;text-underline-offset:3px}
 html:root:root body main>.section{padding:24px 0 32px}
 html:root:root body main>.section .grid{gap:17px}
 html:root:root body main>.section .card{
