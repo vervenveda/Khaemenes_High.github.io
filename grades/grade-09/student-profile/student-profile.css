@@ -800,70 +800,120 @@ html body .grade09-priority-schedule .schedule-quick-grid > .schedule-tile{
   }
 }
 
-/* Grade 09 schedule action parity · equal-size course controls, including science notebook.
-   Scoped to the academic schedule only; preserved 4x2 layout and learner themes. */
+/* Grade 09 Schedule Bar presentation owner · 2026-11-04
+   One card hierarchy and one action style. Eight academic slots remain a 4x2 grid;
+   preserved student pins, destination URLs, and science notebook behavior. */
 html body .grade09-priority-schedule .schedule-rail > .schedule-tile{
   display:flex;
   flex-direction:column;
+  min-width:0;
+  padding:12px;
+  border:1px solid #cbbfaa;
+  border-top:3px solid #315f86;
+  background:#fffdf8;
+  box-shadow:0 2px 6px rgba(20,33,29,.045);
+}
+html body .grade09-priority-schedule .schedule-tile-top{
+  display:grid;
+  grid-template-columns:28px minmax(0,1fr) 32px;
+  align-items:start;
+  gap:6px;
+  min-height:46px;
+  padding-bottom:9px;
+  border-bottom:1px solid #e2d9c9;
+}
+html:root:root body .grade09-priority-schedule .schedule-kind{
+  display:block;
+  margin:0!important;
+  color:#364841!important;
+  -webkit-text-fill-color:#364841!important;
+  font:400 16px/1.25 "Brandon Grotesque",Nunito,Arial,sans-serif!important;
+  letter-spacing:0!important;
+  text-transform:none!important;
+  overflow-wrap:break-word;
+}
+html body .grade09-priority-schedule .schedule-number{
+  width:28px;
+  height:28px;
+  font:400 16px/1 "Brandon Grotesque",Nunito,Arial,sans-serif;
+}
+html body .grade09-priority-schedule .schedule-pin{
+  width:32px;
+  height:32px;
+  min-width:32px;
+  justify-self:end;
+  font:400 20px/1 "Brandon Grotesque",Nunito,Arial,sans-serif;
+}
+html body .grade09-priority-schedule .schedule-course-info{
+  display:flex;
+  flex-direction:column;
+  gap:8px;
+  padding:12px 0 14px;
+  flex:1 1 auto;
+  min-height:130px;
+}
+html:root:root body .grade09-priority-schedule .schedule-course-info h3{
+  margin:0!important;
+  min-height:0!important;
+  color:#243038!important;
+  -webkit-text-fill-color:#243038!important;
+  font:400 18px/1.35 Cinzel,Georgia,serif!important;
+  overflow-wrap:break-word;
+}
+html:root:root body .grade09-priority-schedule .schedule-course-info p{
+  margin:0!important;
+  color:#4b5b55!important;
+  -webkit-text-fill-color:#4b5b55!important;
+  font:400 16px/1.4 "Brandon Grotesque",Nunito,Arial,sans-serif!important;
+  overflow-wrap:break-word;
 }
 html body .grade09-priority-schedule .schedule-actions{
   display:grid;
   grid-template-columns:minmax(0,1fr);
-  grid-auto-rows:54px;
-  gap:7px;
+  grid-auto-rows:46px;
+  gap:6px;
   margin-top:auto;
-  padding-top:10px;
+  padding-top:0;
   align-content:end;
 }
-html body .grade09-priority-schedule .schedule-actions > :is(a,button){
+html:root:root body .grade09-priority-schedule .schedule-actions > :is(a,button),
+html:root:root body .grade09-priority-schedule .schedule-quick-grid a.schedule-open{
   box-sizing:border-box!important;
-  width:100%!important;
-  min-width:0!important;
-  height:54px!important;
-  min-height:54px!important;
-  margin:0!important;
-  padding:5px 8px!important;
   display:flex!important;
   align-items:center!important;
   justify-content:center!important;
-  text-align:center!important;
-  white-space:normal!important;
-  overflow-wrap:anywhere!important;
-  font:400 16px/1.2 "Brandon Grotesque",Nunito,Arial,sans-serif!important;
-  letter-spacing:0!important;
+  width:100%!important;
+  min-width:0!important;
+  height:46px!important;
+  min-height:46px!important;
+  max-height:none!important;
+  padding:5px 8px!important;
+  margin:0!important;
+  border:1px solid #b48b45!important;
   border-radius:7px!important;
-  text-transform:none!important;
-  text-decoration:none!important;
-}
-html body .grade09-priority-schedule .schedule-actions > .schedule-secondary{
-  background:#f8f0e3!important;
-  background-image:none!important;
-  color:#243038!important;
-  -webkit-text-fill-color:#243038!important;
-  border:1px solid #b7a98f!important;
-}
-html body .grade09-priority-schedule .schedule-actions > .schedule-secondary:hover,
-html body .grade09-priority-schedule .schedule-actions > .schedule-secondary:focus-visible{
-  background:#e9dcc4!important;
-  color:#202724!important;
-  -webkit-text-fill-color:#202724!important;
-}
-html body .grade09-priority-schedule .schedule-actions > .schedule-open:not(.schedule-secondary){
   background:#243038!important;
   background-image:none!important;
   color:#fff8e9!important;
   -webkit-text-fill-color:#fff8e9!important;
-  border:1px solid #b48b45!important;
-}
-html body .grade09-priority-schedule .schedule-rail > .schedule-tile > .schedule-open,
-html body .grade09-priority-schedule .schedule-quick-grid .schedule-open{
-  box-sizing:border-box!important;
-  width:100%!important;
-  min-height:54px!important;
-  height:54px!important;
-  padding:5px 8px!important;
-  font:400 16px/1.2 "Brandon Grotesque",Nunito,Arial,sans-serif!important;
+  font:400 16px/1.25 "Brandon Grotesque",Nunito,Arial,sans-serif!important;
+  letter-spacing:0!important;
+  text-transform:none!important;
   text-align:center!important;
+  text-decoration:none!important;
   white-space:normal!important;
-  overflow-wrap:anywhere!important;
+  overflow-wrap:break-word!important;
+  opacity:1!important;
+}
+html:root:root body .grade09-priority-schedule .schedule-actions > :is(a,button):hover,
+html:root:root body .grade09-priority-schedule .schedule-actions > :is(a,button):focus-visible{
+  background:#36504a!important;
+  color:#fff8e9!important;
+  -webkit-text-fill-color:#fff8e9!important;
+}
+html:root:root body .grade09-priority-schedule .schedule-actions > :is(a,button):focus-visible{
+  outline:3px solid #b48b45!important;
+  outline-offset:2px!important;
+}
+@media(max-width:540px){
+  html body .grade09-priority-schedule .schedule-course-info{min-height:100px}
 }
