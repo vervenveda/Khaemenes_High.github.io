@@ -12,7 +12,12 @@ html:root:root body{
 body :is(button,input,select,textarea){font-family:"Brandon Grotesque",Nunito,Arial,sans-serif}
 body :is(h1,h2,h3,h4){font-family:Cinzel,Georgia,serif;font-weight:400}
 body main{background:linear-gradient(180deg,#222e33,#29363a 55%,#202b30);color:#f8f0e3;padding:10px 0 35px}
-.grade09-local-masthead{background:#243038!important;color:#fff8e9!important}
+/* The imported parchment CSS affects both nested .top and .hero. */
+html:root:root body .top.grade09-local-masthead,
+html:root:root body .top.grade09-local-masthead .hero{
+ background:#243038!important;color:#fff8e9!important;
+ border-color:#bfa26e!important
+}
 .grade09-local-masthead .nav{min-height:auto;padding:12px 0 5px;justify-content:center}
 .grade09-local-masthead .navlinks{width:100%;justify-content:center;gap:8px}
 html:root:root body .grade09-local-masthead .navlinks a{
@@ -25,15 +30,15 @@ html:root:root body .grade09-local-masthead .navlinks a{
 }
 html:root:root body .grade09-local-masthead .navlinks a:is(:hover,:focus-visible){background:#3b4b50!important;color:#fff8e9!important}
 .grade09-local-masthead .hero{padding:28px 12px 34px;text-align:center}
-html:root:root body .grade09-local-masthead .eyebrow{
+html:root:root body .top.grade09-local-masthead .hero .eyebrow{
  color:#e7c98d!important;font:400 26px/1.25 Cinzel,Georgia,serif!important;
  letter-spacing:.03em!important;text-transform:none!important
 }
-html:root:root body .grade09-local-masthead h1{
+html:root:root body .top.grade09-local-masthead .hero h1{
  font:400 clamp(43px,5vw,55px)/1.15 Cinzel,Georgia,serif!important;
  color:#fff8e9!important;margin:9px auto 0;text-align:center
 }
-html:root:root body .grade09-local-masthead .hero>p:last-child{
+html:root:root body .top.grade09-local-masthead .hero>p:last-child{
  font-size:17px!important;line-height:1.55;color:#f6eddb!important;max-width:740px
 }
 html:root:root body main>.crumbs{
@@ -99,7 +104,9 @@ html:root:root body main>.section .card:last-child :is(h2,p){
 html:root:root body main>.section .card:last-child .btn.secondary{
  background:#f4e9d3!important;color:#243038!important
 }
+/* Respect the selected card color despite the shared parchment section rule. */
 html:root:root body #grade09LookPanel{
+ background:var(--look-selected-color,#f4f0e7)!important;
  margin:22px auto!important;border:3px solid #caac74!important;border-radius:7px!important;
  box-shadow:0 9px 26px rgba(0,0,0,.18)!important
 }
@@ -119,7 +126,7 @@ html:root:root body #vnvHeaderAutoPopulate :is(.vnv-header-lines,.vnv-header-lin
 @media(max-width:620px){
  html:root:root body .grade09-local-masthead .navlinks a{flex:1 1 125px;white-space:normal;text-align:center}
  html:root:root body main>.section .card{padding:18px!important}
- html:root:root body .grade09-local-masthead h1{font-size:43px!important}
+ html:root:root body .top.grade09-local-masthead .hero h1{font-size:43px!important}
 }
 @media print{
  html:root:root body{background:#fff!important;color:#243038!important}
