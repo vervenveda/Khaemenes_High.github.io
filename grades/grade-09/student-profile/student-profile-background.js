@@ -13,6 +13,7 @@ const base="#f4f0e7";
 const colorsKey=id=>"khaemenes.grade09.profile.background:"+encodeURIComponent(id);
 const sectionsKey=id=>"khaemenes.grade09.profile.background.sections.v1:"+encodeURIComponent(id);
 const stickerKey=id=>"khaemenes.grade09.profile.background.sticker:"+encodeURIComponent(id);
+const earnedKey=id=>"khaemenes.student.stickers.v1:"+encodeURIComponent(id);
 const imageKey=id=>"khaemenes.grade09.profile.background.image:"+encodeURIComponent(id);
 const emojiList=["","✨","⭐","🌟","🌸","🌿","🌻","🎨","🎓","📚","🎵","🦋","🌈","🪐"];
 const isColor=v=>typeof v==="string"&&/^#[0-9a-f]{6}$/i.test(v);
@@ -22,6 +23,13 @@ const person=()=>{
  return a&&b&&String(a)!==String(b)?null:(a?String(a):(b?String(b):null));
 };
 const read=k=>{try{return localStorage.getItem(k)}catch{return null}};
+function earnedStickers(owner){
+ if(!owner)return [];
+ try{
+  const data=JSON.parse(read(earnedKey(owner))||"null");
+  return Array.isArray(data?.placed)?[...new Set(data.placed.filter(x=>typeof x==="string"&&x.length<=8))].slice(0,36):[];
+ }catch{return []}
+}
 const write=(k,v)=>{try{localStorage.setItem(k,v);return true}catch{return false}};
 const erase=k=>{try{localStorage.removeItem(k);return true}catch{return false}};
 const el=(tag,text)=>{const n=document.createElement(tag);if(text!==undefined)n.textContent=text;return n};
@@ -71,7 +79,7 @@ const inkFor=color=>{
  return (Math.max(l,dark)+.05)/(Math.min(l,dark)+.05)>=(Math.max(l,light)+.05)/(Math.min(l,light)+.05)?"#243038":"#fff8e9";
 };
 function tile(emoji){
- if(!emojiList.includes(emoji)||!emoji)return "";
+ if(typeof emoji!=="string"||!emoji||emoji.length>8)return "";
  try{
   const canvas=document.createElement("canvas");canvas.width=canvas.height=144;
   const ctx=canvas.getContext("2d");if(!ctx)return "";
@@ -118,7 +126,7 @@ function readSections(owner){
   for(const s of surfaces){
    const record=data[s.key];if(!record||typeof record!=="object")continue;
    const mode=["default","page","custom"].includes(record.mode)?record.mode:"default";
-   result[s.key]={mode,color:isColor(record.color)?record.color:base,emoji:emojiList.includes(record.emoji)?record.emoji:""};
+   result[s.key]={mode,color:isColor(record.color)?record.color:base,emoji:(emojiList.includes(record.emoji)||earnedStickers(owner).includes(record.emoji))?record.emoji:""};
   }
   return result;
  }catch{return {}}
@@ -237,12 +245,33 @@ const pageRow=el("div");
 pageRow.style.cssText="display:flex;gap:12px;align-items:end;flex-wrap:wrap";
 pageRow.append(pageColorControl.wrap,resetPage);
 const pageEmoji=dropdown("Page emoji stickers",emojiList.map(v=>[v,v||"No stickers"]));
+const rewardInfo=el("p","Earned Sticker Box designs appear here once claimed. Decorative emojis are separate from earned rewards.");
+rewardInfo.style.cssText="margin:0;color:#243038;font:400 16px/1.45 Nunito,Arial,sans-serif";
+const rewardOpen=action("Open My Sticker Box");
+rewardOpen.addEventListener("click",()=>{
+ popup.close();
+ const target=document.getElementById("khaeStickerBox");
+ if(target){target.closest("details")?.setAttribute("open","");target.scrollIntoView({behavior:"smooth",block:"center"});}
+});
+function updateRewardOptions(select,owner){
+ const previous=select.value;
+ for(const option of [...select.options])if(option.dataset.earnedSticker==="yes")option.remove();
+ const earned=earnedStickers(owner);
+ for(const emoji of earned){
+  const existing=[...select.options].find(option=>option.value===emoji);
+  if(existing){existing.textContent=emoji+" · Earned in Sticker Box";continue}
+  const option=el("option",emoji+" · Earned in Sticker Box");
+  option.value=emoji;option.dataset.earnedSticker="yes";select.append(option);
+ }
+ select.value=[...select.options].some(option=>option.value===previous)?previous:"";
+ rewardInfo.textContent=owner?(earned.length?earned.length+" claimed Sticker Box designs are ready for page and popup backgrounds.":"No claimed stickers yet. Verified unit-quiz rewards appear after they are claimed in My Sticker Box."):"Select an Academy learner to see earned Sticker Box designs. Decorative emojis remain available for unsaved previews.";
+}
 const upload=formInput("file","Upload a background image (JPG, PNG, WebP, up to 5 MB)");
 upload.input.accept="image/jpeg,image/png,image/webp";
 const removeImage=action("Remove Background Image");
 const imageNote=el("p","An uploaded picture is resized locally for this learner; no image is sent to a server.");
 imageNote.style.cssText="margin:0;font:400 16px/1.45 Nunito,Arial,sans-serif";
-pageGroup.append(pageHeading,pageRow,pageEmoji.wrap,upload.wrap,removeImage,imageNote);
+pageGroup.append(pageHeading,pageRow,pageEmoji.wrap,rewardInfo,rewardOpen,upload.wrap,removeImage,imageNote);
 const sectionsGroup=el("section");
 sectionsGroup.style.cssText="display:grid;gap:10px;margin-top:12px";
 const sectionsHeading=el("h3","Independent Section Colors & Stickers");
@@ -300,7 +329,7 @@ function refresh(){
  const owner=person();
  currentOwner=owner;
  pageColor=owner&&isColor(read(colorsKey(owner)))?read(colorsKey(owner)):base;
- pageSticker=owner&&emojiList.includes(read(stickerKey(owner)))?read(stickerKey(owner)):"";
+ pageSticker=owner&&(emojiList.includes(read(stickerKey(owner)))||earnedStickers(owner).includes(read(stickerKey(owner))))?read(stickerKey(owner)):"";
  const rawImage=owner?read(imageKey(owner))||"":"";
  savedImage=/^data:image\/jpeg;base64,[a-z0-9+/=]+$/i.test(rawImage)&&rawImage.length<700000?rawImage:"";
  sectionPrefs=readSections(owner);
@@ -312,11 +341,13 @@ function refresh(){
  saveDesign.disabled=!owner||!design?.write;
  restoreDesign.disabled=!owner||!design?.clear;
  pageColorControl.input.value=pageColor;
+ updateRewardOptions(pageEmoji.input,owner);
  pageEmoji.input.value=pageSticker;
  for(const [key,controls] of rows){
   const pref=sectionPrefs[key]||{mode:"default",color:base,emoji:""};
   controls.mode.value=pref.mode;
   controls.color.value=pref.color;
+  updateRewardOptions(controls.emoji,owner);
   controls.emoji.value=pref.emoji;
   controls.color.disabled=pref.mode!=="custom";
  }
