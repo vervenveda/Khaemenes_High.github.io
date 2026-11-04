@@ -103,8 +103,12 @@ async function renderHost(host){
      const card=el("article","schedule-tile");card.dataset.scheduleKind="class";
      const top=el("div","schedule-tile-top");
      top.append(el("span","schedule-number",String(index+1)),el("span","schedule-kind",subject));
-     card.append(top,el("h3","",entry.title),el("p","","Select a course before pinning this subject."));
-     const choose=el("a","schedule-open","Choose course");choose.href="profile/";card.append(choose);rail.append(card);
+     const info=el("div","schedule-course-info");
+     info.append(el("h3","",entry.title),el("p","","Select a course before pinning this subject."));
+     const actions=el("div","schedule-actions");
+     const choose=el("a","schedule-open","Choose Course");choose.href="profile/";
+     actions.append(choose);
+     card.append(top,info,actions);rail.append(card);
      continue;
    }
    const current=await registry.resolveContinueFor(id);
@@ -116,8 +120,9 @@ async function renderHost(host){
    const star=el("button","schedule-pin",pinned?"★":"☆");star.type="button";star.title=pinned?"Unpin class":"Pin class";star.setAttribute("aria-label",(pinned?"Unpin ":"Pin ")+course.title);star.setAttribute("aria-pressed",String(pinned));
    star.addEventListener("click",()=>{registry.setPinned(id,!registry.isPinned(id));renderAll()});
    top.append(star);card.append(top);
-   card.append(el("h3","",course.title));
-   card.append(el("p","",current?.detail||"Ready to open."));
+   const info=el("div","schedule-course-info");
+   info.append(el("h3","",course.title),el("p","",current?.detail||"Ready to open."));
+   card.append(info);
    addCourseActions(card,course,id,current,pinned);
    rail.append(card);
  }
