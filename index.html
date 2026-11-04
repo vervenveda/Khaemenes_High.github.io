@@ -1151,7 +1151,7 @@ html:root:root body main>.section.final .section-inner>.kicker{font-size:16px!im
       {id:"math-catalog",icon:"M",title:"Mathematics Department",status:"Active",url:"courses/mathematics/index.html",description:"High-school mathematics catalog and current Grade 9 Pre-Algebra pathway."},
       {id:"pre-algebra",icon:"PA",title:"Pre-Algebra",status:"Active",url:"courses/mathematics/pre-algebra/index.html",description:"Bridge mathematics, arithmetic fluency, algebra readiness, modelling, assessment, and records."},
       {id:"algebra-1",icon:"A1",title:"Algebra I",status:"Placement",url:"courses/mathematics/algebra-1/index.html",description:"Readiness-based Algebra I. Placement and mastery requirements remain unchanged."},
-      {id:"psychology-101",icon:"P",title:"Psychology 101",status:"Elective",url:"electives/grades/grade-09/psych-101/index.html",description:"Introduction to psychological science, research, and ethics."},
+      {id:"psychology-101",icon:"P",title:"Psychology 101",status:"Psychology / Life Skills",url:"electives/grades/grade-09/psych-101/index.html",description:"Introduction to psychological science, research, and ethics."},
       {id:"calculator",icon:"∑",title:"Scientific Calculator",status:"Tool",url:"courses/mathematics/tools/calculator",description:"Safe scientific computation with degree/radian modes, history, constants, and keyboard support."},
       {id:"integrated-science-9",icon:"S9",title:"Integrated Science 9",status:"Active",url:"courses/science/integrated-science-9/index.html",description:"Life, matter, energy, Earth systems, engineering, inquiry, evidence literacy, and cumulative assessment."},
       {id:"english-9",icon:"E9",title:"English 9",status:"Active",url:"courses/language-arts/english-9/index.html",description:"Reading, literature, writing, rhetoric, research, speaking, and media literacy."},
@@ -1204,6 +1204,29 @@ html:root:root body main>.section.final .section-inner>.kicker{font-size:16px!im
         url:LINGUISTICS_CAMPUS,
         description:language.developing?"Requested "+language.name+" Year "+level+" pathway; materials and assessments are being developed. The Linguistics Hall offers related resources, not yet a verified complete credit course.":"Year "+level+" of the selected world-language pathway. "+(level<=2?"Part of the two-year language requirement.":"Optional Year "+level+" of a four-year sequence.")+" Choose and study your language in the Linguistics Hall."
       });
+    }
+  }
+
+  // Keep the public course directory aligned with the SAME eight-class
+  // grade catalog as student profiles. Existing department/resource cards stay.
+  const EIGHT=window.KhaemenesHighEightClass;
+  for(const grade of ["9","10","11","12"]){
+    const known=new Set(COURSES[grade].map(c=>c.id));
+    const canonical=EIGHT?.slots(grade,{mathId:null,language:""})||[];
+    for(const slot of canonical){
+      if(!slot.id||!slot.href||known.has(slot.id)||slot.subject==="foreignLanguage")continue;
+      COURSES[grade].push({
+        id:slot.id,icon:slot.subject==="psychology"?"PS":slot.subject==="elective"?"EL":"CL",
+        title:slot.title,
+        status:slot.resourceOnly?"Resource doorway":slot.isElective?"Elective":"Core pathway",
+        url:slot.href,
+        description:slot.resourceOnly
+          ?"Health, Wellness & Human Development resources. A dedicated grade-specific Psychology / Life Skills course is still being developed."
+          :slot.isElective
+          ?"Select an elective from the Academy directory. Pinning this doorway does not itself enroll a learner."
+          :"Grade "+grade+" "+slot.label+" doorway. A pinned shortcut does not award grades or change placement."
+      });
+      known.add(slot.id);
     }
   }
 
