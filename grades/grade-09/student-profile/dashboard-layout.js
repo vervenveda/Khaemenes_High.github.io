@@ -60,7 +60,12 @@ if(!document.getElementById("khaeProfileToolRail")){
  for(const tool of tools){
   const item=document.createElement(tool.href?"a":"button");
   item.className="grade09-profile-tool";
-  item.textContent=tool.label;
+  const label=document.createElement("span");
+  label.className="grade09-profile-tool-label";
+  label.textContent=tool.label;
+  label.style.setProperty("color","#fff8e9","important");
+  label.style.setProperty("-webkit-text-fill-color","#fff8e9","important");
+  item.append(label);
   if(tool.href)item.href=tool.href;
   else{
    item.type="button";
@@ -71,6 +76,11 @@ if(!document.getElementById("khaeProfileToolRail")){
    });
   }
   item.style.cssText="box-sizing:border-box;display:flex;align-items:center;justify-content:center;width:100%;min-width:0;min-height:56px;padding:10px 12px;border:1px solid #65716c;border-radius:7px;background:#33454b;color:#fff8e9;-webkit-text-fill-color:#fff8e9;text-align:center;text-decoration:none;font:400 16px/1.3 'Brandon Grotesque',Nunito,Arial,sans-serif;cursor:pointer";
+  // Keep charcoal and cream even if legacy auto-contrast has restyled controls.
+  item.style.setProperty("background-color","#243038","important");
+  item.style.setProperty("background-image","none","important");
+  item.style.setProperty("color","#fff8e9","important");
+  item.style.setProperty("-webkit-text-fill-color","#fff8e9","important");
   item.addEventListener("focus",()=>{item.style.outline="3px solid #e2bd78";item.style.outlineOffset="2px"});
   item.addEventListener("blur",()=>{item.style.outline=""});
   grid.append(item);
@@ -80,9 +90,16 @@ if(!document.getElementById("khaeProfileToolRail")){
  const photoActions=identity?.querySelector(".grade09-profile-actions");
  const learningButton=photoActions?.querySelector("#openLearningJourney");
  if(learningButton){
-  learningButton.textContent="Learning Journey";
+  const journeyLabel=document.createElement("span");
+  journeyLabel.className="grade09-profile-tool-label";
+  journeyLabel.textContent="Learning Journey";
+  journeyLabel.style.setProperty("color","#fff8e9","important");
+  journeyLabel.style.setProperty("-webkit-text-fill-color","#fff8e9","important");
+  learningButton.replaceChildren(journeyLabel);
   learningButton.className="grade09-profile-tool";
   learningButton.style.cssText="box-sizing:border-box;display:flex;align-items:center;justify-content:center;width:100%;min-width:0;min-height:56px;padding:10px 12px;border:1px solid #65716c;border-radius:7px;background:#33454b;text-align:center;text-decoration:none;font:400 16px/1.3 'Brandon Grotesque',Nunito,Arial,sans-serif;cursor:pointer";
+  learningButton.style.setProperty("background-color","#243038","important");
+  learningButton.style.setProperty("background-image","none","important");
   learningButton.style.setProperty("color","#fff8e9","important");
   learningButton.style.setProperty("-webkit-text-fill-color","#fff8e9","important");
   grid.append(learningButton);
