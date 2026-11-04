@@ -1333,6 +1333,9 @@ html body #grade09ClassProgressDialog :is(button,a):focus-visible{outline:3px so
   grid-column:1/-1;
  }
 }
+html body #grade09ClassProgressDialog .grade09-progress-placeholder-key{
+ display:block!important;width:7px!important;height:100%!important;border-radius:6px!important;
+}
 @media(prefers-reduced-motion:reduce){
  html body #grade09ClassProgressDialog .grade09-progress-fill{transition:none}
 }
