@@ -127,7 +127,9 @@ if(toolGrid&&photoCard&&typeof popup.showModal==="function"){
   opener.addEventListener("click",()=>{display();syncMark();popup.showModal();close.focus()});
   popup.addEventListener("close",()=>{if(opener.isConnected)opener.focus()});
   popup.addEventListener("click",event=>{if(event.target===popup)popup.close()});
-  toolGrid.append(opener);
+  // Picture customization remains implemented and learner-scoped, but its
+  // redundant Profile Tools button is not inserted. Edit Profile is the entry.
+  // Keep the dialog and existing handlers intact for future integrated access.
 }else if(details)details.insertBefore(ui,details.querySelector(".subline")?.nextSibling||null);
 else row.append(ui);
 avatar.classList.add("grade09-avatar-enhanced");
