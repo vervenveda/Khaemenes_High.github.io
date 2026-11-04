@@ -13,15 +13,18 @@ const chooser=document.createElement("div");chooser.style.cssText="display:flex;
 box.append(h,p,wall,count,chooser);
 const near=document.getElementById("studentCourseProgress")||document.querySelector(".grade09-priority-schedule")||document.getElementById("upperClasses");if(near)near.insertAdjacentElement("afterend",box);else return;
 const catalog=["🌟","🌈","🦋","🌻","🐬","🦉","🚀","🎨","🔭","🪐","📚","🏆","💎","🧩","🦄","🎵","🐢","🍀","🧠","✨","🌸","🐝","🦕","⚡"];
-const key=initial?"khaemenes.student.stickers.v1:"+encodeURIComponent(initial):null;
+// Grade 09 may select a learner after this module initializes. Read the current
+// learner dynamically there; keep the older grade behavior unchanged.
+const currentLearner=()=>grade==="09"?active():initial;
+const recordKey=()=>{const learner=currentLearner();return learner?"khaemenes.student.stickers.v1:"+encodeURIComponent(learner):null;};
 const safe=x=>x&&Array.isArray(x.earned)&&Array.isArray(x.placed);
-function read(){if(!key)return {earned:[],placed:[]};try{const v=JSON.parse(localStorage.getItem(key)||"null");return safe(v)?{earned:v.earned.filter(x=>typeof x==="string").slice(0,300),placed:v.placed.filter(x=>catalog.includes(x)).slice(0,300)}:{earned:[],placed:[]}}catch{return {earned:[],placed:[]}}}
-const same=()=>!!initial&&active()===initial;
+function read(){const key=recordKey();if(!key)return {earned:[],placed:[]};try{const v=JSON.parse(localStorage.getItem(key)||"null");return safe(v)?{earned:v.earned.filter(x=>typeof x==="string").slice(0,300),placed:v.placed.filter(x=>catalog.includes(x)).slice(0,300)}:{earned:[],placed:[]}}catch{return {earned:[],placed:[]}}}
+const same=()=>!!currentLearner()&&(grade==="09"||active()===initial);
 function paint(){wall.replaceChildren();chooser.replaceChildren();if(!same()){count.textContent="Select your learner and reload this profile to view your stickers.";return}
  const data=read();data.placed.forEach(x=>{const s=document.createElement("span");s.textContent=x;s.style.fontSize="30px";s.setAttribute("aria-label","Profile sticker "+x);wall.append(s)});
  const remaining=Math.max(0,data.earned.length-data.placed.length);count.textContent=data.placed.length+" stickers on my profile · "+remaining+" sticker "+(remaining===1?"choice":"choices")+" available";
  if(!remaining){const info=document.createElement("span");info.textContent="Your next sticker unlocks after a verified unit-quiz pass.";chooser.append(info);return}
- catalog.forEach(emoji=>{const b=document.createElement("button");b.type="button";b.textContent=emoji;b.setAttribute("aria-label","Choose "+emoji+" sticker");b.style.cssText="font-size:24px;padding:5px 9px;border:1px solid #b6a58c;border-radius:7px;background:#f2e9db";b.onclick=()=>{if(!same())return;const now=read();if(now.placed.length>=now.earned.length)return;now.placed.push(emoji);try{localStorage.setItem(key,JSON.stringify(now));paint()}catch{count.textContent="Unable to store sticker on this device."}};chooser.append(b)});
+ catalog.forEach(emoji=>{const b=document.createElement("button");b.type="button";b.textContent=emoji;b.setAttribute("aria-label","Choose "+emoji+" sticker");b.style.cssText="font-size:24px;padding:5px 9px;border:1px solid #b6a58c;border-radius:7px;background:#f2e9db";b.onclick=()=>{if(!same())return;const now=read();if(now.placed.length>=now.earned.length)return;now.placed.push(emoji);try{localStorage.setItem(recordKey(),JSON.stringify(now));paint()}catch{count.textContent="Unable to store sticker on this device."}};chooser.append(b)});
 }
-paint();window.addEventListener("focus",paint);window.addEventListener("pageshow",paint);window.addEventListener("khaemenes-student-profile-changed",paint);window.addEventListener("storage",e=>{if(!e.key||e.key===key)paint()});
+paint();window.addEventListener("focus",paint);window.addEventListener("pageshow",paint);window.addEventListener("khaemenes-student-profile-changed",paint);window.addEventListener("storage",e=>{if(!e.key||e.key===recordKey())paint()});
 })();
