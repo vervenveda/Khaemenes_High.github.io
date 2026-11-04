@@ -50,10 +50,9 @@ if(!document.getElementById("khaeProfileToolRail")){
    const popup=document.getElementById("grade09ScheduleDialog");
    if(popup&&!popup.open)popup.showModal();
   }},
-  {label:"Study Studio",run:()=>{
-   const opener=document.getElementById("openLearningJourney");
-   if(opener)opener.click();
-   else window.location.assign("profile/");
+  {label:"Study Studio",target:"grade09StudyStudioDialog",run:()=>{
+   const studio=window.KhaemenesGrade09StudyStudio;
+   if(studio)studio.open(document.activeElement);
   }},
   {label:"Dreams & Achievements",target:"khaeDreamsAchievements",fallback:"profile/"},
   {label:"Sticker Box",target:"khaeStickerBox",fallback:"games/"},
