@@ -72,8 +72,8 @@ function renderTools(){
  tools.replaceChildren();
  const buttons=[
   ["Edit Profile",builder],["Class Progress","#courseManagerGrid"],
-  ["Schedule","#grade09BlueprintSchedule"],["KlasaiPeer",highRoot+"grades/grade-"+grade+"/"],
-  ["Yearbook","https://vervenveda.com/Khaemenes_Academy.github.io/tour/"],
+  ["Schedule","#grade09BlueprintSchedule"],["My Grade Campus",highRoot+"grades/grade-"+grade+"/"],
+  ["Academy Tour","https://vervenveda.com/Khaemenes_Academy.github.io/tour/"],
   ["Creative Tools","#grade09BlueprintRooms"],["Student Portfolio",highRoot+"portfolio/index.html"],
   ["Customize Background",builder]
  ];
