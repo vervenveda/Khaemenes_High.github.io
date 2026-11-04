@@ -7,16 +7,15 @@ const dashboardWidth="min(calc(100% - 33px), 1100px)";
 const align=node=>{if(!node)return;node.style.setProperty("width",dashboardWidth,"important");node.style.setProperty("max-width","1100px","important");node.style.setProperty("margin-left","auto","important");node.style.setProperty("margin-right","auto","important")};
 const shortcuts=document.querySelector(".grade09-priority");
 const portfolio=main.querySelector('aside[aria-label="Student Learning Portfolio"]');
-// Student profile first: identity/photo, first step, pins, then the existing course schedule.
+// Student profile first: identity/photo and first step, then the canonical schedule.
 const grid=main.querySelector(".section .grid");
 const identity=grid?.querySelector(".profile-row")?.closest(".card");
 const firstStep=grid?.querySelector("#todayTitle")?.closest(".card");
-const pins=grid?.querySelector("#classes");
 const top=document.createElement("section");
 top.className="grade09-profile-first";
 top.id="grade09ProfileFirst";
 top.setAttribute("aria-label","Student profile and daily starting point");
-for(const card of [identity,firstStep,pins])if(card)top.append(card);
+for(const card of [identity,firstStep])if(card)top.append(card);
 main.prepend(top);
 align(top);
 
@@ -57,7 +56,7 @@ if(!document.getElementById("khaeProfileToolRail")){
   {label:"Sticker Box",target:"khaeStickerBox",fallback:"games/"},
   {label:"Creative Tools",target:"khaeStudentEcosystemTools",fallback:"games/"},
   // Phase 1: expose existing features without relocating their DOM or touching learner records.
-  {label:"Pinned Classes",target:"classes",fallback:"daily-lessons/"},
+  {label:"Pinned Classes",target:"scheduleBarTitle",fallback:"daily-lessons/"},
   {label:"Student Portfolio",run:()=>{
    const evidence=document.querySelector('aside[aria-label="Student Learning Portfolio"]');
    if(evidence){evidence.scrollIntoView({behavior:"smooth",block:"start"});evidence.querySelector("a")?.focus({preventScroll:true});}
@@ -116,13 +115,13 @@ if(!document.getElementById("khaeProfileToolRail")){
   if(!photoActions.children.length)photoActions.remove();
  }
  rail.append(heading,grid);
- top.insertBefore(rail,firstStep||pins||null);
+ top.insertBefore(rail,firstStep||null);
 }
 // Grade 09 only: relocate the existing course-manager DOM to one accessible dialog.
 // The inline course registry continues rendering into its original #courseManagerGrid.
 const managerHeading=document.getElementById("manageClassesTitle");
 const managerCard=managerHeading?.closest("section.card");
-if(managerCard&&pins&&!document.getElementById("grade09ManageClassesDialog")){
+if(managerCard&&!document.getElementById("grade09ManageClassesDialog")){
  const styles=document.createElement("style");
  styles.id="grade09ManageClassesDialogStyle";
  styles.textContent=`
@@ -152,9 +151,10 @@ if(managerCard&&pins&&!document.getElementById("grade09ManageClassesDialog")){
  modal.append(bar,body);
  document.body.append(modal);
  const open=document.createElement("button");open.type="button";open.className="grade09-manage-trigger";open.textContent="Manage Classes & Mathematics";
- const explanation=pins.querySelector("p");
- if(explanation)explanation.insertAdjacentElement("afterend",open);
- else pins.prepend(open);
+ const scheduleCard=schedule.querySelector(".schedule-card");
+ const scheduleHost=schedule.querySelector("[data-grade09-schedule-bar]");
+ if(scheduleHost)scheduleHost.insertAdjacentElement("beforebegin",open);
+ else if(scheduleCard)scheduleCard.append(open);
  let returnFocus=null;
  open.addEventListener("click",()=>{returnFocus=document.activeElement;if(!modal.open)modal.showModal();});
  modal.addEventListener("close",()=>{if(returnFocus?.isConnected)returnFocus.focus();});
