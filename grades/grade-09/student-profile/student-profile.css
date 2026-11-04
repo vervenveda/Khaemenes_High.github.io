@@ -947,42 +947,42 @@ html body .grade09-profile-first .grade09-daily-task-number{
 html body .grade09-profile-first .grade09-daily-task:not(:has(.grade09-daily-task-link))::after{
   content:"";grid-column:2;grid-row:3;min-height:44px;
 }
-html body .grade09-profile-first .grade09-academic-checkpoints{
+html body .grade09-priority-schedule .grade09-academic-checkpoints{
   border-top:1px solid #c5b492;
   padding-top:18px;
   margin-top:10px;
 }
-html body .grade09-profile-first .grade09-academic-checkpoints h3{
+html body .grade09-priority-schedule .grade09-academic-checkpoints h3{
   margin:0 0 8px!important;color:#243038!important;
   font:400 24px/1.3 Cinzel,Georgia,serif!important;
 }
-html body .grade09-profile-first .grade09-academic-grid{
+html body .grade09-priority-schedule .grade09-academic-grid{
   display:grid;
   grid-template-columns:repeat(4,minmax(0,1fr));
   gap:10px;
   margin-top:14px;
 }
-html body .grade09-profile-first .grade09-academic-box{
+html body .grade09-priority-schedule .grade09-academic-box{
   box-sizing:border-box;display:flex;flex-direction:column;align-items:stretch;
   min-width:0;min-height:170px;gap:8px;padding:12px;
   border:1px solid #cbbfaa;border-top:3px solid #8c9894;
   border-radius:7px;background:#fffaf0;color:#243038;
 }
-html body .grade09-profile-first .grade09-academic-box.is-mastered{
+html body .grade09-priority-schedule .grade09-academic-box.is-mastered{
   border-top-color:#28684d;background:#e6f1e9;
 }
-html body .grade09-profile-first .grade09-academic-box .grade09-academic-number{
+html body .grade09-priority-schedule .grade09-academic-box .grade09-academic-number{
   color:#4e6157;font:400 16px/1.2 "Brandon Grotesque",Nunito,Arial,sans-serif;
 }
-html body .grade09-profile-first .grade09-academic-box strong{
+html body .grade09-priority-schedule .grade09-academic-box strong{
   font:400 17px/1.35 "Brandon Grotesque",Nunito,Arial,sans-serif!important;
   color:#243038!important;overflow-wrap:break-word;
 }
-html body .grade09-profile-first .grade09-academic-box small{
+html body .grade09-priority-schedule .grade09-academic-box small{
   font:400 16px/1.3 "Brandon Grotesque",Nunito,Arial,sans-serif!important;
   color:#4b5d55!important;
 }
-html body .grade09-profile-first .grade09-academic-box .grade09-academic-link{
+html body .grade09-priority-schedule .grade09-academic-box .grade09-academic-link{
   display:flex;align-items:center;justify-content:center;margin-top:auto;
   min-height:44px;padding:8px;border-radius:7px;border:1px solid #b48b45;
   background:#243038;color:#fff8e9;-webkit-text-fill-color:#fff8e9;
@@ -990,9 +990,80 @@ html body .grade09-profile-first .grade09-academic-box .grade09-academic-link{
   text-align:center;text-decoration:none;
 }
 @media(max-width:900px){
-  html body .grade09-profile-first .grade09-academic-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  html body .grade09-priority-schedule .grade09-academic-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
 }
 @media(max-width:540px){
-  html body .grade09-profile-first .grade09-academic-grid{grid-template-columns:1fr}
+  html body .grade09-priority-schedule .grade09-academic-grid{grid-template-columns:1fr}
   html body .grade09-profile-first .grade09-daily-task{grid-template-rows:auto auto auto}
+}
+
+/* Expanded standalone To Do Today: academic checkpoints now live below My Schedule Bar. */
+html body .grade09-profile-first > .card:has(#todayTitle){
+  box-sizing:border-box!important;
+  width:100%!important;
+  max-width:none!important;
+  min-width:0!important;
+  grid-column:1/-1!important;
+  padding:18px!important;
+}
+html body .grade09-profile-first .grade09-daily-focus{
+  width:100%;
+  box-sizing:border-box;
+  display:flex;
+  flex-direction:column;
+  gap:14px;
+  margin-top:14px;
+}
+html body .grade09-profile-first .grade09-daily-focus-list{
+  width:100%;
+  grid-template-columns:repeat(2,minmax(0,1fr))!important;
+  gap:14px!important;
+}
+html body .grade09-profile-first .grade09-daily-task{
+  box-sizing:border-box;
+  width:100%;
+  min-width:0;
+  padding:16px!important;
+  grid-template-columns:35px minmax(0,1fr);
+  grid-template-rows:auto minmax(44px,1fr) auto;
+  gap:10px 12px;
+  border-radius:7px;
+}
+html body .grade09-profile-first .grade09-daily-task-link{
+  width:100%;
+  box-sizing:border-box;
+}
+html body .grade09-profile-first .grade09-daily-focus-note{
+  margin-top:4px!important;
+}
+html body .grade09-priority-schedule #grade09AcademicCheckpoints{
+  box-sizing:border-box;
+  width:100%;
+  margin-top:20px;
+  padding:18px 0 2px;
+  border-top:1px solid #c5b492;
+}
+html body .grade09-priority-schedule #grade09AcademicCheckpoints .grade09-academic-grid{
+  width:100%;
+  grid-template-columns:repeat(4,minmax(0,1fr));
+  gap:12px;
+}
+html body .grade09-priority-schedule #grade09AcademicCheckpoints .grade09-academic-box{
+  min-height:175px;
+  background:#fffdf8;
+}
+@media(max-width:900px){
+  html body .grade09-priority-schedule #grade09AcademicCheckpoints .grade09-academic-grid{
+    grid-template-columns:repeat(2,minmax(0,1fr));
+  }
+}
+@media(max-width:790px){
+  html body .grade09-profile-first .grade09-daily-focus-list{
+    grid-template-columns:1fr!important;
+  }
+}
+@media(max-width:540px){
+  html body .grade09-priority-schedule #grade09AcademicCheckpoints .grade09-academic-grid{
+    grid-template-columns:1fr;
+  }
 }
