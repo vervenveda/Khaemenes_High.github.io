@@ -10,6 +10,8 @@ const toolGrid=document.querySelector("#khaeProfileToolRail > div");
 if(!row||!toolGrid||document.getElementById("grade09BackgroundDialog"))return;
 
 const base="#f4f0e7";
+const GUEST="__grade09_guest_design__";
+const storageOwner=()=>person()||GUEST;
 const colorsKey=id=>"khaemenes.grade09.profile.background:"+encodeURIComponent(id);
 const sectionsKey=id=>"khaemenes.grade09.profile.background.sections.v1:"+encodeURIComponent(id);
 const stickerKey=id=>"khaemenes.grade09.profile.background.sticker:"+encodeURIComponent(id);
@@ -126,7 +128,6 @@ function paintCard(element,mode,color,sticker,isFirstStep=false){
 }
 let currentOwner=null, pageColor=base, pageSticker="", savedImage="", sectionPrefs={};
 function readSections(owner){
- if(!owner)return {};
  try{
   const data=JSON.parse(read(sectionsKey(owner))||"{}");
   if(!data||typeof data!=="object"||Array.isArray(data))return {};
@@ -198,49 +199,12 @@ title.id="grade09BackgroundDialogTitle";
 title.style.cssText="margin:0;color:#243038;font:400 26px/1.3 Cinzel,Georgia,serif";
 const close=action("Close ✕");close.addEventListener("click",()=>popup.close());
 toolbar.append(title,close);
-const explanation=el("p","Customize the page and each current popup independently. Without a selected learner, changes are previews only. Original design restores each section's Academy styling. All settings stay with the selected learner on this device.");
+const explanation=el("p","Set a different background color and sticker for the page and each popup. Changes are saved on this browser immediately. With a learner selected they are learner-specific; without one they are stored as a separate guest design.");
 explanation.style.cssText="margin:0 0 15px;font:400 16px/1.5 Nunito,Arial,sans-serif";
 const status=el("p","");
 status.setAttribute("role","status");status.setAttribute("aria-live","polite");
 status.style.cssText="margin:12px 0;padding:9px;border:1px solid #b9ac91;border-radius:7px;color:#243038;background:#f5edda;font:400 16px/1.4 Nunito,Arial,sans-serif";
 
-const design=window.KhaemenesGrade09Design;
-// Existing Design Studio features now live in the one Customize Background dialog.
-const designGroup=el("section");
-designGroup.style.cssText="display:grid;gap:12px;padding:14px;border:1px solid #c8b897;border-radius:7px;background:#fffdf8;margin-bottom:16px";
-const designHeading=el("h3","Workspace Design");
-designHeading.style.cssText="margin:0;font:400 22px/1.25 Cinzel,Georgia,serif;color:#243038";
-const designInfo=el("p","Theme, accent and layout density apply across your dashboard. Photo and avatar choices belong to Edit Profile.");
-designInfo.style.cssText="margin:0;color:#243038;font:400 16px/1.5 Nunito,Arial,sans-serif";
-const designRow=el("div");
-designRow.style.cssText="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,180px),1fr));gap:10px";
-const themeControl=dropdown("Workspace Theme",[["parchment","Ivory Parchment"],["forest","Forest Study"],["midnight","Midnight Study"]]);
-const accentControl=dropdown("Accent",[["gold","Academy Gold"],["teal","Scholar Teal"],["plum","Library Plum"]]);
-const densityControl=dropdown("Dashboard Density",[["comfortable","Comfortable"],["compact","Compact"]]);
-designRow.append(themeControl.wrap,accentControl.wrap,densityControl.wrap);
-const designActions=el("div");designActions.style.cssText="display:flex;flex-wrap:wrap;gap:9px";
-const previewDesign=action("Preview Workspace"),saveDesign=action("Save Workspace Design"),restoreDesign=action("Restore All Academy Design Defaults");
-designActions.append(previewDesign,saveDesign,restoreDesign);
-designGroup.append(designHeading,designInfo,designRow,designActions);
-const workspaceValues=()=>({theme:themeControl.input.value,accent:accentControl.input.value,density:densityControl.input.value});
-const workspaceResetPreview=()=>{if(design?.apply&&design?.read)design.apply(design.read())};
-previewDesign.addEventListener("click",()=>{
- const owner=person();if(owner!==currentOwner||!design?.apply){message("Workspace preview unavailable.");return}
- design.apply({...design.read(),...workspaceValues()});
- message(owner?"Preview applied; save to keep.":"Theme preview only; select a learner to save.");
-});
-saveDesign.addEventListener("click",()=>{
- const owner=person();if(!owner||owner!==currentOwner||!design?.write){message("Select an Academy learner before saving workspace settings.");return}
- if(!design.write({...design.read(),...workspaceValues()})){workspaceResetPreview();message("Unable to save the workspace design.");return}
- message("Workspace theme, accent and density saved. Your picture and frame were preserved.");
-});
-restoreDesign.addEventListener("click",()=>{
- const owner=person();if(!owner||owner!==currentOwner||!design?.clear){message("Select an Academy learner before restoring design defaults.");return}
- if(!design.clear()){workspaceResetPreview();message("Unable to restore the saved Academy design.");return}
- themeControl.input.value="parchment";accentControl.input.value="gold";densityControl.input.value="comfortable";
- window.dispatchEvent(new Event("khaemenes-grade09-design-changed"));
- message("All Academy design defaults restored: theme, accent, density, photo frame and avatar mark. Your saved photograph and personal information remain untouched.");
-});
 const pageGroup=el("section");
 pageGroup.style.cssText="display:grid;gap:12px;padding:14px;border:1px solid #c8b897;border-radius:7px;background:#f8f2e7;margin-bottom:16px";
 const pageHeading=el("h3","Page Background");
@@ -283,6 +247,21 @@ const removeImage=action("Remove Background Image");
 const imageNote=el("p","An uploaded picture is resized locally for this learner; no image is sent to a server.");
 imageNote.style.cssText="margin:0;font:400 16px/1.45 Nunito,Arial,sans-serif";
 pageGroup.append(pageHeading,pageRow,pageEmoji.wrap,rewardInfo,rewardOpen,upload.wrap,removeImage,imageNote);
+const saveAll=action("Save All Background Choices");
+saveAll.addEventListener("click",()=>{
+ const owner=person();
+ if(owner!==currentOwner){refresh();message("Learner changed; reopen the editor to save.");return}
+ const scope=storageOwner();
+ const updates=[[colorsKey(scope),pageColor],[sectionsKey(scope),JSON.stringify(sectionPrefs)],[stickerKey(scope),pageSticker]];
+ const previous=updates.map(([key])=>[key,read(key)]);
+ let saved=true;
+ for(const [key,value] of updates){if(!write(key,value)){saved=false;break}}
+ if(!saved){
+  for(const [key,value] of previous){if(value===null)erase(key);else write(key,value)}
+  message("Could not save choices. Check browser storage and try again.");return
+ }
+ message(owner?"All background choices saved for the selected learner.":"All background choices saved as an isolated browser-only guest design.");
+});
 const sectionsGroup=el("section");
 sectionsGroup.style.cssText="display:grid;gap:10px;margin-top:12px";
 const sectionsHeading=el("h3","Independent Section Colors & Stickers");
@@ -325,17 +304,17 @@ for(const section of surfaces){
   const last=sectionPrefs[section.key];
   const next={mode:mode.input.value,color:color.input.value,emoji:emoji.input.value};
   sectionPrefs[section.key]=next;
-  if(owner&&!write(sectionsKey(owner),JSON.stringify(sectionPrefs))){
+  if(!write(sectionsKey(storageOwner()),JSON.stringify(sectionPrefs))){
    if(last)sectionPrefs[section.key]=last;else delete sectionPrefs[section.key];
    refresh();message("Could not save this section. Browser storage may be full.");return;
   }
   color.input.disabled=next.mode!=="custom";
   applyAll();
-  message(section.title+(owner?" appearance saved.":" preview only — select a learner to save."));
+  message(section.title+(owner?" appearance saved for learner.":" saved to this browser as guest design."));
  };
  for(const control of [mode.input,color.input,emoji.input])control.addEventListener("change",update);
 }
-popup.append(toolbar,explanation,designGroup,pageGroup,sectionsGroup,status);
+popup.append(toolbar,explanation,pageGroup,sectionsGroup,saveAll,status);
 document.body.append(popup);
 const opener=action("Customize Background");
 opener.id="openGrade09BackgroundDialog";
@@ -346,25 +325,18 @@ opener.style.cssText="box-sizing:border-box;display:flex;align-items:center;just
 opener.style.setProperty("color","#fff8e9","important");
 opener.style.setProperty("-webkit-text-fill-color","#fff8e9","important");
 opener.addEventListener("click",()=>{refresh();popup.showModal();close.focus()});
-popup.addEventListener("close",()=>{workspaceResetPreview();if(!currentOwner)refresh();if(opener.isConnected)opener.focus()});
+popup.addEventListener("close",()=>{refresh();if(opener.isConnected)opener.focus()});
 popup.addEventListener("click",event=>{if(event.target===popup)popup.close()});
 toolGrid.append(opener);
 
 function refresh(){
  const owner=person();
  currentOwner=owner;
- pageColor=owner&&isColor(read(colorsKey(owner)))?read(colorsKey(owner)):base;
- pageSticker=owner&&(emojiList.includes(read(stickerKey(owner)))||earnedStickers(owner).includes(read(stickerKey(owner))))?read(stickerKey(owner)):"";
+ pageColor=isColor(read(colorsKey(storageOwner())))?read(colorsKey(storageOwner())):base;
+ pageSticker=(emojiList.includes(read(stickerKey(storageOwner())))||earnedStickers(owner).includes(read(stickerKey(storageOwner()))))?read(stickerKey(storageOwner())):"";
  const rawImage=owner?read(imageKey(owner))||"":"";
  savedImage=/^data:image\/jpeg;base64,[a-z0-9+/=]+$/i.test(rawImage)&&rawImage.length<700000?rawImage:"";
- sectionPrefs=readSections(owner);
- const currentDesign=design?.read?.();
- themeControl.input.value=currentDesign?.theme||"parchment";
- accentControl.input.value=currentDesign?.accent||"gold";
- densityControl.input.value=currentDesign?.density||"comfortable";
- for(const control of [themeControl.input,accentControl.input,densityControl.input,previewDesign])control.disabled=!design?.apply;
- saveDesign.disabled=!owner||!design?.write;
- restoreDesign.disabled=!owner||!design?.clear;
+ sectionPrefs=readSections(storageOwner());
  pageColorControl.input.value=pageColor;
  updateRewardOptions(pageEmoji.input,owner);
  pageEmoji.input.value=pageSticker;
@@ -385,7 +357,7 @@ function refresh(){
   controls.mode.disabled=false;
   controls.emoji.disabled=false;
  }
- if(!owner)message("Preview mode is available. Select an Academy learner before saving any background settings.");
+ if(!owner)message("Guest design: changes save to this browser only, separately from student profiles. Select a learner for learner-specific settings.");
  else message("Changes are stored privately on this device for the selected learner.");
  applyAll();
 }
@@ -395,23 +367,23 @@ pageColorControl.input.addEventListener("input",()=>{
 });
 pageColorControl.input.addEventListener("change",()=>{
  const owner=person();if(owner!==currentOwner){refresh();return}
- if(owner&&!write(colorsKey(owner),pageColorControl.input.value)){
+ if(!write(colorsKey(storageOwner()),pageColorControl.input.value)){
   refresh();message("Unable to save the page color.");return
  }
- pageColor=pageColorControl.input.value;applyAll();message(owner?"Page background color saved.":"Page color preview only; select a learner to save.");
+ pageColor=pageColorControl.input.value;applyAll();message(owner?"Page background color saved for learner.":"Page color saved as browser-only guest design.");
 });
 resetPage.addEventListener("click",()=>{
  const owner=person();if(owner!==currentOwner){refresh();return}
- if(owner&&!erase(colorsKey(owner))){message("Unable to restore the page color.");return}
+ if(!erase(colorsKey(storageOwner()))){message("Unable to restore the page color.");return}
  pageColor=base;pageColorControl.input.value=base;applyAll();message("Default page color restored. Section choices are preserved.");
 });
 pageEmoji.input.addEventListener("change",()=>{
  const owner=person();if(owner!==currentOwner){refresh();return}
  const value=pageEmoji.input.value;
- if(owner&&(value?!write(stickerKey(owner),value):!erase(stickerKey(owner)))){
+ if(value?!write(stickerKey(storageOwner()),value):!erase(stickerKey(storageOwner()))){
   refresh();message("Unable to save your page sticker.");return
  }
- pageSticker=value;applyAll();message(owner?(value?"Page stickers saved.":"Page stickers removed."):"Sticker preview only; select a learner to save.");
+ pageSticker=value;applyAll();message(owner?(value?"Page stickers saved.":"Page stickers removed."):"Guest sticker preference saved on this browser.");
 });
 upload.input.addEventListener("change",async()=>{
  const owner=person();
@@ -455,15 +427,9 @@ removeImage.addEventListener("click",()=>{
 window.addEventListener("pageshow",refresh);
 window.addEventListener("load",refresh);
 window.addEventListener("khaemenes-student-profile-changed",refresh);
-window.addEventListener("khaemenes-grade09-design-changed",()=>{
- const current=design?.read?.();
- if(current&&person()===currentOwner){
-  themeControl.input.value=current.theme;accentControl.input.value=current.accent;densityControl.input.value=current.density;
- }
-});
 window.addEventListener("storage",event=>{
  if(!event.key||event.key==="khaemenes_active_learner_v1"||
-  (currentOwner&&[colorsKey(currentOwner),sectionsKey(currentOwner),stickerKey(currentOwner),imageKey(currentOwner)].includes(event.key)))refresh();
+  [colorsKey(storageOwner()),sectionsKey(storageOwner()),stickerKey(storageOwner()),imageKey(storageOwner())].includes(event.key))refresh();
 });
 refresh();
 })();
