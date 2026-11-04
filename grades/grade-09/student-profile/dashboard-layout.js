@@ -55,13 +55,7 @@ if(!document.getElementById("khaeProfileToolRail")){
    if(studio)studio.open(document.activeElement);
   }},
   {label:"Dreams & Achievements",target:"khaeDreamsAchievements",fallback:"profile/"},
-  {label:"Sticker Box",target:"khaeStickerBox",fallback:"games/"},
   {label:"Creative Tools",target:"khaeStudentEcosystemTools",fallback:"games/"},
-  // Phase 1: expose existing features without relocating their DOM or touching learner records.
-  {label:"Pinned Classes",target:"grade09ScheduleDialog",run:()=>{
-   const popup=document.getElementById("grade09ScheduleDialog");
-   if(popup&&!popup.open)popup.showModal();
-  }},
   {label:"Student Portfolio",run:()=>{
    const evidence=document.querySelector('aside[aria-label="Student Learning Portfolio"]');
    if(evidence){evidence.scrollIntoView({behavior:"smooth",block:"start"});evidence.querySelector("a")?.focus({preventScroll:true});}
@@ -96,26 +90,11 @@ if(!document.getElementById("khaeProfileToolRail")){
   item.addEventListener("blur",()=>{item.style.outline=""});
   grid.append(item);
  }
- // Rehome the existing Learning Journey button, preserving its original
- // learner-scoped dialog click handler and saved portfolio evidence.
+ // The redundant Learning Journey toolbar action is retired. The associated
+ // evidence and learning-journey implementation remain in place.
  const photoActions=identity?.querySelector(".grade09-profile-actions");
- const learningButton=photoActions?.querySelector("#openLearningJourney");
- if(learningButton){
-  const journeyLabel=document.createElement("span");
-  journeyLabel.className="grade09-profile-tool-label";
-  journeyLabel.textContent="Learning Journey";
-  journeyLabel.style.setProperty("color","#fff8e9","important");
-  journeyLabel.style.setProperty("-webkit-text-fill-color","#fff8e9","important");
-  learningButton.replaceChildren(journeyLabel);
-  learningButton.className="grade09-profile-tool";
-  learningButton.style.cssText="box-sizing:border-box;display:flex;align-items:center;justify-content:center;width:100%;min-width:0;min-height:56px;padding:10px 12px;border:1px solid #65716c;border-radius:7px;background:#33454b;text-align:center;text-decoration:none;font:400 16px/1.3 'Brandon Grotesque',Nunito,Arial,sans-serif;cursor:pointer";
-  learningButton.style.setProperty("background-color","#243038","important");
-  learningButton.style.setProperty("background-image","none","important");
-  learningButton.style.setProperty("color","#fff8e9","important");
-  learningButton.style.setProperty("-webkit-text-fill-color","#fff8e9","important");
-  grid.append(learningButton);
-  // The toolbar already has its own Edit Profile link. Remove the duplicate
-  // from the photo card only after the Learning Journey control is safe.
+ if(photoActions){
+  photoActions.querySelector("#openLearningJourney")?.remove();
   photoActions.querySelector('a.grade09-profile-action[href="profile/"]')?.remove();
   if(!photoActions.children.length)photoActions.remove();
  }
