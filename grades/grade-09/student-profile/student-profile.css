@@ -714,3 +714,31 @@ html:root:root body #khaeProfileToolRail .grade09-profile-tool:focus-visible{
     justify-content:center!important;
   }
 }
+
+/* 2026-11-03 targeted contrast repair: dark course/schedule actions only.
+   Preserve light secondary/gold controls and all click handlers. */
+html:root:root body .grade09-priority-schedule a.schedule-open,
+html:root:root body .grade09-priority-schedule button.schedule-open,
+html:root:root body .grade09-priority-schedule .schedule-choice-row :is(a,button):not(.secondary):not(.gold),
+html:root:root body .section .lesson-card :is(a.btn,button.btn):not(.secondary):not(.gold):not(.warn),
+html:root:root body #grade09ManageClassesDialog .lesson-card :is(a.btn,button.btn):not(.secondary):not(.gold):not(.warn){
+  background-color:#202724!important;
+  background-image:none!important;
+  color:#FFF8E9!important;
+  -webkit-text-fill-color:#FFF8E9!important;
+  border-color:#B48B45!important;
+  text-shadow:none!important;
+  font-size:16px!important;
+  line-height:1.35!important;
+  opacity:1!important;
+}
+html:root:root body .grade09-priority-schedule a.schedule-open :is(span,strong,small),
+html:root:root body .grade09-priority-schedule .schedule-choice-row :is(a,button):not(.secondary):not(.gold) :is(span,strong,small),
+html:root:root body .section .lesson-card :is(a.btn,button.btn):not(.secondary):not(.gold):not(.warn) :is(span,strong,small){
+  color:#FFF8E9!important;
+  -webkit-text-fill-color:#FFF8E9!important;
+}
+html:root:root body :is(.grade09-priority-schedule,.section .lesson-card,#grade09ManageClassesDialog) :is(a,button):focus-visible{
+  outline:3px solid #B48B45!important;
+  outline-offset:2px!important;
+}
