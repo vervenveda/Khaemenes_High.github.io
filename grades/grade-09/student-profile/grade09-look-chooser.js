@@ -29,7 +29,11 @@ const learner=()=>{
  try{
   const id=JSON.parse(localStorage.getItem("khaemenes_active_learner_v1")||"null");
   const registry=JSON.parse(localStorage.getItem("khaemenes_family_registry_v1")||"null");
-  return typeof id==="string"&&registry?.learners?.[id]?.learnerId===id?id:null;
+  const record=typeof id==="string"?registry?.learners?.[id]:null;
+  if(!record||record.learnerId!==id)return null;
+  if(record.grade&&!["9","09"].includes(String(record.grade)))return null;
+  const linked=window.KhaemenesStudentProfileV2?.activeLearner?.()?.learnerId;
+  return linked&&String(linked)!==id?null:id;
  }catch{return null}
 };
 const validColor=color=>typeof color==="string"&&/^#[0-9a-f]{6}$/i.test(color);
