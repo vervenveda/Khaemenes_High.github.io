@@ -263,7 +263,10 @@ rewardOpen.addEventListener("click",()=>{
 });
 function updateRewardOptions(select,owner){
  const previous=select.value;
- for(const option of [...select.options])if(option.dataset.earnedSticker==="yes")option.remove();
+ for(const option of [...select.options]){
+  if(option.dataset.earnedSticker==="yes")option.remove();
+  else option.textContent=option.value||"No sticker";
+ }
  const earned=earnedStickers(owner);
  for(const emoji of earned){
   const existing=[...select.options].find(option=>option.value===emoji);
@@ -302,7 +305,7 @@ for(const section of surfaces){
  const emoji=dropdown("Emoji sticker",emojiList.map(v=>[v,v||"No sticker"]));
  controls.append(mode.wrap,color.wrap,emoji.wrap);
  panel.append(header,controls);sectionsGroup.append(panel);
- rows.set(section.key,{mode:mode.input,color:color.input,emoji:emoji.input});
+ rows.set(section.key,{mode:mode.input,color:color.input,emoji:emoji.input,panel});
  const update=()=>{
   const owner=person();if(owner!==currentOwner){refresh();message("Learner selection changed; reopen the editor.");return}
   const last=sectionPrefs[section.key];
@@ -352,6 +355,8 @@ function refresh(){
  updateRewardOptions(pageEmoji.input,owner);
  pageEmoji.input.value=pageSticker;
  for(const [key,controls] of rows){
+  const surface=surfaces.find(s=>s.key===key);
+  controls.panel.hidden=!surface?.find();
   const pref=sectionPrefs[key]||{mode:"default",color:base,emoji:""};
   controls.mode.value=pref.mode;
   controls.color.value=pref.color;
@@ -434,6 +439,7 @@ removeImage.addEventListener("click",()=>{
  savedImage="";removeImage.disabled=true;applyAll();message("Background image removed; colors and stickers remain.");
 });
 window.addEventListener("pageshow",refresh);
+window.addEventListener("load",refresh);
 window.addEventListener("khaemenes-student-profile-changed",refresh);
 window.addEventListener("khaemenes-grade09-design-changed",()=>{
  const current=design?.read?.();
