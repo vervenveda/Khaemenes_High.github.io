@@ -54,7 +54,7 @@ if(!document.getElementById("khaeProfileToolRail")){
    const studio=window.KhaemenesGrade09StudyStudio;
    if(studio)studio.open(document.activeElement);
   }},
-  {label:"Arcade",href:"https://vervenveda.com/arcade.github.io/"},
+  {label:"Yearbook",target:"grade09YearbookDialog",run:()=>window.KhaemenesGrade09Yearbook?.open?.(document.activeElement)},
   {label:"Creative Tools",target:"khaeStudentEcosystemTools",run:()=>{
    const section=document.getElementById("khaeStudentEcosystemTools");
    if(!section)return;
@@ -112,6 +112,51 @@ if(!document.getElementById("khaeProfileToolRail")){
  rail.append(heading,grid);
  top.insertBefore(rail,firstStep||null);
 }
+
+/* Yearbook Studio lives in its own repository and browser-storage origin.
+   The Grade 09 profile provides a modal doorway, not a second copy of photo data. */
+if(!window.KhaemenesGrade09Yearbook){
+ const yearbookUrl="https://vervenveda.com/Academy-Yearbook.github.io/";
+ const yearbook=document.createElement("dialog");
+ yearbook.id="grade09YearbookDialog";
+ yearbook.className="grade09-yearbook-dialog";
+ yearbook.setAttribute("aria-labelledby","grade09YearbookTitle");
+ const style=document.createElement("style");
+ style.id="grade09YearbookDialogStyle";
+ style.textContent=`
+ html:root:root body #grade09YearbookDialog{box-sizing:border-box;width:min(1140px,calc(100vw - 24px));height:min(91dvh,950px);max-height:91dvh;margin:auto;padding:0;overflow:hidden;border:2px solid #b48b45;border-radius:7px;background:#fff8e9;color:#243038;box-shadow:0 18px 70px #0007}
+ html:root:root body #grade09YearbookDialog::backdrop{background:rgba(12,23,25,.76)}
+ #grade09YearbookDialog .yearbook-modal-shell{display:flex;flex-direction:column;height:100%;min-height:0}
+ #grade09YearbookDialog .yearbook-modal-header{box-sizing:border-box;display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap;padding:11px 17px;background:#243038;color:#fff8e9}
+ #grade09YearbookDialog #grade09YearbookTitle{margin:0;color:#fff8e9;font:400 23px/1.3 Cinzel,Georgia,serif}
+ #grade09YearbookDialog .yearbook-modal-buttons{display:flex;gap:8px;flex-wrap:wrap}
+ html:root:root body #grade09YearbookDialog .yearbook-modal-buttons :is(a,button){box-sizing:border-box;display:inline-flex;align-items:center;justify-content:center;min-height:44px;padding:8px 13px;border:1px solid #b48b45;border-radius:7px;background:#fff8e9;color:#243038;-webkit-text-fill-color:#243038;font:400 16px/1.3 "Brandon Grotesque",Nunito,Arial,sans-serif;text-decoration:none;cursor:pointer}
+ #grade09YearbookDialog .yearbook-modal-help{margin:0;padding:9px 14px;color:#243038;background:#f5e8ce;border-bottom:1px solid #b48b45;font:400 16px/1.4 "Brandon Grotesque",Nunito,Arial,sans-serif}
+ #grade09YearbookDialog .yearbook-frame{box-sizing:border-box;border:0;display:block;width:100%;flex:1;min-height:0;background:#182625}
+ #grade09YearbookDialog .yearbook-modal-buttons :is(a,button):focus-visible{outline:3px solid #d5b77b;outline-offset:2px}
+ @media(max-width:620px){html:root:root body #grade09YearbookDialog{width:calc(100vw - 12px);height:94dvh;max-height:94dvh}#grade09YearbookDialog .yearbook-modal-header{padding:9px}#grade09YearbookDialog #grade09YearbookTitle{font-size:20px}}
+ `;
+ document.head.append(style);
+ const shell=document.createElement("div");shell.className="yearbook-modal-shell";
+ const header=document.createElement("div");header.className="yearbook-modal-header";
+ const heading=document.createElement("h2");heading.id="grade09YearbookTitle";heading.textContent="My School Yearbook";
+ const controls=document.createElement("div");controls.className="yearbook-modal-buttons";
+ const launch=document.createElement("a");launch.href=yearbookUrl;launch.target="_blank";launch.rel="noopener noreferrer";launch.textContent="Open full Yearbook";
+ const close=document.createElement("button");close.type="button";close.textContent="Close";
+ controls.append(launch,close);header.append(heading,controls);
+ const help=document.createElement("p");help.className="yearbook-modal-help";
+ help.textContent="Create a personal photo yearbook. Photos are stored by the Yearbook application in this browser, not in your Academy learner profile. Export a backup to keep your memories.";
+ const frame=document.createElement("iframe");frame.className="yearbook-frame";frame.title="Khaemenes Academy Yearbook Studio";
+ frame.referrerPolicy="strict-origin-when-cross-origin";frame.loading="lazy";frame.setAttribute("allow","");frame.src=yearbookUrl;
+ shell.append(header,help,frame);yearbook.append(shell);document.body.append(yearbook);
+ let trigger=null;
+ const open=button=>{trigger=button||document.activeElement;if(!yearbook.open)yearbook.showModal();close.focus();};
+ close.addEventListener("click",()=>yearbook.close());
+ yearbook.addEventListener("click",e=>{if(e.target===yearbook)yearbook.close();});
+ yearbook.addEventListener("close",()=>{if(trigger?.isConnected)trigger.focus();});
+ window.KhaemenesGrade09Yearbook=Object.freeze({open});
+}
+
 // Grade 09 only: relocate the existing course-manager DOM to one accessible dialog.
 // The inline course registry continues rendering into its original #courseManagerGrid.
 const managerHeading=document.getElementById("manageClassesTitle");
