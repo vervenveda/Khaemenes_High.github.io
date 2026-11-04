@@ -27,7 +27,7 @@ function learner(){
   const raw=localStorage.getItem("khaemenes_family_registry_v1");
   const entry=raw?JSON.parse(raw)?.learners?.[p.learnerId]:null;
   const grade=entry?.grade||p.grade;
-  if(grade!==undefined&&grade!==null&&!/^(?:grade[\\s-]*)?0?9$/i.test(String(grade)))return null;
+  if(grade!==undefined&&grade!==null&&!/^(?:grade[\s-]*)?0?9$/i.test(String(grade)))return null;
   return p;
  }catch{return null}
 }
