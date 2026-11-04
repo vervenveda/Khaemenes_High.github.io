@@ -20,9 +20,6 @@ function addCourseActions(card,course,id,current,pinned){
  open.dataset.launchCourse=id;
  open.addEventListener("click",()=>registry.recordLaunch(id,open.href.replace(location.origin,""),course.title));
  actions.append(open);
- const mentor=el("a","schedule-open schedule-secondary","Ask Mentor");
- mentor.href=registry.mentorFor(id);
- actions.append(mentor);
  const toggle=el("button","schedule-open schedule-secondary",pinned?"Unpin":"Pin Class");
  toggle.type="button";
  toggle.setAttribute("aria-pressed",String(pinned));
@@ -33,7 +30,6 @@ function addCourseActions(card,course,id,current,pinned){
    void renderAll();
   }
  });
- actions.append(toggle);
  if(id==="integrated-science-9"){
   const notebook=el("a","schedule-open schedule-secondary","Scientific Notebook");
   notebook.href=SCIENCE_NOTEBOOK+"?grade=9&course="+encodeURIComponent(id);
@@ -42,6 +38,7 @@ function addCourseActions(card,course,id,current,pinned){
   notebook.title="Your four-year science research notebook";
   actions.append(notebook);
  }
+ actions.append(toggle); // Pin/Unpin is the final, aligned bottom action on every course card.
  card.append(actions);
 }
 
@@ -53,48 +50,8 @@ async function renderHost(host){
  const status=el("span","schedule-status");
  intro.append(status);host.append(intro);
 
- // Keep the foreign-language choice available on the dashboard itself.
- // Previously this selector existed only in My Profile, so the schedule tile
- // looked fixed even though the learner was allowed to choose a language.
- const controls=el("div","schedule-choice-row");
- controls.style.cssText="display:flex;flex-wrap:wrap;align-items:center;gap:9px;margin:12px 0 16px";
- const langLabel=el("label","schedule-language-label","Foreign language");
- langLabel.setAttribute("for","grade09DashboardLanguageChoice");
- const langSelect=el("select","schedule-language-select");
- langSelect.id="grade09DashboardLanguageChoice";
- langSelect.setAttribute("aria-label","Choose Grade 09 foreign language");
- const placeholder=el("option","","Choose a language");placeholder.value="";langSelect.append(placeholder);
- languages.forEach(([value,label])=>{
-   const option=el("option","",label);
-   option.value=value;
-   langSelect.append(option);
- });
- langSelect.value=language();
- langSelect.addEventListener("change",()=>{
-   const previous=language();
-   const choices=pins.readLanguageChoices();
-   choices["9"]=langSelect.value;
-   if(!pins.writeLanguageChoices(choices)){
-     langSelect.value=previous;
-     status.textContent="Language choice could not be saved on this device.";
-     return;
-   }
-   const oldId="world-language-9-"+previous;
-   const nextId="world-language-9-"+langSelect.value;
-   if(registry.isPinned(oldId)){
-     registry.setPinned(oldId,false);
-     registry.setPinned(nextId,true);
-   }
-   window.dispatchEvent(new CustomEvent("khaemenes-grade09-language-changed",{detail:{grade:"9",language:langSelect.value}}));
-   void renderAll();
- });
- langLabel.append(langSelect);
- controls.append(langLabel);
- const profileLink=el("a","schedule-open","Language details");
- profileLink.href="profile/";
- controls.append(profileLink);
- host.append(controls);
-
+ // Foreign-language selection remains on its dedicated profile/landing page.
+ // Read its existing saved choice above; do not duplicate selectors inside this popup.
  const rail=el("div","schedule-rail");rail.setAttribute("aria-label","Eight academic classes");
  let pinnedCount=0;
  for(let index=0;index<slots().length;index++){
@@ -108,6 +65,10 @@ async function renderHost(host){
      const actions=el("div","schedule-actions");
      const choose=el("a","schedule-open","Choose Course");choose.href="profile/";
      actions.append(choose);
+     const unavailable=el("button","schedule-open schedule-secondary","Pin Class");
+     unavailable.type="button";unavailable.disabled=true;
+     unavailable.title="Choose a course before pinning it";
+     actions.append(unavailable);
      card.append(top,info,actions);rail.append(card);
      continue;
    }
@@ -117,9 +78,7 @@ async function renderHost(host){
    card.dataset.scheduleKind="class";
    const top=el("div","schedule-tile-top");
    top.append(el("span","schedule-number",String(index+1)),el("span","schedule-kind",subject));
-   const star=el("button","schedule-pin",pinned?"★":"☆");star.type="button";star.title=pinned?"Unpin class":"Pin class";star.setAttribute("aria-label",(pinned?"Unpin ":"Pin ")+course.title);star.setAttribute("aria-pressed",String(pinned));
-   star.addEventListener("click",()=>{registry.setPinned(id,!registry.isPinned(id));renderAll()});
-   top.append(star);card.append(top);
+   card.append(top);
    const info=el("div","schedule-course-info");
    info.append(el("h3","",course.title),el("p","",current?.detail||"Ready to open."));
    card.append(info);
