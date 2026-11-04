@@ -917,3 +917,82 @@ html:root:root body .grade09-priority-schedule .schedule-actions > :is(a,button)
 @media(max-width:540px){
   html body .grade09-priority-schedule .schedule-course-info{min-height:100px}
 }
+
+/* Grade 09 To Do Today · separate personal wellbeing from academic evidence. */
+html body .grade09-profile-first .focus-card{
+  padding:16px 18px!important;background:#263839!important;color:#fff8e9!important;border-radius:7px!important;
+}
+html body .grade09-profile-first .focus-card #todayTitle{
+  display:block!important;color:#fff8e9!important;-webkit-text-fill-color:#fff8e9!important;
+  font:400 26px/1.35 Cinzel,Georgia,serif!important;
+}
+html body .grade09-profile-first .focus-card #todayFocus{
+  color:#fff8e9!important;-webkit-text-fill-color:#fff8e9!important;
+  font:400 16px/1.5 "Brandon Grotesque",Nunito,Arial,sans-serif!important;
+}
+html body .grade09-profile-first .grade09-daily-focus{
+  margin-top:12px;gap:14px;
+}
+html body .grade09-profile-first .grade09-daily-task{
+  grid-template-rows:auto minmax(55px,1fr) auto;
+  border-color:#d2c3aa;
+  padding:12px;
+}
+html body .grade09-profile-first .grade09-daily-task-check{
+  align-items:center;
+}
+html body .grade09-profile-first .grade09-daily-task-number{
+  font:400 16px/1.2 "Brandon Grotesque",Nunito,Arial,sans-serif!important;
+}
+html body .grade09-profile-first .grade09-daily-task:not(:has(.grade09-daily-task-link))::after{
+  content:"";grid-column:2;grid-row:3;min-height:44px;
+}
+html body .grade09-profile-first .grade09-academic-checkpoints{
+  border-top:1px solid #c5b492;
+  padding-top:18px;
+  margin-top:10px;
+}
+html body .grade09-profile-first .grade09-academic-checkpoints h3{
+  margin:0 0 8px!important;color:#243038!important;
+  font:400 24px/1.3 Cinzel,Georgia,serif!important;
+}
+html body .grade09-profile-first .grade09-academic-grid{
+  display:grid;
+  grid-template-columns:repeat(4,minmax(0,1fr));
+  gap:10px;
+  margin-top:14px;
+}
+html body .grade09-profile-first .grade09-academic-box{
+  box-sizing:border-box;display:flex;flex-direction:column;align-items:stretch;
+  min-width:0;min-height:170px;gap:8px;padding:12px;
+  border:1px solid #cbbfaa;border-top:3px solid #8c9894;
+  border-radius:7px;background:#fffaf0;color:#243038;
+}
+html body .grade09-profile-first .grade09-academic-box.is-mastered{
+  border-top-color:#28684d;background:#e6f1e9;
+}
+html body .grade09-profile-first .grade09-academic-box .grade09-academic-number{
+  color:#4e6157;font:400 16px/1.2 "Brandon Grotesque",Nunito,Arial,sans-serif;
+}
+html body .grade09-profile-first .grade09-academic-box strong{
+  font:400 17px/1.35 "Brandon Grotesque",Nunito,Arial,sans-serif!important;
+  color:#243038!important;overflow-wrap:break-word;
+}
+html body .grade09-profile-first .grade09-academic-box small{
+  font:400 16px/1.3 "Brandon Grotesque",Nunito,Arial,sans-serif!important;
+  color:#4b5d55!important;
+}
+html body .grade09-profile-first .grade09-academic-box .grade09-academic-link{
+  display:flex;align-items:center;justify-content:center;margin-top:auto;
+  min-height:44px;padding:8px;border-radius:7px;border:1px solid #b48b45;
+  background:#243038;color:#fff8e9;-webkit-text-fill-color:#fff8e9;
+  font:400 16px/1.25 "Brandon Grotesque",Nunito,Arial,sans-serif;
+  text-align:center;text-decoration:none;
+}
+@media(max-width:900px){
+  html body .grade09-profile-first .grade09-academic-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@media(max-width:540px){
+  html body .grade09-profile-first .grade09-academic-grid{grid-template-columns:1fr}
+  html body .grade09-profile-first .grade09-daily-task{grid-template-rows:auto auto auto}
+}
