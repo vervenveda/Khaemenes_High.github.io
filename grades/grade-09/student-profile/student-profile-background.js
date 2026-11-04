@@ -221,9 +221,10 @@ const rewardInfo=el("p","Earned Sticker Box designs appear here once claimed. De
 rewardInfo.style.cssText="margin:0;color:#243038;font:400 16px/1.45 Nunito,Arial,sans-serif";
 const rewardOpen=action("Open My Sticker Box");
 rewardOpen.addEventListener("click",()=>{
+ const dialog=window.KhaemenesGrade09StickerBoxDialog;
+ if(!dialog?.open){message("Sticker Box is unavailable. The reward records have not been changed.");return}
  popup.close();
- const target=document.getElementById("khaeStickerBox");
- if(target){target.closest("details")?.setAttribute("open","");target.scrollIntoView({behavior:"smooth",block:"center"});}
+ dialog.open(rewardOpen);
 });
 function updateRewardOptions(select,owner){
  const previous=select.value;
@@ -244,7 +245,7 @@ function updateRewardOptions(select,owner){
 const upload=formInput("file","Upload a background image (JPG, PNG, WebP, up to 5 MB)");
 upload.input.accept="image/jpeg,image/png,image/webp";
 const removeImage=action("Remove Background Image");
-const imageNote=el("p","An uploaded picture is resized locally for this learner; no image is sent to a server.");
+const imageNote=el("p","Choose a JPG, PNG, or WebP. The image is resized and stored locally in this browser. Guest uploads stay separate from learner images; nothing is uploaded to a server.");
 imageNote.style.cssText="margin:0;font:400 16px/1.45 Nunito,Arial,sans-serif";
 pageGroup.append(pageHeading,pageRow,pageEmoji.wrap,rewardInfo,rewardOpen,upload.wrap,removeImage,imageNote);
 const saveAll=action("Save All Background Choices");
@@ -334,7 +335,7 @@ function refresh(){
  currentOwner=owner;
  pageColor=isColor(read(colorsKey(storageOwner())))?read(colorsKey(storageOwner())):base;
  pageSticker=(emojiList.includes(read(stickerKey(storageOwner())))||earnedStickers(owner).includes(read(stickerKey(storageOwner()))))?read(stickerKey(storageOwner())):"";
- const rawImage=owner?read(imageKey(owner))||"":"";
+ const rawImage=read(imageKey(storageOwner()))||"";
  savedImage=/^data:image\/jpeg;base64,[a-z0-9+/=]+$/i.test(rawImage)&&rawImage.length<700000?rawImage:"";
  sectionPrefs=readSections(storageOwner());
  pageColorControl.input.value=pageColor;
@@ -351,8 +352,8 @@ function refresh(){
   controls.color.disabled=pref.mode!=="custom";
  }
  for(const node of [pageColorControl.input,resetPage,pageEmoji.input])node.disabled=false;
- upload.input.disabled=!owner;
- removeImage.disabled=!owner||!savedImage;
+ upload.input.disabled=false;
+ removeImage.disabled=!savedImage;
  for(const controls of rows.values()){
   controls.mode.disabled=false;
   controls.emoji.disabled=false;
@@ -387,9 +388,10 @@ pageEmoji.input.addEventListener("change",()=>{
 });
 upload.input.addEventListener("change",async()=>{
  const owner=person();
- if(!owner||owner!==currentOwner){refresh();return}
+ if(owner!==currentOwner){refresh();message("Learner changed during upload. Reopen the editor.");return}
  const file=upload.input.files?.[0];if(!file)return;
- if(!["image/jpeg","image/png","image/webp"].includes(file.type)||file.size>5*1024*1024){
+ const mime=file.type||({"jpg":"image/jpeg","jpeg":"image/jpeg","png":"image/png","webp":"image/webp"}[file.name.split(".").pop().toLowerCase()]||"");
+ if(!["image/jpeg","image/png","image/webp"].includes(mime)||file.size>5*1024*1024){
   message("Choose a JPG, PNG, or WebP image smaller than 5 MB.");upload.input.value="";return
  }
  const url=URL.createObjectURL(file);
@@ -397,7 +399,7 @@ upload.input.addEventListener("change",async()=>{
   message("Processing background image locally…");
   const image=new Image();
   await new Promise((ok,fail)=>{image.onload=ok;image.onerror=fail;image.src=url});
-  if(person()!==owner||currentOwner!==owner){refresh();return}
+  if(person()!==owner||currentOwner!==owner){message("The selected learner changed. Image not saved.");return}
   const canvas=document.createElement("canvas");
   const scale=Math.min(1,1280/Math.max(image.naturalWidth,image.naturalHeight));
   canvas.width=Math.max(1,Math.round(image.naturalWidth*scale));
@@ -412,16 +414,16 @@ upload.input.addEventListener("change",async()=>{
    data=canvas.toDataURL("image/jpeg",.57);
   }
   if(data.length>=650000)throw Error("Please choose a simpler or smaller image");
-  if(person()!==owner||currentOwner!==owner){refresh();return}
-  if(!write(imageKey(owner),data))throw Error("Browser storage is full");
+  if(person()!==owner||currentOwner!==owner){message("The selected learner changed. Image not saved.");return}
+  if(!write(imageKey(storageOwner()),data))throw Error("Browser storage is full");
   savedImage=data;applyAll();removeImage.disabled=false;
-  message("Background image saved on this device for the selected learner.");
+  message(owner?"Background image saved on this device for the selected learner.":"Background image saved to a separate guest design on this browser.");
  }catch(error){message("Background image could not be saved. Try a smaller image; your previous image is preserved.")}
  finally{URL.revokeObjectURL(url);upload.input.value=""}
 });
 removeImage.addEventListener("click",()=>{
- const owner=person();if(!owner||owner!==currentOwner){refresh();return}
- if(!erase(imageKey(owner))){message("Unable to remove background image.");return}
+ const owner=person();if(owner!==currentOwner){refresh();return}
+ if(!erase(imageKey(storageOwner()))){message("Unable to remove background image.");return}
  savedImage="";removeImage.disabled=true;applyAll();message("Background image removed; colors and stickers remain.");
 });
 window.addEventListener("pageshow",refresh);
@@ -429,7 +431,7 @@ window.addEventListener("load",refresh);
 window.addEventListener("khaemenes-student-profile-changed",refresh);
 window.addEventListener("storage",event=>{
  if(!event.key||event.key==="khaemenes_active_learner_v1"||
-  [colorsKey(storageOwner()),sectionsKey(storageOwner()),stickerKey(storageOwner()),imageKey(storageOwner())].includes(event.key))refresh();
+  [colorsKey(storageOwner()),sectionsKey(storageOwner()),stickerKey(storageOwner()),imageKey(storageOwner()),...(currentOwner?[earnedKey(currentOwner)]:[])].includes(event.key))refresh();
 });
 refresh();
 })();
