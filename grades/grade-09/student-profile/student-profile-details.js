@@ -17,7 +17,8 @@ const GROUPS=[
   ["age","Age","number"],["dateOfBirth","Date of Birth","date"],
   ["grade","Grade","fixed","Grade 9"],
   ["teacherName","Teacher Name","text"],["schoolYear","School Year","text"],
-  ["gender","Male / Female","gender"]
+  ["gender","Male / Female","gender"],
+  ["graduationYear","Expected Graduation Year","text"]
  ]],
  ["Interests, Learning & Activities",[
   ["hobbies","Hobbies","textarea"],
@@ -34,7 +35,8 @@ const GROUPS=[
   ["favoriteHoliday","Holiday","text"],["favoriteSubject","School Subject","text"],
   ["favoriteHobby","Hobby","text"],["favoriteGame","Game","text"],
   ["favoritePlace","Place to Go","text"],["favoriteFamilyActivity","Family Activity","text"],
-  ["favoriteAnimal","Animal","text"]
+  ["favoriteAnimal","Animal","text"],
+  ["favoriteSong","Song","text"],["favoriteSeason","Season","text"]
  ]],
  ["My Dreams & My Academy",[
   ["futureCareer","I Want to Be…","text"],
@@ -101,7 +103,14 @@ function mountEditor(){
   const details=tag("details");details.open=group==="School & Personal Information";
   details.style.cssText="box-sizing:border-box;min-width:0;padding:12px;border:1px solid #c8b89a;border-radius:7px;background:#f7f1e6";
   const summary=tag("summary",group);summary.style.cssText="cursor:pointer;color:#243038;font:400 21px/1.3 Cinzel,Georgia,serif;padding:5px";
-  const grid=tag("div");grid.style.cssText="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr));gap:13px;margin-top:12px";
+  const grid=tag("div");
+  // Keep complete desktop rows: 8 School cards in two columns;
+  // 15 Favorite cards in three columns. Responsive auto-fit collapses naturally.
+  const isSchool=group==="School & Personal Information";
+  const isFavorites=group==="My Favorites";
+  const maxWidth=isSchool?"850px":isFavorites?"900px":"100%";
+  const minCard=isSchool?"330px":isFavorites?"260px":"260px";
+  grid.style.cssText="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,"+minCard+"),1fr));gap:13px;margin:12px auto 0;max-width:"+maxWidth+";width:100%";
   for(const [id,label,type,defaultValue] of fields){
    const box=tag("div");box.className="grade09-extra-field";
    box.style.cssText="display:grid;align-content:start;gap:5px;min-width:0;border:1px solid #d3c6ad;border-radius:7px;padding:10px;background:#fffdf8";
