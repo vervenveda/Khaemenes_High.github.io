@@ -102,8 +102,21 @@ function mountGradeNineChart(){
   for(const [b,k] of [[allButton,"all"],[needsButton,"review"]])b.setAttribute("aria-pressed",String(mode===k));
   graph.replaceChildren();
   if(!learner){
-   status.textContent="Choose an Academy learner to view private progress. No personal scores are shown.";
-   detail.replaceChildren();return;
+   status.textContent="Select an Academy learner to load private results. All eight subjects remain visible without revealing scores.";
+   for(const r of rows){
+    const item=text("div","grade09-progress-row grade09-progress-placeholder");
+    const label=text("span","grade09-progress-label",r.subject);
+    const track=text("span","grade09-progress-track");
+    track.setAttribute("role","img");
+    track.setAttribute("aria-label",r.subject+" · completion not reported");
+    const color=text("span","grade09-progress-placeholder-key");
+    color.style.backgroundColor=r.color;
+    track.append(color);
+    const value=text("span","grade09-progress-value","Not reported");
+    item.append(label,track,value);graph.append(item);
+   }
+   detail.replaceChildren(text("p","grade09-progress-empty","Select your learner to see course completion, assessment mastery, next learning steps, and reproducible four-week planning scenarios."));
+   return;
   }
   const available=rows.filter(r=>r.percent!==null).length;
   const flagged=rows.filter(r=>r.needsReview).length;
