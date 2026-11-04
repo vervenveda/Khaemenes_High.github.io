@@ -1155,128 +1155,184 @@ html body .grade09-class-progress :is(button,a):focus-visible{
  html body .grade09-class-progress .grade09-progress-fill{transition:none}
 }
 
-/* Grade 09 single-owner Class Progress overlay: full viewport, no desktop page scroll. */
+/* Grade 09 Class Progress dialog — vertically stacked, canonical, readable.
+   Both existing data owners remain unchanged; this block replaces the broken side-by-side CSS. */
 html body #grade09ClassProgressDialog{
-  box-sizing:border-box;width:min(1600px,calc(100vw - 24px));max-width:1600px;
-  height:calc(100dvh - 24px);max-height:calc(100dvh - 24px);
-  margin:auto;padding:0;overflow:hidden;
-  border:2px solid #b48b45;border-radius:7px;background:#f4f0e7;color:#243038;
-  box-shadow:0 22px 80px rgba(0,0,0,.50);
-  font:400 16px/1.4 "Brandon Grotesque",Nunito,Arial,sans-serif;
+ box-sizing:border-box;width:min(1280px,calc(100vw - 20px));max-width:1280px;
+ height:calc(100dvh - 20px);max-height:calc(100dvh - 20px);
+ margin:auto;padding:0;overflow:hidden;
+ border:2px solid #b48b45;border-radius:7px;
+ background:#f4f0e7;color:#243038;
+ box-shadow:0 22px 80px rgba(0,0,0,.5);
+ font:400 16px/1.4 "Brandon Grotesque",Nunito,Arial,sans-serif;
 }
 html body #grade09ClassProgressDialog::backdrop{background:rgba(16,27,28,.82)}
 html body #grade09ClassProgressDialog .grade09-progress-dialog-header{
-  display:flex;justify-content:space-between;align-items:center;
-  gap:14px;min-height:62px;padding:10px 20px;
-  background:#243038;color:#fff8e9;border-bottom:1px solid #b48b45;
+ box-sizing:border-box;display:flex;justify-content:space-between;align-items:center;
+ gap:14px;min-height:64px;padding:10px 20px;
+ background:#243038;border-bottom:1px solid #b48b45;color:#fff8e9;
 }
 html body #grade09ClassProgressDialog .grade09-progress-dialog-header h2{
-  margin:0;color:#fff8e9;font:400 26px/1.3 Cinzel,Georgia,serif;
+ margin:0;color:#fff8e9;font:400 26px/1.3 Cinzel,Georgia,serif;
 }
 html:root:root body #grade09ClassProgressDialog .grade09-progress-dialog-close{
-  display:inline-flex;align-items:center;justify-content:center;
-  box-sizing:border-box;min-width:100px;min-height:44px;padding:8px 14px;
-  border:1px solid #b48b45;border-radius:7px;background:#fff8e9!important;
-  color:#243038!important;-webkit-text-fill-color:#243038!important;
-  font:400 16px/1.3 "Brandon Grotesque",Nunito,Arial,sans-serif!important;
-  cursor:pointer;
+ box-sizing:border-box;min-width:100px;min-height:44px;padding:8px 14px;
+ border:1px solid #b48b45;border-radius:7px;
+ background:#fff8e9!important;color:#243038!important;-webkit-text-fill-color:#243038!important;
+ font:400 16px/1.3 "Brandon Grotesque",Nunito,Arial,sans-serif!important;cursor:pointer;
 }
 html body #grade09ClassProgressDialog .grade09-progress-dialog-content{
-  display:grid;grid-template-columns:minmax(0,44fr) minmax(0,56fr);
-  gap:14px;box-sizing:border-box;padding:14px;height:calc(100% - 62px);
-  min-height:0;overflow:hidden;
+ box-sizing:border-box;display:grid;grid-template-columns:minmax(0,1fr);
+ grid-template-rows:auto auto;gap:16px;
+ height:calc(100% - 64px);min-height:0;
+ padding:16px;overflow-y:auto;overflow-x:hidden;overscroll-behavior:contain;
 }
 html body #grade09ClassProgressDialog :is(.grade09-progress-dialog-checkpoints,.grade09-progress-dialog-chart){
-  box-sizing:border-box;min-width:0;min-height:0;
-  overflow:hidden;
+ box-sizing:border-box;min-width:0;min-height:0;overflow:visible;
 }
 html body #grade09ClassProgressDialog #grade09AcademicCheckpoints{
-  box-sizing:border-box!important;display:flex!important;flex-direction:column!important;
-  margin:0!important;padding:16px!important;width:100%!important;height:100%!important;
-  border:1px solid #cebda0!important;border-radius:7px;background:#fffdf8!important;
-  overflow:hidden!important;
+ box-sizing:border-box!important;display:block!important;
+ width:100%!important;height:auto!important;min-height:0!important;
+ margin:0!important;padding:16px!important;
+ border:1px solid #cbbfaa!important;border-radius:7px;
+ background:#fffdf8!important;overflow:visible!important;
 }
 html body #grade09ClassProgressDialog #grade09AcademicCheckpoints h3{
-  margin:0 0 7px!important;font:400 23px/1.3 Cinzel,Georgia,serif!important;color:#243038!important;
+ margin:0 0 8px!important;color:#243038!important;
+ font:400 23px/1.3 Cinzel,Georgia,serif!important;
 }
 html body #grade09ClassProgressDialog #grade09AcademicCheckpoints .grade09-daily-focus-explanation{
-  margin:0 0 10px!important;color:#485850!important;
-  font:400 16px/1.35 "Brandon Grotesque",Nunito,Arial,sans-serif!important;
+ margin:0 0 14px!important;color:#485850!important;
+ font:400 16px/1.35 "Brandon Grotesque",Nunito,Arial,sans-serif!important;
 }
 html body #grade09ClassProgressDialog #grade09AcademicCheckpoints .grade09-academic-grid{
-  box-sizing:border-box;display:grid!important;grid-template-columns:repeat(2,minmax(0,1fr))!important;
-  grid-template-rows:repeat(4,minmax(0,1fr));gap:8px!important;
-  margin:0!important;flex:1 1 auto;min-height:0;width:100%;
+ box-sizing:border-box!important;display:grid!important;
+ grid-template-columns:repeat(4,minmax(0,1fr))!important;
+ grid-template-rows:none!important;gap:10px!important;
+ width:100%!important;height:auto!important;min-height:0!important;margin:0!important;
 }
 html body #grade09ClassProgressDialog #grade09AcademicCheckpoints .grade09-academic-box{
-  box-sizing:border-box;display:flex;min-width:0;min-height:0!important;
-  padding:8px 10px!important;gap:3px!important;border:1px solid #cbbfaa;
+ box-sizing:border-box!important;display:flex!important;flex-direction:column!important;
+ align-items:stretch!important;gap:7px!important;
+ width:100%!important;min-width:0!important;min-height:155px!important;height:auto!important;
+ padding:12px!important;border:1px solid #cbbfaa!important;border-top:3px solid #8c9894!important;
+ border-radius:7px!important;background:#fffaf0!important;color:#243038!important;
+}
+html body #grade09ClassProgressDialog #grade09AcademicCheckpoints .grade09-academic-box.is-mastered{
+ border-top-color:#28684d!important;background:#e6f1e9!important;
+}
+html body #grade09ClassProgressDialog #grade09AcademicCheckpoints .grade09-academic-number{
+ display:block!important;color:#4e6157!important;
+ font:400 16px/1.2 "Brandon Grotesque",Nunito,Arial,sans-serif!important;
 }
 html body #grade09ClassProgressDialog #grade09AcademicCheckpoints .grade09-academic-box :is(strong,small){
-  font:400 16px/1.15 "Brandon Grotesque",Nunito,Arial,sans-serif!important;
+ display:block!important;width:100%!important;
+ color:#243038!important;-webkit-text-fill-color:#243038!important;
+ font:400 16px/1.3 "Brandon Grotesque",Nunito,Arial,sans-serif!important;
+ overflow-wrap:break-word!important;
 }
-html body #grade09ClassProgressDialog #grade09AcademicCheckpoints .grade09-academic-box .grade09-academic-number{
-  font:400 16px/1.15 "Brandon Grotesque",Nunito,Arial,sans-serif;
+html body #grade09ClassProgressDialog #grade09AcademicCheckpoints .grade09-academic-box small{
+ color:#516158!important;-webkit-text-fill-color:#516158!important;
 }
-html body #grade09ClassProgressDialog #grade09AcademicCheckpoints .grade09-academic-box .grade09-academic-link{
-  min-height:34px!important;padding:4px 6px!important;
-  font:400 16px/1.15 "Brandon Grotesque",Nunito,Arial,sans-serif!important;
+html:root:root body #grade09ClassProgressDialog #grade09AcademicCheckpoints .grade09-academic-box .grade09-academic-link{
+ box-sizing:border-box!important;display:flex!important;align-items:center!important;justify-content:center!important;
+ width:100%!important;min-height:42px!important;height:auto!important;
+ margin-top:auto!important;padding:7px 9px!important;
+ border:1px solid #b48b45!important;border-radius:7px!important;
+ background:#243038!important;color:#fff8e9!important;-webkit-text-fill-color:#fff8e9!important;
+ font:400 16px/1.25 "Brandon Grotesque",Nunito,Arial,sans-serif!important;
+ text-align:center!important;text-transform:none!important;text-decoration:none!important;
 }
 html:root:root body #grade09ClassProgressDialog #studentCourseProgress.grade09-class-progress{
-  box-sizing:border-box!important;width:100%!important;max-width:none!important;
-  height:100%!important;min-height:0!important;margin:0!important;
-  padding:14px!important;display:flex!important;flex-direction:column!important;
-  gap:5px;overflow:hidden!important;
+ box-sizing:border-box!important;display:block!important;
+ width:100%!important;max-width:none!important;
+ min-height:0!important;height:auto!important;
+ margin:0!important;padding:18px!important;
+ border:1px solid #cbbfaa!important;border-radius:7px!important;
+ background:#fffdf8!important;overflow:visible!important;
 }
 html body #grade09ClassProgressDialog #studentCourseProgress h2{
-  margin:0!important;font:400 23px/1.3 Cinzel,Georgia,serif!important;
+ margin:0 0 8px!important;color:#243038!important;font:400 24px/1.3 Cinzel,Georgia,serif!important;
 }
 html body #grade09ClassProgressDialog #studentCourseProgress :is(.grade09-progress-intro,.grade09-progress-status){
-  margin:2px 0!important;font:400 16px/1.3 "Brandon Grotesque",Nunito,Arial,sans-serif!important;
+ margin:8px 0 12px!important;color:#485850!important;
+ font:400 16px/1.4 "Brandon Grotesque",Nunito,Arial,sans-serif!important;
 }
 html body #grade09ClassProgressDialog #studentCourseProgress .grade09-progress-controls{
-  gap:7px!important;flex:0 0 auto;
+ display:flex!important;flex-wrap:wrap!important;gap:9px!important;
 }
-html body #grade09ClassProgressDialog #studentCourseProgress .grade09-progress-filter{
-  min-height:35px;padding:5px 10px;font-size:16px;
+html:root:root body #grade09ClassProgressDialog #studentCourseProgress .grade09-progress-filter{
+ box-sizing:border-box!important;min-height:44px!important;padding:8px 14px!important;
+ border:1px solid #b48b45!important;border-radius:7px!important;
+ background:#243038!important;color:#fff8e9!important;-webkit-text-fill-color:#fff8e9!important;
+ font:400 16px/1.25 "Brandon Grotesque",Nunito,Arial,sans-serif!important;
+ text-transform:none!important;
+}
+html:root:root body #grade09ClassProgressDialog #studentCourseProgress .grade09-progress-filter[aria-pressed="true"]{
+ background:#e7d7b6!important;color:#243038!important;-webkit-text-fill-color:#243038!important;
 }
 html body #grade09ClassProgressDialog #studentCourseProgress .grade09-progress-graph{
-  display:grid!important;grid-auto-rows:minmax(0,1fr)!important;gap:5px!important;
-  margin:3px 0!important;flex:1 1 auto;min-height:0;
+ display:grid!important;grid-auto-rows:minmax(54px,auto)!important;
+ gap:9px!important;margin:14px 0!important;min-height:0!important;
 }
 html body #grade09ClassProgressDialog #studentCourseProgress .grade09-progress-row{
-  box-sizing:border-box;grid-template-columns:minmax(100px,165px) minmax(50px,1fr) 105px;
-  min-height:0!important;padding:4px 9px!important;gap:8px!important;
-  font:400 16px/1.15 "Brandon Grotesque",Nunito,Arial,sans-serif!important;
+ box-sizing:border-box!important;display:grid!important;
+ grid-template-columns:minmax(155px,220px) minmax(100px,1fr) minmax(95px,120px)!important;
+ min-height:54px!important;height:auto!important;
+ gap:12px!important;align-items:center!important;
+ padding:9px 12px!important;border:1px solid #d3c6b3!important;
+ border-radius:7px!important;background:#fffaf0!important;color:#243038!important;
+ font:400 16px/1.3 "Brandon Grotesque",Nunito,Arial,sans-serif!important;
+ text-align:left!important;
 }
-html body #grade09ClassProgressDialog #studentCourseProgress .grade09-progress-track{height:16px}
+html body #grade09ClassProgressDialog #studentCourseProgress .grade09-progress-row.is-selected{
+ border-color:#b48b45!important;box-shadow:0 0 0 2px #b48b4540!important;
+}
+html body #grade09ClassProgressDialog #studentCourseProgress .grade09-progress-track{
+ display:block!important;height:22px!important;min-width:0!important;
+ border:1px solid #c8c0b4!important;border-radius:7px!important;background:#e6e4df!important;
+ overflow:hidden!important;
+}
+html body #grade09ClassProgressDialog #studentCourseProgress .grade09-progress-fill{
+ display:block!important;height:100%!important;border-radius:6px!important;
+}
+html body #grade09ClassProgressDialog #studentCourseProgress .grade09-progress-value{
+ text-align:right!important;font:400 16px/1.3 "Brandon Grotesque",Nunito,Arial,sans-serif!important;
+ color:#364841!important;
+}
 html body #grade09ClassProgressDialog #studentCourseProgress .grade09-progress-detail{
-  box-sizing:border-box;flex:0 0 auto;margin:4px 0 0!important;padding:8px 12px!important;
-  max-height:33%;overflow:auto;
+ box-sizing:border-box!important;margin:14px 0 0!important;padding:16px!important;
+ max-height:none!important;overflow:visible!important;
+ border:1px solid #cbbfaa!important;border-left:5px solid var(--subject-color,#b48b45)!important;
+ border-radius:7px!important;background:#fffaf0!important;
 }
 html body #grade09ClassProgressDialog #studentCourseProgress .grade09-progress-detail h3{
-  margin:0 0 4px!important;font:400 19px/1.25 Cinzel,Georgia,serif!important;
+ margin:0 0 8px!important;font:400 21px/1.3 Cinzel,Georgia,serif!important;color:#243038!important;
 }
 html body #grade09ClassProgressDialog #studentCourseProgress .grade09-progress-detail p{
-  margin:3px 0!important;font:400 16px/1.25 "Brandon Grotesque",Nunito,Arial,sans-serif!important;
+ margin:7px 0!important;font:400 16px/1.4 "Brandon Grotesque",Nunito,Arial,sans-serif!important;color:#485850!important;
 }
-html body #grade09ClassProgressDialog #studentCourseProgress .grade09-progress-forecast{
-  padding:5px 8px!important;
+html body #grade09ClassProgressDialog #studentCourseProgress .grade09-progress-detail .grade09-progress-forecast{
+ padding:12px!important;background:#f3ebdc!important;border-radius:7px!important;
 }
 html body #grade09ClassProgressDialog :is(button,a):focus-visible{outline:3px solid #b48b45;outline-offset:2px}
-@media(max-width:1050px),(max-height:720px){
- html body #grade09ClassProgressDialog .grade09-progress-dialog-content{overflow:auto}
- html body #grade09ClassProgressDialog :is(.grade09-progress-dialog-checkpoints,.grade09-progress-dialog-chart){overflow:visible}
- html body #grade09ClassProgressDialog #grade09AcademicCheckpoints,
- html:root:root body #grade09ClassProgressDialog #studentCourseProgress.grade09-class-progress{
-  height:auto!important;overflow:visible!important;
+@media(max-width:850px){
+ html body #grade09ClassProgressDialog #grade09AcademicCheckpoints .grade09-academic-grid{
+  grid-template-columns:repeat(2,minmax(0,1fr))!important;
  }
- html body #grade09ClassProgressDialog #grade09AcademicCheckpoints .grade09-academic-grid{grid-template-rows:none}
- html body #grade09ClassProgressDialog #studentCourseProgress .grade09-progress-graph{grid-auto-rows:minmax(46px,auto)!important}
- html body #grade09ClassProgressDialog #studentCourseProgress .grade09-progress-detail{max-height:none;overflow:visible}
 }
-@media(max-width:760px){
- html body #grade09ClassProgressDialog .grade09-progress-dialog-content{
-  grid-template-columns:minmax(0,1fr);
+@media(max-width:600px){
+ html body #grade09ClassProgressDialog .grade09-progress-dialog-content{padding:9px;gap:10px}
+ html body #grade09ClassProgressDialog #grade09AcademicCheckpoints .grade09-academic-grid{
+  grid-template-columns:minmax(0,1fr)!important;
  }
+ html body #grade09ClassProgressDialog #studentCourseProgress .grade09-progress-row{
+  grid-template-columns:minmax(0,1fr) 95px!important;
+ }
+ html body #grade09ClassProgressDialog #studentCourseProgress .grade09-progress-label{
+  grid-column:1/-1;
+ }
+}
+@media(prefers-reduced-motion:reduce){
+ html body #grade09ClassProgressDialog .grade09-progress-fill{transition:none}
 }
