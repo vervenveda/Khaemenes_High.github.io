@@ -939,8 +939,8 @@ html:root:root body main>.section.final .section-inner>.kicker{font-size:16px!im
             <button class="portal-button" type="submit">Save Local Profile</button>
           </form>
           <div class="profile-summary" id="profileSummary" aria-live="polite">Use your Academy learner profile for identity, grade placement, daily classes, and records.</div>
-          <div class="portal-links"><a href="#student-portal" data-high-profile-door="1">My Student Profile</a><a href="#grades">Go to My Classes</a>
-            <a id="openMyGrade" href="#grades" data-high-schedule-door="1">My Daily Schedule</a>
+          <div class="portal-links"><a href="https://vervenveda.com/Khaemenes_Academy.github.io/family/enroll/" data-high-profile-door="1" aria-label="Open the selected learner Student Profile or choose a learner">My Student Profile</a><a href="#grades">Go to My Classes</a>
+            <a id="openMyGrade" href="https://vervenveda.com/Academy-Yearbook.github.io/">Yearbook</a>
             <a href="https://vervenveda.com/Khaemenes_Academy.github.io/family/enroll/">Academy Learners</a>
             <a href="./courses/">Course Directory</a>
             <a href="./mentor/?stage=high&amp;subject=general&amp;source=front-hall">Mentor · Get Instruction</a>
@@ -1430,8 +1430,9 @@ html:root:root body main>.section.final .section-inner>.kicker{font-size:16px!im
   function renderProfile(){
     const profile=getProfile(), pinned=getPinned();
     const grade=profile && ["9","10","11","12"].includes(profile.grade)?profile.grade:null;
-    $("openMyGrade").href=grade?`grades/grade-${grade.padStart(2,"0")}/index.html`:"#grades";
-    $("openMyGrade").textContent=grade?`Open My Grade · ${grade}`:"Choose My Grade";
+    // Yearbook is a fixed creative destination, never a grade or schedule resolver.
+    $("openMyGrade").href="https://vervenveda.com/Academy-Yearbook.github.io/";
+    $("openMyGrade").textContent="Yearbook";
     const pinMarkup=pinned.length?`<div class="pinned-list">${pinned.map(id=>{
       const c=ALL_COURSES.find(x=>x.id===id);
       return c?`<span class="pinned-chip"><a href="${c.url}">${escapeHTML(c.title)}</a><button type="button" data-remove-pin="${id}" aria-label="Remove ${escapeHTML(c.title)}">×</button></span>`:"";
@@ -1783,41 +1784,30 @@ html:root:root body main>.section.final .section-inner>.kicker{font-size:16px!im
 <script>
 (()=>{"use strict";
 const profileLinks=document.querySelectorAll('[data-high-profile-door]');
-const scheduleLinks=document.querySelectorAll('[data-high-schedule-door]');
 const read=k=>{try{return JSON.parse(localStorage.getItem(k)||"null")}catch{return null}};
-const older=read("khaemenes-high-profile-v1");
-const active=read("khaemenes_active_learner_v1");
-const registry=read("khaemenes_family_registry_v1");
-const id=typeof active==="string"?active:active?.learnerId;
-const record=id?registry?.learners?.[id]:null;
-const grade=Number(record?.grade||older?.grade);
-const validGrade=Number.isInteger(grade)&&grade>=9&&grade<=12;
-const gradeCode=validGrade?String(grade).padStart(2,"0"):"";
+function syncProfileDoors(){
+ const selected=read("khaemenes_active_learner_v1");
+ const id=typeof selected==="string"?selected:selected?.learnerId;
+ const registry=read("khaemenes_family_registry_v1");
+ const learner=typeof id==="string"&&id?registry?.learners?.[id]:null;
+ const raw=String(learner?.grade||"").trim();
+ const match=raw.match(/^(?:grade\s*)?(0?9|1[0-2])(?:st|nd|rd|th)?(?:\s*grade)?$/i);
+ const grade=match?Number(match[1]):null;
+ const destination=grade
+  ?"grades/grade-"+String(grade).padStart(2,"0")+"/student-profile/"
+  :"https://vervenveda.com/Khaemenes_Academy.github.io/family/enroll/";
+ profileLinks.forEach(a=>{
+  a.href=destination;
+  a.title=grade?"Open Grade "+grade+" Student Profile":"Select an Academy learner to open their profile";
+ });
+}
+syncProfileDoors();
+window.addEventListener("pageshow",syncProfileDoors);
+window.addEventListener("storage",e=>{if(["khaemenes_active_learner_v1","khaemenes_family_registry_v1"].includes(e.key))syncProfileDoors()});
 
-const profileDestination=validGrade
-  ?"grades/grade-"+gradeCode+"/student-profile/"
-  :"#student-portal";
-
-const scheduleDestination=!validGrade
-  ?"#student-portal"
-  :grade===9
-    ?"grades/grade-09/student-profile/daily-lessons/"
-    :"grades/grade-"+gradeCode+"/student-profile/#seven-classes";
-
-profileLinks.forEach(a=>{
-  a.href=profileDestination;
-  if(!validGrade)a.title="Choose your grade in the High School student portal below";
-});
-
-scheduleLinks.forEach(a=>{
-  a.href=scheduleDestination;
-  a.title=validGrade
-    ?(grade===9?"Open Grade 9 Daily Lessons":"Open Grade "+grade+" My Schedule")
-    :"Choose your grade in the High School student portal below";
-});
 })();
 </script>
-<script src="assets/high-navigation-v1.js?v=20261030-open-campus" defer></script>
+<script src="assets/high-navigation-v1.js?v=20261104-profile-yearbook" defer></script>
 
 <style id="high-school-alternating-section-bands">
 /* High School Portal Center — verified contrast and card legibility. */
