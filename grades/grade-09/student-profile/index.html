@@ -251,11 +251,7 @@ body :is(.hero,.ug-hero,.mast) :is(.eyebrow,.ug-eyebrow),body main>.eyebrow{font
 
 
 
-      <section class="card col12" id="classes" aria-labelledby="pinnedClassesTitle">
-        <h2 id="pinnedClassesTitle">My Pinned Classes</h2>
-        <p>Pin a class once. It stays here on this device so you do not have to locate it again tomorrow.</p>
-        <div class="lesson-grid" id="pinnedCoursesGrid" aria-live="polite"></div>
-      </section>
+
 
       <section class="card col12" aria-labelledby="todayTitle">
         <div class="focus-card">
@@ -409,34 +405,6 @@ html body .grade09-contribute-panel .grade09-contribute-action:focus-visible{
     });
   }
 
-  async function renderPinned(){
-    const host=document.getElementById('pinnedCoursesGrid');
-    const pinned=registry.pinnedCourses();
-    if(!pinned.length){
-      host.innerHTML='<div class="notice" style="grid-column:1/-1"><strong>No classes pinned yet.</strong> Use Manage Classes & Mathematics Pathway below and press ☆ Pin Class. Your pinned classes will stay at the top of this dashboard.</div>';
-      return;
-    }
-    const cards=await Promise.all(pinned.map(async course=>{
-      const current=await registry.resolveContinueFor(course.id);
-      return `<article class="lesson-card ${course.className}">
-        <div class="chip-row"><span class="chip">★ Pinned</span><span class="chip">${escapeHTML(course.subject)}</span>${registry.isMathCourse(course.id)?'<span class="chip">Current math path</span>':''}</div>
-        <h3>${escapeHTML(course.title)}</h3>
-        <p>${escapeHTML(current?.detail||`${course.subject} · pinned to your dashboard`)}</p>
-        <div class="actions">
-          <a class="btn" data-launch-course="${course.id}" href="${escapeHTML(current?.url||course.home)}">${escapeHTML(current?.actionLabel||`Open ${course.short}`)}</a>
-          <a class="btn secondary" href="${escapeHTML(registry.mentorFor(course.id))}">Ask Mentor</a>
-          <button class="btn secondary" type="button" data-unpin-course="${course.id}">Unpin</button>
-        </div>
-      </article>`;
-    }));
-    host.innerHTML=cards.join('');
-    host.querySelectorAll('[data-unpin-course]').forEach(button=>button.addEventListener('click',()=>{
-      registry.setPinned(button.dataset.unpinCourse,false);
-      void renderAll();
-    }));
-    bindLaunches(host);
-  }
-
   async function renderManager(){
     const host=document.getElementById('courseManagerGrid');
     const activeMath=registry.mathPathway();
@@ -503,7 +471,7 @@ html body .grade09-contribute-panel .grade09-contribute-action:focus-visible{
     focus.textContent='Open Daily Lessons and choose the first assigned class. You can pin regular classes and choose the current mathematics pathway below.';
   }
 
-  async function renderAll(){await Promise.all([renderPinned(),renderManager(),renderToday(),renderLearningToday()])}
+  async function renderAll(){await Promise.all([renderManager(),renderToday(),renderLearningToday()])}
   window.addEventListener('khaemenes-grade09-design-changed',()=>{if(!document.querySelector('#avatar img'))document.getElementById('avatar').textContent=window.KhaemenesGrade09Design?.avatarText(initials)||initials;});
   window.addEventListener('storage',event=>{
     if(registry.shouldRefreshForStorageKey(event.key))void renderAll();
@@ -520,7 +488,7 @@ html body .grade09-contribute-panel .grade09-contribute-action:focus-visible{
 <script src="../../shared/student-course-progress-bars.js"></script>
 <script src="../../shared/student-sticker-box.js"></script>
 <script src="../../shared/student-ecosystem-tools.js"></script>
-<script src="dashboard-layout.js?v=20261103-toolbar-daily-focus"></script>
+<script src="dashboard-layout.js?v=20261104-remove-duplicate-pins"></script>
 <script src="student-profile-photo.js"></script>
 <script src="student-profile-background.js"></script>
 <script src="student-profile-details.js?v=20261103-balanced-three-details"></script>
