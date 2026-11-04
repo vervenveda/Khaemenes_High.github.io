@@ -51,11 +51,13 @@ const tasks=[
  {key:"family",title:"Family or friend time",detail:()=>"Make time to connect, talk, play, or help someone you care about."}
 ];
 const container=el("section","grade09-daily-focus");container.id="grade09DailyFocus";
-container.setAttribute("aria-label","To Do Today personal routine and learning checkpoints");
+container.setAttribute("aria-label","To Do Today personal routine");
 const help=el("p","grade09-daily-focus-explanation","A balanced day beyond lessons. Personal tasks are self-checked and separate from grades.");
 const count=el("p","grade09-daily-focus-count");count.setAttribute("role","status");
 const list=el("ol","grade09-daily-focus-list");
 const academics=el("section","grade09-academic-checkpoints");
+academics.id="grade09AcademicCheckpoints";
+academics.setAttribute("aria-label","Academic mastery checkpoints for today");
 const academicHeading=el("h3","","Today's Class Checkpoints");
 const academicHelp=el("p","grade09-daily-focus-explanation","A class highlights when a dated lesson or unit assessment result reports at least 80%. Course-wide progress and personal checks do not count. Assessment integration is still being connected.");
 const classGrid=el("div","grade09-academic-grid");
@@ -63,8 +65,16 @@ const note=el("p","grade09-daily-focus-note","Daily reports are saved on this br
 const familyLink=el("a","grade09-daily-task-link","Open Family Learning Center");
 familyLink.href="https://vervenveda.com/Khaemenes_Academy.github.io/family/";
 academics.append(academicHeading,academicHelp,classGrid);
-container.append(help,count,list,academics,note,familyLink);
+container.append(help,count,list,note,familyLink);
 card.append(container);
+// Keep academic evidence with the academic schedule, not inside personal wellbeing.
+// Schedule and course cards are owned elsewhere; only append this dedicated section.
+const scheduleCard=document.querySelector(".grade09-priority-schedule .schedule-card");
+if(scheduleCard)scheduleCard.append(academics);
+else{
+ const fallback=el("p","grade09-daily-focus-note","Academic checkpoints are unavailable until My Schedule Bar loads.");
+ container.append(fallback);
+}
 let revision=0;
 function subjectLink(subject,slots){
  const entry=slots.find(x=>x.subject===subject);
