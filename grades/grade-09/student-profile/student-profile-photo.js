@@ -40,7 +40,63 @@ const status=document.createElement("p");status.className="grade09-photo-status"
 status.setAttribute("role","status");status.setAttribute("aria-live","polite");
 ui.append(heading,controls,legend,shapesGroup,status);
 const details=row.querySelector(".profile-name")?.parentElement;
-if(details){details.classList.add("grade09-identity-details");details.insertBefore(ui,details.querySelector(".subline")?.nextSibling||null)}
+if(details)details.classList.add("grade09-identity-details");
+
+// Use the existing student Profile Tools rail; keep the picture editor functional
+// inline as a fallback for browsers without native dialogs or missing rail markup.
+const toolGrid=document.querySelector("#khaeProfileToolRail > div");
+const photoCard=row.closest(".card");
+const popup=document.createElement("dialog");
+if(toolGrid&&photoCard&&typeof popup.showModal==="function"){
+  popup.id="grade09PhotoDialog";
+  popup.setAttribute("aria-labelledby","grade09PhotoDialogTitle");
+  popup.style.cssText="box-sizing:border-box;width:min(92vw,580px);max-width:92vw;max-height:86vh;overflow:auto;margin:auto;padding:22px;border:1px solid #b48b45;border-radius:7px;background:#fffaf0;color:#243038;box-shadow:0 22px 60px rgba(11,22,22,.38)";
+  const topBar=document.createElement("div");
+  topBar.style.cssText="display:flex;align-items:flex-start;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-bottom:12px";
+  const title=document.createElement("h2");
+  title.id="grade09PhotoDialogTitle";
+  title.textContent="Customize My Picture";
+  title.style.cssText="margin:0;font:400 26px/1.25 Cinzel,Georgia,serif;color:#243038";
+  const close=document.createElement("button");
+  close.type="button";
+  close.textContent="Close ✕";
+  close.setAttribute("aria-label","Close picture customization");
+  close.style.cssText="min-height:44px;padding:9px 14px;border:1px solid #243038;border-radius:7px;background:#243038;color:#fff8e9;font:400 16px/1.3 Nunito,Arial,sans-serif;cursor:pointer";
+  close.addEventListener("click",()=>popup.close());
+  topBar.append(title,close);
+  const help=document.createElement("p");
+  help.textContent="Choose or remove your profile photograph and select a frame. Changes appear on your student profile and are saved for the selected learner on this device.";
+  help.style.cssText="font:400 16px/1.5 Nunito,Arial,sans-serif;margin:0 0 14px;color:#243038";
+  popup.append(topBar,help,ui);
+  photoCard.append(popup);
+
+  // Preserve the original control classes and handlers while meeting the
+  // 16px text / 44px touch-target guideline inside the modal.
+  for(const item of ui.querySelectorAll(".grade09-photo-button,.grade09-frame-choice")){
+    item.style.setProperty("font-size","16px","important");
+    item.style.setProperty("min-height","44px","important");
+    item.style.setProperty("height","auto","important");
+    item.style.setProperty("width","auto","important");
+    item.style.setProperty("min-width","105px","important");
+  }
+  for(const item of ui.querySelectorAll(".grade09-photo-heading,.grade09-photo-label,.grade09-photo-status"))
+    item.style.setProperty("font-size","16px","important");
+
+  const opener=document.createElement("button");
+  opener.id="openGrade09PhotoDialog";
+  opener.type="button";
+  opener.className="grade09-profile-tool";
+  opener.textContent="Customize Picture";
+  opener.setAttribute("aria-haspopup","dialog");
+  opener.setAttribute("aria-controls",popup.id);
+  opener.style.cssText="box-sizing:border-box;display:flex;align-items:center;justify-content:center;width:100%;min-width:0;min-height:56px;padding:10px 12px;border:1px solid #65716c;border-radius:7px;background:#33454b;text-align:center;text-decoration:none;font:400 16px/1.3 Nunito,Arial,sans-serif;cursor:pointer";
+  opener.style.setProperty("color","#fff8e9","important");
+  opener.style.setProperty("-webkit-text-fill-color","#fff8e9","important");
+  opener.addEventListener("click",()=>{display();popup.showModal();close.focus()});
+  popup.addEventListener("close",()=>{if(opener.isConnected)opener.focus()});
+  popup.addEventListener("click",event=>{if(event.target===popup)popup.close()});
+  toolGrid.append(opener);
+}else if(details)details.insertBefore(ui,details.querySelector(".subline")?.nextSibling||null);
 else row.append(ui);
 avatar.classList.add("grade09-avatar-enhanced");
 function updateShape(){
