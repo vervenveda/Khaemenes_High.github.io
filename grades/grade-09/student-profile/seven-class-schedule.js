@@ -58,22 +58,28 @@ function render(){
   render();
  });
  langLabel.append(select);config.append(langLabel);host.append(config);
- const list=el("div");list.style.cssText="display:grid;grid-template-columns:repeat(auto-fit,minmax(235px,1fr));gap:12px";
+ const list=el("div");list.className="grade09-eight-class-grid";
  slots().forEach((entry,index)=>{
   const subject=entry.label;
   const id=idFor(index),course=id?registry.getCourse(id):null;
-  const card=el("article");card.style.cssText="border:1px solid #c6b99e;border-radius:7px;padding:16px;background:rgba(255,255,255,.06)";
+  const card=el("article");card.className="grade09-eight-class-card";
   const title=el("h3",(index+1)+". "+subject);title.style.cssText="font-size:19px;margin:0 0 7px";
-  card.append(title,el("p",course?.title||"Choose a course"));
+  const name=el("p",course?.title||"Choose a course");name.className="grade09-eight-class-name";
+  const actions=el("div");actions.className="grade09-eight-class-actions";
+  card.append(title,name);
   if(course){
    const link=el("a","Open class");link.href=course.home;link.style.cssText="display:inline-block;margin-right:12px;text-decoration:underline";
    const button=el("button",registry.isPinned(id)?"★ Pinned":"☆ Pin class");button.type="button";button.setAttribute("aria-pressed",String(registry.isPinned(id)));
    button.addEventListener("click",()=>{registry.setPinned(id,!registry.isPinned(id));render()});
-   card.append(link,button);
+   actions.append(link);
    const first=firstLessonFor(id);
-   if(first){const start=el("a",id==="physical-education-9"?"Start PE Week 01 lesson":id==="pre-algebra"||id==="algebra-1"?"Start mathematics readiness":"Week 01 · First lesson");start.href=first;start.style.cssText="display:inline-block;margin-right:12px;text-decoration:underline";card.append(start)}
-   else if(id.startsWith("world-language-9-")){const target=languageStart(id);if(target){const a=el("a",["french","german"].includes(id.replace("world-language-9-",""))?"Open language course":"Week 01 · Language lesson");a.href=target;card.append(a)}else card.append(el("p","Open Linguistics Halls to select the appropriate first-language lesson."));}
+   if(first){const start=el("a",id==="physical-education-9"?"Start PE Week 01 lesson":id==="pre-algebra"||id==="algebra-1"?"Start mathematics readiness":"Week 01 · First lesson");start.href=first;start.style.cssText="display:inline-block;margin-right:12px;text-decoration:underline";actions.append(start)}
+   else if(id.startsWith("world-language-9-")){const target=languageStart(id);if(target){const a=el("a",["french","german"].includes(id.replace("world-language-9-",""))?"Open language course":"Week 01 · Language lesson");a.href=target;actions.append(a)}else actions.append(el("p","Open Linguistics Halls to select the appropriate first-language lesson."));}
+   actions.append(button);
+  }else{
+   const pending=el("p","Select your course above to begin.");pending.className="grade09-eight-class-pending";actions.append(pending);
   }
+  card.append(actions);
   list.append(card);
  });
  host.append(list);
