@@ -223,7 +223,6 @@ const rewardOpen=action("Open My Sticker Box");
 rewardOpen.addEventListener("click",()=>{
  const dialog=window.KhaemenesGrade09StickerBoxDialog;
  if(!dialog?.open){message("Sticker Box is unavailable. The reward records have not been changed.");return}
- popup.close();
  dialog.open(rewardOpen);
 });
 function updateRewardOptions(select,owner){
@@ -429,6 +428,7 @@ removeImage.addEventListener("click",()=>{
 window.addEventListener("pageshow",refresh);
 window.addEventListener("load",refresh);
 window.addEventListener("khaemenes-student-profile-changed",refresh);
+window.addEventListener("khaemenes-grade09-sticker-rewards-changed",()=>{updateRewardOptions(pageEmoji.input,person());for(const controls of rows.values())updateRewardOptions(controls.emoji,person())});
 window.addEventListener("storage",event=>{
  if(!event.key||event.key==="khaemenes_active_learner_v1"||
   [colorsKey(storageOwner()),sectionsKey(storageOwner()),stickerKey(storageOwner()),imageKey(storageOwner()),...(currentOwner?[earnedKey(currentOwner)]:[])].includes(event.key))refresh();
