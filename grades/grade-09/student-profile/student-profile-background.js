@@ -206,7 +206,7 @@ const accentControl=dropdown("Accent",[["gold","Academy Gold"],["teal","Scholar 
 const densityControl=dropdown("Dashboard Density",[["comfortable","Comfortable"],["compact","Compact"]]);
 designRow.append(themeControl.wrap,accentControl.wrap,densityControl.wrap);
 const designActions=el("div");designActions.style.cssText="display:flex;flex-wrap:wrap;gap:9px";
-const previewDesign=action("Preview Workspace"),saveDesign=action("Save Workspace Design"),restoreDesign=action("Restore Academy Workspace");
+const previewDesign=action("Preview Workspace"),saveDesign=action("Save Workspace Design"),restoreDesign=action("Restore All Academy Design Defaults");
 designActions.append(previewDesign,saveDesign,restoreDesign);
 designGroup.append(designHeading,designInfo,designRow,designActions);
 const workspaceValues=()=>({theme:themeControl.input.value,accent:accentControl.input.value,density:densityControl.input.value});
@@ -222,10 +222,11 @@ saveDesign.addEventListener("click",()=>{
  message("Workspace theme, accent and density saved. Your picture and frame were preserved.");
 });
 restoreDesign.addEventListener("click",()=>{
- const owner=person();if(!owner||owner!==currentOwner||!design?.write){message("Select an Academy learner before restoring the workspace.");return}
- if(!design.write({...design.read(),theme:"parchment",accent:"gold",density:"comfortable"})){workspaceResetPreview();message("Unable to restore workspace settings.");return}
+ const owner=person();if(!owner||owner!==currentOwner||!design?.clear){message("Select an Academy learner before restoring design defaults.");return}
+ if(!design.clear()){workspaceResetPreview();message("Unable to restore the saved Academy design.");return}
  themeControl.input.value="parchment";accentControl.input.value="gold";densityControl.input.value="comfortable";
- message("Academy workspace design restored; picture and avatar settings remain saved.");
+ window.dispatchEvent(new Event("khaemenes-grade09-design-changed"));
+ message("All Academy design defaults restored: theme, accent, density, photo frame and avatar mark. Your saved photograph and personal information remain untouched.");
 });
 const pageGroup=el("section");
 pageGroup.style.cssText="display:grid;gap:12px;padding:14px;border:1px solid #c8b897;border-radius:7px;background:#f8f2e7;margin-bottom:16px";
