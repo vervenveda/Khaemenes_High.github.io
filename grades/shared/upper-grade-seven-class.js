@@ -64,7 +64,19 @@ function render(){
  holder.replaceChildren();
  const learner=profile?.activeLearner?.(),name=learner?.nickname||learner?.displayName||learner?.name||"Student";
  const identity=el("section");identity.id="profile-overview";identity.style.cssText="border:1px solid #b6a787;border-radius:7px;padding:18px;margin-bottom:16px;background:#15243a";
- identity.append(el("h2",name),el("p","Grade "+grade+" · learner-owned schedule and continuation workspace"));
+ const identityRow=el("div");identityRow.className="ug-universal-profile-row";
+ const avatar=el("div");avatar.className="ug-universal-avatar";
+ const id=learner?.learnerId||null;
+ const appearanceKey=id?"khaemenes.grade"+grade+".profile.appearance:"+encodeURIComponent(id):null;
+ let photo=null;
+ if(appearanceKey)try{const saved=JSON.parse(localStorage.getItem(appearanceKey)||"null");if(typeof saved?.photo==="string"&&saved.photo.startsWith("data:image/jpeg;base64,")&&saved.photo.length<400000)photo=saved.photo}catch{}
+ if(photo){
+   const img=el("img");img.src=photo;img.alt="Learner profile portrait";
+   img.style.cssText="width:100%;height:100%;object-fit:cover;border-radius:inherit";avatar.append(img);
+ }else avatar.textContent=String(name||"Student").slice(0,1).toUpperCase();
+ const identityCopy=el("div");
+ identityCopy.append(el("h2",name),el("p","Grade "+grade+" · learner-owned schedule and continuation workspace"));
+ identityRow.append(avatar,identityCopy);identity.append(identityRow);
  const profileLink=el("a","Open Shared Profile Builder");profileLink.href="https://vervenveda.com/Khaemenes_Academy.github.io/student/profile.html";identity.append(profileLink);holder.append(identity);
  // Grade 09-style profile-first tool rail. Rebuilt from scratch on every render:
  // no duplicate buttons, and no independent course/identity state.
