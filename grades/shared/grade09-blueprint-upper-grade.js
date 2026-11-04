@@ -87,6 +87,7 @@ function selectLearner(){
 function renderTools(){
  if(!tools)return;
  tools.replaceChildren();
+ const heading=make("h2","My Profile Tools");tools.append(heading);
  const buttons=[
   ["Edit Profile",builder],["Class Progress","#courseManagerGrid"],
   ["Schedule","#grade09BlueprintSchedule"],["My Grade Campus",highRoot+"grades/grade-"+grade+"/"],
