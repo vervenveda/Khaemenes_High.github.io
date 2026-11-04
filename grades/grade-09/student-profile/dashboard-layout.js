@@ -50,7 +50,7 @@ if(!document.getElementById("khaeProfileToolRail")){
    const popup=document.getElementById("grade09ScheduleDialog");
    if(popup&&!popup.open)popup.showModal();
   }},
-  {label:"Study Studio",target:"grade09StudyStudioDialog",run:()=>{
+  {label:"KlasaiPeer",target:"grade09StudyStudioDialog",run:()=>{
    const studio=window.KhaemenesGrade09StudyStudio;
    if(studio)studio.open(document.activeElement);
   }},
