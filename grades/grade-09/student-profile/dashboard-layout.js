@@ -54,8 +54,19 @@ if(!document.getElementById("khaeProfileToolRail")){
    const studio=window.KhaemenesGrade09StudyStudio;
    if(studio)studio.open(document.activeElement);
   }},
-  {label:"Dreams & Achievements",target:"khaeDreamsAchievements",fallback:"profile/"},
-  {label:"Creative Tools",target:"khaeStudentEcosystemTools",fallback:"games/"},
+  {label:"Arcade",href:"https://vervenveda.com/arcade.github.io/"},
+  {label:"Creative Tools",target:"khaeStudentEcosystemTools",run:()=>{
+   const section=document.getElementById("khaeStudentEcosystemTools");
+   if(!section)return;
+   const parent=section.closest("details.grade09-explore-item");
+   if(parent)parent.open=true;
+   const heading=document.getElementById("grade09Explore");
+   const destination=parent?.querySelector("summary")||heading||section;
+   const position=window.scrollY+destination.getBoundingClientRect().top-112;
+   window.scrollTo({top:Math.max(0,position),behavior:"smooth"});
+   destination.setAttribute("tabindex","-1");
+   destination.focus({preventScroll:true});
+  }},
   {label:"Student Portfolio",run:()=>{
    const evidence=document.querySelector('aside[aria-label="Student Learning Portfolio"]');
    if(evidence){evidence.scrollIntoView({behavior:"smooth",block:"start"});evidence.querySelector("a")?.focus({preventScroll:true});}
