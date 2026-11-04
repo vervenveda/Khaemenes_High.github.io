@@ -105,8 +105,9 @@ async function renderHost(host){
      card.append(el("h3","",resource.title),el("p","",resource.subtitle||"Personal shortcut"));
      const link=el("a","schedule-open","Open");link.href=resource.href;card.append(link);quickGrid.append(card);
    }
+   quickSection.append(quickGrid);
+   host.append(quickSection);
  }
- host.append(rail);
  const quickCount=quick?.list?.().length||0;
  status.textContent=`${pinnedCount} of 8 classes pinned · ${quickCount} Quick Pin${quickCount===1?"":"s"}`;
 }
