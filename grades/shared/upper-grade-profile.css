@@ -348,3 +348,13 @@ html:not([data-khae-profile-theme]) body #upperClasses > #learning-today a{color
 @media(max-width:340px){
  body .ug-profile-first-links{grid-template-columns:1fr}
 }
+
+
+/* Grade 09-style identity portrait alignment for the shared upper-grade renderer. */
+.ug-universal-profile-row{display:flex;align-items:center;gap:20px;flex-wrap:wrap}
+.ug-universal-avatar{flex:0 0 125px;width:125px;height:125px;display:grid;place-items:center;
+ overflow:hidden;border:3px solid #b48b45;border-radius:50%;
+ background:#e8dcc5;color:#243038;font:400 43px Cinzel,Georgia,serif}
+.ug-universal-profile-row > div:last-child{flex:1 1 260px;min-width:0}
+.ug-universal-profile-row h2{font:400 clamp(28px,4vw,42px)/1.2 Cinzel,Georgia,serif!important}
+@media(max-width:520px){.ug-universal-profile-row{flex-direction:column;text-align:center}}
