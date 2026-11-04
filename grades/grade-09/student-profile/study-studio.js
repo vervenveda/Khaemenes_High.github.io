@@ -3,6 +3,47 @@ if(window.KhaemenesGrade09StudyStudio)return;
 const d=document.createElement("dialog");d.id="grade09StudyStudioDialog";d.setAttribute("aria-labelledby","g09StudioTitle");
 d.innerHTML="<header class=\"g09s-head\"><h2 id=\"g09StudioTitle\">KlasaiPeer · My AI Class Pal</h2><button id=\"g09sClose\" type=\"button\">Close</button></header><div class=\"g09s-body\"><section class=\"g09s-construction\" aria-label=\"Development status\"><strong>Under Construction · Development Preview</strong><p>We are building KlasaiPeer as an AI class companion for Khaemenes Academy. This is a visual roadmap; authenticated AI tutoring, adoption and persistent memory are not connected here.</p><a class=\"g09s-landing\" href=\"https://vervenveda.com/Klasaipeer.github.io/\" target=\"_blank\" rel=\"noopener\">Explore the KlasaiPeer Landing Page</a></section><p class=\"g09s-preview-intro\">Choose a class and explore the vision. Local practice tools are separate from course grades and mastery.</p><label>Choose class <select id=\"g09sCourse\"></select></label><nav class=\"g09s-tabs\" aria-label=\"KlasaiPeer feature areas\"><button data-room=\"pal\" aria-pressed=\"true\">Class Pal Vision</button><button data-room=\"notes\" aria-pressed=\"false\">Study Notes</button><button data-room=\"cards\" aria-pressed=\"false\">Flashcards</button><button data-room=\"lab\" aria-pressed=\"false\">Whiteboard</button></nav><section data-panel=\"pal\"><h3>Your Future Class Companion</h3><p>KlasaiPeer is envisioned as a familiar, customizable schoolmate supporting curiosity and practice throughout the Academy.</p><div class=\"g09s-feature-grid\"><article><span class=\"g09s-feature-number\">01 · Planned</span><h4>Personalized AI Tutor</h4><p>Curriculum-aware explanations, reasoning and guidance matched to each course.</p></article><article><span class=\"g09s-feature-number\">02 · Planned</span><h4>Ask KlasaiPeer</h4><p>Syllabus-based conversations and step-by-step guidance for challenging concepts.</p></article><article><span class=\"g09s-feature-number\">03 · Local preview</span><h4>Study Notes & Summaries</h4><p>Local notes and simple outlining are available; AI reading summaries are planned.</p></article><article><span class=\"g09s-feature-number\">04 · Local preview</span><h4>Flashcards & Quizzes</h4><p>Practice cards from personal notes are available; AI quizzes are planned.</p></article><article><span class=\"g09s-feature-number\">05 · Planned</span><h4>Exam Feedback</h4><p>Future practice marking and misconception checks, without changing official grades.</p></article><article><span class=\"g09s-feature-number\">06 · Mixed roadmap</span><h4>Learning Lab</h4><p>Local whiteboard available; 3D worlds, coding IDEs and logic-gate labs are planned.</p></article></div><div class=\"g09s-next\"><h4>Growing with the learner</h4><p>Planned features include profile-based adoption, customizable avatars, voice, language and age-appropriate learning support. Production adoption and private companion memory are not active here.</p><div class=\"g09s-links\"><a href=\"https://vervenveda.com/Klasaipeer.github.io/\" target=\"_blank\" rel=\"noopener\">Visit KlasaiPeer Preview</a><a id=\"g09sMentor\" href=\"../../../mentor/\">Open Academy Mentor</a><a id=\"g09sOpenCourse\" href=\"profile/\">Open Selected Class</a></div></div></section><section data-panel=\"notes\" hidden><h3>My Study Notes</h3><p>Write notes here, or one Term: Explanation per line to create flashcards.</p><textarea id=\"g09sNotes\" rows=\"9\"></textarea><button id=\"g09sSave\">Save Notes</button><button id=\"g09sOutline\">Outline My Notes</button><p id=\"g09sStatus\" role=\"status\"></p><ol id=\"g09sOutlineList\"></ol></section><section data-panel=\"cards\" hidden><h3>Practice Flashcards</h3><button id=\"g09sBuild\">Build From Notes</button><div id=\"g09sCard\" class=\"g09s-card\">Add Term: Explanation lines in Notes.</div><button id=\"g09sFlip\">Reveal</button><button id=\"g09sNext\">Next</button><p id=\"g09sCounter\" role=\"status\"></p></section><section data-panel=\"lab\" hidden><h3>Learning Whiteboard</h3><p>Draw with a mouse, stylus or finger. 3D, IDE and logic gate labs are planned integrations.</p><button id=\"g09sClear\">Clear</button><canvas id=\"g09sCanvas\" width=\"1000\" height=\"340\"></canvas></section></div>";
 document.body.append(d);
+
+/* Mentor directory is part of the KlasaiPeer popup, never the main profile.
+   Only verified dedicated destinations receive individual landing links. */
+const mentors=[
+ {name:"NOEMA",role:"Academy Chancellor",mark:"N"},
+ {name:"NAIB",role:"Academy administration & navigation",mark:"N"},
+ {name:"Archaemenes",role:"Principal & educational mentor",mark:"A",href:"https://vervenveda.com/Khaemenes_Academy.github.io/mentor/"},
+ {name:"Aranea & Her Spyders",role:"Sovereign security companions",mark:"A"},
+ {name:"Hope",role:"Humanitarian guidance",mark:"H"},
+ {name:"Eiren",role:"Language arts & writing",mark:"E"},
+ {name:"Aurora",role:"Wellbeing & reflection",mark:"A"},
+ {name:"Zelle",role:"Visual arts & creativity",mark:"Z"},
+ {name:"Morai",role:"Music & creative expression",mark:"M"},
+ {name:"Pierre",role:"Languages & linguistics",mark:"P"},
+ {name:"Auren",role:"AI mentor",mark:"A"},
+ {name:"Personal KlasaiPeer",role:"Your future AI class companion",mark:"K",href:"https://vervenveda.com/Klasaipeer.github.io/"}
+];
+const mentorHub="https://vervenveda.com/Khaemenes_Academy.github.io/mentor/";
+const directory=document.createElement("section");
+directory.className="g09s-mentor-directory";
+directory.setAttribute("aria-labelledby","g09sMentorDirectoryHeading");
+const heading=document.createElement("h3");
+heading.id="g09sMentorDirectoryHeading";heading.textContent="Meet Your AI Mentors";
+const introduction=document.createElement("p");
+introduction.textContent="Meet the mentors and companions across our ecosystem. Individual landing pages are linked where verified; other cards lead to the Academy Mentor Hub while their destinations are being confirmed.";
+const mentorGrid=document.createElement("div");mentorGrid.className="g09s-mentor-grid";
+for(const person of mentors){
+ const card=document.createElement("article");card.className="g09s-mentor-card";
+ const seal=document.createElement("span");seal.className="g09s-mentor-seal";seal.textContent=person.mark;seal.setAttribute("aria-hidden","true");
+ const title=document.createElement("h4");title.textContent=person.name;
+ const description=document.createElement("p");description.textContent=person.role;
+ const action=document.createElement("a");
+ action.href=person.href||mentorHub;
+ action.target="_blank";action.rel="noopener";
+ action.textContent=person.href?"Visit Landing Page":"Academy Mentor Hub";
+ if(!person.href)action.setAttribute("aria-label","Open Academy Mentor Hub; individual landing page for "+person.name+" pending verification");
+ card.append(seal,title,description,action);mentorGrid.append(card);
+}
+directory.append(heading,introduction,mentorGrid);
+d.querySelector(".g09s-body").append(directory);
+
 const $=x=>d.querySelector("#"+x),reg=window.KhaemenesGrade09Courses,contract=window.KhaemenesCourseEntryContract;
 const sel=$("g09sCourse"),notes=$("g09sNotes");let learner="",cards=[],idx=0,flipped=false,origin=null;
 function key(){return "g09-study-studio-notes-v1:"+encodeURIComponent(learner)+":"+encodeURIComponent(sel.value)}
