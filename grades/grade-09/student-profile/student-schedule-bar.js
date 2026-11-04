@@ -11,6 +11,40 @@ function language(){const value=pins.readLanguageChoices()["9"];return languages
 function slots(){return catalog?.slots(9,{mathId:registry.mathPathway()||null,language:language()})||[]}
 function idFor(index){return slots()[index]?.id||null}
 function el(tag,className,text){const node=document.createElement(tag);if(className)node.className=className;if(text!==undefined)node.textContent=text;return node}
+
+const SCIENCE_NOTEBOOK="https://vervenveda.com/Khaemenes_High.github.io/courses/science/investigation-notebook/";
+function addCourseActions(card,course,id,current,pinned){
+ const actions=el("div","schedule-actions");
+ const open=el("a","schedule-open",current?.actionLabel||"Open class");
+ open.href=current?.url||course.home;
+ open.dataset.launchCourse=id;
+ open.addEventListener("click",()=>registry.recordLaunch(id,open.href.replace(location.origin,""),course.title));
+ actions.append(open);
+ const mentor=el("a","schedule-open schedule-secondary","Ask Mentor");
+ mentor.href=registry.mentorFor(id);
+ actions.append(mentor);
+ const toggle=el("button","schedule-open schedule-secondary",pinned?"Unpin":"Pin Class");
+ toggle.type="button";
+ toggle.setAttribute("aria-pressed",String(pinned));
+ toggle.setAttribute("aria-label",(pinned?"Unpin ":"Pin ")+course.title);
+ toggle.addEventListener("click",()=>{
+  if(registry.setPinned(id,!registry.isPinned(id))){
+   window.dispatchEvent(new CustomEvent("khaemenes-course-pins-changed"));
+   void renderAll();
+  }
+ });
+ actions.append(toggle);
+ if(id==="integrated-science-9"){
+  const notebook=el("a","schedule-open schedule-secondary","Scientific Investigation Notebook");
+  notebook.href=SCIENCE_NOTEBOOK+"?grade=9&course="+encodeURIComponent(id);
+  notebook.dataset.scienceInvestigationNotebook="true";
+  notebook.setAttribute("aria-label","Open the Scientific Investigation Notebook for Integrated Science 9");
+  notebook.title="Your four-year science research notebook";
+  actions.append(notebook);
+ }
+ card.append(actions);
+}
+
 async function renderHost(host){
  host.replaceChildren();
  const intro=el("div","schedule-bar-head");
@@ -84,9 +118,8 @@ async function renderHost(host){
    top.append(star);card.append(top);
    card.append(el("h3","",course.title));
    card.append(el("p","",current?.detail||"Ready to open."));
-   const link=el("a","schedule-open",current?.actionLabel||"Open class");link.href=current?.url||course.home;link.dataset.launchCourse=id;
-   link.addEventListener("click",()=>registry.recordLaunch(id,link.href.replace(location.origin,""),course.title));
-   card.append(link);rail.append(card);
+   addCourseActions(card,course,id,current,pinned);
+   rail.append(card);
  }
  host.append(rail);
  if(quick && quick.list().length){
