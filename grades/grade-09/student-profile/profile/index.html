@@ -118,6 +118,7 @@ html:root:root body #vnvEnrichedMenuButton .vnv-menu-lines,html:root:root body #
 </div></section></main><footer class="footer"><span>Khaemenes Academy · Grade 09 · My Profile</span></footer>
 <script src="https://vervenveda.com/Khaemenes_Academy.github.io/assets/khaemenes-student-profile-v2.js"></script>
 <script src="../student-profile-preferences.js"></script>
+<script src="../student-profile-details.js"></script>
 <script>
 const BASE_KEY='khaemenes-high-profile-v1',ACTIVE_KEY='khaemenes_active_learner_v1',FAMILY_KEY='khaemenes_family_registry_v1',status=document.getElementById('status');
 const fields=['name','pathway','interests','goals','strengths','supports','portfolio'];
@@ -144,10 +145,13 @@ function load(){
     const fallback=id==='name'?(learner?.nickname||''):(sharedFallback[id]||'');
     document.getElementById(id).value=id==='name'?(p.name||p.displayName||p.nickname||fallback):(p[id]||fallback);
   });
+  window.KhaemenesHighProfileDetails?.load?.(learner ? p : {});
 }
 function data(){
   const learner=activeLearner(),p=read(profileKey(),{});
   fields.forEach(id=>p[id]=document.getElementById(id).value.trim());
+  const extended=window.KhaemenesHighProfileDetails?.collect?.();
+  if(extended)p.studentDetailsV1=extended;
   p.displayName=p.name||p.displayName||learner?.nickname||'Student';
   p.grade='9';
   if(learner?.learnerId)p.learnerId=learner.learnerId;
@@ -171,6 +175,7 @@ document.getElementById('exportProfile').onclick=()=>{
   a.href=u;a.download='khaemenes-grade09-student-profile.json';a.click();setTimeout(()=>URL.revokeObjectURL(u),800)
 };
 load();
+window.addEventListener('khaemenes-student-profile-changed',load);
 </script>
 <script>
 (()=>{
