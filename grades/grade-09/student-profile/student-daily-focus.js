@@ -10,7 +10,8 @@ const HABIT_BASE="khaemenes-grade09-today-habits-v1";
 const REPORT_BASE="khaemenes-grade09-daily-parent-report-v1:";
 const EVIDENCE_BASE="khaemenes-grade09-dated-assessment-evidence-v1:";
 const existingChecksBase="khaemenes-grade09-daily-checks-v1";
-const localDate=()=>{const d=new Date();return [d.getFullYear(),String(d.getMonth()+1).padStart(2,"0"),String(d.getDate()).padStart(2,"0")].join("-")};
+const dateString=d=>[d.getFullYear(),String(d.getMonth()+1).padStart(2,"0"),String(d.getDate()).padStart(2,"0")].join("-");
+const localDate=()=>dateString(new Date());
 const el=(tag,cls,value)=>{const n=document.createElement(tag);if(cls)n.className=cls;if(value!==undefined)n.textContent=value;return n};
 const read=k=>{try{return JSON.parse(localStorage.getItem(k)||"null")}catch{return null}};
 const write=(k,v)=>{try{localStorage.setItem(k,JSON.stringify(v));return true}catch{return false}};
@@ -56,11 +57,13 @@ const count=el("p","grade09-daily-focus-count");count.setAttribute("role","statu
 const list=el("ol","grade09-daily-focus-list");
 const academics=el("section","grade09-academic-checkpoints");
 const academicHeading=el("h3","","Today's Class Checkpoints");
-const academicHelp=el("p","grade09-daily-focus-explanation","A class highlights only when dated, lesson- or unit-specific assessment evidence reports at least 80%. Opening a lesson or checking a habit does not count as mastery.");
+const academicHelp=el("p","grade09-daily-focus-explanation","A class highlights when a dated lesson or unit assessment result reports at least 80%. Course-wide progress and personal checks do not count. Assessment integration is still being connected.");
 const classGrid=el("div","grade09-academic-grid");
-const note=el("p","grade09-daily-focus-note","Daily reports are saved on this browser for an authorized parent to review in the Family Learning Center. Cross-device sending is not connected.");
+const note=el("p","grade09-daily-focus-note","Daily reports are saved on this browser for an authorized parent to review. Cross-device sending is not connected.");
+const familyLink=el("a","grade09-daily-task-link","Open Family Learning Center");
+familyLink.href="https://vervenveda.com/Khaemenes_Academy.github.io/family/";
 academics.append(academicHeading,academicHelp,classGrid);
-container.append(help,count,list,academics,note);
+container.append(help,count,list,academics,note,familyLink);
 card.append(container);
 let revision=0;
 function subjectLink(subject,slots){
@@ -77,7 +80,7 @@ function masteredEvidence(p,courseId){
   ["lesson","unit"].includes(x.type)&&typeof x.assessmentId==="string"&&x.assessmentId.length>0&&
   Number.isFinite(x.score)&&x.score>=80&&x.score<=100&&
   typeof x.completedAt==="string"&&Number.isFinite(Date.parse(x.completedAt))&&
-  new Date(x.completedAt).toLocaleDateString("en-CA")===localDate()&&
+  dateString(new Date(x.completedAt))===localDate()&&
   x.recordType==="course-assessment-result")||null;
 }
 function buildReport(p,slots,items){
@@ -133,7 +136,7 @@ function drawClasses(p,slots){
   const evidence=p&&course?masteredEvidence(p,course.id):null;
   const box=el("div","grade09-academic-box"+(evidence?" is-mastered":""));
   box.append(el("span","grade09-academic-number",String(i+1).padStart(2,"0")),
-   el("strong","",slot.label),el("small","",evidence?"Mastered today · "+evidence.score+"%":"Not verified today"));
+   el("strong","",slot.label),el("small","",evidence?"80%+ reported today · "+evidence.score+"%":"Not verified today"));
   if(evidence)box.setAttribute("aria-label",slot.label+" mastered today");
   const a=el("a","grade09-academic-link",course?"Open class":"Choose class");
   a.href=course?.home||"profile/";
