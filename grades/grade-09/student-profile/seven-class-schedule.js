@@ -31,7 +31,7 @@ function languageStart(id){const code=id.replace("world-language-9-","");return 
 function firstLessonFor(id){const route=firstLessons[id];return route?repositoryRoot()+route:null}
 const el=(tag,txt)=>{const e=document.createElement(tag);if(txt!==undefined)e.textContent=txt;return e};
 function language(){const value=pins.readLanguageChoices()["9"];return languages.some(([id])=>id===value)?value:""}
-function slots(){return catalog?.slots(9,{mathId:registry.mathPathway()||"pre-algebra",language:language()})||[]}
+function slots(){return catalog?.slots(9,{mathId:registry.mathPathway()||null,language:language()})||[]}
 function idFor(index){return slots()[index]?.id||null}
 function render(){
  host.replaceChildren();
