@@ -1,6 +1,6 @@
 "use strict";
 
-const CACHE_VERSION = "khaemenes-high-v39-resource-directory-20261103";
+const CACHE_VERSION = "khaemenes-high-v40-eight-class-20261103";
 // Generated from canonical game-registry.json; validated by tools/test-math-game-offline-cache.mjs.
 // Every canonical game and its shared runtime must be available on a newly installed offline worker.
 const GAME_PRECACHE_FILES = [
@@ -98,6 +98,21 @@ const GAME_RUNTIME_FILES = [
 ];
 // Legacy Pre-Algebra/course pages are kept, with duplicate entries removed.
 const OTHER_PRECACHE_FILES = [
+  // Shared eight-class learner views (best-effort offline; same cache policy as other pages).
+  "./courses/shared/high-school-course-pins.js",
+  "./courses/shared/high-school-eight-class.js",
+  "./courses/shared/high-school-eight-class-views.js",
+  "./grades/grade-09/student-profile/index.html",
+  "./grades/grade-09/student-profile/profile/index.html",
+  "./grades/grade-09/student-profile/student-profile.css",
+  "./grades/grade-09/student-profile/student-course-registry.js",
+  "./grades/grade-09/student-profile/student-schedule-bar.js",
+  "./grades/grade-09/student-profile/seven-class-schedule.js",
+  "./grades/grade-10/student-profile/index.html",
+  "./grades/grade-11/student-profile/index.html",
+  "./grades/grade-12/student-profile/index.html",
+  "./grades/shared/upper-grade-profile.css",
+  "./grades/shared/upper-grade-seven-class.js",
   "./courses/shared/upper-english-records.js",
   "./assets/vervenveda-parchment.css",
   "./index.html",
