@@ -190,6 +190,43 @@ explanation.style.cssText="margin:0 0 15px;font:400 16px/1.5 Nunito,Arial,sans-s
 const status=el("p","");
 status.setAttribute("role","status");status.setAttribute("aria-live","polite");
 status.style.cssText="margin:12px 0;padding:9px;border:1px solid #b9ac91;border-radius:7px;color:#243038;background:#f5edda;font:400 16px/1.4 Nunito,Arial,sans-serif";
+
+const design=window.KhaemenesGrade09Design;
+// Existing Design Studio features now live in the one Customize Background dialog.
+const designGroup=el("section");
+designGroup.style.cssText="display:grid;gap:12px;padding:14px;border:1px solid #c8b897;border-radius:7px;background:#fffdf8;margin-bottom:16px";
+const designHeading=el("h3","Workspace Design");
+designHeading.style.cssText="margin:0;font:400 22px/1.25 Cinzel,Georgia,serif;color:#243038";
+const designInfo=el("p","Theme, accent and layout density apply across your dashboard. Photo frame and avatar mark choices belong to Customize Picture.");
+designInfo.style.cssText="margin:0;color:#243038;font:400 16px/1.5 Nunito,Arial,sans-serif";
+const designRow=el("div");
+designRow.style.cssText="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,180px),1fr));gap:10px";
+const themeControl=dropdown("Workspace Theme",[["parchment","Ivory Parchment"],["forest","Forest Study"],["midnight","Midnight Study"]]);
+const accentControl=dropdown("Accent",[["gold","Academy Gold"],["teal","Scholar Teal"],["plum","Library Plum"]]);
+const densityControl=dropdown("Dashboard Density",[["comfortable","Comfortable"],["compact","Compact"]]);
+designRow.append(themeControl.wrap,accentControl.wrap,densityControl.wrap);
+const designActions=el("div");designActions.style.cssText="display:flex;flex-wrap:wrap;gap:9px";
+const previewDesign=action("Preview Workspace"),saveDesign=action("Save Workspace Design"),restoreDesign=action("Restore Academy Workspace");
+designActions.append(previewDesign,saveDesign,restoreDesign);
+designGroup.append(designHeading,designInfo,designRow,designActions);
+const workspaceValues=()=>({theme:themeControl.input.value,accent:accentControl.input.value,density:densityControl.input.value});
+const workspaceResetPreview=()=>{if(design?.apply&&design?.read)design.apply(design.read())};
+previewDesign.addEventListener("click",()=>{
+ const owner=person();if(!owner||owner!==currentOwner||!design?.apply){message("Select an Academy learner before previewing workspace themes.");return}
+ design.apply({...design.read(),...workspaceValues()});
+ message("Preview applied. Select Save Workspace Design to keep these preferences.");
+});
+saveDesign.addEventListener("click",()=>{
+ const owner=person();if(!owner||owner!==currentOwner||!design?.write){message("Select an Academy learner before saving workspace settings.");return}
+ if(!design.write({...design.read(),...workspaceValues()})){workspaceResetPreview();message("Unable to save the workspace design.");return}
+ message("Workspace theme, accent and density saved. Your picture and frame were preserved.");
+});
+restoreDesign.addEventListener("click",()=>{
+ const owner=person();if(!owner||owner!==currentOwner||!design?.write){message("Select an Academy learner before restoring the workspace.");return}
+ if(!design.write({...design.read(),theme:"parchment",accent:"gold",density:"comfortable"})){workspaceResetPreview();message("Unable to restore workspace settings.");return}
+ themeControl.input.value="parchment";accentControl.input.value="gold";densityControl.input.value="comfortable";
+ message("Academy workspace design restored; picture and avatar settings remain saved.");
+});
 const pageGroup=el("section");
 pageGroup.style.cssText="display:grid;gap:12px;padding:14px;border:1px solid #c8b897;border-radius:7px;background:#f8f2e7;margin-bottom:16px";
 const pageHeading=el("h3","Page Background");
@@ -246,7 +283,7 @@ for(const section of surfaces){
  };
  for(const control of [mode.input,color.input,emoji.input])control.addEventListener("change",update);
 }
-popup.append(toolbar,explanation,pageGroup,sectionsGroup,status);
+popup.append(toolbar,explanation,designGroup,pageGroup,sectionsGroup,status);
 document.body.append(popup);
 const opener=action("Customize Background");
 opener.id="openGrade09BackgroundDialog";
@@ -257,7 +294,7 @@ opener.style.cssText="box-sizing:border-box;display:flex;align-items:center;just
 opener.style.setProperty("color","#fff8e9","important");
 opener.style.setProperty("-webkit-text-fill-color","#fff8e9","important");
 opener.addEventListener("click",()=>{refresh();popup.showModal();close.focus()});
-popup.addEventListener("close",()=>{if(opener.isConnected)opener.focus()});
+popup.addEventListener("close",()=>{workspaceResetPreview();if(opener.isConnected)opener.focus()});
 popup.addEventListener("click",event=>{if(event.target===popup)popup.close()});
 toolGrid.append(opener);
 
@@ -269,6 +306,12 @@ function refresh(){
  const rawImage=owner?read(imageKey(owner))||"":"";
  savedImage=/^data:image\/jpeg;base64,[a-z0-9+/=]+$/i.test(rawImage)&&rawImage.length<700000?rawImage:"";
  sectionPrefs=readSections(owner);
+ const currentDesign=design?.read?.();
+ themeControl.input.value=currentDesign?.theme||"parchment";
+ accentControl.input.value=currentDesign?.accent||"gold";
+ densityControl.input.value=currentDesign?.density||"comfortable";
+ for(const control of [themeControl.input,accentControl.input,densityControl.input,previewDesign,saveDesign,restoreDesign])
+  control.disabled=!owner||!design?.write;
  pageColorControl.input.value=pageColor;
  pageEmoji.input.value=pageSticker;
  for(const [key,controls] of rows){
@@ -356,6 +399,12 @@ removeImage.addEventListener("click",()=>{
 });
 window.addEventListener("pageshow",refresh);
 window.addEventListener("khaemenes-student-profile-changed",refresh);
+window.addEventListener("khaemenes-grade09-design-changed",()=>{
+ const current=design?.read?.();
+ if(current&&person()===currentOwner){
+  themeControl.input.value=current.theme;accentControl.input.value=current.accent;densityControl.input.value=current.density;
+ }
+});
 window.addEventListener("storage",event=>{
  if(!event.key||event.key==="khaemenes_active_learner_v1"||
   (currentOwner&&[colorsKey(currentOwner),sectionsKey(currentOwner),stickerKey(currentOwner),imageKey(currentOwner)].includes(event.key)))refresh();
