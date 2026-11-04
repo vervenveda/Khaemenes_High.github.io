@@ -61,7 +61,7 @@ async function renderHost(host){
  controls.append(profileLink);
  host.append(controls);
 
- const rail=el("div","schedule-rail");rail.setAttribute("aria-label","Grade 09 schedule");
+ const rail=el("div","schedule-rail");rail.setAttribute("aria-label","Eight academic classes");
  let pinnedCount=0;
  for(let index=0;index<slots().length;index++){
    const entry=slots()[index],subject=entry.label,id=idFor(index),course=id?registry.getCourse(id):null;
@@ -88,7 +88,12 @@ async function renderHost(host){
    link.addEventListener("click",()=>registry.recordLaunch(id,link.href.replace(location.origin,""),course.title));
    card.append(link);rail.append(card);
  }
- if(quick){
+ host.append(rail);
+ if(quick && quick.list().length){
+   const quickSection=el("section","schedule-quick-section");
+   quickSection.setAttribute("aria-label","Personal Quick Pins");
+   quickSection.append(el("h3","schedule-quick-title","Personal Quick Pins"));
+   const quickGrid=el("div","schedule-quick-grid");
    for(const resource of quick.list()){
      const card=el("article","schedule-tile schedule-quick");
      card.dataset.scheduleKind="quick";
@@ -98,7 +103,7 @@ async function renderHost(host){
      star.addEventListener("click",()=>{quick.setPinned(resource.id,false);renderAll()});
      top.append(star);card.append(top);
      card.append(el("h3","",resource.title),el("p","",resource.subtitle||"Personal shortcut"));
-     const link=el("a","schedule-open","Open");link.href=resource.href;card.append(link);rail.append(card);
+     const link=el("a","schedule-open","Open");link.href=resource.href;card.append(link);quickGrid.append(card);
    }
  }
  host.append(rail);
