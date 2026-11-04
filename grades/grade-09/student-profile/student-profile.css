@@ -472,6 +472,44 @@ body{background:linear-gradient(180deg,#e5ebe7 0%,#f3f0e8 48%,#e7ece7 100%);colo
 }
 
 
+/* Unified Grade 09 Profile Tools buttons. Existing stylesheet only:
+   compensate for the inherited light-button/auto-contrast theme. */
+html:root:root body #khaeProfileToolRail :is(a.grade09-profile-tool,button.grade09-profile-tool){
+  box-sizing:border-box!important;
+  display:flex!important;
+  align-items:center!important;
+  justify-content:center!important;
+  min-width:0!important;
+  min-height:52px!important;
+  padding:10px 12px!important;
+  background:#243038!important;
+  background-image:none!important;
+  border:1px solid #ad986e!important;
+  border-radius:7px!important;
+  color:#fff8e9!important;
+  -webkit-text-fill-color:#fff8e9!important;
+  font:400 16px/1.35 "Brandon Grotesque",Nunito,Arial,sans-serif!important;
+  opacity:1!important;
+  visibility:visible!important;
+  text-align:center!important;
+  text-decoration:none!important;
+  white-space:normal!important;
+}
+html:root:root body #khaeProfileToolRail .grade09-profile-tool :is(span,.grade09-profile-tool-label){
+  color:#fff8e9!important;
+  -webkit-text-fill-color:#fff8e9!important;
+  opacity:1!important;
+  visibility:visible!important;
+}
+html:root:root body #khaeProfileToolRail .grade09-profile-tool:is(:hover,:focus-visible){
+  background:#354b4b!important;
+  border-color:#e0c388!important;
+}
+html:root:root body #khaeProfileToolRail .grade09-profile-tool:focus-visible{
+  outline:3px solid #d8b779!important;
+  outline-offset:2px!important;
+}
+
 /* Grade 09 photo-card compact layout 20261103 */
 /* Leave a distinct name/grade area for future learner personal information. */
 .grade09-profile-first .profile-row{
