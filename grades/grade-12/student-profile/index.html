@@ -3,12 +3,94 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<meta name="description" content="Khaemenes Academy Grade 12 learner-owned student profile, eight-class schedule, continuation links and Academy profile doorway.">
-<title>Khaemenes Academy · Grade 12 Student Profile</title>
-<link rel="stylesheet" href="../../shared/upper-grade-profile.css">
+<meta name="description" content="Grade 12 student profile using the Grade 09 parchment blueprint and registered-grade courses.">
+<meta name="theme-color" content="#17392f">
+<meta name="referrer" content="no-referrer">
+<meta http-equiv="Permissions-Policy" content="camera=(), microphone=(), geolocation=(), payment=(), usb=(), browsing-topics=()">
+<title>Grade 12 Student Profile</title>
+<link rel="stylesheet" href="../../grade-09/student-profile/student-profile.css?v=20261104-featured-ten">
+<style id="khaemenes-typography-standard">
+/* Khaemenes High presentation typography · 55 / 33 / 24 / 14 px.
+   All public pages receive this local, embedded policy for offline use.
+   Only presentation changes. Existing grids, gates, learner records, assessments and STOS are preserved.
+   Font names are optional installed system fonts; no downloads or third-party font services. */
+html:root:root body {
+  font-family: "Brandon Grotesque", "Avenir Next", Avenir, "Segoe UI", Arial, sans-serif !important;
+  font-size: 14px !important;
+  font-weight: 400 !important;
+  line-height: 1.65 !important;
+  -webkit-text-size-adjust: 100%;
+  overflow-wrap: break-word;
+}
+html:root:root body :is(button, input, select, textarea) {
+  font-family: "Brandon Grotesque", "Avenir Next", Avenir, "Segoe UI", Arial, sans-serif !important;
+}
+html:root:root body :is(h1, h2, h3, h4, h5, h6, .page-title, .hero-title, .brand-title, .display-title, .site-title) {
+  font-family: Cinzel, "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif !important;
+  font-weight: 400 !important;
+  overflow-wrap: anywhere;
+}
+html:root:root body :is(.eyebrow, .kicker, .dialog-eyebrow, .dialog-kicker, .worksheet-kicker) {
+  font-family: Cinzel, "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif !important;
+  font-size: 55px !important;
+  font-weight: 400 !important;
+  line-height: 1.15 !important;
+  letter-spacing: .02em !important;
+  white-space: normal !important;
+  overflow-wrap: anywhere;
+}
+html:root:root body h1 {
+  font-size: 33px !important;
+  line-height: 1.2 !important;
+  white-space: normal !important;
+  overflow-wrap: anywhere;
+}
+html:root:root body h2,
+html:root:root body :is(.subtitle, .hero-subtitle, .hero-sub, .academy-comment),
+html:root:root body .hero .comment {
+  font-size: 24px !important;
+  line-height: 1.35 !important;
+  white-space: normal !important;
+  overflow-wrap: anywhere;
+}
+/* Do not replace responsive grids or fixed elements; prevent oversized titles from
+   demanding horizontal scrolling on narrow phone and tablet displays. */
+html:root:root body :is(.hero, .header, .page-header, .section-head, .lesson-header) {
+  min-width: 0;
+}
+@media print {
+  html:root:root body { font-size: 14px !important; }
+}
+</style>
 <link rel="stylesheet" href="https://vervenveda.com/Khaemenes_Academy.github.io/assets/khaemenes-global-header.css">
 <link rel="stylesheet" href="https://vervenveda.com/assets/vnv-ecosystem-menu.css">
+<style id="grade09-dashboard-priority">
+/* Compact local dashboard navigation, one Academy emblem only. */
+html:root:root body .top .hero{padding-top:12px!important;padding-bottom:18px!important}
+html:root:root body .top .hero .eyebrow{font-size:15px!important;letter-spacing:.08em!important;margin:0 0 6px!important}
+html:root:root body .top .hero h1{font-size:clamp(27px,3vw,33px)!important;margin:4px 0!important}
+html:root:root body .top .hero p{max-width:750px;margin:7px auto!important}
+html:root:root body .top .nav{gap:12px;flex-wrap:wrap;align-items:center}
+html:root:root body .top .nav .brand{min-width:0}
+html:root:root body .top .nav .brand .mark{display:none!important}
+.grade09-priority{display:flex;gap:9px;flex-wrap:wrap;align-items:center;padding:14px 0 4px}
+.grade09-priority-schedule{margin-top:12px;margin-bottom:16px}
+.grade09-priority-schedule .schedule-card{margin:0}
+@media(max-width:680px){.grade09-priority{flex-direction:column;align-items:stretch}.grade09-priority .btn{text-align:center}}
+</style>
 <link rel="stylesheet" href="../../../assets/high-navigation-v1.css" data-high-navigation-css>
+<style id="grade09-dashboard-landing-parity-20261029">
+/* Dashboard presentation only; retain all learner controls, schedules and local records. */
+html body > header[data-khae-header] [data-khae-header-inner]{display:flex!important;align-items:center!important;justify-content:space-between!important;gap:14px!important}
+html body > header[data-khae-header] [data-khae-nav],
+html body > header[data-khae-header] [data-khae-actions]{display:none!important}
+html body > header[data-khae-header] [data-khae-brand]{margin-right:auto!important}
+html body > header[data-khae-header] [data-khae-brand-mark]{display:grid!important;place-items:center!important;width:52px!important;height:52px!important;flex:0 0 52px!important;background:#243038!important;color:#fff8e9!important;border-radius:7px!important}
+html body > header[data-khae-header] [data-vnv-ecosystem-slot]{margin-left:auto!important}
+html body > header[data-khae-header] #vnvEcosystemMenuButton{width:52px!important;height:52px!important;min-width:52px!important;min-height:52px!important;background:#243038!important;color:#fff8e9!important;border-radius:7px!important}
+html body footer.grade09-dashboard-footer{display:flex!important;flex-direction:column!important;align-items:center!important;gap:6px!important;padding:26px 15px!important;text-align:center!important;background:#243038!important;color:#fff8e9!important;font:400 16px/1.45 Cinzel,Georgia,serif!important;border-top:1px solid #b48b45!important}
+html body footer.grade09-dashboard-footer small{font:400 12px/1.45 "Brandon Grotesque",Nunito,Arial,sans-serif!important;color:#e5d6ba!important}
+</style>
 <style id="academy-profile-common-readable-hero-20261101">
 /* Grade-level profile visual contract. Shared controls retain their existing owners. */
 body :is(main, .hero, .ug-hero, .mast) :is(p,li,label,summary,small,button,input,select,textarea){font-size:max(16px,1rem)!important;line-height:1.5!important}
@@ -107,88 +189,207 @@ body :is(.hero,.ug-hero,.mast) :is(.eyebrow,.ug-eyebrow),body main>.eyebrow{font
   }
 </style>
 
-<!-- Upper-grade hero only; preserves schedule, learner panels and navigation. -->
+<!-- Grade 9 hero only; preserves learner controls and lower cards. -->
 <style id="khae-profile-charcoal-hero-20261103">
-  .ug-top{background:#242c29!important;color:#f8f0e3!important;border-bottom:1px solid #b48b45!important;}
-  .ug-top .ug-hero{background:#242c29!important;color:#f8f0e3!important;}
-  .ug-top .ug-hero h1{color:#f8f0e3!important;}
-  .ug-top .ug-hero .ug-eyebrow{color:#e0bf83!important;font-size:16px!important;}
-  .ug-top .ug-hero > p:not(.ug-eyebrow){color:#f8f0e3!important;}
-  .ug-top .ug-hero .ug-eyebrow{text-align:center!important;display:block!important;width:100%!important;margin-inline:auto!important;}
+  .grade09-local-masthead{background:#242c29!important;color:#f8f0e3!important;}
+  .grade09-local-masthead .hero{background:#242c29!important;color:#f8f0e3!important;padding:38px 18px 36px!important;}
+  .grade09-local-masthead .hero h1{color:#f8f0e3!important;}
+  .grade09-local-masthead .hero > .eyebrow{color:#e0bf83!important;font-size:16px!important;}
+  .grade09-local-masthead .hero > p:not(.eyebrow){color:#f8f0e3!important;}
+  .grade09-local-masthead .hero > .eyebrow{text-align:center!important;display:block!important;width:100%!important;margin-inline:auto!important;}
 
-  .ug-top .ug-hero{text-align:center!important;}
-  .ug-top .ug-hero > .ug-eyebrow{display:block!important;width:100%!important;max-width:none!important;text-align:center!important;margin-left:auto!important;margin-right:auto!important;}
+  .grade09-local-masthead .hero{text-align:center!important;}
+  .grade09-local-masthead .hero > h1{
+    display:block!important;
+    width:100%!important;
+    max-width:none!important;
+    margin-left:auto!important;
+    margin-right:auto!important;
+    text-align:center!important;
+  }
+  .grade09-local-masthead .hero > .eyebrow{display:block!important;width:100%!important;max-width:none!important;text-align:center!important;margin-left:auto!important;margin-right:auto!important;}
 </style>
-</head>
+<style id="grade09-clone-parchment-default">
+ html body{background:#f4f0e7;color:#243038;font-size:17px}
+ html body .grade09-blueprint-tool-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:9px}
+ html body .grade09-blueprint-tool{display:flex;align-items:center;justify-content:center;min-height:50px;padding:10px;background:#243038;color:#fff8e9;border-radius:7px;font:400 16px/1.4 "Brandon Grotesque",Arial,sans-serif;text-decoration:none;text-align:center}
+ html body .grade09-blueprint-schedule-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px}
+ html body .grade09-blueprint-schedule-item{display:flex;flex-direction:column;gap:5px;padding:13px;border:1px solid #c5b494;border-radius:7px;background:#fffdf8;min-width:0}
+ html body .grade09-blueprint-schedule-item small{font-size:16px;color:#45574d}
+ html body #grade09BlueprintTools{padding:15px;background:#f6f1e8;border:1px solid #c5b494;border-radius:7px}
+ html body #grade09BlueprintTools h2{font:400 23px Cinzel,Georgia,serif;text-align:center;margin:0 0 12px}
+ html body .grade09-profile-first{width:min(1100px,calc(100% - 34px));margin:16px auto;display:grid;gap:13px}
+ html body .grade09-profile-first>.card{margin:0}
+ html body #grade09BlueprintLanguage{margin:16px 0}
+ html body #grade09BlueprintLanguage select{min-height:44px;background:white;color:#243038;padding:8px;border:1px solid #b48b45}
+ html body :is(.btn,.door,button){font-size:max(16px,1rem)}
+ @media(max-width:780px){html body .grade09-blueprint-tool-grid,html body .grade09-blueprint-schedule-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+ @media(max-width:420px){html body .grade09-blueprint-tool-grid,html body .grade09-blueprint-schedule-grid{grid-template-columns:1fr}}
+ </style></head>
 <body data-grade="12" data-high-hide-breadcrumbs="true">
 
-<section class="ug-top">
-  <div class="ug-shell ug-hero">
-    <p class="ug-eyebrow">Khaemenes Academy · Grade 12 Learning</p>
-    <h1>My Student Profile · Grade 12</h1>
-    <p>This is your daily High School home. Keep eight academic subjects in one calm view, continue source-course work, choose a language, and carry learner-owned preferences without changing grades, mastery, placement, or prerequisites.</p>
+<div class="top grade09-local-masthead">
+  <div class="shell hero">
+    <p class="eyebrow">Khaemenes Academy · Grade 12</p>
+    <h1>My Student Profile</h1>
+    <p>This is home. Start the day here, continue pinned classes, open grades, ask for help, or manage your student profile without searching through the whole school site.</p>
   </div>
-</section>
-<main class="ug-shell">
-  <nav class="ug-priority-nav" aria-label="Student dashboard shortcuts"><a href="#seven-classes">My Schedule</a><a href="#learning-today">Learning Today</a><a href="https://vervenveda.com/Khaemenes_Academy.github.io/student/profile.html#profileStudio">Edit My Profile</a><a href="#my-evidence-overview">My Portfolio</a><a href="#khaeDreamsAchievements">Achievements &amp; Dreams</a></nav>
-  <div id="upperClasses" class="ug-grid" aria-live="polite"></div>
-  <section id="upperGradePersonalize" class="ug-card" aria-label="Customize my study space"></section>
+</div>
+<main>
+<div class="shell grade09-priority-schedule">      <section class="card col12 schedule-card" aria-labelledby="scheduleBarTitle">
+        <h2 id="scheduleBarTitle">My Schedule Bar</h2>
+        <p>Your eight academic subjects stay in order. Pinned games and study tools remain personal shortcuts, separate from courses, grades and enrollment records.</p>
+        <div data-grade09-schedule-bar id="grade09BlueprintSchedule"></div>
+        <p class="schedule-helper"><a href="../../../">Pin games &amp; study tools →</a> · <a href="https://vervenveda.com/Khaemenes_Academy.github.io/student/profile.html#profileStudio">Choose language, classes &amp; profile design →</a> · <a href="https://vervenveda.com/Khaemenes_High.github.io/grades/student-profile/">Universal Profile Setup →</a></p>
+      </section></div><aside aria-label="Student Learning Portfolio" style="max-width:1050px;margin:14px auto;padding:16px;border:1px solid #b9a37f;background:#fff5de;color:#221f1b;border-radius:7px"><h2 style="font-size:24px;font-weight:400">Student Learning Portfolio</h2><p>Keep reflections, writing evidence, project references and independent practice summaries in a learner-specific workspace, separate from daily lesson instructions. Families and teachers can review an exported copy together. Back up reports to a dependable device.</p><p><a href="../../../portfolio/index.html">Open My Learning Evidence →</a></p></aside>
+  
+  <section class="section">
+    <div class="shell grid">
+      <article class="card col12">
+        <div class="profile-row">
+          <div class="avatar" id="avatar">S</div>
+          <div>
+            <h2 class="profile-name" id="studentName">Student</h2>
+            <div class="subline" id="studentMeta">Grade 12 · Local profile workspace</div>
+            <nav class="grade09-profile-actions" aria-label="Student profile actions"><a class="grade09-profile-action" href="https://vervenveda.com/Khaemenes_Academy.github.io/student/profile.html#profileStudio">Edit My Profile</a></nav>
+          </div>
+        </div>
+      </article>
 
-  <p id="status" class="ug-status" role="status" aria-live="polite"></p>
+<section class="card col12" id="learningToday" aria-labelledby="learningTodayHeading" style="background:#fffaf0;border:1px solid #c5b492;border-radius:7px">
+  <p style="font-size:14px;margin:0;color:#61533d">Your calm starting point</p>
+  <h2 id="learningTodayHeading">My Learning Today</h2>
+  <p id="learningTodaySummary" role="status" aria-live="polite">Finding your next class…</p>
+  <div class="actions" id="learningTodayActions"><a class="btn gold" href="#courseManagerGrid">Open Daily Lessons</a></div>
+  <div id="learningTodayCourses" class="lesson-grid" aria-label="Other pinned subjects"></div>
+  <p style="font-size:14px">Continue links use existing course progress and pinned choices. This panel does not set grades, mark lessons complete, or require an internet connection to display saved links.</p>
+</section>
+
+
+
+
+
+      <section class="card col12" aria-labelledby="todayTitle">
+        <div class="focus-card">
+          <div>
+            <strong id="todayTitle">To Do Today</strong>
+            <span id="todayFocus">A healthy daily routine, time with others, and evidence-based class checkpoints.</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="card col12" aria-labelledby="manageClassesTitle">
+        <h2 id="manageClassesTitle">Manage Classes &amp; Mathematics Pathway</h2>
+        <p>Pin regular classes for one-click access. Mathematics is placement-based: only one mathematics course is treated as the active pinned pathway at a time. Changing the math pin changes the doorway, not grades or mastery evidence.</p>
+        <div id="grade09BlueprintLanguage"></div><p id="grade09BlueprintStatus" role="status" aria-live="polite"></p><div class="lesson-grid" id="courseManagerGrid"></div>
+      </section>
+
+      <section class="card col12" aria-labelledby="doorsTitle">
+        <h2 id="doorsTitle">Student Rooms</h2>
+        <p>These are the other everyday rooms. The broader Grade 12 campus is available through Exit.</p>
+        <div class="door-grid" id="grade09BlueprintRooms">
+          <a class="door" href="#courseManagerGrid"><span><b>Daily Lessons</b><span>See pinned classes, choose today’s work, save a note, and use the daily checklist.</span></span><small>Start Today →</small></a>
+          <a class="door" href="../../../portfolio/index.html"><span><b>Grades</b><span>Open course records, reports, mastery status, and print/export options.</span></span><small>Open Grades →</small></a>
+          <a class="door" href="games/"><span><b>Games</b><span>Open math practice, logic games, learning arcade links, and study breaks.</span></span><small>Open Games →</small></a>
+          <a class="door" href="https://vervenveda.com/Khaemenes_Academy.github.io/student/profile.html#profileStudio"><span><b>My Profile</b><span>Edit interests, goals, portfolio links, strengths, supports, and journal notes.</span></span><small>Edit Profile →</small></a>
+        </div>
+      </section>
+
+      <section class="card col6">
+        <h2>Parent Access Rule</h2>
+        <p>Parent or guardian access remains active. Student settings do not remove the parent recovery path.</p>
+        <div class="actions"><a class="btn secondary" href="https://vervenveda.com/Khaemenes_Academy.github.io/student/profile.html#profileStudio">Open Settings</a></div>
+      </section>
+      <section class="card col6">
+        <h2>Need a Different Door?</h2>
+        <p>Use these only when you need the broader campus rather than your daily dashboard.</p>
+        <div class="actions"><a class="btn" href="../">Course Campus</a><a class="btn secondary" href="../../../">High School Home</a></div>
+      </section>
+    </div>
+  </section>
 </main>
-<footer style="text-align:center;padding:22px 16px;background:#1d3030;color:#fff8e9;font:400 15px/1.5 Nunito,Arial,sans-serif">Verve n Veda · Khaemenes Academy · Jennifer Kay Pearl · 2026</footer>
+<style id="grade09-contribute-footer-20261103">
+/* Local Grade 09 visual correction only: no global ecosystem overrides. */
+html body footer.footer.grade09-dashboard-footer{
+  width:100%!important;
+  max-width:100%!important;
+  margin:0!important;
+  padding:28px 16px!important;
+  background:#202724!important;
+  background-image:none!important;
+  border-top:1px solid #b48b45!important;
+  color:#fff8e9!important;
+  display:flex!important;
+  flex-direction:column!important;
+  align-items:center!important;
+  justify-content:center!important;
+  text-align:center!important;
+  gap:7px!important;
+  font:400 16px/1.5 Cinzel,Georgia,serif!important;
+}
+html body footer.grade09-dashboard-footer :is(div,span,p,a,strong){
+  color:#fff8e9!important;
+  -webkit-text-fill-color:#fff8e9!important;
+}
+html body footer.grade09-dashboard-footer small{
+  color:#eadcc5!important;
+  -webkit-text-fill-color:#eadcc5!important;
+  font:400 16px/1.5 "Brandon Grotesque",Nunito,Arial,sans-serif!important;
+}
+html body .grade09-contribute-panel{
+  background:#243038!important;
+  background-image:none!important;
+  color:#fff8e9!important;
+  border:1px solid #b48b45!important;
+  border-radius:7px!important;
+  text-align:center!important;
+}
+html body .grade09-contribute-panel :is(h2,h3,h4){
+  color:#fff8e9!important;
+  -webkit-text-fill-color:#fff8e9!important;
+  text-align:center!important;
+  font-family:Cinzel,Georgia,serif!important;
+  font-weight:400!important;
+}
+html body .grade09-contribute-panel :is(p,small,span){
+  color:#f0e6d4!important;
+  -webkit-text-fill-color:#f0e6d4!important;
+}
+html body .grade09-contribute-panel :is(a,button).grade09-contribute-action{
+  background:#243038!important;
+  background-image:none!important;
+  color:#fff8e9!important;
+  -webkit-text-fill-color:#fff8e9!important;
+  border:1px solid #b48b45!important;
+  border-radius:7px!important;
+  font:400 16px/1.4 "Brandon Grotesque",Nunito,Arial,sans-serif!important;
+  min-height:44px!important;
+  padding:10px 18px!important;
+  opacity:1!important;
+  text-decoration:none!important;
+}
+html body .grade09-contribute-panel .grade09-contribute-action :is(span,strong){
+  color:#fff8e9!important;
+  -webkit-text-fill-color:#fff8e9!important;
+}
+html body .grade09-contribute-panel .grade09-contribute-action:focus-visible{
+  outline:3px solid #fff8e9!important;
+  outline-offset:3px!important;
+}
+</style>
+<footer class="footer grade09-dashboard-footer"><div>Verve N Veda · Khaemenes Academy</div><small>Grade 12 · 2026</small></footer>
 <script src="../../../courses/shared/high-school-course-pins.js"></script>
 <script src="../../../courses/shared/high-school-eight-class.js"></script>
-<script src="../../../courses/shared/high-school-science-investigation-profile.js"></script>
 <script src="https://vervenveda.com/Khaemenes_Academy.github.io/assets/khaemenes-learning-continuation.js"></script>
 <script src="https://vervenveda.com/Khaemenes_Academy.github.io/assets/khaemenes-student-profile-v2.js"></script>
-<script src="https://vervenveda.com/Khaemenes_Academy.github.io/assets/khaemenes-student-quick-pins-v1.js"></script>
-<script src="https://vervenveda.com/assets/khaemenes-student-workspace-v2.js"></script>
 <script src="../../shared/high-school-profile-grade-context.js"></script>
-<script src="../../shared/upper-grade-seven-class.js"></script>
-<script src="../../../courses/shared/course-entry-contract.js"></script>
-<script src="../../shared/upper-grade-profile-enhancements.js"></script>
-<script src="../../shared/profile-portfolio-overview.js"></script>
-<script src="../../shared/student-achievements-dreams.js"></script>
-<script src="../../shared/student-learning-journey.js"></script>
-<script src="../../shared/upper-grade-personalize.js"></script>
-<script src="../../shared/student-profile-theme-photo.js"></script>
+<script src="../../shared/grade09-blueprint-upper-grade.js"></script>
 <script src="../../../assets/vnv-language.js" defer data-official-vnv-language="true"></script>
-<!-- Branched ecosystem menu is owned by the canonical idempotent header. -->
-<script src="../../shared/student-course-progress-bars.js"></script>
-<script src="../../shared/student-sticker-box.js"></script>
-<script src="../../shared/student-ecosystem-tools.js"></script>
-<script src="../../shared/student-profile-compact-panels.js"></script>
 <script src="../../../assets/high-navigation-v1.js?v=20261030-open-campus" defer></script>
-
 <script src="https://vervenveda.com/assets/vnv-333-ticker.js"></script>
 <script src="https://vervenveda.com/assets/vnv-ticker-autopopulate.js" data-vnv-ticker-autopopulate></script>
 <script>VNV_TICKER.autoPopulate({label:"Grade 12 Profile Quick Links",max:14});</script>
 <script src="https://vervenveda.com/assets/vnv-header-autopopulate.js"></script>
-<script>
-  VNV_HEADER.mount({
-    replaceLegacy:true,
-    title:"Grade 12 Student Profile",
-    subtitle:"Khaemenes Academy · High School",
-    icon:"12",
-    home:"https://vervenveda.com/Khaemenes_Academy.github.io/",
-    actions:[
-      {label:"My Schedule",href:"#seven-classes"},
-      {label:"Learning Today",href:"#learning-today"},
-      {label:"Customize",href:"#upperGradePersonalize"},
-      {label:"Universal Profile",href:"https://vervenveda.com/Khaemenes_High.github.io/grades/student-profile/"},
-      {label:"High School",href:"../../../"}
-    ]
-  });
-  // Page-specific cream text labels; no shared component modifications.
-  document.querySelectorAll("#vnvHeaderAutoPopulate .vnv-header-actions > a").forEach((link,index)=>{
-    if(index>=5 || link.querySelector(".khae-profile-action-label"))return;
-    const label=document.createElement("span");
-    label.className="khae-profile-action-label";
-    label.textContent=link.textContent;
-    link.replaceChildren(label);
-  });
-</script>
+<script>VNV_HEADER.mount({replaceLegacy:true,title:"Grade 12 Student Profile",subtitle:"Khaemenes Academy · High School",icon:"12",home:"https://vervenveda.com/Khaemenes_Academy.github.io/",actions:[{label:"PROFILE",href:"https://vervenveda.com/Khaemenes_Academy.github.io/student/profile.html#profileStudio"},{label:"LESSONS",href:"#courseManagerGrid"},{label:"GRADES",href:"../../../portfolio/index.html"},{label:"GAMES",href:"../../../"},{label:"HOME",href:"../../../"}]});</script>
 <script src="https://vervenveda.com/assets/vnv-ecosystem-toolbar.js"></script>
-</body>
-</html>
+</body></html>
