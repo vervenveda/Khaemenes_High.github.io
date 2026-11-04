@@ -22,7 +22,12 @@ function learner(){
   if(!p?.learnerId||typeof contract.scopedKey!=="function")return null;
   const fromProfile=window.KhaemenesStudentProfileV2?.activeLearner?.()?.learnerId;
   if(fromProfile&&String(fromProfile)!==String(p.learnerId))return null;
-  if(p.grade&&Number(p.grade)!==9)return null;
+  // The course contract verifies the active ID but not its grade; enforce
+  // Grade 09 here so another learner's schedule is never editable on this page.
+  const raw=localStorage.getItem("khaemenes_family_registry_v1");
+  const entry=raw?JSON.parse(raw)?.learners?.[p.learnerId]:null;
+  const grade=entry?.grade||p.grade;
+  if(grade!==undefined&&grade!==null&&!/^(?:grade[\\s-]*)?0?9$/i.test(String(grade)))return null;
   return p;
  }catch{return null}
 }
@@ -87,14 +92,14 @@ function display(item,i,p,record){
 async function render(){
  const ticket=++generation,p=learner(),saved=read(p);
  let lang="";
- try{lang=pinStore.readLanguageChoices()?.["9"]||""}catch{}
- const slots=plan.slots(9,{mathId:courses.mathPathway()||null,language:lang});
+ if(p)try{lang=pinStore.readLanguageChoices()?.["9"]||""}catch{}
+ const slots=plan.slots(9,{mathId:p?(courses.mathPathway()||null):null,language:lang});
  const items=[];
  for(const slot of slots){
   const course=slot.id?courses.getCourse(slot.id):null;
   let next=null;
-  if(course)try{next=await courses.resolveContinueFor(slot.id)}catch{}
-  const ready=!!course,pinned=ready&&courses.isPinned(slot.id);
+  if(course&&p)try{next=await courses.resolveContinueFor(slot.id)}catch{}
+  const ready=!!course,pinned=ready&&!!p&&courses.isPinned(slot.id);
   const actionTitle=ready?(slot.subject==="elective"?"Explore elective options":"Continue "+course.title)
     :slot.subject==="math"?"Choose mathematics pathway":slot.subject==="foreignLanguage"?"Choose foreign language":"Choose class";
   items.push({
