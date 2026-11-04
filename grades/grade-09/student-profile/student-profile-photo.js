@@ -9,7 +9,7 @@ const learner=()=>{
   return a&&b&&String(a)!==String(b)?null:(a?String(a):(b?String(b):null));
 };
 const keyFor=id=>id?"khaemenes.grade09.profile.photo:"+encodeURIComponent(id):null;
-const shapes=[["circle","Circle"],["square","Square"],["heart","Heart"],["star","Star"]];
+const shapes=[["rectangle","Rectangle"],["square","Square"],["circle","Circle"],["heart","Heart"],["star","Star"],["octagon","Octagon"],["hectagon","Hectagon (100 sides)"]];
 const ui=document.createElement("div");
 ui.id="grade09PhotoControls";ui.className="grade09-photo-controls";
 const heading=document.createElement("p");heading.className="grade09-photo-heading";heading.textContent="Profile picture";
@@ -103,9 +103,36 @@ function updateShape(){
   const v=window.KhaemenesGrade09Design?.read?.().avatarShape||"circle";
   const selected=v==="soft-square"?"square":v;
   avatar.dataset.profileFrame=selected;
+  // Legacy frames continue to use their existing CSS. New polygon silhouettes
+  // are set on the avatar itself, without adding competing stylesheet layers.
+  avatar.style.removeProperty("clip-path");
+  avatar.style.removeProperty("border-radius");
+  if(selected==="rectangle"){
+    avatar.style.setProperty("clip-path","polygon(0% 12%,100% 12%,100% 88%,0% 88%)","important");
+    avatar.style.setProperty("border-radius","0","important");
+  }else if(selected==="octagon"){
+    avatar.style.setProperty("clip-path","polygon(30% 0%,70% 0%,100% 30%,100% 70%,70% 100%,30% 100%,0% 70%,0% 30%)","important");
+    avatar.style.setProperty("border-radius","0","important");
+  }else if(selected==="hectagon"){
+    const points=Array.from({length:100},(_,i)=>{
+      const angle=i*Math.PI/50-Math.PI/2;
+      return (50+50*Math.cos(angle)).toFixed(3)+"% "+(50+50*Math.sin(angle)).toFixed(3)+"%";
+    });
+    avatar.style.setProperty("clip-path","polygon("+points.join(",")+")","important");
+    avatar.style.setProperty("border-radius","0","important");
+  }
   for(const [shape,button] of buttons)button.setAttribute("aria-pressed",String(shape===selected));
   const available=!!learner();
   for(const button of buttons.values())button.disabled=!available;
+}
+function fallbackMark(owner){
+  if(owner)try{
+    const badge=localStorage.getItem("khaemenes.grade09.profile.badge:"+encodeURIComponent(owner));
+    if(["★","✦","📚","🧭","⚛","🎨","🎵","🌿"].includes(badge))return badge;
+  }catch{}
+  const name=document.getElementById("studentName")?.textContent?.trim()||"Student";
+  const initials=name.split(/\s+/).filter(Boolean).slice(0,2).map(part=>part[0]).join("").toUpperCase()||"S";
+  return window.KhaemenesGrade09Design?.avatarText?.(initials)||initials;
 }
 function display(){
   const owner=learner();let photo="";
@@ -121,7 +148,8 @@ function display(){
     }
   }else{
     currentImg?.remove();
-    if(!avatar.textContent.trim())avatar.textContent=window.KhaemenesGrade09Design?.avatarText?.("S")||"S";
+    const mark=fallbackMark(owner);
+    if(avatar.textContent!==mark)avatar.textContent=mark;
   }
   remove.hidden=!photo;input.disabled=!owner;label.classList.toggle("is-disabled",!owner);
   updateShape();
@@ -150,7 +178,7 @@ input.addEventListener("change",async()=>{
 });
 remove.addEventListener("click",()=>{
   const owner=learner();if(!owner)return;
-  try{localStorage.removeItem(keyFor(owner));avatar.replaceChildren(document.createTextNode(window.KhaemenesGrade09Design?.avatarText?.("S")||"S"));display();status.textContent="Photo removed."}
+  try{localStorage.removeItem(keyFor(owner));avatar.replaceChildren(document.createTextNode(fallbackMark(owner)));display();status.textContent="Photo removed."}
   catch{status.textContent="Unable to remove photo."}
 });
 window.addEventListener("khaemenes-grade09-design-changed",()=>{updateShape();display()});
