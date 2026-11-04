@@ -172,7 +172,14 @@ if(managerCard&&!document.getElementById("grade09ManageClassesDialog")){
  body.append(managerCard);
  modal.append(bar,body);
  document.body.append(modal);
- const open=document.createElement("button");open.type="button";open.className="grade09-manage-trigger";open.textContent="Manage Classes & Mathematics";
+ const open=document.createElement("button");open.type="button";open.className="grade09-manage-trigger";open.textContent="Manage Classes";
+ // This trigger is created after the page CSS loads. Set the default colors
+ // directly so legacy page-level button overrides cannot make it unreadable.
+ open.style.setProperty("background-color","#243038","important");
+ open.style.setProperty("background-image","none","important");
+ open.style.setProperty("color","#fff8e9","important");
+ open.style.setProperty("-webkit-text-fill-color","#fff8e9","important");
+ open.style.setProperty("border-color","#b48b45","important");
  const scheduleCard=schedule.querySelector(".schedule-card");
  const scheduleHost=schedule.querySelector("[data-grade09-schedule-bar]");
  if(scheduleHost)scheduleHost.insertAdjacentElement("beforebegin",open);
