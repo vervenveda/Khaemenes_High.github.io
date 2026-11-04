@@ -125,17 +125,39 @@ if(managerCard&&!document.getElementById("grade09ManageClassesDialog")){
  const styles=document.createElement("style");
  styles.id="grade09ManageClassesDialogStyle";
  styles.textContent=`
- #grade09ManageClassesDialog{box-sizing:border-box;width:min(960px,calc(100vw - 28px));max-width:960px;max-height:min(86dvh,900px);margin:auto;padding:0;border:2px solid #b48b45;border-radius:7px;background:#fffaf0;color:#202724;box-shadow:0 18px 70px #0007;overflow:auto}
+ /* Dialog owns its own card and button styling; do not override unrelated pages. */
+ #grade09ManageClassesDialog{box-sizing:border-box;width:min(1180px,calc(100vw - 26px));max-width:1180px;max-height:92dvh;margin:auto;padding:0;border:2px solid #b48b45;border-radius:7px;background:#fffaf0;color:#202724;box-shadow:0 18px 70px #0007;overflow:auto}
  #grade09ManageClassesDialog::backdrop{background:rgba(12,23,25,.76)}
- #grade09ManageClassesDialog .grade09-manager-head{position:sticky;top:0;z-index:2;display:flex;align-items:center;justify-content:space-between;gap:14px;padding:12px 17px;background:#202724;color:#fff8e9}
+ #grade09ManageClassesDialog .grade09-manager-head{position:sticky;top:0;z-index:5;display:flex;align-items:center;justify-content:space-between;gap:14px;padding:12px 18px;background:#202724;color:#fff8e9}
  #grade09ManageClassesDialog .grade09-manager-head strong{font:400 20px/1.35 Cinzel,Georgia,serif;color:#fff8e9}
- #grade09ManageClassesDialog .grade09-manager-close,.grade09-manage-trigger{box-sizing:border-box;min-height:44px;border:1px solid #c5a66c;border-radius:7px;background:#243038;color:#fff8e9;-webkit-text-fill-color:#fff8e9;padding:9px 15px;font:400 16px/1.35 Nunito,Arial,sans-serif;cursor:pointer}
- #grade09ManageClassesDialog .grade09-manager-close:focus-visible,.grade09-manage-trigger:focus-visible{outline:3px solid #b48b45;outline-offset:2px}
- #grade09ManageClassesDialog .grade09-manager-body{padding:16px}
- #grade09ManageClassesDialog .grade09-manager-body>.card{box-sizing:border-box;width:100%;max-width:none;margin:0}
- #grade09ManageClassesDialog .grade09-manager-body .lesson-grid{grid-template-columns:repeat(auto-fit,minmax(min(100%,250px),1fr))}
- #grade09ManageClassesDialog :is(p,button,a,.chip){font-size:max(16px,1em)}
- @media(max-width:600px){#grade09ManageClassesDialog{width:calc(100vw - 16px);max-height:93dvh}#grade09ManageClassesDialog .grade09-manager-head{padding:9px}#grade09ManageClassesDialog .grade09-manager-body{padding:8px}}
+ html:root:root body .grade09-manage-trigger,
+ html:root:root body #grade09ManageClassesDialog .grade09-manager-close{
+  box-sizing:border-box!important;display:inline-flex!important;align-items:center!important;justify-content:center!important;min-height:46px!important;padding:9px 16px!important;border:1px solid #b48b45!important;border-radius:7px!important;background:#243038!important;background-image:none!important;color:#fff8e9!important;-webkit-text-fill-color:#fff8e9!important;opacity:1!important;visibility:visible!important;font:400 16px/1.3 "Brandon Grotesque",Nunito,Arial,sans-serif!important;text-transform:none!important;text-align:center!important;cursor:pointer!important;
+ }
+ html:root:root body #grade09ManageClassesDialog .grade09-manager-close{min-width:92px!important}
+ html:root:root body .grade09-manage-trigger{width:min(100%,320px)!important;margin:12px 0 4px!important}
+ html:root:root body .grade09-manage-trigger:hover,
+ html:root:root body #grade09ManageClassesDialog .grade09-manager-close:hover{background:#36504a!important;color:#fff8e9!important;-webkit-text-fill-color:#fff8e9!important}
+ html:root:root body .grade09-manage-trigger:focus-visible,
+ html:root:root body #grade09ManageClassesDialog .grade09-manager-close:focus-visible{outline:3px solid #b48b45!important;outline-offset:2px!important}
+ #grade09ManageClassesDialog .grade09-manager-body{padding:18px}
+ #grade09ManageClassesDialog .grade09-manager-body>.card{box-sizing:border-box;width:100%;max-width:none;margin:0;padding:18px;background:#fffaf0;border:0;box-shadow:none}
+ #grade09ManageClassesDialog .grade09-manager-body>.card>h2{margin:0 0 8px;color:#243038;font:400 24px/1.35 Cinzel,Georgia,serif}
+ #grade09ManageClassesDialog .grade09-manager-body>.card>p{margin:0 0 18px;color:#42554c;font:400 16px/1.55 "Brandon Grotesque",Nunito,Arial,sans-serif}
+ #grade09ManageClassesDialog #courseManagerGrid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;align-items:stretch;margin-top:12px}
+ #grade09ManageClassesDialog #courseManagerGrid>.lesson-card{box-sizing:border-box;display:flex;flex-direction:column;gap:0;min-width:0;min-height:320px;margin:0;padding:12px;border:1px solid #cbbfaa;border-top:3px solid var(--accent,#315f86);border-radius:7px;background:#fffdf8;box-shadow:0 2px 6px rgba(20,33,29,.045)}
+ #grade09ManageClassesDialog #courseManagerGrid>.lesson-card .chip-row{box-sizing:border-box;display:flex;flex-wrap:wrap;gap:5px;align-content:start;align-items:flex-start;min-height:0;margin:0 0 11px;padding:0 0 10px;border-bottom:1px solid #e2d9c9}
+ #grade09ManageClassesDialog #courseManagerGrid>.lesson-card .chip{box-sizing:border-box;font:400 16px/1.3 "Brandon Grotesque",Nunito,Arial,sans-serif;white-space:normal;overflow-wrap:break-word;color:#364841;background:#f8f3ea}
+ #grade09ManageClassesDialog #courseManagerGrid>.lesson-card h3{min-height:0;margin:0 0 10px;color:#243038;font:400 18px/1.35 Cinzel,Georgia,serif;overflow-wrap:break-word}
+ #grade09ManageClassesDialog #courseManagerGrid>.lesson-card p{min-height:0;margin:0 0 16px;color:#4b5b55;font:400 16px/1.45 "Brandon Grotesque",Nunito,Arial,sans-serif;overflow-wrap:break-word}
+ #grade09ManageClassesDialog #courseManagerGrid>.lesson-card .actions{display:grid;grid-template-columns:minmax(0,1fr);grid-auto-rows:minmax(46px,auto);gap:6px;align-content:end;margin-top:auto;padding-top:8px}
+ html:root:root body #grade09ManageClassesDialog #courseManagerGrid>.lesson-card .actions>:is(a,button){
+  box-sizing:border-box!important;display:flex!important;align-items:center!important;justify-content:center!important;width:100%!important;min-width:0!important;min-height:46px!important;height:auto!important;margin:0!important;padding:6px 8px!important;border:1px solid #b48b45!important;border-radius:7px!important;background:#243038!important;background-image:none!important;color:#fff8e9!important;-webkit-text-fill-color:#fff8e9!important;opacity:1!important;font:400 16px/1.25 "Brandon Grotesque",Nunito,Arial,sans-serif!important;letter-spacing:0!important;text-transform:none!important;text-align:center!important;text-decoration:none!important;white-space:normal!important;overflow-wrap:break-word!important;
+ }
+ html:root:root body #grade09ManageClassesDialog #courseManagerGrid>.lesson-card .actions>:is(a,button):hover{background:#36504a!important;color:#fff8e9!important;-webkit-text-fill-color:#fff8e9!important}
+ @media(max-width:1050px){#grade09ManageClassesDialog #courseManagerGrid{grid-template-columns:repeat(3,minmax(0,1fr))}}
+ @media(max-width:760px){#grade09ManageClassesDialog #courseManagerGrid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+ @media(max-width:540px){#grade09ManageClassesDialog{width:calc(100vw - 16px);max-height:93dvh}#grade09ManageClassesDialog .grade09-manager-head{padding:9px}#grade09ManageClassesDialog .grade09-manager-body{padding:8px}#grade09ManageClassesDialog .grade09-manager-body>.card{padding:10px}#grade09ManageClassesDialog #courseManagerGrid{grid-template-columns:minmax(0,1fr)}}
  `;
  document.head.append(styles);
  const modal=document.createElement("dialog");
