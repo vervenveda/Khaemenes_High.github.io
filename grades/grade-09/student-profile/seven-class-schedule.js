@@ -1,12 +1,13 @@
-/* Grade 09 seven-class schedule. Uses existing learner-scoped pins; never writes grades. */
+/* Grade 09 eight-class schedule. Existing learner-scoped pin authority; no academic writes. */
 (()=>{
 "use strict";
 const registry=window.KhaemenesGrade09Courses;
 const pins=window.KhaemenesHighCoursePins;
 const host=document.getElementById("grade09SevenClassSchedule");
+const catalog=window.KhaemenesHighEightClass;
 if(!registry||!pins||!host)return;
 const languages=[["spanish","Spanish"],["french","French"],["german","German"],["mandarin","Mandarin Chinese"],["japanese","Japanese"],["arabic","Arabic (exploration)"],["russian","Russian (exploration)"]];
-const slots=[["Mathematics",null],["Literature","english-9"],["Social Studies","global-studies-9"],["Science","integrated-science-9"],["Physical Education","physical-education-9"],["Foreign Language",null],["Psychology","psychology-101"]];
+
 const firstLessons={
  "pre-algebra":"courses/mathematics/pre-algebra/diagnostic/",
  "algebra-1":"courses/mathematics/algebra-1/diagnostic/",
@@ -30,10 +31,11 @@ function languageStart(id){const code=id.replace("world-language-9-","");return 
 function firstLessonFor(id){const route=firstLessons[id];return route?repositoryRoot()+route:null}
 const el=(tag,txt)=>{const e=document.createElement(tag);if(txt!==undefined)e.textContent=txt;return e};
 function language(){const value=pins.readLanguageChoices()["9"];return languages.some(([id])=>id===value)?value:""}
-function idFor(index){return index===0?(registry.mathPathway()||"pre-algebra"):index===5?(language()?"world-language-9-"+language():null):slots[index][1]}
+function slots(){return catalog?.slots(9,{mathId:registry.mathPathway()||"pre-algebra",language:language()})||[]}
+function idFor(index){return slots()[index]?.id||null}
 function render(){
  host.replaceChildren();
- const intro=el("p","Your seven Grade 09 classes. Pin the classes you study; choices are saved for the selected learner on this device. Course mastery and assessments remain independent.");
+ const intro=el("p","Your eight Grade 09 classes. Pin the classes you study; choices are saved for the selected learner on this device. Course mastery and assessments remain independent.");
  host.append(intro);
  const config=el("div");config.style.cssText="display:flex;flex-wrap:wrap;gap:14px;margin:16px 0";
  const mathLabel=el("label","Mathematics pathway ");
@@ -57,7 +59,8 @@ function render(){
  });
  langLabel.append(select);config.append(langLabel);host.append(config);
  const list=el("div");list.style.cssText="display:grid;grid-template-columns:repeat(auto-fit,minmax(235px,1fr));gap:12px";
- slots.forEach(([subject],index)=>{
+ slots().forEach((entry,index)=>{
+  const subject=entry.label;
   const id=idFor(index),course=id?registry.getCourse(id):null;
   const card=el("article");card.style.cssText="border:1px solid #c6b99e;border-radius:7px;padding:16px;background:rgba(255,255,255,.06)";
   const title=el("h3",(index+1)+". "+subject);title.style.cssText="font-size:19px;margin:0 0 7px";
@@ -74,25 +77,25 @@ function render(){
   list.append(card);
  });
  host.append(list);
- const setup=el("button","Pin all seven classes");
+ const setup=el("button","Pin all eight classes");
  setup.type="button";setup.style.cssText="margin-top:16px;padding:11px 16px;border-radius:7px";
  setup.addEventListener("click",()=>{
   if(!language()){
    const feedback=document.getElementById("grade09ScheduleSaveStatus");
-   if(feedback)feedback.textContent="Choose a foreign language before pinning all seven classes.";
+   if(feedback)feedback.textContent="Choose a foreign language before pinning all eight classes.";
    select.focus();return;
   }
   let successful=0;
-  for(let i=0;i<slots.length;i++){
+  for(let i=0;i<slots().length;i++){
    const id=idFor(i);
    if(registry.isPinned(id)||registry.setPinned(id,true))successful++;
   }
   render();
   const feedback=document.getElementById("grade09ScheduleSaveStatus");
-  if(feedback)feedback.textContent=successful===7?"Seven classes pinned for this learner. Open Daily Lessons to begin.":"Some classes could not be saved. Check available browser storage and the active learner.";
+  if(feedback)feedback.textContent=successful===8?"Eight classes pinned for this learner. Open Daily Lessons to begin.":"Some classes could not be saved. Check available browser storage and the active learner.";
  });
  host.append(setup);
- const status=el("p",slots.filter((_,i)=>registry.isPinned(idFor(i))).length+" of 7 classes pinned");status.setAttribute("role","status");status.style.marginTop="12px";status.id="grade09ScheduleSaveStatus";host.append(status);
+ const status=el("p",slots().filter((_,i)=>registry.isPinned(idFor(i))).length+" of 8 classes pinned");status.setAttribute("role","status");status.style.marginTop="12px";status.id="grade09ScheduleSaveStatus";host.append(status);
 }
 render();
 window.addEventListener("storage",()=>render());
