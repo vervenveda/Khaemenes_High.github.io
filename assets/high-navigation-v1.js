@@ -21,7 +21,7 @@
  }
  function profileHref(){
    const grade=activeGrade();
-   const dest=grade?"grades/grade-"+String(grade).padStart(2,"0")+"/student-profile/":"index.html#student-portal";
+   const dest=grade?"grades/grade-"+String(grade).padStart(2,"0")+"/student-profile/":"https://vervenveda.com/Khaemenes_Academy.github.io/family/enroll/";
    return new URL(dest,root).href;
  }
  function enforceAcademyExploreLinks(){
@@ -56,7 +56,7 @@
        (!!a.closest("[data-khae-actions]")&&/student profile/i.test(label));
      if(!matching||(/(?:edit|academy)/i.test(label)&&/profile\.html|student-profile\/profile/i.test(href)))return;
      a.href=destination;a.dataset.highProfileResolved="true";
-     if(!grade)a.title="Choose an Academy learner from the High School student portal";
+     if(!grade)a.title="Select an Academy learner in the Family Registry";
    });
  }
  const crumb=(href,text)=>({href:new URL(href,root).href,text});
