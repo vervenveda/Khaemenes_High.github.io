@@ -350,10 +350,10 @@ html body .grade09-contribute-panel :is(p,small,span){
   -webkit-text-fill-color:#f0e6d4!important;
 }
 html body .grade09-contribute-panel :is(a,button).grade09-contribute-action{
-  background:#e9d8b7!important;
+  background:#243038!important;
   background-image:none!important;
-  color:#202724!important;
-  -webkit-text-fill-color:#202724!important;
+  color:#fff8e9!important;
+  -webkit-text-fill-color:#fff8e9!important;
   border:1px solid #b48b45!important;
   border-radius:7px!important;
   font:400 16px/1.4 "Brandon Grotesque",Nunito,Arial,sans-serif!important;
@@ -363,8 +363,8 @@ html body .grade09-contribute-panel :is(a,button).grade09-contribute-action{
   text-decoration:none!important;
 }
 html body .grade09-contribute-panel .grade09-contribute-action :is(span,strong){
-  color:#202724!important;
-  -webkit-text-fill-color:#202724!important;
+  color:#fff8e9!important;
+  -webkit-text-fill-color:#fff8e9!important;
 }
 html body .grade09-contribute-panel .grade09-contribute-action:focus-visible{
   outline:3px solid #fff8e9!important;
@@ -604,17 +604,24 @@ html body .grade09-contribute-panel .grade09-contribute-action:focus-visible{
         if(node.closest("a,button"))continue;
         set(node,"color",node.matches("small")?subtle:ink);
         set(node,"-webkit-text-fill-color",node.matches("small")?subtle:ink);
-        if(node===heading || /^support free access$/i.test((node.textContent||"").trim()))
+        if(node===heading || /^support free access$/i.test((node.textContent||"").trim())){
           set(node,"text-align","center");
+          set(node,"display","block");
+          set(node,"width","100%");
+          set(node,"margin-left","auto");
+          set(node,"margin-right","auto");
+          set(node,"transform","none");
+        }
       }
       for(const action of panel.querySelectorAll("a,button")){
         if(!/support with stripe|stripe/i.test((action.textContent||"")+" "+(action.getAttribute("href")||"")))continue;
         action.classList.add("grade09-contribute-action");
-        set(action,"background","#e9d8b7");
-        set(action,"color","#202724");
-        set(action,"-webkit-text-fill-color","#202724");
+        set(action,"background",dark);
+        set(action,"background-image","none");
+        set(action,"color",ink);
+        set(action,"-webkit-text-fill-color",ink);
         for(const child of action.querySelectorAll("span,strong")){
-          set(child,"color","#202724");set(child,"-webkit-text-fill-color","#202724");
+          set(child,"color",ink);set(child,"-webkit-text-fill-color",ink);
         }
       }
       return true;
