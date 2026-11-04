@@ -329,19 +329,19 @@ body .ug-profile-first-links .ug-profile-first-action:hover,
 body .ug-profile-first-links .ug-profile-first-action:focus-visible{
  border-color:#e2bd78;background:#34474a!important;outline-offset:2px
 }
-body #upperClasses > #profile-overview{
+html:not([data-khae-profile-theme]) body #upperClasses > #profile-overview{
  grid-column:1/-1;background:#fffaf0!important;color:#243038!important;
  border:1px solid #b48b45!important;border-radius:7px;
 }
-body #upperClasses > #profile-overview h2,
-body #upperClasses > #profile-overview p{color:#243038!important}
-body #upperClasses > #profile-overview a{color:#234b3b!important;font-size:16px}
-body #upperClasses > #learning-today{
+html:not([data-khae-profile-theme]) body #upperClasses > #profile-overview h2,
+html:not([data-khae-profile-theme]) body #upperClasses > #profile-overview p{color:#243038!important}
+html:not([data-khae-profile-theme]) body #upperClasses > #profile-overview a{color:#234b3b!important;font-size:16px}
+html:not([data-khae-profile-theme]) body #upperClasses > #learning-today{
  grid-column:1/-1;background:#fffaf0!important;color:#243038!important;border-color:#b48b45!important;
 }
-body #upperClasses > #learning-today h2,
-body #upperClasses > #learning-today p{color:#243038!important}
-body #upperClasses > #learning-today a{color:#234b3b!important;font-size:16px}
+html:not([data-khae-profile-theme]) body #upperClasses > #learning-today h2,
+html:not([data-khae-profile-theme]) body #upperClasses > #learning-today p{color:#243038!important}
+html:not([data-khae-profile-theme]) body #upperClasses > #learning-today a{color:#234b3b!important;font-size:16px}
 @media(max-width:520px){
  body .ug-profile-first-links{grid-template-columns:repeat(2,minmax(0,1fr))}
 }
