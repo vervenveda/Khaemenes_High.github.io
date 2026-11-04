@@ -55,7 +55,14 @@ if(!document.getElementById("khaeProfileToolRail")){
   }},
   {label:"Dreams & Achievements",target:"khaeDreamsAchievements",fallback:"profile/"},
   {label:"Sticker Box",target:"khaeStickerBox",fallback:"games/"},
-  {label:"Creative Tools",target:"khaeStudentEcosystemTools",fallback:"games/"}
+  {label:"Creative Tools",target:"khaeStudentEcosystemTools",fallback:"games/"},
+  // Phase 1: expose existing features without relocating their DOM or touching learner records.
+  {label:"Pinned Classes",target:"classes",fallback:"daily-lessons/"},
+  {label:"Student Portfolio",run:()=>{
+   const evidence=document.querySelector('aside[aria-label="Student Learning Portfolio"]');
+   if(evidence){evidence.scrollIntoView({behavior:"smooth",block:"start"});evidence.querySelector("a")?.focus({preventScroll:true});}
+   else window.location.assign("../../../portfolio/index.html");
+  }}
  ];
  for(const tool of tools){
   const item=document.createElement(tool.href?"a":"button");
