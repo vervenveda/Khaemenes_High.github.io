@@ -47,11 +47,11 @@ function addCourseActions(card,course,id,current,pinned){
 
 async function renderHost(host){
  host.replaceChildren();
+ // The surrounding card already has the "My Schedule Bar" title and explanation.
+ // Keep the live class/pin count without repeating the section heading.
  const intro=el("div","schedule-bar-head");
- const copy=el("div");
- copy.append(el("strong","","My Schedule"),el("span","","Eight classes stay academic. Quick Pins are personal shortcuts and do not change enrollment, grades, or mastery."));
  const status=el("span","schedule-status");
- intro.append(copy,status);host.append(intro);
+ intro.append(status);host.append(intro);
 
  // Keep the foreign-language choice available on the dashboard itself.
  // Previously this selector existed only in My Profile, so the schedule tile
