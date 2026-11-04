@@ -48,7 +48,9 @@ const tasks=[
  {key:"movement",title:"Afternoon movement / PE",detail:()=>"Choose a comfortable activity or continue your Physical Education class.",action:"Open PE class",subject:"physicalEducation"},
  {key:"elective",title:"Today's elective",detail:()=>"Explore today's selected elective or creative practice.",action:"Open elective",subject:"elective"},
  {key:"life",title:"Life skills",detail:()=>"Practice a useful household, planning, or everyday independence skill.",action:"Open Psychology / Life Skills",subject:"psychology"},
- {key:"family",title:"Family or friend time",detail:()=>"Make time to connect, talk, play, or help someone you care about."}
+ {key:"family",title:"Family or friend time",detail:()=>"Make time to connect, talk, play, or help someone you care about."},
+ {key:"arcade",title:"Arcade & recreation break",detail:()=>"Enjoy a little free time with a game, puzzle, or another favorite activity. Remember to take screen breaks.",action:"Visit Academy Arcade",href:"https://vervenveda.com/arcade.github.io/"},
+ {key:"bedtime",title:"Evening wash-up & bedtime",detail:()=>"Shower or wash up, brush your teeth, and get ready for a comfortable bedtime that allows enough sleep."}
 ];
 const container=el("section","grade09-daily-focus");container.id="grade09DailyFocus";
 container.setAttribute("aria-label","To Do Today personal routine");
