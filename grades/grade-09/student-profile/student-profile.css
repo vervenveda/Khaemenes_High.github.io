@@ -1564,19 +1564,22 @@ html body #grade09StudyStudioDialog :is(a,button,textarea,select):focus-visible{
 
 
 /* Grade 09 KlasaiPeer public vision: clear under-construction status and symmetrical feature preview. */
-html body #grade09StudyStudioDialog .g09s-construction{
- box-sizing:border-box;margin:0 0 15px;padding:18px 22px;
- border:1px solid #b48b45;border-left:6px solid #b48b45;border-radius:7px;
- background:#243038;color:#fff8e9;text-align:center;
+html:root:root body #grade09StudyStudioDialog .g09s-construction{
+ box-sizing:border-box!important;margin:0 0 15px!important;padding:18px 22px!important;
+ border:1px solid #b48b45!important;border-left:6px solid #b48b45!important;border-radius:7px!important;
+ background:#243038!important;background-image:none!important;
+ color:#fff8e9!important;-webkit-text-fill-color:#fff8e9!important;text-align:center!important;
+ opacity:1!important;
 }
-html body #grade09StudyStudioDialog .g09s-construction strong{
- display:block;margin-bottom:8px;color:#fff8e9;-webkit-text-fill-color:#fff8e9;
- font:400 23px/1.35 Cinzel,Georgia,serif;
+html:root:root body #grade09StudyStudioDialog .g09s-construction strong{
+ display:block!important;margin-bottom:8px!important;
+ color:#fff8e9!important;-webkit-text-fill-color:#fff8e9!important;
+ font:400 23px/1.35 Cinzel,Georgia,serif!important;opacity:1!important;
 }
-html body #grade09StudyStudioDialog .g09s-construction p{
+html:root:root body #grade09StudyStudioDialog .g09s-construction p{
  color:#fff8e9!important;-webkit-text-fill-color:#fff8e9!important;
  max-width:780px;margin:0 auto 14px!important;
- font:400 16px/1.5 "Brandon Grotesque",Nunito,Arial,sans-serif!important;
+ font:400 16px/1.5 "Brandon Grotesque",Nunito,Arial,sans-serif!important;opacity:1!important;
 }
 html:root:root body #grade09StudyStudioDialog .g09s-construction .g09s-landing{
  display:inline-flex!important;align-items:center!important;justify-content:center!important;
