@@ -78,25 +78,6 @@ function render(){
  identityCopy.append(el("h2",name),el("p","Grade "+grade+" · learner-owned schedule and continuation workspace"));
  identityRow.append(avatar,identityCopy);identity.append(identityRow);
  const profileLink=el("a","Open Shared Profile Builder");profileLink.href="https://vervenveda.com/Khaemenes_Academy.github.io/student/profile.html";identity.append(profileLink);holder.append(identity);
- // Grade 09-style profile-first tool rail. Rebuilt from scratch on every render:
- // no duplicate buttons, and no independent course/identity state.
- const rail=el("nav");rail.id="upperProfileToolRail";rail.className="ug-profile-first-rail";
- rail.setAttribute("aria-label","My Profile Tools");
- const railTitle=el("h2","My Profile Tools");rail.append(railTitle);
- const railGrid=el("div");railGrid.className="ug-profile-first-links";
- const builderUrl="https://vervenveda.com/Khaemenes_Academy.github.io/student/profile.html#profileStudio";
- for(const [caption,target] of [
-   ["Edit My Profile",builderUrl],
-   ["My Schedule","#seven-classes"],
-   ["Learning Today","#learning-today"],
-   ["Class Progress","#studentCourseProgress"],
-   ["Portfolio","../../../portfolio/index.html?grade="+grade],
-   ["Creative Tools","#khaeStudentEcosystemTools"]
- ]){
-   const link=el("a",caption);link.href=target;link.className="ug-profile-first-action";
-   railGrid.append(link);
- }
- rail.append(railGrid);holder.append(rail);
  const steps=courses.map(([subject,route,id],i)=>({subject,route,id,i,step:stepFor(id,subject,route,i)}));
  const priority=steps.find(x=>x.step.snapshot&&x.step.status!=="complete")||steps[0];
  const today=el("section");today.id="learning-today";today.style.cssText="border:1px solid #b6a787;border-radius:7px;padding:18px;margin-bottom:16px;background:#1b2d46";
