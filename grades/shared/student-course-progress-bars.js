@@ -25,6 +25,49 @@ function mountGradeNineChart(){
  const active=()=>{const x=window.KhaemenesStudentProfileV2?.activeLearner?.()?.learnerId;
   const y=contract.readAcademyProfile?.()?.learnerId;
   return x&&y&&String(x)===String(y)?String(x):null};
+ // Idempotent Monte Carlo-style determinator: forecasts ONLY. It cannot award mastery.
+ // Save only verified snapshot percentages and timestamps, never derived grades.
+ const HISTORY_PREFIX="khaemenes-grade09-progress-observations-v1:";
+ const historyKey=(learner,course)=>HISTORY_PREFIX+encodeURIComponent(learner)+":"+encodeURIComponent(course);
+ const validPercent=n=>typeof n==="number"&&Number.isFinite(n)&&n>=0&&n<=100;
+ function observations(learner,courseId,snap){
+  if(!learner||!courseId)return [];
+  const key=historyKey(learner,courseId);
+  let rows=[];try{const raw=JSON.parse(localStorage.getItem(key)||"[]");if(Array.isArray(raw))rows=raw.filter(x=>Number.isFinite(x.at)&&validPercent(x.percent)&&x.at<=Date.now()+60000)}catch{}
+  if(snap&&!snap.stale&&validPercent(snap.progress?.percent)){
+   const at=Date.parse(snap.updatedAt||"");
+   if(Number.isFinite(at)&&at<=Date.now()+60000&&!rows.some(x=>x.at===at)){
+    rows.push({at,percent:snap.progress.percent});
+    rows.sort((a,b)=>a.at-b.at);
+    rows=rows.slice(-36);
+    try{localStorage.setItem(key,JSON.stringify(rows))}catch{}
+   }
+  }
+  return rows.sort((a,b)=>a.at-b.at).slice(-36);
+ }
+ function hash(seed){
+  let v=2166136261;
+  for(let i=0;i<seed.length;i++){v=Math.imul(v^seed.charCodeAt(i),16777619)}
+  return v>>>0;
+ }
+ function monteCarloForecast(rows,seed){
+  if(rows.length<2)return null;
+  const first=rows[0],last=rows[rows.length-1];
+  const elapsed=(last.at-first.at)/86400000;
+  if(elapsed<1||last.percent<first.percent)return null;
+  const daily=(last.percent-first.percent)/elapsed;
+  // 256 deterministic trial scenarios; multiplier spans 0.5–1.5 of observed pace.
+  // This is a planning sensitivity range, NOT a validated success probability.
+  let state=hash(seed+"|"+first.at+"|"+last.at+"|"+first.percent+"|"+last.percent)||1;
+  const next=()=>{state^=state<<13;state^=state>>>17;state^=state<<5;return(state>>>0)/4294967296};
+  const values=[];
+  for(let i=0;i<256;i++){
+   const factor=.5+next();
+   values.push(Math.min(100,last.percent+daily*28*factor));
+  }
+  values.sort((a,b)=>a-b);
+  return {lower:values[25],upper:values[230],base:Math.min(100,last.percent+daily*28),days:28,samples:256};
+ }
  let selected=-1,mode="all";
  const allButton=text("button","grade09-progress-filter","All eight subjects");
  const needsButton=text("button","grade09-progress-filter","Needs review");
@@ -48,7 +91,9 @@ function mountGradeNineChart(){
    const threshold=snap?.mastery?.threshold??80;
    const mastered=Boolean(snap?.mastery?.mastered)&&mastery!==null&&mastery>=threshold;
    const stale=course?snaps.some(s=>s.courseId===course.id&&s.stale):false;
-   return {index,subject:slot.label,course,snap,percent,mastery,threshold,mastered,stale,color:COLORS[index],
+   const history=course&&learner?observations(learner,course.id,snap):[];
+   const forecast=percent!==null&&course&&learner?monteCarloForecast(history,learner+"|"+course.id):null;
+   return {index,subject:slot.label,course,snap,percent,mastery,threshold,mastered,stale,color:COLORS[index],forecast,
     needsReview:Boolean(stale||snap?.status==="corrections"||snap?.status==="mastery"||snap?.family?.needsAction)};
   })};
  }
@@ -114,6 +159,10 @@ function mountGradeNineChart(){
    const total=r.snap.progress.total,completed=r.snap.progress.completed;
    detail.append(text("p","grade09-progress-units",completed+" of "+total+" reported course items complete. Unit/week breakdown appears only when the course publishes it."));
   }
+  const forecastText=r.forecast
+   ?"Deterministic 4-week planning scenarios: "+Math.round(r.forecast.lower)+"–"+Math.round(r.forecast.upper)+"% course completion, based on observed progress pace and "+r.forecast.samples+" seeded trials. This is not a grade or statistical confidence interval."
+   :"Forecast unavailable: at least two dated completion snapshots spanning a day are required.";
+  detail.append(text("p","grade09-progress-forecast",forecastText));
   if(r.needsReview)detail.append(text("p","grade09-progress-review","Course reports attention needed. Check corrections, mastery requirements, or the next assessment."));
  }
  render();
