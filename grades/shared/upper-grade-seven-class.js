@@ -48,6 +48,18 @@ function stepFor(id,subject,route,index){
 }
 const holder=document.getElementById("upperClasses"),feedback=document.getElementById("status");
 function render(){
+ const context=window.KhaemenesHighProfileGradeContext?.active?.()||null;
+ if(context&&context.gradeNumber!==grade){
+   holder.replaceChildren();
+   const note=el("section");note.className="ug-card";
+   note.append(el("h2","Your registered grade is "+context.gradeNumber));
+   note.append(el("p","This is the Grade "+grade+" landing page. Your registered Grade "+context.gradeNumber+" profile and courses are on their own page. No placement or learning records were changed."));
+   const go=el("a","Open My Registered Grade Profile");
+   go.href="https://vervenveda.com/Khaemenes_High.github.io/grades/grade-"+context.grade+"/student-profile/";
+   go.className="ug-btn primary";note.append(go);holder.append(note);
+   feedback.textContent="Grade-specific editing is disabled on the incorrect grade page.";
+   return;
+ }
  migrateLegacyPins();
  holder.replaceChildren();
  const learner=profile?.activeLearner?.(),name=learner?.nickname||learner?.displayName||learner?.name||"Student";
