@@ -114,10 +114,18 @@ function render(){
  const panel=$("grade09LookPanel");
  panel.style.setProperty("--look-selected-color",cardColor);
  const red=parseInt(cardColor.slice(1,3),16),green=parseInt(cardColor.slice(3,5),16),blue=parseInt(cardColor.slice(5,7),16);
- const ink=(red*299+green*587+blue*114)/1000>145?"#243038":"#fff8e9";
+ const luminance=hex=>{
+  const channel=[1,3,5].map(i=>parseInt(hex.slice(i,i+2),16)/255)
+    .map(v=>v<=.04045?v/12.92:Math.pow((v+.055)/1.055,2.4));
+  return channel[0]*.2126+channel[1]*.7152+channel[2]*.0722;
+ };
+ const ratio=(a,b)=>(Math.max(a,b)+.05)/(Math.min(a,b)+.05);
+ const bg=luminance(cardColor);
+ const ink=ratio(bg,luminance("#243038"))>=ratio(bg,luminance("#fff8e9"))?"#243038":"#fff8e9";
  panel.style.setProperty("color",ink,"important");
  for(const n of panel.querySelectorAll("h2,h3,p,.grade09-look-help,#grade09LookLabel"))
-  n.style.setProperty("color",ink,"important");
+  {n.style.setProperty("color",ink,"important");
+   n.style.setProperty("-webkit-text-fill-color",ink,"important");}
  $("grade09LookLabel").textContent=photo?"My profile picture":"My profile badge";
 }
 function refresh(){
@@ -230,7 +238,12 @@ function mount(){
  colorsBox.append(original);
  for(const hex of colors){
   const button=document.createElement("button");button.type="button";
-  button.dataset.color=hex;button.style.background=hex;
+  button.dataset.color=hex;
+  // The shared parchment theme sets button backgrounds !important.
+  // These are deliberately user-selected palette swatches, not theme buttons.
+  button.style.setProperty("background-color",hex,"important");
+  button.style.setProperty("background-image","none","important");
+  button.style.setProperty("border-color","#243038","important");
   button.setAttribute("aria-label","Set photo-card background color "+hex);
   button.addEventListener("click",()=>saveCard(hex));
   colorsBox.append(button);
