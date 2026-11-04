@@ -37,7 +37,7 @@ function snapshotFor(id,subject){
  return list.find(s=>String(s.grade||"").replace(/^0/,"")===String(grade)&&String(s.subject||"").toLowerCase().includes(String(subject||"").split(" ")[0].toLowerCase()))||null;
 }
 function stepFor(id,subject,route,index){
- const s=snapshotFor(id,subject),fallback=index===6?languageRoute():(route.startsWith("https:")?route:root+route);
+ const s=snapshotFor(id,subject),fallback=index===6?languageRoute():(typeof route==="string"&&route.startsWith("https:")?route:typeof route==="string"&&route?root+route:root+"courses/");
  // The language selector owns the Grade 10–12 language doorway. Do not let
  // an older continuation snapshot send a newly selected language to a stale
  // or different course URL.
