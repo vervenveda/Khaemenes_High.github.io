@@ -41,7 +41,11 @@ if(!document.getElementById("khaeProfileToolRail")){
  };
  const tools=[
   {label:"Edit Profile",href:"profile/"},
-  {label:"Class Progress",target:"studentCourseProgress",fallback:"grades/"},
+  {label:"Class Progress",target:"grade09ClassProgressDialog",run:()=>{
+    const popup=document.getElementById("grade09ClassProgressDialog");
+    if(popup&&!popup.open)popup.showModal();
+    else if(!popup)reveal("studentCourseProgress");
+   }},
   {label:"Quick Pins",run:()=>{
    const pinned=document.querySelector(".schedule-tile.schedule-quick");
    if(pinned)pinned.scrollIntoView({behavior:"smooth",block:"center"});
