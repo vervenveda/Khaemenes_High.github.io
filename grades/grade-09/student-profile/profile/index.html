@@ -153,7 +153,7 @@ html:root:root body #vnvHeaderAutoPopulate :is(.vnv-header-lines,.vnv-header-lin
 <body>
 
 <div class="top grade09-local-masthead"><div class="shell nav"><nav class="navlinks" aria-label="Grade 09 profile shortcuts"><a href="../">Dashboard</a><a href="../daily-lessons/">Daily Lessons</a><a href="../grades/">Grades</a><a href="../games/">Games</a><a href="../../">Exit to Grade 09</a></nav></div><div class="shell hero"><p class="eyebrow">Khaemenes Academy</p><h1>My Profile</h1><p>Update interests, goals, strengths, supports, portfolio links, and notes. This stays local on this device unless exported.</p></div></div>
-<main><section class="shell" id="grade09LookPanel" aria-labelledby="grade09LookHeading"><div class="grade09-look-layout">
+<main><p class="shell notice" id="grade09LearnerNotice" role="status" hidden>No Academy learner is selected. You can preview a picture, badge, frame, and color without saving. To save personal information, photographs, or class pins, <a href="https://vervenveda.com/Khaemenes_Academy.github.io/family/">select the correct learner in the Family Portal</a>.</p><section class="shell" id="grade09LookPanel" aria-labelledby="grade09LookHeading"><div class="grade09-look-layout">
 <div class="grade09-look-preview"><div id="grade09LookPreview" class="grade09-look-image" aria-label="Selected student badge or picture">★</div><h2 id="grade09LookHeading">My Picture &amp; Colors</h2><p id="grade09LookLabel">My profile badge</p><p class="grade09-look-help">Choose a badge or upload your own picture. This stays on this device.</p></div>
 <div class="grade09-look-controls">
 <h3>Choose My Badge</h3><div id="grade09BadgeChoices" class="grade09-look-options" role="group" aria-label="Select a profile badge"></div>
@@ -178,14 +178,19 @@ function activeLearner(){
     const id=JSON.parse(localStorage.getItem(ACTIVE_KEY)||'null');
     const registry=JSON.parse(localStorage.getItem(FAMILY_KEY)||'null');
     const learner=typeof id==='string'?registry?.learners?.[id]:null;
-    return learner&&learner.learnerId===id?learner:null;
+    if(!learner||learner.learnerId!==id)return null;
+    if(learner.grade&&!['9','09'].includes(String(learner.grade)))return null;
+    const sharedId=window.KhaemenesStudentProfileV2?.activeLearner?.()?.learnerId;
+    return sharedId&&String(sharedId)!==id?null:learner;
   }catch{return null}
 }
 function profileKey(){const learner=activeLearner();return learner?`${BASE_KEY}:learner:${encodeURIComponent(learner.learnerId)}`:BASE_KEY}
 const read=(k,f)=>{try{const r=localStorage.getItem(k);return r?JSON.parse(r):f}catch{return f}};
 const write=(k,v)=>{try{localStorage.setItem(k,JSON.stringify(v));return true}catch{return false}};
 function load(){
-  const learner=activeLearner(),p=read(profileKey(),{}),shared=learner?.learnerId?window.KhaemenesStudentProfileV2?.read?.(learner.learnerId):null;
+  const learner=activeLearner(),p=learner?read(profileKey(),{}):{},shared=learner?.learnerId?window.KhaemenesStudentProfileV2?.read?.(learner.learnerId):null;
+  const notice=document.getElementById('grade09LearnerNotice');
+  if(notice)notice.hidden=!!learner;
   const sharedFallback={
     interests:shared?.learningMap?.interests?.join(', ')||'',
     goals:shared?.compass?.weeklyGoal||'',
@@ -199,7 +204,7 @@ function load(){
   window.KhaemenesHighProfileDetails?.load?.(learner ? p : {});
 }
 function data(){
-  const learner=activeLearner(),p=read(profileKey(),{});
+  const learner=activeLearner(),p=learner?read(profileKey(),{}):{};
   fields.forEach(id=>p[id]=document.getElementById(id).value.trim());
   const extended=window.KhaemenesHighProfileDetails?.collect?.();
   if(extended)p.studentDetailsV1=extended;
@@ -215,13 +220,25 @@ document.getElementById('saveProfile').onclick=()=>{
   const p=data();
   if(!write(profileKey(),p)){status.hidden=false;status.textContent='Profile could not be saved on this device.';return}
   const list=value=>String(value||'').split(/[\n,]+/).map(x=>x.trim()).filter(Boolean);
-  if(learner?.learnerId&&window.KhaemenesStudentProfileV2){
-    window.KhaemenesStudentProfileV2.updateLearningMap({interests:list(p.interests),strengths:list(p.strengths),supports:list(p.supports)},learner.learnerId);
-    window.KhaemenesStudentProfileV2.updateCompass({weeklyGoal:p.goals},learner.learnerId);
+  let synced=false;
+  const shared=window.KhaemenesStudentProfileV2;
+  if(shared){
+    try{
+      const map=shared.updateLearningMap?.({interests:list(p.interests),strengths:list(p.strengths),supports:list(p.supports)},learner.learnerId);
+      const compass=shared.updateCompass?.({weeklyGoal:p.goals},learner.learnerId);
+      synced=map===true&&compass===true;
+    }catch{synced=false}
   }
-  status.hidden=false;status.textContent='Profile saved for the active learner and synchronized with the Academy Learning Profile.';
+  status.hidden=false;
+  status.textContent=synced
+    ?'Profile saved for the selected learner and synchronized with the Academy Learning Profile.'
+    :'Profile saved locally for the selected learner. Academy Learning Profile synchronization was not confirmed; your saved details remain intact.';
 };
 document.getElementById('exportProfile').onclick=()=>{
+  const learner=activeLearner();
+  if(!learner?.learnerId){
+    status.hidden=false;status.textContent='Select an Academy learner before exporting personal information; no legacy profile was exported.';return;
+  }
   const b=new Blob([JSON.stringify(data(),null,2)],{type:'application/json'}),u=URL.createObjectURL(b),a=document.createElement('a');
   a.href=u;a.download='khaemenes-grade09-student-profile.json';a.click();setTimeout(()=>URL.revokeObjectURL(u),800)
 };
