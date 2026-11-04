@@ -20,7 +20,7 @@ for(const card of [identity,firstStep,pins])if(card)top.append(card);
 main.prepend(top);
 align(top);
 
-// The single Grade 09 Profile Tools toolbar sits immediately above the photo/identity card.
+// Profile photo and personal information must lead; the Profile Tools toolbar follows the identity card.
 // It reuses existing Grade 09 features; no course records or learner storage are changed.
 if(!document.getElementById("khaeProfileToolRail")){
  const rail=document.createElement("nav");
@@ -76,7 +76,7 @@ if(!document.getElementById("khaeProfileToolRail")){
   grid.append(item);
  }
  rail.append(heading,grid);
- main.insertBefore(rail,top);
+ top.insertBefore(rail,firstStep||pins||null);
 }
 if(shortcuts)top.insertAdjacentElement("afterend",shortcuts);
 
