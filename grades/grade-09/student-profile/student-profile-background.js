@@ -48,6 +48,9 @@ const surfaces=[
  {key:"manager",title:"Manage Classes Popup",find:()=>document.querySelector("#grade09ManageClassesDialog .grade09-manager-body")},
  {key:"portfolio",title:"Student Learning Portfolio",find:()=>document.querySelector('main aside[aria-label="Student Learning Portfolio"]')},
  {key:"learning",title:"My Learning Today",find:()=>document.getElementById("learningToday")},
+ {key:"rooms",title:"Student Rooms",find:()=>titleCard("doorsTitle")},
+ {key:"family",title:"Parent Access Rule",find:()=>namedCard("Parent Access Rule")},
+ {key:"campus",title:"Need a Different Door?",find:()=>namedCard("Need a Different Door?")},
  {key:"explore",title:"Explore, Create & Celebrate",find:()=>document.getElementById("grade09Explore")},
  {key:"creative",title:"Creative Tools",find:()=>document.getElementById("khaeStudentEcosystemTools")},
  {key:"stickerbox",title:"My Sticker Box",find:()=>document.getElementById("khaeStickerBox")},
@@ -101,6 +104,11 @@ function paintCard(element,mode,color,sticker,isFirstStep=false){
    const ink=inkFor(color);
    // Text-only descendants inherit accessible contrast; course tiles, controls,
    // photos, and nested widgets keep their own intentionally distinct styling.
+   if(surface.matches(".g09s-body")){
+    for(const node of surface.querySelectorAll(":scope > p,:scope > label")){
+     override(node,"color",ink);override(node,"-webkit-text-fill-color",ink);
+    }
+   }
    for(const textNode of surface.querySelectorAll("h2,h3,p,small,.profile-name,.subline")){
     if(textNode.closest("dialog,.schedule-tile,.lesson-card,.door,button,a,.chip,.grade09-photo-controls,.grade09-background-controls"))continue;
     override(textNode,"color",ink);
