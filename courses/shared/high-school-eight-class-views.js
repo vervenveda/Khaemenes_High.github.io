@@ -92,11 +92,20 @@ function cardFor(entry,student,editable){
  box.append(row);
  return box;
 }
+// Collapsible by default: preserve compact High School and Family landing cards.
+const expanded=new Set();
 function panel(title,student,editable,readOnlyLabel){
- const state=stateFor(student),section=create("section",undefined,css.section);
+ const state=stateFor(student),key=(editable?"student:":"family:")+student.learnerId;
+ const section=create("details",undefined,css.section);
  section.setAttribute("aria-label",title);
- section.append(create("h4",title,css.h));
- section.append(create("p",state.count+" of "+state.total+" classes pinned · Grade "+state.grade+
+ section.open=expanded.has(key);
+ section.addEventListener("toggle",()=>{
+  if(section.open)expanded.add(key);else expanded.delete(key);
+ });
+ const summary=create("summary",title+" · "+state.count+" of "+state.total+" pinned",
+  "cursor:pointer;color:#243038;font:400 19px/1.5 Cinzel,Georgia,serif;min-height:44px;padding:7px 0");
+ section.append(summary);
+ section.append(create("p","Grade "+state.grade+
   (editable?" · Select a class to pin or unpin it.":readOnlyLabel||" · Read-only family view.")+
   " Pins are shortcuts, not enrollment, grades, or mastery.",css.p));
  const list=create("div",undefined,css.list);
