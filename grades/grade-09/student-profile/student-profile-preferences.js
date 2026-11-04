@@ -17,7 +17,11 @@ function activeLearner(){
  try{
   const id=JSON.parse(localStorage.getItem(ACTIVE_KEY)||"null");
   const registry=JSON.parse(localStorage.getItem(FAMILY_KEY)||"null");
-  return typeof id==="string"&&registry?.learners?.[id]?.learnerId===id?id:null;
+  const record=typeof id==="string"?registry?.learners?.[id]:null;
+  if(!record||record.learnerId!==id)return null;
+  if(record.grade&&!["9","09"].includes(String(record.grade)))return null;
+  const linked=window.KhaemenesStudentProfileV2?.activeLearner?.()?.learnerId;
+  return linked&&String(linked)!==id?null:id;
  }catch{return null}
 }
 function key(){const id=activeLearner();return id?`${BASE_KEY}:learner:${encodeURIComponent(id)}`:BASE_KEY}
