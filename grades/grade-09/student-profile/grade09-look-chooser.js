@@ -11,7 +11,8 @@ const photoKey=id=>"khaemenes.grade09.profile.photo:"+encodeURIComponent(id);
 const pageColorKey=id=>"khaemenes.grade09.profile.background:"+encodeURIComponent(id);
 const cardKey=id=>"khaemenes.grade09.profile.background.sections.v1:"+encodeURIComponent(id);
 const badges=["★","✦","📚","🧭","⚛","🎨","🎵","🌿"];
-const colors=["#f4f0e7","#e5e9ee","#d9e6e0","#e8e1ed","#eee3cf","#d7dfe9","#cbdcda","#e3d8d4"];
+const parchment="#f4f0e7";
+const colors=["#D53E4F","#F46D43","#FDAE61","#FEE08B","#E6F598","#ABDDA4","#66C2A5","#3288BD"];
 const shapes=[
  ["rectangle","Rectangle"],["square","Square"],["circle","Circle"],
  ["heart","Heart"],["star","Star"],["octagon","Octagon"],
@@ -32,7 +33,7 @@ const learner=()=>{
  }catch{return null}
 };
 const validColor=color=>typeof color==="string"&&/^#[0-9a-f]{6}$/i.test(color);
-let owner=null,badge="★",cardMode="default",cardColor=colors[0],photo="",frame="circle";
+let owner=null,badge="★",cardMode="default",cardColor=parchment,photo="",frame="circle";
 const status=(text,error=false)=>{
  const node=$("grade09LookStatus");
  if(node){node.textContent=text;node.dataset.error=error?"true":"false"}
@@ -51,13 +52,17 @@ function cardPreview(id){
  if(cardMode==="custom"&&validColor(setting.color))return setting.color;
  if(cardMode==="page"){
   let page=null;try{page=localStorage.getItem(pageColorKey(id))}catch{}
-  return validColor(page)?page:colors[0];
+  return validColor(page)?page:parchment;
  }
- return colors[0];
+ return parchment;
 }
 function saveCard(color){
  const id=learner();
- if(!id||id!==owner){refresh();status("Select the correct Academy learner before changing the photo-card color.",true);return false}
+ if(!id&&!owner){
+  cardMode=color?"custom":"default";cardColor=color||parchment;render();
+  status("Preview only. Select an Academy learner to save this photo-card color.");return true;
+ }
+ if(!id||id!==owner){refresh();status("Select the Academy learner before saving the photo-card color.",true);return false}
  try{
   const key=cardKey(id);
   const existing=JSON.parse(localStorage.getItem(key)||"{}");
@@ -66,12 +71,12 @@ function saveCard(color){
   all.identity={
    ...previous,
    mode:color?"custom":"default",
-   color:color||colors[0],
+   color:color||parchment,
    emoji:typeof previous.emoji==="string"?previous.emoji:""
   };
   // Only the identity section is written: preserve all other section choices.
   localStorage.setItem(key,JSON.stringify(all));
-  cardColor=cardPreview(id);render();
+  cardColor=cardPreview(id);render();signal();
   status(color?"Photo-card background saved. The page background was not changed.":"Original photo-card background restored; other sections are unchanged.");
   return true;
  }catch{status("Could not save this card background on the current device.",true);return false}
@@ -116,8 +121,8 @@ function refresh(){
  const design=window.KhaemenesGrade09Design;
  frame=design?.read?.().avatarShape||"circle";
  if(!owner){
-  badge="★";cardMode="default";cardColor=colors[0];photo="";
-  render();status("Select your existing Academy learner before saving a picture, badge, frame, or photo-card color.",true);
+  badge="★";cardMode="default";cardColor=parchment;photo="";
+  render();status("Preview any picture, badge, frame or color here. Select an Academy learner to save choices.");
  }else{
   try{
    const savedBadge=localStorage.getItem(badgeKey(owner));
@@ -125,14 +130,14 @@ function refresh(){
    cardColor=cardPreview(owner);
    const raw=localStorage.getItem(photoKey(owner))||"";
    photo=/^data:image\/jpeg;base64,[a-z0-9+/=]+$/i.test(raw)&&raw.length<400000?raw:"";
-  }catch{badge="★";cardMode="default";cardColor=colors[0];photo=""}
+  }catch{badge="★";cardMode="default";cardColor=parchment;photo=""}
   render();status("Picture, frame and photo-card color are saved locally for this learner.");
  }
  const enabled=!!owner;
  for(const button of document.querySelectorAll("#grade09BadgeChoices button,#grade09FrameChoices button,#grade09ColorChoices button"))
-  button.disabled=!enabled;
- $("grade09PhotoInput").disabled=!enabled;
- $("grade09RemovePhoto").disabled=!enabled||!photo;
+  button.disabled=false;
+ $("grade09PhotoInput").disabled=false;
+ $("grade09RemovePhoto").disabled=!photo;
 }
 function save(key,value,text){
  const id=learner();
@@ -146,7 +151,7 @@ function signal(){
 async function choosePhoto(file){
  if(!file)return;
  const id=learner();
- if(!id||id!==owner){refresh();status("Choose your existing learner first.",true);return}
+ if(id!==owner){refresh();status("The active learner changed. Choose your picture again.",true);return}
  if(!["image/jpeg","image/png","image/webp"].includes(file.type)||file.size>5*1024*1024){
   status("Choose a JPG, PNG, or WebP picture under 5 MB.",true);$("grade09PhotoInput").value="";return
  }
@@ -161,6 +166,10 @@ async function choosePhoto(file){
   ctx.drawImage(img,(img.naturalWidth-side)/2,(img.naturalHeight-side)/2,side,side,0,0,240,240);
   const data=canvas.toDataURL("image/jpeg",.78);
   if(data.length>=400000)throw Error("Image remains too large");
+  if(!id){
+   photo=data;render();$("grade09RemovePhoto").disabled=false;
+   status("Picture preview only. Select an Academy learner to save this photograph.");return;
+  }
   if(save(photoKey,data,"Picture saved locally for this learner.")){
    photo=data;render();$("grade09RemovePhoto").disabled=false;signal();
   }
@@ -176,7 +185,10 @@ function mount(){
   button.dataset.symbol=symbol;button.textContent=symbol;
   button.setAttribute("aria-label","Choose "+symbol+" profile badge");
   button.addEventListener("click",()=>{
-   if(!owner){refresh();return}
+   if(!owner){
+    badge=symbol;render();
+    status("Badge preview only. Select an Academy learner to save.");return;
+   }
    if(save(badgeKey,symbol,"Badge saved for this learner.")){
     badge=symbol;render();
     if(photo)status("Badge saved. Existing picture preserved; Remove Picture to show your badge.");
@@ -191,7 +203,8 @@ function mount(){
   button.setAttribute("aria-label","Use "+label+" photo frame");
   button.addEventListener("click",()=>{
    const id=learner(),design=window.KhaemenesGrade09Design;
-   if(!id||id!==owner||!design?.write){refresh();status("Select your Academy learner before choosing a frame.",true);return}
+   if(!id&&!owner){frame=shape;render();status(label+" frame preview only. Select an Academy learner to save.");return}
+   if(!id||id!==owner||!design?.write){refresh();status("Select your Academy learner before saving the frame.",true);return}
    if(!design.write({...design.read(),avatarShape:shape})){
     status("Could not save the photo frame.",true);return
    }
@@ -221,6 +234,10 @@ function mount(){
  $("grade09PhotoInput").addEventListener("change",event=>choosePhoto(event.target.files?.[0]));
  $("grade09RemovePhoto").addEventListener("click",()=>{
   const id=learner();
+  if(!id&&!owner){
+   photo="";render();$("grade09RemovePhoto").disabled=true;
+   status("Picture preview cleared. No learner photograph was changed.");return;
+  }
   if(!id||id!==owner){refresh();return}
   try{
    localStorage.removeItem(photoKey(id));photo="";render();
