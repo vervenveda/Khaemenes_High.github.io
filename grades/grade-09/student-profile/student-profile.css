@@ -510,6 +510,106 @@ html:root:root body #khaeProfileToolRail .grade09-profile-tool:focus-visible{
   outline-offset:2px!important;
 }
 
+/* Grade 09 Today's First Step: the existing card owns a ten-item,
+   learner-scoped daily checklist. No additional stylesheet or CSS layer. */
+.grade09-profile-first .focus-card{
+  display:grid!important;
+  grid-template-columns:minmax(0,1fr)!important;
+  align-items:stretch!important;
+  gap:12px!important;
+  padding:18px!important;
+  text-align:left!important;
+}
+.grade09-profile-first .focus-card>div:first-child{width:100%;min-width:0}
+.grade09-profile-first .focus-card #todayFocus{
+  display:block!important;
+  margin-top:8px!important;
+  font:400 16px/1.55 "Brandon Grotesque",Nunito,Arial,sans-serif!important;
+  overflow-wrap:anywhere;
+}
+.grade09-profile-first .focus-card>.actions{
+  display:grid!important;
+  grid-template-columns:repeat(4,minmax(0,1fr))!important;
+  gap:9px!important;
+  margin:4px 0 0!important;
+}
+.grade09-profile-first .focus-card>.actions>.btn{
+  min-width:0!important;min-height:45px!important;height:auto!important;
+  display:flex!important;align-items:center!important;justify-content:center!important;
+  padding:9px 11px!important;
+  font:400 16px/1.35 "Brandon Grotesque",Nunito,Arial,sans-serif!important;
+  white-space:normal!important;text-align:center!important;
+}
+.grade09-profile-first .grade09-daily-focus{display:grid;gap:12px;margin-top:16px;min-width:0}
+.grade09-profile-first .grade09-daily-focus h3{
+  margin:0!important;color:#243038;font:400 24px/1.25 Cinzel,Georgia,serif!important;
+}
+.grade09-profile-first .grade09-daily-focus-explanation,
+.grade09-profile-first .grade09-daily-focus-note{
+  margin:0!important;color:#34423e!important;
+  font:400 16px/1.55 "Brandon Grotesque",Nunito,Arial,sans-serif!important;
+}
+.grade09-profile-first .grade09-daily-focus-count{
+  margin:0!important;padding:10px 13px!important;border-radius:7px!important;
+  background:#263839!important;color:#fff8e9!important;
+  font:400 16px/1.4 "Brandon Grotesque",Nunito,Arial,sans-serif!important;
+}
+.grade09-profile-first .grade09-daily-focus-list{
+  list-style:none!important;display:grid!important;
+  grid-template-columns:repeat(2,minmax(0,1fr))!important;
+  gap:10px!important;padding:0!important;margin:0!important;
+}
+.grade09-profile-first .grade09-daily-task{
+  box-sizing:border-box;min-width:0;display:grid;grid-template-columns:35px minmax(0,1fr);
+  grid-template-rows:auto 1fr auto;column-gap:9px;row-gap:7px;
+  align-items:start;padding:13px;border:1px solid #b8a889;border-radius:7px;
+  background:#fffaf0!important;color:#243038!important;
+}
+.grade09-profile-first .grade09-daily-task-number{
+  grid-column:1;grid-row:1;display:inline-grid;place-items:center;
+  width:33px;height:33px;border-radius:7px;background:#30474b!important;
+  color:#fff8e9!important;font:400 15px/1.2 Nunito,Arial,sans-serif!important;
+}
+.grade09-profile-first .grade09-daily-task-check{
+  grid-column:2;grid-row:1;display:flex;align-items:flex-start;gap:9px;
+  color:#243038!important;cursor:pointer;min-width:0;
+}
+.grade09-profile-first .grade09-daily-task-check input{
+  flex:none;width:21px;height:21px;min-height:21px;margin:2px 0 0;
+  accent-color:#30474b;
+}
+.grade09-profile-first .grade09-daily-task-name{
+  color:#243038!important;-webkit-text-fill-color:#243038!important;
+  font:400 16px/1.4 "Brandon Grotesque",Nunito,Arial,sans-serif!important;
+  overflow-wrap:anywhere;
+}
+.grade09-profile-first .grade09-daily-task-detail{
+  grid-column:2;grid-row:2;min-width:0;margin:0!important;color:#4b5d55!important;
+  font:400 16px/1.5 "Brandon Grotesque",Nunito,Arial,sans-serif!important;
+  overflow-wrap:anywhere;
+}
+.grade09-profile-first .grade09-daily-task-link{
+  grid-column:2;grid-row:3;display:flex;align-items:center;justify-content:center;
+  min-height:44px;padding:8px 11px;border:1px solid #30474b;border-radius:7px;
+  background:#30474b!important;color:#fff8e9!important;
+  -webkit-text-fill-color:#fff8e9!important;
+  font:400 16px/1.3 Nunito,Arial,sans-serif!important;text-decoration:none!important;
+  text-align:center;overflow-wrap:anywhere;
+}
+.grade09-profile-first .grade09-daily-task-link:is(:hover,:focus-visible){
+  background:#446064!important;border-color:#b48b45!important;
+}
+.grade09-profile-first .grade09-daily-task :is(input,a):focus-visible{
+  outline:3px solid #b48b45!important;outline-offset:2px!important;
+}
+@media(max-width:790px){
+  .grade09-profile-first .focus-card>.actions{grid-template-columns:repeat(2,minmax(0,1fr))!important}
+  .grade09-profile-first .grade09-daily-focus-list{grid-template-columns:1fr!important}
+}
+@media(max-width:420px){
+  .grade09-profile-first .focus-card>.actions{grid-template-columns:1fr!important}
+}
+
 /* Grade 09 photo-card compact layout 20261103 */
 /* Leave a distinct name/grade area for future learner personal information. */
 .grade09-profile-first .profile-row{
