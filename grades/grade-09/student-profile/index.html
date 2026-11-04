@@ -8,7 +8,7 @@
 <meta name="referrer" content="no-referrer">
 <meta http-equiv="Permissions-Policy" content="camera=(), microphone=(), geolocation=(), payment=(), usb=(), browsing-topics=()">
 <title>Grade 09 Student Dashboard</title>
-<link rel="stylesheet" href="student-profile.css?v=20261104-schedule-uniform-cards">
+<link rel="stylesheet" href="student-profile.css?v=20261104-daily-routine-v2">
 <style id="khaemenes-typography-standard">
 /* Khaemenes High presentation typography · 55 / 33 / 24 / 14 px.
    All public pages receive this local, embedded policy for offline use.
@@ -256,14 +256,8 @@ body :is(.hero,.ug-hero,.mast) :is(.eyebrow,.ug-eyebrow),body main>.eyebrow{font
       <section class="card col12" aria-labelledby="todayTitle">
         <div class="focus-card">
           <div>
-            <strong id="todayTitle">Today’s first step</strong>
-            <span id="todayFocus">Open Daily Lessons and choose the first assigned class.</span>
-          </div>
-          <div class="actions">
-            <a class="btn gold" href="daily-lessons/">Open Daily Lessons</a>
-            <a class="btn secondary" href="../../../mentor/?stage=high&amp;subject=general&amp;course=grade-09&amp;source=grades%2Fgrade-09%2Fstudent-profile%2F">Ask Mentor</a>
-            <a class="btn secondary" href="daily-lessons/#todaysChecklist">Today’s Checklist</a>
-            <a class="btn secondary" href="daily-lessons/#todaysNote">Today’s Note</a>
+            <strong id="todayTitle">To Do Today</strong>
+            <span id="todayFocus">A healthy daily routine, time with others, and evidence-based class checkpoints.</span>
           </div>
         </div>
       </section>
@@ -458,20 +452,7 @@ html body .grade09-contribute-panel .grade09-contribute-action:focus-visible{
     bindLaunches(document.getElementById("learningToday"));
   }
 
-  async function renderToday(){
-    const focus=document.getElementById('todayFocus');
-    if(note&&note.trim()){focus.textContent=note.trim();return}
-    const pinned=registry.pinnedCourses();
-    const priority=registry.resumePriorityCourse?.()||pinned[0]||null;
-    if(priority){
-      const next=await registry.resolveContinueFor(priority.id);
-      focus.textContent=`Resume ${priority.title}: ${next?.detail||'your next learning step is ready.'}`;
-      return;
-    }
-    focus.textContent='Open Daily Lessons and choose the first assigned class. You can pin regular classes and choose the current mathematics pathway below.';
-  }
-
-  async function renderAll(){await Promise.all([renderManager(),renderToday(),renderLearningToday()])}
+  async function renderAll(){await Promise.all([renderManager(),renderLearningToday()])}
   window.addEventListener('khaemenes-grade09-design-changed',()=>{if(!document.querySelector('#avatar img'))document.getElementById('avatar').textContent=window.KhaemenesGrade09Design?.avatarText(initials)||initials;});
   window.addEventListener('storage',event=>{
     if(registry.shouldRefreshForStorageKey(event.key))void renderAll();
@@ -492,7 +473,7 @@ html body .grade09-contribute-panel .grade09-contribute-action:focus-visible{
 <script src="student-profile-photo.js"></script>
 <script src="student-profile-background.js"></script>
 <script src="student-profile-details.js?v=20261103-balanced-three-details"></script>
-<script src="student-daily-focus.js?v=20261103-eight-class-focus"></script>
+<script src="student-daily-focus.js?v=20261104-todo-routine-v2"></script>
 <script src="../../../assets/high-navigation-v1.js?v=20261030-open-campus" defer></script>
 
 <script src="https://vervenveda.com/assets/vnv-333-ticker.js"></script>
