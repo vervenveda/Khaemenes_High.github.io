@@ -80,6 +80,11 @@ function render(){
  const setup=el("button","Pin all eight classes");
  setup.type="button";setup.style.cssText="margin-top:16px;padding:11px 16px;border-radius:7px";
  setup.addEventListener("click",()=>{
+  if(!registry.mathPathway()){
+   const feedback=document.getElementById("grade09ScheduleSaveStatus");
+   if(feedback)feedback.textContent="Choose or confirm the mathematics pathway before pinning all eight classes. No pin changes were made.";
+   math.focus();return;
+  }
   if(!language()){
    const feedback=document.getElementById("grade09ScheduleSaveStatus");
    if(feedback)feedback.textContent="Choose a foreign language before pinning all eight classes.";
