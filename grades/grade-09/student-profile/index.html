@@ -302,6 +302,75 @@ body :is(.hero,.ug-hero,.mast) :is(.eyebrow,.ug-eyebrow),body main>.eyebrow{font
     </div>
   </section>
 </main>
+<style id="grade09-contribute-footer-20261103">
+/* Local Grade 09 visual correction only: no global ecosystem overrides. */
+html body footer.footer.grade09-dashboard-footer{
+  width:100%!important;
+  max-width:100%!important;
+  margin:0!important;
+  padding:28px 16px!important;
+  background:#202724!important;
+  background-image:none!important;
+  border-top:1px solid #b48b45!important;
+  color:#fff8e9!important;
+  display:flex!important;
+  flex-direction:column!important;
+  align-items:center!important;
+  justify-content:center!important;
+  text-align:center!important;
+  gap:7px!important;
+  font:400 16px/1.5 Cinzel,Georgia,serif!important;
+}
+html body footer.grade09-dashboard-footer :is(div,span,p,a,strong){
+  color:#fff8e9!important;
+  -webkit-text-fill-color:#fff8e9!important;
+}
+html body footer.grade09-dashboard-footer small{
+  color:#eadcc5!important;
+  -webkit-text-fill-color:#eadcc5!important;
+  font:400 16px/1.5 "Brandon Grotesque",Nunito,Arial,sans-serif!important;
+}
+html body .grade09-contribute-panel{
+  background:#243038!important;
+  background-image:none!important;
+  color:#fff8e9!important;
+  border:1px solid #b48b45!important;
+  border-radius:7px!important;
+  text-align:center!important;
+}
+html body .grade09-contribute-panel :is(h2,h3,h4){
+  color:#fff8e9!important;
+  -webkit-text-fill-color:#fff8e9!important;
+  text-align:center!important;
+  font-family:Cinzel,Georgia,serif!important;
+  font-weight:400!important;
+}
+html body .grade09-contribute-panel :is(p,small,span){
+  color:#f0e6d4!important;
+  -webkit-text-fill-color:#f0e6d4!important;
+}
+html body .grade09-contribute-panel :is(a,button).grade09-contribute-action{
+  background:#e9d8b7!important;
+  background-image:none!important;
+  color:#202724!important;
+  -webkit-text-fill-color:#202724!important;
+  border:1px solid #b48b45!important;
+  border-radius:7px!important;
+  font:400 16px/1.4 "Brandon Grotesque",Nunito,Arial,sans-serif!important;
+  min-height:44px!important;
+  padding:10px 18px!important;
+  opacity:1!important;
+  text-decoration:none!important;
+}
+html body .grade09-contribute-panel .grade09-contribute-action :is(span,strong){
+  color:#202724!important;
+  -webkit-text-fill-color:#202724!important;
+}
+html body .grade09-contribute-panel .grade09-contribute-action:focus-visible{
+  outline:3px solid #fff8e9!important;
+  outline-offset:3px!important;
+}
+</style>
 <footer class="footer grade09-dashboard-footer"><div>Verve N Veda · Khaemenes Academy</div><small>Jennifer Kay Pearl · 2026</small></footer>
 <script src="../../../courses/shared/course-entry-contract.js"></script>
 <script src="../../../courses/shared/high-school-course-pins.js"></script>\n<script src="../../../courses/shared/high-school-science-investigation-profile.js"></script>
@@ -487,5 +556,32 @@ body :is(.hero,.ug-hero,.mast) :is(.eyebrow,.ug-eyebrow),body main>.eyebrow{font
   });
 </script>
 <script src="https://vervenveda.com/assets/vnv-ecosystem-toolbar.js"></script>
+<script>
+/* Recognize the late-inserted support card by its own wording, not by layout position. */
+(function(){
+  "use strict";
+  function markSupportCard(){
+    const title=[...document.querySelectorAll("h2,h3,h4,p,div,span")]
+      .find(el=>el.children.length===0 && /^(support free access|contribute)$/i.test((el.textContent||"").trim()));
+    if(!title)return false;
+    let panel=title;
+    while(panel && panel!==document.body){
+      if(panel.querySelector && [...panel.querySelectorAll("a,button")].some(el=>/stripe|support with stripe|contribute/i.test((el.textContent||"")+" "+(el.getAttribute("href")||""))))break;
+      panel=panel.parentElement;
+    }
+    if(!panel || panel===document.body || panel===document.documentElement)return false;
+    panel.classList.add("grade09-contribute-panel");
+    for(const action of panel.querySelectorAll("a,button")){
+      if(/stripe|support with stripe|contribute/i.test((action.textContent||"")+" "+(action.getAttribute("href")||"")))action.classList.add("grade09-contribute-action");
+    }
+    return true;
+  }
+  if(!markSupportCard()){
+    const observer=new MutationObserver(()=>{if(markSupportCard())observer.disconnect();});
+    observer.observe(document.body,{subtree:true,childList:true});
+  }
+})();
+</script>
+
 </body>
 </html>
