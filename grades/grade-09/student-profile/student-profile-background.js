@@ -34,7 +34,6 @@ const surfaces=[
  {key:"identity",title:"Photo & Personal Information",find:()=>row.closest(".card")},
  {key:"tools",title:"My Profile Tools",find:()=>document.getElementById("khaeProfileToolRail")},
  {key:"today",title:"Today's First Step",find:()=>titleCard("todayTitle")},
- {key:"pinned",title:"My Pinned Classes",find:()=>document.getElementById("classes")},
  {key:"schedule",title:"My Schedule Bar",find:()=>document.querySelector(".grade09-priority-schedule .schedule-card")},
  {key:"progress",title:"My Class Progress",find:()=>document.getElementById("studentCourseProgress")},
  {key:"portfolio",title:"Student Learning Portfolio",find:()=>document.querySelector('main aside[aria-label="Student Learning Portfolio"]')},
