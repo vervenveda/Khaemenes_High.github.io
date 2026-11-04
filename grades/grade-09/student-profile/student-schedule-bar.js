@@ -35,10 +35,10 @@ function addCourseActions(card,course,id,current,pinned){
  });
  actions.append(toggle);
  if(id==="integrated-science-9"){
-  const notebook=el("a","schedule-open schedule-secondary","Scientific Investigation Notebook");
+  const notebook=el("a","schedule-open schedule-secondary","Scientific Notebook");
   notebook.href=SCIENCE_NOTEBOOK+"?grade=9&course="+encodeURIComponent(id);
   notebook.dataset.scienceInvestigationNotebook="true";
-  notebook.setAttribute("aria-label","Open the Scientific Investigation Notebook for Integrated Science 9");
+  notebook.setAttribute("aria-label","Open the Scientific Notebook for Integrated Science 9");
   notebook.title="Your four-year science research notebook";
   actions.append(notebook);
  }
