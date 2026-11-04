@@ -8,7 +8,7 @@ if(!registry||!pins)return;
 const languages=[["spanish","Spanish"],["french","French"],["german","German"],["mandarin","Mandarin Chinese"],["japanese","Japanese"],["arabic","Arabic"],["russian","Russian"]];
 const catalog=window.KhaemenesHighEightClass;
 function language(){const value=pins.readLanguageChoices()["9"];return languages.some(([id])=>id===value)?value:""}
-function slots(){return catalog?.slots(9,{mathId:registry.mathPathway()||"pre-algebra",language:language()})||[]}
+function slots(){return catalog?.slots(9,{mathId:registry.mathPathway()||null,language:language()})||[]}
 function idFor(index){return slots()[index]?.id||null}
 function el(tag,className,text){const node=document.createElement(tag);if(className)node.className=className;if(text!==undefined)node.textContent=text;return node}
 async function renderHost(host){
