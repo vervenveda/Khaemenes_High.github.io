@@ -46,10 +46,9 @@ if(!document.getElementById("khaeProfileToolRail")){
     if(popup&&!popup.open)popup.showModal();
     else if(!popup)reveal("studentCourseProgress");
    }},
-  {label:"Quick Pins",run:()=>{
-   const pinned=document.querySelector(".schedule-tile.schedule-quick");
-   if(pinned)pinned.scrollIntoView({behavior:"smooth",block:"center"});
-   else if(!reveal("scheduleBarTitle"))window.location.assign("games/");
+  {label:"Schedule",target:"grade09ScheduleDialog",run:()=>{
+   const popup=document.getElementById("grade09ScheduleDialog");
+   if(popup&&!popup.open)popup.showModal();
   }},
   {label:"Study Studio",run:()=>{
    const opener=document.getElementById("openLearningJourney");
@@ -60,7 +59,10 @@ if(!document.getElementById("khaeProfileToolRail")){
   {label:"Sticker Box",target:"khaeStickerBox",fallback:"games/"},
   {label:"Creative Tools",target:"khaeStudentEcosystemTools",fallback:"games/"},
   // Phase 1: expose existing features without relocating their DOM or touching learner records.
-  {label:"Pinned Classes",target:"scheduleBarTitle",fallback:"daily-lessons/"},
+  {label:"Pinned Classes",target:"grade09ScheduleDialog",run:()=>{
+   const popup=document.getElementById("grade09ScheduleDialog");
+   if(popup&&!popup.open)popup.showModal();
+  }},
   {label:"Student Portfolio",run:()=>{
    const evidence=document.querySelector('aside[aria-label="Student Learning Portfolio"]');
    if(evidence){evidence.scrollIntoView({behavior:"smooth",block:"start"});evidence.querySelector("a")?.focus({preventScroll:true});}
