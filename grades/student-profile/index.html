@@ -46,7 +46,7 @@ function render(){
    message.textContent="Existing Grade "+Number(grade)+" learner found on this browser. Your profile and learning records are not changed by visiting this page.";
    text.textContent=(learner.nickname||"Student")+" · Grade "+Number(grade)+". Continue with your Academy profile studio or your grade's daily learning dashboard.";
    gradeIntro.textContent="Grade "+Number(grade)+" is selected automatically from your existing learner record. Promotion and placement are controlled through the Academy, not this page.";
-   actions.append(a("Open Profile Creation & Personalization",grade==="09"?base+grade+"/student-profile/":academy+"student/profile.html","gold"),a("Family & Placement",academy+"family/","light"));
+   actions.append(a("Open Profile Creation & Personalization",academy+"student/profile.html#profileStudio","gold"),a("Family & Placement",academy+"family/","light"));
    gradeActions.append(a("Open My Grade "+Number(grade)+" Dashboard",base+grade+"/student-profile/"),a("Grade "+Number(grade)+" Campus",base+grade+"/","light"));
  }else{
    const records=Object.values(R?.load?.().learners||{}).filter(v=>v?.learnerId&&v.stage==="high"&&["09","10","11","12"].includes(String(v.grade||"").padStart(2,"0")));
