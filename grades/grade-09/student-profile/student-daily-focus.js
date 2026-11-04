@@ -41,8 +41,7 @@ const breakfast=[
 ];
 const tasks=[
  {key:"breakfast",title:"Breakfast & hydration",detail:()=>breakfast[new Date().getDay()]+" Drink some water, too.",},
- {key:"wash",title:"Brush teeth & get ready",detail:()=>"Brush your teeth, wash up, and prepare for the school day."},
- {key:"reset",title:"Stretch & breathe",detail:()=>"Take a gentle stretch and a comfortable breathing break.",action:"Visit Aurora",href:"https://vervenveda.com/aurora.github.io/"},
+ {key:"wash",title:"Get ready, stretch & breathe",detail:()=>"Brush your teeth, wash up, then enjoy a gentle stretch and comfortable breathing break.",action:"Visit Aurora",href:"https://vervenveda.com/aurora.github.io/"},
  {key:"journal",title:"Morning journal",detail:()=>"Write a short reflection or set an intention for today.",action:"Open daily journal",href:"daily-lessons/#todaysNote"},
  {key:"lunch",title:"Lunch & rest",detail:()=>"Take time to eat lunch, drink water, and enjoy a screen break."},
  {key:"movement",title:"Afternoon movement / PE",detail:()=>"Choose a comfortable activity or continue your Physical Education class.",action:"Open PE class",subject:"physicalEducation"},
