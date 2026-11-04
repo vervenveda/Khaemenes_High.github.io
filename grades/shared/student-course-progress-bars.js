@@ -3,7 +3,125 @@
 const grade=(location.pathname.match(/\/grade-(09|10|11|12)\/student-profile\//)||[])[1];
 if(!grade)return;
 // Grade 09 owns an eight-subject interactive chart; preserve this legacy view for Grades 10–12.
-if(grade==="09")return;
+if(grade==="09"){mountGradeNineChart();return;}
+function mountGradeNineChart(){
+ const catalog=window.KhaemenesHighEightClass,registry=window.KhaemenesGrade09Courses;
+ const pins=window.KhaemenesHighCoursePins,contract=window.KhaemenesCourseEntryContract;
+ if(!catalog||!registry||!pins||!contract)return;
+ const COLORS=["#D53E4F","#F46D43","#FDAE61","#FEE08B","#E6F598","#ABDDA4","#66C2A5","#3288BD"];
+ const text=(tag,cls,label)=>{const n=document.createElement(tag);if(cls)n.className=cls;if(label!==undefined)n.textContent=label;return n};
+ const chart=text("section","grade09-class-progress");
+ chart.id="studentCourseProgress";chart.setAttribute("aria-label","Eight-class progress dashboard");
+ const title=text("h2","","My Class Progress");
+ const introduction=text("p","grade09-progress-intro","Course completion and quiz mastery are different. Each subject keeps its own color; missing records are not zero grades.");
+ const controls=text("div","grade09-progress-controls");
+ const status=text("p","grade09-progress-status");
+ const graph=text("div","grade09-progress-graph");
+ const detail=text("div","grade09-progress-detail");detail.setAttribute("aria-live","polite");
+ chart.append(title,introduction,controls,status,graph,detail);
+ const schedule=document.querySelector(".grade09-priority-schedule");
+ if(!schedule)return;
+ schedule.insertAdjacentElement("afterend",chart);
+ const active=()=>{const x=window.KhaemenesStudentProfileV2?.activeLearner?.()?.learnerId;
+  const y=contract.readAcademyProfile?.()?.learnerId;
+  return x&&y&&String(x)===String(y)?String(x):null};
+ let selected=-1,mode="all";
+ const allButton=text("button","grade09-progress-filter","All eight subjects");
+ const needsButton=text("button","grade09-progress-filter","Needs review");
+ for(const [button,value] of [[allButton,"all"],[needsButton,"review"]]){
+  button.type="button";button.addEventListener("click",()=>{mode=value;render()});
+ }
+ controls.append(allButton,needsButton);
+ function data(){
+  const learner=active();
+  const continuation=window.KhaemenesLearningContinuation;
+  const snaps=learner?continuation?.readLearner?.(learner)||[]:[];
+  const language=pins.readLanguageChoices()?.["9"]||"";
+  const slots=catalog.slots(9,{mathId:registry.mathPathway()||null,language});
+  return {learner,rows:slots.map((slot,index)=>{
+   const course=slot.id?registry.getCourse(slot.id):null;
+   const snap=course?snaps.find(s=>s.courseId===course.id&&!s.stale):null;
+   const pct=snap?.progress?.percent;
+   const percent=typeof pct==="number"&&Number.isFinite(pct)&&pct>=0&&pct<=100?pct:null;
+   const best=snap?.mastery?.best;
+   const mastery=typeof best==="number"&&Number.isFinite(best)&&best>=0&&best<=100?best:null;
+   const threshold=snap?.mastery?.threshold??80;
+   const mastered=Boolean(snap?.mastery?.mastered)&&mastery!==null&&mastery>=threshold;
+   const stale=course?snaps.some(s=>s.courseId===course.id&&s.stale):false;
+   return {index,subject:slot.label,course,snap,percent,mastery,threshold,mastered,stale,color:COLORS[index],
+    needsReview:Boolean(stale||snap?.status==="corrections"||snap?.status==="mastery"||snap?.family?.needsAction)};
+  })};
+ }
+ function render(){
+  const {learner,rows}=data();
+  for(const [b,k] of [[allButton,"all"],[needsButton,"review"]])b.setAttribute("aria-pressed",String(mode===k));
+  graph.replaceChildren();
+  if(!learner){
+   status.textContent="Choose an Academy learner to view private progress. No personal scores are shown.";
+   detail.replaceChildren();return;
+  }
+  const available=rows.filter(r=>r.percent!==null).length;
+  const flagged=rows.filter(r=>r.needsReview).length;
+  status.textContent=available+" of 8 course-completion records available · "+flagged+" with reported review needs. No score is inferred from missing data.";
+  const displayed=mode==="review"?rows.filter(r=>r.needsReview):rows;
+  if(!displayed.length)graph.append(text("p","grade09-progress-empty","No course records currently report a review need. Unreported progress is still shown under All eight subjects."));
+  displayed.forEach(r=>{
+   const item=text("button","grade09-progress-row"+(selected===r.index?" is-selected":""));
+   item.type="button";item.dataset.courseIndex=String(r.index);
+   item.setAttribute("aria-label",r.subject+": "+(r.percent===null?"completion not reported":Math.round(r.percent)+" percent completed")+"; view details");
+   item.setAttribute("aria-pressed",String(selected===r.index));
+   const label=text("span","grade09-progress-label",r.subject);
+   const track=text("span","grade09-progress-track");
+   const fill=text("span","grade09-progress-fill");
+   fill.style.width=(r.percent===null?0:r.percent)+"%";
+   fill.style.backgroundColor=r.color;
+   track.append(fill);
+   if(r.percent!==null){
+    track.setAttribute("role","progressbar");
+    track.setAttribute("aria-label",r.subject+" course completion");
+    track.setAttribute("aria-valuemin","0");track.setAttribute("aria-valuemax","100");
+    track.setAttribute("aria-valuenow",String(r.percent));
+   }else track.setAttribute("aria-label",r.subject+" completion not reported");
+   const value=text("span","grade09-progress-value",r.percent===null?(r.stale?"Needs refresh":"Not reported"):Math.round(r.percent)+"%");
+   item.append(label,track,value);
+   item.addEventListener("click",()=>{selected=r.index;showDetails(r);renderRowsSelection()});
+   graph.append(item);
+  });
+  if(selected<0||!rows.some(r=>r.index===selected))selected=0;
+  const current=rows.find(r=>r.index===selected);
+  if(current)showDetails(current);
+  renderRowsSelection();
+  function renderRowsSelection(){
+   for(const item of graph.querySelectorAll("[data-course-index]")){
+    const yes=Number(item.dataset.courseIndex)===selected;
+    item.classList.toggle("is-selected",yes);item.setAttribute("aria-pressed",String(yes));
+   }
+  }
+ }
+ function showDetails(r){
+  detail.replaceChildren();
+  detail.style.setProperty("--subject-color",r.color);
+  const name=text("h3","",r.course?.title||r.subject);
+  const state=text("p","",r.percent===null?"Course completion: not reported.":"Course completion: "+Math.round(r.percent)+"%.");
+  const assessment=text("p","",r.mastery===null?"Assessment mastery: not reported.":"Best reported assessment mastery: "+Math.round(r.mastery)+"% (target "+r.threshold+"%).");
+  const next=text("p","",r.stale?"This course snapshot is stale. Reopen the course to refresh progress.":r.snap?.nextTitle?"Next: "+r.snap.nextTitle:"Open the class to review its learning plan.");
+  detail.append(name,state,assessment,next);
+  if(r.course){
+   const link=text("a","grade09-progress-open","Open "+r.subject);
+   link.href=r.snap?.nextHref||r.course.home;detail.append(link);
+  }
+  if(r.snap?.progress?.completed!==null&&r.snap?.progress?.completed!==undefined&&r.snap?.progress?.total){
+   const total=r.snap.progress.total,completed=r.snap.progress.completed;
+   detail.append(text("p","grade09-progress-units",completed+" of "+total+" reported course items complete. Unit/week breakdown appears only when the course publishes it."));
+  }
+  if(r.needsReview)detail.append(text("p","grade09-progress-review","Course reports attention needed. Check corrections, mastery requirements, or the next assessment."));
+ }
+ render();
+ for(const event of ["khaemenes-learning-continuation-changed","khaemenes-learning-continuation-ready","khaemenes-course-pins-changed","khaemenes-grade09-language-changed","khaemenes-student-profile-changed","focus","pageshow"])
+  window.addEventListener(event,render);
+ window.addEventListener("storage",e=>{if(!e.key||e.key.includes("continuation")||e.key.includes("active_learner")||e.key.includes("pinned")||e.key.includes("language"))render()});
+}
+
 const continuation=window.KhaemenesLearningContinuation;
 const profile=window.KhaemenesStudentProfileV2;
 const contract=window.KhaemenesCourseEntryContract;
