@@ -68,6 +68,38 @@ if(toolGrid&&photoCard&&typeof popup.showModal==="function"){
   help.textContent="Choose or remove your profile photograph and select a frame. Changes appear on your student profile and are saved for the selected learner on this device.";
   help.style.cssText="font:400 16px/1.5 Nunito,Arial,sans-serif;margin:0 0 14px;color:#243038";
   popup.append(topBar,help,ui);
+  // Avatar Marks were previously available only in the redundant Design Studio.
+  // Keep the same Grade09Design preference and display it when no picture exists.
+  const markBox=document.createElement("section");
+  markBox.style.cssText="display:grid;gap:9px;margin:17px 0 3px;padding:14px;border:1px solid #c5b492;border-radius:7px;background:#f6f0e5";
+  const markLabel=document.createElement("label");
+  markLabel.textContent="Avatar Mark (when no photograph is displayed)";
+  markLabel.setAttribute("for","grade09AvatarMark");
+  markLabel.style.cssText="font:400 16px/1.4 Nunito,Arial,sans-serif;color:#243038";
+  const markSelect=document.createElement("select");
+  markSelect.id="grade09AvatarMark";
+  markSelect.style.cssText="box-sizing:border-box;width:100%;min-height:44px;padding:9px;border:1px solid #b8ac98;border-radius:7px;background:#fffaf0;color:#243038;font:400 16px/1.4 Nunito,Arial,sans-serif";
+  const markOptions=[["initials","My Initials / Saved Badge"],["star","Scholar Star"],["book","Open Book"],["compass","Compass"],["atom","Atom"],["palette","Creative Palette"]];
+  for(const [value,text] of markOptions){const option=document.createElement("option");option.value=value;option.textContent=text;markSelect.append(option)}
+  const markHelp=document.createElement("p");
+  markHelp.textContent="A saved photograph always takes priority. Other marks replace the avatar's initials or saved badge until you choose My Initials / Saved Badge again.";
+  markHelp.style.cssText="margin:0;font:400 16px/1.5 Nunito,Arial,sans-serif;color:#243038";
+  markBox.append(markLabel,markSelect,markHelp);
+  popup.append(markBox);
+  const syncMark=()=>{
+   markSelect.value=window.KhaemenesGrade09Design?.read?.().avatarMark||"initials";
+   markSelect.disabled=!learner();
+  };
+  markSelect.addEventListener("change",()=>{
+   const owner=learner(),design=window.KhaemenesGrade09Design;
+   if(!owner||!design?.write){syncMark();status.textContent="Choose your Academy learner to save an avatar mark.";return}
+   const choice=markSelect.value;
+   if(!design.write({...design.read(),avatarMark:choice})){
+    syncMark();status.textContent="Unable to save the avatar mark.";return
+   }
+   display();
+   status.textContent="Avatar mark saved for this learner. Your photograph and badges are preserved.";
+  });
   photoCard.append(popup);
 
   // Preserve the original control classes and handlers while meeting the
@@ -92,7 +124,7 @@ if(toolGrid&&photoCard&&typeof popup.showModal==="function"){
   opener.style.cssText="box-sizing:border-box;display:flex;align-items:center;justify-content:center;width:100%;min-width:0;min-height:56px;padding:10px 12px;border:1px solid #65716c;border-radius:7px;background:#33454b;text-align:center;text-decoration:none;font:400 16px/1.3 Nunito,Arial,sans-serif;cursor:pointer";
   opener.style.setProperty("color","#fff8e9","important");
   opener.style.setProperty("-webkit-text-fill-color","#fff8e9","important");
-  opener.addEventListener("click",()=>{display();popup.showModal();close.focus()});
+  opener.addEventListener("click",()=>{display();syncMark();popup.showModal();close.focus()});
   popup.addEventListener("close",()=>{if(opener.isConnected)opener.focus()});
   popup.addEventListener("click",event=>{if(event.target===popup)popup.close()});
   toolGrid.append(opener);
@@ -126,13 +158,17 @@ function updateShape(){
   for(const button of buttons.values())button.disabled=!available;
 }
 function fallbackMark(owner){
+  const design=window.KhaemenesGrade09Design;
+  const preference=design?.read?.();
+  const name=document.getElementById("studentName")?.textContent?.trim()||"Student";
+  const initials=name.split(/\s+/).filter(Boolean).slice(0,2).map(part=>part[0]).join("").toUpperCase()||"S";
+  if(preference?.avatarMark&&preference.avatarMark!=="initials")
+   return design?.avatarText?.(initials,preference)||initials;
   if(owner)try{
     const badge=localStorage.getItem("khaemenes.grade09.profile.badge:"+encodeURIComponent(owner));
     if(["★","✦","📚","🧭","⚛","🎨","🎵","🌿"].includes(badge))return badge;
   }catch{}
-  const name=document.getElementById("studentName")?.textContent?.trim()||"Student";
-  const initials=name.split(/\s+/).filter(Boolean).slice(0,2).map(part=>part[0]).join("").toUpperCase()||"S";
-  return window.KhaemenesGrade09Design?.avatarText?.(initials)||initials;
+  return design?.avatarText?.(initials,preference)||initials;
 }
 function display(){
   const owner=learner();let photo="";
