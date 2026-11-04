@@ -40,7 +40,7 @@ const breakfast=[
  "Try leftovers from a balanced meal if that sounds good."
 ];
 const tasks=[
- {key:"breakfast",title:"Breakfast & hydration",detail:()=>breakfast[new Date().getDay()]+" Drink some water, too.",action:"Breakfast ideas",href:"https://vervenveda.com/Khaemenes_High.github.io/"},
+ {key:"breakfast",title:"Breakfast & hydration",detail:()=>breakfast[new Date().getDay()]+" Drink some water, too.",},
  {key:"wash",title:"Brush teeth & get ready",detail:()=>"Brush your teeth, wash up, and prepare for the school day."},
  {key:"reset",title:"Stretch & breathe",detail:()=>"Take a gentle stretch and a comfortable breathing break.",action:"Visit Aurora",href:"https://vervenveda.com/aurora.github.io/"},
  {key:"journal",title:"Morning journal",detail:()=>"Write a short reflection or set an intention for today.",action:"Open daily journal",href:"daily-lessons/#todaysNote"},
@@ -52,7 +52,6 @@ const tasks=[
 ];
 const container=el("section","grade09-daily-focus");container.id="grade09DailyFocus";
 container.setAttribute("aria-label","To Do Today personal routine and learning checkpoints");
-const heading=el("h3","","To Do Today");
 const help=el("p","grade09-daily-focus-explanation","A balanced day beyond lessons. Personal tasks are self-checked and separate from grades.");
 const count=el("p","grade09-daily-focus-count");count.setAttribute("role","status");
 const list=el("ol","grade09-daily-focus-list");
@@ -62,7 +61,7 @@ const academicHelp=el("p","grade09-daily-focus-explanation","A class highlights 
 const classGrid=el("div","grade09-academic-grid");
 const note=el("p","grade09-daily-focus-note","Daily reports are saved on this browser for an authorized parent to review in the Family Learning Center. Cross-device sending is not connected.");
 academics.append(academicHeading,academicHelp,classGrid);
-container.append(heading,help,count,list,academics,note);
+container.append(help,count,list,academics,note);
 card.append(container);
 let revision=0;
 function subjectLink(subject,slots){
