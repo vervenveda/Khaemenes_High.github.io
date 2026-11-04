@@ -1,138 +1,162 @@
-/* Grade 09 Student Daily Focus · eight schedule classes and two daily habits.
- * Self-reported checklist only; no enrollment, grades, or mastery changes.
- * Uses the exact existing Daily Lessons learner-scoped daily check record.
- */
+/* Grade 09 · To Do Today · learner-scoped habits and separate academic evidence.
+   Personal checks never award course mastery. Parent digest is local to this origin. */
 (()=>{"use strict";
 if(window.KhaemenesGrade09DailyFocus)return;
 const card=document.getElementById("todayTitle")?.closest(".card");
-const plan=window.KhaemenesHighEightClass,courses=window.KhaemenesGrade09Courses,
-      pinStore=window.KhaemenesHighCoursePins,contract=window.KhaemenesCourseEntryContract;
-if(!card||!plan||!courses||!pinStore||!contract)return;
-const BASE="khaemenes-grade09-daily-checks-v1";
-const today=()=>new Date().toISOString().slice(0,10);
-const node=(tag,cls,text)=>{
- const n=document.createElement(tag);
- if(cls)n.className=cls;
- if(text!==undefined)n.textContent=text;
- return n;
-};
+const catalog=window.KhaemenesHighEightClass,registry=window.KhaemenesGrade09Courses,
+pins=window.KhaemenesHighCoursePins,contract=window.KhaemenesCourseEntryContract;
+if(!card||!catalog||!registry||!pins||!contract)return;
+const HABIT_BASE="khaemenes-grade09-today-habits-v1";
+const REPORT_BASE="khaemenes-grade09-daily-parent-report-v1:";
+const EVIDENCE_BASE="khaemenes-grade09-dated-assessment-evidence-v1:";
+const existingChecksBase="khaemenes-grade09-daily-checks-v1";
+const localDate=()=>{const d=new Date();return [d.getFullYear(),String(d.getMonth()+1).padStart(2,"0"),String(d.getDate()).padStart(2,"0")].join("-")};
+const el=(tag,cls,value)=>{const n=document.createElement(tag);if(cls)n.className=cls;if(value!==undefined)n.textContent=value;return n};
+const read=k=>{try{return JSON.parse(localStorage.getItem(k)||"null")}catch{return null}};
+const write=(k,v)=>{try{localStorage.setItem(k,JSON.stringify(v));return true}catch{return false}};
 function learner(){
  try{
   const p=contract.readAcademyProfile?.();
-  if(!p?.learnerId||typeof contract.scopedKey!=="function")return null;
-  const fromProfile=window.KhaemenesStudentProfileV2?.activeLearner?.()?.learnerId;
-  if(fromProfile&&String(fromProfile)!==String(p.learnerId))return null;
-  // The course contract verifies the active ID but not its grade; enforce
-  // Grade 09 here so another learner's schedule is never editable on this page.
-  const raw=localStorage.getItem("khaemenes_family_registry_v1");
-  const entry=raw?JSON.parse(raw)?.learners?.[p.learnerId]:null;
+  if(!p?.learnerId||!contract.scopedKey)return null;
+  const active=window.KhaemenesStudentProfileV2?.activeLearner?.()?.learnerId;
+  if(active&&String(active)!==String(p.learnerId))return null;
+  const entry=read("khaemenes_family_registry_v1")?.learners?.[p.learnerId];
   const grade=entry?.grade||p.grade;
   if(grade!==undefined&&grade!==null&&!/^(?:grade[\s-]*)?0?9$/i.test(String(grade)))return null;
   return p;
  }catch{return null}
 }
-function read(p){
- if(!p)return {date:today(),items:{}};
- try{
-  const obj=JSON.parse(localStorage.getItem(contract.scopedKey(BASE,p))||"null");
-  return obj?.date===today()&&obj.items&&typeof obj.items==="object"&&!Array.isArray(obj.items)
-   ?{date:today(),items:{...obj.items}}:{date:today(),items:{}};
- }catch{return {date:today(),items:{}}}
+const habitKey=p=>contract.scopedKey(HABIT_BASE,p);
+const reportKey=p=>REPORT_BASE+encodeURIComponent(p.learnerId);
+const evidenceKey=p=>EVIDENCE_BASE+encodeURIComponent(p.learnerId);
+const readHabits=p=>{const v=p?read(habitKey(p)):null;return v?.date===localDate()&&v.items&&typeof v.items==="object"?v.items:{}};
+const breakfast=[
+ "Try oatmeal with fruit, or another satisfying breakfast you enjoy.",
+ "Try yogurt or a dairy-free alternative with fruit and whole-grain toast.",
+ "Try eggs or beans with toast and a piece of fruit.",
+ "Try a banana, nut-free spread if needed, and whole-grain toast.",
+ "Try a breakfast bowl with fruit, grains, and a protein you enjoy.",
+ "Try a smoothie plus a filling snack or toast.",
+ "Try leftovers from a balanced meal if that sounds good."
+];
+const tasks=[
+ {key:"breakfast",title:"Breakfast & hydration",detail:()=>breakfast[new Date().getDay()]+" Drink some water, too.",action:"Breakfast ideas",href:"https://vervenveda.com/Khaemenes_High.github.io/"},
+ {key:"wash",title:"Brush teeth & get ready",detail:()=>"Brush your teeth, wash up, and prepare for the school day."},
+ {key:"reset",title:"Stretch & breathe",detail:()=>"Take a gentle stretch and a comfortable breathing break.",action:"Visit Aurora",href:"https://vervenveda.com/aurora.github.io/"},
+ {key:"journal",title:"Morning journal",detail:()=>"Write a short reflection or set an intention for today.",action:"Open daily journal",href:"daily-lessons/#todaysNote"},
+ {key:"lunch",title:"Lunch & rest",detail:()=>"Take time to eat lunch, drink water, and enjoy a screen break."},
+ {key:"movement",title:"Afternoon movement / PE",detail:()=>"Choose a comfortable activity or continue your Physical Education class.",action:"Open PE class",subject:"physicalEducation"},
+ {key:"elective",title:"Today's elective",detail:()=>"Explore today's selected elective or creative practice.",action:"Open elective",subject:"elective"},
+ {key:"life",title:"Life skills",detail:()=>"Practice a useful household, planning, or everyday independence skill.",action:"Open Psychology / Life Skills",subject:"psychology"},
+ {key:"family",title:"Family or friend time",detail:()=>"Make time to connect, talk, play, or help someone you care about."}
+];
+const container=el("section","grade09-daily-focus");container.id="grade09DailyFocus";
+container.setAttribute("aria-label","To Do Today personal routine and learning checkpoints");
+const heading=el("h3","","To Do Today");
+const help=el("p","grade09-daily-focus-explanation","A balanced day beyond lessons. Personal tasks are self-checked and separate from grades.");
+const count=el("p","grade09-daily-focus-count");count.setAttribute("role","status");
+const list=el("ol","grade09-daily-focus-list");
+const academics=el("section","grade09-academic-checkpoints");
+const academicHeading=el("h3","","Today's Class Checkpoints");
+const academicHelp=el("p","grade09-daily-focus-explanation","A class highlights only when dated, lesson- or unit-specific assessment evidence reports at least 80%. Opening a lesson or checking a habit does not count as mastery.");
+const classGrid=el("div","grade09-academic-grid");
+const note=el("p","grade09-daily-focus-note","Daily reports are saved on this browser for an authorized parent to review in the Family Learning Center. Cross-device sending is not connected.");
+academics.append(academicHeading,academicHelp,classGrid);
+container.append(heading,help,count,list,academics,note);
+card.append(container);
+let revision=0;
+function subjectLink(subject,slots){
+ const entry=slots.find(x=>x.subject===subject);
+ const course=entry?.id?registry.getCourse(entry.id):null;
+ return course?.home||"daily-lessons/";
 }
-function save(p,key,val){
- if(!p||learner()?.learnerId!==p.learnerId)return false;
- const rec=read(p);rec.items[key]=!!val;
- try{localStorage.setItem(contract.scopedKey(BASE,p),JSON.stringify(rec));return true}
- catch{return false}
+function masteredEvidence(p,courseId){
+ // Only a dated, assessment-level record qualifies. Course-wide progress percentages
+ // and self-reported daily checks never satisfy this test.
+ const records=read(evidenceKey(p));
+ const items=Array.isArray(records?.assessments)?records.assessments:[];
+ return items.find(x=>x?.learnerId===p.learnerId&&x.courseId===courseId&&
+  ["lesson","unit"].includes(x.type)&&typeof x.assessmentId==="string"&&x.assessmentId.length>0&&
+  Number.isFinite(x.score)&&x.score>=80&&x.score<=100&&
+  typeof x.completedAt==="string"&&Number.isFinite(Date.parse(x.completedAt))&&
+  new Date(x.completedAt).toLocaleDateString("en-CA")===localDate()&&
+  x.recordType==="course-assessment-result")||null;
 }
-const root=node("div","grade09-daily-focus");root.id="grade09DailyFocus";
-root.setAttribute("aria-label","Ten-item daily learning plan");
-const title=node("h3","","My Daily Focus · Eight Classes");
-const help=node("p","grade09-daily-focus-explanation",
- "Eight class checkpoints plus two daily habits. Check off your own focus activities; this is not an official assignment or mastery record.");
-const status=node("p","grade09-daily-focus-count");
-status.id="grade09DailyFocusCount";status.setAttribute("role","status");
-const list=node("ol","grade09-daily-focus-list");list.id="grade09DailyFocusList";
-const note=node("p","grade09-daily-focus-note",
- "Daily checks belong to the selected learner on this device. They do not modify class placement, grades, or completed lessons.");
-root.append(title,help,status,list,note);
-card.append(root);
-let generation=0;
-function recount(){
- let n=0;for(const item of list.children){if(item.querySelector("input[type=checkbox]")?.checked)n++}
- status.textContent=n+" of "+list.children.length+" daily focus items checked · personal planning only.";
-}
-function display(item,i,p,record){
- const row=node("li","grade09-daily-task");
- const index=node("span","grade09-daily-task-number",String(i+1).padStart(2,"0"));
- const label=node("label","grade09-daily-task-check");
- const checkbox=node("input");checkbox.type="checkbox";
- checkbox.checked=record.items[item.key]===true;
- checkbox.disabled=!p||!item.ready;
- checkbox.setAttribute("aria-label","Check daily focus: "+item.title);
- label.append(checkbox,node("span","grade09-daily-task-name",item.title));
- const detail=node("p","grade09-daily-task-detail",item.detail);
- const link=node("a","grade09-daily-task-link",item.action);
- link.href=item.href;
- if(item.id)link.addEventListener("click",()=>{
-  if(learner()?.learnerId!==p?.learnerId)return;
-  courses.recordLaunch?.(item.id,link.href,item.courseTitle);
-  save(p,"open-first",true);
+function buildReport(p,slots,items){
+ const stored=readHabits(p);
+ const classes=slots.slice(0,8).map(slot=>{
+  const course=slot.id?registry.getCourse(slot.id):null;
+  const evidence=p&&course?masteredEvidence(p,course.id):null;
+  return {subject:slot.label,courseId:course?.id||null,courseTitle:course?.title||slot.title||slot.label,
+    masteredToday:!!evidence,score:evidence?.score??null,assessmentId:evidence?.assessmentId||null};
  });
- checkbox.addEventListener("change",()=>{
-  if(!save(p,item.key,checkbox.checked)){
-   checkbox.checked=!checkbox.checked;
-   status.textContent="Could not save this check. Select a learner or check device storage.";
-   return;
-  }
-  recount();
- });
- row.append(index,label,detail,link);list.append(row);
+ return {schema:"khaemenes-grade09-daily-parent-report-v1",learnerId:p.learnerId,grade:9,date:localDate(),
+  updatedAt:new Date().toISOString(),habits:items.map(t=>({key:t.key,label:t.title,checked:stored[t.key]===true})),
+  classes,masteryRule:"Dated lesson/unit assessment result, score >=80; otherwise unverified",
+  delivery:"local-family-profile-only"};
 }
-async function render(){
- const ticket=++generation,p=learner(),saved=read(p);
- let lang="";
- if(p)try{lang=pinStore.readLanguageChoices()?.["9"]||""}catch{}
- const slots=plan.slots(9,{mathId:p?(courses.mathPathway()||null):null,language:lang});
- const items=[];
- for(const slot of slots){
-  const course=slot.id?courses.getCourse(slot.id):null;
-  let next=null;
-  if(course&&p)try{next=await courses.resolveContinueFor(slot.id)}catch{}
-  const ready=!!course,pinned=ready&&!!p&&courses.isPinned(slot.id);
-  const actionTitle=ready?(slot.subject==="elective"?"Explore elective options":"Continue "+course.title)
-    :slot.subject==="math"?"Choose mathematics pathway":slot.subject==="foreignLanguage"?"Choose foreign language":"Choose class";
-  items.push({
-   key:"focus-subject:"+slot.subject,id:course?.id,courseTitle:course?.title,
-   title:slot.label+" · "+actionTitle,ready,
-   detail:ready?(next?.detail||(pinned?"Pinned to your schedule.":"Ready to open; pin for quicker access.")):
-     "Select this subject's course before checking it.",
-   href:next?.url||course?.home||"profile/",
-   action:ready?(next?.actionLabel||"Open class"):"Choose class"
-  });
+function publish(p,slots){
+ if(!p)return;
+ const current=buildReport(p,slots,tasks);
+ const data=read(reportKey(p));
+ const reports=data?.reports&&typeof data.reports==="object"?data.reports:{};
+ reports[current.date]=current;
+ const recent=Object.keys(reports).sort().reverse().slice(0,31);
+ write(reportKey(p),{version:1,learnerId:p.learnerId,reports:Object.fromEntries(recent.map(k=>[k,reports[k]]))});
+}
+function makeHabit(task,i,p,record,slots){
+ const row=el("li","grade09-daily-task");
+ row.append(el("span","grade09-daily-task-number",String(i+1).padStart(2,"0")));
+ const label=el("label","grade09-daily-task-check");
+ const check=el("input");check.type="checkbox";check.checked=record[task.key]===true;check.disabled=!p;
+ check.setAttribute("aria-label","Mark "+task.title+" done");
+ label.append(check,el("span","grade09-daily-task-name",task.title));row.append(label);
+ row.append(el("p","grade09-daily-task-detail",task.detail()));
+ if(task.action){
+  const a=el("a","grade09-daily-task-link",task.action);
+  a.href=task.subject?subjectLink(task.subject,slots):task.href;row.append(a);
  }
- items.push(
-  {key:"open-first",title:"Open your first class",ready:true,
-   detail:"Choose a starting class. This syncs with the existing Daily Lessons checklist.",
-   href:"daily-lessons/",action:"Open Daily Lessons"},
-  {key:"saved-note",title:"Save today's learning note",ready:true,
-   detail:"Capture what you learned or what needs attention. This syncs with your Daily Lessons note.",
-   href:"daily-lessons/#todaysNote",action:"Write note"}
- );
- if(ticket!==generation)return;
- list.replaceChildren();
- items.forEach((item,i)=>display(item,i,p,saved));
- recount();
- if(!p)status.textContent="Select an Academy learner to save checks. Ten focus items are available for preview.";
+ check.addEventListener("change",()=>{
+  if(!p||learner()?.learnerId!==p.learnerId)return;
+  const updated={date:localDate(),items:{...readHabits(p),[task.key]:check.checked}};
+  if(!write(habitKey(p),updated)){check.checked=!check.checked;count.textContent="Unable to save on this device.";return}
+  updateCount();publish(p,slots);
+ });
+ return row;
 }
-window.KhaemenesGrade09DailyFocus=Object.freeze({render,version:1});
-for(const event of ["khaemenes-course-pins-changed","khaemenes-grade09-language-changed",
- "khaemenes-student-profile-changed","pageshow"])
- window.addEventListener(event,()=>void render());
-window.addEventListener("storage",event=>{
- const key=String(event.key||"");
- if(!key||key.includes("khaemenes-grade09")||key.includes("khaemenes-high")||
-  key.includes("khaemenes_active_learner")||key.includes("khaemenes_family_registry"))void render();
+function updateCount(){
+ const checks=[...list.querySelectorAll('input[type="checkbox"]')];
+ count.textContent=checks.filter(x=>x.checked).length+" of "+checks.length+" personal activities checked · not an academic grade.";
+}
+function drawClasses(p,slots){
+ classGrid.replaceChildren();
+ slots.slice(0,8).forEach((slot,i)=>{
+  const course=slot.id?registry.getCourse(slot.id):null;
+  const evidence=p&&course?masteredEvidence(p,course.id):null;
+  const box=el("div","grade09-academic-box"+(evidence?" is-mastered":""));
+  box.append(el("span","grade09-academic-number",String(i+1).padStart(2,"0")),
+   el("strong","",slot.label),el("small","",evidence?"Mastered today · "+evidence.score+"%":"Not verified today"));
+  if(evidence)box.setAttribute("aria-label",slot.label+" mastered today");
+  const a=el("a","grade09-academic-link",course?"Open class":"Choose class");
+  a.href=course?.home||"profile/";
+  box.append(a);classGrid.append(box);
+ });
+}
+function render(){
+ const ticket=++revision,p=learner(),stored=readHabits(p);
+ let lang="";try{lang=p?pins.readLanguageChoices()?.["9"]||"":""}catch{}
+ const slots=catalog.slots(9,{mathId:p?registry.mathPathway()||null:null,language:lang});
+ if(ticket!==revision)return;
+ list.replaceChildren(...tasks.map((t,i)=>makeHabit(t,i,p,stored,slots)));
+ updateCount();drawClasses(p,slots);
+ if(!p)count.textContent="Select an Academy learner to save personal activities.";
+ else publish(p,slots);
+}
+window.KhaemenesGrade09DailyFocus=Object.freeze({render,version:2});
+for(const name of ["khaemenes-course-pins-changed","khaemenes-grade09-language-changed","khaemenes-student-profile-changed","khaemenes-learning-continuation-changed","pageshow","focus"])
+ window.addEventListener(name,render);
+window.addEventListener("storage",e=>{
+ if(!e.key||e.key.includes("khaemenes-grade09")||e.key.includes("khaemenes_family_registry")||e.key.includes("khaemenes_active_learner"))render();
 });
-void render();
+render();
 })();
