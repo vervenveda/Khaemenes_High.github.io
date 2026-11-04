@@ -2,6 +2,8 @@
 (()=>{"use strict";
 const grade=(location.pathname.match(/\/grade-(09|10|11|12)\/student-profile\//)||[])[1];
 if(!grade)return;
+// Grade 09 owns an eight-subject interactive chart; preserve this legacy view for Grades 10–12.
+if(grade==="09")return;
 const continuation=window.KhaemenesLearningContinuation;
 const profile=window.KhaemenesStudentProfileV2;
 const contract=window.KhaemenesCourseEntryContract;
