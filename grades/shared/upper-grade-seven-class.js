@@ -3,36 +3,16 @@ const grade=Number(document.body.dataset.grade),root="../../../",pin=window.Khae
 const continuation=window.KhaemenesLearningContinuation,profile=window.KhaemenesStudentProfileV2,quick=window.KhaemenesStudentQuickPinsV1;
 if(![10,11,12].includes(grade)||!pin)return;
 const el=(t,s)=>{const n=document.createElement(t);if(s!==undefined)n.textContent=s;return n};
-const courses=({
-10:[
-["Mathematics","courses/mathematics/algebra-1/","algebra-1"],
-["Literature","courses/language-arts/english-10/","english-10"],
-["Social Studies","courses/social-studies/grade-10/","social-studies-10"],
-["Science","courses/science/biology-10/","biology-10"],
-["Physical Education","courses/physical-education/","physical-education-10"],
-["Foreign Language","https://vervenveda.com/Khaemenes_Linguistics.github.io/Halls/","world-language-10"],
-["Elective","courses/electives/","elective-10"]],
-11:[
-["Mathematics","courses/mathematics/geometry/","geometry"],
-["Literature","courses/language-arts/english-11/","english-11"],
-["Social Studies","courses/social-studies/grade-11/","social-studies-11"],
-["Science","courses/science/chemistry-11/","chemistry-11"],
-["Physical Education","courses/physical-education/","physical-education-11"],
-["Foreign Language","https://vervenveda.com/Khaemenes_Linguistics.github.io/Halls/","world-language-11"],
-["Elective","courses/electives/","elective-11"]],
-12:[
-["Mathematics","courses/mathematics/algebra-2/","algebra-2"],
-["Literature","courses/language-arts/english-12/","english-12"],
-["Social Studies","courses/social-studies/grade-12/","social-studies-12"],
-["Science","courses/science/physics-engineering-12/","physics-engineering-12"],
-["Physical Education","courses/physical-education/","physical-education-12"],
-["Foreign Language","https://vervenveda.com/Khaemenes_Linguistics.github.io/Halls/","world-language-12"],
-["Elective","courses/electives/","elective-12"]]
-})[grade];
+// All four grades use one canonical eight-subject plan.
+const catalog=window.KhaemenesHighEightClass;
+if(!catalog)return;
+const courses=catalog.slots(grade).map(item=>[item.label,item.href,item.id]);
 const languageOptions=["spanish","french","german","mandarin","japanese","arabic","russian"];
 const selected=()=>pin.readLanguageChoices()[String(grade)]||"spanish";
 const ids=()=>courses.map(item=>item[2]);
-const legacyIds=()=>courses.map((_,i)=>"grade-"+grade+"-period-"+(i+1));
+// Historical period 1–7 pins use the old sequence, not the new display order.
+const legacyIds=()=>Array.from({length:7},(_,i)=>"grade-"+grade+"-period-"+(i+1));
+const legacyCourseIds=()=>[courses[0][2],courses[2][2],courses[3][2],courses[1][2],courses[4][2],courses[6][2],courses[7][2]];
 function languageRoute(){
  const id=selected(),params=new URLSearchParams({language:id,source:"khaemenes-high-grade"+grade});
  // Grades 10–12 continue the formal High School language sequence.
@@ -47,7 +27,7 @@ function languageRoute(){
 }
 function migrateLegacyPins(){
  const current=pin.readPins(),legacy=legacyIds();let changed=false;
- const next=current.map(value=>{const at=legacy.indexOf(value);if(at<0)return value;changed=true;return ids()[at]});
+ const next=current.map(value=>{const at=legacy.indexOf(value);if(at<0)return value;changed=true;return legacyCourseIds()[at]});
  if(changed)pin.writePins([...new Set(next)]);
 }
 function learnerId(){return profile?.activeLearner?.()?.learnerId||pin.activeLearner?.()||null}
@@ -57,11 +37,11 @@ function snapshotFor(id,subject){
  return list.find(s=>String(s.grade||"").replace(/^0/,"")===String(grade)&&String(s.subject||"").toLowerCase().includes(String(subject||"").split(" ")[0].toLowerCase()))||null;
 }
 function stepFor(id,subject,route,index){
- const s=snapshotFor(id,subject),fallback=index===5?languageRoute():(route.startsWith("https:")?route:root+route);
+ const s=snapshotFor(id,subject),fallback=index===6?languageRoute():(route.startsWith("https:")?route:root+route);
  // The language selector owns the Grade 10–12 language doorway. Do not let
  // an older continuation snapshot send a newly selected language to a stale
  // or different course URL.
- if(index===5){
+ if(index===6){
    return {href:fallback,label:"Open language course",detail:(selected()[0].toUpperCase()+selected().slice(1))+" · open the selected Grade "+grade+" language pathway.",status:"continue",snapshot:s};
  }
  return {href:s?.nextHref||fallback,label:s?.stale?"Refresh":({corrections:"Review",mastery:"Mastery",assessment:"Assessment",complete:"Review Record"})[s?.status]||"Open class",detail:s?.stale?"Progress changed in the course. Open it to refresh this summary.":(s?.nextTitle||s?.summary||"Ready to open."),status:s?.status||"continue",snapshot:s};
@@ -77,7 +57,7 @@ function render(){
  const steps=courses.map(([subject,route,id],i)=>({subject,route,id,i,step:stepFor(id,subject,route,i)}));
  const priority=steps.find(x=>x.step.snapshot&&x.step.status!=="complete")||steps[0];
  const today=el("section");today.id="learning-today";today.style.cssText="border:1px solid #b6a787;border-radius:7px;padding:18px;margin-bottom:16px;background:#1b2d46";
- today.append(el("h2","Learning Today"),el("p",(priority.i===5?selected()[0].toUpperCase()+selected().slice(1):courses[priority.i][0])+" · "+priority.step.detail));
+ today.append(el("h2","Learning Today"),el("p",(priority.i===6?selected()[0].toUpperCase()+selected().slice(1):courses[priority.i][0])+" · "+priority.step.detail));
  const todayLink=el("a",priority.step.label);todayLink.href=priority.step.href;today.append(todayLink);holder.append(today);
  const lang=el("select");lang.setAttribute("aria-label","Select foreign language");
  for(const x of languageOptions){const o=el("option",x[0].toUpperCase()+x.slice(1));o.value=x;lang.append(o)}
@@ -93,9 +73,10 @@ function render(){
  courses.forEach(([subject,route,id],i)=>{
   const card=el("article");card.style.cssText="border:1px solid #b6a787;border-radius:7px;padding:18px";
   const h=el("h2",(i+1)+". "+subject);card.append(h);
-  if(i===5)card.append(el("p",selected()[0].toUpperCase()+selected().slice(1)+" · learner-selected language"));
+  if(i===5)card.append(el("p","Health, Wellness & Human Development resources are available while the grade-specific Psychology / Life Skills pathway is developed."));
+  if(i===6)card.append(el("p",selected()[0].toUpperCase()+selected().slice(1)+" · learner-selected language"));
   if(i===0)card.append(el("p","This grade's mathematics doorway opens the assigned course. Placement and mastery remain course-owned."));
-  if(i===6)card.append(el("p","Open the electives hall for the learner's selected elective."));
+  if(i===7)card.append(el("p","Open the electives hall for the learner's selected elective."));
   const step=stepFor(id,subject,route,i);
   card.append(el("p",step.detail));
   const link=el("a",step.label);link.href=step.href;card.append(link);
@@ -105,12 +86,12 @@ function render(){
   card.append(button);list.append(card);
  });
  holder.append(list);
- const all=el("button","Pin all seven classes");all.type="button";all.style.marginTop="18px";
- all.addEventListener("click",()=>{const merged=[...new Set([...pin.readPins(),...ids()])];feedback.textContent=pin.writePins(merged)?"Seven classes pinned.":"Unable to save all classes.";render()});
+ const all=el("button","Pin all eight classes");all.type="button";all.style.marginTop="18px";
+ all.addEventListener("click",()=>{const merged=[...new Set([...pin.readPins(),...ids()])];feedback.textContent=pin.writePins(merged)?"Eight classes pinned.":"Unable to save all classes.";render()});
  holder.append(all);
 
  const quickSection=el("section");quickSection.id="quick-pins";quickSection.className="ug-card";quickSection.style.marginTop="18px";
- quickSection.append(el("p","Personal Shortcuts"),el("h2","Quick Pins"),el("p","Games, tools, resources, and elective shortcuts stay separate from your seven academic classes and never change enrollment, grades, mastery, or placement."));
+ quickSection.append(el("p","Personal Shortcuts"),el("h2","Quick Pins"),el("p","Games, tools, resources, and elective shortcuts stay separate from your eight academic subjects and never change enrollment, grades, mastery, or placement."));
  const quickGrid=el("div");quickGrid.className="ug-quick-grid";
  const quickItems=quick?.list?.()||[];
  if(!quickItems.length){
@@ -127,7 +108,7 @@ function render(){
   });
  }
  quickSection.append(quickGrid);holder.append(quickSection);
- // Keep the original clear hierarchy: identity, today's step, language, seven classes, then Quick Pins.
+ // Keep the original clear hierarchy: identity, today's step, language, eight classes, then Quick Pins.
  // All direct children occupy full-width lanes via the shared profile stylesheet.
 }
 render();
