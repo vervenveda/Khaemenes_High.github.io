@@ -14,7 +14,24 @@ const builder="https://vervenveda.com/Khaemenes_Academy.github.io/student/profil
 const $=id=>document.getElementById(id);
 const make=(tag,value)=>{const n=document.createElement(tag);if(value!==undefined)n.textContent=value;return n};
 const nameNode=$("studentName"),metaNode=$("studentMeta"),avatar=$("avatar"),list=$("courseManagerGrid");
-const schedule=document.querySelector("[data-grade09-schedule-bar]"),tools=$("grade09BlueprintTools");
+const schedule=document.querySelector("[data-grade09-schedule-bar]");
+let tools=$("grade09BlueprintTools");
+function mountProfileFirst(){
+ const main=document.querySelector("main"),grid=main?.querySelector(".section .grid");
+ const row=grid?.querySelector(".profile-row");
+ const identityCard=row?.closest(".card");
+ const todayCard=$("todayTitle")?.closest(".card");
+ if(!main||!grid||!identityCard||!todayCard)return;
+ let top=$("grade09ProfileFirst");
+ if(!top){top=document.createElement("section");top.className="grade09-profile-first";top.id="grade09ProfileFirst";main.prepend(top)}
+ if(identityCard.parentElement!==top)top.append(identityCard);
+ if(!tools){tools=document.createElement("section");tools.id="grade09BlueprintTools";const head=document.createElement("h2");head.textContent="My Profile Tools";tools.append(head)}
+ if(tools.parentElement!==top)top.append(tools);
+ if(todayCard.parentElement!==top)top.append(todayCard);
+ const scheduleSection=main.querySelector(".grade09-priority-schedule");
+ if(scheduleSection&&scheduleSection.previousElementSibling!==top)top.insertAdjacentElement("afterend",scheduleSection);
+}
+mountProfileFirst();
 const langOptions=["spanish","french","german","mandarin","japanese","arabic","russian"];
 const learner=()=>profile?.activeLearner?.()||null;
 const identity=()=>learner()?.learnerId||pins.activeLearner?.()||null;
@@ -91,7 +108,7 @@ function renderSchedule(items){
   card.append(make("span",String(item.index).padStart(2,"0")),make("strong",item.label));
   const detail=make("small",item.title);card.append(detail);
   if(selected.has(item.id))card.append(make("span","★ Pinned"));
-  const url=href(item);if(url)card.append(link("Open",url,"btn secondary"));
+  const url=href(item);if(url&&identity())card.append(link("Open",url,"btn secondary"));
   grid.append(card);
  }
  schedule.append(grid);
@@ -99,6 +116,7 @@ function renderSchedule(items){
 function renderCourses(items){
  list.replaceChildren();
  const currentPins=new Set(readPins());
+ const editable=!!identity()&&!!gradeContext()&&gradeContext().gradeNumber===Number(grade);
  for(const item of items){
   const card=make("article");card.className="lesson-card";
   const tag=make("div");tag.className="chip-row";
@@ -108,7 +126,7 @@ function renderCourses(items){
   const next=step(item);
   card.append(make("p",next.detail));
   const actions=make("div");actions.className="actions";
-  if(item.id&&item.pinAvailable){
+  if(item.id&&item.pinAvailable&&editable){
    const pin=make("button",currentPins.has(item.id)?"★ Pinned":"☆ Pin Class");
    pin.type="button";pin.className="btn secondary";pin.setAttribute("aria-pressed",String(currentPins.has(item.id)));
    pin.addEventListener("click",()=>{
@@ -117,7 +135,7 @@ function renderCourses(items){
     render();
    });actions.append(pin);
   }
-  if(next.dest)actions.append(link(next.label,next.dest));
+  if(next.dest&&identity())actions.append(link(next.label,next.dest));
   else actions.append(make("p","Course route is being verified; no lesson is launched."));
   card.append(actions);list.append(card);
  }
@@ -130,6 +148,7 @@ function renderLanguage(){
  for(const opt of langOptions){const o=make("option",opt[0].toUpperCase()+opt.slice(1));o.value=opt;select.append(o)}
  select.value=lang();label.append(select);dest.append(label);
  select.addEventListener("change",()=>{
+  if(!identity()||gradeContext()?.gradeNumber!==Number(grade)){ $("grade09BlueprintStatus").textContent="Select your registered learner before saving language choices.";render();return}
   const prev=pins.readLanguageChoices?.()||{};prev[grade]=select.value;
   const saved=pins.writeLanguageChoices?.(prev);
   $("grade09BlueprintStatus").textContent=saved?"Language preference saved for Grade "+grade+".":"Unable to save language.";
@@ -141,12 +160,12 @@ function renderToday(items){
  const next=step(current);
  $("learningTodaySummary").textContent=current.label+" · "+next.detail;
  const actions=$("learningTodayActions");actions.replaceChildren();
- if(next.dest)actions.append(link(next.label,next.dest,"btn gold"));
+ if(next.dest&&identity())actions.append(link(next.label,next.dest,"btn gold"));
  actions.append(link("My Courses","#courseManagerGrid","btn secondary"));
  const other=$("learningTodayCourses");other.replaceChildren();
  for(const item of items.filter(i=>i!==current).slice(0,3)){
   const c=make("div");c.className="lesson-card";c.append(make("h3",item.label));
-  const url=href(item);if(url)c.append(link("Open "+item.title,url,"btn secondary"));
+  const url=href(item);if(url&&identity())c.append(link("Open "+item.title,url,"btn secondary"));
   other.append(c);
  }
 }
