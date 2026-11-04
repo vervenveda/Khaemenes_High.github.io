@@ -76,7 +76,16 @@ function selectLearner(){
  nameNode.textContent=name;
  metaNode.textContent="Grade "+grade+" · Local profile workspace";
  avatar.replaceChildren();
- const pic=id?appearance(id)?.photo:null;
+ const savedAppearance=id?appearance(id):null;
+ const savedBackground=savedAppearance?.background;
+ if(typeof savedBackground==="string"&&/^#[0-9a-fA-F]{6}$/.test(savedBackground)){
+  document.body.style.setProperty("background-color",savedBackground,"important");
+  document.documentElement.style.setProperty("--paper",savedBackground);
+ }else{
+  document.body.style.removeProperty("background-color");
+  document.documentElement.style.removeProperty("--paper");
+ }
+ const pic=savedAppearance?.photo||null;
  if(typeof pic==="string"&&pic.startsWith("data:image/jpeg;base64,")&&pic.length<400000){
   const img=make("img");img.src=pic;img.alt="Student portrait";
   img.style.cssText="width:100%;height:100%;object-fit:cover";
