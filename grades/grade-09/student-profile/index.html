@@ -557,28 +557,78 @@ html body .grade09-contribute-panel .grade09-contribute-action:focus-visible{
 </script>
 <script src="https://vervenveda.com/assets/vnv-ecosystem-toolbar.js"></script>
 <script>
-/* Recognize the late-inserted support card by its own wording, not by layout position. */
+/* Grade 09 footer and dynamically inserted contribution card: isolated presentation repair.
+   Preserve donation link, learner theme settings, and shared ecosystem styles. */
 (function(){
   "use strict";
-  function markSupportCard(){
-    const title=[...document.querySelectorAll("h2,h3,h4,p,div,span")]
-      .find(el=>el.children.length===0 && /^(support free access|contribute)$/i.test((el.textContent||"").trim()));
-    if(!title)return false;
-    let panel=title;
-    while(panel && panel!==document.body){
-      if(panel.querySelector && [...panel.querySelectorAll("a,button")].some(el=>/stripe|support with stripe|contribute/i.test((el.textContent||"")+" "+(el.getAttribute("href")||""))))break;
-      panel=panel.parentElement;
+  const dark="#243038", ink="#fff8e9", subtle="#eadcc5";
+  const set=(node,key,value)=>{if(node&&node.style.getPropertyValue(key)!==value)
+    node.style.setProperty(key,value,"important");};
+  function styleFooter(){
+    const footer=document.querySelector("footer.grade09-dashboard-footer");
+    if(!footer)return;
+    set(footer,"background",dark);
+    set(footer,"background-image","none");
+    set(footer,"color",ink);
+    set(footer,"border-top","1px solid #b48b45");
+    set(footer,"text-align","center");
+    for(const node of footer.querySelectorAll("div,span,p,a,strong,small")){
+      const color=node.matches("small")?subtle:ink;
+      set(node,"color",color);
+      set(node,"-webkit-text-fill-color",color);
     }
-    if(!panel || panel===document.body || panel===document.documentElement)return false;
-    panel.classList.add("grade09-contribute-panel");
-    for(const action of panel.querySelectorAll("a,button")){
-      if(/stripe|support with stripe|contribute/i.test((action.textContent||"")+" "+(action.getAttribute("href")||"")))action.classList.add("grade09-contribute-action");
-    }
-    return true;
   }
-  if(!markSupportCard()){
-    const observer=new MutationObserver(()=>{if(markSupportCard())observer.disconnect();});
+  function supportPanel(){
+    const headings=[...document.querySelectorAll("h2,h3,h4,div,span,p")]
+      .filter(n=>n.children.length===0 && /^support free access$/i.test((n.textContent||"").trim()));
+    for(const heading of headings){
+      const eligible=[];
+      for(let n=heading.parentElement;n&&n!==document.body;n=n.parentElement){
+        const copy=n.textContent||"";
+        const hasAction=[...n.querySelectorAll("a,button")]
+          .some(a=>/support with stripe|stripe/i.test((a.textContent||"")+" "+(a.getAttribute("href")||"")));
+        const width=n.getBoundingClientRect().width;
+        if(hasAction && /everything here is free/i.test(copy) &&
+           /voluntary/i.test(copy) && width>=280 && width<=950 &&
+           n.getBoundingClientRect().height<850)eligible.push(n);
+      }
+      if(!eligible.length)continue;
+      const panel=eligible[eligible.length-1];
+      panel.classList.add("grade09-contribute-panel");
+      set(panel,"background",dark);
+      set(panel,"background-image","none");
+      set(panel,"color",ink);
+      set(panel,"border","1px solid #b48b45");
+      set(panel,"text-align","center");
+      for(const node of panel.querySelectorAll("h2,h3,h4,p,small,div,span")){
+        if(node.closest("a,button"))continue;
+        set(node,"color",node.matches("small")?subtle:ink);
+        set(node,"-webkit-text-fill-color",node.matches("small")?subtle:ink);
+        if(node===heading || /^support free access$/i.test((node.textContent||"").trim()))
+          set(node,"text-align","center");
+      }
+      for(const action of panel.querySelectorAll("a,button")){
+        if(!/support with stripe|stripe/i.test((action.textContent||"")+" "+(action.getAttribute("href")||"")))continue;
+        action.classList.add("grade09-contribute-action");
+        set(action,"background","#e9d8b7");
+        set(action,"color","#202724");
+        set(action,"-webkit-text-fill-color","#202724");
+        for(const child of action.querySelectorAll("span,strong")){
+          set(child,"color","#202724");set(child,"-webkit-text-fill-color","#202724");
+        }
+      }
+      return true;
+    }
+    return false;
+  }
+  styleFooter();
+  if(!supportPanel()){
+    const observer=new MutationObserver(()=>{
+      styleFooter();
+      if(supportPanel())observer.disconnect();
+    });
     observer.observe(document.body,{subtree:true,childList:true});
+    window.addEventListener("load",()=>{styleFooter();if(supportPanel())observer.disconnect();},{once:true});
   }
 })();
 </script>
