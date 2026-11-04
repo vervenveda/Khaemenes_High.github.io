@@ -304,7 +304,21 @@ for(const section of surfaces){
  const color=formInput("color","Section color");color.input.value=base;
  const emoji=dropdown("Emoji sticker",emojiList.map(v=>[v,v||"No sticker"]));
  controls.append(mode.wrap,color.wrap,emoji.wrap);
- panel.append(header,controls);sectionsGroup.append(panel);
+ panel.append(header,controls);
+ const popupIds={schedule:"grade09ScheduleDialog",progress:"grade09ClassProgressDialog",klasaipeer:"grade09StudyStudioDialog",manager:"grade09ManageClassesDialog"};
+ const targetId=popupIds[section.key];
+ if(targetId){
+  const preview=action("Preview "+section.title);
+  preview.addEventListener("click",()=>{
+   const target=document.getElementById(targetId);
+   if(!target||typeof target.showModal!=="function"){message("This popup is not mounted on the page. Its saved preference was preserved.");return}
+   applyAll();
+   if(!target.open)target.showModal();
+   target.addEventListener("close",()=>{if(popup.open)preview.focus()},{once:true});
+  });
+  panel.append(preview);
+ }
+ sectionsGroup.append(panel);
  rows.set(section.key,{mode:mode.input,color:color.input,emoji:emoji.input,panel});
  const update=()=>{
   const owner=person();if(owner!==currentOwner){refresh();message("Learner selection changed; reopen the editor.");return}
