@@ -1726,3 +1726,31 @@ html:root:root body #grade09StudyStudioDialog [data-panel="lab"] button:focus-vi
  outline:3px solid #b48b45!important;
  outline-offset:2px!important;
 }
+
+
+/* Grade 09 background editor contrast: consistent with the preview/save distinction. */
+html:root:root body #grade09BackgroundDialog{
+ background:#fffaf0!important;background-image:none!important;
+ color:#243038!important;-webkit-text-fill-color:#243038!important;
+}
+html:root:root body #grade09BackgroundDialog :is(h2,h3,h4,p,label,span){
+ color:#243038!important;-webkit-text-fill-color:#243038!important;
+}
+html:root:root body #grade09BackgroundDialog button:not(:disabled){
+ background:#243038!important;background-image:none!important;
+ color:#fff8e9!important;-webkit-text-fill-color:#fff8e9!important;
+ border:1px solid #b48b45!important;border-radius:7px!important;
+ font:400 16px/1.3 "Brandon Grotesque",Nunito,Arial,sans-serif!important;
+ opacity:1!important;
+}
+html:root:root body #grade09BackgroundDialog button:not(:disabled):hover{
+ background:#36504a!important;color:#fff8e9!important;-webkit-text-fill-color:#fff8e9!important;
+}
+html:root:root body #grade09BackgroundDialog :is(input,select):not(:disabled){
+ color:#243038!important;-webkit-text-fill-color:#243038!important;
+ background-color:#fffaf0!important;opacity:1!important;
+ font:400 16px/1.35 "Brandon Grotesque",Nunito,Arial,sans-serif!important;
+}
+html:root:root body #grade09BackgroundDialog :is(button,input,select):focus-visible{
+ outline:3px solid #b48b45!important;outline-offset:2px!important;
+}
