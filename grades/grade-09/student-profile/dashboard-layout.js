@@ -118,6 +118,48 @@ if(!document.getElementById("khaeProfileToolRail")){
  rail.append(heading,grid);
  top.insertBefore(rail,firstStep||pins||null);
 }
+// Grade 09 only: relocate the existing course-manager DOM to one accessible dialog.
+// The inline course registry continues rendering into its original #courseManagerGrid.
+const managerHeading=document.getElementById("manageClassesTitle");
+const managerCard=managerHeading?.closest("section.card");
+if(managerCard&&pins&&!document.getElementById("grade09ManageClassesDialog")){
+ const styles=document.createElement("style");
+ styles.id="grade09ManageClassesDialogStyle";
+ styles.textContent=`
+ #grade09ManageClassesDialog{box-sizing:border-box;width:min(960px,calc(100vw - 28px));max-width:960px;max-height:min(86dvh,900px);margin:auto;padding:0;border:2px solid #b48b45;border-radius:7px;background:#fffaf0;color:#202724;box-shadow:0 18px 70px #0007;overflow:auto}
+ #grade09ManageClassesDialog::backdrop{background:rgba(12,23,25,.76)}
+ #grade09ManageClassesDialog .grade09-manager-head{position:sticky;top:0;z-index:2;display:flex;align-items:center;justify-content:space-between;gap:14px;padding:12px 17px;background:#202724;color:#fff8e9}
+ #grade09ManageClassesDialog .grade09-manager-head strong{font:400 20px/1.35 Cinzel,Georgia,serif;color:#fff8e9}
+ #grade09ManageClassesDialog .grade09-manager-close,.grade09-manage-trigger{box-sizing:border-box;min-height:44px;border:1px solid #c5a66c;border-radius:7px;background:#243038;color:#fff8e9;-webkit-text-fill-color:#fff8e9;padding:9px 15px;font:400 16px/1.35 Nunito,Arial,sans-serif;cursor:pointer}
+ #grade09ManageClassesDialog .grade09-manager-close:focus-visible,.grade09-manage-trigger:focus-visible{outline:3px solid #b48b45;outline-offset:2px}
+ #grade09ManageClassesDialog .grade09-manager-body{padding:16px}
+ #grade09ManageClassesDialog .grade09-manager-body>.card{box-sizing:border-box;width:100%;max-width:none;margin:0}
+ #grade09ManageClassesDialog .grade09-manager-body .lesson-grid{grid-template-columns:repeat(auto-fit,minmax(min(100%,250px),1fr))}
+ #grade09ManageClassesDialog :is(p,button,a,.chip){font-size:max(16px,1em)}
+ @media(max-width:600px){#grade09ManageClassesDialog{width:calc(100vw - 16px);max-height:93dvh}#grade09ManageClassesDialog .grade09-manager-head{padding:9px}#grade09ManageClassesDialog .grade09-manager-body{padding:8px}}
+ `;
+ document.head.append(styles);
+ const modal=document.createElement("dialog");
+ modal.id="grade09ManageClassesDialog";
+ modal.setAttribute("aria-labelledby","grade09ManageClassesDialogTitle");
+ const bar=document.createElement("div");bar.className="grade09-manager-head";
+ const label=document.createElement("strong");label.id="grade09ManageClassesDialogTitle";label.textContent="Manage Classes";
+ const close=document.createElement("button");close.type="button";close.className="grade09-manager-close";close.textContent="Close";
+ close.addEventListener("click",()=>modal.close());
+ bar.append(label,close);
+ const body=document.createElement("div");body.className="grade09-manager-body";
+ body.append(managerCard);
+ modal.append(bar,body);
+ document.body.append(modal);
+ const open=document.createElement("button");open.type="button";open.className="grade09-manage-trigger";open.textContent="Manage Classes & Mathematics";
+ const explanation=pins.querySelector("p");
+ if(explanation)explanation.insertAdjacentElement("afterend",open);
+ else pins.prepend(open);
+ let returnFocus=null;
+ open.addEventListener("click",()=>{returnFocus=document.activeElement;if(!modal.open)modal.showModal();});
+ modal.addEventListener("close",()=>{if(returnFocus?.isConnected)returnFocus.focus();});
+ modal.addEventListener("click",event=>{if(event.target===modal)modal.close();});
+}
 if(shortcuts)top.insertAdjacentElement("afterend",shortcuts);
 
 if(shortcuts)shortcuts.insertAdjacentElement("afterend",schedule);
