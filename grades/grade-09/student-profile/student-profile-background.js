@@ -33,17 +33,15 @@ const namedCard=name=>[...document.querySelectorAll("main .card h2")].find(h=>h.
 const surfaces=[
  {key:"identity",title:"Photo & Personal Information",find:()=>row.closest(".card")},
  {key:"tools",title:"My Profile Tools",find:()=>document.getElementById("khaeProfileToolRail")},
- {key:"today",title:"Today's First Step",find:()=>titleCard("todayTitle")},
- {key:"schedule",title:"My Schedule Bar",find:()=>document.querySelector(".grade09-priority-schedule .schedule-card")},
- {key:"progress",title:"My Class Progress",find:()=>document.getElementById("studentCourseProgress")},
+ {key:"today",title:"To Do Today",find:()=>titleCard("todayTitle")},
+ {key:"schedule",title:"Schedule Popup",find:()=>document.querySelector("#grade09ScheduleDialog .grade09-schedule-dialog-body")},
+ {key:"progress",title:"Class Progress Popup",find:()=>document.querySelector("#grade09ClassProgressDialog .grade09-progress-dialog-content")},
+ {key:"klasaipeer",title:"KlasaiPeer Popup",find:()=>document.querySelector("#grade09StudyStudioDialog .g09s-body")},
+ {key:"manager",title:"Manage Classes Popup",find:()=>document.querySelector("#grade09ManageClassesDialog .grade09-manager-body")},
  {key:"portfolio",title:"Student Learning Portfolio",find:()=>document.querySelector('main aside[aria-label="Student Learning Portfolio"]')},
  {key:"learning",title:"My Learning Today",find:()=>document.getElementById("learningToday")},
- {key:"manager",title:"Manage Classes & Mathematics Pathway",find:()=>titleCard("manageClassesTitle")},
- {key:"rooms",title:"Student Rooms",find:()=>titleCard("doorsTitle")},
- {key:"family",title:"Parent Access Rule",find:()=>namedCard("Parent Access Rule")},
- {key:"campus",title:"Need a Different Door?",find:()=>namedCard("Need a Different Door?")},
  {key:"explore",title:"Explore, Create & Celebrate",find:()=>document.getElementById("grade09Explore")},
- {key:"creative",title:"Creative & Discovery Tools",find:()=>document.getElementById("khaeStudentEcosystemTools")},
+ {key:"creative",title:"Creative Tools",find:()=>document.getElementById("khaeStudentEcosystemTools")},
  {key:"stickerbox",title:"My Sticker Box",find:()=>document.getElementById("khaeStickerBox")},
  {key:"dreams",title:"Achievements & Dream Board",find:()=>document.getElementById("khaeDreamsAchievements")}
 ];
@@ -184,7 +182,7 @@ title.id="grade09BackgroundDialogTitle";
 title.style.cssText="margin:0;color:#243038;font:400 26px/1.3 Cinzel,Georgia,serif";
 const close=action("Close ✕");close.addEventListener("click",()=>popup.close());
 toolbar.append(title,close);
-const explanation=el("p","Choose one page background, then optionally give each section its own color and emoji sticker. Original design restores each section's Academy styling. All settings stay with the selected learner on this device.");
+const explanation=el("p","Customize the page and each current popup independently. Without a selected learner, changes are previews only. Original design restores each section's Academy styling. All settings stay with the selected learner on this device.");
 explanation.style.cssText="margin:0 0 15px;font:400 16px/1.5 Nunito,Arial,sans-serif";
 const status=el("p","");
 status.setAttribute("role","status");status.setAttribute("aria-live","polite");
@@ -196,7 +194,7 @@ const designGroup=el("section");
 designGroup.style.cssText="display:grid;gap:12px;padding:14px;border:1px solid #c8b897;border-radius:7px;background:#fffdf8;margin-bottom:16px";
 const designHeading=el("h3","Workspace Design");
 designHeading.style.cssText="margin:0;font:400 22px/1.25 Cinzel,Georgia,serif;color:#243038";
-const designInfo=el("p","Theme, accent and layout density apply across your dashboard. Photo frame and avatar mark choices belong to Customize Picture.");
+const designInfo=el("p","Theme, accent and layout density apply across your dashboard. Photo and avatar choices belong to Edit Profile.");
 designInfo.style.cssText="margin:0;color:#243038;font:400 16px/1.5 Nunito,Arial,sans-serif";
 const designRow=el("div");
 designRow.style.cssText="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,180px),1fr));gap:10px";
@@ -211,9 +209,9 @@ designGroup.append(designHeading,designInfo,designRow,designActions);
 const workspaceValues=()=>({theme:themeControl.input.value,accent:accentControl.input.value,density:densityControl.input.value});
 const workspaceResetPreview=()=>{if(design?.apply&&design?.read)design.apply(design.read())};
 previewDesign.addEventListener("click",()=>{
- const owner=person();if(!owner||owner!==currentOwner||!design?.apply){message("Select an Academy learner before previewing workspace themes.");return}
+ const owner=person();if(owner!==currentOwner||!design?.apply){message("Workspace preview unavailable.");return}
  design.apply({...design.read(),...workspaceValues()});
- message("Preview applied. Select Save Workspace Design to keep these preferences.");
+ message(owner?"Preview applied; save to keep.":"Theme preview only; select a learner to save.");
 });
 saveDesign.addEventListener("click",()=>{
  const owner=person();if(!owner||owner!==currentOwner||!design?.write){message("Select an Academy learner before saving workspace settings.");return}
@@ -249,7 +247,7 @@ const sectionsGroup=el("section");
 sectionsGroup.style.cssText="display:grid;gap:10px;margin-top:12px";
 const sectionsHeading=el("h3","Independent Section Colors & Stickers");
 sectionsHeading.style.cssText="margin:0;font:400 22px/1.25 Cinzel,Georgia,serif";
-const guidance=el("p","Use Original design to retain each card's original color, Match page color to follow your page selection, or Custom color to choose independently.");
+const guidance=el("p","Original design retains the Academy styling. Match page color follows the page choice; Custom color lets each screen have its own appearance.");
 guidance.style.cssText="margin:0 0 5px;font:400 16px/1.4 Nunito,Arial,sans-serif";
 sectionsGroup.append(sectionsHeading,guidance);
 const rows=new Map();
@@ -269,17 +267,17 @@ for(const section of surfaces){
  panel.append(header,controls);sectionsGroup.append(panel);
  rows.set(section.key,{mode:mode.input,color:color.input,emoji:emoji.input});
  const update=()=>{
-  const owner=person();if(!owner||owner!==currentOwner){refresh();message("Select your Academy learner before saving colors.");return}
+  const owner=person();if(owner!==currentOwner){refresh();message("Learner selection changed; reopen the editor.");return}
   const last=sectionPrefs[section.key];
   const next={mode:mode.input.value,color:color.input.value,emoji:emoji.input.value};
   sectionPrefs[section.key]=next;
-  if(!write(sectionsKey(owner),JSON.stringify(sectionPrefs))){
+  if(owner&&!write(sectionsKey(owner),JSON.stringify(sectionPrefs))){
    if(last)sectionPrefs[section.key]=last;else delete sectionPrefs[section.key];
    refresh();message("Could not save this section. Browser storage may be full.");return;
   }
   color.input.disabled=next.mode!=="custom";
   applyAll();
-  message(section.title+" appearance saved.");
+  message(section.title+(owner?" appearance saved.":" preview only — select a learner to save."));
  };
  for(const control of [mode.input,color.input,emoji.input])control.addEventListener("change",update);
 }
@@ -294,7 +292,7 @@ opener.style.cssText="box-sizing:border-box;display:flex;align-items:center;just
 opener.style.setProperty("color","#fff8e9","important");
 opener.style.setProperty("-webkit-text-fill-color","#fff8e9","important");
 opener.addEventListener("click",()=>{refresh();popup.showModal();close.focus()});
-popup.addEventListener("close",()=>{workspaceResetPreview();if(opener.isConnected)opener.focus()});
+popup.addEventListener("close",()=>{workspaceResetPreview();if(!currentOwner)refresh();if(opener.isConnected)opener.focus()});
 popup.addEventListener("click",event=>{if(event.target===popup)popup.close()});
 toolGrid.append(opener);
 
@@ -310,8 +308,9 @@ function refresh(){
  themeControl.input.value=currentDesign?.theme||"parchment";
  accentControl.input.value=currentDesign?.accent||"gold";
  densityControl.input.value=currentDesign?.density||"comfortable";
- for(const control of [themeControl.input,accentControl.input,densityControl.input,previewDesign,saveDesign,restoreDesign])
-  control.disabled=!owner||!design?.write;
+ for(const control of [themeControl.input,accentControl.input,densityControl.input,previewDesign])control.disabled=!design?.apply;
+ saveDesign.disabled=!owner||!design?.write;
+ restoreDesign.disabled=!owner||!design?.clear;
  pageColorControl.input.value=pageColor;
  pageEmoji.input.value=pageSticker;
  for(const [key,controls] of rows){
@@ -319,44 +318,42 @@ function refresh(){
   controls.mode.value=pref.mode;
   controls.color.value=pref.color;
   controls.emoji.value=pref.emoji;
-  controls.color.disabled=!owner||pref.mode!=="custom";
+  controls.color.disabled=pref.mode!=="custom";
  }
- for(const node of [pageColorControl.input,resetPage,pageEmoji.input,upload.input,removeImage]){
-  node.disabled=!owner;
- }
+ for(const node of [pageColorControl.input,resetPage,pageEmoji.input])node.disabled=false;
+ upload.input.disabled=!owner;
  removeImage.disabled=!owner||!savedImage;
  for(const controls of rows.values()){
-  controls.mode.disabled=!owner;
-  controls.emoji.disabled=!owner;
+  controls.mode.disabled=false;
+  controls.emoji.disabled=false;
  }
- if(!owner)message("Choose your Academy learner to save background settings. No personal settings are shown.");
+ if(!owner)message("Preview mode is available. Select an Academy learner before saving any background settings.");
  else message("Changes are stored privately on this device for the selected learner.");
  applyAll();
 }
 pageColorControl.input.addEventListener("input",()=>{
- if(!currentOwner)return;
  pageColor=pageColorControl.input.value;
  applyAll();message("Preview only. Release the color picker to save.");
 });
 pageColorControl.input.addEventListener("change",()=>{
- const owner=person();if(!owner||owner!==currentOwner){refresh();return}
- if(!write(colorsKey(owner),pageColorControl.input.value)){
+ const owner=person();if(owner!==currentOwner){refresh();return}
+ if(owner&&!write(colorsKey(owner),pageColorControl.input.value)){
   refresh();message("Unable to save the page color.");return
  }
- pageColor=pageColorControl.input.value;applyAll();message("Page background color saved.");
+ pageColor=pageColorControl.input.value;applyAll();message(owner?"Page background color saved.":"Page color preview only; select a learner to save.");
 });
 resetPage.addEventListener("click",()=>{
- const owner=person();if(!owner||owner!==currentOwner){refresh();return}
- if(!erase(colorsKey(owner))){message("Unable to restore the page color.");return}
+ const owner=person();if(owner!==currentOwner){refresh();return}
+ if(owner&&!erase(colorsKey(owner))){message("Unable to restore the page color.");return}
  pageColor=base;pageColorControl.input.value=base;applyAll();message("Default page color restored. Section choices are preserved.");
 });
 pageEmoji.input.addEventListener("change",()=>{
- const owner=person();if(!owner||owner!==currentOwner){refresh();return}
+ const owner=person();if(owner!==currentOwner){refresh();return}
  const value=pageEmoji.input.value;
- if(value?!write(stickerKey(owner),value):!erase(stickerKey(owner))){
+ if(owner&&(value?!write(stickerKey(owner),value):!erase(stickerKey(owner)))){
   refresh();message("Unable to save your page sticker.");return
  }
- pageSticker=value;applyAll();message(value?"Page stickers saved.":"Page stickers removed.");
+ pageSticker=value;applyAll();message(owner?(value?"Page stickers saved.":"Page stickers removed."):"Sticker preview only; select a learner to save.");
 });
 upload.input.addEventListener("change",async()=>{
  const owner=person();
