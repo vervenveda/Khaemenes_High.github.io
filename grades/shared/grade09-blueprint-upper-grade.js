@@ -94,7 +94,14 @@ function selectLearner(){
   $("learningTodaySummary").textContent="This campus is for Grade "+grade+". Your registered learner's schedules, progress, and saved work remain unchanged.";
   $("learningTodayActions").replaceChildren(link("Go to Grade "+info.grade,redirect.href,"btn gold"));
   list.replaceChildren();schedule.replaceChildren();
-  if(tools)tools.hidden=true;
+  if(tools){
+   if(grade==="11"||grade==="12"){
+    // Keep the universal eight-button rail visible when visiting another grade.
+    // All restricted actions navigate back to the registered student's campus.
+    tools.hidden=false;
+    renderTools();
+   }else tools.hidden=true;
+  }
   return false;
  }
  const wrongMarker=$("upperGradeProfileRedirect");
@@ -253,14 +260,33 @@ function renderTools(){
    item.type="button";
    item.addEventListener("click",()=>{
     const ctx=gradeContext();
-    if(!ctx||ctx.gradeNumber!==Number(grade))return;
+    if(!ctx||ctx.gradeNumber!==Number(grade)){
+     if(ctx?.grade&&["11","12"].includes(grade)){
+      location.assign(highRoot+"grades/grade-"+ctx.grade+"/student-profile/");
+     }
+     return;
+    }
     action.run();
    });
   }
   grid.append(item);
  }
- // The eighth Customize Background button is owned and mounted exactly once
- // by Grade 09's existing background-dialog module after this renderer loads.
+ // When a Grade 10 learner is visiting Grades 11 or 12, the private background
+ // module intentionally does not mount. Preserve the 4×2 rail with a safe route
+ // to the registered campus, never a second or unauthorized background editor.
+ const ctx=gradeContext();
+ if(["11","12"].includes(grade)&&ctx?.gradeNumber!==Number(grade)
+    &&!grid.querySelector("#openGrade09BackgroundDialog,[data-background-return]")){
+  const back=make("a","Customize Background");
+  back.className="grade09-blueprint-tool";
+  back.dataset.backgroundReturn="true";
+  back.href=ctx?.grade?highRoot+"grades/grade-"+ctx.grade+"/student-profile/":builder;
+  back.title="Open your registered student profile to customize its background";
+  back.setAttribute("aria-label","Customize background in your registered student profile");
+  grid.append(back);
+ }
+ // For a registered learner, Grade 09's original background-dialog module
+ // creates the genuine eighth editor button. Do not duplicate it.
 }
 
 function renderSchedule(items){
