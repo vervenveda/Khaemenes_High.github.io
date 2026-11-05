@@ -1,0 +1,28 @@
+name: Grade 09–10 Student Profile Browser Parity
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'grades/grade-10/student-profile/**'
+      - 'tests/test_grade10_profile_browser.py'
+      - '.github/workflows/grade10-student-profile-browser.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  visual-regression:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install anonymous browser test dependencies
+        run: |
+          python -m pip install pytest playwright
+          python -m playwright install --with-deps chromium
+      - name: Compare Grade 09 and Grade 10 desktop/mobile entry points
+        run: python -m pytest -q -s tests/test_grade10_profile_browser.py
