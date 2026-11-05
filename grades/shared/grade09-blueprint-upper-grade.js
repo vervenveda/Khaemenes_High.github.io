@@ -25,6 +25,11 @@ function mountProfileFirst(){
  let top=$("grade09ProfileFirst");
  if(!top){top=document.createElement("section");top.className="grade09-profile-first";top.id="grade09ProfileFirst";main.prepend(top)}
  if(identityCard.parentElement!==top)top.append(identityCard);
+ // Same identity structure and selectors used by Grade 09 photo/detail modules.
+ row.querySelector(".profile-name")?.parentElement?.classList.add("grade09-identity-details");
+ row.querySelector("#avatar")?.classList.add("grade09-avatar-enhanced");
+ // Grade 09 already retires this duplicate link in favor of the Profile Tools rail.
+ row.querySelector(".grade09-profile-actions")?.remove();
  if(!tools){tools=document.createElement("section");tools.id="grade09BlueprintTools";const head=document.createElement("h2");head.textContent="My Profile Tools";tools.append(head)}
  if(tools.parentElement!==top)top.append(tools);
  if(todayCard.parentElement!==top)top.append(todayCard);
@@ -77,14 +82,7 @@ function selectLearner(){
  metaNode.textContent="Grade "+grade+" · Local profile workspace";
  avatar.replaceChildren();
  const savedAppearance=id?appearance(id):null;
- const savedBackground=savedAppearance?.background;
- if(typeof savedBackground==="string"&&/^#[0-9a-fA-F]{6}$/.test(savedBackground)){
-  document.body.style.setProperty("background-color",savedBackground,"important");
-  document.documentElement.style.setProperty("--paper",savedBackground);
- }else{
-  document.body.style.removeProperty("background-color");
-  document.documentElement.style.removeProperty("--paper");
- }
+ // Shared background module owns page colors, uploaded images and stickers.
  let sharedPhoto=null;
  if(id)try{sharedPhoto=localStorage.getItem("khaemenes.grade09.profile.photo:"+encodeURIComponent(id))}catch{}
  const pic=(typeof sharedPhoto==="string"&&sharedPhoto.startsWith("data:image/jpeg;base64,")&&sharedPhoto.length<400000)
@@ -112,20 +110,31 @@ function selectLearner(){
 }
 function renderTools(){
  if(!tools)return;
- tools.replaceChildren();
- const heading=make("h2","My Profile Tools");tools.append(heading);
+ // Keep a stable rail: background and portrait modules attach controls here.
+ // Never replace the whole rail during a course/profile refresh.
+ let head=tools.querySelector(":scope > h2");
+ if(!head){head=make("h2","My Profile Tools");tools.prepend(head)}
+ let wrapper=tools.querySelector("#khaeProfileToolRail");
+ if(!wrapper){
+  wrapper=make("div");wrapper.id="khaeProfileToolRail";
+  wrapper.append(make("div"));tools.append(wrapper);
+ }
+ const grid=wrapper.firstElementChild;
+ grid.classList.add("grade09-blueprint-tool-grid");
+ if(grid.querySelector("[data-upper-grade-link]"))return;
  const buttons=[
   ["Edit Profile",builder],["Class Progress","#courseManagerGrid"],
   ["Schedule","#grade09BlueprintSchedule"],["My Grade Campus",highRoot+"grades/grade-"+grade+"/"],
   ["Academy Tour","https://vervenveda.com/Khaemenes_Academy.github.io/tour/"],
-  ["Creative Tools","#grade09BlueprintRooms"],["Student Portfolio",highRoot+"portfolio/index.html"],
-  ["Customize Background",builder]
+  ["Creative Tools","#grade09BlueprintRooms"],["Student Portfolio",highRoot+"portfolio/index.html"]
  ];
- const rail=make("nav");rail.className="grade09-blueprint-tool-grid";
- rail.setAttribute("aria-label","My Profile Tools");
- for(const [label,url] of buttons)rail.append(link(label,url,"grade09-blueprint-tool"));
- tools.append(rail);
+ for(const [caption,url] of buttons){
+  const a=link(caption,url,"grade09-blueprint-tool");a.dataset.upperGradeLink="true";grid.append(a);
+ }
+ // The eighth Customize Background control comes from the *existing* Grade 09
+ // background module, retaining image uploads, stickers and section colors.
 }
+
 function renderSchedule(items){
  if(!schedule)return;schedule.replaceChildren();
  const grid=make("div");grid.className="grade09-blueprint-schedule-grid";
