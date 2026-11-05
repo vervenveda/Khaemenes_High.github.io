@@ -69,9 +69,17 @@ function selectedProfile(){
   const data=raw?JSON.parse(raw):{};
   if(!data||typeof data!=="object"||Array.isArray(data))return null;
   if(data.learnerId&&data.learnerId!==id)return null;
-  if(data.grade&&String(data.grade)!=="9")return null;
+  if(data.grade&&!["9","09","10","11","12"].includes(String(data.grade)))return null;
   return data;
  }catch{return null}
+}
+function registeredGradeLabel(){
+ try{
+  const id=activeLearner();
+  const record=id?JSON.parse(localStorage.getItem("khaemenes_family_registry_v1")||"null")?.learners?.[id]:null;
+  const grade=String(record?.grade||"");
+  return record?.stage==="high"&&["9","09","10","11","12"].includes(grade)?"Grade "+Number(grade):"Grade 9";
+ }catch{return "Grade 9"}
 }
 function optionRow(label,id){
  const wrapper=tag("label");
@@ -149,7 +157,7 @@ function load(profile){
  for(const entry of entries){
   const selector=selectors.get(entry.id);if(selector)selector.checked=shown[entry.id]===true;
   const control=editors.get(entry.id);if(control){
-   const value=entry.type==="fixed"?entry.defaultValue:(typeof values[entry.id]==="string"?values[entry.id]:"");
+   const value=entry.type==="fixed"?(entry.id==="grade"?registeredGradeLabel():entry.defaultValue):(typeof values[entry.id]==="string"?values[entry.id]:"");
    control.value=value;
   }
  }
@@ -158,7 +166,7 @@ function collect(){
  const values={},visible={};
  for(const entry of entries){
   const c=editors.get(entry.id);
-  if(c)values[entry.id]=entry.type==="fixed"?entry.defaultValue:String(c.value||"").slice(0,2000).trim();
+  if(c)values[entry.id]=entry.type==="fixed"?(entry.id==="grade"?registeredGradeLabel():entry.defaultValue):String(c.value||"").slice(0,2000).trim();
   visible[entry.id]=selectors.get(entry.id)?.checked===true;
  }
  return {version:1,values,visible};
