@@ -76,6 +76,54 @@ html:root:root body .grade09-local-masthead .hero > h1{
  margin:0 auto 14px!important;
 }
 </style>
+<style id="grade09-daily-flow-first-style">
+/* Dedicated read-only study guide, not a second navigation or grading system. */
+html body .daily-flow-first{
+ box-sizing:border-box;
+ width:min(1100px,calc(100% - 24px));
+ margin:22px auto 12px;
+ padding:22px 26px;
+ background:#fffdf8;
+ border:2px solid #243038;
+ border-left:7px solid #b48b45;
+ border-radius:7px;
+ color:#243038;
+}
+html body .daily-flow-first h2{
+ font:400 clamp(25px,3vw,32px)/1.25 Cinzel,Georgia,serif!important;
+ color:#243038!important;
+ margin:0 0 10px;
+}
+html body .daily-flow-first .daily-flow-intro{
+ font:400 17px/1.55 "Brandon Grotesque",Nunito,Arial,sans-serif!important;
+ color:#354840!important;
+ margin:0 0 14px;
+}
+html body .daily-flow-first .daily-flow-steps{
+ margin:0;
+ padding:0 0 0 26px;
+ display:grid;
+ grid-template-columns:repeat(2,minmax(0,1fr));
+ gap:12px 32px;
+}
+html body .daily-flow-first .daily-flow-steps li{
+ padding:5px 8px 5px 3px;
+ font:400 16px/1.55 "Brandon Grotesque",Nunito,Arial,sans-serif!important;
+}
+html body .daily-flow-first .daily-flow-steps strong{
+ display:block;
+ font-weight:500;
+ color:#243038;
+}
+html body .daily-flow-first .daily-flow-steps span{
+ display:block;
+ color:#45554c;
+}
+@media(max-width:670px){
+ html body .daily-flow-first{padding:17px;margin-top:14px}
+ html body .daily-flow-first .daily-flow-steps{grid-template-columns:1fr;gap:10px}
+}
+</style>
 <link rel="stylesheet" href="https://vervenveda.com/Khaemenes_Academy.github.io/assets/khaemenes-global-header.css">
 </head>
 <body>
@@ -99,6 +147,18 @@ html:root:root body .grade09-local-masthead .hero > h1{
   </div>
 </div>
 <main>
+  <section class="shell daily-flow-first" aria-labelledby="dailyFlowTitle">
+    <h2 id="dailyFlowTitle">Today’s Flow</h2>
+    <p class="daily-flow-intro">A simple routine for successful, focused study—one class and one learning step at a time.</p>
+    <ol class="daily-flow-steps">
+      <li><strong>Choose your next class.</strong><span>Review your pinned subjects or class doors and select the lesson you are ready to study.</span></li>
+      <li><strong>Set a small goal.</strong><span>Decide what you want to understand or complete before beginning.</span></li>
+      <li><strong>Study without distractions.</strong><span>Read or listen carefully, take useful notes, and work through one lesson block at your own pace.</span></li>
+      <li><strong>Practice and check understanding.</strong><span>Try the lesson activity, explain your reasoning, and review corrections when needed.</span></li>
+      <li><strong>Take a short break.</strong><span>Rest your eyes, stretch comfortably, and drink water before continuing.</span></li>
+      <li><strong>Record your next step.</strong><span>Return to Daily Lessons, update your checklist or note, and choose what to work on next.</span></li>
+    </ol>
+  </section>
   <div class="shell crumbs"><a href="../../../../">High School</a><span>›</span><a href="../../">Grade 09</a><span>›</span><a href="../">Student Dashboard</a><span>›</span><strong>Daily Lessons</strong></div>
   <section class="section">
     <div class="shell grid">
@@ -113,16 +173,6 @@ html:root:root body .grade09-local-masthead .hero > h1{
         <p>Swipe or scroll across your seven classes and personal Quick Pins. Academic slots remain separate from games and tools.</p>
         <div data-grade09-schedule-bar></div>
       </section>
-
-      <article class="card col12">
-        <div class="focus-card">
-          <div>
-            <strong>Today’s flow</strong>
-            <span>1. Open a pinned or assigned class. 2. Complete one lesson block. 3. Return here. 4. Save a note and check off what is done.</span>
-          </div>
-          <div class="actions"><a class="btn gold" href="#classDoorsTitle">Class Doors</a><a class="btn secondary" href="../">Student Home</a></div>
-        </div>
-      </article>
 
       <section class="card col12" aria-labelledby="classDoorsTitle">
         <h2 id="classDoorsTitle">Class Doors</h2>
