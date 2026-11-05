@@ -307,14 +307,16 @@ function load(){
   if(nav){const destinations=[
     gradeDashboard(),
     grade?'https://vervenveda.com/Khaemenes_High.github.io/grades/grade-'+grade+'/student-profile/#courseManagerGrid':'../',
-    grade?'https://vervenveda.com/Khaemenes_High.github.io/grades/grade-'+grade+'/student-profile/grades/':'../grades/',
-    grade?'https://vervenveda.com/Khaemenes_High.github.io/grades/grade-'+grade+'/student-profile/games/':'../games/',
+    grade?(grade==='09'?'../grades/':'https://vervenveda.com/Khaemenes_High.github.io/portfolio/index.html'):'../grades/',
+    grade?(grade==='09'?'../games/':'https://vervenveda.com/arcade.github.io/'):'../games/',
     grade?'https://vervenveda.com/Khaemenes_High.github.io/grades/grade-'+grade+'/':'../../'
   ];[...nav.querySelectorAll('a')].slice(0,5).forEach((a,i)=>a.href=destinations[i]);}
   const heading=document.querySelector('.top .hero h1');if(heading)heading.textContent=grade?'My Profile · Grade '+Number(grade):'My Profile';
   if(grade){
    document.title='Grade '+Number(grade)+' · My Profile · Khaemenes Academy';
    const navLinks=[...document.querySelectorAll('.grade09-local-masthead .navlinks a')];
+   if(navLinks[1]&&grade!=='09')navLinks[1].textContent='My Classes';
+   if(navLinks[2]&&grade!=='09')navLinks[2].textContent='Portfolio';
    if(navLinks[4])navLinks[4].textContent='Exit to Grade '+Number(grade);
    const crumbs=[...document.querySelectorAll('main>.crumbs a')];
    if(crumbs[1])crumbs[1].textContent='Grade '+Number(grade);
