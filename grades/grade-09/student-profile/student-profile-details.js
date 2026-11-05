@@ -4,6 +4,13 @@
  * Additional details are stored inside the existing learner-scoped profile JSON.
  */
 (()=>{"use strict";
+const pageGrade=document.body?.dataset.grade||"";
+if(["10","11","12"].includes(pageGrade)){
+ const registered=window.KhaemenesHighProfileGradeContext?.active?.();
+ // Don't mount an editor for another grade or an unselected learner.
+ if(!registered||registered.gradeNumber!==Number(pageGrade))return;
+}
+
 if(window.KhaemenesHighProfileDetails)return;
 const BASE="khaemenes-high-profile-v1";
 const LEGACY=[
