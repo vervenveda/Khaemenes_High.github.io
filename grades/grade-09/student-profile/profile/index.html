@@ -281,6 +281,7 @@ html:root:root body #grade09SevenClassSchedule .grade09-eight-class-pending{
 <script>
 const BASE_KEY='khaemenes-high-profile-v1',ACTIVE_KEY='khaemenes_active_learner_v1',FAMILY_KEY='khaemenes_family_registry_v1',status=document.getElementById('status');
 const fields=['name','pathway','interests','goals','strengths','supports','portfolio'];
+let loadedOwner=null,loadedGrade=null;
 function activeLearner(){
   try{
     const id=JSON.parse(localStorage.getItem(ACTIVE_KEY)||'null');
@@ -299,6 +300,8 @@ const read=(k,f)=>{try{const r=localStorage.getItem(k);return r?JSON.parse(r):f}
 const write=(k,v)=>{try{localStorage.setItem(k,JSON.stringify(v));return true}catch{return false}};
 function load(){
   const learner=activeLearner(),p=learner?read(profileKey(),{}):{},shared=learner?.learnerId?window.KhaemenesStudentProfileV2?.read?.(learner.learnerId):null;
+  loadedOwner=learner?.learnerId||null;
+  loadedGrade=registeredGrade();
   const grade=registeredGrade();
   const nav=document.querySelector('.grade09-local-masthead .navlinks');
   if(nav){const destinations=[
@@ -359,6 +362,9 @@ function data(){
 document.getElementById('saveProfile').onclick=()=>{
   const learner=activeLearner();
   if(!learner?.learnerId){status.hidden=false;status.textContent='Choose your existing Academy learner profile before saving. Your entries remain on this page; nothing was overwritten.';return}
+  if(loadedOwner!==learner.learnerId||loadedGrade!==registeredGrade()){
+    status.hidden=false;status.textContent='Your selected learner or registered grade changed while this editor was open. Reload the correct learner profile before saving; no records were changed.';return;
+  }
   const p=data();
   if(!write(profileKey(),p)){status.hidden=false;status.textContent='Profile could not be saved on this device.';return}
   const list=value=>String(value||'').split(/[\n,]+/).map(x=>x.trim()).filter(Boolean);
@@ -380,6 +386,9 @@ document.getElementById('exportProfile').onclick=()=>{
   const learner=activeLearner();
   if(!learner?.learnerId){
     status.hidden=false;status.textContent='Select an Academy learner before exporting personal information; no legacy profile was exported.';return;
+  }
+  if(loadedOwner!==learner.learnerId||loadedGrade!==registeredGrade()){
+    status.hidden=false;status.textContent='The selected learner or grade changed. Reload before exporting; no other learner profile was exported.';return;
   }
   const b=new Blob([JSON.stringify(data(),null,2)],{type:'application/json'}),u=URL.createObjectURL(b),a=document.createElement('a');
   a.href=u;a.download='khaemenes-grade09-student-profile.json';a.click();setTimeout(()=>URL.revokeObjectURL(u),800)
