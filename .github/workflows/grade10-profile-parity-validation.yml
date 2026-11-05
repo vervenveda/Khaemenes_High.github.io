@@ -1,0 +1,34 @@
+name: Grade 10 Student Profile Parity & Safety
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'grades/grade-10/student-profile/**'
+      - 'grades/shared/grade09-blueprint-upper-grade.js'
+      - 'tools/validate-grade10-profile-parity.mjs'
+      - '.github/workflows/grade10-profile-parity-validation.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  grade10-profile:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - name: Verify parity gate syntax
+        run: node --check tools/validate-grade10-profile-parity.mjs
+      - name: Audit Grade 10 destinations, CSS, scripts and learner protections
+        run: node tools/validate-grade10-profile-parity.mjs
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: grade10-profile-parity-receipt
+          path: reports/grade10-profile-parity.json
+          if-no-files-found: warn
+          retention-days: 14
