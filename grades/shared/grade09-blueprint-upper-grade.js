@@ -85,7 +85,10 @@ function selectLearner(){
   document.body.style.removeProperty("background-color");
   document.documentElement.style.removeProperty("--paper");
  }
- const pic=savedAppearance?.photo||null;
+ let sharedPhoto=null;
+ if(id)try{sharedPhoto=localStorage.getItem("khaemenes.grade09.profile.photo:"+encodeURIComponent(id))}catch{}
+ const pic=(typeof sharedPhoto==="string"&&sharedPhoto.startsWith("data:image/jpeg;base64,")&&sharedPhoto.length<400000)
+   ?sharedPhoto:(savedAppearance?.photo||null);
  if(typeof pic==="string"&&pic.startsWith("data:image/jpeg;base64,")&&pic.length<400000){
   const img=make("img");img.src=pic;img.alt="Student portrait";
   img.style.cssText="width:100%;height:100%;object-fit:cover";
