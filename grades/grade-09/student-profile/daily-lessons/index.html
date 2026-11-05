@@ -62,6 +62,20 @@ html:root:root body :is(.hero, .header, .page-header, .section-head, .lesson-hea
   html:root:root body { font-size: 14px !important; }
 }
 </style>
+<style id="grade09-daily-lessons-heading-hierarchy">
+/* Page-scoped exception to the older 55px eyebrow / 33px title policy. */
+html:root:root body .grade09-local-masthead .hero > .eyebrow{
+ font:400 clamp(19px,2.3vw,24px)/1.35 Cinzel,Georgia,serif!important;
+ letter-spacing:.08em!important;
+ color:#dfc58e!important;
+ margin:0 auto 9px!important;
+}
+html:root:root body .grade09-local-masthead .hero > h1{
+ font:400 clamp(36px,5vw,48px)/1.18 Cinzel,Georgia,serif!important;
+ color:#fff8e9!important;
+ margin:0 auto 14px!important;
+}
+</style>
 <link rel="stylesheet" href="https://vervenveda.com/Khaemenes_Academy.github.io/assets/khaemenes-global-header.css">
 </head>
 <body>
@@ -74,16 +88,6 @@ html:root:root body :is(.hero, .header, .page-header, .section-head, .lesson-hea
   </div>
 </header>
 <div class="top grade09-local-masthead">
-  <div class="shell nav">
-    <a class="brand" href="../"><span class="mark">IX</span><span><strong>Daily Lessons</strong><small>Grade 09 Student Dashboard</small></span></a>
-    <nav class="navlinks" aria-label="Daily lessons navigation">
-      <a href="../">Dashboard</a>
-      <a href="../grades/">Grades</a>
-      <a href="../games/">Games</a>
-      <a href="../../../../mentor/?stage=high&amp;subject=general&amp;course=grade-09&amp;source=grades%2Fgrade-09%2Fstudent-profile%2Fdaily-lessons%2F">Ask Mentor</a>
-      <a href="../../">Exit</a>
-    </nav>
-  </div>
   <div class="shell hero">
     <p class="eyebrow">Current Work</p>
     <h1>Daily Lessons</h1>
