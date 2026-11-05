@@ -9,6 +9,22 @@
 <meta http-equiv="Permissions-Policy" content="camera=(), microphone=(), geolocation=(), payment=(), usb=(), browsing-topics=()">
 <title>Grade 09 Student Dashboard</title>
 <link rel="stylesheet" href="student-profile.css?v=20261104-featured-ten">
+<style id="grade09-first-paint-stability">
+/* Only while the legacy Grade 09 layout is being assembled.
+   Keeps its approved design invisible during transient DOM relocation and
+   late canonical chrome injection. Does not affect computed layout or storage.
+   Inspector remains visible when explicitly activated. */
+body.grade09-preparing > :not(script):not(style):not(#vnv-inspector-root){
+  visibility:hidden!important;
+}
+</style>
+<script>
+/* Fail-open: never strand a learner on an invisible page if initialization throws. */
+window.addEventListener("load",function(){
+ document.body?.classList.remove("grade09-preparing");
+},{once:true});
+setTimeout(function(){document.body?.classList.remove("grade09-preparing")},2500);
+</script>
 <style id="khaemenes-typography-standard">
 /* Khaemenes High presentation typography · 55 / 33 / 24 / 14 px.
    All public pages receive this local, embedded policy for offline use.
@@ -106,7 +122,7 @@ body :is(.hero,.ug-hero,.mast) :is(.eyebrow,.ug-eyebrow),body main>.eyebrow{font
   .grade09-local-masthead .hero > .eyebrow{display:block!important;width:100%!important;max-width:none!important;text-align:center!important;margin-left:auto!important;margin-right:auto!important;}
 </style>
 </head>
-<body data-high-hide-breadcrumbs="true">
+<body data-high-hide-breadcrumbs="true" class="grade09-preparing">
 <!-- Canonical VNV mounting anchor: first top-level header must be in the page, not
      inside Grade 09's closed Class Progress / KlasaiPeer dialogs.
      Official VNV_HEADER.mount({replaceLegacy:true}) removes this placeholder. -->
@@ -485,5 +501,11 @@ html body .grade09-contribute-panel .grade09-contribute-action:focus-visible{
 })();
 </script>
 
+<script>
+/* Show only the assembled layout, after the canonical chrome and tool modules. */
+requestAnimationFrame(function(){
+ document.body.classList.remove("grade09-preparing");
+});
+</script>
 </body>
 </html>
