@@ -74,7 +74,7 @@ function link(title,url,cls="btn secondary"){
 function appearance(id){try{const v=JSON.parse(localStorage.getItem("khaemenes.grade"+grade+".profile.appearance:"+encodeURIComponent(id))||"null");return v&&typeof v==="object"?v:null}catch{return null}}
 function selectLearner(){
  const p=learner(),id=identity(),info=gradeContext();
- const wrong=info&&info.gradeNumber!==Number(grade);
+ const wrong=grade==="10"?(!info||info.gradeNumber!==10):Boolean(info&&info.gradeNumber!==Number(grade));
  if(wrong){
   // A Grade 10 learner viewing Grade 11 must never inherit Grade 11
   // photo, details, class controls or local decoration merely by visiting.
@@ -82,23 +82,23 @@ function selectLearner(){
   const identityCard=row?.closest(".card");
   identityCard?.setAttribute("data-grade-mismatch","true");
   avatar.replaceChildren();
-  avatar.textContent=String(info.gradeNumber);
-  avatar.setAttribute("aria-label","Registered Grade "+info.gradeNumber);
+  avatar.textContent=info?String(info.gradeNumber):"10";
+  avatar.setAttribute("aria-label",info?"Registered Grade "+info.gradeNumber:"Registered Grade 10 learner required");
   row?.querySelector("#grade09PhotoControls")?.remove();
   row?.querySelector("#grade09VisibleProfileDetails")?.remove();
   nameNode.textContent="This is the Grade "+grade+" profile";
-  metaNode.textContent="Your selected Academy learner is registered in Grade "+info.gradeNumber+". No Grade "+grade+" profile information or classes will be changed.";
+  metaNode.textContent=info?"Your selected Academy learner is registered in Grade "+info.gradeNumber+". No Grade "+grade+" profile information or classes will be changed.":"No registered Grade "+grade+" learner is selected. Select your family learner to see private profile data; nothing is saved here.";
   let redirect=$("upperGradeProfileRedirect");
   if(!redirect){
-   redirect=make("a","Open My Registered Grade "+info.gradeNumber+" Profile");
+   redirect=make("a",info?"Open My Registered Grade "+info.gradeNumber+" Profile":"Select My Registered Learner");
    redirect.id="upperGradeProfileRedirect";
    redirect.className="btn gold";
    redirect.style.cssText="display:inline-flex;align-items:center;justify-content:center;min-height:48px;margin-top:12px;padding:10px 16px;border-radius:7px;color:#243038;background:#ead6a4;text-decoration:none;font-size:16px";
    metaNode.insertAdjacentElement("afterend",redirect);
   }
-  redirect.href=highRoot+"grades/grade-"+info.grade+"/student-profile/";
+  redirect.href=info?highRoot+"grades/grade-"+info.grade+"/student-profile/":"https://vervenveda.com/Khaemenes_Academy.github.io/family/";
   $("learningTodaySummary").textContent="This campus is for Grade "+grade+". Your registered learner's schedules, progress, and saved work remain unchanged.";
-  $("learningTodayActions").replaceChildren(link("Go to Grade "+info.grade,redirect.href,"btn gold"));
+  $("learningTodayActions").replaceChildren(link(info?"Go to Grade "+info.grade:"Choose My Learner",redirect.href,"btn gold"));
   list.replaceChildren();schedule.replaceChildren();
   if(tools){
    if(grade==="11"||grade==="12"){
