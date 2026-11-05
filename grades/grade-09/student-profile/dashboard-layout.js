@@ -249,6 +249,31 @@ for(const [id,label] of sections){
  const toggle=document.createElement("summary");toggle.textContent=label;details.append(toggle,node);region.append(details);
  node.style.margin="0";node.style.maxWidth="none";
 }
+/* Restore the Yearbook doorway inside Explore, Create & Celebrate.
+   The studio remains owned by the existing Grade 09 modal and its separate repository. */
+if(!region.querySelector("#grade09ExploreYearbook")){
+ const details=document.createElement("details");
+ details.className="grade09-explore-item";
+ details.id="grade09ExploreYearbook";
+ const toggle=document.createElement("summary");
+ toggle.textContent="My School Yearbook";
+ const panel=document.createElement("div");
+ panel.className="grade09-yearbook-explore-body";
+ const note=document.createElement("p");
+ note.textContent="Create and preserve your school memories in the Yearbook Studio. Export a backup to keep your photos.";
+ const controls=document.createElement("div");
+ controls.className="grade09-yearbook-explore-actions";
+ const open=document.createElement("button");
+ open.type="button";
+ open.textContent="Open My Yearbook";
+ open.addEventListener("click",()=>window.KhaemenesGrade09Yearbook?.open?.(open));
+ const external=document.createElement("a");
+ external.href="https://vervenveda.com/Academy-Yearbook.github.io/";
+ external.target="_blank";external.rel="noopener noreferrer";
+ external.textContent="Open Full Yearbook";
+ controls.append(open,external);panel.append(note,controls);details.append(toggle,panel);
+ region.append(details);
+}
 if(portfolio)portfolio.style.maxWidth="none";
 main.append(region);
 align(region);
