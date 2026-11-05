@@ -309,6 +309,17 @@ function load(){
     grade?'https://vervenveda.com/Khaemenes_High.github.io/grades/grade-'+grade+'/':'../../'
   ];[...nav.querySelectorAll('a')].slice(0,5).forEach((a,i)=>a.href=destinations[i]);}
   const heading=document.querySelector('.top .hero h1');if(heading)heading.textContent=grade?'My Profile · Grade '+Number(grade):'My Profile';
+  if(grade){
+   document.title='Grade '+Number(grade)+' · My Profile · Khaemenes Academy';
+   const navLinks=[...document.querySelectorAll('.grade09-local-masthead .navlinks a')];
+   if(navLinks[4])navLinks[4].textContent='Exit to Grade '+Number(grade);
+   const crumbs=[...document.querySelectorAll('main>.crumbs a')];
+   if(crumbs[1])crumbs[1].textContent='Grade '+Number(grade);
+   const footer=document.querySelector('footer.footer span');
+   if(footer)footer.textContent='Khaemenes Academy · Grade '+Number(grade)+' · My Profile';
+   const studioHelp=document.querySelector('#grade09LookPanel .grade09-look-controls>.grade09-look-help:last-child');
+   if(studioHelp)studioHelp.textContent='Your colors and picture remain associated with this Academy learner across High School. These settings do not change classes, grades, assessments, or enrollment.';
+  }
   const classCard=document.getElementById('grade09SevenClassSchedule')?.closest('.card');
   if(classCard&&grade&&grade!=='09'){
     classCard.hidden=false;
@@ -402,7 +413,7 @@ window.addEventListener('khaemenes-student-profile-changed',load);
 <script src="https://vervenveda.com/assets/vnv-ticker-autopopulate.js" defer></script>
 <script id="grade09-profile-chrome-init">
 window.addEventListener("DOMContentLoaded",()=>{
- window.VNV_HEADER?.mount?.({title:"My Profile",subtitle:"Khaemenes Academy · Grade 09",home:"https://vervenveda.com/Khaemenes_Academy.github.io/",replaceLegacy:false,actions:[]});
+ window.VNV_HEADER?.mount?.({title:"My Profile",subtitle:"Khaemenes Academy · Grade "+Number(registeredGrade()||"09"),home:"https://vervenveda.com/Khaemenes_Academy.github.io/",replaceLegacy:false,actions:[]});
  window.VNV_TICKER?.autoPopulate?.({max:14});
 });
 </script><script src="../grade09-look-chooser.js?v=20261103-color-contrast-repair" defer></script></body></html>
