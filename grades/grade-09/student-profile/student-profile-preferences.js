@@ -19,7 +19,7 @@ function activeLearner(){
   const registry=JSON.parse(localStorage.getItem(FAMILY_KEY)||"null");
   const record=typeof id==="string"?registry?.learners?.[id]:null;
   if(!record||record.learnerId!==id)return null;
-  if(record.grade&&!["9","09"].includes(String(record.grade)))return null;
+  if(record.stage!=="high"||!["9","09","10","11","12"].includes(String(record.grade)))return null;
   const linked=window.KhaemenesStudentProfileV2?.activeLearner?.()?.learnerId;
   return linked&&String(linked)!==id?null:id;
  }catch{return null}
