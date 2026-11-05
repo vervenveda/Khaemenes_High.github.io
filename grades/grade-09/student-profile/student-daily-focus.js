@@ -45,16 +45,16 @@ const breakfast=[
  "Try leftovers from a balanced meal if that sounds good."
 ];
 const tasks=[
- {key:"breakfast",title:"Breakfast & hydration",detail:()=>breakfast[new Date().getDay()]+" Drink some water, too.",},
+ {key:"breakfast",title:"Breakfast & hydration",detail:()=>breakfast[new Date().getDay()]+" Drink some water, too.",action:"Explore Culinary Arts",href:"https://vervenveda.com/Khaemenes_Academy_Life_Skills.github.io/courses/culinary-independence/"},
  {key:"wash",title:"Get ready, stretch & breathe",detail:()=>"Brush your teeth, wash up, then enjoy a gentle stretch and comfortable breathing break.",action:"Visit Aurora",href:"https://vervenveda.com/aurora.github.io/"},
  {key:"journal",title:"Morning journal",detail:()=>"Write a short reflection or set an intention for today.",action:"Open daily journal",href:"daily-lessons/#todaysNote"},
- {key:"lunch",title:"Lunch & rest",detail:()=>"Take time to eat lunch, drink water, and enjoy a screen break."},
+ {key:"lunch",title:"Lunch & rest",detail:()=>"Take time to eat lunch, drink water, and enjoy a screen break.",action:"Open High School PE",href:"https://vervenveda.com/Khaemenes_High.github.io/courses/physical-education/"},
  {key:"movement",title:"Afternoon movement / PE",detail:()=>"Choose a comfortable activity or continue your Physical Education class.",action:"Open PE class",subject:"physicalEducation"},
  {key:"elective",title:"Today's elective",detail:()=>"Explore today's selected elective or creative practice.",action:"Open elective",subject:"elective"},
  {key:"life",title:"Life skills",detail:()=>"Practice a useful household, planning, or everyday independence skill.",action:"Open Psychology / Life Skills",subject:"psychology"},
- {key:"family",title:"Family or friend time",detail:()=>"Make time to connect, talk, play, or help someone you care about."},
+ {key:"family",title:"Family or friend time",detail:()=>"Make time to connect, talk, play, or help someone you care about.",action:"Family Activity Center",href:"https://vervenveda.com/Khaemenes_High.github.io/family-activity-center/"},
  {key:"arcade",title:"Arcade & recreation break",detail:()=>"Enjoy a little free time with a game, puzzle, or another favorite activity. Remember to take screen breaks.",action:"Visit Academy Arcade",href:"https://vervenveda.com/arcade.github.io/"},
- {key:"bedtime",title:"Evening wash-up & bedtime",detail:()=>"Shower or wash up, brush your teeth, and get ready for a comfortable bedtime that allows enough sleep."}
+ {key:"bedtime",title:"Evening wash-up & bedtime",detail:()=>"Shower or wash up, brush your teeth, and get ready for a comfortable bedtime that allows enough sleep.",action:"Explore Life Skills",href:"https://vervenveda.com/Khaemenes_Academy_Life_Skills.github.io/"}
 ];
 const container=el("section","grade09-daily-focus");container.id="grade09DailyFocus";
 container.setAttribute("aria-label","To Do Today personal routine");
