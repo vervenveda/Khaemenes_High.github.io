@@ -10,7 +10,7 @@ const catalog=window.KhaemenesHighEightClass,pins=window.KhaemenesHighCoursePins
   profile=window.KhaemenesStudentProfileV2,continuation=window.KhaemenesLearningContinuation;
 if(!catalog||!pins)return;
 const highRoot="https://vervenveda.com/Khaemenes_High.github.io/";
-const builder="https://vervenveda.com/Khaemenes_High.github.io/grades/grade-09/student-profile/profile/";
+const builder=grade==="10"?highRoot+"grades/grade-10/student-profile/profile/":highRoot+"grades/student-profile/";
 const $=id=>document.getElementById(id);
 const make=(tag,value)=>{const n=document.createElement(tag);if(value!==undefined)n.textContent=value;return n};
 const nameNode=$("studentName"),metaNode=$("studentMeta"),avatar=$("avatar"),list=$("courseManagerGrid");
