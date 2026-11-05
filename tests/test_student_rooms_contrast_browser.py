@@ -91,6 +91,25 @@ def test_student_rooms_reference_contrast_desktop_mobile():
                         assert rooms.count() == parent.count() == campus.count() == 1
                         assert rooms.is_visible() and parent.is_visible() and campus.is_visible()
                         assert rooms.locator("a.door").count() == 4
+                        if scenario == "default" and width == 1280:
+                            audit = page.evaluate("""() => {
+                                const css='student-profile-rooms-contrast.css';
+                                const nodes=['.student-rooms-contrast','.student-access-contrast','.student-campus-contrast'];
+                                return {
+                                    sheets:[...document.styleSheets].map(s=>s.href||'INLINE').filter(x=>x.includes(css)),
+                                    sections:nodes.map(q=>{
+                                        const el=document.querySelector(q), computed=getComputedStyle(el);
+                                        return {name:q,domParent:el.parentElement?.className,
+                                            selectorMatch:el.matches('html body main .grid > section'+q),
+                                            inline:el.getAttribute('style'),
+                                            background:computed.backgroundColor,
+                                            image:computed.backgroundImage,
+                                            title:getComputedStyle(el.querySelector('h2')).color,
+                                            customMode:el.getAttribute('data-student-section-color-override')}
+                                    })
+                                };
+                            }""")
+                            print("CSS_TOPOLOGY_DIAGNOSTIC", audit, flush=True)
                         if selected_color:
                             page.wait_for_function(
                                 "() => ['.student-rooms-contrast','.student-access-contrast','.student-campus-contrast'].every("
