@@ -1,0 +1,56 @@
+/* My Learning Today · 09–12 only. Independent from the header, tickers,
+   profile tool rail, To Do Today and portfolio storage. */
+html body main > #learningToday.khae-learning-today-feature{
+ box-sizing:border-box!important;
+ display:block!important;
+ width:min(calc(100% - 33px),1100px)!important;
+ max-width:1100px!important;
+ min-width:0!important;
+ margin:16px auto 12px!important;
+ padding:24px!important;
+ order:initial!important;
+ border:2px solid #243038!important;
+ border-left:7px solid #b48b45!important;
+ border-radius:7px!important;
+ background:#fffdf8!important;
+ color:#243038!important;
+ box-shadow:0 7px 20px rgba(36,48,56,.11)!important;
+}
+html body main > #learningToday.khae-learning-today-feature #learningTodayHeading{
+ color:#243038!important;
+ font:400 clamp(25px,3vw,33px)/1.22 Cinzel,Georgia,serif!important;
+ margin:4px 0 10px!important;
+}
+html body main > #learningToday.khae-learning-today-feature > p:first-child{
+ color:#775b2b!important;font-size:16px!important;line-height:1.4!important;
+}
+html body main > #learningToday.khae-learning-today-feature #learningTodaySummary{
+ color:#34443d!important;font:400 17px/1.55 "Brandon Grotesque",Nunito,Arial,sans-serif!important;
+}
+html body main > #learningToday.khae-learning-today-feature .khae-learning-today-primary{
+ display:flex;flex-wrap:wrap;margin:15px 0 10px;
+}
+html body main > #learningToday.khae-learning-today-feature .khae-learning-today-start{
+ display:inline-flex!important;justify-content:center;align-items:center;
+ min-height:48px;min-width:180px;padding:10px 18px;
+ border:1px solid #243038;border-radius:7px;background:#243038!important;
+ color:#fff8e9!important;-webkit-text-fill-color:#fff8e9!important;
+ text-decoration:none!important;text-align:center;
+ font:400 16px/1.35 "Brandon Grotesque",Nunito,Arial,sans-serif!important;
+}
+html body main > #learningToday.khae-learning-today-feature .khae-learning-today-start:is(:hover,:focus-visible){
+ background:#36504a!important;outline:2px solid #b48b45;outline-offset:2px;
+}
+html body main > #learningToday.khae-learning-today-feature #learningTodayActions .btn{
+ min-height:44px!important;
+ font:400 16px/1.4 "Brandon Grotesque",Nunito,Arial,sans-serif!important;
+ border-radius:7px!important;
+}
+@media(max-width:540px){
+ html body main > #learningToday.khae-learning-today-feature{
+  width:calc(100% - 22px)!important;padding:16px!important;
+ }
+ html body main > #learningToday.khae-learning-today-feature .khae-learning-today-start{
+  width:100%;min-width:0;
+ }
+}
