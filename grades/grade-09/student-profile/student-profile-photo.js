@@ -175,7 +175,12 @@ function fallbackMark(owner){
 function display(){
   const owner=learner();let photo="";
   if(owner)try{
-    const p=localStorage.getItem(keyFor(owner))||"";
+    let p=localStorage.getItem(keyFor(owner))||"";
+    // Preserve an existing upper-grade photo until its owner saves a new one.
+    if(!p&&["10","11","12"].includes(document.body.dataset.grade||"")){
+      const old=JSON.parse(localStorage.getItem("khaemenes.grade"+document.body.dataset.grade+".profile.appearance:"+encodeURIComponent(owner))||"null");
+      if(typeof old?.photo==="string")p=old.photo;
+    }
     if(/^data:image\/jpeg;base64,/.test(p)&&p.length<400000)photo=p;
   }catch{}
   const currentImg=avatar.querySelector("img");
@@ -216,7 +221,22 @@ input.addEventListener("change",async()=>{
 });
 remove.addEventListener("click",()=>{
   const owner=learner();if(!owner)return;
-  try{localStorage.removeItem(keyFor(owner));avatar.replaceChildren(document.createTextNode(fallbackMark(owner)));display();status.textContent="Photo removed."}
+  try{
+    localStorage.removeItem(keyFor(owner));
+    const grade=document.body.dataset.grade||"";
+    if(["10","11","12"].includes(grade)){
+      const key="khaemenes.grade"+grade+".profile.appearance:"+encodeURIComponent(owner);
+      const raw=localStorage.getItem(key);
+      if(raw){
+        const old=JSON.parse(raw);
+        if(old&&typeof old==="object"&&old.photo){
+          const next={...old};delete next.photo;localStorage.setItem(key,JSON.stringify(next));
+        }
+      }
+    }
+    avatar.replaceChildren(document.createTextNode(fallbackMark(owner)));display();
+    status.textContent="Photo removed from this learner's profile.";
+   }
   catch{status.textContent="Unable to remove photo."}
 });
 window.addEventListener("khaemenes-grade09-design-changed",()=>{updateShape();display()});
