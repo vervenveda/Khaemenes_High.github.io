@@ -12,7 +12,15 @@ if(card.parentElement!==main||card.nextElementSibling!==portfolio)portfolio.befo
 card.classList.add("khae-learning-today-feature");
 card.setAttribute("aria-label","My Learning Today · learning tools");
 const grade=String(document.body?.dataset.grade||"09").padStart(2,"0");
-const actionHref=grade==="09"?"daily-lessons/":"#courseManagerGrid";
+// Link to an actual focused lesson/course page, never to a profile section.
+// A visitor registered in another grade returns to that grade's course campus.
+let ownGrade=grade;
+if(grade!=="09"){
+ const registered=window.KhaemenesHighProfileGradeContext?.active?.();
+ if(registered?.gradeNumber&&Number(registered.gradeNumber)!==Number(grade))
+  ownGrade=String(registered.gradeNumber).padStart(2,"0");
+}
+const actionHref=grade==="09"?"daily-lessons/":"../../grade-"+ownGrade+"/#courses";
 const actionLabel=grade==="09"?"Start Daily Lessons":"Go to My Classes";
 let dedicated=card.querySelector("#khaeLearningTodayPrimary");
 if(!dedicated){
@@ -26,5 +34,21 @@ if(!dedicated){
  holder.append(dedicated);
  card.querySelector("#learningTodayActions")?.before(holder);
 }
-window.KhaemenesLearningTodayPlacement=Object.freeze({version:1});
+// The course engine still writes continuation previews to its original nodes.
+// Keep those nodes mounted for compatibility, but remove every redundant action
+// from visual presentation, assistive navigation, and keyboard focus.
+for(const id of ["learningTodayActions","learningTodayCourses"]){
+ const oldNode=document.getElementById(id);
+ if(!oldNode)continue;
+ oldNode.hidden=true;
+ oldNode.inert=true;
+ oldNode.setAttribute("aria-hidden","true");
+}
+// In a reused page, normalize the one featured navigation link in place.
+dedicated=card.querySelector(".khae-learning-today-start");
+if(dedicated){
+ dedicated.href=actionHref;
+ dedicated.textContent=actionLabel;
+}
+window.KhaemenesLearningTodayPlacement=Object.freeze({version:2});
 })();
