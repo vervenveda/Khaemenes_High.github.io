@@ -22,8 +22,12 @@ function learner(){
   const active=window.KhaemenesStudentProfileV2?.activeLearner?.()?.learnerId;
   if(active&&String(active)!==String(p.learnerId))return null;
   const entry=read("khaemenes_family_registry_v1")?.learners?.[p.learnerId];
-  const grade=entry?.grade||p.grade;
-  if(grade!==undefined&&grade!==null&&!/^(?:grade[\s-]*)?0?9$/i.test(String(grade)))return null;
+  // A selected learner must be explicitly registered in Grade 09.
+  // Missing grade or a different high-school grade is never sufficient.
+  if(!entry||String(entry.learnerId)!==String(p.learnerId))return null;
+  if(entry.stage!=="high"||!/^(?:grade[\s-]*)?0?9$/i.test(String(entry.grade??"")))return null;
+  // Recheck selection before any learner-owned write.
+  if(contract.readAcademyProfile?.()?.learnerId!==p.learnerId)return null;
   return p;
  }catch{return null}
 }
@@ -110,11 +114,18 @@ function buildReport(p,slots,items){
 }
 function publish(p,slots){
  if(!p)return;
+ // Parent reports are derived summaries, not course grade records.
+ // Avoid rewriting localStorage merely because the window regains focus.
+ if(learner()?.learnerId!==p.learnerId)return;
  const current=buildReport(p,slots,tasks);
  const data=read(reportKey(p));
- const reports=data?.reports&&typeof data.reports==="object"?data.reports:{};
+ const reports=data?.reports&&typeof data.reports==="object"?{...data.reports}:{};
+ const previous=reports[current.date];
+ const evidence=record=>JSON.stringify({habits:record?.habits,classes:record?.classes,masteryRule:record?.masteryRule});
+ if(previous&&evidence(previous)===evidence(current))return;
  reports[current.date]=current;
  const recent=Object.keys(reports).sort().reverse().slice(0,31);
+ if(learner()?.learnerId!==p.learnerId)return;
  write(reportKey(p),{version:1,learnerId:p.learnerId,reports:Object.fromEntries(recent.map(k=>[k,reports[k]]))});
 }
 function makeHabit(task,i,p,record,slots){
