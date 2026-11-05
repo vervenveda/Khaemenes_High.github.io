@@ -50,15 +50,24 @@ def test_grade10_profile_rooms_desktop_and_mobile():
                         assert page.locator("main").count() == 1, f"{route}: one main landmark required"
                         assert page.locator("footer").count() >= 1, f"{route}: footer missing"
                         if route:
-                            hero = page.locator(".g10-hero")
-                            assert hero.is_visible(), f"{route}: Grade 10 room hero is missing"
-                            assert page.locator(".g10-rooms a").count() >= 5
                             assert page.locator("body").get_attribute("data-grade") == "10"
-                            # Empty storage is not a valid learner session. Owner-only controls fail closed.
-                            if route in ["daily-lessons/", "settings/"]:
-                                assert not page.locator("[data-owner-only]").first.is_visible(), (
-                                    f"{route}: private controls visible without learner selection"
-                                )
+                            if route == "profile/":
+                                # The full editor intentionally reuses the actual Grade 09 hero and form.
+                                assert page.locator(".top .hero").is_visible()
+                                assert page.locator("#grade09LookPanel").count() == 1
+                                assert page.locator("#name").count() == 1
+                                # Without an Academy learner, the editor cannot save a student record.
+                                page.locator("#saveProfile").click()
+                                assert "Choose your existing Academy learner" in page.locator("#status").inner_text()
+                            else:
+                                hero = page.locator(".g10-hero")
+                                assert hero.is_visible(), f"{route}: Grade 10 room hero is missing"
+                                assert page.locator(".g10-rooms a").count() >= 5
+                                # Empty storage is not a valid learner session. Owner-only controls fail closed.
+                                if route in ["daily-lessons/", "settings/"]:
+                                    assert not page.locator("[data-owner-only]").first.is_visible(), (
+                                        f"{route}: private controls visible without learner selection"
+                                    )
                         else:
                             assert title.inner_text().strip() == "My Student Profile"
                             assert page.locator("a[href='profile/']").count() >= 1
