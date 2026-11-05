@@ -70,13 +70,36 @@ function selectLearner(){
  const p=learner(),id=identity(),info=gradeContext();
  const wrong=info&&info.gradeNumber!==Number(grade);
  if(wrong){
-  nameNode.textContent="Grade "+info.gradeNumber+" learner";
-  metaNode.textContent="This is the Grade "+grade+" campus. Open your registered profile to continue.";
-  $("learningTodaySummary").textContent="Your existing grades and course records remain unchanged.";
-  $("learningTodayActions").replaceChildren(link("Open My Registered Grade",highRoot+"grades/grade-"+info.grade+"/student-profile/","btn gold"));
-  list.replaceChildren();schedule.replaceChildren();if(tools)tools.hidden=true;
+  // A Grade 10 learner viewing Grade 11 must never inherit Grade 11
+  // photo, details, class controls or local decoration merely by visiting.
+  const row=avatar?.closest(".profile-row");
+  const identityCard=row?.closest(".card");
+  identityCard?.setAttribute("data-grade-mismatch","true");
+  avatar.replaceChildren();
+  avatar.textContent=String(info.gradeNumber);
+  avatar.setAttribute("aria-label","Registered Grade "+info.gradeNumber);
+  row?.querySelector("#grade09PhotoControls")?.remove();
+  row?.querySelector("#grade09VisibleProfileDetails")?.remove();
+  nameNode.textContent="This is the Grade "+grade+" profile";
+  metaNode.textContent="Your selected Academy learner is registered in Grade "+info.gradeNumber+". No Grade "+grade+" profile information or classes will be changed.";
+  let redirect=$("upperGradeProfileRedirect");
+  if(!redirect){
+   redirect=make("a","Open My Registered Grade "+info.gradeNumber+" Profile");
+   redirect.id="upperGradeProfileRedirect";
+   redirect.className="btn gold";
+   redirect.style.cssText="display:inline-flex;align-items:center;justify-content:center;min-height:48px;margin-top:12px;padding:10px 16px;border-radius:7px;color:#243038;background:#ead6a4;text-decoration:none;font-size:16px";
+   metaNode.insertAdjacentElement("afterend",redirect);
+  }
+  redirect.href=highRoot+"grades/grade-"+info.grade+"/student-profile/";
+  $("learningTodaySummary").textContent="This campus is for Grade "+grade+". Your registered learner's schedules, progress, and saved work remain unchanged.";
+  $("learningTodayActions").replaceChildren(link("Go to Grade "+info.grade,redirect.href,"btn gold"));
+  list.replaceChildren();schedule.replaceChildren();
+  if(tools)tools.hidden=true;
   return false;
  }
+ const wrongMarker=$("upperGradeProfileRedirect");
+ if(wrongMarker)wrongMarker.remove();
+ avatar?.closest(".card")?.removeAttribute("data-grade-mismatch");
  if(tools)tools.hidden=false;
  let savedProfile=null;
  if(id)try{
