@@ -25,6 +25,8 @@ for(const grade of ["10","11","12"]){
  assert.match(profile,/id="saveProfile"/);
  assert.match(profile,/id="exportProfile"/);
  assert.match(profile,/id="profileStatus"/);
+ assert.match(profile,/\{label:"PORTFOLIO",href:"\.\.\/\.\.\/\.\.\/\.\.\/portfolio\/"\}/,"Grade "+grade+" portfolio nav must have a valid local route");
+ assert.doesNotMatch(profile,new RegExp('label:"'+grade+'S"'),"Grade "+grade+" must not produce a substituted menu label");
  assert.match(profile,/vnv-header-autopopulate\.js/);
  assert.match(profile,/vnv-ecosystem-toolbar\.js/);
  for(const url of ["../../../shared/upper-grade-profile-editor.js"]){
