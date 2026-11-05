@@ -108,14 +108,28 @@ function render(){
   row.append(label,create("p","grade09-daily-task-detail",task.detail()));
   if(task.action){
    const href=task.subject?route(task.subject):task.url;
-   if(href&&ctx){
-    const anchor=create("a","grade09-daily-task-link",task.action);
-    anchor.href=href;row.append(anchor);
-   }else if(!ctx){
-    const text=create("span","grade09-daily-focus-note","Select your registered Grade "+grade+" learner to open activities.");
-    text.style.cssText="grid-column:2;grid-row:3";row.append(text);
+   const registered=context.active();
+   const visiting=["11","12"].includes(String(grade))&&!ctx;
+   // Public wellness/recreation links are not learner-specific.
+   const publicResource=task.key==="wash"||task.key==="arcade";
+   const registeredProfile=registered?.gradeNumber>=9&&registered?.gradeNumber<=12
+    ?"https://vervenveda.com/Khaemenes_High.github.io/grades/grade-"+
+      String(registered.gradeNumber).padStart(2,"0")+"/student-profile/":null;
+   let destination=null,labelText=task.action;
+   if(ctx&&href)destination=href;
+   else if(visiting&&publicResource&&href)destination=href;
+   else if(visiting&&registeredProfile){
+    destination=registeredProfile;
+    labelText="Open in Grade "+registered.gradeNumber;
+   }
+   if(destination){
+    const anchor=create("a","grade09-daily-task-link",labelText);
+    anchor.href=destination;
+    if(!ctx&&!publicResource)anchor.title="Open the registered learner's own campus before working in private student resources";
+    row.append(anchor);
    }else{
-    const text=create("span","grade09-daily-focus-note","Class link unavailable; use My Schedule Bar.");
+    const message=ctx?"Class link unavailable; use My Schedule Bar.":"Select your registered Grade "+grade+" learner to open activities.";
+    const text=create("span","grade09-daily-focus-note",message);
     text.style.cssText="grid-column:2;grid-row:3";row.append(text);
    }
   }
