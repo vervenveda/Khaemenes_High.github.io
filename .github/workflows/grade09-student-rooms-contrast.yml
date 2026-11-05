@@ -1,0 +1,37 @@
+name: Grade 09 Student Rooms Contrast Verification
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'grades/grade-09/student-profile/index.html'
+      - 'grades/shared/student-profile-rooms-contrast.css'
+      - 'tests/test_student_rooms_contrast_browser.py'
+      - '.github/workflows/grade09-student-rooms-contrast.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  rooms-contrast:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install headless browser verifier
+        run: |
+          python -m pip install pytest playwright
+          python -m playwright install --with-deps chromium
+      - name: Verify contrast and capture 1280px / 390px screenshots
+        run: python -m pytest -q -s tests/test_student_rooms_contrast_browser.py
+      - name: Preserve visual verification images
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: grade09-student-rooms-reference-screenshots
+          path: artifacts/grade09-student-rooms/*.png
+          if-no-files-found: warn
+          retention-days: 14
