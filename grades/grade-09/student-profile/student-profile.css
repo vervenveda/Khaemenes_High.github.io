@@ -1881,3 +1881,41 @@ html:root:root body #grade09Explore .grade09-featured-card:focus-visible{
  html:root:root body #grade09Explore .grade09-featured-card{transition:none!important}
  html:root:root body #grade09Explore .grade09-featured-card:hover{transform:none!important}
 }
+
+/* Grade 09 Daily Focus: accessible status + centered introductory/report text, scoped. */
+html body .grade09-profile-first #grade09DailyFocus > .grade09-daily-focus-explanation,
+html body .grade09-profile-first #grade09DailyFocus > .grade09-daily-focus-note{
+  box-sizing:border-box;
+  width:100%;
+  max-width:940px;
+  margin:0 auto!important;
+  padding:8px 20px!important;
+  text-align:center!important;
+  line-height:1.55!important;
+  font-size:16px!important;
+}
+html body .grade09-profile-first #grade09DailyFocus > .grade09-daily-focus-count{
+  box-sizing:border-box;
+  width:100%;
+  margin:0 auto!important;
+  padding:13px 20px!important;
+  text-align:center!important;
+  color:#fff8e9!important;
+  -webkit-text-fill-color:#fff8e9!important;
+  background:#263839!important;
+  background-image:none!important;
+  font:400 16px/1.5 "Brandon Grotesque",Nunito,Arial,sans-serif!important;
+  opacity:1!important;
+  text-shadow:none!important;
+}
+html body .grade09-profile-first #grade09DailyFocus > a.grade09-daily-task-link{
+  box-sizing:border-box;
+  width:min(100%,940px)!important;
+  max-width:940px!important;
+  margin:5px auto 0!important;
+}
+@media(max-width:540px){
+  html body .grade09-profile-first #grade09DailyFocus > :is(.grade09-daily-focus-explanation,.grade09-daily-focus-note,.grade09-daily-focus-count){
+    padding-inline:14px!important;
+  }
+}
