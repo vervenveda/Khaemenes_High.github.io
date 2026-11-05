@@ -33,8 +33,14 @@ function mountProfileFirst(){
  if(!tools){tools=document.createElement("section");tools.id="grade09BlueprintTools";const head=document.createElement("h2");head.textContent="My Profile Tools";tools.append(head)}
  if(tools.parentElement!==top)top.append(tools);
  if(todayCard.parentElement!==top)top.append(todayCard);
+ // Grade 09 visual order: profile hero -> tools -> To Do Today -> Student Portfolio.
+ // Reuse the original portfolio node, preserving its links and its own storage.
+ const portfolio=main.querySelector('aside[aria-label="Student Learning Portfolio"]');
+ if(portfolio&&portfolio.previousElementSibling!==top)top.insertAdjacentElement("afterend",portfolio);
  const scheduleSection=main.querySelector(".grade09-priority-schedule");
- if(scheduleSection&&scheduleSection.previousElementSibling!==top)top.insertAdjacentElement("afterend",scheduleSection);
+ const predecessor=portfolio||top;
+ if(scheduleSection&&scheduleSection.previousElementSibling!==predecessor)
+   predecessor.insertAdjacentElement("afterend",scheduleSection);
 }
 mountProfileFirst();
 const langOptions=["spanish","french","german","mandarin","japanese","arabic","russian"];
