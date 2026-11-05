@@ -1,0 +1,22 @@
+name: Four Grade Profile Route Regression
+on:
+  push:
+    branches:
+      - repair/four-grade-profile-routes-20261105
+    paths:
+      - 'grades/grade-10/student-profile/**'
+      - 'grades/grade-11/student-profile/**'
+      - 'grades/grade-12/student-profile/**'
+      - 'grades/shared/upper-grade-profile-editor.js'
+      - 'grades/shared/grade09-blueprint-upper-grade.js'
+      - 'grades/student-profile/index.html'
+      - 'tests/high-four-grade-profile-routing.mjs'
+      - '.github/workflows/four-grade-profile-routing.yml'
+  workflow_dispatch:
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Grade-aware profile routes and owner guards
+        run: node tests/high-four-grade-profile-routing.mjs
