@@ -309,8 +309,6 @@ function load(){
     grade?'https://vervenveda.com/Khaemenes_High.github.io/grades/grade-'+grade+'/':'../../'
   ];[...nav.querySelectorAll('a')].slice(0,5).forEach((a,i)=>a.href=destinations[i]);}
   const heading=document.querySelector('.top .hero h1');if(heading)heading.textContent=grade?'My Profile · Grade '+Number(grade):'My Profile';
-  const notice=document.getElementById('grade09LearnerNotice');
-  if(notice&&grade===null)notice.hidden=false;
   const classCard=document.getElementById('grade09SevenClassSchedule')?.closest('.card');
   if(classCard&&grade&&grade!=='09'){
     classCard.hidden=false;
