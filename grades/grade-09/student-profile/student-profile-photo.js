@@ -1,6 +1,13 @@
 /* Grade 09 private learner photo + frame editor.
    No external uploads; reuses the learner-owned Grade09Design avatarShape preference. */
 (()=>{"use strict";
+const pageGrade=document.body?.dataset.grade||"";
+if(["10","11","12"].includes(pageGrade)){
+ const registered=window.KhaemenesHighProfileGradeContext?.active?.();
+ // Don't mount an editor for another grade or an unselected learner.
+ if(!registered||registered.gradeNumber!==Number(pageGrade))return;
+}
+
 const avatar=document.getElementById("avatar"),row=avatar?.closest(".profile-row");
 if(!avatar||!row||document.getElementById("grade09PhotoControls"))return;
 const learner=()=>{
