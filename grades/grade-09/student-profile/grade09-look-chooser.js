@@ -269,7 +269,19 @@ function mount(){
   }
   if(!id||id!==owner){refresh();return}
   try{
-   localStorage.removeItem(photoKey(id));photo="";render();
+   localStorage.removeItem(photoKey(id));
+   // Clear only legacy photo fields for this learner in upper-grade
+   // appearance records. Other colors and grade-specific settings survive.
+   for(const grade of ["10","11","12"]){
+    const key="khaemenes.grade"+grade+".profile.appearance:"+encodeURIComponent(id);
+    const raw=localStorage.getItem(key);
+    if(!raw)continue;
+    const appearance=JSON.parse(raw);
+    if(!appearance||typeof appearance!=="object"||!Object.prototype.hasOwnProperty.call(appearance,"photo"))continue;
+    const next={...appearance};delete next.photo;
+    localStorage.setItem(key,JSON.stringify(next));
+   }
+   photo="";render();
    $("grade09RemovePhoto").disabled=true;
    status("Picture removed. Your saved badge and photo frame remain.");signal();
   }catch{status("Could not remove the picture.",true)}
