@@ -1,0 +1,17 @@
+import assert from "node:assert/strict";
+import fs from "node:fs";
+const layout=fs.readFileSync("grades/grade-09/student-profile/dashboard-layout.js","utf8");
+const profile=fs.readFileSync("grades/grade-09/student-profile/index.html","utf8");
+assert.match(layout,/region\.id="grade09Explore"/);
+assert.match(layout,/details\.id="grade09ExploreYearbook"/);
+assert.match(layout,/toggle\.textContent="My School Yearbook"/);
+assert.match(layout,/window\.KhaemenesGrade09Yearbook\?\.open\?\.\(open\)/);
+assert.match(layout,/external\.href="https:\/\/vervenveda\.com\/Academy-Yearbook\.github\.io\/"/);
+assert.match(layout,/yearbook\.id="grade09YearbookDialog"/);
+assert.equal((layout.match(/region\.id="grade09Explore"/g)||[]).length,1);
+assert.equal((layout.match(/details\.id="grade09ExploreYearbook"/g)||[]).length,1);
+assert.match(profile,/#vnv-global-support a\.vnv-support-button/);
+assert.match(profile,/#grade09ExploreYearbook \.grade09-yearbook-explore-actions/);
+assert.match(profile,/-webkit-text-fill-color:#fff8e9!important/);
+assert.match(profile,/font:400 16px\/1\.4 "Brandon Grotesque"/);
+console.log("PASS Grade 09 Yearbook Explore doorway and support contrast source contract.");
