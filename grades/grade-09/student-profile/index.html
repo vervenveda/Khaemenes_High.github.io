@@ -62,8 +62,6 @@ html:root:root body :is(.hero, .header, .page-header, .section-head, .lesson-hea
   html:root:root body { font-size: 14px !important; }
 }
 </style>
-<link rel="stylesheet" href="https://vervenveda.com/Khaemenes_Academy.github.io/assets/khaemenes-global-header.css">
-<link rel="stylesheet" href="https://vervenveda.com/assets/vnv-ecosystem-menu.css">
 <style id="grade09-dashboard-priority">
 /* Compact local dashboard navigation, one Academy emblem only. */
 html:root:root body .top .hero{padding-top:12px!important;padding-bottom:18px!important}
@@ -78,19 +76,6 @@ html:root:root body .top .nav .brand .mark{display:none!important}
 .grade09-priority-schedule .schedule-card{margin:0}
 @media(max-width:680px){.grade09-priority{flex-direction:column;align-items:stretch}.grade09-priority .btn{text-align:center}}
 </style>
-<link rel="stylesheet" href="../../../assets/high-navigation-v1.css" data-high-navigation-css>
-<style id="grade09-dashboard-landing-parity-20261029">
-/* Dashboard presentation only; retain all learner controls, schedules and local records. */
-html body > header[data-khae-header] [data-khae-header-inner]{display:flex!important;align-items:center!important;justify-content:space-between!important;gap:14px!important}
-html body > header[data-khae-header] [data-khae-nav],
-html body > header[data-khae-header] [data-khae-actions]{display:none!important}
-html body > header[data-khae-header] [data-khae-brand]{margin-right:auto!important}
-html body > header[data-khae-header] [data-khae-brand-mark]{display:grid!important;place-items:center!important;width:52px!important;height:52px!important;flex:0 0 52px!important;background:#243038!important;color:#fff8e9!important;border-radius:7px!important}
-html body > header[data-khae-header] [data-vnv-ecosystem-slot]{margin-left:auto!important}
-html body > header[data-khae-header] #vnvEcosystemMenuButton{width:52px!important;height:52px!important;min-width:52px!important;min-height:52px!important;background:#243038!important;color:#fff8e9!important;border-radius:7px!important}
-html body footer.grade09-dashboard-footer{display:flex!important;flex-direction:column!important;align-items:center!important;gap:6px!important;padding:26px 15px!important;text-align:center!important;background:#243038!important;color:#fff8e9!important;font:400 16px/1.45 Cinzel,Georgia,serif!important;border-top:1px solid #b48b45!important}
-html body footer.grade09-dashboard-footer small{font:400 12px/1.45 "Brandon Grotesque",Nunito,Arial,sans-serif!important;color:#e5d6ba!important}
-</style>
 <style id="academy-profile-common-readable-hero-20261101">
 /* Grade-level profile visual contract. Shared controls retain their existing owners. */
 body :is(main, .hero, .ug-hero, .mast) :is(p,li,label,summary,small,button,input,select,textarea){font-size:max(16px,1rem)!important;line-height:1.5!important}
@@ -100,95 +85,6 @@ body :is(.hero,.ug-hero,.mast) h1{font-size:clamp(30px,4.4vw,52px)!important;lin
 body :is(.hero,.ug-hero,.mast) :is(.eyebrow,.ug-eyebrow),body main>.eyebrow{font-size:16px!important;letter-spacing:.045em!important;line-height:1.4!important}
 </style>
 <!-- High School profile-only canonical header alignment; no profile/global UI overrides. -->
-<style id="khae-high-profile-uniform-header-20261103">
-  /* Profile-only refinement: five compact, uniform charcoal shortcuts. */
-  #vnvHeaderAutoPopulate .vnv-header-inner{
-    grid-template-columns:minmax(180px,1fr) auto minmax(180px,1fr)!important;
-    gap:10px!important;
-    align-items:center!important;
-  }
-  #vnvHeaderAutoPopulate .vnv-header-actions{
-    display:flex!important;
-    width:auto!important;
-    min-width:0!important;
-    flex-wrap:nowrap!important;
-    justify-content:center!important;
-    align-items:center!important;
-    gap:7px!important;
-    white-space:nowrap!important;
-  }
-  #vnvHeaderAutoPopulate .vnv-header-actions > a{
-    display:inline-flex!important;
-    align-items:center!important;
-    justify-content:center!important;
-    box-sizing:border-box!important;
-    flex:0 0 auto!important;
-    width:116px!important;
-    min-width:0!important;
-    height:36px!important;
-    min-height:36px!important;
-    padding:6px 9px!important;
-    border:1px solid #242c29!important;
-    border-radius:7px!important;
-    background:#242c29!important;
-    color:#f8f0e3!important;
-    -webkit-text-fill-color:#f8f0e3!important;
-    font-size:11px!important;
-    font-weight:400!important;
-    line-height:1.15!important;
-    letter-spacing:0!important;
-    text-decoration:none!important;
-    text-align:center!important;
-    white-space:nowrap!important;
-  }
-  #vnvHeaderAutoPopulate .vnv-header-actions > a:is(:hover,:focus-visible){
-    background:#36453c!important;
-    border-color:#b48b45!important;
-    color:#f8f0e3!important;
-    -webkit-text-fill-color:#f8f0e3!important;
-  }
-  /* Additional runtime-injected shortcut duplicates the canonical Support dock. */
-  #vnvHeaderAutoPopulate .vnv-header-actions > a:nth-child(n+6){
-    display:none!important;
-  }
-  #vnvHeaderAutoPopulate .vnv-header-menu-button{
-    justify-self:end!important;
-    width:40px!important;height:40px!important;
-    min-width:40px!important;min-height:40px!important;
-    border:1px solid #242c29!important;
-    border-radius:7px!important;
-    background:#242c29!important;
-    color:#f8f0e3!important;
-  }
-  #vnvHeaderAutoPopulate .vnv-header-lines,
-  #vnvHeaderAutoPopulate .vnv-header-lines::before,
-  #vnvHeaderAutoPopulate .vnv-header-lines::after{
-    background:#f8f0e3!important;
-  }
-  #vnvHeaderAutoPopulate :is(#vnvEcosystemMenuButton,#khaeLocalEcosystemToggle){
-    display:none!important;
-  }
-  /* Keep controls usable rather than wrapping under the header on narrow screens. */
-  @media(max-width:1050px){
-    #vnvHeaderAutoPopulate .vnv-header-inner{
-      grid-template-columns:minmax(0,1fr) 40px!important;
-    }
-    #vnvHeaderAutoPopulate .vnv-header-actions{display:none!important;}
-  }
-
-  /* Text inside a separate span prevents the shared auto-contrast
-     initializer from giving cream-on-charcoal buttons dark lettering. */
-  #vnvHeaderAutoPopulate .vnv-header-actions > a > .khae-profile-action-label{
-    display:block!important;
-    color:#f8f0e3!important;
-    -webkit-text-fill-color:#f8f0e3!important;
-    font:400 11px/1.15 "Brandon Grotesque",Nunito,Arial,sans-serif!important;
-    white-space:nowrap!important;
-    text-align:center!important;
-    opacity:1!important;
-  }
-</style>
-
 <!-- Grade 9 hero only; preserves learner controls and lower cards. -->
 <style id="khae-profile-charcoal-hero-20261103">
   .grade09-local-masthead{background:#242c29!important;color:#f8f0e3!important;}
@@ -476,8 +372,6 @@ html body .grade09-contribute-panel .grade09-contribute-action:focus-visible{
 <script src="student-daily-focus.js?v=20261104-ten-daily-habits"></script>
 <script src="class-progress-dialog.js?v=20261104-schedule-modal"></script>
 <script src="study-studio.js?v=20261104-klasaipeer-mentors"></script>
-<script src="../../../assets/high-navigation-v1.js?v=20261030-open-campus" defer></script>
-
 <script src="https://vervenveda.com/assets/vnv-333-ticker.js"></script>
 <script src="https://vervenveda.com/assets/vnv-ticker-autopopulate.js" data-vnv-ticker-autopopulate></script>
 <script>VNV_TICKER.autoPopulate({label:"Grade 9 Profile Quick Links",max:14});</script>
@@ -497,14 +391,7 @@ html body .grade09-contribute-panel .grade09-contribute-action:focus-visible{
       {label:"HOME",href:"../../../"}
     ]
   });
-  // Page-specific cream text labels; no shared component modifications.
-  document.querySelectorAll("#vnvHeaderAutoPopulate .vnv-header-actions > a").forEach((link,index)=>{
-    if(index>=5 || link.querySelector(".khae-profile-action-label"))return;
-    const label=document.createElement("span");
-    label.className="khae-profile-action-label";
-    label.textContent=link.textContent;
-    link.replaceChildren(label);
-  });
+
 </script>
 <script src="https://vervenveda.com/assets/vnv-ecosystem-toolbar.js"></script>
 <script>
