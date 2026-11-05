@@ -1,0 +1,44 @@
+/* Grades 10–12 To Do Today · approved Grade 09 visual contract.
+ * Scoped entirely to upper-grade daily focus; no global chrome or Grade 09 edits.
+ */
+body[data-grade] .grade09-profile-first #upperGradeDailyFocus > .grade09-daily-focus-explanation,
+body[data-grade] .grade09-profile-first #upperGradeDailyFocus > .grade09-daily-focus-note{
+ box-sizing:border-box;width:100%;max-width:940px;margin:0 auto!important;
+ padding:8px 20px!important;text-align:center!important;
+ font:400 16px/1.55 "Brandon Grotesque",Nunito,Arial,sans-serif!important;
+ color:#34423e!important
+}
+body[data-grade] .grade09-profile-first #upperGradeDailyFocus > .grade09-daily-focus-count{
+ box-sizing:border-box;width:min(100%,940px);margin:0 auto!important;
+ padding:13px 20px!important;text-align:center!important;
+ background:#263839!important;background-image:none!important;
+ color:#fff8e9!important;-webkit-text-fill-color:#fff8e9!important;
+ font:400 16px/1.5 "Brandon Grotesque",Nunito,Arial,sans-serif!important;
+ opacity:1!important;text-shadow:none!important;border-radius:7px
+}
+body[data-grade] .grade09-profile-first #upperGradeDailyFocus > a.grade09-daily-task-link{
+ box-sizing:border-box;width:min(100%,940px)!important;
+ max-width:940px!important;margin:5px auto 0!important
+}
+body[data-grade] .grade09-profile-first #upperGradeDailyFocus .grade09-daily-focus-list{
+ grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:14px!important
+}
+body[data-grade] .grade09-profile-first #upperGradeDailyFocus .grade09-daily-task{
+ box-sizing:border-box;width:100%;min-width:0;padding:16px!important;
+ grid-template-columns:35px minmax(0,1fr);
+ grid-template-rows:auto minmax(44px,1fr) auto;
+ gap:10px 12px;border-radius:7px
+}
+body[data-grade] .grade09-profile-first #upperGradeDailyFocus .grade09-daily-task-link{
+ width:100%;box-sizing:border-box
+}
+@media(max-width:790px){
+ body[data-grade] .grade09-profile-first #upperGradeDailyFocus .grade09-daily-focus-list{
+  grid-template-columns:1fr!important
+ }
+}
+@media(max-width:540px){
+ body[data-grade] .grade09-profile-first #upperGradeDailyFocus > :is(.grade09-daily-focus-explanation,.grade09-daily-focus-note,.grade09-daily-focus-count){
+  padding-inline:14px!important
+ }
+}
