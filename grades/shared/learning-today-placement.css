@@ -54,3 +54,10 @@ html body main > #learningToday.khae-learning-today-feature #learningTodayAction
   width:100%;min-width:0;
  }
 }
+
+/* One primary destination only: original course-preview containers are retained for engine
+   compatibility but must never appear as duplicate buttons or class previews. */
+html body main > #learningToday.khae-learning-today-feature #learningTodayActions,
+html body main > #learningToday.khae-learning-today-feature #learningTodayCourses{
+ display:none!important;
+}
