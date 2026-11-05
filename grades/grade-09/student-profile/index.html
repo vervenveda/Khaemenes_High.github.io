@@ -277,6 +277,32 @@ html body .grade09-contribute-panel .grade09-contribute-action:focus-visible{
   outline:3px solid #fff8e9!important;
   outline-offset:3px!important;
 }
+/* Grade 09 support: enforce readable button text regardless of shared support theme. */
+html:root:root body #vnv-global-support a.vnv-support-button,
+html:root:root body #vnv-global-support a.vnv-support-button:link,
+html:root:root body #vnv-global-support a.vnv-support-button:visited,
+html:root:root body .grade09-contribute-panel a.grade09-contribute-action,
+html:root:root body .grade09-contribute-panel button.grade09-contribute-action{
+  background:#243038!important;
+  background-image:none!important;
+  color:#fff8e9!important;
+  -webkit-text-fill-color:#fff8e9!important;
+  border:1px solid #b48b45!important;
+  opacity:1!important;
+  text-decoration:none!important;
+  font:400 16px/1.4 "Brandon Grotesque",Nunito,Arial,sans-serif!important;
+  min-height:44px!important;
+  border-radius:7px!important;
+}
+html:root:root body #vnv-global-support a.vnv-support-button :is(span,strong),
+html:root:root body .grade09-contribute-panel a.grade09-contribute-action :is(span,strong){
+  color:#fff8e9!important;
+  -webkit-text-fill-color:#fff8e9!important;
+}
+html:root:root body #vnv-global-support a.vnv-support-button:focus-visible{
+  outline:3px solid #b48b45!important;
+  outline-offset:3px!important;
+}
 </style>
 <footer class="footer grade09-dashboard-footer"><div>Verve N Veda · Khaemenes Academy</div><small>Jennifer Kay Pearl · 2026</small></footer>
 <script src="https://vervenveda.com/assets/vnv-forensic-ui-inspector.js?v=1.1.0-layout-shifts"></script>
