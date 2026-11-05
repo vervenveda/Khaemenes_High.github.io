@@ -332,7 +332,18 @@ toolGrid.append(opener);
 function refresh(){
  const owner=person();
  currentOwner=owner;
- pageColor=isColor(read(colorsKey(storageOwner())))?read(colorsKey(storageOwner())):base;
+ const canonicalColor=read(colorsKey(storageOwner()));
+ let legacyColor=null;
+ const grade=document.body.dataset.grade||"";
+ if(!isColor(canonicalColor)&&owner&&["10","11","12"].includes(grade)){
+  try{
+   const prev=JSON.parse(read("khaemenes.grade"+grade+".profile.appearance:"+encodeURIComponent(owner))||"null");
+   if(isColor(prev?.background))legacyColor=prev.background;
+  }catch{}
+ }
+ // Existing upper-grade backgrounds are read, not migrated or overwritten.
+ // A newly selected background is saved under the canonical learner key.
+ pageColor=isColor(canonicalColor)?canonicalColor:(legacyColor||base);
  pageSticker=(emojiList.includes(read(stickerKey(storageOwner())))||earnedStickers(owner).includes(read(stickerKey(storageOwner()))))?read(stickerKey(storageOwner())):"";
  const rawImage=read(imageKey(storageOwner()))||"";
  savedImage=/^data:image\/jpeg;base64,[a-z0-9+/=]+$/i.test(rawImage)&&rawImage.length<700000?rawImage:"";
