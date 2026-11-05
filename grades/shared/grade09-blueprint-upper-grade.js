@@ -138,31 +138,129 @@ function selectLearner(){
  }else avatar.textContent=badge||name.split(/\s+/).filter(Boolean).slice(0,2).map(w=>w[0]).join("").toUpperCase()||"S";
  return true;
 }
+function upperGradeDialog(id,title,renderContents){
+ let dlg=$(id);
+ if(!dlg){
+  dlg=make("dialog");dlg.id=id;
+  dlg.setAttribute("aria-label",title+" · Grade "+grade);
+  dlg.style.cssText="box-sizing:border-box;width:min(94vw,820px);max-width:820px;max-height:90vh;overflow:auto;margin:auto;padding:18px;border:2px solid #b48b45;border-radius:7px;background:#fffaf0;color:#243038;box-shadow:0 18px 55px #0007";
+  const top=make("div");
+  top.style.cssText="display:flex;align-items:center;justify-content:space-between;gap:14px;flex-wrap:wrap;margin-bottom:15px";
+  const h=make("h2",title+" · Grade "+grade);
+  h.style.cssText="margin:0;color:#243038;font:400 25px/1.3 Cinzel,Georgia,serif";
+  const close=make("button","Close");
+  close.type="button";close.style.cssText="min-height:44px;padding:8px 16px;border:1px solid #243038;border-radius:7px;background:#243038;color:#fff8e9;font:400 16px Nunito,Arial,sans-serif";
+  close.addEventListener("click",()=>dlg.close());
+  top.append(h,close);
+  const content=make("section");content.dataset.upperGradeDialogContent="true";
+  content.style.cssText="display:grid;gap:12px";
+  dlg.append(top,content);document.body.append(dlg);
+  dlg.addEventListener("click",e=>{if(e.target===dlg)dlg.close()});
+ }
+ renderContents(dlg.querySelector("[data-upper-grade-dialog-content]"));
+ if(typeof dlg.showModal==="function"){
+  if(!dlg.open)dlg.showModal();
+  dlg.querySelector("button")?.focus();
+ }else dlg.setAttribute("open","");
+}
+function showUpperProgress(){
+ upperGradeDialog("upperGradeClassProgressDialog","Class Progress",content=>{
+  content.replaceChildren();
+  const registered=gradeContext();
+  if(!registered||registered.gradeNumber!==Number(grade)){
+   content.append(make("p","Select your registered Grade "+grade+" learner to view class continuation."));return;
+  }
+  content.append(make("p","Course continuation and pinned classes are displayed here; official grades and mastery remain in their course records."));
+  const map=new Map(snapshots().map(entry=>[entry.courseId,entry]));
+  for(const item of slots()){
+   const card=make("article");
+   card.style.cssText="padding:12px;border:1px solid #cbb99c;border-radius:7px;background:#fffdf8";
+   const h=make("h3",item.title);h.style.cssText="margin:0 0 5px;font:400 19px Cinzel,Georgia,serif";
+   const state=map.get(item.id);
+   const detail=state?.summary||state?.nextTitle|| (readPins().includes(item.id)?"Pinned · no continuation evidence yet":"No continuation evidence yet");
+   const p=make("p",detail);p.style.cssText="margin:5px 0;font-size:16px";
+   card.append(h,p);content.append(card);
+  }
+ });
+}
+function showUpperSchedule(){
+ upperGradeDialog("upperGradeScheduleDialog","My Schedule",content=>{
+  content.replaceChildren();
+  const registered=gradeContext();
+  if(!registered||registered.gradeNumber!==Number(grade)){
+   content.append(make("p","Select your registered Grade "+grade+" learner to view your schedule."));return;
+  }
+  const intro=make("p","Your eight Grade "+grade+" subjects. Course choices remain managed by the grade-specific curriculum.");
+  intro.style.cssText="font-size:16px";content.append(intro);
+  const grid=make("div");grid.className="grade09-blueprint-schedule-grid";
+  for(const item of slots()){
+   const card=make("article");card.className="grade09-blueprint-schedule-item";
+   card.append(make("strong",item.label),make("span",item.title));
+   const route=href(item);
+   if(route)card.append(link("Open class",route,"btn secondary"));
+   grid.append(card);
+  }
+  content.append(grid);
+ });
+}
+function revealUpper(id){
+ const target=$(id);
+ if(!target)return;
+ const details=target.closest("details");
+ if(details)details.open=true;
+ target.scrollIntoView({behavior:"smooth",block:"start"});
+ target.setAttribute("tabindex","-1");
+ try{target.focus({preventScroll:true})}catch{}
+}
 function renderTools(){
  if(!tools)return;
- // Keep a stable rail: background and portrait modules attach controls here.
- // Never replace the whole rail during a course/profile refresh.
+ // Share Grade 09's exact eight-button vocabulary and 4×2 order;
+ // grade-specific continuation and schedule remain isolated.
  let head=tools.querySelector(":scope > h2");
  if(!head){head=make("h2","My Profile Tools");tools.prepend(head)}
  let wrapper=tools.querySelector("#khaeProfileToolRail");
  if(!wrapper){
-  wrapper=make("div");wrapper.id="khaeProfileToolRail";
+  wrapper=make("nav");wrapper.id="khaeProfileToolRail";
+  wrapper.setAttribute("aria-label","My Profile Tools");
   wrapper.append(make("div"));tools.append(wrapper);
  }
  const grid=wrapper.firstElementChild;
  grid.classList.add("grade09-blueprint-tool-grid");
  if(grid.querySelector("[data-upper-grade-link]"))return;
- const buttons=[
-  ["Edit Profile",builder],["Class Progress","#courseManagerGrid"],
-  ["Schedule","#grade09BlueprintSchedule"],["My Grade Campus",highRoot+"grades/grade-"+grade+"/"],
-  ["Academy Tour","https://vervenveda.com/Khaemenes_Academy.github.io/tour/"],
-  ["Creative Tools","#grade09BlueprintRooms"],["Student Portfolio",highRoot+"portfolio/index.html"]
+ const actions=[
+  {label:"Edit Profile",url:builder},
+  {label:"Class Progress",run:showUpperProgress},
+  {label:"Schedule",run:showUpperSchedule},
+  {label:"KlasaiPeer",url:"https://artist1970.github.io/Klasaipeer.github.io/",preview:true},
+  {label:"Yearbook",url:"https://vervenveda.com/Academy-Yearbook.github.io/"},
+  {label:"Creative Tools",run:()=>revealUpper("grade09BlueprintRooms")},
+  {label:"Student Portfolio",run:()=>{
+   const area=document.querySelector('aside[aria-label="Student Learning Portfolio"]');
+   if(area){area.scrollIntoView({behavior:"smooth",block:"start"});area.querySelector("a")?.focus({preventScroll:true})}
+   else location.assign(highRoot+"portfolio/index.html");
+  }}
  ];
- for(const [caption,url] of buttons){
-  const a=link(caption,url,"grade09-blueprint-tool");a.dataset.upperGradeLink="true";grid.append(a);
+ for(const action of actions){
+  const item=make(action.url?"a":"button",action.label);
+  item.className="grade09-blueprint-tool";item.dataset.upperGradeLink="true";
+  if(action.url){
+   item.href=action.url;
+   if(action.preview){
+    item.title="KlasaiPeer public design preview (not enrolled adoption or active chat)";
+    item.setAttribute("aria-label","KlasaiPeer public design preview");
+   }
+  }else{
+   item.type="button";
+   item.addEventListener("click",()=>{
+    const ctx=gradeContext();
+    if(!ctx||ctx.gradeNumber!==Number(grade))return;
+    action.run();
+   });
+  }
+  grid.append(item);
  }
- // The eighth Customize Background control comes from the *existing* Grade 09
- // background module, retaining image uploads, stickers and section colors.
+ // The eighth Customize Background button is owned and mounted exactly once
+ // by Grade 09's existing background-dialog module after this renderer loads.
 }
 
 function renderSchedule(items){
