@@ -37,26 +37,26 @@ const breakfast=[
  "Try leftovers from a balanced meal if that sounds good."
 ];
 const tasks=[
- {key:"breakfast",title:"Breakfast & hydration",detail:()=>breakfast[new Date().getDay()]+" Drink some water, too."},
+ {key:"breakfast",title:"Breakfast & hydration",detail:()=>breakfast[new Date().getDay()]+" Drink some water, too.",action:"Explore Culinary Arts",url:"https://vervenveda.com/Khaemenes_Academy_Life_Skills.github.io/courses/culinary-independence/"},
  {key:"wash",title:"Get ready, stretch & breathe",detail:()=>"Brush your teeth, wash up, then enjoy a gentle stretch and comfortable breathing break.",action:"Visit Aurora",url:"https://vervenveda.com/aurora.github.io/"},
  {key:"journal",title:"Morning journal",detail:()=>"Write a short reflection or set an intention for today.",action:"Open reflection workspace",url:"../../../portfolio/index.html"},
- {key:"lunch",title:"Lunch & rest",detail:()=>"Take time to eat lunch, drink water, and enjoy a screen break."},
+ {key:"lunch",title:"Lunch & rest",detail:()=>"Take time to eat lunch, drink water, and enjoy a screen break.",action:"Open High School PE",subject:"peHealth"},
  {key:"movement",title:"Afternoon movement / PE",detail:()=>"Choose a comfortable activity or continue your Physical Education class.",action:"Open PE class",subject:"peHealth"},
  {key:"elective",title:"Today's elective",detail:()=>"Explore today's selected elective or creative practice.",action:"Open elective",subject:"elective"},
  {key:"life",title:"Life skills",detail:()=>"Practice a useful household, planning, or everyday independence skill.",action:"Open Psychology / Life Skills",subject:"psychology"},
- {key:"family",title:"Family or friend time",detail:()=>"Make time to connect, talk, play, or help someone you care about."},
+ {key:"family",title:"Family or friend time",detail:()=>"Make time to connect, talk, play, or help someone you care about.",action:"Family Activity Center",url:"https://vervenveda.com/Khaemenes_High.github.io/family-activity-center/"},
  {key:"arcade",title:"Arcade & recreation break",detail:()=>"Enjoy a little free time with a game, puzzle, or another favorite activity. Remember to take screen breaks.",action:"Visit Academy Arcade",url:"https://vervenveda.com/arcade.github.io/"},
- {key:"bedtime",title:"Evening wash-up & bedtime",detail:()=>"Shower or wash up, brush your teeth, and get ready for a comfortable bedtime that allows enough sleep."}
+ {key:"bedtime",title:"Evening wash-up & bedtime",detail:()=>"Shower or wash up, brush your teeth, and get ready for a comfortable bedtime that allows enough sleep.",action:"Explore Life Skills",url:"https://vervenveda.com/Khaemenes_Academy_Life_Skills.github.io/"}
 ];
 const wrap=create("section","grade09-daily-focus");wrap.id="upperGradeDailyFocus";
 wrap.setAttribute("aria-label","To Do Today personal routine");
 const help=create("p","grade09-daily-focus-explanation","A balanced day beyond lessons. Personal tasks are self-checked and separate from grades.");
 const count=create("p","grade09-daily-focus-count");count.setAttribute("role","status");
 const list=create("ol","grade09-daily-focus-list");
-const note=create("p","grade09-daily-focus-note","Daily checks and family reports are saved on this browser only. Cross-device sending is not connected.");
+const note=create("p","grade09-daily-focus-note","Daily reports are saved on this browser for an authorized parent to review. Cross-device sending is not connected.");
 const family=create("a","grade09-daily-task-link","Open Family Learning Center");
 family.href="https://vervenveda.com/Khaemenes_Academy.github.io/family/";
-family.style.cssText="max-width:350px";
+family.style.cssText="box-sizing:border-box;width:100%;max-width:940px;margin:5px auto 0";
 wrap.append(help,count,list,note,family);host.append(wrap);
 const study=create("section","grade09-academic-checkpoints");
 study.id="upperGradeAcademicCheckpoints";
@@ -65,7 +65,10 @@ study.append(create("h3","","Today's Class Checkpoints"));
 study.append(create("p","grade09-daily-focus-explanation","Academic mastery is recorded only by each course's assessment engine. Personal checkmarks never award credits, scores or lesson unlocks."));
 const classGrid=create("div","grade09-academic-grid");
 classGrid.style.cssText="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,190px),1fr));gap:12px;margin-top:12px";
-study.append(classGrid);wrap.append(study);
+study.append(classGrid);
+const scheduleCard=document.querySelector(".grade09-priority-schedule .schedule-card");
+if(scheduleCard)scheduleCard.append(study);
+else wrap.append(study);
 let currentId="";
 function slots(){try{return catalog.slots(grade)}catch{return []}}
 function route(subject){
@@ -111,7 +114,7 @@ function render(){
    const registered=context.active();
    const visiting=["11","12"].includes(String(grade))&&!ctx;
    // Public wellness/recreation links are not learner-specific.
-   const publicResource=task.key==="wash"||task.key==="arcade";
+   const publicResource=["breakfast","wash","family","arcade","bedtime"].includes(task.key);
    const registeredProfile=registered?.gradeNumber>=9&&registered?.gradeNumber<=12
     ?"https://vervenveda.com/Khaemenes_High.github.io/grades/grade-"+
       String(registered.gradeNumber).padStart(2,"0")+"/student-profile/":null;
