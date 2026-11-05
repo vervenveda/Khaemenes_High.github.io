@@ -29,6 +29,11 @@ p{margin:0 0 14px}
 .coupon p{margin:8px auto}
 .coupon small{display:block;font-size:16px;color:#45574e}
 .muted{color:#45574e}
+.shuffle-controls{display:flex;flex-wrap:wrap;align-items:center;gap:12px;margin:0 0 15px}
+.shuffle-controls .action{min-height:44px}
+.shuffle-status{font-size:16px;line-height:1.5}
+@media(max-width:530px){.shuffle-controls{flex-direction:column;align-items:stretch}.shuffle-status{text-align:center}}
+
 button{appearance:none}
 footer{padding:24px;text-align:center;color:var(--cream);background:var(--ink)}
 footer a{color:var(--cream)}
@@ -53,6 +58,7 @@ footer a{color:var(--cream)}
 <h1>Family Activity Center</h1>
 <p>Free ideas for time together: plan an evening, try something new, print a promise coupon, or choose a film or game night. Families can adapt every idea for their ages, interests, abilities, and budget.</p>
 <nav aria-label="Family activity navigation">
+<a href="https://vervenveda.com/Khaemenes_High.github.io/grades/grade-09/student-profile/" aria-label="Back to Grade 9 student profile">← Back to Student Profile</a>
 <a href="#ideas">Activity Ideas</a><a href="#movies">Movie Night</a><a href="#games">Game Night</a><a href="#coupons">Printable Coupons</a><a href="https://vervenveda.com/Khaemenes_Academy.github.io/family/">Family Learning Center</a>
 </nav>
 </header>
@@ -100,8 +106,8 @@ footer a{color:var(--cream)}
 </section>
 </main>
 <footer><p>Khaemenes Academy · Family Activity Center · Free access</p><a href="https://vervenveda.com/Khaemenes_Academy.github.io/family/">Back to Family Learning Center</a></footer>
-<script>
-document.getElementById("printCoupons")?.addEventListener("click",()=>window.print());
-</script>
+<!-- Offline-first idea bank and randomized, no-repeat card sampler. No tickers. -->
+<script src="activity-bank.js?v=f9f907e2"></script>
+<script src="activity-rotation.js?v=4bb1ee71"></script>
 </body>
 </html>
