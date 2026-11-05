@@ -31,7 +31,7 @@ const learner=()=>{
   const registry=JSON.parse(localStorage.getItem("khaemenes_family_registry_v1")||"null");
   const record=typeof id==="string"?registry?.learners?.[id]:null;
   if(!record||record.learnerId!==id)return null;
-  if(record.grade&&!["9","09"].includes(String(record.grade)))return null;
+  if(record.stage!=="high"||!["9","09","10","11","12"].includes(String(record.grade)))return null;
   const linked=window.KhaemenesStudentProfileV2?.activeLearner?.()?.learnerId;
   return linked&&String(linked)!==id?null:id;
  }catch{return null}
@@ -140,7 +140,18 @@ function refresh(){
    const savedBadge=localStorage.getItem(badgeKey(owner));
    badge=badges.includes(savedBadge)?savedBadge:"★";
    cardColor=cardPreview(owner);
-   const raw=localStorage.getItem(photoKey(owner))||"";
+   let raw=localStorage.getItem(photoKey(owner))||"";
+    // For students who began in Grades 10–12, read their existing grade
+    // appearance photo if the shared learner portrait has not yet been set.
+    if(!raw){
+      const active=JSON.parse(localStorage.getItem("khaemenes_active_learner_v1")||"null");
+      const record=JSON.parse(localStorage.getItem("khaemenes_family_registry_v1")||"null")?.learners?.[active];
+      const grade=String(record?.grade||"");
+      if(["10","11","12"].includes(grade)&&active===owner){
+        const previous=JSON.parse(localStorage.getItem("khaemenes.grade"+grade+".profile.appearance:"+encodeURIComponent(owner))||"null");
+        if(typeof previous?.photo==="string")raw=previous.photo;
+      }
+    }
    photo=/^data:image\/jpeg;base64,[a-z0-9+/=]+$/i.test(raw)&&raw.length<400000?raw:"";
   }catch{badge="★";cardMode="default";cardColor=parchment;photo=""}
   render();status("Picture, frame and photo-card color are saved locally for this learner.");
@@ -159,6 +170,7 @@ function save(key,value,text){
 }
 function signal(){
  window.dispatchEvent(new Event("khaemenes-grade09-design-changed"));
+  window.dispatchEvent(new Event("khaemenes-high-profile-appearance-changed"));
 }
 async function choosePhoto(file){
  if(!file)return;
