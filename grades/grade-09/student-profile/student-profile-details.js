@@ -212,7 +212,7 @@ function renderDashboard(){
   const visible=fields.flatMap(field=>{
    if(shown[field.id]!==true)return [];
    const value=field.legacy?String(profile[field.id]||"").trim():
-      field.type==="fixed"?field.defaultValue:String(values[field.id]||"").trim();
+      field.type==="fixed"?(field.id==="grade"?registeredGradeLabel():field.defaultValue):String(values[field.id]||"").trim();
    return value?[{label:field.label,value:value.slice(0,2000)}]:[];
   });
   if(!visible.length)continue;
