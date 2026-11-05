@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Grade 10 · My Profile · Khaemenes Academy</title>
+<meta name="description" content="Learner-specific Grade 10 High School profile editing.">
+<style>
+:root{--charcoal:#243038;--cream:#fff8e9;--paper:#f4f0e7;--gold:#b48b45}
+*{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--charcoal);font:400 18px/1.6 "Brandon Grotesque",Nunito,Arial,sans-serif}
+h1,h2{font-family:Cinzel,Georgia,serif;font-weight:400}h1{font-size:clamp(38px,6vw,66px);line-height:1.14;margin:7px 0 12px}
+h2{font-size:clamp(27px,4vw,40px)}a{color:inherit}
+.hero{background:var(--charcoal);color:var(--cream);text-align:center;padding:45px 16px}
+.hero .eyebrow{font:400 clamp(19px,3vw,33px) Cinzel,Georgia,serif;color:#e8cca0}
+.hero p{max-width:800px;margin:0 auto}
+main{max-width:1050px;margin:26px auto 65px;padding:0 16px}
+.card{background:#fffdf8;border:1px solid #c9bca7;border-radius:7px;padding:24px;margin:18px 0}
+.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:15px}
+.field{display:flex;flex-direction:column;gap:7px}
+.field.wide{grid-column:1/-1}
+label{font-size:18px}
+input,textarea{width:100%;min-height:46px;padding:10px;border:1px solid #83958b;border-radius:7px;background:#fff;color:var(--charcoal);font:inherit}
+textarea{min-height:100px}
+.actions,.shortcuts{display:flex;flex-wrap:wrap;gap:10px}
+.btn,button{display:inline-flex;align-items:center;justify-content:center;min-height:44px;padding:9px 15px;border:1px solid var(--charcoal);border-radius:7px;background:var(--charcoal);color:var(--cream);font:400 16px/1.4 "Brandon Grotesque",Nunito,Arial,sans-serif;cursor:pointer;text-decoration:none}
+.btn.secondary{background:var(--cream);color:var(--charcoal)}
+button:disabled{opacity:.55;cursor:not-allowed}
+button:focus-visible,a:focus-visible,input:focus-visible,textarea:focus-visible{outline:3px solid var(--gold);outline-offset:2px}
+.note{padding:13px;border-left:4px solid var(--gold);background:#f9f1e2;border-radius:7px}
+footer{background:var(--charcoal);color:var(--cream);text-align:center;padding:24px;font-size:16px}
+@media(max-width:650px){.grid{grid-template-columns:1fr}.card{padding:16px}.field.wide{grid-column:auto}}
+@media print{.actions,.shortcuts,#vnvEcosystemUtilityDock{display:none!important}.card{box-shadow:none}}
+</style>
+</head><body data-grade="10">
+<div class="hero"><div class="eyebrow">Khaemenes Academy</div><h1>Grade 10 · My Profile</h1><p>Edit your personal details, learning goals, and strengths without changing your courses, assessment evidence, or grade placement.</p></div>
+<main>
+<nav class="shortcuts" aria-label="Grade 10 student navigation"><a class="btn secondary" href="../">Student Dashboard</a><a class="btn secondary" href="../#courseManagerGrid">My Classes</a><a class="btn secondary" href="https://vervenveda.com/arcade.github.io/">Games</a><a class="btn secondary" href="../../">Grade 10 Campus</a></nav>
+<section class="card"><h2>My Profile Details</h2>
+<p>Only the selected Academy learner registered in Grade 10 can save changes here. Profile preferences remain separate from official grades and mastery.</p>
+<div class="grid">
+<div class="field"><label for="name">Display Name</label><input id="name" autocomplete="name"></div>
+<div class="field"><label for="pathway">Pathway / Focus</label><input id="pathway"></div>
+<div class="field"><label for="interests">Interests</label><textarea id="interests"></textarea></div>
+<div class="field"><label for="goals">Current Goals</label><textarea id="goals"></textarea></div>
+<div class="field"><label for="strengths">Strengths</label><textarea id="strengths"></textarea></div>
+<div class="field"><label for="supports">Helpful Supports</label><textarea id="supports"></textarea></div>
+<div class="field wide"><label for="portfolio">Portfolio / Project Links</label><textarea id="portfolio"></textarea></div>
+</div>
+<div class="actions"><button type="button" id="saveProfile">Save My Profile</button><button type="button" id="exportProfile">Export Private JSON</button><button type="button" onclick="window.print()">Print Profile</button></div>
+<p id="profileStatus" class="note" role="status" aria-live="polite" hidden></p>
+<p class="note">A private export includes profile text. Keep it secure. It does not contain course grades or photographs. Picture, frame, and background controls currently live in your grade dashboard's profile tools.</p>
+</section>
+</main><footer>Verve N Veda · Khaemenes Academy · Grade 10</footer>
+<script src="https://vervenveda.com/Khaemenes_Academy.github.io/assets/khaemenes-student-profile-v2.js"></script>
+<script src="../../../shared/upper-grade-profile-editor.js"></script>
+<script src="https://vervenveda.com/assets/vnv-header-autopopulate.js"></script>
+<script>VNV_HEADER.mount({title:"Grade 10 My Profile",subtitle:"Khaemenes Academy · High School",icon:"10",home:"https://vervenveda.com/Khaemenes_Academy.github.io/",actions:[{label:"PROFILE",href:"../"},{label:"LESSONS",href:"../#courseManagerGrid"},{label:"10S",href:"../../../portfolio/"},{label:"GAMES",href:"https://vervenveda.com/arcade.github.io/"},{label:"HOME",href:"../../../../"}]});</script>
+<script src="https://vervenveda.com/assets/vnv-333-ticker.js"></script>
+<script src="https://vervenveda.com/assets/vnv-ticker-autopopulate.js" data-vnv-ticker-autopopulate></script>
+<script>VNV_TICKER.autoPopulate({label:"Grade 10 Profile Quick Links",max:14});</script>
+<script src="https://vervenveda.com/assets/vnv-ecosystem-toolbar.js"></script>
+</body></html>
