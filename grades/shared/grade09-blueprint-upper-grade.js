@@ -74,10 +74,17 @@ function selectLearner(){
   metaNode.textContent="This is the Grade "+grade+" campus. Open your registered profile to continue.";
   $("learningTodaySummary").textContent="Your existing grades and course records remain unchanged.";
   $("learningTodayActions").replaceChildren(link("Open My Registered Grade",highRoot+"grades/grade-"+info.grade+"/student-profile/","btn gold"));
-  list.replaceChildren();schedule.replaceChildren();tools.replaceChildren();
+  list.replaceChildren();schedule.replaceChildren();if(tools)tools.hidden=true;
   return false;
  }
- const name=p?.nickname||p?.displayName||p?.name||"Student";
+ if(tools)tools.hidden=false;
+ let savedProfile=null;
+ if(id)try{
+  const v=JSON.parse(localStorage.getItem("khaemenes-high-profile-v1:learner:"+encodeURIComponent(id))||"null");
+  if(v&&typeof v==="object"&&(!v.learnerId||String(v.learnerId)===String(id))
+    &&(!v.grade||Number(v.grade)===Number(grade)))savedProfile=v;
+ }catch{}
+ const name=savedProfile?.name||savedProfile?.displayName||p?.nickname||p?.displayName||p?.name||"Student";
  nameNode.textContent=name;
  metaNode.textContent="Grade "+grade+" · Local profile workspace";
  avatar.replaceChildren();
@@ -105,7 +112,7 @@ function selectLearner(){
   const img=make("img");img.src=pic;img.alt="Student portrait";
   img.style.cssText="width:100%;height:100%;object-fit:cover";
   avatar.append(img);
- }else avatar.textContent=badge||name[0]?.toUpperCase()||"S";
+ }else avatar.textContent=badge||name.split(/\s+/).filter(Boolean).slice(0,2).map(w=>w[0]).join("").toUpperCase()||"S";
  return true;
 }
 function renderTools(){
