@@ -155,8 +155,26 @@ html:root:root body #grade09BlueprintTools .grade09-blueprint-tool:is(:hover,:fo
 <link rel="stylesheet" href="../../shared/upper-grade-hero-parity.css?v=96c4217ce9e8">
 <link rel="stylesheet" href="../../shared/upper-grade-daily-focus-parity.css?v=2daa183c">
 <link rel="stylesheet" href="../../shared/learning-today-placement.css?v=c18617cc">
+<style id="grade10-grade09-visual-parity-20261105">
+/* Approved Grade 09 visual hierarchy applied locally to Grade 10. */
+html:root body{font-size:16px!important}
+html:root body .top.grade09-local-masthead,
+html:root body .top.grade09-local-masthead .hero{background:#243038!important;color:#fff8e9!important}
+html:root body .top.grade09-local-masthead .hero h1{font:400 clamp(37px,4.5vw,55px)/1.15 Cinzel,Georgia,serif!important;color:#fff8e9!important;text-align:center!important}
+html:root body .top.grade09-local-masthead .hero .eyebrow{font:400 16px/1.4 Cinzel,Georgia,serif!important;color:#e0bf83!important;letter-spacing:.04em!important;text-align:center!important}
+html:root body .top.grade09-local-masthead .hero>p:not(.eyebrow){font-size:16px!important;line-height:1.6!important;color:#fff8e9!important;text-align:center!important;max-width:790px!important}
+html:root body main :is(p,small,label,summary,button,a,.chip,.badge){font-size:16px;line-height:1.5}
+html:root body .grade09-blueprint-tool-grid>*{font-size:16px!important;font-weight:400!important;min-height:48px}
+html:root body .grade09-blueprint-schedule-grid{grid-template-columns:repeat(4,minmax(0,1fr))}
+html:root body .grade09-blueprint-schedule-item{min-width:0;border:1px solid #bba98a;border-radius:7px}
+html:root body .grade09-blueprint-schedule-item :is(strong,span,small){font-size:16px;line-height:1.45}
+html:root body :is(.btn,.door,.grade09-profile-tool){border-radius:7px}
+@media(max-width:930px){html:root body .grade09-blueprint-schedule-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:530px){html:root body .grade09-blueprint-schedule-grid{grid-template-columns:1fr}}
+</style>
 </head>
 <body data-grade="10" data-high-hide-breadcrumbs="true">
+<header data-vnv-header-legacy data-grade10-vnv-placement-anchor hidden aria-hidden="true"></header>
 
 <div class="top grade09-local-masthead">
   <div class="shell hero">
@@ -170,7 +188,7 @@ html:root:root body #grade09BlueprintTools .grade09-blueprint-tool:is(:hover,:fo
         <h2 id="scheduleBarTitle">My Schedule Bar</h2>
         <p>Your eight academic subjects stay in order. Pinned games and study tools remain personal shortcuts, separate from courses, grades and enrollment records.</p>
         <div data-grade09-schedule-bar id="grade09BlueprintSchedule"></div>
-        <p class="schedule-helper"><a href="../../../">Pin games &amp; study tools →</a> · <a href="https://vervenveda.com/Khaemenes_High.github.io/grades/grade-09/student-profile/profile/">Choose language, classes &amp; profile design →</a> · <a href="https://vervenveda.com/Khaemenes_High.github.io/grades/student-profile/">Universal Profile Setup →</a></p>
+        <p class="schedule-helper"><a href="../../../">Pin games &amp; study tools →</a> · <a href="profile/">Choose language, classes &amp; profile design →</a> · <a href="https://vervenveda.com/Khaemenes_High.github.io/grades/student-profile/">Universal Profile Setup →</a></p>
       </section></div><aside aria-label="Student Learning Portfolio" style="max-width:1050px;margin:14px auto;padding:16px;border:1px solid #b9a37f;background:#fff5de;color:#221f1b;border-radius:7px"><h2 style="font-size:24px;font-weight:400">Student Learning Portfolio</h2><p>Keep reflections, writing evidence, project references and independent practice summaries in a learner-specific workspace, separate from daily lesson instructions. Families and teachers can review an exported copy together. Back up reports to a dependable device.</p><p><a href="../../../portfolio/index.html">Open My Learning Evidence →</a></p></aside>
   
   <section class="section">
@@ -181,7 +199,7 @@ html:root:root body #grade09BlueprintTools .grade09-blueprint-tool:is(:hover,:fo
           <div>
             <h2 class="profile-name" id="studentName">Student</h2>
             <div class="subline" id="studentMeta">Grade 10 · Local profile workspace</div>
-            <nav class="grade09-profile-actions" aria-label="Student profile actions"><a class="grade09-profile-action" href="https://vervenveda.com/Khaemenes_High.github.io/grades/grade-09/student-profile/profile/">Edit My Profile</a></nav>
+            <nav class="grade09-profile-actions" aria-label="Student profile actions"><a class="grade09-profile-action" href="profile/">Edit My Profile</a></nav>
           </div>
         </div>
       </article>
@@ -190,7 +208,7 @@ html:root:root body #grade09BlueprintTools .grade09-blueprint-tool:is(:hover,:fo
   <p style="font-size:14px;margin:0;color:#61533d">Your calm starting point</p>
   <h2 id="learningTodayHeading">My Learning Today</h2>
   <p id="learningTodaySummary" role="status" aria-live="polite">Finding your next class…</p>
-  <div class="actions" id="learningTodayActions"><a class="btn gold" href="#courseManagerGrid">Open Daily Lessons</a></div>
+  <div class="actions" id="learningTodayActions"><a class="btn gold" href="daily-lessons/">Open Daily Lessons</a></div>
   <div id="learningTodayCourses" class="lesson-grid" aria-label="Other pinned subjects"></div>
   <p style="font-size:14px">Continue links use existing course progress and pinned choices. This panel does not set grades, mark lessons complete, or require an internet connection to display saved links.</p>
 </section>
@@ -218,22 +236,22 @@ html:root:root body #grade09BlueprintTools .grade09-blueprint-tool:is(:hover,:fo
         <h2 id="doorsTitle">Student Rooms</h2>
         <p>These are the other everyday rooms. The broader Grade 10 campus is available through Exit.</p>
         <div class="door-grid" id="grade09BlueprintRooms">
-          <a class="door" href="#courseManagerGrid"><span><b>Daily Lessons</b><span>See pinned classes, choose today’s work, save a note, and use the daily checklist.</span></span><small>Start Today →</small></a>
-          <a class="door" href="../../../portfolio/index.html"><span><b>Grades</b><span>Open course records, reports, mastery status, and print/export options.</span></span><small>Open Grades →</small></a>
+          <a class="door" href="daily-lessons/"><span><b>Daily Lessons</b><span>See pinned classes, choose today’s work, save a note, and use the daily checklist.</span></span><small>Start Today →</small></a>
+          <a class="door" href="grades/"><span><b>Grades</b><span>Open course records, reports, mastery status, and print/export options.</span></span><small>Open Grades →</small></a>
           <a class="door" href="games/"><span><b>Games</b><span>Open math practice, logic games, learning arcade links, and study breaks.</span></span><small>Open Games →</small></a>
-          <a class="door" href="https://vervenveda.com/Khaemenes_High.github.io/grades/grade-09/student-profile/profile/"><span><b>My Profile</b><span>Edit interests, goals, portfolio links, strengths, supports, and journal notes.</span></span><small>Edit Profile →</small></a>
+          <a class="door" href="profile/"><span><b>My Profile</b><span>Edit interests, goals, portfolio links, strengths, supports, and journal notes.</span></span><small>Edit Profile →</small></a>
         </div>
       </section>
 
       <section class="card col6">
         <h2>Parent Access Rule</h2>
         <p>Parent or guardian access remains active. Student settings do not remove the parent recovery path.</p>
-        <div class="actions"><a class="btn secondary" href="https://vervenveda.com/Khaemenes_High.github.io/grades/grade-09/student-profile/profile/">Open Settings</a></div>
+        <div class="actions"><a class="btn secondary" href="settings/">Open Settings</a></div>
       </section>
       <section class="card col6">
         <h2>Need a Different Door?</h2>
         <p>Use these only when you need the broader campus rather than your daily dashboard.</p>
-        <div class="actions"><a class="btn" href="../">Course Campus</a><a class="btn secondary" href="../../../">High School Home</a></div>
+        <div class="actions"><a class="btn" href="../#courses">Course Campus</a><a class="btn secondary" href="../../../">High School Home</a></div>
       </section>
     </div>
   </section>
@@ -327,7 +345,7 @@ html body .grade09-contribute-panel .grade09-contribute-action:focus-visible{
 <script src="https://vervenveda.com/assets/vnv-ticker-autopopulate.js" data-vnv-ticker-autopopulate></script>
 <script>VNV_TICKER.autoPopulate({label:"Grade 10 Profile Quick Links",max:14});</script>
 <script src="https://vervenveda.com/assets/vnv-header-autopopulate.js"></script>
-<script>VNV_HEADER.mount({replaceLegacy:true,title:"Grade 10 Student Profile",subtitle:"Khaemenes Academy · High School",icon:"10",home:"https://vervenveda.com/Khaemenes_Academy.github.io/",actions:[{label:"PROFILE",href:"https://vervenveda.com/Khaemenes_High.github.io/grades/grade-09/student-profile/profile/"},{label:"LESSONS",href:"#courseManagerGrid"},{label:"PORTFOLIO",href:"../../../portfolio/index.html"},{label:"GAMES",href:"https://vervenveda.com/arcade.github.io/"},{label:"HOME",href:"../../../"}]});</script>
+<script>VNV_HEADER.mount({replaceLegacy:true,title:"Grade 10 Student Profile",subtitle:"Khaemenes Academy · High School",icon:"10",home:"https://vervenveda.com/Khaemenes_Academy.github.io/",actions:[{label:"PROFILE",href:"profile/"},{label:"LESSONS",href:"#courseManagerGrid"},{label:"PORTFOLIO",href:"../../../portfolio/index.html"},{label:"GAMES",href:"https://vervenveda.com/arcade.github.io/"},{label:"HOME",href:"../../../"}]});</script>
 <script src="https://vervenveda.com/assets/vnv-ecosystem-toolbar.js"></script>
 <script src="../../shared/learning-today-placement.js?v=9362d9e6"></script>
 </body></html>
