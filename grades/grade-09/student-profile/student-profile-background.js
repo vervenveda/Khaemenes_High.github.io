@@ -102,6 +102,17 @@ function tile(emoji){
 }
 function paintCard(element,mode,color,sticker,isFirstStep=false){
  if(!element)return;
+ // The three Student Rooms cards have a dark default blueprint, but saved
+ // per-section color choices belong to the learner. Switch the contrast owner
+ // only when a light/dark custom section color is deliberately selected.
+ if(element.matches(".student-rooms-contrast,.student-access-contrast,.student-campus-contrast")){
+  if(mode==="default"){
+   element.removeAttribute("data-student-section-color-override");
+  }else{
+   element.setAttribute("data-student-section-color-override","true");
+   override(element,"--student-section-ink",inkFor(color));
+  }
+ }
  const stickerImage=tile(sticker);
  if(mode==="default"&&!stickerImage)return;
  const targets=isFirstStep?[element,element.querySelector(".focus-card")].filter(Boolean):[element];
