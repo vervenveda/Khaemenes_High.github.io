@@ -108,6 +108,18 @@ function paintCard(element,mode,color,sticker,isFirstStep=false){
  if(element.matches(".student-rooms-contrast,.student-access-contrast,.student-campus-contrast")){
   if(mode==="default"){
    element.removeAttribute("data-student-section-color-override");
+   // The Academy's dark defaults and a learner's custom colors now have ONE
+   // owner. Direct important declarations beat older generic card backgrounds.
+   // All other cards, saved section preferences and learner data are untouched.
+   const dark=element.classList.contains("student-rooms-contrast")?"#254237":"#243038";
+   override(element,"background-color",dark);
+   override(element,"background-image","none");
+   override(element,"color","#fff8e9");
+   for(const node of element.querySelectorAll(":scope > h2,:scope > p")){
+    const ink=node.matches("h2")?"#fff8e9":element.classList.contains("student-rooms-contrast")?"#f0e6d5":"#eee3d0";
+    override(node,"color",ink);
+    override(node,"-webkit-text-fill-color",ink);
+   }
   }else{
    element.setAttribute("data-student-section-color-override","true");
    override(element,"--student-section-ink",inkFor(color));
