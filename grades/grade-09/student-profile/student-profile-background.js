@@ -5,6 +5,13 @@
  */
 (()=>{
 "use strict";
+const pageGrade=document.body?.dataset.grade||"";
+if(["10","11","12"].includes(pageGrade)){
+ const registered=window.KhaemenesHighProfileGradeContext?.active?.();
+ // Don't mount an editor for another grade or an unselected learner.
+ if(!registered||registered.gradeNumber!==Number(pageGrade))return;
+}
+
 const row=document.querySelector(".grade09-profile-first .profile-row");
 const toolGrid=document.querySelector("#khaeProfileToolRail > div");
 if(!row||!toolGrid||document.getElementById("grade09BackgroundDialog"))return;
