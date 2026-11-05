@@ -145,6 +145,24 @@ function mountEditor(){
   }
   details.append(summary,grid);container.append(details);
  }
+ // Dedicated optional portfolio workspace — a navigation section, not another
+ // editable questionnaire or a second learner record. Idempotent on remount.
+ if(!document.getElementById("highStudentPortfolioSection")){
+  const section=tag("details");section.id="highStudentPortfolioSection";
+  section.style.cssText="box-sizing:border-box;min-width:0;padding:12px;border:1px solid #c8b89a;border-radius:7px;background:#f7f1e6";
+  const heading=tag("summary","Student Portfolio");
+  heading.style.cssText="cursor:pointer;color:#243038;font:400 21px/1.3 Cinzel,Georgia,serif;padding:5px";
+  const area=tag("div");area.style.cssText="display:grid;gap:12px;padding:14px 9px 8px;color:#243038";
+  const explanation=tag("p","Continue to your Academy Portfolio Studio for additional learning-workspace features and personal learning evidence. Your High School picture, questionnaire, goals, and grade-specific classes stay managed in their existing places.");
+  explanation.style.cssText="margin:0;color:#243038;font:400 16px/1.55 Nunito,Arial,sans-serif";
+  const link=tag("a","Open Student Portfolio Studio");
+  link.href="https://vervenveda.com/Khaemenes_Academy.github.io/student/profile.html#profileStudio";
+  link.className="btn secondary";
+  link.style.cssText="display:inline-flex;align-items:center;justify-content:center;justify-self:start;min-height:48px;padding:10px 16px;border:1px solid #243038;border-radius:7px;background:#243038;color:#fff8e9;-webkit-text-fill-color:#fff8e9;text-decoration:none;font:400 16px/1.4 Nunito,Arial,sans-serif";
+  area.append(explanation,link);
+  section.append(heading,area);
+  container.append(section);
+ }
  const actions=save.closest(".actions");
  card.insertBefore(container,actions);
  return true;
