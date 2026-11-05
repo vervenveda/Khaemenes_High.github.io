@@ -96,7 +96,14 @@ def test_student_rooms_reference_contrast_desktop_mobile():
                                 const css='student-profile-rooms-contrast.css';
                                 const nodes=['.student-rooms-contrast','.student-access-contrast','.student-campus-contrast'];
                                 return {
-                                    sheets:[...document.styleSheets].map(s=>s.href||'INLINE').filter(x=>x.includes(css)),
+                                    sheets:[...document.styleSheets].map(s=>({href:s.href||'INLINE',disabled:s.disabled,media:s.media?.mediaText,owner:s.ownerNode?.outerHTML?.slice(0,200),rules:s.cssRules?.length})),
+                                    inlineStyleSheets:[...document.adoptedStyleSheets].map(s=>({disabled:s.disabled,rules:s.cssRules?.length})),
+                                    bodyAttrs:document.body.outerHTML.slice(0,450),
+                                    computedMatch:(()=>{const e=document.querySelector('.student-access-contrast'),r=e.getBoundingClientRect();
+                                      return {style:getComputedStyle(e).cssText,background:getComputedStyle(e).background,
+                                        color:getComputedStyle(e).color,rect:[r.width,r.height],
+                                        transition:getComputedStyle(e).transition,animation:getComputedStyle(e).animationName,
+                                        bgFromVar:getComputedStyle(e).getPropertyValue('--panel')}})(),
                                     applicableRules:(()=>{
                                       const e=document.querySelector('.student-access-contrast'),found=[];
                                       for(const sheet of document.styleSheets){
