@@ -343,9 +343,15 @@ function load(){
     strengths:shared?.learningMap?.strengths?.join(', ')||'',
     supports:shared?.learningMap?.supports?.join(', ')||''
   };
+  // The Academy Learning Profile is shared with the portfolio studio.
+  // Prefer its nonempty, learner-specific goals/map values after Studio edits,
+  // without replacing unsynced personal questionnaire data or changing grade.
+  const sharedFields=new Set(['interests','goals','strengths','supports']);
   fields.forEach(id=>{
     const fallback=id==='name'?(learner?.nickname||''):(sharedFallback[id]||'');
-    document.getElementById(id).value=id==='name'?(p.name||p.displayName||p.nickname||fallback):(p[id]||fallback);
+    const primary=id==='name'?(p.name||p.displayName||p.nickname||fallback):(p[id]||fallback);
+    const studioValue=sharedFields.has(id)?sharedFallback[id]:'';
+    document.getElementById(id).value=studioValue||primary;
   });
   window.KhaemenesHighProfileDetails?.load?.(learner ? p : {});
 }
