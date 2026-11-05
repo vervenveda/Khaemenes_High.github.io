@@ -40,7 +40,7 @@ if(!document.getElementById("khaeProfileToolRail")){
   return true;
  };
  const tools=[
-  {label:"Edit Profile",href:"https://vervenveda.com/Khaemenes_Academy.github.io/student/profile.html#profileStudio"},
+  {label:"Edit Profile",href:"profile/"},
   {label:"Class Progress",target:"grade09ClassProgressDialog",run:()=>{
     const popup=document.getElementById("grade09ClassProgressDialog");
     if(popup&&!popup.open)popup.showModal();
