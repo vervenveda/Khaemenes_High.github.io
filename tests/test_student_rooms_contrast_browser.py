@@ -97,6 +97,25 @@ def test_student_rooms_reference_contrast_desktop_mobile():
                                 const nodes=['.student-rooms-contrast','.student-access-contrast','.student-campus-contrast'];
                                 return {
                                     sheets:[...document.styleSheets].map(s=>s.href||'INLINE').filter(x=>x.includes(css)),
+                                    applicableRules:(()=>{
+                                      const e=document.querySelector('.student-access-contrast'),found=[];
+                                      for(const sheet of document.styleSheets){
+                                        let rules;
+                                        try{rules=sheet.cssRules}catch{continue}
+                                        for(const rule of rules){
+                                          if(!rule.selectorText||!rule.style)continue;
+                                          let ok=false;
+                                          try{ok=e.matches(rule.selectorText)}catch{}
+                                          if(!ok)continue;
+                                          for(const prop of ['background','background-color','background-image']){
+                                            const val=rule.style.getPropertyValue(prop);
+                                            if(val)found.push({sheet:sheet.href||'INLINE',selector:rule.selectorText.slice(0,220),
+                                              prop,value:val,priority:rule.style.getPropertyPriority(prop)});
+                                          }
+                                        }
+                                      }
+                                      return found.slice(-32);
+                                    })(),
                                     sections:nodes.map(q=>{
                                         const el=document.querySelector(q), computed=getComputedStyle(el);
                                         return {name:q,domParent:el.parentElement?.className,
