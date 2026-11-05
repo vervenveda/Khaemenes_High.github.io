@@ -89,11 +89,25 @@ function selectLearner(){
  if(id)try{sharedPhoto=localStorage.getItem("khaemenes.grade09.profile.photo:"+encodeURIComponent(id))}catch{}
  const pic=(typeof sharedPhoto==="string"&&sharedPhoto.startsWith("data:image/jpeg;base64,")&&sharedPhoto.length<400000)
    ?sharedPhoto:(savedAppearance?.photo||null);
+ let shape="circle",badge=null;
+ if(id)try{
+  const d=JSON.parse(localStorage.getItem("khaemenes-grade09-profile-design-v1:learner:"+encodeURIComponent(id))||"null");
+  if(["circle","square","soft-square","rectangle","heart","star","octagon","hectagon"].includes(d?.avatarShape))shape=d.avatarShape;
+  const b=localStorage.getItem("khaemenes.grade09.profile.badge:"+encodeURIComponent(id));
+  if(b&&b.length<=3)badge=b;
+ }catch{}
+ const shapes={
+  heart:"polygon(50% 95%,43% 88%,31% 76%,20% 64%,10% 51%,4% 39%,4% 25%,10% 13%,21% 7%,32% 7%,42% 13%,50% 24%,58% 13%,68% 7%,79% 7%,90% 13%,96% 25%,96% 39%,90% 51%,80% 64%,69% 76%,57% 88%)",
+  star:"polygon(50% 2%,63% 34%,98% 36%,71% 58%,80% 94%,50% 75%,20% 94%,29% 58%,2% 36%,37% 34%)",
+  octagon:"polygon(30% 0%,70% 0%,100% 30%,100% 70%,70% 100%,30% 100%,0% 70%,0% 30%)"
+ };
+ avatar.style.setProperty("border-radius",shape==="circle"?"50%":shape==="soft-square"?"24%":"7px","important");
+ avatar.style.setProperty("clip-path",shapes[shape]||"none");
  if(typeof pic==="string"&&pic.startsWith("data:image/jpeg;base64,")&&pic.length<400000){
   const img=make("img");img.src=pic;img.alt="Student portrait";
   img.style.cssText="width:100%;height:100%;object-fit:cover";
   avatar.append(img);
- }else avatar.textContent=name[0]?.toUpperCase()||"S";
+ }else avatar.textContent=badge||name[0]?.toUpperCase()||"S";
  return true;
 }
 function renderTools(){
