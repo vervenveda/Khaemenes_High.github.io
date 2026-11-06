@@ -161,16 +161,16 @@ function render(){
   // Grade 10 uses 16 clearly distinguished personal navigation/checkpoint tiles:
   // one classwork doorway and one review/practice doorway per eight subjects.
   // They never mark assessment progress, credit, or course mastery.
-  const activities=grade===10
-   ? [{kind:"Classwork",action:"Open class"},{kind:"Review & practice",action:"Review class"}]
-   : [{kind:"",action:"Open class"}];
+  // All upper grades show the same sixteen personal navigation checkpoints.
+  // This does not grant credit, completion or mastery.
+  const activities=[{kind:"Classwork",action:"Open class"},{kind:"Review & practice",action:"Review class"}];
   activities.forEach((activity,activityIndex)=>{
    const box=create("article","grade09-academic-box");
    box.style.cssText="display:grid;gap:7px;min-height:128px;padding:12px;border:1px solid #c5b492;border-radius:7px;background:#fffdf8;color:#243038";
-   const number=grade===10?index*2+activityIndex+1:index+1;
+   const number=index*2+activityIndex+1;
    box.append(create("span","grade09-academic-number",String(number).padStart(2,"0")));
    box.append(create("strong","",slot.label));
-   if(activity.kind)box.append(create("small","grade10-checkpoint-kind",activity.kind));
+   if(activity.kind)box.append(create("small","upper-grade-checkpoint-kind",activity.kind));
    box.append(create("small","","Not verified today"));
    const link=slot.href&&/^https:\/\//.test(slot.href)?slot.href:null;
    if(link){const a=create("a","grade09-academic-link",activity.action);a.href=link;box.append(a)}
