@@ -8,6 +8,8 @@ on:
       - 'grades/grade-11/student-profile/index.html'
       - 'grades/grade-12/student-profile/index.html'
       - 'grades/grade-09/student-profile/student-profile-background.js'
+      - 'grades/grade-09/student-profile/student-profile.css'
+      - 'grades/shared/student-rooms-placement.js'
       - 'grades/shared/student-profile-rooms-contrast.css'
       - 'tests/test_student_rooms_contrast_browser.py'
       - '.github/workflows/grade09-student-rooms-contrast.yml'
