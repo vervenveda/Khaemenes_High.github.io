@@ -518,15 +518,18 @@ html:root:root body #vnv-global-support a.vnv-support-button:focus-visible{
       if(!eligible.length)continue;
       const panel=eligible[eligible.length-1];
       panel.classList.add("grade09-contribute-panel");
-      set(panel,"background",dark);
+      // Light-cream emphasis belongs to the contribution card only;
+      // preserve the charcoal footer and the original Stripe action.
+      set(panel,"background","#fffaf2");
       set(panel,"background-image","none");
-      set(panel,"color",ink);
-      set(panel,"border","1px solid #b48b45");
+      set(panel,"color",dark);
+      set(panel,"border","2px solid #b48b45");
       set(panel,"text-align","center");
       for(const node of panel.querySelectorAll("h2,h3,h4,p,small,div,span")){
         if(node.closest("a,button"))continue;
-        set(node,"color",node.matches("small")?subtle:ink);
-        set(node,"-webkit-text-fill-color",node.matches("small")?subtle:ink);
+        const color=node.matches("small")?"#45554c":dark;
+        set(node,"color",color);
+        set(node,"-webkit-text-fill-color",color);
         if(node===heading || /^support free access$/i.test((node.textContent||"").trim())){
           set(node,"text-align","center");
           set(node,"display","block");
