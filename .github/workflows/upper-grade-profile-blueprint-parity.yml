@@ -9,6 +9,10 @@ on:
       - "grades/shared/grade09-blueprint-upper-grade.js"
       - "grades/shared/student-achievements-dreams.js"
       - "grades/shared/student-course-progress-bars.js"
+      - "grades/shared/student-sticker-box.js"
+      - "grades/shared/student-ecosystem-tools.js"
+      - "grades/shared/student-learning-journey.js"
+      - "grades/shared/upper-grade-explore-parity.js"
       - "courses/shared/high-school-eight-class.js"
       - "tests/upper-grade-profile-blueprint-parity.cjs"
       - ".github/workflows/upper-grade-profile-blueprint-parity.yml"
@@ -21,5 +25,16 @@ jobs:
     timeout-minutes: 5
     steps:
       - uses: actions/checkout@v4
+      - name: Check upper-grade JavaScript syntax
+        run: |
+          node --check grades/shared/grade09-blueprint-upper-grade.js
+          node --check grades/shared/student-achievements-dreams.js
+          node --check grades/shared/student-course-progress-bars.js
+          node --check grades/shared/student-sticker-box.js
+          node --check grades/shared/student-ecosystem-tools.js
+          node --check grades/shared/student-learning-journey.js
+          node --check grades/shared/upper-grade-explore-parity.js
+          node --check grades/grade-11/student-profile/grade11-look-chooser.js
+          node --check grades/grade-12/student-profile/grade12-look-chooser.js
       - name: Verify Grade 09 structural baseline and upper-grade routes
         run: node tests/upper-grade-profile-blueprint-parity.cjs
