@@ -89,11 +89,11 @@ function applyPreviewShape(){
  const selected=frame==="soft-square"?"square":(frame==="hectagon"?"oval":frame);
  const polygons={heart,star,octagon,rhombus,semicircle,kite};
  const wide=selected==="rectangle"||selected==="oval";
- box.style.setProperty("width",wide?"220px":"190px");
- box.style.setProperty("height",selected==="rectangle"?"158px":(selected==="oval"?"154px":"190px"));
+ box.style.setProperty("width",wide?"220px":"190px","important");
+ box.style.setProperty("height",selected==="rectangle"?"158px":(selected==="oval"?"154px":"190px"),"important");
  box.style.setProperty("max-width","100%");
  box.style.setProperty("clip-path",polygons[selected]||"none");
- box.style.setProperty("border-radius",selected==="circle"?"50%":(selected==="oval"?"50% / 44%":(selected==="rectangle"||selected==="square"?"7px":"0")));
+ box.style.setProperty("border-radius",selected==="circle"?"50%":(selected==="oval"?"50% / 50%":(selected==="rectangle"||selected==="square"?"7px":"0")),"important");
 }
 function render(){
  const box=$("grade09LookPreview");if(!box)return;
