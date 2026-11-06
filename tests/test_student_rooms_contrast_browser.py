@@ -91,6 +91,29 @@ def test_student_rooms_reference_contrast_desktop_mobile():
                         assert rooms.count() == parent.count() == campus.count() == 1
                         assert rooms.is_visible() and parent.is_visible() and campus.is_visible()
                         assert rooms.locator("a.door").count() == 4
+                        portfolio = page.locator('main > aside[aria-label="Student Learning Portfolio"]')
+                        host = page.locator("main > #studentRoomsAfterPortfolio")
+                        explore = page.locator("main > #grade09Explore")
+                        assert portfolio.count() == host.count() == explore.count() == 1
+                        assert portfolio.evaluate(
+                            "(el) => el.nextElementSibling?.id === 'studentRoomsAfterPortfolio'"
+                        ), "Student Rooms must immediately follow the Student Portfolio"
+                        assert host.evaluate(
+                            "(el) => el.nextElementSibling?.id === 'grade09Explore'"
+                        ), "Explore, Create & Celebrate must immediately follow Student Rooms"
+                        assert all(section.evaluate(
+                            "(el) => el.closest('#studentRoomsAfterPortfolio') !== null"
+                        ) for section in (rooms, parent, campus))
+                        style = explore.evaluate("""el => ({
+                            width: getComputedStyle(el).borderTopWidth,
+                            color: getComputedStyle(el).borderTopColor,
+                            radius: getComputedStyle(el).borderTopLeftRadius
+                        })""")
+                        assert style == {
+                            "width": "3px",
+                            "color": "rgb(36, 48, 56)",
+                            "radius": "7px",
+                        }, f"Explore border departed from approved 3px charcoal blueprint: {style}"
                         if selected_color:
                             page.wait_for_function(
                                 "() => ['.student-rooms-contrast','.student-access-contrast','.student-campus-contrast'].every("
@@ -145,7 +168,10 @@ def test_student_rooms_reference_contrast_desktop_mobile():
                             section.screenshot(
                                 path=str(OUT / f"grade09-{name}-{scenario}-{width}.png")
                             )
-                        print(f"PASS Grade 09 {scenario} three-section contrast at {width}px")
+                        explore.screenshot(
+                            path=str(OUT / f"grade09-explore-{scenario}-{width}.png")
+                        )
+                        print(f"PASS Grade 09 {scenario} ordered rooms and 3px Explore border at {width}px")
                     finally:
                         ctx.close()
         finally:
@@ -175,6 +201,16 @@ def test_student_rooms_upper_grades_reference():
                         assert rooms.count() == parent.count() == campus.count() == 1
                         assert rooms.is_visible() and parent.is_visible() and campus.is_visible()
                         assert rooms.locator("a.door").count() == 4
+                        portfolio = page.locator('main > aside[aria-label="Student Learning Portfolio"]')
+                        host = page.locator("main > #studentRoomsAfterPortfolio")
+                        assert portfolio.count() == host.count() == 1
+                        assert portfolio.evaluate(
+                            "(el) => el.nextElementSibling?.id === 'studentRoomsAfterPortfolio'"
+                        ), f"Grade {grade} Student Rooms not immediately after Portfolio"
+                        for section in (rooms, parent, campus):
+                            assert section.evaluate(
+                                "(el) => el.closest('#studentRoomsAfterPortfolio') !== null"
+                            )
                         for surface in (rooms, parent, campus):
                             assert surface.evaluate(
                                 "(el) => getComputedStyle(el).borderRadius"
