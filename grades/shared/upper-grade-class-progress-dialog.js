@@ -34,7 +34,8 @@ const detail=make("div","grade09-progress-detail");
 detail.setAttribute("aria-live","polite");
 chart.append(chartTitle,intro,filters,status,graph,detail);
 chartArea.append(chart);
-body.append(checkpointsArea,chartArea);
+/* Match the approved Grade 09 popup: graph first, checkpoints underneath. */
+body.append(chartArea,checkpointsArea);
 dialog.append(header,body);
 document.body.append(dialog);
 let selected=0,mode="all",lastLauncher=null;
