@@ -1,0 +1,54 @@
+/* Checkpoints disclosure: Grade 09, 11, 12 only.
+   All other page components and shared ecosystem chrome remain untouched. */
+body.khae-checkpoints-disclosure-enabled .khae-checkpoints-disclosure{
+ box-sizing:border-box;width:min(calc(100% - 28px),1080px);max-width:1080px;
+ margin:22px auto!important;border:3px solid #243038!important;border-radius:7px;
+ background:#f4f0e7!important;color:#243038!important;overflow:hidden;
+}
+body.khae-checkpoints-disclosure-enabled .khae-checkpoints-disclosure>summary{
+ display:list-item;list-style-position:inside;cursor:pointer;
+ padding:17px 22px;text-align:center;
+ font:400 24px/1.35 Cinzel,Georgia,serif!important;
+ color:#243038!important;min-height:55px;
+}
+body.khae-checkpoints-disclosure-enabled .khae-checkpoints-disclosure>summary:focus-visible{
+ outline:3px solid #b48b45;outline-offset:-4px;
+}
+body.khae-checkpoints-disclosure-enabled .khae-checkpoints-disclosure[open]>summary{
+ border-bottom:1px solid #c5b492;
+}
+body.khae-checkpoints-disclosure-enabled .khae-checkpoints-disclosure>.grade09-academic-checkpoints{
+ box-sizing:border-box;width:100%!important;max-width:none!important;
+ margin:0 auto!important;padding:20px!important;border:0!important;
+ background:#f4f0e7!important;text-align:center!important;
+}
+body.khae-checkpoints-disclosure-enabled .khae-checkpoints-disclosure .grade09-academic-checkpoints :is(h3,p){
+ text-align:center!important;margin-left:auto!important;margin-right:auto!important;
+}
+body.khae-checkpoints-disclosure-enabled .khae-checkpoints-disclosure .grade09-academic-grid{
+ display:grid!important;grid-template-columns:repeat(4,minmax(0,1fr))!important;
+ gap:12px!important;margin:18px auto 0!important;justify-items:stretch!important;
+}
+body.khae-checkpoints-disclosure-enabled .khae-checkpoints-disclosure .grade09-academic-box{
+ box-sizing:border-box;min-width:0;min-height:155px;padding:15px!important;
+ display:flex!important;flex-direction:column!important;gap:7px!important;
+ align-items:center!important;justify-content:center!important;text-align:center!important;
+ background:#fffdf8!important;color:#243038!important;
+}
+body.khae-checkpoints-disclosure-enabled .khae-checkpoints-disclosure .grade09-academic-box :is(span,strong,small,a){
+ max-width:100%;text-align:center!important;overflow-wrap:anywhere;
+}
+body.khae-checkpoints-disclosure-enabled .khae-checkpoints-disclosure .grade09-academic-link{
+ width:100%;max-width:175px;margin-top:auto!important;
+ display:inline-flex;align-items:center;justify-content:center;
+}
+@media(max-width:780px){
+ body.khae-checkpoints-disclosure-enabled .khae-checkpoints-disclosure .grade09-academic-grid{
+  grid-template-columns:repeat(2,minmax(0,1fr))!important;
+ }
+}
+@media(max-width:470px){
+ body.khae-checkpoints-disclosure-enabled .khae-checkpoints-disclosure .grade09-academic-grid{
+  grid-template-columns:1fr!important;
+ }
+}
