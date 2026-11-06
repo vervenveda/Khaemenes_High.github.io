@@ -1,0 +1,44 @@
+/* Khaemenes High School student-profile hero contract · 2026-11-05.
+   Approved visual reference: Grade 10 hero.
+   Presentation only: no effect on canonical header, learner state, classes or tools.
+   Grade 10 retains its existing approved local implementation. */
+html:root:root body .top.grade09-local-masthead{
+ background:#243038!important;color:#fff8e9!important;
+}
+html:root:root body .top.grade09-local-masthead .shell.hero{
+ box-sizing:border-box;
+ background:#243038!important;color:#fff8e9!important;
+ padding:55px 24px 60px!important;
+ text-align:center!important;
+}
+html:root:root body .top.grade09-local-masthead .shell.hero>.eyebrow{
+ display:block!important;
+ width:100%!important;max-width:none!important;
+ margin:0 auto 14px!important;
+ font:400 16px/1.55 Cinzel,Georgia,serif!important;
+ letter-spacing:.04em!important;
+ color:#e0bf83!important;-webkit-text-fill-color:#e0bf83!important;
+ text-align:center!important;
+}
+html:root:root body .top.grade09-local-masthead .shell.hero>h1{
+ display:block!important;width:100%!important;max-width:none!important;
+ margin:0 auto 18px!important;
+ font:400 clamp(37px,4.5vw,55px)/1.24 Cinzel,Georgia,serif!important;
+ color:#fff8e9!important;-webkit-text-fill-color:#fff8e9!important;
+ text-align:center!important;
+}
+html:root:root body .top.grade09-local-masthead .shell.hero>p:not(.eyebrow){
+ max-width:730px!important;
+ margin:0 auto!important;
+ font:400 16px/1.8 "Brandon Grotesque",Nunito,Arial,sans-serif!important;
+ color:#fff8e9!important;-webkit-text-fill-color:#fff8e9!important;
+ text-align:center!important;
+}
+@media(max-width:600px){
+ html:root:root body .top.grade09-local-masthead .shell.hero{
+  padding:42px 20px 46px!important;
+ }
+ html:root:root body .top.grade09-local-masthead .shell.hero>h1{
+  margin-bottom:15px!important;
+ }
+}
