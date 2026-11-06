@@ -358,25 +358,25 @@ html body .grade09-contribute-panel .grade09-contribute-action:focus-visible{
 (function(){
  "use strict";
  if(window.KhaemenesGrade11ChromeRepair)return;
- const opts={
-  replaceLegacy:true,title:"Grade 11 Student Profile",
-  subtitle:"Khaemenes Academy · High School",icon:"11",
-  home:"https://vervenveda.com/Khaemenes_Academy.github.io/",
-  actions:[
-   {label:"PROFILE",href:"profile/"},
-   {label:"LESSONS",href:"#grade09BlueprintTools"},
-   {label:"PORTFOLIO",href:"../../../portfolio/index.html"},
-   {label:"GAMES",href:"https://vervenveda.com/arcade.github.io/"},
-   {label:"HOME",href:"../../../"}
-  ]
- };
+
  function repair(){
   if(document.body?.dataset.grade!=="11")return;
   window.VNV333Ticker?.mount?.();
   if(!document.getElementById("vnvTickerAutoPopulate"))
    window.VNV_TICKER?.autoPopulate?.({label:"Grade 11 Profile Quick Links",max:14});
-  if(!document.getElementById("vnvHeaderAutoPopulate"))
-   window.VNV_HEADER?.mount?.(opts);
+  if(!document.getElementById("vnvHeaderAutoPopulate")&&window.VNV_HEADER?.mount)
+   window.VNV_HEADER.mount({
+    replaceLegacy:true,title:"Grade 11 Student Profile",
+    subtitle:"Khaemenes Academy · High School",icon:"11",
+    home:"https://vervenveda.com/Khaemenes_Academy.github.io/",
+    actions:[
+     {label:"PROFILE",href:"profile/"},
+     {label:"LESSONS",href:"#grade09BlueprintTools"},
+     {label:"PORTFOLIO",href:"../../../portfolio/index.html"},
+     {label:"GAMES",href:"https://vervenveda.com/arcade.github.io/"},
+     {label:"HOME",href:"../../../"}
+    ]
+   });
   const cards=document.querySelector('[aria-labelledby="manageClassesTitle"]');
   if(cards){cards.hidden=true;cards.setAttribute("aria-hidden","true");}
   const schedule=document.querySelector(".grade11-data-mount");
