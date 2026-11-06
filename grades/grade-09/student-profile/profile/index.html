@@ -256,7 +256,23 @@ html:root:root body #grade09SevenClassSchedule .grade09-eight-class-pending{
 #grade09LookStatus[data-error=true]{color:#752e31}
 @media(max-width:700px){.grade09-look-layout{grid-template-columns:1fr}#grade09LookPanel{padding:15px}.grade09-look-image{width:140px;height:140px}}
 @media print{.grade09-look-controls{display:none}}
-</style></head>
+</style><style id="grade09-edit-profile-class-button-contrast-20261106">
+/* Four-grade Edit Profile audit: course actions retain cream contrast on charcoal. */
+html:root:root body #grade09SevenClassSchedule .grade09-eight-class-actions :is(a,button){
+ background:#243038!important;background-image:none!important;
+ color:#fff8e9!important;-webkit-text-fill-color:#fff8e9!important;
+ text-decoration:none!important;border:1px solid #b48b45!important;
+ border-radius:7px!important;
+}
+html:root:root body #grade09SevenClassSchedule .grade09-eight-class-actions :is(a,button):is(:hover,:focus-visible){
+ background:#36504a!important;color:#fff8e9!important;
+ -webkit-text-fill-color:#fff8e9!important;text-decoration:none!important;
+}
+html:root:root body #grade09SevenClassSchedule .grade09-eight-class-actions :is(a,button):focus-visible{
+ outline:3px solid #b48b45!important;outline-offset:3px!important;
+}
+</style>
+</head>
 <body>
 
 <div class="top grade09-local-masthead"><div class="shell nav"><nav class="navlinks" aria-label="Grade 09 profile shortcuts"><a href="../">Dashboard</a><a href="../daily-lessons/">Daily Lessons</a><a href="../grades/">Grades</a><a href="../games/">Games</a><a href="../../">Exit to Grade 09</a></nav></div><div class="shell hero"><p class="eyebrow">Khaemenes Academy</p><h1>My Profile</h1><p>Update interests, goals, strengths, supports, portfolio links, and notes. This stays local on this device unless exported.</p></div></div>
