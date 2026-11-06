@@ -16,7 +16,7 @@ function mountGradeNineChart(){
  const chart=text("section","grade09-class-progress");
  chart.id="studentCourseProgress";chart.setAttribute("aria-label","Eight-class progress dashboard");
  const title=text("h2","","My Class Progress");
- const introduction=text("p","grade09-progress-intro","Course completion and quiz mastery are different. Each subject keeps its own color; missing records are not zero grades.");
+ const introduction=text("p","grade09-progress-intro","This chart helps you see how far you have moved through each class. Assessment progress is separate, and a blank result simply means there is nothing to show yet.");
  const controls=text("div","grade09-progress-controls");
  const status=text("p","grade09-progress-status");
  const graph=text("div","grade09-progress-graph");
@@ -105,7 +105,7 @@ function mountGradeNineChart(){
   for(const [b,k] of [[allButton,"all"],[needsButton,"review"]])b.setAttribute("aria-pressed",String(mode===k));
   graph.replaceChildren();
   if(!learner){
-   status.textContent="Select an Academy learner to load private results. All eight subjects remain visible without revealing scores.";
+   status.textContent="Choose your Grade 9 student profile to see your personal class progress.";
    for(const r of rows){
     const item=text("div","grade09-progress-row grade09-progress-placeholder");
     const label=text("span","grade09-progress-label",r.subject);
@@ -118,14 +118,14 @@ function mountGradeNineChart(){
     const value=text("span","grade09-progress-value","Not reported");
     item.append(label,track,value);graph.append(item);
    }
-   detail.replaceChildren(text("p","grade09-progress-empty","Select your learner to see course completion, assessment mastery, next learning steps, and reproducible four-week planning scenarios."));
+   detail.replaceChildren(text("p","grade09-progress-empty","Choose your student profile, then pick a class to see what you have finished and what comes next."));
    return;
   }
   const available=rows.filter(r=>r.percent!==null).length;
   const flagged=rows.filter(r=>r.needsReview).length;
-  status.textContent=available+" of 8 course-completion records available · "+flagged+" with reported review needs. No score is inferred from missing data.";
+  status.textContent=available+" of 8 classes have progress to show · "+flagged+" may need a little attention.";
   const displayed=mode==="review"?rows.filter(r=>r.needsReview):rows;
-  if(!displayed.length)graph.append(text("p","grade09-progress-empty","No course records currently report a review need. Unreported progress is still shown under All eight subjects."));
+  if(!displayed.length)graph.append(text("p","grade09-progress-empty","Nothing needs attention right now. You can still look through all eight classes."));
   displayed.forEach(r=>{
    const item=text("button","grade09-progress-row"+(selected===r.index?" is-selected":""));
    item.type="button";item.dataset.courseIndex=String(r.index);
@@ -163,9 +163,9 @@ function mountGradeNineChart(){
   detail.replaceChildren();
   detail.style.setProperty("--subject-color",r.color);
   const name=text("h3","",r.course?.title||r.subject);
-  const state=text("p","",r.percent===null?"Course completion: not reported.":"Course completion: "+Math.round(r.percent)+"%.");
-  const assessment=text("p","",r.mastery===null?"Assessment mastery: not reported.":"Best reported assessment mastery: "+Math.round(r.mastery)+"% (target "+r.threshold+"%).");
-  const next=text("p","",r.stale?"This course snapshot is stale. Reopen the course to refresh progress.":r.snap?.nextTitle?"Next: "+r.snap.nextTitle:"Open the class to review its learning plan.");
+  const state=text("p","",r.percent===null?"Class progress: nothing to show yet.":"Class progress: "+Math.round(r.percent)+"%.");
+  const assessment=text("p","",r.mastery===null?"Assessment progress: nothing to show yet.":"Best assessment score: "+Math.round(r.mastery)+"% · goal "+r.threshold+"%.");
+  const next=text("p","",r.stale?"Open this class once to refresh your progress.":r.snap?.nextTitle?"Next: "+r.snap.nextTitle:"Open the class when you are ready to choose your next step.");
   detail.append(name,state,assessment,next);
   if(r.course){
    const link=text("a","grade09-progress-open","Open "+r.subject);
@@ -173,13 +173,13 @@ function mountGradeNineChart(){
   }
   if(r.snap?.progress?.completed!==null&&r.snap?.progress?.completed!==undefined&&r.snap?.progress?.total){
    const total=r.snap.progress.total,completed=r.snap.progress.completed;
-   detail.append(text("p","grade09-progress-units",completed+" of "+total+" reported course items complete. Unit/week breakdown appears only when the course publishes it."));
+   detail.append(text("p","grade09-progress-units",completed+" of "+total+" activities completed."));
   }
   const forecastText=r.forecast
-   ?"Deterministic 4-week planning scenarios: "+Math.round(r.forecast.lower)+"–"+Math.round(r.forecast.upper)+"% course completion, based on observed progress pace and "+r.forecast.samples+" seeded trials. This is not a grade or statistical confidence interval."
-   :"Forecast unavailable: at least two dated completion snapshots spanning a day are required.";
+   ?"If you keep a similar pace, your next few weeks may land around "+Math.round(r.forecast.lower)+"–"+Math.round(r.forecast.upper)+"% completion. This is a planning guide, not a grade."
+   :"Keep working in this class and your progress trend will appear here.";
   detail.append(text("p","grade09-progress-forecast",forecastText));
-  if(r.needsReview)detail.append(text("p","grade09-progress-review","Course reports attention needed. Check corrections, mastery requirements, or the next assessment."));
+  if(r.needsReview)detail.append(text("p","grade09-progress-review","This class needs a little attention. Check corrections, your next goal, or the next assessment."));
  }
  render();
  for(const event of ["khaemenes-learning-continuation-changed","khaemenes-learning-continuation-ready","khaemenes-course-pins-changed","khaemenes-grade09-language-changed","khaemenes-student-profile-changed","focus","pageshow"])
