@@ -200,16 +200,27 @@
     const host=String(location.hostname||"").toLowerCase(),path=String(location.pathname||"").toLowerCase();
     if(!(host.includes("khaemenes-high")||path.includes("/khaemenes_high.github.io/")))return;
     if(window.VNVEcosystemToolbar){mount();return;}
-    let script=document.querySelector('script[src="https://vervenveda.com/assets/vnv-ecosystem-toolbar.js"]');
+    // Match the canonical loader with or without its version query.
+    // A deferred shared loader may exist in the DOM before its API is ready.
+    let script=[...document.querySelectorAll("script[src]")].find(node=>{
+      try{
+        const url=new URL(node.src,location.href);
+        return url.origin==="https://vervenveda.com" &&
+          url.pathname==="/assets/vnv-ecosystem-toolbar.js";
+      }catch{return false;}
+    });
     if(!script){
       script=document.createElement("script");
       script.src=OFFICIAL;
       script.defer=true;
       script.dataset.vnvEcosystemToolbar="1";
+      script.addEventListener("load",mount,{once:true});
       (document.head||document.documentElement).append(script);
+    }else{
+      script.addEventListener("load",mount,{once:true});
     }
-    script.addEventListener("load",mount,{once:true});
-    setTimeout(mount,120);
+    // Idempotent shared mount also handles the already-loaded case.
+    if(window.VNVEcosystemToolbar)mount();
   };
   if(document.readyState==="loading")document.addEventListener("DOMContentLoaded",start,{once:true});
   else start();
