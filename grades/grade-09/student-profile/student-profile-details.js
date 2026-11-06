@@ -109,7 +109,7 @@ function mountEditor(){
   if(field)field.insertBefore(optionRow(label,id),field.firstChild);
  }
  const container=tag("section");container.id="grade09ExtendedDetails";
- container.style.cssText="display:grid;gap:13px;min-width:0;margin:18px 0;padding-top:16px;border-top:1px solid #c3b59a";
+ container.style.cssText="display:grid;gap:13px;min-width:0;margin:18px 0 0 18px;padding-top:16px;max-width:calc(100% - 18px);border-top:1px solid #c3b59a";
  const h=tag("h3","More About Me");h.style.cssText="margin:0;color:#243038;font:400 24px/1.3 Cinzel,Georgia,serif";
  const info=tag("p","Optional student information. Check Show on My Student Profile beside each item to display it below your photograph. Nothing is automatically published to the web or Bazaar Art. Public sharing requires a separate future permission process.");
  info.style.cssText="margin:0 0 6px;color:#243038;font:400 16px/1.55 Nunito,Arial,sans-serif";
