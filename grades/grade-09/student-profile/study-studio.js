@@ -27,7 +27,7 @@ directory.setAttribute("aria-labelledby","g09sMentorDirectoryHeading");
 const heading=document.createElement("h3");
 heading.id="g09sMentorDirectoryHeading";heading.textContent="Meet Your AI Mentors";
 const introduction=document.createElement("p");
-introduction.textContent="Meet the mentors and companions across our ecosystem. Individual landing pages are linked where verified; other cards lead to the Academy Mentor Hub while their destinations are being confirmed.";
+introduction.textContent="You do not have to figure everything out alone. Explore the mentors who can help with writing, art, music, languages, wellbeing, study habits, and finding your next step.";
 const mentorGrid=document.createElement("div");mentorGrid.className="g09s-mentor-grid";
 for(const person of mentors){
  const card=document.createElement("article");card.className="g09s-mentor-card";
@@ -37,7 +37,7 @@ for(const person of mentors){
  const action=document.createElement("a");
  action.href=person.href||mentorHub;
  action.target="_blank";action.rel="noopener";
- action.textContent=person.href?"Visit Landing Page":"Academy Mentor Hub";
+ action.textContent=person.href?"Meet This Mentor":"Open Mentor Hub";
  if(!person.href)action.setAttribute("aria-label","Open Academy Mentor Hub; individual landing page for "+person.name+" pending verification");
  card.append(seal,title,description,action);mentorGrid.append(card);
 }
@@ -48,10 +48,10 @@ const $=x=>d.querySelector("#"+x),reg=window.KhaemenesGrade09Courses,contract=wi
 const sel=$("g09sCourse"),notes=$("g09sNotes");let learner="",cards=[],idx=0,flipped=false,origin=null;
 function key(){return "g09-study-studio-notes-v1:"+encodeURIComponent(learner)+":"+encodeURIComponent(sel.value)}
 function refreshCourse(){const c=reg?.getCourse?.(sel.value);$("g09sOpenCourse").href=c?.home||"profile/";$("g09sMentor").href=reg?.mentorFor?.(sel.value)||"../../../mentor/";notes.value="";if(learner&&sel.value)try{notes.value=localStorage.getItem(key())||""}catch{}}
-function open(source){origin=source||document.activeElement;const p=contract?.readAcademyProfile?.()?.learnerId,a=window.KhaemenesStudentProfileV2?.activeLearner?.()?.learnerId;const selected=window.KhaemenesStudentProfileV2?.activeLearner?.();learner=p&&a&&String(p)===String(a)&&selected?.stage==="high"&&Number(selected.grade)===9?String(a):"";sel.replaceChildren();const option=document.createElement("option");option.textContent="Choose a class";option.value="";sel.append(option);for(const c of reg?.courses||[]){if(!c?.id)continue;const o=document.createElement("option");o.value=c.id;o.textContent=c.title;sel.append(o)}sel.value=reg?.resumePriorityCourse?.()?.id||"";refreshCourse();$("g09sStatus").textContent=learner?"Notes are saved only on this browser.":"Select an Academy learner to save notes.";if(!d.open)d.showModal()}
+function open(source){origin=source||document.activeElement;const p=contract?.readAcademyProfile?.()?.learnerId,a=window.KhaemenesStudentProfileV2?.activeLearner?.()?.learnerId;const selected=window.KhaemenesStudentProfileV2?.activeLearner?.();learner=p&&a&&String(p)===String(a)&&selected?.stage==="high"&&Number(selected.grade)===9?String(a):"";sel.replaceChildren();const option=document.createElement("option");option.textContent="Choose a class";option.value="";sel.append(option);for(const c of reg?.courses||[]){if(!c?.id)continue;const o=document.createElement("option");o.value=c.id;o.textContent=c.title;sel.append(o)}sel.value=reg?.resumePriorityCourse?.()?.id||"";refreshCourse();$("g09sStatus").textContent=learner?"Your study notes are ready here.":"Choose your student profile to save study notes.";if(!d.open)d.showModal()}
 sel.addEventListener("change",refreshCourse);
 for(const b of d.querySelectorAll("[data-room]"))b.addEventListener("click",()=>{for(const p of d.querySelectorAll("[data-panel]"))p.hidden=p.dataset.panel!==b.dataset.room;for(const t of d.querySelectorAll("[data-room]"))t.setAttribute("aria-pressed",String(t===b))});
-$("g09sSave").addEventListener("click",()=>{if(!learner||!sel.value){$("g09sStatus").textContent="Select an Academy learner and class.";return}try{localStorage.setItem(key(),notes.value);$("g09sStatus").textContent="Notes saved locally."}catch{$("g09sStatus").textContent="Storage unavailable."}});
+$("g09sSave").addEventListener("click",()=>{if(!learner||!sel.value){$("g09sStatus").textContent="Choose your student profile and a class first.";return}try{localStorage.setItem(key(),notes.value);$("g09sStatus").textContent="Notes saved."}catch{$("g09sStatus").textContent="Your notes could not be saved on this device."}});
 $("g09sOutline").addEventListener("click",()=>{const ol=$("g09sOutlineList");ol.replaceChildren();for(const line of notes.value.split("\n").map(x=>x.trim()).filter(Boolean).slice(0,40)){const li=document.createElement("li");li.textContent=line;ol.append(li)}});
 function show(){const c=cards[idx];$("g09sCard").textContent=c?(flipped?c[1]:c[0]):"No practice cards yet.";$("g09sCounter").textContent=cards.length?(idx+1)+" of "+cards.length:"";}
 $("g09sBuild").addEventListener("click",()=>{cards=notes.value.split("\n").map(s=>{const i=s.indexOf(":");return i>0?[s.slice(0,i).trim(),s.slice(i+1).trim()]:null}).filter(x=>x&&x[0]&&x[1]).slice(0,60);idx=0;flipped=false;show()});
