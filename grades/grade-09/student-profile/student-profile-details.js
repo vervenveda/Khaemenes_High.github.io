@@ -99,7 +99,67 @@ function optionRow(label,id){
  selectors.set(id,checkbox);
  return wrapper;
 }
+function ensureFinalDetailsStyle(){
+ if(document.getElementById("grade09ExtendedDetailsFinalStyle"))return;
+ const style=document.createElement("style");
+ style.id="grade09ExtendedDetailsFinalStyle";
+ style.textContent=`
+ html:root:root body #grade09ExtendedDetails{
+   margin-left:33px!important;
+   max-width:calc(100% - 33px)!important;
+ }
+ html:root:root body #grade09ExtendedDetails>details,
+ html:root:root body #grade09ExtendedDetails>#highStudentPortfolioSection{
+   box-sizing:border-box!important;
+   width:100%!important;
+   min-width:0!important;
+   margin:0!important;
+   padding:0!important;
+   border:2px solid #8f7c5b!important;
+   border-radius:7px!important;
+   background:#f3ead9!important;
+   overflow:hidden!important;
+ }
+ html:root:root body #grade09ExtendedDetails>details>summary,
+ html:root:root body #grade09ExtendedDetails>#highStudentPortfolioSection>summary{
+   box-sizing:border-box!important;
+   display:flex!important;
+   align-items:center!important;
+   width:100%!important;
+   min-height:58px!important;
+   margin:0!important;
+   padding:12px 16px!important;
+   border-radius:0!important;
+   background:#243038!important;
+   color:#fff8e9!important;
+   -webkit-text-fill-color:#fff8e9!important;
+   font-family:Cinzel,Georgia,serif!important;
+   font-size:24px!important;
+   font-weight:400!important;
+   line-height:1.3!important;
+   text-align:left!important;
+ }
+ html:root:root body #grade09ExtendedDetails .grade09-extra-field{
+   min-height:138px!important;
+   height:100%!important;
+   padding:12px!important;
+   border:1px solid #b7a589!important;
+   background:#fffdf8!important;
+ }
+ html:root:root body #grade09ExtendedDetails :is(label,p,span,input,select,textarea,button,a){
+   font-size:16px!important;
+ }
+ @media(max-width:660px){
+   html:root:root body #grade09ExtendedDetails{
+     margin-left:16px!important;
+     max-width:calc(100% - 16px)!important;
+   }
+ }
+ `;
+ document.head.append(style);
+}
 function mountEditor(){
+ ensureFinalDetailsStyle();
  const save=document.getElementById("saveProfile");if(!save)return false;
  const card=save.closest(".card");
  if(!card||document.getElementById("grade09ExtendedDetails"))return false;
@@ -109,7 +169,7 @@ function mountEditor(){
   if(field)field.insertBefore(optionRow(label,id),field.firstChild);
  }
  const container=tag("section");container.id="grade09ExtendedDetails";
- container.style.cssText="display:grid;gap:13px;min-width:0;margin:18px 0 0 18px;padding-top:16px;max-width:calc(100% - 18px);border-top:1px solid #c3b59a";
+ container.style.cssText="display:grid;gap:13px;min-width:0;margin:20px 0 0 33px;padding-top:16px;max-width:calc(100% - 33px);border-top:1px solid #c3b59a";
  const h=tag("h3","More About Me");h.style.cssText="margin:0;color:#243038;font:400 24px/1.3 Cinzel,Georgia,serif";
  const info=tag("p","Optional student information. Check Show on My Student Profile beside each item to display it below your photograph. Nothing is automatically published to the web or Bazaar Art. Public sharing requires a separate future permission process.");
  info.style.cssText="margin:0 0 6px;color:#243038;font:400 16px/1.55 Nunito,Arial,sans-serif";
