@@ -249,49 +249,53 @@ for(const [id,label] of sections){
  const toggle=document.createElement("summary");toggle.textContent=label;details.append(toggle,node);region.append(details);
  node.style.margin="0";node.style.maxWidth="none";
 }
-/* Restore the Academy Learning Profile Studio below Achievements & Dream Board.
-   This is the existing Academy-owned profile page, not a second profile store. */
+/* Academy Profile Studio — an organized doorway to the existing profile owner.
+   No second profile store, editor, or grade record is introduced. */
 if(!region.querySelector("#grade09ExploreAcademyStudio")){
- const details=document.createElement("details");
- details.id="grade09ExploreAcademyStudio";
+ const details=document.createElement("details");details.id="grade09ExploreAcademyStudio";
  details.className="grade09-explore-item";
- const heading=document.createElement("summary");
- heading.textContent="My Academy Profile Studio";
- const content=document.createElement("div");
- content.className="grade09-yearbook-explore-body";
+ const heading=document.createElement("summary");heading.textContent="My Academy Profile Studio";
+ const content=document.createElement("div");content.className="grade09-yearbook-explore-body grade09-explore-editorial-panel";
+ const intro=document.createElement("div");intro.className="grade09-explore-panel-intro";
+ const title=document.createElement("h3");title.textContent="Your Academy Profile Studio";
  const description=document.createElement("p");
- description.textContent="Open your Academy Learning Profile to work with your goals, preferences, learning map, and portfolio studio.";
- const actions=document.createElement("div");
- actions.className="grade09-yearbook-explore-actions";
+ description.textContent="Personalize your Academy learning profile in one place. Your preferences, goals, learning map and portfolio remain with the Academy's existing profile tools.";
+ intro.append(title,description);
+ const points=document.createElement("ul");points.className="grade09-explore-points";
+ for(const label of ["Personal details, interests & goals","Learning preferences, map & portfolio"]){
+  const item=document.createElement("li");item.textContent=label;points.append(item);
+ }
+ const actions=document.createElement("div");actions.className="grade09-yearbook-explore-actions";
  const open=document.createElement("a");
  open.href="https://vervenveda.com/Khaemenes_Academy.github.io/student/profile.html#profileStudio";
  open.textContent="Open My Academy Profile Studio";
- actions.append(open);content.append(description,actions);details.append(heading,content);
+ actions.append(open);content.append(intro,points,actions);details.append(heading,content);
  region.append(details);
 }
-/* Restore the Yearbook doorway inside Explore, Create & Celebrate.
-   The studio remains owned by the existing Grade 09 modal and its separate repository. */
+/* Yearbook — retain the Grade 09 modal and separate Yearbook application.
+   These actions never copy photos or create duplicate storage. */
 if(!region.querySelector("#grade09ExploreYearbook")){
- const details=document.createElement("details");
- details.className="grade09-explore-item";
+ const details=document.createElement("details");details.className="grade09-explore-item";
  details.id="grade09ExploreYearbook";
- const toggle=document.createElement("summary");
- toggle.textContent="My School Yearbook";
- const panel=document.createElement("div");
- panel.className="grade09-yearbook-explore-body";
+ const toggle=document.createElement("summary");toggle.textContent="My School Yearbook";
+ const panel=document.createElement("div");panel.className="grade09-yearbook-explore-body grade09-explore-editorial-panel";
+ const intro=document.createElement("div");intro.className="grade09-explore-panel-intro";
+ const title=document.createElement("h3");title.textContent="Your School Yearbook";
  const note=document.createElement("p");
- note.textContent="Create and preserve your school memories in the Yearbook Studio. Export a backup to keep your photos.";
- const controls=document.createElement("div");
- controls.className="grade09-yearbook-explore-actions";
- const open=document.createElement("button");
- open.type="button";
- open.textContent="Open My Yearbook";
+ note.textContent="Create and preserve your school memories in the existing Yearbook Studio. Photographs are stored by the Yearbook application; export a backup there to keep them.";
+ intro.append(title,note);
+ const points=document.createElement("ul");points.className="grade09-explore-points";
+ for(const label of ["Create and arrange yearbook memories","Export a copy from the Yearbook Studio"]){
+  const item=document.createElement("li");item.textContent=label;points.append(item);
+ }
+ const controls=document.createElement("div");controls.className="grade09-yearbook-explore-actions";
+ const open=document.createElement("button");open.type="button";open.textContent="Open My Yearbook";
  open.addEventListener("click",()=>window.KhaemenesGrade09Yearbook?.open?.(open));
  const external=document.createElement("a");
  external.href="https://vervenveda.com/Academy-Yearbook.github.io/";
  external.target="_blank";external.rel="noopener noreferrer";
  external.textContent="Open Full Yearbook";
- controls.append(open,external);panel.append(note,controls);details.append(toggle,panel);
+ controls.append(open,external);panel.append(intro,points,controls);details.append(toggle,panel);
  region.append(details);
 }
 if(portfolio)portfolio.style.maxWidth="none";
