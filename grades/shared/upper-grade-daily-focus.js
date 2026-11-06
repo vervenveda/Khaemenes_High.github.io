@@ -167,7 +167,7 @@ function render(){
   activities.forEach((activity,activityIndex)=>{
    const box=create("article","grade09-academic-box");
    box.style.cssText="display:grid;gap:7px;min-height:128px;padding:12px;border:1px solid #c5b492;border-radius:7px;background:#fffdf8;color:#243038";
-   const number=grade===10?(index+1)+(activityIndex*8):index+1;
+   const number=grade===10?index*2+activityIndex+1:index+1;
    box.append(create("span","grade09-academic-number",String(number).padStart(2,"0")));
    box.append(create("strong","",slot.label));
    if(activity.kind)box.append(create("small","grade10-checkpoint-kind",activity.kind));
