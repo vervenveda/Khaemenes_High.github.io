@@ -6,6 +6,7 @@
 const grade=Number(document.body?.dataset.grade);
 const grade10Copy=grade===10;
 const grade11Copy=grade===11;
+const grade12Copy=grade===12;
 if(![10,11,12].includes(grade)||window.KhaemenesUpperGradeYearbook)return;
 const url="https://vervenveda.com/Academy-Yearbook.github.io/";
 const dialog=document.createElement("dialog");
@@ -30,13 +31,13 @@ html:root:root body #grade09YearbookDialog .yearbook-modal-buttons :is(a,button)
 document.head.append(style);
 const shell=document.createElement("div");shell.className="yearbook-modal-shell";
 const head=document.createElement("div");head.className="yearbook-modal-header";
-const heading=document.createElement("h2");heading.id="grade09YearbookTitle";heading.textContent=grade10Copy?"My Grade 10 Yearbook":grade11Copy?"My Grade 11 Yearbook":"My School Yearbook";
+const heading=document.createElement("h2");heading.id="grade09YearbookTitle";heading.textContent=grade10Copy?"My Grade 10 Yearbook":grade11Copy?"My Grade 11 Yearbook":grade12Copy?"My Senior Yearbook":"My School Yearbook";
 const controls=document.createElement("div");controls.className="yearbook-modal-buttons";
-const external=document.createElement("a");external.href=url;external.target="_blank";external.rel="noopener noreferrer";external.textContent=(grade10Copy||grade11Copy)?"Open My Yearbook":"Open full Yearbook";
+const external=document.createElement("a");external.href=url;external.target="_blank";external.rel="noopener noreferrer";external.textContent=(grade10Copy||grade11Copy||grade12Copy)?"Open My Yearbook":"Open full Yearbook";
 const close=document.createElement("button");close.type="button";close.textContent="Close";
 controls.append(external,close);head.append(heading,controls);
 const help=document.createElement("p");help.className="yearbook-modal-help";
-help.textContent=grade10Copy?"Collect photos, memories, projects, and moments from your Grade 10 year. Open the full Yearbook whenever you want to keep building it.":grade11Copy?"Capture the people, projects, experiences, milestones, and moments that made your junior year yours. Keep adding to it as the year unfolds.":"Create a personal photo yearbook. Photos are stored by the Yearbook application in this browser, not in your Academy learner profile. Export a backup to keep your memories.";
+help.textContent=grade10Copy?"Collect photos, memories, projects, and moments from your Grade 10 year. Open the full Yearbook whenever you want to keep building it.":grade11Copy?"Capture the people, projects, experiences, milestones, and moments that made your junior year yours. Keep adding to it as the year unfolds.":grade12Copy?"Preserve the people, projects, milestones, and moments that made your senior year yours. Build a yearbook you will still want to open after High School is behind you.":"Create a personal photo yearbook. Photos are stored by the Yearbook application in this browser, not in your Academy learner profile. Export a backup to keep your memories.";
 const frame=document.createElement("iframe");frame.className="yearbook-frame";
 frame.title="Khaemenes Academy Yearbook Studio";frame.loading="lazy";
 frame.referrerPolicy="strict-origin-when-cross-origin";frame.setAttribute("allow","");
