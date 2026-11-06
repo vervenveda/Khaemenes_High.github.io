@@ -10,9 +10,9 @@ const badgeKey=id=>"khaemenes.grade09.profile.badge:"+encodeURIComponent(id);
 const photoKey=id=>"khaemenes.grade09.profile.photo:"+encodeURIComponent(id);
 const pageColorKey=id=>"khaemenes.grade09.profile.background:"+encodeURIComponent(id);
 const cardKey=id=>"khaemenes.grade09.profile.background.sections.v1:"+encodeURIComponent(id);
-const badges=["★","✦","📚","🧭","⚛","🎨","🎵","🌿"];
+const badges=["★","✦","📚","🧭","⚛","🎨","🎵","🌿","🔬","🧪","🧬","🌌","🌙","☀️","🪐","🌎","⚙️","💻","✏️","🎭","📐","🏛️","🦋","🏆"];
 const parchment="#f4f0e7";
-const colors=["#D53E4F","#F46D43","#FDAE61","#FEE08B","#E6F598","#ABDDA4","#66C2A5","#3288BD"];
+const colors=["#D53E4F","#F46D43","#FDAE61","#FEE08B","#E6F598","#ABDDA4","#66C2A5","#3288BD","#243038","#49374B","#7D283C","#254A75","#2C634A","#9A732C","#6A4C93","#A34836","#F4F0E7","#E7D7B6","#D1E3E5","#CAD8BC","#D5C1CF","#B9CBE0","#F2D8B6","#D0D6D1"];
 const shapes=[
  ["rectangle","Rectangle"],["square","Square"],["circle","Circle"],
  ["heart","Heart"],["star","Star"],["octagon","Octagon"],
