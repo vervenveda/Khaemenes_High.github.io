@@ -211,7 +211,7 @@ const reg=window.KhaemenesGrade09Courses;
 return (reg?.pinnedCourses?.()||[]).map(c=>[String(c.title||c.name||"Class"),String(c.id||"")]).filter(c=>c[1]);}
 function render(){
  area.replaceChildren();
- if(!initial||learnerId()!==initial){area.textContent="Select your learner and reload to display private class progress.";return}
+ if(!initial||learnerId()!==initial||window.KhaemenesHighProfileGradeContext?.active?.()?.gradeNumber!==Number(grade)){area.textContent="Select your registered Grade "+Number(grade)+" learner to display private class progress.";return}
  const snapshots=continuation?.readLearner?.(initial)||[];
  const rows=classes();
  if(!rows.length){area.textContent="Pin your classes to display their progress here.";return}
