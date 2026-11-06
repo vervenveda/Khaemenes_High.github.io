@@ -256,6 +256,11 @@ body[data-grade="10"] .grade10-checkpoints-disclosure #upperGradeAcademicCheckpo
 }
 </style>
 <link rel="stylesheet" href="../../shared/high-profile-support-footer-parity.css?v=20261106-grade09-approved">
+<style id="grade10-retired-manager-20261106">
+/* Grade 10 only: retire the redundant page card, preserving original
+   course-manager nodes and their registered-grade data bindings. */
+body[data-grade="10"] section.grade10-retired-manager-data{display:none!important}
+</style>
 </head>
 <body data-grade="10" data-high-hide-breadcrumbs="true">
 <header data-vnv-header-legacy data-grade10-vnv-placement-anchor hidden aria-hidden="true"></header>
@@ -310,7 +315,7 @@ body[data-grade="10"] .grade10-checkpoints-disclosure #upperGradeAcademicCheckpo
         </div>
       </section>
 
-      <section class="card col12" aria-labelledby="manageClassesTitle">
+      <section class="card col12 grade10-retired-manager-data" aria-labelledby="manageClassesTitle" hidden aria-hidden="true">
         <h2 id="manageClassesTitle">Manage Classes &amp; Mathematics Pathway</h2>
         <p>Pin regular classes for one-click access. Mathematics is placement-based: only one mathematics course is treated as the active pinned pathway at a time. Changing the math pin changes the doorway, not grades or mastery evidence.</p>
         <div id="grade09BlueprintLanguage"></div><p id="grade09BlueprintStatus" role="status" aria-live="polite"></p><div class="lesson-grid" id="courseManagerGrid"></div>
