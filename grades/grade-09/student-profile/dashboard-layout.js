@@ -139,13 +139,13 @@ if(!window.KhaemenesGrade09Yearbook){
  document.head.append(style);
  const shell=document.createElement("div");shell.className="yearbook-modal-shell";
  const header=document.createElement("div");header.className="yearbook-modal-header";
- const heading=document.createElement("h2");heading.id="grade09YearbookTitle";heading.textContent="My School Yearbook";
+ const heading=document.createElement("h2");heading.id="grade09YearbookTitle";heading.textContent="My Grade 9 Yearbook";
  const controls=document.createElement("div");controls.className="yearbook-modal-buttons";
- const launch=document.createElement("a");launch.href=yearbookUrl;launch.target="_blank";launch.rel="noopener noreferrer";launch.textContent="Open full Yearbook";
+ const launch=document.createElement("a");launch.href=yearbookUrl;launch.target="_blank";launch.rel="noopener noreferrer";launch.textContent="Open My Yearbook";
  const close=document.createElement("button");close.type="button";close.textContent="Close";
  controls.append(launch,close);header.append(heading,controls);
  const help=document.createElement("p");help.className="yearbook-modal-help";
- help.textContent="Create a personal photo yearbook. Photos are stored by the Yearbook application in this browser, not in your Academy learner profile. Export a backup to keep your memories.";
+ help.textContent="Save photos, projects, and moments from your first High School year. Add to your Yearbook whenever something feels worth remembering.";
  const frame=document.createElement("iframe");frame.className="yearbook-frame";frame.title="Khaemenes Academy Yearbook Studio";
  frame.referrerPolicy="strict-origin-when-cross-origin";frame.loading="lazy";frame.setAttribute("allow","");frame.src=yearbookUrl;
  shell.append(header,help,frame);yearbook.append(shell);document.body.append(yearbook);
@@ -254,21 +254,21 @@ for(const [id,label] of sections){
 if(!region.querySelector("#grade09ExploreAcademyStudio")){
  const details=document.createElement("details");details.id="grade09ExploreAcademyStudio";
  details.className="grade09-explore-item";
- const heading=document.createElement("summary");heading.textContent="My Academy Profile Studio";
+ const heading=document.createElement("summary");heading.textContent="My Profile Studio";
  const content=document.createElement("div");content.className="grade09-yearbook-explore-body grade09-explore-editorial-panel";
  const intro=document.createElement("div");intro.className="grade09-explore-panel-intro";
- const title=document.createElement("h3");title.textContent="Your Academy Profile Studio";
+ const title=document.createElement("h3");title.textContent="Make Your Profile Feel Like You";
  const description=document.createElement("p");
- description.textContent="Personalize your Academy learning profile in one place. Your preferences, goals, learning map and portfolio remain with the Academy's existing profile tools.";
+ description.textContent="This is where you can update your interests, goals, learning preferences, picture, and the details you want to show on your student profile.";
  intro.append(title,description);
  const points=document.createElement("ul");points.className="grade09-explore-points";
- for(const label of ["Personal details, interests & goals","Learning preferences, map & portfolio"]){
+ for(const label of ["Personal details, interests & goals","Learning preferences & portfolio"]){
   const item=document.createElement("li");item.textContent=label;points.append(item);
  }
  const actions=document.createElement("div");actions.className="grade09-yearbook-explore-actions";
  const open=document.createElement("a");
- open.href="https://vervenveda.com/Khaemenes_Academy.github.io/student/profile.html#profileStudio";
- open.textContent="Open My Academy Profile Studio";
+ open.href="https://vervenveda.com/Khaemenes_High.github.io/grades/grade-09/student-profile/profile/";
+ open.textContent="Open My Profile";
  actions.append(open);content.append(intro,points,actions);details.append(heading,content);
  region.append(details);
 }
@@ -277,15 +277,15 @@ if(!region.querySelector("#grade09ExploreAcademyStudio")){
 if(!region.querySelector("#grade09ExploreYearbook")){
  const details=document.createElement("details");details.className="grade09-explore-item";
  details.id="grade09ExploreYearbook";
- const toggle=document.createElement("summary");toggle.textContent="My School Yearbook";
+ const toggle=document.createElement("summary");toggle.textContent="My Grade 9 Yearbook";
  const panel=document.createElement("div");panel.className="grade09-yearbook-explore-body grade09-explore-editorial-panel";
  const intro=document.createElement("div");intro.className="grade09-explore-panel-intro";
- const title=document.createElement("h3");title.textContent="Your School Yearbook";
+ const title=document.createElement("h3");title.textContent="Remember Your Grade 9 Year";
  const note=document.createElement("p");
- note.textContent="Create and preserve your school memories in the existing Yearbook Studio. Photographs are stored by the Yearbook application; export a backup there to keep them.";
+ note.textContent="Collect photos, projects, milestones, and favorite moments from your first High School year. You can keep adding to it as the year grows.";
  intro.append(title,note);
  const points=document.createElement("ul");points.className="grade09-explore-points";
- for(const label of ["Create and arrange yearbook memories","Export a copy from the Yearbook Studio"]){
+ for(const label of ["Add photos, projects & memories","Save a copy when you want a backup"]){
   const item=document.createElement("li");item.textContent=label;points.append(item);
  }
  const controls=document.createElement("div");controls.className="grade09-yearbook-explore-actions";
@@ -294,7 +294,7 @@ if(!region.querySelector("#grade09ExploreYearbook")){
  const external=document.createElement("a");
  external.href="https://vervenveda.com/Academy-Yearbook.github.io/";
  external.target="_blank";external.rel="noopener noreferrer";
- external.textContent="Open Full Yearbook";
+ external.textContent="Open Yearbook Studio";
  controls.append(open,external);panel.append(intro,points,controls);details.append(toggle,panel);
  region.append(details);
 }
