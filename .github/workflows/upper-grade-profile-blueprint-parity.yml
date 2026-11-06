@@ -15,6 +15,10 @@ on:
       - "grades/shared/upper-grade-explore-parity.js"
       - "courses/shared/high-school-eight-class.js"
       - "tests/upper-grade-profile-blueprint-parity.cjs"
+      - "tests/high-profile-checkpoint-disclosure.cjs"
+      - "grades/shared/upper-grade-daily-focus.js"
+      - "grades/shared/student-checkpoints-disclosure.js"
+      - "grades/shared/student-checkpoints-disclosure.css"
       - ".github/workflows/upper-grade-profile-blueprint-parity.yml"
   workflow_dispatch:
 permissions:
@@ -34,7 +38,11 @@ jobs:
           node --check grades/shared/student-ecosystem-tools.js
           node --check grades/shared/student-learning-journey.js
           node --check grades/shared/upper-grade-explore-parity.js
+          node --check grades/shared/student-checkpoints-disclosure.js
+          node --check grades/shared/upper-grade-daily-focus.js
           node --check grades/grade-11/student-profile/grade11-look-chooser.js
           node --check grades/grade-12/student-profile/grade12-look-chooser.js
       - name: Verify Grade 09 structural baseline and upper-grade routes
-        run: node tests/upper-grade-profile-blueprint-parity.cjs
+        run: |
+          node tests/upper-grade-profile-blueprint-parity.cjs
+          node tests/high-profile-checkpoint-disclosure.cjs
