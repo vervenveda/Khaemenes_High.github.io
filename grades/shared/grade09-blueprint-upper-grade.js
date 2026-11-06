@@ -202,6 +202,10 @@ function showUpperProgress(){
 }
 function showUpperSchedule(){
  upperGradeDialog("upperGradeScheduleDialog","My Schedule",content=>{
+  // Grade 10 owns one live manager. Preserve it across repeated popup opens
+  // rather than cloning controls or discarding listeners with replaceChildren.
+  const manager=Number(grade)===10
+    ?document.getElementById("manageClassesTitle")?.closest("section.card"):null;
   content.replaceChildren();
   const registered=gradeContext();
   if(!registered||registered.gradeNumber!==Number(grade)){
@@ -218,6 +222,16 @@ function showUpperSchedule(){
    grid.append(card);
   }
   content.append(grid);
+  // Grade 10's original pinned-class and language-selection components retain
+  // their source-of-truth listeners. The retired page card lives in this
+  // dialog only, never as a second on-page panel.
+  if(Number(grade)===10&&manager){
+   manager.hidden=false;
+   manager.removeAttribute("aria-hidden");
+   manager.classList.remove("grade10-retired-manager-data");
+   manager.classList.add("grade10-schedule-manager");
+   content.append(manager);
+  }
  });
 }
 function revealUpper(id){
