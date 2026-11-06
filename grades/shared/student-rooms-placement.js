@@ -34,8 +34,15 @@
     target.append(card);
    }
   }
+  // Grade 09 already owns the real Explore, Create & Celebrate section.
+  // Keep the existing component immediately after Student Rooms without
+  // cloning its accordions, Yearbook controls, or learner-owned content.
+  // Grades without Explore keep their own current content untouched.
+  const explore=main.querySelector(":scope > #grade09Explore");
+  if(explore&&host.nextElementSibling!==explore)host.insertAdjacentElement("afterend",explore);
   return portfolio.nextElementSibling===host
-   &&roomCards.every((card,index)=>target.children[index]===card);
+   &&roomCards.every((card,index)=>target.children[index]===card)
+   &&(!explore||host.nextElementSibling===explore);
  }
  global.KhaemenesStudentRoomsPlacement=Object.freeze({version:"1.0.0",place});
  place();
