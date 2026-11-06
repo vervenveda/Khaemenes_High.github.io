@@ -14,23 +14,27 @@ const tools=[
 // Grade 09's approved creative directory contains twelve destinations.
 // Higher grades retain their existing seven until their profile sections are approved.
 const isGrade09=/\/grade-09\/student-profile\//.test(location.pathname);
-if(isGrade09)tools.push(
+const grade=(location.pathname.match(/\/grade-(09|10|11|12)\/student-profile\//)||[])[1];
+const blueprintLayout=!!grade;
+if(blueprintLayout)tools.push(
  ["📚","Arshif Archives","Research halls, reading rooms and cultural knowledge","https://vervenveda.com/Arshif.github.io/"],
  ["🏛️","One Nation For All Civics","Explore civic learning, constitutional ideas and community resources","https://vervenveda.com/onenationforall.github.io/"],
  ["🏠","Family Portal","Family learning paths, enrollment and learner support","https://vervenveda.com/Khaemenes_Academy.github.io/family/"],
  ["✒️","PROSE Editorial Suite","Draft, revise, organize and preserve creative writing","https://vervenveda.com/proresource_hub.github.io/Protools/PROSE/Editorial%20Suite/editorial-suite_core.html"],
- ["📓","Student Journal","Write personal reflections and daily study notes","https://vervenveda.com/Khaemenes_High.github.io/grades/grade-09/student-profile/daily-lessons/#todaysNote"]
+ grade==="09"?["📓","Student Journal","Write personal reflections and daily study notes","https://vervenveda.com/Khaemenes_High.github.io/grades/grade-09/student-profile/daily-lessons/#todaysNote"]:grade==="10"
+ ? ["📓","Student Journal","Write personal reflections and daily study notes","https://vervenveda.com/Khaemenes_High.github.io/grades/grade-10/student-profile/daily-lessons/"]
+ : ["📓","Learning Evidence Journal","Preserve your reflections and work in your existing learner portfolio","https://vervenveda.com/Khaemenes_High.github.io/portfolio/index.html"]
 );
 const section=document.createElement("section");section.id="khaeStudentEcosystemTools";section.setAttribute("aria-label","Creative and discovery tools");
 section.style.cssText="margin:18px 0;padding:17px;border:1px solid #b4a17f;border-radius:7px;background:#1b2d43;color:#f1e9d9;font:400 16px/1.55 Arial,sans-serif";
-const title=document.createElement("h2");title.textContent="Creative & Discovery Tools";if(isGrade09)title.className="grade09-featured-heading";title.style.cssText="font:400 24px/1.3 Georgia,serif;margin:0 0 6px;color:#f4e6c6";
+const title=document.createElement("h2");title.textContent="Creative & Discovery Tools";if(blueprintLayout)title.className="grade09-featured-heading";title.style.cssText="font:400 24px/1.3 Georgia,serif;margin:0 0 6px;color:#f4e6c6";
 const summary=document.createElement("p");summary.textContent="Explore Academy-friendly creative spaces and research tools. Your class progress and grades stay separate.";summary.style.margin="0 0 14px";
-const grid=document.createElement("div");grid.className=isGrade09?"grade09-featured-grid":"";grid.style.cssText="display:grid;grid-template-columns:repeat(auto-fit,minmax(195px,1fr));gap:10px";
+const grid=document.createElement("div");grid.className=blueprintLayout?"grade09-featured-grid":"";grid.style.cssText="display:grid;grid-template-columns:repeat(auto-fit,minmax(195px,1fr));gap:10px";
 tools.forEach(([emoji,label,description,url])=>{
  const link=document.createElement("a");
  link.href=url;link.target="_blank";link.rel="noopener noreferrer";
  link.setAttribute("aria-label",label+" (opens in a new tab)");
- if(isGrade09){
+ if(blueprintLayout){
   // Grade 09 editorial resource tiles: preserve approved resource URLs and titles.
   // Do not replace the site-specific resource directory or load new dependencies.
   link.className="grade09-featured-card";
@@ -56,7 +60,7 @@ tools.forEach(([emoji,label,description,url])=>{
  }
  grid.append(link);
 });
-if(isGrade09)section.classList.add("grade09-featured-section");
+if(blueprintLayout)section.classList.add("grade09-featured-section");
 section.append(title,summary,grid);
 const grade09=document.querySelector(".grade09-priority-schedule");const upper=document.getElementById("upperClasses");if(grade09)grade09.insertAdjacentElement("afterend",section);else if(upper)upper.insertAdjacentElement("afterend",section);
 })();
