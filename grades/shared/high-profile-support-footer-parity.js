@@ -5,7 +5,7 @@
 (()=>{"use strict";
 const grade=document.body?.dataset.grade;
 if(!["10","11","12"].includes(grade)||window.KhaemenesHighSupportFooterParity)return;
-const dark="#243038",ink="#fff8e9",subtle="#eadcc5";
+const dark="#243038",ink="#fff8e9",subtle="#eadcc5",cream="#fffaf2",cardInk="#243038",cardSubtle="#45554c";
 const set=(node,key,value)=>{
  if(node&&node.style.getPropertyValue(key)!==value)
   node.style.setProperty(key,value,"important");
@@ -42,14 +42,14 @@ function support(){
   if(!eligible.length)continue;
   const panel=eligible[eligible.length-1];
   panel.classList.add("grade09-contribute-panel");
-  set(panel,"background",dark);
+  set(panel,"background",cream);
   set(panel,"background-image","none");
-  set(panel,"color",ink);
-  set(panel,"border","1px solid #b48b45");
+  set(panel,"color",cardInk);
+  set(panel,"border","2px solid #b48b45");
   set(panel,"text-align","center");
   for(const node of panel.querySelectorAll("h2,h3,h4,p,small,div,span")){
    if(node.closest("a,button"))continue;
-   const color=node.matches("small")?subtle:ink;
+   const color=node.matches("small")?cardSubtle:cardInk;
    set(node,"color",color);
    set(node,"-webkit-text-fill-color",color);
    if(node===heading||/^support free access$/i.test((node.textContent||"").trim())){
