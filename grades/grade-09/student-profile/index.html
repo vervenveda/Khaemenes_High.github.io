@@ -146,7 +146,7 @@ body :is(.hero,.ug-hero,.mast) :is(.eyebrow,.ug-eyebrow),body main>.eyebrow{font
         <h2 id="scheduleBarTitle">My Schedule Bar</h2>
         <p>Your eight classes stay together here so you can find them quickly. Games and study tools are extra shortcuts you can use whenever they help.</p>
         <div data-grade09-schedule-bar></div>
-        <p class="schedule-helper"><a href="games/">Pin games &amp; study tools →</a> · <a href="profile/">Choose language, classes &amp; profile design →</a> · <a href="https://vervenveda.com/Khaemenes_High.github.io/grades/student-profile/">Universal Profile Setup →</a></p>
+        <p class="schedule-helper"><a href="games/">Pin games &amp; study tools →</a> · <a href="profile/">Open My Profile →</a></p>
       </section></div><aside aria-label="Student Learning Portfolio" style="max-width:1050px;margin:14px auto;padding:16px;border:1px solid #b9a37f;background:#fff5de;color:#221f1b;border-radius:7px"><h2 style="font-size:24px;font-weight:400">Student Learning Portfolio</h2><p>Use your portfolio to keep work you want to remember—projects, writing, reflections, and examples of how you are growing. Add to it a little at a time throughout the year.</p><p><a href="../../../portfolio/index.html">Open My Learning Evidence →</a></p></aside>
   
   <section class="section">
@@ -163,12 +163,12 @@ body :is(.hero,.ug-hero,.mast) :is(.eyebrow,.ug-eyebrow),body main>.eyebrow{font
       </article>
 
 <section class="card col12" id="learningToday" aria-labelledby="learningTodayHeading" style="background:#fffaf0;border:1px solid #c5b492;border-radius:7px">
-  <p style="font-size:14px;margin:0;color:#61533d">Your calm starting point</p>
+  <p style="font-size:16px;margin:0;color:#61533d">Your calm starting point</p>
   <h2 id="learningTodayHeading">My Learning Today</h2>
   <p id="learningTodaySummary" role="status" aria-live="polite">Finding your next class…</p>
   <div class="actions" id="learningTodayActions"><a class="btn gold" href="daily-lessons/">Open Daily Lessons</a></div>
   <div id="learningTodayCourses" class="lesson-grid" aria-label="Other pinned subjects"></div>
-  <p style="font-size:14px">Your next-step links help you pick up where you left off. If you are not sure what to do next, start with the first class that needs attention.</p>
+  <p style="font-size:16px">Your next-step links help you pick up where you left off. If you are not sure what to do next, start with the first class that needs attention.</p>
 </section>
 
 
@@ -185,8 +185,8 @@ body :is(.hero,.ug-hero,.mast) :is(.eyebrow,.ug-eyebrow),body main>.eyebrow{font
       </section>
 
       <section class="card col12" aria-labelledby="manageClassesTitle">
-        <h2 id="manageClassesTitle">Manage Classes &amp; Mathematics Pathway</h2>
-        <p>Pin the classes you use most so they are easier to reach. Your math class follows your placement, so keep the math course that matches your current path.</p>
+        <h2 id="manageClassesTitle">Manage Classes</h2>
+        <p>Keep the classes you use most within easy reach. Your math class follows your current placement, and you can update your pins as your schedule changes.</p>
         <div class="lesson-grid" id="courseManagerGrid"></div>
       </section>
 
@@ -388,7 +388,7 @@ html:root:root body #vnv-global-support a.vnv-support-button:focus-visible{
       const current=await registry.resolveContinueFor(course.id);
       const mathChip=registry.isMathCourse(course.id)?`<span class="chip">${activeMath===course.id?'Current math path':'Math option'}</span>`:'';
       const description=registry.isMathCourse(course.id)
-        ? (activeMath===course.id?'This is the active mathematics pathway for this browser profile.':'Choose this only when readiness/mastery evidence or family/teacher placement makes it the learner’s current mathematics course.')
+        ? (activeMath===course.id?'This is your current math class.':'Choose this math class only when it matches your current placement.')
         : (pinned?'This class is already at the top of your dashboard.':'Pin this class to make it an everyday one-click door.');
       return `<article class="lesson-card ${course.className}">
         <div class="chip-row"><span class="chip">${escapeHTML(course.subject)}</span><span class="chip">${pinned?'Pinned':'Available'}</span>${mathChip}</div>
@@ -396,7 +396,7 @@ html:root:root body #vnv-global-support a.vnv-support-button:focus-visible{
         <p>${escapeHTML(description)}</p>
         <div class="actions">
           <button class="btn ${pinned?'secondary':''}" type="button" data-toggle-course="${course.id}" aria-pressed="${pinned}">${pinned?'★ Pinned':'☆ Pin Class'}</button>
-          <a class="btn secondary" data-launch-course="${course.id}" href="${escapeHTML(current?.url||course.home)}">${escapeHTML(current?.actionLabel||'Course Home')}</a>
+          <a class="btn secondary" data-launch-course="${course.id}" href="${escapeHTML(current?.url||course.home)}">${escapeHTML(current?.actionLabel||'Continue Class')}</a>
         </div>
       </article>`;
     }));
