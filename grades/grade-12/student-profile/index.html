@@ -170,6 +170,95 @@ body[data-grade="12"] [aria-labelledby="manageClassesTitle"]{
 <link rel="stylesheet" href="../../shared/high-profile-support-footer-parity.css?v=20261106-grade09-approved">
 <link rel="stylesheet" href="../../shared/high-school-course-catalogue.css?v=20261106-cross-grade">
 <link rel="stylesheet" href="../../shared/high-profile-lower-cream-highlights.css?v=20261106-cream01">
+<style id="grade12-schedule-breathing-room-20261106">
+/* Grade 12 Schedule only. No changes to navigation, course pins, records,
+   live class-manager ownership, other popups, or neighboring grade profiles. */
+html:root:root body[data-grade="12"] #upperGradeScheduleDialog{
+ box-sizing:border-box!important;
+ width:min(1020px,calc(100vw - 32px))!important;
+ max-width:1020px!important;
+ max-height:min(91dvh,920px)!important;
+ padding:24px!important;
+ border:2px solid #b48b45!important;
+ border-radius:7px!important;
+ background:#f4f0e7!important;
+ box-shadow:0 22px 65px rgba(0,0,0,.34)!important;
+ overflow-x:hidden!important;
+ overflow-y:auto!important;
+}
+html:root:root body[data-grade="12"] #upperGradeScheduleDialog > div:first-child{
+ display:flex!important;align-items:center!important;justify-content:space-between!important;
+ flex-wrap:wrap!important;gap:16px!important;
+ padding:0 0 18px!important;margin:0 0 20px!important;
+ border-bottom:1px solid #c5b492!important;
+}
+html:root:root body[data-grade="12"] #upperGradeScheduleDialog > div:first-child h2{
+ margin:0!important;
+ font:400 clamp(23px,3vw,29px)/1.35 Cinzel,Georgia,serif!important;
+ color:#243038!important;-webkit-text-fill-color:#243038!important;
+}
+html:root:root body[data-grade="12"] #upperGradeScheduleDialog > div:first-child button{
+ min-height:44px!important;padding:9px 18px!important;
+ border:1px solid #b48b45!important;border-radius:7px!important;
+ background:#243038!important;color:#fff8e9!important;
+ -webkit-text-fill-color:#fff8e9!important;
+ font:400 16px/1.4 "Brandon Grotesque",Nunito,Arial,sans-serif!important;
+}
+html:root:root body[data-grade="12"] #upperGradeScheduleDialog [data-upper-grade-dialog-content]{
+ box-sizing:border-box!important;display:flex!important;flex-direction:column!important;
+ gap:20px!important;min-width:0!important;
+}
+html:root:root body[data-grade="12"] #upperGradeScheduleDialog [data-upper-grade-dialog-content] > p{
+ margin:0!important;color:#45554c!important;
+ font:400 16px/1.65 "Brandon Grotesque",Nunito,Arial,sans-serif!important;
+}
+html:root:root body[data-grade="12"] #upperGradeScheduleDialog .grade09-blueprint-schedule-grid{
+ display:grid!important;
+ grid-template-columns:repeat(auto-fit,minmax(min(100%,195px),1fr))!important;
+ gap:16px!important;align-items:stretch!important;
+ width:100%!important;min-width:0!important;
+}
+html:root:root body[data-grade="12"] #upperGradeScheduleDialog .grade09-blueprint-schedule-item{
+ box-sizing:border-box!important;display:flex!important;flex-direction:column!important;
+ align-items:stretch!important;gap:9px!important;min-width:0!important;
+ min-height:178px!important;margin:0!important;padding:18px!important;
+ background:#fffdf8!important;color:#243038!important;
+ border:1px solid #c5b492!important;border-top:3px solid #b48b45!important;
+ border-radius:7px!important;box-shadow:0 2px 7px rgba(36,48,56,.05)!important;
+}
+html:root:root body[data-grade="12"] #upperGradeScheduleDialog .grade09-blueprint-schedule-item strong{
+ font:400 18px/1.4 Cinzel,Georgia,serif!important;
+ color:#243038!important;-webkit-text-fill-color:#243038!important;
+ overflow-wrap:anywhere!important;
+}
+html:root:root body[data-grade="12"] #upperGradeScheduleDialog .grade09-blueprint-schedule-item > span{
+ color:#45554c!important;-webkit-text-fill-color:#45554c!important;
+ font:400 16px/1.5 "Brandon Grotesque",Nunito,Arial,sans-serif!important;
+ overflow-wrap:anywhere!important;
+}
+html:root:root body[data-grade="12"] #upperGradeScheduleDialog .grade09-blueprint-schedule-item > a{
+ box-sizing:border-box!important;display:inline-flex!important;align-items:center!important;
+ justify-content:center!important;width:100%!important;min-height:44px!important;
+ margin-top:auto!important;padding:9px 12px!important;
+ background:#243038!important;background-image:none!important;
+ color:#fff8e9!important;-webkit-text-fill-color:#fff8e9!important;
+ border:1px solid #b48b45!important;border-radius:7px!important;
+ text-align:center!important;text-decoration:none!important;
+ font:400 16px/1.4 "Brandon Grotesque",Nunito,Arial,sans-serif!important;
+}
+html:root:root body[data-grade="12"] #upperGradeScheduleDialog .grade09-blueprint-schedule-item > a:is(:hover,:focus-visible){
+ background:#36504a!important;color:#fff8e9!important;
+ -webkit-text-fill-color:#fff8e9!important;
+}
+html:root:root body[data-grade="12"] #upperGradeScheduleDialog :is(button,a,select):focus-visible{
+ outline:3px solid #b48b45!important;outline-offset:3px!important;
+}
+@media(max-width:600px){
+ html:root:root body[data-grade="12"] #upperGradeScheduleDialog{padding:14px!important;width:calc(100vw - 18px)!important}
+ html:root:root body[data-grade="12"] #upperGradeScheduleDialog .grade09-blueprint-schedule-grid{gap:12px!important}
+ html:root:root body[data-grade="12"] #upperGradeScheduleDialog .grade09-blueprint-schedule-item{padding:15px!important;min-height:160px!important}
+ }
+</style>
 </head>
 <body data-grade="12" data-high-hide-breadcrumbs="true">
 <script src="../../shared/high-profile-chrome-audit.js?v=20261105-readonly"></script>
