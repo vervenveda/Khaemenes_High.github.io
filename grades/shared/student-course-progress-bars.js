@@ -2,10 +2,11 @@
 (()=>{"use strict";
 const grade=(location.pathname.match(/\/grade-(09|10|11|12)\/student-profile\//)||[])[1];
 if(!grade)return;
-// A late or repeated script load must not mount a second upper-grade progress panel.
-if(grade!=="09"&&document.getElementById("studentCourseProgress"))return;
-// Grade 09 owns an eight-subject interactive chart; preserve this legacy view for Grades 10–12.
-if(grade==="09"){mountGradeNineChart();return;}
+// Grade 09 remains the original fully featured owner.
+// Grades 10–12 now use the same visual dialog model with independent
+// registered-grade data; retire the outdated in-page chart entirely.
+if(grade!=="09")return;
+mountGradeNineChart();return;
 function mountGradeNineChart(){
  const catalog=window.KhaemenesHighEightClass,registry=window.KhaemenesGrade09Courses;
  const pins=window.KhaemenesHighCoursePins,contract=window.KhaemenesCourseEntryContract;
