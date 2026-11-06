@@ -67,6 +67,32 @@ function readData(){
 function checkpointSnapshot(){
  checkpointsArea.replaceChildren();
  const source=$("upperGradeAcademicCheckpoints");
+ // A visitor enrolled in another grade may see public course names,
+ // but never another learner's checkpoints, results or private links.
+ if(!registered()){
+  const preview=make("section","grade09-academic-checkpoints");
+  preview.id="grade09AcademicCheckpoints";
+  preview.append(
+   make("h3","","Today's Class Checkpoints"),
+   make("p","grade09-daily-focus-explanation","This Grade "+grade+" course-layout preview contains no learner scores or completion records. Select a registered Grade "+grade+" learner to view personal checkpoints.")
+  );
+  const grid=make("div","grade09-academic-grid");
+  for(const [index,slot] of slots().slice(0,8).entries()){
+   for(const kind of ["Classwork","Review & practice"]){
+    const card=make("article","grade09-academic-box");
+    card.append(
+     make("span","grade09-academic-number",String(index*2+(kind==="Classwork"?1:2)).padStart(2,"0")),
+     make("strong","",slot.label||"Subject"),
+     make("small","",kind),
+     make("small","","Select a registered Grade "+grade+" learner")
+    );
+    grid.append(card);
+   }
+  }
+  preview.append(grid);
+  checkpointsArea.append(preview);
+  return;
+ }
  if(!source){checkpointsArea.append(make("p","","Class checkpoints are available on the profile page."));return;}
  // Display-only snapshot: the original accessible collapsed checkpoint component
  // remains immediately above Support Free Access. Avoid duplicate IDs.
@@ -98,6 +124,7 @@ function showDetails(row){
 }
 function render(){
  const {learner,rows}=readData();
+ dialog.classList.toggle("grade09-progress-dialog-unregistered",!learner);
  for(const [b,k] of [[all,"all"],[review,"review"]])b.setAttribute("aria-pressed",String(mode===k));
  const reported=rows.filter(r=>r.percent!==null).length;
  const flagged=rows.filter(r=>r.needsReview).length;
