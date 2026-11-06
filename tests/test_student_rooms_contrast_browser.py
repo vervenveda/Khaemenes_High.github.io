@@ -91,51 +91,6 @@ def test_student_rooms_reference_contrast_desktop_mobile():
                         assert rooms.count() == parent.count() == campus.count() == 1
                         assert rooms.is_visible() and parent.is_visible() and campus.is_visible()
                         assert rooms.locator("a.door").count() == 4
-                        if scenario == "default" and width == 1280:
-                            audit = page.evaluate("""() => {
-                                const css='student-profile-rooms-contrast.css';
-                                const nodes=['.student-rooms-contrast','.student-access-contrast','.student-campus-contrast'];
-                                return {
-                                    sheets:[...document.styleSheets].map(s=>({href:s.href||'INLINE',disabled:s.disabled,media:s.media?.mediaText,owner:s.ownerNode?.outerHTML?.slice(0,200),rules:s.cssRules?.length})),
-                                    inlineStyleSheets:[...document.adoptedStyleSheets].map(s=>({disabled:s.disabled,rules:s.cssRules?.length})),
-                                    bodyAttrs:document.body.outerHTML.slice(0,450),
-                                    computedMatch:(()=>{const e=document.querySelector('.student-access-contrast'),r=e.getBoundingClientRect();
-                                      return {style:getComputedStyle(e).cssText,background:getComputedStyle(e).background,
-                                        color:getComputedStyle(e).color,rect:[r.width,r.height],
-                                        transition:getComputedStyle(e).transition,animation:getComputedStyle(e).animationName,
-                                        bgFromVar:getComputedStyle(e).getPropertyValue('--panel')}})(),
-                                    applicableRules:(()=>{
-                                      const e=document.querySelector('.student-access-contrast'),found=[];
-                                      for(const sheet of document.styleSheets){
-                                        let rules;
-                                        try{rules=sheet.cssRules}catch{continue}
-                                        for(const rule of rules){
-                                          if(!rule.selectorText||!rule.style)continue;
-                                          let ok=false;
-                                          try{ok=e.matches(rule.selectorText)}catch{}
-                                          if(!ok)continue;
-                                          for(const prop of ['background','background-color','background-image']){
-                                            const val=rule.style.getPropertyValue(prop);
-                                            if(val)found.push({sheet:sheet.href||'INLINE',selector:rule.selectorText.slice(0,220),
-                                              prop,value:val,priority:rule.style.getPropertyPriority(prop)});
-                                          }
-                                        }
-                                      }
-                                      return found.slice(-32);
-                                    })(),
-                                    sections:nodes.map(q=>{
-                                        const el=document.querySelector(q), computed=getComputedStyle(el);
-                                        return {name:q,domParent:el.parentElement?.className,
-                                            selectorMatch:el.matches('html body main .grid > section'+q),
-                                            inline:el.getAttribute('style'),
-                                            background:computed.backgroundColor,
-                                            image:computed.backgroundImage,
-                                            title:getComputedStyle(el.querySelector('h2')).color,
-                                            customMode:el.getAttribute('data-student-section-color-override')}
-                                    })
-                                };
-                            }""")
-                            print("CSS_TOPOLOGY_DIAGNOSTIC", audit, flush=True)
                         if selected_color:
                             page.wait_for_function(
                                 "() => ['.student-rooms-contrast','.student-access-contrast','.student-campus-contrast'].every("
