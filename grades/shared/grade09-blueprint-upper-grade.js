@@ -285,7 +285,7 @@ function renderTools(){
    item.addEventListener("click",()=>{
     // Progress is read-only. The dialog itself enforces registered-grade privacy
     // and renders an empty state for visitors enrolled in another grade.
-    if(action.label==="Class Progress"){action.run();return;}
+    if(action.label==="Class Progress"||action.label==="KlasaiPeer"){action.run();return;}
     const ctx=gradeContext();
     if(!ctx||ctx.gradeNumber!==Number(grade)){
      if(ctx?.grade&&["11","12"].includes(grade)){
