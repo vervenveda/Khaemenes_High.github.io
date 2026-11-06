@@ -1,9 +1,12 @@
-name: Grade 09 Student Rooms Contrast Verification
+name: High School Student Rooms Contrast Verification
 on:
   push:
     branches: [main]
     paths:
       - 'grades/grade-09/student-profile/index.html'
+      - 'grades/grade-10/student-profile/index.html'
+      - 'grades/grade-11/student-profile/index.html'
+      - 'grades/grade-12/student-profile/index.html'
       - 'grades/grade-09/student-profile/student-profile-background.js'
       - 'grades/shared/student-profile-rooms-contrast.css'
       - 'tests/test_student_rooms_contrast_browser.py'
@@ -32,7 +35,7 @@ jobs:
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: grade09-student-rooms-reference-screenshots
+          name: high-school-student-rooms-contrast-screenshots
           path: artifacts/grade09-student-rooms/*.png
           if-no-files-found: warn
           retention-days: 14
