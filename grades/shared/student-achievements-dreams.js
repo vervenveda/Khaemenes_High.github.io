@@ -3,7 +3,9 @@
 const match=location.pathname.match(/\/grade-(09|10|11|12)\/student-profile\//);
 const grade=match?.[1]||String(document.body.dataset.grade||"").padStart(2,"0");
 if(!["09","10","11","12"].includes(grade))return;
-const mount=grade==="09"?document.querySelector("main"):document.getElementById("my-profile-extras");
+// Every grade mounts the same Grade 09 section inside its profile page.
+// Never depend on the obsolete upper-grade-only extras panel.
+const mount=document.querySelector("main");
 if(!mount||document.getElementById("khaeDreamsAchievements"))return;
 const api=window.KhaemenesStudentProfileV2,contract=window.KhaemenesCourseEntryContract;
 const starting=api?.activeLearner?.()?.learnerId,canonical=contract?.readAcademyProfile?.()?.learnerId;
