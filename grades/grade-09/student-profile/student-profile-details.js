@@ -114,7 +114,7 @@ function mountEditor(){
  h.className="grade09-more-about-me-title";
  h.style.cssText="margin:0;text-align:center;color:#243038;font-family:Cinzel,Georgia,serif;font-weight:400;line-height:1.3";
  h.style.setProperty("font-size","24px","important");
- const info=tag("p","Optional student information. Check Show on My Student Profile beside each item to display it below your photograph. Nothing is automatically published to the web or Bazaar Art. Public sharing requires a separate future permission process.");
+ const info=tag("p","Use this space to make your profile feel like your own. Add the details you want to remember, then check Show on My Student Profile for anything you want displayed below your picture. You can update these choices anytime as your interests, goals, favorites, and plans change.");
  info.style.cssText="margin:0 auto 6px;max-width:760px;text-align:center;color:#243038;font:400 16px/1.55 Nunito,Arial,sans-serif";
  container.append(h,info);
  for(const [group,fields] of GROUPS){
