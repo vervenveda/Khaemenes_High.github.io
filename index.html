@@ -320,7 +320,7 @@ footer{padding:36px 20px;color:rgba(255,255,255,.64);background:#030a11;border-t
    Font names are optional installed system fonts; no downloads or third-party font services. */
 html:root:root body {
   font-family: "Brandon Grotesque", "Avenir Next", Avenir, "Segoe UI", Arial, sans-serif !important;
-  font-size: 14px !important;
+  font-size: 16px !important;
   font-weight: 400 !important;
   line-height: 1.65 !important;
   -webkit-text-size-adjust: 100%;
@@ -363,7 +363,7 @@ html:root:root body :is(.hero, .header, .page-header, .section-head, .lesson-hea
   min-width: 0;
 }
 @media print {
-  html:root:root body { font-size: 14px !important; }
+  html:root:root body { font-size: 16px !important; }
 }
 </style>
 <style id="khaemenes-campus-hero-readability-20261014">
@@ -2005,5 +2005,14 @@ html:root:root body #vnvEcosystemUtilityDock [data-vnv-tool="mentor"]{background
 html:root:root body #vnvEcosystemUtilityDock [data-vnv-tool="support"]{background:#28634e!important;border-color:#6c9986!important;color:#fff!important;-webkit-text-fill-color:#fff!important}
 html:root:root body #vnvEcosystemUtilityDock [data-vnv-tool="beta"]{background:#1e263b!important;border-color:#b29a58!important;color:#fff!important;-webkit-text-fill-color:#fff!important}
 @media(max-width:390px){html:root:root body #vnvEcosystemUtilityDock{width:min(354px,calc(100vw - 16px))!important;padding:7px!important;gap:5px!important}html:root:root body #vnvEcosystemUtilityDock>a,html:root:root body #vnvEcosystemUtilityDock>button{font-size:16px!important;padding:6px 3px!important}}
+/* High School local directory and breadcrumb readability: scoped outside shared chrome. */
+html:root:root body .breadcrumb-bar .breadcrumbs{
+  font-size:16px!important;line-height:1.45!important;
+  letter-spacing:.02em!important;text-transform:none!important;
+}
+html:root:root body #drawerBg .drawer :is(p,.menu-group,.menu-link strong,.menu-link small,.menu-link i,.drawer-search){
+  font-size:16px!important;line-height:1.45!important;
+}
+html:root:root body #drawerBg .drawer .menu-link{min-height:52px}
 </style></body>
 </html>
