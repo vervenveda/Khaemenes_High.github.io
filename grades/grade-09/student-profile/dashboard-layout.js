@@ -94,7 +94,7 @@ if(!document.getElementById("khaeProfileToolRail")){
   if(tool.href)item.href=tool.href;
   else{
    item.type="button";
-   if(tool.target)item.setAttribute("aria-controls",tool.target);
+   if(tool.target){item.setAttribute("aria-controls",tool.target);if(/Dialog$/.test(tool.target))item.setAttribute("aria-haspopup","dialog")}
    item.addEventListener("click",()=>{
     const handled=tool.run?tool.run():reveal(tool.target);
     if(handled===false&&tool.fallback)window.location.assign(tool.fallback);
