@@ -173,6 +173,38 @@ html:root body :is(.btn,.door,.grade09-profile-tool){border-radius:7px}
 @media(max-width:530px){html:root body .grade09-blueprint-schedule-grid{grid-template-columns:1fr}}
 </style>
 <link rel="stylesheet" href="../../shared/student-profile-rooms-contrast.css?v=20261105-approved">
+
+<style id="grade10-class-checkpoints-4x4-20261105">
+/* Grade 10 only: 16 centered checkpoints, four equal columns at desktop width.
+   Grade 09 and Grades 11–12 are not affected. */
+body[data-grade="10"] .grade10-schedule-data-only{display:none!important}
+body[data-grade="10"] #upperGradeAcademicCheckpoints{
+  width:min(100%,1080px);max-width:1080px;margin:24px auto 0!important;
+  border:3px solid #243038!important;border-radius:7px;
+  padding:20px!important;text-align:center!important;background:#f4f0e7;
+}
+body[data-grade="10"] #upperGradeAcademicCheckpoints :is(h3,p){
+  text-align:center!important;margin-left:auto!important;margin-right:auto!important;
+}
+body[data-grade="10"] #upperGradeAcademicCheckpoints .grade09-academic-grid{
+  display:grid!important;grid-template-columns:repeat(4,minmax(0,1fr))!important;
+  gap:12px!important;justify-items:stretch!important;margin:18px auto 0!important;
+}
+body[data-grade="10"] #upperGradeAcademicCheckpoints .grade09-academic-box{
+  min-width:0;min-height:155px;display:flex!important;flex-direction:column;
+  align-items:center!important;justify-content:center!important;gap:7px!important;
+  text-align:center!important;padding:15px!important;
+}
+body[data-grade="10"] #upperGradeAcademicCheckpoints .grade09-academic-box :is(span,strong,small,a){
+  text-align:center!important;max-width:100%;overflow-wrap:anywhere;
+}
+body[data-grade="10"] #upperGradeAcademicCheckpoints .grade09-academic-link{
+  width:100%;max-width:175px;margin-top:auto!important;display:inline-flex;
+  justify-content:center;align-items:center;
+}
+@media(max-width:780px){body[data-grade="10"] #upperGradeAcademicCheckpoints .grade09-academic-grid{grid-template-columns:repeat(2,minmax(0,1fr))!important}}
+@media(max-width:470px){body[data-grade="10"] #upperGradeAcademicCheckpoints .grade09-academic-grid{grid-template-columns:1fr!important}}
+</style>
 </head>
 <body data-grade="10" data-high-hide-breadcrumbs="true">
 <header data-vnv-header-legacy data-grade10-vnv-placement-anchor hidden aria-hidden="true"></header>
@@ -185,12 +217,12 @@ html:root body :is(.btn,.door,.grade09-profile-tool){border-radius:7px}
   </div>
 </div>
 <main>
-<div class="shell grade09-priority-schedule">      <section class="card col12 schedule-card" aria-labelledby="scheduleBarTitle">
-        <h2 id="scheduleBarTitle">My Schedule Bar</h2>
-        <p>Your eight academic subjects stay in order. Pinned games and study tools remain personal shortcuts, separate from courses, grades and enrollment records.</p>
-        <div data-grade09-schedule-bar id="grade09BlueprintSchedule"></div>
-        <p class="schedule-helper"><a href="../../../">Pin games &amp; study tools →</a> · <a href="profile/">Choose language, classes &amp; profile design →</a> · <a href="https://vervenveda.com/Khaemenes_High.github.io/grades/student-profile/">Universal Profile Setup →</a></p>
-      </section></div><aside aria-label="Student Learning Portfolio" style="max-width:1050px;margin:14px auto;padding:16px;border:1px solid #b9a37f;background:#fff5de;color:#221f1b;border-radius:7px"><h2 style="font-size:24px;font-weight:400">Student Learning Portfolio</h2><p>Keep reflections, writing evidence, project references and independent practice summaries in a learner-specific workspace, separate from daily lesson instructions. Families and teachers can review an exported copy together. Back up reports to a dependable device.</p><p><a href="../../../portfolio/index.html">Open My Learning Evidence →</a></p></aside>
+<!-- Grade 10: retain the declarative eight-class data mount for the
+     grade-aware schedule/continuation adapters, but retire the visible Schedule Bar.
+     The approved daily-focus module owns the visible 16 Checkpoints below. -->
+<div class="shell grade09-priority-schedule grade10-schedule-data-only" hidden aria-hidden="true">
+  <div data-grade09-schedule-bar id="grade09BlueprintSchedule"></div>
+</div><aside aria-label="Student Learning Portfolio" style="max-width:1050px;margin:14px auto;padding:16px;border:1px solid #b9a37f;background:#fff5de;color:#221f1b;border-radius:7px"><h2 style="font-size:24px;font-weight:400">Student Learning Portfolio</h2><p>Keep reflections, writing evidence, project references and independent practice summaries in a learner-specific workspace, separate from daily lesson instructions. Families and teachers can review an exported copy together. Back up reports to a dependable device.</p><p><a href="../../../portfolio/index.html">Open My Learning Evidence →</a></p></aside>
   
   <section class="section">
     <div class="shell grid">
