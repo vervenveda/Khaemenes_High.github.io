@@ -287,7 +287,7 @@ function activeLearner(){
     const registry=JSON.parse(localStorage.getItem(FAMILY_KEY)||'null');
     const learner=typeof id==='string'?registry?.learners?.[id]:null;
     if(!learner||learner.learnerId!==id)return null;
-    if(learner.stage!=='high'||!['9','09','10','11','12'].includes(String(learner.grade)))return null;
+    if(learner.stage!=='high'||!['9','09'].includes(String(learner.grade)))return null;
     const sharedId=window.KhaemenesStudentProfileV2?.activeLearner?.()?.learnerId;
     return sharedId&&String(sharedId)!==id?null:learner;
   }catch{return null}
