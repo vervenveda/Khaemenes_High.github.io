@@ -26,6 +26,18 @@ assert.match(dreams,/getElementById\("khaeDreamsAchievements"\)/);
 assert.match(dreams,/KhaemenesHighProfileGradeContext/);
 assert.match(progress,/KhaemenesHighEightClass\?\.slots/);
 assert.match(progress,/KhaemenesHighProfileGradeContext/);
+const explore=read("grades/shared/upper-grade-explore-parity.js");
+const stickers=read("grades/shared/student-sticker-box.js");
+const creative=read("grades/shared/student-ecosystem-tools.js");
+const journey=read("grades/shared/student-learning-journey.js");
+assert.match(explore,/getElementById\("grade09Explore"\)/);
+assert.match(explore,/grade09ExploreAcademyStudio/);
+assert.match(explore,/grade09ExploreYearbook/);
+assert.match(stickers,/getElementById\("khaeStickerBox"\)/);
+assert.match(stickers,/KhaemenesHighProfileGradeContext/);
+assert.match(creative,/blueprintLayout/);
+assert.match(journey,/grade09ExploreJourneyActions/);
+assert.match(journey,/KhaemenesHighProfileGradeContext/);
 for(const grade of [10,11,12]){
  const file="grades/grade-"+grade+"/student-profile/index.html";
  const html=read(file);
@@ -38,10 +50,17 @@ for(const grade of [10,11,12]){
   "course-entry-contract.js",
   "grade09-blueprint-upper-grade.js",
   "student-achievements-dreams.js",
-  "student-course-progress-bars.js"
+  "student-course-progress-bars.js",
+  "student-sticker-box.js",
+  "student-ecosystem-tools.js",
+  "upper-grade-explore-parity.js",
+  "student-learning-journey.js"
  ])assert.ok(html.includes(token),file+" missing "+token);
  assert.equal((html.match(/<script[^>]+src="[^"]*student-achievements-dreams\.js/g)||[]).length,1,file+" duplicate achievements");
  assert.equal((html.match(/<script[^>]+src="[^"]*student-course-progress-bars\.js/g)||[]).length,1,file+" duplicate progress");
+ for(const script of ["student-sticker-box.js","student-ecosystem-tools.js","upper-grade-explore-parity.js","student-learning-journey.js"]){
+  assert.equal((html.match(new RegExp('<script[^>]+src="[^"]*'+script.replaceAll('.','\\.') ,"g"))||[]).length,1,file+" duplicate "+script);
+ }
  assert.ok(!html.includes("grades/grade-09/student-profile/profile/"),file+" routes to Grade 09 editor");
  assert.equal((html.match(/VNV_HEADER\.mount\(\{/g)||[]).length,1,file+" header mounts");
  const editorPath="grades/grade-"+grade+"/student-profile/profile/index.html";
