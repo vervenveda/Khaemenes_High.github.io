@@ -11,12 +11,15 @@ const tools=[
 ["☀️","Solanar","Weather and Earth exploration","https://vervenveda.github.io/solanar.github.io/"],
 ["🎮","Academy Arcade","Games, strategy, puzzles and trivia","https://vervenveda.github.io/arcade.github.io/"]
 ];
-// Grade 09's featured directory has ten balanced destinations. Higher grades retain their existing seven.
+// Grade 09's approved creative directory contains twelve destinations.
+// Higher grades retain their existing seven until their profile sections are approved.
 const isGrade09=/\/grade-09\/student-profile\//.test(location.pathname);
 if(isGrade09)tools.push(
  ["📚","Arshif Archives","Research halls, reading rooms and cultural knowledge","https://vervenveda.com/Arshif.github.io/"],
  ["🏛️","One Nation For All Civics","Explore civic learning, constitutional ideas and community resources","https://vervenveda.com/onenationforall.github.io/"],
- ["🏠","Family Portal","Family learning paths, enrollment and learner support","https://vervenveda.com/Khaemenes_Academy.github.io/family/"]
+ ["🏠","Family Portal","Family learning paths, enrollment and learner support","https://vervenveda.com/Khaemenes_Academy.github.io/family/"],
+ ["✒️","PROSE Editorial Suite","Draft, revise, organize and preserve creative writing","https://vervenveda.com/proresource_hub.github.io/Protools/PROSE/Editorial%20Suite/editorial-suite_core.html"],
+ ["📓","Student Journal","Write personal reflections and daily study notes","https://vervenveda.com/Khaemenes_High.github.io/grades/grade-09/student-profile/daily-lessons/#todaysNote"]
 );
 const section=document.createElement("section");section.id="khaeStudentEcosystemTools";section.setAttribute("aria-label","Creative and discovery tools");
 section.style.cssText="margin:18px 0;padding:17px;border:1px solid #b4a17f;border-radius:7px;background:#1b2d43;color:#f1e9d9;font:400 16px/1.55 Arial,sans-serif";
@@ -28,7 +31,7 @@ tools.forEach(([emoji,label,description,url])=>{
  link.href=url;link.target="_blank";link.rel="noopener noreferrer";
  link.setAttribute("aria-label",label+" (opens in a new tab)");
  if(isGrade09){
-  // Grade 09 editorial resource tiles: preserve all ten resource URLs and titles.
+  // Grade 09 editorial resource tiles: preserve approved resource URLs and titles.
   // Do not replace the site-specific resource directory or load new dependencies.
   link.className="grade09-featured-card";
   const head=document.createElement("span");head.className="grade09-featured-card-head";
