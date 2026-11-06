@@ -116,8 +116,8 @@ function mountEditor(){
  container.append(h,info);
  for(const [group,fields] of GROUPS){
   const details=tag("details");details.open=group==="School & Personal Information";
-  details.style.cssText="box-sizing:border-box;min-width:0;padding:12px;border:1px solid #c8b89a;border-radius:7px;background:#f7f1e6";
-  const summary=tag("summary",group);summary.style.cssText="cursor:pointer;color:#243038;font:400 21px/1.3 Cinzel,Georgia,serif;padding:5px";
+  details.style.cssText="box-sizing:border-box;width:100%;min-width:0;padding:0;border:2px solid #8f7c5b;border-radius:7px;background:#f3ead9;overflow:hidden";
+  const summary=tag("summary",group);summary.style.cssText="box-sizing:border-box;display:flex;align-items:center;min-height:58px;cursor:pointer;background:#243038;color:#fff8e9;-webkit-text-fill-color:#fff8e9;font:400 24px/1.3 Cinzel,Georgia,serif;padding:12px 16px";
   const grid=tag("div");
   // Keep complete desktop rows: 8 School cards in two columns;
   // 15 Favorite cards in three columns. Responsive auto-fit collapses naturally.
@@ -125,10 +125,10 @@ function mountEditor(){
   const isFavorites=group==="My Favorites";
   const maxWidth=isSchool?"850px":isFavorites?"900px":"100%";
   const minCard=isSchool?"330px":isFavorites?"260px":"260px";
-  grid.style.cssText="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,"+minCard+"),1fr));gap:13px;margin:12px auto 0;max-width:"+maxWidth+";width:100%";
+  grid.style.cssText="box-sizing:border-box;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,"+minCard+"),1fr));grid-auto-rows:1fr;gap:13px;margin:0 auto;padding:14px;max-width:"+maxWidth+";width:100%;align-items:stretch";
   for(const [id,label,type,defaultValue] of fields){
    const box=tag("div");box.className="grade09-extra-field";
-   box.style.cssText="display:grid;align-content:start;gap:5px;min-width:0;border:1px solid #d3c6ad;border-radius:7px;padding:10px;background:#fffdf8";
+   box.style.cssText="box-sizing:border-box;display:grid;align-content:start;gap:7px;min-width:0;min-height:138px;height:100%;border:1px solid #b7a589;border-radius:7px;padding:12px;background:#fffdf8;box-shadow:0 2px 7px rgba(36,48,56,.06)";
    const toggle=optionRow(label,id);
    const cap=tag("label",label);cap.setAttribute("for","grade09Detail-"+id);
    cap.style.cssText="color:#243038;font:400 16px/1.35 Nunito,Arial,sans-serif";
@@ -156,10 +156,10 @@ function mountEditor(){
  // editable questionnaire or a second learner record. Idempotent on remount.
  if(!document.getElementById("highStudentPortfolioSection")){
   const section=tag("details");section.id="highStudentPortfolioSection";
-  section.style.cssText="box-sizing:border-box;min-width:0;padding:12px;border:1px solid #c8b89a;border-radius:7px;background:#f7f1e6";
+  section.style.cssText="box-sizing:border-box;width:100%;min-width:0;padding:0;border:2px solid #8f7c5b;border-radius:7px;background:#f3ead9;overflow:hidden";
   const heading=tag("summary","Student Portfolio");
-  heading.style.cssText="cursor:pointer;color:#243038;font:400 21px/1.3 Cinzel,Georgia,serif;padding:5px";
-  const area=tag("div");area.style.cssText="display:grid;gap:12px;padding:14px 9px 8px;color:#243038";
+  heading.style.cssText="box-sizing:border-box;display:flex;align-items:center;min-height:58px;cursor:pointer;background:#243038;color:#fff8e9;-webkit-text-fill-color:#fff8e9;font:400 24px/1.3 Cinzel,Georgia,serif;padding:12px 16px";
+  const area=tag("div");area.style.cssText="display:grid;gap:12px;padding:16px;color:#243038;font-size:16px;line-height:1.55";
   const explanation=tag("p","Continue to your Academy Portfolio Studio for additional learning-workspace features and personal learning evidence. Your High School picture, questionnaire, goals, and grade-specific classes stay managed in their existing places.");
   explanation.style.cssText="margin:0;color:#243038;font:400 16px/1.55 Nunito,Arial,sans-serif";
   const link=tag("a","Open Student Portfolio Studio");
