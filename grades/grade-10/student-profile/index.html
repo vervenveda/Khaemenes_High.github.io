@@ -204,6 +204,27 @@ body[data-grade="10"] #upperGradeAcademicCheckpoints .grade09-academic-link{
 }
 @media(max-width:780px){body[data-grade="10"] #upperGradeAcademicCheckpoints .grade09-academic-grid{grid-template-columns:repeat(2,minmax(0,1fr))!important}}
 @media(max-width:470px){body[data-grade="10"] #upperGradeAcademicCheckpoints .grade09-academic-grid{grid-template-columns:1fr!important}}
+/* Grade 10-only compact disclosure immediately ahead of Support Free Access. */
+body[data-grade="10"] .grade10-checkpoints-disclosure{
+  box-sizing:border-box;width:min(100% - 28px,1080px);max-width:1080px;
+  margin:22px auto!important;border:3px solid #243038;border-radius:7px;
+  background:#f4f0e7;color:#243038;overflow:hidden;
+}
+body[data-grade="10"] .grade10-checkpoints-disclosure>summary{
+  display:list-item;list-style-position:inside;cursor:pointer;
+  padding:17px 22px;text-align:center;font:400 24px/1.35 Cinzel,Georgia,serif;
+  color:#243038;min-height:55px;
+}
+body[data-grade="10"] .grade10-checkpoints-disclosure>summary:focus-visible{
+  outline:3px solid #b48b45;outline-offset:-4px;
+}
+body[data-grade="10"] .grade10-checkpoints-disclosure[open]>summary{
+  border-bottom:1px solid #c5b492;
+}
+body[data-grade="10"] .grade10-checkpoints-disclosure #upperGradeAcademicCheckpoints{
+  border:0!important;margin:0 auto!important;width:100%;
+  max-width:none;padding:20px!important;
+}
 </style>
 </head>
 <body data-grade="10" data-high-hide-breadcrumbs="true">
@@ -390,26 +411,68 @@ html body .grade09-contribute-panel .grade09-contribute-action:focus-visible{
 <script src="https://vervenveda.com/assets/vnv-ecosystem-toolbar.js"></script>
 <script src="../../shared/learning-today-placement.js?v=9362d9e6"></script>
 <script src="../../shared/student-rooms-placement.js?v=20261105-portfolio-order"></script>
-<script id="grade10-checkpoints-last-placement-20261105">
-/* Grade 10 only: preserve approved page order; checkpoints follow Explore
-   as the final content section. Move the existing live node, never clone it.
-   The shared Grade 09/11/12 layout and academic records are untouched. */
+<script id="grade10-checkpoints-collapsible-before-support-20261105">
+/* Grade 10 only. One original 16-card component, one native disclosure.
+   The support card is dynamically inserted; don't move or clone its contents.
+   Grade 09, 11 and 12 keep their own layout and academic functionality. */
 (function(){
  "use strict";
  if(document.body?.dataset.grade!=="10")return;
+ let wrapper=null,observer=null;
+ function contribution(){
+  const headings=[...document.querySelectorAll("h2,h3,h4,div,span,p")]
+   .filter(el=>el.children.length===0&&/^support free access$/i.test((el.textContent||"").trim()));
+  for(const heading of headings){
+   const possible=[];
+   for(let node=heading.parentElement;node&&node!==document.body;node=node.parentElement){
+    const copy=node.textContent||"";
+    if(!/everything here is free/i.test(copy)||!/voluntary/i.test(copy))continue;
+    const link=[...node.querySelectorAll("a,button")]
+     .some(a=>/support with stripe|stripe/i.test((a.textContent||"")+" "+(a.getAttribute("href")||"")));
+    if(link&&!node.contains(wrapper))possible.push(node);
+   }
+   if(possible.length)return possible[0];
+  }
+  return document.querySelector(".grade09-contribute-panel");
+ }
  function place(){
   const main=document.querySelector("main");
-  const explore=main?.querySelector(":scope > #grade09Explore");
-  const checkpoints=document.getElementById("upperGradeAcademicCheckpoints");
-  if(!main||!explore||!checkpoints)return false;
-  if(checkpoints.parentElement!==main||explore.nextElementSibling!==checkpoints)
-   explore.insertAdjacentElement("afterend",checkpoints);
-  return checkpoints.parentElement===main&&explore.nextElementSibling===checkpoints;
+  const node=document.getElementById("upperGradeAcademicCheckpoints");
+  if(!main||!node)return false;
+  if(!wrapper){
+   wrapper=document.createElement("details");
+   wrapper.id="grade10CheckpointsDisclosure";
+   wrapper.className="grade10-checkpoints-disclosure";
+   const heading=document.createElement("summary");
+   heading.textContent="Today's Class Checkpoints";
+   heading.setAttribute("aria-label","Expand or collapse today's sixteen class checkpoints");
+   wrapper.append(heading);
+  }
+  if(node.parentElement!==wrapper)wrapper.append(node);
+  const existingTitle=node.querySelector("h3");
+  if(existingTitle)existingTitle.hidden=true;
+  const support=contribution();
+  if(support?.parentElement){
+   if(wrapper.parentElement!==support.parentElement||wrapper.nextElementSibling!==support)
+    support.insertAdjacentElement("beforebegin",wrapper);
+   observer?.disconnect();observer=null;
+   return true;
+  }
+  // Until the contribution module arrives, keep the collapsed region after
+  // Explore at the end of main. Reposition automatically once support mounts.
+  const explore=main.querySelector(":scope > #grade09Explore");
+  if(explore&&wrapper.parentElement!==main)explore.insertAdjacentElement("afterend",wrapper);
+  return false;
  }
- place();
- if(document.readyState==="loading")
-  document.addEventListener("DOMContentLoaded",place,{once:true});
- window.addEventListener("pageshow",place);
+ function watch(){
+  if(place()||observer)return;
+  observer=new MutationObserver(()=>{place()});
+  observer.observe(document.body,{childList:true,subtree:true});
+ }
+ watch();
+ if(document.readyState==="loading")document.addEventListener("DOMContentLoaded",watch,{once:true});
+ window.addEventListener("load",watch,{once:true});
+ window.addEventListener("pageshow",watch);
 })();
 </script>
 </body></html>
