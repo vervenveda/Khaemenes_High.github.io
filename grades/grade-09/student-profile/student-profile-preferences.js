@@ -8,7 +8,7 @@ const FAMILY_KEY="khaemenes_family_registry_v1";
 const THEMES=new Set(["parchment","forest","midnight"]);
 const ACCENTS=new Set(["gold","teal","plum"]);
 const DENSITIES=new Set(["comfortable","compact"]);
-const AVATAR_SHAPES=new Set(["circle","soft-square","square","rectangle","heart","star","octagon","hectagon"]);
+const AVATAR_SHAPES=new Set(["circle","soft-square","square","rectangle","oval","rhombus","heart","star","octagon","semicircle","kite"]);
 const AVATAR_MARKS=new Set(["initials","star","book","compass","atom","palette"]);
 const DEFAULT=Object.freeze({theme:"parchment",accent:"gold",density:"comfortable",avatarShape:"circle",avatarMark:"initials"});
 const MARKS=Object.freeze({star:"★",book:"⌑",compass:"✧",atom:"⚛",palette:"◌"});
@@ -31,7 +31,7 @@ function normalize(value={}){
   theme:THEMES.has(v.theme)?v.theme:DEFAULT.theme,
   accent:ACCENTS.has(v.accent)?v.accent:DEFAULT.accent,
   density:DENSITIES.has(v.density)?v.density:DEFAULT.density,
-  avatarShape:AVATAR_SHAPES.has(v.avatarShape)?v.avatarShape:DEFAULT.avatarShape,
+  avatarShape:v.avatarShape==="hectagon"?"oval":(AVATAR_SHAPES.has(v.avatarShape)?v.avatarShape:DEFAULT.avatarShape),
   avatarMark:AVATAR_MARKS.has(v.avatarMark)?v.avatarMark:DEFAULT.avatarMark
  };
 }
