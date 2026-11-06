@@ -174,6 +174,35 @@ html:root body :is(.btn,.door,.grade09-profile-tool){border-radius:7px}
 </style>
 <link rel="stylesheet" href="../../shared/student-profile-rooms-contrast.css?v=20261105-approved">
 
+<style id="grade10-hero-breathing-room-20261105">
+/* Grade 10 only: generous charcoal hero spacing, same approved font/color system.
+   Scoped to the local masthead; shared ticker, canonical header and lower cards stay intact. */
+html:root:root body[data-grade="10"] .top.grade09-local-masthead .shell.hero{
+  padding:55px 24px 60px!important;
+  text-align:center!important;
+}
+html:root:root body[data-grade="10"] .top.grade09-local-masthead .shell.hero>.eyebrow{
+  margin:0 auto 14px!important;
+  line-height:1.55!important;
+}
+html:root:root body[data-grade="10"] .top.grade09-local-masthead .shell.hero>h1{
+  margin:0 auto 18px!important;
+  line-height:1.24!important;
+}
+html:root:root body[data-grade="10"] .top.grade09-local-masthead .shell.hero>p:not(.eyebrow){
+  max-width:730px!important;
+  margin:0 auto!important;
+  line-height:1.8!important;
+}
+@media(max-width:600px){
+ html:root:root body[data-grade="10"] .top.grade09-local-masthead .shell.hero{
+   padding:42px 20px 46px!important;
+ }
+ html:root:root body[data-grade="10"] .top.grade09-local-masthead .shell.hero>h1{
+   margin-bottom:15px!important;
+ }
+}
+</style>
 <style id="grade10-class-checkpoints-4x4-20261105">
 /* Grade 10 only: 16 centered checkpoints, four equal columns at desktop width.
    Grade 09 and Grades 11–12 are not affected. */
