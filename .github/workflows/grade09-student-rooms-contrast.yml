@@ -11,6 +11,7 @@ on:
       - 'grades/grade-09/student-profile/student-profile.css'
       - 'grades/shared/student-rooms-placement.js'
       - 'grades/shared/student-profile-rooms-contrast.css'
+      - 'grades/shared/student-ecosystem-tools.js'
       - 'tests/test_student_rooms_contrast_browser.py'
       - '.github/workflows/grade09-student-rooms-contrast.yml'
   workflow_dispatch:
