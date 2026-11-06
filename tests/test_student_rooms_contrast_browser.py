@@ -149,7 +149,14 @@ def test_student_rooms_reference_contrast_desktop_mobile():
 
                         def readable(label, text, surface):
                             fg = rgb(text.evaluate("(el) => getComputedStyle(el).color"))
-                            bg = rgb(surface.evaluate("(el) => getComputedStyle(el).backgroundColor"))
+                            bg_css = surface.evaluate("(el) => getComputedStyle(el).backgroundColor")
+                            # Transparent buttons inherit the panel's visible background;
+                            # rgba(0,0,0,0) is not an opaque black button.
+                            if bg_css.startswith("rgba(") and float(bg_css.split(",")[-1].strip(" )")) == 0:
+                                bg_css = surface.evaluate(
+                                    "(el) => getComputedStyle(el.closest('.student-access-contrast,.student-campus-contrast,.student-rooms-contrast')).backgroundColor"
+                                )
+                            bg = rgb(bg_css)
                             ratio = contrast(fg, bg)
                             assert ratio >= 4.5, (
                                 f"{scenario} {width}px {label} contrast too low: {ratio:.2f} "
