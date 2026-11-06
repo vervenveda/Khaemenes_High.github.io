@@ -97,7 +97,7 @@ exportNotes.addEventListener("click",()=>{
  const url=URL.createObjectURL(blob);
  const link=make("a");link.href=url;
  link.download="klasaipeer-grade-"+String(pageGrade).padStart(2,"0")+"-study-notes.txt";
- d.append(link);link.click();link.remove();URL.revokeObjectURL(url);
+ d.append(link);link.click();link.remove();window.setTimeout(()=>URL.revokeObjectURL(url),1500);
  status.textContent="Your notes were exported as a text file. They were not uploaded.";
 });
 
