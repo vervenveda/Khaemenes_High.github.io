@@ -27,7 +27,8 @@ const right=document.createElement("div");
 right.className="grade09-progress-dialog-chart";
 left.append(checkpoints);
 right.append(progress);
-content.append(left,right);
+/* Keep the existing live chart and checkpoint owners; show progress first. */
+content.append(right,left);
 dialog.append(header,content);
 document.body.append(dialog);
 close.addEventListener("click",()=>dialog.close());
