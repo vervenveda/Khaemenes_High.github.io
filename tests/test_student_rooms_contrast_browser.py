@@ -195,3 +195,69 @@ def test_student_rooms_reference_contrast_desktop_mobile():
                         ctx.close()
         finally:
             browser.close()
+
+
+def test_student_rooms_upper_grades_reference():
+    """Grade 10–12 must remain readable even before family registration."""
+    OUT.mkdir(parents=True, exist_ok=True)
+    with local_site() as site, sync_playwright() as pw:
+        browser = pw.chromium.launch(headless=True)
+        try:
+            for grade in (10, 11, 12):
+                for width in (1280, 390):
+                    ctx = browser.new_context(viewport={"width": width, "height": 840})
+                    try:
+                        page = ctx.new_page()
+                        response = page.goto(
+                            site + f"/grades/grade-{grade}/student-profile/",
+                            wait_until="domcontentloaded",
+                            timeout=25000,
+                        )
+                        assert response and response.status == 200
+                        rooms = page.locator("section.student-rooms-contrast")
+                        parent = page.locator("section.student-access-contrast")
+                        campus = page.locator("section.student-campus-contrast")
+                        assert rooms.count() == parent.count() == campus.count() == 1
+                        assert rooms.is_visible() and parent.is_visible() and campus.is_visible()
+                        assert rooms.locator("a.door").count() == 4
+                        for surface in (rooms, parent, campus):
+                            assert surface.evaluate(
+                                "(el) => getComputedStyle(el).borderRadius"
+                            ) == "7px"
+                            assert surface.evaluate(
+                                "(el) => el.scrollWidth <= el.clientWidth + 3"
+                            )
+                        for text, surface, label in [
+                            (rooms.locator("h2"), rooms, "Student Rooms heading"),
+                            (rooms.locator("p").first, rooms, "Student Rooms copy"),
+                            (parent.locator("h2"), parent, "Parent Access heading"),
+                            (parent.locator("p"), parent, "Parent Access copy"),
+                            (campus.locator("h2"), campus, "Different Door heading"),
+                            (campus.locator("p"), campus, "Different Door copy"),
+                            (rooms.locator(".door").first.locator("b"), rooms.locator(".door").first, "Room title"),
+                        ]:
+                            fore = rgb(text.evaluate("(el) => getComputedStyle(el).color"))
+                            back = rgb(surface.evaluate("(el) => getComputedStyle(el).backgroundColor"))
+                            ratio = contrast(fore, back)
+                            assert ratio >= 4.5, (
+                                f"Grade {grade} {width}px {label} contrast={ratio:.2f} "
+                                f"fg={fore}, bg={back}"
+                            )
+                        for section, name in (
+                            (rooms, "student-rooms"),
+                            (parent, "parent-access"),
+                            (campus, "different-door"),
+                        ):
+                            section.screenshot(
+                                path=str(OUT / f"grade{grade}-{name}-default-{width}.png")
+                            )
+                        if grade in (11, 12):
+                            assert rooms.locator("a.door").last.get_attribute("href") == "#grade09ProfileFirst"
+                            assert parent.locator("a.btn").get_attribute("href") == (
+                                "https://vervenveda.com/Khaemenes_Academy.github.io/family/"
+                            )
+                        print(f"PASS Grade {grade} approved Student Rooms at {width}px")
+                    finally:
+                        ctx.close()
+        finally:
+            browser.close()
