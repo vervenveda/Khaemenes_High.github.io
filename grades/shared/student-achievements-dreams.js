@@ -12,7 +12,7 @@ const starting=api?.activeLearner?.()?.learnerId,canonical=contract?.readAcademy
 const id=starting&&canonical&&String(starting)===String(canonical)?String(starting):null;
 const boardKey=id?"khaemenes.student.dream-board.v1:"+encodeURIComponent(id):null;
 const evidenceKey=id?"khae-learning-portfolio-v1:learner:"+encodeURIComponent(id):null;
-const current=()=>!!id&&String(api?.activeLearner?.()?.learnerId||"")===id&&String(contract?.readAcademyProfile?.()?.learnerId||"")===id;
+const current=()=>!!id&&String(api?.activeLearner?.()?.learnerId||"")===id&&String(contract?.readAcademyProfile?.()?.learnerId||"")===id&&(grade==="09"||window.KhaemenesHighProfileGradeContext?.active?.()?.gradeNumber===Number(grade));
 const el=(tag,text)=>{const n=document.createElement(tag);if(text!==undefined)n.textContent=text;return n};
 const section=el("section");section.id="khaeDreamsAchievements";section.style.cssText="max-width:1050px;margin:18px auto;padding:18px;border:1px solid #b9a787;border-radius:7px;background:#17283c;color:#f0e9d9;font:400 17px/1.55 Arial,sans-serif";
 section.append(el("h2","My Achievements & Dreams"));
