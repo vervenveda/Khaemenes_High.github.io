@@ -252,3 +252,56 @@ def test_student_rooms_upper_grades_reference():
                         ctx.close()
         finally:
             browser.close()
+
+
+def test_grade09_creative_directory_twelve_cards():
+    """The approved Grade 09 directory has twelve readable, unique destinations."""
+    OUT.mkdir(parents=True, exist_ok=True)
+    with local_site() as site, sync_playwright() as pw:
+        browser = pw.chromium.launch(headless=True)
+        try:
+            for width in (1280, 390):
+                context = browser.new_context(
+                    viewport={"width": width, "height": 850}
+                )
+                try:
+                    page = context.new_page()
+                    response = page.goto(
+                        site + PAGE, wait_until="domcontentloaded", timeout=25000
+                    )
+                    assert response and response.status == 200
+                    details = page.locator(
+                        "#grade09Explore details"
+                    ).filter(has=page.locator("summary", has_text="Creative & Discovery Tools"))
+                    assert details.count() == 1
+                    details.locator("summary").click()
+                    grid = page.locator("#grade09Explore .grade09-featured-grid")
+                    cards = grid.locator("a.grade09-featured-card")
+                    assert cards.count() == 12, "Creative resource grid must contain twelve cards"
+                    links = cards.evaluate_all("(nodes) => nodes.map(n => ({title:n.innerText,href:n.href}))")
+                    assert len({link["href"] for link in links}) == 12
+                    assert any(
+                        "PROSE Editorial Suite" in link["title"]
+                        and "/Protools/PROSE/Editorial%20Suite/editorial-suite_core.html" in link["href"]
+                        for link in links
+                    ), "Missing direct PROSE editorial studio"
+                    assert any(
+                        "Student Journal" in link["title"]
+                        and "/grades/grade-09/student-profile/daily-lessons/#todaysNote" in link["href"]
+                        for link in links
+                    ), "Missing Grade 09 learner-scoped Student Journal"
+                    assert grid.evaluate(
+                        "(el) => el.scrollWidth <= el.clientWidth + 3"
+                    ), "Creative card grid must not overflow"
+                    widths = cards.evaluate_all(
+                        "(nodes) => nodes.map(n => n.getBoundingClientRect().width)"
+                    )
+                    assert min(widths) >= 170, (
+                        f"Resource cards too narrow at {width}px: {widths}"
+                    )
+                    grid.screenshot(path=str(OUT / f"grade09-creative-12-{width}.png"))
+                    print(f"PASS Grade 09 twelve creative cards at {width}px")
+                finally:
+                    context.close()
+        finally:
+            browser.close()
