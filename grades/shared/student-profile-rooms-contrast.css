@@ -69,3 +69,35 @@ html body main .grid > section:is(.student-rooms-contrast,.student-access-contra
  html body main .student-rooms-contrast .door-grid{grid-template-columns:1fr!important}
  html body main .student-rooms-contrast .door-grid > a.door{min-height:0!important}
 }
+
+/* Student Rooms placement — portfolio-adjacent, Grades 09–12.
+   Keep a single original .grid so the approved forest/charcoal panel rules
+   still apply. The class has no effect until the shared placement script runs. */
+html body main > .student-rooms-placement{
+  box-sizing:border-box;
+  width:min(calc(100% - 33px),1100px);
+  max-width:1100px;
+  margin:16px auto 24px;
+  padding:0;
+}
+html body main > .student-rooms-placement > .student-rooms-placement-grid{
+  display:grid;
+  grid-template-columns:repeat(12,minmax(0,1fr));
+  align-items:stretch;
+  gap:12px;
+}
+html body main > .student-rooms-placement .student-rooms-contrast{grid-column:span 12}
+html body main > .student-rooms-placement .student-access-contrast,
+html body main > .student-rooms-placement .student-campus-contrast{grid-column:span 6}
+@media(max-width:690px){
+ html body main > .student-rooms-placement{
+  width:calc(100% - 22px);
+  margin:12px auto 20px;
+ }
+ html body main > .student-rooms-placement :is(.student-access-contrast,.student-campus-contrast){
+  grid-column:span 12;
+ }
+}
+/* Once all original cards have been relocated, suppress only the empty
+   original grid's surrounding padding (not any other learning content). */
+html body main > .section:has(> .shell.grid:empty){display:none}
