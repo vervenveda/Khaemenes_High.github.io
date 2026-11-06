@@ -5,7 +5,7 @@
  * No learner state reads or writes; never changes checkpoint/assessment owners.
  */
 (()=>{"use strict";
-const grade=Number(document.body?.dataset.grade);
+const grade=Number(document.body?.dataset.grade||(/\/grade-(09|10|11|12)\/student-profile\//.exec(location.pathname)||[])[1]);
 if(![9,10,11,12].includes(grade)||window.KhaemenesHighCourseCatalogue)return;
 const root="https://vervenveda.com/Khaemenes_High.github.io/";
 const courses=[
