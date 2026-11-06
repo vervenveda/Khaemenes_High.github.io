@@ -63,9 +63,9 @@ const count=el("p","grade09-daily-focus-count");count.setAttribute("role","statu
 const list=el("ol","grade09-daily-focus-list");
 const academics=el("section","grade09-academic-checkpoints");
 academics.id="grade09AcademicCheckpoints";
-academics.setAttribute("aria-label","Academic mastery checkpoints for today");
+academics.setAttribute("aria-label","Sixteen Grade 09 lesson and unit academic checkpoints for today");
 const academicHeading=el("h3","","Today's Class Checkpoints");
-const academicHelp=el("p","grade09-daily-focus-explanation","A class highlights when a dated lesson or unit assessment result reports at least 80%. Course-wide progress and personal checks do not count. Assessment integration is still being connected.");
+const academicHelp=el("p","grade09-daily-focus-explanation","Eight subjects · two checkpoints each: Lesson and Unit. A tile highlights only when a dated course assessment reports 80% or higher today. Personal checklists and course-wide percentages never count; an unreported checkpoint does not mean failure.");
 const classGrid=el("div","grade09-academic-grid");
 const note=el("p","grade09-daily-focus-note","Daily reports are saved on this browser for an authorized parent to review. Cross-device sending is not connected.");
 const familyLink=el("a","grade09-daily-task-link","Open Family Learning Center");
@@ -73,27 +73,25 @@ familyLink.href="https://vervenveda.com/Khaemenes_Academy.github.io/family/";
 academics.append(academicHeading,academicHelp,classGrid);
 container.append(help,count,list,note,familyLink);
 card.append(container);
-// Keep academic evidence with the academic schedule, not inside personal wellbeing.
-// Schedule and course cards are owned elsewhere; only append this dedicated section.
-const scheduleCard=document.querySelector(".grade09-priority-schedule .schedule-card");
-if(scheduleCard)scheduleCard.append(academics);
-else{
- const fallback=el("p","grade09-daily-focus-note","Academic checkpoints are unavailable until My Schedule Bar loads.");
- container.append(fallback);
-}
+// The existing read-only checkpoint section belongs below Explore, Create
+// & Celebrate. Never create a second checkpoint system or change course data.
+const explore=document.getElementById("grade09Explore"),main=document.querySelector("main");
+if(explore?.parentElement===main)explore.insertAdjacentElement("afterend",academics);
+else if(main)main.append(academics);
+else container.append(academics);
 let revision=0;
 function subjectLink(subject,slots){
  const entry=slots.find(x=>x.subject===subject);
  const course=entry?.id?registry.getCourse(entry.id):null;
  return course?.home||"daily-lessons/";
 }
-function masteredEvidence(p,courseId){
+function masteredEvidence(p,courseId,type=null){
  // Only a dated, assessment-level record qualifies. Course-wide progress percentages
  // and self-reported daily checks never satisfy this test.
  const records=read(evidenceKey(p));
  const items=Array.isArray(records?.assessments)?records.assessments:[];
  return items.find(x=>x?.learnerId===p.learnerId&&x.courseId===courseId&&
-  ["lesson","unit"].includes(x.type)&&typeof x.assessmentId==="string"&&x.assessmentId.length>0&&
+  (type?x.type===type:["lesson","unit"].includes(x.type))&&typeof x.assessmentId==="string"&&x.assessmentId.length>0&&
   Number.isFinite(x.score)&&x.score>=80&&x.score<=100&&
   typeof x.completedAt==="string"&&Number.isFinite(Date.parse(x.completedAt))&&
   dateString(new Date(x.completedAt))===localDate()&&
@@ -154,16 +152,26 @@ function updateCount(){
 }
 function drawClasses(p,slots){
  classGrid.replaceChildren();
- slots.slice(0,8).forEach((slot,i)=>{
+ // Eight existing subjects × two evidence types = sixteen tiles.
+ // These are not student-checkable boxes or additional graded classes.
+ const kinds=[["lesson","Lesson"],["unit","Unit"]];
+ slots.slice(0,8).forEach((slot,subjectIndex)=>{
   const course=slot.id?registry.getCourse(slot.id):null;
-  const evidence=p&&course?masteredEvidence(p,course.id):null;
-  const box=el("div","grade09-academic-box"+(evidence?" is-mastered":""));
-  box.append(el("span","grade09-academic-number",String(i+1).padStart(2,"0")),
-   el("strong","",slot.label),el("small","",evidence?"80%+ reported today · "+evidence.score+"%":"Not verified today"));
-  if(evidence)box.setAttribute("aria-label",slot.label+" mastered today");
-  const a=el("a","grade09-academic-link",course?"Open class":"Choose class");
-  a.href=course?.home||"profile/";
-  box.append(a);classGrid.append(box);
+  kinds.forEach(([kind,label],kindIndex)=>{
+   const evidence=p&&course?masteredEvidence(p,course.id,kind):null;
+   const box=el("article","grade09-academic-box"+(evidence?" is-mastered":""));
+   box.dataset.checkpointType=kind;
+   box.dataset.checkpointSubject=slot.subject||slot.label||"";
+   const position=String(subjectIndex*2+kindIndex+1).padStart(2,"0");
+   box.append(el("span","grade09-academic-number",position+" · "+label+" checkpoint"),
+      el("strong","",slot.label),
+      el("small","grade09-academic-state",evidence?"80%+ reported today · "+evidence.score+"%":"Not reported today"));
+   box.setAttribute("aria-label",slot.label+" "+label+" checkpoint: "+
+      (evidence?"80 percent or higher reported today":"not reported today"));
+   const link=el("a","grade09-academic-link",course?"Open class":"Choose class");
+   link.href=course?.home||"profile/";
+   box.append(link);classGrid.append(box);
+  });
  });
 }
 function render(){
