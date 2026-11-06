@@ -44,8 +44,18 @@ for(const grade of [10,11,12]){
  assert.equal((html.match(/<script[^>]+src="[^"]*student-course-progress-bars\.js/g)||[]).length,1,file+" duplicate progress");
  assert.ok(!html.includes("grades/grade-09/student-profile/profile/"),file+" routes to Grade 09 editor");
  assert.equal((html.match(/VNV_HEADER\.mount\(\{/g)||[]).length,1,file+" header mounts");
- if(grade===10)assert.ok(fs.existsSync(path.join(root,"grades/grade-10/student-profile/profile/index.html")));
- else assert.ok(html.includes("grades/student-profile/"),file+" lacks grade-aware setup");
+ const editorPath="grades/grade-"+grade+"/student-profile/profile/index.html";
+ const chooserPath="grades/grade-"+grade+"/student-profile/grade"+grade+"-look-chooser.js";
+ assert.ok(fs.existsSync(path.join(root,editorPath)),file+" editor missing");
+ assert.ok(fs.existsSync(path.join(root,chooserPath)),file+" picture studio missing");
+ const editor=read(editorPath),chooser=read(chooserPath);
+ assert.ok(html.includes('href="profile/"'),file+" no same-grade editor button");
+ assert.ok(editor.includes('data-grade="'+grade+'"'),editorPath+" wrong grade marker");
+ assert.ok(editor.includes("String(Number(learner.grade))!=='"+grade+"'"),editorPath+" missing grade guard");
+ assert.ok(chooser.includes('String(Number(record.grade))!=="'+grade+'"'),chooserPath+" missing photo grade guard");
+ assert.ok(editor.includes("loadedOwner!==learner.learnerId||loadedGrade!==registeredGrade()"),editorPath+" missing learner-switch guard");
+ assert.ok(editor.includes("grade"+grade+"-look-chooser.js"),editorPath+" missing photo studio");
+ assert.ok(editor.includes("khaemenes-grade"+grade+"-student-profile.json"),editorPath+" export labeled wrong grade");
  console.log("PASS Grade "+grade+" — blueprint structure, one-time imports, grade-aware routes");
 }
 console.log("PASS Upper-grade profile source-level parity (browser behavior requires separate tests)");
