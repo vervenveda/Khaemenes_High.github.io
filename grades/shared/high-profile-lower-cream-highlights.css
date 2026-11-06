@@ -1,0 +1,107 @@
+/* High School Profiles 09–12 · approved light-cream lower-page highlights.
+   Scope: lower discovery/accordion, course catalogue, checkpoints, support card.
+   No changes to student tools, assessment cards, canonical chrome or footer. */
+html:root:root body .grade09-explore{
+ background:#f7f0e4!important;
+ border:3px solid #243038!important;
+ border-radius:7px!important;
+ box-shadow:0 5px 18px rgba(36,48,56,.06)!important;
+}
+html:root:root body .grade09-explore > :is(h2,p){
+ color:#243038!important;
+ -webkit-text-fill-color:#243038!important;
+}
+html:root:root body .grade09-explore details.grade09-explore-item{
+ background:#fffaf2!important;
+ border:1px solid #c5b492!important;
+ border-radius:7px!important;
+}
+html:root:root body .grade09-explore details.grade09-explore-item[open]{
+ background:#fffdf8!important;
+}
+html:root:root body .grade09-explore details.grade09-explore-item > summary{
+ background:#fffaf2!important;
+ color:#243038!important;
+ -webkit-text-fill-color:#243038!important;
+}
+html:root:root body .grade09-explore details.grade09-explore-item[open] > summary{
+ background:#f3ead9!important;
+ border-bottom:1px solid #c5b492!important;
+}
+html:root:root body .grade09-explore .grade09-explore-editorial-panel{
+ background:#fffdf8!important;
+ color:#243038!important;
+}
+html:root:root body #khaeHighSchoolCourseCatalogue.khae-course-catalogue{
+ background:#fffaf2!important;
+ border:3px solid #243038!important;
+ border-radius:7px!important;
+ box-shadow:0 5px 18px rgba(36,48,56,.06)!important;
+}
+html:root:root body #khaeHighSchoolCourseCatalogue.khae-course-catalogue > summary{
+ background:#fffaf2!important;
+ color:#243038!important;
+}
+html:root:root body #khaeHighSchoolCourseCatalogue.khae-course-catalogue[open] > summary{
+ background:#f3ead9!important;
+ border-bottom:1px solid #b48b45!important;
+}
+html:root:root body #khaeHighSchoolCourseCatalogue .khae-course-catalogue-body{
+ background:#fffdf8!important;
+ color:#243038!important;
+}
+html:root:root body :is(#khaeCheckpointsDisclosure.khae-checkpoints-disclosure,#grade10CheckpointsDisclosure.grade10-checkpoints-disclosure){
+ background:#fffaf2!important;
+ border:3px solid #243038!important;
+ border-radius:7px!important;
+ box-shadow:0 5px 18px rgba(36,48,56,.06)!important;
+}
+html:root:root body :is(#khaeCheckpointsDisclosure.khae-checkpoints-disclosure,#grade10CheckpointsDisclosure.grade10-checkpoints-disclosure) > summary{
+ background:#fffaf2!important;
+ color:#243038!important;
+ -webkit-text-fill-color:#243038!important;
+}
+html:root:root body :is(#khaeCheckpointsDisclosure.khae-checkpoints-disclosure,#grade10CheckpointsDisclosure.grade10-checkpoints-disclosure)[open] > summary{
+ background:#f3ead9!important;
+ border-bottom:1px solid #b48b45!important;
+}
+html:root:root body :is(#khaeCheckpointsDisclosure.khae-checkpoints-disclosure,#grade10CheckpointsDisclosure.grade10-checkpoints-disclosure) > .grade09-academic-checkpoints{
+ background:#fffdf8!important;
+}
+html:root:root body .grade09-contribute-panel{
+ box-sizing:border-box!important;
+ background:#fffaf2!important;
+ background-image:none!important;
+ color:#243038!important;
+ border:2px solid #b48b45!important;
+ border-radius:7px!important;
+ box-shadow:0 6px 18px rgba(36,48,56,.08)!important;
+ margin-bottom:24px!important;
+}
+html:root:root body .grade09-contribute-panel :is(h2,h3,h4,p,small,div,span):not(a):not(button){
+ color:#243038!important;
+ -webkit-text-fill-color:#243038!important;
+}
+html:root:root body .grade09-contribute-panel :is(a,button).grade09-contribute-action,
+html:root:root body #vnv-global-support a.vnv-support-button{
+ background:#243038!important;
+ background-image:none!important;
+ color:#fff8e9!important;
+ -webkit-text-fill-color:#fff8e9!important;
+ border:1px solid #b48b45!important;
+}
+html:root:root body .grade09-contribute-panel :is(a,button).grade09-contribute-action :is(span,strong){
+ color:#fff8e9!important;
+ -webkit-text-fill-color:#fff8e9!important;
+}
+html:root:root body footer.footer.grade09-dashboard-footer{
+ background:#243038!important;
+ background-image:none!important;
+ color:#fff8e9!important;
+ border-top:1px solid #b48b45!important;
+}
+@media(prefers-reduced-motion:reduce){
+ html:root:root body :is(.grade09-explore,.khae-course-catalogue,.khae-checkpoints-disclosure,.grade10-checkpoints-disclosure,.grade09-contribute-panel){
+  transition:none!important;
+ }
+}
