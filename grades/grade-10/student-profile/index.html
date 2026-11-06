@@ -263,6 +263,63 @@ body[data-grade="10"] section.grade10-retired-manager-data{display:none!importan
 </style>
 <link rel="stylesheet" href="../../shared/high-school-course-catalogue.css?v=20261106-cross-grade">
 <link rel="stylesheet" href="../../shared/high-profile-lower-cream-highlights.css?v=20261106-cream01">
+<style id="grade10-live-schedule-manager-20261106">
+/* Grade 10 only: the original class-manager element is rehomed in Schedule.
+   Maintain Grade 09's cream/charcoal popup style without changing pin logic. */
+html:root:root body[data-grade="10"] #upperGradeScheduleDialog{
+ width:min(1100px,calc(100vw - 24px))!important;
+ max-width:1100px!important;
+ max-height:92dvh!important;
+ overflow:auto!important;
+ background:#f4f0e7!important;
+ color:#243038!important;
+}
+html:root:root body[data-grade="10"] #upperGradeScheduleDialog [data-upper-grade-dialog-content]{
+ min-width:0!important;
+}
+html:root:root body[data-grade="10"] #upperGradeScheduleDialog .grade10-schedule-manager{
+ box-sizing:border-box!important;
+ display:block!important;
+ width:100%!important;
+ max-width:100%!important;
+ min-width:0!important;
+ margin:18px 0 0!important;
+ padding:20px!important;
+ border:2px solid #b48b45!important;
+ border-radius:7px!important;
+ background:#fffaf2!important;
+ color:#243038!important;
+}
+html:root:root body[data-grade="10"] #upperGradeScheduleDialog .grade10-schedule-manager :is(h2,p,label){
+ color:#243038!important;
+ -webkit-text-fill-color:#243038!important;
+ font-size:16px!important;
+}
+html:root:root body[data-grade="10"] #upperGradeScheduleDialog .grade10-schedule-manager h2{
+ font:400 24px/1.4 Cinzel,Georgia,serif!important;
+}
+html:root:root body[data-grade="10"] #upperGradeScheduleDialog .grade10-schedule-manager #courseManagerGrid{
+ display:grid!important;
+ grid-template-columns:repeat(2,minmax(0,1fr))!important;
+ gap:14px!important;
+}
+html:root:root body[data-grade="10"] #upperGradeScheduleDialog .grade10-schedule-manager #courseManagerGrid>.lesson-card{
+ box-sizing:border-box!important;min-width:0!important;
+ padding:16px!important;background:#fffdf8!important;
+ border:1px solid #c5b492!important;border-radius:7px!important;
+}
+html:root:root body[data-grade="10"] #upperGradeScheduleDialog .grade10-schedule-manager .actions :is(button,a){
+ min-height:44px!important;
+}
+@media(max-width:660px){
+ html:root:root body[data-grade="10"] #upperGradeScheduleDialog .grade10-schedule-manager #courseManagerGrid{
+  grid-template-columns:minmax(0,1fr)!important;
+ }
+ html:root:root body[data-grade="10"] #upperGradeScheduleDialog .grade10-schedule-manager{
+  padding:12px!important;
+ }
+}
+</style>
 </head>
 <body data-grade="10" data-high-hide-breadcrumbs="true">
 <header data-vnv-header-legacy data-grade10-vnv-placement-anchor hidden aria-hidden="true"></header>
