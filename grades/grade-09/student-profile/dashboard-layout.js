@@ -31,6 +31,9 @@ if(!document.getElementById("khaeProfileToolRail")){
  heading.style.cssText="margin:0 0 12px;text-align:center;color:#e2bd78;font:400 24px/1.3 Cinzel,Georgia,serif";
  const grid=document.createElement("div");
  grid.style.cssText="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,220px),1fr));gap:9px";
+ const openConnectedResource=url=>{
+  try{const opened=window.open(url,"_blank","noopener,noreferrer");return !!opened}catch{return false}
+ };
  const reveal=id=>{
   const element=document.getElementById(id);
   if(!element)return false;
@@ -97,7 +100,10 @@ if(!document.getElementById("khaeProfileToolRail")){
    if(tool.target){item.setAttribute("aria-controls",tool.target);if(/Dialog$/.test(tool.target))item.setAttribute("aria-haspopup","dialog")}
    item.addEventListener("click",()=>{
     const handled=tool.run?tool.run():reveal(tool.target);
-    if(handled===false&&tool.fallback)window.location.assign(tool.fallback);
+    if(handled===false&&tool.fallback){
+      if(/^https:\/\/vervenveda\.com\/(?:Klasaipeer|Academy-Yearbook)\.github\.io\//i.test(tool.fallback))openConnectedResource(tool.fallback);
+      else window.location.assign(tool.fallback);
+    }
    });
   }
   item.style.cssText="box-sizing:border-box;display:flex;align-items:center;justify-content:center;width:100%;min-width:0;min-height:56px;padding:10px 12px;border:1px solid #65716c;border-radius:7px;background:#33454b;color:#fff8e9;-webkit-text-fill-color:#fff8e9;text-align:center;text-decoration:none;font:400 16px/1.3 'Brandon Grotesque',Nunito,Arial,sans-serif;cursor:pointer";
@@ -150,7 +156,7 @@ if(!window.KhaemenesGrade09Yearbook){
  const header=document.createElement("div");header.className="yearbook-modal-header";
  const heading=document.createElement("h2");heading.id="grade09YearbookTitle";heading.textContent="My Grade 9 Yearbook";
  const controls=document.createElement("div");controls.className="yearbook-modal-buttons";
- const launch=document.createElement("a");launch.href=yearbookUrl;launch.target="_blank";launch.rel="noopener noreferrer";launch.textContent="Open My Yearbook";
+ const launch=document.createElement("a");launch.href=yearbookUrl;launch.target="_blank";launch.rel="noopener noreferrer";launch.textContent="Open My Yearbook in New Tab";
  const close=document.createElement("button");close.type="button";close.textContent="Close";
  controls.append(launch,close);header.append(heading,controls);
  const help=document.createElement("p");help.className="yearbook-modal-help";
