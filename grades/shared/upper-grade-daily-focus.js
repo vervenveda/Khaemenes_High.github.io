@@ -67,7 +67,8 @@ const classGrid=create("div","grade09-academic-grid");
 classGrid.style.cssText="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,190px),1fr));gap:12px;margin-top:12px";
 study.append(classGrid);
 const scheduleCard=document.querySelector(".grade09-priority-schedule .schedule-card");
-if(scheduleCard)scheduleCard.append(study);
+if(grade===10)wrap.append(study); // Grade 10 retires the visible Schedule Bar.
+else if(scheduleCard)scheduleCard.append(study);
 else wrap.append(study);
 let currentId="";
 function slots(){try{return catalog.slots(grade)}catch{return []}}
@@ -157,15 +158,25 @@ function render(){
   return;
  }
  slots().forEach((slot,index)=>{
-  const box=create("article","grade09-academic-box");
-  box.style.cssText="display:grid;gap:7px;min-height:128px;padding:12px;border:1px solid #c5b492;border-radius:7px;background:#fffdf8;color:#243038";
-  box.append(create("span","grade09-academic-number",String(index+1).padStart(2,"0")));
-  box.append(create("strong","",slot.label));
-  box.append(create("small","","Not verified today"));
-  const link=slot.href&&/^https:\/\//.test(slot.href)?slot.href:null;
-  if(link){const a=create("a","grade09-academic-link","Open class");a.href=link;box.append(a)}
-  else box.append(create("small","","Use My Schedule Bar to choose a class"));
-  classGrid.append(box);
+  // Grade 10 uses 16 clearly distinguished personal navigation/checkpoint tiles:
+  // one classwork doorway and one review/practice doorway per eight subjects.
+  // They never mark assessment progress, credit, or course mastery.
+  const activities=grade===10
+   ? [{kind:"Classwork",action:"Open class"},{kind:"Review & practice",action:"Review class"}]
+   : [{kind:"",action:"Open class"}];
+  activities.forEach((activity,activityIndex)=>{
+   const box=create("article","grade09-academic-box");
+   box.style.cssText="display:grid;gap:7px;min-height:128px;padding:12px;border:1px solid #c5b492;border-radius:7px;background:#fffdf8;color:#243038";
+   const number=grade===10?(index+1)+(activityIndex*8):index+1;
+   box.append(create("span","grade09-academic-number",String(number).padStart(2,"0")));
+   box.append(create("strong","",slot.label));
+   if(activity.kind)box.append(create("small","grade10-checkpoint-kind",activity.kind));
+   box.append(create("small","","Not verified today"));
+   const link=slot.href&&/^https:\/\//.test(slot.href)?slot.href:null;
+   if(link){const a=create("a","grade09-academic-link",activity.action);a.href=link;box.append(a)}
+   else box.append(create("small","","Choose this class in Manage Classes"));
+   classGrid.append(box);
+  });
  });
 }
 for(const eventName of ["khaemenes-student-profile-changed","khaemenes-course-pins-changed","khaemenes-learning-continuation-changed","pageshow","focus"])
