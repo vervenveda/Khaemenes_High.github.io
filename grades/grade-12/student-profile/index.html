@@ -169,6 +169,38 @@ body[data-grade="12"] [aria-labelledby="manageClassesTitle"]{
 </style>
 </head>
 <body data-grade="12" data-high-hide-breadcrumbs="true">
+<!-- Canonical page chrome mounts before the hero to prevent a late layout shift.
+     One official instance of each component; no local ticker or header clone. -->
+<script src="https://vervenveda.com/assets/vnv-ticker-autopopulate.js" data-vnv-ticker-autopopulate></script>
+<script src="https://vervenveda.com/assets/vnv-333-ticker.js"></script>
+<script src="https://vervenveda.com/assets/vnv-header-autopopulate.js"></script>
+<script id="grade12-early-canonical-chrome-20261105">
+(function(){
+ "use strict";
+ if(document.body?.dataset.grade!=="12")return;
+ const options={
+  replaceLegacy:true,title:"Grade 12 Student Profile",
+  subtitle:"Khaemenes Academy · High School",icon:"12",
+  home:"https://vervenveda.com/Khaemenes_Academy.github.io/",
+  actions:[
+   {label:"PROFILE",href:"profile/"},
+   {label:"LESSONS",href:"#grade09BlueprintTools"},
+   {label:"PORTFOLIO",href:"../../../portfolio/index.html"},
+   {label:"GAMES",href:"https://vervenveda.com/arcade.github.io/"},
+   {label:"HOME",href:"../../../"}
+  ]
+ };
+ // The 333 ticker is idempotent; mount it after the quick-link ticker
+ // so that it is inserted before that ticker in the canonical visual order.
+ window.VNV_TICKER?.autoPopulate?.({label:"Grade 12 Profile Quick Links",max:14});
+ window.VNV333Ticker?.mount?.();
+ if(window.VNV_HEADER?.mount)window.VNV_HEADER.mount({
+  replaceLegacy:options.replaceLegacy,title:options.title,
+  subtitle:options.subtitle,icon:options.icon,home:options.home,
+  actions:options.actions
+ });
+})();
+</script>
 
 <div class="top grade09-local-masthead">
   <div class="shell hero">
@@ -342,64 +374,39 @@ html body .grade09-contribute-panel .grade09-contribute-action:focus-visible{
 <script src="../../shared/upper-grade-explore-parity.js?v=upper-grade-parity-2"></script>
 <script src="../../shared/student-learning-journey.js?v=upper-grade-parity-2"></script>
 <script src="../../../assets/vnv-language.js" defer data-official-vnv-language="true"></script>
-<script src="https://vervenveda.com/assets/vnv-333-ticker.js"></script>
-<script src="https://vervenveda.com/assets/vnv-ticker-autopopulate.js" data-vnv-ticker-autopopulate></script>
 
-<script src="https://vervenveda.com/assets/vnv-header-autopopulate.js"></script>
+
+
+
 
 <script src="https://vervenveda.com/assets/vnv-ecosystem-toolbar.js"></script>
 <script src="../../shared/learning-today-placement.js?v=9362d9e6"></script>
 <script src="../../shared/student-rooms-placement.js?v=20261105-portfolio-order"></script>
 <script src="../../shared/student-checkpoints-disclosure.js?v=20261105-bottom-disclosure"></script>
-<script id="grade12-canonical-chrome-and-retired-panels-20261105">
-/* Restore the canonical 333 + quick-links ticker + header on entry/return.
-   All shared mounts are idempotent. Never create a second header/ticker.
-   Retired sections retain their backing elements for course and popup owners. */
+<script id="grade12-retired-profile-panels-20261105">
+/* Presentation-only guard. The shared toolbar owns Schedule and Progress dialogs.
+   Keep the backing data nodes in the DOM, without showing redundant cards. */
 (function(){
  "use strict";
- if(window.KhaemenesGrade12ChromeRepair)return;
-
- function repair(){
+ if(window.KhaemenesGrade12RetiredPanels)return;
+ function hide(){
   if(document.body?.dataset.grade!=="12")return;
-  window.VNV333Ticker?.mount?.();
-  if(!document.getElementById("vnvTickerAutoPopulate"))
-   window.VNV_TICKER?.autoPopulate?.({label:"Grade 12 Profile Quick Links",max:14});
-  if(!document.getElementById("vnvHeaderAutoPopulate")&&window.VNV_HEADER?.mount)
-   window.VNV_HEADER.mount({
-    replaceLegacy:true,title:"Grade 12 Student Profile",
-    subtitle:"Khaemenes Academy · High School",icon:"12",
-    home:"https://vervenveda.com/Khaemenes_Academy.github.io/",
-    actions:[
-     {label:"PROFILE",href:"profile/"},
-     {label:"LESSONS",href:"#grade09BlueprintTools"},
-     {label:"PORTFOLIO",href:"../../../portfolio/index.html"},
-     {label:"GAMES",href:"https://vervenveda.com/arcade.github.io/"},
-     {label:"HOME",href:"../../../"}
-    ]
-   });
-  const cards=document.querySelector('[aria-labelledby="manageClassesTitle"]');
-  if(cards){cards.hidden=true;cards.setAttribute("aria-hidden","true");}
-  const schedule=document.querySelector(".grade12-data-mount");
-  if(schedule){schedule.hidden=true;schedule.setAttribute("aria-hidden","true");}
-  const progress=document.getElementById("studentCourseProgress");
-  if(progress){progress.hidden=true;progress.setAttribute("aria-hidden","true");}
+  for(const node of [
+   document.querySelector(".grade12-data-mount"),
+   document.getElementById("studentCourseProgress"),
+   document.querySelector('[aria-labelledby="manageClassesTitle"]')
+  ])if(node){node.hidden=true;node.setAttribute("aria-hidden","true");}
  }
- // The Class Progress and Schedule toolbar buttons open their independent dialogs.
- // Retired in-page sections must not be targeted by obsolete hash links.
  document.addEventListener("click",event=>{
   const link=event.target.closest?.('a[href="#courseManagerGrid"]');
   if(!link||document.body?.dataset.grade!=="12")return;
-  const schedule=document.querySelector('#khaeProfileToolRail [data-upper-grade-link]');
-  const button=[...document.querySelectorAll('#khaeProfileToolRail button')]
-   .find(b=>b.textContent.trim()==="Schedule");
+  const button=[...document.querySelectorAll("#khaeProfileToolRail button")]
+   .find(el=>el.textContent.trim()==="Schedule");
   if(button){event.preventDefault();button.click();}
- },{passive:false});
- window.KhaemenesGrade12ChromeRepair=Object.freeze({repair,version:"1.0.0"});
- repair();
- if(document.readyState==="loading")
-  document.addEventListener("DOMContentLoaded",repair,{once:true});
- window.addEventListener("load",repair);
- window.addEventListener("pageshow",repair);
+ });
+ window.KhaemenesGrade12RetiredPanels=Object.freeze({hide,version:"1.1.0"});
+ hide();
+ window.addEventListener("pageshow",hide);
 })();
 </script>
 </body></html>
