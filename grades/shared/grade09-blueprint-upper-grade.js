@@ -178,6 +178,9 @@ function upperGradeDialog(id,title,renderContents){
  }else dlg.setAttribute("open","");
 }
 function showUpperProgress(){
+ if(window.KhaemenesUpperGradeClassProgressDialog?.open){
+  window.KhaemenesUpperGradeClassProgressDialog.open();return;
+ }
  upperGradeDialog("upperGradeClassProgressDialog","Class Progress",content=>{
   content.replaceChildren();
   const registered=gradeContext();
