@@ -15,12 +15,12 @@ function el(tag,className,text){const node=document.createElement(tag);if(classN
 const SCIENCE_NOTEBOOK="https://vervenveda.com/Khaemenes_High.github.io/courses/science/investigation-notebook/";
 function addCourseActions(card,course,id,current,pinned){
  const actions=el("div","schedule-actions");
- const open=el("a","schedule-open",current?.actionLabel||"Open class");
+ const open=el("a","schedule-open",current?.actionLabel||"Continue Class");
  open.href=current?.url||course.home;
  open.dataset.launchCourse=id;
  open.addEventListener("click",()=>registry.recordLaunch(id,open.href.replace(location.origin,""),course.title));
  actions.append(open);
- const toggle=el("button","schedule-open schedule-secondary",pinned?"Unpin":"Pin Class");
+ const toggle=el("button","schedule-open schedule-secondary",pinned?"Unpin Class":"Pin Class");
  toggle.type="button";
  toggle.setAttribute("aria-pressed",String(pinned));
  toggle.setAttribute("aria-label",(pinned?"Unpin ":"Pin ")+course.title);
@@ -61,13 +61,13 @@ async function renderHost(host){
      const top=el("div","schedule-tile-top");
      top.append(el("span","schedule-number",String(index+1)),el("span","schedule-kind",subject));
      const info=el("div","schedule-course-info");
-     info.append(el("h3","",entry.title),el("p","","Select a course before pinning this subject."));
+     info.append(el("h3","",entry.title),el("p","","Choose the course you are taking before you pin this class."));
      const actions=el("div","schedule-actions");
-     const choose=el("a","schedule-open","Choose Course");choose.href="profile/";
+     const choose=el("a","schedule-open","Choose Course");choose.href="profile/";choose.setAttribute("aria-label","Choose a course for "+subject+" in My Profile");
      actions.append(choose);
      const unavailable=el("button","schedule-open schedule-secondary","Pin Class");
      unavailable.type="button";unavailable.disabled=true;
-     unavailable.title="Choose a course before pinning it";
+     unavailable.title="Choose a course first";unavailable.setAttribute("aria-label","Choose a course before pinning "+subject);
      actions.append(unavailable);
      card.append(top,info,actions);rail.append(card);
      continue;
@@ -100,7 +100,7 @@ async function renderHost(host){
      star.addEventListener("click",()=>{quick.setPinned(resource.id,false);renderAll()});
      top.append(star);card.append(top);
      card.append(el("h3","",resource.title),el("p","",resource.subtitle||"Personal shortcut"));
-     const link=el("a","schedule-open","Open");link.href=resource.href;card.append(link);quickGrid.append(card);
+     const link=el("a","schedule-open","Open Tool");link.href=resource.href;card.append(link);quickGrid.append(card);
    }
    quickSection.append(quickGrid);
    host.append(quickSection);
