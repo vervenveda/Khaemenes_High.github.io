@@ -63,6 +63,10 @@ function display(){
   panel.append(title,close,copy,output);document.body.append(panel);
  }
  output.textContent="Current (no student data):\n"+targets.map(([name,id])=>summary(name,id)).join("\n")+
+ "\n\nAutoPopulate API: "+(typeof window.VNV_TICKER?.autoPopulate)+
+ " · disabled html="+(document.documentElement.dataset.vnvTicker||"unset")+
+ " · disabled body="+(document.body?.dataset.vnvTicker||"unset")+
+ " · registered script="+!!document.querySelector('script[src*="vnv-ticker-autopopulate.js"]')+
  "\n\nPage chrome sequence:\n"+[...document.body.children].filter(n=>targets.some(([,id])=>n.id===id)||n.classList?.contains("grade09-local-masthead")).map(n=>n.id||"charcoal hero").join(" → ")+
  "\n\nEvent timeline:\n"+traces.slice(-24).join("\n");
 }
