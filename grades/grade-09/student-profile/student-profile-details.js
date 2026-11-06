@@ -112,10 +112,10 @@ function mountEditor(){
  container.style.cssText="display:grid;gap:14px;min-width:0;margin:20px 0 0 33px;padding-top:16px;max-width:calc(100% - 33px);border-top:1px solid #c3b59a";
  const h=tag("h3","More About Me");
  h.className="grade09-more-about-me-title";
- h.style.cssText="margin:0;color:#243038;font-family:Cinzel,Georgia,serif;font-weight:400;line-height:1.3";
+ h.style.cssText="margin:0;text-align:center;color:#243038;font-family:Cinzel,Georgia,serif;font-weight:400;line-height:1.3";
  h.style.setProperty("font-size","24px","important");
  const info=tag("p","Optional student information. Check Show on My Student Profile beside each item to display it below your photograph. Nothing is automatically published to the web or Bazaar Art. Public sharing requires a separate future permission process.");
- info.style.cssText="margin:0 0 6px;color:#243038;font:400 16px/1.55 Nunito,Arial,sans-serif";
+ info.style.cssText="margin:0 auto 6px;max-width:760px;text-align:center;color:#243038;font:400 16px/1.55 Nunito,Arial,sans-serif";
  container.append(h,info);
  for(const [group,fields] of GROUPS){
   const details=tag("details");details.open=group==="School & Personal Information";
@@ -170,7 +170,7 @@ function mountEditor(){
   const link=tag("a","Open Student Portfolio Studio");
   link.href="https://vervenveda.com/Khaemenes_Academy.github.io/student/profile.html#profileStudio";
   link.className="btn secondary";
-  link.style.cssText="display:inline-flex;align-items:center;justify-content:center;justify-self:start;min-height:48px;padding:10px 16px;border:1px solid #243038;border-radius:7px;background:#243038;color:#fff8e9;-webkit-text-fill-color:#fff8e9;text-decoration:none;font:400 16px/1.4 Nunito,Arial,sans-serif";
+  link.style.cssText="display:inline-flex;align-items:center;justify-content:center;justify-self:start;min-height:48px;padding:10px 16px;border:1px solid #8f7c5b;border-radius:7px;background:#f4e9d3;color:#243038;-webkit-text-fill-color:#243038;text-decoration:none;font:400 16px/1.4 Nunito,Arial,sans-serif";
   area.append(explanation,link);
   section.append(heading,area);
   container.append(section);
