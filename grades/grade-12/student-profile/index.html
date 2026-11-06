@@ -193,7 +193,21 @@ body[data-grade="12"] [aria-labelledby="manageClassesTitle"]{
  };
  // The 333 ticker is idempotent; mount it after the quick-link ticker
  // so that it is inserted before that ticker in the canonical visual order.
- window.VNV_TICKER?.autoPopulate?.({label:"Grade 12 Profile Quick Links",max:14});
+ // At this early point the document has no profile navigation links yet.
+ // Supply the canonical routes to the official AutoPopulate engine so it
+ // creates its single ticker before the hero, without a late layout shift.
+ if(!document.getElementById("vnvTickerAutoPopulate"))
+  window.VNV_TICKER?.autoPopulate?.({
+   label:"Grade 12 Profile Quick Links",max:14,links:[
+    {label:"My Profile",href:new URL("profile/",location.href).href},
+    {label:"My Profile Tools",href:new URL("#grade09BlueprintTools",location.href).href},
+    {label:"Learning Evidence",href:new URL("../../../portfolio/index.html",location.href).href},
+    {label:"Yearbook",href:"https://vervenveda.com/Academy-Yearbook.github.io/"},
+    {label:"Learning Games",href:"https://vervenveda.com/arcade.github.io/"},
+    {label:"High School Home",href:new URL("../../../",location.href).href},
+    {label:"Family Learning Center",href:"https://vervenveda.com/Khaemenes_Academy.github.io/family/"}
+   ]
+  });
  window.VNV333Ticker?.mount?.();
  if(window.VNV_HEADER?.mount)window.VNV_HEADER.mount({
   replaceLegacy:options.replaceLegacy,title:options.title,
