@@ -13,6 +13,7 @@ if(["10","11","12"].includes(pageGrade)){
 
 if(window.KhaemenesHighProfileDetails)return;
 const BASE="khaemenes-high-profile-v1";
+const grade10Copy=pageGrade==="10";
 const LEGACY=[
  ["name","Name"],["pathway","Pathway / Focus"],["interests","Interests"],
  ["goals","Current Goals"],["strengths","Strengths"],["supports","Helpful Supports"],
@@ -54,6 +55,18 @@ const GROUPS=[
   ["favoriteMentor","My Favorite AI Mentor","text"]
  ]]
 ];
+if(grade10Copy){
+ for(const group of GROUPS){
+  if(group[0]==="School & Personal Information")group[0]="School & Profile Information";
+  if(group[0]==="Interests, Learning & Activities")group[0]="Interests, Learning & Activities";
+  for(const field of group[1]){
+   if(field[0]==="academicAwards")field[1]="Awards & Achievements";
+   if(field[0]==="extracurricular")field[1]="Clubs, Sports & Activities";
+   if(field[0]==="volunteering")field[1]="Community Service";
+   if(field[0]==="teacherName")field[1]="Teacher or Mentor";
+  }
+ }
+}
 const entries=[...LEGACY.map(([id,label])=>({id,label,legacy:true,group:"Original Profile Details"})),
  ...GROUPS.flatMap(([group,fields])=>fields.map(([id,label,type,defaultValue])=>({id,label,type,defaultValue,group})))];
 const selectors=new Map(), editors=new Map();
@@ -92,9 +105,9 @@ function optionRow(label,id){
  const wrapper=tag("label");
  wrapper.style.cssText="display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin:0 0 7px;color:#243038;font:400 16px/1.35 Nunito,Arial,sans-serif;cursor:pointer";
  const checkbox=tag("input");checkbox.type="checkbox";
- checkbox.setAttribute("aria-label","Show "+label+" on My Student Profile");
+ checkbox.setAttribute("aria-label",(grade10Copy?"Show "+label+" on my profile":"Show "+label+" on My Student Profile"));
  checkbox.style.cssText="box-sizing:border-box;width:20px;height:20px;flex:none;margin:0;accent-color:#243c33";
- const span=tag("span","Show on My Student Profile");
+ const span=tag("span",grade10Copy?"Show on my profile":"Show on My Student Profile");
  wrapper.append(checkbox,span);
  selectors.set(id,checkbox);
  return wrapper;
@@ -165,9 +178,9 @@ function mountEditor(){
   const heading=tag("summary","Student Portfolio");
   heading.style.cssText="box-sizing:border-box;display:flex;align-items:center;width:100%;min-height:58px;margin:0;padding:12px 16px;cursor:pointer;background:#243038;color:#fff8e9;-webkit-text-fill-color:#fff8e9;font:400 24px/1.3 Cinzel,Georgia,serif;text-align:left";
   const area=tag("div");area.style.cssText="display:grid;gap:12px;padding:16px;color:#243038;font-size:16px;line-height:1.55";
-  const explanation=tag("p","Continue to your Academy Portfolio Studio for additional learning-workspace features and personal learning evidence. Your High School picture, questionnaire, goals, and grade-specific classes stay managed in their existing places.");
+  const explanation=tag("p",grade10Copy?"Your portfolio is where you can collect work you are proud of, projects you want to remember, and evidence of how your learning has grown. Open it anytime to keep building your story.":"Continue to your Academy Portfolio Studio for additional learning-workspace features and personal learning evidence. Your High School picture, questionnaire, goals, and grade-specific classes stay managed in their existing places.");
   explanation.style.cssText="margin:0;color:#243038;font:400 16px/1.55 Nunito,Arial,sans-serif";
-  const link=tag("a","Open Student Portfolio Studio");
+  const link=tag("a",grade10Copy?"Open My Portfolio":"Open Student Portfolio Studio");
   link.href="https://vervenveda.com/Khaemenes_Academy.github.io/student/profile.html#profileStudio";
   link.className="btn secondary";
   link.style.cssText="display:inline-flex;align-items:center;justify-content:center;justify-self:start;min-height:48px;padding:10px 16px;border:1px solid #8f7c5b;border-radius:7px;background:#f4e9d3;color:#243038;-webkit-text-fill-color:#243038;text-decoration:none;font:400 16px/1.4 Nunito,Arial,sans-serif";
