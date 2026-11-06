@@ -9,6 +9,26 @@ if(!["09","11","12"].includes(grade)||window.KhaemenesHighCheckpointsDisclosure)
 const checkpointId=grade==="09"?"grade09AcademicCheckpoints":"upperGradeAcademicCheckpoints";
 const node=document.getElementById(checkpointId);
 if(!node)return;
+// Grade 09's progress dialog owns the live evidence-driven checkpoint element.
+// Its bottom disclosure is only a visual snapshot, refreshed when expanded.
+// Other upper-grade pages continue moving their original navigation cards.
+const isGrade09=grade==="09";
+function checkpointView(){
+ if(!isGrade09)return node;
+ const copy=node.cloneNode(true);
+ copy.removeAttribute("id");
+ copy.setAttribute("data-grade09-checkpoint-snapshot","true");
+ // Do not duplicate global DOM IDs, names or label destinations.
+ for(const child of copy.querySelectorAll("[id]"))child.removeAttribute("id");
+ for(const child of copy.querySelectorAll("[name]"))child.removeAttribute("name");
+ for(const child of copy.querySelectorAll("[for]"))child.removeAttribute("for");
+ for(const child of copy.querySelectorAll("[aria-controls],[aria-labelledby],[aria-describedby]")){
+  child.removeAttribute("aria-controls");
+  child.removeAttribute("aria-labelledby");
+  child.removeAttribute("aria-describedby");
+ }
+ return copy;
+}
 const host=document.createElement("details");
 host.id="khaeCheckpointsDisclosure";
 host.className="khae-checkpoints-disclosure";
@@ -17,8 +37,20 @@ summary.textContent="Today's Class Checkpoints";
 summary.setAttribute("aria-label","Expand or collapse today's sixteen class checkpoints");
 host.append(summary);
 const originalTitle=[...node.children].find(el=>el.matches?.("h2,h3"));
-if(originalTitle)originalTitle.hidden=true;
-host.append(node);
+if(originalTitle&&!isGrade09)originalTitle.hidden=true;
+const view=checkpointView();
+if(isGrade09){
+ const viewTitle=[...view.children].find(el=>el.matches?.("h2,h3"));
+ if(viewTitle)viewTitle.hidden=true;
+ host.append(view);
+ host.addEventListener("toggle",()=>{
+  if(!host.open)return;
+  const refreshed=checkpointView();
+  const title=[...refreshed.children].find(el=>el.matches?.("h2,h3"));
+  if(title)title.hidden=true;
+  host.replaceChild(refreshed,host.lastElementChild);
+ });
+}else host.append(node);
 document.body.classList.add("khae-checkpoints-disclosure-enabled");
 let observer=null;
 function findSupport(){
