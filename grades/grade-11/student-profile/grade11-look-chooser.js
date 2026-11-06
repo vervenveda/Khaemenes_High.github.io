@@ -14,17 +14,15 @@ const badges=["★","✦","📚","🧭","⚛","🎨","🎵","🌿","🔬","🧪"
 const parchment="#f4f0e7";
 const colors=["#D53E4F","#F46D43","#FDAE61","#FEE08B","#E6F598","#ABDDA4","#66C2A5","#3288BD","#243038","#49374B","#7D283C","#254A75","#2C634A","#9A732C","#6A4C93","#A34836","#F4F0E7","#E7D7B6","#D1E3E5","#CAD8BC","#D5C1CF","#B9CBE0","#F2D8B6","#D0D6D1"];
 const shapes=[
- ["rectangle","Rectangle"],["square","Square"],["circle","Circle"],
- ["heart","Heart"],["star","Star"],["octagon","Octagon"],
- ["hectagon","Hectagon (100 sides)"]
+ ["rectangle","Rectangle"],["square","Square"],["circle","Circle"],["oval","Oval"],["rhombus","Rhombus"],
+ ["heart","Heart"],["star","Star"],["octagon","Octagon"],["semicircle","Semicircle"],["kite","Kite"]
 ];
 const heart="polygon(50% 95%,43% 88%,31% 76%,20% 64%,10% 51%,4% 39%,4% 25%,10% 13%,21% 7%,32% 7%,42% 13%,50% 24%,58% 13%,68% 7%,79% 7%,90% 13%,96% 25%,96% 39%,90% 51%,80% 64%,69% 76%,57% 88%)";
 const star="polygon(50% 2%,63% 34%,98% 36%,71% 58%,80% 94%,50% 75%,20% 94%,29% 58%,2% 36%,37% 34%)";
 const octagon="polygon(30% 0%,70% 0%,100% 30%,100% 70%,70% 100%,30% 100%,0% 70%,0% 30%)";
-const hectagon="polygon("+Array.from({length:100},(_,i)=>{
- const angle=i*Math.PI/50-Math.PI/2;
- return (50+50*Math.cos(angle)).toFixed(3)+"% "+(50+50*Math.sin(angle)).toFixed(3)+"%";
-}).join(",")+")";
+const rhombus="polygon(50% 0%,100% 50%,50% 100%,0% 50%)";
+const semicircle="polygon(0% 100%,0% 50%,4% 31%,15% 15%,31% 4%,50% 0%,69% 4%,85% 15%,96% 31%,100% 50%,100% 100%)";
+const kite="polygon(50% 0%,90% 38%,50% 100%,10% 38%)";
 const learner=()=>{
  try{
   const id=JSON.parse(localStorage.getItem("khaemenes_active_learner_v1")||"null");
@@ -87,13 +85,15 @@ function saveCard(color){
 }
 function applyPreviewShape(){
  const box=$("grade09LookPreview");if(!box)return;
- const selected=frame==="soft-square"?"square":frame;
- const polygons={heart,star,octagon,hectagon};
- box.style.setProperty("width",selected==="rectangle"?"180px":"160px");
- box.style.setProperty("height",selected==="rectangle"?"132px":"160px");
+ // Legacy hectagon values are preserved in storage but displayed as the new Oval.
+ const selected=frame==="soft-square"?"square":(frame==="hectagon"?"oval":frame);
+ const polygons={heart,star,octagon,rhombus,semicircle,kite};
+ const wide=selected==="rectangle"||selected==="oval";
+ box.style.setProperty("width",wide?"220px":"190px");
+ box.style.setProperty("height",selected==="rectangle"?"158px":(selected==="oval"?"154px":"190px"));
  box.style.setProperty("max-width","100%");
  box.style.setProperty("clip-path",polygons[selected]||"none");
- box.style.setProperty("border-radius",selected==="circle"?"50%":(selected==="rectangle"||selected==="square"?"7px":"0"));
+ box.style.setProperty("border-radius",selected==="circle"?"50%":(selected==="oval"?"50% / 44%":(selected==="rectangle"||selected==="square"?"7px":"0")));
 }
 function render(){
  const box=$("grade09LookPreview");if(!box)return;
@@ -110,7 +110,7 @@ function render(){
  for(const button of document.querySelectorAll("#grade09ColorChoices button"))
   button.setAttribute("aria-pressed",String(button.dataset.color?cardMode==="custom"&&button.dataset.color===cardColor:cardMode==="default"));
  for(const button of document.querySelectorAll("#grade09FrameChoices button"))
-  button.setAttribute("aria-pressed",String(button.dataset.shape===(frame==="soft-square"?"square":frame)));
+  button.setAttribute("aria-pressed",String(button.dataset.shape===(frame==="soft-square"?"square":(frame==="hectagon"?"oval":frame))));
  const panel=$("grade09LookPanel");
  panel.style.setProperty("--look-selected-color",cardColor);
  const red=parseInt(cardColor.slice(1,3),16),green=parseInt(cardColor.slice(3,5),16),blue=parseInt(cardColor.slice(5,7),16);
@@ -240,11 +240,6 @@ function mount(){
   });
   framesBox.append(button);
  }
- const original=document.createElement("button");
- original.type="button";original.textContent="Academy Default";original.dataset.default="true";
- original.setAttribute("aria-label","Restore the original student photo-card background");
- original.addEventListener("click",()=>{saveCard(null)});
- colorsBox.append(original);
  for(const hex of colors){
   const button=document.createElement("button");button.type="button";
   button.dataset.color=hex;
