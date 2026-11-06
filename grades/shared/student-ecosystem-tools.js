@@ -23,8 +23,36 @@ section.style.cssText="margin:18px 0;padding:17px;border:1px solid #b4a17f;borde
 const title=document.createElement("h2");title.textContent="Creative & Discovery Tools";if(isGrade09)title.className="grade09-featured-heading";title.style.cssText="font:400 24px/1.3 Georgia,serif;margin:0 0 6px;color:#f4e6c6";
 const summary=document.createElement("p");summary.textContent="Explore Academy-friendly creative spaces and research tools. Your class progress and grades stay separate.";summary.style.margin="0 0 14px";
 const grid=document.createElement("div");grid.className=isGrade09?"grade09-featured-grid":"";grid.style.cssText="display:grid;grid-template-columns:repeat(auto-fit,minmax(195px,1fr));gap:10px";
-tools.forEach(([emoji,label,description,url])=>{const a=document.createElement("a");a.href=url;a.target="_blank";a.rel="noopener noreferrer";a.setAttribute("aria-label",label+" (opens in a new tab)");if(isGrade09)a.className="grade09-featured-card";a.style.cssText="display:grid;gap:4px;padding:13px;border:1px solid #807c73;border-radius:7px;color:#f3e9d9;text-decoration:none;background:#223950;min-height:108px";
-const h=document.createElement("span");h.textContent=emoji+" "+label;h.style.cssText="font-size:17px;color:#f2dba7";const d=document.createElement("span");d.textContent=description;d.style.cssText="font-size:14px;color:#d1d9db";a.append(h,d);grid.append(a)});
+tools.forEach(([emoji,label,description,url])=>{
+ const link=document.createElement("a");
+ link.href=url;link.target="_blank";link.rel="noopener noreferrer";
+ link.setAttribute("aria-label",label+" (opens in a new tab)");
+ if(isGrade09){
+  // Grade 09 editorial resource tiles: preserve all ten resource URLs and titles.
+  // Do not replace the site-specific resource directory or load new dependencies.
+  link.className="grade09-featured-card";
+  const head=document.createElement("span");head.className="grade09-featured-card-head";
+  const icon=document.createElement("span");icon.className="grade09-featured-icon";
+  icon.textContent=emoji;icon.setAttribute("aria-hidden","true");
+  const name=document.createElement("span");name.className="grade09-featured-name";
+  name.textContent=label;
+  head.append(icon,name);
+  const detail=document.createElement("span");detail.className="grade09-featured-description";
+  detail.textContent=description;
+  const action=document.createElement("span");action.className="grade09-featured-action";
+  action.textContent="Explore resource ↗";action.setAttribute("aria-hidden","true");
+  link.append(head,detail,action);
+ }else{
+  // Grades 10–12 keep their existing seven-card structure unchanged.
+  link.style.cssText="display:grid;gap:4px;padding:13px;border:1px solid #807c73;border-radius:7px;color:#f3e9d9;text-decoration:none;background:#223950;min-height:108px";
+  const name=document.createElement("span");name.textContent=emoji+" "+label;
+  name.style.cssText="font-size:17px;color:#f2dba7";
+  const descriptionText=document.createElement("span");descriptionText.textContent=description;
+  descriptionText.style.cssText="font-size:14px;color:#d1d9db";
+  link.append(name,descriptionText);
+ }
+ grid.append(link);
+});
 if(isGrade09)section.classList.add("grade09-featured-section");
 section.append(title,summary,grid);
 const grade09=document.querySelector(".grade09-priority-schedule");const upper=document.getElementById("upperClasses");if(grade09)grade09.insertAdjacentElement("afterend",section);else if(upper)upper.insertAdjacentElement("afterend",section);
