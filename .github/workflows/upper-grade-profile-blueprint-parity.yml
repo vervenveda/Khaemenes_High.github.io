@@ -1,0 +1,25 @@
+name: Upper Grade Profile Blueprint Parity
+on:
+  push:
+    paths:
+      - "grades/grade-09/student-profile/index.html"
+      - "grades/grade-10/student-profile/**"
+      - "grades/grade-11/student-profile/**"
+      - "grades/grade-12/student-profile/**"
+      - "grades/shared/grade09-blueprint-upper-grade.js"
+      - "grades/shared/student-achievements-dreams.js"
+      - "grades/shared/student-course-progress-bars.js"
+      - "courses/shared/high-school-eight-class.js"
+      - "tests/upper-grade-profile-blueprint-parity.cjs"
+      - ".github/workflows/upper-grade-profile-blueprint-parity.yml"
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  parity:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - name: Verify Grade 09 structural baseline and upper-grade routes
+        run: node tests/upper-grade-profile-blueprint-parity.cjs
