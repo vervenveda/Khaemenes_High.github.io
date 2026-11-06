@@ -243,9 +243,6 @@ function mount(){
  const original=document.createElement("button");
  original.type="button";original.textContent="Academy Default";original.dataset.default="true";
  original.setAttribute("aria-label","Restore the original student photo-card background");
- original.style.setProperty("width","auto","important");
- original.style.setProperty("min-width","120px","important");
- original.style.setProperty("font-size","16px","important");
  original.addEventListener("click",()=>{saveCard(null)});
  colorsBox.append(original);
  for(const hex of colors){
