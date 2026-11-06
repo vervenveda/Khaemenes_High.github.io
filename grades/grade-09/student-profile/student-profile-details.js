@@ -99,67 +99,7 @@ function optionRow(label,id){
  selectors.set(id,checkbox);
  return wrapper;
 }
-function ensureFinalDetailsStyle(){
- if(document.getElementById("grade09ExtendedDetailsFinalStyle"))return;
- const style=document.createElement("style");
- style.id="grade09ExtendedDetailsFinalStyle";
- style.textContent=`
- html:root:root body #grade09ExtendedDetails{
-   margin-left:33px!important;
-   max-width:calc(100% - 33px)!important;
- }
- html:root:root body #grade09ExtendedDetails>details,
- html:root:root body #grade09ExtendedDetails>#highStudentPortfolioSection{
-   box-sizing:border-box!important;
-   width:100%!important;
-   min-width:0!important;
-   margin:0!important;
-   padding:0!important;
-   border:2px solid #8f7c5b!important;
-   border-radius:7px!important;
-   background:#f3ead9!important;
-   overflow:hidden!important;
- }
- html:root:root body #grade09ExtendedDetails>details>summary,
- html:root:root body #grade09ExtendedDetails>#highStudentPortfolioSection>summary{
-   box-sizing:border-box!important;
-   display:flex!important;
-   align-items:center!important;
-   width:100%!important;
-   min-height:58px!important;
-   margin:0!important;
-   padding:12px 16px!important;
-   border-radius:0!important;
-   background:#243038!important;
-   color:#fff8e9!important;
-   -webkit-text-fill-color:#fff8e9!important;
-   font-family:Cinzel,Georgia,serif!important;
-   font-size:24px!important;
-   font-weight:400!important;
-   line-height:1.3!important;
-   text-align:left!important;
- }
- html:root:root body #grade09ExtendedDetails .grade09-extra-field{
-   min-height:138px!important;
-   height:100%!important;
-   padding:12px!important;
-   border:1px solid #b7a589!important;
-   background:#fffdf8!important;
- }
- html:root:root body #grade09ExtendedDetails :is(label,p,span,input,select,textarea,button,a){
-   font-size:16px!important;
- }
- @media(max-width:660px){
-   html:root:root body #grade09ExtendedDetails{
-     margin-left:16px!important;
-     max-width:calc(100% - 16px)!important;
-   }
- }
- `;
- document.head.append(style);
-}
 function mountEditor(){
- ensureFinalDetailsStyle();
  const save=document.getElementById("saveProfile");if(!save)return false;
  const card=save.closest(".card");
  if(!card||document.getElementById("grade09ExtendedDetails"))return false;
@@ -169,15 +109,15 @@ function mountEditor(){
   if(field)field.insertBefore(optionRow(label,id),field.firstChild);
  }
  const container=tag("section");container.id="grade09ExtendedDetails";
- container.style.cssText="display:grid;gap:13px;min-width:0;margin:20px 0 0 33px;padding-top:16px;max-width:calc(100% - 33px);border-top:1px solid #c3b59a";
+ container.style.cssText="display:grid;gap:14px;min-width:0;margin:20px 0 0 33px;padding-top:16px;max-width:calc(100% - 33px);border-top:1px solid #c3b59a";
  const h=tag("h3","More About Me");h.style.cssText="margin:0;color:#243038;font:400 24px/1.3 Cinzel,Georgia,serif";
  const info=tag("p","Optional student information. Check Show on My Student Profile beside each item to display it below your photograph. Nothing is automatically published to the web or Bazaar Art. Public sharing requires a separate future permission process.");
  info.style.cssText="margin:0 0 6px;color:#243038;font:400 16px/1.55 Nunito,Arial,sans-serif";
  container.append(h,info);
  for(const [group,fields] of GROUPS){
   const details=tag("details");details.open=group==="School & Personal Information";
-  details.style.cssText="box-sizing:border-box;width:100%;min-width:0;padding:0;border:2px solid #8f7c5b;border-radius:7px;background:#f3ead9;overflow:hidden";
-  const summary=tag("summary",group);summary.style.cssText="box-sizing:border-box;display:flex;align-items:center;min-height:58px;cursor:pointer;background:#243038;color:#fff8e9;-webkit-text-fill-color:#fff8e9;font:400 24px/1.3 Cinzel,Georgia,serif;padding:12px 16px";
+  details.style.cssText="box-sizing:border-box;width:100%;min-width:0;margin:0;padding:0;border:2px solid #8f7c5b;border-radius:7px;background:#f3ead9;overflow:hidden";
+  const summary=tag("summary",group);summary.style.cssText="box-sizing:border-box;display:flex;align-items:center;width:100%;min-height:58px;margin:0;padding:12px 16px;cursor:pointer;background:#243038;color:#fff8e9;-webkit-text-fill-color:#fff8e9;font:400 24px/1.3 Cinzel,Georgia,serif;text-align:left";
   const grid=tag("div");
   // Keep complete desktop rows: 8 School cards in two columns;
   // 15 Favorite cards in three columns. Responsive auto-fit collapses naturally.
@@ -185,10 +125,10 @@ function mountEditor(){
   const isFavorites=group==="My Favorites";
   const maxWidth=isSchool?"850px":isFavorites?"900px":"100%";
   const minCard=isSchool?"330px":isFavorites?"260px":"260px";
-  grid.style.cssText="box-sizing:border-box;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,"+minCard+"),1fr));grid-auto-rows:1fr;gap:13px;margin:0 auto;padding:14px;max-width:"+maxWidth+";width:100%;align-items:stretch";
+  grid.style.cssText="box-sizing:border-box;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,"+minCard+"),1fr));grid-auto-rows:1fr;gap:14px;margin:0 auto;padding:16px;max-width:"+maxWidth+";width:100%;align-items:stretch";
   for(const [id,label,type,defaultValue] of fields){
    const box=tag("div");box.className="grade09-extra-field";
-   box.style.cssText="box-sizing:border-box;display:grid;align-content:start;gap:7px;min-width:0;min-height:138px;height:100%;border:1px solid #b7a589;border-radius:7px;padding:12px;background:#fffdf8;box-shadow:0 2px 7px rgba(36,48,56,.06)";
+   box.style.cssText="box-sizing:border-box;display:grid;align-content:start;grid-template-rows:auto auto minmax(44px,auto);gap:7px;min-width:0;min-height:148px;height:100%;border:1px solid #b7a589;border-radius:7px;padding:14px;background:#fffdf8;box-shadow:0 2px 7px rgba(36,48,56,.06)";
    const toggle=optionRow(label,id);
    const cap=tag("label",label);cap.setAttribute("for","grade09Detail-"+id);
    cap.style.cssText="color:#243038;font:400 16px/1.35 Nunito,Arial,sans-serif";
@@ -216,9 +156,9 @@ function mountEditor(){
  // editable questionnaire or a second learner record. Idempotent on remount.
  if(!document.getElementById("highStudentPortfolioSection")){
   const section=tag("details");section.id="highStudentPortfolioSection";
-  section.style.cssText="box-sizing:border-box;width:100%;min-width:0;padding:0;border:2px solid #8f7c5b;border-radius:7px;background:#f3ead9;overflow:hidden";
+  section.style.cssText="box-sizing:border-box;width:100%;min-width:0;margin:0;padding:0;border:2px solid #8f7c5b;border-radius:7px;background:#f3ead9;overflow:hidden";
   const heading=tag("summary","Student Portfolio");
-  heading.style.cssText="box-sizing:border-box;display:flex;align-items:center;min-height:58px;cursor:pointer;background:#243038;color:#fff8e9;-webkit-text-fill-color:#fff8e9;font:400 24px/1.3 Cinzel,Georgia,serif;padding:12px 16px";
+  heading.style.cssText="box-sizing:border-box;display:flex;align-items:center;width:100%;min-height:58px;margin:0;padding:12px 16px;cursor:pointer;background:#243038;color:#fff8e9;-webkit-text-fill-color:#fff8e9;font:400 24px/1.3 Cinzel,Georgia,serif;text-align:left";
   const area=tag("div");area.style.cssText="display:grid;gap:12px;padding:16px;color:#243038;font-size:16px;line-height:1.55";
   const explanation=tag("p","Continue to your Academy Portfolio Studio for additional learning-workspace features and personal learning evidence. Your High School picture, questionnaire, goals, and grade-specific classes stay managed in their existing places.");
   explanation.style.cssText="margin:0;color:#243038;font:400 16px/1.55 Nunito,Arial,sans-serif";
