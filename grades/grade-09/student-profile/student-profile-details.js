@@ -110,7 +110,10 @@ function mountEditor(){
  }
  const container=tag("section");container.id="grade09ExtendedDetails";
  container.style.cssText="display:grid;gap:14px;min-width:0;margin:20px 0 0 33px;padding-top:16px;max-width:calc(100% - 33px);border-top:1px solid #c3b59a";
- const h=tag("h3","More About Me");h.style.cssText="margin:0;color:#243038;font:400 24px/1.3 Cinzel,Georgia,serif";
+ const h=tag("h3","More About Me");
+ h.className="grade09-more-about-me-title";
+ h.style.cssText="margin:0;color:#243038;font-family:Cinzel,Georgia,serif;font-weight:400;line-height:1.3";
+ h.style.setProperty("font-size","24px","important");
  const info=tag("p","Optional student information. Check Show on My Student Profile beside each item to display it below your photograph. Nothing is automatically published to the web or Bazaar Art. Public sharing requires a separate future permission process.");
  info.style.cssText="margin:0 0 6px;color:#243038;font:400 16px/1.55 Nunito,Arial,sans-serif";
  container.append(h,info);
@@ -123,12 +126,13 @@ function mountEditor(){
   // 15 Favorite cards in three columns. Responsive auto-fit collapses naturally.
   const isSchool=group==="School & Personal Information";
   const isFavorites=group==="My Favorites";
+  const bottomAlignControls=group==="Interests, Learning & Activities"||group==="My Dreams & My Academy";
   const maxWidth=isSchool?"850px":isFavorites?"900px":"100%";
   const minCard=isSchool?"330px":isFavorites?"260px":"260px";
   grid.style.cssText="box-sizing:border-box;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,"+minCard+"),1fr));grid-auto-rows:1fr;gap:14px;margin:0 auto;padding:16px;max-width:"+maxWidth+";width:100%;align-items:stretch";
   for(const [id,label,type,defaultValue] of fields){
    const box=tag("div");box.className="grade09-extra-field";
-   box.style.cssText="box-sizing:border-box;display:grid;align-content:start;grid-template-rows:auto auto minmax(44px,auto);gap:7px;min-width:0;min-height:148px;height:100%;border:1px solid #b7a589;border-radius:7px;padding:14px;background:#fffdf8;box-shadow:0 2px 7px rgba(36,48,56,.06)";
+   box.style.cssText="box-sizing:border-box;display:grid;align-content:stretch;grid-template-rows:auto auto "+(bottomAlignControls?"1fr auto":"minmax(44px,auto)")+";gap:7px;min-width:0;min-height:"+(bottomAlignControls?"166px":"148px")+";height:100%;border:1px solid #b7a589;border-radius:7px;padding:14px;background:#fffdf8;box-shadow:0 2px 7px rgba(36,48,56,.06)";
    const toggle=optionRow(label,id);
    const cap=tag("label",label);cap.setAttribute("for","grade09Detail-"+id);
    cap.style.cssText="color:#243038;font:400 16px/1.35 Nunito,Arial,sans-serif";
@@ -145,6 +149,7 @@ function mountEditor(){
    }
    control.id="grade09Detail-"+id;
    control.style.cssText="box-sizing:border-box;width:100%;max-width:100%;min-width:0;min-height:44px;padding:9px;border:1px solid #b8ac98;border-radius:7px;background:#fffaf0;color:#243038;font:400 16px/1.4 Nunito,Arial,sans-serif";
+   if(bottomAlignControls){control.style.marginTop="auto";control.style.alignSelf="end"}
    if(type==="fixed"){control.readOnly=true;control.value=defaultValue}
    control.setAttribute("autocomplete","off");
    editors.set(id,control);
