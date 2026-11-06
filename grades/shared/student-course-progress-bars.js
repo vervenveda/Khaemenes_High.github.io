@@ -2,6 +2,8 @@
 (()=>{"use strict";
 const grade=(location.pathname.match(/\/grade-(09|10|11|12)\/student-profile\//)||[])[1];
 if(!grade)return;
+// A late or repeated script load must not mount a second upper-grade progress panel.
+if(grade!=="09"&&document.getElementById("studentCourseProgress"))return;
 // Grade 09 owns an eight-subject interactive chart; preserve this legacy view for Grades 10–12.
 if(grade==="09"){mountGradeNineChart();return;}
 function mountGradeNineChart(){
