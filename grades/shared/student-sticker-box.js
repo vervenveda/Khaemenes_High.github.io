@@ -1,6 +1,6 @@
 /* Profile Sticker Box: cosmetic rewards only; not a grading or mastery system. */
 (()=>{"use strict";
-const grade=(location.pathname.match(/\/grade-(09|10|11|12)\/student-profile\//)||[])[1];if(!grade)return;
+const grade=(location.pathname.match(/\/grade-(09|10|11|12)\/student-profile\//)||[])[1];if(!grade||document.getElementById("khaeStickerBox"))return;
 const api=window.KhaemenesStudentProfileV2,contract=window.KhaemenesCourseEntryContract;
 const active=()=>{const a=api?.activeLearner?.()?.learnerId,b=contract?.readAcademyProfile?.()?.learnerId;return a&&b&&String(a)===String(b)?String(a):null};
 const initial=active(),box=document.createElement("section");box.id="khaeStickerBox";
@@ -11,7 +11,7 @@ const wall=document.createElement("div");wall.style.cssText="display:flex;flex-w
 const count=document.createElement("p");count.setAttribute("role","status");count.setAttribute("aria-live","polite");
 const chooser=document.createElement("div");chooser.style.cssText="display:flex;flex-wrap:wrap;gap:8px";
 box.append(h,p,wall,count,chooser);
-if(grade==="09"){
+{
  const dialog=document.createElement("dialog");
  dialog.id="grade09StickerBoxDialog";
  dialog.setAttribute("aria-labelledby","grade09StickerBoxTitle");
@@ -32,23 +32,20 @@ if(grade==="09"){
   close(){if(dialog.open)dialog.close()},
   version:1
  });
-}else{
- const near=document.getElementById("studentCourseProgress")||document.querySelector(".grade09-priority-schedule")||document.getElementById("upperClasses");
- if(near)near.insertAdjacentElement("afterend",box);else return;
 }
 const catalog=["🌟","🌈","🦋","🌻","🐬","🦉","🚀","🎨","🔭","🪐","📚","🏆","💎","🧩","🦄","🎵","🐢","🍀","🧠","✨","🌸","🐝","🦕","⚡"];
 // Grade 09 may select a learner after this module initializes. Read the current
 // learner dynamically there; keep the older grade behavior unchanged.
-const currentLearner=()=>grade==="09"?active():initial;
+const currentLearner=()=>active();
 const recordKey=()=>{const learner=currentLearner();return learner?"khaemenes.student.stickers.v1:"+encodeURIComponent(learner):null;};
 const safe=x=>x&&Array.isArray(x.earned)&&Array.isArray(x.placed);
 function read(){const key=recordKey();if(!key)return {earned:[],placed:[]};try{const v=JSON.parse(localStorage.getItem(key)||"null");return safe(v)?{earned:v.earned.filter(x=>typeof x==="string").slice(0,300),placed:v.placed.filter(x=>catalog.includes(x)).slice(0,300)}:{earned:[],placed:[]}}catch{return {earned:[],placed:[]}}}
-const same=()=>!!currentLearner()&&(grade==="09"||active()===initial);
+const same=()=>!!currentLearner()&&(grade==="09"||window.KhaemenesHighProfileGradeContext?.active?.()?.gradeNumber===Number(grade));
 function paint(){wall.replaceChildren();chooser.replaceChildren();if(!same()){count.textContent="Select your learner and reload this profile to view your stickers.";return}
  const data=read();data.placed.forEach(x=>{const s=document.createElement("span");s.textContent=x;s.style.fontSize="30px";s.setAttribute("aria-label","Profile sticker "+x);wall.append(s)});
  const remaining=Math.max(0,data.earned.length-data.placed.length);count.textContent=data.placed.length+" stickers on my profile · "+remaining+" sticker "+(remaining===1?"choice":"choices")+" available";
  if(!remaining){const info=document.createElement("span");info.textContent="Your next sticker unlocks after a verified unit-quiz pass.";chooser.append(info);return}
- catalog.forEach(emoji=>{const b=document.createElement("button");b.type="button";b.textContent=emoji;b.setAttribute("aria-label","Choose "+emoji+" sticker");b.style.cssText="font-size:24px;padding:5px 9px;border:1px solid #b6a58c;border-radius:7px;background:#f2e9db";b.onclick=()=>{if(!same())return;const now=read();if(now.placed.length>=now.earned.length)return;now.placed.push(emoji);try{localStorage.setItem(recordKey(),JSON.stringify(now));paint();if(grade==="09")window.dispatchEvent(new CustomEvent("khaemenes-grade09-sticker-rewards-changed"))}catch{count.textContent="Unable to store sticker on this device."}};chooser.append(b)});
+ catalog.forEach(emoji=>{const b=document.createElement("button");b.type="button";b.textContent=emoji;b.setAttribute("aria-label","Choose "+emoji+" sticker");b.style.cssText="font-size:24px;padding:5px 9px;border:1px solid #b6a58c;border-radius:7px;background:#f2e9db";b.onclick=()=>{if(!same())return;const now=read();if(now.placed.length>=now.earned.length)return;now.placed.push(emoji);try{localStorage.setItem(recordKey(),JSON.stringify(now));paint();window.dispatchEvent(new CustomEvent("khaemenes-grade09-sticker-rewards-changed"))}catch{count.textContent="Unable to store sticker on this device."}};chooser.append(b)});
 }
 paint();window.addEventListener("focus",paint);window.addEventListener("pageshow",paint);window.addEventListener("khaemenes-student-profile-changed",paint);window.addEventListener("storage",e=>{if(!e.key||e.key===recordKey())paint()});
 })();
