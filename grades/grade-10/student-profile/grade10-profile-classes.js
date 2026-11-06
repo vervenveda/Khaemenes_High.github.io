@@ -39,6 +39,8 @@ function render(){
 }
 render();
 window.addEventListener("khaemenes-student-profile-changed",render);
+window.addEventListener("pageshow",render);
+window.addEventListener("khaemenes-family-changed",render);
 window.addEventListener("storage",event=>{
  if(!event.key||/khaemenes_(active_learner|family_registry)/.test(event.key))render();
 });
