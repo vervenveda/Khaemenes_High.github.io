@@ -249,7 +249,7 @@ function renderTools(){
   {label:"Class Progress",run:showUpperProgress},
   {label:"Schedule",run:showUpperSchedule},
   {label:"KlasaiPeer",url:"https://artist1970.github.io/Klasaipeer.github.io/",preview:true},
-  {label:"Yearbook",url:"https://vervenveda.com/Academy-Yearbook.github.io/"},
+  {label:"Yearbook",run:()=>window.KhaemenesUpperGradeYearbook?.open?.(document.activeElement)},
   {label:"Creative Tools",run:()=>revealUpper("grade09BlueprintRooms")},
   {label:"Student Portfolio",run:()=>{
    const area=document.querySelector('aside[aria-label="Student Learning Portfolio"]');
