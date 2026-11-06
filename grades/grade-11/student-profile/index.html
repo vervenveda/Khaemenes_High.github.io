@@ -196,8 +196,7 @@ body[data-grade="11"] [aria-labelledby="manageClassesTitle"]{
  // At this early point the document has no profile navigation links yet.
  // Supply the canonical routes to the official AutoPopulate engine so it
  // creates its single ticker before the hero, without a late layout shift.
- if(!document.getElementById("vnvTickerAutoPopulate"))
-  window.VNV_TICKER?.autoPopulate?.({
+ const tickerOptions={
    label:"Grade 11 Profile Quick Links",max:14,links:[
     {label:"My Profile",href:new URL("profile/",location.href).href},
     {label:"My Profile Tools",href:new URL("#grade09BlueprintTools",location.href).href},
@@ -207,7 +206,20 @@ body[data-grade="11"] [aria-labelledby="manageClassesTitle"]{
     {label:"High School Home",href:new URL("../../../",location.href).href},
     {label:"Family Learning Center",href:"https://vervenveda.com/Khaemenes_Academy.github.io/family/"}
    ]
-  });
+ };
+ function ensureAutoTicker(){
+  if(document.getElementById("vnvTickerAutoPopulate"))return true;
+  if(typeof window.VNV_TICKER?.autoPopulate!=="function")return false;
+  window.VNV_TICKER.autoPopulate(tickerOptions);
+  return !!document.getElementById("vnvTickerAutoPopulate");
+ }
+ ensureAutoTicker();
+ // The official ticker API may not be ready during early parsing. Retry only
+ // when absent, after the page has loaded, without ever cloning the ticker.
+ if(document.readyState==="loading")
+  document.addEventListener("DOMContentLoaded",ensureAutoTicker,{once:true});
+ window.addEventListener("load",ensureAutoTicker,{once:true});
+ window.addEventListener("pageshow",ensureAutoTicker);
  window.VNV333Ticker?.mount?.();
  if(window.VNV_HEADER?.mount)window.VNV_HEADER.mount({
   replaceLegacy:options.replaceLegacy,title:options.title,
