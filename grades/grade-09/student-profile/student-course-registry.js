@@ -117,10 +117,12 @@ const COURSES=Object.freeze([
     // makes every Grade 09 surface (dashboard, seven-class profile, pins and
     // continuation) resolve to the same course entrance without bypassing the
     // lesson-level 80% mastery gates inside French 101.
-    const french101="https://vervenveda.com/Khaemenes_Linguistics.github.io/apps/French_101_index.html";
+    const returnTo=encodeURIComponent("https://vervenveda.com/Khaemenes_High.github.io/grades/grade-09/student-profile/");
+    const source="khaemenes-high-grade09";
+    const french101=`https://vervenveda.com/Khaemenes_Linguistics.github.io/apps/French_101_index.html?source=${source}&return=${returnTo}`;
     const handoff=id==="french"
       ? french101
-      : `https://vervenveda.com/Khaemenes_Linguistics.github.io/Halls/index.html?language=${encodeURIComponent(id)}&${formal?"course=hs1":"mode=atlas"}&source=khaemenes-high-grade09`;
+      : `https://vervenveda.com/Khaemenes_Linguistics.github.io/Halls/index.html?language=${encodeURIComponent(id)}&${formal?"course=hs1":"mode=atlas"}&source=${source}&return=${returnTo}`;
     return Object.freeze({
       id:"world-language-9-"+id,
       title:id==="french"?"French 101":(formal?name+" I":name+" · Exploration"),
