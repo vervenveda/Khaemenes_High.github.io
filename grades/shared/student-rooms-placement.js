@@ -40,9 +40,17 @@
   // Grades without Explore keep their own current content untouched.
   const explore=main.querySelector(":scope > #grade09Explore");
   if(explore&&host.nextElementSibling!==explore)host.insertAdjacentElement("afterend",explore);
+  // The Grade 09 daily-focus module owns the one original checkpoints
+  // component. Keep it directly after the finished Explore accordion when
+  // the portfolio / Student Rooms are relocated at end of document load.
+  const checkpoints=main.querySelector(":scope > #grade09AcademicCheckpoints");
+  if(explore&&checkpoints&&explore.nextElementSibling!==checkpoints){
+   explore.insertAdjacentElement("afterend",checkpoints);
+  }
   return portfolio.nextElementSibling===host
    &&roomCards.every((card,index)=>target.children[index]===card)
-   &&(!explore||host.nextElementSibling===explore);
+   &&(!explore||host.nextElementSibling===explore)
+   &&(!explore||!checkpoints||explore.nextElementSibling===checkpoints);
  }
  global.KhaemenesStudentRoomsPlacement=Object.freeze({version:"1.0.0",place});
  place();
