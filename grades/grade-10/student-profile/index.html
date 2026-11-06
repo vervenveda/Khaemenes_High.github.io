@@ -390,4 +390,26 @@ html body .grade09-contribute-panel .grade09-contribute-action:focus-visible{
 <script src="https://vervenveda.com/assets/vnv-ecosystem-toolbar.js"></script>
 <script src="../../shared/learning-today-placement.js?v=9362d9e6"></script>
 <script src="../../shared/student-rooms-placement.js?v=20261105-portfolio-order"></script>
+<script id="grade10-checkpoints-last-placement-20261105">
+/* Grade 10 only: preserve approved page order; checkpoints follow Explore
+   as the final content section. Move the existing live node, never clone it.
+   The shared Grade 09/11/12 layout and academic records are untouched. */
+(function(){
+ "use strict";
+ if(document.body?.dataset.grade!=="10")return;
+ function place(){
+  const main=document.querySelector("main");
+  const explore=main?.querySelector(":scope > #grade09Explore");
+  const checkpoints=document.getElementById("upperGradeAcademicCheckpoints");
+  if(!main||!explore||!checkpoints)return false;
+  if(checkpoints.parentElement!==main||explore.nextElementSibling!==checkpoints)
+   explore.insertAdjacentElement("afterend",checkpoints);
+  return checkpoints.parentElement===main&&explore.nextElementSibling===checkpoints;
+ }
+ place();
+ if(document.readyState==="loading")
+  document.addEventListener("DOMContentLoaded",place,{once:true});
+ window.addEventListener("pageshow",place);
+})();
+</script>
 </body></html>
