@@ -162,7 +162,7 @@ html:root:root body #grade09BlueprintTools .grade09-blueprint-tool:is(:hover,:fo
 /* Presentation retirement only. Canonical toolbar dialogs and course data stay owned
    by their existing scripts. Do not hide Student Rooms, Explore or checkpoints. */
 body[data-grade="12"] .grade12-data-mount,
-body[data-grade="12"] #studentCourseProgress,
+body[data-grade="12"] main #studentCourseProgress,
 body[data-grade="12"] [aria-labelledby="manageClassesTitle"]{
   display:none!important;
 }
@@ -516,7 +516,7 @@ html body .grade09-contribute-panel .grade09-contribute-action:focus-visible{
   if(document.body?.dataset.grade!=="12")return;
   for(const node of [
    document.querySelector(".grade12-data-mount"),
-   document.getElementById("studentCourseProgress"),
+   document.querySelector("main #studentCourseProgress"),
    document.querySelector('[aria-labelledby="manageClassesTitle"]')
   ])if(node){node.hidden=true;node.setAttribute("aria-hidden","true");}
  }
