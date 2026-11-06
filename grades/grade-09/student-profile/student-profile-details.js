@@ -215,7 +215,7 @@ function mountEditor(){
   const explanation=tag("p",grade10Copy?"Your portfolio is where you can collect work you are proud of, projects you want to remember, and evidence of how your learning has grown. Open it anytime to keep building your story.":grade09Copy?"Your portfolio is a place to collect projects, writing, art, ideas, and work you are proud of as you move through your first High School year. You can keep adding to it as you discover what you enjoy.":grade11Copy?"Use your portfolio to collect work that shows how you think, create, solve problems, and grow. Keep projects, writing, research, creative work, and accomplishments you may want when planning senior year or your next steps after High School.":"Continue to your Academy Portfolio Studio for additional learning-workspace features and personal learning evidence. Your High School picture, questionnaire, goals, and grade-specific classes stay managed in their existing places.");
   explanation.style.cssText="margin:0;color:#243038;font:400 16px/1.55 Nunito,Arial,sans-serif";
   const link=tag("a",(grade10Copy||grade09Copy||grade11Copy)?"Open My Portfolio":"Open Student Portfolio Studio");
-  link.href="https://vervenveda.com/Khaemenes_Academy.github.io/student/profile.html#profileStudio";
+  link.href="https://vervenveda.com/Khaemenes_High.github.io/grades/grade-"+pageGrade+"/student-profile/profile/";
   link.className="btn secondary";
   link.style.cssText="display:inline-flex;align-items:center;justify-content:center;justify-self:start;min-height:48px;padding:10px 16px;border:1px solid #8f7c5b;border-radius:7px;background:#f4e9d3;color:#243038;-webkit-text-fill-color:#243038;text-decoration:none;font:400 16px/1.4 Nunito,Arial,sans-serif";
   area.append(explanation,link);
