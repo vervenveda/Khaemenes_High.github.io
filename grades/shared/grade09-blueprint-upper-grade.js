@@ -6,6 +6,7 @@
 if(window.KhaemenesUpperGrade09Blueprint)return;
 const grade=String(document.body.dataset.grade||"");
 const grade10Copy=grade==="10";
+const grade11Copy=grade==="11";
 if(!["10","11","12"].includes(grade))return;
 const catalog=window.KhaemenesHighEightClass,pins=window.KhaemenesHighCoursePins,
   profile=window.KhaemenesStudentProfileV2,continuation=window.KhaemenesLearningContinuation;
@@ -186,16 +187,16 @@ function showUpperProgress(){
   content.replaceChildren();
   const registered=gradeContext();
   if(!registered||registered.gradeNumber!==Number(grade)){
-   content.append(make("p",grade10Copy?"Choose your Grade 10 student profile to see your class progress.":"Select your registered Grade "+grade+" learner to view class continuation."));return;
+   content.append(make("p",grade10Copy?"Choose your Grade 10 student profile to see your class progress.":grade11Copy?"Choose your Grade 11 student profile to continue your classes.":"Select your registered Grade "+grade+" learner to view class continuation."));return;
   }
-  content.append(make("p",grade10Copy?"See where you left off in each class and choose what to continue next. Your official grades stay in your course records.":"Course continuation and pinned classes are displayed here; official grades and mastery remain in their course records."));
+  content.append(make("p",grade10Copy?"See where you left off in each class and choose what to continue next. Your official grades stay in your course records.":grade11Copy?"Review where you left off, decide what deserves your attention next, and keep your priorities clear.":"Course continuation and pinned classes are displayed here; official grades and mastery remain in their course records."));
   const map=new Map(snapshots().map(entry=>[entry.courseId,entry]));
   for(const item of slots()){
    const card=make("article");
    card.style.cssText="padding:12px;border:1px solid #cbb99c;border-radius:7px;background:#fffdf8";
    const h=make("h3",item.title);h.style.cssText="margin:0 0 5px;font:400 19px Cinzel,Georgia,serif";
    const state=map.get(item.id);
-   const detail=state?.summary||state?.nextTitle||(grade10Copy?(readPins().includes(item.id)?"Pinned · ready when you are":"Open this class to begin tracking your next step."):(readPins().includes(item.id)?"Pinned · no continuation evidence yet":"No continuation evidence yet"));
+   const detail=state?.summary||state?.nextTitle||(grade10Copy?(readPins().includes(item.id)?"Pinned · ready when you are":"Open this class to begin tracking your next step."):grade11Copy?(readPins().includes(item.id)?"Pinned · keep this priority within reach":"Open this class to set your next step."):(readPins().includes(item.id)?"Pinned · no continuation evidence yet":"No continuation evidence yet"));
    const p=make("p",detail);p.style.cssText="margin:5px 0;font-size:16px";
    card.append(h,p);content.append(card);
   }
@@ -210,16 +211,16 @@ function showUpperSchedule(){
   content.replaceChildren();
   const registered=gradeContext();
   if(!registered||registered.gradeNumber!==Number(grade)){
-   content.append(make("p",grade10Copy?"Choose your Grade 10 student profile to see your schedule.":"Select your registered Grade "+grade+" learner to view your schedule."));return;
+   content.append(make("p",grade10Copy?"Choose your Grade 10 student profile to see your schedule.":grade11Copy?"Choose your Grade 11 student profile to see your schedule.":"Select your registered Grade "+grade+" learner to view your schedule."));return;
   }
-  const intro=make("p",grade10Copy?"These are your Grade 10 classes. Open a class to continue learning, or use the class manager below to organize your schedule.":"Your eight Grade "+grade+" subjects. Course choices remain managed by the grade-specific curriculum.");
+  const intro=make("p",grade10Copy?"These are your Grade 10 classes. Open a class to continue learning, or use the class manager below to organize your schedule.":grade11Copy?"These are your Grade 11 classes. Use your schedule to keep priorities clear, continue active work, and stay aware of the classes that matter most for your goals.":"Your eight Grade "+grade+" subjects. Course choices remain managed by the grade-specific curriculum.");
   intro.style.cssText="font-size:16px";content.append(intro);
   const grid=make("div");grid.className="grade09-blueprint-schedule-grid";
   for(const item of slots()){
    const card=make("article");card.className="grade09-blueprint-schedule-item";
    card.append(make("strong",item.label),make("span",item.title));
    const route=href(item);
-   if(route)card.append(link(grade10Copy?"Continue Class":"Open class",route,"btn secondary"));
+   if(route)card.append(link((grade10Copy||grade11Copy)?"Continue Class":"Open class",route,"btn secondary"));
    grid.append(card);
   }
   content.append(grid);
