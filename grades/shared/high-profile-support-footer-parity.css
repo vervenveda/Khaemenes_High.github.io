@@ -1,0 +1,67 @@
+/* Grades 10–12 · Grade 09-approved contribution and footer presentation.
+ * This file modifies visual styling only and never supplies donation URLs.
+ * Source of visual truth: grade-09/student-profile/index.html.
+ */
+body[data-grade="10"] footer.footer.grade09-dashboard-footer,
+body[data-grade="11"] footer.footer.grade09-dashboard-footer,
+body[data-grade="12"] footer.footer.grade09-dashboard-footer{
+ width:100%!important;max-width:100%!important;margin:0!important;
+ padding:28px 16px!important;box-sizing:border-box!important;
+ display:flex!important;flex-direction:column!important;
+ align-items:center!important;justify-content:center!important;
+ text-align:center!important;gap:7px!important;
+ background:#243038!important;background-image:none!important;
+ border-top:1px solid #b48b45!important;color:#fff8e9!important;
+ font:400 16px/1.5 Cinzel,Georgia,serif!important;
+}
+body[data-grade="10"] footer.grade09-dashboard-footer :is(div,span,p,a,strong),
+body[data-grade="11"] footer.grade09-dashboard-footer :is(div,span,p,a,strong),
+body[data-grade="12"] footer.grade09-dashboard-footer :is(div,span,p,a,strong){
+ color:#fff8e9!important;-webkit-text-fill-color:#fff8e9!important;
+}
+body[data-grade="10"] footer.grade09-dashboard-footer small,
+body[data-grade="11"] footer.grade09-dashboard-footer small,
+body[data-grade="12"] footer.grade09-dashboard-footer small{
+ color:#eadcc5!important;-webkit-text-fill-color:#eadcc5!important;
+ font:400 16px/1.5 "Brandon Grotesque",Nunito,Arial,sans-serif!important;
+}
+body[data-grade="10"] .grade09-contribute-panel,
+body[data-grade="11"] .grade09-contribute-panel,
+body[data-grade="12"] .grade09-contribute-panel{
+ background:#243038!important;background-image:none!important;
+ color:#fff8e9!important;border:1px solid #b48b45!important;
+ border-radius:7px!important;text-align:center!important;
+}
+body[data-grade="10"] .grade09-contribute-panel :is(h2,h3,h4),
+body[data-grade="11"] .grade09-contribute-panel :is(h2,h3,h4),
+body[data-grade="12"] .grade09-contribute-panel :is(h2,h3,h4){
+ color:#fff8e9!important;-webkit-text-fill-color:#fff8e9!important;
+ text-align:center!important;font-family:Cinzel,Georgia,serif!important;
+ font-weight:400!important;
+}
+body[data-grade="10"] .grade09-contribute-panel :is(p,small,span),
+body[data-grade="11"] .grade09-contribute-panel :is(p,small,span),
+body[data-grade="12"] .grade09-contribute-panel :is(p,small,span){
+ color:#f0e6d4!important;-webkit-text-fill-color:#f0e6d4!important;
+}
+html:root:root body[data-grade="10"] :is(#vnv-global-support a.vnv-support-button,.grade09-contribute-panel a.grade09-contribute-action,.grade09-contribute-panel button.grade09-contribute-action),
+html:root:root body[data-grade="11"] :is(#vnv-global-support a.vnv-support-button,.grade09-contribute-panel a.grade09-contribute-action,.grade09-contribute-panel button.grade09-contribute-action),
+html:root:root body[data-grade="12"] :is(#vnv-global-support a.vnv-support-button,.grade09-contribute-panel a.grade09-contribute-action,.grade09-contribute-panel button.grade09-contribute-action){
+ display:inline-flex!important;align-items:center!important;justify-content:center!important;
+ background:#243038!important;background-image:none!important;
+ color:#fff8e9!important;-webkit-text-fill-color:#fff8e9!important;
+ border:1px solid #b48b45!important;border-radius:7px!important;
+ opacity:1!important;text-decoration:none!important;
+ font:400 16px/1.4 "Brandon Grotesque",Nunito,Arial,sans-serif!important;
+ min-height:44px!important;padding:10px 18px!important;
+}
+html:root:root body[data-grade="10"] :is(#vnv-global-support a.vnv-support-button,.grade09-contribute-panel .grade09-contribute-action) :is(span,strong),
+html:root:root body[data-grade="11"] :is(#vnv-global-support a.vnv-support-button,.grade09-contribute-panel .grade09-contribute-action) :is(span,strong),
+html:root:root body[data-grade="12"] :is(#vnv-global-support a.vnv-support-button,.grade09-contribute-panel .grade09-contribute-action) :is(span,strong){
+ color:#fff8e9!important;-webkit-text-fill-color:#fff8e9!important;
+}
+html:root:root body[data-grade="10"] :is(#vnv-global-support a.vnv-support-button,.grade09-contribute-panel .grade09-contribute-action):focus-visible,
+html:root:root body[data-grade="11"] :is(#vnv-global-support a.vnv-support-button,.grade09-contribute-panel .grade09-contribute-action):focus-visible,
+html:root:root body[data-grade="12"] :is(#vnv-global-support a.vnv-support-button,.grade09-contribute-panel .grade09-contribute-action):focus-visible{
+ outline:3px solid #b48b45!important;outline-offset:3px!important;
+}
