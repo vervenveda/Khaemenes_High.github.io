@@ -10,6 +10,8 @@ const catalog=window.KhaemenesHighEightClass,pins=window.KhaemenesHighCoursePins
   profile=window.KhaemenesStudentProfileV2,continuation=window.KhaemenesLearningContinuation;
 if(!catalog||!pins)return;
 const highRoot="https://vervenveda.com/Khaemenes_High.github.io/";
+// Grade 10 has a local editor. Grades 11–12 use the existing grade-aware setup,
+// never the Grade 09 editor (those local editor directories do not yet exist).
 const builder=grade==="10"?highRoot+"grades/grade-10/student-profile/profile/":highRoot+"grades/student-profile/";
 const $=id=>document.getElementById(id);
 const make=(tag,value)=>{const n=document.createElement(tag);if(value!==undefined)n.textContent=value;return n};
@@ -371,10 +373,13 @@ function render(){
  renderTools();renderSchedule(items);renderCourses(items);renderLanguage();renderToday(items);
  $("todayFocus").textContent="Eight Grade "+grade+" subjects, daily routines, and course-owned learning checkpoints.";
 }
+// Event subscriptions are installed once by this script guard; render is repeat-safe.
+window.addEventListener("pageshow",render);
+window.addEventListener("khaemenes-family-changed",render);
 window.addEventListener("khaemenes-learning-continuation-changed",render);
 window.addEventListener("khaemenes-course-pins-changed",render);
 window.addEventListener("khaemenes-high-profile-appearance-changed",render);
 window.addEventListener("storage",e=>{if(!e.key||/khaemenes.*(profile|pin|language|continuation|learner)/.test(e.key))render()});
 render();
-window.KhaemenesUpperGrade09Blueprint=Object.freeze({render,version:"1.0.0"});
+window.KhaemenesUpperGrade09Blueprint=Object.freeze({render,version:"1.0.1"});
 })();
