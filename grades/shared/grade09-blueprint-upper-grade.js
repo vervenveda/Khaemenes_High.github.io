@@ -248,7 +248,7 @@ function renderTools(){
   {label:"Edit Profile",url:builder},
   {label:"Class Progress",run:showUpperProgress},
   {label:"Schedule",run:showUpperSchedule},
-  {label:"KlasaiPeer",url:"https://artist1970.github.io/Klasaipeer.github.io/",preview:true},
+  {label:"KlasaiPeer",run:()=>window.KhaemenesUpperGradeStudyStudio?.open?.(document.activeElement)},
   {label:"Yearbook",run:()=>window.KhaemenesUpperGradeYearbook?.open?.(document.activeElement)},
   {label:"Creative Tools",run:()=>revealUpper("grade09BlueprintRooms")},
   {label:"Student Portfolio",run:()=>{
