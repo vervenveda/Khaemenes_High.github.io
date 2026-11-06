@@ -202,7 +202,11 @@ const gradeNine=document.querySelector(".grade09-priority-schedule");
 if(classroom)classroom.insertAdjacentElement("afterbegin",host);
 else if(gradeNine)gradeNine.insertAdjacentElement("afterend",host);
 else return;
-function classes(){if(grade!=="09")return gradeCourses[grade]||[];
+function classes(){if(grade!=="09"){
+ const eight=window.KhaemenesHighEightClass?.slots?.(Number(grade));
+ if(Array.isArray(eight)&&eight.length)return eight.map(item=>[item.label,item.id]).filter(row=>row[1]);
+ return gradeCourses[grade]||[];
+ }
 const reg=window.KhaemenesGrade09Courses;
 return (reg?.pinnedCourses?.()||[]).map(c=>[String(c.title||c.name||"Class"),String(c.id||"")]).filter(c=>c[1]);}
 function render(){
