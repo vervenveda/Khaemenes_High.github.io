@@ -4,6 +4,7 @@
  */
 (()=>{"use strict";
 const grade=Number(document.body?.dataset.grade);
+const grade10Copy=grade===10;
 if(![10,11,12].includes(grade)||window.KhaemenesUpperGradeClassProgressDialog)return;
 const $=(id)=>document.getElementById(id);
 const make=(tag,cls,label)=>{const n=document.createElement(tag);if(cls)n.className=cls;if(label!==undefined)n.textContent=label;return n};
@@ -21,10 +22,10 @@ const chartArea=make("div","grade09-progress-dialog-chart");
 const chart=make("section","grade09-class-progress");chart.id="studentCourseProgress";
 chart.setAttribute("aria-label","Eight-class progress dashboard");
 const chartTitle=make("h2","","My Class Progress");
-const intro=make("p","grade09-progress-intro","Course completion and quiz mastery are different. Each subject keeps its own color; missing records are not zero grades.");
+const intro=make("p","grade09-progress-intro",grade10Copy?"Progress shows how much of each class you have completed. Assessment progress shows how you are doing on mastery checks. If a class has no result yet, there is simply nothing to report yet.":"Course completion and quiz mastery are different. Each subject keeps its own color; missing records are not zero grades.");
 const filters=make("div","grade09-progress-controls");
-const all=make("button","grade09-progress-filter","All eight subjects");
-const review=make("button","grade09-progress-filter","Needs review");
+const all=make("button","grade09-progress-filter",grade10Copy?"All Classes":"All eight subjects");
+const review=make("button","grade09-progress-filter",grade10Copy?"Needs Attention":"Needs review");
 all.type="button";review.type="button";
 filters.append(all,review);
 const status=make("p","grade09-progress-status");
@@ -74,7 +75,7 @@ function checkpointSnapshot(){
   preview.id="grade09AcademicCheckpoints";
   preview.append(
    make("h3","","Today's Class Checkpoints"),
-   make("p","grade09-daily-focus-explanation","This Grade "+grade+" course-layout preview contains no learner scores or completion records. Select a registered Grade "+grade+" learner to view personal checkpoints.")
+   make("p","grade09-daily-focus-explanation",grade10Copy?"Choose your Grade 10 student profile to see your personal checkpoints and class progress.":"This Grade "+grade+" course-layout preview contains no learner scores or completion records. Select a registered Grade "+grade+" learner to view personal checkpoints.")
   );
   const grid=make("div","grade09-academic-grid");
   for(const [index,slot] of slots().slice(0,8).entries()){
@@ -84,7 +85,7 @@ function checkpointSnapshot(){
      make("span","grade09-academic-number",String(index*2+(kind==="Classwork"?1:2)).padStart(2,"0")),
      make("strong","",slot.label||"Subject"),
      make("small","",kind),
-     make("small","","Select a registered Grade "+grade+" learner")
+     make("small","",grade10Copy?"Choose your student profile":"Select a registered Grade "+grade+" learner")
     );
     grid.append(card);
    }
@@ -104,23 +105,23 @@ function checkpointSnapshot(){
 }
 function showDetails(row){
  detail.replaceChildren();
- if(!row){detail.append(make("p","","Select a class to view its verified reports."));return;}
+ if(!row){detail.append(make("p","",grade10Copy?"Choose a class to see your progress details.":"Select a class to view its verified reports."));return;}
  detail.style.setProperty("--subject-color",row.color);
  detail.append(
   make("h3","",row.item.title||row.item.label),
-  make("p","",row.percent===null?"Course completion: not reported.":"Course completion: "+Math.round(row.percent)+"%."),
-  make("p","",row.mastery===null?"Assessment mastery: not reported.":"Best reported assessment mastery: "+Math.round(row.mastery)+"% (target "+row.threshold+"%)."),
-  make("p","",row.stale?"Course snapshot needs refresh. Reopen the course.":row.snap?.nextTitle?"Next: "+row.snap.nextTitle:"Open the class to review its learning plan.")
+  make("p","",row.percent===null?(grade10Copy?"Class progress: nothing reported yet.":"Course completion: not reported."):(grade10Copy?"Class progress: "+Math.round(row.percent)+"%.":"Course completion: "+Math.round(row.percent)+"%.")),
+  make("p","",row.mastery===null?(grade10Copy?"Assessment progress: nothing reported yet.":"Assessment mastery: not reported."):(grade10Copy?"Best assessment score: "+Math.round(row.mastery)+"% · goal "+row.threshold+"%.":"Best reported assessment mastery: "+Math.round(row.mastery)+"% (target "+row.threshold+"%).")),
+  make("p","",row.stale?(grade10Copy?"Open this class once to refresh its progress.":"Course snapshot needs refresh. Reopen the course."):row.snap?.nextTitle?"Next: "+row.snap.nextTitle:(grade10Copy?"Open the class to choose your next step.":"Open the class to review its learning plan."))
  );
  if(row.snap?.progress?.completed!=null&&row.snap?.progress?.total)
-  detail.append(make("p","grade09-progress-units",row.snap.progress.completed+" of "+row.snap.progress.total+" reported course items complete."));
+  detail.append(make("p","grade09-progress-units",grade10Copy?row.snap.progress.completed+" of "+row.snap.progress.total+" activities completed.":row.snap.progress.completed+" of "+row.snap.progress.total+" reported course items complete."));
  const href=row.snap?.nextHref||row.item.href;
  if(typeof href==="string"&&/^https:\/\//i.test(href)){
   const a=make("a","grade09-progress-open","Open "+row.item.label);
   a.href=href;detail.append(a);
  }
- detail.append(make("p","grade09-progress-forecast","Forecast unavailable: at least two dated completion snapshots spanning a day are required. No grade or prediction is inferred."));
- if(row.needsReview)detail.append(make("p","grade09-progress-review","Course reports attention needed. Check corrections, mastery requirements, or the next assessment."));
+ detail.append(make("p","grade09-progress-forecast",grade10Copy?"Keep working in this class and your progress trend will appear here.":"Forecast unavailable: at least two dated completion snapshots spanning a day are required. No grade or prediction is inferred."));
+ if(row.needsReview)detail.append(make("p","grade09-progress-review",grade10Copy?"This class needs a little attention. Check corrections, your next mastery goal, or the next assessment.":"Course reports attention needed. Check corrections, mastery requirements, or the next assessment."));
 }
 function render(){
  const {learner,rows}=readData();
@@ -128,10 +129,10 @@ function render(){
  for(const [b,k] of [[all,"all"],[review,"review"]])b.setAttribute("aria-pressed",String(mode===k));
  const reported=rows.filter(r=>r.percent!==null).length;
  const flagged=rows.filter(r=>r.needsReview).length;
- status.textContent=learner?reported+" of "+rows.length+" course-completion records available · "+flagged+" with reported review needs. No score is inferred from missing data.":"Select a registered Grade "+grade+" learner to view private progress. Missing results are not zero grades.";
+ status.textContent=learner?(grade10Copy?reported+" of "+rows.length+" classes have progress to show · "+flagged+" may need attention.":reported+" of "+rows.length+" course-completion records available · "+flagged+" with reported review needs. No score is inferred from missing data."):(grade10Copy?"Choose your Grade 10 student profile to see your progress.":"Select a registered Grade "+grade+" learner to view private progress. Missing results are not zero grades.");
  graph.replaceChildren();
  const visible=mode==="review"?rows.filter(r=>r.needsReview):rows;
- if(!visible.length)graph.append(make("p","grade09-progress-empty","No course records currently report a review need."));
+ if(!visible.length)graph.append(make("p","grade09-progress-empty",grade10Copy?"Nothing needs attention right now.":"No course records currently report a review need."));
  for(const row of visible){
   const item=make("button","grade09-progress-row"+(row.index===selected?" is-selected":""));
   item.type="button";item.dataset.courseIndex=String(row.index);
