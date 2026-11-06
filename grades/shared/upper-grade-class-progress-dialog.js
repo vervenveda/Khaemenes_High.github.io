@@ -70,7 +70,7 @@ function checkpointSnapshot(){
  // Display-only snapshot: the original accessible collapsed checkpoint component
  // remains immediately above Support Free Access. Avoid duplicate IDs.
  const clone=source.cloneNode(true);
- clone.removeAttribute("id");clone.classList.add("upper-grade-checkpoints-dialog-copy");
+ clone.id="grade09AcademicCheckpoints";clone.classList.add("upper-grade-checkpoints-dialog-copy");
  for(const el of clone.querySelectorAll("[id]"))el.removeAttribute("id");
  for(const el of clone.querySelectorAll("[hidden]"))el.removeAttribute("hidden");
  checkpointsArea.append(clone);
