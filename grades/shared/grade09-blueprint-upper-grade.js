@@ -156,6 +156,7 @@ function selectLearner(){
  return true;
 }
 function upperGradeDialog(id,title,renderContents){
+ const opener=document.activeElement;
  let dlg=$(id);
  if(!dlg){
   dlg=make("dialog");dlg.id=id;
@@ -173,7 +174,9 @@ function upperGradeDialog(id,title,renderContents){
   content.style.cssText="display:grid;gap:12px";
   dlg.append(top,content);document.body.append(dlg);
   dlg.addEventListener("click",e=>{if(e.target===dlg)dlg.close()});
+  dlg.addEventListener("close",()=>{if(grade==="11"&&dlg._khaeOpener?.isConnected)dlg._khaeOpener.focus({preventScroll:true})});
  }
+ if(grade==="11")dlg._khaeOpener=opener;
  renderContents(dlg.querySelector("[data-upper-grade-dialog-content]"));
  if(typeof dlg.showModal==="function"){
   if(!dlg.open)dlg.showModal();
