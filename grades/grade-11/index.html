@@ -164,6 +164,19 @@ html body main #support .support-grid > .support-card > a.btn{
   margin-top:auto!important;
 }
 </style>
+<style id="grade11-navigation-accessibility-20261107">
+/* Grade-level links and interactive cards: readable 16px minimum and keyboard focus. */
+html body .grade11-local-links a,
+html body main :is(.front-card,.course-card,.support-card) :is(a.btn,button.btn),
+html body main .hero-actions :is(a.btn,button.btn){
+  font-size:16px!important;
+}
+html body .grade11-local-links a:focus-visible,
+html body main :is(.front-card,.course-card,.support-card,.hero-actions) :is(a,button):focus-visible{
+  outline:3px solid #b48b45!important;
+  outline-offset:3px!important;
+}
+</style>
 </head>
 <body id="top" data-grade11-canonical-chrome="true" data-high-hide-breadcrumbs="true">
 <header data-khae-header class="khae-global-campus-header"><div data-khae-header-inner><a data-khae-brand href="https://vervenveda.com/Khaemenes_Academy.github.io/"><span data-khae-brand-mark>K</span><span><strong data-khae-brand-name>Khaemenes Academy</strong><small data-khae-brand-sub>High School · Grades 9–12</small></span></a><nav data-khae-nav><a href="https://vervenveda.com/Khaemenes_Academy.github.io/">Academy</a><a href="https://vervenveda.com/Khaemenes_Academy.github.io/student/">Student</a><a href="https://vervenveda.com/Khaemenes_Academy.github.io/family/">Family</a><a href="https://vervenveda.com/Khaemenes_Higher_Learning.github.io/">Higher Learning</a></nav><div data-khae-actions><a data-khae-secondary href="student-profile/">Student Profile</a></div><div data-vnv-ecosystem-slot aria-label="Ecosystem menu"></div></div></header>
@@ -193,7 +206,7 @@ html body main #support .support-grid > .support-card > a.btn{
         <span class="front-mark">S</span>
         <h3>Student Dashboard</h3>
         <p>Return to your classes, latest work, personal projects, and the tools that help you learn.</p>
-        <a class="btn primary" href="student-profile/">Student Dashboard</a>
+        <a class="btn primary" href="student-profile/" data-high-profile-door="true">Student Dashboard</a>
       </article>
 <article class="front-card" style="--accent:#4f7f7a">
         <span class="front-mark">D</span>
@@ -205,7 +218,7 @@ html body main #support .support-grid > .support-card > a.btn{
         <span class="front-mark">P</span>
         <h3>Profile &amp; Settings</h3>
         <p>Make your workspace your own and keep track of the interests, goals, and projects that matter to you.</p>
-        <a class="btn" href="student-profile/profile/">Profile Settings</a>
+        <a class="btn" href="student-profile/profile/" data-high-profile-editor-door="true">Profile Settings</a>
       </article></div>
   </div>
 </section>
@@ -278,7 +291,7 @@ html body main #support .support-grid > .support-card > a.btn{
       </article>
 <article class="support-card">
         <h3>My Profile</h3><p>Keep your profile, projects, personal goals, and growing interests together in one place.</p>
-        <a class="btn" href="student-profile/profile/">Edit My Profile</a>
+        <a class="btn" href="student-profile/profile/" data-high-profile-editor-door="true">Edit My Profile</a>
       </article></div>
   </div>
 </section>
