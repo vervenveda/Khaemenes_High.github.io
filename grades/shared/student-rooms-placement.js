@@ -14,6 +14,8 @@
   const cards=GROUP.map(selector=>main?.querySelector(selector));
   if(!main||!portfolio||portfolio.parentElement!==main||cards.some(node=>!node))return false;
   const roomCards=cards.filter(Boolean);
+  // Remember only the original wrappers so a vacated full-width strip can collapse.
+  const formerSections=[...new Set(roomCards.map(card=>card.closest("main > .section")||card.closest(".section")).filter(section=>section?.parentElement===main))];
   // Never move an unrelated dialog/card or duplicate a component.
   if(new Set(roomCards).size!==3||roomCards.some(card=>!main.contains(card)))return false;
   let host=main.querySelector(":scope > #studentRoomsAfterPortfolio");
@@ -33,6 +35,15 @@
    if(card.parentElement!==target||card!==target.children[roomCards.indexOf(card)]){
     target.append(card);
    }
+  }
+  // Collapse only the vacated original wrapper; never hide other content or the cards.
+  for(const section of formerSections){
+   const grid=section.querySelector(":scope > .shell.grid");
+   const vacant=!!grid&&grid.children.length===0&&
+    [...section.children].every(child=>child===grid)&&
+    !section.textContent.trim();
+   if(vacant)section.setAttribute("data-student-rooms-vacated","true");
+   else section.removeAttribute("data-student-rooms-vacated");
   }
   // Grade 09 already owns the real Explore, Create & Celebrate section.
   // Keep the existing component immediately after Student Rooms without
