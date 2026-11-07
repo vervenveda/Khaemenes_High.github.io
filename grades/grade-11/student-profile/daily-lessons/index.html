@@ -53,7 +53,7 @@ a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible{
 <a href="../profile/" >My Profile</a>
 <a href="../settings/" >Settings</a><a href="../../">Exit to Grade 11</a></nav>
 <main class="g11-shell g11-content"><p class="g11-note" role="status" id="g11RoomMessage">Checking the registered learner…</p><div class="g11-grid" id="g11RoomContent"><section class="g11-card g11-wide"><h2>My Eight Subjects</h2><p>Open your current classes and continue lessons from the course that owns them. Pinned courses are personal shortcuts, not enrollment or grades.</p><div class="g11-grid" id="g11SubjectCards"></div></section>
-<section class="g11-card g11-wide" data-owner-only><h2>To Do Today</h2><p>Eight personal planning checks, separate from course assessment and mastery.</p><div id="g11DailyChecks" class="g11-list"></div><p id="g11DailyStatus" class="g11-status" role="status"></p></section>
+<section class="g11-card g11-wide" data-owner-only><h2>To Do Today</h2><p>Ten learner-owned daily activities shared with your student dashboard. Personal checkmarks never award course credits, scores, or mastery.</p><div id="g11DailyChecks" class="g11-list"></div><p id="g11DailyStatus" class="g11-status" role="status"></p></section>
 <section class="g11-card g11-wide" data-owner-only><h2>My Study Note</h2><p>Your short daily journal stays in this browser and belongs to your selected Grade 11 learner.</p><label for="g11DailyNote">Today's plan or reflection</label><textarea id="g11DailyNote" maxlength="1600"></textarea><div class="g11-actions"><button type="button" id="g11SaveNote" class="g11-button">Save My Note</button><button type="button" id="g11ClearNote" class="g11-button secondary">Clear Today's Note</button></div><p id="g11NoteStatus" role="status" class="g11-status"></p></section></div></main>
 <footer class="g11-footer">Khaemenes Academy · Grade 11 · Daily Lessons<div>Local learner work remains separate from course grading and parent authority.</div></footer>
 <script src="../../../../courses/shared/high-school-course-pins.js"></script>
@@ -85,33 +85,46 @@ if(valid&&catalog){
  }
 }else cards.append(make("p","Class selections are available after choosing the registered Grade 11 learner."));
 if(!valid)return;
-const date=new Date().toLocaleDateString("en-CA");
+const today=new Date();const date=[today.getFullYear(),String(today.getMonth()+1).padStart(2,"0"),String(today.getDate()).padStart(2,"0")].join("-");
 const prefix="khaemenes.grade11.daily.v1:"+encodeURIComponent(learnerId)+":"+date+":";
 const safeRead=(key,empty)=>{try{return JSON.parse(localStorage.getItem(key)||"null")??empty}catch{return empty}};
-const saved=safeRead(prefix+"checks",{});
+const habitKey="khaemenes-grade11-today-habits-v1:learner:"+encodeURIComponent(learnerId);
+const existing=safeRead(habitKey,null);
+const saved=existing?.date===date&&existing.items&&typeof existing.items==="object"?existing.items:{};
 const grid=document.getElementById("g11DailyChecks"),status=document.getElementById("g11DailyStatus");
-const tasks=[["Ready for class","Prepare today's materials"],["Personal care","Breakfast, hygiene and mindful breathing"],["Journal","Plan or reflect before lessons"],["Mathematics","Open the current math pathway"],["Language Arts","Read, write or discuss"],["Science & Lab","Work from the registered course"],["Movement","Physical education and a healthy break"],["Family & Life Skills","Connect, contribute and rest"]];
+const tasks=[
+ ["breakfast","Breakfast & hydration","Eat a nourishing breakfast and drink water"],
+ ["wash","Get ready, stretch & breathe","Hygiene, gentle stretching and preparation"],
+ ["journal","Morning journal","Set an intention or write a reflection"],
+ ["lunch","Lunch & rest","Eat, hydrate and take a screen break"],
+ ["movement","Afternoon movement / PE","Choose comfortable movement or continue PE"],
+ ["elective","Today's elective","Explore your chosen elective or creative practice"],
+ ["life","Life skills","Practice a useful real-world skill"],
+ ["family","Family or friend time","Connect, talk, play or help someone"],
+ ["arcade","Arcade & recreation break","Enjoy recreational time with breaks"],
+ ["bedtime","Evening wash-up & bedtime","Wind down, wash up and prepare for sleep"]
+];
 const controls=[];
-tasks.forEach(([title,detail],i)=>{
+tasks.forEach(([key,title,detail],i)=>{
  const row=make("label");row.className="g11-check";
- const input=make("input");input.type="checkbox";input.checked=!!saved[i];controls.push(input);
+ const input=make("input");input.type="checkbox";input.checked=saved[key]===true;controls.push({key,input});
  row.append(input,make("span",title+" · "+detail));
  grid.append(row);
  input.addEventListener("change",()=>{
-   if(window.KhaemenesHighProfileGradeContext?.active?.()?.learnerId!==learnerId){input.checked=!input.checked;status.textContent="Active learner changed. Reload before saving.";return}
-   const data={};controls.forEach((item,n)=>{data[n]=item.checked});
-   try{localStorage.setItem(prefix+"checks",JSON.stringify(data));status.textContent=controls.filter(x=>x.checked).length+" personal checks selected. These are not academic credits or assessments."}
+   if((window.KhaemenesHighProfileGradeContext?.active?.()?.learnerId!==learnerId||window.KhaemenesHighProfileGradeContext?.active?.()?.gradeNumber!==11)){input.checked=!input.checked;status.textContent="Active learner changed. Reload before saving.";return}
+   const data={};controls.forEach(({key,input})=>{data[key]=input.checked});
+   try{localStorage.setItem(habitKey,JSON.stringify({date,items:data}));status.textContent=controls.filter(({input})=>input.checked).length+" of 10 personal activities checked. Your student dashboard reads the same local checkmarks; these are not academic credits or assessments."}
    catch{input.checked=!input.checked;status.textContent="Could not save checks on this device."}
  });
 });
 const note=document.getElementById("g11DailyNote"),noteStatus=document.getElementById("g11NoteStatus");
 note.value=String(safeRead(prefix+"note","")).slice(0,1600);
 document.getElementById("g11SaveNote").onclick=()=>{
- if(window.KhaemenesHighProfileGradeContext?.active?.()?.learnerId!==learnerId){noteStatus.textContent="Active learner changed. Reload to save.";return}
+ if((window.KhaemenesHighProfileGradeContext?.active?.()?.learnerId!==learnerId||window.KhaemenesHighProfileGradeContext?.active?.()?.gradeNumber!==11)){noteStatus.textContent="Active learner changed. Reload to save.";return}
  try{localStorage.setItem(prefix+"note",JSON.stringify(note.value.slice(0,1600)));noteStatus.textContent="Today's personal note saved locally."}catch{noteStatus.textContent="Could not save the note."}
 };
 document.getElementById("g11ClearNote").onclick=()=>{
- if(window.KhaemenesHighProfileGradeContext?.active?.()?.learnerId!==learnerId){noteStatus.textContent="Active learner changed. Reload first.";return}
+ if((window.KhaemenesHighProfileGradeContext?.active?.()?.learnerId!==learnerId||window.KhaemenesHighProfileGradeContext?.active?.()?.gradeNumber!==11)){noteStatus.textContent="Active learner changed. Reload first.";return}
  try{localStorage.removeItem(prefix+"note");note.value="";noteStatus.textContent="Today's note cleared."}catch{noteStatus.textContent="Could not clear the note."}
 };
 
