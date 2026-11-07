@@ -9,64 +9,150 @@
 <meta http-equiv="Permissions-Policy" content="camera=(), microphone=(), geolocation=(), payment=(), usb=(), browsing-topics=()">
 <meta name="description" content="Khaemenes Academy High School Grade 10 learning portal — courses, support, student pathways, and Academy resources.">
 <title>Khaemenes Academy · High School · Grade 10</title>
-<link rel="stylesheet" href="../../assets/vervenveda-parchment.css" data-vervenveda-parchment>
 <link rel="stylesheet" href="../../assets/khaemenes-grade-landing-v1.css">
 <link rel="stylesheet" href="https://vervenveda.com/Khaemenes_Academy.github.io/assets/khaemenes-global-header.css"><link rel="stylesheet" href="https://vervenveda.com/assets/vnv-ecosystem-menu.css"><link rel="stylesheet" href="../../assets/high-navigation-v1.css" data-high-navigation-css>
 <link rel="stylesheet" href="https://vervenveda.com/Khaemenes_Academy.github.io/assets/khaemenes-landing-standard.css">
-<link rel="stylesheet" href="https://vervenveda.com/Khaemenes_Academy.github.io/assets/khaemenes-landing-toolbar.css">
+<style id="grade10-landing-parity-20261107">
+/* Grade 10 only: approved Grade 09 geometry; preserve original sophomore courses. */
+:root{--g10-charcoal:#243038;--g10-parchment:#f4f0e7;--g10-cream:#fff8e9}
+html body [data-khae-header] [data-khae-nav],
+html body [data-khae-header] [data-khae-actions]{display:none!important}
+html body [data-khae-header] [data-khae-brand]{margin-right:auto!important}
+html body [data-khae-header] [data-vnv-ecosystem-slot]{margin-left:auto!important;flex:0 0 auto!important}
+html body header[data-khae-header] > [data-khae-breadcrumb-row],
+html body #highNavigationBreadcrumbs{display:none!important}
+.grade10-local-links{
+ display:flex;flex-wrap:wrap;align-items:center;justify-content:center;
+ gap:8px;padding:12px 16px;background:#243038!important;
+ border-bottom:1px solid #b48b45;
+}
+.grade10-local-links a{
+ display:inline-flex;align-items:center;justify-content:center;
+ min-height:40px;min-width:0;padding:8px 12px;border:1px solid #b9c6bc;
+ background:#fffdf8;color:#17392f;border-radius:7px;
+ font:400 16px/1.3 "Brandon Grotesque",Nunito,Arial,sans-serif;
+ text-decoration:none;
+}
+.grade10-local-links a:focus-visible{outline:3px solid #b48b45;outline-offset:3px}
+html body main :is(h1,h2,h3),html body .hero :is(h1,.grade-title){
+ font-family:Cinzel,Georgia,serif!important;font-weight:400!important
+}
+html body > section.hero{
+ background:#243038!important;background-image:linear-gradient(125deg,#244258,#152b3c 65%,#17242e)!important;
+ color:#fff8e9!important;
+}
+html body > section.hero :is(.eyebrow,h1,h2,.hero-lead){
+ color:#fff8e9!important;-webkit-text-fill-color:#fff8e9!important;opacity:1!important;text-shadow:none!important;
+}
+html body .hero h1{font-size:clamp(36px,calc(5.1vw - 6px),66px)!important;line-height:1.08!important}
+html body main .heading h2{font-size:clamp(33px,calc(5.1vw - 9px),63px)!important;line-height:1.15!important}
+html body main>.section{background:#f4f0e7;color:#243038}
+html body main>.section.paper,html body main>.section.dark{
+ background:#243038!important;color:#fff8e9!important
+}
+html body main>.section.paper .heading :is(h2,p,.kicker),
+html body main>.section.dark .heading :is(h2,p,.kicker){
+ color:#fff8e9!important;-webkit-text-fill-color:#fff8e9!important
+}
+html body main :is(.front-card,.course-card,.support-card){
+ background:#fffdf8!important;color:#243038!important;border-radius:7px!important;
+}
+html body main :is(.front-card,.course-card,.support-card) :is(h3,p,small){
+ color:#243038!important;-webkit-text-fill-color:#243038!important;opacity:1!important
+}
+html body main .front-grid{
+ display:grid!important;grid-template-columns:repeat(3,minmax(0,1fr))!important;
+ gap:14px!important;align-items:stretch!important;
+}
+html body main .front-grid > .front-card{
+ box-sizing:border-box!important;display:flex!important;flex-direction:column!important;
+ align-items:center!important;min-width:0!important;height:100%!important;
+ border-radius:7px!important;background:#fffdf8!important;
+}
+html body main .front-grid > .front-card > a.btn{
+ box-sizing:border-box!important;display:flex!important;align-items:center!important;
+ justify-content:center!important;margin-top:auto!important;width:100%!important;
+ min-height:46px!important;padding:10px 12px!important;border:1px solid #243038!important;
+ border-radius:7px!important;background:#243038!important;
+ color:#fff8e9!important;-webkit-text-fill-color:#fff8e9!important;
+ font:400 16px/1.4 "Brandon Grotesque",Nunito,Arial,sans-serif!important;
+ letter-spacing:0!important;text-transform:none!important;text-align:center!important;
+}
+html body main .front-grid > .front-card > a.btn:hover{background:#344b55!important}
+html body main .front-grid > .front-card > a.btn:focus-visible{outline:3px solid #b48b45;outline-offset:3px}
+html body main :is(.course-card,.support-card) .btn{
+ box-sizing:border-box;min-height:46px!important;padding:10px 13px!important;
+ border-radius:7px!important;background:#243038!important;
+ color:#fff8e9!important;-webkit-text-fill-color:#fff8e9!important;
+ border:1px solid #243038!important;
+ font:400 16px/1.4 "Brandon Grotesque",Nunito,Arial,sans-serif!important;
+ text-transform:none!important;letter-spacing:0!important;text-align:center!important;
+ white-space:normal!important;
+}
+html body main .course-card .actions{display:flex;flex-wrap:wrap;gap:9px;align-items:stretch}
+html body main .course-card .actions > .btn{flex:1 1 150px}
+html body .grade10-unified-footer{
+ display:flex!important;flex-direction:column!important;gap:5px!important;
+ align-items:center!important;justify-content:center!important;text-align:center!important;
+ padding:26px 16px!important;background:#243038!important;color:#fff8e9!important;
+ border-top:1px solid #b48b45!important;
+ font:400 16px/1.4 Cinzel,Georgia,serif!important
+}
+html body .grade10-unified-footer small{
+ color:#e5d6ba!important;font:400 16px/1.5 "Brandon Grotesque",Nunito,Arial,sans-serif!important
+}
+@media(max-width:850px){html body main .front-grid{grid-template-columns:repeat(2,minmax(0,1fr))!important}}
+@media(max-width:560px){html body main .front-grid{grid-template-columns:1fr!important}}
+@media(max-width:760px){html body main .course-card .actions{flex-direction:column}}
+</style>
 </head>
-<body id="top">
-<header data-khae-header class="khae-global-campus-header"><div data-khae-header-inner><a data-khae-brand href="https://vervenveda.com/Khaemenes_Academy.github.io/"><span data-khae-brand-mark>9–12</span><span><strong data-khae-brand-name>Khaemenes Academy</strong><small data-khae-brand-sub>High School · Grades 9–12</small></span></a><nav data-khae-nav><a href="https://vervenveda.com/Khaemenes_Academy.github.io/">Academy</a><a href="https://vervenveda.com/Khaemenes_Academy.github.io/student/">Student</a><a href="https://vervenveda.com/Khaemenes_Academy.github.io/family/">Family</a><a href="https://vervenveda.com/Khaemenes_Higher_Learning.github.io/">Higher Learning</a></nav><div data-khae-actions><a data-khae-secondary href="student-profile/">Student Profile</a></div><div data-vnv-ecosystem-slot aria-label="Ecosystem menu"></div></div></header>
+<body id="top" data-grade10-canonical-chrome="true" data-high-hide-breadcrumbs="true">
+<header data-khae-header class="khae-global-campus-header"><div data-khae-header-inner><a data-khae-brand href="https://vervenveda.com/Khaemenes_Academy.github.io/"><span data-khae-brand-mark>K</span><span><strong data-khae-brand-name>Khaemenes Academy</strong><small data-khae-brand-sub>High School · Grades 9–12</small></span></a><nav data-khae-nav><a href="https://vervenveda.com/Khaemenes_Academy.github.io/">Academy</a><a href="https://vervenveda.com/Khaemenes_Academy.github.io/student/">Student</a><a href="https://vervenveda.com/Khaemenes_Academy.github.io/family/">Family</a><a href="https://vervenveda.com/Khaemenes_Higher_Learning.github.io/">Higher Learning</a></nav><div data-khae-actions><a data-khae-secondary href="student-profile/">Student Profile</a></div><div data-vnv-ecosystem-slot aria-label="Ecosystem menu"></div></div></header>
 <a class="skip" href="#main">Skip to main content</a>
-<div class="ribbon"><strong>Khaemenes Academy</strong><span>High School</span><span>Grade 10</span><a href="https://vervenveda.com/Khaemenes_Academy.github.io/" rel="noopener">Academy Home</a></div>
-<header class="site-header">
-  <div class="shell header-inner">
-    <a class="brand" href="../../"><span class="seal">X</span><span class="brand-copy"><strong>Khaemenes Academy</strong><small>High School · Grade 10</small></span></a>
-    <nav class="navlinks" aria-label="Grade 10 navigation">
-      <a href="../../">High School</a><a href="../../courses/">Courses</a><a href="../../courses/mathematics/">Mathematics</a><a href="../../mentor/?stage=high&amp;subject=general&amp;course=grade-10">Mentor</a>
-    </nav>
-    <div class="head-actions"><a class="head-btn primary" href="#courses">Open Courses</a></div>
-    <div class="grade-ecosystem-slot" data-vnv-ecosystem-slot aria-label="Ecosystem menu"></div>
-  </div>
-</header>
-<nav class="breadcrumbs" aria-label="Breadcrumb"><a href="https://vervenveda.com/Khaemenes_Academy.github.io/" rel="noopener">Khaemenes Academy</a><span>›</span><a href="../../">High School</a><span>›</span><strong>Grade 10</strong></nav>
+<nav class="grade10-local-links" aria-label="Grade 10 learning shortcuts">
+  <a href="../../">High School</a>
+  <a href="../../courses/">Courses</a>
+  <a href="../../courses/mathematics/">Mathematics</a>
+  <a href="../../mentor/?stage=high&amp;subject=general&amp;course=grade-10">Mentor</a>
+  <a href="#courses">Grade 10 Courses</a>
+</nav>
+<div data-vnv-language-mount aria-label="Language and translation tools"></div>
 <section class="hero">
   <div class="shell hero-inner">
-    <p class="eyebrow">Grade 10 Learning Portal</p>
-    <h1>Khaemenes Academy</h1>
-    <h2 class="grade-title">High School · Grade 10</h2>
-    <p class="hero-lead">Your Grade 10 home keeps the year together while each subject follows its own academic pathway. Mathematics remains placement-based: learners enter the course supported by readiness, prerequisite evidence, and mastery.</p>
+    <p class="eyebrow">High School Campus</p>
+    <h1>Sophomore</h1>
+    <h2 class="grade-title">Grade 10</h2>
+    <p class="hero-lead">A year to deepen your interests, strengthen your skills, explore new possibilities, and create work that matters to you. Your classes and favorite learning tools are right here when you're ready.</p>
     <div class="hero-actions"><a class="btn primary" href="#courses">Open Grade 10 Courses</a><a class="btn gold" href="../../courses/mathematics/">Mathematics Hall</a><a class="btn" href="../../">High School Home</a></div>
   </div>
 </section>
 <main id="main">
 <section class="section">
   <div class="shell">
-    <div class="heading"><p class="kicker">Grade 10 Front Desk</p><h2>A calm Grade 10 home for the daily learning path.</h2><p>Start from the doorway that matches what you need today. Your Student Profile keeps seven classes, current work, daily continuation, learner preferences, and support in one reliable place while each course remains responsible for its own mastery records.</p></div>
+    <div class="heading"><p class="kicker">Daily Learning</p><h2>Front Desk</h2><p>Choose where you want to begin today. Your eight class slots, learning spaces, daily lessons, and creative tools are all within easy reach.</p></div>
     <div class="front-grid"><article class="front-card" style="--accent:#315f86">
         <span class="front-mark">S</span>
         <h3>Student Dashboard</h3>
-        <div class="student-name" id="studentName">Sophomore Home</div>
-        <p>Open your learner home for seven classes, current work, Quick Pins, records, profile tools, and next steps.</p>
-        <a class="btn primary" href="student-profile/">Open Student Dashboard</a>
+        <p>Open your eight-class dashboard, pick up where you left off, and explore your profile, progress, and study tools.</p>
+        <a class="btn primary" href="student-profile/">Student Dashboard</a>
       </article>
 <article class="front-card" style="--accent:#4f7f7a">
         <span class="front-mark">D</span>
         <h3>Daily Lessons</h3>
-        <p>Move directly into Learning Today and the next source-course step without searching through the full campus directory.</p>
-        <a class="btn" href="student-profile/#learning-today">Open Daily Lessons</a>
+        <p>Find today’s learning, choose a class, and continue your work at your own pace.</p>
+        <a class="btn" href="student-profile/daily-lessons/">Daily Lessons</a>
       </article>
 <article class="front-card" style="--accent:#96594e">
         <span class="front-mark">P</span>
         <h3>Profile &amp; Settings</h3>
-        <p>Open goals, strengths, supports, accessibility, language, workspace controls, and learner-owned evidence in the Academy Learning Profile.</p>
-        <a class="btn" href="https://vervenveda.com/Khaemenes_Academy.github.io/student/">Open Profile &amp; Settings</a>
+        <p>Make your space your own, explore your interests, and adjust the tools that help you learn.</p>
+        <a class="btn" href="student-profile/profile/">Profile Settings</a>
       </article></div>
   </div>
 </section>
 <section class="section paper" id="courses">
   <div class="shell">
-    <div class="heading"><p class="kicker">Core Learning</p><h2>Choose the course you are actually studying.</h2><p>Mathematics remains placement-based. Grade level describes the learner's yearly campus context. It does not assign ownership of a mathematics course. Readiness and mastery evidence, including prerequisite evidence, determine the mathematics pathway.</p></div>
+    <div class="heading"><p class="kicker">Core Learning</p><h2>Core Classes</h2><p>Follow the subjects you are studying and explore where your interests take you. Your mathematics course follows your placement and demonstrated readiness, not simply your grade level.</p></div>
     <div class="course-grid"><article class="course-card" style="--accent:#315f86">
         <span class="status">Placement-based</span>
         <h3>Mathematics Pathway</h3>
@@ -96,32 +182,29 @@
 </section>
 <section class="section dark" id="support">
   <div class="shell">
-    <div class="heading"><p class="kicker">Student Support</p><h2>Clear doors for records, practice, and your profile.</h2><p>These are the same support categories used in the Grade 9 entrance so the High School feels familiar from year to year.</p></div>
+    <div class="heading"><p class="kicker">Explore &amp; Support</p><h2>My Learning Spaces</h2><p>Find your progress, take a creative break, or spend time making your profile your own.</p></div>
     <div class="support-grid"><article class="support-card">
-        <h3>Grades &amp; Records</h3><p>Open your seven-class profile, source-course continuation records, learner evidence, and current academic next steps.</p>
-        <a class="btn" href="student-profile/#seven-classes">Open Records</a>
+        <h3>Grades &amp; Records</h3><p>See your course progress, recorded results, and learning achievements in one place.</p>
+        <a class="btn" href="student-profile/grades/">Open Grades</a>
       </article>
 <article class="support-card">
         <h3>Games &amp; Practice</h3><p>Use the Verve N Veda Arcade for logic, vocabulary, strategy, and learning breaks without replacing course instruction.</p>
         <a class="btn" href="https://vervenveda.com/arcade.github.io/">Open Arcade</a>
       </article>
 <article class="support-card">
-        <h3>My Profile</h3><p>Review goals, interests, strengths, supports, workspace preferences, and learner-owned Evidence Passport entries.</p>
-        <a class="btn" href="https://vervenveda.com/Khaemenes_Academy.github.io/student/">Open Profile</a>
+        <h3>My Profile</h3><p>Choose how your profile looks, remember your favorite projects, and keep exploring your goals.</p>
+        <a class="btn" href="student-profile/profile/">Edit My Profile</a>
       </article></div>
   </div>
 </section>
 </main>
-<footer class="footer"><strong>Khaemenes Academy · High School · Grade 10</strong><br>Centered learning pathways · readable course access · mastery remains course-authoritative</footer>
+<footer class="footer grade10-unified-footer"><div>Verve N Veda · Khaemenes Academy</div><small>High School · Grade 10 · 2026</small></footer>
 
-<script>
-(()=>{"use strict";let learner=null;try{const active=JSON.parse(localStorage.getItem("khaemenes_active_learner_v1")||"null"),family=JSON.parse(localStorage.getItem("khaemenes_family_registry_v1")||"null"),id=typeof active==="string"?active:active?.learnerId;learner=id?family?.learners?.[id]||null:null}catch{}const name=learner?.nickname||learner?.displayName||learner?.name||"Sophomore Home";const node=document.getElementById("studentName");if(node)node.textContent=name;})();
-</script>
+
 
 <script src="../../assets/vnv-language.js" defer data-official-vnv-language="true"></script>
 <script defer src="../../courses/mathematics/algebra-1/assets/learning-tools-menu-v1.js" data-academy-learning-tools="v1"></script>
 <script src="https://vervenveda.com/assets/vnv-ecosystem-menu.js" defer></script><script src="../../assets/high-navigation-v1.js" defer></script>
-<script src="https://vervenveda.com/Khaemenes_Academy.github.io/assets/khaemenes-landing-toolbar.js" defer></script>
 
 <script src="https://vervenveda.com/assets/vnv-333-ticker.js"></script>
 <script src="https://vervenveda.com/assets/vnv-ticker-autopopulate.js" data-vnv-ticker-autopopulate></script>
