@@ -36,9 +36,9 @@ for(const grade of ["11","12"]){
   assert.match(dashboard,new RegExp('href="'+room+'/"'),folder+" dashboard doorway");
   assert.match(html,new RegExp('href="../'+room+'/"'),folder+" internal room navigation");
   assert.match(editor,new RegExp('href="../'+room+'/"'),folder+" profile editor shortcut") ;
-  const all=[...html.matchAll(/<script(?![^>]*\\bsrc=)[^>]*>([\\s\\S]*?)<\\/script>/g)];
+  const all=html.split("<script").slice(1).filter(part=>!part.slice(0,part.indexOf(">")).includes("src=")).map(part=>part.slice(part.indexOf(">")+1,part.indexOf("</script>")));
   assert.ok(all.length>=1,folder+" inline code");
-  all.forEach((item,i)=>new vm.Script(item[1],{filename:folder+"inline-"+i}));
+  all.forEach((item,i)=>new vm.Script(item,{filename:folder+"inline-"+i}));
   if(room==="grades"){
    assert.match(html,/Not an official transcript/);
    assert.match(html,/readLearner/);
