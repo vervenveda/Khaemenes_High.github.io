@@ -111,7 +111,7 @@
      }
    });
    // Style belongs to the shared navigation system, not to any page's markup.
-   row.style.cssText="box-sizing:border-box;width:min(100%,1200px);margin:0 auto;padding:3px 16px 8px;display:flex;flex-wrap:wrap;gap:7px;align-items:center;justify-content:flex-start;font:400 14px/1.5 Nunito,'Avenir Next',Arial,sans-serif;letter-spacing:0;text-align:left;color:#fff8e9";
+   row.style.cssText="box-sizing:border-box;width:min(calc(100% - 56px),1222px);margin:0 auto;padding:3px 0 8px;display:flex;flex-wrap:wrap;gap:7px;align-items:center;justify-content:flex-start;font:400 14px/1.5 Nunito,'Avenir Next',Arial,sans-serif;letter-spacing:0;text-align:left;color:#243038";
    row.querySelectorAll("a").forEach(a=>{
      a.style.cssText="color:inherit;text-decoration:underline;text-underline-offset:3px";
    });
