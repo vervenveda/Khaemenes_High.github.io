@@ -9,6 +9,7 @@
 <meta http-equiv="Permissions-Policy" content="camera=(), microphone=(), geolocation=(), payment=(), usb=(), browsing-topics=()">
 <title>Grade 09 Student Dashboard</title>
 <link rel="stylesheet" href="student-profile.css?v=522f1bfb-daily-alignment">
+<link rel="stylesheet" href="freshman-discovery-studio.css?v=20261107-freshman-v1">
 <style id="grade09-first-paint-stability">
 /* Only while the legacy Grade 09 layout is being assembled.
    Keeps its approved design invisible during transient DOM relocation and
@@ -137,8 +138,8 @@ body :is(.hero,.ug-hero,.mast) :is(.eyebrow,.ug-eyebrow),body main>.eyebrow{font
 <div class="top grade09-local-masthead">
   <div class="shell hero">
     <p class="eyebrow">Khaemenes Academy · Grade 09</p>
-    <h1>My Student Profile</h1>
-    <p>This is your Grade 9 home base. Start here when you are not sure where to go next, then jump into class, check your progress, ask for help, or update your profile.</p>
+    <h1>My Freshman Year</h1>
+    <p>Welcome to your first year of high school! Explore what interests you, create something new, and learn at your own pace. This space is yours to make your own.</p>
   </div>
 </div>
 <main>
@@ -148,6 +149,11 @@ body :is(.hero,.ug-hero,.mast) :is(.eyebrow,.ug-eyebrow),body main>.eyebrow{font
         <div data-grade09-schedule-bar></div>
         <p class="schedule-helper"><a href="games/">Pin games &amp; study tools →</a> · <a href="profile/">Open My Profile →</a></p>
       </section></div><aside aria-label="Student Learning Portfolio" style="max-width:1050px;margin:14px auto;padding:16px;border:1px solid #b9a37f;background:#fff5de;color:#221f1b;border-radius:7px"><h2 style="font-size:24px;font-weight:400">Student Learning Portfolio</h2><p>Use your portfolio to keep work you want to remember—projects, writing, reflections, and examples of how you are growing. Add to it a little at a time throughout the year.</p><p><a href="../../../portfolio/index.html">Open My Learning Evidence →</a></p></aside>
+<section id="grade09FreshmanDiscovery" class="freshman-discovery" aria-labelledby="grade09FreshmanDiscoveryTitle">
+ <p class="freshman-eyebrow">Grade 9 · Explore · Experiment · Belong</p>
+ <h2 id="grade09FreshmanDiscoveryTitle">My Freshman Discovery Studio</h2>
+ <p class="freshman-intro">Try a new idea, start a project, and celebrate the discoveries you make along the way.</p>
+</section>
   
   <section class="section">
     <div class="shell grid">
@@ -168,7 +174,7 @@ body :is(.hero,.ug-hero,.mast) :is(.eyebrow,.ug-eyebrow),body main>.eyebrow{font
   <p id="learningTodaySummary" role="status" aria-live="polite">Finding your next class…</p>
   <div class="actions" id="learningTodayActions"><a class="btn gold" href="daily-lessons/">Open Daily Lessons</a></div>
   <div id="learningTodayCourses" class="lesson-grid" aria-label="Other pinned subjects"></div>
-  <p style="font-size:16px">Your next-step links help you pick up where you left off. If you are not sure what to do next, start with the first class that needs attention.</p>
+  <p style="font-size:16px">Pick up where you left off, or choose a class that feels like a good place to begin. Every question and small discovery counts.</p>
 </section>
 
 
@@ -185,14 +191,14 @@ body :is(.hero,.ug-hero,.mast) :is(.eyebrow,.ug-eyebrow),body main>.eyebrow{font
       </section>
 
       <section class="card col12" aria-labelledby="manageClassesTitle">
-        <h2 id="manageClassesTitle">Manage Classes</h2>
+        <h2 id="manageClassesTitle">My Classes</h2>
         <p>Keep the classes you use most within easy reach. Your math class follows your current placement, and you can update your pins as your schedule changes.</p>
         <div class="lesson-grid" id="courseManagerGrid"></div>
       </section>
 
       <section class="card col12 student-rooms-contrast" aria-labelledby="doorsTitle">
-        <h2 id="doorsTitle">Student Rooms</h2>
-        <p>These are some of the other places you may use during the school day. Explore them whenever you need a different tool, room, or activity.</p>
+        <h2 id="doorsTitle">My Learning Spaces</h2>
+        <p>Find a new place to work, play, make something, or follow a curiosity. Come and go whenever you like.</p>
         <div class="door-grid">
           <a class="door" href="daily-lessons/"><span><b>Daily Lessons</b><span>See pinned classes, choose today’s work, save a note, and use the daily checklist.</span></span><small>Start Today →</small></a>
           <a class="door" href="grades/"><span><b>Grades</b><span>Open course records, reports, mastery status, and print/export options.</span></span><small>Open Grades →</small></a>
@@ -202,13 +208,13 @@ body :is(.hero,.ug-hero,.mast) :is(.eyebrow,.ug-eyebrow),body main>.eyebrow{font
       </section>
 
       <section class="card col6 student-access-contrast">
-        <h2>Family Help &amp; Account Support</h2>
-        <p>Your parent or guardian can still help with account settings and recovery if you get stuck.</p>
+        <h2>Need a Hand?</h2>
+        <p>Need help with your account or settings? Your family can help you find your way.</p>
         <div class="actions"><a class="btn secondary" href="settings/">Open Settings</a></div>
       </section>
       <section class="card col6 student-campus-contrast">
-        <h2>Need a Different Door?</h2>
-        <p>Need something that is not on your daily dashboard? These links take you into the larger High School campus.</p>
+        <h2>Explore More</h2>
+        <p>There is even more to discover around the High School campus. See where your curiosity takes you.</p>
         <div class="actions"><a class="btn" href="../#courses">Course Campus</a><a class="btn secondary" href="../../../">High School Home</a></div>
       </section>
     </div>
@@ -576,6 +582,7 @@ requestAnimationFrame(function(){
 </script>
 <script src="../../shared/learning-today-placement.js?v=9362d9e6"></script>
 <script src="../../shared/student-rooms-placement.js?v=20261105-portfolio-order"></script>
+<script src="freshman-discovery-studio.js?v=20261107-freshman-v1"></script>
 <script src="../../shared/student-checkpoints-disclosure.js?v=20261105-bottom-disclosure"></script>
 <script src="../../shared/high-school-course-catalogue.js?v=20261106-cross-grade"></script>
 <script src="https://vervenveda.com/Khaemenes_Academy.github.io/assets/khaemenes-guest-tour-invitation.js?v=20261106-guest-tour-01"></script>
