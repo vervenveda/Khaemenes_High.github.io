@@ -29,6 +29,9 @@ const targets=[
 const traces=[];
 let panel=null,output=null,queued=false,observer=null,closed=false;
 let lastVisualSignature="",frameCount=0,frameChanges=0,visualTraceStart=0;
+const earlyEvents=[],layoutShifts=[],paintEvents=[];
+const bootStartedAt=Math.round(performance.now());
+let headObserver=null,paintObserver=null,shiftObserver=null;
 
 const elapsed=()=>Math.round(performance.now())+"ms";
 const safe=(value)=>String(value||"").slice(0,170);
@@ -76,12 +79,72 @@ function draw(){
  }
  output.textContent="Current DOM (no student data):\n"+summarize()+"\n"+
   targets.map(([name,selector])=>describe(name,selector)).join("\n")+
+  "\n\nEarly-start events:\n"+earlyEvents.slice(-12).join("\n")+
+  "\n\nPaint / layout shifts:\n"+paintEvents.slice(-5).join("\n")+
+  layoutShifts.slice(-8).map(x=>"Layout shift "+x).join("\n")+
   "\n\nEvent timeline:\n"+traces.slice(-20).join("\n");
 }
 function note(message){
  traces.push(elapsed()+" "+safe(message));
  if(traces.length>60)traces.shift();
  if(!queued&&!closed){queued=true;requestAnimationFrame(()=>{queued=false;draw()})}
+}
+/* Earliest possible read-only observer starts here, in the document head.
+ * It watches only public header/hero/ticker/toolbar subtree mutations.
+ * Monitoring broad DOM insertions is limited to the early boot interval.
+ * Browser performance observers cannot see pixels painted before script execution. */
+function earlyNote(message){
+ if(earlyEvents.length<60)earlyEvents.push(Math.round(performance.now())+"ms "+safe(message));
+}
+const earlySelectors="header, .site-header, .ribbon, .breadcrumbs, .hero, #vnv333NetworkTicker, #vnvTickerAutoPopulate, #vnvEcosystemUtilityDock, [data-vnv-language-mount]";
+function publicChrome(node){
+ if(node.nodeType!==1)return false;
+ try{return node.matches(earlySelectors)||!!node.querySelector(earlySelectors)}catch{return false}
+}
+function monitorFirstPaint(){
+ if(typeof PerformanceObserver!=="function")return;
+ try{
+  paintObserver=new PerformanceObserver(list=>{
+   for(const e of list.getEntries())if(paintEvents.length<15)
+    paintEvents.push(Math.round(e.startTime)+"ms "+e.name);
+   note("Paint milestone");
+  });
+  paintObserver.observe({type:"paint",buffered:true});
+ }catch(e){earlyNote("Paint observer unsupported")}
+ try{
+  shiftObserver=new PerformanceObserver(list=>{
+   for(const e of list.getEntries())if(!e.hadRecentInput&&layoutShifts.length<25){
+    layoutShifts.push(Math.round(e.startTime)+"ms value "+e.value.toFixed(4));
+    note("Layout shift recorded");
+   }
+  });
+  shiftObserver.observe({type:"layout-shift",buffered:true});
+ }catch(e){earlyNote("Layout-shift observer unsupported")}
+}
+function startEarlyDOM(){
+ headObserver=new MutationObserver(records=>{
+  for(const record of records){
+   if(record.type==="attributes"){
+    if(publicChrome(record.target))earlyNote("EARLY STYLE "+record.target.tagName);
+   }else{
+    for(const node of record.addedNodes)if(publicChrome(node))earlyNote("EARLY ADDED "+node.nodeName);
+    for(const node of record.removedNodes)if(publicChrome(node))earlyNote("EARLY REMOVED "+node.nodeName);
+   }
+  }
+ });
+ headObserver.observe(document.documentElement,{subtree:true,childList:true,attributes:true,attributeFilter:["style","class","hidden"]});
+ earlyNote("Head-stage monitor started");
+ monitorFirstPaint();
+}
+startEarlyDOM();
+function resources(){
+ return performance.getEntriesByType("resource").filter(e=>/\.css(?:\?|$)|\.js(?:\?|$)|\.woff2?(?:\?|$)/i.test(e.name))
+ .slice(0,80).map(e=>({
+  type:e.initiatorType,
+  file:(()=>{try{return new URL(e.name).pathname.split("/").slice(-3).join("/")}catch{return "unknown"}})(),
+  startMs:Math.round(e.startTime),
+  durationMs:Math.round(e.duration)
+ }));
 }
 function relates(node){
  if(node?.nodeType!==1)return false;
@@ -111,7 +174,10 @@ function traceRefreshFrames(){
  }
  lastVisualSignature=signature;frameCount++;
  if(performance.now()-visualTraceStart<5000)requestAnimationFrame(traceRefreshFrames);
- else note("Visual observation complete: "+frameChanges+" changes in "+frameCount+" frames");
+ else{
+  headObserver?.disconnect();
+  note("Visual observation complete: "+frameChanges+" changes in "+frameCount+" frames");
+ }
 }
 function start(){
  if(!document.body||closed)return;
@@ -139,9 +205,10 @@ window.addEventListener("error",e=>{
 },true);
 window.addEventListener("unhandledrejection",e=>note("PROMISE REJECTION: "+safe(e.reason?.message||e.reason||"unknown")));
 window.KhaemenesGrade09ChromeAudit=Object.freeze({
- version:"1.1.0",
+ version:"1.2.0",
  snapshot:()=>({summary:summarize(),components:targets.map(([name,sel])=>describe(name,sel))}),
  events:()=>traces.slice(),
- visualChanges:()=>({changes:frameChanges,framesSampled:frameCount})
+ visualChanges:()=>({changes:frameChanges,framesSampled:frameCount,startedAtMs:bootStartedAt,earlyEvents:earlyEvents.slice(),paints:paintEvents.slice(),layoutShifts:layoutShifts.slice()}),
+ resources:()=>resources()
 });
 })();
