@@ -1,0 +1,31 @@
+name: Grade 09 Canonical Header Integrity
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'grades/grade-09/index.html'
+      - 'assets/high-navigation-v1.js'
+      - 'tests/grade09-canonical-header-integrity.cjs'
+      - '.github/workflows/grade09-canonical-header-integrity.yml'
+  pull_request:
+    paths:
+      - 'grades/grade-09/index.html'
+      - 'assets/high-navigation-v1.js'
+      - 'tests/grade09-canonical-header-integrity.cjs'
+      - '.github/workflows/grade09-canonical-header-integrity.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Verify shared header and breadcrumbs
+        run: node tests/grade09-canonical-header-integrity.cjs
