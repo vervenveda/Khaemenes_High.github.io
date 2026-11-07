@@ -83,6 +83,40 @@
    if(lesson)list.push(crumb(relative,"Lesson "+Number(lesson.match(/-l(\d+)/)[1])));
    return list;
  }
+ function headerBreadcrumbs(){
+   // Opt-in: generated once, inside the existing Academy header, never a second header.
+   if(document.body?.dataset.highHeaderBreadcrumbs!=="true")return;
+   const header=document.querySelector("header[data-khae-header]");
+   if(!header||header.querySelector("[data-khae-breadcrumb-row]"))return;
+   const parts=page.split("/").filter(Boolean);
+   const items=[crumb("index.html","High School")];
+   if(parts[0]==="grades"&&/^grade-(09|10|11|12)$/.test(parts[1]||"")){
+     items.push(crumb("grades/"+parts[1]+"/","Grade "+Number(parts[1].slice(-2))));
+     if(parts[2]==="student-profile")items.push(crumb("grades/"+parts[1]+"/student-profile/","Student Profile"));
+   }
+   const row=document.createElement("nav");
+   row.dataset.khaeBreadcrumbRow="true";
+   row.setAttribute("aria-label","Breadcrumb");
+   const academy=document.createElement("a");
+   academy.href=ACADEMY_EXPLORE;
+   academy.textContent="Academy";
+   row.appendChild(academy);
+   items.forEach((item,i)=>{
+     const sep=document.createElement("span");sep.textContent="›";sep.setAttribute("aria-hidden","true");row.appendChild(sep);
+     if(i===items.length-1){
+       const current=document.createElement("span");current.textContent=item.text;
+       current.setAttribute("aria-current","page");row.appendChild(current);
+     }else{
+       const a=document.createElement("a");a.href=item.href;a.textContent=item.text;row.appendChild(a);
+     }
+   });
+   // Style belongs to the shared navigation system, not to any page's markup.
+   row.style.cssText="box-sizing:border-box;width:min(100%,1200px);margin:0 auto;padding:3px 16px 8px;display:flex;flex-wrap:wrap;gap:7px;align-items:center;justify-content:flex-start;font:400 14px/1.5 Nunito,'Avenir Next',Arial,sans-serif;letter-spacing:0;text-align:left;color:#fff8e9";
+   row.querySelectorAll("a").forEach(a=>{
+     a.style.cssText="color:inherit;text-decoration:underline;text-underline-offset:3px";
+   });
+   header.appendChild(row);
+ }
  function breadcrumbs(){
    // Profiles have their own canonical five-link header; avoid duplicate breadcrumb shortcuts.
    if(document.body?.dataset.highHideBreadcrumbs==="true")return;
@@ -165,7 +199,7 @@
    wrap.append(button,panel);slot.appendChild(wrap);
  }
  function init(){
-   updateProfiles();skip();breadcrumbs();fallbackMenu();enforceAcademyExploreLinks();
+   updateProfiles();skip();headerBreadcrumbs();breadcrumbs();fallbackMenu();enforceAcademyExploreLinks();
  }
  window.addEventListener("pageshow",updateProfiles);
  window.addEventListener("storage",event=>{
