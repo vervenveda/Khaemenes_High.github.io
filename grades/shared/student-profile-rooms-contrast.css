@@ -101,3 +101,10 @@ html body main > .student-rooms-placement .student-campus-contrast{grid-column:s
 /* Once all original cards have been relocated, suppress only the empty
    original grid's surrounding padding (not any other learning content). */
 html body main > .section:has(> .shell.grid:empty){display:none}
+
+/* Source-level verified vacated Student Rooms wrapper across Grades 09–12.
+   Only a genuinely empty original section receives this marker. */
+html:root:root body main > section.section[data-student-rooms-vacated="true"]{
+ display:none!important;padding:0!important;margin:0!important;
+ background:transparent!important;
+}
