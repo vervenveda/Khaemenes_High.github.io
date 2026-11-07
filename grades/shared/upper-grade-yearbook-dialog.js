@@ -33,7 +33,7 @@ const shell=document.createElement("div");shell.className="yearbook-modal-shell"
 const head=document.createElement("div");head.className="yearbook-modal-header";
 const heading=document.createElement("h2");heading.id="grade09YearbookTitle";heading.textContent=grade10Copy?"My Grade 10 Yearbook":grade11Copy?"My Grade 11 Yearbook":grade12Copy?"My Senior Yearbook":"My School Yearbook";
 const controls=document.createElement("div");controls.className="yearbook-modal-buttons";
-const external=document.createElement("a");external.href=url;external.target="_blank";external.rel="noopener noreferrer";external.textContent=(grade10Copy||grade11Copy||grade12Copy)?"Open My Yearbook":"Open full Yearbook";
+const external=document.createElement("a");external.href=url;external.target="_blank";external.rel="noopener noreferrer";external.textContent=grade10Copy?"Open My Yearbook in New Tab":(grade11Copy||grade12Copy)?"Open My Yearbook":"Open full Yearbook";
 const close=document.createElement("button");close.type="button";close.textContent="Close";
 controls.append(external,close);head.append(heading,controls);
 const help=document.createElement("p");help.className="yearbook-modal-help";
