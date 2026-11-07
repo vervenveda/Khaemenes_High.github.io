@@ -335,7 +335,7 @@ function load(){
     gradeDashboard(),
     grade?'#grade09SevenClassSchedule':'../',
     grade?(grade==='09'?'../grades/':'https://vervenveda.com/Khaemenes_High.github.io/portfolio/index.html'):'../grades/',
-    grade?(grade==='09'?'../games/':'https://vervenveda.com/arcade.github.io/'):'../games/',
+    grade?(grade==='10'?'../games/':(grade==='09'?'../games/':'https://vervenveda.com/arcade.github.io/')):'../games/',
     grade?'https://vervenveda.com/Khaemenes_High.github.io/grades/grade-'+grade+'/':'../../'
   ];[...nav.querySelectorAll('a')].slice(0,5).forEach((a,i)=>a.href=destinations[i]);}
   const heading=document.querySelector('.top .hero h1');if(heading)heading.textContent=grade?'My Profile · Grade '+Number(grade):'My Profile';
@@ -450,7 +450,7 @@ window.addEventListener('khaemenes-student-profile-changed',load);
 })();
 </script>
 <script src="../../../../assets/vnv-language.js" defer data-official-vnv-language="true"></script>
-<script src="https://vervenveda.com/assets/vnv-ecosystem-toolbar.js"></script>
+<script src="https://vervenveda.com/assets/vnv-ecosystem-toolbar.js?v=20261106-student-boundary-106"></script>
 
 
 <script src="https://vervenveda.com/assets/vnv-333-ticker.js" defer></script>
