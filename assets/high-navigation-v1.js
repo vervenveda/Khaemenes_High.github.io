@@ -19,9 +19,13 @@
    const person=(typeof id==="string"&&id)?registry?.learners?.[id]:null;
    return person&&(!person.learnerId||person.learnerId===id)?gradeFrom(person.grade):null;
  }
- function profileHref(){
+ function profileHref(editor=false){
    const grade=activeGrade();
-   const dest=grade?"grades/grade-"+String(grade).padStart(2,"0")+"/student-profile/":"https://vervenveda.com/Khaemenes_Academy.github.io/family/enroll/";
+   // Use only the learner grade confirmed by the Family Registry. Never infer it
+   // from the page being browsed; an unregistered visitor goes to enrollment.
+   const dest=grade?"grades/grade-"+String(grade).padStart(2,"0")+
+     "/student-profile/"+(editor?"profile/":""):
+     "https://vervenveda.com/Khaemenes_Academy.github.io/family/enroll/";
    return new URL(dest,root).href;
  }
  function enforceAcademyExploreLinks(){
@@ -46,17 +50,19 @@
 
    const destination=profileHref(),grade=activeGrade();
    document.querySelectorAll("a").forEach(a=>{
+     const editor=a.hasAttribute("data-high-profile-editor-door");
      const label=(a.textContent||"").replace(/\s+/g," ").trim();
      const aria=a.getAttribute("aria-label")||"";
      const href=a.getAttribute("href")||"";
-     const matching=a.hasAttribute("data-high-profile-door")||
+     const matching=editor||a.hasAttribute("data-high-profile-door")||
        a.classList.contains("profile-button")||
        /^(?:open my |my )?student profile$/i.test(label)||
        /^open student profile$/i.test(aria)||
        (!!a.closest("[data-khae-actions]")&&/student profile/i.test(label));
-     if(!matching||(/(?:edit|academy)/i.test(label)&&/profile\.html|student-profile\/profile/i.test(href)))return;
-     a.href=destination;a.dataset.highProfileResolved="true";
-     if(!grade)a.title="Select an Academy learner in the Family Registry";
+     if(!matching||(!editor&&/(?:edit|academy)/i.test(label)&&/profile\.html|student-profile\/profile/i.test(href)))return;
+     a.href=editor?profileHref(true):destination;
+     a.dataset.highProfileResolved="true";
+     if(!grade)a.title="Select or enroll an Academy learner before opening a profile";
    });
  }
  const crumb=(href,text)=>({href:new URL(href,root).href,text});
