@@ -54,7 +54,7 @@ const links=(panel,items)=>{
  panel.append(row);
 };
 links(adventure,[["Open My Schedule","#grade09ProfileFirst"],["Explore My Classes","daily-lessons/"]]);
-links(curiosity,[["Science Investigation Notebook","../../../courses/science/"],["Explore My Study Tools","games/"]]);
+links(curiosity,[["Science Investigation Notebook","https://vervenveda.com/Khaemenes_High.github.io/courses/science/investigation-notebook/"],["Explore My Study Tools","games/"]]);
 links(growth,[["My Dreams & Achievements","#khaeDreamsAchievements"],["My Sticker Box","#khaeStickerBox"]]);
 const footer=create("div","freshman-footer");
 const save=create("button","freshman-save","Save my discoveries");save.type="button";
