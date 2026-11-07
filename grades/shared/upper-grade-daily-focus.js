@@ -171,7 +171,7 @@ function render(){
    box.append(create("span","grade09-academic-number",String(number).padStart(2,"0")));
    box.append(create("strong","",slot.label));
    if(activity.kind)box.append(create("small","upper-grade-checkpoint-kind",activity.kind));
-   box.append(create("small","","Not verified today"));
+   box.append(create("small","",grade===11?"Practice doorway · not assessment evidence":"Not verified today"));
    const link=slot.href&&/^https:\/\//.test(slot.href)?slot.href:null;
    if(link){const a=create("a","grade09-academic-link",activity.action);a.href=link;box.append(a)}
    else box.append(create("small","","Choose this class in Manage Classes"));
