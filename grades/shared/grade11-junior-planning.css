@@ -65,3 +65,13 @@ body[data-grade="11"] #grade11JuniorPlanning :is(button,textarea,input,a):focus-
 @media(max-width:480px){
  body[data-grade="11"] #grade11JuniorPlanning {padding:15px}
 }
+/* Grade 11 To Do Today: prevent Family Learning Center action touching the card edge. */
+html:root:root body[data-grade="11"] .grade09-profile-first #upperGradeDailyFocus {
+ box-sizing:border-box!important;
+ padding-bottom:18px!important;
+}
+html:root:root body[data-grade="11"] .grade09-profile-first #upperGradeDailyFocus > a.grade09-daily-task-link {
+ box-sizing:border-box!important;
+ width:min(100%,940px)!important;
+ margin:12px auto 14px!important;
+}
