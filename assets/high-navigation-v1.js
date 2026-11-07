@@ -21,8 +21,10 @@
  }
  function profileHref(editor=false){
    const grade=activeGrade();
-   // Use only the learner grade confirmed by the Family Registry. Never infer it
-   // from the page being browsed; an unregistered visitor goes to enrollment.
+   // Navigation hint only: the browser-local Family Registry is not an
+   // authentication or grade authorization boundary. Course and account
+   // permissions must be verified by their authoritative services.
+   // Do not infer a learner grade from the page currently being browsed.
    const dest=grade?"grades/grade-"+String(grade).padStart(2,"0")+
      "/student-profile/"+(editor?"profile/":""):
      "https://vervenveda.com/Khaemenes_Academy.github.io/family/enroll/";
