@@ -1,0 +1,40 @@
+name: High School Four-Grade Regression
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "grades/grade-09/index.html"
+      - "grades/grade-10/index.html"
+      - "grades/grade-11/index.html"
+      - "grades/grade-12/index.html"
+      - "grades/grade-*/student-profile/**"
+      - "assets/high-navigation-v1.js"
+      - "tools/validate-high-school-landing-parity.mjs"
+      - ".github/workflows/high-school-four-grade-regression.yml"
+  pull_request:
+    paths:
+      - "grades/grade-09/index.html"
+      - "grades/grade-10/index.html"
+      - "grades/grade-11/index.html"
+      - "grades/grade-12/index.html"
+      - "grades/grade-*/student-profile/**"
+      - "assets/high-navigation-v1.js"
+      - "tools/validate-high-school-landing-parity.mjs"
+      - ".github/workflows/high-school-four-grade-regression.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  grade-landing-regression:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+      - name: Check all four landing pages and grade-aware routes
+        run: node tools/validate-high-school-landing-parity.mjs
