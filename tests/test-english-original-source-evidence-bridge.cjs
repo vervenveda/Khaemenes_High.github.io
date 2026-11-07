@@ -6,7 +6,11 @@ const source=fs.readFileSync(path.join(root,"courses/language-arts/assets/origin
 for(const grade of [9,10,11,12])for(let week=1;week<=8;week++){
  const filename=path.join(root,"courses/language-arts/english-"+grade,"weeks","week-"+String(week).padStart(2,"0"),"index.html");
  const html=fs.readFileSync(filename,"utf8");
- assert(html.includes('src="../../assets/original-source-evidence-bridge-v1.js"'),"Missing evidence bridge "+grade+"/"+week);
+ const bridgeSrc='../../../assets/original-source-evidence-bridge-v1.js';
+ assert(html.includes('src="'+bridgeSrc+'"'),"Missing evidence bridge "+grade+"/"+week);
+ const resolved=path.resolve(path.dirname(filename),bridgeSrc);
+ assert.equal(resolved,path.join(root,"courses/language-arts/assets/original-source-evidence-bridge-v1.js"),"Evidence bridge resolves to shared source "+grade+"/"+week);
+ assert(fs.existsSync(resolved),"Evidence bridge file exists "+grade+"/"+week);
  assert(/id="academy-(original-source|week01-source)-studio"/.test(html),"Missing studio "+grade+"/"+week);
 }
 let active="fictional-A",calls={};
