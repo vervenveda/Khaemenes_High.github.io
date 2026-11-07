@@ -287,17 +287,20 @@ function renderTools(){
   }else{
    item.type="button";
    item.addEventListener("click",()=>{
-    // Progress is read-only. The dialog itself enforces registered-grade privacy
-    // and renders an empty state for visitors enrolled in another grade.
-    if(action.label==="Class Progress"||action.label==="KlasaiPeer"){action.run();return;}
+    // Progress is read-only. The dialog itself enforces registered-grade privacy.
+    if(action.label==="Class Progress"){action.run();return;}
     const ctx=gradeContext();
-    if(!ctx||ctx.gradeNumber!==Number(grade)){
+    if(action.label!=="KlasaiPeer"&&(!ctx||ctx.gradeNumber!==Number(grade))){
      if(ctx?.grade&&["11","12"].includes(grade)){
       location.assign(highRoot+"grades/grade-"+ctx.grade+"/student-profile/");
      }
      return;
     }
-    action.run();
+    const handled=action.run?.();
+    if(handled===false&&action.fallback){
+     if(grade10Copy)openConnectedUpperResource(action.fallback);
+     else location.assign(action.fallback);
+    }
    });
   }
   grid.append(item);
