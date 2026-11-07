@@ -56,7 +56,7 @@ const lang=()=>pins.readLanguageChoices?.()?.[grade]||"spanish";
 const slots=()=>catalog.slots(Number(grade));
 function href(item){
  if(item.subject==="foreignLanguage"){
-  const language=lang(),params=new URLSearchParams({language,source:"khaemenes-high-grade"+grade});
+  const language=lang(),returnTo=highRoot+"grades/grade-"+grade+"/student-profile/",params=new URLSearchParams({language,source:"khaemenes-high-grade"+grade,return:returnTo});
   if(["arabic","russian"].includes(language))params.set("mode","atlas");
   else params.set("course","hs"+(Number(grade)-8));
   return "https://vervenveda.com/Khaemenes_Linguistics.github.io/Halls/index.html?"+params;
