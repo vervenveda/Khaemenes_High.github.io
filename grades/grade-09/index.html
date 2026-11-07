@@ -87,6 +87,47 @@ html body main .front-grid > .front-card > a.btn:focus-visible{outline:3px solid
 html body header[data-khae-header] > [data-khae-breadcrumb-row],
 html body #highNavigationBreadcrumbs{display:none!important}
 </style>
+<style id="grade09-eight-course-grid-20261107">
+/* Eight Grade 9 subjects: six core classes and two elective pathways.
+   This affects only the course-card grid; no schedules, credits, or mastery logic. */
+html body main #courses .grade09-eight-subject-grid{
+ display:grid!important;
+ grid-template-columns:repeat(2,minmax(0,1fr))!important;
+ gap:16px!important;align-items:stretch!important;
+}
+html body main #courses .grade09-eight-subject-grid > .course-card{
+ box-sizing:border-box!important;min-width:0!important;height:100%!important;
+ display:flex!important;flex-direction:column!important;
+ padding:22px!important;border-radius:7px!important;
+}
+html body main #courses .grade09-eight-subject-grid > .course-card .actions{
+ display:flex!important;flex-wrap:wrap!important;
+ gap:10px!important;width:100%!important;margin-top:auto!important;padding-top:18px!important;
+}
+html body main #courses .grade09-eight-subject-grid > .course-card .actions > a.btn{
+ flex:1 1 142px!important;box-sizing:border-box!important;
+ display:flex!important;align-items:center!important;justify-content:center!important;
+ min-height:46px!important;padding:10px 13px!important;border-radius:7px!important;
+ font:400 16px/1.4 Nunito,Arial,sans-serif!important;
+ letter-spacing:0!important;white-space:normal!important;text-align:center!important;
+ background:#243038!important;color:#fff8e9!important;-webkit-text-fill-color:#fff8e9!important;
+ border:1px solid #243038!important;
+}
+html body main #courses .grade09-eight-subject-grid > .course-card :is(p,.status){
+ font-size:16px!important;line-height:1.5!important;
+}
+html body main #courses .grade09-eight-subject-grid > .course-card .status{
+ background:#f4f0e7!important;color:#243038!important;
+ -webkit-text-fill-color:#243038!important;letter-spacing:0!important;
+ text-transform:none!important;
+}
+html body main #courses .grade09-eight-subject-grid > .course-card .actions > a.btn:focus-visible{
+ outline:3px solid #b48b45!important;outline-offset:3px!important;
+}
+@media(max-width:700px){
+ html body main #courses .grade09-eight-subject-grid{grid-template-columns:1fr!important}
+}
+</style>
 </head>
 <body id="top" data-grade09-canonical-chrome="true" data-high-hide-breadcrumbs="true">
 <header data-khae-header class="khae-global-campus-header"><div data-khae-header-inner><a data-khae-brand href="https://vervenveda.com/Khaemenes_Academy.github.io/"><span data-khae-brand-mark>K</span><span><strong data-khae-brand-name>Khaemenes Academy</strong><small data-khae-brand-sub>High School · Grades 9–12</small></span></a><nav data-khae-nav><a href="https://vervenveda.com/Khaemenes_Academy.github.io/">Academy</a><a href="https://vervenveda.com/Khaemenes_Academy.github.io/student/">Student</a><a href="https://vervenveda.com/Khaemenes_Academy.github.io/family/">Family</a><a href="https://vervenveda.com/Khaemenes_Higher_Learning.github.io/">Higher Learning</a></nav><div data-khae-actions><a data-khae-secondary href="student-profile/">Student Profile</a></div><div data-vnv-ecosystem-slot aria-label="Ecosystem menu"></div></div></header>
@@ -131,55 +172,57 @@ html body #highNavigationBreadcrumbs{display:none!important}
 </section>
 <section class="section paper" id="courses">
   <div class="shell">
-    <div class="heading"><p class="kicker">REQUIRED</p><h2>Core Classes</h2><p>Mathematics remains placement-based on readiness, prerequisite evidence, and demonstrated mastery.</p></div>
-    <div class="course-grid"><article class="course-card" style="--accent:#315f86">
-        <span class="status">Placement based</span>
+    <div class="heading"><p class="kicker">Grade 9 Learning</p><h2>Core Classes &amp; Electives</h2><p>Six core classes: Mathematics, Language Arts, Science, Social Studies, Psychology, and Physical Education. Plus two electives: Foreign Language and Creative Elective. Mathematics placement follows readiness and mastery.</p></div>
+    <div class="course-grid grade09-eight-subject-grid">
+      <article class="course-card" style="--accent:#315f86">
+        <span class="status">Core 01 of 06</span>
         <h3>Mathematics</h3>
         <p>Mathematics is placement-based. Pre-Algebra, Algebra I, Geometry, Algebra II, and later mathematics are entered through readiness and mastery evidence rather than grade level.</p>
         <div class="actions"><a class="btn primary" href="../../courses/mathematics/">Mathematics</a><a class="btn" href="../../courses/mathematics/pre-algebra/">Pre-Algebra</a><a class="btn" href="../../courses/mathematics/algebra-1/diagnostic/">Algebra I</a></div>
       </article>
-<article class="course-card" style="--accent:#4f7f7a">
-        <span class="status">Live course</span>
-        <h3>Science</h3>
-        <p>Integrated Science 9 combines laboratory science, systems, data, inquiry, quantitative reasoning, CER, corrections, and portfolio evidence.</p>
-        <div class="actions"><a class="btn" href="../../courses/science/integrated-science-9/">Science</a></div>
-      </article>
-<article class="course-card" style="--accent:#96594e">
-        <span class="status">Live course</span>
-        <h3>Social Studies</h3>
-        <p>World studies, source analysis, geography, civics, economics, history, and evidence-based reasoning.</p>
-        <div class="actions"><a class="btn" href="../../courses/social-studies/grade-09/">Social Studies</a></div>
-      </article>
-<article class="course-card" style="--accent:#725f82">
-        <span class="status">Live course</span>
+      <article class="course-card" style="--accent:#725f82">
+        <span class="status">Core 02 of 06</span>
         <h3>Language Arts</h3>
         <p>English 9 develops reading, writing, grammar, vocabulary, research, media literacy, revision, and portfolio evidence.</p>
         <div class="actions"><a class="btn" href="../../courses/language-arts/english-9/">Language Arts</a></div>
       </article>
-<article class="course-card" style="--accent:#6d8374">
-        <span class="status">Required &amp; elective</span>
-        <h3>Wellness &amp; Psychology</h3>
-        <p>Health, wellness, human development, and Psychology 101 support evidence-based understanding of body, mind, behavior, development, and responsible care.</p>
-        <div class="actions"><a class="btn" href="../../courses/electives/health-wellness-human-development/">Health &amp; Wellness</a><a class="btn" href="../../electives/grades/grade-09/psych-101/">Psychology 101</a></div>
+      <article class="course-card" style="--accent:#4f7f7a">
+        <span class="status">Core 03 of 06</span>
+        <h3>Science</h3>
+        <p>Integrated Science 9 combines laboratory science, systems, data, inquiry, quantitative reasoning, CER, corrections, and portfolio evidence.</p>
+        <div class="actions"><a class="btn" href="../../courses/science/integrated-science-9/">Science</a></div>
       </article>
-<article class="course-card" style="--accent:#315f86">
-        <span class="status">Language pathway</span>
+      <article class="course-card" style="--accent:#96594e">
+        <span class="status">Core 04 of 06</span>
+        <h3>Social Studies</h3>
+        <p>World studies, source analysis, geography, civics, economics, history, and evidence-based reasoning.</p>
+        <div class="actions"><a class="btn" href="../../courses/social-studies/grade-09/">Social Studies</a></div>
+      </article>
+      <article class="course-card" style="--accent:#6d8374">
+        <span class="status">Core 05 of 06</span>
+        <h3>Psychology</h3>
+        <p>Psychology 101 explores how people think, learn, feel, and grow. Discover how the mind and behavior connect to everyday life.</p>
+        <div class="actions"><a class="btn" href="../../electives/grades/grade-09/psych-101/">Psychology 101</a></div>
+      </article>
+      <article class="course-card" style="--accent:#4f7f7a">
+        <span class="status">Core 06 of 06</span>
+        <h3>Physical Education</h3>
+        <p>Build healthy habits through movement, fitness, exercise safety, and activities that work for you.</p>
+        <div class="actions"><a class="btn" href="../../courses/physical-education/">Physical Education</a><a class="btn" href="../../courses/electives/health-wellness-human-development/">Health &amp; Wellness</a></div>
+      </article>
+      <article class="course-card" style="--accent:#315f86">
+        <span class="status">Elective 01 of 02</span>
         <h3>Foreign Language</h3>
-        <p>Choose a language pathway through the Academy World Languages &amp; Linguistics hall without replacing your other Grade 09 courses.</p>
+        <p>Choose a language pathway and discover new words, ideas, and cultures.</p>
         <div class="actions"><a class="btn" href="../../courses/electives/world-languages-linguistics/">Foreign Language</a></div>
       </article>
-<article class="course-card" style="--accent:#4f7f7a">
-        <span class="status">Required movement</span>
-        <h3>Physical Education</h3>
-        <p>Movement, fitness, exercise technique, safety, progress evidence, and Grade 09 physical education instruction and assessment.</p>
-        <div class="actions"><a class="btn" href="../../courses/physical-education/">Physical Education</a></div>
+      <article class="course-card" style="--accent:#b48b45">
+        <span class="status">Elective 02 of 02</span>
+        <h3>Creative Elective</h3>
+        <p>Explore art, music, creative coding, and hands-on projects. Choose something you are excited to make.</p>
+        <div class="actions"><a class="btn primary" href="../../courses/electives/">All Electives</a><a class="btn" href="../../courses/electives/fine-arts-visual-studio/">Art</a><a class="btn" href="../../courses/electives/music-music-theory/">Music</a><a class="btn" href="../../courses/electives/computing-digital-technology/">Coding</a></div>
       </article>
-<article class="course-card" style="--accent:#b48b45">
-        <span class="status">Choose an elective</span>
-        <h3>Electives</h3>
-        <p>Explore creative and practical study including art, music, coding and digital technology, career studies, and additional elective pathways.</p>
-        <div class="actions"><a class="btn primary" href="../../courses/electives/">Electives</a><a class="btn" href="../../courses/electives/fine-arts-visual-studio/">Art</a><a class="btn" href="../../courses/electives/music-music-theory/">Music</a><a class="btn" href="../../courses/electives/computing-digital-technology/">Coding</a></div>
-      </article></div>
+    </div>
     <aside class="note"><strong>Mathematics placement rule:</strong>Readiness and demonstrated mastery determine the active mathematics pathway.</aside>
   </div>
 </section>
