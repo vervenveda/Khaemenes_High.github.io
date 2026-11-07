@@ -163,12 +163,13 @@ html:root:root body #grade09BlueprintTools .grade09-blueprint-tool:is(:hover,:fo
    by their existing scripts. Do not hide Student Rooms, Explore or checkpoints. */
 body[data-grade="11"] .grade11-data-mount,
 body[data-grade="11"] main #studentCourseProgress,
-body[data-grade="11"] [aria-labelledby="manageClassesTitle"]{
+body[data-grade="11"] main [aria-labelledby="manageClassesTitle"]{
   display:none!important;
 }
 </style>
 <link rel="stylesheet" href="../../shared/high-profile-support-footer-parity.css?v=20261106-grade09-approved">
 <link rel="stylesheet" href="../../shared/high-school-course-catalogue.css?v=20261106-cross-grade">
+<link rel="stylesheet" href="../../shared/upper-grade-schedule-manager-parity.css?v=20261107-manager-parity-1">
 <link rel="stylesheet" href="../../shared/high-profile-lower-cream-highlights.css?v=20261106-cream01">
 <style id="grade11-schedule-breathing-room-20261106">
 /* Grade 11 Schedule only. No changes to navigation, course pins, records,
@@ -518,7 +519,7 @@ html body .grade09-contribute-panel .grade09-contribute-action:focus-visible{
   for(const node of [
    document.querySelector(".grade11-data-mount"),
    document.querySelector("main #studentCourseProgress"),
-   document.querySelector('[aria-labelledby="manageClassesTitle"]')
+   document.querySelector('main [aria-labelledby="manageClassesTitle"]')
   ])if(node){node.hidden=true;node.setAttribute("aria-hidden","true");}
  }
  document.addEventListener("click",event=>{
