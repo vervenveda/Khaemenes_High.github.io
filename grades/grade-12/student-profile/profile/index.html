@@ -286,7 +286,7 @@ html:root:root body #grade09SevenClassSchedule .grade12-class-card > a:focus-vis
 </head>
 <body data-grade="12">
 
-<div class="top grade09-local-masthead"><div class="shell nav"><nav class="navlinks" aria-label="Grade 12 profile shortcuts"><a href="../">Dashboard</a><a href="../#courseManagerGrid">Daily Lessons</a><a href="../../../../portfolio/index.html">Grades</a><a href="https://vervenveda.com/arcade.github.io/">Games</a><a href="../../">Exit to Grade 12</a></nav></div><div class="shell hero"><p class="eyebrow">Khaemenes Academy</p><h1>My Profile</h1><p>Use this profile to bring your senior-year work together. Update the goals, strengths, projects, interests, and next-step plans you want to carry with you beyond Grade 12.</p></div></div>
+<div class="top grade09-local-masthead"><div class="shell nav"><nav class="navlinks" aria-label="Grade 12 profile shortcuts"><a href="../">Dashboard</a><a href="../daily-lessons/">Daily Lessons</a><a href="../grades/">Grades</a><a href="../games/">Games</a><a href="../../">Exit to Grade 12</a></nav></div><div class="shell hero"><p class="eyebrow">Khaemenes Academy</p><h1>My Profile</h1><p>Use this profile to bring your senior-year work together. Update the goals, strengths, projects, interests, and next-step plans you want to carry with you beyond Grade 12.</p></div></div>
 <main><p class="shell notice" id="grade09LearnerNotice" role="status" hidden>Choose your student profile first. You can preview the design tools now, but your choices can only be saved once your profile is selected. <a href="https://vervenveda.com/Khaemenes_Academy.github.io/family/">Open the Family Portal</a> if you need help choosing your profile.</p><section class="shell" id="grade09LookPanel" aria-labelledby="grade09LookHeading"><div class="grade09-look-layout">
 <div class="grade09-look-preview"><div id="grade09LookPreview" class="grade09-look-image" aria-label="Selected student badge or picture">★</div><h2 id="grade09LookHeading">My Picture &amp; Colors</h2><p id="grade09LookLabel">My profile badge</p><p class="grade09-look-help">Choose a badge or add a picture that represents who you are now. You can still change it anytime.</p></div>
 <div class="grade09-look-controls">
@@ -333,17 +333,17 @@ function load(){
   const nav=document.querySelector('.grade09-local-masthead .navlinks');
   if(nav){const destinations=[
     gradeDashboard(),
-    grade?'#grade09SevenClassSchedule':'../',
-    grade?(grade==='09'?'../grades/':'https://vervenveda.com/Khaemenes_High.github.io/portfolio/index.html'):'../grades/',
-    grade?(grade==='09'?'../games/':'https://vervenveda.com/arcade.github.io/'):'../games/',
+    grade?'../daily-lessons/':'../',
+    grade?'../grades/':'../grades/',
+    grade?'../games/':'../games/',
     grade?'https://vervenveda.com/Khaemenes_High.github.io/grades/grade-'+grade+'/':'../../'
   ];[...nav.querySelectorAll('a')].slice(0,5).forEach((a,i)=>a.href=destinations[i]);}
   const heading=document.querySelector('.top .hero h1');if(heading)heading.textContent=grade?'My Profile · Grade '+Number(grade):'My Profile';
   if(grade){
    document.title='Grade '+Number(grade)+' · My Profile · Khaemenes Academy';
    const navLinks=[...document.querySelectorAll('.grade09-local-masthead .navlinks a')];
-   if(navLinks[1]&&grade!=='09')navLinks[1].textContent='My Classes';
-   if(navLinks[2]&&grade!=='09')navLinks[2].textContent='Portfolio';
+   if(navLinks[1])navLinks[1].textContent='Daily Lessons';
+   if(navLinks[2])navLinks[2].textContent='Grades';
    if(navLinks[4])navLinks[4].textContent='Exit to Grade '+Number(grade);
    const crumbs=[...document.querySelectorAll('main>.crumbs a')];
    if(crumbs[1])crumbs[1].textContent='Grade '+Number(grade);
@@ -359,7 +359,7 @@ function load(){
     if(schedule){
       schedule.replaceChildren();
       const paragraph=document.createElement('p');paragraph.textContent='Your Grade '+Number(grade)+' courses are managed on your registered grade dashboard.';
-      const anchor=document.createElement('a');anchor.href='#grade09SevenClassSchedule';anchor.className='btn secondary';anchor.textContent='View My Grade '+Number(grade)+' Classes Below';
+      const anchor=document.createElement('a');anchor.href='../daily-lessons/';anchor.className='btn secondary';anchor.textContent='Open My Grade '+Number(grade)+' Daily Lessons';
       schedule.append(paragraph,anchor);
     }
   }
