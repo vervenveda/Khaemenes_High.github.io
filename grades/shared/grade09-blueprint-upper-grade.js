@@ -237,6 +237,7 @@ function showUpperSchedule(){
   }
  });
 }
+const openConnectedUpperResource=url=>{try{return !!window.open(url,"_blank","noopener,noreferrer")}catch{return false}};
 function revealUpper(id){
  const target=$(id);
  if(!target)return;
@@ -265,8 +266,8 @@ function renderTools(){
   {label:"Edit Profile",url:builder},
   {label:"Class Progress",run:showUpperProgress},
   {label:"Schedule",run:showUpperSchedule},
-  {label:"KlasaiPeer",run:()=>window.KhaemenesUpperGradeStudyStudio?.open?.(document.activeElement)},
-  {label:"Yearbook",run:()=>window.KhaemenesUpperGradeYearbook?.open?.(document.activeElement)},
+  {label:"KlasaiPeer",fallback:"https://vervenveda.com/Klasaipeer.github.io/",run:()=>{const studio=window.KhaemenesUpperGradeStudyStudio;if(studio?.open){studio.open(document.activeElement);return true}return false}},
+  {label:"Yearbook",fallback:"https://vervenveda.com/Academy-Yearbook.github.io/",run:()=>{const yearbook=window.KhaemenesUpperGradeYearbook;if(yearbook?.open){yearbook.open(document.activeElement);return true}return false}},
   {label:"Creative Tools",run:()=>revealUpper("grade09BlueprintRooms")},
   {label:"Student Portfolio",run:()=>{
    const area=document.querySelector('aside[aria-label="Student Learning Portfolio"]');
