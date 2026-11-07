@@ -13,6 +13,9 @@ const owner=start?.gradeNumber===pageGrade && start?.learnerId &&
 const content=document.querySelector("main [id$='RoomContent']");
 const status=document.querySelector("main [id$='RoomMessage']");
 if(!content||!status)return;
+// Guest-facing resource cards are public; only a previously selected learner
+// requires concealment on switch. Owner-only inputs are hidden by each page.
+if(!owner)return;
 let locked=false;
 function check(){
  if(locked)return;
