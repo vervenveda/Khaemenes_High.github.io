@@ -11,41 +11,54 @@ const KEY="khaemenes-grade09-freshman-discovery-v1:learner:";
 const DRAFT="khaemenes-grade09-freshman-discovery-draft-v1:learner:";
 const create=(tag,cls,label)=>{const n=document.createElement(tag);if(cls)n.className=cls;if(label!==undefined)n.textContent=label;return n};
 const steps=[
- ["findClasses","Find my classes and choose where to begin"],
- ["schedule","Make my schedule feel like my own"],
- ["study","Try a study tool or a new learning strategy"],
- ["question","Follow a question I am curious about"],
- ["create","Make something or begin a project"],
- ["support","Discover where I can ask for help"]
+ ["findClasses","Find my way around the Academy"],
+ ["schedule","Make my schedule my own"],
+ ["study","Discover a study trick that works for me"],
+ ["question","Follow something that sparks my curiosity"],
+ ["create","Create something new"],
+ ["support","Find my people and places for support"]
 ];
 const fields=[
- ["curiosity","Something I am curious about",600],
- ["experiment","An idea I want to test, build, draw, write, or investigate",1400],
- ["discoveries","What I discovered or want to try next",1400],
- ["proud","Something I am proud of today",600],
- ["growth","A skill I want to grow this year",600]
+ ["curiosity","I wonder…",600],
+ ["experiment","What if I tried…",1400],
+ ["discoveries","Here’s what I discovered…",1400],
+ ["proud","My Latest Little Victory",600],
+ ["growth","Something I’m Growing Into",600]
 ];
 host.replaceChildren();
 host.append(create("p","freshman-eyebrow","Grade 9 · Explore · Experiment · Belong"));
 const h=create("h2","","My Freshman Discovery Studio");h.id="grade09FreshmanDiscoveryTitle";host.append(h);
-host.append(create("p","freshman-intro","Your first year of high school is full of possibilities. Try something new, follow an idea, and collect the moments that matter to you. There is no single right way to begin."));
+host.append(create("p","freshman-intro","A space for questions, new experiences, creative ideas, and the little victories that make your first year your own."));
 const status=create("p","freshman-status");status.setAttribute("role","status");status.setAttribute("aria-live","polite");host.append(status);
 const grid=create("div","freshman-grid");host.append(grid);
 function panel(name,desc){
  const p=create("section","freshman-card");p.append(create("h3","",name),create("p","",desc));grid.append(p);return p;
 }
-const adventure=panel("My First-Year Adventure","Explore the Academy at your own pace. These are personal discoveries, not graded tasks.");
+const adventure=panel("My First-Year Adventure","Every discovery is a step in your own story. Explore in any order, at your own pace.");
 const tally=create("p","freshman-count");adventure.append(tally);
 const checklist=create("div","freshman-checklist");adventure.append(checklist);
 const checks=new Map();
-for(const [key,label] of steps){const row=create("label","freshman-check"),box=create("input");box.type="checkbox";row.append(box,create("span","",label));checklist.append(row);checks.set(key,box)}
-const curiosity=panel("My Curiosity Lab","Have a question, an invention idea, or something you want to make? Give it a place to grow.");
-const growth=panel("My Growth & Celebrations","Notice what you've learned, celebrate little victories, and dream about what's next. You never have to compare your progress with anyone else's.");
+for(const [index,[key,label]] of steps.entries()){
+ const row=create("label","freshman-check"),number=create("span","freshman-step-number",String(index+1).padStart(2,"0"));
+ number.setAttribute("aria-hidden","true");
+ const box=create("input");box.type="checkbox";
+ row.append(number,box,create("span","freshman-step-label",label));checklist.append(row);checks.set(key,box);
+}
+const curiosity=panel("My Curiosity Lab","Your questions belong here. Try a wild idea, sketch a possibility, or see where your imagination leads.");
+const growth=panel("My Growth & Celebrations","Celebrate the small wins and the big discoveries. Your progress is your own, and every step counts.");
 const areas=new Map();
 for(const [key,label,max] of fields){
  const p=["curiosity","experiment","discoveries"].includes(key)?curiosity:growth;
  const wrapper=create("label","freshman-field"),area=create("textarea");
- area.rows=key==="experiment"||key==="discoveries"?3:2;area.maxLength=max;
+ area.rows=key==="experiment"||key==="discoveries"?5:3;area.maxLength=max;
+ const tips={
+ curiosity:"What question has been on your mind?",
+ experiment:"An invention, experiment, story, drawing, or idea you want to try",
+ discoveries:"What surprised you? What would you explore next?",
+ proud:"Something you made, learned, tried, or figured out",
+ growth:"A skill or interest you would like to develop"
+ };
+ area.placeholder=tips[key]||"Write whatever comes to mind…";
  wrapper.append(create("span","",label),area);p.append(wrapper);areas.set(key,area);
 }
 const links=(panel,items)=>{
@@ -54,14 +67,21 @@ const links=(panel,items)=>{
  panel.append(row);
 };
 links(adventure,[["Open My Schedule","#grade09ProfileFirst"],["Explore My Classes","daily-lessons/"]]);
+const moreTools=create("p","freshman-tools-heading","Explore More Tools");curiosity.append(moreTools);
 links(curiosity,[["Science Investigation Notebook","https://vervenveda.com/Khaemenes_High.github.io/courses/science/investigation-notebook/"],["Explore My Study Tools","games/"]]);
 links(growth,[["My Dreams & Achievements","#khaeDreamsAchievements"],["My Sticker Box","#khaeStickerBox"]]);
-const footer=create("div","freshman-footer");
-const save=create("button","freshman-save","Save my discoveries");save.type="button";
-const clear=create("button","freshman-clear","Clear my saved discoveries");clear.type="button";
+const journal=create("section","freshman-journal");journal.setAttribute("aria-labelledby","freshmanJournalTitle");
+ const journalTitle=create("h3","","My Discovery Journal");journalTitle.id="freshmanJournalTitle";journal.append(journalTitle);
+ journal.append(create("p","freshman-journal-intro","One welcoming place to save your questions, discoveries, and reflections. Come back whenever inspiration strikes."));
+ const footer=create("div","freshman-footer");
+const save=create("button","freshman-save","Save My Discoveries");save.type="button";
+const clear=create("button","freshman-clear","Clear Saved Discoveries");clear.type="button";
 const state=create("span","freshman-save-state");state.setAttribute("role","status");
-footer.append(save,clear,state);host.append(footer);
-host.append(create("p","freshman-privacy","Your ideas are saved only on this browser. Other people using the same browser profile may be able to see them. This does not affect grades or class progress."));
+footer.append(save,clear,state);journal.append(footer);
+const disclosure=create("details","freshman-privacy-details");
+const summary=create("summary","","How saving works");
+disclosure.append(summary,create("p","freshman-privacy","Your ideas are saved in this browser, not in a private cloud account. Someone else using the same browser profile may be able to see them. Unsaved drafts are kept temporarily in this tab where supported. These notes never change your grades or class progress."));
+journal.append(disclosure);host.append(journal);
 let currentId=null,baseline="",dirty=false;
 const storageKey=id=>KEY+encodeURIComponent(id),draftKey=id=>DRAFT+encodeURIComponent(id);
 function learner(){
@@ -85,7 +105,7 @@ function normal(obj){
  return JSON.stringify({checks:Object.fromEntries(steps.map(([k])=>[k,Boolean(obj?.checks?.[k])])),
  ...Object.fromEntries(fields.map(([key])=>[key,typeof obj?.[key]==="string"?obj[key]:""]))});
 }
-function progress(){tally.textContent=[...checks.values()].filter(x=>x.checked).length+" of "+steps.length+" discoveries explored — your own pace, no grades."}
+function progress(){tally.textContent=[...checks.values()].filter(x=>x.checked).length+" of "+steps.length+" discoveries explored · At your own pace."}
 function keepDraft(id){
  if(!id||learner()!==id)return false;
  try{sessionStorage.setItem(draftKey(id),JSON.stringify(snapshot(id)));return true}catch{return false}
@@ -117,8 +137,8 @@ save.addEventListener("click",()=>{
   localStorage.setItem(storageKey(id),JSON.stringify(value));
   try{sessionStorage.removeItem(draftKey(id))}catch{}
   baseline=normal(value);dirty=false;save.disabled=true;
-  state.textContent="Saved "+new Date(value.updatedAt).toLocaleString();
-  status.textContent="Your discoveries are saved on this browser. Keep exploring!";
+  state.textContent="Saved on this browser · "+new Date(value.updatedAt).toLocaleString();
+  status.textContent="Your discoveries are saved on this browser. Come back whenever inspiration strikes!";
  }catch{state.textContent="Couldn't save. Your ideas are still here in this tab where supported."}
 });
 clear.addEventListener("click",()=>{
