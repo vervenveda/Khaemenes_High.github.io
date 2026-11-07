@@ -105,6 +105,46 @@ html body .grade10-unified-footer small{
 @media(max-width:560px){html body main .front-grid{grid-template-columns:1fr!important}}
 @media(max-width:760px){html body main .course-card .actions{flex-direction:column}}
 </style>
+<style id="grade10-eight-course-grid-20261107">
+/* Grade 10: six core cards including Technology and PE; two elective pathways.
+   Course links only. Does not change learner enrollment, credits, or assessment rules. */
+html body main #courses .grade10-eight-subject-grid{
+ display:grid!important;grid-template-columns:repeat(2,minmax(0,1fr))!important;
+ gap:16px!important;align-items:stretch!important;
+}
+html body main #courses .grade10-eight-subject-grid > .course-card{
+ box-sizing:border-box!important;min-width:0!important;height:100%!important;
+ display:flex!important;flex-direction:column!important;padding:22px!important;
+ border-radius:7px!important;
+}
+html body main #courses .grade10-eight-subject-grid > .course-card .actions{
+ display:flex!important;flex-wrap:wrap!important;gap:10px!important;
+ width:100%!important;margin-top:auto!important;padding-top:18px!important;
+}
+html body main #courses .grade10-eight-subject-grid > .course-card .actions > a.btn{
+ box-sizing:border-box!important;display:flex!important;align-items:center!important;
+ justify-content:center!important;flex:1 1 142px!important;
+ min-height:46px!important;padding:10px 13px!important;border-radius:7px!important;
+ font:400 16px/1.4 Nunito,Arial,sans-serif!important;letter-spacing:0!important;
+ white-space:normal!important;text-align:center!important;
+ background:#243038!important;color:#fff8e9!important;
+ -webkit-text-fill-color:#fff8e9!important;border:1px solid #243038!important;
+}
+html body main #courses .grade10-eight-subject-grid > .course-card :is(p,.status){
+ font-size:16px!important;line-height:1.5!important;
+}
+html body main #courses .grade10-eight-subject-grid > .course-card .status{
+ background:#f4f0e7!important;color:#243038!important;
+ -webkit-text-fill-color:#243038!important;letter-spacing:0!important;
+ text-transform:none!important;
+}
+html body main #courses .grade10-eight-subject-grid > .course-card .actions > a.btn:focus-visible{
+ outline:3px solid #b48b45!important;outline-offset:3px!important;
+}
+@media(max-width:700px){
+ html body main #courses .grade10-eight-subject-grid{grid-template-columns:1fr!important}
+}
+</style>
 </head>
 <body id="top" data-grade10-canonical-chrome="true" data-high-hide-breadcrumbs="true">
 <header data-khae-header class="khae-global-campus-header"><div data-khae-header-inner><a data-khae-brand href="https://vervenveda.com/Khaemenes_Academy.github.io/"><span data-khae-brand-mark>K</span><span><strong data-khae-brand-name>Khaemenes Academy</strong><small data-khae-brand-sub>High School · Grades 9–12</small></span></a><nav data-khae-nav><a href="https://vervenveda.com/Khaemenes_Academy.github.io/">Academy</a><a href="https://vervenveda.com/Khaemenes_Academy.github.io/student/">Student</a><a href="https://vervenveda.com/Khaemenes_Academy.github.io/family/">Family</a><a href="https://vervenveda.com/Khaemenes_Higher_Learning.github.io/">Higher Learning</a></nav><div data-khae-actions><a data-khae-secondary href="student-profile/">Student Profile</a></div><div data-vnv-ecosystem-slot aria-label="Ecosystem menu"></div></div></header>
@@ -152,32 +192,58 @@ html body .grade10-unified-footer small{
 </section>
 <section class="section paper" id="courses">
   <div class="shell">
-    <div class="heading"><p class="kicker">Core Learning</p><h2>Core Classes</h2><p>Follow the subjects you are studying and explore where your interests take you. Your mathematics course follows your placement and demonstrated readiness, not simply your grade level.</p></div>
-    <div class="course-grid"><article class="course-card" style="--accent:#315f86">
-        <span class="status">Placement-based</span>
+    <div class="heading"><p class="kicker">Grade 10 Learning</p><h2>Core Classes &amp; Electives</h2><p>Six core classes: Mathematics, Language Arts, Science, Social Studies, Technology, and Physical Education. Add two elective pathways: Foreign Language and Creative Elective. Your mathematics placement remains based on readiness and mastery.</p></div>
+    <div class="course-grid grade10-eight-subject-grid">
+      <article class="course-card" style="--accent:#315f86">
+        <span class="status">Core 01 of 06</span>
         <h3>Mathematics Pathway</h3>
         <p>Pre-Algebra, Algebra I, Geometry, Algebra II, and later mathematics remain course names—not grade labels. The active course is supported by readiness and mastery evidence.</p>
         <div class="actions"><a class="btn primary" href="../../courses/mathematics/">Mathematics Hall</a><a class="btn" href="../../courses/mathematics/algebra-1/">Algebra I</a><a class="btn" href="../../courses/mathematics/algebra-1/diagnostic/">Algebra I Readiness Assessment</a><a class="btn" href="../../courses/mathematics/geometry/">Open Geometry</a></div>
       </article>
-<article class="course-card" style="--accent:#725f82">
-        <span class="status">Live course</span>
+      <article class="course-card" style="--accent:#725f82">
+        <span class="status">Core 02 of 06</span>
         <h3>English 10</h3>
         <p>Grade 10 language arts, reading, writing, research, discussion, revision, and portfolio evidence.</p>
         <div class="actions"><a class="btn" href="../../courses/language-arts/english-10/">Open English 10</a></div>
       </article>
-<article class="course-card" style="--accent:#4f7f7a">
-        <span class="status">Live · 36 weeks</span>
+      <article class="course-card" style="--accent:#4f7f7a">
+        <span class="status">Core 03 of 06</span>
         <h3>Biology 10</h3>
         <p>Biology and Biotechnology with 180 instructional blocks, quantitative reasoning, inquiry/lab work, CER, corrections, and portfolio evidence.</p>
         <div class="actions"><a class="btn" href="../../courses/science/biology-10/">Open Biology 10</a></div>
       </article>
-<article class="course-card" style="--accent:#96594e">
-        <span class="status">Live course</span>
+      <article class="course-card" style="--accent:#96594e">
+        <span class="status">Core 04 of 06</span>
         <h3>Social Studies 10</h3>
         <p>Source analysis, civics, history, geography, economics, and disciplined evidence-based reasoning.</p>
         <div class="actions"><a class="btn" href="../../courses/social-studies/grade-10/">Open Social Studies</a></div>
-      </article></div>
-    <aside class="note"><strong>Mathematics placement rule:</strong> Grade 09, 10, 11, and 12 describe student-year context. They do not rename or own mathematics courses. Readiness, prerequisite evidence, and mastery determine the learner's mathematics pathway.</aside>
+      </article>
+      <article class="course-card" style="--accent:#506b86">
+        <span class="status">Core 05 of 06</span>
+        <h3>Technology</h3>
+        <p>Build practical digital skills through computing, creative technology, responsible online research, and hands-on projects. Explore the Academy's computing pathway.</p>
+        <div class="actions"><a class="btn" href="../../courses/electives/computing-digital-technology/">Explore Technology</a></div>
+      </article>
+      <article class="course-card" style="--accent:#4f7f7a">
+        <span class="status">Core 06 of 06</span>
+        <h3>Physical Education</h3>
+        <p>Stay active, practice fitness and movement skills, and build healthy routines with the Academy's Physical Education pathway.</p>
+        <div class="actions"><a class="btn" href="../../courses/physical-education/">Physical Education</a></div>
+      </article>
+      <article class="course-card" style="--accent:#315f86">
+        <span class="status">Elective 01 of 02</span>
+        <h3>Foreign Language</h3>
+        <p>Choose a language that sparks your curiosity and develop conversation, vocabulary, cultural understanding, and real-world communication.</p>
+        <div class="actions"><a class="btn" href="../../courses/electives/world-languages-linguistics/">Explore Languages</a></div>
+      </article>
+      <article class="course-card" style="--accent:#b48b45">
+        <span class="status">Elective 02 of 02</span>
+        <h3>Creative Elective</h3>
+        <p>Express yourself through art, music, design, or another creative project. Choose the pathway that helps your ideas take shape.</p>
+        <div class="actions"><a class="btn" href="../../courses/electives/">All Electives</a><a class="btn" href="../../courses/electives/fine-arts-visual-studio/">Art</a><a class="btn" href="../../courses/electives/music-music-theory/">Music</a></div>
+      </article>
+    </div>
+    <aside class="note"><strong>Course planning:</strong> Mathematics placement depends on readiness and mastery. Psychology 102 may be explored separately as an advanced elective; it is not one of the six Grade 10 core cards. Graduation requirements are determined by the Academy’s applicable program and credit policies.</aside>
   </div>
 </section>
 <section class="section dark" id="support">
