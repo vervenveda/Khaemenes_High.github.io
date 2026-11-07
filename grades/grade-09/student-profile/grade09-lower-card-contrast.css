@@ -1,0 +1,38 @@
+/* Grade 09 only · repaired renamed Family/Explore cards.
+   Custom background colors remain learner-owned; never recolor the page background. */
+html:root:root body main > #studentRoomsAfterPortfolio .student-rooms-placement-grid > :is(.student-access-contrast,.student-campus-contrast):not([data-student-section-color-override]){
+ background:#243038!important;background-image:none!important;color:#fff8e9!important;
+}
+html:root:root body main > #studentRoomsAfterPortfolio .student-rooms-placement-grid > :is(.student-access-contrast,.student-campus-contrast):not([data-student-section-color-override]) > :is(h2,p){
+ color:#fff8e9!important;-webkit-text-fill-color:#fff8e9!important;
+ opacity:1!important;
+}
+html:root:root body main > #studentRoomsAfterPortfolio .student-rooms-placement-grid > :is(.student-access-contrast,.student-campus-contrast)[data-student-section-color-override] > :is(h2,p){
+ color:var(--student-section-ink,#243038)!important;
+ -webkit-text-fill-color:var(--student-section-ink,#243038)!important;
+ opacity:1!important;text-shadow:none!important;
+}
+html:root:root body main > #studentRoomsAfterPortfolio .student-rooms-placement-grid > :is(.student-access-contrast,.student-campus-contrast) > .actions{
+ margin-top:auto!important;display:grid!important;
+ grid-template-columns:repeat(auto-fit,minmax(min(100%,150px),1fr))!important;gap:10px!important;
+}
+html:root:root body main > #studentRoomsAfterPortfolio .student-rooms-placement-grid > :is(.student-access-contrast,.student-campus-contrast) > .actions > a.btn,
+html:root:root body main > #studentRoomsAfterPortfolio .student-rooms-placement-grid > :is(.student-access-contrast,.student-campus-contrast) > .actions > a.btn.secondary{
+ box-sizing:border-box!important;min-width:0!important;min-height:46px!important;
+ display:flex!important;align-items:center!important;justify-content:center!important;
+ border:1px solid #b48b45!important;border-radius:7px!important;
+ padding:10px 13px!important;
+ background-color:#243038!important;background-image:none!important;
+ color:#fff8e9!important;-webkit-text-fill-color:#fff8e9!important;
+ opacity:1!important;text-shadow:none!important;
+ font:400 16px/1.45 Nunito,Arial,sans-serif!important;
+ letter-spacing:0!important;text-transform:none!important;
+ text-align:center!important;
+}
+html:root:root body main > #studentRoomsAfterPortfolio .student-rooms-placement-grid > :is(.student-access-contrast,.student-campus-contrast) > .actions > a.btn:is(:hover,:focus-visible){
+ background-color:#36504a!important;color:#fff8e9!important;
+ -webkit-text-fill-color:#fff8e9!important;
+}
+html:root:root body main > #studentRoomsAfterPortfolio .student-rooms-placement-grid > :is(.student-access-contrast,.student-campus-contrast) a.btn:focus-visible{
+ outline:3px solid #b48b45!important;outline-offset:3px!important;
+}
