@@ -1,0 +1,49 @@
+/* Grades 11–12: retain the approved Grade 10 live-manager pattern.
+ * Scope to the canonical Schedule dialog; never change the source-of-truth
+ * for learner identity, pinned classes, language selection, grades or mastery.
+ * Grade 10 retains its existing, approved local styles.
+ */
+html:root:root body:is([data-grade="11"],[data-grade="12"])
+#upperGradeScheduleDialog .upper-grade-schedule-manager {
+ box-sizing:border-box!important;display:block!important;
+ width:100%!important;min-width:0!important;max-width:100%!important;
+ margin:18px 0 0!important;padding:18px!important;
+ border:2px solid #b48b45!important;border-radius:7px!important;
+ background:#fffaf2!important;color:#243038!important;
+}
+html:root:root body:is([data-grade="11"],[data-grade="12"])
+#upperGradeScheduleDialog .upper-grade-schedule-manager :is(h2,p,label) {
+ color:#243038!important;-webkit-text-fill-color:#243038!important;
+ font-size:16px!important;line-height:1.5!important;
+}
+html:root:root body:is([data-grade="11"],[data-grade="12"])
+#upperGradeScheduleDialog .upper-grade-schedule-manager h2 {
+ font:400 24px/1.4 Cinzel,Georgia,serif!important;
+}
+html:root:root body:is([data-grade="11"],[data-grade="12"])
+#upperGradeScheduleDialog .upper-grade-schedule-manager #courseManagerGrid {
+ display:grid!important;grid-template-columns:repeat(2,minmax(0,1fr))!important;
+ gap:14px!important;
+}
+html:root:root body:is([data-grade="11"],[data-grade="12"])
+#upperGradeScheduleDialog .upper-grade-schedule-manager #courseManagerGrid>.lesson-card {
+ box-sizing:border-box!important;min-width:0!important;
+ padding:16px!important;background:#fffdf8!important;
+ border:1px solid #c5b492!important;border-radius:7px!important;
+}
+html:root:root body:is([data-grade="11"],[data-grade="12"])
+#upperGradeScheduleDialog .upper-grade-schedule-manager .actions :is(button,a) {
+ min-height:44px!important;
+}
+html:root:root body:is([data-grade="11"],[data-grade="12"])
+#upperGradeScheduleDialog .upper-grade-schedule-manager :is(button,a,select):focus-visible {
+ outline:3px solid #b48b45!important;outline-offset:3px!important;
+}
+@media(max-width:660px){
+ html:root:root body:is([data-grade="11"],[data-grade="12"])
+ #upperGradeScheduleDialog .upper-grade-schedule-manager #courseManagerGrid {
+  grid-template-columns:minmax(0,1fr)!important;
+ }
+ html:root:root body:is([data-grade="11"],[data-grade="12"])
+ #upperGradeScheduleDialog .upper-grade-schedule-manager {padding:12px!important;}
+}
