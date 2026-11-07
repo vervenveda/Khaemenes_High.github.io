@@ -18,7 +18,10 @@ const tasks=[
  ["senior","Write three priorities for Grade 12"]
 ];
 const make=(tag,cls,value)=>{const n=document.createElement(tag);if(cls)n.className=cls;if(value!==undefined)n.textContent=value;return n};
-const host=make("section","khae-junior-planning");host.id="grade11JuniorPlanning";
+const host=document.getElementById("grade11JuniorPlanning")||make("section","khae-junior-planning");
+host.id="grade11JuniorPlanning";host.classList.add("khae-junior-planning");
+// The HTML owns the visible fallback; swap in controls only after initialization.
+host.replaceChildren();
 host.setAttribute("aria-labelledby","grade11JuniorPlanningTitle");
 const eyebrow=make("p","khae-junior-eyebrow","Grade 11 · Junior-Year Development");
 const title=make("h2","","Junior-Year Planning");title.id="grade11JuniorPlanningTitle";
