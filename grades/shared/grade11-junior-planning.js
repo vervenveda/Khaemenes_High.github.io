@@ -48,9 +48,7 @@ const nextSteps=make("textarea");nextSteps.rows=3;nextSteps.maxLength=1600;
 for(const [label,input] of [["Pathways I want to explore",interests],["Questions and next steps",nextSteps]]){
  const wrapper=make("label","khae-junior-field");wrapper.append(make("span","",label),input);pathways.append(wrapper);
 }
-const resource=make("a","khae-junior-link","Explore Khaemenes Higher Learning");
-resource.href="https://vervenveda.com/Khaemenes_Higher_Learning.github.io/";resource.rel="noopener";
-pathways.append(resource);
+// No external pathway is presumed verified; students can record resources here.
 const footer=make("div","khae-junior-footer");const save=make("button","khae-junior-save","Save my planning notes");save.type="button";
 const message=make("span","khae-junior-message","Planning notes stay on this browser and are not submitted to your teachers.");
 footer.append(save,message);host.append(footer);
@@ -98,7 +96,7 @@ save.addEventListener("click",()=>{
  if(!id||id!==activeId){refresh();status.textContent="Learner selection changed. Review the current profile before saving.";return;}
  try{
   localStorage.setItem(storageKey(id),JSON.stringify(payload(id)));
-  if(learnerId()!==id){localStorage.removeItem(storageKey(id));refresh();return;}
+  if(learnerId()!==id){refresh();status.textContent="Learner selection changed; review the current profile.";return;}
   status.textContent="Planning notes saved locally for this Grade 11 learner.";
  }catch{status.textContent="Unable to save on this browser. Copy important notes to your portfolio.";}
 });
