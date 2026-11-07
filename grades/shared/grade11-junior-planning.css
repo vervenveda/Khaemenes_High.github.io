@@ -54,6 +54,23 @@ body[data-grade="11"] #grade11JuniorPlanning .khae-junior-save {
  font:400 16px/1.4 Nunito,Arial,sans-serif;cursor:pointer;
 }
 body[data-grade="11"] #grade11JuniorPlanning .khae-junior-save:disabled {opacity:.55;cursor:not-allowed}
+/* Keep the Save action legible when no registered Grade 11 learner is selected.
+   Disabled means non-interactive, never faded into the parchment background. */
+html:root:root body[data-grade="11"] #grade11JuniorPlanning button.khae-junior-save,
+html:root:root body[data-grade="11"] #grade11JuniorPlanning button.khae-junior-save:disabled {
+ appearance:none!important;-webkit-appearance:none!important;
+ background-color:#243038!important;background-image:none!important;
+ color:#fff8e9!important;-webkit-text-fill-color:#fff8e9!important;
+ opacity:1!important;visibility:visible!important;
+ text-shadow:none!important;
+ border:1px solid #243038!important;
+ font:400 16px/1.4 Nunito,Arial,sans-serif!important;
+ min-width:210px;min-height:46px;
+}
+html:root:root body[data-grade="11"] #grade11JuniorPlanning button.khae-junior-save:disabled {
+ cursor:not-allowed!important;border-style:dashed!important;
+}
+
 body[data-grade="11"] #grade11JuniorPlanning .khae-junior-link {display:inline-block;font-size:16px;margin-top:8px;text-decoration:underline}
 body[data-grade="11"] #grade11JuniorPlanning .khae-junior-message {font-size:16px;line-height:1.5}
 body[data-grade="11"] #grade11JuniorPlanning :is(button,textarea,input,a):focus-visible {
