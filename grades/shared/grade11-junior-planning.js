@@ -54,7 +54,9 @@ for(const [label,input] of [["Pathways I want to explore",interests],["Questions
 // No external pathway is presumed verified; students can record resources here.
 const footer=make("div","khae-junior-footer");const save=make("button","khae-junior-save","Save my planning notes");save.type="button";
 const message=make("span","khae-junior-message","Planning notes stay on this browser and are not submitted to your teachers.");
-footer.append(save,message);host.append(footer);
+const clear=make("button","khae-junior-clear","Clear my planning notes");clear.type="button";
+const draftStatus=make("span","khae-junior-message");draftStatus.setAttribute("role","status");
+footer.append(save,clear,message,draftStatus);host.append(footer);
 let activeId=null;
 const allFields=[question,notes,sources,interests,nextSteps];
 const boxes=new Map();
@@ -70,40 +72,96 @@ function learnerId(){
  return info.learnerId;
 }
 const storageKey=id=>KEY+encodeURIComponent(id);
+const DRAFT_KEY="khaemenes-grade11-junior-draft-v1:learner:";
+const draftKey=id=>DRAFT_KEY+encodeURIComponent(id);
+const keys=["question","notes","sources","interests","nextSteps"];
+let baseline="",dirty=false;
 function read(id){
  try{const v=JSON.parse(localStorage.getItem(storageKey(id))||"null");
   return v&&v.version===1&&v.learnerId===id&&v.grade===11?v:null;
  }catch{return null}
 }
-function progress(){counter.textContent=[...boxes.values()].filter(el=>el.checked).length+" of "+tasks.length+" personal planning steps selected";}
-function refresh(){
- const id=learnerId();activeId=id;
- const saved=id?read(id):null;
- for(const [key,checkbox] of boxes){checkbox.checked=Boolean(saved?.checks?.[key]);checkbox.disabled=!id;}
- for(const [field,key] of [[question,"question"],[notes,"notes"],[sources,"sources"],[interests,"interests"],[nextSteps,"nextSteps"]]){
-  field.value=typeof saved?.[key]==="string"?saved[key]:"";field.disabled=!id;
- }
- save.disabled=!id;
- status.textContent=id?"Personal planning workspace for the selected Grade 11 learner.":"Select your registered Grade 11 learner to use these private planning controls. Guests may explore the overview.";
- progress();
+function readDraft(id){
+ try{const v=JSON.parse(sessionStorage.getItem(draftKey(id))||"null");
+  return v&&v.version===1&&v.learnerId===id&&v.grade===11?v:null;
+ }catch{return null}
 }
-function payload(id){
- return {version:1,grade:11,learnerId:id,updatedAt:new Date().toISOString(),
+function record(id){
+ return {version:1,grade:11,learnerId:id,
   checks:Object.fromEntries([...boxes].map(([key,el])=>[key,el.checked])),
   question:question.value.slice(0,500),notes:notes.value.slice(0,3000),
   sources:sources.value.slice(0,1500),interests:interests.value.slice(0,1600),
   nextSteps:nextSteps.value.slice(0,1600)};
 }
+const normalized=v=>JSON.stringify({checks:v?.checks||{},...Object.fromEntries(keys.map(k=>[k,typeof v?.[k]==="string"?v[k]:""]))});
+function progress(){counter.textContent=[...boxes.values()].filter(el=>el.checked).length+" of "+tasks.length+" personal planning steps selected";}
+function saveDraft(id){
+ if(!id||learnerId()!==id)return;
+ try{sessionStorage.setItem(draftKey(id),JSON.stringify(record(id)));draftStatus.textContent="Unsaved draft retained in this browser tab."}
+ catch{draftStatus.textContent="Unsaved changes: browser draft storage unavailable."}
+}
+function changed(){
+ if(!activeId||learnerId()!==activeId)return;
+ dirty=normalized(record(activeId))!==baseline;
+ save.disabled=!dirty;
+ draftStatus.textContent=dirty?"Unsaved changes":"All changes saved";
+ if(dirty)saveDraft(activeId);
+}
+function refresh(){
+ const id=learnerId();
+ if(activeId&&activeId!==id&&dirty)saveDraft(activeId);
+ // Never overwrite live edits on same-learner notifications or returning focus.
+ if(id===activeId&&dirty){place();return;}
+ activeId=id;
+ const saved=id?read(id):null,draft=id?readDraft(id):null;
+ const source=draft||saved;
+ for(const [key,checkbox] of boxes){checkbox.checked=Boolean(source?.checks?.[key]);checkbox.disabled=!id;}
+ for(const [field,key] of [[question,"question"],[notes,"notes"],[sources,"sources"],[interests,"interests"],[nextSteps,"nextSteps"]]){
+  field.value=typeof source?.[key]==="string"?source[key]:"";field.disabled=!id;
+ }
+ clear.disabled=!id;dirty=false;
+ baseline=normalized(saved);
+ if(draft&&normalized(draft)!==baseline){
+  dirty=true;save.disabled=false;
+  draftStatus.textContent="Unsaved draft restored from this tab.";
+ }else{
+  save.disabled=true;
+  draftStatus.textContent=id?(saved?"Saved notes loaded":"No saved notes yet"):"";
+  if(id&&draft)try{sessionStorage.removeItem(draftKey(id))}catch{}
+ }
+ status.textContent=id?"Personal planning workspace for the selected Grade 11 learner.":"Select your registered Grade 11 learner to use these private planning controls. Guests may explore the overview.";
+ progress();
+}
 save.addEventListener("click",()=>{
  const id=learnerId();
  if(!id||id!==activeId){refresh();status.textContent="Learner selection changed. Review the current profile before saving.";return;}
+ const next={...record(id),updatedAt:new Date().toISOString()};
  try{
-  localStorage.setItem(storageKey(id),JSON.stringify(payload(id)));
-  if(learnerId()!==id){refresh();status.textContent="Learner selection changed; review the current profile.";return;}
-  status.textContent="Planning notes saved locally for this Grade 11 learner.";
- }catch{status.textContent="Unable to save on this browser. Copy important notes to your portfolio.";}
+  // Reconfirm identity immediately before the browser write.
+  if(learnerId()!==id)return;
+  localStorage.setItem(storageKey(id),JSON.stringify(next));
+  try{sessionStorage.removeItem(draftKey(id))}catch{}
+  baseline=normalized(next);dirty=false;save.disabled=true;
+  draftStatus.textContent="Saved "+new Date(next.updatedAt).toLocaleString();
+  status.textContent="Planning notes saved on this device for the selected Grade 11 learner. This is not secure cross-device storage.";
+ }catch{status.textContent="Unable to save. Your in-tab draft is retained where browser storage permits.";}
 });
-checklist.addEventListener("change",progress);
+clear.addEventListener("click",()=>{
+ const id=learnerId();
+ if(!id||id!==activeId)return;
+ if(!window.confirm("Clear this learner's saved planning notes and temporary draft from this browser? This cannot be undone."))return;
+ if(learnerId()!==id)return;
+ try{localStorage.removeItem(storageKey(id));sessionStorage.removeItem(draftKey(id))}
+ catch{status.textContent="Unable to clear this browser's planning records.";return}
+ dirty=false;activeId=null;refresh();
+ status.textContent="Local planning notes cleared for this learner.";
+});
+for(const field of allFields)field.addEventListener("input",changed);
+checklist.addEventListener("change",()=>{progress();changed()});
+window.addEventListener("beforeunload",event=>{
+ if(!dirty||!activeId||learnerId()!==activeId)return;
+ saveDraft(activeId);event.preventDefault();event.returnValue="";
+});
 function place(){
  const rooms=document.getElementById("studentRoomsAfterPortfolio");
  const portfolio=main.querySelector('aside[aria-label="Student Learning Portfolio"]');
