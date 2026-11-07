@@ -44,7 +44,12 @@ for(const grade of ["11","12"]){
    assert.match(html,/readLearner/);
   }
   if(room==="settings")assert.match(html,/It was not delivered to a parent or server/);
-  if(room==="daily-lessons")assert.match(html,/personal checks selected/);
+  if(room==="daily-lessons"){
+   assert.match(html,new RegExp("khaemenes-grade"+grade+"-today-habits-v1"),folder+" shares the ten-activity dashboard store");
+   assert.match(html,/const tasks=\[/,folder+" ten daily tasks");
+   assert.match(html,/\["bedtime","Evening wash-up & bedtime"/,folder+" ten tasks finish at bedtime");
+   assert.match(html,/of 10 personal activities checked/,folder+" ten-activity count");
+  }
   checked++;
  }
 }
