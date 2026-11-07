@@ -92,3 +92,23 @@ html:root:root body[data-grade="11"] .grade09-profile-first #upperGradeDailyFocu
  width:min(100%,940px)!important;
  margin:12px auto 14px!important;
 }
+
+/* Distinct, legible actions for Grade 11's local planning lifecycle. */
+html:root:root body[data-grade="11"] #grade11JuniorPlanning .khae-junior-clear {
+ box-sizing:border-box;min-height:46px;min-width:200px;padding:9px 18px;
+ border:1px solid #243038;border-radius:7px;
+ background:#fffdf8!important;color:#243038!important;
+ -webkit-text-fill-color:#243038!important;
+ opacity:1!important;font:400 16px/1.4 Nunito,Arial,sans-serif!important;
+ cursor:pointer;
+}
+html:root:root body[data-grade="11"] #grade11JuniorPlanning .khae-junior-clear:disabled {
+ opacity:1!important;border-style:dashed!important;cursor:not-allowed;
+}
+html:root:root body[data-grade="11"] #grade11JuniorPlanning .khae-junior-save:focus-visible,
+html:root:root body[data-grade="11"] #grade11JuniorPlanning .khae-junior-clear:focus-visible {
+ outline:3px solid #a0793e!important;outline-offset:3px!important;
+}
+html:root:root body[data-grade="11"] #grade11JuniorPlanning .khae-junior-footer {
+ padding-top:10px!important;padding-bottom:12px!important;
+}
