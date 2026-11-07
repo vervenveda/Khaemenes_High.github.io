@@ -81,8 +81,14 @@ html body main .front-grid > .front-card > a.btn:focus-visible{outline:3px solid
 @media(max-width:850px){html body main .front-grid{grid-template-columns:repeat(2,minmax(0,1fr))!important}}
 @media(max-width:560px){html body main .front-grid{grid-template-columns:1fr!important}}
 </style>
+
+<style id="grade09-no-header-breadcrumbs-20261107">
+/* Grade 9 landing only: leave the Academy header intact, without breadcrumb rows. */
+html body header[data-khae-header] > [data-khae-breadcrumb-row],
+html body #highNavigationBreadcrumbs{display:none!important}
+</style>
 </head>
-<body id="top" data-grade09-canonical-chrome="true" data-high-hide-breadcrumbs="true" data-high-header-breadcrumbs="true">
+<body id="top" data-grade09-canonical-chrome="true" data-high-hide-breadcrumbs="true">
 <header data-khae-header class="khae-global-campus-header"><div data-khae-header-inner><a data-khae-brand href="https://vervenveda.com/Khaemenes_Academy.github.io/"><span data-khae-brand-mark>K</span><span><strong data-khae-brand-name>Khaemenes Academy</strong><small data-khae-brand-sub>High School · Grades 9–12</small></span></a><nav data-khae-nav><a href="https://vervenveda.com/Khaemenes_Academy.github.io/">Academy</a><a href="https://vervenveda.com/Khaemenes_Academy.github.io/student/">Student</a><a href="https://vervenveda.com/Khaemenes_Academy.github.io/family/">Family</a><a href="https://vervenveda.com/Khaemenes_Higher_Learning.github.io/">Higher Learning</a></nav><div data-khae-actions><a data-khae-secondary href="student-profile/">Student Profile</a></div><div data-vnv-ecosystem-slot aria-label="Ecosystem menu"></div></div></header>
 <a class="skip" href="#main">Skip to main content</a>
 <nav class="grade09-local-links" aria-label="Grade 9 learning shortcuts" style="background:#243038 !important;background-image:none !important;border-bottom:1px solid #b48b45 !important">
@@ -105,7 +111,6 @@ html body main .front-grid > .front-card > a.btn:focus-visible{outline:3px solid
     <div class="front-grid"><article class="front-card" style="--accent:#315f86">
         <span class="front-mark">S</span>
         <h3>Student Dashboard</h3>
-        <div class="student-name" id="studentName">Freshman Home</div>
         <p>Open the students pinned classes, the daily path, grades, profile, and helpful tools.</p>
         <a class="btn primary" href="student-profile/">Student Dashboard</a>
       </article>
@@ -197,9 +202,7 @@ html body main .front-grid > .front-card > a.btn:focus-visible{outline:3px solid
 </section>
 </main>
 <footer class="footer grade09-unified-footer"><div>Verve N Veda · Khaemenes Academy</div><small>Jennifer Kay Pearl · 2026</small></footer>
-<script>
-(()=>{"use strict";const read=(k,f)=>{try{const r=localStorage.getItem(k);return r?JSON.parse(r):f}catch{return f}};let learner=null;try{const id=JSON.parse(localStorage.getItem("khaemenes_active_learner_v1")||"null"),family=JSON.parse(localStorage.getItem("khaemenes_family_registry_v1")||"null");learner=typeof id==="string"&&family?.learners?.[id]?.learnerId===id?family.learners[id]:null}catch{}const key=learner?`khaemenes-high-profile-v1:learner:${encodeURIComponent(learner.learnerId)}`:"khaemenes-high-profile-v1";const p=read(key,null)||(!learner?read("khaemenes-grade09-profile-v1",null):null)||{};const name=p.displayName||p.name||p.nickname||learner?.nickname||"Freshman Home";const node=document.getElementById("studentName");if(node)node.textContent=name;})();
-</script>
+
 <!-- Grade 9 uses the canonical ecosystem toolbar; legacy Beta launcher removed. -->
 <script src="../../assets/vnv-language.js" defer data-official-vnv-language="true"></script>
 <script defer src="../../courses/mathematics/algebra-1/assets/learning-tools-menu-v1.js" data-academy-learning-tools="v1"></script>
