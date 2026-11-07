@@ -279,9 +279,9 @@ html:root:root body[data-grade="12"] #upperGradeScheduleDialog :is(button,a,sele
   home:"https://vervenveda.com/Khaemenes_Academy.github.io/",
   actions:[
    {label:"PROFILE",href:"profile/"},
-   {label:"LESSONS",href:"#grade09BlueprintTools"},
-   {label:"PORTFOLIO",href:"../../../portfolio/index.html"},
-   {label:"GAMES",href:"https://vervenveda.com/arcade.github.io/"},
+   {label:"LESSONS",href:"daily-lessons/"},
+   {label:"GRADES",href:"grades/"},
+   {label:"GAMES",href:"games/"},
    {label:"HOME",href:"../../../"}
   ]
  };
@@ -294,9 +294,9 @@ html:root:root body[data-grade="12"] #upperGradeScheduleDialog :is(button,a,sele
    label:"Grade 12 Profile Quick Links",max:14,links:[
     {label:"My Profile",href:new URL("profile/",location.href).href},
     {label:"My Profile Tools",href:new URL("#grade09BlueprintTools",location.href).href},
-    {label:"Learning Evidence",href:new URL("../../../portfolio/index.html",location.href).href},
+    {label:"Grades & Reports",href:new URL("grades/",location.href).href},
     {label:"Yearbook",href:"https://vervenveda.com/Academy-Yearbook.github.io/"},
-    {label:"Learning Games",href:"https://vervenveda.com/arcade.github.io/"},
+    {label:"Learning Games",href:new URL("games/",location.href).href},
     {label:"High School Home",href:new URL("../../../",location.href).href},
     {label:"Family Learning Center",href:"https://vervenveda.com/Khaemenes_Academy.github.io/family/"}
    ]
@@ -359,7 +359,7 @@ html:root:root body[data-grade="12"] #upperGradeScheduleDialog :is(button,a,sele
   <p style="font-size:16px;margin:0;color:#61533d">Your calm starting point</p>
   <h2 id="learningTodayHeading">My Learning Today</h2>
   <p id="learningTodaySummary" role="status" aria-live="polite">Finding your next class…</p>
-  <div class="actions" id="learningTodayActions"><a class="btn gold" href="#courseManagerGrid">Open Daily Lessons</a></div>
+  <div class="actions" id="learningTodayActions"><a class="btn gold" href="daily-lessons/">Open Daily Lessons</a></div>
   <div id="learningTodayCourses" class="lesson-grid" aria-label="Other pinned subjects"></div>
   <p style="font-size:16px">Pick up where you left off, finish what matters most, and choose the next useful step without losing sight of your larger goals.</p>
 </section>
@@ -387,9 +387,9 @@ html:root:root body[data-grade="12"] #upperGradeScheduleDialog :is(button,a,sele
         <h2 id="doorsTitle" style="color:#fff8e9!important;-webkit-text-fill-color:#fff8e9!important">Student Rooms</h2>
         <p style="color:#f0e6d5!important;-webkit-text-fill-color:#f0e6d5!important">These are the other spaces you may still use during your senior year. Open them when you need a different tool, workspace, or resource.</p>
         <div class="door-grid" id="grade09BlueprintRooms">
-          <a class="door" href="#courseManagerGrid"><span><b>Daily Lessons</b><span>See pinned classes, choose today’s work, save a note, and use the daily checklist.</span></span><small>Start Today →</small></a>
-          <a class="door" href="../../../portfolio/index.html"><span><b>Grades</b><span>Open course records, reports, mastery status, and print/export options.</span></span><small>Open Grades →</small></a>
-          <a class="door" href="https://vervenveda.com/arcade.github.io/"><span><b>Games</b><span>Open math practice, logic games, learning arcade links, and study breaks.</span></span><small>Open Games →</small></a>
+          <a class="door" href="daily-lessons/"><span><b>Daily Lessons</b><span>See pinned classes, choose today’s work, save a note, and use the daily checklist.</span></span><small>Start Today →</small></a>
+          <a class="door" href="grades/"><span><b>Grades</b><span>Open course records, reports, mastery status, and print/export options.</span></span><small>Open Grades →</small></a>
+          <a class="door" href="games/"><span><b>Games</b><span>Open math practice, logic games, learning arcade links, and study breaks.</span></span><small>Open Games →</small></a>
           <a class="door" href="#grade09ProfileFirst"><span><b>My Profile</b><span>Review the goals, strengths, work, and plans you want to carry forward from your senior year.</span></span><small>View Profile →</small></a>
         </div>
       </section>
@@ -397,7 +397,7 @@ html:root:root body[data-grade="12"] #upperGradeScheduleDialog :is(button,a,sele
       <section class="card col6 student-access-contrast" style="background-color:#243038!important;background-image:none!important;color:#fff8e9!important">
         <h2 style="color:#fff8e9!important;-webkit-text-fill-color:#fff8e9!important">Family &amp; Account Support</h2>
         <p style="color:#eee3d0!important;-webkit-text-fill-color:#eee3d0!important">Your parent or guardian can still help with account settings and recovery when needed.</p>
-        <div class="actions"><a class="btn secondary" href="https://vervenveda.com/Khaemenes_Academy.github.io/family/">Open Family Portal</a></div>
+        <div class="actions"><a class="btn secondary" href="settings/">Account Settings</a><a class="btn secondary" href="https://vervenveda.com/Khaemenes_Academy.github.io/family/">Open Family Portal</a></div>
       </section>
       <section class="card col6 student-campus-contrast" style="background-color:#243038!important;background-image:none!important;color:#fff8e9!important">
         <h2 style="color:#fff8e9!important;-webkit-text-fill-color:#fff8e9!important">Need a Different Door?</h2>
