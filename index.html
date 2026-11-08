@@ -2014,7 +2014,57 @@ html:root:root body #drawerBg .drawer :is(p,.menu-group,.menu-link strong,.menu-
   font-size:16px!important;line-height:1.45!important;
 }
 html:root:root body #drawerBg .drawer .menu-link{min-height:52px}
-</style><script id="high-vnv-chrome-audit-optin-loader">
+</style><script id="high-vnv-ticker-header-offset-reconcile">
+/* High School-local fix: header sync can run before the second ticker mounts.
+   Match the canonical header top offset to all visible ticker heights.
+   No external services, profile reads, or component replacement. */
+(()=>{"use strict";
+ if(window.__highVnvTickerOffsetReconcile)return;
+ window.__highVnvTickerOffsetReconcile=true;
+ const ids=["vnv333NetworkTicker","vnvTickerAutoPopulate"];
+ let pending=false;
+ const seen=new WeakSet();
+ const observer=typeof ResizeObserver==="function"
+   ?new ResizeObserver(()=>schedule()):null;
+ function measure(){
+   let total=0;
+   for(const id of ids){
+     const el=document.getElementById(id);
+     if(!el)continue;
+     if(observer&&!seen.has(el)){seen.add(el);observer.observe(el)}
+     const style=getComputedStyle(el);
+     if(style.display!=="none"&&style.visibility!=="hidden"){
+       total+=Math.ceil(el.getBoundingClientRect().height||0);
+     }
+   }
+   const root=document.documentElement;
+   const target=total+"px";
+   if(root.style.getPropertyValue("--vnv-header-top").trim()!==target){
+     root.style.setProperty("--vnv-header-top",target);
+   }
+ }
+ function schedule(){
+   if(pending)return;
+   pending=true;
+   requestAnimationFrame(()=>{pending=false;measure()});
+ }
+ const mutation=new MutationObserver(records=>{
+   if(records.some(r=>[...r.addedNodes,...r.removedNodes].some(n=>
+     n.nodeType===1&&ids.some(id=>n.id===id||n.querySelector?.('[id="'+id+'"]'))
+   )))schedule();
+ });
+ function start(){
+   mutation.observe(document.body,{subtree:true,childList:true});
+   schedule();
+ }
+ if(document.body)start();else document.addEventListener("DOMContentLoaded",start,{once:true});
+ document.addEventListener("DOMContentLoaded",schedule,{once:true});
+ window.addEventListener("load",schedule,{once:true});
+ window.addEventListener("pageshow",schedule);
+ window.addEventListener("resize",schedule,{passive:true});
+})();
+</script>
+<script id="high-vnv-chrome-audit-optin-loader">
 /* Opt-in only. No diagnostic script is fetched for ordinary page visits. */
 if(new URLSearchParams(location.search).get("chrome_audit")==="1"){
   const chromeProbe=document.createElement("script");
