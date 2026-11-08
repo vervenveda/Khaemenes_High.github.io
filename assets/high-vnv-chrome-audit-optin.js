@@ -27,7 +27,7 @@ const describe=(name,id)=>{
  }).join("\n");
 };
 function report(){
- const lines=["HIGH SCHOOL / VNV FORENSIC REPORT v2.0.0","Read-only DOM and layout metadata. No learner data."];
+ const lines=["HIGH SCHOOL / VNV FORENSIC REPORT v2.1.0","Read-only DOM and layout metadata. No learner data."];
  const add=(head,parts)=>{lines.push("\n["+head+"]",...parts)};
  const root=document.documentElement,body=document.body;
  add("VIEWPORT & OVERFLOW",[
@@ -44,6 +44,10 @@ function report(){
  add("STACK & OCCLUSION",[
   "333→auto gap/overlap="+delta(rt,ra)+" · auto→header gap/overlap="+delta(ra,rh),
   "header bottom="+(rh?.bottom??"missing")+" · expected viewport first content below header (sticky offsets may vary)",
+ "header computed top="+(h?cs(h).top:"missing")+" · root --vnv-header-top="+cs(root).getPropertyValue("--vnv-header-top").trim()+
+  " · intended ticker combined height="+((rt?.h||0)+(ra?.h||0))+"px",
+ "ticker computed top="+[t,a].map(el=>el?el.id+":"+cs(el).top:"missing").join(" · "),
+ "header ancestor chain="+(h?(()=>{const names=[];for(let n=h.parentElement;n&&names.length<5;n=n.parentElement)names.push(n.tagName.toLowerCase()+(n.id?"#"+n.id:""));return names.join(" > ")})():"missing"),
   ...[t,a,h].filter(Boolean).map(el=>{
    const r=safeRect(el),x=Math.min(Math.max(r.x+Math.min(20,r.w/2),0),innerWidth-1),y=Math.min(Math.max(r.y+Math.min(8,r.h/2),0),innerHeight-1);
    const top=document.elementFromPoint(x,y);
@@ -99,7 +103,8 @@ function report(){
   const dest=el.getAttribute("href");return dest&&dest.length>1&&!document.getElementById(dest.slice(1));
  }).slice(0,16).map(el=>el.getAttribute("href"));
  add("LOCAL LINK TARGETS",[
-  "unresolved same-page anchors="+broken.length+" (max 16 shown): "+(broken.join(", ")||"none"),
+  "unresolved same-page anchors="+broken.length+" (max 16 shown): "+(broken.map(x=>x==="#high-school-directory"?x+" [intercepted: opens directory drawer]":x).join(", ")||"none"),
+  "choose-profile matches: "+[...document.querySelectorAll('a[href="#choose-profile"]')].slice(0,5).map(x=>x.outerHTML.slice(0,210)).join(" | "),
   "Does not fetch destination URLs or inspect page/account data"
  ]);
  add("EVENT TIMELINE",trace.slice(-24));
@@ -152,5 +157,5 @@ window.addEventListener("error",e=>{
  else if(e.message)note("JS ERROR: "+String(e.message).slice(0,140));
 },true);
 window.addEventListener("unhandledrejection",e=>note("PROMISE REJECTION: "+String(e.reason?.message||"unknown").slice(0,130)));
-window.KhaemenesHighChromeAudit=Object.freeze({version:"2.0.0",snapshot:()=>report(),events:()=>trace.slice(),refresh:()=>refresh()});
+window.KhaemenesHighChromeAudit=Object.freeze({version:"2.1.0",snapshot:()=>report(),events:()=>trace.slice(),refresh:()=>refresh()});
 })();
