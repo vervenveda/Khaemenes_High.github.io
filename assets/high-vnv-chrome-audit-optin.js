@@ -27,7 +27,7 @@ const describe=(name,id)=>{
  }).join("\n");
 };
 function report(){
- const lines=["HIGH SCHOOL / VNV FORENSIC REPORT v2.1.0","Read-only DOM and layout metadata. No learner data."];
+ const lines=["HIGH SCHOOL / VNV FORENSIC REPORT v2.2.0","Read-only DOM and layout metadata. No learner data."];
  const add=(head,parts)=>{lines.push("\n["+head+"]",...parts)};
  const root=document.documentElement,body=document.body;
  add("VIEWPORT & OVERFLOW",[
@@ -100,11 +100,11 @@ function report(){
    " · columns="+cs(el).gridTemplateColumns.slice(0,90);
  }));
  const broken=[...document.querySelectorAll('a[href^="#"]')].filter(el=>{
-  const dest=el.getAttribute("href");return dest&&dest.length>1&&!document.getElementById(dest.slice(1));
+  const dest=el.getAttribute("href");const dialogId=el.getAttribute("aria-controls");return dest&&dest.length>1&&!document.getElementById(dest.slice(1))&&!(dialogId&&document.getElementById(dialogId));
  }).slice(0,16).map(el=>el.getAttribute("href"));
  add("LOCAL LINK TARGETS",[
   "unresolved same-page anchors="+broken.length+" (max 16 shown): "+(broken.map(x=>x==="#high-school-directory"?x+" [intercepted: opens directory drawer]":x).join(", ")||"none"),
-  "choose-profile matches: "+[...document.querySelectorAll('a[href="#choose-profile"]')].slice(0,5).map(x=>x.outerHTML.slice(0,210)).join(" | "),
+  "choose-profile actions: "+[...document.querySelectorAll('a[href="#choose-profile"]')].slice(0,5).map(x=>x.getAttribute("aria-controls")&&document.getElementById(x.getAttribute("aria-controls"))?"dialog controller present ("+x.getAttribute("aria-controls")+")":"UNRESOLVED").join(" | "),
   "Does not fetch destination URLs or inspect page/account data"
  ]);
  add("EVENT TIMELINE",trace.slice(-24));
@@ -157,5 +157,5 @@ window.addEventListener("error",e=>{
  else if(e.message)note("JS ERROR: "+String(e.message).slice(0,140));
 },true);
 window.addEventListener("unhandledrejection",e=>note("PROMISE REJECTION: "+String(e.reason?.message||"unknown").slice(0,130)));
-window.KhaemenesHighChromeAudit=Object.freeze({version:"2.1.0",snapshot:()=>report(),events:()=>trace.slice(),refresh:()=>refresh()});
+window.KhaemenesHighChromeAudit=Object.freeze({version:"2.2.0",snapshot:()=>report(),events:()=>trace.slice(),refresh:()=>refresh()});
 })();
