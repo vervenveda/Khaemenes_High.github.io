@@ -7,6 +7,12 @@ const photo=read("grades/grade-09/student-profile/student-profile-photo.js");
 assert.match(photo,/yearbookChoose\.addEventListener\("click"/);
 assert.match(photo,/learner\(\)!==owner/);
 assert.match(photo,/localStorage\.getItem\(key\)!==data/);
+assert.match(photo,/let photoOperation=0/);
+assert.match(photo,/const request=\+\+photoOperation/);
+assert.match(photo,/request!==photoOperation/);
+assert.match(photo,/remove\.addEventListener\("click",\(\)=>\{[\s\S]*?photoOperation\+\+/);
+assert.match(photo,/khaemenes-student-profile-changed",\(\)=>\{photoOperation\+\+;display\(\)\}/);
+
 for(const grade of ["09","10","11","12"]){
  for(const sub of ["index.html","profile/index.html"]){
   const file="grades/grade-"+grade+"/student-profile/"+sub;
