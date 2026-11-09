@@ -39,15 +39,18 @@ async function gradeRun(browser,grade){
  const d=page.locator('#grade09StudyStudioDialog');
  assert.equal(await d.evaluate(el=>el.open),true);
  log.push('Grade '+grade+': opens');
+ await d.locator('[data-room="notes"]').click();
  await d.locator('#g09sNotes').fill('Atom: smallest unit');
  assert.equal(await page.evaluate(()=>Array.from({length:localStorage.length},(_,i)=>localStorage.key(i)).some(k=>k.includes('recovery-draft-v1'))),true);
  await d.locator('#g09sSave').click();
  assert.match(await d.locator('#g09sStatus').innerText(),/saved and checked/);
  log.push('Grade '+grade+': note draft and verified save');
+ await d.locator('[data-room="cards"]').click();
  await d.locator('#g09sBuild').click();
  await d.locator('#g09sSaveDeck').click();
  assert.match(await d.locator('#g09sDeckStatus').innerText(),/saved and checked/);
  log.push('Grade '+grade+': saved flashcard deck');
+ await d.locator('[data-room="lab"]').click();
  const board=d.locator('#g09sCanvas');
  const bounds=await board.boundingBox();
  assert.ok(bounds?.width>10&&bounds?.height>10);
@@ -67,6 +70,7 @@ async function gradeRun(browser,grade){
  await page.waitForFunction(()=>document.getElementById('g09sBoardStatus')?.textContent?.includes('restored'));
  log.push('Grade '+grade+': class isolation and whiteboard restore');
  await page.evaluate(()=>window.__synthetic.learner='different-learner');
+ await d.locator('[data-room="notes"]').click();
  await d.locator('#g09sNotes').fill('Unauthorized: test');
  await d.locator('#g09sSave').click();
  assert.match(await d.locator('#g09sStatus').innerText(),/Save blocked/);
