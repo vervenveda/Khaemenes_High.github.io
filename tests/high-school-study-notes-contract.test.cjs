@@ -37,6 +37,22 @@ for(const [name,p,key] of [
   assert.ok(s.includes('notes.value=draft.text'));
   assert.ok(s.includes('discardDraft(loadedCourse)'));
  });
+ test(name+': flashcard decks are learner and course scoped and opt-in',()=>{
+  const s=read(p);
+  for(const fragment of [
+   'function cardKey(){return key()+":flashcard-deck-v1"}',
+   'function canUseCards()',
+   'verifiedLearner()===learner',
+   'function validCards(value)',
+   'function loadDeck()',
+   'savedNotes=notes.value;loadDeck();return recoverDraft()',
+   'g09sSaveDeck',
+   'localStorage.setItem(storageKey,value)',
+   'localStorage.getItem(storageKey)!==value',
+   'version:1,cards:cards.map(pair=>pair.slice())'
+  ])assert.ok(s.includes(fragment),fragment);
+  assert.ok(s.indexOf('localStorage.getItem(storageKey)!==value') < s.indexOf('Flashcard deck saved and checked'));
+ });
  test(name+': leave warnings and studio features remain present',()=>{
   const s=read(p);
   for(const fragment of ['sel.value=loadedCourse;return','if(confirmDiscard())d.close()','addEventListener("cancel"','addEventListener("beforeunload"','g09sBuild','g09sCanvas','g09sClear'])
