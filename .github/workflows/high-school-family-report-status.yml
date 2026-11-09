@@ -1,0 +1,22 @@
+name: High School Family Report Status
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - audit/high-school-family-report-status-2026-11-09
+    paths:
+      - grades/shared/high-school-family-report-status.js
+      - grades/grade-*/student-profile/index.html
+      - tests/high-school-family-report-status.test.cjs
+      - .github/workflows/high-school-family-report-status.yml
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: node --test tests/high-school-family-report-status.test.cjs
