@@ -49,6 +49,9 @@ const sel=$("g09sCourse"),notes=$("g09sNotes");let learner="",cards=[],idx=0,fli
 let loadedCourse="",savedNotes="";
 function hasUnsavedNotes(){return notes.value!==savedNotes}
 function confirmDiscard(){return !hasUnsavedNotes()||window.confirm("You have unsaved study notes. Leave without saving them?")}
+// Warn only while the notes editor is open and contains changes not verified as saved.
+// Browsers decide whether to display the generic leave-page confirmation.
+window.addEventListener("beforeunload",event=>{if(!d.open||!hasUnsavedNotes())return;event.preventDefault();event.returnValue="";});
 function key(){return "g09-study-studio-notes-v1:"+encodeURIComponent(learner)+":"+encodeURIComponent(sel.value)}
 function verifiedLearner(){const p=contract?.readAcademyProfile?.()?.learnerId;const selected=window.KhaemenesStudentProfileV2?.activeLearner?.();const a=selected?.learnerId;return p&&a&&String(p)===String(a)&&selected?.stage==="high"&&Number(selected.grade)===9?String(a):""}
 function refreshCourse(){const c=reg?.getCourse?.(sel.value),openCourse=$("g09sOpenCourse");if(c?.home){openCourse.href=c.home;openCourse.textContent="Open Selected Class";openCourse.setAttribute("aria-disabled","false");openCourse.removeAttribute("tabindex")}else{openCourse.href="#";openCourse.textContent="Choose a Class First";openCourse.setAttribute("aria-disabled","true");openCourse.setAttribute("tabindex","-1")} $("g09sMentor").href=reg?.mentorFor?.(sel.value)||"../../../mentor/";notes.value="";if(learner&&sel.value)try{notes.value=localStorage.getItem(key())||""}catch{}loadedCourse=sel.value;savedNotes=notes.value;}
