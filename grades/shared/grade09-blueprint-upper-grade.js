@@ -174,9 +174,9 @@ function upperGradeDialog(id,title,renderContents){
   content.style.cssText="display:grid;gap:12px";
   dlg.append(top,content);document.body.append(dlg);
   dlg.addEventListener("click",e=>{if(e.target===dlg)dlg.close()});
-  dlg.addEventListener("close",()=>{if(grade==="11"&&dlg._khaeOpener?.isConnected)dlg._khaeOpener.focus({preventScroll:true})});
+  window.KhaemenesHighProfileToolSpec?.bindDialogFocus?.(dlg,opener);
  }
- if(grade==="11")dlg._khaeOpener=opener;
+ window.KhaemenesHighProfileToolSpec?.bindDialogFocus?.(dlg,opener);
  renderContents(dlg.querySelector("[data-upper-grade-dialog-content]"));
  if(typeof dlg.showModal==="function"){
   if(!dlg.open)dlg.showModal();
@@ -289,6 +289,14 @@ function renderTools(){
   toolSpec?.decorate?.(item,action.id);
   if(action.url){
    item.href=action.url;
+   if(action.id==="edit-profile")item.addEventListener("click",event=>{
+    // Learner selection can change after rendering the toolbar.
+    const current=gradeContext();
+    const destination=current?.gradeNumber===Number(grade)?builder:
+     current?.grade?highRoot+"grades/grade-"+current.grade+"/student-profile/":
+     "https://vervenveda.com/Khaemenes_Academy.github.io/family/";
+    if(item.href!==destination){event.preventDefault();location.assign(destination)}
+   });
    if(action.preview){
     item.title="KlasaiPeer public design preview (not enrolled adoption or active chat)";
     item.setAttribute("aria-label","KlasaiPeer public design preview");
@@ -297,12 +305,13 @@ function renderTools(){
    item.type="button";
    item.addEventListener("click",()=>{
     // Progress is read-only. The dialog itself enforces registered-grade privacy.
-    if(action.label==="Class Progress"){action.run();return;}
+    if(action.id==="class-progress"){action.run();return;}
     const ctx=gradeContext();
-    if(action.label!=="KlasaiPeer"&&(!ctx||ctx.gradeNumber!==Number(grade))){
-     if(ctx?.grade&&["11","12"].includes(grade)){
-      location.assign(highRoot+"grades/grade-"+ctx.grade+"/student-profile/");
-     }
+    if(!ctx||ctx.gradeNumber!==Number(grade)){
+     // Never launch another learner's grade-specific creative editor or tools.
+     const destination=ctx?.grade?highRoot+"grades/grade-"+ctx.grade+"/student-profile/":
+      "https://vervenveda.com/Khaemenes_Academy.github.io/family/";
+     location.assign(destination);
      return;
     }
     const handled=action.run?.();
