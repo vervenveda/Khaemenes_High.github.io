@@ -19,13 +19,34 @@ const pages=[
 assert.equal(pages.length,36);
 for(const file of pages){
  const source=fs.readFileSync(file,"utf8");
- for(const suffix of [".js",".css"]){
-  const match=source.match(new RegExp('(?:src|href)="([^"]*high-navigation-v1\\'+suffix+')"'));
-  assert.ok(match,file+" missing navigation "+suffix);
-  const resolved=path.posix.normalize(path.posix.join(path.posix.dirname(file),match[1]));
-  assert.ok(fs.existsSync(resolved),file+" broken local navigation asset "+resolved);
+ const studentProfile=/^grades\\/grade-(09|10|11|12)\\/student-profile\\/index\\.html$/.test(file);
+ const frontDoor=file==="index.html";
+ const preAlgebra=file==="courses/mathematics/pre-algebra/index.html";
+ // The Academy homepage has its own inline styles. Student profiles use the canonical
+ // VNV header and toolbar, while Pre-Algebra has its own course return control.
+ if(studentProfile){
+  assert.ok(source.includes("vnv-header-autopopulate.js"),file+" missing canonical profile header");
+  assert.ok(source.includes("vnv-ecosystem-toolbar.js"),file+" missing canonical profile toolbar");
+  assert.ok(/(?:study-studio\\.js|upper-grade-klasaipeer-studio\\.js)/.test(source),file+" missing study studio entrypoint");
+ }else{
+  if(frontDoor){
+   assert.ok(source.includes("vnv-header-autopopulate.js"),file+" missing canonical homepage header");
+   assert.ok(/<style>/i.test(source),file+" missing homepage inline styles");
+  }
+  if(preAlgebra)assert.ok(source.includes("high-school-return-to-classes.js"),file+" missing course return control");
+  const suffixes=frontDoor?[".js"]:preAlgebra?[".css"]:[".js",".css"];
+  for(const suffix of suffixes){
+   const assetPattern=suffix===".js"
+    ?/(?:src|href)="([^"]*high-navigation-v1\\.js(?:\\?[^"]*)?)"/
+    :/(?:src|href)="([^"]*high-navigation-v1\\.css(?:\\?[^"]*)?)"/;
+   const match=source.match(assetPattern);
+   assert.ok(match,file+" missing navigation "+suffix);
+   const href=match[1].split("?")[0];
+   const resolved=path.posix.normalize(path.posix.join(path.posix.dirname(file),href));
+   assert.ok(fs.existsSync(resolved),file+" broken local navigation asset "+resolved);
+  }
  }
- assert.ok(/<main\b/i.test(source),file+" missing main landmark");
+ assert.ok(/<main\\b/i.test(source),file+" missing main landmark");
 }
 for(const course of ["precalculus-trigonometry","calculus-1"]){
  const html=fs.readFileSync("courses/mathematics/"+course+"/index.html","utf8");
