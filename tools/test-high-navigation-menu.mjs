@@ -88,7 +88,7 @@ a.hostEvents.get("pageshow")();
 assert.ok(a.profile.href.endsWith("/grades/grade-12/student-profile/"),"browser Back resolves new learner");
 a.store.set("khaemenes_active_learner_v1",JSON.stringify("absent"));
 a.hostEvents.get("storage")({key:"khaemenes_active_learner_v1"});
-assert.ok(a.profile.href.endsWith("/index.html#student-portal"),"unknown learner safe doorway");
+assert.ok(a.profile.href.endsWith("/Khaemenes_Academy.github.io/family/enroll/"),"unknown learner routes to public Academy enrollment");
 const b=boot({canonical:true});
 assert.ok(!b.doc.getElementById("khaeLocalEcosystemToggle"),"no duplicate canonical ecosystem menu");
 const c=boot({slot:false,relative:"courses/mathematics/algebra-2/index.html"});
