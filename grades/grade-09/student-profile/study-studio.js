@@ -48,18 +48,45 @@ const $=x=>d.querySelector("#"+x),reg=window.KhaemenesGrade09Courses,contract=wi
 const sel=$("g09sCourse"),notes=$("g09sNotes");let learner="",cards=[],idx=0,flipped=false,origin=null;
 let loadedCourse="",savedNotes="";
 function hasUnsavedNotes(){return notes.value!==savedNotes}
-function confirmDiscard(){return !hasUnsavedNotes()||window.confirm("You have unsaved study notes. Leave without saving them?")}
+function confirmDiscard(){
+ if(!hasUnsavedNotes())return true;
+ if(!window.confirm("You have unsaved study notes. Leave without saving them?"))return false;
+ // Explicit discard may remove a draft; a failed removal never blocks leaving.
+ discardDraft();return true;
+}
 // Warn only while the notes editor is open and contains changes not verified as saved.
 // Browsers decide whether to display the generic leave-page confirmation.
 window.addEventListener("beforeunload",event=>{if(!d.open||!hasUnsavedNotes())return;event.preventDefault();event.returnValue="";});
 function key(){return "g09-study-studio-notes-v1:"+encodeURIComponent(learner)+":"+encodeURIComponent(sel.value)}
+function draftKey(){return key()+":recovery-draft-v1"}
+function discardDraft(){if(learner&&sel.value&&verifiedLearner()===learner)try{localStorage.removeItem(draftKey())}catch{}}
+function recoverDraft(){
+ if(!learner||verifiedLearner()!==learner||!sel.value||!reg?.getCourse?.(sel.value))return;
+ try{
+  const raw=localStorage.getItem(draftKey());if(!raw)return;
+  const draft=JSON.parse(raw);
+  if(!draft||draft.version!==1||typeof draft.text!=="string")return;
+  if(draft.text===savedNotes){discardDraft();return}
+  if(window.confirm("A study-note draft was found on this device for this class. Restore it? Your saved notes will not be overwritten unless you press Save Notes.")){
+   notes.value=draft.text;
+   $("g09sStatus").textContent="Unsaved draft restored on this device. Choose Save Notes to keep it.";
+  }
+ }catch{}
+}
+notes.addEventListener("input",()=>{
+ if(!learner||verifiedLearner()!==learner||!sel.value||!reg?.getCourse?.(sel.value))return;
+ try{
+  if(!hasUnsavedNotes()){discardDraft();return}
+  localStorage.setItem(draftKey(),JSON.stringify({version:1,text:notes.value,updatedAt:new Date().toISOString()}));
+ }catch{$("g09sStatus").textContent="Draft recovery is unavailable on this device. Save your notes or keep a separate copy."}
+});
 function verifiedLearner(){const p=contract?.readAcademyProfile?.()?.learnerId;const selected=window.KhaemenesStudentProfileV2?.activeLearner?.();const a=selected?.learnerId;return p&&a&&String(p)===String(a)&&selected?.stage==="high"&&Number(selected.grade)===9?String(a):""}
-function refreshCourse(){const c=reg?.getCourse?.(sel.value),openCourse=$("g09sOpenCourse");if(c?.home){openCourse.href=c.home;openCourse.textContent="Open Selected Class";openCourse.setAttribute("aria-disabled","false");openCourse.removeAttribute("tabindex")}else{openCourse.href="#";openCourse.textContent="Choose a Class First";openCourse.setAttribute("aria-disabled","true");openCourse.setAttribute("tabindex","-1")} $("g09sMentor").href=reg?.mentorFor?.(sel.value)||"../../../mentor/";notes.value="";if(learner&&sel.value)try{notes.value=localStorage.getItem(key())||""}catch{}loadedCourse=sel.value;savedNotes=notes.value;}
+function refreshCourse(){const c=reg?.getCourse?.(sel.value),openCourse=$("g09sOpenCourse");if(c?.home){openCourse.href=c.home;openCourse.textContent="Open Selected Class";openCourse.setAttribute("aria-disabled","false");openCourse.removeAttribute("tabindex")}else{openCourse.href="#";openCourse.textContent="Choose a Class First";openCourse.setAttribute("aria-disabled","true");openCourse.setAttribute("tabindex","-1")} $("g09sMentor").href=reg?.mentorFor?.(sel.value)||"../../../mentor/";notes.value="";if(learner&&sel.value)try{notes.value=localStorage.getItem(key())||""}catch{}loadedCourse=sel.value;savedNotes=notes.value;recoverDraft();}
 function open(source){if(d.open&&!confirmDiscard())return;origin=source||document.activeElement;learner=verifiedLearner();sel.replaceChildren();const option=document.createElement("option");option.textContent="Choose a class";option.value="";sel.append(option);for(const c of reg?.courses||[]){if(!c?.id)continue;const o=document.createElement("option");o.value=c.id;o.textContent=c.title;sel.append(o)}sel.value=reg?.resumePriorityCourse?.()?.id||"";refreshCourse();$("g09sStatus").textContent=learner?"These notes are stored on this device only; cloud backup is not active.":"Choose your registered Grade 9 student profile to save notes on this device.";if(!d.open)d.showModal()}
 sel.addEventListener("change",()=>{if(!confirmDiscard()){sel.value=loadedCourse;return}refreshCourse()});
 $("g09sOpenCourse").addEventListener("click",event=>{if($("g09sOpenCourse").getAttribute("aria-disabled")==="true"){event.preventDefault();$("g09sStatus").textContent="Choose a class first, then open it from here.";return}if(!confirmDiscard())event.preventDefault()});
 for(const b of d.querySelectorAll("[data-room]"))b.addEventListener("click",()=>{for(const p of d.querySelectorAll("[data-panel]"))p.hidden=p.dataset.panel!==b.dataset.room;for(const t of d.querySelectorAll("[data-room]"))t.setAttribute("aria-pressed",String(t===b))});
-$("g09sSave").addEventListener("click",()=>{if(!learner||verifiedLearner()!==learner||!sel.value||!reg?.getCourse?.(sel.value)){$("g09sStatus").textContent="Save blocked: select your registered Grade 9 learner and a valid class. No notes were changed.";return}try{const noteKey=key(),value=notes.value;localStorage.setItem(noteKey,value);if(localStorage.getItem(noteKey)!==value)throw new Error("Local note verification failed");savedNotes=value;$("g09sStatus").textContent="Notes saved and checked on this device only. Cross-device backup is not yet active."}catch{$("g09sStatus").textContent="Notes were not verified as saved on this device. Keep a copy before leaving."}});
+$("g09sSave").addEventListener("click",()=>{if(!learner||verifiedLearner()!==learner||!sel.value||!reg?.getCourse?.(sel.value)){$("g09sStatus").textContent="Save blocked: select your registered Grade 9 learner and a valid class. No notes were changed.";return}try{const noteKey=key(),value=notes.value;localStorage.setItem(noteKey,value);if(localStorage.getItem(noteKey)!==value)throw new Error("Local note verification failed");savedNotes=value;discardDraft();$("g09sStatus").textContent="Notes saved and checked on this device only. Cross-device backup is not yet active."}catch{$("g09sStatus").textContent="Notes were not verified as saved on this device. Keep a copy before leaving."}});
 $("g09sOutline").addEventListener("click",()=>{const ol=$("g09sOutlineList");ol.replaceChildren();for(const line of notes.value.split("\n").map(x=>x.trim()).filter(Boolean).slice(0,40)){const li=document.createElement("li");li.textContent=line;ol.append(li)}});
 function show(){const c=cards[idx];$("g09sCard").textContent=c?(flipped?c[1]:c[0]):"No practice cards yet.";$("g09sCounter").textContent=cards.length?(idx+1)+" of "+cards.length:"";}
 $("g09sBuild").addEventListener("click",()=>{cards=notes.value.split("\n").map(s=>{const i=s.indexOf(":");return i>0?[s.slice(0,i).trim(),s.slice(i+1).trim()]:null}).filter(x=>x&&x[0]&&x[1]).slice(0,60);idx=0;flipped=false;show()});
