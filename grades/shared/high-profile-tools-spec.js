@@ -26,6 +26,27 @@
   return actions.slice().sort((a,b)=>byId.get(a.id).position-byId.get(b.id).position);
  }
  function label(id){return byId.get(id)?.label||null}
+ const dialogOpeners=new WeakMap();
+ function bindDialogFocus(dialog,opener){
+  if(!dialog||typeof dialog.addEventListener!=="function")return false;
+  if(!dialog.__khaeToolFocusBound){
+   dialog.addEventListener("close",()=>{
+    const previous=dialogOpeners.get(dialog);
+    dialogOpeners.delete(dialog);
+    if(previous?.isConnected&&typeof previous.focus==="function")previous.focus({preventScroll:true});
+   });
+   dialog.__khaeToolFocusBound=true;
+  }
+  if(opener&&typeof opener.focus==="function")dialogOpeners.set(dialog,opener);
+  return true;
+ }
+ function openDialog(dialog,opener){
+  if(!dialog||typeof dialog.showModal!=="function")return false;
+  if(dialog.open)return true;
+  bindDialogFocus(dialog,opener);
+  dialog.showModal();
+  return true;
+ }
  function decorate(element,id){
   const rule=byId.get(id);
   if(!element||!rule)throw new Error("unknown-profile-tool");
@@ -67,6 +88,6 @@
   `;
   (doc.head||doc.documentElement)?.append(sheet);
  }
- global.KhaemenesHighProfileToolSpec=Object.freeze({version:"1.0.0",entries,ordered,label,decorate,installStyles});
+ global.KhaemenesHighProfileToolSpec=Object.freeze({version:"1.1.0",entries,ordered,label,decorate,installStyles,bindDialogFocus,openDialog});
  installStyles();
 })(window);
