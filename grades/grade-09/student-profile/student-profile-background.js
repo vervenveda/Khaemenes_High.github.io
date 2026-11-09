@@ -346,7 +346,7 @@ for(const section of surfaces){
 }
 popup.append(toolbar,explanation,pageGroup,sectionsGroup,saveAll,status);
 document.body.append(popup);
-const opener=action("Customize Background");
+const opener=action("Edit Background");
 opener.id="openGrade09BackgroundDialog";
 opener.className="grade09-profile-tool";
 opener.setAttribute("aria-haspopup","dialog");
@@ -357,7 +357,11 @@ opener.style.setProperty("-webkit-text-fill-color","#fff8e9","important");
 opener.addEventListener("click",()=>{refresh();popup.showModal();close.focus()});
 popup.addEventListener("close",()=>{refresh();if(opener.isConnected)opener.focus()});
 popup.addEventListener("click",event=>{if(event.target===popup)popup.close()});
-toolGrid.append(opener);
+// Keep the existing background dialog and student permission checks intact.
+// Place its launcher between Edit Profile and Yearbook in the second toolbar row.
+const yearbookTool=[...toolGrid.children].find(node=>node.textContent.trim()==="Yearbook");
+if(yearbookTool)toolGrid.insertBefore(opener,yearbookTool);
+else toolGrid.append(opener);
 
 function refresh(){
  const owner=person();
