@@ -303,6 +303,13 @@ function renderTools(){
    }
   }else{
    item.type="button";
+   // Explicit dialog semantics for keyboard and assistive technology users.
+   const dialogTargets={"class-progress":"grade09ClassProgressDialog","schedule":"upperGradeScheduleDialog",
+    "klasaipeer":"grade09StudyStudioDialog","yearbook":"grade09YearbookDialog"};
+   if(dialogTargets[action.id]){
+    item.setAttribute("aria-haspopup","dialog");
+    item.setAttribute("aria-controls",dialogTargets[action.id]);
+   }
    item.addEventListener("click",()=>{
     // Progress is read-only. The dialog itself enforces registered-grade privacy.
     if(action.id==="class-progress"){action.run();return;}
