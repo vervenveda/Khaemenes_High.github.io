@@ -10,7 +10,7 @@ const grade11Copy=grade===11;
 const grade12Copy=grade===12;
 if(![10,11,12].includes(grade)||window.KhaemenesUpperGradeStudyStudio)return;
 const d=document.createElement("dialog");d.id="grade09StudyStudioDialog";d.setAttribute("aria-labelledby","g09StudioTitle");
-d.innerHTML="<header class=\"g09s-head\"><h2 id=\"g09StudioTitle\">KlasaiPeer · My AI Class Pal</h2><button id=\"g09sClose\" type=\"button\">Close</button></header><div class=\"g09s-body\"><section class=\"g09s-construction\" aria-label=\"Development status\"><strong>Under Construction · Development Preview</strong><p>We are building KlasaiPeer as an AI class companion for Khaemenes Academy. This is a visual roadmap; authenticated AI tutoring, adoption and persistent memory are not connected here.</p><a class=\"g09s-landing\" href=\"https://vervenveda.com/Klasaipeer.github.io/\" target=\"_blank\" rel=\"noopener\">Explore the KlasaiPeer Landing Page</a></section><p class=\"g09s-preview-intro\">Choose a class and explore the vision. Local practice tools are separate from course grades and mastery.</p><label>Choose class <select id=\"g09sCourse\"></select></label><nav class=\"g09s-tabs\" aria-label=\"KlasaiPeer feature areas\"><button data-room=\"pal\" aria-pressed=\"true\">Class Pal Vision</button><button data-room=\"notes\" aria-pressed=\"false\">Study Notes</button><button data-room=\"cards\" aria-pressed=\"false\">Flashcards</button><button data-room=\"lab\" aria-pressed=\"false\">Whiteboard</button></nav><section data-panel=\"pal\"><h3>Your Future Class Companion</h3><p>KlasaiPeer is envisioned as a familiar, customizable schoolmate supporting curiosity and practice throughout the Academy.</p><div class=\"g09s-feature-grid\"><article><span class=\"g09s-feature-number\">01 · Planned</span><h4>Personalized AI Tutor</h4><p>Curriculum-aware explanations, reasoning and guidance matched to each course.</p></article><article><span class=\"g09s-feature-number\">02 · Planned</span><h4>Ask KlasaiPeer</h4><p>Syllabus-based conversations and step-by-step guidance for challenging concepts.</p></article><article><span class=\"g09s-feature-number\">03 · Local preview</span><h4>Study Notes & Summaries</h4><p>Local notes and simple outlining are available; AI reading summaries are planned.</p></article><article><span class=\"g09s-feature-number\">04 · Local preview</span><h4>Flashcards & Quizzes</h4><p>Practice cards from personal notes are available; AI quizzes are planned.</p></article><article><span class=\"g09s-feature-number\">05 · Planned</span><h4>Exam Feedback</h4><p>Future practice marking and misconception checks, without changing official grades.</p></article><article><span class=\"g09s-feature-number\">06 · Mixed roadmap</span><h4>Learning Lab</h4><p>Local whiteboard available; 3D worlds, coding IDEs and logic-gate labs are planned.</p></article></div><div class=\"g09s-next\"><h4>Growing with the learner</h4><p>Planned features include profile-based adoption, customizable avatars, voice, language and age-appropriate learning support. Production adoption and private companion memory are not active here.</p><div class=\"g09s-links\"><a href=\"https://vervenveda.com/Klasaipeer.github.io/\" target=\"_blank\" rel=\"noopener\">Visit KlasaiPeer Preview</a><a id=\"g09sMentor\" href=\"../../../mentor/\">Open Academy Mentor</a><a id=\"g09sOpenCourse\" href=\"profile/\">Open Selected Class</a></div></div></section><section data-panel=\"notes\" hidden><h3>My Study Notes</h3><p>Write notes here, or one Term: Explanation per line to create flashcards.</p><textarea id=\"g09sNotes\" rows=\"9\"></textarea><button id=\"g09sSave\">Save Notes</button><button id=\"g09sOutline\">Outline My Notes</button><p id=\"g09sStatus\" role=\"status\"></p><ol id=\"g09sOutlineList\"></ol></section><section data-panel=\"cards\" hidden><h3>Practice Flashcards</h3><button id=\"g09sBuild\">Build From Notes</button><button id=\"g09sSaveDeck\" type=\"button\">Save Deck</button><p id=\"g09sDeckStatus\" role=\"status\" aria-live=\"polite\">Flashcard decks are stored on this device only.</p><div id=\"g09sCard\" class=\"g09s-card\">Add Term: Explanation lines in Notes.</div><button id=\"g09sFlip\">Reveal</button><button id=\"g09sNext\">Next</button><p id=\"g09sCounter\" role=\"status\"></p></section><section data-panel=\"lab\" hidden><h3>Learning Whiteboard</h3><p>Draw with a mouse, stylus or finger. 3D, IDE and logic gate labs are planned integrations.</p><button id=\"g09sClear\">Clear</button><canvas id=\"g09sCanvas\" width=\"1000\" height=\"340\"></canvas></section></div>";
+d.innerHTML="<header class=\"g09s-head\"><h2 id=\"g09StudioTitle\">KlasaiPeer · My AI Class Pal</h2><button id=\"g09sClose\" type=\"button\">Close</button></header><div class=\"g09s-body\"><section class=\"g09s-construction\" aria-label=\"Development status\"><strong>Under Construction · Development Preview</strong><p>We are building KlasaiPeer as an AI class companion for Khaemenes Academy. This is a visual roadmap; authenticated AI tutoring, adoption and persistent memory are not connected here.</p><a class=\"g09s-landing\" href=\"https://vervenveda.com/Klasaipeer.github.io/\" target=\"_blank\" rel=\"noopener\">Explore the KlasaiPeer Landing Page</a></section><p class=\"g09s-preview-intro\">Choose a class and explore the vision. Local practice tools are separate from course grades and mastery.</p><label>Choose class <select id=\"g09sCourse\"></select></label><nav class=\"g09s-tabs\" aria-label=\"KlasaiPeer feature areas\"><button data-room=\"pal\" aria-pressed=\"true\">Class Pal Vision</button><button data-room=\"notes\" aria-pressed=\"false\">Study Notes</button><button data-room=\"cards\" aria-pressed=\"false\">Flashcards</button><button data-room=\"lab\" aria-pressed=\"false\">Whiteboard</button></nav><section data-panel=\"pal\"><h3>Your Future Class Companion</h3><p>KlasaiPeer is envisioned as a familiar, customizable schoolmate supporting curiosity and practice throughout the Academy.</p><div class=\"g09s-feature-grid\"><article><span class=\"g09s-feature-number\">01 · Planned</span><h4>Personalized AI Tutor</h4><p>Curriculum-aware explanations, reasoning and guidance matched to each course.</p></article><article><span class=\"g09s-feature-number\">02 · Planned</span><h4>Ask KlasaiPeer</h4><p>Syllabus-based conversations and step-by-step guidance for challenging concepts.</p></article><article><span class=\"g09s-feature-number\">03 · Local preview</span><h4>Study Notes & Summaries</h4><p>Local notes and simple outlining are available; AI reading summaries are planned.</p></article><article><span class=\"g09s-feature-number\">04 · Local preview</span><h4>Flashcards & Quizzes</h4><p>Practice cards from personal notes are available; AI quizzes are planned.</p></article><article><span class=\"g09s-feature-number\">05 · Planned</span><h4>Exam Feedback</h4><p>Future practice marking and misconception checks, without changing official grades.</p></article><article><span class=\"g09s-feature-number\">06 · Mixed roadmap</span><h4>Learning Lab</h4><p>Local whiteboard available; 3D worlds, coding IDEs and logic-gate labs are planned.</p></article></div><div class=\"g09s-next\"><h4>Growing with the learner</h4><p>Planned features include profile-based adoption, customizable avatars, voice, language and age-appropriate learning support. Production adoption and private companion memory are not active here.</p><div class=\"g09s-links\"><a href=\"https://vervenveda.com/Klasaipeer.github.io/\" target=\"_blank\" rel=\"noopener\">Visit KlasaiPeer Preview</a><a id=\"g09sMentor\" href=\"../../../mentor/\">Open Academy Mentor</a><a id=\"g09sOpenCourse\" href=\"profile/\">Open Selected Class</a></div></div></section><section data-panel=\"notes\" hidden><h3>My Study Notes</h3><p>Write notes here, or one Term: Explanation per line to create flashcards.</p><textarea id=\"g09sNotes\" rows=\"9\"></textarea><button id=\"g09sSave\">Save Notes</button><button id=\"g09sOutline\">Outline My Notes</button><p id=\"g09sStatus\" role=\"status\"></p><ol id=\"g09sOutlineList\"></ol></section><section data-panel=\"cards\" hidden><h3>Practice Flashcards</h3><button id=\"g09sBuild\">Build From Notes</button><button id=\"g09sSaveDeck\" type=\"button\">Save Deck</button><p id=\"g09sDeckStatus\" role=\"status\" aria-live=\"polite\">Flashcard decks are stored on this device only.</p><div id=\"g09sCard\" class=\"g09s-card\">Add Term: Explanation lines in Notes.</div><button id=\"g09sFlip\">Reveal</button><button id=\"g09sNext\">Next</button><p id=\"g09sCounter\" role=\"status\"></p></section><section data-panel=\"lab\" hidden><h3>Learning Whiteboard</h3><p>Draw with a mouse, stylus or finger. 3D, IDE and logic gate labs are planned integrations.</p><button id=\"g09sClear\">Clear</button><button id=\"g09sSaveBoard\" type=\"button\">Save Whiteboard</button><button id=\"g09sRestoreBoard\" type=\"button\">Restore Saved Whiteboard</button><p id=\"g09sBoardStatus\" role=\"status\" aria-live=\"polite\">Whiteboards are saved on this device only.</p><canvas id=\"g09sCanvas\" width=\"1000\" height=\"340\"></canvas></section></div>";
 document.body.append(d);
 
 /* Mentor directory is part of the KlasaiPeer popup, never the main profile.
@@ -77,9 +77,9 @@ function hasUnsavedNotes(){return notes.value!==savedNotes}
 function draftKey(course=sel.value){return "khae-grade"+grade+"-study-studio-notes-v1:"+encodeURIComponent(learner)+":"+encodeURIComponent(course)+":recovery-draft-v1"}
 function discardDraft(course=sel.value){if(learner&&course&&verifiedLearner()===learner)try{localStorage.removeItem(draftKey(course))}catch{}}
 function confirmDiscard(){
- if(!hasUnsavedNotes())return true;
- if(!window.confirm("You have unsaved study notes. Leave without saving them?"))return false;
- discardDraft(loadedCourse);return true;
+ if(!hasUnsavedNotes()&&!boardDirty)return true;
+ if(!window.confirm("You have unsaved "+(hasUnsavedNotes()&&boardDirty?"study notes and whiteboard changes":hasUnsavedNotes()?"study notes":"whiteboard changes")+". Leave without saving them?"))return false;
+ if(hasUnsavedNotes())discardDraft(loadedCourse);return true;
 }
 function recoverDraft(){
  if(!learner||verifiedLearner()!==learner||!sel.value||!reg?.getCourse?.(sel.value))return false;
@@ -102,9 +102,9 @@ notes.addEventListener("input",()=>{
   localStorage.setItem(draftKey(),JSON.stringify({version:1,text:notes.value,updatedAt:new Date().toISOString()}));
  }catch{$("g09sStatus").textContent="Draft recovery is unavailable on this device. Save notes or keep a separate copy."}
 });
-window.addEventListener("beforeunload",event=>{if(!d.open||!hasUnsavedNotes())return;event.preventDefault();event.returnValue=""});
+window.addEventListener("beforeunload",event=>{if(!d.open||(!hasUnsavedNotes()&&!boardDirty))return;event.preventDefault();event.returnValue=""});
 function key(){return "khae-grade"+grade+"-study-studio-notes-v1:"+encodeURIComponent(learner)+":"+encodeURIComponent(sel.value)}
-function refreshCourse(){const c=reg?.getCourse?.(sel.value),openCourse=$("g09sOpenCourse");if(grade10Copy){if(c?.home){openCourse.href=c.home;openCourse.textContent="Open Selected Class";openCourse.setAttribute("aria-disabled","false");openCourse.removeAttribute("tabindex")}else{openCourse.href="#";openCourse.textContent="Choose a Class First";openCourse.setAttribute("aria-disabled","true");openCourse.setAttribute("tabindex","-1")}}else openCourse.href=c?.home||"profile/";$("g09sMentor").href=reg?.mentorFor?.(sel.value)||"../../../mentor/";notes.value="";if(learner&&verifiedLearner()===learner&&sel.value)try{notes.value=localStorage.getItem(key())||""}catch{}loadedCourse=sel.value;savedNotes=notes.value;loadDeck();return recoverDraft()}
+function refreshCourse(){const c=reg?.getCourse?.(sel.value),openCourse=$("g09sOpenCourse");if(grade10Copy){if(c?.home){openCourse.href=c.home;openCourse.textContent="Open Selected Class";openCourse.setAttribute("aria-disabled","false");openCourse.removeAttribute("tabindex")}else{openCourse.href="#";openCourse.textContent="Choose a Class First";openCourse.setAttribute("aria-disabled","true");openCourse.setAttribute("tabindex","-1")}}else openCourse.href=c?.home||"profile/";$("g09sMentor").href=reg?.mentorFor?.(sel.value)||"../../../mentor/";notes.value="";if(learner&&verifiedLearner()===learner&&sel.value)try{notes.value=localStorage.getItem(key())||""}catch{}loadedCourse=sel.value;savedNotes=notes.value;loadDeck();restoreBoard();return recoverDraft()}
 function open(source){
  if(d.open&&!confirmDiscard())return;
  origin=source||document.activeElement;
@@ -162,8 +162,56 @@ $("g09sSaveDeck").addEventListener("click",()=>{
 });
 $("g09sFlip").addEventListener("click",()=>{flipped=true;show()});
 $("g09sNext").addEventListener("click",()=>{if(cards.length)idx=(idx+1)%cards.length;flipped=false;show()});
-const canvas=$("g09sCanvas"),ctx=canvas.getContext("2d");ctx.lineWidth=3;ctx.lineCap="round";let drawing=false;function pos(e){const b=canvas.getBoundingClientRect();return [(e.clientX-b.left)*canvas.width/b.width,(e.clientY-b.top)*canvas.height/b.height]}
-canvas.addEventListener("pointerdown",e=>{drawing=true;canvas.setPointerCapture(e.pointerId);ctx.beginPath();ctx.moveTo(...pos(e))});canvas.addEventListener("pointermove",e=>{if(!drawing)return;ctx.lineTo(...pos(e));ctx.stroke()});for(const name of ["pointerup","pointercancel"])canvas.addEventListener(name,()=>drawing=false);$("g09sClear").addEventListener("click",()=>ctx.clearRect(0,0,canvas.width,canvas.height));
+// Local drawings use a distinct learner/course key; never alter notes or academic records.
+const canvas=$("g09sCanvas"),ctx=canvas.getContext("2d");ctx.lineWidth=3;ctx.lineCap="round";
+let drawing=false,boardDirty=false,boardLoadEpoch=0;
+function boardKey(){return key()+":whiteboard-png-v1"}
+function canUseBoard(){return !!learner&&verifiedLearner()===learner&&!!sel.value&&!!reg?.getCourse?.(sel.value)}
+function resetBoard(){boardLoadEpoch++;drawing=false;ctx.clearRect(0,0,canvas.width,canvas.height);boardDirty=false}
+function restoreBoard(){
+ resetBoard();
+ const status=$("g09sBoardStatus");
+ if(!canUseBoard()){status.textContent="Select your registered learner and class to restore a whiteboard.";return}
+ const owner=learner,course=sel.value,epoch=boardLoadEpoch;
+ try{
+  const value=localStorage.getItem(boardKey());
+  if(!value){status.textContent="No saved whiteboard for this class on this device.";return}
+  if(value.length>2000000||!/^data:image\\/png;base64,[A-Za-z0-9+/=]+$/.test(value))throw Error("Invalid image data");
+  const image=new Image();
+  image.onload=()=>{
+   if(epoch!==boardLoadEpoch||!canUseBoard()||learner!==owner||sel.value!==course)return;
+   if(image.width!==canvas.width||image.height!==canvas.height){status.textContent="Saved whiteboard dimensions do not match.";return}
+   ctx.clearRect(0,0,canvas.width,canvas.height);ctx.drawImage(image,0,0);
+   boardDirty=false;status.textContent="Saved whiteboard restored from this device.";
+  };
+  image.onerror=()=>{if(epoch===boardLoadEpoch)status.textContent="Unable to decode saved whiteboard; stored copy unchanged."};
+  image.src=value;status.textContent="Loading saved whiteboard…";
+ }catch{status.textContent="Saved whiteboard could not be read; stored copy unchanged."}
+}
+function pos(e){const b=canvas.getBoundingClientRect();return [(e.clientX-b.left)*canvas.width/b.width,(e.clientY-b.top)*canvas.height/b.height]}
+canvas.addEventListener("pointerdown",e=>{if(!canUseBoard())return;boardLoadEpoch++;drawing=true;canvas.setPointerCapture(e.pointerId);ctx.beginPath();ctx.moveTo(...pos(e))});
+canvas.addEventListener("pointermove",e=>{if(!drawing)return;ctx.lineTo(...pos(e));ctx.stroke();boardDirty=true});
+for(const name of ["pointerup","pointercancel"])canvas.addEventListener(name,()=>drawing=false);
+$("g09sClear").addEventListener("click",()=>{
+ if(!canUseBoard()){$("g09sBoardStatus").textContent="Select your registered learner and class first.";return}
+ boardLoadEpoch++;ctx.clearRect(0,0,canvas.width,canvas.height);boardDirty=true;
+ $("g09sBoardStatus").textContent="Canvas cleared; the last saved drawing is unchanged until you select Save Whiteboard.";
+});
+$("g09sSaveBoard").addEventListener("click",()=>{
+ if(!canUseBoard()){$("g09sBoardStatus").textContent="Save blocked: select your registered learner and valid class.";return}
+ try{
+  const png=canvas.toDataURL("image/png"),storageKey=boardKey();
+  if(png.length>2000000||!png.startsWith("data:image/png;base64,"))throw Error("Image too large");
+  localStorage.setItem(storageKey,png);
+  if(localStorage.getItem(storageKey)!==png)throw Error("Save readback mismatch");
+  boardDirty=false;
+  $("g09sBoardStatus").textContent="Whiteboard saved and checked on this device only; cloud backup is not active.";
+ }catch{$("g09sBoardStatus").textContent="Whiteboard save was not verified. Keep a separate copy."}
+});
+$("g09sRestoreBoard").addEventListener("click",()=>{
+ if(boardDirty&&!window.confirm("Discard unsaved whiteboard changes and restore the last saved drawing?"))return;
+ restoreBoard();
+});
 $("g09sClose").addEventListener("click",()=>{if(confirmDiscard())d.close()});d.addEventListener("cancel",event=>{if(!confirmDiscard())event.preventDefault()});d.addEventListener("close",()=>origin?.isConnected&&origin.focus());
 window.KhaemenesUpperGradeStudyStudio=Object.freeze({open,version:1});
 })();
