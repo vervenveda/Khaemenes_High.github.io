@@ -47,13 +47,13 @@ if(!document.getElementById("khaeProfileToolRail")){
   {id:"edit-profile",label:"Edit Profile",href:"profile/"},
   {id:"class-progress",label:"Class Progress",target:"grade09ClassProgressDialog",fallback:"#studentCourseProgress",run:()=>{
     const popup=document.getElementById("grade09ClassProgressDialog");
-    if(popup&&!popup.open){popup.showModal();return true}
+    if(popup&&!popup.open){return Boolean(toolSpec?.openDialog?.(popup,document.activeElement));}
     if(!popup)return reveal("studentCourseProgress");
     return true;
    }},
   {id:"schedule",label:"Schedule",target:"grade09ScheduleDialog",fallback:"#grade09ProfileFirst",run:()=>{
     const popup=document.getElementById("grade09ScheduleDialog");
-    if(popup&&!popup.open){popup.showModal();return true}
+    if(popup&&!popup.open){return Boolean(toolSpec?.openDialog?.(popup,document.activeElement));}
     const schedule=document.querySelector(".grade09-priority-schedule");
     if(schedule){schedule.scrollIntoView({behavior:"smooth",block:"start"});return true}
     return false;
