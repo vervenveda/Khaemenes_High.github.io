@@ -263,22 +263,24 @@ function renderTools(){
  const grid=wrapper.firstElementChild;
  grid.classList.add("grade09-blueprint-tool-grid");
  if(grid.querySelector("[data-upper-grade-link]"))return;
+ const toolSpec=window.KhaemenesHighProfileToolSpec;
  const actions=[
-  {label:"Edit Profile",url:builder},
-  {label:"Class Progress",run:showUpperProgress},
-  {label:"Schedule",run:showUpperSchedule},
-  {label:"KlasaiPeer",fallback:"https://vervenveda.com/Klasaipeer.github.io/",run:()=>{const studio=window.KhaemenesUpperGradeStudyStudio;if(studio?.open){studio.open(document.activeElement);return true}return false}},
-  {label:"Yearbook",fallback:"https://vervenveda.com/Academy-Yearbook.github.io/",run:()=>{const yearbook=window.KhaemenesUpperGradeYearbook;if(yearbook?.open){yearbook.open(document.activeElement);return true}return false}},
-  {label:"Creative Tools",run:()=>revealUpper("grade09BlueprintRooms")},
-  {label:"Student Portfolio",run:()=>{
+  {id:"edit-profile",label:"Edit Profile",url:builder},
+  {id:"class-progress",label:"Class Progress",run:showUpperProgress},
+  {id:"schedule",label:"Schedule",run:showUpperSchedule},
+  {id:"klasaipeer",label:"KlasaiPeer",fallback:"https://vervenveda.com/Klasaipeer.github.io/",run:()=>{const studio=window.KhaemenesUpperGradeStudyStudio;if(studio?.open){studio.open(document.activeElement);return true}return false}},
+  {id:"yearbook",label:"Yearbook",fallback:"https://vervenveda.com/Academy-Yearbook.github.io/",run:()=>{const yearbook=window.KhaemenesUpperGradeYearbook;if(yearbook?.open){yearbook.open(document.activeElement);return true}return false}},
+  {id:"creative-tools",label:"Creative Tools",run:()=>revealUpper("grade09BlueprintRooms")},
+  {id:"student-portfolio",label:"Student Portfolio",run:()=>{
    const area=document.querySelector('aside[aria-label="Student Learning Portfolio"]');
    if(area){area.scrollIntoView({behavior:"smooth",block:"start"});area.querySelector("a")?.focus({preventScroll:true})}
    else location.assign(highRoot+"portfolio/index.html");
   }}
  ];
- for(const action of actions){
+ for(const action of toolSpec?.ordered?.(actions)||actions){
   const item=make(action.url?"a":"button",action.label);
   item.className="grade09-blueprint-tool";item.dataset.upperGradeLink="true";
+  toolSpec?.decorate?.(item,action.id);
   if(action.url){
    item.href=action.url;
    if(action.preview){
