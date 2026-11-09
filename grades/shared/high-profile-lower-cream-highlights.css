@@ -105,3 +105,14 @@ html:root:root body footer.footer.grade09-dashboard-footer{
   transition:none!important;
  }
 }
+
+/* Student-profile layout cleanup: after card relocation the old full-width
+   .section shell can be empty. Collapse only that empty wrapper so its
+   default parchment strip does not cut across a learner's chosen background.
+   Content-bearing sections remain visible; no course or profile state changes. */
+html:root:root body main > section.section:has(> .shell.grid:not(:has(> *))){
+ display:none!important;
+ padding:0!important;
+ margin:0!important;
+ border:0!important;
+}
