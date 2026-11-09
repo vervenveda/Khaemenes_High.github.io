@@ -42,32 +42,33 @@ if(!document.getElementById("khaeProfileToolRail")){
   element.scrollIntoView({behavior:"smooth",block:"start"});
   return true;
  };
+ const toolSpec=window.KhaemenesHighProfileToolSpec;
  const tools=[
-  {label:"Edit Profile",href:"profile/"},
-  {label:"Class Progress",target:"grade09ClassProgressDialog",fallback:"#studentCourseProgress",run:()=>{
+  {id:"edit-profile",label:"Edit Profile",href:"profile/"},
+  {id:"class-progress",label:"Class Progress",target:"grade09ClassProgressDialog",fallback:"#studentCourseProgress",run:()=>{
     const popup=document.getElementById("grade09ClassProgressDialog");
     if(popup&&!popup.open){popup.showModal();return true}
     if(!popup)return reveal("studentCourseProgress");
     return true;
    }},
-  {label:"Schedule",target:"grade09ScheduleDialog",fallback:"#grade09ProfileFirst",run:()=>{
+  {id:"schedule",label:"Schedule",target:"grade09ScheduleDialog",fallback:"#grade09ProfileFirst",run:()=>{
     const popup=document.getElementById("grade09ScheduleDialog");
     if(popup&&!popup.open){popup.showModal();return true}
     const schedule=document.querySelector(".grade09-priority-schedule");
     if(schedule){schedule.scrollIntoView({behavior:"smooth",block:"start"});return true}
     return false;
    }},
-  {label:"KlasaiPeer",target:"grade09StudyStudioDialog",fallback:"https://vervenveda.com/Klasaipeer.github.io/",run:()=>{
+  {id:"klasaipeer",label:"KlasaiPeer",target:"grade09StudyStudioDialog",fallback:"https://vervenveda.com/Klasaipeer.github.io/",run:()=>{
     const studio=window.KhaemenesGrade09StudyStudio;
     if(studio?.open){studio.open(document.activeElement);return true}
     return false;
    }},
-  {label:"Yearbook",target:"grade09YearbookDialog",fallback:"https://vervenveda.com/Academy-Yearbook.github.io/",run:()=>{
+  {id:"yearbook",label:"Yearbook",target:"grade09YearbookDialog",fallback:"https://vervenveda.com/Academy-Yearbook.github.io/",run:()=>{
     const yearbook=window.KhaemenesGrade09Yearbook;
     if(yearbook?.open){yearbook.open(document.activeElement);return true}
     return false;
    }},
-  {label:"Creative Tools",target:"khaeStudentEcosystemTools",fallback:"../../../",run:()=>{
+  {id:"creative-tools",label:"Creative Tools",target:"khaeStudentEcosystemTools",fallback:"../../../",run:()=>{
     const section=document.getElementById("khaeStudentEcosystemTools");
     if(!section)return false;
     const parent=section.closest("details.grade09-explore-item");
@@ -79,13 +80,13 @@ if(!document.getElementById("khaeProfileToolRail")){
     destination.focus?.({preventScroll:true});
     return true;
    }},
-  {label:"Portfolio",target:"grade09LearningEvidence",fallback:"../../../portfolio/index.html",run:()=>{
+  {id:"student-portfolio",label:"Student Portfolio",target:"grade09LearningEvidence",fallback:"../../../portfolio/index.html",run:()=>{
     const evidence=document.querySelector('aside[aria-label="Student Learning Portfolio"]');
     if(evidence){evidence.scrollIntoView({behavior:"smooth",block:"start"});evidence.querySelector("a")?.focus({preventScroll:true});return true}
     return false;
    }}
  ]
- for(const tool of tools){
+ for(const tool of toolSpec?.ordered?.(tools)||tools){
   const item=document.createElement(tool.href?"a":"button");
   item.className="grade09-profile-tool";
   const label=document.createElement("span");
@@ -94,6 +95,7 @@ if(!document.getElementById("khaeProfileToolRail")){
   label.style.setProperty("color","#fff8e9","important");
   label.style.setProperty("-webkit-text-fill-color","#fff8e9","important");
   item.append(label);
+  toolSpec?.decorate?.(item,tool.id);
   if(tool.href)item.href=tool.href;
   else{
    item.type="button";
