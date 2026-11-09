@@ -26,7 +26,8 @@ const input=document.createElement("input");input.type="file";input.accept="imag
 input.setAttribute("aria-label","Choose personal student profile photo");
 input.className="grade09-photo-file-input";label.append(input);
 const remove=document.createElement("button");remove.type="button";remove.className="grade09-photo-button";remove.textContent="Remove photo";
-controls.append(label,remove);
+const yearbookChoose=document.createElement("button");yearbookChoose.type="button";yearbookChoose.className="grade09-photo-button";yearbookChoose.textContent="Choose from My Yearbook";yearbookChoose.setAttribute("aria-label","Choose a profile picture from my linked Yearbook photos");
+controls.append(label,yearbookChoose,remove);
 const legend=document.createElement("p");legend.className="grade09-photo-label";legend.textContent="Photo frame";
 const shapesGroup=document.createElement("div");shapesGroup.className="grade09-frame-options";
 shapesGroup.setAttribute("role","group");shapesGroup.setAttribute("aria-label","Choose your profile picture frame shape");
@@ -201,7 +202,7 @@ function display(){
     const mark=fallbackMark(owner);
     if(avatar.textContent!==mark)avatar.textContent=mark;
   }
-  remove.hidden=!photo;input.disabled=!owner;label.classList.toggle("is-disabled",!owner);
+  remove.hidden=!photo;input.disabled=!owner;yearbookChoose.disabled=!owner;label.classList.toggle("is-disabled",!owner);
   updateShape();
   if(!owner)status.textContent="Choose your student learner to save a photo and frame.";
   else if(status.textContent.startsWith("Choose your student learner"))status.textContent="";
@@ -225,6 +226,22 @@ input.addEventListener("change",async()=>{
     localStorage.setItem(keyFor(owner),data);display();status.textContent="Photo saved on this device.";
   }catch{status.textContent="Photo couldn't be saved; try another."}
   finally{URL.revokeObjectURL(url);input.value=""}
+});
+yearbookChoose.addEventListener("click",()=>{
+ const owner=learner(),bridge=window.KhaemenesYearbookProfileImages;
+ if(!owner||!bridge?.choose){status.textContent="Select your learner and open Yearbook to link a photograph first.";return}
+ bridge.choose(owner,async(data,id)=>{
+  if(id!==owner||learner()!==owner||!/^data:image\/jpeg;base64,[a-z0-9+/=]+$/i.test(data)||data.length>=180000)return false;
+  const key=keyFor(owner),prior=localStorage.getItem(key);
+  try{
+   localStorage.setItem(key,data);
+   if(learner()!==owner||localStorage.getItem(key)!==data)throw Error("Profile selection changed");
+   display();status.textContent="Yearbook picture saved for this learner. The Yearbook original is unchanged.";return true;
+  }catch{
+   try{if(prior===null)localStorage.removeItem(key);else localStorage.setItem(key,prior)}catch{}
+   status.textContent="Could not save Yearbook picture; original profile photograph was kept.";return false;
+  }
+ });
 });
 remove.addEventListener("click",()=>{
   const owner=learner();if(!owner)return;
