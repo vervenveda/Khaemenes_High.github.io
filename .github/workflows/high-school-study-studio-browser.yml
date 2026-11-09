@@ -1,0 +1,26 @@
+name: High School Study Studio Chromium Regression
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - 'tests/high-school-study-studio-browser.cjs'
+      - 'grades/grade-09/student-profile/study-studio.js'
+      - 'grades/shared/upper-grade-klasaipeer-studio.js'
+      - '.github/workflows/high-school-study-studio-browser.yml'
+permissions:
+  contents: read
+jobs:
+  browser-regression:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Install isolated Chromium test dependency
+        run: npm install --no-save --no-package-lock playwright@1.58.2
+      - name: Install Chromium for Playwright
+        run: npx playwright install --with-deps chromium
+      - name: Run synthetic learner browser regression
+        run: node tests/high-school-study-studio-browser.cjs
