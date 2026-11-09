@@ -32,8 +32,11 @@ new vm.Script(grade9);new vm.Script(upper);
 assert.match(grade9,/id:"student-portfolio",label:"Student Portfolio"/);
 assert.match(upper,/url:safeEditor/);
 assert.match(upper,/registered\?\.gradeNumber===Number\(grade\)/);
+const yearTitles={"09":"My Freshman Year","10":"My Sophomore Year","11":"My Junior Year","12":"My Senior Year"};
 for(const grade of ["09","10","11","12"]){
  const html=load("grades/grade-"+grade+"/student-profile/index.html");
+ assert.ok(html.includes(`<h1 id="highSchoolProfileHeroTitle">${yearTitles[grade]}</h1>`),"Grade-specific hero: "+grade);
+ assert.ok(html.includes(`aria-labelledby="highSchoolProfileHeroTitle"`),"Accessible hero title: "+grade);
  const specPosition=html.indexOf("high-profile-tools-spec.js");
  const entryPosition=html.indexOf(grade==="09"?"dashboard-layout.js":"grade09-blueprint-upper-grade.js");
  assert.ok(specPosition>=0&&entryPosition>specPosition,"Load order: Grade "+grade);
