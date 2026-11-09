@@ -82,12 +82,12 @@ for(const grade of [9,10,11,12]){
 }
 for(const invalid of [null,{},13,8,"Grade 15"]){
  const x=helper("student",{"student":{learnerId:"student",grade:invalid}});
- assert.ok(x.api.profileHref().endsWith("/index.html#student-portal"),"invalid learner grade must not redirect to family");
+ assert.ok(x.api.profileHref().endsWith("/Khaemenes_Academy.github.io/family/enroll/"),"invalid learner grade must route to public Academy enrollment, never an unrelated grade");
 }
 const missing=helper("absent",{"other":{learnerId:"other",grade:10}});
-assert.ok(missing.api.profileHref().endsWith("/index.html#student-portal"),"unknown learner safe fallback");
+assert.ok(missing.api.profileHref().endsWith("/Khaemenes_Academy.github.io/family/enroll/"),"unknown learner must route to public Academy enrollment");
 const guest=helper(undefined,{});
-assert.ok(guest.api.profileHref().endsWith("/index.html#student-portal"),"guest safe fallback");
+assert.ok(guest.api.profileHref().endsWith("/Khaemenes_Academy.github.io/family/enroll/"),"guest must route to public Academy enrollment");
 a.values.set("khaemenes_active_learner_v1",JSON.stringify("student-b"));
 a.values.set("khaemenes_family_registry_v1",JSON.stringify({learners:{"student-b":{learnerId:"student-b",grade:12}}}));
 assert.ok(a.api.profileHref().endsWith("/grades/grade-12/student-profile/"),"profile re-evaluates learner after Back/switch");
