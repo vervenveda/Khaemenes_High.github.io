@@ -276,6 +276,9 @@ function renderTools(){
    else location.assign(highRoot+"portfolio/index.html");
   }}
  ];
+ // One 4 × 2 vocabulary for all high-school grades; preserve each action handler.
+ const order=["Schedule","Class Progress","Student Portfolio","KlasaiPeer","Edit Profile","Edit Background","Yearbook","Creative Tools"];
+ actions.sort((a,b)=>order.indexOf(a.label)-order.indexOf(b.label));
  for(const action of actions){
   const item=make(action.url?"a":"button",action.label);
   item.className="grade09-blueprint-tool";item.dataset.upperGradeLink="true";
@@ -312,13 +315,14 @@ function renderTools(){
  const ctx=gradeContext();
  if(["11","12"].includes(grade)&&ctx?.gradeNumber!==Number(grade)
     &&!grid.querySelector("#openGrade09BackgroundDialog,[data-background-return]")){
-  const back=make("a","Customize Background");
+  const back=make("a","Edit Background");
   back.className="grade09-blueprint-tool";
   back.dataset.backgroundReturn="true";
   back.href=ctx?.grade?highRoot+"grades/grade-"+ctx.grade+"/student-profile/":builder;
   back.title="Open your registered student profile to customize its background";
   back.setAttribute("aria-label","Customize background in your registered student profile");
-  grid.append(back);
+  const yearbook=[...grid.children].find(n=>n.textContent.trim()==="Yearbook");
+  if(yearbook)grid.insertBefore(back,yearbook);else grid.append(back);
  }
  // For a registered learner, Grade 09's original background-dialog module
  // creates the genuine eighth editor button. Do not duplicate it.
