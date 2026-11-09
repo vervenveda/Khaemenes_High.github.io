@@ -53,6 +53,23 @@ for(const [name,p,key] of [
   ])assert.ok(s.includes(fragment),fragment);
   assert.ok(s.indexOf('localStorage.getItem(storageKey)!==value') < s.indexOf('Flashcard deck saved and checked'));
  });
+ test(name+': whiteboard storage is scoped and save is verified',()=>{
+  const s=read(p);
+  for(const fragment of [
+   'function boardKey(){return key()+":whiteboard-png-v1"}',
+   'function canUseBoard()',
+   'verifiedLearner()===learner',
+   'function restoreBoard()',
+   'g09sSaveBoard',
+   'g09sRestoreBoard',
+   'canvas.toDataURL("image/png")',
+   'localStorage.setItem(storageKey,png)',
+   'localStorage.getItem(storageKey)!==png',
+   'epoch!==boardLoadEpoch',
+   'loadDeck();restoreBoard();return recoverDraft()',
+   'hasUnsavedNotes()&&boardDirty'
+  ])assert.ok(s.includes(fragment),fragment);
+ });
  test(name+': leave warnings and studio features remain present',()=>{
   const s=read(p);
   for(const fragment of ['sel.value=loadedCourse;return','if(confirmDiscard())d.close()','addEventListener("cancel"','addEventListener("beforeunload"','g09sBuild','g09sCanvas','g09sClear'])
