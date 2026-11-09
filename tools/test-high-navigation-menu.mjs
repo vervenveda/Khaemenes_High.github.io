@@ -43,7 +43,7 @@ function boot({learner="one",grade=9,canonical=false,slot=true,relative="courses
  const doc={
  currentScript:{src:root+"assets/high-navigation-v1.js"},readyState:"loading",body,head,
  createElement:tag=>new Element(tag),
- addEventListener:(name,fn)=>events.set(name,fn),
+ addEventListener:(name,fn)=>{const prior=events.get(name);events.set(name,prior?(...args)=>{prior(...args);fn(...args)}:fn)},
  getElementById:id=>[body,...body.walk()].find(e=>e.id===id)||null,
  querySelectorAll:q=>q==="a"?body.walk().filter(e=>e.tagName==="A"):q==="[data-vnv-ecosystem-slot]"?(slot?[ecosystem]:[]):[],
  querySelector:q=>{
