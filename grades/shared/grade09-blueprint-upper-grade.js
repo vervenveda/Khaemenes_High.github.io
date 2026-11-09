@@ -264,8 +264,14 @@ function renderTools(){
  grid.classList.add("grade09-blueprint-tool-grid");
  if(grid.querySelector("[data-upper-grade-link]"))return;
  const toolSpec=window.KhaemenesHighProfileToolSpec;
+ // A campus view must not provide a direct editor link for another grade.
+ // These links are navigation only; real learner permission is enforced elsewhere.
+ const registered=gradeContext();
+ const safeEditor=registered?.gradeNumber===Number(grade)?builder:
+  registered?.grade?highRoot+"grades/grade-"+registered.grade+"/student-profile/":
+  "https://vervenveda.com/Khaemenes_Academy.github.io/family/";
  const actions=[
-  {id:"edit-profile",label:"Edit Profile",url:builder},
+  {id:"edit-profile",label:"Edit Profile",url:safeEditor},
   {id:"class-progress",label:"Class Progress",run:showUpperProgress},
   {id:"schedule",label:"Schedule",run:showUpperSchedule},
   {id:"klasaipeer",label:"KlasaiPeer",fallback:"https://vervenveda.com/Klasaipeer.github.io/",run:()=>{const studio=window.KhaemenesUpperGradeStudyStudio;if(studio?.open){studio.open(document.activeElement);return true}return false}},
