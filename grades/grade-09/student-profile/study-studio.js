@@ -140,7 +140,7 @@ function restoreBoard(){
  try{
   const value=localStorage.getItem(boardKey());
   if(!value){status.textContent="No saved whiteboard for this class on this device.";return}
-  if(value.length>2000000||!/^data:image\\/png;base64,[A-Za-z0-9+/=]+$/.test(value))throw Error("Invalid image data");
+  if(value.length>2000000||!/^data:image\/png;base64,[A-Za-z0-9+/=]+$/.test(value))throw Error("Invalid image data");
   const image=new Image();
   image.onload=()=>{
    if(epoch!==boardLoadEpoch||!canUseBoard()||learner!==owner||sel.value!==course)return;
