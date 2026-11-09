@@ -16,6 +16,7 @@ const learner=()=>{
   return a&&b&&String(a)!==String(b)?null:(a?String(a):(b?String(b):null));
 };
 const keyFor=id=>id?"khaemenes.grade09.profile.photo:"+encodeURIComponent(id):null;
+let photoOperation=0; // Cancel slow uploads after another photo choice, removal, or learner switch.
 const shapes=[["rectangle","Rectangle"],["square","Square"],["circle","Circle"],["heart","Heart"],["star","Star"],["octagon","Octagon"],["hectagon","Hectagon (100 sides)"]];
 const ui=document.createElement("div");
 ui.id="grade09PhotoControls";ui.className="grade09-photo-controls";
@@ -211,27 +212,30 @@ input.addEventListener("change",async()=>{
   const owner=learner();
   if(!owner){status.textContent="Choose your student learner before uploading a photo.";return}
   const file=input.files?.[0];if(!file)return;
+  const request=++photoOperation;
   if(!["image/jpeg","image/png","image/webp"].includes(file.type)||file.size>4*1024*1024){
     status.textContent="Choose JPG, PNG, or WebP under 4 MB.";input.value="";return;
   }
   const url=URL.createObjectURL(file);
   try{
     const im=new Image();await new Promise((ok,fail)=>{im.onload=ok;im.onerror=fail;im.src=url});
-    if(learner()!==owner)return;
+    if(learner()!==owner||request!==photoOperation)return;
     const canvas=document.createElement("canvas");canvas.width=canvas.height=240;
     const ctx=canvas.getContext("2d"),side=Math.min(im.naturalWidth,im.naturalHeight);
     if(!ctx)throw Error("canvas");
     ctx.drawImage(im,(im.naturalWidth-side)/2,(im.naturalHeight-side)/2,side,side,0,0,240,240);
     const data=canvas.toDataURL("image/jpeg",0.78);if(data.length>=400000)throw Error("too large");
+    if(learner()!==owner||request!==photoOperation)return;
     localStorage.setItem(keyFor(owner),data);display();status.textContent="Photo saved on this device.";
   }catch{status.textContent="Photo couldn't be saved; try another."}
   finally{URL.revokeObjectURL(url);input.value=""}
 });
 yearbookChoose.addEventListener("click",()=>{
  const owner=learner(),bridge=window.KhaemenesYearbookProfileImages;
+ const request=++photoOperation;
  if(!owner||!bridge?.choose){status.textContent="Select your learner and open Yearbook to link a photograph first.";return}
  bridge.choose(owner,async(data,id)=>{
-  if(id!==owner||learner()!==owner||!/^data:image\/jpeg;base64,[a-z0-9+/=]+$/i.test(data)||data.length>=180000)return false;
+  if(id!==owner||learner()!==owner||request!==photoOperation||!/^data:image\/jpeg;base64,[a-z0-9+/=]+$/i.test(data)||data.length>=180000)return false;
   const key=keyFor(owner),prior=localStorage.getItem(key);
   try{
    localStorage.setItem(key,data);
@@ -245,6 +249,7 @@ yearbookChoose.addEventListener("click",()=>{
 });
 remove.addEventListener("click",()=>{
   const owner=learner();if(!owner)return;
+  photoOperation++;
   try{
     localStorage.removeItem(keyFor(owner));
     const grade=document.body.dataset.grade||"";
@@ -266,6 +271,6 @@ remove.addEventListener("click",()=>{
 window.addEventListener("khaemenes-grade09-design-changed",()=>{updateShape();display()});
 window.addEventListener("pageshow",display);
 window.addEventListener("focus",display);
-window.addEventListener("khaemenes-student-profile-changed",display);
+window.addEventListener("khaemenes-student-profile-changed",()=>{photoOperation++;display()});
 display();
 })();
