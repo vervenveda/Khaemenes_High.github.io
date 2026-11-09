@@ -63,26 +63,73 @@ const reg={
  mentorFor(){return "https://vervenveda.com/Khaemenes_Academy.github.io/mentor/"}
 };
 const sel=$("g09sCourse"),notes=$("g09sNotes");let learner="",cards=[],idx=0,flipped=false,origin=null;
-function key(){return "khae-grade"+grade+"-study-studio-notes-v1:"+encodeURIComponent(learner)+":"+encodeURIComponent(sel.value)}
-function refreshCourse(){const c=reg?.getCourse?.(sel.value),openCourse=$("g09sOpenCourse");if(grade10Copy){if(c?.home){openCourse.href=c.home;openCourse.textContent="Open Selected Class";openCourse.setAttribute("aria-disabled","false");openCourse.removeAttribute("tabindex")}else{openCourse.href="#";openCourse.textContent="Choose a Class First";openCourse.setAttribute("aria-disabled","true");openCourse.setAttribute("tabindex","-1")}}else openCourse.href=c?.home||"profile/";$("g09sMentor").href=reg?.mentorFor?.(sel.value)||"../../../mentor/";notes.value="";if(learner&&sel.value)try{notes.value=localStorage.getItem(key())||""}catch{}}
-function open(source){
- origin=source||document.activeElement;
+let loadedCourse="",savedNotes="";
+function verifiedLearner(){
  const p=contract?.readAcademyProfile?.();
  const active=window.KhaemenesStudentProfileV2?.activeLearner?.();
  const ctx=window.KhaemenesHighProfileGradeContext?.active?.();
- learner=p?.learnerId&&active?.learnerId&&ctx?.gradeNumber===grade&&
-  String(p.learnerId)===String(active.learnerId)&&
-  String(ctx.learnerId)===String(active.learnerId)?String(active.learnerId):"";sel.replaceChildren();const option=document.createElement("option");option.textContent="Choose a class";option.value="";sel.append(option);for(const c of reg?.courses||[]){if(!c?.id)continue;const o=document.createElement("option");o.value=c.id;o.textContent=c.title;sel.append(o)}sel.value=reg?.resumePriorityCourse?.()?.id||"";refreshCourse();$("g09sStatus").textContent=learner?(grade10Copy?"Your study notes are ready to use here.":grade11Copy?"Your study notes are ready when you need them.":grade12Copy?"Your study notes are here when you need one more place to think things through.":"Notes are saved only on this browser."):(grade10Copy?"Choose your student profile to save study notes.":grade11Copy?"Choose your student profile to save study notes.":grade12Copy?"Choose your student profile to save study notes.":"Select an Academy learner to save notes.");if(!d.open)d.showModal()}
-sel.addEventListener("change",refreshCourse);
-$("g09sOpenCourse").addEventListener("click",event=>{if(grade10Copy&&$("g09sOpenCourse").getAttribute("aria-disabled")==="true"){event.preventDefault();$("g09sStatus").textContent="Choose a class first, then open it from here."}});
+ return p?.learnerId&&active?.learnerId&&ctx?.gradeNumber===grade&&
+   active.stage==="high"&&Number(active.grade)===grade&&
+   String(p.learnerId)===String(active.learnerId)&&
+   String(ctx.learnerId)===String(active.learnerId)?String(active.learnerId):"";
+}
+function hasUnsavedNotes(){return notes.value!==savedNotes}
+function draftKey(){return key()+":recovery-draft-v1"}
+function discardDraft(){if(learner&&sel.value&&verifiedLearner()===learner)try{localStorage.removeItem(draftKey())}catch{}}
+function confirmDiscard(){
+ if(!hasUnsavedNotes())return true;
+ if(!window.confirm("You have unsaved study notes. Leave without saving them?"))return false;
+ discardDraft();return true;
+}
+function recoverDraft(){
+ if(!learner||verifiedLearner()!==learner||!sel.value||!reg?.getCourse?.(sel.value))return false;
+ try{
+  const raw=localStorage.getItem(draftKey());if(!raw)return false;
+  const draft=JSON.parse(raw);
+  if(!draft||draft.version!==1||typeof draft.text!=="string")return false;
+  if(draft.text===savedNotes){discardDraft();return false}
+  if(window.confirm("A study-note draft was found on this device for this class. Restore it? Your saved notes will not be overwritten unless you press Save Notes.")){
+   notes.value=draft.text;
+   return true;
+  }
+ }catch{}
+ return false;
+}
+notes.addEventListener("input",()=>{
+ if(!learner||verifiedLearner()!==learner||!sel.value||!reg?.getCourse?.(sel.value))return;
+ try{
+  if(!hasUnsavedNotes()){discardDraft();return}
+  localStorage.setItem(draftKey(),JSON.stringify({version:1,text:notes.value,updatedAt:new Date().toISOString()}));
+ }catch{$("g09sStatus").textContent="Draft recovery is unavailable on this device. Save notes or keep a separate copy."}
+});
+window.addEventListener("beforeunload",event=>{if(!d.open||!hasUnsavedNotes())return;event.preventDefault();event.returnValue=""});
+function key(){return "khae-grade"+grade+"-study-studio-notes-v1:"+encodeURIComponent(learner)+":"+encodeURIComponent(sel.value)}
+function refreshCourse(){const c=reg?.getCourse?.(sel.value),openCourse=$("g09sOpenCourse");if(grade10Copy){if(c?.home){openCourse.href=c.home;openCourse.textContent="Open Selected Class";openCourse.setAttribute("aria-disabled","false");openCourse.removeAttribute("tabindex")}else{openCourse.href="#";openCourse.textContent="Choose a Class First";openCourse.setAttribute("aria-disabled","true");openCourse.setAttribute("tabindex","-1")}}else openCourse.href=c?.home||"profile/";$("g09sMentor").href=reg?.mentorFor?.(sel.value)||"../../../mentor/";notes.value="";if(learner&&verifiedLearner()===learner&&sel.value)try{notes.value=localStorage.getItem(key())||""}catch{}loadedCourse=sel.value;savedNotes=notes.value;return recoverDraft()}
+function open(source){
+ if(d.open&&!confirmDiscard())return;
+ origin=source||document.activeElement;
+ learner=verifiedLearner();sel.replaceChildren();const option=document.createElement("option");option.textContent="Choose a class";option.value="";sel.append(option);for(const c of reg?.courses||[]){if(!c?.id)continue;const o=document.createElement("option");o.value=c.id;o.textContent=c.title;sel.append(o)}sel.value=reg?.resumePriorityCourse?.()?.id||"";const recovered=refreshCourse();$("g09sStatus").textContent=learner?(grade10Copy?"Your study notes are ready to use here.":grade11Copy?"Your study notes are ready when you need them.":grade12Copy?"Your study notes are here when you need one more place to think things through.":"Notes are saved only on this browser."):(grade10Copy?"Choose your student profile to save study notes.":grade11Copy?"Choose your student profile to save study notes.":grade12Copy?"Choose your student profile to save study notes.":"Select an Academy learner to save notes.");if(recovered)$("g09sStatus").textContent="Unsaved draft restored on this device. Choose Save Notes to keep it.";if(!d.open)d.showModal()}
+sel.addEventListener("change",()=>{if(!confirmDiscard()){sel.value=loadedCourse;return}const recovered=refreshCourse();$("g09sStatus").textContent=recovered?"Unsaved draft restored. Choose Save Notes to keep it.":"Notes for this class are stored on this device only."});
+$("g09sOpenCourse").addEventListener("click",event=>{if(!reg?.getCourse?.(sel.value)||$("g09sOpenCourse").getAttribute("aria-disabled")==="true"){event.preventDefault();$("g09sStatus").textContent="Choose a class first, then open it from here.";return}if(!confirmDiscard())event.preventDefault()});
 for(const b of d.querySelectorAll("[data-room]"))b.addEventListener("click",()=>{for(const p of d.querySelectorAll("[data-panel]"))p.hidden=p.dataset.panel!==b.dataset.room;for(const t of d.querySelectorAll("[data-room]"))t.setAttribute("aria-pressed",String(t===b))});
-$("g09sSave").addEventListener("click",()=>{if(!learner||!sel.value){$("g09sStatus").textContent=(grade10Copy||grade11Copy||grade12Copy)?"Choose your student profile and a class first.":"Select an Academy learner and class.";return}try{localStorage.setItem(key(),notes.value);$("g09sStatus").textContent=(grade10Copy||grade11Copy||grade12Copy)?"Notes saved.":"Notes saved locally."}catch{$("g09sStatus").textContent=(grade10Copy||grade11Copy||grade12Copy)?"Your notes could not be saved on this device.":"Storage unavailable."}});
+$("g09sSave").addEventListener("click",()=>{
+ if(!learner||verifiedLearner()!==learner||!sel.value||!reg?.getCourse?.(sel.value)){
+  $("g09sStatus").textContent="Save blocked: select your registered learner and a valid class. No notes were changed.";return;
+ }
+ try{
+  const noteKey=key(),value=notes.value;
+  localStorage.setItem(noteKey,value);
+  if(localStorage.getItem(noteKey)!==value)throw new Error("Local note verification failed");
+  savedNotes=value;discardDraft();
+  $("g09sStatus").textContent="Notes saved and checked on this device only. Cross-device backup is not yet active.";
+ }catch{$("g09sStatus").textContent="Notes were not verified as saved on this device. Keep a copy before leaving."}
+});
 $("g09sOutline").addEventListener("click",()=>{const ol=$("g09sOutlineList");ol.replaceChildren();for(const line of notes.value.split("\n").map(x=>x.trim()).filter(Boolean).slice(0,40)){const li=document.createElement("li");li.textContent=line;ol.append(li)}});
 function show(){const c=cards[idx];$("g09sCard").textContent=c?(flipped?c[1]:c[0]):"No practice cards yet.";$("g09sCounter").textContent=cards.length?(idx+1)+" of "+cards.length:"";}
 $("g09sBuild").addEventListener("click",()=>{cards=notes.value.split("\n").map(s=>{const i=s.indexOf(":");return i>0?[s.slice(0,i).trim(),s.slice(i+1).trim()]:null}).filter(x=>x&&x[0]&&x[1]).slice(0,60);idx=0;flipped=false;show()});
 $("g09sFlip").addEventListener("click",()=>{flipped=true;show()});$("g09sNext").addEventListener("click",()=>{if(cards.length)idx=(idx+1)%cards.length;flipped=false;show()});
 const canvas=$("g09sCanvas"),ctx=canvas.getContext("2d");ctx.lineWidth=3;ctx.lineCap="round";let drawing=false;function pos(e){const b=canvas.getBoundingClientRect();return [(e.clientX-b.left)*canvas.width/b.width,(e.clientY-b.top)*canvas.height/b.height]}
 canvas.addEventListener("pointerdown",e=>{drawing=true;canvas.setPointerCapture(e.pointerId);ctx.beginPath();ctx.moveTo(...pos(e))});canvas.addEventListener("pointermove",e=>{if(!drawing)return;ctx.lineTo(...pos(e));ctx.stroke()});for(const name of ["pointerup","pointercancel"])canvas.addEventListener(name,()=>drawing=false);$("g09sClear").addEventListener("click",()=>ctx.clearRect(0,0,canvas.width,canvas.height));
-$("g09sClose").addEventListener("click",()=>d.close());d.addEventListener("close",()=>origin?.isConnected&&origin.focus());
+$("g09sClose").addEventListener("click",()=>{if(confirmDiscard())d.close()});d.addEventListener("cancel",event=>{if(!confirmDiscard())event.preventDefault()});d.addEventListener("close",()=>origin?.isConnected&&origin.focus());
 window.KhaemenesUpperGradeStudyStudio=Object.freeze({open,version:1});
 })();
