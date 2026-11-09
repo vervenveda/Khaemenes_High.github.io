@@ -74,12 +74,12 @@ function verifiedLearner(){
    String(ctx.learnerId)===String(active.learnerId)?String(active.learnerId):"";
 }
 function hasUnsavedNotes(){return notes.value!==savedNotes}
-function draftKey(){return key()+":recovery-draft-v1"}
-function discardDraft(){if(learner&&sel.value&&verifiedLearner()===learner)try{localStorage.removeItem(draftKey())}catch{}}
+function draftKey(course=sel.value){return "khae-grade"+grade+"-study-studio-notes-v1:"+encodeURIComponent(learner)+":"+encodeURIComponent(course)+":recovery-draft-v1"}
+function discardDraft(course=sel.value){if(learner&&course&&verifiedLearner()===learner)try{localStorage.removeItem(draftKey(course))}catch{}}
 function confirmDiscard(){
  if(!hasUnsavedNotes())return true;
  if(!window.confirm("You have unsaved study notes. Leave without saving them?"))return false;
- discardDraft();return true;
+ discardDraft(loadedCourse);return true;
 }
 function recoverDraft(){
  if(!learner||verifiedLearner()!==learner||!sel.value||!reg?.getCourse?.(sel.value))return false;
