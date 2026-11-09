@@ -79,12 +79,15 @@ if(!document.getElementById("khaeProfileToolRail")){
     destination.focus?.({preventScroll:true});
     return true;
    }},
-  {label:"Portfolio",target:"grade09LearningEvidence",fallback:"../../../portfolio/index.html",run:()=>{
+  {label:"Student Portfolio",target:"grade09LearningEvidence",fallback:"../../../portfolio/index.html",run:()=>{
     const evidence=document.querySelector('aside[aria-label="Student Learning Portfolio"]');
     if(evidence){evidence.scrollIntoView({behavior:"smooth",block:"start"});evidence.querySelector("a")?.focus({preventScroll:true});return true}
     return false;
    }}
- ]
+ ];
+ // Priority row: daily student controls. Bottom row: personal creation controls.
+ const order=["Schedule","Class Progress","Student Portfolio","KlasaiPeer","Edit Profile","Edit Background","Yearbook","Creative Tools"];
+ tools.sort((a,b)=>order.indexOf(a.label)-order.indexOf(b.label));
  for(const tool of tools){
   const item=document.createElement(tool.href?"a":"button");
   item.className="grade09-profile-tool";
