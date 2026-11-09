@@ -110,7 +110,9 @@ html:root:root body footer.footer.grade09-dashboard-footer{
    .section shell can be empty. Collapse only that empty wrapper so its
    default parchment strip does not cut across a learner's chosen background.
    Content-bearing sections remain visible; no course or profile state changes. */
-html:root:root body main > section.section:has(> .shell.grid:not(:has(> *))){
+/* The retired manager data may remain as a hidden child. An empty
+   rendered layout is not necessarily an empty DOM grid. */
+html:root:root body main > section.section:has(> .shell.grid):not(:has(> .shell.grid > :not([hidden]):not([aria-hidden="true"]):not(.grade10-retired-manager-data))){
  display:none!important;
  padding:0!important;
  margin:0!important;
