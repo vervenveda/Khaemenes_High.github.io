@@ -52,26 +52,27 @@ function confirmDiscard(){
  if(!hasUnsavedNotes())return true;
  if(!window.confirm("You have unsaved study notes. Leave without saving them?"))return false;
  // Explicit discard may remove a draft; a failed removal never blocks leaving.
- discardDraft();return true;
+ discardDraft(loadedCourse);return true;
 }
 // Warn only while the notes editor is open and contains changes not verified as saved.
 // Browsers decide whether to display the generic leave-page confirmation.
 window.addEventListener("beforeunload",event=>{if(!d.open||!hasUnsavedNotes())return;event.preventDefault();event.returnValue="";});
 function key(){return "g09-study-studio-notes-v1:"+encodeURIComponent(learner)+":"+encodeURIComponent(sel.value)}
-function draftKey(){return key()+":recovery-draft-v1"}
-function discardDraft(){if(learner&&sel.value&&verifiedLearner()===learner)try{localStorage.removeItem(draftKey())}catch{}}
+function draftKey(course=sel.value){return "g09-study-studio-notes-v1:"+encodeURIComponent(learner)+":"+encodeURIComponent(course)+":recovery-draft-v1"}
+function discardDraft(course=sel.value){if(learner&&course&&verifiedLearner()===learner)try{localStorage.removeItem(draftKey(course))}catch{}}
 function recoverDraft(){
- if(!learner||verifiedLearner()!==learner||!sel.value||!reg?.getCourse?.(sel.value))return;
+ if(!learner||verifiedLearner()!==learner||!sel.value||!reg?.getCourse?.(sel.value))return false;
  try{
-  const raw=localStorage.getItem(draftKey());if(!raw)return;
+  const raw=localStorage.getItem(draftKey());if(!raw)return false;
   const draft=JSON.parse(raw);
-  if(!draft||draft.version!==1||typeof draft.text!=="string")return;
-  if(draft.text===savedNotes){discardDraft();return}
+  if(!draft||draft.version!==1||typeof draft.text!=="string")return false;
+  if(draft.text===savedNotes){discardDraft();return false}
   if(window.confirm("A study-note draft was found on this device for this class. Restore it? Your saved notes will not be overwritten unless you press Save Notes.")){
    notes.value=draft.text;
-   $("g09sStatus").textContent="Unsaved draft restored on this device. Choose Save Notes to keep it.";
+   return true;
   }
  }catch{}
+ return false;
 }
 notes.addEventListener("input",()=>{
  if(!learner||verifiedLearner()!==learner||!sel.value||!reg?.getCourse?.(sel.value))return;
@@ -81,9 +82,9 @@ notes.addEventListener("input",()=>{
  }catch{$("g09sStatus").textContent="Draft recovery is unavailable on this device. Save your notes or keep a separate copy."}
 });
 function verifiedLearner(){const p=contract?.readAcademyProfile?.()?.learnerId;const selected=window.KhaemenesStudentProfileV2?.activeLearner?.();const a=selected?.learnerId;return p&&a&&String(p)===String(a)&&selected?.stage==="high"&&Number(selected.grade)===9?String(a):""}
-function refreshCourse(){const c=reg?.getCourse?.(sel.value),openCourse=$("g09sOpenCourse");if(c?.home){openCourse.href=c.home;openCourse.textContent="Open Selected Class";openCourse.setAttribute("aria-disabled","false");openCourse.removeAttribute("tabindex")}else{openCourse.href="#";openCourse.textContent="Choose a Class First";openCourse.setAttribute("aria-disabled","true");openCourse.setAttribute("tabindex","-1")} $("g09sMentor").href=reg?.mentorFor?.(sel.value)||"../../../mentor/";notes.value="";if(learner&&sel.value)try{notes.value=localStorage.getItem(key())||""}catch{}loadedCourse=sel.value;savedNotes=notes.value;recoverDraft();}
-function open(source){if(d.open&&!confirmDiscard())return;origin=source||document.activeElement;learner=verifiedLearner();sel.replaceChildren();const option=document.createElement("option");option.textContent="Choose a class";option.value="";sel.append(option);for(const c of reg?.courses||[]){if(!c?.id)continue;const o=document.createElement("option");o.value=c.id;o.textContent=c.title;sel.append(o)}sel.value=reg?.resumePriorityCourse?.()?.id||"";refreshCourse();$("g09sStatus").textContent=learner?"These notes are stored on this device only; cloud backup is not active.":"Choose your registered Grade 9 student profile to save notes on this device.";if(!d.open)d.showModal()}
-sel.addEventListener("change",()=>{if(!confirmDiscard()){sel.value=loadedCourse;return}refreshCourse()});
+function refreshCourse(){const c=reg?.getCourse?.(sel.value),openCourse=$("g09sOpenCourse");if(c?.home){openCourse.href=c.home;openCourse.textContent="Open Selected Class";openCourse.setAttribute("aria-disabled","false");openCourse.removeAttribute("tabindex")}else{openCourse.href="#";openCourse.textContent="Choose a Class First";openCourse.setAttribute("aria-disabled","true");openCourse.setAttribute("tabindex","-1")} $("g09sMentor").href=reg?.mentorFor?.(sel.value)||"../../../mentor/";notes.value="";if(learner&&sel.value)try{notes.value=localStorage.getItem(key())||""}catch{}loadedCourse=sel.value;savedNotes=notes.value;return recoverDraft();}
+function open(source){if(d.open&&!confirmDiscard())return;origin=source||document.activeElement;learner=verifiedLearner();sel.replaceChildren();const option=document.createElement("option");option.textContent="Choose a class";option.value="";sel.append(option);for(const c of reg?.courses||[]){if(!c?.id)continue;const o=document.createElement("option");o.value=c.id;o.textContent=c.title;sel.append(o)}sel.value=reg?.resumePriorityCourse?.()?.id||"";const recovered=refreshCourse();$("g09sStatus").textContent=learner?"These notes are stored on this device only; cloud backup is not active.":"Choose your registered Grade 9 student profile to save notes on this device.";if(recovered)$("g09sStatus").textContent="Unsaved draft restored on this device. Choose Save Notes to keep it.";if(!d.open)d.showModal()}
+sel.addEventListener("change",()=>{if(!confirmDiscard()){sel.value=loadedCourse;return}const recovered=refreshCourse();$("g09sStatus").textContent=recovered?"Unsaved draft restored. Choose Save Notes to keep it.":"Notes for this class are stored on this device only."});
 $("g09sOpenCourse").addEventListener("click",event=>{if($("g09sOpenCourse").getAttribute("aria-disabled")==="true"){event.preventDefault();$("g09sStatus").textContent="Choose a class first, then open it from here.";return}if(!confirmDiscard())event.preventDefault()});
 for(const b of d.querySelectorAll("[data-room]"))b.addEventListener("click",()=>{for(const p of d.querySelectorAll("[data-panel]"))p.hidden=p.dataset.panel!==b.dataset.room;for(const t of d.querySelectorAll("[data-room]"))t.setAttribute("aria-pressed",String(t===b))});
 $("g09sSave").addEventListener("click",()=>{if(!learner||verifiedLearner()!==learner||!sel.value||!reg?.getCourse?.(sel.value)){$("g09sStatus").textContent="Save blocked: select your registered Grade 9 learner and a valid class. No notes were changed.";return}try{const noteKey=key(),value=notes.value;localStorage.setItem(noteKey,value);if(localStorage.getItem(noteKey)!==value)throw new Error("Local note verification failed");savedNotes=value;discardDraft();$("g09sStatus").textContent="Notes saved and checked on this device only. Cross-device backup is not yet active."}catch{$("g09sStatus").textContent="Notes were not verified as saved on this device. Keep a copy before leaving."}});
