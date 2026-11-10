@@ -33,11 +33,11 @@ footer{background:var(--charcoal);border-top:1px solid #9e865a;text-align:center
 @media(max-width:700px){.grid{grid-template-columns:1fr}.hero{padding:44px 0 22px}.panel{padding:20px}.header-inner{padding:12px 16px}h1{font-size:38px}}
 </style>
 </head>
-<body>
+<body data-vnv-header-title="Khaemenes Academy" data-vnv-header-subtitle="Algebra I Honors · The Switchyard" data-vnv-header-home="../">
 <a class="skip" href="#main">Skip to content</a>
-<header class="site-header"><div class="header-inner">
+<header class="site-header" data-vnv-header-legacy><div class="header-inner">
 <a class="brand" href="../" aria-label="Khaemenes Academy Algebra I Home">Khaemenes Academy</a>
-<details class="header-menu"><summary aria-label="Open navigation menu">☰ Menu</summary><nav class="menu-panel" aria-label="Page navigation">
+<details class="header-menu"><summary aria-label="Open fallback navigation menu">☰ Menu</summary><nav class="menu-panel" aria-label="Page navigation">
 <a href="../">Algebra I Home</a><a href="../units/unit-02/">Unit 02</a><a href="../assessments/">Assessment Center</a><a href="../teacher/">Teacher Portal</a><a href="https://vervenveda.com/">Verve N Veda</a>
 </nav></details></div></header>
 <main id="main">
@@ -61,4 +61,12 @@ footer{background:var(--charcoal);border-top:1px solid #9e865a;text-align:center
 <script src="https://vervenveda.com/assets/vnv-333-ticker.js" defer></script>
 <script src="https://vervenveda.com/assets/vnv-ticker-autopopulate.js" defer></script>
 <script src="https://vervenveda.com/assets/vnv-ecosystem-toolbar.js" defer></script>
+<script src="https://vervenveda.com/assets/vnv-header-autopopulate.js" defer></script>
+<script>
+document.addEventListener("DOMContentLoaded",()=>{
+  const owner=window.VNV_HEADER;
+  if(!owner?.mount)return; // Preserve the working, accessible local navigation if the shared script is unavailable.
+  owner.mount({title:"Khaemenes Academy",subtitle:"Algebra I Honors · The Switchyard",home:"../",icon:"KA",replaceLegacy:true});
+},{once:true});
+</script>
 </body></html>
