@@ -20,11 +20,14 @@ function activeLearner(){
   const record=typeof id==="string"?registry?.learners?.[id]:null;
   if(!record||record.learnerId!==id)return null;
   if(record.stage!=="high"||!["9","09","10","11","12"].includes(String(record.grade)))return null;
+  const pageGrade=String(document.body?.dataset.grade||"09");
+  const registered=window.KhaemenesHighProfileGradeContext?.activeForGrade?.(pageGrade);
+  if(!registered||registered.learnerId!==id)return null;
   const linked=window.KhaemenesStudentProfileV2?.activeLearner?.()?.learnerId;
   return linked&&String(linked)!==id?null:id;
  }catch{return null}
 }
-function key(){const id=activeLearner();return id?`${BASE_KEY}:learner:${encodeURIComponent(id)}`:BASE_KEY}
+function key(){const id=activeLearner();return id?`${BASE_KEY}:learner:${encodeURIComponent(id)}`:null}
 function normalize(value={}){
  const v=value&&typeof value==="object"&&!Array.isArray(value)?value:{};
  return {
@@ -37,7 +40,8 @@ function normalize(value={}){
 }
 function read(){
  try{
-  const raw=localStorage.getItem(key());
+  const ownerKey=key();if(!ownerKey)return {...DEFAULT};
+  const raw=localStorage.getItem(ownerKey);
   if(raw)return normalize(JSON.parse(raw));
   const shared=window.KhaemenesStudentProfileV2?.read?.(activeLearner())?.workspace;
   return shared?normalize({theme:shared.theme,density:shared.density}):{...DEFAULT};
@@ -57,7 +61,8 @@ function write(value){
  try{
   const owner=activeLearner(),p=normalize(value);
   if(!owner||activeLearner()!==owner)return false;
-  localStorage.setItem(key(),JSON.stringify({...p,updatedAt:new Date().toISOString()}));
+  const ownerKey=key();if(!ownerKey||activeLearner()!==owner)return false;
+  localStorage.setItem(ownerKey,JSON.stringify({...p,updatedAt:new Date().toISOString()}));
   window.KhaemenesStudentProfileV2?.updateWorkspace?.({theme:p.theme,density:p.density},owner);
   apply(p);
   if(typeof window.dispatchEvent==="function"&&typeof CustomEvent==="function"){
@@ -70,7 +75,8 @@ function clear(){
  try{
   const owner=activeLearner();
   if(!owner)return false;
-  localStorage.removeItem(key());
+  const ownerKey=key();if(!ownerKey||activeLearner()!==owner)return false;
+  localStorage.removeItem(ownerKey);
   window.KhaemenesStudentProfileV2?.updateWorkspace?.({theme:"academy",density:"comfortable"},owner);
   apply(DEFAULT);return true;
  }catch{return false}
@@ -81,5 +87,6 @@ function avatarText(initials="S",preferences=read()){
 }
 window.KhaemenesGrade09Design=Object.freeze({BASE_KEY,defaults:DEFAULT,read,write,clear,apply,avatarText,storageKey:key});
 if(document.readyState==="loading")document.addEventListener("DOMContentLoaded",()=>apply(),{once:true});else apply();
-window.addEventListener("storage",event=>{if(String(event.key||"")===key())apply()});
+window.addEventListener("storage",event=>{if(!event.key||event.key===key()||["khaemenes_active_learner_v1","khaemenes_active_family_v1","khaemenes_family_registry_v1"].includes(event.key))apply()});
+window.addEventListener("khaemenes-family-changed",()=>apply());
 })();
