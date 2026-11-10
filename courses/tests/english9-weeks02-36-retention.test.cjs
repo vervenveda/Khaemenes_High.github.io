@@ -25,6 +25,7 @@ test("Weeks 14–36 use a common writer with readback and conflict detection",()
  assert.ok(code.includes('if(localStorage.getItem(courseKey)!==encoded)'));
  assert.ok(code.includes('if(!save(progress)){progress[key]=previous;return}'));
  assert.ok(code.includes('if(localStorage.getItem(key)!==value)'));
+ assert.ok(code.includes("if(!academyProfile?.learnerId)return false"));
 });
 test("synthetic Week 02 save confirms written work and rejects a no-op storage implementation",()=>{
  const code=read(weekPath(2));
@@ -44,6 +45,7 @@ test("synthetic Week 02 save confirms written work and rejects a no-op storage i
  };
  assert.equal(execute(storage),true);
  assert.equal(state.get("field"),"saved-writing");
+ state.delete("field"); // Exercise failed readback, not merely a changed prior snapshot.
  assert.equal(execute({getItem:storage.getItem,setItem(){}}),false);
 });
 test("synthetic Week 02 save rejects sibling switching before writing",()=>{
