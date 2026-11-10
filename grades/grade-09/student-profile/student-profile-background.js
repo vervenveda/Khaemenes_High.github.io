@@ -334,11 +334,11 @@ for(const section of surfaces){
  sectionsGroup.append(panel);
  rows.set(section.key,{mode:mode.input,color:color.input,emoji:emoji.input,panel});
  const update=()=>{
-  const owner=person();if(owner!==currentOwner){refresh();message("Learner selection changed; reopen the editor.");return}
+  const owner=person();if(!owner||owner!==currentOwner){refresh();message("Select your learner before saving a section.");return}
   const last=sectionPrefs[section.key];
   const next={mode:mode.input.value,color:color.input.value,emoji:emoji.input.value};
   sectionPrefs[section.key]=next;
-  if(!write(sectionsKey(storageOwner()),JSON.stringify(sectionPrefs))){
+  if(!write(sectionsKey(owner),JSON.stringify(sectionPrefs))){
    if(last)sectionPrefs[section.key]=last;else delete sectionPrefs[section.key];
    refresh();message("Could not save this section. Browser storage may be full.");return;
   }
@@ -404,12 +404,13 @@ function refresh(){
   controls.emoji.value=pref.emoji;
   controls.color.disabled=pref.mode!=="custom";
  }
- for(const node of [pageColorControl.input,resetPage,pageEmoji.input])node.disabled=false;
- upload.input.disabled=false;
- removeImage.disabled=!savedImage;
+ for(const node of [pageColorControl.input,resetPage,pageEmoji.input])node.disabled=!owner;
+ upload.input.disabled=!owner;
+ removeImage.disabled=!owner||!savedImage;
  for(const controls of rows.values()){
-  controls.mode.disabled=false;
-  controls.emoji.disabled=false;
+  controls.mode.disabled=!owner;
+  controls.emoji.disabled=!owner;
+  controls.color.disabled=!owner||controls.color.disabled;
  }
  if(!owner)message("Guest design: changes save to this browser only, separately from student profiles. Select a learner for learner-specific settings.");
  else message("Changes are stored privately on this device for the selected learner.");
@@ -420,28 +421,28 @@ pageColorControl.input.addEventListener("input",()=>{
  applyAll();message("Preview only. Release the color picker to save.");
 });
 pageColorControl.input.addEventListener("change",()=>{
- const owner=person();if(owner!==currentOwner){refresh();return}
- if(!write(colorsKey(storageOwner()),pageColorControl.input.value)){
+ const owner=person();if(!owner||owner!==currentOwner){refresh();message("Select your learner before saving.");return}
+ if(!write(colorsKey(owner),pageColorControl.input.value)){
   refresh();message("Unable to save the page color.");return
  }
  pageColor=pageColorControl.input.value;applyAll();message(owner?"Page background color saved for learner.":"Page color saved as browser-only guest design.");
 });
 resetPage.addEventListener("click",()=>{
  const owner=person();if(owner!==currentOwner){refresh();return}
- if(!erase(colorsKey(storageOwner()))){message("Unable to restore the page color.");return}
+ if(!erase(colorsKey(owner))){message("Unable to restore the page color.");return}
  pageColor=base;pageColorControl.input.value=base;applyAll();message("Default page color restored. Section choices are preserved.");
 });
 pageEmoji.input.addEventListener("change",()=>{
  const owner=person();if(owner!==currentOwner){refresh();return}
  const value=pageEmoji.input.value;
- if(value?!write(stickerKey(storageOwner()),value):!erase(stickerKey(storageOwner()))){
+ if(value?!write(stickerKey(owner),value):!erase(stickerKey(owner))){
   refresh();message("Unable to save your page sticker.");return
  }
  pageSticker=value;applyAll();message(owner?(value?"Page stickers saved.":"Page stickers removed."):"Guest sticker preference saved on this browser.");
 });
 upload.input.addEventListener("change",async()=>{
  const owner=person();
- if(owner!==currentOwner){refresh();message("Learner changed during upload. Reopen the editor.");return}
+ if(!owner||owner!==currentOwner){refresh();message("Select your learner before uploading.");return}
  const file=upload.input.files?.[0];if(!file)return;
  const mime=file.type||({"jpg":"image/jpeg","jpeg":"image/jpeg","png":"image/png","webp":"image/webp"}[file.name.split(".").pop().toLowerCase()]||"");
  if(!["image/jpeg","image/png","image/webp"].includes(mime)||file.size>5*1024*1024){
@@ -477,7 +478,7 @@ upload.input.addEventListener("change",async()=>{
 });
 removeImage.addEventListener("click",()=>{
  const owner=person();if(owner!==currentOwner){refresh();return}
- if(!erase(imageKey(storageOwner()))){message("Unable to remove background image.");return}
+ if(!erase(imageKey(owner))){message("Unable to remove background image.");return}
  savedImage="";removeImage.disabled=true;applyAll();message("Background image removed; colors and stickers remain.");
 });
 window.addEventListener("pageshow",refresh);
