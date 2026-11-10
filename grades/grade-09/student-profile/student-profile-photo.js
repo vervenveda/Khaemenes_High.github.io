@@ -134,8 +134,13 @@ if(toolGrid&&photoCard&&typeof popup.showModal==="function"){
   opener.style.cssText="box-sizing:border-box;display:flex;align-items:center;justify-content:center;width:100%;min-width:0;min-height:56px;padding:10px 12px;border:1px solid #65716c;border-radius:7px;background:#33454b;text-align:center;text-decoration:none;font:400 16px/1.3 Nunito,Arial,sans-serif;cursor:pointer";
   opener.style.setProperty("color","#fff8e9","important");
   opener.style.setProperty("-webkit-text-fill-color","#fff8e9","important");
-  opener.addEventListener("click",()=>{display();syncMark();popup.showModal();close.focus()});
-  popup.addEventListener("close",()=>{if(opener.isConnected)opener.focus()});
+  let dialogOwner=null;
+  opener.addEventListener("click",()=>{display();syncMark();dialogOwner=learner();if(!dialogOwner)return;popup.showModal();close.focus()});
+  popup.addEventListener("close",()=>{dialogOwner=null;if(opener.isConnected)opener.focus()});
+  const closeForLearnerSwitch=()=>{if(popup.open&&learner()!==dialogOwner){popup.close();input.value="";status.textContent="Learner changed. Reopen the editor for the selected student."}};
+  window.addEventListener("khaemenes-family-changed",closeForLearnerSwitch);
+  window.addEventListener("storage",event=>{if(!event.key||["khaemenes_active_learner_v1","khaemenes_active_family_v1","khaemenes_family_registry_v1"].includes(event.key))closeForLearnerSwitch()});
+  window.addEventListener("pageshow",closeForLearnerSwitch);
   popup.addEventListener("click",event=>{if(event.target===popup)popup.close()});
   // Picture customization remains implemented and learner-scoped, but its
   // redundant Profile Tools button is not inserted. Edit Profile is the entry.
