@@ -165,7 +165,16 @@ function open(){
  if(!dialog.open)dialog.showModal();
  close.focus();
 }
-for(const event of ["khaemenes-learning-continuation-changed","khaemenes-course-pins-changed","khaemenes-student-profile-changed","pageshow"])
+for(const event of ["khaemenes-learning-continuation-changed","khaemenes-learning-continuation-ready","khaemenes-course-pins-changed","khaemenes-student-profile-changed","focus","pageshow"])
  window.addEventListener(event,()=>{if(dialog.open){checkpointSnapshot();render();}});
+ // Other tabs may change the selected learner, pins, or continuation snapshots.
+ // Re-read on storage notifications without changing any academic data.
+ window.addEventListener("storage",event=>{
+  if(!dialog.open)return;
+  const key=String(event.key||"");
+  if(!key||key==="khaemenes.learning.continuation.v1"||key.includes("active_learner")||key.includes("pinned")||key.includes("language")||key.includes("family_registry")){
+   checkpointSnapshot();render();
+  }
+ });
 window.KhaemenesUpperGradeClassProgressDialog=Object.freeze({version:"1.0.0",open,close:()=>dialog.open&&dialog.close()});
 })();
