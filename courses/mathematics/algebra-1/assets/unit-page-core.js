@@ -36,7 +36,7 @@ function bind(items,key){
   next.scores[key]=Math.max(Number(next.scores[key])||0,pct);
   if(pct>=80&&!next.completed.includes(key))next.completed.push(key);
   next.attempts.push({key,score:pct,correct:c,total:active.length,at:new Date().toISOString(),items:active.map(q=>q.id),answers:[...answers]});
-  try{localStorage.setItem(KEY,JSON.stringify(next))}catch{msg.textContent="Could not save your grade. Check local device storage before submitting again.";return}
+  try{const encoded=JSON.stringify(next);localStorage.setItem(KEY,encoded);if(localStorage.getItem(KEY)!==encoded)throw Error("Algebra I record write not verified")}catch{msg.textContent="Could not verify saved mastery evidence. Check local device storage before submitting again.";return}
   p=next;
   active.forEach((q,i)=>{const f=$("#fb"+i),ok=answers[i]===q.answer;if(f){f.hidden=false;f.className="feedback "+(ok?"good":"bad");f.textContent=(ok?"Correct. ":"Review. ")+q.explanation}});
   host.querySelectorAll("input").forEach(el=>el.disabled=true);graded=true;score.disabled=true;score.textContent="Attempt graded";
