@@ -134,8 +134,9 @@ $("week12-submit").addEventListener("click",()=>{
  submission=next;
  const progress={...W.progress,[W.flag(60)]:true};
  if(!write(W.progressKey,JSON.stringify(progress))){
+   sync();
    $("week12-submission-status").textContent="Submission is saved, but completion is not yet confirmed. Retry this same submission to recover the marker.";
-   sync();return;
+   return;
  }
  W.progress[W.flag(60)]=true;
  sync();
