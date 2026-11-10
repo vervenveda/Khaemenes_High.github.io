@@ -43,14 +43,25 @@ frame.title="Khaemenes Academy Yearbook Studio";frame.loading="lazy";
 frame.referrerPolicy="strict-origin-when-cross-origin";frame.setAttribute("allow","");
 frame.src=url;
 shell.append(head,help,frame);dialog.append(shell);document.body.append(dialog);
-let origin=null;
+let origin=null,openedLearner=null;
+const activeLearner=()=>window.KhaemenesHighProfileGradeContext?.activeForGrade?.(String(grade).padStart(2,"0"))?.learnerId||null;
 function open(trigger){
- origin=trigger||document.activeElement;
+ const owner=activeLearner();
+ if(!owner)return false;
+ origin=trigger||document.activeElement;openedLearner=owner;
+ frame.src=url;
  if(!dialog.open)dialog.showModal();
  close.focus();
+ return true;
 }
+function closeOnLearnerChange(){if(dialog.open&&(!openedLearner||activeLearner()!==openedLearner))dialog.close()}
+window.addEventListener("khaemenes-family-changed",closeOnLearnerChange);
+window.addEventListener("pageshow",closeOnLearnerChange);
+window.addEventListener("storage",event=>{
+ if(!event.key||["khaemenes_active_learner_v1","khaemenes_active_family_v1","khaemenes_family_registry_v1"].includes(event.key))closeOnLearnerChange();
+});
 close.addEventListener("click",()=>dialog.close());
 dialog.addEventListener("click",event=>{if(event.target===dialog)dialog.close()});
-dialog.addEventListener("close",()=>{if(origin?.isConnected)origin.focus()});
+dialog.addEventListener("close",()=>{openedLearner=null;frame.src="about:blank";if(origin?.isConnected)origin.focus()});
 window.KhaemenesUpperGradeYearbook=Object.freeze({version:"1.0.0",open,close:()=>dialog.open&&dialog.close()});
 })();
