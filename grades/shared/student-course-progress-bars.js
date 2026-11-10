@@ -89,7 +89,10 @@ function mountGradeNineChart(){
  for(const [button,value] of [[allButton,"all"],[needsButton,"review"]]){
   button.type="button";button.addEventListener("click",()=>{mode=value;render()});
  }
- controls.append(allButton,needsButton,connectionsButton);
+ const refreshButton=text("button","grade09-progress-filter","Recheck reports");
+ refreshButton.type="button";refreshButton.title="Re-read saved progress from this browser; this does not submit or award grades.";
+ refreshButton.addEventListener("click",render);
+ controls.append(allButton,needsButton,connectionsButton,refreshButton);
  function data(){
   const learner=active();
   const continuation=window.KhaemenesLearningContinuation;
@@ -237,7 +240,7 @@ function mountGradeNineChart(){
   }
  }
  render();
- for(const event of ["khaemenes-learning-continuation-changed","khaemenes-learning-continuation-ready","khaemenes-course-pins-changed","khaemenes-grade09-language-changed","khaemenes-student-profile-changed","focus","pageshow"])
+ for(const event of ["khaemenes-grade09-progress-refresh","khaemenes-learning-continuation-changed","khaemenes-learning-continuation-ready","khaemenes-course-pins-changed","khaemenes-grade09-language-changed","khaemenes-student-profile-changed","focus","pageshow"])
   window.addEventListener(event,render);
  window.addEventListener("storage",e=>{if(!e.key||e.key.includes("continuation")||e.key.includes("active_learner")||e.key.includes("pinned")||e.key.includes("language"))render()});
 }
