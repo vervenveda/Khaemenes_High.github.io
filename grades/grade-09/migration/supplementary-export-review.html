@@ -60,6 +60,10 @@ $("prepare").addEventListener("click",()=>{
   archive.pe_quarantine_record_count=pe.matched_count;
   archive.complete_grade09_backup=false;
   archive.warning="Contains sensitive unencrypted evidence. Selected learner keys and exact Academy-ID English dashboard entry only. PE remains unclaimed; this is not a full backup.";
+  if(new TextEncoder().encode(JSON.stringify(archive)).byteLength>20*1024*1024)
+    throw Error("Combined selected-learner export exceeds the 20 MiB limit; export the separate courses individually");
+  if(contract.identityRaw?.()!==JSON.stringify(owner.learnerId))
+    throw Error("Learner selection changed during collection");
   status("Prepared "+archive.records.length+" records, including "+english.records.length+" selected English dashboard entry. Excluded "+archive.excluded_counts.ambiguous+" ambiguous keys and "+archive.excluded_counts.other_or_unmapped+" other/unmapped keys; "+pe.matched_count+" PE records remain quarantined. This is private plaintext evidence, NOT a complete backup or proof of authenticated ownership.");
   $("download").disabled=archive.records.length===0;
  }catch(e){archive=null;status("Nothing exported: "+String(e?.message||e))}
