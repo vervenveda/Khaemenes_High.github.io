@@ -27,9 +27,12 @@ const imageKey=id=>"khaemenes.grade09.profile.background.image:"+encodeURICompon
 const emojiList=["","✨","⭐","🌟","🌸","🌿","🌻","🎨","🎓","📚","🎵","🦋","🌈","🪐"];
 const isColor=v=>typeof v==="string"&&/^#[0-9a-f]{6}$/i.test(v);
 const person=()=>{
+ const registered=window.KhaemenesHighProfileGradeContext?.activeForGrade?.(pageGrade||"09");
+ if(!registered)return null;
  const a=window.KhaemenesStudentProfileV2?.activeLearner?.()?.learnerId;
  const b=window.KhaemenesCourseEntryContract?.readAcademyProfile?.()?.learnerId;
- return a&&b&&String(a)!==String(b)?null:(a?String(a):(b?String(b):null));
+ if((a&&String(a)!==registered.learnerId)||(b&&String(b)!==registered.learnerId))return null;
+ return registered.learnerId;
 };
 const read=k=>{try{return localStorage.getItem(k)}catch{return null}};
 function earnedStickers(owner){
@@ -281,7 +284,8 @@ const saveAll=action("Save All Background Choices");
 saveAll.addEventListener("click",()=>{
  const owner=person();
  if(owner!==currentOwner){refresh();message("Learner changed; reopen the editor to save.");return}
- const scope=storageOwner();
+ if(!owner){message("Choose your registered learner to save personal backgrounds.");return}
+ const scope=owner;
  const updates=[[colorsKey(scope),pageColor],[sectionsKey(scope),JSON.stringify(sectionPrefs)],[stickerKey(scope),pageSticker]];
  const previous=updates.map(([key])=>[key,read(key)]);
  let saved=true;
@@ -459,7 +463,8 @@ upload.input.addEventListener("change",async()=>{
   }
   if(data.length>=650000)throw Error("Please choose a simpler or smaller image");
   if(person()!==owner||currentOwner!==owner){message("The selected learner changed. Image not saved.");return}
-  if(!write(imageKey(storageOwner()),data))throw Error("Browser storage is full");
+  if(!owner||person()!==owner||currentOwner!==owner){message("Learner changed. Image not saved.");return}
+  if(!write(imageKey(owner),data))throw Error("Browser storage is full");
   savedImage=data;applyAll();removeImage.disabled=false;
   message(owner?"Background image saved on this device for the selected learner.":"Background image saved to a separate guest design on this browser.");
  }catch(error){message("Background image could not be saved. Try a smaller image; your previous image is preserved.")}
@@ -473,6 +478,7 @@ removeImage.addEventListener("click",()=>{
 window.addEventListener("pageshow",refresh);
 window.addEventListener("load",refresh);
 window.addEventListener("khaemenes-student-profile-changed",refresh);
+window.addEventListener("khaemenes-family-changed",refresh);
 window.addEventListener("khaemenes-grade09-sticker-rewards-changed",()=>{updateRewardOptions(pageEmoji.input,person());for(const controls of rows.values())updateRewardOptions(controls.emoji,person())});
 window.addEventListener("storage",event=>{
  if(!event.key||event.key==="khaemenes_active_learner_v1"||
