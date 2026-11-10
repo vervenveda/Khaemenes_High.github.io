@@ -45,6 +45,21 @@ function mountGradeNineChart(){
  const HISTORY_PREFIX="khaemenes-grade09-progress-observations-v1:";
  const historyKey=(learner,course)=>HISTORY_PREFIX+encodeURIComponent(learner)+":"+encodeURIComponent(course);
  const validPercent=n=>typeof n==="number"&&Number.isFinite(n)&&n>=0&&n<=100;
+ function gradeSummary(snapshot){
+  const seen=new Set();
+  const items=(Array.isArray(snapshot?.assessments)?snapshot.assessments:[]).filter(x=>{
+   if(!x||(x.kind!=="quiz"&&x.kind!=="test")||typeof x.id!=="string"||seen.has(x.id))return false;
+   if(!Number.isFinite(x.earned)||!Number.isFinite(x.possible)||x.possible<=0||x.earned<0||x.earned>x.possible)return false;
+   seen.add(x.id);return true;
+  });
+  const summary=kind=>{
+   const selected=items.filter(x=>!kind||x.kind===kind);
+   const earned=selected.reduce((n,x)=>n+x.earned,0);
+   const possible=selected.reduce((n,x)=>n+x.possible,0);
+   return {count:selected.length,earned,possible,percent:possible>0?Math.round(1000*earned/possible)/10:null};
+  };
+  return {overall:summary(null),quiz:summary("quiz"),test:summary("test"),items};
+ }
  function observations(learner,courseId,snap){
   if(!learner||!courseId)return [];
   const key=historyKey(learner,courseId);
@@ -103,6 +118,7 @@ function mountGradeNineChart(){
    const course=slot.id?registry.getCourse(slot.id):null;
    const snap=course?snaps.find(s=>s.courseId===course.id&&!s.stale):null;
    const latest=course?snaps.find(s=>s.courseId===course.id):null;
+   const grades=gradeSummary(snap);
    const pct=snap?.progress?.percent;
    const percent=typeof pct==="number"&&Number.isFinite(pct)&&pct>=0&&pct<=100?pct:null;
    const best=snap?.mastery?.best;
@@ -112,7 +128,7 @@ function mountGradeNineChart(){
    const stale=course?snaps.some(s=>s.courseId===course.id&&s.stale):false;
    const history=course&&learner?observations(learner,course.id,snap):[];
    const forecast=percent!==null&&course&&learner?monteCarloForecast(history,learner+"|"+course.id):null;
-   return {index,subject:slot.label,course,snap,latest,percent,mastery,threshold,mastered,stale,color:COLORS[index],forecast,
+   return {index,subject:slot.label,course,snap,latest,grades,percent,mastery,threshold,mastered,stale,color:COLORS[index],forecast,
     needsReview:Boolean(stale||snap?.status==="corrections"||snap?.status==="mastery"||snap?.family?.needsAction)};
   })};
  }
@@ -129,6 +145,7 @@ function mountGradeNineChart(){
   metric("Selected classes",rows.filter(r=>r.course).length+" / 8");
   metric("Reporting progress",learner?rows.filter(r=>r.percent!==null).length+" / 8":"—");
   metric("Needs attention",learner?String(rows.filter(r=>r.needsReview).length):"—");
+  metric("Classes reporting quiz/test grades",learner?rows.filter(r=>r.grades.overall.count>0).length+" / 8":"—");
   if(!connections.hidden)renderConnections(learner,rows);
   if(!learner){
    status.textContent="Choose your Grade 9 student profile to see your personal class progress.";
@@ -170,7 +187,8 @@ function mountGradeNineChart(){
     track.setAttribute("aria-valuenow",String(r.percent));
    }else track.setAttribute("aria-label",r.subject+" completion not reported");
    const value=text("span","grade09-progress-value",r.percent===null?(r.stale?"Needs refresh":r.course?"Not reported":"Select class"):Math.round(r.percent)+"%");
-   item.append(label,track,value);
+   const avg=text("span","grade09-progress-average",r.grades.overall.percent===null?"Grade average: not reported":"Quiz/test average: "+r.grades.overall.percent+"%");
+   item.append(label,track,value,avg);
    item.addEventListener("click",()=>{selected=r.index;showDetails(r);renderRowsSelection()});
    graph.append(item);
   });
@@ -193,6 +211,23 @@ function mountGradeNineChart(){
   const assessment=text("p","",r.mastery===null?"Assessment progress: nothing to show yet.":"Best assessment score: "+Math.round(r.mastery)+"% · goal "+r.threshold+"%.");
   const next=text("p","",r.stale?"Open this class once to refresh your progress.":r.snap?.nextTitle?"Next: "+r.snap.nextTitle:"Open the class when you are ready to choose your next step.");
   detail.append(name,state,assessment,next);
+  const grades=r.grades;
+  const gradeline=text("section","grade09-progress-grade-summary");
+  gradeline.append(text("h4","","Current Quiz & Test Grades"));
+  const gradeLabel=g=>g.percent===null?"Not reported":g.percent+"% · "+g.count+" graded "+(g.count===1?"assessment":"assessments");
+  gradeline.append(text("p","","Current graded average: "+gradeLabel(grades.overall)));
+  gradeline.append(text("p","","Quizzes: "+gradeLabel(grades.quiz)));
+  gradeline.append(text("p","","Tests: "+gradeLabel(grades.test)));
+  if(grades.items.length){
+   const list=text("ul","");
+   grades.items.slice(-12).forEach(x=>{
+    const entry=text("li","",x.title+" ("+x.kind+") · "+x.earned+"/"+x.possible+" points · "+(Math.round(1000*x.earned/x.possible)/10)+"%");
+    list.append(entry);
+   });
+   gradeline.append(list);
+  }else gradeline.append(text("p","","No quiz or test scores have been submitted through this class reporting connection."));
+  gradeline.append(text("p","grade09-progress-source","Average = total earned points ÷ total possible points × 100. Only recorded quiz/test items are counted; this local summary is not an official transcript."));
+  detail.append(gradeline);
   const statusValue=r.snap?.status||r.latest?.status;
   const descriptors={continue:"Ready to continue",practice:"Practice in progress",corrections:"Corrections needed",mastery:"Mastery step pending",assessment:"Assessment pending",complete:"Course reported complete",paused:"Paused / recovery"};
   detail.append(text("p","grade09-progress-source","Course status: "+(descriptors[statusValue]||"No status report received")+"."));
