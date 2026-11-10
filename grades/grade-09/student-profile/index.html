@@ -358,6 +358,7 @@ html:root:root body #vnv-global-support a.vnv-support-button:focus-visible{
 <script src="student-quick-pins.js"></script>
 <script src="student-schedule-bar.js?v=20261107-freshman-shortcuts-v1"></script>
 <script src="https://vervenveda.com/Khaemenes_Academy.github.io/assets/khaemenes-student-profile-v2.js"></script>
+<script src="../../shared/high-school-profile-grade-context.js"></script>
 <script src="student-profile-preferences.js"></script>
 <script>
 (function(){
@@ -366,21 +367,27 @@ html:root:root body #vnv-global-support a.vnv-support-button:focus-visible{
   if(!registry)return;
   const read=(k,f)=>{try{const r=localStorage.getItem(k);return r?JSON.parse(r):f}catch{return f}};
   const escapeHTML=value=>String(value??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
-  const academyProfile=window.KhaemenesCourseEntryContract?.readAcademyProfile?.()||null;
-  const scoped=base=>academyProfile&&window.KhaemenesCourseEntryContract?.scopedKey
-    ? window.KhaemenesCourseEntryContract.scopedKey(base,academyProfile)
-    : base;
-  const p=read(scoped('khaemenes-high-profile-v1'),null)||(!academyProfile?read('khaemenes-grade09-profile-v1',null):null)||{};
-  const name=p.displayName||p.name||p.nickname||academyProfile?.name||'Student';
-  const initials=(name.split(/\s+/).filter(Boolean).slice(0,2).map(x=>x[0]).join('')||'S').toUpperCase();
-  const note=localStorage.getItem(scoped('khaemenes-grade09-daily-note-v1'));
-  document.getElementById('studentName').textContent=name;
-  if(!document.querySelector('#avatar img'))document.getElementById('avatar').textContent=window.KhaemenesGrade09Design?.avatarText(initials)||initials;
-  document.getElementById('studentMeta').textContent=`Grade 09${p.pathway?' · '+p.pathway:''} · Local profile workspace`;
+  const activeGrade09=()=>window.KhaemenesHighProfileGradeContext?.activeForGrade?.("09")||null;
+  let shownLearnerId="";
+  function updateIdentity(){
+    const learner=activeGrade09(),id=learner?.learnerId||"";
+    const p=id?read('khaemenes-high-profile-v1:learner:'+encodeURIComponent(id),null)||{}:{};
+    const name=id?(p.displayName||p.name||p.nickname||learner.nickname||"Student"):"Student";
+    const initials=(name.split(/\s+/).filter(Boolean).slice(0,2).map(x=>x[0]).join('')||'S').toUpperCase();
+    document.getElementById('studentName').textContent=name;
+    if(!document.querySelector('#avatar img'))document.getElementById('avatar').textContent=window.KhaemenesGrade09Design?.avatarText(initials)||initials;
+    document.getElementById('studentMeta').textContent=id
+      ? `Grade 09${p.pathway?' · '+p.pathway:''} · Local profile workspace`
+      : "Grade 09 · Select a registered Grade 09 learner in the Family Portal";
+    shownLearnerId=id;
+    return id;
+  }
+  updateIdentity();
 
   function bindLaunches(root=document){
     root.querySelectorAll('[data-launch-course]').forEach(link=>{
-      link.addEventListener('click',()=>{
+      link.addEventListener('click',event=>{
+        if(!activeGrade09()||activeGrade09().learnerId!==shownLearnerId){event.preventDefault();return}
         const course=registry.getCourse(link.dataset.launchCourse);
         if(course)registry.recordLaunch(course.id,link.href.replace(location.origin,''),course.title);
       });
@@ -409,6 +416,7 @@ html:root:root body #vnv-global-support a.vnv-support-button:focus-visible{
     }));
     host.innerHTML=cards.join('');
     host.querySelectorAll('[data-toggle-course]').forEach(button=>button.addEventListener('click',()=>{
+      if(!activeGrade09()||activeGrade09().learnerId!==shownLearnerId)return;
       registry.togglePinned(button.dataset.toggleCourse);
       void renderAll();
     }));
@@ -440,10 +448,24 @@ html:root:root body #vnv-global-support a.vnv-support-button:focus-visible{
     bindLaunches(document.getElementById("learningToday"));
   }
 
-  async function renderAll(){await Promise.all([renderManager(),renderLearningToday()])}
-  window.addEventListener('khaemenes-grade09-design-changed',()=>{if(!document.querySelector('#avatar img'))document.getElementById('avatar').textContent=window.KhaemenesGrade09Design?.avatarText(initials)||initials;});
+  async function renderAll(){
+    const id=updateIdentity();
+    if(!id){
+      document.getElementById('courseManagerGrid').replaceChildren();
+      document.getElementById('learningTodaySummary').textContent="Select a registered Grade 09 learner to view personal learning progress.";
+      document.getElementById('learningTodayActions').replaceChildren();
+      document.getElementById('learningTodayCourses').replaceChildren();
+      return;
+    }
+    await Promise.all([renderManager(),renderLearningToday()]);
+    if(activeGrade09()?.learnerId!==id)void renderAll();
+  }
+  window.addEventListener('khaemenes-grade09-design-changed',updateIdentity);
+  window.addEventListener('khaemenes-family-changed',()=>{void renderAll()});
+  window.addEventListener('pageshow',()=>{void renderAll()});
   window.addEventListener('storage',event=>{
-    if(registry.shouldRefreshForStorageKey(event.key))void renderAll();
+    if(["khaemenes_active_learner_v1","khaemenes_active_family_v1","khaemenes_family_registry_v1"].includes(event.key)
+       ||registry.shouldRefreshForStorageKey(event.key))void renderAll();
   });
   void renderAll();
 })();
