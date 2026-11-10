@@ -300,13 +300,15 @@ function activeLearner(){
     const learner=typeof id==='string'?registry?.learners?.[id]:null;
     if(!learner||learner.learnerId!==id)return null;
     if(learner.stage!=='high'||!['9','09'].includes(String(learner.grade)))return null;
+    const validated=window.KhaemenesHighProfileGradeContext?.activeForGrade?.("09");
+    if(!validated||validated.learnerId!==id)return null;
     const sharedId=window.KhaemenesStudentProfileV2?.activeLearner?.()?.learnerId;
     return sharedId&&String(sharedId)!==id?null:learner;
   }catch{return null}
 }
 function registeredGrade(){const value=String(activeLearner()?.grade||'');return value==='9'?'09':['09','10','11','12'].includes(value)?value:null}
 function gradeDashboard(){const grade=registeredGrade();return grade?'https://vervenveda.com/Khaemenes_High.github.io/grades/grade-'+grade+'/student-profile/':'../'}
-function profileKey(){const learner=activeLearner();return learner?`${BASE_KEY}:learner:${encodeURIComponent(learner.learnerId)}`:BASE_KEY}
+function profileKey(){const learner=activeLearner();return learner?`${BASE_KEY}:learner:${encodeURIComponent(learner.learnerId)}`:null}
 const read=(k,f)=>{try{const r=localStorage.getItem(k);return r?JSON.parse(r):f}catch{return f}};
 const write=(k,v)=>{try{localStorage.setItem(k,JSON.stringify(v));return true}catch{return false}};
 function load(){
@@ -385,7 +387,11 @@ document.getElementById('saveProfile').onclick=()=>{
     status.hidden=false;status.textContent='Your student profile changed while this page was open. Refresh before saving so everything stays with the right profile.';return;
   }
   const p=data();
-  if(!write(profileKey(),p)){status.hidden=false;status.textContent='Your profile could not be saved on this device.';return}
+  const ownerKey=profileKey();
+  if(!ownerKey||activeLearner()?.learnerId!==loadedOwner||registeredGrade()!==loadedGrade){
+    status.hidden=false;status.textContent='Learner changed before saving. Nothing was written.';return;
+  }
+  if(!write(ownerKey,p)){status.hidden=false;status.textContent='Your profile could not be saved on this device.';return}
   const list=value=>String(value||'').split(/[\n,]+/).map(x=>x.trim()).filter(Boolean);
   let synced=false;
   const shared=window.KhaemenesStudentProfileV2;
@@ -414,6 +420,11 @@ document.getElementById('exportProfile').onclick=()=>{
 };
 load();
 window.addEventListener('khaemenes-student-profile-changed',load);
+window.addEventListener('khaemenes-family-changed',load);
+window.addEventListener('pageshow',()=>{if(activeLearner()?.learnerId!==loadedOwner)load()});
+window.addEventListener('storage',event=>{
+ if(!event.key||['khaemenes_active_learner_v1','khaemenes_active_family_v1','khaemenes_family_registry_v1'].includes(event.key))load();
+});
 </script>
 <script src="../../../../courses/shared/high-school-course-pins.js"></script>
 <script src="../../../../courses/shared/high-school-eight-class.js"></script>
