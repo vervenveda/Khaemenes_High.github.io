@@ -25,9 +25,16 @@ const left=document.createElement("div");
 left.className="grade09-progress-dialog-checkpoints";
 const right=document.createElement("div");
 right.className="grade09-progress-dialog-chart";
-left.append(checkpoints);
+/* Preserve the original live checkpoints, but keep their long grid optional. */
+const checkpointDisclosure=document.createElement("details");
+checkpointDisclosure.className="grade09-checkpoints-disclosure";
+const summary=document.createElement("summary");
+summary.textContent="Today's Class Checkpoints · Expand 16 cards";
+summary.setAttribute("aria-label","Expand or collapse sixteen Grade 9 class checkpoints");
+checkpointDisclosure.append(summary,checkpoints);
+left.append(checkpointDisclosure);
 right.append(progress);
-/* Keep the existing live chart and checkpoint owners; show progress first. */
+/* Keep both live academic owners: graph first, optional checkpoints second. */
 content.append(right,left);
 dialog.append(header,content);
 document.body.append(dialog);
@@ -40,7 +47,7 @@ if(launcher){
  launcher.addEventListener("click",()=>{focusBefore=launcher;});
 }
 dialog.addEventListener("close",()=>{if(focusBefore?.isConnected)focusBefore.focus()});
-window.KhaemenesGrade09ClassProgressDialog=Object.freeze({version:1,open:()=>{if(!dialog.open)dialog.showModal()},close:()=>{if(dialog.open)dialog.close()}});
+window.KhaemenesGrade09ClassProgressDialog=Object.freeze({version:2,open:()=>{if(!dialog.open)dialog.showModal();window.dispatchEvent(new Event("khaemenes-grade09-progress-refresh"));},close:()=>{if(dialog.open)dialog.close()}});
 })();
 
 /* Grade 09 schedule dialog: rehome, never clone, the canonical eight-class schedule.
