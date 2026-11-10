@@ -127,6 +127,9 @@ function activeLearner(){
   const id=JSON.parse(localStorage.getItem("khaemenes_active_learner_v1")||"null");
   const registry=JSON.parse(localStorage.getItem("khaemenes_family_registry_v1")||"null");
   if(typeof id!=="string"||registry?.learners?.[id]?.learnerId!==id)return null;
+  const pageGrade=String(document.body?.dataset.grade||"09");
+  const validated=window.KhaemenesHighProfileGradeContext?.activeForGrade?.(pageGrade);
+  if(!validated||validated.learnerId!==id)return null;
   const contract=window.KhaemenesCourseEntryContract?.readAcademyProfile?.()?.learnerId;
   const shared=window.KhaemenesStudentProfileV2?.activeLearner?.()?.learnerId;
   if((contract&&String(contract)!==id)||(shared&&String(shared)!==id))return null;
@@ -308,7 +311,7 @@ function renderDashboard(){
 window.KhaemenesHighProfileDetails=Object.freeze({load,collect,render:renderDashboard,fieldCount:entries.length});
 if(document.getElementById("saveProfile"))mountEditor();
 else if(document.getElementById("avatar")){renderDashboard();
- for(const event of ["pageshow","khaemenes-student-profile-changed","storage"])
+ for(const event of ["pageshow","khaemenes-family-changed","khaemenes-student-profile-changed","storage"])
   window.addEventListener(event,renderDashboard);
 }
 })();
