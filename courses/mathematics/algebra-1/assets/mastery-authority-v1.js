@@ -102,6 +102,17 @@ function allWeeksMastered(first=2,last=36){for(let n=Number(first);n<=Number(las
 window.KhaemenesAlgebra1MasteryAuthority={
  version:"1.4",
  threshold:MASTERY,
+ // Browser-local progression is not a trusted official transcript or
+ // authenticated evaluator decision. Additive metadata only; current gates
+ // and pre-existing learner records are deliberately unchanged.
+ evidenceTrust:Object.freeze({
+   classification:"unverified-browser-local-learning-evidence",
+   authoritative:false,
+   evaluatorIdentityAuthenticated:false,
+   cryptographicallyVerified:false,
+   approvedForOfficialRecords:false,
+   courseProgressionOnly:true
+ }),
  responsive_layout:"v1",
  focused_assessment:"v1.2",
  keys:{weekly:WEEKLY_KEY,midterm:MIDTERM_KEY,final:FINAL_KEY,dedicatedUnit:dedicatedKey,sharedUnit:sharedKey},
