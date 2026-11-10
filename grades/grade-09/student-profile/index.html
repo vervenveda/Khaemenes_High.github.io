@@ -395,6 +395,8 @@ html:root:root body #vnv-global-support a.vnv-support-button:focus-visible{
   }
 
   async function renderManager(){
+    const expectedId=shownLearnerId;
+    if(!expectedId||activeGrade09()?.learnerId!==expectedId)return;
     const host=document.getElementById('courseManagerGrid');
     const activeMath=registry.mathPathway();
     const cards=await Promise.all(registry.courses.map(async course=>{
@@ -414,6 +416,7 @@ html:root:root body #vnv-global-support a.vnv-support-button:focus-visible{
         </div>
       </article>`;
     }));
+    if(shownLearnerId!==expectedId||activeGrade09()?.learnerId!==expectedId)return;
     host.innerHTML=cards.join('');
     host.querySelectorAll('[data-toggle-course]').forEach(button=>button.addEventListener('click',()=>{
       if(!activeGrade09()||activeGrade09().learnerId!==shownLearnerId)return;
@@ -424,6 +427,8 @@ html:root:root body #vnv-global-support a.vnv-support-button:focus-visible{
   }
 
   async function renderLearningToday(){
+    const expectedId=shownLearnerId;
+    if(!expectedId||activeGrade09()?.learnerId!==expectedId)return;
     const summary=document.getElementById("learningTodaySummary"),actions=document.getElementById("learningTodayActions"),others=document.getElementById("learningTodayCourses");
     const pinned=registry.pinnedCourses();
     const priority=registry.resumePriorityCourse?.()||pinned[0]||null;
@@ -432,6 +437,7 @@ html:root:root body #vnv-global-support a.vnv-support-button:focus-visible{
       actions.replaceChildren();const a=document.createElement("a");a.className="btn gold";a.href="daily-lessons/";a.textContent="Start Daily Lessons →";actions.append(a);others.replaceChildren();return;
     }
     const next=await registry.resolveContinueFor(priority.id);
+    if(shownLearnerId!==expectedId||activeGrade09()?.learnerId!==expectedId)return;
     summary.textContent=priority.title+" · "+(next?.detail||"Your next learning step is ready.");
     actions.replaceChildren();
     const primary=document.createElement("a");primary.className="btn gold";primary.href=next?.url||priority.home;primary.dataset.launchCourse=priority.id;primary.textContent=next?.actionLabel||"Continue Learning →";actions.append(primary);
@@ -439,6 +445,7 @@ html:root:root body #vnv-global-support a.vnv-support-button:focus-visible{
     others.replaceChildren();
     for(const course of pinned.filter(c=>c.id!==priority.id).slice(0,3)){
       const current=await registry.resolveContinueFor(course.id);
+      if(shownLearnerId!==expectedId||activeGrade09()?.learnerId!==expectedId)return;
       const card=document.createElement("div");card.className="lesson-card";
       const h=document.createElement("h3");h.textContent=course.title;
       const detail=document.createElement("p");detail.textContent=current?.detail||"Ready to continue.";
