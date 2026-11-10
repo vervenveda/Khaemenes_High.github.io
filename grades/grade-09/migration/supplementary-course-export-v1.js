@@ -52,8 +52,9 @@
   function collect(storage,id,origin){
     guard(storage,id,origin);
     const records=[],counts={ambiguous:0,other_or_unmapped:0};
+    const initialLength=storage.length,utf8=new TextEncoder();
     let totalBytes=0;
-    for(let i=0;i<storage.length;i++){
+    for(let i=0;i<initialLength;i++){
       const key=storage.key(i);
       if(typeof key!=="string")continue;
       const kind=classify(key,id);
@@ -61,11 +62,14 @@
       if(records.length>=MAX_RECORDS)throw Error("Maximum record count exceeded");
       const value=storage.getItem(key);
       if(typeof value!=="string")throw Error("Record changed during export");
-      // UTF-16 string size estimate is deliberately conservative for the preflight cap;
-      // encoded UTF-8 is verified again before returning.
-      totalBytes+=(key.length+value.length)*2;
+      totalBytes+=utf8.encode(key).byteLength+utf8.encode(value).byteLength;
       if(totalBytes>MAX_BYTES)throw Error("Supplemental export exceeds 20 MiB");
       records.push({source_key:key,record_type:kind,raw_value:value,ownership:"scoped-key-unverified"});
+    }
+    if(storage.length!==initialLength)throw Error("Browser storage changed during capture; retry after closing other tabs");
+    for(const record of records){
+      if(storage.getItem(record.source_key)!==record.raw_value)
+        throw Error("Course evidence changed during capture; retry after closing other tabs");
     }
     return {schema:"khaemenes-grade09-supplemental-evidence-v1",
       scope:"selected-learner-scoped-keys-only",source_origin:origin,
