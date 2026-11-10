@@ -1,0 +1,33 @@
+name: High School Student Progress Parity
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "grades/grade-*/student-profile/**"
+      - "grades/shared/student-course-progress-bars.js"
+      - "grades/shared/upper-grade-class-progress-dialog.js"
+      - "courses/tests/high-school-student-progress-parity.test.cjs"
+      - ".github/workflows/high-school-student-progress-parity.yml"
+  pull_request:
+    paths:
+      - "grades/grade-*/student-profile/**"
+      - "grades/shared/student-course-progress-bars.js"
+      - "grades/shared/upper-grade-class-progress-dialog.js"
+      - "courses/tests/high-school-student-progress-parity.test.cjs"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  student-progress-parity:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: Verify all four grades load learner-scoped Student Progress
+        run: node courses/tests/high-school-student-progress-parity.test.cjs
