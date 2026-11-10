@@ -75,7 +75,7 @@
     link.href=url.href;link.className="btn";link.textContent="Lesson tools, games and return paths";
     tools.appendChild(link);courseMain.prepend(tools);
   }
-  window.addEventListener("storage",event=>{if(event.key==="khaemenes_active_learner_v1")location.reload();});
+  window.addEventListener("storage",event=>{if(["khaemenes_active_learner_v1","khaemenes_active_family_v1","khaemenes_family_registry_v1"].includes(event.key))location.reload();});
 
   const root=document.documentElement;
   const themeKey="khae-ela9-theme-v1";
@@ -92,7 +92,7 @@
   retentionNotice.style.cssText="font:400 16px/1.5 Nunito,Arial,sans-serif;color:#7a291b;margin:10px 0";
   (document.querySelector("main")||document.body).prepend(retentionNotice);
   const selectionMatches=()=>{
-    if(!academyProfile?.learnerId)return true; // Preserve legacy unassigned work, but never certify it.
+    if(!academyProfile?.learnerId)return false; // Preserve unassigned legacy records, but never save new work without a learner.
     try{
       const id=JSON.parse(localStorage.getItem("khaemenes_active_learner_v1")||"null");
       const familyId=JSON.parse(localStorage.getItem("khaemenes_active_family_v1")||"null");
@@ -106,7 +106,7 @@
   let lastStoredProgress=null;
   try{lastStoredProgress=localStorage.getItem(courseKey)}catch{}
   const save=data=>{
-    if(!selectionMatches()){retentionNotice.textContent="The learner changed. This lesson was not saved; return to the selected student's lesson.";return false}
+    if(!selectionMatches()){retentionNotice.textContent="No verified Academy learner or the learner context changed. This lesson was not saved.";return false}
     try{
       if(localStorage.getItem(courseKey)!==lastStoredProgress)throw Error("Lesson records changed in another tab");
       const encoded=JSON.stringify(data);
@@ -118,7 +118,8 @@
       return false;
     }
   };
-  const progress=load();
+  const progress=academyProfile?.learnerId?load():{};
+  if(!academyProfile?.learnerId)retentionNotice.textContent="Read-only preview. Select your Academy learner before saving lesson work. Older unassigned browser records remain untouched.";
   document.querySelectorAll("[data-progress-key]").forEach(button=>{
     if(button.dataset.managedProgress==="week1"||button.dataset.managedProgress==="week3"||button.dataset.managedProgress==="week4"||button.dataset.managedProgress==="week5"||button.dataset.managedProgress==="week6"||button.dataset.managedProgress==="week7"||button.dataset.managedProgress==="week8"||button.dataset.managedProgress==="week9"||button.dataset.managedProgress==="week10"||button.dataset.managedProgress==="week11"||button.dataset.managedProgress==="week12"||button.dataset.managedProgress==="week13")return;
     const key=button.dataset.progressKey;
@@ -151,7 +152,7 @@
     const key=scopedKey(`khae-ela9-field:${field.dataset.saveField}`);
     try{field.value=localStorage.getItem(key)||""}catch{}
     field.addEventListener("input",()=>{
-      if(!selectionMatches()){retentionNotice.textContent="The learner changed. This draft was not saved.";return}
+      if(!selectionMatches()){retentionNotice.textContent="No verified Academy learner or the learner changed. This draft was not saved.";return}
       try{
         const value=field.value;
         localStorage.setItem(key,value);
