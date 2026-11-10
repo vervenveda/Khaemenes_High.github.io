@@ -1,7 +1,7 @@
 (()=>{"use strict";
 const D=window.KHAE_UNIT01,$=s=>document.querySelector(s),$$=s=>[...document.querySelectorAll(s)],MASTERY=80,KEY="khaemenes-algebra1-unit01-a3-v1",WEEK_STORE="khaemenes-algebra1-weekly-mastery-v2";
 const esc=s=>String(s).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
-function parse(k,f={}){try{return JSON.parse(localStorage.getItem(k)||"null")||f}catch{return f}}function load(){return parse(KEY,{attempts:[],best:{}})}function save(r){try{localStorage.setItem(KEY,JSON.stringify(r));return true}catch{return false}}function best(key){return Number(load()?.best?.[key])||0}function lessonMastered(n){return best(`lesson-${n}`)>=MASTERY}function weekMastered(n){const r=parse(WEEK_STORE,{weeks:{}})?.weeks?.[n];return Number(r?.best)>=MASTERY||Boolean(r?.attempts?.some(a=>a.mastery_met===true))}function allLessonsMastered(){return D.lessons.every(l=>lessonMastered(l.number))}function allUnitWeeksMastered(){return weekMastered(2)&&weekMastered(3)}function lessonWeek(n){return n<=3?2:3}function lessonUnlocked(n){if(n===1)return true;if(!lessonMastered(n-1))return false;return n===4?weekMastered(2):true}
+function parse(k,f={}){try{return JSON.parse(localStorage.getItem(k)||"null")||f}catch{return f}}function load(){return parse(KEY,{attempts:[],best:{}})}function save(r){try{const encoded=JSON.stringify(r);localStorage.setItem(KEY,encoded);return localStorage.getItem(KEY)===encoded}catch{return false}}function best(key){return Number(load()?.best?.[key])||0}function lessonMastered(n){return best(`lesson-${n}`)>=MASTERY}function weekMastered(n){const r=parse(WEEK_STORE,{weeks:{}})?.weeks?.[n];return Number(r?.best)>=MASTERY||Boolean(r?.attempts?.some(a=>a.mastery_met===true))}function allLessonsMastered(){return D.lessons.every(l=>lessonMastered(l.number))}function allUnitWeeksMastered(){return weekMastered(2)&&weekMastered(3)}function lessonWeek(n){return n<=3?2:3}function lessonUnlocked(n){if(n===1)return true;if(!lessonMastered(n-1))return false;return n===4?weekMastered(2):true}
 function shuffle(a){a=[...a];for(let i=a.length-1;i>0;i--){let j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]]}return a}
 function synthesisVariantBank(){
  const bank=[];
@@ -73,8 +73,10 @@ function installLessonWritingDraft(n){
   el.value=typeof draft[key]==='string'?draft[key]:'';
   el.addEventListener('input',()=>{
    draft[key]=el.value;
-   try{localStorage.setItem(draftKey,JSON.stringify(draft));status.textContent='Lesson writing saved locally. This is not graded mastery evidence.'}
-   catch{status.textContent='Unable to save lesson writing on this device. Copy or print your responses before leaving.'}
+   try{const encoded=JSON.stringify(draft);localStorage.setItem(draftKey,encoded);
+    if(localStorage.getItem(draftKey)!==encoded)throw Error("unverified lesson writing");
+    status.textContent='Lesson writing saved locally. This is not graded mastery evidence.'}
+   catch{status.textContent='Unable to verify lesson writing retention on this device. Copy or print your responses before leaving.'}
   });
  });
 }
