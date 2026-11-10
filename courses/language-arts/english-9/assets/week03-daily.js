@@ -234,6 +234,20 @@ if(day===15){
  independent.addEventListener("change",update);ack.addEventListener("change",update);
  $("week3-finish").addEventListener("click",()=>{
   if(!ready||frozen||!prepared()||evaluatorPassed())return;
+  // Reuse the existing submission when its exact submitted version remains unchanged.
+  // A failed progress-marker write must not create a new submittedAt timestamp.
+  const existingSubmission=reviewContract.validateSubmission(receipt)&&
+    receipt.learnerId===profile.learnerId&&receipt.independentDraftWordCount===locked.wordCount&&
+    receipt.finalWordCount===countWords(final.value)&&
+    receipt.conventionsEntered===conventionsCount();
+  if(existingSubmission){
+    const updateProgress=Object.assign({},progress,{[dayFlag]:true});
+    if(!write(progressKey,JSON.stringify(updateProgress))){
+      $("week3-assessment-status").textContent="Submission preserved, but the completion marker was not confirmed. Retry this same submission.";
+      return;
+    }
+    progress=updateProgress;update();updateIndex();return;
+  }
   const document={schema:"english9-week03-review-v1",submittedAt:new Date().toISOString(),
    learnerId:profile.learnerId,day:15,independentDraftWordCount:locked.wordCount,
    finalWordCount:countWords(final.value),conventionsEntered:conventionsCount(),
@@ -241,7 +255,10 @@ if(day===15){
   if(!write(receiptKey,JSON.stringify(document)))return;
   receipt=document;
   const next=Object.assign({},progress,{[dayFlag]:true});
-  if(!write(progressKey,JSON.stringify(next)))return;
+  if(!write(progressKey,JSON.stringify(next))){
+   $("week3-assessment-status").textContent="Submission preserved, but the completion marker was not confirmed. Retry this same submission.";
+   return;
+  }
   progress=next;update();updateIndex();
  });
  $("week3-export").addEventListener("click",()=>{
