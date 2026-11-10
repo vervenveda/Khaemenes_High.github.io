@@ -11,9 +11,12 @@ if(["10","11","12"].includes(pageGrade)){
 const avatar=document.getElementById("avatar"),row=avatar?.closest(".profile-row");
 if(!avatar||!row||document.getElementById("grade09PhotoControls"))return;
 const learner=()=>{
+  const registered=window.KhaemenesHighProfileGradeContext?.activeForGrade?.(pageGrade||"09");
+  if(!registered)return null;
   const a=window.KhaemenesStudentProfileV2?.activeLearner?.()?.learnerId;
   const b=window.KhaemenesCourseEntryContract?.readAcademyProfile?.()?.learnerId;
-  return a&&b&&String(a)!==String(b)?null:(a?String(a):(b?String(b):null));
+  if((a&&String(a)!==registered.learnerId)||(b&&String(b)!==registered.learnerId))return null;
+  return registered.learnerId;
 };
 const keyFor=id=>id?"khaemenes.grade09.profile.photo:"+encodeURIComponent(id):null;
 const shapes=[["rectangle","Rectangle"],["square","Square"],["circle","Circle"],["heart","Heart"],["star","Star"],["octagon","Octagon"],["hectagon","Hectagon (100 sides)"]];
@@ -222,6 +225,8 @@ input.addEventListener("change",async()=>{
     if(!ctx)throw Error("canvas");
     ctx.drawImage(im,(im.naturalWidth-side)/2,(im.naturalHeight-side)/2,side,side,0,0,240,240);
     const data=canvas.toDataURL("image/jpeg",0.78);if(data.length>=400000)throw Error("too large");
+    // Image decode and canvas work may span a sibling switch or another-tab update.
+    if(learner()!==owner)return;
     localStorage.setItem(keyFor(owner),data);display();status.textContent="Photo saved on this device.";
   }catch{status.textContent="Photo couldn't be saved; try another."}
   finally{URL.revokeObjectURL(url);input.value=""}
@@ -250,5 +255,9 @@ window.addEventListener("khaemenes-grade09-design-changed",()=>{updateShape();di
 window.addEventListener("pageshow",display);
 window.addEventListener("focus",display);
 window.addEventListener("khaemenes-student-profile-changed",display);
+window.addEventListener("khaemenes-family-changed",()=>{input.value="";display()});
+window.addEventListener("storage",event=>{
+ if(!event.key||["khaemenes_active_learner_v1","khaemenes_active_family_v1","khaemenes_family_registry_v1"].includes(event.key))display();
+});
 display();
 })();
