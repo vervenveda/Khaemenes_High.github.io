@@ -86,8 +86,38 @@
   themeButton?.addEventListener("click",()=>{root.dataset.theme=root.dataset.theme==="dark"?"light":"dark";try{localStorage.setItem(themeKey,root.dataset.theme)}catch{}syncTheme();});
 
   const courseKey=scopedKey("khae-ela9-progress-v1");
+  const retentionNotice=document.createElement("p");
+  retentionNotice.setAttribute("role","status");
+  retentionNotice.setAttribute("aria-live","polite");
+  retentionNotice.style.cssText="font:400 16px/1.5 Nunito,Arial,sans-serif;color:#7a291b;margin:10px 0";
+  (document.querySelector("main")||document.body).prepend(retentionNotice);
+  const selectionMatches=()=>{
+    if(!academyProfile?.learnerId)return true; // Preserve legacy unassigned work, but never certify it.
+    try{
+      const id=JSON.parse(localStorage.getItem("khaemenes_active_learner_v1")||"null");
+      const familyId=JSON.parse(localStorage.getItem("khaemenes_active_family_v1")||"null");
+      const registry=JSON.parse(localStorage.getItem("khaemenes_family_registry_v1")||"null");
+      const learner=registry?.learners?.[id],family=registry?.families?.[familyId];
+      return id===academyProfile.learnerId&&learner?.learnerId===id&&learner.familyId===familyId&&
+        family?.familyId===familyId&&Array.isArray(family.learnerIds)&&family.learnerIds.includes(id);
+    }catch{return false}
+  };
   const load=()=>{try{return JSON.parse(localStorage.getItem(courseKey)||"{}")}catch{return {}}};
-  const save=data=>{try{localStorage.setItem(courseKey,JSON.stringify(data))}catch{}};
+  let lastStoredProgress=null;
+  try{lastStoredProgress=localStorage.getItem(courseKey)}catch{}
+  const save=data=>{
+    if(!selectionMatches()){retentionNotice.textContent="The learner changed. This lesson was not saved; return to the selected student's lesson.";return false}
+    try{
+      if(localStorage.getItem(courseKey)!==lastStoredProgress)throw Error("Lesson records changed in another tab");
+      const encoded=JSON.stringify(data);
+      localStorage.setItem(courseKey,encoded);
+      if(localStorage.getItem(courseKey)!==encoded)throw Error("Lesson write could not be verified");
+      lastStoredProgress=encoded;retentionNotice.textContent="";return true;
+    }catch{
+      retentionNotice.textContent="Unable to confirm this lesson save. Your answer remains visible, but is not preserved; check browser storage or another tab before leaving.";
+      return false;
+    }
+  };
   const progress=load();
   document.querySelectorAll("[data-progress-key]").forEach(button=>{
     if(button.dataset.managedProgress==="week1"||button.dataset.managedProgress==="week3"||button.dataset.managedProgress==="week4"||button.dataset.managedProgress==="week5"||button.dataset.managedProgress==="week6"||button.dataset.managedProgress==="week7"||button.dataset.managedProgress==="week8"||button.dataset.managedProgress==="week9"||button.dataset.managedProgress==="week10"||button.dataset.managedProgress==="week11"||button.dataset.managedProgress==="week12"||button.dataset.managedProgress==="week13")return;
@@ -97,7 +127,9 @@
     const prepared=button.dataset.evidenceOnly==="true" || button.dataset.progressKey.startsWith("week-") && Boolean(document.querySelector('[data-save-field*="-day-"]'));
     button.textContent=on?(prepared?"Evidence prepared ✓":"Completed ✓"):(prepared?"Mark Evidence Prepared":"Mark Complete");
     button.addEventListener("click",()=>{
-      progress[key]=!progress[key];save(progress);
+      const previous=Boolean(progress[key]);
+      progress[key]=!previous;
+      if(!save(progress)){progress[key]=previous;return}
       button.setAttribute("aria-pressed",String(progress[key]));
       button.textContent=progress[key]?(prepared?"Evidence prepared ✓":"Completed ✓"):(prepared?"Mark Evidence Prepared":"Mark Complete");
       updateProgress();
@@ -118,7 +150,15 @@
     if(field.dataset.managedSave==="week1"||field.dataset.managedSave==="week2"||field.dataset.managedSave==="week3"||field.dataset.managedSave==="week4"||field.dataset.managedSave==="week5"||field.dataset.managedSave==="week6"||field.dataset.managedSave==="week7"||field.dataset.managedSave==="week8"||field.dataset.managedSave==="week9"||field.dataset.managedSave==="week10"||field.dataset.managedSave==="week11"||field.dataset.managedSave==="week12"||field.dataset.managedSave==="week13")return;
     const key=scopedKey(`khae-ela9-field:${field.dataset.saveField}`);
     try{field.value=localStorage.getItem(key)||""}catch{}
-    field.addEventListener("input",()=>{try{localStorage.setItem(key,field.value)}catch{}});
+    field.addEventListener("input",()=>{
+      if(!selectionMatches()){retentionNotice.textContent="The learner changed. This draft was not saved.";return}
+      try{
+        const value=field.value;
+        localStorage.setItem(key,value);
+        if(localStorage.getItem(key)!==value)throw Error("unverified draft");
+        retentionNotice.textContent="";
+      }catch{retentionNotice.textContent="Draft save could not be confirmed. Keep this page open and export your work before leaving."}
+    });
   });
   document.querySelectorAll("[data-print]").forEach(button=>button.addEventListener("click",()=>window.print()));
   document.querySelectorAll("[data-clear-field]").forEach(button=>button.addEventListener("click",()=>{
