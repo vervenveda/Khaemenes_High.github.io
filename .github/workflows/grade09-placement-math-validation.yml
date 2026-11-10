@@ -31,6 +31,9 @@ on:
       - scripts/validate_grade09_placement_math_dashboard.mjs
       - scripts/validate_grade09_seven_class_journey.mjs
       - scripts/validate_grade09_translator_gateway.mjs
+      - scripts/validate_upper_grade_seven_class_journey.mjs
+      - scripts/test_grade09_two_learner_pins.mjs
+      - scripts/validate_high_school_return_to_classes.mjs
       - .github/workflows/grade09-placement-math-validation.yml
 
 permissions:
@@ -53,13 +56,13 @@ jobs:
       - name: Validate Grade 09 placement-aware mathematics dashboard
         run: node scripts/validate_grade09_placement_math_dashboard.mjs
 
-      - name: Validate Grade 09 seven-class student journey
+      - name: Validate Grade 09 eight-class student journey
         run: node scripts/validate_grade09_seven_class_journey.mjs
 
       - name: Verify official Grade 09 translation layer
         run: node scripts/validate_grade09_translator_gateway.mjs
 
-      - name: Validate upper-grade seven-class student profiles
+      - name: Validate upper-grade eight-class student profiles
         run: node scripts/validate_upper_grade_seven_class_journey.mjs
 
       - name: Verify two learner class pin and language isolation
