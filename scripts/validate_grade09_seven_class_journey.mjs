@@ -17,7 +17,10 @@ for(const id of required)assert.ok(schedule.includes('"'+id+'"'),"Missing schedu
 assert.match(schedule,/registry\.setMathPathway\(math\.value,\{pin:true\}\)/,"Math pathway must synchronize pins");
 assert.match(schedule,/pins\.writeLanguageChoices\(choices\)/,"Language choice must persist through learner-scoped pins");
 assert.match(schedule,/registry\.setPinned\(old,false\);registry\.setPinned\(next,true\)/,"Pinned language must switch without duplicates");
-assert.equal((schedule.match(/\["(?:Mathematics|Literature|Social Studies|Science|Physical Education|Foreign Language|Psychology)"/g)||[]).length,7);
+const catalog=read("courses/shared/high-school-eight-class.js");
+for(const subject of ['"math"','"science"','"languageArts"','"socialStudies"','"peHealth"','"psychology"','"foreignLanguage"','"elective"'])assert.ok(catalog.includes(subject),"Eight-class catalog missing "+subject);
+assert.match(schedule,/catalog\?\.slots\(9,\{mathId:registry\.mathPathway\(\)\|\|null,language:language\(\)\}\)/,"Grade 9 must use the shared eight-class catalog with selected math and language");
+assert.match(schedule,/grade09-eight-class-grid/,"Eight-class schedule renderer missing");
 for(const target of ["courses/physical-education/index.html","courses/language-arts/english-9/index.html","courses/science/integrated-science-9/index.html","courses/social-studies/grade-09/index.html","electives/grades/grade-09/psych-101/index.html"])assert.ok(fs.existsSync(target),"Missing local subject door: "+target);
 const firstRoutes=[...schedule.matchAll(/"((?:pre-algebra|algebra-1|english-9|global-studies-9|integrated-science-9|physical-education-9|psychology-101))":"([^"]+)"/g)];
 assert.equal(firstRoutes.length,7,"Expected seven first-week mathematics/subject routes");
@@ -27,11 +30,11 @@ assert.match(read("courses/physical-education/index.html"),/start"\)=== "grade09
 const pins=read("courses/shared/high-school-course-pins.js");
 assert.match(pins,/scopedKey\(base,id=activeLearner\(\)\)/,"Pins must be scoped to an active registered learner");
 assert.match(pins,/readLanguageChoices\(\)/,"Language selection must use scoped pin storage");
-assert.match(schedule,/Pin all seven classes/,"Student must have one-click schedule setup");
-assert.match(schedule,/registry\.setPinned\(id,true\)/,"Seven-class setup must use the existing learner-scoped pin registry");
-assert.match(schedule,/successful===7/,"Schedule setup must report incomplete saves honestly");
+assert.match(schedule,/Pin all eight classes/,"Student must have one-click schedule setup");
+assert.match(schedule,/registry\.setPinned\(id,true\)/,"Eight-class setup must use the existing learner-scoped pin registry");
+assert.match(schedule,/successful===8/,"Schedule setup must report incomplete saves honestly");
 const expectedLanguages=["spanish","french","german","mandarin","japanese","arabic","russian"];
 for(const code of expectedLanguages)assert.ok(schedule.includes(code+':"'),"Missing verified "+code+" lesson entrance");
 assert.match(schedule,/function languageStart\(id\)/,"Missing selected-language route");
 assert.match(schedule,/const target=languageStart\(id\)/,"Selected language needs a distinct starting link");
-console.log("PASS Grade 09 seven-class schedule: profile, daily room, pin sync, language selection and local entrances");
+console.log("PASS Grade 09 eight-class schedule: profile, daily room, pin sync, language selection and local entrances");
