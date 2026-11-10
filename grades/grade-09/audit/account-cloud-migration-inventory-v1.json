@@ -1,0 +1,314 @@
+{
+  "schema": "khaemenes-grade09-account-cloud-inventory-v1",
+  "version": 1,
+  "scope": "grade-09",
+  "classification": "source-contract-only-no-learner-records",
+  "migrationState": "not-active",
+  "created": "2026-11-09",
+  "invariants": [
+    "copy-before-cutover",
+    "never-delete-original-on-import",
+    "never-attribute-legacy-record-without-proof",
+    "course-produced-assessment-evidence-remains-provisional-until-authority-verified",
+    "preserve-original-raw-value-and-source-key",
+    "preserve-complete-attempt-history-and-drafts",
+    "idempotent-replay-with-content-hash-and-receipt",
+    "per-learner-and-per-family-isolation",
+    "no-secret-or-personal-records-in-git"
+  ],
+  "ownershipStates": [
+    "learner-scoped",
+    "verified-legacy-owner",
+    "ambiguous-unclaimed",
+    "shared-device",
+    "non-academic-ui"
+  ],
+  "groups": [
+    {
+      "id": "profile",
+      "label": "Grade 9 student profile and course connections",
+      "sources": [
+        "grades/grade-09/student-profile/index.html",
+        "grades/grade-09/student-profile/student-course-registry.js"
+      ],
+      "keys": [
+        "khaemenes-high-profile-v1",
+        "khaemenes-grade09-profile-v1",
+        "khaemenes-grade09-daily-note-v1",
+        "khaemenes-high-pinned-courses-v2",
+        "khaemenes-high-math-pathway-v1",
+        "khaemenes-grade09-last-open-v1",
+        "khaemenes-grade09-course-launches-v1"
+      ],
+      "ownership": "mixed-needs-verification",
+      "retain": [
+        "preferences",
+        "schedule",
+        "class pins",
+        "course launches",
+        "daily journal"
+      ],
+      "risk": "some legacy profile values fall back to unscoped keys"
+    },
+    {
+      "id": "math-prealgebra",
+      "label": "Pre-Algebra",
+      "sources": [
+        "courses/mathematics/pre-algebra/index.html",
+        "courses/mathematics/pre-algebra/assets/prealgebra-course-gates-v1.js",
+        "courses/shared/learner-scope-v1.js"
+      ],
+      "keys": [
+        "KHAE_OPEN_PREALGEBRA_FORGE_V2",
+        "khaemenes-prealgebra-*",
+        "KHAE_MATH9_PREALGEBRA_*",
+        "khaemenes-naib-*"
+      ],
+      "ownership": "legacy-scope-claim-required",
+      "retain": [
+        "weeks",
+        "placement evidence",
+        "practice",
+        "exams",
+        "attempts",
+        "mastery",
+        "drafts"
+      ],
+      "risk": "legacy root data must not be silently assigned"
+    },
+    {
+      "id": "math-algebra1",
+      "label": "Algebra I when Grade 9 learner is placed there",
+      "sources": [
+        "courses/mathematics/algebra-1/assets/mastery-authority-v1.js",
+        "courses/mathematics/algebra-1/assets/exam-engine.js",
+        "courses/shared/learner-scope-v1.js"
+      ],
+      "keys": [
+        "khaemenes-algebra1-*",
+        "khaemenes-math-algebra1-readiness-v1"
+      ],
+      "ownership": "scoped-prefix-with-legacy-check",
+      "retain": [
+        "diagnostic",
+        "lesson evidence",
+        "unit mastery",
+        "weekly attempts",
+        "midterm/final attempts",
+        "constructed responses",
+        "evaluator notes",
+        "drafts"
+      ],
+      "risk": "browser-local mastery evidence is not authenticated formal authority"
+    },
+    {
+      "id": "english9",
+      "label": "English 9",
+      "sources": [
+        "courses/language-arts/english-9/assets/course.js",
+        "courses/shared/high-school-english-continuation.js"
+      ],
+      "keys": [
+        "khae-ela9-progress-v1",
+        "khae-ela9-field:*",
+        "khaemenes-english9-readiness-v1",
+        "khaemenes-reading-notebook-v1:*",
+        "khaemenes-book-report-v1:english-9:*"
+      ],
+      "ownership": "scoped-in-key",
+      "retain": [
+        "weekly progress",
+        "writing drafts",
+        "field entries",
+        "reading notes",
+        "book reports",
+        "assessments",
+        "portfolio artifacts"
+      ],
+      "risk": "report drafts and notebooks use independent keys and must be scanned separately"
+    },
+    {
+      "id": "science9",
+      "label": "Integrated Science 9",
+      "sources": [
+        "courses/science/integrated-science-9/index.html",
+        "courses/shared/high-school-science-continuation.js",
+        "courses/shared/learner-scope-v1.js"
+      ],
+      "keys": [
+        "khae-grade09-integrated-science-portal-v1",
+        "khaemenes_science9_*",
+        "khae_science9_*",
+        "kh_sci9_*"
+      ],
+      "ownership": "mixed-scoped-and-legacy",
+      "retain": [
+        "lab evidence",
+        "CER responses",
+        "weekly randomized sessions",
+        "unit assessment attempts",
+        "final practice",
+        "corrections"
+      ],
+      "risk": "Monte Carlo session and underlying response keys require full producer inventory"
+    },
+    {
+      "id": "social9",
+      "label": "Social Studies 9",
+      "sources": [
+        "courses/social-studies/grade-09/assets/grade09-records.js"
+      ],
+      "keys": [
+        "khaemenes_grade09_social_studies_v1"
+      ],
+      "ownership": "learner-suffix-required",
+      "retain": [
+        "weeks",
+        "sources",
+        "writing",
+        "assessments",
+        "attempts",
+        "exportable course records"
+      ],
+      "risk": "course has custom guarded rawStorage reads/writes; do not bypass validation"
+    },
+    {
+      "id": "psych101",
+      "label": "Psychology 101 elective",
+      "sources": [
+        "electives/grades/grade-09/psych-101/assets/psych101.js"
+      ],
+      "keys": [
+        "psych101_grade9_progress_v1",
+        "psych101_grade9_assessments_v1",
+        "psych101_grade9_notebook_v1",
+        "psych101_grade9_journal_v1",
+        "psych101_grade9_words_v1",
+        "psych101_grade9_preferences_v1"
+      ],
+      "ownership": "learner-scoped-when-profile-selected",
+      "retain": [
+        "progress",
+        "weekly and cumulative assessment history",
+        "notebook",
+        "journal",
+        "word study",
+        "preferences"
+      ],
+      "risk": "standalone-mode writes may be unscoped depending on page contract"
+    },
+    {
+      "id": "pe9",
+      "label": "Physical Education 9",
+      "sources": [
+        "courses/physical-education/index.html",
+        "courses/physical-education/assessment-engine.js"
+      ],
+      "keys": [
+        "khae.pe.v1.grade9",
+        "khae-pe-g9-w*-days-v1",
+        "khae-pe-assessment-v1-*"
+      ],
+      "ownership": "ambiguous-grade-wide-keys",
+      "retain": [
+        "36-week practice progress",
+        "daily evidence",
+        "reflection",
+        "randomized question snapshot",
+        "answer snapshot",
+        "midterm/final drafts",
+        "review status"
+      ],
+      "risk": "grade-wide key has no learner ID; ownership needs explicit proof before cloud binding"
+    },
+    {
+      "id": "elective-language",
+      "label": "Foreign Language elective handoff",
+      "sources": [
+        "grades/grade-09/index.html",
+        "courses/electives/world-languages-linguistics/index.html"
+      ],
+      "keys": [],
+      "ownership": "external-repository-not-yet-audited",
+      "retain": [
+        "course enrollment",
+        "lesson attempts",
+        "voice/language selections",
+        "unit test records"
+      ],
+      "risk": "language-specific record producers live beyond this High repository; do not declare them migrated"
+    },
+    {
+      "id": "elective-other",
+      "label": "Health, arts, music, computing and optional electives",
+      "sources": [
+        "grades/grade-09/index.html"
+      ],
+      "keys": [],
+      "ownership": "external-or-unmapped-producers",
+      "retain": [
+        "lesson progress",
+        "projects",
+        "assessment attempts",
+        "portfolio work"
+      ],
+      "risk": "landing-page links alone do not identify all writable course storage"
+    }
+  ],
+  "migrationContract": {
+    "capture": {
+      "fields": [
+        "source_origin",
+        "source_path",
+        "source_key",
+        "source_key_raw",
+        "value_bytes_unchanged",
+        "value_sha256",
+        "captured_at",
+        "schema_detected",
+        "learner_id_if_verified",
+        "ownership_status",
+        "course_id",
+        "record_type",
+        "format_version"
+      ],
+      "rules": [
+        "enumerate-all-known-and-discovered-keys",
+        "do-not-parse-and-reserialize-as-only-copy",
+        "include-non-json-text-drafts",
+        "capture-before-any-import",
+        "backup-download-and-independent-restore-check"
+      ]
+    },
+    "upload": {
+      "requires": [
+        "authenticated_account",
+        "verified_learner_family_relationship",
+        "course_authority_classification",
+        "idempotency_key",
+        "server_side_record_receipt"
+      ],
+      "mode": "disabled-pending-STOS-T03-commissioning"
+    },
+    "restore": {
+      "requires": [
+        "same-learner-match",
+        "integrity-hash-match",
+        "receipt-match",
+        "no-destructive-overwrite",
+        "conflict-preserving-merge"
+      ],
+      "conflict": "quarantine-both-versions"
+    },
+    "cutover": {
+      "requires": [
+        "restore-on-second-device-passed",
+        "multi-learner-isolation-passed",
+        "all-grade9-course-producers-audited",
+        "official-authority-receipts-validated",
+        "explicit-operator-approval"
+      ],
+      "mode": "blocked"
+    }
+  }
+}
