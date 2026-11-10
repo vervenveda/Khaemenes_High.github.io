@@ -26,9 +26,15 @@
  function active(){
    const id=read(ACTIVE);
    const registry=read(FAMILY);
-   if(typeof id!=="string"||!registry?.learners||typeof registry.learners!=="object")return null;
+   if(typeof id!=="string"||!id||!registry?.learners||typeof registry.learners!=="object")return null;
    const learner=registry.learners[id];
    if(!learner||learner.learnerId!==id||learner.selfDirectedAdult)return null;
+   // A browser-local identity consistency check, not authenticated access.
+   const activeFamily=read("khaemenes_active_family_v1");
+   const family=registry?.families?.[learner.familyId];
+   if(typeof activeFamily!=="string"||activeFamily!==learner.familyId||
+      !family||family.familyId!==activeFamily||
+      !Array.isArray(family.learnerIds)||!family.learnerIds.includes(id))return null;
    const grade=normalizeGrade(learner.grade);
    if(!grade||learner.stage!=="high")return null;
    // Age is display context only; registration grade is the single routing source.
