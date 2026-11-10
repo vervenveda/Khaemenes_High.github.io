@@ -102,10 +102,21 @@
         family?.familyId===familyId&&Array.isArray(family.learnerIds)&&family.learnerIds.includes(id);
     }catch{return false}
   };
-  const load=()=>{try{return JSON.parse(localStorage.getItem(courseKey)||"{}")}catch{return {}}};
-  let lastStoredProgress=null;
-  try{lastStoredProgress=localStorage.getItem(courseKey)}catch{}
+  let lastStoredProgress=null,progressFrozen=false;
+  try{
+    lastStoredProgress=localStorage.getItem(courseKey);
+    if(lastStoredProgress!==null){
+      const parsed=JSON.parse(lastStoredProgress);
+      if(!parsed||typeof parsed!=="object"||Array.isArray(parsed)||
+         !Object.values(parsed).every(value=>typeof value==="boolean"))progressFrozen=true;
+    }
+  }catch{progressFrozen=true}
+  const load=()=>progressFrozen?{}:(lastStoredProgress===null?{}:JSON.parse(lastStoredProgress));
   const save=data=>{
+    if(progressFrozen){
+      retentionNotice.textContent="An existing English 9 progress record could not be verified. It was preserved without overwriting; export or review your local backup before continuing.";
+      return false;
+    }
     if(!selectionMatches()){retentionNotice.textContent="No verified Academy learner or the learner context changed. This lesson was not saved.";return false}
     try{
       if(localStorage.getItem(courseKey)!==lastStoredProgress)throw Error("Lesson records changed in another tab");
@@ -118,8 +129,9 @@
       return false;
     }
   };
-  const progress=academyProfile?.learnerId?load():{};
-  if(!academyProfile?.learnerId)retentionNotice.textContent="Read-only preview. Select your Academy learner before saving lesson work. Older unassigned browser records remain untouched.";
+  const progress=academyProfile?.learnerId&&selectionMatches()?load():{};
+  if(progressFrozen)retentionNotice.textContent="An existing English 9 progress record is unreadable or invalid. Saving is paused; the original bytes have not been overwritten.";
+  else if(!selectionMatches())retentionNotice.textContent="Read-only preview. Select your verified Academy learner before loading or saving personal lesson work. Existing browser records remain untouched.";
   document.querySelectorAll("[data-progress-key]").forEach(button=>{
     if(button.dataset.managedProgress==="week1"||button.dataset.managedProgress==="week3"||button.dataset.managedProgress==="week4"||button.dataset.managedProgress==="week5"||button.dataset.managedProgress==="week6"||button.dataset.managedProgress==="week7"||button.dataset.managedProgress==="week8"||button.dataset.managedProgress==="week9"||button.dataset.managedProgress==="week10"||button.dataset.managedProgress==="week11"||button.dataset.managedProgress==="week12"||button.dataset.managedProgress==="week13")return;
     const key=button.dataset.progressKey;
@@ -150,13 +162,24 @@
   document.querySelectorAll("[data-save-field]").forEach(field=>{
     if(field.dataset.managedSave==="week1"||field.dataset.managedSave==="week2"||field.dataset.managedSave==="week3"||field.dataset.managedSave==="week4"||field.dataset.managedSave==="week5"||field.dataset.managedSave==="week6"||field.dataset.managedSave==="week7"||field.dataset.managedSave==="week8"||field.dataset.managedSave==="week9"||field.dataset.managedSave==="week10"||field.dataset.managedSave==="week11"||field.dataset.managedSave==="week12"||field.dataset.managedSave==="week13")return;
     const key=scopedKey(`khae-ela9-field:${field.dataset.saveField}`);
-    try{field.value=localStorage.getItem(key)||""}catch{}
+    let lastFieldValue=null,fieldFrozen=false;
+    if(selectionMatches()){
+      try{lastFieldValue=localStorage.getItem(key);field.value=lastFieldValue||""}
+      catch{fieldFrozen=true}
+    }else field.readOnly=true;
     field.addEventListener("input",()=>{
       if(!selectionMatches()){retentionNotice.textContent="No verified Academy learner or the learner changed. This draft was not saved.";return}
+      if(fieldFrozen){retentionNotice.textContent="A saved writing record could not be read safely. Your visible draft was not overwritten.";return}
       try{
+        if(localStorage.getItem(key)!==lastFieldValue){
+          fieldFrozen=true;
+          retentionNotice.textContent="This writing record changed in another tab. Your current writing was not saved over the newer record. Preserve a copy before reloading.";
+          return;
+        }
         const value=field.value;
         localStorage.setItem(key,value);
         if(localStorage.getItem(key)!==value)throw Error("unverified draft");
+        lastFieldValue=value;
         retentionNotice.textContent="";
       }catch{retentionNotice.textContent="Draft save could not be confirmed. Keep this page open and export your work before leaving."}
     });
