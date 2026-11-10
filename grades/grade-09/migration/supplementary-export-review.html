@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="referrer" content="no-referrer">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self' 'unsafe-inline'; style-src 'unsafe-inline'; connect-src 'none'; img-src 'none'; object-src 'none'; frame-src 'none'; form-action 'none'; base-uri 'none'">
+<title>Grade 9 · Supplemental Course Record Export</title>
+<style>
+*{box-sizing:border-box}body{margin:0;background:#f4f0e7;color:#243038;font:400 16px/1.6 Nunito,"Avenir Next",Arial,sans-serif}
+header,footer{background:#243038;color:#fff8e9;text-align:center;padding:25px 16px}h1,h2{font-family:Cinzel,Georgia,serif;font-weight:400}
+h1{font-size:clamp(27px,5vw,40px);margin:0 0 10px}h2{font-size:24px}
+main{max-width:850px;margin:auto;padding:24px 17px}.panel{background:#fffdf8;border:1px solid #b9a37f;border-radius:7px;padding:21px;margin-bottom:18px}
+.warning{border-left:3px solid #977036;background:#f4ead5;padding:14px}button{border-radius:7px;border:1px solid #243038;background:#243038;color:#fff8e9;min-height:48px;padding:12px 18px;font:inherit;cursor:pointer}
+button:disabled{opacity:.48;cursor:not-allowed}label{display:flex;align-items:start;gap:11px;margin:20px 0}input[type=checkbox]{width:20px;height:20px;flex:none;margin-top:4px}
+[role=status]{white-space:pre-wrap}.small{font-size:16px}a{color:inherit}
+</style></head>
+<body><header><h1>Grade 9 · Supplemental Record Preservation</h1><p>English 9 + Integrated Science 9 · Local export preparation</p></header>
+<main>
+<section class="panel"><h2>Confirm the selected learner</h2>
+<p class="warning"><strong>Review-branch tool — not yet production approved.</strong> This tool creates an <strong>unencrypted</strong> local JSON export from explicitly learner-scoped storage keys on this browser origin. It does not authenticate identity or collect all course records. Use only with learner/guardian permission. Protect the downloaded file immediately and do not upload it to a public repository.</p>
+<p id="owner" role="status">Checking the active learner selection…</p>
+<p>This utility omits shared and legacy-unclaimed records. It will not overwrite or delete any saved student work.</p>
+<label><input id="consent" type="checkbox">I have confirmed that the selected learner is correct and have permission to export this learner's work. I understand that this file is not encrypted.</label>
+<button id="prepare" type="button" disabled>Prepare selected records</button>
+<p id="summary" role="status"></p>
+<button id="download" type="button" disabled>Download supplemental record JSON</button>
+</section>
+<section class="panel"><h2>What happens after export?</h2>
+<p>Open the downloaded file privately and verify that it contains the expected records. Protect it using the Academy's separately staged encrypted backup preparation utility after that utility passes release tests. Retain the original browser records. Neither this export nor a family backup replaces the other course-specific exports.</p>
+<p class="warning">Science labs and assessments saved on other origins, English dashboard state, incomplete drafts not yet saved to browser storage, and PE records may still need separate backups. Do not treat this as a complete learner record or a completed cloud migration.</p>
+</section>
+</main><footer>Khaemenes Academy · No upload · No data deletion · No cloud connection</footer>
+<script src="../../../courses/shared/course-entry-contract.js"></script>
+<script src="./supplementary-course-export-v1.js"></script>
+<script>
+(()=>{"use strict";
+const $=id=>document.getElementById(id);
+let owner=null,archive=null;
+function status(message){$("summary").textContent=message}
+function refresh(){
+ archive=null;$("download").disabled=true;
+ const contract=window.KhaemenesCourseEntryContract;
+ owner=contract?.readAcademyProfile?.()||null;
+ const same=owner&&contract.identityRaw?.()===JSON.stringify(owner.learnerId);
+ $("owner").textContent=same?"An Academy learner is selected in this browser. Confirm the learner in Family Portal before proceeding.":"No valid Academy learner selection. Return to the Family Portal and select the correct learner.";
+ $("prepare").disabled=!same;$("consent").checked=false;
+}
+$("prepare").addEventListener("click",()=>{
+ archive=null;$("download").disabled=true;
+ try{
+  if(!$("consent").checked)throw Error("Confirm learner permission first");
+  const contract=window.KhaemenesCourseEntryContract;
+  const actual=contract?.readAcademyProfile?.();
+  if(!owner||!actual||actual.learnerId!==owner.learnerId||contract.identityRaw?.()!==JSON.stringify(owner.learnerId))throw Error("Learner selection changed; reload the page");
+  archive=window.KhaemenesGrade09SupplementaryExport.collect(window.localStorage,owner.learnerId,location.origin);
+  status("Prepared "+archive.records.length+" scoped keys. Excluded "+archive.excluded_counts.ambiguous+" ambiguous records and "+archive.excluded_counts.other_or_unmapped+" other/unmapped keys. This file will contain private unencrypted academic evidence; it does NOT cover all courses or prove learner ownership.");
+  $("download").disabled=archive.records.length===0;
+ }catch(e){archive=null;status("Nothing exported: "+String(e?.message||e))}
+});
+$("download").addEventListener("click",()=>{
+ if(!archive||!$("consent").checked)return;
+ const contract=window.KhaemenesCourseEntryContract;
+ if(contract?.identityRaw?.()!==JSON.stringify(owner.learnerId)){archive=null;$("download").disabled=true;status("Learner selection changed. Export cancelled.");return}
+ const blob=new Blob([JSON.stringify(archive,null,2)],{type:"application/json"}),url=URL.createObjectURL(blob),a=document.createElement("a");
+ a.href=url;a.download="grade09-supplemental-evidence-"+new Date().toISOString().slice(0,10)+".json";document.body.append(a);a.click();a.remove();
+ setTimeout(()=>URL.revokeObjectURL(url),30000);
+ status("Local download requested. Verify the saved file and store a separately encrypted backup. Original records remain unchanged.");
+});
+window.addEventListener("storage",event=>{if(event.key==="khaemenes_active_learner_v1"||event.key==="khaemenes_family_registry_v1")refresh()});
+refresh();
+})();
+</script></body></html>
