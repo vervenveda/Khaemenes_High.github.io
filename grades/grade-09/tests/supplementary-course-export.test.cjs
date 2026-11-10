@@ -21,7 +21,7 @@ test("captures only selected learner's writing, notebook, reports, science cumul
  };
  const s=source(values),result=exporter.collect(s.storage,"test-A",origin);
  assert.equal(result.records.length,7);
- assert.equal(s.reads().length,7);
+ assert.equal(s.reads().length,14);
  assert.ok(result.records.every(r=>r.source_key.endsWith(suf)||r.source_key.includes(suf+"::weekly-mc")));
  assert.ok(!JSON.stringify(result).includes("Other learner"));
  assert.ok(!JSON.stringify(result).includes("Shared dashboard"));
@@ -53,4 +53,20 @@ test("maximum record count and size guards abort rather than truncate exports",(
 test("unrelated origins, other grade patterns, and PE remain outside this supplemental export",()=>{
  assert.equal(exporter.classify("khae.pe.v1.grade9","test-A"),null);
  assert.equal(exporter.classify("khaemenes-book-report-v1:english-10:report-1:learner:test-A","test-A"),null);
+});
+
+test("record changed mid-capture is rejected instead of silently mixed",()=>{
+ let reads=0;
+ const s={length:1,key:()=> "khae-ela9-progress-v1:learner:test-A",
+ getItem(){reads++;return reads===1?"before":"after"}};
+ assert.throws(()=>exporter.collect(s,"test-A",origin),/changed during capture/);
+});
+test("record count changed mid-capture is rejected",()=>{
+ let count=1;
+ const s={get length(){return count},key(){count=2;return "khae-ela9-progress-v1:learner:test-A"},getItem(){return "evidence"}};
+ assert.throws(()=>exporter.collect(s,"test-A",origin),/storage changed during capture/);
+});
+test("UTF-8 size limits count multi-byte characters",()=>{
+ const s=source({"khae-ela9-progress-v1:learner:test-A":"漢".repeat(7*1024*1024)});
+ assert.throws(()=>exporter.collect(s.storage,"test-A",origin),/exceeds 20 MiB/);
 });
