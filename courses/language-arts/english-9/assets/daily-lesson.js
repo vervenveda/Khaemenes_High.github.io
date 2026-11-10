@@ -44,9 +44,20 @@
  function write(key,value){
    if(frozen||!ready)return false;
    try{
-     if(localStorage.getItem("khaemenes_active_learner_v1")!==identity){alertSave("The selected learner changed.");return false;}
+     if(localStorage.getItem("khaemenes_active_learner_v1")!==identity||getProfile()?.learnerId!==id){
+       alertSave("The selected learner changed.");return false;
+     }
+     var activeFamily=JSON.parse(localStorage.getItem("khaemenes_active_family_v1")||"null");
+     var familyRegistry=JSON.parse(localStorage.getItem("khaemenes_family_registry_v1")||"null");
+     var linked=familyRegistry?.learners?.[id],family=familyRegistry?.families?.[activeFamily];
+     if(!id||linked?.learnerId!==id||linked.familyId!==activeFamily||
+        family?.familyId!==activeFamily||!Array.isArray(family.learnerIds)||!family.learnerIds.includes(id)){
+       alertSave("The lesson's family and learner selection cannot be verified.");return false;
+     }
      if(localStorage.getItem(key)!==snapshot.get(key)){alertSave("This record changed in another tab.");return false;}
-     localStorage.setItem(key,value);snapshot.set(key,value);status.textContent="Saved on this device · "+new Date().toLocaleTimeString();return true;
+     localStorage.setItem(key,value);
+     if(localStorage.getItem(key)!==value){alertSave("The saved lesson record could not be verified.");return false;}
+     snapshot.set(key,value);status.textContent="Saved on this device · "+new Date().toLocaleTimeString();return true;
    }catch(e){alertSave("Browser storage is full or unavailable.");return false;}
  }
  function parseRecord(raw,fallback){
