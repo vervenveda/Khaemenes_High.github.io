@@ -57,5 +57,30 @@
       known_keys:matched.length,unmapped_count:unmapped.count,known_records:matched,
       values_read:false,owner_verified:false,cloud_uploaded:false,migration_ready:false});
   }
-  return Object.freeze({version:"1.0",inspect,keyMatches,groupFor,classify});
+  // Targeted inventory for a selected learner. The caller must confirm
+  // guardian/learner permission separately; a browser selector is not authentication.
+  // Only exact terminal :learner:<encoded id> suffixes are considered candidates.
+  // No other learner's key names or values are returned.
+  function inspectForLearner(storage,manifest,sourceOrigin,learnerId){
+    if(typeof learnerId!=="string"||!learnerId.trim()||learnerId.length>256)
+      throw new TypeError("Explicit learner ID required");
+    // Reuse the bounded, no-value-read storage enumeration and origin check.
+    const inventory=inspect(storage,manifest,sourceOrigin);
+    const suffix=":learner:"+encodeURIComponent(learnerId);
+    const own=inventory.known_records.filter(row=>
+      row.source_key.endsWith(suffix) && row.ownership_status==="scoped-owner-unverified")
+      .map(row=>Object.freeze({...row,ownership_status:"target-learner-suffix-unverified"}));
+    const otherCount=inventory.known_records.filter(row=>
+      /:learner:[^:]+$/.test(row.source_key)&&!row.source_key.endsWith(suffix)).length;
+    const ambiguousCount=inventory.known_records.length-own.length-otherCount;
+    return Object.freeze({
+      schema:"khaemenes.grade09.target-key-discovery.v1",source_origin:sourceOrigin,
+      classification:"target-key-names-only-not-a-backup",target_record_count:own.length,
+      other_learner_record_count:otherCount,ambiguous_record_count:ambiguousCount,
+      unmapped_count:inventory.unmapped_count,target_records:Object.freeze(own),
+      ownership_verified:false,values_read:false,cloud_uploaded:false,
+      backup_completed:false,migration_ready:false
+    });
+  }
+  return Object.freeze({version:"1.1",inspect,inspectForLearner,keyMatches,groupFor,classify});
 });
