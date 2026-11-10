@@ -358,8 +358,13 @@ opener.setAttribute("aria-controls",popup.id);
 opener.style.cssText="box-sizing:border-box;display:flex;align-items:center;justify-content:center;width:100%;min-width:0;min-height:56px;padding:10px 12px;border:1px solid #65716c;border-radius:7px;background:#33454b;text-align:center;font:400 16px/1.3 Nunito,Arial,sans-serif;cursor:pointer";
 opener.style.setProperty("color","#fff8e9","important");
 opener.style.setProperty("-webkit-text-fill-color","#fff8e9","important");
-opener.addEventListener("click",()=>{refresh();popup.showModal();close.focus()});
-popup.addEventListener("close",()=>{refresh();if(opener.isConnected)opener.focus()});
+let dialogOwner=null;
+opener.addEventListener("click",()=>{refresh();dialogOwner=person();if(!dialogOwner){message("Select your registered learner before editing backgrounds.");return}popup.showModal();close.focus()});
+popup.addEventListener("close",()=>{dialogOwner=null;refresh();if(opener.isConnected)opener.focus()});
+function closeOnIdentityChange(){if(popup.open&&(!dialogOwner||person()!==dialogOwner)){popup.close();upload.input.value="";message("Student changed. Reopen the background editor for the selected learner.")}}
+window.addEventListener("khaemenes-family-changed",closeOnIdentityChange);
+window.addEventListener("pageshow",closeOnIdentityChange);
+window.addEventListener("storage",event=>{if(!event.key||["khaemenes_active_learner_v1","khaemenes_active_family_v1","khaemenes_family_registry_v1"].includes(event.key))closeOnIdentityChange()});
 popup.addEventListener("click",event=>{if(event.target===popup)popup.close()});
 // Keep the existing background dialog and student permission checks intact.
 // Place its launcher between Edit Profile and Yearbook in the second toolbar row.
