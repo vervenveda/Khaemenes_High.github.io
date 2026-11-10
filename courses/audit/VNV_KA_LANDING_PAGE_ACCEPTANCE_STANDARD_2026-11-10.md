@@ -32,3 +32,10 @@
 
 ## Consistency note
 The blueprint describes an *approved enriched branched hamburger*. A locally authored `details` menu with links is a temporary, semantic fallback, not proof the enriched navigation standard has been satisfied. Replace it with a verified shared menu only after confirming correct ownership and paths.
+
+## 2026-11-10 Honors switchyard follow-up
+- Inspected canonical VNV source in `vervenveda/vervenveda.github.io/assets/vnv-header-autopopulate.js`. It exposes `window.VNV_HEADER.mount` and includes the canonical `VNV_ENRICHED_MENU` implementation. Header mount accepts `replaceLegacy:true` and removes tagged old headers.
+- Honors source now references the canonical header engine once and calls `mount` after deferred scripts, identifying the KA page and allowing `replaceLegacy:true`. The original semantic header remains solely as a **failure fallback** if the external shared script does not load. The canonical engine should remove it when loaded.
+- Added `courses/tests/algebra1-honors-chrome-contract.test.cjs` with static assertions for one canonical script reference of each owner, header replacement, fallback, hero/status IDs, and no localStorage mutations in the landing page.
+- **Not independently browser verified:** network script availability, mounting order, fixed/sticky ticker offsets, actual DOM instance counts, navigation search/branches, mobile focus, tablet alignment, and screenreader interactions. Static source assertions are not proof of interactive success.
+- Do not deploy until full browser acceptance passes and student/parent authority service is available. No enrollment state was changed.
