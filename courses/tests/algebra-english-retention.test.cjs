@@ -15,7 +15,7 @@ test("English 9 course lesson state has confirmed write and concurrent-tab prote
  assert.ok(english.includes('retentionNotice.textContent="Unable to confirm this lesson save.'));
 });
 test("English 9 written work does not claim retention on rejected draft write",()=>{
- assert.ok(english.includes('if(!selectionMatches()){retentionNotice.textContent="The learner changed. This draft was not saved."'));
+ assert.ok(english.includes('if(!selectionMatches()){retentionNotice.textContent="No verified Academy learner or the learner changed. This draft was not saved."'));
  assert.ok(english.includes('if(localStorage.getItem(key)!==value)throw Error'));
 });
 test("English 9 main quiz and exam record writer checks readback and selected learner",()=>{
