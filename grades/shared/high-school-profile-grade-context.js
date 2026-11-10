@@ -44,6 +44,10 @@
      nickname:String(learner.nickname||"Student").slice(0,120),
      age,gradeSource:"Academy registration",stage:"high"});
  }
+ function activeForGrade(grade){
+   const expected=normalizeGrade(grade),context=active();
+   return expected&&context?.grade===expected?context:null;
+ }
  function courseSlots(){
    const ctx=active();
    if(!ctx)return Object.freeze([]);
@@ -52,6 +56,6 @@
    try{return Object.freeze(catalog.slots(ctx.gradeNumber).map(item=>Object.freeze({...item})))}catch{return Object.freeze([])}
  }
  global.KhaemenesHighProfileGradeContext=Object.freeze({
-   version:"1.0.0",active,courseSlots,normalizeGrade,ageFromDate
+   version:"1.1.0",active,activeForGrade,courseSlots,normalizeGrade,ageFromDate
  });
 })(window);
