@@ -40,8 +40,8 @@ for (const [label, html] of [['dashboard', dashboard], ['daily lessons', daily]]
   assert(html.includes('registry.isMathCourse(course.id)'), `${label} does not identify mathematics pathway cards.`);
   assert(html.includes('registry.shouldRefreshForStorageKey(event.key)'), `${label} does not refresh when mathematics evidence changes.`);
 }
-assert(dashboard.includes('Manage Classes &amp; Mathematics Pathway'), 'Dashboard mathematics-pathway manager copy missing.');
-assert(dashboard.includes('only one mathematics course is treated as the active pinned pathway at a time'), 'Dashboard single-math-path explanation missing.');
+assert(dashboard.includes('id="manageClassesTitle">My Classes</h2>') && dashboard.includes('id="courseManagerGrid"'), 'The current Grade 09 class manager and grid must remain available.');
+assert(dashboard.includes('Your math class follows your current placement') && dashboard.includes('registry.mathPathway()') && dashboard.includes('registry.isMathCourse(course.id)'), 'The current Grade 09 dashboard must identify the active mathematics course without omitting course placement logic.');
 assert(daily.includes('Complete today’s mathematics step, then finish English reading.'), 'Daily note example is not grade-neutral.');
 assert(!daily.includes('Finish Pre-Algebra, then complete English reading.'), 'Old Pre-Algebra-specific daily note remains.');
 
