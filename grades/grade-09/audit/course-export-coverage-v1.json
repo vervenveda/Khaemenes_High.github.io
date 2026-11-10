@@ -1,0 +1,84 @@
+{
+  "schema": "khaemenes-grade09-course-export-coverage-v1",
+  "version": 1,
+  "date": "2026-11-09",
+  "status": "incomplete-do-not-cutover",
+  "classification": "source-audit-only-no-student-records",
+  "courses": [
+    {
+      "id": "english-9",
+      "source": "courses/language-arts/english-9/index.html",
+      "exportFunction": "downloadBackup",
+      "existingExport": "khaemenes-english9-backup-v3",
+      "includes": [
+        "portal state.students",
+        "portal state.activeId",
+        "khae-ela9-progress-v1 and scoped variants",
+        "khae-ela9-field:*"
+      ],
+      "omitsOrSeparate": [
+        "khaemenes-reading-notebook-v1:* stored in assets/course.js",
+        "khaemenes-book-report-v1:english-9:* stored in assets/course.js",
+        "khaemenes-english9-readiness-v1",
+        "other course/assessment origins"
+      ],
+      "risk": "Full Backup label is not comprehensive; scans progress keys across multiple learners in same origin",
+      "recommendedGate": "learner-scoped export and independent notebook/book-report coverage; preserve legacy root separately"
+    },
+    {
+      "id": "integrated-science-9",
+      "source": "courses/science/integrated-science-9/index.html",
+      "exportFunction": "downloadBackup",
+      "existingExport": "portal-state-only version:1",
+      "includes": [
+        "state with portal students and weekly progress"
+      ],
+      "omitsOrSeparate": [
+        "khaemenes_science_units01_04_benchmark_v1",
+        "khaemenes_science_midterm_u00_06_v1",
+        "khaemenes_science_units05_07_benchmark_v1",
+        "khaemenes_science_units08_09_benchmark_v1",
+        "khaemenes_science_units10_12_benchmark_v1",
+        "khaemenes_science9_final_exam_v1",
+        "weekly Monte Carlo sessions and answers stored under generated keys",
+        "possible additional portfolio-origin storage"
+      ],
+      "risk": "Export Backup serializes portal state only; assessment and active response keys are not included",
+      "recommendedGate": "enumerate all scoped MC and cumulative keys without reassigning owner; export each original byte value"
+    },
+    {
+      "id": "physical-education-9",
+      "source": "courses/physical-education/index.html",
+      "exportFunction": "exportData",
+      "existingExport": "khae-pe-journal-v1",
+      "includes": [
+        "khae.pe.v1.grade9 journal entries",
+        "36 weekly dailyRecords",
+        "assessmentSnapshots referenced by assessmentAttempts arrays"
+      ],
+      "omitsOrSeparate": [
+        "assessment records not referenced in assessmentAttempts",
+        "other student/shared-device state remains mixed and ownership unverified"
+      ],
+      "risk": "shared grade-wide keys; import replaced local daily records even when backup omitted days (patched to preserve missing originals on review branch)",
+      "recommendedGate": "verify explicit learner ownership; preserve all attempt IDs/records and require independent verified backup before import"
+    }
+  ],
+  "invariants": [
+    "never-treat-source-backup-as-complete-without-all-producers",
+    "do-not-assign-legacy-pe-work-to-selected-learner",
+    "preserve-raw-source-keys-and-values",
+    "no-cross-learner-export-without-authorization",
+    "no-destructive-import-on-missing-optional-section",
+    "do-not-change-grade-or-gating-on-export",
+    "no-learner-data-in-git"
+  ],
+  "releaseGates": [
+    "complete-origin-by-origin-record-inventory",
+    "verified-learner-ownership",
+    "all-course-artifacts-covered",
+    "byte-identical-recovery-on-second-device",
+    "approved-protected-destination",
+    "authenticated-T03-transaction-receipt"
+  ]
+}
