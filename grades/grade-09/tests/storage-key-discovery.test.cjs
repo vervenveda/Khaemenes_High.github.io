@@ -56,3 +56,29 @@ test("excessive storage and missing origin fail closed",()=>{
   assert.throws(()=>discovery.inspect(s,manifest,origin),RangeError);
   assert.throws(()=>discovery.inspect(source([]).storage,manifest,""),TypeError);
 });
+
+test("targeted inventory limits details to the selected learner and redacts other learner keys",()=>{
+ const s=source([
+   "khae-ela9-progress-v1:learner:target-A",
+   "khae-ela9-progress-v1:learner:other-B",
+   "psych101_grade9_journal_v1:learner:target-A",
+   "khae.pe.v1.grade9",
+   "unmapped-private-key"
+ ]);
+ const result=discovery.inspectForLearner(s.storage,manifest,origin,"target-A");
+ assert.equal(result.target_record_count,2);
+ assert.equal(result.other_learner_record_count,1);
+ assert.equal(result.ambiguous_record_count,1);
+ assert.equal(result.unmapped_count,1);
+ assert.ok(result.target_records.every(r=>r.ownership_status==="target-learner-suffix-unverified"));
+ assert.ok(!JSON.stringify(result).includes("other-B"));
+ assert.ok(!JSON.stringify(result).includes("unmapped-private-key"));
+ assert.equal(result.backup_completed,false);
+ assert.equal(result.ownership_verified,false);
+ assert.equal(s.touches(),0);
+});
+test("targeted inventory requires an explicit learner ID",()=>{
+ const s=source(["khae-ela9-progress-v1:learner:target-A"]);
+ assert.throws(()=>discovery.inspectForLearner(s.storage,manifest,origin,""),TypeError);
+ assert.equal(s.touches(),0);
+});
