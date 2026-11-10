@@ -23,6 +23,16 @@
   const suffix=id=>":learner:"+encodeURIComponent(id);
   function classify(key,id){
     const scoped=suffix(id);
+    // Science evidence portfolio uses a lowercased, validated learner token
+    // rather than the generic :learner: suffix used by course portal records.
+    if(/^[a-z0-9_-]{3,32}$/i.test(id)){
+      const portfolioPrefix="kh_sci9_formative_v1:"+id.toLowerCase()+":";
+      if(key.startsWith(portfolioPrefix)){
+        const activity=key.slice(portfolioPrefix.length);
+        if(/^units\/unit-(?:0[2-9]|1[0-2])\/[^/]+\.html$/.test(activity))
+          return "science-formative-portfolio-raw";
+      }
+    }
     if(key==="khae-ela9-progress-v1"+scoped)return "english-progress";
     if(key.startsWith("khae-ela9-field:")&&key.endsWith(scoped))return "english-writing-field";
     if(key.startsWith("khaemenes-reading-notebook-v1:english-9:")&&key.endsWith(scoped))return "english-reading-notebook";
@@ -41,6 +51,7 @@
       key.startsWith("khae-ela9-field:")&&!key.includes(":learner:")||
       key.startsWith("khaemenes-reading-notebook-v1:english-9:")&&!key.includes(":learner:")||
       key.startsWith("khaemenes-book-report-v1:english-9:")&&!key.includes(":learner:")||
+      key.startsWith("kh_sci9_formative_v1:")||
       key===scienceBase||cumulative.includes(key)||
       key.startsWith(scienceBase+"::weekly-mc");
   }
