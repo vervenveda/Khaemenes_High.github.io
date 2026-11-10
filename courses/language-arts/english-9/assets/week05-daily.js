@@ -18,8 +18,19 @@ function write(key,v){
  if(!key||!ready||frozen)return false;
  try{
   if(localStorage.getItem("khaemenes_active_learner_v1")!==identity){halt("learner changed");return false;}
+  const familyId=JSON.parse(localStorage.getItem("khaemenes_active_family_v1")||"null");
+  const registry=JSON.parse(localStorage.getItem("khaemenes_family_registry_v1")||"null");
+  const learner=registry?.learners?.[profile.learnerId],family=registry?.families?.[familyId];
+  if(!profile?.learnerId||learner?.learnerId!==profile.learnerId||
+     learner.familyId!==familyId||family?.familyId!==familyId||
+     !Array.isArray(family.learnerIds)||!family.learnerIds.includes(profile.learnerId)||
+     (window.KhaemenesCourseEntryContract?.readAcademyProfile?.()?.learnerId||null)!==profile.learnerId){
+    halt("current learner/family relationship could not be verified");return false;
+  }
   if(localStorage.getItem(key)!==snapshots.get(key)){halt("a newer record exists in another tab");return false;}
-  localStorage.setItem(key,v);snapshots.set(key,v);say("Saved for this learner on this device · "+new Date().toLocaleTimeString());return true;
+  localStorage.setItem(key,v);
+  if(localStorage.getItem(key)!==v){halt("browser write could not be verified");return false;}
+  snapshots.set(key,v);say("Saved for this learner on this device · "+new Date().toLocaleTimeString());return true;
  }catch{halt("storage is unavailable");return false;}
 }
 function load(key,fallback,valid){
@@ -46,7 +57,7 @@ function refreshIndex(){document.querySelectorAll("[data-week5-daily-status]").f
 });}
 refreshIndex();
 window.addEventListener("storage",e=>{
- if(e.key==="khaemenes_active_learner_v1"||snapshots.has(e.key)){
+ if(["khaemenes_active_learner_v1","khaemenes_active_family_v1","khaemenes_family_registry_v1"].includes(e.key)||snapshots.has(e.key)){
   halt("record or learner changed in another tab");
   if(day>=21&&day<=24)refreshEvidence();
  }
