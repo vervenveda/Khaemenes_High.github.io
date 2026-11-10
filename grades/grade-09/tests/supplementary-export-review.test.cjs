@@ -35,3 +35,17 @@ test("records are exported as original key and string, not normalized grades",()
  assert.ok(moduleSource.includes('official_academic_record:false'));
  assert.ok(moduleSource.includes('complete_grade09_backup:false'));
 });
+
+test("English shared-dashboard extraction and PE quarantine are explicit, never cloud imports",()=>{
+ assert.ok(html.includes('legacy-shared-record-guard-v1.js'));
+ assert.ok(html.includes('guard.extractEnglishDashboard(window.localStorage,owner.learnerId)'));
+ assert.ok(html.includes('guard.quarantinePE(window.localStorage)'));
+ assert.ok(html.includes('archive.records.push(...english.records)'));
+ assert.ok(html.includes('PE records remain quarantined'));
+ assert.ok(!/\.setItem\(|\.removeItem\(|\.clear\(/.test(html));
+});
+test("combined plain-text export fails closed on size and learner switch",()=>{
+ assert.ok(html.includes('new TextEncoder().encode(JSON.stringify(archive)).byteLength>20*1024*1024'));
+ assert.ok(html.includes('Learner selection changed during collection'));
+ assert.ok(html.includes('archive.complete_grade09_backup=false'));
+});
