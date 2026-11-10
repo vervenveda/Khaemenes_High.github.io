@@ -6,7 +6,7 @@ const root=path.resolve(__dirname,"../..");
 function source(relative){return fs.readFileSync(path.join(root,relative),"utf8")}
 for(const grade of ["09","10","11","12"]){
  const html=source(`grades/grade-${grade}/student-profile/index.html`);
- const scripts=[...html.matchAll(/<script\\s+src="([^"]+)"/g)].map(m=>m[1]);
+ const scripts=[...html.matchAll(/<script\s+src="([^"]+)"/g)].map(m=>m[1]);
  const position=part=>scripts.findIndex(src=>src.includes(part));
  const dialog=grade==="09"?"class-progress-dialog.js":"upper-grade-class-progress-dialog.js";
  const chart="student-course-progress-bars.js";
