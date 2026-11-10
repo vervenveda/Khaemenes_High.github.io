@@ -86,6 +86,15 @@ $("week4-independent").addEventListener("change",sync);
 IDs.forEach(k=>$("week4-score-"+k).addEventListener("change",()=>{rubricLabel();sync();}));
 $("week4-submit").addEventListener("click",()=>{
  if(!prepared())return;
+ // Idempotent completion recovery: do not replace an unchanged submitted portfolio.
+ if(consistent()){
+   const previouslySaved={...W.progress,[W.flag(20)]:true};
+   if(!write(W.progressKey,JSON.stringify(previouslySaved))){
+     $("week4-submission-status").textContent="Submission saved, but its completion marker could not be confirmed. Keep the saved submission and retry when storage is available.";
+     return;
+   }
+   W.progress[W.flag(20)]=true;sync();return;
+ }
  const f=fields(),next={schema:"english9-week04-day20-submission-v1",day:20,
   learnerId:profile.learnerId,submittedAt:new Date().toISOString(),
   draftWords:count(draft.value),finalWords:count(final.value),
@@ -94,7 +103,10 @@ $("week4-submit").addEventListener("click",()=>{
  if(!write(subKey,JSON.stringify(next)))return;
  submission=next;
  const progress={...W.progress,[W.flag(20)]:true};
- if(!write(W.progressKey,JSON.stringify(progress)))return;
+ if(!write(W.progressKey,JSON.stringify(progress))){
+   $("week4-submission-status").textContent="Submission is saved, but completion is not yet confirmed. Retry this same submission to recover the marker.";
+   return;
+ }
  W.progress[W.flag(20)]=true;sync();
 });
 $("week4-record-review").addEventListener("click",()=>{
