@@ -30,6 +30,7 @@ button:disabled{opacity:.48;cursor:not-allowed}label{display:flex;align-items:st
 </main><footer>Khaemenes Academy · No upload · No data deletion · No cloud connection</footer>
 <script src="../../../courses/shared/course-entry-contract.js"></script>
 <script src="./supplementary-course-export-v1.js"></script>
+<script src="./legacy-shared-record-guard-v1.js"></script>
 <script>
 (()=>{"use strict";
 const $=id=>document.getElementById(id);
@@ -51,7 +52,15 @@ $("prepare").addEventListener("click",()=>{
   const actual=contract?.readAcademyProfile?.();
   if(!owner||!actual||actual.learnerId!==owner.learnerId||contract.identityRaw?.()!==JSON.stringify(owner.learnerId))throw Error("Learner selection changed; reload the page");
   archive=window.KhaemenesGrade09SupplementaryExport.collect(window.localStorage,owner.learnerId,location.origin);
-  status("Prepared "+archive.records.length+" scoped keys. Excluded "+archive.excluded_counts.ambiguous+" ambiguous records and "+archive.excluded_counts.other_or_unmapped+" other/unmapped keys. This file will contain private unencrypted academic evidence; it does NOT cover all courses or prove learner ownership.");
+  const guard=window.KhaemenesGrade09LegacyPreservation;
+  const english=guard.extractEnglishDashboard(window.localStorage,owner.learnerId);
+  const pe=guard.quarantinePE(window.localStorage);
+  archive.records.push(...english.records);
+  archive.english_dashboard_extraction=english.status;
+  archive.pe_quarantine_record_count=pe.matched_count;
+  archive.complete_grade09_backup=false;
+  archive.warning="Contains sensitive unencrypted evidence. Selected learner keys and exact Academy-ID English dashboard entry only. PE remains unclaimed; this is not a full backup.";
+  status("Prepared "+archive.records.length+" records, including "+english.records.length+" selected English dashboard entry. Excluded "+archive.excluded_counts.ambiguous+" ambiguous keys and "+archive.excluded_counts.other_or_unmapped+" other/unmapped keys; "+pe.matched_count+" PE records remain quarantined. This is private plaintext evidence, NOT a complete backup or proof of authenticated ownership.");
   $("download").disabled=archive.records.length===0;
  }catch(e){archive=null;status("Nothing exported: "+String(e?.message||e))}
 });
