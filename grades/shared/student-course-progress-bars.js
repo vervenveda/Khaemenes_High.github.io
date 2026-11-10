@@ -21,7 +21,19 @@ function mountGradeNineChart(){
  const status=text("p","grade09-progress-status");
  const graph=text("div","grade09-progress-graph");
  const detail=text("div","grade09-progress-detail");detail.setAttribute("aria-live","polite");
- chart.append(title,introduction,controls,status,graph,detail);
+ const overview=text("div","grade09-progress-overview");overview.setAttribute("aria-label","Class reporting summary");
+ const connectionsButton=text("button","grade09-progress-filter","Class connections");
+ connectionsButton.type="button";
+ connectionsButton.setAttribute("aria-controls","grade09ProgressConnections");
+ connectionsButton.setAttribute("aria-expanded","false");
+ const connections=text("section","grade09-progress-connections");connections.id="grade09ProgressConnections";connections.hidden=true;
+ connections.setAttribute("aria-label","Course reporting diagnostics");
+ connectionsButton.addEventListener("click",()=>{
+  connections.hidden=!connections.hidden;
+  connectionsButton.setAttribute("aria-expanded",String(!connections.hidden));
+  if(!connections.hidden)renderConnections();
+ });
+ chart.append(title,introduction,controls,overview,status,graph,detail,connections);
  const schedule=document.querySelector(".grade09-priority-schedule");
  if(!schedule)return;
  schedule.insertAdjacentElement("afterend",chart);
@@ -43,7 +55,7 @@ function mountGradeNineChart(){
     rows.push({at,percent:snap.progress.percent});
     rows.sort((a,b)=>a.at-b.at);
     rows=rows.slice(-36);
-    try{localStorage.setItem(key,JSON.stringify(rows))}catch{}
+    // No storage write here. Only the course publisher owns academic evidence.
    }
   }
   return rows.sort((a,b)=>a.at-b.at).slice(-36);
@@ -77,7 +89,7 @@ function mountGradeNineChart(){
  for(const [button,value] of [[allButton,"all"],[needsButton,"review"]]){
   button.type="button";button.addEventListener("click",()=>{mode=value;render()});
  }
- controls.append(allButton,needsButton);
+ controls.append(allButton,needsButton,connectionsButton);
  function data(){
   const learner=active();
   const continuation=window.KhaemenesLearningContinuation;
@@ -87,6 +99,7 @@ function mountGradeNineChart(){
   return {learner,rows:slots.map((slot,index)=>{
    const course=slot.id?registry.getCourse(slot.id):null;
    const snap=course?snaps.find(s=>s.courseId===course.id&&!s.stale):null;
+   const latest=course?snaps.find(s=>s.courseId===course.id):null;
    const pct=snap?.progress?.percent;
    const percent=typeof pct==="number"&&Number.isFinite(pct)&&pct>=0&&pct<=100?pct:null;
    const best=snap?.mastery?.best;
@@ -96,7 +109,7 @@ function mountGradeNineChart(){
    const stale=course?snaps.some(s=>s.courseId===course.id&&s.stale):false;
    const history=course&&learner?observations(learner,course.id,snap):[];
    const forecast=percent!==null&&course&&learner?monteCarloForecast(history,learner+"|"+course.id):null;
-   return {index,subject:slot.label,course,snap,percent,mastery,threshold,mastered,stale,color:COLORS[index],forecast,
+   return {index,subject:slot.label,course,snap,latest,percent,mastery,threshold,mastered,stale,color:COLORS[index],forecast,
     needsReview:Boolean(stale||snap?.status==="corrections"||snap?.status==="mastery"||snap?.family?.needsAction)};
   })};
  }
@@ -104,6 +117,16 @@ function mountGradeNineChart(){
   const {learner,rows}=data();
   for(const [b,k] of [[allButton,"all"],[needsButton,"review"]])b.setAttribute("aria-pressed",String(mode===k));
   graph.replaceChildren();
+  overview.replaceChildren();
+  const metric=(label,value)=>{
+   const card=text("div","grade09-progress-metric");
+   card.append(text("span","",label),text("strong","",value));
+   overview.append(card);
+  };
+  metric("Selected classes",rows.filter(r=>r.course).length+" / 8");
+  metric("Reporting progress",learner?rows.filter(r=>r.percent!==null).length+" / 8":"—");
+  metric("Needs attention",learner?String(rows.filter(r=>r.needsReview).length):"—");
+  if(!connections.hidden)renderConnections(learner,rows);
   if(!learner){
    status.textContent="Choose your Grade 9 student profile to see your personal class progress.";
    for(const r of rows){
@@ -123,7 +146,7 @@ function mountGradeNineChart(){
   }
   const available=rows.filter(r=>r.percent!==null).length;
   const flagged=rows.filter(r=>r.needsReview).length;
-  status.textContent=available+" of 8 classes have progress to show · "+flagged+" may need a little attention.";
+  status.textContent=available+" of 8 classes report completion · "+flagged+" need review. Unreported does not mean zero.";
   const displayed=mode==="review"?rows.filter(r=>r.needsReview):rows;
   if(!displayed.length)graph.append(text("p","grade09-progress-empty","Nothing needs attention right now. You can still look through all eight classes."));
   displayed.forEach(r=>{
@@ -143,7 +166,7 @@ function mountGradeNineChart(){
     track.setAttribute("aria-valuemin","0");track.setAttribute("aria-valuemax","100");
     track.setAttribute("aria-valuenow",String(r.percent));
    }else track.setAttribute("aria-label",r.subject+" completion not reported");
-   const value=text("span","grade09-progress-value",r.percent===null?(r.stale?"Needs refresh":"Not reported"):Math.round(r.percent)+"%");
+   const value=text("span","grade09-progress-value",r.percent===null?(r.stale?"Needs refresh":r.course?"Not reported":"Select class"):Math.round(r.percent)+"%");
    item.append(label,track,value);
    item.addEventListener("click",()=>{selected=r.index;showDetails(r);renderRowsSelection()});
    graph.append(item);
@@ -163,23 +186,55 @@ function mountGradeNineChart(){
   detail.replaceChildren();
   detail.style.setProperty("--subject-color",r.color);
   const name=text("h3","",r.course?.title||r.subject);
-  const state=text("p","",r.percent===null?"Class progress: nothing to show yet.":"Class progress: "+Math.round(r.percent)+"%.");
+  const state=text("p","",r.percent===null?(r.stale?"This class has an older report that needs refreshing.":r.course?"No verified course completion percentage has been reported in this browser.":"Select this class from My Schedule to begin tracking."):"Course-reported completion: "+Math.round(r.percent)+"%.");
   const assessment=text("p","",r.mastery===null?"Assessment progress: nothing to show yet.":"Best assessment score: "+Math.round(r.mastery)+"% · goal "+r.threshold+"%.");
   const next=text("p","",r.stale?"Open this class once to refresh your progress.":r.snap?.nextTitle?"Next: "+r.snap.nextTitle:"Open the class when you are ready to choose your next step.");
   detail.append(name,state,assessment,next);
+  const statusValue=r.snap?.status||r.latest?.status;
+  const descriptors={continue:"Ready to continue",practice:"Practice in progress",corrections:"Corrections needed",mastery:"Mastery step pending",assessment:"Assessment pending",complete:"Course reported complete",paused:"Paused / recovery"};
+  detail.append(text("p","grade09-progress-source","Course status: "+(descriptors[statusValue]||"No status report received")+"."));
+  if(r.latest?.updatedAt){
+   const stamp=new Date(r.latest.updatedAt);
+   if(Number.isFinite(stamp.getTime()))detail.append(text("p","grade09-progress-source","Last report: "+stamp.toLocaleString()+"."));
+  }
+  if(r.latest?.source)detail.append(text("p","grade09-progress-source","Reporting source: "+String(r.latest.source)+"."));
+  if(r.snap?.summary)detail.append(text("p","grade09-progress-summary",r.snap.summary));
+  if(r.snap?.family?.needsAction)detail.append(text("p","grade09-progress-review","Family follow-up: "+(r.snap.family.label||"Action requested")+"."));
+  if(r.mastered)detail.append(text("p","grade09-progress-mastery","This course report marks the current mastery threshold as reached; official grading remains in the course record."));
   if(r.course){
    const link=text("a","grade09-progress-open","Open "+r.subject);
-   link.href=r.snap?.nextHref||r.course.home;detail.append(link);
+   const suggested=r.snap?.nextHref;
+   link.href=typeof suggested==="string"&&/^https:\/\//i.test(suggested)?suggested:r.course.home;
+   detail.append(link);
   }
   if(r.snap?.progress?.completed!==null&&r.snap?.progress?.completed!==undefined&&r.snap?.progress?.total){
    const total=r.snap.progress.total,completed=r.snap.progress.completed;
    detail.append(text("p","grade09-progress-units",completed+" of "+total+" activities completed."));
   }
   const forecastText=r.forecast
-   ?"If you keep a similar pace, your next few weeks may land around "+Math.round(r.forecast.lower)+"–"+Math.round(r.forecast.upper)+"% completion. This is a planning guide, not a grade."
-   :"Keep working in this class and your progress trend will appear here.";
+   ?"Historical observation estimate: 28-day completion could range from "+Math.round(r.forecast.lower)+"–"+Math.round(r.forecast.upper)+"%. This estimate is not a grade or guarantee."
+   :"A trend estimate requires at least two dated course reports over more than one day. No trend has been calculated.";
   detail.append(text("p","grade09-progress-forecast",forecastText));
   if(r.needsReview)detail.append(text("p","grade09-progress-review","This class needs a little attention. Check corrections, your next goal, or the next assessment."));
+ }
+ function renderConnections(givenLearner,givenRows){
+  const value=givenRows?{learner:givenLearner,rows:givenRows}:data();
+  connections.replaceChildren();
+  connections.append(text("h3","","Reporting connections"));
+  connections.append(text("p","","These are summaries provided by courses on this device, not certified Account Cloud transcripts."));
+  if(!value.learner){
+   connections.append(text("p","","Select the registered learner to inspect private course reporting."));return;
+  }
+  for(const row of value.rows){
+   const item=text("div","grade09-progress-connection-row");
+   let report="No current course report received";
+   if(!row.course)report="Choose a class in My Schedule";
+   else if(row.stale)report="Old report detected · revisit class to refresh";
+   else if(row.percent!==null)report="Reporting · "+Math.round(row.percent)+"% completion";
+   else if(row.latest)report="Connected · no completion percentage supplied";
+   item.append(text("span","",row.subject+" · "+(row.course?.title||"Unselected")),text("span","",report));
+   connections.append(item);
+  }
  }
  render();
  for(const event of ["khaemenes-learning-continuation-changed","khaemenes-learning-continuation-ready","khaemenes-course-pins-changed","khaemenes-grade09-language-changed","khaemenes-student-profile-changed","focus","pageshow"])
