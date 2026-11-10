@@ -78,7 +78,7 @@ function link(title,url,cls="btn secondary"){
 function appearance(id){try{const v=JSON.parse(localStorage.getItem("khaemenes.grade"+grade+".profile.appearance:"+encodeURIComponent(id))||"null");return v&&typeof v==="object"?v:null}catch{return null}}
 function selectLearner(){
  const p=learner(),id=identity(),info=gradeContext();
- const wrong=grade==="10"?(!info||info.gradeNumber!==10):Boolean(info&&info.gradeNumber!==Number(grade));
+ const wrong=!info||info.gradeNumber!==Number(grade)||!!(p?.learnerId&&p.learnerId!==info.learnerId)||!!(id&&id!==info.learnerId);
  if(wrong){
   // A Grade 10 learner viewing Grade 11 must never inherit Grade 11
   // photo, details, class controls or local decoration merely by visiting.
