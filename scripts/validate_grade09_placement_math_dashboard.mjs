@@ -65,10 +65,24 @@ for (let unit = 1; unit <= 13; unit++) {
   const id = String(unit).padStart(2, '0');
   unitMaps.set(unit, JSON.parse(read(`courses/mathematics/algebra-1/units/unit-${id}/unit-map.json`)));
 }
+const route='/Khaemenes_High.github.io/grades/grade-09/student-profile/';
+const location={pathname:route,href:'https://vervenveda.com'+route,hostname:'vervenveda.com'};
+const document={
+  currentScript:{src:'https://vervenveda.com/Khaemenes_High.github.io/courses/shared/course-entry-contract.js'},
+  readyState:'loading',
+  querySelector:()=>null,
+  getElementById:()=>null,
+  scripts:[],
+  addEventListener:()=>{}, // no real browser UI is mounted in this isolated storage test
+  createElement:()=>({dataset:{},addEventListener:()=>{},setAttribute:()=>{}}),
+  head:{append:()=>{},appendChild:()=>{}},
+  documentElement:{append:()=>{},appendChild:()=>{}}
+};
 const context = {
-  window: { localStorage },
+  window: { localStorage,location },
+  document,
   localStorage,
-  location: { pathname: '/Khaemenes_High.github.io/grades/grade-09/student-profile/' },
+  location,
   URLSearchParams,
   console,
   fetch: async url => {
