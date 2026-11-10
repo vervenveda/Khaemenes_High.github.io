@@ -284,8 +284,17 @@ function saveState(){
   if(recordWritesBlocked)throw new Error("Record writes paused.");
   try{
     if(localStorage.getItem(STORAGE_KEY)!==lastStoredState)throw new Error("Another tab changed these records.");
+    const profile=window.KhaemenesEnglish9Records?.profile||null;
+    if(profile?.learnerId){
+      const selected=JSON.parse(localStorage.getItem("khaemenes_active_learner_v1")||"null");
+      const active=state.students.find(student=>student.id===state.activeId);
+      if(selected!==profile.learnerId||active?.academyLearnerId!==profile.learnerId)
+        throw new Error("Selected learner differs from the loaded English 9 profile");
+    }
     const serialized=JSON.stringify(validateRecords(state));
     localStorage.setItem(STORAGE_KEY,serialized);
+    if(localStorage.getItem(STORAGE_KEY)!==serialized)
+      throw new Error("English 9 storage read-back did not match");
     lastStoredState=serialized;
   }catch(e){
     recordError("English 9 could not save this change. Storage may be unavailable, full, or changed in another tab.");
