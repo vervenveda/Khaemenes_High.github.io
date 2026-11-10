@@ -9,7 +9,15 @@ const esc=v=>String(v??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&
 const safeParse=(raw,fallback)=>{try{const v=JSON.parse(raw);return v&&typeof v==="object"?v:fallback}catch{return fallback}};
 function store(){const s=safeParse(localStorage.getItem(STORE),{version:2,weeks:{}});s.version=2;s.weeks=s.weeks&&typeof s.weeks==="object"?s.weeks:{};return s}
 let expectedStoreRaw=null,storageConflict=false;
-try{expectedStoreRaw=localStorage.getItem(STORE)}catch{storageConflict=true}
+try{
+ expectedStoreRaw=localStorage.getItem(STORE);
+ if(expectedStoreRaw!==null){
+  const checked=JSON.parse(expectedStoreRaw);
+  if(!checked||typeof checked!=="object"||Array.isArray(checked)||
+     !checked.weeks||typeof checked.weeks!=="object"||Array.isArray(checked.weeks))
+   storageConflict=true;
+ }
+}catch{storageConflict=true}
 function write(s){
  if(storageConflict)return false;
  try{
