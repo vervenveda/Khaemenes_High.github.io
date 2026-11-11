@@ -30,6 +30,14 @@ html,body{margin:0;min-height:100%;font:400 16px/1.6 "Brandon Grotesque",Nunito,
 .g12-actions{display:flex;flex-wrap:wrap;gap:9px;margin-top:10px}
 .g12-actions .g12-button{flex:1 1 160px}
 .g12-wide{grid-column:1/-1;width:100%;max-width:none;min-width:0}
+.g12-class-doors{display:block;min-height:0}
+.g12-class-doors>summary{cursor:pointer;list-style-position:inside;text-align:center;padding:6px 0;font:400 24px/1.4 Cinzel,Georgia,serif;color:var(--g12-charcoal)}
+.g12-class-doors>summary span{display:inline-block;margin-left:12px;font:400 16px/1.4 "Brandon Grotesque",Nunito,Arial,sans-serif;color:#45574d}
+.g12-class-doors[open]>summary{padding-bottom:14px;border-bottom:1px solid #ccb995;margin-bottom:14px}
+.g12-class-doors>.g12-grid{margin-top:15px}
+.g12-class-doors>.g12-grid>.g12-card{min-height:150px}
+@media(max-width:560px){.g12-class-doors>summary span{display:block;margin:6px 0 0}}
+
 .g12-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
 .g12-check{display:flex;align-items:center;gap:11px;min-height:45px;padding:9px 10px;border:1px solid #ddd0b8;border-radius:7px;background:#faf7f0}
 .g12-check input{width:19px;height:19px;accent-color:#315d43;flex:0 0 auto}
@@ -52,7 +60,7 @@ a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible{
 <a href="../games/" >Games</a>
 <a href="../profile/" >My Profile</a>
 <a href="../settings/" >Settings</a><a href="../../">Exit to Grade 12</a></nav>
-<main class="g12-shell g12-content"><p class="g12-note" role="status" id="g12RoomMessage">Checking the registered learner…</p><div class="g12-grid" id="g12RoomContent"><section class="g12-card g12-wide"><h2>My Eight Subjects</h2><p>Open your current classes and continue lessons from the course that owns them. Pinned courses are personal shortcuts, not enrollment or grades.</p><div class="g12-grid" id="g12SubjectCards"></div></section>
+<main class="g12-shell g12-content"><p class="g12-note" role="status" id="g12RoomMessage">Checking the registered learner…</p><div class="g12-grid" id="g12RoomContent"><details class="g12-card g12-wide g12-class-doors" id="g12ClassDoors" aria-label="Grade 12 class doors"><summary>Class Doors · Eight Subjects <span>Expand course links</span></summary><p>Open your current classes and continue lessons from the course that owns them. Pinned courses are personal shortcuts, not enrollment or grades.</p><div class="g12-grid" id="g12SubjectCards"></div></details>
 <section class="g12-card g12-wide" data-owner-only><h2>To Do Today</h2><p>Ten learner-owned daily activities shared with your student dashboard. Personal checkmarks never award course credits, scores, or mastery.</p><div id="g12DailyChecks" class="g12-list"></div><p id="g12DailyStatus" class="g12-status" role="status"></p></section>
 <section class="g12-card g12-wide" data-owner-only><h2>My Study Note</h2><p>Your short daily journal stays in this browser and belongs to your selected Grade 12 learner.</p><label for="g12DailyNote">Today's plan or reflection</label><textarea id="g12DailyNote" maxlength="1600"></textarea><div class="g12-actions"><button type="button" id="g12SaveNote" class="g12-button">Save My Note</button><button type="button" id="g12ClearNote" class="g12-button secondary">Clear Today's Note</button></div><p id="g12NoteStatus" role="status" class="g12-status"></p></section></div></main>
 <footer class="g12-footer">Khaemenes Academy · Grade 12 · Daily Lessons<div>Local learner work remains separate from course grading and parent authority.</div></footer>
