@@ -39,4 +39,22 @@ assert.match(upper,/percent!==null/);
 assert.match(upper,/khaemenes-learning-continuation-ready/);
 assert.match(upper,/window\.addEventListener\("storage"/);
 assert.match(upper,/if\(!dialog\.open\)return/);
+// Four-grade course-link and report identity regression checks.
+const upperConnections=source("grades/shared/upper-grade-class-progress-dialog.js");
+const eightClass=source("courses/shared/high-school-eight-class.js");
+const upperEnglish=source("courses/shared/high-school-english-continuation.js");
+const nineProgress=source("grades/shared/student-course-progress-bars.js");
+for(const grade of [10,11,12]){
+ assert.match(eightClass,new RegExp('"'+grade+'":Object\\.freeze'));
+ assert.match(upperEnglish,new RegExp('courseId:"ela'+grade+'"'));
+ assert.match(upperConnections,/reportIds\s*=\s*id/);
+ assert.match(upperConnections,/ids\.includes\(s\.courseId\)/);
+}
+assert.match(upperConnections,/safeCourseLink\(row\.snap\?\.nextHref,row\.item\.href\)/);
+assert.match(upperConnections,/gradeSummary\(snap\)/);
+assert.match(upperConnections,/grade09ProgressConnections/);
+assert.match(upperConnections,/Quiz\/test average:/);
+assert.match(nineProgress,/safeNextHref\(suggested,r\.course\.home\)/);
+assert.match(nineProgress,/Course ID:/);
+console.log("Four-grade Class Progress course identity and link guards PASS.");
 console.log("Grades 09–12 Student Progress source parity PASS. Browser interaction and course publishers remain separately testable.");
