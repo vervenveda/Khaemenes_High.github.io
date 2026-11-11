@@ -266,6 +266,26 @@ html:root:root body[data-grade="09"] [data-grade09-support-contrast="true"] :is(
   color:#fff8e9!important;-webkit-text-fill-color:#fff8e9!important;
 }
 </style>
+<style id="grade09-course-choices-compact-20261110">
+html:root:root body[data-grade="09"] .grade09-course-choices{
+  width:100%;max-width:none;margin:14px 0 18px;padding:0;
+  border:1px solid #bda985;border-radius:7px;background:#f7f2e8;color:#243038;
+}
+html:root:root body[data-grade="09"] .grade09-course-choices>summary{
+  cursor:pointer;text-align:center;padding:13px 17px;
+  font:400 18px/1.5 Cinzel,Georgia,serif;color:#243038;
+}
+html:root:root body[data-grade="09"] .grade09-course-choices[open]>summary{
+  border-bottom:1px solid #c5b492;
+}
+html:root:root body[data-grade="09"] .grade09-course-choices #grade09SevenClassSchedule{
+  padding:12px 18px 20px;text-align:center;
+}
+html:root:root body[data-grade="09"] .grade09-course-choices #grade09SevenClassSchedule select,
+html:root:root body[data-grade="09"] .grade09-course-choices #grade09SevenClassSchedule button{
+  min-height:44px;font-size:16px;color:#243038;
+}
+</style>
 </head>
 <body data-grade="09">
 <!-- Official VNV chrome replaces the retired Academy-specific header and menu.
@@ -372,6 +392,10 @@ html:root:root body[data-grade="09"] [data-grade09-support-contrast="true"] :is(
       <section class="card col12" aria-labelledby="classDoorsTitle">
         <h2 id="classDoorsTitle">Class Doors</h2>
         <p>Pin the classes used regularly. The star button updates both this page and the Student Dashboard.</p>
+        <details class="grade09-course-choices" aria-label="Course choices and schedule shortcuts">
+          <summary>Course Choices · Mathematics, language &amp; pin all</summary>
+          <div id="grade09SevenClassSchedule" data-course-choices-only="true"></div>
+        </details>
         <div class="lesson-grid" id="dailyClassGrid"></div>
       </section>
 
@@ -385,7 +409,7 @@ html:root:root body[data-grade="09"] [data-grade09-support-contrast="true"] :is(
 
     </div>
   </section>
-<section class="section grade09-eight-classes-section" aria-labelledby="grade09EightClassesTitle"><div class="shell"><h2 id="grade09EightClassesTitle">My Eight Classes · Unit 01</h2><div id="grade09SevenClassSchedule"></div></div></section></main>
+</main>
 <footer class="footer"><strong>Khaemenes High · Grade 09</strong>Pinned classes · daily lesson doors · checklist · local focus note</footer>
 <script src="../../../../courses/shared/course-entry-contract.js"></script>
 <script src="../../../../courses/shared/high-school-course-pins.js"></script>
