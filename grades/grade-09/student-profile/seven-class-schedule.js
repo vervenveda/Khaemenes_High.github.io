@@ -35,8 +35,11 @@ function slots(){return catalog?.slots(9,{mathId:registry.mathPathway()||null,la
 function idFor(index){return slots()[index]?.id||null}
 function render(){
  host.replaceChildren();
- const intro=el("p","Your eight Grade 09 classes. Pin the classes you study; choices are saved for the selected learner on this device. Course mastery and assessments remain independent.");
- host.append(intro);
+ const choicesOnly=host.dataset.courseChoicesOnly==="true";
+ if(!choicesOnly){
+  const intro=el("p","Your eight Grade 09 classes. Pin the classes you study; choices are saved for the selected learner on this device. Course mastery and assessments remain independent.");
+  host.append(intro);
+ }
  const config=el("div");config.style.cssText="display:flex;flex-wrap:wrap;gap:14px;margin:16px 0";
  const mathLabel=el("label","Mathematics pathway ");
  const math=el("select");math.setAttribute("aria-label","Choose current math pathway");
@@ -58,6 +61,7 @@ function render(){
   render();
  });
  langLabel.append(select);config.append(langLabel);host.append(config);
+ if(!choicesOnly){
  const list=el("div");list.className="grade09-eight-class-grid";
  slots().forEach((entry,index)=>{
   const subject=entry.label;
@@ -83,6 +87,7 @@ function render(){
   list.append(card);
  });
  host.append(list);
+ }
  const setup=el("button","Pin all eight classes");
  setup.type="button";setup.style.cssText="margin-top:16px;padding:11px 16px;border-radius:7px";
  setup.addEventListener("click",()=>{
