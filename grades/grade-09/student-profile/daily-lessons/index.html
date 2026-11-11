@@ -539,7 +539,7 @@ html:root:root body[data-grade="09"] [data-grade09-support-contrast="true"] :is(
  "use strict";
  function apply(){
   document.querySelectorAll("main a, main button").forEach(el=>{
-   const label=(el.textContent||"").replace(/\\s+/g," ").trim().toLowerCase();
+   const label=(el.textContent||"").replace(/\s+/g," ").trim().toLowerCase();
    if(label==="support with stripe"||label==="support free access"){
     el.setAttribute("data-grade09-support-contrast","true");
    }
