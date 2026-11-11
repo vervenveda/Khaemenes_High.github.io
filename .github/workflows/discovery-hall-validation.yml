@@ -1,0 +1,27 @@
+name: High School Discovery Hall Validation
+on:
+  push:
+    branches: [main]
+    paths:
+      - "courses/electives/index.html"
+      - "courses/electives/discovery-hall.js"
+      - "tests/discovery-hall-validation.cjs"
+      - ".github/workflows/discovery-hall-validation.yml"
+  pull_request:
+    paths:
+      - "courses/electives/index.html"
+      - "courses/electives/discovery-hall.js"
+      - "tests/discovery-hall-validation.cjs"
+  workflow_dispatch:
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: Validate question bank, privacy boundary, navigation and course doors
+        run: node tests/discovery-hall-validation.cjs
