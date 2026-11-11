@@ -156,7 +156,7 @@ html:root:root body #grade09BlueprintTools .grade09-blueprint-tool:is(:hover,:fo
 <link rel="stylesheet" href="../../shared/upper-grade-daily-focus-parity.css?v=2daa183c">
 <link rel="stylesheet" href="../../shared/learning-today-placement.css?v=c18617cc">
 <link rel="stylesheet" href="../../shared/student-profile-rooms-contrast.css?v=20261107-empty-wrapper-v2">
-<link rel="stylesheet" href="../../shared/student-checkpoints-disclosure.css?v=20261105-bottom-disclosure">
+
 <link rel="stylesheet" href="../../shared/high-profile-approved-hero.css?v=20261105-grade10-reference">
 <style id="grade12-retired-duplicate-profile-panels-20261105">
 /* Presentation retirement only. Canonical toolbar dialogs and course data stay owned
@@ -260,6 +260,12 @@ html:root:root body[data-grade="12"] #upperGradeScheduleDialog :is(button,a,sele
  html:root:root body[data-grade="12"] #upperGradeScheduleDialog .grade09-blueprint-schedule-grid{gap:12px!important}
  html:root:root body[data-grade="12"] #upperGradeScheduleDialog .grade09-blueprint-schedule-item{padding:15px!important;min-height:160px!important}
  }
+</style>
+<style id="grade12-checkpoint-profile-dedup-20261111">
+/* Keep the original node in DOM for Class Progress snapshot; retire duplicate profile display. */
+body[data-grade="12"] #upperGradeAcademicCheckpoints{display:none!important}
+body[data-grade="12"] #grade10CheckpointsDisclosure,
+body[data-grade="12"] #khaeCheckpointsDisclosure{display:none!important}
 </style>
 </head>
 <body data-grade="12" data-high-hide-breadcrumbs="true">
@@ -513,7 +519,7 @@ html body .grade09-contribute-panel .grade09-contribute-action:focus-visible{
 <script src="../../shared/upper-grade-yearbook-dialog.js?v=20261106-grade12-voice-v1"></script>
 <script src="../../shared/upper-grade-klasaipeer-studio.js?v=20261108-whiteboard-save-v1"></script>
 <script src="../../shared/high-klasaipeer-student-experience.js?v=20261106-five-improvements"></script>
-<script src="../../shared/student-checkpoints-disclosure.js?v=20261105-bottom-disclosure"></script>
+
 <script id="grade12-retired-profile-panels-20261105">
 /* Presentation-only guard. The shared toolbar owns Schedule and Progress dialogs.
    Keep the backing data nodes in the DOM, without showing redundant cards. */
