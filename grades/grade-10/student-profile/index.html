@@ -413,6 +413,12 @@ html:root:root body[data-grade="10"] #upperGradeScheduleDialog :is(button,a,sele
  html:root:root body[data-grade="10"] #upperGradeScheduleDialog .grade10-schedule-manager{padding:15px!important}
 }
 </style>
+<style id="grade10-checkpoint-profile-dedup-20261111">
+/* Keep the original node in DOM for Class Progress snapshot; retire duplicate profile display. */
+body[data-grade="10"] #upperGradeAcademicCheckpoints{display:none!important}
+body[data-grade="10"] #grade10CheckpointsDisclosure,
+body[data-grade="10"] #khaeCheckpointsDisclosure{display:none!important}
+</style>
 </head>
 <body data-grade="10" data-high-hide-breadcrumbs="true">
 <header data-vnv-header-legacy data-grade10-vnv-placement-anchor hidden aria-hidden="true"></header>
@@ -603,70 +609,7 @@ html body .grade09-contribute-panel .grade09-contribute-action:focus-visible{
 <script src="../../shared/upper-grade-yearbook-dialog.js?v=20261106-grade10-boundary-v2"></script>
 <script src="../../shared/upper-grade-klasaipeer-studio.js?v=20261108-whiteboard-save-v1"></script>
 <script src="../../shared/high-klasaipeer-student-experience.js?v=20261106-five-improvements"></script>
-<script id="grade10-checkpoints-collapsible-before-support-20261105">
-/* Grade 10 only. One original 16-card component, one native disclosure.
-   The support card is dynamically inserted; don't move or clone its contents.
-   Grade 09, 11 and 12 keep their own layout and academic functionality. */
-(function(){
- "use strict";
- if(document.body?.dataset.grade!=="10")return;
- let wrapper=null,observer=null;
- function contribution(){
-  const headings=[...document.querySelectorAll("h2,h3,h4,div,span,p")]
-   .filter(el=>el.children.length===0&&/^support free access$/i.test((el.textContent||"").trim()));
-  for(const heading of headings){
-   const possible=[];
-   for(let node=heading.parentElement;node&&node!==document.body;node=node.parentElement){
-    const copy=node.textContent||"";
-    if(!/everything here is free/i.test(copy)||!/voluntary/i.test(copy))continue;
-    const link=[...node.querySelectorAll("a,button")]
-     .some(a=>/support with stripe|stripe/i.test((a.textContent||"")+" "+(a.getAttribute("href")||"")));
-    if(link&&!node.contains(wrapper))possible.push(node);
-   }
-   if(possible.length)return possible[0];
-  }
-  return document.querySelector(".grade09-contribute-panel");
- }
- function place(){
-  const main=document.querySelector("main");
-  const node=document.getElementById("upperGradeAcademicCheckpoints");
-  if(!main||!node)return false;
-  if(!wrapper){
-   wrapper=document.createElement("details");
-   wrapper.id="grade10CheckpointsDisclosure";
-   wrapper.className="grade10-checkpoints-disclosure";
-   const heading=document.createElement("summary");
-   heading.textContent="Today's Class Checkpoints";
-   heading.setAttribute("aria-label","Expand or collapse today's sixteen class checkpoints");
-   wrapper.append(heading);
-  }
-  if(node.parentElement!==wrapper)wrapper.append(node);
-  const existingTitle=node.querySelector("h3");
-  if(existingTitle)existingTitle.hidden=true;
-  const support=contribution();
-  if(support?.parentElement){
-   if(wrapper.parentElement!==support.parentElement||wrapper.nextElementSibling!==support)
-    support.insertAdjacentElement("beforebegin",wrapper);
-   observer?.disconnect();observer=null;
-   return true;
-  }
-  // Until the contribution module arrives, keep the collapsed region after
-  // Explore at the end of main. Reposition automatically once support mounts.
-  const explore=main.querySelector(":scope > #grade09Explore");
-  if(explore&&wrapper.parentElement!==main)explore.insertAdjacentElement("afterend",wrapper);
-  return false;
- }
- function watch(){
-  if(place()||observer)return;
-  observer=new MutationObserver(()=>{place()});
-  observer.observe(document.body,{childList:true,subtree:true});
- }
- watch();
- if(document.readyState==="loading")document.addEventListener("DOMContentLoaded",watch,{once:true});
- window.addEventListener("load",watch,{once:true});
- window.addEventListener("pageshow",watch);
-})();
-</script>
+
 <script src="../../shared/high-profile-support-footer-parity.js?v=20261106-grade09-approved"></script>
 <script src="../../shared/high-school-course-catalogue.js?v=20261106-cross-grade"></script>
 <script src="https://vervenveda.com/Khaemenes_Academy.github.io/assets/khaemenes-guest-tour-invitation.js?v=20261106-guest-tour-01"></script>
