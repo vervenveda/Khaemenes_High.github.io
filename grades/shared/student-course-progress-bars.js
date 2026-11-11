@@ -37,6 +37,10 @@ function mountGradeNineChart(){
  const schedule=document.querySelector(".grade09-priority-schedule");
  if(!schedule)return;
  schedule.insertAdjacentElement("afterend",chart);
+ function safeNextHref(href,home){
+  if(typeof href!=="string"||!/^https:\/\//i.test(href)||typeof home!=="string")return null;
+  try{const candidate=new URL(href),base=new URL(home);return candidate.origin===base.origin&&candidate.pathname.startsWith(base.pathname)?candidate.href:null}catch{return null}
+ }
  const active=()=>{const x=window.KhaemenesStudentProfileV2?.activeLearner?.()?.learnerId;
   const y=contract.readAcademyProfile?.()?.learnerId;
   return x&&y&&String(x)===String(y)?String(x):null};
@@ -211,6 +215,7 @@ function mountGradeNineChart(){
   const assessment=text("p","",r.mastery===null?"Assessment progress: nothing to show yet.":"Best assessment score: "+Math.round(r.mastery)+"% · goal "+r.threshold+"%.");
   const next=text("p","",r.stale?"Open this class once to refresh your progress.":r.snap?.nextTitle?"Next: "+r.snap.nextTitle:"Open the class when you are ready to choose your next step.");
   detail.append(name,state,assessment,next);
+  detail.append(text("p","grade09-progress-source","Course ID: "+(r.course?.id||"Not selected")+" · "+(r.snap?"Report received":r.stale?"Stale report":"No current course report")));
   const grades=r.grades;
   const gradeline=text("section","grade09-progress-grade-summary");
   gradeline.append(text("h4","","Current Quiz & Test Grades"));
@@ -242,7 +247,7 @@ function mountGradeNineChart(){
   if(r.course){
    const link=text("a","grade09-progress-open","Open "+r.subject);
    const suggested=r.snap?.nextHref;
-   link.href=typeof suggested==="string"&&/^https:\/\//i.test(suggested)?suggested:r.course.home;
+   link.href=safeNextHref(suggested,r.course.home)||r.course.home;
    detail.append(link);
   }
   if(r.snap?.progress?.completed!==null&&r.snap?.progress?.completed!==undefined&&r.snap?.progress?.total){
