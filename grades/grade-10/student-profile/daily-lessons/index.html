@@ -25,11 +25,11 @@ html,body{margin:0;min-height:100%;font:400 16px/1.6 "Brandon Grotesque",Nunito,
 .g10-button:disabled{opacity:.52;cursor:not-allowed}
 .g10-button.secondary{background:#fffdf8;color:#263f33}
 .g10-card :is(input,textarea,select){width:100%;font:400 16px/1.5 Nunito,Arial,sans-serif;padding:10px;color:#243038;background:#fffdf8;border:1px solid #9c9a85;border-radius:7px}
-.g10-card textarea{resize:vertical;min-height:110px}
+.g10-card textarea{display:block;width:100%;max-width:100%;box-sizing:border-box;resize:vertical;min-height:150px}
 .g10-card label{font-size:16px;color:#243038}
 .g10-actions{display:flex;flex-wrap:wrap;gap:9px;margin-top:10px}
 .g10-actions .g10-button{flex:1 1 160px}
-.g10-wide{grid-column:1/-1}
+.g10-wide{grid-column:1/-1;width:100%;max-width:none;min-width:0}
 .g10-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
 .g10-check{display:flex;align-items:center;gap:11px;min-height:45px;padding:9px 10px;border:1px solid #ddd0b8;border-radius:7px;background:#faf7f0}
 .g10-check input{width:19px;height:19px;accent-color:#315d43;flex:0 0 auto}
@@ -98,7 +98,7 @@ tasks.forEach(([title,detail],i)=>{
  row.append(input,make("span",title+" · "+detail));
  grid.append(row);
  input.addEventListener("change",()=>{
-   if(window.KhaemenesHighProfileGradeContext?.active?.()?.learnerId!==learnerId){input.checked=!input.checked;status.textContent="Active learner changed. Reload before saving.";return}
+   if(((window.KhaemenesHighProfileGradeContext?.active?.()?.learnerId!==learnerId||window.KhaemenesHighProfileGradeContext?.active?.()?.gradeNumber!==10)||window.KhaemenesHighProfileGradeContext?.active?.()?.gradeNumber!==10)){input.checked=!input.checked;status.textContent="Active learner changed. Reload before saving.";return}
    const data={};controls.forEach((item,n)=>{data[n]=item.checked});
    try{localStorage.setItem(prefix+"checks",JSON.stringify(data));status.textContent=controls.filter(x=>x.checked).length+" personal checks selected. These are not academic credits or assessments."}
    catch{input.checked=!input.checked;status.textContent="Could not save checks on this device."}
@@ -107,11 +107,11 @@ tasks.forEach(([title,detail],i)=>{
 const note=document.getElementById("g10DailyNote"),noteStatus=document.getElementById("g10NoteStatus");
 note.value=String(safeRead(prefix+"note","")).slice(0,1600);
 document.getElementById("g10SaveNote").onclick=()=>{
- if(window.KhaemenesHighProfileGradeContext?.active?.()?.learnerId!==learnerId){noteStatus.textContent="Active learner changed. Reload to save.";return}
+ if((window.KhaemenesHighProfileGradeContext?.active?.()?.learnerId!==learnerId||window.KhaemenesHighProfileGradeContext?.active?.()?.gradeNumber!==10)){noteStatus.textContent="Active learner changed. Reload to save.";return}
  try{localStorage.setItem(prefix+"note",JSON.stringify(note.value.slice(0,1600)));noteStatus.textContent="Today's personal note saved locally."}catch{noteStatus.textContent="Could not save the note."}
 };
 document.getElementById("g10ClearNote").onclick=()=>{
- if(window.KhaemenesHighProfileGradeContext?.active?.()?.learnerId!==learnerId){noteStatus.textContent="Active learner changed. Reload first.";return}
+ if((window.KhaemenesHighProfileGradeContext?.active?.()?.learnerId!==learnerId||window.KhaemenesHighProfileGradeContext?.active?.()?.gradeNumber!==10)){noteStatus.textContent="Active learner changed. Reload first.";return}
  try{localStorage.removeItem(prefix+"note");note.value="";noteStatus.textContent="Today's note cleared."}catch{noteStatus.textContent="Could not clear the note."}
 };
 
