@@ -30,6 +30,14 @@ html,body{margin:0;min-height:100%;font:400 16px/1.6 "Brandon Grotesque",Nunito,
 .g10-actions{display:flex;flex-wrap:wrap;gap:9px;margin-top:10px}
 .g10-actions .g10-button{flex:1 1 160px}
 .g10-wide{grid-column:1/-1;width:100%;max-width:none;min-width:0}
+.g10-class-doors{display:block;min-height:0}
+.g10-class-doors>summary{cursor:pointer;list-style-position:inside;text-align:center;padding:6px 0;font:400 24px/1.4 Cinzel,Georgia,serif;color:var(--g10-charcoal)}
+.g10-class-doors>summary span{display:inline-block;margin-left:12px;font:400 16px/1.4 "Brandon Grotesque",Nunito,Arial,sans-serif;color:#45574d}
+.g10-class-doors[open]>summary{padding-bottom:14px;border-bottom:1px solid #ccb995;margin-bottom:14px}
+.g10-class-doors>.g10-grid{margin-top:15px}
+.g10-class-doors>.g10-grid>.g10-card{min-height:150px}
+@media(max-width:560px){.g10-class-doors>summary span{display:block;margin:6px 0 0}}
+
 .g10-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
 .g10-check{display:flex;align-items:center;gap:11px;min-height:45px;padding:9px 10px;border:1px solid #ddd0b8;border-radius:7px;background:#faf7f0}
 .g10-check input{width:19px;height:19px;accent-color:#315d43;flex:0 0 auto}
@@ -52,7 +60,7 @@ a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible{
 <a href="../games/" >Games</a>
 <a href="../profile/" >My Profile</a>
 <a href="../settings/" >Settings</a><a href="../../">Exit to Grade 10</a></nav>
-<main class="g10-shell g10-content"><p class="g10-note" role="status" id="g10RoomMessage">Checking the registered learner…</p><div class="g10-grid" id="g10RoomContent"><section class="g10-card g10-wide"><h2>My Eight Subjects</h2><p>Open your current classes and continue lessons from the course that owns them. Pinned courses are personal shortcuts, not enrollment or grades.</p><div class="g10-grid" id="g10SubjectCards"></div></section>
+<main class="g10-shell g10-content"><p class="g10-note" role="status" id="g10RoomMessage">Checking the registered learner…</p><div class="g10-grid" id="g10RoomContent"><details class="g10-card g10-wide g10-class-doors" id="g10ClassDoors" aria-label="Grade 10 class doors"><summary>Class Doors · Eight Subjects <span>Expand course links</span></summary><p>Open your current classes and continue lessons from the course that owns them. Pinned courses are personal shortcuts, not enrollment or grades.</p><div class="g10-grid" id="g10SubjectCards"></div></details>
 <section class="g10-card g10-wide" data-owner-only><h2>To Do Today</h2><p>Eight personal planning checks, separate from course assessment and mastery.</p><div id="g10DailyChecks" class="g10-list"></div><p id="g10DailyStatus" class="g10-status" role="status"></p></section>
 <section class="g10-card g10-wide" data-owner-only><h2>My Study Note</h2><p>Your short daily journal stays in this browser and belongs to your selected Grade 10 learner.</p><label for="g10DailyNote">Today's plan or reflection</label><textarea id="g10DailyNote" maxlength="1600"></textarea><div class="g10-actions"><button type="button" id="g10SaveNote" class="g10-button">Save My Note</button><button type="button" id="g10ClearNote" class="g10-button secondary">Clear Today's Note</button></div><p id="g10NoteStatus" role="status" class="g10-status"></p></section></div></main>
 <footer class="g10-footer">Khaemenes Academy · Grade 10 · Daily Lessons<div>Local learner work remains separate from course grading and parent authority.</div></footer>
@@ -98,7 +106,7 @@ tasks.forEach(([title,detail],i)=>{
  row.append(input,make("span",title+" · "+detail));
  grid.append(row);
  input.addEventListener("change",()=>{
-   if(((window.KhaemenesHighProfileGradeContext?.active?.()?.learnerId!==learnerId||window.KhaemenesHighProfileGradeContext?.active?.()?.gradeNumber!==10)||window.KhaemenesHighProfileGradeContext?.active?.()?.gradeNumber!==10)){input.checked=!input.checked;status.textContent="Active learner changed. Reload before saving.";return}
+   if((window.KhaemenesHighProfileGradeContext?.active?.()?.learnerId!==learnerId||window.KhaemenesHighProfileGradeContext?.active?.()?.gradeNumber!==10)){input.checked=!input.checked;status.textContent="Active learner changed. Reload before saving.";return}
    const data={};controls.forEach((item,n)=>{data[n]=item.checked});
    try{localStorage.setItem(prefix+"checks",JSON.stringify(data));status.textContent=controls.filter(x=>x.checked).length+" personal checks selected. These are not academic credits or assessments."}
    catch{input.checked=!input.checked;status.textContent="Could not save checks on this device."}
