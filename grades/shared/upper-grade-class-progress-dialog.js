@@ -29,13 +29,18 @@ const filters=make("div","grade09-progress-controls");
 const all=make("button","grade09-progress-filter",(grade10Copy||grade11Copy||grade12Copy)?"All Classes":"All eight subjects");
 const review=make("button","grade09-progress-filter",(grade10Copy||grade11Copy||grade12Copy)?"Needs Attention":"Needs review");
 all.type="button";review.type="button";
-filters.append(all,review);
+const connectionsButton=make("button","grade09-progress-filter","Class connections");
+connectionsButton.type="button";connectionsButton.setAttribute("aria-expanded","false");
+const connections=make("section","grade09-progress-connections");connections.id="grade09ProgressConnections";connections.hidden=true;
+connectionsButton.setAttribute("aria-controls",connections.id);
+connectionsButton.addEventListener("click",()=>{connections.hidden=!connections.hidden;connectionsButton.setAttribute("aria-expanded",String(!connections.hidden));render();});
+filters.append(all,review,connectionsButton);
 const status=make("p","grade09-progress-status");
 status.setAttribute("role","status");
 const graph=make("div","grade09-progress-graph");
 const detail=make("div","grade09-progress-detail");
 detail.setAttribute("aria-live","polite");
-chart.append(chartTitle,intro,filters,status,graph,detail);
+chart.append(chartTitle,intro,filters,status,graph,detail,connections);
 chartArea.append(chart);
 /* Match the approved Grade 09 popup: graph first, checkpoints underneath. */
 body.append(chartArea,checkpointsArea);
@@ -54,17 +59,37 @@ function registered(){
 }
 const slots=()=>window.KhaemenesHighEightClass?.slots?.(grade)||[];
 const valid=n=>typeof n==="number"&&Number.isFinite(n)&&n>=0&&n<=100;
+// English publishers retain historical ela10/ela11/ela12 identifiers.
+const reportIds=id=>/^english-(10|11|12)$/.test(String(id||""))?[id,"ela"+id.slice(-2)]:id?[id]:[];
+function gradeSummary(snapshot){
+ const seen=new Set();
+ const items=(Array.isArray(snapshot?.assessments)?snapshot.assessments:[]).filter(x=>{
+  if(!x||(x.kind!=="quiz"&&x.kind!=="test")||typeof x.id!=="string"||seen.has(x.id))return false;
+  if(!Number.isFinite(x.earned)||!Number.isFinite(x.possible)||x.possible<=0||x.earned<0||x.earned>x.possible)return false;
+  seen.add(x.id);return true;
+ });
+ const calc=kind=>{const group=items.filter(x=>!kind||x.kind===kind),earned=group.reduce((n,x)=>n+x.earned,0),possible=group.reduce((n,x)=>n+x.possible,0);return {count:group.length,percent:possible>0?Math.round(1000*earned/possible)/10:null};};
+ return {overall:calc(null),quiz:calc("quiz"),test:calc("test")};
+}
+function safeCourseLink(href,canonical){
+ if(typeof href!=="string"||!/^https:\/\//i.test(href))return null;
+ try{const url=new URL(href),base=new URL(canonical);return url.origin===base.origin&&url.pathname.startsWith(base.pathname)?url.href:null}catch{return null}
+}
 function readData(){
  const learner=registered();
  const snapshots=learner?window.KhaemenesLearningContinuation?.readLearner?.(learner)||[]:[];
  return {learner,rows:slots().map((item,index)=>{
-  const snap=snapshots.find(s=>s.courseId===item.id&&!s.stale);
-  const stale=snapshots.some(s=>s.courseId===item.id&&s.stale);
+  const ids=reportIds(item.id);
+  const reports=snapshots.filter(s=>ids.includes(s.courseId)).sort((a,b)=>String(b.updatedAt||"").localeCompare(String(a.updatedAt||"")));
+  const snap=reports.find(s=>!s.stale)||null;
+  const stale=reports.length>0&&!snap&&reports.some(s=>s.stale);
+  const latest=reports[0]||null;
+  const grades=gradeSummary(snap);
   const percent=valid(snap?.progress?.percent)?snap.progress.percent:null;
   const mastery=valid(snap?.mastery?.best)?snap.mastery.best:null;
   const threshold=valid(snap?.mastery?.threshold)?snap.mastery.threshold:80;
   const needsReview=Boolean(stale||snap?.status==="corrections"||snap?.status==="mastery"||snap?.family?.needsAction);
-  return {index,item,snap,percent,mastery,threshold,stale,needsReview,color:COLORS[index%COLORS.length]};
+  return {index,item,snap,latest,grades,percent,mastery,threshold,stale,needsReview,color:COLORS[index%COLORS.length]};
  })};
 }
 function checkpointSnapshot(){
@@ -117,7 +142,10 @@ function showDetails(row){
  );
  if(row.snap?.progress?.completed!=null&&row.snap?.progress?.total)
   detail.append(make("p","grade09-progress-units",(grade10Copy||grade11Copy||grade12Copy)?row.snap.progress.completed+" of "+row.snap.progress.total+" activities completed.":row.snap.progress.completed+" of "+row.snap.progress.total+" reported course items complete."));
- const href=row.snap?.nextHref||row.item.href;
+ detail.append(make("p","grade09-progress-source","Course ID: "+(row.item.id||"Not selected")+" · "+(row.snap?"Report received":"No current course report")));
+ const g=row.grades,display=v=>v.percent===null?"Not reported":v.percent+"% ("+v.count+" graded)";
+ detail.append(make("p","grade09-progress-grade-summary","Quiz/test average: "+display(g.overall)+" · Quizzes: "+display(g.quiz)+" · Tests: "+display(g.test)));
+ const href=safeCourseLink(row.snap?.nextHref,row.item.href)||row.item.href;
  if(typeof href==="string"&&/^https:\/\//i.test(href)){
   const a=make("a","grade09-progress-open","Open "+row.item.label);
   a.href=href;detail.append(a);
@@ -133,6 +161,14 @@ function render(){
  const flagged=rows.filter(r=>r.needsReview).length;
  status.textContent=learner?(grade10Copy?reported+" of "+rows.length+" classes have progress to show · "+flagged+" may need attention.":grade11Copy?reported+" of "+rows.length+" classes have progress to review · "+flagged+" may need attention.":reported+" of "+rows.length+" course-completion records available · "+flagged+" with reported review needs. No score is inferred from missing data."):(grade10Copy?"Choose your Grade 10 student profile to see your progress.":grade11Copy?"Choose your Grade 11 student profile to review your progress.":"Select a registered Grade "+grade+" learner to view private progress. Missing results are not zero grades.");
  graph.replaceChildren();
+ if(!connections.hidden){
+  connections.replaceChildren(make("h3","","Reporting connections"),make("p","","Course reports on this device, not certified Account Cloud transcripts."));
+  for(const row of rows){
+   const state=!row.item.id?"Choose a class":row.stale?"Stale report":row.snap?(row.percent===null?"Report received · completion unreported":"Reporting · "+Math.round(row.percent)+"%"):"No current course report";
+   const entry=make("div","grade09-progress-connection-row");
+   entry.append(make("span","",row.item.label+" · "+(row.item.id||"Unselected")),make("span","",learner?state:"Select a registered learner"));connections.append(entry);
+  }
+ }
  const visible=mode==="review"?rows.filter(r=>r.needsReview):rows;
  if(!visible.length)graph.append(make("p","grade09-progress-empty",grade10Copy?"Nothing needs attention right now.":grade11Copy?"Nothing needs attention right now. Use this space to keep an eye on your priorities.":grade12Copy?"Nothing needs attention right now. Keep using this view to make sure your final work stays on track.":"No course records currently report a review need."));
  for(const row of visible){
@@ -148,8 +184,9 @@ function render(){
    track.setAttribute("aria-valuemin","0");track.setAttribute("aria-valuemax","100");
    track.setAttribute("aria-valuenow",String(row.percent));
   }else track.setAttribute("aria-label",row.item.label+" completion not reported");
-  const value=make("span","grade09-progress-value",row.percent===null?(row.stale?"Needs refresh":"Not reported"):Math.round(row.percent)+"%");
-  item.append(label,track,value);
+  const value=make("span","grade09-progress-value",row.percent===null?(!row.item.id?"Select class":row.stale?"Needs refresh":"Not reported"):Math.round(row.percent)+"%");
+  const avg=make("span","grade09-progress-average",row.grades.overall.percent===null?"Grade average: not reported":"Quiz/test average: "+row.grades.overall.percent+"%");
+  item.append(label,track,value,avg);
   item.addEventListener("click",()=>{selected=row.index;render()});
   graph.append(item);
  }
