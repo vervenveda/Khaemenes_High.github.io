@@ -232,6 +232,40 @@ html:root:root body[data-grade="09"] footer.footer :is(strong,small,span){
  html:root:root body[data-grade="09"] .daily-flow-first>.daily-flow-steps{padding:12px 20px 20px 35px!important}
 }
 </style>
+<style id="grade09-daily-bottom-alignment-20261110">
+/* Presentation-only; do not alter class pins, grades, or learner storage. */
+html:root:root body[data-grade="09"] .grade09-help-full{
+  grid-column:1 / -1!important;
+  width:100%!important;max-width:none!important;min-width:0;
+  box-sizing:border-box;text-align:center;
+}
+html:root:root body[data-grade="09"] .grade09-help-full .actions{
+  display:flex;justify-content:center;align-items:center;flex-wrap:wrap;gap:11px;
+}
+html:root:root body[data-grade="09"] .grade09-help-full .actions .btn{
+  min-height:44px;font-size:16px!important;
+}
+html:root:root body[data-grade="09"] .grade09-eight-classes-section>.shell{
+  box-sizing:border-box;width:min(1100px,calc(100% - 24px));
+  margin-inline:auto!important;text-align:center;
+}
+html:root:root body[data-grade="09"] .grade09-eight-classes-section h2{
+  margin:0 auto 12px;text-align:center;
+  color:#243038!important;font:400 24px/1.4 Cinzel,Georgia,serif!important;
+}
+html:root:root body[data-grade="09"] .grade09-eight-classes-section #grade09SevenClassSchedule{
+  width:100%;max-width:none;margin-inline:auto;text-align:center;
+}
+html:root:root body[data-grade="09"] .grade09-eight-classes-section #grade09SevenClassSchedule :is(button,a,input,select){
+  font-size:16px!important;
+}
+html:root:root body[data-grade="09"] [data-grade09-support-contrast="true"]{
+  color:#fff8e9!important;-webkit-text-fill-color:#fff8e9!important;
+}
+html:root:root body[data-grade="09"] [data-grade09-support-contrast="true"] :is(span,strong,small){
+  color:#fff8e9!important;-webkit-text-fill-color:#fff8e9!important;
+}
+</style>
 </head>
 <body data-grade="09">
 <!-- Official VNV chrome replaces the retired Academy-specific header and menu.
@@ -342,8 +376,8 @@ html:root:root body[data-grade="09"] footer.footer :is(strong,small,span){
       </section>
 
 
-      <section class="card col6">
-        <h2>Need Help?</h2>
+      <section class="card col12 grade09-help-full" aria-labelledby="grade09HelpTitle">
+        <h2 id="grade09HelpTitle">Need Help?</h2>
         <p>Return to Student Home or ask the High School Mentor. There is no need to search the wider site for help.</p>
         <div class="actions"><a class="btn secondary" href="../">Student Home</a><a class="btn secondary" href="../../../../mentor/?stage=high&amp;subject=general&amp;course=grade-09&amp;source=grades%2Fgrade-09%2Fstudent-profile%2Fdaily-lessons%2F">Ask Mentor</a><a class="btn secondary" href="../settings/">Parent Settings</a></div>
       </section>
@@ -351,7 +385,7 @@ html:root:root body[data-grade="09"] footer.footer :is(strong,small,span){
 
     </div>
   </section>
-<section class="section"><div class="shell"><h2>My Eight Classes · Unit 01</h2><div id="grade09SevenClassSchedule"></div></div></section></main>
+<section class="section grade09-eight-classes-section" aria-labelledby="grade09EightClassesTitle"><div class="shell"><h2 id="grade09EightClassesTitle">My Eight Classes · Unit 01</h2><div id="grade09SevenClassSchedule"></div></div></section></main>
 <footer class="footer"><strong>Khaemenes High · Grade 09</strong>Pinned classes · daily lesson doors · checklist · local focus note</footer>
 <script src="../../../../courses/shared/course-entry-contract.js"></script>
 <script src="../../../../courses/shared/high-school-course-pins.js"></script>
@@ -499,5 +533,25 @@ html:root:root body[data-grade="09"] footer.footer :is(strong,small,span){
 <script src="https://vervenveda.com/assets/vnv-ecosystem-toolbar.js"></script>
 
 
+<script id="grade09-daily-support-contrast-20261110">
+/* Match only the public contribution action, not other buttons or learner state. */
+(function(){
+ "use strict";
+ function apply(){
+  document.querySelectorAll("main a, main button").forEach(el=>{
+   const label=(el.textContent||"").replace(/\\s+/g," ").trim().toLowerCase();
+   if(label==="support with stripe"||label==="support free access"){
+    el.setAttribute("data-grade09-support-contrast","true");
+   }
+  });
+ }
+ if(document.readyState==="loading")document.addEventListener("DOMContentLoaded",apply,{once:true});
+ else apply();
+ window.addEventListener("load",apply,{once:true});
+ const observer=new MutationObserver(apply);
+ const start=()=>{if(document.querySelector("main"))observer.observe(document.querySelector("main"),{childList:true,subtree:true});};
+ if(document.readyState==="loading")document.addEventListener("DOMContentLoaded",start,{once:true});else start();
+})();
+</script>
 </body>
 </html>
