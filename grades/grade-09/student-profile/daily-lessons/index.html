@@ -548,6 +548,9 @@ html:root:root body[data-grade="09"] .grade09-course-choices #grade09SevenClassS
   window.addEventListener('storage',event=>{
     if(registry.shouldRefreshForStorageKey(event.key))void renderCourses();
   });
+  // Course Choices updates are same-tab changes; storage events only fire in other tabs.
+  window.addEventListener('khaemenes-course-pins-changed',()=>void renderCourses());
+  window.addEventListener('khaemenes-grade09-language-changed',()=>void renderCourses());
   void renderCourses();
 })();
 
