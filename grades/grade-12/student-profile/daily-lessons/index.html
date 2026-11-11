@@ -25,11 +25,11 @@ html,body{margin:0;min-height:100%;font:400 16px/1.6 "Brandon Grotesque",Nunito,
 .g12-button:disabled{opacity:.52;cursor:not-allowed}
 .g12-button.secondary{background:#fffdf8;color:#263f33}
 .g12-card :is(input,textarea,select){width:100%;font:400 16px/1.5 Nunito,Arial,sans-serif;padding:10px;color:#243038;background:#fffdf8;border:1px solid #9c9a85;border-radius:7px}
-.g12-card textarea{resize:vertical;min-height:110px}
+.g12-card textarea{display:block;width:100%;max-width:100%;box-sizing:border-box;resize:vertical;min-height:150px}
 .g12-card label{font-size:16px;color:#243038}
 .g12-actions{display:flex;flex-wrap:wrap;gap:9px;margin-top:10px}
 .g12-actions .g12-button{flex:1 1 160px}
-.g12-wide{grid-column:1/-1}
+.g12-wide{grid-column:1/-1;width:100%;max-width:none;min-width:0}
 .g12-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
 .g12-check{display:flex;align-items:center;gap:11px;min-height:45px;padding:9px 10px;border:1px solid #ddd0b8;border-radius:7px;background:#faf7f0}
 .g12-check input{width:19px;height:19px;accent-color:#315d43;flex:0 0 auto}
