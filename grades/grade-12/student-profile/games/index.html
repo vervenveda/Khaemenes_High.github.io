@@ -67,6 +67,22 @@ a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible{
 .g12-footer a{color:#fff8e9;font-size:16px;min-height:36px}
 @media(max-width:700px){.g12-content>.g12-grid{grid-template-columns:1fr}}
 @media print{.g12-content>.g12-grid>.g12-card{background:#fff;color:#243038;border-color:#777}}
+
+/* Shared finishing standards from Grade 9; layout and links only. */
+.g12-content>.g12-grid>.g12-card{display:flex;flex-direction:column;align-items:stretch;min-height:220px;gap:10px}
+.g12-content>.g12-grid>.g12-card :is(p,small){font-size:16px!important;line-height:1.65!important}
+.g12-content>.g12-grid>.g12-card h2{font:400 24px/1.35 Cinzel,Georgia,serif!important;margin:0 0 8px!important}
+.g12-content>.g12-grid>.g12-card>.g12-button{align-self:center;margin-top:auto;flex:0 0 auto}
+.g12-game-actions{display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:7px;margin-top:auto;padding-top:16px}
+.g12-content>.g12-grid>.g12-card .g12-button{display:inline-flex;align-items:center;justify-content:center;align-self:center;
+ flex:0 1 auto;width:auto;min-width:0;min-height:44px!important;padding:8px 12px!important;line-height:1.35;font-size:16px!important;
+ text-align:center;border-radius:7px}
+.g12-content>.g12-grid>.g12-card .g12-repo-link{background:#f4f0e7;color:#243038}
+.g12-content>.g12-grid>.g12-card.g12-wide{min-height:0}
+.g12-content>.g12-grid>.g12-card.g12-wide .g12-game-actions{margin-top:8px}
+.g12-footer, .g12-footer :is(div,nav,a){color:#fff8e9!important;-webkit-text-fill-color:#fff8e9!important;text-align:center}
+.g12-footer{font-size:16px!important;line-height:1.65}
+@media(max-width:700px){.g12-content>.g12-grid>.g12-card{min-height:0}}
 </style></head>
 <body data-grade="12">
 <header data-vnv-header-legacy hidden aria-hidden="true"></header>
@@ -76,11 +92,15 @@ a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible{
 <a href="../games/" aria-current="page">Games</a>
 <a href="../profile/" >My Profile</a>
 <a href="../settings/" >Settings</a><a href="../../">Exit to Grade 12</a></nav><nav class="g12-games-crumbs" aria-label="Breadcrumb"><a href="../../../../">High School</a><span aria-hidden="true">›</span><a href="../../">Grade 12</a><span aria-hidden="true">›</span><a href="../">Student Dashboard</a><span aria-hidden="true">›</span><strong aria-current="page">Games</strong></nav>
-<main class="g12-shell g12-content"><p class="g12-note" role="status" id="g12RoomMessage">Checking the registered learner…</p><div class="g12-grid" id="g12RoomContent"><section class="g12-card"><h2>Learning Arcade</h2><p>Logic, vocabulary, mathematics, and reasoning games.</p><a class="g12-button" href="https://vervenveda.com/arcade.github.io/" target="_blank" rel="noopener noreferrer" aria-label="Open Learning Arcade in a new tab">Open Learning Arcade in New Tab</a></section>
-<section class="g12-card"><h2>Scientific Calculator</h2><p>Use the Academy's scientific calculator while studying, when permitted.</p><a class="g12-button" href="https://vervenveda.com/proresource_hub.github.io/Protools/Khaemenes_Scientific_Calculator/" target="_blank" rel="noopener noreferrer" aria-label="Open Calculator in a new tab">Open Calculator in New Tab</a></section>
-<section class="g12-card"><h2>Research &amp; Evidence</h2><p>Practice critical inquiry and source verification.</p><a class="g12-button" href="https://vervenveda.com/theverifier.github.io/" target="_blank" rel="noopener noreferrer" aria-label="Open The Verifier in a new tab">Open The Verifier in New Tab</a></section>
-<section class="g12-card"><h2>Student Yearbook</h2><p>Celebrate student growth, create and preserve artistic memories.</p><a class="g12-button" href="https://vervenveda.com/Academy-Yearbook.github.io/" target="_blank" rel="noopener noreferrer" aria-label="Open Yearbook in a new tab">Open Yearbook in New Tab</a></section>
-<section class="g12-card g12-wide"><h2>Class-related tools</h2><p>Your actual course pathways remain in your Grade 12 schedule. These games and tools never award course mastery merely by being opened.</p><a class="g12-button" href="../daily-lessons/">Return to Daily Lessons</a></section></div></main>
+<main class="g12-shell g12-content"><p class="g12-note" role="status" id="g12RoomMessage">Checking the registered learner…</p><div class="g12-grid" id="g12RoomContent"><section class="g12-card"><h2>Learning Arcade</h2><p>Logic, vocabulary, mathematics, and reasoning games.</p><a class="g12-button" href="https://vervenveda.com/arcade.github.io/" target="_blank" rel="noopener noreferrer" aria-label="Open Learning Arcade in a new tab">Arcade</a></section>
+<section class="g12-card"><h2>Scientific Calculator</h2><p>Use the Academy's scientific calculator while studying, when permitted.</p><a class="g12-button" href="https://vervenveda.com/proresource_hub.github.io/Protools/Khaemenes_Scientific_Calculator/" target="_blank" rel="noopener noreferrer" aria-label="Open Calculator in a new tab">Calculator</a></section>
+<section class="g12-card"><h2>Research &amp; Evidence</h2><p>Practice critical inquiry and source verification.</p><a class="g12-button" href="https://vervenveda.com/theverifier.github.io/" target="_blank" rel="noopener noreferrer" aria-label="Open The Verifier in a new tab">Verifier</a></section>
+<section class="g12-card"><h2>Student Yearbook</h2><p>Celebrate student growth, create and preserve artistic memories.</p><a class="g12-button" href="https://vervenveda.com/Academy-Yearbook.github.io/" target="_blank" rel="noopener noreferrer" aria-label="Open Yearbook in a new tab">Yearbook</a></section>
+<section class="g12-card g12-creative-door"><h2>The Refrain Music</h2><p>Explore composition, songwriting, lyrics, and guided creative practice.</p><div class="g12-game-actions"><a class="g12-button" href="https://vervenveda.com/the_refrain.github.io/" aria-label="Visit The Refrain Music">Music</a><a class="g12-button g12-repo-link" href="https://github.com/vervenveda/the_refrain.github.io" target="_blank" rel="noopener noreferrer" aria-label="View The Refrain Music repository in a new tab">Repo</a></div></section>
+<section class="g12-card g12-creative-door"><h2>Bazaar Art Creativity</h2><p>Discover visual art, creative courses, exhibitions, and artist opportunities.</p><div class="g12-game-actions"><a class="g12-button" href="https://vervenveda.com/bazaarart.github.io/" aria-label="Visit Bazaar Art Creativity">Art</a><a class="g12-button g12-repo-link" href="https://github.com/vervenveda/bazaarart.github.io" target="_blank" rel="noopener noreferrer" aria-label="View Bazaar Art Creativity repository in a new tab">Repo</a></div></section>
+<section class="g12-card g12-creative-door"><h2>Aurora Mindfulness</h2><p>Practice calm focus, breathing, gentle movement, and reflection.</p><div class="g12-game-actions"><a class="g12-button" href="https://vervenveda.com/aurora.github.io/" aria-label="Visit Aurora Mindfulness">Mindfulness</a><a class="g12-button g12-repo-link" href="https://github.com/vervenveda/aurora.github.io" target="_blank" rel="noopener noreferrer" aria-label="View Aurora Mindfulness repository in a new tab">Repo</a></div></section>
+<section class="g12-card g12-creative-door"><h2>Solanar Weather</h2><p>Explore atmospheric science, weather learning, and the Solanar Observatory.</p><div class="g12-game-actions"><a class="g12-button" href="https://vervenveda.com/solanar.github.io/" aria-label="Visit Solanar Weather">Weather</a><a class="g12-button g12-repo-link" href="https://github.com/vervenveda/solanar.github.io" target="_blank" rel="noopener noreferrer" aria-label="View Solanar Weather repository in a new tab">Repo</a></div></section>
+<section class="g12-card g12-wide" aria-labelledby="g12MathPracticeTitle"><h2 id="g12MathPracticeTitle">Mathematics Practice</h2><p id="g12MathPracticeDescription">Use the mathematics course assigned to this grade. Opening practice does not change placement or mastery.</p><div class="g12-game-actions"><a class="g12-button" id="g12MathPracticeLink" href="../daily-lessons/">Math</a><a class="g12-button" href="../daily-lessons/" aria-label="Return to Grade 12 Daily Lessons">Lessons</a></div></section></div></main>
 <footer class="g12-footer">Khaemenes Academy · Grade 12 · Learning Games<div>Games support learning but do not award academic mastery.</div><nav aria-label="Footer navigation"><a href="../">Student Dashboard</a><a href="../daily-lessons/">Daily Lessons</a><a href="../../">Grade 12</a></nav></footer>
 <script src="../../../../courses/shared/high-school-course-pins.js"></script>
 <script src="../../../../courses/shared/high-school-eight-class.js"></script>
@@ -98,6 +118,19 @@ const url=(raw)=>typeof raw==="string"&&/^https:\/\//i.test(raw)?raw:null;
 const slots=valid&&catalog?catalog.slots(12):[];
 if(!valid){message.textContent="Select a registered Grade 12 learner in the Family Portal before accessing personal information. No other learner's records or settings are shown.";document.querySelectorAll("[data-owner-only]").forEach(x=>x.hidden=true)}
 else message.textContent="Your existing Grade 12 learner record is selected. Course scores and mastery are managed only by their source courses.";
+
+const mathSlot=catalog?.slots?.(12)?.find(slot=>slot.subject==="math")||null;
+const mathLink=document.getElementById("g12MathPracticeLink");
+const mathDescription=document.getElementById("g12MathPracticeDescription");
+if(mathLink&&mathDescription){
+ const mathURL=url(mathSlot?.href);
+ const gradeCourse={10:"Algebra I",11:"Geometry",12:"Algebra II"}[12];
+ mathLink.href=mathURL||"../daily-lessons/";
+ mathLink.textContent=mathURL?gradeCourse:"Choose Math";
+ mathDescription.textContent=mathURL?"Grade 12 catalogue pathway: "+gradeCourse+". Open its course for practice; this page does not certify placement.":
+ "Open Daily Lessons to find your mathematics pathway. This page never assigns placement.";
+}
+
 
 
 })();</script>
