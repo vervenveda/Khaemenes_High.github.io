@@ -177,9 +177,16 @@ html:root:root body[data-grade="09"] .daily-start-grid>.card{
  background:#fffdf8!important;border:2px solid #c5b492!important;
  color:#243038!important;border-radius:7px!important;
 }
+html:root:root body[data-grade="09"] .daily-start-grid #todaysChecklist,
 html:root:root body[data-grade="09"] .daily-start-grid #todaysNote{
- grid-column:auto!important;
+ grid-column:1 / -1!important;
+ width:100%!important;max-width:none!important;
 }
+html:root:root body[data-grade="09"] #todaysNote .field,
+html:root:root body[data-grade="09"] #todaysNote textarea{
+ display:block;width:100%!important;max-width:none!important;box-sizing:border-box;
+}
+html:root:root body[data-grade="09"] #todaysNote textarea{min-height:150px;resize:vertical;}
 html:root:root body[data-grade="09"] .daily-start-grid :is(h2,p,label,span){
  color:#243038!important;-webkit-text-fill-color:#243038!important;
 }
@@ -374,7 +381,7 @@ html:root:root body[data-grade="09"] footer.footer :is(strong,small,span){
   const writeChecks=value=>{try{localStorage.setItem(checkKey,JSON.stringify(value));return true}catch{return false}};
   const checks=readChecks();
   if(checks.date!==today){checks.date=today;checks.items={};writeChecks(checks)}
-  n.value=localStorage.getItem(noteKey)||'';
+  try{n.value=localStorage.getItem(noteKey)||''}catch{n.value='';}
 
   function bindLaunches(root=document){
     root.querySelectorAll('[data-launch-course]').forEach(link=>{
@@ -466,18 +473,19 @@ html:root:root body[data-grade="09"] footer.footer :is(strong,small,span){
     });
   });
   document.getElementById('saveNote').onclick=()=>{
-    try{localStorage.setItem(noteKey,n.value)}catch{}
+    if(!academyProfile?.learnerId){s.hidden=false;s.textContent='Select a registered learner before saving.';return;}
+    try{localStorage.setItem(noteKey,n.value)}catch{s.hidden=false;s.textContent='Could not save this note. Your text remains on the page.';return;}
     const c=readChecks();
     if(c.date!==today){c.date=today;c.items={}}
     c.items['saved-note']=true;
-    writeChecks(c);
-    document.querySelector('[data-check="saved-note"]').checked=true;
-    s.hidden=false;s.textContent='Daily note saved for the active learner on this device.';
+    const checked=writeChecks(c);
+    document.querySelector('[data-check="saved-note"]').checked=checked;
+    s.hidden=false;s.textContent=checked?'Daily note saved for the active learner on this device.':'Note saved, but checklist status could not be updated.';
   };
   document.getElementById('clearNote').onclick=()=>{
-    n.value='';
-    try{localStorage.removeItem(noteKey)}catch{}
-    s.hidden=false;s.textContent='Daily note cleared.';
+    if(!academyProfile?.learnerId){s.hidden=false;s.textContent='Select a registered learner before clearing.';return;}
+    try{localStorage.removeItem(noteKey);n.value='';s.hidden=false;s.textContent='Daily note cleared.'}
+    catch{s.hidden=false;s.textContent='Could not clear the saved note.'}
   };
   window.addEventListener('storage',event=>{
     if(registry.shouldRefreshForStorageKey(event.key))void renderCourses();
