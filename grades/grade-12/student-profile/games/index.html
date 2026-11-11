@@ -43,21 +43,45 @@ a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible{
 @media(max-width:900px){.g12-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:560px){.g12-grid,.g12-list{grid-template-columns:1fr}.g12-rooms a{flex:1 1 42%}.g12-card{min-height:0}}
 @media print{.g12-rooms,.g12-footer,.g12-button,.g12-hero{display:none!important}.g12-card{break-inside:avoid}}
+
+/* Grade 12 VNV/KA games presentation only. No learning or storage changes. */
+.g12-hero{background:#243038;color:#fff8e9;text-align:center;padding:36px 20px 48px}
+.g12-hero .eyebrow{display:block!important;float:none!important;position:static!important;transform:none!important;
+ width:100%!important;max-width:none!important;box-sizing:border-box;text-align:center!important;
+ margin:0 auto 12px!important;padding:0!important;font:400 clamp(24px,3vw,33px)/1.3 Cinzel,Georgia,serif!important;color:#e0c38c!important}
+.g12-hero h1{font:400 clamp(40px,5vw,66px)/1.2 Cinzel,Georgia,serif!important;color:#fff8e9}
+.g12-hero .g12-games-subtitle{font:400 clamp(20px,2.5vw,28px)/1.35 Cinzel,Georgia,serif!important;color:#e0c38c;margin:0 0 14px}
+.g12-hero p{font-size:18px;line-height:1.6;color:#fff8e9}
+.g12-games-crumbs{display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:9px;width:min(1100px,calc(100% - 32px));margin:0 auto;padding:14px 8px;font-size:16px;text-align:center}
+.g12-games-crumbs a{color:#243038;margin-inline:2px;text-underline-offset:3px}
+.g12-content>.g12-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+.g12-content>.g12-grid>.g12-card{min-width:0;min-height:220px;align-items:stretch;background:#243038;color:#fff8e9;border:2px solid #b48b45;border-radius:7px;padding:20px}
+.g12-content>.g12-grid>.g12-card :is(h2,p,small){color:#fff8e9}
+.g12-content>.g12-grid>.g12-card h2{font:400 26px/1.3 Cinzel,Georgia,serif}
+.g12-content>.g12-grid>.g12-card .g12-button{background:#fff8e9;color:#243038;min-height:44px;font-size:16px;border:1px solid #cbb98e;border-radius:7px}
+.g12-content>.g12-grid>.g12-card.g12-wide{grid-column:1/-1;min-height:0;background:#fffdf8;color:#243038}
+.g12-content>.g12-grid>.g12-card.g12-wide :is(h2,p,small){color:#243038}
+.g12-content>.g12-grid>.g12-card.g12-wide .g12-button{background:#243038;color:#fff8e9}
+.g12-footer{background:#243038;color:#fff8e9;text-align:center}
+.g12-footer nav{display:flex;justify-content:center;align-items:center;flex-wrap:wrap;gap:12px;margin-top:12px}
+.g12-footer a{color:#fff8e9;font-size:16px;min-height:36px}
+@media(max-width:700px){.g12-content>.g12-grid{grid-template-columns:1fr}}
+@media print{.g12-content>.g12-grid>.g12-card{background:#fff;color:#243038;border-color:#777}}
 </style></head>
-<body data-grade="12" data-high-hide-breadcrumbs="true">
+<body data-grade="12">
 <header data-vnv-header-legacy hidden aria-hidden="true"></header>
-<div class="g12-hero"><p class="eyebrow">Khaemenes Academy · Grade 12</p><h1>Games & Study Tools</h1><p>Creative practice and learning resources that support your classes.</p></div>
+<div class="g12-hero"><p class="eyebrow">Khaemenes Academy</p><h1>Learning Games</h1><h2 class="g12-games-subtitle">Practice · Logic · Refresh · Grade 12</h2><p>Creative practice and learning resources that support your classes.</p></div>
 <nav class="g12-rooms g12-shell" aria-label="Grade 12 student profile rooms"><a href="../daily-lessons/" >Daily Lessons</a>
 <a href="../grades/" >Grades</a>
 <a href="../games/" aria-current="page">Games</a>
 <a href="../profile/" >My Profile</a>
-<a href="../settings/" >Settings</a><a href="../../">Exit to Grade 12</a></nav>
+<a href="../settings/" >Settings</a><a href="../../">Exit to Grade 12</a></nav><nav class="g12-games-crumbs" aria-label="Breadcrumb"><a href="../../../../">High School</a><span aria-hidden="true">›</span><a href="../../">Grade 12</a><span aria-hidden="true">›</span><a href="../">Student Dashboard</a><span aria-hidden="true">›</span><strong aria-current="page">Games</strong></nav>
 <main class="g12-shell g12-content"><p class="g12-note" role="status" id="g12RoomMessage">Checking the registered learner…</p><div class="g12-grid" id="g12RoomContent"><section class="g12-card"><h2>Learning Arcade</h2><p>Logic, vocabulary, mathematics, and reasoning games.</p><a class="g12-button" href="https://vervenveda.com/arcade.github.io/" target="_blank" rel="noopener noreferrer" aria-label="Open Learning Arcade in a new tab">Open Learning Arcade in New Tab</a></section>
 <section class="g12-card"><h2>Scientific Calculator</h2><p>Use the Academy's scientific calculator while studying, when permitted.</p><a class="g12-button" href="https://vervenveda.com/proresource_hub.github.io/Protools/Khaemenes_Scientific_Calculator/" target="_blank" rel="noopener noreferrer" aria-label="Open Calculator in a new tab">Open Calculator in New Tab</a></section>
 <section class="g12-card"><h2>Research &amp; Evidence</h2><p>Practice critical inquiry and source verification.</p><a class="g12-button" href="https://vervenveda.com/theverifier.github.io/" target="_blank" rel="noopener noreferrer" aria-label="Open The Verifier in a new tab">Open The Verifier in New Tab</a></section>
 <section class="g12-card"><h2>Student Yearbook</h2><p>Celebrate student growth, create and preserve artistic memories.</p><a class="g12-button" href="https://vervenveda.com/Academy-Yearbook.github.io/" target="_blank" rel="noopener noreferrer" aria-label="Open Yearbook in a new tab">Open Yearbook in New Tab</a></section>
 <section class="g12-card g12-wide"><h2>Class-related tools</h2><p>Your actual course pathways remain in your Grade 12 schedule. These games and tools never award course mastery merely by being opened.</p><a class="g12-button" href="../daily-lessons/">Return to Daily Lessons</a></section></div></main>
-<footer class="g12-footer">Khaemenes Academy · Grade 12 · Games & Study Tools<div>Local learner work remains separate from course grading and parent authority.</div></footer>
+<footer class="g12-footer">Khaemenes Academy · Grade 12 · Learning Games<div>Games support learning but do not award academic mastery.</div><nav aria-label="Footer navigation"><a href="../">Student Dashboard</a><a href="../daily-lessons/">Daily Lessons</a><a href="../../">Grade 12</a></nav></footer>
 <script src="../../../../courses/shared/high-school-course-pins.js"></script>
 <script src="../../../../courses/shared/high-school-eight-class.js"></script>
 <script src="https://vervenveda.com/Khaemenes_Academy.github.io/assets/khaemenes-student-profile-v2.js"></script>
@@ -83,6 +107,6 @@ else message.textContent="Your existing Grade 12 learner record is selected. Cou
 <script src="https://vervenveda.com/assets/vnv-ticker-autopopulate.js" data-vnv-ticker-autopopulate></script>
 <script>window.VNV_TICKER?.autoPopulate?.({label:"Grade 12 Student Tools",max:14});</script>
 <script src="https://vervenveda.com/assets/vnv-header-autopopulate.js"></script>
-<script>window.VNV_HEADER?.mount?.({replaceLegacy:true,title:"Grade 12 Student Profile",subtitle:"Khaemenes Academy · High School",icon:"12",home:"https://vervenveda.com/Khaemenes_Academy.github.io/",actions:[{label:"PROFILE",href:"../profile/"},{label:"LESSONS",href:"../daily-lessons/"},{label:"GRADES",href:"../grades/"},{label:"GAMES",href:"../games/"},{label:"HOME",href:"../"}]});</script>
+<script>window.VNV_HEADER?.mount?.({replaceLegacy:true,title:"Grade 12 Learning Games",subtitle:"Khaemenes Academy · High School",icon:"12",home:"https://vervenveda.com/Khaemenes_Academy.github.io/",actions:[{label:"PROFILE",href:"../profile/"},{label:"LESSONS",href:"../daily-lessons/"},{label:"GRADES",href:"../grades/"},{label:"GAMES",href:"../games/"},{label:"HOME",href:"../"}]});</script>
 <script src="https://vervenveda.com/assets/vnv-ecosystem-toolbar.js?v=20261106-student-boundary-106"></script>
 </body></html>
