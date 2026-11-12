@@ -88,6 +88,8 @@ function enhance(){
     const name=stage.dataset.stage;
     const detail=stage.querySelector("span");
     const title=stage.querySelector("strong");
+    const directives={learn:"Learn",example:"Study",practice:"Practice",game:"Play",video:"Watch",submit:"Submit",mastery:"Mastery",review:"Review",evidence:"Save",continue:"Continue"};
+    if(title)title.textContent=directives[name]||title.textContent;
     const label=title?.textContent?.trim()||name;
     stage.dataset.help=detail?.textContent?.trim()||"Open this activity.";
     stage.setAttribute("aria-label",label+". "+stage.dataset.help);
