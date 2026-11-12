@@ -4,7 +4,7 @@
 
 The first complete instructional unit in Khaemenes Global Pre-Algebra.
 
-- Duration: 2 weeks
+- Pacing: 3 flexible calendar weeks; 10 recommended study sessions (per `unit-map.json`). The ten-session sequence can be accelerated or extended without changing mastery requirements.
 - Recommended sessions: 10
 - Lessons: 6
 - Practice pathways: Foundation, Core, Extended
