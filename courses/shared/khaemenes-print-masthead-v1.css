@@ -1,0 +1,41 @@
+/* KHAEMENES ACADEMY · OFFICIAL PRINTABLE MASTHEAD · v1
+   Shared across Academy course printables. Screen and paper only.
+   No grading, progress, storage, or learner data behavior. */
+.khaemenes-print-masthead-v1 {
+  display:block;
+  width:100%;
+  margin:0 auto 11px;
+  padding:0 0 10px;
+  text-align:center;
+  font-family:Cinzel,"Iowan Old Style","Palatino Linotype",Palatino,Georgia,serif;
+  font-size:33px;
+  font-weight:400;
+  line-height:1.25;
+  letter-spacing:.035em;
+  color:#22231f;
+  border-bottom:1px solid #b48a42;
+  overflow-wrap:anywhere;
+}
+.khaemenes-print-course-line {
+  margin:0 0 12px;
+  text-align:center;
+  font-size:16px;
+  font-weight:400;
+  line-height:1.5;
+  color:#353535;
+}
+@media print {
+  .khaemenes-print-masthead-v1 {
+    color:#111!important;
+    font-size:33px!important;
+    border-bottom:1px solid #777;
+    break-after:avoid-page;
+  }
+  .khaemenes-print-course-line {
+    color:#111!important;
+    break-after:avoid-page;
+  }
+}
+@media screen and (max-width:390px) {
+  .khaemenes-print-masthead-v1 { font-size:clamp(26px,8vw,33px); }
+}
