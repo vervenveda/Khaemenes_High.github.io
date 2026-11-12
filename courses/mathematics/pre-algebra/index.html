@@ -651,6 +651,39 @@ html:root:root body :is(.hero, .header, .page-header, .section-head, .lesson-hea
 <link rel="stylesheet" href="../assets/math-student-journey-v1.css" data-math-student-journey="v1">
 <script defer src="../assets/math-student-journey-v1.js"></script>
 <link rel="stylesheet" href="../../../assets/high-navigation-v1.css" data-high-navigation-css>
+<style id="prealgebra-tablet-orientation-repair">
+/* Course-scoped override for the higher-specificity shared mathematics dashboard.
+   Portrait and landscape tablet support; no changes to course gates or storage. */
+html:root:root body .app > .main{min-width:0;max-width:100%;box-sizing:border-box}
+html:root:root body .app > .sidebar{min-width:0;box-sizing:border-box}
+@media (max-width:1100px), (max-width:1366px) and (pointer:coarse){
+  html:root:root body .app{grid-template-columns:minmax(0,1fr)!important}
+  html:root:root body .app > .sidebar{
+    position:relative;height:auto;max-width:100%;overflow:visible;
+    border-right:0;border-bottom:1px solid var(--line);
+  }
+  html:root:root body .app > .main{
+    width:100%;min-width:0;max-width:100%;margin-inline:auto;
+    padding:clamp(14px,2.6vw,28px);
+  }
+  html:root:root body .app .grid{min-width:0}
+  html:root:root body .app .col4,
+  html:root:root body .app .col5,
+  html:root:root body .app .col6,
+  html:root:root body .app .col7,
+  html:root:root body .app .col8,
+  html:root:root body .app .col12{min-width:0}
+  html:root:root body .app .hero-topline{flex-direction:column;align-items:stretch}
+  html:root:root body .app .header-tools{justify-content:flex-start}
+}
+@media (max-width:700px){
+  html:root:root body .app .kpi{grid-column:span 12}
+  html:root:root body .app .toolGrid{grid-template-columns:minmax(0,1fr)}
+}
+@media print{
+  html:root:root body .app{display:block!important}
+}
+</style>
 </head>
 <body>
 <a class="skip-link" href="#content">Skip to course content</a>
