@@ -1,0 +1,76 @@
+/* Khaemenes Academy Unit 02 only — aligned to approved Pre-Algebra landing and Grade 09 Daily Lessons.
+   Presentation only. Do not import into lesson or assessment pages. */
+@media screen {
+html:root:root body.ka-unit02-approved{background:#f4f0e7!important;color:#27302d!important;color-scheme:light!important;font:400 18px/1.65 "Brandon Grotesque",Nunito,"Avenir Next",Arial,sans-serif!important}
+html:root:root body.ka-unit02-approved .page-frame{min-width:0;width:100%;background:#f4f0e7!important;color:#27302d!important}
+html:root:root body.ka-unit02-approved .wrap{width:min(calc(100% - 36px),1120px)!important;max-width:1120px!important;margin-left:auto!important;margin-right:auto!important}
+html:root:root body.ka-unit02-approved :is(.site-header,.course-breadcrumb,.unit-quick-nav){background:#f4f0e7!important;color:#27302d!important;box-shadow:none!important;border-color:#d2c5ac!important}
+html:root:root body.ka-unit02-approved .site-header{border-top:3px solid #b8995c!important;padding:8px 0!important}
+html:root:root body.ka-unit02-approved .header-inner{display:flex!important;justify-content:space-between!important;align-items:center!important;gap:12px!important;min-height:48px!important}
+html:root:root body.ka-unit02-approved .brand{display:flex!important;align-items:center!important;gap:12px!important;color:#27302d!important;text-decoration:none!important;min-width:0!important}
+html:root:root body.ka-unit02-approved .brand-mark{display:grid!important;place-items:center!important;flex:0 0 44px!important;width:44px!important;height:44px!important;background:#b8995c!important;color:#1d2723!important;border-radius:7px!important;font:400 24px Cinzel,Georgia,serif!important}
+html:root:root body.ka-unit02-approved .brand-copy strong{display:block!important;font:400 18px/1.3 Cinzel,Georgia,serif!important;letter-spacing:.02em!important;color:#27302d!important}
+html:root:root body.ka-unit02-approved .brand-copy small{display:block!important;font-size:16px!important;line-height:1.5!important;color:#475049!important}
+html:root:root body.ka-unit02-approved .unit02-nav-menu{margin-left:auto!important;position:relative!important;z-index:1500!important}
+html:root:root body.ka-unit02-approved .unit02-nav-menu>summary{width:48px!important;height:48px!important;min-width:48px!important;display:grid!important;place-items:center!important;list-style:none!important;border:1px solid #9d865e!important;border-radius:7px!important;background:#292f2d!important;color:#fff8e9!important;font-size:25px!important;cursor:pointer!important}
+html:root:root body.ka-unit02-approved .unit02-nav-menu>summary::-webkit-details-marker{display:none}
+html:root:root body.ka-unit02-approved .unit02-nav-menu .campus-nav{position:absolute!important;right:0!important;top:calc(100% + 7px)!important;width:min(320px,calc(100vw - 30px))!important;max-height:min(75vh,600px)!important;overflow:auto!important;display:grid!important;grid-template-columns:1fr!important;gap:4px!important;padding:12px!important;border:1px solid #b9a77e!important;border-radius:7px!important;background:#fffdf8!important;box-shadow:0 12px 24px rgba(0,0,0,.16)!important}
+html:root:root body.ka-unit02-approved .unit02-nav-menu .campus-nav a{display:block!important;min-height:44px!important;padding:9px 12px!important;color:#27302d!important;background:#fffdf8!important;border-radius:7px!important;font-size:16px!important;line-height:1.5!important}
+html:root:root body.ka-unit02-approved .unit02-nav-menu .campus-nav a:hover{background:#f2e9d8!important}
+html:root:root body.ka-unit02-approved .header-actions{display:flex!important;justify-content:flex-end!important;align-items:center!important}
+html:root:root body.ka-unit02-approved .header-actions .theme-button{min-width:46px!important;min-height:46px!important;background:#292f2d!important;color:#fff8e9!important;border:1px solid #9d865e!important;border-radius:7px!important}
+html:root:root body.ka-unit02-approved .course-breadcrumb{padding:9px 0!important}
+html:root:root body.ka-unit02-approved .course-breadcrumb .wrap{display:flex!important;flex-wrap:wrap!important;align-items:center!important;gap:8px!important}
+html:root:root body.ka-unit02-approved .course-breadcrumb :is(a,span){font-size:16px!important;line-height:1.5!important;color:#27302d!important}
+html:root:root body.ka-unit02-approved main#main{display:block!important;width:100%!important;background:#f4f0e7!important}
+html:root:root body.ka-unit02-approved .hero{background:#243038!important;color:#fff8e9!important;border:2px solid #b9a77e!important;border-radius:7px!important;margin:14px auto 18px!important;padding:32px 12px 38px!important;text-align:center!important;box-shadow:none!important;min-height:0!important}
+html:root:root body.ka-unit02-approved .hero .wrap{width:min(calc(100% - 36px),970px)!important}
+html:root:root body.ka-unit02-approved .hero .eyebrow{font:400 33px/1.3 Cinzel,Georgia,serif!important;letter-spacing:.02em!important;color:#e9c989!important;text-transform:none!important;margin-bottom:12px!important}
+html:root:root body.ka-unit02-approved .hero h1{font:400 clamp(34px,4.4vw,44px)/1.2 Cinzel,Georgia,serif!important;max-width:1000px!important;color:#fff8e9!important;text-align:center!important;margin:0 auto 16px!important}
+html:root:root body.ka-unit02-approved .hero .lead{max-width:860px!important;color:#fff8e9!important;font-size:18px!important;line-height:1.65!important;margin:0 auto 20px!important}
+html:root:root body.ka-unit02-approved .hero .math-signature{display:flex!important;flex-wrap:wrap!important;justify-content:center!important;gap:9px!important;color:#fff8e9!important}
+html:root:root body.ka-unit02-approved .hero .math-signature span{font-size:18px!important;color:#fff8e9!important}
+html:root:root body.ka-unit02-approved .hero .actions{display:flex!important;justify-content:center!important;gap:11px!important;flex-wrap:wrap!important;margin-top:22px!important}
+html:root:root body.ka-unit02-approved .hero .actions .btn{background:#2b3431!important;color:#fff8e9!important;border:1px solid #b9a77e!important;border-radius:7px!important;min-height:48px!important;padding:10px 18px!important;font-size:16px!important;font-weight:400!important}
+html:root:root body.ka-unit02-approved .unit-quick-nav{position:relative!important;top:auto!important;z-index:20!important;backdrop-filter:none!important;margin:0 auto 18px!important}
+html:root:root body.ka-unit02-approved .quick-nav-inner{display:flex!important;justify-content:center!important;flex-wrap:wrap!important;gap:8px!important;overflow:visible!important;padding:10px 0!important}
+html:root:root body.ka-unit02-approved .quick-nav-inner a{display:inline-flex!important;align-items:center!important;justify-content:center!important;min-height:44px!important;padding:8px 15px!important;background:#2b3431!important;color:#fff8e9!important;border:1px solid #49534d!important;border-radius:7px!important;font-size:16px!important}
+html:root:root body.ka-unit02-approved .unit-layout{display:grid!important;grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:16px!important;align-items:stretch!important}
+html:root:root body.ka-unit02-approved .unit-layout>.overview,html:root:root body.ka-unit02-approved .unit-layout>.side{min-width:0!important;width:100%!important;position:static!important;top:auto!important;margin:0!important}
+html:root:root body.ka-unit02-approved :is(.overview,.side,.lesson-card,.resource-card,.pathway,.glossary-panel,.mastery-gate-panel,.worksheet-toolbar){background:#fffdf8!important;color:#27302d!important;border:1px solid #cdbf9f!important;border-radius:7px!important;box-shadow:none!important}
+html:root:root body.ka-unit02-approved .pathways{grid-template-columns:repeat(3,minmax(0,1fr))!important;gap:10px!important}
+html:root:root body.ka-unit02-approved .lesson-grid{grid-template-columns:repeat(3,minmax(0,1fr))!important;gap:15px!important}
+html:root:root body.ka-unit02-approved .resource-grid,html:root:root body.ka-unit02-approved .glossary-grid{grid-template-columns:repeat(3,minmax(0,1fr))!important;gap:14px!important}
+html:root:root body.ka-unit02-approved :is(.section-head h2,.overview h2){font:400 33px/1.35 Cinzel,Georgia,serif!important;color:#27302d!important}
+html:root:root body.ka-unit02-approved :is(.section-head .eyebrow,.overview .eyebrow,.side .eyebrow,.mastery-gate-panel .eyebrow){font:400 18px/1.5 Cinzel,Georgia,serif!important;color:#765b30!important;letter-spacing:.04em!important}
+html:root:root body.ka-unit02-approved :is(.section-head p,.overview p,.side p,.lesson-card p,.resource-card p,.pathway p,.term p,.mastery-gate-panel p){font-size:18px!important;line-height:1.6!important;color:#27302d!important}
+html:root:root body.ka-unit02-approved :is(.lesson-card h3,.resource-card h3,.pathway h3,.mastery-gate-panel h3){font:400 24px/1.35 Cinzel,Georgia,serif!important;color:#27302d!important}
+html:root:root body.ka-unit02-approved :is(.lesson-objectives,.lesson-objectives li,.big-ideas li,.term span,.term p,.glossary-tools label,.field label,.worksheet-kicker,.worksheet-record,.worksheet-record label,.worksheet-status,.assessment-note,.feedback,.answer-row label){font-size:16px!important;line-height:1.55!important}
+html:root:root body.ka-unit02-approved :is(.btn,button,input,select,textarea,.lesson-actions a,.lesson-actions button){font-size:16px!important;line-height:1.5!important;border-radius:7px!important}
+html:root:root body.ka-unit02-approved :is(.lesson-actions a,.lesson-actions button,.side-actions .btn){min-height:46px!important}
+html:root:root body.ka-unit02-approved :is(.card,.lesson-card,.resource-card,.pathway,.term,.worksheet-paper){border-radius:7px!important}
+html:root:root body.ka-unit02-approved .worksheet-paper{background:#fff!important;border-color:#aeb5ae!important;color:#151b18!important;box-shadow:none!important}
+html:root:root body.ka-unit02-approved .worksheet-paper :is(h3,p,label,span,.problem-prompt,.problem-number){color:#151b18!important}
+html:root:root body.ka-unit02-approved .worksheet-header h3{font:400 33px/1.2 Cinzel,Georgia,serif!important;color:#151b18!important}
+html:root:root body.ka-unit02-approved .worksheet-toolbar :is(input,select),html:root:root body.ka-unit02-approved .worksheet-paper input{background:#fff!important;color:#151b18!important;border-color:#777!important}
+html:root:root body.ka-unit02-approved .footer{background:#243038!important;color:#fff8e9!important;text-align:center!important;margin-top:30px!important;padding:24px 0!important;border-radius:0!important}
+html:root:root body.ka-unit02-approved .footer .footer-inner{display:flex!important;flex-direction:column!important;align-items:center!important;justify-content:center!important;gap:10px!important}
+html:root:root body.ka-unit02-approved .footer :is(a,span){color:#fff8e9!important;font-size:16px!important;line-height:1.6!important}
+html:root:root body.ka-unit02-approved .footer .footer-links{display:flex!important;justify-content:center!important;flex-wrap:wrap!important;gap:10px!important}
+html:root:root body.ka-unit02-approved :is(a,button,summary,input,select,textarea):focus-visible{outline:3px solid #c1a36e!important;outline-offset:3px!important}
+@media(max-width:900px){html:root:root body.ka-unit02-approved .unit-layout{grid-template-columns:minmax(0,1fr)!important}html:root:root body.ka-unit02-approved .lesson-grid,html:root:root body.ka-unit02-approved .resource-grid,html:root:root body.ka-unit02-approved .glossary-grid{grid-template-columns:repeat(2,minmax(0,1fr))!important}}
+@media(max-width:650px){html:root:root body.ka-unit02-approved .wrap{width:min(calc(100% - 22px),1120px)!important}html:root:root body.ka-unit02-approved .header-inner{gap:8px!important}html:root:root body.ka-unit02-approved .brand-copy strong{font-size:16px!important}html:root:root body.ka-unit02-approved .hero .eyebrow{font-size:25px!important}html:root:root body.ka-unit02-approved .hero h1{font-size:35px!important}html:root:root body.ka-unit02-approved .lesson-grid,html:root:root body.ka-unit02-approved .resource-grid,html:root:root body.ka-unit02-approved .glossary-grid,html:root:root body.ka-unit02-approved .pathways{grid-template-columns:minmax(0,1fr)!important}html:root:root body.ka-unit02-approved .quick-nav-inner a{flex:1 1 42%!important}html:root:root body.ka-unit02-approved .header-actions{display:none!important}}
+}
+
+/* Unit 02 signed-number laboratory: maintain full-width, accessible sliders and a centered result. */
+@media screen {
+html:root:root body.ka-unit02-approved #signed-number-lab .lab-panel{background:#fffdf8!important;color:#27302d!important;border:1px solid #cdbf9f!important;box-shadow:none!important;border-radius:7px!important;padding:24px!important}
+html:root:root body.ka-unit02-approved #signed-number-lab .lab-grid{display:grid!important;grid-template-columns:repeat(3,minmax(0,1fr))!important;gap:18px!important}
+html:root:root body.ka-unit02-approved #signed-number-lab :is(label,p,.lab-expression){color:#27302d!important;font-size:18px!important;line-height:1.55!important}
+html:root:root body.ka-unit02-approved #signed-number-lab .lab-expression{font:400 clamp(24px,4vw,40px)/1.3 Cinzel,Georgia,serif!important;overflow-wrap:anywhere!important}
+html:root:root body.ka-unit02-approved #signed-number-lab .lab-result{background:#f5f0e5!important;border:1px solid #cdbf9f!important;border-radius:7px!important}
+html:root:root body.ka-unit02-approved #signed-number-lab .marker{font-size:16px!important;line-height:1!important;color:#fff!important}
+html:root:root body.ka-unit02-approved .unit-layout{display:grid!important;grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:16px!important}
+html:root:root body.ka-unit02-approved .unit-layout>.overview,html:root:root body.ka-unit02-approved .unit-layout>.side{min-width:0!important;position:static!important;top:auto!important}
+@media(max-width:900px){html:root:root body.ka-unit02-approved #signed-number-lab .lab-grid,html:root:root body.ka-unit02-approved .unit-layout{grid-template-columns:minmax(0,1fr)!important}}
+}
