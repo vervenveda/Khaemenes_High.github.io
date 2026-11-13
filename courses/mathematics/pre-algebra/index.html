@@ -593,7 +593,7 @@ button,.button,.header-control,.course-menu>summary,.course-menu-panel a,.course
 strong,th{font-weight:600}
 
 </style>
-<link rel="stylesheet" href="../../../assets/vervenveda-parchment.css" data-vervenveda-parchment>
+<!-- Pre-Algebra uses its own scoped Academy parchment styling; global VNV parchment reset intentionally excluded. -->
 <style id="khaemenes-typography-standard">
 /* Khaemenes High presentation typography · 55 / 33 / 24 / 14 px.
    All public pages receive this local, embedded policy for offline use.
@@ -689,88 +689,7 @@ html:root:root body .app > .sidebar{min-width:0;box-sizing:border-box}
 <body>
 <a class="skip-link" href="#content">Skip to course content</a>
 <div class="app">
-<aside class="sidebar">
-<div class="brand">
-<a aria-label="Khaemenes Academy home" class="brand-home" href="https://vervenveda.com/Khaemenes_Academy.github.io/">
-<div aria-hidden="true" class="seal">
-     K
-    </div>
-</a>
-<h2>Pre-Algebra</h2>
-<p>
-    Open-Age Foundations · Algebra I Readiness · Numerica Forge
-   </p>
-<p class="small">
-    Khaemenes Academy › Mathematics › Pre-Algebra
-   </p>
-</div>
-<section class="panel" id="student-profile">
-<h3>
-    Learner Record
-   </h3>
-<label>
-    Active learner
-   </label>
-<select aria-label="Student Select" id="studentSelect">
-</select>
-<label>
-    Add learner
-   </label>
-<div class="inline">
-<input aria-label="Learner name" id="studentName" placeholder="Learner name"/>
-<button id="addStudent">
-     Add
-    </button>
-</div>
-<div class="actions">
-<button class="secondary" id="demo">
-     Add Demo
-    </button>
-<button class="danger" id="deleteStudent">
-     Delete
-    </button>
-</div>
-</section>
-<nav class="panel">
-<button class="navBtn active" data-view="dashboard">
-    Dashboard
-   </button>
-<button class="navBtn" data-view="overview">
-    Course Guide
-   </button>
-<button class="navBtn" data-view="week">
-    Weekly Lessons
-   </button>
-<button class="navBtn" data-view="scope">
-    36-Week Scope
-   </button>
-<button class="navBtn" data-view="tools">
-    Math Tool Dock
-   </button>
-<button class="navBtn" data-view="games">
-    Math Games &amp; Tools
-   </button>
-<button class="navBtn" data-view="exams">
-    Midterm &amp; Final
-   </button>
-<button class="navBtn" data-view="capstone">
-    Modelling Capstone
-   </button>
-<button class="navBtn" data-view="reports">
-    Reports
-   </button>
-<button class="navBtn" data-view="standards">
-    Sources
-   </button>
-</nav>
-<section class="panel">
-<h3>
-    Weeks
-   </h3>
-<div class="weekList" id="weekList">
-</div>
-</section>
-</aside>
+
 <main class="main" id="main">
 <header class="hero">
 <div class="hero-topline">
@@ -851,6 +770,83 @@ html:root:root body .app > .sidebar{min-width:0;box-sizing:border-box}
     </button>
 </div>
 </header>
+<aside class="sidebar">
+<div class="brand">
+<a aria-label="Khaemenes Academy home" class="brand-home" href="https://vervenveda.com/Khaemenes_Academy.github.io/">
+<div aria-hidden="true" class="seal">
+     K
+    </div>
+</a>
+<h2>Pre-Algebra</h2>
+<p>
+    Open-Age Foundations · Algebra I Readiness · Numerica Forge
+   </p>
+<p class="small">
+    Khaemenes Academy › Mathematics › Pre-Algebra
+   </p>
+</div>
+<section class="panel" id="student-profile">
+<h3>
+    Learner Record
+   </h3>
+<label>
+    Active learner
+   </label>
+<select aria-label="Student Select" id="studentSelect">
+</select>
+<label>
+    Add learner
+   </label>
+<div class="inline">
+<input aria-label="Learner name" id="studentName" placeholder="Learner name"/>
+<button id="addStudent">
+     Add
+    </button>
+</div>
+<div class="actions">
+<button class="secondary" id="demo">
+     Add Demo
+    </button>
+<button class="danger" id="deleteStudent">
+     Delete
+    </button>
+</div>
+</section>
+<nav class="panel">
+<button class="navBtn active" data-view="dashboard">
+    Dashboard
+   </button>
+<button class="navBtn" data-view="overview">
+    Course Guide
+   </button>
+<button class="navBtn" data-view="week">
+    Weekly Lessons
+   </button>
+<button class="navBtn" data-view="scope">
+    36-Week Scope
+   </button>
+<button class="navBtn" data-view="tools">
+    Math Tool Dock
+   </button>
+<button class="navBtn" data-view="games">
+    Math Games &amp; Tools
+   </button>
+<button class="navBtn" data-view="exams">
+    Midterm &amp; Final
+   </button>
+<button class="navBtn" data-view="capstone">
+    Modelling Capstone
+   </button>
+<button class="navBtn" data-view="reports">
+    Reports
+   </button>
+<button class="navBtn" data-view="standards">
+    Sources
+   </button>
+</nav>
+<details class="panel ka-week-drawer"><summary>Browse All 36 Weeks</summary><div class="weekList" id="weekList"></div></details>
+</aside>
+
 <nav class="tabs">
 <button class="tab active" data-view="dashboard">
     Dashboard
