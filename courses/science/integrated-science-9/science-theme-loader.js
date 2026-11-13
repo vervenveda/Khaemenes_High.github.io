@@ -29,8 +29,13 @@
   }
 
   /* Public-facing learner controls. */
-  loadSharedWidget(`${repositoryBase}/assets/vnv-beta-link.js`, "data-vnv-beta-loader");
-  loadSharedWidget(`${repositoryBase}/assets/khaemenes-mentor-link.js`, "data-khaemenes-mentor-loader");
+  // Readiness is a controlled diagnostic surface: the official six-button dock
+  // owns Mentor/Beta. Do not add deprecated standalone floating launchers here.
+  const isReadinessDiagnostic = /\/diagnostic\/readiness-diagnostic\.html$/i.test(path);
+  if (!isReadinessDiagnostic) {
+    loadSharedWidget(`${repositoryBase}/assets/vnv-beta-link.js`, "data-vnv-beta-loader");
+    loadSharedWidget(`${repositoryBase}/assets/khaemenes-mentor-link.js`, "data-khaemenes-mentor-loader");
+  }
 
   /* Context-aware Science ProTools routing. */
   loadSharedWidget(`${courseBase}science-protools-integration.js`, "data-science-protools-loader");
