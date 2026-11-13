@@ -1,0 +1,58 @@
+/* Unit 00 page-specific completion of the approved Science 9 chrome.
+   The shared readiness stylesheet handles full-width header, responsive hero,
+   cream/charcoal contrast, official components, and centered footer.
+   Breadcrumbs deliberately remain below the header. */
+@media screen {
+body.ka-science9-unit00 .course-breadcrumb{display:flex;align-items:center;justify-content:center;gap:14px}
+body.ka-science9-unit00 .course-breadcrumb .wrap{display:flex;justify-content:center;align-items:center;flex-wrap:wrap;gap:8px}
+body.ka-science9-unit00 .readiness-theme-toggle{
+ display:inline-flex;align-items:center;justify-content:center;flex:0 0 auto;
+ width:44px;min-width:44px;height:44px;border:1px solid #b8995c!important;
+ border-radius:7px;background:#202724!important;color:#fff8e9!important;
+ -webkit-text-fill-color:#fff8e9!important;font:400 22px/1 Nunito,Arial,sans-serif;
+}
+body.ka-science9-unit00 .unit-hero .eyebrow{font-size:18px;line-height:1.55;letter-spacing:.015em}
+body.ka-science9-unit00 .unit-progress-card,
+body.ka-science9-unit00 :is(.day-card,.task-card){
+ border:1px solid #cdbf9f!important;border-radius:7px!important;
+ background:#fffdf8!important;color:#202724!important;
+ box-shadow:none!important;
+}
+body.ka-science9-unit00 main>section:not(.unit-hero){
+ padding:clamp(32px,5vw,64px) 0!important;background:#f4f0e7!important;
+}
+body.ka-science9-unit00 :is(.unit-progress-card,.task-card){padding:clamp(20px,3vw,36px)}
+body.ka-science9-unit00 main :is(.section-head,.unit-progress-card) .eyebrow{
+ color:#76592e!important;font:400 18px/1.5 Nunito,Arial,sans-serif!important;
+ letter-spacing:.02em!important;
+}
+body.ka-science9-unit00 main :is(h2,h3){
+ font-family:Cinzel,Georgia,serif;font-weight:400;color:#202724!important;
+}
+body.ka-science9-unit00 main h2{font-size:clamp(24px,3vw,33px);line-height:1.4}
+body.ka-science9-unit00 main h3{font-size:24px;line-height:1.35}
+body.ka-science9-unit00 main :is(.unit-progress-card,.day-card,.task-card,.requirement) :is(p,span,strong){
+ color:#27302d!important;font-size:16px;line-height:1.6;
+}
+body.ka-science9-unit00 main .requirement{
+ border:1px solid #cdbf9f!important;border-radius:7px!important;
+ background:#f7f1e5!important;color:#202724!important;
+}
+body.ka-science9-unit00 main .requirement[data-complete="true"]{
+ border-color:#426b51!important;background:#e7f0e5!important;
+}
+body.ka-science9-unit00 main :is(.unit-progress-card,.task-card) .btn{
+ border:1px solid #b8995c!important;border-radius:7px!important;
+ background:#303c35!important;color:#fff8e9!important;
+ -webkit-text-fill-color:#fff8e9!important;min-height:48px;font-size:16px;
+}
+body.ka-science9-unit00 .day-grid,
+body.ka-science9-unit00 .task-grid{gap:18px}
+body.ka-science9-unit00 .section-head{text-align:center;margin-bottom:25px}
+body.ka-science9-unit00 .unit-hero{background:#f4f0e7!important}
+@media(max-width:720px){
+ body.ka-science9-unit00 .course-breadcrumb{flex-wrap:wrap;padding:10px 12px}
+ body.ka-science9-unit00 .unit-progress-card{padding:20px}
+ body.ka-science9-unit00 :is(.day-grid,.task-grid,.requirement-grid){grid-template-columns:1fr}
+}
+}
