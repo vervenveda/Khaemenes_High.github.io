@@ -959,7 +959,7 @@ html:root:root body[data-khae-campus-front-desk="true"] main#main .high-frontdes
             <button class="portal-button" type="submit">Save Local Profile</button>
           </form>
           <div class="profile-summary" id="profileSummary" aria-live="polite">Use your Academy learner profile for identity, grade placement, daily classes, and records.</div>
-          <div class="portal-links"><a href="https://vervenveda.com/Khaemenes_Academy.github.io/family/enroll/" data-high-profile-door="1" aria-label="Open the selected learner Student Profile or choose a learner">My Student Profile</a><a href="#grades">Go to My Classes</a>
+          <div class="portal-links"><a href="#grades" data-high-profile-door="1" aria-label="Open the selected learner Student Profile or choose a High School grade">My Student Profile</a><a href="#grades">Go to My Classes</a>
             <a id="openMyGrade" href="https://vervenveda.com/Academy-Yearbook.github.io/">Yearbook</a>
             <a href="https://vervenveda.com/Khaemenes_Academy.github.io/family/enroll/">Academy Learners</a>
             <a href="./courses/">Course Directory</a>
@@ -1803,27 +1803,59 @@ html:root:root body[data-khae-campus-front-desk="true"] main#main .high-frontdes
 <script src="./assets/vnv-language.js" defer data-official-vnv-language="true"></script>
 <script>
 (()=>{"use strict";
+/* Student profile ownership: use Academy FamilyRegistry API; never send student profile clicks to Family Enrollment.
+   A selected local learner is a routing choice, not account authentication. */
 const profileLinks=document.querySelectorAll('[data-high-profile-door]');
-const read=k=>{try{return JSON.parse(localStorage.getItem(k)||"null")}catch{return null}};
+function activeHighSchoolRoute(){
+ try{
+  const registry=window.KhaemenesFamilyRegistry;
+  const selection=registry?.activeIds?.();
+  const id=selection?.learnerId;
+  if(typeof id!=="string"||!id)return null;
+  const learner=registry?.getLearner?.(id);
+  if(!learner||learner.learnerId!==id||learner.selfDirectedAdult)return null;
+  const gradeId=registry?.normalizeGrade?.(learner.grade);
+  if(!["09","10","11","12"].includes(gradeId))return null;
+  // Verify the selected family agrees with the learner before showing a direct route.
+  const family=registry?.getFamily?.(selection.familyId);
+  if(!family||!family.learners?.some(item=>item.learnerId===id))return null;
+  return "grades/grade-"+gradeId+"/student-profile/";
+ }catch{return null}
+}
+function chooser(){
+ const control=document.querySelector('#vnvEcosystemUtilityDock [data-vnv-tool="profile"]');
+ if(control){control.click();return}
+ // If the optional utility dock has not mounted, the grade cards remain an accessible fallback.
+ document.getElementById("grades")?.scrollIntoView({behavior:"auto",block:"start"});
+}
 function syncProfileDoors(){
- const selected=read("khaemenes_active_learner_v1");
- const id=typeof selected==="string"?selected:selected?.learnerId;
- const registry=read("khaemenes_family_registry_v1");
- const learner=typeof id==="string"&&id?registry?.learners?.[id]:null;
- const raw=String(learner?.grade||"").trim();
- const match=raw.match(/^(?:grade\s*)?(0?9|1[0-2])(?:st|nd|rd|th)?(?:\s*grade)?$/i);
- const grade=match?Number(match[1]):null;
- const destination=grade
-  ?"grades/grade-"+String(grade).padStart(2,"0")+"/student-profile/"
-  :"https://vervenveda.com/Khaemenes_Academy.github.io/family/enroll/";
+ const route=activeHighSchoolRoute();
  profileLinks.forEach(a=>{
-  a.href=destination;
-  a.title=grade?"Open Grade "+grade+" Student Profile":"Select an Academy learner to open their profile";
+  a.href=route||"#grades";
+  a.title=route?"Open the selected learner's High School Student Profile":"Choose your grade to open a Student Profile";
  });
 }
+document.addEventListener("click",event=>{
+ if(event.defaultPrevented||event.button!==0||event.metaKey||event.ctrlKey||event.shiftKey||event.altKey)return;
+ const origin=event.target.closest?.('[data-high-profile-door]');
+ const toolbarProfile=event.target.closest?.('#vnvEcosystemUtilityDock [data-vnv-tool="profile"]');
+ if(!origin&&!toolbarProfile)return;
+ const route=activeHighSchoolRoute();
+ if(toolbarProfile){
+  if(!route)return; // Preserve the canonical grade chooser when no learner is selected.
+  event.preventDefault();event.stopImmediatePropagation();
+  location.assign(new URL(route,location.href).href);return;
+ }
+ if(!route){event.preventDefault();chooser();return}
+ origin.href=route;
+},true);
 syncProfileDoors();
 window.addEventListener("pageshow",syncProfileDoors);
-window.addEventListener("storage",e=>{if(["khaemenes_active_learner_v1","khaemenes_family_registry_v1"].includes(e.key))syncProfileDoors()});
+window.addEventListener("khaemenes-family-changed",syncProfileDoors);
+window.addEventListener("storage",e=>{
+ const keys=window.KhaemenesFamilyRegistry?.keys||{};
+ if([keys.activeLearner,keys.activeFamily,keys.registry].includes(e.key))syncProfileDoors();
+});
 
 })();
 </script>
