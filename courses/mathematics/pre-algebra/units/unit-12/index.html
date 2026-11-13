@@ -514,6 +514,26 @@ html:root:root body :is(.hero, .header, .page-header, .section-head, .lesson-hea
   html:root:root body { font-size: 14px !important; }
 }
 </style>
+<style id="ka-prealgebra-canonical-landing-v1">
+/* Cosmetic presentation only: no assessment or saved-data changes. */
+html:root body{--ka-charcoal:#202724;--ka-cream:#fff8e9;--ka-parchment:#f7f1e5;font:400 18px/1.65 "Brandon Grotesque",Nunito,"Avenir Next",Arial,sans-serif!important;background:var(--ka-parchment);color:var(--ka-charcoal)}
+html:root body :is(main,section,article,aside,nav,.wrap,.workspace){min-width:0}
+html:root body .hero{text-align:center;padding-block:clamp(33px,5vw,66px)}
+html:root body .hero :is(.wrap,.container){max-width:1080px;margin-inline:auto}
+html:root body .hero .eyebrow{font:400 clamp(24px,3.6vw,33px)/1.3 Cinzel,Georgia,serif!important;text-align:center}
+html:root body .hero h1{font:400 clamp(36px,6.2vw,66px)/1.13 Cinzel,Georgia,serif!important;text-align:center;overflow-wrap:break-word}
+html:root body .hero :is(.lead,p:not(.eyebrow)){max-width:850px;margin-inline:auto;font-size:18px;line-height:1.7}
+html:root body :is(main,section) h2{font-family:Cinzel,Georgia,serif;font-weight:400;line-height:1.25}
+html:root body :is(button,.btn,.button,input,select,textarea){font-family:"Brandon Grotesque",Nunito,Arial,sans-serif;font-size:16px;border-radius:7px}
+html:root body :is(.btn,.button,button){border-radius:7px;text-align:center}
+html:root body :is(.card,.panel,.preview-shell){border-radius:7px}
+html:root body footer.footer{background:#202724!important;color:#fff8e9!important;text-align:center;padding:33px 22px}
+html:root body footer.footer a{color:#fff8e9!important}
+html:root body footer.footer :is(nav,.footer-links){justify-content:center;flex-wrap:wrap}
+html:root body footer.footer :is(p,small,a){font-size:16px}
+@media(max-width:680px){html:root body .hero{padding-inline:18px}html:root body .hero h1{font-size:clamp(33px,9vw,55px)!important}}
+@media print{#vnv333NetworkTicker,#vnvTickerAutoPopulate,#vnvHeaderAutoPopulate,#vnvEnrichedMenuOverlay{display:none!important}html:root body{background:white!important;color:black!important}}
+</style>
 </head><body><a class="skip" href="#main">Skip to main content</a><header class="site-header">
   <div class="wrap header-inner">
     <a class="brand" href="https://vervenveda.github.io/Khaemenes_High.github.io/" rel="home" aria-label="Khaemenes Academy home">
@@ -1187,4 +1207,11 @@ html:root:root body :is(.hero, .header, .page-header, .section-head, .lesson-hea
   render();
 })();
 </script><script src="https://vervenveda.com/assets/vnv-ecosystem-toolbar.js"></script>
+
+<!-- Canonical VNV/KA chrome; one owner for each shared component. -->
+<script src="https://vervenveda.com/assets/vnv-333-ticker.js"></script>
+<script src="https://vervenveda.com/assets/vnv-ticker-autopopulate.js" data-vnv-ticker-autopopulate></script>
+<script src="https://vervenveda.com/assets/vnv-header-autopopulate.js"></script>
+<script>(function(){"use strict";if(!window.VNV_HEADER?.mount)return;const toggle=document.getElementById("themeToggle"),crumb=document.querySelector(".course-breadcrumb .wrap");if(toggle&&crumb){crumb.appendChild(toggle);toggle.setAttribute("aria-label","Switch paper tone");}window.VNV_HEADER.mount({replaceLegacy:true,title:"Statistics & Probability",subtitle:"Khaemenes Academy · Pre-Algebra",icon:"K",home:"https://vervenveda.com/Khaemenes_Academy.github.io/",actions:[{"label":"COURSE","href":"https://vervenveda.com/Khaemenes_High.github.io/courses/mathematics/pre-algebra/"},{"label":"READINESS","href":"https://vervenveda.com/Khaemenes_High.github.io/courses/mathematics/pre-algebra/diagnostic/"},{"label":"ASSESSMENTS","href":"https://vervenveda.com/Khaemenes_High.github.io/courses/mathematics/pre-algebra/assessments/"},{"label":"RECORDS","href":"https://vervenveda.com/Khaemenes_High.github.io/courses/mathematics/pre-algebra/records/"}]});})();</script>
+
 </body></html>
