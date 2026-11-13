@@ -1,4 +1,4 @@
-// Privacy boundary: shared Mentor/Beta launchers receive sanitized route context only; this loader never reads student names, grades, form values, or localStorage.
+// Privacy boundary: this presentation loader does not inspect learner identity, grade records, form values, or localStorage.
 "use strict";
 (() => {
   const MARKER = "/courses/science/integrated-science-9/";
@@ -7,10 +7,6 @@
   const courseBase = markerIndex >= 0
     ? path.slice(0, markerIndex + MARKER.length)
     : new URL("./", window.location.href).pathname;
-  const repositoryBase = markerIndex >= 0
-    ? path.slice(0, markerIndex)
-    : "";
-
   if (!document.querySelector('link[data-science-theme-layer]')) {
     const link = document.createElement("link");
     link.rel = "stylesheet";
@@ -28,15 +24,9 @@
     document.head.append(script);
   }
 
-  /* Public-facing learner controls. */
-  // Readiness is a controlled diagnostic surface: the official six-button dock
-  // owns Mentor/Beta. Do not add deprecated standalone floating launchers here.
-  const isReadinessDiagnostic = /\/diagnostic\/(?:readiness-diagnostic\.html|index\.html)?$/i.test(path);
-  if (!isReadinessDiagnostic) {
-    loadSharedWidget(`${repositoryBase}/assets/vnv-beta-link.js`, "data-vnv-beta-loader");
-    loadSharedWidget(`${repositoryBase}/assets/khaemenes-mentor-link.js`, "data-khaemenes-mentor-loader");
-  }
-
+  /* Academy chrome ownership: the official ecosystem toolbar provides
+     Mentor/Beta on learner pages. Do not inject obsolete standalone launchers.
+     Controlled examination surfaces may intentionally omit the toolbar. */
   /* Context-aware Science ProTools routing. */
   loadSharedWidget(`${courseBase}science-protools-integration.js`, "data-science-protools-loader");
 
