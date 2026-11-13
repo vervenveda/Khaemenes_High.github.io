@@ -227,3 +227,58 @@ html:root:root body.ka-science9-readiness .footer :is(span,strong,a){
  color:#fff8e9!important;-webkit-text-fill-color:#fff8e9!important;
 }
 }
+
+/* Canonical header migration — explicitly isolated from retired .site-header styles. */
+@media screen {
+html:root body.ka-science9-readiness #vnvHeaderAutoPopulate{
+ width:100%!important;max-width:none!important;margin:0!important;
+ background:#202724!important;color:#fff8e9!important;
+ border-top:3px solid #b8995c!important;border-bottom:1px solid #b8995c!important;
+}
+html:root body.ka-science9-readiness #vnvHeaderAutoPopulate .vnv-header-inner{
+ width:100%!important;max-width:none!important;min-height:82px!important;
+ padding:12px clamp(14px,3vw,55px)!important;
+}
+html:root body.ka-science9-readiness #vnvHeaderAutoPopulate .vnv-header-logo{
+ background:#b8995c!important;color:#202724!important;
+ -webkit-text-fill-color:#202724!important;border-color:#b8995c!important;
+ font-size:24px!important;
+}
+html:root body.ka-science9-readiness #vnvHeaderAutoPopulate .vnv-header-home{
+ color:#fff8e9!important;-webkit-text-fill-color:#fff8e9!important;
+}
+html:root body.ka-science9-readiness #vnvHeaderAutoPopulate .vnv-header-title{
+ color:#fff8e9!important;-webkit-text-fill-color:#fff8e9!important;
+ font:400 clamp(18px,2vw,24px)/1.3 Cinzel,Georgia,serif!important;
+}
+html:root body.ka-science9-readiness #vnvHeaderAutoPopulate .vnv-header-subtitle{
+ color:#e9c989!important;-webkit-text-fill-color:#e9c989!important;
+ font-size:16px!important;
+}
+html:root body.ka-science9-readiness #vnvHeaderAutoPopulate .vnv-header-menu-button{
+ background:#202724!important;color:#fff8e9!important;
+ -webkit-text-fill-color:#fff8e9!important;
+ border:1px solid #b8995c!important;border-radius:7px!important;
+}
+html:root body.ka-science9-readiness .course-breadcrumb{
+ display:flex;align-items:center;justify-content:center;gap:14px;
+}
+html:root body.ka-science9-readiness .readiness-theme-toggle{
+ flex:0 0 auto;display:inline-flex;align-items:center;justify-content:center;
+ width:44px;height:44px;padding:8px;
+ border:1px solid #b8995c!important;border-radius:7px!important;
+ background:#202724!important;color:#fff8e9!important;-webkit-text-fill-color:#fff8e9!important;
+ font:400 22px/1 Nunito,Arial,sans-serif;
+}
+@media(max-width:650px){
+ html:root body.ka-science9-readiness #vnvHeaderAutoPopulate .vnv-header-inner{
+  padding:10px 12px!important;gap:8px!important;
+ }
+ html:root body.ka-science9-readiness #vnvHeaderAutoPopulate .vnv-header-subtitle{
+  font-size:16px!important;
+ }
+ html:root body.ka-science9-readiness .course-breadcrumb{
+  flex-wrap:wrap;padding:10px 12px!important;
+ }
+}
+}
