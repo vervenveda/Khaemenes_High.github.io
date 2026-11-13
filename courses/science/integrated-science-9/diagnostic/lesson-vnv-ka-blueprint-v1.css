@@ -235,3 +235,102 @@ body.ka-science9-lesson .ka-science-workspace-actions,
 body.ka-science9-lesson .ka-science-workspace-status{display:none!important}
 body.ka-science9-lesson .ka-response-print-lines{display:none!important}
 }
+
+/* FOCUS-FIRST SCIENCE UNIT00 ROADMAP
+   Single-column instructional order: prepare, practice, deepen, reflect.
+   Informative landmarks; lessons, questions and mastery controls remain visible. */
+@media screen {
+html:root:root body.ka-science9-lesson .ka-lesson-roadmap{
+ width:100%;max-width:1040px;margin:18px auto 40px!important;
+ padding:20px clamp(17px,3vw,30px)!important;
+ border:1px solid #cdbf9f!important;border-radius:7px!important;
+ background:#f7f1e5!important;color:#27302d!important;
+}
+html:root:root body.ka-science9-lesson .ka-lesson-roadmap-title{
+ margin:0 0 15px!important;text-align:center!important;
+ font:400 20px/1.45 Cinzel,Georgia,serif!important;
+ color:#27302d!important;-webkit-text-fill-color:#27302d!important;
+}
+html:root:root body.ka-science9-lesson .ka-lesson-roadmap ol{
+ display:flex!important;justify-content:center!important;flex-wrap:wrap!important;
+ gap:10px!important;list-style:none!important;margin:0!important;padding:0!important;
+}
+html:root:root body.ka-science9-lesson .ka-lesson-roadmap li{
+ padding:0!important;margin:0!important;list-style:none!important;min-width:0;
+}
+html:root:root body.ka-science9-lesson .ka-lesson-roadmap a{
+ display:inline-flex!important;align-items:center!important;justify-content:center!important;
+ flex-wrap:wrap!important;gap:9px!important;min-height:46px!important;
+ padding:9px 13px!important;border:1px solid #cdbf9f!important;
+ border-radius:7px!important;background:#fffdf8!important;
+ color:#27302d!important;-webkit-text-fill-color:#27302d!important;
+ text-decoration:none!important;font:400 16px/1.45 Nunito,Arial,sans-serif!important;
+}
+html:root:root body.ka-science9-lesson .ka-lesson-roadmap a span{
+ display:inline-grid!important;place-items:center!important;width:26px;height:26px;
+ border-radius:7px;background:#202724!important;
+ color:#fff8e9!important;-webkit-text-fill-color:#fff8e9!important;
+ font:400 14px/1 Nunito,Arial,sans-serif!important;
+}
+html:root:root body.ka-science9-lesson .ka-lesson-roadmap a:is(:hover,:focus-visible){
+ border-color:#b8995c!important;outline-offset:2px!important;
+}
+html:root:root body.ka-science9-lesson .ka-lesson-stage{
+ display:flex!important;flex-direction:column!important;align-items:center!important;
+ gap:8px!important;width:100%;max-width:1040px;margin:52px auto 20px!important;
+ padding:20px 16px!important;text-align:center!important;scroll-margin-top:130px;
+ border-top:2px solid #b8995c!important;border-bottom:1px solid #cdbf9f!important;
+ background:transparent!important;
+}
+html:root:root body.ka-science9-lesson .ka-lesson-stage-eyebrow{
+ color:#76592e!important;-webkit-text-fill-color:#76592e!important;
+ font:400 16px/1.4 Nunito,Arial,sans-serif!important;letter-spacing:.05em!important;
+}
+html:root:root body.ka-science9-lesson .ka-lesson-stage-title{
+ font:400 clamp(24px,3vw,33px)/1.3 Cinzel,Georgia,serif!important;
+ color:#27302d!important;-webkit-text-fill-color:#27302d!important;
+}
+html:root:root body.ka-science9-lesson .ka-lesson-stage-summary{
+ max-width:780px;font:400 17px/1.6 Nunito,Arial,sans-serif!important;
+ color:#47544b!important;-webkit-text-fill-color:#47544b!important;
+}
+html:root:root body.ka-science9-lesson .lesson-section{
+ width:100%;max-width:1040px;margin:18px auto!important;
+ padding:clamp(22px,3vw,40px)!important;
+}
+html:root:root body.ka-science9-lesson .lesson-section h2{
+ margin:0 0 18px!important;padding:0 0 15px!important;
+}
+html:root:root body.ka-science9-lesson .lesson-section :is(p,ul,ol,table){
+ max-width:100%;margin-top:14px;margin-bottom:16px;
+}
+html:root:root body.ka-science9-lesson .lesson-section .checkpoint{
+ margin:28px 0 5px!important;background:#fffdf8!important;
+ border-left:3px solid #b8995c!important;
+}
+html:root:root body.ka-science9-lesson .lesson-section .checkpoint>strong{
+ display:block!important;margin-bottom:12px!important;
+ font:400 20px/1.4 Cinzel,Georgia,serif!important;
+ color:#27302d!important;-webkit-text-fill-color:#27302d!important;
+}
+html:root:root body.ka-science9-lesson .safety-panel{
+ max-width:1040px;margin:20px auto!important;
+ border-left:3px solid #b8995c!important;
+}
+html:root:root body.ka-science9-lesson .lesson-actions{
+ max-width:1040px;margin:45px auto 0!important;
+}
+@media(max-width:750px){
+ html:root:root body.ka-science9-lesson .ka-lesson-roadmap ol{display:grid!important;grid-template-columns:1fr 1fr!important}
+ html:root:root body.ka-science9-lesson .ka-lesson-roadmap a{width:100%!important}
+}
+@media(max-width:480px){
+ html:root:root body.ka-science9-lesson .ka-lesson-roadmap ol{grid-template-columns:1fr!important}
+ html:root:root body.ka-science9-lesson .ka-lesson-stage{margin-top:35px!important}
+}
+}
+@media print{
+ body.ka-science9-lesson .ka-lesson-roadmap{display:none!important}
+ body.ka-science9-lesson .ka-lesson-stage{break-after:avoid!important;border-top:1px solid #888}
+ body.ka-science9-lesson .lesson-section{break-inside:auto!important}
+}
