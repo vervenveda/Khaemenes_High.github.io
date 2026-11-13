@@ -92,6 +92,24 @@ html:root body footer.footer :is(nav,.footer-links){justify-content:center;flex-
 html:root body footer.footer :is(p,small,a){font-size:16px}
 @media(max-width:680px){html:root body .hero{padding-inline:18px}html:root body .hero h1{font-size:clamp(33px,9vw,55px)!important}}
 @media print{#vnv333NetworkTicker,#vnvTickerAutoPopulate,#vnvHeaderAutoPopulate,#vnvEnrichedMenuOverlay{display:none!important}html:root body{background:white!important;color:black!important}}
+
+/* Final Academy contrast and accessible text overrides; limited to these five landing pages. */
+html:root:root body{font-size:18px!important;color:#202724!important;background:#f7f1e5!important}
+html:root:root body .hero{background:#202724!important;color:#fff8e9!important}
+html:root:root body .hero :is(h1,.eyebrow,.lead){color:#fff8e9!important;opacity:1!important}
+html:root:root body .hero p:not(.notice):not(.eyebrow){color:#fff8e9!important}
+html:root:root body .hero .notice{color:#202724!important;background:#f7f1e5!important;border-color:#bba67f!important}
+html:root:root body :is(.card,.panel,.preview-shell,.intro-panel,.overview){background:#fff8e9;color:#202724;border-color:#c2b49a}
+html:root:root body :is(.section-head,.section-head h2){text-align:center}
+html:root:root body .section-head h2{font-size:clamp(30px,4.8vw,44px);font-weight:400}
+html:root:root body :is(.btn,.button,button){min-height:44px;line-height:1.4}
+html:root:root body :is(.btn.primary,button.primary,.button.primary){background:#202724!important;color:#fff8e9!important;border-color:#202724!important}
+html:root:root body :is(label,.field label,.notice,.status,small){font-size:max(16px,1em)}
+html:root:root body :is(.field label,.form-label,.caption){font-size:18px!important}
+html:root:root body :is(.grid,.actions){align-items:stretch}
+html:root:root body :is(.actions,.results-actions){justify-content:center}
+html:root:root body footer.footer{font-size:18px!important}
+@media print{html:root:root body{font-size:16px!important;background:#fff!important;color:#111!important}html:root:root body .hero{background:#fff!important;color:#111!important}}
 </style>
 </head>
 <body>
