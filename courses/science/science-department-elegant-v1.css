@@ -1,0 +1,159 @@
+/* Khaemenes High — Science Department: restrained, lightweight editorial presentation.
+ * Only this department directory is affected: body[data-science-department="v1"].
+ * Academy header, menu, dock, course routing and data scripts remain separate owners.
+ */
+html:root:root body[data-science-department="v1"]{
+ --science-parchment:#f4f0e7;--science-paper:#fffdf8;--science-ink:#27302d;
+ --science-muted:#536158;--science-gold:#b8995c;--science-line:#d8cebb;
+ background:#f4f0e7!important;color:#27302d!important;
+ font:400 18px/1.7 "Brandon Grotesque",Nunito,"Avenir Next",Arial,sans-serif!important;
+ -webkit-text-fill-color:#27302d;
+}
+html:root:root body[data-science-department="v1"] .science-department-content{
+ width:min(calc(100% - 44px),1120px)!important;margin:0 auto!important;
+ padding:44px 0 60px!important;
+}
+html:root:root body[data-science-department="v1"] .science-department-content .hero{
+ max-width:1000px!important;margin:0 auto 30px!important;
+ padding:42px 26px 46px!important;text-align:center!important;
+ background:#fffdf8!important;border:1px solid #d8cebb!important;
+ border-radius:7px!important;box-shadow:none!important;
+}
+html:root:root body[data-science-department="v1"] .science-department-content .hero small{
+ display:block!important;margin:0 auto 15px!important;
+ color:#76592e!important;-webkit-text-fill-color:#76592e!important;
+ font:400 16px/1.5 Nunito,Arial,sans-serif!important;
+ letter-spacing:.09em!important;text-transform:uppercase!important;
+}
+html:root:root body[data-science-department="v1"] .science-department-content .hero h1{
+ margin:0 auto 21px!important;max-width:900px!important;
+ color:#27302d!important;-webkit-text-fill-color:#27302d!important;
+ font:400 clamp(34px,4.5vw,55px)/1.2 Cinzel,Georgia,serif!important;
+ letter-spacing:0!important;text-align:center!important;
+}
+html:root:root body[data-science-department="v1"] .science-department-content .hero p{
+ max-width:800px!important;margin:0 auto!important;
+ color:#47544b!important;-webkit-text-fill-color:#47544b!important;
+ font:400 18px/1.7 Nunito,Arial,sans-serif!important;
+}
+html:root:root body[data-science-department="v1"] .science-department-content .grid{
+ display:grid!important;grid-template-columns:repeat(2,minmax(0,1fr))!important;
+ gap:18px!important;padding:0!important;margin:0 auto 36px!important;
+}
+html:root:root body[data-science-department="v1"] .science-department-content .card{
+ display:flex!important;flex-direction:column!important;min-width:0!important;
+ min-height:320px!important;padding:clamp(23px,3vw,33px)!important;
+ border:1px solid #d8cebb!important;border-top:2px solid #b8995c!important;
+ border-radius:7px!important;background:#fffdf8!important;
+ box-shadow:none!important;text-decoration:none!important;
+ color:#27302d!important;-webkit-text-fill-color:#27302d!important;
+ transition:border-color .15s ease,background-color .15s ease!important;
+}
+html:root:root body[data-science-department="v1"] .science-department-content .card:is(:hover,:focus-visible){
+ border-color:#b8995c!important;background:#faf6ec!important;
+}
+html:root:root body[data-science-department="v1"] .science-department-content .card .grade{
+ font:400 16px/1.5 Nunito,Arial,sans-serif!important;
+ letter-spacing:.08em!important;color:#76592e!important;
+ -webkit-text-fill-color:#76592e!important;text-transform:uppercase!important;
+}
+html:root:root body[data-science-department="v1"] .science-department-content .card h2{
+ margin:15px 0 17px!important;
+ color:#27302d!important;-webkit-text-fill-color:#27302d!important;
+ font:400 clamp(24px,2.4vw,31px)/1.4 Cinzel,Georgia,serif!important;
+ letter-spacing:0!important;text-align:left!important;
+}
+html:root:root body[data-science-department="v1"] .science-department-content .card p{
+ margin:0 0 17px!important;max-width:53ch!important;
+ color:#47544b!important;-webkit-text-fill-color:#47544b!important;
+ font:400 17px/1.7 Nunito,Arial,sans-serif!important;
+}
+html:root:root body[data-science-department="v1"] .science-department-content .card ul{
+ margin:0 0 24px!important;padding-left:24px!important;
+ color:#27302d!important;-webkit-text-fill-color:#27302d!important;
+ font:400 16px/1.8 Nunito,Arial,sans-serif!important;
+}
+html:root:root body[data-science-department="v1"] .science-department-content .card li{
+ margin:3px 0!important;color:#27302d!important;-webkit-text-fill-color:#27302d!important;
+}
+html:root:root body[data-science-department="v1"] .science-department-content .card .course-card-action{
+ display:inline-flex!important;align-items:center!important;justify-content:center!important;
+ align-self:flex-start!important;margin-top:auto!important;padding:10px 18px!important;
+ min-height:46px!important;min-width:160px!important;
+ border:1px solid #b8995c!important;border-radius:7px!important;
+ background:#202724!important;color:#fff8e9!important;-webkit-text-fill-color:#fff8e9!important;
+ font:400 16px/1.5 Nunito,Arial,sans-serif!important;
+}
+html:root:root body[data-science-department="v1"] .science-department-content .card:is(:hover,:focus-visible) .course-card-action{
+ background:#34463c!important;
+}
+html:root:root body[data-science-department="v1"] .science-department-content .ext{
+ margin:0 auto 24px!important;padding:clamp(24px,3vw,34px)!important;
+ border:1px solid #d8cebb!important;border-radius:7px!important;
+ background:#fffdf8!important;box-shadow:none!important;
+}
+html:root:root body[data-science-department="v1"] .science-department-content .ext h2{
+ margin:0 0 15px!important;font:400 clamp(25px,3vw,33px)/1.35 Cinzel,Georgia,serif!important;
+ color:#27302d!important;-webkit-text-fill-color:#27302d!important;text-align:center!important;
+}
+html:root:root body[data-science-department="v1"] .science-department-content .ext>p{
+ max-width:770px!important;margin:0 auto 25px!important;
+ font:400 17px/1.65 Nunito,Arial,sans-serif!important;text-align:center!important;
+ color:#47544b!important;-webkit-text-fill-color:#47544b!important;
+}
+html:root:root body[data-science-department="v1"] .science-department-content .links{
+ display:grid!important;grid-template-columns:repeat(3,minmax(0,1fr))!important;
+ gap:12px!important;
+}
+html:root:root body[data-science-department="v1"] .science-department-content .links a{
+ min-width:0!important;min-height:130px!important;
+ padding:18px!important;border:1px solid #d8cebb!important;border-radius:7px!important;
+ background:#faf6ec!important;color:#27302d!important;-webkit-text-fill-color:#27302d!important;
+ text-decoration:none!important;
+}
+html:root:root body[data-science-department="v1"] .science-department-content .links a:is(:hover,:focus-visible){
+ border-color:#b8995c!important;background:#f4eddf!important;
+}
+html:root:root body[data-science-department="v1"] .science-department-content .links strong{
+ display:block!important;margin-bottom:8px!important;
+ font:400 19px/1.4 Cinzel,Georgia,serif!important;
+ color:#27302d!important;-webkit-text-fill-color:#27302d!important;
+}
+html:root:root body[data-science-department="v1"] .science-department-content .links small{
+ display:block!important;font:400 16px/1.55 Nunito,Arial,sans-serif!important;
+ color:#47544b!important;-webkit-text-fill-color:#47544b!important;
+}
+html:root:root body[data-science-department="v1"] .science-department-content .note{
+ margin:0 auto!important;padding:20px 24px!important;
+ border:1px solid #d8cebb!important;border-left:3px solid #b8995c!important;
+ border-radius:7px!important;background:#f7f1e5!important;
+ color:#47544b!important;-webkit-text-fill-color:#47544b!important;
+ font:400 16px/1.7 Nunito,Arial,sans-serif!important;
+}
+html:root:root body[data-science-department="v1"] .science-department-content .note strong{
+ color:#27302d!important;-webkit-text-fill-color:#27302d!important;font-weight:400!important;
+}
+html:root:root body[data-science-department="v1"] .science-department-content :is(a,button):focus-visible{
+ outline:3px solid #b8995c!important;outline-offset:3px!important;
+}
+@media(max-width:780px){
+ html:root:root body[data-science-department="v1"] .science-department-content .grid,
+ html:root:root body[data-science-department="v1"] .science-department-content .links{
+ grid-template-columns:minmax(0,1fr)!important;
+ }
+ html:root:root body[data-science-department="v1"] .science-department-content{
+ width:min(calc(100% - 30px),1120px)!important;padding-top:25px!important;
+ }
+ html:root:root body[data-science-department="v1"] .science-department-content .card{min-height:0!important}
+ html:root:root body[data-science-department="v1"] .science-department-content .hero{padding:28px 18px!important}
+}
+@media(prefers-reduced-motion:reduce){
+ html:root:root body[data-science-department="v1"] .science-department-content .card{transition:none!important}
+}
+@media print{
+ body[data-science-department="v1"] .science-department-content .card,
+ body[data-science-department="v1"] .science-department-content .ext,
+ body[data-science-department="v1"] .science-department-content .note{
+ break-inside:avoid;box-shadow:none!important;
+ }
+}
