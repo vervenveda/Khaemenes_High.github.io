@@ -76,3 +76,15 @@
 @media(max-width:900px){.app-layout{grid-template-columns:1fr}.app-side{position:static}.requirement-grid{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:720px){.day-grid,.task-grid,.domain-results,.record-grid,.form-grid{grid-template-columns:1fr}.requirement-grid{grid-template-columns:1fr}.signature-area{grid-template-columns:1fr}.full{grid-column:auto}}
 @media print{.unit-nav,.lesson-actions,.app-side,.app-nav,.no-print{display:none!important}.lesson-page{width:100%;margin:0;padding:0;box-shadow:none}.response-lines{min-height:120px}}
+
+/* Shared Unit 00 lesson heading — centered and readable across Days 01–05.
+   Presentation only: does not modify scoring or student records. */
+@media screen {
+html:root:root body .lesson-page > .eyebrow {
+ display:block!important;width:100%!important;max-width:100%!important;
+ margin:0 auto 18px!important;text-align:center!important;
+ font:400 clamp(24px,2.5vw,33px)/1.4 Cinzel,Georgia,serif!important;
+ color:#76592e!important;-webkit-text-fill-color:#76592e!important;
+ text-transform:none!important;letter-spacing:.01em!important;
+}
+}
