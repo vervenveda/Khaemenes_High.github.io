@@ -14,7 +14,69 @@ function normalize(p,prior){if(!p||typeof p!=="object")return p;p.reviewedLesson
 Storage.prototype.setItem=function(k,v){if(k!==KEY||internal)return nativeSet.call(this,k,v);const prior=parse(localStorage.getItem(KEY)||"null"),next=normalize(parse(v),prior);if(!next)return nativeSet.call(this,k,v);internal=true;try{return nativeSet.call(this,k,JSON.stringify(next))}finally{internal=false}};
 function current(){const p=parse(localStorage.getItem(KEY)||"null")||{};return normalize(p,p)}function bestFor(id){const p=current();return Math.max(Number(p.lessonBestScores?.[id])||0,Number(p.lessonScores?.[id])||0)}function lessonBest(){return bestFor(window.LESSON_DATA?.id)}function lessonLatest(){const p=current();return Number(p.lessonLatestScores?.[window.LESSON_DATA?.id])}
 function sequence(){const lesson=window.LESSON_DATA,list=map.lessons||[],i=list.findIndex(x=>x.id===lesson?.id);if(i>0&&bestFor(list[i-1].id)<MIN)return{ok:false,title:`Lesson ${lesson?.number||i+1} locked`,message:`${list[i-1].title} requires at least 80% mastery before this lesson begins.`,href:new URL(list[i-1].file.split("/").pop(),location.href).href,label:`Return to ${list[i-1].title}`};return{ok:true}}
-function block(g){const s=document.createElement("style");s.textContent="#academyUnit1Gate{position:fixed;inset:0;z-index:99999;display:grid;place-items:center;padding:24px;background:rgba(15,23,20,.97);color:#fff;font-family:Arial,sans-serif}#academyUnit1Gate article{max-width:700px;padding:32px;border:1px solid rgba(255,255,255,.28);border-radius:8px;background:#17251f;text-align:center}#academyUnit1Gate h1{font-family:Georgia,serif;font-weight:500}#academyUnit1Gate a{display:inline-flex;margin-top:16px;padding:10px 16px;border:1px solid #fff;border-radius:7px;color:#fff;text-decoration:none}";document.head.appendChild(s);const d=document.createElement("div");d.id="academyUnit1Gate";d.setAttribute("role","dialog");d.setAttribute("aria-modal","true");d.innerHTML=`<article><p>Khaemenes Academy Mastery Gate</p><h1>${g.title}</h1><p>${g.message}</p><a href="${g.href}">${g.label}</a></article>`;document.body.appendChild(d)}
+function block(g){
+ if(document.getElementById("academyUnit1Gate"))return;
+ const style=document.createElement("style");
+ style.id="academyUnit1GateStyles";
+ style.textContent=`
+/* Khaemenes Academy mastery gate: shared by Unit 01 lessons 01–06.
+   Presentation only; NAIB/Unit 0/mastery checks remain in the engine. */
+html:root:root body #academyUnit1Gate{
+ position:fixed!important;inset:0!important;z-index:2147483000!important;
+ display:grid!important;place-items:center!important;overflow:auto!important;
+ padding:clamp(18px,4vw,48px)!important;
+ background:rgba(32,39,36,.26)!important;
+ -webkit-backdrop-filter:blur(2px)!important;backdrop-filter:blur(2px)!important;
+ color:#27302d!important;font:400 18px/1.7 "Brandon Grotesque",Nunito,Arial,sans-serif!important;
+}
+html:root:root body #academyUnit1Gate article{
+ box-sizing:border-box!important;width:min(100%,760px)!important;
+ max-height:calc(100dvh - 36px)!important;overflow-y:auto!important;
+ padding:clamp(28px,5vw,55px)!important;
+ border:2px solid #b8995c!important;border-radius:7px!important;
+ background:#fffdf8!important;color:#27302d!important;
+ box-shadow:0 12px 38px rgba(32,39,36,.18)!important;text-align:center!important;
+}
+html:root:root body #academyUnit1Gate .academy-gate-eyebrow{
+ margin:0 0 14px!important;color:#76592e!important;
+ font:400 clamp(23px,3vw,33px)/1.3 Cinzel,Georgia,serif!important;
+}
+html:root:root body #academyUnit1Gate h1{
+ margin:0 0 22px!important;color:#27302d!important;
+ font:400 clamp(29px,4vw,44px)/1.25 Cinzel,Georgia,serif!important;
+}
+html:root:root body #academyUnit1Gate .academy-gate-message{
+ margin:0 auto 22px!important;max-width:600px!important;
+ color:#27302d!important;font:400 18px/1.75 Nunito,Arial,sans-serif!important;
+}
+html:root:root body #academyUnit1Gate a{
+ display:inline-flex!important;align-items:center!important;justify-content:center!important;
+ min-height:50px!important;max-width:100%!important;margin-top:8px!important;
+ padding:12px 23px!important;border:1px solid #b8995c!important;
+ border-radius:7px!important;background:#202724!important;
+ color:#fff8e9!important;-webkit-text-fill-color:#fff8e9!important;
+ text-decoration:none!important;font:400 16px/1.5 Nunito,Arial,sans-serif!important;
+}
+html:root:root body #academyUnit1Gate a:is(:hover,:focus-visible){
+ background:#34463c!important;color:#fff8e9!important;-webkit-text-fill-color:#fff8e9!important;
+ outline:3px solid #b8995c!important;outline-offset:3px!important;
+}
+@media(prefers-reduced-motion:reduce){#academyUnit1Gate{backdrop-filter:none!important}}
+@media print{#academyUnit1Gate{display:none!important}}
+`;
+ document.head.appendChild(style);
+ const d=document.createElement("div");
+ d.id="academyUnit1Gate";d.setAttribute("role","dialog");d.setAttribute("aria-modal","true");
+ d.setAttribute("aria-labelledby","academyUnit1GateTitle");
+ d.setAttribute("aria-describedby","academyUnit1GateDescription");
+ const card=document.createElement("article");
+ const eyebrow=document.createElement("p");eyebrow.className="academy-gate-eyebrow";eyebrow.textContent="Khaemenes Academy · Mastery Gate";
+ const title=document.createElement("h1");title.id="academyUnit1GateTitle";title.textContent=g.title;
+ const message=document.createElement("p");message.id="academyUnit1GateDescription";message.className="academy-gate-message";message.textContent=g.message;
+ const link=document.createElement("a");link.href=g.href;link.textContent=g.label;
+ card.append(eyebrow,title,message,link);d.append(card);document.body.appendChild(d);
+ link.focus({preventScroll:true});
+}
 function mountProminentLessonGame(url,c){
  if(!url)return;
  const data=window.LESSON_DATA||{};
