@@ -31,7 +31,7 @@
   /* Public-facing learner controls. */
   // Readiness is a controlled diagnostic surface: the official six-button dock
   // owns Mentor/Beta. Do not add deprecated standalone floating launchers here.
-  const isReadinessDiagnostic = /\/diagnostic\/readiness-diagnostic\.html$/i.test(path);
+  const isReadinessDiagnostic = /\/diagnostic\/(?:readiness-diagnostic\.html|index\.html)?$/i.test(path);
   if (!isReadinessDiagnostic) {
     loadSharedWidget(`${repositoryBase}/assets/vnv-beta-link.js`, "data-vnv-beta-loader");
     loadSharedWidget(`${repositoryBase}/assets/khaemenes-mentor-link.js`, "data-khaemenes-mentor-loader");
