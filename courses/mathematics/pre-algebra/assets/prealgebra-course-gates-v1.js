@@ -3,7 +3,21 @@ const MIN=80,NAIB_KEY="khaemenes-naib-readiness-profile-v1",EXIT_KEY="khaemenes-
 function read(k){try{return JSON.parse(localStorage.getItem(k)||"null")}catch{return null}}function learner(){try{return typeof student==="function"?student():null}catch{return null}}function weekly(n){const s=learner();if(!s)return null;try{return typeof weekRec==="function"?weekRec(s,n):s.progress?.weeks?.[n]||null}catch{return s.progress?.weeks?.[n]||null}}
 function lessonDone(n){const s=learner();if(!s)return false;try{if(typeof lessonPct==="function")return Number(lessonPct(s,n))>=100}catch{}const r=weekly(n),done=r?.lessons;if(Array.isArray(done))return done.length>=5&&done.every(Boolean);if(done&&typeof done==="object")return Object.values(done).filter(Boolean).length>=5;return false}
 function quizBest(n){const r=weekly(n);return Number(r?.quiz?.best)||0}function weekMastered(n){return lessonDone(n)&&quizBest(n)>=MIN}
-function entrance(){const p=read(NAIB_KEY);if(!p)return{ok:false,href:"diagnostic/",message:"Complete the NAIB pre-course readiness assessment first."};if(p.route==="unit_0_refresher"){const exit=read(EXIT_KEY);if(!(exit?.passed&&Number(exit.best_percent)>=MIN))return{ok:false,href:"units/unit-00/",message:"NAIB assigned the six-week refresher. Complete Unit 0 and its 80% exit mastery gate before Week 1."}}return{ok:true}}
+function admission(){
+  const profile=window.KhaemenesCourseEntryContract?.readAcademyProfile?.();
+  if(!profile?.learnerId)return{ok:false,reason:"learner"};
+  const p=read(NAIB_KEY);
+  if(!p||p.learner_id!==profile.learnerId||p.course_id!=="math-prealgebra"||p.course_code!=="KH-MATH-PA"||p.assessment_id!=="KH-MATH-PA-READINESS-GATEWAY")return{ok:false,reason:"readiness"};
+  if(!Number.isFinite(p.overall_percent)||p.overall_percent<0||p.overall_percent>100||!p.strand_scores||typeof p.strand_scores!=="object")return{ok:false,reason:"readiness"};
+  const essentials=["number-foundations","rational-proportional","algebraic-reasoning"];
+  const strand=id=>{const x=p.strand_scores[id],v=typeof x==="number"?x:x?.percent;return Number.isFinite(v)&&v>=0&&v<=100?v:null};
+  if(["advance","advance_with_targeted_refresh"].includes(p.route)&&p.overall_percent>=MIN&&essentials.every(id=>strand(id)!==null&&strand(id)>=MIN))return{ok:true,reason:"ready"};
+  if(p.route!=="unit_0_refresher")return{ok:false,reason:"readiness"};
+  const exit=read(EXIT_KEY);
+  if(p.correction_status!=="complete"||!exit||exit.passed!==true||!Number.isFinite(exit.best_percent)||exit.best_percent<MIN||exit.best_percent>100)return{ok:false,reason:"unit0"};
+  return{ok:true,reason:"unit0"};
+}
+function entrance(){const result=admission();if(result.ok)return{ok:true};if(result.reason==="unit0")return{ok:false,href:"units/unit-00/",message:"Complete assigned Unit 0, its required reasoning corrections, and the 80% exit mastery before Week 1."};return{ok:false,href:"diagnostic/",message:result.reason==="learner"?"Select an Academy learner before entering Pre-Algebra.":"A valid learner-matched Pre-Algebra readiness result is required before Week 1."}}
 function allowedWeek(n){const e=entrance();if(!e.ok)return e;if(n<=1)return{ok:true};if(weekMastered(n-1))return{ok:true};return{ok:false,href:`#week-${n-1}`,message:`Week ${n} is locked. Week ${n-1} requires all lesson work plus at least 80% on its weekly quiz.`}}
 
 function ensureGateUI(){
