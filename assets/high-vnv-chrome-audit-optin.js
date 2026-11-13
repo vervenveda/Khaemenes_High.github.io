@@ -7,7 +7,7 @@ if(new URLSearchParams(location.search).get("chrome_audit")!=="1"||window.Khaeme
 const targets=[
  ["333 ticker","vnv333NetworkTicker"],["Auto ticker","vnvTickerAutoPopulate"],
  ["VNV header","vnvHeaderAutoPopulate"],["Branched menu","vnvEnrichedMenuOverlay"],
- ["Ecosystem toolbar","vnvEcosystemUtilityDock"],["Language rail","vnv-language-rail"]
+ ["Ecosystem toolbar","vnvEcosystemUtilityDock"],["Language switch","vnv-language-switch"]
 ];
 const trace=[];let panel,output,scheduled=false,closed=false,lastReport="";
 const ms=()=>Math.round(performance.now())+"ms";
