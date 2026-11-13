@@ -192,3 +192,11 @@ function init(){
 
 if(document.readyState==="loading")document.addEventListener("DOMContentLoaded",init,{once:true});else init();
 })();
+
+
+/* Recording an opened game or video is not a completion claim. */
+(()=>{if(document.querySelector('script[data-prealgebra-activity-evidence="v1"]'))return;
+const el=document.createElement("script");el.dataset.prealgebraActivityEvidence="v1";
+el.src=new URL("prealgebra-activity-evidence-v1.js",document.currentScript?.src||location.href).href;
+el.defer=true;document.head.appendChild(el);
+})();
