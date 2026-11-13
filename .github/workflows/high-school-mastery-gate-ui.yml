@@ -1,0 +1,33 @@
+name: High School Mastery Dialog Integrity
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'courses/mathematics/pre-algebra/units/**/assets/unit-dashboard.js'
+      - 'courses/mathematics/pre-algebra/units/**/assets/lesson-engine.js'
+      - 'courses/science/integrated-science-9/assets/science9-entry-gate.js'
+      - 'tests/high-school-mastery-gate-ui.test.cjs'
+      - '.github/workflows/high-school-mastery-gate-ui.yml'
+  pull_request:
+    paths:
+      - 'courses/mathematics/pre-algebra/units/**/assets/unit-dashboard.js'
+      - 'courses/mathematics/pre-algebra/units/**/assets/lesson-engine.js'
+      - 'courses/science/integrated-science-9/assets/science9-entry-gate.js'
+      - 'tests/high-school-mastery-gate-ui.test.cjs'
+      - '.github/workflows/high-school-mastery-gate-ui.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Verify Khaemenes Academy blocking-dialog styles and 80-percent gates
+        run: node tests/high-school-mastery-gate-ui.test.cjs
