@@ -1,0 +1,44 @@
+/* Science 9 Unit 01 lesson presentation extension, no academic state ownership.
+ * Load after unit01.css and diagnostic lesson-vnv-ka-blueprint-v1.css.
+ * The existing shared four-stage CSS deliberately also applies to .ka-science9-lesson.
+ */
+@media screen {
+html:root:root body.ka-science9-lesson.ka-science9-unit01-lesson .science-evidence-heading{
+ max-width:1000px;margin:0 auto 22px!important;padding:10px 15px!important;
+ border-bottom:1px solid #cdbf9f!important;
+ background:#f7f1e5!important;border-radius:7px!important;
+ text-align:center!important;
+}
+html:root:root body.ka-science9-lesson.ka-science9-unit01-lesson .science-evidence-heading p{
+ font:400 16px/1.55 Nunito,Arial,sans-serif!important;
+ color:#47544b!important;-webkit-text-fill-color:#47544b!important;
+ margin:4px auto!important;
+}
+html:root:root body.ka-science9-lesson.ka-science9-unit01-lesson .checkpoint{
+ max-width:100%!important;min-width:0!important;
+}
+html:root:root body.ka-science9-lesson.ka-science9-unit01-lesson :is(.lesson-page .data-table,.lesson-page table,.lesson-page canvas,.lesson-page iframe){
+ max-width:100%!important;
+}
+html:root:root body.ka-science9-lesson.ka-science9-unit01-lesson .lesson-page :is(input,select,textarea){
+ max-width:100%!important;font-size:18px!important;
+}
+html:root:root body.ka-science9-lesson.ka-science9-unit01-lesson .lesson-page a:not(.btn){
+ text-underline-offset:3px;
+}
+html:root:root body.ka-science9-lesson.ka-science9-unit01-lesson .lesson-page :is(.checkpoint,.safety-panel,.data-table){
+ border-radius:7px!important;
+}
+html:root:root body.ka-science9-lesson.ka-science9-unit01-lesson #scienceIntegrationDock{
+ width:100%;max-width:1040px;margin:38px auto!important;
+ border:1px solid #cdbf9f!important;border-radius:7px!important;
+ background:#fffdf8!important;color:#27302d!important;
+}
+html:root:root body.ka-science9-lesson.ka-science9-unit01-lesson .lesson-page .response-lines{
+ min-height:110px!important;
+}
+}
+@media print {
+body.ka-science9-unit01-lesson .science-evidence-heading{display:block!important}
+body.ka-science9-unit01-lesson .science-evidence-heading p{color:#111!important}
+}
