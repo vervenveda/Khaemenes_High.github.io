@@ -15,7 +15,7 @@ const dialog=make("dialog");dialog.id="grade09ClassProgressDialog";
 dialog.setAttribute("aria-labelledby","grade09ClassProgressTitle");
 dialog.setAttribute("aria-modal","true");
 const header=make("header","grade09-progress-dialog-header");
-const title=make("h2","","Class Progress");title.id="grade09ClassProgressTitle";
+const title=make("h2","","Student Progress");title.id="grade09ClassProgressTitle";
 const close=make("button","grade09-progress-dialog-close","Close");close.type="button";
 header.append(title,close);
 const body=make("div","grade09-progress-dialog-content");
