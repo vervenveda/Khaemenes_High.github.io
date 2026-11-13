@@ -185,3 +185,45 @@ body.ka-science9-readiness :is(a,button,input):focus-visible{outline:3px solid #
  body.ka-science9-readiness .unit-nav{display:none!important}
  body.ka-science9-readiness .result-panel{color:#202724;background:#fff}
 }
+
+/* PARChMENT_COMPATIBILITY — carefully scoped exception to legacy shared
+   parchment.css !important rules. Canonical shared controls own their CSS. */
+@media screen {
+html:root:root body.ka-science9-readiness{background:#f4f0e7!important;color:#202724!important}
+html:root:root body.ka-science9-readiness .site-header{background:#202724!important;color:#fff8e9!important}
+html:root:root body.ka-science9-readiness .site-header .brand,
+html:root:root body.ka-science9-readiness .site-header .brand-copy strong{
+ color:#fff8e9!important;-webkit-text-fill-color:#fff8e9!important;
+}
+html:root:root body.ka-science9-readiness .site-header .brand-copy small{
+ display:block!important;color:#e9c989!important;-webkit-text-fill-color:#e9c989!important;
+}
+html:root:root body.ka-science9-readiness .site-header .brand-mark{
+ background:#b8995c!important;color:#202724!important;-webkit-text-fill-color:#202724!important;
+}
+html:root:root body.ka-science9-readiness .unit-hero>.unit-shell{
+ background:#202724!important;color:#fff8e9!important;border-color:#b8995c!important;
+}
+html:root:root body.ka-science9-readiness .unit-hero :is(.academy-eyebrow,.eyebrow){
+ color:#e9c989!important;-webkit-text-fill-color:#e9c989!important;
+}
+html:root:root body.ka-science9-readiness .unit-hero :is(h1,.unit-lead){
+ color:#fff8e9!important;-webkit-text-fill-color:#fff8e9!important;
+}
+html:root:root body.ka-science9-readiness :is(.unit-nav,.app-nav) :is(.btn,button),
+html:root:root body.ka-science9-readiness .app-side .btn{
+ background:#303c35!important;color:#fff8e9!important;
+ -webkit-text-fill-color:#fff8e9!important;border-color:#b8995c!important;
+}
+html:root:root body.ka-science9-readiness .header-actions .icon-button,
+html:root:root body.ka-science9-readiness .header-actions #vnvEcosystemMenuButton{
+ background:#202724!important;color:#fff8e9!important;
+ -webkit-text-fill-color:#fff8e9!important;border-color:#b8995c!important;
+}
+html:root:root body.ka-science9-readiness .footer{
+ background:#202724!important;color:#fff8e9!important;
+}
+html:root:root body.ka-science9-readiness .footer :is(span,strong,a){
+ color:#fff8e9!important;-webkit-text-fill-color:#fff8e9!important;
+}
+}
