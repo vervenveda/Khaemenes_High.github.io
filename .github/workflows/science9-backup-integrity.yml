@@ -1,0 +1,32 @@
+name: Science 9 Student Backup Integrity
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'courses/science/integrated-science-9/index.html'
+      - 'courses/science/integrated-science-9/science9-backup-guard-v1.js'
+      - 'courses/science/integrated-science-9/units/unit-02/unit02.js'
+      - 'tests/science9-backup-integrity.test.cjs'
+      - '.github/workflows/science9-backup-integrity.yml'
+  pull_request:
+    paths:
+      - 'courses/science/integrated-science-9/index.html'
+      - 'courses/science/integrated-science-9/science9-backup-guard-v1.js'
+      - 'courses/science/integrated-science-9/units/unit-02/unit02.js'
+      - 'tests/science9-backup-integrity.test.cjs'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Protect Science 9 learner evidence and blocked-save behavior
+        run: node tests/science9-backup-integrity.test.cjs
