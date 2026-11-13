@@ -75,10 +75,11 @@ html:root:root body.ka-science9-lesson .lesson-page>.academy-eyebrow{
  color:#76592e!important;-webkit-text-fill-color:#76592e!important;
 }
 html:root:root body.ka-science9-lesson .lesson-page>.eyebrow{
- text-align:center!important;margin:0 0 15px!important;
- font:400 18px/1.5 Nunito,Arial,sans-serif!important;
+ display:block!important;width:100%!important;max-width:100%!important;
+ margin:0 auto 18px!important;text-align:center!important;
+ font:400 clamp(24px,2.5vw,33px)/1.4 Cinzel,Georgia,serif!important;
  color:#76592e!important;-webkit-text-fill-color:#76592e!important;
- text-transform:none!important;letter-spacing:.015em!important;
+ text-transform:none!important;letter-spacing:.01em!important;
 }
 html:root:root body.ka-science9-lesson .lesson-page>h1{
  margin:0 auto 20px!important;max-width:1050px!important;text-align:center!important;
