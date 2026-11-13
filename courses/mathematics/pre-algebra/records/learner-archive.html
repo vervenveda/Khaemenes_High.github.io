@@ -14,7 +14,7 @@ button,a.action{border:1px solid var(--charcoal);background:var(--charcoal);colo
 button:disabled{opacity:.5;cursor:not-allowed}.actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:15px}
 .notice{border-left:4px solid var(--gold);padding:12px 14px;background:#f8f0de}
 #archiveStatus{min-height:24px}footer a{color:#fff8eb}small{font-size:16px}
-@media print{header,footer,.actions,select,label{display:none!important}main{padding:0;margin:0}section{border:0;padding:4px}body{background:#fff}}
+@media print{@page{size:letter;margin:.65in}main>section:not(#archiveReport),footer,.actions,select,label{display:none!important}header{display:block!important;background:#fff!important;color:#27302d!important;padding:0 0 14px!important;border-bottom:1px solid #b8995c}header h1{font-size:33px!important}main{padding:0!important;margin:0!important}#archiveReport{border:0!important;padding:4px!important;box-shadow:none!important}body{background:#fff!important;color:#27302d!important}}
 </style></head><body>
 <header><p>STUDENT RECORDS · VERVE N VEDA</p><h1>Khaemenes Academy</h1><p>Pre-Algebra · Student Learning Archive</p></header>
 <main><section><h2>Protect your learning journey</h2><p>Download one ZIP for the selected student. It contains JSON course evidence, a printable Academy report, a file manifest and integrity checks for later T03 migration.</p><p class="notice"><strong>Privacy:</strong> This is a browser-local export. It never uploads grades or records. Your ZIP may contain sensitive student information—store it securely. ZIP files are not encrypted.</p>
