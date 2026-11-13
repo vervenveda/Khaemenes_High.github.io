@@ -36,6 +36,18 @@ function report(){
   "body scrollWidth="+body.scrollWidth+" · devicePixelRatio="+devicePixelRatio+" · scrollY="+Math.round(scrollY),
   "document fonts="+(document.fonts?.status||"unknown")
  ]);
+ const title=document.querySelector("main#main .high-frontdesk-hero h1");
+ add("HIGH SCHOOL HERO TITLE · OPT-IN TYPOGRAPHY",[
+  "hero title="+(title?JSON.stringify(title.textContent.trim()):"MISSING"),
+  "computed font-size="+(title?cs(title).fontSize:"n/a")+
+   " · family="+(title?cs(title).fontFamily:"n/a")+
+   " · line-height="+(title?cs(title).lineHeight:"n/a")+
+   " · weight="+(title?cs(title).fontWeight:"n/a"),
+  "title box="+(title?JSON.stringify(safeRect(title)):"n/a")+
+   " · large size authority="+(document.getElementById("high-school-hero-title-authority-v1")?"PRESENT":"MISSING"),
+  "font loading="+(document.fonts?.status||"unknown")+
+   " · opt-in title snapshots read visual data only"
+ ]);
  add("CANONICAL CHROME",targets.map(([n,id])=>describe(n,id)));
  const t=one("vnv333NetworkTicker"),a=one("vnvTickerAutoPopulate"),h=one("vnvHeaderAutoPopulate");
  const rr=el=>el?safeRect(el):null;
@@ -157,5 +169,27 @@ window.addEventListener("error",e=>{
  else if(e.message)note("JS ERROR: "+String(e.message).slice(0,140));
 },true);
 window.addEventListener("unhandledrejection",e=>note("PROMISE REJECTION: "+String(e.reason?.message||"unknown").slice(0,130)));
+/* Opt-in title-size monitoring: compare startup, font-ready and subsequent changes.
+   No storage, mutation or remote reporting; only read computed style. */
+let lastTitleSize="";
+function observeTitleSize(origin){
+ const el=document.querySelector("main#main .high-frontdesk-hero h1");
+ if(!el)return;
+ const value=getComputedStyle(el).fontSize;
+ if(value!==lastTitleSize){lastTitleSize=value;note("HERO TITLE "+origin+": "+value)}
+}
+document.addEventListener("DOMContentLoaded",()=>observeTitleSize("DOMContentLoaded"),{once:true});
+window.addEventListener("load",()=>observeTitleSize("window load"),{once:true});
+document.fonts?.ready?.then(()=>observeTitleSize("fonts ready")).catch(()=>{});
+window.addEventListener("resize",()=>observeTitleSize("viewport resize"));
+const titleObserver=new MutationObserver(()=>observeTitleSize("DOM/style change"));
+function watchTitle(){
+ const target=document.querySelector("main#main .high-frontdesk-hero h1");
+ if(target)titleObserver.observe(target,{attributes:true,attributeFilter:["class","style"]});
+ for(const el of document.querySelectorAll('style,link[rel="stylesheet"]'))
+  titleObserver.observe(el,{attributes:true,attributeFilter:["media","disabled","href"]});
+ observeTitleSize("probe started");
+}
+if(document.readyState==="loading")document.addEventListener("DOMContentLoaded",watchTitle,{once:true});else watchTitle();
 window.KhaemenesHighChromeAudit=Object.freeze({version:"2.2.0",snapshot:()=>report(),events:()=>trace.slice(),refresh:()=>refresh()});
 })();
