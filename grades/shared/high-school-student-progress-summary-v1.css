@@ -1,0 +1,59 @@
+/* Khaemenes Academy High School · Class-by-class report under Student Progress.
+ * Grade 09–12 presentation only; grade engines and parent export own calculations.
+ */
+#grade09ClassProgressDialog .khae-student-progress-class-section{
+ width:100%;min-width:0;margin:24px auto 0;padding:24px clamp(15px,2.6vw,29px);
+ border:1px solid #cbbd9f;border-top:3px solid #b8995c;border-radius:7px;
+ background:#fffdf8;color:#27302d;box-sizing:border-box;
+}
+#grade09ClassProgressDialog .khae-student-progress-class-section>h3{
+ font:400 clamp(24px,3vw,33px)/1.3 Cinzel,Georgia,serif;
+ color:#27302d;-webkit-text-fill-color:#27302d;text-align:center;
+ margin:0 auto 12px;
+}
+#grade09ClassProgressDialog .khae-student-progress-note{
+ margin:9px auto 18px;max-width:900px;text-align:center;
+ font:400 16px/1.65 Nunito,Arial,sans-serif;
+ color:#536158;-webkit-text-fill-color:#536158;
+}
+#grade09ClassProgressDialog .khae-student-progress-class-grid{
+ display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:15px;
+ width:100%;min-width:0;margin:20px auto;
+}
+#grade09ClassProgressDialog .khae-student-progress-class-card{
+ display:flex;flex-direction:column;gap:10px;min-width:0;
+ padding:19px;border:1px solid #d3c6a9;border-radius:7px;
+ background:#f7f1e5;color:#27302d;box-shadow:none;
+}
+#grade09ClassProgressDialog .khae-student-progress-subject{
+ font:400 16px/1.5 Nunito,Arial,sans-serif;letter-spacing:.04em;
+ color:#76592e;-webkit-text-fill-color:#76592e;
+}
+#grade09ClassProgressDialog .khae-student-progress-class-card h4{
+ margin:0;overflow-wrap:anywhere;font:400 22px/1.4 Cinzel,Georgia,serif;
+ color:#27302d;-webkit-text-fill-color:#27302d;
+}
+#grade09ClassProgressDialog .khae-student-progress-class-stats{
+ display:grid;grid-template-columns:minmax(0,1fr) minmax(105px,auto);gap:9px 12px;
+ margin:9px 0;color:#27302d;
+}
+#grade09ClassProgressDialog .khae-student-progress-class-stats dt{
+ font:400 16px/1.5 Nunito,Arial,sans-serif;color:#47544b;-webkit-text-fill-color:#47544b;
+}
+#grade09ClassProgressDialog .khae-student-progress-class-stats dd{
+ margin:0;text-align:right;overflow-wrap:anywhere;font:400 17px/1.5 Nunito,Arial,sans-serif;
+ color:#27302d;-webkit-text-fill-color:#27302d;
+}
+#grade09ClassProgressDialog .khae-student-progress-card-state{
+ margin:auto 0 0;font:400 16px/1.5 Nunito,Arial,sans-serif;
+ color:#536158;-webkit-text-fill-color:#536158;
+}
+@media(max-width:760px){
+ #grade09ClassProgressDialog .khae-student-progress-class-grid{grid-template-columns:1fr}
+ #grade09ClassProgressDialog .khae-student-progress-class-section{padding:19px 14px}
+}
+@media(max-width:390px){
+ #grade09ClassProgressDialog .khae-student-progress-class-stats{grid-template-columns:1fr}
+ #grade09ClassProgressDialog .khae-student-progress-class-stats dd{text-align:left;margin-bottom:8px}
+}
+@media print{#grade09ClassProgressDialog .khae-student-progress-class-card{break-inside:avoid}}
