@@ -228,3 +228,17 @@ html:root:root body.ka-science9-readiness :is(.result-panel,.question-panel) .bt
  html:root:root body.ka-science9-readiness .unit-hero h1{font-size:clamp(32px,9vw,44px)!important}
 }
 }
+
+/* Canonical enriched-menu integration (replaces local navigation; full-width header maintained). */
+@media screen {
+html:root:root body.ka-science9-readiness .header-actions [data-vnv-ecosystem-slot]{display:flex!important;align-items:center!important;justify-content:flex-end!important;min-width:49px!important}
+html:root:root body.ka-science9-readiness .header-actions #vnvEcosystemMenuButton{
+ display:grid!important;place-items:center!important;min-width:49px!important;min-height:49px!important;
+ width:49px!important;height:49px!important;padding:9px!important;margin:0!important;
+ border:1px solid #b8995c!important;border-radius:7px!important;background:#202724!important;
+ color:#fff8e9!important;-webkit-text-fill-color:#fff8e9!important;cursor:pointer!important;
+}
+html:root:root body.ka-science9-readiness .header-actions #vnvEcosystemMenuButton .vnv-eco-label{display:none!important}
+html:root:root body.ka-science9-readiness .header-actions #vnvEcosystemMenuButton .vnv-eco-lines{display:block!important;color:#fff8e9!important}
+html:root:root body.ka-science9-readiness .header-actions #vnvEcosystemMenuButton:focus-visible{outline:3px solid #e9c989!important;outline-offset:3px!important}
+}
