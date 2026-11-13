@@ -4399,6 +4399,25 @@ function stats(s){
     done,total:180,midterm:Math.round(mid),final:Math.round(fin),capstone:Math.round(cap),needs
   };
 }
+/* Read-only unit evidence. Never blends lesson/unit self-checks into the central 36-week grade. */
+function unitEvidenceView(){
+ const owner=window.KhaemenesCourseEntryContract?.readAcademyProfile?.()?.learnerId;
+ if(!owner||!window.KhaemenesLearnerScope)return '<div class="card col12"><h3>Individual Unit Evidence</h3><p class="small">Select your Academy learner to view their separately saved unit results. No existing records are changed.</p></div>';
+ const parseRecord=key=>{try{const raw=localStorage.getItem(key);return raw?JSON.parse(raw):null}catch{return null}};
+ const rows=Array.from({length:13},(_,i)=>{
+   const n=String(i+1).padStart(2,"0");
+   const progress=parseRecord("khaemenes-prealgebra-unit"+n+"-progress-v1");
+   const check=parseRecord("khaemenes-prealgebra-u"+n+"-mastery-v1");
+   const scores=Object.values(progress?.lessonBestScores||progress?.lessonScores||{}).filter(v=>Number.isFinite(Number(v))&&Number(v)>=80).length;
+   const attempts=Array.isArray(check?.attempts)?check.attempts:[];
+   const values=[check?.best_percent,check?.percent,...attempts.map(a=>a?.percent)].filter(v=>v!==null&&v!==undefined&&Number.isFinite(Number(v))).map(Number);
+   const best=values.length?Math.max(...values):null;
+   const hasRecord=Boolean(progress||check);
+   return {n,scores,best,hasRecord};
+ });
+ const present=rows.filter(r=>r.hasRecord).length,passed=rows.filter(r=>r.best!==null&&r.best>=80).length;
+ return `<div class="card col12"><h3>Individual Unit Evidence · Read Only</h3><p class="small">Academy learner unit records: ${present} of 13 units have locally saved evidence; ${passed} unit mastery self-checks have best scores at or above 80%. These are separate from the 36-week activity record, practice estimate, and any official grade. Missing records are not scored as zero.</p><div class="table-wrap"><table><thead><tr><th>Unit</th><th>Lesson checks ≥80%</th><th>Unit mastery self-check</th></tr></thead><tbody>${rows.map(r=>`<tr><td><a href="units/unit-${r.n}/">Unit ${r.n}</a></td><td>${r.hasRecord?r.scores:"—"}</td><td>${r.best===null?"Not recorded":r.best+"%"}</td></tr>`).join("")}</tbody></table></div><p class="small">Read-only display: no data is migrated, edited, imported or awarded as official mastery.</p></div>`;
+}
 function readPinnedCourses(){return window.KhaemenesHighCoursePins?.readPins()||[]}
 function courseIsPinned(){return readPinnedCourses().includes(PROFILE_COURSE_ID)}
 function updatePinButton(){const button=$("pinCourseButton");if(!button)return;const ready=!!window.KhaemenesHighCoursePins;const pinned=ready&&courseIsPinned();button.disabled=!ready;button.setAttribute("aria-pressed",String(pinned));button.textContent=!ready?"Pin unavailable":pinned?"★ Pinned to Profile":"☆ Pin to Profile";button.title=!ready?"Course pin storage is temporarily unavailable":pinned?"Remove Pre-Algebra from the student profile":"Pin Pre-Algebra to the student profile"}
@@ -4420,6 +4439,7 @@ function dashboard(){
       <div class="actions"><button type="button" onclick="view='week';render()">Continue Week ${activeWeek}</button><button class="secondary" type="button" onclick="view='overview';render()">Read Course Guide</button><button class="secondary" type="button" onclick="view='tools';render()">Open Tools</button><a class="button secondary" href="records/learner-archive.html?mode=course">Export Student ZIP</a><button class="ghost" type="button" onclick="downloadBackup()">Export Backup</button></div>
     </div>
     <div class="card col4"><h3>Games &amp; Connected Tools</h3><p>Use the Khaemenes Scientific Calculator, built-in mini-tools, visual pattern games, logic practice, and OHMIC CAD without losing your place in the course.</p><div class="actions"><button class="secondary" type="button" data-launch-title="Khaemenes Scientific Calculator" data-launch-url="../tools/calculator">Open Calculator</button><button class="ghost" type="button" onclick="view='games';render()">Browse Games</button></div></div>
+    ${unitEvidenceView()}
     <div class="card col12"><h3>Upcoming Weeks</h3><div class="table-wrap">${scopeTable(APP.weeks.slice(Math.max(0,activeWeek-1),Math.min(APP.weeks.length,activeWeek+5)))}</div></div>
   </div>`;
 }
@@ -4520,7 +4540,7 @@ function capstone(){
 }
 function capstoneTable(s){return(s.progress.capstone.logs||[]).length?`<div class="table-wrap"><table><tr><th>Date</th><th>Stage</th><th>Note</th></tr>${s.progress.capstone.logs.slice().reverse().map(l=>`<tr><td>${new Date(l.date).toLocaleDateString()}</td><td>${esc(l.stage)}</td><td>${esc(l.note)}</td></tr>`).join("")}</table></div>`:`<p class="small">No capstone logs yet.</p>`}
 
-function reports(){let s=student(),st=stats(s);$("content").innerHTML=`<div class="grid"><div class="card kpi"><strong>${st.course||"—"}%</strong><span>Practice Score Estimate</span></div><div class="card kpi"><strong>${st.lessons}%</strong><span>Lesson Completion</span></div><div class="card kpi"><strong>${st.midterm||"—"}</strong><span>Midterm</span></div><div class="card kpi"><strong>${st.final||"—"}</strong><span>Final</span></div><div class="card col12"><span class="pill">Course Records Office</span><h3>A+++ Reports & Administrative Records</h3><p class="section-note">The Academy Family Learning Center is the parent-facing front door. This course Records Office supplies its detailed Pre-Algebra progress, mastery, activity, portfolio, and completion evidence.</p><div class="actions"><a class="button" href="records/">Open Pre-Algebra Records</a><a class="button secondary" href="https://vervenveda.com/Khaemenes_Academy.github.io/family/">Open Family Learning Center</a><a class="button secondary" href="records/course-completion-certificate.html">Course Certificate</a><a class="button secondary" href="records/learner-archive.html?mode=course">Export Student ZIP &amp; Printable Report</a><button class="ghost" type="button" onclick="downloadBackup()">Export Full JSON Backup</button><label class="button secondary">Import JSON Backup <input type="file" accept=".json,application/json" style="display:none" onchange="importBackup(event)"></label></div></div><div class="card col12"><h3>Current Weekly Evidence</h3><div class="table-wrap">${progressTable(s)}</div></div></div>`}
+function reports(){let s=student(),st=stats(s);$("content").innerHTML=`<div class="grid"><div class="card kpi"><strong>${st.course||"—"}%</strong><span>Practice Score Estimate</span></div><div class="card kpi"><strong>${st.lessons}%</strong><span>Lesson Completion</span></div><div class="card kpi"><strong>${st.midterm||"—"}</strong><span>Midterm</span></div><div class="card kpi"><strong>${st.final||"—"}</strong><span>Final</span></div><div class="card col12"><span class="pill">Course Records Office</span><h3>A+++ Reports & Administrative Records</h3><p class="section-note">The Academy Family Learning Center is the parent-facing front door. This course Records Office supplies its detailed Pre-Algebra progress, mastery, activity, portfolio, and completion evidence.</p><div class="actions"><a class="button" href="records/">Open Pre-Algebra Records</a><a class="button secondary" href="https://vervenveda.com/Khaemenes_Academy.github.io/family/">Open Family Learning Center</a><a class="button secondary" href="records/course-completion-certificate.html">Course Certificate</a><a class="button secondary" href="records/learner-archive.html?mode=course">Export Student ZIP &amp; Printable Report</a><button class="ghost" type="button" onclick="downloadBackup()">Export Full JSON Backup</button><label class="button secondary">Import JSON Backup <input type="file" accept=".json,application/json" style="display:none" onchange="importBackup(event)"></label></div></div>${unitEvidenceView()}<div class="card col12"><h3>Current Weekly Evidence</h3><div class="table-wrap">${progressTable(s)}</div></div></div>`}
 function progressTable(s){return`<table><tr><th>Week</th><th>Focus</th><th>Lesson Plan</th><th>Assignments</th><th>Quiz Mastery</th><th>Attempts</th><th>Review Cycles</th></tr>${APP.weeks.map(w=>{let r=weekRec(s,w.week);return`<tr><td>${w.week}</td><td><a href="${esc(unitHref(w))}">${esc(w.title)}</a></td><td>${lessonPct(s,w.week)}%</td><td>${assignPct(s,w.week)}%</td><td>${quizBest(s,w.week)||"—"}</td><td>${r.quiz.attempts.length}</td><td>${r.repeats||0}</td></tr>`}).join("")}</table>`}
 
 function standards(){
