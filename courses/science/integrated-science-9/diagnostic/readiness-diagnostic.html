@@ -3,6 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <script src="readiness-chrome-forensic-probe-v2.js"></script>
   <meta name="theme-color" content="#07131d">
   <meta name="color-scheme" content="dark light">
   <title>Science 9 Readiness Diagnostic · Khaemenes Science 9</title>
@@ -30,18 +31,4 @@
 <script>window.VNV_TICKER?.autoPopulate?.({label:"Science 9 Readiness",max:14});</script>
 <script src="https://vervenveda.com/assets/vnv-ecosystem-toolbar.js" data-vnv-toolbar="official" onload="window.VNVEcosystemToolbar?.mount?.()" onerror="this.onerror=null;this.src='https://vervenveda.github.io/assets/vnv-ecosystem-toolbar.js'"></script>
 
-<!-- Opt-in, read-only chrome inspection: add ?chrome_audit=1 to this page. No learner values read. -->
-<script id="science9-readiness-chrome-audit">
-if(new URLSearchParams(location.search).get("chrome_audit")==="1"){
- window.addEventListener("load",()=>{
-  const id=x=>document.getElementById(x);
-  const visible=x=>!!x&&getComputedStyle(x).display!=="none"&&getComputedStyle(x).visibility!=="hidden"&&x.getBoundingClientRect().width>0;
-  const names=["vnv333NetworkTicker","vnvTickerAutoPopulate","vnvEcosystemMenuButton","vnvEcosystemMenuOverlay","vnvEcosystemUtilityDock"];
-  const report=Object.fromEntries(names.map(n=>{const elements=document.querySelectorAll("#"+n);return[n,{count:elements.length,visible:visible(elements[0])}]}));
-  report.legacyFloating=document.querySelectorAll("#khaemenesLearnerUtilityToolbar,#khaeLandingUtilityDock,#khaemenesHomeUtilityDock,#vnvBetaProgramLink").length;
-  report.headerCount=document.querySelectorAll("body > .site-header").length;
-  console.info("Science 9 Readiness Chrome Audit (read-only)",report);
- },{once:true});
-}
-</script>
 </body></html>
