@@ -36,7 +36,7 @@ test("Shared grid never modifies assessment or learner record owners",()=>{
  assert.doesNotMatch(source,/localStorage\.setItem|sessionStorage\.setItem|\.publish\(|\.updateLearnerGrade\(|\.grantAdultAccess\(/);
  assert.match(source,/KhaemenesLearningContinuation\?\.readLearner/);
  assert.match(source,/KhaemenesCourseEntryContract\?\.readAcademyProfile/);
- assert.match(source,/progress\.percent/);
+ assert.match(source,/progress\?\.percent/);
  assert.match(source,/assessments/);
  assert.match(source,/Not reported/);
  assert.match(source,/Stale report/);
