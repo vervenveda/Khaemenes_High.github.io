@@ -56,3 +56,35 @@ body.ka-science9-unit00 .unit-hero{background:#f4f0e7!important}
  body.ka-science9-unit00 :is(.day-grid,.task-grid,.requirement-grid){grid-template-columns:1fr}
 }
 }
+
+/* Four Student Setup & Verification action buttons.
+   Specificity intentionally beats the late-loaded science-theme and parchment
+   overrides without modifying cards, toolbar, or assessment controls. */
+@media screen {
+html:root:root body.ka-science9-unit00 main .task-grid .task-card > a.btn,
+html:root:root body.ka-science9-unit00 main .task-grid .task-card > a.btn.primary {
+ display:inline-flex!important;
+ align-items:center!important;
+ justify-content:center!important;
+ min-height:48px!important;
+ padding:11px 18px!important;
+ border:1px solid #b8995c!important;
+ border-radius:7px!important;
+ background:#202724!important;
+ background-image:none!important;
+ color:#fff8e9!important;
+ -webkit-text-fill-color:#fff8e9!important;
+ font:400 16px/1.45 Nunito,"Brandon Grotesque",Arial,sans-serif!important;
+ text-align:center!important;
+ text-decoration:none!important;
+ opacity:1!important;
+}
+html:root:root body.ka-science9-unit00 main .task-grid .task-card > a.btn:is(:hover,:focus-visible),
+html:root:root body.ka-science9-unit00 main .task-grid .task-card > a.btn.primary:is(:hover,:focus-visible) {
+ background:#34463c!important;
+ background-image:none!important;
+ color:#fff8e9!important;
+ -webkit-text-fill-color:#fff8e9!important;
+ border-color:#b8995c!important;
+}
+}
