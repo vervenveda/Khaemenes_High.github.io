@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Student Learning Archive · Pre-Algebra · Khaemenes Academy</title>
+<meta name="description" content="Student-owned full Pre-Algebra ZIP backup: structured JSON, printable Academy report, and evidence provenance.">
+<style>
+:root{color-scheme:light;--ink:#27302d;--cream:#f7f1e5;--charcoal:#272c2b;--gold:#b8995c}
+*{box-sizing:border-box}body{margin:0;background:var(--cream);color:var(--ink);font-family:"Brandon Grotesque",Nunito,Arial,sans-serif;font-size:18px;line-height:1.65}
+header,footer{background:var(--charcoal);color:#fff8eb;text-align:center;padding:24px}
+header h1{font-family:Cinzel,Georgia,serif;font-size:33px;font-weight:400;margin:4px auto}header p{margin:0}main{max-width:980px;margin:26px auto;padding:0 20px 50px}
+h2{font-family:Cinzel,Georgia,serif;font-weight:400;font-size:24px}section{background:#fffdf8;border:1px solid #d5c7a8;border-radius:7px;padding:23px;margin:18px 0}
+label{display:block;margin:12px 0 4px}select,button,a.action{font:inherit;font-size:16px;min-height:46px;border-radius:7px;padding:10px 14px}
+select{width:100%;max-width:500px;border:1px solid #817d74;background:#fff}
+button,a.action{border:1px solid var(--charcoal);background:var(--charcoal);color:#fff8eb;cursor:pointer;display:inline-flex;text-decoration:none;align-items:center;justify-content:center}
+button:disabled{opacity:.5;cursor:not-allowed}.actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:15px}
+.notice{border-left:4px solid var(--gold);padding:12px 14px;background:#f8f0de}
+#archiveStatus{min-height:24px}footer a{color:#fff8eb}small{font-size:16px}
+@media print{header,footer,.actions,select,label{display:none!important}main{padding:0;margin:0}section{border:0;padding:4px}body{background:#fff}}
+</style></head><body>
+<header><p>STUDENT RECORDS · VERVE N VEDA</p><h1>Khaemenes Academy</h1><p>Pre-Algebra · Student Learning Archive</p></header>
+<main><section><h2>Protect your learning journey</h2><p>Download one ZIP for the selected student. It contains JSON course evidence, a printable Academy report, a file manifest and integrity checks for later T03 migration.</p><p class="notice"><strong>Privacy:</strong> This is a browser-local export. It never uploads grades or records. Your ZIP may contain sensitive student information—store it securely. ZIP files are not encrypted.</p>
+<label for="archiveLearner">Select your Pre-Algebra learner record</label><select id="archiveLearner"></select><p id="archiveIdentity" class="notice"></p>
+<div class="actions"><button id="downloadArchive" type="button">Export Full Student ZIP</button><button id="printArchive" type="button">Print VNV &amp; Academy Report</button><a class="action" href="../?view=reports">Back to Course Records</a></div><p id="archiveStatus" role="status" aria-live="polite"></p></section>
+<section><h2>Inside the archive</h2><p><strong>Course:</strong> 36-week progress, assignments, quizzes, tests, and capstone entries stored for the selected course learner.</p><p><strong>Units:</strong> versioned unit records and lesson work are included only where learner ownership can be established. Browser-global legacy scores are reported as unassigned—not silently assigned to a child.</p><p><strong>Activities:</strong> saved learner-specific game/video event evidence where available. Merely opening a video or game is never reported as having watched or completed it.</p><p><strong>Restore:</strong> The ZIP format is prepared for future T03 import; it is not itself a verified transcript or authorized restore receipt.</p></section>
+<section id="archiveReport" aria-label="Printable student report"><h2>Report preview</h2><p>Select a student to prepare the report.</p></section></main>
+<footer>Khaemenes Academy · Sovereign Learning Records · <a href="../">Return to Pre-Algebra</a></footer>
+<script src="learner-archive-v1.js"></script></body></html>
