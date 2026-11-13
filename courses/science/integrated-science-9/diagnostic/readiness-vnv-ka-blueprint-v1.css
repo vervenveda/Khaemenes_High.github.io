@@ -120,3 +120,111 @@ html:root:root body.ka-science9-readiness :is(button,a,input):focus-visible {out
  body.ka-science9-readiness .site-header,body.ka-science9-readiness .science-unit-nav,body.ka-science9-readiness .unit-nav,body.ka-science9-readiness .app-nav {display:none!important}
  body.ka-science9-readiness .result-panel {color:#27302d!important;background:white!important}
 }
+
+/* Readiness layout certification v2 — spacious, fluid, full-viewport institutional frame.
+   Scoped to diagnostic only. No changes to scoring, learner state, or routing. */
+@media screen {
+html:root:root body.ka-science9-readiness{
+ min-height:100dvh!important;display:flex!important;flex-direction:column!important;
+ background:#f4f0e7!important;color:#202724!important;
+ font-size:18px!important;line-height:1.7!important;
+}
+html:root:root body.ka-science9-readiness main{flex:1 0 auto!important;width:100%!important;min-width:0!important}
+html:root:root body.ka-science9-readiness .site-header{
+ width:100%!important;max-width:none!important;margin:0!important;
+ padding:0!important;background:#202724!important;border-top:3px solid #b8995c!important;border-bottom:1px solid #b8995c!important;
+}
+html:root:root body.ka-science9-readiness .site-header .header-inner{
+ width:100%!important;max-width:none!important;margin:0!important;
+ padding:12px clamp(16px,3vw,55px)!important;min-height:88px!important;
+ display:flex!important;align-items:center!important;justify-content:space-between!important;
+ gap:16px!important;
+}
+html:root:root body.ka-science9-readiness .site-header .brand{min-width:0!important;flex:1 1 auto!important;color:#fff8e9!important}
+html:root:root body.ka-science9-readiness .site-header .brand-copy strong{
+ font:400 clamp(18px,2vw,24px)/1.3 Cinzel,Georgia,serif!important;
+ color:#fff8e9!important;-webkit-text-fill-color:#fff8e9!important;
+}
+html:root:root body.ka-science9-readiness .site-header .brand-copy small{
+ display:block!important;color:#e9c989!important;-webkit-text-fill-color:#e9c989!important;
+ font:400 16px/1.35 Nunito,Arial,sans-serif!important;
+}
+html:root:root body.ka-science9-readiness .site-header .brand-mark{
+ flex:0 0 49px!important;width:49px!important;height:49px!important;
+ background:#b8995c!important;color:#202724!important;-webkit-text-fill-color:#202724!important;
+}
+html:root:root body.ka-science9-readiness .header-actions{margin-left:auto!important;flex:0 0 auto!important;gap:10px!important}
+html:root:root body.ka-science9-readiness .science-unit-nav>summary,
+html:root:root body.ka-science9-readiness .header-actions .icon-button{
+ min-width:49px!important;min-height:49px!important;
+ background:#202724!important;color:#fff8e9!important;-webkit-text-fill-color:#fff8e9!important;
+ border:1px solid #b8995c!important;border-radius:7px!important;
+}
+html:root:root body.ka-science9-readiness .science-unit-nav .science-unit-links{z-index:11000!important;right:0!important}
+html:root:root body.ka-science9-readiness .course-breadcrumb{width:100%!important;padding:4px 16px!important}
+html:root:root body.ka-science9-readiness .course-breadcrumb .wrap{
+ width:100%!important;max-width:1500px!important;justify-content:center!important;
+}
+html:root:root body.ka-science9-readiness .unit-hero{
+ padding:clamp(35px,6vh,90px) 0 clamp(40px,7vh,105px)!important;
+}
+html:root:root body.ka-science9-readiness .unit-hero>.unit-shell{
+ width:min(calc(100% - clamp(28px,6vw,110px)),1440px)!important;
+ max-width:1440px!important;margin:0 auto!important;
+ padding:clamp(34px,5vw,82px) clamp(20px,5vw,90px)!important;
+ background:#202724!important;border-color:#b8995c!important;
+}
+html:root:root body.ka-science9-readiness .unit-hero .academy-eyebrow{
+ font:400 33px/1.35 Cinzel,Georgia,serif!important;
+ color:#e9c989!important;-webkit-text-fill-color:#e9c989!important;
+ margin:0 auto 17px!important;
+}
+html:root:root body.ka-science9-readiness .unit-hero .eyebrow{
+ font:400 18px/1.5 Nunito,Arial,sans-serif!important;
+ color:#e9c989!important;-webkit-text-fill-color:#e9c989!important;
+ margin:0 auto 22px!important;
+}
+html:root:root body.ka-science9-readiness .unit-hero h1{
+ font:400 clamp(36px,5.5vw,66px)/1.16 Cinzel,Georgia,serif!important;
+ color:#fff8e9!important;-webkit-text-fill-color:#fff8e9!important;
+ margin:0 auto 27px!important;max-width:1100px!important;
+}
+html:root:root body.ka-science9-readiness .unit-hero .unit-lead{
+ max-width:880px!important;margin:0 auto!important;font-size:18px!important;line-height:1.85!important;
+ color:#fff8e9!important;-webkit-text-fill-color:#fff8e9!important;
+}
+html:root:root body.ka-science9-readiness .unit-hero .unit-nav{
+ margin:35px auto 0!important;gap:14px!important;max-width:700px!important;
+}
+html:root:root body.ka-science9-readiness .btn,
+html:root:root body.ka-science9-readiness .unit-nav .btn,
+html:root:root body.ka-science9-readiness .app-nav .btn{
+ color:#fff8e9!important;-webkit-text-fill-color:#fff8e9!important;
+ background:#303c35!important;border:1px solid #b8995c!important;
+ box-shadow:none!important;font:400 16px/1.4 Nunito,Arial,sans-serif!important;
+ min-height:50px!important;min-width:160px!important;border-radius:7px!important;
+ text-align:center!important;opacity:1!important;
+}
+html:root:root body.ka-science9-readiness .btn:is(:hover,:focus-visible),
+html:root:root body.ka-science9-readiness .unit-nav .btn:is(:hover,:focus-visible){
+ background:#42604d!important;color:#fff8e9!important;-webkit-text-fill-color:#fff8e9!important;
+}
+html:root:root body.ka-science9-readiness .btn:disabled{
+ opacity:.55!important;cursor:not-allowed!important;
+}
+html:root:root body.ka-science9-readiness .footer{
+ width:100%!important;margin-top:auto!important;padding:27px 0!important;background:#202724!important;
+ color:#fff8e9!important;
+}
+html:root:root body.ka-science9-readiness .footer-inner{color:#fff8e9!important;line-height:1.6!important}
+html:root:root body.ka-science9-readiness :is(.result-panel,.question-panel) .btn{color:#fff8e9!important;-webkit-text-fill-color:#fff8e9!important}
+@media(max-width:650px){
+ html:root:root body.ka-science9-readiness .site-header .header-inner{padding:12px 14px!important;min-height:77px!important}
+ html:root:root body.ka-science9-readiness .site-header .brand-copy strong{font-size:16px!important}
+ html:root:root body.ka-science9-readiness .site-header .brand-copy small{font-size:16px!important}
+ html:root:root body.ka-science9-readiness .unit-hero>.unit-shell{width:calc(100% - 24px)!important;padding:36px 19px!important}
+ html:root:root body.ka-science9-readiness .unit-hero{padding:24px 0 42px!important}
+ html:root:root body.ka-science9-readiness .unit-hero .academy-eyebrow{font-size:27px!important}
+ html:root:root body.ka-science9-readiness .unit-hero h1{font-size:clamp(32px,9vw,44px)!important}
+}
+}
