@@ -781,6 +781,53 @@ html:root:root body :is(.actions,.results-actions){justify-content:center}
 html:root:root body footer.footer{font-size:18px!important}
 @media print{html:root:root body{font-size:16px!important;background:#fff!important;color:#111!important}html:root:root body .hero{background:#fff!important;color:#111!important}}
 </style>
+<style id="ka-prealgebra-assessments-type-audit-v2">
+/* Forensic page typography and layout. Presentation only; preserves assessments and local records. */
+html:root:root body #main{font-family:"Brandon Grotesque",Nunito,"Avenir Next",Arial,sans-serif;font-size:18px;line-height:1.65;color:#202724}
+html:root:root body #main :is(p,li,dt,dd,span,small,label,button,a,summary,input,select,textarea){font-size:max(16px,1em);line-height:1.55}
+html:root:root body #main .hero{min-height:0!important;padding:66px 24px!important;background:#202724!important;color:#fff8e9!important}
+html:root:root body #main .hero .eyebrow{font:400 clamp(24px,3vw,33px)/1.32 Cinzel,Georgia,serif!important;color:#fff8e9!important;letter-spacing:.035em!important;text-transform:none!important}
+html:root:root body #main .hero h1{font:400 clamp(40px,6vw,66px)/1.14 Cinzel,Georgia,serif!important;color:#fff8e9!important;letter-spacing:0!important;max-width:1100px}
+html:root:root body #main .hero .lead{font-size:18px!important;color:#fff8e9!important;line-height:1.7!important}
+html:root:root body #main .math-signature span{font:400 16px/1.5 "Brandon Grotesque",Nunito,Arial,sans-serif!important;background:#f7f1e5!important;color:#202724!important;border-color:#b6a88e!important;white-space:normal;text-align:center}
+html:root:root body #main section:not(.hero){padding:clamp(33px,5vw,66px) 0}
+html:root:root body #main .wrap{width:min(1120px,calc(100% - 36px));margin-inline:auto}
+html:root:root body #main .section-head{max-width:940px;margin:0 auto 33px;text-align:center}
+html:root:root body #main .section-head .eyebrow{font:400 24px/1.4 Cinzel,Georgia,serif!important;color:#514638!important;letter-spacing:.025em!important;text-transform:none!important}
+html:root:root body #main .section-head h2{font:400 clamp(30px,4.2vw,44px)/1.22 Cinzel,Georgia,serif!important;letter-spacing:0!important;color:#202724}
+html:root:root body #main .section-head p{font-size:18px!important;color:#393d37!important;line-height:1.65!important}
+html:root:root body #main .landing-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+html:root:root body #main .landing-card{min-height:310px;padding:clamp(24px,3vw,33px);background:#fffdf7!important;color:#202724!important;border:1px solid #c6bca9;border-radius:7px;justify-content:center}
+html:root:root body #main .landing-card .eyebrow{font:400 18px/1.45 Cinzel,Georgia,serif!important;color:#534b3f!important;letter-spacing:.025em!important;text-transform:none!important;text-align:left!important}
+html:root:root body #main .landing-card h2{font:400 clamp(28px,3.1vw,33px)/1.2 Cinzel,Georgia,serif!important;letter-spacing:0!important;color:#202724!important}
+html:root:root body #main .landing-card p:not(.eyebrow){font-size:18px!important;line-height:1.65!important;color:#393d37!important;margin-top:14px}
+html:root:root body #main .landing-card .card-link{font:400 16px/1.4 "Brandon Grotesque",Nunito,Arial,sans-serif!important;color:#202724!important;letter-spacing:.03em!important;margin-top:22px}
+html:root:root body #main .landing-card::before{opacity:.35;pointer-events:none}
+html:root:root body #main .pathway-grid{grid-template-columns:repeat(4,minmax(0,1fr));gap:14px}
+html:root:root body #main .pathway-card{background:#fffdf7!important;color:#202724;padding:24px;border-color:#c6bca9}
+html:root:root body #main .pathway-card::before{font:400 18px/1.4 Cinzel,Georgia,serif!important;background:#202724!important;color:#fff8e9!important}
+html:root:root body #main .pathway-card h3{font:400 clamp(24px,2.6vw,33px)/1.25 Cinzel,Georgia,serif!important;color:#202724}
+html:root:root body #main .pathway-card p{font-size:18px!important;line-height:1.65!important;color:#393d37!important}
+html:root:root body #main :is(.evidence-checklist,.evidence-summary,.standard-card){background:#fffdf7!important;color:#202724!important;border-color:#c6bca9}
+html:root:root body #main :is(.checklist-head h3,.evidence-summary h3,.standard-card h3){font:400 clamp(26px,3vw,33px)/1.25 Cinzel,Georgia,serif!important;color:#202724}
+html:root:root body #main :is(.checklist-progress span,.evidence-item small,.evidence-summary dt){font-size:16px!important;line-height:1.5!important}
+html:root:root body #main .evidence-item{grid-template-columns:30px minmax(0,1fr);background:#f7f1e5;border-color:#c6bca9}
+html:root:root body #main .evidence-item input{width:22px;height:22px}
+html:root:root body #main .evidence-item :is(strong,small){color:#202724!important}
+html:root:root body #main .checklist-progress{min-width:110px;background:#202724;color:#fff8e9}
+html:root:root body #main .checklist-progress span{color:#fff8e9!important}
+html:root:root body #main :is(.btn,button){font-size:16px!important;min-height:44px;text-align:center;border-radius:7px}
+html:root:root body #main :is(.btn.primary,button.primary){background:#202724!important;color:#fff8e9!important}
+html:root:root body .course-breadcrumb .wrap,html:root:root body .course-breadcrumb :is(a,span),html:root:root body .assessment-nav a{font-size:16px!important;line-height:1.5!important}
+html:root:root body .assessment-nav{position:static;z-index:auto}
+html:root:root body .assessment-nav .wrap{flex-wrap:wrap;justify-content:center;overflow:visible;gap:7px}
+html:root:root body footer.footer .footer-inner{justify-content:center;align-items:center;text-align:center;font-size:16px!important;line-height:1.6}
+html:root:root body footer.footer .footer-links{justify-content:center}
+html:root:root body footer.footer :is(span,a){font-size:16px!important}
+@media(max-width:900px){html:root:root body #main .pathway-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:720px){html:root:root body #main .landing-grid,html:root:root body #main .pathway-grid{grid-template-columns:1fr}html:root:root body #main .landing-card{min-height:0}html:root:root body #main .hero{padding:44px 18px!important}html:root:root body #main .wrap{width:min(100% - 28px,1120px)}}
+@media print{html:root:root body #main .hero{display:none!important}html:root:root body #main :is(p,li,small,span,label,dt,dd){font-size:16px!important;color:#111!important}html:root:root body #main :is(.landing-card,.pathway-card,.evidence-checklist,.evidence-summary){background:#fff!important;color:#111!important;box-shadow:none!important;break-inside:avoid}}
+</style>
 </head>
 
 <body>
@@ -788,7 +835,7 @@ html:root:root body footer.footer{font-size:18px!important}
 
   <header class="site-header">
     <div class="wrap header-inner">
-      <a class="brand" href="https://vervenveda.github.io/Khaemenes_High.github.io/" rel="home" aria-label="Khaemenes High School home">
+      <a class="brand" href="https://vervenveda.com/Khaemenes_High.github.io/" rel="home" aria-label="Khaemenes High School home">
         <span class="brand-mark" aria-hidden="true">✓</span>
         <span class="brand-copy">
           <strong>KHAEMENES HIGH · MATHEMATICS</strong>
@@ -797,11 +844,11 @@ html:root:root body footer.footer{font-size:18px!important}
       </a>
 
       <nav class="campus-nav" aria-label="High school navigation">
-        <a href="https://vervenveda.github.io/Khaemenes_High.github.io/">High School</a>
-        <a href="https://vervenveda.github.io/Khaemenes_High.github.io/grades/grade-09/">Open-Age</a>
-        <a href="https://vervenveda.github.io/Khaemenes_High.github.io/courses/mathematics/pre-algebra/">Pre-Algebra</a>
-        <a href="https://vervenveda.github.io/Khaemenes_High.github.io/courses/mathematics/pre-algebra/diagnostic/">Diagnostic</a>
-        <a href="https://vervenveda.github.io/Khaemenes_High.github.io/courses/mathematics/pre-algebra/assessments/" aria-current="page">Assessments</a>
+        <a href="https://vervenveda.com/Khaemenes_High.github.io/">High School</a>
+        <a href="https://vervenveda.com/Khaemenes_High.github.io/grades/grade-09/">Open-Age</a>
+        <a href="https://vervenveda.com/Khaemenes_High.github.io/courses/mathematics/pre-algebra/">Pre-Algebra</a>
+        <a href="https://vervenveda.com/Khaemenes_High.github.io/courses/mathematics/pre-algebra/diagnostic/">Diagnostic</a>
+        <a href="https://vervenveda.com/Khaemenes_High.github.io/courses/mathematics/pre-algebra/assessments/" aria-current="page">Assessments</a>
       </nav>
 
       <div class="header-actions">
@@ -813,11 +860,11 @@ html:root:root body footer.footer{font-size:18px!important}
 
   <nav class="course-breadcrumb" aria-label="Course breadcrumb">
     <div class="wrap">
-      <a href="https://vervenveda.github.io/Khaemenes_High.github.io/">Khaemenes High</a>
+      <a href="https://vervenveda.com/Khaemenes_High.github.io/">Khaemenes High</a>
       <span aria-hidden="true">›</span>
-      <a href="https://vervenveda.github.io/Khaemenes_High.github.io/grades/grade-09/">Open-Age</a>
+      <a href="https://vervenveda.com/Khaemenes_High.github.io/grades/grade-09/">Open-Age</a>
       <span aria-hidden="true">›</span>
-      <a href="https://vervenveda.github.io/Khaemenes_High.github.io/courses/mathematics/pre-algebra/">Pre-Algebra</a>
+      <a href="https://vervenveda.com/Khaemenes_High.github.io/courses/mathematics/pre-algebra/">Pre-Algebra</a>
       <span aria-hidden="true">›</span>
       <span aria-current="page">Assessments & Completion Records</span>
     </div>
@@ -1075,7 +1122,7 @@ html:root:root body footer.footer{font-size:18px!important}
     <div class="wrap footer-inner">
       <span>KH-MATH-PA-ASSESSMENTS · Parent-directed · Local-only data</span>
       <nav class="footer-links" aria-label="Assessment footer navigation">
-        <a href="https://vervenveda.github.io/Khaemenes_High.github.io/courses/mathematics/pre-algebra/">Pre-Algebra</a>
+        <a href="https://vervenveda.com/Khaemenes_High.github.io/courses/mathematics/pre-algebra/">Pre-Algebra</a>
         <a href="midterm-units-01-07.html">Midterm</a>
         <a href="final-exam-36-weeks.html">Final</a>
         <a href="../records/course-completion-certificate.html">Certificate</a>
@@ -1197,7 +1244,7 @@ html:root:root body footer.footer{font-size:18px!important}
 <script src="https://vervenveda.com/assets/vnv-333-ticker.js"></script>
 <script src="https://vervenveda.com/assets/vnv-ticker-autopopulate.js" data-vnv-ticker-autopopulate></script>
 <script src="https://vervenveda.com/assets/vnv-header-autopopulate.js"></script>
-<script>(function(){"use strict";if(!window.VNV_HEADER?.mount)return;window.VNV_HEADER.mount({replaceLegacy:true,title:"Assessments & Completion",subtitle:"Khaemenes Academy · Pre-Algebra",icon:"K",home:"https://vervenveda.com/Khaemenes_Academy.github.io/",actions:[{"label":"COURSE","href":"https://vervenveda.com/Khaemenes_High.github.io/courses/mathematics/pre-algebra/"},{"label":"READINESS","href":"https://vervenveda.com/Khaemenes_High.github.io/courses/mathematics/pre-algebra/diagnostic/"},{"label":"ASSESSMENTS","href":"https://vervenveda.com/Khaemenes_High.github.io/courses/mathematics/pre-algebra/assessments/"},{"label":"RECORDS","href":"https://vervenveda.com/Khaemenes_High.github.io/courses/mathematics/pre-algebra/records/"}]});})();</script>
+<script>(function(){"use strict";if(!window.VNV_HEADER?.mount)return;const tone=document.getElementById("themeToggle"),crumb=document.querySelector(".course-breadcrumb .wrap");if(tone&&crumb){crumb.appendChild(tone);tone.setAttribute("aria-label","Switch paper tone");}window.VNV_HEADER.mount({replaceLegacy:true,title:"Assessments & Completion",subtitle:"Khaemenes Academy · Pre-Algebra",icon:"K",home:"https://vervenveda.com/Khaemenes_Academy.github.io/",actions:[{"label":"COURSE","href":"https://vervenveda.com/Khaemenes_High.github.io/courses/mathematics/pre-algebra/"},{"label":"READINESS","href":"https://vervenveda.com/Khaemenes_High.github.io/courses/mathematics/pre-algebra/diagnostic/"},{"label":"ASSESSMENTS","href":"https://vervenveda.com/Khaemenes_High.github.io/courses/mathematics/pre-algebra/assessments/"},{"label":"RECORDS","href":"https://vervenveda.com/Khaemenes_High.github.io/courses/mathematics/pre-algebra/records/"}]});})();</script>
 <script src="https://vervenveda.com/assets/vnv-ecosystem-toolbar.js" data-official-vnv-ecosystem-toolbar="true"></script>
 </body>
 </html>
