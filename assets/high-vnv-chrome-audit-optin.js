@@ -27,7 +27,7 @@ const describe=(name,id)=>{
  }).join("\n");
 };
 function report(){
- const lines=["HIGH SCHOOL / VNV FORENSIC REPORT v2.2.0","Read-only DOM and layout metadata. No learner data."];
+ const lines=["HIGH SCHOOL / VNV FORENSIC REPORT v2.4.0","Read-only DOM and layout metadata. No learner data."];
  const add=(head,parts)=>{lines.push("\n["+head+"]",...parts)};
  const root=document.documentElement,body=document.body;
  add("VIEWPORT & OVERFLOW",[
@@ -84,7 +84,12 @@ function report(){
  add("TRANSLATOR & LANGUAGE WIRING",[
   "language script tags="+translationScripts.length+" · filenames="+(translationScripts.map(s=>(s.getAttribute("src")||"").split("/").pop().split("?")[0]).join(", ")||"none"),
   "language-related DOM elements="+translationEls.length+" · ids/classes="+(translationEls.map(el=>el.id||String(el.className).split(/\s+/).slice(0,2).join(".")).join(", ")||"none"),
-  "language rail missing does not alone prove translation failure"
+  "interface switch="+(one("vnv-language-switch")?"PRESENT":"MISSING")+
+   " · language select="+(one("vnv-language-select")?"PRESENT":"MISSING")+
+   " · language engine="+(typeof window.VNVLanguage?.getLanguage==="function"?"PRESENT":"MISSING")+
+   " · active code="+(typeof window.VNVLanguage?.getLanguage==="function"?window.VNVLanguage.getLanguage():"unavailable"),
+  "legacy rail ID is not used by this language implementation; absence is expected",
+  "translation quality is not established by presence checks"
  ]);
  const scripts=[...document.scripts].filter(s=>s.src).map(s=>(s.getAttribute("src")||"").split("/").pop().split("?")[0]);
  const tally=Object.entries(scripts.reduce((o,s)=>(o[s]=(o[s]||0)+1,o),{})).filter(([,n])=>n>1).map(([s,n])=>s+" ×"+n);
@@ -107,10 +112,23 @@ function report(){
   const el=document.querySelector(selector);if(!el)return name+": MISSING";
   const children=[...el.children].filter(x=>cs(x).display!=="none"&&!x.hidden);
   const xs=[...new Set(children.map(x=>Math.round(x.getBoundingClientRect().top)))];
+  const libraryIdle=name==="Library"&&children.length===0&&
+    one("category")?.value==="all"&&!one("search")?.value?.trim()&&
+    one("favorites")?.getAttribute("aria-pressed")!=="true";
   return name+": visible cards="+children.length+" · visual rows="+xs.length+" · row distribution="+
    (xs.map(y=>children.filter(x=>Math.abs(x.getBoundingClientRect().top-y)<3).length).join("/")||"empty")+
-   " · columns="+cs(el).gridTemplateColumns.slice(0,90);
+   " · columns="+cs(el).gridTemplateColumns.slice(0,90)+
+   (libraryIdle?" · IDLE BY DESIGN: choose category or search; not missing content":"");
  }));
+ add("RESOURCE DIRECTORY STATE",[
+  "grid="+(one("toolGrid")?"PRESENT":"MISSING")+
+   " · category="+(one("category")?.value??"missing")+
+   " · search empty="+(!one("search")?.value?.trim())+
+   " · shelf only="+(one("favorites")?.getAttribute("aria-pressed")??"missing"),
+  "directory status="+(one("status")?.textContent?.trim().slice(0,260)||"missing"),
+  "empty notice visible="+Boolean(one("empty")?.classList.contains("show")),
+  "zero cards are expected before first category/search/shelf action, but no live resource link availability test is performed"
+ ]);
  const broken=[...document.querySelectorAll('a[href^="#"]')].filter(el=>{
   const dest=el.getAttribute("href");const dialogId=el.getAttribute("aria-controls");return dest&&dest.length>1&&!document.getElementById(dest.slice(1))&&!(dialogId&&document.getElementById(dialogId));
  }).slice(0,16).map(el=>el.getAttribute("href"));
