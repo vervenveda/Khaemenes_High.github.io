@@ -6,23 +6,24 @@ const COURSE="KHAE_OPEN_PREALGEBRA_FORGE_V2", BIND="khaemenes-prealgebra-family-
 const $=id=>document.getElementById(id), esc=v=>String(v??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
 const read=k=>{try{return JSON.parse(localStorage.getItem(k)||"null")}catch{return null}};
 const status=message=>{$("archiveStatus").textContent=message};
-const params=new URLSearchParams(location.search),isParent=params.get("mode")==="parent";
+const params=new URLSearchParams(location.search),isParent=params.get("mode")==="parent",isStudent=params.get("mode")==="student";
 const R=window.KhaemenesFamilyRegistry;
 const active=R?.activeIds?.()||{}, familyId=params.get("learnerId")||active.learnerId||"";
 let familyLearner=null,adult=null,authorized=!isParent;
 if(familyId&&R?.getLearner){familyLearner=R.getLearner(familyId)||null;}
+if(isStudent)authorized=!!familyLearner;
 if(isParent){
  adult=R?.getAdult?.(active.adultId)||null;
  authorized=!!(adult&&familyLearner&&familyLearner.familyId&&R?.canAdult?.(adult.adultId,familyId,"progress.view"));
 }
 const root=read(COURSE),allStudents=Array.isArray(root?.students)?root.students.filter(s=>s&&typeof s.id==="string"&&s.id&&s.progress&&typeof s.progress==="object"):[];
 const currentBinding=familyId?read(BIND+familyId):null;
-const students=!authorized?[]:isParent?allStudents:familyLearner?(currentBinding?.courseLearnerId?allStudents.filter(s=>s.id===currentBinding.courseLearnerId):[]):allStudents;
+const students=!authorized?[]:isParent?allStudents:(isStudent||familyLearner)?(currentBinding?.courseLearnerId?allStudents.filter(s=>s.id===currentBinding.courseLearnerId):[]):allStudents;
 const select=$("archiveLearner");
 function savedBinding(){return familyId?read(BIND+familyId):null}
 function entitled(s){
  if(!s||!authorized)return false;
- if(!isParent)return !familyLearner||(savedBinding()?.familyLearnerId===familyId&&savedBinding()?.courseLearnerId===s.id);
+ if(!isParent)return !(isStudent||familyLearner)||(savedBinding()?.familyLearnerId===familyId&&savedBinding()?.courseLearnerId===s.id);
  const binding=savedBinding();
  return binding?.familyLearnerId===familyId&&binding?.courseLearnerId===s.id;
 }
