@@ -12,59 +12,6 @@
   <script src="unit00.js" defer></script>
   <script src="readiness-app.js" defer></script>
   <script src="readiness-routing.js" defer></script>
-<style id="khaemenes-typography-standard">
-/* Khaemenes High presentation typography · 55 / 33 / 24 / 14 px.
-   All public pages receive this local, embedded policy for offline use.
-   Only presentation changes. Existing grids, gates, learner records, assessments and STOS are preserved.
-   Font names are optional installed system fonts; no downloads or third-party font services. */
-html:root:root body {
-  font-family: "Brandon Grotesque", "Avenir Next", Avenir, "Segoe UI", Arial, sans-serif !important;
-  font-size: 14px !important;
-  font-weight: 400 !important;
-  line-height: 1.65 !important;
-  -webkit-text-size-adjust: 100%;
-  overflow-wrap: break-word;
-}
-html:root:root body :is(button, input, select, textarea) {
-  font-family: "Brandon Grotesque", "Avenir Next", Avenir, "Segoe UI", Arial, sans-serif !important;
-}
-html:root:root body :is(h1, h2, h3, h4, h5, h6, .page-title, .hero-title, .brand-title, .display-title, .site-title) {
-  font-family: Cinzel, "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif !important;
-  font-weight: 400 !important;
-  overflow-wrap: anywhere;
-}
-html:root:root body :is(.eyebrow, .kicker, .dialog-eyebrow, .dialog-kicker, .worksheet-kicker) {
-  font-family: Cinzel, "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif !important;
-  font-size: 55px !important;
-  font-weight: 400 !important;
-  line-height: 1.15 !important;
-  letter-spacing: .02em !important;
-  white-space: normal !important;
-  overflow-wrap: anywhere;
-}
-html:root:root body h1 {
-  font-size: 33px !important;
-  line-height: 1.2 !important;
-  white-space: normal !important;
-  overflow-wrap: anywhere;
-}
-html:root:root body h2,
-html:root:root body :is(.subtitle, .hero-subtitle, .hero-sub, .academy-comment),
-html:root:root body .hero .comment {
-  font-size: 24px !important;
-  line-height: 1.35 !important;
-  white-space: normal !important;
-  overflow-wrap: anywhere;
-}
-/* Do not replace responsive grids or fixed elements; prevent oversized titles from
-   demanding horizontal scrolling on narrow phone and tablet displays. */
-html:root:root body :is(.hero, .header, .page-header, .section-head, .lesson-header) {
-  min-width: 0;
-}
-@media print {
-  html:root:root body { font-size: 14px !important; }
-}
-</style>
 <link rel="stylesheet" href="readiness-vnv-ka-blueprint-v1.css" data-ka-blueprint="science9-readiness">
 </head>
 <body class="ka-science9-readiness">
@@ -82,4 +29,19 @@ html:root:root body :is(.hero, .header, .page-header, .section-head, .lesson-hea
 <script src="https://vervenveda.com/assets/vnv-ticker-autopopulate.js" data-vnv-ticker-autopopulate></script>
 <script>window.VNV_TICKER?.autoPopulate?.({label:"Science 9 Readiness",max:14});</script>
 <script src="https://vervenveda.com/assets/vnv-ecosystem-toolbar.js" data-vnv-toolbar="official" onload="window.VNVEcosystemToolbar?.mount?.()" onerror="this.onerror=null;this.src='https://vervenveda.github.io/assets/vnv-ecosystem-toolbar.js'"></script>
+
+<!-- Opt-in, read-only chrome inspection: add ?chrome_audit=1 to this page. No learner values read. -->
+<script id="science9-readiness-chrome-audit">
+if(new URLSearchParams(location.search).get("chrome_audit")==="1"){
+ window.addEventListener("load",()=>{
+  const id=x=>document.getElementById(x);
+  const visible=x=>!!x&&getComputedStyle(x).display!=="none"&&getComputedStyle(x).visibility!=="hidden"&&x.getBoundingClientRect().width>0;
+  const names=["vnv333NetworkTicker","vnvTickerAutoPopulate","vnvEcosystemMenuButton","vnvEcosystemMenuOverlay","vnvEcosystemUtilityDock"];
+  const report=Object.fromEntries(names.map(n=>{const elements=document.querySelectorAll("#"+n);return[n,{count:elements.length,visible:visible(elements[0])}]}));
+  report.legacyFloating=document.querySelectorAll("#khaemenesLearnerUtilityToolbar,#khaeLandingUtilityDock,#khaemenesHomeUtilityDock,#vnvBetaProgramLink").length;
+  report.headerCount=document.querySelectorAll("body > .site-header").length;
+  console.info("Science 9 Readiness Chrome Audit (read-only)",report);
+ },{once:true});
+}
+</script>
 </body></html>
