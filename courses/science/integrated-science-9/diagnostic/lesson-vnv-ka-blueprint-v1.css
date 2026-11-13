@@ -183,3 +183,43 @@ html:root:root body.ka-science9-lesson .footer :is(span,a){
  body.ka-science9-lesson .lesson-page{width:100%!important;max-width:none!important;margin:0!important;border:0!important;box-shadow:none!important}
  body.ka-science9-lesson .lesson-section{break-inside:avoid}
 }
+
+/* Unit 00 editable student evidence workspace: shared across five lessons. */
+@media screen {
+html:root:root body.ka-science9-lesson .ka-science-workspace{
+ display:grid;gap:10px;margin:20px 0 0;padding:17px;
+ border:1px solid #cdbf9f;border-radius:7px;background:#fffdf8;
+}
+html:root:root body.ka-science9-lesson .ka-science-workspace label{
+ font:400 18px/1.5 Nunito,Arial,sans-serif!important;color:#27302d!important;
+}
+html:root:root body.ka-science9-lesson .ka-science-workspace textarea{
+ display:block;width:100%;min-height:185px;padding:14px;
+ resize:vertical;border:1px solid #b8995c;border-radius:7px;
+ background:#fffdf8;color:#27302d;
+ font:400 18px/1.75 Nunito,Arial,sans-serif;
+}
+html:root:root body.ka-science9-lesson .ka-science-workspace-actions{
+ display:flex;flex-wrap:wrap;gap:10px;
+}
+html:root:root body.ka-science9-lesson .ka-science-workspace-actions button{
+ padding:10px 18px;min-height:48px;border:1px solid #b8995c!important;
+ border-radius:7px;background:#202724!important;color:#fff8e9!important;
+ font:400 16px/1.4 Nunito,Arial,sans-serif;
+}
+html:root:root body.ka-science9-lesson .ka-science-workspace-status{
+ font:400 16px/1.55 Nunito,Arial,sans-serif!important;color:#47544b!important;
+ margin:0!important;
+}
+html:root:root body.ka-science9-lesson .ka-science-workspace + .ka-response-print-lines{display:none}
+}
+@media print {
+body.ka-science9-lesson .ka-science-workspace{display:block;break-inside:avoid}
+body.ka-science9-lesson .ka-science-workspace textarea{
+ display:block;min-height:140px;width:100%;border:1px solid #777;
+ color:#111;background:white;font-size:12pt;
+}
+body.ka-science9-lesson .ka-science-workspace-actions,
+body.ka-science9-lesson .ka-science-workspace-status{display:none!important}
+body.ka-science9-lesson .ka-response-print-lines{display:none!important}
+}
