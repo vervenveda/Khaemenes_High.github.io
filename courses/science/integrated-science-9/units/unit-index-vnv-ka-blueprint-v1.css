@@ -10,6 +10,33 @@ html:root:root body.ka-science-unit-index{
  background:#f4f0e7!important;color:#27302d!important;
  font:400 18px/1.7 "Brandon Grotesque",Nunito,Arial,sans-serif!important;
 }
+/* CANONICAL HEADER FOREGROUND GUARD — prevent dark-on-dark typography
+   when delayed science-theme.css competes with the official header. */
+html:root:root body.ka-science-unit-index #vnvHeaderAutoPopulate{
+ width:100%!important;max-width:none!important;margin:0!important;
+ background:#202724!important;color:#fff8e9!important;-webkit-text-fill-color:#fff8e9!important;
+ border-top:3px solid #b8995c!important;border-bottom:1px solid #b8995c!important;
+}
+html:root:root body.ka-science-unit-index #vnvHeaderAutoPopulate .vnv-header-inner{
+ width:100%!important;max-width:none!important;min-height:82px!important;
+ padding:11px clamp(16px,3vw,55px)!important;
+}
+html:root:root body.ka-science-unit-index #vnvHeaderAutoPopulate .vnv-header-logo{
+ background:#b8995c!important;color:#202724!important;-webkit-text-fill-color:#202724!important;
+ border:1px solid #b8995c!important;font-size:24px!important;
+}
+html:root:root body.ka-science-unit-index #vnvHeaderAutoPopulate .vnv-header-title{
+ color:#fff8e9!important;-webkit-text-fill-color:#fff8e9!important;
+ font:400 clamp(18px,2vw,24px)/1.3 Cinzel,Georgia,serif!important;
+}
+html:root:root body.ka-science-unit-index #vnvHeaderAutoPopulate .vnv-header-subtitle{
+ color:#e9c989!important;-webkit-text-fill-color:#e9c989!important;font-size:16px!important;
+}
+html:root:root body.ka-science-unit-index #vnvHeaderAutoPopulate .vnv-header-menu-button{
+ background:#202724!important;color:#fff8e9!important;-webkit-text-fill-color:#fff8e9!important;
+ border:1px solid #b8995c!important;border-radius:7px!important;
+ min-width:44px!important;min-height:44px!important;
+}
 html:root:root body.ka-science-unit-index .course-breadcrumb{
  border-bottom:1px solid #cdbf9f!important;background:#f4f0e7!important;
  padding:7px 12px!important;
