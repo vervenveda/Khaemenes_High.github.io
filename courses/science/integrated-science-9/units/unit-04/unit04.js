@@ -66,8 +66,8 @@
     probability: {complete:false},
     variation: {complete:false},
     case: {submitted:false,title:""},
-    quiz: {passed:false,score:0,total:20,attempts:0},
-    assessment: {passed:false,score:0,total:30,attempts:0},
+    quiz: {passed:false,score:0,total:15,attempts:0},
+    assessment: {passed:false,score:0,total:25,attempts:0},
     reflection: {complete:false,text:""}
   };
   const $ = (s,p=document) => p.querySelector(s);
@@ -140,8 +140,8 @@
       state.variation.complete
     ].filter(Boolean).length} of 4`;
     $("#recordCase").textContent = state.case.submitted ? "Submitted" : "Not submitted";
-    $("#recordQuiz").textContent = `${state.quiz.score || 0} of 20${state.quiz.passed ? " · Passed" : ""}`;
-    $("#recordAssessment").textContent = `${state.assessment.score || 0} of 30${state.assessment.passed ? " · Passed" : ""}`;
+    $("#recordQuiz").textContent = `${state.quiz.score || 0} of ${state.quiz.total || 15}${state.quiz.passed && Number(state.quiz.score) / Number(state.quiz.total || 15) >= 0.8 ? " · Passed" : ""}`;
+    $("#recordAssessment").textContent = `${state.assessment.score || 0} of ${state.assessment.total || 25}${state.assessment.passed && Number(state.assessment.score) / Number(state.assessment.total || 25) >= 0.8 ? " · Passed" : ""}`;
     $("#recordReflection").textContent = state.reflection.complete ? "Recorded" : "Not recorded";
     $("#recordReflectionText").textContent = state.reflection.text || "No reflection recorded.";
   }
