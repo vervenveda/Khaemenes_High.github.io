@@ -816,7 +816,28 @@ html:root:root body main #whole-student .whole-card>a{min-height:60px!important;
 </style><style id="high-closing-heading-hierarchy-20261101">
 html:root:root body main>.section.final .section-inner>h2{font-size:44px!important;line-height:1.16!important;font-family:var(--ceremonial)!important;color:#243038!important}
 html:root:root body main>.section.final .section-inner>.kicker{font-size:16px!important;line-height:1.5!important;letter-spacing:.055em!important;text-transform:none!important;color:#6b5031!important;margin:0 auto 12px!important}
-</style></head>
+</style><style id="high-school-hero-title-authority-v1">
+/* High School hero size authority. Approved large title with controlled fluid scaling.
+   Targets ONLY the main landing hero; no grade/course headings or shared header. */
+html:root:root body[data-khae-campus-front-desk="true"] main#main .high-frontdesk-hero h1 {
+ font-family:Cinzel,Georgia,serif!important;
+ font-weight:400!important;
+ font-size:clamp(55px,6vw,72px)!important;
+ line-height:1.14!important;
+ letter-spacing:.005em!important;
+ max-width:min(100%,1050px)!important;
+ margin:13px auto 5px!important;
+ text-align:center!important;
+ color:#fff8e9!important;-webkit-text-fill-color:#fff8e9!important;
+ text-wrap:balance;
+}
+@media(max-width:600px){
+ html:root:root body[data-khae-campus-front-desk="true"] main#main .high-frontdesk-hero h1{
+  font-size:clamp(43px,10vw,55px)!important;
+ }
+}
+</style>
+</head>
 <body id="top" data-khae-campus-front-desk="true">
 
 <a class="skip-link" href="#main">Skip to main content</a>
