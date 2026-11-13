@@ -145,12 +145,26 @@ html:root:root body :is(.hero, .header, .page-header, .section-head, .lesson-hea
 </style>
 <script defer src="../../../assets/academy-unified-print-header.js"></script><link rel="stylesheet" href="../../../assets/high-navigation-v1.css" data-high-navigation-css>
 <script defer src="https://vervenveda.com/assets/vnv-ecosystem-toolbar.js" data-official-vnv-ecosystem-toolbar="true"></script>
+<link rel="stylesheet" href="science9-vnv-ka-blueprint-v1.css" data-ka-blueprint="science9-v1">
 </head>
-<body data-science9-require-entry>
+<body data-science9-require-entry class="ka-science9-blueprint">
 <a class="grade9-skip-link" href="#content">Skip to student science workspace</a>
 <div class="app">
+
+<main class="main">
+<div class="topline noPrint">
+<div class="crumbs"><a href="https://vervenveda.com/Khaemenes_Academy.github.io/">Khaemenes Academy</a><span>›</span><a href="https://vervenveda.com/Khaemenes_High.github.io/">High School</a><span>›</span><a href="https://vervenveda.com/Khaemenes_High.github.io/courses/science/integrated-science-9/">Integrated Science 9</a><span>›</span><span>Grade 09 Portal</span></div>
+<button class="secondary" id="themeBtn" type="button" aria-pressed="false" title="Toggle high contrast parchment">Higher contrast</button>
+</div>
+<section class="hero">
+<p class="academy-eyebrow">Khaemenes Academy</p>
+<h1>Integrated Science 9</h1>
+<p><strong>Life, Matter, Energy and Earth Systems.</strong> This self-contained classroom combines a complete 36-week integrated curriculum, Foundation/Core/Extended pathways, phenomenon-based instruction, safe investigations, data and graph tools, CER writing, generated mastery checks, formal assessment links, reports, and local backups.</p>
+<p class="small">Student work is stored locally in this browser. Export a backup regularly. Public student navigation does not expose answer keys.</p>
+<div class="heroLinks noPrint"><a class="button secondary" href="https://vervenveda.com/Khaemenes_High.github.io/courses/science/integrated-science-9/">Complete Course Hall</a><a class="button ghost" href="https://vervenveda.com/Khaemenes_High.github.io/courses/science/integrated-science-9/diagnostic/">Safety &amp; Diagnostic</a><a class="button secondary" href="https://vervenveda.com/Khaemenes_High.github.io/courses/science/integrated-science-9/assessments/">Assessment Center</a></div>
+</section>
 <aside class="sidebar">
-<div class="brand"><div class="seal">S9</div><div><h1>Integrated Science 9</h1><p>36 Week Student Portal</p></div></div>
+<div class="brand"><div class="seal">K</div><div><h2>Integrated Science 9</h2><p>36 Week Student Portal</p></div></div>
 <div class="sideBox">
 <label for="studentSelect">Active student</label><select id="studentSelect"></select>
 <div class="inline" style="margin-top:8px"><input aria-label="New student name" id="studentName" placeholder="New student name"/><button id="addStudentBtn">Add</button></div>
@@ -163,19 +177,9 @@ html:root:root body :is(.hero, .header, .page-header, .section-head, .lesson-hea
 <button class="navBtn" data-view="assessments">Assessments</button><button class="navBtn" data-view="reports">Reports</button>
 <button class="navBtn" data-view="standards">Course Charter &amp; Mastery</button>
 </nav>
-<div class="sideBox"><h3>Weeks</h3><div class="weekList" id="weekList"></div></div>
+<details class="sideBox science-week-drawer"><summary>Browse All 36 Weeks</summary><div class="weekList" id="weekList"></div></details>
 </aside>
-<main class="main">
-<div class="topline noPrint">
-<div class="crumbs"><a href="https://vervenveda.com/Khaemenes_Academy.github.io/">Khaemenes Academy</a><span>›</span><a href="https://vervenveda.com/Khaemenes_High.github.io/">High School</a><span>›</span><a href="https://vervenveda.com/Khaemenes_High.github.io/courses/science/integrated-science-9/">Integrated Science 9</a><span>›</span><span>Grade 09 Portal</span></div>
-<button class="secondary" id="themeBtn" type="button" aria-pressed="false" title="Toggle high contrast parchment">Higher contrast</button>
-</div>
-<section class="hero">
-<h2>Integrated Science 9</h2>
-<p><strong>Life, Matter, Energy and Earth Systems.</strong> This self-contained classroom combines a complete 36-week integrated curriculum, Foundation/Core/Extended pathways, phenomenon-based instruction, safe investigations, data and graph tools, CER writing, generated mastery checks, formal assessment links, reports, and local backups.</p>
-<p class="small">Student work is stored locally in this browser. Export a backup regularly. Public student navigation does not expose answer keys.</p>
-<div class="heroLinks noPrint"><a class="button secondary" href="https://vervenveda.com/Khaemenes_High.github.io/courses/science/integrated-science-9/">Complete Course Hall</a><a class="button ghost" href="https://vervenveda.com/Khaemenes_High.github.io/courses/science/integrated-science-9/diagnostic/">Safety &amp; Diagnostic</a><a class="button secondary" href="https://vervenveda.com/Khaemenes_High.github.io/courses/science/integrated-science-9/assessments/">Assessment Center</a></div>
-</section>
+
 <div class="ticker"><div class="tickerTrack"><span>Observe before interpreting</span><span>Safety before materials and procedures</span><span>Use SI units and record uncertainty</span><span>Distinguish evidence, models, inference and worldview</span><span>Correct work and reassess essential outcomes</span><span>Life · Matter · Energy · Earth Systems · Engineering</span><span>Observe before interpreting</span><span>Safety before materials and procedures</span><span>Use SI units and record uncertainty</span><span>Distinguish evidence, models, inference and worldview</span><span>Correct work and reassess essential outcomes</span><span>Life · Matter · Energy · Earth Systems · Engineering</span></div></div>
 <nav class="tabs noPrint" aria-label="Science 9 workspace tabs"><button class="tab active" data-view="dashboard">Dashboard</button><button class="tab" data-view="week">Lessons</button><button class="tab" data-view="scope">Scope</button><button class="tab" data-view="lab">Lab</button><button class="tab" data-view="assessments">Tests</button><button class="tab" data-view="reports">Reports</button><button class="tab" data-view="standards">Mastery</button></nav>
 <section id="content" tabindex="-1" aria-label="Student science workspace"></section>
