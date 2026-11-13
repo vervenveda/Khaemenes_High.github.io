@@ -1,0 +1,32 @@
+name: Science 9 Unit 09 Blueprint Integrity
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'courses/science/integrated-science-9/units/unit-09/index.html'
+      - 'courses/science/integrated-science-9/units/unit-09/unit09-vnv-ka-blueprint-v1.css'
+      - 'courses/science/integrated-science-9/units/unit-09/unit09.js'
+      - 'tests/science9-unit09-blueprint.test.cjs'
+      - '.github/workflows/science9-unit09-blueprint.yml'
+  pull_request:
+    paths:
+      - 'courses/science/integrated-science-9/units/unit-09/index.html'
+      - 'courses/science/integrated-science-9/units/unit-09/unit09-vnv-ka-blueprint-v1.css'
+      - 'courses/science/integrated-science-9/units/unit-09/unit09.js'
+      - 'tests/science9-unit09-blueprint.test.cjs'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Verify Science 9 Unit 09 layout, waves labs and academic mastery
+        run: node tests/science9-unit09-blueprint.test.cjs
