@@ -94,7 +94,7 @@
     const key=button.dataset.progressKey;
     const on=Boolean(progress[key]);
     button.setAttribute("aria-pressed",String(on));
-    const prepared=button.dataset.evidenceOnly==="true" || button.dataset.progressKey.startsWith("week-") && Boolean(document.querySelector('[data-save-field*="-day-"]'));
+    const prepared=button.dataset.evidenceOnly==="true" || key.startsWith("week-");
     button.textContent=on?(prepared?"Evidence prepared ✓":"Completed ✓"):(prepared?"Mark Evidence Prepared":"Mark Complete");
     button.addEventListener("click",()=>{
       progress[key]=!progress[key];save(progress);
@@ -110,7 +110,7 @@
     const total=36,done=Array.from({length:36},(_,i)=>progress[`week-${String(i+1).padStart(2,"0")}`]).filter(Boolean).length;
     const pct=Math.round(done/total*100);
     if(bar)bar.style.width=`${pct}%`;
-    if(label)label.textContent=`${done} of ${total} weeks complete · ${pct}%`;
+    if(label)label.textContent=`${done} of ${total} weeks with evidence prepared · ${pct}% · not an official mastery grade`;
   }
   updateProgress();
 
