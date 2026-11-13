@@ -1,0 +1,30 @@
+name: Science 9 Landing Blueprint Integrity
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'courses/science/integrated-science-9/index.html'
+      - 'courses/science/integrated-science-9/science9-vnv-ka-blueprint-v1.css'
+      - 'tests/science9-landing-blueprint.test.cjs'
+      - '.github/workflows/science9-landing-blueprint.yml'
+  pull_request:
+    paths:
+      - 'courses/science/integrated-science-9/index.html'
+      - 'courses/science/integrated-science-9/science9-vnv-ka-blueprint-v1.css'
+      - 'tests/science9-landing-blueprint.test.cjs'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Check centered Science 9 blueprint and preserved course engine
+        run: node tests/science9-landing-blueprint.test.cjs
