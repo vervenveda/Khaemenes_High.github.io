@@ -7,7 +7,6 @@ html:root:root body[data-science-department="v1"]{
  --science-muted:#536158;--science-gold:#b8995c;--science-line:#d8cebb;
  background:#f4f0e7!important;color:#27302d!important;
  font:400 18px/1.7 "Brandon Grotesque",Nunito,"Avenir Next",Arial,sans-serif!important;
- -webkit-text-fill-color:#27302d;
 }
 html:root:root body[data-science-department="v1"] .science-department-content{
  width:min(calc(100% - 44px),1120px)!important;margin:0 auto!important;
