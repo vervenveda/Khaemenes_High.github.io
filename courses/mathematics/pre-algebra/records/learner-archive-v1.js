@@ -15,12 +15,14 @@ if(isParent){
  adult=R?.getAdult?.(active.adultId)||null;
  authorized=!!(adult&&familyLearner&&familyLearner.familyId&&R?.canAdult?.(adult.adultId,familyId,"progress.view"));
 }
-const root=read(COURSE),students=Array.isArray(root?.students)?root.students.filter(s=>s&&typeof s.id==="string"&&s.id&&s.progress&&typeof s.progress==="object"):[];
+const root=read(COURSE),allStudents=Array.isArray(root?.students)?root.students.filter(s=>s&&typeof s.id==="string"&&s.id&&s.progress&&typeof s.progress==="object"):[];
+const currentBinding=familyId?read(BIND+familyId):null;
+const students=!authorized?[]:isParent?allStudents:familyLearner?(currentBinding?.courseLearnerId?allStudents.filter(s=>s.id===currentBinding.courseLearnerId):[]):allStudents;
 const select=$("archiveLearner");
 function savedBinding(){return familyId?read(BIND+familyId):null}
 function entitled(s){
  if(!s||!authorized)return false;
- if(!isParent)return true;
+ if(!isParent)return !familyLearner||(savedBinding()?.familyLearnerId===familyId&&savedBinding()?.courseLearnerId===s.id);
  const binding=savedBinding();
  return binding?.familyLearnerId===familyId&&binding?.courseLearnerId===s.id;
 }
@@ -49,7 +51,7 @@ function refreshIdentity(){
  if(bound&&s)$("archiveReport").innerHTML=reportHTML(s);
  else $("archiveReport").innerHTML="<h2>Report preview</h2><p>No report is available until learner selection and authorization are complete.</p>";
 }
-if(!students.length)status("No Pre-Algebra student record exists in this browser. Open the course dashboard first.");
+if(!students.length)status(!authorized?"Parent access not authorized on this browser.":familyLearner&&!isParent?"Your family learner is not yet linked to a course record. An authorized family adult can link it from the Parent Portal.":"No Pre-Algebra student record exists in this browser. Open the course dashboard first.");
 students.forEach(s=>{const o=document.createElement("option");o.value=s.id;o.textContent=s.name||"Unnamed course learner";select.appendChild(o)});
 const binding=savedBinding(),preferred=isParent?binding?.courseLearnerId:root?.activeId;
 if(preferred&&students.some(s=>s.id===preferred))select.value=preferred;
