@@ -44,7 +44,7 @@ if(!document.getElementById("khaeProfileToolRail")){
  };
  const tools=[
   {label:"Edit Profile",href:"profile/"},
-  {label:"Class Progress",target:"grade09ClassProgressDialog",fallback:"#studentCourseProgress",run:()=>{
+  {label:"Student Progress",target:"grade09ClassProgressDialog",fallback:"#studentCourseProgress",run:()=>{
     const popup=document.getElementById("grade09ClassProgressDialog");
     if(popup&&!popup.open){popup.showModal();return true}
     if(!popup)return reveal("studentCourseProgress");
@@ -86,7 +86,7 @@ if(!document.getElementById("khaeProfileToolRail")){
    }}
  ];
  // Priority row: daily student controls. Bottom row: personal creation controls.
- const order=["Schedule","Class Progress","Student Portfolio","KlasaiPeer","Edit Profile","Edit Background","Yearbook","Creative Tools"];
+ const order=["Schedule","Student Progress","Student Portfolio","KlasaiPeer","Edit Profile","Edit Background","Yearbook","Creative Tools"];
  tools.sort((a,b)=>order.indexOf(a.label)-order.indexOf(b.label));
  for(const tool of tools){
   const item=document.createElement(tool.href?"a":"button");
