@@ -49,26 +49,26 @@
     const sans="'Brandon Grotesque','Avenir Next','Segoe UI',Arial,sans-serif";
     const ink="#20241f";
     const gate=make("section",null,
-      "position:fixed!important;inset:0!important;z-index:2147483000!important;box-sizing:border-box!important;display:flex!important;align-items:center!important;justify-content:center!important;padding:clamp(14px,4vw,32px)!important;overflow:auto!important;background:#eee9df!important;color:#20241f!important;",
+      "position:fixed!important;inset:0!important;z-index:2147483000!important;box-sizing:border-box!important;display:flex!important;align-items:center!important;justify-content:center!important;padding:clamp(14px,4vw,32px)!important;overflow:auto!important;background:rgba(28,31,29,.68)!important;backdrop-filter:blur(3px);color:#27302d!important;",
       "science9EntryGate");
     gate.setAttribute("role","dialog");
     gate.setAttribute("aria-modal","true");
     gate.setAttribute("aria-labelledby","science9EntryTitle");
     gate.setAttribute("aria-describedby","science9EntryDescription");
     const card=make("article",null,
-      "box-sizing:border-box!important;width:min(100%,720px)!important;margin:auto!important;padding:clamp(20px,4vw,40px)!important;border:2px solid #b9aa90!important;border-top:7px solid #1e534c!important;border-radius:11px!important;background:#fffdf7!important;color:#20241f!important;box-shadow:0 16px 46px rgba(36,39,34,.13)!important;font:400 17px/1.6 "+sans+"!important;");
+      "box-sizing:border-box!important;width:min(100%,640px)!important;margin:auto!important;padding:clamp(20px,4vw,40px)!important;border:2px solid #baa477!important;border-top:5px solid #baa477!important;border-radius:7px!important;background:#f7f1e5!important;color:#27302d!important;box-shadow:0 20px 45px rgba(0,0,0,.28)!important;font:400 18px/1.65 "+sans+"!important;");
     const eyebrow=make("p","KHAEMENES ACADEMY · INTEGRATED SCIENCE 9",
-      "color:#39453f!important;font:400 13px/1.5 "+sans+"!important;letter-spacing:.08em!important;margin:0 0 12px!important;");
+      "color:#76592e!important;font:400 16px/1.5 "+sans+"!important;letter-spacing:.08em!important;margin:0 0 12px!important;");
     const heading=make("h1",result.title,
-      "color:#20241f!important;font:400 clamp(25px,4vw,35px)/1.25 Cinzel,Georgia,serif!important;letter-spacing:0!important;margin:0 0 16px!important;","science9EntryTitle");
+      "color:#27302d!important;font:400 clamp(28px,4vw,33px)/1.3 Cinzel,Georgia,serif!important;letter-spacing:0!important;margin:0 0 16px!important;","science9EntryTitle");
     const summary=make("p",result.message,
-      "color:#20241f!important;font:400 17px/1.65 "+sans+"!important;margin:0 0 18px!important;","science9EntryDescription");
+      "color:#27302d!important;font:400 18px/1.65 "+sans+"!important;margin:0 0 18px!important;","science9EntryDescription");
     const instructions=make("div",null,
-      "padding:18px 20px!important;margin-bottom:22px!important;background:#f3efe6!important;color:#20241f!important;border:1px solid #c7bdab!important;border-radius:7px!important;");
+      "padding:18px 20px!important;margin-bottom:22px!important;background:#fffdf8!important;color:#27302d!important;border:1px solid #cdbf9f!important;border-radius:7px!important;");
     const stepsHeader=make("h2",learnerMissing?"How to enter your classroom":"What to do next",
-      "color:#20241f!important;font:400 21px/1.35 Cinzel,Georgia,serif!important;margin:0 0 10px!important;");
+      "color:#27302d!important;font:400 24px/1.35 Cinzel,Georgia,serif!important;margin:0 0 10px!important;");
     const ordered=make("ol",null,
-      "color:#20241f!important;padding-left:24px!important;margin:0!important;font:400 16px/1.6 "+sans+"!important;");
+      "color:#27302d!important;padding-left:24px!important;margin:0!important;font:400 16px/1.6 "+sans+"!important;");
     const steps=learnerMissing?[
       "Open the Student Portal using the button below.",
       "Select your existing learner. Do not create another account.",
@@ -79,12 +79,12 @@
       "Return to Integrated Science 9 when ready."
     ];
     steps.forEach(s=>ordered.append(make("li",s,
-      "color:#20241f!important;font:400 16px/1.6 "+sans+"!important;margin:6px 0!important;")));
+      "color:#27302d!important;font:400 16px/1.6 "+sans+"!important;margin:6px 0!important;")));
     instructions.append(stepsHeader,ordered);
     const actionRow=make("nav",null,"display:flex!important;flex-wrap:wrap!important;gap:10px!important;margin-bottom:15px!important;");
     actionRow.setAttribute("aria-label","Science 9 entrance actions");
     function action(href,label,primary){
-      const link=make("a",label,"box-sizing:border-box!important;display:inline-flex!important;align-items:center!important;justify-content:center!important;min-height:48px!important;padding:12px 15px!important;border:2px solid "+(primary?"#173e37":"#737d76")+"!important;border-radius:7px!important;background:"+(primary?"#173e37":"#fffdf7")+"!important;color:"+(primary?"#ffffff":ink)+"!important;text-decoration:none!important;font:600 15px/1.3 "+sans+"!important;text-align:center!important;white-space:normal!important;");
+      const link=make("a",label,"box-sizing:border-box!important;display:inline-flex!important;align-items:center!important;justify-content:center!important;min-height:48px!important;padding:12px 15px!important;border:2px solid "+(primary?"#292f2c":"#857459")+"!important;border-radius:7px!important;background:"+(primary?"#292f2c":"#fffdf8")+"!important;color:"+(primary?"#fff8eb":ink)+"!important;text-decoration:none!important;font:400 16px/1.4 "+sans+"!important;text-align:center!important;white-space:normal!important;");
       link.href=href;
       return link;
     }
@@ -95,7 +95,7 @@
     const note=make("p",learnerMissing
       ?"Already enrolled? This page does not erase or reset your work. If your student is missing, try the Chrome profile where the learner was originally set up, or check the Family Learning Center. Do not create a duplicate profile."
       :"Your existing student records and readiness evidence remain unchanged; this screen does not award mastery.",
-      "color:#39453f!important;font:400 14px/1.55 "+sans+"!important;margin:0!important;");
+      "color:#27302d!important;font:400 16px/1.55 "+sans+"!important;margin:0!important;");
     card.append(eyebrow,heading,summary,instructions,actionRow,note);
     gate.append(card);
     document.querySelectorAll("body > :not(script)").forEach(node=>{node.inert=true;});
