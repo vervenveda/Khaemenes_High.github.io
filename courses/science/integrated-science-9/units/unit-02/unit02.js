@@ -82,7 +82,7 @@
   function syncRoot(){const r=rootState(),set=new Set(Array.isArray(r.completedUnits)?r.completedUnits:[]),isComplete=complete();if(isComplete)set.add("u02");else set.delete("u02");const courseSequenceComplete=["u00","u01","u02","u03","u04","u05","u06","u07","u08","u09","u10","u11","u12"].every(id=>set.has(id));localStorage.setItem(ROOT_KEY,JSON.stringify({...r,pathway:r.pathway||"Core",completedUnits:[...set],notes:r.notes&&typeof r.notes==="object"?r.notes:{},lastVisitedUnit:prerequisiteMet()?"u02":(r.lastVisitedUnit||"u01"),courseSequenceComplete,updatedAt:new Date().toISOString()}))}
   let scienceLastSeen=localStorage.getItem(KEY),scienceConflict=false;
   window.addEventListener("storage",event=>{if(event.key===KEY&&event.newValue!==scienceLastSeen){scienceConflict=true;window.alert("This learner's Unit 02 record changed in another tab. Reload before saving to protect newer work.");}});
-  function save(){if(!prerequisiteMet()){showPrerequisiteGate()();return}
+  function save(){if(!prerequisiteMet()){showPrerequisiteGate();return}
     if(scienceConflict||localStorage.getItem(KEY)!==scienceLastSeen){scienceConflict=true;window.alert("Unit 02 has newer saved work from another tab. Reload before saving.");return}
     state.updatedAt=new Date().toISOString();const serialized=JSON.stringify(state);
     localStorage.setItem(KEY,serialized);scienceLastSeen=serialized;syncRoot();update()}
