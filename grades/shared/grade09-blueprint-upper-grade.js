@@ -265,7 +265,7 @@ function renderTools(){
  if(grid.querySelector("[data-upper-grade-link]"))return;
  const actions=[
   {label:"Edit Profile",url:builder},
-  {label:"Class Progress",run:showUpperProgress},
+  {label:"Student Progress",run:showUpperProgress},
   {label:"Schedule",run:showUpperSchedule},
   {label:"KlasaiPeer",fallback:"https://vervenveda.com/Klasaipeer.github.io/",run:()=>{const studio=window.KhaemenesUpperGradeStudyStudio;if(studio?.open){studio.open(document.activeElement);return true}return false}},
   {label:"Yearbook",fallback:"https://vervenveda.com/Academy-Yearbook.github.io/",run:()=>{const yearbook=window.KhaemenesUpperGradeYearbook;if(yearbook?.open){yearbook.open(document.activeElement);return true}return false}},
@@ -277,7 +277,7 @@ function renderTools(){
   }}
  ];
  // One 4 × 2 vocabulary for all high-school grades; preserve each action handler.
- const order=["Schedule","Class Progress","Student Portfolio","KlasaiPeer","Edit Profile","Edit Background","Yearbook","Creative Tools"];
+ const order=["Schedule","Student Progress","Student Portfolio","KlasaiPeer","Edit Profile","Edit Background","Yearbook","Creative Tools"];
  actions.sort((a,b)=>order.indexOf(a.label)-order.indexOf(b.label));
  for(const action of actions){
   const item=make(action.url?"a":"button",action.label);
@@ -292,7 +292,7 @@ function renderTools(){
    item.type="button";
    item.addEventListener("click",()=>{
     // Progress is read-only. The dialog itself enforces registered-grade privacy.
-    if(action.label==="Class Progress"){action.run();return;}
+    if(action.label==="Student Progress"){action.run();return;}
     const ctx=gradeContext();
     if(action.label!=="KlasaiPeer"&&(!ctx||ctx.gradeNumber!==Number(grade))){
      if(ctx?.grade&&["11","12"].includes(grade)){
