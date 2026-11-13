@@ -1,0 +1,32 @@
+name: Science 9 Unit 10 Blueprint Integrity
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'courses/science/integrated-science-9/units/unit-10/index.html'
+      - 'courses/science/integrated-science-9/units/unit-10/unit10-vnv-ka-blueprint-v1.css'
+      - 'courses/science/integrated-science-9/units/unit-10/unit10.js'
+      - 'tests/science9-unit10-blueprint.test.cjs'
+      - '.github/workflows/science9-unit10-blueprint.yml'
+  pull_request:
+    paths:
+      - 'courses/science/integrated-science-9/units/unit-10/index.html'
+      - 'courses/science/integrated-science-9/units/unit-10/unit10-vnv-ka-blueprint-v1.css'
+      - 'courses/science/integrated-science-9/units/unit-10/unit10.js'
+      - 'tests/science9-unit10-blueprint.test.cjs'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Verify Science 9 Unit 10 Earth Systems and Academy blueprint
+        run: node tests/science9-unit10-blueprint.test.cjs
