@@ -474,7 +474,7 @@ function nextOfficialWeek(){
 function renderDashboard(){
   const learner=window.KhaemenesEnglish9Records?.profile?.name||activeStudent()?.name||"Learner";
   const n=nextOfficialWeek(),week=OFFICIAL_WEEKS[n-1],unit=Math.ceil(n/3);
-  $("content").innerHTML=`<article class="card next-task"><p class="small">Welcome, ${esc(learner)}</p><p class="pill">Week ${n} · Unit ${unit}</p><h3>${esc(week.title)}</h3><p>Open the weekly lesson. Start with the reading and first activity, then save your response before moving on.</p><div class="actions"><a class="courseLink primary-link" href="weeks/week-${String(n).padStart(2,"0")}/index.html">Open Week ${n} Lesson</a></div><p class="small">This is the first week not marked complete or evidence prepared. Your evaluator confirms mastery.</p></article><nav class="home-actions" aria-label="Other student tasks"><button class="secondary" onclick="currentView='course';renderAll()">Choose a different week</button><a href="learning-tools.html#week-${n}">This week’s tools &amp; games</a></nav>`;
+  $("content").innerHTML=`<article class="card next-task"><p class="small">Welcome, ${esc(learner)}</p><p class="pill">Week ${n} · Unit ${unit}</p><h3>${esc(week.title)}</h3><p>Open the weekly lesson. Start with the reading and first activity, then save your response before moving on.</p><div class="actions"><a class="courseLink primary-link" href="weeks/week-${String(n).padStart(2,"0")}/index.html">Open Week ${n} Lesson</a></div><p class="small">This is the first week without a locally saved evidence-prepared flag. Preparing evidence is not mastery approval; your evaluator confirms mastery.</p></article><nav class="home-actions" aria-label="Other student tasks"><button class="secondary" onclick="currentView='course';renderAll()">Choose a different week</button><a href="learning-tools.html#week-${n}">This week’s tools &amp; games</a></nav>`;
 }
 function renderOfficialCourse(){
   const n=nextOfficialWeek();
@@ -758,12 +758,12 @@ function renderReports(){
   const s = activeStudent();
   const st = courseStats(s);
   $("content").innerHTML = `<div class="grid">
-    <div class="card col4"><h3>Course Report</h3><p class="score">${st.courseGrade}%</p><p>Estimated course grade to date.</p></div>
-    <div class="card col4"><h3>Completion</h3><p class="score">${st.lessonAverage}%</p><p>${st.completedLessons} / ${st.totalLessons} lessons complete.</p></div>
+    <div class="card col4"><h3>Supplementary Practice Estimate</h3><p class="score">${st.courseGrade}%</p><p>Practice activity estimate only. Not the official English 9 grade or approved mastery.</p></div>
+    <div class="card col4"><h3>Practice Activity Completion</h3><p class="score">${st.lessonAverage}%</p><p>${st.completedLessons} / ${st.totalLessons} supplementary activities marked complete. Official lesson evidence is tracked separately.</p></div>
     <div class="card col4"><h3>Quizzes</h3><p class="score">${st.quizAverage || "—"}</p><p>Average of attempted weekly quiz best scores.</p></div>
     <div class="card col12">
       <h3>Download & Print</h3>
-      <p>Progress reports include weekly completion, quiz attempts, repeat lesson logs, portfolio evidence, notes, midterm, final, and review recommendations.</p>
+      <p>Supplementary progress reports include practice completion, quiz attempts, repeat lesson logs, notes, practice midterm, practice final, and review recommendations. Official written evidence and evaluator-confirmed mastery are separate records.</p>
       <div class="actions">
         <button onclick="printReport()">Print Progress Report</button>
         <button class="secondary" onclick="downloadReportHTML()">Download Report HTML</button>
