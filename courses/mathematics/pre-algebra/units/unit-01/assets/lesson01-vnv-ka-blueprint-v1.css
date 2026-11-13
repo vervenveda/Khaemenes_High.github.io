@@ -1,0 +1,185 @@
+/* Khaemenes Academy · Pre-Algebra Unit 01 Lesson 01
+ * Approved instructional visual blueprint. Presentation only.
+ * Lesson/record, formative evidence, games, and NAIB gate retain ownership.
+ * Breadcrumbs are in an independent row BELOW the canonical header.
+ */
+@media screen {
+html:root:root body.ka-prealgebra-lesson01 {
+ --ka-paper:#f4f0e7;--ka-card:#fffdf8;--ka-ink:#27302d;
+ --ka-charcoal:#202724;--ka-cream:#fff8e9;--ka-gold:#b8995c;
+ --ka-border:#cdbf9f;
+ background:#f4f0e7!important;color:#27302d!important;
+ font:400 18px/1.7 "Brandon Grotesque",Nunito,"Avenir Next",Arial,sans-serif!important;
+ min-height:100dvh;display:flex;flex-direction:column;overflow-x:clip;
+}
+html:root:root body.ka-prealgebra-lesson01 *,html:root:root body.ka-prealgebra-lesson01 *::before,
+html:root:root body.ka-prealgebra-lesson01 *::after{box-sizing:border-box}
+html:root:root body.ka-prealgebra-lesson01 .wrap{
+ width:min(calc(100% - clamp(28px,5vw,96px)),1380px)!important;
+ max-width:1380px!important;margin-inline:auto!important;
+}
+html:root:root body.ka-prealgebra-lesson01 main{width:100%;flex:1 0 auto;min-width:0}
+html:root:root body.ka-prealgebra-lesson01 #vnvHeaderAutoPopulate{
+ width:100%!important;max-width:none!important;margin:0!important;
+ background:#202724!important;color:#fff8e9!important;
+ border-top:3px solid #b8995c!important;border-bottom:1px solid #b8995c!important;
+}
+html:root:root body.ka-prealgebra-lesson01 #vnvHeaderAutoPopulate .vnv-header-inner{
+ width:100%!important;max-width:none!important;min-height:82px!important;
+ padding:10px clamp(16px,3vw,55px)!important;
+}
+html:root:root body.ka-prealgebra-lesson01 #vnvHeaderAutoPopulate .vnv-header-logo{
+ background:#b8995c!important;color:#202724!important;
+ -webkit-text-fill-color:#202724!important;border:1px solid #b8995c!important;
+ font-size:24px!important;
+}
+html:root:root body.ka-prealgebra-lesson01 #vnvHeaderAutoPopulate .vnv-header-title{
+ color:#fff8e9!important;-webkit-text-fill-color:#fff8e9!important;
+ font:400 clamp(18px,2vw,24px)/1.3 Cinzel,Georgia,serif!important;
+}
+html:root:root body.ka-prealgebra-lesson01 #vnvHeaderAutoPopulate .vnv-header-subtitle{
+ color:#e9c989!important;-webkit-text-fill-color:#e9c989!important;font-size:16px!important;
+}
+html:root:root body.ka-prealgebra-lesson01 #vnvHeaderAutoPopulate .vnv-header-menu-button{
+ background:#202724!important;color:#fff8e9!important;
+ -webkit-text-fill-color:#fff8e9!important;border:1px solid #b8995c!important;
+ border-radius:7px!important;min-width:44px!important;min-height:44px!important;
+}
+html:root:root body.ka-prealgebra-lesson01 .ka-lesson-breadcrumb-row{
+ display:flex;align-items:center;justify-content:center;gap:16px;flex-wrap:wrap;
+ width:100%;margin:0;padding:10px clamp(14px,3vw,55px);
+ background:#f4f0e7!important;border-bottom:1px solid #cdbf9f!important;
+}
+html:root:root body.ka-prealgebra-lesson01 .ka-lesson-breadcrumb-row .breadcrumb{
+ display:flex;align-items:center;justify-content:center;flex-wrap:wrap;
+ gap:9px;margin:0!important;padding:0!important;color:#27302d!important;
+ font:400 16px/1.55 Nunito,Arial,sans-serif!important;
+}
+html:root:root body.ka-prealgebra-lesson01 .ka-lesson-breadcrumb-row .breadcrumb :is(a,span){
+ color:#27302d!important;-webkit-text-fill-color:#27302d!important;
+ font-size:16px!important;
+}
+html:root:root body.ka-prealgebra-lesson01 .ka-lesson-breadcrumb-row #themeToggle{
+ display:inline-flex;align-items:center;justify-content:center;
+ width:44px;min-height:44px;flex:0 0 44px;padding:7px;
+ border:1px solid #b8995c!important;border-radius:7px!important;
+ background:#202724!important;color:#fff8e9!important;-webkit-text-fill-color:#fff8e9!important;
+}
+html:root:root body.ka-prealgebra-lesson01 main>section{
+ padding:clamp(35px,5vw,75px) 0!important;
+ background:#f4f0e7!important;border:0!important;
+}
+html:root:root body.ka-prealgebra-lesson01 main>section.hero{
+ padding:clamp(32px,5vw,85px) 0!important;
+}
+html:root:root body.ka-prealgebra-lesson01 .hero>.wrap{
+ padding:clamp(30px,5vw,70px)!important;
+ border:2px solid #b8995c!important;border-radius:7px!important;
+ background:#202724!important;color:#fff8e9!important;text-align:center;
+}
+html:root:root body.ka-prealgebra-lesson01 .hero .academy-eyebrow{
+ color:#e9c989!important;-webkit-text-fill-color:#e9c989!important;
+ font:400 clamp(25px,3vw,33px)/1.3 Cinzel,Georgia,serif!important;margin:0 0 17px!important;
+}
+html:root:root body.ka-prealgebra-lesson01 .hero .eyebrow{
+ color:#e9c989!important;-webkit-text-fill-color:#e9c989!important;
+ font:400 18px/1.5 Nunito,Arial,sans-serif!important;margin:0 auto 20px!important;
+ letter-spacing:.02em!important;
+}
+html:root:root body.ka-prealgebra-lesson01 .hero h1{
+ max-width:1100px;margin:0 auto 24px!important;
+ color:#fff8e9!important;-webkit-text-fill-color:#fff8e9!important;
+ font:400 clamp(36px,5.2vw,66px)/1.2 Cinzel,Georgia,serif!important;
+}
+html:root:root body.ka-prealgebra-lesson01 .hero .lead{
+ max-width:900px;margin:0 auto!important;color:#fff8e9!important;
+ -webkit-text-fill-color:#fff8e9!important;font:400 18px/1.8 Nunito,Arial,sans-serif!important;
+}
+html:root:root body.ka-prealgebra-lesson01 .hero .actions{
+ display:flex;justify-content:center;gap:12px;flex-wrap:wrap;margin:30px auto 0!important;
+}
+html:root:root body.ka-prealgebra-lesson01 main .card,
+html:root:root body.ka-prealgebra-lesson01 main :is(.question,.checkpoint,.lesson-reading,.example,.set-panel,.pathway-panel,.guided-note,.pause-card,.set-details div){
+ border:1px solid #cdbf9f!important;border-radius:7px!important;
+ background:#fffdf8!important;color:#27302d!important;box-shadow:none!important;
+}
+html:root:root body.ka-prealgebra-lesson01 main .lesson-layout{
+ display:grid;grid-template-columns:minmax(0,1fr) minmax(270px,345px);
+ gap:24px;align-items:start;
+}
+html:root:root body.ka-prealgebra-lesson01 main :is(.lesson-main,.lesson-side,.lesson-reading,.concept,.example,.question,.set-panel,.pathway-panel){
+ padding:clamp(20px,3vw,36px)!important;
+}
+html:root:root body.ka-prealgebra-lesson01 main .lesson-side{position:sticky;top:100px}
+html:root:root body.ka-prealgebra-lesson01 main :is(h2,h3){
+ font-family:Cinzel,Georgia,serif!important;font-weight:400!important;
+ color:#27302d!important;-webkit-text-fill-color:#27302d!important;
+}
+html:root:root body.ka-prealgebra-lesson01 main h2{
+ font-size:clamp(24px,3vw,33px)!important;line-height:1.36!important;
+}
+html:root:root body.ka-prealgebra-lesson01 main h3{
+ font-size:24px!important;line-height:1.35!important;
+}
+html:root:root body.ka-prealgebra-lesson01 main .eyebrow{
+ color:#76592e!important;-webkit-text-fill-color:#76592e!important;
+ font:400 20px/1.45 Cinzel,Georgia,serif!important;
+ letter-spacing:0!important;white-space:normal!important;
+}
+html:root:root body.ka-prealgebra-lesson01 main :is(p,li,dt,dd,legend,label,.notice,.help-text,.takeaway,.option,.warmup li,.reading-stack p,.lesson-reading p,.lesson-reading li,.question legend){
+ font-size:18px!important;line-height:1.72!important;color:#27302d!important;
+}
+html:root:root body.ka-prealgebra-lesson01 main :is(.set-details dt,.vocab-table th,.practice-meter-row,.pill){
+ font-size:16px!important;
+}
+html:root:root body.ka-prealgebra-lesson01 main :is(.objective-list li,.set-details div,.option,.takeaway){
+ background:#f7f1e5!important;border:1px solid #cdbf9f!important;
+ border-radius:7px!important;color:#27302d!important;
+}
+html:root:root body.ka-prealgebra-lesson01 main :is(input,select,textarea){
+ min-height:44px;font:400 18px/1.5 Nunito,Arial,sans-serif;
+}
+html:root:root body.ka-prealgebra-lesson01 main .btn{
+ display:inline-flex;align-items:center;justify-content:center;
+ min-height:48px!important;max-width:100%;padding:10px 17px!important;
+ border:1px solid #b8995c!important;border-radius:7px!important;
+ background:#202724!important;color:#fff8e9!important;-webkit-text-fill-color:#fff8e9!important;
+ font:400 16px/1.45 Nunito,Arial,sans-serif!important;
+ text-decoration:none!important;text-align:center!important;
+}
+html:root:root body.ka-prealgebra-lesson01 main .btn:is(:hover,:focus-visible){
+ background:#34463c!important;color:#fff8e9!important;-webkit-text-fill-color:#fff8e9!important;
+}
+html:root:root body.ka-prealgebra-lesson01 main :is(.option,.set-tab,.pathway-tabs button){
+ min-height:44px;border-radius:7px!important;
+}
+html:root:root body.ka-prealgebra-lesson01 .footer{
+ width:100%!important;margin-top:auto;padding:26px 18px!important;
+ background:#202724!important;color:#fff8e9!important;text-align:center!important;
+}
+html:root:root body.ka-prealgebra-lesson01 .footer-inner{
+ display:flex!important;flex-direction:column!important;justify-content:center!important;
+ align-items:center!important;gap:8px!important;color:#fff8e9!important;
+ font-size:16px!important;
+}
+html:root:root body.ka-prealgebra-lesson01 .footer :is(span,a){
+ color:#fff8e9!important;-webkit-text-fill-color:#fff8e9!important;
+}
+@media(max-width:1020px){
+ html:root:root body.ka-prealgebra-lesson01 main .lesson-layout{grid-template-columns:1fr!important}
+ html:root:root body.ka-prealgebra-lesson01 main .lesson-side{position:static!important}
+}
+@media(max-width:650px){
+ html:root:root body.ka-prealgebra-lesson01 .hero>.wrap{padding:32px 18px!important}
+ html:root:root body.ka-prealgebra-lesson01 .hero h1{font-size:clamp(32px,8vw,44px)!important}
+ html:root:root body.ka-prealgebra-lesson01 .set-tabs{grid-template-columns:repeat(2,minmax(0,1fr))!important}
+ html:root:root body.ka-prealgebra-lesson01 .ka-lesson-breadcrumb-row{gap:8px;padding:9px 12px}
+}
+}
+@media print{
+ body.ka-prealgebra-lesson01 #vnvHeaderAutoPopulate,
+ body.ka-prealgebra-lesson01 .ka-lesson-breadcrumb-row,
+ body.ka-prealgebra-lesson01 .hero .actions{display:none!important}
+ body.ka-prealgebra-lesson01 main>section{padding:15px 0!important}
+ body.ka-prealgebra-lesson01 main .card{break-inside:avoid;box-shadow:none!important}
+}
