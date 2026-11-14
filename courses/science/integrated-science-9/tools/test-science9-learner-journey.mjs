@@ -47,7 +47,8 @@ for(let i=1;i<=12;i++){
  const unit=String(i).padStart(2,"0"),src=read("units/unit-"+unit+"/unit"+unit+".js");
  const common="learner_a",other="learner_b";
  check(activeFromSource(src,i,common,null,common).selected===common,"Unit "+unit+" accepts matching Academy learner");
- check(activeFromSource(src,i,common,null,other).selected===null,"Unit "+unit+" rejects conflicting Academy learner");
+ if(i===1)check(activeFromSource(src,i,common,null,other).selected===other,"Unit "+unit+" gives the Academy learner authority over a legacy selection");
+ else check(activeFromSource(src,i,common,null,other).selected===null,"Unit "+unit+" rejects conflicting Academy learner");
  check(activeFromSource(src,i,null,null,null).selected===null,"Unit "+unit+" blocks an absent learner");
  if(i>=5){
    const recovered=activeFromSource(src,i,null,other,null);
