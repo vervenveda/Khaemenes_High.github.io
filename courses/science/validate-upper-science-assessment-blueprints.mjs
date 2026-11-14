@@ -1,7 +1,10 @@
 #!/usr/bin/env node
 "use strict";
-const fs=require("fs"),path=require("path"),vm=require("vm");
-const root=__dirname;
+import fs from "node:fs";
+import path from "node:path";
+import vm from "node:vm";
+import { fileURLToPath } from "node:url";
+const root=path.dirname(fileURLToPath(import.meta.url));
 const courses=["biology-10","chemistry-11","physics-engineering-12"];
 const transferTypes=new Set(["evidence","quantitative","model","application","method","design"]);
 const failures=[],summary=[];

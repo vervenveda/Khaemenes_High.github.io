@@ -242,8 +242,9 @@ check("Monte Carlo rejects stale session writes and prevents double completion",
 check("80% mastery messaging and public-practice boundary are explicit", () => {
   for (const course of courses) {
     const html = read(course.dashboard);
-    assert.ok(/80%/.test(html), course.title + " should display mastery target");
-    assert.ok(/practice/i.test(html), course.title + " should distinguish public practice");
+    const source = course.id === "biology-10" ? html + "\n" + read("courses/science/biology-10/biology10-dashboard-app-v1.js") : html;
+    assert.ok(/80%/.test(source), course.title + " should display mastery target");
+    assert.ok(/practice/i.test(source), course.title + " should distinguish public practice");
   }
 });
 
