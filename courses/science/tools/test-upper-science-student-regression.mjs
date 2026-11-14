@@ -105,21 +105,21 @@ function localTargetExists(source, raw) {
 
 for (const course of courses) {
   check(course.title + " dashboard learner scoping and assessment guard", () => {
-    const html = read(course.dashboard);
-    assert.ok(html.includes('data-learner-scope="' + course.learnerScope + '"'),
+    const html = read(course.dashboard);\n    const source = course.id === "biology-10" ? html + "\\n" + read("courses/science/biology-10/biology10-dashboard-app-v1.js") : html;
+    assert.ok(source.includes('data-learner-scope="' + course.learnerScope + '"'),
       "dashboard must declare its own learner scope");
-    assert.ok(html.includes("monte-carlo-assessment-v1.js"), "shared assessment engine must load");
-    assert.ok(html.includes(course.bankPath.split("/").pop()), "course bank must load");
-    assert.ok(html.includes("MC.isActive("), "submission must check active session identity");
-    assert.ok(html.includes("assessmentConflict"), "assessment must track cross-tab/session conflicts");
-    assert.ok(html.includes("MC.saveResponse("), "answer changes must be persisted as responses");
-    assert.ok(html.includes("MC.complete("), "completed sessions must be closed by the shared engine");
-    assert.ok(html.includes("stateSnapshot"), "submission must detect a changed learner/course snapshot");
-    assert.ok(html.includes('id="testFeedback" role="status" aria-live="polite" aria-atomic="true"'),
+    assert.ok(source.includes("monte-carlo-assessment-v1.js"), "shared assessment engine must load");
+    assert.ok(source.includes(course.bankPath.split("/").pop()), "course bank must load");
+    assert.ok(source.includes("MC.isActive("), "submission must check active session identity");
+    assert.ok(source.includes("assessmentConflict"), "assessment must track cross-tab/session conflicts");
+    assert.ok(source.includes("MC.saveResponse("), "answer changes must be persisted as responses");
+    assert.ok(source.includes("MC.complete("), "completed sessions must be closed by the shared engine");
+    assert.ok(source.includes("stateSnapshot"), "submission must detect a changed learner/course snapshot");
+    assert.ok(source.includes('id="testFeedback" role="status" aria-live="polite" aria-atomic="true"'),
       "assessment results must be announced to assistive technology");
-    assert.ok(html.includes('role="group" aria-labelledby="question-title-${i}"'),
+    assert.ok(source.includes('role="group" aria-labelledby="question-title-${i}"'),
       "each generated question must be programmatically grouped under its prompt");
-    assert.ok(html.includes('data-qid="${esc(q.id)}" required'),
+    assert.ok(source.includes('data-qid="${esc(q.id)}" required'),
       "each randomized question must require a selected response before scoring");
     const untypedButtons = [...html.matchAll(/<button(?![^>]*\btype\s*=)[^>]*>/gi)];
     assert.equal(untypedButtons.length, 0, "buttons should declare their action type explicitly");
@@ -159,17 +159,17 @@ for (const course of courses) {
 }
 
 check("Biology 10 weekly mastery gate is assessment-derived", () => {
-  const html = read("courses/science/biology-10/index.html");
-  assert.ok(html.includes("function weeklyMasteryMarkup("), "weekly mastery form must be generated from the public Biology bank");
-  assert.ok(html.includes("function scoreWeeklyMastery("), "weekly mastery scoring function must exist");
-  assert.ok(html.includes("weeklyQuestionBank(w.week)"), "weekly check must filter the Biology question bank by week");
-  assert.ok(html.includes("MC.openSession(key,bank"), "weekly mastery must use a persisted Monte Carlo session");
-  assert.ok(html.includes("MC.saveResponse(key,input.dataset.weeklyQid"), "weekly answers must persist within the active session");
-  assert.ok(html.includes("Math.max(prior===null?0:prior,pct)"), "best demonstrated mastery must not be erased by optional later practice");
-  assert.ok(html.includes("if(passed)MC.complete("), "passing weekly attempt must close the active mastery session");
-  assert.ok(html.includes("same form retained without reshuffling"), "below-80 correction attempts must keep the same form");
-  assert.ok(!html.includes('id="weekMastery"'), "learner-editable numeric mastery input must not control progression");
-  assert.ok(!html.includes('id="weekMasterySource"'), "learner-selectable mastery provenance must not control progression");
+  const html = read("courses/science/biology-10/index.html");\n  const source = html + "\\n" + read("courses/science/biology-10/biology10-dashboard-app-v1.js");
+  assert.ok(source.includes("function weeklyMasteryMarkup("), "weekly mastery form must be generated from the public Biology bank");
+  assert.ok(source.includes("function scoreWeeklyMastery("), "weekly mastery scoring function must exist");
+  assert.ok(source.includes("weeklyQuestionBank(w.week)"), "weekly check must filter the Biology question bank by week");
+  assert.ok(source.includes("MC.openSession(key,bank"), "weekly mastery must use a persisted Monte Carlo session");
+  assert.ok(source.includes("MC.saveResponse(key,input.dataset.weeklyQid"), "weekly answers must persist within the active session");
+  assert.ok(source.includes("Math.max(prior===null?0:prior,pct)"), "best demonstrated mastery must not be erased by optional later practice");
+  assert.ok(source.includes("if(passed)MC.complete("), "passing weekly attempt must close the active mastery session");
+  assert.ok(source.includes("same form retained without reshuffling"), "below-80 correction attempts must keep the same form");
+  assert.ok(!source.includes('id="weekMastery"'), "learner-editable numeric mastery input must not control progression");
+  assert.ok(!source.includes('id="weekMasterySource"'), "learner-selectable mastery provenance must not control progression");
 });
 
 check("Monte Carlo engine syntax and API", () => {
