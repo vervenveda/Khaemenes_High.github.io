@@ -1280,7 +1280,7 @@ html:root:root body #main .checklist-head .card-subtitle,html:root:root body #ma
  if(new URLSearchParams(location.search).get("chrome_audit")!=="1")return;
  if(document.querySelector('script[data-ka-prealgebra-forensic]'))return;
  const probe=document.createElement("script");
- probe.src="assets/vnv-assessment-forensic-audit.js?v=1.0.0";
+ probe.src="assets/vnv-assessment-forensic-audit.js?v=1.0.1";
  probe.defer=true;
  probe.dataset.kaPrealgebraForensic="1";
  document.body.append(probe);
