@@ -1,0 +1,46 @@
+name: Grade 09 Dual Ticker Repair
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - 'tools/grade09-dual-ticker-audit.mjs'
+      - '.github/workflows/grade09-dual-ticker-repair.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  repair:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - name: Audit and repair Grade 09 public landing pages
+        run: node tools/grade09-dual-ticker-audit.mjs --write
+
+      - name: Verify Grade 09 dual ticker coverage
+        run: node tools/grade09-dual-ticker-audit.mjs --check
+
+      - name: Validate patch
+        run: git diff --check
+
+      - name: Commit repaired landing pages
+        shell: bash
+        run: |
+          if git diff --quiet; then
+            echo "No Grade 09 landing pages required repair."
+            exit 0
+          fi
+          git config user.name "Khaemenes Academy Automation"
+          git config user.email "khaemenesacademy@users.noreply.github.com"
+          git add grades/grade-09 courses/language-arts/english-9 courses/language-arts/grades/grade-09/language-arts courses/mathematics/pre-algebra courses/mathematics/algebra-1 courses/science/integrated-science-9 courses/social-studies/grade-09 electives/grades/grade-09/psych-101
+          git commit -m "Harden Grade 09 dual ticker coverage"
+          git push
