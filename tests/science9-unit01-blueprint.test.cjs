@@ -8,7 +8,7 @@ const count=x=>html.split(x).length-1;
 assert.equal(count('href="unit01-vnv-ka-blueprint-v1.css"'),1);
 assert.equal(count('<body class="ka-science9-u01">'),1);
 assert.equal(count('<h1>Scientific Inquiry, Measurement &amp; Evidence</h1>'),1);
-assert.equal(count('class="science-unit-nav"'),1);
+assert.equal(count('class="ka-unit-section-links"'),1,"Canonical unit quick-link navigation retained");
 assert.equal(count('class="academy-eyebrow">Khaemenes Academy'),1);
 assert.equal(count('class="brand-mark" aria-hidden="true">K'),1);
 assert.equal(count('class="requirement" data-requirement='),17,"All 17 mastery requirements must remain visible");

@@ -22,7 +22,9 @@ assert.throws(()=>G.selectRecord({...payload,learnerId:"student-b"},"student-a")
 assert.throws(()=>G.selectRecord({...payload,state:{students:[incoming,incoming]}},"student-a"),/exactly one/i);
 assert.equal(G.selectRecord({version:1,state:{students:[make("student-b"),incoming]}},"student-a").ignoredOtherLearners,1,"Old family backup must not import another learner's data");
 assert.throws(()=>G.selectRecord({state:{students:[{...incoming,notes:{"constructor":{admin:true}}}]}},"student-a"),/unsafe/i);
-const portal=read("courses/science/integrated-science-9/index.html");
+const portalHtml=read("courses/science/integrated-science-9/index.html");
+const portalRuntime=read("courses/science/integrated-science-9/science9-dashboard-app-v1.js");
+const portal=portalHtml+"\n"+portalRuntime;
 assert.ok(portal.includes('src="science9-backup-guard-v1.js"'));
 assert.ok(portal.includes("guard.selectRecord(payload,startIdentity)"));
 assert.ok(portal.includes("localStorage.getItem(KEY)!==baseline"),"Concurrent changes must block restore");

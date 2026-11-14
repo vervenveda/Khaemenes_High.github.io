@@ -5,7 +5,7 @@ const html=fs.readFileSync(path.join(root,base,"index.html"),"utf8"),css=fs.read
 const count=text=>html.split(text).length-1;
 assert.equal(count('href="unit05-vnv-ka-blueprint-v1.css"'),1);
 assert.equal(count('class="ka-science9-u05"'),1);
-assert.equal(count('class="science-unit-nav"'),1);
+assert.equal(count('class="ka-unit-section-links"'),1,"Canonical unit quick-link navigation retained");
 assert.equal(count('class="academy-eyebrow">Khaemenes Academy'),1);
 assert.equal(count('class="requirement" data-requirement='),23,"All 23 mastery requirements preserved");
 assert.equal((html.match(/href="lessons\/day-\d\d\.html"/g)||[]).length,16,"Fifteen daily lesson links plus Day 1 launch preserved");
