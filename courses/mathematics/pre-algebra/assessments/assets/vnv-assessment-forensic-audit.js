@@ -77,7 +77,7 @@ function startPanel(){
 }
 function render(){
  startPanel();let x;try{x=snapshot()}catch(e){out.textContent="Diagnostic error: "+String(e);return}
- const statuses=x.chrome.map(v=>v.name+": "+v.count+" instance(s)"+(v.count?"":" — MISSING"));
+ const statuses=x.chrome.map(v=>{const expectedOff=v.count===0&&(v.name==="Legacy header"||v.name==="Floating toolbar");const note=v.count?"":expectedOff?(v.name==="Floating toolbar"?" — INTENTIONALLY SUPPRESSED on assessment routes":" — EXPECTED after canonical replacement"):" — MISSING";return v.name+": "+v.count+" instance(s)"+note});
  out.textContent=["Read-only opt-in · no learner data","Viewport: "+x.viewport.width+" × "+x.viewport.height,
  "Computed UI elements: "+x.computedElements.length,
  "CSS stylesheets: "+x.css.sheets.length+" · accessible rules: "+x.css.rules.length,
