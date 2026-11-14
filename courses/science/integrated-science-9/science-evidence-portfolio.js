@@ -15,7 +15,7 @@ function fetchRecords(id){
  return records.sort((a,b)=>a.activity.localeCompare(b.activity));
 }
 function download(text){const u=URL.createObjectURL(new Blob([text],{type:"application/json"}));const a=document.createElement("a");a.href=u;a.download="Khaemenes-Science9-Formative-Portfolio.json";a.click();setTimeout(()=>URL.revokeObjectURL(u),30000)}
-function clearOnLearnerChange(id){if(active()===id)return false;document.getElementById("portfolioRecords").replaceChildren();document.getElementById("learner").textContent="Selection changed";document.getElementById("portfolioStatus").textContent="Learner changed. Reload the portfolio to view the currently selected learner.";document.getElementById("exportPortfolio").disabled=true;document.getElementById("printPortfolio").disabled=true;document.getElementById("refreshPortfolio").disabled=true;document.getElementById("portfolioImport").disabled=true;document.getElementById("portfolioRestore").disabled=true;return true}
+function clearOnLearnerChange(id){if(active()===id)return false;document.getElementById("portfolioRecords").replaceChildren();document.getElementById("learner").textContent="Selection changed";document.getElementById("portfolioStatus").textContent="Learner changed. Reload the portfolio to view the currently selected learner.";document.getElementById("exportPortfolio").disabled=true;document.getElementById("exportAuthorityHandoff").disabled=true;document.getElementById("printPortfolio").disabled=true;document.getElementById("refreshPortfolio").disabled=true;document.getElementById("portfolioImport").disabled=true;document.getElementById("portfolioRestore").disabled=true;return true}
 function setupRestore(id){
  const picker=$("portfolioImport"),button=$("portfolioRestore"),preview=$("portfolioPreview");picker.disabled=false;let candidate=null;
  picker.addEventListener("change",async()=>{
@@ -71,13 +71,14 @@ function init(){
  const id=active();$("learner").textContent=id||"Not selected";
  if(!id){$("portfolioStatus").textContent="Select a learner on a Science 9 unit page before opening the portfolio. No student data has been displayed.";return}
  renderRecords(id);
- $("exportPortfolio").disabled=false;$("printPortfolio").disabled=false;$("refreshPortfolio").disabled=false;
+ $("exportPortfolio").disabled=false;$("exportAuthorityHandoff").disabled=false;$("printPortfolio").disabled=false;$("refreshPortfolio").disabled=false;
  setupRestore(id);
  window.addEventListener("focus",()=>clearOnLearnerChange(id));
  window.addEventListener("pageshow",()=>clearOnLearnerChange(id));
  window.addEventListener("storage",()=>clearOnLearnerChange(id));
  document.addEventListener("visibilitychange",()=>{if(!document.hidden)clearOnLearnerChange(id)});
  $("exportPortfolio").addEventListener("click",()=>{if(active()!==id)return;download(JSON.stringify({schema:"khaemenes-science-formative-portfolio-v1",learner:id,exportedAt:new Date().toISOString(),records:fetchRecords(id)},null,2))});
+ $("exportAuthorityHandoff").addEventListener("click",()=>{if(active()!==id)return;const api=window.KhaemenesScience9RecordHandoff;if(!api){$("portfolioStatus").textContent="Academy handoff exporter is unavailable. No data changed.";return}api.download(api.build({learnerId:id,records:fetchRecords(id)}))});
  $("printPortfolio").addEventListener("click",()=>{if(active()===id){renderRecords(id);window.print()}});
  $("refreshPortfolio").addEventListener("click",()=>{if(active()===id)renderRecords(id)});
 }
