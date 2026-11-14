@@ -205,4 +205,4 @@ global.KhaemenesHighLearningContext=Object.freeze({version:VERSION,ledgerKey:LED
 
 
 /* Biology 10 daily lessons receive the canonical Academy presentation shell. */
-;(()=>{"use strict";if(typeof document==="undefined"||!/\/courses\/science\/biology-10\//i.test(String(location?.pathname||"")))return;if(document.querySelector('script[data-biology10-academy-shell]'))return;const here=document.currentScript?.src;if(!here)return;const s=document.createElement("script");s.src=new URL("../science/biology-10/biology10-academy-shell-v1.js",here).href;s.defer=true;s.dataset.biology10AcademyShell="1";document.head.appendChild(s)})();
+;(()=>{"use strict";if(typeof document==="undefined"||!/\/courses\/science\/biology-10\//i.test(String(globalThis.location?.pathname||"")))return;if(document.querySelector('script[data-biology10-academy-shell]'))return;const here=document.currentScript?.src;if(!here)return;const s=document.createElement("script");s.src=new URL("../science/biology-10/biology10-academy-shell-v1.js",here).href;s.defer=true;s.dataset.biology10AcademyShell="1";document.head.appendChild(s)})();

@@ -105,7 +105,8 @@ function localTargetExists(source, raw) {
 
 for (const course of courses) {
   check(course.title + " dashboard learner scoping and assessment guard", () => {
-    const html = read(course.dashboard);\n    const source = course.id === "biology-10" ? html + "\\n" + read("courses/science/biology-10/biology10-dashboard-app-v1.js") : html;
+    const html = read(course.dashboard);
+    const source = course.id === "biology-10" ? html + "\n" + read("courses/science/biology-10/biology10-dashboard-app-v1.js") : html;
     assert.ok(source.includes('data-learner-scope="' + course.learnerScope + '"'),
       "dashboard must declare its own learner scope");
     assert.ok(source.includes("monte-carlo-assessment-v1.js"), "shared assessment engine must load");
@@ -159,7 +160,8 @@ for (const course of courses) {
 }
 
 check("Biology 10 weekly mastery gate is assessment-derived", () => {
-  const html = read("courses/science/biology-10/index.html");\n  const source = html + "\\n" + read("courses/science/biology-10/biology10-dashboard-app-v1.js");
+  const html = read("courses/science/biology-10/index.html");
+  const source = html + "\n" + read("courses/science/biology-10/biology10-dashboard-app-v1.js");
   assert.ok(source.includes("function weeklyMasteryMarkup("), "weekly mastery form must be generated from the public Biology bank");
   assert.ok(source.includes("function scoreWeeklyMastery("), "weekly mastery scoring function must exist");
   assert.ok(source.includes("weeklyQuestionBank(w.week)"), "weekly check must filter the Biology question bank by week");
