@@ -1253,5 +1253,17 @@ html:root:root body #main .checklist-head .card-subtitle,html:root:root body #ma
 <script src="https://vervenveda.com/assets/vnv-header-autopopulate.js"></script>
 <script>(function(){"use strict";if(!window.VNV_HEADER?.mount)return;const tone=document.getElementById("themeToggle"),crumb=document.querySelector(".course-breadcrumb .wrap");if(tone&&crumb){crumb.appendChild(tone);tone.setAttribute("aria-label","Switch paper tone");}window.VNV_HEADER.mount({replaceLegacy:true,title:"Assessments & Completion",subtitle:"Khaemenes Academy · Pre-Algebra",icon:"K",home:"https://vervenveda.com/Khaemenes_Academy.github.io/",actions:[{"label":"COURSE","href":"https://vervenveda.com/Khaemenes_High.github.io/courses/mathematics/pre-algebra/"},{"label":"READINESS","href":"https://vervenveda.com/Khaemenes_High.github.io/courses/mathematics/pre-algebra/diagnostic/"},{"label":"ASSESSMENTS","href":"https://vervenveda.com/Khaemenes_High.github.io/courses/mathematics/pre-algebra/assessments/"},{"label":"RECORDS","href":"https://vervenveda.com/Khaemenes_High.github.io/courses/mathematics/pre-algebra/records/"}]});})();</script>
 <script src="https://vervenveda.com/assets/vnv-ecosystem-toolbar.js" data-official-vnv-ecosystem-toolbar="true"></script>
+<!-- Read-only forensic inspection. Script loads only with ?chrome_audit=1. -->
+<script id="ka-prealgebra-assessments-audit-optin">
+(function(){"use strict";
+ if(new URLSearchParams(location.search).get("chrome_audit")!=="1")return;
+ if(document.querySelector('script[data-ka-prealgebra-forensic]'))return;
+ const probe=document.createElement("script");
+ probe.src="assets/vnv-assessment-forensic-audit.js?v=1.0.0";
+ probe.defer=true;
+ probe.dataset.kaPrealgebraForensic="1";
+ document.body.append(probe);
+})();
+</script>
 </body>
 </html>
