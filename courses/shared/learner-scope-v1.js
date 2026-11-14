@@ -13,7 +13,7 @@
     "english-11": { prefixes: ["khae-ela11-state-v1", "KA_ENGLISH11_LANDING_V1"] },
     "english-12": { prefixes: ["khae-ela12-state-v1", "KA_ENGLISH12_LANDING_V1"] },
     "integrated-science-9": { prefixes: ["khaemenes_science9_", "khaemenes_science_units", "khaemenes_science_foundations_v1", "khaemenes-science9-", "khae_science9_", "kh_sci9_"] },
-    "biology-10": { prefixes: ["khaemenes-biology-10-v1", "khae_high_science_evidence_v1:sci-biology-10-", "khae:bio10:w04:lesson:"] },
+    "biology-10": { prefixes: ["khaemenes-biology-10-v1", "khae_high_science_evidence_v1:sci-biology-10-", "khae:bio10:w04:"] },
     "chemistry-11": { prefixes: ["khaemenes-chemistry-11-v1", "khae_high_science_evidence_v1:sci-chemistry-11-"] },
     "physics-engineering-12": { prefixes: ["khaemenes-physics-engineering-12-v1", "khae_high_science_evidence_v1:sci-physics-&-engineering-12-"] },
     "social-studies-10": { prefixes: ["KHAE_SS10_USH_CLEAN_PORTAL_V1"] },
@@ -345,3 +345,7 @@
   script.onerror=()=>console.warn("Vocabulary helper unavailable. Lesson remains usable.");
   document.head.appendChild(script);
 })();
+
+
+/* Biology 10 canonical Academy presentation shell. */
+;(()=>{"use strict";if(typeof document==="undefined"||document.currentScript?.dataset?.learnerScope!=="biology-10")return;const here=document.currentScript?.src;if(!here||document.querySelector('script[data-biology10-academy-shell]'))return;const s=document.createElement("script");s.src=new URL("../science/biology-10/biology10-academy-shell-v1.js",here).href;s.defer=true;s.dataset.biology10AcademyShell="1";document.head.appendChild(s)})();
