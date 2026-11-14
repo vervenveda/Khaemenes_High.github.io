@@ -9,9 +9,11 @@ This directory is the canonical home of Khaemenes Academy's Grade 9 integrated s
 
 ## Current status
 
-The root shell now establishes the course architecture, international benchmark model, assessment contract, laboratory safety framework, materials framework, machine-readable course map, responsive landing page, and local progress tools.
+The full 36-week student course is released through readiness plus Units 01–12. It contains 180 daily lesson pages, unit investigations and tools, cumulative public practice assessments, learner-scoped formative evidence, portfolio/backup support, pacing guides and student checklists.
 
-No unit should be marked `open` until it has passed content, answer, accessibility, navigation, print, and release validation.
+The repository's automated Science 9 learner-journey, learner-isolation, assessment/runtime, and grade-aware execution checks provide **source-level release evidence**. Real-browser/device certification remains a separate gate and is tracked in `RELEASE-CERTIFICATION.md`.
+
+Public midterm/final material is formative practice. Official summative mastery must remain separately supervised, authenticated and protected.
 
 ## Design contract
 
@@ -19,44 +21,38 @@ The course preserves the Khaemenes High system:
 
 - Foundation, Core, and Extended pathways
 - 36-week structure
-- Local-first progress
-- Offline and low-bandwidth support
+- Local-first learner-scoped progress and evidence
+- Offline and low-bandwidth support with explicit certification limits
 - Print-friendly student records
 - Multilingual vocabulary readiness
-- Keyboard, screen-reader, reduced-motion, and RTL support
-- Definitive answers or explicit evidence-based rubrics
-- Separate student, teacher, answer-key, and completion-record resources
+- Keyboard, screen-reader, reduced-motion, RTL and narrow-width support targets
+- Definitive objective answers or explicit evidence-based rubrics
+- Separation of public student practice from protected official summative authority
+- Safety tiers for home-safe, supervised and qualified-laboratory work
+- Science/engineering practices, source evaluation, uncertainty and ethical reasoning
 
-## Planned directory structure
+## Canonical structure
 
 ```text
 integrated-science-9/
 ├── index.html
 ├── course-map.json
-├── course-ui.css
-├── course-ui.js
-├── diagnostic/
+├── diagnostic/                 # Week 1 / Unit 00
 ├── units/
 │   ├── unit-01/
-│   ├── unit-02/
 │   ├── ...
 │   └── unit-12/
-├── assessments/
-│   ├── quizzes/
-│   ├── unit-exams/
-│   ├── midterm/
-│   ├── final-exam/
-│   ├── capstone/
-│   └── assets/
-├── laboratories/
-├── student-resources/
-├── teacher-resources/
-├── answer-keys/
-├── records/
-├── certificate/
-└── docs/
+├── assessments/                # Public formative benchmarks and practice exams
+├── science-evidence-portfolio.html
+├── course-ui.js
+├── course-ui.css
+├── RELEASE-CERTIFICATION.md
+├── ROOT_VALIDATION.md
+└── STANDARDS_CROSSWALK.md
 ```
 
 ## Release rule
 
-Build and validate one unit at a time. Preserve a validation file and a release file for every unit.
+A unit may be **open** when its student route and required source-level quality gates are released. Course-wide **certification** additionally requires the human browser/device evidence matrix to pass on the exact release commit. Transcript authority requires a protected Academy record handoff; public formative records alone never create official mastery.
+
+Every released unit must retain a student checklist, pacing guide, standards mapping, mastery evidence path and synchronized release documentation.
