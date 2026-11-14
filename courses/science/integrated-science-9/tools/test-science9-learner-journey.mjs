@@ -8,11 +8,25 @@ const read=p=>fs.readFileSync(new URL(p,root),"utf8");
 const commonKey="kh_sci9_u04_active_learner_v1";
 let tests=0;
 function check(value,message){assert.ok(value,message);tests++}
+function extractNamedFunction(src,name){
+  const start=src.indexOf("function "+name+"(){");
+  if(start<0)return "";
+  const open=src.indexOf("{",start);
+  if(open<0)return "";
+  let depth=0;
+  for(let i=open;i<src.length;i++){
+    const ch=src[i];
+    if(ch==="{")depth++;
+    else if(ch==="}"){
+      depth--;
+      if(depth===0)return src.slice(start,i+1);
+    }
+  }
+  return "";
+}
 function activeFromSource(src,unit,common,previous,academy){
-  const start=src.indexOf("function active(){");
-  const end=src.indexOf("function key(){",start);
-  check(start>=0&&end>start,"Unit "+unit+" active learner implementation exists");
-  const selector=src.slice(start,end).trim();
+  const selector=extractNamedFunction(src,"active");
+  check(Boolean(selector),"Unit "+unit+" active learner implementation exists");
   const memory=new Map();
   if(common!==null)memory.set(commonKey,common);
   if(previous!==null)memory.set("kh_sci9_u"+String(unit).padStart(2,"0")+"_active_learner_v1",previous);
