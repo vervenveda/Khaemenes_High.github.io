@@ -1,0 +1,36 @@
+name: Science 9 Unit 12 Blueprint Integrity
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'courses/science/integrated-science-9/units/unit-12/index.html'
+      - 'courses/science/integrated-science-9/units/unit-12/unit12-vnv-ka-blueprint-v1.css'
+      - 'courses/science/integrated-science-9/units/unit-12/unit12.js'
+      - 'courses/science/integrated-science-9/science9-academy-shell-v1.js'
+      - 'courses/science/integrated-science-9/science9-readable-type-v1.css'
+      - 'tests/science9-unit12-blueprint.test.cjs'
+      - '.github/workflows/science9-unit12-blueprint.yml'
+  pull_request:
+    paths:
+      - 'courses/science/integrated-science-9/units/unit-12/index.html'
+      - 'courses/science/integrated-science-9/units/unit-12/unit12-vnv-ka-blueprint-v1.css'
+      - 'courses/science/integrated-science-9/units/unit-12/unit12.js'
+      - 'courses/science/integrated-science-9/science9-academy-shell-v1.js'
+      - 'courses/science/integrated-science-9/science9-readable-type-v1.css'
+      - 'tests/science9-unit12-blueprint.test.cjs'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Verify Unit 12 Science 9 capstone content, mastery and Academy design
+        run: node tests/science9-unit12-blueprint.test.cjs

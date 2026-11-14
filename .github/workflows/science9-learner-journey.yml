@@ -24,6 +24,8 @@ jobs:
           node-version: '22'
       - name: Source and implementation regression
         run: |
+          node tests/science9-academy-shell.test.cjs
+          node tests/science9-record-handoff.test.cjs
           node courses/science/integrated-science-9/tools/check-first-five-bubbles.mjs
           node courses/science/integrated-science-9/tools/test-science9-learner-journey.mjs
           node courses/science/integrated-science-9/tools/validate-lesson-tool-registry.mjs
