@@ -158,6 +158,20 @@ for (const course of courses) {
   });
 }
 
+check("Biology 10 weekly mastery gate is assessment-derived", () => {
+  const html = read("courses/science/biology-10/index.html");
+  assert.ok(html.includes("function weeklyMasteryMarkup("), "weekly mastery form must be generated from the public Biology bank");
+  assert.ok(html.includes("function scoreWeeklyMastery("), "weekly mastery scoring function must exist");
+  assert.ok(html.includes("weeklyQuestionBank(w.week)"), "weekly check must filter the Biology question bank by week");
+  assert.ok(html.includes("MC.openSession(key,bank"), "weekly mastery must use a persisted Monte Carlo session");
+  assert.ok(html.includes("MC.saveResponse(key,input.dataset.weeklyQid"), "weekly answers must persist within the active session");
+  assert.ok(html.includes("Math.max(prior===null?0:prior,pct)"), "best demonstrated mastery must not be erased by optional later practice");
+  assert.ok(html.includes("if(passed)MC.complete("), "passing weekly attempt must close the active mastery session");
+  assert.ok(html.includes("same form retained without reshuffling"), "below-80 correction attempts must keep the same form");
+  assert.ok(!html.includes('id="weekMastery"'), "learner-editable numeric mastery input must not control progression");
+  assert.ok(!html.includes('id="weekMasterySource"'), "learner-selectable mastery provenance must not control progression");
+});
+
 check("Monte Carlo engine syntax and API", () => {
   new vm.Script(read("courses/shared/monte-carlo-assessment-v1.js"), { filename: "monte-carlo-assessment-v1.js" });
 });
