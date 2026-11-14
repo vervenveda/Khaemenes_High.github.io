@@ -52,6 +52,16 @@ No student should perform a hazardous procedure without qualified educator super
 
 ## Release status
 
-Repair #7 establishes the complete 36-week course shell, curriculum map, student portal, cumulative assessment engine, laboratory/inquiry expectations, and course documentation.
+**Current release state: SOURCE-VALIDATED / CONDITIONAL.**
+
+The complete 36-week / 180-day course is materialized. The public practice bank, learner scoping, scored weekly mastery gates, canonical Academy presentation shell, second-half quantitative studios, secure-assessment boundary, and Biology-wide source regression are present.
+
+This status does **not** mean browser/device certification, jurisdictional approval, transcript authority, accreditation, NCAA approval, AP authorization, or protected Academy credential issuance has been completed.
+
+See:
+- [Release Matrix](RELEASE_MATRIX.md)
+- [Release Certification](RELEASE_CERTIFICATION.md)
+- [Standards Crosswalk](STANDARDS_CROSSWALK.md)
+- [Browser / Device Certification](BROWSER_DEVICE_CERTIFICATION.md)
 
 Jurisdiction-specific review is still required before formal credit, diploma, NCAA, state scholarship, AP, IB, Cambridge, or accreditation claims are made.

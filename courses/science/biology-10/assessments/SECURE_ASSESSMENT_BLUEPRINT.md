@@ -60,6 +60,7 @@ The public question bank may provide formative examples of this reasoning. Secur
 
 ### Midterm · Week 18
 - 15-item cumulative objective check in the published course map.
+- The public learner portal may generate a longer 20-question randomized **Practice Midterm** for study coverage. That practice form is formative/browser-local and does not alter the 15-item protected checkpoint defined for supervised secure evidence.
 - Closed-book when administered as secure evidence.
 - Samples multiple previously taught domains and more than one cognitive evidence family.
 - Corrections and portfolio review follow the attempt; corrections do not silently overwrite the original attempt.

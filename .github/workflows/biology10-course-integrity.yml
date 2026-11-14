@@ -1,0 +1,40 @@
+name: Biology 10 Course Integrity
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'courses/science/biology-10/**'
+      - 'courses/shared/learner-scope-v1.js'
+      - 'courses/shared/high-school-learning-context-v1.js'
+      - 'courses/shared/monte-carlo-assessment-v1.js'
+      - 'courses/science/tools/test-upper-science-student-regression.mjs'
+      - 'tests/biology10-course-integrity.test.cjs'
+      - '.github/workflows/biology10-course-integrity.yml'
+  pull_request:
+    paths:
+      - 'courses/science/biology-10/**'
+      - 'courses/shared/learner-scope-v1.js'
+      - 'courses/shared/high-school-learning-context-v1.js'
+      - 'courses/shared/monte-carlo-assessment-v1.js'
+      - 'courses/science/tools/test-upper-science-student-regression.mjs'
+      - 'tests/biology10-course-integrity.test.cjs'
+      - '.github/workflows/biology10-course-integrity.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  biology10-integrity:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Biology 10 course integrity
+        run: node tests/biology10-course-integrity.test.cjs
+      - name: Upper science structural validation
+        run: node courses/science/tools/validate-upper-science.mjs
+      - name: Secure assessment blueprint validation
+        run: node courses/science/validate-upper-science-assessment-blueprints.mjs
+      - name: Upper science student regression
+        run: node courses/science/tools/test-upper-science-student-regression.mjs
