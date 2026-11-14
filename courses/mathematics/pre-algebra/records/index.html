@@ -16,59 +16,7 @@
 @page{size:letter;margin:.48in}@media print{body{background:#fff}.site-header,.hero,.editor,.preview-toolbar,.footer{display:none!important}.wrap,.workspace{width:100%;display:block;padding:0}.preview-shell{border:0;box-shadow:none}#report{padding:0}.page-break{break-before:page}a{text-decoration:none}.report-meta div,.report-metric,th,td{break-inside:avoid}}
 </style>
 <link rel="stylesheet" href="../../../../assets/vervenveda-parchment.css" data-vervenveda-parchment>
-<style id="khaemenes-typography-standard">
-/* Khaemenes High presentation typography · 55 / 33 / 24 / 14 px.
-   All public pages receive this local, embedded policy for offline use.
-   Only presentation changes. Existing grids, gates, learner records, assessments and STOS are preserved.
-   Font names are optional installed system fonts; no downloads or third-party font services. */
-html:root:root body {
-  font-family: "Brandon Grotesque", "Avenir Next", Avenir, "Segoe UI", Arial, sans-serif !important;
-  font-size: 14px !important;
-  font-weight: 400 !important;
-  line-height: 1.65 !important;
-  -webkit-text-size-adjust: 100%;
-  overflow-wrap: break-word;
-}
-html:root:root body :is(button, input, select, textarea) {
-  font-family: "Brandon Grotesque", "Avenir Next", Avenir, "Segoe UI", Arial, sans-serif !important;
-}
-html:root:root body :is(h1, h2, h3, h4, h5, h6, .page-title, .hero-title, .brand-title, .display-title, .site-title) {
-  font-family: Cinzel, "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif !important;
-  font-weight: 400 !important;
-  overflow-wrap: anywhere;
-}
-html:root:root body :is(.eyebrow, .kicker, .dialog-eyebrow, .dialog-kicker, .worksheet-kicker) {
-  font-family: Cinzel, "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif !important;
-  font-size: 55px !important;
-  font-weight: 400 !important;
-  line-height: 1.15 !important;
-  letter-spacing: .02em !important;
-  white-space: normal !important;
-  overflow-wrap: anywhere;
-}
-html:root:root body h1 {
-  font-size: 33px !important;
-  line-height: 1.2 !important;
-  white-space: normal !important;
-  overflow-wrap: anywhere;
-}
-html:root:root body h2,
-html:root:root body :is(.subtitle, .hero-subtitle, .hero-sub, .academy-comment),
-html:root:root body .hero .comment {
-  font-size: 24px !important;
-  line-height: 1.35 !important;
-  white-space: normal !important;
-  overflow-wrap: anywhere;
-}
-/* Do not replace responsive grids or fixed elements; prevent oversized titles from
-   demanding horizontal scrolling on narrow phone and tablet displays. */
-html:root:root body :is(.hero, .header, .page-header, .section-head, .lesson-header) {
-  min-width: 0;
-}
-@media print {
-  html:root:root body { font-size: 14px !important; }
-}
-</style>
+<!-- Outdated 14px type rules retired: current records-office styling is authoritative. -->
 <style id="ka-prealgebra-canonical-landing-v1">
 /* Cosmetic presentation only: no assessment or saved-data changes. */
 html:root body{--ka-charcoal:#202724;--ka-cream:#fff8e9;--ka-parchment:#f7f1e5;font:400 18px/1.65 "Brandon Grotesque",Nunito,"Avenir Next",Arial,sans-serif!important;background:var(--ka-parchment);color:var(--ka-charcoal)}
@@ -107,11 +55,69 @@ html:root:root body :is(.actions,.results-actions){justify-content:center}
 html:root:root body footer.footer{font-size:18px!important}
 @media print{html:root:root body{font-size:16px!important;background:#fff!important;color:#111!important}html:root:root body .hero{background:#fff!important;color:#111!important}}
 </style>
+<style id="ka-family-records-office-layout-v2">
+/* Screen-only Academy records office: preserve printable report and local record engine. */
+@media screen{
+ html:root:root body{background:#f7f1e5!important;color:#202724!important;font:400 18px/1.65 "Brandon Grotesque",Nunito,Arial,sans-serif!important}
+ html:root:root body .wrap,html:root:root body .header-inner{width:min(1220px,calc(100% - 36px));max-width:1220px;margin-inline:auto}
+ html:root:root body .hero{background:#202724!important;color:#fff8e9!important;padding:55px 18px 48px!important}
+ html:root:root body .hero .eyebrow{font:400 27px/1.35 Cinzel,Georgia,serif!important;color:#fff8e9!important;letter-spacing:.015em!important;text-transform:none}
+ html:root:root body .hero h1{font:400 clamp(36px,5vw,55px)/1.2 Cinzel,Georgia,serif!important;color:#fff8e9!important;letter-spacing:0!important;max-width:960px;margin:14px auto!important}
+ html:root:root body .hero .lead{font:400 18px/1.7 Nunito,Arial,sans-serif!important;color:#fff8e9!important}
+ html:root:root body .hero .notice{max-width:950px!important;background:#fff8e9!important;color:#202724!important;border:1px solid #b48b45!important;border-left:4px solid #b48b45!important;font-size:17px!important}
+ html:root:root body main.workspace{display:grid!important;grid-template-columns:minmax(340px,0.88fr) minmax(0,1.5fr)!important;gap:24px!important;align-items:start;width:min(1220px,calc(100% - 36px))!important;max-width:1220px!important;margin:0 auto!important;padding:33px 0 66px!important}
+ html:root:root body main.workspace>.editor{min-width:0;max-width:none}
+ html:root:root body main.workspace>section{min-width:0;max-width:none}
+ html:root:root body main.workspace .panel{padding:24px!important;border-radius:7px!important;border:1px solid #c4b8a0!important;background:#fff8e9!important;box-shadow:0 5px 20px #2027240d!important}
+ html:root:root body main.workspace .editor .panel>.eyebrow{font:400 27px/1.27 Cinzel,Georgia,serif!important;color:#202724!important;letter-spacing:0!important;text-transform:none;overflow-wrap:anywhere}
+ html:root:root body main.workspace .panel :is(h2,h3){font:400 26px/1.3 Cinzel,Georgia,serif!important;color:#202724!important}
+ html:root:root body main.workspace .field label{font:400 17px/1.45 Nunito,Arial,sans-serif!important;color:#202724!important;margin-bottom:7px!important}
+ html:root:root body main.workspace :is(input,select,textarea){width:100%;min-height:46px;font:400 17px/1.4 Nunito,Arial,sans-serif!important;color:#202724!important;background:#fffdf8!important;border:1px solid #ac9f87!important;border-radius:7px!important}
+ html:root:root body main.workspace textarea{min-height:96px!important}
+ html:root:root body main.workspace :is(.btn,button){font:400 16px/1.35 Nunito,Arial,sans-serif!important;min-height:44px!important;padding:9px 13px!important;border-radius:7px!important}
+ html:root:root body main.workspace .actions{display:grid!important;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px;align-items:stretch}
+ html:root:root body main.workspace .actions>*{min-width:0;flex:none}
+ html:root:root body main.workspace .status{font-size:16px!important}
+ html:root:root body main.workspace .metrics{display:grid!important;grid-template-columns:repeat(4,minmax(0,1fr))!important;gap:10px}
+ html:root:root body main.workspace .metric{padding:13px!important;border:1px solid #c4b8a0!important;background:#fff8e9!important;border-radius:7px!important}
+ html:root:root body main.workspace .metric strong{font:400 clamp(23px,2.6vw,31px)/1.2 Cinzel,Georgia,serif!important;color:#202724!important}
+ html:root:root body main.workspace .metric span{font:400 16px/1.35 Nunito,Arial,sans-serif!important;color:#393d37!important;text-transform:none;letter-spacing:0}
+ html:root:root body main.workspace .preview-shell{border:1px solid #c4b8a0!important;border-radius:7px!important;background:#fffdf8!important;overflow:hidden}
+ html:root:root body main.workspace .preview-toolbar{display:flex;flex-wrap:wrap;gap:7px;align-items:center;padding:17px 21px!important;background:#eee7d8!important;color:#202724}
+ html:root:root body main.workspace .preview-toolbar :is(strong,span){font-size:17px!important;color:#202724!important}
+ html:root:root body main.workspace #report{background:#fffdf8!important;color:#202724!important;font:400 16px/1.55 Nunito,Arial,sans-serif!important;padding:clamp(22px,3vw,40px)!important;min-height:350px}
+ html:root:root body main.workspace #report :is(h1,h2,h3){font-family:Cinzel,Georgia,serif!important;color:#202724!important;letter-spacing:0!important}
+ html:root:root body main.workspace #report .eyebrow{font:400 16px/1.45 Cinzel,Georgia,serif!important;color:#202724!important;letter-spacing:0!important}
+ html:root:root body main.workspace #report :is(p,td,th,small,.report-meta strong,.record-note,.log-item){font-size:16px!important;line-height:1.5!important}
+ html:root:root body main.workspace #report :is(.report-meta,.report-metrics){min-width:0}
+ html:root:root body main.workspace #report table{font-size:16px!important;display:block;overflow-x:auto;max-width:100%}
+ html:root:root body main.workspace .log-item{font-size:16px!important}
+ html:root:root body footer.footer{background:#202724!important;color:#fff8e9!important;text-align:center;font-size:18px!important;padding:33px 18px!important}
+ html:root:root body #vnv-language-rail{background:#202724;color:#fff8e9;padding:9px 16px;min-height:54px;display:flex;align-items:center;justify-content:center;border-bottom:1px solid #b48b45}
+ html:root:root body #vnv-language-rail #vnv-language-switch{width:min(100%,1000px);margin:0 auto;justify-content:center}
+ html:root:root body :is(#vnv333NetworkTicker,#vnvTickerAutoPopulate,#vnvHeaderAutoPopulate,#vnv-language-rail) :is(a,button,span,label,select){font-size:16px!important}
+}
+@media screen and (max-width:1020px){
+ html:root:root body main.workspace{grid-template-columns:minmax(290px,0.9fr) minmax(0,1.2fr)!important;gap:16px!important}
+ html:root:root body main.workspace .metrics{grid-template-columns:repeat(2,minmax(0,1fr))!important}
+}
+@media screen and (max-width:760px){
+ html:root:root body main.workspace{display:grid!important;grid-template-columns:1fr!important}
+ html:root:root body main.workspace .actions{grid-template-columns:1fr 1fr}
+}
+@media screen and (max-width:440px){
+ html:root:root body main.workspace .actions,html:root:root body main.workspace .two{grid-template-columns:1fr}
+}
+@media print{
+ #vnv333NetworkTicker,#vnvTickerAutoPopulate,#vnvHeaderAutoPopulate,#vnvEnrichedMenuOverlay,#vnv-language-rail,#vnvEcosystemUtilityDock{display:none!important}
+}
+</style>
 </head>
 <body>
 <a class="skip" href="#main">Skip to records workspace</a>
 <header class="site-header"><div class="header-inner"><a class="brand" href="https://vervenveda.com/Khaemenes_Academy.github.io/family/"><span class="mark">K</span><span><strong>KHAEMENES ACADEMY</strong><small>Course Records Office · Pre-Algebra</small></span></a><div class="header-actions"><a class="btn" href="https://vervenveda.com/Khaemenes_Academy.github.io/family/">Family Learning Center</a><a class="btn" href="../">Course Home</a><a class="btn gold" href="course-completion-certificate.html">Completion Certificate</a></div></div></header>
 <section class="hero"><div class="wrap"><p class="eyebrow">Records Office · A+++ Family Standard</p><h1>Learning deserves a record worthy of the learner.</h1><p class="lead">Generate clear progress reports, mastery evidence, portfolio documentation, activity and reading logs, and a parent-attested administrative packet—all locally, without an account or fee.</p><p class="notice"><strong>Record boundary:</strong> These reports organize course evidence. They do not automatically become a district-issued transcript, accredited record, or statutory annual evaluation. A parent, evaluator, school, or local authority determines acceptance and completes any required attestation.</p></div></section>
+<div id="vnv-language-rail" role="group" aria-label="Page translation tools"></div>
 <main class="wrap workspace" id="main">
 <aside class="editor">
 <section class="panel"><p class="eyebrow">1 · Select the record</p><div class="field"><label for="learner">Learner record</label><select id="learner"></select></div><div class="field"><label for="reportType">Report type</label><select id="reportType"><option value="summary">Family Progress Summary</option><option value="mastery">Detailed Mastery Record</option><option value="portfolio">Portfolio Evidence Packet</option><option value="activity">Activity & Reading Log</option><option value="administrative">Full Administrative Packet</option></select></div><div class="actions"><button class="primary" id="refresh">Generate Report</button><button id="print">Print / Save PDF</button><button id="download">Download HTML</button><button id="csv">Export CSV Evidence</button></div><p class="status" id="status" aria-live="polite"></p></section>
@@ -156,18 +162,27 @@ function renderLog(){const log=rec().log;$("logList").innerHTML=log.length?log.s
 function addLog(){const item={date:$("logDate").value,hours:$("logHours").value,activity:$("logActivity").value.trim(),material:$("logMaterial").value.trim(),evidence:$("logEvidence").value.trim(),recorded_at:new Date().toISOString()};if(!item.date||!item.activity){$("status").textContent="Enter the activity date and educational activity.";return}rec().log.push(item);saveRecords("Activity entry saved locally.");["logHours","logActivity","logMaterial","logEvidence"].forEach(id=>$(id).value="");renderLog();render()}
 function download(name,text,type){const blob=new Blob([text],{type}),url=URL.createObjectURL(blob),a=document.createElement("a");a.href=url;a.download=name;a.click();setTimeout(()=>URL.revokeObjectURL(url),600)}
 function fileName(suffix){return`Khaemenes_PreAlgebra_${String(learner().name||"Learner").replace(/[^a-z0-9_-]+/gi,"_")}_${suffix}`}
-function downloadHTML(){const title=$("previewLabel").textContent,content=$("report").innerHTML,style=document.querySelector("style").textContent.replaceAll("#report","#report-export");download(fileName(`${$("reportType").value}.html`),`<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width"><title>${esc(title)}</title><style>${style}</style></head><body><main id="report-export">${content}</main><script src="https://vervenveda.com/assets/vnv-ecosystem-toolbar.js"></script>
-
-<!-- Canonical VNV/KA chrome; one owner for each shared component. -->
-<script src="https://vervenveda.com/assets/vnv-333-ticker.js"></script>
-<script src="https://vervenveda.com/assets/vnv-ticker-autopopulate.js" data-vnv-ticker-autopopulate></script>
-<script src="https://vervenveda.com/assets/vnv-header-autopopulate.js"></script>
-<script>(function(){"use strict";if(!window.VNV_HEADER?.mount)return;window.VNV_HEADER.mount({replaceLegacy:true,title:"Family Records Office",subtitle:"Khaemenes Academy · Pre-Algebra",icon:"K",home:"https://vervenveda.com/Khaemenes_Academy.github.io/",actions:[{"label":"COURSE","href":"https://vervenveda.com/Khaemenes_High.github.io/courses/mathematics/pre-algebra/"},{"label":"READINESS","href":"https://vervenveda.com/Khaemenes_High.github.io/courses/mathematics/pre-algebra/diagnostic/"},{"label":"ASSESSMENTS","href":"https://vervenveda.com/Khaemenes_High.github.io/courses/mathematics/pre-algebra/assessments/"},{"label":"RECORDS","href":"https://vervenveda.com/Khaemenes_High.github.io/courses/mathematics/pre-algebra/records/"}]});})();</script>
-
-</body></html>`,"text/html")}
+function downloadHTML(){const title=$("previewLabel").textContent,content=$("report").innerHTML,style=document.querySelector("style").textContent.replaceAll("#report","#report-export");download(fileName(`${$("reportType").value}.html`),`<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width"><title>${esc(title)}</title><style>${style}</style></head><body><main id="report-export">${content}</main></body></html>`,"text/html")}
 function exportCSV(){const e=evidence(learner()),rows=[["Student","Week","Unit","Domain","Lessons Complete","Assignments Complete","Mastery Percent","Attempts","Review Cycles"],...e.weeks.map(w=>[learner().name,w.number,w.unit.number,w.unit.title,w.lessonCount,w.assignmentCount,w.quiz||"",w.attempts,w.reviews]),[],["Activity Date","Hours","Educational Activity","Reading or Material Title","Evidence Retained"],...rec().log.map(item=>[item.date,item.hours,item.activity,item.material,item.evidence])],quote=value=>`"${String(value??"").replaceAll('"','""')}"`;download(fileName("evidence.csv"),rows.map(row=>row.map(quote).join(",")).join("\n"),"text/csv")}
 async function init(){try{map=await fetch("../course-map.json").then(response=>{if(!response.ok)throw Error();return response.json()})}catch{$("status").textContent="Course map could not be loaded; report titles may be limited."}const registry=window.KhaemenesFamilyRegistry,academyLearner=registry?.getLearner?.(),academyAdult=registry?.getAdult?.(),academyCourseId=academyLearner?.learnerId?`academy:${academyLearner.learnerId}`:null;if(academyCourseId&&course.students.some(item=>item.id===academyCourseId))course.activeId=academyCourseId;$("learner").innerHTML=course.students.length?course.students.map(item=>`<option value="${esc(item.id)}" ${item.id===course.activeId?"selected":""}>${esc(item.name)}</option>`).join(""):`<option value="empty">No course learner found</option>`;$("logDate").value=new Date().toISOString().slice(0,10);loadFields();if(academyLearner&&!$("legalName").value)$("legalName").value=academyLearner.nickname||"";if(academyAdult&&!$("parentName").value)$("parentName").value=academyAdult.displayName||"";render()}
 $("learner").onchange=()=>{loadFields();render()};$("reportType").onchange=render;$("refresh").onclick=()=>{saveFields();render();$("status").textContent="Report regenerated from the current local record."};$("saveMeta").onclick=saveFields;$("addLog").onclick=addLog;$("print").onclick=()=>window.print();$("download").onclick=downloadHTML;$("csv").onclick=exportCSV;init();
 </script>
+<!-- Canonical VNV/KA chrome — real page scripts outside the printable report template. -->
+<script src="https://vervenveda.com/assets/vnv-333-ticker.js"></script>
+<script src="https://vervenveda.com/assets/vnv-ticker-autopopulate.js" data-vnv-ticker-autopopulate></script>
+<script src="https://vervenveda.com/assets/vnv-header-autopopulate.js"></script>
+<script>
+(function(){"use strict";
+ if(!document.getElementById("vnvTickerAutoPopulate")){
+  window.VNV_TICKER?.autoPopulate({label:"Pre-Algebra Records",cleanLegacy:false,max:12,
+    exclude:["#vnv333NetworkTicker a","#vnvTickerAutoPopulate a","[data-vnv-ticker-ignore]","a[download]",".skip",".ticker-control",".vnv-ticker-control"]});
+ }
+ window.VNV_HEADER?.mount({replaceLegacy:true,title:"Family Records Office",subtitle:"Khaemenes Academy · Pre-Algebra",icon:"K",
+ home:"https://vervenveda.com/Khaemenes_Academy.github.io/",
+ actions:[{label:"COURSE",href:"../"},{label:"ASSESSMENTS",href:"../assessments/"},{label:"RECORDS",href:"./"},{label:"FAMILY",href:"https://vervenveda.com/Khaemenes_Academy.github.io/family/"}]});
+})();
+</script>
+<script src="https://vervenveda.com/assets/vnv-language.js" data-official-vnv-language="true"></script>
+<script src="https://vervenveda.com/assets/vnv-ecosystem-toolbar.js" data-official-vnv-ecosystem-toolbar="true"></script>
 </body>
 </html>
