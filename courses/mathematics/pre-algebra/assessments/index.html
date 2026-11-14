@@ -781,6 +781,24 @@ html:root:root body :is(.actions,.results-actions){justify-content:center}
 html:root:root body footer.footer{font-size:18px!important}
 @media print{html:root:root body{font-size:16px!important;background:#fff!important;color:#111!important}html:root:root body .hero{background:#fff!important;color:#111!important}}
 </style>
+<style id="ka-prealgebra-assessments-chrome-accessibility-v1">
+/* Limit typography adjustments to this landing page's shared chrome. */
+html:root body #vnv333NetworkTicker :is(a,span,button),
+html:root body #vnvTickerAutoPopulate :is(a,span,button),
+html:root body #vnvHeaderAutoPopulate :is(a,span,button),
+html:root body #vnv-language-rail :is(a,span,label,button,select){
+ font-size:16px!important;line-height:1.35!important
+}
+html:root body #vnv-language-rail{
+ display:flex;justify-content:center;align-items:center;min-height:54px;
+ padding:8px 16px;background:#202724;color:#fff8e9;
+ border-bottom:1px solid #b48b45
+}
+html:root body #vnv-language-rail #vnv-language-switch{
+ width:min(100%,1000px);margin:0 auto;justify-content:center;
+}
+@media print{html:root body #vnv-language-rail{display:none!important}}
+</style>
 <style id="ka-prealgebra-assessments-type-audit-v2">
 /* Forensic page typography and layout. Presentation only; preserves assessments and local records. */
 html:root:root body #main{font-family:"Brandon Grotesque",Nunito,"Avenir Next",Arial,sans-serif;font-size:18px;line-height:1.65;color:#202724}
@@ -876,6 +894,8 @@ html:root:root body #main .checklist-head .card-subtitle,html:root:root body #ma
       <span aria-current="page">Assessments & Completion Records</span>
     </div>
   </nav>
+
+  <div id="vnv-language-rail" role="group" aria-label="Page translation tools"></div>
 
   <nav class="assessment-nav" aria-label="Assessment page sections">
     <div class="wrap">
@@ -1251,7 +1271,8 @@ html:root:root body #main .checklist-head .card-subtitle,html:root:root body #ma
 <script src="https://vervenveda.com/assets/vnv-333-ticker.js"></script>
 <script src="https://vervenveda.com/assets/vnv-ticker-autopopulate.js" data-vnv-ticker-autopopulate></script>
 <script src="https://vervenveda.com/assets/vnv-header-autopopulate.js"></script>
-<script>(function(){"use strict";if(!window.VNV_HEADER?.mount)return;const tone=document.getElementById("themeToggle"),crumb=document.querySelector(".course-breadcrumb .wrap");if(tone&&crumb){crumb.appendChild(tone);tone.setAttribute("aria-label","Switch paper tone");}window.VNV_HEADER.mount({replaceLegacy:true,title:"Assessments & Completion",subtitle:"Khaemenes Academy · Pre-Algebra",icon:"K",home:"https://vervenveda.com/Khaemenes_Academy.github.io/",actions:[{"label":"COURSE","href":"https://vervenveda.com/Khaemenes_High.github.io/courses/mathematics/pre-algebra/"},{"label":"READINESS","href":"https://vervenveda.com/Khaemenes_High.github.io/courses/mathematics/pre-algebra/diagnostic/"},{"label":"ASSESSMENTS","href":"https://vervenveda.com/Khaemenes_High.github.io/courses/mathematics/pre-algebra/assessments/"},{"label":"RECORDS","href":"https://vervenveda.com/Khaemenes_High.github.io/courses/mathematics/pre-algebra/records/"}]});})();</script>
+<script>(function(){"use strict";if(!window.VNV_HEADER?.mount)return;const tone=document.getElementById("themeToggle"),crumb=document.querySelector(".course-breadcrumb .wrap");if(tone&&crumb){crumb.appendChild(tone);tone.setAttribute("aria-label","Switch paper tone");}if(!document.getElementById("vnvTickerAutoPopulate"))window.VNV_TICKER?.autoPopulate({label:"Pre-Algebra Assessments",max:12,cleanLegacy:false,exclude:["#vnv333NetworkTicker a","#vnvTickerAutoPopulate a","[data-vnv-ticker-ignore]","a[download]",".skip",".ticker-control",".vnv-ticker-control"]});window.VNV_HEADER.mount({replaceLegacy:true,title:"Assessments & Completion",subtitle:"Khaemenes Academy · Pre-Algebra",icon:"K",home:"https://vervenveda.com/Khaemenes_Academy.github.io/",actions:[{"label":"COURSE","href":"https://vervenveda.com/Khaemenes_High.github.io/courses/mathematics/pre-algebra/"},{"label":"READINESS","href":"https://vervenveda.com/Khaemenes_High.github.io/courses/mathematics/pre-algebra/diagnostic/"},{"label":"ASSESSMENTS","href":"https://vervenveda.com/Khaemenes_High.github.io/courses/mathematics/pre-algebra/assessments/"},{"label":"RECORDS","href":"https://vervenveda.com/Khaemenes_High.github.io/courses/mathematics/pre-algebra/records/"}]});})();</script>
+<script src="https://vervenveda.com/assets/vnv-language.js" data-official-vnv-language="true"></script>
 <script src="https://vervenveda.com/assets/vnv-ecosystem-toolbar.js" data-official-vnv-ecosystem-toolbar="true"></script>
 <!-- Read-only forensic inspection. Script loads only with ?chrome_audit=1. -->
 <script id="ka-prealgebra-assessments-audit-optin">
