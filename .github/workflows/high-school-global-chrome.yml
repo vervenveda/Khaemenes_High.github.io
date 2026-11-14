@@ -6,6 +6,7 @@ on:
     paths:
       - 'assets/high-school-global-chrome-v2.js'
       - 'tools/high-school-chrome-audit.mjs'
+      - 'tools/high-school-typography-audit.mjs'
       - '.github/workflows/high-school-global-chrome.yml'
   workflow_dispatch:
 
@@ -28,6 +29,8 @@ jobs:
         run: node tools/high-school-chrome-audit.mjs --check
       - name: Inventory lower-left controls and student export candidates
         run: node tools/high-school-chrome-audit.mjs --check --inventory
+      - name: Verify canonical High School typography
+        run: node tools/high-school-typography-audit.mjs
       - name: Validate patch
         run: git diff --check
       - name: Commit normalization
