@@ -4,7 +4,7 @@ const root=path.resolve(__dirname,".."),base="courses/science/integrated-science
 const html=fs.readFileSync(path.join(root,base,"index.html"),"utf8"),css=fs.readFileSync(path.join(root,base,"unit07-vnv-ka-blueprint-v1.css"),"utf8"),js=fs.readFileSync(path.join(root,base,"unit07.js"),"utf8");
 const count=text=>html.split(text).length-1;
 assert.equal(count('href="unit07-vnv-ka-blueprint-v1.css"'),1);
-assert.equal(count('class="ka-science9-u07"'),1);
+assert.match(html,/<body[^>]*class="[^"]*\\bka-science9-u07\\b[^"]*"/,"Unit 07 blueprint class retained");
 assert.equal(count('class="ka-unit-section-links"'),1,"Canonical unit quick-link navigation retained");
 assert.equal(count('class="academy-eyebrow">Khaemenes Academy'),1);
 assert.equal(count('class="requirement" data-requirement='),23,"All 23 mastery requirements preserved");

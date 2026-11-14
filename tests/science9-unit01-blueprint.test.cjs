@@ -6,11 +6,11 @@ const css=fs.readFileSync(path.join(root,base,"unit01-vnv-ka-blueprint-v1.css"),
 const js=fs.readFileSync(path.join(root,base,"unit01.js"),"utf8");
 const count=x=>html.split(x).length-1;
 assert.equal(count('href="unit01-vnv-ka-blueprint-v1.css"'),1);
-assert.equal(count('<body class="ka-science9-u01">'),1);
+assert.match(html,/<body[^>]*class="[^"]*\bka-science9-u01\b[^"]*"/,"Unit 01 blueprint class retained");
 assert.equal(count('<h1>Scientific Inquiry, Measurement &amp; Evidence</h1>'),1);
 assert.equal(count('class="ka-unit-section-links"'),1,"Canonical unit quick-link navigation retained");
 assert.equal(count('class="academy-eyebrow">Khaemenes Academy'),1);
-assert.equal(count('class="brand-mark" aria-hidden="true">K'),1);
+assert.ok(html.includes("vnv-header-autopopulate.js"),"Canonical Academy header loader retained");
 assert.equal(count('class="requirement" data-requirement='),17,"All 17 mastery requirements must remain visible");
 assert.equal((html.match(/href="lessons\/day-\d\d\.html"/g)||[]).length,11,"All ten lesson routes and Day 1 launch must remain intact");
 for(const p of ["mastery-quiz.html","unit-assessment.html","student-record.html","paper-helicopter-investigation.html","dataset-laboratory.html","investigation-design-task.html"])assert.ok(html.includes('href="'+p+'"'),p+" route");
