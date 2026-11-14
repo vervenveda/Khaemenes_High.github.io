@@ -27,18 +27,33 @@ function inject(s){
 }
 function lowerLeftHints(source){
   const hints=[];
-  const blocks=[...source.matchAll(/([^{}]{0,160})\{([^{}]*(?:position\s*:\s*fixed|position\s*:\s*sticky)[^{}]*)\}/gi)];
-  for(const m of blocks){
-    const css=m[2];
-    if(!/(?:left\s*:\s*(?:0|[0-9]{1,3}px)|inset[^;]*auto[^;]*auto)/i.test(css))continue;
-    if(!/(?:bottom\s*:\s*(?:0|[0-9]{1,3}px)|inset[^;]*auto)/i.test(css))continue;
-    hints.push((m[1].trim()+" { "+css.trim().slice(0,500)+" }").replace(/\s+/g," "));
+  for(const raw of source.split("}")){
+    const compact=raw.toLowerCase().replace(/\s+/g,"");
+    if(!(compact.includes("position:fixed")||compact.includes("position:sticky")))continue;
+    if(!compact.includes("left:"))continue;
+    if(!compact.includes("bottom:"))continue;
+    const snippet=raw.slice(Math.max(0,raw.length-900)).replace(/\s+/g," ").trim();
+    if(snippet)hints.push(snippet);
+    if(hints.length>=12)break;
   }
-  return hints.slice(0,12);
+  for(const m of source.matchAll(/<(?:a|button|div|nav|aside)\b[^>]*style=["'][^"']*position\s*:\s*fixed[^"']*["'][^>]*>/gi)){
+    const tag=m[0],compact=tag.toLowerCase().replace(/\s+/g,"");
+    if(compact.includes("left:")&&compact.includes("bottom:"))hints.push(tag.replace(/\s+/g," ").slice(0,900));
+    if(hints.length>=12)break;
+  }
+  return [...new Set(hints)].slice(0,12);
 }
 function exportHints(source){
-  return [...source.matchAll(/.{0,100}(?:student|learner|profile|progress|grade|record).{0,80}export.{0,120}|.{0,100}export.{0,80}(?:student|learner|profile|progress|grade|record).{0,120}/gi)]
-    .slice(0,12).map(m=>m[0].replace(/\s+/g," ").trim());
+  const low=source.toLowerCase(),hints=[];
+  let at=0;
+  while(hints.length<12){
+    const i=low.indexOf("export",at);if(i<0)break;
+    const start=Math.max(0,i-180),end=Math.min(source.length,i+280);
+    const snippet=source.slice(start,end).replace(/\s+/g," ").trim();
+    if(/student|learner|profile|progress|grade|record/i.test(snippet))hints.push(snippet);
+    at=i+6;
+  }
+  return hints;
 }
 
 const files=walk(ROOT).filter(htmlFile).sort();
