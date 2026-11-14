@@ -4,6 +4,7 @@ import path from "node:path";
 
 const ROOT=process.cwd();
 const WRITE=process.argv.includes("--write");
+const INVENTORY=process.argv.includes("--inventory");
 const TAG='  <script src="/Khaemenes_High.github.io/assets/high-school-global-chrome-v2.js" defer data-high-school-global-chrome="v2"></script>\n';
 const norm=p=>p.split(path.sep).join("/");
 const skipDirs=new Set([".git","node_modules",".cache","dist"]);
@@ -50,8 +51,10 @@ for(const file of files){
   else if(WRITE){
     source=inject(source);fs.writeFileSync(abs,source);changed++;covered++;
   }
-  const l=lowerLeftHints(source);if(l.length)lower.push({file,hints:l});
-  const e=exportHints(source);if(e.length)exports.push({file,hints:e});
+  if(INVENTORY){
+    const l=lowerLeftHints(source);if(l.length)lower.push({file,hints:l});
+    const e=exportHints(source);if(e.length)exports.push({file,hints:e});
+  }
 }
 console.log(JSON.stringify({
   mode:WRITE?"write":"check",
