@@ -37,6 +37,6 @@ jobs:
           fi
           git config user.name "Khaemenes Academy Automation"
           git config user.email "khaemenesacademy@users.noreply.github.com"
-          git add -- '*.html' '*.htm' ':!node_modules' ':!.git'
+          git add -A -- ':!node_modules' ':!.git'
           git commit -m "Standardize High School header menu and toolbar"
           git push
