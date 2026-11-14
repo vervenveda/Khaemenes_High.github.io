@@ -4,6 +4,16 @@
  const script=document.currentScript;
  if(!script?.src)return;
  const root=new URL("../",script.src);
+ const DUAL_TICKER_GUARD="vnv-dual-ticker-v1.js";
+ function ensureDualTickerGuard(){
+   if(typeof document.createElement!=="function")return;
+   if(document.querySelector?.('script[data-high-dual-ticker-guard],script[src*="'+DUAL_TICKER_GUARD+'"]'))return;
+   const s=document.createElement("script");
+   s.src=new URL(DUAL_TICKER_GUARD,script.src).href;
+   s.defer=true;
+   s.dataset.highDualTickerGuard="1";
+   (document.head||document.documentElement||document.body)?.appendChild?.(s);
+ }
  const page=location.pathname.startsWith(root.pathname)?location.pathname.slice(root.pathname.length):"";
  const ACADEMY_EXPLORE="https://vervenveda.com/Khaemenes_Academy.github.io/?explore=1";
  const names={"mathematics":"Mathematics","language-arts":"Language Arts","science":"Science","social-studies":"Social Studies","physical-education":"Physical Education","electives":"Electives"};
@@ -207,6 +217,7 @@
    wrap.append(button,panel);slot.appendChild(wrap);
  }
  function init(){
+   ensureDualTickerGuard();
    updateProfiles();skip();headerBreadcrumbs();breadcrumbs();fallbackMenu();enforceAcademyExploreLinks();
  }
  window.addEventListener("pageshow",updateProfiles);

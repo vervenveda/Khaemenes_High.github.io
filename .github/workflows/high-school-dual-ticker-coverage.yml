@@ -1,0 +1,34 @@
+name: High School Dual Ticker Coverage
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'assets/high-navigation-v1.js'
+      - 'assets/vnv-dual-ticker-v1.js'
+      - 'index.html'
+      - 'courses/**/index.html'
+      - 'grades/**/index.html'
+      - 'tools/test-high-school-dual-tickers.mjs'
+      - '.github/workflows/high-school-dual-ticker-coverage.yml'
+  pull_request:
+    paths:
+      - 'assets/high-navigation-v1.js'
+      - 'assets/vnv-dual-ticker-v1.js'
+      - 'index.html'
+      - 'courses/**/index.html'
+      - 'grades/**/index.html'
+      - 'tools/test-high-school-dual-tickers.mjs'
+      - '.github/workflows/high-school-dual-ticker-coverage.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  dual-ticker-coverage:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Verify canonical dual ticker coverage
+        run: node tools/test-high-school-dual-tickers.mjs
