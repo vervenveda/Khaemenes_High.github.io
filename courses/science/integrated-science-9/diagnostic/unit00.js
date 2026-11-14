@@ -272,3 +272,7 @@ document.addEventListener("DOMContentLoaded",guard);
   script.dataset.scienceThemeLoader="true";
   document.head.append(script);
 })();
+
+
+/* Science 9 canonical Academy shell: presentation/navigation only; learner records are untouched. */
+(()=>{const here=document.currentScript?.src||location.href;if(document.querySelector('script[data-science9-academy-shell]'))return;const s=document.createElement("script");s.src=new URL("../science9-academy-shell-v1.js",here).href;s.defer=true;s.dataset.science9AcademyShell="true";document.head.append(s)})();

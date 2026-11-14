@@ -143,3 +143,7 @@
 (() => {const marker="/courses/science/integrated-science-9/",path=window.location.pathname,at=path.indexOf(marker),base=at>=0?path.slice(0,at+marker.length):new URL("../../",window.location.href).pathname;if(document.querySelector('script[data-unit01-entry-gate]'))return;const script=document.createElement("script");script.src=`${base}units/unit-01/unit01-entry-gate.js`;script.dataset.unit01EntryGate="true";document.head.append(script)})();
 /* Course-wide print evidence header (local/offline; never modifies records). */
 (()=>{if(document.querySelector('script[data-science-print-evidence]'))return;const script=document.createElement("script");script.src=new URL("../../science-print-evidence.js",document.currentScript?.src||location.href).href;script.defer=true;script.dataset.sciencePrintEvidence="true";document.head.append(script)})();
+
+
+/* Science 9 canonical Academy shell: presentation/navigation only; learner records are untouched. */
+(()=>{const here=document.currentScript?.src||location.href;if(document.querySelector('script[data-science9-academy-shell]'))return;const s=document.createElement("script");s.src=new URL("../../science9-academy-shell-v1.js",here).href;s.defer=true;s.dataset.science9AcademyShell="true";document.head.append(s)})();

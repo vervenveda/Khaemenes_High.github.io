@@ -1,0 +1,12 @@
+/* Science 9 readable-type floor · Academy standard
+   Loaded last by science9-academy-shell-v1.js so legacy small-type rules cannot
+   push student-facing text below the 16px Academy floor.
+*/
+html:root:root body{font-size:16px!important}
+:where(
+  small,.small,.micro,.meta,.kicker,.eyebrow,.overline,.caption,.note,.hint,
+  .tag,.badge,.pill,.chip,.breadcrumb,.breadcrumbs,.lesson-meta,.course-meta,
+  .brand-copy small,.requirement strong,.requirement span,.day-card p,
+  .resource-card p,.footer,.footer-inner,
+  button,.btn,input,select,textarea,label,summary
+){font-size:16px!important}
