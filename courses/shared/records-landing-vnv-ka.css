@@ -114,3 +114,30 @@
 @media print{
  html:root body[data-ka-records-page] :is(#vnv333NetworkTicker,#vnvTickerAutoPopulate,#vnvHeaderAutoPopulate,#vnv-language-rail,#vnvEcosystemUtilityDock,.ka-records-footer){display:none!important}
 }
+/* Formal certificate framing for every opted-in high-school completion surface. */
+@media screen{
+ html:root body[data-ka-records-page][data-ka-records-kind="certificate"] main .certificate,
+ html:root body[data-ka-records-page][data-ka-course="Algebra II"] main > section.card:first-child{
+  box-sizing:border-box!important;width:min(100%,1080px)!important;
+  margin-left:auto!important;margin-right:auto!important;
+  padding:clamp(33px,5.5vw,70px)!important;
+  background:#fffdf8!important;color:#202724!important;
+  border:6px double #ad8a4f!important;border-radius:7px!important;
+  box-shadow:0 12px 35px rgba(32,39,36,.12)!important;
+  text-align:center!important;
+ }
+ html:root body[data-ka-records-page][data-ka-records-kind="certificate"] main .certificate :is(h1,h2),
+ html:root body[data-ka-records-page][data-ka-course="Algebra II"] main > section.card:first-child :is(h1,h2){
+  color:#202724!important;-webkit-text-fill-color:#202724!important;
+  font-family:Cinzel,Georgia,serif!important;font-weight:400!important;
+  letter-spacing:0!important;
+ }
+ html:root body[data-ka-records-page][data-ka-records-kind="certificate"] main .certificate .eyebrow,
+ html:root body[data-ka-records-page][data-ka-course="Algebra II"] main > section.card:first-child .eyebrow{
+  color:#665238!important;font-size:18px!important;
+ }
+ html:root body[data-ka-records-page][data-ka-records-kind="certificate"] main .certificate :is(input,textarea),
+ html:root body[data-ka-records-page][data-ka-course="Algebra II"] main > section.card:first-child :is(input,textarea){
+  background:#fffdf8!important;color:#202724!important;
+ }
+}
