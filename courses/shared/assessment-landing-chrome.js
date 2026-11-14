@@ -9,12 +9,11 @@ function mount(){
  const course=page.dataset.kaCourse||"Mathematics";
  const courseUrl=page.dataset.kaCourseUrl||"../";
  const title=page.dataset.kaAssessmentTitle||course+" Assessment Center";
- const grade=page.dataset.kaGrade||"High School";
+ const grade=page.dataset.kaGrade||"";
  const nav=[
   {label:"COURSE",href:courseUrl},
   {label:"ASSESSMENTS",href:"./"},
-  {label:"HIGH SCHOOL",href:"https://vervenveda.com/Khaemenes_High.github.io/"},
-  {label:"GRADE "+grade,href:"https://vervenveda.com/Khaemenes_High.github.io/grades/grade-"+grade+"/"}
+  {label:"HIGH SCHOOL",href:"https://vervenveda.com/Khaemenes_High.github.io/"}
  ];
  const toggle=document.getElementById("themeToggle");
  if(toggle){
