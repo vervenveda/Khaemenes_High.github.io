@@ -112,6 +112,54 @@ html:root:root body footer.footer{font-size:18px!important}
  #vnv333NetworkTicker,#vnvTickerAutoPopulate,#vnvHeaderAutoPopulate,#vnvEnrichedMenuOverlay,#vnv-language-rail,#vnvEcosystemUtilityDock{display:none!important}
 }
 </style>
+<style id="ka-records-preparation-toolkit-v1">
+@media screen{
+ html:root:root body .records-preview-column{display:grid;align-content:start;gap:21px;min-width:0}
+ html:root:root body .records-preview-column .metrics{margin-bottom:0!important}
+ html:root:root body .records-resource-panel{
+  padding:27px!important;border:1px solid #c4b8a0!important;border-radius:7px!important;
+  background:#fff8e9!important;color:#202724!important;box-shadow:0 5px 20px #2027240d;
+ }
+ html:root:root body .records-resource-heading{text-align:center;margin:0 auto 23px;max-width:760px}
+ html:root:root body .records-resource-heading h2{
+  margin:0 0 9px;font:400 clamp(27px,3vw,33px)/1.27 Cinzel,Georgia,serif!important;
+  color:#202724!important;
+ }
+ html:root:root body .records-resource-heading p{
+  font:400 18px/1.65 Nunito,Arial,sans-serif!important;color:#393d37!important;margin:0
+ }
+ html:root:root body .records-resource-grid{
+  display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;
+ }
+ html:root:root body .records-resource-card{
+  display:flex;flex-direction:column;align-items:stretch;min-width:0;
+  padding:19px;border:1px solid #c4b8a0;border-radius:7px;background:#fffdf8;
+ }
+ html:root:root body .records-resource-card h3{
+  font:400 22px/1.27 Cinzel,Georgia,serif!important;color:#202724!important;
+  margin:0 0 9px;overflow-wrap:anywhere;
+ }
+ html:root:root body .records-resource-card p{
+  flex:1;font:400 17px/1.55 Nunito,Arial,sans-serif!important;color:#393d37!important;
+  margin:0 0 16px
+ }
+ html:root:root body .records-resource-card a{
+  display:flex;justify-content:center;align-items:center;text-align:center;
+  min-height:44px;padding:9px 11px;font:400 16px/1.35 Nunito,Arial,sans-serif!important;
+  text-decoration:none!important;color:#fff8e9!important;background:#202724!important;
+  border:1px solid #202724!important;border-radius:7px;
+ }
+ html:root:root body .records-resource-card a:focus-visible{outline:3px solid #b48b45;outline-offset:3px}
+ html:root:root body .records-resource-note{
+  font:400 16px/1.55 Nunito,Arial,sans-serif!important;color:#393d37!important;
+  text-align:center;margin:18px auto 0;max-width:690px
+ }
+}
+@media screen and (max-width:1180px){html:root:root body .records-resource-grid{grid-template-columns:1fr}}
+@media screen and (max-width:760px){html:root:root body .records-resource-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media screen and (max-width:580px){html:root:root body .records-resource-grid{grid-template-columns:1fr}html:root:root body .records-resource-panel{padding:20px!important}}
+@media print{.records-resource-panel{display:none!important}}
+</style>
 </head>
 <body>
 <a class="skip" href="#main">Skip to records workspace</a>
@@ -124,7 +172,34 @@ html:root:root body footer.footer{font-size:18px!important}
 <section class="panel" style="margin-top:18px"><p class="eyebrow">2 · Record identity</p><div class="field"><label for="legalName">Student legal name</label><input id="legalName" autocomplete="name"></div><div class="field"><label for="programName">School / home education program</label><input id="programName" value="Parent-Directed Home Education Program"></div><div class="two"><div class="field"><label for="academicYear">Academic year</label><input id="academicYear" placeholder="2026–2027"></div><div class="field"><label for="courseDates">Course dates</label><input id="courseDates" placeholder="Start – completion"></div></div><div class="field"><label for="parentName">Parent / administrator</label><input id="parentName"></div><div class="field"><label for="district">County / district reference</label><input id="district" placeholder="Optional"></div><div class="two"><div class="field"><label for="hours">Documented hours</label><input id="hours" type="number" min="0" step="0.25"></div><div class="field"><label for="recordId">Portfolio / record ID</label><input id="recordId"></div></div><div class="field"><label for="strengths">Strengths demonstrated</label><textarea id="strengths" placeholder="Parent/teacher observation supported by work samples"></textarea></div><div class="field"><label for="nextSteps">Recommended next steps</label><textarea id="nextSteps" placeholder="Skills to reinforce, placement, or next course"></textarea></div><div class="field"><label for="accommodations">Accommodations / instructional notes</label><textarea id="accommodations" placeholder="Optional; include only information appropriate for the record"></textarea></div><button id="saveMeta">Save Record Details</button></section>
 <section class="panel" style="margin-top:18px"><p class="eyebrow">3 · Contemporaneous log</p><div class="two"><div class="field"><label for="logDate">Date</label><input id="logDate" type="date"></div><div class="field"><label for="logHours">Hours</label><input id="logHours" type="number" min="0" step="0.25"></div></div><div class="field"><label for="logActivity">Educational activity</label><input id="logActivity" placeholder="Lesson, investigation, assessment, project"></div><div class="field"><label for="logMaterial">Reading/material title</label><input id="logMaterial" placeholder="Designate reading material by title when used"></div><div class="field"><label for="logEvidence">Evidence retained</label><input id="logEvidence" placeholder="Worksheet, notes, model, assessment, photograph"></div><button class="primary" id="addLog">Add Log Entry</button><div class="log-list" id="logList"></div></section>
 </aside>
-<section><div class="metrics" id="screenMetrics"></div><article class="preview-shell"><div class="preview-toolbar"><strong>Print Preview</strong><span id="previewLabel">Family Progress Summary</span></div><div id="report"></div></article></section>
+<section class="records-preview-column" aria-label="Report preview and preparation resources">
+<div class="metrics" id="screenMetrics"></div>
+<article class="preview-shell"><div class="preview-toolbar"><strong>Print Preview</strong><span id="previewLabel">Family Progress Summary</span></div><div id="report"></div></article>
+<aside class="records-resource-panel" aria-labelledby="recordsResourcesTitle">
+  <div class="records-resource-heading">
+    <h2 id="recordsResourcesTitle">Record Preparation Toolkit</h2>
+    <p>Make the most of your learner's work. These resources help you gather evidence, review assessment results, and prepare the finished record.</p>
+  </div>
+  <div class="records-resource-grid">
+    <article class="records-resource-card">
+      <h3>Review Course Evidence</h3>
+      <p>Return to Pre-Algebra to review the learner's lessons, assignments, and course progression.</p>
+      <a href="../">Open Pre-Algebra Course</a>
+    </article>
+    <article class="records-resource-card">
+      <h3>Check Assessments</h3>
+      <p>Review the midterm, final examination, completion checklist, and administration guidance.</p>
+      <a href="../assessments/">Open Assessment Suite</a>
+    </article>
+    <article class="records-resource-card">
+      <h3>Prepare Completion</h3>
+      <p>Prepare the separate completion certificate with verified dates, results, and parent or evaluator details.</p>
+      <a href="course-completion-certificate.html">Open Completion Certificate</a>
+    </article>
+  </div>
+  <p class="records-resource-note">The toolkit provides navigation and guidance only. It does not change grades, mark evidence complete, or issue certificates.</p>
+</aside>
+</section>
 </main>
 <footer class="footer">Khaemenes Academy · Universal, local-first educational records · No account required</footer>
 <script>
