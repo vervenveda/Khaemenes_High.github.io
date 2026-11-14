@@ -11,7 +11,7 @@ assert(!/localStorage\.|sessionStorage\.|fetch\(/.test(html),"Companion must not
 assert(html.includes("academic-research-desk.html")&&html.includes("science-evidence-portfolio.html"));
 assert(desk.includes('href="academic-evidence-companion.html"'),"research desk entry missing");
 assert(portfolio.includes('href="academic-evidence-companion.html"'),"portfolio entry missing");
-const blocks=[...html.matchAll(/<script(?:\\s[^>]*)?>([\\s\\S]*?)<\\/script>/gi)].filter(match=>!/<script[^>]*\\bsrc\\s*=/i.test(match[0].slice(0,match[0].indexOf(">")+1)));
+const blocks=[...html.matchAll(/<script(?:\s[^>]*)?>([\s\S]*?)<\/script>/gi)].filter(match=>!/<script[^>]*\bsrc\s*=/i.test(match[0].slice(0,match[0].indexOf(">")+1)));
 assert.equal(blocks.length,1,"Companion should contain exactly one inline application script");
 new vm.Script(blocks[0][1],{filename:"academic-evidence-companion.html inline"});
 const standard=read("../../shared/ACADEMIC_EVIDENCE_CONVENTION_V1.md");
