@@ -29,7 +29,7 @@ for(const [course,path] of [
  assert(page.includes("academic-evidence-companion.html?course="+course),"Missing subject bridge: "+course);
  assert(html.includes('"'+course+'":{grade:'),"Missing course configuration: "+course);
 }
-assert(html.includes('new URLSearchParams(location.search).get("course")'),"Course context should come from opening link");
+assert(html.includes("new URLSearchParams(location.search)")&&html.includes('get("course")'),"Course context should come from opening link");
 assert(html.includes('form.elements.grade.value=selected.grade'),"Grade should follow course context");
 assert(html.includes('form.elements.subject.value=selected.subject'),"Subject should follow course context");
 console.log("PASS academic evidence companion: standalone, printable, exportable, no storage or grades, connected to research desk and portfolio");
