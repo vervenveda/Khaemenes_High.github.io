@@ -108,3 +108,7 @@
   if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", () => mount(result), { once: true });
   else mount(result);
 })();
+
+
+/* Canonical Science 9 Academy shell for the course front page. Presentation only. */
+(()=>{const here=document.currentScript?.src||location.href;if(document.querySelector('script[data-science9-academy-shell]'))return;const s=document.createElement("script");s.src=new URL("../science9-academy-shell-v1.js",here).href;s.defer=true;s.dataset.science9AcademyShell="true";document.head.append(s)})();
