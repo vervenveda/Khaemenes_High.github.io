@@ -26,6 +26,8 @@ jobs:
         run: node tools/high-school-chrome-audit.mjs --write
       - name: Verify full HTML coverage and inventory lower-left/export candidates
         run: node tools/high-school-chrome-audit.mjs --check
+      - name: Inventory lower-left controls and student export candidates
+        run: node tools/high-school-chrome-audit.mjs --check --inventory
       - name: Validate patch
         run: git diff --check
       - name: Commit normalization
