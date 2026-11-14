@@ -160,6 +160,33 @@ html:root:root body footer.footer{font-size:18px!important}
 @media screen and (max-width:580px){html:root:root body .records-resource-grid{grid-template-columns:1fr}html:root:root body .records-resource-panel{padding:20px!important}}
 @media print{.records-resource-panel{display:none!important}}
 </style>
+<style id="ka-records-action-contrast-v1">
+/* Scope the four Records Office actions to legible Academy charcoal/cream contrast.
+   Does not affect export, print, learner records, shared chrome, or report contents. */
+@media screen{
+ html:root:root body main#main .editor .panel .actions > button{
+  appearance:none!important;-webkit-appearance:none!important;
+  display:inline-flex!important;align-items:center!important;justify-content:center!important;
+  min-width:0!important;min-height:48px!important;padding:11px 14px!important;
+  background:#202724!important;color:#fff8e9!important;
+  -webkit-text-fill-color:#fff8e9!important;opacity:1!important;
+  border:1px solid #202724!important;border-radius:7px!important;
+  font:400 16px/1.4 Nunito,"Brandon Grotesque",Arial,sans-serif!important;
+  text-align:center!important;white-space:normal!important;
+  text-shadow:none!important;visibility:visible!important;
+ }
+ html:root:root body main#main .editor .panel .actions > button:hover{
+  background:#394840!important;color:#fff8e9!important;
+  -webkit-text-fill-color:#fff8e9!important;border-color:#394840!important;
+ }
+ html:root:root body main#main .editor .panel .actions > button:focus-visible{
+  outline:3px solid #b48b45!important;outline-offset:3px!important;
+ }
+ html:root:root body main#main .editor .panel .actions > button:disabled{
+  opacity:.65!important;cursor:not-allowed!important;
+ }
+}
+</style>
 </head>
 <body>
 <a class="skip" href="#main">Skip to records workspace</a>
