@@ -46,7 +46,7 @@ function mount(){
   actions:[
    {label:"COURSE",href:courseUrl},
    {label:"ASSESSMENTS",href:"../assessments/"},
-   {label:isIndex?"RECORDS":"CERTIFICATE",href:isIndex?"./":"course-completion-certificate.html"},
+   {label:"RECORDS",href:"./"},
    {label:"HIGH SCHOOL",href:"https://vervenveda.com/Khaemenes_High.github.io/"}
   ]
  });
