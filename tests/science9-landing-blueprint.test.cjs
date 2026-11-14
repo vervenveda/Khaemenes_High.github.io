@@ -3,6 +3,8 @@ const assert=require("node:assert/strict"),fs=require("node:fs"),path=require("n
 const root=path.resolve(__dirname,".."),base="courses/science/integrated-science-9/";
 const html=fs.readFileSync(path.join(root,base,"index.html"),"utf8");
 const css=fs.readFileSync(path.join(root,base,"science9-vnv-ka-blueprint-v1.css"),"utf8");
+const courseData=fs.readFileSync(path.join(root,base,"science9-course-data-v1.js"),"utf8");
+const dashboardApp=fs.readFileSync(path.join(root,base,"science9-dashboard-app-v1.js"),"utf8");
 function count(needle){return html.split(needle).length-1}
 assert.equal(count('href="science9-vnv-ka-blueprint-v1.css"'),1,"One scoped blueprint stylesheet");
 assert.equal(count('class="ka-science9-blueprint"'),1,"Only the Science landing page receives styling");
@@ -19,7 +21,7 @@ for(const view of ["dashboard","week","scope","lab","assessments","reports","sta
 }
 assert.match(html,/<h1>Integrated Science 9<\/h1>/);
 assert.match(html,/class="academy-eyebrow">Khaemenes Academy/);
-assert.ok(html.includes('passingTarget":80'),"80% assessment requirement preserved");
+assert.ok(courseData.includes('passingTarget":80'),"80% assessment requirement preserved");
 assert.ok(html.includes('src="science9-backup-guard-v1.js"'),"Protected backup guard retained");
 assert.ok(html.includes('assets/science9-entry-gate.js'),"Existing science entrance policy retained");
 assert.ok(html.includes('data-official-vnv-ecosystem-toolbar="true"'),"Canonical toolbar retained");
@@ -28,7 +30,9 @@ assert.ok(css.includes("background:#243038!important"),"Charcoal Academy hero");
 assert.ok(css.includes("background:#fffdf8!important"),"Parchment Academy cards");
 assert.ok(css.includes("font-size:16px!important"),"Readable controls");
 assert.ok(css.includes("@media(max-width:540px)"),"Narrow-screen breakpoint");
-const marker="const APP=",start=html.indexOf(marker),end=html.indexOf("</script>",start);
-assert.ok(start>=0&&end>start,"Core science course app remains present");
-assert.doesNotThrow(()=>new vm.Script(html.slice(start,end),{filename:"science9-main-inline-script.js"}),"Core learning JS syntax");
+assert.equal(count('src="science9-course-data-v1.js"'),1,"Course data externalized once");
+assert.equal(count('src="science9-dashboard-app-v1.js"'),1,"Dashboard app externalized once");
+assert.ok(!/<script\b(?![^>]*src=)[^>]*>[\s\S]{100000,}<\/script>/i.test(html),"No giant inline application block remains");
+assert.doesNotThrow(()=>new vm.Script(courseData,{filename:"science9-course-data-v1.js"}),"Course data JS syntax");
+assert.doesNotThrow(()=>new vm.Script(dashboardApp,{filename:"science9-dashboard-app-v1.js"}),"Dashboard app JS syntax");
 console.log("PASS Science 9 approved landing blueprint: centered page, preserved learner IDs, mastery, lessons, lab, archive and course engine.");
