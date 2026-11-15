@@ -1,4 +1,4 @@
-const CACHE_NAME = "khae-english10-v5-ela-curriculum-20261016-v4-passage72-69f3a8a6-read1-unit08-unit09-unit10-unit11read-unit12read";
+const CACHE_NAME = "khae-english10-v5-ela-curriculum-20261016-v4-passage72-69f3a8a6-read1-unit08-unit09-unit10-unit11read-unit12read-unit02read";
 const PRECACHE = ["../../shared/course-entry-contract.js","../../shared/learner-scope-v1.js","../../shared/upper-english-records.js",
   "./404.html",
   "./assessments/diagnostic/index.html",
@@ -50,6 +50,7 @@ const PRECACHE = ["../../shared/course-entry-contract.js","../../shared/learner-
   "./teacher-guide.html",
   "./units/unit-01/index.html",
   "./units/unit-02/index.html",
+  "./units/unit-02/reading-dossier.html",
   "./units/unit-03/index.html",
   "./units/unit-04/index.html",
   "./units/unit-05/index.html",
