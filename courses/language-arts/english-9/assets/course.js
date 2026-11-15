@@ -1,6 +1,16 @@
 
 (() => {
   "use strict";
+  try{
+    const p=String(location.pathname||"");
+    if(/\/english-9\/weeks\/week-\d{2}\//i.test(p)&&!window.__KHAE_WEEK_SOURCE_CUSTODY_V1__&&!document.querySelector('script[data-week-source-custody-loader]')){
+      const s=document.createElement("script");
+      s.src="/Khaemenes_High.github.io/courses/shared/week-source-custody-v1.js?v=20261115";
+      s.defer=true;s.dataset.weekSourceCustodyLoader="1";
+      (document.head||document.documentElement).append(s);
+    }
+  }catch{}
+
   const continuationSrc="https://vervenveda.com/Khaemenes_High.github.io/courses/shared/high-school-english-continuation.js?v=20261115";
   if(!window.KhaemenesHighEnglishContinuation && ![...document.scripts].some(s=>String(s.src||"").includes("/courses/shared/high-school-english-continuation.js"))){
     const continuationScript=document.createElement("script");
