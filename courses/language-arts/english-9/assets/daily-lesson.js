@@ -1,4 +1,13 @@
 
+/* Unit 01 evidence architecture loader · no learner data writes */
+(()=>{try{
+ if(window.__E9_U01_EVIDENCE_V1__||document.querySelector('script[data-e9-u01-evidence-loader]'))return;
+ const s=document.createElement("script");
+ s.src="/Khaemenes_High.github.io/courses/language-arts/english-9/assets/unit01-evidence-v1.js?v=20261115";
+ s.defer=true;s.dataset.e9U01EvidenceLoader="1";
+ (document.head||document.documentElement).append(s);
+}catch{}})();
+
 (function(){
  "use strict";
  var contract=window.KhaemenesCourseEntryContract;
