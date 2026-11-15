@@ -41,7 +41,7 @@ for(const course of courses){
  const curriculumPath=base+"curriculum.json";
  const bank=JSON.parse(read(base+"assets/quiz-specific-bank.json"));
  assert.equal(bank.course,course.slug);
- assert.equal(bank.version,"v3-instructional");
+ assert.equal(bank.version,"v4-passage-anchored");
  assert.equal(bank.rows.length,36);
  const current=JSON.parse(read(curriculumPath));
  // Authored, self-contained early-year items replace repeated opening templates.
@@ -70,7 +70,7 @@ for(const course of courses){
   for(let k=0;k<2;k++)week.quiz[k+3]=toQuestion(bank.rows[i][k],week,course,k);
   if(primary&&i<3)for(let k=0;k<2;k++)week.quiz[k]=structuredClone(primary.weeks[i].quiz[k]);
  }
- next.quizBankVersion="2026-10-16-v3-instructional";
+ next.quizBankVersion="2026-10-16-v4-passage-anchored";
  if(!write)equal(current,next,course.slug+" canonical quiz drift");
  save(curriculumPath,JSON.stringify(next,null,2)+"\n");
  const browserPath=base+"assets/curriculum-data.js";
