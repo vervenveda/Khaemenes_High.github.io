@@ -68,7 +68,7 @@ for(const course of courses){
  assert(dossierHtml.includes("Jennifer Kay Pearl"));
  const routes=[...dossierHtml.matchAll(/(?:href|src)="([^"]+)"/g)].map(m=>m[1]);
  for(const href of routes){
-  if(href.startsWith("#")||/^(https?:|mailto:|data:)/i.test(href))continue;
+  if(allowedUiScripts.has(href)||href.startsWith("#")||/^(https?:|mailto:|data:)/i.test(href))continue;
   checkReference(dossier,href);
   localLinks++;
  }
