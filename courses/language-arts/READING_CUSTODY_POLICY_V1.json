@@ -1,0 +1,35 @@
+{
+  "version": "1.0.0",
+  "date": "2026-11-15",
+  "scope": "Khaemenes Academy High School English 9-12",
+  "policy": {
+    "first_party_embedded_reading": "pass_when_exact_text_is_local_and_task_linked",
+    "authentic_source": "fail_closed_until_exact_source_provenance_passage_and_access_are_recorded",
+    "category_only_source": "hold",
+    "teacher_selected_source": "conditional_until_selection_is_recorded",
+    "microtext_substitution_for_required_longform": "not_allowed"
+  },
+  "required_fields_for_authentic_source": [
+    "title",
+    "author_or_origin",
+    "editor_or_translator_if_applicable",
+    "edition_or_stable_source",
+    "assigned_span",
+    "provenance_basis",
+    "rights_or_public_domain_basis",
+    "jurisdiction_if_relevant",
+    "local_or_approved_access_route",
+    "accessibility_route",
+    "student_task",
+    "citation_expectation",
+    "evaluator_boundary"
+  ],
+  "unit_topology": {
+    "grades": 4,
+    "units_per_grade": 12,
+    "unit_overviews_with_embedded_reading": 48,
+    "unit_dossier_routes_after_phase_1": 48,
+    "embedded_first_party_layer": "PASS",
+    "authentic_extended_layer": "UNIT_BY_UNIT_REVIEW_REQUIRED"
+  }
+}
