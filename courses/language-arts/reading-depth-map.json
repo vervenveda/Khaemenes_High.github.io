@@ -650,5 +650,67 @@
       "assessment_authority": "existing weekly classroom, unit assessment and teacher-scored portfolio",
       "preserve_unit_original": true
     }
+  ],
+  "unit_01_companions": [
+    {
+      "course": "english-9",
+      "unit": 1,
+      "weeks": [
+        1,
+        2,
+        3
+      ],
+      "reading": "units/unit-01/reading-spine.html",
+      "status": "published-routing-spine",
+      "type": "canonical hub to existing English 9 Week 01–03 classrooms and isolated daily studios",
+      "assessment_authority": "existing weekly classroom, diagnostic/unit assessment and teacher-scored work",
+      "preserve_unit_original": true,
+      "no_parallel_instruction": true
+    },
+    {
+      "course": "english-10",
+      "unit": 1,
+      "weeks": [
+        1,
+        2,
+        3
+      ],
+      "reading": "units/unit-01/reading-spine.html",
+      "status": "published-routing-spine",
+      "type": "canonical hub to existing Week 01 deep lessons plus preserved Week 02 and Week 03 reading dossiers",
+      "assessment_authority": "existing weekly classroom, diagnostic/unit assessment and teacher-scored work",
+      "preserve_unit_original": true,
+      "no_parallel_instruction": true
+    },
+    {
+      "course": "english-11",
+      "unit": 1,
+      "weeks": [
+        1,
+        2,
+        3
+      ],
+      "reading": "units/unit-01/reading-spine.html",
+      "status": "published-routing-spine",
+      "type": "canonical hub to existing Week 01 deep lessons plus preserved Week 02 and Week 03 reading dossiers",
+      "assessment_authority": "existing weekly classroom, diagnostic/unit assessment and teacher-scored work",
+      "preserve_unit_original": true,
+      "no_parallel_instruction": true
+    },
+    {
+      "course": "english-12",
+      "unit": 1,
+      "weeks": [
+        1,
+        2,
+        3
+      ],
+      "reading": "units/unit-01/reading-spine.html",
+      "status": "published-routing-spine",
+      "type": "canonical hub to existing Week 01 deep lessons plus preserved Week 02 and Week 03 reading dossiers",
+      "assessment_authority": "existing weekly classroom, diagnostic/unit assessment and teacher-scored work",
+      "preserve_unit_original": true,
+      "no_parallel_instruction": true
+    }
   ]
 }
