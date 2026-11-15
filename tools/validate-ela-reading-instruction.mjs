@@ -19,9 +19,9 @@ for(const info of map.week_03_companions){
  assert.equal(plan.lessons?.length,5);
  assert.equal(plan.title,info.title);
  const allowedUiScripts=new Set(["/Khaemenes_High.github.io/assets/high-school-global-chrome-v2.js","https://vervenveda.com/assets/vnv-ecosystem-toolbar.js"]);
- const scripts=[...doc.matchAll(/<script\\b([^>]*)>([\\s\\S]*?)<\\/script>/gi)];
+  const scripts=[...doc.matchAll(/<script\b([^>]*)>([\s\S]*?)<\/script>/gi)];
  for(const script of scripts){
-  const src=script[1].match(/\\bsrc="([^"]+)"/i)?.[1]||"";
+   const src=script[1].match(/\bsrc="([^"]+)"/i)?.[1]||"";
   assert.equal(script[2].trim(),"","Companion must not contain inline executable code");
   assert(allowedUiScripts.has(src),"Unexpected companion script: "+src);
  }
@@ -50,7 +50,7 @@ for(const info of map.week_03_companions){
   routeCount++;
  }
  for(const found of doc.matchAll(/(?:href|src)="([^"]+)"/g)){
-  const href=found[1];if(/^(#|https?:|mailto:)/i.test(href))continue;
+   const href=found[1];if(allowedUiScripts.has(href)||/^(#|https?:|mailto:)/i.test(href))continue;
   const filepath=path.resolve(base,href.split("#")[0].split("?")[0]);
   assert(fs.existsSync(filepath),"Broken local route "+course+": "+href);
   routeCount++;
