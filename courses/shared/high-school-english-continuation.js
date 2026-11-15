@@ -1,9 +1,28 @@
 (function attachKhaemenesHighEnglishContinuation(global){
 "use strict";
 if(global.KhaemenesHighEnglishContinuation)return;
-const VERSION="1.0.0",PASS=80;
+const VERSION="1.1.0",PASS=80;
 const CONT_URL="https://vervenveda.com/Khaemenes_Academy.github.io/assets/khaemenes-learning-continuation.js";
 const ROOT="https://vervenveda.com/Khaemenes_High.github.io/courses/language-arts/";
+const SHARED_BASE=(()=>{try{return new URL("./",document.currentScript?.src||"https://vervenveda.com/Khaemenes_High.github.io/courses/shared/")}catch{return new URL("https://vervenveda.com/Khaemenes_High.github.io/courses/shared/")}})();
+function ensureEvidenceArchitecture(){
+  try{
+    if(!document.querySelector('link[data-khae-english-evidence-css]')){
+      const link=document.createElement("link");
+      link.rel="stylesheet";
+      link.href=new URL("evidence-based-english-v1.css?v=20261115",SHARED_BASE).href;
+      link.dataset.khaeEnglishEvidenceCss="1";
+      (document.head||document.documentElement).append(link);
+    }
+    if(!window.__KHAE_ENGLISH_EVIDENCE_V1__&&!document.querySelector('script[data-khae-english-evidence-js]')){
+      const script=document.createElement("script");
+      script.src=new URL("evidence-based-english-v1.js?v=20261115",SHARED_BASE).href;
+      script.defer=true;
+      script.dataset.khaeEnglishEvidenceJs="1";
+      (document.head||document.documentElement).append(script);
+    }
+  }catch{}
+}
 const CONFIG={
   "english-9":{courseId:"english-9",title:"English 9",grade:"Grade 9",home:ROOT+"english-9/"},
   "english-10":{courseId:"ela10",title:"English II",grade:"Grade 10",home:ROOT+"english-10/",stateKey:"khae-ela10-state-v1"},
@@ -129,6 +148,7 @@ async function publish(){
 }
 let timer=0;function schedule(delay=100){clearTimeout(timer);timer=setTimeout(()=>{Promise.resolve(publish()).catch(()=>{})},delay)}
 function boot(){
+  ensureEvidenceArchitecture();
   schedule(120);
   global.addEventListener("khaemenes-learning-continuation-ready",()=>schedule(30));
   global.addEventListener("pageshow",()=>schedule(40));
