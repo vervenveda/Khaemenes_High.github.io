@@ -14,6 +14,13 @@ function mount(){
  const dossier=el("a","khae-source-btn","Open Unit "+unit+" Custody Dossier");dossier.href=(/\/day-\d+\//i.test(p)?"../../../units/unit-":"../../units/unit-")+unit+"/reading-dossier.html";actions.append(dossier);
  if(url){const direct=el("a","khae-source-btn khae-source-primary","Open Recorded Source");direct.href=url;direct.target="_blank";direct.rel="noopener noreferrer";actions.append(direct)}
  card.append(actions);
+ [...document.querySelectorAll("p")].forEach(node=>{
+   const strong=node.querySelector(":scope > strong");
+   if(strong&&/^Reading\/source family:/i.test(String(strong.textContent||"").trim())){
+     while(strong.nextSibling)strong.nextSibling.remove();
+     node.append(document.createTextNode(" "+label+" · "+status));
+   }
+ });
  const overview=document.querySelector("#overview .wrap,#overview,section.hero+nav+section .wrap,main .wrap,main");
  (overview||document.querySelector("main")||document.body).insertAdjacentElement("afterbegin",card);
 }
