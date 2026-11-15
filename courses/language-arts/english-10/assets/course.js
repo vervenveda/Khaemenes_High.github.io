@@ -1,6 +1,6 @@
 (() => {
   "use strict";
-  const continuationSrc="https://vervenveda.com/Khaemenes_High.github.io/courses/shared/high-school-english-continuation.js?v=20261016";
+  const continuationSrc="https://vervenveda.com/Khaemenes_High.github.io/courses/shared/high-school-english-continuation.js?v=20261115";
   if(!window.KhaemenesHighEnglishContinuation && ![...document.scripts].some(s=>String(s.src||"").includes("/courses/shared/high-school-english-continuation.js"))){
     const continuationScript=document.createElement("script");
     continuationScript.src=continuationSrc;
