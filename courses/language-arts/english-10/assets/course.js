@@ -2,6 +2,16 @@
   "use strict";
   try{
     const p=String(location.pathname||"");
+    if(/\/english-10\/weeks\/week-\d{2}\//i.test(p)&&!window.__KHAE_WEEK_SOURCE_CUSTODY_V1__&&!document.querySelector('script[data-week-source-custody-loader]')){
+      const s=document.createElement("script");
+      s.src="/Khaemenes_High.github.io/courses/shared/week-source-custody-v1.js?v=20261115";
+      s.defer=true;s.dataset.weekSourceCustodyLoader="1";
+      (document.head||document.documentElement).append(s);
+    }
+  }catch{}
+
+  try{
+    const p=String(location.pathname||"");
     if(/\/english-10\/weeks\/week-(34|35|36)\//i.test(p)&&!window.__E10_U12_EVIDENCE_V1__&&!document.querySelector('script[data-e10-u12-evidence-loader]')){
       const s=document.createElement("script");
       s.src=new URL("unit12-evidence-v1.js?v=20261115",document.currentScript?.src||location.href).href;
