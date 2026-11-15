@@ -20,7 +20,13 @@ for(const course of courses){
  assert(html.includes("Jennifer Kay Pearl"),"Canonical footer missing");
  assert(unitHTML.includes('id="assigned-reading"'),"Original assigned-reading section absent: "+unit);
  assert(unitHTML.includes('href="reading-dossier.html#week-19"'),"Unit entry not linked: "+unit);
- assert(!/<script\b|localStorage|sessionStorage|data-score=|data-project-score=/.test(html),"Companion must be read-only");
+ const allowedUiScripts=new Set(["/Khaemenes_High.github.io/assets/high-school-global-chrome-v2.js","https://vervenveda.com/assets/vnv-ecosystem-toolbar.js"]);
+ for(const script of html.matchAll(/<script\b([^>]*)>([\s\S]*?)<\/script>/gi)){
+  const src=script[1].match(/\bsrc="([^"]+)"/i)?.[1]||"";
+  assert.equal(script[2].trim(),"","Companion must not contain inline executable code");
+  assert(allowedUiScripts.has(src),"Unexpected script in Unit 07 companion: "+src);
+ }
+ assert(!/localStorage|sessionStorage|data-score=|data-project-score=|setItem\s*\(/.test(html),"Companion must not create learner or grade state");
  const record=map.unit_07_companions.find(x=>x.course===course);
  assert(record&&record.preserve_unit_original===true&&record.weeks.join(",")==="19,20,21");
  for(const week of weeks){
