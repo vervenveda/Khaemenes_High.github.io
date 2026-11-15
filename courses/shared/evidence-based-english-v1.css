@@ -1,0 +1,34 @@
+/* Khaemenes Academy English 9–12 · Evidence-Based Learning Architecture v1
+   Presentation and instructional signaling only. No learner grades, assessment keys,
+   storage authority, or mastery decisions are modified. */
+:root{--khae-evidence-paper:#fffdf8;--khae-evidence-cream:#f7f0e3;--khae-evidence-ink:#243038;--khae-evidence-gold:#91733f;--khae-evidence-line:#cdbf9f}
+html[data-khae-english-evidence="v1"] body{font-size:16px!important}
+html[data-khae-english-evidence="v1"] main :is(p,li,dd,dt,label,summary,button,a,input,select,textarea){font-size:max(16px,1em)}
+html[data-khae-english-evidence="v1"] main :is(p,li,blockquote){max-width:76ch}
+.khae-learning-cycle{width:min(calc(100% - 24px),1222px);margin:14px auto 18px;padding:14px;border:1px solid var(--khae-evidence-line);border-radius:7px;background:var(--khae-evidence-paper);color:var(--khae-evidence-ink);box-shadow:0 10px 28px rgba(20,30,25,.07)}
+.khae-learning-cycle .khae-cycle-kicker{margin:0 0 4px;color:var(--khae-evidence-gold);font-family:Cinzel,"Iowan Old Style",Georgia,serif;font-weight:400;letter-spacing:.06em;text-align:center}
+.khae-learning-cycle h2{margin:0;text-align:center;font-family:Cinzel,"Iowan Old Style",Georgia,serif;font-size:33px!important;font-weight:400!important;color:var(--khae-evidence-ink)!important}
+.khae-learning-cycle>p{margin:7px auto 0;text-align:center}
+.khae-cycle-grid{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:7px;margin-top:12px}
+.khae-cycle-step{min-width:0;padding:9px 8px;border:1px solid rgba(36,48,56,.13);border-radius:7px;background:var(--khae-evidence-cream);text-align:center}
+.khae-cycle-step strong{display:block;font-weight:400;color:var(--khae-evidence-ink)}
+.khae-cycle-step small{display:block;margin-top:3px;font-size:16px!important;line-height:1.35;color:#5d666b}
+.khae-retrieval-card,.khae-exit-card{max-width:76ch;margin:14px 0;padding:12px 14px;border-left:3px solid var(--khae-evidence-gold);border-radius:0 7px 7px 0;background:var(--khae-evidence-cream);color:var(--khae-evidence-ink)}
+.khae-retrieval-card strong,.khae-exit-card strong{font-weight:400}
+.khae-retrieval-card p,.khae-exit-card p{margin:5px 0 0}
+[data-khae-stage]{position:relative}
+[data-khae-stage]::before{display:inline-block;margin:0 0 7px;padding:3px 7px;border:1px solid var(--khae-evidence-line);border-radius:7px;background:var(--khae-evidence-paper);color:var(--khae-evidence-gold);font:400 16px/1.2 "Brandon Grotesque","Avenir Next",Arial,sans-serif;letter-spacing:.04em}
+[data-khae-stage="model"]::before{content:"MODEL · study the reasoning"}
+[data-khae-stage="practice"]::before{content:"PRACTICE · try it with support"}
+[data-khae-stage="apply"]::before{content:"APPLY · work independently"}
+[data-khae-stage="evidence"]::before{content:"PRESERVE · keep learning evidence"}
+article.lesson-day,article.lesson{scroll-margin-top:110px}
+article.lesson-day>h2,article.lesson>h2{text-wrap:balance}
+article.lesson-day details,article.lesson details{margin-top:10px}
+article.lesson-day details>summary,article.lesson details>summary{cursor:pointer}
+html[data-khae-english-evidence-grade="9"] .khae-cycle-step small{display:block}
+html[data-khae-english-evidence-grade="12"] .khae-cycle-step small{color:#66706d}
+@media(max-width:800px){.khae-cycle-grid{grid-template-columns:1fr 1fr}.khae-cycle-step:last-child{grid-column:1/-1}}
+@media(max-width:480px){.khae-learning-cycle{width:min(calc(100% - 14px),1222px);padding:11px}.khae-cycle-grid{grid-template-columns:1fr}.khae-cycle-step:last-child{grid-column:auto}}
+@media(prefers-reduced-motion:reduce){html[data-khae-english-evidence="v1"] *{scroll-behavior:auto!important}}
+@media print{.khae-learning-cycle{box-shadow:none}.khae-cycle-grid{grid-template-columns:repeat(5,1fr)}}
