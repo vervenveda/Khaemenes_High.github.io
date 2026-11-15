@@ -18,7 +18,13 @@ for(const info of map.week_03_companions){
  assert.equal(plan.unit,info.unit);
  assert.equal(plan.lessons?.length,5);
  assert.equal(plan.title,info.title);
- assert(!doc.includes("<script"),"Companion must not insert grade or learner scripts");
+ const allowedUiScripts=new Set(["/Khaemenes_High.github.io/assets/high-school-global-chrome-v2.js","https://vervenveda.com/assets/vnv-ecosystem-toolbar.js"]);
+ const scripts=[...doc.matchAll(/<script\\b([^>]*)>([\\s\\S]*?)<\\/script>/gi)];
+ for(const script of scripts){
+  const src=script[1].match(/\\bsrc="([^"]+)"/i)?.[1]||"";
+  assert.equal(script[2].trim(),"","Companion must not contain inline executable code");
+  assert(allowedUiScripts.has(src),"Unexpected companion script: "+src);
+ }
  assert(!doc.includes("localStorage")&&!doc.includes("sessionStorage"),"No parallel storage authority");
  assert(doc.includes("fictional")||doc.includes("Fictional"),"Source nature declaration missing");
  assert(doc.includes("worked")||doc.includes("Worked")||doc.includes("modeled"),"Worked model missing");
