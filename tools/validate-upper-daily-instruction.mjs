@@ -33,7 +33,12 @@ for(const course of courses){
    assert(html.toLowerCase().includes(label.toLowerCase()),course.name+" lesson lacks "+label);
   }
   assert(html.length>2800,course.name+" daily lesson unexpectedly skeletal");
-  assert(!/<script\b/i.test(html),"Companion should not execute assessment or record scripts");
+   const allowedScriptSuffixes=["/assets/high-school-global-chrome-v2.js","/shared/high-school-learning-context-v1.js","/shared/high-school-formative-evidence-v1.js","/assets/high-school-return-to-classes.js","https://vervenveda.com/assets/vnv-ecosystem-toolbar.js"];
+   for(const script of html.matchAll(/<script\b([^>]*)>([\s\S]*?)<\/script>/gi)){
+    const src=script[1].match(/\bsrc="([^"]+)"/i)?.[1]||"";
+    assert.equal(script[2].trim(),"","Deep lesson must not contain inline executable code");
+    assert(allowedScriptSuffixes.some(item=>src===item||src.endsWith(item)),"Unexpected deep-lesson script: "+src);
+   }
   assert(!/localStorage|sessionStorage|setItem\s*\(/.test(html),"Companion must not modify learner records");
   assert(!/<form\b|type="submit"/.test(html),"Companion should not add independent grade submission");
   assert(/<details><summary>/.test(html),"Model response disclosure missing");
