@@ -1,3 +1,5 @@
+
+try{const p=String(location.pathname||"");if(/\/english-9\/weeks\/week-13\//i.test(p)&&!window.__E9_U05_EVIDENCE_V1__&&!document.querySelector('script[data-e9-u05-evidence-loader]')){const s=document.createElement("script");s.src="/Khaemenes_High.github.io/courses/language-arts/english-9/assets/unit05-evidence-v1.js?v=20261115";s.defer=true;s.dataset.e9U05EvidenceLoader="1";(document.head||document.documentElement).append(s)}}catch{}
 /* English 9 Week 13 daily learning · browser-local / learner-scoped */
 (function(){
 "use strict";
