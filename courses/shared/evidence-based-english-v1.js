@@ -6,7 +6,10 @@ if(window.__KHAE_ENGLISH_EVIDENCE_V1__)return;
 window.__KHAE_ENGLISH_EVIDENCE_V1__=true;
 const path=String(location.pathname||"");
 const cm=path.match(/\/courses\/language-arts\/english-(9|10|11|12)\//i);
-const wm=path.match(/\/weeks\/week-(\d+)\//i);\nconst um=path.match(/\/units\/unit-(\d+)\//i);\nif(!cm||(!wm&&!um))return;\nconst grade=Number(cm[1]),week=wm?Number(wm[1]):null,unit=um?Number(um[1]):null;
+const wm=path.match(/\/weeks\/week-(\d+)\//i);
+const um=path.match(/\/units\/unit-(\d+)\//i);
+if(!cm||(!wm&&!um))return;
+const grade=Number(cm[1]),week=wm?Number(wm[1]):null,unit=um?Number(um[1]):null;
 document.documentElement.dataset.khaeEnglishEvidence="v1";
 document.documentElement.dataset.khaeEnglishEvidenceGrade=String(grade);
 
@@ -38,7 +41,8 @@ const scaffold={
 }[grade];
 
 function el(tag,cls,text){const n=document.createElement(tag);if(cls)n.className=cls;if(text!==undefined)n.textContent=text;return n}
-function cycle(){\n if(week===null||document.querySelector(".khae-learning-cycle"))return;
+function cycle(){
+ if(week===null||document.querySelector(".khae-learning-cycle"))return;
  const host=document.querySelector("main");
  if(!host)return;
  const sec=el("section","khae-learning-cycle");
