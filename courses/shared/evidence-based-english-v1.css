@@ -32,3 +32,26 @@ html[data-khae-english-evidence-grade="12"] .khae-cycle-step small{color:#66706d
 @media(max-width:480px){.khae-learning-cycle{width:min(calc(100% - 14px),1222px);padding:11px}.khae-cycle-grid{grid-template-columns:1fr}.khae-cycle-step:last-child{grid-column:auto}}
 @media(prefers-reduced-motion:reduce){html[data-khae-english-evidence="v1"] *{scroll-behavior:auto!important}}
 @media print{.khae-learning-cycle{box-shadow:none}.khae-cycle-grid{grid-template-columns:repeat(5,1fr)}}
+
+/* Canonical Academy typography guard for evidence-enabled English pages.
+   This intentionally outranks legacy embedded week styles. */
+html[data-khae-english-evidence="v1"] main :is(p,li,dd,dt,label,summary,button,a,input,select,textarea,span,small){
+  font-size:max(16px,1em)!important;
+}
+html[data-khae-english-evidence="v1"] main :is(.eyebrow,.kicker,.dialog-eyebrow,.dialog-kicker,.worksheet-kicker,.daily-eyebrow){
+  font-family:Cinzel,"Iowan Old Style","Palatino Linotype",Palatino,Georgia,serif!important;
+  font-size:14px!important;
+  font-weight:400!important;
+  line-height:1.2!important;
+  letter-spacing:.04em!important;
+}
+html[data-khae-english-evidence="v1"] main .section-head h2{
+  font-family:Cinzel,"Iowan Old Style","Palatino Linotype",Palatino,Georgia,serif!important;
+  font-size:33px!important;
+  font-weight:400!important;
+  line-height:1.25!important;
+  text-align:center!important;
+}
+html[data-khae-english-evidence="v1"] main :is(button,.btn,.nav-button){
+  min-height:44px;
+}
