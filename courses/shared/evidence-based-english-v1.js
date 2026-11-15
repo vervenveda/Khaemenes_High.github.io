@@ -81,7 +81,12 @@ function dayNumber(article,index){
  if(id==="monday"||/day-(?:0?1|\d*1\b)/.test(id)||index===0)return "monday";
  return "other";
 }
+function hasSpecializedUnitLayer(){
+ const p=String(location.pathname||"").toLowerCase();
+ return /\/english-9\/weeks\/week-0[123]\//.test(p) || /\/english-10\/weeks\/week-0[123]\//.test(p);
+}
 function addPrompts(article,index){
+ if(hasSpecializedUnitLayer())return;
  if(article.querySelector(".khae-retrieval-card"))return;
  const retrieval=el("aside","khae-retrieval-card");
  retrieval.setAttribute("aria-label","Retrieval before lesson");
