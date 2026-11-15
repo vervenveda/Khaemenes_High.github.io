@@ -64,7 +64,7 @@ for(const course of courses){
   }
   assert.equal(stems.size,6);
  }
- assert.equal(bank.version,"v4-passage-anchored");
+  assert.equal(bank.version,"v4-passage-anchored");
  assert(/ela-curriculum-20261016-v3-quiz72/.test(sw),"Offline cache version not bumped for "+course.slug);
  assert.equal(bank.rows.length,36);
  assert.equal(bank.course,course.slug);
