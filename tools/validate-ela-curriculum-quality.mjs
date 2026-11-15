@@ -16,7 +16,7 @@ for(const course of courses){
  const ctx={window:{}};
  new vm.Script(js,{filename:base+"/assets/curriculum-data.js"}).runInNewContext(ctx,{timeout:2000});
  assert.deepEqual(JSON.parse(JSON.stringify(ctx.window[course.global])),curriculum,course.slug+" browser data diverges from curriculum.json");
- assert.equal(curriculum.quizBankVersion,"2026-10-16-v3-instructional");
+ assert.equal(curriculum.quizBankVersion,"2026-10-16-v4-passage-anchored");
  assert.equal(curriculum.weeksCount,36);
  assert.equal(curriculum.unitsCount,12);
  assert.equal(curriculum.weeks.length,36);
@@ -65,7 +65,7 @@ for(const course of courses){
   assert.equal(stems.size,6);
  }
   assert.equal(bank.version,"v4-passage-anchored");
- assert(/ela-curriculum-20261016-v3-quiz72/.test(sw),"Offline cache version not bumped for "+course.slug);
+ assert(/ela-curriculum-20261016-v4-passage72/.test(sw),"Offline cache version not bumped for "+course.slug);
  assert.equal(bank.rows.length,36);
  assert.equal(bank.course,course.slug);
  for(let number=1;number<=36;number++){
@@ -94,7 +94,12 @@ for(const course of courses){
    const q=item.quiz[qn];
    if(qn>=3){
      const seed=bank.rows[number-1][qn-3];
-     assert.equal(seed.length,4,"Quiz source schema mismatch");
+     assert(seed.length===4||seed.length===5,"Quiz source schema mismatch");
+      if(seed[4]!==undefined){
+       assert.equal(seed[4].anchor,true,"Anchored authored row missing anchor flag");
+       assert(typeof seed[4].anchorType==="string"&&seed[4].anchorType.length>2);
+       assert(typeof seed[4].provenance==="string"&&seed[4].provenance.length>2);
+      }
      assert(q.question.endsWith(seed[0]),"Quiz prompt deviates from authored bank");
      assert.equal(q.explanation,seed[2],"Quiz explanation deviates from authored bank");
      assert.equal(q.skill,seed[3],"Quiz skill tag missing");
