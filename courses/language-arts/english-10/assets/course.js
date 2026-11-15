@@ -2,6 +2,16 @@
   "use strict";
   try{
     const p=String(location.pathname||"");
+    if(/\/english-10\/weeks\/week-(28|29|30)\//i.test(p)&&!window.__E10_U10_EVIDENCE_V1__&&!document.querySelector('script[data-e10-u10-evidence-loader]')){
+      const s=document.createElement("script");
+      s.src=new URL("unit10-evidence-v1.js?v=20261115",document.currentScript?.src||location.href).href;
+      s.defer=true;s.dataset.e10U10EvidenceLoader="1";
+      (document.head||document.documentElement).append(s);
+    }
+  }catch{}
+
+  try{
+    const p=String(location.pathname||"");
     if(/\/english-10\/weeks\/week-(25|26|27)\//i.test(p)&&!window.__E10_U09_EVIDENCE_V1__&&!document.querySelector('script[data-e10-u09-evidence-loader]')){
       const s=document.createElement("script");
       s.src=new URL("unit09-evidence-v1.js?v=20261115",document.currentScript?.src||location.href).href;
