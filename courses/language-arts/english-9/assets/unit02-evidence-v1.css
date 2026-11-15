@@ -1,0 +1,7 @@
+html[data-e9-u02-evidence="v1"] main :is(p,li,label,summary,button,a,textarea,input){font-size:max(16px,1em)}
+.e9-u02-retrieve,.e9-u02-exit{max-width:76ch;margin:14px 0;padding:14px 16px;border:1px solid #cdbf9f;border-radius:7px;background:#fffdf8;color:#243038}
+.e9-u02-retrieve{border-left:4px solid #91733f}.e9-u02-exit{border-left:4px solid #526d61}
+.e9-u02-retrieve .kicker,.e9-u02-exit .kicker{margin:0 0 5px;font:400 16px/1.2 Cinzel,"Iowan Old Style",Georgia,serif;letter-spacing:.05em;color:#80642f}
+.e9-u02-retrieve h3,.e9-u02-exit h3{margin:0 0 6px;font:400 24px/1.3 Cinzel,"Iowan Old Style",Georgia,serif}
+.e9-u02-retrieve p,.e9-u02-exit p{margin:5px 0;max-width:74ch}.e9-u02-spacing{padding-top:6px;border-top:1px solid rgba(36,48,56,.12);color:#5f686c}.e9-u02-transfer{display:inline-block;margin-top:6px;padding:4px 8px;border:1px solid #cdbf9f;border-radius:7px;background:#f7f0e3}
+@media print{.e9-u02-retrieve,.e9-u02-exit{background:#fff;break-inside:avoid}}
