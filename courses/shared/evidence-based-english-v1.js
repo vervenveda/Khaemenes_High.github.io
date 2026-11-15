@@ -6,9 +6,7 @@ if(window.__KHAE_ENGLISH_EVIDENCE_V1__)return;
 window.__KHAE_ENGLISH_EVIDENCE_V1__=true;
 const path=String(location.pathname||"");
 const cm=path.match(/\/courses\/language-arts\/english-(9|10|11|12)\//i);
-const wm=path.match(/\/weeks\/week-(\d+)\//i);
-if(!cm||!wm)return;
-const grade=Number(cm[1]),week=Number(wm[1]);
+const wm=path.match(/\/weeks\/week-(\d+)\//i);\nconst um=path.match(/\/units\/unit-(\d+)\//i);\nif(!cm||(!wm&&!um))return;\nconst grade=Number(cm[1]),week=wm?Number(wm[1]):null,unit=um?Number(um[1]):null;
 document.documentElement.dataset.khaeEnglishEvidence="v1";
 document.documentElement.dataset.khaeEnglishEvidenceGrade=String(grade);
 
@@ -40,8 +38,7 @@ const scaffold={
 }[grade];
 
 function el(tag,cls,text){const n=document.createElement(tag);if(cls)n.className=cls;if(text!==undefined)n.textContent=text;return n}
-function cycle(){
- if(document.querySelector(".khae-learning-cycle"))return;
+function cycle(){\n if(week===null||document.querySelector(".khae-learning-cycle"))return;
  const host=document.querySelector("main");
  if(!host)return;
  const sec=el("section","khae-learning-cycle");
@@ -101,12 +98,33 @@ function addPrompts(article,index){
  const toolbar=article.querySelector(":scope > .lesson-toolbar,:scope > .actions,:scope > .workspace:last-child");
  if(toolbar)toolbar.insertAdjacentElement("beforebegin",exit);else article.append(exit);
 }
+function unitArchitecture(){
+ if(!unit||week!==null||document.querySelector(".khae-unit-architecture"))return;
+ const main=document.querySelector("main");if(!main)return;
+ const section=el("section","khae-learning-cycle khae-unit-architecture");
+ section.setAttribute("aria-label","Unit learning architecture");
+ section.append(el("p","khae-cycle-kicker","Khaemenes Academy · Unit Learning Architecture"));
+ section.append(el("h2","", "Build → Retrieve → Transfer → Demonstrate"));
+ const copy={
+  9:"Build the skill with explicit models, retrieve it after delays, transfer it to unfamiliar texts, and preserve evidence for evaluator review.",
+  10:"Develop analysis through modeled strategy, cumulative retrieval, comparison and increasingly independent transfer.",
+  11:"Use retrieval and deliberate practice to connect interpretation, rhetoric, synthesis, discussion and research across the unit.",
+  12:"Use cumulative retrieval, independent strategy choice, critical evaluation and transfer to produce senior-level evidence."
+ }[grade];
+ section.append(el("p","",copy));
+ const grid=el("div","khae-cycle-grid");
+ [["Build","model + guided practice"],["Retrieve","bring prior learning forward"],["Transfer","apply to unfamiliar material"],["Demonstrate","produce evidence of mastery"]].forEach(([a,b])=>{const n=el("div","khae-cycle-step");n.append(el("strong","",a),el("small","",b));grid.append(n)});
+ section.append(grid);
+ const quick=main.querySelector(".quick-nav");
+ if(quick)quick.insertAdjacentElement("afterend",section);else main.prepend(section);
+}
 function enhance(){
+ unitArchitecture();
  cycle();
  let lessons=[...document.querySelectorAll("article.lesson-day")];
  if(!lessons.length)lessons=[...document.querySelectorAll("article.lesson")].filter(a=>/day|lesson|required/i.test((a.id||"")+" "+(a.querySelector(".eyebrow")?.textContent||"")));
  lessons.forEach((a,i)=>{a.dataset.khaeEvidenceDay=String(i+1);stageLabel(a);addPrompts(a,i)});
- const main=document.querySelector("main");if(main)main.dataset.khaeEvidenceWeek=String(week);
+ const main=document.querySelector("main");if(main&&week!==null)main.dataset.khaeEvidenceWeek=String(week);if(main&&unit!==null)main.dataset.khaeEvidenceUnit=String(unit);
 }
 if(document.readyState==="loading")document.addEventListener("DOMContentLoaded",enhance,{once:true});else enhance();
 })();
