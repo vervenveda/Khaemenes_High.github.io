@@ -87,7 +87,7 @@ function dayNumber(article,index){
 }
 function hasSpecializedUnitLayer(){
  const p=String(location.pathname||"").toLowerCase();
- return /\/english-9\/weeks\/week-0[1-9]\//.test(p) || /\/english-10\/weeks\/week-0[1-9]\//.test(p) || /\/english-11\/weeks\/week-0[1-9]\//.test(p) || /\/english-12\/weeks\/week-0[1-9]\//.test(p);
+ return /\/english-9\/weeks\/(?:week-0[1-9]|week-1[0-2])\//.test(p) || /\/english-10\/weeks\/(?:week-0[1-9]|week-1[0-2])\//.test(p) || /\/english-11\/weeks\/(?:week-0[1-9]|week-1[0-2])\//.test(p) || /\/english-12\/weeks\/(?:week-0[1-9]|week-1[0-2])\//.test(p);
 }
 function addPrompts(article,index){
  if(hasSpecializedUnitLayer())return;
