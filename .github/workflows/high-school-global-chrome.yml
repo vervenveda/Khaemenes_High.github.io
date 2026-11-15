@@ -1,4 +1,4 @@
-      - 'tools/semantic-hierarchy-audit.mjs'\nname: High School Global Header Menu Toolbar
+name: High School Global Header Menu Toolbar
 
 on:
   push:
@@ -7,6 +7,7 @@ on:
       - 'assets/high-school-global-chrome-v2.js'
       - 'tools/high-school-chrome-audit.mjs'
       - 'tools/high-school-typography-audit.mjs'
+      - 'tools/semantic-hierarchy-audit.mjs'
       - '.github/workflows/high-school-global-chrome.yml'
   workflow_dispatch:
 
@@ -31,6 +32,8 @@ jobs:
         run: node tools/high-school-chrome-audit.mjs --check --inventory
       - name: Verify canonical High School typography
         run: node tools/high-school-typography-audit.mjs
+      - name: Verify semantic title eyebrow hierarchy
+        run: node tools/semantic-hierarchy-audit.mjs
       - name: Validate patch
         run: git diff --check
       - name: Commit normalization
