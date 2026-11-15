@@ -1,3 +1,13 @@
+(()=>{try{
+  const p=String(location.pathname||"");
+  if(/\/english-9\/weeks\/week-\d{2}\/day-\d+\//i.test(p)&&!window.__KHAE_WEEK_SOURCE_CUSTODY_V1__&&!document.querySelector('script[data-week-source-custody-loader]')){
+    const s=document.createElement("script");
+    s.src="/Khaemenes_High.github.io/courses/shared/week-source-custody-v1.js?v=20261115";
+    s.defer=true;s.dataset.weekSourceCustodyLoader="1";
+    (document.head||document.documentElement).append(s);
+  }
+}catch{}})();
+
 
 try{const p=String(location.pathname||"");if(/\/english-9\/weeks\/week-0[789]\//i.test(p)&&!window.__E9_U03_EVIDENCE_V1__&&!document.querySelector('script[data-e9-u03-evidence-loader]')){const s=document.createElement("script");s.src="/Khaemenes_High.github.io/courses/language-arts/english-9/assets/unit03-evidence-v1.js?v=20261115";s.defer=true;s.dataset.e9U03EvidenceLoader="1";(document.head||document.documentElement).append(s)}}catch{}
 /* English 9 Week 07 daily learning · browser-local / learner-scoped */
