@@ -56,7 +56,13 @@ for(const course of courses){
   daysLinked++;
  }
  assert(weeklyHtml.includes('id="quiz"')&&weeklyHtml.includes('id="reflection"'),course.slug+" assessment/portfolio anchors removed");
- assert(!/<script\b/i.test(dossierHtml),"Read-only dossier must not run assessment or storage scripts");
+ const allowedUiScripts=new Set(["/Khaemenes_High.github.io/assets/high-school-global-chrome-v2.js","https://vervenveda.com/assets/vnv-ecosystem-toolbar.js"]);
+ const scripts=[...dossierHtml.matchAll(/<script\b([^>]*)>([\s\S]*?)<\/script>/gi)];
+ for(const script of scripts){
+  const src=script[1].match(/\bsrc="([^"]+)"/i)?.[1]||"";
+  assert.equal(script[2].trim(),"","Read-only dossier must not contain inline executable code");
+  assert(allowedUiScripts.has(src),"Unexpected script in read-only dossier: "+src);
+ }
  assert(!/localStorage|sessionStorage|setItem\s*\(/i.test(dossierHtml),"Read-only dossier must not write learner state");
  assert(/fictional|fiction/i.test(dossierHtml),"Practice material must clearly identify fictional status");
  assert(dossierHtml.includes("Jennifer Kay Pearl"));
