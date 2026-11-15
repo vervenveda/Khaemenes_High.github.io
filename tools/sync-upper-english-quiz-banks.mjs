@@ -22,7 +22,13 @@ function fingerprint(value){
  return hash.toString(16).padStart(8,"0");
 }
 function toQuestion(seed,week,course,kind){
- assert(Array.isArray(seed)&&seed.length===4,"Question authored-source row invalid");
+ assert(Array.isArray(seed)&&(seed.length===4||seed.length===5),"Question authored-source row invalid");
+ if(seed[4]!==undefined){
+  assert(seed[4]&&typeof seed[4]==="object","Question provenance metadata invalid");
+  assert.equal(seed[4].anchor,true,"Passage-anchored v4 row must declare anchor");
+  assert(typeof seed[4].anchorType==="string"&&seed[4].anchorType.length>2,"Anchor type missing");
+  assert(typeof seed[4].provenance==="string"&&seed[4].provenance.length>2,"Provenance missing");
+ }
  const [stem,choices,explanation,skill]=seed;
  assert(typeof stem==="string"&&stem.length>=25);
  assert(Array.isArray(choices)&&choices.length===4&&new Set(choices).size===4);
