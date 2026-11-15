@@ -16,7 +16,12 @@ for(const course of courses){
  const home=read(unit+"index.html");
  assert(home.includes('id="assigned-reading"'),"Original unit reading removed "+course);
  assert(home.includes('href="reading-dossier.html#week-16"'),"New source entry missing "+course);
- assert(!/<script\b/i.test(html),"Read-only dossier cannot run JS "+course);
+ const allowedUiScripts=new Set(["/Khaemenes_High.github.io/assets/high-school-global-chrome-v2.js","https://vervenveda.com/assets/vnv-ecosystem-toolbar.js"]);
+ for(const script of html.matchAll(/<script\b([^>]*)>([\s\S]*?)<\/script>/gi)){
+  const src=script[1].match(/\bsrc="([^"]+)"/i)?.[1]||"";
+  assert.equal(script[2].trim(),"","Unit 06 dossier must not contain inline executable code");
+  assert(allowedUiScripts.has(src),"Unexpected Unit 06 dossier script: "+src);
+ }
  assert(!/localStorage|sessionStorage|setItem\s*\(/.test(html),"Dossier cannot write student records");
  assert(/fictional|invented/i.test(html),"Fictional source declaration absent "+course);
  assert(html.includes("Jennifer Kay Pearl")&&html.includes("../../../../shared/daily-instruction.css"));
