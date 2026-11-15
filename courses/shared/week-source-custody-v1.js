@@ -11,7 +11,7 @@ function mount(){
  const st=el("p","khae-source-status");st.append(el("strong","","Custody status: "),document.createTextNode(status));card.append(st);
  const note=el("p","",status.startsWith("PASS")?"Use this recorded source/edition for this week's evidence. The unit dossier preserves provenance, assigned span, rights/access notes, and any cautions.":"This week's curriculum permits a choice/current/outside source. Do not treat the category label as evidence; complete the required custody record before the item enters graded work.");card.append(note);
  const actions=el("div","khae-source-actions");
- const dossier=el("a","khae-source-btn","Open Unit "+unit+" Custody Dossier");dossier.href="../../units/unit-"+unit+"/reading-dossier.html";actions.append(dossier);
+ const dossier=el("a","khae-source-btn","Open Unit "+unit+" Custody Dossier");dossier.href=(/\/day-\d+\//i.test(p)?"../../../units/unit-":"../../units/unit-")+unit+"/reading-dossier.html";actions.append(dossier);
  if(url){const direct=el("a","khae-source-btn khae-source-primary","Open Recorded Source");direct.href=url;direct.target="_blank";direct.rel="noopener noreferrer";actions.append(direct)}
  card.append(actions);
  const overview=document.querySelector("#overview .wrap,#overview,section.hero+nav+section .wrap,main .wrap,main");
