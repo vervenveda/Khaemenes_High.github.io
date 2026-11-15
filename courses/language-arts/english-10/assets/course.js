@@ -1,5 +1,15 @@
 (() => {
   "use strict";
+  try{
+    const p=String(location.pathname||"");
+    if(/\/english-10\/weeks\/week-0[456]\//i.test(p)&&!window.__E10_U02_EVIDENCE_V1__&&!document.querySelector('script[data-e10-u02-evidence-loader]')){
+      const s=document.createElement("script");
+      s.src=new URL("unit02-evidence-v1.js?v=20261115",document.currentScript?.src||location.href).href;
+      s.defer=true;s.dataset.e10U02EvidenceLoader="1";
+      (document.head||document.documentElement).append(s);
+    }
+  }catch{}
+
   /* English 10 Unit 01 evidence architecture · presentation/instruction only */
   try{
     const p=String(location.pathname||"");
