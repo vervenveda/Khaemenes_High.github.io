@@ -1,0 +1,44 @@
+{
+  "version": "1.0.0",
+  "courseId": "english-9",
+  "policy": "explicit-download-offline-first",
+  "generated": "2026-11-15",
+  "note": "English 9 preserves its distinct foundation architecture and does not require a service worker. Full-year offline reading support is provided through self-contained downloadable companions and stable local course routes.",
+  "readingPacks": [
+    "offline-reading-pack-weeks-01-06.html",
+    "offline-reading-pack-weeks-07-12.html",
+    "offline-reading-pack-weeks-13-18.html",
+    "offline-reading-pack-weeks-19-24.html",
+    "offline-reading-pack-weeks-25-30.html",
+    "offline-reading-pack-weeks-31-36.html"
+  ],
+  "unitReadingDossiers": [
+    "units/unit-01/reading-dossier.html",
+    "units/unit-02/reading-dossier.html",
+    "units/unit-03/reading-dossier.html",
+    "units/unit-04/reading-dossier.html",
+    "units/unit-05/reading-dossier.html",
+    "units/unit-06/reading-dossier.html",
+    "units/unit-07/reading-dossier.html",
+    "units/unit-08/reading-dossier.html",
+    "units/unit-09/reading-dossier.html",
+    "units/unit-10/reading-dossier.html",
+    "units/unit-11/reading-dossier.html",
+    "units/unit-12/reading-dossier.html"
+  ],
+  "learnerRoutes": [
+    "reading-list.html",
+    "records/reading-log.html",
+    "records/progress-report.html",
+    "rubrics/product-companion.html"
+  ],
+  "sharedPresentationAssets": [
+    "/Khaemenes_High.github.io/courses/shared/english-learning-page-organization-v1.js"
+  ],
+  "boundaries": {
+    "readingPacksSelfContained": true,
+    "publishedWorksMustBeLawfullyDownloadedSeparately": true,
+    "learnerRecordsAreNotStoredInsideReadingPacks": true,
+    "masteryUnaffectedByOfflinePackaging": true
+  }
+}
