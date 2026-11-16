@@ -96,3 +96,29 @@ Do not log personal learner records, passwords, tokens, private files or unredac
 - [ ] Run `node --test courses/language-arts/tests/english-9-12-evidence-studio-regression.mjs` and inspect output.
 - [ ] Browser-test rapid input, storage full, index-write denial, navigation, pagehide, tab conflicts, print and JSON downloads.
 - [ ] Verify that the full record remains recoverable and reading/progress widgets reflect real data.
+
+## Addendum · Universal Reading Development Report (2026-11-16)
+
+**Objective:** Align the six core non-grading reading indicators across English 9, 10, 11, and 12, preserving each grade's canonical learner record schema and English 9's distinct architecture.
+
+**Source changes committed:**
+- [60db3be](https://github.com/vervenveda/Khaemenes_High.github.io/commit/60db3be07b2b9447a874922ad2fb255d27526521): English 9 progress adapter now derives reading entries, assigned weeks explicitly logged, independent entries, minutes, week/unit representation, and source distribution from the existing learner-scoped 30–500-row ledger and weekly tracker. Unclassified legacy entries remain unclassified.
+- [944d44e](https://github.com/vervenveda/Khaemenes_High.github.io/commit/944d44edaba378e6d797cbeb5a7344cbe19425e3): English 9 Student Progress now displays the six universal indicator cards and source distribution while retaining its separate weekly reflections indicator.
+- [fe98adf](https://github.com/vervenveda/Khaemenes_High.github.io/commit/fe98adff9853e929cc602de5ce76fa766dc5a3bf): English 9 reading report now withholds learner data when the active Academy profile is missing or changed; blank reading status is no longer treated as active reading.
+- [0d7969e](https://github.com/vervenveda/Khaemenes_High.github.io/commit/0d7969efb1d7bed38aaea07ec59cf96124d09cf9): Load the learner contract before English 9 course/progress scripts.
+- English 10 [ad80ec0](https://github.com/vervenveda/Khaemenes_High.github.io/commit/ad80ec014daac66812e794afd92a803ef2c7d632), English 11 [7ec65ea](https://github.com/vervenveda/Khaemenes_High.github.io/commit/7ec65eabf3f477f74c642a1612c7231d27b357ea), English 12 [4f51ea6](https://github.com/vervenveda/Khaemenes_High.github.io/commit/4f51ea6379a94280f0fe16970e589803f1cea429): clarify “Assigned Weeks Logged” terminology; labels must not suggest graded or confirmed-complete assignment coverage.
+- [7d41705](https://github.com/vervenveda/Khaemenes_High.github.io/commit/7d417051d12591fb25fad76c4d2af27eabc779e7): correct legacy reading minutes parser escaping found during synthetic runtime checking.
+
+**Validation provisions:**
+- [50a6472](https://github.com/vervenveda/Khaemenes_High.github.io/commit/50a64726ff530f4b3ac56832cca4d7cd2e6c402f): Node regression suite for four-grade cards, Grade 9 source adapter, identity guard, and upper-grade engine preservation.
+- [d95bb30](https://github.com/vervenveda/Khaemenes_High.github.io/commit/d95bb3001a5f873da3c7e381dffce597cb24ec26): add the new suite to the reading alignment CI workflow.
+
+**Evidence:** Direct V8 syntax check for the English 9 progress script **PASS**. A synthetic Grade 9 runtime exercise with three ledger entries (assigned, independent, unclassified), a weekly reading record, “12 pages” and “45 minutes” produced **entries 3; assigned weeks 1/36; independent 1; minutes 65; represented weeks 2/36; represented units 1/12** after the parser fix. This verifies that scenario only. Full Node suite and actual browser rendering, learner device isolation, cross-tab refresh, and CI conclusion are **NOT VERIFIED** in this session (remote raw GitHub DNS inaccessible to local execution container).
+
+**Privacy and authority:** No learner data was used; no changes to reading entries, assessment scores, mastery gates, or official gradebooks. Entries without an explicit type are not assumed assigned or independent. “Logged” is not a certificate of reading completion.
+
+**Next actions:**
+- [ ] Run and review `node --test courses/language-arts/tests/english-9-12-reading-development-report-regression.mjs` and GitHub Actions status.
+- [ ] Visually inspect all four Student Progress pages on desktop and mobile/tablet.
+- [ ] Review overlap between Grade 9 portal minutes and ledger minutes before asserting a deduplicated total in production; current report describes recorded activity, not unique session duration.
+- [ ] Verify upper-grade assigned-title matching before introducing any strict “canonical assigned reading completed” indicator.
