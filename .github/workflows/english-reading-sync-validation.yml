@@ -5,6 +5,10 @@ on:
     paths:
       - 'courses/language-arts/english-9/weeks/week-02/**'
       - 'courses/language-arts/english-9/units/unit-01/**'
+      - 'courses/language-arts/english-9/records/reading-log.html'
+      - 'courses/language-arts/english-9/assets/reading-ledger-v2.js'
+      - 'courses/language-arts/english-9/assets/progress-report-v1.js'
+      - 'courses/language-arts/english-9/tests/reading-ledger-expansion-v2.mjs'
       - 'courses/language-arts/english-10/**'
       - 'courses/language-arts/english-11/**'
       - 'courses/language-arts/english-12/**'
@@ -13,6 +17,10 @@ on:
       - '.github/workflows/english-reading-sync-validation.yml'
   pull_request:
     paths:
+      - 'courses/language-arts/english-9/records/reading-log.html'
+      - 'courses/language-arts/english-9/assets/reading-ledger-v2.js'
+      - 'courses/language-arts/english-9/assets/progress-report-v1.js'
+      - 'courses/language-arts/english-9/tests/reading-ledger-expansion-v2.mjs'
       - 'courses/language-arts/english-9/weeks/week-02/**'
       - 'courses/language-arts/english-10/**'
       - 'courses/language-arts/english-11/**'
@@ -29,3 +37,5 @@ jobs:
       - uses: actions/checkout@v4
       - name: Verify reading dossiers and lesson alignment
         run: node tools/validate-english-reading-sync.mjs
+      - name: Verify English 9 expandable reading ledger and progress
+        run: node --test courses/language-arts/english-9/tests/reading-ledger-expansion-v2.mjs
