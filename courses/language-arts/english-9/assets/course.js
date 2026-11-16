@@ -3,6 +3,16 @@
   "use strict";
   try{
     const p=String(location.pathname||"");
+    if(/\/courses\/language-arts\/english-(9|10|11|12)\/weeks\/week-\d{2}\//i.test(p)&&!window.__KHAE_ENGLISH_WEEK_SPECIFICITY_V1__&&!document.querySelector('script[data-khae-english-specificity]')){
+      const s=document.createElement("script");
+      s.src="/Khaemenes_High.github.io/courses/shared/english-week-specificity-v1.js?v=20261116";
+      s.defer=true;s.dataset.khaeEnglishSpecificity="v1";
+      (document.head||document.documentElement).append(s);
+    }
+  }catch{}
+
+  try{
+    const p=String(location.pathname||"");
     if(/\/courses\/language-arts\/english-(9|10|11|12)\/weeks\/week-\d{2}\//i.test(p)&&!window.__KHAE_ENGLISH_PAGE_ORGANIZATION_V1__&&!document.querySelector('script[data-khae-english-page-organization]')){
       const s=document.createElement("script");
       s.src="/Khaemenes_High.github.io/courses/shared/english-learning-page-organization-v1.js?v=20261115";
