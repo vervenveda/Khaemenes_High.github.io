@@ -64,6 +64,16 @@ let currentWeek=1;
 let record=empty(1);
 let modified=false;
 let conflictLocked=false;
+let autosaveTimer=null;
+let indexNeedsSync=false;
+const AUTOSAVE_DELAY_MS=700;
+function clearPendingAutosave(){
+ if(autosaveTimer!==null){clearTimeout(autosaveTimer);autosaveTimer=null}
+}
+function scheduleSave(){
+ clearPendingAutosave();
+ autosaveTimer=setTimeout(()=>{autosaveTimer=null;if(modified||indexNeedsSync)save()},AUTOSAVE_DELAY_MS);
+}
 function message(text,kind){
  status.textContent=text;status.dataset.status=kind||"neutral";
 }
@@ -148,31 +158,41 @@ function renderSource(){
 }
 function renderFields(){for(const k of fieldNames)if(fields[k])fields[k].value=record.fields[k]||"";renderReview()}
 function save(){
+ clearPendingAutosave();
  if(conflictLocked){message("Save blocked: another tab changed this learner or record. Copy your work, then reload before saving again.","warning");return false}
- if(!modified)return true;
+ if(!modified&&!indexNeedsSync)return true;
  if(!storageReady||!validProfile()){message("Saving blocked: select the correct Academy learner. Your text stays on this page.","warning");return false}
+ let next=record;
+ if(modified){
+  next=Object.assign({},record,{schema:"khae-english-evidence-studio-v1",grade,week:currentWeek,assignment:getAssignment(currentWeek)?.title||"",updatedAt:new Date().toISOString()});
+  try{contract.writeJSON(weekKey(currentWeek),next,profile)}
+  catch(error){message("Draft save failed: "+String(error?.message||"storage unavailable")+". Text remains visible; export or print a recovery copy.","warning");return false}
+  record=next;modified=false;indexNeedsSync=true;
+ }
  try{
-  const next=Object.assign({},record,{schema:"khae-english-evidence-studio-v1",grade,week:currentWeek,assignment:getAssignment(currentWeek)?.title||"",updatedAt:new Date().toISOString()});
-  contract.writeJSON(weekKey(currentWeek),next,profile);
   const prior=read(indexKey,{});
   const current=prior?.grade===grade&&prior?.schema===next.schema?prior.weeks||{}:{};
   const d=next.fields;
   const index={schema:next.schema,grade,weeks:Object.assign({},current)};
   index.weeks[String(currentWeek)]={started:fieldNames.some(k=>trim(d[k])),revised:!!trim(d.revised)&&trim(d.revised)!==trim(d.draft),reflected:!!trim(d.reflection),updatedAt:next.updatedAt};
   contract.writeJSON(indexKey,index,profile);
-  record=next;modified=false;
+  indexNeedsSync=false;
   message("Saved to this Academy learner on this device. Download evidence packets for durable copies.","success");
   return true;
- }catch(error){message("Save failed: "+String(error?.message||"storage unavailable")+". Text remains visible; copy it before leaving.","warning");return false}
+ }catch(error){
+  message("Draft saved on this device, but the progress summary did not update: "+String(error?.message||"index unavailable")+". Retry Save or export a backup.","warning");
+  return true;
+ }
 }
 function loadWeek(n){
  if(!Number.isInteger(n)||n<1||n>36)return;
- if(modified&&!save()){weekSelect.value=String(currentWeek);return}
+ if((modified||indexNeedsSync)&&!save()){weekSelect.value=String(currentWeek);return}
+ if(indexNeedsSync){weekSelect.value=String(currentWeek);message("Draft saved but progress summary is pending. Retry Save or export a backup before switching weeks.","warning");return}
  currentWeek=n;
  const saved=read(weekKey(n),null);
  record=saved&&saved.schema==="khae-english-evidence-studio-v1"&&saved.grade===grade&&saved.week===n&&saved.fields?
   Object.assign(empty(n),saved,{fields:Object.assign(empty(n).fields,saved.fields)}):empty(n);
- modified=false;
+ modified=false;indexNeedsSync=false;
  renderSource();renderFields();
  message(storageReady&&validProfile()?"Ready. Work is stored separately for your selected Academy learner on this browser.":"Select an Academy learner to save. No unscoped student record will be created.",storageReady?"neutral":"warning");
 }
@@ -196,7 +216,7 @@ for(let n=1;n<=36;n++){const opt=document.createElement("option");opt.value=Stri
 for(const field of fieldNames){
  const el=fields[field];if(!el)continue;
  if(!storageReady||!validProfile())el.disabled=true;
- el.addEventListener("input",()=>{record.fields[field]=el.value.slice(0,30000);modified=true;renderReview();save()});
+ el.addEventListener("input",()=>{if(conflictLocked)return;record.fields[field]=el.value.slice(0,30000);modified=true;renderReview();scheduleSave()});
 }
 weekSelect.addEventListener("change",()=>loadWeek(Number(weekSelect.value)));
 $("es-save").addEventListener("click",()=>{for(const field of fieldNames)if(fields[field])record.fields[field]=fields[field].value.slice(0,30000);modified=true;save()});
@@ -235,11 +255,12 @@ $("es-print").addEventListener("click",()=>{
  if(!saved)message("Local save failed. Printing the current unsaved draft; verify your printed or PDF copy before leaving.","warning");
  window.print();
 });
-window.addEventListener("pagehide",()=>{if(modified)save()});
+window.addEventListener("pagehide",()=>{if(modified||indexNeedsSync)save()});
 window.addEventListener("storage",event=>{
  const scoped=contract?.scopedKey?.(weekKey(currentWeek),profile);
  if(event.key==="khaemenes_active_learner_v1"||event.key===scoped){
   conflictLocked=true;
+  clearPendingAutosave();
   for(const field of fieldNames)if(fields[field])fields[field].disabled=true;
   $("es-save").disabled=true;
   $("es-export").disabled=true;
