@@ -69,3 +69,15 @@ Do not log personal learner records, passwords, tokens, private files or unredac
 **Committed regressions:** [4928269](https://github.com/vervenveda/Khaemenes_High.github.io/commit/4928269470204de782d61d191291330b6765e20e) extends `courses/language-arts/tests/english-9-12-evidence-studio-regression.mjs` with a cross-tab stale-write prevention scenario for Grades 9–12 and a learner-switch save-lock check.
 
 **Verification status:** Source edits and GitHub commits confirmed. `node --test courses/language-arts/tests/english-9-12-evidence-studio-regression.mjs` is **NOT RUN** in this session; GitHub Actions conclusion and real-browser cross-tab behavior are **UNVERIFIED**. No official grades or assessment/mastery records were edited.
+
+## Addendum · Priority 1 recovery from failed local saves (2026-11-16)
+
+**Confirmed source defect:** Before this repair, `exportPacket()` and the Print Studio handler immediately returned if `save()` failed. Browser storage quota failures therefore blocked the student's recovery-copy actions while a potentially substantial draft remained visible.
+
+**Source repair committed:** [709e5fd](https://github.com/vervenveda/Khaemenes_High.github.io/commit/709e5fd9801e4aa5b49b8ffe8392ee5e46eb232e) allows authenticated, learner-scoped export and printing from the current in-memory draft when a local save fails. Export metadata explicitly marks `persistedOnDevice: false`, and the warning instructs the learner to verify the downloaded backup. Cross-tab conflict and invalid-learner blocks remain enforced.
+
+**Regression additions committed:** [1ddbd07](https://github.com/vervenveda/Khaemenes_High.github.io/commit/1ddbd074e2b61e814e6c8a5f011074d6b525edd4) adds 3 scenarios: quota failure recovery for all four grades, stale-record export/print denial, and anonymous export/print denial. The suite now includes these scenarios but its result is not certified.
+
+**Evidence status:** Commits confirmed via GitHub connector. Local repository download failed due unavailable DNS/network access, so `node --test courses/language-arts/tests/english-9-12-evidence-studio-regression.mjs` **NOT RUN** here. CI conclusion, actual download completion, PDF printing, tablet layouts, and storage-full browser behavior remain **HOLD** until separately verified.
+
+**Next checkpoint:** Run the native Node suite in CI or local clone, then browser-verify actual export under quota pressure; investigate per-keystroke double writes and index-write failure semantics without weakening profile isolation.
