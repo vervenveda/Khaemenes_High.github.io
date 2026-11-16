@@ -172,7 +172,7 @@
     const match=path.match(/\/courses\/(mathematics|language-arts|science|social-studies)\/([^/]+)\/(?:index\.html)?$/i);
     if(!match||!document.querySelector("main")||document.getElementById("kaFamilyEvidenceLink"))return;
     const course=match[1].toLowerCase()+"/"+match[2].toLowerCase();
-    const eligible=new Set(["mathematics/pre-algebra","mathematics/algebra-1","mathematics/geometry","mathematics/algebra-2","language-arts/english-10","language-arts/english-11","language-arts/english-12","science/integrated-science-9","science/biology-10","science/chemistry-11","science/physics-engineering-12","social-studies/social-studies-10","social-studies/social-studies-11","social-studies/social-studies-12"]);
+    const eligible=new Set(["mathematics/pre-algebra","mathematics/algebra-1","mathematics/geometry","mathematics/algebra-2","language-arts/english-10","language-arts/english-11","language-arts/english-12","science/integrated-science-9","science/biology-10","science/chemistry-11","science/physics-engineering-12","social-studies/grade-10","social-studies/grade-11","social-studies/grade-12"]);
     if(!eligible.has(course))return;
     const section=document.createElement("section");
     section.id="kaFamilyEvidenceLink";
