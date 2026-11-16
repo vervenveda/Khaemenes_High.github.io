@@ -46,3 +46,6 @@ Founder reports that all five direct-link daily pages fail to load properly. Thi
 
 ## Release decision
 All changes committed and statically checked; **functional resolution is NOT confirmed**. Do not expand this loading fix to other grades without browser evidence.
+
+## Founder acceptance update · 2026-11-16
+The founder reported: **“they are loading correctly now”** in response to the five English 9 Week 01 lesson links after the shared repair. Record this as **USER-REPORTED LOADING PASS** across the discussed pages; this is not an instrumented browser network/console test. Leave independent text-size, save/export, tablet, and mastery-gate regression checks pending.
