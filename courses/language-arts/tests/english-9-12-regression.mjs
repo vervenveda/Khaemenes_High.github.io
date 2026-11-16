@@ -125,6 +125,10 @@ for(const grade of grades){
   assert.match(courseJs,/english-learning-page-organization-v1\.js/,"focused learning organization loader missing English "+grade);
   assert.match(courseJs,/data-khae-english-page-organization|khaeEnglishPageOrganization/,"focused learning organization marker missing English "+grade);
   if(grade===9){
+    const gradebook=read(path.join(root,"records","gradebook.html"));
+    assert.match(gradebook,/Evaluator|evaluator/,"English 9 evaluator record missing");
+    assert.match(gradebook,/Rubric|rubric/,"English 9 rubric record missing");
+    assert.match(gradebook,/Feedback|feedback/,"English 9 feedback record missing");
     assert.match(courseJs,/grade9EvidenceReady/,"evidence-aware weekly completion missing English 9");
     assert.match(courseJs,/Evidence needed ·/,"English 9 evidence status messaging missing");
   }else{
@@ -207,6 +211,14 @@ for(const grade of grades){
       assert.equal(new Set(bank.map(q=>String(q.question??q.q??q.prompt??"").trim().toLowerCase().replace(/\s+/g," "))).size,bank.length,"duplicate prompts English 9 "+kind);
     }
   }else{
+    assert.match(courseJs,/projectReview/,"project review provenance missing English "+grade);
+    assert.match(courseJs,/artifactRef/,"project artifact reference missing English "+grade);
+    assert.match(courseJs,/companionReviewed/,"product companion review marker missing English "+grade);
+    assert.match(courseJs,/reviewDate/,"project review date missing English "+grade);
+    const gradebook=read(path.join(root,"records","gradebook.html"));
+    assert.match(gradebook,/data-project-review-editor/,"project review editor missing English "+grade);
+    const progressReport=read(path.join(root,"records","progress-report.html"));
+    assert.match(progressReport,/Review Record/,"project review status missing from progress report English "+grade);
     const swPath=path.join(root,"service-worker.js");
     assert.ok(exists(swPath),"offline service worker missing English "+grade);
     const sw=read(swPath);
