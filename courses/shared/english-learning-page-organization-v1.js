@@ -40,8 +40,10 @@ const clean=s=>String(s||"").replace(/\s+/g," ").trim();
 const titleOf=el=>clean(el.querySelector("h2,h3")?.textContent)||"Learning step";
 const metaOf=el=>{
   const eyebrow=clean(el.querySelector(".eyebrow,.lesson-meta,.tag")?.textContent);
-  const objective=clean(el.querySelector(".comment,p strong")?.parentElement?.textContent);
-  return eyebrow || objective || "Open this learning step";
+  const objectiveNode=[...el.querySelectorAll("p")].find(p=>/objective:|learning target/i.test(clean(p.textContent)));
+  const comment=clean(el.querySelector(".comment")?.textContent);
+  const objective=clean(objectiveNode?.textContent);
+  return objective || comment || eyebrow || "Open this learning step";
 };
 
 function wrapLearningCard(card,index){
@@ -93,7 +95,7 @@ function buildControls(steps){
 function enhance(){
   markExistingDetails();
   let cards=[...document.querySelectorAll("article.lesson-day")];
-  if(!cards.length)cards=[...document.querySelectorAll("article.lesson-detail")].filter(x=>x.querySelector("textarea,[data-save-field],.flow,.lesson-grid"));
+  if(!cards.length)cards=[...document.querySelectorAll("#lessons article.lesson-detail")].filter(x=>x.querySelector("textarea,[data-save-field],.flow,.lesson-grid"));
   const steps=cards.map(wrapLearningCard).filter(Boolean);
   const supportTargets=[
     ["#work","Continuing notebook"],
@@ -102,6 +104,7 @@ function enhance(){
   for(const [sel,label] of supportTargets)document.querySelectorAll(sel).forEach(el=>wrapSupportingSection(el,label));
   buildControls(steps);
   markExistingDetails();
+  document.querySelectorAll("#quiz,#assessment,[data-weekly-quiz],[data-mastery-assessment]").forEach(el=>el.dataset.khaeAlwaysVisible="true");
   document.documentElement.dataset.khaeLearningPageOrganization="v1";
 }
 if(document.readyState==="loading")document.addEventListener("DOMContentLoaded",enhance,{once:true});else enhance();
