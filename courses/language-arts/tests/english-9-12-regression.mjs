@@ -67,6 +67,12 @@ for(const grade of grades){
   assert.deepEqual(manifest.weeklyLoop,canonical.weeklyLoop,"weekly-loop contract drift English "+grade);
 
   assert.ok(exists(path.join(root,"index.html")),"course landing missing English "+grade);
+  const landing=read(path.join(root,"index.html"));
+  assert.match(landing,/KHAEMENES_ENGLISH_LANDING_RELEASE_V1/,"canonical landing presentation contract missing English "+grade);
+  if(grade>=10){
+    assert.match(landing,/class="topbar"[^>]*data-retired-course-header="true"[^>]*hidden/,"legacy local course header must remain retired English "+grade);
+    assert.match(landing,/<html lang="en" data-theme="light">/,"English "+grade+" landing must open in canonical light presentation");
+  }
   assert.ok(exists(path.join(root,"curriculum.json")),"curriculum missing English "+grade);
   assert.ok(exists(path.join(root,"reading-list.html")),"reading list missing English "+grade);
   const readingHub=read(path.join(root,"reading-list.html"));
