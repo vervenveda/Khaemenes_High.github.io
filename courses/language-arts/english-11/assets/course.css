@@ -145,7 +145,7 @@ textarea,input[type="text"],input[type="number"],input[type="date"],select{
 textarea{min-height:140px;resize:vertical}
 label{display:block;font:600 14px/1.3 system-ui,sans-serif;margin:10px 0 5px}
 .notice{border-left:4px solid var(--gold);background:rgba(184,138,44,.10);padding:14px 16px;border-radius:var(--radius)}
-.good{color:var(--green)}.bad{color:var(--red)}.muted{color:var(--muted)}.small{font-size:14px}
+.good{color:var(--green)}.bad{color:var(--red)}.muted{color:var(--muted)}.small{font-size:16px}
 .quiz-question{border:1px solid var(--line);background:var(--paper-2);border-radius:var(--radius);padding:18px;margin:14px 0}
 .quiz-question legend{font-size:19px;line-height:1.45;padding:0 6px}
 .quiz-choice{display:flex;gap:10px;align-items:flex-start;padding:10px;border:1px solid transparent;border-radius:var(--radius);cursor:pointer}
