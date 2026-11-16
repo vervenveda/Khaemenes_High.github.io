@@ -42,14 +42,16 @@ function open(config){
   const bank=(config.bank||[]).map((q,i)=>norm(q,i,String(config.courseId||"high")));
   const audit=validateBank(bank);if(audit.issueCount)throw new Error("Assessment bank failed validation.");
   const count=countFor(String(config.kind||"assessment"),bank.length,config.count);
-  const session=mc.openSession(String(config.storageKey),bank,{count,kind:String(config.kind||"assessment"),sourceQuotas:config.sourceQuotas||null});
+  const session=config.fixedOrder===true&&typeof mc.openFixedSession==="function"
+    ? mc.openFixedSession(String(config.storageKey),bank,{count,kind:String(config.kind||"assessment")})
+    : mc.openSession(String(config.storageKey),bank,{count,kind:String(config.kind||"assessment"),sourceQuotas:config.sourceQuotas||null});
   const materialized=mc.materialize(bank,session).map(q=>({
     id:q.id,question:q.prompt,q:q.prompt,prompt:q.prompt,
     choices:q.options,options:q.options,answer:q.answer,
     explanation:q.explanation,explain:q.explanation,
     skill:q.domain,domain:q.domain,source:q.source,difficulty:q.difficulty,week:q.week,unit:q.unit
   }));
-  return Object.freeze({version:VERSION,sessionId:session.id,storageKey:String(config.storageKey),courseId:String(config.courseId||"high-school"),kind:String(config.kind||"assessment"),count:materialized.length,bankSize:bank.length,questionIds:[...session.questionIds],questions:materialized});
+  return Object.freeze({version:VERSION,sessionId:session.id,storageKey:String(config.storageKey),courseId:String(config.courseId||"high-school"),kind:String(config.kind||"assessment"),fixedOrder:session.fixedOrder===true,count:materialized.length,bankSize:bank.length,questionIds:[...session.questionIds],questions:materialized});
 }
 function complete(opened,summary){
   const mc=global.KhaeMonteCarloAssessment;if(!mc||!opened)return null;
@@ -72,14 +74,15 @@ function newAttempt(openedOrKey){
   const key=typeof openedOrKey==="string"?openedOrKey:openedOrKey?.storageKey;
   return key?mc.newAttempt(key):false;
 }
-function policy(kind){
+function policy(kind,fixedOrder=false){
   const k=String(kind||"assessment").toLowerCase();
   return Object.freeze({
     masteryThreshold:PASS,
     bookMode:(k==="midterm"||k==="final")?"closed-book":"open-book",
     immutableAttemptSummary:true,
     persistentActiveForm:true,
-    reshuffleOnRetake:true,
+    reshuffleOnRetake:fixedOrder!==true,
+    fixedOrder:fixedOrder===true,
     preservesBestScore:true,
     performanceEvidenceSeparate:true
   });

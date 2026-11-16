@@ -77,13 +77,22 @@ These routes do not invent a second assessment system. They point to the existin
 The machine-readable authority map is:
 `english-9/UNIT_ASSESSMENT_AUTHORITY_MAP.json`.
 
-## HOLD · assessment runtime parity
+## REPAIRED · assessment runtime parity
 
-English 9 midterm/final still use an older manual scoring runtime.
+English 9 midterm and final now use the shared high-school assessment infrastructure with a fixed-form policy:
 
-English 10–12 use the newer high-school assessment adapter and learning-context bridge.
+- existing midterm bank preserved at 12 items;
+- existing final bank preserved at 16 items;
+- existing answer keys preserved exactly;
+- closed-book objective assessment;
+- 80% objective mastery target;
+- learner-scoped attempt history and best-score retention;
+- same question and answer order on correction attempt;
+- writing remains separate and human-reviewed.
 
-Migration should be treated as an assessment-system project, not a presentation change, because it affects persistence, attempt history, retakes, best-score preservation, and learning-evidence publication.
+The shared Monte Carlo engine now supports optional `openFixedSession`; its default randomized behavior is unchanged for existing Grade 10–12 assessments.
+
+This resolves the runtime gap without forcing English 9 into reshuffled retries.
 
 ## HOLD · regression depth parity
 
