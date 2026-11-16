@@ -11,6 +11,11 @@ function bestFromAssessment(kind){
   return scores.length?Math.max(...scores):null;
 }
 function readingDevelopment(){
+  const profile=window.KhaemenesEnglish9Records?.profile;
+  const active=window.KhaemenesCourseEntryContract?.readAcademyProfile?.();
+  if(!profile?.learnerId||active?.learnerId!==profile.learnerId){
+    return {readWeeks:0,minutes:0,reflections:0,logEntries:0,assignedWeeks:0,independent:0,weeks:0,units:0,sourceCounts:{},unclassified:0,unavailable:true};
+  }
   // The Grade 9 ledger is intentionally not migrated to the upper-grade schema.
   // Missing week/type/source metadata is unknown, never inferred as assigned reading.
   const readField=name=>{try{return String(localStorage.getItem(scoped("khae-ela9-field:"+name))||"").trim()}catch{return ""}};
@@ -23,7 +28,8 @@ function readingDevelopment(){
     const r=weeks[w]?.reading||weeks[String(w)]?.reading;
     if(!r)continue;
     const n=Number(r.minutes);
-    const active=String(r.status||"").toLowerCase()!=="not started"||n>0||String(r.pages||"").trim()||String(r.reflection||"").trim();
+    const status=String(r.status||"").trim().toLowerCase();
+    const active=(!!status&&status!=="not started")||n>0||!!String(r.pages||"").trim()||!!String(r.reflection||"").trim();
     if(active){readWeeks++;weekSet.add(w);unitSet.add(Math.ceil(w/3))}
     if(Number.isFinite(n)&&n>0)minutes+=n;
     if(String(r.reflection||"").trim())reflections++;
@@ -83,7 +89,7 @@ function render(){
     else entries.forEach(([name,count],i)=>{if(i)source.append(document.createTextNode(" · "));const label=document.createElement("span");label.textContent=name+": "+count;source.append(label)});
   }
   const note=q("[data-reading-development-note]");
-  if(note)note.textContent="Assigned weeks are based only on explicitly labeled ledger entries. "+rd.unclassified+" older entr"+(rd.unclassified===1?"y has":"ies have")+" no reading type recorded; these are not automatically classified. Reading does not grant grades or mastery.";
+  if(note)note.textContent=rd.unavailable?"Select the correct Academy learner to view private reading indicators. No learner records were loaded.":"Assigned weeks count only entries explicitly classified as Assigned; "+rd.unclassified+" entr"+(rd.unclassified===1?"y has":"ies have")+" no type recorded. Unspecified pages are not counted as minutes. Reading does not grant grades or mastery.";
 }
 if(document.readyState==="loading")document.addEventListener("DOMContentLoaded",render,{once:true});else render();
 })();
