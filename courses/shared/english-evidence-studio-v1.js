@@ -63,6 +63,7 @@ const fields=Object.fromEntries(fieldNames.map(k=>[k,$("es-"+k)]));
 let currentWeek=1;
 let record=empty(1);
 let modified=false;
+let conflictLocked=false;
 function message(text,kind){
  status.textContent=text;status.dataset.status=kind||"neutral";
 }
@@ -147,6 +148,7 @@ function renderSource(){
 }
 function renderFields(){for(const k of fieldNames)if(fields[k])fields[k].value=record.fields[k]||"";renderReview()}
 function save(){
+ if(conflictLocked){message("Save blocked: another tab changed this learner or record. Copy your work, then reload before saving again.","warning");return false}
  if(!modified)return true;
  if(!storageReady||!validProfile()){message("Saving blocked: select the correct Academy learner. Your text stays on this page.","warning");return false}
  try{
@@ -175,6 +177,7 @@ function loadWeek(n){
  message(storageReady&&validProfile()?"Ready. Work is stored separately for your selected Academy learner on this browser.":"Select an Academy learner to save. No unscoped student record will be created.",storageReady?"neutral":"warning");
 }
 function exportPacket(){
+ if(conflictLocked){message("Export paused: another tab changed this learner or record. Copy your work and reload.","warning");return}
  if(modified&&!save())return;
  if(!storageReady||!validProfile()){message("Select the correct Academy learner before exporting student records.","warning");return}
  const exportData={schema:"khae-english-evidence-studio-v1",grade,week:currentWeek,learnerId:profile.learnerId,assignment:getAssignment(currentWeek)?.title||"",exportedAt:new Date().toISOString(),record,warning:"Developmental artifact only; not a grade, teacher approval, or mastery result."};
@@ -228,7 +231,10 @@ window.addEventListener("pagehide",()=>{if(modified)save()});
 window.addEventListener("storage",event=>{
  const scoped=contract?.scopedKey?.(weekKey(currentWeek),profile);
  if(event.key==="khaemenes_active_learner_v1"||event.key===scoped){
+  conflictLocked=true;
   for(const field of fieldNames)if(fields[field])fields[field].disabled=true;
+  $("es-save").disabled=true;
+  $("es-export").disabled=true;
   message("Learner or record changed in another tab; saving paused. Copy your text and reload with the correct learner.","warning");
  }
 });
