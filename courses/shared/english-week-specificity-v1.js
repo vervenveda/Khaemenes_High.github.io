@@ -16,6 +16,7 @@ style.textContent=`
 `;document.head.append(style);
 
 const dayKeys=["monday","tuesday","wednesday","thursday","friday"];
+let grade9Plan=null;
 
 function upperWeek(){
  const data=grade===10?window.ELA10_COURSE:grade===11?window.ENGLISH_11_CURRICULUM:window.ENGLISH_12_CURRICULUM;
@@ -34,7 +35,7 @@ function fallbackLens(card,index){
  return generic;
 }
 function lensFor(card,index){
- if(grade===9)return fallbackLens(card,index);
+ if(grade===9)return grade9Plan?.specificity?.[dayKeys[index]]||fallbackLens(card,index);
  const week=upperWeek();
  return week?.specificity?.[dayKeys[index]]||fallbackLens(card,index);
 }
@@ -50,11 +51,20 @@ function mount(card,index){
  const anchor=card.querySelector(".lesson-grid,h3,.flow");
  if(anchor)card.insertBefore(box,anchor);else head.append(box);
 }
-function run(){
+async function run(){
+ if(grade===9){
+  try{
+   const res=await fetch(new URL("../../curriculum.json",location.href),{cache:"no-store"});
+   if(res.ok){
+    const data=await res.json();
+    grade9Plan=(data.weekPlans||[]).find(w=>Number(w.n)===weekNo)||null;
+   }
+  }catch{}
+ }
  let cards=[...document.querySelectorAll("article.lesson-day")];
  if(!cards.length)cards=[...document.querySelectorAll("#lessons article.lesson-detail")];
  cards.slice(0,5).forEach(mount);
  document.documentElement.dataset.englishWeekSpecificity="v1";
 }
-if(document.readyState==="loading")document.addEventListener("DOMContentLoaded",run,{once:true});else run();
+if(document.readyState==="loading")document.addEventListener("DOMContentLoaded",()=>{run()},{once:true});else run();
 })();
