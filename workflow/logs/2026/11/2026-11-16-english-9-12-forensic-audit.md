@@ -122,3 +122,24 @@ Do not log personal learner records, passwords, tokens, private files or unredac
 - [ ] Visually inspect all four Student Progress pages on desktop and mobile/tablet.
 - [ ] Review overlap between Grade 9 portal minutes and ledger minutes before asserting a deduplicated total in production; current report describes recorded activity, not unique session duration.
 - [ ] Verify upper-grade assigned-title matching before introducing any strict “canonical assigned reading completed” indicator.
+
+## Addendum · English 9–12 Portfolio Review Bridge (2026-11-16)
+
+**Goal:** Provide a consistent, educator-review-ready pathway from existing Reading-to-Writing Evidence Studio records into each grade's existing portfolio page without modifying assessment, mastery, or school gradebooks. Grade 9's architecture remains distinct.
+
+**Implemented:**
+- [79ccfcb](https://github.com/vervenveda/Khaemenes_High.github.io/commit/79ccfcb119bda2f81cf1adf104ab5ab5b8c62b1e): new shared read-only `courses/shared/english-portfolio-review-bridge-v1.js`. Scans 36 learner-scoped studio weeks; previews attribution, claims, evidence chains, draft, feedback, revision, reflection, and oral-defense content; displays a six-part preparation checklist. Exports explicit review packets with `reviewStatus: "NOT REVIEWED"`, `educatorApproval: false`, `academicGrade: null`, and `mastery: null`. No authorization to approve.
+- [f72eca8](https://github.com/vervenveda/Khaemenes_High.github.io/commit/f72eca8a62e2744b98ade13cd43be0a2e6c2e0fa): persistent fail-closed lock after a cross-tab learner or record change; no stale export/print.
+- [2f67fde](https://github.com/vervenveda/Khaemenes_High.github.io/commit/2f67fde4676accfaa8f60fa8b920e6e0c8804f48): shared responsive VNV/KA styling; centered, collapsible evidence preview; accessible controls.
+- Mounted the bridge in all four existing student portfolio pages: [English 9](https://github.com/vervenveda/Khaemenes_High.github.io/commit/c7900b05937c8edbd9844bfbc67482cd03ef9c2f), [English 10](https://github.com/vervenveda/Khaemenes_High.github.io/commit/caac67ccc2575011f64db280fab3e3b6a403bddf), [English 11](https://github.com/vervenveda/Khaemenes_High.github.io/commit/ca9bab78c33b2848f0d9e75dba1204a1597c7e36), [English 12](https://github.com/vervenveda/Khaemenes_High.github.io/commit/09412d4380f588d4a375bdf30e81ef5f92e271a6).
+- [303f312](https://github.com/vervenveda/Khaemenes_High.github.io/commit/303f312cf00c5a2d5692f9549ea50236dfac25d6): add direct same-week Reading Log link for evidence cross-reference.
+
+**Tests and CI:**
+- [1a5023e](https://github.com/vervenveda/Khaemenes_High.github.io/commit/1a5023e9537533e9314f0c6109525515461d1c27): source-level/Node regression checks for all four page mounts, scoped packets, missing/mismatched learners, cross-tab lock, invalid grade/week.
+- [2f9e9ff](https://github.com/vervenveda/Khaemenes_High.github.io/commit/2f9e9fffc7290f3a30591466229ed9593380c463): add suite to English reading alignment workflow and include bridge files in path triggers.
+- A V8 synthetic fixture executed directly in this session **PASS** for one English 11 saved record: page initialization, saved-week selection, export of ungraded review packet, no record writes, and no new export after simulated learner change. It does not prove the full Node suite or live browser acceptance.
+- `node --test courses/language-arts/tests/english-9-12-portfolio-review-bridge-regression.mjs`: **NOT RUN** in this session. GitHub Actions result and production behavior **HOLD**.
+
+**Safety boundaries:** Source data is learner-scoped and read-only. There is no automatic import into official portfolio completion, no grade alteration, no mastery unlock, and no auto-certification. Export files may contain student writing; distribute only to the authorized educator. Manual backup remains necessary because current storage is device-local.
+
+**Next validation:** Run Node suite/CI, test live tabs, source attribution, export files and responsive print, and test Grade 9 separately. Any school-official evaluator signoff must use existing authorized review processes.
