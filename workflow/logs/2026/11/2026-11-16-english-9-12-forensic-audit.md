@@ -81,3 +81,18 @@ Do not log personal learner records, passwords, tokens, private files or unredac
 **Evidence status:** Commits confirmed via GitHub connector. Local repository download failed due unavailable DNS/network access, so `node --test courses/language-arts/tests/english-9-12-evidence-studio-regression.mjs` **NOT RUN** here. CI conclusion, actual download completion, PDF printing, tablet layouts, and storage-full browser behavior remain **HOLD** until separately verified.
 
 **Next checkpoint:** Run the native Node suite in CI or local clone, then browser-verify actual export under quota pressure; investigate per-keystroke double writes and index-write failure semantics without weakening profile isolation.
+
+## Addendum · Autosave and interrupted progress-index writes (2026-11-16)
+
+**Confirmed source observations:** The shared Evidence Studio saved the draft plus the progress index on every input event. Index-write failures were caught alongside the weekly draft write and displayed as a generic save failure despite possible successful persistence of the draft.
+
+**Shared-engine repair:** [48f4f5a](https://github.com/vervenveda/Khaemenes_High.github.io/commit/48f4f5a96e8c2eb507e2067648d50d208b47e0ad) adds a 700-ms debounced autosave, timer clearing on explicit save and cross-tab conflict, and separate weekly draft-write and progress-index-write results. The Save button, week switching and pagehide flush pending changes. When the draft saves but its index does not, the interface says that the draft is saved while summary synchronization is pending; it permits retry before navigating to another week. The records remain learner-scoped, per grade/week.
+
+**Regression additions:** [1f7fe59](https://github.com/vervenveda/Khaemenes_High.github.io/commit/1f7fe59a32a4020bb5d7cec818e5e14a64e21262) adds synthetic delayed autosave and flush-before-navigation scenarios for English 9–12. [bde1d8d](https://github.com/vervenveda/Khaemenes_High.github.io/commit/bde1d8d7f60f3ed9ffddc106ca3b2d1daaeaafd0) extends coverage for a simulated one-time progress-index failure and retry.
+
+**Verification hold:** Source and tests were committed. The repository could not be cloned into the execution container because GitHub DNS access was unavailable. Therefore the Node regression suite was **NOT RUN**, and GitHub Actions success, real quota behavior, and browser performance are **UNVERIFIED**. The new tests are present, not certified passing. No course grade, passing threshold, mastery evidence, teacher sign-off, or assessment attempt was changed.
+
+**Next actions:**
+- [ ] Run `node --test courses/language-arts/tests/english-9-12-evidence-studio-regression.mjs` and inspect output.
+- [ ] Browser-test rapid input, storage full, index-write denial, navigation, pagehide, tab conflicts, print and JSON downloads.
+- [ ] Verify that the full record remains recoverable and reading/progress widgets reflect real data.
