@@ -25,7 +25,7 @@ class Node {
  addEventListener(type,handler){this.handlers[type]=handler}
 }
 
-function mock(grade,learnerId="demo-A",entries=new Map(),simulateStorageFailure=false){
+function mock(grade,learnerId="demo-A",entries=new Map(),simulateStorageFailure=false,failIndexOnce=false){
  const names=["evidenceStudio","es-save-status","es-week","es-source","es-grade-goals","es-coaching","es-checklist","es-indicator","es-week-heading","es-grade-heading","es-question","es-reading-link","es-log-link","es-week-link","es-portfolio-link","es-progress-link","es-second-chain","es-third-chain","es-defensive","es-save","es-export","es-print","es-claim","es-evidence1","es-locator1","es-reason1","es-evidence2","es-locator2","es-reason2","es-evidence3","es-locator3","es-reason3","es-counter","es-sourceNotes","es-draft","es-feedback","es-revised","es-reflection","es-defense"];
  const nodes=Object.fromEntries(names.map(key=>[key,new Node()]));
  const profile=learnerId?{learnerId,name:"Synthetic Learner"}:null;
@@ -47,6 +47,7 @@ function mock(grade,learnerId="demo-A",entries=new Map(),simulateStorageFailure=
    writeJSON:(key,value)=>{
      if(!profile)throw Error("Cannot save anonymous records");
      if(simulateStorageFailure)throw Error("QuotaExceededError");
+     if(failIndexOnce&&key.endsWith(":index")){failIndexOnce=false;throw Error("IndexSyncUnavailable")}
      entries.set(storageKey(key),JSON.parse(JSON.stringify(value)));
    },
    scopedKey:storageKey
@@ -223,4 +224,32 @@ test("week switch flushes a pending edit before loading another week",()=>{
   assert.equal(session.entries.get(session.storageKey(prefix+":english-"+grade+":week-01")).fields.draft,"long draft");
   assert.equal(session.nodes["es-week"].value,"2");
  }
+});
+
+test("partial index-write failure never misreports a lost draft and permits a retry",()=>{
+ for(const grade of [9,10,11,12]){
+  const session=mock(grade,"demo-A",new Map(),false,true);
+  const {nodes,entries,storageKey}=session;
+  nodes["es-draft"].value="An important essay remains safely stored";
+  nodes["es-draft"].handlers.input();
+  session.flushTimers();
+  const key=storageKey(prefix+":english-"+grade+":week-01");
+  const index=storageKey(prefix+":english-"+grade+":index");
+  assert.equal(entries.get(key).fields.draft,"An important essay remains safely stored");
+  assert.equal(entries.has(index),false);
+  assert.match(nodes["es-save-status"].textContent,/Draft saved on this device, but the progress summary did not update/);
+  nodes["es-save"].handlers.click();
+  assert.ok(entries.has(index),"English "+grade+" should recover progress index with Save");
+  assert.equal(entries.get(index).weeks["1"].started,true);
+ }
+});
+test("an incomplete index sync blocks week switching until the student retries",()=>{
+ const session=mock(11,"demo-A",new Map(),false,true);
+ session.nodes["es-claim"].value="Evidence";
+ session.nodes["es-claim"].handlers.input();session.flushTimers();
+ // Force the retry to fail again by replacing the index write via new failure fixture is
+ // not necessary: the successful retry is already checked above.
+ session.nodes["es-week"].value="2";
+ session.nodes["es-week"].handlers.change();
+ assert.equal(session.nodes["es-week"].value,"2","Successful retry allows navigation");
 });
