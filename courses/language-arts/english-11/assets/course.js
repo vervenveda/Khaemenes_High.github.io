@@ -187,8 +187,9 @@
   };
   const unitState = u => {
     const key=String(Number(u));
-    state.units[key] ||= {assessment:{best:0,attempts:[]},projectScore:"",notes:""};
+    state.units[key] ||= {assessment:{best:0,attempts:[]},projectScore:"",projectReview:{rubric:"",evaluator:"",reviewDate:"",feedback:"",artifactRef:"",companionReviewed:false},notes:""};
     state.units[key].assessment ||= {best:0,attempts:[]};
+    state.units[key].projectReview ||= {rubric:"",evaluator:"",reviewDate:"",feedback:"",artifactRef:"",companionReviewed:false};
     state.units[key].assessment.attempts ||= [];
     return state.units[key];
   };
@@ -487,9 +488,33 @@
     const unitBody=$("[data-unit-gradebook-body]");
     if(unitBody)unitBody.innerHTML=Array.from({length:12},(_,i)=>{
       const u=i+1, us=unitState(u);
-      return `<tr><td>Unit ${String(u).padStart(2,"0")}</td><td>${fmt(score(us.assessment))}</td><td><input type="number" min="0" max="100" value="${esc(us.projectScore)}" data-inline-project="${u}" aria-label="Unit ${u} project score"></td><td>${us.assessment.attempts.length}</td></tr>`;
+      const review=us.projectReview||{};
+      const reviewed=Boolean(review.evaluator&&review.reviewDate&&review.rubric);
+      return `<tr><td>Unit ${String(u).padStart(2,"0")}</td><td>${fmt(score(us.assessment))}</td><td><input type="number" min="0" max="100" value="${esc(us.projectScore)}" data-inline-project="${u}" aria-label="Unit ${u} project score"></td><td>${reviewed?"Review documented":"Review incomplete"}</td><td>${us.assessment.attempts.length}</td></tr>`;
     }).join("");
-    $$("[data-inline-project]").forEach(field=>field.addEventListener("input",()=>{unitState(field.dataset.inlineProject).projectScore=field.value===""?"":clamp(field.value);save();renderSummary()}));
+    $("[data-inline-project]").forEach(field=>field.addEventListener("input",()=>{unitState(field.dataset.inlineProject).projectScore=field.value===""?"":clamp(field.value);save();renderSummary()}));
+    const reviewHost=document.querySelector("[data-project-review-editor]");
+    if(reviewHost){
+      reviewHost.innerHTML=Array.from({length:12},(_,i)=>{
+        const u=i+1,us=unitState(u),r=us.projectReview;
+        return `<details class="card" style="margin:12px 0"><summary>Unit ${String(u).padStart(2,"0")} · Project Review Provenance</summary>
+          <div class="form-row">
+            <div><label>Core rubric used</label><select data-review-field="rubric" data-review-unit="${u}"><option value="">Choose rubric…</option><option value="literary-analysis">Literary Analysis</option><option value="argument">Argument</option><option value="research">Research & Synthesis</option><option value="speaking">Speaking / Performance</option><option value="narrative">Narrative / Creative</option></select></div>
+            <div><label>Evaluator</label><input data-review-field="evaluator" data-review-unit="${u}" value="${esc(r.evaluator)}"></div>
+            <div><label>Review date</label><input type="date" data-review-field="reviewDate" data-review-unit="${u}" value="${esc(r.reviewDate)}"></div>
+          </div>
+          <label>Artifact / portfolio reference</label><input data-review-field="artifactRef" data-review-unit="${u}" value="${esc(r.artifactRef)}" placeholder="Filename, portfolio item, URL, or printed artifact reference">
+          <label><input type="checkbox" data-review-field="companionReviewed" data-review-unit="${u}" ${r.companionReviewed?"checked":""}> Product Companion criteria reviewed where applicable</label>
+          <label>Evidence-specific feedback and next learning step</label><textarea data-review-field="feedback" data-review-unit="${u}" rows="4">${esc(r.feedback)}</textarea>
+        </details>`;
+      }).join("");
+      $("[data-review-field]").forEach(field=>{
+        const u=Number(field.dataset.reviewUnit),key=field.dataset.reviewField,review=unitState(u).projectReview;
+        if(key==="rubric")field.value=review.rubric||"";
+        field.addEventListener("input",()=>{review[key]=field.type==="checkbox"?field.checked:field.value;save()});
+        field.addEventListener("change",()=>{review[key]=field.type==="checkbox"?field.checked:field.value;save()});
+      });
+    }
     function renderSummary(){
       const s=calcStats();
       $("[data-grade-summary]").innerHTML=`Weekly quiz average: <strong>${fmt(s.quizAvg)}</strong> · Unit assessment average: <strong>${fmt(s.unitAvg)}</strong> · Project average: <strong>${fmt(s.projectAvg)}</strong> · Midterm: <strong>${fmt(s.mid)}</strong> · Final: <strong>${fmt(s.fin)}</strong> · Provisional weighted grade: <strong>${fmt(s.grade)}</strong>`;
@@ -530,8 +555,8 @@
   $$("[data-export-csv]").forEach(b=>b.addEventListener("click",()=>{
     const rows=[["Week","Daily Lessons Complete","Weekly Quiz Best","Quiz Attempts"]];
     for(let w=1;w<=36;w++){const ws=weekState(w);rows.push([w,completedDays(w),score(ws.quiz)??"",ws.quiz.attempts.length])}
-    rows.push([]);rows.push(["Unit","Unit Assessment Best","Project Score","Attempts"]);
-    for(let u=1;u<=12;u++){const us=unitState(u);rows.push([u,score(us.assessment)??"",us.projectScore??"",us.assessment.attempts.length])}
+    rows.push([]);rows.push(["Unit","Unit Assessment Best","Project Score","Rubric","Evaluator","Review Date","Artifact Ref","Companion Reviewed","Feedback","Attempts"]);
+    for(let u=1;u<=12;u++){const us=unitState(u),r=us.projectReview||{};rows.push([u,score(us.assessment)??"",us.projectScore??"",r.rubric||"",r.evaluator||"",r.reviewDate||"",r.artifactRef||"",r.companionReviewed?"yes":"no",r.feedback||"",us.assessment.attempts.length])}
     rows.push([]);const st=calcStats();rows.push(["Midterm",st.mid??""]);rows.push(["Final",st.fin??""]);rows.push(["Provisional Weighted Grade",st.grade??""]);
     const csv=rows.map(r=>r.map(v=>`"${String(v??"").replaceAll('"','""')}"`).join(",")).join("\n");
     download("ELA11_Gradebook.csv",csv,"text/csv");
