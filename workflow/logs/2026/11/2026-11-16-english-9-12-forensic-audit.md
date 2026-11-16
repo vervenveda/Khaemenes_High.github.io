@@ -59,3 +59,13 @@ No curriculum or application code was modified as part of this source audit. Wor
 
 ## Safeguards and closure
 Do not log personal learner records, passwords, tokens, private files or unredacted student exports. Source inspection is not evidence of deployment or complete browser functionality.
+
+## Addendum · Priority 1 cross-tab conflict repair (2026-11-16)
+
+**Confirmed source defect:** The existing `storage` event handler disabled text fields when the active learner or current week record changed in another tab, but the Save control was still callable and `save()` had no persistent conflict guard. A stale tab could therefore overwrite the current learner/week record despite the warning.
+
+**Committed repair:** [361f82e](https://github.com/vervenveda/Khaemenes_High.github.io/commit/361f82e5ef1976ca87dfed639c392dcc0f3ee4e5) updates `courses/shared/english-evidence-studio-v1.js` to set a persistent `conflictLocked` flag, refuse subsequent saves/exports, and disable Save/Export controls on a conflicting storage event.
+
+**Committed regressions:** [4928269](https://github.com/vervenveda/Khaemenes_High.github.io/commit/4928269470204de782d61d191291330b6765e20e) extends `courses/language-arts/tests/english-9-12-evidence-studio-regression.mjs` with a cross-tab stale-write prevention scenario for Grades 9–12 and a learner-switch save-lock check.
+
+**Verification status:** Source edits and GitHub commits confirmed. `node --test courses/language-arts/tests/english-9-12-evidence-studio-regression.mjs` is **NOT RUN** in this session; GitHub Actions conclusion and real-browser cross-tab behavior are **UNVERIFIED**. No official grades or assessment/mastery records were edited.
