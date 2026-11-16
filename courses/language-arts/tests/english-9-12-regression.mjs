@@ -153,17 +153,21 @@ for(const grade of grades){
       assert.equal(row.authority,"teacher_review");
       assert.equal(row.completionGrantsMastery,false);
     }
-    for(const [kind,count] of [["midterm",12],["final",16]]){
+    for(const [kind,count] of [["midterm",30],["final",50]]){
       const h=read(path.join(root,"assessments",kind,"index.html"));
       assert.match(h,/data-e9-fixed-assessment/,"English 9 "+kind+" fixed runtime marker missing");
       const bank=assessmentBank(h);
-      assert.equal(bank.length,count,"English 9 "+kind+" legacy bank-count drift");
+      assert.equal(bank.length,count,"English 9 "+kind+" cumulative bank-count drift");
       assertAssessmentBank(bank,"English 9 "+kind);
+      assert.equal(new Set(bank.map(q=>String(q.question??q.q??q.prompt??"").trim().toLowerCase().replace(/\s+/g," "))).size,bank.length,"duplicate prompts English 9 "+kind);
     }
   }else{
     for(const kind of ["midterm","final"]){
       const h=read(path.join(root,"assessments",kind,"index.html"));
       assert.match(h,/high-school-assessment-adapter-v1\.js/,"English "+grade+" "+kind+" shared assessment adapter missing");
+      const bank=assessmentBank(h);
+      assertAssessmentBank(bank,"English "+grade+" "+kind);
+      assert.equal(new Set(bank.map(q=>String(q.question??q.q??q.prompt??"").trim().toLowerCase().replace(/\s+/g," "))).size,bank.length,"duplicate prompts English "+grade+" "+kind);
     }
   }
 }
