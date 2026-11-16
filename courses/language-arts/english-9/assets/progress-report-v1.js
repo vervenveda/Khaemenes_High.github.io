@@ -16,8 +16,20 @@ function readingDevelopment(){
   const weeks=student?.progress?.weeks||{};
   let readWeeks=0,minutes=0,reflections=0;
   for(let w=1;w<=36;w++){const r=weeks[w]?.reading||weeks[String(w)]?.reading;if(!r)continue;const active=String(r.status||"").toLowerCase()!=="not started"||Number(r.minutes)>0||String(r.pages||"").trim()||String(r.reflection||"").trim();if(active)readWeeks++;minutes+=Number(r.minutes)||0;if(String(r.reflection||"").trim())reflections++;}
+  // Expand alongside the learner-scoped reading ledger without changing legacy field keys.
+  // A missing row-count key means the original 30-row record is still authoritative.
+  let availableRows=30;
+  try{
+    const raw=localStorage.getItem(scoped("khae-ela9-reading-rows-v2"));
+    const n=Number.parseInt(raw||"30",10);
+    if(Number.isFinite(n))availableRows=Math.min(500,Math.max(30,n));
+  }catch{}
   let logEntries=0;
-  for(let i=1;i<=30;i++){try{if(String(localStorage.getItem(scoped("khae-ela9-field:reading-title-"+i))||"").trim())logEntries++;}catch{}}
+  for(let i=1;i<=availableRows;i++){
+    try{
+      if(String(localStorage.getItem(scoped("khae-ela9-field:reading-title-"+i))||"").trim())logEntries++;
+    }catch{}
+  }
   return {readWeeks,minutes,reflections,logEntries};
 }
 function render(){
