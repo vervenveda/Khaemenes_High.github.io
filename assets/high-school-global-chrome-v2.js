@@ -305,6 +305,10 @@ async function start(){
     // VNV_HEADER owns the enriched menu mount; do not repeat its data load.
     document.documentElement.dataset.khaemenesEnglishCanonicalMenu=
       document.getElementById("vnvEnrichedMenuOverlay")?"mounted":"missing";
+    // Unified instruction presentation: the shared module adapts to each
+    // grade's original lesson DOM. The grade course scripts own all evidence.
+    await load("/Khaemenes_High.github.io/courses/shared/english-unified-lesson-engine-v1.js?v=20261116","khaemenesEnglishUnifiedLessonEngine");
+    window.KhaemenesEnglishUnifiedLessonEngine?.mount?.();
   }
   if(!stableDailyEnglish9 && !stableDailyUpperEnglish && typeof MutationObserver==="function"){
     new MutationObserver(()=>{mountHeader();mountToolbar();cleanupKnownFloaters();preserveExportMarker();scheduleTypography();})
