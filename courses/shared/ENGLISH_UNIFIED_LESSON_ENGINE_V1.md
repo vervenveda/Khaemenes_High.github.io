@@ -83,3 +83,17 @@ Edit and review `courses/shared/english-unified-lesson-engine-v1.js`, then publi
 ## Rollback
 
 Disconnect only the one unified-engine loader line in the shared chrome script if needed. The original grade lesson HTML, assessments and learner records remain intact.
+
+## Presentation contract update · v1.1.0 (2026-11-16)
+
+The centrally maintained engine now applies `khae-english-symmetric-lesson` **only to lesson routes identified by its grade 9–12 adapters**, not to high-school records, exams, family pages, or the VNV gateway.
+
+- Content max width 1000px and centered within the actual viewport.
+- Lesson card edges and section titles aligned symmetrically; prose, quotations and evidence remain left-aligned inside cards.
+- Existing two-column `.grid` and `.ela10-w01-grid` presentations use `repeat(2,minmax(0,1fr))`; grid items stretch equally in each row, with a one-column breakpoint at 720px.
+- Default minimum 16px for learner-facing text, form controls, descriptions, navigation, breadcrumb and presentational chrome, including both ticker strips. Existing maximum heading/title hierarchy is preserved.
+- All text-entry controls retain their original `data-save-field`, identity, and data-owner behavior. No graded-state or 80% lock changes.
+- There is **no page-wide zoom override**: very small screenshot scale may be Chrome browser zoom and requires an independent inspection.
+- This is a source-validated 20-page pilot, not a measured guarantee of equal visual heights or accessibility across all responsive sizes. Test at 100/125/150/200% native browser zoom, tablet portrait/landscape, keyboard, and print.
+
+**Implementation commit:** `c0cc30eb1414d3b2f509251af21afe74a51af34a`. **Browser acceptance:** HOLD.
