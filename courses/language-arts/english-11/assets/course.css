@@ -210,6 +210,6 @@ html:root:root:root body :is(button,input,select,textarea) {
   font-size: 16px !important;
 }
 html:root:root:root body :is(.eyebrow,.kicker,.dialog-eyebrow,.dialog-kicker,.worksheet-kicker) {
-  font-size: 14px !important;
+  font-size: 16px !important;
   line-height: 1.15 !important;
 }
