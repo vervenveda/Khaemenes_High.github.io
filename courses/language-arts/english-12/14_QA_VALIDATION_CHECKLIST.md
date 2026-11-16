@@ -15,3 +15,9 @@ Course-specific checks:
 - [ ] Typography release override present
 - [ ] Release-readiness regression test passes
 - [ ] Assessment authority/answer keys unchanged by curriculum presentation upgrades
+
+## Shared four-grade regression
+
+- [ ] Run `tests/cross-grade-regression.mjs`.
+- [ ] The shared suite must pass before an English 9–12 release is called parity-safe.
+- [ ] Do not fork the shared test logic into grade-local copies; update `courses/language-arts/tests/english-9-12-regression.mjs` instead.

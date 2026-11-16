@@ -94,13 +94,31 @@ The shared Monte Carlo engine now supports optional `openFixedSession`; its defa
 
 This resolves the runtime gap without forcing English 9 into reshuffled retries.
 
-## HOLD · regression depth parity
+## REPAIRED · shared cross-grade regression parity
 
-- English 9 has extensive legacy regression coverage.
-- English 10 has Week 01 behavior/regression tests plus the new release parity test.
-- English 11 and English 12 now have the release parity test but not the same deep behavioral suite as English 9.
+A single canonical regression suite now protects all four courses:
 
-Recommended next step: build shared cross-grade regression fixtures instead of cloning every English 9 test four times.
+`courses/language-arts/tests/english-9-12-regression.mjs`
+
+Each grade exposes a thin `tests/cross-grade-regression.mjs` wrapper so the same source of truth runs from English 9, 10, 11, or 12.
+
+The shared suite protects:
+- canonical governance and grade roles;
+- 12 units / 36 weeks / 180 daily blocks;
+- all 48 unit routes;
+- all 48 unit reading dossiers;
+- all 48 Unit 01–12 evidence-alignment records;
+- all 144 weekly hubs;
+- duplicate IDs on audited unit, week, and assessment pages;
+- 16px body / 14px eyebrow release typography;
+- 12 canonical unit-assessment routes per grade;
+- English 9 human-review unit authority;
+- English 10–12 objective unit-bank structure;
+- diagnostic, midterm, and final route presence;
+- English 9 fixed-form cumulative banks;
+- shared assessment-adapter syntax and fixed-form compatibility.
+
+English 9 still has more historical week-specific behavior tests than Grades 10–12. Those are useful course-specific tests, but the release-critical cross-grade invariants are now protected from one shared suite instead of four drifting copies.
 
 ## HOLD · reading-pack completeness
 
@@ -113,7 +131,7 @@ The visible offline reading pack remains named for Weeks 01–06 in each course.
 **Verified presentation cleanup:** PASS  
 **Unit evidence alignment:** PASS  
 **Assessment topology parity:** PASS  
-**Deep regression parity:** HOLD  
+**Shared cross-grade regression parity:** PASS  
 **Full offline reading-package parity:** HOLD
 
 The next highest-value release task is the assessment architecture decision, followed by shared regression fixtures and the complete 36-week reading-package audit.

@@ -38,3 +38,9 @@
 - [ ] Student authorship remains visible
 - [ ] Source/citation evidence retained
 - [ ] Human review remains authoritative for complex work
+
+## Shared four-grade regression
+
+- [ ] Run `tests/cross-grade-regression.mjs`.
+- [ ] The shared suite must pass before an English 9–12 release is called parity-safe.
+- [ ] Do not fork the shared test logic into grade-local copies; update `courses/language-arts/tests/english-9-12-regression.mjs` instead.
