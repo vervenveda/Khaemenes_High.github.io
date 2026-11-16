@@ -166,6 +166,27 @@
   if(document.readyState==="loading")document.addEventListener("DOMContentLoaded",mountLearnerToolbar,{once:true});
   else mountLearnerToolbar();
 
+  // Read-only student evidence entry point. No email, cloud write, or grade mutations.
+  function mountFamilyEvidenceLink(){
+    const path=String(location.pathname||"");
+    const match=path.match(/\/courses\/(mathematics|language-arts|science|social-studies)\/([^/]+)\/(?:index\.html)?$/i);
+    if(!match||!document.querySelector("main")||document.getElementById("kaFamilyEvidenceLink"))return;
+    const course=match[1].toLowerCase()+"/"+match[2].toLowerCase();
+    const eligible=new Set(["mathematics/pre-algebra","mathematics/algebra-1","mathematics/geometry","mathematics/algebra-2","language-arts/english-10","language-arts/english-11","language-arts/english-12","science/integrated-science-9","science/biology-10","science/chemistry-11","science/physics-engineering-12","social-studies/social-studies-10","social-studies/social-studies-11","social-studies/social-studies-12"]);
+    if(!eligible.has(course))return;
+    const section=document.createElement("section");
+    section.id="kaFamilyEvidenceLink";
+    section.setAttribute("aria-label","Family learning records");
+    section.style.cssText="box-sizing:border-box;max-width:960px;margin:24px auto;padding:22px;border:1px solid #b9a47c;border-radius:7px;background:#f7f1e5;color:#242c29;text-align:center;font:400 18px/1.6 Nunito,Arial,sans-serif";
+    const title=document.createElement("h2");title.textContent="Preserve Your Learning";title.style.cssText="font:400 24px/1.3 Cinzel,Georgia,serif;margin:0 0 10px";
+    const p=document.createElement("p");p.textContent="Download records explicitly linked to your selected learner. Older unattributed work remains untouched. Email delivery and cloud backup are not active.";
+    const a=document.createElement("a");a.textContent="Open Family Learning Archive";a.href=new URL("family-records/?course="+encodeURIComponent(course),entryAssetSource).href;
+    a.style.cssText="display:inline-block;background:#242c29;color:#fff8eb;border-radius:7px;padding:12px 20px;min-height:48px;box-sizing:border-box;text-decoration:none;font:400 16px/1.5 Nunito,Arial,sans-serif";
+    section.append(title,p,a);document.querySelector("main").append(section);
+  }
+  if(document.readyState==="loading")document.addEventListener("DOMContentLoaded",mountFamilyEvidenceLink,{once:true});
+  else mountFamilyEvidenceLink();
+
 })();
 
 /* Khaemenes High persistent learner toolbar bootstrap · Student Profile + Beta rail */
