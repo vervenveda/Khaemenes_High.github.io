@@ -66,6 +66,7 @@ exportButton.type="button";
 const printButton=el("button","Print review packet");
 printButton.type="button";
 const openLink=el("a","Open this week in Evidence Studio");
+const logLink=el("a","Open associated Reading Log");
 const status=el("p","", "khae-review-status");
 status.setAttribute("role","status");
 status.setAttribute("aria-live","polite");
@@ -76,7 +77,7 @@ const previewBody=el("div",undefined,"khae-review-body");
 preview.append(previewSummary,previewBody);
 const instructions=el("p","Educator review is separate: inspect quotation accuracy, reasoning, authenticity, feedback, revision quality, and student reflection. Sign off only through the Academy's authorized assessment process, not this bridge.","khae-review-warning");
 section.append(title,intro,controls,status,checklist,preview,instructions);
-controls.append(label,select,openLink,exportButton,printButton);
+controls.append(label,select,openLink,logLink,exportButton,printButton);
 anchor.insertAdjacentElement("afterend",section);
 let selected=null;
 let snapshot=null;
@@ -111,6 +112,7 @@ function show(){
  else snapshot=selected?read(selected):null;
  exportButton.disabled=printButton.disabled=!snapshot;
  openLink.href="../evidence-studio.html"+(selected?"?week="+selected:"");
+ logLink.href="../records/reading-log.html"+(selected?"?week="+selected:"");
  if(!snapshot){preview.hidden=true;return}
  preview.hidden=false;
  const assessment=inspect(snapshot);
