@@ -133,9 +133,19 @@ for(const grade of grades){
   assert.match(courseJs,/english-learning-page-organization-v1\.js/,"focused learning organization loader missing English "+grade);
   assert.match(courseJs,/data-khae-english-page-organization|khaeEnglishPageOrganization/,"focused learning organization marker missing English "+grade);
   const curriculum=json(path.join(root,"curriculum.json"));
+  assert.equal(curriculum.quizDiversityVersion,"v1","quiz diversity version missing English "+grade);
   assert.equal(curriculum.instructionalSpecificityVersion,"v1","instructional specificity version missing English "+grade);
   if(grade===9){
     assert.equal(curriculum.weekPlans.length,36,"English 9 week plan count drift");
+    for(const [kind,expected] of [["midterm",30],["final",50]]){
+      const page=read(path.join(root,"assessments",kind,"index.html"));
+      const bankMatch=page.match(/<script[^>]+id="assessment-data"[^>]*>([\s\S]*?)<\/script>/i);
+      assert.ok(bankMatch,"English 9 "+kind+" assessment bank missing");
+      const bank=JSON.parse(bankMatch[1]);
+      const prompts=bank.map(q=>String(q.question||q.prompt||"").toLowerCase().replace(/[^a-z0-9]+/g," ").trim());
+      assert.equal(prompts.length,expected,"English 9 "+kind+" question count drift");
+      assert.equal(new Set(prompts).size,expected,"English 9 "+kind+" duplicate prompt");
+    }
     for(const plan of curriculum.weekPlans){
       assert.ok(plan.specificity,"English 9 specificity missing week "+plan.n);
       for(const day of ["monday","tuesday","wednesday","thursday","friday"]){
@@ -238,6 +248,16 @@ for(const grade of grades){
     }
   }else{
     assert.equal(curriculum.weeks.length,36,"English "+grade+" curriculum week count drift");
+    const canonicalPrompts=[];
+    for(const week of curriculum.weeks){
+      for(const q of week.quiz||[]) canonicalPrompts.push(String(q.question||"").toLowerCase().replace(/[^a-z0-9]+/g," ").trim());
+    }
+    assert.equal(canonicalPrompts.length,180,"canonical weekly quiz count drift English "+grade);
+    assert.equal(new Set(canonicalPrompts).size,180,"duplicate canonical weekly quiz prompt English "+grade);
+    const specificBank=json(path.join(root,"assets","quiz-specific-bank.json"));
+    const supplementalPrompts=(specificBank.rows||[]).flat().map(row=>String(row?.[0]||"").toLowerCase().replace(/[^a-z0-9]+/g," ").trim()).filter(Boolean);
+    assert.equal(supplementalPrompts.length,72,"supplemental quiz count drift English "+grade);
+    assert.equal(new Set(supplementalPrompts).size,72,"duplicate supplemental quiz prompt English "+grade);
     for(const week of curriculum.weeks){
       assert.ok(week.specificity,"specificity missing English "+grade+" week "+week.week);
       for(const day of ["monday","tuesday","wednesday","thursday","friday"]){
