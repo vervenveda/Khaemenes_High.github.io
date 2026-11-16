@@ -121,3 +121,31 @@ html:root:root body .card .eyebrow{font-size:13px!important;line-height:1.5!impo
  html:root:root body[data-mode] #main :is(.card,.question,.notice,.lab,.boss,.movement,.deep-section,.lesson-reading) :is(p,li,small,span) {color:#d6dfea!important}
  html:root:root body[data-mode] #main :is(.card,.question) .option {background:#1b2c43!important;color:#f5f1e8!important}
 }
+
+/* KH-A1 UNIT01 UNIFIED LESSON PRESENTATION 2026-11-16 */
+/* Visual-only layer: preserve assessment binding, mastery gates, offline support and saved work. */
+@media screen {
+  html:root:root body[data-mode="lesson"] {font-size:16px!important;line-height:1.65!important;}
+  html:root:root body[data-mode="lesson"] .hero {padding:48px 16px 32px!important;text-align:center!important;}
+  html:root:root body[data-mode="lesson"] .hero .eyebrow {font-size:16px!important;line-height:1.5!important;letter-spacing:.04em!important;}
+  html:root:root body[data-mode="lesson"] .hero h1 {font-size:clamp(28px,3vw,44px)!important;line-height:1.25!important;}
+  html:root:root body[data-mode="lesson"] .hero .lead {font-size:18px!important;}
+  html:root:root body[data-mode="lesson"] .block>.wrap.grid {max-width:1040px;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px;}
+  html:root:root body[data-mode="lesson"] .card {border-radius:7px!important;padding:24px!important;min-width:0;}
+  html:root:root body[data-mode="lesson"] .card .eyebrow {font-size:16px!important;letter-spacing:.03em!important;}
+  html:root:root body[data-mode="lesson"] :is(.card p,.card li,.card summary,.question,.option,.notice,.btn,button,textarea) {font-size:16px!important;line-height:1.65!important;}
+  html:root:root body[data-mode="lesson"] .card.full {grid-column:1/-1;}
+  html:root:root body[data-mode="lesson"] #lessonFullInstructionUnit01L01,
+  html:root:root body[data-mode="lesson"] [id^="lessonFullInstructionUnit01L"] {max-width:100%;}
+  html:root:root body[data-mode="lesson"] textarea {min-height:120px;}
+  html:root:root body[data-mode="lesson"] details {margin-top:12px;}
+}
+@media screen and (max-width:760px) {
+  html:root:root body[data-mode="lesson"] .block>.wrap.grid {grid-template-columns:minmax(0,1fr);}
+  html:root:root body[data-mode="lesson"] .card {grid-column:1/-1;padding:18px!important;}
+}
+@media print {
+  html:root:root body[data-mode="lesson"] .hero {padding-top:18pt!important;}
+  html:root:root body[data-mode="lesson"] [id^="lessonFullInstructionUnit01L"] {break-inside:auto;}
+  html:root:root body[data-mode="lesson"] [id^="lessonFullInstructionUnit01L"] section {break-inside:avoid;}
+}
