@@ -11,6 +11,13 @@ const read=p=>fs.readFileSync(p,"utf8");
 const json=p=>JSON.parse(read(p));
 const grades=[9,10,11,12];
 const expectedRoles={9:"foundation",10:"intermediate",11:"advanced",12:"senior_scholar"};
+const specificityLayer=path.resolve(languageArts,"..","shared","english-week-specificity-v1.js");
+assert.ok(exists(specificityLayer),"shared English specificity layer missing");
+const specificitySource=read(specificityLayer);
+assert.match(specificitySource,/Specific Teaching Focus/);
+assert.match(specificitySource,/Watch for:/);
+assert.match(specificitySource,/Evidence target:/);
+
 const learningOrganization=path.resolve(languageArts,"..","shared","english-learning-page-organization-v1.js");
 assert.ok(exists(learningOrganization),"shared focused-learning contract missing");
 const learningOrganizationSource=read(learningOrganization);
@@ -121,10 +128,22 @@ for(const grade of grades){
   assert.match(prh,/Gradebook|gradebook\.html/i,"gradebook return path missing English "+grade);
 
   const courseJs=read(path.join(root,"assets","course.js"));
+  assert.match(courseJs,/english-week-specificity-v1\.js/,"week-specific instruction loader missing English "+grade);
   assert.doesNotMatch(courseJs,/Mark All Days Complete/,"one-click week completion must not return English "+grade);
   assert.match(courseJs,/english-learning-page-organization-v1\.js/,"focused learning organization loader missing English "+grade);
   assert.match(courseJs,/data-khae-english-page-organization|khaeEnglishPageOrganization/,"focused learning organization marker missing English "+grade);
+  const curriculum=json(path.join(root,"curriculum.json"));
+  assert.equal(curriculum.instructionalSpecificityVersion,"v1","instructional specificity version missing English "+grade);
   if(grade===9){
+    assert.equal(curriculum.weekPlans.length,36,"English 9 week plan count drift");
+    for(const plan of curriculum.weekPlans){
+      assert.ok(plan.specificity,"English 9 specificity missing week "+plan.n);
+      for(const day of ["monday","tuesday","wednesday","thursday","friday"]){
+        assert.ok(plan.specificity[day]?.model,"English 9 "+day+" model missing week "+plan.n);
+        assert.ok(plan.specificity[day]?.misconception,"English 9 "+day+" misconception missing week "+plan.n);
+        assert.ok(plan.specificity[day]?.evidence,"English 9 "+day+" evidence target missing week "+plan.n);
+      }
+    }
     const readingLog=read(path.join(root,"records","reading-log.html"));
     assert.match(readingLog,/english9-reading-log-context-v1\.js/,"curriculum-aware reading log missing English 9");
     const readingContext=read(path.resolve(languageArts,"..","shared","english9-reading-log-context-v1.js"));
@@ -218,6 +237,15 @@ for(const grade of grades){
       assert.equal(new Set(bank.map(q=>String(q.question??q.q??q.prompt??"").trim().toLowerCase().replace(/\s+/g," "))).size,bank.length,"duplicate prompts English 9 "+kind);
     }
   }else{
+    assert.equal(curriculum.weeks.length,36,"English "+grade+" curriculum week count drift");
+    for(const week of curriculum.weeks){
+      assert.ok(week.specificity,"specificity missing English "+grade+" week "+week.week);
+      for(const day of ["monday","tuesday","wednesday","thursday","friday"]){
+        assert.ok(week.specificity[day]?.model,day+" model missing English "+grade+" week "+week.week);
+        assert.ok(week.specificity[day]?.misconception,day+" misconception missing English "+grade+" week "+week.week);
+        assert.ok(week.specificity[day]?.evidence,day+" evidence target missing English "+grade+" week "+week.week);
+      }
+    }
     const readingLog=read(path.join(root,"records","reading-log.html"));
     for(const id of ["read-week","read-type","read-source-status"]){
       assert.match(readingLog,new RegExp('id="'+id+'"'),"curriculum-aware reading log missing English "+grade+" field "+id);
