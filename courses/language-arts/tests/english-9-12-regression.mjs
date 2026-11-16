@@ -11,6 +11,15 @@ const read=p=>fs.readFileSync(p,"utf8");
 const json=p=>JSON.parse(read(p));
 const grades=[9,10,11,12];
 const expectedRoles={9:"foundation",10:"intermediate",11:"advanced",12:"senior_scholar"};
+const learningOrganization=path.resolve(languageArts,"..","shared","english-learning-page-organization-v1.js");
+assert.ok(exists(learningOrganization),"shared focused-learning contract missing");
+const learningOrganizationSource=read(learningOrganization);
+assert.match(learningOrganizationSource,/Khaemenes Academy · Evidence-Based English Page Organization v1/);
+assert.match(learningOrganizationSource,/Expand All/);
+assert.match(learningOrganizationSource,/Collapse All/);
+assert.match(learningOrganizationSource,/article\.lesson-day/);
+assert.match(learningOrganizationSource,/article\.lesson-detail/);
+
 const globalChrome=path.resolve(languageArts,"..","..","assets","high-school-global-chrome-v2.js");
 const globalChromeSource=read(globalChrome);
 assert.match(globalChromeSource,/khaemenesHighTypography="16-33-66"/,"global typography contract marker missing");
@@ -110,6 +119,10 @@ for(const grade of grades){
   assert.match(prh,/@media\s*\([^)]*max-width/i,"responsive progress-report rule missing English "+grade);
   assert.match(prh,/@media\s+print/i,"print progress-report rule missing English "+grade);
   assert.match(prh,/Gradebook|gradebook\.html/i,"gradebook return path missing English "+grade);
+
+  const courseJs=read(path.join(root,"assets","course.js"));
+  assert.match(courseJs,/english-learning-page-organization-v1\.js/,"focused learning organization loader missing English "+grade);
+  assert.match(courseJs,/data-khae-english-page-organization|khaeEnglishPageOrganization/,"focused learning organization marker missing English "+grade);
 
   const css=read(path.join(root,"assets","course.css"));
   assert.match(css,/KHAEMENES_ENGLISH_RELEASE_TYPOGRAPHY_V1/,"release typography override missing English "+grade);
