@@ -121,8 +121,17 @@ for(const grade of grades){
   assert.match(prh,/Gradebook|gradebook\.html/i,"gradebook return path missing English "+grade);
 
   const courseJs=read(path.join(root,"assets","course.js"));
+  assert.doesNotMatch(courseJs,/Mark All Days Complete/,"one-click week completion must not return English "+grade);
   assert.match(courseJs,/english-learning-page-organization-v1\.js/,"focused learning organization loader missing English "+grade);
   assert.match(courseJs,/data-khae-english-page-organization|khaeEnglishPageOrganization/,"focused learning organization marker missing English "+grade);
+  if(grade===9){
+    assert.match(courseJs,/grade9EvidenceReady/,"evidence-aware weekly completion missing English 9");
+    assert.match(courseJs,/Evidence needed ·/,"English 9 evidence status messaging missing");
+  }else{
+    assert.match(courseJs,/weekEvidenceReady/,"evidence-aware weekly completion missing English "+grade);
+    assert.match(courseJs,/I preserved .* evidence/,"daily evidence confirmation missing English "+grade);
+    assert.match(courseJs,/quizAttempted/,"weekly quiz evidence requirement missing English "+grade);
+  }
 
   const css=read(path.join(root,"assets","course.css"));
   assert.match(css,/KHAEMENES_ENGLISH_RELEASE_TYPOGRAPHY_V1/,"release typography override missing English "+grade);
