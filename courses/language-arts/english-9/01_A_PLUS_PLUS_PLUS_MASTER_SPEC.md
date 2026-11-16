@@ -1,70 +1,22 @@
 # A+++ Master Specification — English 9
 
-## Non-negotiable academic contract
+**Canonical governance:** `../ENGLISH_9_12_A_PLUS_PLUS_PLUS_CANONICAL_CONTRACT.md`  
+**Grade role:** Foundation
 
-### Mastery
-- Default mastery threshold: 80%.
-- Mastery is distinct from course grade.
-- Mastery evidence is authoritative only when attached to the canonical assessment or approved human-reviewed evidence.
-- Practice/game/support activity may prepare a learner but cannot itself grant mastery.
-- Resources remain available before mastery.
-- Retakes are unlimited unless a teacher sets a local limit.
+This file is the English 9 overlay. The shared English 9–12 canonical governance contract is authoritative for mastery, attempt history, human review, accessibility, source custody, release gates, and versioning.
+
+## English 9 emphasis
+
+English 9 keeps evidence and reasoning steps visible. Students receive explicit source-custody reminders, modeled reasoning, guided comparison, structured correction, and scaffolded transfer before support fades.
+
+## Non-negotiable local rules
+
+- Mastery threshold: 80%.
+- Mastery is distinct from course grade and completion.
+- Completion, participation, practice, games, support activity, or viewing do not grant mastery.
+- Canonical objective assessment or approved human-reviewed evidence is required for mastery.
+- Human review remains required for essays, research, speeches, debates, portfolios, oral defenses, projects, complex reasoning, multimodal products, and capstones.
 - Prior mastery is preserved after a lower voluntary retake.
-
-### Attempt history
-Every canonical assessment should retain:
-- firstScore
-- latestScore
-- bestScore
-- attemptCount
-- masteredAt
-- missedQuestionIds
-- skillSignals
-- attemptedAt
-
-### Learning loop
-Every week exposes:
-1. Learn
-2. Explore
-3. Practice
-4. Check
-5. Correct
-6. Reassess
-7. Extend
-8. Record evidence
-
-### Human-review boundary
-Human review is required for:
-- essays
-- research reports
-- speeches
-- debates
-- portfolios
-- oral defenses
-- projects
-- complex reasoning
-- multimodal products
-
-### Advanced learning
-Advanced work increases:
-- complexity
-- independence
-- transfer
-- synthesis
-- source difficulty
-- audience/authenticity
-
-It should not merely increase workload.
-
-### Accessibility
-Every learner-facing activity should identify available:
-- keyboard access
-- semantic/screen-reader structure
-- reduced-motion behavior
-- high-contrast behavior
-- printable option
-- paper option
-- typed option
-- oral response option where academically valid
-- audio support where academically valid
-- language support where academically valid
+- Corrections target the demonstrated skill need rather than forcing full-unit repetition.
+- Resources remain available before mastery.
+- The course remains 12 units, 36 weeks, and 180 daily blocks.

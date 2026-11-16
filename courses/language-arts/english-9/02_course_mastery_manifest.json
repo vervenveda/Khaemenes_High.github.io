@@ -1,11 +1,14 @@
 {
   "schemaVersion": "1.0.0",
+  "canonicalContract": "../ENGLISH_9_12_A_PLUS_PLUS_PLUS_CONTRACT.json",
   "courseId": "english-9",
+  "gradeRole": "foundation",
   "mastery": {
     "threshold": 0.8,
     "resourcesOpenBeforeMastery": true,
     "preservePriorMastery": true,
-    "retryLimit": null
+    "retryLimit": null,
+    "completionGrantsMastery": false
   },
   "attemptHistory": [
     "firstScore",
@@ -31,7 +34,9 @@
     "portfolio",
     "oral_defense",
     "project",
-    "complex_reasoning"
+    "complex_reasoning",
+    "multimodal",
+    "capstone"
   ],
   "weeklyLoop": [
     "learn",
@@ -56,7 +61,11 @@
     "readinessKey": "khaemenes-english9-readiness-v1",
     "overallReadyPercent": 80,
     "essentialStrandFloorPercent": 80,
-    "essentialStrands": ["close_reading_evidence", "language_conventions", "source_argument"],
+    "essentialStrands": [
+      "close_reading_evidence",
+      "language_conventions",
+      "source_argument"
+    ],
     "supportedRoute": "Unit 0 Foundations & Readiness (six-week bridge)",
     "supportedPath": "foundations/index.html",
     "supportedExitAssessment": "foundations/index.html#assessment"
