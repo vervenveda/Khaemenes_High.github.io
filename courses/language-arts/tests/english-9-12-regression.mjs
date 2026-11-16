@@ -150,6 +150,12 @@ for(const grade of grades){
     assert.match(ah,/records\/gradebook\.html/,"gradebook return missing English "+grade+" unit "+unit);
     assert.match(ah,/units\/unit-[0-9]{2}\/index\.html/,"unit overview return missing English "+grade+" unit "+unit);
     if(grade===9){
+    const offlineManifestPath=path.join(root,"OFFLINE_ACCESS_MANIFEST.json");
+    assert.ok(exists(offlineManifestPath),"offline access manifest missing English 9");
+    const offlineManifest=json(offlineManifestPath);
+    assert.equal(offlineManifest.readingPacks.length,6,"English 9 offline pack manifest drift");
+    assert.equal(offlineManifest.unitReadingDossiers.length,12,"English 9 offline dossier manifest drift");
+    assert.equal(offlineManifest.boundaries.readingPacksSelfContained,true);
       assert.match(ah,/human evaluator review/i,"English 9 unit "+unit+" must preserve human-review authority");
       assert.match(ah,/8\/10 \(80%\)/,"English 9 unit "+unit+" mastery threshold drift");
       assert.match(ah,/does not grant mastery/i,"English 9 unit "+unit+" completion boundary missing");
@@ -192,6 +198,18 @@ for(const grade of grades){
       assert.equal(new Set(bank.map(q=>String(q.question??q.q??q.prompt??"").trim().toLowerCase().replace(/\s+/g," "))).size,bank.length,"duplicate prompts English 9 "+kind);
     }
   }else{
+    const swPath=path.join(root,"service-worker.js");
+    assert.ok(exists(swPath),"offline service worker missing English "+grade);
+    const sw=read(swPath);
+    assert.match(sw,/english-learning-page-organization-v1\.js/,"focused-learning runtime missing from offline cache English "+grade);
+    assert.match(sw,/records\/progress-report\.html/,"progress report missing from offline cache English "+grade);
+    assert.match(sw,/rubrics\/product-companion\.html/,"product companion missing from offline cache English "+grade);
+    for(const range of ["01-06","07-12","13-18","19-24","25-30","31-36"]){
+      assert.match(sw,new RegExp("offline-reading-pack-weeks-"+range+"\\.html"),"offline pack "+range+" missing from service worker English "+grade);
+    }
+    for(let unit=1;unit<=12;unit++){
+      assert.match(sw,new RegExp("units/unit-"+pad(unit)+"/reading-dossier\\.html"),"unit dossier "+unit+" missing from service worker English "+grade);
+    }
     for(const kind of ["midterm","final"]){
       const h=read(path.join(root,"assessments",kind,"index.html"));
       assert.match(h,/high-school-assessment-adapter-v1\.js/,"English "+grade+" "+kind+" shared assessment adapter missing");
