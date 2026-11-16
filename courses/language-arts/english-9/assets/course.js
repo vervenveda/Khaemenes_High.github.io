@@ -185,19 +185,21 @@
   if(search){search.addEventListener("input",()=>{const q=search.value.trim().toLowerCase();document.querySelectorAll("[data-search-card]").forEach(card=>{card.hidden=q&&!card.textContent.toLowerCase().includes(q);});});}
 
   // Required reading route for every weekly lesson; no student storage or assessment mutation.
-  function attachUnitReading(){
+  async function attachUnitReading(){
     const match=location.pathname.match(/\/weeks\/week-(\d{2})\/(?:index\.html)?$/);
     if(!match || document.querySelector('a[href*="#assigned-reading"]')) return;
     const week=Number(match[1]);
     if(week<1 || week>36) return;
     const unit=String(Math.ceil(week/3)).padStart(2,"0");
+    let assignment=null;
+    try{const url=new URL("../curriculum.json",document.currentScript?.src||location.href);const data=await fetch(url).then(r=>r.ok?r.json():null);assignment=data?.weekPlans?.find(x=>Number(x.n)===week)?.readingSuggestion||null;}catch{}
     const main=document.querySelector("main");
     if(!main)return;
     const notice=document.createElement("aside");
     notice.setAttribute("aria-label","Required weekly reading");
     notice.style.cssText="margin:14px auto;padding:16px;border:1px solid #d7d1c5;border-radius:7px;background:#faf7f0;color:#191919;max-width:1100px";
     const strong=document.createElement("strong");
-    strong.textContent="Required reading for this week: ";
+    strong.textContent=assignment?`Week ${week} assigned reading · ${assignment.title}`:"Required reading for this week: ";
     const link=document.createElement("a");
     link.href=new URL("../../units/unit-"+unit+"/index.html#assigned-reading",location.href).href;
     link.textContent="Open Unit "+Number(unit)+" reading and annotation assignment";
