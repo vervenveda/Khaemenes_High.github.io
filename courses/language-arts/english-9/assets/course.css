@@ -21,3 +21,19 @@ section{padding:72px 0}.section-alt{border-block:1px solid var(--soft-line);back
 @media(max-width:480px){.wrap{width:min(var(--max),calc(100% - 22px))}.snapshot,.path-grid{grid-template-columns:1fr}.header-actions .nav-button{display:none}.quick-nav{top:68px}}
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;transition:none!important}}
 @media print{.site-header,.breadcrumb,.quick-nav,.actions,.no-print,.footer,.progress-button{display:none!important}body{background:#fff;color:#000;font-size:11pt}.hero{min-height:auto;padding:20px 0;background:#fff}.hero h1,.hero .comment,.section-head h2,.content-main h2,.content-main h3{color:#000}.card{box-shadow:none;break-inside:avoid}.content-layout{display:block}.content-side{position:static}.student-work textarea{min-height:110px;background:#fff}}
+
+
+/* KHAEMENES_ENGLISH_RELEASE_TYPOGRAPHY_V1
+   Canonical release override. Extra :root specificity intentionally supersedes
+   older embedded Week 01–30 typography without rewriting 120 lesson hubs. */
+html:root:root:root body {
+  font-size: 16px !important;
+  line-height: 1.65 !important;
+}
+html:root:root:root body :is(button,input,select,textarea) {
+  font-size: 16px !important;
+}
+html:root:root:root body :is(.eyebrow,.kicker,.dialog-eyebrow,.dialog-kicker,.worksheet-kicker) {
+  font-size: 14px !important;
+  line-height: 1.15 !important;
+}

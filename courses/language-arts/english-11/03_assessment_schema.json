@@ -1,0 +1,43 @@
+{
+  "schemaVersion": "1.0.0",
+  "courseId": "english-11",
+  "canonicalContract": "../ENGLISH_9_12_A_PLUS_PLUS_PLUS_CONTRACT.json",
+  "masteryThreshold": 0.8,
+  "authorityValues": [
+    "canonical",
+    "teacher_review"
+  ],
+  "completionGrantsMastery": false,
+  "requiredAttemptFields": [
+    "firstScore",
+    "latestScore",
+    "bestScore",
+    "attemptCount",
+    "masteredAt",
+    "missedQuestionIds",
+    "skillSignals",
+    "attemptedAt"
+  ],
+  "correction": {
+    "enabled": true,
+    "requiresReattemptForObjectiveMastery": true,
+    "targetSkillNotWholeUnit": true
+  },
+  "humanReviewRequired": [
+    "essay",
+    "research",
+    "speech",
+    "debate",
+    "portfolio",
+    "oral_defense",
+    "project",
+    "complex_reasoning",
+    "multimodal",
+    "capstone"
+  ],
+  "accessibility": {
+    "keyboard": true,
+    "screenReader": true,
+    "printable": true
+  }
+}

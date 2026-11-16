@@ -1,0 +1,60 @@
+{
+  "schemaVersion": "1.0.0",
+  "canonicalContract": "ENGLISH_9_12_A_PLUS_PLUS_PLUS_CANONICAL_CONTRACT.md",
+  "mastery": {
+    "threshold": 0.8,
+    "resourcesOpenBeforeMastery": true,
+    "preservePriorMastery": true,
+    "retryLimit": null,
+    "completionGrantsMastery": false
+  },
+  "attemptHistory": [
+    "firstScore",
+    "latestScore",
+    "bestScore",
+    "attemptCount",
+    "masteredAt",
+    "missedQuestionIds",
+    "skillSignals",
+    "attemptedAt"
+  ],
+  "evidenceAuthority": [
+    "canonical",
+    "teacher_review",
+    "portfolio",
+    "practice"
+  ],
+  "humanReview": [
+    "essay",
+    "research",
+    "speech",
+    "debate",
+    "portfolio",
+    "oral_defense",
+    "project",
+    "complex_reasoning",
+    "multimodal",
+    "capstone"
+  ],
+  "weeklyLoop": [
+    "learn",
+    "explore",
+    "practice",
+    "check",
+    "correct",
+    "reassess",
+    "extend",
+    "evidence"
+  ],
+  "courseShape": {
+    "units": 12,
+    "weeks": 36,
+    "dailyBlocks": 180
+  },
+  "gradeProgression": {
+    "english-9": "foundation",
+    "english-10": "intermediate",
+    "english-11": "advanced",
+    "english-12": "senior_scholar"
+  }
+}
