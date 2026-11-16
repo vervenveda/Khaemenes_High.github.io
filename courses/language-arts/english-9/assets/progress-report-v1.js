@@ -58,7 +58,7 @@ function readingDevelopment(){
     // Legacy amounts may be pages, minutes, or mixed text. Count minutes only
     // when the student explicitly labels them as minutes, never naked numbers.
     const amount=readField("reading-amount-"+i);
-    const match=amount.match(/(?:^|\\s)(\\d+(?:\\.\\d+)?)\\s*(?:minutes?|mins?)(?:\\b|$)/i);
+    const match=amount.match(/(?:^|\s)(\d+(?:\.\d+)?)\s*(?:minutes?|mins?)(?:\b|$)/i);
     if(match){const n=Number(match[1]);if(Number.isFinite(n)&&n>0&&n<=100000)minutes+=n}
   }
   return {readWeeks,minutes,reflections,logEntries,assignedWeeks:assignedSet.size,independent,weeks:weekSet.size,units:unitSet.size,sourceCounts,unclassified};
