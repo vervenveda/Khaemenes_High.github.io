@@ -13,16 +13,17 @@ assert.match(mc,/function openFixedSession/);
 assert.match(mc,/fixedOrder:true/);
 assert.match(adapter,/config\.fixedOrder===true/);
 assert.match(adapter,/reshuffleOnRetake:fixedOrder!==true/);
-for(const [kind,count] of [["midterm",12],["final",16]]){
+for(const [kind,count] of [["midterm",30],["final",50]]){
  const html=fs.readFileSync(path.join(root,"assessments",kind,"index.html"),"utf8");
  const m=html.match(/<script type="application\/json" id="assessment-data">([\s\S]*?)<\/script>/);
  assert.ok(m,kind+" bank missing");
  const bank=JSON.parse(m[1]);
  assert.equal(bank.length,count,kind+" item-count drift");
  assert.equal(new Set(bank.map(q=>q.id)).size,count,kind+" duplicate ids");
+ assert.equal(new Set(bank.map(q=>String(q.question).trim().toLowerCase().replace(/\s+/g," "))).size,count,kind+" duplicate prompts");
  bank.forEach(q=>{assert.equal(q.choices.length,4);assert.ok(Number.isInteger(q.answer)&&q.answer>=0&&q.answer<4)});
  assert.match(html,/data-e9-fixed-assessment/);
  assert.match(html,/fixed-assessment-v1\.js/);
  assert.doesNotMatch(html,/const ANSWERS=/);
 }
-console.log("PASS English 9 fixed cumulative assessments: exact legacy item counts, fixed retry order, shared attempt history, 80% target, human-reviewed writing boundary.");
+console.log("PASS English 9 fixed cumulative assessments: 30-item midterm, 50-item final, unique prompts, fixed retry order, shared attempt history, 80% target, human-reviewed writing boundary.");
