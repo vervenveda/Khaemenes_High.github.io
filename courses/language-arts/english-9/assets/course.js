@@ -192,7 +192,7 @@
     if(week<1 || week>36) return;
     const unit=String(Math.ceil(week/3)).padStart(2,"0");
     let assignment=null;
-    try{const url=new URL("../curriculum.json",document.currentScript?.src||location.href);const data=await fetch(url).then(r=>r.ok?r.json():null);assignment=data?.weekPlans?.find(x=>Number(x.n)===week)?.readingSuggestion||null;}catch{}
+    try{const url=new URL("../curriculum.json",courseScript.src);const data=await fetch(url).then(r=>r.ok?r.json():null);assignment=data?.weekPlans?.find(x=>Number(x.n)===week)?.readingSuggestion||null;}catch{}
     const main=document.querySelector("main");
     if(!main)return;
     const notice=document.createElement("aside");
