@@ -15,6 +15,7 @@ on:
       - 'courses/shared/english-portfolio-review-bridge-v1.js'
       - 'courses/shared/english-portfolio-review-bridge-v1.css'
       - 'courses/language-arts/tests/english-9-12-reading-development-report-regression.mjs'
+      - 'courses/language-arts/tests/english-9-12-curriculum-alignment-audit.mjs'
       - 'courses/language-arts/english-9/weeks/week-02/**'
       - 'courses/language-arts/english-9/units/unit-01/**'
       - 'courses/language-arts/english-9/records/reading-log.html'
@@ -41,6 +42,7 @@ on:
       - 'courses/shared/english-portfolio-review-bridge-v1.js'
       - 'courses/shared/english-portfolio-review-bridge-v1.css'
       - 'courses/language-arts/tests/english-9-12-reading-development-report-regression.mjs'
+      - 'courses/language-arts/tests/english-9-12-curriculum-alignment-audit.mjs'
       - 'courses/language-arts/english-9/records/reading-log.html'
       - 'courses/language-arts/english-9/assets/reading-ledger-v2.js'
       - 'courses/language-arts/english-9/assets/progress-report-v1.js'
@@ -69,3 +71,5 @@ jobs:
         run: node --test courses/language-arts/tests/english-9-12-reading-development-report-regression.mjs
       - name: Verify English 9–12 Portfolio Review Bridge
         run: node --test courses/language-arts/tests/english-9-12-portfolio-review-bridge-regression.mjs
+      - name: Verify English 9–12 Academic Curriculum Alignment
+        run: node --test courses/language-arts/tests/english-9-12-curriculum-alignment-audit.mjs
