@@ -178,14 +178,19 @@ function loadWeek(n){
 }
 function exportPacket(){
  if(conflictLocked){message("Export paused: another tab changed this learner or record. Copy your work and reload.","warning");return}
- if(modified&&!save())return;
  if(!storageReady||!validProfile()){message("Select the correct Academy learner before exporting student records.","warning");return}
- const exportData={schema:"khae-english-evidence-studio-v1",grade,week:currentWeek,learnerId:profile.learnerId,assignment:getAssignment(currentWeek)?.title||"",exportedAt:new Date().toISOString(),record,warning:"Developmental artifact only; not a grade, teacher approval, or mastery result."};
- const blob=new Blob([JSON.stringify(exportData,null,2)],{type:"application/json"});
- const url=URL.createObjectURL(blob),a=document.createElement("a");
- a.href=url;a.download="english-"+grade+"-week-"+String(currentWeek).padStart(2,"0")+"-evidence-studio.json";document.body.append(a);a.click();a.remove();
- setTimeout(()=>URL.revokeObjectURL(url),1500);
- message("Evidence export requested. Verify the file was downloaded; submit it with your portfolio for teacher review.","neutral");
+ const saved=!modified||save();
+ // Storage failure must not prevent the current visible draft from being exported.
+ // Preserve the same learner/week boundaries and explicitly mark an unsaved export.
+ const snapshot=Object.assign({},record,{fields:Object.assign({},record.fields)});
+ const exportData={schema:"khae-english-evidence-studio-v1",grade,week:currentWeek,learnerId:profile.learnerId,assignment:getAssignment(currentWeek)?.title||"",exportedAt:new Date().toISOString(),persistedOnDevice:saved,record:snapshot,warning:"Developmental artifact only; not a grade, teacher approval, or mastery result."};
+ try{
+  const blob=new Blob([JSON.stringify(exportData,null,2)],{type:"application/json"});
+  const url=URL.createObjectURL(blob),a=document.createElement("a");
+  a.href=url;a.download="english-"+grade+"-week-"+String(currentWeek).padStart(2,"0")+"-evidence-studio.json";document.body.append(a);a.click();a.remove();
+  setTimeout(()=>URL.revokeObjectURL(url),1500);
+  message(saved?"Evidence export requested. Verify the file was downloaded; submit it with your portfolio for teacher review.":"Unsaved draft export requested because local saving failed. Verify the download before leaving; this draft is NOT safely stored on this device.",saved?"neutral":"warning");
+ }catch(error){message("Evidence export failed. Your draft remains visible; copy it before leaving. "+String(error?.message||"Download unavailable"),"warning")}
 }
 for(let n=1;n<=36;n++){const opt=document.createElement("option");opt.value=String(n);opt.textContent="Week "+String(n).padStart(2,"0");weekSelect.append(opt)}
 for(const field of fieldNames){
@@ -223,8 +228,11 @@ function buildPrintablePortfolio(){
  }
 }
 $("es-print").addEventListener("click",()=>{
- if(modified&&!save())return;
+ if(conflictLocked){message("Print paused: another tab changed this learner or record. Copy your work and reload.","warning");return}
+ if(!storageReady||!validProfile()){message("Select the correct Academy learner before printing student records.","warning");return}
+ const saved=!modified||save();
  buildPrintablePortfolio();
+ if(!saved)message("Local save failed. Printing the current unsaved draft; verify your printed or PDF copy before leaving.","warning");
  window.print();
 });
 window.addEventListener("pagehide",()=>{if(modified)save()});
