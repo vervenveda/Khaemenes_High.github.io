@@ -80,7 +80,9 @@ controls.append(label,select,openLink,exportButton,printButton);
 anchor.insertAdjacentElement("afterend",section);
 let selected=null;
 let snapshot=null;
+let conflictLocked=false;
 function refresh(){
+ if(conflictLocked)return;
  const old=Number(select.value);
  select.replaceChildren();
  const weeks=[];
@@ -103,6 +105,7 @@ function refresh(){
  show();
 }
 function show(){
+ if(conflictLocked){exportButton.disabled=true;printButton.disabled=true;return}
  checklist.replaceChildren();previewBody.replaceChildren();
  if(!eligible()){snapshot=null;selected=null}
  else snapshot=selected?read(selected):null;
@@ -131,7 +134,7 @@ function show(){
  }
 }
 function packet(){
- if(!eligible()||!selected)return null;
+ if(conflictLocked||!eligible()||!selected)return null;
  const current=read(selected);
  if(!current)return null;
  const fields={};
@@ -175,6 +178,8 @@ select.addEventListener("change",()=>{selected=Number(select.value)||null;show()
 window.addEventListener("storage",event=>{
  const scoped=selected?contract?.scopedKey?.(key(selected),profile):null;
  if(event.key==="khaemenes_active_learner_v1"||event.key===scoped){
+  conflictLocked=true;
+  select.disabled=true;
   exportButton.disabled=true;printButton.disabled=true;
   snapshot=null;selected=null;
   status.textContent="Learner or evidence changed in another tab. Reload before preparing a packet.";
