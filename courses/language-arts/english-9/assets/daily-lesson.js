@@ -47,6 +47,37 @@
  catch(e){/* Continue in read-only mode; no learner record is modified. */}
  var r=profile&&contract&&contract.readJSON?contract.readJSON("khaemenes-english9-readiness-v1",null,profile):null;
  var ready=!!(identity!==null&&profile&&contract&&contract.isReady&&contract.isReady(r,["close_reading_evidence","language_conventions","source_argument"],"english-9"));
+ // Independent reading-view controls; device-local presentation only.
+ // They do not change browser zoom, assessment state or saved lesson work.
+ if(!document.getElementById("english9-daily-view-tools")){
+   var viewHost=document.querySelector(".daily-nav");
+   var shell=document.querySelector("main.daily-shell");
+   if(viewHost&&shell){
+     var viewTools=document.createElement("div");
+     viewTools.id="english9-daily-view-tools";
+     viewTools.setAttribute("role","group");
+     viewTools.setAttribute("aria-label","Lesson reading size");
+     viewTools.style.cssText="display:flex;justify-content:center;align-items:center;flex-wrap:wrap;gap:10px;margin:16px auto;padding:12px;border:1px solid #c7bba3;border-radius:7px;background:#fff8e9;color:#202724";
+     var zoom=1;
+     var zoomText=document.createElement("span");
+     zoomText.setAttribute("aria-live","polite");
+     zoomText.textContent="Reading view 100%";
+     var changeView=function(value){
+       zoom=Math.min(1.4,Math.max(1,Math.round(value*10)/10));
+       shell.style.zoom=String(zoom);
+       zoomText.textContent="Reading view "+Math.round(zoom*100)+"%";
+     };
+     var viewButton=function(text,label,fn){
+       var b=document.createElement("button");b.type="button";b.textContent=text;b.setAttribute("aria-label",label);
+       b.style.cssText="border-radius:7px;background:#202724;color:#fff8e9;border:1px solid #202724;min-height:44px;padding:8px 16px;font-size:16px";
+       b.addEventListener("click",fn);return b;
+     };
+     viewTools.append(viewButton("A−","Reduce lesson reading size",function(){changeView(zoom-.1)}),zoomText,
+       viewButton("A+","Enlarge lesson reading size",function(){changeView(zoom+.1)}),
+       viewButton("Reset","Reset lesson reading size",function(){changeView(1)}));
+     viewHost.insertAdjacentElement("afterend",viewTools);
+   }
+ }
  var status=document.getElementById("daily-status");
  var gate=document.getElementById("daily-gate");
  var fields=Array.from(document.querySelectorAll("[data-save-field]"));
