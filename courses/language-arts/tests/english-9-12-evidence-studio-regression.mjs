@@ -19,20 +19,30 @@ const prefix="khae-english-evidence-studio-v1";
 class Node {
  constructor(tag="div"){this.tagName=tag.toUpperCase();this.children=[];this.textContent="";this.value="";this.disabled=false;this.hidden=false;this.style={};this.dataset={};this.handlers={};this.href="";}
  append(...nodes){this.children.push(...nodes)}
+ click(){this.clicked=true}
+ remove(){this.removed=true}
  replaceChildren(...nodes){this.children=[...nodes]}
  addEventListener(type,handler){this.handlers[type]=handler}
 }
 
-function mock(grade,learnerId="demo-A",entries=new Map()){
+function mock(grade,learnerId="demo-A",entries=new Map(),simulateStorageFailure=false){
  const names=["evidenceStudio","es-save-status","es-week","es-source","es-grade-goals","es-coaching","es-checklist","es-indicator","es-week-heading","es-grade-heading","es-question","es-reading-link","es-log-link","es-week-link","es-portfolio-link","es-progress-link","es-second-chain","es-third-chain","es-defensive","es-save","es-export","es-print","es-claim","es-evidence1","es-locator1","es-reason1","es-evidence2","es-locator2","es-reason2","es-evidence3","es-locator3","es-reason3","es-counter","es-sourceNotes","es-draft","es-feedback","es-revised","es-reflection","es-defense"];
  const nodes=Object.fromEntries(names.map(key=>[key,new Node()]));
  const profile=learnerId?{learnerId,name:"Synthetic Learner"}:null;
+ const exported=[];
+ let printCalls=0;
+ class MockURL extends URL{
+  static createObjectURL(blob){exported.push(JSON.parse(blob.parts.join("")));return "blob:synthetic"}
+  static revokeObjectURL(){}
+ }
+ class MockBlob{constructor(parts){this.parts=parts}}
  const storageKey=base=>base+":learner:"+encodeURIComponent(learnerId);
  const contract={
    readAcademyProfile:()=>profile,
    readJSON:(key,alternative)=>entries.has(storageKey(key))?JSON.parse(JSON.stringify(entries.get(storageKey(key)))):alternative,
    writeJSON:(key,value)=>{
      if(!profile)throw Error("Cannot save anonymous records");
+     if(simulateStorageFailure)throw Error("QuotaExceededError");
      entries.set(storageKey(key),JSON.parse(JSON.stringify(value)));
    },
    scopedKey:storageKey
@@ -41,12 +51,12 @@ function mock(grade,learnerId="demo-A",entries=new Map()){
   ?{weekPlans:Array.from({length:36},(_,i)=>({n:i+1,unit:Math.ceil((i+1)/3),title:"Week "+(i+1),readingSuggestion:{title:"Story "+(i+1),author:"Author",purpose:"Evidence practice"}}))}
   :{weeks:Array.from({length:36},(_,i)=>({week:i+1,title:"Week "+(i+1)})),readingAssignments:Array.from({length:36},(_,i)=>({week:i+1,unit:Math.ceil((i+1)/3),title:"Story "+(i+1),author:"Author",purpose:"Evidence practice"}))};
  const events={};
- const win={KhaemenesCourseEntryContract:contract,addEventListener:(type,handler)=>{events[type]=handler},print:()=>{}};
+ const win={KhaemenesCourseEntryContract:contract,addEventListener:(type,handler)=>{events[type]=handler},print:()=>{printCalls++}};
  win["ENGLISH_"+grade+"_CURRICULUM"]=curriculum;
  const doc={documentElement:{dataset:{evidenceGrade:String(grade)}},getElementById:key=>nodes[key]||null,querySelector:()=>null,createElement:tag=>new Node(tag),createTextNode:value=>({textContent:value}),body:{append(){}}};
- const sandbox={window:win,document:doc,location:{search:"?week=1"},URL,URLSearchParams,Blob,setTimeout};
+ const sandbox={window:win,document:doc,location:{search:"?week=1"},URL:MockURL,URLSearchParams,Blob:MockBlob,setTimeout};
  vm.runInNewContext(js,sandbox,{timeout:2000,filename:"english-evidence-studio-v1.js"});
- return {nodes,entries,storageKey,events};
+ return {nodes,entries,storageKey,events,exported,get printCalls(){return printCalls}};
 }
 test("shared engine compiles, never touches official scores or mastery, and preserves VNV/KA layout",()=>{
  new vm.Script(js);
@@ -146,4 +156,37 @@ test("active learner event also locks save, even without an unsaved edit",()=>{
  assert.equal(nodes["es-export"].disabled,true);
  assert.equal(nodes["es-claim"].disabled,true);
  assert.match(nodes["es-save-status"].textContent,/saving paused/i);
+});
+
+test("all four grades can export and print an unsaved draft after local storage failure",()=>{
+ for(const grade of [9,10,11,12]){
+  const session=mock(grade,"demo-A",new Map(),true);
+  const {nodes,exported}=session;
+  nodes["es-claim"].value="A thesis preserved despite QuotaExceededError";
+  nodes["es-claim"].handlers.input();
+  assert.equal(nodes["es-save-status"].dataset.status,"warning");
+  nodes["es-export"].handlers.click();
+  assert.equal(exported.length,1,"English "+grade+" should create a recovery export");
+  assert.equal(exported[0].persistedOnDevice,false);
+  assert.equal(exported[0].record.fields.claim,"A thesis preserved despite QuotaExceededError");
+  assert.equal(exported[0].learnerId,"demo-A");
+  assert.match(nodes["es-save-status"].textContent,/NOT safely stored/);
+  nodes["es-print"].handlers.click();
+  assert.equal(session.printCalls,1,"English "+grade+" should allow printing after save fails");
+ }
+});
+test("conflict lock prevents export and printing stale drafts",()=>{
+ const session=mock(12,"demo-A",new Map());
+ session.events.storage({key:"khaemenes_active_learner_v1"});
+ session.nodes["es-export"].handlers.click();
+ session.nodes["es-print"].handlers.click();
+ assert.equal(session.exported.length,0);
+ assert.equal(session.printCalls,0);
+});
+test("anonymous learner cannot export or print a student draft",()=>{
+ const session=mock(9,null,new Map());
+ session.nodes["es-export"].handlers.click();
+ session.nodes["es-print"].handlers.click();
+ assert.equal(session.exported.length,0);
+ assert.equal(session.printCalls,0);
 });
