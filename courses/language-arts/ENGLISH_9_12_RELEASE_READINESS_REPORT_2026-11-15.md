@@ -159,3 +159,50 @@ This preserves both offline-first operation and honest source/licensing boundari
 **36-week offline reading-companion parity:** PASS
 
 The next highest-value release task is the assessment architecture decision, followed by shared regression fixtures and the complete 36-week reading-package audit.
+
+
+## REPAIRED · learner-experience progress and assessment navigation
+
+The learner-experience release pass now includes a live Student Progress route for every course:
+
+- `english-9/records/progress-report.html`
+- `english-10/records/progress-report.html`
+- `english-11/records/progress-report.html`
+- `english-12/records/progress-report.html`
+
+### Progress synchronization
+
+English 10–12 reuse the same learner-scoped course state and gradebook renderer already used by their dashboards. The Progress Report therefore shows live lesson completion, quiz averages, unit-assessment averages, project scores, and provisional grade without creating a second progress database.
+
+English 9 keeps its different assessment authority visible:
+- weeks with evidence prepared;
+- evidence-progress percentage;
+- fixed-form midterm best score;
+- fixed-form final best score;
+- direct routes to all 12 evaluator-reviewed unit mastery demonstrations;
+- human-reviewed unit scores remain in the Gradebook rather than being falsely auto-calculated.
+
+### Navigation parity
+
+Every one of the 48 unit-assessment pages now exposes the same return strip:
+
+1. Unit Overview
+2. Assessment Center
+3. Student Progress
+4. Gradebook
+
+This closes the previous dead-end/parity gap in English 11–12 and makes correction/review workflows predictable across all four grades.
+
+### Responsive and print behavior
+
+All four Progress Report pages include:
+- mobile/tablet layout rules;
+- horizontally safe tables;
+- printable report behavior;
+- return paths to Gradebook and Course Home.
+
+An English 9 tablet CSS error found during validation was corrected before closing the pass.
+
+### Legacy black overlay finding
+
+The black-background hits in the course stylesheets are legitimate dark-mode variables and shadows, not the legacy blocking overlay previously seen elsewhere in the High School system. No removal was performed because the audited English pages do not show that legacy overlay pattern.

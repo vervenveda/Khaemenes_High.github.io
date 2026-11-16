@@ -100,6 +100,10 @@ for(const grade of grades){
 
     const ah=read(assessment);
     assert.equal(duplicateIds(ah).length,0,"duplicate IDs English "+grade+" assessment "+unit);
+    assert.match(ah,/data-assessment-navigation="v1"/,"assessment navigation missing English "+grade+" unit "+unit);
+    assert.match(ah,/records\/progress-report\.html/,"student progress return missing English "+grade+" unit "+unit);
+    assert.match(ah,/records\/gradebook\.html/,"gradebook return missing English "+grade+" unit "+unit);
+    assert.match(ah,/units\/unit-[0-9]{2}\/index\.html/,"unit overview return missing English "+grade+" unit "+unit);
     if(grade===9){
       assert.match(ah,/human evaluator review/i,"English 9 unit "+unit+" must preserve human-review authority");
       assert.match(ah,/8\/10 \(80%\)/,"English 9 unit "+unit+" mastery threshold drift");
