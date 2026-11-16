@@ -147,9 +147,10 @@ function profileHref(){
   const grade=pathGrade();
   return grade?HIGH+"grades/grade-"+grade+"/student-profile/":HIGH+"#student-portal";
 }
-function mountHeader(){
+function mountHeader(replaceLegacy=false){
   if(!window.VNV_HEADER?.mount)return;
   const root=window.VNV_HEADER.mount({
+    replaceLegacy,
     title:"Khaemenes Academy",
     subtitle:"High School · Grades 9–12",
     icon:"K",
@@ -228,17 +229,46 @@ function installUpperEnglishReadingView(){
   main.insertAdjacentElement("beforebegin",tools);
 }
 
+// Keep exactly one real site header on Week 01 English 9–12 daily lessons.
+// Preserve English 10's theme and navigation controls and English 11/12's
+// instructional hero, including its next-day links, before legacy removal.
+function prepareEnglishDailyLegacyChrome(isUpper){
+  if(!isUpper)return;
+  const path=location.pathname;
+  if(/\/english-10\/weeks\/week-01\/(?:monday|tuesday|wednesday|thursday|friday)\/(?:index\.html)?$/i.test(path)){
+    const old=document.querySelector("header.site-header");
+    const controls=old?.querySelector(".header-actions");
+    const destination=document.querySelector(".breadcrumb .wrap")||document.querySelector("main");
+    if(controls&&destination){
+      controls.dataset.khaemenesLessonNavigation="preserved";
+      controls.setAttribute("aria-label","English 10 lesson controls");
+      destination.append(controls);
+    }
+  }else if(/\/english-(?:11|12)\/weeks\/week-01\/lessons\/day-0[1-5]\.html$/i.test(path)){
+    const old=document.querySelector("body > header.wrap");
+    if(old){
+      const hero=document.createElement("section");
+      for(const attr of Array.from(old.attributes))hero.setAttribute(attr.name,attr.value);
+      hero.classList.add("english-daily-lesson-hero");
+      hero.setAttribute("aria-label","Lesson introduction and navigation");
+      while(old.firstChild)hero.append(old.firstChild);
+      old.replaceWith(hero);
+    }
+  }
+}
 async function start(){
   if(!document.body)return;
+  const stableDailyEnglish9=/\/english-9\/weeks\/week-01\/day-0[1-5]\/(?:index\.html)?$/i.test(location.pathname);
+  const stableDailyUpperEnglish=/\/english-(?:10\/weeks\/week-01\/(?:monday|tuesday|wednesday|thursday|friday)\/(?:index\.html)?|(?:11|12)\/weeks\/week-01\/lessons\/day-0[1-5]\.html)$/i.test(location.pathname);
+  const canonicalLessonHeader=stableDailyEnglish9||stableDailyUpperEnglish;
+  prepareEnglishDailyLegacyChrome(stableDailyUpperEnglish);
   installTypographyStandard();
   await load(VNV+HEADER,"khaemenesHighHeader");
-  mountHeader();
+  mountHeader(canonicalLessonHeader);
   await load(VNV+TOOLBAR,"khaemenesHighToolbar");
   mountToolbar();
   cleanupKnownFloaters();
   preserveExportMarker();
-  const stableDailyEnglish9=/\/english-9\/weeks\/week-01\/day-0[1-5]\/(?:index\.html)?$/i.test(location.pathname);
-  const stableDailyUpperEnglish=/\/english-(?:10\/weeks\/week-01\/(?:monday|tuesday|wednesday|thursday|friday)\/(?:index\.html)?|(?:11|12)\/weeks\/week-01\/lessons\/day-0[1-5]\.html)$/i.test(location.pathname);
   if(stableDailyUpperEnglish)installUpperEnglishReadingView();
   // Canonical VNV ticker pair for the twenty English 9–12 Week 01 daily pages.
   // The protected VNV gateway keeps its own native 333 ticker.
@@ -266,6 +296,11 @@ async function start(){
     }
     document.documentElement.dataset.khaemenesEnglishTickerPair=
       document.getElementById("vnv333NetworkTicker")&&document.getElementById("vnvTickerAutoPopulate")?"mounted":"partial";
+    // The ticker engines mount after the header: recalculate its sticky offset.
+    mountHeader(false);
+    window.VNV_ENRICHED_MENU?.mount?.({noButton:true});
+    document.documentElement.dataset.khaemenesEnglishCanonicalMenu=
+      document.getElementById("vnvEnrichedMenuOverlay")?"mounted":"missing";
   }
   if(!stableDailyEnglish9 && !stableDailyUpperEnglish && typeof MutationObserver==="function"){
     new MutationObserver(()=>{mountHeader();mountToolbar();cleanupKnownFloaters();preserveExportMarker();scheduleTypography();})
