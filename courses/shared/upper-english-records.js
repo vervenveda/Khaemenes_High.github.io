@@ -42,7 +42,7 @@
         button.setAttribute("aria-haspopup","dialog");
         button.setAttribute("aria-controls",PANEL_ID);
         button.setAttribute("aria-expanded","false");
-        button.style.cssText="position:fixed;right:14px;bottom:122px;z-index:2147483000;width:126px;height:42px;padding:7px 9px;border:1px solid #963f46;border-radius:7px;background:#fff2e6;color:#5b2529;font:600 10px/1.15 'Avenir Next','Segoe UI',Arial,sans-serif;letter-spacing:.035em;cursor:pointer";
+        button.style.cssText="position:fixed;right:14px;bottom:122px;z-index:2147483000;width:126px;height:42px;padding:7px 9px;border:1px solid #963f46;border-radius:7px;background:#fff2e6;color:#5b2529;font:400 16px/1.25 'Avenir Next','Segoe UI',Arial,sans-serif;letter-spacing:.035em;cursor:pointer";
         (toolbar||document.body).append(button);
       }
       if(toolbar&&button.parentElement!==toolbar){
@@ -71,13 +71,13 @@
       title.style.cssText="margin:0;font:400 24px/1.2 Cinzel,'Iowan Old Style',Georgia,serif";
       const close=document.createElement("button");
       close.type="button";close.textContent="Close";
-      close.style.cssText="padding:6px 9px;border:1px solid #b9a37f;border-radius:7px;background:#fffdf7;color:#20241f;font:inherit;font-size:12px";
+      close.style.cssText="padding:6px 9px;border:1px solid #b9a37f;border-radius:7px;background:#fffdf7;color:#20241f;font:inherit;font-size:16px";
       head.append(title,close);box.append(head);
       const p=document.createElement("p");p.style.cssText="margin:0 0 10px;line-height:1.55";p.textContent=message;box.append(p);
       const actions=document.createElement("div");actions.style.cssText="display:flex;flex-wrap:wrap;gap:7px";
       const exportButton=document.createElement("button");exportButton.type="button";exportButton.textContent="Export recovery copy";
       const reload=document.createElement("button");reload.type="button";reload.textContent="Reload saved record";
-      [exportButton,reload].forEach(x=>x.style.cssText="padding:7px 10px;border:1px solid #967342;border-radius:7px;background:#fffdf7;color:#20241f;font:inherit;font-size:12px");
+      [exportButton,reload].forEach(x=>x.style.cssText="padding:7px 10px;border:1px solid #967342;border-radius:7px;background:#fffdf7;color:#20241f;font:inherit;font-size:16px");
       exportButton.onclick=()=>exportText("english-record-recovery.json",getText());
       reload.onclick=()=>{if(confirm("Export any unsaved work before reloading. Continue?"))location.reload()};
       actions.append(exportButton,reload);box.append(actions);
