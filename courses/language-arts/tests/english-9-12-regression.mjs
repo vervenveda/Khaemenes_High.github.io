@@ -69,6 +69,14 @@ for(const grade of grades){
   assert.ok(exists(path.join(root,"index.html")),"course landing missing English "+grade);
   assert.ok(exists(path.join(root,"curriculum.json")),"curriculum missing English "+grade);
   assert.ok(exists(path.join(root,"reading-list.html")),"reading list missing English "+grade);
+  assert.ok(exists(path.join(root,"rubrics","index.html")),"rubric hub missing English "+grade);
+  const productRubric=path.join(root,"rubrics","product-companion.html");
+  assert.ok(exists(productRubric),"product companion rubric missing English "+grade);
+  const productRubricHtml=read(productRubric);
+  assert.equal((productRubricHtml.match(/<article class="card">/g)||[]).length,12,"product companion must cover 12 units English "+grade);
+  assert.match(productRubricHtml,/does not independently award mastery|without changing the 80% mastery threshold/i,"product companion mastery boundary missing English "+grade);
+  const assessmentHub=read(path.join(root,"assessments","index.html"));
+  assert.match(assessmentHub,/rubrics\/product-companion\.html/,"assessment hub missing product companion link English "+grade);
   const offlineRanges=["01-06","07-12","13-18","19-24","25-30","31-36"];
   for(const range of offlineRanges){
     const op=path.join(root,"offline-reading-pack-weeks-"+range+".html");
