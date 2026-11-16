@@ -240,6 +240,33 @@ async function start(){
   const stableDailyEnglish9=/\/english-9\/weeks\/week-01\/day-0[1-5]\/(?:index\.html)?$/i.test(location.pathname);
   const stableDailyUpperEnglish=/\/english-(?:10\/weeks\/week-01\/(?:monday|tuesday|wednesday|thursday|friday)\/(?:index\.html)?|(?:11|12)\/weeks\/week-01\/lessons\/day-0[1-5]\.html)$/i.test(location.pathname);
   if(stableDailyUpperEnglish)installUpperEnglishReadingView();
+  // Canonical VNV ticker pair for the twenty English 9–12 Week 01 daily pages.
+  // The protected VNV gateway keeps its own native 333 ticker.
+  // Both scripts are fetched from their authoritative first-party sources.
+  if(stableDailyEnglish9 || stableDailyUpperEnglish){
+    await load(VNV+"vnv-333-ticker.js","khaemenesHigh333Ticker");
+    await load(VNV+"vnv-ticker-autopopulate.js","khaemenesHighAutoTicker");
+    if(window.VNV333Ticker?.mount && !document.getElementById("vnv333NetworkTicker")){
+      window.VNV333Ticker.mount();
+    }
+    if(window.VNV_TICKER?.autoPopulate && !document.getElementById("vnvTickerAutoPopulate")){
+      window.VNV_TICKER.autoPopulate({
+        before:"#vnvHeaderAutoPopulate, .site-header, header",
+        label:"English "+(stableDailyEnglish9?"9":location.pathname.match(/english-(10|11|12)/)?.[1]||"")+" · Lesson Quick Links",
+        ariaLabel:"Current English lesson navigation",
+        max:12,
+        cleanLegacy:false,
+        exclude:[
+          "#vnv333NetworkTicker a","#vnvTickerAutoPopulate a",
+          "[data-vnv-ticker-ignore]","a[download]",".skip",".skip-link",
+          ".ticker-control",".vnv-ticker-control",
+          "[aria-label*='logout' i]","[aria-label*='sign out' i]"
+        ]
+      });
+    }
+    document.documentElement.dataset.khaemenesEnglishTickerPair=
+      document.getElementById("vnv333NetworkTicker")&&document.getElementById("vnvTickerAutoPopulate")?"mounted":"partial";
+  }
   if(!stableDailyEnglish9 && !stableDailyUpperEnglish && typeof MutationObserver==="function"){
     new MutationObserver(()=>{mountHeader();mountToolbar();cleanupKnownFloaters();preserveExportMarker();scheduleTypography();})
       .observe(document.documentElement,{childList:true,subtree:true});
