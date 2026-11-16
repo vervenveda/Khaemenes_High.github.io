@@ -206,10 +206,13 @@ async function start(){
   mountToolbar();
   cleanupKnownFloaters();
   preserveExportMarker();
-  if(typeof MutationObserver==="function"){
+  const stableDailyEnglish9=/\/english-9\/weeks\/week-01\/day-0[1-5]\/(?:index\.html)?$/i.test(location.pathname);
+  if(!stableDailyEnglish9 && typeof MutationObserver==="function"){
     new MutationObserver(()=>{mountHeader();mountToolbar();cleanupKnownFloaters();preserveExportMarker();scheduleTypography();})
       .observe(document.documentElement,{childList:true,subtree:true});
   }
+  // Daily English 9 pages mount once. Their lesson content and learner-state
+  // changes do not require repeated header/dock mounting.
   window.addEventListener("resize",scheduleTypography,{passive:true});
   document.documentElement.dataset.khaemenesHighTypography="16-33-66";
   document.documentElement.dataset.khaemenesHighChrome="v2";
