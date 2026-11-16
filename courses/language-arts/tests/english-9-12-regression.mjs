@@ -69,6 +69,14 @@ for(const grade of grades){
   assert.ok(exists(path.join(root,"index.html")),"course landing missing English "+grade);
   assert.ok(exists(path.join(root,"curriculum.json")),"curriculum missing English "+grade);
   assert.ok(exists(path.join(root,"reading-list.html")),"reading list missing English "+grade);
+  const readingHub=read(path.join(root,"reading-list.html"));
+  assert.match(readingHub,/data-reading-headquarters="v1"/,"36-week reading headquarters missing English "+grade);
+  assert.match(readingHub,/records\/reading-log\.html/,"reading log route missing from headquarters English "+grade);
+  assert.match(readingHub,/records\/progress-report\.html/,"progress route missing from headquarters English "+grade);
+  assert.equal((readingHub.match(/units\/unit-[0-9]{2}\/reading-dossier\.html/g)||[]).length,12,"reading headquarters must expose 12 unit dossiers English "+grade);
+  for(const range of ["01-06","07-12","13-18","19-24","25-30","31-36"]){
+    assert.match(readingHub,new RegExp("offline-reading-pack-weeks-"+range+"\\.html"),"reading headquarters offline pack "+range+" missing English "+grade);
+  }
   assert.ok(exists(path.join(root,"rubrics","index.html")),"rubric hub missing English "+grade);
   const productRubric=path.join(root,"rubrics","product-companion.html");
   assert.ok(exists(productRubric),"product companion rubric missing English "+grade);
