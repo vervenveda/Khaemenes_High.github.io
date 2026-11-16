@@ -1078,7 +1078,7 @@
       "masteryEvidence": "a polished tragic-character analysis, scene interpretation, and evidence-based moral inquiry supported by source or text evidence, planning, substantive drafting, feedback, revision, ethical-use documentation, and reflection",
       "quiz": [
         {
-          "question": "A strong literary interpretation is primarily supported by...",
+          "question": "A learner proposes a new interpretation during Tragedy, Character & Moral Choice. What should primarily support it?",
           "choices": [
             "Precise textual evidence and reasoning that explains the function and significance of author choices",
             "A plot summary",
@@ -1087,10 +1087,13 @@
           ],
           "answer": 0,
           "explanation": "Interpretation must connect evidence to a defensible explanation of meaning or effect.",
-          "skill": "Literary Analysis"
+          "skill": "Literary Analysis",
+          "sourcePrompt": "A strong literary interpretation is primarily supported by...",
+          "retrievalMode": "parallel-transfer",
+          "transferContext": "week-05"
         },
         {
-          "question": "Intertextuality refers to...",
+          "question": "While comparing A complete tragedy or substantial dramatic selection from a classical or world tradition. with another work, what relationship is described by intertextuality?",
           "choices": [
             "Only punctuation within dialogue",
             "A text having no relationship to other texts",
@@ -1099,7 +1102,10 @@
           ],
           "answer": 2,
           "explanation": "Intertextuality concerns the ways texts echo, transform, or respond to other texts.",
-          "skill": "Comparison"
+          "skill": "Comparison",
+          "sourcePrompt": "Intertextuality refers to...",
+          "retrievalMode": "parallel-transfer",
+          "transferContext": "week-05"
         },
         {
           "question": "Which action best demonstrates mastery of Week 05: Tragedy, Character & Moral Choice?",
@@ -1264,7 +1270,7 @@
       "masteryEvidence": "a polished comparative essay evaluating influence, transformation, context, and significance supported by source or text evidence, planning, substantive drafting, feedback, revision, ethical-use documentation, and reflection",
       "quiz": [
         {
-          "question": "A strong literary interpretation is primarily supported by...",
+          "question": "A learner proposes a new interpretation during Comparative Foundations & Contemporary Adaptation. What should primarily support it?",
           "choices": [
             "A plot summary",
             "The author’s biography without reference to the text",
@@ -1273,10 +1279,13 @@
           ],
           "answer": 3,
           "explanation": "Interpretation must connect evidence to a defensible explanation of meaning or effect.",
-          "skill": "Literary Analysis"
+          "skill": "Literary Analysis",
+          "sourcePrompt": "A strong literary interpretation is primarily supported by...",
+          "retrievalMode": "parallel-transfer",
+          "transferContext": "week-06"
         },
         {
-          "question": "Intertextuality refers to...",
+          "question": "While comparing A classic or foundational work paired with a contemporary world text, adaptation, film, speech, or artistic response. with another work, what relationship is described by intertextuality?",
           "choices": [
             "A text having no relationship to other texts",
             "Relationships among texts through quotation, allusion, adaptation, genre, or shared patterns",
@@ -1285,7 +1294,10 @@
           ],
           "answer": 1,
           "explanation": "Intertextuality concerns the ways texts echo, transform, or respond to other texts.",
-          "skill": "Comparison"
+          "skill": "Comparison",
+          "sourcePrompt": "Intertextuality refers to...",
+          "retrievalMode": "parallel-transfer",
+          "transferContext": "week-06"
         },
         {
           "question": "Which action best demonstrates mastery of Week 06: Comparative Foundations & Contemporary Adaptation?",
@@ -1636,7 +1648,7 @@
       "masteryEvidence": "a polished unseen-poem analysis and alternative-interpretation evidence matrix supported by source or text evidence, planning, substantive drafting, feedback, revision, ethical-use documentation, and reflection",
       "quiz": [
         {
-          "question": "Why should a reader distinguish a poem’s speaker from its author?",
+          "question": "While reading an unfamiliar poem in Figurative Language, Sound, Ambiguity & Image, why should the speaker be distinguished from the poet?",
           "choices": [
             "Because poems never express ideas",
             "Because the speaking voice is a constructed feature of the poem and cannot automatically be treated as autobiography",
@@ -1645,10 +1657,13 @@
           ],
           "answer": 1,
           "explanation": "The speaker is a textual role; biographical claims require separate evidence.",
-          "skill": "Poetry"
+          "skill": "Poetry",
+          "sourcePrompt": "Why should a reader distinguish a poem’s speaker from its author?",
+          "retrievalMode": "parallel-transfer",
+          "transferContext": "week-08"
         },
         {
-          "question": "Enjambment occurs when...",
+          "question": "A poem used in Figurative Language, Sound, Ambiguity & Image carries a sentence across a line break without terminal punctuation. Which term applies?",
           "choices": [
             "A poem has exactly fourteen lines",
             "The title repeats at the end",
@@ -1657,7 +1672,10 @@
           ],
           "answer": 2,
           "explanation": "Enjambment carries syntax beyond the line break and can affect pace, emphasis, and ambiguity.",
-          "skill": "Poetic Form"
+          "skill": "Poetic Form",
+          "sourcePrompt": "Enjambment occurs when...",
+          "retrievalMode": "parallel-transfer",
+          "transferContext": "week-08"
         },
         {
           "question": "Which action best demonstrates mastery of Week 08: Figurative Language, Sound, Ambiguity & Image?",
@@ -1822,7 +1840,7 @@
       "masteryEvidence": "a polished comparative poetry essay, contextual note, and recitation or oral interpretation supported by source or text evidence, planning, substantive drafting, feedback, revision, ethical-use documentation, and reflection",
       "quiz": [
         {
-          "question": "Why should a reader distinguish a poem’s speaker from its author?",
+          "question": "While reading an unfamiliar poem in Major Poets in Historical Context, why should the speaker be distinguished from the poet?",
           "choices": [
             "Because the speaking voice is a constructed feature of the poem and cannot automatically be treated as autobiography",
             "Because authors have no historical context",
@@ -1831,10 +1849,13 @@
           ],
           "answer": 0,
           "explanation": "The speaker is a textual role; biographical claims require separate evidence.",
-          "skill": "Poetry"
+          "skill": "Poetry",
+          "sourcePrompt": "Why should a reader distinguish a poem’s speaker from its author?",
+          "retrievalMode": "parallel-transfer",
+          "transferContext": "week-09"
         },
         {
-          "question": "Enjambment occurs when...",
+          "question": "A poem used in Major Poets in Historical Context carries a sentence across a line break without terminal punctuation. Which term applies?",
           "choices": [
             "The title repeats at the end",
             "A sentence or phrase continues across a line break without terminal punctuation",
@@ -1843,7 +1864,10 @@
           ],
           "answer": 1,
           "explanation": "Enjambment carries syntax beyond the line break and can affect pace, emphasis, and ambiguity.",
-          "skill": "Poetic Form"
+          "skill": "Poetic Form",
+          "sourcePrompt": "Enjambment occurs when...",
+          "retrievalMode": "parallel-transfer",
+          "transferContext": "week-09"
         },
         {
           "question": "Which action best demonstrates mastery of Week 09: Major Poets in Historical Context?",
@@ -2194,7 +2218,7 @@
       "masteryEvidence": "a polished timed rhetorical analysis and cross-text strategy comparison supported by source or text evidence, planning, substantive drafting, feedback, revision, ethical-use documentation, and reflection",
       "quiz": [
         {
-          "question": "Kairos is best understood as...",
+          "question": "A speaker adjusts an argument to the urgency and timing of the situation in Rhetorical Analysis Across Speeches & Essays. Which rhetorical concept describes that choice?",
           "choices": [
             "A poem’s rhyme scheme",
             "The speaker’s spelling accuracy",
@@ -2203,10 +2227,13 @@
           ],
           "answer": 2,
           "explanation": "Kairos concerns timing, occasion, and the opportunity created by the rhetorical situation.",
-          "skill": "Rhetoric"
+          "skill": "Rhetoric",
+          "sourcePrompt": "Kairos is best understood as...",
+          "retrievalMode": "parallel-transfer",
+          "transferContext": "week-11"
         },
         {
-          "question": "A rhetorical analysis should primarily explain...",
+          "question": "In Timed rhetorical analysis and cross-text strategy comparison, what should rhetorical analysis primarily explain?",
           "choices": [
             "How specific choices function for a particular audience, purpose, and context",
             "Only what the text says",
@@ -2215,7 +2242,10 @@
           ],
           "answer": 0,
           "explanation": "Rhetorical analysis evaluates how choices work in relation to situation and purpose.",
-          "skill": "Rhetorical Analysis"
+          "skill": "Rhetorical Analysis",
+          "sourcePrompt": "A rhetorical analysis should primarily explain...",
+          "retrievalMode": "parallel-transfer",
+          "transferContext": "week-11"
         },
         {
           "question": "Which action best demonstrates mastery of Week 11: Rhetorical Analysis Across Speeches & Essays?",
@@ -2752,7 +2782,7 @@
       "masteryEvidence": "a polished fallacy and fairness audit, steelman exercise, concession-rebuttal section, and debate supported by source or text evidence, planning, substantive drafting, feedback, revision, ethical-use documentation, and reflection",
       "quiz": [
         {
-          "question": "A warrant in an argument is...",
+          "question": "While examining an argument in Fallacies, Counterargument & Intellectual Fairness, what role does the warrant play?",
           "choices": [
             "A source citation only",
             "An unrelated example",
@@ -2761,10 +2791,13 @@
           ],
           "answer": 2,
           "explanation": "The warrant explains why the evidence supports the claim.",
-          "skill": "Reasoning"
+          "skill": "Reasoning",
+          "sourcePrompt": "A warrant in an argument is...",
+          "retrievalMode": "parallel-transfer",
+          "transferContext": "week-14"
         },
         {
-          "question": "A fair counterargument should...",
+          "question": "Before rebutting an opposing claim in Fallacy and fairness audit, steelman exercise, concession-rebuttal section, and debate, what must a fair counterargument do?",
           "choices": [
             "Distort the opposing position",
             "Represent the strongest relevant opposing reasoning accurately before responding",
@@ -2773,7 +2806,10 @@
           ],
           "answer": 1,
           "explanation": "Intellectual fairness requires accurate representation before rebuttal.",
-          "skill": "Counterargument"
+          "skill": "Counterargument",
+          "sourcePrompt": "A fair counterargument should...",
+          "retrievalMode": "parallel-transfer",
+          "transferContext": "week-14"
         },
         {
           "question": "Which action best demonstrates mastery of Week 14: Fallacies, Counterargument & Intellectual Fairness?",
@@ -3310,7 +3346,7 @@
       "masteryEvidence": "a polished research proposal, refined question, search log, annotated bibliography, and source-quality audit supported by source or text evidence, planning, substantive drafting, feedback, revision, ethical-use documentation, and reflection",
       "quiz": [
         {
-          "question": "A synthesis differs from a source-by-source summary because it...",
+          "question": "While writing Research proposal, refined question, search log, annotated bibliography, and source-quality audit, what makes synthesis different from a source-by-source summary?",
           "choices": [
             "Avoids citations",
             "Uses only one source",
@@ -3319,10 +3355,13 @@
           ],
           "answer": 3,
           "explanation": "Synthesis explains relationships among sources in service of a question or claim.",
-          "skill": "Synthesis"
+          "skill": "Synthesis",
+          "sourcePrompt": "A synthesis differs from a source-by-source summary because it...",
+          "retrievalMode": "parallel-transfer",
+          "transferContext": "week-17"
         },
         {
-          "question": "The most useful annotated-bibliography entry includes...",
+          "question": "During Research Question, Scope & Annotated Bibliography, a learner must apply this concept to a fresh text or task. Which option best represents the principle being tested?",
           "choices": [
             "Only the publication year",
             "Only the URL",
@@ -3331,7 +3370,10 @@
           ],
           "answer": 2,
           "explanation": "An annotation should evaluate how and why the source may be used, not merely identify it.",
-          "skill": "Research"
+          "skill": "Research",
+          "sourcePrompt": "The most useful annotated-bibliography entry includes...",
+          "retrievalMode": "parallel-transfer",
+          "transferContext": "week-17"
         },
         {
           "question": "Which action best demonstrates mastery of Week 17: Research Question, Scope & Annotated Bibliography?",
@@ -3682,7 +3724,7 @@
       "masteryEvidence": "a polished perspective and structure analysis with comparative seminar notes supported by source or text evidence, planning, substantive drafting, feedback, revision, ethical-use documentation, and reflection",
       "quiz": [
         {
-          "question": "A strong literary interpretation is primarily supported by...",
+          "question": "A learner proposes a new interpretation during Modern World Short Fiction & Perspective. What should primarily support it?",
           "choices": [
             "The author’s biography without reference to the text",
             "The reader’s preference alone",
@@ -3691,10 +3733,13 @@
           ],
           "answer": 2,
           "explanation": "Interpretation must connect evidence to a defensible explanation of meaning or effect.",
-          "skill": "Literary Analysis"
+          "skill": "Literary Analysis",
+          "sourcePrompt": "A strong literary interpretation is primarily supported by...",
+          "retrievalMode": "parallel-transfer",
+          "transferContext": "week-19"
         },
         {
-          "question": "Intertextuality refers to...",
+          "question": "While comparing Modern or contemporary short fiction from multiple regions, including translated work where possible. with another work, what relationship is described by intertextuality?",
           "choices": [
             "Relationships among texts through quotation, allusion, adaptation, genre, or shared patterns",
             "Only translation accuracy",
@@ -3703,7 +3748,10 @@
           ],
           "answer": 0,
           "explanation": "Intertextuality concerns the ways texts echo, transform, or respond to other texts.",
-          "skill": "Comparison"
+          "skill": "Comparison",
+          "sourcePrompt": "Intertextuality refers to...",
+          "retrievalMode": "parallel-transfer",
+          "transferContext": "week-19"
         },
         {
           "question": "Which action best demonstrates mastery of Week 19: Modern World Short Fiction & Perspective?",
@@ -3868,7 +3916,7 @@
       "masteryEvidence": "a polished contextual comparative essay and ethical discussion record supported by source or text evidence, planning, substantive drafting, feedback, revision, ethical-use documentation, and reflection",
       "quiz": [
         {
-          "question": "A strong literary interpretation is primarily supported by...",
+          "question": "A learner proposes a new interpretation during Postcolonial, Diasporic & Displacement Narratives. What should primarily support it?",
           "choices": [
             "The reader’s preference alone",
             "Precise textual evidence and reasoning that explains the function and significance of author choices",
@@ -3877,10 +3925,13 @@
           ],
           "answer": 1,
           "explanation": "Interpretation must connect evidence to a defensible explanation of meaning or effect.",
-          "skill": "Literary Analysis"
+          "skill": "Literary Analysis",
+          "sourcePrompt": "A strong literary interpretation is primarily supported by...",
+          "retrievalMode": "parallel-transfer",
+          "transferContext": "week-20"
         },
         {
-          "question": "Intertextuality refers to...",
+          "question": "While comparing Fiction, memoir, poetry, or essays from postcolonial, diasporic, refugee, immigrant, Indigenous, or displaced perspectives. with another work, what relationship is described by intertextuality?",
           "choices": [
             "Only translation accuracy",
             "Only punctuation within dialogue",
@@ -3889,7 +3940,10 @@
           ],
           "answer": 3,
           "explanation": "Intertextuality concerns the ways texts echo, transform, or respond to other texts.",
-          "skill": "Comparison"
+          "skill": "Comparison",
+          "sourcePrompt": "Intertextuality refers to...",
+          "retrievalMode": "parallel-transfer",
+          "transferContext": "week-20"
         },
         {
           "question": "Which action best demonstrates mastery of Week 20: Postcolonial, Diasporic & Displacement Narratives?",
@@ -4054,7 +4108,7 @@
       "masteryEvidence": "a polished translation or adaptation commentary and comparative close reading supported by source or text evidence, planning, substantive drafting, feedback, revision, ethical-use documentation, and reflection",
       "quiz": [
         {
-          "question": "A strong literary interpretation is primarily supported by...",
+          "question": "A learner proposes a new interpretation during Translation, Adaptation & Intertextuality. What should primarily support it?",
           "choices": [
             "Precise textual evidence and reasoning that explains the function and significance of author choices",
             "A plot summary",
@@ -4063,10 +4117,13 @@
           ],
           "answer": 0,
           "explanation": "Interpretation must connect evidence to a defensible explanation of meaning or effect.",
-          "skill": "Literary Analysis"
+          "skill": "Literary Analysis",
+          "sourcePrompt": "A strong literary interpretation is primarily supported by...",
+          "retrievalMode": "parallel-transfer",
+          "transferContext": "week-21"
         },
         {
-          "question": "Intertextuality refers to...",
+          "question": "While comparing An original/translated pair when accessible, translator notes, adaptation, retelling, or cross-media interpretation. with another work, what relationship is described by intertextuality?",
           "choices": [
             "Only punctuation within dialogue",
             "A text having no relationship to other texts",
@@ -4075,7 +4132,10 @@
           ],
           "answer": 2,
           "explanation": "Intertextuality concerns the ways texts echo, transform, or respond to other texts.",
-          "skill": "Comparison"
+          "skill": "Comparison",
+          "sourcePrompt": "Intertextuality refers to...",
+          "retrievalMode": "parallel-transfer",
+          "transferContext": "week-21"
         },
         {
           "question": "Which action best demonstrates mastery of Week 21: Translation, Adaptation & Intertextuality?",
@@ -4426,7 +4486,7 @@
       "masteryEvidence": "a polished multimodal rhetorical analysis and accessible storyboard supported by source or text evidence, planning, substantive drafting, feedback, revision, ethical-use documentation, and reflection",
       "quiz": [
         {
-          "question": "Lateral reading means...",
+          "question": "A learner encounters an unfamiliar online claim during Visual Rhetoric, Film & Digital Texts. What does lateral reading require?",
           "choices": [
             "Avoiding primary sources",
             "Staying on one page and trusting its design",
@@ -4435,10 +4495,13 @@
           ],
           "answer": 2,
           "explanation": "Lateral reading checks a source through independent information beyond the source itself.",
-          "skill": "Media Literacy"
+          "skill": "Media Literacy",
+          "sourcePrompt": "Lateral reading means...",
+          "retrievalMode": "parallel-transfer",
+          "transferContext": "week-23"
         },
         {
-          "question": "A graph supports a claim only when...",
+          "question": "A graph is offered as evidence in Visual Rhetoric, Film & Digital Texts. When does it actually support the claim?",
           "choices": [
             "Its variables, scale, source, and relationship to the claim are accurately interpreted",
             "It appears in a social post",
@@ -4447,7 +4510,10 @@
           ],
           "answer": 0,
           "explanation": "Quantitative evidence must be interpreted in context and connected accurately to the claim.",
-          "skill": "Quantitative Evidence"
+          "skill": "Quantitative Evidence",
+          "sourcePrompt": "A graph supports a claim only when...",
+          "retrievalMode": "parallel-transfer",
+          "transferContext": "week-23"
         },
         {
           "question": "Which action best demonstrates mastery of Week 23: Visual Rhetoric, Film & Digital Texts?",
@@ -4612,7 +4678,7 @@
       "masteryEvidence": "a polished timed comparative oral, outline, source record, reflection, and audience questions supported by source or text evidence, planning, substantive drafting, feedback, revision, ethical-use documentation, and reflection",
       "quiz": [
         {
-          "question": "Audience adaptation means...",
+          "question": "A learner revises the same message for a different audience during Global Issue Comparative Oral. What does audience adaptation mean?",
           "choices": [
             "Changing facts to please listeners",
             "Adjusting organization, language, evidence, detail, and medium while preserving accuracy",
@@ -4621,10 +4687,13 @@
           ],
           "answer": 1,
           "explanation": "Effective communicators adapt form and delivery without sacrificing truthfulness.",
-          "skill": "Audience"
+          "skill": "Audience",
+          "sourcePrompt": "Audience adaptation means...",
+          "retrievalMode": "parallel-transfer",
+          "transferContext": "week-24"
         },
         {
-          "question": "An effective oral presentation should address opposing perspectives by...",
+          "question": "During the oral work in Global Issue Comparative Oral, how should a strong presenter handle opposing perspectives?",
           "choices": [
             "Insulting their supporters",
             "Removing all source citations",
@@ -4633,7 +4702,10 @@
           ],
           "answer": 3,
           "explanation": "Advanced speaking demonstrates fairness, evidence, and reasoned response.",
-          "skill": "Speaking"
+          "skill": "Speaking",
+          "sourcePrompt": "An effective oral presentation should address opposing perspectives by...",
+          "retrievalMode": "parallel-transfer",
+          "transferContext": "week-24"
         },
         {
           "question": "Which action best demonstrates mastery of Week 24: Global Issue Comparative Oral?",
@@ -4798,7 +4870,7 @@
       "masteryEvidence": "a polished research-methods plan, search log, source taxonomy, and limitations statement supported by source or text evidence, planning, substantive drafting, feedback, revision, ethical-use documentation, and reflection",
       "quiz": [
         {
-          "question": "A synthesis differs from a source-by-source summary because it...",
+          "question": "While writing Research-methods plan, search log, source taxonomy, and limitations statement, what makes synthesis different from a source-by-source summary?",
           "choices": [
             "Avoids citations",
             "Uses only one source",
@@ -4807,10 +4879,13 @@
           ],
           "answer": 3,
           "explanation": "Synthesis explains relationships among sources in service of a question or claim.",
-          "skill": "Synthesis"
+          "skill": "Synthesis",
+          "sourcePrompt": "A synthesis differs from a source-by-source summary because it...",
+          "retrievalMode": "parallel-transfer",
+          "transferContext": "week-25"
         },
         {
-          "question": "The most useful annotated-bibliography entry includes...",
+          "question": "During Advanced Search, Databases & Research Methods, a learner must apply this concept to a fresh text or task. Which option best represents the principle being tested?",
           "choices": [
             "Only the publication year",
             "Only the URL",
@@ -4819,7 +4894,10 @@
           ],
           "answer": 2,
           "explanation": "An annotation should evaluate how and why the source may be used, not merely identify it.",
-          "skill": "Research"
+          "skill": "Research",
+          "sourcePrompt": "The most useful annotated-bibliography entry includes...",
+          "retrievalMode": "parallel-transfer",
+          "transferContext": "week-25"
         },
         {
           "question": "Which action best demonstrates mastery of Week 25: Advanced Search, Databases & Research Methods?",
@@ -4984,7 +5062,7 @@
       "masteryEvidence": "a polished literature review, synthesis matrix, and gap/significance statement supported by source or text evidence, planning, substantive drafting, feedback, revision, ethical-use documentation, and reflection",
       "quiz": [
         {
-          "question": "A synthesis differs from a source-by-source summary because it...",
+          "question": "While writing Literature review, synthesis matrix, and gap/significance statement, what makes synthesis different from a source-by-source summary?",
           "choices": [
             "Uses only one source",
             "Copies each abstract",
@@ -4993,10 +5071,13 @@
           ],
           "answer": 2,
           "explanation": "Synthesis explains relationships among sources in service of a question or claim.",
-          "skill": "Synthesis"
+          "skill": "Synthesis",
+          "sourcePrompt": "A synthesis differs from a source-by-source summary because it...",
+          "retrievalMode": "parallel-transfer",
+          "transferContext": "week-26"
         },
         {
-          "question": "The most useful annotated-bibliography entry includes...",
+          "question": "During Literature Review & Synthesis of Scholarship, a learner must apply this concept to a fresh text or task. Which option best represents the principle being tested?",
           "choices": [
             "Only the URL",
             "A concise summary, credibility and relevance evaluation, limitations, and intended use",
@@ -5005,7 +5086,10 @@
           ],
           "answer": 1,
           "explanation": "An annotation should evaluate how and why the source may be used, not merely identify it.",
-          "skill": "Research"
+          "skill": "Research",
+          "sourcePrompt": "The most useful annotated-bibliography entry includes...",
+          "retrievalMode": "parallel-transfer",
+          "transferContext": "week-26"
         },
         {
           "question": "Which action best demonstrates mastery of Week 26: Literature Review & Synthesis of Scholarship?",
@@ -5170,7 +5254,7 @@
       "masteryEvidence": "a polished substantial research paper draft, citation audit, peer review, and revision plan supported by source or text evidence, planning, substantive drafting, feedback, revision, ethical-use documentation, and reflection",
       "quiz": [
         {
-          "question": "A synthesis differs from a source-by-source summary because it...",
+          "question": "While writing Substantial research paper draft, citation audit, peer review, and revision plan, what makes synthesis different from a source-by-source summary?",
           "choices": [
             "Copies each abstract",
             "Organizes evidence around relationships, patterns, tensions, or a line of reasoning",
@@ -5179,10 +5263,13 @@
           ],
           "answer": 1,
           "explanation": "Synthesis explains relationships among sources in service of a question or claim.",
-          "skill": "Synthesis"
+          "skill": "Synthesis",
+          "sourcePrompt": "A synthesis differs from a source-by-source summary because it...",
+          "retrievalMode": "parallel-transfer",
+          "transferContext": "week-27"
         },
         {
-          "question": "The most useful annotated-bibliography entry includes...",
+          "question": "During Academic Argument Draft, Citation & Peer Review, a learner must apply this concept to a fresh text or task. Which option best represents the principle being tested?",
           "choices": [
             "A concise summary, credibility and relevance evaluation, limitations, and intended use",
             "A copied paragraph",
@@ -5191,7 +5278,10 @@
           ],
           "answer": 0,
           "explanation": "An annotation should evaluate how and why the source may be used, not merely identify it.",
-          "skill": "Research"
+          "skill": "Research",
+          "sourcePrompt": "The most useful annotated-bibliography entry includes...",
+          "retrievalMode": "parallel-transfer",
+          "transferContext": "week-27"
         },
         {
           "question": "Which action best demonstrates mastery of Week 27: Academic Argument Draft, Citation & Peer Review?",
@@ -5356,7 +5446,7 @@
       "masteryEvidence": "a polished personal statement or scholarship essay with alternate prompt adaptation supported by source or text evidence, planning, substantive drafting, feedback, revision, ethical-use documentation, and reflection",
       "quiz": [
         {
-          "question": "Audience adaptation means...",
+          "question": "A learner revises the same message for a different audience during College, Scholarship & Reflective Narrative. What does audience adaptation mean?",
           "choices": [
             "Changing facts to please listeners",
             "Adjusting organization, language, evidence, detail, and medium while preserving accuracy",
@@ -5365,10 +5455,13 @@
           ],
           "answer": 1,
           "explanation": "Effective communicators adapt form and delivery without sacrificing truthfulness.",
-          "skill": "Audience"
+          "skill": "Audience",
+          "sourcePrompt": "Audience adaptation means...",
+          "retrievalMode": "parallel-transfer",
+          "transferContext": "week-28"
         },
         {
-          "question": "An effective oral presentation should address opposing perspectives by...",
+          "question": "During the oral work in College, Scholarship & Reflective Narrative, how should a strong presenter handle opposing perspectives?",
           "choices": [
             "Insulting their supporters",
             "Removing all source citations",
@@ -5377,7 +5470,10 @@
           ],
           "answer": 3,
           "explanation": "Advanced speaking demonstrates fairness, evidence, and reasoned response.",
-          "skill": "Speaking"
+          "skill": "Speaking",
+          "sourcePrompt": "An effective oral presentation should address opposing perspectives by...",
+          "retrievalMode": "parallel-transfer",
+          "transferContext": "week-28"
         },
         {
           "question": "Which action best demonstrates mastery of Week 28: College, Scholarship & Reflective Narrative?",
@@ -5542,7 +5638,7 @@
       "masteryEvidence": "a polished résumé, professional correspondence, proposal or civic brief, and audience adaptation memo supported by source or text evidence, planning, substantive drafting, feedback, revision, ethical-use documentation, and reflection",
       "quiz": [
         {
-          "question": "Audience adaptation means...",
+          "question": "A learner revises the same message for a different audience during Workplace, Civic & Professional Communication. What does audience adaptation mean?",
           "choices": [
             "Adjusting organization, language, evidence, detail, and medium while preserving accuracy",
             "Using the same format in every situation",
@@ -5551,10 +5647,13 @@
           ],
           "answer": 0,
           "explanation": "Effective communicators adapt form and delivery without sacrificing truthfulness.",
-          "skill": "Audience"
+          "skill": "Audience",
+          "sourcePrompt": "Audience adaptation means...",
+          "retrievalMode": "parallel-transfer",
+          "transferContext": "week-29"
         },
         {
-          "question": "An effective oral presentation should address opposing perspectives by...",
+          "question": "During the oral work in Workplace, Civic & Professional Communication, how should a strong presenter handle opposing perspectives?",
           "choices": [
             "Removing all source citations",
             "Pretending they do not exist",
@@ -5563,7 +5662,10 @@
           ],
           "answer": 2,
           "explanation": "Advanced speaking demonstrates fairness, evidence, and reasoned response.",
-          "skill": "Speaking"
+          "skill": "Speaking",
+          "sourcePrompt": "An effective oral presentation should address opposing perspectives by...",
+          "retrievalMode": "parallel-transfer",
+          "transferContext": "week-29"
         },
         {
           "question": "Which action best demonstrates mastery of Week 29: Workplace, Civic & Professional Communication?",
@@ -5728,7 +5830,7 @@
       "masteryEvidence": "a polished published multimedia project, accessibility audit, source/license record, and audience-impact reflection supported by source or text evidence, planning, substantive drafting, feedback, revision, ethical-use documentation, and reflection",
       "quiz": [
         {
-          "question": "Lateral reading means...",
+          "question": "A learner encounters an unfamiliar online claim during Accessible Multimedia Publication & Digital Citizenship. What does lateral reading require?",
           "choices": [
             "Reading only the headline",
             "Avoiding primary sources",
@@ -5737,10 +5839,13 @@
           ],
           "answer": 3,
           "explanation": "Lateral reading checks a source through independent information beyond the source itself.",
-          "skill": "Media Literacy"
+          "skill": "Media Literacy",
+          "sourcePrompt": "Lateral reading means...",
+          "retrievalMode": "parallel-transfer",
+          "transferContext": "week-30"
         },
         {
-          "question": "A graph supports a claim only when...",
+          "question": "A graph is offered as evidence in Accessible Multimedia Publication & Digital Citizenship. When does it actually support the claim?",
           "choices": [
             "It uses bright colors",
             "Its variables, scale, source, and relationship to the claim are accurately interpreted",
@@ -5749,7 +5854,10 @@
           ],
           "answer": 1,
           "explanation": "Quantitative evidence must be interpreted in context and connected accurately to the claim.",
-          "skill": "Quantitative Evidence"
+          "skill": "Quantitative Evidence",
+          "sourcePrompt": "A graph supports a claim only when...",
+          "retrievalMode": "parallel-transfer",
+          "transferContext": "week-30"
         },
         {
           "question": "Which action best demonstrates mastery of Week 30: Accessible Multimedia Publication & Digital Citizenship?",
@@ -6100,7 +6208,7 @@
       "masteryEvidence": "a polished critical-lens analysis, counterreading, and source-supported interpretation supported by source or text evidence, planning, substantive drafting, feedback, revision, ethical-use documentation, and reflection",
       "quiz": [
         {
-          "question": "A motif differs from a theme because a motif is...",
+          "question": "While tracing patterns in The long-form work plus responsible introductory criticism representing more than one interpretive approach., how does a motif differ from a theme?",
           "choices": [
             "A recurring element or pattern that may help develop a theme",
             "The entire plot summary",
@@ -6109,10 +6217,13 @@
           ],
           "answer": 0,
           "explanation": "Motifs recur concretely; themes are broader ideas developed through patterns and choices.",
-          "skill": "Long-Form Reading"
+          "skill": "Long-Form Reading",
+          "sourcePrompt": "A motif differs from a theme because a motif is...",
+          "retrievalMode": "parallel-transfer",
+          "transferContext": "week-32"
         },
         {
-          "question": "A critical lens is used responsibly when the reader...",
+          "question": "A learner applies a critical lens during Critical Lenses & Competing Interpretations. When is that use responsible?",
           "choices": [
             "Ignores the text",
             "Treats the lens as the only possible interpretation",
@@ -6121,7 +6232,10 @@
           ],
           "answer": 3,
           "explanation": "A lens should illuminate evidence, not replace it.",
-          "skill": "Interpretation"
+          "skill": "Interpretation",
+          "sourcePrompt": "A critical lens is used responsibly when the reader...",
+          "retrievalMode": "parallel-transfer",
+          "transferContext": "week-32"
         },
         {
           "question": "Which action best demonstrates mastery of Week 32: Critical Lenses & Competing Interpretations?",
@@ -6286,7 +6400,7 @@
       "masteryEvidence": "a polished student-led seminar, polished literary argument, oral defense, and reflection supported by source or text evidence, planning, substantive drafting, feedback, revision, ethical-use documentation, and reflection",
       "quiz": [
         {
-          "question": "A motif differs from a theme because a motif is...",
+          "question": "While tracing patterns in The completed long-form work, student questions, selected criticism, and relevant comparative texts., how does a motif differ from a theme?",
           "choices": [
             "The entire plot summary",
             "Always a moral stated directly",
@@ -6295,10 +6409,13 @@
           ],
           "answer": 3,
           "explanation": "Motifs recur concretely; themes are broader ideas developed through patterns and choices.",
-          "skill": "Long-Form Reading"
+          "skill": "Long-Form Reading",
+          "sourcePrompt": "A motif differs from a theme because a motif is...",
+          "retrievalMode": "parallel-transfer",
+          "transferContext": "week-33"
         },
         {
-          "question": "A critical lens is used responsibly when the reader...",
+          "question": "A learner applies a critical lens during Independent Seminar & Literary Argument. When is that use responsible?",
           "choices": [
             "Treats the lens as the only possible interpretation",
             "Forces every detail to fit the lens",
@@ -6307,7 +6424,10 @@
           ],
           "answer": 2,
           "explanation": "A lens should illuminate evidence, not replace it.",
-          "skill": "Interpretation"
+          "skill": "Interpretation",
+          "sourcePrompt": "A critical lens is used responsibly when the reader...",
+          "retrievalMode": "parallel-transfer",
+          "transferContext": "week-33"
         },
         {
           "question": "Which action best demonstrates mastery of Week 33: Independent Seminar & Literary Argument?",
@@ -6658,7 +6778,7 @@
       "masteryEvidence": "a polished curated graduation portfolio, standards annotations, revision of representative work, and oral defense supported by source or text evidence, planning, substantive drafting, feedback, revision, ethical-use documentation, and reflection",
       "quiz": [
         {
-          "question": "A strong capstone contribution is defined primarily by...",
+          "question": "When evaluating the capstone in Graduation Portfolio & Oral Defense, what primarily defines a strong contribution?",
           "choices": [
             "A decorative cover",
             "Its length alone",
@@ -6667,10 +6787,13 @@
           ],
           "answer": 2,
           "explanation": "Capstone quality depends on inquiry, evidence, communication, and contribution.",
-          "skill": "Capstone"
+          "skill": "Capstone",
+          "sourcePrompt": "A strong capstone contribution is defined primarily by...",
+          "retrievalMode": "parallel-transfer",
+          "transferContext": "week-35"
         },
         {
-          "question": "Portfolio curation requires a student to...",
+          "question": "While preparing the portfolio for Graduation Portfolio & Oral Defense, what does careful curation require?",
           "choices": [
             "Select representative evidence and explain how it demonstrates standards, growth, revision, and readiness",
             "Include only perfect scores",
@@ -6679,7 +6802,10 @@
           ],
           "answer": 0,
           "explanation": "A portfolio is an argued selection of evidence, not an undifferentiated archive.",
-          "skill": "Portfolio"
+          "skill": "Portfolio",
+          "sourcePrompt": "Portfolio curation requires a student to...",
+          "retrievalMode": "parallel-transfer",
+          "transferContext": "week-35"
         },
         {
           "question": "Which action best demonstrates mastery of Week 35: Graduation Portfolio & Oral Defense?",
@@ -6848,7 +6974,7 @@
       "masteryEvidence": "a completed cumulative assessment, timed response, corrections analysis, portfolio reflection, and evidence-based next-step plan",
       "quiz": [
         {
-          "question": "A useful corrections analysis should identify...",
+          "question": "After a missed item in Cumulative Final & Postsecondary Literacy Plan, what should a useful corrections analysis identify?",
           "choices": [
             "Only the final score",
             "The tested skill, the original error, the governing evidence or rule, the corrected reasoning, and a prevention strategy",
@@ -6857,10 +6983,13 @@
           ],
           "answer": 1,
           "explanation": "Corrections become learning evidence when they explain both error and improved reasoning.",
-          "skill": "Corrections"
+          "skill": "Corrections",
+          "sourcePrompt": "A useful corrections analysis should identify...",
+          "retrievalMode": "parallel-transfer",
+          "transferContext": "week-36"
         },
         {
-          "question": "Transfer of learning occurs when a student can...",
+          "question": "A student applies a skill from an earlier unit to a new task in Cumulative Final & Postsecondary Literacy Plan. What demonstrates transfer of learning?",
           "choices": [
             "Avoid independent work",
             "Use the answer key during every task",
@@ -6869,7 +6998,10 @@
           ],
           "answer": 3,
           "explanation": "Transfer requires applying principles beyond the original practice context.",
-          "skill": "Transfer"
+          "skill": "Transfer",
+          "sourcePrompt": "Transfer of learning occurs when a student can...",
+          "retrievalMode": "parallel-transfer",
+          "transferContext": "week-36"
         },
         {
           "question": "Which action best demonstrates mastery of Week 36: Cumulative Final & Postsecondary Literacy Plan?",
@@ -7054,5 +7186,7 @@
     "Teachers should document instructional time, approved texts, accommodations, source permissions, student work, teacher-scored writing and speaking, assessment results, corrections, revision, and portfolio evidence."
   ],
   "quizBankVersion": "2026-10-16-v4-passage-anchored",
-  "instructionalSpecificityVersion": "v1"
+  "instructionalSpecificityVersion": "v1",
+  "quizDiversityVersion": "v1",
+  "quizDiversityPolicy": "Repeated concepts return through parallel transfer, application, comparison, or error analysis rather than identical recognition prompts."
 }
