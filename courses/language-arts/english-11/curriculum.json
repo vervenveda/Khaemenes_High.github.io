@@ -7355,5 +7355,639 @@
   "quizBankVersion": "2026-10-16-v4-passage-anchored",
   "instructionalSpecificityVersion": "v1",
   "quizDiversityVersion": "v1",
-  "quizDiversityPolicy": "Repeated concepts return through parallel transfer, application, comparison, or error analysis rather than identical recognition prompts."
+  "quizDiversityPolicy": "Repeated concepts return through parallel transfer, application, comparison, or error analysis rather than identical recognition prompts.",
+  "readingAssignments": [
+    {
+      "title": "A Jury of Her Peers",
+      "author": "Susan Glaspell",
+      "genre": "Short fiction",
+      "purpose": "Establish an advanced diagnostic baseline by evaluating inference, perspective, evidence, and the relationship between social context and interpretation.",
+      "sources": [
+        [
+          "Project Gutenberg title search",
+          "https://www.gutenberg.org/ebooks/search/?query=A+Jury+of+Her+Peers+Susan+Glaspell"
+        ],
+        [
+          "English III reading guide",
+          "reading-list.html"
+        ]
+      ],
+      "week": 1,
+      "unit": 1,
+      "readingType": "Assigned"
+    },
+    {
+      "title": "The Souls of Black Folk — selected excerpt",
+      "author": "W. E. B. Du Bois",
+      "genre": "Essay and literary nonfiction",
+      "purpose": "Practice disciplined close reading, evidence ladders, qualification, and the evaluation of complex language and ideas.",
+      "sources": [
+        [
+          "Project Gutenberg · The Souls of Black Folk",
+          "https://www.gutenberg.org/ebooks/408"
+        ]
+      ],
+      "week": 2,
+      "unit": 1,
+      "readingType": "Assigned"
+    },
+    {
+      "title": "Civil Disobedience — selected excerpt",
+      "author": "Henry David Thoreau",
+      "genre": "Essay",
+      "purpose": "Practice accurate paraphrase, concise summary, source attribution, etymology, and ethical academic use of another writer’s ideas.",
+      "sources": [
+        [
+          "Project Gutenberg title search",
+          "https://www.gutenberg.org/ebooks/search/?query=Civil+Disobedience+Henry+David+Thoreau"
+        ]
+      ],
+      "week": 3,
+      "unit": 1,
+      "readingType": "Assigned"
+    },
+    {
+      "title": "Araby",
+      "author": "James Joyce",
+      "genre": "Short fiction",
+      "purpose": "Analyze how setting, image, diction, syntax, and point of view create layered meaning and emotional tension.",
+      "sources": [
+        [
+          "Project Gutenberg · Dubliners",
+          "https://www.gutenberg.org/ebooks/2814"
+        ]
+      ],
+      "week": 4,
+      "unit": 2,
+      "readingType": "Assigned"
+    },
+    {
+      "title": "The Garden Party",
+      "author": "Katherine Mansfield",
+      "genre": "Short fiction",
+      "purpose": "Evaluate how culture, class, characterization, symbolism, and narrative distance shape a universal theme.",
+      "sources": [
+        [
+          "Project Gutenberg title search",
+          "https://www.gutenberg.org/ebooks/search/?query=The+Garden+Party+Katherine+Mansfield"
+        ]
+      ],
+      "week": 5,
+      "unit": 2,
+      "readingType": "Assigned"
+    },
+    {
+      "title": "The Dead — selected excerpt",
+      "author": "James Joyce",
+      "genre": "Novella-length short fiction",
+      "purpose": "Compare public behavior and private realization while tracing motif, epiphany, voice, and the development of an enduring human question.",
+      "sources": [
+        [
+          "Project Gutenberg · Dubliners",
+          "https://www.gutenberg.org/ebooks/2814"
+        ]
+      ],
+      "week": 6,
+      "unit": 2,
+      "readingType": "Assigned"
+    },
+    {
+      "title": "The Yellow Wallpaper",
+      "author": "Charlotte Perkins Gilman",
+      "genre": "Short fiction",
+      "purpose": "Evaluate unreliable perspective, social context, symbolism, tone, and the ethical responsibilities of literary interpretation.",
+      "sources": [
+        [
+          "Project Gutenberg · The Yellow Wallpaper",
+          "https://www.gutenberg.org/ebooks/1952"
+        ]
+      ],
+      "week": 7,
+      "unit": 3,
+      "readingType": "Assigned"
+    },
+    {
+      "title": "The Metamorphosis — selected chapters",
+      "author": "Franz Kafka",
+      "genre": "Novella in translation",
+      "purpose": "Analyze juxtaposition, estrangement, mood, family perspective, translation choices, and competing interpretations.",
+      "sources": [
+        [
+          "Project Gutenberg · Metamorphosis",
+          "https://www.gutenberg.org/ebooks/5200"
+        ],
+        [
+          "English III reading guide",
+          "reading-list.html"
+        ]
+      ],
+      "week": 8,
+      "unit": 3,
+      "readingType": "Assigned"
+    },
+    {
+      "title": "The Open Boat",
+      "author": "Stephen Crane",
+      "genre": "Short fiction",
+      "purpose": "Develop a publication-ready literary argument about perspective, naturalism, solidarity, irony, and the limits of human control.",
+      "sources": [
+        [
+          "Project Gutenberg title search",
+          "https://www.gutenberg.org/ebooks/search/?query=The+Open+Boat+Stephen+Crane"
+        ]
+      ],
+      "week": 9,
+      "unit": 3,
+      "readingType": "Assigned"
+    },
+    {
+      "title": "Rhetoric — Book I selections",
+      "author": "Aristotle",
+      "genre": "Classical rhetorical theory",
+      "purpose": "Establish the rhetorical situation and evaluate how speaker, audience, purpose, occasion, appeals, and arrangement interact.",
+      "sources": [
+        [
+          "Project Gutenberg title search",
+          "https://www.gutenberg.org/ebooks/search/?query=Rhetoric+Aristotle"
+        ],
+        [
+          "English III reading guide",
+          "reading-list.html"
+        ]
+      ],
+      "week": 10,
+      "unit": 4,
+      "readingType": "Assigned"
+    },
+    {
+      "title": "Apology",
+      "author": "Plato",
+      "genre": "Classical speech and philosophical dialogue",
+      "purpose": "Evaluate ethos, audience, structure, reasoning, irony, and the relationship between moral conviction and persuasion.",
+      "sources": [
+        [
+          "Project Gutenberg title search",
+          "https://www.gutenberg.org/ebooks/search/?query=Apology+Plato"
+        ]
+      ],
+      "week": 11,
+      "unit": 4,
+      "readingType": "Assigned"
+    },
+    {
+      "title": "Gettysburg Address and Second Inaugural Address",
+      "author": "Abraham Lincoln",
+      "genre": "Paired historical speeches",
+      "purpose": "Compare compression, structure, allusion, ethical appeal, historical context, and the purposeful shaping of national memory.",
+      "sources": [
+        [
+          "National Archives · Gettysburg Address",
+          "https://www.archives.gov/milestone-documents/gettysburg-address"
+        ],
+        [
+          "Library of Congress Lincoln resources",
+          "https://www.loc.gov/collections/abraham-lincoln-papers/"
+        ]
+      ],
+      "week": 12,
+      "unit": 4,
+      "readingType": "Assigned"
+    },
+    {
+      "title": "Federalist No. 10 and Brutus I — selected excerpts",
+      "author": "James Madison and Brutus",
+      "genre": "Opposing civic arguments",
+      "purpose": "Compare claims, assumptions, evidence, consequences, validity, and rhetorical effectiveness without flattening disagreement.",
+      "sources": [
+        [
+          "Yale Avalon Project · Federalist No. 10",
+          "https://avalon.law.yale.edu/18th_century/fed10.asp"
+        ],
+        [
+          "English III reading guide",
+          "reading-list.html"
+        ]
+      ],
+      "week": 13,
+      "unit": 5,
+      "readingType": "Assigned"
+    },
+    {
+      "title": "What to the Slave Is the Fourth of July? — selected excerpt",
+      "author": "Frederick Douglass",
+      "genre": "Historical speech",
+      "purpose": "Evaluate rhetorical force, historical context, moral reasoning, audience pressure, evidence, and the relationship between critique and civic ideals.",
+      "sources": [
+        [
+          "Library of Congress newspaper source",
+          "https://www.loc.gov/resource/sn84026366/1852-07-09/ed-1/?sp=2"
+        ]
+      ],
+      "week": 14,
+      "unit": 5,
+      "readingType": "Assigned"
+    },
+    {
+      "title": "Ain’t I a Woman? and Declaration of Sentiments — selected texts",
+      "author": "Sojourner Truth and Elizabeth Cady Stanton",
+      "genre": "Paired civic rhetoric",
+      "purpose": "Compare contemporaneous claims, evidence, audience, repetition, historical transmission, and the ethical use of civic sources.",
+      "sources": [
+        [
+          "Library of Congress · Sojourner Truth guide",
+          "https://guides.loc.gov/sojourner-truth"
+        ],
+        [
+          "National Park Service · Declaration of Sentiments",
+          "https://www.nps.gov/wori/learn/historyculture/declaration-of-sentiments.htm"
+        ]
+      ],
+      "week": 15,
+      "unit": 5,
+      "readingType": "Assigned"
+    },
+    {
+      "title": "Self-Reliance — selected excerpt",
+      "author": "Ralph Waldo Emerson",
+      "genre": "Essay",
+      "purpose": "Transform rhetorical analysis into purposeful composition by studying voice, aphorism, qualification, structure, and audience expectation.",
+      "sources": [
+        [
+          "Project Gutenberg title search",
+          "https://www.gutenberg.org/ebooks/search/?query=Self-Reliance+Ralph+Waldo+Emerson"
+        ]
+      ],
+      "week": 16,
+      "unit": 6,
+      "readingType": "Assigned"
+    },
+    {
+      "title": "The American Crisis, No. 1",
+      "author": "Thomas Paine",
+      "genre": "Political essay",
+      "purpose": "Study urgency, cadence, analogy, emotional pressure, logic, and audience awareness before composing an original consequential argument.",
+      "sources": [
+        [
+          "Project Gutenberg title search",
+          "https://www.gutenberg.org/ebooks/search/?query=The+American+Crisis+Thomas+Paine"
+        ]
+      ],
+      "week": 17,
+      "unit": 6,
+      "readingType": "Assigned"
+    },
+    {
+      "title": "Midyear Unfamiliar Passage and Rhetoric Set",
+      "author": "Teacher-selected public-domain and institutional sources",
+      "genre": "Cumulative literary and informational reading",
+      "purpose": "Transfer first-semester skills to unfamiliar texts, complete corrections, and establish an evidence-based improvement plan.",
+      "sources": [
+        [
+          "English III cumulative midterm",
+          "assessments/midterm/"
+        ],
+        [
+          "English III reading guide",
+          "reading-list.html"
+        ]
+      ],
+      "week": 18,
+      "unit": 6,
+      "readingType": "Assigned"
+    },
+    {
+      "title": "Selected poems by Sappho and Li Bai",
+      "author": "Sappho and Li Bai, in teacher-approved translations",
+      "genre": "Ancient and classical poetry in translation",
+      "purpose": "Compare speaker, image, compression, cultural context, translation choices, and the survival of poetic meaning across time and language.",
+      "sources": [
+        [
+          "Project Gutenberg · Sappho search",
+          "https://www.gutenberg.org/ebooks/search/?query=Sappho"
+        ],
+        [
+          "Project Gutenberg · Li Bai search",
+          "https://www.gutenberg.org/ebooks/search/?query=Li+Bai"
+        ]
+      ],
+      "week": 19,
+      "unit": 7,
+      "readingType": "Assigned"
+    },
+    {
+      "title": "Sonnet 73 and Death Be Not Proud",
+      "author": "William Shakespeare and John Donne",
+      "genre": "Early modern poetry",
+      "purpose": "Analyze form, turn, conceit, rhythm, sound, argument, and how poetic structure pressures an abstract idea.",
+      "sources": [
+        [
+          "Poetry Foundation · Sonnet 73",
+          "https://www.poetryfoundation.org/poems/45099/sonnet-73-that-time-of-year-thou-mayst-in-me-behold"
+        ],
+        [
+          "Poetry Foundation · John Donne",
+          "https://www.poetryfoundation.org/poets/john-donne"
+        ]
+      ],
+      "week": 20,
+      "unit": 7,
+      "readingType": "Assigned"
+    },
+    {
+      "title": "Selected poems by Walt Whitman, Emily Dickinson, and Paul Laurence Dunbar",
+      "author": "Whitman, Dickinson, and Dunbar",
+      "genre": "Nineteenth-century American poetry",
+      "purpose": "Compare poetic voice, line, image, identity, democracy, concealment, and historical pressure across distinct formal traditions.",
+      "sources": [
+        [
+          "Project Gutenberg · Leaves of Grass",
+          "https://www.gutenberg.org/ebooks/1322"
+        ],
+        [
+          "Poetry Foundation · Emily Dickinson",
+          "https://www.poetryfoundation.org/poets/emily-dickinson"
+        ],
+        [
+          "Project Gutenberg · Dunbar search",
+          "https://www.gutenberg.org/ebooks/search/?query=Paul+Laurence+Dunbar"
+        ]
+      ],
+      "week": 21,
+      "unit": 7,
+      "readingType": "Assigned"
+    },
+    {
+      "title": "Ozymandias and The New Colossus",
+      "author": "Percy Bysshe Shelley and Emma Lazarus",
+      "genre": "Paired poetry",
+      "purpose": "Compare image, symbol, historical imagination, public memory, power, migration, and the consequences of different poetic occasions.",
+      "sources": [
+        [
+          "Poetry Foundation · Ozymandias",
+          "https://www.poetryfoundation.org/poems/46565/ozymandias"
+        ],
+        [
+          "Poetry Foundation · The New Colossus",
+          "https://www.poetryfoundation.org/poems/46550/the-new-colossus"
+        ]
+      ],
+      "week": 22,
+      "unit": 8,
+      "readingType": "Assigned"
+    },
+    {
+      "title": "The Raven and We Wear the Mask",
+      "author": "Edgar Allan Poe and Paul Laurence Dunbar",
+      "genre": "Paired performance poetry",
+      "purpose": "Evaluate sound, repetition, persona, concealment, mood, performance choices, and the relationship between page and voice.",
+      "sources": [
+        [
+          "Poetry Foundation · The Raven",
+          "https://www.poetryfoundation.org/poems/48860/the-raven"
+        ],
+        [
+          "Poetry Foundation · We Wear the Mask",
+          "https://www.poetryfoundation.org/poems/44203/we-wear-the-mask"
+        ]
+      ],
+      "week": 23,
+      "unit": 8,
+      "readingType": "Assigned"
+    },
+    {
+      "title": "Teacher-Approved Poem in Translation and Contemporary Performance Pair",
+      "author": "Selected poet and performer",
+      "genre": "Translated and multimedia poetry",
+      "purpose": "Evaluate how translation, delivery, sound, image, captioning, and medium alter interpretation while preserving intellectual fairness.",
+      "sources": [
+        [
+          "English III reading guide",
+          "reading-list.html"
+        ],
+        [
+          "Arshif Reading Room",
+          "https://vervenveda.com/Arshif.github.io/apps/Reading_room_index.html"
+        ]
+      ],
+      "week": 24,
+      "unit": 8,
+      "readingType": "Assigned"
+    },
+    {
+      "title": "The Souls of Black Folk — inquiry-rich excerpt",
+      "author": "W. E. B. Du Bois",
+      "genre": "Literary research anchor text",
+      "purpose": "Transform a broad literary or cultural question into a focused, feasible research plan with subquestions, keywords, scope, and purpose.",
+      "sources": [
+        [
+          "Project Gutenberg · The Souls of Black Folk",
+          "https://www.gutenberg.org/ebooks/408"
+        ]
+      ],
+      "week": 25,
+      "unit": 9,
+      "readingType": "Assigned"
+    },
+    {
+      "title": "Mixed Source Reliability and Bias Set",
+      "author": "Teacher-selected institutional, scholarly, journalistic, advocacy, quantitative, and weak sources",
+      "genre": "Research source set",
+      "purpose": "Use lateral reading to investigate authority, evidence, purpose, currency, corroboration, bias, data quality, and limitations.",
+      "sources": [
+        [
+          "The Verifier · Live Research News",
+          "https://vervenveda.com/theverifier.github.io/apps/Live_Research_News_index.html"
+        ],
+        [
+          "PLERA Search Pro",
+          "https://vervenveda.com/PLERASearch.github.io/apps/PLERA_search_pro_index.html"
+        ]
+      ],
+      "week": 26,
+      "unit": 9,
+      "readingType": "Assigned"
+    },
+    {
+      "title": "Narrative of the Life of Frederick Douglass — selected chapters and scholarship",
+      "author": "Frederick Douglass and teacher-approved secondary sources",
+      "genre": "Primary and secondary source study",
+      "purpose": "Practice traceable notes, accurate paraphrase, citation, source conversation, contextualization, and synthesis without erasing disagreement.",
+      "sources": [
+        [
+          "Library of Congress text",
+          "https://www.loc.gov/resource/lhbcb.25385/?st=text"
+        ],
+        [
+          "Project Gutenberg · Narrative",
+          "https://www.gutenberg.org/ebooks/23"
+        ]
+      ],
+      "week": 27,
+      "unit": 9,
+      "readingType": "Assigned"
+    },
+    {
+      "title": "The Education of Henry Adams — selected excerpt and mentor research writing",
+      "author": "Henry Adams",
+      "genre": "Memoir and research-writing model",
+      "purpose": "Organize complex research by ideas and relationships while maintaining formal voice, coherent source integration, and intellectual transparency.",
+      "sources": [
+        [
+          "Project Gutenberg · The Education of Henry Adams",
+          "https://www.gutenberg.org/ebooks/2044"
+        ]
+      ],
+      "week": 28,
+      "unit": 10,
+      "readingType": "Assigned"
+    },
+    {
+      "title": "Incidents in the Life of a Slave Girl — selected chapters",
+      "author": "Harriet Jacobs",
+      "genre": "Autobiographical narrative",
+      "purpose": "Study complex narrative craft, audience, chronology, scene, reflection, ethical context, and the relationship between lived experience and public argument.",
+      "sources": [
+        [
+          "Project Gutenberg title search",
+          "https://www.gutenberg.org/ebooks/search/?query=Incidents+in+the+Life+of+a+Slave+Girl+Harriet+Jacobs"
+        ]
+      ],
+      "week": 29,
+      "unit": 10,
+      "readingType": "Assigned"
+    },
+    {
+      "title": "Student Research Publication Source Set",
+      "author": "Student-selected, teacher-approved sources",
+      "genre": "Research, narrative, visual, and multimedia sources",
+      "purpose": "Complete a sustained researched analysis, an audience-ready digital publication, and an author reflection with accessible design and ethical attribution.",
+      "sources": [
+        [
+          "PLERA Search Pro",
+          "https://vervenveda.com/PLERASearch.github.io/apps/PLERA_search_pro_index.html"
+        ],
+        [
+          "The Verifier",
+          "https://vervenveda.com/theverifier.github.io/"
+        ],
+        [
+          "English III portfolio",
+          "portfolio/"
+        ]
+      ],
+      "week": 30,
+      "unit": 10,
+      "readingType": "Assigned"
+    },
+    {
+      "title": "A Doll’s House",
+      "author": "Henrik Ibsen",
+      "genre": "Drama",
+      "purpose": "Analyze dramatic structure, stage directions, social pressure, motive, rhetoric, conflict, and how performance choices alter interpretation.",
+      "sources": [
+        [
+          "Project Gutenberg · A Doll’s House",
+          "https://www.gutenberg.org/ebooks/2542"
+        ]
+      ],
+      "week": 31,
+      "unit": 11,
+      "readingType": "Assigned"
+    },
+    {
+      "title": "Antigone — teacher-approved translation",
+      "author": "Sophocles",
+      "genre": "Classical drama in translation",
+      "purpose": "Compare law, conscience, loyalty, authority, tragic structure, translation, staging, and competing interpretations of responsibility.",
+      "sources": [
+        [
+          "Project Gutenberg title search",
+          "https://www.gutenberg.org/ebooks/search/?query=Antigone+Sophocles"
+        ],
+        [
+          "English III reading guide",
+          "reading-list.html"
+        ]
+      ],
+      "week": 32,
+      "unit": 11,
+      "readingType": "Assigned"
+    },
+    {
+      "title": "Frankenstein — opening letters and early chapters",
+      "author": "Mary Shelley",
+      "genre": "Gothic novel",
+      "purpose": "Launch a sustained long-form study by tracking frame narration, ambition, isolation, responsibility, allusion, motif, and scientific context.",
+      "sources": [
+        [
+          "Project Gutenberg · Frankenstein",
+          "https://www.gutenberg.org/ebooks/84"
+        ]
+      ],
+      "week": 33,
+      "unit": 11,
+      "readingType": "Assigned"
+    },
+    {
+      "title": "Frankenstein — middle and later chapters with Prometheus context",
+      "author": "Mary Shelley and a teacher-approved classical source",
+      "genre": "Novel and mythic source pairing",
+      "purpose": "Evaluate character motive, narrative reliability, ethical responsibility, adaptation, allusion, and the development of a global human question.",
+      "sources": [
+        [
+          "Project Gutenberg · Frankenstein",
+          "https://www.gutenberg.org/ebooks/84"
+        ],
+        [
+          "Project Gutenberg · Prometheus search",
+          "https://www.gutenberg.org/ebooks/search/?query=Prometheus"
+        ]
+      ],
+      "week": 34,
+      "unit": 12,
+      "readingType": "Assigned"
+    },
+    {
+      "title": "A Passage to India — selected chapters or approved long-form comparison",
+      "author": "E. M. Forster",
+      "genre": "Global novel",
+      "purpose": "Compare perspective, cultural encounter, ambiguity, setting, institutional power, and the ethical limits of interpretation across a sustained text.",
+      "sources": [
+        [
+          "Project Gutenberg title search",
+          "https://www.gutenberg.org/ebooks/search/?query=A+Passage+to+India+E+M+Forster"
+        ],
+        [
+          "English III reading guide",
+          "reading-list.html"
+        ]
+      ],
+      "week": 35,
+      "unit": 12,
+      "readingType": "Assigned"
+    },
+    {
+      "title": "Student-Selected Long-Form Work, Final Portfolio, and Cumulative Review",
+      "author": "Teacher-approved author",
+      "genre": "Independent long-form study and portfolio",
+      "purpose": "Synthesize advanced reading, writing, rhetoric, research, speaking, publication, revision, and reflection before the final examination and senior-readiness plan.",
+      "sources": [
+        [
+          "English III reading guide",
+          "reading-list.html"
+        ],
+        [
+          "Final portfolio",
+          "portfolio/"
+        ],
+        [
+          "Final examination",
+          "assessments/final/"
+        ]
+      ],
+      "week": 36,
+      "unit": 12,
+      "readingType": "Assigned"
+    }
+  ]
 }
