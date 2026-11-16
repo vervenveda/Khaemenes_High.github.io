@@ -1,4 +1,4 @@
-const CACHE_NAME = "khae-english12-v4-ela-curriculum-20261016-v4-passage72-b132df78-read1-primary1-unit08-unit09-unit10-unit11read-unit12read-unit02read-unit03read-unit04read";
+const CACHE_NAME = "khae-english12-v6-focused-learning-offline-20261115";
 const PRECACHE = ["../../shared/course-entry-contract.js","../../shared/learner-scope-v1.js","../../shared/upper-english-records.js",
   "./404.html",
   "./assessments/diagnostic/index.html",
@@ -109,6 +109,16 @@ const PRECACHE = ["../../shared/course-entry-contract.js","../../shared/learner-
   "./weeks/week-34/index.html",
   "./weeks/week-35/index.html",
   "./weeks/week-36/index.html"
+,
+  "../../shared/english-learning-page-organization-v1.js",
+  "./records/progress-report.html",
+  "./rubrics/product-companion.html",
+  "./offline-reading-pack-weeks-07-12.html",
+  "./offline-reading-pack-weeks-13-18.html",
+  "./offline-reading-pack-weeks-19-24.html",
+  "./offline-reading-pack-weeks-25-30.html",
+  "./offline-reading-pack-weeks-31-36.html",
+  "./units/unit-01/reading-dossier.html"
 ];
 
 self.addEventListener("install", event => {
