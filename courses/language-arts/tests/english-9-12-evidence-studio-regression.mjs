@@ -31,6 +31,10 @@ function mock(grade,learnerId="demo-A",entries=new Map(),simulateStorageFailure=
  const profile=learnerId?{learnerId,name:"Synthetic Learner"}:null;
  const exported=[];
  let printCalls=0;
+ const timers=new Map();let timerId=0;
+ const fakeSetTimeout=fn=>{const id=++timerId;timers.set(id,fn);return id};
+ const fakeClearTimeout=id=>timers.delete(id);
+ const flushTimers=()=>{const pending=[...timers.values()];timers.clear();pending.forEach(fn=>fn())};
  class MockURL extends URL{
   static createObjectURL(blob){exported.push(JSON.parse(blob.parts.join("")));return "blob:synthetic"}
   static revokeObjectURL(){}
@@ -54,9 +58,9 @@ function mock(grade,learnerId="demo-A",entries=new Map(),simulateStorageFailure=
  const win={KhaemenesCourseEntryContract:contract,addEventListener:(type,handler)=>{events[type]=handler},print:()=>{printCalls++}};
  win["ENGLISH_"+grade+"_CURRICULUM"]=curriculum;
  const doc={documentElement:{dataset:{evidenceGrade:String(grade)}},getElementById:key=>nodes[key]||null,querySelector:()=>null,createElement:tag=>new Node(tag),createTextNode:value=>({textContent:value}),body:{append(){}}};
- const sandbox={window:win,document:doc,location:{search:"?week=1"},URL:MockURL,URLSearchParams,Blob:MockBlob,setTimeout};
+ const sandbox={window:win,document:doc,location:{search:"?week=1"},URL:MockURL,URLSearchParams,Blob:MockBlob,setTimeout:fakeSetTimeout,clearTimeout:fakeClearTimeout};
  vm.runInNewContext(js,sandbox,{timeout:2000,filename:"english-evidence-studio-v1.js"});
- return {nodes,entries,storageKey,events,exported,get printCalls(){return printCalls}};
+ return {nodes,entries,storageKey,events,exported,flushTimers,get pendingTimers(){return timers.size},get printCalls(){return printCalls}};
 }
 test("shared engine compiles, never touches official scores or mastery, and preserves VNV/KA layout",()=>{
  new vm.Script(js);
@@ -102,12 +106,13 @@ test("canonical 36-week reading assignments remain present and reused, never cop
 test("four-grade draft, revision, week isolation and challenge visibility",()=>{
  const entries=new Map();
  for(const grade of [9,10,11,12]){
-  const {nodes,storageKey}=mock(grade,"demo-A",entries);
+  const {nodes,storageKey,flushTimers}=mock(grade,"demo-A",entries);
   assert.match(nodes["es-grade-heading"].textContent,new RegExp("English "+grade));
   assert.match(nodes["es-source"].children[0].textContent,/Story 1/);
   nodes["es-claim"].value="An arguable thesis";nodes["es-claim"].handlers.input();
   nodes["es-draft"].value="An original analytical draft";nodes["es-draft"].handlers.input();
   nodes["es-revised"].value="An improved, revised analytical draft";nodes["es-revised"].handlers.input();
+  flushTimers();
   const saved=entries.get(storageKey(prefix+":english-"+grade+":week-01"));
   assert.equal(saved.fields.revised,"An improved, revised analytical draft");
   assert.equal(nodes["es-third-chain"].hidden,grade<11);
@@ -119,8 +124,8 @@ test("four-grade draft, revision, week isolation and challenge visibility",()=>{
 });
 test("learner isolation is strict; anonymous record cannot be saved",()=>{
  const records=new Map();
- const {nodes,storageKey}=mock(11,"demo-A",records);
- nodes["es-claim"].value="Private learner A claim";nodes["es-claim"].handlers.input();
+ const {nodes,storageKey,flushTimers}=mock(11,"demo-A",records);
+ nodes["es-claim"].value="Private learner A claim";nodes["es-claim"].handlers.input();flushTimers();
  assert.ok(records.has(storageKey(prefix+":english-11:week-01")));
  const second=mock(11,"demo-B",records);
  assert.equal(second.nodes["es-claim"].value,"");
@@ -133,9 +138,9 @@ test("learner isolation is strict; anonymous record cannot be saved",()=>{
 test("cross-tab change strictly locks all future saves and exports for the stale record",()=>{
  for(const grade of [9,10,11,12]){
   const entries=new Map();
-  const {nodes,storageKey,events}=mock(grade,"demo-A",entries);
+  const {nodes,storageKey,events,flushTimers}=mock(grade,"demo-A",entries);
   nodes["es-claim"].value="First saved version";
-  nodes["es-claim"].handlers.input();
+  nodes["es-claim"].handlers.input();flushTimers();
   const key=storageKey(prefix+":english-"+grade+":week-01");
   const newer=JSON.parse(JSON.stringify(entries.get(key)));
   newer.fields.claim="Newer version from another tab";
@@ -163,7 +168,7 @@ test("all four grades can export and print an unsaved draft after local storage 
   const session=mock(grade,"demo-A",new Map(),true);
   const {nodes,exported}=session;
   nodes["es-claim"].value="A thesis preserved despite QuotaExceededError";
-  nodes["es-claim"].handlers.input();
+  nodes["es-claim"].handlers.input();session.flushTimers();
   assert.equal(nodes["es-save-status"].dataset.status,"warning");
   nodes["es-export"].handlers.click();
   assert.equal(exported.length,1,"English "+grade+" should create a recovery export");
@@ -189,4 +194,33 @@ test("anonymous learner cannot export or print a student draft",()=>{
  session.nodes["es-print"].handlers.click();
  assert.equal(session.exported.length,0);
  assert.equal(session.printCalls,0);
+});
+
+test("autosave coalesces rapid input and explicit Save flushes immediately across grades",()=>{
+ for(const grade of [9,10,11,12]){
+  const session=mock(grade);
+  const {nodes,entries,storageKey}=session;
+  const key=storageKey(prefix+":english-"+grade+":week-01");
+  nodes["es-claim"].value="first";nodes["es-claim"].handlers.input();
+  nodes["es-claim"].value="second";nodes["es-claim"].handlers.input();
+  nodes["es-claim"].value="final";nodes["es-claim"].handlers.input();
+  assert.equal(session.pendingTimers,1,"Only one debounce timer should remain");
+  assert.equal(entries.has(key),false,"Autosave should not write every keystroke");
+  nodes["es-save"].handlers.click();
+  assert.equal(entries.get(key).fields.claim,"final");
+  assert.equal(session.pendingTimers,0);
+  session.flushTimers();
+  assert.equal(entries.get(key).fields.claim,"final");
+ }
+});
+test("week switch flushes a pending edit before loading another week",()=>{
+ for(const grade of [9,10,11,12]){
+  const session=mock(grade);
+  session.nodes["es-draft"].value="long draft";
+  session.nodes["es-draft"].handlers.input();
+  session.nodes["es-week"].value="2";
+  session.nodes["es-week"].handlers.change();
+  assert.equal(session.entries.get(session.storageKey(prefix+":english-"+grade+":week-01")).fields.draft,"long draft");
+  assert.equal(session.nodes["es-week"].value,"2");
+ }
 });
