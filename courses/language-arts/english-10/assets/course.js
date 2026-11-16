@@ -469,6 +469,17 @@
     return ["Monday","Tuesday","Wednesday","Thursday","Friday"].filter(d=>days[d]).length;
   }
   function average(values){const nums=values.filter(v=>typeof v==="number"&&Number.isFinite(v)&&v>=0&&v<=100);return nums.length?Math.round(nums.reduce((a,b)=>a+b,0)/nums.length):null}
+  function calcReadingStats(){
+    const entries=Array.isArray(state.records?.reading)?state.records.reading:[];
+    const weeks=new Set(entries.map(r=>Number(r.week)).filter(n=>n>=1&&n<=36));
+    const units=new Set(entries.map(r=>Number(r.unit)||(Number(r.week)?Math.ceil(Number(r.week)/3):0)).filter(n=>n>=1&&n<=12));
+    const assigned=entries.filter(r=>String(r.readingType||"").toLowerCase()==="assigned");
+    const independent=entries.filter(r=>String(r.readingType||"").toLowerCase()==="independent");
+    const assignedWeeks=new Set(assigned.map(r=>Number(r.week)).filter(n=>n>=1&&n<=36));
+    const minutes=entries.reduce((sum,r)=>sum+(Number(r.minutes)||0),0);
+    const sourceCounts={};entries.forEach(r=>{const key=String(r.sourceStatus||"Not recorded").trim()||"Not recorded";sourceCounts[key]=(sourceCounts[key]||0)+1});
+    return {entries:entries.length,assignedWeeks:assignedWeeks.size,independent:independent.length,weeks:weeks.size,units:units.size,minutes,sourceCounts};
+  }
   function calcStats(){
     const weekly=Array.from({length:36},(_,i)=>score(weekState(i+1).quiz));
     const units=Array.from({length:12},(_,i)=>score(unitState(i+1).assessment));
@@ -495,7 +506,15 @@
     $$("[data-stat='lessons']").forEach(el=>el.textContent=`${st.lessonPct}%`);
     $$("[data-stat='quiz']").forEach(el=>el.textContent=fmt(st.quizAvg));
     $$("[data-stat='unit']").forEach(el=>el.textContent=fmt(st.unitAvg));
-    $$("[data-stat='grade']").forEach(el=>el.textContent=fmt(st.grade));
+    $("[data-stat='grade']").forEach(el=>el.textContent=fmt(st.grade));
+    const reading=calcReadingStats();
+    $("[data-reading-stat='entries']").forEach(el=>el.textContent=String(reading.entries));
+    $("[data-reading-stat='assigned']").forEach(el=>el.textContent=`${reading.assignedWeeks}/36`);
+    $("[data-reading-stat='independent']").forEach(el=>el.textContent=String(reading.independent));
+    $("[data-reading-stat='minutes']").forEach(el=>el.textContent=reading.minutes?String(reading.minutes):"—");
+    $("[data-reading-stat='weeks']").forEach(el=>el.textContent=`${reading.weeks}/36`);
+    $("[data-reading-stat='units']").forEach(el=>el.textContent=`${reading.units}/12`);
+    $("[data-reading-source-distribution]").forEach(el=>{const parts=Object.entries(reading.sourceCounts).sort((a,b)=>b[1]-a[1]).map(([k,v])=>`${esc(k)}: <strong>${v}</strong>`);el.innerHTML=parts.length?parts.join(" · "):"No reading source types recorded yet.";});
   }
   updateProgress();
 
@@ -572,6 +591,7 @@
 
   // Reading log
   const readBody=$("[data-reading-body]");
+  (()=>{const params=new URLSearchParams(location.search),week=Number(params.get("week")||0);if(!(week>=1&&week<=36))return;const a=window.ELA10_COURSE?.readingAssignments?.find(r=>Number(r.week)===week);if($("#read-week"))$("#read-week").value=String(week);if($("#read-type"))$("#read-type").value="Assigned";if(a&&$("#read-title")&&!$("#read-title").value)$("#read-title").value=a.title||"";if(a&&$("#read-author")&&!$("#read-author").value)$("#read-author").value=a.author||"";})();
   function renderReading(){
     if(!readBody)return;
     readBody.innerHTML=state.records.reading.map((r,i)=>`<tr><td>${esc(r.date)}</td><td>${esc(r.week||"—")}</td><td>${esc(r.unit||"—")}</td><td>${esc(r.readingType||"Unclassified")}</td><td>${esc(r.title)}</td><td>${esc(r.author)}</td><td>${esc(r.sourceStatus||"Not recorded")}</td><td>${esc(r.pages)}</td><td>${esc(r.minutes)}</td><td>${esc(r.response)}</td><td class="no-print"><button class="btn danger" type="button" data-remove-read="${i}">Remove</button></td></tr>`).join("")||`<tr><td colspan="11">No reading entries yet.</td></tr>`;
