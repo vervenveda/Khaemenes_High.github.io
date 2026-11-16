@@ -2,6 +2,7 @@
 
 | Date | Type | Entry | State |
 | --- | --- | --- | --- |
+| 2026-11-16 | audit · test-review · decision | [Algebra I readiness and functionality audit](../courses/mathematics/algebra-1/workflow/logs/2026/11/2026-11-16-readiness-functionality-audit.md) | 13 unit pages reviewed; assessment repetition and persistence risks; browser acceptance HOLD |
 | 2026-11-16 | academic audit, repair, validation | [English 9–12 curriculum alignment audit](logs/2026/11/2026-11-16-english-9-12-curriculum-alignment-audit.md) | Source corrections committed; 138 skill labels and full testing pending |
 | 2026-11-16 | audit, test-review, upgrade-planning | [English 9–12 forensic audit](logs/2026/11/2026-11-16-english-9-12-forensic-audit.md) | Source reviewed; live validation HOLD |
 | 2026-11-16 | setup | Established repository workflow journal | Ready |
