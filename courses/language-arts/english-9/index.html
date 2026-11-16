@@ -262,11 +262,95 @@ body .footer{background:#22231f!important;color:#f7f2e8!important}
   body :is(.portal,.app){min-width:0!important}
 }
 </style>
+
+<style id="khaemenes-english-centered-landing-v1">
+/* KHAEMENES_ENGLISH_CENTERED_LANDING_V1
+   VNV / Khaemenes Academy landing geometry: centered, no side navigation columns. */
+body .shell{width:min(1180px,calc(100% - 32px))!important;margin-inline:auto!important}
+body .hero{min-height:0!important;padding:55px 24px!important;text-align:center!important}
+body .hero-grid{display:block!important;max-width:1040px!important;margin:0 auto!important}
+body .hero-grid>div{max-width:900px!important;margin:0 auto!important}
+body .hero .lead{margin:18px auto!important}
+body .hero .actions{justify-content:center!important}
+body .hero-panel{max-width:900px!important;margin:28px auto 0!important}
+body .stats{grid-template-columns:repeat(4,minmax(0,1fr))!important}
+body .portal,
+body .app{
+  display:block!important;
+  width:min(1180px,calc(100% - 32px))!important;
+  margin:0 auto!important;
+  padding:28px 0 55px!important;
+}
+body .centered-course-controls{
+  position:static!important;
+  width:100%!important;
+  max-width:1040px!important;
+  margin:0 auto 28px!important;
+  padding:20px!important;
+  border:1px solid var(--line)!important;
+  background:#fffdf8!important;
+  border-radius:7px!important;
+  max-height:none!important;
+  overflow:visible!important;
+  text-align:center!important;
+}
+body .centered-course-controls .student-box,
+body .centered-course-controls .studentBox{
+  max-width:760px!important;
+  margin:0 auto 18px!important;
+  border-bottom:1px solid var(--line)!important;
+  padding-bottom:18px!important;
+}
+body .centered-course-controls .inline{
+  grid-template-columns:minmax(0,1fr) auto!important;
+  max-width:620px!important;
+  margin:8px auto 0!important;
+}
+body .centered-course-controls .actions{justify-content:center!important}
+body .centered-course-controls .nav-list,
+body .centered-course-controls .navBox{
+  display:grid!important;
+  grid-template-columns:repeat(3,minmax(0,1fr))!important;
+  gap:10px!important;
+  max-width:900px!important;
+  margin:12px auto!important;
+}
+body .centered-course-controls details.navBox{
+  display:block!important;
+  text-align:left!important;
+}
+body .centered-course-controls .nav-button,
+body .centered-course-controls .navBtn{
+  width:100%!important;
+  justify-content:center!important;
+  text-align:center!important;
+}
+body .main{
+  width:100%!important;
+  max-width:1100px!important;
+  margin:0 auto!important;
+  padding:0!important;
+}
+body .section-head{text-align:center!important;align-items:center!important;justify-content:center!important}
+body .section-head p{margin-inline:auto!important}
+@media(max-width:820px){
+ body .stats{grid-template-columns:repeat(2,minmax(0,1fr))!important}
+ body .centered-course-controls .nav-list,
+ body .centered-course-controls .navBox{grid-template-columns:repeat(2,minmax(0,1fr))!important}
+}
+@media(max-width:560px){
+ body .shell,body .portal,body .app{width:min(100% - 20px,1180px)!important}
+ body .centered-course-controls .nav-list,
+ body .centered-course-controls .navBox,
+ body .stats{grid-template-columns:1fr!important}
+ body .centered-course-controls .inline{grid-template-columns:1fr!important}
+}
+</style>
 </head>
 <body data-english9-require-entry>
 <a class="skip-link" href="#content">Skip to student workspace</a>
 <div class="app">
-<aside class="sidebar" id="landing-navigation" aria-label="Course navigation">
+<section class="centered-course-controls" id="landing-navigation" aria-label="Course navigation and learner controls">
  <div class="brand"><div class="seal">9</div><div><h1>English 9</h1><p>Read · Think · Write</p></div></div>
  <nav class="navBox" aria-label="Student destinations">
   <button class="navBtn active" data-view="dashboard">Home</button>
@@ -292,7 +376,7 @@ body .footer{background:#22231f!important;color:#f7f2e8!important}
   <button class="navBtn" data-view="scope">Supplementary Practice Scope</button>
   <button class="navBtn" data-view="standards">Standards &amp; Sources</button>
  </details>
-</aside>
+</section>
 <main class="main"><header class="hero"><p class="eyebrow">Khaemenes Academy · Language Arts</p><h2 id="mainTitle">Your English workspace</h2><p>One lesson at a time. Read carefully, save your evidence, then revise.</p></header>
 <section id="content" tabindex="-1" aria-label="Student workspace"></section>
 <details class="course-note"><summary>How work and records are saved</summary><p>Work saves in this browser for the selected learner. Export backups regularly. Weekly evidence preparation and evaluator-reviewed mastery are separate. Supplementary practice scores do not replace official weekly writing or assessments.</p><p>Protected sign-in and cross-device synchronization are not connected. Your evaluator reviews academic records before issuing completion credit.</p></details>
