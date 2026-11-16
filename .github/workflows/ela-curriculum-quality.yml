@@ -11,6 +11,7 @@ on:
       - 'tools/validate-upper-english-offline.mjs'
       - 'tools/sync-upper-english-quiz-banks.mjs'
       - 'courses/language-arts/tests/english-9-12-regression.mjs'
+      - 'courses/language-arts/tests/english-9-12-behavioral-continuum.mjs'
       - '.github/workflows/ela-curriculum-quality.yml'
   pull_request:
     paths:
@@ -35,3 +36,4 @@ jobs:
           node tools/validate-ela-curriculum-quality.mjs
           node tools/validate-upper-english-offline.mjs
           node courses/language-arts/tests/english-9-12-regression.mjs
+          node courses/language-arts/tests/english-9-12-behavioral-continuum.mjs
