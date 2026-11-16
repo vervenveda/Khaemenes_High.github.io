@@ -197,6 +197,37 @@ function preserveExportMarker(){
     }
   });
 }
+/* Week 01 independent English 10–12 reading view. No academic records, storage keys,
+   assessment logic, or mastery flags are read or written. */
+function installUpperEnglishReadingView(){
+  if(document.getElementById("khae-upper-english-reading-view"))return;
+  const main=document.querySelector("main");
+  if(!main)return;
+  const tools=document.createElement("nav");
+  tools.id="khae-upper-english-reading-view";
+  tools.setAttribute("aria-label","Lesson reading size");
+  tools.style.cssText="display:flex;justify-content:center;align-items:center;gap:10px;flex-wrap:wrap;margin:18px auto;padding:12px;border:1px solid #c7bba3;border-radius:7px;background:#fff8e9;color:#202724;width:min(940px,calc(100% - 28px));box-sizing:border-box";
+  let scale=1;
+  const status=document.createElement("output");
+  status.setAttribute("aria-live","polite");
+  status.textContent="Reading view 100%";
+  const setScale=n=>{
+    scale=Math.min(1.4,Math.max(1,Math.round(n*10)/10));
+    main.style.zoom=String(scale);
+    status.textContent="Reading view "+Math.round(scale*100)+"%";
+  };
+  const button=(label,description,handler)=>{
+    const el=document.createElement("button");
+    el.type="button";el.textContent=label;el.setAttribute("aria-label",description);
+    el.style.cssText="font:400 16px/1.3 Nunito,Arial,sans-serif;min-height:44px;padding:9px 15px;border:1px solid #202724;border-radius:7px;background:#202724;color:#fff8e9;cursor:pointer";
+    el.addEventListener("click",handler);return el;
+  };
+  tools.append(button("A−","Reduce lesson text size",()=>setScale(scale-.1)),status,
+    button("A+","Enlarge lesson text size",()=>setScale(scale+.1)),
+    button("Reset","Reset lesson text size",()=>setScale(1)));
+  main.insertAdjacentElement("beforebegin",tools);
+}
+
 async function start(){
   if(!document.body)return;
   installTypographyStandard();
@@ -207,7 +238,9 @@ async function start(){
   cleanupKnownFloaters();
   preserveExportMarker();
   const stableDailyEnglish9=/\/english-9\/weeks\/week-01\/day-0[1-5]\/(?:index\.html)?$/i.test(location.pathname);
-  if(!stableDailyEnglish9 && typeof MutationObserver==="function"){
+  const stableDailyUpperEnglish=/\/english-(?:10\/weeks\/week-01\/(?:monday|tuesday|wednesday|thursday|friday)\/(?:index\.html)?|(?:11|12)\/weeks\/week-01\/lessons\/day-0[1-5]\.html)$/i.test(location.pathname);
+  if(stableDailyUpperEnglish)installUpperEnglishReadingView();
+  if(!stableDailyEnglish9 && !stableDailyUpperEnglish && typeof MutationObserver==="function"){
     new MutationObserver(()=>{mountHeader();mountToolbar();cleanupKnownFloaters();preserveExportMarker();scheduleTypography();})
       .observe(document.documentElement,{childList:true,subtree:true});
   }
