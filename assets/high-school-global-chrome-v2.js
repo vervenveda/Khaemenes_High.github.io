@@ -298,7 +298,7 @@ async function start(){
       document.getElementById("vnv333NetworkTicker")&&document.getElementById("vnvTickerAutoPopulate")?"mounted":"partial";
     // The ticker engines mount after the header: recalculate its sticky offset.
     mountHeader(false);
-    window.VNV_ENRICHED_MENU?.mount?.({noButton:true});
+    // VNV_HEADER owns the enriched menu mount; do not repeat its data load.
     document.documentElement.dataset.khaemenesEnglishCanonicalMenu=
       document.getElementById("vnvEnrichedMenuOverlay")?"mounted":"missing";
   }
