@@ -32,7 +32,7 @@
   }catch{}
 
   const continuationSrc="https://vervenveda.com/Khaemenes_High.github.io/courses/shared/high-school-english-continuation.js?v=20261115";
-  if(!window.KhaemenesHighEnglishContinuation && ![...document.scripts].some(s=>String(s.src||"").includes("/courses/shared/high-school-english-continuation.js"))){
+  if(!/\/english-9\/records\/reading-log\.html$/i.test(location.pathname) && !window.KhaemenesHighEnglishContinuation && ![...document.scripts].some(s=>String(s.src||"").includes("/courses/shared/high-school-english-continuation.js"))){
     const continuationScript=document.createElement("script");
     continuationScript.src=continuationSrc;
     continuationScript.defer=true;
