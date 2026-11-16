@@ -539,11 +539,11 @@
   const readBody=$("[data-reading-body]");
   function renderReading(){
     if(!readBody)return;
-    readBody.innerHTML=state.records.reading.map((r,i)=>`<tr><td>${esc(r.date)}</td><td>${esc(r.title)}</td><td>${esc(r.author)}</td><td>${esc(r.pages)}</td><td>${esc(r.minutes)}</td><td>${esc(r.response)}</td><td class="no-print"><button class="btn danger" type="button" data-remove-read="${i}">Remove</button></td></tr>`).join("")||`<tr><td colspan="7">No reading entries yet.</td></tr>`;
+    readBody.innerHTML=state.records.reading.map((r,i)=>`<tr><td>${esc(r.date)}</td><td>${esc(r.week||"—")}</td><td>${esc(r.unit||"—")}</td><td>${esc(r.readingType||"Unclassified")}</td><td>${esc(r.title)}</td><td>${esc(r.author)}</td><td>${esc(r.sourceStatus||"Not recorded")}</td><td>${esc(r.pages)}</td><td>${esc(r.minutes)}</td><td>${esc(r.response)}</td><td class="no-print"><button class="btn danger" type="button" data-remove-read="${i}">Remove</button></td></tr>`).join("")||`<tr><td colspan="11">No reading entries yet.</td></tr>`;
     $$("[data-remove-read]").forEach(b=>b.addEventListener("click",()=>{state.records.reading.splice(Number(b.dataset.removeRead),1);save();renderReading()}));
   }
   $("[data-add-reading]")?.addEventListener("click",()=>{
-    const entry={date:$("#read-date")?.value||today(),title:$("#read-title")?.value||"",author:$("#read-author")?.value||"",pages:$("#read-pages")?.value||"",minutes:$("#read-minutes")?.value||"",response:$("#read-response")?.value||""};
+    const week=Number($("#read-week")?.value||0);const entry={date:$("#read-date")?.value||today(),week:week||"",unit:week?Math.ceil(week/3):Number($("#read-unit")?.value||0)||"",readingType:$("#read-type")?.value||"Assigned",title:$("#read-title")?.value||"",author:$("#read-author")?.value||"",sourceStatus:$("#read-source-status")?.value||"Teacher-approved / lawful source",pages:$("#read-pages")?.value||"",minutes:$("#read-minutes")?.value||"",response:$("#read-response")?.value||""};
     if(!entry.title)return alert("Enter a title.");state.records.reading.push(entry);save();renderReading();
   });renderReading();
 
