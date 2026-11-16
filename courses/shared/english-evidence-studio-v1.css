@@ -57,3 +57,9 @@ body.es-body{margin:0;background:var(--es-parchment);color:var(--es-charcoal);fo
 [hidden]{display:none!important}
 @media(max-width:700px){body.es-body{font-size:16px}.es-panel{padding:18px}.es-hero{padding:30px 0 20px}.es-actions{flex-direction:column}.es-actions a,.es-actions button{width:min(100%,380px)}.es-step-body{padding:12px}.es-field textarea{min-height:120px}}
 @media print{@page{size:letter;margin:.6in}body.es-body{background:white;color:black;font-size:12pt}.es-header,.es-actions,.es-footer,.es-skip,.es-notice,.es-select,.es-status,.es-note,.es-metrics,.es-coaching{display:none!important}.es-shell{width:100%}.es-panel{box-shadow:none;border:1px solid #777;break-inside:avoid;margin:12px 0;padding:13px}.es-steps>details{display:block;border:0;break-inside:avoid}.es-steps>details>.es-step-body{display:block!important}.es-steps>details>summary{display:none}.es-field textarea,.es-field input{border:0;border-bottom:1px solid #aaa;white-space:pre-wrap}.es-hero{padding:4px 0}.es-hero h1{font-size:28px}}
+
+.es-print-content{display:none}
+.es-print-entry{margin:16px 0;padding:8px 0;border-bottom:1px solid #aaa;break-inside:avoid}
+.es-print-entry p{white-space:pre-wrap;overflow-wrap:anywhere;margin:6px 0 12px}
+.es-body strong{font-weight:400;text-decoration:underline;text-decoration-color:var(--es-gold)}
+@media print{.es-steps{display:none!important}.es-print-content{display:block!important;white-space:normal}.es-print-content h2{font-size:25px;text-align:left}.es-print-content h3{font-size:17px;text-align:left}.es-print-entry{break-inside:auto}}
