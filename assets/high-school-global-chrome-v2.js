@@ -140,7 +140,9 @@ function load(src,key){
 function pathGrade(){
   const m=location.pathname.match(/\/grade-(09|10|11|12)(?:\/|$)/i);
   if(m)return m[1];
-  if(/english-9|integrated-science-9|social-studies\/grade-09|grades\/grade-09/i.test(location.pathname))return "09";
+  const english=location.pathname.match(/\/english-(9|10|11|12)(?:\/|$)/i);
+  if(english)return english[1].padStart(2,"0");
+  if(/integrated-science-9|social-studies\/grade-09|grades\/grade-09/i.test(location.pathname))return "09";
   return "";
 }
 function profileHref(){
@@ -250,6 +252,8 @@ function prepareEnglishDailyLegacyChrome(isUpper){
       const hero=document.createElement("section");
       for(const attr of Array.from(old.attributes))hero.setAttribute(attr.name,attr.value);
       hero.classList.add("english-daily-lesson-hero");
+      hero.style.textAlign="center";
+      hero.style.paddingTop="30px";
       hero.setAttribute("aria-label","Lesson introduction and navigation");
       while(old.firstChild)hero.append(old.firstChild);
       old.replaceWith(hero);
