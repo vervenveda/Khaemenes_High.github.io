@@ -1116,7 +1116,7 @@
       "masteryEvidence": "a polished style imitation and analytical note supported by annotations, planning, feedback, revision, and reflection",
       "quiz": [
         {
-          "question": "Layers of meaning may include...",
+          "question": "During Style, Diction, Syntax, and Author Voice, a learner must apply this concept to a fresh text or task. Which option best represents the principle being tested?",
           "choices": [
             "Only setting",
             "Only grammar",
@@ -1125,10 +1125,13 @@
           ],
           "answer": 2,
           "explanation": "Layered analysis moves beyond one surface meaning.",
-          "skill": ""
+          "skill": "",
+          "sourcePrompt": "Layers of meaning may include...",
+          "retrievalMode": "parallel-transfer",
+          "transferContext": "week-05"
         },
         {
-          "question": "Style is created by...",
+          "question": "During Style, Diction, Syntax, and Author Voice, a learner must apply this concept to a fresh text or task. Which option best represents the principle being tested?",
           "choices": [
             "Diction, syntax, grammar, figurative language, and structure",
             "The author’s photo",
@@ -1137,7 +1140,10 @@
           ],
           "answer": 0,
           "explanation": "Style is the effect of language and structure choices.",
-          "skill": ""
+          "skill": "",
+          "sourcePrompt": "Style is created by...",
+          "retrievalMode": "parallel-transfer",
+          "transferContext": "week-05"
         },
         {
           "question": "Which action best demonstrates mastery of Week 05: Style, Diction, Syntax, and Author Voice?",
@@ -2266,7 +2272,7 @@
       "masteryEvidence": "a polished structure evaluation chart supported by annotations, planning, feedback, revision, and reflection",
       "quiz": [
         {
-          "question": "Evaluating text structure means judging...",
+          "question": "While evaluating Essay, speech, or nonfiction text with clear structure/features Include Greco-Roman sources and comparative rhetorical traditions from Asia, Africa, the Middle East, and Indigenous cultures where appropriate., what does it mean to judge the effectiveness of text structure?",
           "choices": [
             "How effectively organization supports meaning and purpose",
             "Only whether the text has headings",
@@ -2275,10 +2281,13 @@
           ],
           "answer": 0,
           "explanation": "Evaluation asks how well structure works.",
-          "skill": ""
+          "skill": "",
+          "sourcePrompt": "Evaluating text structure means judging...",
+          "retrievalMode": "parallel-transfer",
+          "transferContext": "week-11"
         },
         {
-          "question": "Text features can include...",
+          "question": "Which features should a learner examine when deciding how supporting material shapes meaning in Evaluating Text Structures and Features?",
           "choices": [
             "Only rhyme",
             "Only dialogue",
@@ -2287,7 +2296,10 @@
           ],
           "answer": 2,
           "explanation": "Features guide readers through information.",
-          "skill": ""
+          "skill": "",
+          "sourcePrompt": "Text features can include...",
+          "retrievalMode": "parallel-transfer",
+          "transferContext": "week-11"
         },
         {
           "question": "Which action best demonstrates mastery of Week 11: Evaluating Text Structures and Features?",
@@ -2646,7 +2658,7 @@
       "masteryEvidence": "a polished rhetorical device analysis paragraph supported by annotations, planning, feedback, revision, and reflection",
       "quiz": [
         {
-          "question": "Evaluating rhetoric means judging...",
+          "question": "While evaluating persuasion in Speech or essay excerpt with antithesis, rhetorical question, irony, metonymy, synecdoche, asyndeton, or chiasmus Use competing civic, historical, scientific, and public-policy texts with transparent sourcing and varied perspectives., what should a Grade 11 reader judge rather than merely identify?",
           "choices": [
             "Only liking the speech",
             "Only counting paragraphs",
@@ -2655,10 +2667,13 @@
           ],
           "answer": 2,
           "explanation": "Evaluation goes beyond identification.",
-          "skill": ""
+          "skill": "",
+          "sourcePrompt": "Evaluating rhetoric means judging...",
+          "retrievalMode": "parallel-transfer",
+          "transferContext": "week-13"
         },
         {
-          "question": "Which set contains rhetorical devices named for Grade 11 work?",
+          "question": "Which group of rhetorical features would be relevant when analyzing how language shapes audience response in Rhetorical Devices and Figurative Force?",
           "choices": [
             "Irony, rhetorical question, antithesis, metonymy, synecdoche, asyndeton, chiasmus",
             "Only title and subtitle",
@@ -2667,7 +2682,10 @@
           ],
           "answer": 0,
           "explanation": "These devices appear in Grade 11 clarification language.",
-          "skill": ""
+          "skill": "",
+          "sourcePrompt": "Which set contains rhetorical devices named for Grade 11 work?",
+          "retrievalMode": "parallel-transfer",
+          "transferContext": "week-13"
         },
         {
           "question": "Which action best demonstrates mastery of Week 13: Rhetorical Devices and Figurative Force?",
@@ -3216,7 +3234,7 @@
       "masteryEvidence": "a polished rhetorical analysis essay draft supported by annotations, planning, feedback, revision, and reflection",
       "quiz": [
         {
-          "question": "Evaluating rhetoric means judging...",
+          "question": "While evaluating persuasion in Classical or public speech/essay from the unit, what should a Grade 11 reader judge rather than merely identify?",
           "choices": [
             "Only identifying one metaphor",
             "Only liking the speech",
@@ -3225,10 +3243,13 @@
           ],
           "answer": 3,
           "explanation": "Evaluation goes beyond identification.",
-          "skill": ""
+          "skill": "",
+          "sourcePrompt": "Evaluating rhetoric means judging...",
+          "retrievalMode": "parallel-transfer",
+          "transferContext": "week-16"
         },
         {
-          "question": "Which set contains rhetorical devices named for Grade 11 work?",
+          "question": "Which group of rhetorical features would be relevant when analyzing how language shapes audience response in Rhetorical Analysis Essay Workshop?",
           "choices": [
             "Only setting and plot",
             "Irony, rhetorical question, antithesis, metonymy, synecdoche, asyndeton, chiasmus",
@@ -3237,7 +3258,10 @@
           ],
           "answer": 1,
           "explanation": "These devices appear in Grade 11 clarification language.",
-          "skill": ""
+          "skill": "",
+          "sourcePrompt": "Which set contains rhetorical devices named for Grade 11 work?",
+          "retrievalMode": "parallel-transfer",
+          "transferContext": "week-16"
         },
         {
           "question": "Which action best demonstrates mastery of Week 16: Rhetorical Analysis Essay Workshop?",
@@ -3406,7 +3430,7 @@
       "masteryEvidence": "a polished short oral presentation using one rhetorical device supported by annotations, planning, feedback, revision, and reflection",
       "quiz": [
         {
-          "question": "Evaluating rhetoric means judging...",
+          "question": "While evaluating persuasion in Rhetorical texts and seminar questions, what should a Grade 11 reader judge rather than merely identify?",
           "choices": [
             "Only liking the speech",
             "Only counting paragraphs",
@@ -3415,10 +3439,13 @@
           ],
           "answer": 2,
           "explanation": "Evaluation goes beyond identification.",
-          "skill": ""
+          "skill": "",
+          "sourcePrompt": "Evaluating rhetoric means judging...",
+          "retrievalMode": "parallel-transfer",
+          "transferContext": "week-17"
         },
         {
-          "question": "Which set contains rhetorical devices named for Grade 11 work?",
+          "question": "Which group of rhetorical features would be relevant when analyzing how language shapes audience response in Oral Rhetoric and Seminar?",
           "choices": [
             "Irony, rhetorical question, antithesis, metonymy, synecdoche, asyndeton, chiasmus",
             "Only title and subtitle",
@@ -3427,7 +3454,10 @@
           ],
           "answer": 0,
           "explanation": "These devices appear in Grade 11 clarification language.",
-          "skill": ""
+          "skill": "",
+          "sourcePrompt": "Which set contains rhetorical devices named for Grade 11 work?",
+          "retrievalMode": "parallel-transfer",
+          "transferContext": "week-17"
         },
         {
           "question": "Which action best demonstrates mastery of Week 17: Oral Rhetoric and Seminar?",
@@ -3600,7 +3630,7 @@
       "masteryEvidence": "a completed cumulative assessment, corrections log, reflection, and targeted improvement plan",
       "quiz": [
         {
-          "question": "A close reading annotation should identify...",
+          "question": "While analyzing Review packet of literary, informational, rhetorical, and poetry passages, which annotation move would produce useful evidence for Midterm Review and Midterm Test?",
           "choices": [
             "Only the title",
             "Only page numbers",
@@ -3609,10 +3639,13 @@
           ],
           "answer": 2,
           "explanation": "Annotations should help explain meaning.",
-          "skill": ""
+          "skill": "",
+          "sourcePrompt": "A close reading annotation should identify...",
+          "retrievalMode": "parallel-transfer",
+          "transferContext": "week-18"
         },
         {
-          "question": "Paraphrasing grade-level text means...",
+          "question": "While integrating a source into Cumulative midterm examination, corrections analysis, and midyear learning conference, which action counts as an accurate paraphrase?",
           "choices": [
             "Restating accurately in original wording",
             "Changing one word",
@@ -3621,7 +3654,10 @@
           ],
           "answer": 0,
           "explanation": "Paraphrase preserves meaning in new wording.",
-          "skill": ""
+          "skill": "",
+          "sourcePrompt": "Paraphrasing grade-level text means...",
+          "retrievalMode": "parallel-transfer",
+          "transferContext": "week-18"
         },
         {
           "question": "Which action best demonstrates mastery of Week 18: Midterm Review and Midterm Test?",
@@ -3990,7 +4026,7 @@
       "masteryEvidence": "a polished theme and period comparison chart; contextual poetry response supported by annotations, planning, feedback, revision, and reflection",
       "quiz": [
         {
-          "question": "A close reading annotation should identify...",
+          "question": "While analyzing Poems or excerpts from Classical, Medieval, or Renaissance traditions; Poems from British, Colonial/Early National, or Romantic periods Include poetry in translation and works from multiple continents, periods, and oral or written traditions., which annotation move would produce useful evidence for Poetry Across Classical, Medieval, Renaissance, British & Colonial Traditions?",
           "choices": [
             "A meaningful detail, pattern, question, or author choice",
             "The price of a book",
@@ -3999,10 +4035,13 @@
           ],
           "answer": 0,
           "explanation": "Annotations should help explain meaning.",
-          "skill": ""
+          "skill": "",
+          "sourcePrompt": "A close reading annotation should identify...",
+          "retrievalMode": "parallel-transfer",
+          "transferContext": "week-20"
         },
         {
-          "question": "Paraphrasing grade-level text means...",
+          "question": "While integrating a source into Theme and period comparison chart; Contextual poetry response, which action counts as an accurate paraphrase?",
           "choices": [
             "Adding unsupported opinions",
             "Copying exactly",
@@ -4011,7 +4050,10 @@
           ],
           "answer": 2,
           "explanation": "Paraphrase preserves meaning in new wording.",
-          "skill": ""
+          "skill": "",
+          "sourcePrompt": "Paraphrasing grade-level text means...",
+          "retrievalMode": "parallel-transfer",
+          "transferContext": "week-20"
         },
         {
           "question": "Which action best demonstrates mastery of Week 20: Poetry Across Classical, Medieval, Renaissance, British & Colonial Traditions?",
@@ -4180,7 +4222,7 @@
       "masteryEvidence": "a polished mood and issue analysis supported by annotations, planning, feedback, revision, and reflection",
       "quiz": [
         {
-          "question": "Poetry can reflect its time period through...",
+          "question": "While connecting a poem to its historical moment in Realism, Naturalism, Modernism, and Contemporary Poetry, which evidence would be most relevant?",
           "choices": [
             "Only author initials",
             "Only rhyme",
@@ -4189,10 +4231,13 @@
           ],
           "answer": 2,
           "explanation": "Poetry responds to cultural and historical contexts.",
-          "skill": ""
+          "skill": "",
+          "sourcePrompt": "Poetry can reflect its time period through...",
+          "retrievalMode": "parallel-transfer",
+          "transferContext": "week-21"
         },
         {
-          "question": "A literary period is...",
+          "question": "A learner is situating a text historically during Realism, Naturalism, Modernism, and Contemporary Poetry. Which description best explains a literary period?",
           "choices": [
             "A historical/cultural grouping of texts with shared concerns or forms",
             "A punctuation mark",
@@ -4201,7 +4246,10 @@
           ],
           "answer": 0,
           "explanation": "Literary periods help readers contextualize texts.",
-          "skill": ""
+          "skill": "",
+          "sourcePrompt": "A literary period is...",
+          "retrievalMode": "parallel-transfer",
+          "transferContext": "week-21"
         },
         {
           "question": "Which action best demonstrates mastery of Week 21: Realism, Naturalism, Modernism, and Contemporary Poetry?",
@@ -4370,7 +4418,7 @@
       "masteryEvidence": "a polished comparative poetry discussion notes supported by annotations, planning, feedback, revision, and reflection",
       "quiz": [
         {
-          "question": "Contemporaneous authors are...",
+          "question": "Two writers in Comparing Contemporaneous Poets are described as contemporaneous. What does that mean?",
           "choices": [
             "Authors who never published",
             "Authors writing in the same time period",
@@ -4379,10 +4427,13 @@
           ],
           "answer": 1,
           "explanation": "Contemporaries share a historical context.",
-          "skill": ""
+          "skill": "",
+          "sourcePrompt": "Contemporaneous authors are...",
+          "retrievalMode": "parallel-transfer",
+          "transferContext": "week-22"
         },
         {
-          "question": "Comparing authors from the same period should include...",
+          "question": "When comparing writers from the same period during Comparing Contemporaneous Poets, which dimensions should the analysis include?",
           "choices": [
             "Only birth dates",
             "Only title length",
@@ -4391,7 +4442,10 @@
           ],
           "answer": 3,
           "explanation": "Comparative reading connects context and craft.",
-          "skill": ""
+          "skill": "",
+          "sourcePrompt": "Comparing authors from the same period should include...",
+          "retrievalMode": "parallel-transfer",
+          "transferContext": "week-22"
         },
         {
           "question": "Which action best demonstrates mastery of Week 22: Comparing Contemporaneous Poets?",
@@ -4560,7 +4614,7 @@
       "masteryEvidence": "a polished poetry analysis essay draft supported by annotations, planning, feedback, revision, and reflection",
       "quiz": [
         {
-          "question": "Poetry can reflect its time period through...",
+          "question": "While connecting a poem to its historical moment in Poetry Analysis Essay, which evidence would be most relevant?",
           "choices": [
             "Themes, issues, forms, values, diction, and imagery",
             "Only page count",
@@ -4569,10 +4623,13 @@
           ],
           "answer": 0,
           "explanation": "Poetry responds to cultural and historical contexts.",
-          "skill": ""
+          "skill": "",
+          "sourcePrompt": "Poetry can reflect its time period through...",
+          "retrievalMode": "parallel-transfer",
+          "transferContext": "week-23"
         },
         {
-          "question": "A literary period is...",
+          "question": "A learner is situating a text historically during Poetry Analysis Essay. Which description best explains a literary period?",
           "choices": [
             "A book price",
             "A spelling rule",
@@ -4581,7 +4638,10 @@
           ],
           "answer": 2,
           "explanation": "Literary periods help readers contextualize texts.",
-          "skill": ""
+          "skill": "",
+          "sourcePrompt": "A literary period is...",
+          "retrievalMode": "parallel-transfer",
+          "transferContext": "week-23"
         },
         {
           "question": "Which action best demonstrates mastery of Week 23: Poetry Analysis Essay?",
@@ -4750,7 +4810,7 @@
       "masteryEvidence": "a polished oral/digital poetry interpretation supported by annotations, planning, feedback, revision, and reflection",
       "quiz": [
         {
-          "question": "Poetry can reflect its time period through...",
+          "question": "While connecting a poem to its historical moment in Poetry Performance and Digital Interpretation, which evidence would be most relevant?",
           "choices": [
             "Only page count",
             "Only author initials",
@@ -4759,10 +4819,13 @@
           ],
           "answer": 3,
           "explanation": "Poetry responds to cultural and historical contexts.",
-          "skill": ""
+          "skill": "",
+          "sourcePrompt": "Poetry can reflect its time period through...",
+          "retrievalMode": "parallel-transfer",
+          "transferContext": "week-24"
         },
         {
-          "question": "A literary period is...",
+          "question": "A learner is situating a text historically during Poetry Performance and Digital Interpretation. Which description best explains a literary period?",
           "choices": [
             "A spelling rule",
             "A historical/cultural grouping of texts with shared concerns or forms",
@@ -4771,7 +4834,10 @@
           ],
           "answer": 1,
           "explanation": "Literary periods help readers contextualize texts.",
-          "skill": ""
+          "skill": "",
+          "sourcePrompt": "A literary period is...",
+          "retrievalMode": "parallel-transfer",
+          "transferContext": "week-24"
         },
         {
           "question": "Which action best demonstrates mastery of Week 24: Poetry Performance and Digital Interpretation?",
@@ -5130,7 +5196,7 @@
       "masteryEvidence": "a polished source evaluation and relevance notes supported by annotations, planning, feedback, revision, and reflection",
       "quiz": [
         {
-          "question": "Literary research begins with...",
+          "question": "Before collecting sources for Source evaluation and relevance notes, what is the strongest first research move?",
           "choices": [
             "A yes/no answer only",
             "A focused interpretive question about a text or author",
@@ -5139,10 +5205,13 @@
           ],
           "answer": 1,
           "explanation": "Research should serve interpretation.",
-          "skill": ""
+          "skill": "",
+          "sourcePrompt": "Literary research begins with...",
+          "retrievalMode": "parallel-transfer",
+          "transferContext": "week-26"
         },
         {
-          "question": "Primary sources may include...",
+          "question": "A learner needs a primary source for Primary and Secondary Sources. Which option belongs in that category?",
           "choices": [
             "Only student comments",
             "Only encyclopedia summaries",
@@ -5151,7 +5220,10 @@
           ],
           "answer": 3,
           "explanation": "Primary sources come from the period or original creator.",
-          "skill": ""
+          "skill": "",
+          "sourcePrompt": "Primary sources may include...",
+          "retrievalMode": "parallel-transfer",
+          "transferContext": "week-26"
         },
         {
           "question": "Which action best demonstrates mastery of Week 26: Primary and Secondary Sources?",
@@ -5320,7 +5392,7 @@
       "masteryEvidence": "a polished synthesis note cards and integrated paragraph supported by annotations, planning, feedback, revision, and reflection",
       "quiz": [
         {
-          "question": "Literary research begins with...",
+          "question": "Before collecting sources for Synthesis note cards and integrated paragraph, what is the strongest first research move?",
           "choices": [
             "A focused interpretive question about a text or author",
             "A random source list",
@@ -5329,10 +5401,13 @@
           ],
           "answer": 0,
           "explanation": "Research should serve interpretation.",
-          "skill": ""
+          "skill": "",
+          "sourcePrompt": "Literary research begins with...",
+          "retrievalMode": "parallel-transfer",
+          "transferContext": "week-27"
         },
         {
-          "question": "Primary sources may include...",
+          "question": "A learner needs a primary source for Synthesis and Source Integration. Which option belongs in that category?",
           "choices": [
             "Only encyclopedia summaries",
             "Only ads",
@@ -5341,7 +5416,10 @@
           ],
           "answer": 2,
           "explanation": "Primary sources come from the period or original creator.",
-          "skill": ""
+          "skill": "",
+          "sourcePrompt": "Primary sources may include...",
+          "retrievalMode": "parallel-transfer",
+          "transferContext": "week-27"
         },
         {
           "question": "Which action best demonstrates mastery of Week 27: Synthesis and Source Integration?",
@@ -5510,7 +5588,7 @@
       "masteryEvidence": "a polished research-supported literary analysis draft supported by annotations, planning, feedback, revision, and reflection",
       "quiz": [
         {
-          "question": "Literary research begins with...",
+          "question": "Before collecting sources for Research-supported literary analysis draft, what is the strongest first research move?",
           "choices": [
             "A random source list",
             "A copied essay",
@@ -5519,10 +5597,13 @@
           ],
           "answer": 3,
           "explanation": "Research should serve interpretation.",
-          "skill": ""
+          "skill": "",
+          "sourcePrompt": "Literary research begins with...",
+          "retrievalMode": "parallel-transfer",
+          "transferContext": "week-28"
         },
         {
-          "question": "Primary sources may include...",
+          "question": "A learner needs a primary source for Literary Analysis with Research. Which option belongs in that category?",
           "choices": [
             "Only ads",
             "The literary text itself, letters, speeches, journals, or original documents",
@@ -5531,7 +5612,10 @@
           ],
           "answer": 1,
           "explanation": "Primary sources come from the period or original creator.",
-          "skill": ""
+          "skill": "",
+          "sourcePrompt": "Primary sources may include...",
+          "retrievalMode": "parallel-transfer",
+          "transferContext": "week-28"
         },
         {
           "question": "Which action best demonstrates mastery of Week 28: Literary Analysis with Research?",
@@ -5900,7 +5984,7 @@
       "masteryEvidence": "a polished original complex narrative scene; digital presentation storyboard; published/exported project and reflection supported by annotations, planning, feedback, revision, and reflection",
       "quiz": [
         {
-          "question": "A close reading annotation should identify...",
+          "question": "While analyzing Model complex narrative or braided memoir excerpt; Research project and media assets; Final research-supported analysis or narrative Include research and narrative models for academic, civic, workplace, and digital audiences., which annotation move would produce useful evidence for Narrative Perspective, Digital Publication & Presentation?",
           "choices": [
             "Only the title",
             "Only page numbers",
@@ -5909,10 +5993,13 @@
           ],
           "answer": 2,
           "explanation": "Annotations should help explain meaning.",
-          "skill": ""
+          "skill": "",
+          "sourcePrompt": "A close reading annotation should identify...",
+          "retrievalMode": "parallel-transfer",
+          "transferContext": "week-30"
         },
         {
-          "question": "Paraphrasing grade-level text means...",
+          "question": "While integrating a source into Original complex narrative scene; Digital presentation storyboard; Published/exported project and reflection, which action counts as an accurate paraphrase?",
           "choices": [
             "Restating accurately in original wording",
             "Changing one word",
@@ -5921,7 +6008,10 @@
           ],
           "answer": 0,
           "explanation": "Paraphrase preserves meaning in new wording.",
-          "skill": ""
+          "skill": "",
+          "sourcePrompt": "Paraphrasing grade-level text means...",
+          "retrievalMode": "parallel-transfer",
+          "transferContext": "week-30"
         },
         {
           "question": "Which action best demonstrates mastery of Week 30: Narrative Perspective, Digital Publication & Presentation?",
@@ -6090,7 +6180,7 @@
       "masteryEvidence": "a polished drama analysis chart supported by annotations, planning, feedback, revision, and reflection",
       "quiz": [
         {
-          "question": "Juxtaposition is...",
+          "question": "In a fresh passage from Drama scene such as Julius Caesar, Macbeth, Antigone, or another approved play Select drama and long-form works from varied cultures, forms, and historical contexts., two contrasting elements are placed side by side. Which concept best names that move?",
           "choices": [
             "Placing two or more elements side by side to invite comparison or contrast",
             "A citation style",
@@ -6099,10 +6189,13 @@
           ],
           "answer": 0,
           "explanation": "Juxtaposition creates meaning through contrast or comparison.",
-          "skill": ""
+          "skill": "",
+          "sourcePrompt": "Juxtaposition is...",
+          "retrievalMode": "parallel-transfer",
+          "transferContext": "week-31"
         },
         {
-          "question": "Authors may use juxtaposition to define...",
+          "question": "In a fresh passage from Drama scene such as Julius Caesar, Macbeth, Antigone, or another approved play Select drama and long-form works from varied cultures, forms, and historical contexts., two contrasting elements are placed side by side. Which concept best names that move?",
           "choices": [
             "Only the title",
             "Only page numbers",
@@ -6111,7 +6204,10 @@
           ],
           "answer": 2,
           "explanation": "Contrasts can reveal perspective.",
-          "skill": ""
+          "skill": "",
+          "sourcePrompt": "Authors may use juxtaposition to define...",
+          "retrievalMode": "parallel-transfer",
+          "transferContext": "week-31"
         },
         {
           "question": "Which action best demonstrates mastery of Week 31: Drama Study: Juxtaposition, Rhetoric, and Conflict?",
@@ -6660,7 +6756,7 @@
       "masteryEvidence": "a polished theme/motif/perspective tracker supported by annotations, planning, feedback, revision, and reflection",
       "quiz": [
         {
-          "question": "A universal theme is...",
+          "question": "While comparing a new text during Novel Themes, Motifs, and Author Choices, which description best captures a universal theme?",
           "choices": [
             "A single vocabulary word",
             "A broad insight that can apply across time, place, or culture",
@@ -6669,10 +6765,13 @@
           ],
           "answer": 1,
           "explanation": "Universal themes cross contexts.",
-          "skill": ""
+          "skill": "",
+          "sourcePrompt": "A universal theme is...",
+          "retrievalMode": "parallel-transfer",
+          "transferContext": "week-34"
         },
         {
-          "question": "Tracking a theme means...",
+          "question": "A learner wants to trace theme development across Independent novel chapters Encourage a global or cross-cultural comparison in the culminating long-form analysis.. What should that process include?",
           "choices": [
             "Only finding it once",
             "Only using the title",
@@ -6681,7 +6780,10 @@
           ],
           "answer": 3,
           "explanation": "Themes develop over time.",
-          "skill": ""
+          "skill": "",
+          "sourcePrompt": "Tracking a theme means...",
+          "retrievalMode": "parallel-transfer",
+          "transferContext": "week-34"
         },
         {
           "question": "Which action best demonstrates mastery of Week 34: Novel Themes, Motifs, and Author Choices?",
@@ -6850,7 +6952,7 @@
       "masteryEvidence": "a completed cumulative assessment, corrections log, reflection, and targeted improvement plan",
       "quiz": [
         {
-          "question": "A final portfolio should prove...",
+          "question": "When curating evidence for Final Portfolio and Student-Led Conference, what should the final portfolio demonstrate?",
           "choices": [
             "Growth, mastery, revision, evidence, and readiness for senior-level ELA",
             "Only perfect scores",
@@ -6859,10 +6961,13 @@
           ],
           "answer": 0,
           "explanation": "Portfolios show learning over time.",
-          "skill": ""
+          "skill": "",
+          "sourcePrompt": "A final portfolio should prove...",
+          "retrievalMode": "parallel-transfer",
+          "transferContext": "week-35"
         },
         {
-          "question": "A student-led conference should include...",
+          "question": "During Final Portfolio and Student-Led Conference, a learner must apply this concept to a fresh text or task. Which option best represents the principle being tested?",
           "choices": [
             "Only a quiz key",
             "Only a certificate",
@@ -6871,7 +6976,10 @@
           ],
           "answer": 2,
           "explanation": "Students should explain their own learning.",
-          "skill": ""
+          "skill": "",
+          "sourcePrompt": "A student-led conference should include...",
+          "retrievalMode": "parallel-transfer",
+          "transferContext": "week-35"
         },
         {
           "question": "Which action best demonstrates mastery of Week 35: Final Portfolio and Student-Led Conference?",
@@ -7044,7 +7152,7 @@
       "masteryEvidence": "a completed cumulative assessment, corrections log, reflection, and targeted improvement plan",
       "quiz": [
         {
-          "question": "A final portfolio should prove...",
+          "question": "When curating evidence for Final Review and Final Test, what should the final portfolio demonstrate?",
           "choices": [
             "Only perfect scores",
             "Only one test",
@@ -7053,10 +7161,13 @@
           ],
           "answer": 3,
           "explanation": "Portfolios show learning over time.",
-          "skill": ""
+          "skill": "",
+          "sourcePrompt": "A final portfolio should prove...",
+          "retrievalMode": "parallel-transfer",
+          "transferContext": "week-36"
         },
         {
-          "question": "A student-led conference should include...",
+          "question": "During Final Review and Final Test, a learner must apply this concept to a fresh text or task. Which option best represents the principle being tested?",
           "choices": [
             "Only a certificate",
             "Selected artifacts, scores, reflections, and next steps",
@@ -7065,7 +7176,10 @@
           ],
           "answer": 1,
           "explanation": "Students should explain their own learning.",
-          "skill": ""
+          "skill": "",
+          "sourcePrompt": "A student-led conference should include...",
+          "retrievalMode": "parallel-transfer",
+          "transferContext": "week-36"
         },
         {
           "question": "Which action best demonstrates mastery of Week 36: Final Review and Final Test?",
@@ -7239,5 +7353,7 @@
     "Teachers should document text selections, instructional hours, student work, accommodations, assessment results, and local standards crosswalks."
   ],
   "quizBankVersion": "2026-10-16-v4-passage-anchored",
-  "instructionalSpecificityVersion": "v1"
+  "instructionalSpecificityVersion": "v1",
+  "quizDiversityVersion": "v1",
+  "quizDiversityPolicy": "Repeated concepts return through parallel transfer, application, comparison, or error analysis rather than identical recognition prompts."
 }
