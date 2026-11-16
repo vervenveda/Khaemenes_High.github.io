@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow"><meta name="referrer" content="no-referrer">
+<title>Family Learning Records · Khaemenes Academy</title>
+<style>
+:root{font-family:Nunito,"Avenir Next",Arial,sans-serif;color:#242c29;background:#f7f1e5;font-size:18px}
+*{box-sizing:border-box}body{margin:0}header,footer{background:#242c29;color:#fff8eb;padding:24px;text-align:center}
+main{max-width:940px;margin:auto;padding:24px 18px 55px}h1,h2{font-family:Cinzel,Georgia,serif;font-weight:400}
+h1{font-size:clamp(33px,6vw,55px);margin:8px}h2{font-size:24px}
+section{background:#fffdf7;border:1px solid #c5b38c;border-radius:7px;padding:24px;margin:22px 0}
+p,li{line-height:1.65}button,a.action{font:inherit;display:inline-block;padding:12px 20px;margin:5px;border:1px solid #242c29;border-radius:7px;background:#242c29;color:#fff8eb;text-decoration:none;cursor:pointer}
+button:disabled{opacity:.55;cursor:not-allowed}button:focus-visible,a:focus-visible,input:focus-visible{outline:3px solid #aa884a;outline-offset:3px}
+.notice{background:#f0e7d4;padding:16px;border-radius:7px}label{display:block;margin:15px 0;font-size:18px}
+code{overflow-wrap:anywhere}#summary{white-space:pre-wrap;font:16px/1.6 ui-monospace,monospace}
+@media print{header,footer,.actions,.confirmation{display:none!important}body{background:white}section{border:1px solid #aaa}}
+</style></head><body>
+<header><p>KHAEMENES ACADEMY · STUDENT RECORDS</p><h1>Family Learning Archive</h1><p>Local learner-owned evidence · read-only export</p></header>
+<main>
+<section><h2>Protect existing course work</h2>
+<p id="course">Checking selected course…</p>
+<p class="notice">This tool reads only this browser's explicitly learner-tagged course records. It never uploads or emails data. Older records without confirmed ownership are not assigned to a student. This is not a verified transcript or a confirmed cloud backup.</p>
+<p id="identity" role="status"></p><p id="summary"></p>
+<label class="confirmation"><input id="confirm" type="checkbox"> I am the learner or an authorized family adult and will keep this unencrypted export in a private location.</label>
+<div class="actions"><button type="button" id="export" disabled>Download learner evidence (JSON)</button>
+<button type="button" id="print" disabled>Print preservation summary</button>
+<a class="action" id="back" href="../../">Return to course</a></div>
+<p id="status" role="status" aria-live="polite"></p>
+</section>
+<section><h2>Preservation policy</h2>
+<p>Downloaded evidence contains original record values and a SHA-256 integrity checksum where browser support permits. It does not prove identity or authenticate a grade. Never put student exports in a public GitHub repository. Do not delete the original browser storage until a second copy has been checked.</p>
+<p>Secure delivery to approved family recipients and STOS T03 restore are separate future stages; neither is activated by this page.</p></section>
+</main><footer>Khaemenes Academy · Verve N Veda · Private student evidence remains family-controlled</footer>
+<script>
+(()=>{
+"use strict";
+const allowed={
+"mathematics/pre-algebra":["khaemenes-prealgebra-","KHAE_OPEN_PREALGEBRA_FORGE_V2","KHAE_MATH9_PREALGEBRA_","khaemenes-naib-","khaemenes_math_unit"],
+"mathematics/algebra-1":["khaemenes-algebra1-","khaemenes-math-algebra1-readiness-v1"],
+"mathematics/geometry":["khaemenes-geometry-","khaemenes-math-geometry-readiness-v1"],
+"mathematics/algebra-2":["khaemenes-algebra2-","khaemenes-math-algebra2-readiness-v1"],
+"language-arts/english-10":["khae-ela10-state-v1","KA_ENGLISH10_LANDING_V1"],
+"language-arts/english-11":["khae-ela11-state-v1","KA_ENGLISH11_LANDING_V1"],
+"language-arts/english-12":["khae-ela12-state-v1","KA_ENGLISH12_LANDING_V1"],
+"science/integrated-science-9":["khaemenes_science9_","khaemenes_science_units","khaemenes_science_foundations_v1","khaemenes-science9-","khae_science9_","kh_sci9_"],
+"science/biology-10":["khaemenes-biology-10-v1","khae_high_science_evidence_v1:sci-biology-10-","khae:bio10:w04:"],
+"science/chemistry-11":["khaemenes-chemistry-11-v1","khae_high_science_evidence_v1:sci-chemistry-11-"],
+"science/physics-engineering-12":["khaemenes-physics-engineering-12-v1","khae_high_science_evidence_v1:sci-physics-&-engineering-12-"],
+"social-studies/social-studies-10":["KHAE_SS10_USH_CLEAN_PORTAL_V1"],
+"social-studies/social-studies-11":["KHAE_SS11_GLE_CIVIC_LEDGER_V1"],
+"social-studies/social-studies-12":["KHAE_SS12_GPIR_OBSERVATORY_V1"]
+};
+const $=id=>document.getElementById(id),key=new URLSearchParams(location.search).get("course")||"";
+const courseOK=Object.prototype.hasOwnProperty.call(allowed,key);
+const registry=()=>{try{return JSON.parse(localStorage.getItem("khaemenes_family_registry_v1")||"null")}catch{return null}};
+let learnerId="";
+try{learnerId=JSON.parse(localStorage.getItem("khaemenes_active_learner_v1")||"null")||""}catch{}
+const entry=typeof learnerId==="string"?registry()?.learners?.[learnerId]:null;
+const owned=!!(entry&&entry.learnerId===learnerId);
+const ownerSuffix=owned?":learner:"+encodeURIComponent(learnerId):"";
+const prefixes=allowed[key]||[];
+const matches=k=>prefixes.some(p=>k===p||k.startsWith(p));
+const included=[],unattributed=[];
+if(courseOK&&owned){try{
+for(let i=0;i<localStorage.length;i++){
+const k=localStorage.key(i);if(!k||!matches(k))continue;
+if(!k.endsWith(ownerSuffix)){if(!k.includes(":learner:"))unattributed.push(k);continue}
+const raw=localStorage.getItem(k);if(raw===null)continue;
+let parsed;try{parsed=JSON.parse(raw)}catch{parsed=null}
+if(parsed&&typeof parsed==="object"&&Array.isArray(parsed.students)){
+if(parsed.students.length!==1||!parsed.students[0]||String(parsed.activeId)!==String(parsed.students[0].id)){unattributed.push(k);continue}
+}
+included.push({storageKey:k,rawValue:raw});
+}
+}catch(e){$("status").textContent="Browser storage could not be read: "+e.message}}
+$("course").textContent=courseOK?"Course: "+key.replaceAll("/"," · "):"This course does not yet have a verified export allowlist. No evidence will be exported.";
+$("identity").textContent=owned?"Selected Academy learner found on this device. This selection is browser-local and not independently authenticated.":"No valid active Academy learner is selected on this browser. Export is unavailable.";
+$("summary").textContent="Learner-scoped records eligible for export: "+included.length+"\nUnattributed legacy records withheld: "+unattributed.length+"\nOther learners' records: excluded";
+const enabled=courseOK&&owned&&included.length>0;
+$("back").href=courseOK?"../../"+key+"/":"../../";
+function toggle(){$("export").disabled=!("confirm").checked||!enabled;$("print").disabled=!("confirm").checked||!courseOK||!owned}
+$("confirm").addEventListener("change",toggle);toggle();
+$("print").addEventListener("click",()=>{if(!$("print").disabled)window.print()});
+$("export").addEventListener("click",async()=>{
+if($("export").disabled)return;
+const id=JSON.parse(localStorage.getItem("khaemenes_active_learner_v1")||"null");
+if(id!==learnerId){$("status").textContent="Learner selection changed. Reload before exporting.";return}
+const payload={schema:"khaemenes-high-family-evidence-v1",course:key,learnerId,exportedAt:new Date().toISOString(),classification:"browser-local-unverified",encrypted:false,cloudBackedUp:false,records:included,unattributedCount:unattributed.length};
+const data=JSON.stringify(payload,null,2);
+let sha256=null;try{const b=await crypto.subtle.digest("SHA-256",new TextEncoder().encode(data));sha256=Array.from(new Uint8Array(b),n=>n.toString(16).padStart(2,"0")).join("")}catch{}
+const result=JSON.stringify({integrity:{algorithm:sha256?"SHA-256":"unavailable",sha256,appliesTo:"payload",note:"Hash confirms bytes, not learner identity or transcript authenticity."},payload},null,2);
+const blob=new Blob([result],{type:"application/json"}),url=URL.createObjectURL(blob),a=document.createElement("a");a.href=url;a.download="Khaemenes_"+key.replaceAll("/","_")+"_learner-evidence_"+new Date().toISOString().slice(0,10)+".json";a.click();setTimeout(()=>URL.revokeObjectURL(url),10000);
+$("status").textContent="Download requested. Verify the file exists in Downloads before relying on it as a backup.";
+});
+})();
+</script></body></html>
