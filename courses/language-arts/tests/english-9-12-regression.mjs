@@ -11,6 +11,13 @@ const read=p=>fs.readFileSync(p,"utf8");
 const json=p=>JSON.parse(read(p));
 const grades=[9,10,11,12];
 const expectedRoles={9:"foundation",10:"intermediate",11:"advanced",12:"senior_scholar"};
+const globalChrome=path.resolve(languageArts,"..","..","assets","high-school-global-chrome-v2.js");
+const globalChromeSource=read(globalChrome);
+assert.match(globalChromeSource,/khaemenesHighTypography="16-33-66"/,"global typography contract marker missing");
+assert.match(globalChromeSource,/font-size","16px","important"/,"global 16px readable floor missing");
+assert.match(globalChromeSource,/font-size:33px!important/,"global 33px heading rule missing");
+assert.match(globalChromeSource,/font-size:66px!important/,"global 66px primary-title rule missing");
+
 
 function duplicateIds(html){
   const ids=[...html.matchAll(/\bid="([^"]+)"/g)].map(m=>m[1]);
@@ -119,6 +126,9 @@ for(const grade of grades){
     assert.ok(exists(wp),"missing English "+grade+" week "+week);
     const wh=read(wp);
     assert.equal(duplicateIds(wh).length,0,"duplicate IDs English "+grade+" week "+week);
+    const hasCourseCss=/assets\/course\.css/i.test(wh);
+    const hasGlobalTypography=/high-school-global-chrome-v2\.js/i.test(wh);
+    assert.ok(hasCourseCss||hasGlobalTypography,"typography enforcement path missing English "+grade+" week "+week);
   }
 
   for(const kind of ["diagnostic","midterm","final"]){
