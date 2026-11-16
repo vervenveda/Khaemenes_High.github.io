@@ -45,6 +45,122 @@ function injectStyles(){
 #${PANEL_ID} :focus-visible{outline:3px solid #b48b45;outline-offset:3px}
 body.khae-english-focus-view main :is(.phase,.card,.lesson-day,.text-passage){max-width:850px;margin-inline:auto}
 body.khae-english-focus-view main :is(p,blockquote,li){line-height:1.85}
+/* VNV/KA symmetric lesson layout, scoped to identified daily learning routes.
+   Long readings remain left aligned inside centered cards for readability. */
+body.khae-english-symmetric-lesson{--khae-lesson-max:1000px;--khae-lesson-gap:16px}
+body.khae-english-symmetric-lesson main{
+  width:min(100%,var(--khae-lesson-max));
+  max-width:var(--khae-lesson-max);
+  min-width:0;
+  margin-inline:auto;
+  padding-inline:clamp(12px,2.5vw,24px);
+  box-sizing:border-box;
+}
+body.khae-english-symmetric-lesson main :is(.wrap,.daily-shell){
+  max-width:100%;
+  min-width:0;
+  margin-inline:auto;
+  box-sizing:border-box;
+}
+body.khae-english-symmetric-lesson :is(.daily-hero,.hero,.english-daily-lesson-hero){
+  text-align:center;
+  margin-inline:auto;
+}
+body.khae-english-symmetric-lesson :is(.daily-hero,.hero,.english-daily-lesson-hero) :is(p,h1,h2,h3){
+  margin-inline:auto;
+  text-align:center;
+}
+body.khae-english-symmetric-lesson :is(.daily-crumbs,.daily-nav,.daily-top,.daily-actions,.lesson-toolbar){
+  justify-content:center;
+  text-align:center;
+}
+body.khae-english-symmetric-lesson main :is(.phase,.daily-tool,.daily-finish,.daily-notice,.daily-index,.card,.ela10-w01-studio,.lesson-day){
+  min-width:0;
+  max-width:100%;
+  width:100%;
+  margin-inline:auto;
+  box-sizing:border-box;
+  border-radius:7px;
+}
+body.khae-english-symmetric-lesson main :is(.phase,.daily-tool,.daily-finish,.card,.ela10-w01-studio,.lesson-day)>:is(h2,h3){
+  text-align:center;
+  margin-inline:auto;
+  margin-bottom:12px;
+}
+body.khae-english-symmetric-lesson main :is(.grid,.ela10-w01-grid){
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:var(--khae-lesson-gap);
+  align-items:stretch;
+  width:100%;
+  max-width:100%;
+  margin-inline:auto;
+}
+body.khae-english-symmetric-lesson main :is(.grid,.ela10-w01-grid)>*{
+  min-width:0;
+  width:100%;
+  height:100%;
+  margin:0;
+  box-sizing:border-box;
+}
+body.khae-english-symmetric-lesson main :is(.grid,.ela10-w01-grid)>:is(.card,.field,section,article,div){
+  display:flex;
+  flex-direction:column;
+}
+body.khae-english-symmetric-lesson main :is(.grid,.ela10-w01-grid)>* :is(textarea,.writing-field){
+  max-width:100%;
+}
+body.khae-english-symmetric-lesson main :is(.grid,.ela10-w01-grid)>* textarea{
+  width:100%;
+  box-sizing:border-box;
+}
+body.khae-english-symmetric-lesson main :is(.text-passage,.quote,.model,[class*="reading-passage"],[aria-label="Original daily short story"]){
+  width:100%;
+  max-width:74ch;
+  margin-inline:auto;
+  text-align:left;
+}
+body.khae-english-symmetric-lesson main :is(.text-passage,.quote,.model,[class*="reading-passage"]) :is(p,li,blockquote),
+body.khae-english-symmetric-lesson main :is(.phase,.card,.lesson-day) :is(p,li,blockquote){
+  text-align:left;
+  overflow-wrap:anywhere;
+}
+body.khae-english-symmetric-lesson main :is(.daily-actions,.actions,nav[aria-label="Lesson navigation"]){
+  display:flex;
+  justify-content:center;
+  flex-wrap:wrap;
+  gap:10px;
+}
+body.khae-english-symmetric-lesson main :is(input,textarea,select,button,.btn,.daily-action){
+  min-height:44px;
+  max-width:100%;
+  box-sizing:border-box;
+}
+body.khae-english-symmetric-lesson main :is(p,li,label,span,small,summary,a,button,input,textarea,select,option,caption,figcaption,td,th,legend,output),
+body.khae-english-symmetric-lesson :is(.daily-crumbs,.daily-eyebrow,.practice-feedback,.daily-footer,.tag,.return){
+  font-size:max(16px,1em)!important;
+}
+body.khae-english-symmetric-lesson #vnv333NetworkTicker :is(.vnv333-label,a,.vnv333-control),
+body.khae-english-symmetric-lesson #vnvTickerAutoPopulate :is(.vnv-ticker-label,a,.vnv-ticker-control),
+body.khae-english-symmetric-lesson #vnvHeaderAutoPopulate :is(a,button,small,.vnv-header-title,.vnv-header-subtitle),
+body.khae-english-symmetric-lesson #vnvEnrichedMenuOverlay :is(a,button,small,strong,.vnv-menu-subgroup-title){
+  font-size:16px!important;
+}
+body.khae-english-symmetric-lesson #vnv333NetworkTicker,
+body.khae-english-symmetric-lesson #vnvTickerAutoPopulate{min-height:36px}
+body.khae-english-symmetric-lesson main h1,
+body.khae-english-symmetric-lesson main h2,
+body.khae-english-symmetric-lesson main h3{font-weight:400;overflow-wrap:anywhere}
+body.khae-english-symmetric-lesson main :is(img,video,iframe,svg){max-width:100%}
+@media(max-width:720px){
+  body.khae-english-symmetric-lesson main :is(.grid,.ela10-w01-grid){grid-template-columns:minmax(0,1fr)}
+  body.khae-english-symmetric-lesson{--khae-lesson-gap:12px}
+}
+@media print{
+  body.khae-english-symmetric-lesson main{width:100%;max-width:none}
+  body.khae-english-symmetric-lesson main :is(.grid,.ela10-w01-grid){display:block}
+  body.khae-english-symmetric-lesson main :is(.grid,.ela10-w01-grid)>*{height:auto;margin-block:12px}
+}
 @media(max-width:650px){#${PANEL_ID}{margin:14px 10px;padding:15px}#${PANEL_ID} .khae-engine-map{grid-template-columns:1fr}}
 @media print{#${PANEL_ID}{display:none!important}}
 `;
@@ -108,6 +224,7 @@ function mount(){
   const main=document.querySelector("main");if(!main)return null;
   const existing=document.getElementById(PANEL_ID);if(existing)return existing;
   injectStyles();
+  document.body.classList.add("khae-english-symmetric-lesson");
   renderOptInContent(main);
   const panel=document.createElement("section");
   panel.id=PANEL_ID;panel.setAttribute("aria-label","Shared English lesson navigation and study view");
@@ -138,6 +255,6 @@ function mount(){
   document.documentElement.dataset.khaeEnglishUnifiedGrade=String(info.grade);
   return panel;
 }
-window[API]=Object.freeze({version:"1.0.0",route,mount});
+window[API]=Object.freeze({version:"1.1.0",route,mount});
 if(document.readyState==="loading")document.addEventListener("DOMContentLoaded",mount,{once:true});else mount();
 })();
