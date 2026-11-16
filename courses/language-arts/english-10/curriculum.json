@@ -7069,5 +7069,631 @@
   "quizBankVersion": "2026-10-16-v4-passage-anchored",
   "instructionalSpecificityVersion": "v1",
   "quizDiversityVersion": "v1",
-  "quizDiversityPolicy": "Repeated concepts return through parallel transfer, application, comparison, or error analysis rather than identical recognition prompts."
+  "quizDiversityPolicy": "Repeated concepts return through parallel transfer, application, comparison, or error analysis rather than identical recognition prompts.",
+  "readingAssignments": [
+    {
+      "title": "The Story of an Hour",
+      "author": "Kate Chopin",
+      "genre": "Short fiction",
+      "purpose": "Establish a diagnostic baseline by tracing inference, evidence, and the gap between appearance and realization.",
+      "sources": [
+        [
+          "Project Gutenberg search",
+          "https://www.gutenberg.org/ebooks/search/?query=The+Story+of+an+Hour+Kate+Chopin"
+        ]
+      ],
+      "week": 1,
+      "unit": 1,
+      "readingType": "Assigned"
+    },
+    {
+      "title": "The Open Window",
+      "author": "Saki",
+      "genre": "Short fiction",
+      "purpose": "Practice purposeful annotation, inference, reliability, and the significance of carefully selected details.",
+      "sources": [
+        [
+          "Project Gutenberg · Beasts and Super-Beasts",
+          "https://www.gutenberg.org/ebooks/269"
+        ]
+      ],
+      "week": 2,
+      "unit": 1,
+      "readingType": "Assigned"
+    },
+    {
+      "title": "Civil Disobedience — selected excerpt",
+      "author": "Henry David Thoreau",
+      "genre": "Essay",
+      "purpose": "Practice accurate paraphrase, concise summary, attribution, and ethical independent source use.",
+      "sources": [
+        [
+          "Project Gutenberg search",
+          "https://www.gutenberg.org/ebooks/search/?query=Civil+Disobedience+Henry+David+Thoreau"
+        ]
+      ],
+      "week": 3,
+      "unit": 1,
+      "readingType": "Assigned"
+    },
+    {
+      "title": "A White Heron",
+      "author": "Sarah Orne Jewett",
+      "genre": "Short fiction",
+      "purpose": "Analyze how setting, conflict, point of view, and style work together to create layered meaning.",
+      "sources": [
+        [
+          "Project Gutenberg search",
+          "https://www.gutenberg.org/ebooks/search/?query=A+White+Heron+Sarah+Orne+Jewett"
+        ]
+      ],
+      "week": 4,
+      "unit": 2,
+      "readingType": "Assigned"
+    },
+    {
+      "title": "The Red Badge of Courage — selected chapters",
+      "author": "Stephen Crane",
+      "genre": "Novel excerpt",
+      "purpose": "Trace character growth, conflicting motives, disillusionment, and movement from innocence toward experience.",
+      "sources": [
+        [
+          "Project Gutenberg · The Red Badge of Courage",
+          "https://www.gutenberg.org/ebooks/73"
+        ]
+      ],
+      "week": 5,
+      "unit": 2,
+      "readingType": "Assigned"
+    },
+    {
+      "title": "The Lady, or the Tiger?",
+      "author": "Frank R. Stockton",
+      "genre": "Short fiction",
+      "purpose": "Compare competing perspectives and explain how ambiguity, bias, and point of view shape interpretation.",
+      "sources": [
+        [
+          "Project Gutenberg search",
+          "https://www.gutenberg.org/ebooks/search/?query=The+Lady+or+the+Tiger+Frank+R+Stockton"
+        ]
+      ],
+      "week": 6,
+      "unit": 2,
+      "readingType": "Assigned"
+    },
+    {
+      "title": "The Necklace and The Gift of the Magi",
+      "author": "Guy de Maupassant and O. Henry",
+      "genre": "Paired short fiction",
+      "purpose": "Compare how different authors develop universal themes through conflict, irony, choice, and consequence.",
+      "sources": [
+        [
+          "Project Gutenberg · The Necklace search",
+          "https://www.gutenberg.org/ebooks/search/?query=The+Necklace+Guy+de+Maupassant"
+        ],
+        [
+          "Project Gutenberg · The Four Million",
+          "https://www.gutenberg.org/ebooks/2776"
+        ]
+      ],
+      "week": 7,
+      "unit": 3,
+      "readingType": "Assigned"
+    },
+    {
+      "title": "The Fall of the House of Usher",
+      "author": "Edgar Allan Poe",
+      "genre": "Gothic short fiction",
+      "purpose": "Study diction, syntax, cadence, imagery, voice, and tone, then imitate style without copying content.",
+      "sources": [
+        [
+          "Project Gutenberg search",
+          "https://www.gutenberg.org/ebooks/search/?query=The+Fall+of+the+House+of+Usher+Edgar+Allan+Poe"
+        ]
+      ],
+      "week": 8,
+      "unit": 3,
+      "readingType": "Assigned"
+    },
+    {
+      "title": "The Cask of Amontillado",
+      "author": "Edgar Allan Poe",
+      "genre": "Short fiction",
+      "purpose": "Develop a formal literary analysis with a defensible thesis, integrated evidence, sustained commentary, and revision.",
+      "sources": [
+        [
+          "Project Gutenberg search",
+          "https://www.gutenberg.org/ebooks/search/?query=The+Cask+of+Amontillado+Edgar+Allan+Poe"
+        ]
+      ],
+      "week": 9,
+      "unit": 3,
+      "readingType": "Assigned"
+    },
+    {
+      "title": "Gettysburg Address",
+      "author": "Abraham Lincoln",
+      "genre": "Historical speech",
+      "purpose": "Trace central ideas, structure, compression, historical context, and the relationship between evidence and conclusion.",
+      "sources": [
+        [
+          "U.S. National Archives",
+          "https://www.archives.gov/milestone-documents/gettysburg-address"
+        ]
+      ],
+      "week": 10,
+      "unit": 4,
+      "readingType": "Assigned"
+    },
+    {
+      "title": "Ain’t I a Woman? — teacher-approved transcript",
+      "author": "Sojourner Truth",
+      "genre": "Historical speech",
+      "purpose": "Analyze rhetorical situation, audience, purpose, appeals, repetition, and the complications of historical transcription.",
+      "sources": [
+        [
+          "Library of Congress resource guide",
+          "https://guides.loc.gov/sojourner-truth"
+        ],
+        [
+          "Library of Congress source",
+          "https://www.loc.gov/item/29025244/"
+        ]
+      ],
+      "week": 11,
+      "unit": 4,
+      "readingType": "Assigned"
+    },
+    {
+      "title": "What to the Slave Is the Fourth of July? — selected excerpt",
+      "author": "Frederick Douglass",
+      "genre": "Historical speech",
+      "purpose": "Evaluate how language, structure, and appeals serve purpose and audience rather than merely naming devices.",
+      "sources": [
+        [
+          "Library of Congress newspaper source",
+          "https://www.loc.gov/resource/sn84026366/1852-07-09/ed-1/?dl=page&sp=2"
+        ]
+      ],
+      "week": 12,
+      "unit": 4,
+      "readingType": "Assigned"
+    },
+    {
+      "title": "Federalist No. 10 and Brutus I — selected excerpts",
+      "author": "James Madison and Brutus",
+      "genre": "Opposing civic arguments",
+      "purpose": "Compare claims, assumptions, evidence, reasoning, validity, and rhetorical effectiveness without distortion.",
+      "sources": [
+        [
+          "Yale Avalon Project · Federalist No. 10",
+          "https://avalon.law.yale.edu/18th_century/fed10.asp"
+        ],
+        [
+          "English II reading list",
+          "reading-list.html"
+        ]
+      ],
+      "week": 13,
+      "unit": 5,
+      "readingType": "Assigned"
+    },
+    {
+      "title": "Common Sense and Letters from a Farmer in Pennsylvania — excerpts",
+      "author": "Thomas Paine and John Dickinson",
+      "genre": "Political essays",
+      "purpose": "Build a responsible written argument using credible evidence, qualification, counterclaim, and rebuttal.",
+      "sources": [
+        [
+          "Project Gutenberg · Common Sense",
+          "https://www.gutenberg.org/ebooks/147"
+        ],
+        [
+          "Project Gutenberg · John Dickinson search",
+          "https://www.gutenberg.org/ebooks/search/?query=Letters+from+a+Farmer+in+Pennsylvania+John+Dickinson"
+        ]
+      ],
+      "week": 14,
+      "unit": 5,
+      "readingType": "Assigned"
+    },
+    {
+      "title": "Lincoln–Douglas Debates — selected exchange",
+      "author": "Abraham Lincoln and Stephen A. Douglas",
+      "genre": "Debate transcript",
+      "purpose": "Practice oral argument, active listening, questioning, rebuttal, clarity, civility, and evidence-based response.",
+      "sources": [
+        [
+          "Project Gutenberg · Debates, Volume 3",
+          "https://www.gutenberg.org/ebooks/2655"
+        ],
+        [
+          "Project Gutenberg · Debates, Volume 4",
+          "https://www.gutenberg.org/ebooks/2656"
+        ]
+      ],
+      "week": 15,
+      "unit": 5,
+      "readingType": "Assigned"
+    },
+    {
+      "title": "Self-Reliance and Civil Disobedience — selected excerpts",
+      "author": "Ralph Waldo Emerson and Henry David Thoreau",
+      "genre": "Paired essays",
+      "purpose": "Synthesize complementary and contrasting source ideas around a coherent controlling idea.",
+      "sources": [
+        [
+          "Project Gutenberg · Self-Reliance search",
+          "https://www.gutenberg.org/ebooks/search/?query=Self-Reliance+Ralph+Waldo+Emerson"
+        ],
+        [
+          "Project Gutenberg · Civil Disobedience search",
+          "https://www.gutenberg.org/ebooks/search/?query=Civil+Disobedience+Henry+David+Thoreau"
+        ]
+      ],
+      "week": 16,
+      "unit": 6,
+      "readingType": "Assigned"
+    },
+    {
+      "title": "Student Writing Portfolio and Mentor Sentences",
+      "author": "Student and teacher-selected models",
+      "genre": "Writing portfolio",
+      "purpose": "Diagnose recurring convention, vocabulary, fluency, and style patterns, then document purposeful revision.",
+      "sources": [
+        [
+          "English II portfolio",
+          "portfolio/"
+        ],
+        [
+          "English II rubrics",
+          "rubrics/"
+        ]
+      ],
+      "week": 17,
+      "unit": 6,
+      "readingType": "Assigned"
+    },
+    {
+      "title": "Midyear Unfamiliar Passage Set",
+      "author": "Teacher-selected public-domain authors",
+      "genre": "Cumulative literary and informational reading",
+      "purpose": "Transfer semester skills to unfamiliar texts, correct errors, and establish evidence-based next-step goals.",
+      "sources": [
+        [
+          "English II cumulative midterm",
+          "assessments/midterm/"
+        ],
+        [
+          "Course reading list",
+          "reading-list.html"
+        ]
+      ],
+      "week": 18,
+      "unit": 6,
+      "readingType": "Assigned"
+    },
+    {
+      "title": "Because I could not stop for Death and I heard a Fly buzz—when I died—",
+      "author": "Emily Dickinson",
+      "genre": "Poetry",
+      "purpose": "Separate speaker from poet and support more than one defensible interpretation of image, voice, and ambiguity.",
+      "sources": [
+        [
+          "Poetry Foundation · Dickinson",
+          "https://www.poetryfoundation.org/poets/emily-dickinson"
+        ]
+      ],
+      "week": 19,
+      "unit": 7,
+      "readingType": "Assigned"
+    },
+    {
+      "title": "The Raven and We Wear the Mask",
+      "author": "Edgar Allan Poe and Paul Laurence Dunbar",
+      "genre": "Paired poetry",
+      "purpose": "Explain how imagery, connotation, figurative language, repetition, and sound accumulate to create mood.",
+      "sources": [
+        [
+          "Poetry Foundation · The Raven",
+          "https://www.poetryfoundation.org/poems/48860/the-raven"
+        ],
+        [
+          "Poetry Foundation · We Wear the Mask",
+          "https://www.poetryfoundation.org/poems/44203/we-wear-the-mask"
+        ]
+      ],
+      "week": 20,
+      "unit": 7,
+      "readingType": "Assigned"
+    },
+    {
+      "title": "Sonnet 73 and a selected Dickinson lyric",
+      "author": "William Shakespeare and Emily Dickinson",
+      "genre": "Paired poetry",
+      "purpose": "Compare how form, rhythm, sound, lineation, and structural turns reinforce or complicate meaning.",
+      "sources": [
+        [
+          "Poetry Foundation · Sonnet 73",
+          "https://www.poetryfoundation.org/poems/45099/sonnet-73-that-time-of-year-thou-mayst-in-me-behold"
+        ],
+        [
+          "Poetry Foundation · Emily Dickinson",
+          "https://www.poetryfoundation.org/poets/emily-dickinson"
+        ]
+      ],
+      "week": 21,
+      "unit": 7,
+      "readingType": "Assigned"
+    },
+    {
+      "title": "Daedalus and Icarus from Metamorphoses",
+      "author": "Ovid",
+      "genre": "Classical myth",
+      "purpose": "Identify archetype, cultural value, conflict, etymology, source patterns, and later literary allusions.",
+      "sources": [
+        [
+          "Project Gutenberg search",
+          "https://www.gutenberg.org/ebooks/search/?query=Metamorphoses+Ovid+Daedalus+Icarus"
+        ]
+      ],
+      "week": 22,
+      "unit": 8,
+      "readingType": "Assigned"
+    },
+    {
+      "title": "The Parable of the Prodigal Son and a teacher-approved adaptation",
+      "author": "Traditional sacred text and later adapter",
+      "genre": "Religious source and adaptation",
+      "purpose": "Practice respectful literary analysis by distinguishing textual comparison from theological judgment.",
+      "sources": [
+        [
+          "Project Gutenberg · King James Bible",
+          "https://www.gutenberg.org/ebooks/10"
+        ],
+        [
+          "Course reading list",
+          "reading-list.html"
+        ]
+      ],
+      "week": 23,
+      "unit": 8,
+      "readingType": "Assigned"
+    },
+    {
+      "title": "Pygmalion from Metamorphoses and Pygmalion",
+      "author": "Ovid and George Bernard Shaw",
+      "genre": "Classical source and drama",
+      "purpose": "Evaluate what an adaptation preserves, changes, omits, or emphasizes for a new medium, audience, and purpose.",
+      "sources": [
+        [
+          "Project Gutenberg · Ovid search",
+          "https://www.gutenberg.org/ebooks/search/?query=Pygmalion+Ovid+Metamorphoses"
+        ],
+        [
+          "Project Gutenberg · Pygmalion by Shaw",
+          "https://www.gutenberg.org/ebooks/3825"
+        ]
+      ],
+      "week": 24,
+      "unit": 8,
+      "readingType": "Assigned"
+    },
+    {
+      "title": "The Souls of Black Folk — selected inquiry-rich excerpt",
+      "author": "W. E. B. Du Bois",
+      "genre": "Essay",
+      "purpose": "Turn broad curiosity into a focused research question, subquestions, keywords, scope, purpose, and feasible plan.",
+      "sources": [
+        [
+          "Project Gutenberg · The Souls of Black Folk",
+          "https://www.gutenberg.org/ebooks/408"
+        ]
+      ],
+      "week": 25,
+      "unit": 9,
+      "readingType": "Assigned"
+    },
+    {
+      "title": "Mixed Source Reliability Set",
+      "author": "Teacher-selected institutional, journalistic, scholarly, advocacy, and weak sources",
+      "genre": "Research source set",
+      "purpose": "Use lateral reading to investigate authorship, evidence, purpose, currency, corroboration, bias, and limitations.",
+      "sources": [
+        [
+          "The Verifier · Live Research News",
+          "https://vervenveda.com/theverifier.github.io/apps/Live_Research_News_index.html"
+        ],
+        [
+          "PLERA Search Pro",
+          "https://vervenveda.com/PLERASearch.github.io/apps/PLERA_search_pro_index.html"
+        ]
+      ],
+      "week": 26,
+      "unit": 9,
+      "readingType": "Assigned"
+    },
+    {
+      "title": "Narrative of the Life of Frederick Douglass — selected chapters and scholarship",
+      "author": "Frederick Douglass and teacher-approved secondary sources",
+      "genre": "Primary and secondary sources",
+      "purpose": "Practice traceable notes, accurate paraphrase, signal phrases, citation, attribution, and synthesis.",
+      "sources": [
+        [
+          "Library of Congress text",
+          "https://www.loc.gov/resource/lhbcb.25385/?st=text"
+        ],
+        [
+          "Project Gutenberg · Narrative",
+          "https://www.gutenberg.org/ebooks/23"
+        ]
+      ],
+      "week": 27,
+      "unit": 9,
+      "readingType": "Assigned"
+    },
+    {
+      "title": "The Education of Henry Adams — selected excerpt and research models",
+      "author": "Henry Adams",
+      "genre": "Memoir and mentor research writing",
+      "purpose": "Organize research by ideas and relationships while maintaining a formal explanatory voice and coherent source integration.",
+      "sources": [
+        [
+          "Project Gutenberg · The Education of Henry Adams",
+          "https://www.gutenberg.org/ebooks/2044"
+        ]
+      ],
+      "week": 28,
+      "unit": 10,
+      "readingType": "Assigned"
+    },
+    {
+      "title": "The Jungle — selected excerpt with reform-era sources",
+      "author": "Upton Sinclair and teacher-approved historical sources",
+      "genre": "Novel excerpt and source set",
+      "purpose": "Develop an evidence-based research argument while distinguishing literary depiction, historical documentation, and later interpretation.",
+      "sources": [
+        [
+          "Project Gutenberg · The Jungle",
+          "https://www.gutenberg.org/ebooks/140"
+        ],
+        [
+          "Library of Congress search",
+          "https://www.loc.gov/search/?q=Upton+Sinclair+The+Jungle"
+        ]
+      ],
+      "week": 29,
+      "unit": 10,
+      "readingType": "Assigned"
+    },
+    {
+      "title": "How the Other Half Lives — selected chapters and visual evidence",
+      "author": "Jacob Riis",
+      "genre": "Investigative nonfiction",
+      "purpose": "Translate research into an ethical digital publication using precise captions, contextualized evidence, and audience-aware design.",
+      "sources": [
+        [
+          "Project Gutenberg search",
+          "https://www.gutenberg.org/ebooks/search/?query=How+the+Other+Half+Lives+Jacob+Riis"
+        ],
+        [
+          "Library of Congress · Jacob Riis",
+          "https://www.loc.gov/pictures/collection/riis/"
+        ]
+      ],
+      "week": 30,
+      "unit": 10,
+      "readingType": "Assigned"
+    },
+    {
+      "title": "A Doll’s House",
+      "author": "Henrik Ibsen",
+      "genre": "Drama",
+      "purpose": "Analyze dramatic structure, stage directions, conflict, social expectations, and how performance choices change interpretation.",
+      "sources": [
+        [
+          "Project Gutenberg · A Doll’s House",
+          "https://www.gutenberg.org/ebooks/2542"
+        ]
+      ],
+      "week": 31,
+      "unit": 11,
+      "readingType": "Assigned"
+    },
+    {
+      "title": "Macbeth — selected acts and performance comparison",
+      "author": "William Shakespeare",
+      "genre": "Tragedy",
+      "purpose": "Interpret Shakespearean language, rhetoric, ambition, irony, and the relationship between text and performance.",
+      "sources": [
+        [
+          "Project Gutenberg search",
+          "https://www.gutenberg.org/ebooks/search/?query=Macbeth+William+Shakespeare"
+        ],
+        [
+          "Folger Shakespeare Library",
+          "https://www.folger.edu/explore/shakespeares-works/macbeth/"
+        ]
+      ],
+      "week": 32,
+      "unit": 11,
+      "readingType": "Assigned"
+    },
+    {
+      "title": "The Importance of Being Earnest",
+      "author": "Oscar Wilde",
+      "genre": "Comedy of manners",
+      "purpose": "Study wit, irony, dramatic pacing, social criticism, characterization, and purposeful oral performance.",
+      "sources": [
+        [
+          "Project Gutenberg · The Importance of Being Earnest",
+          "https://www.gutenberg.org/ebooks/844"
+        ]
+      ],
+      "week": 33,
+      "unit": 11,
+      "readingType": "Assigned"
+    },
+    {
+      "title": "The Great Gatsby",
+      "author": "F. Scott Fitzgerald",
+      "genre": "American novel",
+      "purpose": "Begin a sustained novel study by tracing narration, symbolism, social context, aspiration, and unreliable self-presentation.",
+      "sources": [
+        [
+          "Project Gutenberg · The Great Gatsby",
+          "https://www.gutenberg.org/ebooks/64317"
+        ],
+        [
+          "Course reading list",
+          "reading-list.html"
+        ]
+      ],
+      "week": 34,
+      "unit": 12,
+      "readingType": "Assigned"
+    },
+    {
+      "title": "The House of Mirth — selected chapters or approved novel comparison",
+      "author": "Edith Wharton",
+      "genre": "American novel",
+      "purpose": "Compare social pressure, agency, perspective, setting, and the development of a universal theme across a long-form text.",
+      "sources": [
+        [
+          "Project Gutenberg · The House of Mirth",
+          "https://www.gutenberg.org/ebooks/284"
+        ],
+        [
+          "Course reading list",
+          "reading-list.html"
+        ]
+      ],
+      "week": 35,
+      "unit": 12,
+      "readingType": "Assigned"
+    },
+    {
+      "title": "Student-Selected Novel, Final Portfolio, and Cumulative Review",
+      "author": "Teacher-approved author",
+      "genre": "Independent novel study and portfolio",
+      "purpose": "Synthesize the year’s reading, writing, research, speaking, revision, and reflection evidence before the final examination.",
+      "sources": [
+        [
+          "English II reading list",
+          "reading-list.html"
+        ],
+        [
+          "Final portfolio",
+          "portfolio/"
+        ],
+        [
+          "Final examination",
+          "assessments/final/"
+        ]
+      ],
+      "week": 36,
+      "unit": 12,
+      "readingType": "Assigned"
+    }
+  ]
 }
