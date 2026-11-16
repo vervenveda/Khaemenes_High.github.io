@@ -81,16 +81,16 @@ The machine-readable authority map is:
 
 English 9 midterm and final now use the shared high-school assessment infrastructure with a fixed-form policy:
 
-- existing midterm bank preserved at 12 items;
-- existing final bank preserved at 16 items;
-- existing answer keys preserved exactly;
+- English 9 midterm expanded to 30 unique objective items while preserving the fixed-form correction model;
+- English 9 final expanded to 50 unique objective items while preserving the fixed-form correction model;
+- original passage-based items were retained and supplemented with unit-aligned cumulative reserve items;
 - closed-book objective assessment;
 - 80% objective mastery target;
 - learner-scoped attempt history and best-score retention;
 - same question and answer order on correction attempt;
 - writing remains separate and human-reviewed.
 
-The shared Monte Carlo engine now supports optional `openFixedSession`; its default randomized behavior is unchanged for existing Grade 10–12 assessments.
+The shared Monte Carlo engine continues to support optional `openFixedSession`; its default randomized behavior remains unchanged for Grades 10–12. English 10 cumulative banks are now duplicate-free at 30/50, English 11 retains its strong unique cumulative banks, and English 12 was rebuilt to 30/30 unique midterm prompts and 50/50 unique final prompts sampled across its own curriculum.
 
 This resolves the runtime gap without forcing English 9 into reshuffled retries.
 
