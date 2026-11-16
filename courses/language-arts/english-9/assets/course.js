@@ -109,18 +109,44 @@
   const load=()=>{try{return JSON.parse(localStorage.getItem(courseKey)||"{}")}catch{return {}}};
   const save=data=>{try{localStorage.setItem(courseKey,JSON.stringify(data))}catch{}};
   const progress=load();
-  document.querySelectorAll("[data-progress-key]").forEach(button=>{
-    if(button.dataset.managedProgress==="week1"||button.dataset.managedProgress==="week3"||button.dataset.managedProgress==="week4"||button.dataset.managedProgress==="week5"||button.dataset.managedProgress==="week6"||button.dataset.managedProgress==="week7"||button.dataset.managedProgress==="week8"||button.dataset.managedProgress==="week9"||button.dataset.managedProgress==="week10"||button.dataset.managedProgress==="week11"||button.dataset.managedProgress==="week12"||button.dataset.managedProgress==="week13")return;
-    const key=button.dataset.progressKey;
+  function grade9EvidenceReady(button){
+    const key=button.dataset.progressKey||"";
+    const match=key.match(/^week-(\d+)$/);
+    if(!match)return {ready:Boolean(progress[key]),completeFields:0,totalFields:0};
+    const week=Number(match[1]);
+    const weekToken=String(week).padStart(2,"0");
+    const fields=[...document.querySelectorAll("[data-save-field]")].filter(field=>{
+      const id=String(field.dataset.saveField||"");
+      return id.includes("week-"+weekToken)||id.includes("week-"+week+"-");
+    });
+    const meaningful=fields.filter(field=>String(field.value||"").trim().length>=20);
+    const minRequired=Math.min(3,fields.length);
+    return {ready:fields.length>0&&meaningful.length>=minRequired,completeFields:meaningful.length,totalFields:fields.length,minRequired};
+  }
+  function syncGrade9EvidenceButton(button){
+    const key=button.dataset.progressKey||"";
+    const managed=/^week(?:1|3|4|5|6|7|8|9|10|11|12|13)$/.test(String(button.dataset.managedProgress||""));
+    if(managed)return;
+    const status=grade9EvidenceReady(button);
+    if(key.startsWith("week-")){
+      progress[key]=Boolean(status.ready);save(progress);
+      button.disabled=true;
+      button.setAttribute("aria-pressed",String(status.ready));
+      button.textContent=status.ready?"Evidence prepared ✓":`Evidence needed · ${status.completeFields}/${status.minRequired||status.totalFields||1} written records`;
+      button.title="Evidence-prepared status is derived from substantive learner work already saved on this page.";
+      return;
+    }
     const on=Boolean(progress[key]);
     button.setAttribute("aria-pressed",String(on));
-    const prepared=button.dataset.evidenceOnly==="true" || key.startsWith("week-");
-    button.textContent=on?(prepared?"Evidence prepared ✓":"Completed ✓"):(prepared?"Mark Evidence Prepared":"Mark Complete");
+    button.textContent=on?"Completed ✓":"Mark Complete";
+  }
+  document.querySelectorAll("[data-progress-key]").forEach(button=>{
+    syncGrade9EvidenceButton(button);
+    if(button.disabled)return;
+    const key=button.dataset.progressKey;
     button.addEventListener("click",()=>{
       progress[key]=!progress[key];save(progress);
-      button.setAttribute("aria-pressed",String(progress[key]));
-      button.textContent=progress[key]?(prepared?"Evidence prepared ✓":"Completed ✓"):(prepared?"Mark Evidence Prepared":"Mark Complete");
-      updateProgress();
+      syncGrade9EvidenceButton(button);updateProgress();
     });
   });
   function updateProgress(){
@@ -138,7 +164,7 @@
     if(field.dataset.managedSave==="week1"||field.dataset.managedSave==="week2"||field.dataset.managedSave==="week3"||field.dataset.managedSave==="week4"||field.dataset.managedSave==="week5"||field.dataset.managedSave==="week6"||field.dataset.managedSave==="week7"||field.dataset.managedSave==="week8"||field.dataset.managedSave==="week9"||field.dataset.managedSave==="week10"||field.dataset.managedSave==="week11"||field.dataset.managedSave==="week12"||field.dataset.managedSave==="week13")return;
     const key=scopedKey(`khae-ela9-field:${field.dataset.saveField}`);
     try{field.value=localStorage.getItem(key)||""}catch{}
-    field.addEventListener("input",()=>{try{localStorage.setItem(key,field.value)}catch{}});
+    field.addEventListener("input",()=>{try{localStorage.setItem(key,field.value)}catch{};document.querySelectorAll("[data-progress-key]").forEach(syncGrade9EvidenceButton);updateProgress();});
   });
   document.querySelectorAll("[data-print]").forEach(button=>button.addEventListener("click",()=>window.print()));
   document.querySelectorAll("[data-clear-field]").forEach(button=>button.addEventListener("click",()=>{
