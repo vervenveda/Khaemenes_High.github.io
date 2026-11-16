@@ -72,6 +72,12 @@ for(const grade of grades){
     assert.doesNotMatch(oh,/<link\s+[^>]*rel=["']?stylesheet/i,"offline companion "+range+" has external stylesheet dependency English "+grade);
   }
   assert.ok(exists(path.join(root,"records","reading-log.html")),"reading log missing English "+grade);
+  const progressReport=path.join(root,"records","progress-report.html");
+  assert.ok(exists(progressReport),"student progress report missing English "+grade);
+  const prh=read(progressReport);
+  assert.match(prh,/@media\s*\([^)]*max-width/i,"responsive progress-report rule missing English "+grade);
+  assert.match(prh,/@media\s+print/i,"print progress-report rule missing English "+grade);
+  assert.match(prh,/Gradebook|gradebook\.html/i,"gradebook return path missing English "+grade);
 
   const css=read(path.join(root,"assets","course.css"));
   assert.match(css,/KHAEMENES_ENGLISH_RELEASE_TYPOGRAPHY_V1/,"release typography override missing English "+grade);
