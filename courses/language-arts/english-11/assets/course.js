@@ -444,6 +444,26 @@
     return ["Monday","Tuesday","Wednesday","Thursday","Friday"].filter(d=>days[d]).length;
   }
   function average(values){const nums=values.filter(v=>typeof v==="number"&&Number.isFinite(v)&&v>=0&&v<=100);return nums.length?Math.round(nums.reduce((a,b)=>a+b,0)/nums.length):null}
+  function calcReadingStats(){
+    const entries=Array.isArray(state.records?.reading)?state.records.reading:[];
+    const canonical=window.ENGLISH_11_CURRICULUM?.readingAssignments||[];
+    const weekSet=new Set(entries.map(r=>Number(r.week)).filter(n=>n>=1&&n<=36));
+    const unitSet=new Set(entries.map(r=>Number(r.unit)||(Number(r.week)?Math.ceil(Number(r.week)/3):0)).filter(n=>n>=1&&n<=12));
+    const assigned=entries.filter(r=>String(r.readingType||"").toLowerCase()==="assigned");
+    const independent=entries.filter(r=>String(r.readingType||"").toLowerCase()==="independent");
+    const assignedWeeks=new Set(assigned.map(r=>Number(r.week)).filter(n=>n>=1&&n<=36));
+    const minutes=entries.reduce((sum,r)=>sum+(Number(r.minutes)||0),0);
+    const sourceCounts={};
+    entries.forEach(r=>{const key=String(r.sourceStatus||"Not recorded").trim()||"Not recorded";sourceCounts[key]=(sourceCounts[key]||0)+1});
+    const canonicalMatches=assigned.filter(r=>{
+      const w=Number(r.week), expected=canonical.find(x=>Number(x.week)===w);
+      if(!expected)return false;
+      const norm=s=>String(s||"").toLowerCase().replace(/[^a-z0-9]+/g," ").trim();
+      return norm(r.title)===norm(expected.title);
+    }).length;
+    return {entries:entries.length,assigned:assigned.length,independent:independent.length,weeks:weekSet.size,units:unitSet.size,assignedWeeks:assignedWeeks.size,minutes,sourceCounts,canonicalMatches};
+  }
+
   function calcStats(){
     const weekly=Array.from({length:36},(_,i)=>score(weekState(i+1).quiz));
     const units=Array.from({length:12},(_,i)=>score(unitState(i+1).assessment));
@@ -470,7 +490,19 @@
     $$("[data-stat='lessons']").forEach(el=>el.textContent=`${st.lessonPct}%`);
     $$("[data-stat='quiz']").forEach(el=>el.textContent=fmt(st.quizAvg));
     $$("[data-stat='unit']").forEach(el=>el.textContent=fmt(st.unitAvg));
-    $$("[data-stat='grade']").forEach(el=>el.textContent=fmt(st.grade));
+    $("[data-stat='grade']").forEach(el=>el.textContent=fmt(st.grade));
+    const reading=calcReadingStats();
+    $("[data-reading-stat='entries']").forEach(el=>el.textContent=String(reading.entries));
+    $("[data-reading-stat='assigned']").forEach(el=>el.textContent=`${reading.assignedWeeks}/36`);
+    $("[data-reading-stat='independent']").forEach(el=>el.textContent=String(reading.independent));
+    $("[data-reading-stat='minutes']").forEach(el=>el.textContent=reading.minutes?String(reading.minutes):"—");
+    $("[data-reading-stat='weeks']").forEach(el=>el.textContent=`${reading.weeks}/36`);
+    $("[data-reading-stat='units']").forEach(el=>el.textContent=`${reading.units}/12`);
+    $("[data-reading-source-distribution]").forEach(el=>{
+      const parts=Object.entries(reading.sourceCounts).sort((a,b)=>b[1]-a[1]).map(([k,v])=>`${esc(k)}: <strong>${v}</strong>`);
+      el.innerHTML=parts.length?parts.join(" · "):"No reading source types recorded yet.";
+    });
+    $("[data-reading-development-note]").forEach(el=>el.textContent=`${reading.entries} reading entr${reading.entries===1?"y":"ies"} · ${reading.assignedWeeks} assigned weeks represented · ${reading.independent} independent reading entr${reading.independent===1?"y":"ies"} · ${reading.units} units represented`);
   }
   updateProgress();
 
@@ -547,6 +579,17 @@
 
   // Reading log
   const readBody=$("[data-reading-body]");
+  function prefillCanonicalReading(){
+    const params=new URLSearchParams(location.search), week=Number(params.get("week")||0);
+    if(!(week>=1&&week<=36))return;
+    const assignment=window.ENGLISH_11_CURRICULUM?.readingAssignments?.find(r=>Number(r.week)===week);
+    const weekField=$("#read-week"), titleField=$("#read-title"), authorField=$("#read-author"), typeField=$("#read-type");
+    if(weekField)weekField.value=String(week);
+    if(typeField)typeField.value="Assigned";
+    if(assignment&&titleField&&!titleField.value)titleField.value=assignment.title||"";
+    if(assignment&&authorField&&!authorField.value)authorField.value=assignment.author||"";
+  }
+  prefillCanonicalReading();
   function renderReading(){
     if(!readBody)return;
     readBody.innerHTML=state.records.reading.map((r,i)=>`<tr><td>${esc(r.date)}</td><td>${esc(r.week||"—")}</td><td>${esc(r.unit||"—")}</td><td>${esc(r.readingType||"Unclassified")}</td><td>${esc(r.title)}</td><td>${esc(r.author)}</td><td>${esc(r.sourceStatus||"Not recorded")}</td><td>${esc(r.pages)}</td><td>${esc(r.minutes)}</td><td>${esc(r.response)}</td><td class="no-print"><button class="btn danger" type="button" data-remove-read="${i}">Remove</button></td></tr>`).join("")||`<tr><td colspan="11">No reading entries yet.</td></tr>`;
