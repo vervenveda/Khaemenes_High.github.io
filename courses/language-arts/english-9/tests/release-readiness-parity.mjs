@@ -30,6 +30,15 @@ assert.match(css,/KHAEMENES_ENGLISH_RELEASE_TYPOGRAPHY_V1/,"canonical typography
 assert.match(css,/font-size:\s*16px\s*!important/,"16px release body rule missing");
 assert.match(css,/\.eyebrow[\s\S]*?font-size:\s*14px\s*!important/,"14px eyebrow release rule missing");
 
+const authority=JSON.parse(read("UNIT_ASSESSMENT_AUTHORITY_MAP.json"));
+assert.equal(authority.unitAssessments.length,12,"expected 12 canonical unit assessment routes");
+for(let u=1;u<=12;u++){
+  const ap=path.join(root,"assessments","unit-"+pad(u),"index.html");
+  assert.ok(fs.existsSync(ap),"missing canonical unit assessment "+u);
+  const html=fs.readFileSync(ap,"utf8");
+  assert.match(html,/Mastery threshold:<\/strong> 8\/10 \(80%\)/,"unit mastery threshold drift "+u);
+  assert.match(html,/human evaluator review/i,"human-review authority missing "+u);
+}
 const manifest=JSON.parse(read("02_course_mastery_manifest.json"));
 assert.equal(manifest.mastery.threshold,0.8,"mastery threshold drift");
 assert.equal(manifest.mastery.completionGrantsMastery,false,"completion must not grant mastery");
@@ -37,4 +46,4 @@ assert.equal(manifest.courseUnits,12);
 assert.equal(manifest.weeks,36);
 assert.equal(manifest.dailyBlocks,180);
 
-console.log("PASS English 9 release readiness: 12 units, 36 weeks, evidence alignment, duplicate-ID scan, typography contract, and mastery governance.");
+console.log("PASS English 9 release readiness + canonical unit-assessment topology: 12 units, 36 weeks, evidence alignment, duplicate-ID scan, typography contract, and mastery governance.");

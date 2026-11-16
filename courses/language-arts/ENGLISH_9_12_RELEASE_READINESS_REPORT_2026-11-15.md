@@ -59,30 +59,23 @@ The test guards:
 - completion ≠ mastery
 - 12 / 36 / 180 course-shape contract
 
-## HOLD · English 9 unit-assessment topology
+## REPAIRED · English 9 unit-assessment topology
 
-English 9 currently has:
-- diagnostic
-- midterm
-- final
-- portfolio/human-reviewed unit products
-- unit reading-response rubrics
+English 9 now exposes twelve stable canonical assessment routes:
 
-It does **not** currently have the twelve canonical `assessments/unit-01` through `unit-12` routes present in English 10–12.
+`assessments/unit-01/` through `assessments/unit-12/`.
 
-This is a real topology difference, not merely a broken link.
+These routes do not invent a second assessment system. They point to the existing evaluator-reviewed Scholarly Demonstrations and final-week mastery sections already embedded in the course.
 
-### Why it was not auto-generated in the cleanup commit
+- Units 01–04 → dedicated final-day Scholarly Demonstration pages.
+- Units 05–12 → final-week `#assessment` mastery sections.
+- Mastery remains 8/10 (80%) after evaluator review.
+- Below mastery, the learner revises the weakest criterion and resubmits.
+- Completion controls do not grant mastery.
+- No automatic Monte Carlo reshuffle was introduced into these human-reviewed products.
 
-Creating twelve new canonical unit assessments changes assessment authority and requires a deliberate decision about:
-- fixed retry versus Monte Carlo reshuffle
-- objective-question count and bank depth
-- attempt-history storage
-- learner scoping
-- correction/reassessment behavior
-- relationship between objective checks and human-reviewed major products
-
-The release contract explicitly forbids presentation cleanup from silently changing assessment authority.
+The machine-readable authority map is:
+`english-9/UNIT_ASSESSMENT_AUTHORITY_MAP.json`.
 
 ## HOLD · assessment runtime parity
 
@@ -110,7 +103,7 @@ The visible offline reading pack remains named for Weeks 01–06 in each course.
 **Governance consolidation:** PASS  
 **Verified presentation cleanup:** PASS  
 **Unit evidence alignment:** PASS  
-**Assessment topology parity:** HOLD  
+**Assessment topology parity:** PASS  
 **Deep regression parity:** HOLD  
 **Full offline reading-package parity:** HOLD
 
