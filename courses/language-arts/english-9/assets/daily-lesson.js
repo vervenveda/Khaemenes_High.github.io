@@ -42,9 +42,11 @@
  if(hub){indexUpdate();window.addEventListener("storage",indexUpdate);}
  if(!day)return;
  var profile=getProfile(),id=profile?profile.learnerId:null;
- var identity=localStorage.getItem("khaemenes_active_learner_v1");
+ var identity=null;
+ try{identity=localStorage.getItem("khaemenes_active_learner_v1");}
+ catch(e){/* Continue in read-only mode; no learner record is modified. */}
  var r=profile&&contract&&contract.readJSON?contract.readJSON("khaemenes-english9-readiness-v1",null,profile):null;
- var ready=!!(profile&&contract&&contract.isReady&&contract.isReady(r,["close_reading_evidence","language_conventions","source_argument"],"english-9"));
+ var ready=!!(identity!==null&&profile&&contract&&contract.isReady&&contract.isReady(r,["close_reading_evidence","language_conventions","source_argument"],"english-9"));
  var status=document.getElementById("daily-status");
  var gate=document.getElementById("daily-gate");
  var fields=Array.from(document.querySelectorAll("[data-save-field]"));
