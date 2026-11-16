@@ -193,7 +193,37 @@ for(const field of fieldNames){
 weekSelect.addEventListener("change",()=>loadWeek(Number(weekSelect.value)));
 $("es-save").addEventListener("click",()=>{for(const field of fieldNames)if(fields[field])record.fields[field]=fields[field].value.slice(0,30000);modified=true;save()});
 $("es-export").addEventListener("click",exportPacket);
-$("es-print").addEventListener("click",()=>{if(modified&&!save())return;window.print()});
+function buildPrintablePortfolio(){
+ const host=$("es-print-evidence");
+ if(!host)return;
+ host.replaceChildren();
+ addText("h2","English "+grade+" · Reading-to-Writing Evidence Studio · Week "+String(currentWeek).padStart(2,"0"),host);
+ addText("p","Assigned reading: "+(getAssignment(currentWeek)?.title||"Teacher-selected text"),host);
+ addText("p","This is a learner draft and revision record, not an academic grade or mastery certificate.",host);
+ const labels=[
+  ["Claim or thesis","claim"],["Source and edition notes","sourceNotes"],
+  ["Evidence 1","evidence1"],["Source locator 1","locator1"],["Reasoning 1","reason1"],
+  ["Evidence 2","evidence2"],["Source locator 2","locator2"],["Reasoning 2","reason2"],
+  ["Evidence 3","evidence3"],["Source locator 3","locator3"],["Reasoning 3","reason3"],
+  ["Alternative interpretation","counter"],["Original draft","draft"],
+  ["Feedback and review notes","feedback"],["Revised draft","revised"],
+  ["Reflection","reflection"],["Oral-defense preparation","defense"]
+ ];
+ for(const [label,key] of labels){
+  if(!trim(record.fields[key]))continue;
+  const section=document.createElement("section");
+  section.className="es-print-entry";
+  addText("h3",label,section);
+  const p=addText("p",record.fields[key],section);
+  p.style.whiteSpace="pre-wrap";
+  host.append(section);
+ }
+}
+$("es-print").addEventListener("click",()=>{
+ if(modified&&!save())return;
+ buildPrintablePortfolio();
+ window.print();
+});
 window.addEventListener("pagehide",()=>{if(modified)save()});
 window.addEventListener("storage",event=>{
  const scoped=contract?.scopedKey?.(weekKey(currentWeek),profile);
