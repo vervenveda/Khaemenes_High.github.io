@@ -646,17 +646,26 @@
     const week=Number(match[1]);
     if(week<1 || week>36) return;
     const unit=String(Math.ceil(week/3)).padStart(2,"0");
+    const assignment=window.ENGLISH_11_CURRICULUM?.readingAssignments?.find(r=>Number(r.week)===week)||null;
     const main=document.querySelector("main");
     if(!main)return;
     const notice=document.createElement("aside");
     notice.setAttribute("aria-label","Required weekly reading");
-    notice.style.cssText="margin:14px auto;padding:16px;border:1px solid #d7d1c5;border-radius:7px;background:#faf7f0;color:#191919;max-width:1100px";
-    const strong=document.createElement("strong");
-    strong.textContent="Required reading for this week: ";
-    const link=document.createElement("a");
-    link.href=new URL("../../units/unit-"+unit+"/index.html#assigned-reading",location.href).href;
-    link.textContent="Open Unit "+Number(unit)+" reading and annotation assignment";
-    notice.append(strong,link,document.createTextNode(". Complete the source questions and preserve your response in the existing portfolio."));
+    notice.style.cssText="margin:14px auto;padding:16px;border:1px solid #d7d1c5;border-radius:7px;background:#faf7f0;color:#191919;max-width:1100px;font-size:16px";
+    const heading=document.createElement("strong");
+    heading.textContent=assignment?`Week ${week} assigned reading · ${assignment.title}`:"Required reading for this week";
+    notice.append(heading);
+    if(assignment?.author){const by=document.createElement("p");by.textContent=assignment.author+" · "+(assignment.genre||"Assigned reading");notice.append(by)}
+    if(assignment?.purpose){const purpose=document.createElement("p");purpose.textContent=assignment.purpose;notice.append(purpose)}
+    const actions=document.createElement("p");
+    const unitLink=document.createElement("a");
+    unitLink.href=new URL("../../units/unit-"+unit+"/index.html#assigned-reading",location.href).href;
+    unitLink.textContent="Open unit reading assignment";
+    const logLink=document.createElement("a");
+    logLink.href=new URL("../../records/reading-log.html?week="+week,location.href).href;
+    logLink.textContent="Record this reading";
+    actions.append(unitLink,document.createTextNode(" · "),logLink);
+    notice.append(actions);
     main.insertBefore(notice,main.firstChild);
   }
   if(document.readyState==="loading")document.addEventListener("DOMContentLoaded",attachUnitReading,{once:true});
