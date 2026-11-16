@@ -125,6 +125,13 @@ for(const grade of grades){
   assert.match(courseJs,/english-learning-page-organization-v1\.js/,"focused learning organization loader missing English "+grade);
   assert.match(courseJs,/data-khae-english-page-organization|khaeEnglishPageOrganization/,"focused learning organization marker missing English "+grade);
   if(grade===9){
+    const readingLog=read(path.join(root,"records","reading-log.html"));
+    assert.match(readingLog,/english9-reading-log-context-v1\.js/,"curriculum-aware reading log missing English 9");
+    const readingContext=read(path.resolve(languageArts,"..","shared","english9-reading-log-context-v1.js"));
+    for(const token of ["reading-week-","reading-unit-","reading-curriculum-type-","reading-source-status-"]){
+      assert.match(readingContext,new RegExp(token.replace(/[.*+?^$\{\}()|[\]\\]/g,"\\  if(grade===9){
+")),"English 9 reading context field missing: "+token);
+    }
     const gradebook=read(path.join(root,"records","gradebook.html"));
     assert.match(gradebook,/Evaluator|evaluator/,"English 9 evaluator record missing");
     assert.match(gradebook,/Rubric|rubric/,"English 9 rubric record missing");
@@ -211,6 +218,14 @@ for(const grade of grades){
       assert.equal(new Set(bank.map(q=>String(q.question??q.q??q.prompt??"").trim().toLowerCase().replace(/\s+/g," "))).size,bank.length,"duplicate prompts English 9 "+kind);
     }
   }else{
+    const readingLog=read(path.join(root,"records","reading-log.html"));
+    for(const id of ["read-week","read-type","read-source-status"]){
+      assert.match(readingLog,new RegExp('id="'+id+'"'),"curriculum-aware reading log missing English "+grade+" field "+id);
+    }
+    assert.match(courseJs,/readingType/,"reading type record missing English "+grade);
+    assert.match(courseJs,/sourceStatus/,"reading source-status record missing English "+grade);
+    assert.match(courseJs,/unit:week\?Math\.ceil\(week\/3\)/,"reading week-to-unit mapping missing English "+grade);
+    assert.match(courseJs,/r\.week\|\|"—"/,"legacy reading entries must remain renderable English "+grade);
     assert.match(courseJs,/projectReview/,"project review provenance missing English "+grade);
     assert.match(courseJs,/artifactRef/,"project artifact reference missing English "+grade);
     assert.match(courseJs,/companionReviewed/,"product companion review marker missing English "+grade);
