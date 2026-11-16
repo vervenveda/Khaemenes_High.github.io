@@ -52,3 +52,12 @@ A shared family archive was introduced earlier on 2026-11-16. Its commit referen
 
 ## Next action
 Implement one safety repair at a time with original file blob SHA, syntax validation, synthetic proof, no destructive state migration and dated follow-up entries. Then validate acceptance in browsers before production status changes.
+
+## Addendum · structured data and assessment fallback inspection (same date)
+
+- Parsed `course-data.js` directly: 13 units, **87 mapped lessons**, **35 unit weeks plus a separate Week 1 readiness slot**, making 36 weeks in the published schedule.
+- Parsed `assets/question-bank.js`: **435** question records, **364 distinct normalized prompts** after removing leading generic reasoning/verification/misconception/transfer labels; **28 groups of repetitions (71 repeated records beyond their first occurrence)**. These are structural repetitions, not automatically mathematical errors, and may include intentional similar practice forms. Correct answer indices, answer text, and unique options were consistent for all 435.
+- The exams load `assessments/assets/exam-depth-v2.js` dynamically; the depth file exists and provides human-scored reasoning prompts. However, `assets/exam-engine.js` explicitly calls `boot` even if that depth file fails to load (`onerror=boot`). In that fallback the visible selected-response score can appear as mastery without written review; the separate central authority still rejects unreviewed midterm/final for progression. This **UI-to-authority disagreement** needs explicit fail-closed notice rather than a misleading passing message.
+- The examined `saveDraft()` catches write exceptions silently and its button reports success unconditionally. Test both quota/storage denial and interrupted submissions with synthetic records.
+
+No real learners or personal academic data were accessed. No browser runtime acceptance performed.
