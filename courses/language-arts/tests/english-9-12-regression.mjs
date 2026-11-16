@@ -69,6 +69,9 @@ for(const grade of grades){
   assert.ok(exists(path.join(root,"index.html")),"course landing missing English "+grade);
   const landing=read(path.join(root,"index.html"));
   assert.match(landing,/KHAEMENES_ENGLISH_LANDING_RELEASE_V1/,"canonical landing presentation contract missing English "+grade);
+  assert.match(landing,/KHAEMENES_ENGLISH_CENTERED_LANDING_V1/,"centered landing contract missing English "+grade);
+  assert.match(landing,/class="centered-course-controls/,"centered course controls missing English "+grade);
+  assert.doesNotMatch(landing,/<aside class="sidebar/,"side navigation must not return English "+grade);
   if(grade>=10){
     assert.match(landing,/class="topbar"[^>]*data-retired-course-header="true"[^>]*hidden/,"legacy local course header must remain retired English "+grade);
     assert.match(landing,/<html lang="en" data-theme="light">/,"English "+grade+" landing must open in canonical light presentation");
