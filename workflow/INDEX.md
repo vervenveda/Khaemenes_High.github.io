@@ -2,6 +2,7 @@
 
 | Date | Type | Entry | State |
 | --- | --- | --- | --- |
+| 2026-11-16 | shared engine · lesson navigation · migration architecture | [English 9–12 unified lesson engine v1](logs/2026/11/2026-11-16-english9-12-unified-lesson-engine-v1.md) | 20 Week 1 lessons source-connected; route tests 20/20; browser validation HOLD |
 | 2026-11-16 | source audit · canonical header · menu integration | [VNV/KA official header and enriched hamburger · English 9–12 Week 1](logs/2026/11/2026-11-16-vnv-canonical-header-hamburger-english9-12.md) | 20 routes covered; source checks pass; browser acceptance HOLD |
 | 2026-11-16 | source audit · ticker integration · static validation | [VNV 333 and AutoPopulate tickers · English 9–12 Week 1](logs/2026/11/2026-11-16-vnv-333-autopopulate-english9-12-week01.md) | 20 routes covered; canonical ticker pair committed; live testing HOLD |
 | 2026-11-16 | shared presentation repair · loading · reading view | [English 10–12 Week 1 lesson stability and view parity](logs/2026/11/2026-11-16-english10-12-week01-loading-view-parity.md) | 15 daily routes verified in source; shared script committed; browser acceptance HOLD |
