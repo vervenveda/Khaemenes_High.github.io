@@ -120,9 +120,33 @@ The shared suite protects:
 
 English 9 still has more historical week-specific behavior tests than Grades 10–12. Those are useful course-specific tests, but the release-critical cross-grade invariants are now protected from one shared suite instead of four drifting copies.
 
-## HOLD · reading-pack completeness
+## REPAIRED · 36-week offline reading-companion parity
 
-The visible offline reading pack remains named for Weeks 01–06 in each course. Source-custody architecture extends beyond that point, but a full 36-week offline reading-package audit remains a separate release task.
+Each English grade now exposes six standalone reading companions:
+
+- Weeks 01–06
+- Weeks 07–12
+- Weeks 13–18
+- Weeks 19–24
+- Weeks 25–30
+- Weeks 31–36
+
+That creates **24 offline companion files across English 9–12**.
+
+The new Weeks 07–36 companions are assembled from the existing Unit 03–12 reading dossiers, preserving:
+- Academy-created practice readings and source sets;
+- close-reading/research models;
+- source-custody guidance;
+- week-level independent tasks;
+- unit-specific provenance boundaries.
+
+The original Weeks 01–06 packs were also hardened by removing their network-loaded global-chrome script, so the reading-pack core no longer depends on remote JavaScript or stylesheets.
+
+### Authentic-text boundary
+
+The offline companions do not silently copy outside published works. Where a unit assigns a public-domain, licensed, teacher-selected, database, or other authentic source, the file retains source-custody information and treats the outside route as provenance/optional access. Learners should download or print lawful assigned authentic texts in advance when a unit requires them.
+
+This preserves both offline-first operation and honest source/licensing boundaries.
 
 ## Release status
 
@@ -132,6 +156,6 @@ The visible offline reading pack remains named for Weeks 01–06 in each course.
 **Unit evidence alignment:** PASS  
 **Assessment topology parity:** PASS  
 **Shared cross-grade regression parity:** PASS  
-**Full offline reading-package parity:** HOLD
+**36-week offline reading-companion parity:** PASS
 
 The next highest-value release task is the assessment architecture decision, followed by shared regression fixtures and the complete 36-week reading-package audit.

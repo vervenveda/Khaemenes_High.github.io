@@ -62,7 +62,15 @@ for(const grade of grades){
   assert.ok(exists(path.join(root,"index.html")),"course landing missing English "+grade);
   assert.ok(exists(path.join(root,"curriculum.json")),"curriculum missing English "+grade);
   assert.ok(exists(path.join(root,"reading-list.html")),"reading list missing English "+grade);
-  assert.ok(exists(path.join(root,"offline-reading-pack-weeks-01-06.html")),"Weeks 01-06 offline reading pack missing English "+grade);
+  const offlineRanges=["01-06","07-12","13-18","19-24","25-30","31-36"];
+  for(const range of offlineRanges){
+    const op=path.join(root,"offline-reading-pack-weeks-"+range+".html");
+    assert.ok(exists(op),"offline reading companion "+range+" missing English "+grade);
+    const oh=read(op);
+    assert.ok(oh.length>5000,"offline reading companion "+range+" unexpectedly thin English "+grade);
+    assert.doesNotMatch(oh,/<script\s+[^>]*src=/i,"offline companion "+range+" has network script dependency English "+grade);
+    assert.doesNotMatch(oh,/<link\s+[^>]*rel=["']?stylesheet/i,"offline companion "+range+" has external stylesheet dependency English "+grade);
+  }
   assert.ok(exists(path.join(root,"records","reading-log.html")),"reading log missing English "+grade);
 
   const css=read(path.join(root,"assets","course.css"));
@@ -141,4 +149,4 @@ assert.match(monteCarlo,/function openFixedSession/,"fixed-form shared session s
 assert.match(highAdapter,/config\.fixedOrder===true/,"fixed-order adapter branch missing");
 assert.match(highAdapter,/reshuffleOnRetake:fixedOrder!==true/,"fixed retry policy drift");
 
-console.log("PASS English 9-12 shared regression: governance, 12/36/180 shape, 48 unit routes, 48 reading dossiers, 48 evidence alignments, 144 week hubs, assessment topology, duplicate-ID scan, typography, and shared assessment runtime.");
+console.log("PASS English 9-12 shared regression: governance, 12/36/180 shape, 48 unit routes, 48 reading dossiers, 48 evidence alignments, 144 week hubs, 24 self-contained offline reading companions, assessment topology, duplicate-ID scan, typography, and shared assessment runtime.");
