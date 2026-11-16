@@ -2,6 +2,7 @@
 
 | Date | Type | Entry | State |
 | --- | --- | --- | --- |
+| 2026-11-16 | visual upgrade · symmetry · typography | [English 9–12 centered layout, equal grids and 16px minimum](logs/2026/11/2026-11-16-english9-12-symmetric-centered-grid-16px.md) | Shared engine v1.1 committed; syntax and route checks PASS; browser acceptance HOLD |
 | 2026-11-16 | research · design decision · grade-specific implementation plan | [Evidence-informed English 9–12 lesson organization and screenshot review](logs/2026/11/2026-11-16-research-based-english9-12-lesson-layout-plan.md) | Research and design standard committed; Phase 0 layout diagnosis and browser QA pending |
 | 2026-11-16 | shared engine · lesson navigation · migration architecture | [English 9–12 unified lesson engine v1](logs/2026/11/2026-11-16-english9-12-unified-lesson-engine-v1.md) | 20 Week 1 lessons source-connected; route tests 20/20; browser validation HOLD |
 | 2026-11-16 | source audit · canonical header · menu integration | [VNV/KA official header and enriched hamburger · English 9–12 Week 1](logs/2026/11/2026-11-16-vnv-canonical-header-hamburger-english9-12.md) | 20 routes covered; source checks pass; browser acceptance HOLD |
