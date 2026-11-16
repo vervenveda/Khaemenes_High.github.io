@@ -1436,7 +1436,7 @@
       "masteryEvidence": "a comparative claim supported by patterns, turning points, and textual evidence",
       "quiz": [
         {
-          "question": "Comparing theme development means studying...",
+          "question": "While comparing two texts in Universal Themes Across Texts, what should a learner examine to compare theme development?",
           "choices": [
             "How each text builds the theme through events, language, conflict, and resolution",
             "Only which text is longer",
@@ -1445,7 +1445,10 @@
           ],
           "answer": 0,
           "explanation": "Theme develops through patterns and choices.",
-          "skill": ""
+          "skill": "",
+          "sourcePrompt": "Comparing theme development means studying...",
+          "retrievalMode": "parallel-transfer",
+          "transferContext": "week-07"
         },
         {
           "question": "Conflicting perspectives are important because they...",
@@ -2924,7 +2927,7 @@
       "masteryEvidence": "a clear oral defense supported by credible evidence and respectful engagement",
       "quiz": [
         {
-          "question": "Credible evidence from multiple sources should be...",
+          "question": "For Oral argument or formal debate, listening notes, and self-evaluation, how should evidence from multiple credible sources be used?",
           "choices": [
             "Relevant, accurate, trustworthy, and smoothly integrated",
             "Copied without citation",
@@ -2933,7 +2936,10 @@
           ],
           "answer": 0,
           "explanation": "Evidence must be selected and integrated responsibly.",
-          "skill": ""
+          "skill": "",
+          "sourcePrompt": "Credible evidence from multiple sources should be...",
+          "retrievalMode": "parallel-transfer",
+          "transferContext": "week-15"
         },
         {
           "question": "Opposing arguments should be compared by analyzing...",
@@ -3110,7 +3116,7 @@
       "masteryEvidence": "an explanation that synthesizes sources around a controlling idea",
       "quiz": [
         {
-          "question": "Narrative pacing controls...",
+          "question": "While revising Synthesis matrix and multi-source expository response, what does narrative pacing control for the reader?",
           "choices": [
             "Only citation format",
             "Only paragraph count",
@@ -3119,7 +3125,10 @@
           ],
           "answer": 2,
           "explanation": "Pacing shapes reader experience.",
-          "skill": ""
+          "skill": "",
+          "sourcePrompt": "Narrative pacing controls...",
+          "retrievalMode": "parallel-transfer",
+          "transferContext": "week-16"
         },
         {
           "question": "Revision should consider...",
@@ -4048,7 +4057,7 @@
       "masteryEvidence": "a comparative essay and reading that make structural evidence audible and visible",
       "quiz": [
         {
-          "question": "Ambiguity in poetry often comes from...",
+          "question": "In an unfamiliar poem used during Poetic Structure, Sound & Comparative Analysis, where can ambiguity come from?",
           "choices": [
             "Layered imagery, symbolism, shifts, connotation, and compressed language",
             "Only long lines",
@@ -4057,7 +4066,10 @@
           ],
           "answer": 0,
           "explanation": "Poetry often compresses multiple meanings into few words.",
-          "skill": ""
+          "skill": "",
+          "sourcePrompt": "Ambiguity in poetry often comes from...",
+          "retrievalMode": "parallel-transfer",
+          "transferContext": "week-21"
         },
         {
           "question": "A shift in a poem may signal...",
@@ -4606,7 +4618,7 @@
       "masteryEvidence": "a comparative product explaining meaningful preservation and transformation",
       "quiz": [
         {
-          "question": "A comparative adaptation claim should explain...",
+          "question": "When writing Comparative adaptation essay or multimedia presentation, what should a strong comparative adaptation claim explain?",
           "choices": [
             "Only which title is better",
             "No evidence",
@@ -4615,7 +4627,10 @@
           ],
           "answer": 2,
           "explanation": "The significance of change matters.",
-          "skill": ""
+          "skill": "",
+          "sourcePrompt": "A comparative adaptation claim should explain...",
+          "retrievalMode": "parallel-transfer",
+          "transferContext": "week-24"
         },
         {
           "question": "Adaptation analysis studies...",
@@ -5164,7 +5179,7 @@
       "masteryEvidence": "traceable notes and a synthesis paragraph that represents sources honestly",
       "quiz": [
         {
-          "question": "Refining research scope means...",
+          "question": "A research question for Note-Taking, Paraphrase, Citation & Synthesis is too broad. What does refining the scope require?",
           "choices": [
             "Narrowing or adjusting the question as findings develop",
             "Ignoring new evidence",
@@ -5173,7 +5188,10 @@
           ],
           "answer": 0,
           "explanation": "Research often becomes clearer through discovery.",
-          "skill": ""
+          "skill": "",
+          "sourcePrompt": "Refining research scope means...",
+          "retrievalMode": "parallel-transfer",
+          "transferContext": "week-27"
         },
         {
           "question": "A reliable source is usually...",
@@ -5350,7 +5368,7 @@
       "masteryEvidence": "a coherent expository draft that synthesizes multiple reliable sources",
       "quiz": [
         {
-          "question": "Revision should consider...",
+          "question": "Before finalizing Expository research paper draft with source integration, what should revision consider?",
           "choices": [
             "Only handwriting",
             "Only spelling",
@@ -5359,7 +5377,10 @@
           ],
           "answer": 2,
           "explanation": "Revision improves meaning and fit for audience.",
-          "skill": ""
+          "skill": "",
+          "sourcePrompt": "Revision should consider...",
+          "retrievalMode": "parallel-transfer",
+          "transferContext": "week-28"
         },
         {
           "question": "A thesis or controlling idea should be...",
@@ -5536,7 +5557,7 @@
       "masteryEvidence": "a polished argument with logical reasoning, credible evidence, and fair rebuttal",
       "quiz": [
         {
-          "question": "A formal objective tone means...",
+          "question": "While drafting Research-based argument essay with counterclaim and works cited, what does maintaining a formal objective tone require?",
           "choices": [
             "Reasoned, fair, precise, and not overly emotional",
             "Boring and unclear",
@@ -5545,10 +5566,13 @@
           ],
           "answer": 0,
           "explanation": "Formal objective tone supports credibility.",
-          "skill": ""
+          "skill": "",
+          "sourcePrompt": "A formal objective tone means...",
+          "retrievalMode": "parallel-transfer",
+          "transferContext": "week-29"
         },
         {
-          "question": "A valid argument is one whose claims are...",
+          "question": "A learner tests an argument in Argument Research Writing. Which description best defines validity?",
           "choices": [
             "Emotional only",
             "Sound, supported, and logically connected",
@@ -5557,7 +5581,10 @@
           ],
           "answer": 1,
           "explanation": "Validity concerns soundness and reasoning.",
-          "skill": ""
+          "skill": "",
+          "sourcePrompt": "A valid argument is one whose claims are...",
+          "retrievalMode": "parallel-transfer",
+          "transferContext": "week-29"
         },
         {
           "question": "Which action best demonstrates mastery of Week 29: Argument Research Writing?",
@@ -6280,7 +6307,7 @@
       "masteryEvidence": "a performance and analysis showing how choices arise from the text",
       "quiz": [
         {
-          "question": "A soliloquy allows a character to...",
+          "question": "During drama analysis in Drama Analysis & Performance Project, what does a soliloquy allow a character to do?",
           "choices": [
             "Reveal private thoughts aloud",
             "Avoid conflict",
@@ -6289,7 +6316,10 @@
           ],
           "answer": 0,
           "explanation": "Soliloquies reveal inner conflict and motive.",
-          "skill": ""
+          "skill": "",
+          "sourcePrompt": "A soliloquy allows a character to...",
+          "retrievalMode": "parallel-transfer",
+          "transferContext": "week-33"
         },
         {
           "question": "Conflicting perspectives in drama are often shown through...",
@@ -6466,7 +6496,7 @@
       "masteryEvidence": "a complete reading record with motif, character, and structural evidence",
       "quiz": [
         {
-          "question": "Conflicting perspectives are important because they...",
+          "question": "A new source set in Long-Form Novel Study: Character, Motif & Structure presents conflicting perspectives. Why is that useful for analysis?",
           "choices": [
             "Make evidence unnecessary",
             "Only appear in nonfiction",
@@ -6475,10 +6505,13 @@
           ],
           "answer": 2,
           "explanation": "Conflicting perspectives add complexity and depth.",
-          "skill": ""
+          "skill": "",
+          "sourcePrompt": "Conflicting perspectives are important because they...",
+          "retrievalMode": "parallel-transfer",
+          "transferContext": "week-34"
         },
         {
-          "question": "A universal theme is best described as...",
+          "question": "While comparing a new text during Long-Form Novel Study: Character, Motif & Structure, which description best captures a universal theme?",
           "choices": [
             "A single word only",
             "A character’s name",
@@ -6487,7 +6520,10 @@
           ],
           "answer": 3,
           "explanation": "Universal themes travel beyond one text.",
-          "skill": ""
+          "skill": "",
+          "sourcePrompt": "A universal theme is best described as...",
+          "retrievalMode": "parallel-transfer",
+          "transferContext": "week-34"
         },
         {
           "question": "Which action best demonstrates mastery of Week 34: Long-Form Novel Study: Character, Motif & Structure?",
@@ -6656,7 +6692,7 @@
       "masteryEvidence": "a polished novel response and conference supported by specific artifacts",
       "quiz": [
         {
-          "question": "The best evidence artifact is one that...",
+          "question": "When selecting a portfolio artifact from Novel Themes, Perspectives & Final Portfolio Conference, what makes one piece stronger evidence than another?",
           "choices": [
             "Shows skill, effort, revision, and standard mastery",
             "Was copied",
@@ -6665,7 +6701,10 @@
           ],
           "answer": 0,
           "explanation": "Artifacts should be authentic and meaningful.",
-          "skill": ""
+          "skill": "",
+          "sourcePrompt": "The best evidence artifact is one that...",
+          "retrievalMode": "parallel-transfer",
+          "transferContext": "week-35"
         },
         {
           "question": "A reflection should explain...",
@@ -6862,7 +6901,7 @@
           "skill": ""
         },
         {
-          "question": "Targeted review before a final should begin with...",
+          "question": "Before the cumulative assessment in Final Review, Final Examination & Completion, where should targeted review begin?",
           "choices": [
             "Random guessing",
             "Skipping portfolio work",
@@ -6871,7 +6910,10 @@
           ],
           "answer": 3,
           "explanation": "Review should address gaps.",
-          "skill": ""
+          "skill": "",
+          "sourcePrompt": "Targeted review before a final should begin with...",
+          "retrievalMode": "parallel-transfer",
+          "transferContext": "week-36"
         },
         {
           "question": "Which action best demonstrates mastery of Week 36: Final Review, Final Examination & Completion?",
@@ -7025,5 +7067,7 @@
     "All progress is stored locally in the browser unless exported."
   ],
   "quizBankVersion": "2026-10-16-v4-passage-anchored",
-  "instructionalSpecificityVersion": "v1"
+  "instructionalSpecificityVersion": "v1",
+  "quizDiversityVersion": "v1",
+  "quizDiversityPolicy": "Repeated concepts return through parallel transfer, application, comparison, or error analysis rather than identical recognition prompts."
 }
