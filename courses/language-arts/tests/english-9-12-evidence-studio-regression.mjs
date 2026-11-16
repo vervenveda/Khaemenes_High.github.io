@@ -40,12 +40,13 @@ function mock(grade,learnerId="demo-A",entries=new Map()){
  const curriculum=grade===9
   ?{weekPlans:Array.from({length:36},(_,i)=>({n:i+1,unit:Math.ceil((i+1)/3),title:"Week "+(i+1),readingSuggestion:{title:"Story "+(i+1),author:"Author",purpose:"Evidence practice"}}))}
   :{weeks:Array.from({length:36},(_,i)=>({week:i+1,title:"Week "+(i+1)})),readingAssignments:Array.from({length:36},(_,i)=>({week:i+1,unit:Math.ceil((i+1)/3),title:"Story "+(i+1),author:"Author",purpose:"Evidence practice"}))};
- const win={KhaemenesCourseEntryContract:contract,addEventListener:()=>{},print:()=>{}};
+ const events={};
+ const win={KhaemenesCourseEntryContract:contract,addEventListener:(type,handler)=>{events[type]=handler},print:()=>{}};
  win["ENGLISH_"+grade+"_CURRICULUM"]=curriculum;
  const doc={documentElement:{dataset:{evidenceGrade:String(grade)}},getElementById:key=>nodes[key]||null,querySelector:()=>null,createElement:tag=>new Node(tag),createTextNode:value=>({textContent:value}),body:{append(){}}};
  const sandbox={window:win,document:doc,location:{search:"?week=1"},URL,URLSearchParams,Blob,setTimeout};
  vm.runInNewContext(js,sandbox,{timeout:2000,filename:"english-evidence-studio-v1.js"});
- return {nodes,entries,storageKey};
+ return {nodes,entries,storageKey,events};
 }
 test("shared engine compiles, never touches official scores or mastery, and preserves VNV/KA layout",()=>{
  new vm.Script(js);
@@ -117,4 +118,32 @@ test("learner isolation is strict; anonymous record cannot be saved",()=>{
  const anonymous=mock(11,null,records);
  assert.equal(anonymous.nodes["es-claim"].disabled,true);
  assert.equal(anonymous.nodes["es-save-status"].dataset.status,"warning");
+});
+
+test("cross-tab change strictly locks all future saves and exports for the stale record",()=>{
+ for(const grade of [9,10,11,12]){
+  const entries=new Map();
+  const {nodes,storageKey,events}=mock(grade,"demo-A",entries);
+  nodes["es-claim"].value="First saved version";
+  nodes["es-claim"].handlers.input();
+  const key=storageKey(prefix+":english-"+grade+":week-01");
+  const newer=JSON.parse(JSON.stringify(entries.get(key)));
+  newer.fields.claim="Newer version from another tab";
+  entries.set(key,newer);
+  events.storage({key});
+  assert.equal(nodes["es-save"].disabled,true);
+  assert.equal(nodes["es-export"].disabled,true);
+  nodes["es-claim"].value="Stale overwrite attempt";
+  nodes["es-save"].handlers.click();
+  assert.equal(entries.get(key).fields.claim,"Newer version from another tab","English "+grade+" must not overwrite another tab");
+  assert.match(nodes["es-save-status"].textContent,/Save blocked/);
+ }
+});
+test("active learner event also locks save, even without an unsaved edit",()=>{
+ const {nodes,events}=mock(11,"demo-A",new Map());
+ events.storage({key:"khaemenes_active_learner_v1"});
+ assert.equal(nodes["es-save"].disabled,true);
+ assert.equal(nodes["es-export"].disabled,true);
+ assert.equal(nodes["es-claim"].disabled,true);
+ assert.match(nodes["es-save-status"].textContent,/saving paused/i);
 });
