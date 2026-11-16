@@ -230,21 +230,36 @@
     box.addEventListener("change",()=>{state.checks[key]=box.checked;save();});
   });
 
-  // Week daily completion
-  $$("[data-week-day]").forEach(box=>{
+  // Evidence-aware daily completion: learners confirm that the required artifact was preserved.
+  $("[data-week-day]").forEach(box=>{
     const week=box.dataset.week, day=box.dataset.weekDay;
     box.checked=Boolean(weekState(week).days[day]);
-    box.addEventListener("change",()=>{weekState(week).days[day]=box.checked;save();updateProgress()});
+    const label=box.closest("label")?.querySelector("span");
+    if(label)label.textContent=`I preserved ${day} evidence`;
+    box.addEventListener("change",()=>{weekState(week).days[day]=box.checked;save();updateProgress();syncWeekEvidenceButton(week)});
   });
-  $$("[data-progress-key]").forEach(button=>{
+  function weekEvidenceReady(week){
+    const ws=weekState(week);
+    const days=["Monday","Tuesday","Wednesday","Thursday","Friday"].every(d=>ws.days[d]);
+    const reflectionFields=$('[data-scope="week:'+Number(week)+'"],[data-save-field*="week-'+String(Number(week)).padStart(2,"0")+'"]');
+    const reflection=reflectionFields.some(f=>String(f.value||"").trim().length>=20);
+    const quizAttempted=(ws.quiz?.attempts||[]).length>0 || score(ws.quiz)>0;
+    return {days,reflection,quizAttempted,ready:days&&reflection&&quizAttempted};
+  }
+  function syncWeekEvidenceButton(week){
+    $("[data-progress-key]").filter(b=>b.dataset.progressKey===`week-${week}`||b.dataset.progressKey===`week-${String(Number(week)).padStart(2,"0")}`).forEach(button=>{
+      const s=weekEvidenceReady(week);
+      button.disabled=true;
+      button.setAttribute("aria-pressed",String(s.ready));
+      button.textContent=s.ready?"Week Evidence Complete ✓":`Evidence needed · ${s.days?"5/5 days":"daily work"} · ${s.reflection?"reflection":"reflection"} · ${s.quizAttempted?"quiz":"quiz"}`;
+      button.title="Weekly completion is derived from preserved daily evidence, a substantive reflection, and at least one quiz attempt.";
+    });
+  }
+  $("[data-progress-key]").forEach(button=>{
     const key=button.dataset.progressKey;
     const match=key.match(/^week-(\d+)$/);
     if(!match)return;
-    const week=match[1], ws=weekState(week);
-    const completed=()=>["Monday","Tuesday","Wednesday","Thursday","Friday"].every(d=>ws.days[d]);
-    const sync=()=>{const on=completed();button.setAttribute("aria-pressed",String(on));button.textContent=on?"Week Completed ✓":"Mark All Days Complete"};
-    sync();
-    button.addEventListener("click",()=>{const target=!completed();["Monday","Tuesday","Wednesday","Thursday","Friday"].forEach(d=>ws.days[d]=target);save();$$(`[data-week="${week}"][data-week-day]`).forEach(b=>b.checked=target);sync();updateProgress()});
+    syncWeekEvidenceButton(match[1]);
   });
 
   // Autosave text fields
@@ -256,7 +271,7 @@
     else if(scope.startsWith("unit:")) holder=unitState(scope.split(":")[1]);
     else {state.misc ||= {}; holder=state.misc}
     field.value=holder[id]||"";
-    field.addEventListener("input",()=>{holder[id]=field.value;save()});
+    field.addEventListener("input",()=>{holder[id]=field.value;save();const m=location.pathname.match(/week-(\\d{2})/);if(m)syncWeekEvidenceButton(Number(m[1]))});
   });
   $$("[data-clear-field]").forEach(button=>button.addEventListener("click",()=>{
     const field=document.getElementById(button.dataset.clearField); if(!field)return;
