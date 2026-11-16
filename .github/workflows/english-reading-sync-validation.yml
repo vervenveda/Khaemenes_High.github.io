@@ -11,6 +11,7 @@ on:
       - 'courses/shared/english-evidence-studio-v1.js'
       - 'courses/shared/english-evidence-studio-v1.css'
       - 'courses/language-arts/tests/english-9-12-evidence-studio-regression.mjs'
+      - 'courses/language-arts/tests/english-9-12-reading-development-report-regression.mjs'
       - 'courses/language-arts/english-9/weeks/week-02/**'
       - 'courses/language-arts/english-9/units/unit-01/**'
       - 'courses/language-arts/english-9/records/reading-log.html'
@@ -33,6 +34,7 @@ on:
       - 'courses/shared/english-evidence-studio-v1.js'
       - 'courses/shared/english-evidence-studio-v1.css'
       - 'courses/language-arts/tests/english-9-12-evidence-studio-regression.mjs'
+      - 'courses/language-arts/tests/english-9-12-reading-development-report-regression.mjs'
       - 'courses/language-arts/english-9/records/reading-log.html'
       - 'courses/language-arts/english-9/assets/reading-ledger-v2.js'
       - 'courses/language-arts/english-9/assets/progress-report-v1.js'
@@ -57,3 +59,5 @@ jobs:
         run: node --test courses/language-arts/english-9/tests/reading-ledger-expansion-v2.mjs
       - name: Verify English 9–12 Reading-to-Writing Evidence Studio
         run: node --test courses/language-arts/tests/english-9-12-evidence-studio-regression.mjs
+      - name: Verify English 9–12 Universal Reading Development Report
+        run: node --test courses/language-arts/tests/english-9-12-reading-development-report-regression.mjs
