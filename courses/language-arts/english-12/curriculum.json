@@ -7188,5 +7188,623 @@
   "quizBankVersion": "2026-10-16-v4-passage-anchored",
   "instructionalSpecificityVersion": "v1",
   "quizDiversityVersion": "v1",
-  "quizDiversityPolicy": "Repeated concepts return through parallel transfer, application, comparison, or error analysis rather than identical recognition prompts."
+  "quizDiversityPolicy": "Repeated concepts return through parallel transfer, application, comparison, or error analysis rather than identical recognition prompts.",
+  "readingAssignments": [
+    {
+      "title": "A Modest Proposal",
+      "author": "Jonathan Swift",
+      "genre": "Satirical essay",
+      "purpose": "Establish a senior diagnostic baseline by evaluating tone, argument, irony, evidence, audience, and the difference between literal and implied meaning.",
+      "sources": [
+        [
+          "Project Gutenberg title search",
+          "https://www.gutenberg.org/ebooks/search/?query=A+Modest+Proposal+Jonathan+Swift"
+        ],
+        [
+          "English IV reading guide",
+          "reading-list.html"
+        ]
+      ],
+      "week": 1,
+      "unit": 1,
+      "readingType": "Assigned"
+    },
+    {
+      "title": "The Souls of Black Folk — selected excerpt",
+      "author": "W. E. B. Du Bois",
+      "genre": "Essay and literary nonfiction",
+      "purpose": "Practice high-complexity close reading, qualification, evidence commentary, uncertainty, and independent vocabulary study.",
+      "sources": [
+        [
+          "Project Gutenberg · The Souls of Black Folk",
+          "https://www.gutenberg.org/ebooks/408"
+        ]
+      ],
+      "week": 2,
+      "unit": 1,
+      "readingType": "Assigned"
+    },
+    {
+      "title": "On Liberty — selected excerpt",
+      "author": "John Stuart Mill",
+      "genre": "Philosophical essay",
+      "purpose": "Practice accurate paraphrase, summary, source ethics, claim tracing, and responsible use of another writer’s complex ideas.",
+      "sources": [
+        [
+          "Project Gutenberg title search",
+          "https://www.gutenberg.org/ebooks/search/?query=On+Liberty+John+Stuart+Mill"
+        ]
+      ],
+      "week": 3,
+      "unit": 1,
+      "readingType": "Assigned"
+    },
+    {
+      "title": "The Odyssey — selected books",
+      "author": "Homer",
+      "genre": "Epic in translation",
+      "purpose": "Trace epic structure, archetype, hospitality, identity, leadership, choice, and the influence of foundational narrative patterns.",
+      "sources": [
+        [
+          "Project Gutenberg title search",
+          "https://www.gutenberg.org/ebooks/search/?query=Odyssey+Homer"
+        ]
+      ],
+      "week": 4,
+      "unit": 2,
+      "readingType": "Assigned"
+    },
+    {
+      "title": "Antigone",
+      "author": "Sophocles",
+      "genre": "Greek tragedy in translation",
+      "purpose": "Evaluate tragic conflict, law, conscience, authority, family duty, dramatic structure, and competing ethical interpretations.",
+      "sources": [
+        [
+          "Project Gutenberg title search",
+          "https://www.gutenberg.org/ebooks/search/?query=Antigone+Sophocles"
+        ]
+      ],
+      "week": 5,
+      "unit": 2,
+      "readingType": "Assigned"
+    },
+    {
+      "title": "Beowulf — selected passages and a later adaptation",
+      "author": "Anonymous",
+      "genre": "Epic poetry and adaptation",
+      "purpose": "Compare heroic values, allusion, monster archetypes, cultural context, translation, and what later adaptations preserve or transform.",
+      "sources": [
+        [
+          "Project Gutenberg title search",
+          "https://www.gutenberg.org/ebooks/search/?query=Beowulf"
+        ],
+        [
+          "English IV reading guide",
+          "reading-list.html"
+        ]
+      ],
+      "week": 6,
+      "unit": 2,
+      "readingType": "Assigned"
+    },
+    {
+      "title": "Holy Sonnets and selected Shakespeare sonnets",
+      "author": "John Donne and William Shakespeare",
+      "genre": "Metaphysical and Renaissance poetry",
+      "purpose": "Analyze speaker, argument, form, conceit, syntax, sound, paradox, and the interpretive pressure created by compressed language.",
+      "sources": [
+        [
+          "Project Gutenberg · John Donne search",
+          "https://www.gutenberg.org/ebooks/search/?query=John+Donne+poems"
+        ],
+        [
+          "Project Gutenberg · Shakespeare sonnets search",
+          "https://www.gutenberg.org/ebooks/search/?query=Shakespeare+Sonnets"
+        ]
+      ],
+      "week": 7,
+      "unit": 3,
+      "readingType": "Assigned"
+    },
+    {
+      "title": "Songs of Innocence and of Experience — paired poems",
+      "author": "William Blake",
+      "genre": "Illustrated lyric poetry",
+      "purpose": "Compare voice, image, symbolism, sound, visual form, social criticism, and opposing states of experience.",
+      "sources": [
+        [
+          "Project Gutenberg title search",
+          "https://www.gutenberg.org/ebooks/search/?query=Songs+of+Innocence+and+of+Experience+William+Blake"
+        ]
+      ],
+      "week": 8,
+      "unit": 3,
+      "readingType": "Assigned"
+    },
+    {
+      "title": "Gitanjali and selected global lyrics",
+      "author": "Rabindranath Tagore and teacher-approved poets",
+      "genre": "Poetry in translation and global lyric",
+      "purpose": "Evaluate translation, cultural context, imagery, rhythm, spiritual or philosophical inquiry, and multiple defensible interpretations.",
+      "sources": [
+        [
+          "Project Gutenberg · Gitanjali",
+          "https://www.gutenberg.org/ebooks/7164"
+        ],
+        [
+          "English IV reading guide",
+          "reading-list.html"
+        ]
+      ],
+      "week": 9,
+      "unit": 3,
+      "readingType": "Assigned"
+    },
+    {
+      "title": "Rhetoric — selected passages",
+      "author": "Aristotle",
+      "genre": "Classical rhetorical theory",
+      "purpose": "Establish rhetorical situation, ethos, logos, pathos, arrangement, audience, purpose, and ethical limits of persuasion.",
+      "sources": [
+        [
+          "Project Gutenberg title search",
+          "https://www.gutenberg.org/ebooks/search/?query=Rhetoric+Aristotle"
+        ]
+      ],
+      "week": 10,
+      "unit": 4,
+      "readingType": "Assigned"
+    },
+    {
+      "title": "Apology and selected civic defense speeches",
+      "author": "Plato and teacher-approved speakers",
+      "genre": "Classical speech and philosophical dialogue",
+      "purpose": "Evaluate credibility, reasoning, audience pressure, irony, moral conviction, delivery, and the responsibilities of public speech.",
+      "sources": [
+        [
+          "Project Gutenberg title search",
+          "https://www.gutenberg.org/ebooks/search/?query=Apology+Plato"
+        ]
+      ],
+      "week": 11,
+      "unit": 4,
+      "readingType": "Assigned"
+    },
+    {
+      "title": "Gettysburg Address, Second Inaugural, and a contrasting public address",
+      "author": "Abraham Lincoln and teacher-approved speaker",
+      "genre": "Paired public rhetoric",
+      "purpose": "Compare compression, structure, allusion, historical context, ethical appeal, public memory, and rhetorical effectiveness.",
+      "sources": [
+        [
+          "National Archives · Gettysburg Address",
+          "https://www.archives.gov/milestone-documents/gettysburg-address"
+        ],
+        [
+          "Library of Congress · Lincoln Papers",
+          "https://www.loc.gov/collections/abraham-lincoln-papers/"
+        ]
+      ],
+      "week": 12,
+      "unit": 4,
+      "readingType": "Assigned"
+    },
+    {
+      "title": "Federalist No. 10 and Brutus I — selected excerpts",
+      "author": "James Madison and Brutus",
+      "genre": "Opposing civic arguments",
+      "purpose": "Compare claims, assumptions, evidence, definitions, consequences, validity, and the fair representation of opposing arguments.",
+      "sources": [
+        [
+          "Yale Avalon Project · Federalist No. 10",
+          "https://avalon.law.yale.edu/18th_century/fed10.asp"
+        ],
+        [
+          "English IV reading guide",
+          "reading-list.html"
+        ]
+      ],
+      "week": 13,
+      "unit": 5,
+      "readingType": "Assigned"
+    },
+    {
+      "title": "What to the Slave Is the Fourth of July? — selected excerpt",
+      "author": "Frederick Douglass",
+      "genre": "Historical speech",
+      "purpose": "Evaluate moral reasoning, evidence, irony, audience pressure, civic ideals, historical context, and rhetorical force.",
+      "sources": [
+        [
+          "Library of Congress newspaper source",
+          "https://www.loc.gov/resource/sn84026366/1852-07-09/ed-1/?sp=2"
+        ]
+      ],
+      "week": 14,
+      "unit": 5,
+      "readingType": "Assigned"
+    },
+    {
+      "title": "Media Verification and Quantitative Evidence Source Set",
+      "author": "Teacher-selected institutional and journalistic sources",
+      "genre": "News, data, visual, and digital media",
+      "purpose": "Practice lateral reading, corroboration, source tracing, statistical interpretation, fallacy detection, and resistance to manipulation.",
+      "sources": [
+        [
+          "The Verifier · Live Research News",
+          "https://vervenveda.com/theverifier.github.io/apps/Live_Research_News_index.html"
+        ],
+        [
+          "PLERA Search Pro",
+          "https://vervenveda.com/PLERASearch.github.io/apps/PLERA_search_pro_index.html"
+        ]
+      ],
+      "week": 15,
+      "unit": 5,
+      "readingType": "Assigned"
+    },
+    {
+      "title": "Common Sense and Rights of Man — selected excerpts",
+      "author": "Thomas Paine",
+      "genre": "Political essays",
+      "purpose": "Develop a difficult inquiry question and synthesize claims, historical context, definitions, evidence, and rhetorical choices across related texts.",
+      "sources": [
+        [
+          "Project Gutenberg · Common Sense",
+          "https://www.gutenberg.org/ebooks/147"
+        ],
+        [
+          "Project Gutenberg title search",
+          "https://www.gutenberg.org/ebooks/search/?query=Rights+of+Man+Thomas+Paine"
+        ]
+      ],
+      "week": 16,
+      "unit": 6,
+      "readingType": "Assigned"
+    },
+    {
+      "title": "Mixed Research Source Reliability Set",
+      "author": "Teacher-selected primary, scholarly, institutional, advocacy, and weak sources",
+      "genre": "Research source set",
+      "purpose": "Evaluate authority, methodology, funding, currency, limitations, bias, corroboration, and ethical citation before drafting a synthesis.",
+      "sources": [
+        [
+          "Library of Congress Digital Collections",
+          "https://www.loc.gov/collections/"
+        ],
+        [
+          "PLERA Search Pro",
+          "https://vervenveda.com/PLERASearch.github.io/apps/PLERA_search_pro_index.html"
+        ]
+      ],
+      "week": 17,
+      "unit": 6,
+      "readingType": "Assigned"
+    },
+    {
+      "title": "Midyear Unfamiliar Passage, Argument, and Data Set",
+      "author": "Teacher-selected public-domain and institutional sources",
+      "genre": "Cumulative assessment reading",
+      "purpose": "Transfer first-semester literary, rhetorical, argument, media, and synthesis skills to unfamiliar material and document corrections.",
+      "sources": [
+        [
+          "English IV midterm",
+          "assessments/midterm/"
+        ],
+        [
+          "English IV reading guide",
+          "reading-list.html"
+        ]
+      ],
+      "week": 18,
+      "unit": 6,
+      "readingType": "Assigned"
+    },
+    {
+      "title": "The Metamorphosis",
+      "author": "Franz Kafka",
+      "genre": "Modern novella in translation",
+      "purpose": "Analyze identity, alienation, family power, absurdity, narrative distance, translation, and competing interpretations.",
+      "sources": [
+        [
+          "Project Gutenberg · Metamorphosis",
+          "https://www.gutenberg.org/ebooks/5200"
+        ]
+      ],
+      "week": 19,
+      "unit": 7,
+      "readingType": "Assigned"
+    },
+    {
+      "title": "A Passage to India — selected chapters",
+      "author": "E. M. Forster",
+      "genre": "Modern world novel",
+      "purpose": "Evaluate cultural encounter, ambiguity, institutional power, setting, perspective, historical context, and the limits of interpretation.",
+      "sources": [
+        [
+          "Project Gutenberg title search",
+          "https://www.gutenberg.org/ebooks/search/?query=A+Passage+to+India+E+M+Forster"
+        ]
+      ],
+      "week": 20,
+      "unit": 7,
+      "readingType": "Assigned"
+    },
+    {
+      "title": "The Souls of Black Folk and a contemporary diasporic text — selected excerpts",
+      "author": "W. E. B. Du Bois and teacher-approved author",
+      "genre": "Paired literary nonfiction",
+      "purpose": "Compare memory, identity, displacement, social change, voice, historical context, and the development of global or diasporic themes.",
+      "sources": [
+        [
+          "Project Gutenberg · The Souls of Black Folk",
+          "https://www.gutenberg.org/ebooks/408"
+        ],
+        [
+          "English IV reading guide",
+          "reading-list.html"
+        ]
+      ],
+      "week": 21,
+      "unit": 7,
+      "readingType": "Assigned"
+    },
+    {
+      "title": "Pygmalion",
+      "author": "George Bernard Shaw",
+      "genre": "Drama",
+      "purpose": "Study language, accent, code-switching, class, identity, performance, representation, and the power attached to speech communities.",
+      "sources": [
+        [
+          "Project Gutenberg · Pygmalion",
+          "https://www.gutenberg.org/ebooks/3825"
+        ]
+      ],
+      "week": 22,
+      "unit": 8,
+      "readingType": "Assigned"
+    },
+    {
+      "title": "Narrative of the Life of Frederick Douglass — selected chapters",
+      "author": "Frederick Douglass",
+      "genre": "Autobiography and testimony",
+      "purpose": "Evaluate voice, literacy, power, audience, authorship, historical context, and language as an instrument of freedom and control.",
+      "sources": [
+        [
+          "Project Gutenberg · Narrative of Frederick Douglass",
+          "https://www.gutenberg.org/ebooks/23"
+        ],
+        [
+          "Library of Congress text",
+          "https://www.loc.gov/resource/lhbcb.25385/?st=text"
+        ]
+      ],
+      "week": 23,
+      "unit": 8,
+      "readingType": "Assigned"
+    },
+    {
+      "title": "Global Issue Multimedia and Visual Rhetoric Set",
+      "author": "Teacher-selected documentary, data, literary, and institutional sources",
+      "genre": "Multimedia source set",
+      "purpose": "Compare how visual, spoken, written, and quantitative forms construct public understanding, urgency, identity, and authority.",
+      "sources": [
+        [
+          "The Verifier · Live Research News",
+          "https://vervenveda.com/theverifier.github.io/apps/Live_Research_News_index.html"
+        ],
+        [
+          "English IV reading guide",
+          "reading-list.html"
+        ]
+      ],
+      "week": 24,
+      "unit": 8,
+      "readingType": "Assigned"
+    },
+    {
+      "title": "A Room of One’s Own — selected chapters",
+      "author": "Virginia Woolf",
+      "genre": "Extended essay",
+      "purpose": "Develop an original senior research question by tracing argument, literary evidence, historical context, qualification, and unresolved tensions.",
+      "sources": [
+        [
+          "Project Gutenberg title search",
+          "https://www.gutenberg.org/ebooks/search/?query=A+Room+of+One%27s+Own+Virginia+Woolf"
+        ]
+      ],
+      "week": 25,
+      "unit": 9,
+      "readingType": "Assigned"
+    },
+    {
+      "title": "The Education of Henry Adams — selected excerpt and scholarly commentary",
+      "author": "Henry Adams",
+      "genre": "Memoir and research source pairing",
+      "purpose": "Build an annotated bibliography and synthesis matrix while distinguishing primary, secondary, scholarly, and public-facing evidence.",
+      "sources": [
+        [
+          "Project Gutenberg · The Education of Henry Adams",
+          "https://www.gutenberg.org/ebooks/2044"
+        ]
+      ],
+      "week": 26,
+      "unit": 9,
+      "readingType": "Assigned"
+    },
+    {
+      "title": "The Jungle — selected excerpt with reform-era documents and data",
+      "author": "Upton Sinclair and institutional sources",
+      "genre": "Novel, primary documents, and quantitative evidence",
+      "purpose": "Synthesize literary, historical, public-policy, and quantitative sources into a documented academic claim with limitations.",
+      "sources": [
+        [
+          "Project Gutenberg · The Jungle",
+          "https://www.gutenberg.org/ebooks/140"
+        ],
+        [
+          "Library of Congress Digital Collections",
+          "https://www.loc.gov/collections/"
+        ]
+      ],
+      "week": 27,
+      "unit": 9,
+      "readingType": "Assigned"
+    },
+    {
+      "title": "The Autobiography of Benjamin Franklin — selected chapters",
+      "author": "Benjamin Franklin",
+      "genre": "Autobiography",
+      "purpose": "Study self-presentation, narrative selection, growth, audience, reflection, and the craft choices that inform a personal or scholarship statement.",
+      "sources": [
+        [
+          "Project Gutenberg · Autobiography of Benjamin Franklin",
+          "https://www.gutenberg.org/ebooks/20203"
+        ]
+      ],
+      "week": 28,
+      "unit": 10,
+      "readingType": "Assigned"
+    },
+    {
+      "title": "Up from Slavery — selected chapters",
+      "author": "Booker T. Washington",
+      "genre": "Autobiography and public argument",
+      "purpose": "Analyze professional voice, life narrative, audience, education, work, persuasion, and ethical adaptation for career communication.",
+      "sources": [
+        [
+          "Project Gutenberg · Up from Slavery",
+          "https://www.gutenberg.org/ebooks/2376"
+        ]
+      ],
+      "week": 29,
+      "unit": 10,
+      "readingType": "Assigned"
+    },
+    {
+      "title": "Professional, Civic, and Digital Communication Models",
+      "author": "Teacher-selected institutional models and student drafts",
+      "genre": "Résumé, letter, proposal, statement, and digital publication",
+      "purpose": "Adapt voice, evidence, organization, accessibility, and medium for college, scholarship, employment, civic, and public audiences.",
+      "sources": [
+        [
+          "English IV portfolio",
+          "portfolio/"
+        ],
+        [
+          "English IV rubrics",
+          "rubrics/"
+        ]
+      ],
+      "week": 30,
+      "unit": 10,
+      "readingType": "Assigned"
+    },
+    {
+      "title": "Frankenstein",
+      "author": "Mary Shelley",
+      "genre": "Gothic and philosophical novel",
+      "purpose": "Begin a sustained long-form study by tracing frame narration, motive, responsibility, ambition, isolation, motif, and competing critical lenses.",
+      "sources": [
+        [
+          "Project Gutenberg · Frankenstein",
+          "https://www.gutenberg.org/ebooks/84"
+        ]
+      ],
+      "week": 31,
+      "unit": 11,
+      "readingType": "Assigned"
+    },
+    {
+      "title": "Hamlet",
+      "author": "William Shakespeare",
+      "genre": "Tragedy",
+      "purpose": "Evaluate dramatic structure, performance, delay, conscience, rhetoric, ambiguity, motive, and how critical lenses alter interpretation.",
+      "sources": [
+        [
+          "Project Gutenberg title search",
+          "https://www.gutenberg.org/ebooks/search/?query=Hamlet+William+Shakespeare"
+        ]
+      ],
+      "week": 32,
+      "unit": 11,
+      "readingType": "Assigned"
+    },
+    {
+      "title": "Student-Selected Long-Form Work and Critical Conversation",
+      "author": "Teacher-approved author and critics",
+      "genre": "Independent novel or drama with criticism",
+      "purpose": "Lead an evidence-based seminar, compare interpretations, test a critical lens, and defend an independent literary argument.",
+      "sources": [
+        [
+          "English IV reading guide",
+          "reading-list.html"
+        ],
+        [
+          "English IV portfolio",
+          "portfolio/"
+        ]
+      ],
+      "week": 33,
+      "unit": 11,
+      "readingType": "Assigned"
+    },
+    {
+      "title": "Senior Capstone Source Set",
+      "author": "Student-selected primary, scholarly, institutional, visual, and quantitative sources",
+      "genre": "Capstone inquiry",
+      "purpose": "Complete a consequential, ethical, and well-documented inquiry that contributes an original synthesis for a real audience.",
+      "sources": [
+        [
+          "PLERA Search Pro",
+          "https://vervenveda.com/PLERASearch.github.io/apps/PLERA_search_pro_index.html"
+        ],
+        [
+          "English IV portfolio",
+          "portfolio/"
+        ]
+      ],
+      "week": 34,
+      "unit": 12,
+      "readingType": "Assigned"
+    },
+    {
+      "title": "Graduation Portfolio Mentor Texts and Student Artifacts",
+      "author": "Student and teacher-selected models",
+      "genre": "Portfolio and oral defense",
+      "purpose": "Curate representative evidence, revise substantially, explain growth, document authorship, and prepare a clear oral defense.",
+      "sources": [
+        [
+          "English IV portfolio",
+          "portfolio/"
+        ],
+        [
+          "English IV records",
+          "records/"
+        ]
+      ],
+      "week": 35,
+      "unit": 12,
+      "readingType": "Assigned"
+    },
+    {
+      "title": "Cumulative Final, Postsecondary Literacy Plan, and Independent Reading Future",
+      "author": "Teacher-approved assessment and student-selected reading",
+      "genre": "Final assessment and transition plan",
+      "purpose": "Synthesize the complete senior course, correct errors, defend mastery, and establish a sustainable plan for college, career, civic, and lifelong literacy.",
+      "sources": [
+        [
+          "English IV final examination",
+          "assessments/final/"
+        ],
+        [
+          "English IV reading guide",
+          "reading-list.html"
+        ]
+      ],
+      "week": 36,
+      "unit": 12,
+      "readingType": "Assigned"
+    }
+  ]
 }
