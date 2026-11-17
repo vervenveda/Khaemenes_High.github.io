@@ -1,8 +1,10 @@
 # Khaemenes Academy · Grade 10 United States History Honors
 
-**Production student portal:** [index.html](index.html). This is the active browser application and contains its current embedded APP curriculum, state handling, student dashboard, Monte Carlo assessment adapter calls, records, and reporting logic.
+**Production student portal:** [index.html](index.html). The production portal now uses the same canonical-data pattern as the surrounding high-school social studies program.
 
-**Other runtime files:** `app.js` and `course-data.js` are retained for compatibility and reference. They are **not** loaded by the active `index.html`; do not update them assuming the production student portal will change. Do not delete or replace them until a migration and parity test have been completed.
+**Canonical runtime:** `course-data.js` is the authoritative Grade 10 curriculum source and `app.js` is the authoritative student-portal renderer. The public `index.html` loads those files directly. Do not re-embed a second curriculum copy inside `index.html`.
+
+**Migration safeguard:** the previous embedded production page was preserved at `workflow/legacy-index-pre-canonical-migration-2026-11-16.html`. On first load, `app.js` checks for the former `KHAE_SS10_USH_CLEAN_PORTAL_V1` browser record and migrates compatible lesson, assignment, quiz, and exam evidence into the canonical `khaemenes_grade10_social_studies_v1` record without deleting the legacy record.
 
 ## Course
 - 36 weeks, five lesson days each week, three principal assignments weekly.
@@ -13,11 +15,11 @@
 - Assessment attempts and learner records remain in browser localStorage. Export JSON before clearing browser data.
 
 ## Known limitations and next hardening
-1. Weekly quizzes in the embedded APP are five-question banks in some weeks; expand to reviewed ten-or-more question banks and test randomization/distractor quality.
-2. Course grading still needs a teacher-scored rubric and official gradebook integration; current activity percentage is *not* a transcript grade.
+1. The canonical curriculum is now externalized and active; continue parity testing against printable packets, teacher tools, and offline caches before retiring any historical compatibility files.
+2. Course grading still needs a teacher-scored rubric and official gradebook integration; activity percentage is not a transcript grade.
 3. Browser-only records are not tamper-resistant. Offline exports provide backup, not trusted credential verification.
-4. Implement a deliberate migration to one external curriculum source and runtime only after comparison tests on existing student records.
-5. Audit offline caching, printable student evidence with Academy-first titles, and teacher-review handoff before declaring release complete.
+4. Weekly quiz banks are currently ten reviewed objective questions per week. Future expansion should add larger reviewed banks while preserving the 80% mastery rule and correction-based retakes.
+5. Continue auditing printable student evidence, Academy-first titles, source traceability, and teacher-review handoff.
 
 ## Progression regression checks
 - New learner: Week 2 disabled.
