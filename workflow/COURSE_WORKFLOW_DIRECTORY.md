@@ -31,3 +31,7 @@ Established November 16, 2026. This directory links **17 independent archival jo
 ## Filing policy
 
 Keep course-specific audits, tests, repairs, upgrades, Codex notes, and decisions in that course's own archive. Use department journals for shared decisions affecting multiple classes. Cross-course or high-school-wide decisions belong in the repository-level [workflow index](INDEX.md). Link original Git commits and actual test evidence. Do not copy private learner records or credentials into logs.
+
+## Landing-page architecture authority
+
+Before changing a High School course landing page, consult the repository-level [High School Landing Page Blueprint Directory](blueprints/high-school-landing-pages/INDEX.md). The canonical contract governs shared chrome, centered/symmetrical layout, equal card grids, typography/accessibility, assessment exceptions and learner-data protection. Each course has a dedicated expected-architecture file. Implementation results belong in the relevant course journal.
