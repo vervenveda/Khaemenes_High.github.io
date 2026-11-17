@@ -1,0 +1,1498 @@
+{
+  "schema_version": "2.0.0",
+  "schema_id": "khaemenes-math-course-map-v2",
+  "source": {
+    "path": "courses/mathematics/algebra-2/course-map.json",
+    "legacy_schema_version": "1.0"
+  },
+  "course": {
+    "id": "math-algebra2-advanced-functions",
+    "profile_course_id": "algebra-2",
+    "code": "KH-MATH-A2",
+    "title": "Khaemenes Open-Age Algebra II & Advanced Functions",
+    "short_title": "Algebra II",
+    "audience": "Open-age, placement-based learners who have completed Algebra I or demonstrated equivalent readiness",
+    "prerequisite": "Algebra I or equivalent mastery",
+    "duration_weeks": 36,
+    "supported_duration_weeks": 36,
+    "mastery_target": 80,
+    "pathways": [
+      "Foundation",
+      "Core",
+      "Extended"
+    ],
+    "delivery": [],
+    "storage_key": "khaemenes-algebra2-course-v1",
+    "version": "1.0.0"
+  },
+  "readiness": {
+    "gateway": null,
+    "conditional_unit": null
+  },
+  "calendar": {
+    "weeks": 36
+  },
+  "units": [
+    {
+      "id": "u01",
+      "number": 1,
+      "title": "Advanced Functions, Transformations & Inverses",
+      "weeks": 2,
+      "week_numbers": null,
+      "path": "units/unit-01/",
+      "essential_question": "How do notation, transformations, composition, and inverse thinking reveal the structure and behavior of functions?",
+      "project": "Function Transformation & Inverse Design Portfolio",
+      "objectives": [],
+      "standards": [
+        "Functions",
+        "Building Functions",
+        "Interpreting Functions",
+        "Mathematical Modelling"
+      ],
+      "lesson_count": 6,
+      "lessons": [
+        {
+          "id": "u01-l01",
+          "number": 1,
+          "title": "Function Language, Notation & Evaluation",
+          "type": "function_notation"
+        },
+        {
+          "id": "u01-l02",
+          "number": 2,
+          "title": "Domain, Range, Intervals & Constraints",
+          "type": "domain_range"
+        },
+        {
+          "id": "u01-l03",
+          "number": 3,
+          "title": "Transformations of Parent Functions",
+          "type": "transformations"
+        },
+        {
+          "id": "u01-l04",
+          "number": 4,
+          "title": "Function Composition & Decomposition",
+          "type": "composition"
+        },
+        {
+          "id": "u01-l05",
+          "number": 5,
+          "title": "Inverse Functions & One-to-One Relationships",
+          "type": "inverse_functions"
+        },
+        {
+          "id": "u01-l06",
+          "number": 6,
+          "title": "Piecewise, Absolute-Value & Step Functions",
+          "type": "piecewise"
+        }
+      ],
+      "status": "open"
+    },
+    {
+      "id": "u02",
+      "number": 2,
+      "title": "Polynomial Functions & Complex Numbers",
+      "weeks": 3,
+      "week_numbers": null,
+      "path": "units/unit-02/",
+      "essential_question": "How do polynomial structure, complex numbers, zeros, and end behavior work together to describe nonlinear change?",
+      "project": "Polynomial Structure & Complex-Zero Investigation",
+      "objectives": [],
+      "standards": [
+        "Polynomial Arithmetic",
+        "Complex Number System",
+        "Zeros and Factors",
+        "Functions"
+      ],
+      "lesson_count": 8,
+      "lessons": [
+        {
+          "id": "u02-l01",
+          "number": 1,
+          "title": "Polynomial Vocabulary, Degree & Structure",
+          "type": "polynomial_structure"
+        },
+        {
+          "id": "u02-l02",
+          "number": 2,
+          "title": "Polynomial Operations & Equivalent Forms",
+          "type": "polynomial_operations"
+        },
+        {
+          "id": "u02-l03",
+          "number": 3,
+          "title": "Power Functions & End Behavior",
+          "type": "end_behavior"
+        },
+        {
+          "id": "u02-l04",
+          "number": 4,
+          "title": "The Imaginary Unit & Powers of i",
+          "type": "complex_intro"
+        },
+        {
+          "id": "u02-l05",
+          "number": 5,
+          "title": "Operations with Complex Numbers",
+          "type": "complex_operations"
+        },
+        {
+          "id": "u02-l06",
+          "number": 6,
+          "title": "Quadratic Equations with Complex Solutions",
+          "type": "complex_quadratics"
+        },
+        {
+          "id": "u02-l07",
+          "number": 7,
+          "title": "Conjugates, Modulus & the Complex Plane",
+          "type": "complex_plane"
+        },
+        {
+          "id": "u02-l08",
+          "number": 8,
+          "title": "Fundamental Theorem of Algebra & Complete Factorization",
+          "type": "fundamental_theorem"
+        }
+      ],
+      "status": "open"
+    },
+    {
+      "id": "u03",
+      "number": 3,
+      "title": "Polynomial Equations, Division & Graphs",
+      "weeks": 3,
+      "week_numbers": null,
+      "path": "units/unit-03/",
+      "essential_question": "How can division, factor relationships, multiplicity, and graph features expose every important part of a polynomial model?",
+      "project": "Polynomial Graph Reconstruction & Model Defense",
+      "objectives": [],
+      "standards": [
+        "Polynomial Identities",
+        "Remainder Theorem",
+        "Factor Theorem",
+        "Graphing Polynomial Functions"
+      ],
+      "lesson_count": 7,
+      "lessons": [
+        {
+          "id": "u03-l01",
+          "number": 1,
+          "title": "Long Division of Polynomials",
+          "type": "polynomial_division"
+        },
+        {
+          "id": "u03-l02",
+          "number": 2,
+          "title": "Synthetic Division & Efficient Evaluation",
+          "type": "synthetic_division"
+        },
+        {
+          "id": "u03-l03",
+          "number": 3,
+          "title": "Remainder and Factor Theorems",
+          "type": "remainder_factor"
+        },
+        {
+          "id": "u03-l04",
+          "number": 4,
+          "title": "Rational Root Theorem & Candidate Zeros",
+          "type": "rational_root"
+        },
+        {
+          "id": "u03-l05",
+          "number": 5,
+          "title": "Solving Higher-Degree Polynomial Equations",
+          "type": "solve_polynomial"
+        },
+        {
+          "id": "u03-l06",
+          "number": 6,
+          "title": "Zeros, Multiplicity & Graph Behavior",
+          "type": "multiplicity"
+        },
+        {
+          "id": "u03-l07",
+          "number": 7,
+          "title": "Polynomial Regression, Interpolation & Model Limits",
+          "type": "polynomial_model"
+        }
+      ],
+      "status": "open"
+    },
+    {
+      "id": "u04",
+      "number": 4,
+      "title": "Rational Expressions, Equations & Functions",
+      "weeks": 3,
+      "week_numbers": null,
+      "path": "units/unit-04/",
+      "essential_question": "How do excluded values, asymptotes, holes, and rates of change shape rational expressions and models?",
+      "project": "Rational Function Design & Rate Model",
+      "objectives": [],
+      "standards": [
+        "Rational Expressions",
+        "Rational Equations",
+        "Rational Functions",
+        "Variation and Modelling"
+      ],
+      "lesson_count": 8,
+      "lessons": [
+        {
+          "id": "u04-l01",
+          "number": 1,
+          "title": "Simplifying Rational Expressions & Restrictions",
+          "type": "rational_simplify"
+        },
+        {
+          "id": "u04-l02",
+          "number": 2,
+          "title": "Multiplying and Dividing Rational Expressions",
+          "type": "rational_multiply"
+        },
+        {
+          "id": "u04-l03",
+          "number": 3,
+          "title": "Adding and Subtracting Rational Expressions",
+          "type": "rational_add"
+        },
+        {
+          "id": "u04-l04",
+          "number": 4,
+          "title": "Solving Rational Equations & Extraneous Solutions",
+          "type": "rational_equations"
+        },
+        {
+          "id": "u04-l05",
+          "number": 5,
+          "title": "Reciprocal Functions, Asymptotes & Holes",
+          "type": "rational_graphs"
+        },
+        {
+          "id": "u04-l06",
+          "number": 6,
+          "title": "Transformations and Features of Rational Functions",
+          "type": "rational_transform"
+        },
+        {
+          "id": "u04-l07",
+          "number": 7,
+          "title": "Direct, Inverse, Joint & Combined Variation",
+          "type": "variation"
+        },
+        {
+          "id": "u04-l08",
+          "number": 8,
+          "title": "Rational Models, Rates & Work Problems",
+          "type": "rational_models"
+        }
+      ],
+      "status": "open"
+    },
+    {
+      "id": "u05",
+      "number": 5,
+      "title": "Radical Functions & Rational Exponents",
+      "weeks": 2,
+      "week_numbers": null,
+      "path": "units/unit-05/",
+      "essential_question": "How do radicals, rational exponents, inverse relationships, and domain restrictions describe quantities that grow by roots and powers?",
+      "project": "Radical Measurement & Inverse-Relationship Lab",
+      "objectives": [],
+      "standards": [
+        "Radicals",
+        "Rational Exponents",
+        "Radical Equations",
+        "Inverse Functions"
+      ],
+      "lesson_count": 6,
+      "lessons": [
+        {
+          "id": "u05-l01",
+          "number": 1,
+          "title": "Rational Exponents & Radical Equivalence",
+          "type": "rational_exponents"
+        },
+        {
+          "id": "u05-l02",
+          "number": 2,
+          "title": "Simplifying Radical Expressions",
+          "type": "simplify_radicals"
+        },
+        {
+          "id": "u05-l03",
+          "number": 3,
+          "title": "Operations with Radicals & Rationalizing",
+          "type": "radical_operations"
+        },
+        {
+          "id": "u05-l04",
+          "number": 4,
+          "title": "Solving Radical Equations & Checking Solutions",
+          "type": "radical_equations"
+        },
+        {
+          "id": "u05-l05",
+          "number": 5,
+          "title": "Radical Functions, Domains & Transformations",
+          "type": "radical_functions"
+        },
+        {
+          "id": "u05-l06",
+          "number": 6,
+          "title": "Radical Models, Geometry & Measurement Error",
+          "type": "radical_models"
+        }
+      ],
+      "status": "open"
+    },
+    {
+      "id": "u06",
+      "number": 6,
+      "title": "Exponential Functions & Growth Models",
+      "weeks": 3,
+      "week_numbers": null,
+      "path": "units/unit-06/",
+      "essential_question": "How do repeated multiplication, percent change, and continuous growth create exponential patterns and decisions?",
+      "project": "Exponential Growth, Decay & Financial Scenario Audit",
+      "objectives": [],
+      "standards": [
+        "Exponential Functions",
+        "Growth and Decay",
+        "Financial Mathematics",
+        "Modelling"
+      ],
+      "lesson_count": 7,
+      "lessons": [
+        {
+          "id": "u06-l01",
+          "number": 1,
+          "title": "Exponential Function Structure & Parameters",
+          "type": "exponential_structure"
+        },
+        {
+          "id": "u06-l02",
+          "number": 2,
+          "title": "Growth, Decay & Percent Change",
+          "type": "growth_decay"
+        },
+        {
+          "id": "u06-l03",
+          "number": 3,
+          "title": "Compound Interest & Effective Rates",
+          "type": "compound_interest"
+        },
+        {
+          "id": "u06-l04",
+          "number": 4,
+          "title": "Continuous Growth, Decay & the Constant e",
+          "type": "continuous_growth"
+        },
+        {
+          "id": "u06-l05",
+          "number": 5,
+          "title": "Solving Exponential Equations by Common Bases",
+          "type": "solve_exponential"
+        },
+        {
+          "id": "u06-l06",
+          "number": 6,
+          "title": "Exponential Regression & Data Modelling",
+          "type": "exponential_regression"
+        },
+        {
+          "id": "u06-l07",
+          "number": 7,
+          "title": "Comparing Linear, Quadratic & Exponential Models",
+          "type": "model_comparison"
+        }
+      ],
+      "status": "open"
+    },
+    {
+      "id": "u07",
+      "number": 7,
+      "title": "Logarithmic Functions & Equations",
+      "weeks": 3,
+      "week_numbers": null,
+      "path": "units/unit-07/",
+      "essential_question": "How do logarithms reverse exponential processes, compress scale, and reveal time, magnitude, and rate?",
+      "project": "Logarithmic Scale & Inverse-Process Investigation",
+      "objectives": [],
+      "standards": [
+        "Logarithms",
+        "Inverse Functions",
+        "Exponential Equations",
+        "Applications"
+      ],
+      "lesson_count": 7,
+      "lessons": [
+        {
+          "id": "u07-l01",
+          "number": 1,
+          "title": "Logarithms as Inverses of Exponentials",
+          "type": "log_definition"
+        },
+        {
+          "id": "u07-l02",
+          "number": 2,
+          "title": "Common, Natural & Other Logarithmic Bases",
+          "type": "log_bases"
+        },
+        {
+          "id": "u07-l03",
+          "number": 3,
+          "title": "Product, Quotient & Power Properties",
+          "type": "log_properties"
+        },
+        {
+          "id": "u07-l04",
+          "number": 4,
+          "title": "Solving Exponential Equations with Logarithms",
+          "type": "log_solve_exp"
+        },
+        {
+          "id": "u07-l05",
+          "number": 5,
+          "title": "Solving Logarithmic Equations & Domain Checks",
+          "type": "log_equations"
+        },
+        {
+          "id": "u07-l06",
+          "number": 6,
+          "title": "Change of Base, Technology & Estimation",
+          "type": "change_base"
+        },
+        {
+          "id": "u07-l07",
+          "number": 7,
+          "title": "Logarithmic Scales, Data & Model Interpretation",
+          "type": "log_models"
+        }
+      ],
+      "status": "open"
+    },
+    {
+      "id": "u08",
+      "number": 8,
+      "title": "Nonlinear Systems & Matrices",
+      "weeks": 2,
+      "week_numbers": null,
+      "path": "units/unit-08/",
+      "essential_question": "How can multiple equations, matrices, and graphical intersections describe systems with several interacting constraints?",
+      "project": "Nonlinear System & Matrix Decision Laboratory",
+      "objectives": [],
+      "standards": [
+        "Systems of Equations",
+        "Matrices",
+        "Nonlinear Functions",
+        "Modelling"
+      ],
+      "lesson_count": 6,
+      "lessons": [
+        {
+          "id": "u08-l01",
+          "number": 1,
+          "title": "Graphical Solutions of Linear–Nonlinear Systems",
+          "type": "nonlinear_system_graph"
+        },
+        {
+          "id": "u08-l02",
+          "number": 2,
+          "title": "Solving Nonlinear Systems by Substitution",
+          "type": "nonlinear_substitution"
+        },
+        {
+          "id": "u08-l03",
+          "number": 3,
+          "title": "Polynomial, Rational & Radical Systems",
+          "type": "nonlinear_systems"
+        },
+        {
+          "id": "u08-l04",
+          "number": 4,
+          "title": "Matrix Vocabulary, Dimensions & Operations",
+          "type": "matrix_operations"
+        },
+        {
+          "id": "u08-l05",
+          "number": 5,
+          "title": "Matrix Equations, Row Reduction & Systems",
+          "type": "matrix_solve"
+        },
+        {
+          "id": "u08-l06",
+          "number": 6,
+          "title": "Determinants, Inverses & Transformation Models",
+          "type": "matrix_inverse"
+        }
+      ],
+      "status": "open"
+    },
+    {
+      "id": "u09",
+      "number": 9,
+      "title": "Sequences, Series & the Binomial Theorem",
+      "weeks": 3,
+      "week_numbers": null,
+      "path": "units/unit-09/",
+      "essential_question": "How do recursive and explicit rules describe patterns, accumulated change, and finite or infinite sums?",
+      "project": "Sequence, Series & Repeated-Change Analysis",
+      "objectives": [],
+      "standards": [
+        "Sequences",
+        "Series",
+        "Recursive Functions",
+        "Binomial Theorem"
+      ],
+      "lesson_count": 7,
+      "lessons": [
+        {
+          "id": "u09-l01",
+          "number": 1,
+          "title": "Arithmetic Sequences: Explicit & Recursive Forms",
+          "type": "arithmetic_sequence"
+        },
+        {
+          "id": "u09-l02",
+          "number": 2,
+          "title": "Geometric Sequences: Growth, Decay & Recursion",
+          "type": "geometric_sequence"
+        },
+        {
+          "id": "u09-l03",
+          "number": 3,
+          "title": "General Sequences, Patterns & Difference Tables",
+          "type": "general_sequences"
+        },
+        {
+          "id": "u09-l04",
+          "number": 4,
+          "title": "Finite Arithmetic & Geometric Series",
+          "type": "finite_series"
+        },
+        {
+          "id": "u09-l05",
+          "number": 5,
+          "title": "Infinite Geometric Series & Convergence",
+          "type": "infinite_series"
+        },
+        {
+          "id": "u09-l06",
+          "number": 6,
+          "title": "Sigma Notation & Summation Properties",
+          "type": "sigma"
+        },
+        {
+          "id": "u09-l07",
+          "number": 7,
+          "title": "Pascal’s Triangle & the Binomial Theorem",
+          "type": "binomial_theorem"
+        }
+      ],
+      "status": "open"
+    },
+    {
+      "id": "u10",
+      "number": 10,
+      "title": "Trigonometric Functions & Periodic Models",
+      "weeks": 4,
+      "week_numbers": null,
+      "path": "units/unit-10/",
+      "essential_question": "How do angle measure, the unit circle, graphs, and periodic functions model rotation, waves, cycles, and repeated behavior?",
+      "project": "Periodic Phenomenon Modelling Studio",
+      "objectives": [],
+      "standards": [
+        "Trigonometric Functions",
+        "Unit Circle",
+        "Periodic Functions",
+        "Modelling"
+      ],
+      "lesson_count": 10,
+      "lessons": [
+        {
+          "id": "u10-l01",
+          "number": 1,
+          "title": "Angle Measure, Radians & Coterminal Angles",
+          "type": "angle_measure"
+        },
+        {
+          "id": "u10-l02",
+          "number": 2,
+          "title": "The Unit Circle & Coordinate Definitions",
+          "type": "unit_circle"
+        },
+        {
+          "id": "u10-l03",
+          "number": 3,
+          "title": "Exact Trigonometric Values & Reference Angles",
+          "type": "exact_trig"
+        },
+        {
+          "id": "u10-l04",
+          "number": 4,
+          "title": "Six Trigonometric Functions & Reciprocal Relationships",
+          "type": "six_trig"
+        },
+        {
+          "id": "u10-l05",
+          "number": 5,
+          "title": "Graphs of Sine and Cosine",
+          "type": "sine_cosine_graphs"
+        },
+        {
+          "id": "u10-l06",
+          "number": 6,
+          "title": "Amplitude, Period, Phase & Vertical Shifts",
+          "type": "sinusoid_transform"
+        },
+        {
+          "id": "u10-l07",
+          "number": 7,
+          "title": "Graphs of Tangent, Cotangent, Secant & Cosecant",
+          "type": "other_trig_graphs"
+        },
+        {
+          "id": "u10-l08",
+          "number": 8,
+          "title": "Inverse Trigonometric Functions & Restricted Domains",
+          "type": "inverse_trig"
+        },
+        {
+          "id": "u10-l09",
+          "number": 9,
+          "title": "Sinusoidal Regression & Periodic Data",
+          "type": "sinusoidal_regression"
+        },
+        {
+          "id": "u10-l10",
+          "number": 10,
+          "title": "Vectors, Bearings & Component Models",
+          "type": "vectors"
+        }
+      ],
+      "status": "open"
+    },
+    {
+      "id": "u11",
+      "number": 11,
+      "title": "Trigonometric Identities, Equations & Oblique Triangles",
+      "weeks": 3,
+      "week_numbers": null,
+      "path": "units/unit-11/",
+      "essential_question": "How do identities and triangle laws transform expressions, solve periodic equations, and determine unknown measurements?",
+      "project": "Trigonometric Proof & Navigation Defense",
+      "objectives": [],
+      "standards": [
+        "Trigonometric Identities",
+        "Trigonometric Equations",
+        "Law of Sines",
+        "Law of Cosines"
+      ],
+      "lesson_count": 8,
+      "lessons": [
+        {
+          "id": "u11-l01",
+          "number": 1,
+          "title": "Fundamental, Reciprocal & Pythagorean Identities",
+          "type": "basic_identities"
+        },
+        {
+          "id": "u11-l02",
+          "number": 2,
+          "title": "Verifying Identities with Equivalent Transformations",
+          "type": "verify_identities"
+        },
+        {
+          "id": "u11-l03",
+          "number": 3,
+          "title": "Sum and Difference Identities",
+          "type": "sum_difference"
+        },
+        {
+          "id": "u11-l04",
+          "number": 4,
+          "title": "Double-Angle and Half-Angle Identities",
+          "type": "double_half"
+        },
+        {
+          "id": "u11-l05",
+          "number": 5,
+          "title": "Solving Trigonometric Equations on Intervals",
+          "type": "trig_equations"
+        },
+        {
+          "id": "u11-l06",
+          "number": 6,
+          "title": "Law of Sines, Ambiguous Case & Applications",
+          "type": "law_sines"
+        },
+        {
+          "id": "u11-l07",
+          "number": 7,
+          "title": "Law of Cosines & Heron-Type Area Reasoning",
+          "type": "law_cosines"
+        },
+        {
+          "id": "u11-l08",
+          "number": 8,
+          "title": "Navigation, Vectors & Multi-Step Triangle Models",
+          "type": "trig_applications"
+        }
+      ],
+      "status": "open"
+    },
+    {
+      "id": "u12",
+      "number": 12,
+      "title": "Probability, Distributions & Statistical Inference",
+      "weeks": 2,
+      "week_numbers": null,
+      "path": "units/unit-12/",
+      "essential_question": "How do counting, probability models, distributions, and sampling support responsible conclusions under uncertainty?",
+      "project": "Probability & Statistical Evidence Audit",
+      "objectives": [],
+      "standards": [
+        "Probability",
+        "Statistics",
+        "Binomial Distribution",
+        "Normal Distribution",
+        "Inference"
+      ],
+      "lesson_count": 7,
+      "lessons": [
+        {
+          "id": "u12-l01",
+          "number": 1,
+          "title": "Fundamental Counting Principle, Permutations & Combinations",
+          "type": "counting"
+        },
+        {
+          "id": "u12-l02",
+          "number": 2,
+          "title": "Probability Rules, Complements & Unions",
+          "type": "probability_rules"
+        },
+        {
+          "id": "u12-l03",
+          "number": 3,
+          "title": "Conditional Probability, Independence & Bayes Reasoning",
+          "type": "conditional_probability"
+        },
+        {
+          "id": "u12-l04",
+          "number": 4,
+          "title": "Binomial Experiments & Expected Value",
+          "type": "binomial_distribution"
+        },
+        {
+          "id": "u12-l05",
+          "number": 5,
+          "title": "Normal Distributions, z-Scores & Percentiles",
+          "type": "normal_distribution"
+        },
+        {
+          "id": "u12-l06",
+          "number": 6,
+          "title": "Sampling, Bias, Margin of Error & Study Design",
+          "type": "sampling_inference"
+        },
+        {
+          "id": "u12-l07",
+          "number": 7,
+          "title": "Evaluating Statistical Claims & Communicating Uncertainty",
+          "type": "statistical_claims"
+        }
+      ],
+      "status": "open"
+    },
+    {
+      "id": "u13",
+      "number": 13,
+      "title": "Advanced Mathematical Modelling Capstone",
+      "weeks": 1,
+      "week_numbers": null,
+      "path": "units/unit-13/",
+      "essential_question": "How can a transparent, tested, and ethically communicated mathematical model support a real decision?",
+      "project": "Algebra II Modelling Exploration & Oral Defense",
+      "objectives": [],
+      "standards": [
+        "Mathematical Modelling",
+        "Inquiry",
+        "Technology",
+        "Communication",
+        "Evaluation"
+      ],
+      "lesson_count": 5,
+      "lessons": [
+        {
+          "id": "u13-l01",
+          "number": 1,
+          "title": "Frame a Meaningful, Ethical & Answerable Question",
+          "type": "capstone_question"
+        },
+        {
+          "id": "u13-l02",
+          "number": 2,
+          "title": "Select Variables, Functions, Data & Assumptions",
+          "type": "capstone_design"
+        },
+        {
+          "id": "u13-l03",
+          "number": 3,
+          "title": "Build, Compute, Visualize & Validate the Model",
+          "type": "capstone_build"
+        },
+        {
+          "id": "u13-l04",
+          "number": 4,
+          "title": "Test Sensitivity, Uncertainty, Fairness & Limitations",
+          "type": "capstone_evaluate"
+        },
+        {
+          "id": "u13-l05",
+          "number": 5,
+          "title": "Present, Defend, Revise & Reflect",
+          "type": "capstone_defense"
+        }
+      ],
+      "status": "open"
+    }
+  ],
+  "weeks": [
+    {
+      "number": 1,
+      "unit": null,
+      "title": "Readiness Diagnostic & Algebra I Bridge",
+      "essential_question": "Which prerequisite skills are secure, and which require targeted review before advanced work?",
+      "unit_path": "diagnostic/",
+      "lesson_ids": [],
+      "skills": [
+        "diagnostic",
+        "algebra-1 bridge"
+      ],
+      "focus": null
+    },
+    {
+      "number": 2,
+      "unit": 1,
+      "title": "Advanced Functions, Transformations & Inverses · Part 1",
+      "essential_question": "How do notation, transformations, composition, and inverse thinking reveal the structure and behavior of functions?",
+      "unit_path": "units/unit-01/",
+      "lesson_ids": [
+        "u01-l01",
+        "u01-l02",
+        "u01-l03"
+      ],
+      "skills": [
+        "function_notation",
+        "domain_range",
+        "transformations"
+      ],
+      "focus": "Function Language, Notation & Evaluation; Domain, Range, Intervals & Constraints; Transformations of Parent Functions"
+    },
+    {
+      "number": 3,
+      "unit": 1,
+      "title": "Advanced Functions, Transformations & Inverses · Part 2",
+      "essential_question": "How do notation, transformations, composition, and inverse thinking reveal the structure and behavior of functions?",
+      "unit_path": "units/unit-01/",
+      "lesson_ids": [
+        "u01-l04",
+        "u01-l05",
+        "u01-l06"
+      ],
+      "skills": [
+        "composition",
+        "inverse_functions",
+        "piecewise"
+      ],
+      "focus": "Function Composition & Decomposition; Inverse Functions & One-to-One Relationships; Piecewise, Absolute-Value & Step Functions"
+    },
+    {
+      "number": 4,
+      "unit": 2,
+      "title": "Polynomial Functions & Complex Numbers · Part 1",
+      "essential_question": "How do polynomial structure, complex numbers, zeros, and end behavior work together to describe nonlinear change?",
+      "unit_path": "units/unit-02/",
+      "lesson_ids": [
+        "u02-l01",
+        "u02-l02",
+        "u02-l03"
+      ],
+      "skills": [
+        "polynomial_structure",
+        "polynomial_operations",
+        "end_behavior"
+      ],
+      "focus": "Polynomial Vocabulary, Degree & Structure; Polynomial Operations & Equivalent Forms; Power Functions & End Behavior"
+    },
+    {
+      "number": 5,
+      "unit": 2,
+      "title": "Polynomial Functions & Complex Numbers · Part 2",
+      "essential_question": "How do polynomial structure, complex numbers, zeros, and end behavior work together to describe nonlinear change?",
+      "unit_path": "units/unit-02/",
+      "lesson_ids": [
+        "u02-l04",
+        "u02-l05"
+      ],
+      "skills": [
+        "complex_intro",
+        "complex_operations"
+      ],
+      "focus": "The Imaginary Unit & Powers of i; Operations with Complex Numbers"
+    },
+    {
+      "number": 6,
+      "unit": 2,
+      "title": "Polynomial Functions & Complex Numbers · Part 3",
+      "essential_question": "How do polynomial structure, complex numbers, zeros, and end behavior work together to describe nonlinear change?",
+      "unit_path": "units/unit-02/",
+      "lesson_ids": [
+        "u02-l06",
+        "u02-l07",
+        "u02-l08"
+      ],
+      "skills": [
+        "complex_quadratics",
+        "complex_plane",
+        "fundamental_theorem"
+      ],
+      "focus": "Quadratic Equations with Complex Solutions; Conjugates, Modulus & the Complex Plane; Fundamental Theorem of Algebra & Complete Factorization"
+    },
+    {
+      "number": 7,
+      "unit": 3,
+      "title": "Polynomial Equations, Division & Graphs · Part 1",
+      "essential_question": "How can division, factor relationships, multiplicity, and graph features expose every important part of a polynomial model?",
+      "unit_path": "units/unit-03/",
+      "lesson_ids": [
+        "u03-l01",
+        "u03-l02"
+      ],
+      "skills": [
+        "polynomial_division",
+        "synthetic_division"
+      ],
+      "focus": "Long Division of Polynomials; Synthetic Division & Efficient Evaluation"
+    },
+    {
+      "number": 8,
+      "unit": 3,
+      "title": "Polynomial Equations, Division & Graphs · Part 2",
+      "essential_question": "How can division, factor relationships, multiplicity, and graph features expose every important part of a polynomial model?",
+      "unit_path": "units/unit-03/",
+      "lesson_ids": [
+        "u03-l03",
+        "u03-l04",
+        "u03-l05"
+      ],
+      "skills": [
+        "remainder_factor",
+        "rational_root",
+        "solve_polynomial"
+      ],
+      "focus": "Remainder and Factor Theorems; Rational Root Theorem & Candidate Zeros; Solving Higher-Degree Polynomial Equations"
+    },
+    {
+      "number": 9,
+      "unit": 3,
+      "title": "Polynomial Equations, Division & Graphs · Part 3",
+      "essential_question": "How can division, factor relationships, multiplicity, and graph features expose every important part of a polynomial model?",
+      "unit_path": "units/unit-03/",
+      "lesson_ids": [
+        "u03-l06",
+        "u03-l07"
+      ],
+      "skills": [
+        "multiplicity",
+        "polynomial_model"
+      ],
+      "focus": "Zeros, Multiplicity & Graph Behavior; Polynomial Regression, Interpolation & Model Limits"
+    },
+    {
+      "number": 10,
+      "unit": 4,
+      "title": "Rational Expressions, Equations & Functions · Part 1",
+      "essential_question": "How do excluded values, asymptotes, holes, and rates of change shape rational expressions and models?",
+      "unit_path": "units/unit-04/",
+      "lesson_ids": [
+        "u04-l01",
+        "u04-l02",
+        "u04-l03"
+      ],
+      "skills": [
+        "rational_simplify",
+        "rational_multiply",
+        "rational_add"
+      ],
+      "focus": "Simplifying Rational Expressions & Restrictions; Multiplying and Dividing Rational Expressions; Adding and Subtracting Rational Expressions"
+    },
+    {
+      "number": 11,
+      "unit": 4,
+      "title": "Rational Expressions, Equations & Functions · Part 2",
+      "essential_question": "How do excluded values, asymptotes, holes, and rates of change shape rational expressions and models?",
+      "unit_path": "units/unit-04/",
+      "lesson_ids": [
+        "u04-l04",
+        "u04-l05"
+      ],
+      "skills": [
+        "rational_equations",
+        "rational_graphs"
+      ],
+      "focus": "Solving Rational Equations & Extraneous Solutions; Reciprocal Functions, Asymptotes & Holes"
+    },
+    {
+      "number": 12,
+      "unit": 4,
+      "title": "Rational Expressions, Equations & Functions · Part 3",
+      "essential_question": "How do excluded values, asymptotes, holes, and rates of change shape rational expressions and models?",
+      "unit_path": "units/unit-04/",
+      "lesson_ids": [
+        "u04-l06",
+        "u04-l07",
+        "u04-l08"
+      ],
+      "skills": [
+        "rational_transform",
+        "variation",
+        "rational_models"
+      ],
+      "focus": "Transformations and Features of Rational Functions; Direct, Inverse, Joint & Combined Variation; Rational Models, Rates & Work Problems"
+    },
+    {
+      "number": 13,
+      "unit": 5,
+      "title": "Radical Functions & Rational Exponents · Part 1",
+      "essential_question": "How do radicals, rational exponents, inverse relationships, and domain restrictions describe quantities that grow by roots and powers?",
+      "unit_path": "units/unit-05/",
+      "lesson_ids": [
+        "u05-l01",
+        "u05-l02",
+        "u05-l03"
+      ],
+      "skills": [
+        "rational_exponents",
+        "simplify_radicals",
+        "radical_operations"
+      ],
+      "focus": "Rational Exponents & Radical Equivalence; Simplifying Radical Expressions; Operations with Radicals & Rationalizing"
+    },
+    {
+      "number": 14,
+      "unit": 5,
+      "title": "Radical Functions & Rational Exponents · Part 2",
+      "essential_question": "How do radicals, rational exponents, inverse relationships, and domain restrictions describe quantities that grow by roots and powers?",
+      "unit_path": "units/unit-05/",
+      "lesson_ids": [
+        "u05-l04",
+        "u05-l05",
+        "u05-l06"
+      ],
+      "skills": [
+        "radical_equations",
+        "radical_functions",
+        "radical_models"
+      ],
+      "focus": "Solving Radical Equations & Checking Solutions; Radical Functions, Domains & Transformations; Radical Models, Geometry & Measurement Error"
+    },
+    {
+      "number": 15,
+      "unit": 6,
+      "title": "Exponential Functions & Growth Models · Part 1",
+      "essential_question": "How do repeated multiplication, percent change, and continuous growth create exponential patterns and decisions?",
+      "unit_path": "units/unit-06/",
+      "lesson_ids": [
+        "u06-l01",
+        "u06-l02"
+      ],
+      "skills": [
+        "exponential_structure",
+        "growth_decay"
+      ],
+      "focus": "Exponential Function Structure & Parameters; Growth, Decay & Percent Change"
+    },
+    {
+      "number": 16,
+      "unit": 6,
+      "title": "Exponential Functions & Growth Models · Part 2",
+      "essential_question": "How do repeated multiplication, percent change, and continuous growth create exponential patterns and decisions?",
+      "unit_path": "units/unit-06/",
+      "lesson_ids": [
+        "u06-l03",
+        "u06-l04",
+        "u06-l05"
+      ],
+      "skills": [
+        "compound_interest",
+        "continuous_growth",
+        "solve_exponential"
+      ],
+      "focus": "Compound Interest & Effective Rates; Continuous Growth, Decay & the Constant e; Solving Exponential Equations by Common Bases"
+    },
+    {
+      "number": 17,
+      "unit": 6,
+      "title": "Exponential Functions & Growth Models · Part 3",
+      "essential_question": "How do repeated multiplication, percent change, and continuous growth create exponential patterns and decisions?",
+      "unit_path": "units/unit-06/",
+      "lesson_ids": [
+        "u06-l06",
+        "u06-l07"
+      ],
+      "skills": [
+        "exponential_regression",
+        "model_comparison"
+      ],
+      "focus": "Exponential Regression & Data Modelling; Comparing Linear, Quadratic & Exponential Models"
+    },
+    {
+      "number": 18,
+      "unit": null,
+      "title": "Midpoint Synthesis, Corrections & Examination",
+      "essential_question": "Can the learner connect advanced functions, polynomial structure, rational expressions, radicals, and exponential models with verified reasoning?",
+      "unit_path": "assessments/midterm.html",
+      "lesson_ids": [],
+      "skills": [
+        "midterm",
+        "corrections",
+        "portfolio review"
+      ],
+      "focus": null
+    },
+    {
+      "number": 19,
+      "unit": 7,
+      "title": "Logarithmic Functions & Equations · Part 1",
+      "essential_question": "How do logarithms reverse exponential processes, compress scale, and reveal time, magnitude, and rate?",
+      "unit_path": "units/unit-07/",
+      "lesson_ids": [
+        "u07-l01",
+        "u07-l02"
+      ],
+      "skills": [
+        "log_definition",
+        "log_bases"
+      ],
+      "focus": "Logarithms as Inverses of Exponentials; Common, Natural & Other Logarithmic Bases"
+    },
+    {
+      "number": 20,
+      "unit": 7,
+      "title": "Logarithmic Functions & Equations · Part 2",
+      "essential_question": "How do logarithms reverse exponential processes, compress scale, and reveal time, magnitude, and rate?",
+      "unit_path": "units/unit-07/",
+      "lesson_ids": [
+        "u07-l03",
+        "u07-l04",
+        "u07-l05"
+      ],
+      "skills": [
+        "log_properties",
+        "log_solve_exp",
+        "log_equations"
+      ],
+      "focus": "Product, Quotient & Power Properties; Solving Exponential Equations with Logarithms; Solving Logarithmic Equations & Domain Checks"
+    },
+    {
+      "number": 21,
+      "unit": 7,
+      "title": "Logarithmic Functions & Equations · Part 3",
+      "essential_question": "How do logarithms reverse exponential processes, compress scale, and reveal time, magnitude, and rate?",
+      "unit_path": "units/unit-07/",
+      "lesson_ids": [
+        "u07-l06",
+        "u07-l07"
+      ],
+      "skills": [
+        "change_base",
+        "log_models"
+      ],
+      "focus": "Change of Base, Technology & Estimation; Logarithmic Scales, Data & Model Interpretation"
+    },
+    {
+      "number": 22,
+      "unit": 8,
+      "title": "Nonlinear Systems & Matrices · Part 1",
+      "essential_question": "How can multiple equations, matrices, and graphical intersections describe systems with several interacting constraints?",
+      "unit_path": "units/unit-08/",
+      "lesson_ids": [
+        "u08-l01",
+        "u08-l02",
+        "u08-l03"
+      ],
+      "skills": [
+        "nonlinear_system_graph",
+        "nonlinear_substitution",
+        "nonlinear_systems"
+      ],
+      "focus": "Graphical Solutions of Linear–Nonlinear Systems; Solving Nonlinear Systems by Substitution; Polynomial, Rational & Radical Systems"
+    },
+    {
+      "number": 23,
+      "unit": 8,
+      "title": "Nonlinear Systems & Matrices · Part 2",
+      "essential_question": "How can multiple equations, matrices, and graphical intersections describe systems with several interacting constraints?",
+      "unit_path": "units/unit-08/",
+      "lesson_ids": [
+        "u08-l04",
+        "u08-l05",
+        "u08-l06"
+      ],
+      "skills": [
+        "matrix_operations",
+        "matrix_solve",
+        "matrix_inverse"
+      ],
+      "focus": "Matrix Vocabulary, Dimensions & Operations; Matrix Equations, Row Reduction & Systems; Determinants, Inverses & Transformation Models"
+    },
+    {
+      "number": 24,
+      "unit": 9,
+      "title": "Sequences, Series & the Binomial Theorem · Part 1",
+      "essential_question": "How do recursive and explicit rules describe patterns, accumulated change, and finite or infinite sums?",
+      "unit_path": "units/unit-09/",
+      "lesson_ids": [
+        "u09-l01",
+        "u09-l02"
+      ],
+      "skills": [
+        "arithmetic_sequence",
+        "geometric_sequence"
+      ],
+      "focus": "Arithmetic Sequences: Explicit & Recursive Forms; Geometric Sequences: Growth, Decay & Recursion"
+    },
+    {
+      "number": 25,
+      "unit": 9,
+      "title": "Sequences, Series & the Binomial Theorem · Part 2",
+      "essential_question": "How do recursive and explicit rules describe patterns, accumulated change, and finite or infinite sums?",
+      "unit_path": "units/unit-09/",
+      "lesson_ids": [
+        "u09-l03",
+        "u09-l04",
+        "u09-l05"
+      ],
+      "skills": [
+        "general_sequences",
+        "finite_series",
+        "infinite_series"
+      ],
+      "focus": "General Sequences, Patterns & Difference Tables; Finite Arithmetic & Geometric Series; Infinite Geometric Series & Convergence"
+    },
+    {
+      "number": 26,
+      "unit": 9,
+      "title": "Sequences, Series & the Binomial Theorem · Part 3",
+      "essential_question": "How do recursive and explicit rules describe patterns, accumulated change, and finite or infinite sums?",
+      "unit_path": "units/unit-09/",
+      "lesson_ids": [
+        "u09-l06",
+        "u09-l07"
+      ],
+      "skills": [
+        "sigma",
+        "binomial_theorem"
+      ],
+      "focus": "Sigma Notation & Summation Properties; Pascal’s Triangle & the Binomial Theorem"
+    },
+    {
+      "number": 27,
+      "unit": 10,
+      "title": "Trigonometric Functions & Periodic Models · Part 1",
+      "essential_question": "How do angle measure, the unit circle, graphs, and periodic functions model rotation, waves, cycles, and repeated behavior?",
+      "unit_path": "units/unit-10/",
+      "lesson_ids": [
+        "u10-l01",
+        "u10-l02"
+      ],
+      "skills": [
+        "angle_measure",
+        "unit_circle"
+      ],
+      "focus": "Angle Measure, Radians & Coterminal Angles; The Unit Circle & Coordinate Definitions"
+    },
+    {
+      "number": 28,
+      "unit": 10,
+      "title": "Trigonometric Functions & Periodic Models · Part 2",
+      "essential_question": "How do angle measure, the unit circle, graphs, and periodic functions model rotation, waves, cycles, and repeated behavior?",
+      "unit_path": "units/unit-10/",
+      "lesson_ids": [
+        "u10-l03",
+        "u10-l04",
+        "u10-l05"
+      ],
+      "skills": [
+        "exact_trig",
+        "six_trig",
+        "sine_cosine_graphs"
+      ],
+      "focus": "Exact Trigonometric Values & Reference Angles; Six Trigonometric Functions & Reciprocal Relationships; Graphs of Sine and Cosine"
+    },
+    {
+      "number": 29,
+      "unit": 10,
+      "title": "Trigonometric Functions & Periodic Models · Part 3",
+      "essential_question": "How do angle measure, the unit circle, graphs, and periodic functions model rotation, waves, cycles, and repeated behavior?",
+      "unit_path": "units/unit-10/",
+      "lesson_ids": [
+        "u10-l06",
+        "u10-l07",
+        "u10-l08"
+      ],
+      "skills": [
+        "sinusoid_transform",
+        "other_trig_graphs",
+        "inverse_trig"
+      ],
+      "focus": "Amplitude, Period, Phase & Vertical Shifts; Graphs of Tangent, Cotangent, Secant & Cosecant; Inverse Trigonometric Functions & Restricted Domains"
+    },
+    {
+      "number": 30,
+      "unit": 10,
+      "title": "Trigonometric Functions & Periodic Models · Part 4",
+      "essential_question": "How do angle measure, the unit circle, graphs, and periodic functions model rotation, waves, cycles, and repeated behavior?",
+      "unit_path": "units/unit-10/",
+      "lesson_ids": [
+        "u10-l09",
+        "u10-l10"
+      ],
+      "skills": [
+        "sinusoidal_regression",
+        "vectors"
+      ],
+      "focus": "Sinusoidal Regression & Periodic Data; Vectors, Bearings & Component Models"
+    },
+    {
+      "number": 31,
+      "unit": 11,
+      "title": "Trigonometric Identities, Equations & Oblique Triangles · Part 1",
+      "essential_question": "How do identities and triangle laws transform expressions, solve periodic equations, and determine unknown measurements?",
+      "unit_path": "units/unit-11/",
+      "lesson_ids": [
+        "u11-l01",
+        "u11-l02",
+        "u11-l03"
+      ],
+      "skills": [
+        "basic_identities",
+        "verify_identities",
+        "sum_difference"
+      ],
+      "focus": "Fundamental, Reciprocal & Pythagorean Identities; Verifying Identities with Equivalent Transformations; Sum and Difference Identities"
+    },
+    {
+      "number": 32,
+      "unit": 11,
+      "title": "Trigonometric Identities, Equations & Oblique Triangles · Part 2",
+      "essential_question": "How do identities and triangle laws transform expressions, solve periodic equations, and determine unknown measurements?",
+      "unit_path": "units/unit-11/",
+      "lesson_ids": [
+        "u11-l04",
+        "u11-l05"
+      ],
+      "skills": [
+        "double_half",
+        "trig_equations"
+      ],
+      "focus": "Double-Angle and Half-Angle Identities; Solving Trigonometric Equations on Intervals"
+    },
+    {
+      "number": 33,
+      "unit": 11,
+      "title": "Trigonometric Identities, Equations & Oblique Triangles · Part 3",
+      "essential_question": "How do identities and triangle laws transform expressions, solve periodic equations, and determine unknown measurements?",
+      "unit_path": "units/unit-11/",
+      "lesson_ids": [
+        "u11-l06",
+        "u11-l07",
+        "u11-l08"
+      ],
+      "skills": [
+        "law_sines",
+        "law_cosines",
+        "trig_applications"
+      ],
+      "focus": "Law of Sines, Ambiguous Case & Applications; Law of Cosines & Heron-Type Area Reasoning; Navigation, Vectors & Multi-Step Triangle Models"
+    },
+    {
+      "number": 34,
+      "unit": 12,
+      "title": "Probability, Distributions & Statistical Inference · Part 1",
+      "essential_question": "How do counting, probability models, distributions, and sampling support responsible conclusions under uncertainty?",
+      "unit_path": "units/unit-12/",
+      "lesson_ids": [
+        "u12-l01",
+        "u12-l02",
+        "u12-l03",
+        "u12-l04"
+      ],
+      "skills": [
+        "counting",
+        "probability_rules",
+        "conditional_probability",
+        "binomial_distribution"
+      ],
+      "focus": "Fundamental Counting Principle, Permutations & Combinations; Probability Rules, Complements & Unions; Conditional Probability, Independence & Bayes Reasoning; Binomial Experiments & Expected Value"
+    },
+    {
+      "number": 35,
+      "unit": 12,
+      "title": "Probability, Distributions & Statistical Inference · Part 2",
+      "essential_question": "How do counting, probability models, distributions, and sampling support responsible conclusions under uncertainty?",
+      "unit_path": "units/unit-12/",
+      "lesson_ids": [
+        "u12-l05",
+        "u12-l06",
+        "u12-l07"
+      ],
+      "skills": [
+        "normal_distribution",
+        "sampling_inference",
+        "statistical_claims"
+      ],
+      "focus": "Normal Distributions, z-Scores & Percentiles; Sampling, Bias, Margin of Error & Study Design; Evaluating Statistical Claims & Communicating Uncertainty"
+    },
+    {
+      "number": 36,
+      "unit": 13,
+      "title": "Advanced Mathematical Modelling Capstone",
+      "essential_question": "How can a transparent, tested, and ethically communicated mathematical model support a real decision?",
+      "unit_path": "units/unit-13/",
+      "lesson_ids": [
+        "u13-l01",
+        "u13-l02",
+        "u13-l03",
+        "u13-l04",
+        "u13-l05"
+      ],
+      "skills": [
+        "capstone_question",
+        "capstone_design",
+        "capstone_build",
+        "capstone_evaluate",
+        "capstone_defense"
+      ],
+      "focus": "Frame a Meaningful, Ethical & Answerable Question; Select Variables, Functions, Data & Assumptions; Build, Compute, Visualize & Validate the Model; Test Sensitivity, Uncertainty, Fairness & Limitations; Present, Defend, Revise & Reflect"
+    }
+  ],
+  "assessments": null,
+  "evidence": null,
+  "resources": {
+    "calculator": "../tools/calculator",
+    "cad": null,
+    "arcade": "https://vervenveda.com/arcade.github.io/"
+  },
+  "metadata": {
+    "standards_status": null,
+    "duration_validation": null,
+    "mastery_scale": null,
+    "interconnections": null
+  }
+}
