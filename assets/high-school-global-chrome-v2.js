@@ -273,6 +273,9 @@ async function start(){
   if(/\/courses\/mathematics\/pre-algebra\/units\/unit-\d+\/lessons\//i.test(location.pathname)){
     await load(HIGH+"courses/mathematics/pre-algebra/assets/prealgebra-game-registry-bridge-v1.js","khaemenesPreAlgebraGameRegistry");
   }
+  if(/\/grades\/grade-(?:09|10|11|12)\/student-profile\/(?:index\.html)?$/i.test(location.pathname)){
+    await load(HIGH+"grades/shared/class-tools-toolbar-v1.js","khaeClassToolsToolbarV1");
+  }
   await load(VNV+HEADER,"khaemenesHighHeader");
   mountHeader(canonicalLessonHeader);
   await load(VNV+TOOLBAR,"khaemenesHighToolbar");
