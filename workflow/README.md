@@ -12,3 +12,7 @@ Every entry must distinguish verified evidence, proposed changes, committed chan
 ## Course journals
 
 [High School Course Workflow Directory](COURSE_WORKFLOW_DIRECTORY.md) lists the individual Social Studies, Science, and Mathematics archival folders, along with the three department journals. Each uses this same dated documentation pattern.
+
+## Stable architecture blueprints
+
+[High School Landing Page Blueprint Directory](blueprints/high-school-landing-pages/INDEX.md) is the repository-level authority for shared landing-page chrome, centered/symmetrical layout, course-specific page expectations, and acceptance rules. Use these blueprints before visual normalization work. Course-specific workflow journals record implementation evidence; the blueprint files record expected architecture.
