@@ -1,0 +1,77 @@
+/* Khaemenes Academy · Pre-Algebra Unit 04
+ * Stable centered landing-page blueprint overlay.
+ * Presentation only. Academic data, learner records, mastery and assessment logic remain owned by existing engines.
+ */
+@media screen{
+html:root:root body.ka-unit04-approved{
+  background:#f4f0e7!important;color:#27302d!important;
+  font:400 18px/1.65 "Brandon Grotesque",Nunito,"Avenir Next",Arial,sans-serif!important;
+}
+html:root:root body.ka-unit04-approved .wrap{
+  width:min(calc(100% - 36px),1120px)!important;max-width:1120px!important;margin-inline:auto!important;
+}
+html:root:root body.ka-unit04-approved .hero{text-align:center!important}
+html:root:root body.ka-unit04-approved .hero h1{
+  max-width:1000px!important;margin-inline:auto!important;
+  font:400 clamp(36px,5.2vw,66px)/1.2 Cinzel,Georgia,serif!important;
+}
+html:root:root body.ka-unit04-approved .hero .lead{
+  max-width:880px!important;margin-inline:auto!important;font-size:18px!important;line-height:1.7!important;
+}
+html:root:root body.ka-unit04-approved .hero .actions,
+html:root:root body.ka-unit04-approved .math-signature,
+html:root:root body.ka-unit04-approved .quick-nav-inner{justify-content:center!important}
+html:root:root body.ka-unit04-approved .unit-layout{
+  display:grid!important;grid-template-columns:minmax(0,1fr)!important;gap:16px!important;align-items:stretch!important;
+}
+html:root:root body.ka-unit04-approved .unit-layout>.overview,
+html:root:root body.ka-unit04-approved .unit-layout>.side{
+  width:100%!important;min-width:0!important;position:static!important;top:auto!important;margin:0!important;
+}
+html:root:root body.ka-unit04-approved .side-actions{
+  display:grid!important;grid-template-columns:repeat(4,minmax(0,1fr))!important;gap:10px!important;
+}
+html:root:root body.ka-unit04-approved .side-actions .btn{
+  width:100%!important;min-width:0!important;min-height:46px!important;display:flex!important;
+  align-items:center!important;justify-content:center!important;text-align:center!important;
+}
+html:root:root body.ka-unit04-approved .pathways,
+html:root:root body.ka-unit04-approved .lesson-grid,
+html:root:root body.ka-unit04-approved .resource-grid,
+html:root:root body.ka-unit04-approved .glossary-grid{
+  grid-template-columns:repeat(3,minmax(0,1fr))!important;
+}
+html:root:root body.ka-unit04-approved :is(.card,.pathway,.lesson-card,.resource-card,.term,.lab-panel,.glossary-panel){border-radius:7px!important}
+html:root:root body.ka-unit04-approved :is(.btn,button,input,select,textarea,.lesson-actions a,.lesson-actions button){
+  font-size:16px!important;line-height:1.5!important;border-radius:7px!important;
+}
+html:root:root body.ka-unit04-approved :is(.section-head p,.overview p,.side p,.pathway p,.lesson-card p,.resource-card p,.term p,.lab-panel p){
+  font-size:18px!important;line-height:1.65!important;
+}
+html:root:root body.ka-unit04-approved :is(.lesson-objectives,.lesson-objectives li,.term span,.term p,.field label){
+  font-size:16px!important;line-height:1.55!important;
+}
+html:root:root body.ka-unit04-approved .footer,
+html:root:root body.ka-unit04-approved .footer-inner,
+html:root:root body.ka-unit04-approved .footer-links{text-align:center!important;justify-content:center!important}
+html:root:root body.ka-unit04-approved .footer-inner{
+  display:flex!important;flex-direction:column!important;align-items:center!important;gap:10px!important;font-size:16px!important;
+}
+@media(max-width:900px){
+ html:root:root body.ka-unit04-approved .lesson-grid,
+ html:root:root body.ka-unit04-approved .resource-grid,
+ html:root:root body.ka-unit04-approved .glossary-grid{
+   grid-template-columns:repeat(2,minmax(0,1fr))!important;
+ }
+ html:root:root body.ka-unit04-approved .side-actions{grid-template-columns:repeat(2,minmax(0,1fr))!important}
+}
+@media(max-width:650px){
+ html:root:root body.ka-unit04-approved .pathways,
+ html:root:root body.ka-unit04-approved .lesson-grid,
+ html:root:root body.ka-unit04-approved .resource-grid,
+ html:root:root body.ka-unit04-approved .glossary-grid,
+ html:root:root body.ka-unit04-approved .side-actions{
+   grid-template-columns:minmax(0,1fr)!important;
+ }
+}
+}
