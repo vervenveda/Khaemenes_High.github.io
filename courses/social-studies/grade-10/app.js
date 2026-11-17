@@ -9,8 +9,73 @@ const stamp=()=>new Date().toLocaleString();
 let selectedWeek=Math.max(1,Math.min(36,Number(new URLSearchParams(location.search).get('week'))||1));
 let view='dashboard';
 
-function freshDB(){return{version:1,activeId:null,students:[],settings:{theme:'dark',fontScale:100}}}
-function loadDB(){try{const x=JSON.parse(localStorage.getItem(KEY));if(x&&Array.isArray(x.students))return Object.assign(freshDB(),x)}catch(e){}return freshDB()}
+function freshDB(){return{version:2,activeId:null,students:[],settings:{theme:'dark',fontScale:100}}}
+const LEGACY_KEY='KHAE_SS10_USH_CLEAN_PORTAL_V1';
+function migrateLegacyDB(){
+ try{
+   const raw=localStorage.getItem(LEGACY_KEY);
+   if(!raw)return null;
+   const legacy=JSON.parse(raw);
+   if(!legacy||!Array.isArray(legacy.students)||!legacy.students.length)return null;
+   const out=freshDB();
+   const days=['Monday','Tuesday','Wednesday','Thursday','Friday'];
+   out.students=legacy.students.map(oldStudent=>{
+     const s=normalize({
+       id:String(oldStudent.id||uid()),
+       name:String(oldStudent.name||'Learner'),
+       created:String(oldStudent.created||new Date().toISOString().slice(0,10)),
+       migratedFrom:LEGACY_KEY
+     });
+     const weeks=oldStudent.progress?.weeks||{};
+     Object.entries(weeks).forEach(([weekKey,record])=>{
+       const week=Number(weekKey);
+       if(!Number.isInteger(week)||week<1||week>36)return;
+       s.completedLessons[week]=days.map(day=>record?.lessons?.[day]===true);
+       [0,1,2].forEach(index=>{
+         if(record?.assignments?.[index]===true){
+           s.assignments[`${week}-${index+1}`]={
+             text:String(record?.notes?.[index]||''),
+             submitted:true,
+             updated:'Migrated from the previous Grade 10 portal'
+           };
+         }
+       });
+       const best=Math.max(0,Math.min(100,Number(record?.quiz?.best||0)));
+       const attempts=Array.isArray(record?.quiz?.attempts)?record.quiz.attempts.length:0;
+       if(best>0||attempts){
+         s.quizzes[week]={
+           answers:[],
+           score:Math.round(best/5),
+           bestScore:Math.round(best/5),
+           percent:best,
+           bestPercent:best,
+           attempts:Math.max(1,attempts),
+           completed:best>0,
+           shortResponse:'Legacy portal mastery record migrated for continuity; evaluator may review written evidence.'
+         };
+       }
+     });
+     const exams=oldStudent.progress?.exams||{};
+     if(exams.midterm)s.exams.midterm={bestPercent:Number(exams.midterm.best||0),migrated:true};
+     if(exams.final)s.exams.final={bestPercent:Number(exams.final.best||0),migrated:true};
+     return s;
+   });
+   out.activeId=out.students.some(s=>s.id===legacy.activeId)?legacy.activeId:(out.students[0]?.id||null);
+   localStorage.setItem(KEY,JSON.stringify(out));
+   localStorage.setItem(LEGACY_KEY+':migrated-to-canonical',new Date().toISOString());
+   return out;
+ }catch(error){
+   console.warn('Grade 10 legacy record migration skipped:',error);
+   return null;
+ }
+}
+function loadDB(){
+ try{
+   const x=JSON.parse(localStorage.getItem(KEY));
+   if(x&&Array.isArray(x.students))return Object.assign(freshDB(),x);
+ }catch(e){}
+ return migrateLegacyDB()||freshDB();
+}
 let db=loadDB();
 function saveDB(){localStorage.setItem(KEY,JSON.stringify(db))}
 function normalize(s){s.completedLessons||={};s.assignments||={};s.quizzes||={};s.exams||={};s.journal||={};s.attendance||={};return s}
