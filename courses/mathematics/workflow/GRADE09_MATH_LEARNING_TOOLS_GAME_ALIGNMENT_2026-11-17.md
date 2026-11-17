@@ -102,103 +102,36 @@ These Arcade games are useful as enrichment and logic practice. Lesson-specific 
 ## Algebra I coverage result
 
 - Total Algebra I lessons: 87
-- Lessons with one or more registered canonical game placements: 81
-- Lessons with no registered canonical game placement: 6
-- Total current Algebra I game placements: 88
-- Some lessons intentionally have more than one game when the concepts are meaningfully different.
+- Lessons with one or more registered canonical game placements: 87
+- Lessons with no registered canonical game placement: 0
+- Grade 9 lesson-level game coverage: 100%
 
-Coverage: 93.1% of Algebra I lessons already have a canonical game companion.
+Coverage reached 100% after:
+- Equation Balance Lab v2 added `literal-formulas` for U03-L05.
+- Model Forge v1 added five modelling modes for U03-L07 and U13-L01 through U13-L04.
 
-## Six remaining lesson gaps
+## Gap closure
 
-### U03-L05 — Literal Equations & Rearranging Formulas
+All six previously identified gaps are now closed.
 
-Recommendation: **Adapt existing game — no new game required.**
+- U03-L05 — Equation Balance Lab · `literal-formulas`
+- U03-L07 — Model Forge · `equation-models`
+- U13-L01 — Model Forge · `frame`
+- U13-L02 — Model Forge · `design`
+- U13-L03 — Model Forge · `validate`
+- U13-L04 — Model Forge · `sensitivity`
 
-Extend `Equation Balance Lab` with a `literal-formulas` mode.
+U13-L05 continues to use Algebra Evidence and Modelling Challenge for presentation, defense, and reflection.
 
-Mode goals:
-- isolate a requested variable;
-- preserve equality across symbolic transformations;
-- distinguish equivalent rearrangements;
-- verify by substitution;
-- include formulas with multiple variables and coefficients.
+## Build result
 
-### U03-L07 — Rate, Mixture, Distance & Financial Equation Models
+Only one new shared game was required:
+- **Model Forge v1**
 
-Recommendation: **New multi-mode modelling game preferred.**
+And one existing game was upgraded:
+- **Equation Balance Lab v2**
 
-Existing Slope & Rate Studio, Market Math Mission, Small Business Math Lab, and financial games cover pieces of this lesson, but none provides a unified equation-modelling experience across rate, mixture, distance, and finance.
-
-Suggested shared game: **Model Forge** (working title)
-
-Mode: `equation-models`
-- identify quantities and units;
-- choose the unknown;
-- construct an equation from context;
-- solve;
-- verify units and reasonableness;
-- switch among rate, mixture, distance, and finance scenarios.
-
-### U13-L01 — Frame a Complex & Ethical Modelling Question
-
-Recommendation: **Use new Model Forge rather than a separate game.**
-
-Mode: `frame`
-- distinguish solvable questions from vague questions;
-- identify stakeholders and constraints;
-- state what the model can and cannot answer;
-- flag ethical/fairness considerations.
-
-### U13-L02 — Choose Variables, Assumptions, Data & Representations
-
-Recommendation: **Use Model Forge.**
-
-Mode: `design`
-- choose variables;
-- classify assumptions;
-- select data;
-- choose table / graph / equation / system;
-- identify missing evidence.
-
-### U13-L03 — Build, Calculate, Validate & Revise the Model
-
-Recommendation: **Use Model Forge.**
-
-Mode: `validate`
-- build a model;
-- calculate;
-- compare prediction to evidence;
-- detect a poor assumption;
-- revise and recompute.
-
-### U13-L04 — Test Sensitivity, Uncertainty & Fairness
-
-Recommendation: **Use Model Forge.**
-
-Mode: `sensitivity`
-- vary one assumption at a time;
-- identify break-even changes;
-- compare outcomes across plausible ranges;
-- distinguish uncertainty from error;
-- assess fairness and unmodelled costs.
-
-U13-L05 already has **Algebra Evidence and Modelling Challenge** for presentation, defense, and reflection.
-
-## Recommended build count
-
-Do not create six separate games.
-
-Recommended:
-1. Extend **Equation Balance Lab** with one literal-equations mode.
-2. Create **one new shared Model Forge game** with five course modes:
-   - equation-models
-   - frame
-   - design
-   - validate
-   - sensitivity
-
-This closes all six Algebra I lesson gaps with only one new game plus one mode extension.
+This avoids six separate apps and preserves one coherent modelling progression across Algebra I.
 
 ## Toolbar / archive recommendation
 
