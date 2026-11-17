@@ -469,3 +469,5 @@ function downloadReport(){
 }
 setView(VALID_VIEWS.includes(location.hash.slice(1))?location.hash.slice(1):"dashboard",false);
 })();
+
+;(()=>{if(document.querySelector('script[src*="geometry-presentation-unifier-v1.js"]'))return;const s=document.createElement("script");s.src=new URL("geometry-presentation-unifier-v1.js",document.currentScript?.src||location.href).href;s.defer=true;s.dataset.geometryPresentationUnifier="v1";document.head.appendChild(s)})();
