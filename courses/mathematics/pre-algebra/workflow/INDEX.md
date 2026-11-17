@@ -2,6 +2,7 @@
 
 | Date | Type | Entry | State |
 | --- | --- | --- | --- |
+| 2026-11-17 | repair · layout · chrome | [Unit 02 centered layout blueprint implementation](logs/2026/11/2026-11-17-unit02-centered-layout-blueprint-implementation.md) | Dashboard + Lesson 01 source normalization committed; static checks PASS; browser/device acceptance HOLD |
 | 2026-11-17 | repair · layout · chrome | [Unit 01 centered layout blueprint implementation](logs/2026/11/2026-11-17-unit01-centered-layout-blueprint-implementation.md) | Source normalization committed; static checks PASS; browser/device acceptance HOLD |
 | 2026-11-16 | setup | [Workflow initialization](logs/2026/11/2026-11-16-workflow-initialization.md) | Documentation created; no curriculum changes |
 
