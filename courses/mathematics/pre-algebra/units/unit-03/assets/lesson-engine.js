@@ -53,3 +53,16 @@ function loadAnswerDraft(){if(document.querySelector('script[data-prealgebra-ans
 function startCore(){const g=gate();if(!g.ok){if(document.body)block(g);else addEventListener("DOMContentLoaded",()=>block(g),{once:true});return}const core=document.createElement("script");core.src=coreSrc;core.async=false;core.onload=()=>{afterCoreLoad();loadAnswerDraft()};core.onerror=()=>console.error("Pre-Algebra lesson engine core could not load.");document.head.appendChild(core)}
 const studentNav=document.createElement("script");studentNav.src=new URL("../../../assets/prealgebra-student-navigation.js",scriptEl?.src||location.href).href;studentNav.async=false;studentNav.onload=startCore;studentNav.onerror=()=>{console.error("Pre-Algebra student navigation helper could not load.");startCore()};document.head.appendChild(studentNav);
 })();
+
+
+/* Universal lesson-aware Learning Tools toolbar. Navigation/support only. */
+;(()=>{
+ if(document.getElementById("vnvClassToolsLessonLoader")||window.VNVClassToolsToolbar)return;
+ const script=document.createElement("script");
+ script.id="vnvClassToolsLessonLoader";
+ script.src="https://vervenveda.com/assets/vnv-class-tools-toolbar.js?v=1.4.0";
+ script.defer=true;
+ script.dataset.vnvClassTools="lesson-aware";
+ script.onerror=()=>console.warn("Learning Tools toolbar unavailable; lesson content remains usable.");
+ (document.head||document.documentElement).appendChild(script);
+})();
