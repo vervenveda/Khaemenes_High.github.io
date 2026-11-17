@@ -21,6 +21,12 @@ Maintain the no-sidebar architecture and normalize major course sections to equa
 - Replace major 1.15/.85 content splits where they represent peer sections.
 - Full canonical chrome and translator on public learning surfaces.
 
+## Header and local navigation rule
+
+Algebra I uses exactly one canonical High School ecosystem header. Course-specific navigation may remain as one compact unbranded Algebra I navigation strip below canonical chrome.
+
+The local strip may expose Course Home, Course, Units, Lessons, Assessments, Vocabulary, Labs, Teacher, or equivalent Algebra I routes. It must not repeat the Academy/K badge, institutional logo/lockup, or a second hero identity.
+
 ## Shared requirements
 
 - exactly one eligible 333 ticker and one AutoPopulate ticker;
