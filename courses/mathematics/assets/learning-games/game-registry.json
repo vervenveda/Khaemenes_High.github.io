@@ -962,7 +962,7 @@
     "equation-balance-lab": {
       "title": "Equation Balance Lab",
       "canonical_path": "courses/mathematics/assets/learning-games/equation-balance-lab/index.html",
-      "status": "canonical-v1",
+      "status": "canonical-v2",
       "mastery_target": 80,
       "placements": [
         {
@@ -1036,10 +1036,19 @@
           "mode": "multi-step-balance-transfer",
           "query": "?course=prealgebra&unit=09&lesson=05",
           "wired": true
+        },
+        {
+          "course": "algebra-1",
+          "unit": "03",
+          "lesson": "05",
+          "lesson_title": "Literal Equations & Rearranging Formulas",
+          "mode": "literal-formulas",
+          "query": "?course=algebra1&unit=03&lesson=05&mode=literal-formulas",
+          "wired": true
         }
       ],
       "launcher": "courses/mathematics/assets/shared-game-launcher.js",
-      "scope_note": "Game v1 does not interpret mode parameters; learner selects difficulty manually. Pre-Algebra L02/L03 should use Level 1; L04 Level 2; L05 Level 3 (variables on both sides is advanced enrichment). Browser QA pending."
+      "scope_note": "Mode-aware v2. Existing equation modes remain available; literal-formulas adds symbolic isolation plus numerical substitution verification for Algebra I U03-L05. Browser-local practice only; no official mastery authority."
     },
     "inequality-number-line": {
       "title": "Inequality Number Line",
