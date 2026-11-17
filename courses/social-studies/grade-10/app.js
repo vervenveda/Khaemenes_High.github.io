@@ -155,7 +155,7 @@ function dashboardHTML(){
 }
 function lessonBlock(w,l,i,s){
  const checked=!!s?.completedLessons?.[w.week]?.[i];
- return `<article class="lesson"><div class="lessonHeader"><div><span class="pill">${l.day} · ${l.minutes} min</span><h3>${esc(l.title)}</h3></div><label class="checkline"><input type="checkbox" class="lessonCheck" data-index="${i}" ${checked?'checked':''}> Complete</label></div>
+ return `<article class="lesson"><div class="lessonHeader"><div><span class="pill">${l.day} · ${l.minutes} min${l.workflowCategory?' · '+esc(l.workflowCategory):''}</span><h3>${esc(l.title)}</h3></div><label class="checkline"><input type="checkbox" class="lessonCheck" data-index="${i}" ${checked?'checked':''}> Complete</label></div>
  <p><strong>Objective:</strong> ${esc(l.objective)}</p><details><summary>Warm-up</summary><p>${esc(l.warmup)}</p></details><details open><summary>Daily lesson</summary><p>${esc(l.instruction)}</p></details><details><summary>Guided practice</summary><p>${esc(l.guidedPractice)}</p></details><details><summary>Independent practice</summary><p>${esc(l.independentPractice)}</p></details><details><summary>Check for understanding</summary><p>${esc(l.checkForUnderstanding)}</p></details><details><summary>Materials, support, and honors extension</summary><p><strong>Materials:</strong> ${l.materials.map(esc).join('; ')}</p><p><strong>Support:</strong> ${esc(l.support)}</p><p><strong>Honors:</strong> ${esc(l.extension)}</p></details></article>`;
 }
 function assignmentBlock(w,a,s){
