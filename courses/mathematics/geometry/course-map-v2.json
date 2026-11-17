@@ -1,0 +1,1527 @@
+{
+  "schema_version": "2.0.0",
+  "schema_id": "khaemenes-math-course-map-v2",
+  "source": {
+    "path": "courses/mathematics/geometry/course-map.json",
+    "legacy_schema_version": "1.0"
+  },
+  "course": {
+    "id": "math-geometry-spatial-design",
+    "profile_course_id": "geometry",
+    "code": "KH-MATH-GEO",
+    "title": "Khaemenes Open-Age Geometry & Spatial Design",
+    "short_title": "Geometry",
+    "audience": "Open-age, placement-based learners ready for Algebra I-level reasoning or equivalent preparation",
+    "prerequisite": "Algebra I readiness or equivalent mastery of equations, proportions, coordinate graphing, and radicals",
+    "duration_weeks": 36,
+    "supported_duration_weeks": 36,
+    "mastery_target": 80,
+    "pathways": [
+      "Foundation",
+      "Core",
+      "Extended"
+    ],
+    "delivery": [],
+    "storage_key": "khaemenes-geometry-course-v1",
+    "version": "1.0.0"
+  },
+  "readiness": {
+    "gateway": null,
+    "conditional_unit": null
+  },
+  "calendar": {
+    "weeks": 36
+  },
+  "units": [
+    {
+      "id": "u01",
+      "number": 1,
+      "title": "Foundations, Constructions & Geometric Reasoning",
+      "weeks": 2,
+      "week_numbers": [
+        1,
+        2
+      ],
+      "path": "units/unit-01/",
+      "essential_question": "How do precise definitions, constructions, logic, and proof establish trustworthy geometric conclusions?",
+      "project": "Classical Construction Portfolio & Proof Gallery",
+      "objectives": [],
+      "standards": [
+        "Geometric foundations",
+        "Constructions",
+        "Logic and proof",
+        "Measurement precision"
+      ],
+      "lesson_count": 6,
+      "lessons": [
+        {
+          "id": "u01-l01",
+          "number": 1,
+          "title": "Points, Lines, Planes & Defined Terms",
+          "type": "foundations"
+        },
+        {
+          "id": "u01-l02",
+          "number": 2,
+          "title": "Segments, Rays, Angles & Notation",
+          "type": "foundations"
+        },
+        {
+          "id": "u01-l03",
+          "number": 3,
+          "title": "Distance, Midpoint & Segment Partition",
+          "type": "foundations"
+        },
+        {
+          "id": "u01-l04",
+          "number": 4,
+          "title": "Compass-and-Straightedge Constructions",
+          "type": "foundations"
+        },
+        {
+          "id": "u01-l05",
+          "number": 5,
+          "title": "Conditional Statements, Converses & Counterexamples",
+          "type": "foundations"
+        },
+        {
+          "id": "u01-l06",
+          "number": 6,
+          "title": "Two-Column, Flow & Paragraph Proofs",
+          "type": "foundations"
+        }
+      ],
+      "status": "open"
+    },
+    {
+      "id": "u02",
+      "number": 2,
+      "title": "Transformations, Symmetry & Congruence",
+      "weeks": 3,
+      "week_numbers": [
+        3,
+        4,
+        5
+      ],
+      "path": "units/unit-02/",
+      "essential_question": "How do transformations preserve, alter, and organize figures in the plane?",
+      "project": "Arcade Symmetry Studio & Transformation Design",
+      "objectives": [],
+      "standards": [
+        "Transformations",
+        "Congruence",
+        "Symmetry",
+        "Tessellations"
+      ],
+      "lesson_count": 7,
+      "lessons": [
+        {
+          "id": "u02-l01",
+          "number": 1,
+          "title": "Translations on the Coordinate Plane",
+          "type": "transformations"
+        },
+        {
+          "id": "u02-l02",
+          "number": 2,
+          "title": "Reflections Across Axes and Lines",
+          "type": "transformations"
+        },
+        {
+          "id": "u02-l03",
+          "number": 3,
+          "title": "Rotations About the Origin and Other Centers",
+          "type": "transformations"
+        },
+        {
+          "id": "u02-l04",
+          "number": 4,
+          "title": "Compositions of Transformations",
+          "type": "transformations"
+        },
+        {
+          "id": "u02-l05",
+          "number": 5,
+          "title": "Rigid Motion Definition of Congruence",
+          "type": "transformations"
+        },
+        {
+          "id": "u02-l06",
+          "number": 6,
+          "title": "Line, Rotational & Point Symmetry",
+          "type": "transformations"
+        },
+        {
+          "id": "u02-l07",
+          "number": 7,
+          "title": "Tessellations, Frieze Patterns & Design Rules",
+          "type": "transformations"
+        }
+      ],
+      "status": "open"
+    },
+    {
+      "id": "u03",
+      "number": 3,
+      "title": "Triangle Congruence & Proof",
+      "weeks": 3,
+      "week_numbers": [
+        6,
+        7,
+        8
+      ],
+      "path": "units/unit-03/",
+      "essential_question": "How can limited measurements prove that triangles and their corresponding parts must agree?",
+      "project": "Triangle-Center Construction & Congruence Defense",
+      "objectives": [],
+      "standards": [
+        "Triangle congruence",
+        "Proof",
+        "Triangle centers",
+        "Inequalities"
+      ],
+      "lesson_count": 7,
+      "lessons": [
+        {
+          "id": "u03-l01",
+          "number": 1,
+          "title": "Triangle Classification & Angle Relationships",
+          "type": "triangles"
+        },
+        {
+          "id": "u03-l02",
+          "number": 2,
+          "title": "SSS and SAS Congruence",
+          "type": "triangles"
+        },
+        {
+          "id": "u03-l03",
+          "number": 3,
+          "title": "ASA, AAS and HL Congruence",
+          "type": "triangles"
+        },
+        {
+          "id": "u03-l04",
+          "number": 4,
+          "title": "CPCTC and Multi-Step Triangle Proofs",
+          "type": "triangles"
+        },
+        {
+          "id": "u03-l05",
+          "number": 5,
+          "title": "Isosceles and Equilateral Triangle Theorems",
+          "type": "triangles"
+        },
+        {
+          "id": "u03-l06",
+          "number": 6,
+          "title": "Triangle Inequality & Feasible Construction",
+          "type": "triangles"
+        },
+        {
+          "id": "u03-l07",
+          "number": 7,
+          "title": "Perpendicular Bisectors, Angle Bisectors & Centers",
+          "type": "triangles"
+        }
+      ],
+      "status": "open"
+    },
+    {
+      "id": "u04",
+      "number": 4,
+      "title": "Parallel Lines, Slopes & Coordinate Proof",
+      "weeks": 2,
+      "week_numbers": [
+        9,
+        10
+      ],
+      "path": "units/unit-04/",
+      "essential_question": "How do angle relationships and coordinate methods prove direction, alignment, and perpendicularity?",
+      "project": "Coordinate Street-Grid Proof & Design",
+      "objectives": [],
+      "standards": [
+        "Parallel lines",
+        "Slope",
+        "Coordinate proof",
+        "Equations of lines"
+      ],
+      "lesson_count": 6,
+      "lessons": [
+        {
+          "id": "u04-l01",
+          "number": 1,
+          "title": "Parallel Lines Cut by a Transversal",
+          "type": "coordinate"
+        },
+        {
+          "id": "u04-l02",
+          "number": 2,
+          "title": "Proving Lines Parallel from Angle Relationships",
+          "type": "coordinate"
+        },
+        {
+          "id": "u04-l03",
+          "number": 3,
+          "title": "Slope as Direction and Rate",
+          "type": "coordinate"
+        },
+        {
+          "id": "u04-l04",
+          "number": 4,
+          "title": "Parallel and Perpendicular Slopes",
+          "type": "coordinate"
+        },
+        {
+          "id": "u04-l05",
+          "number": 5,
+          "title": "Coordinate Proof with Distance, Midpoint & Slope",
+          "type": "coordinate"
+        },
+        {
+          "id": "u04-l06",
+          "number": 6,
+          "title": "Equations of Lines in Geometric Context",
+          "type": "coordinate"
+        }
+      ],
+      "status": "open"
+    },
+    {
+      "id": "u05",
+      "number": 5,
+      "title": "Similarity, Dilations & Proportional Reasoning",
+      "weeks": 3,
+      "week_numbers": [
+        11,
+        12,
+        13
+      ],
+      "path": "units/unit-05/",
+      "essential_question": "How do scale and proportional structure connect figures, maps, models, and indirect measurement?",
+      "project": "Scale Model & Indirect Measurement Field Study",
+      "objectives": [],
+      "standards": [
+        "Similarity",
+        "Dilations",
+        "Proportions",
+        "Scale drawings"
+      ],
+      "lesson_count": 7,
+      "lessons": [
+        {
+          "id": "u05-l01",
+          "number": 1,
+          "title": "Dilations from a Center",
+          "type": "similarity"
+        },
+        {
+          "id": "u05-l02",
+          "number": 2,
+          "title": "Similarity Through Transformations",
+          "type": "similarity"
+        },
+        {
+          "id": "u05-l03",
+          "number": 3,
+          "title": "AA Similarity and Triangle Proportions",
+          "type": "similarity"
+        },
+        {
+          "id": "u05-l04",
+          "number": 4,
+          "title": "SSS and SAS Similarity",
+          "type": "similarity"
+        },
+        {
+          "id": "u05-l05",
+          "number": 5,
+          "title": "Side-Splitter and Proportional Segments",
+          "type": "similarity"
+        },
+        {
+          "id": "u05-l06",
+          "number": 6,
+          "title": "Scale Drawings, Maps & Models",
+          "type": "similarity"
+        },
+        {
+          "id": "u05-l07",
+          "number": 7,
+          "title": "Indirect Measurement, Shadows & Mirrors",
+          "type": "similarity"
+        }
+      ],
+      "status": "open"
+    },
+    {
+      "id": "u06",
+      "number": 6,
+      "title": "Right Triangles, Trigonometry & Bearings",
+      "weeks": 4,
+      "week_numbers": [
+        14,
+        15,
+        16,
+        17
+      ],
+      "path": "units/unit-06/",
+      "essential_question": "How do right-triangle relationships turn inaccessible lengths, heights, angles, and directions into measurable quantities?",
+      "project": "Navigation, Height & Bearing Survey",
+      "objectives": [],
+      "standards": [
+        "Pythagorean theorem",
+        "Special right triangles",
+        "Trigonometry",
+        "Bearings"
+      ],
+      "lesson_count": 8,
+      "lessons": [
+        {
+          "id": "u06-l01",
+          "number": 1,
+          "title": "Pythagorean Theorem & Its Converse",
+          "type": "trigonometry"
+        },
+        {
+          "id": "u06-l02",
+          "number": 2,
+          "title": "Special Right Triangles: 45-45-90",
+          "type": "trigonometry"
+        },
+        {
+          "id": "u06-l03",
+          "number": 3,
+          "title": "Special Right Triangles: 30-60-90",
+          "type": "trigonometry"
+        },
+        {
+          "id": "u06-l04",
+          "number": 4,
+          "title": "Geometric Mean & Right-Triangle Altitudes",
+          "type": "trigonometry"
+        },
+        {
+          "id": "u06-l05",
+          "number": 5,
+          "title": "Sine, Cosine & Tangent Ratios",
+          "type": "trigonometry"
+        },
+        {
+          "id": "u06-l06",
+          "number": 6,
+          "title": "Inverse Trigonometry & Angle Measure",
+          "type": "trigonometry"
+        },
+        {
+          "id": "u06-l07",
+          "number": 7,
+          "title": "Angles of Elevation and Depression",
+          "type": "trigonometry"
+        },
+        {
+          "id": "u06-l08",
+          "number": 8,
+          "title": "Bearings, Vectors & Multi-Step Navigation",
+          "type": "trigonometry"
+        }
+      ],
+      "status": "open"
+    },
+    {
+      "id": "u07",
+      "number": 7,
+      "title": "Polygons & Quadrilaterals",
+      "weeks": 3,
+      "week_numbers": [
+        19,
+        20,
+        21
+      ],
+      "path": "units/unit-07/",
+      "essential_question": "How do angle sums, side relationships, and coordinate evidence classify and constrain polygons?",
+      "project": "Polygon Pavilion & Quadrilateral Proof Portfolio",
+      "objectives": [],
+      "standards": [
+        "Polygons",
+        "Quadrilaterals",
+        "Coordinate proof",
+        "Regular polygons"
+      ],
+      "lesson_count": 7,
+      "lessons": [
+        {
+          "id": "u07-l01",
+          "number": 1,
+          "title": "Interior and Exterior Angles of Polygons",
+          "type": "polygons"
+        },
+        {
+          "id": "u07-l02",
+          "number": 2,
+          "title": "Parallelogram Properties & Tests",
+          "type": "polygons"
+        },
+        {
+          "id": "u07-l03",
+          "number": 3,
+          "title": "Rectangles, Rhombi & Squares",
+          "type": "polygons"
+        },
+        {
+          "id": "u07-l04",
+          "number": 4,
+          "title": "Trapezoids, Kites & Midsegments",
+          "type": "polygons"
+        },
+        {
+          "id": "u07-l05",
+          "number": 5,
+          "title": "Quadrilateral Coordinate Proofs",
+          "type": "polygons"
+        },
+        {
+          "id": "u07-l06",
+          "number": 6,
+          "title": "Regular Polygons, Apothem & Central Angles",
+          "type": "polygons"
+        },
+        {
+          "id": "u07-l07",
+          "number": 7,
+          "title": "Polygon Decomposition & Design Constraints",
+          "type": "polygons"
+        }
+      ],
+      "status": "open"
+    },
+    {
+      "id": "u08",
+      "number": 8,
+      "title": "Circles, Arcs & Tangency",
+      "weeks": 3,
+      "week_numbers": [
+        22,
+        23,
+        24
+      ],
+      "path": "units/unit-08/",
+      "essential_question": "How do radius, chord, arc, angle, tangent, and secant relationships govern every circle?",
+      "project": "Circle-Theorem Investigation & Radial Design",
+      "objectives": [],
+      "standards": [
+        "Circles",
+        "Arcs and angles",
+        "Tangency",
+        "Circle equations"
+      ],
+      "lesson_count": 8,
+      "lessons": [
+        {
+          "id": "u08-l01",
+          "number": 1,
+          "title": "Circle Vocabulary, Radius, Diameter & Chords",
+          "type": "circles"
+        },
+        {
+          "id": "u08-l02",
+          "number": 2,
+          "title": "Central Angles, Arcs & Arc Length",
+          "type": "circles"
+        },
+        {
+          "id": "u08-l03",
+          "number": 3,
+          "title": "Inscribed Angles & Intercepted Arcs",
+          "type": "circles"
+        },
+        {
+          "id": "u08-l04",
+          "number": 4,
+          "title": "Chords, Perpendicular Bisectors & Distances",
+          "type": "circles"
+        },
+        {
+          "id": "u08-l05",
+          "number": 5,
+          "title": "Tangents and Radius Relationships",
+          "type": "circles"
+        },
+        {
+          "id": "u08-l06",
+          "number": 6,
+          "title": "Secant, Chord & Tangent Power Theorems",
+          "type": "circles"
+        },
+        {
+          "id": "u08-l07",
+          "number": 7,
+          "title": "Sector Area, Segment Area & Annuli",
+          "type": "circles"
+        },
+        {
+          "id": "u08-l08",
+          "number": 8,
+          "title": "Equation of a Circle & Coordinate Applications",
+          "type": "circles"
+        }
+      ],
+      "status": "open"
+    },
+    {
+      "id": "u09",
+      "number": 9,
+      "title": "Analytic Geometry, Loci & Conic Connections",
+      "weeks": 3,
+      "week_numbers": [
+        25,
+        26,
+        27
+      ],
+      "path": "units/unit-09/",
+      "essential_question": "How can distance conditions and coordinate systems describe loci, intersections, boundaries, and conic forms?",
+      "project": "Locus Map, Access Region & Conic Investigation",
+      "objectives": [],
+      "standards": [
+        "Loci",
+        "Analytic geometry",
+        "Distance",
+        "Conic connections"
+      ],
+      "lesson_count": 7,
+      "lessons": [
+        {
+          "id": "u09-l01",
+          "number": 1,
+          "title": "Locus as a Set of Points Meeting a Condition",
+          "type": "analytic"
+        },
+        {
+          "id": "u09-l02",
+          "number": 2,
+          "title": "Perpendicular and Angle Bisector Loci",
+          "type": "analytic"
+        },
+        {
+          "id": "u09-l03",
+          "number": 3,
+          "title": "Distance from a Point to a Line",
+          "type": "analytic"
+        },
+        {
+          "id": "u09-l04",
+          "number": 4,
+          "title": "Coordinate Intersections and Geometric Systems",
+          "type": "analytic"
+        },
+        {
+          "id": "u09-l05",
+          "number": 5,
+          "title": "Circle-Line Intersections and Tangency",
+          "type": "analytic"
+        },
+        {
+          "id": "u09-l06",
+          "number": 6,
+          "title": "Parabolas as Distance Loci",
+          "type": "analytic"
+        },
+        {
+          "id": "u09-l07",
+          "number": 7,
+          "title": "Voronoi Thinking, Nearest-Point Regions & Design",
+          "type": "analytic"
+        }
+      ],
+      "status": "open"
+    },
+    {
+      "id": "u10",
+      "number": 10,
+      "title": "Area, Measurement & Geometric Probability",
+      "weeks": 2,
+      "week_numbers": [
+        28,
+        29
+      ],
+      "path": "units/unit-10/",
+      "essential_question": "How do decomposition, scale, precision, and probability support responsible measurement and optimization?",
+      "project": "Efficient Enclosure & Geometric Probability Lab",
+      "objectives": [],
+      "standards": [
+        "Area",
+        "Precision and error",
+        "Geometric probability",
+        "Optimization"
+      ],
+      "lesson_count": 7,
+      "lessons": [
+        {
+          "id": "u10-l01",
+          "number": 1,
+          "title": "Area of Triangles, Parallelograms & Trapezoids",
+          "type": "area"
+        },
+        {
+          "id": "u10-l02",
+          "number": 2,
+          "title": "Area of Regular Polygons and Composite Figures",
+          "type": "area"
+        },
+        {
+          "id": "u10-l03",
+          "number": 3,
+          "title": "Heron’s Formula and Coordinate Area",
+          "type": "area"
+        },
+        {
+          "id": "u10-l04",
+          "number": 4,
+          "title": "Effects of Scale on Perimeter and Area",
+          "type": "area"
+        },
+        {
+          "id": "u10-l05",
+          "number": 5,
+          "title": "Units, Precision, Error & Significant Figures",
+          "type": "area"
+        },
+        {
+          "id": "u10-l06",
+          "number": 6,
+          "title": "Geometric Probability by Length and Area",
+          "type": "area"
+        },
+        {
+          "id": "u10-l07",
+          "number": 7,
+          "title": "Optimization with Perimeter and Area Constraints",
+          "type": "area"
+        }
+      ],
+      "status": "open"
+    },
+    {
+      "id": "u11",
+      "number": 11,
+      "title": "Solids, Surface Area & Volume",
+      "weeks": 2,
+      "week_numbers": [
+        30,
+        31
+      ],
+      "path": "units/unit-11/",
+      "essential_question": "How do nets, cross-sections, similarity, and dimensional reasoning describe and compare three-dimensional forms?",
+      "project": "Packaging, Surface-Area & Volume Design Challenge",
+      "objectives": [],
+      "standards": [
+        "Solids",
+        "Surface area",
+        "Volume",
+        "Cross-sections"
+      ],
+      "lesson_count": 7,
+      "lessons": [
+        {
+          "id": "u11-l01",
+          "number": 1,
+          "title": "Prisms, Cylinders & Cavalieri’s Principle",
+          "type": "solids"
+        },
+        {
+          "id": "u11-l02",
+          "number": 2,
+          "title": "Pyramids and Cones",
+          "type": "solids"
+        },
+        {
+          "id": "u11-l03",
+          "number": 3,
+          "title": "Spheres: Surface Area and Volume",
+          "type": "solids"
+        },
+        {
+          "id": "u11-l04",
+          "number": 4,
+          "title": "Nets and Surface Area of Prisms and Pyramids",
+          "type": "solids"
+        },
+        {
+          "id": "u11-l05",
+          "number": 5,
+          "title": "Surface Area of Cylinders and Cones",
+          "type": "solids"
+        },
+        {
+          "id": "u11-l06",
+          "number": 6,
+          "title": "Cross-Sections and Solids of Revolution",
+          "type": "solids"
+        },
+        {
+          "id": "u11-l07",
+          "number": 7,
+          "title": "Similarity, Scale and Volume Relationships",
+          "type": "solids"
+        }
+      ],
+      "status": "open"
+    },
+    {
+      "id": "u12",
+      "number": 12,
+      "title": "CAD, Scale Drawing & Spatial Design",
+      "weeks": 3,
+      "week_numbers": [
+        32,
+        33,
+        34
+      ],
+      "path": "units/unit-12/",
+      "essential_question": "How can precise digital drafting turn geometric constraints into measurable, printable, and defensible designs?",
+      "project": "OHMIC CAD Spatial Design Portfolio",
+      "objectives": [],
+      "standards": [
+        "Technical drawing",
+        "Scale",
+        "Coordinate geometry",
+        "Design communication"
+      ],
+      "lesson_count": 7,
+      "lessons": [
+        {
+          "id": "u12-l01",
+          "number": 1,
+          "title": "CAD Workspace, Units, Grid and Snap",
+          "type": "cad"
+        },
+        {
+          "id": "u12-l02",
+          "number": 2,
+          "title": "Precision Lines, Angles and Dimensions",
+          "type": "cad"
+        },
+        {
+          "id": "u12-l03",
+          "number": 3,
+          "title": "Layers, Objects and Geometric Organization",
+          "type": "cad"
+        },
+        {
+          "id": "u12-l04",
+          "number": 4,
+          "title": "Scale Plans, Rooms and Openings",
+          "type": "cad"
+        },
+        {
+          "id": "u12-l05",
+          "number": 5,
+          "title": "Area, Perimeter and Material Schedules",
+          "type": "cad"
+        },
+        {
+          "id": "u12-l06",
+          "number": 6,
+          "title": "Transformations, Repetition and Modular Design",
+          "type": "cad"
+        },
+        {
+          "id": "u12-l07",
+          "number": 7,
+          "title": "Export, Print/PDF, SVG, DXF and Design Defense",
+          "type": "cad"
+        }
+      ],
+      "status": "open"
+    },
+    {
+      "id": "u13",
+      "number": 13,
+      "title": "Geometry Modeling Capstone & Defense",
+      "weeks": 2,
+      "week_numbers": [
+        35,
+        36
+      ],
+      "path": "units/unit-13/",
+      "essential_question": "How can a geometric model be constructed, tested, communicated, defended, and improved?",
+      "project": "Independent Geometry Design, Investigation & Oral Defense",
+      "objectives": [],
+      "standards": [
+        "Modelling",
+        "Proof",
+        "Technical communication",
+        "Reflection"
+      ],
+      "lesson_count": 6,
+      "lessons": [
+        {
+          "id": "u13-l01",
+          "number": 1,
+          "title": "Frame a Geometric Design or Investigation",
+          "type": "capstone"
+        },
+        {
+          "id": "u13-l02",
+          "number": 2,
+          "title": "Develop Constructions, Models and Proof",
+          "type": "capstone"
+        },
+        {
+          "id": "u13-l03",
+          "number": 3,
+          "title": "Test Measurements, Sensitivity and Limitations",
+          "type": "capstone"
+        },
+        {
+          "id": "u13-l04",
+          "number": 4,
+          "title": "Prepare a Printable Technical Portfolio",
+          "type": "capstone"
+        },
+        {
+          "id": "u13-l05",
+          "number": 5,
+          "title": "Present, Defend and Revise the Design",
+          "type": "capstone"
+        },
+        {
+          "id": "u13-l06",
+          "number": 6,
+          "title": "Final Synthesis, Examination and Completion Record",
+          "type": "capstone"
+        }
+      ],
+      "status": "open"
+    }
+  ],
+  "weeks": [
+    {
+      "number": 1,
+      "unit": 1,
+      "title": "Foundations, Constructions & Geometric Reasoning · Part 1",
+      "essential_question": "How do precise definitions, constructions, logic, and proof establish trustworthy geometric conclusions?",
+      "unit_path": "units/unit-01/",
+      "lesson_ids": [
+        "u01-l01",
+        "u01-l02",
+        "u01-l03"
+      ],
+      "skills": [
+        "foundations",
+        "foundations",
+        "foundations"
+      ],
+      "focus": "Points, Lines, Planes & Defined Terms; Segments, Rays, Angles & Notation; Distance, Midpoint & Segment Partition"
+    },
+    {
+      "number": 2,
+      "unit": 1,
+      "title": "Foundations, Constructions & Geometric Reasoning · Part 2",
+      "essential_question": "How do precise definitions, constructions, logic, and proof establish trustworthy geometric conclusions?",
+      "unit_path": "units/unit-01/",
+      "lesson_ids": [
+        "u01-l04",
+        "u01-l05",
+        "u01-l06"
+      ],
+      "skills": [
+        "foundations",
+        "foundations",
+        "foundations"
+      ],
+      "focus": "Compass-and-Straightedge Constructions; Conditional Statements, Converses & Counterexamples; Two-Column, Flow & Paragraph Proofs"
+    },
+    {
+      "number": 3,
+      "unit": 2,
+      "title": "Transformations, Symmetry & Congruence · Part 1",
+      "essential_question": "How do transformations preserve, alter, and organize figures in the plane?",
+      "unit_path": "units/unit-02/",
+      "lesson_ids": [
+        "u02-l01",
+        "u02-l02",
+        "u02-l03"
+      ],
+      "skills": [
+        "transformations",
+        "transformations",
+        "transformations"
+      ],
+      "focus": "Translations on the Coordinate Plane; Reflections Across Axes and Lines; Rotations About the Origin and Other Centers"
+    },
+    {
+      "number": 4,
+      "unit": 2,
+      "title": "Transformations, Symmetry & Congruence · Part 2",
+      "essential_question": "How do transformations preserve, alter, and organize figures in the plane?",
+      "unit_path": "units/unit-02/",
+      "lesson_ids": [
+        "u02-l04",
+        "u02-l05"
+      ],
+      "skills": [
+        "transformations",
+        "transformations"
+      ],
+      "focus": "Compositions of Transformations; Rigid Motion Definition of Congruence"
+    },
+    {
+      "number": 5,
+      "unit": 2,
+      "title": "Transformations, Symmetry & Congruence · Part 3",
+      "essential_question": "How do transformations preserve, alter, and organize figures in the plane?",
+      "unit_path": "units/unit-02/",
+      "lesson_ids": [
+        "u02-l06",
+        "u02-l07"
+      ],
+      "skills": [
+        "transformations",
+        "transformations"
+      ],
+      "focus": "Line, Rotational & Point Symmetry; Tessellations, Frieze Patterns & Design Rules"
+    },
+    {
+      "number": 6,
+      "unit": 3,
+      "title": "Triangle Congruence & Proof · Part 1",
+      "essential_question": "How can limited measurements prove that triangles and their corresponding parts must agree?",
+      "unit_path": "units/unit-03/",
+      "lesson_ids": [
+        "u03-l01",
+        "u03-l02",
+        "u03-l03"
+      ],
+      "skills": [
+        "triangles",
+        "triangles",
+        "triangles"
+      ],
+      "focus": "Triangle Classification & Angle Relationships; SSS and SAS Congruence; ASA, AAS and HL Congruence"
+    },
+    {
+      "number": 7,
+      "unit": 3,
+      "title": "Triangle Congruence & Proof · Part 2",
+      "essential_question": "How can limited measurements prove that triangles and their corresponding parts must agree?",
+      "unit_path": "units/unit-03/",
+      "lesson_ids": [
+        "u03-l04",
+        "u03-l05"
+      ],
+      "skills": [
+        "triangles",
+        "triangles"
+      ],
+      "focus": "CPCTC and Multi-Step Triangle Proofs; Isosceles and Equilateral Triangle Theorems"
+    },
+    {
+      "number": 8,
+      "unit": 3,
+      "title": "Triangle Congruence & Proof · Part 3",
+      "essential_question": "How can limited measurements prove that triangles and their corresponding parts must agree?",
+      "unit_path": "units/unit-03/",
+      "lesson_ids": [
+        "u03-l06",
+        "u03-l07"
+      ],
+      "skills": [
+        "triangles",
+        "triangles"
+      ],
+      "focus": "Triangle Inequality & Feasible Construction; Perpendicular Bisectors, Angle Bisectors & Centers"
+    },
+    {
+      "number": 9,
+      "unit": 4,
+      "title": "Parallel Lines, Slopes & Coordinate Proof · Part 1",
+      "essential_question": "How do angle relationships and coordinate methods prove direction, alignment, and perpendicularity?",
+      "unit_path": "units/unit-04/",
+      "lesson_ids": [
+        "u04-l01",
+        "u04-l02",
+        "u04-l03"
+      ],
+      "skills": [
+        "coordinate",
+        "coordinate",
+        "coordinate"
+      ],
+      "focus": "Parallel Lines Cut by a Transversal; Proving Lines Parallel from Angle Relationships; Slope as Direction and Rate"
+    },
+    {
+      "number": 10,
+      "unit": 4,
+      "title": "Parallel Lines, Slopes & Coordinate Proof · Part 2",
+      "essential_question": "How do angle relationships and coordinate methods prove direction, alignment, and perpendicularity?",
+      "unit_path": "units/unit-04/",
+      "lesson_ids": [
+        "u04-l04",
+        "u04-l05",
+        "u04-l06"
+      ],
+      "skills": [
+        "coordinate",
+        "coordinate",
+        "coordinate"
+      ],
+      "focus": "Parallel and Perpendicular Slopes; Coordinate Proof with Distance, Midpoint & Slope; Equations of Lines in Geometric Context"
+    },
+    {
+      "number": 11,
+      "unit": 5,
+      "title": "Similarity, Dilations & Proportional Reasoning · Part 1",
+      "essential_question": "How do scale and proportional structure connect figures, maps, models, and indirect measurement?",
+      "unit_path": "units/unit-05/",
+      "lesson_ids": [
+        "u05-l01",
+        "u05-l02",
+        "u05-l03"
+      ],
+      "skills": [
+        "similarity",
+        "similarity",
+        "similarity"
+      ],
+      "focus": "Dilations from a Center; Similarity Through Transformations; AA Similarity and Triangle Proportions"
+    },
+    {
+      "number": 12,
+      "unit": 5,
+      "title": "Similarity, Dilations & Proportional Reasoning · Part 2",
+      "essential_question": "How do scale and proportional structure connect figures, maps, models, and indirect measurement?",
+      "unit_path": "units/unit-05/",
+      "lesson_ids": [
+        "u05-l04",
+        "u05-l05"
+      ],
+      "skills": [
+        "similarity",
+        "similarity"
+      ],
+      "focus": "SSS and SAS Similarity; Side-Splitter and Proportional Segments"
+    },
+    {
+      "number": 13,
+      "unit": 5,
+      "title": "Similarity, Dilations & Proportional Reasoning · Part 3",
+      "essential_question": "How do scale and proportional structure connect figures, maps, models, and indirect measurement?",
+      "unit_path": "units/unit-05/",
+      "lesson_ids": [
+        "u05-l06",
+        "u05-l07"
+      ],
+      "skills": [
+        "similarity",
+        "similarity"
+      ],
+      "focus": "Scale Drawings, Maps & Models; Indirect Measurement, Shadows & Mirrors"
+    },
+    {
+      "number": 14,
+      "unit": 6,
+      "title": "Right Triangles, Trigonometry & Bearings · Part 1",
+      "essential_question": "How do right-triangle relationships turn inaccessible lengths, heights, angles, and directions into measurable quantities?",
+      "unit_path": "units/unit-06/",
+      "lesson_ids": [
+        "u06-l01",
+        "u06-l02"
+      ],
+      "skills": [
+        "trigonometry",
+        "trigonometry"
+      ],
+      "focus": "Pythagorean Theorem & Its Converse; Special Right Triangles: 45-45-90"
+    },
+    {
+      "number": 15,
+      "unit": 6,
+      "title": "Right Triangles, Trigonometry & Bearings · Part 2",
+      "essential_question": "How do right-triangle relationships turn inaccessible lengths, heights, angles, and directions into measurable quantities?",
+      "unit_path": "units/unit-06/",
+      "lesson_ids": [
+        "u06-l03",
+        "u06-l04"
+      ],
+      "skills": [
+        "trigonometry",
+        "trigonometry"
+      ],
+      "focus": "Special Right Triangles: 30-60-90; Geometric Mean & Right-Triangle Altitudes"
+    },
+    {
+      "number": 16,
+      "unit": 6,
+      "title": "Right Triangles, Trigonometry & Bearings · Part 3",
+      "essential_question": "How do right-triangle relationships turn inaccessible lengths, heights, angles, and directions into measurable quantities?",
+      "unit_path": "units/unit-06/",
+      "lesson_ids": [
+        "u06-l05",
+        "u06-l06"
+      ],
+      "skills": [
+        "trigonometry",
+        "trigonometry"
+      ],
+      "focus": "Sine, Cosine & Tangent Ratios; Inverse Trigonometry & Angle Measure"
+    },
+    {
+      "number": 17,
+      "unit": 6,
+      "title": "Right Triangles, Trigonometry & Bearings · Part 4",
+      "essential_question": "How do right-triangle relationships turn inaccessible lengths, heights, angles, and directions into measurable quantities?",
+      "unit_path": "units/unit-06/",
+      "lesson_ids": [
+        "u06-l07",
+        "u06-l08"
+      ],
+      "skills": [
+        "trigonometry",
+        "trigonometry"
+      ],
+      "focus": "Angles of Elevation and Depression; Bearings, Vectors & Multi-Step Navigation"
+    },
+    {
+      "number": 18,
+      "unit": 6,
+      "title": "Midpoint Synthesis, Corrections & Examination",
+      "essential_question": "How can evidence from the first half of the course guide correction, consolidation, and readiness for advanced geometry?",
+      "unit_path": "assessments/",
+      "lesson_ids": [],
+      "skills": [
+        "review",
+        "proof",
+        "measurement"
+      ],
+      "focus": "Cumulative review; portfolio conference; 60-question midterm; written corrections"
+    },
+    {
+      "number": 19,
+      "unit": 7,
+      "title": "Polygons & Quadrilaterals · Part 1",
+      "essential_question": "How do angle sums, side relationships, and coordinate evidence classify and constrain polygons?",
+      "unit_path": "units/unit-07/",
+      "lesson_ids": [
+        "u07-l01",
+        "u07-l02",
+        "u07-l03"
+      ],
+      "skills": [
+        "polygons",
+        "polygons",
+        "polygons"
+      ],
+      "focus": "Interior and Exterior Angles of Polygons; Parallelogram Properties & Tests; Rectangles, Rhombi & Squares"
+    },
+    {
+      "number": 20,
+      "unit": 7,
+      "title": "Polygons & Quadrilaterals · Part 2",
+      "essential_question": "How do angle sums, side relationships, and coordinate evidence classify and constrain polygons?",
+      "unit_path": "units/unit-07/",
+      "lesson_ids": [
+        "u07-l04",
+        "u07-l05"
+      ],
+      "skills": [
+        "polygons",
+        "polygons"
+      ],
+      "focus": "Trapezoids, Kites & Midsegments; Quadrilateral Coordinate Proofs"
+    },
+    {
+      "number": 21,
+      "unit": 7,
+      "title": "Polygons & Quadrilaterals · Part 3",
+      "essential_question": "How do angle sums, side relationships, and coordinate evidence classify and constrain polygons?",
+      "unit_path": "units/unit-07/",
+      "lesson_ids": [
+        "u07-l06",
+        "u07-l07"
+      ],
+      "skills": [
+        "polygons",
+        "polygons"
+      ],
+      "focus": "Regular Polygons, Apothem & Central Angles; Polygon Decomposition & Design Constraints"
+    },
+    {
+      "number": 22,
+      "unit": 8,
+      "title": "Circles, Arcs & Tangency · Part 1",
+      "essential_question": "How do radius, chord, arc, angle, tangent, and secant relationships govern every circle?",
+      "unit_path": "units/unit-08/",
+      "lesson_ids": [
+        "u08-l01",
+        "u08-l02",
+        "u08-l03"
+      ],
+      "skills": [
+        "circles",
+        "circles",
+        "circles"
+      ],
+      "focus": "Circle Vocabulary, Radius, Diameter & Chords; Central Angles, Arcs & Arc Length; Inscribed Angles & Intercepted Arcs"
+    },
+    {
+      "number": 23,
+      "unit": 8,
+      "title": "Circles, Arcs & Tangency · Part 2",
+      "essential_question": "How do radius, chord, arc, angle, tangent, and secant relationships govern every circle?",
+      "unit_path": "units/unit-08/",
+      "lesson_ids": [
+        "u08-l04",
+        "u08-l05",
+        "u08-l06"
+      ],
+      "skills": [
+        "circles",
+        "circles",
+        "circles"
+      ],
+      "focus": "Chords, Perpendicular Bisectors & Distances; Tangents and Radius Relationships; Secant, Chord & Tangent Power Theorems"
+    },
+    {
+      "number": 24,
+      "unit": 8,
+      "title": "Circles, Arcs & Tangency · Part 3",
+      "essential_question": "How do radius, chord, arc, angle, tangent, and secant relationships govern every circle?",
+      "unit_path": "units/unit-08/",
+      "lesson_ids": [
+        "u08-l07",
+        "u08-l08"
+      ],
+      "skills": [
+        "circles",
+        "circles"
+      ],
+      "focus": "Sector Area, Segment Area & Annuli; Equation of a Circle & Coordinate Applications"
+    },
+    {
+      "number": 25,
+      "unit": 9,
+      "title": "Analytic Geometry, Loci & Conic Connections · Part 1",
+      "essential_question": "How can distance conditions and coordinate systems describe loci, intersections, boundaries, and conic forms?",
+      "unit_path": "units/unit-09/",
+      "lesson_ids": [
+        "u09-l01",
+        "u09-l02",
+        "u09-l03"
+      ],
+      "skills": [
+        "analytic",
+        "analytic",
+        "analytic"
+      ],
+      "focus": "Locus as a Set of Points Meeting a Condition; Perpendicular and Angle Bisector Loci; Distance from a Point to a Line"
+    },
+    {
+      "number": 26,
+      "unit": 9,
+      "title": "Analytic Geometry, Loci & Conic Connections · Part 2",
+      "essential_question": "How can distance conditions and coordinate systems describe loci, intersections, boundaries, and conic forms?",
+      "unit_path": "units/unit-09/",
+      "lesson_ids": [
+        "u09-l04",
+        "u09-l05"
+      ],
+      "skills": [
+        "analytic",
+        "analytic"
+      ],
+      "focus": "Coordinate Intersections and Geometric Systems; Circle-Line Intersections and Tangency"
+    },
+    {
+      "number": 27,
+      "unit": 9,
+      "title": "Analytic Geometry, Loci & Conic Connections · Part 3",
+      "essential_question": "How can distance conditions and coordinate systems describe loci, intersections, boundaries, and conic forms?",
+      "unit_path": "units/unit-09/",
+      "lesson_ids": [
+        "u09-l06",
+        "u09-l07"
+      ],
+      "skills": [
+        "analytic",
+        "analytic"
+      ],
+      "focus": "Parabolas as Distance Loci; Voronoi Thinking, Nearest-Point Regions & Design"
+    },
+    {
+      "number": 28,
+      "unit": 10,
+      "title": "Area, Measurement & Geometric Probability · Part 1",
+      "essential_question": "How do decomposition, scale, precision, and probability support responsible measurement and optimization?",
+      "unit_path": "units/unit-10/",
+      "lesson_ids": [
+        "u10-l01",
+        "u10-l02",
+        "u10-l03",
+        "u10-l04"
+      ],
+      "skills": [
+        "area",
+        "area",
+        "area",
+        "area"
+      ],
+      "focus": "Area of Triangles, Parallelograms & Trapezoids; Area of Regular Polygons and Composite Figures; Heron’s Formula and Coordinate Area; Effects of Scale on Perimeter and Area"
+    },
+    {
+      "number": 29,
+      "unit": 10,
+      "title": "Area, Measurement & Geometric Probability · Part 2",
+      "essential_question": "How do decomposition, scale, precision, and probability support responsible measurement and optimization?",
+      "unit_path": "units/unit-10/",
+      "lesson_ids": [
+        "u10-l05",
+        "u10-l06",
+        "u10-l07"
+      ],
+      "skills": [
+        "area",
+        "area",
+        "area"
+      ],
+      "focus": "Units, Precision, Error & Significant Figures; Geometric Probability by Length and Area; Optimization with Perimeter and Area Constraints"
+    },
+    {
+      "number": 30,
+      "unit": 11,
+      "title": "Solids, Surface Area & Volume · Part 1",
+      "essential_question": "How do nets, cross-sections, similarity, and dimensional reasoning describe and compare three-dimensional forms?",
+      "unit_path": "units/unit-11/",
+      "lesson_ids": [
+        "u11-l01",
+        "u11-l02",
+        "u11-l03",
+        "u11-l04"
+      ],
+      "skills": [
+        "solids",
+        "solids",
+        "solids",
+        "solids"
+      ],
+      "focus": "Prisms, Cylinders & Cavalieri’s Principle; Pyramids and Cones; Spheres: Surface Area and Volume; Nets and Surface Area of Prisms and Pyramids"
+    },
+    {
+      "number": 31,
+      "unit": 11,
+      "title": "Solids, Surface Area & Volume · Part 2",
+      "essential_question": "How do nets, cross-sections, similarity, and dimensional reasoning describe and compare three-dimensional forms?",
+      "unit_path": "units/unit-11/",
+      "lesson_ids": [
+        "u11-l05",
+        "u11-l06",
+        "u11-l07"
+      ],
+      "skills": [
+        "solids",
+        "solids",
+        "solids"
+      ],
+      "focus": "Surface Area of Cylinders and Cones; Cross-Sections and Solids of Revolution; Similarity, Scale and Volume Relationships"
+    },
+    {
+      "number": 32,
+      "unit": 12,
+      "title": "CAD, Scale Drawing & Spatial Design · Part 1",
+      "essential_question": "How can precise digital drafting turn geometric constraints into measurable, printable, and defensible designs?",
+      "unit_path": "units/unit-12/",
+      "lesson_ids": [
+        "u12-l01",
+        "u12-l02",
+        "u12-l03"
+      ],
+      "skills": [
+        "cad",
+        "cad",
+        "cad"
+      ],
+      "focus": "CAD Workspace, Units, Grid and Snap; Precision Lines, Angles and Dimensions; Layers, Objects and Geometric Organization"
+    },
+    {
+      "number": 33,
+      "unit": 12,
+      "title": "CAD, Scale Drawing & Spatial Design · Part 2",
+      "essential_question": "How can precise digital drafting turn geometric constraints into measurable, printable, and defensible designs?",
+      "unit_path": "units/unit-12/",
+      "lesson_ids": [
+        "u12-l04",
+        "u12-l05"
+      ],
+      "skills": [
+        "cad",
+        "cad"
+      ],
+      "focus": "Scale Plans, Rooms and Openings; Area, Perimeter and Material Schedules"
+    },
+    {
+      "number": 34,
+      "unit": 12,
+      "title": "CAD, Scale Drawing & Spatial Design · Part 3",
+      "essential_question": "How can precise digital drafting turn geometric constraints into measurable, printable, and defensible designs?",
+      "unit_path": "units/unit-12/",
+      "lesson_ids": [
+        "u12-l06",
+        "u12-l07"
+      ],
+      "skills": [
+        "cad",
+        "cad"
+      ],
+      "focus": "Transformations, Repetition and Modular Design; Export, Print/PDF, SVG, DXF and Design Defense"
+    },
+    {
+      "number": 35,
+      "unit": 13,
+      "title": "Geometry Modeling Capstone & Defense · Part 1",
+      "essential_question": "How can a geometric model be constructed, tested, communicated, defended, and improved?",
+      "unit_path": "units/unit-13/",
+      "lesson_ids": [
+        "u13-l01",
+        "u13-l02",
+        "u13-l03"
+      ],
+      "skills": [
+        "capstone",
+        "capstone",
+        "capstone"
+      ],
+      "focus": "Frame a Geometric Design or Investigation; Develop Constructions, Models and Proof; Test Measurements, Sensitivity and Limitations"
+    },
+    {
+      "number": 36,
+      "unit": 13,
+      "title": "Geometry Modeling Capstone & Defense · Part 2",
+      "essential_question": "How can a geometric model be constructed, tested, communicated, defended, and improved?",
+      "unit_path": "units/unit-13/",
+      "lesson_ids": [
+        "u13-l04",
+        "u13-l05",
+        "u13-l06"
+      ],
+      "skills": [
+        "capstone",
+        "capstone",
+        "capstone"
+      ],
+      "focus": "Prepare a Printable Technical Portfolio; Present, Defend and Revise the Design; Final Synthesis, Examination and Completion Record"
+    }
+  ],
+  "assessments": null,
+  "evidence": null,
+  "resources": {
+    "calculator": "../tools/calculator",
+    "cad": "https://vervenveda.com/proresource_hub.github.io/Protools/Ohmic_CAD_Studio.html",
+    "arcade": "https://vervenveda.com/arcade.github.io/"
+  },
+  "metadata": {
+    "standards_status": null,
+    "duration_validation": null,
+    "mastery_scale": null,
+    "interconnections": null
+  }
+}
