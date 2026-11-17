@@ -2,6 +2,7 @@
 
 | Date | Type | Entry | State |
 | --- | --- | --- | --- |
+| 2026-11-17 | repair · symmetry · nomenclature | [Geometry dashboard symmetry and readiness nomenclature repair](logs/2026/11/2026-11-17-dashboard-symmetry-readiness-nomenclature-repair.md) | Source repair PASS; browser/device acceptance HOLD |
 | 2026-11-17 | repair · coverage · canonical chrome | [Geometry ancillary surface coverage expansion](logs/2026/11/2026-11-17-ancillary-surface-coverage-expansion.md) | Source coverage PASS; browser/device acceptance HOLD |
 | 2026-11-17 | repair · shared architecture · chrome · accessibility | [Geometry shared presentation architecture unification](logs/2026/11/2026-11-17-shared-presentation-architecture-unification.md) | Shared/source repair PASS; browser/device acceptance HOLD |
 | 2026-11-17 | forensic audit · topology · curriculum architecture | [Geometry forensic topology and curriculum architecture audit](logs/2026/11/2026-11-17-forensic-topology-curriculum-architecture-audit.md) | Source audit PASS; repairs pending; browser/device acceptance HOLD |
