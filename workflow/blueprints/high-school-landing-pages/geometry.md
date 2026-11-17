@@ -21,6 +21,12 @@ Centered geometry/spatial-design portal. Convert the 330px rail into a centered 
 - Equalize major card groups.
 - Full canonical chrome and translator on public learning surfaces.
 
+## Header and local navigation rule
+
+Geometry uses exactly one canonical High School branded header. Geometry-specific controls may remain as one compact unbranded local navigation strip. The local strip may contain Course Home, Unit, Assessments, Teacher Key, print/PDF, games, or Geometry-specific tools, but it must not repeat the Academy/K badge or institutional lockup.
+
+Geometry heroes and unit heroes remain course identity surfaces; they should not repeat a second institutional logo treatment.
+
 ## Shared requirements
 
 - exactly one eligible 333 ticker and one AutoPopulate ticker;
