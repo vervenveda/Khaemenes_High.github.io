@@ -2,6 +2,7 @@
 
 | Date | Type | Entry | State |
 | --- | --- | --- | --- |
+| 2026-11-17 | architecture audit · lesson companions · learning games | [Mathematics lesson-to-game coverage audit](logs/2026/11/2026-11-17-math-lesson-game-coverage-audit.md) | Source audit PASS |
 | 2026-11-17 | inventory · tool discovery · mathematics ecosystem | [High School & Higher Learning mathematics tool inventory](logs/2026/11/2026-11-17-high-school-higher-learning-math-tool-inventory.md) | Source inventory PASS; integration design pending |
 | 2026-11-17 | inventory · instructional tools · mathematics reinforcement | [Mathematics tools & Arcade reinforcement inventory](logs/2026/11/2026-11-17-mathematics-tools-arcade-reinforcement-inventory.md) | Source inventory PASS; lesson integration pending |
 | 2026-11-17 | research · instructional design · Geometry | [Mathematics interactive worksheet research](logs/2026/11/2026-11-17-mathematics-interactive-worksheet-research.md) | Research documented; prototype pending |
