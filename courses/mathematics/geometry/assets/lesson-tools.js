@@ -84,3 +84,16 @@ document.getElementById("saveLessonNote")?.addEventListener("click",()=>{rec.not
 ;(()=>{const toolbarSource=document.currentScript?.src||location.href;if(document.querySelector('script[src*="vnv-beta-link.js"]'))return;const mount=()=>{if(document.querySelector('script[src*="vnv-beta-link.js"]'))return;const script=document.createElement("script");script.src=new URL("../../../../assets/vnv-beta-link.js",toolbarSource).href;script.defer=true;script.dataset.academyLearnerToolbar="1";document.head.appendChild(script)};document.readyState==="loading"?document.addEventListener("DOMContentLoaded",mount,{once:true}):mount()})();
 
 ;(()=>{if(document.querySelector('script[src*="geometry-presentation-unifier-v1.js"]'))return;const s=document.createElement("script");s.src=new URL("geometry-presentation-unifier-v1.js",document.currentScript?.src||location.href).href;s.defer=true;s.dataset.geometryPresentationUnifier="v1";document.head.appendChild(s)})();
+
+
+/* Universal lesson-aware Learning Tools toolbar. Navigation/support only. */
+;(()=>{
+ if(document.getElementById("vnvClassToolsLessonLoader")||window.VNVClassToolsToolbar)return;
+ const script=document.createElement("script");
+ script.id="vnvClassToolsLessonLoader";
+ script.src="https://vervenveda.com/assets/vnv-class-tools-toolbar.js?v=1.4.0";
+ script.defer=true;
+ script.dataset.vnvClassTools="lesson-aware";
+ script.onerror=()=>console.warn("Learning Tools toolbar unavailable; lesson content remains usable.");
+ (document.head||document.documentElement).appendChild(script);
+})();
