@@ -2,8 +2,9 @@
 // Applied Mission Studio v1.7.0 · compact pop-out evidence recovery.
 
 const CACHE_PREFIX="khaemenes-prealgebra-core-";
-const CACHE_NAME=`${CACHE_PREFIX}v21-lesson-gate-syntax-20261112`;
+const CACHE_NAME=`${CACHE_PREFIX}v22-math-compat-20261117`;
 const CORE_FILES=["./units/unit-02/assets/lesson-engine.js","./units/unit-03/assets/lesson-engine.js","./units/unit-04/assets/lesson-engine.js","./units/unit-05/assets/lesson-engine.js","./units/unit-06/assets/lesson-engine.js","./units/unit-07/assets/lesson-engine.js","./units/unit-08/assets/lesson-engine.js","./units/unit-09/assets/lesson-engine.js","./units/unit-10/assets/lesson-engine.js","./units/unit-11/assets/lesson-engine.js","./units/unit-12/assets/lesson-engine.js","./units/unit-13/assets/lesson-engine.js","./units/unit-02/assets/unit-dashboard.js","./units/unit-03/assets/unit-dashboard.js","./units/unit-04/assets/unit-dashboard.js","./units/unit-05/assets/unit-dashboard.js","./units/unit-06/assets/unit-dashboard.js","./units/unit-07/assets/unit-dashboard.js","./units/unit-08/assets/unit-dashboard.js","./units/unit-09/assets/unit-dashboard.js","./units/unit-10/assets/unit-dashboard.js","./units/unit-11/assets/unit-dashboard.js","./units/unit-12/assets/unit-dashboard.js","./units/unit-13/assets/unit-dashboard.js","./units/unit-02/assets/unit02-vnv-ka-blueprint-v1.css","./units/unit-01/assets/unit01-vnv-ka-blueprint-v1.css","./assets/prealgebra-vnv-ka-blueprint-v1.css","./records/learner-archive.html","./records/learner-archive-v1.js","./assets/prealgebra-export-reminder-v1.js","./assets/prealgebra-activity-evidence-v1.js","./assets/prealgebra-answer-draft-v1.js","../../shared/course-entry-contract.js","../../shared/learner-scope-v1.js",
+ "../assets/math-course-shell-v1.js","../assets/math-learning-tools-v2.js","../assets/math-progress-contract-v1.js","../assets/math-compatibility-v1.js","./course-map-v2.json",
   "./",
   "./index.html",
   "./offline.html",
