@@ -2,6 +2,7 @@
 
 | Date | Type | Entry | State |
 | --- | --- | --- | --- |
+| 2026-11-17 | repair · layout · chrome | [Unit 08 centered layout blueprint implementation](logs/2026/11/2026-11-17-unit08-centered-layout-blueprint-implementation.md) | Dashboard + Lessons 01–08 normalized; static checks PASS; browser/device acceptance HOLD |
 | 2026-11-17 | repair · layout · chrome | [Unit 07 centered layout blueprint implementation](logs/2026/11/2026-11-17-unit07-centered-layout-blueprint-implementation.md) | Dashboard + Lessons 01–08 normalized; static checks PASS; browser/device acceptance HOLD |
 | 2026-11-17 | repair · layout · chrome | [Unit 06 centered layout blueprint implementation](logs/2026/11/2026-11-17-unit06-centered-layout-blueprint-implementation.md) | Dashboard + Lessons 01–07 normalized; static checks PASS; browser/device acceptance HOLD |
 | 2026-11-17 | repair · layout · chrome | [Unit 05 centered layout blueprint implementation](logs/2026/11/2026-11-17-unit05-centered-layout-blueprint-implementation.md) | Dashboard + compatibility landing + Lessons 01–08 normalized; static checks PASS; browser/device acceptance HOLD |
