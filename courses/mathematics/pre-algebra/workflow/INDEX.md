@@ -2,6 +2,7 @@
 
 | Date | Type | Entry | State |
 | --- | --- | --- | --- |
+| 2026-11-17 | repair · layout · chrome | [Unit 13 centered layout blueprint implementation](logs/2026/11/2026-11-17-unit13-centered-layout-blueprint-implementation.md) | Dashboard + Lessons 01–05 normalized; legacy side rails removed; ticker/translator parity added; layout source checks PASS; typography + browser/device acceptance HOLD |
 | 2026-11-17 | follow-up · recovery | [Resumed curriculum review checkpoint](logs/2026/11/2026-11-17-resumed-curriculum-review-checkpoint.md) | Units 01–12 recovered as normalized; Unit 13 identified as next implementation target; course-wide acceptance sweep follows |
 | 2026-11-17 | repair · layout · chrome | [Unit 12 centered layout blueprint implementation](logs/2026/11/2026-11-17-unit12-centered-layout-blueprint-implementation.md) | Dashboard + Lessons 01–08 normalized; chrome ownership cleaned; static checks PASS; assessment logic intentionally unchanged; browser/device acceptance HOLD |
 | 2026-11-17 | repair · layout · chrome | [Unit 11 centered layout blueprint implementation](logs/2026/11/2026-11-17-unit11-centered-layout-blueprint-implementation.md) | Dashboard + Lessons 01–08 normalized; functional geometry workspace preserved; static checks PASS; browser/device acceptance HOLD |
