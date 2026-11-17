@@ -120,3 +120,60 @@ Do not mechanically rewrite them. Preserve lesson-specific pedagogy and only nor
 - readable floor;
 - one-word support controls;
 - optional tools as non-authoritative practice.
+
+
+## Unit 01 Lessons 02–06 normalization
+
+The remaining Unit 01 lessons were audited against the Lesson 01 prototype and normalized without changing their subject-specific mathematics.
+
+Updated:
+- Lesson 02 · Domain, Range, Intervals & Constraints
+- Lesson 03 · Transformations of Parent Functions
+- Lesson 04 · Function Composition & Decomposition
+- Lesson 05 · Inverse Functions & One-to-One Relationships
+- Lesson 06 · Piecewise, Absolute-Value & Step Functions
+
+Each lesson now uses the same canonical sequence:
+
+Recall → See → Worked → Explain → Guided → Independent → Error → Transfer → Feedback → Reflect
+
+The conversion preserves each lesson's:
+- governing relationship;
+- worked examples;
+- independent practice;
+- application laboratory purpose;
+- misconception/correction focus;
+- local lesson record;
+- note protection;
+- progression/mastery authority;
+- existing game launcher where one already existed.
+
+Commits:
+- Lesson 02: `73e7d56c5f8177f1ca252e3444ee064c45134add`
+- Lesson 03: `02d5bc15c4c0fd010e7995f8bf14ae137b502250`
+- Lesson 04: `af78599c6e55d0c5f3cf13f77159d2f7f20c0c5e`
+- Lesson 05: `884842b3bf0e6ad6f148826123fa34aab1052583`
+- Lesson 06: `d726d5d453330169f512156f01b9813757317d7c`
+
+### Unit 01 regression result
+
+PASS across Lessons 01–06:
+- exact 10-step order on every lesson;
+- duplicate flow steps: 0;
+- Practice / Calculator / Lab support labels are one word;
+- lesson-tools loader present;
+- lesson completion control present;
+- lesson note control present;
+- save-note control present;
+- Algebra II workflow adapter remains loaded;
+- Algebra II presentation unifier remains loaded;
+- 16px readable floor remains active;
+- centered no-side-column lesson layout remains active.
+
+### Game launcher observation
+
+Lessons 02–06 already contain topic-linked shared game launchers.
+
+Lesson 01 currently has no embedded shared game launcher. This is not being treated as an error. A game should only be added when a topic-appropriate activity is verified, rather than adding one solely for visual parity.
+
+Games remain supplemental practice and do not become mastery authorities.
