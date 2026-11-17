@@ -9,9 +9,11 @@ if(!/\/courses\/mathematics\/pre-algebra\/units\/unit-\d+\/lessons\//i.test(loca
 
 const match=/\/units\/unit-(\d+)\/lessons\/lesson-(\d+)-[^/]+\.html$/i.exec(location.pathname);
 if(!match)return;
-const unit=String(Number(match[1])).padStart(2,"0");
+const unitNumber=Number(match[1]);
+if(unitNumber>=1&&unitNumber<=3)return; // Units 01–03 retain their explicit validated companion maps.
+const unit=String(unitNumber).padStart(2,"0");
 const lesson=String(Number(match[2])).padStart(2,"0");
-const mathRoot=new URL("../",new URL(self.src));
+const mathRoot=new URL("../../assets/",self.src);
 const registryURL=new URL("learning-games/game-registry.json",mathRoot);
 const launcherURL=new URL("shared-game-launcher.js",mathRoot);
 
