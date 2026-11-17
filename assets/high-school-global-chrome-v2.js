@@ -270,6 +270,9 @@ async function start(){
   if(/\/courses\/mathematics\/geometry\//i.test(location.pathname)){
     await load(HIGH+"courses/mathematics/geometry/assets/geometry-presentation-unifier-v1.js","khaemenesGeometryPresentation");
   }
+  if(/\/courses\/mathematics\/pre-algebra\/units\/unit-\d+\/lessons\//i.test(location.pathname)){
+    await load(HIGH+"courses/mathematics/pre-algebra/assets/prealgebra-game-registry-bridge-v1.js","khaemenesPreAlgebraGameRegistry");
+  }
   await load(VNV+HEADER,"khaemenesHighHeader");
   mountHeader(canonicalLessonHeader);
   await load(VNV+TOOLBAR,"khaemenesHighToolbar");
