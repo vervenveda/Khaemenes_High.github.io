@@ -290,8 +290,8 @@ function renderDashboard(){
  <div class="section-head"><p class="eyebrow">Your Geometry workspace</p><h2>${esc(s.name)} · Geometry</h2>
  <p>One clear path through lessons, mastery, practice, tools, portfolio evidence, and assessments.</p></div>
  <div class="grid">
-  <article class="card col4"><h3>Learner Record</h3>${studentControls()}<p class="notice">Placement is based on demonstrated readiness and mastery. Local planning records do not override canonical course gates.</p></article>
-  <article class="card col8 course-next-step">
+  <article class="card col6"><h3>Learner Record</h3>${studentControls()}<p class="notice">Placement is based on demonstrated readiness and mastery. Local planning records do not override canonical course gates.</p></article>
+  <article class="card col6 course-next-step">
    <p class="next-step-label">${esc(action.label)}</p>
    <h3>${esc(action.title)}</h3>
    <p>${esc(action.description)}</p>
