@@ -1,30 +1,32 @@
 {
   "name": "Khaemenes Open-Age Algebra II & Advanced Functions",
-  "short_name": "Khaemenes Algebra II",
+  "short_name": "Algebra II",
   "id": "./?app=algebra-2",
   "start_url": "./",
   "scope": "./",
   "display": "standalone",
   "background_color": "#090b10",
   "theme_color": "#090b10",
+  "description": "Open-age Algebra II and Advanced Functions course with mastery, modelling, assessments, records, and offline support.",
   "categories": [
-    "education"
+    "education",
+    "mathematics"
   ],
   "shortcuts": [
     {
-      "name": "Weekly Classroom",
+      "name": "Lessons",
       "url": "./#week"
     },
     {
-      "name": "Readiness Diagnostic",
+      "name": "Diagnostic",
       "url": "./diagnostic/"
     },
     {
-      "name": "Assessment Center",
+      "name": "Assessments",
       "url": "./assessments/"
     },
     {
-      "name": "Scientific Calculator",
+      "name": "Calculator",
       "url": "../tools/calculator"
     }
   ]
