@@ -1,4 +1,4 @@
-/* Compatibility shim · canonical engine lives at vervenveda.com/assets/vnv-class-tools-toolbar.js */
+/* Compatibility shim · current deployment endpoint: vervenveda.com/assets/vnv-class-tools-toolbar.js\n   Canonical v1.1 source is mirrored in KhaemenesAcademy/vervenveda.github.io for gateway migration. */
 (()=>{"use strict";
 if(window.VNVClassToolsToolbar){void window.VNVClassToolsToolbar.mount();return;}
 if(document.querySelector('script[data-vnv-class-tools]'))return;
