@@ -24,7 +24,7 @@ html:root:root body :is(.eyebrow,.kicker,.dialog-eyebrow,.dialog-kicker,.workshe
 html:root:root body[data-mode] :is(.eyebrow,.kicker,.dialog-eyebrow,.dialog-kicker,.worksheet-kicker){
   margin-bottom:8px!important;
   color:var(--a1-blue)!important;
-  font-size:12px!important;
+  font-size:16px!important;
   font-weight:500!important;
   line-height:1.45!important;
   letter-spacing:.11em!important;
@@ -149,7 +149,7 @@ html:root:root body #main:empty::before{
   border:1px solid transparent;
   border-radius:var(--a1-radius);
   color:var(--a1-navy);
-  font-size:12px;
+  font-size:16px;
   text-decoration:none;
 }
 .algebra1-quick-nav a:hover,.algebra1-quick-nav a:focus-visible{
@@ -185,7 +185,7 @@ html:root:root body #main:empty::before{
   color:var(--a1-navy);
   font:400 28px/1.1 Cinzel,Georgia,serif;
 }
-.algebra1-dashboard-card span{margin-top:7px;color:var(--a1-muted);font-size:13px}
+.algebra1-dashboard-card span{margin-top:7px;color:var(--a1-muted);font-size:16px}
 .algebra1-dashboard-actions{
   display:flex;
   flex-wrap:wrap;
@@ -204,7 +204,7 @@ html:root:root body #main:empty::before{
   background:#fff;
   color:var(--a1-ink);
   text-decoration:none;
-  font-size:13px;
+  font-size:16px;
 }
 .algebra1-dashboard-actions a.primary{background:var(--a1-navy);border-color:var(--a1-navy);color:#fff}
 .algebra1-progress-chip{
@@ -213,7 +213,7 @@ html:root:root body #main:empty::before{
   gap:7px;
   margin-top:10px;
   color:var(--a1-muted);
-  font-size:12px;
+  font-size:16px;
 }
 .algebra1-progress-chip::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--a1-gold)}
 body[data-mode="lesson"] #main>.block>.wrap.grid{align-items:start}
@@ -228,18 +228,18 @@ body[data-mode="lesson"] .lesson-reading{scroll-margin-top:132px}
   align-items:center;
   gap:8px;
   color:var(--a1-muted);
-  font-size:11px;
+  font-size:16px;
   white-space:nowrap;
 }
 .algebra1-meter-track{width:76px;height:7px;border-radius:999px;background:#ded8cb;overflow:hidden}
 .algebra1-meter-track span{display:block;height:100%;width:0;background:var(--a1-green);transition:width .16s ease}
-.algebra1-lazy-note{padding:14px 18px;color:var(--a1-muted);font-size:13px;text-align:center}
+.algebra1-lazy-note{padding:14px 18px;color:var(--a1-muted);font-size:16px;text-align:center}
 @media(max-width:900px){
   .algebra1-dashboard-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
   .algebra1-has-header .algebra1-quick-nav{top:68px}
 }
 @media(max-width:700px){
-  html:root:root body{font-size:15.5px!important}
+  html:root:root body{font-size:16px!important}
   html:root:root body .hero{padding:34px 0 30px!important}
   html:root:root body :is(.block,.section){padding:38px 0!important}
   html:root:root body[data-mode="lesson"] #main>.block>.wrap.grid{grid-template-columns:1fr!important}
