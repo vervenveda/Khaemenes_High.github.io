@@ -4105,6 +4105,61 @@
           "wired": true
         }
       ]
+    },
+    "model-forge": {
+      "title": "Model Forge",
+      "canonical_path": "courses/mathematics/assets/learning-games/model-forge/index.html",
+      "status": "canonical-v1",
+      "mastery_target": 80,
+      "placements": [
+        {
+          "course": "algebra-1",
+          "unit": "03",
+          "lesson": "07",
+          "lesson_title": "Rate, Mixture, Distance & Financial Equation Models",
+          "mode": "equation-models",
+          "query": "?course=algebra1&unit=03&lesson=07&mode=equation-models",
+          "wired": true
+        },
+        {
+          "course": "algebra-1",
+          "unit": "13",
+          "lesson": "01",
+          "lesson_title": "Frame a Complex & Ethical Modelling Question",
+          "mode": "frame",
+          "query": "?course=algebra1&unit=13&lesson=01&mode=frame",
+          "wired": true
+        },
+        {
+          "course": "algebra-1",
+          "unit": "13",
+          "lesson": "02",
+          "lesson_title": "Choose Variables, Assumptions, Data & Representations",
+          "mode": "design",
+          "query": "?course=algebra1&unit=13&lesson=02&mode=design",
+          "wired": true
+        },
+        {
+          "course": "algebra-1",
+          "unit": "13",
+          "lesson": "03",
+          "lesson_title": "Build, Calculate, Validate & Revise the Model",
+          "mode": "validate",
+          "query": "?course=algebra1&unit=13&lesson=03&mode=validate",
+          "wired": true
+        },
+        {
+          "course": "algebra-1",
+          "unit": "13",
+          "lesson": "04",
+          "lesson_title": "Test Sensitivity, Uncertainty & Fairness",
+          "mode": "sensitivity",
+          "query": "?course=algebra1&unit=13&lesson=04&mode=sensitivity",
+          "wired": true
+        }
+      ],
+      "launcher": "courses/mathematics/assets/shared-game-launcher.js",
+      "scope_note": "One shared modelling studio progresses from equation modelling through ethical framing, design, validation, sensitivity and fairness. Practice only; does not replace capstone evidence or official mastery."
     }
   }
 }
