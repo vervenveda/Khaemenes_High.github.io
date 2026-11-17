@@ -3,6 +3,15 @@
 // Temporary isolation for frozen Unit 01 Lesson 01. Preserve core lesson and grading.
 if(location.pathname.includes("/algebra-1/units/unit-01/lessons/lesson-01-"))return;
 const script=document.currentScript;
+function ensureTranslator(){
+  if(document.querySelector('script[data-official-vnv-language="true"],script[src*="vnv-language.js"]'))return;
+  const language=document.createElement("script");
+  language.src="/Khaemenes_High.github.io/assets/vnv-language.js";
+  language.defer=true;
+  language.dataset.officialVnvLanguage="true";
+  document.head.appendChild(language);
+}
+ensureTranslator();
 function ensureCss(){
   if(document.querySelector('link[data-algebra1-student-experience="v2"]'))return;
   const link=document.createElement("link");
