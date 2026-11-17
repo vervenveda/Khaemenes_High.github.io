@@ -151,3 +151,25 @@ This keeps the toolbar useful and prevents resource overload.
 4. Add Mathematics Core template placements by lesson concept.
 5. Update the toolbar Materials panel to read these lesson-aware resources.
 6. Preserve assessment-specific calculator restrictions.
+
+
+## Implementation update · lesson-aware archive v1.1
+
+Completed:
+- Mathematics archive schema advanced to 1.1.0.
+- 41 interactive-tool placements added.
+- 130 Mathematics Core material placements added.
+- Scientific Calculator is available on 35 Algebra I lessons.
+- OHMIC CAD is available on 6 focused Algebra I lessons.
+- Toolbar upgraded to v1.4.0.
+- Materials panel now resolves lesson-specific ProReSources companions.
+- Student Profile pages retain the general Materials fallback.
+- Raw Mathematics Core templates are not exposed as public learner links yet; metadata is ready for a polished template viewer.
+
+Representative resolved lessons:
+- U03-L05 → Scientific Calculator + Worked Example + Formula & Concept Organizer
+- U06-L02 → Scientific Calculator + Graph & Data Investigation
+- U06-L06 → Graph & Data Investigation
+- U11-L05 → OHMIC CAD + Mathematical Reasoning
+- U13-L02 → OHMIC CAD + Graph & Data Investigation
+- U13-L03 → Scientific Calculator + OHMIC CAD + Mathematical Reasoning + Error Analysis + Mathematical Modeling Task
