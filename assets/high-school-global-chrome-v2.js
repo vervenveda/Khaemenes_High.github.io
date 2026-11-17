@@ -274,7 +274,7 @@ async function start(){
     await load(HIGH+"courses/mathematics/pre-algebra/assets/prealgebra-game-registry-bridge-v1.js","khaemenesPreAlgebraGameRegistry");
   }
   if(/\/grades\/grade-(?:09|10|11|12)\/student-profile\/(?:index\.html)?$/i.test(location.pathname)){
-    await load(HIGH+"grades/shared/class-tools-toolbar-v1.js","khaeClassToolsToolbarV1");
+    await load(VNV+"vnv-class-tools-toolbar.js","vnvClassToolsToolbar");
   }
   await load(VNV+HEADER,"khaemenesHighHeader");
   mountHeader(canonicalLessonHeader);
