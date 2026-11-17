@@ -61,3 +61,42 @@ Toolbar labels must follow the canonical learner-toolbar rule:
 **one word · one line · fixed height**
 
 For High School the context launcher remains **Class**.
+
+
+## Unit 01 Lesson 01 instructional prototype
+
+Unit 01 · Lesson 01 is now the prototype for the shared mathematics lesson sequence.
+
+Canonical order:
+
+1. Recall
+2. See
+3. Worked
+4. Explain
+5. Guided
+6. Independent
+7. Error
+8. Transfer
+9. Feedback
+10. Reflect
+
+Implementation notes:
+- existing lesson topic and six-problem printable worksheet preserved;
+- worksheet is the Independent step;
+- Error, Transfer, Feedback and Reflect occur after independent work;
+- optional Practice, CAD and Game supports use one-word labels;
+- external practice tools are explicitly non-authoritative for mastery;
+- the existing `lesson-tools.js` remains the source of the 80% lesson mastery gate;
+- no assessment key, storage key, progression threshold, or grading logic was changed.
+
+Prototype commits:
+- initial instructional prototype: `55da62f12b89fa5b35196193b88c24d6bd893b7a`
+- corrected canonical sequence order: `d35821fe57c342799b43f3d027a1be21a63abcc2`
+
+Source validation:
+- exact flow order PASS;
+- duplicate flow-step IDs: 0;
+- printable worksheet count: 1;
+- lesson main container count: 1;
+- lesson support container count: 1;
+- Geometry lesson mastery engine remains loaded.
