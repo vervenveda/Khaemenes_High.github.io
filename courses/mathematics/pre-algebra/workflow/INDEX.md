@@ -2,6 +2,7 @@
 
 | Date | Type | Entry | State |
 | --- | --- | --- | --- |
+| 2026-11-17 | audit · repair · closeout | [Student-facing topology closeout sweep](logs/2026/11/2026-11-17-student-facing-topology-closeout-sweep.md) | Diagnostic centered + translator restored; Unit 00 translator restored; Unit 01 worksheet grids equalized; student-facing source architecture substantially normalized; browser/device + universal typography acceptance HOLD |
 | 2026-11-17 | audit · accessibility · repair | [Course-wide lesson readability floor repair](logs/2026/11/2026-11-17-coursewide-lesson-readability-floor-repair.md) | Units 04–13 shared lesson engines now enforce 18px body / 16px ordinary text floor; representative lesson architecture parity PASS; browser/device acceptance HOLD |
 | 2026-11-17 | repair · layout · chrome | [Unit 13 centered layout blueprint implementation](logs/2026/11/2026-11-17-unit13-centered-layout-blueprint-implementation.md) | Dashboard + Lessons 01–05 normalized; legacy side rails removed; ticker/translator parity added; layout source checks PASS; typography + browser/device acceptance HOLD |
 | 2026-11-17 | follow-up · recovery | [Resumed curriculum review checkpoint](logs/2026/11/2026-11-17-resumed-curriculum-review-checkpoint.md) | Units 01–12 recovered as normalized; Unit 13 identified as next implementation target; course-wide acceptance sweep follows |
