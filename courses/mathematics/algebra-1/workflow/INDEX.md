@@ -2,6 +2,7 @@
 
 | Date | Type | Entry | State |
 | --- | --- | --- | --- |
+| 2026-11-17 | decision · repair · chrome unification | [Canonical header and local navigation unification](logs/2026/11/2026-11-17-canonical-header-local-navigation-unification.md) | Source repair PASS; browser/device acceptance HOLD |
 | 2026-11-17 | repair · visual unification · accessibility | [Entry surfaces and shared readability unification](logs/2026/11/2026-11-17-entry-surfaces-shared-readability-unification.md) | Source repair PASS; browser/device acceptance HOLD |
 | 2026-11-17 | continuation · topology audit · visual unification | [Algebra I visual unification continuation checkpoint](logs/2026/11/2026-11-17-visual-unification-continuation-checkpoint.md) | Audit in progress; browser/device acceptance HOLD |
 | 2026-11-16 | forensic audit · validation planning | [Algebra I readiness and functionality audit](logs/2026/11/2026-11-16-readiness-functionality-audit.md) | Source reviewed; exams and storage require follow-up; live acceptance HOLD |
