@@ -7,10 +7,27 @@
   "display": "standalone",
   "background_color": "#090b10",
   "theme_color": "#090b10",
-  "description": "Open-age 36-week Geometry course with printable visual lessons, proof, CAD, Arcade labs, assessments, and records.",
+  "description": "Open-age 36-week Geometry course with proof, spatial design, assessments, records, and offline support.",
   "categories": [
     "education",
-    "mathematics",
-    "productivity"
+    "mathematics"
+  ],
+  "shortcuts": [
+    {
+      "name": "Lessons",
+      "url": "./#week"
+    },
+    {
+      "name": "Diagnostic",
+      "url": "./diagnostic/"
+    },
+    {
+      "name": "Assessments",
+      "url": "./assessments/"
+    },
+    {
+      "name": "Calculator",
+      "url": "../tools/calculator"
+    }
   ]
 }
