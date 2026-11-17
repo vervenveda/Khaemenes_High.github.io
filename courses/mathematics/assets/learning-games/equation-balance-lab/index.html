@@ -1,74 +1,244 @@
 <!doctype html>
-<html lang="en"><head>
+<html lang="en">
+<head>
 <script src="../../../../shared/course-entry-contract.js?v=20261012"></script>
 <script src="../../../../shared/learner-scope-v1.js?v=20261012" data-learner-scope="math-games"></script>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#f4ecda"><title>Equation Balance Lab · Khaemenes Academy</title><style>
-:root{color-scheme:light;--paper:#f4ecda;--card:#fffdf7;--ink:#211c17;--gold:#9a6c28;--line:#c8bda7;--good:#195b39;--bad:#9b3030}*{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);font:16px/1.5 system-ui,Arial,sans-serif}main{max-width:940px;margin:auto;padding:24px 16px 65px}h1,h2{font-family:Georgia,serif;letter-spacing:.04em}h1{font-size:clamp(1.9rem,5vw,3rem);margin:0}.eyebrow{color:#694b23;letter-spacing:.16em;text-transform:uppercase;font-size:.75rem;font-weight:700}.panel{background:var(--card);border:1px solid var(--line);border-radius:7px;padding:20px;margin:18px 0;box-shadow:0 3px 0 #dfd3bc}.row{display:flex;gap:12px;align-items:center;flex-wrap:wrap}.row>*{flex:0 0 auto}.grow{flex:1}.stat{border:1px solid var(--line);padding:8px 12px;border-radius:7px;background:#f9f2e4}button,select,input{font:inherit;border-radius:7px;border:1px solid #7b684f;padding:10px 12px;background:#fff;color:var(--ink)}button{cursor:pointer;background:#ede0c6;font-weight:650}button:hover{background:#dfc99d}button:focus-visible,input:focus-visible,select:focus-visible{outline:3px solid #285e98;outline-offset:2px}button:disabled{opacity:.55;cursor:not-allowed}.primary{background:#3d352c;color:#fff}.primary:hover{background:#574838}.equation{font:700 clamp(2rem,6vw,3.3rem)/1.4 Georgia,serif;text-align:center;padding:25px 6px}.balance{position:relative;height:110px;margin:5px auto 15px;max-width:420px}.beam{position:absolute;top:32px;left:10%;width:80%;height:8px;background:#8a6b43;border-radius:8px}.post{position:absolute;left:calc(50% - 4px);top:33px;height:64px;width:8px;background:#8a6b43}.base{position:absolute;bottom:4px;left:39%;width:22%;height:8px;background:#8a6b43}.pan{position:absolute;top:41px;width:32%;text-align:center;border-bottom:5px solid #8a6b43;padding:10px 2px;font-size:1.1rem;font-weight:700}.pan.left{left:3%}.pan.right{right:3%}.muted{color:#514a42}.feedback{min-height:54px;border-left:4px solid var(--gold);padding:9px 12px;background:#f5eddd}.feedback.good{border-color:var(--good)}.feedback.bad{border-color:var(--bad)}.history{padding-left:25px}.history li{margin:6px 0}.tiny{font-size:.85rem}.hidden{display:none!important}label{font-weight:650}input[type=number]{width:150px}progress{width:100%;height:16px;accent-color:#7b5a2b}@media(prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important;transition:none!important}}@media(max-width:520px){.row>*{flex:1 1 100%}button{width:100%}}
-</style><script src="../../game-return-route.js?v=20261012"></script>
-<style id="khaemenes-typography-standard">
-/* Khaemenes High presentation typography · 55 / 33 / 24 / 14 px.
-   All public pages receive this local, embedded policy for offline use.
-   Only presentation changes. Existing grids, gates, learner records, assessments and STOS are preserved.
-   Font names are optional installed system fonts; no downloads or third-party font services. */
-html:root:root body {
-  font-family: "Brandon Grotesque", "Avenir Next", Avenir, "Segoe UI", Arial, sans-serif !important;
-  font-size: 14px !important;
-  font-weight: 400 !important;
-  line-height: 1.65 !important;
-  -webkit-text-size-adjust: 100%;
-  overflow-wrap: break-word;
-}
-html:root:root body :is(button, input, select, textarea) {
-  font-family: "Brandon Grotesque", "Avenir Next", Avenir, "Segoe UI", Arial, sans-serif !important;
-}
-html:root:root body :is(h1, h2, h3, h4, h5, h6, .page-title, .hero-title, .brand-title, .display-title, .site-title) {
-  font-family: Cinzel, "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif !important;
-  font-weight: 400 !important;
-  overflow-wrap: anywhere;
-}
-html:root:root body :is(.eyebrow, .kicker, .dialog-eyebrow, .dialog-kicker, .worksheet-kicker) {
-  font-family: Cinzel, "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif !important;
-  font-size: 55px !important;
-  font-weight: 400 !important;
-  line-height: 1.15 !important;
-  letter-spacing: .02em !important;
-  white-space: normal !important;
-  overflow-wrap: anywhere;
-}
-html:root:root body h1 {
-  font-size: 33px !important;
-  line-height: 1.2 !important;
-  white-space: normal !important;
-  overflow-wrap: anywhere;
-}
-html:root:root body h2,
-html:root:root body :is(.subtitle, .hero-subtitle, .hero-sub, .academy-comment),
-html:root:root body .hero .comment {
-  font-size: 24px !important;
-  line-height: 1.35 !important;
-  white-space: normal !important;
-  overflow-wrap: anywhere;
-}
-/* Do not replace responsive grids or fixed elements; prevent oversized titles from
-   demanding horizontal scrolling on narrow phone and tablet displays. */
-html:root:root body :is(.hero, .header, .page-header, .section-head, .lesson-header) {
-  min-width: 0;
-}
-@media print {
-  html:root:root body { font-size: 14px !important; }
-}
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#f4ecda">
+<title>Equation Balance Lab · Khaemenes Academy</title>
+<style>
+:root{color-scheme:light;--paper:#f4ecda;--card:#fffdf7;--ink:#211c17;--gold:#9a6c28;--line:#c8bda7;--good:#195b39;--bad:#9b3030}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);font:400 16px/1.6 "Brandon Grotesque","Avenir Next",Arial,sans-serif}
+main{max-width:980px;margin:auto;padding:24px 16px 70px}
+h1,h2,h3{font-family:Cinzel,Georgia,serif;font-weight:400}
+h1{font-size:33px;margin:0}
+h2{font-size:24px}
+.eyebrow{margin:0 0 7px;color:#694b23;letter-spacing:.08em;text-transform:uppercase;font:400 16px/1.4 Cinzel,Georgia,serif}
+.panel{background:var(--card);border:1px solid var(--line);border-radius:7px;padding:20px;margin:18px 0;box-shadow:0 3px 0 #dfd3bc}
+.row{display:flex;gap:11px;align-items:center;flex-wrap:wrap}.row>*{flex:0 0 auto}.grow{flex:1}
+.stat{border:1px solid var(--line);padding:8px 12px;border-radius:7px;background:#f9f2e4}
+button,select,input{font:inherit;border-radius:7px;border:1px solid #7b684f;padding:10px 12px;background:#fff;color:var(--ink);min-height:44px}
+button{cursor:pointer;background:#ede0c6;font-weight:400}button:hover{background:#dfc99d}
+button:focus-visible,input:focus-visible,select:focus-visible{outline:3px solid #285e98;outline-offset:2px}
+button:disabled{opacity:.55;cursor:not-allowed}.primary{background:#3d352c;color:#fff}.primary:hover{background:#574838}
+.equation{font:400 clamp(30px,6vw,52px)/1.4 Georgia,serif;text-align:center;padding:24px 6px}
+.balance{position:relative;height:110px;margin:5px auto 15px;max-width:420px}
+.beam{position:absolute;top:32px;left:10%;width:80%;height:8px;background:#8a6b43;border-radius:8px}
+.post{position:absolute;left:calc(50% - 4px);top:33px;height:64px;width:8px;background:#8a6b43}
+.base{position:absolute;bottom:4px;left:39%;width:22%;height:8px;background:#8a6b43}
+.pan{position:absolute;top:41px;width:32%;text-align:center;border-bottom:5px solid #8a6b43;padding:10px 2px;font-size:18px}
+.pan.left{left:3%}.pan.right{right:3%}
+.muted{color:#514a42}.tiny{font-size:16px}.hidden{display:none!important}
+.feedback{min-height:54px;border-left:4px solid var(--gold);padding:11px 14px;background:#f5eddd}
+.feedback.good{border-color:var(--good)}.feedback.bad{border-color:var(--bad)}
+.history{padding-left:25px}.history li{margin:6px 0}
+label{font-weight:400}input[type=number]{width:170px}progress{width:100%;height:16px;accent-color:#7b5a2b}
+.literal-grid{display:grid;grid-template-columns:1fr 1fr;gap:11px;margin-top:14px}
+.choice{min-height:58px;text-align:left;background:#fffdf7}
+.choice[data-selected="true"]{border-color:#694b23;background:#f2e4c9}
+.verify-card{margin-top:14px;padding:14px;border:1px solid var(--line);border-radius:7px;background:#faf3e6}
+.formula-meta{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:11px;margin:14px 0}
+.formula-meta div{padding:11px;border:1px solid var(--line);border-radius:7px;background:#fff}
+.formula-meta strong{display:block;font-family:Cinzel,Georgia,serif;font-weight:400}
+@media(max-width:680px){.literal-grid,.formula-meta{grid-template-columns:1fr}.row>*{flex:1 1 100%}button{width:100%}input[type=number]{width:100%}}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important;transition:none!important}}
+@media print{button,#sound,#save{display:none!important}}
 </style>
-  <script src="/Khaemenes_High.github.io/assets/high-school-global-chrome-v2.js" defer data-high-school-global-chrome="v2"></script>
-</head><body><main><p class="eyebrow">Khaemenes Academy · Sovereign Mathematics</p><h1>Equation Balance Lab</h1><p>Original offline learning game · Solve equations by preserving equality. No accounts, tracking, third-party scripts, or external game assets.</p>
-<section class="panel" aria-label="Session setup"><div class="row"><label for="level">Challenge level</label><select id="level"><option value="1">1 · One-step equations</option><option value="2">2 · Two-step equations</option><option value="3">3 · Variables on both sides</option></select><button id="new" type="button">New challenge</button><button id="reset" type="button">Reset this session</button><button id="sound" type="button" aria-pressed="false">Sound: off</button></div><p class="tiny muted">An incorrect answer never resets your score or forces you to replay old questions. Questions are generated afresh and recent questions are avoided.</p></section>
-<section class="panel" aria-label="Equation challenge"><div class="row"><div class="stat">Solved: <strong id="solved">0</strong></div><div class="stat">Attempts: <strong id="attempts">0</strong></div><div class="stat">Accuracy: <strong id="accuracy">—</strong></div><div class="stat">Mastery target: <strong>80%</strong></div></div><label for="progress">Session accuracy</label><progress id="progress" max="100" value="0"></progress><div class="balance" aria-hidden="true"><div class="beam"></div><div class="post"></div><div class="base"></div><div class="pan left" id="panleft"></div><div class="pan right" id="panright"></div></div><div class="equation" id="equation" aria-live="polite"></div><form id="answerForm"><div class="row"><label for="answer">Value of x</label><input id="answer" type="number" step="any" inputmode="decimal" required autocomplete="off"><button class="primary" type="submit">Check answer</button><button id="hint" type="button">Show a hint</button><button id="explain" type="button">Explain solution</button></div></form><p id="feedback" class="feedback" role="status" aria-live="polite">Choose a level and solve the equation.</p><div class="row"><button id="next" type="button" disabled>Next challenge →</button><button id="save" type="button">Export progress</button></div></section>
-<section class="panel"><h2>Learning record</h2><p class="tiny">Game progress is local to this browser and is not an official course grade. Your teacher or lesson engine controls course mastery.</p><ol id="history" class="history"></ol></section><footer class="tiny">© Jennifer Kay Pearl · Khaemenes Academy · Built with original vanilla HTML/CSS/JavaScript.</footer></main>
+<script src="../../game-return-route.js?v=20261012"></script>
+<script src="/Khaemenes_High.github.io/assets/high-school-global-chrome-v2.js" defer data-high-school-global-chrome="v2"></script>
+</head>
+<body>
+<main>
+<p class="eyebrow">Khaemenes Academy · Sovereign Mathematics</p>
+<h1>Equation Balance Lab</h1>
+<p>Original offline learning game · Solve and rearrange equations while preserving equality. Game practice is supportive evidence only and never replaces course mastery.</p>
+
+<section class="panel" aria-label="Session setup">
+<div class="row">
+<label for="level">Challenge level</label>
+<select id="level">
+<option value="1">1 · One-step equations</option>
+<option value="2">2 · Two-step equations</option>
+<option value="3">3 · Variables on both sides</option>
+<option value="4">4 · Literal formulas</option>
+</select>
+<button id="new" type="button">New challenge</button>
+<button id="reset" type="button">Reset session</button>
+<button id="sound" type="button" aria-pressed="false">Sound: off</button>
+</div>
+<p class="tiny muted">Level 4 isolates a requested variable symbolically, then verifies the rearranged formula with substitution.</p>
+</section>
+
+<section class="panel" aria-label="Equation challenge">
+<div class="row">
+<div class="stat">Solved: <strong id="solved">0</strong></div>
+<div class="stat">Attempts: <strong id="attempts">0</strong></div>
+<div class="stat">Accuracy: <strong id="accuracy">—</strong></div>
+<div class="stat">Mastery target: <strong>80%</strong></div>
+</div>
+<label for="progress">Session accuracy</label>
+<progress id="progress" max="100" value="0"></progress>
+
+<div id="numericMode">
+<div class="balance" aria-hidden="true"><div class="beam"></div><div class="post"></div><div class="base"></div><div class="pan left" id="panleft"></div><div class="pan right" id="panright"></div></div>
+<div class="equation" id="equation" aria-live="polite"></div>
+<form id="answerForm"><div class="row">
+<label for="answer">Value of x</label>
+<input id="answer" type="number" step="any" inputmode="decimal" required autocomplete="off">
+<button class="primary" type="submit">Check answer</button>
+<button id="hint" type="button">Hint</button>
+<button id="explain" type="button">Explain</button>
+</div></form>
+</div>
+
+<div id="literalMode" class="hidden">
+<p class="eyebrow">Literal Formula Mission</p>
+<div class="equation" id="literalFormula" aria-live="polite"></div>
+<div class="formula-meta">
+<div><strong>Target</strong><span id="literalTarget"></span></div>
+<div><strong>Meaning</strong><span id="literalMeaning"></span></div>
+<div><strong>Rule</strong><span>Apply equivalent operations to preserve equality.</span></div>
+</div>
+<h2>1 · Isolate the requested variable</h2>
+<div id="literalChoices" class="literal-grid" role="group" aria-label="Equivalent rearrangements"></div>
+<div id="verifyCard" class="verify-card hidden">
+<h2>2 · Verify by substitution</h2>
+<p id="verifyPrompt"></p>
+<form id="verifyForm"><div class="row">
+<label for="verifyAnswer">Calculated target value</label>
+<input id="verifyAnswer" type="number" step="any" inputmode="decimal" required autocomplete="off">
+<button class="primary" type="submit">Verify formula</button>
+<button id="literalHint" type="button">Hint</button>
+<button id="literalExplain" type="button">Explain</button>
+</div></form>
+</div>
+</div>
+
+<p id="feedback" class="feedback" role="status" aria-live="polite">Choose a level and begin.</p>
+<div class="row"><button id="next" type="button" disabled>Next challenge →</button><button id="save" type="button">Export progress</button></div>
+</section>
+
+<section class="panel"><h2>Learning record</h2><p class="tiny">Session data stays in this browser and is not an official grade. Course mastery remains controlled by the lesson and assessment engines.</p><ol id="history" class="history"></ol></section>
+<footer class="tiny">© Jennifer Kay Pearl · Khaemenes Academy · Original vanilla HTML/CSS/JavaScript.</footer>
+</main>
 <script>
-(()=>{'use strict';const $=id=>document.getElementById(id),KEY='khaemenes-equation-balance-lab-v1';let state={solved:0,attempts:0,history:[],recent:[]},current=null,done=false,sound=false;const rand=(lo,hi)=>Math.floor(Math.random()*(hi-lo+1))+lo;const nz=(lo,hi)=>{let n;do{n=rand(lo,hi)}while(n===0);return n};const fmt=(a,b)=>b===0?`${a}x`:a===0?`${b}`:`${a}x ${b<0?'−':'+'} ${Math.abs(b)}`;const side=(a,b)=>a===0?`${b}`:fmt(a,b);const safe=()=>{try{localStorage.setItem(KEY,JSON.stringify(state))}catch(_){}};try{const s=JSON.parse(localStorage.getItem(KEY));if(s&&Number.isInteger(s.solved)&&Number.isInteger(s.attempts)&&s.solved>=0&&s.attempts>=s.solved&&Array.isArray(s.history)&&Array.isArray(s.recent)){state={solved:s.solved,attempts:s.attempts,history:s.history.slice(-20),recent:s.recent.slice(-25)}}}catch(_){};
-function generate(level){const x=rand(-12,12);let a,b,c,d;if(level===1){a=nz(-9,9);b=0;c=0;d=a*x;if(Math.random()<.5){a=1;b=nz(-18,18);d=x+b}}else if(level===2){a=nz(-9,9);b=nz(-15,15);c=0;d=a*x+b}else{a=nz(-8,8);c=nz(-8,8);while(c===a)c=nz(-8,8);b=rand(-16,16);d=(a-c)*x+b}return {a,b,c,d,x,level,key:[a,b,c,d].join(',')}}
-function challenge(){let n;for(let i=0;i<100;i++){n=generate(Number($('level').value));if(!state.recent.includes(n.key))break}state.recent.push(n.key);state.recent=state.recent.slice(-25);current=n;done=false;$('answer').value='';$('answer').disabled=false;$('next').disabled=true;$('equation').textContent=`${side(n.a,n.b)} = ${side(n.c,n.d)}`;$('panleft').textContent=side(n.a,n.b);$('panright').textContent=side(n.c,n.d);say('Solve for x. Whatever operation you apply to one side must also apply to the other.');$('answer').focus();safe()}
-function say(s,cls=''){$('feedback').textContent=s;$('feedback').className='feedback '+cls}function draw(){$('solved').textContent=state.solved;$('attempts').textContent=state.attempts;const pct=state.attempts?Math.round(100*state.solved/state.attempts):0;$('accuracy').textContent=state.attempts?pct+'%':'—';$('progress').value=pct;$('history').replaceChildren();state.history.slice().reverse().forEach(h=>{const li=document.createElement('li');li.textContent=h;$('history').append(li)})}function tone(){if(!sound)return;try{const C=window.AudioContext||window.webkitAudioContext;if(!C)return;const c=new C(),o=c.createOscillator(),g=c.createGain();o.frequency.value=600;g.gain.value=.025;o.connect(g);g.connect(c.destination);o.start();o.stop(c.currentTime+.1);o.onended=()=>c.close()}catch(_){}}
-function explain(){const n=current;if(!n)return;const delta=n.a-n.c;const rhs=n.d-n.b;return `Subtract ${n.c}x from both sides and subtract (${n.b}) from both sides: ${delta}x = ${rhs}. Divide both sides by ${delta}: x = ${n.x}. Check: left = ${n.a*n.x+n.b}, right = ${n.c*n.x+n.d}.`}
-$('answerForm').addEventListener('submit',e=>{e.preventDefault();if(done||!current)return;const raw=$('answer').value;if(raw.trim()===''||!Number.isFinite(Number(raw))){say('Enter a finite number.','bad');return}const v=Number(raw);state.attempts++;if(Math.abs(v-current.x)<1e-9){done=true;state.solved++;state.history.push(`${$('equation').textContent} → x = ${current.x} ✓`);state.history=state.history.slice(-20);$('answer').disabled=true;$('next').disabled=false;say(`Correct! Both sides equal ${current.a*current.x+current.b}. ${state.attempts?Math.round(100*state.solved/state.attempts):0}% session accuracy.`, 'good');tone()}else{say(`Not quite. Substituting x = ${v} gives left ${current.a*v+current.b} and right ${current.c*v+current.d}. They must match. Try again without losing your place.`, 'bad')}draw();safe()});$('hint').addEventListener('click',()=>{if(!current)return;say(`Collect x terms on the left and constants on the right. The coefficient of x becomes ${current.a-current.c}.`) });$('explain').addEventListener('click',()=>say(explain()));$('next').addEventListener('click',challenge);$('new').addEventListener('click',challenge);$('level').addEventListener('change',challenge);$('reset').addEventListener('click',()=>{if(!confirm('Reset the local game session? This does not affect course progress.'))return;state={solved:0,attempts:0,history:[],recent:[]};draw();challenge()});$('sound').addEventListener('click',()=>{sound=!sound;$('sound').textContent='Sound: '+(sound?'on':'off');$('sound').setAttribute('aria-pressed',String(sound))});$('save').addEventListener('click',()=>{const blob=new Blob([JSON.stringify({game:'equation-balance-lab',exported_at:new Date().toISOString(),...state},null,2)],{type:'application/json'}),u=URL.createObjectURL(blob),a=document.createElement('a');a.href=u;a.download='equation-balance-lab-progress.json';a.click();setTimeout(()=>URL.revokeObjectURL(u),1000)});draw();challenge();})();
-</script><script src="https://vervenveda.com/assets/vnv-ecosystem-toolbar.js"></script>
-</body></html>
+(()=>{'use strict';
+const $=id=>document.getElementById(id),KEY='khaemenes-equation-balance-lab-v2';
+let state={solved:0,attempts:0,history:[],recent:[]},current=null,done=false,sound=false,literalStage='choose';
+const params=new URLSearchParams(location.search);
+const mode=params.get('mode')||'';
+const rand=(lo,hi)=>Math.floor(Math.random()*(hi-lo+1))+lo;
+const nz=(lo,hi)=>{let n;do{n=rand(lo,hi)}while(n===0);return n};
+const fmt=(a,b)=>b===0?`${a}x`:a===0?`${b}`:`${a}x ${b<0?'−':'+'} ${Math.abs(b)}`;
+const side=(a,b)=>a===0?`${b}`:fmt(a,b);
+const close=(a,b)=>Math.abs(Number(a)-Number(b))<1e-9;
+const safe=()=>{try{localStorage.setItem(KEY,JSON.stringify(state))}catch(_){}};
+try{const s=JSON.parse(localStorage.getItem(KEY));if(s&&Number.isInteger(s.solved)&&Number.isInteger(s.attempts)&&s.solved>=0&&s.attempts>=s.solved&&Array.isArray(s.history)&&Array.isArray(s.recent)){state={solved:s.solved,attempts:s.attempts,history:s.history.slice(-30),recent:s.recent.slice(-30)}}}catch(_){}
+
+const literalBank=[
+ {key:'distance',formula:'d = r × t',target:'r',meaning:'Distance equals rate times time.',correct:'r = d ÷ t',choices:['r = d ÷ t','r = d × t','r = t ÷ d','r = d − t'],values:{d:180,t:3},answer:60,explain:'Divide both sides by t: d/t = r. With d=180 and t=3, r=60. Check: 60×3=180.'},
+ {key:'distance-t',formula:'d = r × t',target:'t',meaning:'Distance equals rate times time.',correct:'t = d ÷ r',choices:['t = d ÷ r','t = r ÷ d','t = d × r','t = d − r'],values:{d:210,r:70},answer:3,explain:'Divide both sides by r: d/r = t. With d=210 and r=70, t=3. Check: 70×3=210.'},
+ {key:'rectangle',formula:'P = 2l + 2w',target:'l',meaning:'Perimeter of a rectangle.',correct:'l = (P − 2w) ÷ 2',choices:['l = (P − 2w) ÷ 2','l = P ÷ 2 − 2w','l = P − w ÷ 2','l = (P + 2w) ÷ 2'],values:{P:50,w:8},answer:17,explain:'Subtract 2w from both sides, then divide by 2. With P=50 and w=8: (50−16)/2=17. Check: 2(17)+2(8)=50.'},
+ {key:'triangle',formula:'A = (b × h) ÷ 2',target:'h',meaning:'Area of a triangle.',correct:'h = (2A) ÷ b',choices:['h = (2A) ÷ b','h = A ÷ (2b)','h = (A − b) ÷ 2','h = (A × b) ÷ 2'],values:{A:54,b:9},answer:12,explain:'Multiply both sides by 2, then divide by b: h=2A/b. With A=54 and b=9, h=12. Check: 9×12/2=54.'},
+ {key:'temperature',formula:'F = (9 ÷ 5)C + 32',target:'C',meaning:'Convert Celsius to Fahrenheit.',correct:'C = (5 ÷ 9)(F − 32)',choices:['C = (5 ÷ 9)(F − 32)','C = (9 ÷ 5)(F − 32)','C = (5 ÷ 9)F − 32','C = (F + 32)(5 ÷ 9)'],values:{F:86},answer:30,explain:'Subtract 32, then multiply by 5/9. With F=86: (86−32)×5/9=30. Check: 9/5×30+32=86.'},
+ {key:'interest',formula:'I = P × r × t',target:'r',meaning:'Simple interest formula.',correct:'r = I ÷ (P × t)',choices:['r = I ÷ (P × t)','r = (I × P) ÷ t','r = P × t ÷ I','r = I − P × t'],values:{I:120,P:1000,t:2},answer:.06,explain:'Divide both sides by Pt: r=I/(Pt). With I=120, P=1000, t=2, r=.06. Check: 1000×.06×2=120.'},
+ {key:'ohm',formula:'V = I × R',target:'R',meaning:'Ohm’s law.',correct:'R = V ÷ I',choices:['R = V ÷ I','R = I ÷ V','R = V × I','R = V − I'],values:{V:24,I:3},answer:8,explain:'Divide both sides by I: R=V/I. With V=24 and I=3, R=8. Check: 3×8=24.'},
+ {key:'slope',formula:'y = m x + b',target:'m',meaning:'Slope-intercept form.',correct:'m = (y − b) ÷ x',choices:['m = (y − b) ÷ x','m = y ÷ x − b','m = (y + b) ÷ x','m = y − (b ÷ x)'],values:{y:23,b:5,x:3},answer:6,explain:'Subtract b, then divide by x: m=(y−b)/x. With y=23, b=5, x=3, m=6. Check: 6×3+5=23.'}
+];
+
+function generate(level){
+ const x=rand(-12,12);let a,b,c,d;
+ if(level===1){a=nz(-9,9);b=0;c=0;d=a*x;if(Math.random()<.5){a=1;b=nz(-18,18);d=x+b}}
+ else if(level===2){a=nz(-9,9);b=nz(-15,15);c=0;d=a*x+b}
+ else{a=nz(-8,8);c=nz(-8,8);while(c===a)c=nz(-8,8);b=rand(-16,16);d=(a-c)*x+b}
+ return {kind:'numeric',a,b,c,d,x,level,key:[a,b,c,d].join(',')}
+}
+function literalChallenge(){
+ let item;
+ for(let i=0;i<50;i++){item=literalBank[rand(0,literalBank.length-1)];if(!state.recent.includes('L:'+item.key))break}
+ const choices=[...item.choices].sort(()=>Math.random()-.5);
+ return {...item,kind:'literal',choices,key:'L:'+item.key};
+}
+function say(s,cls=''){$('feedback').textContent=s;$('feedback').className='feedback '+cls}
+function draw(){
+ $('solved').textContent=state.solved;$('attempts').textContent=state.attempts;
+ const pct=state.attempts?Math.round(100*state.solved/state.attempts):0;
+ $('accuracy').textContent=state.attempts?pct+'%':'—';$('progress').value=pct;
+ $('history').replaceChildren();state.history.slice().reverse().forEach(h=>{const li=document.createElement('li');li.textContent=h;$('history').append(li)})
+}
+function tone(){if(!sound)return;try{const C=window.AudioContext||window.webkitAudioContext;if(!C)return;const c=new C(),o=c.createOscillator(),g=c.createGain();o.frequency.value=600;g.gain.value=.025;o.connect(g);g.connect(c.destination);o.start();o.stop(c.currentTime+.1);o.onended=()=>c.close()}catch(_){}}
+function numericExplain(){const n=current;if(!n||n.kind!=='numeric')return'';const delta=n.a-n.c,rhs=n.d-n.b;return `Subtract ${n.c}x from both sides and subtract (${n.b}) from both sides: ${delta}x = ${rhs}. Divide both sides by ${delta}: x = ${n.x}. Check: left = ${n.a*n.x+n.b}, right = ${n.c*n.x+n.d}.`}
+function renderLiteral(){
+ const n=current;
+ $('literalFormula').textContent=n.formula;$('literalTarget').textContent='Isolate '+n.target;$('literalMeaning').textContent=n.meaning;
+ $('literalChoices').replaceChildren();
+ n.choices.forEach(choice=>{const b=document.createElement('button');b.type='button';b.className='choice';b.textContent=choice;b.addEventListener('click',()=>chooseLiteral(choice,b));$('literalChoices').append(b)});
+ $('verifyCard').classList.add('hidden');$('verifyAnswer').value='';$('next').disabled=true;
+ literalStage='choose';say('Choose the equivalent formula that isolates '+n.target+'.');
+}
+function chooseLiteral(choice,button){
+ if(done||literalStage!=='choose')return;
+ state.attempts++;
+ if(choice===current.correct){
+   literalStage='verify';
+   [...$('literalChoices').children].forEach(x=>x.disabled=true);
+   button.dataset.selected='true';
+   const pairs=Object.entries(current.values).map(([k,v])=>k+' = '+v).join(', ');
+   $('verifyPrompt').textContent=`Using ${current.correct}, substitute ${pairs}. What is ${current.target}?`;
+   $('verifyCard').classList.remove('hidden');$('verifyAnswer').focus();
+   say('Equivalent rearrangement confirmed. Now verify it with substitution.','good');
+ }else say('That rearrangement does not preserve the original relationship. Reverse the operations in the correct order and try again.','bad');
+ draw();safe();
+}
+function challenge(){
+ const level=Number($('level').value);
+ current=level===4?literalChallenge():generate(level);
+ state.recent.push(current.key);state.recent=state.recent.slice(-30);done=false;
+ $('numericMode').classList.toggle('hidden',level===4);$('literalMode').classList.toggle('hidden',level!==4);
+ if(level===4)renderLiteral();
+ else{
+   $('answer').value='';$('answer').disabled=false;$('next').disabled=true;
+   $('equation').textContent=`${side(current.a,current.b)} = ${side(current.c,current.d)}`;
+   $('panleft').textContent=side(current.a,current.b);$('panright').textContent=side(current.c,current.d);
+   say('Solve for x. Whatever operation you apply to one side must also apply to the other.');$('answer').focus();
+ }
+ safe();
+}
+$('answerForm').addEventListener('submit',e=>{
+ e.preventDefault();if(done||!current||current.kind!=='numeric')return;
+ const raw=$('answer').value;if(raw.trim()===''||!Number.isFinite(Number(raw))){say('Enter a finite number.','bad');return}
+ const v=Number(raw);state.attempts++;
+ if(close(v,current.x)){done=true;state.solved++;state.history.push(`${$('equation').textContent} → x = ${current.x} ✓`);state.history=state.history.slice(-30);$('answer').disabled=true;$('next').disabled=false;say(`Correct. Both sides equal ${current.a*current.x+current.b}.`,'good');tone()}
+ else say(`Not yet. Substituting x = ${v} gives left ${current.a*v+current.b} and right ${current.c*v+current.d}. They must match.`,'bad');
+ draw();safe();
+});
+$('verifyForm').addEventListener('submit',e=>{
+ e.preventDefault();if(done||!current||current.kind!=='literal'||literalStage!=='verify')return;
+ const raw=$('verifyAnswer').value;if(raw.trim()===''||!Number.isFinite(Number(raw))){say('Enter a finite number.','bad');return}
+ const v=Number(raw);state.attempts++;
+ if(close(v,current.answer)){done=true;literalStage='done';state.solved++;state.history.push(`${current.formula} → isolate ${current.target}: ${current.correct}; verification = ${current.answer} ✓`);state.history=state.history.slice(-30);$('verifyAnswer').disabled=true;$('next').disabled=false;say('Verified. The isolated formula preserves the original equation and the substitution check agrees.','good');tone()}
+ else say('The symbolic rearrangement is correct, but that substituted value does not verify the formula yet. Recalculate carefully.','bad');
+ draw();safe();
+});
+$('hint').addEventListener('click',()=>{if(current?.kind==='numeric')say(`Collect x terms on the left and constants on the right. The coefficient of x becomes ${current.a-current.c}.`)});
+$('explain').addEventListener('click',()=>say(numericExplain()));
+$('literalHint').addEventListener('click',()=>{if(current?.kind==='literal')say('Work backward from the target variable. Undo addition/subtraction before multiplication/division unless the structure requires grouping.')});
+$('literalExplain').addEventListener('click',()=>{if(current?.kind==='literal')say(current.explain)});
+$('next').addEventListener('click',()=>{$('verifyAnswer').disabled=false;challenge()});
+$('new').addEventListener('click',()=>{$('verifyAnswer').disabled=false;challenge()});
+$('level').addEventListener('change',()=>{$('verifyAnswer').disabled=false;challenge()});
+$('reset').addEventListener('click',()=>{if(!confirm('Reset the local game session? This does not affect course progress.'))return;state={solved:0,attempts:0,history:[],recent:[]};draw();$('verifyAnswer').disabled=false;challenge()});
+$('sound').addEventListener('click',()=>{sound=!sound;$('sound').textContent='Sound: '+(sound?'on':'off');$('sound').setAttribute('aria-pressed',String(sound))});
+$('save').addEventListener('click',()=>{const blob=new Blob([JSON.stringify({game:'equation-balance-lab',version:'2.0.0',exported_at:new Date().toISOString(),...state},null,2)],{type:'application/json'}),u=URL.createObjectURL(blob),a=document.createElement('a');a.href=u;a.download='equation-balance-lab-progress.json';a.click();setTimeout(()=>URL.revokeObjectURL(u),1000)});
+if(mode==='literal-formulas')$('level').value='4';
+else if(mode==='one-step'||mode==='balance-foundations')$('level').value='1';
+else if(mode==='two-step'||mode==='one-two-step')$('level').value='2';
+else if(mode==='multi-step'||mode==='multi-step-balance-transfer')$('level').value='3';
+draw();challenge();
+})();
+</script>
+<script src="https://vervenveda.com/assets/vnv-ecosystem-toolbar.js"></script>
+</body>
+</html>
