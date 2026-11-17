@@ -330,3 +330,16 @@ else if(current){
 
 
 ;(()=>{if(document.querySelector('script[src*="algebra2-presentation-unifier-v1.js"]'))return;const s=document.createElement("script");s.src=new URL("algebra2-presentation-unifier-v1.js",document.currentScript?.src||location.href).href;s.defer=true;s.dataset.algebra2PresentationUnifier="v1";document.head.appendChild(s)})();
+
+
+/* Universal lesson-aware Learning Tools toolbar. Navigation/support only. */
+;(()=>{
+ if(document.getElementById("vnvClassToolsLessonLoader")||window.VNVClassToolsToolbar)return;
+ const script=document.createElement("script");
+ script.id="vnvClassToolsLessonLoader";
+ script.src="https://vervenveda.com/assets/vnv-class-tools-toolbar.js?v=1.4.0";
+ script.defer=true;
+ script.dataset.vnvClassTools="lesson-aware";
+ script.onerror=()=>console.warn("Learning Tools toolbar unavailable; lesson content remains usable.");
+ (document.head||document.documentElement).appendChild(script);
+})();
