@@ -1,4 +1,4 @@
-(()=>{"use strict";
+(()=>{"use strict";function installReadableFloor(){if(document.getElementById("prealgebra-readable-floor-v1"))return;const s=document.createElement("style");s.id="prealgebra-readable-floor-v1";s.textContent='html:root:root body{font-size:18px!important}html:root:root body :is(p,li,label,a,button,input,select,textarea,td,th,legend,small,.brand-copy strong,.brand-copy small,.notice,.feedback,.option,.pathway-panel){font-size:16px!important;line-height:1.55}';document.head.appendChild(s)}installReadableFloor();
 const MIN=80,scriptEl=document.currentScript,coreSrc=new URL("lesson-engine-core.js",scriptEl?.src||location.href).href,map=window.UNIT_MAP_FALLBACK,lesson=window.LESSON_DATA;
 const pad=n=>String(n).padStart(2,"0"),unitNo=Number(map?.unit?.number)||Number(location.pathname.match(/unit-(\d+)/)?.[1])||0;
 function read(k){try{return JSON.parse(localStorage.getItem(k)||"null")}catch{return null}}
