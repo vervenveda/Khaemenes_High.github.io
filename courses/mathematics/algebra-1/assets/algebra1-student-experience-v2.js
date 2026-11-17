@@ -1,7 +1,8 @@
 (()=>{
 "use strict";
 // Temporary isolation for frozen Unit 01 Lesson 01. Preserve core lesson and grading.
-if(location.pathname.includes("/algebra-1/units/unit-01/lessons/lesson-01-"))return;
+// Presentation-only CSS and translator still load so the frozen lesson meets Academy readability/chrome parity.
+if(location.pathname.includes("/algebra-1/units/unit-01/lessons/lesson-01-")){ensureCss();return;}
 const script=document.currentScript;
 function ensureTranslator(){
   if(document.querySelector('script[data-official-vnv-language="true"],script[src*="vnv-language.js"]'))return;
