@@ -11,6 +11,21 @@ const load=(src,key)=>{
   const s=document.createElement("script");s.src=src;s.defer=true;if(key)s.dataset[key]="true";(document.head||document.documentElement).appendChild(s);
 };
 
+function installReadableFloor(){
+  if(document.getElementById("geometry-readable-floor-v1"))return;
+  const style=document.createElement("style");
+  style.id="geometry-readable-floor-v1";
+  style.textContent=`
+html:root:root:root body{font-size:16px!important}
+html:root:root:root body :is(
+  p,li,label,a,button,input,select,textarea,option,output,td,th,legend,small,summary,
+  .pill,.day,.metric span,.breadcrumb,.breadcrumb *,.header-control,.course-menu>summary,
+  .problem-prompt,.feedback,.notice,.lesson-meta,.formula-chip
+){font-size:max(16px,1em)!important;line-height:1.55}
+@media print{html:root:root:root body{font-size:16px!important}}
+`;
+  document.head.appendChild(style);
+}
 function canonicalUtilities(){
   load(root+"assets/vnv-dual-ticker-v1.js","geometryDualTicker");
   load(root+"assets/vnv-language.js","officialVnvLanguage");
@@ -43,6 +58,7 @@ function removeRepeatedHeroBadge(){
 }
 
 function boot(){
+  installReadableFloor();
   canonicalUtilities();
   demoteLegacyHeader();
   removeRepeatedHeroBadge();
