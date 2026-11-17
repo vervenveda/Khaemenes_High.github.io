@@ -267,6 +267,9 @@ async function start(){
   const canonicalLessonHeader=stableDailyEnglish9||stableDailyUpperEnglish;
   prepareEnglishDailyLegacyChrome(stableDailyUpperEnglish);
   installTypographyStandard();
+  if(/\/courses\/mathematics\/geometry\//i.test(location.pathname)){
+    await load(HIGH+"courses/mathematics/geometry/assets/geometry-presentation-unifier-v1.js","khaemenesGeometryPresentation");
+  }
   await load(VNV+HEADER,"khaemenesHighHeader");
   mountHeader(canonicalLessonHeader);
   await load(VNV+TOOLBAR,"khaemenesHighToolbar");
