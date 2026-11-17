@@ -204,7 +204,7 @@ function nextLearningAction(){
  const diagnostic=assess.diagnostic;
  const diagnosticEvidence=diagnostic?.mastery===true||Number(diagnostic?.bestScore??diagnostic?.score)>0;
  if(!hasLessonEvidence&&!diagnosticEvidence){
-   return {kind:"diagnostic",label:"Recommended first step",title:"Readiness Diagnostic",description:"Confirm Algebra I readiness and identify the right support pathway before beginning Unit 01.",href:"diagnostic/",action:"Begin Diagnostic"};
+   return {kind:"diagnostic",label:"Recommended first step",title:"Readiness Diagnostic",description:"Confirm Geometry readiness and identify the right support pathway before beginning Unit 01.",href:"diagnostic/",action:"Begin Diagnostic"};
  }
  for(const u of D.units){
    if(!strictUnitUnlocked(u.number)){
@@ -365,7 +365,7 @@ function renderScope(){
 function renderUnits(){
  const colors=["#426f91","#a67b35","#4f7657","#6e6387","#9a5b65","#3f7f82"];
  $("#view-units").innerHTML=`<div class="wrap"><div class="section-head"><p class="eyebrow">Deep instructional layer</p><h2>Diagnostic &amp; 13 Advanced Units</h2><p>Every unit contains complete lessons, Foundation/Core/Extended practice, a mastery check, applied investigation, family guide, teacher guide, vocabulary, and standards map.</p></div>
- <div class="unit-grid"><article class="card unit-card" style="--accent:#111"><span class="unit-number">D</span><h3>Algebra I Readiness Diagnostic</h3><p>Forty prerequisite questions with explanations and targeted review categories.</p><div class="actions"><a class="btn primary" href="diagnostic/">Open Diagnostic</a></div></article>
+ <div class="unit-grid"><article class="card unit-card" style="--accent:#111"><span class="unit-number">D</span><h3>Geometry Readiness Diagnostic</h3><p>Forty prerequisite questions with explanations and targeted review categories.</p><div class="actions"><a class="btn primary" href="diagnostic/">Open Diagnostic</a></div></article>
  ${D.units.map((u,i)=>`<article class="card unit-card" style="--accent:${colors[i%colors.length]}"><span class="unit-number">${String(u.number).padStart(2,"0")}</span><h3>${esc(u.title)}</h3><p>${esc(u.essential)}</p><p><span class="pill">${u.weeks} week${u.weeks===1?"":"s"}</span><span class="pill">${u.lessons.length} lessons</span><span class="pill">3 pathways</span></p><div class="actions"><a class="btn primary" href="units/unit-${String(u.number).padStart(2,"0")}/">Open Unit</a></div></article>`).join("")}</div></div>`;
 }
 function shuffled(arr){return [...arr].sort(()=>Math.random()-.5)}
