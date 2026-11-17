@@ -8,7 +8,7 @@
 
 Second implementation block under the stable High School landing-page blueprint:
 - Unit 02 dashboard
-- Unit 02 Lesson 01
+- Unit 02 Lessons 01–08
 
 No curriculum content, scoring logic, learner records, mastery thresholds, question banks, assessment history or course chronology were intentionally changed.
 
@@ -72,6 +72,30 @@ PASS:
 - Lessons 02–08 remain on their previous layouts until normalized.
 - Remaining legacy sub-16px source declarations should be cleaned after structural propagation; do not combine that cleanup with scoring/data changes.
 
+## Unit-wide propagation completed
+
+Lessons 02–08 were normalized after the Lesson 01 model was validated in source.
+
+Additional lesson commits:
+- `8b697565` — Lesson 02
+- `03c94ef5` — Lesson 03
+- `659be972` — Lesson 04
+- `7ce3c797` — Lesson 05
+- `7cb5f774` — Lesson 06
+- `753d2fe0` — Lesson 07
+- `05030a01` — Lesson 08
+- residual sticky declarations removed in follow-up commits `63a0b79b`, `ff6f4a46`, `1fde5ebc`, `9ccee687`, and `ab265809`.
+
+Final unit-wide static validation confirms all eight Unit 02 lessons:
+- no 310/330/333px lesson side rail;
+- no sticky lesson-record panel;
+- no semantic lesson-record `aside`;
+- exactly one explicit 333 ticker;
+- exactly one explicit AutoPopulate ticker;
+- exactly one translator;
+- exactly one High School global chrome owner;
+- no direct competing ecosystem-toolbar source.
+
 ## Next step
 
-Normalize Unit 02 Lessons 02–08 using the Lesson 01 centered model, then run a unit-wide static audit before propagating the unit-dashboard pattern to Unit 03.
+Use Unit 02 as the second confirmed model and propagate the centered unit-dashboard + lesson shell pattern to Unit 03, followed by a fresh static audit before moving to Unit 04.
