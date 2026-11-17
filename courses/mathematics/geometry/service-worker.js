@@ -1,8 +1,9 @@
 "use strict";
 // Applied Mission Studio v1.7.0 · compact pop-out evidence recovery.
-const CACHE="khaemenes-geometry-v16-original-resources-20261020";
+const CACHE="khaemenes-geometry-v17-math-compat-20261117";
 const CACHE_PREFIX="khaemenes-geometry-";
 const CORE=["../../shared/course-entry-contract.js","../../shared/learner-scope-v1.js",
+ "../assets/math-course-shell-v1.js","../assets/math-learning-tools-v2.js","../assets/math-progress-contract-v1.js","../assets/math-compatibility-v1.js","./course-map-v2.json",
  "../assets/applied-mission-studio-v1.js",
  "../../shared/course-entry-contract.js","../../shared/math-entry-gate.js",
  "./","./index.html","./offline.html","./assets/styles.css","./assets/app.js","./assets/question-bank.js","./assets/diagnostic-bank-v2.js","./assets/assessment-engine.js","./assets/lesson-tools.js","./assets/geometry-workflow-adapter-v1.js","./assets/geometry-dark-dashboard-v1.css","../assets/course-lesson-workflow-v1.js","../assets/course-lesson-workflow-v1.css","../assets/math-dashboard-parity-v1.css","../assets/math-student-journey-v1.js","../assets/math-student-journey-v1.css","./video-map.json","../assets/video-companion-v1.js","./assets/unit-progress.js","./course-data.js","./course-map.json","./manifest.webmanifest","./diagnostic/","./assessments/",
