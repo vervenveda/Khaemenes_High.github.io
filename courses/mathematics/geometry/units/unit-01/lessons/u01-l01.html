@@ -66,6 +66,28 @@ html:root:root body :is(.hero, .header, .page-header, .section-head, .lesson-hea
 </style>
 <script defer src="https://vervenveda.com/assets/vnv-ecosystem-toolbar.js" data-official-vnv-ecosystem-toolbar="true"></script>
   <script src="/Khaemenes_High.github.io/assets/high-school-global-chrome-v2.js" defer data-high-school-global-chrome="v2"></script>
+
+<style id="geometry-lesson-flow-prototype-v1">
+.lesson-flow-card{text-align:center}
+.lesson-flow-kicker{margin:0 0 8px;color:var(--gold2);font-family:Cinzel,Georgia,serif;font-size:16px!important;letter-spacing:.08em;text-transform:uppercase}
+.lesson-flow-card>p,.lesson-flow-card>ol,.lesson-flow-card>div{max-width:900px;margin-left:auto;margin-right:auto}
+.lesson-flow-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin-top:18px}
+.lesson-flow-grid article{padding:17px;border:1px solid var(--soft);border-radius:7px;background:var(--bg);text-align:center}
+.lesson-flow-grid article h3{margin-top:0}
+.lesson-flow-grid.compact article{min-height:0}
+.reasoning-steps,.guided-prompts{display:grid;gap:10px;text-align:left}
+.reasoning-steps li,.guided-prompts li{padding:12px 14px;border:1px solid var(--soft);border-radius:7px;background:var(--bg)}
+.explain-frame{padding:16px;border:1px solid var(--line);border-radius:7px;background:var(--bg)}
+.guided-answer{max-width:760px;margin:16px auto 0;border:1px solid var(--line);border-radius:7px;background:var(--bg)}
+.guided-answer summary{padding:12px 14px;cursor:pointer;font-size:16px!important;white-space:nowrap}
+.guided-answer p{padding:0 14px 14px}
+.lesson-support-actions{justify-content:center}
+.lesson-support-actions .btn{min-width:110px;white-space:nowrap}
+.lesson-flow-independent{border-top:4px solid var(--geometry-purple)}
+@media(max-width:760px){.lesson-flow-grid{grid-template-columns:1fr}}
+@media print{.lesson-flow-card{display:none!important}.lesson-flow-independent{display:none!important}}
+</style>
+
 </head>
 <body data-lesson-id="u01-l01">
 <a class="skip screen-only" href="#lessonMain">Skip to lesson</a>
@@ -86,22 +108,30 @@ html:root:root body :is(.hero, .header, .page-header, .section-head, .lesson-hea
 </section>
 <div class="lesson-layout">
 <div class="lesson-main">
-<section class="visual-card">
-  <h2>Learning intention</h2>
-  <p>Use accurate diagrams, definitions, measurements, and reasoning to use definitions, measurements, constructions, and logical statements to establish a precise geometric argument.</p>
-  <h3>Success evidence</h3>
-  <ul>
-    <li>Label the figure and units before calculating.</li>
-    <li>Select and justify the governing definition, theorem, relationship, or construction.</li>
-    <li>Show enough work that another learner can audit the conclusion.</li>
-    <li>Check the result against the diagram, scale, and stated constraints.</li>
-  </ul>
+<section class="visual-card lesson-flow-card" data-flow-step="recall">
+  <p class="lesson-flow-kicker">01 · Recall</p>
+  <h2>What do you already know?</h2>
+  <p>Before adding formal vocabulary, use what you already know about points, lines, rays, segments, and angles.</p>
+  <div class="lesson-flow-grid">
+    <article>
+      <h3>Name it</h3>
+      <p>A mark shows an exact location but has no length, width, or height. What geometric object is it?</p>
+      <details><summary>Check</summary><p><strong>Point.</strong> A point names a location.</p></details>
+    </article>
+    <article>
+      <h3>Compare it</h3>
+      <p>Which extends forever in both directions: a segment, ray, or line?</p>
+      <details><summary>Check</summary><p><strong>Line.</strong> A segment has two endpoints; a ray has one endpoint.</p></details>
+    </article>
+  </div>
 </section>
-<section class="visual-card">
-  <h2>Visual model</h2>
+
+<section class="visual-card lesson-flow-card" data-flow-step="see">
+  <p class="lesson-flow-kicker">02 · See</p>
+  <h2>Read the diagram before calculating</h2>
   <svg class="lesson-diagram" viewBox="0 0 360 220" role="img" aria-labelledby="svg-title-foundations-1001 svg-desc-foundations-1001" xmlns="http://www.w3.org/2000/svg">
 <title id="svg-title-foundations-1001">Foundations geometry diagram</title>
-<desc id="svg-desc-foundations-1001">A clear labeled diagram supporting foundations reasoning.</desc>
+<desc id="svg-desc-foundations-1001">A labeled line through points A and B with a second ray forming an angle.</desc>
 <line x1="50" y1="155" x2="310" y2="55" stroke="#6b4ab0" stroke-width="4"/>
         <circle cx="90" cy="140" r="5" fill="#272033"/><circle cx="260" cy="75" r="5" fill="#272033"/>
         <text x="72" y="166">A</text><text x="268" y="72">B</text>
@@ -109,19 +139,89 @@ html:root:root body :is(.hero, .header, .page-header, .section-head, .lesson-hea
         <line x1="170" y1="112" x2="278" y2="172" stroke="#272033" stroke-width="3"/>
         <text x="188" y="154" fill="#3a8e91">θ</text>
 </svg>
-  <p>Use definitions, measurements, constructions, and logical statements to establish a precise geometric argument.</p>
-  <div class="formula-strip"><span class="formula-chip">AB=|b-a|</span><span class="formula-chip">M=\left(\frac{x_1+x_2}{2},\frac{y_1+y_2}{2}\right)</span><span class="formula-chip">m\angle A+m\angle B=180^\circ</span></div>
+  <div class="lesson-flow-grid compact">
+    <article><h3>Notice</h3><p>Points A and B lie on the same line. The line continues beyond each labeled point.</p></article>
+    <article><h3>Infer carefully</h3><p>The drawing suggests an angle, but its exact measure is unknown unless a measure or marking is given.</p></article>
+  </div>
 </section>
-<section class="visual-card worked-example">
-  <h2>Worked reasoning</h2>
-  <p><strong>Process:</strong> State what is given, translate each fact into a definition or theorem, and justify every conclusion in order.</p>
-  <ol>
-    <li>Read the figure and rewrite all given information with correct notation.</li>
-    <li>Identify the exact relationship that connects the known and unknown quantities.</li>
-    <li>Substitute, construct, or prove one justified step at a time.</li>
-    <li>State the result with units and a sentence explaining what it means.</li>
+
+<section class="visual-card worked-example lesson-flow-card" data-flow-step="worked">
+  <p class="lesson-flow-kicker">03 · Worked</p>
+  <h2>Follow one complete reasoning chain</h2>
+  <p><strong>Problem:</strong> Two supplementary angles measure 134° and <em>y</em>°. Find <em>y</em>.</p>
+  <ol class="reasoning-steps">
+    <li><strong>State the relationship.</strong> Supplementary angles sum to 180°.</li>
+    <li><strong>Write an equation.</strong> 134 + y = 180.</li>
+    <li><strong>Isolate the unknown.</strong> y = 180 − 134.</li>
+    <li><strong>Conclude.</strong> y = 46°.</li>
   </ol>
-  <p class="notice"><strong>Misconception check:</strong> A diagram suggests relationships, but only stated markings, definitions, and proven results may be used as evidence.</p>
+  <p class="notice"><strong>Reasoning habit:</strong> name the definition or theorem before doing the arithmetic.</p>
+</section>
+
+<section class="visual-card lesson-flow-card" data-flow-step="explain">
+  <p class="lesson-flow-kicker">04 · Explain</p>
+  <h2>Say why the conclusion is valid</h2>
+  <p>A correct number is not yet a complete geometric argument. Geometry asks you to connect a conclusion to a definition, marking, postulate, or theorem.</p>
+  <div class="explain-frame">
+    <p><strong>Sentence frame:</strong> “Because ________, I know ________. Therefore ________.”</p>
+    <p><strong>Example:</strong> “Because supplementary angles sum to 180°, I know 134 + y = 180. Therefore y = 46°.”</p>
+  </div>
+</section>
+
+<section class="visual-card lesson-flow-card" data-flow-step="guided">
+  <p class="lesson-flow-kicker">05 · Guided</p>
+  <h2>Try one with support</h2>
+  <p>Two complementary angles measure 62° and <em>y</em>°. Find <em>y</em>.</p>
+  <ol class="guided-prompts">
+    <li>What total do complementary angles make?</li>
+    <li>Write the equation using 62 and <em>y</em>.</li>
+    <li>Solve and include the degree symbol.</li>
+  </ol>
+  <details class="guided-answer"><summary>Check your reasoning</summary><p>Complementary angles sum to 90°, so 62 + y = 90 and <strong>y = 28°</strong>.</p></details>
+</section>
+
+<section class="visual-card lesson-flow-card" data-flow-step="error">
+  <p class="lesson-flow-kicker">06 · Error</p>
+  <h2>Find the reasoning mistake</h2>
+  <p>A learner says: “The picture looks like a right angle, so the angle must measure 90°.”</p>
+  <div class="lesson-flow-grid compact">
+    <article><h3>Error</h3><p>The learner treated visual appearance as proof.</p></article>
+    <article><h3>Repair</h3><p>Use a right-angle mark, stated measure, construction, definition, or proven relationship before claiming 90°.</p></article>
+  </div>
+</section>
+
+<section class="visual-card lesson-flow-card" data-flow-step="transfer">
+  <p class="lesson-flow-kicker">07 · Transfer</p>
+  <h2>Apply the idea beyond this picture</h2>
+  <p>Think of a map, floor plan, CAD drawing, or road intersection. Identify one place where a line, ray, segment, or angle must be defined precisely to avoid an error.</p>
+  <div class="actions lesson-support-actions">
+    <a class="btn" href="../../../index.html#practice">Practice</a>
+    <a class="btn" href="https://vervenveda.com/proresource_hub.github.io/Protools/Ohmic_CAD_Studio.html" target="_blank" rel="noopener">CAD</a>
+    <a class="btn" href="https://vervenveda.com/arcade.github.io/Geometry/sacred_geometry_game_index.html" target="_blank" rel="noopener">Game</a>
+  </div>
+  <p class="notice">These are optional practice supports. They do not award lesson mastery.</p>
+</section>
+
+<section class="visual-card lesson-flow-card" data-flow-step="feedback">
+  <p class="lesson-flow-kicker">08 · Feedback</p>
+  <h2>Use the feedback loop before the worksheet</h2>
+  <div class="lesson-flow-grid">
+    <article><h3>If ready</h3><p>Continue to the independent worksheet and show every justification.</p></article>
+    <article><h3>If unsure</h3><p>Reopen the Worked, Guided, or Error sections, then try again before scoring the lesson.</p></article>
+  </div>
+</section>
+
+<section class="visual-card lesson-flow-card" data-flow-step="reflect">
+  <p class="lesson-flow-kicker">09 · Reflect</p>
+  <h2>One-minute reflection</h2>
+  <p>Before beginning the independent worksheet, answer mentally or on paper:</p>
+  <p><strong>What is one relationship I can now justify with a definition instead of relying on how a diagram looks?</strong></p>
+</section>
+
+<section class="visual-card lesson-flow-card lesson-flow-independent" data-flow-step="independent">
+  <p class="lesson-flow-kicker">10 · Independent</p>
+  <h2>Complete the worksheet independently</h2>
+  <p>Now complete all six problems below. Show reasoning, label units, and use definitions or proven relationships where appropriate.</p>
 </section>
 <section class="print-sheet">
   <div class="worksheet-head"><div><p class="eyebrow">Khaemenes Academy · Open-Age Geometry</p><h2 class="worksheet-title">Points, Lines, Planes &amp; Defined Terms</h2><p>Find, construct, prove, or explain each result. Show reasoning and label units.</p></div><strong>U01 · L01</strong></div>
