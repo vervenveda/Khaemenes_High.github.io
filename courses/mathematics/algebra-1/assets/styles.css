@@ -81,3 +81,57 @@ html:root:root body .card .eyebrow{font-size:16px!important;line-height:1.5!impo
   vertical-align:middle!important;margin:0 5pt 0 0!important;
  }
 }
+
+
+/* Algebra I local course navigation · subordinate to the one canonical High School header. */
+.algebra1-local-nav{
+  position:relative;
+  z-index:850;
+  border-bottom:1px solid var(--line);
+  background:color-mix(in srgb,var(--page2) 96%,transparent);
+  backdrop-filter:blur(10px);
+}
+.algebra1-local-nav-inner{
+  min-height:54px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:14px;
+  flex-wrap:wrap;
+  padding:8px 0;
+}
+.algebra1-local-nav-title{
+  color:var(--gold);
+  font:400 16px/1.2 Cinzel,Georgia,serif;
+  letter-spacing:.06em;
+  text-transform:uppercase;
+}
+.algebra1-local-nav-links{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:7px;
+  flex-wrap:wrap;
+}
+.algebra1-local-nav a,.algebra1-local-nav button{
+  min-height:38px;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  padding:7px 10px;
+  border:1px solid transparent;
+  border-radius:7px;
+  background:transparent;
+  color:var(--ink);
+  font-size:16px;
+  text-decoration:none;
+}
+.algebra1-local-nav a:hover,.algebra1-local-nav button:hover{
+  border-color:var(--line);
+  background:var(--paper);
+}
+@media(max-width:700px){
+  .algebra1-local-nav-inner{align-items:stretch}
+  .algebra1-local-nav-title{width:100%;text-align:center}
+  .algebra1-local-nav-links{width:100%}
+}
