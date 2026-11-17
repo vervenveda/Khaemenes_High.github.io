@@ -17,6 +17,16 @@ gameURL.searchParams.set("course", course);
 if (unit) gameURL.searchParams.set("unit", unit);
 if (lesson) gameURL.searchParams.set("lesson", lesson);
 if (mode) gameURL.searchParams.set("mode", mode);
+const courseLevel = {
+  "prealgebra":"1","pre-algebra":"1",
+  "algebra1":"2","algebra-1":"2",
+  "geometry":"2",
+  "algebra2":"3","algebra-2":"3",
+  "precalculus":"4","precalculus-trigonometry":"4",
+  "calculus1":"5","calculus-1":"5"
+};
+const level = script.dataset.mathLevel || courseLevel[String(course||"").toLowerCase()];
+if (level) gameURL.searchParams.set("level", level);
 
 const sectionId = "mathSharedGameCompanion-" + game;
 const titleId = "mathSharedGameTitle-" + game;
