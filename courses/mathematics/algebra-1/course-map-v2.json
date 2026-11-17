@@ -1,0 +1,643 @@
+{
+  "schema_version": "2.0.0",
+  "schema_id": "khaemenes-math-course-map-v2",
+  "source": {
+    "path": "courses/mathematics/algebra-1/course-map.json",
+    "legacy_schema_version": "2.1"
+  },
+  "course": {
+    "id": "math-algebra1-integrated1",
+    "profile_course_id": "algebra-1",
+    "code": "KH-MATH-A1",
+    "title": "Khaemenes Global Algebra I & Integrated Mathematics I",
+    "short_title": "Khaemenes Global Algebra I & Integrated Mathematics I",
+    "audience": "Open-age, placement-based learners with demonstrated pre-algebra readiness",
+    "prerequisite": null,
+    "duration_weeks": 36,
+    "supported_duration_weeks": 36,
+    "mastery_target": 80,
+    "pathways": [
+      "Foundation",
+      "Core",
+      "Extended"
+    ],
+    "delivery": [],
+    "storage_key": "khaemenes-algebra1-course-v1",
+    "version": null
+  },
+  "readiness": {
+    "gateway": {
+      "schema": "khaemenes.math.transition.v1",
+      "contract": "readiness/transition-contract.json",
+      "incoming_course": "KH-MATH-PA",
+      "incoming_policy": "Prior Pre-Algebra evidence may preselect support; the Algebra I diagnostic confirms or adjusts routing.",
+      "outgoing_courses": [
+        "KH-MATH-GEO",
+        "KH-MATH-A2"
+      ],
+      "evidence_template": "records/readiness-evidence-template.json",
+      "grade_separate_from_readiness": true,
+      "unfinished_learning_blocks_progression": false
+    },
+    "conditional_unit": null
+  },
+  "calendar": {
+    "diagnostic_weeks": 1,
+    "instructional_unit_weeks": 34,
+    "capstone_weeks": 1,
+    "total_weeks": 36,
+    "midterm_after_week": 18,
+    "final_week": 36
+  },
+  "units": [
+    {
+      "id": "u01",
+      "number": 1,
+      "title": "Algebraic Reasoning, Real Numbers & Precision",
+      "weeks": 2,
+      "week_numbers": null,
+      "path": "units/unit-01/",
+      "essential_question": "How do notation, units, properties, and precision make mathematical claims trustworthy?",
+      "project": null,
+      "objectives": [],
+      "standards": [],
+      "lesson_count": 6,
+      "lessons": [],
+      "status": "open"
+    },
+    {
+      "id": "u02",
+      "number": 2,
+      "title": "Expressions, Properties & Polynomial Foundations",
+      "weeks": 3,
+      "week_numbers": null,
+      "path": "units/unit-02/",
+      "essential_question": "How can algebraic structure help us simplify, compare, and generalize relationships?",
+      "project": null,
+      "objectives": [],
+      "standards": [],
+      "lesson_count": 7,
+      "lessons": [],
+      "status": "open"
+    },
+    {
+      "id": "u03",
+      "number": 3,
+      "title": "Linear Equations, Formulas & Proportional Models",
+      "weeks": 3,
+      "week_numbers": null,
+      "path": "units/unit-03/",
+      "essential_question": "How do equations preserve equality while representing real constraints and relationships?",
+      "project": null,
+      "objectives": [],
+      "standards": [],
+      "lesson_count": 7,
+      "lessons": [],
+      "status": "open"
+    },
+    {
+      "id": "u04",
+      "number": 4,
+      "title": "Linear Inequalities & Absolute Value",
+      "weeks": 2,
+      "week_numbers": null,
+      "path": "units/unit-04/",
+      "essential_question": "How do inequalities and absolute value describe ranges, tolerances, limits, and feasible choices?",
+      "project": null,
+      "objectives": [],
+      "standards": [],
+      "lesson_count": 6,
+      "lessons": [],
+      "status": "open"
+    },
+    {
+      "id": "u05",
+      "number": 5,
+      "title": "Functions, Domain, Range & Multiple Representations",
+      "weeks": 3,
+      "week_numbers": null,
+      "path": "units/unit-05/",
+      "essential_question": "How do functions connect inputs and outputs across equations, tables, graphs, and contexts?",
+      "project": null,
+      "objectives": [],
+      "standards": [],
+      "lesson_count": 7,
+      "lessons": [],
+      "status": "open"
+    },
+    {
+      "id": "u06",
+      "number": 6,
+      "title": "Linear Functions, Regression & Modelling",
+      "weeks": 4,
+      "week_numbers": null,
+      "path": "units/unit-06/",
+      "essential_question": "How can linear functions describe constant change, support prediction, and reveal model limitations?",
+      "project": null,
+      "objectives": [],
+      "standards": [],
+      "lesson_count": 8,
+      "lessons": [],
+      "status": "open"
+    },
+    {
+      "id": "u07",
+      "number": 7,
+      "title": "Systems of Equations & Inequalities",
+      "weeks": 3,
+      "week_numbers": null,
+      "path": "units/unit-07/",
+      "essential_question": "How do simultaneous constraints determine intersections, feasible choices, and optimized decisions?",
+      "project": null,
+      "objectives": [],
+      "standards": [],
+      "lesson_count": 7,
+      "lessons": [],
+      "status": "open"
+    },
+    {
+      "id": "u08",
+      "number": 8,
+      "title": "Exponents, Sequences & Exponential Functions",
+      "weeks": 2,
+      "week_numbers": null,
+      "path": "units/unit-08/",
+      "essential_question": "How do repeated multiplication and constant percent change create exponential patterns?",
+      "project": null,
+      "objectives": [],
+      "standards": [],
+      "lesson_count": 6,
+      "lessons": [],
+      "status": "open"
+    },
+    {
+      "id": "u09",
+      "number": 9,
+      "title": "Polynomials, Operations & Factoring",
+      "weeks": 3,
+      "week_numbers": null,
+      "path": "units/unit-09/",
+      "essential_question": "How do polynomial operations and factoring expose structure, zeros, and geometric relationships?",
+      "project": null,
+      "objectives": [],
+      "standards": [],
+      "lesson_count": 7,
+      "lessons": [],
+      "status": "open"
+    },
+    {
+      "id": "u10",
+      "number": 10,
+      "title": "Quadratic Functions & Equations",
+      "weeks": 4,
+      "week_numbers": null,
+      "path": "units/unit-10/",
+      "essential_question": "How do quadratic forms reveal zeros, vertices, rates of change, and maximum or minimum values?",
+      "project": null,
+      "objectives": [],
+      "standards": [],
+      "lesson_count": 8,
+      "lessons": [],
+      "status": "open"
+    },
+    {
+      "id": "u11",
+      "number": 11,
+      "title": "Radicals, Rational Exponents & Coordinate Geometry",
+      "weeks": 2,
+      "week_numbers": null,
+      "path": "units/unit-11/",
+      "essential_question": "How do radical forms and coordinate methods connect algebra, distance, and geometric constraints?",
+      "project": null,
+      "objectives": [],
+      "standards": [],
+      "lesson_count": 6,
+      "lessons": [],
+      "status": "open"
+    },
+    {
+      "id": "u12",
+      "number": 12,
+      "title": "Statistics, Financial Mathematics & Evidence",
+      "weeks": 3,
+      "week_numbers": null,
+      "path": "units/unit-12/",
+      "essential_question": "How can algebra and statistics support responsible financial and evidence-based decisions?",
+      "project": null,
+      "objectives": [],
+      "standards": [],
+      "lesson_count": 7,
+      "lessons": [],
+      "status": "open"
+    },
+    {
+      "id": "u13",
+      "number": 13,
+      "title": "Integrated Mathematical Modelling Capstone",
+      "weeks": 1,
+      "week_numbers": null,
+      "path": "units/unit-13/",
+      "essential_question": "How can a defensible mathematical model support a real decision while acknowledging uncertainty and limits?",
+      "project": null,
+      "objectives": [],
+      "standards": [],
+      "lesson_count": 5,
+      "lessons": [],
+      "status": "open"
+    }
+  ],
+  "weeks": [
+    {
+      "number": 1,
+      "unit": 1,
+      "title": "Algebraic Reasoning, Real Numbers & Precision",
+      "essential_question": "How do notation, units, properties, and precision make mathematical claims trustworthy?",
+      "unit_path": "units/unit-01/",
+      "lesson_ids": [],
+      "skills": [],
+      "focus": null
+    },
+    {
+      "number": 2,
+      "unit": 1,
+      "title": "Algebraic Reasoning, Real Numbers & Precision",
+      "essential_question": "How do notation, units, properties, and precision make mathematical claims trustworthy?",
+      "unit_path": "units/unit-01/",
+      "lesson_ids": [],
+      "skills": [],
+      "focus": null
+    },
+    {
+      "number": 3,
+      "unit": 2,
+      "title": "Expressions, Properties & Polynomial Foundations",
+      "essential_question": "How can algebraic structure help us simplify, compare, and generalize relationships?",
+      "unit_path": "units/unit-02/",
+      "lesson_ids": [],
+      "skills": [],
+      "focus": null
+    },
+    {
+      "number": 4,
+      "unit": 2,
+      "title": "Expressions, Properties & Polynomial Foundations",
+      "essential_question": "How can algebraic structure help us simplify, compare, and generalize relationships?",
+      "unit_path": "units/unit-02/",
+      "lesson_ids": [],
+      "skills": [],
+      "focus": null
+    },
+    {
+      "number": 5,
+      "unit": 2,
+      "title": "Expressions, Properties & Polynomial Foundations",
+      "essential_question": "How can algebraic structure help us simplify, compare, and generalize relationships?",
+      "unit_path": "units/unit-02/",
+      "lesson_ids": [],
+      "skills": [],
+      "focus": null
+    },
+    {
+      "number": 6,
+      "unit": 3,
+      "title": "Linear Equations, Formulas & Proportional Models",
+      "essential_question": "How do equations preserve equality while representing real constraints and relationships?",
+      "unit_path": "units/unit-03/",
+      "lesson_ids": [],
+      "skills": [],
+      "focus": null
+    },
+    {
+      "number": 7,
+      "unit": 3,
+      "title": "Linear Equations, Formulas & Proportional Models",
+      "essential_question": "How do equations preserve equality while representing real constraints and relationships?",
+      "unit_path": "units/unit-03/",
+      "lesson_ids": [],
+      "skills": [],
+      "focus": null
+    },
+    {
+      "number": 8,
+      "unit": 3,
+      "title": "Linear Equations, Formulas & Proportional Models",
+      "essential_question": "How do equations preserve equality while representing real constraints and relationships?",
+      "unit_path": "units/unit-03/",
+      "lesson_ids": [],
+      "skills": [],
+      "focus": null
+    },
+    {
+      "number": 9,
+      "unit": 4,
+      "title": "Linear Inequalities & Absolute Value",
+      "essential_question": "How do inequalities and absolute value describe ranges, tolerances, limits, and feasible choices?",
+      "unit_path": "units/unit-04/",
+      "lesson_ids": [],
+      "skills": [],
+      "focus": null
+    },
+    {
+      "number": 10,
+      "unit": 4,
+      "title": "Linear Inequalities & Absolute Value",
+      "essential_question": "How do inequalities and absolute value describe ranges, tolerances, limits, and feasible choices?",
+      "unit_path": "units/unit-04/",
+      "lesson_ids": [],
+      "skills": [],
+      "focus": null
+    },
+    {
+      "number": 11,
+      "unit": 5,
+      "title": "Functions, Domain, Range & Multiple Representations",
+      "essential_question": "How do functions connect inputs and outputs across equations, tables, graphs, and contexts?",
+      "unit_path": "units/unit-05/",
+      "lesson_ids": [],
+      "skills": [],
+      "focus": null
+    },
+    {
+      "number": 12,
+      "unit": 5,
+      "title": "Functions, Domain, Range & Multiple Representations",
+      "essential_question": "How do functions connect inputs and outputs across equations, tables, graphs, and contexts?",
+      "unit_path": "units/unit-05/",
+      "lesson_ids": [],
+      "skills": [],
+      "focus": null
+    },
+    {
+      "number": 13,
+      "unit": 5,
+      "title": "Functions, Domain, Range & Multiple Representations",
+      "essential_question": "How do functions connect inputs and outputs across equations, tables, graphs, and contexts?",
+      "unit_path": "units/unit-05/",
+      "lesson_ids": [],
+      "skills": [],
+      "focus": null
+    },
+    {
+      "number": 14,
+      "unit": 6,
+      "title": "Linear Functions, Regression & Modelling",
+      "essential_question": "How can linear functions describe constant change, support prediction, and reveal model limitations?",
+      "unit_path": "units/unit-06/",
+      "lesson_ids": [],
+      "skills": [],
+      "focus": null
+    },
+    {
+      "number": 15,
+      "unit": 6,
+      "title": "Linear Functions, Regression & Modelling",
+      "essential_question": "How can linear functions describe constant change, support prediction, and reveal model limitations?",
+      "unit_path": "units/unit-06/",
+      "lesson_ids": [],
+      "skills": [],
+      "focus": null
+    },
+    {
+      "number": 16,
+      "unit": 6,
+      "title": "Linear Functions, Regression & Modelling",
+      "essential_question": "How can linear functions describe constant change, support prediction, and reveal model limitations?",
+      "unit_path": "units/unit-06/",
+      "lesson_ids": [],
+      "skills": [],
+      "focus": null
+    },
+    {
+      "number": 17,
+      "unit": 6,
+      "title": "Linear Functions, Regression & Modelling",
+      "essential_question": "How can linear functions describe constant change, support prediction, and reveal model limitations?",
+      "unit_path": "units/unit-06/",
+      "lesson_ids": [],
+      "skills": [],
+      "focus": null
+    },
+    {
+      "number": 18,
+      "unit": 7,
+      "title": "Systems of Equations & Inequalities",
+      "essential_question": "How do simultaneous constraints determine intersections, feasible choices, and optimized decisions?",
+      "unit_path": "units/unit-07/",
+      "lesson_ids": [],
+      "skills": [],
+      "focus": null
+    },
+    {
+      "number": 19,
+      "unit": 7,
+      "title": "Systems of Equations & Inequalities",
+      "essential_question": "How do simultaneous constraints determine intersections, feasible choices, and optimized decisions?",
+      "unit_path": "units/unit-07/",
+      "lesson_ids": [],
+      "skills": [],
+      "focus": null
+    },
+    {
+      "number": 20,
+      "unit": 7,
+      "title": "Systems of Equations & Inequalities",
+      "essential_question": "How do simultaneous constraints determine intersections, feasible choices, and optimized decisions?",
+      "unit_path": "units/unit-07/",
+      "lesson_ids": [],
+      "skills": [],
+      "focus": null
+    },
+    {
+      "number": 21,
+      "unit": 8,
+      "title": "Exponents, Sequences & Exponential Functions",
+      "essential_question": "How do repeated multiplication and constant percent change create exponential patterns?",
+      "unit_path": "units/unit-08/",
+      "lesson_ids": [],
+      "skills": [],
+      "focus": null
+    },
+    {
+      "number": 22,
+      "unit": 8,
+      "title": "Exponents, Sequences & Exponential Functions",
+      "essential_question": "How do repeated multiplication and constant percent change create exponential patterns?",
+      "unit_path": "units/unit-08/",
+      "lesson_ids": [],
+      "skills": [],
+      "focus": null
+    },
+    {
+      "number": 23,
+      "unit": 9,
+      "title": "Polynomials, Operations & Factoring",
+      "essential_question": "How do polynomial operations and factoring expose structure, zeros, and geometric relationships?",
+      "unit_path": "units/unit-09/",
+      "lesson_ids": [],
+      "skills": [],
+      "focus": null
+    },
+    {
+      "number": 24,
+      "unit": 9,
+      "title": "Polynomials, Operations & Factoring",
+      "essential_question": "How do polynomial operations and factoring expose structure, zeros, and geometric relationships?",
+      "unit_path": "units/unit-09/",
+      "lesson_ids": [],
+      "skills": [],
+      "focus": null
+    },
+    {
+      "number": 25,
+      "unit": 9,
+      "title": "Polynomials, Operations & Factoring",
+      "essential_question": "How do polynomial operations and factoring expose structure, zeros, and geometric relationships?",
+      "unit_path": "units/unit-09/",
+      "lesson_ids": [],
+      "skills": [],
+      "focus": null
+    },
+    {
+      "number": 26,
+      "unit": 10,
+      "title": "Quadratic Functions & Equations",
+      "essential_question": "How do quadratic forms reveal zeros, vertices, rates of change, and maximum or minimum values?",
+      "unit_path": "units/unit-10/",
+      "lesson_ids": [],
+      "skills": [],
+      "focus": null
+    },
+    {
+      "number": 27,
+      "unit": 10,
+      "title": "Quadratic Functions & Equations",
+      "essential_question": "How do quadratic forms reveal zeros, vertices, rates of change, and maximum or minimum values?",
+      "unit_path": "units/unit-10/",
+      "lesson_ids": [],
+      "skills": [],
+      "focus": null
+    },
+    {
+      "number": 28,
+      "unit": 10,
+      "title": "Quadratic Functions & Equations",
+      "essential_question": "How do quadratic forms reveal zeros, vertices, rates of change, and maximum or minimum values?",
+      "unit_path": "units/unit-10/",
+      "lesson_ids": [],
+      "skills": [],
+      "focus": null
+    },
+    {
+      "number": 29,
+      "unit": 10,
+      "title": "Quadratic Functions & Equations",
+      "essential_question": "How do quadratic forms reveal zeros, vertices, rates of change, and maximum or minimum values?",
+      "unit_path": "units/unit-10/",
+      "lesson_ids": [],
+      "skills": [],
+      "focus": null
+    },
+    {
+      "number": 30,
+      "unit": 11,
+      "title": "Radicals, Rational Exponents & Coordinate Geometry",
+      "essential_question": "How do radical forms and coordinate methods connect algebra, distance, and geometric constraints?",
+      "unit_path": "units/unit-11/",
+      "lesson_ids": [],
+      "skills": [],
+      "focus": null
+    },
+    {
+      "number": 31,
+      "unit": 11,
+      "title": "Radicals, Rational Exponents & Coordinate Geometry",
+      "essential_question": "How do radical forms and coordinate methods connect algebra, distance, and geometric constraints?",
+      "unit_path": "units/unit-11/",
+      "lesson_ids": [],
+      "skills": [],
+      "focus": null
+    },
+    {
+      "number": 32,
+      "unit": 12,
+      "title": "Statistics, Financial Mathematics & Evidence",
+      "essential_question": "How can algebra and statistics support responsible financial and evidence-based decisions?",
+      "unit_path": "units/unit-12/",
+      "lesson_ids": [],
+      "skills": [],
+      "focus": null
+    },
+    {
+      "number": 33,
+      "unit": 12,
+      "title": "Statistics, Financial Mathematics & Evidence",
+      "essential_question": "How can algebra and statistics support responsible financial and evidence-based decisions?",
+      "unit_path": "units/unit-12/",
+      "lesson_ids": [],
+      "skills": [],
+      "focus": null
+    },
+    {
+      "number": 34,
+      "unit": 12,
+      "title": "Statistics, Financial Mathematics & Evidence",
+      "essential_question": "How can algebra and statistics support responsible financial and evidence-based decisions?",
+      "unit_path": "units/unit-12/",
+      "lesson_ids": [],
+      "skills": [],
+      "focus": null
+    },
+    {
+      "number": 35,
+      "unit": 13,
+      "title": "Integrated Mathematical Modelling Capstone",
+      "essential_question": "How can a defensible mathematical model support a real decision while acknowledging uncertainty and limits?",
+      "unit_path": "units/unit-13/",
+      "lesson_ids": [],
+      "skills": [],
+      "focus": null
+    },
+    {
+      "number": 36,
+      "unit": null,
+      "title": "Course integration / assessment",
+      "essential_question": null,
+      "unit_path": null,
+      "lesson_ids": [],
+      "skills": [],
+      "focus": null
+    }
+  ],
+  "assessments": {
+    "diagnostic": "diagnostic/",
+    "midterm": "assessments/midterm-units-01-06.html",
+    "final": "assessments/final-exam-36-weeks.html",
+    "certificate": "records/course-completion-certificate.html"
+  },
+  "evidence": {
+    "mastery_threshold": 80,
+    "units_1_9_questions_per_lesson": 10,
+    "units_10_13_questions_per_lesson": 5,
+    "formal_unit_mastery_questions": 20,
+    "note": "The late-unit compact lesson checks are a documented compatibility contract; every formal unit mastery check remains 20 lesson-balanced questions."
+  },
+  "resources": {
+    "calculator": "../tools/calculator",
+    "cad": null,
+    "arcade": "https://vervenveda.com/arcade.github.io/"
+  },
+  "metadata": {
+    "standards_status": "Broad official-framework union; jurisdiction-specific review required for formal reporting.",
+    "duration_validation": null,
+    "mastery_scale": null,
+    "interconnections": {
+      "academy_home": "https://khaemenesacademy.org/",
+      "high_school_profile": "../../../index.html#student-portal",
+      "mathematics_hall": "../",
+      "pre_algebra": "../pre-algebra/",
+      "geometry": "../geometry/",
+      "algebra_2": "../algebra-2/",
+      "scientific_calculator": "../tools/calculator"
+    }
+  }
+}
