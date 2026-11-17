@@ -90,6 +90,28 @@ Student academic header actions should resolve to the approved High School desti
 
 The hamburger remains top-right and owns the enriched directory behavior.
 
+## 5A. Secondary course / repository navigation
+
+A second navigation layer is permitted when a course or repository needs local routes that do not belong in the ecosystem-wide header.
+
+It is **not** a second site header.
+
+Required:
+- render as a compact `<nav>` or equivalent local navigation strip below the canonical header/tickers;
+- no repeated K badge, Academy logo, VNV logo, institutional lockup, or second branded masthead;
+- no second hero-sized course identity;
+- local text labels such as `Algebra I`, `English 10`, or `Unit 04` are permitted as navigation context;
+- local links may include Course Home, Units, Lessons, Assessments, Teacher/Family resources, tools, or repository-specific controls;
+- the canonical hamburger remains the ecosystem/directory authority;
+- do not duplicate Profile, ecosystem-wide destinations, or other canonical-header actions unless a documented accessibility need requires it;
+- local navigation may be sticky only if it does not cover the canonical ticker/header stack or consume excessive learning space;
+- repeated legacy branded headers must be demoted to this local-navigation role or removed.
+
+Acceptance distinction:
+- **canonical branded header:** exactly one;
+- **secondary local navigation:** zero or one as needed;
+- **primary hero:** exactly one.
+
 ## 6. Translator and toolbar
 
 The translator belongs on ordinary public/student learning pages. It must not be duplicated.
