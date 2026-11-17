@@ -8,23 +8,23 @@ if(!course||document.getElementById("khae-math-course-shell"))return;
 const configs={
  "pre-algebra":{
   Continue:{click:'[data-go="week"]'},Lessons:{click:'[data-go="week"]'},Map:{click:'[data-view="scope"]'},
-  Practice:{click:'[data-go="week"]'},Tools:{click:'[data-go="tools"]'},Assess:{click:'[data-view="exams"]'},
+  Practice:{click:'[data-go="week"]'},Tools:{click:"#khae-math-tools summary"},Assess:{click:'[data-view="exams"]'},
   Progress:{click:'[data-go="reports"]'},Portfolio:{click:'[data-view="capstone"]'}
  },
  "algebra-1":{
   Continue:{click:"#courseResumeMenu",fallback:"#lessons"},Lessons:{href:"#lessons"},Map:{href:"#units"},
-  Practice:{href:"practice/core.html"},Tools:{click:"#khae-algebra1-tool-menu summary",fallback:"https://vervenveda.com/proresource_hub.github.io/"},
+  Practice:{href:"practice/core.html"},Tools:{click:"#khae-math-tools summary",fallback:"https://vervenveda.com/proresource_hub.github.io/"},
   Assess:{href:"assessments/"},Progress:{href:"records/"},Portfolio:{href:"units/unit-13/"}
  },
  "geometry":{
   Continue:{click:'[data-view="dashboard"]'},Lessons:{click:'[data-view="week"]'},Map:{click:'[data-view="units"]'},
-  Practice:{click:'[data-view="practice"]'},Tools:{click:"#khae-algebra1-tool-menu summary",fallback:"https://vervenveda.com/proresource_hub.github.io/"},
+  Practice:{click:'[data-view="practice"]'},Tools:{click:"#khae-math-tools summary",fallback:"https://vervenveda.com/proresource_hub.github.io/"},
   Assess:{click:'[data-view="assessments"]',fallback:"assessments/"},Progress:{click:'[data-view="gradebook"]'},
   Portfolio:{click:'[data-view="portfolio"]'}
  },
  "algebra-2":{
   Continue:{click:'[data-view="dashboard"]'},Lessons:{click:'[data-view="week"]'},Map:{click:'[data-view="units"]'},
-  Practice:{click:'[data-view="practice"]'},Tools:{click:"#khae-algebra1-tool-menu summary",fallback:"https://vervenveda.com/proresource_hub.github.io/"},
+  Practice:{click:'[data-view="practice"]'},Tools:{click:"#khae-math-tools summary",fallback:"https://vervenveda.com/proresource_hub.github.io/"},
   Assess:{click:'[data-view="assessments"]',fallback:"assessments/"},Progress:{click:'[data-view="gradebook"]'},
   Portfolio:{click:'[data-view="portfolio"]'}
  }
