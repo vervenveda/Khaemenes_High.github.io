@@ -327,3 +327,6 @@ else if(current){
 
 /* Academy learner toolbar on course lessons, independently of grading. */
 ;(()=>{if(document.querySelector('script[src*="vnv-beta-link.js"]'))return;const mount=()=>{if(document.querySelector('script[src*="vnv-beta-link.js"]'))return;const script=document.createElement("script");script.src="https://vervenveda.com/Khaemenes_High.github.io/assets/vnv-beta-link.js";script.defer=true;script.dataset.academyLearnerToolbar="1";document.head.appendChild(script)};document.readyState==="loading"?document.addEventListener("DOMContentLoaded",mount,{once:true}):mount()})();
+
+
+;(()=>{if(document.querySelector('script[src*="algebra2-presentation-unifier-v1.js"]'))return;const s=document.createElement("script");s.src=new URL("algebra2-presentation-unifier-v1.js",document.currentScript?.src||location.href).href;s.defer=true;s.dataset.algebra2PresentationUnifier="v1";document.head.appendChild(s)})();
