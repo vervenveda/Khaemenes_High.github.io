@@ -118,7 +118,7 @@ function inequalities(w){const a=2+w%4,b=3+w%5,c=10+w%6;return[
  q(w,10,DIMS[4],"Why can inequalities have infinitely many solutions?","They describe ranges satisfying a condition rather than one exact value",["They cannot be solved","Variables are infinite","Only graphs have solutions"],"Constraints often define intervals or rays.")
 ]}
 function functions(w){const m=2+w%4,b=1+w%5,x=3+w%4;return[
- q(w,1,DIMS[0],`For y=${m}x+${b}, find y at x=${x}.`,m*x+b,[m+b,x+b,m*x],"Substitute."),
+ q(w,1,DIMS[0],`For y=${m}x+${b}, find y at x=${x}.`,m*x+b,[m+b,x+b,m*x-b],"Substitute."),
  q(w,2,DIMS[0],`Slope between (1,${m+b}) and (3,${3*m+b})?`,m,[m+1,b,2*m],"Change in y divided by change in x."),
  q(w,3,DIMS[1],`Service starts at $${b} and rises $${m}/use. Cost after ${x} uses?`,`$${m*x+b}`,[`$${m+b}`,`$${x+b}`,`$${m*x}`],"Use y=mx+b."),
  q(w,4,DIMS[1],`A table rises ${m} in y for each +1 in x. Rate of change?`,m,[1,b,m+1],"Constant first difference is slope."),
