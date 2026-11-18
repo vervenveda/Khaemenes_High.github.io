@@ -49,3 +49,15 @@ function boot(){
 }
 if(window.KhaemenesAlgebra1ExamDepth)boot();else{const s=document.createElement("script");s.src=depthSrc;s.async=false;s.onload=boot;s.onerror=boot;document.head.appendChild(s)}
 })();
+
+/* Shared mathematics storage/evidence hardening for assessment surfaces. */
+;(()=>{
+ if(window.KhaemenesMathHardeningLoader||document.getElementById("khaeMathHardeningAssessmentLoader"))return;
+ const current=document.currentScript;
+ const loader=document.createElement("script");
+ loader.id="khaeMathHardeningAssessmentLoader";
+ loader.src=new URL("../../assets/math-hardening-loader-v1.js",current?.src||location.href).href;
+ loader.async=false;
+ loader.onerror=()=>console.warn("Mathematics assessment hardening layer unavailable; assessment remains usable under existing safeguards.");
+ (document.head||document.documentElement).appendChild(loader);
+})();
