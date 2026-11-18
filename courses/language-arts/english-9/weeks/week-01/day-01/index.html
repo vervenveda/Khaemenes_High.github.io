@@ -166,6 +166,7 @@ if(document.readyState==="loading")document.addEventListener("DOMContentLoaded",
 new MutationObserver(records=>{
  for(const rec of records){
   if([...rec.addedNodes].some(n=>n.nodeType===1&&(
+   (rec.target===main()&&n.matches?.("section,article,aside,.card"))||
    n.matches?.("[data-week-source-custody-v1],#vnv333NetworkTicker,#vnvTickerAutoPopulate,#vnvHeaderAutoPopulate,#khae-english-unified-lesson-map,#english9-daily-view-tools")||
    n.querySelector?.("[data-week-source-custody-v1],#vnv333NetworkTicker,#vnvTickerAutoPopulate,#vnvHeaderAutoPopulate,#khae-english-unified-lesson-map,#english9-daily-view-tools")
   ))){schedule();return}
