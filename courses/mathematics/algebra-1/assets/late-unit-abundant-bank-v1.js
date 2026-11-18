@@ -2,8 +2,8 @@
 "use strict";
 const bank=[];
 const VERSION="late-unit-abundant-v1";
-function add(id,unit,lesson,difficulty,category,prompt,options,explanation,tag,seed){
- bank.push({id,unit,lesson,difficulty,category,prompt,options,answer:0,answer_text:options[0],explanation,misconceptionTag:tag,reviewStatus:"generated-provisional-v1",generatorId:`a1-u${unit}-late-abundant`,generatorVersion:VERSION,seed});
+function add(id,unit,lesson,difficulty,category,prompt,options,explanation,tag,seed,dimension=null){
+ bank.push({id,unit,lesson,difficulty,category,prompt,options,answer:0,answer_text:options[0],explanation,misconceptionTag:tag,dimension,reviewStatus:"generated-provisional-v1",generatorId:`a1-u${unit}-late-abundant`,generatorVersion:VERSION,seed});
 }
 
 // Unit 10 · Quadratics · 20 additions (40 base + 20 abundant = 60)
@@ -34,6 +34,35 @@ add("u10-ab-l07-02",10,7,3,"optimization","Revenue is R(x)=−2x²+40x. Which x 
 
 add("u10-ab-l08-01",10,8,2,"linear-quadratic-system","Where do y=x² and y=2x intersect?",["(0,0) and (2,4)","(0,0) only","(2,2) and (4,8)","(−2,4) and (0,0)"],"Set x²=2x: x(x−2)=0, so x=0 or 2; then y=0 or 4.","system-substitution",19);
 add("u10-ab-l08-02",10,8,3,"model-comparison","Substituting a line into a parabola produces a quadratic with discriminant 0. How many real intersection points do the models have?",["1","0","2","Infinitely many"],"A zero discriminant gives one repeated real solution, corresponding to a tangent intersection.","system-discriminant-intersections",20);
+
+// Unit 10 parity additions · 20 questions (brings Unit 10 eligible pool to 80 = 10 per lesson)
+add("u10-ab2-l01-01",10,1,2,"second-differences","For x=0,1,2,3, a quadratic table has y=3,8,17,30. What is the constant second difference?",["4","5","9","13"],"First differences are 5,9,13, so second differences are 4.","second-differences",81,"representation-interpretation");
+add("u10-ab2-l01-02",10,1,3,"leading-coefficient","A quadratic table has constant second difference −6 for unit x-steps. What is the leading coefficient a?",["−3","−6","3","6"],"For y=ax²+bx+c with unit x-steps, the constant second difference is 2a, so a=−3.","second-difference-leading-coefficient",82,"transfer-reasoning");
+
+add("u10-ab2-l02-01",10,2,2,"vertex-form","Rewrite y=(x−5)²−9 by naming the vertex and opening direction.",["Vertex (5,−9), opens upward","Vertex (−5,−9), opens upward","Vertex (5,9), opens downward","Vertex (−5,9), opens downward"],"In y=a(x−h)²+k, the vertex is (h,k); here a=1>0.","vertex-form-interpretation",83,"representation-interpretation");
+add("u10-ab2-l02-02",10,2,3,"parameter-effect","Compare y=(x−2)² and y=3(x−2)². What changes?",["The second graph is vertically stretched; the vertex stays (2,0)","The vertex moves to (6,0)","The graph shifts up 3","The graph opens downward"],"Multiplying by 3 changes vertical scale but not h or k.","parameter-vs-translation",84,"transfer-reasoning");
+
+add("u10-ab2-l03-01",10,3,2,"factored-features","For y=2(x−1)(x+4), what are the x-intercepts?",["1 and −4","−1 and 4","2 and −8","1 and 4"],"Each factor equals zero at x=1 and x=−4.","factor-sign-zero",85,"procedural-fluency");
+add("u10-ab2-l03-02",10,3,3,"factored-axis","For y=(x−2)(x−8), what is the axis of symmetry?",["x=5","x=3","x=6","x=10"],"The axis lies halfway between the zeros: (2+8)/2=5.","axis-midpoint-zeros",86,"representation-interpretation");
+
+add("u10-ab2-l04-01",10,4,2,"nonmonic-factoring","Solve 2x²−7x+3=0.",["x=3 or x=1/2","x=−3 or x=−1/2","x=1 or x=3/2","x=−1 or x=−3/2"],"Factor as (2x−1)(x−3)=0.","nonmonic-factor",87,"procedural-fluency");
+add("u10-ab2-l04-02",10,4,3,"factoring-error","A learner factors x²−x−12 as (x−4)(x−3). What is the error?",["The factors multiply to +12 instead of −12; (x−4)(x+3) is correct","The factors should both be positive","The middle coefficient should be ignored","The equation has no factors"],"A correct factor pair must multiply to −12 and add to −1.","factor-sign-check",88,"error-analysis");
+
+add("u10-ab2-l05-01",10,5,2,"square-root-method","Solve 3(x−2)²=75.",["x=7 or x=−3","x=5 or x=−1","x=27 or x=−23","x=±5"],"Divide by 3 to get (x−2)²=25, then x−2=±5.","isolate-square-first",89,"multi-step-application");
+add("u10-ab2-l05-02",10,5,3,"complete-square","Complete the square: x²−10x+7=0 becomes which equation?",["(x−5)²=18","(x−10)²=93","(x−5)²=32","(x+5)²=18"],"Move 7, then add 25: x²−10x+25=18.","half-linear-coefficient",90,"procedural-fluency");
+add("u10-ab2-l05-03",10,5,3,"complete-square-meaning","Why does completing the square reveal the vertex of a quadratic?",["It rewrites the quadratic in vertex form a(x−h)²+k","It always factors the quadratic into integers","It removes the x² term","It makes every discriminant zero"],"Vertex form exposes h and k directly.","purpose-completing-square",91,"transfer-reasoning");
+
+add("u10-ab2-l06-01",10,6,2,"discriminant","For x²+6x+13=0, what does the discriminant show?",["No real solutions","One repeated real solution","Two distinct real solutions","The equation is linear"],"b²−4ac=36−52=−16<0.","discriminant-sign",92,"procedural-fluency");
+add("u10-ab2-l06-02",10,6,3,"quadratic-formula","Solve 3x²+x−2=0.",["x=2/3 or x=−1","x=−2/3 or x=1","x=2 or x=−1/3","x=1/3 or x=−2"],"x=(−1±5)/6 gives 2/3 and −1.","quadratic-formula-denominator",93,"multi-step-application");
+add("u10-ab2-l06-03",10,6,3,"formula-error","A learner uses x=(−b±√(b²−4ac))/2 and forgets a in the denominator. Why is that invalid?",["The denominator must be 2a, so omitting a changes every solution when a≠1","The square root should be removed","Only b belongs in the denominator","The formula works only for a=0"],"The quadratic formula denominator is 2a, derived from completing the square.","quadratic-formula-denominator",94,"error-analysis");
+
+add("u10-ab2-l07-01",10,7,2,"optimization","A rectangular garden has area model A(x)=−x²+24x. What x maximizes area?",["12","24","6","144"],"The maximum is at the vertex x=−24/(2·−1)=12.","vertex-optimization",95,"multi-step-application");
+add("u10-ab2-l07-02",10,7,3,"projectile-domain","For h(t)=−16t²+48t+4, why is a negative-time root usually excluded?",["The model context begins at launch, so t≥0","Negative roots are never algebraically valid","Quadratics cannot model time","Height cannot be zero"],"Mathematical roots must be interpreted within the physical domain.","context-domain-root",96,"transfer-reasoning");
+add("u10-ab2-l07-03",10,7,3,"model-verification","A quadratic model predicts a maximum at t=1.5. Which check is strongest?",["Evaluate nearby times and confirm the vertex formula gives the same maximizing input","Trust the graph shape alone","Round t to 2 without checking","Use only the y-intercept"],"Independent numerical and symbolic checks strengthen the conclusion.","verify-model-maximum",97,"error-analysis");
+
+add("u10-ab2-l08-01",10,8,2,"model-comparison","A linear fit has patterned curved residuals while a quadratic fit has residuals scattered around zero. Which model is better supported?",["The quadratic model","The linear model","Both are equally supported","Neither can ever be used"],"Systematic residual curvature signals missing nonlinear structure in the linear model.","residual-pattern-model-choice",98,"representation-interpretation");
+add("u10-ab2-l08-02",10,8,3,"extrapolation","A quadratic model is fitted for 0≤x≤20. What is the strongest statement about x=100?",["The prediction is extrapolation and may be unreliable outside the fitted domain","The prediction is guaranteed because the equation exists","The model becomes linear at x=100","The x-value should be changed to 20"],"A fitted relationship may not remain valid far outside observed conditions.","extrapolation-domain",99,"transfer-reasoning");
+add("u10-ab2-l08-03",10,8,3,"parsimony","If linear and quadratic models have nearly identical validation error, why might the linear model be preferred?",["It is simpler and easier to interpret without sacrificing predictive performance","Quadratic models are never valid","Linear models always have zero error","The quadratic must be deleted"],"When performance is comparable, simpler structure can reduce unnecessary complexity.","parsimony-model-choice",100,"transfer-reasoning");
 
 // Unit 12 · Statistics, probability & finance · 25 additions (35 base + 25 abundant = 60)
 add("u12-ab-l01-01",12,1,1,"sampling","A school wants opinions from every grade level. Which plan best supports representation?",["Randomly sample within each grade level","Survey only student council","Post a voluntary online poll","Ask the first 50 students entering school"],"Stratifying by grade and sampling randomly within each group protects representation.","stratified-vs-convenience",21);
@@ -109,11 +138,11 @@ add("u13-ab-l05-05",13,5,2,"qualified-conclusion","Which conclusion is strongest
 add("u13-ab-l05-06",13,5,3,"verification","A model predicts 72 for a case where the actual value is 75. Which statement best uses that evidence?",["The prediction error is 3, which should be compared with the model's acceptable-error standard","The model is perfect because 72 is close to 75","The actual value should be changed to 72","One case proves the model valid everywhere"],"Verification quantifies error and compares it with a stated standard, without overgeneralizing.","verification-error-standard",79);
 add("u13-ab-l05-07",13,5,3,"reflection","What is the strongest final reflection on a model?",["Identify what evidence supports, what remains uncertain, and what additional data or revision would improve the model","Repeat the equation without interpretation","State that all limitations disappeared","Remove results that disagree with the model"],"Strong reflection links evidence, uncertainty, limitations, and next steps.","reflect-next-evidence",80);
 
-if(bank.length!==80)throw new Error("Late-unit abundant bank count drift: "+bank.length);
+if(bank.length!==100)throw new Error("Late-unit abundant bank count drift: "+bank.length);
 window.ALGEBRA1_LATE_ABUNDANT_QUESTIONS=Object.freeze(bank);
 window.ALGEBRA1_LATE_ABUNDANT_META=Object.freeze({
  version:VERSION,
- units:Object.freeze({10:20,12:25,13:35}),
- targetEligible:Object.freeze({10:60,11:120,12:60,13:60})
+ units:Object.freeze({10:40,12:25,13:35}),
+ targetEligible:Object.freeze({10:80,11:120,12:60,13:60})
 });
 })();
