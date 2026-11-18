@@ -394,8 +394,10 @@ function preserveDrafts(){
  function saveDraft(){
   if(identity()!==ownerIdentity){status.textContent="The active learner changed. Reload before saving more work.";return}
   const values={};fields.forEach(f=>{values[f.dataset.lessonDraftKey]=(f.type==="radio"||f.type==="checkbox")?f.checked:f.value});
-  try{localStorage.setItem(key,JSON.stringify(values));status.textContent="Draft saved locally. This does not submit answers or change mastery."}
-  catch{status.textContent="Draft could not be saved. Keep this page open or copy your work before leaving."}
+  try{
+   const S=window.KhaemenesMathStorageAdapter,r=S?.writeJSON?S.writeJSON(key,values):(()=>{const data=JSON.stringify(values);localStorage.setItem(key,data);if(localStorage.getItem(key)!==data)throw Error("write-verification-mismatch");return{ok:true,persisted:true}})();
+   status.textContent=r?.persisted===true?"Draft saved and verified locally. This does not submit answers or change mastery.":"Draft is retained in this page only. Export or copy your work before leaving.";
+  }catch{status.textContent="Draft is retained in this page only. Export or copy your work before leaving."}
  }
  main.addEventListener("input",saveDraft);main.addEventListener("change",saveDraft);
  const reset=main.querySelector("#reset,#resetButton");reset?.addEventListener("click",()=>setTimeout(saveDraft,0));
