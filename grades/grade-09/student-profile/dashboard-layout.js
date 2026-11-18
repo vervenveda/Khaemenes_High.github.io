@@ -32,7 +32,9 @@ if(!document.getElementById("khaeProfileToolRail")){
  const grid=document.createElement("div");
  grid.style.cssText="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,220px),1fr));gap:9px";
  const openConnectedResource=url=>{
-  try{const opened=window.open(url,"_blank","noopener,noreferrer");return !!opened}catch{return false}
+  // Same-tab navigation survives popup blockers; never open an untrusted origin.
+  if(!/^https:\/\/vervenveda\.com\//i.test(url))return false;
+  try{window.location.assign(url);return true}catch{return false}
  };
  const reveal=id=>{
   const element=document.getElementById(id);
@@ -102,8 +104,12 @@ if(!document.getElementById("khaeProfileToolRail")){
    item.type="button";
    if(tool.target){item.setAttribute("aria-controls",tool.target);if(/Dialog$/.test(tool.target))item.setAttribute("aria-haspopup","dialog")}
    item.addEventListener("click",()=>{
-    const handled=tool.run?tool.run():reveal(tool.target);
+    let handled=false;
+    try{handled=tool.run?tool.run():reveal(tool.target)}catch{handled=false}
+    // A failed optional popup must not disable the rest of the profile toolbar.
     if(handled===false&&tool.fallback){
+      if(tool.target==="grade09ClassProgressDialog"){reveal("studentCourseProgress");return}
+      if(tool.target==="grade09ScheduleDialog"){reveal("grade09ProfileFirst");return}
       if(/^https:\/\/vervenveda\.com\/(?:Klasaipeer|Academy-Yearbook)\.github\.io\//i.test(tool.fallback))openConnectedResource(tool.fallback);
       else window.location.assign(tool.fallback);
     }
