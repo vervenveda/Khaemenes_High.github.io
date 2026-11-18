@@ -11,6 +11,26 @@
     document.getElementById("resetAssessment")?.setAttribute("disabled", "true");
   }
 
+  function withDepthBanks(done) {
+    const units = new Set((Array.isArray(cfg.units) ? cfg.units : []).map(Number));
+    const loaded = () => Array.isArray(window.ALGEBRA2_DEPTH_QUESTIONS) ? window.ALGEBRA2_DEPTH_QUESTIONS : [];
+    const files = [];
+    if (units.has(1) && !loaded().some(q => Number(q?.unit) === 1 && String(q?.id || "").includes("-d"))) files.push("./algebra2-depth-bank-v1.js");
+    if ((units.has(2) || units.has(3)) && !loaded().some(q => [2,3].includes(Number(q?.unit)) && String(q?.id || "").includes("-d"))) files.push("./algebra2-depth-bank-units02-03-v1.js");
+    if (!files.length || !engine?.src) { done(); return; }
+    const next = () => {
+      const file = files.shift();
+      if (!file) { done(); return; }
+      const script = document.createElement("script");
+      script.src = new URL(file, engine.src).href;
+      script.async = false;
+      script.onload = next;
+      script.onerror = () => { console.warn("Algebra II depth bank unavailable:", file); next(); };
+      document.head.appendChild(script);
+    };
+    next();
+  }
+
   function withProgression(done) {
     if (window.KhaemenesAlgebra2Progression || !engine) {
       if (window.KhaemenesAlgebra2Progression) done(); else unavailable();
@@ -253,7 +273,7 @@
     start();
   }
 
-  withProgression(boot);
+  withDepthBanks(() => withProgression(boot));
 })();
 
 /* Academy-first assessment identity; no grading or gate changes. */
