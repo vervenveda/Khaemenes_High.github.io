@@ -47,7 +47,7 @@ function rational(w){const a=2+w%3,b=a+2;return[
 ]}
 function ratio(w){const r=2+w%5,n=3+w%4;return[
  q(w,1,DIMS[0],`If ${n} items cost $${n*r}, unit price?`,`$${r}`,[`$${n}`,`$${n*r}`,`$${n+r}`],"Divide total by count."),
- q(w,2,DIMS[0],`Solve x/${n}=${r}/${2*r}.`,n/2,[n,2*n,r*n],"The right ratio is one-half."),
+ q(w,2,DIMS[0],`Solve x/${n}=${r}/${2*r}.`,n/2,[n,2*n,r+n],"The right ratio is one-half."),
  q(w,3,DIMS[1],`Map scale 1 cm=${r} km. What does ${n} cm represent?`,`${r*n} km`,[`${r+n} km`,`${n/r} km`,`${r} km`],"Multiply by the scale rate."),
  q(w,4,DIMS[1],`A recipe uses ${r} cups for ${n} servings. Water for ${2*n} servings?`,`${2*r} cups`,[`${r} cups`,`${r+n} cups`,`${2*r*n} cups`],"Doubling servings doubles a proportional quantity."),
  q(w,5,DIMS[2],`Which equation has constant of proportionality ${r}?`,`y=${r}x`,[`y=x+${r}`,`y=${r}/x`,`x=${r}y+${r}`],"Direct proportion has form y=kx."),
