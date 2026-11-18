@@ -6,8 +6,9 @@ if(document.getElementById("khae-class-tools-left"))return;
 const path=location.pathname.toLowerCase();
 if(/\/(?:assessment|assessments|diagnostic)\//.test(path))return;
 const match=path.match(/\/courses\/language-arts\/(english-(?:9|10|11|12))\//);
-if(!match)return;
-const subject=match[1];
+const configured=document.currentScript?.dataset.englishCourse;
+const subject=match?.[1]||(/^english-(?:9|10|11|12)$/.test(configured||"")?configured:null);
+if(!subject)return;
 const high="/Khaemenes_High.github.io/";
 const home=high+"courses/language-arts/"+subject+"/";
 const destinations=[
