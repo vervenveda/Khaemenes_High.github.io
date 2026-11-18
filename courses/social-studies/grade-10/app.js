@@ -166,13 +166,54 @@ function assignmentBlock(w,a,s){
  <p class="small" id="status-${key}">${sv.updated?`Last saved ${esc(sv.updated)}`:'Not yet saved'}${sv.score!==undefined?` · Teacher score: ${esc(sv.score)}`:''}</p>
  <details><summary>Four-part rubric</summary>${Object.entries(a.rubric).map(([k,v])=>`<p><strong>${esc(k)}:</strong> ${esc(v)}</p>`).join('')}</details></article>`;
 }
+// Canonical open-book weekly session authority. Browser records are provisional
+// learner evidence, never authenticated transcript or teacher review.
+function highAssessmentDraw(week,student,bank){
+ const adapter=window.KhaemenesHighAssessmentAdapter;
+ const mc=window.KhaeMonteCarloAssessment;
+ if(!student?.id||!adapter||!mc) return {error:"Select a learner and restore the assessment engine before attempting this quiz."};
+ const storageKey=KEY+":learner:"+encodeURIComponent(String(student.id))+":monte-carlo:weekly:"+week;
+ try{
+  const opened=adapter.open({courseId:"social-studies-10",storageKey,kind:"weekly",bank,count:10});
+  // The shared engine must actually persist its session; no ephemeral scoring
+  // when browser storage is unavailable, blocked, or full.
+  const stored=JSON.parse(localStorage.getItem(storageKey)||"null");
+  if(!stored?.active||stored.active.id!==opened.sessionId)return {error:"Quiz session could not be preserved. Export existing work and restore browser storage."};
+  return {adapter,mc,opened,storageKey,questions:opened.questions,
+   responses:mc.getResponses(storageKey,opened.sessionId)};
+ }catch(error){
+  return {error:"Quiz session is unavailable; existing learner grades were not changed.",detail:String(error?.message||"")};
+ }
+}
+function highAssessmentComplete(draw,summary){
+ if(!draw?.adapter||!draw?.opened)return false;
+ try{
+  const result=draw.adapter.complete(draw.opened,summary);
+  return Array.isArray(result?.attempts)&&result.attempts.some(a=>a.id===draw.opened.sessionId);
+ }catch{return false}
+}
+function highAssessmentReviewSkills(questions,answers){
+ return [...new Set(questions.map((q,i)=>answers[i]===q.answer?null:String(q.skill||q.domain||"Historical reasoning")).filter(Boolean))].slice(0,10);
+}
+function currentQuizDraw(w,s){return highAssessmentDraw(w.week,s,w.quiz.questions)}
+function quizFormError(text){
+ const result=$('#quizResult');
+ if(result){result.textContent=text;result.setAttribute('role','alert')}
+ else alert(text);
+}
+
 function quizHTML(w,s){
- const sv=s?.quizzes?.[w.week]||{};
- return `<section class="card col12" id="weeklyQuiz"><h2>${esc(w.quiz.title)}</h2><p>Ten automatically scored questions (20 points) and one teacher-scored constructed response (5 points). Retakes are permitted; the best objective score is retained.</p>
- ${w.quiz.questions.map((q,qi)=>`<div class="quizQ"><p><strong>${qi+1}. ${esc(q.prompt)}</strong></p>${q.choices.map((ch,ci)=>`<label class="choice"><input type="radio" name="q${qi}" value="${ci}" ${sv.answers?.[qi]===ci?'checked':''}> ${esc(ch)}</label>`).join('')}<div id="fb-${qi}"></div></div>`).join('')}
- <div class="quizQ"><p><strong>Constructed Response.</strong> ${esc(w.quiz.shortResponse.prompt)}</p><textarea id="quizShort">${esc(sv.shortResponse||'')}</textarea></div>
- <div class="actions"><button id="submitQuiz">Score Objective Questions</button><button class="secondary" id="saveQuiz">Save Without Scoring</button></div>
- <div id="quizResult">${sv.completed?`<p class="score">Best objective score: ${sv.bestScore}/20 (${sv.bestPercent}%)</p><p class="small">Attempts: ${sv.attempts||1}</p>`:''}</div></section>`;
+ const sv=s?.quizzes?.[w.week]||{},draw=currentQuizDraw(w,s);
+ const ready=!draw.error;
+ const questions=ready?draw.questions:[];
+ const response=ready?draw.responses:{};
+ return `<section class="card col12" id="weeklyQuiz"><h2>${esc(w.quiz.title)}</h2>
+ <p>Ten randomized open-book objective questions (20 points), with a separate constructed response (5 points) requiring evaluator review. A passing objective score is 80%; it does not replace human review.</p>
+ ${ready?`<p class="small">The active form and option order are preserved on refresh. A new form is drawn only after an attempt is completed.</p>`:`<p class="notice" role="alert">${esc(draw.error)}</p>`}
+ ${questions.map((q,qi)=>`<div class="quizQ"><p><strong>${qi+1}. ${esc(q.prompt)}</strong></p>${q.choices.map((ch,ci)=>`<label class="choice"><input type="radio" name="q${qi}" value="${ci}" data-assessment-question="${esc(q.id)}" ${response[q.id]===ci?'checked':''}> ${esc(ch)}</label>`).join('')}<div id="fb-${qi}"></div></div>`).join('')}
+ <div class="quizQ"><p><strong>Constructed Response.</strong> ${esc(w.quiz.shortResponse.prompt)}</p><textarea id="quizShort">${esc(sv.shortResponseDraft??sv.shortResponse??'')}</textarea></div>
+ <div class="actions"><button id="submitQuiz" type="button" ${ready?'':'disabled'}>Score Objective Questions</button><button class="secondary" id="saveQuiz" type="button" ${ready?'':'disabled'}>Save Without Scoring</button></div>
+ <div id="quizResult" aria-live="polite">${sv.completed?`<p class="score">Best objective score: ${sv.bestScore}/20 (${sv.bestPercent}%)</p><p class="small">Attempts: ${sv.attempts||1}</p>`:''}</div></section>`;
 }
 function weekHTML(w){
  const s=activeStudent(),reading=w.readingSections.map(x=>`${x.heading}. ${x.text}`).join(' ');
@@ -220,6 +261,12 @@ function wireView(){
  $$('.submitAssignment').forEach(b=>b.onclick=()=>saveAssignment(b.dataset.key,true));
  $('#submitQuiz')?.addEventListener('click',()=>scoreQuiz(true));
  $('#saveQuiz')?.addEventListener('click',()=>scoreQuiz(false));
+ $('#weeklyQuiz input[data-assessment-question]').forEach(input=>input.addEventListener('change',()=>{
+  const student=activeStudent(),w=COURSE.weeks[selectedWeek-1],draw=currentQuizDraw(w,student);
+  if(draw.error||!draw.mc.saveResponse(draw.storageKey,input.dataset.assessmentQuestion,Number(input.value),draw.opened.sessionId)){
+   quizFormError('This response could not be preserved. Export current work and check browser storage.');
+  }
+ }));
  $('#speakReading')?.addEventListener('click',()=>{if(!('speechSynthesis'in window))return alert('Text-to-speech is unavailable in this browser.');speechSynthesis.cancel();speechSynthesis.speak(new SpeechSynthesisUtterance($('#readingText').value))});
  $('#exportBtn')?.addEventListener('click',exportBackup);
  $('#importFile')?.addEventListener('change',importBackup);
@@ -231,15 +278,65 @@ function saveAssignment(key,submit){
 }
 function scoreQuiz(doScore){
  const s=activeStudent();if(!s)return alert('Add a student first.');
- const w=COURSE.weeks[selectedWeek-1],answers=w.quiz.questions.map((q,i)=>{const x=$(`input[name="q${i}"]:checked`);return x?+x.value:null});
- const prev=s.quizzes[w.week]||{},base={...prev,answers,shortResponse:$('#quizShort').value};
- if(doScore){
-   let correct=0;
-   w.quiz.questions.forEach((q,i)=>{const ok=answers[i]===q.answer;if(ok)correct++;const fb=$(`#fb-${i}`);fb.innerHTML=`<p class="${ok?'good':'bad'}">${ok?'Correct':'Review'}: ${esc(q.explanation)}</p>`});
-   const score=correct*2,percent=Math.round(correct/10*100);
-   base.score=score;base.percent=percent;base.bestScore=Math.max(prev.bestScore||0,score);base.bestPercent=Math.max(prev.bestPercent||0,percent);base.attempts=(prev.attempts||0)+1;base.completed=true;
+ const w=COURSE.weeks[selectedWeek-1],draw=currentQuizDraw(w,s);
+ if(draw.error){quizFormError(draw.error);return;}
+ // Active-form identity binds submission to the currently selected learner.
+ if(!draw.mc.isActive(draw.storageKey,draw.opened.sessionId)){
+  quizFormError('Another tab replaced the quiz session. Refresh without submitting again.');return;
  }
- s.quizzes[w.week]=base;saveDB();render();
+ const answers=draw.questions.map((q,i)=>{
+  const input=$(`input[name="q${i}"]:checked`);
+  return input?Number(input.value):null;
+ });
+ const shortResponse=$('#quizShort')?.value||'';
+ if(!doScore){
+  const prev=s.quizzes[w.week]||{};
+  s.quizzes[w.week]={...prev,shortResponseDraft:shortResponse};
+  try{saveDB()}catch{ s.quizzes[w.week]=prev;quizFormError('Draft could not be saved. Your typed work remains on screen.');return; }
+  quizFormError('Draft preserved for this learner; no quiz score awarded.');
+  return;
+ }
+ if(answers.some(a=>a===null)){quizFormError('Answer every objective question before scoring. No answers or explanations have been revealed.');return;}
+ if(!shortResponse.trim()){quizFormError('Preserve a constructed response for human review before submitting.');return;}
+ for(let i=0;i<answers.length;i++){
+  if(!draw.mc.saveResponse(draw.storageKey,draw.questions[i].id,answers[i],draw.opened.sessionId)){
+   quizFormError('Answers could not be preserved; scoring was not attempted.');return;
+  }
+ }
+ const right=draw.questions.filter((q,i)=>answers[i]===q.answer).length;
+ const score=Math.round(right/draw.questions.length*100),mastered=score>=80;
+ const reviewSkills=highAssessmentReviewSkills(draw.questions,answers);
+ const attemptId=draw.opened.sessionId,questionIds=[...draw.opened.questionIds];
+ const attempt={attemptId,questionIds,score,mastered,reviewSkills,
+  submittedAt:new Date().toISOString(),constructedResponse:shortResponse,
+  evaluatorReviewRequired:true,source:'monte-carlo-v1',authoritative:false};
+ const prev=s.quizzes[w.week]||{},base={
+  ...prev,answers,shortResponse,shortResponseDraft:shortResponse,
+  score:right*2,percent:score,bestScore:Math.max(prev.bestScore||0,right*2),
+  bestPercent:Math.max(prev.bestPercent||0,score),
+  attempts:(prev.attempts||0)+1,completed:true,
+  attemptHistory:[...(Array.isArray(prev.attemptHistory)?prev.attemptHistory:[]),attempt]
+ };
+ const before=localStorage.getItem(KEY);
+ s.quizzes[w.week]=base;
+ try{
+  saveDB();
+  if(localStorage.getItem(KEY)!==JSON.stringify(db))throw Error('readback mismatch');
+ }catch{
+  s.quizzes[w.week]=prev;
+  // Never declare credit when the canonical learner record is not persisted.
+  quizFormError('Assessment could not be safely saved. No new mastery credit was granted; preserve your work and check storage.');
+  return;
+ }
+ // Historical quizzes remain in their original keys; the session receipt is
+ // complementary, not a replacement for student records or evaluator review.
+ const completed=highAssessmentComplete(draw,{attemptId,questionIds,reviewSkills,score,mastered,
+  constructedResponsePendingReview:true,learnerId:String(s.id)});
+ if(!completed){
+  quizFormError('The score was saved locally, but its session receipt needs recovery. Export the learner record before retaking.');
+  return;
+ }
+ render();
 }
 function exportBackup(){
  const s=activeStudent();if(!s)return;
