@@ -57,3 +57,16 @@ const needDepth=cfg.recordKey==="midterm"||cfg.recordKey==="final";if(needDepth&
 ;(()=>{const apply=()=>{const brand=document.querySelector(".site-header .brand-copy");if(!brand)return;const title=brand.querySelector("strong"),subtitle=brand.querySelector("small");if(title)title.textContent="Khaemenes Academy";if(subtitle)subtitle.textContent="Geometry · Assessment";};if(document.readyState==="loading")document.addEventListener("DOMContentLoaded",apply,{once:true});else apply()})();
 
 ;(()=>{if(document.querySelector('script[src*="geometry-presentation-unifier-v1.js"]'))return;const s=document.createElement("script");s.src=new URL("geometry-presentation-unifier-v1.js",document.currentScript?.src||location.href).href;s.defer=true;s.dataset.geometryPresentationUnifier="v1";document.head.appendChild(s)})();
+
+
+/* Shared mathematics storage/evidence hardening for assessment surfaces. */
+;(()=>{
+ if(window.KhaemenesMathHardeningLoader||document.getElementById("khaeMathHardeningAssessmentLoader"))return;
+ const current=document.currentScript;
+ const loader=document.createElement("script");
+ loader.id="khaeMathHardeningAssessmentLoader";
+ loader.src=new URL("../../assets/math-hardening-loader-v1.js",current?.src||location.href).href;
+ loader.async=false;
+ loader.onerror=()=>console.warn("Mathematics assessment hardening layer unavailable; assessment remains usable under existing safeguards.");
+ (document.head||document.documentElement).appendChild(loader);
+})();
