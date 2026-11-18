@@ -97,3 +97,26 @@ Independent Grade 10 browser QA currently has five failing assertions against `#
 - CI `High School Learning Architecture Regression` now runs both behavioral tests; workflow change `249fe772d4d296afd10bb8cc91fce8b432bbe0ae`.
 - **Verified PASS**: architecture workflow run `44306990727` includes full architecture and both Grade 10 tests. Also PASS on the same source commit: grade-aware execution run `44306991175`, full High School Record and Route Validation run `44306990897`, Public Entry Route Validation run `44306990937`, Release Head Integrity run `44306990753`.
 - **HOLD**: Grade 10 Playwright browser acceptance, explicit historical ownership review/import, full authenticated Account Cloud/transcript authority, and remaining department workflow failures. The browser-local Academy identity contract is a separation mechanism, not proof of a server-authenticated identity.
+
+## Curriculum-first quality hardening pivot — 2026-11-18
+At founder direction, hold Account Cloud, family IDs/passcodes, persistent user profile migrations and cross-device synchronization as **separate terminal work**. Do not change learner record authority or STOS commissioning as part of curriculum upgrades. Preserve the existing fail-closed learner-safety work.
+
+### Audited English curriculum evidence
+Inspected canonical `curriculum.json` for all four English grades and the upper-grade `validate-ela-curriculum-quality.mjs` and companion depth validators.
+- English 9: 36 week plans and separate daily/studio architecture (different curriculum JSON schema); do **not** infer mastery quality from other grade schemas.
+- English 10/11/12: 36 weeks each, five daily lesson-plan sections per week, five weekly quiz questions = **108 weeks, 540 questions, 540 daily lesson-plan entries**.
+- **All three upper English courses include a generic “Which action best demonstrates mastery of Week...” quiz stem every week (36 each, 108 in total).** Replace each with a distinct passage-anchored transfer task requiring inference or justified revision, not a word swap.
+- **Blank quiz skill tags:** English 10 **108**, English 11 **66**, English 12 **0** (540 items total). Backfill only after mapping specific question content to the real assessed skill; mere labels are not sufficient.
+- Existing structural tests validate counts, authored bank parity, anchor strings and form availability; none certify independently that each choice is plausible, distractors expose misconceptions, or modeled feedback meets Exceptional expectations.
+
+### Instrumentation committed (no curriculum rewrites or learner data changes)
+- `tools/audit-ela-instructional-rigor.mjs`: read-only audit with stable per-week/per-question findings for generic transfer stems, missing skills, short model descriptions, short guided practice, and missing evidence descriptions. Commit `12ad439cf831d0580bc6c16de60024a51e3d1f79`.
+- `.github/workflows/ela-instructional-rigor-audit.yml`: nonblocking Actions job publishes JSON diagnostic artifact on relevant English curriculum changes. The gate is intentionally informational while authentic authored replacements are designed; never interpret a green diagnostic job as proof of academic excellence. Commit `805f8a6ab268e0dddecc1d04d90a6935b5a64e68`.
+
+### Recommended instructional repair sequence
+1. English 10 Week 01 diagnostic as a calibration model, followed by comparable English 11 and 12 Week 01. For each: original complex paired texts; demonstrated evidence chain; guided practice; at least two independent transfers; worked feedback; meaningful misconception-specific distractors; 80% mastery with revision pathway; readable print/teacher key.
+2. Replace generic weekly transfer item and missing skill labels in bounded curriculum authoring batches. Update `curriculum.json`, browser `assets/curriculum-data.js`, standalone week fallback quiz JSON, provenance/source banks, offline caches **in lockstep** with existing synchronization tooling; do not break historical assessment evidence.
+3. Audit parallel Mathematics, Science and Social Studies course sources for original worked examples, lab/source authenticity, scaffolds, differentiated challenge, and reasoned mastery evidence; do not award Exceptional from file quantity.
+4. Close with teacher-facing content review and beta-student evidence; treat Account Cloud/cross-device as its own later release gate.
+
+**Current state:** completed diagnostic baseline and audit instrumentation. No 108 generic questions have yet been rewritten; no curricular content has yet received Exceptional certification in this pivot.
