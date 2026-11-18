@@ -22,8 +22,12 @@ const localStorage={
  setItem(k,v){stored.set(String(k),String(v))},
  removeItem:k=>stored.delete(k)
 };
+const owner='academy-learner-A';
+let activeOwner=owner;
 const context={localStorage,Math,Date,console,URL,encodeURIComponent,
- KEY:data.metadata.storageKey,window:{},document:{},alert(){throw Error('Unexpected alert')}};
+ KEY:data.metadata.storageKey+':academy:'+encodeURIComponent(owner),ENTRY_OWNER:owner,
+ ACADEMY_ENTRY:{readAcademyProfile:()=>activeOwner?{learnerId:activeOwner}:null},
+ window:{},document:{},alert(){throw Error('Unexpected alert')}};
 context.window.window=context.window;
 context.window.KhaemenesHighLearningContext={recordAssessment(){}};
 vm.createContext(context);
@@ -79,6 +83,12 @@ for(const week of data.weeks){
 }
 assert.equal(stored.get(legacyKey),legacy,'legacy gradebook bytes must not be migrated or overwritten by session bridge');
 
+activeOwner=null;
+const denied=api.highAssessmentDraw(1,{id:'learner-A'},data.weeks[0].quiz.questions);
+assert.ok(denied.error,'lost Academy identity must deny quiz sessions');
+activeOwner='other-academy-learner';
+assert.ok(api.highAssessmentDraw(1,{id:'learner-A'},data.weeks[0].quiz.questions).error,'account switch must deny quiz sessions');
+activeOwner=owner;
 const missing=api.highAssessmentDraw(1,null,data.weeks[0].quiz.questions);
 assert.ok(missing.error,'unbound learner must fail closed');
 const before=stored.size;
