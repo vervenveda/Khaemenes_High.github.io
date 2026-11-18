@@ -55,3 +55,11 @@ Static file checks, syntax validation, and GitHub Actions are **not** browser us
 
 ## Current action
 **HOLD feature expansion and broad automated edits**. Preserve latest working heads; use surgical fixes with one commit/one unit of rollback. No executable files were modified by this audit.
+
+## 2026-11-18 update · course landing page observer isolation
+- User confirmed that the High School home and student profiles are repaired; the widespread remaining issue concerns individual landing pages.
+- Shared source: `assets/high-school-global-chrome-v2.js`. Its non-front-hall/non-profile blanket document-wide remount observer was still running on grade and course landings.
+- Surgical patch `d399ba4`: added landing-route exclusions (`stableGradeLanding`, `stableCourseLanding`) to that one observer, preserving initial canonical mount and limiting the change to landing pages. Lessons and diagnostics continue using the existing runtime until separately tested.
+- Regression updates `799623f`, `22047d1`: verify exclusions for grade, department and course landings; avoid inadvertently exempting the Algebra I diagnostic/lessons; existing front hall/profile exclusions retained.
+- Source checks: JS parses; landing-route guards present; canonical header and toolbar initial setup still present.
+- **HOLD**: Browser performance and route-by-route interaction acceptance not yet verified. Semantic hierarchy observer and third-party component interactions remain unprofiled. Do not claim every landing page fixed until real-browser checks pass.
