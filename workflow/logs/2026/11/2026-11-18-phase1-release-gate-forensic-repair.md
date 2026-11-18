@@ -50,3 +50,14 @@ Open holds (do not mark as passed):
 - Verified in run `44303145324`: all 83 canonical math games, seven game runtime files, 440 release assets and fail-closed offline install PASS; math note recovery and course-aware offline fallback also PASS.
 - `tools/test-math-assessment-submission-integrity.mjs` (`6ebb16229b8c545ecb3fa4b98b5b425c5dea52bc`): supply actual Algebra II `formalGate` lexical context in the score function's synthetic test. Full result remains HOLD pending run `44303264034`.
 - Known independent ongoing holds: English curriculum/browser-data drift, English 9 Week 3 progress test drift, Social Studies 10 assessment bridge, profile quick links/toolbar, and browser acceptance. Do not infer these are resolved by the passing subset.
+
+## Continued verification: mathematics assessment, Grade 9 visual contracts
+- `tools/test-math-assessment-submission-integrity.mjs`: mock `priorQuestionIds` in the isolated assessment function context; `5845c1fbdd0828049f74af14d75e975bee80f89a`. The full scoring function in production retains original scope and authority; no grade changes made.
+- `tools/test-prealgebra-unit01-lesson-structure.mjs`: properly resolve the six pre-algebra lessons' canonical project-root chrome script references, rather than treating them as relative; `1e0e972800346934ff6000817930b0fadf35a5fe`.
+- `tools/test-grade09-visual-consistency.mjs`: verify English 9's intentional centered navigation and Science 9's extracted `science9-dashboard-app-v1.js` runtime, including JS syntax and original contrast behavior, rather than demanding retired sidebar/inline-script implementation; commits `72f65b6f21aea5b0e74e7717e57e0780005269f2`, `456defdf19f4f08cdfd919b94c456f7df88904c9`.
+
+### Latest green full workflow
+On `456defdf19f4f08cdfd919b94c456f7df88904c9`, `High School Record and Route Validation` run `44303945994` completed SUCCESS. This covers all job steps including navigation, learner-scoped recovery, English 10–12 records, offline ownership and games, math assessment submission, Pre-Algebra Unit 01, advanced math release preflight, mathematics continuity and Grade 9 visual source contracts. Public Entry Route Validation run `44303945895` and Release Head Integrity run `44303945769` also completed SUCCESS.
+
+### Remaining certification boundaries
+This is an automated source/synthetic-run milestone, not browser-device acceptance, authenticated STOS final credit, or clearance of separate failing department workflows (English curriculum drift, Week 3 tests, Social Studies adapter, profile/toolbar and other independent course gates). Continue independently auditing those without weakening test assertions.
