@@ -83,3 +83,27 @@ test("Electives loads High School navigation only once",()=>{
  const loads=page.match(/<script[^>]+src=["']\.\.\/\.\.\/assets\/high-navigation-v1\.js["'][^>]*>/g)||[];
  assert.equal(loads.length,1);
 });
+
+
+const sharedWorkerDirectEntries=[
+ "grades/grade-09/index.html","grades/grade-10/index.html","grades/grade-11/index.html","grades/grade-12/index.html",
+ "grades/grade-09/student-profile/index.html","grades/grade-10/student-profile/index.html","grades/grade-11/student-profile/index.html","grades/grade-12/student-profile/index.html",
+ "courses/language-arts/english-9/index.html",
+ "courses/science/integrated-science-9/index.html","courses/science/biology-10/index.html","courses/science/chemistry-11/index.html","courses/science/physics-engineering-12/index.html",
+ "courses/social-studies/grade-09/index.html","courses/social-studies/grade-10/index.html","courses/social-studies/grade-11/index.html","courses/social-studies/grade-12/index.html",
+ "courses/physical-education/index.html","courses/electives/index.html"
+];
+
+test("all shared-worker direct entries load exactly one root recovery hook",()=>{
+ for(const path of sharedWorkerDirectEntries){
+  const page=read(path);
+  const loads=page.match(/high-school-root-worker-recovery-v1\.js/g)||[];
+  assert.equal(loads.length,1,path+" must load one root worker recovery hook");
+ }
+});
+
+test("English 9 loads the left class-tools runtime only once",()=>{
+ const page=read("courses/language-arts/english-9/index.html");
+ const loads=page.match(/<script[^>]+src=["']\.\.\/\.\.\/shared\/high-school-class-tools-left-v1\.js["'][^>]*>/g)||[];
+ assert.equal(loads.length,1);
+});
