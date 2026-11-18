@@ -113,6 +113,24 @@
   }
   ensureLearningContinuationContract();
 
+
+  /* High School mathematics hardening bridge · canonical v1 */
+  function ensureMathHardeningLayer(){
+    if(typeof document==="undefined"||typeof location==="undefined")return;
+    const path=String(location.pathname||"").toLowerCase();
+    if(!/\/courses\/mathematics\/(pre-algebra|algebra-1|geometry|algebra-2)(?:\/|$)/.test(path))return;
+    if(window.KhaemenesMathHardeningLoader||document.getElementById("khaeMathHardeningLoaderScript"))return;
+    const source=document.currentScript?.src||location.href;
+    const script=document.createElement("script");
+    script.id="khaeMathHardeningLoaderScript";
+    script.src=new URL("../mathematics/assets/math-hardening-loader-v1.js",source).href;
+    script.async=false;
+    script.dataset.khaemenesMathHardening="course-entry-v1";
+    script.onerror=()=>console.warn("Shared mathematics hardening layer unavailable; existing course behavior remains active.");
+    (document.head||document.documentElement).appendChild(script);
+  }
+  ensureMathHardeningLayer();
+
   // High School mathematics continuation publisher. It summarizes existing
   // course evidence only; it never changes progression, grades, or mastery.
   function ensureMathContinuationPublisher() {
