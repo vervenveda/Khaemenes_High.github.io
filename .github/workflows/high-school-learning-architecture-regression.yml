@@ -23,6 +23,7 @@ on:
       - 'courses/social-studies/grade-*/**'
       - 'mentor-contract.json'
       - 'tools/validate-high-school-learning-architecture.mjs'
+      - 'tools/test-social-studies-grade10-session-bridge.mjs'
       - '.github/workflows/high-school-learning-architecture-regression.yml'
   pull_request:
     paths:
@@ -52,3 +53,5 @@ jobs:
           node-version: '24'
       - name: Validate High School learning architecture
         run: node tools/validate-high-school-learning-architecture.mjs
+      - name: Verify Grade 10 learner-bound Monte Carlo sessions
+        run: node tools/test-social-studies-grade10-session-bridge.mjs
