@@ -66,3 +66,7 @@ The earlier 310px + 1fr source CSS remains as inactive legacy in the file, but t
 - Grade 10–12 pages are **not** changed by this English 9 landing-page rollout. Port the proven components and grid tokens after Grade 9 browser acceptance.
 - The left-tool resolver must be course-availability-checked and specialized before loading on upper English pages; Grade 9 use is the current bound rollout.
 - No learner-data synchronization, account persistence, grades, student profile, or assessment engines were altered for these visual changes.
+
+### Responsive collision and equal-card follow-up
+- Left resources moved above the official lower-right rail for viewports up to 720px, avoiding competing dock hit targets; commit `81604e72518f2971a042d9e1c19526cd97299459`. Still requires browser bounding-box verification.
+- The English 9 dashboard's historical 8+4 card splits now stack as two full-width centered sections. Peer 6/6 and 3/3/3/3 cards remain balanced at desktop, become two equal columns on tablet and one on phone; commit `dcbd3f0b4868062a672adfd9d76d1344ad9a341c`.
