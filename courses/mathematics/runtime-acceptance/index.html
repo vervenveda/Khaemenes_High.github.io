@@ -344,9 +344,9 @@ async function inspect(target,profile){
   const canonicalHeader=doc.querySelectorAll('[data-khaemenes-high-canonical-header="v2"]').length;
   const hamburger=doc.querySelectorAll('[data-khaemenes-high-hamburger="true"]').length;
   const toolbar=doc.querySelectorAll('#vnvEcosystemUtilityDock').length;
-  checks.canonicalHeader=result(canonicalHeader===1?"PASS":canonicalHeader===0?"WARN":"FAIL","Canonical headers: "+canonicalHeader,canonicalHeader);
-  checks.hamburger=result(hamburger===1?"PASS":hamburger===0?"WARN":"FAIL","Canonical hamburgers: "+hamburger,hamburger);
-  checks.toolbar=result(toolbar===1?"PASS":toolbar===0?"WARN":"FAIL","Official ecosystem toolbars: "+toolbar,toolbar);
+  checks.canonicalHeader=result(canonicalHeader===1?"PASS":"FAIL","Canonical headers: "+canonicalHeader,canonicalHeader);
+  checks.hamburger=result(hamburger===1?"PASS":"FAIL","Canonical hamburgers: "+hamburger,hamburger);
+  checks.toolbar=result(toolbar===1?"PASS":"FAIL","Official ecosystem toolbars: "+toolbar,toolbar);
 
   if(target.tickers){
     const ticker333=doc.querySelectorAll("#vnv333NetworkTicker").length;
