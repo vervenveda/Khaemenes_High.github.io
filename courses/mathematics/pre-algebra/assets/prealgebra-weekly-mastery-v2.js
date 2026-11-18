@@ -120,7 +120,7 @@ function inequalities(w){const a=2+w%4,b=3+w%5,c=10+w%6;return[
 function functions(w){const m=2+w%4,b=1+w%5,x=3+w%4;return[
  q(w,1,DIMS[0],`For y=${m}x+${b}, find y at x=${x}.`,m*x+b,[m+b,x+b,m*x-b],"Substitute."),
  q(w,2,DIMS[0],`Slope between (1,${m+b}) and (3,${3*m+b})?`,m,[m+1,m-1,2*m],"Change in y divided by change in x."),
- q(w,3,DIMS[1],`Service starts at $${b} and rises $${m}/use. Cost after ${x} uses?`,`$${m*x+b}`,[`$${m+b}`,`$${x+b}`,`$${m*x}`],"Use y=mx+b."),
+ q(w,3,DIMS[1],`Service starts at ${b} and rises ${m}/use. Cost after ${x} uses?`,`${m*x+b}`,[`${b}`,`${x+b}`,`${m*x}`],"Use y=mx+b."),
  q(w,4,DIMS[1],`A table rises ${m} in y for each +1 in x. Rate of change?`,m,[1,b,m+1],"Constant first difference is slope."),
  q(w,5,DIMS[2],`In y=${m}x+${b}, y-intercept means?`,`output ${b} when x=0`,[`rate ${m}`,`x-value ${b}`,"maximum output"],"Intercept is starting output."),
  q(w,6,DIMS[2],"What best shows whether rate of change is constant?","equal-step table or a straight-line graph",["pie chart","single number","photo"],"Linear structure shows constant differences."),
