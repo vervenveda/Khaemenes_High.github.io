@@ -280,6 +280,11 @@ async function start(){
   const canonicalLessonHeader=stableDailyEnglish9||stableDailyUpperEnglish;
   prepareEnglishDailyLegacyChrome(stableDailyUpperEnglish);
   installTypographyStandard();
+  // Shared idempotent English 9–12 left tool component; protected assessments excluded.
+  if(/\/courses\/language-arts\/english-(?:9|10|11|12)\//i.test(location.pathname)
+      && !/\/(?:assessment|assessments|diagnostic)\//i.test(location.pathname)){
+    await load(HIGH+"courses/shared/high-school-class-tools-left-v1.js","khaemenesEnglishLeftTools");
+  }
   if(/\/courses\/mathematics\/geometry\//i.test(location.pathname)){
     await load(HIGH+"courses/mathematics/geometry/assets/geometry-presentation-unifier-v1.js","khaemenesGeometryPresentation");
   }
