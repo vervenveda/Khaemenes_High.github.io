@@ -366,7 +366,11 @@ async function start(){
       document.getElementById("vnv333NetworkTicker")&&document.getElementById("vnvTickerAutoPopulate")?"mounted":"partial";
     mountHeader(false);
   }
-  // The High School front hall and student profiles have their own explicit chrome mounts.\n  // A document-wide remount observer on these dynamic pages can create repeated\n  // DOM mutation/cleanup cycles and starve click handlers and diagnostics.\n  const stableFrontHall=/\/Khaemenes_High\.github\.io\/(?:index\.html)?$/i.test(location.pathname);\n  const stableStudentProfile=/\/grades\/grade-(?:09|10|11|12)\/student-profile\//i.test(location.pathname);\n  if(!stableDailyEnglish9 && !stableDailyUpperEnglish && !stableFrontHall && !stableStudentProfile && typeof MutationObserver==="function"){
+  // Front hall and profile pages already own their canonical chrome mounts.
+  // Do not remount or restyle the entire document for every DOM mutation.
+  const stableFrontHall=/\/Khaemenes_High\.github\.io\/(?:index\.html)?$/i.test(location.pathname);
+  const stableStudentProfile=/\/grades\/grade-(?:09|10|11|12)\/student-profile\//i.test(location.pathname);
+  if(!stableDailyEnglish9 && !stableDailyUpperEnglish && !stableFrontHall && !stableStudentProfile && typeof MutationObserver==="function"){
     new MutationObserver(()=>{mountHeader();mountToolbar();cleanupKnownFloaters();preserveExportMarker();scheduleTypography();})
       .observe(document.documentElement,{childList:true,subtree:true});
   }
