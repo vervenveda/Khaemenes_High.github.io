@@ -1,0 +1,485 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="color-scheme" content="light dark">
+<meta name="theme-color" content="#242c29">
+<title>High School Mathematics Runtime Acceptance</title>
+<style>
+:root{--ink:#242c29;--paper:#f6f0e4;--panel:#fffaf0;--line:#b9a47c;--gold:#9b7630;--good:#245c43;--warn:#8a5c18;--bad:#8b2e2e}
+*{box-sizing:border-box}
+html{font-size:16px}
+body{margin:0;background:var(--paper);color:var(--ink);font:400 16px/1.6 Nunito,"Avenir Next",Arial,sans-serif}
+button,a,input,select,textarea,label,summary,p,li,td,th,small{font-size:16px}
+h1,h2,h3{font-family:Cinzel,Georgia,serif;font-weight:400}
+h1{font-size:55px;line-height:1.08;margin:8px 0 14px}
+h2{font-size:33px;line-height:1.2}
+h3{font-size:24px;line-height:1.25}
+.wrap{width:min(1320px,calc(100% - 32px));margin:auto}
+.hero{padding:44px 0 28px;text-align:center}
+.eyebrow{font-family:Cinzel,Georgia,serif;font-size:16px;letter-spacing:.07em;text-transform:uppercase;color:#6f5220}
+.lead{max-width:900px;margin:0 auto}
+.actions{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;margin:22px 0}
+.btn{min-height:44px;padding:10px 16px;border:1px solid var(--ink);border-radius:7px;background:var(--ink);color:#fffaf0;cursor:pointer;text-decoration:none}
+.btn.secondary{background:transparent;color:var(--ink)}
+.btn:disabled{opacity:.5;cursor:not-allowed}
+.panel{padding:18px;border:1px solid var(--line);border-radius:7px;background:var(--panel);margin:16px 0}
+.grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px}
+.metric{padding:15px;border:1px solid var(--line);border-radius:7px;background:#fffdf7;text-align:center}
+.metric strong{display:block;font:400 33px/1.1 Cinzel,Georgia,serif}
+.notice{padding:14px;border:1px solid var(--line);border-radius:7px;background:#fff7df}
+.progress{height:14px;border-radius:7px;background:#ded6c7;overflow:hidden}
+.progress>span{display:block;height:100%;width:0;background:var(--ink)}
+table{width:100%;border-collapse:collapse}
+th,td{padding:10px;border-bottom:1px solid #d8cdb8;text-align:left;vertical-align:top}
+th{font-family:Cinzel,Georgia,serif;font-weight:400}
+.status{display:inline-block;min-width:74px;padding:4px 8px;border-radius:7px;text-align:center}
+.status.pass{background:#e1f1e7;color:#174a33}
+.status.warn{background:#fff1cf;color:#704712}
+.status.fail{background:#f7dfdf;color:#7d2323}
+.status.pending{background:#ece8df;color:#555}
+#frameStage{display:flex;justify-content:center;align-items:flex-start;overflow:auto;min-height:420px;padding:14px;background:#e9e2d6;border:1px solid var(--line);border-radius:7px}
+#probeFrame{border:1px solid #786b55;background:#fff;box-shadow:0 8px 24px rgba(0,0,0,.12)}
+details{margin:8px 0}
+summary{min-height:44px;display:flex;align-items:center;cursor:pointer}
+pre{white-space:pre-wrap;overflow-wrap:anywhere;font:400 16px/1.5 ui-monospace,SFMono-Regular,Menlo,monospace}
+footer{text-align:center;padding:34px 0 50px}
+.manual-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.manual-item{padding:14px;border:1px solid var(--line);border-radius:7px;background:#fffdf7}
+@media(max-width:980px){.grid{grid-template-columns:repeat(2,minmax(0,1fr))}.manual-grid{grid-template-columns:1fr}}
+@media(max-width:600px){h1{font-size:44px}.grid{grid-template-columns:1fr}.wrap{width:min(100% - 22px,1320px)}}
+@media print{.no-print,#frameStage{display:none!important}.panel{break-inside:avoid}body{background:#fff;color:#111}}
+</style>
+</head>
+<body>
+<main class="wrap">
+<section class="hero">
+<p class="eyebrow">Khaemenes Academy · Mathematics Department</p>
+<h1>Runtime Acceptance Laboratory</h1>
+<p class="lead">Same-origin, non-destructive rendered-browser checks for Pre-Algebra, Algebra I, Geometry, and Algebra II. Automated PASS means the measured browser conditions passed; it does not replace the manual sign-offs listed below.</p>
+<div class="actions no-print">
+<button class="btn" id="runCore" type="button">Run Core Sweep</button>
+<button class="btn" id="runFull" type="button">Run Full Sweep</button>
+<button class="btn secondary" id="stopRun" type="button" disabled>Stop</button>
+<button class="btn secondary" id="exportJson" type="button" disabled>Export JSON</button>
+<button class="btn secondary" id="printReport" type="button">Print Report</button>
+</div>
+</section>
+
+<section class="panel">
+<h2>Acceptance contract</h2>
+<div class="grid">
+<div class="metric"><strong>4</strong><span>Courses</span></div>
+<div class="metric"><strong>4</strong><span>Viewport profiles</span></div>
+<div class="metric"><strong>16px</strong><span>Minimum readable text</span></div>
+<div class="metric"><strong>44px</strong><span>Minimum button height</span></div>
+</div>
+<p class="notice"><strong>Non-destructive:</strong> course pages are measured in same-origin iframes. The storage fixture uses temporary keys beginning with <code>__khae_runtime_</code> and cleans them after the test. It does not submit assessments, alter grades, or write learner records.</p>
+</section>
+
+<section class="panel">
+<h2>Progress</h2>
+<p id="progressText">No sweep running.</p>
+<div class="progress" aria-hidden="true"><span id="progressBar"></span></div>
+<div class="grid" style="margin-top:14px">
+<div class="metric"><strong id="passCount">0</strong><span>PASS</span></div>
+<div class="metric"><strong id="warnCount">0</strong><span>WARN</span></div>
+<div class="metric"><strong id="failCount">0</strong><span>FAIL</span></div>
+<div class="metric"><strong id="testCount">0</strong><span>Rendered cases</span></div>
+</div>
+</section>
+
+<section class="panel no-print">
+<h2>Rendered viewport</h2>
+<p id="currentCase">The active case will appear here.</p>
+<div id="frameStage"><iframe id="probeFrame" title="Runtime acceptance probe" loading="eager"></iframe></div>
+</section>
+
+<section class="panel">
+<h2>Automated results</h2>
+<div style="overflow:auto">
+<table>
+<thead><tr><th>Status</th><th>Course</th><th>Surface</th><th>Viewport</th><th>Failures / warnings</th></tr></thead>
+<tbody id="resultsBody"><tr><td colspan="5">No results yet.</td></tr></tbody>
+</table>
+</div>
+</section>
+
+<section class="panel">
+<h2>Manual sign-offs that remain separate</h2>
+<div class="manual-grid">
+<div class="manual-item"><h3>Physical tablet rotation</h3><p>Rotate a real tablet portrait ↔ landscape and confirm touch targets, overlays, keyboard behavior, and visual balance feel correct.</p></div>
+<div class="manual-item"><h3>Print / Save PDF pagination</h3><p>Open representative worksheets, exams, projects, and completion records in the browser print dialog and verify page breaks and margins.</p></div>
+<div class="manual-item"><h3>Geometry diagrams / CAD</h3><p>Manipulate representative constructions or CAD/diagram tools and verify geometry remains legible and interactive at all supported sizes.</p></div>
+<div class="manual-item"><h3>Assessment interaction</h3><p>Use a disposable test learner to submit, correct, retake, export, and recover evidence. Do not use production learner records for acceptance testing.</p></div>
+<div class="manual-item"><h3>Assistive technology</h3><p>Keyboard-only navigation and a screen reader should be exercised on at least one lesson, one mastery check, and one cumulative examination.</p></div>
+<div class="manual-item"><h3>External first-party services</h3><p>Confirm the VNV header, 333 ticker, auto-populating ticker, translator, and official ecosystem toolbar load on the production origin.</p></div>
+</div>
+</section>
+
+<section class="panel">
+<h2>Raw report</h2>
+<details><summary>Show JSON report</summary><pre id="rawReport">{}</pre></details>
+</section>
+</main>
+<footer class="wrap">KH-MATH · Runtime Acceptance Laboratory · Source checks and rendered-browser evidence remain distinct.</footer>
+
+<script>
+(()=>{
+"use strict";
+
+const PROFILES=[
+  {id:"desktop",label:"Desktop",width:1440,height:900},
+  {id:"tablet-landscape",label:"Tablet Landscape",width:1180,height:820},
+  {id:"tablet-portrait",label:"Tablet Portrait",width:820,height:1180},
+  {id:"phone",label:"Phone",width:390,height:844}
+];
+
+const TARGETS=[
+  {id:"pa-landing",course:"Pre-Algebra",surface:"Landing",path:"../pre-algebra/",core:true,tickers:true},
+  {id:"pa-lesson",course:"Pre-Algebra",surface:"Lesson",path:"../pre-algebra/units/unit-01/lessons/lesson-01-number-systems.html",core:true},
+  {id:"pa-mastery",course:"Pre-Algebra",surface:"Unit Mastery",path:"../pre-algebra/units/unit-01/assessment/mastery-check.html",core:true},
+  {id:"pa-final",course:"Pre-Algebra",surface:"Final",path:"../pre-algebra/assessments/final-exam-36-weeks.html"},
+  {id:"pa-teacher",course:"Pre-Algebra",surface:"Teacher Center",path:"../pre-algebra/teacher/"},
+  {id:"pa-project",course:"Pre-Algebra",surface:"Investigation",path:"../pre-algebra/units/unit-01/projects/number-systems-investigation.html"},
+
+  {id:"a1-landing",course:"Algebra I",surface:"Landing",path:"../algebra-1/",core:true,tickers:true},
+  {id:"a1-lesson",course:"Algebra I",surface:"Lesson",path:"../algebra-1/units/unit-01/lessons/lesson-01-algebraic-habits-notation-mathematical-argument.html",core:true},
+  {id:"a1-mastery",course:"Algebra I",surface:"Unit Mastery",path:"../algebra-1/units/unit-01/assessment/mastery-check.html",core:true},
+  {id:"a1-final",course:"Algebra I",surface:"Final",path:"../algebra-1/assessments/final-exam-36-weeks.html"},
+  {id:"a1-teacher",course:"Algebra I",surface:"Teacher Center",path:"../algebra-1/teacher/"},
+  {id:"a1-project",course:"Algebra I",surface:"Investigation",path:"../algebra-1/units/unit-01/projects/precision-measurement-audit.html"},
+
+  {id:"geo-landing",course:"Geometry",surface:"Landing",path:"../geometry/",core:true,tickers:true},
+  {id:"geo-lesson",course:"Geometry",surface:"Lesson",path:"../geometry/units/unit-01/lessons/u01-l01.html",core:true},
+  {id:"geo-mastery",course:"Geometry",surface:"Unit Mastery",path:"../geometry/units/unit-01/assessment/mastery-check.html",core:true},
+  {id:"geo-final",course:"Geometry",surface:"Final",path:"../geometry/assessments/final.html"},
+  {id:"geo-teacher",course:"Geometry",surface:"Teacher Center",path:"../geometry/teacher/"},
+  {id:"geo-project",course:"Geometry",surface:"Investigation",path:"../geometry/units/unit-01/projects/01-project.html"},
+  {id:"geo-retention",course:"Geometry",surface:"Retention Lab",path:"../geometry/assessments/retention-lab.html"},
+
+  {id:"a2-landing",course:"Algebra II",surface:"Landing",path:"../algebra-2/",core:true,tickers:true},
+  {id:"a2-lesson",course:"Algebra II",surface:"Lesson",path:"../algebra-2/units/unit-01/lessons/u01-l01.html",core:true},
+  {id:"a2-mastery",course:"Algebra II",surface:"Unit Mastery",path:"../algebra-2/units/unit-01/assessment/mastery-check.html",core:true},
+  {id:"a2-final",course:"Algebra II",surface:"Final",path:"../algebra-2/assessments/final.html"},
+  {id:"a2-teacher",course:"Algebra II",surface:"Teacher Center",path:"../algebra-2/teacher/"},
+  {id:"a2-project",course:"Algebra II",surface:"Investigation",path:"../algebra-2/units/unit-01/projects/01-project.html"}
+];
+
+const frame=document.getElementById("probeFrame");
+const body=document.getElementById("resultsBody");
+const progressText=document.getElementById("progressText");
+const progressBar=document.getElementById("progressBar");
+const currentCase=document.getElementById("currentCase");
+const runCore=document.getElementById("runCore");
+const runFull=document.getElementById("runFull");
+const stopRun=document.getElementById("stopRun");
+const exportJson=document.getElementById("exportJson");
+const rawReport=document.getElementById("rawReport");
+const passCount=document.getElementById("passCount");
+const warnCount=document.getElementById("warnCount");
+const failCount=document.getElementById("failCount");
+const testCount=document.getElementById("testCount");
+
+let stopped=false;
+let report=null;
+const delay=ms=>new Promise(resolve=>setTimeout(resolve,ms));
+
+function visible(win,el){
+  if(!el||!el.isConnected||el.hidden||el.getAttribute("aria-hidden")==="true")return false;
+  const cs=win.getComputedStyle(el),r=el.getBoundingClientRect();
+  return cs.display!=="none"&&cs.visibility!=="hidden"&&Number(cs.opacity)!==0&&r.width>.5&&r.height>.5;
+}
+function hasOwnReadableText(el){
+  if(el.matches("input,select,textarea,button,summary"))return true;
+  return [...el.childNodes].some(n=>n.nodeType===3&&String(n.nodeValue||"").trim());
+}
+function accessibleName(el){
+  const text=String(el.innerText||el.textContent||"").replace(/\s+/g," ").trim();
+  const aria=String(el.getAttribute("aria-label")||"").trim();
+  const title=String(el.getAttribute("title")||"").trim();
+  const alt=String(el.querySelector("img[alt]")?.getAttribute("alt")||"").trim();
+  const svgTitle=String(el.querySelector("svg title")?.textContent||"").trim();
+  return text||aria||title||alt||svgTitle;
+}
+function scrollableAncestor(win,el){
+  let p=el.parentElement;
+  while(p&&p!==el.ownerDocument.body){
+    const cs=win.getComputedStyle(p);
+    if(/auto|scroll/.test(cs.overflowX)&&p.scrollWidth>p.clientWidth+2)return true;
+    p=p.parentElement;
+  }
+  return false;
+}
+function rectOverlap(a,b){
+  return Math.max(0,Math.min(a.right,b.right)-Math.max(a.left,b.left))*
+         Math.max(0,Math.min(a.bottom,b.bottom)-Math.max(a.top,b.top));
+}
+function sampleElement(el){
+  const id=el.id?"#"+el.id:"";
+  const cls=String(el.className||"").trim().split(/\s+/).slice(0,2).join(".");
+  const text=String(el.innerText||el.textContent||"").replace(/\s+/g," ").trim().slice(0,70);
+  return el.tagName.toLowerCase()+id+(cls?"."+cls:"")+(text?' “'+text+'”':"");
+}
+function result(status,detail,metric){
+  return {status,detail:detail||"",metric:metric===undefined?null:metric};
+}
+function summarizeChecks(checks){
+  const failures=[],warnings=[];
+  Object.entries(checks).forEach(([name,value])=>{
+    if(value.status==="FAIL")failures.push(name+": "+value.detail);
+    if(value.status==="WARN")warnings.push(name+": "+value.detail);
+  });
+  return {failures,warnings};
+}
+
+async function fetchHealth(target){
+  try{
+    const response=await fetch(target.path+(target.path.includes("?")?"&":"?")+"runtimeAcceptanceFetch="+Date.now(),{cache:"no-store",credentials:"same-origin"});
+    return result(response.ok?"PASS":"FAIL",response.status+" "+response.statusText,response.status);
+  }catch(error){
+    return result("FAIL","Fetch failed: "+String(error?.message||error));
+  }
+}
+
+async function loadFrame(target,profile){
+  frame.style.width=profile.width+"px";
+  frame.style.height=profile.height+"px";
+  frame.width=profile.width;
+  frame.height=profile.height;
+  const token=Math.random().toString(36).slice(2);
+  const url=target.path+(target.path.includes("?")?"&":"?")+"runtimeAcceptance="+token;
+  let loaded=false;
+  const loadPromise=new Promise(resolve=>{
+    const timeout=setTimeout(()=>resolve(false),12000);
+    frame.onload=()=>{clearTimeout(timeout);loaded=true;resolve(true)};
+    frame.onerror=()=>{clearTimeout(timeout);resolve(false)};
+  });
+  frame.src=url;
+  const ok=await loadPromise;
+  if(!ok||!loaded)return {ok:false,error:"iframe load timeout or error"};
+  await delay(1800);
+  try{
+    const win=frame.contentWindow,doc=frame.contentDocument;
+    if(!win||!doc||!doc.documentElement)return {ok:false,error:"same-origin document unavailable"};
+    return {ok:true,win,doc};
+  }catch(error){
+    return {ok:false,error:"same-origin access failed: "+String(error?.message||error)};
+  }
+}
+
+async function inspect(target,profile){
+  const checks={};
+  checks.fetch=await fetchHealth(target);
+  const loaded=await loadFrame(target,profile);
+  if(!loaded.ok){
+    checks.render=result("FAIL",loaded.error);
+    return {target,profile,checks,...summarizeChecks(checks),metrics:{}};
+  }
+  checks.render=result("PASS","same-origin iframe rendered");
+  const win=loaded.win,doc=loaded.doc,de=doc.documentElement;
+  const metrics={viewport:{width:win.innerWidth,height:win.innerHeight},scrollWidth:de.scrollWidth,scrollHeight:de.scrollHeight};
+
+  checks.title=result(String(doc.title||"").trim()?"PASS":"FAIL",String(doc.title||"").trim()||"Missing document title");
+  checks.main=result(doc.querySelector("main")?"PASS":"FAIL",doc.querySelector("main")?"Main landmark present":"Missing <main>");
+
+  const ids=new Map();
+  doc.querySelectorAll("[id]").forEach(el=>ids.set(el.id,(ids.get(el.id)||0)+1));
+  const duplicates=[...ids.entries()].filter(x=>x[1]>1).map(x=>x[0]);
+  checks.duplicateIds=result(duplicates.length?"FAIL":"PASS",duplicates.length?"Duplicate IDs: "+duplicates.slice(0,12).join(", "):"No duplicate IDs",duplicates.length);
+
+  const under=[];
+  doc.querySelectorAll("body *").forEach(el=>{
+    if(under.length>=30||!visible(win,el)||!hasOwnReadableText(el))return;
+    if(el.matches("script,style,noscript,template,svg,svg *,canvas,iframe,br,hr"))return;
+    const size=parseFloat(win.getComputedStyle(el).fontSize||"0");
+    if(size>0&&size<15.9)under.push(sampleElement(el)+" = "+size.toFixed(1)+"px");
+  });
+  checks.textFloor=result(under.length?"FAIL":"PASS",under.length?under.length+" visible text elements below 16px; sample: "+under.slice(0,8).join(" | "):"Visible readable text meets 16px floor",under.length);
+
+  const blank=[];
+  doc.querySelectorAll('button,a[href],[role="button"],summary').forEach(el=>{
+    if(blank.length>=20||!visible(win,el))return;
+    if(!accessibleName(el))blank.push(sampleElement(el));
+  });
+  checks.blankControls=result(blank.length?"FAIL":"PASS",blank.length?"Unnamed visible controls: "+blank.slice(0,10).join(" | "):"Visible controls have accessible names",blank.length);
+
+  const short=[];
+  doc.querySelectorAll('button,.btn,.button,[role="button"],summary,input[type="button"],input[type="submit"]').forEach(el=>{
+    if(short.length>=25||!visible(win,el))return;
+    const r=el.getBoundingClientRect();
+    if(r.height<43.5)short.push(sampleElement(el)+" = "+r.height.toFixed(1)+"px");
+  });
+  checks.buttonHeight=result(short.length?"FAIL":"PASS",short.length?short.length+" visible button controls below 44px; sample: "+short.slice(0,8).join(" | "):"Visible button controls meet 44px height",short.length);
+
+  const overflow=Math.max(de.scrollWidth,doc.body?.scrollWidth||0)-win.innerWidth;
+  checks.horizontalOverflow=result(overflow>3?"FAIL":"PASS",overflow>3?"Document exceeds viewport by "+Math.round(overflow)+"px":"No document-level horizontal overflow",Math.round(overflow));
+
+  const clipped=[];
+  doc.querySelectorAll('a[href],button,[role="button"],input:not([type="hidden"]),select,textarea,summary').forEach(el=>{
+    if(clipped.length>=25||!visible(win,el)||scrollableAncestor(win,el))return;
+    const r=el.getBoundingClientRect();
+    if(r.right>win.innerWidth+3||r.left<-3)clipped.push(sampleElement(el)+" ["+Math.round(r.left)+","+Math.round(r.right)+"]");
+  });
+  checks.clippedControls=result(clipped.length?"FAIL":"PASS",clipped.length?"Horizontally clipped controls: "+clipped.slice(0,8).join(" | "):"No unclipped interactive controls",clipped.length);
+
+  const github=[];
+  doc.querySelectorAll('a[href*="github.com"]').forEach(el=>{if(visible(win,el))github.push(el.href)});
+  checks.githubButtons=result(github.length?"FAIL":"PASS",github.length?"Visible GitHub links found: "+github.slice(0,6).join(" | "):"No visible GitHub repository links",github.length);
+
+  const canonicalHeader=doc.querySelectorAll('[data-khaemenes-high-canonical-header="v2"]').length;
+  const hamburger=doc.querySelectorAll('[data-khaemenes-high-hamburger="true"]').length;
+  const toolbar=doc.querySelectorAll('#vnvEcosystemUtilityDock').length;
+  checks.canonicalHeader=result(canonicalHeader===1?"PASS":canonicalHeader===0?"WARN":"FAIL","Canonical headers: "+canonicalHeader,canonicalHeader);
+  checks.hamburger=result(hamburger===1?"PASS":hamburger===0?"WARN":"FAIL","Canonical hamburgers: "+hamburger,hamburger);
+  checks.toolbar=result(toolbar===1?"PASS":toolbar===0?"WARN":"FAIL","Official ecosystem toolbars: "+toolbar,toolbar);
+
+  if(target.tickers){
+    const ticker333=doc.querySelectorAll("#vnv333NetworkTicker").length;
+    const autoTicker=doc.querySelectorAll("#vnvTickerAutoPopulate").length;
+    checks.ticker333=result(ticker333===1?"PASS":"FAIL","333 ticker instances: "+ticker333,ticker333);
+    checks.autoTicker=result(autoTicker===1?"PASS":"FAIL","Auto ticker instances: "+autoTicker,autoTicker);
+    checks.tickerPairState=result(de.dataset.khaemenesMathTickerPair==="mounted"?"PASS":"WARN","Math ticker pair state: "+(de.dataset.khaemenesMathTickerPair||"unset"));
+  }
+
+  const floaterIds=["vnvEcosystemUtilityDock","vnvBetaProgramLink","khaemenesLearnerUtilityToolbar","khaeLandingUtilityDock","khaemenesHomeUtilityDock","highQuickUtilityDock","studentQuickUtilityDock","academyQuickUtilityDock"];
+  const duplicateFloaters=floaterIds.filter(id=>doc.querySelectorAll("#"+id).length>1);
+  checks.floaterUniqueness=result(duplicateFloaters.length?"FAIL":"PASS",duplicateFloaters.length?"Duplicate floaters: "+duplicateFloaters.join(", "):"Known floating controls are unique");
+
+  const footer=doc.querySelector("footer");
+  if(footer){
+    const priorY=win.scrollY;
+    win.scrollTo(0,Math.max(0,de.scrollHeight-win.innerHeight));
+    await delay(140);
+    const fr=footer.getBoundingClientRect(),overlaps=[];
+    doc.querySelectorAll("body *").forEach(el=>{
+      if(el===footer||footer.contains(el)||!visible(win,el))return;
+      const cs=win.getComputedStyle(el);
+      if(cs.position!=="fixed"&&cs.position!=="sticky")return;
+      const r=el.getBoundingClientRect();
+      if(rectOverlap(fr,r)>40&&r.bottom>win.innerHeight*.55)overlaps.push(sampleElement(el));
+    });
+    win.scrollTo(0,priorY);
+    checks.footerOverlap=result(overlaps.length?"FAIL":"PASS",overlaps.length?"Fixed/sticky controls overlap footer: "+overlaps.slice(0,8).join(" | "):"No measured footer/tool overlap",overlaps.length);
+  }else{
+    checks.footerOverlap=result("WARN","No footer found on this surface");
+  }
+
+  const hugeOverlays=[];
+  doc.querySelectorAll("body *").forEach(el=>{
+    if(hugeOverlays.length>=10||!visible(win,el))return;
+    const cs=win.getComputedStyle(el);if(cs.position!=="fixed")return;
+    const r=el.getBoundingClientRect(),coverage=(r.width*r.height)/(win.innerWidth*win.innerHeight);
+    const allowed=el.getAttribute("role")==="dialog"||/gate|menu|overlay|modal/i.test((el.id||"")+" "+(el.className||""));
+    if(coverage>.72&&!allowed)hugeOverlays.push(sampleElement(el)+" "+Math.round(coverage*100)+"%");
+  });
+  checks.unexpectedOverlay=result(hugeOverlays.length?"WARN":"PASS",hugeOverlays.length?"Large fixed overlays need review: "+hugeOverlays.join(" | "):"No unexpected full-screen fixed overlay detected",hugeOverlays.length);
+
+  const summaries=summarizeChecks(checks);
+  return {target,profile,checks,failures:summaries.failures,warnings:summaries.warnings,metrics};
+}
+
+async function runStorageFixture(){
+  return new Promise(resolve=>{
+    const f=document.createElement("iframe");
+    f.hidden=true;
+    let settled=false;
+    const finish=value=>{if(settled)return;settled=true;window.removeEventListener("message",onMessage);f.remove();resolve(value)};
+    const onMessage=event=>{
+      if(event.data?.type!=="khaemenes-math-runtime-storage-result")return;
+      finish(event.data.result);
+    };
+    window.addEventListener("message",onMessage);
+    f.onload=()=>setTimeout(()=>{
+      try{finish(f.contentWindow?.__KHAEMENES_RUNTIME_STORAGE_RESULT__||{pass:false,error:"fixture-result-unavailable"})}
+      catch(error){finish({pass:false,error:String(error)})}
+    },900);
+    setTimeout(()=>finish({pass:false,error:"storage-fixture-timeout"}),10000);
+    f.src="storage-failure-fixture.html?runtime="+Date.now();
+    document.body.append(f);
+  });
+}
+
+function rowStatus(item){
+  if(item.failures.length)return "FAIL";
+  if(item.warnings.length)return "WARN";
+  return "PASS";
+}
+function refresh(){
+  if(!report){rawReport.textContent="{}";return}
+  const items=report.cases||[];
+  passCount.textContent=items.filter(x=>rowStatus(x)==="PASS").length+(report.storage?.pass?1:0);
+  warnCount.textContent=items.filter(x=>rowStatus(x)==="WARN").length;
+  failCount.textContent=items.filter(x=>rowStatus(x)==="FAIL").length+(report.storage&&!report.storage.pass?1:0);
+  testCount.textContent=items.length;
+  body.innerHTML="";
+  if(report.storage){
+    const tr=document.createElement("tr"),status=report.storage.pass?"PASS":"FAIL";
+    tr.innerHTML='<td><span class="status '+status.toLowerCase()+'">'+status+'</span></td><td>Department</td><td>Forced Storage Failure</td><td>Fixture</td><td>'+escapeHtml(report.storage.pass?"Persistent write verified; forced failure fell back to memory without claiming persistence.":report.storage.error||"Storage fixture failed")+'</td>';
+    body.append(tr);
+  }
+  items.forEach(item=>{
+    const status=rowStatus(item),issues=[...item.failures,...item.warnings];
+    const tr=document.createElement("tr");
+    tr.innerHTML='<td><span class="status '+status.toLowerCase()+'">'+status+'</span></td><td>'+escapeHtml(item.target.course)+'</td><td>'+escapeHtml(item.target.surface)+'</td><td>'+escapeHtml(item.profile.label+" "+item.profile.width+"×"+item.profile.height)+'</td><td>'+escapeHtml(issues.length?issues.join(" • "):"All automated checks passed.")+'</td>';
+    body.append(tr);
+  });
+  rawReport.textContent=JSON.stringify(report,null,2);
+  exportJson.disabled=false;
+}
+function escapeHtml(value){
+  return String(value??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+}
+
+async function run(mode){
+  if(location.protocol==="file:"){
+    alert("Serve this page from the Academy site or another HTTP(S) server. Same-origin iframe inspection does not work reliably from file://.");
+    return;
+  }
+  stopped=false;runCore.disabled=true;runFull.disabled=true;stopRun.disabled=false;exportJson.disabled=true;
+  report={schema:"khaemenes-high-math-runtime-acceptance-v1",mode,started_at:new Date().toISOString(),origin:location.origin,storage:null,cases:[],manual_status:"required",automated_status:"running"};
+  body.innerHTML='<tr><td colspan="5">Running…</td></tr>';refresh();
+
+  progressText.textContent="Running storage persistence and forced-failure fixture…";
+  report.storage=await runStorageFixture();refresh();
+
+  const targets=mode==="core"?TARGETS.filter(t=>t.core):TARGETS;
+  const cases=[];
+  targets.forEach(target=>PROFILES.forEach(profile=>cases.push({target,profile})));
+  for(let i=0;i<cases.length;i++){
+    if(stopped)break;
+    const item=cases[i];
+    currentCase.textContent=item.target.course+" · "+item.target.surface+" · "+item.profile.label+" "+item.profile.width+"×"+item.profile.height;
+    progressText.textContent="Case "+(i+1)+" of "+cases.length+" · "+currentCase.textContent;
+    progressBar.style.width=Math.round((i/cases.length)*100)+"%";
+    const measured=await inspect(item.target,item.profile);
+    report.cases.push(measured);
+    refresh();
+  }
+  report.finished_at=new Date().toISOString();
+  report.stopped=stopped;
+  const hardFails=report.cases.reduce((n,x)=>n+x.failures.length,0)+(report.storage?.pass?0:1);
+  report.automated_status=stopped?"stopped":hardFails?"FAIL":"PASS";
+  progressBar.style.width=stopped?"0%":"100%";
+  progressText.textContent=stopped?"Sweep stopped. Partial report retained.":"Automated sweep complete: "+report.automated_status+". Manual sign-offs remain required.";
+  currentCase.textContent="No active case.";
+  runCore.disabled=false;runFull.disabled=false;stopRun.disabled=true;refresh();
+}
+
+runCore.addEventListener("click",()=>run("core"));
+runFull.addEventListener("click",()=>run("full"));
+stopRun.addEventListener("click",()=>{stopped=true;stopRun.disabled=true});
+printReport.addEventListener("click",()=>window.print());
+exportJson.addEventListener("click",()=>{
+  if(!report)return;
+  const blob=new Blob([JSON.stringify(report,null,2)],{type:"application/json"});
+  const url=URL.createObjectURL(blob),a=document.createElement("a");
+  a.href=url;a.download="khaemenes-high-math-runtime-acceptance-"+new Date().toISOString().slice(0,10)+".json";a.click();
+  setTimeout(()=>URL.revokeObjectURL(url),800);
+});
+
+})();
+</script>
+</body>
+</html>
