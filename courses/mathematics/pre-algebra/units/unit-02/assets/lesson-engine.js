@@ -1,5 +1,5 @@
 (()=>{"use strict";
-const MIN=80,scriptEl=document.currentScript,coreSrc=new URL("lesson-engine-core.js",scriptEl?.src||location.href).href,map=window.UNIT_MAP_FALLBACK,lesson=window.LESSON_DATA;
+const MIN=80,scriptEl=document.currentScript,coreSrc=new URL("../../../assets/prealgebra-lesson-engine-core-v2.js",scriptEl?.src||location.href).href,map=window.UNIT_MAP_FALLBACK,lesson=window.LESSON_DATA;
 const pad=n=>String(n).padStart(2,"0"),unitNo=Number(map?.unit?.number)||Number(location.pathname.match(/unit-(\d+)/)?.[1])||0;
 const SKILL_FOCUS={l01:"signed-contexts",l02:"opposites-absolute-value",l03:"integer-order",l04:"integer-addition",l05:"integer-subtraction",l06:"integer-products-quotients",l07:"integer-division",l08:"coordinate-integer-applications"};
 const COMPANIONS={
