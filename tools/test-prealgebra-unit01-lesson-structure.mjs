@@ -15,7 +15,12 @@ for(const lesson of map.lessons){
  assert.ok(html.includes('learner-scope-v1.js'),file+' keeps learner isolation');
  for(const m of html.matchAll(/<script\b[^>]*\bsrc="([^"]+\.js)(?:\?[^"]*)?"/gi)){
   const src=m[1];if(/^https?:/.test(src))continue;
-  const relative=path.posix.normalize(path.posix.join(path.posix.dirname(file),src));
+  const prefix="/Khaemenes_High.github.io/";
+  const relative=src.startsWith(prefix)
+   ? src.slice(prefix.length)
+   : src.startsWith("/")
+    ? src.slice(1)
+    : path.posix.normalize(path.posix.join(path.posix.dirname(file),src));
   assert.ok(fs.existsSync(relative),file+' missing '+src);
   scripts++;
  }
