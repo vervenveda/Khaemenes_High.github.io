@@ -4522,7 +4522,7 @@ function lessonsHTML(w,r){
 function weeklyMasterySummary(w,r){
   const official=quizBest(student(),w.week),valid=(r.quiz.attempts||[]).filter(validWeeklyMasteryAttempt),draft=r.quiz.draft;
   const stateLabel=draft?"Resume current draft":"Start mastery check";
-  return`<div class="unit-link-card weekly-mastery-launch"><h3>Weekly Mastery Check</h3><p class="section-note">10 questions · 2 in each reasoning dimension · mastery target ${APP.passingTarget}%. Open the check in the dedicated one-column assessment workspace.</p><p><strong>Official v2 best:</strong> ${official||"—"}% · <strong>Valid attempts:</strong> ${valid.length}</p><div class="actions"><button type="button" onclick="startWeeklyMastery()">${stateLabel}</button></div></div>`;
+  return`<div class="unit-link-card weekly-mastery-launch"><h3>Weekly Mastery Check</h3><p class="section-note">10 questions · 2 in each reasoning dimension · mastery target ${APP.passingTarget}%. Open the check in the dedicated one-column assessment workspace.</p><p><strong>Official v2 best:</strong> ${official?official+"%":"—"} · <strong>Valid attempts:</strong> ${valid.length}</p><div class="actions"><button type="button" onclick="startWeeklyMastery()">${stateLabel}</button></div></div>`;
 }
 function startWeeklyMastery(){weeklyMasteryMode=true;syncAssessmentSurface();render()}
 function closeWeeklyMastery(){weeklyMasteryMode=false;syncAssessmentSurface();render()}
@@ -4729,6 +4729,7 @@ function submitQuiz(){
     const val=Number(raw);answers.push(val);
     if(val===activeQuiz[i].answer)correct++;else feedback.push(`${i+1}. Review: ${activeQuiz[i].prompt} Correct answer: ${activeQuiz[i].choices[activeQuiz[i].answer]}`);
   }
+  document.querySelectorAll("[id^=\"weekly_work_\"]").forEach((node,i)=>{draft.work[String(i)]=node.value});
   const score=Math.round(correct/activeQuiz.length*100);
   if(r.quiz.attempts.length&&!r.quiz.legacyBest&&Number(r.quiz.best)>0)r.quiz.legacyBest=Number(r.quiz.best);
   const attempt={
