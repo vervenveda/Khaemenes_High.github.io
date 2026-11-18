@@ -67,6 +67,7 @@ test("Pre-Algebra weekly mastery checks use a dedicated worksheet surface",()=>{
  assert.match(pre,/function weeklyMasteryAssessment\(w,r\)/);
  assert.match(pre,/Start mastery check/);
  assert.match(pre,/prealgebra-weekly-mastery-draft-v1/);
+ assert.match(pre,/assessmentVersion:WEEKLY_MASTERY_VERSION/);
  assert.match(pre,/weeklyMasteryMode\?"weekly"/);
  assert.match(pre,/Show your work · ungraded workspace/);
 });
