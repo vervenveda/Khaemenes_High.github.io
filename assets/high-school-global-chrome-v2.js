@@ -264,6 +264,7 @@ async function start(){
   if(!document.body)return;
   const stableDailyEnglish9=/\/english-9\/weeks\/week-01\/day-0[1-5]\/(?:index\.html)?$/i.test(location.pathname);
   const stableDailyUpperEnglish=/\/english-(?:10\/weeks\/week-01\/(?:monday|tuesday|wednesday|thursday|friday)\/(?:index\.html)?|(?:11|12)\/weeks\/week-01\/lessons\/day-0[1-5]\.html)$/i.test(location.pathname);
+  const mathematicsLanding=/\/courses\/mathematics\/(?:pre-algebra|algebra-1|geometry|algebra-2)\/(?:index\.html)?$/i.test(location.pathname);
   const canonicalLessonHeader=stableDailyEnglish9||stableDailyUpperEnglish;
   prepareEnglishDailyLegacyChrome(stableDailyUpperEnglish);
   installTypographyStandard();
@@ -318,6 +319,33 @@ async function start(){
     // grade's original lesson DOM. The grade course scripts own all evidence.
     await load("/Khaemenes_High.github.io/courses/shared/english-unified-lesson-engine-v1.js?v=20261116","khaemenesEnglishUnifiedLessonEngine");
     window.KhaemenesEnglishUnifiedLessonEngine?.mount?.();
+  }
+  if(mathematicsLanding){
+    await load(VNV+"vnv-333-ticker.js","khaemenesHighMath333Ticker");
+    await load(VNV+"vnv-ticker-autopopulate.js","khaemenesHighMathAutoTicker");
+    if(window.VNV333Ticker?.mount && !document.getElementById("vnv333NetworkTicker")){
+      window.VNV333Ticker.mount();
+    }
+    if(window.VNV_TICKER?.autoPopulate && !document.getElementById("vnvTickerAutoPopulate")){
+      const courseName=location.pathname.match(/\/mathematics\/(pre-algebra|algebra-1|geometry|algebra-2)\//i)?.[1]
+        ?.replace("pre-algebra","Pre-Algebra").replace("algebra-1","Algebra I").replace("algebra-2","Algebra II").replace("geometry","Geometry")||"Mathematics";
+      window.VNV_TICKER.autoPopulate({
+        before:"#vnvHeaderAutoPopulate, .site-header, header",
+        label:courseName+" · Course Quick Links",
+        ariaLabel:courseName+" course navigation",
+        max:12,
+        cleanLegacy:false,
+        exclude:[
+          "#vnv333NetworkTicker a","#vnvTickerAutoPopulate a",
+          "[data-vnv-ticker-ignore]","a[download]",".skip",".skip-link",
+          ".ticker-control",".vnv-ticker-control",
+          "[aria-label*='logout' i]","[aria-label*='sign out' i]"
+        ]
+      });
+    }
+    document.documentElement.dataset.khaemenesMathTickerPair=
+      document.getElementById("vnv333NetworkTicker")&&document.getElementById("vnvTickerAutoPopulate")?"mounted":"partial";
+    mountHeader(false);
   }
   if(!stableDailyEnglish9 && !stableDailyUpperEnglish && typeof MutationObserver==="function"){
     new MutationObserver(()=>{mountHeader();mountToolbar();cleanupKnownFloaters();preserveExportMarker();scheduleTypography();})
