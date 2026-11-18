@@ -130,7 +130,7 @@ function functions(w){const m=2+w%4,b=1+w%5,x=3+w%4;return[
  q(w,10,DIMS[4],"Why can linear extrapolation be risky?","The relationship may change outside the observed domain",["Lines stop beyond data","Slope becomes undefined","All extrapolation is negative"],"Model assumptions may fail outside evidence.")
 ]}
 function geometry(w){const l=4+w%5,h=3+w%4;return[
- q(w,1,DIMS[0],`Area of rectangle ${l} m by ${h} m?`,`${l*h} m²`,[`${2*(l+h)} m²`,`${l+h} m²`,`${l*h} m`],"Area=length×width."),
+ q(w,1,DIMS[0],`Area of rectangle ${l} m by ${h} m?`,`${l*h} m²`,[`${2*(l+h)} m`,`${l+h} m²`,`${l*h} m`],"Area=length×width; perimeter uses linear units while area uses square units."),
  q(w,2,DIMS[0],`Right triangle legs ${3*h} and ${4*h}. Hypotenuse?`,5*h,[7*h,12*h,Math.sqrt(25*h)],"Scaled 3-4-5 triangle."),
  q(w,3,DIMS[1],`Room ${l} m by ${h} m drawn at 1 cm=1 m. Drawing dimensions?`,`${l} cm by ${h} cm`,[`${l*h} cm by 1 cm`,`${10*l} cm by ${10*h} cm`,`${l+h} cm by 1 cm`],"Apply scale consistently."),
  q(w,4,DIMS[1],`Rectangular prism ${l} by ${h} by 2 units. Volume?`,`${2*l*h} cubic units`,[`${l*h} square units`,`${2*(l+h)} cubic units`,`${l+h+2} cubic units`],"Volume=lwh."),
