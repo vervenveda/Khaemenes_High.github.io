@@ -130,6 +130,23 @@
       return shuffle(out).slice(0,requested);
     }
 
+    function balancedDepthByUnit(candidates, requested, prior) {
+      const units = Array.isArray(cfg.units) ? cfg.units.map(Number) : [];
+      if (units.length < 2) return depthBlueprint(candidates, requested, prior);
+      const baseCount = Math.floor(requested / units.length), extra = requested % units.length, out = [], used = new Set();
+      units.forEach((unit,index)=>{
+        const need = baseCount + (index < extra ? 1 : 0);
+        const picked = depthBlueprint(candidates.filter(question=>Number(question.unit)===unit), need, prior);
+        picked.forEach(question=>{ const id=String(question.id); if(!used.has(id)){ used.add(id); out.push(question); } });
+      });
+      if (out.length < requested) {
+        const remaining = candidates.filter(question=>!used.has(String(question.id)));
+        const fill = depthBlueprint(remaining, requested-out.length, prior);
+        fill.forEach(question=>{ const id=String(question.id); if(!used.has(id)){ used.add(id); out.push(question); } });
+      }
+      return shuffle(out).slice(0, requested);
+    }
+
     function weekMix(candidates, requested, prior) {
       if (!cfg.weekMix || typeof cfg.weekMix !== "object") return null;
       const out=[],used=new Set();
@@ -148,6 +165,7 @@
       const prior=priorQuestionIds();
       const mixed=weekMix(candidates,requested,prior);
       if(mixed)return mixed;
+      if(cfg.depthBlueprint && cfg.balancedByUnit)return balancedDepthByUnit(candidates,requested,prior);
       if(cfg.depthBlueprint)return depthBlueprint(candidates,requested,prior);
       return balancedByUnit(candidates,requested,prior);
     }
