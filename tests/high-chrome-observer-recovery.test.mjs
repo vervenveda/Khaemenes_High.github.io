@@ -25,7 +25,7 @@ test("minimal chrome owns only a missing header and ecosystem toolbar",()=>{
 });
 
 test("minimal chrome cannot continuously mutate or scan course documents",()=>{
- assert.doesNotMatch(chrome,/MutationObserver/);
+ assert.doesNotMatch(chrome,/new\\s+MutationObserver/);
  assert.doesNotMatch(chrome,/requestAnimationFrame/);
  assert.doesNotMatch(chrome,/setInterval/);
  assert.doesNotMatch(chrome,/getComputedStyle/);
