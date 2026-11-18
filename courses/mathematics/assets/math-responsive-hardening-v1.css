@@ -1,0 +1,24 @@
+/* Khaemenes Academy · universal High School mathematics responsive hardening v1 */
+:root{--khae-touch:44px}
+html,body{max-width:100%;overflow-x:hidden}
+body{font-size:max(16px,1rem)}
+button,input,select,textarea,a[role="button"],summary,.btn,.button{font-size:max(16px,1rem)}
+button,.btn,.button,a[role="button"],summary,input,select{min-height:var(--khae-touch)}
+img,svg,canvas,video,iframe{max-width:100%;height:auto}
+table{max-width:100%}
+.table-wrap,[data-table-wrap]{max-width:100%;overflow-x:auto;-webkit-overflow-scrolling:touch}
+.lesson-layout,.practice-layout,.course-grid,.resource-grid,.tool-grid,.card-grid{min-width:0}
+textarea,input,select{max-width:100%}
+@media(max-width:1024px) and (orientation:landscape){
+ .lesson-layout,.practice-layout{grid-template-columns:minmax(0,1fr)!important}
+ .lesson-side,.practice-side,.sidebar{position:static!important;max-width:100%!important}
+ .wrap,.main,.course-shell{max-width:100%!important}
+}
+@media(max-width:800px){
+ .grid,.unit-grid,.resource-grid,.lesson-grid,.daily-grid,.form-grid,.pathway-grid,.course-grid,.tool-grid,.card-grid{grid-template-columns:repeat(2,minmax(0,1fr))!important}
+}
+@media(max-width:520px){
+ .grid,.unit-grid,.resource-grid,.lesson-grid,.daily-grid,.form-grid,.pathway-grid,.course-grid,.tool-grid,.card-grid{grid-template-columns:minmax(0,1fr)!important}
+}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+@supports(padding:max(0px)){body{padding-left:env(safe-area-inset-left);padding-right:env(safe-area-inset-right)}}
