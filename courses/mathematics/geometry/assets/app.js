@@ -31,12 +31,32 @@ function normalizeState(raw){
  return raw;
 }
 function load(){
+ const S=window.KhaemenesMathStorageAdapter;
+ if(S?.readJSON)return normalizeState(S.readJSON(KEY,null));
  try{return normalizeState(JSON.parse(localStorage.getItem(KEY)||"null"))}
  catch{return initialState()}
 }
 let state=load();
 let activeSet=[];
-function save(){try{localStorage.setItem(KEY,JSON.stringify(state))}catch{alert("This browser could not save local course records.")}}
+function save(){
+ const S=window.KhaemenesMathStorageAdapter;
+ if(S?.writeJSON){
+   const result=S.writeJSON(KEY,state);
+   if(result.persisted===true&&result.verified===true)return true;
+   alert("Persistent course storage could not be verified. Current work may be memory-only; export the course record before leaving this page.");
+   return false;
+ }
+ try{
+   const raw=JSON.stringify(state);
+   localStorage.setItem(KEY,raw);
+   const ok=localStorage.getItem(KEY)===raw;
+   if(!ok)throw new Error("write-verification-mismatch");
+   return true;
+ }catch{
+   alert("This browser could not verify saved course records. Export your work before leaving this page.");
+   return false;
+ }
+}
 function activeStudent(){return state.students.find(s=>s.id===state.activeId)||state.students[0]}
 function scoreValue(v){if(v==null||v==="")return null;const n=Number(v);return Number.isFinite(n)?Math.max(0,Math.min(100,n)):null}
 function weekRecord(n){
