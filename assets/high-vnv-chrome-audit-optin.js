@@ -146,7 +146,7 @@ function paint(){
  if(!panel){
   panel=document.createElement("aside");panel.id="highSchoolChromeAuditPanel";
   panel.setAttribute("aria-label","High School forensic chrome diagnostics");
-  panel.style.cssText="position:fixed!important;z-index:2147483647!important;left:8px;bottom:8px;width:min(780px,calc(100vw - 16px));max-height:64vh;overflow:auto;padding:13px 15px;border:2px solid #b48b45;border-radius:7px;background:#243038!important;color:#fff8e9!important;font:400 14px/1.45 ui-monospace,monospace!important;box-shadow:0 12px 40px #0009";
+  panel.style.cssText="position:fixed!important;z-index:2147483647!important;left:8px;bottom:8px;width:min(780px,calc(100vw - 16px));max-height:64vh;overflow:auto;padding:13px 15px;border:2px solid #b48b45;border-radius:7px;background:#243038!important;color:#fff8e9!important;font:400 16px/1.45 ui-monospace,monospace!important;box-shadow:0 12px 40px #0009";
   const title=document.createElement("strong");title.textContent="High School · Deep Forensic Chrome Audit";title.style.cssText="display:block;margin-bottom:10px;font-size:16px";
   const controls=document.createElement("div");controls.style.cssText="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:8px";
   for(const [label,action] of [
@@ -154,7 +154,7 @@ function paint(){
    ["Close diagnostics",()=>{closed=true;observer.disconnect();panel.remove();panel=null;output=null}]
   ]){
    const b=document.createElement("button");b.type="button";b.textContent=label;
-   b.style.cssText="padding:7px 10px;border:0;border-radius:7px;background:#fff8e9;color:#243038;font:400 14px/1.3 ui-monospace,monospace;cursor:pointer";
+   b.style.cssText="padding:7px 10px;border:0;border-radius:7px;background:#fff8e9;color:#243038;font:400 16px/1.3 ui-monospace,monospace;cursor:pointer";
    b.addEventListener("click",action);controls.appendChild(b);
   }
   output=document.createElement("pre");output.style.cssText="font:inherit!important;white-space:pre-wrap;overflow-wrap:anywhere;margin:0;color:#fff8e9!important;background:transparent!important";
@@ -162,7 +162,7 @@ function paint(){
  }
  refresh();
 }
-function note(s){trace.push(ms()+" "+s);if(trace.length>50)trace.shift();if(!scheduled&&!closed){scheduled=true;requestAnimationFrame(()=>{scheduled=false;paint()})}}
+function note(s){trace.push(ms()+" "+s);if(trace.length>50)trace.shift();\n // Run the costly full-page forensic report once when the panel is first shown.\n // Later DOM events remain in the timeline until the user clicks Refresh snapshot.\n if(!panel&&!scheduled&&!closed){scheduled=true;requestAnimationFrame(()=>{scheduled=false;paint()})}\n}
 const tracked=new Set(targets.map(t=>t[1]));
 const observer=new MutationObserver(records=>{
  const changes=[];
