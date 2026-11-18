@@ -107,7 +107,8 @@ The banner updates when storage state, learner binding, or online/offline state 
 - Unit 01 special lesson/assessment cores;
 - Unit 02 autosave-special assessment core;
 - generic lesson engine;
-- Unit 01–13 assessment wrappers.
+- Unit 01–13 assessment wrappers;
+- cumulative Midterm/Final exam engine, including memory-backed export when persistent storage fails.
 
 No hardening path is permitted to claim “saved and verified” when persistence cannot be read back.
 
@@ -224,6 +225,8 @@ Source-level checks in this implementation pass also confirmed:
 - the nine major Algebra I/Geometry/Algebra II engine surfaces parse successfully;
 - every Pre-Algebra lesson wrapper 02–13 points to the canonical lesson core;
 - every Pre-Algebra assessment wrapper 03–13 points to the canonical assessment core;
+- every Pre-Algebra unit assessment wrapper 01–13 mounts the shared hardening loader;
+- the cumulative Pre-Algebra exam engine uses verified writes and memory-aware export;
 - current Pre-Algebra unit CSS has exactly three active source families.
 
 ---
