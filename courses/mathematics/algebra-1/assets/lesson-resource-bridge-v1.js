@@ -53,7 +53,7 @@ html:root:root body main .card .eyebrow{font-size:13px!important;line-height:1.5
  if(document.getElementById("vnvClassToolsLessonLoader")||window.VNVClassToolsToolbar)return;
  const script=document.createElement("script");
  script.id="vnvClassToolsLessonLoader";
- script.src="https://vervenveda.com/assets/vnv-class-tools-toolbar.js?v=1.4.0";
+ script.src="https://vervenveda.com/assets/vnv-class-tools-toolbar.js?v=1.5.0";
  script.defer=true;
  script.dataset.vnvClassTools="lesson-aware";
  script.onerror=()=>console.warn("Learning Tools toolbar unavailable; lesson content remains fully usable.");
