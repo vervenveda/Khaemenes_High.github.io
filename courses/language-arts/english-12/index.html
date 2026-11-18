@@ -244,7 +244,14 @@ body .section-head p{margin-inline:auto!important}
 }
 </style>
 <script defer src="../../shared/high-school-class-tools-left-v1.js" data-english-course="english-12" data-ka-left-toolbar="canonical"></script>
-</head>
+<style id="vnv-ka-english-canonical-buttons-v1">
+/* Six equal landing-page choices; centered buttons + Academy footer. Shared chrome retains ownership. */
+body .hero .actions{display:grid!important;grid-template-columns:repeat(3,minmax(0,1fr))!important;gap:11px!important;max-width:720px;margin:18px auto}
+body .hero .actions :is(a,button){display:flex!important;align-items:center;justify-content:center;text-align:center;min-height:49px;min-width:0;border-radius:7px!important;padding:11px 14px;font-size:16px!important;font-weight:400!important}
+body .footer{display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;gap:10px;background:#202724;color:#fff8e9;margin-left:auto;margin-right:auto;max-width:none;width:100%;padding:26px 18px;font-size:16px}
+body .footer span{color:#fff8e9;font-size:16px}
+@media(max-width:640px){body .hero .actions{grid-template-columns:repeat(2,minmax(0,1fr))!important}}
+</style></head>
 <body>
 <a class="skip" href="#portalMain">Skip to course portal</a>
 <header class="topbar" data-retired-course-header="true" hidden>
@@ -274,6 +281,9 @@ body .section-head p{margin-inline:auto!important}
         <button class="primary" type="button" data-open-view="weeks">Begin the Course</button>
         <button type="button" data-open-view="reading">Weekly Reading</button>
         <a class="button" href="standards.html">Standards Crosswalk</a>
+        <a class="button" href="learning-tools.html#literary-toolbox">Literary Toolkit</a>
+        <a class="button" href="evidence-studio.html">Evidence Studio</a>
+        <a class="button" href="teacher-guide.html">Teacher Guide</a>
       </div>
     </div>
     <aside class="hero-panel" aria-label="Course summary">
