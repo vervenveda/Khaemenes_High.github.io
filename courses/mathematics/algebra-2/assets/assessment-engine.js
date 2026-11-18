@@ -21,6 +21,7 @@
     if ((units.has(6) || units.has(7)) && !loaded().some(q => [6,7].includes(Number(q?.unit)) && String(q?.id || "").includes("-d"))) files.push("./algebra2-depth-bank-units06-07-v1.js");
     if ((units.has(8) || units.has(9)) && !loaded().some(q => [8,9].includes(Number(q?.unit)) && String(q?.id || "").includes("-d"))) files.push("./algebra2-depth-bank-units08-09-v1.js");
     if ((units.has(10) || units.has(11)) && !loaded().some(q => [10,11].includes(Number(q?.unit)) && String(q?.id || "").includes("-d"))) files.push("./algebra2-depth-bank-units10-11-v1.js");
+    if ((units.has(12) || units.has(13)) && !loaded().some(q => [12,13].includes(Number(q?.unit)) && String(q?.id || "").includes("-d"))) files.push("./algebra2-depth-bank-units12-13-v1.js");
     if (!files.length || !engine?.src) { done(); return; }
     const next = () => {
       const file = files.shift();
