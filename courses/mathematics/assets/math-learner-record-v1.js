@@ -98,7 +98,20 @@ function storageHealth(){
  catch(error){return {available:false,verified:false,mode:"unavailable",error:String(error?.name||error?.message||error)}}
 }
 window.KhaemenesMathLearnerRecord=Object.freeze({schema:SCHEMA,course,key,learner,load,snapshot,captureLegacy,append,exportRecord,importRecord,storageHealth,masteryTarget:MASTER});
-const boot=()=>captureLegacy("page-load");
+const SAVE_SELECTOR='button, input[type="submit"], [role="button"]';
+function installCaptureHooks(){
+ document.addEventListener("click",event=>{
+  const el=event.target?.closest?.(SAVE_SELECTOR);if(!el)return;
+  const text=(el.textContent||el.value||"").toLowerCase(),id=(el.id||"").toLowerCase();
+  if(!/(save|submit|score|mastery|complete|record|review|check|grade|export)/.test(text+" "+id))return;
+  setTimeout(()=>captureLegacy("post-action:"+String(el.id||text).slice(0,60)),300);
+ },true);
+ window.addEventListener("storage",event=>{
+  if(event.key===ACTIVE_KEY){window.dispatchEvent(new CustomEvent("khaemenes-math-learner-changed",{detail:{course,learner:learner()}}));return;}
+  if(event.key&&legacyKeys().includes(event.key))captureLegacy("cross-tab-storage");
+ });
+}
+const boot=()=>{captureLegacy("page-load");installCaptureHooks()};
 if(document.readyState==="loading")document.addEventListener("DOMContentLoaded",boot,{once:true});else boot();
 window.addEventListener("pagehide",()=>captureLegacy("pagehide"));
 document.addEventListener("visibilitychange",()=>{if(document.visibilityState==="hidden")captureLegacy("visibility-hidden")});
