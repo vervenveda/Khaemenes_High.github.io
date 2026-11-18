@@ -65,6 +65,27 @@ The existing lower-left Tools button switches dynamically between:
 
 The Pre-Algebra final sets assessment mode to `final`, allowing the shared Tools policy to disable Formula support for the closed-book final.
 
+### Weekly mastery checks
+
+The 10-question weekly mastery check is no longer embedded beneath the five-session planner and assignment stack.
+
+The weekly page now shows a compact Start / Resume Mastery Check card. Opening it:
+- enters the same one-column assessment surface used by cumulative assessments;
+- hides the old course hero, sidebar, and course tabs for a focused assessment workspace;
+- preserves one stable randomized 10-question form for the active draft;
+- preserves selected answers;
+- preserves an ungraded Show Your Work area beneath every question;
+- keeps the canonical 2-per-reasoning-dimension blueprint and delayed-retrieval design;
+- uses the existing lower-left Math Tools launcher in assessment mode;
+- returns to the weekly planner after verified submission.
+
+Weekly draft schema:
+`prealgebra-weekly-mastery-draft-v1`
+
+Submitted attempts now include a `work_snapshot` for problem-solving evidence. Work is not included in the automatic score.
+
+The 80% weekly mastery threshold, question banks, question IDs, reasoning dimensions, delayed-retrieval design, prior attempt history, and best-score calculation are unchanged.
+
 ## Safety boundary
 
 No question bank, answer key, mastery threshold, scoring equation, learner identity, prior attempt history, grade, or authoritative learner record was deleted or rewritten by this presentation pass.
@@ -75,6 +96,7 @@ PASS:
 - `math-learning-tools-v2.js` JavaScript parse.
 - Algebra I `exam-engine.js` JavaScript parse.
 - Pre-Algebra primary inline runtime parse.
+- weekly mastery dedicated workspace, stable draft, answer/work persistence, and planner return path are present.
 - diagnostic / midterm / final all reference the shared assessment stylesheet.
 - diagnostic / midterm / final all reference the existing Math Tools launcher.
 - no new MutationObserver added to the shared assessment presentation or Math Tools launcher.
