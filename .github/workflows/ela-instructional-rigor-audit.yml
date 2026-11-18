@@ -1,0 +1,30 @@
+name: English Instructional Rigor Diagnostic
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'courses/language-arts/english-10/curriculum.json'
+      - 'courses/language-arts/english-11/curriculum.json'
+      - 'courses/language-arts/english-12/curriculum.json'
+      - 'tools/audit-ela-instructional-rigor.mjs'
+      - '.github/workflows/ela-instructional-rigor-audit.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  diagnostic:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v6
+        with:
+          node-version: '24'
+      - name: Generate English instructional rigor diagnostic
+        run: node tools/audit-ela-instructional-rigor.mjs > ela-instructional-rigor.json
+      - name: Publish readable diagnostic summary
+        run: |
+          node -e 'const r=require("./ela-instructional-rigor.json"); console.log(JSON.stringify(r.total,null,2)); for(const c of r.courses)console.log(c.course,JSON.stringify(c.findings))'
+      - uses: actions/upload-artifact@v4
+        with:
+          name: ela-instructional-rigor-diagnostic
+          path: ela-instructional-rigor.json
