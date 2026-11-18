@@ -1,7 +1,23 @@
 /* Khaemenes High · global canonical header/menu/toolbar guard v2.0.0
    Presentation/navigation only. No learner records, grades, assessments, or storage are modified.
 */
+/* Friday 2026-11-13 scoped landing fallback.
+ * The global chrome did not exist in Friday's source snapshot.
+ * Course content, student records and other routes remain unchanged. */
+function KHAE_FRIDAY_LANDING_ROLLBACK(path){
+  const tail=String(path||"").split("/Khaemenes_High.github.io/")[1];
+  if(tail===undefined)return false;
+  const parts=tail.split("/").filter(Boolean);
+  if(parts[parts.length-1]==="index.html")parts.pop();
+  if(parts[0]==="grades")return parts.length===2&&["grade-09","grade-10","grade-11","grade-12"].includes(parts[1]);
+  if(parts[0]!=="courses")return false;
+  if(parts.length===1)return true;
+  const departments=["mathematics","language-arts","science","social-studies","physical-education","electives"];
+  if(!departments.includes(parts[1]))return false;
+  return parts.length===2 || (parts.length===3&&["mathematics","language-arts","science","social-studies"].includes(parts[1]));
+}
 (()=>{"use strict";
+if(KHAE_FRIDAY_LANDING_ROLLBACK(location.pathname))return;
 if(window.__KHAEMENES_HIGH_GLOBAL_CHROME_V2__)return;
 window.__KHAEMENES_HIGH_GLOBAL_CHROME_V2__=true;
 
@@ -380,6 +396,7 @@ else start();
    Eyebrow = category/brand. Title = heading. Description = paragraph.
    Conservative inversion repair: only clear sentence-like heading reversals are changed. */
 (()=>{"use strict";
+if(KHAE_FRIDAY_LANDING_ROLLBACK(location.pathname))return;
 if(window.__KHAEMENES_SEMANTIC_HIERARCHY_V1__)return;
 window.__KHAEMENES_SEMANTIC_HIERARCHY_V1__=true;
 
