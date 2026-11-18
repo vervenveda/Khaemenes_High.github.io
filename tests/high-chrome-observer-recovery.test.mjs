@@ -4,6 +4,7 @@ import fs from "node:fs";
 
 const source=(path)=>fs.readFileSync(new URL("../"+path,import.meta.url),"utf8");
 const chrome=source("assets/high-school-global-chrome-v2.js");
+const nav=source("assets/high-navigation-v1.js");
 const publicPages=[
  "index.html",
  "grades/grade-09/index.html",
@@ -14,12 +15,41 @@ const publicPages=[
  "courses/language-arts/english-9/weeks/week-01/day-01/index.html"
 ];
 
-test("shared high-school chrome mounts once and does not observe all child mutations",()=>{
- assert.match(chrome,/mountHeader\(canonicalLessonHeader\)/);
- assert.match(chrome,/mountToolbar\(\)/);
- assert.doesNotMatch(chrome,/new MutationObserver\(\(\)=>\{mountHeader/);
- assert.doesNotMatch(chrome,/new MutationObserver\(scheduleHierarchy\)/);
- assert.match(chrome,/normalizeHierarchy\(document\)/);
+test("minimal chrome owns only a missing header and ecosystem toolbar",()=>{
+ assert.match(chrome,/minimal canonical chrome v3\.0\.0/);
+ assert.match(chrome,/const HEADER="vnv-header-autopopulate\.js"/);
+ assert.match(chrome,/const TOOLBAR="vnv-ecosystem-toolbar\.js"/);
+ assert.match(chrome,/async function ensureHeader\(\)/);
+ assert.match(chrome,/async function ensureToolbar\(\)/);
+ assert.match(chrome,/replaceLegacy:false/);
+});
+
+test("minimal chrome cannot continuously mutate or scan course documents",()=>{
+ assert.doesNotMatch(chrome,/MutationObserver/);
+ assert.doesNotMatch(chrome,/requestAnimationFrame/);
+ assert.doesNotMatch(chrome,/setInterval/);
+ assert.doesNotMatch(chrome,/getComputedStyle/);
+ assert.doesNotMatch(chrome,/querySelectorAll\("\*"\)/);
+ assert.doesNotMatch(chrome,/style\.setProperty/);
+ assert.doesNotMatch(chrome,/\.remove\(\)/);
+ assert.doesNotMatch(chrome,/main\.style\.zoom/);
+});
+
+test("minimal chrome does not own tickers, course tools, or course-specific helpers",()=>{
+ assert.doesNotMatch(chrome,/vnv-333-ticker\.js/);
+ assert.doesNotMatch(chrome,/vnv-ticker-autopopulate\.js/);
+ assert.doesNotMatch(chrome,/high-school-class-tools-left-v1\.js/);
+ assert.doesNotMatch(chrome,/geometry-presentation-unifier-v1\.js/);
+ assert.doesNotMatch(chrome,/prealgebra-game-registry-bridge-v1\.js/);
+ assert.doesNotMatch(chrome,/english-unified-lesson-engine-v1\.js/);
+ assert.doesNotMatch(chrome,/normalizeHierarchy|enforceReadableTextFloor|installTypographyStandard/);
+});
+
+test("navigation keeps ticker ownership but has no toolbar mutation observer",()=>{
+ assert.match(nav,/ensureDualTickerGuard\(\)/);
+ assert.match(nav,/vnv-dual-ticker-v1\.js/);
+ assert.doesNotMatch(nav,/new MutationObserver/);
+ assert.match(nav,/minimal global chrome is the primary toolbar owner/);
 });
 
 test("opt-in forensic apps are not loaded on published entry pages",()=>{
@@ -30,42 +60,9 @@ test("opt-in forensic apps are not loaded on published entry pages",()=>{
  }
 });
 
-test("canonical header and toolbar scripts remain in place",()=>{
- assert.match(chrome,/const HEADER="vnv-header-autopopulate\.js"/);
- assert.match(chrome,/const TOOLBAR="vnv-ecosystem-toolbar\.js"/);
- assert.match(chrome,/await load\(VNV\+HEADER/);
- assert.match(chrome,/await load\(VNV\+TOOLBAR/);
-});
-
-test("learner route and assessment engine remain independent of this recovery",()=>{
+test("learner route and assessment engine remain independent of chrome rewrite",()=>{
  const diagnostic=source("courses/mathematics/algebra-1/diagnostic/index.html");
  assert.match(diagnostic,/id="questionHost"/);
  assert.match(diagnostic,/assets\/exam-engine\.js/);
  assert.match(diagnostic,/id="startAssessmentButton"/);
-});
-
-test("Friday landing fallback suppresses only post-Friday chrome on grade and course entries",()=>{
- const marker="function KHAE_FRIDAY_LANDING_ROLLBACK";
- const begin=chrome.indexOf(marker);
- const end=chrome.indexOf('(()=>{"use strict";',begin);
- assert.ok(begin>=0&&end>begin,"rollback predicate exists");
- const isLanding=new Function(chrome.slice(begin,end)+"return KHAE_FRIDAY_LANDING_ROLLBACK")();
- const yes=[
-  "/Khaemenes_High.github.io/grades/grade-09/",
-  "/Khaemenes_High.github.io/grades/grade-12/index.html",
-  "/Khaemenes_High.github.io/courses/",
-  "/Khaemenes_High.github.io/courses/mathematics/algebra-1/",
-  "/Khaemenes_High.github.io/courses/language-arts/english-9/",
-  "/Khaemenes_High.github.io/courses/science/integrated-science-9/",
-  "/Khaemenes_High.github.io/courses/social-studies/grade-09/"
- ];
- const no=[
-  "/Khaemenes_High.github.io/",
-  "/Khaemenes_High.github.io/grades/grade-09/student-profile/",
-  "/Khaemenes_High.github.io/courses/mathematics/algebra-1/diagnostic/",
-  "/Khaemenes_High.github.io/courses/mathematics/algebra-1/units/unit-01/"
- ];
- for(const path of yes)assert.equal(isLanding(path),true,path);
- for(const path of no)assert.equal(isLanding(path),false,path);
- assert.equal((chrome.match(/if\(KHAE_FRIDAY_LANDING_ROLLBACK\(location.pathname\)\)return;/g)||[]).length,2);
 });
