@@ -54,16 +54,21 @@
   }
 
   function saveJSON(key, value) {
+    const S=window.KhaemenesMathStorageAdapter;
+    if(S?.writeJSON)return S.writeJSON(key,value).persisted===true;
     try {
-      localStorage.setItem(key, JSON.stringify(value));
+      const raw=JSON.stringify(value);localStorage.setItem(key,raw);
+      const ok=localStorage.getItem(key)===raw;if(!ok)throw new Error("write-verification-mismatch");
       return true;
     } catch (error) {
-      console.warn(`[Assessment Engine] Could not save ${key}.`, error);
+      console.warn(`[Assessment Engine] Could not verify save for ${key}.`, error);
       return false;
     }
   }
 
   function removeStored(key) {
+    const S=window.KhaemenesMathStorageAdapter;
+    if(S?.remove){S.remove(key);return}
     try {
       localStorage.removeItem(key);
     } catch (error) {
