@@ -8,12 +8,15 @@ const course=path.includes("/pre-algebra/")?"pre-algebra":path.includes("/algebr
 if(!course)return;
 const SCHEMA="khaemenes-math-learner-record-v1",ACTIVE_KEY="khaemenes_active_learner_v1",FAMILY_KEY="khaemenes_family_registry_v1",MASTER=80;
 const safeParse=(raw,f=null)=>{try{const v=JSON.parse(raw||"null");return v??f}catch{return f}};
-const readRaw=k=>{try{return localStorage.getItem(k)}catch{return null}};
+const readRaw=k=>{const S=window.KhaemenesMathStorageAdapter;if(S?.readRaw)return S.readRaw(k,null);try{return localStorage.getItem(k)}catch{return null}};
 const learner=()=>{
- const v=safeParse(readRaw(ACTIVE_KEY),null);
- const id=v?.id??v?.learnerId??v?.studentId??v?.profileId??null;
- const name=v?.name??v?.displayName??v?.studentName??null;
- return {id:id?String(id):"unscoped",name:name?String(name):null,verified:Boolean(id)};
+ const token=safeParse(readRaw(ACTIVE_KEY),null);
+ const id=typeof token==="string"?token:(token?.id??token?.learnerId??token?.studentId??token?.profileId??null);
+ const registry=safeParse(readRaw(FAMILY_KEY),null),pool=registry?.learners;
+ const registered=id?(Array.isArray(pool)?pool.find(x=>String(x?.learnerId??x?.id)==String(id)):pool?.[id]??null):null;
+ const name=(typeof token==="object"&&token)?(token.name??token.displayName??token.studentName??null):(registered?.name??registered?.displayName??registered?.studentName??null);
+ const registryPresent=Boolean(pool),verified=Boolean(id)&&(!registryPresent||Boolean(registered));
+ return {id:id?String(id):"unscoped",name:name?String(name):null,verified,source:typeof token==="string"?"active-id":id?"active-object":"none"};
 };
 const key=()=>SCHEMA+"::"+course+"::"+encodeURIComponent(learner().id);
 const clone=v=>safeParse(JSON.stringify(v),v);
@@ -30,8 +33,10 @@ function legacyKeys(){
   "geometry":["khaemenes-geometry-"],
   "algebra-2":["khaemenes-algebra2-"]
  }[course]||[];
- const out=new Set(exact);
- try{for(let i=0;i<localStorage.length;i++){const k=localStorage.key(i);if(k&&prefixes.some(p=>k.startsWith(p)))out.add(k)}}catch{}
+ const out=new Set(exact),active=learner(),marker=":learner:";
+ const accept=k=>{if(!k||!prefixes.some(p=>k.startsWith(p)))return false;const at=k.indexOf(marker);if(at>=0&&active.id!=="unscoped"){const owner=decodeURIComponent(k.slice(at+marker.length));if(owner!==active.id)return false}return true};
+ try{for(let i=0;i<localStorage.length;i++){const k=localStorage.key(i);if(accept(k))out.add(k)}}catch{}
+ try{for(const k of Object.keys(window.KhaemenesMathStorageAdapter?.memorySnapshot?.()||{}))if(accept(k))out.add(k)}catch{}
  return [...out];
 }
 function blank(){
@@ -42,18 +47,19 @@ function blank(){
 }
 function load(){const current=safeParse(readRaw(key()),null);return current&&current.schema===SCHEMA?current:blank()}
 function verifiedWrite(record){
- const k=key(),data=JSON.stringify(record);
- try{
-  localStorage.setItem(k,data);
-  const check=localStorage.getItem(k);
-  if(check!==data)throw Error("write-verification-mismatch");
-  return true;
- }catch(error){return {ok:false,error:String(error?.name||error?.message||error)}}
+ const k=key(),S=window.KhaemenesMathStorageAdapter;
+ if(S?.writeJSON){const r=S.writeJSON(k,record);return r.ok===true&&r.persisted===true?true:{ok:false,error:r.error||"write-not-persisted"}}
+ const data=JSON.stringify(record);
+ try{localStorage.setItem(k,data);const check=localStorage.getItem(k);if(check!==data)throw Error("write-verification-mismatch");return true}
+ catch(error){return {ok:false,error:String(error?.name||error?.message||error)}}
 }
 function save(record){
  record.updated_at=new Date().toISOString();
  const result=verifiedWrite(record);
- if(result===true){record.health.last_verified_write=record.updated_at;record.health.last_error=null;return true}
+ if(result===true){
+  record.health.last_verified_write=record.updated_at;record.health.last_error=null;
+  const stamped=verifiedWrite(record);return stamped===true;
+ }
  record.health.last_error=result.error;return false;
 }
 function captureLegacy(reason="manual"){
@@ -65,6 +71,9 @@ function captureLegacy(reason="manual"){
  }
  record.legacy=captured;
  record.provenance.legacy_keys=Object.keys(captured);
+ const marker=":learner:";
+ record.provenance.learner_scoped_keys=Object.keys(captured).filter(k=>k.includes(marker));
+ record.provenance.legacy_unscoped_keys=Object.keys(captured).filter(k=>!k.includes(marker));
  record.provenance.last_capture={at:new Date().toISOString(),reason,count:Object.keys(captured).length};
  const l=learner();record.learner=l;
  const ok=save(record);
@@ -93,6 +102,7 @@ function importRecord(data){
  return {ok:save(next)};
 }
 function storageHealth(){
+ const S=window.KhaemenesMathStorageAdapter;if(S?.probe)return S.probe();
  const probe="__khae_math_record_probe__"+Math.random().toString(36).slice(2);
  try{localStorage.setItem(probe,"1");const ok=localStorage.getItem(probe)==="1";localStorage.removeItem(probe);return {available:ok,verified:ok,mode:ok?"protected-local":"unavailable"}}
  catch(error){return {available:false,verified:false,mode:"unavailable",error:String(error?.name||error?.message||error)}}
