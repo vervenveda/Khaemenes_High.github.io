@@ -194,7 +194,7 @@ for(const grade of [10,11,12]){
     ? read("courses/social-studies/grade-10/app.js")
     : html;
   if(grade===10){
-    assert(/src="app\\.js(?:\\?[^"]*)?"/.test(html),"Social Studies 10 canonical app.js must be loaded.");
+    assert(/src="app[.]js(?:[?][^"]*)?"/.test(html),"Social Studies 10 canonical app.js must be loaded.");
     try{new Function(source)}catch(e){throw new Error("Social Studies 10 runtime syntax: "+e.message)}
     for(const contract of ["learner:",":monte-carlo:weekly:","getResponses","saveResponse","isActive","attemptHistory","constructedResponsePendingReview"]){
       assert(source.includes(contract),"Social Studies 10 learner session safety contract missing "+contract);
