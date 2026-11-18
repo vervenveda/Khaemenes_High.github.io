@@ -38,3 +38,6 @@ Open holds (do not mark as passed):
 3. Trace English 10 curriculum generated-source authority and Week 3 test-to-implementation parity.
 4. Review Social Studies 10 assessment adapter integration and profile widget test contracts.
 5. Repeat Actions and browser/learner acceptance tests. Never weaken gates solely to produce green checks; preserve canonical assessment, enrollment, export and historical learner-record boundaries.
+
+## Subsequent scoped repair
+- `courses/social-studies/grade-10/index.html`: added existing shared `high-navigation-v1.css` alongside its already loaded navigation JS. Commit `a44fd9ac2e746bf46407192e68c1525922b31700`. The follow-up Actions jobs were triggered; their conclusions are not included in the earlier snapshot. Do not count the navigation suite as passed until its full chain completes.
