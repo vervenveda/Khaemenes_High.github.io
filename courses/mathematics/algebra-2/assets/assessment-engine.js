@@ -164,3 +164,16 @@
 
 /* Academy-first assessment identity; no grading or gate changes. */
 ;(()=>{const apply=()=>{const brand=document.querySelector(".site-header .brand-copy");if(!brand)return;const title=brand.querySelector("strong"),subtitle=brand.querySelector("small");if(title)title.textContent="Khaemenes Academy";if(subtitle)subtitle.textContent="Algebra II · Assessment";};if(document.readyState==="loading")document.addEventListener("DOMContentLoaded",apply,{once:true});else apply()})();
+
+
+/* Shared mathematics storage/evidence hardening for assessment surfaces. */
+;(()=>{
+ if(window.KhaemenesMathHardeningLoader||document.getElementById("khaeMathHardeningAssessmentLoader"))return;
+ const current=document.currentScript;
+ const loader=document.createElement("script");
+ loader.id="khaeMathHardeningAssessmentLoader";
+ loader.src=new URL("../../assets/math-hardening-loader-v1.js",current?.src||location.href).href;
+ loader.async=false;
+ loader.onerror=()=>console.warn("Mathematics assessment hardening layer unavailable; assessment remains usable under existing safeguards.");
+ (document.head||document.documentElement).appendChild(loader);
+})();
