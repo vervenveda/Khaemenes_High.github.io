@@ -376,7 +376,7 @@ async function inspect(target,profile){
     win.scrollTo(0,priorY);
     checks.footerOverlap=result(overlaps.length?"FAIL":"PASS",overlaps.length?"Fixed/sticky controls overlap footer: "+overlaps.slice(0,8).join(" | "):"No measured footer/tool overlap",overlaps.length);
   }else{
-    checks.footerOverlap=result("WARN","No footer found on this surface");
+    checks.footerOverlap=result("FAIL","No footer found on this surface");
   }
 
   const hugeOverlays=[];
