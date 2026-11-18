@@ -325,6 +325,18 @@ async function inspect(target,profile){
   });
   checks.clippedControls=result(clipped.length?"FAIL":"PASS",clipped.length?"Horizontally clipped controls: "+clipped.slice(0,8).join(" | "):"No unclipped interactive controls",clipped.length);
 
+  if(target.surface==="Lesson"){
+    const multi=[];
+    doc.querySelectorAll(".lesson-layout").forEach(el=>{
+      if(!visible(win,el))return;
+      const cs=win.getComputedStyle(el);
+      if(cs.display!=="grid")return;
+      const tracks=String(cs.gridTemplateColumns||"").trim().split(/\s+/).filter(Boolean).filter(x=>x!=="0px");
+      if(tracks.length>1)multi.push(sampleElement(el)+" = "+tracks.join(" + "));
+    });
+    checks.lessonSingleColumn=result(multi.length?"FAIL":"PASS",multi.length?"Lesson side-column layout detected: "+multi.join(" | "):"Lesson content is single-column and centered",multi.length);
+  }
+
   const github=[];
   doc.querySelectorAll('a[href*="github.com"]').forEach(el=>{if(visible(win,el))github.push(el.href)});
   checks.githubButtons=result(github.length?"FAIL":"PASS",github.length?"Visible GitHub links found: "+github.slice(0,6).join(" | "):"No visible GitHub repository links",github.length);
