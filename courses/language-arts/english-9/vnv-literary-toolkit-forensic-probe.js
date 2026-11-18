@@ -5,7 +5,7 @@
 if(!new URLSearchParams(location.search).has("chrome_audit")||window.KhaemenesLiteraryToolkitAudit)return;
 let panel=null,output=null,lastReport="",errors=[],events=[];
 function stage(){
- const ids=["literary-toolbox","literary-week-path","literary-tools-save-status"];
+ const ids=["vnv333NetworkTicker","vnvTickerAutoPopulate","vnvHeaderAutoPopulate","vnvEnrichedMenuOverlay","vnvEcosystemUtilityDock","literary-toolbox","literary-week-path","literary-tools-save-status"];
  const parts=ids.map(id=>{const e=document.getElementById(id);if(!e)return id+": MISSING";const b=e.getBoundingClientRect();return id+": "+Math.round(b.width)+"×"+Math.round(b.height)+" / "+(b.width&&b.height?"VISIBLE":"HIDDEN")});
  const cards=document.querySelectorAll("#literary-toolbox .literary-tool-grid article").length;
  const links=[...document.querySelectorAll("#literary-toolbox .literary-tool-grid a")];
@@ -20,7 +20,8 @@ function stage(){
  "Literary cards: "+cards+" · Tool links: "+links.length+" · Missing link targets: "+bad.length,
  "Duplicate IDs: "+(duplicate.join(", ")||"none"),...parts,
  "Header: "+(document.querySelector(".e9-toolkit-header")?"lightweight recovery header":"MISSING"),
- "Official chrome temporarily isolated: "+(!scripts.includes("high-school-global-chrome-v2.js")?"YES":"NO"),
+ "Shared orchestrator bypassed: "+(!scripts.includes("high-school-global-chrome-v2.js")?"YES":"NO"),
+ "Direct canonical component files: "+["vnv-333-ticker.js","vnv-ticker-autopopulate.js","vnv-header-autopopulate.js","vnv-ecosystem-toolbar.js"].filter(x=>scripts.includes(x)).length+"/4",
  "Scripts: "+scripts.join(", "),
  "Captured script errors: "+(errors.join(" | ")||"none"),
  "Clicks captured: "+(events.join(" | ")||"none"),
