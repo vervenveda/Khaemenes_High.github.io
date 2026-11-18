@@ -1,6 +1,6 @@
 "use strict";
 // Applied Mission Studio v1.7.0 · compact pop-out evidence recovery.
-const CACHE_VERSION="khaemenes-algebra1-v44-math-compat-20261117";
+const CACHE_VERSION="khaemenes-algebra1-v45-runtime-recovery-20261118";
 const LEGACY_SOURCE="./service-worker-precache-v1.js";
 const EARLY_LESSON_OFFLINE_FILES=["./units/unit-01/index.html","./units/unit-01/assets/unit01.css","./units/unit-01/assets/unit01-data.js","./units/unit-01/assets/unit01-abundant-bank-v1.js","./units/unit-01/assets/unit01.js","./units/unit-01/vocabulary.json","./units/unit-01/lessons/lesson-01-algebraic-habits-notation-mathematical-argument.html","./units/unit-01/lessons/lesson-02-the-real-number-system-interval-representations.html","./units/unit-01/lessons/lesson-03-operations-properties-order-of-operations.html","./units/unit-01/lessons/lesson-04-units-rates-dimensional-analysis.html","./units/unit-01/lessons/lesson-05-precision-rounding-significant-figures-percent-error.html","./units/unit-01/lessons/lesson-06-algebra-readiness-synthesis-error-analysis.html","./units/unit-02/index.html","./units/unit-02/assets/unit02.css","./units/unit-02/assets/unit02-data.js","./units/unit-02/assets/unit02-abundant-bank-v1.js","./units/unit-02/assets/unit02.js","./units/unit-02/vocabulary.json","./units/unit-02/assets/unit02-core.js","./units/unit-02/lessons/lesson-01-variables-terms-factors-coefficients-degree.html","./units/unit-02/lessons/lesson-02-evaluating-expressions-formula-substitution.html","./units/unit-02/lessons/lesson-03-properties-equivalence-structural-reasoning.html","./units/unit-02/lessons/lesson-04-distributive-property-combining-like-terms.html","./units/unit-02/lessons/lesson-05-monomials-introductory-polynomial-classification.html","./units/unit-02/lessons/lesson-06-adding-subtracting-polynomials.html","./units/unit-02/lessons/lesson-07-multiplying-monomials-factoring-the-gcf.html","./units/unit-03/index.html","./units/unit-03/assets/unit03.css","./units/unit-03/assets/unit03-data.js","./units/unit-03/assets/unit03-abundant-bank-v1.js","./units/unit-03/assets/unit03.js","./units/unit-03/vocabulary.json","./units/unit-03/assets/unit03-core.js","./units/unit-03/lessons/lesson-01-equality-inverse-operations-solution-verification.html","./units/unit-03/lessons/lesson-02-one-step-two-step-linear-equations.html","./units/unit-03/lessons/lesson-03-multi-step-equations-with-distribution-like-terms.html","./units/unit-03/lessons/lesson-04-variables-on-both-sides-identities-contradictions.html","./units/unit-03/lessons/lesson-05-literal-equations-rearranging-formulas.html","./units/unit-03/lessons/lesson-06-proportions-direct-variation-percent-equations.html","./units/unit-03/lessons/lesson-07-rate-mixture-distance-financial-equation-models.html","./units/unit-04/assets/unit04-data.js","./units/unit-04/assets/unit04-abundant-bank-v1.js","./units/unit-05/assets/unit05-data.js","./units/unit-05/assets/unit05-abundant-bank-v1.js","./units/unit-06/assets/unit06-data.js","./units/unit-06/assets/unit06-abundant-bank-v1.js","./units/unit-07/assets/unit07-data.js","./units/unit-07/assets/unit07-abundant-bank-v1.js","./units/unit-08/assets/unit08-data.js","./units/unit-08/assets/unit08-abundant-bank-v1.js","./units/unit-09/assets/unit09-data.js","./units/unit-09/assets/unit09-abundant-bank-v1.js","./units/unit-04/assets/unit04.css","./units/unit-05/assets/unit05.css","./units/unit-06/assets/unit06.css","./units/unit-07/assets/unit07.css","./units/unit-08/assets/unit08.css","./units/unit-09/assets/unit09.css"];
 const RELEASE_FILES=[...EARLY_LESSON_OFFLINE_FILES,"../../shared/high-school-learning-context-v1.js","../../shared/high-school-formative-evidence-v1.js","../assets/shared-game-launcher.js","../../shared/course-entry-contract.js","../../shared/learner-scope-v1.js",
@@ -49,7 +49,46 @@ async function installMissionCritical(){
 }
 self.addEventListener("install",event=>{event.waitUntil((async()=>{await installMissionCritical();const old=await legacyFiles(),files=[...new Set([...old,...RELEASE_FILES,...VIDEO_FILES])],cache=await caches.open(CACHE_VERSION),extras=files.filter(file=>!MISSION_CRITICAL.includes(file));await Promise.allSettled(extras.map(p=>cache.add(new Request(p,{cache:"reload"}))));await self.skipWaiting()})())});
 self.addEventListener("activate",event=>{event.waitUntil(caches.keys().then(keys=>Promise.all(keys.filter(key=>key.startsWith("khaemenes-algebra1-")&&key!==CACHE_VERSION).map(key=>caches.delete(key)))).then(()=>self.clients.claim()))});
-self.addEventListener("fetch",event=>{const request=event.request;if(request.method!=="GET")return;const url=new URL(request.url);if(url.origin!==self.location.origin)return;if(request.mode==="navigate"){event.respondWith(fetch(request).then(response=>{if(response.ok){const copy=response.clone();caches.open(CACHE_VERSION).then(cache=>cache.put(request,copy))}return response}).catch(async()=>await matchReleaseCache(request)||await matchReleaseCache("./offline.html")||await matchReleaseCache("./index.html")));return}event.respondWith(matchReleaseCache(request).then(cached=>cached||fetch(request).then(response=>{if(response.ok){const copy=response.clone();caches.open(CACHE_VERSION).then(cache=>cache.put(request,copy))}return response}).catch(()=>cached))) });
+function mutableRuntimeRequest(request,url){
+  const path=url.pathname.toLowerCase();
+  return request.destination==="script"||
+    request.destination==="style"||
+    path.endsWith(".json")||
+    path.includes("/courses/shared/")||
+    path.includes("/courses/mathematics/assets/")||
+    path.endsWith("/assets/high-school-global-chrome-v2.js")||
+    path.endsWith("/assets/vnv-dual-ticker-v1.js");
+}
+async function networkFirst(request){
+  try{
+    const fresh=await fetch(new Request(request,{cache:"no-store"}));
+    if(fresh.ok){
+      const copy=fresh.clone();
+      const cache=await caches.open(CACHE_VERSION);
+      await cache.put(request,copy);
+    }
+    return fresh;
+  }catch(error){
+    const cached=await matchReleaseCache(request);
+    if(cached)return cached;
+    throw error;
+  }
+}
+self.addEventListener("fetch",event=>{
+  const request=event.request;
+  if(request.method!=="GET")return;
+  const url=new URL(request.url);
+  if(url.origin!==self.location.origin)return;
+  if(request.mode==="navigate"){
+    event.respondWith(networkFirst(request).catch(async()=>await matchReleaseCache("./offline.html")||await matchReleaseCache("./index.html")));
+    return;
+  }
+  if(mutableRuntimeRequest(request,url)){
+    event.respondWith(networkFirst(request));
+    return;
+  }
+  event.respondWith(matchReleaseCache(request).then(cached=>cached||networkFirst(request)));
+});
 self.addEventListener("message",event=>{if(event.data==="SKIP_WAITING")self.skipWaiting()});
 
 function matchReleaseCache(request){return caches.open(CACHE_VERSION).then(cache=>cache.match(request));}
