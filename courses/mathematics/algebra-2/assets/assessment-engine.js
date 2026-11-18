@@ -24,7 +24,9 @@
   }
 
   function boot() {
-    const all = cfg.source === "diagnostic" ? window.ALGEBRA2_DIAGNOSTIC : window.ALGEBRA2_QUESTIONS;
+    const base = cfg.source === "diagnostic" ? window.ALGEBRA2_DIAGNOSTIC : window.ALGEBRA2_QUESTIONS;
+    const depth = cfg.source === "diagnostic" ? [] : (Array.isArray(window.ALGEBRA2_DEPTH_QUESTIONS) ? window.ALGEBRA2_DEPTH_QUESTIONS : []);
+    const all = [...(Array.isArray(base)?base:[]), ...depth].filter((question,index,array)=>question&&question.id&&array.findIndex(item=>item?.id===question.id)===index);
     const host = document.getElementById("assessmentRoot");
     if (!host || !Array.isArray(all)) return;
 
@@ -39,7 +41,90 @@
     function pool() {
       let result = [...all];
       if (Array.isArray(cfg.units) && cfg.units.length) result = result.filter(question => cfg.units.includes(question.unit));
+      if (Array.isArray(cfg.weeks) && cfg.weeks.length) result = result.filter(question => cfg.weeks.includes(Number(question.week)));
+      if (cfg.pathway) {
+        const level = {Foundation:1,Core:2,Extended:3}[cfg.pathway] || 2;
+        result = result.filter(question => Number(question.pathway_min ?? question.difficulty ?? 2) <= level);
+      }
+      if (cfg.depthBlueprint) result = result.filter(question => typeof question.dimension === "string" && Number.isFinite(Number(question.lesson)));
       return result;
+    }
+
+    function priorQuestionIds() {
+      const attempts = load()[cfg.recordKey]?.attempts || [];
+      const last = attempts.length ? attempts[attempts.length - 1] : null;
+      return new Set(Array.isArray(last?.question_ids) ? last.question_ids.map(String) : []);
+    }
+
+    function preferNovel(candidates, count, prior) {
+      const unseen = shuffle(candidates.filter(question => !prior.has(String(question.id))));
+      const seen = shuffle(candidates.filter(question => prior.has(String(question.id))));
+      return [...unseen, ...seen].slice(0, count);
+    }
+
+    function balancedByUnit(candidates, requested, prior) {
+      const units = Array.isArray(cfg.units) ? cfg.units.map(Number) : [];
+      if (units.length < 2) return preferNovel(candidates, requested, prior);
+      const baseCount = Math.floor(requested / units.length), extra = requested % units.length, out = [];
+      units.forEach((unit,index)=>{
+        const need = baseCount + (index < extra ? 1 : 0);
+        out.push(...preferNovel(candidates.filter(question=>Number(question.unit)===unit),need,prior));
+      });
+      if (out.length < requested) {
+        const used = new Set(out.map(question=>String(question.id)));
+        out.push(...preferNovel(candidates.filter(question=>!used.has(String(question.id))),requested-out.length,prior));
+      }
+      return shuffle(out).slice(0,requested);
+    }
+
+    function depthBlueprint(candidates, requested, prior) {
+      const dimensions=["procedural-fluency","multi-step-application","representation-interpretation","error-analysis","transfer-reasoning"];
+      const targetBase=Math.floor(requested/dimensions.length),extra=requested%dimensions.length,out=[],used=new Set(),lessonCounts={};
+      const choose=(list)=>{
+        const available=list.filter(q=>!used.has(String(q.id)));
+        if(!available.length)return null;
+        const min=Math.min(...available.map(q=>lessonCounts[q.lesson]||0));
+        const least=available.filter(q=>(lessonCounts[q.lesson]||0)===min);
+        const unseen=least.filter(q=>!prior.has(String(q.id)));
+        return shuffle(unseen.length?unseen:least)[0]||null;
+      };
+      dimensions.forEach((dimension,index)=>{
+        const need=targetBase+(index<extra?1:0);
+        for(let i=0;i<need;i++){
+          const q=choose(candidates.filter(item=>item.dimension===dimension));
+          if(!q)break;
+          out.push(q);used.add(String(q.id));lessonCounts[q.lesson]=(lessonCounts[q.lesson]||0)+1;
+        }
+      });
+      if(out.length<requested){
+        while(out.length<requested){
+          const q=choose(candidates);if(!q)break;
+          out.push(q);used.add(String(q.id));lessonCounts[q.lesson]=(lessonCounts[q.lesson]||0)+1;
+        }
+      }
+      return shuffle(out).slice(0,requested);
+    }
+
+    function weekMix(candidates, requested, prior) {
+      if (!cfg.weekMix || typeof cfg.weekMix !== "object") return null;
+      const out=[],used=new Set();
+      for (const [weekRaw,countRaw] of Object.entries(cfg.weekMix)) {
+        const week=Number(weekRaw),need=Math.max(0,Number(countRaw)||0);
+        const picked=preferNovel(candidates.filter(q=>Number(q.week)===week),need,prior);
+        picked.forEach(q=>{if(!used.has(String(q.id))){used.add(String(q.id));out.push(q)}});
+      }
+      if(out.length<requested){
+        out.push(...preferNovel(candidates.filter(q=>!used.has(String(q.id))),requested-out.length,prior));
+      }
+      return shuffle(out).slice(0,requested);
+    }
+
+    function selectSet(candidates, requested) {
+      const prior=priorQuestionIds();
+      const mixed=weekMix(candidates,requested,prior);
+      if(mixed)return mixed;
+      if(cfg.depthBlueprint)return depthBlueprint(candidates,requested,prior);
+      return balancedByUnit(candidates,requested,prior);
     }
 
     function best() {
@@ -66,9 +151,13 @@
         return;
       }
       const available = pool();
-      set = shuffle(available).slice(0, Math.min(Number(cfg.count) || 10, available.length));
+      const requested = Math.min(Number(cfg.count) || 10, available.length);
+      set = selectSet(available, requested);
       const token = `a2-${Date.now()}`;
-      host.innerHTML = `<article class="card"><div class="form-grid"><label>Learner name or initials<input id="assessmentLearner" maxlength="60" placeholder="Optional local label"></label><label>Pathway<select id="assessmentPathway"><option>Foundation</option><option selected>Core</option><option>Extended</option></select></label></div><p class="notice">${esc(cfg.instructions || "Answer every question. Submit once complete, review explanations, and correct missed work.")}</p>${MASTERY_TARGET == null ? "" : `<p class="notice">Mastery gate: ${MASTERY_TARGET}% is required to unlock the next stage.</p>`}</article>` +
+      const fixedPathway = cfg.pathway ? `<p><strong>Pathway:</strong> ${esc(cfg.pathway)}</p>` : "";
+      const blueprintNote = cfg.depthBlueprint ? `<p class="notice"><strong>Balanced evidence:</strong> this form samples procedural fluency, multi-step application, representation/interpretation, error analysis, and transfer reasoning. Retakes prioritize questions not used on the immediately prior form.</p>` : "";
+      const retrievalNote = cfg.purpose === "retrieval" ? `<p class="notice"><strong>Retention check:</strong> this is low-stakes retrieval evidence and does not unlock or block progression.</p>` : "";
+      host.innerHTML = `<article class="card"><div class="form-grid"><label>Learner name or initials<input id="assessmentLearner" maxlength="60" placeholder="Optional local label"></label>${fixedPathway}</div><p class="notice">${esc(cfg.instructions || "Answer every question. Submit once complete, review explanations, and correct missed work.")}</p>${blueprintNote}${retrievalNote}${MASTERY_TARGET == null ? "" : `<p class="notice">Mastery gate: ${MASTERY_TARGET}% is required to unlock the next stage.</p>`}</article>` +
         set.map((question, index) => `<article class="question"><fieldset><legend>${index + 1}. ${esc(question.prompt)}</legend><div class="options">${question.options.map((option, optionIndex) => `<label class="option"><input type="radio" name="${token}-q${index}" value="${optionIndex}"><span>${esc(option)}</span></label>`).join("")}</div><div class="feedback" id="${token}-fb${index}" hidden></div></fieldset></article>`).join("") +
         `<div class="assessment-result"><button class="btn primary" id="submitAssessment" type="button">Submit &amp; Score</button><button class="btn" id="printAssessment" type="button">Print</button><p id="assessmentMessage">Best saved score: ${best() == null ? "—" : `${best()}%`}</p></div>`;
       document.getElementById("submitAssessment")?.addEventListener("click", () => score(token));
@@ -115,7 +204,12 @@
         total: set.length,
         missed,
         learner: document.getElementById("assessmentLearner")?.value.trim() || "",
-        pathway: document.getElementById("assessmentPathway")?.value || "Core",
+        pathway: cfg.pathway || document.getElementById("assessmentPathway")?.value || "Core",
+        purpose: cfg.purpose || (formalGate ? "mastery" : "practice"),
+        dimension_counts: Object.fromEntries(["procedural-fluency","multi-step-application","representation-interpretation","error-analysis","transfer-reasoning"].map(d=>[d,set.filter(q=>q.dimension===d).length])),
+        lesson_coverage: [...new Set(set.map(q=>q.lesson).filter(Number.isFinite))].sort((a,b)=>a-b),
+        difficulty_counts: Object.fromEntries([1,2,3].map(d=>[d,set.filter(q=>Number(q.difficulty)===d).length])),
+        previous_form_overlap: set.filter(q=>priorQuestionIds().has(String(q.id))).length,
         mastery_threshold: MASTERY_TARGET,
         mastery,
         mastery_met: mastery
