@@ -31,7 +31,6 @@ function freshDB(){return{version:2,activeId:null,students:[],settings:{theme:'d
 const LEGACY_KEY='KHAE_SS10_USH_CLEAN_PORTAL_V1';
 // Old gradebooks remain untouched and unclaimed. There is no automatic
 // transfer from a shared-device key, and no first-visitor ownership assignment.
-const LEGACY_KEY='KHAE_SS10_USH_CLEAN_PORTAL_V1';
 function loadDB(){
  if(!KEY)return freshDB();
  try{
