@@ -29,7 +29,15 @@ if(box){
 if(card&&!document.getElementById("lessonMasteryScore")){
  const ev=masteryEvidence(),gate=document.createElement("div");
  gate.className="lesson-mastery-gate";
- gate.innerHTML=`<h3>Lesson mastery gate</h3><p>After reviewing the completed lesson evidence, enter the evaluator score from 0–100. A score of ${MASTERY}% or higher is required before the next lesson unlocks.</p><label>Evaluator lesson score<input id="lessonMasteryScore" type="number" min="0" max="100" step="1" value="${ev.best??""}" inputmode="numeric"></label><button class="btn primary" id="saveLessonMastery" type="button">Submit Assignment</button><p class="notice">A lower attempt is retained for correction and retake. Marking activity complete is not mastery evidence.</p>`;
+ gate.innerHTML=`<h3>Lesson mastery evidence rubric</h3><p>Score the evidence against five common criteria. The Academy score is calculated from the rubric rather than typed as an arbitrary percentage. A weighted score of ${MASTERY}% or higher is required before the next lesson unlocks.</p>
+<div class="lesson-evidence-rubric" id="lessonEvidenceRubric">
+<label>Conceptual understanding · 25%<select id="lessonRubricConcept"><option value="">Not scored</option><option value="4">4 · Exceptional</option><option value="3">3 · Proficient</option><option value="2">2 · Developing</option><option value="1">1 · Beginning</option><option value="0">0 · No evidence</option></select></label>
+<label>Procedure &amp; accuracy · 25%<select id="lessonRubricProcedure"><option value="">Not scored</option><option value="4">4 · Exceptional</option><option value="3">3 · Proficient</option><option value="2">2 · Developing</option><option value="1">1 · Beginning</option><option value="0">0 · No evidence</option></select></label>
+<label>Reasoning &amp; justification · 20%<select id="lessonRubricReasoning"><option value="">Not scored</option><option value="4">4 · Exceptional</option><option value="3">3 · Proficient</option><option value="2">2 · Developing</option><option value="1">1 · Beginning</option><option value="0">0 · No evidence</option></select></label>
+<label>Verification &amp; representation · 15%<select id="lessonRubricVerification"><option value="">Not scored</option><option value="4">4 · Exceptional</option><option value="3">3 · Proficient</option><option value="2">2 · Developing</option><option value="1">1 · Beginning</option><option value="0">0 · No evidence</option></select></label>
+<label>Transfer &amp; communication · 15%<select id="lessonRubricTransfer"><option value="">Not scored</option><option value="4">4 · Exceptional</option><option value="3">3 · Proficient</option><option value="2">2 · Developing</option><option value="1">1 · Beginning</option><option value="0">0 · No evidence</option></select></label>
+</div>
+<p id="lessonRubricPreview">Prior best: ${ev.best??"—"}%</p><button class="btn primary" id="saveLessonMastery" type="button">Record Evaluated Evidence</button><p class="notice">Rubric levels describe the quality of demonstrated evidence. A lower attempt is retained for correction and retake; activity completion alone is not mastery.</p>`;
  card.insertBefore(gate,card.firstChild);
 }
 const nextLessonLink=document.querySelector(".lesson-hero .actions a.primary[href]");
@@ -54,7 +62,10 @@ let draftPresent=false;
 const feedback=document.createElement("p");
 feedback.id="algebra2NoteFeedback";
 feedback.setAttribute("role","status");feedback.setAttribute("aria-live","polite");
-feedback.style.cssText="font-size:14px;line-height:1.45;margin:10px 0;color:inherit;overflow-wrap:anywhere;";
+feedback.style.cssText="font-size:16px;line-height:1.45;margin:10px 0;color:inherit;overflow-wrap:anywhere;";
+const rubricStyle=document.createElement("style");
+rubricStyle.textContent=".lesson-evidence-rubric{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin:14px 0}.lesson-evidence-rubric label,.lesson-evidence-rubric select{font-size:16px;line-height:1.45}.lesson-evidence-rubric select{width:100%;min-height:44px;margin-top:6px}@media(max-width:760px){.lesson-evidence-rubric{grid-template-columns:1fr}}";
+document.head.appendChild(rubricStyle);
 const buttons=document.createElement("div");
 buttons.style.cssText="display:flex;flex-wrap:wrap;gap:8px;margin-top:10px;";
 const makeButton=(text,callback)=>{
@@ -91,6 +102,12 @@ function scopeReady(){
  }
  return false;
 }
+function syncRubricPreview(){
+ const evaluated=rubricEvidence();
+ const preview=document.getElementById("lessonRubricPreview");
+ if(preview)preview.textContent=evaluated.missing.length?`Rubric incomplete · ${5-evaluated.missing.length}/5 criteria scored.`:`Calculated evidence score: ${evaluated.score}% · ${evaluated.score>=MASTERY?"mastery range":"revision range"}.`;
+}
+["lessonRubricConcept","lessonRubricProcedure","lessonRubricReasoning","lessonRubricVerification","lessonRubricTransfer"].forEach(elementId=>document.getElementById(elementId)?.addEventListener("change",syncRubricPreview));
 function updateStatus(){
  const ev=masteryEvidence();
  if(box){box.checked=ev.mastery;box.disabled=true}
@@ -136,17 +153,42 @@ function flushDraft(){
 function safeWrite(next){
  try{return progress.writeJSON(KEY,next)===true;}catch{return false;}
 }
+function rubricEvidence(){
+ const criteria=[
+  ["conceptual_understanding","lessonRubricConcept",25],
+  ["procedure_accuracy","lessonRubricProcedure",25],
+  ["reasoning_justification","lessonRubricReasoning",20],
+  ["verification_representation","lessonRubricVerification",15],
+  ["transfer_communication","lessonRubricTransfer",15]
+ ];
+ const rubric={},missing=[];
+ let score=0;
+ for(const [key,elementId,weight] of criteria){
+  const el=document.getElementById(elementId),raw=el?.value;
+  if(raw==null||raw===""){missing.push(el);continue}
+  const level=Number(raw);
+  if(!Number.isFinite(level)||level<0||level>4){missing.push(el);continue}
+  rubric[key]={level,weight,weighted_points:Math.round((level/4)*weight*100)/100};
+  score+=(level/4)*weight;
+ }
+ return {rubric,missing,score:Math.round(score)};
+}
 function saveMasteryAttempt(){
  if(!scopeReady())return;
- const input=document.getElementById("lessonMasteryScore"),rawScore=input?.value,score=rawScore==null||String(rawScore).trim()===""?NaN:Number(rawScore);
- if(!Number.isFinite(score)||score<0||score>100){announce("Enter an evaluator score from 0 to 100 before submitting.");input?.focus();return;}
+ const evaluated=rubricEvidence();
+ if(evaluated.missing.length){
+  announce("Complete all five evidence criteria before recording lesson mastery.");
+  evaluated.missing[0]?.focus();
+  return;
+ }
+ const score=evaluated.score;
  const latest=read(),current=latest[id]||{},attempts=Array.isArray(current.attempts)?[...current.attempts]:[];
- attempts.push({score,mastery_threshold:MASTERY,mastery_met:score>=MASTERY,recorded_at:now(),classification:"local-evaluator-score"});
+ attempts.push({score,rubric:evaluated.rubric,rubric_schema:"khaemenes-algebra2-lesson-evidence-v1",mastery_threshold:MASTERY,mastery_met:score>=MASTERY,recorded_at:now(),classification:"local-evaluator-rubric"});
  const best=Math.max(Number(current.bestScore)||0,score),mastery=best>=MASTERY;
- const next={...latest,[id]:{...current,attempts,bestScore:best,score,mastery,complete:mastery,updated:now(),masteryUpdated:now()}};
+ const next={...latest,[id]:{...current,attempts,bestScore:best,score,rubric:evaluated.rubric,mastery,complete:mastery,updated:now(),masteryUpdated:now()}};
  if(!safeWrite(next)){announce("The mastery attempt could not be saved. No progression credit was granted.");return;}
  const verified=masteryEvidence();
- announce(verified.mastery?`Assignment submitted · Best ${verified.best}% · ${MASTERY}% lesson mastery met.`:`Assignment submitted · Best ${verified.best??score}% · below ${MASTERY}%; correct the work and submit a new evaluated attempt.`);
+ announce(verified.mastery?`Evaluated evidence recorded · ${score}% this attempt · Best ${verified.best}% · ${MASTERY}% lesson mastery met.`:`Evaluated evidence recorded · ${score}% this attempt · Best ${verified.best??score}% · below ${MASTERY}%; revise the evidence and submit a new evaluated attempt.`);
  updateStatus();
 }
 function saveNote(force=false){
