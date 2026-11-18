@@ -162,7 +162,15 @@ function paint(){
  }
  refresh();
 }
-function note(s){trace.push(ms()+" "+s);if(trace.length>50)trace.shift();\n // Run the costly full-page forensic report once when the panel is first shown.\n // Later DOM events remain in the timeline until the user clicks Refresh snapshot.\n if(!panel&&!scheduled&&!closed){scheduled=true;requestAnimationFrame(()=>{scheduled=false;paint()})}\n}
+function note(s){
+ trace.push(ms()+" "+s);
+ if(trace.length>50)trace.shift();
+ // A full report is expensive; later events are shown on explicit Refresh.
+ if(!panel&&!scheduled&&!closed){
+  scheduled=true;
+  requestAnimationFrame(()=>{scheduled=false;paint()});
+ }
+}
 const tracked=new Set(targets.map(t=>t[1]));
 const observer=new MutationObserver(records=>{
  const changes=[];
