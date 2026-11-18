@@ -51,7 +51,7 @@ function simulate(course,{partiallyAnswered=false,constructed=false,saveFails=fa
   MASTERY_TARGET:80,MASTERY:80,formalGate:true,Date,Math,location:{pathname:'/courses/mathematics/algebra-2/units/unit-11/assessment/mastery-check.html'},
   cfg:{recordKey:isGeo?'unit-11':'u11-mastery',title:'Assessment'},
   DEPTH:constructed?{constructed:[{domain:'reason'}],response_min_chars:60}:null,
-  load:()=>({}),save:()=>{saved++;return !saveFails;},record,showResult:()=>{shown++;},renderEvaluator:()=>{shown++;},
+  load:()=>({}),save:()=>{saved++;return !saveFails;},priorQuestionIds:()=>new Set(),record,showResult:()=>{shown++;},renderEvaluator:()=>{shown++;},
   esc:()=>'',console,createElement:()=>{},
  });
  vm.runInContext(scoreSource+'\nfunction run(){return score("abc")};',ctx);
