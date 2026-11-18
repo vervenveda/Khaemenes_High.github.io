@@ -1780,7 +1780,20 @@ html:root:root body[data-khae-campus-front-desk="true"] main#main .high-frontdes
       toast("Khaemenes High installed.");
     });
   }
-  if("serviceWorker" in navigator){window.addEventListener("load",()=>navigator.serviceWorker.register("./service-worker.js").catch(()=>{}));}
+  if("serviceWorker" in navigator){
+    window.addEventListener("load",()=>{
+      const hadController=Boolean(navigator.serviceWorker.controller);
+      let recoveryReload=false;
+      navigator.serviceWorker.addEventListener("controllerchange",()=>{
+        if(!hadController||recoveryReload)return;
+        recoveryReload=true;
+        location.reload();
+      },{once:true});
+      navigator.serviceWorker.register("./service-worker.js",{updateViaCache:"none"})
+        .then(registration=>registration.update())
+        .catch(()=>{});
+    },{once:true});
+  }
 
   const yearNode=$("year");
   if(yearNode)yearNode.textContent=new Date().getFullYear();
@@ -2100,19 +2113,18 @@ html:root:root body #drawerBg .drawer .menu-link{min-height:52px}
    pending=true;
    requestAnimationFrame(()=>{pending=false;measure()});
  }
- const mutation=new MutationObserver(records=>{
-   if(records.some(r=>[...r.addedNodes,...r.removedNodes].some(n=>
-     n.nodeType===1&&ids.some(id=>n.id===id||n.querySelector?.('[id="'+id+'"]'))
-   )))schedule();
- });
- function start(){
-   mutation.observe(document.body,{subtree:true,childList:true});
+ function observeTickers(){
+   ids.forEach(id=>{
+     const el=document.getElementById(id);
+     if(el&&observer&&!seen.has(el)){seen.add(el);observer.observe(el)}
+   });
    schedule();
  }
- if(document.body)start();else document.addEventListener("DOMContentLoaded",start,{once:true});
+ if(document.body)observeTickers();else document.addEventListener("DOMContentLoaded",observeTickers,{once:true});
+ [80,240,700,1600].forEach(ms=>setTimeout(observeTickers,ms));
  document.addEventListener("DOMContentLoaded",schedule,{once:true});
- window.addEventListener("load",schedule,{once:true});
- window.addEventListener("pageshow",schedule);
+ window.addEventListener("load",observeTickers,{once:true});
+ window.addEventListener("pageshow",observeTickers);
  window.addEventListener("resize",schedule,{passive:true});
 })();
 </script>
