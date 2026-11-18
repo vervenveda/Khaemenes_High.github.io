@@ -1,6 +1,6 @@
 "use strict";
 
-const CACHE_VERSION = "khaemenes-high-v40-eight-class-20261103";
+const CACHE_VERSION = "khaemenes-high-v41-model-forge-20261118";
 // Generated from canonical game-registry.json; validated by tools/test-math-game-offline-cache.mjs.
 // Every canonical game and its shared runtime must be available on a newly installed offline worker.
 const GAME_PRECACHE_FILES = [
@@ -43,6 +43,7 @@ const GAME_PRECACHE_FILES = [
   "./courses/mathematics/assets/learning-games/exponential-logarithm-lab/index.html",
   "./courses/mathematics/assets/learning-games/polynomial-zeros-explorer/index.html",
   "./courses/mathematics/assets/learning-games/matrix-mission-control/index.html",
+  "./courses/mathematics/assets/learning-games/model-forge/index.html",
   "./courses/mathematics/assets/learning-games/sequence-series-studio/index.html",
   "./courses/mathematics/assets/learning-games/complex-plane-lab/index.html",
   "./courses/mathematics/assets/learning-games/statistics-detective/index.html",
