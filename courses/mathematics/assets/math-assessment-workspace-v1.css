@@ -1,0 +1,420 @@
+/* Khaemenes Academy · Mathematics Assessment Workspace v1
+   Presentation only. One-column online worksheet treatment inspired by the
+   Academy printable progression. Does not alter scoring, mastery, identity,
+   learner records, assessment content, or persistence authority. */
+
+body.math-assessment-surface{
+  --assessment-paper:#fbf8f1;
+  --assessment-paper-2:#f3eee3;
+  --assessment-ink:#242725;
+  --assessment-muted:#5b605d;
+  --assessment-charcoal:#252b2b;
+  --assessment-gold:#b68a3e;
+  --assessment-line:#cdbf9f;
+  --assessment-soft:#e7ddc9;
+  margin:0!important;
+  background:linear-gradient(180deg,#fdfbf6 0,#f8f3e9 100%)!important;
+  color:var(--assessment-ink)!important;
+  font-family:"Brandon Grotesque","Avenir Next",Avenir,"Segoe UI",Arial,sans-serif!important;
+  font-size:18px!important;
+  font-weight:400!important;
+  line-height:1.6!important;
+}
+body.math-assessment-surface :is(button,input,select,textarea){
+  font-family:"Brandon Grotesque","Avenir Next",Avenir,"Segoe UI",Arial,sans-serif!important;
+  font-size:18px!important;
+  font-weight:400!important;
+}
+body.math-assessment-surface :is(h1,h2,h3,h4,legend){
+  font-family:Cinzel,"Iowan Old Style","Palatino Linotype",Palatino,Georgia,serif!important;
+  font-weight:400!important;
+  color:var(--assessment-ink)!important;
+}
+body.math-assessment-surface > :is(.site-header,.algebra1-local-nav){display:none!important}
+body.math-assessment-surface .breadcrumb{
+  border:0!important;
+  border-bottom:1px solid var(--assessment-soft)!important;
+  background:#fffdf8!important;
+  color:var(--assessment-muted)!important;
+}
+body.math-assessment-surface .breadcrumb .wrap{
+  min-height:42px!important;
+  max-width:1040px!important;
+  justify-content:center!important;
+  padding:8px 18px!important;
+  font-size:16px!important;
+  text-transform:none!important;
+  letter-spacing:.01em!important;
+}
+body.math-assessment-surface .breadcrumb a{color:#4c514e!important}
+body.math-assessment-surface main#main{padding:0 0 104px!important;background:transparent!important}
+body.math-assessment-surface .hero{
+  min-height:0!important;
+  padding:34px 18px 24px!important;
+  margin:0!important;
+  border:0!important;
+  border-bottom:1px solid var(--assessment-soft)!important;
+  border-radius:0!important;
+  box-shadow:none!important;
+  text-align:center!important;
+  color:var(--assessment-ink)!important;
+  background:
+    linear-gradient(180deg,rgba(255,255,255,.94),rgba(251,248,241,.96)),
+    repeating-linear-gradient(0deg,transparent 0 31px,rgba(80,70,50,.035) 32px)!important;
+}
+body.math-assessment-surface .hero .wrap{width:min(960px,calc(100% - 30px))!important}
+body.math-assessment-surface .hero :is(.eyebrow,.kicker){
+  margin:0 0 9px!important;
+  color:#8b682d!important;
+  font:400 18px/1.4 Cinzel,Georgia,serif!important;
+  letter-spacing:.05em!important;
+  text-transform:none!important;
+}
+body.math-assessment-surface .hero h1{
+  max-width:900px!important;
+  margin:0 auto 8px!important;
+  color:var(--assessment-ink)!important;
+  font:400 clamp(30px,4vw,40px)/1.18 Cinzel,Georgia,serif!important;
+  letter-spacing:0!important;
+}
+body.math-assessment-surface .hero .lead{
+  max-width:820px!important;
+  margin:0 auto!important;
+  color:var(--assessment-muted)!important;
+  font-size:18px!important;
+  line-height:1.55!important;
+}
+body.math-assessment-surface .hero .actions{
+  justify-content:center!important;
+  gap:8px!important;
+  margin-top:16px!important;
+}
+body.math-assessment-surface :is(.btn,.button,button){
+  border-radius:7px!important;
+  box-shadow:none!important;
+}
+body.math-assessment-surface .hero :is(.btn,.button){
+  min-height:42px!important;
+  padding:8px 13px!important;
+  border:1px solid #9d8357!important;
+  background:#fffdf8!important;
+  color:#353a37!important;
+}
+body.math-assessment-surface .hero :is(.btn.primary,.button.primary){
+  border-color:var(--assessment-charcoal)!important;
+  background:var(--assessment-charcoal)!important;
+  color:#fffaf0!important;
+}
+body.math-assessment-surface .block{
+  padding:14px 0!important;
+  background:transparent!important;
+}
+body.math-assessment-surface .block>.wrap{
+  width:min(1020px,calc(100% - 30px))!important;
+}
+body.math-assessment-surface .notice{
+  max-width:960px!important;
+  margin:0 auto 10px!important;
+  padding:14px 18px!important;
+  border:1px solid var(--assessment-line)!important;
+  border-left:4px solid var(--assessment-gold)!important;
+  border-radius:7px!important;
+  background:#fffdf8!important;
+  color:#4a4e4b!important;
+  line-height:1.55!important;
+}
+body.math-assessment-surface .practice-layout{
+  width:100%!important;
+  max-width:1020px!important;
+  display:flex!important;
+  flex-direction:column!important;
+  gap:18px!important;
+  margin-inline:auto!important;
+}
+body.math-assessment-surface .practice-layout>.card{
+  width:100%!important;
+  min-width:0!important;
+  padding:0!important;
+  border:0!important;
+  background:transparent!important;
+  box-shadow:none!important;
+}
+body.math-assessment-surface .practice-side{
+  order:-1!important;
+  position:static!important;
+  display:grid!important;
+  grid-template-columns:minmax(160px,1fr) minmax(180px,1fr)!important;
+  gap:10px 18px!important;
+  align-items:center!important;
+  padding:16px 18px!important;
+  border:1px solid var(--assessment-line)!important;
+  border-radius:7px!important;
+  background:#f6f0e5!important;
+  color:var(--assessment-ink)!important;
+}
+body.math-assessment-surface .practice-side h3{
+  grid-column:1/-1!important;
+  margin:0!important;
+  text-align:center!important;
+  font-size:22px!important;
+}
+body.math-assessment-surface .practice-side p{margin:0!important;color:#4e534f!important}
+body.math-assessment-surface .practice-side .actions{
+  grid-column:1/-1!important;
+  display:flex!important;
+  flex-wrap:wrap!important;
+  justify-content:center!important;
+  gap:7px!important;
+  margin:4px 0!important;
+}
+body.math-assessment-surface .practice-side .actions button{
+  min-height:42px!important;
+  padding:8px 12px!important;
+  border:1px solid #9e895f!important;
+  background:#fffdf8!important;
+  color:#303533!important;
+}
+body.math-assessment-surface .practice-side .actions .primary{
+  background:var(--assessment-charcoal)!important;
+  color:#fffaf0!important;
+  border-color:var(--assessment-charcoal)!important;
+}
+body.math-assessment-surface .progress{
+  height:10px!important;
+  border:1px solid #b9a988!important;
+  background:#fffdf8!important;
+}
+body.math-assessment-surface .progress span{background:linear-gradient(90deg,#9e7938,#c8a459)!important}
+body.math-assessment-surface #questionHost{
+  width:100%!important;
+  max-width:980px!important;
+  margin:0 auto!important;
+}
+body.math-assessment-surface #questionHost>section{
+  margin:0 0 22px!important;
+}
+body.math-assessment-surface #questionHost>section>h2{
+  margin:6px 0 14px!important;
+  text-align:center!important;
+  font-size:24px!important;
+}
+body.math-assessment-surface #questionHost .question-list{
+  display:grid!important;
+  grid-template-columns:1fr!important;
+  gap:16px!important;
+}
+body.math-assessment-surface #questionHost .question{
+  margin:0!important;
+  padding:0!important;
+  overflow:hidden!important;
+  border:1px solid var(--assessment-line)!important;
+  border-left:4px solid var(--assessment-gold)!important;
+  border-radius:7px!important;
+  background:#fffefb!important;
+  color:var(--assessment-ink)!important;
+  box-shadow:0 6px 18px rgba(55,45,25,.055)!important;
+}
+body.math-assessment-surface #questionHost .question fieldset{
+  min-width:0!important;
+  margin:0!important;
+  padding:18px 20px 20px!important;
+  border:0!important;
+  background:transparent!important;
+}
+body.math-assessment-surface #questionHost .question legend{
+  width:100%!important;
+  padding:0 0 12px!important;
+  font-size:20px!important;
+  line-height:1.45!important;
+}
+body.math-assessment-surface #questionHost .options{
+  display:grid!important;
+  grid-template-columns:repeat(2,minmax(0,1fr))!important;
+  gap:8px!important;
+  margin:0 0 14px!important;
+}
+body.math-assessment-surface #questionHost .option{
+  min-width:0!important;
+  display:flex!important;
+  align-items:flex-start!important;
+  gap:9px!important;
+  margin:0!important;
+  padding:10px 12px!important;
+  border:1px solid #d8cdb7!important;
+  border-radius:7px!important;
+  background:#faf6ed!important;
+  color:#303431!important;
+  font-size:18px!important;
+}
+body.math-assessment-surface #questionHost .option input{width:auto!important;min-height:0!important;margin-top:5px!important}
+body.math-assessment-surface .math-work-label{
+  display:block!important;
+  margin:14px 0 6px!important;
+  color:#545955!important;
+  font-size:16px!important;
+}
+body.math-assessment-surface .math-workspace{
+  width:100%!important;
+  min-height:145px!important;
+  resize:vertical!important;
+  padding:14px 16px!important;
+  border:1px solid #bfb193!important;
+  border-radius:7px!important;
+  background:
+    repeating-linear-gradient(180deg,#fffefa 0,#fffefa 30px,#ece4d4 31px)!important;
+  color:#252927!important;
+  font:400 18px/31px "Brandon Grotesque","Avenir Next",Arial,sans-serif!important;
+}
+body.math-assessment-surface .math-workspace::placeholder{color:#8a8c86!important}
+body.math-assessment-surface #questionHost .feedback{
+  margin-top:12px!important;
+  padding:11px 13px!important;
+  border-radius:7px!important;
+}
+body.math-assessment-surface .diagnostic-question-navigation{
+  margin:0 0 18px!important;
+  padding:12px!important;
+  border:1px solid var(--assessment-line)!important;
+  border-radius:7px!important;
+  background:#f2eadb!important;
+  color:var(--assessment-ink)!important;
+}
+body.math-assessment-surface .diagnostic-page-label{
+  color:#313633!important;
+  font-size:18px!important;
+}
+body.math-assessment-surface .diagnostic-page-actions .btn{
+  min-height:42px!important;
+  border:1px solid #a69169!important;
+  border-radius:7px!important;
+  background:#fffdf8!important;
+  color:#303532!important;
+  font-size:16px!important;
+}
+body.math-assessment-surface .diagnostic-page-actions .btn.primary{
+  border-color:var(--assessment-charcoal)!important;
+  background:var(--assessment-charcoal)!important;
+  color:#fffaf0!important;
+}
+
+/* Pre-Algebra assessment view uses the same worksheet language. */
+body.math-assessment-surface .app{display:block!important;min-height:100vh!important}
+body.math-assessment-surface .app>.sidebar{display:none!important}
+body.math-assessment-surface .app>.main{
+  width:min(1080px,100%)!important;
+  max-width:1080px!important;
+  margin:0 auto!important;
+  padding:26px 18px 100px!important;
+}
+body.math-assessment-surface .app>.main>.tabs{display:none!important}
+body.math-assessment-surface .app>.main>.hero{
+  margin:-26px -18px 20px!important;
+}
+body.math-assessment-surface #assessmentWorkspace{
+  padding:24px!important;
+  border:1px solid var(--assessment-line)!important;
+  border-radius:7px!important;
+  background:#fffdf8!important;
+  color:var(--assessment-ink)!important;
+  box-shadow:0 10px 26px rgba(55,45,25,.07)!important;
+}
+body.math-assessment-surface #assessmentWorkspace>.eyebrow{
+  color:#8b682d!important;
+  font:400 17px/1.4 Cinzel,Georgia,serif!important;
+  letter-spacing:.04em!important;
+  text-align:center!important;
+  text-transform:none!important;
+}
+body.math-assessment-surface #assessmentWorkspace>h3{
+  margin:2px 0 10px!important;
+  text-align:center!important;
+  font-size:30px!important;
+}
+body.math-assessment-surface #assessmentWorkspace>.section-note{
+  max-width:760px!important;
+  margin:0 auto 16px!important;
+  color:var(--assessment-muted)!important;
+  text-align:center!important;
+  font-size:18px!important;
+}
+body.math-assessment-surface #assessmentWorkspace>.tabs{
+  display:grid!important;
+  grid-template-columns:repeat(2,minmax(0,1fr))!important;
+  gap:8px!important;
+  max-width:760px!important;
+  margin:14px auto!important;
+}
+body.math-assessment-surface #assessmentWorkspace>.tabs .tab{
+  min-height:44px!important;
+  border:1px solid #a68e62!important;
+  border-radius:7px!important;
+  background:#f7f1e5!important;
+  color:#333834!important;
+}
+body.math-assessment-surface #assessmentWorkspace>.tabs .tab.active{
+  background:var(--assessment-charcoal)!important;
+  color:#fffaf0!important;
+  border-color:var(--assessment-charcoal)!important;
+}
+body.math-assessment-surface #assessmentWorkspace .panel{
+  margin:16px 0!important;
+  padding:18px!important;
+  border:1px solid var(--assessment-line)!important;
+  border-radius:7px!important;
+  background:#fffefb!important;
+  color:var(--assessment-ink)!important;
+  box-shadow:none!important;
+}
+body.math-assessment-surface #assessmentWorkspace .panel>h4{
+  margin:0 0 12px!important;
+  text-align:center!important;
+  font-size:21px!important;
+}
+body.math-assessment-surface #assessmentWorkspace .q{
+  margin:14px 0!important;
+  padding:18px!important;
+  border:1px solid #d2c6ae!important;
+  border-left:4px solid var(--assessment-gold)!important;
+  border-radius:7px!important;
+  background:#fffdf8!important;
+  color:var(--assessment-ink)!important;
+}
+body.math-assessment-surface #assessmentWorkspace .q legend{
+  padding:0 0 10px!important;
+  font-size:20px!important;
+  line-height:1.45!important;
+}
+body.math-assessment-surface #assessmentWorkspace .choice{
+  display:block!important;
+  margin:7px 0!important;
+  padding:10px 12px!important;
+  border:1px solid #ddd2be!important;
+  border-radius:7px!important;
+  background:#f9f4ea!important;
+  color:#303431!important;
+  font-size:18px!important;
+}
+body.math-assessment-surface #assessmentWorkspace .choice input{width:auto!important}
+body.math-assessment-surface #assessmentWorkspace .actions{
+  justify-content:center!important;
+}
+
+@media(max-width:760px){
+  body.math-assessment-surface{font-size:18px!important}
+  body.math-assessment-surface .hero{padding:28px 12px 20px!important}
+  body.math-assessment-surface .hero h1{font-size:30px!important}
+  body.math-assessment-surface .practice-side{grid-template-columns:1fr!important}
+  body.math-assessment-surface #questionHost .options{grid-template-columns:1fr!important}
+  body.math-assessment-surface #questionHost .question fieldset{padding:16px!important}
+  body.math-assessment-surface #assessmentWorkspace{padding:18px 14px!important}
+  body.math-assessment-surface #assessmentWorkspace>.tabs{grid-template-columns:1fr!important}
+}
+@media print{
+  body.math-assessment-surface{background:#fff!important;color:#111!important}
+  body.math-assessment-surface .breadcrumb,
+  body.math-assessment-surface .hero .actions,
+  body.math-assessment-surface .practice-side .actions,
+  body.math-assessment-surface .diagnostic-question-navigation,
+  body.math-assessment-surface #khae-math-tools{display:none!important}
+  body.math-assessment-surface .math-workspace{min-height:110px!important;background:#fff!important}
+}
