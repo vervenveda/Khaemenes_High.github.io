@@ -11,7 +11,7 @@ const subject=match[1];
 const high="/Khaemenes_High.github.io/";
 const home=high+"courses/language-arts/"+subject+"/";
 const destinations=[
- ["Reading",home+"learning-tools.html","English reading practice and resources"],
+ ["Reading",home+"learning-tools.html#literary-toolbox","English literature, language, writing, research and word-study resource directory"],
  ["Writing",home+"evidence-studio.html","Reading-to-Writing Evidence Studio"],
  ["Lessons",home+"weeks/week-01/index.html","Start the first English lesson"],
  ["Assess",home+"assessments/","Official English assessments"],
