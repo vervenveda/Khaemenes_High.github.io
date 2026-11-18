@@ -12,13 +12,14 @@ function script(name,id){
 }
 async function boot(){
  css();
+ await script("math-storage-adapter-v1.js","khaeMathStorageAdapterV1");
  await script("math-learner-record-v1.js","khaeMathLearnerRecordV1");
  await script("math-progress-contract-v1.js","khaeMathProgressContractV1");
  await script("math-storage-health-v2.js","khaeMathStorageHealthV2");
  await script("math-evidence-authority-v1.js","khaeMathEvidenceAuthorityV1");
  await script("math-progression-ledger-v1.js","khaeMathProgressionLedgerV1");
  try{window.KhaemenesMathLearnerRecord?.captureLegacy?.("hardening-loader");window.KhaemenesMathProgressionLedger?.capture?.("hardening-loader")}catch(e){console.warn("Mathematics hardening capture incomplete.",e)}
- window.dispatchEvent(new CustomEvent("khaemenes-math-hardening-ready",{detail:{version:"1.1.0"}}));
+ window.dispatchEvent(new CustomEvent("khaemenes-math-hardening-ready",{detail:{version:"1.2.0"}}));
 }
 window.KhaemenesMathHardeningLoader=Object.freeze({boot,version:"1.1.0"});
 boot();
