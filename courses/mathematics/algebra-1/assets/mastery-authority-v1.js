@@ -13,7 +13,7 @@ function ensureResponsiveLayout(){
 function ensureFocusedAssessment(){
  if(typeof document==="undefined"||typeof location==="undefined")return;
  const path=location.pathname.toLowerCase();
- const assessmentContext=/\/diagnostic\//.test(path)||/\/assessments\//.test(path)||/\/assessment\//.test(path)||document.body?.dataset?.mode==="mastery";
+ const assessmentContext=/\/assessment\//.test(path)||document.body?.dataset?.mode==="mastery";
  if(!assessmentContext)return;
  if(window.KhaemenesAlgebra1FocusedAssessment||document.querySelector('script[data-algebra1-focused="v1"]'))return;
  const script=document.createElement("script");
