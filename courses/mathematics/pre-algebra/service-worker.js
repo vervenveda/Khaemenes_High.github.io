@@ -2,7 +2,7 @@
 // Applied Mission Studio v1.7.0 · compact pop-out evidence recovery.
 
 const CACHE_PREFIX="khaemenes-prealgebra-core-";
-const CACHE_NAME=`${CACHE_PREFIX}v22-math-compat-20261117`;
+const CACHE_NAME=`${CACHE_PREFIX}v23-runtime-recovery-20261118`;
 const CORE_FILES=["./units/unit-02/assets/lesson-engine.js","./units/unit-03/assets/lesson-engine.js","./units/unit-04/assets/lesson-engine.js","./units/unit-05/assets/lesson-engine.js","./units/unit-06/assets/lesson-engine.js","./units/unit-07/assets/lesson-engine.js","./units/unit-08/assets/lesson-engine.js","./units/unit-09/assets/lesson-engine.js","./units/unit-10/assets/lesson-engine.js","./units/unit-11/assets/lesson-engine.js","./units/unit-12/assets/lesson-engine.js","./units/unit-13/assets/lesson-engine.js","./units/unit-02/assets/unit-dashboard.js","./units/unit-03/assets/unit-dashboard.js","./units/unit-04/assets/unit-dashboard.js","./units/unit-05/assets/unit-dashboard.js","./units/unit-06/assets/unit-dashboard.js","./units/unit-07/assets/unit-dashboard.js","./units/unit-08/assets/unit-dashboard.js","./units/unit-09/assets/unit-dashboard.js","./units/unit-10/assets/unit-dashboard.js","./units/unit-11/assets/unit-dashboard.js","./units/unit-12/assets/unit-dashboard.js","./units/unit-13/assets/unit-dashboard.js","./units/unit-02/assets/unit02-vnv-ka-blueprint-v1.css","./units/unit-01/assets/unit01-vnv-ka-blueprint-v1.css","./assets/prealgebra-vnv-ka-blueprint-v1.css","./records/learner-archive.html","./records/learner-archive-v1.js","./assets/prealgebra-export-reminder-v1.js","./assets/prealgebra-activity-evidence-v1.js","./assets/prealgebra-answer-draft-v1.js","../../shared/course-entry-contract.js","../../shared/learner-scope-v1.js",
  "../assets/math-course-shell-v1.js","../assets/math-learning-tools-v2.js","../assets/math-progress-contract-v1.js","../assets/math-compatibility-v1.js","./course-map-v2.json",
   "./",
@@ -80,6 +80,27 @@ async function cacheGoodResponse(request,response){
 function releaseMatch(request,options={ignoreSearch:true}){
   return caches.open(CACHE_NAME).then(cache=>cache.match(request,options));
 }
+function isMutableRuntime(request,url){
+  const path=url.pathname.toLowerCase();
+  return request.destination==="script"||
+    request.destination==="style"||
+    path.endsWith(".json")||
+    path.includes("/courses/shared/")||
+    path.includes("/courses/mathematics/assets/")||
+    path.endsWith("/assets/high-school-global-chrome-v2.js")||
+    path.endsWith("/assets/vnv-dual-ticker-v1.js");
+}
+async function networkFirst(request,{ignoreSearch=false}={}){
+  try{
+    const response=await fetch(new Request(request,{cache:"no-store"}));
+    if(response?.ok)await cacheGoodResponse(request,response);
+    return response;
+  }catch(error){
+    const cached=await releaseMatch(request,{ignoreSearch});
+    if(cached)return cached;
+    throw error;
+  }
+}
 self.addEventListener("fetch",event=>{
   const request=event.request;
   if(request.method!=="GET")return;
@@ -88,20 +109,18 @@ self.addEventListener("fetch",event=>{
 
   if(request.mode==="navigate"){
     if(!url.href.startsWith(scopeURL.href))return;
-    event.respondWith((async()=>{
-      try{
-        const response=await fetch(request);
-        if(isReusableLessonPage(url))await cacheGoodResponse(request,response);
-        return response;
-      }catch{
-        const cached=await releaseMatch(request,{ignoreSearch:true});
-        return cached || await releaseMatch(new URL("./offline.html",scopeURL.href).href,{ignoreSearch:true}) || Response.error();
-      }
-    })());
+    event.respondWith(
+      networkFirst(request,{ignoreSearch:true})
+        .catch(async()=>await releaseMatch(new URL("./offline.html",scopeURL.href).href,{ignoreSearch:true})||Response.error())
+    );
     return;
   }
 
   const isCore=CORE_FILES.some(file=>new URL(file,scopeURL.href).href===url.href);
+  if(isMutableRuntime(request,url)){
+    event.respondWith(networkFirst(request,{ignoreSearch:true}));
+    return;
+  }
   if(isCore||isCourseAsset(url)){
     event.respondWith((async()=>{
       const cached=await releaseMatch(request,{ignoreSearch:true});
