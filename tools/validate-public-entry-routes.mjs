@@ -64,8 +64,15 @@ function resolveTarget(source,raw){
   const stripped=raw.split("#",1)[0].split("?",1)[0];
   if(!stripped)return "index.html";
   const decoded=decodeURIComponent(stripped);
-  const base=decoded.startsWith("/")?"":path.posix.dirname(source);
-  return path.posix.normalize(path.posix.join(base,decoded.replace(/^\/+/, "")));
+  const projectPrefix="/Khaemenes_High.github.io/";
+  const absolute=decoded.startsWith("/");
+  const repositoryPath=decoded.startsWith(projectPrefix)
+    ? decoded.slice(projectPrefix.length)
+    : decoded.replace(/^\/+/, "");
+  const base=absolute?"":path.posix.dirname(source);
+  const target=path.posix.normalize(path.posix.join(base,repositoryPath));
+  if(target===".."||target.startsWith("../"))throw new Error("route escapes repository root");
+  return target;
 }
 function targetExists(target){
   return files.has(target)||files.has(path.posix.join(target,"index.html"))||(!path.posix.extname(target)&&files.has(`${target}.html`));
