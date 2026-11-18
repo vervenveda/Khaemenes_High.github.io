@@ -4837,10 +4837,17 @@ if(!state.students.length)addStudent("First Learner");else render();
 <script>
 if("serviceWorker" in navigator){
   window.addEventListener("load",()=>{
-    navigator.serviceWorker.register("service-worker.js",{scope:"./"}).catch(error=>{
-      console.warn("Pre-Algebra offline core could not be registered.",error);
-    });
-  });
+    const hadController=Boolean(navigator.serviceWorker.controller);
+    let recoveryReload=false;
+    navigator.serviceWorker.addEventListener("controllerchange",()=>{
+      if(!hadController||recoveryReload)return;
+      recoveryReload=true;
+      location.reload();
+    },{once:true});
+    navigator.serviceWorker.register("service-worker.js",{scope:"./",updateViaCache:"none"})
+      .then(registration=>registration.update())
+      .catch(error=>console.warn("Pre-Algebra offline core could not be registered.",error));
+  },{once:true});
 }
 </script>
 <script defer src="https://vervenveda.com/assets/vnv-333-ticker.js" data-ka-blueprint="ticker-333"></script>
