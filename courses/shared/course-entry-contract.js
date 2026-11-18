@@ -128,6 +128,34 @@
   }
   ensureMathReadabilityFloor();
 
+  /* High School mathematics canonical footer · presentation only */
+  function ensureMathFooter(){
+    if(typeof document==="undefined"||typeof location==="undefined")return;
+    const path=String(location.pathname||"").toLowerCase();
+    const match=path.match(/\/courses\/mathematics\/(pre-algebra|algebra-1|geometry|algebra-2)(?:\/|$)/);
+    if(!match)return;
+    const mount=()=>{
+      if(!document.body||document.querySelector("footer"))return;
+      if(!document.getElementById("khaeMathCanonicalFooterStyleV1")){
+        const style=document.createElement("style");
+        style.id="khaeMathCanonicalFooterStyleV1";
+        style.textContent='#khaeMathCanonicalFooterV1{box-sizing:border-box;width:100%;min-height:66px;margin-top:44px;padding:22px 16px;display:grid;place-items:center;background:#242c29;color:#fff8eb;text-align:center;font:400 16px/1.55 Nunito,"Avenir Next",Arial,sans-serif;border-top:1px solid rgba(255,248,235,.2)}#khaeMathCanonicalFooterV1 p{margin:0;font-size:16px!important;color:#fff8eb!important}';
+        (document.head||document.documentElement).appendChild(style);
+      }
+      const names={"pre-algebra":"Pre-Algebra","algebra-1":"Algebra I","geometry":"Geometry","algebra-2":"Algebra II"};
+      const footer=document.createElement("footer");
+      footer.id="khaeMathCanonicalFooterV1";
+      footer.dataset.khaemenesMathCanonicalFooter="v1";
+      const p=document.createElement("p");
+      p.textContent="Khaemenes Academy · "+(names[match[1]]||"Mathematics")+" · Local-first learning evidence";
+      footer.appendChild(p);
+      document.body.appendChild(footer);
+    };
+    if(document.readyState==="loading")document.addEventListener("DOMContentLoaded",mount,{once:true});
+    else mount();
+  }
+  ensureMathFooter();
+
   /* High School mathematics hardening bridge · canonical v1 */
   function ensureMathHardeningLayer(){
     if(typeof document==="undefined"||typeof location==="undefined")return;
