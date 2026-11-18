@@ -28,3 +28,15 @@ function exportResult(){const[s,r]=weekState(current),payload={schema:"khaemenes
 function init(){if(Object.keys(BANK).length!==36){$("status").textContent="Assessment bank incomplete; weekly mastery unavailable.";$("submitButton").disabled=true;return}const q=requested();current=blocker(q)?Math.min(q,maxSequentialWeek()):q;populate();$("submitButton").onclick=submit;$("saveButton").onclick=()=>{const[s,r]=weekState(current);r.draft.updated_at=new Date().toISOString();write(STORE,s);$("status").textContent="Draft saved locally."};$("exportButton").onclick=exportResult;$("resetButton").onclick=reset;$("nextWeekButton").onclick=()=>{if(current<36)setWeek(current+1)};$("themeToggle").onclick=()=>{document.documentElement.dataset.theme=document.documentElement.dataset.theme==="light"?"dark":"light"};$("printButton").onclick=()=>print();window.addEventListener("popstate",()=>{current=requested();render()});render()}
 init();
 })();
+
+/* Shared mathematics storage/evidence hardening for assessment surfaces. */
+;(()=>{
+ if(window.KhaemenesMathHardeningLoader||document.getElementById("khaeMathHardeningAssessmentLoader"))return;
+ const current=document.currentScript;
+ const loader=document.createElement("script");
+ loader.id="khaeMathHardeningAssessmentLoader";
+ loader.src=new URL("../../../assets/math-hardening-loader-v1.js",current?.src||location.href).href;
+ loader.async=false;
+ loader.onerror=()=>console.warn("Mathematics assessment hardening layer unavailable; assessment remains usable under existing safeguards.");
+ (document.head||document.documentElement).appendChild(loader);
+})();
