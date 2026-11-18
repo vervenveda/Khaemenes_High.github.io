@@ -188,10 +188,22 @@ for(const p of ["courses/language-arts/english-9/assets/week04-assessment.js","c
 // Social Studies 10–12 retain authentic course evidence while randomizing selected response.
 for(const grade of [10,11,12]){
   const html=read("courses/social-studies/grade-"+grade+"/index.html");
-  for(const token of ["highAssessmentDraw","KhaemenesHighAssessmentAdapter","attemptId","questionIds","reviewSkills","score>=80","highAssessmentComplete"]){
-    assert(html.includes(token),"Social Studies "+grade+" missing "+token);
+  // Grade 10 intentionally extracts course runtime to app.js; Grades 11–12
+  // still own their runtime inline. Check the executed source, not old layout.
+  const source=grade===10
+    ? read("courses/social-studies/grade-10/app.js")
+    : html;
+  if(grade===10){
+    assert(/src="app\\.js(?:\\?[^"]*)?"/.test(html),"Social Studies 10 canonical app.js must be loaded.");
+    try{new Function(source)}catch(e){throw new Error("Social Studies 10 runtime syntax: "+e.message)}
+    for(const contract of ["learner:",":monte-carlo:weekly:","getResponses","saveResponse","isActive","attemptHistory","constructedResponsePendingReview"]){
+      assert(source.includes(contract),"Social Studies 10 learner session safety contract missing "+contract);
+    }
   }
-  assert(/capstone/i.test(html),"Social Studies "+grade+" lost capstone/performance evidence.");
+  for(const token of ["highAssessmentDraw","KhaemenesHighAssessmentAdapter","attemptId","questionIds","reviewSkills","score>=80","highAssessmentComplete"]){
+    assert(source.includes(token),"Social Studies "+grade+" missing "+token);
+  }
+  assert(/capstone|constructed response|source-based analysis/i.test(source),"Social Studies "+grade+" lost capstone/performance evidence.");
 }
 assert(/thesis/i.test(read("courses/social-studies/grade-12/index.html")),"Grade 12 Social Studies lost thesis evidence.");
 
