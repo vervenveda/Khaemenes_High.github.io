@@ -28,7 +28,7 @@ for(const [name,count] of [["foundation",12],["core",16],["extended",20]]){
  const html=read(`units/unit-01/practice/${name}.html`);
  must(html.includes("algebra2-depth-bank-v1.js"),`${name} practice loads depth bank`);
  must(html.includes(`"count":${count}`),`${name} practice uses ${count} items`);
- must(html.toLowerCase().includes(`"pathway":"${name}`` .slice(0,-1).toLowerCase()),`${name} practice declares fixed pathway`);
+ must(html.toLowerCase().includes(`"pathway":"${name}"`.toLowerCase()),`${name} practice declares fixed pathway`);
 }
 const mastery=read("units/unit-01/assessment/mastery-check.html");
 must(mastery.includes('"count":20')&&mastery.includes('"depthBlueprint":true'),"Unit 01 mastery uses 20-question depth blueprint");
