@@ -1,0 +1,3286 @@
+{
+  "schema": "khaemenes-algebra1-weekly-mastery-answer-key-v3",
+  "course": "KH-MATH-A1",
+  "mastery_threshold": 80,
+  "question_count": 360,
+  "weekly_count": 10,
+  "note": "Week 1 is non-graded readiness. Weeks 2-36 use 8 current-focus and 2 delayed-retrieval items with two items in each of five reasoning dimensions.",
+  "weeks": {
+    "1": {
+      "week": 1,
+      "unit": 0,
+      "title": "Readiness Confirmation",
+      "graded": false,
+      "current_count": 10,
+      "delayed_count": 0,
+      "retrieval_from_week": null,
+      "questions": [
+        {
+          "id": "a1-w01-q01",
+          "dimension": "procedural-fluency",
+          "retrieval_from_week": null,
+          "prompt": "Evaluate −6 + 14 − 9.",
+          "answer": "−1",
+          "explanation": "−6+14=8 and 8−9=−1."
+        },
+        {
+          "id": "a1-w01-q02",
+          "dimension": "procedural-fluency",
+          "retrieval_from_week": null,
+          "prompt": "Simplify 3(2x−5)+4x.",
+          "answer": "10x−15",
+          "explanation": "Distribute first, then combine like terms: 6x−15+4x=10x−15."
+        },
+        {
+          "id": "a1-w01-q03",
+          "dimension": "multi-step-application",
+          "retrieval_from_week": null,
+          "prompt": "A recipe uses 3 cups for 8 servings. At the same rate, how many cups are needed for 20 servings?",
+          "answer": "7.5",
+          "explanation": "3/8=c/20 gives c=7.5 cups."
+        },
+        {
+          "id": "a1-w01-q04",
+          "dimension": "representation-interpretation",
+          "retrieval_from_week": null,
+          "prompt": "A taxi charges $4 plus $2.50 per mile. Which expression gives the cost for m miles?",
+          "answer": "4+2.5m",
+          "explanation": "The fixed charge is 4 and the variable charge is 2.5m."
+        },
+        {
+          "id": "a1-w01-q05",
+          "dimension": "representation-interpretation",
+          "retrieval_from_week": null,
+          "prompt": "Which point lies in Quadrant II?",
+          "answer": "(−3,4)",
+          "explanation": "Quadrant II has negative x and positive y."
+        },
+        {
+          "id": "a1-w01-q06",
+          "dimension": "error-analysis",
+          "retrieval_from_week": null,
+          "prompt": "A student solves 5x+7=22 as 5x=29. What is the first error?",
+          "answer": "They added 7 instead of subtracting 7",
+          "explanation": "Subtract 7 from both sides to preserve equality."
+        },
+        {
+          "id": "a1-w01-q07",
+          "dimension": "error-analysis",
+          "retrieval_from_week": null,
+          "prompt": "A student says 2³+2²=2⁵. Which correction is valid?",
+          "answer": "2³+2²=12",
+          "explanation": "Exponent addition applies to multiplication of like bases, not addition: 8+4=12."
+        },
+        {
+          "id": "a1-w01-q08",
+          "dimension": "transfer-reasoning",
+          "retrieval_from_week": null,
+          "prompt": "If f(x)=3x−2, which ordered pair lies on the graph?",
+          "answer": "(2,4)",
+          "explanation": "f(2)=6−2=4, so (2,4) lies on the graph."
+        },
+        {
+          "id": "a1-w01-q09",
+          "dimension": "multi-step-application",
+          "retrieval_from_week": null,
+          "prompt": "A quantity changes from 80 to 92. What is the percent increase?",
+          "answer": "15%",
+          "explanation": "The increase is 12; 12/80=0.15=15%."
+        },
+        {
+          "id": "a1-w01-q10",
+          "dimension": "transfer-reasoning",
+          "retrieval_from_week": null,
+          "prompt": "Which check gives the strongest evidence that x=−3 solves 4x+5=−7?",
+          "answer": "Substitute −3 into the original equation",
+          "explanation": "Substitution tests the proposed solution in the original statement."
+        }
+      ]
+    },
+    "2": {
+      "week": 2,
+      "unit": 1,
+      "title": "Mathematical Truth & Real Numbers",
+      "graded": true,
+      "current_count": 8,
+      "delayed_count": 2,
+      "retrieval_from_week": 1,
+      "questions": [
+        {
+          "id": "a1-w02-q01",
+          "dimension": "procedural-fluency",
+          "retrieval_from_week": 1,
+          "prompt": "Evaluate −6 + 14 − 9.",
+          "answer": "−1",
+          "explanation": "−6+14=8 and 8−9=−1."
+        },
+        {
+          "id": "a1-w02-q02",
+          "dimension": "procedural-fluency",
+          "retrieval_from_week": null,
+          "prompt": "What is the smallest standard real-number set containing −12?",
+          "answer": "Integer",
+          "explanation": "−12 is an integer."
+        },
+        {
+          "id": "a1-w02-q03",
+          "dimension": "representation-interpretation",
+          "retrieval_from_week": null,
+          "prompt": "Which interval represents −4 < x ≤ 7?",
+          "answer": "(−4,7]",
+          "explanation": "−4 is excluded and 7 is included."
+        },
+        {
+          "id": "a1-w02-q04",
+          "dimension": "representation-interpretation",
+          "retrieval_from_week": null,
+          "prompt": "Which expression names an exact irrational value?",
+          "answer": "√2",
+          "explanation": "√2 is exact; the decimals are approximations."
+        },
+        {
+          "id": "a1-w02-q05",
+          "dimension": "error-analysis",
+          "retrieval_from_week": null,
+          "prompt": "A learner claims every nonterminating decimal is irrational. Which example disproves the claim?",
+          "answer": "0.272727…",
+          "explanation": "A repeating decimal is rational even though it does not terminate."
+        },
+        {
+          "id": "a1-w02-q06",
+          "dimension": "error-analysis",
+          "retrieval_from_week": null,
+          "prompt": "A student writes 4(x+3)=4x+3. What is the earliest error?",
+          "answer": "The 4 was not distributed to 3",
+          "explanation": "Distribution requires multiplying both terms by 4."
+        },
+        {
+          "id": "a1-w02-q07",
+          "dimension": "transfer-reasoning",
+          "retrieval_from_week": 1,
+          "prompt": "If f(x)=3x−2, which ordered pair lies on the graph?",
+          "answer": "(2,4)",
+          "explanation": "f(2)=6−2=4, so (2,4) lies on the graph."
+        },
+        {
+          "id": "a1-w02-q08",
+          "dimension": "multi-step-application",
+          "retrieval_from_week": null,
+          "prompt": "A sensor accepts values greater than −2 but no more than 5. Which statement models the rule?",
+          "answer": "−2<x≤5",
+          "explanation": "The lower endpoint is excluded and the upper endpoint is included."
+        },
+        {
+          "id": "a1-w02-q09",
+          "dimension": "transfer-reasoning",
+          "retrieval_from_week": null,
+          "prompt": "Why does subtracting 9 from both sides of x+9=14 preserve the solution?",
+          "answer": "Equal operations preserve equality",
+          "explanation": "Applying the same operation to equal quantities preserves equality."
+        },
+        {
+          "id": "a1-w02-q10",
+          "dimension": "multi-step-application",
+          "retrieval_from_week": null,
+          "prompt": "A research note uses √50≈7.071. Which form should be retained when an exact value is required?",
+          "answer": "5√2",
+          "explanation": "√50 simplifies exactly to 5√2."
+        }
+      ]
+    },
+    "3": {
+      "week": 3,
+      "unit": 1,
+      "title": "Units, Precision & Verification",
+      "graded": true,
+      "current_count": 8,
+      "delayed_count": 2,
+      "retrieval_from_week": 2,
+      "questions": [
+        {
+          "id": "a1-w03-q01",
+          "dimension": "procedural-fluency",
+          "retrieval_from_week": 2,
+          "prompt": "Evaluate −6 + 14 − 9.",
+          "answer": "−1",
+          "explanation": "−6+14=8 and 8−9=−1."
+        },
+        {
+          "id": "a1-w03-q02",
+          "dimension": "procedural-fluency",
+          "retrieval_from_week": null,
+          "prompt": "A measured value is 96 and the accepted value is 100. What is the percent error?",
+          "answer": "4%",
+          "explanation": "|96−100|/100×100%=4%."
+        },
+        {
+          "id": "a1-w03-q03",
+          "dimension": "representation-interpretation",
+          "retrieval_from_week": null,
+          "prompt": "A car travels 150 miles in 3 hours. Which unit rate and unit are correct?",
+          "answer": "50 miles/hour",
+          "explanation": "150÷3=50 and the units are miles per hour."
+        },
+        {
+          "id": "a1-w03-q04",
+          "dimension": "representation-interpretation",
+          "retrieval_from_week": null,
+          "prompt": "A ruler is marked to the nearest millimeter. Which report most reasonably matches that precision for a length near 12.3 cm?",
+          "answer": "12.3 cm",
+          "explanation": "The measurement should not imply far more precision than the instrument supports."
+        },
+        {
+          "id": "a1-w03-q05",
+          "dimension": "error-analysis",
+          "retrieval_from_week": null,
+          "prompt": "A student converts 5 ft to inches by multiplying by 1 ft/12 in. What is wrong?",
+          "answer": "The conversion factor is inverted",
+          "explanation": "Use 12 in/1 ft so feet cancel."
+        },
+        {
+          "id": "a1-w03-q06",
+          "dimension": "error-analysis",
+          "retrieval_from_week": null,
+          "prompt": "A learner reports 40 miles ÷ 2 hours = 20 hours/mile. Diagnose the error.",
+          "answer": "The units were reversed",
+          "explanation": "The numerical rate is 20, but it is miles per hour."
+        },
+        {
+          "id": "a1-w03-q07",
+          "dimension": "multi-step-application",
+          "retrieval_from_week": null,
+          "prompt": "A medication calculation gives 0.0042 g. How many milligrams is this?",
+          "answer": "4.2 mg",
+          "explanation": "Multiply grams by 1000: 0.0042 g=4.2 mg."
+        },
+        {
+          "id": "a1-w03-q08",
+          "dimension": "multi-step-application",
+          "retrieval_from_week": null,
+          "prompt": "A machine part is specified as 25.0±0.2 mm. Which measured value is outside tolerance?",
+          "answer": "25.3 mm",
+          "explanation": "The accepted range is 24.8 to 25.2 mm inclusive."
+        },
+        {
+          "id": "a1-w03-q09",
+          "dimension": "transfer-reasoning",
+          "retrieval_from_week": 2,
+          "prompt": "If f(x)=3x−2, which ordered pair lies on the graph?",
+          "answer": "(2,4)",
+          "explanation": "f(2)=6−2=4, so (2,4) lies on the graph."
+        },
+        {
+          "id": "a1-w03-q10",
+          "dimension": "transfer-reasoning",
+          "retrieval_from_week": null,
+          "prompt": "An answer is numerically correct but its units are dimensionally impossible. What is the strongest conclusion?",
+          "answer": "Reject the reasoning until the unit error is resolved",
+          "explanation": "A coincidental number does not validate dimensionally invalid reasoning."
+        }
+      ]
+    },
+    "4": {
+      "week": 4,
+      "unit": 2,
+      "title": "Variables, Terms & Evaluation",
+      "graded": true,
+      "current_count": 8,
+      "delayed_count": 2,
+      "retrieval_from_week": 2,
+      "questions": [
+        {
+          "id": "a1-w04-q01",
+          "dimension": "procedural-fluency",
+          "retrieval_from_week": 2,
+          "prompt": "Evaluate −6 + 14 − 9.",
+          "answer": "−1",
+          "explanation": "−6+14=8 and 8−9=−1."
+        },
+        {
+          "id": "a1-w04-q02",
+          "dimension": "procedural-fluency",
+          "retrieval_from_week": null,
+          "prompt": "Evaluate 2a²−3b when a=−3 and b=4.",
+          "answer": "6",
+          "explanation": "2(9)−12=6."
+        },
+        {
+          "id": "a1-w04-q03",
+          "dimension": "representation-interpretation",
+          "retrieval_from_week": null,
+          "prompt": "Which phrase matches 5n−8?",
+          "answer": "Eight less than five times n",
+          "explanation": "5n−8 means five times n, then subtract eight."
+        },
+        {
+          "id": "a1-w04-q04",
+          "dimension": "multi-step-application",
+          "retrieval_from_week": null,
+          "prompt": "A rectangle has width w and length w+3. Which expression represents its perimeter?",
+          "answer": "4w+6",
+          "explanation": "P=2w+2(w+3)=4w+6."
+        },
+        {
+          "id": "a1-w04-q05",
+          "dimension": "error-analysis",
+          "retrieval_from_week": null,
+          "prompt": "A student evaluates 3x² at x=−2 as (3·−2)²=36. What is the error?",
+          "answer": "The coefficient 3 is not part of the square",
+          "explanation": "3x² means 3·(x²), so 3·4=12."
+        },
+        {
+          "id": "a1-w04-q06",
+          "dimension": "error-analysis",
+          "retrieval_from_week": null,
+          "prompt": "A learner says 4x and 4x² are like terms because both contain x. Why is that false?",
+          "answer": "Their variable parts have different exponents",
+          "explanation": "Like terms require identical variable parts, including exponents."
+        },
+        {
+          "id": "a1-w04-q07",
+          "dimension": "representation-interpretation",
+          "retrieval_from_week": null,
+          "prompt": "If C=18+7h models a service cost, what does 18 represent?",
+          "answer": "Fixed initial charge",
+          "explanation": "The constant term is the cost when h=0."
+        },
+        {
+          "id": "a1-w04-q08",
+          "dimension": "multi-step-application",
+          "retrieval_from_week": null,
+          "prompt": "A formula A=1/2bh gives triangle area. What is A when b=12.5 and h=8?",
+          "answer": "50",
+          "explanation": "A=0.5×12.5×8=50."
+        },
+        {
+          "id": "a1-w04-q09",
+          "dimension": "transfer-reasoning",
+          "retrieval_from_week": 2,
+          "prompt": "If f(x)=3x−2, which ordered pair lies on the graph?",
+          "answer": "(2,4)",
+          "explanation": "f(2)=6−2=4, so (2,4) lies on the graph."
+        },
+        {
+          "id": "a1-w04-q10",
+          "dimension": "transfer-reasoning",
+          "retrieval_from_week": null,
+          "prompt": "Why is identifying terms before simplifying useful?",
+          "answer": "It reveals which parts may legally combine",
+          "explanation": "Term structure prevents combining unlike quantities."
+        }
+      ]
+    },
+    "5": {
+      "week": 5,
+      "unit": 2,
+      "title": "Properties & Polynomial Structure",
+      "graded": true,
+      "current_count": 8,
+      "delayed_count": 2,
+      "retrieval_from_week": 2,
+      "questions": [
+        {
+          "id": "a1-w05-q01",
+          "dimension": "procedural-fluency",
+          "retrieval_from_week": 2,
+          "prompt": "Evaluate −6 + 14 − 9.",
+          "answer": "−1",
+          "explanation": "−6+14=8 and 8−9=−1."
+        },
+        {
+          "id": "a1-w05-q02",
+          "dimension": "procedural-fluency",
+          "retrieval_from_week": null,
+          "prompt": "Simplify 6x²−4x+3+2x²+7x−5.",
+          "answer": "8x²+3x−2",
+          "explanation": "Combine like powers: 8x²+3x−2."
+        },
+        {
+          "id": "a1-w05-q03",
+          "dimension": "representation-interpretation",
+          "retrieval_from_week": null,
+          "prompt": "Which expression is equivalent to 9x+18?",
+          "answer": "9(x+2)",
+          "explanation": "Factoring out 9 gives 9(x+2)."
+        },
+        {
+          "id": "a1-w05-q04",
+          "dimension": "representation-interpretation",
+          "retrieval_from_week": null,
+          "prompt": "How should 5x³−2x+7 be classified?",
+          "answer": "Trinomial of degree 3",
+          "explanation": "It has three terms and highest exponent 3."
+        },
+        {
+          "id": "a1-w05-q05",
+          "dimension": "error-analysis",
+          "retrieval_from_week": null,
+          "prompt": "A student simplifies 3(x+4)+2x as 5x+4. What was missed?",
+          "answer": "The 3 must multiply the 4",
+          "explanation": "3(x+4)=3x+12, so the result is 5x+12."
+        },
+        {
+          "id": "a1-w05-q06",
+          "dimension": "error-analysis",
+          "retrieval_from_week": null,
+          "prompt": "A learner combines 2x²+5x as 7x³. Which rule was misused?",
+          "answer": "Unlike terms cannot be combined by adding exponents",
+          "explanation": "Exponents do not add when unlike terms are added."
+        },
+        {
+          "id": "a1-w05-q07",
+          "dimension": "multi-step-application",
+          "retrieval_from_week": null,
+          "prompt": "A square has side x+3. Which expanded expression gives its area?",
+          "answer": "x²+6x+9",
+          "explanation": "(x+3)²=x²+6x+9."
+        },
+        {
+          "id": "a1-w05-q08",
+          "dimension": "multi-step-application",
+          "retrieval_from_week": null,
+          "prompt": "The cost of n tickets is 12n and a $5 fee is added. If four friends split the total equally, which expression is each share?",
+          "answer": "(12n+5)/4",
+          "explanation": "The entire total must be divided by 4."
+        },
+        {
+          "id": "a1-w05-q09",
+          "dimension": "transfer-reasoning",
+          "retrieval_from_week": 2,
+          "prompt": "If f(x)=3x−2, which ordered pair lies on the graph?",
+          "answer": "(2,4)",
+          "explanation": "f(2)=6−2=4, so (2,4) lies on the graph."
+        },
+        {
+          "id": "a1-w05-q10",
+          "dimension": "transfer-reasoning",
+          "retrieval_from_week": null,
+          "prompt": "Which rewrite makes the structure of 6x²+12x most visible for identifying a common factor?",
+          "answer": "6x(x+2)",
+          "explanation": "6x is the greatest common monomial factor."
+        }
+      ]
+    },
+    "6": {
+      "week": 6,
+      "unit": 2,
+      "title": "Polynomial Operations & Common Factors",
+      "graded": true,
+      "current_count": 8,
+      "delayed_count": 2,
+      "retrieval_from_week": 5,
+      "questions": [
+        {
+          "id": "a1-w06-q01",
+          "dimension": "procedural-fluency",
+          "retrieval_from_week": 5,
+          "prompt": "Evaluate −6 + 14 − 9.",
+          "answer": "−1",
+          "explanation": "−6+14=8 and 8−9=−1."
+        },
+        {
+          "id": "a1-w06-q02",
+          "dimension": "procedural-fluency",
+          "retrieval_from_week": null,
+          "prompt": "Multiply −3x²(4x−5).",
+          "answer": "−12x³+15x²",
+          "explanation": "Distribute −3x² to both terms."
+        },
+        {
+          "id": "a1-w06-q03",
+          "dimension": "representation-interpretation",
+          "retrieval_from_week": null,
+          "prompt": "Factor 18x³−24x² completely by the GCF.",
+          "answer": "6x²(3x−4)",
+          "explanation": "The GCF is 6x²."
+        },
+        {
+          "id": "a1-w06-q04",
+          "dimension": "representation-interpretation",
+          "retrieval_from_week": null,
+          "prompt": "Which product has degree 5?",
+          "answer": "(2x²)(3x³)",
+          "explanation": "When multiplying powers of x, exponents add: 2+3=5."
+        },
+        {
+          "id": "a1-w06-q05",
+          "dimension": "error-analysis",
+          "retrieval_from_week": null,
+          "prompt": "A student subtracts (2x²−5x+1) and changes only the first sign. What is the correction?",
+          "answer": "Change the sign of every term in the subtracted polynomial",
+          "explanation": "Subtraction distributes −1 across the entire polynomial."
+        },
+        {
+          "id": "a1-w06-q06",
+          "dimension": "error-analysis",
+          "retrieval_from_week": null,
+          "prompt": "A learner factors 12x²+18x as 6(2x²+3x). Why is the factorization incomplete?",
+          "answer": "A common x also remains",
+          "explanation": "The GCF is 6x, giving 6x(2x+3)."
+        },
+        {
+          "id": "a1-w06-q07",
+          "dimension": "multi-step-application",
+          "retrieval_from_week": null,
+          "prompt": "A rectangular garden has dimensions 3x and 2x+5. Which expression gives its area?",
+          "answer": "6x²+15x",
+          "explanation": "Multiply 3x(2x+5)."
+        },
+        {
+          "id": "a1-w06-q08",
+          "dimension": "multi-step-application",
+          "retrieval_from_week": null,
+          "prompt": "A manufacturer makes n batches. Each batch uses 4x²+3x units of material, but 2x units are recycled per batch. Which expression models net material for n batches?",
+          "answer": "n(4x²+x)",
+          "explanation": "Per batch net is 4x²+3x−2x=4x²+x, then multiply by n."
+        },
+        {
+          "id": "a1-w06-q09",
+          "dimension": "transfer-reasoning",
+          "retrieval_from_week": 5,
+          "prompt": "If f(x)=3x−2, which ordered pair lies on the graph?",
+          "answer": "(2,4)",
+          "explanation": "f(2)=6−2=4, so (2,4) lies on the graph."
+        },
+        {
+          "id": "a1-w06-q10",
+          "dimension": "transfer-reasoning",
+          "retrieval_from_week": null,
+          "prompt": "Which check best verifies 6x(2x+3)=12x²+18x?",
+          "answer": "Redistribute the factor and compare terms",
+          "explanation": "Expansion verifies the factorization for all x symbolically."
+        }
+      ]
+    },
+    "7": {
+      "week": 7,
+      "unit": 3,
+      "title": "Equality & Linear Equation Fluency",
+      "graded": true,
+      "current_count": 8,
+      "delayed_count": 2,
+      "retrieval_from_week": 5,
+      "questions": [
+        {
+          "id": "a1-w07-q01",
+          "dimension": "procedural-fluency",
+          "retrieval_from_week": 5,
+          "prompt": "Evaluate −6 + 14 − 9.",
+          "answer": "−1",
+          "explanation": "−6+14=8 and 8−9=−1."
+        },
+        {
+          "id": "a1-w07-q02",
+          "dimension": "procedural-fluency",
+          "retrieval_from_week": null,
+          "prompt": "Solve x/4+3=8.",
+          "answer": "x=20",
+          "explanation": "Subtract 3, then multiply by 4: x=20."
+        },
+        {
+          "id": "a1-w07-q03",
+          "dimension": "representation-interpretation",
+          "retrieval_from_week": null,
+          "prompt": "Which equation models ‘seven less than three times n is 20’?",
+          "answer": "3n−7=20",
+          "explanation": "Three times n is 3n; seven less is 3n−7."
+        },
+        {
+          "id": "a1-w07-q04",
+          "dimension": "representation-interpretation",
+          "retrieval_from_week": null,
+          "prompt": "What does the solution x=6 mean for 4x+2=26?",
+          "answer": "Substituting 6 makes both sides equal 26",
+          "explanation": "A solution makes the original equation true."
+        },
+        {
+          "id": "a1-w07-q05",
+          "dimension": "error-analysis",
+          "retrieval_from_week": null,
+          "prompt": "A student solves 2x+9=17 by writing 2x=26. What is the first error?",
+          "answer": "They added 9 instead of subtracting 9",
+          "explanation": "Subtract 9 from both sides."
+        },
+        {
+          "id": "a1-w07-q06",
+          "dimension": "error-analysis",
+          "retrieval_from_week": null,
+          "prompt": "A learner divides only the left side of 6x=30 by 6. Why is that invalid?",
+          "answer": "The same nonzero operation must be applied to both sides",
+          "explanation": "Equality is preserved only when both sides receive the same valid operation."
+        },
+        {
+          "id": "a1-w07-q07",
+          "dimension": "multi-step-application",
+          "retrieval_from_week": null,
+          "prompt": "A streaming plan costs $12 plus $4 per movie. The bill is $36. How many movies were rented?",
+          "answer": "6",
+          "explanation": "12+4m=36 gives 4m=24 and m=6."
+        },
+        {
+          "id": "a1-w07-q08",
+          "dimension": "multi-step-application",
+          "retrieval_from_week": null,
+          "prompt": "A temperature is 18°C and drops d degrees to reach −5°C. Which equation and solution are correct?",
+          "answer": "18−d=−5; d=23",
+          "explanation": "A drop of d gives 18−d=−5, so d=23."
+        },
+        {
+          "id": "a1-w07-q09",
+          "dimension": "transfer-reasoning",
+          "retrieval_from_week": 5,
+          "prompt": "If f(x)=3x−2, which ordered pair lies on the graph?",
+          "answer": "(2,4)",
+          "explanation": "f(2)=6−2=4, so (2,4) lies on the graph."
+        },
+        {
+          "id": "a1-w07-q10",
+          "dimension": "transfer-reasoning",
+          "retrieval_from_week": null,
+          "prompt": "Why is ‘move the 4 to the other side’ weaker than ‘add 4 to both sides’?",
+          "answer": "The second statement names the equality-preserving operation",
+          "explanation": "Naming the operation exposes why equivalence is preserved."
+        }
+      ]
+    },
+    "8": {
+      "week": 8,
+      "unit": 3,
+      "title": "Multi-Step, Both-Sides & Literal Equations",
+      "graded": true,
+      "current_count": 8,
+      "delayed_count": 2,
+      "retrieval_from_week": 5,
+      "questions": [
+        {
+          "id": "a1-w08-q01",
+          "dimension": "procedural-fluency",
+          "retrieval_from_week": 5,
+          "prompt": "Evaluate −6 + 14 − 9.",
+          "answer": "−1",
+          "explanation": "−6+14=8 and 8−9=−1."
+        },
+        {
+          "id": "a1-w08-q02",
+          "dimension": "procedural-fluency",
+          "retrieval_from_week": null,
+          "prompt": "Solve 5x+7=2x−8.",
+          "answer": "x=−5",
+          "explanation": "3x=−15, so x=−5."
+        },
+        {
+          "id": "a1-w08-q03",
+          "dimension": "representation-interpretation",
+          "retrieval_from_week": null,
+          "prompt": "Classify 4(x+2)=4x+8.",
+          "answer": "Identity: infinitely many solutions",
+          "explanation": "Both sides are equivalent for every x."
+        },
+        {
+          "id": "a1-w08-q04",
+          "dimension": "representation-interpretation",
+          "retrieval_from_week": null,
+          "prompt": "Solve A=1/2bh for h, assuming b≠0.",
+          "answer": "h=2A/b",
+          "explanation": "Multiply by 2 and divide by b: h=2A/b."
+        },
+        {
+          "id": "a1-w08-q05",
+          "dimension": "error-analysis",
+          "retrieval_from_week": null,
+          "prompt": "A student expands 2(3x−5) as 6x−5. What is the first error?",
+          "answer": "The 2 was not distributed to −5",
+          "explanation": "Distribution gives 6x−10."
+        },
+        {
+          "id": "a1-w08-q06",
+          "dimension": "error-analysis",
+          "retrieval_from_week": null,
+          "prompt": "A learner reaches 0=7 after simplifying an equation and then reports x=7. What should the conclusion be?",
+          "answer": "No solution",
+          "explanation": "A false statement such as 0=7 means the original equation is a contradiction."
+        },
+        {
+          "id": "a1-w08-q07",
+          "dimension": "multi-step-application",
+          "retrieval_from_week": null,
+          "prompt": "The perimeter of a rectangle is P=2L+2W. Solve for W, then find W when P=50 and L=9.",
+          "answer": "W=16",
+          "explanation": "W=(P−2L)/2=(50−18)/2=16."
+        },
+        {
+          "id": "a1-w08-q08",
+          "dimension": "multi-step-application",
+          "retrieval_from_week": null,
+          "prompt": "A formula d=rt models distance. If d=315 km and t=4.5 h, what is r?",
+          "answer": "70 km/h",
+          "explanation": "r=d/t=315/4.5=70 km/h."
+        },
+        {
+          "id": "a1-w08-q09",
+          "dimension": "transfer-reasoning",
+          "retrieval_from_week": 5,
+          "prompt": "If f(x)=3x−2, which ordered pair lies on the graph?",
+          "answer": "(2,4)",
+          "explanation": "f(2)=6−2=4, so (2,4) lies on the graph."
+        },
+        {
+          "id": "a1-w08-q10",
+          "dimension": "transfer-reasoning",
+          "retrieval_from_week": null,
+          "prompt": "Which step best verifies a rearranged literal formula?",
+          "answer": "Substitute the rearranged expression back into the original formula and simplify",
+          "explanation": "Back-substitution checks algebraic equivalence."
+        }
+      ]
+    },
+    "9": {
+      "week": 9,
+      "unit": 3,
+      "title": "Proportions, Rates & Equation Models",
+      "graded": true,
+      "current_count": 8,
+      "delayed_count": 2,
+      "retrieval_from_week": 8,
+      "questions": [
+        {
+          "id": "a1-w09-q01",
+          "dimension": "procedural-fluency",
+          "retrieval_from_week": 8,
+          "prompt": "Evaluate −6 + 14 − 9.",
+          "answer": "−1",
+          "explanation": "−6+14=8 and 8−9=−1."
+        },
+        {
+          "id": "a1-w09-q02",
+          "dimension": "procedural-fluency",
+          "retrieval_from_week": null,
+          "prompt": "Find 18% of 250.",
+          "answer": "45",
+          "explanation": "0.18×250=45."
+        },
+        {
+          "id": "a1-w09-q03",
+          "dimension": "representation-interpretation",
+          "retrieval_from_week": null,
+          "prompt": "A direct variation has y=18 when x=6. Which equation represents it?",
+          "answer": "y=3x",
+          "explanation": "k=y/x=3, so y=3x."
+        },
+        {
+          "id": "a1-w09-q04",
+          "dimension": "representation-interpretation",
+          "retrieval_from_week": null,
+          "prompt": "A tank drains at 4.5 liters per minute from an initial 80 liters. Which model gives volume V after t minutes?",
+          "answer": "V=80−4.5t",
+          "explanation": "The initial value is 80 and the rate of change is −4.5."
+        },
+        {
+          "id": "a1-w09-q05",
+          "dimension": "error-analysis",
+          "retrieval_from_week": null,
+          "prompt": "A student solves x/6=4/9 by adding 6 and 9. What principle is missing?",
+          "answer": "A proportion preserves multiplicative ratios; use equivalent fractions or cross products",
+          "explanation": "Proportions are multiplicative relationships."
+        },
+        {
+          "id": "a1-w09-q06",
+          "dimension": "error-analysis",
+          "retrieval_from_week": null,
+          "prompt": "A learner models a $30 fixed fee plus $8 per hour as C=30h+8. What is reversed?",
+          "answer": "The fixed amount and hourly rate",
+          "explanation": "The correct model is C=30+8h."
+        },
+        {
+          "id": "a1-w09-q07",
+          "dimension": "multi-step-application",
+          "retrieval_from_week": null,
+          "prompt": "A trip of 210 miles is driven partly at 50 mph for 2 hours and then at 55 mph. How long is the second part?",
+          "answer": "2 h",
+          "explanation": "The first part covers 100 miles; 110 miles remain, and 110/55=2 hours."
+        },
+        {
+          "id": "a1-w09-q08",
+          "dimension": "multi-step-application",
+          "retrieval_from_week": null,
+          "prompt": "An $80 item is discounted 25% and then taxed 8% on the sale price. What is the final price?",
+          "answer": "$64.80",
+          "explanation": "Sale price is $60; tax is $4.80, so total is $64.80."
+        },
+        {
+          "id": "a1-w09-q09",
+          "dimension": "transfer-reasoning",
+          "retrieval_from_week": 8,
+          "prompt": "If f(x)=3x−2, which ordered pair lies on the graph?",
+          "answer": "(2,4)",
+          "explanation": "f(2)=6−2=4, so (2,4) lies on the graph."
+        },
+        {
+          "id": "a1-w09-q10",
+          "dimension": "transfer-reasoning",
+          "retrieval_from_week": null,
+          "prompt": "Two plans charge the same amount per unit but different fixed fees. What determines which is cheaper for identical usage?",
+          "answer": "Which plan has the lower fixed fee",
+          "explanation": "With equal per-unit rates, the lower fixed fee makes a plan cheaper at every equal usage level; usage does not change their cost difference."
+        }
+      ]
+    },
+    "10": {
+      "week": 10,
+      "unit": 4,
+      "title": "Linear Inequalities & Solution Sets",
+      "graded": true,
+      "current_count": 8,
+      "delayed_count": 2,
+      "retrieval_from_week": 8,
+      "questions": [
+        {
+          "id": "a1-w10-q01",
+          "dimension": "procedural-fluency",
+          "retrieval_from_week": 8,
+          "prompt": "Evaluate −6 + 14 − 9.",
+          "answer": "−1",
+          "explanation": "−6+14=8 and 8−9=−1."
+        },
+        {
+          "id": "a1-w10-q02",
+          "dimension": "procedural-fluency",
+          "retrieval_from_week": null,
+          "prompt": "Solve −5x>20.",
+          "answer": "x<−4",
+          "explanation": "Divide by −5 and reverse the inequality: x<−4."
+        },
+        {
+          "id": "a1-w10-q03",
+          "dimension": "representation-interpretation",
+          "retrieval_from_week": null,
+          "prompt": "Which interval represents x≥3?",
+          "answer": "[3,∞)",
+          "explanation": "The endpoint 3 is included and values extend to positive infinity."
+        },
+        {
+          "id": "a1-w10-q04",
+          "dimension": "representation-interpretation",
+          "retrieval_from_week": null,
+          "prompt": "Which number-line description represents x<−2?",
+          "answer": "Open dot at −2, shade left",
+          "explanation": "A strict inequality uses an open endpoint and values less than −2 lie left."
+        },
+        {
+          "id": "a1-w10-q05",
+          "dimension": "error-analysis",
+          "retrieval_from_week": null,
+          "prompt": "A student solves −3x≤15 as x≤−5. What is the error?",
+          "answer": "The inequality sign must reverse when dividing by −3",
+          "explanation": "Division by a negative reverses the order relation, giving x≥−5."
+        },
+        {
+          "id": "a1-w10-q06",
+          "dimension": "error-analysis",
+          "retrieval_from_week": null,
+          "prompt": "A learner solves 2x+9<17 as 2x<26. What is the first error?",
+          "answer": "They added 9 instead of subtracting 9",
+          "explanation": "Subtract 9: 2x<8, then x<4."
+        },
+        {
+          "id": "a1-w10-q07",
+          "dimension": "multi-step-application",
+          "retrieval_from_week": null,
+          "prompt": "A club has at most $180. A room costs $60 and each meal costs $15. What is the greatest number of meals it can buy?",
+          "answer": "8",
+          "explanation": "60+15m≤180 gives 15m≤120 and m≤8."
+        },
+        {
+          "id": "a1-w10-q08",
+          "dimension": "multi-step-application",
+          "retrieval_from_week": null,
+          "prompt": "A ride requires passengers to be at least 48 inches tall. A child is 44 inches and grows g inches. Which inequality models eligibility?",
+          "answer": "44+g≥48",
+          "explanation": "Eligibility begins when height is at least 48: 44+g≥48."
+        },
+        {
+          "id": "a1-w10-q09",
+          "dimension": "transfer-reasoning",
+          "retrieval_from_week": 8,
+          "prompt": "If f(x)=3x−2, which ordered pair lies on the graph?",
+          "answer": "(2,4)",
+          "explanation": "f(2)=6−2=4, so (2,4) lies on the graph."
+        },
+        {
+          "id": "a1-w10-q10",
+          "dimension": "transfer-reasoning",
+          "retrieval_from_week": null,
+          "prompt": "Which inequality is obtained directly by subtracting 12 from both sides of x<5?",
+          "answer": "x−12<−7",
+          "explanation": "Subtract 12 on each side: x−12<5−12, so x−12<−7. Adding 12 would produce a different equivalent inequality, not the requested step."
+        }
+      ]
+    },
+    "11": {
+      "week": 11,
+      "unit": 4,
+      "title": "Compound & Absolute-Value Constraints",
+      "graded": true,
+      "current_count": 8,
+      "delayed_count": 2,
+      "retrieval_from_week": 8,
+      "questions": [
+        {
+          "id": "a1-w11-q01",
+          "dimension": "procedural-fluency",
+          "retrieval_from_week": 8,
+          "prompt": "Evaluate −6 + 14 − 9.",
+          "answer": "−1",
+          "explanation": "−6+14=8 and 8−9=−1."
+        },
+        {
+          "id": "a1-w11-q02",
+          "dimension": "procedural-fluency",
+          "retrieval_from_week": null,
+          "prompt": "Solve |x−4|=7.",
+          "answer": "x=−3 or x=11",
+          "explanation": "x is seven units from 4: 4−7=−3 or 4+7=11."
+        },
+        {
+          "id": "a1-w11-q03",
+          "dimension": "representation-interpretation",
+          "retrieval_from_week": null,
+          "prompt": "Which interval represents 2≤x<9?",
+          "answer": "[2,9)",
+          "explanation": "2 is included and 9 is excluded."
+        },
+        {
+          "id": "a1-w11-q04",
+          "dimension": "representation-interpretation",
+          "retrieval_from_week": null,
+          "prompt": "The statement x<−5 or x>5 is equivalent to which absolute-value inequality?",
+          "answer": "|x|>5",
+          "explanation": "Values more than 5 units from 0 satisfy |x|>5."
+        },
+        {
+          "id": "a1-w11-q05",
+          "dimension": "error-analysis",
+          "retrieval_from_week": null,
+          "prompt": "A student solves |x|<6 as x<−6 or x>6. What did they reverse?",
+          "answer": "They used the outside region instead of the inside interval",
+          "explanation": "|x|<6 means −6<x<6."
+        },
+        {
+          "id": "a1-w11-q06",
+          "dimension": "error-analysis",
+          "retrieval_from_week": null,
+          "prompt": "A learner writes 1<x<7 as (1,7]. What is wrong?",
+          "answer": "Seven should be excluded too",
+          "explanation": "Both inequalities are strict, so both endpoints use parentheses."
+        },
+        {
+          "id": "a1-w11-q07",
+          "dimension": "multi-step-application",
+          "retrieval_from_week": null,
+          "prompt": "A manufactured rod should be 20 cm long within 0.15 cm. Which model describes acceptable lengths L?",
+          "answer": "|L−20|≤0.15",
+          "explanation": "The absolute difference from 20 must be no more than 0.15."
+        },
+        {
+          "id": "a1-w11-q08",
+          "dimension": "multi-step-application",
+          "retrieval_from_week": null,
+          "prompt": "A temperature must remain between 18°C and 24°C inclusive. If T=15+2h, for what h values is the rule satisfied?",
+          "answer": "1.5≤h≤4.5",
+          "explanation": "18≤15+2h≤24 gives 3≤2h≤9 and 1.5≤h≤4.5."
+        },
+        {
+          "id": "a1-w11-q09",
+          "dimension": "transfer-reasoning",
+          "retrieval_from_week": 8,
+          "prompt": "If f(x)=3x−2, which ordered pair lies on the graph?",
+          "answer": "(2,4)",
+          "explanation": "f(2)=6−2=4, so (2,4) lies on the graph."
+        },
+        {
+          "id": "a1-w11-q10",
+          "dimension": "transfer-reasoning",
+          "retrieval_from_week": null,
+          "prompt": "A constraint is 5≤x≤12, but x counts whole people. Which values are feasible?",
+          "answer": "Only integers 5 through 12",
+          "explanation": "Context restricts the continuous algebraic interval to whole-number counts."
+        }
+      ]
+    },
+    "12": {
+      "week": 12,
+      "unit": 5,
+      "title": "Relations, Functions & Notation",
+      "graded": true,
+      "current_count": 8,
+      "delayed_count": 2,
+      "retrieval_from_week": 11,
+      "questions": [
+        {
+          "id": "a1-w12-q01",
+          "dimension": "procedural-fluency",
+          "retrieval_from_week": 11,
+          "prompt": "Evaluate −6 + 14 − 9.",
+          "answer": "−1",
+          "explanation": "−6+14=8 and 8−9=−1."
+        },
+        {
+          "id": "a1-w12-q02",
+          "dimension": "procedural-fluency",
+          "retrieval_from_week": null,
+          "prompt": "Which relation is not a function?",
+          "answer": "{(1,2),(1,5),(3,6)}",
+          "explanation": "Input 1 is assigned two outputs."
+        },
+        {
+          "id": "a1-w12-q03",
+          "dimension": "representation-interpretation",
+          "retrieval_from_week": null,
+          "prompt": "For g(t)=5−2t, what does g(4)=−3 mean?",
+          "answer": "At input 4, the output is −3",
+          "explanation": "Function notation pairs an input with its resulting output."
+        },
+        {
+          "id": "a1-w12-q04",
+          "dimension": "representation-interpretation",
+          "retrieval_from_week": null,
+          "prompt": "A table has x: 0,1,2,3 and y: 7,10,13,16. Which rule fits?",
+          "answer": "y=3x+7",
+          "explanation": "Outputs increase by 3 and y=7 when x=0."
+        },
+        {
+          "id": "a1-w12-q05",
+          "dimension": "error-analysis",
+          "retrieval_from_week": null,
+          "prompt": "A student says {(2,5),(2,5),(3,7)} is not a function because input 2 appears twice. What matters instead?",
+          "answer": "Whether repeated input 2 has different outputs",
+          "explanation": "Repeating the same input-output pair does not create conflicting outputs."
+        },
+        {
+          "id": "a1-w12-q06",
+          "dimension": "error-analysis",
+          "retrieval_from_week": null,
+          "prompt": "A learner evaluates f(x)=2x+1 at x=3 as 2x+4. What should substitution do?",
+          "answer": "Replace every x with 3 before simplifying",
+          "explanation": "Substitution gives 2(3)+1=7."
+        },
+        {
+          "id": "a1-w12-q07",
+          "dimension": "multi-step-application",
+          "retrieval_from_week": null,
+          "prompt": "A parking garage charges P(h)=6+3h dollars for h hours. What is P(5)?",
+          "answer": "$21",
+          "explanation": "P(5)=6+15=21."
+        },
+        {
+          "id": "a1-w12-q08",
+          "dimension": "multi-step-application",
+          "retrieval_from_week": null,
+          "prompt": "A water tank function V(t)=900−25t gives liters after t minutes. When will V=650?",
+          "answer": "10 min",
+          "explanation": "900−25t=650 gives 25t=250, so t=10."
+        },
+        {
+          "id": "a1-w12-q09",
+          "dimension": "transfer-reasoning",
+          "retrieval_from_week": 11,
+          "prompt": "If f(x)=3x−2, which ordered pair lies on the graph?",
+          "answer": "(2,4)",
+          "explanation": "f(2)=6−2=4, so (2,4) lies on the graph."
+        },
+        {
+          "id": "a1-w12-q10",
+          "dimension": "transfer-reasoning",
+          "retrieval_from_week": null,
+          "prompt": "Which statement about a function may be true?",
+          "answer": "Different inputs can share the same output",
+          "explanation": "Functions require one output per input, but multiple inputs may map to one output."
+        }
+      ]
+    },
+    "13": {
+      "week": 13,
+      "unit": 5,
+      "title": "Domain, Range & Representations",
+      "graded": true,
+      "current_count": 8,
+      "delayed_count": 2,
+      "retrieval_from_week": 11,
+      "questions": [
+        {
+          "id": "a1-w13-q01",
+          "dimension": "procedural-fluency",
+          "retrieval_from_week": 11,
+          "prompt": "Evaluate −6 + 14 − 9.",
+          "answer": "−1",
+          "explanation": "−6+14=8 and 8−9=−1."
+        },
+        {
+          "id": "a1-w13-q02",
+          "dimension": "procedural-fluency",
+          "retrieval_from_week": null,
+          "prompt": "For y=√(x−3), what real-number domain is required?",
+          "answer": "x≥3",
+          "explanation": "The radicand must be nonnegative: x−3≥0."
+        },
+        {
+          "id": "a1-w13-q03",
+          "dimension": "representation-interpretation",
+          "retrieval_from_week": null,
+          "prompt": "A table contains (−2,4),(0,1),(3,4). What is its range?",
+          "answer": "{1,4}",
+          "explanation": "The range is the set of output values, without repetition."
+        },
+        {
+          "id": "a1-w13-q04",
+          "dimension": "representation-interpretation",
+          "retrieval_from_week": null,
+          "prompt": "Compared with y=x², what transformation produces y=(x−4)²+3?",
+          "answer": "Right 4, up 3",
+          "explanation": "Subtracting 4 inside shifts right 4; adding 3 outside shifts up 3."
+        },
+        {
+          "id": "a1-w13-q05",
+          "dimension": "error-analysis",
+          "retrieval_from_week": null,
+          "prompt": "A student gives the domain of a distance-time graph as all real numbers, even though the trip lasts from t=0 to t=2.5 hours. What was ignored?",
+          "answer": "The contextual domain restriction",
+          "explanation": "Context can restrict the mathematical domain."
+        },
+        {
+          "id": "a1-w13-q06",
+          "dimension": "error-analysis",
+          "retrieval_from_week": null,
+          "prompt": "A learner shifts y=x² to y=(x+5)² and says the graph moved right 5. What is the correction?",
+          "answer": "It moves left 5",
+          "explanation": "Horizontal shifts use the opposite sign inside the input."
+        },
+        {
+          "id": "a1-w13-q07",
+          "dimension": "multi-step-application",
+          "retrieval_from_week": null,
+          "prompt": "A delivery model C(n)=2.5n+8 applies only to whole packages 0 through 40. Which domain is appropriate?",
+          "answer": "Integers 0≤n≤40",
+          "explanation": "Package count is discrete and limited by the stated range."
+        },
+        {
+          "id": "a1-w13-q08",
+          "dimension": "multi-step-application",
+          "retrieval_from_week": null,
+          "prompt": "A square-root model h(t)=√(25−t) represents a physical quantity. What is the greatest real t allowed by the formula?",
+          "answer": "25",
+          "explanation": "25−t must be at least zero, so t≤25."
+        },
+        {
+          "id": "a1-w13-q09",
+          "dimension": "transfer-reasoning",
+          "retrieval_from_week": 11,
+          "prompt": "If f(x)=3x−2, which ordered pair lies on the graph?",
+          "answer": "(2,4)",
+          "explanation": "f(2)=6−2=4, so (2,4) lies on the graph."
+        },
+        {
+          "id": "a1-w13-q10",
+          "dimension": "transfer-reasoning",
+          "retrieval_from_week": null,
+          "prompt": "A graph and equation disagree at one plotted point. What is the best first check?",
+          "answer": "Substitute the point into the equation",
+          "explanation": "Substitution determines whether the point satisfies the symbolic rule."
+        }
+      ]
+    },
+    "14": {
+      "week": 14,
+      "unit": 5,
+      "title": "Piecewise Functions, Sequences & Inverse Thinking",
+      "graded": true,
+      "current_count": 8,
+      "delayed_count": 2,
+      "retrieval_from_week": 11,
+      "questions": [
+        {
+          "id": "a1-w14-q01",
+          "dimension": "procedural-fluency",
+          "retrieval_from_week": 11,
+          "prompt": "Evaluate −6 + 14 − 9.",
+          "answer": "−1",
+          "explanation": "−6+14=8 and 8−9=−1."
+        },
+        {
+          "id": "a1-w14-q02",
+          "dimension": "procedural-fluency",
+          "retrieval_from_week": null,
+          "prompt": "Find the next term of 11, 17, 23, 29, …",
+          "answer": "35",
+          "explanation": "The common difference is 6, so the next term is 35."
+        },
+        {
+          "id": "a1-w14-q03",
+          "dimension": "representation-interpretation",
+          "retrieval_from_week": null,
+          "prompt": "Which explicit rule describes 4,9,14,19,… for n starting at 1?",
+          "answer": "aₙ=5n−1",
+          "explanation": "At n=1, 5(1)−1=4 and the difference is 5."
+        },
+        {
+          "id": "a1-w14-q04",
+          "dimension": "representation-interpretation",
+          "retrieval_from_week": null,
+          "prompt": "If f(x)=2x+6, which equation begins the process of finding an inverse?",
+          "answer": "y=2x+6, then interchange x and y",
+          "explanation": "Write y=f(x), swap input/output variables, then solve for y."
+        },
+        {
+          "id": "a1-w14-q05",
+          "dimension": "error-analysis",
+          "retrieval_from_week": null,
+          "prompt": "A student evaluates a piecewise function at a boundary using both formulas and averages the results. What should determine the branch?",
+          "answer": "The inequality condition attached to each rule",
+          "explanation": "The branch condition decides which formula applies at a given input."
+        },
+        {
+          "id": "a1-w14-q06",
+          "dimension": "error-analysis",
+          "retrieval_from_week": null,
+          "prompt": "A learner writes the arithmetic sequence 7,10,13,… as aₙ=7+3n. Why is this off by one?",
+          "answer": "For n=1 it gives 10, not 7",
+          "explanation": "With n starting at 1, use aₙ=7+3(n−1)=3n+4."
+        },
+        {
+          "id": "a1-w14-q07",
+          "dimension": "multi-step-application",
+          "retrieval_from_week": null,
+          "prompt": "A phone plan charges $20 for up to 2 GB and then $6 per extra GB. Which type of model is most appropriate?",
+          "answer": "Piecewise function",
+          "explanation": "Different pricing rules apply in different usage regions."
+        },
+        {
+          "id": "a1-w14-q08",
+          "dimension": "multi-step-application",
+          "retrieval_from_week": null,
+          "prompt": "An auditorium adds 18 seats in each new row. Row 1 has 24 seats. How many seats are in row 12?",
+          "answer": "222",
+          "explanation": "a₁₂=24+18(11)=222."
+        },
+        {
+          "id": "a1-w14-q09",
+          "dimension": "transfer-reasoning",
+          "retrieval_from_week": 11,
+          "prompt": "If f(x)=3x−2, which ordered pair lies on the graph?",
+          "answer": "(2,4)",
+          "explanation": "f(2)=6−2=4, so (2,4) lies on the graph."
+        },
+        {
+          "id": "a1-w14-q10",
+          "dimension": "transfer-reasoning",
+          "retrieval_from_week": null,
+          "prompt": "Why is a sequence naturally viewed as a function?",
+          "answer": "Each allowed term number is an input paired with one term value",
+          "explanation": "The index acts as a discrete input and the term is its output."
+        }
+      ]
+    },
+    "15": {
+      "week": 15,
+      "unit": 6,
+      "title": "Rate of Change & Slope",
+      "graded": true,
+      "current_count": 8,
+      "delayed_count": 2,
+      "retrieval_from_week": 14,
+      "questions": [
+        {
+          "id": "a1-w15-q01",
+          "dimension": "procedural-fluency",
+          "retrieval_from_week": 14,
+          "prompt": "Evaluate −6 + 14 − 9.",
+          "answer": "−1",
+          "explanation": "−6+14=8 and 8−9=−1."
+        },
+        {
+          "id": "a1-w15-q02",
+          "dimension": "procedural-fluency",
+          "retrieval_from_week": null,
+          "prompt": "A table changes x by 3 while y changes by −12. What is the slope?",
+          "answer": "−4",
+          "explanation": "Slope=Δy/Δx=−12/3=−4."
+        },
+        {
+          "id": "a1-w15-q03",
+          "dimension": "representation-interpretation",
+          "retrieval_from_week": null,
+          "prompt": "What does slope 2.5 dollars/hour mean in a cost model?",
+          "answer": "Cost increases $2.50 for each additional hour",
+          "explanation": "Slope is output change per one input unit."
+        },
+        {
+          "id": "a1-w15-q04",
+          "dimension": "representation-interpretation",
+          "retrieval_from_week": null,
+          "prompt": "Which line has zero slope?",
+          "answer": "y=−3",
+          "explanation": "A horizontal line y=constant has slope 0."
+        },
+        {
+          "id": "a1-w15-q05",
+          "dimension": "error-analysis",
+          "retrieval_from_week": null,
+          "prompt": "A student computes slope as change in x divided by change in y. What should the ratio be?",
+          "answer": "Change in y divided by change in x",
+          "explanation": "Slope is rise/run=Δy/Δx."
+        },
+        {
+          "id": "a1-w15-q06",
+          "dimension": "error-analysis",
+          "retrieval_from_week": null,
+          "prompt": "A learner says the slope of vertical line x=4 is 0. Why is it undefined instead?",
+          "answer": "Its horizontal change is 0, causing division by zero",
+          "explanation": "Slope requires Δy/Δx and Δx=0."
+        },
+        {
+          "id": "a1-w15-q07",
+          "dimension": "multi-step-application",
+          "retrieval_from_week": null,
+          "prompt": "A reservoir contains 900 L at hour 2 and 740 L at hour 6. What average rate of change is shown?",
+          "answer": "−40 L/h",
+          "explanation": "(740−900)/(6−2)=−160/4=−40 L/h."
+        },
+        {
+          "id": "a1-w15-q08",
+          "dimension": "multi-step-application",
+          "retrieval_from_week": null,
+          "prompt": "A runner is 1.2 km from the start at 6 min and 3.6 km away at 18 min. What average speed is represented by the slope?",
+          "answer": "0.2 km/min",
+          "explanation": "(3.6−1.2)/(18−6)=2.4/12=0.2 km/min."
+        },
+        {
+          "id": "a1-w15-q09",
+          "dimension": "transfer-reasoning",
+          "retrieval_from_week": 14,
+          "prompt": "If f(x)=3x−2, which ordered pair lies on the graph?",
+          "answer": "(2,4)",
+          "explanation": "f(2)=6−2=4, so (2,4) lies on the graph."
+        },
+        {
+          "id": "a1-w15-q10",
+          "dimension": "transfer-reasoning",
+          "retrieval_from_week": null,
+          "prompt": "Two graphs have the same numerical slope but different axis units. Can the rates mean different things?",
+          "answer": "Yes, because slope units depend on the variables and scales",
+          "explanation": "A slope of 2 dollars/hour is not the same quantity as 2 meters/second."
+        }
+      ]
+    },
+    "16": {
+      "week": 16,
+      "unit": 6,
+      "title": "Equations of Lines",
+      "graded": true,
+      "current_count": 8,
+      "delayed_count": 2,
+      "retrieval_from_week": 14,
+      "questions": [
+        {
+          "id": "a1-w16-q01",
+          "dimension": "procedural-fluency",
+          "retrieval_from_week": 14,
+          "prompt": "Evaluate −6 + 14 − 9.",
+          "answer": "−1",
+          "explanation": "−6+14=8 and 8−9=−1."
+        },
+        {
+          "id": "a1-w16-q02",
+          "dimension": "procedural-fluency",
+          "retrieval_from_week": null,
+          "prompt": "Convert 2x+3y=12 to slope-intercept form.",
+          "answer": "y=−2/3x+4",
+          "explanation": "3y=−2x+12, so y=−2/3x+4."
+        },
+        {
+          "id": "a1-w16-q03",
+          "dimension": "representation-interpretation",
+          "retrieval_from_week": null,
+          "prompt": "Which point-slope equation represents slope 4 through (2,−1)?",
+          "answer": "y+1=4(x−2)",
+          "explanation": "Point-slope form is y−y₁=m(x−x₁)."
+        },
+        {
+          "id": "a1-w16-q04",
+          "dimension": "representation-interpretation",
+          "retrieval_from_week": null,
+          "prompt": "For y=−1.5x+12, what does 12 represent?",
+          "answer": "Output when x=0",
+          "explanation": "The y-intercept is the initial output at x=0."
+        },
+        {
+          "id": "a1-w16-q05",
+          "dimension": "error-analysis",
+          "retrieval_from_week": null,
+          "prompt": "A student writes a line through (1,4) with slope 2 as y=2x+4. What did they fail to check?",
+          "answer": "Whether the point satisfies the equation",
+          "explanation": "Substituting (1,4) gives 4≠6, so the intercept is wrong."
+        },
+        {
+          "id": "a1-w16-q06",
+          "dimension": "error-analysis",
+          "retrieval_from_week": null,
+          "prompt": "A learner converts 3x−2y=8 to y=3/2x+4. What sign error occurred?",
+          "answer": "The constant should be −4",
+          "explanation": "−2y=8−3x; divide by −2 to get y=3/2x−4."
+        },
+        {
+          "id": "a1-w16-q07",
+          "dimension": "multi-step-application",
+          "retrieval_from_week": null,
+          "prompt": "A service starts at $25 and rises $6.50 per month. Which equation models total cost C after m months?",
+          "answer": "C=6.5m+25",
+          "explanation": "Slope is 6.5 and initial value is 25."
+        },
+        {
+          "id": "a1-w16-q08",
+          "dimension": "multi-step-application",
+          "retrieval_from_week": null,
+          "prompt": "A line passes through (3,11) and (7,23). Find its equation.",
+          "answer": "y=3x+2",
+          "explanation": "Slope=(23−11)/4=3; 11=9+b gives b=2."
+        },
+        {
+          "id": "a1-w16-q09",
+          "dimension": "transfer-reasoning",
+          "retrieval_from_week": 14,
+          "prompt": "If f(x)=3x−2, which ordered pair lies on the graph?",
+          "answer": "(2,4)",
+          "explanation": "f(2)=6−2=4, so (2,4) lies on the graph."
+        },
+        {
+          "id": "a1-w16-q10",
+          "dimension": "transfer-reasoning",
+          "retrieval_from_week": null,
+          "prompt": "Why is checking a derived line equation with both original points stronger than checking only its slope?",
+          "answer": "It verifies both rate and position/intercept",
+          "explanation": "Many parallel lines share a slope; points verify the correct line."
+        }
+      ]
+    },
+    "17": {
+      "week": 17,
+      "unit": 6,
+      "title": "Line Relationships & Bivariate Data",
+      "graded": true,
+      "current_count": 8,
+      "delayed_count": 2,
+      "retrieval_from_week": 14,
+      "questions": [
+        {
+          "id": "a1-w17-q01",
+          "dimension": "procedural-fluency",
+          "retrieval_from_week": 14,
+          "prompt": "Evaluate −6 + 14 − 9.",
+          "answer": "−1",
+          "explanation": "−6+14=8 and 8−9=−1."
+        },
+        {
+          "id": "a1-w17-q02",
+          "dimension": "procedural-fluency",
+          "retrieval_from_week": null,
+          "prompt": "Which line is parallel to y=−2x+5?",
+          "answer": "y=−2x−7",
+          "explanation": "Parallel lines have the same slope and different intercepts."
+        },
+        {
+          "id": "a1-w17-q03",
+          "dimension": "representation-interpretation",
+          "retrieval_from_week": null,
+          "prompt": "A scatterplot trends downward from left to right. What association does that suggest?",
+          "answer": "Negative",
+          "explanation": "As x increases, y tends to decrease."
+        },
+        {
+          "id": "a1-w17-q04",
+          "dimension": "representation-interpretation",
+          "retrieval_from_week": null,
+          "prompt": "What does a point far above a line of fit have?",
+          "answer": "A large positive residual",
+          "explanation": "Observed y exceeds predicted y, so observed−predicted is positive."
+        },
+        {
+          "id": "a1-w17-q05",
+          "dimension": "error-analysis",
+          "retrieval_from_week": null,
+          "prompt": "A student says two lines with slopes 2 and 1/2 are perpendicular. What is missing?",
+          "answer": "The product must be −1, so one slope should be negative reciprocal",
+          "explanation": "For nonvertical lines, perpendicular slopes multiply to −1."
+        },
+        {
+          "id": "a1-w17-q06",
+          "dimension": "error-analysis",
+          "retrieval_from_week": null,
+          "prompt": "A learner concludes that strong correlation proves one variable causes the other. What is the flaw?",
+          "answer": "Association alone does not establish causation",
+          "explanation": "Confounding variables or common causes may explain an association."
+        },
+        {
+          "id": "a1-w17-q07",
+          "dimension": "multi-step-application",
+          "retrieval_from_week": null,
+          "prompt": "A road has slope 0.08 on a rise/run coordinate model. A perpendicular access line would have what slope?",
+          "answer": "−12.5",
+          "explanation": "0.08=2/25; the negative reciprocal is −25/2=−12.5."
+        },
+        {
+          "id": "a1-w17-q08",
+          "dimension": "multi-step-application",
+          "retrieval_from_week": null,
+          "prompt": "A line of fit predicts 72 when an observed value is 67. What is the residual?",
+          "answer": "−5",
+          "explanation": "Residual=observed−predicted=67−72=−5."
+        },
+        {
+          "id": "a1-w17-q09",
+          "dimension": "transfer-reasoning",
+          "retrieval_from_week": 14,
+          "prompt": "If f(x)=3x−2, which ordered pair lies on the graph?",
+          "answer": "(2,4)",
+          "explanation": "f(2)=6−2=4, so (2,4) lies on the graph."
+        },
+        {
+          "id": "a1-w17-q10",
+          "dimension": "transfer-reasoning",
+          "retrieval_from_week": null,
+          "prompt": "Two groups show similar positive trends but very different scatter. Which has more reliable prediction near observed data?",
+          "answer": "The group with tighter scatter around its fitted line",
+          "explanation": "Smaller residual variation generally supports more precise near-range predictions."
+        }
+      ]
+    },
+    "18": {
+      "week": 18,
+      "unit": 6,
+      "title": "Regression, Residuals & Model Decisions",
+      "graded": true,
+      "current_count": 8,
+      "delayed_count": 2,
+      "retrieval_from_week": 17,
+      "questions": [
+        {
+          "id": "a1-w18-q01",
+          "dimension": "procedural-fluency",
+          "retrieval_from_week": 17,
+          "prompt": "Evaluate −6 + 14 − 9.",
+          "answer": "−1",
+          "explanation": "−6+14=8 and 8−9=−1."
+        },
+        {
+          "id": "a1-w18-q02",
+          "dimension": "procedural-fluency",
+          "retrieval_from_week": null,
+          "prompt": "Observed y is 52 and predicted y is 57. What is the residual?",
+          "answer": "−5",
+          "explanation": "Residual=52−57=−5."
+        },
+        {
+          "id": "a1-w18-q03",
+          "dimension": "representation-interpretation",
+          "retrieval_from_week": null,
+          "prompt": "Data were collected for x-values from 10 to 40. Predicting at x=28 is an example of what?",
+          "answer": "Interpolation",
+          "explanation": "28 lies inside the observed range."
+        },
+        {
+          "id": "a1-w18-q04",
+          "dimension": "representation-interpretation",
+          "retrieval_from_week": null,
+          "prompt": "A residual plot shows a clear curved pattern. What does that suggest about a linear model?",
+          "answer": "The linear form may be inappropriate",
+          "explanation": "Systematic residual structure indicates the model misses a pattern."
+        },
+        {
+          "id": "a1-w18-q05",
+          "dimension": "error-analysis",
+          "retrieval_from_week": null,
+          "prompt": "A student chooses the line with the steepest slope as ‘best fit’ without checking the data. What criterion is missing?",
+          "answer": "How closely predictions align with observed points and residual behavior",
+          "explanation": "Fit quality depends on residuals and data structure, not steepness."
+        },
+        {
+          "id": "a1-w18-q06",
+          "dimension": "error-analysis",
+          "retrieval_from_week": null,
+          "prompt": "A learner extrapolates a population model 200 years beyond the observed data and reports the result as certain. What should be added?",
+          "answer": "A limitation warning about extrapolation and changing conditions",
+          "explanation": "Far-range predictions rely on untested assumptions."
+        },
+        {
+          "id": "a1-w18-q07",
+          "dimension": "multi-step-application",
+          "retrieval_from_week": null,
+          "prompt": "A utility model C=0.18k+24 predicts monthly cost from k kilowatt-hours. What is the predicted cost at k=650?",
+          "answer": "$141",
+          "explanation": "0.18(650)+24=117+24=141 dollars."
+        },
+        {
+          "id": "a1-w18-q08",
+          "dimension": "multi-step-application",
+          "retrieval_from_week": null,
+          "prompt": "A model predicts 120 units at x=8 with a typical residual magnitude near 3. Which communication is strongest?",
+          "answer": "‘About 120, with observed deviations of a few units in this range’",
+          "explanation": "A defensible prediction communicates uncertainty reflected by residuals."
+        },
+        {
+          "id": "a1-w18-q09",
+          "dimension": "transfer-reasoning",
+          "retrieval_from_week": 17,
+          "prompt": "If f(x)=3x−2, which ordered pair lies on the graph?",
+          "answer": "(2,4)",
+          "explanation": "f(2)=6−2=4, so (2,4) lies on the graph."
+        },
+        {
+          "id": "a1-w18-q10",
+          "dimension": "transfer-reasoning",
+          "retrieval_from_week": null,
+          "prompt": "Two models have similar average error, but one has residuals randomly scattered and the other has a curved residual pattern. Which is more defensible as a linear model?",
+          "answer": "The one with random residual scatter",
+          "explanation": "Random residuals are more consistent with a linear relationship than systematic curvature."
+        }
+      ]
+    },
+    "19": {
+      "week": 19,
+      "unit": 7,
+      "title": "Systems as Intersections",
+      "graded": true,
+      "current_count": 8,
+      "delayed_count": 2,
+      "retrieval_from_week": 17,
+      "questions": [
+        {
+          "id": "a1-w19-q01",
+          "dimension": "procedural-fluency",
+          "retrieval_from_week": 17,
+          "prompt": "Evaluate −6 + 14 − 9.",
+          "answer": "−1",
+          "explanation": "−6+14=8 and 8−9=−1."
+        },
+        {
+          "id": "a1-w19-q02",
+          "dimension": "procedural-fluency",
+          "retrieval_from_week": null,
+          "prompt": "How many solutions do y=3x−4 and y=3x+6 have?",
+          "answer": "None",
+          "explanation": "The lines are distinct and parallel because they have equal slopes and different intercepts."
+        },
+        {
+          "id": "a1-w19-q03",
+          "dimension": "representation-interpretation",
+          "retrieval_from_week": null,
+          "prompt": "On a graph of two equations, what does their intersection represent?",
+          "answer": "A point satisfying both equations",
+          "explanation": "An intersection lies on both graphs, so its coordinates satisfy both equations."
+        },
+        {
+          "id": "a1-w19-q04",
+          "dimension": "representation-interpretation",
+          "retrieval_from_week": null,
+          "prompt": "Two equations simplify to the same line. What should a graph show?",
+          "answer": "Coincident lines and infinitely many solutions",
+          "explanation": "Equivalent equations graph as the same line."
+        },
+        {
+          "id": "a1-w19-q05",
+          "dimension": "error-analysis",
+          "retrieval_from_week": null,
+          "prompt": "A student says parallel lines have one solution ‘at infinity.’ How should the algebraic system be classified?",
+          "answer": "No real solution",
+          "explanation": "Distinct parallel lines do not intersect in the real coordinate plane."
+        },
+        {
+          "id": "a1-w19-q06",
+          "dimension": "error-analysis",
+          "retrieval_from_week": null,
+          "prompt": "A learner reads an intersection at (4,9) but substitutes only x=4 into one equation. What verification is incomplete?",
+          "answer": "Both coordinates should satisfy both original equations",
+          "explanation": "A system solution must satisfy every equation simultaneously."
+        },
+        {
+          "id": "a1-w19-q07",
+          "dimension": "multi-step-application",
+          "retrieval_from_week": null,
+          "prompt": "Plan A costs 20+5m and Plan B costs 44+2m. At how many months m are costs equal?",
+          "answer": "8",
+          "explanation": "20+5m=44+2m gives 3m=24 and m=8."
+        },
+        {
+          "id": "a1-w19-q08",
+          "dimension": "multi-step-application",
+          "retrieval_from_week": null,
+          "prompt": "A theater sells adult tickets for $12 and student tickets for $8. If 30 tickets bring in $280, how many adult tickets were sold?",
+          "answer": "10",
+          "explanation": "a+s=30 and 12a+8s=280; substituting s=30−a gives 4a=40, so a=10."
+        },
+        {
+          "id": "a1-w19-q09",
+          "dimension": "transfer-reasoning",
+          "retrieval_from_week": 17,
+          "prompt": "If f(x)=3x−2, which ordered pair lies on the graph?",
+          "answer": "(2,4)",
+          "explanation": "f(2)=6−2=4, so (2,4) lies on the graph."
+        },
+        {
+          "id": "a1-w19-q10",
+          "dimension": "transfer-reasoning",
+          "retrieval_from_week": null,
+          "prompt": "If two linear equations have different slopes, what must be true in the full real plane?",
+          "answer": "They intersect exactly once",
+          "explanation": "Nonparallel distinct lines intersect at one point."
+        }
+      ]
+    },
+    "20": {
+      "week": 20,
+      "unit": 7,
+      "title": "Substitution, Elimination & Context",
+      "graded": true,
+      "current_count": 8,
+      "delayed_count": 2,
+      "retrieval_from_week": 17,
+      "questions": [
+        {
+          "id": "a1-w20-q01",
+          "dimension": "procedural-fluency",
+          "retrieval_from_week": 17,
+          "prompt": "Evaluate −6 + 14 − 9.",
+          "answer": "−1",
+          "explanation": "−6+14=8 and 8−9=−1."
+        },
+        {
+          "id": "a1-w20-q02",
+          "dimension": "procedural-fluency",
+          "retrieval_from_week": null,
+          "prompt": "Solve y=3x−2 and 2x+y=18.",
+          "answer": "(4,10)",
+          "explanation": "Substitute: 2x+3x−2=18 gives x=4, y=10."
+        },
+        {
+          "id": "a1-w20-q03",
+          "dimension": "representation-interpretation",
+          "retrieval_from_week": null,
+          "prompt": "Which system is naturally ready for substitution?",
+          "answer": "y=2x+5 and 3x+y=17",
+          "explanation": "One equation already isolates y."
+        },
+        {
+          "id": "a1-w20-q04",
+          "dimension": "representation-interpretation",
+          "retrieval_from_week": null,
+          "prompt": "Which operation would eliminate y in 2x+3y=12 and 5x−3y=9?",
+          "answer": "Add the equations",
+          "explanation": "The y coefficients are opposites, so addition eliminates y."
+        },
+        {
+          "id": "a1-w20-q05",
+          "dimension": "error-analysis",
+          "retrieval_from_week": null,
+          "prompt": "A student substitutes y=4−x into x+y=10 and writes x+4−x=10, then claims x=6. What does the simplified statement actually show?",
+          "answer": "4=10, so no solution",
+          "explanation": "The equation becomes 4=10, a contradiction."
+        },
+        {
+          "id": "a1-w20-q06",
+          "dimension": "error-analysis",
+          "retrieval_from_week": null,
+          "prompt": "A learner multiplies one equation by 2 for elimination but multiplies only its x-term. What must be done?",
+          "answer": "Multiply every term on both sides of that equation by 2",
+          "explanation": "Scaling an equation requires multiplying the entire equality."
+        },
+        {
+          "id": "a1-w20-q07",
+          "dimension": "multi-step-application",
+          "retrieval_from_week": null,
+          "prompt": "A mixture uses 10% solution and 40% solution to make 20 L of 25% solution. How many liters of 40% solution are needed?",
+          "answer": "10",
+          "explanation": "Let x be 40% solution: .40x+.10(20−x)=.25(20); .30x=3, so x=10."
+        },
+        {
+          "id": "a1-w20-q08",
+          "dimension": "multi-step-application",
+          "retrieval_from_week": null,
+          "prompt": "Two cyclists start 90 km apart and ride toward each other at 18 km/h and 27 km/h. How long until they meet?",
+          "answer": "2 h",
+          "explanation": "Combined closing rate is 45 km/h; 90/45=2 h."
+        },
+        {
+          "id": "a1-w20-q09",
+          "dimension": "transfer-reasoning",
+          "retrieval_from_week": 17,
+          "prompt": "If f(x)=3x−2, which ordered pair lies on the graph?",
+          "answer": "(2,4)",
+          "explanation": "f(2)=6−2=4, so (2,4) lies on the graph."
+        },
+        {
+          "id": "a1-w20-q10",
+          "dimension": "transfer-reasoning",
+          "retrieval_from_week": null,
+          "prompt": "Why should a contextual system solution be checked against the meaning of the variables after solving?",
+          "answer": "Algebra may produce values that violate count, sign, capacity, or other context restrictions",
+          "explanation": "Feasibility is part of interpreting a mathematical model."
+        }
+      ]
+    },
+    "21": {
+      "week": 21,
+      "unit": 7,
+      "title": "Systems of Inequalities & Feasible Decisions",
+      "graded": true,
+      "current_count": 8,
+      "delayed_count": 2,
+      "retrieval_from_week": 20,
+      "questions": [
+        {
+          "id": "a1-w21-q01",
+          "dimension": "procedural-fluency",
+          "retrieval_from_week": 20,
+          "prompt": "Evaluate −6 + 14 − 9.",
+          "answer": "−1",
+          "explanation": "−6+14=8 and 8−9=−1."
+        },
+        {
+          "id": "a1-w21-q02",
+          "dimension": "procedural-fluency",
+          "retrieval_from_week": null,
+          "prompt": "For y<2x+1, should the boundary line be solid or dashed?",
+          "answer": "Dashed",
+          "explanation": "A strict inequality excludes points on the boundary."
+        },
+        {
+          "id": "a1-w21-q03",
+          "dimension": "representation-interpretation",
+          "retrieval_from_week": null,
+          "prompt": "What does the overlapping shaded region of a system of inequalities represent?",
+          "answer": "Points satisfying every constraint",
+          "explanation": "The intersection is the feasible region."
+        },
+        {
+          "id": "a1-w21-q04",
+          "dimension": "representation-interpretation",
+          "retrieval_from_week": null,
+          "prompt": "A constraint x+y≤10 lies below which boundary?",
+          "answer": "x+y=10",
+          "explanation": "Replace the inequality with equality to identify its boundary line."
+        },
+        {
+          "id": "a1-w21-q05",
+          "dimension": "error-analysis",
+          "retrieval_from_week": null,
+          "prompt": "A student tests only one inequality before declaring a point feasible. What is missing?",
+          "answer": "The point must satisfy every constraint in the system",
+          "explanation": "A system uses logical AND across all listed constraints."
+        },
+        {
+          "id": "a1-w21-q06",
+          "dimension": "error-analysis",
+          "retrieval_from_week": null,
+          "prompt": "A learner draws a solid boundary for 3x+y>12. Why should it be dashed?",
+          "answer": "The strict inequality does not include equality",
+          "explanation": "Points on 3x+y=12 are excluded."
+        },
+        {
+          "id": "a1-w21-q07",
+          "dimension": "multi-step-application",
+          "retrieval_from_week": null,
+          "prompt": "A workshop can spend at most $240. Product A costs $12 and product B costs $20. Which constraint models quantities a and b?",
+          "answer": "12a+20b≤240",
+          "explanation": "Total spending cannot exceed 240."
+        },
+        {
+          "id": "a1-w21-q08",
+          "dimension": "multi-step-application",
+          "retrieval_from_week": null,
+          "prompt": "A feasible region has vertices (0,0),(0,6),(4,4),(7,0). For objective P=5x+3y, which vertex gives the largest P?",
+          "answer": "(7,0)",
+          "explanation": "P values are 0,18,32,35; the largest is 35 at (7,0)."
+        },
+        {
+          "id": "a1-w21-q09",
+          "dimension": "transfer-reasoning",
+          "retrieval_from_week": 20,
+          "prompt": "If f(x)=3x−2, which ordered pair lies on the graph?",
+          "answer": "(2,4)",
+          "explanation": "f(2)=6−2=4, so (2,4) lies on the graph."
+        },
+        {
+          "id": "a1-w21-q10",
+          "dimension": "transfer-reasoning",
+          "retrieval_from_week": null,
+          "prompt": "A mathematically optimal point requires producing 3.7 whole machines. What should the modeler do?",
+          "answer": "Apply the integer context and compare feasible nearby whole-number choices",
+          "explanation": "Discrete decision variables require feasible integer interpretation, not automatic rounding."
+        }
+      ]
+    },
+    "22": {
+      "week": 22,
+      "unit": 8,
+      "title": "Exponent Laws & Scientific Notation",
+      "graded": true,
+      "current_count": 8,
+      "delayed_count": 2,
+      "retrieval_from_week": 20,
+      "questions": [
+        {
+          "id": "a1-w22-q01",
+          "dimension": "procedural-fluency",
+          "retrieval_from_week": 20,
+          "prompt": "Evaluate −6 + 14 − 9.",
+          "answer": "−1",
+          "explanation": "−6+14=8 and 8−9=−1."
+        },
+        {
+          "id": "a1-w22-q02",
+          "dimension": "procedural-fluency",
+          "retrieval_from_week": null,
+          "prompt": "Rewrite 5x⁻³ with positive exponents.",
+          "answer": "5/x³",
+          "explanation": "x⁻³=1/x³."
+        },
+        {
+          "id": "a1-w22-q03",
+          "dimension": "representation-interpretation",
+          "retrieval_from_week": null,
+          "prompt": "Which is 0.000072 in scientific notation?",
+          "answer": "7.2×10⁻⁵",
+          "explanation": "Move the decimal 5 places right to get 7.2, so exponent is −5."
+        },
+        {
+          "id": "a1-w22-q04",
+          "dimension": "representation-interpretation",
+          "retrieval_from_week": null,
+          "prompt": "Which expression is equivalent to (a³)⁴?",
+          "answer": "a¹²",
+          "explanation": "Power of a power multiplies exponents: 3·4=12."
+        },
+        {
+          "id": "a1-w22-q05",
+          "dimension": "transfer-reasoning",
+          "retrieval_from_week": 20,
+          "prompt": "If f(x)=3x−2, which ordered pair lies on the graph?",
+          "answer": "(2,4)",
+          "explanation": "f(2)=6−2=4, so (2,4) lies on the graph."
+        },
+        {
+          "id": "a1-w22-q06",
+          "dimension": "error-analysis",
+          "retrieval_from_week": null,
+          "prompt": "A learner says x⁰=0. What is the correction for x≠0?",
+          "answer": "x⁰=1",
+          "explanation": "A nonzero base to the zero power equals 1."
+        },
+        {
+          "id": "a1-w22-q07",
+          "dimension": "multi-step-application",
+          "retrieval_from_week": null,
+          "prompt": "Compute (3×10⁵)(2×10⁻³) in scientific notation.",
+          "answer": "6×10²",
+          "explanation": "Multiply coefficients and add exponents: 6×10²."
+        },
+        {
+          "id": "a1-w22-q08",
+          "dimension": "multi-step-application",
+          "retrieval_from_week": null,
+          "prompt": "A cell is 8×10⁻⁶ m long. How many such lengths fit end-to-end in 4×10⁻² m?",
+          "answer": "5,000",
+          "explanation": "(4×10⁻²)/(8×10⁻⁶)=0.5×10⁴=5×10³=5000."
+        },
+        {
+          "id": "a1-w22-q09",
+          "dimension": "error-analysis",
+          "retrieval_from_week": null,
+          "prompt": "A student simplifies (x²+y²)² as x⁴+y⁴. What term is missing?",
+          "answer": "2x²y²",
+          "explanation": "Squaring a binomial gives x⁴+2x²y²+y⁴."
+        },
+        {
+          "id": "a1-w22-q10",
+          "dimension": "transfer-reasoning",
+          "retrieval_from_week": null,
+          "prompt": "Why is scientific notation useful beyond shortening large numbers?",
+          "answer": "It makes order of magnitude and multiplicative scale easier to compare",
+          "explanation": "Powers of ten expose relative scale and magnitude."
+        }
+      ]
+    },
+    "23": {
+      "week": 23,
+      "unit": 8,
+      "title": "Sequences & Exponential Change",
+      "graded": true,
+      "current_count": 8,
+      "delayed_count": 2,
+      "retrieval_from_week": 20,
+      "questions": [
+        {
+          "id": "a1-w23-q01",
+          "dimension": "procedural-fluency",
+          "retrieval_from_week": 20,
+          "prompt": "Evaluate −6 + 14 − 9.",
+          "answer": "−1",
+          "explanation": "−6+14=8 and 8−9=−1."
+        },
+        {
+          "id": "a1-w23-q02",
+          "dimension": "procedural-fluency",
+          "retrieval_from_week": null,
+          "prompt": "A quantity grows 6% each period. What multiplier models one period?",
+          "answer": "1.06",
+          "explanation": "Growth by 6% multiplies by 1+0.06=1.06."
+        },
+        {
+          "id": "a1-w23-q03",
+          "dimension": "representation-interpretation",
+          "retrieval_from_week": null,
+          "prompt": "Which equation represents exponential decay from 800 at 12% per year?",
+          "answer": "800(0.88)^t",
+          "explanation": "Decay multiplier is 1−0.12=0.88."
+        },
+        {
+          "id": "a1-w23-q04",
+          "dimension": "representation-interpretation",
+          "retrieval_from_week": null,
+          "prompt": "Which sequence is geometric?",
+          "answer": "2,6,18,54",
+          "explanation": "Successive terms have constant ratio 3."
+        },
+        {
+          "id": "a1-w23-q05",
+          "dimension": "error-analysis",
+          "retrieval_from_week": null,
+          "prompt": "A student models 5% annual growth as P=P₀+0.05t. What feature of exponential growth is missing?",
+          "answer": "Growth is repeatedly based on the current amount",
+          "explanation": "Percent growth compounds multiplicatively."
+        },
+        {
+          "id": "a1-w23-q06",
+          "dimension": "error-analysis",
+          "retrieval_from_week": null,
+          "prompt": "A learner says a half-life of 8 years means subtract half the original amount every 8 years. Why is that wrong?",
+          "answer": "Each interval halves the amount remaining, producing multiplicative decay",
+          "explanation": "The surviving amount is repeatedly multiplied by 1/2."
+        },
+        {
+          "id": "a1-w23-q07",
+          "dimension": "multi-step-application",
+          "retrieval_from_week": null,
+          "prompt": "An account starts with $2,000 and earns 4% annually for 3 years. What is the balance to the nearest cent?",
+          "answer": "$2,249.73",
+          "explanation": "2000(1.04)^3=2249.728, about $2249.73."
+        },
+        {
+          "id": "a1-w23-q08",
+          "dimension": "multi-step-application",
+          "retrieval_from_week": null,
+          "prompt": "A culture starts with 120 cells and doubles every 5 hours. About how many cells are present after 20 hours?",
+          "answer": "1,920",
+          "explanation": "Twenty hours is four doubling periods: 120·2⁴=1920."
+        },
+        {
+          "id": "a1-w23-q09",
+          "dimension": "transfer-reasoning",
+          "retrieval_from_week": 20,
+          "prompt": "If f(x)=3x−2, which ordered pair lies on the graph?",
+          "answer": "(2,4)",
+          "explanation": "f(2)=6−2=4, so (2,4) lies on the graph."
+        },
+        {
+          "id": "a1-w23-q10",
+          "dimension": "transfer-reasoning",
+          "retrieval_from_week": null,
+          "prompt": "Why can a small change in an exponential rate matter greatly over many periods?",
+          "answer": "The multiplier is applied repeatedly, so effects compound",
+          "explanation": "Repeated multiplication amplifies rate differences over time."
+        }
+      ]
+    },
+    "24": {
+      "week": 24,
+      "unit": 9,
+      "title": "Polynomial Vocabulary & Addition/Subtraction",
+      "graded": true,
+      "current_count": 8,
+      "delayed_count": 2,
+      "retrieval_from_week": 23,
+      "questions": [
+        {
+          "id": "a1-w24-q01",
+          "dimension": "procedural-fluency",
+          "retrieval_from_week": 23,
+          "prompt": "Evaluate −6 + 14 − 9.",
+          "answer": "−1",
+          "explanation": "−6+14=8 and 8−9=−1."
+        },
+        {
+          "id": "a1-w24-q02",
+          "dimension": "procedural-fluency",
+          "retrieval_from_week": null,
+          "prompt": "Add (5x²−3x+8)+(2x²+7x−5).",
+          "answer": "7x²+4x+3",
+          "explanation": "Combine like terms: 7x²+4x+3."
+        },
+        {
+          "id": "a1-w24-q03",
+          "dimension": "representation-interpretation",
+          "retrieval_from_week": null,
+          "prompt": "For −6x⁴+2x²−9, identify the leading coefficient and degree.",
+          "answer": "−6 and 4",
+          "explanation": "The leading term is −6x⁴."
+        },
+        {
+          "id": "a1-w24-q04",
+          "dimension": "representation-interpretation",
+          "retrieval_from_week": null,
+          "prompt": "Which is a binomial of degree 3?",
+          "answer": "x³−4x",
+          "explanation": "It has two terms and highest exponent 3."
+        },
+        {
+          "id": "a1-w24-q05",
+          "dimension": "error-analysis",
+          "retrieval_from_week": null,
+          "prompt": "A student subtracts (2x²−5x+1) from (7x²+x−4) but changes only the first sign. What must happen?",
+          "answer": "Every term of the subtracted polynomial changes sign",
+          "explanation": "Subtracting a polynomial distributes −1 across all its terms."
+        },
+        {
+          "id": "a1-w24-q06",
+          "dimension": "error-analysis",
+          "retrieval_from_week": null,
+          "prompt": "A learner combines 3x³+2x² as 5x⁵. Why is that invalid?",
+          "answer": "They are unlike terms and addition does not add exponents",
+          "explanation": "Only terms with identical variable powers combine by coefficient addition."
+        },
+        {
+          "id": "a1-w24-q07",
+          "dimension": "multi-step-application",
+          "retrieval_from_week": null,
+          "prompt": "Revenue is R=9x²+5x and cost is C=4x²+8x+20. What polynomial models profit R−C?",
+          "answer": "5x²−3x−20",
+          "explanation": "Subtract each cost term: 9x²−4x² +5x−8x −20."
+        },
+        {
+          "id": "a1-w24-q08",
+          "dimension": "multi-step-application",
+          "retrieval_from_week": null,
+          "prompt": "A rectangular design has area expressions A₁=3x²+4x and A₂=2x²−x+6. What is their combined area?",
+          "answer": "5x²+3x+6",
+          "explanation": "Add like terms across the two regions."
+        },
+        {
+          "id": "a1-w24-q09",
+          "dimension": "transfer-reasoning",
+          "retrieval_from_week": 23,
+          "prompt": "If f(x)=3x−2, which ordered pair lies on the graph?",
+          "answer": "(2,4)",
+          "explanation": "f(2)=6−2=4, so (2,4) lies on the graph."
+        },
+        {
+          "id": "a1-w24-q10",
+          "dimension": "transfer-reasoning",
+          "retrieval_from_week": null,
+          "prompt": "Two polynomials have the same leading term but different lower-degree terms. What can you conclude about large-|x| behavior?",
+          "answer": "Their leading behavior is similar though exact values may differ",
+          "explanation": "For large magnitude inputs, the shared highest-degree term dominates."
+        }
+      ]
+    },
+    "25": {
+      "week": 25,
+      "unit": 9,
+      "title": "Polynomial Products & Common Factors",
+      "graded": true,
+      "current_count": 8,
+      "delayed_count": 2,
+      "retrieval_from_week": 23,
+      "questions": [
+        {
+          "id": "a1-w25-q01",
+          "dimension": "procedural-fluency",
+          "retrieval_from_week": 23,
+          "prompt": "Evaluate −6 + 14 − 9.",
+          "answer": "−1",
+          "explanation": "−6+14=8 and 8−9=−1."
+        },
+        {
+          "id": "a1-w25-q02",
+          "dimension": "procedural-fluency",
+          "retrieval_from_week": null,
+          "prompt": "Expand (2x−5)².",
+          "answer": "4x²−20x+25",
+          "explanation": "(a−b)²=a²−2ab+b²."
+        },
+        {
+          "id": "a1-w25-q03",
+          "dimension": "representation-interpretation",
+          "retrieval_from_week": null,
+          "prompt": "Factor the GCF from 24x⁴−18x³.",
+          "answer": "6x³(4x−3)",
+          "explanation": "The greatest common factor is 6x³."
+        },
+        {
+          "id": "a1-w25-q04",
+          "dimension": "representation-interpretation",
+          "retrieval_from_week": null,
+          "prompt": "Which product is a difference of squares?",
+          "answer": "(x−7)(x+7)",
+          "explanation": "Conjugates multiply to x²−49."
+        },
+        {
+          "id": "a1-w25-q05",
+          "dimension": "error-analysis",
+          "retrieval_from_week": null,
+          "prompt": "A student expands (x+6)² as x²+36. What term is missing?",
+          "answer": "12x",
+          "explanation": "The middle term is 2·x·6=12x."
+        },
+        {
+          "id": "a1-w25-q06",
+          "dimension": "error-analysis",
+          "retrieval_from_week": null,
+          "prompt": "A learner factors 15x³+10x² as 5x(3x²+2x). Why is this not fully factored by the GCF?",
+          "answer": "Another factor x remains common inside",
+          "explanation": "The GCF is 5x², giving 5x²(3x+2)."
+        },
+        {
+          "id": "a1-w25-q07",
+          "dimension": "multi-step-application",
+          "retrieval_from_week": null,
+          "prompt": "A garden has dimensions x+5 and x+8. Which polynomial gives its area?",
+          "answer": "x²+13x+40",
+          "explanation": "Multiply the binomials: x²+8x+5x+40."
+        },
+        {
+          "id": "a1-w25-q08",
+          "dimension": "multi-step-application",
+          "retrieval_from_week": null,
+          "prompt": "The side of a square increases from x to x+3. By how much does its area increase?",
+          "answer": "6x+9",
+          "explanation": "(x+3)²−x²=6x+9."
+        },
+        {
+          "id": "a1-w25-q09",
+          "dimension": "transfer-reasoning",
+          "retrieval_from_week": 23,
+          "prompt": "If f(x)=3x−2, which ordered pair lies on the graph?",
+          "answer": "(2,4)",
+          "explanation": "f(2)=6−2=4, so (2,4) lies on the graph."
+        },
+        {
+          "id": "a1-w25-q10",
+          "dimension": "transfer-reasoning",
+          "retrieval_from_week": null,
+          "prompt": "How can you verify a proposed factorization such as 4x²−25=(2x−5)(2x+5)?",
+          "answer": "Expand the factors and compare with the original polynomial",
+          "explanation": "Expansion is a symbolic inverse check for factoring."
+        }
+      ]
+    },
+    "26": {
+      "week": 26,
+      "unit": 9,
+      "title": "Factoring, Zeros & Polynomial Models",
+      "graded": true,
+      "current_count": 8,
+      "delayed_count": 2,
+      "retrieval_from_week": 23,
+      "questions": [
+        {
+          "id": "a1-w26-q01",
+          "dimension": "procedural-fluency",
+          "retrieval_from_week": 23,
+          "prompt": "Evaluate −6 + 14 − 9.",
+          "answer": "−1",
+          "explanation": "−6+14=8 and 8−9=−1."
+        },
+        {
+          "id": "a1-w26-q02",
+          "dimension": "procedural-fluency",
+          "retrieval_from_week": null,
+          "prompt": "Factor 9x²−16.",
+          "answer": "(3x−4)(3x+4)",
+          "explanation": "It is a difference of squares: (3x)²−4²."
+        },
+        {
+          "id": "a1-w26-q03",
+          "dimension": "representation-interpretation",
+          "retrieval_from_week": null,
+          "prompt": "If (x−5)(x+2)=0, what are the zeros?",
+          "answer": "5 and −2",
+          "explanation": "Zero-product property gives x=5 or x=−2."
+        },
+        {
+          "id": "a1-w26-q04",
+          "dimension": "representation-interpretation",
+          "retrieval_from_week": null,
+          "prompt": "Which factored form has zeros 3 and 7?",
+          "answer": "(x−3)(x−7)",
+          "explanation": "A zero r corresponds to factor x−r."
+        },
+        {
+          "id": "a1-w26-q05",
+          "dimension": "error-analysis",
+          "retrieval_from_week": null,
+          "prompt": "A student factors x²−10x+24 as (x−4)(x+6). What sign condition was missed?",
+          "answer": "The factors must multiply to +24 and add to −10, so both should be negative",
+          "explanation": "(x−4)(x−6) produces −10x and +24."
+        },
+        {
+          "id": "a1-w26-q06",
+          "dimension": "error-analysis",
+          "retrieval_from_week": null,
+          "prompt": "A learner uses the zero-product property on x(x+4)=12. Why is that premature?",
+          "answer": "The equation must first be written with zero on one side",
+          "explanation": "Zero-product applies when a product equals zero."
+        },
+        {
+          "id": "a1-w26-q07",
+          "dimension": "multi-step-application",
+          "retrieval_from_week": null,
+          "prompt": "A rectangle has area x²+9x+20. If one side is x+4, what is the other side?",
+          "answer": "x+5",
+          "explanation": "x²+9x+20=(x+4)(x+5)."
+        },
+        {
+          "id": "a1-w26-q08",
+          "dimension": "multi-step-application",
+          "retrieval_from_week": null,
+          "prompt": "A height model is h(t)=−5(t−1)(t−7). At what positive times is h=0?",
+          "answer": "1 and 7",
+          "explanation": "Each factor is zero at t=1 or t=7."
+        },
+        {
+          "id": "a1-w26-q09",
+          "dimension": "transfer-reasoning",
+          "retrieval_from_week": 23,
+          "prompt": "If f(x)=3x−2, which ordered pair lies on the graph?",
+          "answer": "(2,4)",
+          "explanation": "f(2)=6−2=4, so (2,4) lies on the graph."
+        },
+        {
+          "id": "a1-w26-q10",
+          "dimension": "transfer-reasoning",
+          "retrieval_from_week": null,
+          "prompt": "A polynomial model factors algebraically but produces a negative length as one zero. How should that root be treated?",
+          "answer": "As mathematically valid but contextually infeasible if length must be positive",
+          "explanation": "Mathematical solutions must still be interpreted against physical constraints."
+        }
+      ]
+    },
+    "27": {
+      "week": 27,
+      "unit": 10,
+      "title": "Parabolas, Vertices & Transformations",
+      "graded": true,
+      "current_count": 8,
+      "delayed_count": 2,
+      "retrieval_from_week": 26,
+      "questions": [
+        {
+          "id": "a1-w27-q01",
+          "dimension": "procedural-fluency",
+          "retrieval_from_week": 26,
+          "prompt": "Evaluate −6 + 14 − 9.",
+          "answer": "−1",
+          "explanation": "−6+14=8 and 8−9=−1."
+        },
+        {
+          "id": "a1-w27-q02",
+          "dimension": "procedural-fluency",
+          "retrieval_from_week": null,
+          "prompt": "What is the axis of symmetry of y=2(x+4)²+1?",
+          "answer": "x=−4",
+          "explanation": "The vertex has x-coordinate −4."
+        },
+        {
+          "id": "a1-w27-q03",
+          "dimension": "representation-interpretation",
+          "retrieval_from_week": null,
+          "prompt": "Compared with y=x², what does y=−2(x−1)²+3 do?",
+          "answer": "Reflects over x-axis, vertically stretches by 2, right 1, up 3",
+          "explanation": "The negative reflects, |2| stretches, h=1 shifts right, k=3 shifts up."
+        },
+        {
+          "id": "a1-w27-q04",
+          "dimension": "representation-interpretation",
+          "retrieval_from_week": null,
+          "prompt": "A parabola opens downward and has vertex (2,9). What does the vertex represent?",
+          "answer": "A maximum output of 9 at x=2",
+          "explanation": "A downward-opening parabola reaches its maximum at the vertex."
+        },
+        {
+          "id": "a1-w27-q05",
+          "dimension": "error-analysis",
+          "retrieval_from_week": null,
+          "prompt": "A student reads y=(x+5)² as a shift right 5. What is the correction?",
+          "answer": "It shifts left 5",
+          "explanation": "Inside horizontal shifts use the opposite sign."
+        },
+        {
+          "id": "a1-w27-q06",
+          "dimension": "error-analysis",
+          "retrieval_from_week": null,
+          "prompt": "A learner says every parabola has two x-intercepts. What possibilities were ignored?",
+          "answer": "A parabola may have zero, one, or two real x-intercepts",
+          "explanation": "Depending on position relative to the x-axis, there can be 0, 1, or 2 real zeros."
+        },
+        {
+          "id": "a1-w27-q07",
+          "dimension": "multi-step-application",
+          "retrieval_from_week": null,
+          "prompt": "A projectile height is h(t)=−5(t−2)²+25. What is the maximum height?",
+          "answer": "25 m",
+          "explanation": "The vertex is (2,25), so the maximum height is 25 m."
+        },
+        {
+          "id": "a1-w27-q08",
+          "dimension": "multi-step-application",
+          "retrieval_from_week": null,
+          "prompt": "A quadratic cost model has vertex (40,1200) and opens upward. What interpretation is plausible?",
+          "answer": "Minimum cost $1,200 occurs at input 40",
+          "explanation": "An upward-opening parabola has its minimum at the vertex."
+        },
+        {
+          "id": "a1-w27-q09",
+          "dimension": "transfer-reasoning",
+          "retrieval_from_week": 26,
+          "prompt": "If f(x)=3x−2, which ordered pair lies on the graph?",
+          "answer": "(2,4)",
+          "explanation": "f(2)=6−2=4, so (2,4) lies on the graph."
+        },
+        {
+          "id": "a1-w27-q10",
+          "dimension": "transfer-reasoning",
+          "retrieval_from_week": null,
+          "prompt": "Two quadratics have the same vertex but different leading coefficients. What can differ?",
+          "answer": "Their width and opening direction",
+          "explanation": "The leading coefficient controls vertical stretch/compression and sign controls opening."
+        }
+      ]
+    },
+    "28": {
+      "week": 28,
+      "unit": 10,
+      "title": "Quadratic Zeros & Factoring",
+      "graded": true,
+      "current_count": 8,
+      "delayed_count": 2,
+      "retrieval_from_week": 26,
+      "questions": [
+        {
+          "id": "a1-w28-q01",
+          "dimension": "procedural-fluency",
+          "retrieval_from_week": 26,
+          "prompt": "Evaluate −6 + 14 − 9.",
+          "answer": "−1",
+          "explanation": "−6+14=8 and 8−9=−1."
+        },
+        {
+          "id": "a1-w28-q02",
+          "dimension": "procedural-fluency",
+          "retrieval_from_week": null,
+          "prompt": "What are the zeros of y=(x+3)(x−8)?",
+          "answer": "−3 and 8",
+          "explanation": "Each factor is zero at x=−3 or x=8."
+        },
+        {
+          "id": "a1-w28-q03",
+          "dimension": "representation-interpretation",
+          "retrieval_from_week": null,
+          "prompt": "A graph crosses the x-axis at −2 and 6. Which factored form could represent it?",
+          "answer": "y=(x+2)(x−6)",
+          "explanation": "Zeros −2 and 6 correspond to factors x+2 and x−6."
+        },
+        {
+          "id": "a1-w28-q04",
+          "dimension": "representation-interpretation",
+          "retrieval_from_week": null,
+          "prompt": "For y=−(x−1)(x−7), what can you infer without expanding?",
+          "answer": "Zeros are 1 and 7 and the parabola opens downward",
+          "explanation": "The factors give zeros and the negative leading coefficient gives downward opening."
+        },
+        {
+          "id": "a1-w28-q05",
+          "dimension": "error-analysis",
+          "retrieval_from_week": null,
+          "prompt": "A student applies the zero-product property to x(x−5)=12. What must happen first?",
+          "answer": "Rewrite the equation so one side is zero",
+          "explanation": "Zero-product applies to a product equal to zero."
+        },
+        {
+          "id": "a1-w28-q06",
+          "dimension": "error-analysis",
+          "retrieval_from_week": null,
+          "prompt": "A learner factors x²+2x−15 as (x+5)(x+3). What check exposes the error?",
+          "answer": "The constants multiply to +15 instead of −15",
+          "explanation": "For constant −15, factor constants must have opposite signs; correct form is (x+5)(x−3)."
+        },
+        {
+          "id": "a1-w28-q07",
+          "dimension": "multi-step-application",
+          "retrieval_from_week": null,
+          "prompt": "A rectangular area is 48 m² with dimensions x and x+2. What positive x solves the model?",
+          "answer": "6",
+          "explanation": "x(x+2)=48 gives x²+2x−48=(x+8)(x−6)=0; positive length is 6."
+        },
+        {
+          "id": "a1-w28-q08",
+          "dimension": "multi-step-application",
+          "retrieval_from_week": null,
+          "prompt": "A projectile model is h(t)=−4(t−1)(t−6). For what positive time interval is the projectile above ground?",
+          "answer": "1<t<6",
+          "explanation": "With a downward-opening parabola and zeros 1 and 6, h>0 between the zeros."
+        },
+        {
+          "id": "a1-w28-q09",
+          "dimension": "transfer-reasoning",
+          "retrieval_from_week": 26,
+          "prompt": "If f(x)=3x−2, which ordered pair lies on the graph?",
+          "answer": "(2,4)",
+          "explanation": "f(2)=6−2=4, so (2,4) lies on the graph."
+        },
+        {
+          "id": "a1-w28-q10",
+          "dimension": "transfer-reasoning",
+          "retrieval_from_week": null,
+          "prompt": "If a quadratic has a repeated factor (x−4)², what does the graph do at x=4?",
+          "answer": "Touches the x-axis and turns",
+          "explanation": "A double real zero is a tangency point for the parabola."
+        }
+      ]
+    },
+    "29": {
+      "week": 29,
+      "unit": 10,
+      "title": "Completing the Square & Quadratic Formula",
+      "graded": true,
+      "current_count": 8,
+      "delayed_count": 2,
+      "retrieval_from_week": 26,
+      "questions": [
+        {
+          "id": "a1-w29-q01",
+          "dimension": "procedural-fluency",
+          "retrieval_from_week": 26,
+          "prompt": "Evaluate −6 + 14 − 9.",
+          "answer": "−1",
+          "explanation": "−6+14=8 and 8−9=−1."
+        },
+        {
+          "id": "a1-w29-q02",
+          "dimension": "procedural-fluency",
+          "retrieval_from_week": null,
+          "prompt": "What value completes the square for x²+10x+__?",
+          "answer": "25",
+          "explanation": "Half of 10 is 5, and 5²=25."
+        },
+        {
+          "id": "a1-w29-q03",
+          "dimension": "representation-interpretation",
+          "retrieval_from_week": null,
+          "prompt": "For ax²+bx+c=0, what does b²−4ac determine?",
+          "answer": "The number/type of real roots",
+          "explanation": "The discriminant indicates whether there are two, one, or no real roots."
+        },
+        {
+          "id": "a1-w29-q04",
+          "dimension": "representation-interpretation",
+          "retrieval_from_week": null,
+          "prompt": "If the discriminant is zero, what does the graph show?",
+          "answer": "One repeated real x-intercept",
+          "explanation": "A zero discriminant gives one repeated real root."
+        },
+        {
+          "id": "a1-w29-q05",
+          "dimension": "error-analysis",
+          "retrieval_from_week": null,
+          "prompt": "A student solves x²=16 as x=4. What solution was omitted?",
+          "answer": "x=−4",
+          "explanation": "Taking square roots requires both ±4."
+        },
+        {
+          "id": "a1-w29-q06",
+          "dimension": "error-analysis",
+          "retrieval_from_week": null,
+          "prompt": "A learner uses x=(−b±√(b²−4ac))/2a but divides only the radical by 2a. What is wrong?",
+          "answer": "The entire numerator −b±√(...) is divided by 2a",
+          "explanation": "The fraction bar applies to the full numerator."
+        },
+        {
+          "id": "a1-w29-q07",
+          "dimension": "multi-step-application",
+          "retrieval_from_week": null,
+          "prompt": "Solve x²−6x−7=0.",
+          "answer": "x=7 or −1",
+          "explanation": "(x−7)(x+1)=0."
+        },
+        {
+          "id": "a1-w29-q08",
+          "dimension": "multi-step-application",
+          "retrieval_from_week": null,
+          "prompt": "For 2x²+4x+7=0, what does the discriminant say about real solutions?",
+          "answer": "No real solutions",
+          "explanation": "b²−4ac=16−56=−40<0, so there are no real roots."
+        },
+        {
+          "id": "a1-w29-q09",
+          "dimension": "transfer-reasoning",
+          "retrieval_from_week": 26,
+          "prompt": "If f(x)=3x−2, which ordered pair lies on the graph?",
+          "answer": "(2,4)",
+          "explanation": "f(2)=6−2=4, so (2,4) lies on the graph."
+        },
+        {
+          "id": "a1-w29-q10",
+          "dimension": "transfer-reasoning",
+          "retrieval_from_week": null,
+          "prompt": "Why should quadratic solutions be substituted back when they come from a contextual equation?",
+          "answer": "To verify algebra and then test context feasibility",
+          "explanation": "Verification catches algebra errors and context may eliminate otherwise valid roots."
+        }
+      ]
+    },
+    "30": {
+      "week": 30,
+      "unit": 10,
+      "title": "Quadratic Modelling & Model Comparison",
+      "graded": true,
+      "current_count": 8,
+      "delayed_count": 2,
+      "retrieval_from_week": 29,
+      "questions": [
+        {
+          "id": "a1-w30-q01",
+          "dimension": "procedural-fluency",
+          "retrieval_from_week": 29,
+          "prompt": "Evaluate −6 + 14 − 9.",
+          "answer": "−1",
+          "explanation": "−6+14=8 and 8−9=−1."
+        },
+        {
+          "id": "a1-w30-q02",
+          "dimension": "procedural-fluency",
+          "retrieval_from_week": null,
+          "prompt": "Solve the system y=x² and y=4x−3.",
+          "answer": "x=1 or 3",
+          "explanation": "x²=4x−3 gives x²−4x+3=(x−1)(x−3)=0."
+        },
+        {
+          "id": "a1-w30-q03",
+          "dimension": "representation-interpretation",
+          "retrieval_from_week": null,
+          "prompt": "In h(t)=−4.9(t−2)²+30, what does t=2 represent?",
+          "answer": "Time of maximum height",
+          "explanation": "Vertex form places the maximum at t=2."
+        },
+        {
+          "id": "a1-w30-q04",
+          "dimension": "representation-interpretation",
+          "retrieval_from_week": null,
+          "prompt": "A linear model and quadratic model have similar fit near the data, but residuals from the linear model curve systematically. Which representation favors the quadratic?",
+          "answer": "The residual pattern",
+          "explanation": "Curved residual structure is evidence that linear form misses nonlinearity."
+        },
+        {
+          "id": "a1-w30-q05",
+          "dimension": "error-analysis",
+          "retrieval_from_week": null,
+          "prompt": "A student finds the vertex of y=−2x²+16x+1 at x=−b/2a and calculates −16/(−4)=−4. What arithmetic error occurred?",
+          "answer": "−16/−4=4, not −4",
+          "explanation": "A negative divided by a negative is positive."
+        },
+        {
+          "id": "a1-w30-q06",
+          "dimension": "error-analysis",
+          "retrieval_from_week": null,
+          "prompt": "A learner accepts a negative time root from a projectile landing equation as a future landing time. What was ignored?",
+          "answer": "The contextual domain t≥0",
+          "explanation": "A mathematically valid root can be outside the physical time domain."
+        },
+        {
+          "id": "a1-w30-q07",
+          "dimension": "multi-step-application",
+          "retrieval_from_week": null,
+          "prompt": "A rectangle has perimeter 40. If width is x, area is A=x(20−x). What width maximizes area?",
+          "answer": "10",
+          "explanation": "A=−x²+20x has vertex at x=10."
+        },
+        {
+          "id": "a1-w30-q08",
+          "dimension": "multi-step-application",
+          "retrieval_from_week": null,
+          "prompt": "A projectile follows h(t)=−5t²+30t+2. At what time does it reach maximum height?",
+          "answer": "3 s",
+          "explanation": "t=−b/(2a)=−30/(−10)=3 seconds."
+        },
+        {
+          "id": "a1-w30-q09",
+          "dimension": "transfer-reasoning",
+          "retrieval_from_week": 29,
+          "prompt": "If f(x)=3x−2, which ordered pair lies on the graph?",
+          "answer": "(2,4)",
+          "explanation": "f(2)=6−2=4, so (2,4) lies on the graph."
+        },
+        {
+          "id": "a1-w30-q10",
+          "dimension": "transfer-reasoning",
+          "retrieval_from_week": null,
+          "prompt": "If a quadratic and a line intersect twice, what does that mean in a contextual comparison?",
+          "answer": "The modeled quantities are equal at two input values",
+          "explanation": "Intersections are inputs where the two outputs match."
+        }
+      ]
+    },
+    "31": {
+      "week": 31,
+      "unit": 11,
+      "title": "Radicals & Rational Exponents",
+      "graded": true,
+      "current_count": 8,
+      "delayed_count": 2,
+      "retrieval_from_week": 29,
+      "questions": [
+        {
+          "id": "a1-w31-q01",
+          "dimension": "procedural-fluency",
+          "retrieval_from_week": 29,
+          "prompt": "Evaluate −6 + 14 − 9.",
+          "answer": "−1",
+          "explanation": "−6+14=8 and 8−9=−1."
+        },
+        {
+          "id": "a1-w31-q02",
+          "dimension": "procedural-fluency",
+          "retrieval_from_week": null,
+          "prompt": "Rewrite x^(3/2) in radical form for x≥0.",
+          "answer": "√(x³)",
+          "explanation": "Denominator 2 gives square root and numerator 3 gives the power."
+        },
+        {
+          "id": "a1-w31-q03",
+          "dimension": "representation-interpretation",
+          "retrieval_from_week": null,
+          "prompt": "Which expression is equivalent to 2√5+7√5?",
+          "answer": "9√5",
+          "explanation": "Like radicals combine by adding coefficients."
+        },
+        {
+          "id": "a1-w31-q04",
+          "dimension": "representation-interpretation",
+          "retrieval_from_week": null,
+          "prompt": "What does √49 represent in the real numbers?",
+          "answer": "The principal nonnegative root 7",
+          "explanation": "The radical symbol √ denotes the principal nonnegative square root."
+        },
+        {
+          "id": "a1-w31-q05",
+          "dimension": "error-analysis",
+          "retrieval_from_week": null,
+          "prompt": "A student writes √(9+16)=√9+√16=7. What is wrong?",
+          "answer": "Square roots do not distribute over addition",
+          "explanation": "√(a+b) is generally not √a+√b; here √25=5."
+        },
+        {
+          "id": "a1-w31-q06",
+          "dimension": "error-analysis",
+          "retrieval_from_week": null,
+          "prompt": "A learner simplifies √50 as √25+√2. What operation should replace addition?",
+          "answer": "√(25·2)=5√2",
+          "explanation": "Factor the radicand multiplicatively to extract perfect squares."
+        },
+        {
+          "id": "a1-w31-q07",
+          "dimension": "multi-step-application",
+          "retrieval_from_week": null,
+          "prompt": "A square has area 98 m². What is its exact side length?",
+          "answer": "7√2 m",
+          "explanation": "Side=√98=√(49·2)=7√2 m."
+        },
+        {
+          "id": "a1-w31-q08",
+          "dimension": "multi-step-application",
+          "retrieval_from_week": null,
+          "prompt": "A quantity follows y=x^(1/2). If x changes from 36 to 81, by how much does y increase?",
+          "answer": "3",
+          "explanation": "√36=6 and √81=9, an increase of 3."
+        },
+        {
+          "id": "a1-w31-q09",
+          "dimension": "transfer-reasoning",
+          "retrieval_from_week": 29,
+          "prompt": "If f(x)=3x−2, which ordered pair lies on the graph?",
+          "answer": "(2,4)",
+          "explanation": "f(2)=6−2=4, so (2,4) lies on the graph."
+        },
+        {
+          "id": "a1-w31-q10",
+          "dimension": "transfer-reasoning",
+          "retrieval_from_week": null,
+          "prompt": "Which check best verifies that 3√8=6√2?",
+          "answer": "Simplify √8 as 2√2, then multiply by 3",
+          "explanation": "√8=2√2, so 3√8=6√2."
+        }
+      ]
+    },
+    "32": {
+      "week": 32,
+      "unit": 11,
+      "title": "Coordinate Geometry & Radical Models",
+      "graded": true,
+      "current_count": 8,
+      "delayed_count": 2,
+      "retrieval_from_week": 29,
+      "questions": [
+        {
+          "id": "a1-w32-q01",
+          "dimension": "procedural-fluency",
+          "retrieval_from_week": 29,
+          "prompt": "Evaluate −6 + 14 − 9.",
+          "answer": "−1",
+          "explanation": "−6+14=8 and 8−9=−1."
+        },
+        {
+          "id": "a1-w32-q02",
+          "dimension": "procedural-fluency",
+          "retrieval_from_week": null,
+          "prompt": "Find the midpoint of (−4,6) and (8,−2).",
+          "answer": "(2,2)",
+          "explanation": "Average coordinates: ((−4+8)/2,(6−2)/2)=(2,2)."
+        },
+        {
+          "id": "a1-w32-q03",
+          "dimension": "representation-interpretation",
+          "retrieval_from_week": null,
+          "prompt": "Which equation represents a circle centered at (3,−2) with radius 5?",
+          "answer": "(x−3)²+(y+2)²=25",
+          "explanation": "Circle form is (x−h)²+(y−k)²=r²."
+        },
+        {
+          "id": "a1-w32-q04",
+          "dimension": "representation-interpretation",
+          "retrieval_from_week": null,
+          "prompt": "What geometric idea underlies the distance formula?",
+          "answer": "Pythagorean theorem",
+          "explanation": "Horizontal and vertical differences form legs of a right triangle."
+        },
+        {
+          "id": "a1-w32-q05",
+          "dimension": "error-analysis",
+          "retrieval_from_week": null,
+          "prompt": "A student computes midpoint by subtracting coordinates instead of averaging them. What operation is required?",
+          "answer": "Add corresponding coordinates and divide each sum by 2",
+          "explanation": "A midpoint is halfway between each pair of coordinates."
+        },
+        {
+          "id": "a1-w32-q06",
+          "dimension": "error-analysis",
+          "retrieval_from_week": null,
+          "prompt": "A learner uses distance √((x₂−x₁)+(y₂−y₁)) without squares. What structural step is missing?",
+          "answer": "Square both coordinate differences before adding",
+          "explanation": "Pythagorean distance uses √(Δx²+Δy²)."
+        },
+        {
+          "id": "a1-w32-q07",
+          "dimension": "multi-step-application",
+          "retrieval_from_week": null,
+          "prompt": "A wheelchair ramp rises 0.75 m over a horizontal run of 9 m. What is its length to the nearest hundredth?",
+          "answer": "9.03 m",
+          "explanation": "√(9²+0.75²)=√81.5625≈9.03 m."
+        },
+        {
+          "id": "a1-w32-q08",
+          "dimension": "multi-step-application",
+          "retrieval_from_week": null,
+          "prompt": "Point (6,8) lies how far from the origin?",
+          "answer": "10",
+          "explanation": "√(6²+8²)=10."
+        },
+        {
+          "id": "a1-w32-q09",
+          "dimension": "transfer-reasoning",
+          "retrieval_from_week": 29,
+          "prompt": "If f(x)=3x−2, which ordered pair lies on the graph?",
+          "answer": "(2,4)",
+          "explanation": "f(2)=6−2=4, so (2,4) lies on the graph."
+        },
+        {
+          "id": "a1-w32-q10",
+          "dimension": "transfer-reasoning",
+          "retrieval_from_week": null,
+          "prompt": "A point satisfies a circle equation algebraically but lies outside the allowed physical site boundary. What is the correct interpretation?",
+          "answer": "Mathematically on the circle but contextually infeasible",
+          "explanation": "Model constraints can be stricter than the equation alone."
+        }
+      ]
+    },
+    "33": {
+      "week": 33,
+      "unit": 12,
+      "title": "Statistical Questions, Center & Spread",
+      "graded": true,
+      "current_count": 8,
+      "delayed_count": 2,
+      "retrieval_from_week": 32,
+      "questions": [
+        {
+          "id": "a1-w33-q01",
+          "dimension": "procedural-fluency",
+          "retrieval_from_week": 32,
+          "prompt": "Evaluate −6 + 14 − 9.",
+          "answer": "−1",
+          "explanation": "−6+14=8 and 8−9=−1."
+        },
+        {
+          "id": "a1-w33-q02",
+          "dimension": "procedural-fluency",
+          "retrieval_from_week": null,
+          "prompt": "What is the median of 3,5,8,11,14,20?",
+          "answer": "9.5",
+          "explanation": "Average the middle values 8 and 11: 9.5."
+        },
+        {
+          "id": "a1-w33-q03",
+          "dimension": "representation-interpretation",
+          "retrieval_from_week": null,
+          "prompt": "Which measure is generally more resistant to a single extreme outlier?",
+          "answer": "Median",
+          "explanation": "The median depends on order rather than the magnitude of an extreme value."
+        },
+        {
+          "id": "a1-w33-q04",
+          "dimension": "representation-interpretation",
+          "retrieval_from_week": null,
+          "prompt": "Two groups have the same mean but one has much larger standard deviation. What differs most directly?",
+          "answer": "Spread around the mean",
+          "explanation": "Standard deviation measures typical dispersion about the mean."
+        },
+        {
+          "id": "a1-w33-q05",
+          "dimension": "error-analysis",
+          "retrieval_from_week": null,
+          "prompt": "A survey about school lunches samples only students already standing in the salad line. What is the main concern?",
+          "answer": "Selection bias",
+          "explanation": "The sampling method may systematically overrepresent salad-preferring students."
+        },
+        {
+          "id": "a1-w33-q06",
+          "dimension": "error-analysis",
+          "retrieval_from_week": null,
+          "prompt": "A report removes two low scores because they ‘make the average look bad’ without a stated rule. What is the problem?",
+          "answer": "Selective data removal can bias the conclusion",
+          "explanation": "Exclusion criteria should be principled and disclosed."
+        },
+        {
+          "id": "a1-w33-q07",
+          "dimension": "multi-step-application",
+          "retrieval_from_week": null,
+          "prompt": "Group A scores are 72,74,76,78,80. Group B scores are 50,65,76,87,102. Both means are 76. Which group is more consistent?",
+          "answer": "Group A",
+          "explanation": "Group A is clustered much more tightly around 76."
+        },
+        {
+          "id": "a1-w33-q08",
+          "dimension": "multi-step-application",
+          "retrieval_from_week": null,
+          "prompt": "A sample of 40 voters is selected randomly from a population of 2,000. Which improvement most directly reduces sampling variability?",
+          "answer": "Use a larger random sample",
+          "explanation": "Larger representative samples generally reduce random sampling variability."
+        },
+        {
+          "id": "a1-w33-q09",
+          "dimension": "transfer-reasoning",
+          "retrieval_from_week": 32,
+          "prompt": "If f(x)=3x−2, which ordered pair lies on the graph?",
+          "answer": "(2,4)",
+          "explanation": "f(2)=6−2=4, so (2,4) lies on the graph."
+        },
+        {
+          "id": "a1-w33-q10",
+          "dimension": "transfer-reasoning",
+          "retrieval_from_week": null,
+          "prompt": "If two datasets have equal means, why is reporting only the mean incomplete?",
+          "answer": "Their spreads and shapes can still differ substantially",
+          "explanation": "Center alone does not describe variability or distribution shape."
+        }
+      ]
+    },
+    "34": {
+      "week": 34,
+      "unit": 12,
+      "title": "Displays, Association & Probability Evidence",
+      "graded": true,
+      "current_count": 8,
+      "delayed_count": 2,
+      "retrieval_from_week": 32,
+      "questions": [
+        {
+          "id": "a1-w34-q01",
+          "dimension": "procedural-fluency",
+          "retrieval_from_week": 32,
+          "prompt": "Evaluate −6 + 14 − 9.",
+          "answer": "−1",
+          "explanation": "−6+14=8 and 8−9=−1."
+        },
+        {
+          "id": "a1-w34-q02",
+          "dimension": "procedural-fluency",
+          "retrieval_from_week": null,
+          "prompt": "A two-way table shows 30 of 50 bus riders and 20 of 50 car riders support a proposal. What percent of bus riders support it?",
+          "answer": "60%",
+          "explanation": "30/50=60%."
+        },
+        {
+          "id": "a1-w34-q03",
+          "dimension": "representation-interpretation",
+          "retrieval_from_week": null,
+          "prompt": "A histogram has a long tail to the right. How is the distribution described?",
+          "answer": "Right-skewed",
+          "explanation": "The direction of the long tail names the skew."
+        },
+        {
+          "id": "a1-w34-q04",
+          "dimension": "representation-interpretation",
+          "retrieval_from_week": null,
+          "prompt": "A scatterplot shows points tightly clustered around an upward-sloping line. What does that suggest?",
+          "answer": "Strong positive association",
+          "explanation": "As x increases, y tends to increase with relatively little scatter."
+        },
+        {
+          "id": "a1-w34-q05",
+          "dimension": "error-analysis",
+          "retrieval_from_week": null,
+          "prompt": "A student says a correlation of 0.9 proves x causes y. What is the correct caution?",
+          "answer": "Strong association does not by itself establish causation",
+          "explanation": "Confounding variables and study design matter for causal claims."
+        },
+        {
+          "id": "a1-w34-q06",
+          "dimension": "error-analysis",
+          "retrieval_from_week": null,
+          "prompt": "A learner compares raw counts from groups of very different sizes instead of conditional percentages. What can go wrong?",
+          "answer": "Group size can distort the comparison",
+          "explanation": "Conditional relative frequencies make differing group sizes comparable."
+        },
+        {
+          "id": "a1-w34-q07",
+          "dimension": "multi-step-application",
+          "retrieval_from_week": null,
+          "prompt": "In a group of 120 students, 72 play a sport. Of those 72, 30 also play music. What is P(music | sport)?",
+          "answer": "41.7%",
+          "explanation": "Conditional probability uses the sport group as denominator: 30/72≈41.7%."
+        },
+        {
+          "id": "a1-w34-q08",
+          "dimension": "multi-step-application",
+          "retrieval_from_week": null,
+          "prompt": "Two groups have medians 50 and 61, but their interquartile ranges overlap heavily. Which conclusion is most defensible?",
+          "answer": "Typical centers differ, but distributions still overlap substantially",
+          "explanation": "Median differences do not imply complete separation of observations."
+        },
+        {
+          "id": "a1-w34-q09",
+          "dimension": "transfer-reasoning",
+          "retrieval_from_week": 32,
+          "prompt": "If f(x)=3x−2, which ordered pair lies on the graph?",
+          "answer": "(2,4)",
+          "explanation": "f(2)=6−2=4, so (2,4) lies on the graph."
+        },
+        {
+          "id": "a1-w34-q10",
+          "dimension": "transfer-reasoning",
+          "retrieval_from_week": null,
+          "prompt": "What additional evidence is especially important before interpreting association causally?",
+          "answer": "Study design, possible confounders, and how subjects were assigned or sampled",
+          "explanation": "Causal inference depends on design and alternative explanations, not correlation alone."
+        }
+      ]
+    },
+    "35": {
+      "week": 35,
+      "unit": 12,
+      "title": "Financial Mathematics & Quantitative Claims",
+      "graded": true,
+      "current_count": 8,
+      "delayed_count": 2,
+      "retrieval_from_week": 32,
+      "questions": [
+        {
+          "id": "a1-w35-q01",
+          "dimension": "procedural-fluency",
+          "retrieval_from_week": 32,
+          "prompt": "Evaluate −6 + 14 − 9.",
+          "answer": "−1",
+          "explanation": "−6+14=8 and 8−9=−1."
+        },
+        {
+          "id": "a1-w35-q02",
+          "dimension": "procedural-fluency",
+          "retrieval_from_week": null,
+          "prompt": "A $1,500 balance grows by 3% for one period. What is the new balance?",
+          "answer": "$1,545",
+          "explanation": "1500×1.03=1545."
+        },
+        {
+          "id": "a1-w35-q03",
+          "dimension": "representation-interpretation",
+          "retrieval_from_week": null,
+          "prompt": "Which statement distinguishes APR from a simple dollar fee?",
+          "answer": "APR expresses a rate relative to balance/time, while a fee may be a fixed amount",
+          "explanation": "Rates and fixed charges describe different cost structures."
+        },
+        {
+          "id": "a1-w35-q04",
+          "dimension": "representation-interpretation",
+          "retrieval_from_week": null,
+          "prompt": "A chart reports a 50% increase from 2 cases to 3 cases. Which interpretation is strongest?",
+          "answer": "The relative increase is large, but the absolute change is only 1 case",
+          "explanation": "Both relative and absolute change provide important context."
+        },
+        {
+          "id": "a1-w35-q05",
+          "dimension": "error-analysis",
+          "retrieval_from_week": null,
+          "prompt": "A student applies 20% discount and then 8% tax by subtracting 12% once from the original price. What is the issue?",
+          "answer": "Sequential percentages act on different bases and should be applied multiplicatively",
+          "explanation": "Use price×0.80×1.08; the tax is applied to the discounted price."
+        },
+        {
+          "id": "a1-w35-q06",
+          "dimension": "error-analysis",
+          "retrieval_from_week": null,
+          "prompt": "A learner compares two loans only by monthly payment and ignores term length. What major cost factor is missing?",
+          "answer": "Total number of payments and total interest/cost",
+          "explanation": "A lower monthly payment can still produce higher total cost over a longer term."
+        },
+        {
+          "id": "a1-w35-q07",
+          "dimension": "multi-step-application",
+          "retrieval_from_week": null,
+          "prompt": "A $500 item is discounted 15% and then taxed 6%. What is the final price?",
+          "answer": "$450.50",
+          "explanation": "500×0.85=425; 425×1.06=450.50."
+        },
+        {
+          "id": "a1-w35-q08",
+          "dimension": "multi-step-application",
+          "retrieval_from_week": null,
+          "prompt": "Plan A costs $30+$4 per use. Plan B costs $10+$6 per use. At how many uses do they cost the same?",
+          "answer": "10",
+          "explanation": "30+4u=10+6u gives 20=2u, so u=10."
+        },
+        {
+          "id": "a1-w35-q09",
+          "dimension": "transfer-reasoning",
+          "retrieval_from_week": 32,
+          "prompt": "If f(x)=3x−2, which ordered pair lies on the graph?",
+          "answer": "(2,4)",
+          "explanation": "f(2)=6−2=4, so (2,4) lies on the graph."
+        },
+        {
+          "id": "a1-w35-q10",
+          "dimension": "transfer-reasoning",
+          "retrieval_from_week": null,
+          "prompt": "A claim advertises ‘200% more’ without giving the baseline. Why is the baseline important?",
+          "answer": "A relative change cannot be judged meaningfully without knowing what it is relative to",
+          "explanation": "The same percentage can represent very different absolute changes depending on the starting value."
+        }
+      ]
+    },
+    "36": {
+      "week": 36,
+      "unit": 13,
+      "title": "Integrated Modelling Capstone & Algebra I Defense",
+      "graded": true,
+      "current_count": 8,
+      "delayed_count": 2,
+      "retrieval_from_week": 35,
+      "questions": [
+        {
+          "id": "a1-w36-q01",
+          "dimension": "procedural-fluency",
+          "retrieval_from_week": 35,
+          "prompt": "Evaluate −6 + 14 − 9.",
+          "answer": "−1",
+          "explanation": "−6+14=8 and 8−9=−1."
+        },
+        {
+          "id": "a1-w36-q02",
+          "dimension": "procedural-fluency",
+          "retrieval_from_week": null,
+          "prompt": "A model predicts C=120+18n. What is the predicted value at n=25?",
+          "answer": "$570",
+          "explanation": "120+18(25)=120+450=570."
+        },
+        {
+          "id": "a1-w36-q03",
+          "dimension": "representation-interpretation",
+          "retrieval_from_week": null,
+          "prompt": "Which statement is an assumption rather than a computed result?",
+          "answer": "The rate of $18 per unit remains constant over the modeled range",
+          "explanation": "An assumption states a condition the model treats as true."
+        },
+        {
+          "id": "a1-w36-q04",
+          "dimension": "representation-interpretation",
+          "retrieval_from_week": null,
+          "prompt": "A sensitivity test changes a key rate by ±10%. What is the purpose?",
+          "answer": "Measure how much the conclusion depends on uncertainty in that input",
+          "explanation": "Sensitivity analysis tests robustness to plausible input changes."
+        },
+        {
+          "id": "a1-w36-q05",
+          "dimension": "error-analysis",
+          "retrieval_from_week": null,
+          "prompt": "A student reports a model with R² or residual information but never checks whether the variables are ethically or fairly defined. What dimension is missing?",
+          "answer": "Fairness and impact review",
+          "explanation": "A responsible model also examines who or what may be affected by assumptions and variable choices."
+        },
+        {
+          "id": "a1-w36-q06",
+          "dimension": "error-analysis",
+          "retrieval_from_week": null,
+          "prompt": "A learner changes the model after seeing inconvenient results but does not document the revision. What should be preserved?",
+          "answer": "The reason for revision, changed assumptions/data, and before/after evidence",
+          "explanation": "Transparent revision is part of model validation and reproducibility."
+        },
+        {
+          "id": "a1-w36-q07",
+          "dimension": "multi-step-application",
+          "retrieval_from_week": null,
+          "prompt": "A model M=250−12d predicts a quantity after d days. At d=15, what is M, and what happens if the rate changes to 10 per day?",
+          "answer": "70, then 100",
+          "explanation": "250−12(15)=70; with rate 10, 250−10(15)=100."
+        },
+        {
+          "id": "a1-w36-q08",
+          "dimension": "multi-step-application",
+          "retrieval_from_week": null,
+          "prompt": "A project compares Plan A=40+5x with Plan B=16+8x. Find the break-even x and identify which is cheaper for x=4.",
+          "answer": "x=8; Plan B cheaper at 4",
+          "explanation": "40+5x=16+8x gives x=8. At x=4, A=60 and B=48, so B is cheaper."
+        },
+        {
+          "id": "a1-w36-q09",
+          "dimension": "transfer-reasoning",
+          "retrieval_from_week": 35,
+          "prompt": "If f(x)=3x−2, which ordered pair lies on the graph?",
+          "answer": "(2,4)",
+          "explanation": "f(2)=6−2=4, so (2,4) lies on the graph."
+        },
+        {
+          "id": "a1-w36-q10",
+          "dimension": "transfer-reasoning",
+          "retrieval_from_week": null,
+          "prompt": "Which Algebra I readiness defense is strongest?",
+          "answer": "‘I can select representations, solve and verify, analyze errors, interpret units/constraints, and explain where a model may fail.’",
+          "explanation": "Readiness includes procedural skill, representation, verification, interpretation, and mathematical communication."
+        }
+      ]
+    }
+  }
+}
