@@ -75,7 +75,8 @@ function courseDashboard(){
   const source=document.getElementById("courseResumeLink"),target=document.getElementById("algebra1DashboardResume");
   const sync=()=>{if(!source||!target)return;target.href=source.getAttribute("href")||"#lessons";target.textContent=source.textContent?.trim()||"Continue learning"};
   sync();
-  if(source)new MutationObserver(sync).observe(source,{attributes:true,childList:true,subtree:true});
+  window.addEventListener("khaemenes-algebra1-resume-updated",sync);
+  [120,420,1200].forEach(ms=>setTimeout(sync,ms));
 }
 function unitExperience(){
   document.body.classList.toggle("algebra1-has-header",!!document.querySelector(".site-header"));
@@ -125,7 +126,6 @@ function enhance(){
 }
 ensureCss();
 if(document.readyState==="loading")document.addEventListener("DOMContentLoaded",()=>setTimeout(enhance,0),{once:true});else setTimeout(enhance,0);
-const main=document.getElementById("main");
-if(main){let pending=false;new MutationObserver(()=>{if(pending)return;pending=true;setTimeout(()=>{pending=false;enhance()},0)}).observe(main,{childList:true,subtree:false})}
-window.KhaemenesAlgebra1StudentExperience=Object.freeze({version:"2.0",enhance});
+window.addEventListener("khaemenes-algebra1-content-ready",enhance);
+window.KhaemenesAlgebra1StudentExperience=Object.freeze({version:"2.1",enhance});
 })();
