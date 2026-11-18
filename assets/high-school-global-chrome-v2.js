@@ -137,6 +137,18 @@ function load(src,key){
     (document.head||document.documentElement).append(s);
   });
 }
+function waitFor(check,timeout=2600,step=40){
+  return new Promise(resolve=>{
+    const started=performance.now();
+    const poll=()=>{
+      let value=null;try{value=check()}catch{}
+      if(value)return resolve(value);
+      if(performance.now()-started>=timeout)return resolve(null);
+      setTimeout(poll,step);
+    };
+    poll();
+  });
+}
 function pathGrade(){
   const m=location.pathname.match(/\/grade-(09|10|11|12)(?:\/|$)/i);
   if(m)return m[1];
@@ -322,7 +334,9 @@ async function start(){
   }
   if(mathematicsLanding){
     await load(VNV+"vnv-333-ticker.js","khaemenesHighMath333Ticker");
+    await waitFor(()=>window.VNV333Ticker?.mount);
     await load(VNV+"vnv-ticker-autopopulate.js","khaemenesHighMathAutoTicker");
+    await waitFor(()=>window.VNV_TICKER?.autoPopulate);
     if(window.VNV333Ticker?.mount && !document.getElementById("vnv333NetworkTicker")){
       window.VNV333Ticker.mount();
     }
