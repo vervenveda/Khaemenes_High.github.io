@@ -7,10 +7,10 @@ if(window.__KHAE_MATH_TOOLS_V21__||document.getElementById("khae-math-tools"))re
 window.__KHAE_MATH_TOOLS_V21__=true;
 
 const pathname=location.pathname.toLowerCase();
-const assessmentSurface=/\/(?:assessment|assessments|diagnostic|quiz|quizzes|exam|exams|midterm|final)(?:\/|\.|-|_|$)/.test(pathname)||
-  document.body?.classList?.contains("math-assessment-surface");
-const closedBook=/(?:^|\/)(?:final(?:-exam)?|cumulative[-_]?final|semester[-_]?exam)(?:\/|\.|-|_|$)/.test(pathname)||
-  document.body?.dataset?.mathAssessmentMode==="final";
+const routeAssessment=/\/(?:assessment|assessments|diagnostic|quiz|quizzes|exam|exams|midterm|final)(?:\/|\.|-|_|$)/.test(pathname);
+const routeClosedBook=/(?:^|\/)(?:final(?:-exam)?|cumulative[-_]?final|semester[-_]?exam)(?:\/|\.|-|_|$)/.test(pathname);
+const isAssessmentNow=()=>routeAssessment||document.body?.classList?.contains("math-assessment-surface");
+const isClosedBookNow=()=>routeClosedBook||document.body?.dataset?.mathAssessmentMode==="final";
 const course=pathname.includes("/pre-algebra/")?"pre-algebra":pathname.includes("/algebra-1/")?"algebra-1":pathname.includes("/geometry/")?"geometry":pathname.includes("/algebra-2/")?"algebra-2":"mathematics";
 const rootBase="https://vervenveda.com";
 const shared={
@@ -65,7 +65,7 @@ function notesTool(){
 }
 function formulaTool(){
  openTool("Formula Sheet",body=>{
-  if(document.body?.dataset?.mathAssessmentMode==="final"||closedBook){
+  if(isClosedBookNow()){
    const p=document.createElement("p");p.textContent="The formula sheet is unavailable during this closed-book final assessment.";body.append(p);return;
   }
   const section=document.createElement("div");section.className="khae-formula-sheet";
@@ -106,24 +106,29 @@ function mount(){
   const b=document.createElement("button");b.type="button";b.textContent=label;b.title=title;b.disabled=disabled;
   if(!disabled)b.addEventListener("click",action);grid.append(b);return b;
  };
- if(assessmentSurface){
-  addButton("Notepad","Open session-only assessment notes",notesTool);
-  addButton("Calculator","Open the Khaemenes Scientific Calculator",()=>openResource(resources.Calculator));
-  addButton("Whiteboard","Open a scratch whiteboard",whiteboardTool);
-  addButton("Graph","Open the course graphing tool",()=>openResource(resources.Graph));
-  const formula=addButton("Formula",closedBook?"Formula sheet unavailable during the closed-book final":"Open the Algebra formula sheet",formulaTool,closedBook);
-  if(closedBook)formula.setAttribute("aria-disabled","true");
-  addButton("Help","Open assessment help",helpTool);
-  note.textContent=closedBook?"Closed-book final: the formula sheet is disabled. Scratch tools do not affect scoring.":"Scratch tools support problem solving and do not affect scoring or mastery.";
- }else{
-  ["Calculator","Graph","Studio","Games","Search","Parent"].forEach(label=>addButton(label,label+" resource",()=>openResource(resources[label])));
-  addButton("Print","Print current learning page",()=>window.print());
-  addButton("Course","Return to mathematics course home",()=>{
-   const match=location.pathname.match(/^(.*\/courses\/mathematics\/(?:pre-algebra|algebra-1|geometry|algebra-2)\/)/i);
-   location.href=match?match[1]:"/Khaemenes_High.github.io/courses/mathematics/";
-  });
-  note.textContent="Learning resources support practice and exploration. Assessment rules remain authoritative.";
- }
+ const renderButtons=()=>{
+  grid.replaceChildren();
+  const assessmentSurface=isAssessmentNow(),closedBook=isClosedBookNow();
+  if(assessmentSurface){
+   addButton("Notepad","Open session-only assessment notes",notesTool);
+   addButton("Calculator","Open the Khaemenes Scientific Calculator",()=>openResource(resources.Calculator));
+   addButton("Whiteboard","Open a scratch whiteboard",whiteboardTool);
+   addButton("Graph","Open the course graphing tool",()=>openResource(resources.Graph));
+   const formula=addButton("Formula",closedBook?"Formula sheet unavailable during the closed-book final":"Open the Algebra formula sheet",formulaTool,closedBook);
+   if(closedBook)formula.setAttribute("aria-disabled","true");
+   addButton("Help","Open assessment help",helpTool);
+   note.textContent=closedBook?"Closed-book final: the formula sheet is disabled. Scratch tools do not affect scoring.":"Scratch tools support problem solving and do not affect scoring or mastery.";
+  }else{
+   ["Calculator","Graph","Studio","Games","Search","Parent"].forEach(label=>addButton(label,label+" resource",()=>openResource(resources[label])));
+   addButton("Print","Print current learning page",()=>window.print());
+   addButton("Course","Return to mathematics course home",()=>{
+    const match=location.pathname.match(/^(.*\/courses\/mathematics\/(?:pre-algebra|algebra-1|geometry|algebra-2)\/)/i);
+    location.href=match?match[1]:"/Khaemenes_High.github.io/courses/mathematics/";
+   });
+   note.textContent="Learning resources support practice and exploration. Assessment rules remain authoritative.";
+  }
+ };
+ renderButtons();
 
  const style=document.createElement("style");style.id="khae-math-tools-style";style.textContent=`
  #khae-math-tools{position:fixed;left:14px;bottom:16px;z-index:989;width:min(284px,calc(100vw - 28px));font:400 16px/1.35 "Nunito","Avenir Next",Arial,sans-serif;color:#f6f0df}
@@ -151,15 +156,7 @@ function mount(){
  window.KHAEMENES_MATH_TOOLS={
   course,
   open:()=>{aside.querySelector("details").open=true},
-  refreshPolicy:()=>{
-   const finalNow=document.body?.dataset?.mathAssessmentMode==="final";
-   const formula=[...grid.querySelectorAll("button")].find(b=>b.textContent==="Formula");
-   if(formula){
-    formula.disabled=finalNow;
-    formula.setAttribute("aria-disabled",String(finalNow));
-    formula.title=finalNow?"Formula sheet unavailable during the closed-book final":"Open the Algebra formula sheet";
-   }
-  }
+  refreshPolicy:renderButtons
  };
 }
 if(document.readyState==="loading")document.addEventListener("DOMContentLoaded",mount,{once:true});else mount();
