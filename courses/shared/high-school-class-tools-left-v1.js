@@ -30,7 +30,7 @@ style.textContent=`
 #khae-class-tools-left .tools-grid :is(a,button){display:flex;min-width:0;min-height:44px;align-items:center;justify-content:center;text-align:center;white-space:nowrap;padding:8px 5px;border:1px solid #c4a46b;border-radius:7px;background:#303a37;color:#fff8eb;font:400 16px/1.25 Nunito,Arial,sans-serif;text-decoration:none;cursor:pointer}
 #khae-class-tools-left p{font-size:16px;line-height:1.45;margin:0;padding:0 12px 12px;color:#f5eedf;text-align:center}
 @media print{#khae-class-tools-left{display:none!important}}
-@media(max-width:520px){#khae-class-tools-left{left:7px;bottom:8px;width:min(248px,calc(100vw - 14px))}}
+@media(max-width:720px){#khae-class-tools-left{left:7px;bottom:150px;width:min(248px,calc(100vw - 14px))}}
 `;
 document.head.append(style);
 const dock=document.createElement("aside");
