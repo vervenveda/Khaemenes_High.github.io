@@ -39,8 +39,10 @@
     try {
       const contract = window.KhaemenesCourseEntryContract;
       if (contract && (!contract.readAcademyProfile?.() || !activeLearnerId())) return false;
-      localStorage.setItem(storageKey(key), JSON.stringify(value));
-      return true;
+      const actualKey=storageKey(key),S=window.KhaemenesMathStorageAdapter;
+      if(S?.writeJSON)return S.writeJSON(actualKey,value).persisted===true;
+      const raw=JSON.stringify(value);localStorage.setItem(actualKey,raw);
+      return localStorage.getItem(actualKey)===raw;
     } catch {
       return false;
     }
