@@ -119,3 +119,56 @@ Live browser acceptance should verify:
 - no overlap with lower-right ecosystem toolbar.
 
 Status: **SOURCE IMPLEMENTATION PASS · LIVE DEVICE ACCEPTANCE PENDING**.
+
+## Algebra I weekly and unit mastery expansion
+
+The worksheet assessment system now extends beyond the Algebra I diagnostic, midterm, and final.
+
+### 36-week mastery center
+
+`assessments/weekly-mastery.html` now uses the shared one-column worksheet surface and the existing lower-left Math Tools launcher.
+
+The weekly mastery engine now preserves:
+- selected answers;
+- ungraded Show Your Work fields under every question;
+- work in the weekly draft;
+- a non-scoring `work_snapshot` in submitted weekly evidence;
+- scratch reset when a fresh weekly attempt is deliberately started.
+
+The existing 10-question weekly blueprint, 80% threshold, five reasoning dimensions, lesson prerequisites, unit prerequisites, alternate forms, and progression authority are unchanged.
+
+### Unit mastery checks · Units 01–13
+
+All 13 formal unit mastery pages now use:
+- `math-assessment-workspace-v1.css`;
+- the existing `math-learning-tools-v2.js` lower-left Tools launcher;
+- `algebra-1/assets/unit-assessment-workspace-v1.js`.
+
+The unit enhancer is presentation-only. It adds large lined scratch areas after rendered questions and stores those notes in `sessionStorage` for the active browser session. It does not write scores, best values, mastery flags, unlock evidence, learner grades, or question-bank changes.
+
+No MutationObserver is used. The enhancer makes a finite startup pass and re-runs only after an explicit new-attempt control.
+
+### Focused-view ownership
+
+`focused-assessment-v1.js` now stands down whenever `math-assessment-surface` is active. This prevents the older one-question-at-a-time controller from hiding or reorganizing questions on the new worksheet-style mastery surfaces.
+
+### Legacy typography override
+
+Several Algebra I mastery pages still contain embedded legacy typography rules forcing 14px body text and 55px eyebrow text. The shared assessment theme now includes a higher-specificity assessment override so those legacy declarations cannot defeat the professional 18px worksheet standard.
+
+### Current Algebra I assessment coverage
+
+The shared assessment presentation now covers:
+- readiness diagnostic;
+- 36 weekly mastery checks;
+- 13 formal unit mastery checks;
+- midterm;
+- final.
+
+Regression coverage was expanded in:
+`tests/math-assessment-worksheet-surface.test.mjs`.
+
+Source validation confirms the weekly engine, unit enhancer, focused-view controller, legacy mastery engine, and Math Tools launcher parse without JavaScript syntax errors. All 13 unit mastery HTML pages currently reference the shared theme, the existing Math Tools launcher, and the unit worksheet enhancer.
+
+Status remains: **SOURCE IMPLEMENTATION PASS · LIVE DEVICE ACCEPTANCE PENDING**.
+
