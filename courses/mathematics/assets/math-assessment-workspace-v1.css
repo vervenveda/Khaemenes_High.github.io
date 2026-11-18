@@ -30,7 +30,40 @@ body.math-assessment-surface :is(h1,h2,h3,h4,legend){
   font-weight:400!important;
   color:var(--assessment-ink)!important;
 }
-body.math-assessment-surface > :is(.site-header,.algebra1-local-nav){display:none!important}
+body.math-assessment-surface > .algebra1-local-nav{display:none!important}
+body.math-assessment-surface > .site-header{
+  position:relative!important;
+  top:auto!important;
+  border:0!important;
+  border-bottom:3px solid var(--assessment-gold)!important;
+  background:var(--assessment-charcoal)!important;
+  backdrop-filter:none!important;
+}
+body.math-assessment-surface > .site-header .header-inner{
+  min-height:92px!important;
+  display:flex!important;
+  align-items:center!important;
+  justify-content:center!important;
+  padding:14px 18px!important;
+}
+body.math-assessment-surface > .site-header .brand{
+  justify-content:center!important;
+  text-align:center!important;
+  color:#fff8eb!important;
+}
+body.math-assessment-surface > .site-header .brand-mark{display:none!important}
+body.math-assessment-surface > .site-header .brand-copy{display:grid!important;justify-items:center!important}
+body.math-assessment-surface > .site-header .brand-copy strong{
+  color:#fff8eb!important;
+  font:400 30px/1.2 Cinzel,Georgia,serif!important;
+  letter-spacing:.04em!important;
+}
+body.math-assessment-surface > .site-header .brand-copy small{
+  margin-top:5px!important;
+  color:#ead9b7!important;
+  font-size:17px!important;
+}
+body.math-assessment-surface > .site-header :is(.header-nav,.icon-btn){display:none!important}
 body.math-assessment-surface .breadcrumb{
   border:0!important;
   border-bottom:1px solid var(--assessment-soft)!important;
@@ -271,6 +304,26 @@ body.math-assessment-surface #questionHost .feedback{
   padding:11px 13px!important;
   border-radius:7px!important;
 }
+body.math-assessment-surface :is(.constructed-intro,.constructed-item,.evaluator-review){
+  border:1px solid var(--assessment-line)!important;
+  border-radius:7px!important;
+  background:#fffdf8!important;
+  color:var(--assessment-ink)!important;
+  box-shadow:none!important;
+}
+body.math-assessment-surface .constructed-intro{padding:16px 18px!important}
+body.math-assessment-surface .constructed-item{padding:18px!important}
+body.math-assessment-surface .constructed-item textarea,
+body.math-assessment-surface .evaluator-note textarea,
+body.math-assessment-surface .evaluator-identity :is(input,select),
+body.math-assessment-surface .evaluator-row input{
+  border:1px solid #bfb193!important;
+  border-radius:7px!important;
+  background:#fffefb!important;
+  color:var(--assessment-ink)!important;
+  font-size:18px!important;
+}
+body.math-assessment-surface .constructed-item textarea{min-height:180px!important}
 body.math-assessment-surface .diagnostic-question-navigation{
   margin:0 0 18px!important;
   padding:12px!important;
