@@ -141,6 +141,73 @@ The laboratory keeps these separate rather than falsely certifying them:
 - keyboard-only and screen-reader operation;
 - production loading of first-party VNV external services.
 
+## Responsive-risk repairs completed during laboratory preparation
+
+### Algebra II lesson / practice symmetry
+
+A static responsive-risk pass found that Algebra II still used desktop side columns:
+
+- lesson content: main + 310px sticky side rail;
+- practice content: main + 330px sticky side rail.
+
+This conflicted with the current mathematics presentation rule: centered, symmetrical lesson content with no side columns.
+
+The shared Algebra II stylesheet and landing-page mirror now use:
+
+- one-column lesson layout at every viewport;
+- former lesson-side content below the main lesson;
+- two equal support cards on wide screens;
+- one support-card column below 700px;
+- one-column practice layout with static support content.
+
+Representative Pre-Algebra, Algebra I, and Geometry Unit 01 lesson sources were also checked. Their effective lesson layouts are already one-column.
+
+### Canonical mathematics footer fallback
+
+The Full Sweep topology audit found inconsistent footer coverage:
+
+- Pre-Algebra representative surfaces: complete;
+- Algebra II representative surfaces: complete;
+- Algebra I: several lesson/assessment/teacher surfaces lacked a footer;
+- Geometry: several assessment/teacher/project surfaces lacked a footer.
+
+The shared course-entry contract now injects a footer **only when a mathematics page has no footer**.
+
+Canonical fallback footer:
+
+- charcoal background;
+- centered content;
+- light cream 16px text;
+- course-aware label;
+- idempotent;
+- presentation only;
+- no learner records or assessment logic touched.
+
+The runtime laboratory now treats missing footer presence as a hard failure.
+
+### Stricter runtime policy
+
+The laboratory now treats the following as hard FAIL conditions:
+
+- canonical High School header missing or duplicated;
+- canonical hamburger missing or duplicated;
+- official ecosystem toolbar missing or duplicated;
+- footer missing;
+- multi-column `.lesson-layout` on a lesson surface.
+
+This prevents an incomplete chrome or a reintroduced lesson sidebar from receiving an automated PASS.
+
+## Final shared-source self-check
+
+Validated after the responsive-risk repairs:
+
+- `course-entry-contract.js` syntax: PASS;
+- `high-school-global-chrome-v2.js` syntax: PASS;
+- runtime laboratory inline JavaScript syntax: PASS;
+- canonical fallback footer present in shared contract: PASS;
+- mathematics ticker-pair mount and API wait present in global chrome: PASS;
+- single-column lesson policy present in runtime acceptance lab: PASS.
+
 ## Acceptance boundary
 
 This phase does **not** change the department verdict that the curriculum/source architecture is Exceptional.
