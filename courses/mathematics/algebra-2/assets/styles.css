@@ -84,3 +84,23 @@ main{padding:clamp(56px,7vw,92px) 0 100px}.view{display:none}.view.active{displa
 
 /* Academy 255px narrow-screen stress test: prevent horizontal page overflow. */
 @media screen and (max-width:320px){html,body{max-width:100%;overflow-x:clip} .wrap,.shell,.header-inner,.hero-inner,.lesson-layout,.lesson-content,.lesson-sidebar{min-width:0!important;max-width:100%!important} :is(.card,.question,.lesson-section,.day-card,.option){min-width:0;overflow-wrap:anywhere} :is(.actions,.header-tools,.quick-nav,.breadcrumb){flex-wrap:wrap} :is(input,select,textarea,button){max-width:100%}}
+
+
+/* Algebra II Academy readability floor · 2026-11-17 */
+html:root:root:root body{
+  font-size:16px !important;
+  line-height:1.65 !important;
+}
+html:root:root:root body :is(p,li,a,button,input,select,textarea,label,summary,small,.muted,.meta,.eyebrow,.kicker,.dialog-eyebrow,.dialog-kicker,.worksheet-kicker){
+  font-size:16px !important;
+}
+html:root:root:root body :is(.eyebrow,.kicker,.dialog-eyebrow,.dialog-kicker,.worksheet-kicker){
+  line-height:1.35 !important;
+  letter-spacing:.02em !important;
+}
+@media print{
+  html:root:root:root body,
+  html:root:root:root body :is(p,li,a,button,input,select,textarea,label,summary,small,.muted,.meta,.eyebrow,.kicker,.dialog-eyebrow,.dialog-kicker,.worksheet-kicker){
+    font-size:16px !important;
+  }
+}
