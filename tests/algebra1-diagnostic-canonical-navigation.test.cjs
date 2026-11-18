@@ -10,13 +10,10 @@ test("Algebra I diagnostic uses canonical shared high-school chrome and avoids d
  assert.equal((html.match(/high-school-global-chrome-v2\.js/g)||[]).length,1);
  assert.match(html,/data-khaemenes-high-canonical-header/);
 });
-test("diagnostic six-button class toolbar uses existing canonical tool rather than copies",()=>{
- assert.match(html,/window\.KhaemenesClassToolsConfigV1=/);
- assert.match(html,/assets\/vnv-class-tools-toolbar\.js/);
- const section=html.match(/<script id="algebra1-diagnostic-class-tools-config">([\s\S]*?)<\/script>/);
- assert.ok(section);
- const labels=[...section[1].matchAll(/label:"([^"]+)"/g)].map(m=>m[1]);
- assert.deepEqual(labels,["Course","Lessons","Records","Parent","Search","Help"]);
+test("emergency recovery keeps optional Class Tools loader disabled until browser safety is verified",()=>{
+ assert.doesNotMatch(html,/window\.KhaemenesClassToolsConfigV1\s*=/);
+ assert.doesNotMatch(html,/<script[^>]*src="[^"]*vnv-class-tools-toolbar\.js"/);
+ assert.match(html,/vnv-ecosystem-toolbar\.js/);
 });
 test("start assessment and existing scoring engine are still present",()=>{
  assert.match(html,/id="startAssessmentButton" href="#assessmentQuestions"/);
