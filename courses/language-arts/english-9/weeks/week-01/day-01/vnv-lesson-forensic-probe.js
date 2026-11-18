@@ -44,7 +44,9 @@ function snapshot(){
   checks:{
    tickerHeaderOrder:orderedCorrect?"PASS":"CHECK",
    heroBeforeSource:hero&&source&&Boolean(hero.compareDocumentPosition(source)&Node.DOCUMENT_POSITION_FOLLOWING)?"PASS":"CHECK",
-   mainCentered:main&&Math.abs(main.getBoundingClientRect().left-(window.innerWidth-main.getBoundingClientRect().right))<8?"PASS":"CHECK",
+   mainCentered:main&&Math.abs(main.getBoundingClientRect().left-(document.documentElement.clientWidth-main.getBoundingClientRect().right))<8?"PASS":"CHECK",
+   layoutWidth:document.documentElement.clientWidth,
+   scrollbarOrGutterPx:window.innerWidth-document.documentElement.clientWidth,
    horizontalOverflow:horizontalOverflow?"FAIL":"PASS",
    duplicateIds:duplicates,
    below16pxElements:small.length,
