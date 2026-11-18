@@ -262,7 +262,7 @@
   });
 
   // Evidence-aware daily completion: learners confirm that the required artifact was preserved.
-  $("[data-week-day]").forEach(box=>{
+  $$("[data-week-day]").forEach(box=>{
     const week=box.dataset.week, day=box.dataset.weekDay;
     box.checked=Boolean(weekState(week).days[day]);
     if (box.dataset.english10StudioManaged === "week01") {
@@ -276,13 +276,13 @@
   function weekEvidenceReady(week){
     const ws=weekState(week);
     const days=["Monday","Tuesday","Wednesday","Thursday","Friday"].every(d=>ws.days[d]);
-    const reflectionFields=$('[data-scope="week:'+Number(week)+'"],[data-save-field*="week-'+String(Number(week)).padStart(2,"0")+'"]');
+    const reflectionFields=$$('[data-scope="week:'+Number(week)+'"],[data-save-field*="week-'+String(Number(week)).padStart(2,"0")+'"]');
     const reflection=reflectionFields.some(f=>String(f.value||"").trim().length>=20);
     const quizAttempted=(ws.quiz?.attempts||[]).length>0 || score(ws.quiz)>0;
     return {days,reflection,quizAttempted,ready:days&&reflection&&quizAttempted};
   }
   function syncWeekEvidenceButton(week){
-    $("[data-progress-key]").filter(b=>b.dataset.progressKey===`week-${week}`||b.dataset.progressKey===`week-${String(Number(week)).padStart(2,"0")}`).forEach(button=>{
+    $$("[data-progress-key]").filter(b=>b.dataset.progressKey===`week-${week}`||b.dataset.progressKey===`week-${String(Number(week)).padStart(2,"0")}`).forEach(button=>{
       if(button.dataset.english10StudioManaged==="week01")return;
       const s=weekEvidenceReady(week);
       button.disabled=true;
@@ -291,7 +291,7 @@
       button.title="Weekly completion is derived from preserved daily evidence, a substantive reflection, and at least one quiz attempt.";
     });
   }
-  $("[data-progress-key]").forEach(button=>{
+  $$("[data-progress-key]").forEach(button=>{
     const key=button.dataset.progressKey;
     const match=key.match(/^week-(\d+)$/);
     if(!match)return;
@@ -407,7 +407,7 @@
     });
     $("[data-reset-quiz]")?.addEventListener("click",()=>{
       if(opened){adapter.newAttempt(storageKey);location.reload();return}
-      form.reset();$(".quiz-feedback",form).forEach(x=>{x.hidden=true;x.textContent=""});if(result)result.textContent="";
+      form.reset();$$(".quiz-feedback",form).forEach(x=>{x.hidden=true;x.textContent=""});if(result)result.textContent="";
     });
   }
   function runAssessmentPage(){
@@ -506,15 +506,15 @@
     $$("[data-stat='lessons']").forEach(el=>el.textContent=`${st.lessonPct}%`);
     $$("[data-stat='quiz']").forEach(el=>el.textContent=fmt(st.quizAvg));
     $$("[data-stat='unit']").forEach(el=>el.textContent=fmt(st.unitAvg));
-    $("[data-stat='grade']").forEach(el=>el.textContent=fmt(st.grade));
+    $$("[data-stat='grade']").forEach(el=>el.textContent=fmt(st.grade));
     const reading=calcReadingStats();
-    $("[data-reading-stat='entries']").forEach(el=>el.textContent=String(reading.entries));
-    $("[data-reading-stat='assigned']").forEach(el=>el.textContent=`${reading.assignedWeeks}/36`);
-    $("[data-reading-stat='independent']").forEach(el=>el.textContent=String(reading.independent));
-    $("[data-reading-stat='minutes']").forEach(el=>el.textContent=reading.minutes?String(reading.minutes):"—");
-    $("[data-reading-stat='weeks']").forEach(el=>el.textContent=`${reading.weeks}/36`);
-    $("[data-reading-stat='units']").forEach(el=>el.textContent=`${reading.units}/12`);
-    $("[data-reading-source-distribution]").forEach(el=>{const parts=Object.entries(reading.sourceCounts).sort((a,b)=>b[1]-a[1]).map(([k,v])=>`${esc(k)}: <strong>${v}</strong>`);el.innerHTML=parts.length?parts.join(" · "):"No reading source types recorded yet.";});
+    $$("[data-reading-stat='entries']").forEach(el=>el.textContent=String(reading.entries));
+    $$("[data-reading-stat='assigned']").forEach(el=>el.textContent=`${reading.assignedWeeks}/36`);
+    $$("[data-reading-stat='independent']").forEach(el=>el.textContent=String(reading.independent));
+    $$("[data-reading-stat='minutes']").forEach(el=>el.textContent=reading.minutes?String(reading.minutes):"—");
+    $$("[data-reading-stat='weeks']").forEach(el=>el.textContent=`${reading.weeks}/36`);
+    $$("[data-reading-stat='units']").forEach(el=>el.textContent=`${reading.units}/12`);
+    $$("[data-reading-source-distribution]").forEach(el=>{const parts=Object.entries(reading.sourceCounts).sort((a,b)=>b[1]-a[1]).map(([k,v])=>`${esc(k)}: <strong>${v}</strong>`);el.innerHTML=parts.length?parts.join(" · "):"No reading source types recorded yet.";});
   }
   updateProgress();
 
@@ -546,7 +546,7 @@
       const reviewed=Boolean(review.evaluator&&review.reviewDate&&review.rubric);
       return `<tr><td>Unit ${String(u).padStart(2,"0")}</td><td>${fmt(score(us.assessment))}</td><td><input type="number" min="0" max="100" value="${esc(us.projectScore)}" data-inline-project="${u}" aria-label="Unit ${u} project score"></td><td>${reviewed?"Review documented":"Review incomplete"}</td><td>${us.assessment.attempts.length}</td></tr>`;
     }).join("");
-    $("[data-inline-project]").forEach(field=>field.addEventListener("input",()=>{unitState(field.dataset.inlineProject).projectScore=field.value===""?"":clamp(field.value);save();renderSummary()}));
+    $$("[data-inline-project]").forEach(field=>field.addEventListener("input",()=>{unitState(field.dataset.inlineProject).projectScore=field.value===""?"":clamp(field.value);save();renderSummary()}));
     const reviewHost=document.querySelector("[data-project-review-editor]");
     if(reviewHost){
       reviewHost.innerHTML=Array.from({length:12},(_,i)=>{
@@ -562,7 +562,7 @@
           <label>Evidence-specific feedback and next learning step</label><textarea data-review-field="feedback" data-review-unit="${u}" rows="4">${esc(r.feedback)}</textarea>
         </details>`;
       }).join("");
-      $("[data-review-field]").forEach(field=>{
+      $$("[data-review-field]").forEach(field=>{
         const u=Number(field.dataset.reviewUnit),key=field.dataset.reviewField,review=unitState(u).projectReview;
         if(key==="rubric")field.value=review.rubric||"";
         field.addEventListener("input",()=>{review[key]=field.type==="checkbox"?field.checked:field.value;save()});
