@@ -10,8 +10,8 @@ function mount(){
  if(document.getElementById(ID))return;
  const s=status(),box=document.createElement("section");box.id=ID;box.setAttribute("role","status");box.setAttribute("aria-live","polite");
  box.style.cssText="position:relative;z-index:1150;width:min(100% - 24px,1120px);margin:10px auto;padding:11px 14px;border:1px solid #b49a68;border-radius:7px;background:#fff8e8;color:#2d2923;font:400 16px/1.45 Nunito,Arial,sans-serif;text-align:center";
- const label=s.verified?"Protected local record":"Export recommended";
- box.innerHTML='<strong style="font-weight:444">'+label+'</strong> · '+(s.verified?"Course writes can be verified in this browser. Keep exports for device changes.":"Persistent browser storage is unavailable or unverified. Reading remains available, but do not rely on this browser alone.");
+ const scoped=s.learner?.verified===true,label=s.verified&&scoped?"Protected learner record":s.verified?"Learner binding needed":"Export recommended";
+ box.innerHTML='<strong style="font-weight:444">'+label+'</strong> · '+(s.verified?(scoped?"Course writes can be verified in this browser and are consolidated under the active learner. Keep exports for device changes.":"Browser storage is writable, but no active learner identity is bound to the canonical record on this page. Select the intended learner before relying on this device for progress."):"Persistent browser storage is unavailable or unverified. Reading remains available, but do not rely on this browser alone.");
  const btn=document.createElement("button");btn.type="button";btn.textContent="Export Course Record";btn.style.cssText="min-height:44px;margin-left:10px;padding:8px 12px;border:1px solid #6d5d43;border-radius:7px;background:#302c28;color:#fff;font:inherit;cursor:pointer";
  btn.addEventListener("click",()=>rec()?.exportRecord?.());box.append(btn);
  (document.querySelector("main")||document.body).prepend(box);
