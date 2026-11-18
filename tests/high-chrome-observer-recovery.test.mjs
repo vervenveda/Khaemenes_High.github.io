@@ -13,8 +13,8 @@ test("shared chrome skips document-wide remount cycles on front hall and student
  assert.match(chrome,/!stableFrontHall && !stableStudentProfile && !stableGradeLanding && !stableCourseLanding && typeof MutationObserver/);
 });
 test("grade and course landing routes are excluded without changing assessment route behavior",()=>{
- const grade=/\\/grades\\/grade-(?:09|10|11|12)\\/(?:index\\.html)?$/i;
- const course=/\\/courses\\/(?:index\\.html)?$|\\/courses\\/(?:mathematics|language-arts|science|social-studies|physical-education|electives)\\/(?:index\\.html)?$|\\/courses\\/(?:mathematics|language-arts|science|social-studies)\\/[a-z0-9-]+\\/(?:index\\.html)?$/i;
+ const grade=new RegExp("/grades/grade-(?:09|10|11|12)/(?:index[.]html)?$","i");
+ const course=new RegExp("/courses/(?:index[.]html)?$|/courses/(?:mathematics|language-arts|science|social-studies|physical-education|electives)/(?:index[.]html)?$|/courses/(?:mathematics|language-arts|science|social-studies)/[a-z0-9-]+/(?:index[.]html)?$","i");
  for(const url of [
   "/Khaemenes_High.github.io/grades/grade-09/",
   "/Khaemenes_High.github.io/grades/grade-12/index.html"
