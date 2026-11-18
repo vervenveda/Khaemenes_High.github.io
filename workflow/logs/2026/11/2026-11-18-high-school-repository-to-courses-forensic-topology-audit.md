@@ -72,3 +72,12 @@ Static file checks, syntax validation, and GitHub Actions are **not** browser us
 - Updated `tests/high-chrome-observer-recovery.test.mjs` to assert no forensic imports and no blanket observers. Source-level syntax and static checks passed; full test runner and live Chrome responsiveness not certified in this intervention.
 - The High School service worker uses cached-first JS with a network refresh, so a controlled reload may initially return older shared scripts; do not delete browser storage or learner evidence. Inspect service-worker version/network delivery if stale behavior persists.
 - **Release acceptance HOLD** until actual browser test verifies course landing interactions and document main-thread responsiveness.
+
+## 2026-11-18 continuation · Algebra II duplicate diagnostic loader removed
+
+- Scoped source-only repair; no learner data or course assessment records touched.
+- Added `tests/algebra2-diagnostic-single-loader.test.mjs` in commit `506a039febc63a136b2fa53146dd733cc7043fbe` to require exactly one diagnostic readiness gate loader and preserve diagnostic course identity and assessment-engine linkage.
+- Removed only the second `../../../shared/math-entry-gate.js` script include from `courses/mathematics/algebra-2/diagnostic/index.html` in commit `9e7d3a5257e31470b0a44f76899d7f0c7d3d2a0d`.
+- Post-commit source fetch confirmed exactly one `math-entry-gate.js` script include; `math-algebra2` configuration and `assessment-engine.js` remain referenced.
+- Status: **source repair complete; source assertion verified.** Dedicated Node test suite execution, GitHub Actions result and real-browser single-interval / learner-scoped readiness acceptance **HOLD**.
+- No broad toolbar changes, persistence migration or browser storage clearing authorized as part of this repair.
