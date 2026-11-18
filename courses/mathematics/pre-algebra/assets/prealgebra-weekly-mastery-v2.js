@@ -168,20 +168,32 @@ function modeling(w){const n=40+5*(w%5),r=3+w%4,f=100+20*(w%3);return[
 const GEN={number,integers,rational,ratio,percent,exponents,algebra,equations,inequalities,functions,geometry,data,modeling};
 function install(){
  if(typeof APP==="undefined"||!Array.isArray(APP.weeks)||APP.weeks.length!==36)return false;
- const bank={};
+ const bank={},rowsByWeek=new Map(APP.weeks.map(row=>[Number(row.week),row]));
  for(const row of APP.weeks){
   const w=Number(row.week),fn=GEN[row.domain];
   if(!fn)throw new Error("missing-generator:"+row.domain);
-  const questions=fn(w),counts=Object.fromEntries(DIMS.map(d=>[d,questions.filter(x=>x.dimension===d).length]));
+  let questions=fn(w);
+  let retrievalFrom=null;
+  if(w>1){
+   const lag=1+(w%3),priorWeek=Math.max(1,w-lag),priorRow=rowsByWeek.get(priorWeek),priorFn=GEN[priorRow?.domain];
+   if(!priorFn)throw new Error("missing-retrieval-generator:"+priorWeek);
+   const priorQuestions=priorFn(priorWeek);
+   retrievalFrom=priorWeek;
+   for(const idx of [0,9]){
+    const source=priorQuestions[idx],target=questions[idx];
+    questions[idx]={...source,id:target.id,week:w,retrieval_from_week:priorWeek,retrieval_source_domain:priorRow.domain};
+   }
+  }
+  const counts=Object.fromEntries(DIMS.map(d=>[d,questions.filter(x=>x.dimension===d).length]));
   if(questions.length!==10||!DIMS.every(d=>counts[d]===2))throw new Error("blueprint:"+w);
   questions.forEach(x=>{if(x.options.length!==4||x.answer!==0)throw new Error("question:"+x.id)});
-  bank[String(w)]={week:w,unit:Number(row.unitNumber),title:row.title,domain:row.domain,version:VERSION,dimensions:counts,questions};
-  row.quiz=questions.map(x=>[x.prompt,x.options,x.answer]);
+  bank[String(w)]={week:w,unit:Number(row.unitNumber),title:row.title,domain:row.domain,version:VERSION,dimensions:counts,current_count:w===1?10:8,delayed_count:w===1?0:2,retrieval_from_week:retrievalFrom,questions};
+  row.quiz=questions.map(x=>[x.prompt,x.options,x.answer,x.id,x.dimension,x.retrieval_from_week??null]);
  }
  const all=Object.values(bank).flatMap(x=>x.questions);
  if(all.length!==360||new Set(all.map(x=>x.id)).size!==360)throw new Error("count-drift");
  window.KhaemenesPreAlgebraWeeklyMasteryV2={version:VERSION,dimensions:DIMS,bank,install,ready:true};
- window.dispatchEvent(new CustomEvent("khaemenes-prealgebra-weekly-mastery-v2-ready",{detail:{version:VERSION,weeks:36,questions:360}}));
+ window.dispatchEvent(new CustomEvent("khaemenes-prealgebra-weekly-mastery-v2-ready",{detail:{version:VERSION,weeks:36,questions:360,weekly_blueprint:"8-current+2-delayed",dimensions:DIMS.slice()}}));
  try{if(typeof render==="function")render()}catch{}
  return true;
 }
