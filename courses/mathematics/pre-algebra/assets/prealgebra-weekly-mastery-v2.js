@@ -143,7 +143,7 @@ function geometry(w){const l=4+w%5,h=3+w%4;return[
 ]}
 function data(w){const a=4+w%5;return[
  q(w,1,DIMS[0],`Mean of ${a}, ${a+2}, ${a+4}?`,a+2,[a,a+3,a+6],"Middle value is mean of symmetric values."),
- q(w,2,DIMS[0],`Range of ${a}, ${a+3}, ${a+8}?`,8,[a+8,3,a],"Max−min."),
+ q(w,2,DIMS[0],`Range of ${a}, ${a+3}, ${a+8}?`,8,[a+8,3,a+1],"Max−min."),
  q(w,3,DIMS[1],"Fair die: P(even)?","1/2",["1/3","2/3","1/6"],"Three of six outcomes."),
  q(w,4,DIMS[1],`Bag has ${a} blue and ${a} red counters. P(blue)?`,"1/2",[`${a}/2`,`1/${2*a}`,"1"],"Half are blue."),
  q(w,5,DIMS[2],"Best display for shape and spread of one numerical distribution?","dot plot or histogram",["pie chart only","single mean only","unlabeled list"],"These show distribution shape."),
