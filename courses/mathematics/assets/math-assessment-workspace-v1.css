@@ -61,7 +61,7 @@ body.math-assessment-surface > .site-header .brand-copy strong{
 body.math-assessment-surface > .site-header .brand-copy small{
   margin-top:5px!important;
   color:#ead9b7!important;
-  font-size:17px!important;
+  font-size:18px!important;
 }
 body.math-assessment-surface > .site-header :is(.header-nav,.icon-btn){display:none!important}
 body.math-assessment-surface .breadcrumb{
@@ -75,7 +75,7 @@ body.math-assessment-surface .breadcrumb .wrap{
   max-width:1040px!important;
   justify-content:center!important;
   padding:8px 18px!important;
-  font-size:16px!important;
+  font-size:18px!important;
   text-transform:none!important;
   letter-spacing:.01em!important;
 }
@@ -284,7 +284,7 @@ body.math-assessment-surface .math-work-label{
   display:block!important;
   margin:14px 0 6px!important;
   color:#545955!important;
-  font-size:16px!important;
+  font-size:18px!important;
 }
 body.math-assessment-surface .math-workspace{
   width:100%!important;
@@ -342,7 +342,7 @@ body.math-assessment-surface .diagnostic-page-actions .btn{
   border-radius:7px!important;
   background:#fffdf8!important;
   color:#303532!important;
-  font-size:16px!important;
+  font-size:18px!important;
 }
 body.math-assessment-surface .diagnostic-page-actions .btn.primary{
   border-color:var(--assessment-charcoal)!important;
@@ -504,7 +504,7 @@ body.math-assessment-surface .weekly-side .dimension-chip{
   border-radius:7px!important;
   background:#fffdf8!important;
   color:#343936!important;
-  font-size:16px!important;
+  font-size:18px!important;
 }
 body.math-assessment-surface .weekly-side .side-actions{
   grid-column:1/-1!important;
@@ -527,7 +527,7 @@ body.math-assessment-surface .weekly-toolbar{
 }
 body.math-assessment-surface .weekly-toolbar label{
   color:#4f5551!important;
-  font-size:16px!important;
+  font-size:18px!important;
   text-align:left!important;
 }
 body.math-assessment-surface .weekly-toolbar select{
@@ -623,4 +623,42 @@ body.math-assessment-surface.algebra1-unit-mastery #main #result{
   body.math-assessment-surface .diagnostic-question-navigation,
   body.math-assessment-surface #khae-math-tools{display:none!important}
   body.math-assessment-surface .math-workspace{min-height:110px!important;background:#fff!important}
+}
+
+
+/* High-specificity override for legacy assessment pages that embed
+   html:root:root typography rules after their base stylesheet. */
+html:root:root body.math-assessment-surface{
+  font-family:"Brandon Grotesque","Avenir Next",Avenir,"Segoe UI",Arial,sans-serif!important;
+  font-size:18px!important;
+  font-weight:400!important;
+  line-height:1.6!important;
+}
+html:root:root body.math-assessment-surface :is(button,input,select,textarea){
+  font-family:"Brandon Grotesque","Avenir Next",Avenir,"Segoe UI",Arial,sans-serif!important;
+  font-size:18px!important;
+  font-weight:400!important;
+}
+html:root:root body.math-assessment-surface :is(h1,h2,h3,h4,h5,h6,.page-title,.hero-title,.brand-title,.display-title,.site-title){
+  font-family:Cinzel,"Iowan Old Style","Palatino Linotype",Palatino,Georgia,serif!important;
+  font-weight:400!important;
+}
+html:root:root body.math-assessment-surface :is(.eyebrow,.kicker,.dialog-eyebrow,.dialog-kicker,.worksheet-kicker){
+  font-family:Cinzel,"Iowan Old Style","Palatino Linotype",Palatino,Georgia,serif!important;
+  font-size:18px!important;
+  font-weight:400!important;
+  line-height:1.4!important;
+  letter-spacing:.05em!important;
+  text-transform:none!important;
+}
+html:root:root body.math-assessment-surface h1{
+  font-size:clamp(30px,4vw,40px)!important;
+  line-height:1.18!important;
+}
+html:root:root body.math-assessment-surface h2{
+  font-size:24px!important;
+  line-height:1.35!important;
+}
+html:root:root body.math-assessment-surface :is(p,li,label,a,button,input,select,textarea,small,.small,.qmeta,.trust-note,.dimension-chip){
+  font-size:18px!important;
 }
