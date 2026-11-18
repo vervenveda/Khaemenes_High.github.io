@@ -70,7 +70,7 @@ function boot(){
   }
   if(!PAGED_DIAGNOSTIC||showAllForPrint||questionPage===pageCount()-1)renderConstructed(host);
   if(PAGED_DIAGNOSTIC&&!showAllForPrint)host.appendChild(questionNavigation());
-  host.onchange=e=>{const m=e.target.name?.match(/^q(\\d+)$/);if(!m)return;draft.answers[m[1]]=Number(e.target.value);saveDraft()};
+  host.onchange=e=>{const m=e.target.name?.match(/^q(\d+)$/);if(!m)return;draft.answers[m[1]]=Number(e.target.value);saveDraft()};
   updateProgress();
  }
  if(PAGED_DIAGNOSTIC){
