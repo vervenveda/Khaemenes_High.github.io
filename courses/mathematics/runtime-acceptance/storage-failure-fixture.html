@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Mathematics Storage Failure Fixture</title>
+<style>
+:root{color-scheme:light dark}*{box-sizing:border-box}body{margin:0;padding:24px;font:400 16px/1.6 system-ui,sans-serif}main{max-width:900px;margin:auto}pre{white-space:pre-wrap;overflow-wrap:anywhere;padding:16px;border:1px solid currentColor;border-radius:7px}
+</style>
+</head>
+<body>
+<main>
+<h1>Mathematics Storage Failure Fixture</h1>
+<p>This page uses temporary diagnostic keys only. It never reads or writes learner records.</p>
+<pre id="result">Running…</pre>
+</main>
+<script>
+(()=>{
+"use strict";
+const PREFIX="__khae_runtime_fail__";
+const OK_PREFIX="__khae_runtime_ok__";
+const originalSet=Storage.prototype.setItem;
+let restored=false;
+function restore(){
+  if(restored)return;
+  Storage.prototype.setItem=originalSet;
+  restored=true;
+}
+Storage.prototype.setItem=function(key,value){
+  if(String(key).startsWith(PREFIX)){
+    throw new DOMException("Simulated runtime acceptance storage failure","QuotaExceededError");
+  }
+  return originalSet.call(this,key,value);
+};
+window.__restoreRuntimeStorageSetItem=restore;
+})();
+</script>
+<script src="../assets/math-storage-adapter-v1.js"></script>
+<script>
+(()=>{
+"use strict";
+const resultEl=document.getElementById("result");
+const A=window.KhaemenesMathStorageAdapter;
+const stamp=Date.now().toString(36);
+const okKey="__khae_runtime_ok__"+stamp;
+const failKey="__khae_runtime_fail__"+stamp;
+const payload={fixture:"math-runtime-acceptance",stamp};
+let result={schema:"khaemenes-math-runtime-storage-fixture-v1",at:new Date().toISOString(),pass:false,checks:{}};
+try{
+  if(!A)throw new Error("storage-adapter-missing");
+
+  const persistentWrite=A.writeJSON(okKey,payload);
+  const persistentRead=A.readJSON(okKey,null);
+  result.checks.persistent={
+    pass:persistentWrite.persisted===true&&persistentWrite.verified===true&&persistentRead?.stamp===stamp,
+    write:persistentWrite,
+    read_matches:persistentRead?.stamp===stamp
+  };
+  A.remove(okKey);
+
+  const failedWrite=A.writeJSON(failKey,payload);
+  const memoryRead=A.readJSON(failKey,null);
+  result.checks.forced_failure={
+    pass:failedWrite.persisted===false&&failedWrite.verified===false&&failedWrite.memory===true&&memoryRead?.stamp===stamp,
+    write:failedWrite,
+    memory_read_matches:memoryRead?.stamp===stamp,
+    status:A.status()
+  };
+
+  window.__restoreRuntimeStorageSetItem?.();
+  A.remove(failKey);
+
+  result.pass=result.checks.persistent.pass&&result.checks.forced_failure.pass;
+}catch(error){
+  result.error=String(error?.stack||error);
+}finally{
+  window.__restoreRuntimeStorageSetItem?.();
+  try{localStorage.removeItem(okKey);localStorage.removeItem(failKey)}catch{}
+}
+document.documentElement.dataset.runtimeStorageStatus=result.pass?"pass":"fail";
+resultEl.textContent=JSON.stringify(result,null,2);
+window.__KHAEMENES_RUNTIME_STORAGE_RESULT__=result;
+try{parent.postMessage({type:"khaemenes-math-runtime-storage-result",result},"*")}catch{}
+})();
+</script>
+</body>
+</html>
