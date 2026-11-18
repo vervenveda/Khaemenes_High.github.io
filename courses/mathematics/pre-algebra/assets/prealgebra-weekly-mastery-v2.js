@@ -37,7 +37,7 @@ function rational(w){const a=2+w%3,b=a+2;return[
  q(w,1,DIMS[0],`Evaluate ${a}/${b} + 1/${b}.`,`${a+1}/${b}`,[`${a}/${b+1}`,`${a+1}/${2*b}`,`${a*b+1}/${b}`],"Same denominators allow numerator addition."),
  q(w,2,DIMS[0],`Evaluate (${a}/${b})(${b}/${a+1}).`,`${a}/${a+1}`,[`${b}/${a+1}`,`${a*b}/${a+1}`,`${a+1}/${a}`],"Cancel the common factor b."),
  q(w,3,DIMS[1],`A recipe uses 3/4 cup per batch. Amount for ${a+1} batches?`,`${3*(a+1)}/4 cups`,[`${a+4}/4 cups`,`${a+1}/3 cups`,`${4*(a+1)}/3 cups`],"Multiply the unit amount by batch count."),
- q(w,4,DIMS[1],`A ${a+2}-meter board is cut into 1/2-meter pieces. How many full pieces?`,2*(a+2),[a+2,2*a,Math.floor((a+2)/2)],"Dividing by one-half doubles."),
+ q(w,4,DIMS[1],`A ${a+2}-meter board is cut into 1/2-meter pieces. How many full pieces?`,2*(a+2),[a+2,2*a+1,Math.floor((a+2)/2)],"Dividing by one-half doubles."),
  q(w,5,DIMS[2],"Which representation is exactly 0.25?","1/4",["1/5","25/10","2.5"],"0.25=25/100=1/4."),
  q(w,6,DIMS[2],"Which lies between 1/2 and 3/4?","5/8",["1/4","7/8","4/3"],"5/8=0.625."),
  q(w,7,DIMS[3],"A learner writes 2/3+1/4=3/7. What is the error?","Unlike fractions require a common denominator before adding",["Only denominators are added","Fractions cannot be added","The result must exceed 2"],"Numerators and denominators are not added independently."),
