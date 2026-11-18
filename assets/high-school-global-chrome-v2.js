@@ -370,7 +370,14 @@ async function start(){
   // Do not remount or restyle the entire document for every DOM mutation.
   const stableFrontHall=/\/Khaemenes_High\.github\.io\/(?:index\.html)?$/i.test(location.pathname);
   const stableStudentProfile=/\/grades\/grade-(?:09|10|11|12)\/student-profile\//i.test(location.pathname);
-  if(!stableDailyEnglish9 && !stableDailyUpperEnglish && !stableFrontHall && !stableStudentProfile && typeof MutationObserver==="function"){
+  // Grade and course landings render their own interactive cards and already
+  // receive the canonical chrome during the one-time startup above. Re-running
+  // full-document typography and chrome work for every child insertion can
+  // starve interactions on these pages. Preserve the existing behavior on
+  // non-landing routes until they receive separate browser acceptance.
+  const stableGradeLanding=/\/grades\/grade-(?:09|10|11|12)\/(?:index\.html)?$/i.test(location.pathname);
+  const stableCourseLanding=/\/courses\/(?:index\.html)?$|\/courses\/(?:mathematics|language-arts|science|social-studies|physical-education|electives)\/(?:index\.html)?$|\/courses\/(?:mathematics|language-arts|science|social-studies)\/[a-z0-9-]+\/(?:index\.html)?$/i.test(location.pathname);
+  if(!stableDailyEnglish9 && !stableDailyUpperEnglish && !stableFrontHall && !stableStudentProfile && !stableGradeLanding && !stableCourseLanding && typeof MutationObserver==="function"){
     new MutationObserver(()=>{mountHeader();mountToolbar();cleanupKnownFloaters();preserveExportMarker();scheduleTypography();})
       .observe(document.documentElement,{childList:true,subtree:true});
   }
