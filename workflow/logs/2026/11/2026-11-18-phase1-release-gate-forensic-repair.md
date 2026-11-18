@@ -41,3 +41,12 @@ Open holds (do not mark as passed):
 
 ## Subsequent scoped repair
 - `courses/social-studies/grade-10/index.html`: added existing shared `high-navigation-v1.css` alongside its already loaded navigation JS. Commit `a44fd9ac2e746bf46407192e68c1525922b31700`. The follow-up Actions jobs were triggered; their conclusions are not included in the earlier snapshot. Do not count the navigation suite as passed until its full chain completes.
+
+## Continuation: English 10–12 learner records and offline games
+- `courses/language-arts/english-10/assets/course.js` (`0d7039db4580606bb9bab9b8f8a6420bf2adab87`), English 11 (`aeb2304c8656f6f9f33ff61a4381c51f78f6e64c`), English 12 (`32c279ccff4058c8c5bc3fe80609eee936e95e6f`): fix incorrect single-selector `$()` use on collection operations. Preserve scoring and learner records.
+- `tools/test-upper-english-records.mjs` (`5c1b2002714939472c0f755b6d2960a060801ce4`): supply browser-standard `URLSearchParams` and `location.search` in the synthetic VM, without changing browser behavior.
+- Verified in High School Record and Route Validation run `44303145324`: English 10/11/12 learner record tests PASS, including zero scores, isolation, stale tabs, backup recovery and storage failures.
+- `service-worker.js` (`6a2c05393f35e50deb1c6a594c223fb1e500647c`): add canonical Model Forge game to atomic precache and rotate cache version to v41.
+- Verified in run `44303145324`: all 83 canonical math games, seven game runtime files, 440 release assets and fail-closed offline install PASS; math note recovery and course-aware offline fallback also PASS.
+- `tools/test-math-assessment-submission-integrity.mjs` (`6ebb16229b8c545ecb3fa4b98b5b425c5dea52bc`): supply actual Algebra II `formalGate` lexical context in the score function's synthetic test. Full result remains HOLD pending run `44303264034`.
+- Known independent ongoing holds: English curriculum/browser-data drift, English 9 Week 3 progress test drift, Social Studies 10 assessment bridge, profile quick links/toolbar, and browser acceptance. Do not infer these are resolved by the passing subset.
