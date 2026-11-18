@@ -1,44 +1,45 @@
 import test from "node:test";
 import assert from "node:assert/strict";
 import fs from "node:fs";
-const chrome=fs.readFileSync(new URL("../assets/high-school-global-chrome-v2.js",import.meta.url),"utf8");
-const forensic=fs.readFileSync(new URL("../assets/high-vnv-chrome-audit-optin.js",import.meta.url),"utf8");
-const gradeProbe=fs.readFileSync(new URL("../grades/grade-09/student-profile/vnv-chrome-forensic-probe.js",import.meta.url),"utf8");
 
-test("shared chrome skips document-wide remount cycles on front hall and student profiles",()=>{
- assert.match(chrome,/const stableFrontHall=/);
- assert.match(chrome,/const stableStudentProfile=/);
- assert.match(chrome,/const stableGradeLanding=/);
- assert.match(chrome,/const stableCourseLanding=/);
- assert.match(chrome,/!stableFrontHall && !stableStudentProfile && !stableGradeLanding && !stableCourseLanding && typeof MutationObserver/);
-});
-test("grade and course landing routes are excluded without changing assessment route behavior",()=>{
- const grade=new RegExp("/grades/grade-(?:09|10|11|12)/(?:index[.]html)?$","i");
- const course=new RegExp("/courses/(?:index[.]html)?$|/courses/(?:mathematics|language-arts|science|social-studies|physical-education|electives)/(?:index[.]html)?$|/courses/(?:mathematics|language-arts|science|social-studies)/[a-z0-9-]+/(?:index[.]html)?$","i");
- for(const url of [
-  "/Khaemenes_High.github.io/grades/grade-09/",
-  "/Khaemenes_High.github.io/grades/grade-12/index.html"
- ])assert.equal(grade.test(url),true,url);
- for(const url of [
-  "/Khaemenes_High.github.io/courses/",
-  "/Khaemenes_High.github.io/courses/mathematics/",
-  "/Khaemenes_High.github.io/courses/mathematics/algebra-1/",
-  "/Khaemenes_High.github.io/courses/language-arts/english-9/",
-  "/Khaemenes_High.github.io/courses/science/integrated-science-9/",
-  "/Khaemenes_High.github.io/courses/social-studies/grade-12/",
-  "/Khaemenes_High.github.io/courses/physical-education/"
- ])assert.equal(course.test(url),true,url);
- assert.equal(course.test("/Khaemenes_High.github.io/courses/mathematics/algebra-1/diagnostic/"),false);
- assert.equal(course.test("/Khaemenes_High.github.io/courses/mathematics/algebra-1/units/unit-01/"),false);
+const source=(path)=>fs.readFileSync(new URL("../"+path,import.meta.url),"utf8");
+const chrome=source("assets/high-school-global-chrome-v2.js");
+const publicPages=[
+ "index.html",
+ "grades/grade-09/index.html",
+ "grades/grade-12/index.html",
+ "grades/grade-09/student-profile/index.html",
+ "courses/science/integrated-science-9/diagnostic/index.html",
+ "courses/science/integrated-science-9/diagnostic/readiness-diagnostic.html",
+ "courses/language-arts/english-9/weeks/week-01/day-01/index.html"
+];
+
+test("shared high-school chrome mounts once and does not observe all child mutations",()=>{
  assert.match(chrome,/mountHeader\(canonicalLessonHeader\)/);
  assert.match(chrome,/mountToolbar\(\)/);
+ assert.doesNotMatch(chrome,/new MutationObserver\(\(\)=>\{mountHeader/);
+ assert.doesNotMatch(chrome,/new MutationObserver\(scheduleHierarchy\)/);
+ assert.match(chrome,/normalizeHierarchy\(document\)/);
 });
-test("deep High School diagnostic does not repaint every mutation",()=>{
- assert.match(forensic,/if\(!panel&&!scheduled&&!closed\)/);
- assert.doesNotMatch(forensic,/requestAnimationFrame\(\(\)=>\{scheduled=false;paint\(\)\}\)\}\}/);
- assert.match(forensic,/\["Refresh snapshot",refresh\]/);
+
+test("opt-in forensic apps are not loaded on published entry pages",()=>{
+ for(const path of publicPages){
+  const page=source(path);
+  assert.doesNotMatch(page,/high-vnv-chrome-audit-optin\.js|vnv-chrome-forensic-probe\.js|vnv-forensic-ui-inspector\.js|unit00-chrome-forensic-probe-v3\.js|readiness-chrome-forensic-probe-v2\.js|vnv-lesson-forensic-probe\.js/i,path);
+  assert.doesNotMatch(page,/id="high-vnv-chrome-audit-optin-loader"/,path);
+ }
 });
-test("Grade 09 diagnostic is strictly opt-in and can remain dismissed",()=>{
- assert.match(gradeProbe,/params\.get\("chrome_audit"\)!=="1"/);
- assert.match(gradeProbe,/dismissed=true;panel\.remove/);
+
+test("canonical header and toolbar scripts remain in place",()=>{
+ assert.match(chrome,/const HEADER="vnv-header-autopopulate\.js"/);
+ assert.match(chrome,/const TOOLBAR="vnv-ecosystem-toolbar\.js"/);
+ assert.match(chrome,/await load\(VNV\+HEADER/);
+ assert.match(chrome,/await load\(VNV\+TOOLBAR/);
+});
+
+test("learner route and assessment engine remain independent of this recovery",()=>{
+ const diagnostic=source("courses/mathematics/algebra-1/diagnostic/index.html");
+ assert.match(diagnostic,/id="questionHost"/);
+ assert.match(diagnostic,/assets\/exam-engine\.js/);
+ assert.match(diagnostic,/id="startAssessmentButton"/);
 });
