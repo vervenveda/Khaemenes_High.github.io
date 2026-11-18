@@ -10,6 +10,9 @@ const pages={
 const cssFile="assets/grade09-subject-parchment.css";
 const css=fs.readFileSync(cssFile,"utf8");
 const htmls=Object.fromEntries(Object.entries(pages).map(([name,file])=>[name,fs.readFileSync(file,"utf8")]));
+const scienceRuntime=fs.readFileSync("courses/science/integrated-science-9/science9-dashboard-app-v1.js","utf8");
+new vm.Script(scienceRuntime,{filename:"science9-dashboard-app-v1.js"});
+const scienceSource=htmls.science+"\n"+scienceRuntime;
 const report=[];
 for(const [name,file] of Object.entries(pages)){
  const html=htmls[name];
@@ -33,7 +36,8 @@ for(const [name,file] of Object.entries(pages)){
  assert.ok(html.includes('data-view="week"'),name+" weekly lessons remain available");
  assert.ok(html.includes('id="studentSelect"'),name+" learner selector not removed");
  const scripts=[...html.matchAll(/<script(?![^>]*\bsrc=)[^>]*>([\s\S]*?)<\/script>/gi)].map(m=>m[1]).filter(x=>x.trim());
- assert.ok(scripts.length>0,name+" retains inline course code");
+ assert.ok(scripts.length>0 || (name==="science" && html.includes('src="science9-dashboard-app-v1.js"')),
+  name+" retains its executable course logic");
  for(const [i,script] of scripts.entries())new vm.Script(script,{filename:file+"#script-"+i});
  assert.ok(!html.includes('src="https://cdn.'),name+" introduces no remote runtime scripts");
  report.push(name+" HTML + JS syntax/structure");
@@ -46,20 +50,20 @@ assert.match(htmls.english,/aria-pressed",active\?"true":"false"/,"English navig
 assert.match(htmls.english,/function renderAll\(\)/,"English 9 learner views not removed");
 
 assert.match(htmls.science,/<html data-theme="light" lang="en">/,"Science first paint is parchment");
-assert.match(htmls.science,/function blankState\(\)\{return \{students:\[\],activeId:null,theme:"light"\}\}/,"Science default student state uses light");
+assert.match(scienceSource,/function blankState\(\)\{return \{students:\[\],activeId:null,theme:"light"\}\}/,"Science default student state uses light");
 assert.match(htmls.science,/class="grade9-skip-link" href="#content"/,"Science skip link is present");
 assert.match(htmls.science,/<section id="content" tabindex="-1" aria-label="Student science workspace">/,"Science workspace is a focus target");
 assert.match(htmls.science,/<nav class="sideBox" aria-label="Science 9 course navigation">/,"Science sidebar navigation labeled");
 assert.match(htmls.science,/<nav class="tabs noPrint" aria-label="Science 9 workspace tabs">/,"Science tabs navigation labeled");
-assert.match(htmls.science,/function renderNav\(\).*setAttribute\("aria-pressed",active\?"true":"false"\)/,"Science selected tab accessible");
-assert.match(htmls.science,/state\.theme=state\.theme==="dark"\?"light":"dark"/,"Preserve existing science theme preference format");
-assert.match(htmls.science,/state\.theme=state\.theme==="dark"\?"light":"dark";applyReadingContrast\(\);save\(\)/,
+assert.match(scienceSource,/function renderNav\(\).*setAttribute\("aria-pressed",active\?"true":"false"\)/,"Science selected tab accessible");
+assert.match(scienceSource,/state\.theme=state\.theme==="dark"\?"light":"dark"/,"Preserve existing science theme preference format");
+assert.match(scienceSource,/state\.theme=state\.theme==="dark"\?"light":"dark";applyReadingContrast\(\);save\(\)/,
  "Science theme toggle still saves to the existing profile");
-assert.match(htmls.science,/const applyReadingContrast=\(\)=>\{/,"Science contrast render helper exists");
+assert.match(scienceSource,/const applyReadingContrast=\(\)=>\{/,"Science contrast render helper exists");
 assert.match(htmls.science,/data-view="assessments"/,"Science assessments remain accessible");
-assert.match(htmls.science,/function renderAll\(\)/,"Science course records still render");
+assert.match(scienceSource,/function renderAll\(\)/,"Science course records still render");
 
-const logic=htmls.science.match(/const applyReadingContrast=\(\)=>\{[\s\S]*?\};/)?.[0];
+const logic=scienceSource.match(/const applyReadingContrast=\(\)=>\{[\s\S]*?\};/)?.[0];
 assert.ok(logic,"Science theme control parser");
 const controls={textContent:"",attributes:{},setAttribute(key,value){this.attributes[key]=value;}};
 const state={theme:"light"};
