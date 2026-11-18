@@ -569,15 +569,14 @@ html:root:root body #vnv-global-support a.vnv-support-button:focus-visible{
     }
     return false;
   }
-  styleFooter();
-  if(!supportPanel()){
-    const observer=new MutationObserver(()=>{
-      styleFooter();
-      if(supportPanel())observer.disconnect();
-    });
-    observer.observe(document.body,{subtree:true,childList:true});
-    window.addEventListener("load",()=>{styleFooter();if(supportPanel())observer.disconnect();},{once:true});
+  function refreshSupportPresentation(){
+    styleFooter();
+    supportPanel();
   }
+  refreshSupportPresentation();
+  [120,360,900,1800].forEach(ms=>setTimeout(refreshSupportPresentation,ms));
+  window.addEventListener("load",refreshSupportPresentation,{once:true});
+  window.addEventListener("khaemenes-student-profile-ready",refreshSupportPresentation);
 })();
 </script>
 
