@@ -24,6 +24,7 @@ on:
       - 'mentor-contract.json'
       - 'tools/validate-high-school-learning-architecture.mjs'
       - 'tools/test-social-studies-grade10-session-bridge.mjs'
+      - 'tools/test-social-studies-grade10-record-ownership.mjs'
       - '.github/workflows/high-school-learning-architecture-regression.yml'
   pull_request:
     paths:
@@ -55,3 +56,5 @@ jobs:
         run: node tools/validate-high-school-learning-architecture.mjs
       - name: Verify Grade 10 learner-bound Monte Carlo sessions
         run: node tools/test-social-studies-grade10-session-bridge.mjs
+      - name: Verify Grade 10 Academy record ownership and migration denial
+        run: node tools/test-social-studies-grade10-record-ownership.mjs
