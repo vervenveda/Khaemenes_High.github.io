@@ -1,5 +1,5 @@
 (()=>{"use strict";
-const MIN=80,scriptEl=document.currentScript,coreSrc=new URL("lesson-engine-core.js",scriptEl?.src||location.href).href,map=window.UNIT_MAP_FALLBACK,lesson=window.LESSON_DATA;
+const MIN=80,scriptEl=document.currentScript,coreSrc=new URL("../../../assets/prealgebra-lesson-engine-core-v2.js",scriptEl?.src||location.href).href,map=window.UNIT_MAP_FALLBACK,lesson=window.LESSON_DATA;
 const pad=n=>String(n).padStart(2,"0"),unitNo=Number(map?.unit?.number)||Number(location.pathname.match(/unit-(\d+)/)?.[1])||0;
 const COMPANIONS={
  l01:{game:"fraction-quotient",gameTitle:"Fraction Quotient",video:{id:"QzMEqxd2Cr8",title:"Interpreting Fractions as Quotients",note:"Aligned support: connects a fraction a/b to the quotient a ÷ b and reinforces one of the central meanings of a rational number."}},
