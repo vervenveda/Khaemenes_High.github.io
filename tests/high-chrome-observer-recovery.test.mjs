@@ -43,3 +43,29 @@ test("learner route and assessment engine remain independent of this recovery",(
  assert.match(diagnostic,/assets\/exam-engine\.js/);
  assert.match(diagnostic,/id="startAssessmentButton"/);
 });
+
+test("Friday landing fallback suppresses only post-Friday chrome on grade and course entries",()=>{
+ const marker="function KHAE_FRIDAY_LANDING_ROLLBACK";
+ const begin=chrome.indexOf(marker);
+ const end=chrome.indexOf('(()=>{"use strict";',begin);
+ assert.ok(begin>=0&&end>begin,"rollback predicate exists");
+ const isLanding=new Function(chrome.slice(begin,end)+"return KHAE_FRIDAY_LANDING_ROLLBACK")();
+ const yes=[
+  "/Khaemenes_High.github.io/grades/grade-09/",
+  "/Khaemenes_High.github.io/grades/grade-12/index.html",
+  "/Khaemenes_High.github.io/courses/",
+  "/Khaemenes_High.github.io/courses/mathematics/algebra-1/",
+  "/Khaemenes_High.github.io/courses/language-arts/english-9/",
+  "/Khaemenes_High.github.io/courses/science/integrated-science-9/",
+  "/Khaemenes_High.github.io/courses/social-studies/grade-09/"
+ ];
+ const no=[
+  "/Khaemenes_High.github.io/",
+  "/Khaemenes_High.github.io/grades/grade-09/student-profile/",
+  "/Khaemenes_High.github.io/courses/mathematics/algebra-1/diagnostic/",
+  "/Khaemenes_High.github.io/courses/mathematics/algebra-1/units/unit-01/"
+ ];
+ for(const path of yes)assert.equal(isLanding(path),true,path);
+ for(const path of no)assert.equal(isLanding(path),false,path);
+ assert.equal((chrome.match(/if\(KHAE_FRIDAY_LANDING_ROLLBACK\(location.pathname\)\)return;/g)||[]).length,2);
+});
