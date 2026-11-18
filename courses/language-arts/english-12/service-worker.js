@@ -1,4 +1,4 @@
-const CACHE_NAME = "khae-english12-v6-focused-learning-offline-20261115";
+const CACHE_NAME = "khae-english12-v7-runtime-recovery-20261118";
 const PRECACHE = ["../../shared/course-entry-contract.js","../../shared/learner-scope-v1.js","../../shared/upper-english-records.js",
   "./404.html",
   "./assessments/diagnostic/index.html",
@@ -129,31 +129,43 @@ self.addEventListener("activate", event => {
   event.waitUntil(caches.keys().then(keys => Promise.all(keys.filter(key=>key.startsWith("khae-english12-")&&key!==CACHE_NAME).map(key => caches.delete(key)))).then(() => self.clients.claim()));
 });
 
+function mutableRuntimeRequest(request,url){
+  const path=url.pathname.toLowerCase();
+  return request.destination==="script"||
+    request.destination==="style"||
+    path.endsWith(".json")||
+    path.endsWith(".webmanifest")||
+    path.includes("/assets/")||
+    path.includes("/courses/shared/");
+}
+async function networkFirst(request){
+  try{
+    const response=await fetch(new Request(request,{cache:"no-store"}));
+    if(response?.ok){
+      const copy=response.clone();
+      const cache=await caches.open(CACHE_NAME);
+      await cache.put(request,copy);
+    }
+    return response;
+  }catch(error){
+    const cached=await matchReleaseCache(request);
+    if(cached)return cached;
+    throw error;
+  }
+}
 self.addEventListener("fetch", event => {
   if(event.request.method !== "GET") return;
   const url = new URL(event.request.url);
   if(url.origin !== self.location.origin) return;
   if(event.request.mode === "navigate"){
-    event.respondWith(
-      fetch(event.request).then(response => {
-        if(response.ok){
-          const copy=response.clone();
-          caches.open(CACHE_NAME).then(cache=>cache.put(event.request,copy)).catch(()=>{});
-        }
-        return response;
-      }).catch(()=>matchReleaseCache(event.request).then(hit=>hit||matchReleaseCache("./offline.html")))
-    );
+    event.respondWith(networkFirst(event.request).catch(()=>matchReleaseCache("./offline.html")));
     return;
   }
-  event.respondWith(
-    matchReleaseCache(event.request).then(hit => hit || fetch(event.request).then(response => {
-      if(response.ok){
-        const copy=response.clone();
-        caches.open(CACHE_NAME).then(cache=>cache.put(event.request,copy)).catch(()=>{});
-      }
-      return response;
-    }))
-  );
+  if(mutableRuntimeRequest(event.request,url)){
+    event.respondWith(networkFirst(event.request));
+    return;
+  }
+  event.respondWith(matchReleaseCache(event.request).then(hit=>hit||networkFirst(event.request)));
 });
 
 function matchReleaseCache(request){return caches.open(CACHE_NAME).then(cache=>cache.match(request));}
