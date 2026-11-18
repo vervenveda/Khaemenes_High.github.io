@@ -61,3 +61,27 @@ test("Pre-Algebra assessment view uses the same surface and preserves work snaps
  assert.match(pre,/work_snapshot/);
  assert.match(pre,/khaemenes-math-assessment-mode/);
 });
+
+test("Pre-Algebra weekly mastery checks use a dedicated worksheet surface",()=>{
+ assert.match(pre,/weeklyMasteryMode/);
+ assert.match(pre,/function weeklyMasteryAssessment\(w,r\)/);
+ assert.match(pre,/Start mastery check/);
+ assert.match(pre,/prealgebra-weekly-mastery-draft-v1/);
+ assert.match(pre,/weeklyMasteryMode\?"weekly"/);
+ assert.match(pre,/Show your work · ungraded workspace/);
+});
+
+test("Pre-Algebra weekly mastery drafts keep stable questions, answers, and work",()=>{
+ assert.match(pre,/prior\.questions\.every\(q=>sourceIds\.includes\(q\.id\)\)/);
+ assert.match(pre,/draft\.answers\[String\(index\)\]/);
+ assert.match(pre,/draft\.work\[String\(index\)\]/);
+ assert.match(pre,/work_snapshot:\{\.\.\.\(draft\.work\|\|\{\}\)\}/);
+ assert.match(pre,/r\.quiz\.draft=null/);
+});
+
+test("weekly mastery is removed from planner clutter and opened explicitly",()=>{
+ assert.match(pre,/weeklyMasterySummary\(w,r\)/);
+ assert.match(pre,/Open the check in the dedicated one-column assessment workspace/);
+ assert.match(pre,/Return to Weekly Planner/);
+});
+
