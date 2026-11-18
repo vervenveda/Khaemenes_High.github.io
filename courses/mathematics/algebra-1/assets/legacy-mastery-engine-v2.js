@@ -5,8 +5,18 @@ if(!D||!Q||!R||R.type!=="mastery")return;
 const unit=D.units.find(u=>u.number===R.unit),lessons=D.lessons.filter(l=>l.unit===R.unit),root=R.root||"",KEY=`khaemenes-algebra1-unit${String(R.unit).padStart(2,"0")}-progress-v1`;
 const esc=v=>String(v??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
 const safeParse=(raw,fallback)=>{try{const v=JSON.parse(raw);return v&&typeof v==="object"?v:fallback}catch{return fallback}};
-function state(){const p=safeParse(localStorage.getItem(KEY),{pathway:"Core",completed:[],scores:{},reflections:{},attempts:[]});p.completed=Array.isArray(p.completed)?p.completed:[];p.scores=p.scores&&typeof p.scores==="object"?p.scores:{};p.attempts=Array.isArray(p.attempts)?p.attempts:[];return p}
-function save(p){try{localStorage.setItem(KEY,JSON.stringify(p));return true}catch{return false}}
+function state(){
+ const S=window.KhaemenesMathStorageAdapter;
+ const raw=S?.readRaw?S.readRaw(KEY,null):(()=>{try{return localStorage.getItem(KEY)}catch{return null}})();
+ const p=safeParse(raw,{pathway:"Core",completed:[],scores:{},reflections:{},attempts:[]});
+ p.completed=Array.isArray(p.completed)?p.completed:[];p.scores=p.scores&&typeof p.scores==="object"?p.scores:{};p.attempts=Array.isArray(p.attempts)?p.attempts:[];
+ return p
+}
+function save(p){
+ const S=window.KhaemenesMathStorageAdapter;
+ if(S?.writeJSON){const result=S.writeJSON(KEY,p);return result.persisted===true&&result.verified===true}
+ try{const raw=JSON.stringify(p);localStorage.setItem(KEY,raw);return localStorage.getItem(KEY)===raw}catch{return false}
+}
 function hashSeed(text){let h=2166136261;for(let i=0;i<text.length;i++){h^=text.charCodeAt(i);h=Math.imul(h,16777619)}return h>>>0}
 function nextSeed(x){x^=x<<13;x^=x>>>17;x^=x<<5;return x>>>0}
 function shuffled(values,seed){const a=[...values];let x=(seed>>>0)||0x9e3779b9;for(let i=a.length-1;i>0;i--){x=nextSeed(x);const j=x%(i+1);[a[i],a[j]]=[a[j],a[i]]}return a}
