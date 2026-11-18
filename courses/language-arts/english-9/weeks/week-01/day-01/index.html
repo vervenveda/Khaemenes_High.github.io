@@ -34,6 +34,62 @@ body[data-english9-day="1"] .daily-hero h1{font-size:33px}
 </style>
 <script src="/Khaemenes_High.github.io/assets/vnv-dual-ticker-v1.js" defer data-grade09-dual-ticker="true"></script>
 <script src="/Khaemenes_High.github.io/courses/shared/high-school-class-tools-left-v1.js" defer data-high-class-tools-left="v1"></script>
+
+<style id="english9-day01-order-v2">
+/* ENGLISH9_DAY01_VISUAL_ORDER_V2 — Day 1 only. No scoring, storage, or assessment changes. */
+html,body[data-english9-day="1"]{width:100%;min-width:0;overflow-x:clip}
+body[data-english9-day="1"] > :is(#vnv333NetworkTicker,#vnvTickerAutoPopulate,#vnvHeaderAutoPopulate){
+ width:100%!important;max-width:none!important;box-sizing:border-box!important;
+ left:0!important;right:0!important;margin-left:0!important;margin-right:0!important;
+}
+body[data-english9-day="1"] .daily-shell{width:min(100%,1000px);max-width:1000px;margin:0 auto;padding:clamp(16px,2.5vw,30px);box-sizing:border-box}
+body[data-english9-day="1"] .daily-hero{margin:4px auto 10px;padding:26px clamp(12px,3vw,36px) 20px;text-align:center}
+body[data-english9-day="1"] .daily-hero h1{font:400 clamp(33px,4.3vw,55px)/1.16 Cinzel,Georgia,serif!important;color:#244b3d;margin:8px auto 14px}
+body[data-english9-day="1"] .daily-hero p{max-width:72ch;margin-inline:auto}
+body[data-english9-day="1"] .khae-source-custody-card{width:100%;max-width:100%;padding:14px 20px;margin:12px auto 20px;background:#fffdf8;border:1px solid #d8ddd4}
+body[data-english9-day="1"] .khae-source-custody-card h2{font:400 24px/1.35 Cinzel,Georgia,serif!important;margin:3px 0 8px}
+body[data-english9-day="1"] .khae-source-custody-card .khae-source-eyebrow{font-size:16px!important;color:#80642f}
+body[data-english9-day="1"] .khae-source-custody-card p{margin:5px 0;font-size:16px}
+body[data-english9-day="1"] .khae-source-actions{margin-top:9px}
+body[data-english9-day="1"] .e9-resources-compact{max-width:100%;margin:10px 0 20px;padding:10px 16px}
+body[data-english9-day="1"] .e9-resources-compact summary{font-weight:400}
+body[data-english9-day="1"] .daily-top,body[data-english9-day="1"] .daily-crumbs{margin:8px auto;min-height:30px}
+body[data-english9-day="1"] #khae-english-unified-lesson-map{margin:12px auto;padding:12px 16px;max-width:100%}
+body[data-english9-day="1"] #khae-english-unified-lesson-map .khae-engine-summary{margin-bottom:5px}
+body[data-english9-day="1"] .phase{margin-top:18px}
+@media(max-width:650px){
+ body[data-english9-day="1"] .daily-hero{padding:20px 10px 12px}
+ body[data-english9-day="1"] .khae-source-custody-card{padding:12px 14px}
+ body[data-english9-day="1"] .e9-resource-links{grid-template-columns:1fr}
+}
+</style>
+<script id="english9-day01-layout-v2">
+/* Presentation-only: reparent generated site chrome, position custody below lesson hero,
+   and place the lesson hero ahead of legacy breadcrumbs/return links. */
+(()=>{"use strict";
+if(window.__KHAE_ENGLISH9_DAY01_VISUAL_ORDER_V2__)return;
+window.__KHAE_ENGLISH9_DAY01_VISUAL_ORDER_V2__=true;
+let scheduled=false;
+function arrange(){
+ scheduled=false;
+ const body=document.body,main=document.getElementById("daily-main");
+ if(!body||!main)return;
+ // Canonical full-width order: 333 ticker, auto-populating ticker, official header, main.
+ for(const id of ["vnv333NetworkTicker","vnvTickerAutoPopulate","vnvHeaderAutoPopulate"]){
+   const el=document.getElementById(id);
+   if(el&&el.parentElement!==body)body.insertBefore(el,main);
+   else if(el&&el.nextElementSibling!==main)body.insertBefore(el,main);
+ }
+ const hero=main.querySelector(".daily-hero");
+ if(hero&&main.firstElementChild!==hero)main.insertBefore(hero,main.firstElementChild);
+ const custody=main.querySelector("[data-week-source-custody-v1]");
+ if(hero&&custody&&hero.nextElementSibling!==custody)hero.insertAdjacentElement("afterend",custody);
+}
+function queue(){if(scheduled)return;scheduled=true;requestAnimationFrame(arrange)}
+if(document.readyState==="loading")document.addEventListener("DOMContentLoaded",queue,{once:true});else queue();
+new MutationObserver(queue).observe(document.documentElement,{subtree:true,childList:true});
+})();
+</script>
 </head><body data-english9-day="1">
 <a class="skip" href="#daily-main">Skip to the lesson</a>
 <main id="daily-main" class="daily-shell">
@@ -45,36 +101,20 @@ body[data-english9-day="1"] .daily-hero h1{font-size:33px}
 <aside class="daily-status" id="daily-status" role="status" aria-live="polite">Checking learner and saved work…</aside>
 <aside class="daily-status daily-warning daily-gate" id="daily-gate" hidden></aside>
 
-<!-- ENGLISH9_DAY01_CONNECTED_SHELL_V1: linked to verified existing curricular pages; no independent score or completion state -->
-<section class="e9-connected" aria-labelledby="e9-connected-title">
-  <p class="e9-institution">Khaemenes Academy</p>
-  <p class="e9-subtitle">English 09 · Unit 01 · Week 01 · Day 01</p>
-  <h2 id="e9-connected-title">Today's Learning Path</h2>
-  <p>Read the original lesson passage, practice evidence-based reasoning, write independently, and preserve your work in the existing learner workspace.</p>
-  <nav class="e9-lesson-grid" aria-label="Jump to actual Day 1 lesson materials">
-    <a href="#heading-1-read">Today's Goal</a>
-    <a href="#text-a">Reading</a>
-    <a href="#e9-unit-vocabulary">Vocabulary</a>
-    <a href="#heading-1-practice">Practice</a>
-    <a href="#heading-1-write">Writing</a>
-    <a href="#heading-1-check">Reflection</a>
+<!-- ENGLISH9_DAY01_VISUAL_ORDER_V2: compact first-party material links, original lesson data untouched -->
+<details class="e9-resource-details e9-resources-compact" id="e9-unit-vocabulary">
+  <summary>Reading, vocabulary, worksheet and lesson resources</summary>
+  <p class="e9-note">Unit 01 vocabulary: observation, inference, claim, evidence, annotation, revision. Today's assigned lesson text is <em>The Margin Between Reading and Knowing</em>; <em>The First Annotation</em> is the separate verified Unit 01 reading.</p>
+  <nav class="e9-resource-links" aria-label="Verified English 9 Unit 01 materials">
+    <a href="../../../units/unit-01/index.html#assigned-reading">Unit reading · The First Annotation</a>
+    <a href="../../../units/unit-01/reading-dossier.html">Reading custody dossier</a>
+    <a href="../../../units/unit-01/interactive-worksheet.html">Interactive worksheet</a>
+    <a href="../../../learning-tools.html#week-1">Vocabulary and learning tools</a>
+    <a href="../../../units/unit-01/index.html#reading-rubric-heading">100-point reading rubric</a>
+    <a href="../../../assessments/unit-01/index.html">Assessment gateway</a>
   </nav>
-  <details class="e9-resource-details" id="e9-unit-vocabulary">
-    <summary>Vocabulary and connected Unit 01 materials</summary>
-    <p class="e9-note">Today's language: observation, inference, claim, evidence, annotation, and revision. Apply these terms to Lena's reading rather than replacing today's assigned passage with a different text.</p>
-    <div class="e9-resource-links">
-      <a href="../../../units/unit-01/index.html#assigned-reading">Unit 01 original reading · The First Annotation</a>
-      <a href="../../../units/unit-01/reading-dossier.html">Verified reading dossier</a>
-      <a href="../../../units/unit-01/interactive-worksheet.html">Unit 01 interactive worksheet</a>
-      <a href="../../../index.html">Official English 9 course</a>
-      <a href="../../../learning-tools.html#week-1">Week 01 tools and games</a>
-      <a href="../../../units/unit-01/index.html#reading-rubric-heading">100-point reading-response rubric</a>
-      <a href="../../../assessments/unit-01/index.html">Unit 01 assessment gateway</a>
-      <a href="../index.html">Full Week 01 workspace</a>
-    </div>
-    <p class="e9-note">This navigation does not record completion or award mastery. The original Day 1 writing, backup export, and evaluator-controlled 80% unit requirement remain authoritative. Additional published-text assignments require an identified source and verified reading route.</p>
-  </details>
-</section>
+  <p class="e9-note">Practice and navigation do not award mastery. Written evidence and evaluator review remain authoritative.</p>
+</details>
 <!-- ENGLISH9_UNIT01_REASONING_LAB_V1_DAY1 -->
 <section class="phase" aria-labelledby="reasoning-lab-1"><h2 id="reasoning-lab-1">Reasoning Laboratory · Day 1</h2><p>Optional deeper practice. Work through these prompts before or after the main lesson. Record any answers in your existing lesson response or on paper; this section creates no new student record and awards no mastery.</p><details><summary>Open the guided thinking sequence</summary><h3>1 · Retrieve</h3><p>Before rereading, explain the difference between an observation and an inference in your own words.</p><h3>2 · Study a worked reasoning model</h3><p>Textual detail: Lena could define each word, but could not describe the change between the opening and ending. Observation: she knows the words but cannot explain the passage’s development. Possible inference: decoding words is not the same as interpreting relationships across a text.</p><h3>3 · Challenge the easy answer</h3><p>Tempting leap: Lena was not paying attention. The passage does not establish that motive. What other explanation fits the evidence?</p><h3>4 · Apply and revise</h3><p>In your existing observation field, distinguish one directly stated detail from one carefully qualified inference; then identify what new textual evidence could change your idea.</p><p><strong>Self-check:</strong> My evidence is accurate; I explain rather than merely quote; I name an uncertainty; and I can show what changed in my reasoning.</p></details></section>
 <section class="phase" data-day="1" data-phase="read" aria-labelledby="heading-1-read"><h2 id="heading-1-read" tabindex="-1">Read · Your starting point</h2><p><strong>Today’s goal:</strong> distinguish what the text says from what you infer. Read Text A once before writing. This is a starting sample, not a placement decision.</p><div class="text-passage" id="text-a"><h3>Text A · The Margin Between Reading and Knowing</h3><p>On the first afternoon, Lena read the page as she had been trained to read bus schedules: from the upper left corner to the lower right, stopping only when the page ended. She understood every word. At least, she could have defined them. When her teacher asked what had changed between the first paragraph and the last, however, Lena looked down at the clean white margins and realized that she had no answer.</p><p>The next day she returned to the same page with a pencil. At first she underlined almost everything. The important sentence looked exactly like the unimportant one because both were trapped beneath identical gray lines. She erased until the paper grew soft. Then she tried something slower. Beside one sentence she wrote, “Why here?” Beside another, “This sounds like the opening, but colder.” A third note simply said, “I thought I knew what he wanted.”</p><p>Nothing in the printed passage had changed. Yet the page no longer seemed still. A repeated image that had looked accidental now connected two scenes. A word she had ignored began to sound deliberate. One question forced her back three paragraphs, where she found a detail that weakened her first idea. She crossed out the idea, not because it had been foolish, but because the text had given her a reason to change it.</p><p>By Friday the margins were crowded. Lena could not point to a single note and say, “This is understanding.” The understanding lived in the movement among the notes: noticing, asking, testing, revising. She had read the page four times. Only the first reading had been silent.</p></div><p>An observation points to something present in the text. An inference explains what details might mean. A claim answers a meaningful question and can be supported with evidence.</p></section>
