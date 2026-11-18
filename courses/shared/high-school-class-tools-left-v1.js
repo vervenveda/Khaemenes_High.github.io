@@ -2,12 +2,14 @@
    Presentation and navigation only. No learner identity, grade, assessment,
    persistence, or mastery authority. Shared shell for Grades 9–12. */
 (()=>{"use strict";
-if(document.getElementById("khae-class-tools-left"))return;
+if(window.__KHAE_CLASS_TOOLS_LEFT_V1__||document.getElementById("khae-class-tools-left"))return;
+window.__KHAE_CLASS_TOOLS_LEFT_V1__=true;
 const path=location.pathname.toLowerCase();
-if(/\/(?:assessment|assessments|diagnostic)\//.test(path))return;
+if(/\/(?:assessment|assessments|diagnostic|quiz|quizzes|exam|exams|midterm|final)\//.test(path))return;
 const match=path.match(/\/courses\/language-arts\/(english-(?:9|10|11|12))\//);
 const configured=document.currentScript?.dataset.englishCourse;
-const subject=match?.[1]||(/^english-(?:9|10|11|12)$/.test(configured||"")?configured:null);
+const requested=new URLSearchParams(location.search).get("course");
+const subject=match?.[1]||(/^english-(?:9|10|11|12)$/.test(requested||"")?requested:null)||(/^english-(?:9|10|11|12)$/.test(configured||"")?configured:null);
 if(!subject)return;
 const high="/Khaemenes_High.github.io/";
 const home=high+"courses/language-arts/"+subject+"/";
