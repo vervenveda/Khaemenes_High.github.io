@@ -1,9 +1,9 @@
 /* Khaemenes Academy · mathematics storage health v2 */
 (()=>{"use strict";
 if(window.KhaemenesMathStorageHealth)return;
-const ID="khaeMathStorageHealth",rec=()=>window.KhaemenesMathLearnerRecord;
+const ID="khaeMathStorageHealth",rec=()=>window.KhaemenesMathLearnerRecord,store=()=>window.KhaemenesMathStorageAdapter;
 function status(){
- const r=rec(),h=r?.storageHealth?.()||{available:false,verified:false,mode:"unknown"};
+ const r=rec(),h=store()?.probe?.()||r?.storageHealth?.()||{available:false,verified:false,mode:"unknown"};
  return {schema:"khaemenes-math-storage-health-v2",course:r?.course||null,learner:r?.learner?.()||null,...h,online:navigator.onLine};
 }
 function mount(){
@@ -18,8 +18,8 @@ function mount(){
 }
 function verifyWrite(label="manual"){
  const r=rec();if(!r)return {ok:false,error:"record-adapter-unavailable"};
- const h=r.storageHealth();r.append?.("storage-health",{label,...h},"math-storage-health-v2");return {ok:h.verified,health:h};
+ const h=store()?.probe?.()||r.storageHealth();r.append?.("storage-health",{label,...h},"math-storage-health-v2");return {ok:h.verified,health:h};
 }
-window.KhaemenesMathStorageHealth=Object.freeze({status,mount,verifyWrite,version:"2.0.0"});
+window.KhaemenesMathStorageHealth=Object.freeze({status,mount,verifyWrite,version:"2.1.0"});
 const boot=()=>mount();document.readyState==="loading"?document.addEventListener("DOMContentLoaded",boot,{once:true}):boot();
 })();
