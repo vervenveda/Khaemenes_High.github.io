@@ -107,3 +107,25 @@ test("English 9 loads the left class-tools runtime only once",()=>{
  const loads=page.match(/<script[^>]+src=["']\.\.\/\.\.\/shared\/high-school-class-tools-left-v1\.js["'][^>]*>/g)||[];
  assert.equal(loads.length,1);
 });
+
+
+const universalClassToolPages=[
+ "courses/science/integrated-science-9/index.html","courses/science/biology-10/index.html","courses/science/chemistry-11/index.html","courses/science/physics-engineering-12/index.html",
+ "courses/social-studies/grade-09/index.html","courses/social-studies/grade-10/index.html","courses/social-studies/grade-11/index.html","courses/social-studies/grade-12/index.html",
+ "courses/physical-education/index.html","courses/electives/index.html"
+];
+
+test("non-math High School course landings load exactly one universal Class Tools runtime",()=>{
+ for(const path of universalClassToolPages){
+  const page=read(path);
+  const loads=page.match(/high-school-class-tools-universal-v1\.js/g)||[];
+  assert.equal(loads.length,1,path+" must load one universal Class Tools runtime");
+ }
+});
+
+test("Grade 10 Social Studies uses centered-course desktop parity",()=>{
+ const css=read("courses/social-studies/grade-10/styles.css");
+ assert.match(css,/Grade 10 centered-course parity recovery/);
+ assert.match(css,/\.app\{\s*display:block;/);
+ assert.match(css,/grid-template-columns:repeat\(2,minmax\(0,1fr\)\)/);
+});
