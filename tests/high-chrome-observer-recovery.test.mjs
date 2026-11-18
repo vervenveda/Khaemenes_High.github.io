@@ -35,7 +35,9 @@ test("minimal chrome cannot continuously mutate or scan course documents",()=>{
  assert.doesNotMatch(chrome,/main\.style\.zoom/);
 });
 
-test("minimal chrome does not own tickers, course tools, or course-specific helpers",()=>{
+test("minimal chrome delegates tickers to the isolated guard and does not own course tools",()=>{
+ assert.match(chrome,/const TICKER_GUARD="vnv-dual-ticker-v1\.js"/);
+ assert.match(chrome,/ensureTickerGuard\(\)/);
  assert.doesNotMatch(chrome,/vnv-333-ticker\.js/);
  assert.doesNotMatch(chrome,/vnv-ticker-autopopulate\.js/);
  assert.doesNotMatch(chrome,/high-school-class-tools-left-v1\.js/);
