@@ -2,6 +2,7 @@
 
 | Date | Type | Entry | State |
 | --- | --- | --- | --- |
+| 2026-11-17 | upgrade · curriculum depth · retrieval · assessment | [Units 12–13 Exceptional-depth upgrade](logs/2026/11/2026-11-17-units12-13-exceptional-depth-upgrade.md) | Source validation PASS; live browser/device acceptance HOLD |
 | 2026-11-17 | upgrade · curriculum depth · retrieval · assessment | [Units 10–11 Exceptional-depth upgrade](logs/2026/11/2026-11-17-units10-11-exceptional-depth-upgrade.md) | Source validation PASS; live browser/device acceptance HOLD |
 | 2026-11-17 | upgrade · curriculum depth · retrieval · assessment | [Units 08–09 Exceptional-depth upgrade](logs/2026/11/2026-11-17-units08-09-exceptional-depth-upgrade.md) | Source validation PASS; live browser/device acceptance HOLD |
 | 2026-11-17 | upgrade · curriculum depth · retrieval · assessment | [Units 06–07 Exceptional-depth upgrade](logs/2026/11/2026-11-17-units06-07-exceptional-depth-upgrade.md) | Source validation PASS; live browser/device acceptance HOLD |
