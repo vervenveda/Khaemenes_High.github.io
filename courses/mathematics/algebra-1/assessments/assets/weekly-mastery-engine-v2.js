@@ -8,7 +8,7 @@ const $=id=>document.getElementById(id);
 const esc=v=>String(v??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
 const safeParse=(raw,fallback)=>{try{const v=JSON.parse(raw);return v&&typeof v==="object"?v:fallback}catch{return fallback}};
 function store(){const s=safeParse(localStorage.getItem(STORE),{version:2,weeks:{}});s.version=2;s.weeks=s.weeks&&typeof s.weeks==="object"?s.weeks:{};return s}
-function write(s){try{localStorage.setItem(STORE,JSON.stringify(s));return true}catch{return false}}
+function write(s){const S=window.KhaemenesMathStorageAdapter;if(S?.writeJSON)return S.writeJSON(STORE,s).persisted===true;try{const data=JSON.stringify(s);localStorage.setItem(STORE,data);return localStorage.getItem(STORE)===data}catch{return false}}
 function weekState(n){const s=store();s.weeks[n]??={draft:{answers:{}},attempts:[],best:null};s.weeks[n].draft??={answers:{}};s.weeks[n].draft.answers??={};s.weeks[n].attempts=Array.isArray(s.weeks[n].attempts)?s.weeks[n].attempts:[];return [s,s.weeks[n]]}
 function weekMastered(n){if(n===1)return true;const s=store(),r=s.weeks?.[n];return Number(r?.best)>=MASTERY||Array.isArray(r?.attempts)&&r.attempts.some(a=>a?.mastery_met===true)}
 function weekGate(n){
