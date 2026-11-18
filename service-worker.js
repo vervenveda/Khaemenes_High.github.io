@@ -1,6 +1,6 @@
 "use strict";
 
-const CACHE_VERSION = "khaemenes-high-v41-model-forge-20261118";
+const CACHE_VERSION = "khaemenes-high-v42-runtime-recovery-20261118";
 // Generated from canonical game-registry.json; validated by tools/test-math-game-offline-cache.mjs.
 // Every canonical game and its shared runtime must be available on a newly installed offline worker.
 const GAME_PRECACHE_FILES = [
@@ -528,6 +528,31 @@ async function cachedNavigation(request) {
   return matchReleaseCache(url.origin + canonicalPath);
 }
 
+function mutableRuntimeRequest(request,url){
+  const path=url.pathname.toLowerCase();
+  return request.destination==="script"||
+    request.destination==="style"||
+    path.endsWith(".json")||
+    path.endsWith(".webmanifest")||
+    path.includes("/assets/")||
+    path.includes("/courses/shared/")||
+    path.includes("/courses/mathematics/assets/");
+}
+async function networkFirst(request){
+  try{
+    const response=await fetch(new Request(request,{cache:"no-store"}));
+    if(response&&response.ok){
+      const copy=response.clone();
+      const cache=await caches.open(CACHE_VERSION);
+      await cache.put(request,copy);
+    }
+    return response;
+  }catch(error){
+    const cached=await matchReleaseCache(request);
+    if(cached)return cached;
+    throw error;
+  }
+}
 self.addEventListener("fetch", event => {
   const request = event.request;
   if (request.method !== "GET") return;
@@ -538,10 +563,14 @@ self.addEventListener("fetch", event => {
     return;
   }
   if (request.mode === "navigate") {
-    event.respondWith(fetch(request).then(response => { if (response && response.ok) { const copy = response.clone(); caches.open(CACHE_VERSION).then(cache => cache.put(request, copy)); } return response; }).catch(async () => (await cachedNavigation(request)) || (await cachedCourseFallback(url)) || matchReleaseCache("./index.html")));
+    event.respondWith(networkFirst(request).catch(async () => (await cachedNavigation(request)) || (await cachedCourseFallback(url)) || matchReleaseCache("./index.html")));
     return;
   }
-  event.respondWith(matchReleaseCache(request).then(cached => { const network = fetch(request).then(response => { if (response && response.ok) { const copy = response.clone(); caches.open(CACHE_VERSION).then(cache => cache.put(request, copy)); } return response; }).catch(() => cached); return cached || network; }));
+  if(mutableRuntimeRequest(request,url)){
+    event.respondWith(networkFirst(request));
+    return;
+  }
+  event.respondWith(matchReleaseCache(request).then(cached=>cached||networkFirst(request)));
 });
 
 self.addEventListener("message", event => { if (event.data === "SKIP_WAITING") self.skipWaiting(); });
