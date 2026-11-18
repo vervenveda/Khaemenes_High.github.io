@@ -366,23 +366,9 @@ async function start(){
       document.getElementById("vnv333NetworkTicker")&&document.getElementById("vnvTickerAutoPopulate")?"mounted":"partial";
     mountHeader(false);
   }
-  // Front hall and profile pages already own their canonical chrome mounts.
-  // Do not remount or restyle the entire document for every DOM mutation.
-  const stableFrontHall=/\/Khaemenes_High\.github\.io\/(?:index\.html)?$/i.test(location.pathname);
-  const stableStudentProfile=/\/grades\/grade-(?:09|10|11|12)\/student-profile\//i.test(location.pathname);
-  // Grade and course landings render their own interactive cards and already
-  // receive the canonical chrome during the one-time startup above. Re-running
-  // full-document typography and chrome work for every child insertion can
-  // starve interactions on these pages. Preserve the existing behavior on
-  // non-landing routes until they receive separate browser acceptance.
-  const stableGradeLanding=/\/grades\/grade-(?:09|10|11|12)\/(?:index\.html)?$/i.test(location.pathname);
-  const stableCourseLanding=/\/courses\/(?:index\.html)?$|\/courses\/(?:mathematics|language-arts|science|social-studies|physical-education|electives)\/(?:index\.html)?$|\/courses\/(?:mathematics|language-arts|science|social-studies)\/[a-z0-9-]+\/(?:index\.html)?$/i.test(location.pathname);
-  if(!stableDailyEnglish9 && !stableDailyUpperEnglish && !stableFrontHall && !stableStudentProfile && !stableGradeLanding && !stableCourseLanding && typeof MutationObserver==="function"){
-    new MutationObserver(()=>{mountHeader();mountToolbar();cleanupKnownFloaters();preserveExportMarker();scheduleTypography();})
-      .observe(document.documentElement,{childList:true,subtree:true});
-  }
-  // Daily English 9 pages mount once. Their lesson content and learner-state
-  // changes do not require repeated header/dock mounting.
+  // Recovery: shared chrome mounts once during start(). Do not remount the
+  // header, utility dock, floating controls or typography on each DOM change.
+  // This avoids re-entry while course apps render their questions and lessons.
   window.addEventListener("resize",scheduleTypography,{passive:true});
   document.documentElement.dataset.khaemenesHighTypography="16-33-66";
   document.documentElement.dataset.khaemenesHighChrome="v2";
@@ -454,7 +440,6 @@ function scheduleHierarchy(){
 }
 if(document.readyState==="loading")document.addEventListener("DOMContentLoaded",()=>normalizeHierarchy(document),{once:true});
 else normalizeHierarchy(document);
-if(typeof MutationObserver==="function"){
-  new MutationObserver(scheduleHierarchy).observe(document.documentElement,{childList:true,subtree:true});
-}
+// Recovery: title normalization runs once at entry. Dynamic content owns
+// its own headings; do not rescan the whole document on each mutation.
 })();
