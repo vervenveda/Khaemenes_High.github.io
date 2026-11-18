@@ -197,7 +197,18 @@ async function buildLibrary(){if(!library)return;launchStatusMessage();Array.fro
 <script src="../assets/math-course-shell-v1.js" defer></script>
 <script>
 if("serviceWorker" in navigator){
-  window.addEventListener("load",()=>navigator.serviceWorker.register("service-worker.js",{scope:"./",updateViaCache:"none"}).catch(error=>console.warn("Algebra I offline support unavailable.",error)),{once:true});
+  window.addEventListener("load",()=>{
+    const hadController=Boolean(navigator.serviceWorker.controller);
+    let recoveryReload=false;
+    navigator.serviceWorker.addEventListener("controllerchange",()=>{
+      if(!hadController||recoveryReload)return;
+      recoveryReload=true;
+      location.reload();
+    },{once:true});
+    navigator.serviceWorker.register("service-worker.js",{scope:"./",updateViaCache:"none"})
+      .then(registration=>registration.update())
+      .catch(error=>console.warn("Algebra I offline support unavailable.",error));
+  },{once:true});
 }
 </script>
 </body>
