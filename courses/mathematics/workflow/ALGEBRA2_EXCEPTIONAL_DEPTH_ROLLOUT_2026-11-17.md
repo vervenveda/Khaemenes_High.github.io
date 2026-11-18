@@ -139,3 +139,48 @@ Validator source:
 8. Build the 36-week Algebra II retrieval ledger from the completed unit banks.
 9. Re-audit the complete Algebra II course against Exceptional Standard v1.
 10. Apply the smaller targeted refinements to Geometry and Pre-Algebra; protect Algebra I from unnecessary scope expansion.
+
+
+## Units 02–03 completed
+
+### Unit 02 · Polynomial Functions & Complex Numbers
+- 48 new metadata-rich depth questions.
+- 6 new questions for each of 8 lessons.
+- Difficulty split: 16 Foundation / 16 Core / 16 Extended.
+- 12 / 16 / 20 differentiated practice counts.
+- 20-question balanced mastery blueprint.
+- Weeks 03–05 non-gating spaced retrieval.
+- Lesson-specific representation companion covers polynomial structure, equivalent forms, end behavior, powers of i, complex arithmetic, complex quadratic roots, complex plane, and complete factorization.
+
+### Unit 03 · Polynomial Equations, Division & Graphs
+- 42 new metadata-rich depth questions.
+- 6 new questions for each of 7 lessons.
+- Difficulty split: 14 Foundation / 14 Core / 14 Extended.
+- 12 / 16 / 20 differentiated practice counts.
+- 20-question balanced mastery blueprint.
+- Weeks 06–08 non-gating spaced retrieval.
+- Lesson-specific representation companion covers long division, synthetic division, factor/remainder relationships, Rational Root Theorem, solving higher-degree equations, multiplicity/graph behavior, and residual/model-limit reasoning.
+
+### Shared architecture improvements
+- Assessment engine auto-loads unit depth banks instead of requiring script edits on every page.
+- Lesson tools auto-load Units 02–03 representation companions.
+- Retakes continue to prioritize unseen questions.
+- Cumulative exam selection remains unit-balanced.
+- Algebra II learner-facing lessons, assessment/practice surfaces, and unit pages now enforce a 16 px minimum screen readability floor with 44 px minimum form controls.
+- The common five-part lesson evidence rubric and 80% mastery threshold remain unchanged.
+
+### Validation status
+Source-level checks pass for:
+- JavaScript syntax in the shared engine, lesson tools, depth bank, and representation companion;
+- 48 Unit 02 + 42 Unit 03 new questions;
+- six new questions per lesson;
+- balanced difficulty inventories;
+- unique IDs;
+- valid answer indexes / answer text;
+- sufficient inventory in all five reasoning dimensions.
+
+Validator source:
+`algebra-2/tools/validate-units02-03-exceptional-depth-v1.cjs`
+
+### Next propagation block
+Units 04–05 · Rational functions, radical functions, rational exponents.
