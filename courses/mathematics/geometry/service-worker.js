@@ -1,6 +1,6 @@
 "use strict";
 // Applied Mission Studio v1.7.0 · compact pop-out evidence recovery.
-const CACHE="khaemenes-geometry-v17-math-compat-20261117";
+const CACHE="khaemenes-geometry-v18-runtime-recovery-20261118";
 const CACHE_PREFIX="khaemenes-geometry-";
 const CORE=["../../shared/course-entry-contract.js","../../shared/learner-scope-v1.js",
  "../assets/math-course-shell-v1.js","../assets/math-learning-tools-v2.js","../assets/math-progress-contract-v1.js","../assets/math-compatibility-v1.js","./course-map-v2.json",
@@ -173,6 +173,31 @@ async function installMissionCritical(){
 self.addEventListener("install",event=>{event.waitUntil((async()=>{await installMissionCritical();const cache=await caches.open(CACHE),extras=[...new Set([...CORE,...VIDEO_FILES])].filter(file=>!MISSION_CRITICAL.includes(file));await Promise.allSettled(extras.map(file=>cache.add(new Request(file,{cache:"reload"}))));await self.skipWaiting()})())});
 async function purgeSensitiveCacheEntries(){const cache=await caches.open(CACHE);const requests=await cache.keys();await Promise.all(requests.filter(request=>shouldNeverCache(new URL(request.url))).map(request=>cache.delete(request)))}
 self.addEventListener("activate",event=>{event.waitUntil(caches.keys().then(keys=>Promise.all(keys.filter(key=>key.startsWith(CACHE_PREFIX)&&key!==CACHE).map(key=>caches.delete(key)))).then(purgeSensitiveCacheEntries).then(()=>self.clients.claim()))});
+function mutableRuntimeRequest(request,url){
+ const path=url.pathname.toLowerCase();
+ return request.destination==="script"||
+   request.destination==="style"||
+   path.endsWith(".json")||
+   path.includes("/courses/shared/")||
+   path.includes("/courses/mathematics/assets/")||
+   path.endsWith("/assets/high-school-global-chrome-v2.js")||
+   path.endsWith("/assets/vnv-dual-ticker-v1.js");
+}
+async function networkFirst(request){
+ try{
+   const response=await fetch(new Request(request,{cache:"no-store"}));
+   if(response?.ok){
+     const copy=response.clone();
+     const cache=await caches.open(CACHE);
+     await cache.put(request,copy);
+   }
+   return response;
+ }catch(error){
+   const cached=await matchReleaseCache(request);
+   if(cached)return cached;
+   throw error;
+ }
+}
 self.addEventListener("fetch",event=>{
  if(event.request.method!=="GET")return;
  const url=new URL(event.request.url); if(url.origin!==location.origin)return;
@@ -181,9 +206,17 @@ self.addEventListener("fetch",event=>{
    return;
  }
  if(event.request.mode==="navigate"){
-   event.respondWith(fetch(event.request,{cache:"no-store"}).then(response=>{if(response&&response.ok){const copy=response.clone();caches.open(CACHE).then(cache=>cache.put(event.request,copy))}return response}).catch(()=>matchReleaseCache(event.request).then(hit=>hit||matchReleaseCache("./index.html")).then(hit=>hit||matchReleaseCache("./offline.html"))));return;
+   event.respondWith(networkFirst(event.request).catch(()=>matchReleaseCache("./index.html").then(hit=>hit||matchReleaseCache("./offline.html"))));
+   return;
  }
- event.respondWith(matchReleaseCache(event.request).then(hit=>{const network=fetch(event.request).then(response=>{if(response&&response.ok){const copy=response.clone();caches.open(CACHE).then(cache=>cache.put(event.request,copy))}return response}).catch(()=>null);if(hit){event.waitUntil(network);return hit}return network.then(response=>response||matchReleaseCache("./offline.html"))}));
+ if(mutableRuntimeRequest(event.request,url)){
+   event.respondWith(networkFirst(event.request));
+   return;
+ }
+ event.respondWith(matchReleaseCache(event.request).then(hit=>{
+   if(hit)return hit;
+   return networkFirst(event.request).catch(()=>matchReleaseCache("./offline.html"));
+ }));
 });
 
 function matchReleaseCache(request){return caches.open(CACHE).then(cache=>cache.match(request));}
