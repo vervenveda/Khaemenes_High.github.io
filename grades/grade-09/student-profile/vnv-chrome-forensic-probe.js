@@ -5,9 +5,9 @@
  */
 (()=>{"use strict";
 const params=new URLSearchParams(location.search);
-if(!params.has("chrome_audit")||window.KhaemenesGrade09ChromeAudit)return;
+if(params.get("chrome_audit")!=="1"||window.KhaemenesGrade09ChromeAudit)return;
 const targets=[["333 ticker","vnv333NetworkTicker"],["Auto ticker","vnvTickerAutoPopulate"],["VNV header","vnvHeaderAutoPopulate"],["Branched menu","vnvEnrichedMenuOverlay"]];
-const traces=[];let shown=false,queued=false;
+const traces=[];let shown=false,queued=false,dismissed=false;
 const when=()=>Math.round(performance.now())+"ms";
 const summary=(name,id)=>{
  const el=document.getElementById(id);
@@ -25,13 +25,14 @@ const summary=(name,id)=>{
 };
 let panel,output;
 function display(){
+ if(dismissed)return;
  if(!panel){
   panel=document.createElement("aside");panel.id="grade09ChromeAuditPanel";
   panel.setAttribute("aria-label","Grade 09 VNV chrome forensic probe");
-  panel.style.cssText="position:fixed!important;z-index:2147483647!important;left:8px;bottom:8px;width:min(680px,calc(100vw - 16px));max-height:48vh;overflow:auto;padding:13px 15px;border:2px solid #b48b45;border-radius:7px;background:#243038!important;color:#fff8e9!important;font:400 14px/1.45 ui-monospace,monospace!important;box-shadow:0 12px 40px #0009";
+  panel.style.cssText="position:fixed!important;z-index:2147483647!important;left:8px;bottom:8px;width:min(680px,calc(100vw - 16px));max-height:48vh;overflow:auto;padding:13px 15px;border:2px solid #b48b45;border-radius:7px;background:#243038!important;color:#fff8e9!important;font:400 16px/1.45 ui-monospace,monospace!important;box-shadow:0 12px 40px #0009";
   const title=document.createElement("strong");title.textContent="Grade 09 · Header/Ticker Forensic Audit";title.style.cssText="display:block;color:#fff8e9!important;font-size:16px!important;margin-bottom:8px";
   const close=document.createElement("button");close.type="button";close.textContent="Close diagnostics";close.style.cssText="background:#fff8e9!important;color:#243038!important;border:0;border-radius:7px;padding:6px 10px;margin-bottom:8px";
-  close.addEventListener("click",()=>{panel.remove();panel=null;output=null;shown=false});
+  close.addEventListener("click",()=>{dismissed=true;panel.remove();panel=null;output=null;shown=false});
   output=document.createElement("pre");output.style.cssText="font:inherit!important;white-space:pre-wrap;overflow-wrap:anywhere;margin:0;color:#fff8e9!important;background:transparent!important";
   panel.append(title,close,output);document.body.append(panel);shown=true;
  }
