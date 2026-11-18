@@ -18,6 +18,7 @@
     if (units.has(1) && !loaded().some(q => Number(q?.unit) === 1 && String(q?.id || "").includes("-d"))) files.push("./algebra2-depth-bank-v1.js");
     if ((units.has(2) || units.has(3)) && !loaded().some(q => [2,3].includes(Number(q?.unit)) && String(q?.id || "").includes("-d"))) files.push("./algebra2-depth-bank-units02-03-v1.js");
     if ((units.has(4) || units.has(5)) && !loaded().some(q => [4,5].includes(Number(q?.unit)) && String(q?.id || "").includes("-d"))) files.push("./algebra2-depth-bank-units04-05-v1.js");
+    if ((units.has(6) || units.has(7)) && !loaded().some(q => [6,7].includes(Number(q?.unit)) && String(q?.id || "").includes("-d"))) files.push("./algebra2-depth-bank-units06-07-v1.js");
     if (!files.length || !engine?.src) { done(); return; }
     const next = () => {
       const file = files.shift();
