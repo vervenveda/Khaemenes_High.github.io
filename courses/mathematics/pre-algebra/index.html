@@ -4343,6 +4343,7 @@ const PROFILE_COURSE_ID = "pre-algebra";
 let state=loadState(),view="dashboard",activeWeek=1;
 let activeQuiz=[];
 let activeExams={};
+let activeExamName="midterm";
 const $=id=>document.getElementById(id);
 const esc=v=>String(v??"").replace(/[&<>"']/g,m=>({"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","'":"&#39;"}[m]));
 function validState(candidate){
@@ -4449,7 +4450,11 @@ function readPinnedCourses(){return window.KhaemenesHighCoursePins?.readPins()||
 function courseIsPinned(){return readPinnedCourses().includes(PROFILE_COURSE_ID)}
 function updatePinButton(){const button=$("pinCourseButton");if(!button)return;const ready=!!window.KhaemenesHighCoursePins;const pinned=ready&&courseIsPinned();button.disabled=!ready;button.setAttribute("aria-pressed",String(pinned));button.textContent=!ready?"Pin unavailable":pinned?"★ Pinned to Profile":"☆ Pin to Profile";button.title=!ready?"Course pin storage is temporarily unavailable":pinned?"Remove Pre-Algebra from the student profile":"Pin Pre-Algebra to the student profile"}
 function toggleCoursePin(){const store=window.KhaemenesHighCoursePins;if(!store)return alert("Course pin storage is unavailable; reload the page.");let pinned=readPinnedCourses();const wasPinned=pinned.includes(PROFILE_COURSE_ID);pinned=wasPinned?pinned.filter(id=>id!==PROFILE_COURSE_ID):[PROFILE_COURSE_ID,...pinned.filter(id=>id!==PROFILE_COURSE_ID)];if(!store.writePins(pinned))return alert("This browser could not save the profile pin.");updatePinButton();const status=$("pinCourseStatus");if(status)status.textContent=wasPinned?"Pre-Algebra was removed from the student profile.":"Pre-Algebra was pinned to the student profile."}
-function render(){renderStudentSelect();renderWeekList();setActiveButtons();updatePinButton();({dashboard,overview,week,scope,tools,games,exams,capstone,reports,standards}[view]||dashboard)()}function setActiveButtons(){document.querySelectorAll("[data-view]").forEach(b=>b.classList.toggle("active",b.dataset.view===view))}function renderStudentSelect(){$("studentSelect").innerHTML=state.students.map(s=>`<option value="${s.id}" ${s.id===state.activeId?"selected":""}>${esc(s.name)}</option>`).join("")}function renderWeekList(){let s=student();$("weekList").innerHTML=APP.weeks.map(w=>{let qb=s?quizBest(s,w.week):0,tag=qb>=APP.passingTarget?"good":qb?"bad":"";return`<button class="weekBtn ${w.week===activeWeek?"active":""}" data-week="${w.week}"><span><strong>${w.week}</strong> ${esc(w.title)}</span><span class="pill ${tag}">${qb||"—"}</span></button>`}).join("");document.querySelectorAll("[data-week]").forEach(b=>b.onclick=()=>{activeWeek=+b.dataset.week;view="week";render()})}
+function render(){
+  renderStudentSelect();renderWeekList();setActiveButtons();updatePinButton();
+  ({dashboard,overview,week,scope,tools,games,exams,capstone,reports,standards}[view]||dashboard)();
+  window.dispatchEvent(new CustomEvent("khaemenes-prealgebra-rendered",{detail:{view,activeWeek}}));
+}function setActiveButtons(){document.querySelectorAll("[data-view]").forEach(b=>b.classList.toggle("active",b.dataset.view===view))}function renderStudentSelect(){$("studentSelect").innerHTML=state.students.map(s=>`<option value="${s.id}" ${s.id===state.activeId?"selected":""}>${esc(s.name)}</option>`).join("")}function renderWeekList(){let s=student();$("weekList").innerHTML=APP.weeks.map(w=>{let qb=s?quizBest(s,w.week):0,tag=qb>=APP.passingTarget?"good":qb?"bad":"";return`<button class="weekBtn ${w.week===activeWeek?"active":""}" data-week="${w.week}"><span><strong>${w.week}</strong> ${esc(w.title)}</span><span class="pill ${tag}">${qb||"—"}</span></button>`}).join("");document.querySelectorAll("[data-week]").forEach(b=>b.onclick=()=>{activeWeek=+b.dataset.week;view="week";render()})}
 
 function dashboard(){
   let s=student(),st=stats(s),needs=st.needs.length?`Recommended review: Weeks ${st.needs.slice(0,12).join(", ")}${st.needs.length>12?"…":""}`:"No review flags yet.";
@@ -4554,12 +4559,70 @@ function makeExam(domains){
   domains.forEach(d=>shuffle(APP.quizBank[d]).slice(0,4).forEach(q=>{const p=prepareQuestion(q);arr.push({skill:d,title:p.prompt,choices:p.choices,answer:p.answer})}));
   return arr;
 }
+function examRecord(name){
+  let s=student();ensure(s);
+  s.progress.exams[name]??={best:0,attempts:[]};
+  s.progress.exams[name].attempts??=[];
+  return s.progress.exams[name];
+}
+function ensureExamDraft(name){
+  const rec=examRecord(name),domains=name==="midterm"?APP.midtermDomains:APP.finalDomains,expected=domains.length*4;
+  if(rec.draft&&Array.isArray(rec.draft.questions)&&rec.draft.questions.length===expected){
+    activeExams[name]=rec.draft.questions;
+    rec.draft.answers??={};
+    return rec.draft;
+  }
+  const questions=makeExam(domains);
+  rec.draft={schema:"khae-prealgebra-cumulative-draft-v1",createdAt:new Date().toISOString(),questions,answers:{}};
+  activeExams[name]=questions;
+  if(!save())console.warn("Pre-Algebra cumulative draft could not be verified as persistent.");
+  return rec.draft;
+}
+function selectExam(name){
+  if(!["midterm","final"].includes(name))return;
+  activeExamName=name;
+  exams();
+  document.getElementById("assessmentWorkspace")?.focus({preventScroll:true});
+}
+function recordExamAnswer(name,index,value){
+  const draft=ensureExamDraft(name);
+  draft.answers[String(index)]=Number(value);
+  const ok=save(),status=document.getElementById("assessmentDraftStatus");
+  if(status)status.textContent=ok?"Answer saved.":"Answer is retained on this page, but browser storage could not be verified.";
+}
+function clearExamDraft(name){
+  if(!confirm("Clear the current "+name+" draft? Previous submitted attempts will be preserved."))return;
+  const rec=examRecord(name);
+  rec.draft=null;activeExams[name]=[];
+  if(!save())return alert("The draft reset could not be verified. Reloading may restore the previous draft.");
+  exams();
+}
 function exams(){
   let s=student();ensure(s);
-  activeExams.midterm=makeExam(APP.midtermDomains);activeExams.final=makeExam(APP.finalDomains);
-  $("content").innerHTML=`<div class="grid"><div class="card col6"><h3>Midterm</h3><p>Best: <span class="score">${Math.round(s.progress.exams.midterm?.best||0)||"—"}</span></p><p class="section-note">Question and answer order are regenerated when this page opens.</p>${examForm("midterm",activeExams.midterm)}</div><div class="card col6"><h3>Final</h3><p>Best: <span class="score">${Math.round(s.progress.exams.final?.best||0)||"—"}</span></p><p class="section-note">The final samples every course domain and randomizes answer positions.</p>${examForm("final",activeExams.final)}</div></div>`;
+  const name=activeExamName,mid=examRecord("midterm"),fin=examRecord("final"),draft=ensureExamDraft(name),qs=draft.questions;
+  const label=name==="midterm"?"Midterm":"Final Examination";
+  const best=Math.round(examRecord(name).best||0)||"—";
+  $("content").innerHTML=`<div class="grid"><div class="card col12" id="assessmentWorkspace" tabindex="-1">
+    <p class="eyebrow">Cumulative Assessment Center</p>
+    <h3>${label}</h3>
+    <p class="section-note">Work on one assessment at a time. Your current randomized form and selections are preserved as a local draft until you submit or deliberately clear it.</p>
+    <div class="tabs" role="tablist" aria-label="Choose cumulative assessment">
+      <button class="tab ${name==="midterm"?"active":""}" type="button" onclick="selectExam('midterm')" aria-selected="${name==="midterm"}">Midterm · 28 Questions · Best ${Math.round(mid.best||0)||"—"}%</button>
+      <button class="tab ${name==="final"?"active":""}" type="button" onclick="selectExam('final')" aria-selected="${name==="final"}">Final · 52 Questions · Best ${Math.round(fin.best||0)||"—"}%</button>
+    </div>
+    <div class="notice"><strong>Current assessment:</strong> ${label} · ${qs.length} questions · mastery target ${APP.passingTarget}%. Question order remains stable for this draft.</div>
+    <p id="assessmentDraftStatus" class="small" role="status" aria-live="polite">Draft started ${new Date(draft.createdAt).toLocaleString()} · Best recorded score: ${best}%.</p>
+    ${examForm(name,qs,draft.answers||{})}
+  </div></div>`;
 }
-function examForm(name,qs){return`<form>${qs.map((q,i)=>`<details class="q"><summary><strong>${i+1}. ${esc(q.skill)}: ${esc(q.title)}</strong></summary>${q.choices.map((c,j)=>`<label class="choice"><input type="radio" name="${name}_${i}" value="${j}"> ${esc(c)}</label>`).join("")}</details>`).join("")}<div class="actions"><button type="button" onclick="submitExam('${name}')">Submit</button><button class="secondary" type="reset">Clear</button></div></form>`}
+function examForm(name,qs,answers={}){
+  const blocks=[];
+  for(let start=0;start<qs.length;start+=10){
+    const slice=qs.slice(start,start+10),end=start+slice.length;
+    blocks.push(`<section class="panel"><h4>Questions ${start+1}–${end} of ${qs.length}</h4><div class="question-list">${slice.map((q,offset)=>{const i=start+offset;return`<fieldset class="q"><legend><strong>${i+1}. ${esc(q.skill)}: ${esc(q.title)}</strong></legend>${q.choices.map((c,j)=>`<label class="choice"><input type="radio" name="${name}_${i}" value="${j}" ${Number(answers[String(i)])===j?"checked":""} onchange="recordExamAnswer('${name}',${i},this.value)"> ${esc(c)}</label>`).join("")}</fieldset>`}).join("")}</div></section>`);
+  }
+  return`<form onsubmit="return false">${blocks.join("")}<div class="actions"><button type="button" onclick="submitExam('${name}')">Submit ${name==="midterm"?"Midterm":"Final"}</button><button class="secondary" type="button" onclick="clearExamDraft('${name}')">Clear Draft</button><button class="ghost" type="button" onclick="window.print()">Print Current Form</button></div></form>`;
+}
 
 function capstone(){
   let s=student();ensure(s);const rubric=s.progress.capstone.rubric;
@@ -4618,10 +4681,19 @@ function submitQuiz(){
   save();alert(`Mastery check submitted: ${score}%. Official v2 best: ${quizBest(s,w.week)}%.`);render();
 }
 function submitExam(name){
-  let s=student(),qs=activeExams[name]||[],correct=0,answers=[];
+  let s=student(),draft=ensureExamDraft(name),qs=draft.questions||[],correct=0,answers=[];
   if(!qs.length)return alert("Reopen the assessment page to generate this assessment.");
-  for(let i=0;i<qs.length;i++){let chosen=document.querySelector(`input[name="${name}_${i}"]:checked`);if(!chosen)return alert("Please answer every question.");let val=+chosen.value;answers.push(val);if(val===qs[i].answer)correct++}
-  let score=Math.round(correct/qs.length*100);ensure(s);s.progress.exams[name]??={best:0,attempts:[]};s.progress.exams[name].attempts.push({date:new Date().toISOString(),score,answers,version:qs.map(q=>q.title)});s.progress.exams[name].best=Math.max(s.progress.exams[name].best||0,score);save();alert(`${name} submitted: ${score}%.`);render();
+  for(let i=0;i<qs.length;i++){
+    const value=draft.answers?.[String(i)];
+    if(value===undefined||value===null)return alert("Please answer every question before submitting. Question "+(i+1)+" is unanswered.");
+    const val=Number(value);answers.push(val);if(val===qs[i].answer)correct++;
+  }
+  const score=Math.round(correct/qs.length*100);ensure(s);
+  const rec=examRecord(name),attempt={date:new Date().toISOString(),score,answers,version:qs.map(q=>q.title),question_count:qs.length,mastery_met:score>=APP.passingTarget};
+  rec.attempts.push(attempt);rec.best=Math.max(rec.best||0,score);rec.draft=null;activeExams[name]=[];
+  if(!save()){rec.attempts.pop();rec.draft=draft;activeExams[name]=qs;return alert("Submission paused because browser storage could not be verified. Your draft remains available on this page.");}
+  alert(`${name==="midterm"?"Midterm":"Final"} submitted: ${score}%. ${score>=APP.passingTarget?"Mastery target met.":"Review and retake when ready."}`);
+  exams();
 }
 function repeatWeek(){let r=weekRec(student(),activeWeek);r.repeats=(r.repeats||0)+1;r.lastRepeat=new Date().toISOString();save();alert("Review cycle logged. Reopen the complete unit, correct work, and retake when ready.");render()}
 function addCapstone(){let s=student();ensure(s);let note=$("capNote").value.trim();if(!note)return alert("Add a capstone note.");s.progress.capstone.logs.push({date:new Date().toISOString(),stage:$("capStage").value,note});save();render()}
