@@ -114,6 +114,20 @@
   ensureLearningContinuationContract();
 
 
+
+  /* High School mathematics readability floor · canonical v1 */
+  function ensureMathReadabilityFloor(){
+    if(typeof document==="undefined"||typeof location==="undefined")return;
+    const path=String(location.pathname||"").toLowerCase();
+    if(!/\/courses\/mathematics\/(pre-algebra|algebra-1|geometry|algebra-2)(?:\/|$)/.test(path))return;
+    if(document.getElementById("khaeMathReadabilityFloorV1"))return;
+    const style=document.createElement("style");
+    style.id="khaeMathReadabilityFloorV1";
+    style.textContent='html:root:root:root body{font-size:16px!important;line-height:1.65!important}html:root:root:root body :is(p,li,a,button,input,select,textarea,label,summary,small,.muted,.meta,.eyebrow,.kicker,.dialog-eyebrow,.dialog-kicker,.worksheet-kicker){font-size:16px!important}html:root:root:root body :is(.eyebrow,.kicker,.dialog-eyebrow,.dialog-kicker,.worksheet-kicker){line-height:1.35!important;letter-spacing:.02em!important}html:root:root:root body :is(button,.btn,.button,a[role="button"],summary){min-height:44px}html:root:root:root body :is(.eyebrow,.kicker,.dialog-eyebrow,.dialog-kicker,.worksheet-kicker){font-weight:400!important}@media print{html:root:root:root body,html:root:root:root body :is(p,li,a,button,input,select,textarea,label,summary,small,.muted,.meta,.eyebrow,.kicker,.dialog-eyebrow,.dialog-kicker,.worksheet-kicker){font-size:16px!important}}';
+    (document.head||document.documentElement).appendChild(style);
+  }
+  ensureMathReadabilityFloor();
+
   /* High School mathematics hardening bridge · canonical v1 */
   function ensureMathHardeningLayer(){
     if(typeof document==="undefined"||typeof location==="undefined")return;
