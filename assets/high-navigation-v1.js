@@ -234,46 +234,30 @@
 })();
 
 /* Khaemenes High · canonical lower-right ecosystem toolbar */
+/* Fallback only. The minimal global chrome is the primary toolbar owner.
+   No MutationObserver, no element deletion, no continuous cleanup. */
 (()=>{try{
   const OFFICIAL="https://vervenveda.com/assets/vnv-ecosystem-toolbar.js";
-  const LEGACY=["vnvBetaProgramLink","vnvBetaProgramFallback","khaemenesLearnerUtilityToolbar","khaeLandingUtilityDock","khaemenesHomeUtilityDock"];
-  const cleanup=()=>{
-    if(!document.getElementById("vnvEcosystemUtilityDock"))return;
-    for(const id of LEGACY)document.getElementById(id)?.remove();
-  };
-  const mount=()=>{
-    try{window.VNVEcosystemToolbar?.mount?.()}catch{}
-    cleanup();
-    if(typeof MutationObserver==="function"&&document.documentElement?.dataset?.highUtilityConflictGuard!=="1"){
-      document.documentElement.dataset.highUtilityConflictGuard="1";
-      new MutationObserver(cleanup).observe(document.documentElement,{childList:true,subtree:true});
-    }
-  };
   const start=()=>{
-    const host=String(location.hostname||"").toLowerCase(),path=String(location.pathname||"").toLowerCase();
-    if(!(host.includes("khaemenes-high")||path.includes("/khaemenes_high.github.io/")))return;
-    if(window.VNVEcosystemToolbar){mount();return;}
-    // Match the canonical loader with or without its version query.
-    // A deferred shared loader may exist in the DOM before its API is ready.
+    if(window.__KHAEMENES_HIGH_GLOBAL_CHROME_V2__)return;
+    if(document.getElementById("vnvEcosystemUtilityDock"))return;
+    const mount=()=>{try{window.VNVEcosystemToolbar?.mount?.()}catch{}};
+    if(window.VNVEcosystemToolbar){mount();return}
     let script=[...document.querySelectorAll("script[src]")].find(node=>{
       try{
         const url=new URL(node.src,location.href);
         return url.origin==="https://vervenveda.com" &&
           url.pathname==="/assets/vnv-ecosystem-toolbar.js";
-      }catch{return false;}
+      }catch{return false}
     });
     if(!script){
       script=document.createElement("script");
       script.src=OFFICIAL;
       script.defer=true;
-      script.dataset.vnvEcosystemToolbar="1";
-      script.addEventListener("load",mount,{once:true});
-      (document.head||document.documentElement).append(script);
-    }else{
-      script.addEventListener("load",mount,{once:true});
+      script.dataset.vnvEcosystemToolbarFallback="1";
+      (document.head||document.documentElement).appendChild(script);
     }
-    // Idempotent shared mount also handles the already-loaded case.
-    if(window.VNVEcosystemToolbar)mount();
+    script.addEventListener("load",mount,{once:true});
   };
   if(document.readyState==="loading")document.addEventListener("DOMContentLoaded",start,{once:true});
   else start();
