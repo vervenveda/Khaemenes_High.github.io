@@ -87,3 +87,65 @@ details{border-top:1px solid #d8cdb9;padding:.55rem 0}summary{cursor:pointer;fon
  body{background:#fff;color:#000}.sidebar,.tabs,.noPrint,.heroActions{display:none!important}.app{display:block}.main{padding:0}.hero{box-shadow:none;border:1px solid #777;color:#000;background:#fff}.card{box-shadow:none;break-inside:avoid;background:#fff}.footer{color:#333}
  details{display:block}details>summary{display:none}details>*{display:block!important}
 }
+
+
+/* Khaemenes High · Grade 10 centered-course parity recovery · 2026-11-18
+   Presentation only. Existing navigation, learner controls, and course logic preserved. */
+@media(min-width:981px){
+  .app{
+    display:block;
+    width:100%;
+    min-height:100vh;
+  }
+  .sidebar{
+    position:relative;
+    top:auto;
+    height:auto;
+    width:min(1180px,calc(100% - 48px));
+    margin:0 auto 18px;
+    padding:18px;
+    overflow:visible;
+    border-right:0;
+    border-bottom:1px solid rgba(215,182,107,.42);
+    border-radius:0 0 var(--radius) var(--radius);
+    box-shadow:0 12px 28px rgba(0,0,0,.16);
+    display:grid;
+    grid-template-columns:repeat(2,minmax(0,1fr));
+    gap:14px;
+  }
+  .sidebar>.brand{
+    grid-column:1/-1;
+    padding:7px 7px 4px;
+  }
+  .sidebar>.panel{
+    margin:0;
+    min-width:0;
+  }
+  .sidebar nav.panel{
+    display:grid;
+    grid-template-columns:repeat(3,minmax(0,1fr));
+    gap:7px;
+    align-content:start;
+  }
+  .sidebar nav.panel h3{grid-column:1/-1;text-align:center}
+  .sidebar nav.panel .navBtn{
+    margin:0;
+    justify-content:center;
+    text-align:center;
+  }
+  .sidebar .weekList{
+    grid-template-columns:repeat(2,minmax(0,1fr));
+  }
+  .main{
+    width:min(100%,1280px);
+    margin:0 auto;
+    padding:22px 24px 44px;
+  }
+}
+@media(max-width:980px){
+  .sidebar{
+    width:100%;
+    max-width:none;
+    margin:0;
+  }
+}
