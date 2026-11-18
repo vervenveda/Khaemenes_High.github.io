@@ -11,6 +11,7 @@
 <meta content="#07111d" name="theme-color"/>
 <meta content="dark light" name="color-scheme"/>
 <link rel="manifest" href="manifest.webmanifest"/>
+<link rel="stylesheet" href="../assets/math-assessment-workspace-v1.css"/>
 <meta content="width=device-width,initial-scale=1" name="viewport"/>
 <title>Pre-Algebra</title>
 <style>
@@ -4450,7 +4451,15 @@ function readPinnedCourses(){return window.KhaemenesHighCoursePins?.readPins()||
 function courseIsPinned(){return readPinnedCourses().includes(PROFILE_COURSE_ID)}
 function updatePinButton(){const button=$("pinCourseButton");if(!button)return;const ready=!!window.KhaemenesHighCoursePins;const pinned=ready&&courseIsPinned();button.disabled=!ready;button.setAttribute("aria-pressed",String(pinned));button.textContent=!ready?"Pin unavailable":pinned?"★ Pinned to Profile":"☆ Pin to Profile";button.title=!ready?"Course pin storage is temporarily unavailable":pinned?"Remove Pre-Algebra from the student profile":"Pin Pre-Algebra to the student profile"}
 function toggleCoursePin(){const store=window.KhaemenesHighCoursePins;if(!store)return alert("Course pin storage is unavailable; reload the page.");let pinned=readPinnedCourses();const wasPinned=pinned.includes(PROFILE_COURSE_ID);pinned=wasPinned?pinned.filter(id=>id!==PROFILE_COURSE_ID):[PROFILE_COURSE_ID,...pinned.filter(id=>id!==PROFILE_COURSE_ID)];if(!store.writePins(pinned))return alert("This browser could not save the profile pin.");updatePinButton();const status=$("pinCourseStatus");if(status)status.textContent=wasPinned?"Pre-Algebra was removed from the student profile.":"Pre-Algebra was pinned to the student profile."}
+function syncAssessmentSurface(){
+  const enabled=view==="exams";
+  document.body.classList.toggle("math-assessment-surface",enabled);
+  if(enabled)document.body.dataset.mathAssessmentMode=activeExamName;
+  else delete document.body.dataset.mathAssessmentMode;
+  window.dispatchEvent(new CustomEvent("khaemenes-math-assessment-mode",{detail:{enabled,mode:enabled?activeExamName:null}}));
+}
 function render(){
+  syncAssessmentSurface();
   renderStudentSelect();renderWeekList();setActiveButtons();updatePinButton();
   ({dashboard,overview,week,scope,tools,games,exams,capstone,reports,standards}[view]||dashboard)();
   window.dispatchEvent(new CustomEvent("khaemenes-prealgebra-rendered",{detail:{view,activeWeek}}));
@@ -4570,10 +4579,11 @@ function ensureExamDraft(name){
   if(rec.draft&&Array.isArray(rec.draft.questions)&&rec.draft.questions.length===expected){
     activeExams[name]=rec.draft.questions;
     rec.draft.answers??={};
+    rec.draft.work??={};
     return rec.draft;
   }
   const questions=makeExam(domains);
-  rec.draft={schema:"khae-prealgebra-cumulative-draft-v1",createdAt:new Date().toISOString(),questions,answers:{}};
+  rec.draft={schema:"khae-prealgebra-cumulative-draft-v1",createdAt:new Date().toISOString(),questions,answers:{},work:{}};
   activeExams[name]=questions;
   if(!save())console.warn("Pre-Algebra cumulative draft could not be verified as persistent.");
   return rec.draft;
@@ -4581,6 +4591,7 @@ function ensureExamDraft(name){
 function selectExam(name){
   if(!["midterm","final"].includes(name))return;
   activeExamName=name;
+  syncAssessmentSurface();
   exams();
   document.getElementById("assessmentWorkspace")?.focus({preventScroll:true});
 }
@@ -4589,6 +4600,13 @@ function recordExamAnswer(name,index,value){
   draft.answers[String(index)]=Number(value);
   const ok=save(),status=document.getElementById("assessmentDraftStatus");
   if(status)status.textContent=ok?"Answer saved.":"Answer is retained on this page, but browser storage could not be verified.";
+}
+function recordExamWork(name,index,value,persistNow=false){
+  const draft=ensureExamDraft(name);
+  draft.work[String(index)]=String(value??"");
+  if(!persistNow)return;
+  const ok=save(),status=document.getElementById("assessmentDraftStatus");
+  if(status)status.textContent=ok?"Problem-solving work saved.":"Problem-solving work is retained on this page, but browser storage could not be verified.";
 }
 function clearExamDraft(name){
   if(!confirm("Clear the current "+name+" draft? Previous submitted attempts will be preserved."))return;
@@ -4612,14 +4630,14 @@ function exams(){
     </div>
     <div class="notice"><strong>Current assessment:</strong> ${label} · ${qs.length} questions · mastery target ${APP.passingTarget}%. Question order remains stable for this draft.</div>
     <p id="assessmentDraftStatus" class="small" role="status" aria-live="polite">Draft started ${new Date(draft.createdAt).toLocaleString()} · Best recorded score: ${best}%.</p>
-    ${examForm(name,qs,draft.answers||{})}
+    ${examForm(name,qs,draft.answers||{},draft.work||{})}
   </div></div>`;
 }
-function examForm(name,qs,answers={}){
+function examForm(name,qs,answers={},work={}){
   const blocks=[];
   for(let start=0;start<qs.length;start+=10){
     const slice=qs.slice(start,start+10),end=start+slice.length;
-    blocks.push(`<section class="panel"><h4>Questions ${start+1}–${end} of ${qs.length}</h4><div class="question-list">${slice.map((q,offset)=>{const i=start+offset;return`<fieldset class="q"><legend><strong>${i+1}. ${esc(q.skill)}: ${esc(q.title)}</strong></legend>${q.choices.map((c,j)=>`<label class="choice"><input type="radio" name="${name}_${i}" value="${j}" ${Number(answers[String(i)])===j?"checked":""} onchange="recordExamAnswer('${name}',${i},this.value)"> ${esc(c)}</label>`).join("")}</fieldset>`}).join("")}</div></section>`);
+    blocks.push(`<section class="panel"><h4>Questions ${start+1}–${end} of ${qs.length}</h4><div class="question-list">${slice.map((q,offset)=>{const i=start+offset;return`<fieldset class="q"><legend><strong>${i+1}. ${esc(q.skill)}: ${esc(q.title)}</strong></legend>${q.choices.map((c,j)=>`<label class="choice"><input type="radio" name="${name}_${i}" value="${j}" ${Number(answers[String(i)])===j?"checked":""} onchange="recordExamAnswer('${name}',${i},this.value)"> ${esc(c)}</label>`).join("")}<label class="math-work-label" for="${name}_work_${i}">Show your work · ungraded workspace</label><textarea class="math-workspace" id="${name}_work_${i}" oninput="recordExamWork('${name}',${i},this.value,false)" onchange="recordExamWork('${name}',${i},this.value,true)" placeholder="Use this space for calculations, graphs, checks, or reasoning…">${esc(work[String(i)]||"")}</textarea></fieldset>`}).join("")}</div></section>`);
   }
   return`<form onsubmit="return false">${blocks.join("")}<div class="actions"><button type="button" onclick="submitExam('${name}')">Submit ${name==="midterm"?"Midterm":"Final"}</button><button class="secondary" type="button" onclick="clearExamDraft('${name}')">Clear Draft</button><button class="ghost" type="button" onclick="window.print()">Print Current Form</button></div></form>`;
 }
@@ -4691,7 +4709,7 @@ function submitExam(name){
     const val=Number(value);answers.push(val);if(val===qs[i].answer)correct++;
   }
   const score=Math.round(correct/qs.length*100);ensure(s);
-  const rec=examRecord(name),attempt={date:new Date().toISOString(),score,answers,version:qs.map(q=>q.title),question_count:qs.length,mastery_met:score>=APP.passingTarget},priorBest=Number(rec.best)||0;
+  const rec=examRecord(name),attempt={date:new Date().toISOString(),score,answers,work_snapshot:{...(draft.work||{})},version:qs.map(q=>q.title),question_count:qs.length,mastery_met:score>=APP.passingTarget},priorBest=Number(rec.best)||0;
   rec.attempts.push(attempt);rec.best=Math.max(priorBest,score);rec.draft=null;activeExams[name]=[];
   if(!save()){rec.attempts.pop();rec.best=priorBest;rec.draft=draft;activeExams[name]=qs;return alert("Submission paused because browser storage could not be verified. Your draft remains available on this page.");}
   alert(`${name==="midterm"?"Midterm":"Final"} submitted: ${score}%. ${score>=APP.passingTarget?"Mastery target met.":"Review and retake when ready."}`);
