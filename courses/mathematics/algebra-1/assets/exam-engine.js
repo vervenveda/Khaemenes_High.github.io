@@ -31,7 +31,54 @@ function boot(){
  function installNotice(){const hero=document.querySelector("main .hero .wrap");if(hero&&!document.getElementById("algebra1AssessmentTrust")){const p=document.createElement("p");p.id="algebra1AssessmentTrust";p.className="notice";p.innerHTML=D?"<strong>Mixed-evidence public assessment:</strong> selected-response items are auto-scored. Required written reasoning is reviewed with the included rubric before full mastery can be recorded. Browser-local results remain editable and unverified.":"<strong>Public self-check:</strong> this browser-delivered score is editable local learning evidence and is not a confidential or digitally signed academic record.";hero.appendChild(p)}if(D&&$("#submitButton"))$("#submitButton").textContent="Submit Auto-Scored Work & Reasoning"}
  function group(){const m=new Map();C.questions.forEach((q,i)=>{const k=q.unit?`Unit ${String(q.unit).padStart(2,"0")}`:(q.category||"Assessment");if(!m.has(k))m.set(k,[]);m.get(k).push([q,i])});return m}
  function renderConstructed(host){if(!D?.constructed?.length)return;const sec=document.createElement("section");sec.className="constructed-block";sec.innerHTML=`<div class="constructed-intro"><p class="eyebrow">Required reasoning evidence</p><h2>${esc(D.title)}</h2><p>Complete all ${D.constructed.length} written tasks. Show structure, calculations, representations, verification, units, interpretation, assumptions, or limitations where the prompt calls for them. These responses are reviewed by a parent, teacher, or program evaluator after the auto-scored portion.</p></div>`;const list=document.createElement("div");list.className="constructed-list";D.constructed.forEach((task,i)=>{const value=String(draft.responses[i]||"");const art=document.createElement("article");art.className="constructed-item";art.innerHTML=`<span class="constructed-meta">Response ${i+1} · ${esc(task.domain)}</span><strong>${esc(task.prompt)}</strong><textarea id="cr${i}" aria-label="Constructed response ${i+1}" ${draft.submitted?"disabled":""}>${esc(value)}</textarea><p class="constructed-count" id="crCount${i}">${value.trim().length} characters · minimum ${D.response_min_chars||50}</p>`;const ta=art.querySelector("textarea");ta?.addEventListener("input",()=>{draft.responses[i]=ta.value;art.querySelector(`#crCount${i}`).textContent=`${ta.value.trim().length} characters · minimum ${D.response_min_chars||50}`;saveDraft()});list.appendChild(art)});sec.appendChild(list);host.appendChild(sec)}
- function render(){const host=$("#questionHost");host.innerHTML="";for(const [label,items] of group()){const section=document.createElement("section");section.innerHTML=`<h2>${esc(label)}</h2>`;const list=document.createElement("div");list.className="question-list";items.forEach(([q,i])=>{const art=document.createElement("article");art.className="question";const selected=draft.answers[i];const feedback=draft.submitted?`<div class="feedback ${Number(selected)===q.answer?"good":"bad"}">${Number(selected)===q.answer?"Correct.":`Review. Correct answer: ${esc(q.options[q.answer])}.`} ${esc(q.explanation)}</div>`:"";art.innerHTML=`<fieldset><legend>${i+1}. ${esc(q.prompt)}</legend><div class="options">${optionOrder(q,i).map(j=>`<label class="option"><input type="radio" name="q${i}" value="${j}" ${Number(selected)===j?"checked":""} ${draft.submitted?"disabled":""}><span>${esc(q.options[j])}</span></label>`).join("")}</div>${feedback}</fieldset>`;list.appendChild(art)});section.appendChild(list);host.appendChild(section)}renderConstructed(host);host.onchange=e=>{const m=e.target.name?.match(/^q(\d+)$/);if(!m)return;draft.answers[m[1]]=Number(e.target.value);saveDraft()};updateProgress()}
+ const PAGED_DIAGNOSTIC=C.id==="KH-MATH-A1-DIAGNOSTIC";
+ const PAGE_SIZE=12;
+ let questionPage=0,showAllForPrint=false;
+ function pageCount(){return Math.max(1,Math.ceil(C.questions.length/PAGE_SIZE))}
+ function questionNavigation(){
+  const nav=document.createElement("nav");nav.className="diagnostic-question-navigation";nav.setAttribute("aria-label","Diagnostic question navigation");
+  const first=questionPage*PAGE_SIZE+1,last=Math.min(C.questions.length,(questionPage+1)*PAGE_SIZE);
+  const label=document.createElement("p");label.className="diagnostic-page-label";label.textContent="Questions "+first+"–"+last+" of "+C.questions.length+" · Section "+(questionPage+1)+" of "+pageCount();
+  nav.appendChild(label);
+  const actions=document.createElement("div");actions.className="diagnostic-page-actions";
+  for(let p=0;p<pageCount();p++){
+    const b=document.createElement("button");b.type="button";b.className="btn";b.textContent=String(p*PAGE_SIZE+1)+"–"+String(Math.min(C.questions.length,(p+1)*PAGE_SIZE));
+    b.setAttribute("aria-label","Show questions "+b.textContent);
+    if(p===questionPage){b.setAttribute("aria-current","page");b.disabled=true}
+    b.addEventListener("click",()=>goToPage(p));actions.appendChild(b);
+  }
+  const prev=document.createElement("button");prev.type="button";prev.className="btn";prev.textContent="← Previous";prev.disabled=questionPage===0;prev.addEventListener("click",()=>goToPage(questionPage-1));
+  const next=document.createElement("button");next.type="button";next.className="btn primary";next.textContent=questionPage+1===pageCount()?"Final section":"Next questions →";next.disabled=questionPage+1===pageCount();next.addEventListener("click",()=>goToPage(questionPage+1));
+  actions.prepend(prev);actions.appendChild(next);nav.appendChild(actions);return nav;
+ }
+ function goToPage(p){if(p<0||p>=pageCount()||p===questionPage)return;questionPage=p;render();const host=$("#questionHost");host?.scrollIntoView({block:"start",behavior:"instant"});host?.querySelector(".diagnostic-page-label")?.setAttribute("tabindex","-1");host?.querySelector(".diagnostic-page-label")?.focus({preventScroll:true})}
+ function render(){const host=$("#questionHost");host.innerHTML="";
+  if(PAGED_DIAGNOSTIC&&!showAllForPrint)host.appendChild(questionNavigation());
+  const lower=PAGED_DIAGNOSTIC&&!showAllForPrint?questionPage*PAGE_SIZE:0;
+  const upper=PAGED_DIAGNOSTIC&&!showAllForPrint?Math.min(C.questions.length,lower+PAGE_SIZE):C.questions.length;
+  for(const [label,items] of group()){
+   const visible=items.filter(([,i])=>i>=lower&&i<upper);if(!visible.length)continue;
+   const section=document.createElement("section");section.innerHTML=`<h2>${esc(label)}</h2>`;
+   const list=document.createElement("div");list.className="question-list";
+   visible.forEach(([q,i])=>{
+    const art=document.createElement("article");art.className="question";
+    const selected=draft.answers[i];
+    const feedback=draft.submitted?`<div class="feedback ${Number(selected)===q.answer?"good":"bad"}">${Number(selected)===q.answer?"Correct.":`Review. Correct answer: ${esc(q.options[q.answer])}.`} ${esc(q.explanation)}</div>`:"";
+    art.innerHTML=`<fieldset><legend>${i+1}. ${esc(q.prompt)}</legend><div class="options">${optionOrder(q,i).map(j=>`<label class="option"><input type="radio" name="q${i}" value="${j}" ${Number(selected)===j?"checked":""} ${draft.submitted?"disabled":""}><span>${esc(q.options[j])}</span></label>`).join("")}</div>${feedback}</fieldset>`;
+    list.appendChild(art)
+   });section.appendChild(list);host.appendChild(section)
+  }
+  if(!PAGED_DIAGNOSTIC||showAllForPrint||questionPage===pageCount()-1)renderConstructed(host);
+  if(PAGED_DIAGNOSTIC&&!showAllForPrint)host.appendChild(questionNavigation());
+  host.onchange=e=>{const m=e.target.name?.match(/^q(\\d+)$/);if(!m)return;draft.answers[m[1]]=Number(e.target.value);saveDraft()};
+  updateProgress();
+ }
+ if(PAGED_DIAGNOSTIC){
+  const beforePrint=()=>{if(!showAllForPrint){showAllForPrint=true;render()}};
+  const afterPrint=()=>{if(showAllForPrint){showAllForPrint=false;render()}};
+  window.addEventListener("beforeprint",beforePrint);
+  window.addEventListener("afterprint",afterPrint);
+ }
  function completedConstructed(){if(!D?.constructed?.length)return 0;const min=D.response_min_chars||50;return D.constructed.filter((_,i)=>String(draft.responses[i]||"").trim().length>=min).length}
  function updateProgress(){const n=Object.keys(draft.answers).filter(k=>Number(k)>=0&&Number(k)<C.questions.length).length,total=C.questions.length;$("#progressLabel").textContent=`${n}/${total} answered`;$("#progressBar").style.width=`${total?n/total*100:0}%`;if(draft.submitted)$("#status").textContent=D?"Auto-scored portion submitted. Written reasoning now requires evaluator review.":"Self-check submitted.";else if(D)$("#status").textContent=`${total-n} selected-response questions remaining · ${D.constructed.length-completedConstructed()} written responses incomplete.`;else $("#status").textContent=`${total-n} questions remaining.`}
  function selectedResult(){let correct=0,breakdown={};C.questions.forEach((q,i)=>{const key=q.unit?`Unit ${String(q.unit).padStart(2,"0")}`:(q.category||"Assessment");breakdown[key]??={correct:0,total:0};breakdown[key].total++;if(Number(draft.answers[i])===q.answer){correct++;breakdown[key].correct++}});const percent=Math.round(correct/C.questions.length*1000)/10;return {id:C.id,assessment_id:C.id,title:C.title,score:correct,total:C.questions.length,percent,selected_response_percent:percent,breakdown,attempt_number:draft.attempt_number||1,option_order_version:"algebra1-cumulative-options-v3",answer_snapshot:C.questions.map((q,i)=>({item_id:q.id||`${C.id}-item-${i+1}`,selected_original_index:Number(draft.answers[i]),correct_original_index:q.answer,option_order:optionOrder(q,i)})),mastery_threshold:MASTERY,selected_response_mastery_met:percent>=MASTERY,constructed_response:D?{version:D.version,count:D.constructed.length,responses:{...draft.responses},response_min_chars:D.response_min_chars,rubric_max:D.rubric_max,selected_weight:D.selected_weight,constructed_weight:D.constructed_weight,evaluator_scores:null,percent:null,review_complete:false}:null,overall_percent:D?null:percent,mastery:D?false:percent>=MASTERY,mastery_met:D?false:percent>=MASTERY,mastery_status:D?(percent>=MASTERY?"pending-evaluator-review":"selected-response-review-required"):(percent>=MASTERY?"mastery-met":"review-required"),submitted:new Date().toISOString(),trust:{classification:D?"browser-local-self-scored-plus-local-evaluator-review":"browser-local-self-scored",authoritative:false,confidential:false,digitally_signed:false,cryptographically_verified:false,editable_storage:true,review_required:true}}}
