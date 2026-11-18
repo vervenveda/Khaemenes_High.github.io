@@ -49,6 +49,10 @@ for(let n=3;n<=13;n++){
 }
 check(!read("courses/mathematics/pre-algebra/units/unit-01/assets/assessment-engine.js").includes("prealgebra-assessment-engine-core-v2.js"),"Unit 01 special assessment remains isolated");
 check(!read("courses/mathematics/pre-algebra/units/unit-02/assets/assessment-engine.js").includes("prealgebra-assessment-engine-core-v2.js"),"Unit 02 autosave-special assessment remains isolated");
+for(let n=1;n<=13;n++){
+ const u=String(n).padStart(2,"0"),c=read("courses/mathematics/pre-algebra/units/unit-"+u+"/assets/assessment-engine.js");
+ check(c.includes("math-hardening-loader-v1.js"),"Pre-Algebra assessment wrapper "+u+" mounts shared hardening");
+}
 
 const cssBase="courses/mathematics/pre-algebra/assets/prealgebra-unit-core-v2.css";
 const cssOverlay="courses/mathematics/pre-algebra/assets/prealgebra-submission-language-v1.css";
@@ -64,6 +68,7 @@ for(let n=6;n<=13;n++){
 }
 
 const verifiedEngines=[
+ "courses/mathematics/pre-algebra/assessments/assets/exam-engine.js",
  "courses/mathematics/algebra-1/assets/deep-lesson-engine-v1.js",
  "courses/mathematics/algebra-1/assets/exam-engine.js",
  "courses/mathematics/algebra-1/assessments/assets/weekly-mastery-engine-v2.js",
