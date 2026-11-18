@@ -63,3 +63,12 @@ Static file checks, syntax validation, and GitHub Actions are **not** browser us
 - Regression updates `799623f`, `22047d1`: verify exclusions for grade, department and course landings; avoid inadvertently exempting the Algebra I diagnostic/lessons; existing front hall/profile exclusions retained.
 - Source checks: JS parses; landing-route guards present; canonical header and toolbar initial setup still present.
 - **HOLD**: Browser performance and route-by-route interaction acceptance not yet verified. Semantic hierarchy observer and third-party component interactions remain unprofiled. Do not claim every landing page fixed until real-browser checks pass.
+
+## 2026-11-18 emergency recovery · opt-in forensic runtime detached
+- User reported landing pages entirely frozen and requested removal of optional diagnostics.
+- `assets/high-school-global-chrome-v2.js` removed its document-wide mutation-driven remount observer and the semantic-hierarchy full-document observer. Initial one-time mount of official VNV header, menu and ecosystem toolbar remains; one-time hierarchy normalization remains.
+- Removed published forensic script imports from High School front hall, Grade 09 and Grade 12 landing, Grade 09 Student Profile (including external UI inspector), Science 9 Unit 00 and readiness, and English 9 Day 01.
+- The forensic JS files are retained **unloaded** for source provenance/recovery. No learner records or curriculum were edited.
+- Updated `tests/high-chrome-observer-recovery.test.mjs` to assert no forensic imports and no blanket observers. Source-level syntax and static checks passed; full test runner and live Chrome responsiveness not certified in this intervention.
+- The High School service worker uses cached-first JS with a network refresh, so a controlled reload may initially return older shared scripts; do not delete browser storage or learner evidence. Inspect service-worker version/network delivery if stale behavior persists.
+- **Release acceptance HOLD** until actual browser test verifies course landing interactions and document main-thread responsiveness.
