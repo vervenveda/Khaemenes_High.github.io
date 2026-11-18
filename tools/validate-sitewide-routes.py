@@ -17,7 +17,10 @@ class Links(HTMLParser):
 errors = []
 pages = references = 0
 for source in ROOT.rglob('*.html'):
-    if '.git' in source.parts:
+    relative_parts = source.relative_to(ROOT).parts
+    # Archived workflow snapshots document previous page states; they are not
+    # supported live entrypoints. Continue validating every active HTML page.
+    if '.git' in relative_parts or 'workflow' in relative_parts:
         continue
     pages += 1
     parser = Links()
