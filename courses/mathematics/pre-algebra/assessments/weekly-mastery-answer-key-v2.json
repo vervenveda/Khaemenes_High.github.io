@@ -1,0 +1,3294 @@
+{
+  "schema": "khaemenes-prealgebra-weekly-mastery-answer-key-v2",
+  "version": "2.0.0",
+  "course": "KH-MATH-PA",
+  "mastery_threshold": 80,
+  "question_count": 360,
+  "weekly_count": 10,
+  "dimensions": [
+    "procedural-fluency",
+    "multi-step-application",
+    "representation-interpretation",
+    "error-analysis",
+    "transfer-reasoning"
+  ],
+  "note": "Evaluator review data for the canonical 10-question weekly mastery forms. Weeks 2-36 contain 8 current items and 2 delayed-retrieval items. Legacy five-question planner attempts are historical only and do not satisfy the v2 weekly gate.",
+  "weeks": {
+    "1": {
+      "week": 1,
+      "unit": 1,
+      "title": "Number Families, Real Numbers & Number-Line Reasoning",
+      "domain": "number",
+      "current_count": 10,
+      "delayed_count": 0,
+      "retrieval_from_week": null,
+      "questions": [
+        {
+          "id": "pa-w01-q01",
+          "dimension": "procedural-fluency",
+          "retrieval_from_week": null,
+          "prompt": "Find GCF(12, 18).",
+          "answer": "6",
+          "explanation": "Use common prime factors or factor lists."
+        },
+        {
+          "id": "pa-w01-q02",
+          "dimension": "procedural-fluency",
+          "retrieval_from_week": null,
+          "prompt": "Find LCM(9, 12).",
+          "answer": "36",
+          "explanation": "Three and four are relatively prime after the common factor g."
+        },
+        {
+          "id": "pa-w01-q03",
+          "dimension": "multi-step-application",
+          "retrieval_from_week": null,
+          "prompt": "A center has 12 red and 18 blue markers. What is the greatest number of identical kits with none left?",
+          "answer": "6",
+          "explanation": "The greatest number of equal kits is the GCF."
+        },
+        {
+          "id": "pa-w01-q04",
+          "dimension": "multi-step-application",
+          "retrieval_from_week": null,
+          "prompt": "Evaluate 19−3(4)+2.",
+          "answer": "9",
+          "explanation": "Multiply before addition and subtraction."
+        },
+        {
+          "id": "pa-w01-q05",
+          "dimension": "representation-interpretation",
+          "retrieval_from_week": null,
+          "prompt": "Which is the most specific set containing −6?",
+          "answer": "integers",
+          "explanation": "Negative whole-number values are integers."
+        },
+        {
+          "id": "pa-w01-q06",
+          "dimension": "representation-interpretation",
+          "retrieval_from_week": null,
+          "prompt": "Between which consecutive integers does √39 lie?",
+          "answer": "6 and 7",
+          "explanation": "Compare with consecutive perfect squares."
+        },
+        {
+          "id": "pa-w01-q07",
+          "dimension": "error-analysis",
+          "retrieval_from_week": null,
+          "prompt": "A learner evaluates 24÷6×2 as 24÷12=2. What is the error?",
+          "answer": "Multiplication and division at the same priority are done left to right",
+          "explanation": "Multiplication and division share priority."
+        },
+        {
+          "id": "pa-w01-q08",
+          "dimension": "error-analysis",
+          "retrieval_from_week": null,
+          "prompt": "A learner says 37 is a perfect square because it is close to 36. What must be checked?",
+          "answer": "Whether an integer squared equals it exactly",
+          "explanation": "Perfect-square status is exact."
+        },
+        {
+          "id": "pa-w01-q09",
+          "dimension": "transfer-reasoning",
+          "retrieval_from_week": null,
+          "prompt": "Estimate 60×20 using compatible numbers.",
+          "answer": "1200",
+          "explanation": "Use nearby compatible factors to judge magnitude."
+        },
+        {
+          "id": "pa-w01-q10",
+          "dimension": "transfer-reasoning",
+          "retrieval_from_week": null,
+          "prompt": "Why is every integer rational?",
+          "answer": "Any integer n can be written as n/1",
+          "explanation": "A rational number is a ratio of integers with nonzero denominator."
+        }
+      ]
+    },
+    "2": {
+      "week": 2,
+      "unit": 1,
+      "title": "Number Classification, Factors, Multiples & Prime Structure",
+      "domain": "number",
+      "current_count": 8,
+      "delayed_count": 2,
+      "retrieval_from_week": 1,
+      "questions": [
+        {
+          "id": "pa-w02-q01",
+          "dimension": "procedural-fluency",
+          "retrieval_from_week": 1,
+          "prompt": "Find GCF(12, 18).",
+          "answer": "6",
+          "explanation": "Use common prime factors or factor lists."
+        },
+        {
+          "id": "pa-w02-q02",
+          "dimension": "procedural-fluency",
+          "retrieval_from_week": null,
+          "prompt": "Find LCM(12, 16).",
+          "answer": "48",
+          "explanation": "Three and four are relatively prime after the common factor g."
+        },
+        {
+          "id": "pa-w02-q03",
+          "dimension": "multi-step-application",
+          "retrieval_from_week": null,
+          "prompt": "A center has 16 red and 24 blue markers. What is the greatest number of identical kits with none left?",
+          "answer": "8",
+          "explanation": "The greatest number of equal kits is the GCF."
+        },
+        {
+          "id": "pa-w02-q04",
+          "dimension": "multi-step-application",
+          "retrieval_from_week": null,
+          "prompt": "Evaluate 20−3(4)+2.",
+          "answer": "10",
+          "explanation": "Multiply before addition and subtraction."
+        },
+        {
+          "id": "pa-w02-q05",
+          "dimension": "representation-interpretation",
+          "retrieval_from_week": null,
+          "prompt": "Which is the most specific set containing −7?",
+          "answer": "integers",
+          "explanation": "Negative whole-number values are integers."
+        },
+        {
+          "id": "pa-w02-q06",
+          "dimension": "representation-interpretation",
+          "retrieval_from_week": null,
+          "prompt": "Between which consecutive integers does √52 lie?",
+          "answer": "7 and 8",
+          "explanation": "Compare with consecutive perfect squares."
+        },
+        {
+          "id": "pa-w02-q07",
+          "dimension": "error-analysis",
+          "retrieval_from_week": null,
+          "prompt": "A learner evaluates 24÷6×2 as 24÷12=2. What is the error?",
+          "answer": "Multiplication and division at the same priority are done left to right",
+          "explanation": "Multiplication and division share priority."
+        },
+        {
+          "id": "pa-w02-q08",
+          "dimension": "error-analysis",
+          "retrieval_from_week": null,
+          "prompt": "A learner says 50 is a perfect square because it is close to 49. What must be checked?",
+          "answer": "Whether an integer squared equals it exactly",
+          "explanation": "Perfect-square status is exact."
+        },
+        {
+          "id": "pa-w02-q09",
+          "dimension": "transfer-reasoning",
+          "retrieval_from_week": null,
+          "prompt": "Estimate 70×21 using compatible numbers.",
+          "answer": "1400",
+          "explanation": "Use nearby compatible factors to judge magnitude."
+        },
+        {
+          "id": "pa-w02-q10",
+          "dimension": "transfer-reasoning",
+          "retrieval_from_week": 1,
+          "prompt": "Why is every integer rational?",
+          "answer": "Any integer n can be written as n/1",
+          "explanation": "A rational number is a ratio of integers with nonzero denominator."
+        }
+      ]
+    },
+    "3": {
+      "week": 3,
+      "unit": 1,
+      "title": "GCF, LCM, Estimation & Order of Operations",
+      "domain": "number",
+      "current_count": 8,
+      "delayed_count": 2,
+      "retrieval_from_week": 2,
+      "questions": [
+        {
+          "id": "pa-w03-q01",
+          "dimension": "procedural-fluency",
+          "retrieval_from_week": 2,
+          "prompt": "Find GCF(16, 24).",
+          "answer": "8",
+          "explanation": "Use common prime factors or factor lists."
+        },
+        {
+          "id": "pa-w03-q02",
+          "dimension": "procedural-fluency",
+          "retrieval_from_week": null,
+          "prompt": "Find LCM(15, 20).",
+          "answer": "60",
+          "explanation": "Three and four are relatively prime after the common factor g."
+        },
+        {
+          "id": "pa-w03-q03",
+          "dimension": "multi-step-application",
+          "retrieval_from_week": null,
+          "prompt": "A center has 20 red and 30 blue markers. What is the greatest number of identical kits with none left?",
+          "answer": "10",
+          "explanation": "The greatest number of equal kits is the GCF."
+        },
+        {
+          "id": "pa-w03-q04",
+          "dimension": "multi-step-application",
+          "retrieval_from_week": null,
+          "prompt": "Evaluate 21−3(4)+2.",
+          "answer": "11",
+          "explanation": "Multiply before addition and subtraction."
+        },
+        {
+          "id": "pa-w03-q05",
+          "dimension": "representation-interpretation",
+          "retrieval_from_week": null,
+          "prompt": "Which is the most specific set containing −8?",
+          "answer": "integers",
+          "explanation": "Negative whole-number values are integers."
+        },
+        {
+          "id": "pa-w03-q06",
+          "dimension": "representation-interpretation",
+          "retrieval_from_week": null,
+          "prompt": "Between which consecutive integers does √67 lie?",
+          "answer": "8 and 9",
+          "explanation": "Compare with consecutive perfect squares."
+        },
+        {
+          "id": "pa-w03-q07",
+          "dimension": "error-analysis",
+          "retrieval_from_week": null,
+          "prompt": "A learner evaluates 24÷6×2 as 24÷12=2. What is the error?",
+          "answer": "Multiplication and division at the same priority are done left to right",
+          "explanation": "Multiplication and division share priority."
+        },
+        {
+          "id": "pa-w03-q08",
+          "dimension": "error-analysis",
+          "retrieval_from_week": null,
+          "prompt": "A learner says 65 is a perfect square because it is close to 64. What must be checked?",
+          "answer": "Whether an integer squared equals it exactly",
+          "explanation": "Perfect-square status is exact."
+        },
+        {
+          "id": "pa-w03-q09",
+          "dimension": "transfer-reasoning",
+          "retrieval_from_week": null,
+          "prompt": "Estimate 80×19 using compatible numbers.",
+          "answer": "1600",
+          "explanation": "Use nearby compatible factors to judge magnitude."
+        },
+        {
+          "id": "pa-w03-q10",
+          "dimension": "transfer-reasoning",
+          "retrieval_from_week": 2,
+          "prompt": "Why is every integer rational?",
+          "answer": "Any integer n can be written as n/1",
+          "explanation": "A rational number is a ratio of integers with nonzero denominator."
+        }
+      ]
+    },
+    "4": {
+      "week": 4,
+      "unit": 2,
+      "title": "Integer Meaning, Ordering & Absolute Value",
+      "domain": "integers",
+      "current_count": 8,
+      "delayed_count": 2,
+      "retrieval_from_week": 2,
+      "questions": [
+        {
+          "id": "pa-w04-q01",
+          "dimension": "procedural-fluency",
+          "retrieval_from_week": 2,
+          "prompt": "Find GCF(16, 24).",
+          "answer": "8",
+          "explanation": "Use common prime factors or factor lists."
+        },
+        {
+          "id": "pa-w04-q02",
+          "dimension": "procedural-fluency",
+          "retrieval_from_week": null,
+          "prompt": "Evaluate (−9)(−13).",
+          "answer": "117",
+          "explanation": "Two negative factors give a positive product."
+        },
+        {
+          "id": "pa-w04-q03",
+          "dimension": "multi-step-application",
+          "retrieval_from_week": null,
+          "prompt": "Temperature starts at −9°C, rises 13°C, then falls 3°C. Final temperature?",
+          "answer": "1",
+          "explanation": "Model each change as a signed number."
+        },
+        {
+          "id": "pa-w04-q04",
+          "dimension": "multi-step-application",
+          "retrieval_from_week": null,
+          "prompt": "What is the distance between −9 and 13?",
+          "answer": "22",
+          "explanation": "Distance is absolute difference."
+        },
+        {
+          "id": "pa-w04-q05",
+          "dimension": "representation-interpretation",
+          "retrieval_from_week": null,
+          "prompt": "Which expression means move 13 units left from −9?",
+          "answer": "−9−13",
+          "explanation": "Left on a number line corresponds to subtraction."
+        },
+        {
+          "id": "pa-w04-q06",
+          "dimension": "representation-interpretation",
+          "retrieval_from_week": null,
+          "prompt": "Order −11, −9, 9 least to greatest.",
+          "answer": "−11, −9, 9",
+          "explanation": "Farther left is smaller."
+        },
+        {
+          "id": "pa-w04-q07",
+          "dimension": "error-analysis",
+          "retrieval_from_week": null,
+          "prompt": "A learner says −9−13=4. What is the error?",
+          "answer": "Subtracting a positive moves farther negative",
+          "explanation": "The correct value is the negative of the sum."
+        },
+        {
+          "id": "pa-w04-q08",
+          "dimension": "error-analysis",
+          "retrieval_from_week": null,
+          "prompt": "A learner says |−12|=−12. What misconception is shown?",
+          "answer": "Absolute value is distance from zero and is nonnegative",
+          "explanation": "Distance cannot be negative."
+        },
+        {
+          "id": "pa-w04-q09",
+          "dimension": "transfer-reasoning",
+          "retrieval_from_week": null,
+          "prompt": "An account changes by −$9, +$13, and −$4. Net signed change?",
+          "answer": "0",
+          "explanation": "Add the signed changes."
+        },
+        {
+          "id": "pa-w04-q10",
+          "dimension": "transfer-reasoning",
+          "retrieval_from_week": 2,
+          "prompt": "Why is every integer rational?",
+          "answer": "Any integer n can be written as n/1",
+          "explanation": "A rational number is a ratio of integers with nonzero denominator."
+        }
+      ]
+    },
+    "5": {
+      "week": 5,
+      "unit": 2,
+      "title": "Adding and Subtracting Integers",
+      "domain": "integers",
+      "current_count": 8,
+      "delayed_count": 2,
+      "retrieval_from_week": 2,
+      "questions": [
+        {
+          "id": "pa-w05-q01",
+          "dimension": "procedural-fluency",
+          "retrieval_from_week": 2,
+          "prompt": "Find GCF(16, 24).",
+          "answer": "8",
+          "explanation": "Use common prime factors or factor lists."
+        },
+        {
+          "id": "pa-w05-q02",
+          "dimension": "procedural-fluency",
+          "retrieval_from_week": null,
+          "prompt": "Evaluate (−10)(−9).",
+          "answer": "90",
+          "explanation": "Two negative factors give a positive product."
+        },
+        {
+          "id": "pa-w05-q03",
+          "dimension": "multi-step-application",
+          "retrieval_from_week": null,
+          "prompt": "Temperature starts at −10°C, rises 9°C, then falls 3°C. Final temperature?",
+          "answer": "-4",
+          "explanation": "Model each change as a signed number."
+        },
+        {
+          "id": "pa-w05-q04",
+          "dimension": "multi-step-application",
+          "retrieval_from_week": null,
+          "prompt": "What is the distance between −10 and 9?",
+          "answer": "19",
+          "explanation": "Distance is absolute difference."
+        },
+        {
+          "id": "pa-w05-q05",
+          "dimension": "representation-interpretation",
+          "retrieval_from_week": null,
+          "prompt": "Which expression means move 9 units left from −10?",
+          "answer": "−10−9",
+          "explanation": "Left on a number line corresponds to subtraction."
+        },
+        {
+          "id": "pa-w05-q06",
+          "dimension": "representation-interpretation",
+          "retrieval_from_week": null,
+          "prompt": "Order −12, −10, 10 least to greatest.",
+          "answer": "−12, −10, 10",
+          "explanation": "Farther left is smaller."
+        },
+        {
+          "id": "pa-w05-q07",
+          "dimension": "error-analysis",
+          "retrieval_from_week": null,
+          "prompt": "A learner says −10−9=-1. What is the error?",
+          "answer": "Subtracting a positive moves farther negative",
+          "explanation": "The correct value is the negative of the sum."
+        },
+        {
+          "id": "pa-w05-q08",
+          "dimension": "error-analysis",
+          "retrieval_from_week": null,
+          "prompt": "A learner says |−12|=−12. What misconception is shown?",
+          "answer": "Absolute value is distance from zero and is nonnegative",
+          "explanation": "Distance cannot be negative."
+        },
+        {
+          "id": "pa-w05-q09",
+          "dimension": "transfer-reasoning",
+          "retrieval_from_week": null,
+          "prompt": "An account changes by −$10, +$9, and −$4. Net signed change?",
+          "answer": "-5",
+          "explanation": "Add the signed changes."
+        },
+        {
+          "id": "pa-w05-q10",
+          "dimension": "transfer-reasoning",
+          "retrieval_from_week": 2,
+          "prompt": "Why is every integer rational?",
+          "answer": "Any integer n can be written as n/1",
+          "explanation": "A rational number is a ratio of integers with nonzero denominator."
+        }
+      ]
+    },
+    "6": {
+      "week": 6,
+      "unit": 2,
+      "title": "Multiplying, Dividing & Integer Word Problems",
+      "domain": "integers",
+      "current_count": 8,
+      "delayed_count": 2,
+      "retrieval_from_week": 5,
+      "questions": [
+        {
+          "id": "pa-w06-q01",
+          "dimension": "procedural-fluency",
+          "retrieval_from_week": 5,
+          "prompt": "Evaluate −10+9.",
+          "answer": "-1",
+          "explanation": "Combine signed quantities."
+        },
+        {
+          "id": "pa-w06-q02",
+          "dimension": "procedural-fluency",
+          "retrieval_from_week": null,
+          "prompt": "Evaluate (−11)(−10).",
+          "answer": "110",
+          "explanation": "Two negative factors give a positive product."
+        },
+        {
+          "id": "pa-w06-q03",
+          "dimension": "multi-step-application",
+          "retrieval_from_week": null,
+          "prompt": "Temperature starts at −11°C, rises 10°C, then falls 3°C. Final temperature?",
+          "answer": "-4",
+          "explanation": "Model each change as a signed number."
+        },
+        {
+          "id": "pa-w06-q04",
+          "dimension": "multi-step-application",
+          "retrieval_from_week": null,
+          "prompt": "What is the distance between −11 and 10?",
+          "answer": "21",
+          "explanation": "Distance is absolute difference."
+        },
+        {
+          "id": "pa-w06-q05",
+          "dimension": "representation-interpretation",
+          "retrieval_from_week": null,
+          "prompt": "Which expression means move 10 units left from −11?",
+          "answer": "−11−10",
+          "explanation": "Left on a number line corresponds to subtraction."
+        },
+        {
+          "id": "pa-w06-q06",
+          "dimension": "representation-interpretation",
+          "retrieval_from_week": null,
+          "prompt": "Order −13, −11, 11 least to greatest.",
+          "answer": "−13, −11, 11",
+          "explanation": "Farther left is smaller."
+        },
+        {
+          "id": "pa-w06-q07",
+          "dimension": "error-analysis",
+          "retrieval_from_week": null,
+          "prompt": "A learner says −11−10=-1. What is the error?",
+          "answer": "Subtracting a positive moves farther negative",
+          "explanation": "The correct value is the negative of the sum."
+        },
+        {
+          "id": "pa-w06-q08",
+          "dimension": "error-analysis",
+          "retrieval_from_week": null,
+          "prompt": "A learner says |−12|=−12. What misconception is shown?",
+          "answer": "Absolute value is distance from zero and is nonnegative",
+          "explanation": "Distance cannot be negative."
+        },
+        {
+          "id": "pa-w06-q09",
+          "dimension": "transfer-reasoning",
+          "retrieval_from_week": null,
+          "prompt": "An account changes by −$11, +$10, and −$4. Net signed change?",
+          "answer": "-5",
+          "explanation": "Add the signed changes."
+        },
+        {
+          "id": "pa-w06-q10",
+          "dimension": "transfer-reasoning",
+          "retrieval_from_week": 5,
+          "prompt": "Why can elevation and account balance use the same integer rules?",
+          "answer": "Both are quantities measured relative to a chosen zero with direction",
+          "explanation": "Integers model relative position and change."
+        }
+      ]
+    },
+    "7": {
+      "week": 7,
+      "unit": 3,
+      "title": "Equivalent Fractions and Fraction Operations",
+      "domain": "rational",
+      "current_count": 8,
+      "delayed_count": 2,
+      "retrieval_from_week": 5,
+      "questions": [
+        {
+          "id": "pa-w07-q01",
+          "dimension": "procedural-fluency",
+          "retrieval_from_week": 5,
+          "prompt": "Evaluate −10+9.",
+          "answer": "-1",
+          "explanation": "Combine signed quantities."
+        },
+        {
+          "id": "pa-w07-q02",
+          "dimension": "procedural-fluency",
+          "retrieval_from_week": null,
+          "prompt": "Evaluate (3/5)(5/4).",
+          "answer": "3/4",
+          "explanation": "Cancel the common factor b."
+        },
+        {
+          "id": "pa-w07-q03",
+          "dimension": "multi-step-application",
+          "retrieval_from_week": null,
+          "prompt": "A recipe uses 3/4 cup per batch. Amount for 4 batches?",
+          "answer": "12/4 cups",
+          "explanation": "Multiply the unit amount by batch count."
+        },
+        {
+          "id": "pa-w07-q04",
+          "dimension": "multi-step-application",
+          "retrieval_from_week": null,
+          "prompt": "A 5-meter board is cut into 1/2-meter pieces. How many full pieces?",
+          "answer": "10",
+          "explanation": "Dividing by one-half doubles."
+        },
+        {
+          "id": "pa-w07-q05",
+          "dimension": "representation-interpretation",
+          "retrieval_from_week": null,
+          "prompt": "Which representation is exactly 0.25?",
+          "answer": "1/4",
+          "explanation": "0.25=25/100=1/4."
+        },
+        {
+          "id": "pa-w07-q06",
+          "dimension": "representation-interpretation",
+          "retrieval_from_week": null,
+          "prompt": "Which lies between 1/2 and 3/4?",
+          "answer": "5/8",
+          "explanation": "5/8=0.625."
+        },
+        {
+          "id": "pa-w07-q07",
+          "dimension": "error-analysis",
+          "retrieval_from_week": null,
+          "prompt": "A learner writes 2/3+1/4=3/7. What is the error?",
+          "answer": "Unlike fractions require a common denominator before adding",
+          "explanation": "Numerators and denominators are not added independently."
+        },
+        {
+          "id": "pa-w07-q08",
+          "dimension": "error-analysis",
+          "retrieval_from_week": null,
+          "prompt": "A learner divides by 2/3 by multiplying by 2/3. Repair?",
+          "answer": "Multiply by the reciprocal 3/2",
+          "explanation": "Division by a fraction uses its reciprocal."
+        },
+        {
+          "id": "pa-w07-q09",
+          "dimension": "transfer-reasoning",
+          "retrieval_from_week": null,
+          "prompt": "Which is larger: 3/5 or 4/6?",
+          "answer": "4/6",
+          "explanation": "Cross-products show the second is larger when b>a."
+        },
+        {
+          "id": "pa-w07-q10",
+          "dimension": "transfer-reasoning",
+          "retrieval_from_week": 5,
+          "prompt": "Why can elevation and account balance use the same integer rules?",
+          "answer": "Both are quantities measured relative to a chosen zero with direction",
+          "explanation": "Integers model relative position and change."
+        }
+      ]
+    },
+    "8": {
+      "week": 8,
+      "unit": 3,
+      "title": "Decimals, Rational Numbers and Conversions",
+      "domain": "rational",
+      "current_count": 8,
+      "delayed_count": 2,
+      "retrieval_from_week": 5,
+      "questions": [
+        {
+          "id": "pa-w08-q01",
+          "dimension": "procedural-fluency",
+          "retrieval_from_week": 5,
+          "prompt": "Evaluate −10+9.",
+          "answer": "-1",
+          "explanation": "Combine signed quantities."
+        },
+        {
+          "id": "pa-w08-q02",
+          "dimension": "procedural-fluency",
+          "retrieval_from_week": null,
+          "prompt": "Evaluate (4/6)(6/5).",
+          "answer": "4/5",
+          "explanation": "Cancel the common factor b."
+        },
+        {
+          "id": "pa-w08-q03",
+          "dimension": "multi-step-application",
+          "retrieval_from_week": null,
+          "prompt": "A recipe uses 3/4 cup per batch. Amount for 5 batches?",
+          "answer": "15/4 cups",
+          "explanation": "Multiply the unit amount by batch count."
+        },
+        {
+          "id": "pa-w08-q04",
+          "dimension": "multi-step-application",
+          "retrieval_from_week": null,
+          "prompt": "A 6-meter board is cut into 1/2-meter pieces. How many full pieces?",
+          "answer": "12",
+          "explanation": "Dividing by one-half doubles."
+        },
+        {
+          "id": "pa-w08-q05",
+          "dimension": "representation-interpretation",
+          "retrieval_from_week": null,
+          "prompt": "Which representation is exactly 0.25?",
+          "answer": "1/4",
+          "explanation": "0.25=25/100=1/4."
+        },
+        {
+          "id": "pa-w08-q06",
+          "dimension": "representation-interpretation",
+          "retrieval_from_week": null,
+          "prompt": "Which lies between 1/2 and 3/4?",
+          "answer": "5/8",
+          "explanation": "5/8=0.625."
+        },
+        {
+          "id": "pa-w08-q07",
+          "dimension": "error-analysis",
+          "retrieval_from_week": null,
+          "prompt": "A learner writes 2/3+1/4=3/7. What is the error?",
+          "answer": "Unlike fractions require a common denominator before adding",
+          "explanation": "Numerators and denominators are not added independently."
+        },
+        {
+          "id": "pa-w08-q08",
+          "dimension": "error-analysis",
+          "retrieval_from_week": null,
+          "prompt": "A learner divides by 2/3 by multiplying by 2/3. Repair?",
+          "answer": "Multiply by the reciprocal 3/2",
+          "explanation": "Division by a fraction uses its reciprocal."
+        },
+        {
+          "id": "pa-w08-q09",
+          "dimension": "transfer-reasoning",
+          "retrieval_from_week": null,
+          "prompt": "Which is larger: 4/6 or 5/7?",
+          "answer": "5/7",
+          "explanation": "Cross-products show the second is larger when b>a."
+        },
+        {
+          "id": "pa-w08-q10",
+          "dimension": "transfer-reasoning",
+          "retrieval_from_week": 5,
+          "prompt": "Why can elevation and account balance use the same integer rules?",
+          "answer": "Both are quantities measured relative to a chosen zero with direction",
+          "explanation": "Integers model relative position and change."
+        }
+      ]
+    },
+    "9": {
+      "week": 9,
+      "unit": 3,
+      "title": "Mixed Rational Number Applications",
+      "domain": "rational",
+      "current_count": 8,
+      "delayed_count": 2,
+      "retrieval_from_week": 8,
+      "questions": [
+        {
+          "id": "pa-w09-q01",
+          "dimension": "procedural-fluency",
+          "retrieval_from_week": 8,
+          "prompt": "Evaluate 4/6 + 1/6.",
+          "answer": "5/6",
+          "explanation": "Same denominators allow numerator addition."
+        },
+        {
+          "id": "pa-w09-q02",
+          "dimension": "procedural-fluency",
+          "retrieval_from_week": null,
+          "prompt": "Evaluate (2/4)(4/3).",
+          "answer": "2/3",
+          "explanation": "Cancel the common factor b."
+        },
+        {
+          "id": "pa-w09-q03",
+          "dimension": "multi-step-application",
+          "retrieval_from_week": null,
+          "prompt": "A recipe uses 3/4 cup per batch. Amount for 3 batches?",
+          "answer": "9/4 cups",
+          "explanation": "Multiply the unit amount by batch count."
+        },
+        {
+          "id": "pa-w09-q04",
+          "dimension": "multi-step-application",
+          "retrieval_from_week": null,
+          "prompt": "A 4-meter board is cut into 1/2-meter pieces. How many full pieces?",
+          "answer": "8",
+          "explanation": "Dividing by one-half doubles."
+        },
+        {
+          "id": "pa-w09-q05",
+          "dimension": "representation-interpretation",
+          "retrieval_from_week": null,
+          "prompt": "Which representation is exactly 0.25?",
+          "answer": "1/4",
+          "explanation": "0.25=25/100=1/4."
+        },
+        {
+          "id": "pa-w09-q06",
+          "dimension": "representation-interpretation",
+          "retrieval_from_week": null,
+          "prompt": "Which lies between 1/2 and 3/4?",
+          "answer": "5/8",
+          "explanation": "5/8=0.625."
+        },
+        {
+          "id": "pa-w09-q07",
+          "dimension": "error-analysis",
+          "retrieval_from_week": null,
+          "prompt": "A learner writes 2/3+1/4=3/7. What is the error?",
+          "answer": "Unlike fractions require a common denominator before adding",
+          "explanation": "Numerators and denominators are not added independently."
+        },
+        {
+          "id": "pa-w09-q08",
+          "dimension": "error-analysis",
+          "retrieval_from_week": null,
+          "prompt": "A learner divides by 2/3 by multiplying by 2/3. Repair?",
+          "answer": "Multiply by the reciprocal 3/2",
+          "explanation": "Division by a fraction uses its reciprocal."
+        },
+        {
+          "id": "pa-w09-q09",
+          "dimension": "transfer-reasoning",
+          "retrieval_from_week": null,
+          "prompt": "Which is larger: 2/4 or 3/5?",
+          "answer": "3/5",
+          "explanation": "Cross-products show the second is larger when b>a."
+        },
+        {
+          "id": "pa-w09-q10",
+          "dimension": "transfer-reasoning",
+          "retrieval_from_week": 8,
+          "prompt": "Why keep an exact fraction instead of a rounded decimal in some calculations?",
+          "answer": "It avoids introducing rounding error",
+          "explanation": "Exact forms preserve exact value."
+        }
+      ]
+    },
+    "10": {
+      "week": 10,
+      "unit": 4,
+      "title": "Ratios, Unit Rates and Double Number Lines",
+      "domain": "ratio",
+      "current_count": 8,
+      "delayed_count": 2,
+      "retrieval_from_week": 8,
+      "questions": [
+        {
+          "id": "pa-w10-q01",
+          "dimension": "procedural-fluency",
+          "retrieval_from_week": 8,
+          "prompt": "Evaluate 4/6 + 1/6.",
+          "answer": "5/6",
+          "explanation": "Same denominators allow numerator addition."
+        },
+        {
+          "id": "pa-w10-q02",
+          "dimension": "procedural-fluency",
+          "retrieval_from_week": null,
+          "prompt": "Solve x/5=2/4.",
+          "answer": "2.5",
+          "explanation": "The right ratio is one-half."
+        },
+        {
+          "id": "pa-w10-q03",
+          "dimension": "multi-step-application",
+          "retrieval_from_week": null,
+          "prompt": "Map scale 1 cm=2 km. What does 5 cm represent?",
+          "answer": "10 km",
+          "explanation": "Multiply by the scale rate."
+        },
+        {
+          "id": "pa-w10-q04",
+          "dimension": "multi-step-application",
+          "retrieval_from_week": null,
+          "prompt": "A recipe uses 2 cups for 5 servings. Water for 10 servings?",
+          "answer": "4 cups",
+          "explanation": "Doubling servings doubles a proportional quantity."
+        },
+        {
+          "id": "pa-w10-q05",
+          "dimension": "representation-interpretation",
+          "retrieval_from_week": null,
+          "prompt": "Which equation has constant of proportionality 2?",
+          "answer": "y=2x",
+          "explanation": "Direct proportion has form y=kx."
+        },
+        {
+          "id": "pa-w10-q06",
+          "dimension": "representation-interpretation",
+          "retrieval_from_week": null,
+          "prompt": "In y=2x, what is 2?",
+          "answer": "constant of proportionality",
+          "explanation": "It is the constant ratio y/x."
+        },
+        {
+          "id": "pa-w10-q07",
+          "dimension": "error-analysis",
+          "retrieval_from_week": null,
+          "prompt": "A learner calls y=2x+5 proportional. What is wrong?",
+          "answer": "The nonzero intercept prevents a constant y/x ratio",
+          "explanation": "Proportional graphs pass through the origin."
+        },
+        {
+          "id": "pa-w10-q08",
+          "dimension": "error-analysis",
+          "retrieval_from_week": null,
+          "prompt": "A learner compares package totals although sizes differ. Better comparison?",
+          "answer": "unit rates",
+          "explanation": "Unit rates normalize quantity."
+        },
+        {
+          "id": "pa-w10-q09",
+          "dimension": "transfer-reasoning",
+          "retrieval_from_week": null,
+          "prompt": "Plan A: $10 for 5 units. Plan B: $18 for 6. Cheaper per unit?",
+          "answer": "Plan A",
+          "explanation": "The rates are $2 and $3."
+        },
+        {
+          "id": "pa-w10-q10",
+          "dimension": "transfer-reasoning",
+          "retrieval_from_week": 8,
+          "prompt": "Why keep an exact fraction instead of a rounded decimal in some calculations?",
+          "answer": "It avoids introducing rounding error",
+          "explanation": "Exact forms preserve exact value."
+        }
+      ]
+    },
+    "11": {
+      "week": 11,
+      "unit": 4,
+      "title": "Proportions, Scale Drawings and Maps",
+      "domain": "ratio",
+      "current_count": 8,
+      "delayed_count": 2,
+      "retrieval_from_week": 8,
+      "questions": [
+        {
+          "id": "pa-w11-q01",
+          "dimension": "procedural-fluency",
+          "retrieval_from_week": 8,
+          "prompt": "Evaluate 4/6 + 1/6.",
+          "answer": "5/6",
+          "explanation": "Same denominators allow numerator addition."
+        },
+        {
+          "id": "pa-w11-q02",
+          "dimension": "procedural-fluency",
+          "retrieval_from_week": null,
+          "prompt": "Solve x/6=3/6.",
+          "answer": "3",
+          "explanation": "The right ratio is one-half."
+        },
+        {
+          "id": "pa-w11-q03",
+          "dimension": "multi-step-application",
+          "retrieval_from_week": null,
+          "prompt": "Map scale 1 cm=3 km. What does 6 cm represent?",
+          "answer": "18 km",
+          "explanation": "Multiply by the scale rate."
+        },
+        {
+          "id": "pa-w11-q04",
+          "dimension": "multi-step-application",
+          "retrieval_from_week": null,
+          "prompt": "A recipe uses 3 cups for 6 servings. Water for 12 servings?",
+          "answer": "6 cups",
+          "explanation": "Doubling servings doubles a proportional quantity."
+        },
+        {
+          "id": "pa-w11-q05",
+          "dimension": "representation-interpretation",
+          "retrieval_from_week": null,
+          "prompt": "Which equation has constant of proportionality 3?",
+          "answer": "y=3x",
+          "explanation": "Direct proportion has form y=kx."
+        },
+        {
+          "id": "pa-w11-q06",
+          "dimension": "representation-interpretation",
+          "retrieval_from_week": null,
+          "prompt": "In y=3x, what is 3?",
+          "answer": "constant of proportionality",
+          "explanation": "It is the constant ratio y/x."
+        },
+        {
+          "id": "pa-w11-q07",
+          "dimension": "error-analysis",
+          "retrieval_from_week": null,
+          "prompt": "A learner calls y=3x+5 proportional. What is wrong?",
+          "answer": "The nonzero intercept prevents a constant y/x ratio",
+          "explanation": "Proportional graphs pass through the origin."
+        },
+        {
+          "id": "pa-w11-q08",
+          "dimension": "error-analysis",
+          "retrieval_from_week": null,
+          "prompt": "A learner compares package totals although sizes differ. Better comparison?",
+          "answer": "unit rates",
+          "explanation": "Unit rates normalize quantity."
+        },
+        {
+          "id": "pa-w11-q09",
+          "dimension": "transfer-reasoning",
+          "retrieval_from_week": null,
+          "prompt": "Plan A: $18 for 6 units. Plan B: $28 for 7. Cheaper per unit?",
+          "answer": "Plan A",
+          "explanation": "The rates are $3 and $4."
+        },
+        {
+          "id": "pa-w11-q10",
+          "dimension": "transfer-reasoning",
+          "retrieval_from_week": 8,
+          "prompt": "Why keep an exact fraction instead of a rounded decimal in some calculations?",
+          "answer": "It avoids introducing rounding error",
+          "explanation": "Exact forms preserve exact value."
+        }
+      ]
+    },
+    "12": {
+      "week": 12,
+      "unit": 4,
+      "title": "Tables, Graphs and Proportional vs Nonproportional Relationships",
+      "domain": "ratio",
+      "current_count": 8,
+      "delayed_count": 2,
+      "retrieval_from_week": 11,
+      "questions": [
+        {
+          "id": "pa-w12-q01",
+          "dimension": "procedural-fluency",
+          "retrieval_from_week": 11,
+          "prompt": "If 6 items cost $18, unit price?",
+          "answer": "$3",
+          "explanation": "Divide total by count."
+        },
+        {
+          "id": "pa-w12-q02",
+          "dimension": "procedural-fluency",
+          "retrieval_from_week": null,
+          "prompt": "Solve x/3=4/8.",
+          "answer": "1.5",
+          "explanation": "The right ratio is one-half."
+        },
+        {
+          "id": "pa-w12-q03",
+          "dimension": "multi-step-application",
+          "retrieval_from_week": null,
+          "prompt": "Map scale 1 cm=4 km. What does 3 cm represent?",
+          "answer": "12 km",
+          "explanation": "Multiply by the scale rate."
+        },
+        {
+          "id": "pa-w12-q04",
+          "dimension": "multi-step-application",
+          "retrieval_from_week": null,
+          "prompt": "A recipe uses 4 cups for 3 servings. Water for 6 servings?",
+          "answer": "8 cups",
+          "explanation": "Doubling servings doubles a proportional quantity."
+        },
+        {
+          "id": "pa-w12-q05",
+          "dimension": "representation-interpretation",
+          "retrieval_from_week": null,
+          "prompt": "Which equation has constant of proportionality 4?",
+          "answer": "y=4x",
+          "explanation": "Direct proportion has form y=kx."
+        },
+        {
+          "id": "pa-w12-q06",
+          "dimension": "representation-interpretation",
+          "retrieval_from_week": null,
+          "prompt": "In y=4x, what is 4?",
+          "answer": "constant of proportionality",
+          "explanation": "It is the constant ratio y/x."
+        },
+        {
+          "id": "pa-w12-q07",
+          "dimension": "error-analysis",
+          "retrieval_from_week": null,
+          "prompt": "A learner calls y=4x+5 proportional. What is wrong?",
+          "answer": "The nonzero intercept prevents a constant y/x ratio",
+          "explanation": "Proportional graphs pass through the origin."
+        },
+        {
+          "id": "pa-w12-q08",
+          "dimension": "error-analysis",
+          "retrieval_from_week": null,
+          "prompt": "A learner compares package totals although sizes differ. Better comparison?",
+          "answer": "unit rates",
+          "explanation": "Unit rates normalize quantity."
+        },
+        {
+          "id": "pa-w12-q09",
+          "dimension": "transfer-reasoning",
+          "retrieval_from_week": null,
+          "prompt": "Plan A: $12 for 3 units. Plan B: $20 for 4. Cheaper per unit?",
+          "answer": "Plan A",
+          "explanation": "The rates are $4 and $5."
+        },
+        {
+          "id": "pa-w12-q10",
+          "dimension": "transfer-reasoning",
+          "retrieval_from_week": 11,
+          "prompt": "Why must a scale drawing use one linear scale factor in every direction?",
+          "answer": "Different directional factors distort shape and destroy similarity",
+          "explanation": "Uniform scaling preserves similarity."
+        }
+      ]
+    },
+    "13": {
+      "week": 13,
+      "unit": 5,
+      "title": "Percent of a Quantity, Discounts, Taxes and Tips",
+      "domain": "percent",
+      "current_count": 8,
+      "delayed_count": 2,
+      "retrieval_from_week": 11,
+      "questions": [
+        {
+          "id": "pa-w13-q01",
+          "dimension": "procedural-fluency",
+          "retrieval_from_week": 11,
+          "prompt": "If 6 items cost $18, unit price?",
+          "answer": "$3",
+          "explanation": "Divide total by count."
+        },
+        {
+          "id": "pa-w13-q02",
+          "dimension": "procedural-fluency",
+          "retrieval_from_week": null,
+          "prompt": "30 is 25% of what number?",
+          "answer": "120",
+          "explanation": "Divide part by decimal percent."
+        },
+        {
+          "id": "pa-w13-q03",
+          "dimension": "multi-step-application",
+          "retrieval_from_week": null,
+          "prompt": "A $120 item is discounted 25%. Sale price?",
+          "answer": "$90.00",
+          "explanation": "Use original price times 1−rate."
+        },
+        {
+          "id": "pa-w13-q04",
+          "dimension": "multi-step-application",
+          "retrieval_from_week": null,
+          "prompt": "A value rises from 120 to 140. Percent increase?",
+          "answer": "16.7%",
+          "explanation": "Change divided by original."
+        },
+        {
+          "id": "pa-w13-q05",
+          "dimension": "representation-interpretation",
+          "retrieval_from_week": null,
+          "prompt": "Which multiplier represents a 12% increase?",
+          "answer": "1.12",
+          "explanation": "Increase multiplier is 1+r."
+        },
+        {
+          "id": "pa-w13-q06",
+          "dimension": "representation-interpretation",
+          "retrieval_from_week": null,
+          "prompt": "How do percentage points differ from percent change?",
+          "answer": "Percentage points subtract percentages directly; percent change uses the original percentage as a base",
+          "explanation": "They use different reference structures."
+        },
+        {
+          "id": "pa-w13-q07",
+          "dimension": "error-analysis",
+          "retrieval_from_week": null,
+          "prompt": "A learner subtracts $20 for every 20% discount. Error?",
+          "answer": "A percent discount depends on the original price",
+          "explanation": "Percent is proportional to the base."
+        },
+        {
+          "id": "pa-w13-q08",
+          "dimension": "error-analysis",
+          "retrieval_from_week": null,
+          "prompt": "A learner computes percent increase using the new value as denominator. Correct denominator?",
+          "answer": "original value",
+          "explanation": "Percent change uses the starting value."
+        },
+        {
+          "id": "pa-w13-q09",
+          "dimension": "transfer-reasoning",
+          "retrieval_from_week": null,
+          "prompt": "Simple interest on $600 at 4% for 2 years?",
+          "answer": "$48.00",
+          "explanation": "Use I=Prt."
+        },
+        {
+          "id": "pa-w13-q10",
+          "dimension": "transfer-reasoning",
+          "retrieval_from_week": 11,
+          "prompt": "Why must a scale drawing use one linear scale factor in every direction?",
+          "answer": "Different directional factors distort shape and destroy similarity",
+          "explanation": "Uniform scaling preserves similarity."
+        }
+      ]
+    },
+    "14": {
+      "week": 14,
+      "unit": 5,
+      "title": "Percent Increase, Decrease and Relative Change",
+      "domain": "percent",
+      "current_count": 8,
+      "delayed_count": 2,
+      "retrieval_from_week": 11,
+      "questions": [
+        {
+          "id": "pa-w14-q01",
+          "dimension": "procedural-fluency",
+          "retrieval_from_week": 11,
+          "prompt": "If 6 items cost $18, unit price?",
+          "answer": "$3",
+          "explanation": "Divide total by count."
+        },
+        {
+          "id": "pa-w14-q02",
+          "dimension": "procedural-fluency",
+          "retrieval_from_week": null,
+          "prompt": "42 is 30% of what number?",
+          "answer": "140",
+          "explanation": "Divide part by decimal percent."
+        },
+        {
+          "id": "pa-w14-q03",
+          "dimension": "multi-step-application",
+          "retrieval_from_week": null,
+          "prompt": "A $140 item is discounted 30%. Sale price?",
+          "answer": "$98.00",
+          "explanation": "Use original price times 1−rate."
+        },
+        {
+          "id": "pa-w14-q04",
+          "dimension": "multi-step-application",
+          "retrieval_from_week": null,
+          "prompt": "A value rises from 140 to 160. Percent increase?",
+          "answer": "14.3%",
+          "explanation": "Change divided by original."
+        },
+        {
+          "id": "pa-w14-q05",
+          "dimension": "representation-interpretation",
+          "retrieval_from_week": null,
+          "prompt": "Which multiplier represents a 12% increase?",
+          "answer": "1.12",
+          "explanation": "Increase multiplier is 1+r."
+        },
+        {
+          "id": "pa-w14-q06",
+          "dimension": "representation-interpretation",
+          "retrieval_from_week": null,
+          "prompt": "How do percentage points differ from percent change?",
+          "answer": "Percentage points subtract percentages directly; percent change uses the original percentage as a base",
+          "explanation": "They use different reference structures."
+        },
+        {
+          "id": "pa-w14-q07",
+          "dimension": "error-analysis",
+          "retrieval_from_week": null,
+          "prompt": "A learner subtracts $20 for every 20% discount. Error?",
+          "answer": "A percent discount depends on the original price",
+          "explanation": "Percent is proportional to the base."
+        },
+        {
+          "id": "pa-w14-q08",
+          "dimension": "error-analysis",
+          "retrieval_from_week": null,
+          "prompt": "A learner computes percent increase using the new value as denominator. Correct denominator?",
+          "answer": "original value",
+          "explanation": "Percent change uses the starting value."
+        },
+        {
+          "id": "pa-w14-q09",
+          "dimension": "transfer-reasoning",
+          "retrieval_from_week": null,
+          "prompt": "Simple interest on $700 at 4% for 2 years?",
+          "answer": "$56.00",
+          "explanation": "Use I=Prt."
+        },
+        {
+          "id": "pa-w14-q10",
+          "dimension": "transfer-reasoning",
+          "retrieval_from_week": 11,
+          "prompt": "Why must a scale drawing use one linear scale factor in every direction?",
+          "answer": "Different directional factors distort shape and destroy similarity",
+          "explanation": "Uniform scaling preserves similarity."
+        }
+      ]
+    },
+    "15": {
+      "week": 15,
+      "unit": 5,
+      "title": "Simple Interest and Financial Decision Making",
+      "domain": "percent",
+      "current_count": 8,
+      "delayed_count": 2,
+      "retrieval_from_week": 14,
+      "questions": [
+        {
+          "id": "pa-w15-q01",
+          "dimension": "procedural-fluency",
+          "retrieval_from_week": 14,
+          "prompt": "What is 30% of 140?",
+          "answer": "42",
+          "explanation": "Convert percent to decimal and multiply."
+        },
+        {
+          "id": "pa-w15-q02",
+          "dimension": "procedural-fluency",
+          "retrieval_from_week": null,
+          "prompt": "16 is 10% of what number?",
+          "answer": "160",
+          "explanation": "Divide part by decimal percent."
+        },
+        {
+          "id": "pa-w15-q03",
+          "dimension": "multi-step-application",
+          "retrieval_from_week": null,
+          "prompt": "A $160 item is discounted 10%. Sale price?",
+          "answer": "$144.00",
+          "explanation": "Use original price times 1−rate."
+        },
+        {
+          "id": "pa-w15-q04",
+          "dimension": "multi-step-application",
+          "retrieval_from_week": null,
+          "prompt": "A value rises from 160 to 180. Percent increase?",
+          "answer": "12.5%",
+          "explanation": "Change divided by original."
+        },
+        {
+          "id": "pa-w15-q05",
+          "dimension": "representation-interpretation",
+          "retrieval_from_week": null,
+          "prompt": "Which multiplier represents a 12% increase?",
+          "answer": "1.12",
+          "explanation": "Increase multiplier is 1+r."
+        },
+        {
+          "id": "pa-w15-q06",
+          "dimension": "representation-interpretation",
+          "retrieval_from_week": null,
+          "prompt": "How do percentage points differ from percent change?",
+          "answer": "Percentage points subtract percentages directly; percent change uses the original percentage as a base",
+          "explanation": "They use different reference structures."
+        },
+        {
+          "id": "pa-w15-q07",
+          "dimension": "error-analysis",
+          "retrieval_from_week": null,
+          "prompt": "A learner subtracts $20 for every 20% discount. Error?",
+          "answer": "A percent discount depends on the original price",
+          "explanation": "Percent is proportional to the base."
+        },
+        {
+          "id": "pa-w15-q08",
+          "dimension": "error-analysis",
+          "retrieval_from_week": null,
+          "prompt": "A learner computes percent increase using the new value as denominator. Correct denominator?",
+          "answer": "original value",
+          "explanation": "Percent change uses the starting value."
+        },
+        {
+          "id": "pa-w15-q09",
+          "dimension": "transfer-reasoning",
+          "retrieval_from_week": null,
+          "prompt": "Simple interest on $800 at 4% for 2 years?",
+          "answer": "$64.00",
+          "explanation": "Use I=Prt."
+        },
+        {
+          "id": "pa-w15-q10",
+          "dimension": "transfer-reasoning",
+          "retrieval_from_week": 14,
+          "prompt": "Why does −20% followed by +20% not return to the start?",
+          "answer": "The second percentage uses a different base",
+          "explanation": "Successive percent changes compound on changing bases."
+        }
+      ]
+    },
+    "16": {
+      "week": 16,
+      "unit": 6,
+      "title": "Exponents, Powers and Square Roots",
+      "domain": "exponents",
+      "current_count": 8,
+      "delayed_count": 2,
+      "retrieval_from_week": 14,
+      "questions": [
+        {
+          "id": "pa-w16-q01",
+          "dimension": "procedural-fluency",
+          "retrieval_from_week": 14,
+          "prompt": "What is 30% of 140?",
+          "answer": "42",
+          "explanation": "Convert percent to decimal and multiply."
+        },
+        {
+          "id": "pa-w16-q02",
+          "dimension": "procedural-fluency",
+          "retrieval_from_week": null,
+          "prompt": "Simplify 2^3·2^2.",
+          "answer": "2^5",
+          "explanation": "Add exponents for same base products."
+        },
+        {
+          "id": "pa-w16-q03",
+          "dimension": "multi-step-application",
+          "retrieval_from_week": null,
+          "prompt": "A square has area 25 cm². Side length?",
+          "answer": "5 cm",
+          "explanation": "Take the positive square root."
+        },
+        {
+          "id": "pa-w16-q04",
+          "dimension": "multi-step-application",
+          "retrieval_from_week": null,
+          "prompt": "(6×10^5)/(2×10^2) equals?",
+          "answer": "3×10^3",
+          "explanation": "Divide coefficients and subtract exponents."
+        },
+        {
+          "id": "pa-w16-q05",
+          "dimension": "representation-interpretation",
+          "retrieval_from_week": null,
+          "prompt": "Which is standard scientific notation?",
+          "answer": "4.7×10^6",
+          "explanation": "Coefficient magnitude is at least 1 and less than 10."
+        },
+        {
+          "id": "pa-w16-q06",
+          "dimension": "representation-interpretation",
+          "retrieval_from_week": null,
+          "prompt": "What is 2^0 for nonzero 2?",
+          "answer": "1",
+          "explanation": "Any nonzero base to exponent zero equals 1."
+        },
+        {
+          "id": "pa-w16-q07",
+          "dimension": "error-analysis",
+          "retrieval_from_week": null,
+          "prompt": "A learner simplifies (2²)^3 as 2^5. Error?",
+          "answer": "Power-of-a-power exponents multiply, giving exponent 6",
+          "explanation": "Multiply the exponents."
+        },
+        {
+          "id": "pa-w16-q08",
+          "dimension": "error-analysis",
+          "retrieval_from_week": null,
+          "prompt": "A learner writes √50=25. What was confused?",
+          "answer": "Square root with division by 2",
+          "explanation": "√50 is about 7.07."
+        },
+        {
+          "id": "pa-w16-q09",
+          "dimension": "transfer-reasoning",
+          "retrieval_from_week": null,
+          "prompt": "Which is larger for 2>1: 2^4 or 2^3?",
+          "answer": "2^4",
+          "explanation": "An extra factor greater than 1 increases the value."
+        },
+        {
+          "id": "pa-w16-q10",
+          "dimension": "transfer-reasoning",
+          "retrieval_from_week": 14,
+          "prompt": "Why does −20% followed by +20% not return to the start?",
+          "answer": "The second percentage uses a different base",
+          "explanation": "Successive percent changes compound on changing bases."
+        }
+      ]
+    },
+    "17": {
+      "week": 17,
+      "unit": 6,
+      "title": "Scientific Notation and Powers of Ten in Science",
+      "domain": "exponents",
+      "current_count": 8,
+      "delayed_count": 2,
+      "retrieval_from_week": 14,
+      "questions": [
+        {
+          "id": "pa-w17-q01",
+          "dimension": "procedural-fluency",
+          "retrieval_from_week": 14,
+          "prompt": "What is 30% of 140?",
+          "answer": "42",
+          "explanation": "Convert percent to decimal and multiply."
+        },
+        {
+          "id": "pa-w17-q02",
+          "dimension": "procedural-fluency",
+          "retrieval_from_week": null,
+          "prompt": "Simplify 3^3·3^2.",
+          "answer": "3^5",
+          "explanation": "Add exponents for same base products."
+        },
+        {
+          "id": "pa-w17-q03",
+          "dimension": "multi-step-application",
+          "retrieval_from_week": null,
+          "prompt": "A square has area 36 cm². Side length?",
+          "answer": "6 cm",
+          "explanation": "Take the positive square root."
+        },
+        {
+          "id": "pa-w17-q04",
+          "dimension": "multi-step-application",
+          "retrieval_from_week": null,
+          "prompt": "(6×10^5)/(2×10^2) equals?",
+          "answer": "3×10^3",
+          "explanation": "Divide coefficients and subtract exponents."
+        },
+        {
+          "id": "pa-w17-q05",
+          "dimension": "representation-interpretation",
+          "retrieval_from_week": null,
+          "prompt": "Which is standard scientific notation?",
+          "answer": "4.7×10^6",
+          "explanation": "Coefficient magnitude is at least 1 and less than 10."
+        },
+        {
+          "id": "pa-w17-q06",
+          "dimension": "representation-interpretation",
+          "retrieval_from_week": null,
+          "prompt": "What is 3^0 for nonzero 3?",
+          "answer": "1",
+          "explanation": "Any nonzero base to exponent zero equals 1."
+        },
+        {
+          "id": "pa-w17-q07",
+          "dimension": "error-analysis",
+          "retrieval_from_week": null,
+          "prompt": "A learner simplifies (3²)^3 as 3^5. Error?",
+          "answer": "Power-of-a-power exponents multiply, giving exponent 6",
+          "explanation": "Multiply the exponents."
+        },
+        {
+          "id": "pa-w17-q08",
+          "dimension": "error-analysis",
+          "retrieval_from_week": null,
+          "prompt": "A learner writes √50=25. What was confused?",
+          "answer": "Square root with division by 2",
+          "explanation": "√50 is about 7.07."
+        },
+        {
+          "id": "pa-w17-q09",
+          "dimension": "transfer-reasoning",
+          "retrieval_from_week": null,
+          "prompt": "Which is larger for 3>1: 3^4 or 3^3?",
+          "answer": "3^4",
+          "explanation": "An extra factor greater than 1 increases the value."
+        },
+        {
+          "id": "pa-w17-q10",
+          "dimension": "transfer-reasoning",
+          "retrieval_from_week": 14,
+          "prompt": "Why does −20% followed by +20% not return to the start?",
+          "answer": "The second percentage uses a different base",
+          "explanation": "Successive percent changes compound on changing bases."
+        }
+      ]
+    },
+    "18": {
+      "week": 18,
+      "unit": 7,
+      "title": "Variables, Terms and Translating Expressions",
+      "domain": "algebra",
+      "current_count": 8,
+      "delayed_count": 2,
+      "retrieval_from_week": 17,
+      "questions": [
+        {
+          "id": "pa-w18-q01",
+          "dimension": "procedural-fluency",
+          "retrieval_from_week": 17,
+          "prompt": "Evaluate 3^4.",
+          "answer": "81",
+          "explanation": "Repeated multiplication."
+        },
+        {
+          "id": "pa-w18-q02",
+          "dimension": "procedural-fluency",
+          "retrieval_from_week": null,
+          "prompt": "Simplify 4x+6x.",
+          "answer": "10x",
+          "explanation": "Add coefficients of like terms."
+        },
+        {
+          "id": "pa-w18-q03",
+          "dimension": "multi-step-application",
+          "retrieval_from_week": null,
+          "prompt": "A service charges $6 plus $4/hour. Expression for h hours?",
+          "answer": "6+4h",
+          "explanation": "Fixed fee plus rate times hours."
+        },
+        {
+          "id": "pa-w18-q04",
+          "dimension": "multi-step-application",
+          "retrieval_from_week": null,
+          "prompt": "Expand 4(x+6).",
+          "answer": "4x+24",
+          "explanation": "Distribute to both terms."
+        },
+        {
+          "id": "pa-w18-q05",
+          "dimension": "representation-interpretation",
+          "retrieval_from_week": null,
+          "prompt": "In 4x+6, what is 4?",
+          "answer": "coefficient of x",
+          "explanation": "A coefficient multiplies a variable."
+        },
+        {
+          "id": "pa-w18-q06",
+          "dimension": "representation-interpretation",
+          "retrieval_from_week": null,
+          "prompt": "Which form exposes factors of x²+10x+24?",
+          "answer": "(x+4)(x+6)",
+          "explanation": "Factored form shows multiplicative structure."
+        },
+        {
+          "id": "pa-w18-q07",
+          "dimension": "error-analysis",
+          "retrieval_from_week": null,
+          "prompt": "A learner combines 4x+6 as 10x. Error?",
+          "answer": "Unlike terms cannot be combined",
+          "explanation": "Variable and constant terms are unlike."
+        },
+        {
+          "id": "pa-w18-q08",
+          "dimension": "error-analysis",
+          "retrieval_from_week": null,
+          "prompt": "A learner expands 4(x+6) as 4x+6. Error?",
+          "answer": "The factor must multiply every term inside",
+          "explanation": "Distributive property applies to every term."
+        },
+        {
+          "id": "pa-w18-q09",
+          "dimension": "transfer-reasoning",
+          "retrieval_from_week": null,
+          "prompt": "Are 2(x+6) and 2x+12 equivalent for every x?",
+          "answer": "yes",
+          "explanation": "Distributive property proves equality."
+        },
+        {
+          "id": "pa-w18-q10",
+          "dimension": "transfer-reasoning",
+          "retrieval_from_week": 17,
+          "prompt": "Why is scientific notation useful in models?",
+          "answer": "It makes extreme magnitudes easier to compare and compute without changing scale",
+          "explanation": "Scientific notation is a representation of magnitude."
+        }
+      ]
+    },
+    "19": {
+      "week": 19,
+      "unit": 7,
+      "title": "Substitution, Properties and Equivalent Expressions",
+      "domain": "algebra",
+      "current_count": 8,
+      "delayed_count": 2,
+      "retrieval_from_week": 17,
+      "questions": [
+        {
+          "id": "pa-w19-q01",
+          "dimension": "procedural-fluency",
+          "retrieval_from_week": 17,
+          "prompt": "Evaluate 3^4.",
+          "answer": "81",
+          "explanation": "Repeated multiplication."
+        },
+        {
+          "id": "pa-w19-q02",
+          "dimension": "procedural-fluency",
+          "retrieval_from_week": null,
+          "prompt": "Simplify 5x+7x.",
+          "answer": "12x",
+          "explanation": "Add coefficients of like terms."
+        },
+        {
+          "id": "pa-w19-q03",
+          "dimension": "multi-step-application",
+          "retrieval_from_week": null,
+          "prompt": "A service charges $7 plus $5/hour. Expression for h hours?",
+          "answer": "7+5h",
+          "explanation": "Fixed fee plus rate times hours."
+        },
+        {
+          "id": "pa-w19-q04",
+          "dimension": "multi-step-application",
+          "retrieval_from_week": null,
+          "prompt": "Expand 5(x+7).",
+          "answer": "5x+35",
+          "explanation": "Distribute to both terms."
+        },
+        {
+          "id": "pa-w19-q05",
+          "dimension": "representation-interpretation",
+          "retrieval_from_week": null,
+          "prompt": "In 5x+7, what is 5?",
+          "answer": "coefficient of x",
+          "explanation": "A coefficient multiplies a variable."
+        },
+        {
+          "id": "pa-w19-q06",
+          "dimension": "representation-interpretation",
+          "retrieval_from_week": null,
+          "prompt": "Which form exposes factors of x²+12x+35?",
+          "answer": "(x+5)(x+7)",
+          "explanation": "Factored form shows multiplicative structure."
+        },
+        {
+          "id": "pa-w19-q07",
+          "dimension": "error-analysis",
+          "retrieval_from_week": null,
+          "prompt": "A learner combines 5x+7 as 12x. Error?",
+          "answer": "Unlike terms cannot be combined",
+          "explanation": "Variable and constant terms are unlike."
+        },
+        {
+          "id": "pa-w19-q08",
+          "dimension": "error-analysis",
+          "retrieval_from_week": null,
+          "prompt": "A learner expands 5(x+7) as 5x+7. Error?",
+          "answer": "The factor must multiply every term inside",
+          "explanation": "Distributive property applies to every term."
+        },
+        {
+          "id": "pa-w19-q09",
+          "dimension": "transfer-reasoning",
+          "retrieval_from_week": null,
+          "prompt": "Are 2(x+7) and 2x+14 equivalent for every x?",
+          "answer": "yes",
+          "explanation": "Distributive property proves equality."
+        },
+        {
+          "id": "pa-w19-q10",
+          "dimension": "transfer-reasoning",
+          "retrieval_from_week": 17,
+          "prompt": "Why is scientific notation useful in models?",
+          "answer": "It makes extreme magnitudes easier to compare and compute without changing scale",
+          "explanation": "Scientific notation is a representation of magnitude."
+        }
+      ]
+    },
+    "20": {
+      "week": 20,
+      "unit": 7,
+      "title": "Combining Like Terms and Interpreting Algebraic Structure",
+      "domain": "algebra",
+      "current_count": 8,
+      "delayed_count": 2,
+      "retrieval_from_week": 17,
+      "questions": [
+        {
+          "id": "pa-w20-q01",
+          "dimension": "procedural-fluency",
+          "retrieval_from_week": 17,
+          "prompt": "Evaluate 3^4.",
+          "answer": "81",
+          "explanation": "Repeated multiplication."
+        },
+        {
+          "id": "pa-w20-q02",
+          "dimension": "procedural-fluency",
+          "retrieval_from_week": null,
+          "prompt": "Simplify 2x+3x.",
+          "answer": "5x",
+          "explanation": "Add coefficients of like terms."
+        },
+        {
+          "id": "pa-w20-q03",
+          "dimension": "multi-step-application",
+          "retrieval_from_week": null,
+          "prompt": "A service charges $3 plus $2/hour. Expression for h hours?",
+          "answer": "3+2h",
+          "explanation": "Fixed fee plus rate times hours."
+        },
+        {
+          "id": "pa-w20-q04",
+          "dimension": "multi-step-application",
+          "retrieval_from_week": null,
+          "prompt": "Expand 2(x+3).",
+          "answer": "2x+6",
+          "explanation": "Distribute to both terms."
+        },
+        {
+          "id": "pa-w20-q05",
+          "dimension": "representation-interpretation",
+          "retrieval_from_week": null,
+          "prompt": "In 2x+3, what is 2?",
+          "answer": "coefficient of x",
+          "explanation": "A coefficient multiplies a variable."
+        },
+        {
+          "id": "pa-w20-q06",
+          "dimension": "representation-interpretation",
+          "retrieval_from_week": null,
+          "prompt": "Which form exposes factors of x²+5x+6?",
+          "answer": "(x+2)(x+3)",
+          "explanation": "Factored form shows multiplicative structure."
+        },
+        {
+          "id": "pa-w20-q07",
+          "dimension": "error-analysis",
+          "retrieval_from_week": null,
+          "prompt": "A learner combines 2x+3 as 5x. Error?",
+          "answer": "Unlike terms cannot be combined",
+          "explanation": "Variable and constant terms are unlike."
+        },
+        {
+          "id": "pa-w20-q08",
+          "dimension": "error-analysis",
+          "retrieval_from_week": null,
+          "prompt": "A learner expands 2(x+3) as 2x+3. Error?",
+          "answer": "The factor must multiply every term inside",
+          "explanation": "Distributive property applies to every term."
+        },
+        {
+          "id": "pa-w20-q09",
+          "dimension": "transfer-reasoning",
+          "retrieval_from_week": null,
+          "prompt": "Are 2(x+3) and 2x+6 equivalent for every x?",
+          "answer": "yes",
+          "explanation": "Distributive property proves equality."
+        },
+        {
+          "id": "pa-w20-q10",
+          "dimension": "transfer-reasoning",
+          "retrieval_from_week": 17,
+          "prompt": "Why is scientific notation useful in models?",
+          "answer": "It makes extreme magnitudes easier to compare and compute without changing scale",
+          "explanation": "Scientific notation is a representation of magnitude."
+        }
+      ]
+    },
+    "21": {
+      "week": 21,
+      "unit": 8,
+      "title": "One-Step Equations and Balance Models",
+      "domain": "equations",
+      "current_count": 8,
+      "delayed_count": 2,
+      "retrieval_from_week": 20,
+      "questions": [
+        {
+          "id": "pa-w21-q01",
+          "dimension": "procedural-fluency",
+          "retrieval_from_week": 20,
+          "prompt": "Evaluate 2x+3 for x=3.",
+          "answer": "9",
+          "explanation": "Substitute then evaluate."
+        },
+        {
+          "id": "pa-w21-q02",
+          "dimension": "procedural-fluency",
+          "retrieval_from_week": null,
+          "prompt": "Solve x/3+6=11.",
+          "answer": "15",
+          "explanation": "Subtract b, then multiply by a."
+        },
+        {
+          "id": "pa-w21-q03",
+          "dimension": "multi-step-application",
+          "retrieval_from_week": null,
+          "prompt": "Taxi fee $6 plus $3/mile totals $21. Miles?",
+          "answer": "5",
+          "explanation": "Model b+am=c."
+        },
+        {
+          "id": "pa-w21-q04",
+          "dimension": "multi-step-application",
+          "retrieval_from_week": null,
+          "prompt": "If A=lw, solve for w.",
+          "answer": "A/l",
+          "explanation": "Divide by l when l≠0."
+        },
+        {
+          "id": "pa-w21-q05",
+          "dimension": "representation-interpretation",
+          "retrieval_from_week": null,
+          "prompt": "Which equation means '6 more than 3 times x is 21'?",
+          "answer": "3x+6=21",
+          "explanation": "Translate multiplication and addition."
+        },
+        {
+          "id": "pa-w21-q06",
+          "dimension": "representation-interpretation",
+          "retrieval_from_week": null,
+          "prompt": "What does an equation balance model show?",
+          "answer": "Equivalent operations on both sides preserve equality",
+          "explanation": "Equality is maintained by equivalent operations."
+        },
+        {
+          "id": "pa-w21-q07",
+          "dimension": "error-analysis",
+          "retrieval_from_week": null,
+          "prompt": "A learner divides only 3x by 3 in 3x+6=21. Error?",
+          "answer": "An operation must apply consistently to the entire side or after isolating the term",
+          "explanation": "Equivalent operations preserve full expressions."
+        },
+        {
+          "id": "pa-w21-q08",
+          "dimension": "error-analysis",
+          "retrieval_from_week": null,
+          "prompt": "A solution is not checked in the original equation. What risk remains?",
+          "answer": "An algebra or transcription error may go unnoticed",
+          "explanation": "Substitution verifies equality."
+        },
+        {
+          "id": "pa-w21-q09",
+          "dimension": "transfer-reasoning",
+          "retrieval_from_week": null,
+          "prompt": "For 3x+6=c, if c increases by 3, how does x change?",
+          "answer": "x increases by 1",
+          "explanation": "x=(c−b)/a."
+        },
+        {
+          "id": "pa-w21-q10",
+          "dimension": "transfer-reasoning",
+          "retrieval_from_week": 20,
+          "prompt": "Why rewrite an expression if its value is unchanged?",
+          "answer": "Different equivalent forms reveal different structure and may simplify reasoning",
+          "explanation": "Equivalent forms emphasize different features."
+        }
+      ]
+    },
+    "22": {
+      "week": 22,
+      "unit": 8,
+      "title": "Multistep Equations and Checking Solutions",
+      "domain": "equations",
+      "current_count": 8,
+      "delayed_count": 2,
+      "retrieval_from_week": 20,
+      "questions": [
+        {
+          "id": "pa-w22-q01",
+          "dimension": "procedural-fluency",
+          "retrieval_from_week": 20,
+          "prompt": "Evaluate 2x+3 for x=3.",
+          "answer": "9",
+          "explanation": "Substitute then evaluate."
+        },
+        {
+          "id": "pa-w22-q02",
+          "dimension": "procedural-fluency",
+          "retrieval_from_week": null,
+          "prompt": "Solve x/4+7=13.",
+          "answer": "24",
+          "explanation": "Subtract b, then multiply by a."
+        },
+        {
+          "id": "pa-w22-q03",
+          "dimension": "multi-step-application",
+          "retrieval_from_week": null,
+          "prompt": "Taxi fee $7 plus $4/mile totals $31. Miles?",
+          "answer": "6",
+          "explanation": "Model b+am=c."
+        },
+        {
+          "id": "pa-w22-q04",
+          "dimension": "multi-step-application",
+          "retrieval_from_week": null,
+          "prompt": "If A=lw, solve for w.",
+          "answer": "A/l",
+          "explanation": "Divide by l when l≠0."
+        },
+        {
+          "id": "pa-w22-q05",
+          "dimension": "representation-interpretation",
+          "retrieval_from_week": null,
+          "prompt": "Which equation means '7 more than 4 times x is 31'?",
+          "answer": "4x+7=31",
+          "explanation": "Translate multiplication and addition."
+        },
+        {
+          "id": "pa-w22-q06",
+          "dimension": "representation-interpretation",
+          "retrieval_from_week": null,
+          "prompt": "What does an equation balance model show?",
+          "answer": "Equivalent operations on both sides preserve equality",
+          "explanation": "Equality is maintained by equivalent operations."
+        },
+        {
+          "id": "pa-w22-q07",
+          "dimension": "error-analysis",
+          "retrieval_from_week": null,
+          "prompt": "A learner divides only 4x by 4 in 4x+7=31. Error?",
+          "answer": "An operation must apply consistently to the entire side or after isolating the term",
+          "explanation": "Equivalent operations preserve full expressions."
+        },
+        {
+          "id": "pa-w22-q08",
+          "dimension": "error-analysis",
+          "retrieval_from_week": null,
+          "prompt": "A solution is not checked in the original equation. What risk remains?",
+          "answer": "An algebra or transcription error may go unnoticed",
+          "explanation": "Substitution verifies equality."
+        },
+        {
+          "id": "pa-w22-q09",
+          "dimension": "transfer-reasoning",
+          "retrieval_from_week": null,
+          "prompt": "For 4x+7=c, if c increases by 4, how does x change?",
+          "answer": "x increases by 1",
+          "explanation": "x=(c−b)/a."
+        },
+        {
+          "id": "pa-w22-q10",
+          "dimension": "transfer-reasoning",
+          "retrieval_from_week": 20,
+          "prompt": "Why rewrite an expression if its value is unchanged?",
+          "answer": "Different equivalent forms reveal different structure and may simplify reasoning",
+          "explanation": "Equivalent forms emphasize different features."
+        }
+      ]
+    },
+    "23": {
+      "week": 23,
+      "unit": 8,
+      "title": "Formulas, Rearranging and Equation Modelling",
+      "domain": "equations",
+      "current_count": 8,
+      "delayed_count": 2,
+      "retrieval_from_week": 20,
+      "questions": [
+        {
+          "id": "pa-w23-q01",
+          "dimension": "procedural-fluency",
+          "retrieval_from_week": 20,
+          "prompt": "Evaluate 2x+3 for x=3.",
+          "answer": "9",
+          "explanation": "Substitute then evaluate."
+        },
+        {
+          "id": "pa-w23-q02",
+          "dimension": "procedural-fluency",
+          "retrieval_from_week": null,
+          "prompt": "Solve x/5+8=15.",
+          "answer": "35",
+          "explanation": "Subtract b, then multiply by a."
+        },
+        {
+          "id": "pa-w23-q03",
+          "dimension": "multi-step-application",
+          "retrieval_from_week": null,
+          "prompt": "Taxi fee $8 plus $5/mile totals $43. Miles?",
+          "answer": "7",
+          "explanation": "Model b+am=c."
+        },
+        {
+          "id": "pa-w23-q04",
+          "dimension": "multi-step-application",
+          "retrieval_from_week": null,
+          "prompt": "If A=lw, solve for w.",
+          "answer": "A/l",
+          "explanation": "Divide by l when l≠0."
+        },
+        {
+          "id": "pa-w23-q05",
+          "dimension": "representation-interpretation",
+          "retrieval_from_week": null,
+          "prompt": "Which equation means '8 more than 5 times x is 43'?",
+          "answer": "5x+8=43",
+          "explanation": "Translate multiplication and addition."
+        },
+        {
+          "id": "pa-w23-q06",
+          "dimension": "representation-interpretation",
+          "retrieval_from_week": null,
+          "prompt": "What does an equation balance model show?",
+          "answer": "Equivalent operations on both sides preserve equality",
+          "explanation": "Equality is maintained by equivalent operations."
+        },
+        {
+          "id": "pa-w23-q07",
+          "dimension": "error-analysis",
+          "retrieval_from_week": null,
+          "prompt": "A learner divides only 5x by 5 in 5x+8=43. Error?",
+          "answer": "An operation must apply consistently to the entire side or after isolating the term",
+          "explanation": "Equivalent operations preserve full expressions."
+        },
+        {
+          "id": "pa-w23-q08",
+          "dimension": "error-analysis",
+          "retrieval_from_week": null,
+          "prompt": "A solution is not checked in the original equation. What risk remains?",
+          "answer": "An algebra or transcription error may go unnoticed",
+          "explanation": "Substitution verifies equality."
+        },
+        {
+          "id": "pa-w23-q09",
+          "dimension": "transfer-reasoning",
+          "retrieval_from_week": null,
+          "prompt": "For 5x+8=c, if c increases by 5, how does x change?",
+          "answer": "x increases by 1",
+          "explanation": "x=(c−b)/a."
+        },
+        {
+          "id": "pa-w23-q10",
+          "dimension": "transfer-reasoning",
+          "retrieval_from_week": 20,
+          "prompt": "Why rewrite an expression if its value is unchanged?",
+          "answer": "Different equivalent forms reveal different structure and may simplify reasoning",
+          "explanation": "Equivalent forms emphasize different features."
+        }
+      ]
+    },
+    "24": {
+      "week": 24,
+      "unit": 9,
+      "title": "Inequality Symbols, Graphs and One-Step Inequalities",
+      "domain": "inequalities",
+      "current_count": 8,
+      "delayed_count": 2,
+      "retrieval_from_week": 23,
+      "questions": [
+        {
+          "id": "pa-w24-q01",
+          "dimension": "procedural-fluency",
+          "retrieval_from_week": 23,
+          "prompt": "Solve 5x+8=43.",
+          "answer": "7",
+          "explanation": "Undo the constant, then divide."
+        },
+        {
+          "id": "pa-w24-q02",
+          "dimension": "procedural-fluency",
+          "retrieval_from_week": null,
+          "prompt": "Solve −2x≤−20.",
+          "answer": "x≥10",
+          "explanation": "Divide by a negative and reverse the sign."
+        },
+        {
+          "id": "pa-w24-q03",
+          "dimension": "multi-step-application",
+          "retrieval_from_week": null,
+          "prompt": "Budget $27, fixed fee $7, each item $2. Greatest items?",
+          "answer": "10",
+          "explanation": "Solve b+an≤budget."
+        },
+        {
+          "id": "pa-w24-q04",
+          "dimension": "multi-step-application",
+          "retrieval_from_week": null,
+          "prompt": "Height must be at least 10 cm. Which condition?",
+          "answer": "h≥10",
+          "explanation": "At least includes equality."
+        },
+        {
+          "id": "pa-w24-q05",
+          "dimension": "representation-interpretation",
+          "retrieval_from_week": null,
+          "prompt": "Which number-line description matches x<10?",
+          "answer": "open dot at c, shade left",
+          "explanation": "Strict less-than excludes endpoint and goes left."
+        },
+        {
+          "id": "pa-w24-q06",
+          "dimension": "representation-interpretation",
+          "retrieval_from_week": null,
+          "prompt": "What does 7≤x≤10 mean?",
+          "answer": "x is between 7 and 10, inclusive",
+          "explanation": "Both boundaries included."
+        },
+        {
+          "id": "pa-w24-q07",
+          "dimension": "error-analysis",
+          "retrieval_from_week": null,
+          "prompt": "A learner divides an inequality by −3 but keeps the symbol. Error?",
+          "answer": "The inequality direction must reverse",
+          "explanation": "Negative scaling reverses order."
+        },
+        {
+          "id": "pa-w24-q08",
+          "dimension": "error-analysis",
+          "retrieval_from_week": null,
+          "prompt": "A learner reports 7.8 people as the maximum feasible count. Repair?",
+          "answer": "Use the greatest feasible whole number, 7",
+          "explanation": "Discrete contexts require integer interpretation."
+        },
+        {
+          "id": "pa-w24-q09",
+          "dimension": "transfer-reasoning",
+          "retrieval_from_week": null,
+          "prompt": "If x≤10, is x=11 a solution?",
+          "answer": "no",
+          "explanation": "Substitute into the condition."
+        },
+        {
+          "id": "pa-w24-q10",
+          "dimension": "transfer-reasoning",
+          "retrieval_from_week": 23,
+          "prompt": "Why isolate different variables in a formula?",
+          "answer": "The same relationship can answer for a different unknown",
+          "explanation": "Literal rearrangement changes viewpoint, not relationship."
+        }
+      ]
+    },
+    "25": {
+      "week": 25,
+      "unit": 9,
+      "title": "Multistep Inequalities and Contextual Constraints",
+      "domain": "inequalities",
+      "current_count": 8,
+      "delayed_count": 2,
+      "retrieval_from_week": 23,
+      "questions": [
+        {
+          "id": "pa-w25-q01",
+          "dimension": "procedural-fluency",
+          "retrieval_from_week": 23,
+          "prompt": "Solve 5x+8=43.",
+          "answer": "7",
+          "explanation": "Undo the constant, then divide."
+        },
+        {
+          "id": "pa-w25-q02",
+          "dimension": "procedural-fluency",
+          "retrieval_from_week": null,
+          "prompt": "Solve −3x≤−33.",
+          "answer": "x≥11",
+          "explanation": "Divide by a negative and reverse the sign."
+        },
+        {
+          "id": "pa-w25-q03",
+          "dimension": "multi-step-application",
+          "retrieval_from_week": null,
+          "prompt": "Budget $36, fixed fee $3, each item $3. Greatest items?",
+          "answer": "11",
+          "explanation": "Solve b+an≤budget."
+        },
+        {
+          "id": "pa-w25-q04",
+          "dimension": "multi-step-application",
+          "retrieval_from_week": null,
+          "prompt": "Height must be at least 11 cm. Which condition?",
+          "answer": "h≥11",
+          "explanation": "At least includes equality."
+        },
+        {
+          "id": "pa-w25-q05",
+          "dimension": "representation-interpretation",
+          "retrieval_from_week": null,
+          "prompt": "Which number-line description matches x<11?",
+          "answer": "open dot at c, shade left",
+          "explanation": "Strict less-than excludes endpoint and goes left."
+        },
+        {
+          "id": "pa-w25-q06",
+          "dimension": "representation-interpretation",
+          "retrieval_from_week": null,
+          "prompt": "What does 3≤x≤11 mean?",
+          "answer": "x is between 3 and 11, inclusive",
+          "explanation": "Both boundaries included."
+        },
+        {
+          "id": "pa-w25-q07",
+          "dimension": "error-analysis",
+          "retrieval_from_week": null,
+          "prompt": "A learner divides an inequality by −3 but keeps the symbol. Error?",
+          "answer": "The inequality direction must reverse",
+          "explanation": "Negative scaling reverses order."
+        },
+        {
+          "id": "pa-w25-q08",
+          "dimension": "error-analysis",
+          "retrieval_from_week": null,
+          "prompt": "A learner reports 7.8 people as the maximum feasible count. Repair?",
+          "answer": "Use the greatest feasible whole number, 7",
+          "explanation": "Discrete contexts require integer interpretation."
+        },
+        {
+          "id": "pa-w25-q09",
+          "dimension": "transfer-reasoning",
+          "retrieval_from_week": null,
+          "prompt": "If x≤11, is x=12 a solution?",
+          "answer": "no",
+          "explanation": "Substitute into the condition."
+        },
+        {
+          "id": "pa-w25-q10",
+          "dimension": "transfer-reasoning",
+          "retrieval_from_week": 23,
+          "prompt": "Why isolate different variables in a formula?",
+          "answer": "The same relationship can answer for a different unknown",
+          "explanation": "Literal rearrangement changes viewpoint, not relationship."
+        }
+      ]
+    },
+    "26": {
+      "week": 26,
+      "unit": 10,
+      "title": "Coordinate Plane and Ordered Pairs",
+      "domain": "functions",
+      "current_count": 8,
+      "delayed_count": 2,
+      "retrieval_from_week": 23,
+      "questions": [
+        {
+          "id": "pa-w26-q01",
+          "dimension": "procedural-fluency",
+          "retrieval_from_week": 23,
+          "prompt": "Solve 5x+8=43.",
+          "answer": "7",
+          "explanation": "Undo the constant, then divide."
+        },
+        {
+          "id": "pa-w26-q02",
+          "dimension": "procedural-fluency",
+          "retrieval_from_week": null,
+          "prompt": "Slope between (1,6) and (3,14)?",
+          "answer": "4",
+          "explanation": "Change in y divided by change in x."
+        },
+        {
+          "id": "pa-w26-q03",
+          "dimension": "multi-step-application",
+          "retrieval_from_week": null,
+          "prompt": "Service starts at 2 and rises 4/use. Cost after 5 uses?",
+          "answer": "22",
+          "explanation": "Use y=mx+b."
+        },
+        {
+          "id": "pa-w26-q04",
+          "dimension": "multi-step-application",
+          "retrieval_from_week": null,
+          "prompt": "A table rises 4 in y for each +1 in x. Rate of change?",
+          "answer": "4",
+          "explanation": "Constant first difference is slope."
+        },
+        {
+          "id": "pa-w26-q05",
+          "dimension": "representation-interpretation",
+          "retrieval_from_week": null,
+          "prompt": "In y=4x+2, y-intercept means?",
+          "answer": "output 2 when x=0",
+          "explanation": "Intercept is starting output."
+        },
+        {
+          "id": "pa-w26-q06",
+          "dimension": "representation-interpretation",
+          "retrieval_from_week": null,
+          "prompt": "What best shows whether rate of change is constant?",
+          "answer": "equal-step table or a straight-line graph",
+          "explanation": "Linear structure shows constant differences."
+        },
+        {
+          "id": "pa-w26-q07",
+          "dimension": "error-analysis",
+          "retrieval_from_week": null,
+          "prompt": "A learner computes slope as change in x/change in y. Error?",
+          "answer": "Slope is change in y divided by change in x",
+          "explanation": "Slope is rise/run."
+        },
+        {
+          "id": "pa-w26-q08",
+          "dimension": "error-analysis",
+          "retrieval_from_week": null,
+          "prompt": "A learner calls every increasing table linear. What else must hold?",
+          "answer": "Equal x-changes must produce constant y-changes",
+          "explanation": "Increasing alone is insufficient."
+        },
+        {
+          "id": "pa-w26-q09",
+          "dimension": "transfer-reasoning",
+          "retrieval_from_week": null,
+          "prompt": "Compare y=4x+2 and y=5x+2. Which grows faster?",
+          "answer": "y=5x+2",
+          "explanation": "Larger positive slope grows faster."
+        },
+        {
+          "id": "pa-w26-q10",
+          "dimension": "transfer-reasoning",
+          "retrieval_from_week": 23,
+          "prompt": "Why isolate different variables in a formula?",
+          "answer": "The same relationship can answer for a different unknown",
+          "explanation": "Literal rearrangement changes viewpoint, not relationship."
+        }
+      ]
+    },
+    "27": {
+      "week": 27,
+      "unit": 10,
+      "title": "Patterns, Tables and Rules",
+      "domain": "functions",
+      "current_count": 8,
+      "delayed_count": 2,
+      "retrieval_from_week": 26,
+      "questions": [
+        {
+          "id": "pa-w27-q01",
+          "dimension": "procedural-fluency",
+          "retrieval_from_week": 26,
+          "prompt": "For y=4x+2, find y at x=5.",
+          "answer": "22",
+          "explanation": "Substitute."
+        },
+        {
+          "id": "pa-w27-q02",
+          "dimension": "procedural-fluency",
+          "retrieval_from_week": null,
+          "prompt": "Slope between (1,8) and (3,18)?",
+          "answer": "5",
+          "explanation": "Change in y divided by change in x."
+        },
+        {
+          "id": "pa-w27-q03",
+          "dimension": "multi-step-application",
+          "retrieval_from_week": null,
+          "prompt": "Service starts at 3 and rises 5/use. Cost after 6 uses?",
+          "answer": "33",
+          "explanation": "Use y=mx+b."
+        },
+        {
+          "id": "pa-w27-q04",
+          "dimension": "multi-step-application",
+          "retrieval_from_week": null,
+          "prompt": "A table rises 5 in y for each +1 in x. Rate of change?",
+          "answer": "5",
+          "explanation": "Constant first difference is slope."
+        },
+        {
+          "id": "pa-w27-q05",
+          "dimension": "representation-interpretation",
+          "retrieval_from_week": null,
+          "prompt": "In y=5x+3, y-intercept means?",
+          "answer": "output 3 when x=0",
+          "explanation": "Intercept is starting output."
+        },
+        {
+          "id": "pa-w27-q06",
+          "dimension": "representation-interpretation",
+          "retrieval_from_week": null,
+          "prompt": "What best shows whether rate of change is constant?",
+          "answer": "equal-step table or a straight-line graph",
+          "explanation": "Linear structure shows constant differences."
+        },
+        {
+          "id": "pa-w27-q07",
+          "dimension": "error-analysis",
+          "retrieval_from_week": null,
+          "prompt": "A learner computes slope as change in x/change in y. Error?",
+          "answer": "Slope is change in y divided by change in x",
+          "explanation": "Slope is rise/run."
+        },
+        {
+          "id": "pa-w27-q08",
+          "dimension": "error-analysis",
+          "retrieval_from_week": null,
+          "prompt": "A learner calls every increasing table linear. What else must hold?",
+          "answer": "Equal x-changes must produce constant y-changes",
+          "explanation": "Increasing alone is insufficient."
+        },
+        {
+          "id": "pa-w27-q09",
+          "dimension": "transfer-reasoning",
+          "retrieval_from_week": null,
+          "prompt": "Compare y=5x+3 and y=6x+3. Which grows faster?",
+          "answer": "y=6x+3",
+          "explanation": "Larger positive slope grows faster."
+        },
+        {
+          "id": "pa-w27-q10",
+          "dimension": "transfer-reasoning",
+          "retrieval_from_week": 26,
+          "prompt": "Why can linear extrapolation be risky?",
+          "answer": "The relationship may change outside the observed domain",
+          "explanation": "Model assumptions may fail outside evidence."
+        }
+      ]
+    },
+    "28": {
+      "week": 28,
+      "unit": 10,
+      "title": "Slope as Rate of Change",
+      "domain": "functions",
+      "current_count": 8,
+      "delayed_count": 2,
+      "retrieval_from_week": 26,
+      "questions": [
+        {
+          "id": "pa-w28-q01",
+          "dimension": "procedural-fluency",
+          "retrieval_from_week": 26,
+          "prompt": "For y=4x+2, find y at x=5.",
+          "answer": "22",
+          "explanation": "Substitute."
+        },
+        {
+          "id": "pa-w28-q02",
+          "dimension": "procedural-fluency",
+          "retrieval_from_week": null,
+          "prompt": "Slope between (1,6) and (3,10)?",
+          "answer": "2",
+          "explanation": "Change in y divided by change in x."
+        },
+        {
+          "id": "pa-w28-q03",
+          "dimension": "multi-step-application",
+          "retrieval_from_week": null,
+          "prompt": "Service starts at 4 and rises 2/use. Cost after 3 uses?",
+          "answer": "10",
+          "explanation": "Use y=mx+b."
+        },
+        {
+          "id": "pa-w28-q04",
+          "dimension": "multi-step-application",
+          "retrieval_from_week": null,
+          "prompt": "A table rises 2 in y for each +1 in x. Rate of change?",
+          "answer": "2",
+          "explanation": "Constant first difference is slope."
+        },
+        {
+          "id": "pa-w28-q05",
+          "dimension": "representation-interpretation",
+          "retrieval_from_week": null,
+          "prompt": "In y=2x+4, y-intercept means?",
+          "answer": "output 4 when x=0",
+          "explanation": "Intercept is starting output."
+        },
+        {
+          "id": "pa-w28-q06",
+          "dimension": "representation-interpretation",
+          "retrieval_from_week": null,
+          "prompt": "What best shows whether rate of change is constant?",
+          "answer": "equal-step table or a straight-line graph",
+          "explanation": "Linear structure shows constant differences."
+        },
+        {
+          "id": "pa-w28-q07",
+          "dimension": "error-analysis",
+          "retrieval_from_week": null,
+          "prompt": "A learner computes slope as change in x/change in y. Error?",
+          "answer": "Slope is change in y divided by change in x",
+          "explanation": "Slope is rise/run."
+        },
+        {
+          "id": "pa-w28-q08",
+          "dimension": "error-analysis",
+          "retrieval_from_week": null,
+          "prompt": "A learner calls every increasing table linear. What else must hold?",
+          "answer": "Equal x-changes must produce constant y-changes",
+          "explanation": "Increasing alone is insufficient."
+        },
+        {
+          "id": "pa-w28-q09",
+          "dimension": "transfer-reasoning",
+          "retrieval_from_week": null,
+          "prompt": "Compare y=2x+4 and y=3x+4. Which grows faster?",
+          "answer": "y=3x+4",
+          "explanation": "Larger positive slope grows faster."
+        },
+        {
+          "id": "pa-w28-q10",
+          "dimension": "transfer-reasoning",
+          "retrieval_from_week": 26,
+          "prompt": "Why can linear extrapolation be risky?",
+          "answer": "The relationship may change outside the observed domain",
+          "explanation": "Model assumptions may fail outside evidence."
+        }
+      ]
+    },
+    "29": {
+      "week": 29,
+      "unit": 10,
+      "title": "Linear Relationships, Functions and Readiness for Algebra I",
+      "domain": "functions",
+      "current_count": 8,
+      "delayed_count": 2,
+      "retrieval_from_week": 26,
+      "questions": [
+        {
+          "id": "pa-w29-q01",
+          "dimension": "procedural-fluency",
+          "retrieval_from_week": 26,
+          "prompt": "For y=4x+2, find y at x=5.",
+          "answer": "22",
+          "explanation": "Substitute."
+        },
+        {
+          "id": "pa-w29-q02",
+          "dimension": "procedural-fluency",
+          "retrieval_from_week": null,
+          "prompt": "Slope between (1,8) and (3,14)?",
+          "answer": "3",
+          "explanation": "Change in y divided by change in x."
+        },
+        {
+          "id": "pa-w29-q03",
+          "dimension": "multi-step-application",
+          "retrieval_from_week": null,
+          "prompt": "Service starts at 5 and rises 3/use. Cost after 4 uses?",
+          "answer": "17",
+          "explanation": "Use y=mx+b."
+        },
+        {
+          "id": "pa-w29-q04",
+          "dimension": "multi-step-application",
+          "retrieval_from_week": null,
+          "prompt": "A table rises 3 in y for each +1 in x. Rate of change?",
+          "answer": "3",
+          "explanation": "Constant first difference is slope."
+        },
+        {
+          "id": "pa-w29-q05",
+          "dimension": "representation-interpretation",
+          "retrieval_from_week": null,
+          "prompt": "In y=3x+5, y-intercept means?",
+          "answer": "output 5 when x=0",
+          "explanation": "Intercept is starting output."
+        },
+        {
+          "id": "pa-w29-q06",
+          "dimension": "representation-interpretation",
+          "retrieval_from_week": null,
+          "prompt": "What best shows whether rate of change is constant?",
+          "answer": "equal-step table or a straight-line graph",
+          "explanation": "Linear structure shows constant differences."
+        },
+        {
+          "id": "pa-w29-q07",
+          "dimension": "error-analysis",
+          "retrieval_from_week": null,
+          "prompt": "A learner computes slope as change in x/change in y. Error?",
+          "answer": "Slope is change in y divided by change in x",
+          "explanation": "Slope is rise/run."
+        },
+        {
+          "id": "pa-w29-q08",
+          "dimension": "error-analysis",
+          "retrieval_from_week": null,
+          "prompt": "A learner calls every increasing table linear. What else must hold?",
+          "answer": "Equal x-changes must produce constant y-changes",
+          "explanation": "Increasing alone is insufficient."
+        },
+        {
+          "id": "pa-w29-q09",
+          "dimension": "transfer-reasoning",
+          "retrieval_from_week": null,
+          "prompt": "Compare y=3x+5 and y=4x+5. Which grows faster?",
+          "answer": "y=4x+5",
+          "explanation": "Larger positive slope grows faster."
+        },
+        {
+          "id": "pa-w29-q10",
+          "dimension": "transfer-reasoning",
+          "retrieval_from_week": 26,
+          "prompt": "Why can linear extrapolation be risky?",
+          "answer": "The relationship may change outside the observed domain",
+          "explanation": "Model assumptions may fail outside evidence."
+        }
+      ]
+    },
+    "30": {
+      "week": 30,
+      "unit": 11,
+      "title": "Perimeter, Area and Angle Relationships",
+      "domain": "geometry",
+      "current_count": 8,
+      "delayed_count": 2,
+      "retrieval_from_week": 29,
+      "questions": [
+        {
+          "id": "pa-w30-q01",
+          "dimension": "procedural-fluency",
+          "retrieval_from_week": 29,
+          "prompt": "For y=3x+5, find y at x=4.",
+          "answer": "17",
+          "explanation": "Substitute."
+        },
+        {
+          "id": "pa-w30-q02",
+          "dimension": "procedural-fluency",
+          "retrieval_from_week": null,
+          "prompt": "Right triangle legs 15 and 20. Hypotenuse?",
+          "answer": "25",
+          "explanation": "Scaled 3-4-5 triangle."
+        },
+        {
+          "id": "pa-w30-q03",
+          "dimension": "multi-step-application",
+          "retrieval_from_week": null,
+          "prompt": "Room 4 m by 5 m drawn at 1 cm=1 m. Drawing dimensions?",
+          "answer": "4 cm by 5 cm",
+          "explanation": "Apply scale consistently."
+        },
+        {
+          "id": "pa-w30-q04",
+          "dimension": "multi-step-application",
+          "retrieval_from_week": null,
+          "prompt": "Rectangular prism 4 by 5 by 2 units. Volume?",
+          "answer": "40 cubic units",
+          "explanation": "Volume=lwh."
+        },
+        {
+          "id": "pa-w30-q05",
+          "dimension": "representation-interpretation",
+          "retrieval_from_week": null,
+          "prompt": "Appropriate unit for floor area?",
+          "answer": "square meters",
+          "explanation": "Area uses squared length."
+        },
+        {
+          "id": "pa-w30-q06",
+          "dimension": "representation-interpretation",
+          "retrieval_from_week": null,
+          "prompt": "Best representation for exact spatial relationships?",
+          "answer": "labeled scale drawing with units",
+          "explanation": "Scale and labels make relationships auditable."
+        },
+        {
+          "id": "pa-w30-q07",
+          "dimension": "error-analysis",
+          "retrieval_from_week": null,
+          "prompt": "A learner doubles both rectangle dimensions and says area doubles. Error?",
+          "answer": "Area quadruples because it scales by the square of the length factor",
+          "explanation": "Two dimensions each gain factor 2."
+        },
+        {
+          "id": "pa-w30-q08",
+          "dimension": "error-analysis",
+          "retrieval_from_week": null,
+          "prompt": "A learner reports 36 m for area. What is wrong?",
+          "answer": "Area requires square units such as m²",
+          "explanation": "Dimensional units matter."
+        },
+        {
+          "id": "pa-w30-q09",
+          "dimension": "transfer-reasoning",
+          "retrieval_from_week": null,
+          "prompt": "If all lengths scale by 3, area scales by?",
+          "answer": "9",
+          "explanation": "Area factor is 3²."
+        },
+        {
+          "id": "pa-w30-q10",
+          "dimension": "transfer-reasoning",
+          "retrieval_from_week": 29,
+          "prompt": "Why can linear extrapolation be risky?",
+          "answer": "The relationship may change outside the observed domain",
+          "explanation": "Model assumptions may fail outside evidence."
+        }
+      ]
+    },
+    "31": {
+      "week": 31,
+      "unit": 11,
+      "title": "Surface Area, Volume and Unit Conversion",
+      "domain": "geometry",
+      "current_count": 8,
+      "delayed_count": 2,
+      "retrieval_from_week": 29,
+      "questions": [
+        {
+          "id": "pa-w31-q01",
+          "dimension": "procedural-fluency",
+          "retrieval_from_week": 29,
+          "prompt": "For y=3x+5, find y at x=4.",
+          "answer": "17",
+          "explanation": "Substitute."
+        },
+        {
+          "id": "pa-w31-q02",
+          "dimension": "procedural-fluency",
+          "retrieval_from_week": null,
+          "prompt": "Right triangle legs 18 and 24. Hypotenuse?",
+          "answer": "30",
+          "explanation": "Scaled 3-4-5 triangle."
+        },
+        {
+          "id": "pa-w31-q03",
+          "dimension": "multi-step-application",
+          "retrieval_from_week": null,
+          "prompt": "Room 5 m by 6 m drawn at 1 cm=1 m. Drawing dimensions?",
+          "answer": "5 cm by 6 cm",
+          "explanation": "Apply scale consistently."
+        },
+        {
+          "id": "pa-w31-q04",
+          "dimension": "multi-step-application",
+          "retrieval_from_week": null,
+          "prompt": "Rectangular prism 5 by 6 by 2 units. Volume?",
+          "answer": "60 cubic units",
+          "explanation": "Volume=lwh."
+        },
+        {
+          "id": "pa-w31-q05",
+          "dimension": "representation-interpretation",
+          "retrieval_from_week": null,
+          "prompt": "Appropriate unit for floor area?",
+          "answer": "square meters",
+          "explanation": "Area uses squared length."
+        },
+        {
+          "id": "pa-w31-q06",
+          "dimension": "representation-interpretation",
+          "retrieval_from_week": null,
+          "prompt": "Best representation for exact spatial relationships?",
+          "answer": "labeled scale drawing with units",
+          "explanation": "Scale and labels make relationships auditable."
+        },
+        {
+          "id": "pa-w31-q07",
+          "dimension": "error-analysis",
+          "retrieval_from_week": null,
+          "prompt": "A learner doubles both rectangle dimensions and says area doubles. Error?",
+          "answer": "Area quadruples because it scales by the square of the length factor",
+          "explanation": "Two dimensions each gain factor 2."
+        },
+        {
+          "id": "pa-w31-q08",
+          "dimension": "error-analysis",
+          "retrieval_from_week": null,
+          "prompt": "A learner reports 36 m for area. What is wrong?",
+          "answer": "Area requires square units such as m²",
+          "explanation": "Dimensional units matter."
+        },
+        {
+          "id": "pa-w31-q09",
+          "dimension": "transfer-reasoning",
+          "retrieval_from_week": null,
+          "prompt": "If all lengths scale by 3, area scales by?",
+          "answer": "9",
+          "explanation": "Area factor is 3²."
+        },
+        {
+          "id": "pa-w31-q10",
+          "dimension": "transfer-reasoning",
+          "retrieval_from_week": 29,
+          "prompt": "Why can linear extrapolation be risky?",
+          "answer": "The relationship may change outside the observed domain",
+          "explanation": "Model assumptions may fail outside evidence."
+        }
+      ]
+    },
+    "32": {
+      "week": 32,
+      "unit": 11,
+      "title": "Scale, Similarity, Pythagorean Reasoning and Coordinate Geometry",
+      "domain": "geometry",
+      "current_count": 8,
+      "delayed_count": 2,
+      "retrieval_from_week": 29,
+      "questions": [
+        {
+          "id": "pa-w32-q01",
+          "dimension": "procedural-fluency",
+          "retrieval_from_week": 29,
+          "prompt": "For y=3x+5, find y at x=4.",
+          "answer": "17",
+          "explanation": "Substitute."
+        },
+        {
+          "id": "pa-w32-q02",
+          "dimension": "procedural-fluency",
+          "retrieval_from_week": null,
+          "prompt": "Right triangle legs 9 and 12. Hypotenuse?",
+          "answer": "15",
+          "explanation": "Scaled 3-4-5 triangle."
+        },
+        {
+          "id": "pa-w32-q03",
+          "dimension": "multi-step-application",
+          "retrieval_from_week": null,
+          "prompt": "Room 6 m by 3 m drawn at 1 cm=1 m. Drawing dimensions?",
+          "answer": "6 cm by 3 cm",
+          "explanation": "Apply scale consistently."
+        },
+        {
+          "id": "pa-w32-q04",
+          "dimension": "multi-step-application",
+          "retrieval_from_week": null,
+          "prompt": "Rectangular prism 6 by 3 by 2 units. Volume?",
+          "answer": "36 cubic units",
+          "explanation": "Volume=lwh."
+        },
+        {
+          "id": "pa-w32-q05",
+          "dimension": "representation-interpretation",
+          "retrieval_from_week": null,
+          "prompt": "Appropriate unit for floor area?",
+          "answer": "square meters",
+          "explanation": "Area uses squared length."
+        },
+        {
+          "id": "pa-w32-q06",
+          "dimension": "representation-interpretation",
+          "retrieval_from_week": null,
+          "prompt": "Best representation for exact spatial relationships?",
+          "answer": "labeled scale drawing with units",
+          "explanation": "Scale and labels make relationships auditable."
+        },
+        {
+          "id": "pa-w32-q07",
+          "dimension": "error-analysis",
+          "retrieval_from_week": null,
+          "prompt": "A learner doubles both rectangle dimensions and says area doubles. Error?",
+          "answer": "Area quadruples because it scales by the square of the length factor",
+          "explanation": "Two dimensions each gain factor 2."
+        },
+        {
+          "id": "pa-w32-q08",
+          "dimension": "error-analysis",
+          "retrieval_from_week": null,
+          "prompt": "A learner reports 36 m for area. What is wrong?",
+          "answer": "Area requires square units such as m²",
+          "explanation": "Dimensional units matter."
+        },
+        {
+          "id": "pa-w32-q09",
+          "dimension": "transfer-reasoning",
+          "retrieval_from_week": null,
+          "prompt": "If all lengths scale by 3, area scales by?",
+          "answer": "9",
+          "explanation": "Area factor is 3²."
+        },
+        {
+          "id": "pa-w32-q10",
+          "dimension": "transfer-reasoning",
+          "retrieval_from_week": 29,
+          "prompt": "Why can linear extrapolation be risky?",
+          "answer": "The relationship may change outside the observed domain",
+          "explanation": "Model assumptions may fail outside evidence."
+        }
+      ]
+    },
+    "33": {
+      "week": 33,
+      "unit": 12,
+      "title": "Distributions and Measures of Center",
+      "domain": "data",
+      "current_count": 8,
+      "delayed_count": 2,
+      "retrieval_from_week": 32,
+      "questions": [
+        {
+          "id": "pa-w33-q01",
+          "dimension": "procedural-fluency",
+          "retrieval_from_week": 32,
+          "prompt": "Area of rectangle 6 m by 3 m?",
+          "answer": "18 m²",
+          "explanation": "Area=length×width; perimeter uses linear units, area uses square units, and volume uses cubic units."
+        },
+        {
+          "id": "pa-w33-q02",
+          "dimension": "procedural-fluency",
+          "retrieval_from_week": null,
+          "prompt": "Range of 7, 10, 15?",
+          "answer": "8",
+          "explanation": "Max−min."
+        },
+        {
+          "id": "pa-w33-q03",
+          "dimension": "multi-step-application",
+          "retrieval_from_week": null,
+          "prompt": "Fair die: P(even)?",
+          "answer": "1/2",
+          "explanation": "Three of six outcomes."
+        },
+        {
+          "id": "pa-w33-q04",
+          "dimension": "multi-step-application",
+          "retrieval_from_week": null,
+          "prompt": "Bag has 7 blue and 7 red counters. P(blue)?",
+          "answer": "1/2",
+          "explanation": "Half are blue."
+        },
+        {
+          "id": "pa-w33-q05",
+          "dimension": "representation-interpretation",
+          "retrieval_from_week": null,
+          "prompt": "Best display for shape and spread of one numerical distribution?",
+          "answer": "dot plot or histogram",
+          "explanation": "These show distribution shape."
+        },
+        {
+          "id": "pa-w33-q06",
+          "dimension": "representation-interpretation",
+          "retrieval_from_week": null,
+          "prompt": "Same mean but very different ranges means?",
+          "answer": "Equal center does not imply equal spread",
+          "explanation": "Center and spread differ."
+        },
+        {
+          "id": "pa-w33-q07",
+          "dimension": "error-analysis",
+          "retrieval_from_week": null,
+          "prompt": "Only volunteers from one club represent whole school. Concern?",
+          "answer": "selection bias",
+          "explanation": "Volunteer group may not represent target."
+        },
+        {
+          "id": "pa-w33-q08",
+          "dimension": "error-analysis",
+          "retrieval_from_week": null,
+          "prompt": "Truncated y-axis exaggerates difference. Inspect?",
+          "answer": "axis scale and baseline",
+          "explanation": "Scale can distort perception."
+        },
+        {
+          "id": "pa-w33-q09",
+          "dimension": "transfer-reasoning",
+          "retrieval_from_week": null,
+          "prompt": "Dataset A range 4, Dataset B range 20, similar means. More variable by range?",
+          "answer": "Dataset B",
+          "explanation": "Larger range means more spread by that measure."
+        },
+        {
+          "id": "pa-w33-q10",
+          "dimension": "transfer-reasoning",
+          "retrieval_from_week": 32,
+          "prompt": "Why report measurement precision or tolerance?",
+          "answer": "Measured evidence has limited precision and should not imply false certainty",
+          "explanation": "Responsible measurement distinguishes exact theory from measured data."
+        }
+      ]
+    },
+    "34": {
+      "week": 34,
+      "unit": 12,
+      "title": "Data Displays, Spread and Misleading Graphs",
+      "domain": "data",
+      "current_count": 8,
+      "delayed_count": 2,
+      "retrieval_from_week": 32,
+      "questions": [
+        {
+          "id": "pa-w34-q01",
+          "dimension": "procedural-fluency",
+          "retrieval_from_week": 32,
+          "prompt": "Area of rectangle 6 m by 3 m?",
+          "answer": "18 m²",
+          "explanation": "Area=length×width; perimeter uses linear units, area uses square units, and volume uses cubic units."
+        },
+        {
+          "id": "pa-w34-q02",
+          "dimension": "procedural-fluency",
+          "retrieval_from_week": null,
+          "prompt": "Range of 8, 11, 16?",
+          "answer": "8",
+          "explanation": "Max−min."
+        },
+        {
+          "id": "pa-w34-q03",
+          "dimension": "multi-step-application",
+          "retrieval_from_week": null,
+          "prompt": "Fair die: P(even)?",
+          "answer": "1/2",
+          "explanation": "Three of six outcomes."
+        },
+        {
+          "id": "pa-w34-q04",
+          "dimension": "multi-step-application",
+          "retrieval_from_week": null,
+          "prompt": "Bag has 8 blue and 8 red counters. P(blue)?",
+          "answer": "1/2",
+          "explanation": "Half are blue."
+        },
+        {
+          "id": "pa-w34-q05",
+          "dimension": "representation-interpretation",
+          "retrieval_from_week": null,
+          "prompt": "Best display for shape and spread of one numerical distribution?",
+          "answer": "dot plot or histogram",
+          "explanation": "These show distribution shape."
+        },
+        {
+          "id": "pa-w34-q06",
+          "dimension": "representation-interpretation",
+          "retrieval_from_week": null,
+          "prompt": "Same mean but very different ranges means?",
+          "answer": "Equal center does not imply equal spread",
+          "explanation": "Center and spread differ."
+        },
+        {
+          "id": "pa-w34-q07",
+          "dimension": "error-analysis",
+          "retrieval_from_week": null,
+          "prompt": "Only volunteers from one club represent whole school. Concern?",
+          "answer": "selection bias",
+          "explanation": "Volunteer group may not represent target."
+        },
+        {
+          "id": "pa-w34-q08",
+          "dimension": "error-analysis",
+          "retrieval_from_week": null,
+          "prompt": "Truncated y-axis exaggerates difference. Inspect?",
+          "answer": "axis scale and baseline",
+          "explanation": "Scale can distort perception."
+        },
+        {
+          "id": "pa-w34-q09",
+          "dimension": "transfer-reasoning",
+          "retrieval_from_week": null,
+          "prompt": "Dataset A range 4, Dataset B range 20, similar means. More variable by range?",
+          "answer": "Dataset B",
+          "explanation": "Larger range means more spread by that measure."
+        },
+        {
+          "id": "pa-w34-q10",
+          "dimension": "transfer-reasoning",
+          "retrieval_from_week": 32,
+          "prompt": "Why report measurement precision or tolerance?",
+          "answer": "Measured evidence has limited precision and should not imply false certainty",
+          "explanation": "Responsible measurement distinguishes exact theory from measured data."
+        }
+      ]
+    },
+    "35": {
+      "week": 35,
+      "unit": 12,
+      "title": "Probability, Sampling and Data Decisions",
+      "domain": "data",
+      "current_count": 8,
+      "delayed_count": 2,
+      "retrieval_from_week": 32,
+      "questions": [
+        {
+          "id": "pa-w35-q01",
+          "dimension": "procedural-fluency",
+          "retrieval_from_week": 32,
+          "prompt": "Area of rectangle 6 m by 3 m?",
+          "answer": "18 m²",
+          "explanation": "Area=length×width; perimeter uses linear units, area uses square units, and volume uses cubic units."
+        },
+        {
+          "id": "pa-w35-q02",
+          "dimension": "procedural-fluency",
+          "retrieval_from_week": null,
+          "prompt": "Range of 4, 7, 12?",
+          "answer": "8",
+          "explanation": "Max−min."
+        },
+        {
+          "id": "pa-w35-q03",
+          "dimension": "multi-step-application",
+          "retrieval_from_week": null,
+          "prompt": "Fair die: P(even)?",
+          "answer": "1/2",
+          "explanation": "Three of six outcomes."
+        },
+        {
+          "id": "pa-w35-q04",
+          "dimension": "multi-step-application",
+          "retrieval_from_week": null,
+          "prompt": "Bag has 4 blue and 4 red counters. P(blue)?",
+          "answer": "1/2",
+          "explanation": "Half are blue."
+        },
+        {
+          "id": "pa-w35-q05",
+          "dimension": "representation-interpretation",
+          "retrieval_from_week": null,
+          "prompt": "Best display for shape and spread of one numerical distribution?",
+          "answer": "dot plot or histogram",
+          "explanation": "These show distribution shape."
+        },
+        {
+          "id": "pa-w35-q06",
+          "dimension": "representation-interpretation",
+          "retrieval_from_week": null,
+          "prompt": "Same mean but very different ranges means?",
+          "answer": "Equal center does not imply equal spread",
+          "explanation": "Center and spread differ."
+        },
+        {
+          "id": "pa-w35-q07",
+          "dimension": "error-analysis",
+          "retrieval_from_week": null,
+          "prompt": "Only volunteers from one club represent whole school. Concern?",
+          "answer": "selection bias",
+          "explanation": "Volunteer group may not represent target."
+        },
+        {
+          "id": "pa-w35-q08",
+          "dimension": "error-analysis",
+          "retrieval_from_week": null,
+          "prompt": "Truncated y-axis exaggerates difference. Inspect?",
+          "answer": "axis scale and baseline",
+          "explanation": "Scale can distort perception."
+        },
+        {
+          "id": "pa-w35-q09",
+          "dimension": "transfer-reasoning",
+          "retrieval_from_week": null,
+          "prompt": "Dataset A range 4, Dataset B range 20, similar means. More variable by range?",
+          "answer": "Dataset B",
+          "explanation": "Larger range means more spread by that measure."
+        },
+        {
+          "id": "pa-w35-q10",
+          "dimension": "transfer-reasoning",
+          "retrieval_from_week": 32,
+          "prompt": "Why report measurement precision or tolerance?",
+          "answer": "Measured evidence has limited precision and should not imply false certainty",
+          "explanation": "Responsible measurement distinguishes exact theory from measured data."
+        }
+      ]
+    },
+    "36": {
+      "week": 36,
+      "unit": 13,
+      "title": "Mathematical Modelling Capstone and Algebra I Readiness Defense",
+      "domain": "modeling",
+      "current_count": 8,
+      "delayed_count": 2,
+      "retrieval_from_week": 35,
+      "questions": [
+        {
+          "id": "pa-w36-q01",
+          "dimension": "procedural-fluency",
+          "retrieval_from_week": 35,
+          "prompt": "Mean of 4, 6, 8?",
+          "answer": "6",
+          "explanation": "Middle value is mean of symmetric values."
+        },
+        {
+          "id": "pa-w36-q02",
+          "dimension": "procedural-fluency",
+          "retrieval_from_week": null,
+          "prompt": "For C=100+3n, fixed cost?",
+          "answer": "100",
+          "explanation": "Constant term."
+        },
+        {
+          "id": "pa-w36-q03",
+          "dimension": "multi-step-application",
+          "retrieval_from_week": null,
+          "prompt": "Budget $265 under C=100+3n. Largest whole n?",
+          "answer": "55",
+          "explanation": "Solve the constraint."
+        },
+        {
+          "id": "pa-w36-q04",
+          "dimension": "multi-step-application",
+          "retrieval_from_week": null,
+          "prompt": "If rate 3 changes to 4, how much does C change at n=45?",
+          "answer": "45",
+          "explanation": "One extra dollar/unit times n units."
+        },
+        {
+          "id": "pa-w36-q05",
+          "dimension": "representation-interpretation",
+          "retrieval_from_week": null,
+          "prompt": "Most reproducible report?",
+          "answer": "defines variables, units, data, equation, assumptions, and validation",
+          "explanation": "Reproduction requires method details."
+        },
+        {
+          "id": "pa-w36-q06",
+          "dimension": "representation-interpretation",
+          "retrieval_from_week": null,
+          "prompt": "What does sensitivity analysis show?",
+          "answer": "how outputs change when inputs or assumptions change",
+          "explanation": "It probes dependence on uncertain inputs."
+        },
+        {
+          "id": "pa-w36-q07",
+          "dimension": "error-analysis",
+          "retrieval_from_week": null,
+          "prompt": "A model adds dollars and people. First problem?",
+          "answer": "incompatible units",
+          "explanation": "Added terms need compatible units."
+        },
+        {
+          "id": "pa-w36-q08",
+          "dimension": "error-analysis",
+          "retrieval_from_week": null,
+          "prompt": "A model fits current data, so learner claims it is valid forever. Missing?",
+          "answer": "domain and limitation analysis",
+          "explanation": "Good fit does not justify unlimited extrapolation."
+        },
+        {
+          "id": "pa-w36-q09",
+          "dimension": "transfer-reasoning",
+          "retrieval_from_week": null,
+          "prompt": "Why separate recommendation from numerical result?",
+          "answer": "Decisions also depend on assumptions, uncertainty, constraints, and values",
+          "explanation": "Evidence supports but does not dictate all decisions."
+        },
+        {
+          "id": "pa-w36-q10",
+          "dimension": "transfer-reasoning",
+          "retrieval_from_week": 35,
+          "prompt": "Why doesn't a huge sample automatically remove bias?",
+          "answer": "Systematic selection flaws can persist as sample size grows",
+          "explanation": "Size reduces random variability, not systematic bias."
+        }
+      ]
+    }
+  }
+}
