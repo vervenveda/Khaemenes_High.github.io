@@ -361,7 +361,7 @@ body.math-assessment-surface .app>.main{
 }
 body.math-assessment-surface .app>.main>.tabs{display:none!important}
 body.math-assessment-surface .app>.main>.hero{
-  margin:-26px -18px 20px!important;
+  display:none!important;
 }
 body.math-assessment-surface #assessmentWorkspace{
   padding:24px!important;
