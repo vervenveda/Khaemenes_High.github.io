@@ -74,7 +74,7 @@ function run(){
  const A=window.KhaemenesAlgebra1MasteryAuthority,p=prerequisites(A);if(p){lock(p.title,p.detail,p.href);return}
  const quotas=lessons.map((lesson,index)=>({lesson:Number(lesson.number),need:lessonQuota(index),available:eligiblePool.filter(q=>Number(q.lesson)===Number(lesson.number)).length}));
  const capstoneDepthCoverage=lessons.map(lesson=>({lesson:Number(lesson.number),available:eligiblePool.filter(q=>Number(q.lesson)===Number(lesson.number)&&q.capstoneDepth==="quantitative").length}));
- const targetPoolSize=Number(R.unit)===11?120:Number(R.unit)===13?80:60;
+ const targetPoolSize=Number(R.unit)===10?80:Number(R.unit)===11?120:Number(R.unit)===13?80:60;
  const complete=eligiblePool.length>=targetPoolSize&&quotas.every(x=>x.available>=x.need*2)&&(Number(R.unit)!==13||capstoneDepthCoverage.every(x=>x.available>=4));
  const existing=state(),last=existing.attempts[existing.attempts.length-1],initialPrevious=Array.isArray(last?.items)?last.items:Array.isArray(last?.item_ids)?last.item_ids:[];
  let graded=false,attemptNumber=existing.attempts.length+1,previousIds=[...initialPrevious],current=[],formSeed=0;
