@@ -4547,13 +4547,13 @@ function prepareQuestion(q){
 function ensureWeeklyQuizDraft(w,r){
   const sourceIds=w.quiz.map(q=>q[3]).filter(Boolean);
   const prior=r.quiz.draft;
-  const valid=prior&&prior.schema==="prealgebra-weekly-mastery-draft-v1"&&prior.week===w.week&&Array.isArray(prior.questions)&&prior.questions.length===10&&
+  const valid=prior&&prior.schema==="prealgebra-weekly-mastery-draft-v1"&&prior.assessmentVersion===WEEKLY_MASTERY_VERSION&&prior.week===w.week&&Array.isArray(prior.questions)&&prior.questions.length===10&&
     prior.questions.every(q=>q?.id)&&sourceIds.length===10&&prior.questions.every(q=>sourceIds.includes(q.id));
   if(valid){
     prior.answers??={};prior.work??={};activeQuiz=prior.questions;return prior;
   }
   const questions=w.quiz.map(prepareQuestion);
-  const draft={schema:"prealgebra-weekly-mastery-draft-v1",week:w.week,createdAt:new Date().toISOString(),questions,answers:{},work:{}};
+  const draft={schema:"prealgebra-weekly-mastery-draft-v1",assessmentVersion:WEEKLY_MASTERY_VERSION,week:w.week,createdAt:new Date().toISOString(),questions,answers:{},work:{}};
   r.quiz.draft=draft;activeQuiz=questions;
   if(!save())console.warn("Pre-Algebra weekly mastery draft could not be verified as persistent.");
   return draft;
