@@ -2,6 +2,7 @@
 
 | Date | Type | Entry | State |
 | --- | --- | --- | --- |
+| 2026-11-18 | literary topology · canonical architecture · cross-grade navigation | [English 9–12 literary toolkits, Citation Studio, left toolbar and lessons learned](logs/2026/11/2026-11-18-english9-12-literary-topology-and-canonical-layout.md) | Repository changes committed; browser performance, 9–12 interactions and protected-assessment regression HOLD |
 | 2026-11-18 | source audit · instructional upgrade · accessibility | [English 9 Unit 01 interactive worksheet, keyboard/touch, export and human-reviewed evidence](logs/2026/11/2026-11-18-english9-unit01-interactive-worksheet.md) | Page + links committed; browser/device QA HOLD; mastery gate untouched |
 | 2026-11-18 | forensic release integrity · six scoped repairs | [Phase 1 release-gate audit and repair](logs/2026/11/2026-11-18-phase1-release-gate-forensic-repair.md) | Public entry, dual ticker, release head, course matrix PASS; other CI and browser acceptance HOLD |
 | 2026-11-17 | architecture · stable blueprint · course contracts | [High School landing-page blueprint library](blueprints/high-school-landing-pages/INDEX.md) | Canonical shared contract + 18 course-specific landing-page blueprints committed; implementation remains course-by-course |
