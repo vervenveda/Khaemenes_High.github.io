@@ -447,9 +447,8 @@ html:root:root body :is(.hero, .header, .page-header, .section-head, .lesson-hea
   });
   window.addEventListener("hashchange",()=>{if(location.hash==="#games")showGamesPage(false);else hideGamesPage()});
 
-  const observer=new MutationObserver(()=>injectGamesCard());
-  const main=$("#main");
-  if(main)observer.observe(main,{subtree:true,childList:true});
+  [0,120,420,1200].forEach(ms=>setTimeout(injectGamesCard,ms));
+  window.addEventListener("khaemenes-math-content-ready",injectGamesCard);
   injectGamesCard();
   if(location.hash==="#games")requestAnimationFrame(()=>showGamesPage(false));
 })();
@@ -457,7 +456,14 @@ html:root:root body :is(.hero, .header, .page-header, .section-head, .lesson-hea
 
 <script>
 if("serviceWorker" in navigator){
-  navigator.serviceWorker.register("service-worker.js?v=geometry-1",{updateViaCache:"none"})
+  const hadController=Boolean(navigator.serviceWorker.controller);
+  let recoveryReload=false;
+  navigator.serviceWorker.addEventListener("controllerchange",()=>{
+    if(!hadController||recoveryReload)return;
+    recoveryReload=true;
+    location.reload();
+  },{once:true});
+  navigator.serviceWorker.register("service-worker.js?v=geometry-runtime-recovery-20261118",{updateViaCache:"none"})
     .then(registration=>registration.update())
     .catch(()=>{});
 }
