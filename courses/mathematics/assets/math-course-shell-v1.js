@@ -73,3 +73,14 @@ function mount(){
 }
 if(document.readyState==="loading")document.addEventListener("DOMContentLoaded",mount,{once:true});else mount();
 })();
+
+/* Shared High School mathematics hardening layer. */
+;(()=>{
+ if(window.KhaemenesMathHardeningLoader||document.getElementById("khaeMathHardeningLoaderScript"))return;
+ const s=document.createElement("script");
+ s.id="khaeMathHardeningLoaderScript";
+ s.src=new URL("math-hardening-loader-v1.js",document.currentScript?.src||location.href).href;
+ s.async=false;
+ s.onerror=()=>console.warn("Shared mathematics hardening layer unavailable; existing course behavior remains active.");
+ (document.head||document.documentElement).appendChild(s);
+})();
