@@ -14,6 +14,7 @@ const tracked=[
  ["Lesson hero","#daily-main .daily-hero"],
  ["Source custody","[data-week-source-custody-v1]"],
  ["Lesson map","#khae-english-unified-lesson-map"],
+ ["Resources & Settings","#e9-resources-settings"],
  ["Daily resources","#e9-unit-vocabulary"],
  ["Lesson footer",".daily-footer"]
 ];
@@ -35,7 +36,11 @@ function snapshot(){
  const ids=[...document.querySelectorAll("[id]")].map(x=>x.id);
  const duplicates=[...new Set(ids.filter((x,i)=>ids.indexOf(x)!==i))].filter(x=>!x.startsWith("english9Audit"));
  const small=[...document.querySelectorAll("#daily-main p,#daily-main a,#daily-main button,#daily-main label,#daily-main summary,#daily-main input,#daily-main textarea")].filter(el=>getComputedStyle(el).display!=="none"&&Number.parseFloat(getComputedStyle(el).fontSize)<16);
- const horizontalOverflow=document.documentElement.scrollWidth>window.innerWidth+2;
+ const horizontalOverflow=document.documentElement.scrollWidth>document.documentElement.clientWidth+2;
+ const stepIds=["reasoning-lab-1","heading-1-read","heading-1-practice","daily-practice-title","heading-1-write","heading-1-check"];
+ const steps=stepIds.map(id=>document.getElementById(id)?.closest("section")).filter(Boolean);
+ const stepOrder=steps.length===6&&steps.every((n,i)=>i===0||Boolean(steps[i-1].compareDocumentPosition(n)&Node.DOCUMENT_POSITION_FOLLOWING));
+ const drawer=document.getElementById("e9-resources-settings");
  const ordered=["vnv333NetworkTicker","vnvTickerAutoPopulate","vnvHeaderAutoPopulate"].map(id=>document.getElementById(id)).filter(Boolean);
  const orderedCorrect=ordered.length===3&&ordered.every((el,i)=>i===0||Boolean(ordered[i-1].compareDocumentPosition(el)&Node.DOCUMENT_POSITION_FOLLOWING));
  return {
@@ -51,7 +56,12 @@ function snapshot(){
    duplicateIds:duplicates,
    below16pxElements:small.length,
    sourceCardCount:document.querySelectorAll("[data-week-source-custody-v1]").length,
-   heroCount:document.querySelectorAll("#daily-main .daily-hero").length
+   heroCount:document.querySelectorAll("#daily-main .daily-hero").length,
+   resourcesDrawerCount:document.querySelectorAll("#e9-resources-settings").length,
+   resourcesCollapsed:drawer&&!drawer.open?"PASS":"CHECK",
+   instructionalStepOrder:stepOrder?"PASS":"CHECK",
+   visibleReadinessNotice:document.getElementById("daily-gate")?.hidden?"not applicable":"verify visually",
+   expectedHiddenSource:drawer&&!drawer.open?"source inside collapsed Resources & Settings":"check drawer state"
   },
   errors:errors.slice(-12),events:events.slice(-18)
  };
