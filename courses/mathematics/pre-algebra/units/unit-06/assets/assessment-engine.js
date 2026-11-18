@@ -1,5 +1,5 @@
 (()=>{"use strict";
-const config=window.ASSESSMENT_CONFIG,scriptEl=document.currentScript,coreSrc=new URL("assessment-engine-core.js",scriptEl?.src||location.href).href,MIN=80,CLASSIFICATION="public-self-check-nonconfidential",RESULT_SCHEMA="khaemenes-unit-mastery-result-v5",NAIB_KEY="khaemenes-naib-readiness-profile-v1",EXIT_KEY="khaemenes-prealgebra-unit00-exit-v1";
+const config=window.ASSESSMENT_CONFIG,scriptEl=document.currentScript,coreSrc=new URL("../../../assets/prealgebra-assessment-engine-core-v2.js",scriptEl?.src||location.href).href,MIN=80,CLASSIFICATION="public-self-check-nonconfidential",RESULT_SCHEMA="khaemenes-unit-mastery-result-v5",NAIB_KEY="khaemenes-naib-readiness-profile-v1",EXIT_KEY="khaemenes-prealgebra-unit00-exit-v1";
 const pad=n=>String(n).padStart(2,"0"),unitNo=Number(location.pathname.match(/unit-(\d+)/)?.[1])||0;
 function read(k){try{return JSON.parse(localStorage.getItem(k)||"null")}catch{return null}}
 function resultBest(r){if(!r||typeof r!=="object")return 0;const attempts=Array.isArray(r.attempts)?r.attempts:[];return Math.max(Number(r.best_percent)||0,Number(r.percent)||0,Number(r.latest_percent)||0,...attempts.map(a=>Number(a?.percent)||0))}
