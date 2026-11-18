@@ -1,0 +1,51 @@
+<!doctype html><html lang="en" data-theme="dark"><head>
+<script src="../../../shared/course-entry-contract.js?v=20261012"></script>
+<script src="../../../shared/learner-scope-v1.js?v=20261012" data-learner-scope="geometry"></script>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="color-scheme" content="dark light"><meta name="theme-color" content="#090b10"><title>Geometry Spaced Retention Lab</title><link rel="stylesheet" href="../assets/styles.css">
+<script src="/Khaemenes_High.github.io/assets/high-school-global-chrome-v2.js" defer data-high-school-global-chrome="v2"></script>
+<script src="assets/weekly-mastery-v2-01-03.js"></script>
+<script src="assets/weekly-mastery-v2-04-06.js"></script>
+<script src="assets/weekly-mastery-v2-07-09.js"></script>
+<script src="assets/weekly-mastery-v2-10-12.js"></script>
+<script src="assets/weekly-mastery-v2-13-15.js"></script>
+<script src="assets/weekly-mastery-v2-16-18.js"></script>
+<script src="assets/weekly-mastery-v2-19-21.js"></script>
+<script src="assets/weekly-mastery-v2-22-24.js"></script>
+<script src="assets/weekly-mastery-v2-25-27.js"></script>
+<script src="assets/weekly-mastery-v2-28-30.js"></script>
+<script src="assets/weekly-mastery-v2-31-33.js"></script>
+<script src="assets/weekly-mastery-v2-34-36.js"></script></head><body><a class="skip" href="#main">Skip to main content</a>
+<header class="site-header"><div class="wrap header-inner"><div class="brand-group"><a class="brand-home" href="../">G</a><a class="brand-copy" href="../"><strong>Khaemenes Geometry</strong><small>Spaced Retention Lab · Non-gating</small></a></div><div class="header-tools"><a class="header-control" href="../">Course Home</a><a class="header-control" href="./">Assessments</a></div></div></header>
+<main id="main" class="wrap" style="padding:55px 0 90px"><section class="card" style="max-width:1050px;margin:auto;text-align:center"><p class="eyebrow">Durable learning · Non-gating</p><h1>Geometry Spaced Retention Lab</h1><p>Select an instructional week. Each 10-question form keeps two items in every reasoning dimension while mixing <strong>8 current-focus questions + 2 delayed-retrieval questions</strong> from an earlier week. Results are retention evidence only; they do not unlock or block progression.</p><div class="actions" style="justify-content:center"><label for="retWeek">Week <select id="retWeek"></select></label><button class="btn primary" id="generate" type="button">Generate Retention Set</button><button class="btn" id="newSet" type="button">New Set</button></div></section><section id="retentionRoot" style="max-width:1050px;margin:20px auto"></section></main>
+<script>
+(()=>{"use strict";
+const BANK=window.KhaemenesGeometryWeeklyMasteryV2||{},DIMS=["procedural-fluency","multi-step-application","representation-interpretation","error-analysis","transfer-reasoning"],KEY="khaemenes-geometry-retention-v1";
+const weekEl=document.getElementById("retWeek"),root=document.getElementById("retentionRoot"),esc=v=>String(v??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+for(let w=2;w<=36;w++){const o=document.createElement("option");o.value=String(w);o.textContent=String(w);weekEl.append(o)}
+const shuffle=a=>{a=[...a];for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]]}return a};
+function make(){
+ const w=Number(weekEl.value||2),prior=Math.max(1,w-(1+(w%3))),cur=BANK[String(w)],old=BANK[String(prior)];
+ if(!cur?.questions?.length||!old?.questions?.length){root.innerHTML='<article class="card"><h2>Retention bank unavailable</h2><p>Refresh before recording work.</p></article>';return}
+ const set=[];
+ for(const d of DIMS){
+  const c=shuffle(cur.questions.filter(q=>q.dimension===d)),p=shuffle(old.questions.filter(q=>q.dimension===d));
+  if(d==="procedural-fluency"||d==="transfer-reasoning"){set.push({...c[0],source_week:w},{...p[0],source_week:prior,retrieval:true})}
+  else set.push(...c.slice(0,2).map(q=>({...q,source_week:w})));
+ }
+ const form=shuffle(set);render(w,prior,form);
+}
+function render(w,prior,set){
+ root.innerHTML='<article class="card"><p class="eyebrow">Week '+w+' · Retrieval bridge to Week '+prior+'</p><h2>10-question retention set</h2><p class="notice">Five reasoning dimensions · 8 current + 2 delayed · non-gating.</p><form id="retForm">'+set.map((q,i)=>'<fieldset class="q"><legend><strong>'+(i+1)+'. '+esc(q.prompt)+'</strong></legend>'+(q.retrieval?'<p class="muted">Delayed retrieval · Week '+q.source_week+'</p>':'')+q.options.map((o,j)=>'<label class="choice"><input type="radio" name="q'+i+'" value="'+j+'"> '+esc(o)+'</label>').join('')+'</fieldset>').join('')+'<div class="actions"><button class="btn primary" type="submit">Score Retention Set</button></div></form><div id="retResult"></div></article>';
+ document.getElementById("retForm").onsubmit=e=>{e.preventDefault();let correct=0;const review=[];set.forEach((q,i)=>{const chosen=e.currentTarget.querySelector('input[name="q'+i+'"]:checked');const v=chosen?Number(chosen.value):-1;if(v===q.answer)correct++;else review.push('<li><strong>'+esc(q.prompt)+'</strong> '+esc(q.explanation||"Review the governing relationship.")+'</li>')});const score=Math.round(correct/set.length*100);document.getElementById("retResult").innerHTML='<h3>Retention score: '+score+'%</h3>'+(review.length?'<ul>'+review.join('')+'</ul>':'<p>All items correct.</p>');save({at:new Date().toISOString(),week:w,retrieval_from_week:prior,score,question_ids:set.map(q=>q.id),dimensions:set.map(q=>q.dimension),purpose:"retention",gating:false});};
+}
+function save(attempt){
+ let record={attempts:[]},S=window.KhaemenesMathStorageAdapter;
+ try{record=S?.readJSON?S.readJSON(KEY,{attempts:[]}):JSON.parse(localStorage.getItem(KEY)||'{"attempts":[]}')}catch{}
+ record=record&&typeof record==="object"?record:{attempts:[]};record.attempts=Array.isArray(record.attempts)?record.attempts:[];record.attempts.push(attempt);if(record.attempts.length>100)record.attempts=record.attempts.slice(-100);
+ if(S?.writeJSON){const r=S.writeJSON(KEY,record);if(r.persisted!==true||r.verified!==true)console.warn("Retention attempt is memory-only; export course record before leaving.");}
+ else try{const raw=JSON.stringify(record);localStorage.setItem(KEY,raw);if(localStorage.getItem(KEY)!==raw)throw new Error("write-verification-mismatch")}catch(e){console.warn("Retention attempt could not be verified.",e)}
+ window.KhaemenesMathLearnerRecord?.captureLegacy?.("geometry-retention");
+}
+document.getElementById("generate").onclick=make;document.getElementById("newSet").onclick=make;make();
+})();
+</script></body></html>
