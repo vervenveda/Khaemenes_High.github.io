@@ -23,7 +23,10 @@ for(const [name,file] of Object.entries(pages)){
  assert.ok(fs.existsSync(path.posix.normalize(path.posix.join(path.posix.dirname(file),expectedHref.split("?")[0]))),
   name+" CSS path resolves");
  assert.ok(html.includes('width=device-width'),name+" remains viewport-responsive");
- assert.ok(html.includes('class="sidebar"')&&html.includes('class="main"'),name+" learning layout retained");
+ const layoutRetained=name==="english"
+  ? html.includes('class="centered-course-controls"')&&html.includes('id="landing-navigation"')&&html.includes('class="main"')
+  : html.includes('class="sidebar"')&&html.includes('class="main"');
+ assert.ok(layoutRetained,name+" learning navigation and workspace layout retained");
  assert.ok(html.includes('id="content"'),name+" student content landmark retained");
  assert.ok(html.includes('data-view="dashboard"'),name+" dashboard remains available");
  assert.ok(html.includes('data-view="reports"'),name+" learner reports and backups remain available");
