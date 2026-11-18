@@ -24,3 +24,13 @@ else if(current){
  document.head.appendChild(script);
 }else run();
 })();
+
+
+/* Algebra II Academy screen readability floor. Print rules remain independent. */
+;(()=>{
+ if(document.getElementById("algebra2MinScreenTypeV1"))return;
+ const style=document.createElement("style");
+ style.id="algebra2MinScreenTypeV1";
+ style.textContent='@media screen{html:root:root body{font-size:16px!important}html:root:root body :is(button,input,select,textarea,a,p,li,label,summary){font-size:max(16px,1em)}html:root:root body :is(button,input,select,textarea){min-height:44px}}';
+ (document.head||document.documentElement).appendChild(style);
+})();
