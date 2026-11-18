@@ -43,7 +43,9 @@ for(const [name,file] of Object.entries(pages)){
  report.push(name+" HTML + JS syntax/structure");
 }
 assert.match(htmls.english,/href="#content"/,"English 9 skip navigation retained");
-assert.match(htmls.english,/class="navBox" aria-label="Student destinations"/,"English core links labeled");
+assert.match(htmls.english,/class="navBox english9-primary-navigation" aria-label="Student destinations"/,"English core links labeled");
+assert.match(htmls.english,/id="khaemenes-english9-visual-blueprint-v1"/,"English 9 centered visual design contract");
+for(const label of ["Home","Lessons","Tools","Writing","Assess","Guide"])assert.match(htmls.english,new RegExp(">"+label+"<"),"English 9 six-button navigation missing "+label);
 assert.match(htmls.english,/data-view="course"/,"Official English weeks retained");
 assert.match(htmls.english,/class="unit-picker"/,"English unit-picker must remain in existing JS");
 assert.match(htmls.english,/aria-pressed",active\?"true":"false"/,"English navigation speaks selected state");
