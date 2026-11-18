@@ -4592,9 +4592,9 @@ function recordExamAnswer(name,index,value){
 }
 function clearExamDraft(name){
   if(!confirm("Clear the current "+name+" draft? Previous submitted attempts will be preserved."))return;
-  const rec=examRecord(name);
+  const rec=examRecord(name),priorDraft=rec.draft,priorActive=activeExams[name];
   rec.draft=null;activeExams[name]=[];
-  if(!save())return alert("The draft reset could not be verified. Reloading may restore the previous draft.");
+  if(!save()){rec.draft=priorDraft;activeExams[name]=priorActive;return alert("The draft reset could not be verified, so the current draft was kept.");}
   exams();
 }
 function exams(){
@@ -4674,11 +4674,13 @@ function submitQuiz(){
     dimensions:activeQuiz.map(item=>item.dimension),
     retrieval_from_weeks:[...new Set(activeQuiz.map(item=>item.retrievalFromWeek).filter(Number.isFinite))]
   };
+  const priorQuiz=JSON.parse(JSON.stringify(r.quiz));
   r.quiz.attempts.push(attempt);
   r.quiz.v2Best=Math.max(Number(r.quiz.v2Best)||0,score);
   r.quiz.best=Math.max(Number(r.quiz.best)||0,score);
   r.quiz.lastFeedback=feedback.length?feedback:["All answers were correct. Explain one solution in writing to preserve the reasoning."];
-  save();alert(`Mastery check submitted: ${score}%. Official v2 best: ${quizBest(s,w.week)}%.`);render();
+  if(!save()){r.quiz=priorQuiz;return alert("Mastery-check submission paused because browser storage could not be verified. Your current selections remain on this page; export your learner record before leaving if storage remains unavailable.");}
+  alert(`Mastery check submitted: ${score}%. Official v2 best: ${quizBest(s,w.week)}%.`);render();
 }
 function submitExam(name){
   let s=student(),draft=ensureExamDraft(name),qs=draft.questions||[],correct=0,answers=[];
@@ -4689,9 +4691,9 @@ function submitExam(name){
     const val=Number(value);answers.push(val);if(val===qs[i].answer)correct++;
   }
   const score=Math.round(correct/qs.length*100);ensure(s);
-  const rec=examRecord(name),attempt={date:new Date().toISOString(),score,answers,version:qs.map(q=>q.title),question_count:qs.length,mastery_met:score>=APP.passingTarget};
-  rec.attempts.push(attempt);rec.best=Math.max(rec.best||0,score);rec.draft=null;activeExams[name]=[];
-  if(!save()){rec.attempts.pop();rec.draft=draft;activeExams[name]=qs;return alert("Submission paused because browser storage could not be verified. Your draft remains available on this page.");}
+  const rec=examRecord(name),attempt={date:new Date().toISOString(),score,answers,version:qs.map(q=>q.title),question_count:qs.length,mastery_met:score>=APP.passingTarget},priorBest=Number(rec.best)||0;
+  rec.attempts.push(attempt);rec.best=Math.max(priorBest,score);rec.draft=null;activeExams[name]=[];
+  if(!save()){rec.attempts.pop();rec.best=priorBest;rec.draft=draft;activeExams[name]=qs;return alert("Submission paused because browser storage could not be verified. Your draft remains available on this page.");}
   alert(`${name==="midterm"?"Midterm":"Final"} submitted: ${score}%. ${score>=APP.passingTarget?"Mastery target met.":"Review and retake when ready."}`);
   exams();
 }
