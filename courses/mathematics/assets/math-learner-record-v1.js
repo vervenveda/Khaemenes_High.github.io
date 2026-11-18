@@ -120,6 +120,11 @@ function installCaptureHooks(){
   if(event.key===ACTIVE_KEY){window.dispatchEvent(new CustomEvent("khaemenes-math-learner-changed",{detail:{course,learner:learner()}}));return;}
   if(event.key&&legacyKeys().includes(event.key))captureLegacy("cross-tab-storage");
  });
+ window.addEventListener("khaemenes-math-storage-state",event=>{
+  const k=event.detail?.key;if(!k||event.detail?.persisted!==true)return;
+  if(legacyKeys().includes(k))setTimeout(()=>captureLegacy("verified-write:"+String(k).slice(0,100)),0);
+ });
+ window.addEventListener("khaemenes-high-course-state-changed",()=>setTimeout(()=>captureLegacy("course-state-changed"),0));
 }
 const boot=()=>{captureLegacy("page-load");installCaptureHooks()};
 if(document.readyState==="loading")document.addEventListener("DOMContentLoaded",boot,{once:true});else boot();
