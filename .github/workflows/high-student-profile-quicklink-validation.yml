@@ -22,6 +22,7 @@ on:
       - 'tools/validate-grade09-schedule-personalization.mjs'
       - 'tools/validate-upper-grade-profile-parity.mjs'
       - 'tools/validate-student-profile-quicklink.mjs'
+      - 'tests/grade09-dashboard-entry-regression.test.mjs'
       - '.github/workflows/high-student-profile-quicklink-validation.yml'
   pull_request:
     paths:
@@ -70,6 +71,8 @@ jobs:
           node --check grades/grade-09/student-profile/student-schedule-bar.js
           node --check grades/grade-09/student-profile/student-profile-preferences.js
           node --check grades/grade-09/student-profile/seven-class-schedule.js
+      - name: Validate Grade 09 daily start and dashboard controls
+        run: node --test tests/grade09-dashboard-entry-regression.test.mjs
       - name: Validate profile quick-link coverage
         run: node tools/validate-student-profile-quicklink.mjs
       - name: Validate end-to-end High School student journey
