@@ -422,17 +422,19 @@ html:root:root body #vnv-global-support a.vnv-support-button:focus-visible{
 
   async function renderLearningToday(){
     const summary=document.getElementById("learningTodaySummary"),actions=document.getElementById("learningTodayActions"),others=document.getElementById("learningTodayCourses");
+    // Daily Lessons must remain accessible even when course continuation is slow or unavailable.
+    const start=document.createElement("a");start.className="btn gold";start.href="daily-lessons/";start.textContent="Start Daily Lessons";
+    actions.replaceChildren(start);
     const pinned=registry.pinnedCourses();
     const priority=registry.resumePriorityCourse?.()||pinned[0]||null;
     if(!priority){
       summary.textContent="Choose your regular subjects below, or begin with the Daily Lessons guide.";
-      actions.replaceChildren();const a=document.createElement("a");a.className="btn gold";a.href="daily-lessons/";a.textContent="Start Daily Lessons →";actions.append(a);others.replaceChildren();return;
+      others.replaceChildren();return;
     }
     const next=await registry.resolveContinueFor(priority.id);
     summary.textContent=priority.title+" · "+(next?.detail||"Your next learning step is ready.");
-    actions.replaceChildren();
-    const primary=document.createElement("a");primary.className="btn gold";primary.href=next?.url||priority.home;primary.dataset.launchCourse=priority.id;primary.textContent=next?.actionLabel||"Continue Learning →";actions.append(primary);
-    const daily=document.createElement("a");daily.className="btn secondary";daily.href="daily-lessons/";daily.textContent="View Daily Lessons";actions.append(daily);
+    const primary=document.createElement("a");primary.className="btn secondary";primary.href=next?.url||priority.home;primary.dataset.launchCourse=priority.id;primary.textContent=next?.actionLabel||"Continue Learning →";actions.append(primary);
+
     others.replaceChildren();
     for(const course of pinned.filter(c=>c.id!==priority.id).slice(0,3)){
       const current=await registry.resolveContinueFor(course.id);
