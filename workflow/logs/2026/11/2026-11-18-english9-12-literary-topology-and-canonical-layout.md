@@ -76,3 +76,17 @@ High school English course content, grade-specific reading assignments, grading/
 ## Safety and closure
 
 No live learner records or private keys were inspected. This work did not approve game scores as grades, change original learner attempts, unlock mastery, or migrate persistent storage. **GitHub source acceptance is not equivalent to deployed-browser certification**. Preserve fail-closed assessment rules and original application behavior.
+## Same-day addendum · all-page left toolbar coverage
+
+Additional implementation following the request to make the left-side Class Tools available consistently:
+
+- Hardened `courses/shared/high-school-class-tools-left-v1.js` with a global idempotence guard, explicit `data-english-course` fallback, grade-aware `?course=english-N` companion routing and protected quiz/exam/assessment/diagnostic exclusions. Commit `7d7063937842`.
+- Shared high-school chrome now mounts the left toolbar once for applicable English 9–12 course/lesson paths where that chrome is loaded. Commit `d5f04d5657cb`. Files with their own explicit script tags continue to use the same shared component.
+- Directly installed Class Tools on English 9 toolkit, English 9–12 course landing pages and the Citation Studio outer page. Also installed on PROSE Writer Studio, AffixSix and Learn a New Word. Representative companion commits `8ac76dc47eea`, `bc4868122bb4`, `ee852680bf6c`.
+- Created English 10/11/12 Literary Toolkit pages with 12 resource pathways, six symmetric entry buttons, canonical first-party chrome, left Class Tools, right ecosystem toolbar and centered footer. Added exact `#literary-toolbox` anchor for the Reading shortcut and `?course=english-N` on companion tools.
+- Connected English 10/11/12 landing pages through six centered choices including Literary Toolkit and Evidence Studio.
+- Re-fetched the outer Citation Studio, the inner studio, all English 9–12 toolkits, three companion applications, and sample English 10–12 Week 01 Day 1 pages. Inline script syntax passed in the inspected sources; representative daily pages load the shared global chrome, allowing the single left-toolbar owner to mount.
+
+**Important scope qualification:** The architecture covers the inspected English 9–12 pages using the shared global chrome, plus the explicitly patched literary companion pages. This does not certify every unrelated Academy repository page. A complete sitewide crawl, actual interaction verification, accessibility checks, and exam-gate regression remain pending.
+
+**New acceptance rule:** Every student-facing, non-assessment English 9–12 page should show one working collapsed Class Tools dock on the lower-left and one official ecosystem dock on the lower-right. Do not show it on assessments, diagnostics, quizzes, exams, midterms or finals. Verify mobile/tablet clearance and avoid inserting multiple competing toolbars.
