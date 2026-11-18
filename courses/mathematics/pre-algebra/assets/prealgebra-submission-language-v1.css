@@ -1,0 +1,20 @@
+/* Canonical Pre-Algebra submission-language overlay */
+/* =========================================================
+   KHAEMENES SUBMISSION LANGUAGE PATCH
+   =========================================================
+   The lesson engines already score the assignment from #submitPractice.
+   This patch standardizes the visible student action without changing
+   the existing JavaScript handlers or stored progress keys.
+*/
+/* Actual button text supplies visible, accessible and translatable labels. */
+#submitPractice,#markComplete{font-size:1rem;white-space:normal;}
+#scoreMessage.notice::before{
+  content:"Assignment status: ";
+  color:var(--gold2);
+  font-weight:900;
+}
+#practice .section-head .help-text,
+#practice .help-text{
+  font-size:1rem;
+  line-height:1.7;
+}
