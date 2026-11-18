@@ -58,9 +58,10 @@ Every detailed lesson includes:
 ## Assessment model
 
 - 40-question readiness diagnostic
-- 13 randomized unit mastery checks
-- 60-question midpoint examination
-- 100-question comprehensive final
+- 13 randomized 20-question unit mastery checks balanced across five reasoning dimensions, with novelty-aware retakes
+- 60-question midpoint examination balanced across Units 01–06 and five reasoning dimensions
+- 100-question comprehensive final balanced across all 13 units and five reasoning dimensions
+- non-gating spaced retrieval checks across instructional Weeks 2–17 and 19–36
 - 13 applied investigations
 - weekly classwork, mastery, portfolio, and reflection records
 - advanced modelling capstone with 100-point analytic rubric
@@ -79,4 +80,4 @@ An evaluator may adapt weights if clearly documented before instruction.
 
 ## Local-first privacy
 
-Learner names, weekly scores, reflections, portfolio notes, assessment attempts, and certificate fields remain in browser storage unless explicitly exported or printed.
+Learner names, scores, reflections, portfolio notes, assessment attempts, and certificate fields remain local unless explicitly exported or printed. The shared mathematics hardening layer performs read-back verification when persistent browser storage is available, consolidates recoverable evidence into the canonical learner record, shows storage-health state, and recommends export when persistence cannot be verified. Browser-local evidence is not Account Cloud synchronization or an official transcript by itself.
