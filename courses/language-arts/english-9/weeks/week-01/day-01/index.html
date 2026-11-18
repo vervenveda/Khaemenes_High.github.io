@@ -148,7 +148,8 @@ function arrange(){
    // Move only when an element is out of order; otherwise do not disturb the DOM.
    const order=[lab,read,practice,quiz,write,reflect];
    const boundary=main.querySelector(".daily-finish");
-   if(boundary&&order.some(n=>n.compareDocumentPosition(boundary)&Node.DOCUMENT_POSITION_PRECEDING)){
+   if(boundary&&order.some((n,i)=>i>0&&
+      Boolean(order[i-1].compareDocumentPosition(n)&Node.DOCUMENT_POSITION_PRECEDING))){
      for(const n of order)main.insertBefore(n,boundary);
    }
  }
