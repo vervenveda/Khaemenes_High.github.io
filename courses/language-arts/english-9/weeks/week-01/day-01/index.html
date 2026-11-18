@@ -18,160 +18,178 @@
 
 
 
-<style id="english9-day01-canonical-lesson-v6">
-/* VNV/KA DAY 1 2026-11-18: sole page-level presentation owner.
-   Shared scripts retain identity, records, mastery, authentic sources, and official chrome. */
-:root{--e9-paper:#fbfaf6;--e9-charcoal:#202724;--e9-cream:#fff8e9;--e9-gold:#e5c481;--e9-border:4px solid var(--e9-charcoal);--e9-radius:7px;--e9-width:940px}
-body[data-english9-day="1"]{background:var(--e9-paper);color:#202724;font-size:16px;line-height:1.65;min-width:0}
-body[data-english9-day="1"] :is(h1,h2,h3){font-family:Cinzel,Georgia,serif;font-weight:400}
+<style id="english9-day01-canonical-lesson-v7">
+/* Day 1 VNV/KA v7: single page-level visual layer. Shared identity, course records, grades,
+   source custody, formative assessment and official header remain in their existing modules. */
+:root{--e9-paper:#fbfaf6;--e9-ink:#202724;--e9-cream:#fff8e9;--e9-gold:#e5c481;--e9-border:4px solid #202724;--e9-max:940px}
+body[data-english9-day="1"]{background:var(--e9-paper);color:var(--e9-ink);font-size:16px;line-height:1.65;min-width:0}
 body[data-english9-day="1"] #daily-main{width:min(100%,1000px);max-width:1000px;margin-inline:auto;padding:clamp(14px,2.5vw,30px);box-sizing:border-box}
 body[data-english9-day="1"] > :is(#vnv333NetworkTicker,#vnvTickerAutoPopulate,#vnvHeaderAutoPopulate){width:100%!important;max-width:none!important;box-sizing:border-box!important;left:0!important;right:0!important;margin-inline:0!important}
-body[data-english9-day="1"] #daily-main :is(.e9-utility,.phase,.daily-tool,.daily-finish,.daily-footer,.daily-status,.daily-gate){
- width:100%;max-width:var(--e9-width);box-sizing:border-box;margin:0 auto 14px;border:var(--e9-border);border-radius:var(--e9-radius);background:var(--e9-paper);
+body[data-english9-day="1"] #daily-main > :is(.daily-hero,.e9-resources,.phase,.daily-tool,.daily-finish,.daily-footer,.daily-status,.daily-gate,.e9-retrieval){
+ width:100%;max-width:var(--e9-max);margin:0 auto 16px;box-sizing:border-box;border:var(--e9-border);border-radius:7px;
 }
-body[data-english9-day="1"] #daily-main .e9-utility{overflow:hidden;background:#fffdf8}
-body[data-english9-day="1"] #e9-utility-preparation:not(:has(.e9-utility-content > *)){display:none}
-body[data-english9-day="1"] #daily-main .e9-utility>summary{list-style:none;cursor:pointer;min-height:56px;display:flex;justify-content:space-between;gap:14px;align-items:center;text-align:left;padding:13px 18px;background:var(--e9-charcoal);color:var(--e9-cream)!important;font:400 18px/1.4 Cinzel,Georgia,serif!important;white-space:normal}
-body[data-english9-day="1"] #daily-main .e9-utility>summary::-webkit-details-marker{display:none}
-body[data-english9-day="1"] #daily-main .e9-utility>summary::after{content:"+";color:var(--e9-gold);font:400 24px/1 Arial,sans-serif;flex-shrink:0}
-body[data-english9-day="1"] #daily-main .e9-utility[open]>summary::after{content:"−"}
-body[data-english9-day="1"] #daily-main .e9-utility>summary:focus-visible{outline:3px solid #b58b45;outline-offset:-5px}
-body[data-english9-day="1"] .e9-utility-content{padding:clamp(14px,2.4vw,24px);min-width:0}
-body[data-english9-day="1"] .e9-utility-content>*{max-width:100%;box-sizing:border-box}
-body[data-english9-day="1"] .e9-utility-content>.daily-hero{margin:0 auto;padding:22px 20px;text-align:center;background:var(--e9-charcoal);color:var(--e9-cream);border-radius:7px}
-body[data-english9-day="1"] .e9-utility-content>.daily-hero h1{color:var(--e9-cream)!important;font:400 clamp(33px,4.7vw,55px)/1.2 Cinzel,Georgia,serif!important;margin:5px auto}
-body[data-english9-day="1"] .e9-utility-content>.daily-hero .e9-lesson-topic{color:var(--e9-gold)!important;font:400 24px/1.3 Cinzel,Georgia,serif!important;margin:3px auto 12px}
-body[data-english9-day="1"] .e9-utility-content>.daily-hero p{max-width:70ch;margin:0 auto 10px;color:var(--e9-cream)!important;font-size:18px!important}
-body[data-english9-day="1"] .e9-utility-content>.daily-hero .daily-eyebrow{color:var(--e9-gold)!important}
-body[data-english9-day="1"] .e9-start-lesson,body[data-english9-day="1"] .e9-open-map{display:inline-flex;align-items:center;justify-content:center;min-height:44px;padding:9px 16px;border:1px solid #b58b45;border-radius:7px;background:var(--e9-charcoal);color:var(--e9-cream)!important;font-size:16px;text-decoration:none;cursor:pointer}
-body[data-english9-day="1"] .e9-utility-content>.daily-hero .e9-start-lesson{background:var(--e9-cream);color:var(--e9-charcoal)!important}
-body[data-english9-day="1"] #daily-main .khae-source-custody-card{margin:0 auto!important;width:100%!important;max-width:100%!important;box-sizing:border-box;border:0!important;box-shadow:none;padding:8px!important;background:#fffdf8!important;text-align:center}
-body[data-english9-day="1"] #daily-main .khae-source-custody-card :is(h2,p){text-align:center;margin-inline:auto}
-body[data-english9-day="1"] #daily-main .khae-source-custody-card .khae-source-actions{justify-content:center}
-body[data-english9-day="1"] #daily-main .daily-crumbs,body[data-english9-day="1"] #daily-main .daily-nav{justify-content:center;text-align:center;margin:8px auto}
-body[data-english9-day="1"] #daily-main #english9-daily-view-tools{display:flex!important;flex-wrap:wrap;justify-content:center;align-items:center;gap:6px!important;width:max-content;max-width:100%;margin:0 auto 12px!important;padding:5px 8px!important;border:1px solid #d8ddd4!important;background:#fffdf8!important;border-radius:7px!important;box-shadow:none!important}
-body[data-english9-day="1"] #english9-daily-view-tools button{min-height:40px!important;padding:5px 12px!important}
-body[data-english9-day="1"] #daily-main .daily-status,body[data-english9-day="1"] #daily-main .daily-gate{padding:12px 16px!important}
-body[data-english9-day="1"] #daily-main .e9-utility-content .daily-status,body[data-english9-day="1"] #daily-main .e9-utility-content .daily-gate{width:100%;max-width:100%;border:1px solid #c7bba3;margin:6px auto}
-body[data-english9-day="1"] .e9-resource-links{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
-body[data-english9-day="1"] .e9-resource-links a{min-width:0;overflow-wrap:anywhere;min-height:44px;padding:10px;border:1px solid #c7bba3;border-radius:7px;color:#202724}
-body[data-english9-day="1"] .e9-resources-compact{border:0!important;max-width:100%;margin:0;padding:0;background:transparent}
-body[data-english9-day="1"] .e9-resources-compact summary{font-size:16px;cursor:pointer}
-body[data-english9-day="1"] #daily-main>.phase,body[data-english9-day="1"] #daily-main>.daily-tool,body[data-english9-day="1"] #daily-main>.daily-finish{padding:clamp(18px,3vw,28px)}
-body[data-english9-day="1"] #daily-main .text-passage{width:100%;box-sizing:border-box;border:var(--e9-border);border-radius:7px;background:#fffdf8;padding:clamp(16px,2.5vw,24px);margin:18px auto}
-body[data-english9-day="1"] #daily-main .daily-footer{padding:18px 22px;text-align:center}
+body[data-english9-day="1"] #daily-main>.daily-hero{background:var(--e9-ink);color:var(--e9-cream);text-align:center;padding:clamp(22px,4vw,42px)}
+body[data-english9-day="1"] #daily-main>.daily-hero h1{font:400 clamp(33px,4.7vw,55px)/1.12 Cinzel,Georgia,serif!important;color:var(--e9-cream)!important;margin:4px auto}
+body[data-english9-day="1"] #daily-main>.daily-hero .e9-lesson-topic{font:400 clamp(24px,3vw,33px)/1.3 Cinzel,Georgia,serif!important;color:var(--e9-gold)!important;text-align:center;margin:4px auto 12px}
+body[data-english9-day="1"] #daily-main>.daily-hero :is(p,.daily-eyebrow){color:var(--e9-cream)!important;font-size:18px!important;max-width:70ch;margin:8px auto}
+body[data-english9-day="1"] #daily-main>.daily-hero .daily-eyebrow{color:var(--e9-gold)!important}
+body[data-english9-day="1"] .e9-start-lesson{display:inline-flex;align-items:center;justify-content:center;min-height:44px;padding:9px 20px;border-radius:7px;border:1px solid var(--e9-gold);background:var(--e9-cream);color:var(--e9-ink)!important;text-decoration:none;font-size:16px}
+body[data-english9-day="1"] #daily-main>.e9-resources{overflow:hidden;background:#fffdf8}
+body[data-english9-day="1"] #daily-main>.e9-resources>summary{list-style:none;min-height:56px;display:flex;align-items:center;justify-content:space-between;gap:12px;padding:12px 18px;background:var(--e9-ink);color:var(--e9-cream)!important;font:400 18px/1.4 Cinzel,Georgia,serif!important;cursor:pointer}
+body[data-english9-day="1"] #daily-main>.e9-resources>summary::-webkit-details-marker{display:none}
+body[data-english9-day="1"] #daily-main>.e9-resources>summary::after{content:"+";color:var(--e9-gold);font:400 24px/1 Arial,sans-serif}
+body[data-english9-day="1"] #daily-main>.e9-resources[open]>summary::after{content:"−"}
+body[data-english9-day="1"] #daily-main>.e9-resources>summary:focus-visible{outline:3px solid var(--e9-gold);outline-offset:-5px}
+body[data-english9-day="1"] .e9-resources-content{padding:clamp(14px,2.5vw,24px);min-width:0}
+body[data-english9-day="1"] .e9-resources-content>:is(.khae-source-custody-card,.daily-nav,.daily-crumbs,.e9-resources-compact){width:100%;max-width:100%;margin:10px auto;box-sizing:border-box}
+body[data-english9-day="1"] .e9-resources-content .khae-source-custody-card{border:1px solid #cdbf9f;padding:14px;background:#fffdf8;text-align:center}
+body[data-english9-day="1"] .e9-resources-content .khae-source-custody-card :is(h2,p){text-align:center}
+body[data-english9-day="1"] .e9-resources-content .khae-source-actions{justify-content:center}
+body[data-english9-day="1"] .e9-resources-content :is(.daily-nav,.daily-crumbs){justify-content:center;text-align:center}
+body[data-english9-day="1"] .e9-resources-content #english9-daily-view-tools{display:flex!important;justify-content:center;align-items:center;gap:6px!important;flex-wrap:wrap;width:max-content;max-width:100%;margin:10px auto!important;padding:5px 8px!important;border:1px solid #d8ddd4!important;background:#fffdf8!important;border-radius:7px!important}
+body[data-english9-day="1"] .e9-resources-content #english9-daily-view-tools button{padding:6px 12px!important;min-height:40px!important}
+body[data-english9-day="1"] .e9-resources-content .e9-resource-links{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+body[data-english9-day="1"] .e9-resources-content .e9-resource-links a{display:block;min-height:44px;padding:10px;border:1px solid #c7bba3;border-radius:7px;color:#202724;overflow-wrap:anywhere}
+body[data-english9-day="1"] .e9-resources-content .e9-resources-compact{background:transparent;padding:6px;border:0}
+body[data-english9-day="1"] #daily-main>.daily-status,body[data-english9-day="1"] #daily-main>.daily-gate{padding:12px 18px;background:#fffdf8}
+body[data-english9-day="1"] #daily-main>.e9-retrieval{padding:clamp(16px,2.5vw,26px);background:#fffdf8}
+body[data-english9-day="1"] #daily-main>.e9-retrieval h2{font:400 24px/1.3 Cinzel,Georgia,serif;text-align:center;margin:0 auto 10px}
+body[data-english9-day="1"] #daily-main>.e9-retrieval p{max-width:72ch;margin:8px auto}
+body[data-english9-day="1"] #daily-main>:is(.phase,.daily-tool,.daily-finish){padding:clamp(18px,3vw,28px);background:#fffdf8}
+body[data-english9-day="1"] #daily-main>:is(.phase,.daily-tool,.daily-finish)>:is(h2,h3){text-align:center;margin:0 auto 12px}
+body[data-english9-day="1"] #daily-main>.phase .text-passage{max-width:72ch;margin:18px auto;background:#f9f5eb;border:1px solid #d0c5b0;padding:clamp(14px,2.5vw,24px);border-radius:7px;box-sizing:border-box}
 body[data-english9-day="1"] #daily-main .phase :is(textarea,pre),body[data-english9-day="1"] #daily-main .daily-tool :is(textarea,pre){max-width:100%;min-width:0;box-sizing:border-box}
-#e9-lesson-map-dialog{width:min(730px,calc(100vw - 28px));max-height:80vh;overflow:auto;border:var(--e9-border);border-radius:7px;padding:20px;background:var(--e9-paper);color:#202724;box-shadow:0 18px 65px #0006}
+body[data-english9-day="1"] #daily-main>.daily-footer{padding:20px;text-align:center;background:#fffdf8}
+body[data-english9-day="1"] #daily-main .e9-stage-eyebrow{font-size:16px;color:#79602e;letter-spacing:.04em;margin:0 0 8px;text-align:center}
+body[data-english9-day="1"] .e9-open-map{display:inline-flex;align-items:center;justify-content:center;min-height:44px;padding:9px 15px;border-radius:7px;border:1px solid #202724;background:#202724;color:#fff8e9!important;font-size:16px;cursor:pointer}
+#e9-lesson-map-dialog{width:min(730px,calc(100vw - 28px));max-height:80vh;overflow:auto;border:4px solid #202724;border-radius:7px;padding:20px;background:#fbfaf6;color:#202724;box-shadow:0 18px 65px #0006}
 #e9-lesson-map-dialog::backdrop{background:#111b17a3}
-#e9-lesson-map-dialog .e9-dialog-top{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:12px}
+#e9-lesson-map-dialog .e9-dialog-top{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:12px}
 #e9-lesson-map-dialog .e9-dialog-top h2{font:400 24px Cinzel,Georgia,serif;margin:0}
-#e9-lesson-map-dialog .e9-dialog-close{min-height:44px;padding:8px 14px;border:0;border-radius:7px;background:#202724;color:#fff8e9;font-size:16px}
-#e9-lesson-map-dialog #khae-english-unified-lesson-map{border:0!important;width:100%!important;max-width:100%!important;padding:0!important;margin:0!important;box-shadow:none}
-@media(max-width:640px){body[data-english9-day="1"] #daily-main{padding:12px}body[data-english9-day="1"] .e9-resource-links{grid-template-columns:1fr}body[data-english9-day="1"] #daily-main .e9-utility>summary{padding:13px 14px}}
-@media print{body[data-english9-day="1"] .e9-utility{break-inside:auto}body[data-english9-day="1"] #daily-main .e9-utility>summary{background:#fff!important;color:#202724!important;border-bottom:1px solid #202724}body[data-english9-day="1"] .e9-utility-content{display:block!important}body[data-english9-day="1"] #daily-main :is(.phase,.daily-tool,.daily-finish){break-inside:avoid}}
+#e9-lesson-map-dialog .e9-dialog-close{padding:9px 14px;min-height:44px;background:#202724;color:#fff8e9;border:0;border-radius:7px;font-size:16px}
+#e9-lesson-map-dialog #khae-english-unified-lesson-map{width:100%!important;max-width:100%!important;margin:0!important;padding:0!important;border:0!important;box-shadow:none}
+@media(max-width:640px){body[data-english9-day="1"] #daily-main{padding:12px}body[data-english9-day="1"] .e9-resources-content .e9-resource-links{grid-template-columns:1fr}}
+@media print{body[data-english9-day="1"] #daily-main>.e9-resources>summary{background:#fff!important;color:#202724!important;border-bottom:1px solid #202724}body[data-english9-day="1"] #daily-main>.daily-hero{background:#fff!important;color:#202724!important}body[data-english9-day="1"] #daily-main>.daily-hero :is(h1,h2,p){color:#202724!important}body[data-english9-day="1"] .e9-resources-content{display:block!important}body[data-english9-day="1"] #daily-main>.phase{break-inside:avoid}}
 </style>
-<script id="english9-day01-canonical-layout-v6">
-/* One presentation controller. Read-only DOM movement; never access student fields or records. */
-(()=>{"use strict";if(window.__E9_DAY01_CANONICAL_LAYOUT_V6__)return;window.__E9_DAY01_CANONICAL_LAYOUT_V6__=true;
+<script id="english9-day01-layout-v7">
+/* Presentation-only progressive disclosure. Never reads, writes, or evaluates learner records. */
+(()=>{"use strict";
+if(window.__E9_DAY01_LAYOUT_V7__)return;window.__E9_DAY01_LAYOUT_V7__=true;
 let pending=false,dialog=null;
-const main=()=>document.getElementById("daily-main");
-function ensureShells(){
- const root=main();if(!root)return null;
- const lab=root.querySelector('[aria-labelledby="reasoning-lab-1"]');if(!lab)return null;
- const defs=[["overview","Daily Lesson · Unit 01 · Day 01"],["source","Authenticated Reading / Source"],["navigation","Lesson Navigation"],["reading","Reading View & Readiness"],["resources","Reading, Vocabulary & Resources"],["preparation","Additional Preparation"]];
- const slots={};
- for(const [id,label] of defs){
-   let section=document.getElementById("e9-utility-"+id);
-   if(!section){
-     section=document.createElement("details");section.id="e9-utility-"+id;section.className="e9-utility";
-     const summary=document.createElement("summary");summary.textContent=label;
-     const content=document.createElement("div");content.className="e9-utility-content";
-     section.append(summary,content);
-     lab.insertAdjacentElement("beforebegin",section);
-   }
-   slots[id]=section.querySelector(".e9-utility-content");
+function root(){return document.getElementById("daily-main")}
+function move(el,to){if(el&&to&&el.parentElement!==to)to.append(el)}
+function ensureResources(main){
+ let box=document.getElementById("e9-resources-settings");
+ if(!box){
+  box=document.createElement("details");box.id="e9-resources-settings";box.className="e9-resources";
+  const sum=document.createElement("summary");sum.textContent="Resources & Settings";
+  const content=document.createElement("div");content.className="e9-resources-content";
+  box.append(sum,content);
  }
- return slots;
+ if(box.parentElement!==main){const hero=main.querySelector(".daily-hero");hero?.insertAdjacentElement("afterend",box)}
+ return box.querySelector(".e9-resources-content");
 }
-function move(el,target){if(el&&target&&el.parentElement!==target)target.append(el)}
 function ensureDialog(){
  if(dialog)return dialog;
- dialog=document.getElementById("e9-lesson-map-dialog");
- if(dialog)return dialog;
+ dialog=document.getElementById("e9-lesson-map-dialog");if(dialog)return dialog;
  dialog=document.createElement("dialog");dialog.id="e9-lesson-map-dialog";
  const top=document.createElement("div");top.className="e9-dialog-top";
- const h=document.createElement("h2");h.textContent="Lesson Guide";
- const close=document.createElement("button");close.type="button";close.className="e9-dialog-close";close.textContent="Close";
- close.addEventListener("click",()=>dialog.close());top.append(h,close);dialog.append(top);
+ const heading=document.createElement("h2");heading.textContent="Lesson Guide";
+ const close=document.createElement("button");close.className="e9-dialog-close";close.type="button";close.textContent="Close";
+ close.addEventListener("click",()=>dialog.close());top.append(heading,close);dialog.append(top);
  dialog.addEventListener("click",e=>{if(e.target===dialog)dialog.close()});
  document.body.append(dialog);return dialog;
 }
 function arrange(){
- pending=false;const root=main();if(!root)return;
- const slots=ensureShells();if(!slots)return;
- const hero=root.querySelector(".daily-hero");
- const source=root.querySelector("[data-week-source-custody-v1]");
- const crumb=root.querySelector(".daily-crumbs");
- const nav=root.querySelector(".daily-nav");
+ pending=false;const main=root();if(!main)return;
+ const hero=main.querySelector(".daily-hero"),lab=main.querySelector("#reasoning-lab-1")?.closest("section");
+ if(!hero||!lab)return;
+ if(hero.parentElement!==main)main.insertBefore(hero,main.firstElementChild);
+ const resources=ensureResources(main);
+ // Migrate the obsolete six-accordion version without deleting source material.
+ for(const id of ["overview","source","navigation","reading","resources","preparation"]){
+  const legacy=document.getElementById("e9-utility-"+id);
+  if(!legacy)continue;
+  const slot=legacy.querySelector(".e9-utility-content");
+  if(slot)for(const child of [...slot.children])move(child,resources);
+  legacy.remove();
+ }
+ const source=main.querySelector("[data-week-source-custody-v1]");
+ const crumb=main.querySelector(".daily-crumbs");
+ const nav=main.querySelector(".daily-nav");
  const size=document.getElementById("english9-daily-view-tools");
- const status=root.querySelector("#daily-status");
- const gate=root.querySelector("#daily-gate");
- const resources=root.querySelector("#e9-unit-vocabulary");
- move(hero,slots.overview);move(source,slots.source);
- if(crumb&&crumb.parentElement!==slots.navigation)slots.navigation.prepend(crumb);
- // Only move the first instructional navigation, not the bottom next-day nav.
- if(nav&&nav.parentElement!==slots.navigation)slots.navigation.append(nav);
- move(size,slots.reading);move(status,slots.reading);move(gate,slots.reading);
- move(resources,slots.resources);
- // Shared study modules may add a retrieval prompt before the laboratory.
- // Keep any such extra introductory card inside a closed preparation bar.
- const lab=root.querySelector('[aria-labelledby="reasoning-lab-1"]');
- if(lab){
-   const before=[...root.children].filter(n=>n!==lab &&
-     (n.compareDocumentPosition(lab)&Node.DOCUMENT_POSITION_FOLLOWING) &&
-     !n.classList.contains("e9-utility") &&
-     n.matches("section,article,aside,.card") &&
-     n.id!=="daily-status"&&n.id!=="daily-gate" &&
-     !n.matches("[data-week-source-custody-v1]"));
-   for(const extra of before)move(extra,slots.preparation);
+ const appendix=main.querySelector("#e9-unit-vocabulary");
+ move(source,resources);move(crumb,resources);move(nav,resources);
+ move(size,resources);move(appendix,resources);
+ // Supplemental cards may be inserted before the laboratory. Keep the original
+ // retrieval prompt visible so students can begin with actual thinking.
+ const introductory=[...main.children].filter(node=>
+   node!==hero&&node.id!=="e9-resources-settings"&&node!==lab&&
+   Boolean(node.compareDocumentPosition(lab)&Node.DOCUMENT_POSITION_FOLLOWING)&&
+   node.matches("section,article,aside,.card")&&
+   !node.matches("#daily-status,#daily-gate,[data-week-source-custody-v1]")
+ );
+ for(const n of introductory){
+  if(/retrieve|before looking|already think/i.test(n.textContent?.slice(0,300)||"")){
+   n.classList.add("e9-retrieval");
+  }else{move(n,resources)}
+ }
+ const status=main.querySelector("#daily-status"),gate=main.querySelector("#daily-gate");
+ // Important learner warnings remain visible, never concealed in the resource drawer.
+ if(status&&status.parentElement!==main)main.insertBefore(status,lab);
+ if(gate&&gate.parentElement!==main)main.insertBefore(gate,lab);
+ // Place actual instructional stages in the pedagogical order, without changing their content.
+ const read=main.querySelector("#heading-1-read")?.closest("section");
+ const practice=main.querySelector("#heading-1-practice")?.closest("section");
+ const quiz=main.querySelector("#daily-practice-title")?.closest("section");
+ const write=main.querySelector("#heading-1-write")?.closest("section");
+ const reflect=main.querySelector("#heading-1-check")?.closest("section");
+ if(read&&practice&&quiz&&write&&reflect){
+   // Move only when an element is out of order; otherwise do not disturb the DOM.
+   const order=[lab,read,practice,quiz,write,reflect];
+   const boundary=main.querySelector(".daily-finish");
+   if(boundary&&order.some(n=>n.compareDocumentPosition(boundary)&Node.DOCUMENT_POSITION_PRECEDING)){
+     for(const n of order)main.insertBefore(n,boundary);
+   }
+ }
+ const stages=[[lab,"01 · Retrieve and reason"],[read,"02 · Learn from the text"],[practice,"03 · Guided practice"],[quiz,"03 · Check your inference"],[write,"04 · Apply through writing"],[reflect,"05 · Reflect"]];
+ for(const [section,label] of stages){
+   if(!section||section.querySelector(".e9-stage-eyebrow"))continue;
+   const eyebrow=document.createElement("p");eyebrow.className="e9-stage-eyebrow";eyebrow.textContent=label;
+   section.insertBefore(eyebrow,section.firstChild);
  }
  if(source&&!source.querySelector(".e9-open-map")){
-   const button=document.createElement("button");button.type="button";button.className="e9-open-map";
-   button.textContent="Lesson Guide";button.setAttribute("aria-haspopup","dialog");
-   button.addEventListener("click",()=>{const panel=ensureDialog();if(!panel.open)panel.showModal();panel.querySelector(".e9-dialog-close")?.focus()});
-   (source.querySelector(".khae-source-actions")||source).append(button);
+  const b=document.createElement("button");b.type="button";b.className="e9-open-map";b.textContent="Lesson Guide";
+  b.setAttribute("aria-haspopup","dialog");
+  b.addEventListener("click",()=>{const d=ensureDialog();if(!d.open)d.showModal();d.querySelector(".e9-dialog-close")?.focus()});
+  (source.querySelector(".khae-source-actions")||source).append(b);
  }
  const map=document.getElementById("khae-english-unified-lesson-map");
  if(map){
-   const panel=ensureDialog();move(map,panel);
-   if(!map.dataset.e9CloseOnNavigate){
-     map.dataset.e9CloseOnNavigate="true";
-     map.addEventListener("click",e=>{if(e.target.closest('a[href^="#"]')&&panel.open)panel.close()});
-   }
+  const d=ensureDialog();move(map,d);
+  if(!map.dataset.e9CloseOnNavigate){
+   map.dataset.e9CloseOnNavigate="true";
+   map.addEventListener("click",event=>{if(event.target.closest('a[href^="#"]')&&d.open)d.close()});
+  }
  }
- // A denied/readiness error must not be concealed in a closed utility.
- const alert=gate&&!gate.hidden&&gate.textContent.trim();
- const error=status&&/error|failed|could not|unavailable|denied/i.test(status.textContent||"");
- if(alert||error)document.getElementById("e9-utility-reading").open=true;
- // Preserve existing native main-section ordering, and keep a single official top chrome stack.
- let anchor=root;
+ let anchor=main;
  for(const id of ["vnvHeaderAutoPopulate","vnvTickerAutoPopulate","vnv333NetworkTicker"]){
-   const el=document.getElementById(id);
-   if(el&&(el.parentElement!==document.body||el.nextElementSibling!==anchor))document.body.insertBefore(el,anchor);
-   if(el)anchor=el;
+  const element=document.getElementById(id);
+  if(element&&(element.parentElement!==document.body||element.nextElementSibling!==anchor))document.body.insertBefore(element,anchor);
+  if(element)anchor=element;
  }
 }
 function schedule(){if(!pending){pending=true;requestAnimationFrame(arrange)}}
 if(document.readyState==="loading")document.addEventListener("DOMContentLoaded",schedule,{once:true});else schedule();
 new MutationObserver(records=>{
- for(const rec of records){
-  if([...rec.addedNodes].some(n=>n.nodeType===1&&(
-   (rec.target===main()&&n.matches?.("section,article,aside,.card"))||
-   n.matches?.("[data-week-source-custody-v1],#vnv333NetworkTicker,#vnvTickerAutoPopulate,#vnvHeaderAutoPopulate,#khae-english-unified-lesson-map,#english9-daily-view-tools")||
-   n.querySelector?.("[data-week-source-custody-v1],#vnv333NetworkTicker,#vnvTickerAutoPopulate,#vnvHeaderAutoPopulate,#khae-english-unified-lesson-map,#english9-daily-view-tools")
-  ))){schedule();return}
+ for(const record of records){
+  if([...record.addedNodes].some(n=>n.nodeType===1&&(
+   (record.target===root()&&n.matches?.("section,article,aside,.card"))||
+   n.matches?.("[data-week-source-custody-v1],#english9-daily-view-tools,#khae-english-unified-lesson-map,#vnv333NetworkTicker,#vnvTickerAutoPopulate,#vnvHeaderAutoPopulate")||
+   n.querySelector?.("[data-week-source-custody-v1],#english9-daily-view-tools,#khae-english-unified-lesson-map")
+  ))){schedule();break}
  }
-}).observe(document.documentElement,{subtree:true,childList:true});
+}).observe(document.documentElement,{childList:true,subtree:true});
 })();
 </script>
 <script src="vnv-lesson-forensic-probe.js?v=20261118-optin" defer data-english9-forensic-optin="1"></script>
@@ -179,7 +197,7 @@ new MutationObserver(records=>{
 <a class="skip" href="#daily-main">Skip to the lesson</a>
 <main id="daily-main" class="daily-shell">
 <nav class="daily-crumbs" aria-label="Breadcrumb"><a href="../../../index.html">English 9</a> › <a href="../index.html">Week 1</a> › Day 1</nav>
-<header class="daily-hero"><p class="daily-eyebrow">Khaemenes Academy · English 9 · Unit 01 · Week 01 · Day 01</p><h1>Daily Lesson</h1><h2 class="e9-lesson-topic">A Starting Interpretation</h2><p>Learn to distinguish what a text says from what it suggests.</p><a class="e9-start-lesson" href="#heading-1-read">Begin Reading</a></header>
+<header class="daily-hero"><p class="daily-eyebrow">Khaemenes Academy · English 9 · Unit 01 · Week 01 · Day 01</p><h1>Daily Lesson</h1><h2 class="e9-lesson-topic">A Starting Interpretation</h2><p>Learn to distinguish what a text says from what it suggests.</p><a class="e9-start-lesson" href="#reasoning-lab-1">Begin Lesson</a></header>
 <nav class="daily-nav" aria-label="Lesson navigation"><a href="../index.html">Weekly workspace</a><a href="../../../units/unit-01/index.html">Unit 01</a><a href="../day-02/index.html">Next lesson →</a></nav>
 <aside class="daily-status" id="daily-status" role="status" aria-live="polite">Checking learner and saved work…</aside>
 <aside class="daily-status daily-warning daily-gate" id="daily-gate" hidden></aside>
