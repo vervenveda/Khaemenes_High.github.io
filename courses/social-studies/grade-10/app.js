@@ -119,7 +119,7 @@ function renderStudentControls(){
 function renderSidebarWeeks(){
  const s=activeStudent(),unlocked=currentWeek(s);
  $('#weekList').innerHTML=COURSE.weeks.map(w=>{const locked=!!s&&w.week>unlocked;return `<button class="weekBtn ${selectedWeek===w.week?'active':''} ${locked?'locked':''}" data-week="${w.week}" ${locked?'disabled aria-disabled="true"':''}><span><strong>Week ${w.week}</strong><br><small>${esc(w.title)}</small></span><span>${locked?'🔒':(s?.completedLessons?.[w.week]||[]).filter(Boolean).length+'/5'}</span></button>`}).join('');
- $('#weekList .weekBtn:not([disabled])').forEach(b=>b.onclick=()=>setWeek(b.dataset.week));
+ $$('#weekList .weekBtn:not([disabled])').forEach(b=>b.onclick=()=>setWeek(b.dataset.week));
 }
 function render(){
  applySettings();
@@ -261,7 +261,7 @@ function wireView(){
  $$('.submitAssignment').forEach(b=>b.onclick=()=>saveAssignment(b.dataset.key,true));
  $('#submitQuiz')?.addEventListener('click',()=>scoreQuiz(true));
  $('#saveQuiz')?.addEventListener('click',()=>scoreQuiz(false));
- $('#weeklyQuiz input[data-assessment-question]').forEach(input=>input.addEventListener('change',()=>{
+ $$('#weeklyQuiz input[data-assessment-question]').forEach(input=>input.addEventListener('change',()=>{
   const student=activeStudent(),w=COURSE.weeks[selectedWeek-1],draw=currentQuizDraw(w,student);
   if(draw.error||!draw.mc.saveResponse(draw.storageKey,input.dataset.assessmentQuestion,Number(input.value),draw.opened.sessionId)){
    quizFormError('This response could not be preserved. Export current work and check browser storage.');
