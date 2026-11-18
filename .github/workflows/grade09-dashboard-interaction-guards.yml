@@ -5,7 +5,10 @@ on:
     paths:
       - 'grades/grade-09/student-profile/index.html'
       - 'grades/grade-09/student-profile/dashboard-layout.js'
+      - 'grades/grade-09/student-profile/profile/index.html'
+      - 'grades/grade-09/student-profile/vnv-chrome-forensic-probe.js'
       - 'tests/grade09-dashboard-entry-regression.test.mjs'
+      - 'tests/grade09-profile-opt-in-chrome-probe.test.mjs'
       - '.github/workflows/grade09-dashboard-interaction-guards.yml'
   pull_request:
     paths:
@@ -27,5 +30,7 @@ jobs:
           node-version: '24'
       - name: Verify profile tool handler syntax
         run: node --check grades/grade-09/student-profile/dashboard-layout.js
-      - name: Verify daily lesson and toolbar contracts
-        run: node --test tests/grade09-dashboard-entry-regression.test.mjs
+      - name: Verify diagnostic syntax
+        run: node --check grades/grade-09/student-profile/vnv-chrome-forensic-probe.js
+      - name: Verify daily lesson, toolbar, and opt-in diagnostic contracts
+        run: node --test tests/grade09-dashboard-entry-regression.test.mjs tests/grade09-profile-opt-in-chrome-probe.test.mjs
