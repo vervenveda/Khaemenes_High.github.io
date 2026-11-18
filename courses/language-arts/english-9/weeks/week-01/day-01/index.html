@@ -75,10 +75,12 @@ function arrange(){
  const body=document.body,main=document.getElementById("daily-main");
  if(!body||!main)return;
  // Canonical full-width order: 333 ticker, auto-populating ticker, official header, main.
- for(const id of ["vnv333NetworkTicker","vnvTickerAutoPopulate","vnvHeaderAutoPopulate"]){
+ let anchor=main;
+ for(const id of ["vnvHeaderAutoPopulate","vnvTickerAutoPopulate","vnv333NetworkTicker"]){
    const el=document.getElementById(id);
-   if(el&&el.parentElement!==body)body.insertBefore(el,main);
-   else if(el&&el.nextElementSibling!==main)body.insertBefore(el,main);
+   if(!el)continue;
+   if(el.parentElement!==body||el.nextElementSibling!==anchor)body.insertBefore(el,anchor);
+   anchor=el;
  }
  const hero=main.querySelector(".daily-hero");
  if(hero&&main.firstElementChild!==hero)main.insertBefore(hero,main.firstElementChild);
