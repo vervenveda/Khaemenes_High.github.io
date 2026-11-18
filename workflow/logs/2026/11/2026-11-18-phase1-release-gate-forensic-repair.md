@@ -64,3 +64,20 @@ This is an automated source/synthetic-run milestone, not browser-device acceptan
 
 ## Next high-priority hold: Social Studies 10 assessment adapter
 The High School Learning Architecture regression `tools/validate-high-school-learning-architecture.mjs` demands the inline tokens `highAssessmentDraw`, `KhaemenesHighAssessmentAdapter`, `attemptId`, `questionIds`, `reviewSkills`, `score>=80`, `highAssessmentComplete` in each of Social Studies 10–12's `index.html`. Social Studies 11 and 12 include all seven in the active page. Grade 10's canonical `index.html` is short and loads `course-data.js` plus `app.js`, and although the shared assessment adapter script is referenced, `app.js` contains none of its runtime integration tokens. Its weekly quiz currently uses a separate local scoring engine. **HOLD:** determine safe integration with the canonical Grade 10 quiz authority, randomized forms, existing learner records, 80% mastery and project/human-review evidence. Do not insert empty tokens or weaken the test. Student-data migration and browser acceptance remain unverified.
+
+## Grade 10 Social Studies randomized assessment integration — verified
+Date 2026-11-18. This continuation is a scoped academic source upgrade plus source/VM regression, **not** an authorization or browser-device certification.
+
+### Source changes
+- `courses/social-studies/grade-10/app.js`: learner-separated persistent Monte Carlo weekly sessions using canonical `course-data.js` quiz banks; randomized option order; answer restoration; 80% objective mastery; no partial-answer disclosures; separately retained constructed response and evaluator-review requirement; idempotent completion receipts; history-aware best scores; preserves original learner gradebook fields and prior attempt counts. Commit `2a26371cb48341f9e87fc3a431fbc18b708badc5`.
+- Corrected existing incorrect single-select `$()` calls on `#weekList` and weekly quiz question inputs to multi-select `$$()`, enabling week navigation and response preservation. Commit `c7d12a01f82242c0717efcb9ab5afdf5b92f26c3`.
+- `tools/validate-high-school-learning-architecture.mjs` checks Grade 10's **actual extracted app.js** instead of retired inline source, verifies learner-session contracts; existing Grade 11–12 checks retained. Commits `9ccc60f1c153c021d49a829e39c350e239cfd0f9`, `a89aa97b7d88f3036ded9a888793c7c34b57d16a`.
+- `tools/test-social-studies-grade10-session-bridge.mjs` adds behavioral checks of 36 ten-question banks, per-learner isolation, persistent active session and response, retake session rotation, review provenance, fail-closed storage, legacy record byte preservation and 80% policy. Commit `36560dae848e059cacd0ae65d317d3598a182764`.
+- `.github/workflows/high-school-learning-architecture-regression.yml`: includes behavioral Grade 10 verification as a mandatory gate. Commit `bdd4cedac8a6b48701a6984272d65f9a5f2543da`.
+
+### Verified workflow evidence
+`High School Learning Architecture Regression` run `44305571274` completed **SUCCESS** with both architecture validation and newly added Grade 10 learner-session behavioral test. Output confirms `36×10` question banks and per-learner/refresh/recovery/retake/storage safeguards. The earlier SHA `a89aa97b7d88f3036ded9a888793c7c34b57d16a` also passed the full `High School Record and Route Validation` run `44305277746`, public entry routes `44305277713`, and release-head integrity `44305277695`.
+
+### Remaining holds
+- Grade 10 legacy browser QA `tests/test_social_studies_grade10_dashboard.py` expects `#ss10-tools`, inline global report functions and explicit missing-Academy-profile errors from an earlier page version. Current canonical Grade 10 entrance is a separate extracted JS implementation; 5 browser assertions failed, so this is **NOT** a browser acceptance PASS. Investigate actual learner identity/authorization behavior before updating tests or claiming parity.
+- Independent English curriculum, English 9 week progression, student profile toolbar/quick link, vocabulary and other department CI holds remain separate.
