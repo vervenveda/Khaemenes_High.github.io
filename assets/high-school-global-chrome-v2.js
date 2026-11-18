@@ -24,6 +24,7 @@ const VNV="https://vervenveda.com/assets/";
 const HIGH="https://vervenveda.com/Khaemenes_High.github.io/";
 const HEADER="vnv-header-autopopulate.js";
 const TOOLBAR="vnv-ecosystem-toolbar.js";
+const TICKER_GUARD="vnv-dual-ticker-v1.js";
 const HEADER_ID="vnvHeaderAutoPopulate";
 const TOOLBAR_ID="vnvEcosystemUtilityDock";
 
@@ -61,6 +62,15 @@ function loadOnce(filename,dataKey,readyCheck){
     node.addEventListener("error",()=>finish(false),{once:true});
     (document.head||document.documentElement).appendChild(node);
   });
+}
+
+function ensureTickerGuard(){
+  if(scriptFor(TICKER_GUARD))return;
+  const node=document.createElement("script");
+  node.src=HIGH+"assets/"+TICKER_GUARD;
+  node.defer=true;
+  node.dataset.khaemenesHighTickerGuard="true";
+  (document.head||document.documentElement).appendChild(node);
 }
 
 function gradeFromPath(){
@@ -125,6 +135,7 @@ async function ensureToolbar(){
 async function start(){
   if(!document.body)return;
   document.documentElement.dataset.khaemenesHighChrome="minimal-v3";
+  ensureTickerGuard();
   await Promise.allSettled([ensureHeader(),ensureToolbar()]);
   window.dispatchEvent(new CustomEvent("khaemenes-high-chrome-ready",{detail:{
     version:"3.0.0",
