@@ -397,3 +397,16 @@ else if(current){
  s.onerror=()=>console.warn("Shared mathematics hardening layer unavailable; existing course behavior remains active.");
  (document.head||document.documentElement).appendChild(s);
 })();
+
+
+/* Exceptional-depth representation companion for Algebra II Units 02–03. */
+;(()=>{
+ const lessonId=document.body?.dataset?.lessonId||"";
+ if(!/^u0[23]-l\d{2}$/.test(lessonId)||document.getElementById("algebra2DepthCompanionUnits0203"))return;
+ const s=document.createElement("script");
+ s.id="algebra2DepthCompanionUnits0203";
+ s.src=new URL("./algebra2-units02-03-depth-companion-v1.js",document.currentScript?.src||location.href).href;
+ s.async=false;
+ s.onerror=()=>console.warn("Algebra II depth companion unavailable; canonical lesson remains usable.");
+ (document.head||document.documentElement).appendChild(s);
+})();
