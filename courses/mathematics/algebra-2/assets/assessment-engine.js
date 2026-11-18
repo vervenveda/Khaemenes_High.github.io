@@ -69,7 +69,17 @@
       if (Array.isArray(cfg.weeks) && cfg.weeks.length) result = result.filter(question => cfg.weeks.includes(Number(question.week)));
       if (cfg.pathway) {
         const level = {Foundation:1,Core:2,Extended:3}[cfg.pathway] || 2;
+        const beforePathway = [...result];
         result = result.filter(question => Number(question.pathway_min ?? question.difficulty ?? 2) <= level);
+        if (level === 1 && result.length < Number(cfg.count || 0)) {
+          const used = new Set(result.map(question => String(question.id)));
+          const legacyFoundation = beforePathway.filter(question =>
+            question?.pathway_min == null &&
+            question?.difficulty == null &&
+            !used.has(String(question?.id || ""))
+          );
+          result = [...result, ...legacyFoundation];
+        }
       }
       if (cfg.depthBlueprint) result = result.filter(question => typeof question.dimension === "string" && Number.isFinite(Number(question.lesson)));
       return result;
