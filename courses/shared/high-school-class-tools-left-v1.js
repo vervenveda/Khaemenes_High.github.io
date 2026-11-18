@@ -13,7 +13,7 @@ const home=high+"courses/language-arts/"+subject+"/";
 const destinations=[
  ["Reading",home+"learning-tools.html","English reading practice and resources"],
  ["Writing",home+"evidence-studio.html","Reading-to-Writing Evidence Studio"],
- ["Lessons",home+"weeks/","Weekly English lessons"],
+ ["Lessons",home+"weeks/week-01/index.html","Start the first English lesson"],
  ["Assess",home+"assessments/","Official English assessments"],
  ["Search","https://vervenveda.com/PLERASearch.github.io/","Explore learning resources"],
  ["Parent","https://vervenveda.com/Khaemenes_Academy.github.io/family/","Family and parent resources"]
