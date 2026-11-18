@@ -6,7 +6,7 @@ if(window.KhaemenesMathLearnerRecord)return;
 const path=location.pathname.toLowerCase();
 const course=path.includes("/pre-algebra/")?"pre-algebra":path.includes("/algebra-1/")?"algebra-1":path.includes("/geometry/")?"geometry":path.includes("/algebra-2/")?"algebra-2":null;
 if(!course)return;
-const SCHEMA="khaemenes-math-learner-record-v1",ACTIVE_KEY="khaemenes_active_learner_v1",MASTER=80;
+const SCHEMA="khaemenes-math-learner-record-v1",ACTIVE_KEY="khaemenes_active_learner_v1",FAMILY_KEY="khaemenes_family_registry_v1",MASTER=80;
 const safeParse=(raw,f=null)=>{try{const v=JSON.parse(raw||"null");return v??f}catch{return f}};
 const readRaw=k=>{try{return localStorage.getItem(k)}catch{return null}};
 const learner=()=>{
@@ -37,7 +37,7 @@ function legacyKeys(){
 function blank(){
  const l=learner();
  return {schema:SCHEMA,version:1,course,learner:l,mastery_target:MASTER,created_at:new Date().toISOString(),updated_at:null,
-  provenance:{mode:"browser-local-consolidation",legacy_keys:[],last_capture:null},
+  provenance:{mode:"browser-local-consolidation",legacy_keys:[],learner_scoped_keys:[],legacy_unscoped_keys:[],last_capture:null},
   legacy:{},ledger:[],notes:[],health:{last_verified_write:null,last_error:null}};
 }
 function load(){const current=safeParse(readRaw(key()),null);return current&&current.schema===SCHEMA?current:blank()}
