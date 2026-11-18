@@ -100,3 +100,18 @@ Source observations: PROSE originally used Futura/Georgia and multiple 11–13px
 Repair: commit `4fcb7cdf10f0` implements one page-specific canonical VNV/KA presentation stylesheet, centered Cinzel hero with a clear first action, parchment layout, charcoal button/card accents, aligned two-column writing controls, 16px minimum student control text, balanced section navigation and centered footer. Direct first-party ticker/AutoPopulate/header scripts join the existing right ecosystem toolbar and left Class Tools toolbar. The Content Security Policy now permits **same-origin first-party scripts and connections only**, with no third-party scripts or endpoints and no external AI or automatic draft submission. The local-first disclaimer has been corrected to distinguish the isolated writing engine from Academy public chrome.
 
 Verification: re-fetched committed source; inline JS syntax PASS; existing draft state, import/export, theme selector and UI controls present; no third-party script URLs introduced. **Browser/runtime, keyboard, cross-device, offline mode and privacy network tracing are HOLD**, especially because the CSP accommodation allows same-origin public component loads and those components have not been behaviorally traced under PROSE. Preserve source/draft boundaries. Next target after PROSE is Word Game/other literary-tool destinations.
+
+## Same-day refinement · PROSE compact learning setup (11:31 screenshot)
+
+The latest user screenshot identified a blank rail directly below the official header, an unnecessary Dark appearance toggle, underutilized space in the setup cards, and an uneven setup grid.
+
+Commit `f3df928e463b` updates PROSE Writer Studio:
+
+- Removed the empty `vnv-language-rail` markup and moved the AutoPopulate ticker insertion anchor to the existing Academy breadcrumb. Removed the extra Dark toggle and its event handler without clearing existing draft records or stored preferences; the canonical visible presentation remains light/parchment.
+- Replaced the oversized two-column setup with three **equal-column, collapsed-by-default** native `details` cards: **Learning Context**, **Muse Controls**, **Writing Modes**. Every control retains its original ID, so the local writing engine can continue binding to the same elements.
+- Kept the actual writing activity open and accessible in one full-width **Today's Writing Studio** panel. This follows the progressive-disclosure rule: secondary choices collapse while the task itself remains visible.
+- Made the optional **Craft Mirror** a native collapsible details card and retained diagnostics IDs, which reduces unused visible space beside the draft editor.
+- Retained draft autosave, Writer's Nest, import/export, writing challenge actions, first-party header/ticker scripts, both toolbars, and the local-first storage contract.
+- Source-level re-fetch and JavaScript parse PASS; every inspected functional ID has exactly one occurrence. Interactive rendering, native details accessibility, toolbar/footer overlap, and browser performance remain HOLD until user verifies.
+
+The requested reference to a second screenshot could not be inspected during this pass because only the first uploaded screenshot was available in the current turn. Do not infer any second-image button defects from that absent reference.
