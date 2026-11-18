@@ -34,7 +34,32 @@
 <div class="actions no-print" style="justify-content:center;margin-top:35px"><button class="btn primary" id="printCert" type="button">Print Record</button><button class="btn" id="saveCert" type="button">Save Local Fields</button><a class="btn" href="../">Course Home</a></div>
 </section></main>
 <script>
-(()=>{const K="khaemenes-algebra2-certificate-v1",ids=["certName","certGrade","certDate","certEvaluator","certRef"];let d={};try{d=JSON.parse(localStorage.getItem(K)||"{}")}catch{};ids.forEach(id=>{const e=document.getElementById(id);if(e)e.value=d[id]||""});document.getElementById("saveCert").onclick=()=>{const x={};ids.forEach(id=>x[id]=document.getElementById(id).value);localStorage.setItem(K,JSON.stringify(x));alert("Certificate fields saved locally.")};document.getElementById("printCert").onclick=()=>print()})();
+(()=>{"use strict";
+ const K="khaemenes-algebra2-certificate-v1",ids=["certName","certGrade","certDate","certEvaluator","certRef"];
+ const adapter=()=>window.KhaemenesMathStorageAdapter;
+ function read(){
+   const a=adapter();
+   if(a?.readJSON)return a.readJSON(K,{})||{};
+   try{return JSON.parse(localStorage.getItem(K)||"{}")}catch{return {}}
+ }
+ function verifiedFallbackWrite(value){
+   try{
+     const raw=JSON.stringify(value);
+     localStorage.setItem(K,raw);
+     return {ok:localStorage.getItem(K)===raw,verified:localStorage.getItem(K)===raw,persisted:localStorage.getItem(K)===raw};
+   }catch(error){return {ok:false,verified:false,persisted:false,error:String(error?.name||error?.message||error)}}
+ }
+ const d=read();
+ ids.forEach(id=>{const e=document.getElementById(id);if(e)e.value=d[id]||""});
+ document.getElementById("saveCert").onclick=()=>{
+   const x={};ids.forEach(id=>x[id]=document.getElementById(id).value);
+   const result=adapter()?.writeJSON?.(K,x)||verifiedFallbackWrite(x);
+   window.KhaemenesMathLearnerRecord?.captureLegacy?.("certificate-save");
+   if(result?.verified===true&&result?.persisted===true)alert("Certificate fields saved and verified locally.");
+   else alert("Persistent storage could not be verified. Print or export the course record before leaving this page.");
+ };
+ document.getElementById("printCert").onclick=()=>print();
+})();
 </script><footer class="footer"><div class="wrap footer-inner"><span>KH-MATH-A2 · Open-Age Algebra II</span><span>Local-first · Printable · Jennifer Kay Pearl · 2026</span></div></footer>
 <!-- Shared VNV/KA institutional chrome: no learner or certificate state changes. -->
 <script src="https://vervenveda.com/assets/vnv-333-ticker.js"></script>
