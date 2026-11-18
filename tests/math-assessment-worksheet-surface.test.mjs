@@ -7,6 +7,10 @@ const theme=read("courses/mathematics/assets/math-assessment-workspace-v1.css");
 const tools=read("courses/mathematics/assets/math-learning-tools-v2.js");
 const engine=read("courses/mathematics/algebra-1/assets/exam-engine.js");
 const pre=read("courses/mathematics/pre-algebra/index.html");
+const algebraWeekly=read("courses/mathematics/algebra-1/assessments/weekly-mastery.html");
+const algebraWeeklyEngine=read("courses/mathematics/algebra-1/assessments/assets/weekly-mastery-engine-v2.js");
+const algebraUnitEnhancer=read("courses/mathematics/algebra-1/assets/unit-assessment-workspace-v1.js");
+const focused=read("courses/mathematics/algebra-1/assets/focused-assessment-v1.js");
 const algebraPages=[
  "courses/mathematics/algebra-1/diagnostic/index.html",
  "courses/mathematics/algebra-1/assessments/midterm-units-01-06.html",
@@ -84,5 +88,54 @@ test("weekly mastery is removed from planner clutter and opened explicitly",()=>
  assert.match(pre,/weeklyMasterySummary\(w,r\)/);
  assert.match(pre,/Open the check in the dedicated one-column assessment workspace/);
  assert.match(pre,/Return to Weekly Planner/);
+});
+
+
+test("Algebra I weekly mastery uses the shared one-column worksheet surface",()=>{
+ assert.match(algebraWeekly,/class="math-assessment-surface"/);
+ assert.match(algebraWeekly,/data-math-assessment-mode="weekly"/);
+ assert.match(algebraWeekly,/math-assessment-workspace-v1\.css/);
+ assert.match(algebraWeekly,/math-learning-tools-v2\.js/);
+ assert.match(theme,/\.weekly-shell[\s\S]*flex-direction:column/);
+ assert.match(theme,/\.weekly-side[\s\S]*position:static/);
+});
+
+test("Algebra I weekly mastery preserves ungraded problem-solving work with the draft",()=>{
+ assert.match(algebraWeeklyEngine,/draft:\{answers:\{\},scratch:\{\}\}/);
+ assert.match(algebraWeeklyEngine,/data-weekly-work/);
+ assert.match(algebraWeeklyEngine,/math-workspace/);
+ assert.match(algebraWeeklyEngine,/work_snapshot:\{\.\.\.\(r\.draft\.scratch\|\|\{\}\)\}/);
+ assert.match(algebraWeeklyEngine,/r\.draft=\{answers:\{\},scratch:\{\},attempt_number:/);
+});
+
+test("all 13 Algebra I unit mastery pages use one worksheet surface and one math tools launcher",()=>{
+ for(let unit=1;unit<=13;unit++){
+  const id=String(unit).padStart(2,"0");
+  const path=`courses/mathematics/algebra-1/units/unit-${id}/assessment/mastery-check.html`;
+  const page=read(path);
+  assert.match(page,/math-assessment-surface algebra1-unit-mastery/,path);
+  assert.match(page,/data-math-assessment-mode="unit"/,path);
+  assert.match(page,/math-assessment-workspace-v1\.css/,path);
+  assert.match(page,/math-learning-tools-v2\.js/,path);
+  assert.match(page,/unit-assessment-workspace-v1\.js/,path);
+ }
+});
+
+test("unit mastery scratch enhancer is presentation-only and observer-free",()=>{
+ assert.match(algebraUnitEnhancer,/sessionStorage/);
+ assert.match(algebraUnitEnhancer,/Show your work · ungraded session workspace/);
+ assert.doesNotMatch(algebraUnitEnhancer,/localStorage/);
+ assert.doesNotMatch(algebraUnitEnhancer,/new\s+MutationObserver/);
+ assert.doesNotMatch(algebraUnitEnhancer,/mastery_met\s*=|best\s*\[/);
+});
+
+test("focused question viewer stands down on worksheet-style mastery pages",()=>{
+ assert.match(focused,/classList\?\.contains\("math-assessment-surface"\)\)return false/);
+});
+
+test("assessment theme overrides legacy 14px and 55px embedded typography",()=>{
+ assert.match(theme,/html:root:root body\.math-assessment-surface\{/);
+ assert.match(theme,/font-size:18px!important/);
+ assert.match(theme,/html:root:root body\.math-assessment-surface :is\(\.eyebrow/);
 });
 
