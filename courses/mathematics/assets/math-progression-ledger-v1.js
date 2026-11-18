@@ -9,7 +9,7 @@ function classify(score,reviewed=false){
  return "practice";
 }
 function build(){
- const r=window.KhaemenesMathLearnerRecord,p=window.KhaemenesMathProgress?.snapshot?.()||null,record=r?.snapshot?.()||null;
+ const r=window.KhaemenesMathLearnerRecord,p=window.KhaemenesMathProgress?.snapshot?.()||null,record=r?.snapshot?.()||null,evidence=window.KhaemenesMathEvidenceAuthority?.snapshot?.()||null;
  const out={schema:"khaemenes-math-progression-ledger-v1",course:r?.course||p?.course||null,generated_at:new Date().toISOString(),mastery_target:MASTER,
   learner:r?.learner?.()||null,readiness:null,lessons:null,weeks:null,units:null,midterm:null,final:null,portfolio:null,resources:null,source_status:[]};
  if(p){
@@ -20,6 +20,7 @@ function build(){
   out.final={score:p.mastery?.final??null,status:classify(p.mastery?.final)};
   out.portfolio=p.portfolio||null;out.source_status.push("math-progress-contract");
  }
+ if(evidence){out.midterm={score:evidence.midterm?.best??out.midterm?.score??null,status:evidence.midterm?.status||out.midterm?.status||"not-recorded"};out.final={score:evidence.final?.best??out.final?.score??null,status:evidence.final?.status||out.final?.status||"not-recorded"};out.source_status.push("math-evidence-authority");}
  if(record){
   const lg=record.legacy||{};
   if(record.course==="pre-algebra"){
@@ -34,5 +35,5 @@ function build(){
 function capture(reason="snapshot"){
  const ledger=build(),r=window.KhaemenesMathLearnerRecord;r?.append?.("progression-ledger",{reason,ledger},"math-progression-ledger-v1");return ledger;
 }
-window.KhaemenesMathProgressionLedger=Object.freeze({build,capture,classify,version:"1.0.0"});
+window.KhaemenesMathProgressionLedger=Object.freeze({build,capture,classify,version:"1.1.0"});
 })();
