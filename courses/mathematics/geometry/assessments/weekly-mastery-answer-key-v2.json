@@ -1,0 +1,2789 @@
+{
+  "schema": "khaemenes-geometry-weekly-mastery-answer-key-v2",
+  "course": "KH-MATH-GEO",
+  "mastery_threshold": 80,
+  "question_count": 360,
+  "weekly_count": 10,
+  "dimensions": [
+    "procedural-fluency",
+    "multi-step-application",
+    "representation-interpretation",
+    "error-analysis",
+    "transfer-reasoning"
+  ],
+  "note": "Canonical graded weekly mastery key. The separate Retention Lab is non-gating and dynamically mixes 8 current + 2 delayed questions.",
+  "weeks": {
+    "1": {
+      "week": 1,
+      "unit": 1,
+      "title": "Foundations, Constructions & Geometric Reasoning · Part 1",
+      "questions": [
+        {
+          "id": "geo-w01-q01",
+          "dimension": "procedural-fluency",
+          "prompt": "Two complementary angles measure 37° and x°. Find x.",
+          "answer": "53°",
+          "explanation": "Complementary angles sum to 90°, so x=90−37=53."
+        },
+        {
+          "id": "geo-w01-q02",
+          "dimension": "procedural-fluency",
+          "prompt": "A segment has endpoints at -4 and 11 on a number line. What is its length?",
+          "answer": "15",
+          "explanation": "Distance is the absolute difference |11−(−4)|=15."
+        },
+        {
+          "id": "geo-w01-q03",
+          "dimension": "multi-step-application",
+          "prompt": "Find the midpoint of A(−6,2) and B(4,10).",
+          "answer": "(−1,6)",
+          "explanation": "Average corresponding coordinates: ((−6+4)/2,(2+10)/2)=(−1,6)."
+        },
+        {
+          "id": "geo-w01-q04",
+          "dimension": "multi-step-application",
+          "prompt": "Point P divides a 35-unit segment in the ratio 2:5. What are the two part lengths?",
+          "answer": "10 and 25",
+          "explanation": "There are 7 ratio parts, so each part is 5; lengths are 10 and 25."
+        },
+        {
+          "id": "geo-w01-q05",
+          "dimension": "representation-interpretation",
+          "prompt": "Which notation describes a ray that begins at A and passes through B?",
+          "answer": "ray AB",
+          "explanation": "A ray is named with its endpoint first."
+        },
+        {
+          "id": "geo-w01-q06",
+          "dimension": "representation-interpretation",
+          "prompt": "Which statement best distinguishes a geometric object from its measure?",
+          "answer": "Segment AB is a set of points; AB is a number.",
+          "explanation": "Notation distinguishes the object from its numerical measure."
+        },
+        {
+          "id": "geo-w01-q07",
+          "dimension": "error-analysis",
+          "prompt": "A student says the diagram proves two lines are perpendicular because they look like they meet at 90°. What is the first flaw?",
+          "answer": "Appearance alone is not proof unless a right angle is stated or justified.",
+          "explanation": "A diagram can suggest a relationship but cannot establish it without given or proved evidence."
+        },
+        {
+          "id": "geo-w01-q08",
+          "dimension": "error-analysis",
+          "prompt": "A student finds the midpoint of (2,7) and (8,1) as (10,8). What error occurred?",
+          "answer": "The coordinates were added but not divided by 2.",
+          "explanation": "The midpoint formula averages coordinates, so each coordinate sum must be divided by 2."
+        },
+        {
+          "id": "geo-w01-q09",
+          "dimension": "transfer-reasoning",
+          "prompt": "A map point must be exactly equidistant from A and B. Which geometric set should you construct?",
+          "answer": "The perpendicular bisector of AB",
+          "explanation": "Every point on the perpendicular bisector is equidistant from A and B."
+        },
+        {
+          "id": "geo-w01-q10",
+          "dimension": "transfer-reasoning",
+          "prompt": "Why is a counterexample valuable in geometric reasoning?",
+          "answer": "One valid counterexample disproves a universal claim.",
+          "explanation": "A single counterexample is enough to refute a statement claiming something is always true."
+        }
+      ]
+    },
+    "2": {
+      "week": 2,
+      "unit": 1,
+      "title": "Foundations, Constructions & Geometric Reasoning · Part 2",
+      "questions": [
+        {
+          "id": "geo-w02-q01",
+          "dimension": "procedural-fluency",
+          "prompt": "Which classical construction creates a point equidistant from the endpoints of a segment?",
+          "answer": "Perpendicular bisector",
+          "explanation": "A perpendicular bisector consists of points equidistant from the segment endpoints."
+        },
+        {
+          "id": "geo-w02-q02",
+          "dimension": "procedural-fluency",
+          "prompt": "If a conditional statement is “If a figure is a square, then it is a rectangle,” what is its converse?",
+          "answer": "If a figure is a rectangle, then it is a square.",
+          "explanation": "The converse swaps hypothesis and conclusion."
+        },
+        {
+          "id": "geo-w02-q03",
+          "dimension": "multi-step-application",
+          "prompt": "Constructing an angle bisector splits a 74° angle into what measures?",
+          "answer": "37° and 37°",
+          "explanation": "An angle bisector creates two congruent angles, each half of 74°."
+        },
+        {
+          "id": "geo-w02-q04",
+          "dimension": "multi-step-application",
+          "prompt": "A theorem states vertical angles are congruent. If one vertical angle is 128°, what is the other?",
+          "answer": "128°",
+          "explanation": "Vertical angles have equal measure."
+        },
+        {
+          "id": "geo-w02-q05",
+          "dimension": "representation-interpretation",
+          "prompt": "Which statement is the contrapositive of “If two lines are perpendicular, then they intersect”?",
+          "answer": "If two lines do not intersect, then they are not perpendicular.",
+          "explanation": "A contrapositive negates and reverses the conditional."
+        },
+        {
+          "id": "geo-w02-q06",
+          "dimension": "representation-interpretation",
+          "prompt": "In a two-column proof, what belongs beside each statement?",
+          "answer": "A reason that justifies the statement",
+          "explanation": "Every proof statement must be supported by a definition, postulate, theorem, or prior result."
+        },
+        {
+          "id": "geo-w02-q07",
+          "dimension": "error-analysis",
+          "prompt": "A student claims the converse of every true conditional is automatically true. Which example refutes that?",
+          "answer": "If a figure is a square, it is a rectangle; but a rectangle need not be a square.",
+          "explanation": "The original square→rectangle statement is true, while its converse is not universally true."
+        },
+        {
+          "id": "geo-w02-q08",
+          "dimension": "error-analysis",
+          "prompt": "A construction uses a ruler with marked measurements to copy a segment in a compass-and-straightedge task. What is the issue?",
+          "answer": "The method uses measurement rather than the allowed classical tools.",
+          "explanation": "Classical compass-and-straightedge constructions do not rely on marked measurement."
+        },
+        {
+          "id": "geo-w02-q09",
+          "dimension": "transfer-reasoning",
+          "prompt": "Which proof format is best if you want the logical dependencies between statements to be visually explicit?",
+          "answer": "Flow proof",
+          "explanation": "A flow proof emphasizes how reasons and conclusions connect."
+        },
+        {
+          "id": "geo-w02-q10",
+          "dimension": "transfer-reasoning",
+          "prompt": "What makes a geometric proof trustworthy across different drawings of the same situation?",
+          "answer": "Each conclusion follows from stated facts and justified rules, not appearance.",
+          "explanation": "Proof relies on invariant logical relationships rather than the look of a specific sketch."
+        }
+      ]
+    },
+    "3": {
+      "week": 3,
+      "unit": 2,
+      "title": "Transformations, Symmetry & Congruence · Part 1",
+      "questions": [
+        {
+          "id": "geo-w03-q01",
+          "dimension": "procedural-fluency",
+          "prompt": "Translate P(−3,4) by vector ⟨5,−2⟩.",
+          "answer": "(2,2)",
+          "explanation": "Add 5 to x and −2 to y."
+        },
+        {
+          "id": "geo-w03-q02",
+          "dimension": "procedural-fluency",
+          "prompt": "Reflect Q(6,−3) across the x-axis.",
+          "answer": "(6,3)",
+          "explanation": "Reflection across the x-axis changes the sign of y."
+        },
+        {
+          "id": "geo-w03-q03",
+          "dimension": "multi-step-application",
+          "prompt": "Rotate R(2,−5) 90° counterclockwise about the origin.",
+          "answer": "(5,2)",
+          "explanation": "A 90° counterclockwise rotation uses (x,y)→(−y,x)."
+        },
+        {
+          "id": "geo-w03-q04",
+          "dimension": "multi-step-application",
+          "prompt": "Triangle A has vertices (0,0),(4,0),(0,3). After translation by ⟨−2,5⟩, where is (4,0)?",
+          "answer": "(2,5)",
+          "explanation": "Translate each coordinate by the same vector."
+        },
+        {
+          "id": "geo-w03-q05",
+          "dimension": "representation-interpretation",
+          "prompt": "Which quantity is preserved by every rigid motion?",
+          "answer": "Distance and angle measure",
+          "explanation": "Translations, rotations, and reflections preserve lengths and angles."
+        },
+        {
+          "id": "geo-w03-q06",
+          "dimension": "representation-interpretation",
+          "prompt": "Which coordinate rule represents reflection across the y-axis?",
+          "answer": "(x,y)→(−x,y)",
+          "explanation": "Reflection across the y-axis negates x."
+        },
+        {
+          "id": "geo-w03-q07",
+          "dimension": "error-analysis",
+          "prompt": "A student rotates (3,1) 90° counterclockwise and writes (1,−3). What did the student do?",
+          "answer": "Used the 90° clockwise rule instead.",
+          "explanation": "90° clockwise maps (x,y)→(y,−x); counterclockwise maps to (−y,x)."
+        },
+        {
+          "id": "geo-w03-q08",
+          "dimension": "error-analysis",
+          "prompt": "A student reflects a point on the x-axis and changes its coordinates. Why is that wrong?",
+          "answer": "Points on the mirror line stay fixed.",
+          "explanation": "A point lying on the reflection line maps to itself."
+        },
+        {
+          "id": "geo-w03-q09",
+          "dimension": "transfer-reasoning",
+          "prompt": "Which transformation would move a logo without changing its orientation or size?",
+          "answer": "Translation",
+          "explanation": "A translation slides every point by the same vector and preserves orientation and size."
+        },
+        {
+          "id": "geo-w03-q10",
+          "dimension": "transfer-reasoning",
+          "prompt": "Why can rigid motions be used to define congruence?",
+          "answer": "If one figure can be mapped onto another by rigid motions, all corresponding distances and angles agree.",
+          "explanation": "Rigid motions preserve exactly the measurements required for congruence."
+        }
+      ]
+    },
+    "4": {
+      "week": 4,
+      "unit": 2,
+      "title": "Transformations, Symmetry & Congruence · Part 2",
+      "questions": [
+        {
+          "id": "geo-w04-q01",
+          "dimension": "procedural-fluency",
+          "prompt": "Apply a translation ⟨2,−1⟩ followed by a reflection across the x-axis to P(1,3).",
+          "answer": "(3,−2)",
+          "explanation": "First translate to (3,2), then reflect to (3,−2)."
+        },
+        {
+          "id": "geo-w04-q02",
+          "dimension": "procedural-fluency",
+          "prompt": "Which sequence always produces a rigid motion?",
+          "answer": "A rotation followed by a translation",
+          "explanation": "Compositions of rigid motions remain rigid."
+        },
+        {
+          "id": "geo-w04-q03",
+          "dimension": "multi-step-application",
+          "prompt": "Point A maps to A′ under a reflection, then A′ maps to A″ under a translation. What must be preserved from A to A″?",
+          "answer": "Distances to corresponding points in the figure",
+          "explanation": "Both reflection and translation are isometries, so distances are preserved."
+        },
+        {
+          "id": "geo-w04-q04",
+          "dimension": "multi-step-application",
+          "prompt": "Two triangles have corresponding sides 5,7,8 and 5,7,8. Which conclusion is justified?",
+          "answer": "They are congruent by SSS.",
+          "explanation": "Three pairs of corresponding congruent sides establish SSS congruence."
+        },
+        {
+          "id": "geo-w04-q05",
+          "dimension": "representation-interpretation",
+          "prompt": "Which statement matches the transformation definition of congruence?",
+          "answer": "One figure can be mapped exactly onto the other using rigid motions.",
+          "explanation": "Congruent figures are related by a sequence of rigid motions."
+        },
+        {
+          "id": "geo-w04-q06",
+          "dimension": "representation-interpretation",
+          "prompt": "Why can order matter in a composition of transformations?",
+          "answer": "Different orders can send a point to different final locations.",
+          "explanation": "Transformation composition is generally not commutative."
+        },
+        {
+          "id": "geo-w04-q07",
+          "dimension": "error-analysis",
+          "prompt": "A student says a dilation with scale factor 3 proves congruence because angles are preserved. What is missing?",
+          "answer": "Lengths are multiplied by 3, so the motion is not rigid unless the factor is 1.",
+          "explanation": "Congruence requires both lengths and angles preserved."
+        },
+        {
+          "id": "geo-w04-q08",
+          "dimension": "error-analysis",
+          "prompt": "A student reverses a reflection and translation and gets a different image. What should they conclude?",
+          "answer": "The composition order matters.",
+          "explanation": "Changing the order can change the output."
+        },
+        {
+          "id": "geo-w04-q09",
+          "dimension": "transfer-reasoning",
+          "prompt": "A manufacturing template must be moved and turned but not resized. Which tools are appropriate?",
+          "answer": "Translations and rotations",
+          "explanation": "Translations and rotations preserve size and shape."
+        },
+        {
+          "id": "geo-w04-q10",
+          "dimension": "transfer-reasoning",
+          "prompt": "Why is congruence stronger than equal area?",
+          "answer": "Different shapes can have equal area, but congruence requires all corresponding lengths and angles to match.",
+          "explanation": "Area alone does not determine shape."
+        }
+      ]
+    },
+    "5": {
+      "week": 5,
+      "unit": 2,
+      "title": "Transformations, Symmetry & Congruence · Part 3",
+      "questions": [
+        {
+          "id": "geo-w05-q01",
+          "dimension": "procedural-fluency",
+          "prompt": "What is the order of rotational symmetry of a regular octagon?",
+          "answer": "8",
+          "explanation": "A regular octagon maps to itself 8 times in a full 360° turn."
+        },
+        {
+          "id": "geo-w05-q02",
+          "dimension": "procedural-fluency",
+          "prompt": "How many lines of symmetry does a regular pentagon have?",
+          "answer": "5",
+          "explanation": "A regular n-gon has n reflection symmetries."
+        },
+        {
+          "id": "geo-w05-q03",
+          "dimension": "multi-step-application",
+          "prompt": "A design repeats after a 60° rotation. What is its rotational symmetry order?",
+          "answer": "6",
+          "explanation": "360°/60°=6."
+        },
+        {
+          "id": "geo-w05-q04",
+          "dimension": "multi-step-application",
+          "prompt": "Which regular polygons tessellate the plane by themselves?",
+          "answer": "Equilateral triangles, squares, and regular hexagons",
+          "explanation": "Their interior angles fit around a point as exact divisors of 360°."
+        },
+        {
+          "id": "geo-w05-q05",
+          "dimension": "representation-interpretation",
+          "prompt": "Which symmetry maps every point through a center to a point directly opposite at the same distance?",
+          "answer": "Point symmetry (180° rotation)",
+          "explanation": "Point symmetry is equivalent to a half-turn."
+        },
+        {
+          "id": "geo-w05-q06",
+          "dimension": "representation-interpretation",
+          "prompt": "A frieze pattern is characterized primarily by what repeating motion?",
+          "answer": "Translation along one direction",
+          "explanation": "Frieze patterns repeat along a strip by translation."
+        },
+        {
+          "id": "geo-w05-q07",
+          "dimension": "error-analysis",
+          "prompt": "A student claims a regular pentagon tessellates because five copies can be drawn around a point. What should be checked?",
+          "answer": "Whether the interior angles sum exactly to 360° with no gaps or overlaps.",
+          "explanation": "A tessellation requires exact fit without gaps or overlaps."
+        },
+        {
+          "id": "geo-w05-q08",
+          "dimension": "error-analysis",
+          "prompt": "A pattern has reflection symmetry but a student says it must also have 90° rotational symmetry. Why is this invalid?",
+          "answer": "Reflection symmetry does not automatically imply 90° rotational symmetry.",
+          "explanation": "Different symmetry types are independent properties."
+        },
+        {
+          "id": "geo-w05-q09",
+          "dimension": "transfer-reasoning",
+          "prompt": "Which symmetry is most useful for designing a border motif that repeats indefinitely left and right?",
+          "answer": "Translation symmetry",
+          "explanation": "Repeated horizontal translation creates a border/frieze structure."
+        },
+        {
+          "id": "geo-w05-q10",
+          "dimension": "transfer-reasoning",
+          "prompt": "Why is symmetry useful in geometric design beyond appearance?",
+          "answer": "It reduces independent measurements and creates predictable invariant relationships.",
+          "explanation": "Symmetry creates repeated relationships that simplify construction and verification."
+        }
+      ]
+    },
+    "6": {
+      "week": 6,
+      "unit": 3,
+      "title": "Triangle Congruence & Proof · Part 1",
+      "questions": [
+        {
+          "id": "geo-w06-q01",
+          "dimension": "procedural-fluency",
+          "prompt": "A triangle has angles 48° and 67°. Find the third angle.",
+          "answer": "65°",
+          "explanation": "Triangle angle measures sum to 180°."
+        },
+        {
+          "id": "geo-w06-q02",
+          "dimension": "procedural-fluency",
+          "prompt": "Which congruence theorem uses two sides and the included angle?",
+          "answer": "SAS",
+          "explanation": "SAS uses two sides and the angle between them."
+        },
+        {
+          "id": "geo-w06-q03",
+          "dimension": "multi-step-application",
+          "prompt": "Two right triangles have congruent hypotenuses and one pair of congruent legs. Which theorem applies?",
+          "answer": "HL",
+          "explanation": "Hypotenuse-Leg proves congruence for right triangles."
+        },
+        {
+          "id": "geo-w06-q04",
+          "dimension": "multi-step-application",
+          "prompt": "Triangles ABC and DEF satisfy AB=DE, BC=EF, and AC=DF. Which correspondence is consistent?",
+          "answer": "A↔D, B↔E, C↔F",
+          "explanation": "The given side pairs align the vertices in that order."
+        },
+        {
+          "id": "geo-w06-q05",
+          "dimension": "representation-interpretation",
+          "prompt": "Which information proves triangle congruence but not merely similarity?",
+          "answer": "Three corresponding sides equal",
+          "explanation": "SSS equality fixes both shape and size."
+        },
+        {
+          "id": "geo-w06-q06",
+          "dimension": "representation-interpretation",
+          "prompt": "What does AAA establish for triangles?",
+          "answer": "Similarity, not necessarily congruence",
+          "explanation": "AAA fixes shape but not size."
+        },
+        {
+          "id": "geo-w06-q07",
+          "dimension": "error-analysis",
+          "prompt": "A student uses SSA as a general congruence theorem. What is the problem?",
+          "answer": "SSA can produce an ambiguous case and is not a general congruence criterion.",
+          "explanation": "Two sides and a nonincluded angle may determine more than one triangle."
+        },
+        {
+          "id": "geo-w06-q08",
+          "dimension": "error-analysis",
+          "prompt": "A proof labels corresponding vertices in different orders on two lines. What risk does that create?",
+          "answer": "It can produce incorrect CPCTC pairings later.",
+          "explanation": "Consistent correspondence is essential for correct conclusions."
+        },
+        {
+          "id": "geo-w06-q09",
+          "dimension": "transfer-reasoning",
+          "prompt": "Why is HL restricted to right triangles?",
+          "answer": "It relies on the fixed 90° angle and the hypotenuse-leg structure.",
+          "explanation": "The right-angle condition supplies crucial structure."
+        },
+        {
+          "id": "geo-w06-q10",
+          "dimension": "transfer-reasoning",
+          "prompt": "Which is the strongest evidence that two physical triangular braces are congruent?",
+          "answer": "Three corresponding side measurements agree within the stated tolerance.",
+          "explanation": "Congruence requires corresponding dimensions, not visual similarity."
+        }
+      ]
+    },
+    "7": {
+      "week": 7,
+      "unit": 3,
+      "title": "Triangle Congruence & Proof · Part 2",
+      "questions": [
+        {
+          "id": "geo-w07-q01",
+          "dimension": "procedural-fluency",
+          "prompt": "After proving ΔABC≅ΔDEF, which angle corresponds to ∠C?",
+          "answer": "∠F",
+          "explanation": "The congruence order gives A↔D, B↔E, C↔F."
+        },
+        {
+          "id": "geo-w07-q02",
+          "dimension": "procedural-fluency",
+          "prompt": "In an isosceles triangle with equal sides AB and AC, which angles are congruent?",
+          "answer": "∠B and ∠C",
+          "explanation": "Base angles opposite the congruent sides are congruent."
+        },
+        {
+          "id": "geo-w07-q03",
+          "dimension": "multi-step-application",
+          "prompt": "An isosceles triangle has vertex angle 38°. Find each base angle.",
+          "answer": "71°",
+          "explanation": "The remaining 142° is split equally: 71° each."
+        },
+        {
+          "id": "geo-w07-q04",
+          "dimension": "multi-step-application",
+          "prompt": "An equilateral triangle has side length 9. What can be concluded about its angles?",
+          "answer": "Each angle is 60°.",
+          "explanation": "Equilateral triangles are equiangular and triangle angles sum to 180°."
+        },
+        {
+          "id": "geo-w07-q05",
+          "dimension": "representation-interpretation",
+          "prompt": "What does CPCTC mean?",
+          "answer": "Corresponding parts of congruent triangles are congruent.",
+          "explanation": "CPCTC is used after triangle congruence has been established."
+        },
+        {
+          "id": "geo-w07-q06",
+          "dimension": "representation-interpretation",
+          "prompt": "When is CPCTC logically valid?",
+          "answer": "After the triangles have already been proven congruent",
+          "explanation": "CPCTC depends on established triangle congruence."
+        },
+        {
+          "id": "geo-w07-q07",
+          "dimension": "error-analysis",
+          "prompt": "A student uses CPCTC as the reason that the triangles are congruent. What is backwards?",
+          "answer": "CPCTC is a consequence of congruence, not a theorem used to establish it initially.",
+          "explanation": "First prove triangles congruent; then infer corresponding parts."
+        },
+        {
+          "id": "geo-w07-q08",
+          "dimension": "error-analysis",
+          "prompt": "A student says every triangle with two equal angles is scalene. What theorem corrects this?",
+          "answer": "Converse of the isosceles triangle theorem",
+          "explanation": "If two angles are congruent, the opposite sides are congruent."
+        },
+        {
+          "id": "geo-w07-q09",
+          "dimension": "transfer-reasoning",
+          "prompt": "Why are congruent-triangle proofs useful in structural design?",
+          "answer": "They can transfer verified lengths and angles from one part of a symmetric structure to another.",
+          "explanation": "Congruence justifies corresponding geometric properties."
+        },
+        {
+          "id": "geo-w07-q10",
+          "dimension": "transfer-reasoning",
+          "prompt": "A triangular frame is symmetric about a median from the vertex. What congruence approach often supports equal base segments?",
+          "answer": "Prove the two smaller triangles congruent and use CPCTC.",
+          "explanation": "Congruent subtriangles can establish equality of corresponding parts."
+        }
+      ]
+    },
+    "8": {
+      "week": 8,
+      "unit": 3,
+      "title": "Triangle Congruence & Proof · Part 3",
+      "questions": [
+        {
+          "id": "geo-w08-q01",
+          "dimension": "procedural-fluency",
+          "prompt": "Two sides of a triangle are 7 and 12. Which could be the third side?",
+          "answer": "10",
+          "explanation": "Triangle inequality requires 5<x<19."
+        },
+        {
+          "id": "geo-w08-q02",
+          "dimension": "procedural-fluency",
+          "prompt": "Where do the perpendicular bisectors of a triangle meet?",
+          "answer": "Circumcenter",
+          "explanation": "The circumcenter is equidistant from all vertices."
+        },
+        {
+          "id": "geo-w08-q03",
+          "dimension": "multi-step-application",
+          "prompt": "Where do the angle bisectors of a triangle meet?",
+          "answer": "Incenter",
+          "explanation": "The incenter is equidistant from all sides."
+        },
+        {
+          "id": "geo-w08-q04",
+          "dimension": "multi-step-application",
+          "prompt": "Sides 4, 9, and x form a triangle. Which interval is required?",
+          "answer": "5<x<13",
+          "explanation": "The difference and sum inequalities give |9−4|<x<9+4."
+        },
+        {
+          "id": "geo-w08-q05",
+          "dimension": "representation-interpretation",
+          "prompt": "Which center is useful for locating a circle tangent to all three sides of a triangle?",
+          "answer": "Incenter",
+          "explanation": "The incenter is equidistant from the sides and is the center of the incircle."
+        },
+        {
+          "id": "geo-w08-q06",
+          "dimension": "representation-interpretation",
+          "prompt": "Which center is equidistant from all three vertices?",
+          "answer": "Circumcenter",
+          "explanation": "Perpendicular bisectors meet at the circumcenter."
+        },
+        {
+          "id": "geo-w08-q07",
+          "dimension": "error-analysis",
+          "prompt": "A student allows a third side equal to the sum of the other two. Why is that invalid?",
+          "answer": "It creates a degenerate segment, not a triangle with area.",
+          "explanation": "For a nondegenerate triangle, each side must be strictly less than the sum of the other two."
+        },
+        {
+          "id": "geo-w08-q08",
+          "dimension": "error-analysis",
+          "prompt": "A student says the incenter is found by perpendicular bisectors. What is the correction?",
+          "answer": "The incenter is the intersection of angle bisectors.",
+          "explanation": "Angle bisectors determine points equidistant from sides."
+        },
+        {
+          "id": "geo-w08-q09",
+          "dimension": "transfer-reasoning",
+          "prompt": "For an emergency facility that must be equally distant from three towns at a triangle’s vertices, which construction is relevant?",
+          "answer": "Circumcenter",
+          "explanation": "The circumcenter is equidistant from all three vertices."
+        },
+        {
+          "id": "geo-w08-q10",
+          "dimension": "transfer-reasoning",
+          "prompt": "Why should a designer check triangle inequality before fabricating three beam lengths?",
+          "answer": "The lengths may be impossible to assemble into a nondegenerate triangle.",
+          "explanation": "Feasibility must be checked before construction."
+        }
+      ]
+    },
+    "9": {
+      "week": 9,
+      "unit": 4,
+      "title": "Parallel Lines, Slopes & Coordinate Proof · Part 1",
+      "questions": [
+        {
+          "id": "geo-w09-q01",
+          "dimension": "procedural-fluency",
+          "prompt": "If parallel lines are cut by a transversal, alternate interior angles are what?",
+          "answer": "Congruent",
+          "explanation": "Alternate interior angles are congruent when the lines are parallel."
+        },
+        {
+          "id": "geo-w09-q02",
+          "dimension": "procedural-fluency",
+          "prompt": "Find the slope through (−2,1) and (4,7).",
+          "answer": "1",
+          "explanation": "m=(7−1)/(4−(−2))=6/6=1."
+        },
+        {
+          "id": "geo-w09-q03",
+          "dimension": "multi-step-application",
+          "prompt": "If corresponding angles formed by a transversal are congruent, what can be concluded?",
+          "answer": "The two lines are parallel.",
+          "explanation": "The converse of the corresponding angles theorem proves parallel lines."
+        },
+        {
+          "id": "geo-w09-q04",
+          "dimension": "multi-step-application",
+          "prompt": "A road rises 18 m over a horizontal run of 60 m. What is its slope?",
+          "answer": "0.3",
+          "explanation": "Slope=rise/run=18/60=0.3."
+        },
+        {
+          "id": "geo-w09-q05",
+          "dimension": "representation-interpretation",
+          "prompt": "Which angle pair lies between two lines on opposite sides of a transversal?",
+          "answer": "Alternate interior angles",
+          "explanation": "Alternate interior angles are interior and opposite sides of the transversal."
+        },
+        {
+          "id": "geo-w09-q06",
+          "dimension": "representation-interpretation",
+          "prompt": "What does slope represent geometrically?",
+          "answer": "Direction/rate of vertical change per horizontal change",
+          "explanation": "Slope measures rise per run and encodes direction."
+        },
+        {
+          "id": "geo-w09-q07",
+          "dimension": "error-analysis",
+          "prompt": "A student computes slope as change in x divided by change in y. What is the error?",
+          "answer": "Slope is Δy/Δx, not Δx/Δy.",
+          "explanation": "Slope uses vertical change over horizontal change."
+        },
+        {
+          "id": "geo-w09-q08",
+          "dimension": "error-analysis",
+          "prompt": "A student assumes two lines are parallel because they look parallel in a sketch. What evidence would be sufficient?",
+          "answer": "Equal slopes or a valid parallel-line angle converse",
+          "explanation": "Parallelism must be justified by geometry or coordinate evidence."
+        },
+        {
+          "id": "geo-w09-q09",
+          "dimension": "transfer-reasoning",
+          "prompt": "Why are slope and angle theorems complementary tools for proving parallelism?",
+          "answer": "One uses coordinates while the other uses angle relationships, providing independent forms of evidence.",
+          "explanation": "Multiple representations can verify the same geometric relationship."
+        },
+        {
+          "id": "geo-w09-q10",
+          "dimension": "transfer-reasoning",
+          "prompt": "A city grid requires two streets to remain parallel. Which coordinate condition should their nonvertical centerlines satisfy?",
+          "answer": "Equal slopes",
+          "explanation": "Nonvertical parallel lines have equal slopes."
+        }
+      ]
+    },
+    "10": {
+      "week": 10,
+      "unit": 4,
+      "title": "Parallel Lines, Slopes & Coordinate Proof · Part 2",
+      "questions": [
+        {
+          "id": "geo-w10-q01",
+          "dimension": "procedural-fluency",
+          "prompt": "What is the slope of a line perpendicular to a line of slope 3/5?",
+          "answer": "−5/3",
+          "explanation": "Perpendicular nonvertical slopes are negative reciprocals."
+        },
+        {
+          "id": "geo-w10-q02",
+          "dimension": "procedural-fluency",
+          "prompt": "Write the equation of the horizontal line through (4,−6).",
+          "answer": "y=−6",
+          "explanation": "Every point on a horizontal line has the same y-coordinate."
+        },
+        {
+          "id": "geo-w10-q03",
+          "dimension": "multi-step-application",
+          "prompt": "Find the midpoint of (−3,5) and (7,−1).",
+          "answer": "(2,2)",
+          "explanation": "Average x- and y-coordinates separately."
+        },
+        {
+          "id": "geo-w10-q04",
+          "dimension": "multi-step-application",
+          "prompt": "A line through (2,3) has slope 4. Which equation is correct?",
+          "answer": "y−3=4(x−2)",
+          "explanation": "Point-slope form is y−y1=m(x−x1)."
+        },
+        {
+          "id": "geo-w10-q05",
+          "dimension": "representation-interpretation",
+          "prompt": "Which coordinate evidence proves a quadrilateral is a parallelogram?",
+          "answer": "Both pairs of opposite sides have equal slopes.",
+          "explanation": "Equal opposite-side slopes establish both pairs parallel."
+        },
+        {
+          "id": "geo-w10-q06",
+          "dimension": "representation-interpretation",
+          "prompt": "Which condition signals perpendicular nonvertical lines?",
+          "answer": "Their slopes multiply to −1.",
+          "explanation": "Negative reciprocal slopes have product −1."
+        },
+        {
+          "id": "geo-w10-q07",
+          "dimension": "error-analysis",
+          "prompt": "A student says two lines with slopes 2 and 1/2 are perpendicular. What is wrong?",
+          "answer": "Perpendicular slopes should be negative reciprocals, so 2 pairs with −1/2.",
+          "explanation": "The sign must change when taking the reciprocal."
+        },
+        {
+          "id": "geo-w10-q08",
+          "dimension": "error-analysis",
+          "prompt": "A student proves a rectangle using only that opposite sides have equal slopes. What additional property is needed?",
+          "answer": "A right angle or perpendicular adjacent sides",
+          "explanation": "A parallelogram becomes a rectangle when a right angle is established."
+        },
+        {
+          "id": "geo-w10-q09",
+          "dimension": "transfer-reasoning",
+          "prompt": "Why can coordinate proof be especially useful for complex diagrams?",
+          "answer": "Algebraic calculations can verify distances, slopes, and midpoints without relying on visual appearance.",
+          "explanation": "Coordinate methods provide auditable numerical evidence."
+        },
+        {
+          "id": "geo-w10-q10",
+          "dimension": "transfer-reasoning",
+          "prompt": "A wheelchair ramp edge must be perpendicular to a vertical support. If the support is vertical, what orientation should the edge have?",
+          "answer": "Horizontal",
+          "explanation": "Horizontal and vertical lines are perpendicular."
+        }
+      ]
+    },
+    "11": {
+      "week": 11,
+      "unit": 5,
+      "title": "Similarity, Dilations & Proportional Reasoning · Part 1",
+      "questions": [
+        {
+          "id": "geo-w11-q01",
+          "dimension": "procedural-fluency",
+          "prompt": "A dilation with scale factor 1.5 maps a side of length 8 to what length?",
+          "answer": "12",
+          "explanation": "Multiply lengths by the scale factor: 8×1.5=12."
+        },
+        {
+          "id": "geo-w11-q02",
+          "dimension": "procedural-fluency",
+          "prompt": "Which triangle similarity criterion uses two equal angle pairs?",
+          "answer": "AA",
+          "explanation": "Two corresponding congruent angles are enough for triangle similarity."
+        },
+        {
+          "id": "geo-w11-q03",
+          "dimension": "multi-step-application",
+          "prompt": "Triangles are similar. A side 6 corresponds to 9, and side 10 corresponds to x. Find x.",
+          "answer": "15",
+          "explanation": "Use 6/9=10/x, so x=15."
+        },
+        {
+          "id": "geo-w11-q04",
+          "dimension": "multi-step-application",
+          "prompt": "A dilation centered at the origin sends (4,−2) to (10,−5). What is the scale factor?",
+          "answer": "2.5",
+          "explanation": "Each coordinate is multiplied by 2.5."
+        },
+        {
+          "id": "geo-w11-q05",
+          "dimension": "representation-interpretation",
+          "prompt": "Which property does a dilation preserve?",
+          "answer": "Angle measure",
+          "explanation": "Dilations preserve angles and scale lengths proportionally."
+        },
+        {
+          "id": "geo-w11-q06",
+          "dimension": "representation-interpretation",
+          "prompt": "How do similar figures differ from congruent figures?",
+          "answer": "Similar figures may differ in size but have the same shape.",
+          "explanation": "Similarity preserves shape with a common scale factor."
+        },
+        {
+          "id": "geo-w11-q07",
+          "dimension": "error-analysis",
+          "prompt": "A student uses one equal angle to prove two triangles similar. What is missing?",
+          "answer": "A second angle pair or another valid similarity criterion",
+          "explanation": "One angle alone is not sufficient."
+        },
+        {
+          "id": "geo-w11-q08",
+          "dimension": "error-analysis",
+          "prompt": "A student says a dilation by 0.5 changes each angle to half its measure. Why is this wrong?",
+          "answer": "Dilations preserve angle measures.",
+          "explanation": "The scale factor applies to lengths, not angle measures."
+        },
+        {
+          "id": "geo-w11-q09",
+          "dimension": "transfer-reasoning",
+          "prompt": "Why is similarity useful for maps and models?",
+          "answer": "Proportional lengths allow reliable scale conversion while preserving shape.",
+          "explanation": "Scale models depend on proportional dimensions."
+        },
+        {
+          "id": "geo-w11-q10",
+          "dimension": "transfer-reasoning",
+          "prompt": "A photograph is enlarged uniformly. What geometric transformation models the resizing?",
+          "answer": "Dilation",
+          "explanation": "Uniform resizing from a center is modeled by dilation."
+        }
+      ]
+    },
+    "12": {
+      "week": 12,
+      "unit": 5,
+      "title": "Similarity, Dilations & Proportional Reasoning · Part 2",
+      "questions": [
+        {
+          "id": "geo-w12-q01",
+          "dimension": "procedural-fluency",
+          "prompt": "Which similarity theorem uses three pairs of proportional sides?",
+          "answer": "SSS similarity",
+          "explanation": "SSS similarity requires proportional corresponding side lengths."
+        },
+        {
+          "id": "geo-w12-q02",
+          "dimension": "procedural-fluency",
+          "prompt": "A line parallel to one side of a triangle divides the other two sides proportionally. Which theorem describes this?",
+          "answer": "Side-splitter theorem",
+          "explanation": "A parallel segment creates proportional side divisions."
+        },
+        {
+          "id": "geo-w12-q03",
+          "dimension": "multi-step-application",
+          "prompt": "Two triangles have sides 4,6,8 and 6,9,12. What is the scale factor from the first to the second?",
+          "answer": "1.5",
+          "explanation": "Each corresponding side is multiplied by 1.5."
+        },
+        {
+          "id": "geo-w12-q04",
+          "dimension": "multi-step-application",
+          "prompt": "In ΔABC, DE∥BC with AD=6, DB=3, and AE=8. Find EC.",
+          "answer": "4",
+          "explanation": "AD/DB=AE/EC, so 6/3=8/EC, giving EC=4."
+        },
+        {
+          "id": "geo-w12-q05",
+          "dimension": "representation-interpretation",
+          "prompt": "What evidence is required for SAS similarity?",
+          "answer": "Two pairs of proportional sides and the included angle congruent",
+          "explanation": "SAS similarity combines proportional sides with included-angle equality."
+        },
+        {
+          "id": "geo-w12-q06",
+          "dimension": "representation-interpretation",
+          "prompt": "If two triangles are similar with scale factor k, how do corresponding perimeters compare?",
+          "answer": "They scale by k.",
+          "explanation": "Perimeter is a linear measure."
+        },
+        {
+          "id": "geo-w12-q07",
+          "dimension": "error-analysis",
+          "prompt": "A student compares noncorresponding sides when testing SSS similarity. What is the consequence?",
+          "answer": "The ratios may be inconsistent even when the triangles are similar.",
+          "explanation": "Correct vertex correspondence is essential."
+        },
+        {
+          "id": "geo-w12-q08",
+          "dimension": "error-analysis",
+          "prompt": "A student applies the side-splitter theorem without proving the segment is parallel to the third side. What is missing?",
+          "answer": "The parallel-line condition",
+          "explanation": "The theorem depends on a segment parallel to a triangle side."
+        },
+        {
+          "id": "geo-w12-q09",
+          "dimension": "transfer-reasoning",
+          "prompt": "Why can proportional segments help locate an inaccessible point in a design?",
+          "answer": "Known ratios let an unknown segment be solved without direct measurement.",
+          "explanation": "Similarity relationships can infer inaccessible dimensions."
+        },
+        {
+          "id": "geo-w12-q10",
+          "dimension": "transfer-reasoning",
+          "prompt": "Which check best supports a scale-model calculation?",
+          "answer": "Verify several corresponding side ratios give the same scale factor.",
+          "explanation": "Consistent ratios across multiple pairs support the similarity model."
+        }
+      ]
+    },
+    "13": {
+      "week": 13,
+      "unit": 5,
+      "title": "Similarity, Dilations & Proportional Reasoning · Part 3",
+      "questions": [
+        {
+          "id": "geo-w13-q01",
+          "dimension": "procedural-fluency",
+          "prompt": "A 1:50 floor plan shows a wall 12 cm long. What is the actual length?",
+          "answer": "6 m",
+          "explanation": "12 cm×50=600 cm=6 m."
+        },
+        {
+          "id": "geo-w13-q02",
+          "dimension": "procedural-fluency",
+          "prompt": "A 2 m object appears 5 cm tall on a scale drawing. What is the drawing scale?",
+          "answer": "1:40",
+          "explanation": "2 m=200 cm, and 5:200 simplifies to 1:40."
+        },
+        {
+          "id": "geo-w13-q03",
+          "dimension": "multi-step-application",
+          "prompt": "A 1.6 m person casts a 2.4 m shadow while a tree casts a 15 m shadow. Find the tree height.",
+          "answer": "10 m",
+          "explanation": "Similar triangles give 1.6/2.4=h/15, so h=10."
+        },
+        {
+          "id": "geo-w13-q04",
+          "dimension": "multi-step-application",
+          "prompt": "A mirror method creates similar triangles. A person 1.7 m tall stands 2 m from the mirror; the mirror is 8 m from a flagpole. Find the flagpole height.",
+          "answer": "6.8 m",
+          "explanation": "Use 1.7/2=h/8, so h=6.8."
+        },
+        {
+          "id": "geo-w13-q05",
+          "dimension": "representation-interpretation",
+          "prompt": "Why must units be controlled in a scale ratio?",
+          "answer": "A ratio is meaningful only when corresponding lengths use compatible units.",
+          "explanation": "Unit conversion is necessary before comparing corresponding lengths."
+        },
+        {
+          "id": "geo-w13-q06",
+          "dimension": "representation-interpretation",
+          "prompt": "What geometric idea makes shadow-based indirect measurement work?",
+          "answer": "Similar right triangles formed by common sun angle",
+          "explanation": "Equal sun angles and right angles create similar triangles."
+        },
+        {
+          "id": "geo-w13-q07",
+          "dimension": "error-analysis",
+          "prompt": "A student uses 8 cm on a 1:100 plan as 8 m without conversion. Is the conclusion correct?",
+          "answer": "Yes, because 8 cm×100=800 cm=8 m.",
+          "explanation": "The conversion is correct in this specific case after applying the scale."
+        },
+        {
+          "id": "geo-w13-q08",
+          "dimension": "error-analysis",
+          "prompt": "A student estimates a tree height from shadows measured at different times of day. What threatens the model?",
+          "answer": "The sun angle changed, so the triangles may not share the same angle.",
+          "explanation": "The similarity assumption requires a common sun angle."
+        },
+        {
+          "id": "geo-w13-q09",
+          "dimension": "transfer-reasoning",
+          "prompt": "Which method is safest when direct measurement is dangerous or impossible?",
+          "answer": "Use a validated similar-triangle or scale model with checked measurements.",
+          "explanation": "Indirect measurement can be rigorous when its geometric assumptions are verified."
+        },
+        {
+          "id": "geo-w13-q10",
+          "dimension": "transfer-reasoning",
+          "prompt": "Why should an indirect measurement report include assumptions?",
+          "answer": "The result depends on conditions such as parallel rays, level ground, or correct scale.",
+          "explanation": "Stated assumptions make the model auditable."
+        }
+      ]
+    },
+    "14": {
+      "week": 14,
+      "unit": 6,
+      "title": "Right Triangles, Trigonometry & Bearings · Part 1",
+      "questions": [
+        {
+          "id": "geo-w14-q01",
+          "dimension": "procedural-fluency",
+          "prompt": "A right triangle has legs 9 and 12. Find the hypotenuse.",
+          "answer": "15",
+          "explanation": "9²+12²=225, so c=15."
+        },
+        {
+          "id": "geo-w14-q02",
+          "dimension": "procedural-fluency",
+          "prompt": "In a 45-45-90 triangle with leg 7, find the hypotenuse.",
+          "answer": "7√2",
+          "explanation": "The side ratio is 1:1:√2."
+        },
+        {
+          "id": "geo-w14-q03",
+          "dimension": "multi-step-application",
+          "prompt": "Do side lengths 8,15,17 form a right triangle?",
+          "answer": "Yes, because 8²+15²=17².",
+          "explanation": "64+225=289=17²."
+        },
+        {
+          "id": "geo-w14-q04",
+          "dimension": "multi-step-application",
+          "prompt": "A square has diagonal 10√2. Find its side length.",
+          "answer": "10",
+          "explanation": "A square diagonal forms a 45-45-90 triangle, d=s√2."
+        },
+        {
+          "id": "geo-w14-q05",
+          "dimension": "representation-interpretation",
+          "prompt": "Which equation is the Pythagorean theorem for a right triangle?",
+          "answer": "a²+b²=c²",
+          "explanation": "The squared legs sum to the squared hypotenuse."
+        },
+        {
+          "id": "geo-w14-q06",
+          "dimension": "representation-interpretation",
+          "prompt": "What does the converse of the Pythagorean theorem allow you to determine?",
+          "answer": "Whether a triangle with known side lengths is right",
+          "explanation": "If the squares of the shorter sides sum to the square of the longest, the triangle is right."
+        },
+        {
+          "id": "geo-w14-q07",
+          "dimension": "error-analysis",
+          "prompt": "A student uses the longest side as a leg in a²+b²=c². What is the issue?",
+          "answer": "c must represent the hypotenuse, the side opposite the right angle.",
+          "explanation": "The hypotenuse has a specific role in the theorem."
+        },
+        {
+          "id": "geo-w14-q08",
+          "dimension": "error-analysis",
+          "prompt": "A student says a 45-45-90 triangle has side ratio 1:√3:2. What is the correction?",
+          "answer": "That ratio is for 30-60-90; 45-45-90 uses 1:1:√2.",
+          "explanation": "Each special right triangle has its own fixed ratio."
+        },
+        {
+          "id": "geo-w14-q09",
+          "dimension": "transfer-reasoning",
+          "prompt": "Why are special-right-triangle exact forms useful?",
+          "answer": "They avoid unnecessary decimal approximation and reveal structure.",
+          "explanation": "Exact radicals preserve precision and relationships."
+        },
+        {
+          "id": "geo-w14-q10",
+          "dimension": "transfer-reasoning",
+          "prompt": "A rectangular room is 8 m by 15 m. What is the straight-line distance between opposite corners?",
+          "answer": "17 m",
+          "explanation": "The diagonal is the hypotenuse of an 8-15-17 right triangle."
+        }
+      ]
+    },
+    "15": {
+      "week": 15,
+      "unit": 6,
+      "title": "Right Triangles, Trigonometry & Bearings · Part 2",
+      "questions": [
+        {
+          "id": "geo-w15-q01",
+          "dimension": "procedural-fluency",
+          "prompt": "In a 30-60-90 triangle with short leg 6, find the hypotenuse.",
+          "answer": "12",
+          "explanation": "The ratio is 1:√3:2."
+        },
+        {
+          "id": "geo-w15-q02",
+          "dimension": "procedural-fluency",
+          "prompt": "In a 30-60-90 triangle with short leg 5, find the long leg.",
+          "answer": "5√3",
+          "explanation": "The long leg is short leg×√3."
+        },
+        {
+          "id": "geo-w15-q03",
+          "dimension": "multi-step-application",
+          "prompt": "A right triangle altitude to the hypotenuse splits it into segments 4 and 9. Find the altitude.",
+          "answer": "6",
+          "explanation": "Altitude h satisfies h²=4·9=36."
+        },
+        {
+          "id": "geo-w15-q04",
+          "dimension": "multi-step-application",
+          "prompt": "The hypotenuse of a right triangle is 25, and the projection adjacent to one leg is 9. Find that leg.",
+          "answer": "15",
+          "explanation": "Leg²=(hypotenuse)(adjacent projection)=25·9=225."
+        },
+        {
+          "id": "geo-w15-q05",
+          "dimension": "representation-interpretation",
+          "prompt": "Which relationship describes the altitude to the hypotenuse?",
+          "answer": "h²=pq",
+          "explanation": "The altitude is the geometric mean of the two hypotenuse segments."
+        },
+        {
+          "id": "geo-w15-q06",
+          "dimension": "representation-interpretation",
+          "prompt": "What fixed angles define a 30-60-90 triangle?",
+          "answer": "30°, 60°, and 90°",
+          "explanation": "The triangle contains those three angle measures."
+        },
+        {
+          "id": "geo-w15-q07",
+          "dimension": "error-analysis",
+          "prompt": "A student says the short leg in a 30-60-90 triangle is opposite 60°. What is wrong?",
+          "answer": "The short leg is opposite 30°.",
+          "explanation": "Side size corresponds to opposite angle size."
+        },
+        {
+          "id": "geo-w15-q08",
+          "dimension": "error-analysis",
+          "prompt": "A student computes h=pq rather than h=√(pq). What did they forget?",
+          "answer": "The altitude relation is h²=pq, so take the square root.",
+          "explanation": "Solving h²=pq requires a square root."
+        },
+        {
+          "id": "geo-w15-q09",
+          "dimension": "transfer-reasoning",
+          "prompt": "Why is geometric-mean structure useful in a right-triangle altitude problem?",
+          "answer": "It links the smaller similar triangles to the original triangle without trigonometry.",
+          "explanation": "Altitude-created triangles are similar, producing geometric-mean proportions."
+        },
+        {
+          "id": "geo-w15-q10",
+          "dimension": "transfer-reasoning",
+          "prompt": "A roof cross-section forms a 30-60-90 triangle with short leg 4 m. What is the long leg?",
+          "answer": "4√3 m",
+          "explanation": "Use the 1:√3:2 ratio."
+        }
+      ]
+    },
+    "16": {
+      "week": 16,
+      "unit": 6,
+      "title": "Right Triangles, Trigonometry & Bearings · Part 3",
+      "questions": [
+        {
+          "id": "geo-w16-q01",
+          "dimension": "procedural-fluency",
+          "prompt": "In a right triangle, opposite=6 and hypotenuse=10. What is sin θ?",
+          "answer": "0.6",
+          "explanation": "sin θ=opposite/hypotenuse=6/10."
+        },
+        {
+          "id": "geo-w16-q02",
+          "dimension": "procedural-fluency",
+          "prompt": "If adjacent=12 and hypotenuse=13, what is cos θ?",
+          "answer": "12/13",
+          "explanation": "cos θ=adjacent/hypotenuse."
+        },
+        {
+          "id": "geo-w16-q03",
+          "dimension": "multi-step-application",
+          "prompt": "A 10 m ladder makes a 60° angle with the ground. About how high does it reach?",
+          "answer": "8.66 m",
+          "explanation": "Height=10 sin60°≈8.66."
+        },
+        {
+          "id": "geo-w16-q04",
+          "dimension": "multi-step-application",
+          "prompt": "From a point 20 m from a building, the angle of elevation is 35°. About how tall is the building?",
+          "answer": "14.0 m",
+          "explanation": "tan35°=h/20, so h≈14.0."
+        },
+        {
+          "id": "geo-w16-q05",
+          "dimension": "representation-interpretation",
+          "prompt": "Which ratio is tangent of an acute angle in a right triangle?",
+          "answer": "opposite/adjacent",
+          "explanation": "tan θ compares opposite and adjacent legs."
+        },
+        {
+          "id": "geo-w16-q06",
+          "dimension": "representation-interpretation",
+          "prompt": "Which operation finds an angle when opposite and adjacent lengths are known?",
+          "answer": "θ=tan⁻¹(opposite/adjacent)",
+          "explanation": "Inverse tangent recovers the angle from the tangent ratio."
+        },
+        {
+          "id": "geo-w16-q07",
+          "dimension": "error-analysis",
+          "prompt": "A student uses sin θ=adjacent/hypotenuse. What is the correction?",
+          "answer": "sin θ=opposite/hypotenuse",
+          "explanation": "Sine uses the opposite leg over the hypotenuse."
+        },
+        {
+          "id": "geo-w16-q08",
+          "dimension": "error-analysis",
+          "prompt": "A calculator is in radian mode and returns an unexpected inverse-trig angle. What should be checked?",
+          "answer": "Use degree mode when the problem asks for degrees.",
+          "explanation": "Angle mode must match the requested unit."
+        },
+        {
+          "id": "geo-w16-q09",
+          "dimension": "transfer-reasoning",
+          "prompt": "A ramp rises 1 m for every 12 m horizontally. Which trig ratio most directly describes its incline angle?",
+          "answer": "tan θ=1/12",
+          "explanation": "Rise/run is opposite/adjacent, the tangent ratio."
+        },
+        {
+          "id": "geo-w16-q10",
+          "dimension": "transfer-reasoning",
+          "prompt": "Why should a trig solution name the reference angle before choosing a ratio?",
+          "answer": "The labels opposite and adjacent depend on the chosen angle.",
+          "explanation": "Opposite and adjacent are relative to the selected acute angle."
+        }
+      ]
+    },
+    "17": {
+      "week": 17,
+      "unit": 6,
+      "title": "Right Triangles, Trigonometry & Bearings · Part 4",
+      "questions": [
+        {
+          "id": "geo-w17-q01",
+          "dimension": "procedural-fluency",
+          "prompt": "An observer is 30 m from a tower and measures a 40° angle of elevation. Which equation finds height h?",
+          "answer": "tan40°=h/30",
+          "explanation": "Tangent relates vertical rise to horizontal distance."
+        },
+        {
+          "id": "geo-w17-q02",
+          "dimension": "procedural-fluency",
+          "prompt": "A bearing of N30°E means what?",
+          "answer": "30° east of north",
+          "explanation": "Quadrant bearings start from north or south and turn toward east or west."
+        },
+        {
+          "id": "geo-w17-q03",
+          "dimension": "multi-step-application",
+          "prompt": "A boat travels 6 km east then 8 km north. What is its displacement magnitude?",
+          "answer": "10 km",
+          "explanation": "The perpendicular components form a 6-8-10 right triangle."
+        },
+        {
+          "id": "geo-w17-q04",
+          "dimension": "multi-step-application",
+          "prompt": "From a cliff 50 m high, the angle of depression to a boat is 25°. About how far is the boat horizontally from the cliff base?",
+          "answer": "107.2 m",
+          "explanation": "tan25°=50/x, so x≈107.2."
+        },
+        {
+          "id": "geo-w17-q05",
+          "dimension": "representation-interpretation",
+          "prompt": "Why is an angle of depression equal to the corresponding angle of elevation?",
+          "answer": "Horizontal lines are parallel, creating alternate interior angles.",
+          "explanation": "The sight line crosses parallel horizontals."
+        },
+        {
+          "id": "geo-w17-q06",
+          "dimension": "representation-interpretation",
+          "prompt": "Which representation is best for combining two perpendicular navigation legs?",
+          "answer": "Resolve them as vector components on coordinate axes.",
+          "explanation": "Components preserve both magnitude and direction."
+        },
+        {
+          "id": "geo-w17-q07",
+          "dimension": "error-analysis",
+          "prompt": "A student adds 5 km north and 5 km east to report a 10 km displacement. What is wrong?",
+          "answer": "Displacement is the vector resultant, not the sum of perpendicular path lengths.",
+          "explanation": "Use the Pythagorean theorem for perpendicular components."
+        },
+        {
+          "id": "geo-w17-q08",
+          "dimension": "error-analysis",
+          "prompt": "A student measures a bearing clockwise from west instead of from north. What should be corrected?",
+          "answer": "Use the stated bearing convention and reference direction.",
+          "explanation": "Direction conventions are part of the mathematical model."
+        },
+        {
+          "id": "geo-w17-q09",
+          "dimension": "transfer-reasoning",
+          "prompt": "A rescue route has two possible paths. What should be compared besides straight-line distance?",
+          "answer": "Direction, obstacles, measurement uncertainty, and feasible travel path",
+          "explanation": "Navigation decisions depend on geometric and contextual constraints."
+        },
+        {
+          "id": "geo-w17-q10",
+          "dimension": "transfer-reasoning",
+          "prompt": "Why should a navigation solution include a diagram with north marked?",
+          "answer": "It makes the reference direction and vector relationships auditable.",
+          "explanation": "A labeled orientation prevents bearing-reference mistakes."
+        }
+      ]
+    },
+    "18": {
+      "week": 18,
+      "unit": 6,
+      "title": "Midpoint Synthesis, Corrections & Examination",
+      "questions": [
+        {
+          "id": "geo-w18-q01",
+          "dimension": "procedural-fluency",
+          "prompt": "Which statement best distinguishes congruence from similarity?",
+          "answer": "Congruent figures have equal corresponding lengths and angles; similar figures preserve angles with proportional lengths.",
+          "explanation": "Congruence preserves size and shape; similarity preserves shape up to scale."
+        },
+        {
+          "id": "geo-w18-q02",
+          "dimension": "procedural-fluency",
+          "prompt": "What is the slope of a line perpendicular to a nonvertical line with slope 3/5?",
+          "answer": "−5/3",
+          "explanation": "Perpendicular slopes are negative reciprocals."
+        },
+        {
+          "id": "geo-w18-q03",
+          "dimension": "multi-step-application",
+          "prompt": "A right triangle has legs 7 and 24. Find its hypotenuse.",
+          "answer": "25",
+          "explanation": "7²+24²=625, so c=25."
+        },
+        {
+          "id": "geo-w18-q04",
+          "dimension": "multi-step-application",
+          "prompt": "A scale drawing uses 1:200. A 3.5 cm segment represents what actual distance?",
+          "answer": "7 m",
+          "explanation": "3.5×200=700 cm=7 m."
+        },
+        {
+          "id": "geo-w18-q05",
+          "dimension": "representation-interpretation",
+          "prompt": "Which evidence is strongest in a geometric proof?",
+          "answer": "A chain of statements justified by definitions, postulates, and proven theorems",
+          "explanation": "Formal geometric conclusions require justified logical steps."
+        },
+        {
+          "id": "geo-w18-q06",
+          "dimension": "representation-interpretation",
+          "prompt": "Which tool is appropriate for finding an acute angle from a known tangent ratio?",
+          "answer": "inverse tangent",
+          "explanation": "Inverse trig recovers an angle from a ratio."
+        },
+        {
+          "id": "geo-w18-q07",
+          "dimension": "error-analysis",
+          "prompt": "A student assumes two triangles are congruent because they have three equal angles. What is the error?",
+          "answer": "AAA proves similarity, not congruence.",
+          "explanation": "Equal angles fix shape but not scale."
+        },
+        {
+          "id": "geo-w18-q08",
+          "dimension": "error-analysis",
+          "prompt": "A student reports 0.75 m as 75 m after a unit conversion. What should be checked first?",
+          "answer": "The conversion factor and dimensional units",
+          "explanation": "Dimensional analysis catches magnitude and unit errors."
+        },
+        {
+          "id": "geo-w18-q09",
+          "dimension": "transfer-reasoning",
+          "prompt": "Which review strategy best prepares for a cumulative geometry exam?",
+          "answer": "Correct prior errors and explain the theorem or relationship that fixes each one.",
+          "explanation": "Error correction tied to reasoning improves transfer."
+        },
+        {
+          "id": "geo-w18-q10",
+          "dimension": "transfer-reasoning",
+          "prompt": "Why should a midterm readiness check sample proof, coordinate reasoning, similarity, and trigonometry?",
+          "answer": "A cumulative assessment should represent the breadth and depth of the taught first-half domains.",
+          "explanation": "Balanced coverage supports valid cumulative mastery evidence."
+        }
+      ]
+    },
+    "19": {
+      "week": 19,
+      "unit": 7,
+      "title": "Polygons & Quadrilaterals · Part 1",
+      "questions": [
+        {
+          "id": "geo-w19-q01",
+          "dimension": "procedural-fluency",
+          "prompt": "What is the sum of the interior angles of a hexagon?",
+          "answer": "720°",
+          "explanation": "(6−2)180=720."
+        },
+        {
+          "id": "geo-w19-q02",
+          "dimension": "procedural-fluency",
+          "prompt": "Each exterior angle of a regular octagon measures what?",
+          "answer": "45°",
+          "explanation": "Regular exterior angle=360/n=45°."
+        },
+        {
+          "id": "geo-w19-q03",
+          "dimension": "multi-step-application",
+          "prompt": "A parallelogram has one angle 68°. What is an adjacent angle?",
+          "answer": "112°",
+          "explanation": "Consecutive parallelogram angles are supplementary."
+        },
+        {
+          "id": "geo-w19-q04",
+          "dimension": "multi-step-application",
+          "prompt": "A rhombus has diagonals 10 and 24. What is its area?",
+          "answer": "120 square units",
+          "explanation": "Area of a rhombus is d1·d2/2."
+        },
+        {
+          "id": "geo-w19-q05",
+          "dimension": "representation-interpretation",
+          "prompt": "Which property is always true for a rectangle?",
+          "answer": "Its diagonals are congruent.",
+          "explanation": "Rectangles have congruent diagonals."
+        },
+        {
+          "id": "geo-w19-q06",
+          "dimension": "representation-interpretation",
+          "prompt": "Which statement best classifies a square?",
+          "answer": "It is both a rectangle and a rhombus.",
+          "explanation": "A square satisfies properties of both rectangles and rhombi."
+        },
+        {
+          "id": "geo-w19-q07",
+          "dimension": "error-analysis",
+          "prompt": "A student says opposite angles of a parallelogram are supplementary. What is the correction?",
+          "answer": "Opposite angles are congruent; consecutive angles are supplementary.",
+          "explanation": "Parallelogram angle relationships distinguish opposite from adjacent."
+        },
+        {
+          "id": "geo-w19-q08",
+          "dimension": "error-analysis",
+          "prompt": "A student uses 180(n−1) for polygon interior-angle sum. What is the correct formula?",
+          "answer": "180(n−2)",
+          "explanation": "An n-gon partitions into n−2 triangles."
+        },
+        {
+          "id": "geo-w19-q09",
+          "dimension": "transfer-reasoning",
+          "prompt": "A designer needs a four-sided frame with right angles and all sides equal. Which classification is most specific?",
+          "answer": "square",
+          "explanation": "A square has both right angles and four equal sides."
+        },
+        {
+          "id": "geo-w19-q10",
+          "dimension": "transfer-reasoning",
+          "prompt": "Why are hierarchy diagrams useful for quadrilaterals?",
+          "answer": "They show when one shape inherits all properties of a broader class.",
+          "explanation": "Classification hierarchies clarify inclusive definitions."
+        }
+      ]
+    },
+    "20": {
+      "week": 20,
+      "unit": 7,
+      "title": "Polygons & Quadrilaterals · Part 2",
+      "questions": [
+        {
+          "id": "geo-w20-q01",
+          "dimension": "procedural-fluency",
+          "prompt": "A trapezoid has bases 8 and 14. What is its midsegment length?",
+          "answer": "11",
+          "explanation": "The trapezoid midsegment is the average of the bases."
+        },
+        {
+          "id": "geo-w20-q02",
+          "dimension": "procedural-fluency",
+          "prompt": "In a kite, which statement about diagonals is always true?",
+          "answer": "They are perpendicular.",
+          "explanation": "Kite diagonals are perpendicular."
+        },
+        {
+          "id": "geo-w20-q03",
+          "dimension": "multi-step-application",
+          "prompt": "Points A(0,0), B(4,0), C(6,3), D(2,3) form what type based on slopes of opposite sides?",
+          "answer": "parallelogram",
+          "explanation": "AB and CD are horizontal; BC and AD have equal slope, so both opposite pairs are parallel."
+        },
+        {
+          "id": "geo-w20-q04",
+          "dimension": "multi-step-application",
+          "prompt": "An isosceles trapezoid has bases 10 and 18 and legs 5. Dropping altitudes creates horizontal offsets of 4. What is its height?",
+          "answer": "3",
+          "explanation": "Each end forms a 3-4-5 right triangle."
+        },
+        {
+          "id": "geo-w20-q05",
+          "dimension": "representation-interpretation",
+          "prompt": "Which coordinate tools are commonly combined to prove a quadrilateral is a rectangle?",
+          "answer": "slopes and distances",
+          "explanation": "Slopes show right/parallel sides; distances can show side/diagonal relationships."
+        },
+        {
+          "id": "geo-w20-q06",
+          "dimension": "representation-interpretation",
+          "prompt": "What would prove a quadrilateral is a parallelogram using coordinates?",
+          "answer": "Both pairs of opposite sides have equal slopes.",
+          "explanation": "Equal slopes establish both opposite pairs as parallel."
+        },
+        {
+          "id": "geo-w20-q07",
+          "dimension": "error-analysis",
+          "prompt": "A student proves only one pair of opposite sides is parallel and concludes parallelogram. Why is that insufficient?",
+          "answer": "One parallel pair can describe a trapezoid; more evidence is required.",
+          "explanation": "A single parallel pair does not force a parallelogram."
+        },
+        {
+          "id": "geo-w20-q08",
+          "dimension": "error-analysis",
+          "prompt": "A student compares rounded slopes and declares lines parallel. What is safer?",
+          "answer": "Use exact slope ratios when possible before comparing.",
+          "explanation": "Exact values reduce classification errors."
+        },
+        {
+          "id": "geo-w20-q09",
+          "dimension": "transfer-reasoning",
+          "prompt": "A surveyor has four corner coordinates for a lot. Which evidence best supports calling it a rectangle?",
+          "answer": "Opposite sides parallel and adjacent sides perpendicular, verified by slopes",
+          "explanation": "Coordinate proof should use defining relationships."
+        },
+        {
+          "id": "geo-w20-q10",
+          "dimension": "transfer-reasoning",
+          "prompt": "Why should a coordinate proof state the property being tested before calculating?",
+          "answer": "It connects each calculation to the definition or theorem that justifies the classification.",
+          "explanation": "A proof is stronger when computations have explicit logical purpose."
+        }
+      ]
+    },
+    "21": {
+      "week": 21,
+      "unit": 7,
+      "title": "Polygons & Quadrilaterals · Part 3",
+      "questions": [
+        {
+          "id": "geo-w21-q01",
+          "dimension": "procedural-fluency",
+          "prompt": "What is the central angle of a regular decagon?",
+          "answer": "36°",
+          "explanation": "360/10=36°."
+        },
+        {
+          "id": "geo-w21-q02",
+          "dimension": "procedural-fluency",
+          "prompt": "A regular hexagon has perimeter 48 and apothem 4√3. What is its area?",
+          "answer": "96√3",
+          "explanation": "Area=1/2·apothem·perimeter."
+        },
+        {
+          "id": "geo-w21-q03",
+          "dimension": "multi-step-application",
+          "prompt": "A regular pentagon has side 6 and apothem about 4.13. Approximate its area.",
+          "answer": "61.95 square units",
+          "explanation": "P=30; A=1/2(4.13)(30)=61.95."
+        },
+        {
+          "id": "geo-w21-q04",
+          "dimension": "multi-step-application",
+          "prompt": "A composite floor is a 12×8 rectangle with a 4×3 rectangle removed. What area remains?",
+          "answer": "84 square units",
+          "explanation": "96−12=84."
+        },
+        {
+          "id": "geo-w21-q05",
+          "dimension": "representation-interpretation",
+          "prompt": "Why does an apothem help compute area of a regular polygon?",
+          "answer": "It is the height of each congruent central triangle.",
+          "explanation": "The polygon decomposes into triangles with base equal to sides."
+        },
+        {
+          "id": "geo-w21-q06",
+          "dimension": "representation-interpretation",
+          "prompt": "Which decomposition is usually valid for finding a complex polygon area?",
+          "answer": "Split it into non-overlapping familiar shapes and add/subtract their areas.",
+          "explanation": "Area is additive across non-overlapping regions."
+        },
+        {
+          "id": "geo-w21-q07",
+          "dimension": "error-analysis",
+          "prompt": "A student uses the circumradius instead of the apothem in A=1/2aP. What is wrong?",
+          "answer": "The formula requires the perpendicular distance from center to a side.",
+          "explanation": "Triangle height is the apothem, not the circumradius."
+        },
+        {
+          "id": "geo-w21-q08",
+          "dimension": "error-analysis",
+          "prompt": "A student subtracts an overlapping region twice in a composite design. What principle was violated?",
+          "answer": "Each region should be counted exactly once in area decomposition.",
+          "explanation": "Overcounting or double subtraction corrupts additive area."
+        },
+        {
+          "id": "geo-w21-q09",
+          "dimension": "transfer-reasoning",
+          "prompt": "A plaza design has fixed perimeter. Why might decomposition still matter?",
+          "answer": "Different shapes with the same perimeter can enclose different areas.",
+          "explanation": "Area depends on shape as well as boundary length."
+        },
+        {
+          "id": "geo-w21-q10",
+          "dimension": "transfer-reasoning",
+          "prompt": "Which design record best supports a constrained polygon solution?",
+          "answer": "A labeled diagram, dimensions, area calculations, and a check against every stated constraint",
+          "explanation": "Auditable design evidence connects geometry to requirements."
+        }
+      ]
+    },
+    "22": {
+      "week": 22,
+      "unit": 8,
+      "title": "Circles, Arcs & Tangency · Part 1",
+      "questions": [
+        {
+          "id": "geo-w22-q01",
+          "dimension": "procedural-fluency",
+          "prompt": "A circle has radius 7. What is its diameter?",
+          "answer": "14",
+          "explanation": "Diameter is twice the radius."
+        },
+        {
+          "id": "geo-w22-q02",
+          "dimension": "procedural-fluency",
+          "prompt": "A 90° central angle intercepts what fraction of a circle?",
+          "answer": "1/4",
+          "explanation": "90/360=1/4."
+        },
+        {
+          "id": "geo-w22-q03",
+          "dimension": "multi-step-application",
+          "prompt": "Find the arc length for a 60° arc in a circle of radius 12.",
+          "answer": "4π",
+          "explanation": "Arc length=(60/360)(2π·12)=4π."
+        },
+        {
+          "id": "geo-w22-q04",
+          "dimension": "multi-step-application",
+          "prompt": "An inscribed angle intercepts an arc of 110°. What is the angle measure?",
+          "answer": "55°",
+          "explanation": "An inscribed angle measures half its intercepted arc."
+        },
+        {
+          "id": "geo-w22-q05",
+          "dimension": "representation-interpretation",
+          "prompt": "Which segment joins two points on a circle?",
+          "answer": "chord",
+          "explanation": "A chord has both endpoints on the circle."
+        },
+        {
+          "id": "geo-w22-q06",
+          "dimension": "representation-interpretation",
+          "prompt": "How are a central angle and its intercepted minor arc related?",
+          "answer": "They have equal degree measure.",
+          "explanation": "Central angle measure equals intercepted arc measure."
+        },
+        {
+          "id": "geo-w22-q07",
+          "dimension": "error-analysis",
+          "prompt": "A student computes arc length as θ·2πr using θ=60 without converting the angle. What is missing?",
+          "answer": "Use θ/360 when θ is in degrees.",
+          "explanation": "Degree measure must be converted to a fraction of a full turn."
+        },
+        {
+          "id": "geo-w22-q08",
+          "dimension": "error-analysis",
+          "prompt": "A student says every chord passes through the center. What is the correction?",
+          "answer": "Only a diameter is a chord that passes through the center.",
+          "explanation": "Diameters are a special class of chord."
+        },
+        {
+          "id": "geo-w22-q09",
+          "dimension": "transfer-reasoning",
+          "prompt": "A wheel has radius 0.35 m. Why is arc length useful for modeling distance rolled through part of a turn?",
+          "answer": "It converts angular rotation into linear distance along the circumference.",
+          "explanation": "Arc length links angle and path length."
+        },
+        {
+          "id": "geo-w22-q10",
+          "dimension": "transfer-reasoning",
+          "prompt": "Why should a circle diagram distinguish central and inscribed angles explicitly?",
+          "answer": "Their angle-to-arc relationships differ by a factor of two.",
+          "explanation": "Misidentifying the vertex changes the theorem used."
+        }
+      ]
+    },
+    "23": {
+      "week": 23,
+      "unit": 8,
+      "title": "Circles, Arcs & Tangency · Part 2",
+      "questions": [
+        {
+          "id": "geo-w23-q01",
+          "dimension": "procedural-fluency",
+          "prompt": "A radius drawn to a point of tangency is what to the tangent line?",
+          "answer": "perpendicular",
+          "explanation": "A radius to the tangent point is perpendicular to the tangent."
+        },
+        {
+          "id": "geo-w23-q02",
+          "dimension": "procedural-fluency",
+          "prompt": "From the same exterior point, two tangent segments to a circle have what relationship?",
+          "answer": "They are congruent.",
+          "explanation": "Tangent segments from a common exterior point are equal."
+        },
+        {
+          "id": "geo-w23-q03",
+          "dimension": "multi-step-application",
+          "prompt": "Two chords intersect inside a circle. One chord segments are 3 and 8; the other has segments 4 and x. Find x.",
+          "answer": "6",
+          "explanation": "Intersecting chords: 3·8=4x, so x=6."
+        },
+        {
+          "id": "geo-w23-q04",
+          "dimension": "multi-step-application",
+          "prompt": "From an exterior point, a secant has external part 5 and whole length 20. A tangent has length t. Find t.",
+          "answer": "10",
+          "explanation": "Tangent-secant theorem: t²=5·20=100."
+        },
+        {
+          "id": "geo-w23-q05",
+          "dimension": "representation-interpretation",
+          "prompt": "Which condition guarantees a line is tangent to a circle at point T?",
+          "answer": "It is perpendicular to radius OT at T.",
+          "explanation": "The tangent-radius perpendicular theorem characterizes tangency."
+        },
+        {
+          "id": "geo-w23-q06",
+          "dimension": "representation-interpretation",
+          "prompt": "What does the power of a point unify?",
+          "answer": "Products involving intersecting chords, secants, and tangents",
+          "explanation": "Power relationships share a common geometric invariant."
+        },
+        {
+          "id": "geo-w23-q07",
+          "dimension": "error-analysis",
+          "prompt": "A student uses external·external for a secant instead of external·whole. What is the correction?",
+          "answer": "Use external segment times the entire secant length.",
+          "explanation": "The secant power theorem uses external×whole."
+        },
+        {
+          "id": "geo-w23-q08",
+          "dimension": "error-analysis",
+          "prompt": "A student assumes a drawn line touching a circle is tangent without perpendicular evidence. Why is that unsafe?",
+          "answer": "Appearance alone does not establish tangency.",
+          "explanation": "Tangency should be stated or proven."
+        },
+        {
+          "id": "geo-w23-q09",
+          "dimension": "transfer-reasoning",
+          "prompt": "A cable runs tangent from a point 15 m from a circular tank center of radius 9 m. What is the tangent length?",
+          "answer": "12 m",
+          "explanation": "Radius, tangent, and center-to-point form a right triangle: t²=15²−9²=144."
+        },
+        {
+          "id": "geo-w23-q10",
+          "dimension": "transfer-reasoning",
+          "prompt": "Why are power-theorem calculations useful in design layouts with circular boundaries?",
+          "answer": "They can determine inaccessible lengths from measurable secant or tangent segments.",
+          "explanation": "Power relationships support indirect measurement around circles."
+        }
+      ]
+    },
+    "24": {
+      "week": 24,
+      "unit": 8,
+      "title": "Circles, Arcs & Tangency · Part 3",
+      "questions": [
+        {
+          "id": "geo-w24-q01",
+          "dimension": "procedural-fluency",
+          "prompt": "Find the area of a 90° sector in a circle of radius 8.",
+          "answer": "16π",
+          "explanation": "Sector area=(90/360)π(8²)=16π."
+        },
+        {
+          "id": "geo-w24-q02",
+          "dimension": "procedural-fluency",
+          "prompt": "An annulus has outer radius 5 and inner radius 3. What is its area?",
+          "answer": "16π",
+          "explanation": "Area=π(25−9)=16π."
+        },
+        {
+          "id": "geo-w24-q03",
+          "dimension": "multi-step-application",
+          "prompt": "Which equation represents a circle centered at (2,−3) with radius 5?",
+          "answer": "(x−2)²+(y+3)²=25",
+          "explanation": "Circle form is (x−h)²+(y−k)²=r²."
+        },
+        {
+          "id": "geo-w24-q04",
+          "dimension": "multi-step-application",
+          "prompt": "For x²+y²=49, what is the radius?",
+          "answer": "7",
+          "explanation": "r²=49, so r=7."
+        },
+        {
+          "id": "geo-w24-q05",
+          "dimension": "representation-interpretation",
+          "prompt": "How is a circular segment area commonly found?",
+          "answer": "sector area minus triangle area",
+          "explanation": "A segment is the region between chord and arc."
+        },
+        {
+          "id": "geo-w24-q06",
+          "dimension": "representation-interpretation",
+          "prompt": "What do h and k represent in (x−h)²+(y−k)²=r²?",
+          "answer": "the center coordinates",
+          "explanation": "(h,k) is the circle center."
+        },
+        {
+          "id": "geo-w24-q07",
+          "dimension": "error-analysis",
+          "prompt": "A student reads center (−4,2) from (x−4)²+(y+2)²=9. What is the correction?",
+          "answer": "The center is (4,−2).",
+          "explanation": "Signs in standard form are opposite the displayed binomial signs."
+        },
+        {
+          "id": "geo-w24-q08",
+          "dimension": "error-analysis",
+          "prompt": "A student subtracts πr² from a sector to find a small segment. What should be subtracted instead?",
+          "answer": "the area of the triangle formed by the two radii and chord",
+          "explanation": "Segment=sector−central triangle."
+        },
+        {
+          "id": "geo-w24-q09",
+          "dimension": "transfer-reasoning",
+          "prompt": "A round garden has a circular pond removed from its center. Which model best represents plantable area?",
+          "answer": "an annulus area difference",
+          "explanation": "Concentric circular regions form an annulus."
+        },
+        {
+          "id": "geo-w24-q10",
+          "dimension": "transfer-reasoning",
+          "prompt": "Why is coordinate-circle form useful in spatial planning?",
+          "answer": "It turns a fixed-distance boundary into an algebraic condition on points.",
+          "explanation": "Circle equations encode loci of constant distance."
+        }
+      ]
+    },
+    "25": {
+      "week": 25,
+      "unit": 9,
+      "title": "Analytic Geometry, Loci & Conic Connections · Part 1",
+      "questions": [
+        {
+          "id": "geo-w25-q01",
+          "dimension": "procedural-fluency",
+          "prompt": "What is the locus of points 5 units from a fixed point?",
+          "answer": "a circle of radius 5",
+          "explanation": "Points at constant distance from one point form a circle."
+        },
+        {
+          "id": "geo-w25-q02",
+          "dimension": "procedural-fluency",
+          "prompt": "What is the locus of points equidistant from two fixed points?",
+          "answer": "the perpendicular bisector of the segment joining them",
+          "explanation": "The perpendicular bisector is exactly the equidistance locus."
+        },
+        {
+          "id": "geo-w25-q03",
+          "dimension": "multi-step-application",
+          "prompt": "Find the distance from point (0,0) to the line x=6.",
+          "answer": "6",
+          "explanation": "The perpendicular horizontal distance is 6."
+        },
+        {
+          "id": "geo-w25-q04",
+          "dimension": "multi-step-application",
+          "prompt": "Points equidistant from two intersecting lines lie on what?",
+          "answer": "their angle bisectors",
+          "explanation": "Angle bisectors form the equal-distance locus from intersecting lines."
+        },
+        {
+          "id": "geo-w25-q05",
+          "dimension": "representation-interpretation",
+          "prompt": "What is a locus?",
+          "answer": "the set of all points satisfying a stated geometric condition",
+          "explanation": "A locus describes every point meeting a condition."
+        },
+        {
+          "id": "geo-w25-q06",
+          "dimension": "representation-interpretation",
+          "prompt": "Why is perpendicular distance used from a point to a line?",
+          "answer": "It is the shortest distance to the line.",
+          "explanation": "The shortest point-to-line segment is perpendicular."
+        },
+        {
+          "id": "geo-w25-q07",
+          "dimension": "error-analysis",
+          "prompt": "A student describes a locus using only one example point. What is missing?",
+          "answer": "A locus must include all points satisfying the condition.",
+          "explanation": "A single example does not characterize the full set."
+        },
+        {
+          "id": "geo-w25-q08",
+          "dimension": "error-analysis",
+          "prompt": "A student says the angle bisector locus is equidistant from the endpoints of the angle rays. What is the correction?",
+          "answer": "It is equidistant from the two lines/rays forming the angle.",
+          "explanation": "Angle bisectors encode equal perpendicular distance to the sides."
+        },
+        {
+          "id": "geo-w25-q09",
+          "dimension": "transfer-reasoning",
+          "prompt": "A city wants sites equally distant from two hospitals. Which geometric construction gives candidate locations?",
+          "answer": "the perpendicular bisector of the segment between hospitals",
+          "explanation": "Equal distance from two points defines a perpendicular bisector."
+        },
+        {
+          "id": "geo-w25-q10",
+          "dimension": "transfer-reasoning",
+          "prompt": "Why are locus descriptions valuable before writing equations?",
+          "answer": "They clarify the geometric condition the algebra must represent.",
+          "explanation": "Geometry-first reasoning helps choose the correct algebraic model."
+        }
+      ]
+    },
+    "26": {
+      "week": 26,
+      "unit": 9,
+      "title": "Analytic Geometry, Loci & Conic Connections · Part 2",
+      "questions": [
+        {
+          "id": "geo-w26-q01",
+          "dimension": "procedural-fluency",
+          "prompt": "Where do y=x+1 and y=−x+5 intersect?",
+          "answer": "(2,3)",
+          "explanation": "Set x+1=−x+5, giving x=2 and y=3."
+        },
+        {
+          "id": "geo-w26-q02",
+          "dimension": "procedural-fluency",
+          "prompt": "How many intersection points can a line and a circle have in the real plane?",
+          "answer": "0, 1, or 2",
+          "explanation": "A line can miss, be tangent, or secantly cross a circle."
+        },
+        {
+          "id": "geo-w26-q03",
+          "dimension": "multi-step-application",
+          "prompt": "For x²+y²=25 and y=0, what are the intersection points?",
+          "answer": "(−5,0) and (5,0)",
+          "explanation": "Substitute y=0, then x²=25."
+        },
+        {
+          "id": "geo-w26-q04",
+          "dimension": "multi-step-application",
+          "prompt": "A line intersects a circle at exactly one point. What is the line called?",
+          "answer": "tangent",
+          "explanation": "Exactly one intersection indicates tangency."
+        },
+        {
+          "id": "geo-w26-q05",
+          "dimension": "representation-interpretation",
+          "prompt": "What algebraic feature often signals tangency after substitution into a circle equation?",
+          "answer": "a quadratic with one repeated real solution",
+          "explanation": "Tangency corresponds to one intersection, a double root."
+        },
+        {
+          "id": "geo-w26-q06",
+          "dimension": "representation-interpretation",
+          "prompt": "Why does solving two coordinate equations simultaneously locate geometric intersections?",
+          "answer": "Intersection points satisfy both equations at once.",
+          "explanation": "Systems encode simultaneous geometric constraints."
+        },
+        {
+          "id": "geo-w26-q07",
+          "dimension": "error-analysis",
+          "prompt": "A student finds two roots after line-circle substitution but reports a tangent. What is wrong?",
+          "answer": "Two distinct roots mean two intersection points, so the line is a secant.",
+          "explanation": "Multiplicity/count of real solutions matches intersection behavior."
+        },
+        {
+          "id": "geo-w26-q08",
+          "dimension": "error-analysis",
+          "prompt": "A student rejects a repeated root as duplicate work. Why can it be meaningful?",
+          "answer": "A repeated root can indicate a tangent touches the circle at one point.",
+          "explanation": "Multiplicity has geometric interpretation."
+        },
+        {
+          "id": "geo-w26-q09",
+          "dimension": "transfer-reasoning",
+          "prompt": "A path line must just touch a circular exclusion zone. What condition should a designer verify?",
+          "answer": "The line-circle system has exactly one real intersection.",
+          "explanation": "One intersection is the algebraic signature of tangency."
+        },
+        {
+          "id": "geo-w26-q10",
+          "dimension": "transfer-reasoning",
+          "prompt": "Why should intersection results be substituted back into both original equations?",
+          "answer": "Verification catches algebra errors and confirms each point lies on both objects.",
+          "explanation": "Back-substitution is an independent validity check."
+        }
+      ]
+    },
+    "27": {
+      "week": 27,
+      "unit": 9,
+      "title": "Analytic Geometry, Loci & Conic Connections · Part 3",
+      "questions": [
+        {
+          "id": "geo-w27-q01",
+          "dimension": "procedural-fluency",
+          "prompt": "A parabola is the locus of points equidistant from what?",
+          "answer": "a focus and a directrix",
+          "explanation": "The focus-directrix definition characterizes a parabola."
+        },
+        {
+          "id": "geo-w27-q02",
+          "dimension": "procedural-fluency",
+          "prompt": "For y=x², where is the vertex?",
+          "answer": "(0,0)",
+          "explanation": "The basic parabola has vertex at the origin."
+        },
+        {
+          "id": "geo-w27-q03",
+          "dimension": "multi-step-application",
+          "prompt": "Two service centers lie at A(0,0) and B(8,0). What vertical line forms their nearest-point boundary?",
+          "answer": "x=4",
+          "explanation": "The boundary is the perpendicular bisector of AB."
+        },
+        {
+          "id": "geo-w27-q04",
+          "dimension": "multi-step-application",
+          "prompt": "A point P is 5 units from a focus and 5 units from the directrix. What can be concluded?",
+          "answer": "P lies on the parabola defined by that focus and directrix.",
+          "explanation": "Equal focus/directrix distance is the defining condition."
+        },
+        {
+          "id": "geo-w27-q05",
+          "dimension": "representation-interpretation",
+          "prompt": "What does a Voronoi region represent?",
+          "answer": "points closest to one site compared with the other sites",
+          "explanation": "Voronoi cells partition space by nearest site."
+        },
+        {
+          "id": "geo-w27-q06",
+          "dimension": "representation-interpretation",
+          "prompt": "Why are perpendicular bisectors central to two-site Voronoi boundaries?",
+          "answer": "They contain points equidistant from the two sites.",
+          "explanation": "Equal-distance boundaries separate nearest-site regions."
+        },
+        {
+          "id": "geo-w27-q07",
+          "dimension": "error-analysis",
+          "prompt": "A student compares ordinary vertical distance to the directrix when the directrix is slanted. What is wrong?",
+          "answer": "Distance to a line must be measured perpendicularly.",
+          "explanation": "Point-to-line distance is perpendicular distance."
+        },
+        {
+          "id": "geo-w27-q08",
+          "dimension": "error-analysis",
+          "prompt": "A student assigns a location to the nearest site by visual guess on a distorted map. What should replace the guess?",
+          "answer": "Compare measured or computed distances using a consistent scale.",
+          "explanation": "Nearest-site claims require reliable distance evidence."
+        },
+        {
+          "id": "geo-w27-q09",
+          "dimension": "transfer-reasoning",
+          "prompt": "Where could Voronoi reasoning help in real planning?",
+          "answer": "assigning service areas to the nearest emergency facility",
+          "explanation": "Nearest-facility partitioning is a direct Voronoi application."
+        },
+        {
+          "id": "geo-w27-q10",
+          "dimension": "transfer-reasoning",
+          "prompt": "Why should a nearest-point model disclose its distance metric and barriers?",
+          "answer": "Straight-line distance may not represent actual travel distance or accessibility.",
+          "explanation": "Model limitations affect practical interpretation."
+        }
+      ]
+    },
+    "28": {
+      "week": 28,
+      "unit": 10,
+      "title": "Area, Measurement & Geometric Probability · Part 1",
+      "questions": [
+        {
+          "id": "geo-w28-q01",
+          "dimension": "procedural-fluency",
+          "prompt": "Find the area of a triangle with base 12 and height 7.",
+          "answer": "42",
+          "explanation": "A=1/2bh."
+        },
+        {
+          "id": "geo-w28-q02",
+          "dimension": "procedural-fluency",
+          "prompt": "Find the area of a trapezoid with bases 8 and 14 and height 5.",
+          "answer": "55",
+          "explanation": "A=1/2(b1+b2)h."
+        },
+        {
+          "id": "geo-w28-q03",
+          "dimension": "multi-step-application",
+          "prompt": "A triangle has sides 5,5,6. Using Heron's formula, what is its area?",
+          "answer": "12",
+          "explanation": "s=8; A=√(8·3·3·2)=12."
+        },
+        {
+          "id": "geo-w28-q04",
+          "dimension": "multi-step-application",
+          "prompt": "A figure is enlarged by scale factor 3. By what factor does its area change?",
+          "answer": "9",
+          "explanation": "Area scales by the square of the linear factor."
+        },
+        {
+          "id": "geo-w28-q05",
+          "dimension": "representation-interpretation",
+          "prompt": "What information does Heron's formula require?",
+          "answer": "the three side lengths",
+          "explanation": "Heron's formula uses side lengths via semiperimeter."
+        },
+        {
+          "id": "geo-w28-q06",
+          "dimension": "representation-interpretation",
+          "prompt": "How can coordinate area of a polygon be checked conceptually?",
+          "answer": "Decompose it into simpler shapes or use another independent area method.",
+          "explanation": "Independent decomposition can verify coordinate-area calculations."
+        },
+        {
+          "id": "geo-w28-q07",
+          "dimension": "error-analysis",
+          "prompt": "A student doubles all lengths and doubles the area. What is the correction?",
+          "answer": "Doubling lengths multiplies area by 4.",
+          "explanation": "Area is two-dimensional, so it scales with k²."
+        },
+        {
+          "id": "geo-w28-q08",
+          "dimension": "error-analysis",
+          "prompt": "A student uses a slanted side as the height of a triangle without checking perpendicularity. What is wrong?",
+          "answer": "Height must be perpendicular to the chosen base.",
+          "explanation": "Base-height area uses perpendicular height."
+        },
+        {
+          "id": "geo-w28-q09",
+          "dimension": "transfer-reasoning",
+          "prompt": "A map polygon is irregular. Which strategy supports a defensible area estimate?",
+          "answer": "Decompose into measured triangles/rectangles and document approximations.",
+          "explanation": "Decomposition makes approximations explicit and auditable."
+        },
+        {
+          "id": "geo-w28-q10",
+          "dimension": "transfer-reasoning",
+          "prompt": "Why should scale-factor effects on area be stated in a design report?",
+          "answer": "A small linear scale change can produce a squared change in material or coverage area.",
+          "explanation": "Dimensional scaling matters for design quantities."
+        }
+      ]
+    },
+    "29": {
+      "week": 29,
+      "unit": 10,
+      "title": "Area, Measurement & Geometric Probability · Part 2",
+      "questions": [
+        {
+          "id": "geo-w29-q01",
+          "dimension": "procedural-fluency",
+          "prompt": "A length is measured as 9.8 cm instead of an accepted 10.0 cm. What is the absolute error?",
+          "answer": "0.2 cm",
+          "explanation": "|9.8−10.0|=0.2."
+        },
+        {
+          "id": "geo-w29-q02",
+          "dimension": "procedural-fluency",
+          "prompt": "A target area is 50 m² and measured area is 48 m². What is percent error?",
+          "answer": "4%",
+          "explanation": "|48−50|/50×100=4%."
+        },
+        {
+          "id": "geo-w29-q03",
+          "dimension": "multi-step-application",
+          "prompt": "A point is chosen uniformly along a 20 m path. A 5 m segment is favorable. What is the geometric probability?",
+          "answer": "1/4",
+          "explanation": "Probability=favorable length/total length=5/20."
+        },
+        {
+          "id": "geo-w29-q04",
+          "dimension": "multi-step-application",
+          "prompt": "A dart lands uniformly in a 10×10 square. A 4×5 rectangle is favorable. What is the probability?",
+          "answer": "0.20",
+          "explanation": "Area ratio=20/100=0.20."
+        },
+        {
+          "id": "geo-w29-q05",
+          "dimension": "representation-interpretation",
+          "prompt": "Why do measurement units matter in geometric probability?",
+          "answer": "Favorable and total measures must be comparable dimensions and units.",
+          "explanation": "Ratios require compatible measures."
+        },
+        {
+          "id": "geo-w29-q06",
+          "dimension": "representation-interpretation",
+          "prompt": "What does optimization under a perimeter constraint usually seek?",
+          "answer": "the feasible dimensions that maximize or minimize a stated objective",
+          "explanation": "Optimization compares feasible choices against an objective."
+        },
+        {
+          "id": "geo-w29-q07",
+          "dimension": "error-analysis",
+          "prompt": "A student rounds every intermediate measurement before computing area. What risk does this create?",
+          "answer": "Rounding error can accumulate and distort the final result.",
+          "explanation": "Carry adequate precision until the final reporting step."
+        },
+        {
+          "id": "geo-w29-q08",
+          "dimension": "error-analysis",
+          "prompt": "A student uses favorable perimeter/total perimeter for a probability defined by random area. What is wrong?",
+          "answer": "The measure type must match the random selection model; use area ratios for uniform area.",
+          "explanation": "The sample space determines the appropriate geometric measure."
+        },
+        {
+          "id": "geo-w29-q09",
+          "dimension": "transfer-reasoning",
+          "prompt": "A rectangular pen has fixed perimeter 40 m. Which dimensions maximize area?",
+          "answer": "10 m by 10 m",
+          "explanation": "For fixed rectangle perimeter, the square maximizes area."
+        },
+        {
+          "id": "geo-w29-q10",
+          "dimension": "transfer-reasoning",
+          "prompt": "Why should an optimization result include constraints and precision assumptions?",
+          "answer": "Without them, a mathematically optimal value may be infeasible or falsely precise.",
+          "explanation": "Model decisions must reflect real restrictions and measurement limits."
+        }
+      ]
+    },
+    "30": {
+      "week": 30,
+      "unit": 11,
+      "title": "Solids, Surface Area & Volume · Part 1",
+      "questions": [
+        {
+          "id": "geo-w30-q01",
+          "dimension": "procedural-fluency",
+          "prompt": "Find the volume of a rectangular prism 4×5×6.",
+          "answer": "120 cubic units",
+          "explanation": "V=lwh."
+        },
+        {
+          "id": "geo-w30-q02",
+          "dimension": "procedural-fluency",
+          "prompt": "Find the volume of a cylinder with radius 3 and height 10.",
+          "answer": "90π",
+          "explanation": "V=πr²h=90π."
+        },
+        {
+          "id": "geo-w30-q03",
+          "dimension": "multi-step-application",
+          "prompt": "Find the volume of a cone with radius 6 and height 9.",
+          "answer": "108π",
+          "explanation": "V=1/3πr²h=108π."
+        },
+        {
+          "id": "geo-w30-q04",
+          "dimension": "multi-step-application",
+          "prompt": "Find the volume of a sphere with radius 3.",
+          "answer": "36π",
+          "explanation": "V=4/3πr³=36π."
+        },
+        {
+          "id": "geo-w30-q05",
+          "dimension": "representation-interpretation",
+          "prompt": "What does Cavalieri's principle compare?",
+          "answer": "solids with equal heights and equal cross-sectional areas at every level",
+          "explanation": "Equal corresponding cross-sections imply equal volume."
+        },
+        {
+          "id": "geo-w30-q06",
+          "dimension": "representation-interpretation",
+          "prompt": "What is the purpose of a net of a solid?",
+          "answer": "It represents the faces unfolded into the plane for surface-area reasoning.",
+          "explanation": "Nets make each face visible for area calculation."
+        },
+        {
+          "id": "geo-w30-q07",
+          "dimension": "error-analysis",
+          "prompt": "A student uses πr²h for a cone. What is missing?",
+          "answer": "the factor 1/3",
+          "explanation": "A cone has one-third the volume of a matching cylinder."
+        },
+        {
+          "id": "geo-w30-q08",
+          "dimension": "error-analysis",
+          "prompt": "A student adds only the lateral rectangles of a prism net for total surface area. What is missing?",
+          "answer": "the areas of the bases",
+          "explanation": "Total surface area includes all faces."
+        },
+        {
+          "id": "geo-w30-q09",
+          "dimension": "transfer-reasoning",
+          "prompt": "A storage container changes from prism to pyramid with same base and height. How does volume change?",
+          "answer": "The pyramid has one-third the prism's volume.",
+          "explanation": "V_pyramid=1/3Bh."
+        },
+        {
+          "id": "geo-w30-q10",
+          "dimension": "transfer-reasoning",
+          "prompt": "Why are cubic units essential when reporting volume?",
+          "answer": "Volume measures three-dimensional space, so the unit is cubed.",
+          "explanation": "Dimensional units communicate the measured quantity."
+        }
+      ]
+    },
+    "31": {
+      "week": 31,
+      "unit": 11,
+      "title": "Solids, Surface Area & Volume · Part 2",
+      "questions": [
+        {
+          "id": "geo-w31-q01",
+          "dimension": "procedural-fluency",
+          "prompt": "What is the lateral surface area of a cylinder with radius 4 and height 7?",
+          "answer": "56π",
+          "explanation": "Lateral area=2πrh=56π."
+        },
+        {
+          "id": "geo-w31-q02",
+          "dimension": "procedural-fluency",
+          "prompt": "What is the lateral area of a cone with radius 3 and slant height 5?",
+          "answer": "15π",
+          "explanation": "Lateral cone area=πrℓ."
+        },
+        {
+          "id": "geo-w31-q03",
+          "dimension": "multi-step-application",
+          "prompt": "A plane cuts a right circular cylinder parallel to its bases. What cross-section is formed?",
+          "answer": "a circle",
+          "explanation": "A parallel slice matches the circular base."
+        },
+        {
+          "id": "geo-w31-q04",
+          "dimension": "multi-step-application",
+          "prompt": "Rotating a rectangle around one of its sides forms what common solid?",
+          "answer": "a cylinder",
+          "explanation": "Rotation about a side sweeps out a cylinder."
+        },
+        {
+          "id": "geo-w31-q05",
+          "dimension": "representation-interpretation",
+          "prompt": "If similar solids have linear scale factor 2, how does volume scale?",
+          "answer": "by a factor of 8",
+          "explanation": "Volume scales by k³."
+        },
+        {
+          "id": "geo-w31-q06",
+          "dimension": "representation-interpretation",
+          "prompt": "If similar solids have linear scale factor 3, how does surface area scale?",
+          "answer": "by a factor of 9",
+          "explanation": "Surface area scales by k²."
+        },
+        {
+          "id": "geo-w31-q07",
+          "dimension": "error-analysis",
+          "prompt": "A student uses vertical height instead of slant height in πrℓ for cone lateral area. What is wrong?",
+          "answer": "The lateral-area formula requires slant height ℓ.",
+          "explanation": "The curved surface unwraps using slant length."
+        },
+        {
+          "id": "geo-w31-q08",
+          "dimension": "error-analysis",
+          "prompt": "A student says doubling dimensions doubles volume. What is the correction?",
+          "answer": "Doubling linear dimensions multiplies volume by 8.",
+          "explanation": "Three-dimensional scaling uses k³."
+        },
+        {
+          "id": "geo-w31-q09",
+          "dimension": "transfer-reasoning",
+          "prompt": "A manufacturer enlarges a bottle design by 10% in every linear dimension. Why might material and capacity change by different percentages?",
+          "answer": "Surface area scales with k² while volume scales with k³.",
+          "explanation": "Different dimensional quantities respond differently to scale."
+        },
+        {
+          "id": "geo-w31-q10",
+          "dimension": "transfer-reasoning",
+          "prompt": "Why should a cross-section drawing state the slicing plane orientation?",
+          "answer": "Different orientations can produce different two-dimensional shapes.",
+          "explanation": "Cross-section geometry depends on how the plane intersects the solid."
+        }
+      ]
+    },
+    "32": {
+      "week": 32,
+      "unit": 12,
+      "title": "CAD, Scale Drawing & Spatial Design · Part 1",
+      "questions": [
+        {
+          "id": "geo-w32-q01",
+          "dimension": "procedural-fluency",
+          "prompt": "Before drafting a 6 m room in CAD, what should be set first?",
+          "answer": "the drawing units and scale convention",
+          "explanation": "Units and scale anchor every later dimension."
+        },
+        {
+          "id": "geo-w32-q02",
+          "dimension": "procedural-fluency",
+          "prompt": "What does grid snap help control?",
+          "answer": "precise placement at defined increments",
+          "explanation": "Snap constrains cursor positions to planned increments."
+        },
+        {
+          "id": "geo-w32-q03",
+          "dimension": "multi-step-application",
+          "prompt": "A line is intended to be 2.50 m but measures 2.47 m. What should the drafter do?",
+          "answer": "Correct the geometry to the specified dimension before relying on the drawing.",
+          "explanation": "CAD geometry should satisfy stated dimensional constraints."
+        },
+        {
+          "id": "geo-w32-q04",
+          "dimension": "multi-step-application",
+          "prompt": "A plan needs lines at 90°. Which evidence is strongest?",
+          "answer": "Use an orthogonal/perpendicular constraint or verified angle dimension.",
+          "explanation": "Constraint or dimension evidence establishes the relationship."
+        },
+        {
+          "id": "geo-w32-q05",
+          "dimension": "representation-interpretation",
+          "prompt": "Why use layers in a technical drawing?",
+          "answer": "To organize object categories and control visibility/meaning.",
+          "explanation": "Layers support structured, auditable drawings."
+        },
+        {
+          "id": "geo-w32-q06",
+          "dimension": "representation-interpretation",
+          "prompt": "Why should dimension text correspond to actual modeled geometry rather than typed labels?",
+          "answer": "Associative/verified dimensions reduce mismatch between labels and objects.",
+          "explanation": "A label that disagrees with geometry is unreliable evidence."
+        },
+        {
+          "id": "geo-w32-q07",
+          "dimension": "error-analysis",
+          "prompt": "A student draws in centimeters but labels the file as meters without conversion. What is the core error?",
+          "answer": "The model units and documented units are inconsistent.",
+          "explanation": "Unit consistency is essential to scale integrity."
+        },
+        {
+          "id": "geo-w32-q08",
+          "dimension": "error-analysis",
+          "prompt": "A student places walls, dimensions, and furniture on one undifferentiated layer. What problem can result?",
+          "answer": "The drawing becomes harder to audit, edit, and selectively display.",
+          "explanation": "Layer organization supports maintainability and communication."
+        },
+        {
+          "id": "geo-w32-q09",
+          "dimension": "transfer-reasoning",
+          "prompt": "Why is snap spacing a design choice rather than merely a convenience?",
+          "answer": "It can enforce meaningful construction increments and reduce placement error.",
+          "explanation": "Snap can encode practical precision."
+        },
+        {
+          "id": "geo-w32-q10",
+          "dimension": "transfer-reasoning",
+          "prompt": "What makes a CAD screenshot insufficient as sole mastery evidence?",
+          "answer": "The underlying dimensions, units, constraints, and editable geometry may not be verifiable.",
+          "explanation": "Technical evidence should expose measurable model properties."
+        }
+      ]
+    },
+    "33": {
+      "week": 33,
+      "unit": 12,
+      "title": "CAD, Scale Drawing & Spatial Design · Part 2",
+      "questions": [
+        {
+          "id": "geo-w33-q01",
+          "dimension": "procedural-fluency",
+          "prompt": "At scale 1:100, a 4 cm wall on paper represents what actual length?",
+          "answer": "4 m",
+          "explanation": "4 cm×100=400 cm=4 m."
+        },
+        {
+          "id": "geo-w33-q02",
+          "dimension": "procedural-fluency",
+          "prompt": "A room is 5 m by 4 m. What is its floor area?",
+          "answer": "20 m²",
+          "explanation": "Area=5×4."
+        },
+        {
+          "id": "geo-w33-q03",
+          "dimension": "multi-step-application",
+          "prompt": "A rectangular room 6 m by 4 m has a 1 m doorway. What wall length remains if scheduling baseboard around the perimeter but excluding the doorway?",
+          "answer": "19 m",
+          "explanation": "Perimeter=20; exclude 1 m opening."
+        },
+        {
+          "id": "geo-w33-q04",
+          "dimension": "multi-step-application",
+          "prompt": "A tile covers 0.25 m². Ignoring waste, how many tiles are needed for 18 m²?",
+          "answer": "72",
+          "explanation": "18/0.25=72."
+        },
+        {
+          "id": "geo-w33-q05",
+          "dimension": "representation-interpretation",
+          "prompt": "Why must openings be represented in a scale plan?",
+          "answer": "They affect circulation, usable wall length, material quantities, and constraints.",
+          "explanation": "Doors/windows are part of spatial and quantity reasoning."
+        },
+        {
+          "id": "geo-w33-q06",
+          "dimension": "representation-interpretation",
+          "prompt": "What is a material schedule?",
+          "answer": "A structured list of quantities derived from measured design elements.",
+          "explanation": "Schedules translate geometry into quantities."
+        },
+        {
+          "id": "geo-w33-q07",
+          "dimension": "error-analysis",
+          "prompt": "A student computes paint area from floor area without considering wall height. What is wrong?",
+          "answer": "Wall surface area requires wall lengths and height, minus relevant openings.",
+          "explanation": "Different surfaces require appropriate dimensions."
+        },
+        {
+          "id": "geo-w33-q08",
+          "dimension": "error-analysis",
+          "prompt": "A student scales lengths by 1:50 but leaves area values unchanged. What is the error?",
+          "answer": "Areas scale with the square of the linear factor.",
+          "explanation": "Dimensional scaling must match quantity type."
+        },
+        {
+          "id": "geo-w33-q09",
+          "dimension": "transfer-reasoning",
+          "prompt": "A contractor adds a 10% waste allowance to 80 m² of material. What scheduled quantity results?",
+          "answer": "88 m²",
+          "explanation": "80×1.10=88."
+        },
+        {
+          "id": "geo-w33-q10",
+          "dimension": "transfer-reasoning",
+          "prompt": "Why should a material schedule trace each quantity back to labeled geometry?",
+          "answer": "Traceability lets an evaluator audit dimensions, formulas, assumptions, and waste factors.",
+          "explanation": "Auditable schedules connect calculations to source geometry."
+        }
+      ]
+    },
+    "34": {
+      "week": 34,
+      "unit": 12,
+      "title": "CAD, Scale Drawing & Spatial Design · Part 3",
+      "questions": [
+        {
+          "id": "geo-w34-q01",
+          "dimension": "procedural-fluency",
+          "prompt": "Which rigid transformation repeats a module by sliding it without turning?",
+          "answer": "translation",
+          "explanation": "A translation moves every point by the same vector."
+        },
+        {
+          "id": "geo-w34-q02",
+          "dimension": "procedural-fluency",
+          "prompt": "Which file format is commonly suitable for scalable web/vector graphics?",
+          "answer": "SVG",
+          "explanation": "SVG stores vector geometry and scales cleanly."
+        },
+        {
+          "id": "geo-w34-q03",
+          "dimension": "multi-step-application",
+          "prompt": "A repeated tile module is rotated 90° about a point. Which coordinate rule about the origin applies?",
+          "answer": "(x,y)→(−y,x)",
+          "explanation": "A 90° counterclockwise rotation maps (x,y) to (−y,x)."
+        },
+        {
+          "id": "geo-w34-q04",
+          "dimension": "multi-step-application",
+          "prompt": "A modular panel is duplicated 8 times. Each panel area is 1.5 m². What total area is covered if panels do not overlap?",
+          "answer": "12 m²",
+          "explanation": "8×1.5=12."
+        },
+        {
+          "id": "geo-w34-q05",
+          "dimension": "representation-interpretation",
+          "prompt": "Why might DXF be chosen in a technical workflow?",
+          "answer": "It can exchange vector/drafting geometry between compatible CAD systems.",
+          "explanation": "DXF is widely used for CAD data exchange."
+        },
+        {
+          "id": "geo-w34-q06",
+          "dimension": "representation-interpretation",
+          "prompt": "What should a design defense include?",
+          "answer": "constraints, geometric decisions, measurements, verification, limitations, and revision rationale",
+          "explanation": "A defense explains and justifies the mathematical design."
+        },
+        {
+          "id": "geo-w34-q07",
+          "dimension": "error-analysis",
+          "prompt": "A student exports a PDF and assumes the printed scale must be correct. What is missing?",
+          "answer": "Verify page/export scale settings and a known dimension after export.",
+          "explanation": "Export and print settings can alter scale."
+        },
+        {
+          "id": "geo-w34-q08",
+          "dimension": "error-analysis",
+          "prompt": "A student repeats a module with tiny manual offsets and calls it exact translation symmetry. What should be improved?",
+          "answer": "Use explicit transform vectors or constraints and verify corresponding distances.",
+          "explanation": "Exact transformations require consistent geometric mapping."
+        },
+        {
+          "id": "geo-w34-q09",
+          "dimension": "transfer-reasoning",
+          "prompt": "Why keep both an editable source file and a printable/exported artifact?",
+          "answer": "The source supports geometric audit/revision while the export supports communication and recordkeeping.",
+          "explanation": "Different artifacts serve verification and communication roles."
+        },
+        {
+          "id": "geo-w34-q10",
+          "dimension": "transfer-reasoning",
+          "prompt": "Which evidence best supports a claim that a modular design is geometrically consistent?",
+          "answer": "Measured repeated distances/angles plus documented transformation rules",
+          "explanation": "Consistency claims should be supported by measurable invariants."
+        }
+      ]
+    },
+    "35": {
+      "week": 35,
+      "unit": 13,
+      "title": "Geometry Modeling Capstone & Defense · Part 1",
+      "questions": [
+        {
+          "id": "geo-w35-q01",
+          "dimension": "procedural-fluency",
+          "prompt": "What should a geometric capstone begin with?",
+          "answer": "a precise question or design problem with defined constraints",
+          "explanation": "Clear framing determines what evidence is relevant."
+        },
+        {
+          "id": "geo-w35-q02",
+          "dimension": "procedural-fluency",
+          "prompt": "What is a model assumption?",
+          "answer": "a stated condition accepted for the analysis that may limit interpretation",
+          "explanation": "Assumptions define the model's scope."
+        },
+        {
+          "id": "geo-w35-q03",
+          "dimension": "multi-step-application",
+          "prompt": "A scale model uses 1:25. An actual 5 m length should appear as what model length?",
+          "answer": "20 cm",
+          "explanation": "5 m=500 cm; 500/25=20 cm."
+        },
+        {
+          "id": "geo-w35-q04",
+          "dimension": "multi-step-application",
+          "prompt": "A design's key input changes from 10 to 11 and output changes from 50 to 65. What does this sensitivity test reveal?",
+          "answer": "The output is relatively responsive to that input change.",
+          "explanation": "Sensitivity examines how outputs respond to changed assumptions/inputs."
+        },
+        {
+          "id": "geo-w35-q05",
+          "dimension": "representation-interpretation",
+          "prompt": "Why should a capstone include more than one representation when appropriate?",
+          "answer": "Different representations can expose structure, scale, constraints, and errors differently.",
+          "explanation": "Cross-representation agreement strengthens evidence."
+        },
+        {
+          "id": "geo-w35-q06",
+          "dimension": "representation-interpretation",
+          "prompt": "What role does proof or justification play in a design model?",
+          "answer": "It explains why geometric relationships and conclusions follow from stated evidence.",
+          "explanation": "Reasoning connects assumptions and data to conclusions."
+        },
+        {
+          "id": "geo-w35-q07",
+          "dimension": "error-analysis",
+          "prompt": "A student changes a measurement during revision but keeps all downstream calculations unchanged. What is the problem?",
+          "answer": "Dependent calculations must be recomputed and reverified.",
+          "explanation": "Model consistency requires propagating changed inputs."
+        },
+        {
+          "id": "geo-w35-q08",
+          "dimension": "error-analysis",
+          "prompt": "A student tests only the preferred scenario and declares the design robust. What is missing?",
+          "answer": "Test plausible alternative inputs or boundary cases.",
+          "explanation": "Sensitivity and stress tests probe robustness."
+        },
+        {
+          "id": "geo-w35-q09",
+          "dimension": "transfer-reasoning",
+          "prompt": "A bridge-model capstone uses ideal rigid joints. Why should that assumption be disclosed?",
+          "answer": "Real joints may behave differently, limiting how far the geometric model can be generalized.",
+          "explanation": "Model limitations belong in interpretation."
+        },
+        {
+          "id": "geo-w35-q10",
+          "dimension": "transfer-reasoning",
+          "prompt": "What is the strongest evidence that a capstone model is defensible?",
+          "answer": "A coherent chain from problem framing through measurements, mathematics, verification, sensitivity, and limitations",
+          "explanation": "Defensibility depends on integrated evidence, not presentation alone."
+        }
+      ]
+    },
+    "36": {
+      "week": 36,
+      "unit": 13,
+      "title": "Geometry Modeling Capstone & Defense · Part 2",
+      "questions": [
+        {
+          "id": "geo-w36-q01",
+          "dimension": "procedural-fluency",
+          "prompt": "What should a technical portfolio make easy for an evaluator to trace?",
+          "answer": "claims back to diagrams, measurements, calculations, and sources/evidence",
+          "explanation": "Traceability supports audit and evaluation."
+        },
+        {
+          "id": "geo-w36-q02",
+          "dimension": "procedural-fluency",
+          "prompt": "What is the purpose of an oral design defense?",
+          "answer": "to explain, justify, and respond to questions about the model and its limitations",
+          "explanation": "Defense tests understanding and reasoning."
+        },
+        {
+          "id": "geo-w36-q03",
+          "dimension": "multi-step-application",
+          "prompt": "An evaluator identifies a valid flaw in a model assumption. What is the strongest response?",
+          "answer": "Revise the assumption/model and document how the conclusion changes.",
+          "explanation": "Responsive revision is evidence of modelling competence."
+        },
+        {
+          "id": "geo-w36-q04",
+          "dimension": "multi-step-application",
+          "prompt": "A final design claims 2.4 m clearance but the verified drawing shows 2.35 m. If the minimum requirement is 2.4 m, what conclusion follows?",
+          "answer": "The current design does not satisfy the clearance constraint.",
+          "explanation": "A minimum constraint must be met by the verified value."
+        },
+        {
+          "id": "geo-w36-q05",
+          "dimension": "representation-interpretation",
+          "prompt": "What distinguishes a completion record from a single exam score?",
+          "answer": "It synthesizes required mastery evidence across lessons, assessments, projects, and reviewed reasoning.",
+          "explanation": "Course completion depends on the defined evidence contract."
+        },
+        {
+          "id": "geo-w36-q06",
+          "dimension": "representation-interpretation",
+          "prompt": "Why should a final portfolio include version/revision information?",
+          "answer": "It documents how evidence and decisions changed through the correction cycle.",
+          "explanation": "Revision history supports transparency."
+        },
+        {
+          "id": "geo-w36-q07",
+          "dimension": "error-analysis",
+          "prompt": "A student responds to every defense question with 'the software said so.' What is missing?",
+          "answer": "Independent geometric reasoning and verification",
+          "explanation": "Tools can support but not replace mathematical justification."
+        },
+        {
+          "id": "geo-w36-q08",
+          "dimension": "error-analysis",
+          "prompt": "A student earns 79% on a required final mastery gate and asks to round it to 80% without policy support. What should happen?",
+          "answer": "Record 79%, review/correct, and retake until the defined 80% gate is met.",
+          "explanation": "A mastery threshold should be applied consistently and transparently."
+        },
+        {
+          "id": "geo-w36-q09",
+          "dimension": "transfer-reasoning",
+          "prompt": "Why should final synthesis revisit limitations rather than presenting only successes?",
+          "answer": "Knowing where a model may fail is part of responsible mathematical communication.",
+          "explanation": "Defensible conclusions include scope and uncertainty."
+        },
+        {
+          "id": "geo-w36-q10",
+          "dimension": "transfer-reasoning",
+          "prompt": "Which condition best supports Geometry course completion under the strict mastery model?",
+          "answer": "All required lesson, weekly, unit, cumulative, project/capstone, and evaluator-reviewed gates meet the defined threshold.",
+          "explanation": "Completion should be evidence-gated across the course contract."
+        }
+      ]
+    }
+  }
+}
