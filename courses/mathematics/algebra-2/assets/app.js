@@ -36,7 +36,7 @@ function load(){
 }
 let state=load();
 let activeSet=[];
-function save(){try{localStorage.setItem(KEY,JSON.stringify(state));window.dispatchEvent(new CustomEvent("khaemenes-high-course-state-changed",{detail:{courseId:"algebra-2"}}))}catch{alert("This browser could not save local course records.")}}
+function save(){try{const S=window.KhaemenesMathStorageAdapter,r=S?.writeJSON?S.writeJSON(KEY,state):(()=>{const raw=JSON.stringify(state);localStorage.setItem(KEY,raw);return{persisted:localStorage.getItem(KEY)===raw}})();if(r?.persisted!==true){alert("Course changes are retained in this page only. Export your course record before leaving.");return false}window.dispatchEvent(new CustomEvent("khaemenes-high-course-state-changed",{detail:{courseId:"algebra-2"}}));return true}catch{alert("Course changes are retained in this page only. Export your course record before leaving.");return false}}
 function activeStudent(){return state.students.find(s=>s.id===state.activeId)||state.students[0]}
 function scoreValue(v){if(v==null||v==="")return null;const n=Number(v);return Number.isFinite(n)?Math.max(0,Math.min(100,n)):null}
 function weekRecord(n){
