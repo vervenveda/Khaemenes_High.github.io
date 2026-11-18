@@ -8,7 +8,8 @@ on:
       - 'index.html'
       - 'courses/**/index.html'
       - 'grades/**/index.html'
-      - 'tools/test-high-school-dual-tickers.mjs'\n      - 'tools/grade09-dual-ticker-audit.mjs'
+      - 'tools/test-high-school-dual-tickers.mjs'
+      - 'tools/grade09-dual-ticker-audit.mjs'
       - '.github/workflows/high-school-dual-ticker-coverage.yml'
   pull_request:
     paths:
@@ -31,4 +32,6 @@ jobs:
         with:
           node-version: '22'
       - name: Verify canonical dual ticker coverage
-        run: |\n          node tools/test-high-school-dual-tickers.mjs\n          node tools/grade09-dual-ticker-audit.mjs --check
+        run: |
+          node tools/test-high-school-dual-tickers.mjs
+          node tools/grade09-dual-ticker-audit.mjs --check
