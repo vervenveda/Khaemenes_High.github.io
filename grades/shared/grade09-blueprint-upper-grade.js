@@ -79,10 +79,14 @@ function href(item){
 function snapshots(){const id=identity();return id&&continuation?.readLearner?.(id)||[]}
 function step(item){
  const snap=snapshots().find(s=>s.courseId===item.id);
- const dest=item.firstStepHref||href(item);
- return {dest:snap?.nextHref&&item.subject!=="foreignLanguage"?snap.nextHref:dest,
+ const courseHome=href(item),first=item.firstStepHref||courseHome;
+ const clean=url=>{try{const u=new URL(url,location.href);return u.origin+u.pathname.replace(/\/+$/,"/")}catch{return String(url||"").replace(/[?#].*$/,"").replace(/\/+$/,"/")}};
+ const snapshotHref=snap?.nextHref&&item.subject!=="foreignLanguage"?snap.nextHref:null;
+ const snapshotIsLanding=Boolean(snapshotHref&&courseHome&&clean(snapshotHref)===clean(courseHome));
+ const destination=snapshotHref&&!snapshotIsLanding?snapshotHref:first;
+ return {dest:destination,
  label:snap?.stale?"Refresh course":snap?.status==="corrections"?"Review corrections":"Open class",
- detail:snap?.nextTitle||snap?.summary||"Ready to open the assigned course."};
+ detail:snapshotIsLanding?"Open the first required lesson or readiness step.":snap?.nextTitle||snap?.summary||"Ready to open the assigned course."};
 }
 function link(title,url,cls="btn secondary"){
  const a=make("a",title);a.className=cls;a.href=url;return a;
