@@ -1,6 +1,6 @@
 "use strict";
 // Applied Mission Studio v1.7.0 · compact pop-out evidence recovery.
-const CACHE="khaemenes-geometry-v19-hardening-20261119";
+const CACHE="khaemenes-geometry-v20-engine-parity-20261119";
 const CACHE_PREFIX="khaemenes-geometry-";
 const CORE=["../../shared/course-entry-contract.js","../../shared/learner-scope-v1.js",
  "../assets/math-course-shell-v1.js","../assets/math-learning-tools-v2.js","../assets/math-progress-contract-v1.js","../assets/math-compatibility-v1.js","./course-map-v2.json",
