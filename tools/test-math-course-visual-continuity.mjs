@@ -39,14 +39,20 @@ for(const course of ["algebra-1","geometry","algebra-2"]){
  }
  sheetsChecked++;
  const landing=fs.readFileSync(root+"index.html","utf8");
- assert.ok(landing.includes('data-theme="light"'),course+" landing should open in parchment mode");
  assert.ok(landing.includes('width=device-width'),"responsive viewport "+course);
- assert.ok(landing.includes('data-vervenveda-parchment'),"existing parchment link preserved "+course);
- assert.ok(landing.includes("khaemenes-typography-standard"),"existing type hierarchy preserved "+course);
- assert.ok(landing.includes("shared/course-entry-contract.js"),"course gate preserved "+course);
- assert.ok(landing.includes("shared/learner-scope-v1.js"),"learner scope preserved "+course);
- if(course==="algebra-1")assert.ok(landing.includes('href="../../../assets/math-course-visual-unifier.css?v=20261013"'),"Algebra I self-contained landing needs visual style link");
- else assert.ok(landing.includes('meta name="theme-color" content="#f4f0e7"'),"parchment browser chrome "+course);
+ assert.ok(landing.includes('../assets/math-minimal-landing-v1.css'),"minimal Mathematics landing stylesheet "+course);
+ assert.ok(landing.includes('../assets/math-minimal-header-mount-v1.js'),"minimal Mathematics header owner "+course);
+ assert.ok(landing.includes('vnv-dual-ticker-v1.js'),"dual ticker owner "+course);
+ assert.ok(landing.includes('vnv-header-autopopulate.js'),"official header loader "+course);
+ assert.ok(landing.includes('vnv-language.js'),"language tools "+course);
+ assert.ok(landing.includes('vnv-class-tools-toolbar.js'),"class tools "+course);
+ assert.ok(landing.includes('vnv-ecosystem-toolbar.js'),"ecosystem toolbar "+course);
+ assert.ok(landing.includes('Enter Course')&&landing.includes('href="assessments/"'),"direct course and assessment entrances "+course);
+ assert.ok(!landing.includes('high-school-global-chrome-v2.js'),"retired chrome must stay absent "+course);
+ const minimal=fs.readFileSync("courses/mathematics/assets/math-minimal-landing-v1.css","utf8");
+ for(const token of ["--paper:#f4f0e7","Cinzel","Brandon Grotesque","border-radius:7px",":focus-visible","@media print"]){
+  assert.ok(minimal.includes(token),"minimal Mathematics landing visual contract missing "+token);
+ }
  pagesChecked++;
  for(let i=1;i<=13;i++){
   const unit=String(i).padStart(2,"0");
@@ -113,5 +119,5 @@ const requiredAssets=sw.match(/const required\s*=\s*\[\.\.\.new Set\(\[([^\]]+)\
 assert.ok(requiredAssets.includes("...COURSE_VISUAL_FILES"),
  "offline visual file must be installed atomically alongside navigation assets");
 assert.ok(sw.includes("GAME_PRECACHE_FILES"),"canonical mathematics games remain installed");
-console.log("PASS: mathematics visual continuity: three course entrances, 39 unit entry pages, "+
+console.log("PASS: mathematics visual continuity: three minimal course entrances, 39 unit entry pages, "+
  sheetsChecked+" connected stylesheets, preserved Algebra I dark dashboard, consistent 7px cards, mobile/print/keyboard/reduced-motion contracts, offline CSS and preserved learner gates.");
