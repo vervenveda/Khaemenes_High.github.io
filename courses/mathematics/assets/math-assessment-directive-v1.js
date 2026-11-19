@@ -99,5 +99,12 @@ function show(detail={}){
  return true;
 }
 global.addEventListener("khaemenes:math-assessment-complete",e=>show(e.detail||{}));
-global.KhaemenesMathAssessmentDirective=Object.freeze({version:"1.0.0",show,courseFromPath,kindFrom,unitFrom,weekFrom});
+global.addEventListener("khaemenes:readiness-saved",e=>{
+ const d=e.detail||{},course=d.courseId==="math-prealgebra"?"pre-algebra":courseFromPath();
+ show({course,kind:"readiness",score:Number(d.percent),mastered:d.route?d.route!=="unit_0_refresher":Number(d.percent)>=MASTER});
+});
+global.addEventListener("khaemenes-math-weekly-mastery-saved",e=>{
+ const d=e.detail||{};show({kind:"weekly",score:Number(d.score??d.percent),mastered:d.mastery_met===true,week:Number(d.week)});
+});
+global.KhaemenesMathAssessmentDirective=Object.freeze({version:"1.1.0",show,courseFromPath,kindFrom,unitFrom,weekFrom});
 })(window);
