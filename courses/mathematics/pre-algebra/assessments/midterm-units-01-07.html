@@ -6,6 +6,10 @@
 <meta name="theme-color" content="#242c29">
 <title>Pre-Algebra Midterm Assessment · Khaemenes Academy</title>
 
+<script src="../../../shared/course-entry-contract.js?v=20261012"></script>
+<script src="../../../shared/learner-scope-v1.js?v=20261012" data-learner-scope="pre-algebra"></script>
+<script src="../assets/prealgebra-cumulative-gates-v1.js"></script>
+
 <script src="/Khaemenes_High.github.io/assets/high-school-global-chrome-v2.js" defer data-high-school-global-chrome="v2"></script>
 <script src="/Khaemenes_High.github.io/courses/mathematics/pre-algebra/assets/prealgebra-worker-recovery-v1.js" defer data-prealgebra-worker-recovery="v1"></script>
 <script src="../../assets/math-storage-adapter-v1.js" defer data-math-storage-adapter="v1"></script>
@@ -153,7 +157,7 @@ const CONFIG={
  constructed_weight:30,
  page_size:8
 };
-let section=0;
+let section=0,gateLocked=false;
 const $=sel=>document.querySelector(sel);
 const esc=v=>String(v??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","'":"&#39;"}[c]));
 
@@ -161,7 +165,7 @@ function activeProfile(){try{const id=JSON.parse(localStorage.getItem("khaemenes
 function scopedKey(base){const p=activeProfile();return p?base+":learner:"+encodeURIComponent(p.learnerId):base}
 function readRaw(base){try{return localStorage.getItem(scopedKey(base))}catch{return null}}
 function readJSON(base,fallback={}){const S=window.KhaemenesMathStorageAdapter,key=scopedKey(base);if(S?.readJSON)return S.readJSON(key,fallback)??fallback;try{return JSON.parse(localStorage.getItem(key)||"null")??fallback}catch{return fallback}}
-function writeJSON(base,value){const S=window.KhaemenesMathStorageAdapter,key=scopedKey(base);if(S?.writeJSON)return S.writeJSON(key,value).persisted===true;try{const raw=JSON.stringify(value);localStorage.setItem(key,raw);return localStorage.getItem(key)===raw}catch{return false}}
+function writeJSON(base,value){const S=window.KhaemenesMathStorageAdapter,key=scopedKey(base);if(S?.writeJSON){const result=S.writeJSON(key,value)||{};return result.persisted===true&&(result.verified!==false)}try{const raw=JSON.stringify(value);localStorage.setItem(key,raw);return localStorage.getItem(key)===raw}catch{return false}}
 
 function legacyImport(){
  const current=readJSON(CONFIG.result_key,null);if(current)return;
@@ -171,6 +175,15 @@ function legacyImport(){
  writeJSON(CONFIG.result_key,wrapped);
 }
 legacyImport();
+function prerequisiteMissing(){return window.KhaemenesPreAlgebraCumulativeGate?.missing?.(7)||["Pre-Algebra progression authority unavailable"]}
+function applyGate(){
+ const missing=prerequisiteMissing();gateLocked=missing.length>0;
+ let gate=$("#prerequisiteGate");
+ if(!gate){gate=document.createElement("section");gate.id="prerequisiteGate";gate.className="notice";gate.innerHTML='<h2 style="font:400 24px/1.3 Cinzel,Georgia,serif;margin:0 0 7px">Midterm prerequisite evidence</h2><p>Complete the required lesson, weekly, and unit mastery evidence before beginning this cumulative assessment.</p><ul id="gateList"></ul>';$("#assessment")?.before(gate)}
+ gate.hidden=!gateLocked;const list=$("#gateList");if(list)list.innerHTML=missing.map(x=>"<li>"+esc(x)+"</li>").join("");
+ document.querySelectorAll("#questionList input,#questionList textarea,#constructedList textarea,#submitButton,#saveButton,#newAttemptButton").forEach(el=>{if("disabled" in el)el.disabled=gateLocked;if(el.tagName==="TEXTAREA")el.readOnly=gateLocked});
+ if(gateLocked)$("#status").textContent="Midterm locked until Units 01–07 complete their lesson, weekly, and unit mastery evidence chain.";
+}
 
 function loadDraft(){
  const d=readJSON(CONFIG.draft_key,null);
@@ -195,18 +208,18 @@ function renderQuestions(){
   const q=QUESTIONS[i],selected=draft.answers[i],work=draft.work[i]||"";
   const art=document.createElement("article");art.className="question";
   const feedback=draft.submitted?'<div class="feedback '+(Number(selected)===q.answer?'good':'bad')+'">'+(Number(selected)===q.answer?'Correct.':'Review. Correct answer: '+esc(q.options[q.answer])+'.')+' '+esc(q.explanation)+'</div>':"";
-  art.innerHTML='<div class="q-number"><span>'+(i+1)+'</span></div><div class="q-body"><p class="q-meta">Unit '+q.unit+' · '+esc(q.domain)+'</p><p class="q-prompt">'+esc(q.prompt)+'</p><div class="options">'+q.options.map((o,j)=>'<label class="option"><input type="radio" name="q'+i+'" value="'+j+'" '+(Number(selected)===j?'checked':'')+' '+(draft.submitted?'disabled':'')+'><span>'+esc(o)+'</span></label>').join("")+'</div><label class="work-label" for="work'+i+'">Show your work · ungraded workspace</label><textarea class="work" id="work'+i+'" data-work="'+i+'" '+(draft.submitted?'readonly':'')+'>'+esc(work)+'</textarea>'+feedback+'</div>';
+  art.innerHTML='<div class="q-number"><span>'+(i+1)+'</span></div><div class="q-body"><p class="q-meta">Unit '+q.unit+' · '+esc(q.domain)+'</p><p class="q-prompt">'+esc(q.prompt)+'</p><div class="options">'+q.options.map((o,j)=>'<label class="option"><input type="radio" name="q'+i+'" value="'+j+'" '+(Number(selected)===j?'checked':'')+' '+(draft.submitted||gateLocked?'disabled':'')+'><span>'+esc(o)+'</span></label>').join("")+'</div><label class="work-label" for="work'+i+'">Show your work · ungraded workspace</label><textarea class="work" id="work'+i+'" data-work="'+i+'" '+(draft.submitted||gateLocked?'readonly':'')+'>'+esc(work)+'</textarea>'+feedback+'</div>';
   host.append(art);
  }
  document.querySelectorAll("[data-section]").forEach(b=>b.classList.toggle("current",Number(b.dataset.section)===section));
  $("#prevSection").disabled=section===0;$("#nextSection").disabled=section===6;$("#bottomPrevSection").disabled=section===0;$("#bottomNextSection").textContent=section===6?"Constructed Responses ↓":"Next →";
- updateProgress();
+ updateProgress();applyGate();
 }
 function renderConstructed(){
  const host=$("#constructedList");host.innerHTML="";
  DEPTH.constructed.forEach((task,i)=>{
   const value=draft.responses[i]||"",art=document.createElement("article");art.className="cr-item";
-  art.innerHTML='<h3>Response '+(i+1)+' · '+esc(task.domain)+'</h3><p>'+esc(task.prompt)+'</p><textarea data-response="'+i+'" '+(draft.submitted?'readonly':'')+'>'+esc(value)+'</textarea><p class="cr-count" id="crCount'+i+'">'+String(value).trim().length+' characters · minimum '+DEPTH.response_min_chars+'</p>';
+  art.innerHTML='<h3>Response '+(i+1)+' · '+esc(task.domain)+'</h3><p>'+esc(task.prompt)+'</p><textarea data-response="'+i+'" '+(draft.submitted||gateLocked?'readonly':'')+'>'+esc(value)+'</textarea><p class="cr-count" id="crCount'+i+'">'+String(value).trim().length+' characters · minimum '+DEPTH.response_min_chars+'</p>';
   host.append(art);
  });
 }
@@ -243,6 +256,7 @@ function buildAttempt(){
  };
 }
 function submit(){
+ if(gateLocked){$("#status").textContent="Midterm remains locked until Units 01–07 complete the full mastery evidence chain.";return}
  if(answeredCount()!==56){const missing=QUESTIONS.findIndex((_,i)=>!Object.prototype.hasOwnProperty.call(draft.answers,String(i)));section=Math.floor(missing/8);renderQuestions();$("#status").textContent="Answer all 56 selected-response questions before submitting. First unanswered item: "+(missing+1)+".";return}
  if(completedConstructed()!==7){$("#status").textContent="Complete all 7 constructed responses with at least "+DEPTH.response_min_chars+" meaningful characters.";showConstructed();return}
  draft.submitted=true;if(!saveDraft(false)){draft.submitted=false;$("#status").textContent="Submission paused because the draft could not be verified.";return}
@@ -280,10 +294,10 @@ const info={
  evidence:{title:"Mixed Evidence",body:"The selected-response portion contributes 70% of the overall midterm result. Seven written reasoning tasks contribute 30% after local evaluator review using the 0–4 rubric."},
  records:{title:"Attempts & Records",body:"Every submitted attempt is preserved. Starting a new attempt never deletes earlier scores or evaluator reviews, and a later failed attempt cannot erase an earlier mastered result."}
 };
-$("#questionList").addEventListener("change",e=>{const input=e.target.closest('input[type="radio"]');if(!input||draft.submitted)return;const m=input.name.match(/^q(\d+)$/);if(!m)return;draft.answers[m[1]]=Number(input.value);saveDraft(false);updateProgress()});
-$("#questionList").addEventListener("input",e=>{const t=e.target.closest("[data-work]");if(!t||draft.submitted)return;draft.work[t.dataset.work]=t.value});
+$("#questionList").addEventListener("change",e=>{const input=e.target.closest('input[type="radio"]');if(!input||draft.submitted||gateLocked)return;const m=input.name.match(/^q(\d+)$/);if(!m)return;draft.answers[m[1]]=Number(input.value);saveDraft(false);updateProgress()});
+$("#questionList").addEventListener("input",e=>{const t=e.target.closest("[data-work]");if(!t||draft.submitted||gateLocked)return;draft.work[t.dataset.work]=t.value});
 $("#questionList").addEventListener("change",e=>{const t=e.target.closest("[data-work]");if(!t||draft.submitted)return;draft.work[t.dataset.work]=t.value;saveDraft(false)});
-$("#constructedList").addEventListener("input",e=>{const t=e.target.closest("[data-response]");if(!t||draft.submitted)return;draft.responses[t.dataset.response]=t.value;$("#crCount"+t.dataset.response).textContent=t.value.trim().length+" characters · minimum "+DEPTH.response_min_chars;saveDraft(false);updateProgress()});
+$("#constructedList").addEventListener("input",e=>{const t=e.target.closest("[data-response]");if(!t||draft.submitted||gateLocked)return;draft.responses[t.dataset.response]=t.value;$("#crCount"+t.dataset.response).textContent=t.value.trim().length+" characters · minimum "+DEPTH.response_min_chars;saveDraft(false);updateProgress()});
 document.querySelectorAll("[data-section]").forEach(b=>b.onclick=()=>goSection(Number(b.dataset.section)));
 $("#prevSection").onclick=()=>goSection(section-1);$("#nextSection").onclick=()=>goSection(section+1);$("#bottomPrevSection").onclick=()=>goSection(section-1);$("#bottomNextSection").onclick=()=>section<6?goSection(section+1):showConstructed();
 $("#submitButton").onclick=submit;$("#saveButton").onclick=()=>saveDraft(true);$("#exportButton").onclick=exportResult;$("#newAttemptButton").onclick=newAttempt;$("#startButton").onclick=()=>{$("#assessment").scrollIntoView({behavior:"smooth"});setTimeout(()=>$("#questionList input")?.focus(),250)};$("#printButton").onclick=()=>window.print();
