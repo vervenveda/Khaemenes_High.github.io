@@ -30,11 +30,11 @@ function openTranslator({root}){
 }
 if(document.readyState==="loading")document.addEventListener("DOMContentLoaded",ensureTranslatorMount,{once:true});else ensureTranslatorMount();
 
-const grade=/\/english-10\//i.test(location.pathname)?"10":"09";
+const grade=/\/english-11\//i.test(location.pathname)?"11":/\/english-10\//i.test(location.pathname)?"10":"09";
 const profileBase="/Khaemenes_High.github.io/grades/grade-"+grade+"/student-profile/";
 window.KhaemenesClassToolsConfigV1={
  id:"high-school-english-landing",
- match:()=>/\/courses\/language-arts\/english-9\/(?:index\.html)?$/i.test(location.pathname),
+ match:()=>/\/courses\/language-arts\/english-(?:9|10|11)\/(?:index\.html)?$/i.test(location.pathname),
  toggleLabel:"Tools",
  ariaLabel:"English learning tools",
  tools:[
