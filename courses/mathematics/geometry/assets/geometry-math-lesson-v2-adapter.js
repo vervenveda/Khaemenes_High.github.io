@@ -159,8 +159,12 @@
  }
  function observeDynamic(){
   if(observer)return;
-  const main=$("#lessonMain");if(!main)return;
-  observer=new MutationObserver(()=>requestAnimationFrame(()=>{normalizeSections();ensureCompletion();renderChecklist();gateNext()}));
+  const main=$("#lessonMain");if(!main||$("#lessonMasteryScore"))return;
+  observer=new MutationObserver(()=>{
+   if(!$("#lessonMasteryScore"))return;
+   observer.disconnect();observer=null;
+   requestAnimationFrame(()=>{normalizeSections();ensureCompletion();renderChecklist();gateNext()});
+  });
   observer.observe(main,{childList:true,subtree:true});
   setTimeout(()=>{observer?.disconnect();observer=null},3000);
  }
