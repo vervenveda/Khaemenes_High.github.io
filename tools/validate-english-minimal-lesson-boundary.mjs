@@ -2,6 +2,7 @@ import fs from "node:fs";
 import crypto from "node:crypto";
 import path from "node:path";
 import assert from "node:assert/strict";
+import vm from "node:vm";
 
 const base="courses/language-arts";
 const preserved={
@@ -65,6 +66,12 @@ const dailyRoute="/Khaemenes_High.github.io/courses/language-arts/english-9/dail
 const grade09Registry=read("grades/grade-09/student-profile/student-course-registry.js");
 const classTools=read(path.join(base,"assets","english-landing-class-tools-v1.js"));
 assert.ok(daily.length>17000,"Daily landing source is incomplete");
+const inlineScripts=[...daily.matchAll(/<script(?:\s+[^>]*)?>([\s\S]*?)<\/script>/gi)].map(m=>m[1]).filter(body=>body.trim());
+assert.ok(inlineScripts.length>=2,"Daily page must retain original draft handler and scoped lesson navigation handler");
+for(const [index,source] of inlineScripts.entries())assert.doesNotThrow(()=>new vm.Script(source,{filename:"english9-daily-inline-"+index+".js"}),"Daily inline JS syntax error");
+const originals=["lesson-date","progress-label","progress-fill","print-btn","task-cards","export-btn"];
+for(const selector of originals)assert.ok(daily.includes('id="'+selector+'"'),"Daily UI control missing "+selector);
+
 assert.equal((daily.match(/data-task="/g)||[]).length,6,"Must preserve six original daily learning task cards");
 for(const section of ["schedule","vocabulary","journal","reading","questionnaire","reflection"]){
   assert.ok(daily.includes('data-task="'+section+'"'),"Missing daily section "+section);
