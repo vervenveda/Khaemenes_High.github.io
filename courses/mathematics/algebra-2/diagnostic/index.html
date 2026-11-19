@@ -1,71 +1,610 @@
 <!doctype html>
-<html lang="en" data-theme="dark">
+<html lang="en">
 <head>
-<script src="../../../shared/course-entry-contract.js?v=20261012"></script>
-<script src="../../../shared/learner-scope-v1.js?v=20261012" data-learner-scope="algebra-2"></script>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#090b10"><meta name="color-scheme" content="dark light"><title>Algebra II Readiness Diagnostic · Khaemenes Algebra II</title><link rel="stylesheet" href="../assets/styles.css?v=20261118-assessment-recovery-1"><style id="khaemenes-typography-standard">
-/* Khaemenes High presentation typography · 55 / 33 / 24 / 14 px.
-   All public pages receive this local, embedded policy for offline use.
-   Only presentation changes. Existing grids, gates, learner records, assessments and STOS are preserved.
-   Font names are optional installed system fonts; no downloads or third-party font services. */
-html:root:root body {
-  font-family: "Brandon Grotesque", "Avenir Next", Avenir, "Segoe UI", Arial, sans-serif !important;
-  font-size: 14px !important;
-  font-weight: 400 !important;
-  line-height: 1.65 !important;
-  -webkit-text-size-adjust: 100%;
-  overflow-wrap: break-word;
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#242c29">
+<title>Algebra III Readiness Diagnostic · Khaemenes Academy</title>
+
+<script src="/Khaemenes_High.github.io/assets/high-school-global-chrome-v2.js" defer data-high-school-global-chrome="v2"></script>
+<script src="/Khaemenes_High.github.io/courses/mathematics/algebra-2/assets/algebra2-worker-recovery-v1.js" defer data-algebra2-worker-recovery="v1"></script>
+
+<style id="algebra1-diagnostic-clean-v1">
+:root{
+  --charcoal:#242c29;
+  --charcoal-2:#303936;
+  --cream:#fff8eb;
+  --parchment:#f6efe2;
+  --paper:#fffdf8;
+  --ink:#242624;
+  --muted:#655f55;
+  --gold:#b48b45;
+  --gold-soft:#d8c59f;
+  --line:#d9cdb8;
+  --green:#365b49;
+  --rose:#8f4e4e;
+  --radius:7px;
+  --max:1100px;
 }
-html:root:root body :is(button, input, select, textarea) {
-  font-family: "Brandon Grotesque", "Avenir Next", Avenir, "Segoe UI", Arial, sans-serif !important;
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:120px}
+body{
+  margin:0;
+  min-width:300px;
+  background:var(--parchment);
+  color:var(--ink);
+  font:400 16px/1.6 "Brandon Grotesque","Avenir Next",Avenir,"Segoe UI",Arial,sans-serif;
+  -webkit-font-smoothing:antialiased;
 }
-html:root:root body :is(h1, h2, h3, h4, h5, h6, .page-title, .hero-title, .brand-title, .display-title, .site-title) {
-  font-family: Cinzel, "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif !important;
-  font-weight: 400 !important;
-  overflow-wrap: anywhere;
+button,input,textarea{font:inherit}
+button{cursor:pointer}
+a{color:inherit}
+.wrap{width:min(calc(100% - 28px),var(--max));margin-inline:auto}
+.skip{position:fixed;left:12px;top:-80px;z-index:9999;padding:10px 14px;border-radius:var(--radius);background:#111;color:white}
+.skip:focus{top:12px}
+.breadcrumb{
+  width:min(calc(100% - 28px),var(--max));
+  margin:12px auto;
+  color:#6d6558;
+  font-size:16px;
+  text-align:center;
 }
-html:root:root body :is(.eyebrow, .kicker, .dialog-eyebrow, .dialog-kicker, .worksheet-kicker) {
-  font-family: Cinzel, "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif !important;
-  font-size: 55px !important;
-  font-weight: 400 !important;
-  line-height: 1.15 !important;
-  letter-spacing: .02em !important;
-  white-space: normal !important;
-  overflow-wrap: anywhere;
+.breadcrumb a{text-decoration:none}
+.breadcrumb a:hover{text-decoration:underline}
+
+.hero{
+  background:var(--charcoal);
+  color:var(--cream);
+  border-top:1px solid rgba(180,139,69,.65);
+  border-bottom:4px solid var(--gold);
+  padding:44px 18px 38px;
+  text-align:center;
 }
-html:root:root body h1 {
-  font-size: 33px !important;
-  line-height: 1.2 !important;
-  white-space: normal !important;
-  overflow-wrap: anywhere;
+.hero-inner{width:min(calc(100% - 20px),960px);margin:auto}
+.hero .kicker{
+  margin:0 0 8px;
+  color:#ead9b7;
+  font:400 16px/1.35 Cinzel,Georgia,serif;
+  letter-spacing:.08em;
+  text-transform:uppercase;
 }
-html:root:root body h2,
-html:root:root body :is(.subtitle, .hero-subtitle, .hero-sub, .academy-comment),
-html:root:root body .hero .comment {
-  font-size: 24px !important;
-  line-height: 1.35 !important;
-  white-space: normal !important;
-  overflow-wrap: anywhere;
+.hero h1{
+  margin:0;
+  color:var(--cream);
+  font:400 clamp(33px,5vw,55px)/1.12 Cinzel,Georgia,serif;
 }
-/* Do not replace responsive grids or fixed elements; prevent oversized titles from
-   demanding horizontal scrolling on narrow phone and tablet displays. */
-html:root:root body :is(.hero, .header, .page-header, .section-head, .lesson-header) {
-  min-width: 0;
+.hero .subtitle{
+  margin:10px auto 0;
+  max-width:760px;
+  color:#f3e8d2;
+  font:400 24px/1.4 Cinzel,Georgia,serif;
 }
-@media print {
-  html:root:root body { font-size: 14px !important; }
+.hero .lead{
+  max-width:780px;
+  margin:18px auto 0;
+  color:#f0e7d7;
+  font-size:18px;
+}
+.hero-actions{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;margin-top:24px}
+.btn{
+  min-height:44px;
+  border:1px solid var(--gold);
+  border-radius:var(--radius);
+  padding:10px 16px;
+  background:var(--paper);
+  color:var(--charcoal);
+  text-decoration:none;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:6px;
+}
+.btn.primary{background:var(--gold);color:#181b19;border-color:var(--gold)}
+.btn.dark{background:var(--charcoal);color:var(--cream);border-color:var(--charcoal)}
+.btn:hover{filter:brightness(.98);transform:translateY(-1px)}
+.btn:focus-visible,input:focus-visible,textarea:focus-visible{outline:3px solid #d6ad59;outline-offset:2px}
+
+.info-strip{
+  width:min(calc(100% - 28px),960px);
+  margin:18px auto 0;
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:11px;
+}
+.info-strip button{
+  min-height:55px;
+  border:1px solid var(--gold);
+  border-radius:var(--radius);
+  background:var(--charcoal);
+  color:var(--cream);
+  padding:10px 14px;
+  font:400 16px/1.3 Cinzel,Georgia,serif;
+}
+.info-strip button:hover{background:var(--charcoal-2)}
+
+.sheet{
+  width:min(calc(100% - 28px),var(--max));
+  margin:26px auto 44px;
+}
+.identity-row{
+  display:grid;
+  grid-template-columns:1.4fr 1fr 1fr .8fr;
+  gap:10px;
+  padding:14px;
+  border:1px solid var(--line);
+  border-radius:var(--radius);
+  background:#fbf5ea;
+}
+.identity-row label{display:grid;gap:5px;color:#494238}
+.identity-row input{
+  min-height:44px;
+  width:100%;
+  border:1px solid #bcae98;
+  border-radius:var(--radius);
+  background:white;
+  padding:8px 10px;
+  color:var(--ink);
+}
+.objective-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:16px 0}
+.objective{
+  display:grid;
+  grid-template-columns:auto 1fr;
+  align-items:stretch;
+  border:1px solid var(--line);
+  border-radius:var(--radius);
+  overflow:hidden;
+  background:var(--paper);
+}
+.objective strong{
+  min-width:145px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:12px;
+  background:linear-gradient(135deg,#8c6427,#c49a50);
+  color:#fffaf0;
+  font:400 16px/1.25 Cinzel,Georgia,serif;
+  text-align:center;
+}
+.objective span{padding:12px 14px;display:flex;align-items:center}
+
+.assessment-panel{
+  margin-top:18px;
+  border:1px solid var(--line);
+  border-radius:var(--radius);
+  background:var(--paper);
+  box-shadow:0 12px 30px rgba(55,45,25,.08);
+  overflow:hidden;
+}
+.assessment-top{
+  display:grid;
+  grid-template-columns:1fr auto;
+  gap:14px;
+  align-items:center;
+  padding:16px 18px;
+  border-bottom:1px solid var(--line);
+  background:#fbf7ef;
+}
+.assessment-top h2{margin:0;font:400 24px/1.3 Cinzel,Georgia,serif}
+.assessment-top p{margin:4px 0 0;color:var(--muted)}
+.progress-wrap{min-width:240px}
+.progress-label{margin:0 0 6px!important;text-align:right;color:var(--muted)}
+.progress{height:10px;border:1px solid #b9a988;border-radius:999px;background:white;overflow:hidden}
+.progress span{display:block;height:100%;width:0;background:linear-gradient(90deg,#8c6427,#c49a50)}
+.section-nav{
+  display:grid;
+  grid-template-columns:auto repeat(3,minmax(0,1fr)) auto;
+  gap:8px;
+  align-items:center;
+  padding:12px 16px;
+  border-bottom:1px solid var(--line);
+  background:#efe5d4;
+}
+.section-nav button{min-height:44px;border:1px solid #a89373;border-radius:var(--radius);background:#fffaf1;color:#29312d;padding:8px 10px}
+.section-nav button.current{background:var(--charcoal);color:var(--cream);border-color:var(--charcoal)}
+.section-nav button:disabled{opacity:.45;cursor:default}
+
+.question-list{display:grid;gap:14px;padding:18px}
+.question{
+  display:grid;
+  grid-template-columns:52px 1fr;
+  border:1px solid #c9bda9;
+  border-left:4px solid var(--gold);
+  border-radius:var(--radius);
+  background:#fffefb;
+  overflow:hidden;
+}
+.q-number{
+  display:flex;
+  align-items:flex-start;
+  justify-content:center;
+  padding-top:16px;
+}
+.q-number span{
+  width:38px;height:38px;border-radius:7px;
+  display:grid;place-items:center;
+  background:linear-gradient(180deg,#3a3f3d,#222725);
+  color:white;
+  font:400 20px/1 Cinzel,Georgia,serif;
+}
+.q-body{padding:14px 16px 16px 0}
+.q-prompt{margin:0 0 12px;font:400 18px/1.5 Georgia,"Times New Roman",serif;color:#202421}
+.options{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+.option{
+  display:flex;align-items:flex-start;gap:9px;
+  min-height:48px;
+  padding:10px 12px;
+  border:1px solid #d8cdb7;
+  border-radius:var(--radius);
+  background:#faf6ed;
+  cursor:pointer;
+}
+.option:hover{border-color:#b48b45;background:#fffaf0}
+.option input{margin-top:4px;accent-color:#7f5d25}
+.work-label{display:block;margin:12px 0 6px;color:#554d42}
+.work{
+  width:100%;
+  min-height:88px;
+  resize:vertical;
+  border:1px solid #cbbfae;
+  border-radius:var(--radius);
+  padding:10px 12px;
+  background:white;
+  color:var(--ink);
+}
+.feedback{
+  margin-top:10px;
+  padding:10px 12px;
+  border-left:4px solid #7a6f5d;
+  border-radius:var(--radius);
+  background:#f7f1e6;
+}
+.feedback.good{border-color:var(--green);background:#eef5f1}
+.feedback.bad{border-color:var(--rose);background:#f8eeee}
+
+.bottom-section-nav{display:flex;justify-content:space-between;gap:12px;padding:0 18px 18px}.bottom-section-nav button{min-height:48px;min-width:150px;border:1px solid var(--charcoal);border-radius:var(--radius);background:var(--charcoal);color:var(--cream);padding:10px 16px;font:400 16px/1.3 Cinzel,Georgia,serif}.bottom-section-nav button:disabled{opacity:.42;cursor:default}.bottom-section-nav button:hover:not(:disabled){background:var(--charcoal2,#303936)}@media(max-width:600px){.bottom-section-nav{display:grid;grid-template-columns:1fr 1fr}.bottom-section-nav button{min-width:0;width:100%}}.assessment-actions{
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:center;
+  gap:9px;
+  padding:16px;
+  border-top:1px solid var(--line);
+  background:#fbf7ef;
+}
+#status{
+  min-height:24px;
+  margin:0;
+  padding:0 16px 16px;
+  text-align:center;
+  color:#514a40;
+}
+.results{
+  margin:20px 18px 18px;
+  padding:18px;
+  border:1px solid var(--gold-soft);
+  border-radius:var(--radius);
+  background:#fffaf1;
+}
+.results[hidden]{display:none}
+.results h2{margin:0 0 6px;text-align:center;font:400 24px/1.3 Cinzel,Georgia,serif}
+.score{margin:0 0 14px;text-align:center;font:400 33px/1.2 Cinzel,Georgia,serif;color:#6e4d1c}
+.breakdown{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+.breakdown p{margin:0;padding:9px 10px;border:1px solid var(--line);border-radius:var(--radius);background:white}
+
+dialog{
+  width:min(calc(100% - 32px),680px);
+  border:1px solid var(--gold);
+  border-radius:var(--radius);
+  padding:0;
+  background:var(--paper);
+  color:var(--ink);
+  box-shadow:0 24px 70px rgba(0,0,0,.3);
+}
+dialog::backdrop{background:rgba(20,25,23,.58)}
+.dialog-head{background:var(--charcoal);color:var(--cream);padding:18px 20px;border-bottom:3px solid var(--gold)}
+.dialog-head h2{margin:0;font:400 24px/1.3 Cinzel,Georgia,serif}
+.dialog-body{padding:18px 20px}
+.dialog-body p{margin:0 0 12px}
+.dialog-actions{display:flex;justify-content:flex-end;padding:0 20px 18px}
+
+footer{
+  min-height:66px;
+  padding:22px 16px;
+  display:grid;
+  place-items:center;
+  background:var(--charcoal);
+  color:var(--cream);
+  text-align:center;
+  border-top:1px solid rgba(255,248,235,.2);
+}
+
+@media(max-width:760px){
+  .info-strip,.objective-grid,.identity-row{grid-template-columns:1fr}
+  .assessment-top{grid-template-columns:1fr}
+  .progress-wrap{min-width:0}
+  .progress-label{text-align:left}
+  .section-nav{grid-template-columns:1fr 1fr}
+  .section-nav button:nth-child(2),
+  .section-nav button:nth-child(3),
+  .section-nav button:nth-child(4){grid-column:auto}
+  .options,.breakdown{grid-template-columns:1fr}
+  .question{grid-template-columns:46px 1fr}
+  .q-body{padding-right:12px}
+}
+@media print{
+  .skip,.hero-actions,.info-strip,.section-nav,.assessment-actions,dialog{display:none!important}
+  body{background:white;color:black}
+  .hero{background:white!important;color:black!important;border-bottom:2px solid #999}
+  .hero *{color:black!important}
+  .sheet{width:100%;margin:0}
+  .question-list{padding:0}
+  .question{break-inside:avoid;margin:0 0 10px}
+  .work{min-height:70px}
+  footer{display:none}
 }
 </style>
-  <script src="/Khaemenes_High.github.io/assets/high-school-global-chrome-v2.js" defer data-high-school-global-chrome="v2"></script>
-<script src="/Khaemenes_High.github.io/courses/mathematics/algebra-2/assets/algebra2-worker-recovery-v1.js" defer data-algebra2-worker-recovery="v1"></script>
 </head>
-<body><script>Object.assign(document.documentElement.dataset,{mathEntry:"diagnostic",mathCourseId:"math-algebra2",mathReadinessKey:"khaemenes-math-algebra2-readiness-v1",mathStoragePrefixes:"khaemenes-algebra2-,khaemenes-math-algebra2-readiness-v1",mathEvidenceKey:"khaemenes-algebra2-assessment-records-v1",mathEvidencePath:"readiness-diagnostic"});</script><script src="../../../shared/math-entry-gate.js"></script>
-<a class="skip" href="#main">Skip to main content</a><header class="site-header"><div class="wrap header-inner">
-<div class="brand-group"><a class="brand-home" href="https://khaemenesacademy.org/" aria-label="Khaemenes Academy home">K</a><a class="brand-copy" href="../"><strong>Khaemenes Algebra II</strong><small>Open-Age Algebra II &amp; Advanced Functions</small></a></div>
-<div class="header-tools"><a class="header-control" href="../">Course Home</a><a class="header-control" href="../assessments/">Assessments</a><a class="header-control" href="../../tools/calculator" target="_blank" rel="noopener">Calculator</a><button class="header-control" id="themeToggle" type="button">◐ Theme</button></div>
-</div></header>
-<script>document.documentElement.dataset.theme=localStorage.getItem("khaemenes-theme")||"dark";addEventListener("DOMContentLoaded",()=>document.getElementById("themeToggle")?.addEventListener("click",()=>{const t=document.documentElement.dataset.theme==="dark"?"light":"dark";document.documentElement.dataset.theme=t;localStorage.setItem("khaemenes-theme",t)}));</script>
-<nav class="breadcrumb"><div class="wrap"><a href="../">Algebra II</a><span>›</span><span>Readiness Diagnostic</span></div></nav>
-<main id="main" class="assessment-shell"><div class="assessment-head"><p class="eyebrow">Placement-based entry · Not age-based</p><h1>Algebra II Readiness Diagnostic</h1><p>Forty questions sample Algebra I prerequisites: expressions, equations, inequalities, functions, systems, quadratics, exponents, radicals, data, and probability. Use results to plan review rather than to label a learner.</p><div class="assessment-controls"><button class="btn primary" id="startAssessment" type="button">Begin Diagnostic</button><button class="btn" id="resetAssessment" type="button">New Attempt</button><a class="btn" href="../">Course Home</a></div></div><div id="assessmentRoot"></div></main>
-<script>window.A2_ASSESSMENT_CONFIG={"title":"Algebra II Readiness Diagnostic","recordKey":"readiness-diagnostic","source":"diagnostic","count":40,"instructions":"Work without notes first. Calculator use is optional. Review every explanation and create a targeted Algebra I bridge plan for skills below mastery."};</script><script src="../assets/question-bank.js"></script><script src="../assets/assessment-engine.js?v=20261118-assessment-recovery-1"></script><footer class="footer"><div class="wrap footer-inner"><span>KH-MATH-A2 · Open-Age Algebra II</span><span>Local-first · Printable · Jennifer Kay Pearl · 2026</span></div></footer><script src="https://vervenveda.com/assets/vnv-ecosystem-toolbar.js"></script>
-</body></html>
+<body>
+<a class="skip" href="#assessment">Skip to assessment</a>
+
+<nav class="breadcrumb" aria-label="Breadcrumb">
+  <a href="https://vervenveda.com/">Verve N Veda</a> ›
+  <a href="https://vervenveda.com/Khaemenes_High.github.io/">Khaemenes High</a> ›
+  <a href="https://vervenveda.com/Khaemenes_High.github.io/courses/mathematics/">Mathematics</a> ›
+  <a href="../">Algebra II</a> › Readiness Diagnostic
+</nav>
+
+<header class="hero">
+  <div class="hero-inner">
+    <p class="kicker">Readiness Assessment</p>
+    <h1>Algebra III Readiness Diagnostic</h1>
+    <p class="subtitle">A structured readiness worksheet for Algebra II</p>
+    <p class="lead">Forty questions covering prerequisite number sense, expressions, equations, functions, slope, units, statistics, and evidence interpretation.</p>
+    <div class="hero-actions">
+      <button class="btn primary" id="startButton" type="button">Start Assessment</button>
+      <button class="btn" id="printButton" type="button">Print Assessment</button>
+      <a class="btn" href="../">Course Home</a>
+    </div>
+  </div>
+</header>
+
+<div class="info-strip" aria-label="Assessment information">
+  <button type="button" data-info="evidence">Readiness Evidence</button>
+  <button type="button" data-info="standard">Answer Standard</button>
+  <button type="button" data-info="results">Using Results</button>
+</div>
+
+<main class="sheet" id="assessment">
+  <section class="identity-row" aria-label="Worksheet information">
+    <label>Name<input id="studentName" autocomplete="name"></label>
+    <label>Class / Period<input id="classPeriod"></label>
+    <label>Date<input id="assessmentDate"></label>
+    <label>Score<input id="scoreBox" readonly aria-label="Assessment score"></label>
+  </section>
+
+  <section class="objective-grid" aria-label="Learning objective and directions">
+    <div class="objective"><strong>Learning Objective</strong><span>Demonstrate prerequisite Algebra II readiness and identify Algebra I skills where targeted review will help.</span></div>
+    <div class="objective"><strong>Directions</strong><span>Select one answer for each item. Use the work space beneath every problem for calculations, checks, or reasoning.</span></div>
+  </section>
+
+  <section class="assessment-panel">
+    <div class="assessment-top">
+      <div>
+        <h2>Assessment Record</h2>
+        <p>40 questions · Untimed · Suggested working time: 45–70 minutes</p>
+      </div>
+      <div class="progress-wrap">
+        <p class="progress-label" id="progressLabel">0/40 answered</p>
+        <div class="progress" aria-hidden="true"><span id="progressBar"></span></div>
+      </div>
+    </div>
+
+    <nav class="section-nav" aria-label="Question sections">
+      <button id="prevSection" type="button">← Previous</button>
+      <button type="button" data-section="0">1–10</button>
+      <button type="button" data-section="1">11–20</button>
+      <button type="button" data-section="2">21–30</button><button type="button" data-section="3">31–40</button>
+      <button id="nextSection" type="button">Next →</button>
+    </nav>
+
+    <div class="question-list" id="questionList"></div><nav class="bottom-section-nav" aria-label="Bottom question navigation"><button id="bottomPrevSection" type="button">← Previous</button><button id="bottomNextSection" type="button">Next →</button></nav>
+
+    <section class="results" id="results" hidden aria-live="polite">
+      <h2 id="resultTitle"></h2>
+      <p class="score" id="resultScore"></p>
+      <div class="breakdown" id="breakdown"></div>
+    </section>
+
+    <div class="assessment-actions">
+      <button class="btn dark" id="submitButton" type="button">Submit &amp; Score</button>
+      <button class="btn" id="saveButton" type="button">Save Draft</button>
+      <button class="btn" id="exportButton" type="button">Export Result</button>
+      <button class="btn" id="resetButton" type="button">Reset</button>
+    </div>
+    <p id="status" role="status" aria-live="polite">Ready.</p>
+  </section>
+</main>
+
+<dialog id="infoDialog">
+  <div class="dialog-head"><h2 id="infoTitle"></h2></div>
+  <div class="dialog-body" id="infoBody"></div>
+  <div class="dialog-actions"><button class="btn dark" id="closeInfo" type="button">Close</button></div>
+</dialog>
+
+<footer>Khaemenes Academy · Algebra II · Readiness evidence remains separate from the official course grade.</footer>
+
+<script>
+const CONFIG={"id":"KH-MATH-A2-DIAGNOSTIC","title":"Algebra II Readiness Diagnostic","question_count":40,"duration":"Untimed. Suggested working time: 50–75 minutes.","storage_key":"khaemenes-algebra2-diagnostic-draft-v1","result_key":"khaemenes-algebra2-assessment-records-v1","record_key":"readiness-diagnostic","export_name":"algebra2-readiness-diagnostic-result.json","questions":[{"id":"a2-d-01","prompt":"Simplify 3x+5x.","options":["8x","15x","8x²","2x"],"answer":0,"answer_text":"8x","explanation":"Combine like terms.","skill":"expressions"},{"id":"a2-d-02","prompt":"Evaluate 2x²−3 when x=−2.","options":["1","5","11","−11"],"answer":1,"answer_text":"5","explanation":"2(4)−3=5.","skill":"evaluation"},{"id":"a2-d-03","prompt":"Solve 4x−7=21.","options":["x=7","x=3.5","x=14","x=28"],"answer":0,"answer_text":"x=7","explanation":"Add 7 and divide by 4.","skill":"linear equations"},{"id":"a2-d-04","prompt":"Solve 3(x−2)=15.","options":["x=9","x=7","x=5","x=3"],"answer":1,"answer_text":"x=7","explanation":"Divide by 3, then add 2.","skill":"linear equations"},{"id":"a2-d-05","prompt":"Solve 2x+5=5x−7.","options":["x=2/3","x=−4","x=4","x=12"],"answer":2,"answer_text":"x=4","explanation":"12=3x.","skill":"linear equations"},{"id":"a2-d-06","prompt":"Which inequality results from −2x\u003c8?","options":["x\u003c−4","x>−4","x\u003c4","x>4"],"answer":1,"answer_text":"x>−4","explanation":"Dividing by a negative reverses the sign.","skill":"inequalities"},{"id":"a2-d-07","prompt":"Slope through (1,3) and (5,11).","options":["4","1/2","2","8"],"answer":2,"answer_text":"2","explanation":"(11−3)/(5−1)=2.","skill":"slope"},{"id":"a2-d-08","prompt":"Equation with slope 3 and y-intercept −2.","options":["y=3x+2","y=−2x+3","y=3x−2","x=3y−2"],"answer":2,"answer_text":"y=3x−2","explanation":"Use y=mx+b.","skill":"linear functions"},{"id":"a2-d-09","prompt":"Solve system x+y=7 and x−y=1.","options":["(7,1)","(1,6)","(4,3)","(3,4)"],"answer":2,"answer_text":"(4,3)","explanation":"Add equations: 2x=8.","skill":"systems"},{"id":"a2-d-10","prompt":"Factor x²−9.","options":["(x−3)(x+3)","prime","(x−3)²","(x−9)(x+1)"],"answer":0,"answer_text":"(x−3)(x+3)","explanation":"Difference of squares.","skill":"factoring"},{"id":"a2-d-11","prompt":"Factor x²+5x+6.","options":["(x−2)(x−3)","(x+2)(x+3)","prime","(x+1)(x+6)"],"answer":1,"answer_text":"(x+2)(x+3)","explanation":"2·3=6 and 2+3=5.","skill":"factoring"},{"id":"a2-d-12","prompt":"Solve x²−5x+6=0.","options":["x=−2 or −3","x=5 or 6","x=1 or 6","x=2 or 3"],"answer":3,"answer_text":"x=2 or 3","explanation":"Factor (x−2)(x−3).","skill":"quadratics"},{"id":"a2-d-13","prompt":"What is the discriminant of x²+4x+7=0?","options":["12","−12","−44","44"],"answer":1,"answer_text":"−12","explanation":"b²−4ac=16−28.","skill":"discriminant"},{"id":"a2-d-14","prompt":"Vertex of y=(x−2)²+5.","options":["(2,−5)","(5,2)","(2,5)","(−2,5)"],"answer":2,"answer_text":"(2,5)","explanation":"Vertex form gives (h,k).","skill":"quadratics"},{"id":"a2-d-15","prompt":"Simplify x³·x⁵.","options":["2x⁸","x⁸","x¹⁵","x²"],"answer":1,"answer_text":"x⁸","explanation":"Add exponents.","skill":"exponents"},{"id":"a2-d-16","prompt":"Simplify x⁸/x³.","options":["x⁵","x¹¹","x^(8/3)","x²⁴"],"answer":0,"answer_text":"x⁵","explanation":"Subtract exponents.","skill":"exponents"},{"id":"a2-d-17","prompt":"Simplify (x²)³.","options":["x⁵","3x²","x⁶","x⁸"],"answer":2,"answer_text":"x⁶","explanation":"Multiply exponents.","skill":"exponents"},{"id":"a2-d-18","prompt":"Evaluate 2⁻³.","options":["−8","8","1/8","−1/8"],"answer":2,"answer_text":"1/8","explanation":"Negative exponent means reciprocal.","skill":"exponents"},{"id":"a2-d-19","prompt":"Write 0.00042 in scientific notation.","options":["0.42×10⁻³","4.2×10⁴","4.2×10⁻⁴","42×10⁻⁴"],"answer":2,"answer_text":"4.2×10⁻⁴","explanation":"Move decimal four places right.","skill":"scientific notation"},{"id":"a2-d-20","prompt":"Simplify √50.","options":["10√5","2√5","5√2","25√2"],"answer":2,"answer_text":"5√2","explanation":"50=25·2.","skill":"radicals"},{"id":"a2-d-21","prompt":"Solve √x=7.","options":["x=49","x=√7","x=14","x=−49"],"answer":0,"answer_text":"x=49","explanation":"Square both sides.","skill":"radicals"},{"id":"a2-d-22","prompt":"Domain of 1/(x+2).","options":["all real x","x≠2","x>−2","x≠−2"],"answer":3,"answer_text":"x≠−2","explanation":"Denominator cannot be zero.","skill":"domain"},{"id":"a2-d-23","prompt":"Domain of √(x−4).","options":["x>0","all real x","x≥4","x≤4"],"answer":2,"answer_text":"x≥4","explanation":"Radicand must be nonnegative.","skill":"domain"},{"id":"a2-d-24","prompt":"If f(x)=2x+1, find f(5).","options":["11","10","7","25"],"answer":0,"answer_text":"11","explanation":"2(5)+1=11.","skill":"functions"},{"id":"a2-d-25","prompt":"If f(x)=x+3 and g(x)=2x, find f(g(4)).","options":["5","11","14","8"],"answer":1,"answer_text":"11","explanation":"g(4)=8, then f(8)=11.","skill":"composition"},{"id":"a2-d-26","prompt":"Which relation is a function?","options":["all inputs equal","graph is always linear","each output has one input","each input has exactly one output"],"answer":3,"answer_text":"each input has exactly one output","explanation":"Function definition.","skill":"functions"},{"id":"a2-d-27","prompt":"What is 25% of 80?","options":["32","60","25","20"],"answer":3,"answer_text":"20","explanation":"0.25·80=20.","skill":"percent"},{"id":"a2-d-28","prompt":"A quantity grows from 50 to 60. Percent increase?","options":["16.7%","10%","120%","20%"],"answer":3,"answer_text":"20%","explanation":"Increase 10 divided by original 50.","skill":"percent change"},{"id":"a2-d-29","prompt":"A line of best fit is used mainly to do what?","options":["prove causation","remove outliers automatically","summarize and predict a trend","make all residuals zero"],"answer":2,"answer_text":"summarize and predict a trend","explanation":"It models association.","skill":"statistics"},{"id":"a2-d-30","prompt":"Mean of 2,4,6,8.","options":["6","5","20","4"],"answer":1,"answer_text":"5","explanation":"Sum 20 divided by 4.","skill":"statistics"},{"id":"a2-d-31","prompt":"Median of 1,3,3,9,12.","options":["3","5","4","9"],"answer":0,"answer_text":"3","explanation":"Middle ordered value.","skill":"statistics"},{"id":"a2-d-32","prompt":"Probability of rolling an even number on a fair die.","options":["2/3","1/2","1/3","1/6"],"answer":1,"answer_text":"1/2","explanation":"Three of six outcomes.","skill":"probability"},{"id":"a2-d-33","prompt":"Distance between 0 and −7 on a number line.","options":["−7","14","0","7"],"answer":3,"answer_text":"7","explanation":"Distance is absolute difference.","skill":"absolute value"},{"id":"a2-d-34","prompt":"Solve |x|=5.","options":["x=±5","x=−5 only","x=5 only","x=0"],"answer":0,"answer_text":"x=±5","explanation":"Both numbers are distance 5 from zero.","skill":"absolute value"},{"id":"a2-d-35","prompt":"Convert 3/4 to decimal.","options":["0.075","0.75","0.34","0.8"],"answer":1,"answer_text":"0.75","explanation":"3÷4=0.75.","skill":"number fluency"},{"id":"a2-d-36","prompt":"Solve proportion x/6=5/3.","options":["x=2.5","x=10","x=8","x=15"],"answer":1,"answer_text":"x=10","explanation":"Cross multiply: 3x=30.","skill":"proportions"},{"id":"a2-d-37","prompt":"What is the y-intercept of y=−2x+7?","options":["−2","7","2","−7"],"answer":1,"answer_text":"7","explanation":"Set x=0.","skill":"linear functions"},{"id":"a2-d-38","prompt":"Which graph feature is a zero of a function?","options":["a vertical asymptote only","an x-intercept","the domain","a y-intercept"],"answer":1,"answer_text":"an x-intercept","explanation":"At a zero, output is 0.","skill":"functions"},{"id":"a2-d-39","prompt":"For y=3(2)^x, initial value is what?","options":["1","2","3","6"],"answer":2,"answer_text":"3","explanation":"At x=0, y=3.","skill":"exponential"},{"id":"a2-d-40","prompt":"Which sequence is geometric?","options":["1,4,9,16","2,5,8,11","3,3,4,4","2,6,18,54"],"answer":3,"answer_text":"2,6,18,54","explanation":"Each term is multiplied by 3.","skill":"sequences"}]};
+const PAGE_SIZE=10;
+let section=0;
+let draft=loadDraft();
+
+const $=s=>document.querySelector(s);
+const esc=s=>String(s??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","'":"&#39;"}[c]));
+function safeGet(key){try{return localStorage.getItem(key)}catch{return null}}
+function safeSet(key,value){try{localStorage.setItem(key,value);return localStorage.getItem(key)===value}catch{return false}}
+function loadDraft(){
+  try{
+    const raw=safeGet(CONFIG.storage_key);
+    const parsed=raw?JSON.parse(raw):null;
+    return {
+      answers:parsed&&typeof parsed.answers==="object"?parsed.answers:{},
+      work:parsed&&typeof parsed.work==="object"?parsed.work:{},
+      submitted:Boolean(parsed?.submitted)
+    };
+  }catch{return {answers:{},work:{},submitted:false}}
+}
+function saveDraft(message=true){
+  const payload=JSON.stringify({answers:draft.answers,work:draft.work,submitted:draft.submitted,updated:new Date().toISOString()});
+  const ok=safeSet(CONFIG.storage_key,payload);
+  if(message) $("#status").textContent=ok?"Draft saved and verified locally.":"Draft could not be verified. Keep this page open and export your work before leaving.";
+  return ok;
+}
+function answeredCount(){return Object.keys(draft.answers).filter(k=>Number(k)>=0&&Number(k)<CONFIG.questions.length).length}
+function updateProgress(){
+  const n=answeredCount(),total=CONFIG.questions.length;
+  $("#progressLabel").textContent=n+"/"+total+" answered";
+  $("#progressBar").style.width=(n/total*100)+"%";
+}
+function render(){
+  const start=section*PAGE_SIZE,end=Math.min(CONFIG.questions.length,start+PAGE_SIZE);
+  const host=$("#questionList");
+  host.innerHTML="";
+  for(let i=start;i<end;i++){
+    const q=CONFIG.questions[i],selected=draft.answers[i],work=draft.work[i]||"";
+    const article=document.createElement("article");
+    article.className="question";
+    const feedback=draft.submitted
+      ? '<div class="feedback '+(Number(selected)===q.answer?'good':'bad')+'">'+(Number(selected)===q.answer?'Correct.':'Review. Correct answer: '+esc(q.options[q.answer])+'.')+' '+esc(q.explanation)+'</div>'
+      : "";
+    article.innerHTML=
+      '<div class="q-number"><span>'+(i+1)+'</span></div>'+
+      '<div class="q-body">'+
+        '<p class="q-prompt">'+esc(q.prompt)+'</p>'+
+        '<div class="options">'+q.options.map((opt,j)=>
+          '<label class="option"><input type="radio" name="q'+i+'" value="'+j+'" '+(Number(selected)===j?'checked':'')+' '+(draft.submitted?'disabled':'')+'><span>'+esc(opt)+'</span></label>'
+        ).join("")+'</div>'+
+        '<label class="work-label" for="work'+i+'">Show your work · ungraded workspace</label>'+
+        '<textarea class="work" id="work'+i+'" data-work="'+i+'" '+(draft.submitted?'readonly':'')+' placeholder="Calculations, graph notes, checks, or reasoning…">'+esc(work)+'</textarea>'+
+        feedback+
+      '</div>';
+    host.append(article);
+  }
+  document.querySelectorAll("[data-section]").forEach(b=>b.classList.toggle("current",Number(b.dataset.section)===section));
+  $("#prevSection").disabled=section===0;
+  $("#nextSection").disabled=section===3;
+  $("#bottomPrevSection").disabled=section===0;
+  $("#bottomNextSection").textContent=section===3?"Review / Submit ↑":"Next →";
+  updateProgress();
+}
+function goSection(n){
+  if(n<0||n>3)return;
+  section=n;render();
+  $("#assessment").scrollIntoView({behavior:"smooth",block:"start"});
+}
+function buildResult(){
+  let correct=0;const breakdown={};
+  CONFIG.questions.forEach((q,i)=>{const key=q.skill||"Assessment";breakdown[key]??={correct:0,total:0};breakdown[key].total++;if(Number(draft.answers[i])===q.answer){correct++;breakdown[key].correct++}});
+  const percent=Math.round(correct/CONFIG.questions.length*1000)/10;
+  return {id:CONFIG.id,title:CONFIG.title,score:correct,total:CONFIG.questions.length,percent,breakdown,submitted:new Date().toISOString(),learner:$("#studentName").value.trim(),work_snapshot:{...draft.work},trust:{classification:"browser-local-self-scored",authoritative:false,review_required:true}};
+}
+function persistResult(result){
+  let data={};try{data=JSON.parse(safeGet(CONFIG.result_key)||"{}")||{}}catch{}
+  const key=CONFIG.record_key;
+  const record=data[key]&&typeof data[key]==="object"?data[key]:{title:CONFIG.title,attempts:[],masteryTarget:null,mastery:null,bestScore:null};
+  record.attempts=[...(Array.isArray(record.attempts)?record.attempts:[]),{...result,result_schema:"khaemenes-algebra2-assessment-v2",assessment_id:key,selected_response_percent:result.percent,score:result.percent,question_ids:CONFIG.questions.map(q=>q.id),mastery_threshold:null,mastery:null,mastery_met:null,purpose:"diagnostic"}];
+  record.bestScore=Math.max(Number(record.bestScore)||0,result.percent);
+  record.masteryTarget=null;record.mastery=null;data[key]=record;
+  return safeSet(CONFIG.result_key,JSON.stringify(data))?record:null;
+}
+function showResult(result){
+  $("#results").hidden=false;
+  $("#resultTitle").textContent=result.percent>=80?"Readiness demonstrated":"Targeted review recommended";
+  $("#resultScore").textContent=result.percent+"% · "+result.score+"/"+result.total;
+  $("#scoreBox").value=result.score+" / "+result.total;
+  $("#breakdown").innerHTML=Object.entries(result.breakdown).map(([k,v])=>'<p><strong>'+esc(k.replaceAll("_"," "))+'</strong><br>'+v.correct+'/'+v.total+' ('+Math.round(v.correct/v.total*100)+'%)</p>').join("");
+}
+function submit(){
+  const count=answeredCount();
+  if(count!==CONFIG.questions.length){
+    const missing=CONFIG.questions.findIndex((_,i)=>!Object.prototype.hasOwnProperty.call(draft.answers,String(i)));
+    section=Math.floor(missing/PAGE_SIZE);
+    render();
+    $("#status").textContent="Answer all 40 questions before scoring. First unanswered item: question "+(missing+1)+".";
+    setTimeout(()=>document.querySelector('input[name="q'+missing+'"]')?.focus(),0);
+    return;
+  }
+  draft.submitted=true;
+  if(!saveDraft(false)){draft.submitted=false;$("#status").textContent="Submission paused because the draft could not be verified in browser storage.";return}
+  const result=buildResult();
+  const evidence=persistResult(result);
+  if(!evidence){draft.submitted=false;saveDraft(false);$("#status").textContent="Result could not be verified in browser storage. Export your work before leaving.";return}
+  render();showResult(result);
+  $("#status").textContent="Assessment scored. Review any missed items and preserve your exported result.";
+  $("#results").scrollIntoView({behavior:"smooth",block:"center"});
+}
+function exportResult(){
+  let data=null;
+  try{data=JSON.parse(safeGet(CONFIG.result_key)||"null")}catch{}
+  const payload=data||{assessment_id:CONFIG.id,draft};
+  const blob=new Blob([JSON.stringify(payload,null,2)],{type:"application/json"});
+  const url=URL.createObjectURL(blob),a=document.createElement("a");
+  a.href=url;a.download=CONFIG.export_name||"algebra2-readiness-diagnostic-result.json";a.click();
+  setTimeout(()=>URL.revokeObjectURL(url),500);
+}
+function reset(){
+  if(!confirm("Clear this diagnostic draft? Previously saved scored evidence will be preserved."))return;
+  draft={answers:{},work:{},submitted:false};
+  safeSet(CONFIG.storage_key,JSON.stringify(draft));
+  section=0;$("#scoreBox").value="";$("#results").hidden=true;render();$("#status").textContent="Draft reset. Saved scored evidence was preserved.";
+}
+const info={
+  evidence:{title:"Readiness Evidence",body:"This diagnostic is planning evidence, not the official Algebra II course grade. Use the skill breakdown with prior Algebra I work to identify targeted review."},
+  standard:{title:"Algebra II Readiness",body:"The diagnostic samples expressions, linear equations, inequalities, systems, quadratics, exponents, radicals, functions, statistics, probability, and number fluency."},
+  results:{title:"Using Results",body:"Use the skill breakdown to build an Algebra I bridge plan. Diagnostic evidence does not replace Algebra II unit mastery checks or the 80% progression standard."}
+};
+
+$("#questionList").addEventListener("change",e=>{
+  const input=e.target.closest('input[type="radio"]');
+  if(!input||draft.submitted)return;
+  const m=input.name.match(/^q(\d+)$/);if(!m)return;
+  draft.answers[m[1]]=Number(input.value);
+  saveDraft(false);updateProgress();
+});
+$("#questionList").addEventListener("input",e=>{
+  const ta=e.target.closest("[data-work]");if(!ta||draft.submitted)return;
+  draft.work[ta.dataset.work]=ta.value;
+});
+$("#questionList").addEventListener("change",e=>{
+  const ta=e.target.closest("[data-work]");if(!ta||draft.submitted)return;
+  draft.work[ta.dataset.work]=ta.value;saveDraft(false);
+});
+document.querySelectorAll("[data-section]").forEach(b=>b.addEventListener("click",()=>goSection(Number(b.dataset.section))));
+$("#prevSection").addEventListener("click",()=>goSection(section-1));
+$("#nextSection").addEventListener("click",()=>goSection(section+1));$("#bottomPrevSection").addEventListener("click",()=>goSection(section-1));$("#bottomNextSection").addEventListener("click",()=>section<3?goSection(section+1):$("#submitButton").scrollIntoView({behavior:"smooth",block:"center"}));
+$("#submitButton").addEventListener("click",submit);
+$("#saveButton").addEventListener("click",()=>saveDraft(true));
+$("#exportButton").addEventListener("click",exportResult);
+$("#resetButton").addEventListener("click",reset);
+$("#startButton").addEventListener("click",()=>{$("#assessment").scrollIntoView({behavior:"smooth",block:"start"});setTimeout(()=>$("#questionList input")?.focus(),250)});
+$("#printButton").addEventListener("click",()=>window.print());
+document.querySelectorAll("[data-info]").forEach(b=>b.addEventListener("click",()=>{
+  const item=info[b.dataset.info];$("#infoTitle").textContent=item.title;$("#infoBody").innerHTML="<p>"+esc(item.body)+"</p>";$("#infoDialog").showModal();
+}));
+$("#closeInfo").addEventListener("click",()=>$("#infoDialog").close());
+$("#infoDialog").addEventListener("click",e=>{if(e.target===$("#infoDialog"))$("#infoDialog").close()});
+$("#assessmentDate").value=new Date().toLocaleDateString();
+
+render();
+try{
+  const evidence=JSON.parse(safeGet(CONFIG.result_key)||"{}");
+  const attempts=evidence?.[CONFIG.record_key]?.attempts;
+  if(Array.isArray(attempts)&&attempts.length)showResult(attempts[attempts.length-1]);
+}catch{}
+</script>
+
+<script src="../../assets/math-learning-tools-v2.js" defer></script>
+<script src="https://vervenveda.com/assets/vnv-ecosystem-toolbar.js" defer></script>
+<script src="../../../../assets/vnv-language.js?v=20261118-high-school-bounded-refresh-1" defer data-official-vnv-language="true"></script>
+</body>
+</html>
