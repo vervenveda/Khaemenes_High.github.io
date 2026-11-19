@@ -1,0 +1,40 @@
+name: Mathematics Engine Adapter Token Parity Repair
+
+on:
+  push:
+    paths:
+      - "courses/mathematics/tools/repair-math-engine-adapter-tokens.mjs"
+      - ".github/workflows/math-engine-adapter-token-parity-repair.yml"
+
+permissions:
+  contents: write
+
+jobs:
+  repair:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      - name: Use Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "24"
+      - name: Repair adapter query-token parity
+        run: node courses/mathematics/tools/repair-math-engine-adapter-tokens.mjs --write
+      - name: Verify no stale adapter query tokens remain
+        run: node courses/mathematics/tools/repair-math-engine-adapter-tokens.mjs
+      - name: Validate patch whitespace
+        run: git diff --check
+      - name: Commit parity repair
+        shell: bash
+        run: |
+          if git diff --quiet; then
+            echo "No adapter token changes required."
+            exit 0
+          fi
+          git config user.name "Khaemenes Mathematics CI"
+          git config user.email "actions@users.noreply.github.com"
+          git add courses/mathematics/pre-algebra courses/mathematics/algebra-1 courses/mathematics/geometry
+          git commit -m "fix(math): align v2.3.0 lesson adapter query tokens"
+          git push
