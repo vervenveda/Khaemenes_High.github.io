@@ -64,7 +64,7 @@
   const style=document.createElement("style");style.id="khaemenesGeometryFineTune";
   style.textContent=`
    html:root:root body{font-family:"Brandon Grotesque","Avenir Next",Avenir,"Segoe UI",Arial,sans-serif!important;font-size:16px!important;line-height:1.68!important}
-   html:root:root body :is(p,li,label,button,input,select,textarea,summary,.notice,.feedback){font-size:max(16px,1em)!important}\n   html:root:root body :is(.eyebrow,.kicker,.dialog-eyebrow,.dialog-kicker,.worksheet-kicker){font-size:14px!important;line-height:1.35!important;letter-spacing:.12em!important;text-transform:uppercase!important}\n   html:root:root body :is(h1,h2,h3,h4,.worksheet-title){font-family:Cinzel,"Iowan Old Style","Palatino Linotype",Palatino,Georgia,serif!important;font-weight:400!important}
+   html:root:root body :is(p,li,label,button,input,select,textarea,summary,.notice,.feedback){font-size:max(16px,1em)!important}\n   html:root:root body :is(.eyebrow,.kicker,.dialog-eyebrow,.dialog-kicker,.worksheet-kicker){font-size:16px!important;line-height:1.35!important;letter-spacing:.12em!important;text-transform:uppercase!important}\n   html:root:root body :is(h1,h2,h3,h4,.worksheet-title){font-family:Cinzel,"Iowan Old Style","Palatino Linotype",Palatino,Georgia,serif!important;font-weight:400!important}
    .lesson-shell{width:min(calc(100% - 33px),1180px)!important;margin-inline:auto!important}
    .lesson-layout{grid-template-columns:minmax(0,1fr)!important;gap:14px!important}
    .lesson-sidebar{display:grid!important;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px!important}
