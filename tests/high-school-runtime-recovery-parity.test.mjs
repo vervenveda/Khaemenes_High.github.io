@@ -138,3 +138,71 @@ test("Algebra I diagnostic uses canonical assessment runtime without legacy jour
  assert.match(page,/exam-engine\.js\?v=20261118-assessment-recovery-1/);
  assert.match(page,/algebra1-worker-recovery-v1\.js/);
 });
+
+
+const mathAssessmentRecoverySets={
+ "pre-algebra":{
+  hook:"prealgebra-worker-recovery-v1.js",
+  pages:[
+   "courses/mathematics/pre-algebra/diagnostic/index.html",
+   "courses/mathematics/pre-algebra/assessments/index.html",
+   "courses/mathematics/pre-algebra/assessments/midterm-units-01-07.html",
+   "courses/mathematics/pre-algebra/assessments/final-exam-36-weeks.html",
+   "courses/mathematics/pre-algebra/units/unit-00/assessment/exit-mastery.html",
+   ...Array.from({length:13},(_,i)=>`courses/mathematics/pre-algebra/units/unit-${String(i+1).padStart(2,"0")}/assessment/mastery-check.html`)
+  ]
+ },
+ "algebra-1":{
+  hook:"algebra1-worker-recovery-v1.js",
+  pages:[
+   "courses/mathematics/algebra-1/diagnostic/index.html",
+   "courses/mathematics/algebra-1/readiness/index.html",
+   "courses/mathematics/algebra-1/assessments/index.html",
+   "courses/mathematics/algebra-1/assessments/weekly-mastery.html",
+   "courses/mathematics/algebra-1/assessments/midterm-units-01-06.html",
+   "courses/mathematics/algebra-1/assessments/final-exam-36-weeks.html",
+   ...Array.from({length:13},(_,i)=>`courses/mathematics/algebra-1/units/unit-${String(i+1).padStart(2,"0")}/assessment/mastery-check.html`)
+  ]
+ },
+ "geometry":{
+  hook:"geometry-worker-recovery-v1.js",
+  pages:[
+   "courses/mathematics/geometry/diagnostic/index.html",
+   "courses/mathematics/geometry/assessments/index.html",
+   "courses/mathematics/geometry/assessments/weekly-mastery.html",
+   "courses/mathematics/geometry/assessments/midterm.html",
+   "courses/mathematics/geometry/assessments/final.html",
+   "courses/mathematics/geometry/assessments/retention-lab.html",
+   ...Array.from({length:13},(_,i)=>`courses/mathematics/geometry/units/unit-${String(i+1).padStart(2,"0")}/assessment/mastery-check.html`)
+  ]
+ },
+ "algebra-2":{
+  hook:"algebra2-worker-recovery-v1.js",
+  pages:[
+   "courses/mathematics/algebra-2/diagnostic/index.html",
+   "courses/mathematics/algebra-2/assessments/index.html",
+   "courses/mathematics/algebra-2/assessments/midterm.html",
+   "courses/mathematics/algebra-2/assessments/final.html",
+   ...Array.from({length:13},(_,i)=>`courses/mathematics/algebra-2/units/unit-${String(i+1).padStart(2,"0")}/assessment/mastery-check.html`)
+  ]
+ }
+};
+
+test("all interactive High School math assessment entries recover their course worker exactly once",()=>{
+ for(const [course,config] of Object.entries(mathAssessmentRecoverySets)){
+  for(const path of config.pages){
+   const page=read(path);
+   const loads=page.match(new RegExp(config.hook.replace(/[.*+?^$\{\}()|[\]\\]/g,"\\$&"),"g"))||[];
+   assert.equal(loads.length,1,`${course}: ${path}`);
+  }
+ }
+});
+
+test("Geometry and Algebra II diagnostics use fresh cache-distinct assessment assets",()=>{
+ const geometry=read("courses/mathematics/geometry/diagnostic/index.html");
+ const algebra2=read("courses/mathematics/algebra-2/diagnostic/index.html");
+ for(const [name,page] of [["geometry",geometry],["algebra2",algebra2]]){
+  assert.match(page,/styles\.css\?v=20261118-assessment-recovery-1/,name);
+  assert.match(page,/assessment-engine\.js\?v=20261118-assessment-recovery-1/,name);
+ }
+});
