@@ -7,18 +7,9 @@ function validWeeklyAttempt(a){
  const ids=Array.isArray(a?.question_ids)?a.question_ids:[],dims=Array.isArray(a?.dimensions)?a.dimensions:[];
  return a?.assessment_version===WEEKLY_VERSION&&Number(a?.question_count)===10&&ids.length===10&&new Set(ids).size===10&&dims.length===10&&Number.isFinite(Number(a?.score));
 }
-function centerWeekly(n){
- try{
-  const base="khaemenes-prealgebra-weekly-center-v1",L=window.KhaemenesLearnerScope,key=L?.scopedKey?L.scopedKey(base):base,S=window.KhaemenesMathStorageAdapter;
-  const data=S?.readJSON?S.readJSON(key,{weeks:{}}):JSON.parse(localStorage.getItem(key)||"null")||{weeks:{}};
-  return data?.weeks?.[n]||null;
- }catch{return null}
-}
 function quizBest(n){
  const r=weekly(n),attempts=Array.isArray(r?.quiz?.attempts)?r.quiz.attempts.filter(validWeeklyAttempt):[];
- const legacy=attempts.length?Math.max(...attempts.map(a=>Number(a.score)||0)):0;
- const center=centerWeekly(n),centerBest=Math.max(Number(center?.best)||0,...(Array.isArray(center?.attempts)?center.attempts.map(a=>Number(a?.score)||0):[0]));
- return Math.max(legacy,centerBest);
+ return attempts.length?Math.max(...attempts.map(a=>Number(a.score)||0)):0;
 }
 function weekMastered(n){return lessonDone(n)&&quizBest(n)>=MIN}
 function admission(){
