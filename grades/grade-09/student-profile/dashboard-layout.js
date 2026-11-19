@@ -421,8 +421,12 @@ function khaeCanonicalProfileShell(){
  }
  const main=document.querySelector("main");
  if(main){
+  // Collapse each actual content card independently; keep the structural grid
+  // itself open so one disclosure never expands an entire page of content.
+  for(const node of [...main.querySelectorAll(".section .grid > .card")])wrap(node);
   for(const child of [...main.children]){
    if(child===top||child.matches?.("script,style"))continue;
+   if(child.matches?.(".section")&&child.querySelector(".grid"))continue;
    wrap(child);
   }
  }
