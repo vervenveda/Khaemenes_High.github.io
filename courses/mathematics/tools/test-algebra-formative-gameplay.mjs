@@ -18,8 +18,8 @@ const entries=[
 let totalChecks=0;
 for(const [slug,expected] of entries){
  const file=path.join(root,slug,'index.html'),html=fs.readFileSync(file,'utf8');
- const source=html.match(/<script\b[^>]*>([\s\S]*?)<\/script>/i)?.[1];
- assert.ok(source,slug+': script exists');
+ const source=[...html.matchAll(/<script(?![^>]*\bsrc=)[^>]*>([\s\S]*?)<\/script>/gi)].map(m=>m[1]).find(code=>/\b(?:const|let)\s+(?:bank|tasks)\s*=/.test(code));
+ assert.ok(source,slug+': gameplay script exists');
  assert.ok(fs.existsSync(path.join(root,slug,'README.md')),slug+': README exists');
  assert.ok(!/\b(?:localStorage|sessionStorage|indexedDB)\s*[.(]/.test(source),slug+': no learner storage');
  let inputs=[];
