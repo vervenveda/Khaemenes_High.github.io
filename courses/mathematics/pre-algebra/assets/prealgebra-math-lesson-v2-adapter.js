@@ -5,7 +5,7 @@
 (()=>{"use strict";
  if(window.KhaemenesPreAlgebraLessonV2)return;
  let bound=false;
- const VERSION="2.2.3";
+ const VERSION="2.3.0";
  const MANUAL_KEY="sectionChecks";
  const QUICK_KEY="quickChecks";
  const ITEMS=[
@@ -271,8 +271,7 @@
    style.id="khaemenesPreAlgebraFineTune";
    style.textContent=`
     html:root:root body{font-size:16px!important;line-height:1.68!important}
-    html:root:root body :is(p,li,label,button,input,select,textarea,summary,.feedback,.notice){font-size:max(16px,1em)!important}
-    #main{max-width:100%;overflow-x:clip}
+    html:root:root body :is(p,li,label,button,input,select,textarea,summary,.feedback,.notice){font-size:max(16px,1em)!important}\n    html:root:root body :is(.eyebrow,.kicker,.dialog-eyebrow,.dialog-kicker,.worksheet-kicker){font-size:14px!important;line-height:1.35!important;letter-spacing:.12em!important}\n    #main{max-width:100%;overflow-x:clip}
     #main .wrap{width:min(calc(100% - 33px),1180px);margin-inline:auto}
     .actions,.side-actions,.kme-field-actions,.kme-practice-actions{display:flex;flex-wrap:wrap;gap:11px!important;align-items:center}
     .actions .btn,.side-actions .btn,.kme-field-actions .btn,.kme-practice-actions .btn{margin:0!important}
