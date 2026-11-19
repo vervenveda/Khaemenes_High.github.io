@@ -105,8 +105,7 @@ function scopeReady(){
   learnerScopePaused=true;
   // Preserve the original learner's unsaved text under the ORIGINAL learner key.
   if(note&&note.value!==seenNote){
-   try{localStorage.setItem(draftKey,JSON.stringify({schema:2,lesson:id,note:note.value,
-      changedAt:Date.now(),reason:"learner-changed"}));}catch{}
+   try{const raw=JSON.stringify({schema:2,lesson:id,note:note.value,changedAt:Date.now(),reason:"learner-changed"});localStorage.setItem(draftKey,raw);if(localStorage.getItem(draftKey)!==raw)throw Error("learner-change-draft-verification-mismatch");}catch{}
   }
   for(const control of [note,box,saveButton,overwrite]){
    if(control){control.disabled=true;control.setAttribute("aria-disabled","true");}
