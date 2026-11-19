@@ -36,6 +36,18 @@ function mountProfileFirst(){
  row.querySelector(".grade09-profile-actions")?.remove();
  if(!tools){tools=document.createElement("section");tools.id="grade09BlueprintTools";const head=document.createElement("h2");head.textContent="My Profile Tools";tools.append(head)}
  if(tools.parentElement!==top)top.append(tools);
+ if(grade10Copy){
+  let pinned=$("grade10PinnedClasses");
+  if(!pinned){
+   pinned=make("section");pinned.id="grade10PinnedClasses";pinned.className="grade09-pinned-classes";
+   pinned.setAttribute("aria-labelledby","grade10PinnedClassesTitle");
+   const h=make("h2","My Pinned Classes");h.id="grade10PinnedClassesTitle";
+   const p=make("p","Open the exact lesson or required step you are working on. Pin or unpin classes from Schedule at any time.");
+   const grid=make("div");grid.className="grade09-pinned-class-grid";grid.dataset.grade10PinnedClassGrid="true";
+   pinned.append(h,p,grid);
+  }
+  if(pinned.parentElement!==top)top.append(pinned);
+ }
  if(todayCard.parentElement!==top)top.append(todayCard);
  // Grade 09 visual order: profile hero -> tools -> To Do Today -> Student Portfolio.
  // Reuse the original portfolio node, preserving its links and its own storage.
@@ -225,7 +237,7 @@ function showUpperSchedule(){
    const current=step(item);
    const route=current?.dest||href(item);
    if(route){
-    const launch=link(current?.label||((grade10Copy||grade11Copy||grade12Copy)?"Continue Class":"Open class"),route,"btn secondary");
+    const launch=link(grade10Copy?"Class":(current?.label||((grade11Copy||grade12Copy)?"Continue Class":"Open class")),route,"btn secondary");
     launch.dataset.courseId=item.id||"";
     launch.title=current?.detail||"Continue this class";
     card.append(launch);
@@ -375,9 +387,42 @@ function renderCourses(items){
     render();
    });actions.append(pin);
   }
-  if(next.dest&&identity())actions.append(link(next.label,next.dest));
+  if(next.dest&&identity())actions.append(link(grade10Copy?"Class":next.label,next.dest));
   else actions.append(make("p","Course route is being verified; no lesson is launched."));
   card.append(actions);list.append(card);
+ }
+}
+function renderPinnedClasses(items){
+ if(!grade10Copy)return;
+ const host=document.querySelector("[data-grade10-pinned-class-grid]");
+ if(!host)return;
+ host.replaceChildren();
+ const selected=new Set(readPins());
+ const pinned=items.filter(item=>item.id&&selected.has(item.id));
+ if(!pinned.length){
+  const empty=make("p","No classes are pinned yet. Open Schedule and choose Pin Class on the courses you want here.");
+  empty.className="grade09-pinned-empty";host.append(empty);return;
+ }
+ for(const item of pinned){
+  const current=step(item);
+  const card=make("article");card.className="grade09-pinned-class-card";
+  const subject=make("span",item.label);subject.className="grade09-pinned-class-subject";
+  const title=make("h3",item.title);
+  const detail=make("p",current.detail||"Your next class step is ready.");
+  const actions=make("div");actions.className="grade09-pinned-class-actions";
+  if(current.dest&&identity()){
+   const open=link("Class",current.dest,"grade09-pinned-class-open");
+   open.title=current.detail||"Open the current required lesson or class step";
+   open.setAttribute("aria-label","Open "+item.title+" at the current required lesson or step");
+   actions.append(open);
+  }
+  const unpin=make("button","Unpin");unpin.type="button";unpin.className="grade09-pinned-class-unpin";
+  unpin.setAttribute("aria-label","Unpin "+item.title+" from My Profile");
+  unpin.addEventListener("click",()=>{
+   const old=readPins(),next=old.filter(x=>x!==item.id);
+   if(pins.writePins(next)){window.dispatchEvent(new CustomEvent("khaemenes-course-pins-changed"));render()}
+  });
+  actions.append(unpin);card.append(subject,title,detail,actions);host.append(card);
  }
 }
 function renderLanguage(){
@@ -412,7 +457,7 @@ function renderToday(items){
 function render(){
  if(!selectLearner())return;
  const items=slots();
- renderTools();renderSchedule(items);renderCourses(items);renderLanguage();renderToday(items);
+ renderTools();renderSchedule(items);renderCourses(items);renderPinnedClasses(items);renderLanguage();renderToday(items);
  $("todayFocus").textContent="Eight Grade "+grade+" subjects, daily routines, and course-owned learning checkpoints.";
 }
 // Event subscriptions are installed once by this script guard; render is repeat-safe.
@@ -455,6 +500,32 @@ function khaeCanonicalProfileShell(){
     color:#fff8e9!important;-webkit-text-fill-color:#fff8e9!important;
     font-size:16px!important;font-weight:400!important;text-align:center!important
    }
+   html:root:root body[data-grade="10"] #grade10PinnedClasses{
+    box-sizing:border-box;width:100%!important;max-width:1100px!important;margin:0 auto 14px!important;
+    padding:16px!important;border:1px solid #b48b45!important;border-radius:7px!important;
+    background:#fffaf0!important;color:#243038!important
+   }
+   html:root:root body[data-grade="10"] #grade10PinnedClasses>h2{
+    margin:0 0 7px!important;text-align:center!important;font:400 24px/1.3 Cinzel,Georgia,serif!important
+   }
+   html:root:root body[data-grade="10"] #grade10PinnedClasses>p{margin:0 auto 14px!important;text-align:center!important;max-width:760px}
+   html:root:root body[data-grade="10"] .grade09-pinned-class-grid{display:grid!important;grid-template-columns:repeat(4,minmax(0,1fr))!important;gap:11px!important}
+   html:root:root body[data-grade="10"] .grade09-pinned-class-card{box-sizing:border-box;display:flex;flex-direction:column;min-width:0;padding:14px;border:1px solid #c8b997;border-radius:7px;background:#fffdf8}
+   html:root:root body[data-grade="10"] .grade09-pinned-class-subject{font-size:14px!important;letter-spacing:.08em;text-transform:uppercase;color:#685738}
+   html:root:root body[data-grade="10"] .grade09-pinned-class-card h3{margin:6px 0 8px;font:400 18px/1.35 Cinzel,Georgia,serif}
+   html:root:root body[data-grade="10"] .grade09-pinned-class-card p{margin:0 0 12px;font-size:16px!important;line-height:1.45}
+   html:root:root body[data-grade="10"] .grade09-pinned-class-actions{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:7px;margin-top:auto}
+   html:root:root body[data-grade="10"] .grade09-pinned-class-actions :is(a,button){
+    box-sizing:border-box;display:flex;align-items:center;justify-content:center;min-height:46px;padding:8px 11px;
+    border:1px solid #b48b45;border-radius:7px;background:#243038;color:#fff8e9!important;-webkit-text-fill-color:#fff8e9!important;
+    text-decoration:none;font:400 16px/1.25 "Brandon Grotesque",Nunito,Arial,sans-serif;cursor:pointer
+   }
+   html:root:root body[data-grade="10"] .grade09-pinned-class-unpin{background:#fffaf0!important;color:#243038!important;-webkit-text-fill-color:#243038!important}
+   html:root:root body[data-grade="10"] #vnvClassToolsToolbar{
+    width:max-content!important;min-width:0!important;max-width:calc(100vw - 24px)!important
+   }
+   @media(max-width:900px){html:root:root body[data-grade="10"] .grade09-pinned-class-grid{grid-template-columns:repeat(2,minmax(0,1fr))!important}}
+   @media(max-width:520px){html:root:root body[data-grade="10"] .grade09-pinned-class-grid{grid-template-columns:1fr!important}}
    html:root:root body details.khae-profile-accordion{
     box-sizing:border-box;width:min(calc(100% - 33px),1100px)!important;
     max-width:1100px!important;margin:14px auto!important;border:1px solid #b48b45!important;
@@ -489,9 +560,9 @@ function khaeCanonicalProfileShell(){
  const identity=document.querySelector(".grade09-profile-first .profile-row")?.closest(".card");
  const rail=document.getElementById("khaeProfileToolRail");
  const titleFor=node=>{
-   const heading=node.querySelector?.("h2,h3,h4");
+   const heading=node.querySelector?.("h2,h3,h4,strong[id]");
    if(heading?.textContent.trim())return heading.textContent.trim();
-   return node.getAttribute?.("aria-label")||node.id?.replace(/([a-z])([A-Z])/g,"$1 $2")||"Profile Section";
+   return node.getAttribute?.("aria-label")||node.id?.replace(/([a-z])([A-Z])/g,"$1 $2")||"Student Section";
  };
  const wrap=node=>{
    if(!node||!node.isConnected||node===identity||node===rail||node.closest("dialog")||node.closest("details.khae-profile-accordion"))return;
@@ -511,7 +582,7 @@ function khaeCanonicalProfileShell(){
    for(const child of [...top.children]){
     // Only the public identity/photo hero and Profile Tools rail remain exposed.
     // Daily To Do and every other lower profile surface are accordions.
-    if(child===identity||child===rail)continue;
+    if(child===identity||child===rail||(grade10Copy&&child.id==="grade10PinnedClasses"))continue;
     if(child.id==="grade09BlueprintTools"&&child.querySelector("#khaeProfileToolRail")){
       for(const nested of [...child.children]){
         if(nested===rail||nested.contains?.(rail))continue;
