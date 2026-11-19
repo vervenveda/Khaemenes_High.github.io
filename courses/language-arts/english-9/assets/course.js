@@ -89,7 +89,11 @@
     const home=document.createElement("a");
     home.href="https://vervenveda.com/Khaemenes_High.github.io/grades/grade-09/student-profile/";
     home.textContent="Student Profile";home.className="english9-entry-back";
-    actions.append(link,home);card.append(title,message,actions);gate.append(card);
+    actions.append(link,home);card.append(title,message,actions);
+    const footer=document.createElement("footer");
+    footer.className="english9-entry-footer";
+    footer.textContent="Khaemenes Academy · English 9 · Read · Think · Write";
+    gate.append(card,footer);
     const dashboard=document.querySelector("body > .app");if(dashboard)dashboard.inert=true;
     document.body.append(gate);link.focus();
   }
