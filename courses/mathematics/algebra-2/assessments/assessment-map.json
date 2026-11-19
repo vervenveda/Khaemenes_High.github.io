@@ -1,13 +1,62 @@
 {
-  "diagnostic": {
+  "schema_version": "3.1",
+  "course_id": "KH-MATH-A2",
+  "course_title": "Khaemenes Algebra II & Advanced Functions",
+  "duration_weeks": 36,
+  "mastery_threshold": 80,
+  "readiness": {
+    "week": 1,
     "questions": 40,
     "source": "diagnostic bank",
-    "purpose": "Algebra I prerequisite planning"
+    "purpose": "Algebra I prerequisite planning and course-entry evidence",
+    "progression_required": true,
+    "threshold_percent": 80
+  },
+  "lesson_mastery": {
+    "threshold_percent": 80,
+    "progression_required": true,
+    "evidence": "local evaluated lesson evidence",
+    "rule": "Lesson completion alone does not unlock progression; numeric mastery evidence at or above 80% is required."
+  },
+  "weekly_mastery": {
+    "course_weeks": 36,
+    "graded_instructional_weeks": 34,
+    "excluded_weeks": {
+      "1": "readiness diagnostic",
+      "18": "midterm assessment"
+    },
+    "questions_each": 10,
+    "total_questions_across_graded_weeks": 340,
+    "threshold_percent": 80,
+    "progression_required": true,
+    "dimensions": [
+      "procedural-fluency",
+      "multi-step-application",
+      "representation-interpretation",
+      "error-analysis",
+      "transfer-reasoning"
+    ],
+    "questions_per_dimension_each_week": 2,
+    "selection": "week-specific depth bank balanced across lesson coverage",
+    "prerequisite_policy": "Readiness must be mastered; assigned lessons for the week must be mastered; prior graded weekly mastery must be met; Week 19 also requires reviewed Midterm mastery."
   },
   "unit_mastery": {
-    "count_per_attempt": 10,
     "units": 13,
-    "target": 80
+    "questions_each": 25,
+    "threshold_percent": 80,
+    "required_correct_each": 20,
+    "progression_required": true,
+    "depth_blueprint": true,
+    "dimensions": [
+      "procedural-fluency",
+      "multi-step-application",
+      "representation-interpretation",
+      "error-analysis",
+      "transfer-reasoning"
+    ],
+    "questions_per_dimension": 5,
+    "retry_policy": "Fixed-form retries retain prior attempts; missed work is corrected and the same mastery form may be retried.",
+    "prerequisites": "All unit lessons and all instructional weekly mastery checks assigned to the unit must be at or above 80% before unit mastery can authorize progression."
   },
   "midterm": {
     "questions": 60,
@@ -18,7 +67,11 @@
       4,
       5,
       6
-    ]
+    ],
+    "week": 18,
+    "threshold_percent": 80,
+    "progression_required": true,
+    "prerequisite_policy": "Units 01-06 must have complete lesson, weekly, and unit mastery evidence at or above 80%."
   },
   "final": {
     "questions": 100,
@@ -36,11 +89,38 @@
       11,
       12,
       13
-    ]
+    ],
+    "week": 36,
+    "threshold_percent": 80,
+    "progression_required": true,
+    "prerequisite_policy": "All 13 units must have complete lesson, weekly, and unit mastery evidence at or above 80%, and the Midterm must be mastered."
   },
-  "course_bank_questions": 156,
   "capstone": {
     "rubric_points": 100,
     "oral_defense": true
-  }
+  },
+  "progression": {
+    "sequence": [
+      "readiness diagnostic",
+      "lesson mastery",
+      "weekly mastery",
+      "unit mastery",
+      "midterm after Unit 06",
+      "Units 07-13 lesson/weekly/unit mastery",
+      "final examination",
+      "completion record"
+    ],
+    "authority": "algebra2-progression.js",
+    "threshold_percent": 80,
+    "fail_closed_on_unverified_progression": true
+  },
+  "trust": {
+    "storage": "browser-local with verified-write adapter when available",
+    "authoritative": false,
+    "digitally_signed": false,
+    "editable_storage": true,
+    "official_credit": "determined by the parent, teacher, school, or authorized evaluator from retained evidence"
+  },
+  "legacy_base_course_bank_questions": 156,
+  "note": "The legacy base question-bank count does not include all supplemental depth-bank questions used by current weekly and unit mastery surfaces."
 }
