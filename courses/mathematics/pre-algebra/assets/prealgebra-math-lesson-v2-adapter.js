@@ -5,7 +5,7 @@
 (()=>{"use strict";
  if(window.KhaemenesPreAlgebraLessonV2)return;
  let bound=false;
- const VERSION="2.2.1";
+ const VERSION="2.2.3";
  const MANUAL_KEY="sectionChecks";
  const QUICK_KEY="quickChecks";
  const ITEMS=[
