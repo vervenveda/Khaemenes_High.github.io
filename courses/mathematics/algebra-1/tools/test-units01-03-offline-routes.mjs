@@ -13,7 +13,7 @@ const legacyMatch=legacySrc.match(/const PRECACHE=(\[[\s\S]*?\]);/);
 assert.ok(legacyMatch,"legacy fallback list");
 const legacy=JSON.parse(legacyMatch[1]);
 const cached=new Set([...essential,...legacy]);
-const normalize=(base,relative)=>path.posix.normalize(path.posix.join(base,relative.split("?")[0].split("#")[0]));
+const normalize=(base,relative)=>{const clean=relative.split("?")[0].split("#")[0];return clean.startsWith("/Khaemenes_High.github.io/")?clean.slice("/Khaemenes_High.github.io/".length):path.posix.normalize(path.posix.join(base,clean))};
 const siteBase="courses/mathematics/algebra-1";
 let pages=0,assets=0;
 for(let n=1;n<=3;n++){
