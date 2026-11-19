@@ -12,3 +12,15 @@ function decorate(){const submit=document.getElementById("submitButton"),exportB
 function install(){harden();decorate();document.getElementById("submitButton")?.addEventListener("click",()=>setTimeout(()=>{harden();decorate()},0));document.getElementById("exportButton")?.addEventListener("click",harden,true)}
 const first=entranceGate(),second=first.ok?lessonGate():first;if(!second.ok){if(document.body)block(second);else addEventListener("DOMContentLoaded",()=>block(second),{once:true});return}const core=document.createElement("script");core.src=coreSrc;core.async=false;core.onload=install;core.onerror=()=>{const m=document.getElementById("resultMessage");if(m)m.textContent="Assessment engine could not load. Do not submit until the page is refreshed successfully."};document.head.appendChild(core);
 })();
+
+/* Shared mathematics storage/evidence hardening for assessment surfaces. */
+;(()=>{
+ if(window.KhaemenesMathHardeningLoader||document.getElementById("khaeMathHardeningAssessmentLoader"))return;
+ const current=document.currentScript;
+ const loader=document.createElement("script");
+ loader.id="khaeMathHardeningAssessmentLoader";
+ loader.src=new URL("../../assets/math-hardening-loader-v1.js",current?.src||location.href).href;
+ loader.async=false;
+ loader.onerror=()=>console.warn("Mathematics assessment hardening layer unavailable; assessment remains usable under existing safeguards.");
+ (document.head||document.documentElement).appendChild(loader);
+})();

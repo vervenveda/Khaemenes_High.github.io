@@ -53,7 +53,7 @@ No secrets. No external libraries. Local progress only.
 
 .lesson-layout{
   display:grid;
-  grid-template-columns:minmax(0,1fr) 310px;
+  grid-template-columns:minmax(0,1fr);
   gap:1rem;
   align-items:start;
 }
@@ -63,10 +63,7 @@ No secrets. No external libraries. Local progress only.
   padding:1.35rem;
 }
 
-.lesson-side{
-  position:sticky;
-  top:92px;
-}
+.lesson-side{position:static;top:auto}
 
 .objective-list{
   display:grid;
@@ -318,15 +315,9 @@ No secrets. No external libraries. Local progress only.
   color:var(--danger);
 }
 
-.side-actions{
-  display:grid;
-  gap:.55rem;
-  margin-top:1rem;
-}
+.side-actions{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:.55rem;margin-top:1rem}
 
-.side-actions .btn{
-  width:100%;
-}
+.side-actions .btn{width:100%;min-width:0;text-align:center}
 
 .lesson-nav{
   display:flex;
@@ -557,7 +548,11 @@ html:root:root body :is(.hero, .header, .page-header, .section-head, .lesson-hea
  html:root:root body :is(.lesson-reading,.example,.question){box-shadow:none!important;break-inside:avoid-page}
 }
 </style>
-<script defer src="https://vervenveda.com/assets/vnv-ecosystem-toolbar.js" data-official-vnv-ecosystem-toolbar="true"></script>
+<script src="/Khaemenes_High.github.io/assets/high-school-global-chrome-v2.js" defer data-high-school-global-chrome="v2"></script>
+<script src="https://vervenveda.com/assets/vnv-333-ticker.js" data-vnv-333-ticker="official"></script>
+<script src="https://vervenveda.com/assets/vnv-ticker-autopopulate.js" data-vnv-ticker-autopopulate></script>
+<script>window.VNV_TICKER?.autoPopulate?.({label:"Pre-Algebra · Unit 02 · Opposites, Absolute Value & Distance",max:14});</script>
+<script src="https://vervenveda.com/assets/vnv-language.js" defer data-official-vnv-language="true"></script>
 </head><body><a class="skip" href="#main">Skip to main content</a>
 <!-- =========================================================
      02 · HEADER AND COURSE NAVIGATION
@@ -576,7 +571,9 @@ html:root:root body :is(.hero, .header, .page-header, .section-head, .lesson-hea
 <!-- =========================================================
      04 · LEARNING GOALS + LESSON RECORD
      ========================================================= -->
-<section id="learn"><div class="wrap lesson-layout"><article class="card lesson-main"><p class="eyebrow">Learning goals</p><ul class="objective-list" id="objectives"></ul><h2 style="margin-top:1.5rem">Warm-up</h2><ol class="warmup" id="warmup"></ol></article><aside class="card lesson-side"><p class="eyebrow">Your lesson record</p><div class="field"><label for="pathwaySelect">Pathway support</label><select id="pathwaySelect"><option>Foundation</option><option selected>Core</option><option>Extended</option></select></div><p class="notice" id="lessonStatus">Complete the practice to save a lesson score.</p><div class="side-actions"><a class="btn" href="#concept-guide">Concept Guide</a><a class="btn" href="#math-break">Math Break</a><a class="btn" href="#practice">Practice</a><button class="btn primary" id="markComplete" type="button">Save Lesson Review</button><button class="btn" id="exportLesson" type="button">Export Lesson Record</button></div></aside></div></section>
+<section id="learn"><div class="wrap lesson-layout"><article class="card lesson-main"><p class="eyebrow">Learning goals</p><ul class="objective-list" id="objectives"></ul><h2 style="margin-top:1.5rem">Warm-up</h2><ol class="warmup" id="warmup"></ol></article><section class="card lesson-side" aria-label="Your lesson record"><p class="eyebrow">Your lesson record</p><div class="field"><label for="pathwaySelect">Pathway support</label><select id="pathwaySelect"><option>Foundation</option><option selected>Core</option><option>Extended</option></select></div><p class="notice" id="lessonStatus">Complete the practice to save a lesson score.</p><div class="side-actions"><a class="btn" href="#concept-guide">Concept Guide</a><a class="btn" href="#math-break">Math Break</a><a class="btn" href="#practice">Practice</a><button class="btn primary" id="markComplete" type="button">Save Lesson Review</button><button class="btn" id="exportLesson" type="button">Export Lesson Record</button></div>
+</section></div>
+</section>
 
 <!-- =========================================================
      05 · DEEPER CONCEPT STUDY GUIDE

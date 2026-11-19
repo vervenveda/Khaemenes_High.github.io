@@ -70,7 +70,7 @@
 
     .lesson-layout {
       display: grid;
-      grid-template-columns: minmax(0, 1fr) 310px;
+      grid-template-columns:minmax(0,1fr);
       gap: 1rem;
       align-items: start;
     }
@@ -81,10 +81,7 @@
       min-width: 0;
     }
 
-    .lesson-side {
-      position: sticky;
-      top: 92px;
-    }
+    .lesson-side{position:static;top:auto}
 
     .objective-list {
       display: grid;
@@ -299,15 +296,9 @@
       color: var(--danger);
     }
 
-    .side-actions {
-      display: grid;
-      gap: .55rem;
-      margin-top: 1rem;
-    }
+    .side-actions{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:.55rem;margin-top:1rem}
 
-    .side-actions .btn {
-      width: 100%;
-    }
+    .side-actions .btn{width:100%;min-width:0;text-align:center}
 
     .lesson-nav {
       display: flex;
@@ -735,7 +726,11 @@ html:root:root body :is(.hero, .header, .page-header, .section-head, .lesson-hea
  html:root:root body :is(.lesson-reading,.example,.question){box-shadow:none!important;break-inside:avoid-page}
 }
 </style>
-<script defer src="https://vervenveda.com/assets/vnv-ecosystem-toolbar.js" data-official-vnv-ecosystem-toolbar="true"></script>
+<script src="/Khaemenes_High.github.io/assets/high-school-global-chrome-v2.js" defer data-high-school-global-chrome="v2"></script>
+<script src="https://vervenveda.com/assets/vnv-333-ticker.js" data-vnv-333-ticker="official"></script>
+<script src="https://vervenveda.com/assets/vnv-ticker-autopopulate.js" data-vnv-ticker-autopopulate></script>
+<script>window.VNV_TICKER?.autoPopulate?.({label:"Pre-Algebra · Unit 02 · Coordinate Plane & Multi-Step Integer Applications",max:14});</script>
+<script src="https://vervenveda.com/assets/vnv-language.js" defer data-official-vnv-language="true"></script>
 </head>
 
 <body>
@@ -826,7 +821,7 @@ Math Break game:
           <ol class="warmup" id="warmup"></ol>
         </article>
 
-        <aside class="card lesson-side">
+        <section class="card lesson-side" aria-label="Your lesson record">
           <p class="eyebrow">Your lesson record</p>
 
           <div class="field">

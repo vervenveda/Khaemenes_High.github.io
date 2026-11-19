@@ -2,8 +2,31 @@
 const MIN=80,NAIB_KEY="khaemenes-naib-readiness-profile-v1",EXIT_KEY="khaemenes-prealgebra-unit00-exit-v1";
 function read(k){try{return JSON.parse(localStorage.getItem(k)||"null")}catch{return null}}function learner(){try{return typeof student==="function"?student():null}catch{return null}}function weekly(n){const s=learner();if(!s)return null;try{return typeof weekRec==="function"?weekRec(s,n):s.progress?.weeks?.[n]||null}catch{return s.progress?.weeks?.[n]||null}}
 function lessonDone(n){const s=learner();if(!s)return false;try{if(typeof lessonPct==="function")return Number(lessonPct(s,n))>=100}catch{}const r=weekly(n),done=r?.lessons;if(Array.isArray(done))return done.length>=5&&done.every(Boolean);if(done&&typeof done==="object")return Object.values(done).filter(Boolean).length>=5;return false}
-function quizBest(n){const r=weekly(n);return Number(r?.quiz?.best)||0}function weekMastered(n){return lessonDone(n)&&quizBest(n)>=MIN}
-function entrance(){const p=read(NAIB_KEY);if(!p)return{ok:false,href:"diagnostic/",message:"Complete the NAIB pre-course readiness assessment first."};if(p.route==="unit_0_refresher"){const exit=read(EXIT_KEY);if(!(exit?.passed&&Number(exit.best_percent)>=MIN))return{ok:false,href:"units/unit-00/",message:"NAIB assigned the six-week refresher. Complete Unit 0 and its 80% exit mastery gate before Week 1."}}return{ok:true}}
+const WEEKLY_VERSION="prealgebra-weekly-mastery-v2";
+function validWeeklyAttempt(a){
+ const ids=Array.isArray(a?.question_ids)?a.question_ids:[],dims=Array.isArray(a?.dimensions)?a.dimensions:[];
+ return a?.assessment_version===WEEKLY_VERSION&&Number(a?.question_count)===10&&ids.length===10&&new Set(ids).size===10&&dims.length===10&&Number.isFinite(Number(a?.score));
+}
+function quizBest(n){
+ const r=weekly(n),attempts=Array.isArray(r?.quiz?.attempts)?r.quiz.attempts.filter(validWeeklyAttempt):[];
+ return attempts.length?Math.max(...attempts.map(a=>Number(a.score)||0)):0;
+}
+function weekMastered(n){return lessonDone(n)&&quizBest(n)>=MIN}
+function admission(){
+  const profile=window.KhaemenesCourseEntryContract?.readAcademyProfile?.();
+  if(!profile?.learnerId)return{ok:false,reason:"learner"};
+  const p=read(NAIB_KEY);
+  if(!p||p.learner_id!==profile.learnerId||p.course_id!=="math-prealgebra"||p.course_code!=="KH-MATH-PA"||p.assessment_id!=="KH-MATH-PA-READINESS-GATEWAY")return{ok:false,reason:"readiness"};
+  if(!Number.isFinite(p.overall_percent)||p.overall_percent<0||p.overall_percent>100||!p.strand_scores||typeof p.strand_scores!=="object")return{ok:false,reason:"readiness"};
+  const essentials=["number-foundations","rational-proportional","algebraic-reasoning"];
+  const strand=id=>{const x=p.strand_scores[id],v=typeof x==="number"?x:x?.percent;return Number.isFinite(v)&&v>=0&&v<=100?v:null};
+  if(["advance","advance_with_targeted_refresh"].includes(p.route)&&p.overall_percent>=MIN&&essentials.every(id=>strand(id)!==null&&strand(id)>=MIN))return{ok:true,reason:"ready"};
+  if(p.route!=="unit_0_refresher")return{ok:false,reason:"readiness"};
+  const exit=read(EXIT_KEY);
+  if(p.correction_status!=="complete"||!exit||exit.passed!==true||!Number.isFinite(exit.best_percent)||exit.best_percent<MIN||exit.best_percent>100)return{ok:false,reason:"unit0"};
+  return{ok:true,reason:"unit0"};
+}
+function entrance(){const result=admission();if(result.ok)return{ok:true};if(result.reason==="unit0")return{ok:false,href:"units/unit-00/",message:"Complete assigned Unit 0, its required reasoning corrections, and the 80% exit mastery before Week 1."};return{ok:false,href:"diagnostic/",message:result.reason==="learner"?"Select an Academy learner before entering Pre-Algebra.":"A valid learner-matched Pre-Algebra readiness result is required before Week 1."}}
 function allowedWeek(n){const e=entrance();if(!e.ok)return e;if(n<=1)return{ok:true};if(weekMastered(n-1))return{ok:true};return{ok:false,href:`#week-${n-1}`,message:`Week ${n} is locked. Week ${n-1} requires all lesson work plus at least 80% on its weekly quiz.`}}
 
 function ensureGateUI(){
@@ -48,8 +71,8 @@ function decorate(){
   document.querySelectorAll(".weekBtn[data-week]").forEach(b=>{const n=Number(b.dataset.week),g=allowedWeek(n);b.dataset.masteryLocked=String(!g.ok);b.setAttribute("aria-disabled",String(!g.ok));if(!g.ok){b.title=g.message;b.style.opacity=".48"}else{b.title="";b.style.opacity=""}});
   const e=entrance();let note=document.getElementById("academyMasteryGateNotice");
   if(!note){note=document.createElement("div");note.id="academyMasteryGateNotice";note.className="notice";note.setAttribute("role","status");note.setAttribute("aria-live","polite");const host=document.querySelector(".sidebar .panel")||document.querySelector(".sidebar");host?.appendChild(note)}
-  if(note)note.innerHTML=e.ok?`<strong>Academy mastery gate active.</strong> Each new week requires the prior week's lesson work and an 80%+ weekly quiz.`:`<strong>Course entrance locked.</strong> ${e.message} <a href="${e.href}">Open required step</a>.`;
+  if(note)note.innerHTML=e.ok?`<strong>Academy mastery gate active.</strong> Each new week requires the prior week's lesson work and an 80%+ canonical 10-question weekly mastery check. Legacy five-question planner scores remain history only.`:`<strong>Course entrance locked.</strong> ${e.message} <a href="${e.href}">Open required step</a>.`;
 }
 document.addEventListener("click",e=>{const b=e.target.closest?.('.weekBtn[data-week][data-mastery-locked="true"]');if(!b)return;e.preventDefault();e.stopImmediatePropagation();showGate(allowedWeek(Number(b.dataset.week)))},true);
-const observer=new MutationObserver(()=>decorate());const list=document.getElementById("weekList");if(list)observer.observe(list,{childList:true,subtree:true});window.addEventListener("storage",decorate);window.addEventListener("pageshow",decorate);setTimeout(decorate,0);
+const observer=new MutationObserver(()=>decorate());const list=document.getElementById("weekList");if(list)observer.observe(list,{childList:true,subtree:true});window.addEventListener("storage",decorate);window.addEventListener("pageshow",decorate);window.addEventListener("khaemenes-prealgebra-weekly-mastery-v2-ready",decorate);setTimeout(decorate,0);
 })();

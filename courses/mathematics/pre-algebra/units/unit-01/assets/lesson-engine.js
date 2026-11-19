@@ -9,12 +9,85 @@ const COMPANIONS={
  l06:{game:"estimate-defender",sharedGame:"estimate-defender",gameMode:"prealgebra",gameUnit:"01",gameLesson:"06",video:{id:"IAJDI52kmiU",title:"Estimate the Quotient Using Compatible Numbers",alignment:"core",note:"Aligned support for Lesson 6's estimation work: demonstrates compatible-number reasoning for quotient estimates. Use alongside the lesson's broader work on sums, differences, products, quotients, magnitude, and reasonableness."}}
 };
 function parse(v){try{return JSON.parse(v)}catch{return null}}function resultBest(r){if(!r||typeof r!=="object")return 0;const attempts=Array.isArray(r.attempts)?r.attempts:[];return Math.max(Number(r.best_percent)||0,Number(r.percent)||0,Number(r.latest_percent)||0,...attempts.map(a=>Number(a?.percent)||0))}
-function entrance(){const p=parse(localStorage.getItem(NAIB_KEY)||"null");if(!p)return{ok:false,title:"Pre-course readiness required",message:"Complete the NAIB Readiness Gateway before Official Unit 1 begins.",href:new URL("../../../diagnostic/",location.href).href,label:"Open NAIB Readiness Gateway"};if(p.route==="unit_0_refresher"){const x=parse(localStorage.getItem(EXIT_KEY)||"null");if(!(x?.passed&&resultBest(x)>=MIN))return{ok:false,title:"Unit 0 exit mastery required",message:"NAIB assigned the six-week refresher. Reach at least 80% on the Unit 0 exit mastery assessment before Official Unit 1.",href:new URL("../../unit-00/",location.href).href,label:"Return to Unit 0"}}return{ok:true}}
+function entrance(){
+ const owner=window.KhaemenesCourseEntryContract?.readAcademyProfile?.()?.learnerId;
+ const diagnostic=new URL("../../../diagnostic/",location.href).href;
+ if(!owner)return{ok:false,title:"Select an Academy learner",message:"Select an Academy learner before opening official Pre-Algebra lessons.",href:diagnostic,label:"Open NAIB Readiness Gateway"};
+ const p=parse(localStorage.getItem(NAIB_KEY)||"null");
+ if(!p||p.learner_id!==owner||p.course_id!=="math-prealgebra"||p.course_code!=="KH-MATH-PA"||p.assessment_id!=="KH-MATH-PA-READINESS-GATEWAY"||!Number.isFinite(p.overall_percent)||p.overall_percent<0||p.overall_percent>100||!p.strand_scores||typeof p.strand_scores!=="object")return{ok:false,title:"Pre-course readiness required",message:"This learner needs a valid Pre-Algebra readiness result before Official Unit 1.",href:diagnostic,label:"Open NAIB Readiness Gateway"};
+ const ids=["number-foundations","rational-proportional","algebraic-reasoning"];
+ const score=id=>{const x=p.strand_scores[id],v=typeof x==="number"?x:x?.percent;return Number.isFinite(v)&&v>=0&&v<=100?v:null};
+ if(["advance","advance_with_targeted_refresh"].includes(p.route)&&p.overall_percent>=MIN&&ids.every(id=>score(id)!==null&&score(id)>=MIN))return{ok:true};
+ if(p.route==="unit_0_refresher"){const x=parse(localStorage.getItem(EXIT_KEY)||"null");if(p.correction_status==="complete"&&x?.passed===true&&Number.isFinite(x.best_percent)&&x.best_percent>=MIN&&x.best_percent<=100)return{ok:true};return{ok:false,title:"Unit 0 exit mastery required",message:"Complete Unit 0 corrections and its 80% exit mastery before Official Unit 1.",href:new URL("../../unit-00/",location.href).href,label:"Return to Unit 0"}}
+ return{ok:false,title:"Pre-course readiness required",message:"The readiness score or essential prerequisite strands have not met the direct-entry threshold.",href:diagnostic,label:"Open NAIB Readiness Gateway"}
+}
 function normalize(p,prior){if(!p||typeof p!=="object")return p;p.reviewedLessons=Array.isArray(p.reviewedLessons)?p.reviewedLessons:[];p.lessonScores=p.lessonScores&&typeof p.lessonScores==="object"?p.lessonScores:{};p.lessonBestScores=p.lessonBestScores&&typeof p.lessonBestScores==="object"?p.lessonBestScores:{};p.lessonLatestScores=p.lessonLatestScores&&typeof p.lessonLatestScores==="object"?p.lessonLatestScores:{};p.lessonAttempts=p.lessonAttempts&&typeof p.lessonAttempts==="object"?p.lessonAttempts:{};const oldBest=prior?.lessonBestScores||{},oldLatest=prior?.lessonLatestScores||prior?.lessonScores||{};Object.entries(p.lessonScores).forEach(([id,val])=>{const latest=Number(val);if(!Number.isFinite(latest))return;const oldL=Number(oldLatest[id]),oldB=Number(oldBest[id])||0;p.lessonLatestScores[id]=latest;p.lessonBestScores[id]=Math.max(oldB,latest);if(!Number.isFinite(oldL)||oldL!==latest){p.lessonAttempts[id]=Array.isArray(p.lessonAttempts[id])?p.lessonAttempts[id]:[];p.lessonAttempts[id].push({percent:latest,at:new Date().toISOString()})}p.lessonScores[id]=p.lessonBestScores[id]});const priorCompleted=Array.isArray(p.completedLessons)?p.completedLessons:[];priorCompleted.forEach(id=>{if(Number(p.lessonBestScores[id])<MIN&&!p.reviewedLessons.includes(id))p.reviewedLessons.push(id)});p.completedLessons=Object.entries(p.lessonBestScores).filter(([,s])=>Number(s)>=MIN).map(([id])=>id);return p}
 Storage.prototype.setItem=function(k,v){if(k!==KEY||internal)return nativeSet.call(this,k,v);const prior=parse(localStorage.getItem(KEY)||"null"),next=normalize(parse(v),prior);if(!next)return nativeSet.call(this,k,v);internal=true;try{return nativeSet.call(this,k,JSON.stringify(next))}finally{internal=false}};
 function current(){const p=parse(localStorage.getItem(KEY)||"null")||{};return normalize(p,p)}function bestFor(id){const p=current();return Math.max(Number(p.lessonBestScores?.[id])||0,Number(p.lessonScores?.[id])||0)}function lessonBest(){return bestFor(window.LESSON_DATA?.id)}function lessonLatest(){const p=current();return Number(p.lessonLatestScores?.[window.LESSON_DATA?.id])}
 function sequence(){const lesson=window.LESSON_DATA,list=map.lessons||[],i=list.findIndex(x=>x.id===lesson?.id);if(i>0&&bestFor(list[i-1].id)<MIN)return{ok:false,title:`Lesson ${lesson?.number||i+1} locked`,message:`${list[i-1].title} requires at least 80% mastery before this lesson begins.`,href:new URL(list[i-1].file.split("/").pop(),location.href).href,label:`Return to ${list[i-1].title}`};return{ok:true}}
-function block(g){const s=document.createElement("style");s.textContent="#academyUnit1Gate{position:fixed;inset:0;z-index:99999;display:grid;place-items:center;padding:24px;background:rgba(15,23,20,.97);color:#fff;font-family:Arial,sans-serif}#academyUnit1Gate article{max-width:700px;padding:32px;border:1px solid rgba(255,255,255,.28);border-radius:8px;background:#17251f;text-align:center}#academyUnit1Gate h1{font-family:Georgia,serif;font-weight:500}#academyUnit1Gate a{display:inline-flex;margin-top:16px;padding:10px 16px;border:1px solid #fff;border-radius:7px;color:#fff;text-decoration:none}";document.head.appendChild(s);const d=document.createElement("div");d.id="academyUnit1Gate";d.setAttribute("role","dialog");d.setAttribute("aria-modal","true");d.innerHTML=`<article><p>Khaemenes Academy Mastery Gate</p><h1>${g.title}</h1><p>${g.message}</p><a href="${g.href}">${g.label}</a></article>`;document.body.appendChild(d)}
+function block(g){
+ if(document.getElementById("academyUnit1Gate"))return;
+ const style=document.createElement("style");
+ style.id="academyUnit1GateStyles";
+ style.textContent=`
+/* Khaemenes Academy mastery gate: shared by Unit 01 lessons 01–06.
+   Presentation only; NAIB/Unit 0/mastery checks remain in the engine. */
+html:root:root body #academyUnit1Gate{
+ position:fixed!important;inset:0!important;z-index:2147483000!important;
+ display:grid!important;place-items:center!important;overflow:auto!important;
+ padding:clamp(18px,4vw,48px)!important;
+ background:rgba(32,39,36,.26)!important;
+ -webkit-backdrop-filter:blur(2px)!important;backdrop-filter:blur(2px)!important;
+ color:#27302d!important;font:400 18px/1.7 "Brandon Grotesque",Nunito,Arial,sans-serif!important;
+}
+html:root:root body #academyUnit1Gate article{
+ box-sizing:border-box!important;width:min(100%,760px)!important;
+ max-height:calc(100dvh - 36px)!important;overflow-y:auto!important;
+ padding:clamp(28px,5vw,55px)!important;
+ border:2px solid #b8995c!important;border-radius:7px!important;
+ background:#fffdf8!important;color:#27302d!important;
+ box-shadow:0 12px 38px rgba(32,39,36,.18)!important;text-align:center!important;
+}
+html:root:root body #academyUnit1Gate .academy-gate-eyebrow{
+ margin:0 0 14px!important;color:#76592e!important;
+ font:400 clamp(23px,3vw,33px)/1.3 Cinzel,Georgia,serif!important;
+}
+html:root:root body #academyUnit1Gate h1{
+ margin:0 0 22px!important;color:#27302d!important;
+ font:400 clamp(29px,4vw,44px)/1.25 Cinzel,Georgia,serif!important;
+}
+html:root:root body #academyUnit1Gate .academy-gate-message{
+ margin:0 auto 22px!important;max-width:600px!important;
+ color:#27302d!important;font:400 18px/1.75 Nunito,Arial,sans-serif!important;
+}
+html:root:root body #academyUnit1Gate a{
+ display:inline-flex!important;align-items:center!important;justify-content:center!important;
+ min-height:50px!important;max-width:100%!important;margin-top:8px!important;
+ padding:12px 23px!important;border:1px solid #b8995c!important;
+ border-radius:7px!important;background:#202724!important;
+ color:#fff8e9!important;-webkit-text-fill-color:#fff8e9!important;
+ text-decoration:none!important;font:400 16px/1.5 Nunito,Arial,sans-serif!important;
+}
+html:root:root body #academyUnit1Gate a:is(:hover,:focus-visible){
+ background:#34463c!important;color:#fff8e9!important;-webkit-text-fill-color:#fff8e9!important;
+ outline:3px solid #b8995c!important;outline-offset:3px!important;
+}
+@media(prefers-reduced-motion:reduce){#academyUnit1Gate{backdrop-filter:none!important}}
+@media print{#academyUnit1Gate{display:none!important}}
+`;
+ document.head.appendChild(style);
+ const d=document.createElement("div");
+ d.id="academyUnit1Gate";d.setAttribute("role","dialog");d.setAttribute("aria-modal","true");
+ d.setAttribute("aria-labelledby","academyUnit1GateTitle");
+ d.setAttribute("aria-describedby","academyUnit1GateDescription");
+ const card=document.createElement("article");
+ const eyebrow=document.createElement("p");eyebrow.className="academy-gate-eyebrow";eyebrow.textContent="Khaemenes Academy · Mastery Gate";
+ const title=document.createElement("h1");title.id="academyUnit1GateTitle";title.textContent=g.title;
+ const message=document.createElement("p");message.id="academyUnit1GateDescription";message.className="academy-gate-message";message.textContent=g.message;
+ const link=document.createElement("a");link.href=g.href;link.textContent=g.label;
+ card.append(eyebrow,title,message,link);d.append(card);document.body.appendChild(d);
+ link.focus({preventScroll:true});
+}
 function mountProminentLessonGame(url,c){
  if(!url)return;
  const data=window.LESSON_DATA||{};
@@ -52,4 +125,16 @@ function startCore(){const g1=entrance(),g2=g1.ok?sequence():g1;if(!g2.ok){if(do
  if(document.body)show();else addEventListener("DOMContentLoaded",show,{once:true});
 };document.head.appendChild(core)}
 const studentNav=document.createElement("script");studentNav.src=new URL("../../../assets/prealgebra-student-navigation.js",scriptEl?.src||location.href).href;studentNav.async=false;studentNav.onload=startCore;studentNav.onerror=()=>{console.error("Pre-Algebra student navigation helper could not load.");startCore()};document.head.appendChild(studentNav);
+})();
+
+/* Universal lesson-aware Learning Tools toolbar. Navigation/support only. */
+;(()=>{
+ if(document.getElementById("vnvClassToolsLessonLoader")||window.VNVClassToolsToolbar)return;
+ const script=document.createElement("script");
+ script.id="vnvClassToolsLessonLoader";
+ script.src="https://vervenveda.com/assets/vnv-class-tools-toolbar.js?v=1.5.0";
+ script.defer=true;
+ script.dataset.vnvClassTools="lesson-aware";
+ script.onerror=()=>console.warn("Learning Tools toolbar unavailable; lesson content remains usable.");
+ (document.head||document.documentElement).appendChild(script);
 })();
