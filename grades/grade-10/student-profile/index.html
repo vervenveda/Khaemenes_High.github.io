@@ -617,6 +617,27 @@ html body .grade09-contribute-panel .grade09-contribute-action:focus-visible{
   target.querySelector("a,button,input,select,textarea")?.focus?.({preventScroll:true});
   return true;
  };
+ function ensureProfileLanguagePanel(root){
+  if(!root)return null;
+  let panel=root.querySelector("[data-vct-language-panel]");
+  if(!panel){
+   panel=document.createElement("div");
+   panel.className="vct-pop";
+   panel.dataset.vctLanguagePanel="1";
+   panel.hidden=true;
+   const h=document.createElement("h2");h.textContent="Language";
+   const p=document.createElement("p");p.textContent="Choose the interface language for Verve N Veda and Khaemenes Academy.";
+   panel.append(h,p);
+   root.querySelector("#vnvClassToolsPanel")?.append(panel);
+  }
+  const translator=document.getElementById("vnv-language-switch");
+  if(translator && !panel.contains(translator)){
+   panel.append(translator);
+   translator.style.setProperty("margin","7px auto","important");
+   translator.style.setProperty("max-width","100%","important");
+  }
+  return panel;
+ }
  window.KhaemenesClassToolsConfigV1={
   id:"high-school-profile",
   match:()=>/\/grades\/grade-(09|10|11|12)\/student-profile\/(?:index\.html)?$/i.test(location.pathname),
@@ -633,16 +654,50 @@ html body .grade09-contribute-panel .grade09-contribute-action:focus-visible{
    {type:"ecosystem-link",label:"Aurora",sub:"Wellness",ecosystemId:"aurora",fallbackHref:"https://vervenveda.github.io/aurora.github.io/"},
    {type:"ecosystem-link",label:"Weather",sub:"Solanar",ecosystemId:"solanar",fallbackHref:"https://vervenveda.github.io/solanar.github.io/"},
    {type:"ecosystem-link",label:"Legal",sub:"Firmament Law",ecosystemId:"firmament-law",fallbackHref:"https://vervenveda.github.io/firmament.github.io/apps/Law_Governance_hall_index.html"},
-   {type:"ecosystem-link",label:"Medical",sub:"Medicament",ecosystemId:"medicament",fallbackHref:"https://vervenveda.github.io/medicament-hub.github.io/"}
+   {type:"ecosystem-link",label:"Medical",sub:"Medicament",ecosystemId:"medicament",fallbackHref:"https://vervenveda.github.io/medicament-hub.github.io/"},
+   {type:"action",label:"Language",sub:"Translator",action:"language"}
   ],
   actions:{
-   classes:()=>openLocal("#courseManagerGrid")||openLocal('[aria-labelledby="manageClassesTitle"]')
+   classes:()=>openLocal("#courseManagerGrid")||openLocal('[aria-labelledby="manageClassesTitle"]'),
+   language:({root})=>{
+    const panel=ensureProfileLanguagePanel(root);
+    if(!panel)return false;
+    const open=panel.hidden;
+    root.querySelectorAll(".vct-pop").forEach(p=>p.hidden=true);
+    panel.hidden=!open;
+    if(open)panel.querySelector("select,button")?.focus?.();
+    return true;
+   }
   },
   help:{title:"Student Profile Tools",paragraphs:[]}
  };
 })();
 </script>
 <script src="https://vervenveda.com/assets/vnv-class-tools-toolbar.js?v=1.6.1" defer data-vnv-class-tools-toolbar="profile"></script>
+<script id="vnv-profile-translator-relocation">
+(()=>{"use strict";
+ const relocate=()=>{
+  const root=document.getElementById("vnvClassToolsToolbar");
+  const translator=document.getElementById("vnv-language-switch");
+  if(!root||!translator)return false;
+  const api=window.KhaemenesClassToolsConfigV1;
+  let panel=root.querySelector("[data-vct-language-panel]");
+  if(!panel){
+   panel=document.createElement("div");panel.className="vct-pop";panel.dataset.vctLanguagePanel="1";panel.hidden=true;
+   const h=document.createElement("h2");h.textContent="Language";
+   const p=document.createElement("p");p.textContent="Choose the interface language for Verve N Veda and Khaemenes Academy.";
+   panel.append(h,p);root.querySelector("#vnvClassToolsPanel")?.append(panel);
+  }
+  if(!panel.contains(translator))panel.append(translator);
+  translator.style.setProperty("margin","7px auto","important");
+  translator.style.setProperty("max-width","100%","important");
+  return true;
+ };
+ const observer=new MutationObserver(()=>{if(relocate())observer.disconnect()});
+ if(!relocate())observer.observe(document.documentElement,{subtree:true,childList:true});
+ window.addEventListener("pageshow",relocate);
+})();
+</script>
 <script src="https://vervenveda.com/assets/vnv-ecosystem-toolbar.js?v=20261106-student-boundary-106"></script>
 <script src="../../shared/learning-today-placement.js?v=9362d9e6"></script>
 <script src="../../shared/student-rooms-placement.js?v=20261107-empty-wrapper-v2"></script>
