@@ -572,6 +572,7 @@ function submit(){
   const evidence=persistResult(result);
   if(!evidence){draft.submitted=false;saveDraft(false);$("#status").textContent="Result could not be verified in browser storage. Export your work before leaving.";return}
   render();showResult(result);
+  window.KhaemenesMathAssessmentDirective?.show({kind:"readiness",score:result.percent,mastered:result.percent>=80});
   $("#status").textContent="Assessment scored. Review any missed items and preserve your exported result.";
   $("#results").scrollIntoView({behavior:"smooth",block:"center"});
 }
