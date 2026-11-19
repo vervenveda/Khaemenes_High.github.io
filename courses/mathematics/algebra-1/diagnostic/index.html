@@ -262,7 +262,7 @@ a{color:inherit}
 .feedback.good{border-color:var(--green);background:#eef5f1}
 .feedback.bad{border-color:var(--rose);background:#f8eeee}
 
-.assessment-actions{
+.bottom-section-nav{display:flex;justify-content:space-between;gap:12px;padding:0 18px 18px}.bottom-section-nav button{min-height:48px;min-width:150px;border:1px solid var(--charcoal);border-radius:var(--radius);background:var(--charcoal);color:var(--cream);padding:10px 16px;font:400 16px/1.3 Cinzel,Georgia,serif}.bottom-section-nav button:disabled{opacity:.42;cursor:default}.bottom-section-nav button:hover:not(:disabled){background:var(--charcoal2,#303936)}@media(max-width:600px){.bottom-section-nav{display:grid;grid-template-columns:1fr 1fr}.bottom-section-nav button{min-width:0;width:100%}}.assessment-actions{
   display:flex;
   flex-wrap:wrap;
   justify-content:center;
@@ -407,7 +407,7 @@ footer{
       <button id="nextSection" type="button">Next →</button>
     </nav>
 
-    <div class="question-list" id="questionList"></div>
+    <div class="question-list" id="questionList"></div><nav class="bottom-section-nav" aria-label="Bottom question navigation"><button id="bottomPrevSection" type="button">← Previous</button><button id="bottomNextSection" type="button">Next →</button></nav>
 
     <section class="results" id="results" hidden aria-live="polite">
       <h2 id="resultTitle"></h2>
@@ -610,7 +610,7 @@ $("#questionList").addEventListener("change",e=>{
 });
 document.querySelectorAll("[data-section]").forEach(b=>b.addEventListener("click",()=>goSection(Number(b.dataset.section))));
 $("#prevSection").addEventListener("click",()=>goSection(section-1));
-$("#nextSection").addEventListener("click",()=>goSection(section+1));
+$("#nextSection").addEventListener("click",()=>goSection(section+1));$("#bottomPrevSection").addEventListener("click",()=>goSection(section-1));$("#bottomNextSection").addEventListener("click",()=>section<2?goSection(section+1):$("#submitButton").scrollIntoView({behavior:"smooth",block:"center"}));
 $("#submitButton").addEventListener("click",submit);
 $("#saveButton").addEventListener("click",()=>saveDraft(true));
 $("#exportButton").addEventListener("click",exportResult);
