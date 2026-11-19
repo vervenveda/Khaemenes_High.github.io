@@ -47,10 +47,10 @@ ok(header.includes("actions:[]"),"header must contain no shortcut actions");
 ok(!/MutationObserver|setInterval|setTimeout/.test(header),"header mount must not install observers or polling loops");
 
 const tools=read("courses/language-arts/assets/english-landing-class-tools-v1.js");
-for(const label of ["Reading","Writing","Vocabulary","Search","Translate","Parent"]){
+for(const label of ["Student","Classes","Schedule","Search","Translate","Parent"]){
   ok(tools.includes(`label:"${label}"`),`lower-left toolbar missing ${label}`);
 }
-ok((tools.match(/label:"(?:Reading|Writing|Vocabulary|Search|Translate|Parent)"/g)||[]).length===6,
+ok((tools.match(/label:"(?:Student|Classes|Schedule|Search|Translate|Parent)"/g)||[]).length===6,
   "lower-left English toolbar must define exactly six tools");
 ok(tools.includes("data-vct-translator-panel"),"translator must open inside lower-left toolbar");
 
