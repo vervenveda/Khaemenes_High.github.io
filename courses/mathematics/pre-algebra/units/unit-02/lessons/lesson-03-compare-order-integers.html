@@ -41,7 +41,7 @@ Keep scoring, mastery, localStorage, export, and lesson-engine.js logic intact.
 <script src="../../../../../shared/course-entry-contract.js?v=20261012"></script>
 <script src="../../../../../shared/learner-scope-v1.js?v=20261012" data-learner-scope="pre-algebra"></script>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="description" content="Pre-Algebra Unit 2 Lesson 3: Comparing &amp; Ordering Integers."><meta name="theme-color" content="#0b1730"><title>Lesson 3 · Comparing &amp; Ordering Integers</title><link rel="stylesheet" href="../assets/unit.css"><style>
-.lesson-layout{display:grid;grid-template-columns:minmax(0,1fr);gap:1rem;align-items:start}.lesson-main,.lesson-side{padding:1.35rem}.lesson-side{position:static;top:auto}.objective-list{display:grid;gap:.55rem;padding:0;list-style:none}.objective-list li{padding:.75rem;border:1px solid var(--line);border-radius:11px;background:var(--bg2)}.objective-list li::before{content:"✓";margin-inline-end:.55rem;color:var(--green);font-weight:900}.warmup{display:grid;gap:.6rem}.warmup li{color:var(--muted)}.concept-grid{grid-template-columns:repeat(3,1fr)}.concept{padding:1rem}.concept h3{font-size:1.05rem;margin-bottom:.35rem}.concept p{margin:0;color:var(--muted);font-size:.84rem}.example-list{display:grid;gap:.85rem}.example{padding:1.1rem}.example h3{font-size:1.08rem;margin-bottom:.55rem}.example ol{color:var(--muted)}.answer{padding:.65rem;border-radius:9px;background:color-mix(in srgb,var(--green) 10%,var(--bg2));color:var(--green);font-weight:850}.pathway-tabs{display:flex;gap:.45rem;flex-wrap:wrap}.pathway-tabs button{min-height:40px;padding:.55rem .75rem;border:1px solid var(--line);border-radius:99px;background:var(--bg2);color:var(--muted);font-weight:850}.pathway-tabs button[aria-pressed="true"]{background:var(--gold);border-color:var(--gold);color:#16120a}.pathway-panel{margin-top:.8rem;padding:1rem;border:1px solid var(--line);border-radius:11px;background:var(--bg2);color:var(--muted)}.vocab-table{width:100%;border-collapse:collapse}.vocab-table th,.vocab-table td{padding:.65rem;border-bottom:1px solid var(--line);text-align:start}.vocab-table th{color:var(--gold2);font-size:.75rem;text-transform:uppercase}.vocab-table td{font-size:.84rem}.vocab-controls{display:flex;justify-content:flex-end;margin-bottom:.7rem}.question-list{display:grid;gap:.8rem}.question{padding:1rem;border:1px solid var(--line);border-radius:11px;background:var(--bg2)}.question fieldset{border:0;padding:0;margin:0}.question legend{font-weight:850}.options{display:grid;gap:.45rem;margin-top:.65rem}.option{display:flex;gap:.6rem;align-items:flex-start;padding:.55rem;border:1px solid transparent;border-radius:9px}.option:hover{border-color:var(--blue)}.feedback{margin-top:.6rem;padding:.65rem;border-radius:9px}.feedback.correct{background:color-mix(in srgb,var(--green) 12%,var(--bg2));color:var(--green)}.feedback.incorrect{background:color-mix(in srgb,var(--danger) 9%,var(--bg2));color:var(--danger)}.side-actions{display:grid;gap:.55rem;margin-top:1rem}.side-actions .btn{width:100%}.lesson-nav{display:flex;justify-content:space-between;gap:.7rem;flex-wrap:wrap;margin-top:1.5rem}@media(max-width:960px){.lesson-layout{grid-template-columns:1fr}.lesson-side{position:static}.concept-grid{grid-template-columns:1fr}}
+.lesson-layout{display:grid;grid-template-columns:minmax(0,1fr) 310px;gap:1rem;align-items:start}.lesson-main,.lesson-side{padding:1.35rem}.lesson-side{position:sticky;top:92px}.objective-list{display:grid;gap:.55rem;padding:0;list-style:none}.objective-list li{padding:.75rem;border:1px solid var(--line);border-radius:11px;background:var(--bg2)}.objective-list li::before{content:"✓";margin-inline-end:.55rem;color:var(--green);font-weight:900}.warmup{display:grid;gap:.6rem}.warmup li{color:var(--muted)}.concept-grid{grid-template-columns:repeat(3,1fr)}.concept{padding:1rem}.concept h3{font-size:1.05rem;margin-bottom:.35rem}.concept p{margin:0;color:var(--muted);font-size:.84rem}.example-list{display:grid;gap:.85rem}.example{padding:1.1rem}.example h3{font-size:1.08rem;margin-bottom:.55rem}.example ol{color:var(--muted)}.answer{padding:.65rem;border-radius:9px;background:color-mix(in srgb,var(--green) 10%,var(--bg2));color:var(--green);font-weight:850}.pathway-tabs{display:flex;gap:.45rem;flex-wrap:wrap}.pathway-tabs button{min-height:40px;padding:.55rem .75rem;border:1px solid var(--line);border-radius:99px;background:var(--bg2);color:var(--muted);font-weight:850}.pathway-tabs button[aria-pressed="true"]{background:var(--gold);border-color:var(--gold);color:#16120a}.pathway-panel{margin-top:.8rem;padding:1rem;border:1px solid var(--line);border-radius:11px;background:var(--bg2);color:var(--muted)}.vocab-table{width:100%;border-collapse:collapse}.vocab-table th,.vocab-table td{padding:.65rem;border-bottom:1px solid var(--line);text-align:start}.vocab-table th{color:var(--gold2);font-size:.75rem;text-transform:uppercase}.vocab-table td{font-size:.84rem}.vocab-controls{display:flex;justify-content:flex-end;margin-bottom:.7rem}.question-list{display:grid;gap:.8rem}.question{padding:1rem;border:1px solid var(--line);border-radius:11px;background:var(--bg2)}.question fieldset{border:0;padding:0;margin:0}.question legend{font-weight:850}.options{display:grid;gap:.45rem;margin-top:.65rem}.option{display:flex;gap:.6rem;align-items:flex-start;padding:.55rem;border:1px solid transparent;border-radius:9px}.option:hover{border-color:var(--blue)}.feedback{margin-top:.6rem;padding:.65rem;border-radius:9px}.feedback.correct{background:color-mix(in srgb,var(--green) 12%,var(--bg2));color:var(--green)}.feedback.incorrect{background:color-mix(in srgb,var(--danger) 9%,var(--bg2));color:var(--danger)}.side-actions{display:grid;gap:.55rem;margin-top:1rem}.side-actions .btn{width:100%}.lesson-nav{display:flex;justify-content:space-between;gap:.7rem;flex-wrap:wrap;margin-top:1.5rem}@media(max-width:960px){.lesson-layout{grid-template-columns:1fr}.lesson-side{position:static}.concept-grid{grid-template-columns:1fr}}
 
 /* =========================================================
    ORGANIZED LESSON HELPERS + TABLET OVERFLOW REPAIR
@@ -222,20 +222,6 @@ button{
   }
 }
 
-@media screen{
-  .lesson-layout{grid-template-columns:minmax(0,1fr)!important;align-items:stretch!important}
-  .lesson-side{position:static!important;top:auto!important;width:100%!important}
-  .side-actions{display:grid!important;grid-template-columns:repeat(5,minmax(0,1fr))!important;gap:.55rem!important}
-  .side-actions .btn{width:100%!important;min-width:0!important;text-align:center!important}
-}
-@media screen and (max-width:960px){
-  .side-actions{grid-template-columns:repeat(2,minmax(0,1fr))!important}
-  .side-actions>*:last-child:nth-child(odd){grid-column:1/-1}
-}
-@media screen and (max-width:600px){
-  .side-actions{grid-template-columns:minmax(0,1fr)!important}
-  .side-actions>*:last-child:nth-child(odd){grid-column:auto}
-}
 </style><style id="khaemenes-typography-standard">
 /* Khaemenes High presentation typography · 55 / 33 / 24 / 14 px.
    All public pages receive this local, embedded policy for offline use.
@@ -306,11 +292,8 @@ html:root:root body :is(.hero, .header, .page-header, .section-head, .lesson-hea
  html:root:root body :is(.lesson-reading,.example,.question){box-shadow:none!important;break-inside:avoid-page}
 }
 </style>
-<script src="/Khaemenes_High.github.io/assets/high-school-global-chrome-v2.js" defer data-high-school-global-chrome="v2"></script>
-<script src="https://vervenveda.com/assets/vnv-333-ticker.js" data-vnv-333-ticker="official"></script>
-<script src="https://vervenveda.com/assets/vnv-ticker-autopopulate.js" data-vnv-ticker-autopopulate></script>
-<script>window.VNV_TICKER?.autoPopulate?.({label:"Pre-Algebra · Unit 02 · Comparing & Ordering Integers",max:14});</script>
-<script src="https://vervenveda.com/assets/vnv-language.js" defer data-official-vnv-language="true"></script>
+<script defer src="https://vervenveda.com/assets/vnv-ecosystem-toolbar.js" data-official-vnv-ecosystem-toolbar="true"></script>
+  <script src="/Khaemenes_High.github.io/assets/high-school-global-chrome-v2.js" defer data-high-school-global-chrome="v2"></script>
 </head><body>
 <!-- =========================================================
      ACCESSIBILITY SKIP LINK
@@ -323,16 +306,14 @@ html:root:root body :is(.hero, .header, .page-header, .section-head, .lesson-hea
 <!-- =========================================================
      MAIN LESSON CONTENT
      ========================================================= -->
-<main id="main"><section class="hero"><div class="wrap"><p class="eyebrow">Lesson 3 · 50–65 minutes</p><h1>Comparing &amp; Ordering Integers</h1><p class="lead">Why is a number with a larger absolute value sometimes the smaller number?</p><div class="actions"><a class="btn primary" href="#learn">Begin Lesson</a><a class="btn" href="#math-break" aria-label="Jump to this lesson’s learning game">🎮 Learning Game ↓</a><button class="btn" id="printLesson" type="button">Print Lesson</button></div></div></section><section id="learn"><div class="wrap lesson-layout"><article class="card lesson-main"><p class="eyebrow">Learning goals</p><ul class="objective-list" id="objectives"></ul><h2 style="margin-top:1.5rem">Warm-up</h2><ol class="warmup" id="warmup"></ol></article><section class="card lesson-side" aria-label="Your lesson record"><p class="eyebrow">Your lesson record</p><div class="field"><label for="pathwaySelect">Pathway support</label><select id="pathwaySelect"><option>Foundation</option><option selected>Core</option><option>Extended</option></select></div><p class="notice" id="lessonStatus">Complete the practice to save a lesson score.</p><div class="side-actions">
+<main id="main"><section class="hero"><div class="wrap"><p class="eyebrow">Lesson 3 · 50–65 minutes</p><h1>Comparing &amp; Ordering Integers</h1><p class="lead">Why is a number with a larger absolute value sometimes the smaller number?</p><div class="actions"><a class="btn primary" href="#learn">Begin Lesson</a><a class="btn" href="#math-break" aria-label="Jump to this lesson’s learning game">🎮 Learning Game ↓</a><button class="btn" id="printLesson" type="button">Print Lesson</button></div></div></section><section id="learn"><div class="wrap lesson-layout"><article class="card lesson-main"><p class="eyebrow">Learning goals</p><ul class="objective-list" id="objectives"></ul><h2 style="margin-top:1.5rem">Warm-up</h2><ol class="warmup" id="warmup"></ol></article><aside class="card lesson-side"><p class="eyebrow">Your lesson record</p><div class="field"><label for="pathwaySelect">Pathway support</label><select id="pathwaySelect"><option>Foundation</option><option selected>Core</option><option>Extended</option></select></div><p class="notice" id="lessonStatus">Complete the practice to save a lesson score.</p><div class="side-actions">
 <a class="btn" href="#concept-guide">Concept Guide</a>
 <a class="btn" href="#concepts">Concept Cards</a>
 <a class="btn" href="#math-break">Math Break</a>
 <a class="btn" href="#practice">Practice</a>
 <button class="btn primary" id="markComplete" type="button">Save Lesson Review</button>
 <button class="btn" id="exportLesson" type="button">Export Lesson Record</button>
-</div>
-</section></div>
-</section><!-- =========================================================
+</div></aside></div></section><!-- =========================================================
      DEEPER CONCEPT STUDY GUIDE
      ========================================================= -->
 <section id="concept-guide">

@@ -685,7 +685,7 @@ html:root:root body .app > .sidebar{min-width:0;box-sizing:border-box}
 }
 </style>
 <link rel="stylesheet" href="assets/prealgebra-vnv-ka-blueprint-v1.css" data-vnv-ka-blueprint="prealgebra-v1">
-  <script src="assets/legacy-5pm/high-school-global-chrome-v2.js" defer data-high-school-global-chrome="v2"></script>
+  <script src="/Khaemenes_High.github.io/assets/high-school-global-chrome-v2.js" defer data-high-school-global-chrome="v2"></script>
 </head>
 <body>
 <a class="skip-link" href="#content">Skip to course content</a>
@@ -4350,36 +4350,19 @@ function validState(candidate){
 }
 function loadState(){
   try{
-    const S=window.KhaemenesMathStorageAdapter;
-    const current=S?.readJSON?S.readJSON(STORAGE_KEY,null):JSON.parse(localStorage.getItem(STORAGE_KEY));
+    const current=JSON.parse(localStorage.getItem(STORAGE_KEY));
     if(validState(current)) return current;
     for(const key of LEGACY_STORAGE_KEYS){
-      const legacy=S?.readJSON?S.readJSON(key,null):JSON.parse(localStorage.getItem(key));
+      const legacy=JSON.parse(localStorage.getItem(key));
       if(validState(legacy)){
-        const result=S?.writeJSON?S.writeJSON(STORAGE_KEY,legacy):(()=>{const raw=JSON.stringify(legacy);localStorage.setItem(STORAGE_KEY,raw);return{persisted:localStorage.getItem(STORAGE_KEY)===raw,verified:localStorage.getItem(STORAGE_KEY)===raw}})();
-        if(result.persisted===true&&result.verified===true)return legacy;
+        localStorage.setItem(STORAGE_KEY,JSON.stringify(legacy));
+        return legacy;
       }
     }
   }catch(error){console.warn("Progress could not be loaded.",error)}
-  return{schemaVersion:3,students:[],activeId:null};
+  return{schemaVersion:2,students:[],activeId:null};
 }
-function save(){
-  state.schemaVersion=3;
-  let result={persisted:false,verified:false};
-  try{
-    const S=window.KhaemenesMathStorageAdapter;
-    if(S?.writeJSON)result=S.writeJSON(STORAGE_KEY,state);
-    else{
-      const raw=JSON.stringify(state);
-      localStorage.setItem(STORAGE_KEY,raw);
-      const ok=localStorage.getItem(STORAGE_KEY)===raw;
-      result={persisted:ok,verified:ok};
-    }
-  }catch(error){console.warn("Pre-Algebra state write could not be verified.",error)}
-  window.dispatchEvent(new CustomEvent("khaemenes-high-course-state-changed",{detail:{courseId:"pre-algebra",persisted:result.persisted===true,verified:result.verified===true}}));
-  if(result.persisted!==true||result.verified!==true)console.warn("Pre-Algebra progress is not verified as persistent; use Export Student ZIP before leaving.");
-  return result.persisted===true&&result.verified===true;
-}
+function save(){state.schemaVersion=2;localStorage.setItem(STORAGE_KEY,JSON.stringify(state));window.dispatchEvent(new CustomEvent("khaemenes-high-course-state-changed",{detail:{courseId:"pre-algebra"}}))}
 function uid(){return"s_"+Math.random().toString(36).slice(2,9)+Date.now().toString(36)}
 function student(){return state.students.find(s=>s.id===state.activeId)||null}
 function ensure(s){
@@ -4390,16 +4373,7 @@ function ensure(s){
 function weekRec(s,w){ensure(s);return s.progress.weeks[w]??={lessons:{},assignments:{},notes:{},quiz:{best:0,attempts:[],lastFeedback:[]},work:"",repeats:0}}
 function lessonPct(s,w){let r=weekRec(s,w);return Math.round(["Monday","Tuesday","Wednesday","Thursday","Friday"].filter(d=>r.lessons[d]).length/5*100)}
 function assignPct(s,w){let r=weekRec(s,w);return Math.round([0,1,2].filter(i=>r.assignments[i]).length/3*100)}
-const WEEKLY_MASTERY_VERSION="prealgebra-weekly-mastery-v2";
-function validWeeklyMasteryAttempt(a){
-  return a&&a.assessment_version===WEEKLY_MASTERY_VERSION&&Number(a.question_count)===10&&
-    Array.isArray(a.question_ids)&&a.question_ids.length===10&&new Set(a.question_ids).size===10&&
-    Array.isArray(a.dimensions)&&a.dimensions.length===10&&Number.isFinite(Number(a.score));
-}
-function quizBest(s,w){
-  const r=weekRec(s,w),valid=(r.quiz.attempts||[]).filter(validWeeklyMasteryAttempt);
-  return valid.length?Math.max(...valid.map(a=>Math.round(Number(a.score)||0))):0;
-}
+function quizBest(s,w){return Math.round(weekRec(s,w).quiz.best||0)}
 function weekCompletion(s,w){return Math.round(lessonPct(s,w)*.6+assignPct(s,w)*.4)}
 function weekScore(s,w){let q=quizBest(s,w);return q||weekCompletion(s,w)}
 function average(values){return values.length?values.reduce((a,b)=>a+b,0)/values.length:0}
@@ -4518,14 +4492,12 @@ function shuffle(items){
 }
 function prepareQuestion(q){
   const mixed=shuffle(q[1].map((text,original)=>({text,original})));
-  return{prompt:q[0],choices:mixed.map(x=>x.text),answer:mixed.findIndex(x=>x.original===q[2]),id:q[3]||null,dimension:q[4]||null,retrievalFromWeek:q[5]??null};
+  return{prompt:q[0],choices:mixed.map(x=>x.text),answer:mixed.findIndex(x=>x.original===q[2])};
 }
 function quizForm(w,r){
   activeQuiz=w.quiz.map(prepareQuestion);
-  const s=student(),official=quizBest(s,w.week),valid=(r.quiz.attempts||[]).filter(validWeeklyMasteryAttempt),legacy=(r.quiz.attempts||[]).length-valid.length;
   const feedback=(r.quiz.lastFeedback||[]).length?`<div class="feedback-list"><strong>Last-attempt review</strong><ul>${r.quiz.lastFeedback.map(f=>`<li>${esc(f)}</li>`).join("")}</ul></div>`:"";
-  const blueprint=w.week===1?"10 current-focus questions":"8 current-focus + 2 delayed-retrieval questions";
-  return`<p class="notice"><strong>Canonical weekly mastery v2:</strong> 10 questions · 2 in each reasoning dimension · ${blueprint}. Legacy five-question attempts remain history only.</p><p class="score">Official v2 best: ${official||"—"}</p><p class="small">${valid.length?`Valid v2 attempts: ${valid.map(a=>Math.round(a.score)+"%").join(" | ")}`:"No canonical v2 attempts yet."}${legacy? ` · Legacy attempts preserved: ${legacy}`:""}</p><form>${activeQuiz.map((q,i)=>`<fieldset class="q"><legend><strong>${i+1}. ${esc(q.prompt)}</strong></legend>${q.retrievalFromWeek?`<p class="small">Retrieval bridge · Week ${q.retrievalFromWeek}</p>`:""}${q.choices.map((c,j)=>`<label class="choice"><input type="radio" name="q${i}" value="${j}"> ${esc(c)}</label>`).join("")}</fieldset>`).join("")}<div class="actions"><button type="button" onclick="submitQuiz()">Submit Mastery Check</button><button class="secondary" type="reset">Clear</button></div></form>${feedback}`;
+  return`<p class="score">Best: ${Math.round(r.quiz.best||0)||"—"}</p><p class="small">${r.quiz.attempts.length?`Attempts: ${r.quiz.attempts.map(a=>Math.round(a.score)+"%").join(" | ")}`:"No attempts yet."}</p><form>${activeQuiz.map((q,i)=>`<fieldset class="q"><legend><strong>${i+1}. ${esc(q.prompt)}</strong></legend>${q.choices.map((c,j)=>`<label class="choice"><input type="radio" name="q${i}" value="${j}"> ${esc(c)}</label>`).join("")}</fieldset>`).join("")}<div class="actions"><button type="button" onclick="submitQuiz()">Submit Mastery Check</button><button class="secondary" type="reset">Clear</button></div></form>${feedback}`;
 }
 
 function scope(){ $("content").innerHTML=`<div class="card"><h3>36-Week Scope & Sequence</h3><p class="section-note">Every row opens the corresponding complete unit or diagnostic page.</p><div class="actions"><button type="button" onclick="downloadScope()">Download Scope CSV</button></div><div class="table-wrap">${scopeTable(APP.weeks)}</div></div>`}
@@ -4598,24 +4570,8 @@ function submitQuiz(){
     if(val===activeQuiz[i].answer)correct++;else feedback.push(`${i+1}. Review: ${activeQuiz[i].prompt} Correct answer: ${activeQuiz[i].choices[activeQuiz[i].answer]}`);
   }
   let score=Math.round(correct/activeQuiz.length*100);
-  if(activeQuiz.length!==10||activeQuiz.some(item=>!item.id||!item.dimension)){
-    alert("The canonical 10-question weekly mastery form is not available. Refresh this page before submitting; no mastery attempt was recorded.");
-    return;
-  }
-  if(r.quiz.attempts.length&&!r.quiz.legacyBest&&Number(r.quiz.best)>0)r.quiz.legacyBest=Number(r.quiz.best);
-  const attempt={
-    date:new Date().toISOString(),score,answers,
-    question_count:activeQuiz.length,
-    assessment_version:WEEKLY_MASTERY_VERSION,
-    question_ids:activeQuiz.map(item=>item.id),
-    dimensions:activeQuiz.map(item=>item.dimension),
-    retrieval_from_weeks:[...new Set(activeQuiz.map(item=>item.retrievalFromWeek).filter(Number.isFinite))]
-  };
-  r.quiz.attempts.push(attempt);
-  r.quiz.v2Best=Math.max(Number(r.quiz.v2Best)||0,score);
-  r.quiz.best=Math.max(Number(r.quiz.best)||0,score);
-  r.quiz.lastFeedback=feedback.length?feedback:["All answers were correct. Explain one solution in writing to preserve the reasoning."];
-  save();alert(`Mastery check submitted: ${score}%. Official v2 best: ${quizBest(s,w.week)}%.`);render();
+  r.quiz.attempts.push({date:new Date().toISOString(),score,answers});r.quiz.best=Math.max(r.quiz.best||0,score);r.quiz.lastFeedback=feedback.length?feedback:["All answers were correct. Explain one solution in writing to preserve the reasoning."];
+  save();alert(`Mastery check submitted: ${score}%. Best score kept.`);render();
 }
 function submitExam(name){
   let s=student(),qs=activeExams[name]||[],correct=0,answers=[];
@@ -4683,10 +4639,9 @@ try{
 if(!state.students.length)addStudent("First Learner");else render();
 
 </script>
-<script src="assets/legacy-5pm/vnv-language.js" defer data-official-vnv-language="true"></script>
+<script src="../../../assets/vnv-language.js" defer data-official-vnv-language="true"></script>
 <script src="../../../assets/high-school-return-to-classes.js" data-grade="09" defer></script>
 <script src="assets/prealgebra-archaemenes-upgrade.js"></script>
-<script src="assets/prealgebra-weekly-mastery-v2.js"></script>
 <script src="assets/prealgebra-course-gates-v1.js"></script>
 <script src="assets/prealgebra-activity-evidence-v1.js" defer></script>
 <script src="assets/prealgebra-export-reminder-v1.js" defer></script>
@@ -4703,9 +4658,5 @@ if("serviceWorker" in navigator){
 <script defer src="https://vervenveda.com/assets/vnv-333-ticker.js" data-ka-blueprint="ticker-333"></script>
 <script defer src="https://vervenveda.com/assets/vnv-ticker-autopopulate.js" data-ka-blueprint="ticker-auto"></script>
 <script defer src="https://vervenveda.com/assets/vnv-ecosystem-toolbar.js" data-official-vnv-ecosystem-toolbar="true"></script>
-<script src="assets/legacy-5pm/math-learning-tools-v2.js" defer></script>
-<script src="../assets/math-progress-contract-v1.js" defer></script>
-<script src="../assets/math-compatibility-v1.js" defer></script>
-<script src="../assets/math-course-shell-v1.js" defer></script>
 </body>
 </html>

@@ -1,5 +1,5 @@
 (()=>{"use strict";
-const MIN=80,scriptEl=document.currentScript,coreSrc=new URL("../../../assets/prealgebra-lesson-engine-core-v2.js",scriptEl?.src||location.href).href,map=window.UNIT_MAP_FALLBACK,lesson=window.LESSON_DATA;
+const MIN=80,scriptEl=document.currentScript,coreSrc=new URL("lesson-engine-core.js",scriptEl?.src||location.href).href,map=window.UNIT_MAP_FALLBACK,lesson=window.LESSON_DATA;
 const pad=n=>String(n).padStart(2,"0"),unitNo=Number(map?.unit?.number)||Number(location.pathname.match(/unit-(\d+)/)?.[1])||0;
 const SKILL_FOCUS={l01:"signed-contexts",l02:"opposites-absolute-value",l03:"integer-order",l04:"integer-addition",l05:"integer-subtraction",l06:"integer-products-quotients",l07:"integer-division",l08:"coordinate-integer-applications"};
 const COMPANIONS={
@@ -39,17 +39,4 @@ function loadWorkflow(){if(document.querySelector('script[data-prealgebra-workfl
 function loadAnswerDraft(){if(document.querySelector('script[data-prealgebra-answer-draft="v1"]'))return;const helper=document.createElement("script");helper.src=new URL("../../../assets/prealgebra-answer-draft-v1.js",scriptEl?.src||location.href).href;helper.async=false;helper.dataset.prealgebraAnswerDraft="v1";helper.onerror=()=>console.warn("Pre-Algebra unscored answer recovery unavailable; ordinary lessons and scores remain usable.");document.head.appendChild(helper)}
 function startCore(){const g=gate();if(!g.ok){if(document.body)block(g);else addEventListener("DOMContentLoaded",()=>block(g),{once:true});return}const core=document.createElement("script");core.src=coreSrc;core.async=false;core.onload=()=>{afterCoreLoad();loadAnswerDraft()};core.onerror=()=>console.error("Pre-Algebra lesson engine core could not load.");document.head.appendChild(core)}
 const studentNav=document.createElement("script");studentNav.src=new URL("../../../assets/prealgebra-student-navigation.js",scriptEl?.src||location.href).href;studentNav.async=false;studentNav.onload=startCore;studentNav.onerror=()=>{console.error("Pre-Algebra student navigation helper could not load.");startCore()};document.head.appendChild(studentNav);
-})();
-
-
-/* Universal lesson-aware Learning Tools toolbar. Navigation/support only. */
-;(()=>{
- if(document.getElementById("vnvClassToolsLessonLoader")||window.VNVClassToolsToolbar)return;
- const script=document.createElement("script");
- script.id="vnvClassToolsLessonLoader";
- script.src="https://vervenveda.com/assets/vnv-class-tools-toolbar.js?v=1.5.0";
- script.defer=true;
- script.dataset.vnvClassTools="lesson-aware";
- script.onerror=()=>console.warn("Learning Tools toolbar unavailable; lesson content remains usable.");
- (document.head||document.documentElement).appendChild(script);
 })();

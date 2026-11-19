@@ -1,33 +1,10 @@
 {
   "name": "Khaemenes Academy Pre-Algebra",
   "short_name": "Pre-Algebra",
-  "id": "./?app=pre-algebra",
+  "description": "Open-age, 36-week Khaemenes Academy Pre-Algebra course.",
   "start_url": "./",
   "scope": "./",
   "display": "standalone",
-  "background_color": "#090b10",
-  "theme_color": "#090b10",
-  "description": "Open-age 36-week Khaemenes Academy Pre-Algebra course.",
-  "categories": [
-    "education",
-    "mathematics"
-  ],
-  "shortcuts": [
-    {
-      "name": "Lessons",
-      "url": "./#week"
-    },
-    {
-      "name": "Diagnostic",
-      "url": "./diagnostic/"
-    },
-    {
-      "name": "Assessments",
-      "url": "./assessments/"
-    },
-    {
-      "name": "Calculator",
-      "url": "../tools/calculator"
-    }
-  ]
+  "background_color": "#f4f0e7",
+  "theme_color": "#17392f"
 }

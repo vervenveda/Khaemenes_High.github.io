@@ -16,19 +16,18 @@
     const RESULT_SCHEMA="khaemenes-assessment-result-v3-depth";
     const PUBLIC_CLASSIFICATION="public-self-check-nonconfidential";
     const state={answers:{},responses:{},submitted:false};
-    function readRaw(key){const S=window.KhaemenesMathStorageAdapter;if(S?.readRaw)return S.readRaw(key,null);try{return localStorage.getItem(key)}catch{return null}}
-    function readJSON(key,fallback={}){const S=window.KhaemenesMathStorageAdapter;if(S?.readJSON)return S.readJSON(key,fallback)??fallback;try{return JSON.parse(localStorage.getItem(key)||"null")??fallback}catch{return fallback}}
-    function persist(key,value){const S=window.KhaemenesMathStorageAdapter;if(S?.writeJSON)return S.writeJSON(key,value).persisted===true;try{const raw=JSON.stringify(value);localStorage.setItem(key,raw);return localStorage.getItem(key)===raw}catch{return false}}
-    function removeStored(key){const S=window.KhaemenesMathStorageAdapter;if(S?.remove)return S.remove(key).ok===true;try{localStorage.removeItem(key);return localStorage.getItem(key)===null}catch{return false}}
+
     function load(){
-      const d=readJSON(stateKey,{});
-      if(d&&typeof d==="object")Object.assign(state,d);
-      state.answers=state.answers&&typeof state.answers==="object"?state.answers:{};
-      state.responses=state.responses&&typeof state.responses==="object"?state.responses:{};
+      try{
+        const d=JSON.parse(localStorage.getItem(stateKey)||"{}");
+        if(d&&typeof d==="object")Object.assign(state,d);
+        state.answers=state.answers&&typeof state.answers==="object"?state.answers:{};
+        state.responses=state.responses&&typeof state.responses==="object"?state.responses:{};
+      }catch{}
     }
-    function save(){const ok=persist(stateKey,state);updateProgress();return ok}
-    function theme(v){document.documentElement.dataset.theme=v;try{localStorage.setItem("khaemenes-theme",v)}catch{}}
-    theme(readRaw("khaemenes-theme")||(matchMedia("(prefers-color-scheme:light)").matches?"light":"dark"));
+    function save(){localStorage.setItem(stateKey,JSON.stringify(state));updateProgress()}
+    function theme(v){document.documentElement.dataset.theme=v;localStorage.setItem("khaemenes-theme",v)}
+    theme(localStorage.getItem("khaemenes-theme")||(matchMedia("(prefers-color-scheme:light)").matches?"light":"dark"));
     $("themeToggle").onclick=()=>theme(document.documentElement.dataset.theme==="light"?"dark":"light");
 
     function hashSeed(text){let h=2166136261;for(let i=0;i<text.length;i++){h^=text.charCodeAt(i);h=Math.imul(h,16777619)}return h>>>0}
@@ -258,9 +257,8 @@
       }
       state.submitted=true;
       const result=buildSelectedResult();
-      const resultSaved=persist(resultKey,result);
-      const draftSaved=save();
-      if(!resultSaved||!draftSaved)$("status").textContent="Assessment evidence is retained in this page memory only. Export the result before closing or reloading.";
+      localStorage.setItem(resultKey,JSON.stringify(result));
+      save();
       render();
       showResult(result,true);
     }
@@ -312,7 +310,7 @@
       r.mastery_met=selected>=threshold&&constructedPercent>=threshold&&overall>=threshold;
       r.mastery_status=r.mastery_met?"mastery-met":"review-required";
       r.evaluator_review={completed:true,completed_at:new Date().toISOString(),local_unverified:true};
-      if(!persist(resultKey,r)){$("status").textContent="Evaluator review is retained in this page memory only. Export the result before closing or reloading.";}
+      localStorage.setItem(resultKey,JSON.stringify(r));
       showResult(r,false);
     }
 
@@ -346,8 +344,8 @@
 
     function reset(){
       if(!confirm("Clear all answers, constructed responses, and the saved result for this assessment?"))return;
-      removeStored(stateKey);
-      removeStored(resultKey);
+      localStorage.removeItem(stateKey);
+      localStorage.removeItem(resultKey);
       state.answers={};
       state.responses={};
       state.submitted=false;
@@ -357,7 +355,7 @@
     }
 
     function exportResult(){
-      const raw=readRaw(resultKey);
+      const raw=localStorage.getItem(resultKey);
       if(!raw){$("status").textContent="Submit the assessment before exporting a result.";return}
       const blob=new Blob([raw],{type:"application/json"}),url=URL.createObjectURL(blob),a=document.createElement("a");
       a.href=url;
@@ -371,10 +369,10 @@
     load();
     installClassificationNotice();
     render();
-    const saved=readRaw(resultKey);
+    const saved=localStorage.getItem(resultKey);
     if(saved){try{showResult(JSON.parse(saved),false)}catch{}}
     $("submitButton").onclick=submit;
-    $("saveButton").onclick=()=>{const ok=save();$("status").textContent=ok?(D?`Draft saved and verified · ${completedConstructed()}/${D.constructed.length} constructed responses complete.`:"Draft saved and verified in this browser."):"Draft is retained in this page memory only. Export or copy your work before closing or reloading.";};
+    $("saveButton").onclick=()=>{save();$("status").textContent=D?`Draft saved · ${completedConstructed()}/${D.constructed.length} constructed responses complete.`:"Draft saved in this browser."};
     $("resetButton").onclick=reset;
     $("exportButton").onclick=exportResult;
     $("printButton").onclick=()=>window.print();
@@ -395,16 +393,4 @@
     if(submit)submit.disabled=true;
   };
   document.head.appendChild(depth);
-})();
-
-/* Shared mathematics storage/evidence hardening for assessment surfaces. */
-;(()=>{
- if(window.KhaemenesMathHardeningLoader||document.getElementById("khaeMathHardeningAssessmentLoader"))return;
- const current=document.currentScript;
- const loader=document.createElement("script");
- loader.id="khaeMathHardeningAssessmentLoader";
- loader.src=new URL("../../../assets/math-hardening-loader-v1.js",current?.src||location.href).href;
- loader.async=false;
- loader.onerror=()=>console.warn("Mathematics assessment hardening layer unavailable; assessment remains usable under existing safeguards.");
- (document.head||document.documentElement).appendChild(loader);
 })();

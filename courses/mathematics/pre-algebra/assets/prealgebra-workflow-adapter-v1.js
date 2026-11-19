@@ -70,14 +70,3 @@ ensureStyle();
 ensureWorkflow();
 window.KhaemenesPreAlgebraWorkflowAdapter=Object.freeze({course:"pre-algebra",version:"1.0.0",canonicalId});
 })();
-
-/* Shared High School mathematics hardening layer. */
-;(()=>{
- if(window.KhaemenesMathHardeningLoader||document.getElementById("khaeMathHardeningLoaderScript"))return;
- const s=document.createElement("script");
- s.id="khaeMathHardeningLoaderScript";
- s.src=new URL("../../assets/math-hardening-loader-v1.js",adapterScript?.src||location.href).href;
- s.async=false;
- s.onerror=()=>console.warn("Shared mathematics hardening layer unavailable; existing course behavior remains active.");
- (document.head||document.documentElement).appendChild(s);
-})();

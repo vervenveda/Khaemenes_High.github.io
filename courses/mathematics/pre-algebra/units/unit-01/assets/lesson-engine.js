@@ -126,15 +126,3 @@ function startCore(){const g1=entrance(),g2=g1.ok?sequence():g1;if(!g2.ok){if(do
 };document.head.appendChild(core)}
 const studentNav=document.createElement("script");studentNav.src=new URL("../../../assets/prealgebra-student-navigation.js",scriptEl?.src||location.href).href;studentNav.async=false;studentNav.onload=startCore;studentNav.onerror=()=>{console.error("Pre-Algebra student navigation helper could not load.");startCore()};document.head.appendChild(studentNav);
 })();
-
-/* Universal lesson-aware Learning Tools toolbar. Navigation/support only. */
-;(()=>{
- if(document.getElementById("vnvClassToolsLessonLoader")||window.VNVClassToolsToolbar)return;
- const script=document.createElement("script");
- script.id="vnvClassToolsLessonLoader";
- script.src="https://vervenveda.com/assets/vnv-class-tools-toolbar.js?v=1.5.0";
- script.defer=true;
- script.dataset.vnvClassTools="lesson-aware";
- script.onerror=()=>console.warn("Learning Tools toolbar unavailable; lesson content remains usable.");
- (document.head||document.documentElement).appendChild(script);
-})();

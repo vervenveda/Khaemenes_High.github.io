@@ -382,26 +382,6 @@
     "official_lesson_questions": 20,
     "conditional_unit_0_lesson_questions": 20,
     "weekly_quiz_questions": 10,
-    "note": "Official and conditional bridge lessons use 20-question lesson evidence. Canonical weekly checks use 10 questions with five-dimension balance and delayed retrieval; they remain separate evidence.",
-    "weekly_mastery_version": "prealgebra-weekly-mastery-v2",
-    "weekly_mastery_total_questions": 360,
-    "weekly_reasoning_dimensions": [
-      "procedural-fluency",
-      "multi-step-application",
-      "representation-interpretation",
-      "error-analysis",
-      "transfer-reasoning"
-    ],
-    "weekly_blueprint": {
-      "week_1": {
-        "current": 10,
-        "delayed_retrieval": 0
-      },
-      "weeks_2_36": {
-        "current": 8,
-        "delayed_retrieval": 2
-      }
-    },
-    "legacy_weekly_rule": "Historical five-question planner attempts are preserved for provenance but do not satisfy the canonical v2 weekly mastery gate."
+    "note": "Official and conditional bridge lessons use the same 20-question lesson evidence contract; weekly checks remain separate 10-question evidence."
   }
 }

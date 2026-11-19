@@ -104,15 +104,13 @@ html:root:root body.ka-prealgebra-lesson01 main :is(.question,.checkpoint,.lesso
  background:#fffdf8!important;color:#27302d!important;box-shadow:none!important;
 }
 html:root:root body.ka-prealgebra-lesson01 main .lesson-layout{
- display:grid;grid-template-columns:minmax(0,1fr)!important;
- gap:24px;align-items:stretch;
+ display:grid;grid-template-columns:minmax(0,1fr) minmax(270px,345px);
+ gap:24px;align-items:start;
 }
 html:root:root body.ka-prealgebra-lesson01 main :is(.lesson-main,.lesson-side,.lesson-reading,.concept,.example,.question,.set-panel,.pathway-panel){
  padding:clamp(20px,3vw,36px)!important;
 }
-html:root:root body.ka-prealgebra-lesson01 main .lesson-side{position:static!important;top:auto!important;width:100%!important}
-html:root:root body.ka-prealgebra-lesson01 main .lesson-side .side-actions{display:grid!important;grid-template-columns:repeat(4,minmax(0,1fr))!important;gap:10px!important;margin-top:24px!important}
-html:root:root body.ka-prealgebra-lesson01 main .lesson-side .side-actions .btn{width:100%!important;min-width:0!important}
+html:root:root body.ka-prealgebra-lesson01 main .lesson-side{position:sticky;top:100px}
 html:root:root body.ka-prealgebra-lesson01 main :is(h2,h3){
  font-family:Cinzel,Georgia,serif!important;font-weight:400!important;
  color:#27302d!important;-webkit-text-fill-color:#27302d!important;
@@ -168,14 +166,14 @@ html:root:root body.ka-prealgebra-lesson01 .footer :is(span,a){
  color:#fff8e9!important;-webkit-text-fill-color:#fff8e9!important;
 }
 @media(max-width:1020px){
- html:root:root body.ka-prealgebra-lesson01 main .lesson-side .side-actions{grid-template-columns:repeat(2,minmax(0,1fr))!important}
+ html:root:root body.ka-prealgebra-lesson01 main .lesson-layout{grid-template-columns:1fr!important}
+ html:root:root body.ka-prealgebra-lesson01 main .lesson-side{position:static!important}
 }
 @media(max-width:650px){
  html:root:root body.ka-prealgebra-lesson01 .hero>.wrap{padding:32px 18px!important}
  html:root:root body.ka-prealgebra-lesson01 .hero h1{font-size:clamp(32px,8vw,44px)!important}
  html:root:root body.ka-prealgebra-lesson01 .set-tabs{grid-template-columns:repeat(2,minmax(0,1fr))!important}
  html:root:root body.ka-prealgebra-lesson01 .ka-lesson-breadcrumb-row{gap:8px;padding:9px 12px}
- html:root:root body.ka-prealgebra-lesson01 main .lesson-side .side-actions{grid-template-columns:minmax(0,1fr)!important}
 }
 }
 @media print{

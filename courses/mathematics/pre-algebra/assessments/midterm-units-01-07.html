@@ -1,300 +1,59 @@
-<!doctype html>
-<html lang="en">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="theme-color" content="#242c29">
-<title>Pre-Algebra Midterm Assessment · Khaemenes Academy</title>
+<!doctype html><html lang="en" data-theme="dark"><head>
+<script src="../../../shared/course-entry-contract.js?v=20261012"></script>
+<script src="../../../shared/learner-scope-v1.js?v=20261012" data-learner-scope="pre-algebra"></script>
 
-<script src="/Khaemenes_High.github.io/assets/high-school-global-chrome-v2.js" defer data-high-school-global-chrome="v2"></script>
-<script src="/Khaemenes_High.github.io/courses/mathematics/pre-algebra/assets/prealgebra-worker-recovery-v1.js" defer data-prealgebra-worker-recovery="v1"></script>
-<script src="../../assets/math-storage-adapter-v1.js" defer data-math-storage-adapter="v1"></script>
-
-<style id="prealgebra-midterm-blueprint-v1">
-:root{
-  --charcoal:#242c29;--charcoal2:#303936;--cream:#fff8eb;--parchment:#f6efe2;--paper:#fffdf8;
-  --ink:#242624;--muted:#655f55;--gold:#b48b45;--gold2:#d8c59f;--line:#d9cdb8;
-  --green:#365b49;--rose:#8f4e4e;--radius:7px;--max:1120px;
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="description" content="A 56-question cumulative assessment covering number systems, integers, rational numbers, ratios, percent, powers, roots, scientific notation, and algebraic expressions."><meta name="theme-color" content="#0b1730"><title>Pre-Algebra Midterm Assessment</title><link rel="stylesheet" href="assets/assessment-suite.css"><style id="khaemenes-typography-standard">
+/* Khaemenes High presentation typography · 55 / 33 / 24 / 14 px.
+   All public pages receive this local, embedded policy for offline use.
+   Only presentation changes. Existing grids, gates, learner records, assessments and STOS are preserved.
+   Font names are optional installed system fonts; no downloads or third-party font services. */
+html:root:root body {
+  font-family: "Brandon Grotesque", "Avenir Next", Avenir, "Segoe UI", Arial, sans-serif !important;
+  font-size: 14px !important;
+  font-weight: 400 !important;
+  line-height: 1.65 !important;
+  -webkit-text-size-adjust: 100%;
+  overflow-wrap: break-word;
 }
-*{box-sizing:border-box}
-html{scroll-behavior:smooth;scroll-padding-top:120px}
-body{margin:0;min-width:300px;background:var(--parchment);color:var(--ink);font:400 16px/1.6 "Brandon Grotesque","Avenir Next",Avenir,"Segoe UI",Arial,sans-serif}
-button,input,textarea{font:inherit}button{cursor:pointer}a{color:inherit}
-.skip{position:fixed;left:12px;top:-80px;z-index:9999;padding:10px 14px;border-radius:var(--radius);background:#111;color:white}.skip:focus{top:12px}
-.breadcrumb{width:min(calc(100% - 28px),var(--max));margin:12px auto;text-align:center;color:#6d6558}.breadcrumb a{text-decoration:none}
-.hero{background:var(--charcoal);color:var(--cream);border-bottom:4px solid var(--gold);padding:44px 18px 38px;text-align:center}
-.hero-inner{width:min(calc(100% - 20px),960px);margin:auto}
-.kicker{margin:0 0 8px;color:#ead9b7;font:400 16px/1.35 Cinzel,Georgia,serif;letter-spacing:.08em;text-transform:uppercase}
-.hero h1{margin:0;font:400 clamp(33px,5vw,55px)/1.12 Cinzel,Georgia,serif}
-.subtitle{margin:10px auto 0;max-width:800px;color:#f3e8d2;font:400 24px/1.4 Cinzel,Georgia,serif}
-.lead{max-width:850px;margin:18px auto 0;color:#f0e7d7;font-size:18px}
-.hero-actions{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;margin-top:24px}
-.btn{min-height:44px;border:1px solid var(--gold);border-radius:var(--radius);padding:10px 16px;background:var(--paper);color:var(--charcoal);text-decoration:none;display:inline-flex;align-items:center;justify-content:center}
-.btn.primary{background:var(--gold);color:#181b19}.btn.dark{background:var(--charcoal);color:var(--cream);border-color:var(--charcoal)}
-.info-strip{width:min(calc(100% - 28px),960px);margin:18px auto 0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:11px}
-.info-strip button{min-height:55px;border:1px solid var(--gold);border-radius:var(--radius);background:var(--charcoal);color:var(--cream);padding:10px 14px;font:400 16px/1.3 Cinzel,Georgia,serif}
-.sheet{width:min(calc(100% - 28px),var(--max));margin:26px auto 44px}
-.identity-row{display:grid;grid-template-columns:1.5fr 1fr 1fr .8fr;gap:10px;padding:14px;border:1px solid var(--line);border-radius:var(--radius);background:#fbf5ea}
-.identity-row label{display:grid;gap:5px}.identity-row input{min-height:44px;border:1px solid #bcae98;border-radius:var(--radius);background:#fff;padding:8px 10px}
-.objective-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:16px 0}
-.objective{display:grid;grid-template-columns:auto 1fr;border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;background:var(--paper)}
-.objective strong{min-width:160px;display:flex;align-items:center;justify-content:center;padding:12px;background:linear-gradient(135deg,#8c6427,#c49a50);color:#fffaf0;font:400 16px/1.25 Cinzel,Georgia,serif;text-align:center}
-.objective span{padding:12px 14px;display:flex;align-items:center}
-.assessment-panel{margin-top:18px;border:1px solid var(--line);border-radius:var(--radius);background:var(--paper);box-shadow:0 12px 30px rgba(55,45,25,.08);overflow:hidden}
-.assessment-top{display:grid;grid-template-columns:1fr auto;gap:14px;align-items:center;padding:16px 18px;border-bottom:1px solid var(--line);background:#fbf7ef}
-.assessment-top h2{margin:0;font:400 24px/1.3 Cinzel,Georgia,serif}.assessment-top p{margin:4px 0 0;color:var(--muted)}
-.progress-wrap{min-width:260px}.progress-label{margin:0 0 6px!important;text-align:right;color:var(--muted)}.progress{height:10px;border:1px solid #b9a988;border-radius:999px;background:white;overflow:hidden}.progress span{display:block;height:100%;width:0;background:linear-gradient(90deg,#8c6427,#c49a50)}
-.section-nav{display:grid;grid-template-columns:auto repeat(7,minmax(0,1fr)) auto;gap:7px;padding:12px 16px;border-bottom:1px solid var(--line);background:#efe5d4;align-items:center}
-.section-nav button{min-height:44px;border:1px solid #a89373;border-radius:var(--radius);background:#fffaf1;color:#29312d;padding:7px 8px}.section-nav button.current{background:var(--charcoal);color:var(--cream);border-color:var(--charcoal)}.section-nav button:disabled{opacity:.42;cursor:default}
-.question-list{display:grid;gap:14px;padding:18px}
-.question{display:grid;grid-template-columns:52px 1fr;border:1px solid #c9bda9;border-left:4px solid var(--gold);border-radius:var(--radius);background:#fffefb;overflow:hidden}
-.q-number{display:flex;justify-content:center;padding-top:16px}.q-number span{width:38px;height:38px;border-radius:7px;display:grid;place-items:center;background:linear-gradient(180deg,#3a3f3d,#222725);color:white;font:400 20px/1 Cinzel,Georgia,serif}
-.q-body{padding:14px 16px 16px 0}.q-meta{margin:0 0 5px;color:#7b6c54;font-size:14px}.q-prompt{margin:0 0 12px;font:400 18px/1.5 Georgia,"Times New Roman",serif}
-.options{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}.option{display:flex;gap:9px;align-items:flex-start;min-height:48px;padding:10px 12px;border:1px solid #d8cdb7;border-radius:var(--radius);background:#faf6ed;cursor:pointer}.option:hover{border-color:var(--gold);background:#fffaf0}.option input{margin-top:4px;accent-color:#7f5d25}
-.work-label{display:block;margin:12px 0 6px;color:#554d42}.work{width:100%;min-height:82px;resize:vertical;border:1px solid #cbbfae;border-radius:var(--radius);padding:10px 12px;background:white}
-.feedback{margin-top:10px;padding:10px 12px;border-left:4px solid #7a6f5d;border-radius:var(--radius);background:#f7f1e6}.feedback.good{border-color:var(--green);background:#eef5f1}.feedback.bad{border-color:var(--rose);background:#f8eeee}
-.bottom-section-nav{display:flex;justify-content:space-between;gap:12px;padding:0 18px 18px}.bottom-section-nav button{min-height:48px;min-width:160px;border:1px solid var(--charcoal);border-radius:var(--radius);background:var(--charcoal);color:var(--cream);padding:10px 16px;font:400 16px/1.3 Cinzel,Georgia,serif}.bottom-section-nav button:disabled{opacity:.42;cursor:default}
-.constructed{margin:18px;border:1px solid var(--gold2);border-radius:var(--radius);background:#fffaf1;padding:18px}.constructed[hidden]{display:none}.constructed h2{margin:0;text-align:center;font:400 33px/1.25 Cinzel,Georgia,serif}.constructed-intro{max-width:850px;margin:8px auto 18px;text-align:center;color:var(--muted)}
-.cr-list{display:grid;gap:12px}.cr-item{padding:14px;border:1px solid var(--line);border-radius:var(--radius);background:white}.cr-item h3{margin:0 0 8px;font:400 18px/1.35 Cinzel,Georgia,serif}.cr-item textarea{width:100%;min-height:160px;border:1px solid #cbbfae;border-radius:var(--radius);padding:10px 12px;background:white}.cr-count{margin:5px 0 0;color:var(--muted)}
-.assessment-actions{display:flex;flex-wrap:wrap;justify-content:center;gap:9px;padding:16px;border-top:1px solid var(--line);background:#fbf7ef}
-#status{min-height:24px;margin:0;padding:0 16px 16px;text-align:center;color:#514a40}
-.results{margin:20px 18px 18px;padding:18px;border:1px solid var(--gold2);border-radius:var(--radius);background:#fffaf1}.results[hidden]{display:none}.results h2{margin:0 0 6px;text-align:center;font:400 24px/1.3 Cinzel,Georgia,serif}.score{margin:0 0 14px;text-align:center;font:400 33px/1.2 Cinzel,Georgia,serif;color:#6e4d1c}
-.breakdown{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}.breakdown p{margin:0;padding:9px 10px;border:1px solid var(--line);border-radius:var(--radius);background:white}
-.evaluator{margin-top:16px;padding:14px;border:1px solid var(--line);border-radius:var(--radius);background:white}.evaluator-grid{display:grid;gap:8px}.eval-row{display:grid;grid-template-columns:1fr 120px;gap:10px;align-items:center;padding:10px;border:1px solid var(--line);border-radius:var(--radius);background:#faf6ed}.eval-row input{min-height:44px;border:1px solid #bcae98;border-radius:var(--radius);padding:8px}
-dialog{width:min(calc(100% - 32px),680px);border:1px solid var(--gold);border-radius:var(--radius);padding:0;background:var(--paper);color:var(--ink);box-shadow:0 24px 70px rgba(0,0,0,.3)}dialog::backdrop{background:rgba(20,25,23,.58)}.dialog-head{background:var(--charcoal);color:var(--cream);padding:18px 20px;border-bottom:3px solid var(--gold)}.dialog-head h2{margin:0;font:400 24px/1.3 Cinzel,Georgia,serif}.dialog-body{padding:18px 20px}.dialog-actions{display:flex;justify-content:flex-end;padding:0 20px 18px}
-footer{min-height:66px;padding:22px 16px;display:grid;place-items:center;background:var(--charcoal);color:var(--cream);text-align:center}
-.notice{margin:16px 18px;padding:14px 16px;border:1px solid var(--gold2);border-left:4px solid var(--gold);border-radius:var(--radius);background:#fffaf1}
-@media(max-width:900px){.section-nav{grid-template-columns:repeat(4,minmax(0,1fr))}.section-nav #prevSection,.section-nav #nextSection{grid-column:span 2}}
-@media(max-width:760px){.info-strip,.objective-grid,.identity-row{grid-template-columns:1fr}.assessment-top{grid-template-columns:1fr}.progress-wrap{min-width:0}.progress-label{text-align:left}.options,.breakdown{grid-template-columns:1fr}.question{grid-template-columns:46px 1fr}.eval-row{grid-template-columns:1fr}}
-@media(max-width:600px){.bottom-section-nav{display:grid;grid-template-columns:1fr 1fr}.bottom-section-nav button{min-width:0;width:100%}.section-nav{grid-template-columns:1fr 1fr}}
-@media print{.skip,.hero-actions,.info-strip,.section-nav,.bottom-section-nav,.assessment-actions,dialog,.evaluator button{display:none!important}body{background:white;color:black}.hero{background:white!important;color:black!important;border-bottom:2px solid #999}.hero *{color:black!important}.sheet{width:100%;margin:0}.question{break-inside:avoid}.constructed{break-inside:auto}footer{display:none}}
+html:root:root body :is(button, input, select, textarea) {
+  font-family: "Brandon Grotesque", "Avenir Next", Avenir, "Segoe UI", Arial, sans-serif !important;
+}
+html:root:root body :is(h1, h2, h3, h4, h5, h6, .page-title, .hero-title, .brand-title, .display-title, .site-title) {
+  font-family: Cinzel, "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif !important;
+  font-weight: 400 !important;
+  overflow-wrap: anywhere;
+}
+html:root:root body :is(.eyebrow, .kicker, .dialog-eyebrow, .dialog-kicker, .worksheet-kicker) {
+  font-family: Cinzel, "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif !important;
+  font-size: 55px !important;
+  font-weight: 400 !important;
+  line-height: 1.15 !important;
+  letter-spacing: .02em !important;
+  white-space: normal !important;
+  overflow-wrap: anywhere;
+}
+html:root:root body h1 {
+  font-size: 33px !important;
+  line-height: 1.2 !important;
+  white-space: normal !important;
+  overflow-wrap: anywhere;
+}
+html:root:root body h2,
+html:root:root body :is(.subtitle, .hero-subtitle, .hero-sub, .academy-comment),
+html:root:root body .hero .comment {
+  font-size: 24px !important;
+  line-height: 1.35 !important;
+  white-space: normal !important;
+  overflow-wrap: anywhere;
+}
+/* Do not replace responsive grids or fixed elements; prevent oversized titles from
+   demanding horizontal scrolling on narrow phone and tablet displays. */
+html:root:root body :is(.hero, .header, .page-header, .section-head, .lesson-header) {
+  min-width: 0;
+}
+@media print {
+  html:root:root body { font-size: 14px !important; }
+}
 </style>
-</head>
-<body data-math-assessment-blueprint="v1" data-assessment-runtime="single-owner-midterm">
-
-<a class="skip" href="#assessment">Skip to assessment</a>
-<nav class="breadcrumb"><a href="https://vervenveda.com/">Verve N Veda</a> › <a href="https://vervenveda.com/Khaemenes_High.github.io/">Khaemenes High</a> › <a href="../">Pre-Algebra</a> › Midterm</nav>
-
-<header class="hero"><div class="hero-inner">
-<p class="kicker">Units 01–07 · Mid-Course Assessment</p>
-<h1>Pre-Algebra Midterm Assessment</h1>
-<p class="subtitle">Mixed-evidence mastery across the first seven units</p>
-<p class="lead">56 selected-response questions plus 7 required constructed responses. Selected response contributes 70%; evaluator-reviewed reasoning contributes 30%.</p>
-<div class="hero-actions"><button class="btn primary" id="startButton" type="button">Start Midterm</button><button class="btn" id="printButton" type="button">Print Assessment</button><a class="btn" href="administration-guide.html">Administration Guide</a></div>
-</div></header>
-
-<div class="info-strip">
-<button type="button" data-info="mastery">Mastery Standard</button>
-<button type="button" data-info="evidence">Mixed Evidence</button>
-<button type="button" data-info="records">Attempts &amp; Records</button>
-</div>
-
-<main class="sheet" id="assessment">
-<section class="identity-row"><label>Name<input id="studentName" autocomplete="name"></label><label>Class / Period<input id="classPeriod"></label><label>Date<input id="assessmentDate"></label><label>Score<input id="scoreBox" readonly></label></section>
-<section class="objective-grid">
-<div class="objective"><strong>Learning Objective</strong><span>Demonstrate cumulative mastery across Units 01–07 using both selected-response evidence and written mathematical reasoning.</span></div>
-<div class="objective"><strong>Directions</strong><span>Complete all 56 selected-response items and all 7 constructed responses. Use the work spaces for calculations and verification. Full mastery requires evaluator review.</span></div>
-</section>
-
-<section class="assessment-panel">
-<div class="assessment-top"><div><h2>Selected-Response Assessment</h2><p>7 sections · 8 questions per unit · 56 total</p></div><div class="progress-wrap"><p class="progress-label" id="progressLabel">0/56 answered · 0/7 written complete</p><div class="progress"><span id="progressBar"></span></div></div></div>
-<nav class="section-nav" aria-label="Midterm sections">
-<button id="prevSection" type="button">← Previous</button>
-<button data-section="0" type="button">1–8</button><button data-section="1" type="button">9–16</button><button data-section="2" type="button">17–24</button><button data-section="3" type="button">25–32</button><button data-section="4" type="button">33–40</button><button data-section="5" type="button">41–48</button><button data-section="6" type="button">49–56</button>
-<button id="nextSection" type="button">Next →</button>
-</nav>
-
-<div id="questionList" class="question-list"></div>
-<nav class="bottom-section-nav" aria-label="Bottom question navigation"><button id="bottomPrevSection" type="button">← Previous</button><button id="bottomNextSection" type="button">Next →</button></nav>
-
-<section class="constructed" id="constructedSection" hidden>
-<h2>Constructed-Response Evidence</h2>
-<p class="constructed-intro">These seven responses are required evidence of reasoning, representation, verification, units, interpretation, and transfer. Each response needs at least 40 meaningful characters before submission.</p>
-<div id="constructedList" class="cr-list"></div>
-</section>
-
-<section class="results" id="results" hidden>
-<h2 id="resultTitle"></h2><p class="score" id="resultScore"></p><div class="breakdown" id="breakdown"></div>
-<div class="evaluator" id="evaluatorReview" hidden>
-<h3>Evaluator Review · Constructed Responses</h3>
-<p>Score each response from 0–4. Full mastery requires selected response ≥80%, constructed response ≥80%, and overall ≥80%.</p>
-<ul><li>4 · Complete and correct reasoning; representations, units, verification, and interpretation are explicit.</li><li>3 · Substantially correct reasoning with a minor omission or small non-conceptual error.</li><li>2 · Partial reasoning shows important understanding but contains a conceptual gap or incomplete verification.</li><li>1 · Limited relevant work; major misconceptions or unsupported conclusion remain.</li><li>0 · Blank, unrelated, or no assessable mathematical reasoning.</li></ul>
-<div class="evaluator-grid" id="evaluatorGrid"></div>
-<button class="btn dark" id="saveEvaluatorReview" type="button">Save Evaluator Review</button>
-<p id="evaluatorStatus"></p>
-</div>
-</section>
-
-<div class="assessment-actions">
-<button class="btn dark" id="submitButton" type="button">Submit Auto-Scored Work &amp; Reasoning</button>
-<button class="btn" id="saveButton" type="button">Save Draft</button>
-<button class="btn" id="exportButton" type="button">Export Result</button>
-<button class="btn" id="newAttemptButton" type="button">New Attempt</button>
-</div>
-<p id="status" role="status">Ready.</p>
-</section>
-</main>
-
-<dialog id="infoDialog"><div class="dialog-head"><h2 id="infoTitle"></h2></div><div class="dialog-body" id="infoBody"></div><div class="dialog-actions"><button class="btn dark" id="closeInfo" type="button">Close</button></div></dialog>
-<footer>Khaemenes Academy · Pre-Algebra · Midterm Units 01–07 · Mixed Evidence</footer>
-
-<script>
-const QUESTIONS=[{"unit":1,"domain":"Number sets","prompt":"Which set is the smallest set that contains −7?","options":["integers","whole numbers","natural numbers","irrational numbers"],"answer":0,"explanation":"Negative whole-number values are integers."},{"unit":1,"domain":"Prime factorization","prompt":"What is the prime factorization of 84?","options":["2·3²·7","2²·3·7","2²·5·7","2³·3·5"],"answer":1,"explanation":"84=4·21=2²·3·7."},{"unit":1,"domain":"Greatest common factor","prompt":"What is GCF(36,48)?","options":["6","18","12","144"],"answer":2,"explanation":"The greatest factor common to both numbers is 12."},{"unit":1,"domain":"Least common multiple","prompt":"What is LCM(12,18)?","options":["6","24","216","36"],"answer":3,"explanation":"36 is the smallest positive multiple shared by 12 and 18."},{"unit":1,"domain":"Order of operations","prompt":"Evaluate 18−3(4)+2.","options":["8","−4","14","62"],"answer":0,"explanation":"Multiply first: 18−12+2=8."},{"unit":1,"domain":"Roots and estimation","prompt":"Between which consecutive integers does √50 lie?","options":["6 and 7","7 and 8","8 and 9","24 and 25"],"answer":1,"explanation":"49\u003c50\u003c64, so 7\u003c√50\u003c8."},{"unit":1,"domain":"Estimation","prompt":"Which is the closest estimate of 398×21?","options":["800","4,200","8,400","84,000"],"answer":2,"explanation":"398≈400, and 400×21=8,400."},{"unit":1,"domain":"Divisibility","prompt":"Which number is divisible by both 6 and 9?","options":["24","48","45","54"],"answer":3,"explanation":"54÷6=9 and 54÷9=6."},{"unit":2,"domain":"Absolute value","prompt":"What is |−17|?","options":["17","−17","0","34"],"answer":0,"explanation":"Absolute value is distance from zero."},{"unit":2,"domain":"Ordering integers","prompt":"Which comparison is true?","options":["−6>−2","−6\u003c−2","−6=−2","|−6|\u003c|−2|"],"answer":1,"explanation":"On a number line, −6 lies left of −2."},{"unit":2,"domain":"Integer addition","prompt":"Evaluate −8+13.","options":["−21","−5","5","21"],"answer":2,"explanation":"Starting at −8 and moving 13 units right gives 5."},{"unit":2,"domain":"Integer subtraction","prompt":"Evaluate 7−(−4).","options":["3","−3","−11","11"],"answer":3,"explanation":"Subtracting a negative is adding: 7+4=11."},{"unit":2,"domain":"Integer multiplication","prompt":"Evaluate (−6)(−5).","options":["30","−30","11","−11"],"answer":0,"explanation":"The product of two negative numbers is positive."},{"unit":2,"domain":"Integer division","prompt":"Evaluate 42÷(−7).","options":["6","−6","−7","−49"],"answer":1,"explanation":"A positive divided by a negative is negative; 42÷7=6."},{"unit":2,"domain":"Signed change","prompt":"The temperature is −3°C and drops 8°C. What is the new temperature?","options":["5°C","−5°C","−11°C","11°C"],"answer":2,"explanation":"−3−8=−11."},{"unit":2,"domain":"Distance on a number line","prompt":"What is the distance between −9 and 4?","options":["5","−13","36","13"],"answer":3,"explanation":"Distance is |4−(−9)|=13."},{"unit":3,"domain":"Fraction-decimal conversion","prompt":"Write 3/4 as a decimal.","options":["0.75","0.34","0.43","1.33"],"answer":0,"explanation":"3÷4=0.75."},{"unit":3,"domain":"Decimal-fraction conversion","prompt":"Write 0.625 in simplest fractional form.","options":["625/10","5/8","3/5","8/5"],"answer":1,"explanation":"0.625=625/1000=5/8."},{"unit":3,"domain":"Fraction addition","prompt":"Evaluate 2/3+5/6.","options":["7/9","7/6","3/2","4/3"],"answer":2,"explanation":"2/3=4/6, so 4/6+5/6=9/6=3/2."},{"unit":3,"domain":"Fraction subtraction","prompt":"Evaluate 7/8−1/4.","options":["6/4","3/8","1/2","5/8"],"answer":3,"explanation":"1/4=2/8, so 7/8−2/8=5/8."},{"unit":3,"domain":"Fraction multiplication","prompt":"Evaluate (3/5)(10/9).","options":["2/3","30/14","6/5","3/2"],"answer":0,"explanation":"Cancel common factors: (3·10)/(5·9)=2/3."},{"unit":3,"domain":"Fraction division","prompt":"Evaluate 4/7÷2/3.","options":["8/21","6/7","2/7","7/6"],"answer":1,"explanation":"Multiply by the reciprocal: 4/7·3/2=6/7."},{"unit":3,"domain":"Decimal operations","prompt":"Evaluate −1.20+0.45.","options":["−1.65","0.75","−0.75","1.65"],"answer":2,"explanation":"The difference in magnitudes is 0.75 and the larger magnitude is negative."},{"unit":3,"domain":"Repeating decimals","prompt":"Which fraction equals 0.333…?","options":["3/10","33/100","1/30","1/3"],"answer":3,"explanation":"The repeating decimal 0.333… is exactly 1/3."},{"unit":4,"domain":"Ratios","prompt":"Simplify the ratio 12:18.","options":["2:3","3:2","3:4","4:5"],"answer":0,"explanation":"Divide both terms by their GCF, 6."},{"unit":4,"domain":"Unit rate","prompt":"A car travels 180 miles in 3 hours. What is the unit rate?","options":["540 miles per hour","60 miles per hour","90 miles per hour","177 miles per hour"],"answer":1,"explanation":"180÷3=60."},{"unit":4,"domain":"Proportions","prompt":"Solve x/8=15/20.","options":["x=4","x=12","x=6","x=24"],"answer":2,"explanation":"15/20=3/4, and 3/4 of 8 is 6."},{"unit":4,"domain":"Proportional cost","prompt":"Four notebooks cost $10. At the same rate, what do seven notebooks cost?","options":["$14.00","$20.00","$70.00","$17.50"],"answer":3,"explanation":"The unit price is $2.50; 7·$2.50=$17.50."},{"unit":4,"domain":"Scale drawings","prompt":"A map scale is 1 cm=5 km. What actual distance is represented by 3.6 cm?","options":["18 km","8.6 km","1.39 km","36 km"],"answer":0,"explanation":"3.6·5=18."},{"unit":4,"domain":"Constant of proportionality","prompt":"For y=3.5x, what is the constant of proportionality?","options":["x","3.5","y","0.35"],"answer":1,"explanation":"In y=kx, k is the constant of proportionality."},{"unit":4,"domain":"Proportional equation","prompt":"A quantity is 4.2 times x. Which equation represents it?","options":["y=x+4.2","y=4.2/x","y=4.2x","x=4.2y"],"answer":2,"explanation":"A proportional relationship has the form y=kx."},{"unit":4,"domain":"Nonproportional relationships","prompt":"Which relationship is not proportional?","options":["$4 per kilogram","y=7x","12 items cost $18 at a constant rate","A taxi fare of $3 plus $2 per mile"],"answer":3,"explanation":"The fixed $3 charge creates a nonzero starting value."},{"unit":5,"domain":"Percent of a number","prompt":"What is 35% of 240?","options":["84","68","105","8.4"],"answer":0,"explanation":"0.35·240=84."},{"unit":5,"domain":"Finding the whole","prompt":"72 is 30% of what number?","options":["21.6","240","102","2,400"],"answer":1,"explanation":"72÷0.30=240."},{"unit":5,"domain":"Percent increase","prompt":"A value rises from 80 to 100. What is the percent increase?","options":["20%","80%","25%","125%"],"answer":2,"explanation":"The increase is 20; 20/80=25%."},{"unit":5,"domain":"Discount","prompt":"A $60 item is discounted 15%. What is the sale price?","options":["$9.00","$45.00","$69.00","$51.00"],"answer":3,"explanation":"The discount is $9, so the price is $51."},{"unit":5,"domain":"Sales tax","prompt":"A $50 purchase has 7% sales tax. What is the total?","options":["$53.50","$3.50","$50.70","$57.00"],"answer":0,"explanation":"Tax is $3.50; total is $53.50."},{"unit":5,"domain":"Simple interest","prompt":"Find the simple interest on $500 at 4% per year for 3 years.","options":["$20","$60","$120","$560"],"answer":1,"explanation":"I=Prt=500·0.04·3=60."},{"unit":5,"domain":"Percentage points","prompt":"A rate changes from 42% to 47%. What is the change in percentage points?","options":["5% of 42","11 percentage points","5 percentage points","89 percentage points"],"answer":2,"explanation":"47−42=5 percentage points."},{"unit":5,"domain":"Markup","prompt":"An item costing $40 is marked up 25%. What is the selling price?","options":["$10","$45","$65","$50"],"answer":3,"explanation":"The markup is $10; $40+$10=$50."},{"unit":6,"domain":"Exponents","prompt":"Evaluate 2⁵.","options":["32","10","25","64"],"answer":0,"explanation":"2·2·2·2·2=32."},{"unit":6,"domain":"Even powers","prompt":"Evaluate (−3)⁴.","options":["−81","81","12","−12"],"answer":1,"explanation":"An even number of negative factors gives a positive result."},{"unit":6,"domain":"Product of powers","prompt":"Simplify x³·x⁵.","options":["x¹⁵","2x⁸","x⁸","x²"],"answer":2,"explanation":"Add exponents when multiplying powers with the same base."},{"unit":6,"domain":"Quotient of powers","prompt":"Simplify 10⁷÷10³.","options":["10¹⁰","10³","4¹⁰","10⁴"],"answer":3,"explanation":"Subtract exponents: 7−3=4."},{"unit":6,"domain":"Square roots","prompt":"Evaluate √196.","options":["14","13","98","392"],"answer":0,"explanation":"14²=196."},{"unit":6,"domain":"Cube roots","prompt":"Evaluate ∛125.","options":["25","5","15","−5"],"answer":1,"explanation":"5³=125."},{"unit":6,"domain":"Scientific notation","prompt":"Write 0.00072 in scientific notation.","options":["72×10⁻⁴","7.2×10⁴","7.2×10⁻⁴","0.72×10⁻⁴"],"answer":2,"explanation":"Move the decimal four places right, so the exponent is −4."},{"unit":6,"domain":"Scientific notation operations","prompt":"Evaluate (3×10⁵)(2×10⁻²).","options":["6×10⁷","5×10³","6×10⁻¹⁰","6×10³"],"answer":3,"explanation":"Multiply coefficients and add exponents: 3·2=6 and 5+(−2)=3."},{"unit":7,"domain":"Expression structure","prompt":"How many terms are in 5x−3y+7?","options":["3","2","4","15"],"answer":0,"explanation":"Terms are separated by addition or subtraction: 5x, −3y, and 7."},{"unit":7,"domain":"Coefficients","prompt":"What is the coefficient of a in −4a+9?","options":["4","−4","9","a"],"answer":1,"explanation":"The coefficient is the numerical factor multiplying a."},{"unit":7,"domain":"Translating expressions","prompt":"Which expression means “three less than twice n”?","options":["3−2n","2(n−3)","2n−3","3n−2"],"answer":2,"explanation":"Twice n is 2n; three less is 2n−3."},{"unit":7,"domain":"Evaluating expressions","prompt":"Evaluate 2x²−3 when x=−2.","options":["−11","1","13","5"],"answer":3,"explanation":"2(4)−3=5."},{"unit":7,"domain":"Combining like terms","prompt":"Simplify 7x−3x+5.","options":["4x+5","4x","10x+5","4x+2"],"answer":0,"explanation":"7x−3x=4x; the constant remains 5."},{"unit":7,"domain":"Distributive property","prompt":"Expand 3(2x−5).","options":["6x−5","6x−15","5x−15","6x+15"],"answer":1,"explanation":"Multiply each term by 3."},{"unit":7,"domain":"Factoring with GCF","prompt":"Factor 18x+24 using the greatest integer common factor.","options":["3(6x+4)","2(9x+8)","6(3x+4)","6(3x+24)"],"answer":2,"explanation":"The GCF of 18 and 24 is 6."},{"unit":7,"domain":"Equivalent expressions","prompt":"Simplify 4(x+2)−x.","options":["4x+2","3x+2","5x+8","3x+8"],"answer":3,"explanation":"Distribute and combine: 4x+8−x=3x+8."}];
-const DEPTH={"version":"2.0","title":"Midterm Constructed-Response Depth Evidence","selected_weight":70,"constructed_weight":30,"rubric_max":4,"response_min_chars":40,"rubric":["4 · Complete and correct reasoning; representations, units, verification, and interpretation are explicit.","3 · Substantially correct reasoning with a minor omission or small non-conceptual error.","2 · Partial reasoning shows important understanding but contains a conceptual gap or incomplete verification.","1 · Limited relevant work; major misconceptions or unsupported conclusion remain.","0 · Blank, unrelated, or no assessable mathematical reasoning."],"constructed":[{"domain":"Unit 1 · Number structure","prompt":"A community center has 84 red tiles and 126 blue tiles. It wants the greatest possible number of identical kits with no tiles left over. Determine the number of kits and the tiles of each color per kit. Show the factor or GCF reasoning and verify that your result uses every tile."},{"domain":"Unit 2 · Integers","prompt":"A research sensor begins at +18 m relative to sea level, descends 47 m, rises 12 m, and then descends 9 m. Model the signed changes, determine the final position, and explain how you can verify the direction and magnitude of the result."},{"domain":"Unit 3 · Rational numbers","prompt":"A recipe uses 3/4 cup of grain per batch. You need 2 1/2 batches, but your measuring cup is marked in eighths. Determine the amount needed, express it in at least two equivalent forms, and explain why your answer is reasonable."},{"domain":"Unit 4 · Proportional reasoning","prompt":"Plan A costs $18 for 6 units and Plan B costs $25 for 10 units. Compare the unit rates, decide which plan is less expensive per unit, and state one condition under which unit-rate comparison would not be sufficient for a real decision."},{"domain":"Unit 5 · Percent & finance","prompt":"An $80 item is discounted 25% and then taxed 7.5% on the sale price. Compute the final price. Show why applying the tax to the original price would be a modelling error, and estimate first to check reasonableness."},{"domain":"Unit 6 · Powers & scientific notation","prompt":"A quantity is 3.6×10^5 and another is 1.2×10^3. Determine how many times larger the first is than the second. Show the exponent reasoning, give the result in ordinary notation, and include an order-of-magnitude check."},{"domain":"Unit 7 · Algebraic structure","prompt":"A service charges a fixed $24 fee plus $7 per hour. Write an expression for h hours, evaluate it for 5.5 hours, then rewrite or explain the structure so another learner can identify the fixed amount and rate. Verify the units in your final interpretation."}]};
-const CONFIG={
- id:"KH-MATH-PA-MIDTERM-U01-U07",
- title:"Pre-Algebra Midterm Assessment",
- draft_key:"khaemenes-prealgebra-midterm-u01-u07-v2",
- legacy_draft_key:"khaemenes-prealgebra-midterm-u01-u07-v1",
- result_key:"khaemenes-prealgebra-midterm-result-v2",
- legacy_result_key:"khaemenes-prealgebra-midterm-result-v1",
- mastery_threshold:80,
- selected_weight:70,
- constructed_weight:30,
- page_size:8
-};
-let section=0;
-const $=sel=>document.querySelector(sel);
-const esc=v=>String(v??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","'":"&#39;"}[c]));
-
-function activeProfile(){try{const id=JSON.parse(localStorage.getItem("khaemenes_active_learner_v1")||"null");const registry=JSON.parse(localStorage.getItem("khaemenes_family_registry_v1")||"null");const learner=typeof id==="string"?registry?.learners?.[id]:null;return learner&&learner.learnerId===id?{learnerId:id,name:String(learner.nickname||"Learner")}:null}catch{return null}}
-function scopedKey(base){const p=activeProfile();return p?base+":learner:"+encodeURIComponent(p.learnerId):base}
-function readRaw(base){try{return localStorage.getItem(scopedKey(base))}catch{return null}}
-function readJSON(base,fallback={}){const S=window.KhaemenesMathStorageAdapter,key=scopedKey(base);if(S?.readJSON)return S.readJSON(key,fallback)??fallback;try{return JSON.parse(localStorage.getItem(key)||"null")??fallback}catch{return fallback}}
-function writeJSON(base,value){const S=window.KhaemenesMathStorageAdapter,key=scopedKey(base);if(S?.writeJSON)return S.writeJSON(key,value).persisted===true;try{const raw=JSON.stringify(value);localStorage.setItem(key,raw);return localStorage.getItem(key)===raw}catch{return false}}
-
-function legacyImport(){
- const current=readJSON(CONFIG.result_key,null);if(current)return;
- const legacy=readJSON(CONFIG.legacy_result_key,null);
- if(!legacy||typeof legacy!=="object")return;
- const wrapped={schema_version:"2.0",title:CONFIG.title,attempts:[{...legacy,imported_from:"khaemenes-prealgebra-midterm-result-v1",imported_at:new Date().toISOString()}],bestScore:Number(legacy.overall_percent??legacy.percent??0)||0,mastery:Boolean(legacy.mastery_met)};
- writeJSON(CONFIG.result_key,wrapped);
-}
-legacyImport();
-
-function loadDraft(){
- const d=readJSON(CONFIG.draft_key,null);
- if(d&&typeof d==="object")return{answers:d.answers||{},work:d.work||{},responses:d.responses||{},submitted:Boolean(d.submitted),begun_at:d.begun_at||new Date().toISOString()};
- const legacy=readJSON(CONFIG.legacy_draft_key,null);
- return{answers:legacy?.answers||{},work:{},responses:legacy?.responses||{},submitted:false,begun_at:new Date().toISOString()};
-}
-let draft=loadDraft();
-
-function saveDraft(message=true){
- const ok=writeJSON(CONFIG.draft_key,{answers:draft.answers,work:draft.work,responses:draft.responses,submitted:draft.submitted,begun_at:draft.begun_at,updated_at:new Date().toISOString()});
- if(message)$("#status").textContent=ok?"Draft saved and verified locally.":"Draft could not be verified. Keep the page open and export your work before leaving.";
- return ok;
-}
-function answeredCount(){return Object.keys(draft.answers).filter(k=>Number(k)>=0&&Number(k)<56).length}
-function completedConstructed(){return DEPTH.constructed.filter((_,i)=>String(draft.responses[i]||"").trim().length>=DEPTH.response_min_chars).length}
-function updateProgress(){const a=answeredCount(),c=completedConstructed();$("#progressLabel").textContent=a+"/56 answered · "+c+"/7 written complete";$("#progressBar").style.width=((a+c)/(56+7)*100)+"%"}
-
-function renderQuestions(){
- const start=section*8,end=Math.min(56,start+8),host=$("#questionList");host.innerHTML="";
- for(let i=start;i<end;i++){
-  const q=QUESTIONS[i],selected=draft.answers[i],work=draft.work[i]||"";
-  const art=document.createElement("article");art.className="question";
-  const feedback=draft.submitted?'<div class="feedback '+(Number(selected)===q.answer?'good':'bad')+'">'+(Number(selected)===q.answer?'Correct.':'Review. Correct answer: '+esc(q.options[q.answer])+'.')+' '+esc(q.explanation)+'</div>':"";
-  art.innerHTML='<div class="q-number"><span>'+(i+1)+'</span></div><div class="q-body"><p class="q-meta">Unit '+q.unit+' · '+esc(q.domain)+'</p><p class="q-prompt">'+esc(q.prompt)+'</p><div class="options">'+q.options.map((o,j)=>'<label class="option"><input type="radio" name="q'+i+'" value="'+j+'" '+(Number(selected)===j?'checked':'')+' '+(draft.submitted?'disabled':'')+'><span>'+esc(o)+'</span></label>').join("")+'</div><label class="work-label" for="work'+i+'">Show your work · ungraded workspace</label><textarea class="work" id="work'+i+'" data-work="'+i+'" '+(draft.submitted?'readonly':'')+'>'+esc(work)+'</textarea>'+feedback+'</div>';
-  host.append(art);
- }
- document.querySelectorAll("[data-section]").forEach(b=>b.classList.toggle("current",Number(b.dataset.section)===section));
- $("#prevSection").disabled=section===0;$("#nextSection").disabled=section===6;$("#bottomPrevSection").disabled=section===0;$("#bottomNextSection").textContent=section===6?"Constructed Responses ↓":"Next →";
- updateProgress();
-}
-function renderConstructed(){
- const host=$("#constructedList");host.innerHTML="";
- DEPTH.constructed.forEach((task,i)=>{
-  const value=draft.responses[i]||"",art=document.createElement("article");art.className="cr-item";
-  art.innerHTML='<h3>Response '+(i+1)+' · '+esc(task.domain)+'</h3><p>'+esc(task.prompt)+'</p><textarea data-response="'+i+'" '+(draft.submitted?'readonly':'')+'>'+esc(value)+'</textarea><p class="cr-count" id="crCount'+i+'">'+String(value).trim().length+' characters · minimum '+DEPTH.response_min_chars+'</p>';
-  host.append(art);
- });
-}
-function showConstructed(){renderConstructed();$("#constructedSection").hidden=false;$("#constructedSection").scrollIntoView({behavior:"smooth",block:"start"})}
-function goSection(n){if(n<0||n>6)return;section=n;renderQuestions();$("#assessment").scrollIntoView({behavior:"smooth",block:"start"})}
-
-function buildSelected(){
- let correct=0,by={};
- QUESTIONS.forEach((q,i)=>{const k="Unit "+q.unit;by[k]??={correct:0,total:0};by[k].total++;if(Number(draft.answers[i])===q.answer){correct++;by[k].correct++}});
- const percent=Math.round(correct/56*1000)/10;
- return{correct,total:56,percent,selected_response_percent:percent,section_scores:by};
-}
-function resultStore(){return readJSON(CONFIG.result_key,{schema_version:"2.0",title:CONFIG.title,attempts:[],bestScore:0,mastery:false})}
-function saveAttempt(result){
- const store=resultStore();store.attempts=Array.isArray(store.attempts)?store.attempts:[];
- store.attempts.push(result);
- store.bestScore=Math.max(Number(store.bestScore)||0,Number(result.overall_percent??result.selected_response_percent??0)||0);
- store.mastery=store.attempts.some(a=>a?.mastery_met===true);
- store.updated_at=new Date().toISOString();
- return writeJSON(CONFIG.result_key,store)?store:null;
-}
-function buildAttempt(){
- const s=buildSelected(),now=new Date().toISOString();
- return{
-  result_schema:"khaemenes-prealgebra-midterm-v2-mixed-evidence",
-  assessment_id:CONFIG.id,title:CONFIG.title,attempt_id:"pa-mid-"+Date.now()+"-"+Math.random().toString(36).slice(2,10),
-  learner_id:activeProfile()?.learnerId||null,learner:$("#studentName").value.trim()||activeProfile()?.name||"",
-  submitted_at:now,selected_response_percent:s.percent,correct:s.correct,total:s.total,section_scores:s.section_scores,
-  mastery_threshold:80,selected_response_mastery_met:s.percent>=80,
-  constructed_response:{version:DEPTH.version,count:7,responses:{...draft.responses},response_min_chars:DEPTH.response_min_chars,rubric_max:DEPTH.rubric_max,selected_weight:70,constructed_weight:30,evaluator_scores:null,percent:null,review_complete:false},
-  overall_percent:null,mastery_met:false,mastery_status:s.percent>=80?"pending-evaluator-review":"selected-response-review-required",
-  work_snapshot:{...draft.work},
-  trust:{classification:"browser-local-self-scored-plus-local-evaluator-review",authoritative:false,confidential:false,cryptographically_verified:false,digitally_signed:false,editable_storage:true,review_required:true}
- };
-}
-function submit(){
- if(answeredCount()!==56){const missing=QUESTIONS.findIndex((_,i)=>!Object.prototype.hasOwnProperty.call(draft.answers,String(i)));section=Math.floor(missing/8);renderQuestions();$("#status").textContent="Answer all 56 selected-response questions before submitting. First unanswered item: "+(missing+1)+".";return}
- if(completedConstructed()!==7){$("#status").textContent="Complete all 7 constructed responses with at least "+DEPTH.response_min_chars+" meaningful characters.";showConstructed();return}
- draft.submitted=true;if(!saveDraft(false)){draft.submitted=false;$("#status").textContent="Submission paused because the draft could not be verified.";return}
- const attempt=buildAttempt(),store=saveAttempt(attempt);if(!store){draft.submitted=false;saveDraft(false);$("#status").textContent="Midterm could not be saved. Export your work before leaving.";return}
- renderQuestions();renderConstructed();showResult(attempt);$("#status").textContent="Auto-scored portion saved. Evaluator review is required for full mastery.";
-}
-function showResult(r){
- $("#results").hidden=false;const selected=Number(r.selected_response_percent||0),reviewed=Boolean(r.constructed_response?.review_complete),display=reviewed?Number(r.overall_percent):selected;
- $("#resultScore").textContent=display+"%";
- $("#scoreBox").value=reviewed?display.toFixed(1)+"%":selected.toFixed(1)+"%";
- $("#resultTitle").textContent=reviewed?("Selected "+selected+"% · Constructed "+r.constructed_response.percent+"% · Overall "+r.overall_percent+"% · "+(r.mastery_met?"Mastery met":"Review required")):("Selected response "+selected+"% · Evaluator review pending");
- $("#breakdown").innerHTML=Object.entries(r.section_scores||{}).map(([k,v])=>'<p><strong>'+v.correct+'/'+v.total+'</strong><br>'+esc(k)+'</p>').join("");
- renderEvaluator(r);
-}
-function renderEvaluator(r){
- $("#evaluatorReview").hidden=false;const existing=r.constructed_response?.evaluator_scores||{};
- $("#evaluatorGrid").innerHTML=DEPTH.constructed.map((task,i)=>'<label class="eval-row"><span><strong>Response '+(i+1)+'</strong> · '+esc(task.domain)+'</span><input type="number" min="0" max="'+DEPTH.rubric_max+'" step="1" data-eval="'+i+'" value="'+(existing[i]??"")+'"></label>').join("");
- $("#evaluatorStatus").textContent=r.constructed_response?.review_complete?("Constructed "+r.constructed_response.percent+"% · Overall "+r.overall_percent+"% · "+(r.mastery_met?"Mastery met":"Review required")):"Evaluator review pending.";
- $("#saveEvaluatorReview").onclick=()=>saveEvaluatorReview(r);
-}
-function saveEvaluatorReview(r){
- const scores={};for(const input of document.querySelectorAll("[data-eval]")){const v=Number(input.value);if(!Number.isInteger(v)||v<0||v>DEPTH.rubric_max){$("#evaluatorStatus").textContent="Enter a whole-number score from 0 to "+DEPTH.rubric_max+" for every response.";return}scores[input.dataset.eval]=v}
- const total=Object.values(scores).reduce((a,b)=>a+b,0),constructedPct=Math.round(total/(7*DEPTH.rubric_max)*1000)/10,selected=Number(r.selected_response_percent||0),overall=Math.round((selected*70+constructedPct*30)/100*10)/10;
- r.constructed_response.evaluator_scores=scores;r.constructed_response.percent=constructedPct;r.constructed_response.review_complete=true;r.constructed_response.reviewed_at=new Date().toISOString();r.overall_percent=overall;r.mastery_met=selected>=80&&constructedPct>=80&&overall>=80;r.mastery_status=r.mastery_met?"mastery-met":"review-required";r.evaluator_review={completed:true,completed_at:new Date().toISOString(),local_unverified:true};
- const store=resultStore(),idx=store.attempts.findIndex(a=>a.attempt_id===r.attempt_id);if(idx>=0){store.attempts[idx]=r;store.bestScore=Math.max(Number(store.bestScore)||0,overall);store.mastery=store.attempts.some(a=>a?.mastery_met===true);if(!writeJSON(CONFIG.result_key,store)){$("#evaluatorStatus").textContent="Evaluator review could not be verified in storage. Export before leaving.";return}}
- showResult(r);
-}
-function newAttempt(){
- if(!confirm("Start a new midterm attempt? All prior scored attempts and evaluator reviews will remain preserved."))return;
- draft={answers:{},work:{},responses:{},submitted:false,begun_at:new Date().toISOString()};writeJSON(CONFIG.draft_key,draft);section=0;$("#results").hidden=true;$("#constructedSection").hidden=true;$("#scoreBox").value="";renderQuestions();$("#status").textContent="New attempt started. Prior evidence was preserved.";
-}
-function exportResult(){const payload={midterm_history:resultStore(),current_draft:{answers:draft.answers,work:draft.work,responses:draft.responses}};const blob=new Blob([JSON.stringify(payload,null,2)],{type:"application/json"}),url=URL.createObjectURL(blob),a=document.createElement("a");a.href=url;a.download="prealgebra-midterm-history.json";a.click();setTimeout(()=>URL.revokeObjectURL(url),500)}
-const info={
- mastery:{title:"Mastery Standard",body:"Full Pre-Algebra midterm mastery requires at least 80% on the selected-response portion, at least 80% on evaluator-reviewed constructed responses, and at least 80% overall."},
- evidence:{title:"Mixed Evidence",body:"The selected-response portion contributes 70% of the overall midterm result. Seven written reasoning tasks contribute 30% after local evaluator review using the 0–4 rubric."},
- records:{title:"Attempts & Records",body:"Every submitted attempt is preserved. Starting a new attempt never deletes earlier scores or evaluator reviews, and a later failed attempt cannot erase an earlier mastered result."}
-};
-$("#questionList").addEventListener("change",e=>{const input=e.target.closest('input[type="radio"]');if(!input||draft.submitted)return;const m=input.name.match(/^q(\d+)$/);if(!m)return;draft.answers[m[1]]=Number(input.value);saveDraft(false);updateProgress()});
-$("#questionList").addEventListener("input",e=>{const t=e.target.closest("[data-work]");if(!t||draft.submitted)return;draft.work[t.dataset.work]=t.value});
-$("#questionList").addEventListener("change",e=>{const t=e.target.closest("[data-work]");if(!t||draft.submitted)return;draft.work[t.dataset.work]=t.value;saveDraft(false)});
-$("#constructedList").addEventListener("input",e=>{const t=e.target.closest("[data-response]");if(!t||draft.submitted)return;draft.responses[t.dataset.response]=t.value;$("#crCount"+t.dataset.response).textContent=t.value.trim().length+" characters · minimum "+DEPTH.response_min_chars;saveDraft(false);updateProgress()});
-document.querySelectorAll("[data-section]").forEach(b=>b.onclick=()=>goSection(Number(b.dataset.section)));
-$("#prevSection").onclick=()=>goSection(section-1);$("#nextSection").onclick=()=>goSection(section+1);$("#bottomPrevSection").onclick=()=>goSection(section-1);$("#bottomNextSection").onclick=()=>section<6?goSection(section+1):showConstructed();
-$("#submitButton").onclick=submit;$("#saveButton").onclick=()=>saveDraft(true);$("#exportButton").onclick=exportResult;$("#newAttemptButton").onclick=newAttempt;$("#startButton").onclick=()=>{$("#assessment").scrollIntoView({behavior:"smooth"});setTimeout(()=>$("#questionList input")?.focus(),250)};$("#printButton").onclick=()=>window.print();
-document.querySelectorAll("[data-info]").forEach(b=>b.onclick=()=>{const item=info[b.dataset.info];$("#infoTitle").textContent=item.title;$("#infoBody").textContent=item.body;const d=$("#infoDialog");if(typeof d.showModal==="function")d.showModal();else d.setAttribute("open","")});$("#closeInfo").onclick=()=>$("#infoDialog").close();
-$("#assessmentDate").value=new Date().toLocaleDateString();
-renderQuestions();
-const store=resultStore();if(Array.isArray(store.attempts)&&store.attempts.length)showResult(store.attempts[store.attempts.length-1]);
-</script>
-
-<script src="../assets/math-learning-tools-v2.js" defer></script>
-<script src="https://vervenveda.com/assets/vnv-ecosystem-toolbar.js" defer></script>
-<script src="../../../assets/vnv-language.js?v=20261118-high-school-bounded-refresh-1" defer data-official-vnv-language="true"></script>
-</body>
-</html>
+  <script src="/Khaemenes_High.github.io/assets/high-school-global-chrome-v2.js" defer data-high-school-global-chrome="v2"></script>
+</head><body><a class="skip" href="#main">Skip to main content</a><header class="site-header"><div class="wrap header-inner"><a class="brand" href="index.html"><span class="brand-mark">K</span><span class="brand-copy"><strong>PRE-ALGEBRA ASSESSMENTS</strong><small>Units 01–07</small></span></a><div class="header-actions"><a class="nav-button" href="../">Course Home</a><button class="theme-button" id="themeToggle" type="button" aria-label="Toggle theme">◐</button></div></div></header><main id="main"><section class="hero"><div class="wrap"><p class="eyebrow">Units 01–07 · Mid-Course Record</p><h1>Pre-Algebra Midterm Assessment</h1><p class="lead">A 56-question cumulative assessment covering number systems, integers, rational numbers, ratios, percent, powers, roots, scientific notation, and algebraic expressions.</p><div class="actions no-print"><button class="btn" id="printButton" type="button">Print Assessment</button><a class="btn" href="administration-guide.html">Administration Guide</a></div></div></section><section><div class="wrap"><p class="notice"><strong>Definitive-answer standard:</strong> every scored item has exactly one mathematically or definitionally correct option. Equivalent forms, overlapping choices, and subjective “best answer” wording have been excluded.</p></div></section><section><div class="wrap exam-layout"><article class="card exam-main"><div id="questionHost"></div></article><aside class="card exam-side"><p class="eyebrow">Assessment record</p><p><strong>56 questions</strong><br>Suggested administration: 75–90 minutes, with a brief break permitted.</p><div class="progress-line"><span>Answered</span><strong id="progressLabel">0/56</strong></div><div class="progress-bar"><span id="progressBar"></span></div><p class="notice" id="status">Draft not yet saved.</p><div class="side-actions"><button class="btn primary" id="submitButton" type="button">Submit & Score</button><button class="btn" id="saveButton" type="button">Save Draft</button><button class="btn" id="exportButton" type="button">Export Result</button><button class="btn" id="resetButton" type="button">Reset</button></div></aside></div></section><section id="results" hidden><div class="wrap"><article class="card exam-main"><p class="eyebrow">Scored result</p><div class="result-score" id="resultScore"></div><h2 id="resultTitle"></h2><div class="breakdown" id="breakdown"></div><p class="notice">Keep the exported result, printed assessment, and representative work samples with the student portfolio. A course exam is useful evidence, but it does not replace any annual evaluation required by the student’s jurisdiction.</p></article></div></section></main><footer class="footer"><div class="wrap footer-inner"><span>KH-MATH-PA-MIDTERM-U01-U07</span><span>Local-only scoring · Printable · Exportable</span></div></footer><script>window.EXAM_CONFIG={"id":"KH-MATH-PA-MIDTERM-U01-U07","title":"Pre-Algebra Midterm Assessment","short_title":"Units 01–07","eyebrow":"Units 01–07 · Mid-Course Record","description":"A 56-question cumulative assessment covering number systems, integers, rational numbers, ratios, percent, powers, roots, scientific notation, and algebraic expressions.","duration":"Suggested administration: 75–90 minutes, with a brief break permitted.","question_count":56,"storage_key":"khaemenes-prealgebra-midterm-u01-u07-v1","result_key":"khaemenes-prealgebra-midterm-result-v1","export_name":"prealgebra-midterm-result.json","questions":[{"unit":1,"domain":"Number sets","prompt":"Which set is the smallest set that contains −7?","options":["integers","whole numbers","natural numbers","irrational numbers"],"answer":0,"explanation":"Negative whole-number values are integers."},{"unit":1,"domain":"Prime factorization","prompt":"What is the prime factorization of 84?","options":["2·3²·7","2²·3·7","2²·5·7","2³·3·5"],"answer":1,"explanation":"84=4·21=2²·3·7."},{"unit":1,"domain":"Greatest common factor","prompt":"What is GCF(36,48)?","options":["6","18","12","144"],"answer":2,"explanation":"The greatest factor common to both numbers is 12."},{"unit":1,"domain":"Least common multiple","prompt":"What is LCM(12,18)?","options":["6","24","216","36"],"answer":3,"explanation":"36 is the smallest positive multiple shared by 12 and 18."},{"unit":1,"domain":"Order of operations","prompt":"Evaluate 18−3(4)+2.","options":["8","−4","14","62"],"answer":0,"explanation":"Multiply first: 18−12+2=8."},{"unit":1,"domain":"Roots and estimation","prompt":"Between which consecutive integers does √50 lie?","options":["6 and 7","7 and 8","8 and 9","24 and 25"],"answer":1,"explanation":"49<50<64, so 7<√50<8."},{"unit":1,"domain":"Estimation","prompt":"Which is the closest estimate of 398×21?","options":["800","4,200","8,400","84,000"],"answer":2,"explanation":"398≈400, and 400×21=8,400."},{"unit":1,"domain":"Divisibility","prompt":"Which number is divisible by both 6 and 9?","options":["24","48","45","54"],"answer":3,"explanation":"54÷6=9 and 54÷9=6."},{"unit":2,"domain":"Absolute value","prompt":"What is |−17|?","options":["17","−17","0","34"],"answer":0,"explanation":"Absolute value is distance from zero."},{"unit":2,"domain":"Ordering integers","prompt":"Which comparison is true?","options":["−6>−2","−6<−2","−6=−2","|−6|<|−2|"],"answer":1,"explanation":"On a number line, −6 lies left of −2."},{"unit":2,"domain":"Integer addition","prompt":"Evaluate −8+13.","options":["−21","−5","5","21"],"answer":2,"explanation":"Starting at −8 and moving 13 units right gives 5."},{"unit":2,"domain":"Integer subtraction","prompt":"Evaluate 7−(−4).","options":["3","−3","−11","11"],"answer":3,"explanation":"Subtracting a negative is adding: 7+4=11."},{"unit":2,"domain":"Integer multiplication","prompt":"Evaluate (−6)(−5).","options":["30","−30","11","−11"],"answer":0,"explanation":"The product of two negative numbers is positive."},{"unit":2,"domain":"Integer division","prompt":"Evaluate 42÷(−7).","options":["6","−6","−7","−49"],"answer":1,"explanation":"A positive divided by a negative is negative; 42÷7=6."},{"unit":2,"domain":"Signed change","prompt":"The temperature is −3°C and drops 8°C. What is the new temperature?","options":["5°C","−5°C","−11°C","11°C"],"answer":2,"explanation":"−3−8=−11."},{"unit":2,"domain":"Distance on a number line","prompt":"What is the distance between −9 and 4?","options":["5","−13","36","13"],"answer":3,"explanation":"Distance is |4−(−9)|=13."},{"unit":3,"domain":"Fraction-decimal conversion","prompt":"Write 3/4 as a decimal.","options":["0.75","0.34","0.43","1.33"],"answer":0,"explanation":"3÷4=0.75."},{"unit":3,"domain":"Decimal-fraction conversion","prompt":"Write 0.625 in simplest fractional form.","options":["625/10","5/8","3/5","8/5"],"answer":1,"explanation":"0.625=625/1000=5/8."},{"unit":3,"domain":"Fraction addition","prompt":"Evaluate 2/3+5/6.","options":["7/9","7/6","3/2","4/3"],"answer":2,"explanation":"2/3=4/6, so 4/6+5/6=9/6=3/2."},{"unit":3,"domain":"Fraction subtraction","prompt":"Evaluate 7/8−1/4.","options":["6/4","3/8","1/2","5/8"],"answer":3,"explanation":"1/4=2/8, so 7/8−2/8=5/8."},{"unit":3,"domain":"Fraction multiplication","prompt":"Evaluate (3/5)(10/9).","options":["2/3","30/14","6/5","3/2"],"answer":0,"explanation":"Cancel common factors: (3·10)/(5·9)=2/3."},{"unit":3,"domain":"Fraction division","prompt":"Evaluate 4/7÷2/3.","options":["8/21","6/7","2/7","7/6"],"answer":1,"explanation":"Multiply by the reciprocal: 4/7·3/2=6/7."},{"unit":3,"domain":"Decimal operations","prompt":"Evaluate −1.20+0.45.","options":["−1.65","0.75","−0.75","1.65"],"answer":2,"explanation":"The difference in magnitudes is 0.75 and the larger magnitude is negative."},{"unit":3,"domain":"Repeating decimals","prompt":"Which fraction equals 0.333…?","options":["3/10","33/100","1/30","1/3"],"answer":3,"explanation":"The repeating decimal 0.333… is exactly 1/3."},{"unit":4,"domain":"Ratios","prompt":"Simplify the ratio 12:18.","options":["2:3","3:2","3:4","4:5"],"answer":0,"explanation":"Divide both terms by their GCF, 6."},{"unit":4,"domain":"Unit rate","prompt":"A car travels 180 miles in 3 hours. What is the unit rate?","options":["540 miles per hour","60 miles per hour","90 miles per hour","177 miles per hour"],"answer":1,"explanation":"180÷3=60."},{"unit":4,"domain":"Proportions","prompt":"Solve x/8=15/20.","options":["x=4","x=12","x=6","x=24"],"answer":2,"explanation":"15/20=3/4, and 3/4 of 8 is 6."},{"unit":4,"domain":"Proportional cost","prompt":"Four notebooks cost $10. At the same rate, what do seven notebooks cost?","options":["$14.00","$20.00","$70.00","$17.50"],"answer":3,"explanation":"The unit price is $2.50; 7·$2.50=$17.50."},{"unit":4,"domain":"Scale drawings","prompt":"A map scale is 1 cm=5 km. What actual distance is represented by 3.6 cm?","options":["18 km","8.6 km","1.39 km","36 km"],"answer":0,"explanation":"3.6·5=18."},{"unit":4,"domain":"Constant of proportionality","prompt":"For y=3.5x, what is the constant of proportionality?","options":["x","3.5","y","0.35"],"answer":1,"explanation":"In y=kx, k is the constant of proportionality."},{"unit":4,"domain":"Proportional equation","prompt":"A quantity is 4.2 times x. Which equation represents it?","options":["y=x+4.2","y=4.2/x","y=4.2x","x=4.2y"],"answer":2,"explanation":"A proportional relationship has the form y=kx."},{"unit":4,"domain":"Nonproportional relationships","prompt":"Which relationship is not proportional?","options":["$4 per kilogram","y=7x","12 items cost $18 at a constant rate","A taxi fare of $3 plus $2 per mile"],"answer":3,"explanation":"The fixed $3 charge creates a nonzero starting value."},{"unit":5,"domain":"Percent of a number","prompt":"What is 35% of 240?","options":["84","68","105","8.4"],"answer":0,"explanation":"0.35·240=84."},{"unit":5,"domain":"Finding the whole","prompt":"72 is 30% of what number?","options":["21.6","240","102","2,400"],"answer":1,"explanation":"72÷0.30=240."},{"unit":5,"domain":"Percent increase","prompt":"A value rises from 80 to 100. What is the percent increase?","options":["20%","80%","25%","125%"],"answer":2,"explanation":"The increase is 20; 20/80=25%."},{"unit":5,"domain":"Discount","prompt":"A $60 item is discounted 15%. What is the sale price?","options":["$9.00","$45.00","$69.00","$51.00"],"answer":3,"explanation":"The discount is $9, so the price is $51."},{"unit":5,"domain":"Sales tax","prompt":"A $50 purchase has 7% sales tax. What is the total?","options":["$53.50","$3.50","$50.70","$57.00"],"answer":0,"explanation":"Tax is $3.50; total is $53.50."},{"unit":5,"domain":"Simple interest","prompt":"Find the simple interest on $500 at 4% per year for 3 years.","options":["$20","$60","$120","$560"],"answer":1,"explanation":"I=Prt=500·0.04·3=60."},{"unit":5,"domain":"Percentage points","prompt":"A rate changes from 42% to 47%. What is the change in percentage points?","options":["5% of 42","11 percentage points","5 percentage points","89 percentage points"],"answer":2,"explanation":"47−42=5 percentage points."},{"unit":5,"domain":"Markup","prompt":"An item costing $40 is marked up 25%. What is the selling price?","options":["$10","$45","$65","$50"],"answer":3,"explanation":"The markup is $10; $40+$10=$50."},{"unit":6,"domain":"Exponents","prompt":"Evaluate 2⁵.","options":["32","10","25","64"],"answer":0,"explanation":"2·2·2·2·2=32."},{"unit":6,"domain":"Even powers","prompt":"Evaluate (−3)⁴.","options":["−81","81","12","−12"],"answer":1,"explanation":"An even number of negative factors gives a positive result."},{"unit":6,"domain":"Product of powers","prompt":"Simplify x³·x⁵.","options":["x¹⁵","2x⁸","x⁸","x²"],"answer":2,"explanation":"Add exponents when multiplying powers with the same base."},{"unit":6,"domain":"Quotient of powers","prompt":"Simplify 10⁷÷10³.","options":["10¹⁰","10³","4¹⁰","10⁴"],"answer":3,"explanation":"Subtract exponents: 7−3=4."},{"unit":6,"domain":"Square roots","prompt":"Evaluate √196.","options":["14","13","98","392"],"answer":0,"explanation":"14²=196."},{"unit":6,"domain":"Cube roots","prompt":"Evaluate ∛125.","options":["25","5","15","−5"],"answer":1,"explanation":"5³=125."},{"unit":6,"domain":"Scientific notation","prompt":"Write 0.00072 in scientific notation.","options":["72×10⁻⁴","7.2×10⁴","7.2×10⁻⁴","0.72×10⁻⁴"],"answer":2,"explanation":"Move the decimal four places right, so the exponent is −4."},{"unit":6,"domain":"Scientific notation operations","prompt":"Evaluate (3×10⁵)(2×10⁻²).","options":["6×10⁷","5×10³","6×10⁻¹⁰","6×10³"],"answer":3,"explanation":"Multiply coefficients and add exponents: 3·2=6 and 5+(−2)=3."},{"unit":7,"domain":"Expression structure","prompt":"How many terms are in 5x−3y+7?","options":["3","2","4","15"],"answer":0,"explanation":"Terms are separated by addition or subtraction: 5x, −3y, and 7."},{"unit":7,"domain":"Coefficients","prompt":"What is the coefficient of a in −4a+9?","options":["4","−4","9","a"],"answer":1,"explanation":"The coefficient is the numerical factor multiplying a."},{"unit":7,"domain":"Translating expressions","prompt":"Which expression means “three less than twice n”?","options":["3−2n","2(n−3)","2n−3","3n−2"],"answer":2,"explanation":"Twice n is 2n; three less is 2n−3."},{"unit":7,"domain":"Evaluating expressions","prompt":"Evaluate 2x²−3 when x=−2.","options":["−11","1","13","5"],"answer":3,"explanation":"2(4)−3=5."},{"unit":7,"domain":"Combining like terms","prompt":"Simplify 7x−3x+5.","options":["4x+5","4x","10x+5","4x+2"],"answer":0,"explanation":"7x−3x=4x; the constant remains 5."},{"unit":7,"domain":"Distributive property","prompt":"Expand 3(2x−5).","options":["6x−5","6x−15","5x−15","6x+15"],"answer":1,"explanation":"Multiply each term by 3."},{"unit":7,"domain":"Factoring with GCF","prompt":"Factor 18x+24 using the greatest integer common factor.","options":["3(6x+4)","2(9x+8)","6(3x+4)","6(3x+24)"],"answer":2,"explanation":"The GCF of 18 and 24 is 6."},{"unit":7,"domain":"Equivalent expressions","prompt":"Simplify 4(x+2)−x.","options":["4x+2","3x+2","5x+8","3x+8"],"answer":3,"explanation":"Distribute and combine: 4x+8−x=3x+8."}],"mastery_threshold":80,"mastery_note":"80% or higher meets the Academy midterm mastery standard. A lower score identifies material to review; it does not erase completed unit evidence."};</script><script src="assets/exam-engine.js"></script></body></html>
