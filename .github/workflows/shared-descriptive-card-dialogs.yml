@@ -1,0 +1,50 @@
+name: Shared Descriptive Card Dialogs
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'courses/mathematics/pre-algebra/index.html'
+      - 'courses/mathematics/algebra-1/index.html'
+      - 'courses/mathematics/geometry/index.html'
+      - 'courses/mathematics/algebra-2/index.html'
+      - 'courses/language-arts/english-9/index.html'
+      - 'courses/language-arts/english-10/index.html'
+      - 'courses/language-arts/english-11/index.html'
+      - 'courses/language-arts/english-12/index.html'
+      - 'courses/social-studies/grade-09/index.html'
+      - 'courses/social-studies/grade-10/index.html'
+      - 'courses/social-studies/grade-11/index.html'
+      - 'courses/social-studies/grade-12/index.html'
+      - 'courses/science/integrated-science-9/index.html'
+      - 'courses/science/biology-10/index.html'
+      - 'courses/science/chemistry-11/index.html'
+      - 'courses/science/physics-engineering-12/index.html'
+      - 'electives/psychology/index.html'
+      - 'tools/validate-shared-descriptive-card-dialogs.mjs'
+      - '.github/workflows/shared-descriptive-card-dialogs.yml'
+  pull_request:
+    paths:
+      - 'courses/mathematics/**/index.html'
+      - 'courses/language-arts/english-*/index.html'
+      - 'courses/social-studies/grade-*/index.html'
+      - 'courses/science/*/index.html'
+      - 'electives/psychology/index.html'
+      - 'tools/validate-shared-descriptive-card-dialogs.mjs'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Validate shared descriptive-card rollout
+        run: node tools/validate-shared-descriptive-card-dialogs.mjs
+      - name: Validate patch formatting
+        run: git diff --check
