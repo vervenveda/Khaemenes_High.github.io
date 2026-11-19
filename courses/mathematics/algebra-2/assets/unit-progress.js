@@ -20,7 +20,14 @@ else if(current){
  const script=document.createElement("script");
  script.src=new URL("./algebra2-progression.js",current.src).href;
  script.onload=run;
- script.onerror=()=>{const main=document.querySelector("main");if(main)main.innerHTML='<section class="unit-hero"><div class="wrap"><p class="eyebrow">Progression check unavailable</p><h1>Unit paused</h1><p>Refresh this page before continuing; the local progression check could not be loaded.</p></div></section>'};
+ script.onerror=()=>{
+  const main=document.querySelector("main");if(!main)return;
+  main.querySelectorAll('a[href*="lessons/"],a[href*="assessment/mastery-check.html"]').forEach(link=>{link.dataset.progressionRecoveryLocked="true";link.removeAttribute("href");link.setAttribute("aria-disabled","true");link.style.opacity=".55";link.style.pointerEvents="none"});
+  if(document.getElementById("algebra2UnitProgressionRecovery"))return;
+  const banner=document.createElement("section");banner.id="algebra2UnitProgressionRecovery";banner.setAttribute("role","alert");banner.className="notice";
+  banner.innerHTML='<p class="eyebrow">Progression check unavailable</p><h2>Unit remains available in read-only mode</h2><p>Lesson and mastery navigation is paused until the local progression authority loads. Reading, review, and printing remain available; no progression credit is granted in this state.</p><button class="btn" type="button" id="algebra2UnitProgressionRetry">Retry verification</button>';
+  main.prepend(banner);document.getElementById("algebra2UnitProgressionRetry")?.addEventListener("click",()=>location.reload());
+ };
  document.head.appendChild(script);
 }else run();
 })();
