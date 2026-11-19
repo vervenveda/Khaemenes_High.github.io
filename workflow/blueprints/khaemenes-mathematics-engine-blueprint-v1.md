@@ -319,6 +319,8 @@ The live lesson and assessment environments belong to the same visual family.
 - minimum readable text: 16px;
 - body preferred: 18px;
 - 7px control/card radius;
+- 3px contrast borders on cards, controls, text boxes, and mathematical work surfaces using approved palette colors;
+- grouped grids use even column counts at full/tablet widths and collapse to one column only when needed for small screens;
 - one-column mathematical reading flow unless the mathematics itself requires a paired representation;
 - generous whitespace;
 - no decorative clutter competing with mathematical work.
