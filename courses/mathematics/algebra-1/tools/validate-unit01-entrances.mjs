@@ -6,6 +6,7 @@ import assert from 'node:assert/strict';
 import vm from 'node:vm';
 const root='courses/mathematics/algebra-1/units/unit-01';
 const dir=path.join(root,'lessons');
+const resolveLocal=ref=>ref.startsWith('/Khaemenes_High.github.io/')?path.resolve(process.cwd(),ref.slice('/Khaemenes_High.github.io/'.length)):path.resolve(dir,ref);
 const pages=fs.readdirSync(dir).filter(f=>/^lesson-\d\d-.*\.html$/.test(f)).sort();
 assert.equal(pages.length,6,'Unit 01 must expose exactly six named lesson pages');
 const required=[
@@ -27,12 +28,12 @@ for(let n=1;n<=6;n++){
  for(const match of html.matchAll(/<(?:script|link)\b[^>]*(?:src|href)="([^"]+)"/gi)){
   const ref=match[1].split(/[?#]/)[0];
   if(!ref||/^(?:https?:|data:|\/\/|#)/i.test(ref))continue;
-  const resolved=path.resolve(dir,ref);
+  const resolved=resolveLocal(ref);
   assert.ok(fs.existsSync(resolved),name+': missing local dependency '+ref);
  }
  for(const src of scriptSrc){
   if(!src.endsWith('.js'))continue;
-  const absolute=path.resolve(dir,src);
+  const absolute=resolveLocal(src);
   if(fs.existsSync(absolute))new vm.Script(fs.readFileSync(absolute,'utf8'),{filename:absolute});
  }
 }
