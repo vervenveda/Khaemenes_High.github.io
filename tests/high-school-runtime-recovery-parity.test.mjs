@@ -445,3 +445,26 @@ test("Algebra I midterm uses the mixed-evidence single-owner blueprint",()=>{
  assert.match(page,/attempt_history/);
  assert.match(page,/Earlier evidence was preserved/);
 });
+
+
+test("Geometry midterm uses the mixed-evidence single-owner blueprint",()=>{
+ const page=read("courses/mathematics/geometry/assessments/midterm.html");
+ assert.match(page,/data-math-assessment-blueprint="v1"/);
+ assert.match(page,/data-assessment-runtime="single-owner-midterm"/);
+ assert.doesNotMatch(page,/assessment-engine\.js|src="\.\.\/assets\/question-bank\.js"|exam-depth-v2\.js|course-entry-contract\.js|learner-scope-v1\.js/);
+ assert.doesNotMatch(page,/new\s+MutationObserver|setInterval\s*\(/);
+ assert.equal((page.match(/data-section="/g)||[]).length,6);
+ assert.equal((page.match(/class="bottom-section-nav"/g)||[]).length,1);
+ assert.equal((page.match(/id="submitButton"/g)||[]).length,1);
+ assert.match(page,/result_key:"khaemenes-geometry-assessment-records-v1"/);
+ assert.match(page,/selected_weight":70/);
+ assert.match(page,/constructed_weight":30/);
+ assert.match(page,/response_min_chars":60/);
+ assert.match(page,/selected>=80&&constructedPct>=80&&overall>=80/);
+ assert.match(page,/for\(let u=1;u<=6;u\+\+\)/);
+ assert.match(page,/for\(let w=1;w<=18;w\+\+\)/);
+ assert.match(page,/previous_form_overlap/);
+ assert.match(page,/question_ids:draft\.question_ids/);
+ assert.match(page,/schema:"khaemenes-geometry-evaluator-review-v1"/);
+ assert.match(page,/Earlier evidence was preserved/);
+});
