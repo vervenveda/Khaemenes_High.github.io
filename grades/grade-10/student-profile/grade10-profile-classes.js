@@ -27,7 +27,7 @@ function render(){
   const heading=create("h3",slot.label),course=create("p",slot.title);
   card.append(heading,course);
   if(typeof slot.href==="string"&&/^https:\/\//i.test(slot.href)){
-   const learner=context?.active?.();const snaps=learner?.learnerId&&continuation?.readLearner?.(learner.learnerId)||[];const snap=snaps.find(x=>x?.courseId===slot.id);const route=snap?.nextHref||slot.href;
+   const learner=context?.active?.();const snaps=learner?.learnerId&&continuation?.readLearner?.(learner.learnerId)||[];const snap=snaps.find(x=>x?.courseId===slot.id);const route=snap?.nextHref||slot.firstStepHref||slot.href;
    const link=create("a",snap?.stale?"Refresh Class":snap?.status==="corrections"?"Review Corrections":snap?.nextLabel||"Continue Class");link.href=route;link.title=snap?.nextTitle||snap?.summary||"Continue this class";
    card.append(link);
   }else{
