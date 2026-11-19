@@ -1,69 +1,652 @@
 <!doctype html>
-<html lang="en" data-theme="dark">
+<html lang="en">
 <head>
-<script src="../../../../../shared/course-entry-contract.js?v=20261012"></script>
-<script src="../../../../../shared/learner-scope-v1.js?v=20261012" data-learner-scope="algebra-2"></script>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#090b10"><meta name="color-scheme" content="dark light"><title>Unit 01 Mastery Check · Khaemenes Algebra II</title><link rel="stylesheet" href="../../../assets/styles.css"><style id="khaemenes-typography-standard">
-/* Khaemenes High presentation typography · 55 / 33 / 24 / 14 px.
-   All public pages receive this local, embedded policy for offline use.
-   Only presentation changes. Existing grids, gates, learner records, assessments and STOS are preserved.
-   Font names are optional installed system fonts; no downloads or third-party font services. */
-html:root:root body {
-  font-family: "Brandon Grotesque", "Avenir Next", Avenir, "Segoe UI", Arial, sans-serif !important;
-  font-size: 14px !important;
-  font-weight: 400 !important;
-  line-height: 1.65 !important;
-  -webkit-text-size-adjust: 100%;
-  overflow-wrap: break-word;
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#242c29">
+<title>Algebra II Unit 01 Mastery Check · Khaemenes Academy</title>
+
+<script src="/Khaemenes_High.github.io/assets/high-school-global-chrome-v2.js" defer data-high-school-global-chrome="v2"></script>
+<script src="/Khaemenes_High.github.io/courses/mathematics/algebra-2/assets/algebra2-worker-recovery-v1.js" defer data-algebra2-worker-recovery="v1"></script>
+
+<style id="algebra1-diagnostic-clean-v1">
+:root{
+  --charcoal:#242c29;
+  --charcoal-2:#303936;
+  --cream:#fff8eb;
+  --parchment:#f6efe2;
+  --paper:#fffdf8;
+  --ink:#242624;
+  --muted:#655f55;
+  --gold:#b48b45;
+  --gold-soft:#d8c59f;
+  --line:#d9cdb8;
+  --green:#365b49;
+  --rose:#8f4e4e;
+  --radius:7px;
+  --max:1100px;
 }
-html:root:root body :is(button, input, select, textarea) {
-  font-family: "Brandon Grotesque", "Avenir Next", Avenir, "Segoe UI", Arial, sans-serif !important;
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:120px}
+body{
+  margin:0;
+  min-width:300px;
+  background:var(--parchment);
+  color:var(--ink);
+  font:400 16px/1.6 "Brandon Grotesque","Avenir Next",Avenir,"Segoe UI",Arial,sans-serif;
+  -webkit-font-smoothing:antialiased;
 }
-html:root:root body :is(h1, h2, h3, h4, h5, h6, .page-title, .hero-title, .brand-title, .display-title, .site-title) {
-  font-family: Cinzel, "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif !important;
-  font-weight: 400 !important;
-  overflow-wrap: anywhere;
+button,input,textarea{font:inherit}
+button{cursor:pointer}
+a{color:inherit}
+.wrap{width:min(calc(100% - 28px),var(--max));margin-inline:auto}
+.skip{position:fixed;left:12px;top:-80px;z-index:9999;padding:10px 14px;border-radius:var(--radius);background:#111;color:white}
+.skip:focus{top:12px}
+.breadcrumb{
+  width:min(calc(100% - 28px),var(--max));
+  margin:12px auto;
+  color:#6d6558;
+  font-size:16px;
+  text-align:center;
 }
-html:root:root body :is(.eyebrow, .kicker, .dialog-eyebrow, .dialog-kicker, .worksheet-kicker) {
-  font-family: Cinzel, "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif !important;
-  font-size: 55px !important;
-  font-weight: 400 !important;
-  line-height: 1.15 !important;
-  letter-spacing: .02em !important;
-  white-space: normal !important;
-  overflow-wrap: anywhere;
+.breadcrumb a{text-decoration:none}
+.breadcrumb a:hover{text-decoration:underline}
+
+.hero{
+  background:var(--charcoal);
+  color:var(--cream);
+  border-top:1px solid rgba(180,139,69,.65);
+  border-bottom:4px solid var(--gold);
+  padding:44px 18px 38px;
+  text-align:center;
 }
-html:root:root body h1 {
-  font-size: 33px !important;
-  line-height: 1.2 !important;
-  white-space: normal !important;
-  overflow-wrap: anywhere;
+.hero-inner{width:min(calc(100% - 20px),960px);margin:auto}
+.hero .kicker{
+  margin:0 0 8px;
+  color:#ead9b7;
+  font:400 16px/1.35 Cinzel,Georgia,serif;
+  letter-spacing:.08em;
+  text-transform:uppercase;
 }
-html:root:root body h2,
-html:root:root body :is(.subtitle, .hero-subtitle, .hero-sub, .academy-comment),
-html:root:root body .hero .comment {
-  font-size: 24px !important;
-  line-height: 1.35 !important;
-  white-space: normal !important;
-  overflow-wrap: anywhere;
+.hero h1{
+  margin:0;
+  color:var(--cream);
+  font:400 clamp(33px,5vw,55px)/1.12 Cinzel,Georgia,serif;
 }
-/* Do not replace responsive grids or fixed elements; prevent oversized titles from
-   demanding horizontal scrolling on narrow phone and tablet displays. */
-html:root:root body :is(.hero, .header, .page-header, .section-head, .lesson-header) {
-  min-width: 0;
+.hero .subtitle{
+  margin:10px auto 0;
+  max-width:760px;
+  color:#f3e8d2;
+  font:400 24px/1.4 Cinzel,Georgia,serif;
 }
-@media print {
-  html:root:root body { font-size: 14px !important; }
+.hero .lead{
+  max-width:780px;
+  margin:18px auto 0;
+  color:#f0e7d7;
+  font-size:18px;
+}
+.hero-actions{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;margin-top:24px}
+.btn{
+  min-height:44px;
+  border:1px solid var(--gold);
+  border-radius:var(--radius);
+  padding:10px 16px;
+  background:var(--paper);
+  color:var(--charcoal);
+  text-decoration:none;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:6px;
+}
+.btn.primary{background:var(--gold);color:#181b19;border-color:var(--gold)}
+.btn.dark{background:var(--charcoal);color:var(--cream);border-color:var(--charcoal)}
+.btn:hover{filter:brightness(.98);transform:translateY(-1px)}
+.btn:focus-visible,input:focus-visible,textarea:focus-visible{outline:3px solid #d6ad59;outline-offset:2px}
+
+.info-strip{
+  width:min(calc(100% - 28px),960px);
+  margin:18px auto 0;
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:11px;
+}
+.info-strip button{
+  min-height:55px;
+  border:1px solid var(--gold);
+  border-radius:var(--radius);
+  background:var(--charcoal);
+  color:var(--cream);
+  padding:10px 14px;
+  font:400 16px/1.3 Cinzel,Georgia,serif;
+}
+.info-strip button:hover{background:var(--charcoal-2)}
+
+.sheet{
+  width:min(calc(100% - 28px),var(--max));
+  margin:26px auto 44px;
+}
+.identity-row{
+  display:grid;
+  grid-template-columns:1.4fr 1fr 1fr .8fr;
+  gap:10px;
+  padding:14px;
+  border:1px solid var(--line);
+  border-radius:var(--radius);
+  background:#fbf5ea;
+}
+.identity-row label{display:grid;gap:5px;color:#494238}
+.identity-row input{
+  min-height:44px;
+  width:100%;
+  border:1px solid #bcae98;
+  border-radius:var(--radius);
+  background:white;
+  padding:8px 10px;
+  color:var(--ink);
+}
+.objective-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:16px 0}
+.objective{
+  display:grid;
+  grid-template-columns:auto 1fr;
+  align-items:stretch;
+  border:1px solid var(--line);
+  border-radius:var(--radius);
+  overflow:hidden;
+  background:var(--paper);
+}
+.objective strong{
+  min-width:145px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:12px;
+  background:linear-gradient(135deg,#8c6427,#c49a50);
+  color:#fffaf0;
+  font:400 16px/1.25 Cinzel,Georgia,serif;
+  text-align:center;
+}
+.objective span{padding:12px 14px;display:flex;align-items:center}
+
+.assessment-panel{
+  margin-top:18px;
+  border:1px solid var(--line);
+  border-radius:var(--radius);
+  background:var(--paper);
+  box-shadow:0 12px 30px rgba(55,45,25,.08);
+  overflow:hidden;
+}
+.assessment-top{
+  display:grid;
+  grid-template-columns:1fr auto;
+  gap:14px;
+  align-items:center;
+  padding:16px 18px;
+  border-bottom:1px solid var(--line);
+  background:#fbf7ef;
+}
+.assessment-top h2{margin:0;font:400 24px/1.3 Cinzel,Georgia,serif}
+.assessment-top p{margin:4px 0 0;color:var(--muted)}
+.progress-wrap{min-width:240px}
+.progress-label{margin:0 0 6px!important;text-align:right;color:var(--muted)}
+.progress{height:10px;border:1px solid #b9a988;border-radius:999px;background:white;overflow:hidden}
+.progress span{display:block;height:100%;width:0;background:linear-gradient(90deg,#8c6427,#c49a50)}
+.section-nav{
+  display:grid;
+  grid-template-columns:auto repeat(3,minmax(0,1fr)) auto;
+  gap:8px;
+  align-items:center;
+  padding:12px 16px;
+  border-bottom:1px solid var(--line);
+  background:#efe5d4;
+}
+.section-nav button{min-height:44px;border:1px solid #a89373;border-radius:var(--radius);background:#fffaf1;color:#29312d;padding:8px 10px}
+.section-nav button.current{background:var(--charcoal);color:var(--cream);border-color:var(--charcoal)}
+.section-nav button:disabled{opacity:.45;cursor:default}
+
+.question-list{display:grid;gap:14px;padding:18px}
+.question{
+  display:grid;
+  grid-template-columns:52px 1fr;
+  border:1px solid #c9bda9;
+  border-left:4px solid var(--gold);
+  border-radius:var(--radius);
+  background:#fffefb;
+  overflow:hidden;
+}
+.q-number{
+  display:flex;
+  align-items:flex-start;
+  justify-content:center;
+  padding-top:16px;
+}
+.q-number span{
+  width:38px;height:38px;border-radius:7px;
+  display:grid;place-items:center;
+  background:linear-gradient(180deg,#3a3f3d,#222725);
+  color:white;
+  font:400 20px/1 Cinzel,Georgia,serif;
+}
+.q-body{padding:14px 16px 16px 0}
+.q-prompt{margin:0 0 12px;font:400 18px/1.5 Georgia,"Times New Roman",serif;color:#202421}
+.options{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+.option{
+  display:flex;align-items:flex-start;gap:9px;
+  min-height:48px;
+  padding:10px 12px;
+  border:1px solid #d8cdb7;
+  border-radius:var(--radius);
+  background:#faf6ed;
+  cursor:pointer;
+}
+.option:hover{border-color:#b48b45;background:#fffaf0}
+.option input{margin-top:4px;accent-color:#7f5d25}
+.work-label{display:block;margin:12px 0 6px;color:#554d42}
+.work{
+  width:100%;
+  min-height:88px;
+  resize:vertical;
+  border:1px solid #cbbfae;
+  border-radius:var(--radius);
+  padding:10px 12px;
+  background:white;
+  color:var(--ink);
+}
+.feedback{
+  margin-top:10px;
+  padding:10px 12px;
+  border-left:4px solid #7a6f5d;
+  border-radius:var(--radius);
+  background:#f7f1e6;
+}
+.feedback.good{border-color:var(--green);background:#eef5f1}
+.feedback.bad{border-color:var(--rose);background:#f8eeee}.notice{margin:16px 18px;padding:14px 16px;border:1px solid var(--gold-soft);border-left:4px solid var(--gold);border-radius:var(--radius);background:#fffaf1}.notice[hidden]{display:none}
+
+.bottom-section-nav{display:flex;justify-content:space-between;gap:12px;padding:0 18px 18px}.bottom-section-nav button{min-height:48px;min-width:150px;border:1px solid var(--charcoal);border-radius:var(--radius);background:var(--charcoal);color:var(--cream);padding:10px 16px;font:400 16px/1.3 Cinzel,Georgia,serif}.bottom-section-nav button:disabled{opacity:.42;cursor:default}.bottom-section-nav button:hover:not(:disabled){background:var(--charcoal2,#303936)}@media(max-width:600px){.bottom-section-nav{display:grid;grid-template-columns:1fr 1fr}.bottom-section-nav button{min-width:0;width:100%}}.assessment-actions{
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:center;
+  gap:9px;
+  padding:16px;
+  border-top:1px solid var(--line);
+  background:#fbf7ef;
+}
+#status{
+  min-height:24px;
+  margin:0;
+  padding:0 16px 16px;
+  text-align:center;
+  color:#514a40;
+}
+.results{
+  margin:20px 18px 18px;
+  padding:18px;
+  border:1px solid var(--gold-soft);
+  border-radius:var(--radius);
+  background:#fffaf1;
+}
+.results[hidden]{display:none}
+.results h2{margin:0 0 6px;text-align:center;font:400 24px/1.3 Cinzel,Georgia,serif}
+.score{margin:0 0 14px;text-align:center;font:400 33px/1.2 Cinzel,Georgia,serif;color:#6e4d1c}
+.breakdown{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+.breakdown p{margin:0;padding:9px 10px;border:1px solid var(--line);border-radius:var(--radius);background:white}
+
+dialog{
+  width:min(calc(100% - 32px),680px);
+  border:1px solid var(--gold);
+  border-radius:var(--radius);
+  padding:0;
+  background:var(--paper);
+  color:var(--ink);
+  box-shadow:0 24px 70px rgba(0,0,0,.3);
+}
+dialog::backdrop{background:rgba(20,25,23,.58)}
+.dialog-head{background:var(--charcoal);color:var(--cream);padding:18px 20px;border-bottom:3px solid var(--gold)}
+.dialog-head h2{margin:0;font:400 24px/1.3 Cinzel,Georgia,serif}
+.dialog-body{padding:18px 20px}
+.dialog-body p{margin:0 0 12px}
+.dialog-actions{display:flex;justify-content:flex-end;padding:0 20px 18px}
+
+footer{
+  min-height:66px;
+  padding:22px 16px;
+  display:grid;
+  place-items:center;
+  background:var(--charcoal);
+  color:var(--cream);
+  text-align:center;
+  border-top:1px solid rgba(255,248,235,.2);
+}
+
+@media(max-width:760px){
+  .info-strip,.objective-grid,.identity-row{grid-template-columns:1fr}
+  .assessment-top{grid-template-columns:1fr}
+  .progress-wrap{min-width:0}
+  .progress-label{text-align:left}
+  .section-nav{grid-template-columns:1fr 1fr}
+  .section-nav button:nth-child(2),
+  .section-nav button:nth-child(3),
+  .section-nav button:nth-child(4){grid-column:auto}
+  .options,.breakdown{grid-template-columns:1fr}
+  .question{grid-template-columns:46px 1fr}
+  .q-body{padding-right:12px}
+}
+@media print{
+  .skip,.hero-actions,.info-strip,.section-nav,.assessment-actions,dialog{display:none!important}
+  body{background:white;color:black}
+  .hero{background:white!important;color:black!important;border-bottom:2px solid #999}
+  .hero *{color:black!important}
+  .sheet{width:100%;margin:0}
+  .question-list{padding:0}
+  .question{break-inside:avoid;margin:0 0 10px}
+  .work{min-height:70px}
+  footer{display:none}
 }
 </style>
-  <script src="/Khaemenes_High.github.io/assets/high-school-global-chrome-v2.js" defer data-high-school-global-chrome="v2"></script>
-<script src="/Khaemenes_High.github.io/courses/mathematics/algebra-2/assets/algebra2-worker-recovery-v1.js" defer data-algebra2-worker-recovery="v1"></script>
+<script src="../../../../assets/math-storage-adapter-v1.js" defer data-math-storage-adapter="v1"></script>
 </head>
-<body>
-<a class="skip" href="#main">Skip to main content</a>
-<header class="site-header"><div class="wrap header-inner">
-<div class="brand-group"><a class="brand-home" href="https://khaemenesacademy.org/" aria-label="Khaemenes Academy home">K</a><a class="brand-copy" href="../../../"><strong>Khaemenes Algebra II</strong><small>Open-Age Algebra II &amp; Advanced Functions</small></a></div>
-<div class="header-tools"><a class="header-control" href="../../../">Course Home</a><a class="header-control" href="../../../assessments/">Assessments</a><a class="header-control" href="../../../../tools/calculator" target="_blank" rel="noopener">Calculator</a><button class="header-control" id="themeToggle" type="button">◐ Theme</button></div>
-</div></header>
-<script>document.documentElement.dataset.theme=localStorage.getItem("khaemenes-theme")||"dark";addEventListener("DOMContentLoaded",()=>document.getElementById("themeToggle")?.addEventListener("click",()=>{const t=document.documentElement.dataset.theme==="dark"?"light":"dark";document.documentElement.dataset.theme=t;localStorage.setItem("khaemenes-theme",t)}));</script>
-<nav class="breadcrumb"><div class="wrap"><a href="../../../">Algebra II</a><span>›</span><a href="../">Unit 01</a><span>›</span><span>Mastery Check</span></div></nav><main id="main" class="assessment-shell"><div class="assessment-head"><p class="eyebrow">Formal unit evidence</p><h1>Unit 01 Mastery Check</h1><p>Advanced Functions, Transformations &amp; Inverses</p><div class="assessment-controls"><button class="btn primary" id="startAssessment" type="button">Begin</button><button class="btn" id="resetAssessment" type="button">Retake</button><a class="btn" href="../">Unit Home</a></div></div><div id="assessmentRoot"></div></main><script>window.A2_ASSESSMENT_CONFIG={"title":"Unit 01 Mastery Check","recordKey":"u01-mastery","source":"course","units":[1],"count":20,"depthBlueprint":true,"instructions":"20-question balanced mastery evidence across fluency, application, representation, error analysis, and transfer. Target 80% or higher; correct missed work before a retake."};</script><script src="../../../assets/question-bank.js"></script><script src="../../../assets/algebra2-depth-bank-v1.js"></script><script src="../../../assets/assessment-engine.js"></script><footer class="footer"><div class="wrap footer-inner"><span>KH-MATH-A2 · Open-Age Algebra II</span><span>Local-first · Printable · Jennifer Kay Pearl · 2026</span></div></footer></body></html>
+<body data-math-assessment-blueprint="v1" data-assessment-runtime="single-owner-mastery">
+<a class="skip" href="#assessment">Skip to assessment</a>
+
+<nav class="breadcrumb" aria-label="Breadcrumb">
+  <a href="https://vervenveda.com/">Verve N Veda</a> ›
+  <a href="https://vervenveda.com/Khaemenes_High.github.io/">Khaemenes High</a> ›
+  <a href="https://vervenveda.com/Khaemenes_High.github.io/courses/mathematics/">Mathematics</a> ›
+  <a href="../../../">Algebra II</a> › Unit 01 › Mastery Check
+</nav>
+
+<header class="hero">
+  <div class="hero-inner">
+    <p class="kicker">Unit 01 · Mastery Assessment</p>
+    <h1>Algebra II Unit 01 Mastery Check</h1>
+    <p class="subtitle">Advanced Functions, Transformations & Inverses</p>
+    <p class="lead">Twenty questions selected from a 36-question depth bank, balanced across five reasoning dimensions and six Unit 01 lessons.</p>
+    <div class="hero-actions">
+      <button class="btn primary" id="startButton" type="button">Start Assessment</button>
+      <button class="btn" id="printButton" type="button">Print Assessment</button>
+      <a class="btn" href="../">Unit Home</a>
+    </div>
+  </div>
+</header>
+
+<div class="info-strip" aria-label="Assessment information">
+  <button type="button" data-info="evidence">Mastery Evidence</button>
+  <button type="button" data-info="standard">Prerequisite Gate</button>
+  <button type="button" data-info="results">Retakes & Evidence</button>
+</div>
+
+<main class="sheet" id="assessment">
+  <section class="identity-row" aria-label="Worksheet information">
+    <label>Name<input id="studentName" autocomplete="name"></label>
+    <label>Class / Period<input id="classPeriod"></label>
+    <label>Date<input id="assessmentDate"></label>
+    <label>Score<input id="scoreBox" readonly aria-label="Assessment score"></label>
+  </section>
+
+  <section class="objective-grid" aria-label="Learning objective and directions">
+    <div class="objective"><strong>Learning Objective</strong><span>Demonstrate Unit 01 mastery across function structure, domain and range, transformations, composition, inverses, and piecewise reasoning.</span></div>
+    <div class="objective"><strong>Directions</strong><span>Select one answer for each item. Use the work space beneath every problem for calculations, checks, or reasoning.</span></div>
+  </section>
+
+  <section class="assessment-panel">
+    <div class="assessment-top">
+      <div>
+        <h2>Assessment Record</h2>
+        <p>20 questions · Mastery threshold: 80% · Novelty-aware retakes</p>
+      </div>
+      <div class="progress-wrap">
+        <p class="progress-label" id="progressLabel">0/20 answered</p>
+        <div class="progress" aria-hidden="true"><span id="progressBar"></span></div>
+      </div>
+    </div>
+
+    <nav class="section-nav" aria-label="Question sections">
+      <button id="prevSection" type="button">← Previous</button>
+      <button type="button" data-section="0">1–10</button>
+      <button type="button" data-section="1">11–20</button>
+      
+      <button id="nextSection" type="button">Next →</button>
+    </nav>
+
+    <div class="notice" id="gateNotice" hidden></div><div class="question-list" id="questionList"></div><nav class="bottom-section-nav" aria-label="Bottom question navigation"><button id="bottomPrevSection" type="button">← Previous</button><button id="bottomNextSection" type="button">Next →</button></nav>
+
+    <section class="results" id="results" hidden aria-live="polite">
+      <h2 id="resultTitle"></h2>
+      <p class="score" id="resultScore"></p>
+      <div class="breakdown" id="breakdown"></div>
+    </section>
+
+    <div class="assessment-actions">
+      <button class="btn dark" id="submitButton" type="button">Submit &amp; Score</button>
+      <button class="btn" id="saveButton" type="button">Save Draft</button>
+      <button class="btn" id="exportButton" type="button">Export Result</button>
+      <button class="btn" id="resetButton" type="button">Reset</button>
+    </div>
+    <p id="status" role="status" aria-live="polite">Ready.</p>
+  </section>
+</main>
+
+<dialog id="infoDialog">
+  <div class="dialog-head"><h2 id="infoTitle"></h2></div>
+  <div class="dialog-body" id="infoBody"></div>
+  <div class="dialog-actions"><button class="btn dark" id="closeInfo" type="button">Close</button></div>
+</dialog>
+
+<footer>Khaemenes Academy · Algebra II · Unit 01 Mastery Evidence</footer>
+
+<script>
+const BANK=[{"id":"a2-u01-d01","unit":1,"lesson":1,"week":2,"difficulty":1,"pathway_min":1,"dimension":"procedural-fluency","skill":"function evaluation","prompt":"If f(x)=3x−7, what is f(5)?","options":["8","15","22","−8"],"answer":0,"explanation":"Substitute x=5: 3(5)−7=8.","misconception":"treating f(x) as multiplication"},{"id":"a2-u01-d02","unit":1,"lesson":1,"week":2,"difficulty":1,"pathway_min":1,"dimension":"representation-interpretation","skill":"function notation","prompt":"The statement g(−2)=9 means which ordered pair lies on the graph of g?","options":["(9,−2)","(−2,9)","(2,−9)","(−9,2)"],"answer":1,"explanation":"Function notation g(input)=output corresponds to the point (input,output).","misconception":"reversing input and output"},{"id":"a2-u01-d03","unit":1,"lesson":1,"week":2,"difficulty":2,"pathway_min":2,"dimension":"error-analysis","skill":"evaluation structure","prompt":"A student evaluates h(x)=x²−4x at x=−3 as −9+12=3. What is the first error?","options":["The square of −3 should be 9, not −9.","The product −4(−3) should be −12.","The variable cannot be negative.","The expression should be divided by x."],"answer":0,"explanation":"Parentheses matter: (−3)²=9, so h(−3)=9+12=21.","misconception":"negative-input exponent error"},{"id":"a2-u01-d04","unit":1,"lesson":1,"week":2,"difficulty":2,"pathway_min":2,"dimension":"multi-step-application","skill":"parameter evaluation","prompt":"For F(t)=12+4.5t, what does F(6)−F(2) represent?","options":["The initial value","The change in output from t=2 to t=6","The average of the two outputs","The input interval only"],"answer":1,"explanation":"Subtracting the two function values gives the output change over that interval.","misconception":"confusing value and change"},{"id":"a2-u01-d05","unit":1,"lesson":1,"week":2,"difficulty":3,"pathway_min":3,"dimension":"transfer-reasoning","skill":"function comparison","prompt":"Functions f and g satisfy f(2)=7, g(2)=7, f(5)=13, and g(5)=10. Which conclusion is justified?","options":["f=g for every input.","The functions agree at x=2 but not at x=5.","g always grows faster than f.","Both functions must be linear."],"answer":1,"explanation":"Matching at one input does not establish identical functions; the different outputs at x=5 prove they differ.","misconception":"generalizing from one point"},{"id":"a2-u01-d06","unit":1,"lesson":1,"week":2,"difficulty":3,"pathway_min":3,"dimension":"procedural-fluency","skill":"difference quotient","prompt":"For f(x)=x²+1, simplify [f(x+h)−f(x)]/h for h≠0.","options":["2x+h","x+h","2x+h+1","h"],"answer":0,"explanation":"f(x+h)−f(x)=2xh+h²; divide by h to get 2x+h.","misconception":"incomplete expansion"},{"id":"a2-u01-d07","unit":1,"lesson":2,"week":2,"difficulty":1,"pathway_min":1,"dimension":"procedural-fluency","skill":"domain restriction","prompt":"What value must be excluded from the domain of r(x)=5/(x+4)?","options":["−4","4","0","5"],"answer":0,"explanation":"The denominator cannot be zero, so x+4≠0 and x≠−4.","misconception":"sign error in restriction"},{"id":"a2-u01-d08","unit":1,"lesson":2,"week":2,"difficulty":1,"pathway_min":1,"dimension":"representation-interpretation","skill":"interval notation","prompt":"Which interval represents x≥−2?","options":["(−2,∞)","[−2,∞)","(−∞,−2]","[−∞,−2)"],"answer":1,"explanation":"The bracket includes −2, and infinity always uses a parenthesis.","misconception":"endpoint inclusion"},{"id":"a2-u01-d09","unit":1,"lesson":2,"week":2,"difficulty":2,"pathway_min":2,"dimension":"error-analysis","skill":"radical domain","prompt":"A student states the domain of √(3−x) is x≥3. What correction is needed?","options":["It is x≤3 because 3−x must be nonnegative.","It is x>3 because radicals require positive inputs.","It is all real x.","It is x≠3."],"answer":0,"explanation":"Require 3−x≥0, which gives x≤3.","misconception":"reversing inequality structure"},{"id":"a2-u01-d10","unit":1,"lesson":2,"week":2,"difficulty":2,"pathway_min":2,"dimension":"multi-step-application","skill":"combined restrictions","prompt":"What is the domain of f(x)=√(x−1)/(x−5)?","options":["x≥1","x≥1, x≠5","x>5","x≠1 and x≠5"],"answer":1,"explanation":"The radical requires x≥1 and the denominator requires x≠5.","misconception":"checking only one restriction"},{"id":"a2-u01-d11","unit":1,"lesson":2,"week":2,"difficulty":3,"pathway_min":3,"dimension":"transfer-reasoning","skill":"context domain","prompt":"A model C(n)=18+7n gives cost for n whole tickets, with at most 12 tickets allowed. Which domain best fits the situation?","options":["all real numbers","0≤n≤12","n∈{0,1,2,…,12}","n≥18"],"answer":2,"explanation":"Ticket count is discrete and bounded, so only whole numbers 0 through 12 are meaningful.","misconception":"using continuous domain for discrete quantity"},{"id":"a2-u01-d12","unit":1,"lesson":2,"week":2,"difficulty":3,"pathway_min":3,"dimension":"representation-interpretation","skill":"range from transformation","prompt":"For y=−2(x−3)²+5, what is the range?","options":["y≥5","y≤5","x≤3","all real y"],"answer":1,"explanation":"The parabola opens downward and has maximum y=5.","misconception":"confusing domain and range"},{"id":"a2-u01-d13","unit":1,"lesson":3,"week":2,"difficulty":1,"pathway_min":1,"dimension":"procedural-fluency","skill":"vertical translation","prompt":"The graph of y=x²−6 is obtained from y=x² by shifting:","options":["up 6","down 6","right 6","left 6"],"answer":1,"explanation":"Subtracting 6 outside the function shifts the graph downward 6.","misconception":"inside/outside shift confusion"},{"id":"a2-u01-d14","unit":1,"lesson":3,"week":2,"difficulty":1,"pathway_min":1,"dimension":"representation-interpretation","skill":"horizontal translation","prompt":"What is the vertex of y=|x+4|−2?","options":["(4,−2)","(−4,−2)","(−2,−4)","(4,2)"],"answer":1,"explanation":"x+4 shifts the graph left 4; −2 shifts it down 2.","misconception":"horizontal sign reversal"},{"id":"a2-u01-d15","unit":1,"lesson":3,"week":2,"difficulty":2,"pathway_min":2,"dimension":"error-analysis","skill":"horizontal scale","prompt":"A student says y=f(2x) is a horizontal stretch by factor 2. What is correct?","options":["It is a horizontal compression by factor 1/2.","It is a vertical stretch by factor 2.","It is a horizontal shift right 2.","The student is correct."],"answer":0,"explanation":"Replacing x by 2x makes the same output occur at half the original x-value.","misconception":"horizontal scale reciprocal"},{"id":"a2-u01-d16","unit":1,"lesson":3,"week":2,"difficulty":2,"pathway_min":2,"dimension":"multi-step-application","skill":"combined transformations","prompt":"Starting from y=√x, which equation shifts right 3, reflects across the x-axis, and moves up 5?","options":["y=−√(x−3)+5","y=√(−x−3)+5","y=−√(x+3)−5","y=√(x−5)+3"],"answer":0,"explanation":"Right 3 gives √(x−3), reflection gives −√(x−3), and up 5 adds +5.","misconception":"ordering/sign errors"},{"id":"a2-u01-d17","unit":1,"lesson":3,"week":2,"difficulty":3,"pathway_min":3,"dimension":"transfer-reasoning","skill":"parameter reasoning","prompt":"For g(x)=a|x−h|+k, which parameter change alone can turn a V-shaped graph upside down without moving its vertex?","options":["Change the sign of a.","Change h.","Change k.","Replace x with x+1."],"answer":0,"explanation":"Changing the sign of a reflects the graph across the x-axis while (h,k) stays fixed.","misconception":"confusing shape and position parameters"},{"id":"a2-u01-d18","unit":1,"lesson":3,"week":2,"difficulty":3,"pathway_min":3,"dimension":"representation-interpretation","skill":"point mapping","prompt":"If (2,7) lies on y=f(x), which point lies on y=−3f(x−4)+1?","options":["(6,−20)","(−2,−20)","(6,22)","(2,−20)"],"answer":0,"explanation":"x−4 means x=6 corresponds to the old input 2; output becomes −3(7)+1=−20.","misconception":"mapping points through transformations"},{"id":"a2-u01-d19","unit":1,"lesson":4,"week":3,"difficulty":1,"pathway_min":1,"dimension":"procedural-fluency","skill":"composition","prompt":"If f(x)=x+3 and g(x)=2x, what is (f∘g)(4)?","options":["11","14","8","7"],"answer":0,"explanation":"g(4)=8, then f(8)=11.","misconception":"wrong composition order"},{"id":"a2-u01-d20","unit":1,"lesson":4,"week":3,"difficulty":1,"pathway_min":1,"dimension":"representation-interpretation","skill":"composition mapping","prompt":"Which expression represents 'apply f first, then g'?","options":["f(g(x))","g(f(x))","f(x)+g(x)","f(x)g(x)"],"answer":1,"explanation":"The inner function acts first, so g(f(x)) applies f and then g.","misconception":"reading composition left-to-right"},{"id":"a2-u01-d21","unit":1,"lesson":4,"week":3,"difficulty":2,"pathway_min":2,"dimension":"error-analysis","skill":"composition domain","prompt":"Let f(x)=√x and g(x)=x−5. A student says (f∘g)(x) has domain x≥0. What was missed?","options":["g(x) must be at least 0, so x≥5.","f(x) must be less than 5.","Composition has no domain restrictions.","x must equal 5."],"answer":0,"explanation":"The input to f is g(x)=x−5, and the square root requires x−5≥0.","misconception":"ignoring inner-function output restriction"},{"id":"a2-u01-d22","unit":1,"lesson":4,"week":3,"difficulty":2,"pathway_min":2,"dimension":"multi-step-application","skill":"composition algebra","prompt":"If f(x)=x²−1 and g(x)=3x+2, what is (f∘g)(x)?","options":["9x²+12x+3","3x²−1","9x²+4","x²+6x+3"],"answer":0,"explanation":"(3x+2)²−1=9x²+12x+4−1=9x²+12x+3.","misconception":"failing to square the whole inner expression"},{"id":"a2-u01-d23","unit":1,"lesson":4,"week":3,"difficulty":3,"pathway_min":3,"dimension":"transfer-reasoning","skill":"decomposition","prompt":"Which decomposition best represents h(x)=√(5x−2)?","options":["f(x)=√x and g(x)=5x−2, with h=f∘g","f(x)=5x−2 and g(x)=√x, with h=f∘g","f(x)=x² and g(x)=5x−2","f(x)=√(5x) and g(x)=x−2"],"answer":0,"explanation":"First form 5x−2, then take the square root.","misconception":"composition order in decomposition"},{"id":"a2-u01-d24","unit":1,"lesson":4,"week":3,"difficulty":3,"pathway_min":3,"dimension":"multi-step-application","skill":"composition comparison","prompt":"For f(x)=2x−1 and g(x)=x², which statement is true?","options":["f∘g and g∘f are identical.","(f∘g)(x)=2x²−1 and (g∘f)(x)=4x²−4x+1.","(f∘g)(x)=4x²−4x+1 and (g∘f)(x)=2x²−1.","Both compositions equal 2x²−2x."],"answer":1,"explanation":"Composition order changes the algebra and usually changes the function.","misconception":"assuming composition is commutative"},{"id":"a2-u01-d25","unit":1,"lesson":5,"week":3,"difficulty":1,"pathway_min":1,"dimension":"procedural-fluency","skill":"inverse linear","prompt":"What is the inverse of f(x)=4x+9?","options":["(x−9)/4","4x−9","(x+9)/4","1/(4x+9)"],"answer":0,"explanation":"Swap x and y in y=4x+9 and solve: y=(x−9)/4.","misconception":"reciprocal instead of inverse function"},{"id":"a2-u01-d26","unit":1,"lesson":5,"week":3,"difficulty":1,"pathway_min":1,"dimension":"representation-interpretation","skill":"inverse coordinates","prompt":"If (−3,8) lies on a one-to-one function f, which point lies on f⁻¹?","options":["(3,−8)","(8,−3)","(−8,3)","(−3,8)"],"answer":1,"explanation":"Inverse functions swap input and output coordinates.","misconception":"sign change instead of coordinate swap"},{"id":"a2-u01-d27","unit":1,"lesson":5,"week":3,"difficulty":2,"pathway_min":2,"dimension":"error-analysis","skill":"inverse verification","prompt":"A student claims f⁻¹(x)=1/f(x). Which verification best disproves that rule in general?","options":["Check whether f(f⁻¹(x))=x.","Compare the colors of the graphs.","Evaluate only f(0).","Differentiate both expressions."],"answer":0,"explanation":"True inverses undo each other under composition; reciprocals generally do not.","misconception":"confusing inverse and reciprocal"},{"id":"a2-u01-d28","unit":1,"lesson":5,"week":3,"difficulty":2,"pathway_min":2,"dimension":"multi-step-application","skill":"restricted inverse","prompt":"For f(x)=x² with domain x≥0, what is f⁻¹(x)?","options":["−√x","√x","x²","±√x"],"answer":1,"explanation":"The domain restriction makes f one-to-one and selects the nonnegative square root.","misconception":"using ± in a function rule"},{"id":"a2-u01-d29","unit":1,"lesson":5,"week":3,"difficulty":3,"pathway_min":3,"dimension":"transfer-reasoning","skill":"one-to-one reasoning","prompt":"Which function is one-to-one on all real numbers?","options":["x²","|x|","x³−2","cos x"],"answer":2,"explanation":"x³−2 is strictly increasing, so each output corresponds to one input.","misconception":"assuming every familiar function is invertible"},{"id":"a2-u01-d30","unit":1,"lesson":5,"week":3,"difficulty":3,"pathway_min":3,"dimension":"representation-interpretation","skill":"inverse graph","prompt":"The graphs of a function and its inverse are reflections across which line?","options":["y=0","x=0","y=x","y=−x"],"answer":2,"explanation":"Swapping x and y reflects coordinates across y=x.","misconception":"reflecting across an axis"},{"id":"a2-u01-d31","unit":1,"lesson":6,"week":3,"difficulty":1,"pathway_min":1,"dimension":"procedural-fluency","skill":"piecewise evaluation","prompt":"Let p(x)=2x+1 for x\u003c3 and p(x)=x² for x≥3. What is p(3)?","options":["7","9","6","undefined"],"answer":1,"explanation":"At x=3 use the x≥3 rule, giving 3²=9.","misconception":"using the wrong boundary rule"},{"id":"a2-u01-d32","unit":1,"lesson":6,"week":3,"difficulty":1,"pathway_min":1,"dimension":"representation-interpretation","skill":"absolute value graph","prompt":"For y=|x−5|+2, what is the minimum output?","options":["−5","2","5","7"],"answer":1,"explanation":"The vertex is (5,2), so the minimum y-value is 2.","misconception":"confusing vertex coordinates"},{"id":"a2-u01-d33","unit":1,"lesson":6,"week":3,"difficulty":2,"pathway_min":2,"dimension":"error-analysis","skill":"piecewise continuity","prompt":"A piecewise function uses f(x)=x+1 for x\u003c2 and f(x)=5 for x≥2. A student says it is continuous because both rules are defined. What must be checked?","options":["Whether the left-hand value approaches the boundary value 5 at x=2.","Whether both rules use x.","Whether the graph has a y-intercept.","Whether the domains overlap everywhere."],"answer":0,"explanation":"Continuity at the boundary requires the left-hand limit to equal the defined value; here x+1 approaches 3, not 5.","misconception":"defined does not imply continuous"},{"id":"a2-u01-d34","unit":1,"lesson":6,"week":3,"difficulty":2,"pathway_min":2,"dimension":"multi-step-application","skill":"absolute value equation","prompt":"Solve |2x−5|=9.","options":["x=7 only","x=−2 only","x=7 or x=−2","x=2 or x=−7"],"answer":2,"explanation":"Set 2x−5=9 or 2x−5=−9, giving x=7 or x=−2.","misconception":"keeping only one absolute-value branch"},{"id":"a2-u01-d35","unit":1,"lesson":6,"week":3,"difficulty":3,"pathway_min":3,"dimension":"transfer-reasoning","skill":"piecewise model","prompt":"A delivery fee is $8 for distances up to and including 5 miles and $8+$1.50 per mile beyond 5. Which model captures the boundary correctly?","options":["C(d)=8 for d≤5; C(d)=8+1.5(d−5) for d>5","C(d)=8 for d\u003c5; C(d)=1.5d for d≥5","C(d)=8+1.5d for all d","C(d)=1.5(d−5) for d≤5; C(d)=8 for d>5"],"answer":0,"explanation":"The base fee applies through 5 miles, and only excess distance beyond 5 is charged additionally.","misconception":"double-counting the base interval"},{"id":"a2-u01-d36","unit":1,"lesson":6,"week":3,"difficulty":3,"pathway_min":3,"dimension":"representation-interpretation","skill":"step function","prompt":"A quantity is modeled by y=⌊x⌋. Which statement is correct?","options":["The graph is a smooth line.","The output stays constant on each interval [n,n+1) for integer n.","The function is one-to-one.","Every noninteger input is excluded."],"answer":1,"explanation":"The floor function is a step function: each integer output persists from n through values just below n+1.","misconception":"treating step functions as continuous"}];
+const CONFIG={
+  id:"KH-MATH-A2-U01-MASTERY",
+  title:"Algebra II Unit 01 Mastery Check",
+  storage_key:"khaemenes-algebra2-unit-01-draft-v1",
+  result_key:"khaemenes-algebra2-assessment-records-v1",
+  lesson_key:"khaemenes-algebra2-lesson-progress-v1",
+  record_key:"u01-mastery",
+  mastery_threshold:80,
+  question_count:20,
+  page_size:10
+};
+const DIMS=["procedural-fluency","multi-step-application","representation-interpretation","error-analysis","transfer-reasoning"];
+let section=0;
+const $=sel=>document.querySelector(sel);
+const esc=value=>String(value??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","'":"&#39;"}[c]));
+
+function activeProfile(){
+  try{
+    const id=JSON.parse(localStorage.getItem("khaemenes_active_learner_v1")||"null");
+    const registry=JSON.parse(localStorage.getItem("khaemenes_family_registry_v1")||"null");
+    const learner=typeof id==="string"?registry?.learners?.[id]:null;
+    return learner&&learner.learnerId===id?{learnerId:id,name:String(learner.nickname||"Learner")}:null;
+  }catch{return null}
+}
+function scopedKey(base){const p=activeProfile();return p?base+":learner:"+encodeURIComponent(p.learnerId):base}
+function readJSON(base,fallback={}){
+  const key=scopedKey(base),S=window.KhaemenesMathStorageAdapter;
+  if(S?.readJSON)return S.readJSON(key,fallback)||fallback;
+  try{return JSON.parse(localStorage.getItem(key)||"null")||fallback}catch{return fallback}
+}
+function writeJSON(base,value){
+  const key=scopedKey(base),S=window.KhaemenesMathStorageAdapter;
+  if(S?.writeJSON)return S.writeJSON(key,value).persisted===true;
+  try{const raw=JSON.stringify(value);localStorage.setItem(key,raw);return localStorage.getItem(key)===raw}catch{return false}
+}
+function recordedScore(v){if(typeof v!=="number"&&(typeof v!=="string"||!v.trim()))return null;const n=Number(v);return Number.isFinite(n)&&n>=0&&n<=100?n:null}
+function recordMastered(record){
+  if(!record||typeof record!=="object"||Array.isArray(record))return false;
+  if(Array.isArray(record.attempts)&&record.attempts.length)return record.attempts.some(a=>recordedScore(a?.score)>=80);
+  return recordedScore(record.bestScore)>=80||recordedScore(record.score)>=80;
+}
+function missingPrereqs(){
+  const p=activeProfile();if(!p)return["Select an active Academy learner"];
+  const assessments=readJSON(CONFIG.result_key,{});
+  const lessons=readJSON(CONFIG.lesson_key,{});
+  const missing=[];
+  if(!recordMastered(assessments["readiness-diagnostic"]))missing.push("Algebra II readiness diagnostic at 80%");
+  for(let lesson=1;lesson<=6;lesson++){
+    const id="u01-l"+String(lesson).padStart(2,"0");
+    if(!recordMastered(lessons[id]))missing.push("Unit 01 Lesson "+String(lesson).padStart(2,"0")+" mastery at 80%");
+  }
+  return missing;
+}
+function priorQuestionIds(){
+  const attempts=readJSON(CONFIG.result_key,{})?.[CONFIG.record_key]?.attempts||[];
+  const last=attempts.length?attempts[attempts.length-1]:null;
+  return new Set(Array.isArray(last?.question_ids)?last.question_ids.map(String):[]);
+}
+function shuffle(values){
+  const out=[...values];
+  for(let i=out.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[out[i],out[j]]=[out[j],out[i]]}
+  return out;
+}
+function selectForm(){
+  const prior=priorQuestionIds(),used=new Set(),lessonCounts={},picked=[];
+  const choose=list=>{
+    const available=list.filter(q=>!used.has(String(q.id)));
+    if(!available.length)return null;
+    const min=Math.min(...available.map(q=>lessonCounts[q.lesson]||0));
+    const least=available.filter(q=>(lessonCounts[q.lesson]||0)===min);
+    const unseen=least.filter(q=>!prior.has(String(q.id)));
+    return shuffle(unseen.length?unseen:least)[0]||null;
+  };
+  for(const dim of DIMS){
+    for(let i=0;i<4;i++){
+      const q=choose(BANK.filter(item=>item.dimension===dim));if(!q)break;
+      picked.push(q);used.add(String(q.id));lessonCounts[q.lesson]=(lessonCounts[q.lesson]||0)+1;
+    }
+  }
+  while(picked.length<20){
+    const q=choose(BANK);if(!q)break;
+    picked.push(q);used.add(String(q.id));lessonCounts[q.lesson]=(lessonCounts[q.lesson]||0)+1;
+  }
+  return shuffle(picked).slice(0,20);
+}
+function loadDraft(){
+  const d=readJSON(CONFIG.storage_key,null);
+  if(d&&Array.isArray(d.question_ids)&&d.question_ids.length===20){
+    const byId=new Map(BANK.map(q=>[String(q.id),q]));
+    const qs=d.question_ids.map(id=>byId.get(String(id)));
+    if(qs.every(Boolean))return {...d,questions:qs,answers:d.answers||{},work:d.work||{},submitted:Boolean(d.submitted)};
+  }
+  const questions=selectForm();
+  return {question_ids:questions.map(q=>q.id),questions,answers:{},work:{},submitted:false,begun_at:new Date().toISOString()};
+}
+let draft=loadDraft();
+
+function saveDraft(message=true){
+  const payload={question_ids:draft.question_ids,answers:draft.answers,work:draft.work,submitted:draft.submitted,begun_at:draft.begun_at,updated_at:new Date().toISOString()};
+  const ok=writeJSON(CONFIG.storage_key,payload);
+  if(message)$("#status").textContent=ok?"Draft saved and verified locally.":"Draft could not be verified. Keep the page open and export before leaving.";
+  return ok;
+}
+function answeredCount(){return Object.keys(draft.answers).filter(k=>Number(k)>=0&&Number(k)<20).length}
+function updateProgress(){const n=answeredCount();$("#progressLabel").textContent=n+"/20 answered";$("#progressBar").style.width=(n/20*100)+"%"}
+function applyGate(){
+  const missing=missingPrereqs(),gate=$("#gateNotice");
+  if(!missing.length){gate.hidden=true;return true}
+  gate.hidden=false;
+  gate.innerHTML="<strong>Unit 01 Mastery is locked.</strong><br>"+missing.map(x=>"• "+esc(x)).join("<br>")+"<br><br>Complete the required evidence, then reload this page.";
+  document.querySelectorAll('#questionList input,#questionList textarea,#submitButton,#saveButton').forEach(el=>el.disabled=true);
+  return false;
+}
+function render(){
+  const start=section*10,end=Math.min(20,start+10),host=$("#questionList");
+  host.innerHTML="";
+  for(let i=start;i<end;i++){
+    const q=draft.questions[i],selected=draft.answers[i],work=draft.work[i]||"";
+    const feedback=draft.submitted?'<div class="feedback '+(Number(selected)===q.answer?'good':'bad')+'">'+(Number(selected)===q.answer?'Correct.':'Review. Correct answer: '+esc(q.options[q.answer])+'.')+' '+esc(q.explanation)+'</div>':"";
+    const article=document.createElement("article");article.className="question";
+    article.innerHTML='<div class="q-number"><span>'+(i+1)+'</span></div><div class="q-body"><p class="q-meta">Lesson '+q.lesson+' · '+esc(q.dimension.replaceAll("-"," "))+' · Difficulty '+q.difficulty+'</p><p class="q-prompt">'+esc(q.prompt)+'</p><div class="options">'+q.options.map((o,j)=>'<label class="option"><input type="radio" name="q'+i+'" value="'+j+'" '+(Number(selected)===j?'checked':'')+' '+(draft.submitted?'disabled':'')+'><span>'+esc(o)+'</span></label>').join("")+'</div><label class="work-label" for="work'+i+'">Show your work · ungraded workspace</label><textarea class="work" id="work'+i+'" data-work="'+i+'" '+(draft.submitted?'readonly':'')+'>'+esc(work)+'</textarea>'+feedback+'</div>';
+    host.append(article);
+  }
+  document.querySelectorAll("[data-section]").forEach(b=>b.classList.toggle("current",Number(b.dataset.section)===section));
+  $("#prevSection").disabled=section===0;$("#nextSection").disabled=section===1;
+  $("#bottomPrevSection").disabled=section===0;$("#bottomNextSection").textContent=section===1?"Review / Submit ↑":"Next →";
+  updateProgress();applyGate();
+}
+function buildResult(){
+  let right=0;const missed=[],breakdown={};
+  draft.questions.forEach((q,i)=>{breakdown[q.dimension]??={correct:0,total:0};breakdown[q.dimension].total++;if(Number(draft.answers[i])===q.answer){right++;breakdown[q.dimension].correct++}else missed.push(q.id)});
+  const score=Math.round(right/20*100);
+  const prior=priorQuestionIds();
+  return {
+    result_schema:"khaemenes-algebra2-assessment-v2",
+    attempt_id:"a2-"+Date.now()+"-"+Math.random().toString(36).slice(2,11),
+    question_ids:draft.questions.map(q=>String(q.id)),
+    answer_locked:true,assessment_id:CONFIG.record_key,title:CONFIG.title,submitted_at:new Date().toISOString(),
+    score,right,total:20,missed,learner:$("#studentName").value.trim()||activeProfile()?.name||"",pathway:"Core",purpose:"mastery",
+    dimension_counts:Object.fromEntries(DIMS.map(d=>[d,draft.questions.filter(q=>q.dimension===d).length])),
+    lesson_coverage:[...new Set(draft.questions.map(q=>q.lesson))].sort((a,b)=>a-b),
+    difficulty_counts:Object.fromEntries([1,2,3].map(d=>[d,draft.questions.filter(q=>Number(q.difficulty)===d).length])),
+    previous_form_overlap:draft.questions.filter(q=>prior.has(String(q.id))).length,
+    mastery_threshold:80,mastery:score>=80,mastery_met:score>=80,breakdown,work_snapshot:{...draft.work}
+  };
+}
+function persistResult(result){
+  const data=readJSON(CONFIG.result_key,{});
+  const record=data[CONFIG.record_key]&&typeof data[CONFIG.record_key]==="object"?data[CONFIG.record_key]:{title:CONFIG.title,attempts:[],masteryTarget:80,mastery:false,bestScore:null};
+  record.attempts=[...(Array.isArray(record.attempts)?record.attempts:[]),result];
+  record.bestScore=Math.max(Number(record.bestScore)||0,result.score);
+  record.masteryTarget=80;
+  record.mastery=record.attempts.some(a=>recordedScore(a?.score)>=80);
+  data[CONFIG.record_key]=record;
+  return writeJSON(CONFIG.result_key,data)?record:null;
+}
+function showResult(result){
+  $("#results").hidden=false;
+  $("#resultTitle").textContent=result.mastery?"Unit 01 mastery demonstrated":"Correction and retake required";
+  $("#resultScore").textContent=result.score+"% · "+result.right+"/"+result.total;
+  $("#scoreBox").value=result.right+" / "+result.total;
+  $("#breakdown").innerHTML=Object.entries(result.breakdown||{}).map(([k,v])=>'<p><strong>'+esc(k.replaceAll("-"," "))+'</strong><br>'+v.correct+'/'+v.total+' ('+Math.round(v.correct/v.total*100)+'%)</p>').join("");
+}
+function submit(){
+  if(!applyGate())return;
+  if(answeredCount()!==20){
+    const missing=draft.questions.findIndex((_,i)=>!Object.prototype.hasOwnProperty.call(draft.answers,String(i)));
+    section=Math.floor(missing/10);render();$("#status").textContent="Answer all 20 questions before scoring. First unanswered item: question "+(missing+1)+".";return;
+  }
+  const result=buildResult();
+  draft.submitted=true;
+  if(!saveDraft(false)){draft.submitted=false;$("#status").textContent="Submission paused because the draft could not be verified.";return}
+  const record=persistResult(result);
+  if(!record){$("#status").textContent="Assessment was scored but could not be saved. No mastery credit was granted. Export your work before leaving.";render();return}
+  render();showResult(result);
+  $("#status").textContent=result.mastery?"Unit 01 mastery saved.":"Attempt saved below mastery. Review explanations and begin a new attempt when ready.";
+  $("#results").scrollIntoView({behavior:"smooth",block:"center"});
+}
+function newAttempt(){
+  if(!confirm("Start a new Unit 01 attempt? Saved attempt history will remain intact."))return;
+  const questions=selectForm();draft={question_ids:questions.map(q=>q.id),questions,answers:{},work:{},submitted:false,begun_at:new Date().toISOString()};
+  writeJSON(CONFIG.storage_key,{question_ids:draft.question_ids,answers:{},work:{},submitted:false,begun_at:draft.begun_at});
+  section=0;$("#results").hidden=true;$("#scoreBox").value="";render();$("#status").textContent="New novelty-aware form created.";
+}
+function exportResult(){
+  const payload={assessment_record:readJSON(CONFIG.result_key,{}),draft:{question_ids:draft.question_ids,answers:draft.answers,work:draft.work}};
+  const blob=new Blob([JSON.stringify(payload,null,2)],{type:"application/json"}),url=URL.createObjectURL(blob),a=document.createElement("a");
+  a.href=url;a.download="algebra2-unit-01-mastery-result.json";a.click();setTimeout(()=>URL.revokeObjectURL(url),500);
+}
+function goSection(n){if(n<0||n>1)return;section=n;render();$("#assessment").scrollIntoView({behavior:"smooth",block:"start"})}
+const info={
+ evidence:{title:"Mastery Evidence",body:"Unit 01 is a formal Algebra II mastery gate. The form contains 20 questions balanced across five reasoning dimensions. At least 80% is required for mastery."},
+ standard:{title:"Prerequisite Gate",body:"Before Unit 01 mastery opens, the Algebra II readiness diagnostic and all six Unit 01 lessons must each reach the 80% progression standard."},
+ results:{title:"Retakes & Evidence",body:"Retakes preserve every prior attempt and prioritize questions not used on the immediately prior form. A later failed retake never erases an earlier passing score."}
+};
+$("#questionList").addEventListener("change",e=>{const input=e.target.closest('input[type="radio"]');if(!input||draft.submitted)return;const m=input.name.match(/^q(\d+)$/);if(!m)return;draft.answers[m[1]]=Number(input.value);saveDraft(false);updateProgress()});
+$("#questionList").addEventListener("input",e=>{const t=e.target.closest("[data-work]");if(!t||draft.submitted)return;draft.work[t.dataset.work]=t.value});
+$("#questionList").addEventListener("change",e=>{const t=e.target.closest("[data-work]");if(!t||draft.submitted)return;draft.work[t.dataset.work]=t.value;saveDraft(false)});
+document.querySelectorAll("[data-section]").forEach(b=>b.addEventListener("click",()=>goSection(Number(b.dataset.section))));
+$("#prevSection").onclick=()=>goSection(section-1);$("#nextSection").onclick=()=>goSection(section+1);$("#bottomPrevSection").onclick=()=>goSection(section-1);$("#bottomNextSection").onclick=()=>section<1?goSection(1):$("#submitButton").scrollIntoView({behavior:"smooth",block:"center"});
+$("#submitButton").onclick=submit;$("#saveButton").onclick=()=>saveDraft(true);$("#exportButton").onclick=exportResult;$("#resetButton").onclick=newAttempt;$("#startButton").onclick=()=>{$("#assessment").scrollIntoView({behavior:"smooth"});setTimeout(()=>$("#questionList input")?.focus(),250)};$("#printButton").onclick=()=>window.print();
+document.querySelectorAll("[data-info]").forEach(b=>b.onclick=()=>{const x=info[b.dataset.info];$("#infoTitle").textContent=x.title;$("#infoBody").textContent=x.body;const d=$("#infoDialog");if(typeof d.showModal==="function")d.showModal();else d.setAttribute("open","")});
+$("#closeInfo").onclick=()=>$("#infoDialog").close();
+$("#assessmentDate").value=new Date().toLocaleDateString();
+render();
+const attempts=readJSON(CONFIG.result_key,{})?.[CONFIG.record_key]?.attempts;
+if(Array.isArray(attempts)&&attempts.length)showResult(attempts[attempts.length-1]);
+</script>
+
+<script src="../../assets/math-learning-tools-v2.js" defer></script>
+<script src="https://vervenveda.com/assets/vnv-ecosystem-toolbar.js" defer></script>
+<script src="../../../../assets/vnv-language.js?v=20261118-high-school-bounded-refresh-1" defer data-official-vnv-language="true"></script>
+</body>
+</html>
