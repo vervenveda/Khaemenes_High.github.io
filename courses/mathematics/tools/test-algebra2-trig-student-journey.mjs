@@ -18,8 +18,11 @@ for(const unit of [10,11]){
   const lesson='u'+unit+'-l'+String(i).padStart(2,'0');
   const file=root+'lessons/'+lesson+'.html',html=fs.readFileSync(file,'utf8');
   assert.ok(landing.includes('href="lessons/'+lesson+'.html"'),'missing unit lesson link '+lesson);
-  for(const needle of ['id="main"','href="#main"','width=device-width','class="lesson-main"','Guided and independent practice','id="lessonComplete"','id="lessonNote"']){
+  for(const needle of ['id="main"','href="#main"','width=device-width','class="lesson-main"','id="lessonComplete"','id="lessonNote"']){
    assert.ok(html.includes(needle),'missing student landmark '+needle+' in '+lesson);
+  }
+  for(const step of ['recall','see','worked','explain','guided','independent','error','transfer','feedback','reflect']){
+   assert.ok(html.includes('data-flow-step="'+step+'"'),'missing current lesson flow step '+step+' in '+lesson);
   }
   const scripts=[...html.matchAll(/<script[^>]*src="\.\.\/\.\.\/\.\.\/\.\.\/assets\/shared-game-launcher\.js"[^>]*>/g)].map(m=>m[0]);
   assert.ok(scripts.length,'missing game launcher '+lesson);
@@ -40,7 +43,10 @@ for(const unit of [10,11]){
   if(unit===11&&i===8)assert.ok(slugs.includes('triangle-law-expedition'),'secondary navigation game missing');
   for(const m of html.matchAll(/\b(?:src|href)=["']([^"']+)["']/gi)){
    const href=m[1];if(/^(?:https?:|mailto:|tel:|data:|javascript:|#)/i.test(href))continue;
-   const dest=path.posix.normalize(path.posix.join(path.posix.dirname(file),href.split(/[?#]/)[0]));
+   const clean=href.split(/[?#]/)[0];
+   const dest=clean.startsWith("/")
+     ? clean.replace(/^\/+Khaemenes_High\.github\.io\//,"")
+     : path.posix.normalize(path.posix.join(path.posix.dirname(file),clean));
    assert.ok(fs.existsSync(dest)||fs.existsSync(dest+'/index.html'),'broken local route '+lesson+' -> '+href);
    links++;
   }
@@ -48,7 +54,10 @@ for(const unit of [10,11]){
  }
  for(const m of landing.matchAll(/\b(?:src|href)=["']([^"']+)["']/gi)){
   const href=m[1];if(/^(?:https?:|mailto:|tel:|data:|javascript:|#)/i.test(href))continue;
-  const dest=path.posix.normalize(path.posix.join(root,href.split(/[?#]/)[0]));
+  const clean=href.split(/[?#]/)[0];
+  const dest=clean.startsWith("/")
+    ? clean.replace(/^\/+Khaemenes_High\.github\.io\//,"")
+    : path.posix.normalize(path.posix.join(root,clean));
   assert.ok(fs.existsSync(dest)||fs.existsSync(dest+'/index.html'),'broken unit route '+unit+' -> '+href);
   links++;
  }
