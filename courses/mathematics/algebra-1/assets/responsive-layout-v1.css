@@ -21,6 +21,7 @@ table{min-width:0;max-width:100%}
 h1{font-size:clamp(2.35rem,8vw,5.25rem)!important;overflow-wrap:anywhere}
 h2{font-size:clamp(1.75rem,5.6vw,3.7rem);overflow-wrap:anywhere}
 h3,h4{overflow-wrap:anywhere}
+.eyebrow,.kicker,.dialog-eyebrow,.dialog-kicker,.worksheet-kicker{font-size:16px!important;line-height:1.4!important;letter-spacing:.12em!important;text-transform:uppercase!important}
 .lead{width:min(100%,930px)}
 
 /* Tap targets and form controls */
