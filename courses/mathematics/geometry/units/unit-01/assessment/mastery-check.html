@@ -562,6 +562,7 @@ function submit(){if(!applyGate())return;
   const evidence=persistResult(result);
   if(!evidence){draft.submitted=false;saveDraft(false);$("#status").textContent="Result could not be verified in browser storage. Export your work before leaving.";return}
   render();showResult(result);
+  window.KhaemenesMathAssessmentDirective?.show({kind:"unit",unit:1,score:result.score,mastered:result.mastery===true});
   $("#status").textContent=result.mastery?"Unit 01 mastery saved.":"Attempt saved below mastery. Review corrections and retake when ready.";
   $("#results").scrollIntoView({behavior:"smooth",block:"center"});
 }
