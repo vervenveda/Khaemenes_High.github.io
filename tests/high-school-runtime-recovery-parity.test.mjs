@@ -271,3 +271,20 @@ test("High School course translator uses bounded refreshes instead of continuous
  assert.match(language,/khaemenes-math-content-ready/);
  assert.match(language,/khaemenes-learning-continuation-ready/);
 });
+
+
+test("Algebra I readiness diagnostic is a single-owner assessment surface",()=>{
+ const page=read("courses/mathematics/algebra-1/diagnostic/index.html");
+ assert.doesNotMatch(page,/exam-engine\.js/);
+ assert.doesNotMatch(page,/course-entry-contract\.js/);
+ assert.doesNotMatch(page,/math-entry-gate\.js/);
+ assert.doesNotMatch(page,/math-assessment-workspace-v1\.css/);
+ assert.doesNotMatch(page,/assets\/styles\.css/);
+ assert.doesNotMatch(page,/new\s+MutationObserver/);
+ assert.doesNotMatch(page,/setInterval\s*\(/);
+ assert.equal((page.match(/id="questionList"/g)||[]).length,1);
+ assert.equal((page.match(/id="submitButton"/g)||[]).length,1);
+ assert.equal((page.match(/data-info="/g)||[]).length,3);
+ assert.match(page,/const CONFIG=\{/);
+ assert.match(page,/Algebra I Readiness Diagnostic/);
+});
