@@ -36,9 +36,9 @@ window.KhaemenesClassToolsConfigV1={
  toggleLabel:"Tools",
  ariaLabel:"English learning tools",
  tools:[
-  {type:"link",label:"Reading",sub:"Reading resources",href:"reading-list.html"},
-  {type:"link",label:"Writing",sub:"Evidence studio",href:"evidence-studio.html"},
-  {type:"link",label:"Vocabulary",sub:"Vocabulary studio",href:"../../mathematics/tools/vocabulary-studio.html?course=english-9&unit=01&week=1"},
+  {type:"link",label:"Student",sub:"Student profile",href:"/Khaemenes_High.github.io/grades/grade-09/student-profile/"},
+  {type:"link",label:"Classes",sub:"Daily classes",href:"/Khaemenes_High.github.io/grades/grade-09/student-profile/daily-lessons/"},
+  {type:"link",label:"Schedule",sub:"My schedule",href:"/Khaemenes_High.github.io/grades/grade-09/student-profile/#scheduleBarTitle"},
   {type:"link",label:"Search",sub:"Search ecosystem",href:"https://vervenveda.com/PLERASearch.github.io/"},
   {type:"action",label:"Translate",sub:"Change language",action:"translate"},
   {type:"link",label:"Parent",sub:"Family support",href:"https://vervenveda.com/Khaemenes_Academy.github.io/family/"}
