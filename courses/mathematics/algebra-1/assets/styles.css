@@ -19,7 +19,7 @@ table{width:100%;border-collapse:collapse}th,td{padding:10px;border-bottom:1px s
 
 /* 2026-10-14: readable parchment unit landing pages; no course logic changes. */
 html:root:root body .hero{padding:clamp(42px,6vw,76px) 0 clamp(32px,5vw,56px)}
-html:root:root body .hero .eyebrow{font-size:clamp(25px,3.7vw,44px)!important;line-height:1.2!important;letter-spacing:.015em!important;text-transform:none!important;max-width:960px;margin:0 auto 16px}
+html:root:root body .hero .eyebrow{font-size:16px!important;line-height:1.4!important;letter-spacing:.12em!important;text-transform:uppercase!important;max-width:960px;margin:0 auto 16px}
 html:root:root body .hero h1{font-size:clamp(27px,3.4vw,36px)!important;line-height:1.27!important;letter-spacing:0!important;max-width:960px;margin:0 auto 16px}
 html:root:root body .hero .lead{font-size:clamp(18px,2vw,24px)!important;line-height:1.53!important;max-width:850px}
 html:root:root body main{padding-top:clamp(22px,3vw,42px)}
@@ -27,7 +27,7 @@ html:root:root body .block{padding-block:clamp(28px,4vw,52px)}
 html:root:root body .card{border-radius:7px}
 html:root:root body .card p,html:root:root body .notice{font-size:clamp(16px,1.3vw,18px);line-height:1.7}
 html:root:root body .card .eyebrow{font-size:16px!important;line-height:1.5!important;letter-spacing:.07em!important}
-@media(max-width:700px){html:root:root body .hero{padding:38px 0}html:root:root body .hero .eyebrow{font-size:clamp(26px,7vw,36px)!important}html:root:root body .hero .lead{font-size:18px!important}}
+@media(max-width:700px){html:root:root body .hero{padding:38px 0}html:root:root body .hero .eyebrow{font-size:16px!important}html:root:root body .hero .lead{font-size:18px!important}}
 @media print{html:root:root body .hero{padding:16px 0!important}html:root:root body .block{padding:14px 0!important}}
 
 
