@@ -2,6 +2,7 @@
 
 | Date | Type | Entry | State |
 | --- | --- | --- | --- |
+| 2026-11-19 | test · regression · HOLD resolution | [Algebra II HOLD resolution regression](logs/2026/11/2026-11-19-hold-resolution-regression.md) | GitHub Actions regression PASS 12/12; progression/data-integrity HOLDs closed; remaining HOLDs limited to rendered tablet/phone/offline acceptance |
 | 2026-11-19 | forensic audit · repair · engine hardening | [Algebra II engine hardening pass 02](logs/2026/11/2026-11-19-engine-hardening-pass-02.md) | Evidence-chain bypass prevention + accurate weekly/unit lock routing + verified recovery drafts + non-destructive fail-closed unit recovery + cache v16; assessments untouched; browser/device HOLD |
 | 2026-11-19 | forensic audit · repair · engine hardening | [Algebra II engine hardening pass](logs/2026/11/2026-11-19-engine-hardening-pass.md) | Weekly-boundary gates + explicit progression targets + verified persistence + mastery-aligned unit progress + cumulative-gate routing + typography/offline cache v15; assessments untouched; browser/device HOLD |
 | 2026-11-17 | full re-audit · Exceptional source architecture | [Full Exceptional Source Re-Audit](logs/2026/11/2026-11-17-full-exceptional-source-reaudit.md) | All source-controlled rubric categories Exceptional; live browser/device acceptance HOLD |
