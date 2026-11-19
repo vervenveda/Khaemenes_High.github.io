@@ -810,3 +810,46 @@ Visual contract:
 - even grids;
 - collapsed charcoal expandable bars where progressive disclosure is appropriate;
 - global tickers, official header, and ecosystem toolbars remain owned by their canonical shared scripts.
+
+
+## Pre-Algebra approved lesson implementation · v2.2.1
+
+Canonical reference clone:
+`workflow/blueprints/pre-algebra-mathematics-engine-v2.2.1-reference.html`
+
+Approved live reference:
+`courses/mathematics/pre-algebra/units/unit-01/lessons/lesson-01-number-systems.html`
+
+The workflow reference HTML is an exact clone of the approved visual/structural prototype before prototype-only guards are removed for live use.
+
+### Required lesson architecture
+- canonical 333 ticker, AutoPopulate ticker, official VNV header and branched menu remain owned by shared chrome;
+- one centered Mathematics Engine workspace;
+- charcoal + crisp cream + khaki parchment only;
+- Cinzel for Academy/course/section/card titles;
+- Brandon Grotesque or Nunito for body and controls;
+- 18px preferred body text; 16px absolute minimum;
+- no bold typography;
+- 3px borders and 7px radius;
+- course title 66px; Academy 33px; section title 33px Cinzel; section descriptor 24px; card title 24px Cinzel;
+- progressive disclosure through full-width charcoal accordion bars;
+- Reading Room, Number-Family Explorer or lesson-specific explorer/lab, Quick Check, Worked Examples, Pathway Support, Vocabulary Bridge, Global Application, Guided Notes, Lesson Practice and Reflection are collapsed by default when present;
+- Reading/list bullets align left;
+- question numbers occupy a left rail beside the prompt;
+- Guided Notes and Reflection controls maintain protected spacing;
+- Lesson Completion Checklist appears after Reflection;
+- checklist items are clickable navigation targets that open their collapsed section;
+- passive study sections may be manually checked after review;
+- activity-backed sections auto-check from evidence;
+- Lesson Practice auto-checks only at >=80% mastery;
+- Next Lesson unlocks only when every required checklist item is complete AND Lesson Practice mastery is >=80%.
+
+### Migration safety contract
+When migrating an existing Pre-Algebra lesson:
+1. Preserve `LESSON_DATA`, unit maps, vocabulary data, specialized interactive IDs, games, scoring logic, and learner-record keys.
+2. Remove legacy presentation ownership (`unit.css`, embedded typography policies, page-level presentation CSS) only after the lesson has been structurally migrated to the canonical v2 shell.
+3. Do not bulk replace lesson HTML with Lesson 01 content; every lesson keeps its own curriculum and specialized interactive laboratory.
+4. Validate required IDs before publishing.
+5. Verify no declared text size is below 16px.
+6. Verify the lesson gate requires both checklist completion and >=80% mastery.
+7. Keep the protected Pre-Algebra course landing page unchanged unless separately approved.
