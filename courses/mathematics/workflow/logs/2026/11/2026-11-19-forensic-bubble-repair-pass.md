@@ -209,3 +209,157 @@ The canonical registry-driven lesson bridge remains practice-only and assessment
 3. Shared-game registration/wiring — **architecture repaired; final downstream suite verification in progress**
 4. Geometry / Algebra II local validation density — **PUSHED OUT / PASS**
 5. Algebra II Mathematics Engine migration gate — **PUSHED OUT / HOLD ENFORCED**
+
+
+## Final closeout checkpoint
+
+### CI / validation status
+
+The five-bubble repair pass has reached the following controlled state:
+
+| Gate | Result |
+| --- | --- |
+| Geometry Release Validation | **PASS** |
+| High School Mathematics Lesson Launch Validation | **PASS** |
+| Mathematics Shared Games Validation | **PASS** |
+| Higher Mathematics Local Regression | **PASS** |
+| Mathematics Engine lesson-shell integrity | **PASS** |
+| Hosted physical/browser-device acceptance | **HOLD — environment / representative-device acceptance still required** |
+
+Representative successful workflow runs from this pass:
+
+- High School Mathematics Lesson Launch Validation: run `44547848415` — **SUCCESS**
+- Mathematics Shared Games Validation: run `44549396258` — **SUCCESS**
+- Higher Mathematics Local Regression: run `44548598104` — **SUCCESS**
+- Mathematics Engine lesson-shell integrity remained green during the Geometry/Algebra II hardening cycle.
+
+### Bubble 1 · Geometry strict release — CLOSED
+
+Geometry's dedicated release validator is now aligned to the current assessment architecture and passes without modifying assessment content or scoring.
+
+The current release validator recognizes:
+- self-contained 40-question readiness diagnostic;
+- current 25-question unit mastery architecture;
+- exact 20/25 = 80% mastery;
+- current mixed-evidence Midterm and Final;
+- current learner-record / completion / offline contracts.
+
+**Status: PASS**
+
+### Bubble 2 · Four-course lesson launch — CLOSED
+
+The department launch validator now:
+- resolves deployed site-root dependencies correctly;
+- understands current Pre-Algebra and Algebra I architectures;
+- passes component, assessment-depth, mastery, progression, recovery, syntax, and cross-course launch checks;
+- reaches the hosted Chrome stage without a source/runtime contract failure.
+
+The hosted GitHub Chrome process could not initialize enough to render even static control pages because of the runner DBus environment. The harness now distinguishes that infrastructure condition from a page failure.
+
+**Source/runtime launch contract: PASS**  
+**Browser/device acceptance: HOLD**
+
+### Bubble 3 · Shared games / lesson resource wiring — CLOSED
+
+The shared-game architecture now has:
+- canonical registry-driven lesson bridge;
+- idempotent lesson mounting through the shared course-entry contract;
+- explicit assessment / diagnostic exclusion;
+- exact course/unit/lesson/mode synchronization;
+- canonical game-return routing;
+- site-root dependency normalization;
+- current registry-aware Sequence & Series, Statistics Detective, and Probability Quest validation;
+- all Algebra II Unit 10–11 game/depth/student-journey checks green;
+- all Algebra I game launch/return and lesson-specific evidence checks green.
+
+A legacy standalone-game sweep also found and repaired a real navigation gap. Canonical return navigation was added to older games that predated the course-entry contract, including:
+- Exponent Pattern Explorer;
+- Exponent Properties Lab;
+- Interest & Fees Decision Lab;
+- Perfect Powers & Roots Quest;
+- Proportion Solver Mission;
+- Scientific Notation Operations Mission;
+- Algebra Reasoning Foundations;
+- Algebra Structure Balance Challenge;
+- Algebra Functions & Systems Challenge;
+- Algebra Exponents & Radicals Challenge;
+- Algebra Evidence Modelling Challenge;
+- Algebra Language Lab;
+- Equivalence Forge;
+- Piecewise Boundary Lab.
+
+**Status: PASS**
+
+### Bubble 4 · Geometry / Algebra II validation density — CLOSED
+
+Added and activated:
+- Geometry local 90-lesson regression;
+- Algebra II 92-lesson engine-readiness regression;
+- higher-math rollout gate;
+- dedicated Higher Mathematics Local Regression workflow.
+
+The higher-course checks now sit beside the department-wide validators instead of relying only on them.
+
+**Status: PASS**
+
+### Bubble 5 · Algebra II Mathematics Engine migration gate — CLOSED AS GOVERNANCE / MIGRATION REMAINS HOLD
+
+The requested hardening bubble was to prevent Algebra II from inheriting Geometry before Geometry was accepted.
+
+That protection is now executable:
+
+- no Algebra II lesson adapter is present;
+- all 92 Algebra II lessons are checked for the HOLD condition;
+- protected assessments are checked for lesson-adapter contamination;
+- repository gate rejects an Algebra II adapter unless Geometry's formal release/acceptance authority permits the next migration stage.
+
+Geometry source/release validation is now green, but physical/browser-device acceptance remains HOLD. Therefore Algebra II Mathematics Engine migration remains **HOLD BY DESIGN** rather than being advanced prematurely.
+
+### Additional instructional hardening discovered during the pass
+
+The Algebra II Unit 10–11 audit found that 14 of 18 lessons relied on text-only representation support while four had inline accessible SVGs.
+
+The shared exceptional-depth companion was upgraded to v1.1.0 and now supplies an accessible, lesson-specific three-representation concept map:
+- `role="img"`;
+- title + description;
+- representation labels derived from the lesson's own representation data;
+- responsive SVG;
+- 16px caption;
+- explicit representation / constraint / verification relationship.
+
+The final depth validation now reports:
+- 18 Unit 10–11 lessons;
+- 36+ core worked examples;
+- 96 independent tasks;
+- 18 accessible mathematical representation surfaces;
+- 19 retained canonical game launchers;
+- 18 exceptional-depth companion records;
+- exact/numerical mathematics cross-checks PASS.
+
+### Assessment firewall closeout
+
+No repair in this pass changed:
+- assessment questions;
+- answer keys;
+- mastery thresholds;
+- Midterm scoring;
+- Final scoring;
+- diagnostic scoring;
+- assessment authority.
+
+One real service-worker issue was repaired in Pre-Algebra so official assessment navigations are no longer eligible for reusable lesson caching.
+
+The Mathematics Engine lesson-shell integrity workflow remained green.
+
+## Final department repair verdict
+
+**Five forensic bubbles: pushed out at source/governance level.**
+
+- curriculum/source architecture: **EXCEPTIONAL**
+- release contracts: **PASS**
+- lesson launch contracts: **PASS**
+- shared games/resources: **PASS**
+- higher-math local regression: **PASS**
+- Mathematics Engine assessment firewall: **PASS**
+- Algebra II migration protection: **PASS / HOLD enforced**
+- representative physical browser/tablet/phone/print acceptance: **HOLD**
