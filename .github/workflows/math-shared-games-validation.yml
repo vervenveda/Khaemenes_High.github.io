@@ -3,6 +3,8 @@ name: Mathematics Shared Games Validation
 on:
   pull_request:
     paths:
+      - "courses/shared/course-entry-contract.js"
+      - "courses/mathematics/assets/math-shared-game-bridge-v1.js"
       - "courses/mathematics/assets/learning-games/**"
       - "courses/mathematics/assets/shared-game-launcher.js"
       - "courses/mathematics/tools/validate-shared-games.mjs"
@@ -38,6 +40,8 @@ on:
   push:
     branches: [ main ]
     paths:
+      - "courses/shared/course-entry-contract.js"
+      - "courses/mathematics/assets/math-shared-game-bridge-v1.js"
       - "courses/mathematics/assets/learning-games/**"
       - "courses/mathematics/assets/shared-game-launcher.js"
       - "courses/mathematics/tools/validate-shared-games.mjs"
