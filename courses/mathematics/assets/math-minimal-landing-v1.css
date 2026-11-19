@@ -58,8 +58,8 @@ img,svg,canvas,video{max-width:100%}
   max-width:800px;margin:16px auto 0;color:var(--muted);font-size:18px;
 }
 .math-action-grid{
-  display:grid;grid-template-columns:repeat(3,minmax(0,1fr));
-  gap:14px;margin:33px auto 0;max-width:900px;
+  display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+  gap:14px;margin:33px auto 0;max-width:1000px;
 }
 .math-action-grid a{
   min-height:58px;display:flex;align-items:center;justify-content:center;
@@ -68,6 +68,8 @@ img,svg,canvas,video{max-width:100%}
   text-decoration:none;font:400 18px/1.3 var(--sans);
 }
 .math-action-grid a:hover{background:var(--charcoal-deep);transform:translateY(-1px)}
+.math-action-grid a.primary-course-entry{background:var(--gold);color:var(--charcoal-deep);border-color:var(--gold)}
+.math-action-grid a.primary-course-entry:hover{background:#c69b52}
 
 .math-course{padding:58px 0 78px}
 .math-course-card{
