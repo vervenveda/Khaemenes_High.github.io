@@ -24,6 +24,6 @@ for(const file of protectedFiles){
 }
 const adapter=read(path.join(ROOT,"assets",ADAPTER));
 assert(adapter.includes(VERSION),"Geometry adapter internal version "+VERSION+" missing");
-assert(adapter.includes("lesson-tools.js")||adapter.includes("Evaluator lesson score"),"Geometry adapter must preserve native mastery authority");
+assert(adapter.includes('KEY="khaemenes-geometry-lesson-progress-v1"')&&adapter.includes("masteryScore")&&adapter.includes("mastered")&&adapter.includes(">=MASTERY"),"Geometry adapter must read the native Geometry lesson record and preserve the 80% mastery authority");
 if(errors.length){console.error(errors.map((e,i)=>(i+1)+". "+e).join("\n"));process.exit(1)}
 console.log("PASS Geometry local regression: 90 lessons · adapter parity · assessment firewall · course-entry coverage");
