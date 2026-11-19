@@ -10,7 +10,8 @@
 <meta name="description" content="Khaemenes Academy High School Grade 09 learning portal — courses, support, student pathways, and Academy resources.">
 <title>Khaemenes Academy · High School · Grade 09</title>
 <link rel="stylesheet" href="../../assets/khaemenes-grade-landing-v1.css">
-<link rel="stylesheet" href="https://vervenveda.com/Khaemenes_Academy.github.io/assets/khaemenes-global-header.css"><link rel="stylesheet" href="https://vervenveda.com/assets/vnv-ecosystem-menu.css"><link rel="stylesheet" href="../../assets/high-navigation-v1.css" data-high-navigation-css>
+
+
 <link rel="stylesheet" href="https://vervenveda.com/Khaemenes_Academy.github.io/assets/khaemenes-landing-standard.css">
 
 <style id="grade09-readability-contrast-20261029">
@@ -161,21 +162,100 @@ html body main :is(.front-card,.course-card,.support-card,.hero-actions) :is(a,b
 }
 </style>
 <script src="/Khaemenes_High.github.io/assets/high-school-root-worker-recovery-v1.js" defer data-high-root-worker-recovery="v1"></script>
+<style id="grade09-freshman-refinement-20261119">
+:root{--g9-charcoal:#243038;--g9-cream:#fff8e9;--g9-parchment:#f4f0e7;--g9-gold:#b48b45}
+html body{font-size:16px!important}
+html body :is(h1,h2,h3,.eyebrow,.kicker,.grade-title){
+ font-family:Cinzel,Georgia,serif!important;font-weight:400!important
+}
+/* Universal header: K mark and hamburger are the same 40px square. */
+html body #vnvHeaderAutoPopulate .vnv-header-logo,
+html body #vnvHeaderAutoPopulate .vnv-header-menu-button{
+ width:40px!important;height:40px!important;flex-basis:40px!important;border-radius:7px!important
+}
+html body #vnvHeaderAutoPopulate .vnv-header-title{
+ font-family:Cinzel,Georgia,serif!important;font-size:16px!important;font-weight:400!important
+}
+html body #vnvHeaderAutoPopulate .vnv-header-subtitle{
+ font-size:16px!important;font-weight:400!important
+}
+/* One restrained, symmetrical navigation row. */
+html body .grade09-local-links{
+ width:100%!important;display:grid!important;
+ grid-template-columns:repeat(5,minmax(0,1fr))!important;gap:9px!important;
+ padding:11px max(16px,calc((100vw - 900px)/2))!important;
+ margin:0!important;background:var(--g9-parchment)!important;background-image:none!important;
+ border:0!important;border-bottom:1px solid #c9bea8!important;
+}
+html body .grade09-local-links a{
+ box-sizing:border-box!important;display:flex!important;align-items:center!important;justify-content:center!important;
+ width:100%!important;min-width:0!important;min-height:44px!important;padding:9px 12px!important;
+ border:1px solid #c9bea8!important;border-radius:7px!important;background:var(--g9-cream)!important;
+ color:var(--g9-charcoal)!important;-webkit-text-fill-color:var(--g9-charcoal)!important;
+ font:400 16px/1.25 "Brandon Grotesque",Nunito,"Avenir Next",Arial,sans-serif!important;
+ text-align:center!important;text-decoration:none!important;white-space:nowrap!important;
+ box-shadow:none!important;
+}
+html body .grade09-local-links a:hover,
+html body .grade09-local-links a:focus-visible{
+ border-color:var(--g9-gold)!important;background:#fffdf8!important;
+ outline:3px solid transparent!important;box-shadow:0 0 0 2px var(--g9-gold)!important;
+}
+/* Hero hierarchy: 55 / 33 / 16. */
+html body > section.hero{padding:55px 24px!important}
+html body > section.hero .eyebrow{
+ margin:0 0 11px!important;font-size:16px!important;line-height:1.3!important;
+ letter-spacing:.09em!important;text-transform:uppercase!important;
+}
+html body > section.hero h1{
+ margin:0!important;font-size:55px!important;line-height:1.08!important;letter-spacing:.01em!important;
+}
+html body > section.hero .grade-title{
+ margin:11px 0 0!important;font-size:33px!important;line-height:1.15!important;
+}
+html body > section.hero .hero-lead{
+ max-width:760px!important;margin:18px auto!important;font-size:16px!important;line-height:1.65!important;
+}
+html body > section.hero .hero-actions{
+ display:grid!important;grid-template-columns:repeat(3,minmax(0,1fr))!important;
+ gap:9px!important;width:min(760px,100%)!important;margin:22px auto 0!important;
+}
+html body > section.hero .hero-actions .btn{
+ box-sizing:border-box!important;width:100%!important;min-height:44px!important;padding:9px 12px!important;
+ border:1px solid #c9bea8!important;border-radius:7px!important;background:var(--g9-cream)!important;
+ color:var(--g9-charcoal)!important;-webkit-text-fill-color:var(--g9-charcoal)!important;
+ font:400 16px/1.25 "Brandon Grotesque",Nunito,Arial,sans-serif!important;
+}
+/* Section and card title scale. */
+html body main .heading h2{font-size:33px!important;line-height:1.2!important}
+html body main :is(.front-card,.course-card,.support-card) h3{
+ font-size:24px!important;line-height:1.25!important;font-family:Cinzel,Georgia,serif!important;font-weight:400!important
+}
+html body main :is(.front-card,.course-card,.support-card) p,
+html body main :is(.front-card,.course-card,.support-card) .status,
+html body main .heading p{font-size:16px!important;line-height:1.6!important}
+@media(max-width:760px){
+ html body .grade09-local-links{grid-template-columns:repeat(2,minmax(0,1fr))!important}
+ html body > section.hero .hero-actions{grid-template-columns:1fr!important}
+ html body > section.hero h1{font-size:clamp(40px,11vw,55px)!important}
+}
+@media(max-width:430px){
+ html body .grade09-local-links{grid-template-columns:1fr!important}
+}
+</style>
 </head>
 <body id="top" data-grade09-canonical-chrome="true" data-high-hide-breadcrumbs="true">
-<header data-khae-header class="khae-global-campus-header"><div data-khae-header-inner><a data-khae-brand href="https://vervenveda.com/Khaemenes_Academy.github.io/"><span data-khae-brand-mark>K</span><span><strong data-khae-brand-name>Khaemenes Academy</strong><small data-khae-brand-sub>High School · Grades 9–12</small></span></a><nav data-khae-nav><a href="https://vervenveda.com/Khaemenes_Academy.github.io/">Academy</a><a href="student-profile/" data-high-profile-door="true">Student</a><a href="https://vervenveda.com/Khaemenes_Academy.github.io/family/">Family</a><a href="https://vervenveda.com/Khaemenes_Higher_Learning.github.io/">Higher Learning</a></nav><div data-khae-actions><a data-khae-secondary href="student-profile/" data-high-profile-door="true">Student Profile</a></div><div data-vnv-ecosystem-slot aria-label="Ecosystem menu"></div></div></header>
 <a class="skip" href="#main">Skip to main content</a>
 <nav class="grade09-local-links" aria-label="Grade 9 learning shortcuts" style="background:#243038 !important;background-image:none !important;border-bottom:1px solid #b48b45 !important">
 <a href="../../">High School</a><a href="../../courses/">Courses</a><a href="../../courses/mathematics/">Mathematics</a><a href="../../mentor/?stage=high&amp;subject=general&amp;course=grade-09&amp;source=grades%2Fgrade-09%2F">Mentor</a><a href="#courses">Grade 9 Courses</a>
 </nav>
-<div data-vnv-language-mount aria-label="Language and translation tools"></div>
 <section class="hero" style="background:#243038 !important;background-image:none !important;color:#fff8e9 !important">
   <div class="shell hero-inner">
-    <p class="eyebrow">High School Campus</p>
+    <p class="eyebrow">Khaemenes Academy · High School</p>
     <h1>Freshman</h1>
-    <h2 class="grade-title">Grade 9</h2>
+    <h2 class="grade-title">9th Grade</h2>
     <p class="hero-lead">Your campus for the first year of online high school; organized around the Student Dashboard, pinned classes, daily lessons, core courses, electives, grades, games, profile tools, mentor support, and parent-aware settings.</p>
-    <div class="hero-actions"><a class="btn primary" href="#courses">Open Grade 09 Courses</a><a class="btn primary" href="../../courses/mathematics/">Mathematics</a><a class="btn primary" href="../../">High School Home</a></div>
+    <div class="hero-actions"><a class="btn primary" href="#courses">Open 9th Grade Courses</a><a class="btn primary" href="../../courses/mathematics/">Mathematics</a><a class="btn primary" href="../../">High School Home</a></div>
   </div>
 </section>
 <main id="main">
@@ -281,52 +361,100 @@ html body main :is(.front-card,.course-card,.support-card,.hero-actions) :is(a,b
 
 <!-- Grade 9 uses the canonical ecosystem toolbar; legacy Beta launcher removed. -->
 <script src="../../assets/vnv-language.js" defer data-official-vnv-language="true"></script>
-<script defer src="../../courses/mathematics/algebra-1/assets/learning-tools-menu-v1.js" data-academy-learning-tools="v1"></script>
-<script src="https://vervenveda.com/assets/vnv-ecosystem-menu.js" defer></script><script src="../../assets/high-navigation-v1.js" defer></script>
 
 
 <script src="https://vervenveda.com/assets/vnv-333-ticker.js"></script>
 <script src="https://vervenveda.com/assets/vnv-ticker-autopopulate.js" data-vnv-ticker-autopopulate></script>
 <script>VNV_TICKER.autoPopulate({label:"Grade 9 Quick Links",max:14});</script>
-<script src="https://vervenveda.com/assets/vnv-ecosystem-toolbar.js"></script>
-<style id="grade09-navigation-hero-recovery">
-/* Only the Grade 9 header-adjacent ticker and hero, plus the canonical utility dock. */
-html body > section.hero{background:#243038!important;background-image:linear-gradient(125deg,#244258,#152b3c 65%,#17242e)!important;color:#fff8e9!important}
-html body > section.hero :is(.eyebrow,h1,h2,.hero-lead){color:#fff8e9!important;-webkit-text-fill-color:#fff8e9!important;opacity:1!important;text-shadow:none!important}
-html body > section.hero .btn.primary{background:#243038!important;color:#fff8e9!important;-webkit-text-fill-color:#fff8e9!important;border:1px solid #b48b45!important}
-
-
-
-
-html body #vnvEcosystemUtilityDock{position:fixed!important;right:12px!important;bottom:12px!important;z-index:2147482500!important;display:grid!important;grid-template-columns:repeat(3,minmax(0,1fr))!important;gap:7px!important;width:min(354px,calc(100vw - 24px))!important;padding:10px!important;border:1px solid #b48b45!important;border-radius:7px!important;background:#fffdf8!important;box-sizing:border-box!important;box-shadow:0 10px 30px rgba(15,25,37,.17)!important}
-html body #vnvEcosystemUtilityDock > :is(a,button){all:unset!important;box-sizing:border-box!important;display:flex!important;justify-content:center!important;align-items:center!important;min-width:0!important;min-height:42px!important;padding:5px!important;border:1px solid #bac8be!important;border-radius:7px!important;background:#f4f0e7!important;color:#243038!important;text-align:center!important;font:400 16px/1.2 "Brandon Grotesque",Nunito,Arial,sans-serif!important;cursor:pointer!important}
-html body #vnvEcosystemUtilityDock [data-vnv-tool="beta"]{background:#152538!important;color:#fff8e9!important}
-html body #vnvEcosystemUtilityDock [data-vnv-tool="support"]{background:#294c40!important;color:#fff8e9!important}
-html body #vnvEcosystemUtilityDock :is(a,button):focus-visible{outline:3px solid #b48b45!important;outline-offset:2px!important}
-html body :is(#vnvBetaProgramLink,#khaemenesLearnerUtilityToolbar){display:none!important}
-@media(max-width:380px){html body #vnvEcosystemUtilityDock{grid-template-columns:repeat(2,minmax(0,1fr))!important;width:min(230px,calc(100vw - 16px))!important}}
-@media print{html body #vnvEcosystemUtilityDock{display:none!important}}
-</style>
+<script src="https://vervenveda.com/assets/vnv-header-autopopulate.js"></script>
 <script>
-window.addEventListener("load",()=>{
-  /* Prefer the official shared toolbar. If unavailable, preserve identical destinations. */
-  if(document.getElementById("vnvEcosystemUtilityDock"))return;
-  try{window.VNVEcosystemToolbar?.mount?.()}catch(e){console.warn("Shared toolbar",e)}
-  if(document.getElementById("vnvEcosystemUtilityDock")||window.VNVEcosystemToolbar)return;
-  const dock=document.createElement("nav");dock.id="vnvEcosystemUtilityDock";dock.setAttribute("aria-label","Verve N Veda ecosystem utilities");
-  const add=(key,label,url)=>{const el=document.createElement("a");el.dataset.vnvTool=key;el.href=url;el.textContent=label;dock.append(el)};
-  add("profile","Profile",window.KhaemenesHighNavigation?.profileHref?.()||"https://vervenveda.com/Khaemenes_Academy.github.io/family/enroll/");
-  add("search","Search","https://vervenveda.com/PLERASearch.github.io/");
-  const updates=document.createElement("button");updates.type="button";updates.dataset.vnvTool="updates";updates.textContent="Updates";dock.append(updates);
-  add("mentor","Mentor","https://vervenveda.com/Khaemenes_Academy.github.io/mentor/");
-  add("support","Support","https://vervenveda.com/#support");
-  add("beta","Beta","https://vervenveda.com/beta/");
-  const dialog=document.createElement("dialog");dialog.id="vnvEcosystemUtilityUpdates";
-  const title=document.createElement("h2");title.textContent="Updates & Help";dialog.append(title);
-  const help=document.createElement("a");help.href="https://vervenveda.com/Khaemenes_Academy.github.io/#help";help.textContent="Academy Help Desk";dialog.append(help);
-  const close=document.createElement("button");close.type="button";close.textContent="Close";close.addEventListener("click",()=>dialog.close());dialog.append(close);
-  updates.addEventListener("click",()=>dialog.showModal());document.body.append(dock,dialog);
-},{once:true});
+VNV_HEADER.mount({
+ replaceLegacy:true,
+ title:"Khaemenes Academy",
+ subtitle:"High School · 9th Grade",
+ icon:"K",
+ home:"https://vervenveda.com/Khaemenes_Academy.github.io/",
+ actions:[]
+});
 </script>
+<script id="vnv-grade09-class-tools-config">
+(()=>{"use strict";
+ if(window.KhaemenesClassToolsConfigV1?.id==="grade09-freshman")return;
+ const reveal=(selector)=>{
+  const target=document.querySelector(selector);if(!target)return false;
+  target.scrollIntoView({behavior:"smooth",block:"start"});return true;
+ };
+ function languagePanel(root){
+  if(!root)return null;
+  let panel=root.querySelector("[data-vct-language-panel]");
+  if(!panel){
+   panel=document.createElement("div");panel.className="vct-pop";panel.dataset.vctLanguagePanel="1";panel.hidden=true;
+   const h=document.createElement("h2");h.textContent="Language";
+   const p=document.createElement("p");p.textContent="Choose the interface language.";
+   panel.append(h,p);root.querySelector("#vnvClassToolsPanel")?.append(panel);
+  }
+  const translator=document.getElementById("vnv-language-switch");
+  if(translator&&!panel.contains(translator)){
+   panel.append(translator);
+   translator.style.setProperty("margin","7px auto","important");
+   translator.style.setProperty("max-width","100%","important");
+  }
+  return panel;
+ }
+ window.KhaemenesClassToolsConfigV1={
+  id:"grade09-freshman",
+  match:()=>/\/grades\/grade-09\/(?:index\.html)?$/i.test(location.pathname),
+  toggleLabel:"Tools",
+  ariaLabel:"9th Grade learning tools",
+  tools:[
+   {type:"ecosystem-link",label:"Art",sub:"Bazaar Art",ecosystemId:"bazaar",fallbackHref:"https://vervenveda.github.io/bazaarart.github.io/"},
+   {type:"ecosystem-link",label:"Arcade",sub:"Games",ecosystemId:"arcade",fallbackHref:"https://vervenveda.github.io/arcade.github.io/"},
+   {type:"ecosystem-link",label:"Music",sub:"The Refrain",ecosystemId:"refrain",fallbackHref:"https://vervenveda.github.io/the_refrain.github.io/"},
+   {type:"ecosystem-link",label:"News",sub:"The Verifier",ecosystemId:"verifier",fallbackHref:"https://vervenveda.github.io/theverifier.github.io/"},
+   {type:"action",label:"Classes",sub:"9th Grade classes",action:"classes"},
+   {type:"ecosystem-list",label:"Learning",sub:"Learning tools",filter:{category:"education",limit:12}},
+   {type:"ecosystem-link",label:"Pro",sub:"Pro tools",ecosystemId:"proresources",fallbackHref:"https://vervenveda.github.io/proresource_hub.github.io/ProReSources_updated_index.html"},
+   {type:"ecosystem-link",label:"Aurora",sub:"Wellness",ecosystemId:"aurora",fallbackHref:"https://vervenveda.github.io/aurora.github.io/"},
+   {type:"ecosystem-link",label:"Weather",sub:"Solanar",ecosystemId:"solanar",fallbackHref:"https://vervenveda.github.io/solanar.github.io/"},
+   {type:"ecosystem-link",label:"Legal",sub:"Firmament Law",ecosystemId:"firmament-law",fallbackHref:"https://vervenveda.github.io/firmament.github.io/apps/Law_Governance_hall_index.html"},
+   {type:"ecosystem-link",label:"Medical",sub:"Medicament",ecosystemId:"medicament",fallbackHref:"https://vervenveda.github.io/medicament-hub.github.io/"},
+   {type:"action",label:"Language",sub:"Translator",action:"language"}
+  ],
+  actions:{
+   classes:()=>reveal("#courses"),
+   language:({root})=>{
+    const panel=languagePanel(root);if(!panel)return false;
+    const open=panel.hidden;root.querySelectorAll(".vct-pop").forEach(p=>p.hidden=true);panel.hidden=!open;
+    if(open)panel.querySelector("select,button")?.focus?.();return true;
+   }
+  },
+  help:{title:"9th Grade Tools",paragraphs:[]}
+ };
+})();
+</script>
+<script src="https://vervenveda.com/assets/vnv-class-tools-toolbar.js?v=1.6.1" defer data-vnv-class-tools-toolbar="grade09"></script>
+<script id="vnv-grade09-translator-relocation">
+(()=>{"use strict";
+ const move=()=>{
+  const root=document.getElementById("vnvClassToolsToolbar"),translator=document.getElementById("vnv-language-switch");
+  if(!root||!translator)return false;
+  let panel=root.querySelector("[data-vct-language-panel]");
+  if(!panel){
+   panel=document.createElement("div");panel.className="vct-pop";panel.dataset.vctLanguagePanel="1";panel.hidden=true;
+   const h=document.createElement("h2");h.textContent="Language";
+   const p=document.createElement("p");p.textContent="Choose the interface language.";
+   panel.append(h,p);root.querySelector("#vnvClassToolsPanel")?.append(panel);
+  }
+  if(!panel.contains(translator))panel.append(translator);
+  translator.style.setProperty("margin","7px auto","important");
+  translator.style.setProperty("max-width","100%","important");
+  return true;
+ };
+ const observer=new MutationObserver(()=>{if(move())observer.disconnect()});
+ if(!move())observer.observe(document.documentElement,{subtree:true,childList:true});
+ window.addEventListener("pageshow",move);
+})();
+</script>
+<script src="https://vervenveda.com/assets/vnv-ecosystem-toolbar.js"></script>
 </body>
 </html>
