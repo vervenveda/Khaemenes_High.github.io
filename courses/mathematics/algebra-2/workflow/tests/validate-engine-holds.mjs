@@ -90,8 +90,9 @@ test("Unit 10 boundaries route to weeks 27 28 29",()=>{
   }
 });
 
-test("Unit 07 requires full Unit 06 chain plus Midterm",()=>{
-  const s=mergeState([fullUnit(6)]);s.assessments["readiness-diagnostic"]=pass();s.assessments.midterm=pass();
+test("Unit 07 requires full first-half chain plus Midterm",()=>{
+  const parts=[];for(let u=1;u<=6;u++)parts.push(fullUnit(u));
+  const s=mergeState(parts);s.assessments["readiness-diagnostic"]=pass();s.assessments.midterm=pass();
   delete s.weekly.weeks[17];assert.equal(boot(s).P.unitUnlocked(7),false);
   s.weekly.weeks[17]=weekPass();assert.equal(boot(s).P.unitUnlocked(7),true);
   delete s.assessments.midterm;assert.equal(boot(s).P.unitUnlocked(7),false);
