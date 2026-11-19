@@ -70,13 +70,8 @@
   };
   const bindLegacyBetaRetirement=()=>{
     retireLegacyBetaButton();
-    try{
-      const root=document.documentElement;
-      if(!root||root.dataset.vnvSoloBetaRetirement==="1"||typeof MutationObserver!=="function")return;
-      root.dataset.vnvSoloBetaRetirement="1";
-      const observer=new MutationObserver(()=>retireLegacyBetaButton());
-      observer.observe(root,{childList:true,subtree:true});
-    }catch{}
+    [120,480,1400].forEach(ms=>setTimeout(retireLegacyBetaButton,ms));
+    window.addEventListener("pageshow",retireLegacyBetaButton,{once:true});
   };
 
   const removeLegacyUtilitySurfaces=()=>{
@@ -458,11 +453,12 @@
     dockEducationUtility(document.getElementById(HIGH_PROFILE_ID),10);
     alignHighProfileSurface();
 
-    if(typeof MutationObserver==="function"&&!document.documentElement.dataset.khaeHighProfileStackBound){
+    if(!document.documentElement.dataset.khaeHighProfileStackBound){
       document.documentElement.dataset.khaeHighProfileStackBound="1";
-      const observer=new MutationObserver(()=>alignHighProfileSurface());
-      observer.observe(document.body,{childList:true,subtree:true});
+      [120,480,1400].forEach(ms=>setTimeout(alignHighProfileSurface,ms));
       window.addEventListener("resize",alignHighProfileSurface,{passive:true});
+      window.addEventListener("khaemenes-high-chrome-ready",alignHighProfileSurface,{once:true});
+      window.addEventListener("pageshow",alignHighProfileSurface,{once:true});
     }
   }
 
@@ -625,18 +621,10 @@
 
   function bindVisibleFrames(){
     if(!document.querySelectorAll)return;
-    document.querySelectorAll("iframe").forEach(attachToFrame);
-    if(typeof MutationObserver!=="function")return;
-    const observer=new MutationObserver(records=>{
-      for(const record of records){
-        for(const node of record.addedNodes||[]){
-          if(node?.nodeType!==1)continue;
-          if(node.tagName==="IFRAME")attachToFrame(node);
-          node.querySelectorAll?.("iframe").forEach(attachToFrame);
-        }
-      }
-    });
-    observer.observe(document.documentElement,{childList:true,subtree:true});
+    const scan=()=>document.querySelectorAll("iframe").forEach(attachToFrame);
+    scan();
+    [250,900,2200].forEach(ms=>setTimeout(scan,ms));
+    window.addEventListener("pageshow",scan,{once:true});
   }
 
   function start(){
