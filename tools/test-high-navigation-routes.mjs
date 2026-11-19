@@ -23,6 +23,7 @@ for(const file of pages){
  const gradeLanding=/^grades\/grade-(09|10|11|12)\/index\.html$/.exec(file);
  const frontDoor=file==="index.html";
  const preAlgebra=file==="courses/mathematics/pre-algebra/index.html";
+ const minimalLanding=/minimal-header-mount-v1\.js/.test(source);
 
  if(studentProfile){
   assert.ok(source.includes("vnv-header-autopopulate.js"),file+" missing canonical profile header");
@@ -40,13 +41,24 @@ for(const file of pages){
   assert.ok(source.includes('class="grade'+g+'-local-links"'),file+" missing benchmark local navigation");
   assert.ok(source.includes('data-high-profile-door="true"')&&source.includes('data-high-profile-editor-door="true"'),
     file+" missing grade-local profile doors");
+ }else if(minimalLanding){
+  assert.ok(source.includes("vnv-dual-ticker-v1.js"),file+" missing canonical dual ticker");
+  assert.ok(source.includes("vnv-header-autopopulate.js"),file+" missing official auto header");
+  assert.ok(source.includes("vnv-language.js"),file+" missing official language loader");
+  assert.ok(source.includes("vnv-class-tools-toolbar.js"),file+" missing class-tools toolbar");
+  assert.ok(source.includes("vnv-ecosystem-toolbar.js"),file+" missing ecosystem toolbar");
+  assert.ok(/minimal-landing-v1\.css/.test(source),file+" missing minimal landing stylesheet");
+  assert.ok(!source.includes("high-school-global-chrome-v2.js"),file+" retired chrome reference returned");
+  if(/^courses\/mathematics\/(?:pre-algebra|algebra-1|geometry|algebra-2)\/index\.html$/.test(file)){
+    assert.ok(source.includes("Enter Course"),file+" missing direct instructional doorway");
+    assert.ok(/href=["']assessments\/?["']/.test(source),file+" missing assessment doorway");
+  }
  }else{
   const departmentShell=source.includes("high-department-landing-shell-v1.js");
   if(frontDoor){
    assert.ok(source.includes("vnv-header-autopopulate.js"),file+" missing canonical homepage header");
    assert.ok(/<style>/i.test(source),file+" missing homepage inline styles");
   }
-  if(preAlgebra)assert.ok(source.includes("high-school-return-to-classes.js"),file+" missing course return control");
   if(departmentShell){
    const match=source.match(/(?:src|href)=["']([^"']*high-department-landing-shell-v1\.js(?:\?[^"']*)?)["']/);
    assert.ok(match,file+" missing canonical department shell");
@@ -55,7 +67,7 @@ for(const file of pages){
    assert.ok(fs.existsSync(resolved),file+" broken department shell asset "+resolved);
    assert.ok(!source.includes("high-school-global-chrome-v2.js"),file+" retired chrome reference returned");
   }else{
-  const suffixes=frontDoor?[".js"]:preAlgebra?[".css"]:[".js",".css"];
+  const suffixes=frontDoor?[".js"]:[".js",".css"];
   for(const suffix of suffixes){
    const assetPattern=suffix===".js"
     ?/(?:src|href)=["']([^"']*high-navigation-v1\.js(?:\?[^"']*)?)["']/
