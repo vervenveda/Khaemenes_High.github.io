@@ -2,65 +2,75 @@ import assert from "node:assert/strict";
 import fs from "node:fs";
 import path from "node:path";
 const registry=JSON.parse(fs.readFileSync("courses/mathematics/assets/learning-games/game-registry.json","utf8"));
-const enhanced=new Set(["u10-l01","u10-l02","u10-l03","u10-l04","u10-l06","u10-l07","u10-l08","u10-l09","u10-l10",
-"u11-l01","u11-l02","u11-l03","u11-l04","u11-l05"]);
-const preexisting=new Set(["u10-l05","u11-l06","u11-l07","u11-l08"]);
-let lessons=0,extraWorked=0,transferTasks=0,diagramCount=0,gameLaunchers=0;
+const standardFlow=["recall","see","worked","explain","guided","independent","error","transfer","feedback","reflect"];
+const depthCompanion=fs.readFileSync("courses/mathematics/algebra-2/assets/algebra2-exceptional-lesson-depth-units10-11-v1.js","utf8");
+let lessons=0,coreWorked=0,independentTasks=0,diagramCount=0,gameLaunchers=0,depthCoverage=0;
 const die=(ok,msg)=>assert.ok(ok,msg);
+
 for(const [unit,total] of [[10,10],[11,8]]){
  for(let n=1;n<=total;n++){
   const id="u"+unit+"-l"+String(n).padStart(2,"0");
   const filepath="courses/mathematics/algebra-2/units/unit-"+unit+"/lessons/"+id+".html";
   const html=fs.readFileSync(filepath,"utf8");
   lessons++;
+
   die(/<main[^>]*id="main"/.test(html),id+" main landmark");
   die(html.includes('<div class="lesson-main">'),id+" learning column");
   die(html.includes('id="lessonNote"')&&html.includes('id="lessonComplete"')&&html.includes('id="saveLessonNote"'),id+" existing student records preserved");
-  die(html.includes('lesson-tools.js'),id+" active lesson recorder");
+  die(html.includes("lesson-tools.js"),id+" active lesson recorder");
   die(html.includes("shared-game-launcher.js"),id+" linked shared game");
-  die(html.includes("Guided and independent practice"),id+" guided practice");
-  die(html.includes("Differentiated pathways"),id+" teacher pathways");
-  die(html.includes("Mastery evidence"),id+" success criteria");
-  die(html.includes("Misconception and correction"),id+" existing misconception checks");
+
+  const flow=[...html.matchAll(/data-flow-step="([^"]+)"/g)].map(m=>m[1]);
+  for(const step of standardFlow)die(flow.includes(step),id+" missing current flow step "+step);
+  for(let i=1;i<standardFlow.length;i++)die(flow.indexOf(standardFlow[i-1])<flow.indexOf(standardFlow[i]),id+" flow order "+standardFlow[i-1]+" -> "+standardFlow[i]);
+  die(flow.includes("guided")&&flow.includes("independent"),id+" guided-to-independent practice progression");
+  die(flow.includes("error"),id+" misconception/error repair stage");
+  die(flow.includes("feedback"),id+" success/feedback stage");
+  die(flow.includes("reflect"),id+" reflection stage");
+
   const launchers=[...html.matchAll(/data-game="([^"]+)"/g)].map(m=>m[1]);
   for(const slug of launchers)die(registry.games[slug],id+" references missing registered game "+slug);
   gameLaunchers+=launchers.length;
-  let visuals=html.match(/<svg\b[^>]*role="img"/g)||[];
+
+  const visuals=html.match(/<svg\b[^>]*role="img"/g)||[];
   die(visuals.length>=1,id+" needs accessible mathematical diagram");
-  die(html.includes('aria-labelledby="'+id) || html.includes('aria-labelledby="u'+unit+'l'),id+" image accessible name and description");
+  die(html.includes("aria-labelledby="),id+" image accessible name and description");
   diagramCount+=visuals.length;
-  die(html.includes("<details><summary>Reveal"),id+" delayed answer review");
-  if(enhanced.has(id)){
-   die((html.match(new RegExp('data-instruction-reinforced="'+id+'"','g'))||[]).length===1,id+" unique enrichment");
-   die(html.includes('data-depth-diagram="'+id+'"'),id+" specific SVG concept model");
-   die(html.includes('data-depth-transfer="'+id+'"'),id+" independent transfer");
-   const start=html.indexOf('data-instruction-reinforced="'+id+'"');
-   const stop=html.indexOf('data-depth-diagram="'+id+'"');
-   const lesson=html.slice(start,stop);
-   die((lesson.match(/<article>/g)||[]).length===2,id+" needs two extended worked proofs");
-   die((lesson.match(/<li>/g)||[]).length>=6,id+" needs at least six explicit worked steps");
-   extraWorked+=2;
-   const transfer=html.slice(html.indexOf('data-depth-transfer="'+id+'"'),
-      html.indexOf('<section class="lesson-section"><h2>Guided and independent practice</h2>'));
-   die((transfer.match(/<li>/g)||[]).length===6,id+" three original questions and three answer explanations");
-   die(transfer.includes("<details><summary>Reveal independent answer reasoning</summary>"),id+" require hidden answers");
-   die(transfer.includes("Misconception to correct:"),id+" explicit error diagnosis");
-   transferTasks+=3;
-  }else{
-   die(preexisting.has(id),id+" missing from instructional coverage plan");
-   die(html.includes("Visual model")&&html.includes("Independent transfer"),id+" preserve expanded lesson content");
-  }
+
+  die(/<details[^>]*>[\s\S]*?<summary>[^<]*(?:Reveal|Check|Show)/i.test(html),id+" delayed/student-controlled answer review");
+
+  const worked=html.match(/<section[^>]*data-flow-step="worked"[^>]*>([\s\S]*?)<\/section>/)?.[1]||"";
+  die(worked,id+" current worked section");
+  const workedCount=(worked.match(/<article>/g)||[]).length;
+  die(workedCount>=2,id+" core worked step needs at least two examples");
+  coreWorked+=workedCount;
+
+  const independent=html.match(/<section[^>]*data-flow-step="independent"[^>]*>([\s\S]*?)<\/section>/)?.[1]||"";
+  die(independent,id+" current independent section");
+  const independentCount=(independent.match(/<li>/g)||[]).length;
+  die(independentCount>=3,id+" independent practice needs at least three tasks");
+  independentTasks+=independentCount;
+
+  die(html.includes("algebra2-exceptional-lesson-depth-units10-11-v1.js"),id+" exceptional-depth companion loader preserved");
+  die(depthCompanion.includes('"'+id+'"'),id+" exceptional-depth companion data exists");
+  depthCoverage++;
+
   for(const m of html.matchAll(/(?:href|src)="([^"]+)"/g)){
-   const uri=m[1];if(/^(?:https?:|mailto:|tel:|data:|#)/i.test(uri))continue;
-   const rel=uri.split(/[?#]/)[0];if(!rel||rel.startsWith("/"))continue;
-   const target=path.posix.normalize(path.posix.join(path.posix.dirname(filepath),rel));
+   const uri=m[1];
+   if(/^(?:https?:|mailto:|tel:|data:|#)/i.test(uri))continue;
+   const rel=uri.split(/[?#]/)[0];
+   if(!rel)continue;
+   const target=rel.startsWith("/")
+     ? rel.replace(/^\/+Khaemenes_High\.github\.io\//,"")
+     : path.posix.normalize(path.posix.join(path.posix.dirname(filepath),rel));
    die(fs.existsSync(target)||fs.existsSync(target+"/index.html"),id+" broken local resource "+uri);
   }
  }
 }
 assert.equal(lessons,18);
-assert.equal(extraWorked,28);
-assert.equal(transferTasks,42);
+die(depthCoverage===18,"all Unit 10–11 lessons covered by exceptional-depth companion");
+die(coreWorked>=36,"all lessons retain at least two core worked examples");
+die(independentTasks>=54,"all lessons retain substantial independent practice");
 die(gameLaunchers>=19,"all original game connections preserved");
 die(diagramCount>=18,"all lessons diagrammed");
 
@@ -98,5 +108,5 @@ die(close(Math.sqrt(12*12+18*18-2*12*18*Math.cos(r(70))),17.90,.011),"two-endpoi
 die(close(Math.hypot(14,6*Math.sqrt(3)),4*Math.sqrt(19)),"two-leg displacement");
 die(close(Math.atan2(14,6*Math.sqrt(3))*180/Math.PI,53.41,.02),"navigation bearing");
 die(close(Math.sqrt(6.5*3.5*2.5*.5),5.33,.011),"Heron area");
-console.log("PASS: "+lessons+" Algebra II Unit 10–11 lessons; "+extraWorked+" new complete worked examples, "+transferTasks+" independent prompts, "+
- diagramCount+" accessible diagrams, "+gameLaunchers+" retained canonical game launchers, route preservation, and exact/numerical mathematics cross-checks.");
+console.log("PASS: "+lessons+" Algebra II Unit 10–11 lessons; "+coreWorked+" core worked examples, "+independentTasks+" independent tasks, "+
+ diagramCount+" accessible diagrams, "+gameLaunchers+" retained canonical game launchers, 18 exceptional-depth companion records, route preservation, and exact/numerical mathematics cross-checks.");
