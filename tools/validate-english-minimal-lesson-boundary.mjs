@@ -55,7 +55,7 @@ for(const [grade,blob] of Object.entries(preserved)){
  const lesson=path.join(dir,first[grade]);
  assert.ok(fs.existsSync(lesson),"English "+grade+": first daily lesson missing");
  assert.ok(read(lesson).length>4000,"English "+grade+": first lesson lacks substantive HTML");
- const expectedLaunch=grade==="9"?"english-9/daily-learning/":first[grade].replace(/index\\.html$/,"");
+ const expectedLaunch=grade==="9"?"english-9/daily-learning/":first[grade].replace(/index\.html$/,"");
  assert.ok(routeSource.includes('"english-'+grade+'"')&&routeSource.includes(expectedLaunch),"English "+grade+": configured class launch route absent");
  console.log("ENGLISH_COURSE_BOUNDARY_PASS",grade,"36/36 weekly pages","first lesson:",first[grade]);
 }
