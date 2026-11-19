@@ -46,6 +46,9 @@ function resolveLocal(from,ref){
   if(!ref || /^(?:https?:|#|mailto:|tel:|data:|javascript:)/i.test(ref)) return null;
   const clean=ref.split("?")[0].split("#")[0];
   if(!clean) return null;
+  if(clean.startsWith("/")){
+    return clean.replace(/^\/+/, "").replace(/^Khaemenes_High\.github\.io\//, "");
+  }
   return path.posix.normalize(path.posix.join(path.posix.dirname(from),clean));
 }
 
