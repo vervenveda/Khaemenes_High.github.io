@@ -1,203 +1,77 @@
-<!DOCTYPE html>
-
-<html data-theme="light" lang="en">
+<!doctype html>
+<html lang="en">
 <head>
-<meta charset="utf-8"/>
-<meta content="width=device-width,initial-scale=1,viewport-fit=cover" name="viewport"/>
-<meta content="Khaemenes High International Integrated Science 9 student portal with a 36-week curriculum, phenomenon-based lessons, investigations, data tools, CER writing, assessments, reports, and local records." name="description"/>
-<meta content="#f4f0e7" name="theme-color"/>
-<title>International Integrated Science 9 — 36 Week Student Portal</title>
-<style>
-:root{
- --bg:#07121c;--bg2:#0c1d2b;--panel:#102437;--panel2:#173148;--card:#0c1b2a;
- --ink:#f4f2e9;--muted:#b8c5cc;--gold:#d7b363;--blue:#79b9da;--green:#83d2a3;
- --teal:#62c8c0;--violet:#b3a6e8;--red:#ff9e9e;--line:rgba(255,255,255,.14);
- --shadow:0 18px 52px rgba(0,0,0,.36);--r:11px;--r2:21px;
- --serif:Georgia,"Times New Roman",serif;--sans:Inter,"Avenir Next","Segoe UI",Arial,sans-serif;
-}
-html[data-theme="light"]{
- --bg:#eeece5;--bg2:#f8f6f0;--panel:#fffefa;--panel2:#eef5f4;--card:#fff;
- --ink:#121517;--muted:#566167;--gold:#96702d;--blue:#285f7b;--green:#356c4a;
- --teal:#27766f;--violet:#625887;--red:#a44949;--line:rgba(19,48,62,.18);
- --shadow:0 15px 38px rgba(18,43,55,.11);
-}
-*{box-sizing:border-box}html{scroll-behavior:smooth}
-body{margin:0;min-width:0;min-height:100vh;overflow-x:hidden;color:var(--ink);
- background:radial-gradient(circle at 8% 0,rgba(98,200,192,.13),transparent 28rem),
- radial-gradient(circle at 92% 0,rgba(121,185,218,.12),transparent 27rem),var(--bg);
- font:400 16px/1.64 var(--sans)}
-button,input,select,textarea{font:inherit}button{cursor:pointer}a{color:var(--blue)}
-:focus-visible{outline:3px solid color-mix(in srgb,var(--blue) 50%,transparent);outline-offset:3px}
-.app{display:grid;grid-template-columns:320px minmax(0,1fr);min-height:100vh}
-.sidebar{position:sticky;top:0;height:100vh;overflow:auto;padding:18px;border-right:1px solid var(--line);
- background:color-mix(in srgb,var(--bg) 89%,transparent);backdrop-filter:blur(12px)}
-.brand{display:flex;align-items:center;gap:12px;margin-bottom:15px}.seal{width:48px;height:48px;display:grid;place-items:center;
- border:2px solid var(--teal);border-radius:var(--r);color:var(--teal);background:rgba(98,200,192,.08);font:700 1rem/1 var(--serif)}
-.brand h1{margin:0;font:700 1rem/1.15 var(--serif)}.brand p{margin:.25rem 0 0;color:var(--muted);font-size:.78rem}
-.sideBox{margin:13px 0;padding:14px;border:1px solid var(--line);border-radius:var(--r2);background:rgba(255,255,255,.035)}
-.sideBox h3{margin:.1rem 0 .7rem;font-size:.92rem}label{display:block;margin:.25rem 0 .35rem;color:var(--muted);font-size:.8rem}
-input,select,textarea{width:100%;padding:.72rem;border:1px solid var(--line);border-radius:var(--r);color:var(--ink);
- background:color-mix(in srgb,var(--bg) 84%,black 16%)}html[data-theme="light"] input,html[data-theme="light"] select,html[data-theme="light"] textarea{background:#fff}
-textarea{min-height:92px;resize:vertical}.inline{display:flex;gap:8px;align-items:center}.inline>*{flex:1}
-button,.button{min-height:42px;display:inline-flex;align-items:center;justify-content:center;gap:6px;padding:.68rem .9rem;
- border:1px solid transparent;border-radius:var(--r);background:var(--teal);color:#071815;font-weight:800;text-decoration:none;
- box-shadow:0 8px 20px rgba(98,200,192,.13)}
-button.secondary,.button.secondary{background:var(--panel2);color:var(--ink);border-color:var(--line);box-shadow:none}
-button.ghost,.button.ghost{background:transparent;color:var(--teal);border-color:color-mix(in srgb,var(--teal) 55%,transparent);box-shadow:none}
-button.danger{background:#4f2730;color:#ffeaea;border-color:#87414d;box-shadow:none}
-.actions{display:flex;flex-wrap:wrap;gap:8px;margin-top:11px}.navBtn{width:100%;justify-content:flex-start;margin:6px 0;background:var(--card);color:var(--ink);border-color:var(--line);box-shadow:none}
-.navBtn.active{border-color:var(--teal);background:rgba(98,200,192,.12)}
-.weekList{display:grid;gap:6px;max-height:48vh;overflow:auto}.weekButton{width:100%;display:grid;grid-template-columns:1fr auto;gap:7px;text-align:left;
- background:var(--card);color:var(--ink);border:1px solid var(--line);box-shadow:none}.weekButton.active{border-color:var(--teal);background:rgba(98,200,192,.12)}
-.weekButton small{display:block;color:var(--muted)}
-.main{width:100%;max-width:1320px;margin:0 auto;padding:22px}.topline{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-bottom:12px}
-.crumbs{display:flex;flex-wrap:wrap;gap:7px;color:var(--muted);font-size:.78rem}.crumbs a{text-decoration:none}
-.hero{padding:25px;border:1px solid var(--line);border-radius:26px;background:linear-gradient(135deg,rgba(98,200,192,.13),rgba(121,185,218,.10));box-shadow:var(--shadow)}
-.hero h2{margin:0 0 8px;font:700 clamp(1.8rem,4vw,3.2rem)/1.03 var(--serif)}.hero p{max-width:940px;margin:.35rem 0;color:var(--muted)}
-.heroLinks{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}.ticker{overflow:hidden;margin:14px 0;border-block:1px solid var(--line);background:rgba(255,255,255,.025)}
-.tickerTrack{width:max-content;display:flex;gap:28px;padding:8px 0;white-space:nowrap;color:var(--muted);font-size:.71rem;letter-spacing:.08em;text-transform:uppercase;animation:ticker 44s linear infinite}
-.tickerTrack span:after{content:"◆";margin-left:28px;color:var(--teal);font-size:.5rem}.ticker:hover .tickerTrack{animation-play-state:paused}@keyframes ticker{to{transform:translateX(-50%)}}
-.tabs{display:flex;flex-wrap:wrap;gap:7px;margin:15px 0}.tab{background:var(--panel);color:var(--ink);border-color:var(--line);box-shadow:none}.tab.active{background:var(--teal);color:#071815}
-.grid{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:14px}.card{min-width:0;padding:18px;border:1px solid var(--line);border-radius:var(--r2);background:color-mix(in srgb,var(--panel) 94%,transparent);box-shadow:0 10px 30px rgba(0,0,0,.14)}
-.card h3,.card h4{margin:.1rem 0 .65rem;font-family:var(--serif)}.card p,.card li{color:color-mix(in srgb,var(--ink) 84%,var(--muted));line-height:1.62}
-.kpi{grid-column:span 3;text-align:center}.kpi strong{display:block;color:var(--teal);font:700 2rem/1 var(--serif)}.kpi span{color:var(--muted);font-size:.8rem}
-.col3{grid-column:span 3}.col4{grid-column:span 4}.col5{grid-column:span 5}.col6{grid-column:span 6}.col7{grid-column:span 7}.col8{grid-column:span 8}.col9{grid-column:span 9}.col12{grid-column:span 12}
-.pill{display:inline-flex;align-items:center;gap:5px;margin:.15rem .15rem .15rem 0;padding:.25rem .55rem;border:1px solid var(--line);border-radius:999px;color:var(--muted);font-size:.74rem}
-.pill.good{color:#bff7d2;border-color:rgba(131,210,163,.5);background:rgba(131,210,163,.08)}.pill.warn{color:#ffe4a0;border-color:rgba(215,179,99,.5);background:rgba(215,179,99,.08)}
-.progressbar{height:12px;overflow:hidden;border:1px solid var(--line);border-radius:999px;background:color-mix(in srgb,var(--bg) 75%,black 25%)}.progressbar span{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--teal),var(--green))}
-.notice{padding:12px 14px;border-left:4px solid var(--gold);border-radius:var(--r);background:rgba(215,179,99,.08);color:color-mix(in srgb,var(--ink) 88%,var(--muted))}
-.phenomenon{padding:16px;border:1px solid rgba(98,200,192,.4);border-radius:14px;background:linear-gradient(135deg,rgba(98,200,192,.10),rgba(121,185,218,.06))}
-.lesson{margin:12px 0;padding:15px;border:1px solid var(--line);border-radius:18px;background:var(--card)}.lessonHeader{display:flex;justify-content:space-between;align-items:flex-start;gap:12px}
-.check{display:flex;align-items:center;gap:7px;color:var(--green);font-weight:800}.check input{width:auto}
-.labGrid{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:13px;margin-top:14px}.lab{grid-column:span 6;padding:15px;border:1px solid var(--line);border-radius:14px;background:var(--card)}.lab.full{grid-column:span 12}
-.materialGrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}.material{padding:10px;border:1px solid var(--line);border-radius:10px;background:var(--panel2)}.material strong{display:block}
-.problem{margin:10px 0;padding:13px;border:1px solid var(--line);border-radius:13px;background:color-mix(in srgb,var(--panel2) 88%,transparent)}.problem p{margin:.1rem 0 .55rem;color:var(--ink)}
-.problem input,.problem select{max-width:460px}.feedback{margin-top:8px;padding:9px 10px;border-left:4px solid var(--blue);border-radius:9px;background:rgba(121,185,218,.08)}
-.feedback.good{border-left-color:var(--green);background:rgba(131,210,163,.08)}.feedback.bad{border-left-color:var(--red);background:rgba(255,158,158,.08)}.score{color:var(--teal);font:800 1.5rem/1 var(--serif)}
-.dataGrid{display:grid;grid-template-columns:repeat(3,1fr);gap:7px}.dataGrid .head{color:var(--teal);font-weight:800}.graphBox{min-height:250px;padding:10px;border:1px solid var(--line);border-radius:11px;background:#fff}
-.graphBox svg{width:100%;height:230px}.graphText{fill:#27333a;font:12px Arial}.graphAxis{stroke:#596870;stroke-width:1}.graphLine{fill:none;stroke:#168c83;stroke-width:3}.graphPoint{fill:#b07d22}
-table{width:100%;border-collapse:collapse}th,td{padding:.7rem;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}th{color:var(--teal);font-size:.78rem}td{color:color-mix(in srgb,var(--ink) 84%,var(--muted))}
-.small{font-size:.82rem;color:var(--muted)}.hidden{display:none!important}.footer{margin:24px 0;color:var(--muted);font-size:.8rem}
-@media(max-width:960px){.app{grid-template-columns:1fr}.sidebar{position:relative;height:auto}.main{padding:14px}.kpi,.col3,.col4,.col5,.col6,.col7,.col8,.col9,.col12{grid-column:span 12}.weekList{max-height:250px}}
-@media(max-width:720px){body{font-size:15px}.lab{grid-column:span 12}.materialGrid,.dataGrid{grid-template-columns:1fr}.topline{align-items:flex-start;flex-direction:column}}
-@media(prefers-reduced-motion:reduce){*,*:before,*:after{scroll-behavior:auto!important;animation:none!important;transition:none!important}}
-@media print{body{background:#fff;color:#111}.sidebar,.tabs,.actions,.noPrint,.topline,.ticker,button,input,select,textarea{display:none!important}.main{padding:0;max-width:none}.card,.hero,.lesson,.lab{box-shadow:none;border:1px solid #aaa;background:#fff;color:#111}.card p,.card li,td{color:#111}th{color:#111}}
-@media(max-width:300px){.app{display:block;min-width:0}.sidebar,.main,.hero,.card{min-width:0;width:100%;padding:10px}.hero{border-radius:7px}.brand,.topline,.actions,.heroLinks{flex-wrap:wrap}.weekButton,.navBtn,button,input,select,textarea{max-width:100%;min-width:0;overflow-wrap:anywhere}body{overflow-wrap:break-word}table{display:block;overflow-x:auto}h1,h2,h3{overflow-wrap:anywhere}}
-</style>
-<script src="../../shared/course-entry-contract.js?v=20261007"></script><script src="assets/science9-entry-gate.js?v=20261027-learner-entrance"></script>
-<script src="../../shared/monte-carlo-assessment-v1.js?v=20261018"></script>
-<script src="units/unit-01/question-bank.js?v=20261018"></script><script src="units/unit-02/question-bank.js?v=20261018"></script><script src="units/unit-03/question-bank.js?v=20261018"></script><script src="units/unit-04/question-bank.js?v=20261018"></script><script src="units/unit-05/question-bank.js?v=20261018"></script><script src="units/unit-06/question-bank.js?v=20261018"></script><script src="units/unit-07/question-bank.js?v=20261018"></script><script src="units/unit-08/question-bank.js?v=20261018"></script><script src="units/unit-09/question-bank.js?v=20261018"></script><script src="units/unit-10/question-bank.js?v=20261018"></script><script src="units/unit-11/question-bank.js?v=20261018"></script><script src="units/unit-12/question-bank.js?v=20261018"></script>
-<script src="diagnostic/weekly-readiness-question-bank.js?v=20261018"></script>
-<link rel="stylesheet" href="../../../assets/vervenveda-parchment.css" data-vervenveda-parchment>
-<link rel="stylesheet" href="../../../assets/grade09-subject-parchment.css?v=20261013" data-grade09-consistency>
-<style id="khaemenes-typography-standard">
-/* Khaemenes High presentation typography · 55 / 33 / 24 / 14 px.
-   All public pages receive this local, embedded policy for offline use.
-   Only presentation changes. Existing grids, gates, learner records, assessments and STOS are preserved.
-   Font names are optional installed system fonts; no downloads or third-party font services. */
-html:root:root body {
-  font-family: "Brandon Grotesque", "Avenir Next", Avenir, "Segoe UI", Arial, sans-serif !important;
-  font-size: 14px !important;
-  font-weight: 400 !important;
-  line-height: 1.65 !important;
-  -webkit-text-size-adjust: 100%;
-  overflow-wrap: break-word;
-}
-html:root:root body :is(button, input, select, textarea) {
-  font-family: "Brandon Grotesque", "Avenir Next", Avenir, "Segoe UI", Arial, sans-serif !important;
-}
-html:root:root body :is(h1, h2, h3, h4, h5, h6, .page-title, .hero-title, .brand-title, .display-title, .site-title) {
-  font-family: Cinzel, "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif !important;
-  font-weight: 400 !important;
-  overflow-wrap: anywhere;
-}
-html:root:root body :is(.eyebrow, .kicker, .dialog-eyebrow, .dialog-kicker, .worksheet-kicker) {
-  font-family: Cinzel, "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif !important;
-  font-size: 55px !important;
-  font-weight: 400 !important;
-  line-height: 1.15 !important;
-  letter-spacing: .02em !important;
-  white-space: normal !important;
-  overflow-wrap: anywhere;
-}
-html:root:root body h1 {
-  font-size: 33px !important;
-  line-height: 1.2 !important;
-  white-space: normal !important;
-  overflow-wrap: anywhere;
-}
-html:root:root body h2,
-html:root:root body :is(.subtitle, .hero-subtitle, .hero-sub, .academy-comment),
-html:root:root body .hero .comment {
-  font-size: 24px !important;
-  line-height: 1.35 !important;
-  white-space: normal !important;
-  overflow-wrap: anywhere;
-}
-/* Do not replace responsive grids or fixed elements; prevent oversized titles from
-   demanding horizontal scrolling on narrow phone and tablet displays. */
-html:root:root body :is(.hero, .header, .page-header, .section-head, .lesson-header) {
-  min-width: 0;
-}
-@media print {
-  html:root:root body { font-size: 14px !important; }
-}
-</style>
-<script defer src="../../../assets/academy-unified-print-header.js"></script><link rel="stylesheet" href="../../../assets/high-navigation-v1.css" data-high-navigation-css>
-<script defer src="https://vervenveda.com/assets/vnv-ecosystem-toolbar.js" data-official-vnv-ecosystem-toolbar="true"></script>
-<link rel="stylesheet" href="science9-vnv-ka-blueprint-v1.css" data-ka-blueprint="science9-v1">
-  <script src="/Khaemenes_High.github.io/assets/high-school-global-chrome-v2.js" defer data-high-school-global-chrome="v2"></script>
-<script src="/Khaemenes_High.github.io/assets/high-school-root-worker-recovery-v1.js" defer data-high-root-worker-recovery="v1"></script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="description" content="Khaemenes Academy International Integrated Science 9 — a 36-week, 12-unit science pathway in life science, matter, energy, Earth systems, scientific inquiry, engineering, information literacy, data, modeling, and Claim-Evidence-Reasoning.">
+<meta name="theme-color" content="#252b2b">
+<title>International Integrated Science 9 | Khaemenes Academy Science</title>
+<link rel="stylesheet" href="../assets/science-minimal-landing-v1.css">
+<script src="../../../assets/vnv-dual-ticker-v1.js" defer data-high-school-dual-ticker="true"></script>
+<script src="https://vervenveda.com/assets/vnv-header-autopopulate.js" defer data-official-vnv-header="true"></script>
+<script src="../assets/science-minimal-header-mount-v1.js" defer data-science-minimal-header="v1"></script>
 </head>
-<body data-science9-require-entry class="ka-science9-blueprint">
-<a class="grade9-skip-link" href="#content">Skip to student science workspace</a>
-<div class="app">
+<body>
+<a class="skip-link" href="#main">Skip to main content</a>
 
-<main class="main">
-<div class="topline noPrint">
-<div class="crumbs"><a href="https://vervenveda.com/Khaemenes_Academy.github.io/">Khaemenes Academy</a><span>›</span><a href="https://vervenveda.com/Khaemenes_High.github.io/">High School</a><span>›</span><a href="https://vervenveda.com/Khaemenes_High.github.io/courses/science/integrated-science-9/">Integrated Science 9</a><span>›</span><span>Grade 09 Portal</span></div>
-<button class="secondary" id="themeBtn" type="button" aria-pressed="false" title="Toggle high contrast parchment">Higher contrast</button>
-</div>
-<section class="hero">
-<p class="academy-eyebrow">Khaemenes Academy</p>
-<h1>Integrated Science 9</h1>
-<p><strong>Life, Matter, Energy and Earth Systems.</strong> This self-contained classroom combines a complete 36-week integrated curriculum, Foundation/Core/Extended pathways, phenomenon-based instruction, safe investigations, data and graph tools, CER writing, generated mastery checks, formal assessment links, reports, and local backups.</p>
-<p class="small">Student work is stored locally in this browser. Export a backup regularly. Public student navigation does not expose answer keys.</p>
-<div class="heroLinks noPrint"><a class="button secondary" href="https://vervenveda.com/Khaemenes_High.github.io/courses/science/integrated-science-9/">Complete Course Hall</a><a class="button ghost" href="https://vervenveda.com/Khaemenes_High.github.io/courses/science/integrated-science-9/diagnostic/">Safety &amp; Diagnostic</a><a class="button secondary" href="https://vervenveda.com/Khaemenes_High.github.io/courses/science/integrated-science-9/assessments/">Assessment Center</a></div>
-</section>
-<aside class="sidebar">
-<div class="brand"><div class="seal">K</div><div><h2>Integrated Science 9</h2><p>36 Week Student Portal</p></div></div>
-<div class="sideBox">
-<label for="studentSelect">Active student</label><select id="studentSelect"></select>
-<div class="inline" style="margin-top:8px"><input aria-label="New student name" id="studentName" placeholder="New student name"/><button id="addStudentBtn">Add</button></div>
-<div class="actions"><button class="secondary" id="demoBtn">Add Demo</button><button class="danger" id="deleteStudentBtn">Delete</button></div>
-</div>
-<div class="sideBox"><label for="pathway">Learning pathway</label><select id="pathway"></select><p class="small" id="pathwayMessage"></p></div>
-<nav class="sideBox" aria-label="Science 9 course navigation">
-<button class="navBtn active" data-view="dashboard">Dashboard</button><button class="navBtn" data-view="week">Weekly Lessons</button>
-<button class="navBtn" data-view="scope">36 Week Scope</button><button class="navBtn" data-view="lab">Science Lab</button>
-<button class="navBtn" data-view="assessments">Assessments</button><button class="navBtn" data-view="reports">Reports</button>
-<button class="navBtn" data-view="standards">Course Charter &amp; Mastery</button>
-</nav>
-<details class="sideBox science-week-drawer"><summary>Browse All 36 Weeks</summary><div class="weekList" id="weekList"></div></details>
-</aside>
+<main id="main">
+  <section class="science-hero" aria-labelledby="courseTitle">
+    <div class="shell">
+      <p class="eyebrow">Khaemenes Academy</p>
+      <h1 id="courseTitle">International Integrated Science 9</h1>
+      <p class="descriptor">A 36-week, 12-unit Grade 9 science pathway in life science, matter, energy, Earth systems, inquiry, engineering, information literacy, data, modeling, and Claim-Evidence-Reasoning.</p>
+    </div>
+  </section>
 
-<div class="ticker"><div class="tickerTrack"><span>Observe before interpreting</span><span>Safety before materials and procedures</span><span>Use SI units and record uncertainty</span><span>Distinguish evidence, models, inference and worldview</span><span>Correct work and reassess essential outcomes</span><span>Life · Matter · Energy · Earth Systems · Engineering</span><span>Observe before interpreting</span><span>Safety before materials and procedures</span><span>Use SI units and record uncertainty</span><span>Distinguish evidence, models, inference and worldview</span><span>Correct work and reassess essential outcomes</span><span>Life · Matter · Energy · Earth Systems · Engineering</span></div></div>
-<nav class="tabs noPrint" aria-label="Science 9 workspace tabs"><button class="tab active" data-view="dashboard">Dashboard</button><button class="tab" data-view="week">Lessons</button><button class="tab" data-view="scope">Scope</button><button class="tab" data-view="lab">Lab</button><button class="tab" data-view="assessments">Tests</button><button class="tab" data-view="reports">Reports</button><button class="tab" data-view="standards">Mastery</button></nav>
-<section id="content" tabindex="-1" aria-label="Student science workspace"></section>
-<p class="footer">Khaemenes Academy · Integrated Science 9 · Jennifer Kay Pearl · 2026</p>
+  <section class="science-actions" aria-labelledby="accessTitle">
+    <div class="shell">
+      <h2 id="accessTitle">Course Access</h2>
+      <p>Choose the Academy pathway that belongs to you.</p>
+      <nav class="science-action-grid" aria-label="International Integrated Science 9 access">
+        <a href="https://vervenveda.com/Khaemenes_High.github.io/grades/grade-09/student-profile/">Learner Profile</a>
+        <a href="https://vervenveda.com/Khaemenes_Academy.github.io/family/">Parent Profile</a>
+        <a href="https://vervenveda.com/Khaemenes_Academy.github.io/family/enroll/">Enrollment</a>
+      </nav>
+    </div>
+  </section>
+
+  <section class="science-course" aria-labelledby="aboutCourse">
+    <div class="shell">
+      <h2 id="aboutCourse">About International Integrated Science 9</h2>
+      <p>International Integrated Science 9 builds a broad high-school science foundation by connecting life science, physical science, Earth and space systems, scientific inquiry, engineering design, and information literacy. Students investigate phenomena, work with measurements and data, build and critique models, conduct safe investigations, communicate uncertainty, and explain conclusions using evidence and reasoning.</p>
+
+      <div class="science-course-card">
+        <h3>Course Features</h3>
+        <div class="science-feature-grid">
+          <article class="science-feature">
+            <strong>Life, Matter &amp; Energy</strong>
+            <span>Students connect biological systems, matter, energy transfer, interactions, patterns, and quantitative relationships across an integrated scientific foundation.</span>
+          </article>
+          <article class="science-feature">
+            <strong>Earth &amp; Space Systems</strong>
+            <span>Earth systems, environmental processes, space systems, cycles, scale, change over time, and system interactions develop cross-disciplinary scientific thinking.</span>
+          </article>
+          <article class="science-feature">
+            <strong>Inquiry, Data &amp; CER</strong>
+            <span>Safe investigation, SI measurement, uncertainty, graphing, data interpretation, source quality, models, inference, and Claim-Evidence-Reasoning strengthen scientific argument.</span>
+          </article>
+          <article class="science-feature">
+            <strong>Engineering &amp; Mastery</strong>
+            <span>Foundation, Core, and Extended pathways support varied readiness while engineering design, revision, generated mastery checks, cumulative assessments, and portfolio evidence document growth.</span>
+          </article>
+        </div>
+      </div>
+    </div>
+  </section>
 </main>
-</div>
-<script src="science9-backup-guard-v1.js"></script>
-<script src="science9-course-data-v1.js"></script>
-<script src="science9-dashboard-app-v1.js"></script>
-<script src="../../shared/high-school-science-continuation.js?v=20261016"></script>
 
-<div style="position:relative;max-width:1000px;margin:20px auto;padding:14px;text-align:center"><a href="science-evidence-portfolio.html" style="display:inline-block;padding:12px 20px;border:1px solid currentColor;border-radius:7px;color:inherit">View Science Investigation Portfolio (saved evidence)</a></div>
-<script src="academic-network-bridge.js" defer></script>
+<footer class="science-footer">
+  <p>Khaemenes Academy · Science · <a href="https://vervenveda.com/">Verve N Veda</a></p>
+</footer>
+
+<script src="../assets/science-landing-class-tools-v1.js" defer data-science-landing-class-tools="v1"></script>
 <script src="../../../assets/vnv-language.js" defer data-official-vnv-language="true"></script>
-<script src="../../shared/high-school-class-tools-universal-v1.js" defer data-high-class-tools-universal="v1"></script>
-<script src="../../../assets/high-navigation-v1.js" defer></script>
-
+<script src="https://vervenveda.com/assets/vnv-class-tools-toolbar.js" defer data-vnv-class-tools="high-school-science-landing"></script>
+<script src="https://vervenveda.com/assets/vnv-ecosystem-toolbar.js" defer data-official-vnv-ecosystem-toolbar="true"></script>
 </body>
 </html>
