@@ -421,49 +421,10 @@ body .main .footer{margin-top:30px!important;padding:23px 16px!important;
   body .main>.hero{padding:30px 16px!important}
 }
 @media print{body .centered-course-controls .english9-primary-navigation{display:none!important}}
-</style>
 
-<style id="english9-universal-chrome-cleanup-v1">
-/* English 9 universal chrome compliance: presentation only. */
-html,body{min-height:100%}
-body{
-  font-size:16px!important;
-}
-body :is(button,a,input,select,textarea,summary){
-  border-radius:7px;
-}
-body :is(button,.button,.btn,.navBtn,.courseLink){
-  font-size:16px!important;
-}
-#khaeLocalEcosystemToggle,
-#khaeLocalEcosystemPanel,
-.high-nav-menu.high-nav-menu-fixed,
-#vnvEcosystemMenuButton{
-  display:none!important;
-}
-
-/* Keep the course-entry/readiness surface visually centered and readable. */
-body>[role="dialog"],
-body>.course-entry-gate,
-body>[data-course-entry-gate],
-body>[data-readiness-gate]{
-  left:50%!important;
-  right:auto!important;
-  transform:translateX(-50%)!important;
-}
-body :is(.course-entry-gate,[data-course-entry-gate],[data-readiness-gate]) :is(button,a),
-body>[role="dialog"] :is(button,a){
-  border-radius:7px!important;
-  font-size:16px!important;
-  color:#fff8e9!important;
-  -webkit-text-fill-color:#fff8e9!important;
-}
-body :is(.course-entry-gate,[data-course-entry-gate],[data-readiness-gate]) :is(button,a).secondary,
-body>[role="dialog"] :is(button,a).secondary{
-  color:#22231f!important;
-  -webkit-text-fill-color:#22231f!important;
-  background:#fffdf8!important;
-}
+/* Canonical English 9 universal-control normalization — folded into existing visual blueprint. */
+body :is(button,a,input,select,textarea,summary){border-radius:7px}
+body :is(button,.button,.btn,.navBtn,.courseLink){font-size:16px!important}
 body .footer{
   width:100%!important;
   max-width:1100px!important;
@@ -473,11 +434,17 @@ body .footer{
   text-align:center!important;
   font-size:16px!important;
 }
+#khaeLocalEcosystemToggle,
+#khaeLocalEcosystemPanel,
+.high-nav-menu.high-nav-menu-fixed,
+#vnvEcosystemMenuButton{display:none!important}
 @media print{
   #vnv333NetworkTicker,#vnvTickerAutoPopulate,#vnvHeaderAutoPopulate,
   #vnvClassToolsToolbar,#vnvEcosystemUtilityDock{display:none!important}
 }
 </style>
+
+
 </head>
 <body data-english9-require-entry>
 <a class="skip-link" href="#content">Skip to student workspace</a>
