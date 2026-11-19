@@ -105,7 +105,10 @@ for(let unit=1;unit<=13;unit++){
   assert.ok(scripts.length>=2,'Missing activity engine scripts: '+page);
   for(const src of scripts){
    if(/^(https?:|data:)/i.test(src))continue;
-   const target=path.resolve(path.dirname(page),src.split(/[?#]/)[0]);
+   const clean=src.split(/[?#]/)[0];
+   const target=clean.startsWith("/")
+     ? path.resolve(clean.replace(/^\/+Khaemenes_High\.github\.io\//,""))
+     : path.resolve(path.dirname(page),clean);
    assert.ok(fs.existsSync(target),'Missing required activity script '+src+' in '+page);
   }
  }
