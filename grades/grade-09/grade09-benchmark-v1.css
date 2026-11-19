@@ -43,6 +43,7 @@ button{cursor:pointer}
   width:40px!important;height:40px!important;min-width:40px!important;min-height:40px!important;
   flex:0 0 40px!important;border-radius:var(--g9-radius)!important;
 }
+#vnvHeaderAutoPopulate .vnv-header-logo{font-size:16px!important;font-family:var(--g9-display)!important;font-weight:400!important}
 #vnvHeaderAutoPopulate .vnv-header-title{
   font-family:var(--g9-display)!important;font-size:16px!important;font-weight:400!important;
 }
@@ -113,6 +114,14 @@ button{cursor:pointer}
 .heading p{max-width:760px;margin:14px auto 0;font-size:16px;line-height:1.6;color:var(--g9-muted)}
 .section.paper .heading :is(h2,p,.kicker),
 .section.dark .heading :is(h2,p,.kicker){color:var(--g9-cream)}
+
+
+.accent-blue{--accent:#315f86}
+.accent-teal{--accent:#4f7f7a}
+.accent-terra{--accent:#96594e}
+.accent-plum{--accent:#725f82}
+.accent-sage{--accent:#6d8374}
+.accent-gold{--accent:#b48b45}
 
 /* Cards */
 .front-grid,.course-grid,.support-grid{display:grid;gap:14px;align-items:stretch}
