@@ -1,0 +1,192 @@
+/* Khaemenes Academy · High School · 9th Grade Benchmark v1.0.0
+   Single presentation authority for grades/grade-09/index.html.
+   No curriculum, assessment, learner-record, storage, routing, or mastery ownership. */
+
+:root{
+  --g9-charcoal:#243038;
+  --g9-charcoal-deep:#17242e;
+  --g9-parchment:#f4f0e7;
+  --g9-paper:#fffdf8;
+  --g9-cream:#fff8e9;
+  --g9-ink:#243038;
+  --g9-muted:#5d625e;
+  --g9-gold:#b48b45;
+  --g9-line:#c9bea8;
+  --g9-green:#31594b;
+  --g9-radius:7px;
+  --g9-max:1100px;
+  --g9-display:Cinzel,Georgia,serif;
+  --g9-body:"Brandon Grotesque",Nunito,"Avenir Next",Avenir,"Segoe UI",Arial,sans-serif;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:110px}
+body{
+  margin:0;min-width:300px;background:var(--g9-parchment);color:var(--g9-ink);
+  font:400 16px/1.65 var(--g9-body);text-align:center;
+  -webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;
+}
+a{color:inherit;text-decoration:none}
+button,input,select,textarea{font:400 16px/1.45 var(--g9-body)}
+button{cursor:pointer}
+:focus-visible{outline:3px solid var(--g9-gold);outline-offset:3px}
+.shell{width:min(calc(100% - 33px),var(--g9-max));margin-inline:auto}
+.skip{
+  position:fixed;z-index:2147483000;left:11px;top:11px;transform:translateY(-180%);
+  padding:9px 14px;border-radius:var(--g9-radius);background:var(--g9-charcoal);color:var(--g9-cream);
+  font-size:16px;
+}
+.skip:focus{transform:none}
+
+/* Canonical VNV header parity. */
+#vnvHeaderAutoPopulate .vnv-header-logo,
+#vnvHeaderAutoPopulate .vnv-header-menu-button{
+  width:40px!important;height:40px!important;min-width:40px!important;min-height:40px!important;
+  flex:0 0 40px!important;border-radius:var(--g9-radius)!important;
+}
+#vnvHeaderAutoPopulate .vnv-header-title{
+  font-family:var(--g9-display)!important;font-size:16px!important;font-weight:400!important;
+}
+#vnvHeaderAutoPopulate .vnv-header-subtitle{
+  font-family:var(--g9-body)!important;font-size:16px!important;font-weight:400!important;
+}
+
+/* One symmetrical page-navigation row. */
+.grade09-local-links{
+  width:100%;display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:9px;
+  padding:11px max(16px,calc((100vw - 900px)/2));margin:0;
+  background:var(--g9-parchment);border:0;border-bottom:1px solid var(--g9-line);
+}
+.grade09-local-links a{
+  display:flex;align-items:center;justify-content:center;width:100%;min-width:0;min-height:44px;
+  padding:9px 12px;border:1px solid var(--g9-line);border-radius:var(--g9-radius);
+  background:var(--g9-cream);color:var(--g9-charcoal);
+  font:400 16px/1.25 var(--g9-body);text-align:center;white-space:nowrap;
+}
+.grade09-local-links a:hover,.grade09-local-links a:focus-visible{
+  background:var(--g9-paper);border-color:var(--g9-gold);
+}
+
+/* Hero */
+.hero{
+  position:relative;overflow:hidden;background:var(--g9-charcoal);color:var(--g9-cream);
+}
+.hero:before{
+  content:"KA";position:absolute;right:3vw;bottom:-55px;color:rgba(255,255,255,.055);
+  font:400 55px/1 var(--g9-display);transform:scale(5);transform-origin:bottom right;pointer-events:none;
+}
+.hero-inner{position:relative;z-index:1;padding:55px 0}
+.eyebrow,.kicker{
+  margin:0;font:400 16px/1.3 var(--g9-display);letter-spacing:.09em;text-transform:uppercase;
+}
+.hero .eyebrow{color:#ead9b8}
+.hero h1{
+  margin:11px 0 0;color:var(--g9-cream);font:400 55px/1.08 var(--g9-display);letter-spacing:.01em;
+}
+.grade-title{
+  margin:11px 0 0;color:var(--g9-cream);font:400 33px/1.15 var(--g9-display);
+}
+.hero-lead{
+  max-width:760px;margin:18px auto 0;color:var(--g9-cream);font:400 16px/1.65 var(--g9-body);
+}
+.hero-actions,.actions{display:flex;justify-content:center;gap:9px;flex-wrap:wrap;margin-top:22px}
+.hero-actions{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));width:min(760px,100%);margin-inline:auto}
+.btn{
+  box-sizing:border-box;display:flex;align-items:center;justify-content:center;min-height:44px;
+  padding:9px 12px;border:1px solid var(--g9-charcoal);border-radius:var(--g9-radius);
+  background:var(--g9-charcoal);color:var(--g9-cream);
+  font:400 16px/1.3 var(--g9-body);text-align:center;white-space:normal;
+}
+.btn:hover,.btn:focus-visible{border-color:var(--g9-gold)}
+.hero .btn,.hero .btn.primary,.hero .btn.gold{
+  background:var(--g9-cream);color:var(--g9-charcoal);border-color:var(--g9-line);
+}
+
+/* Sections */
+.section{padding:55px 0;background:var(--g9-parchment);color:var(--g9-charcoal)}
+.section.paper,.section.dark{
+  background:var(--g9-charcoal);color:var(--g9-cream);border-block:1px solid #536069;
+}
+.heading{max-width:880px;margin:0 auto 33px}
+.heading h2{
+  margin:11px 0 0;font:400 33px/1.2 var(--g9-display);color:var(--g9-charcoal);
+}
+.heading p{max-width:760px;margin:14px auto 0;font-size:16px;line-height:1.6;color:var(--g9-muted)}
+.section.paper .heading :is(h2,p,.kicker),
+.section.dark .heading :is(h2,p,.kicker){color:var(--g9-cream)}
+
+/* Cards */
+.front-grid,.course-grid,.support-grid{display:grid;gap:14px;align-items:stretch}
+.front-grid,.support-grid{grid-template-columns:repeat(3,minmax(0,1fr))}
+.course-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+.front-card,.course-card,.support-card{
+  box-sizing:border-box;display:flex;flex-direction:column;min-width:0;height:100%;
+  padding:24px;border:1px solid var(--g9-line);border-top:4px solid var(--accent,var(--g9-green));
+  border-radius:var(--g9-radius);background:var(--g9-paper);color:var(--g9-charcoal);
+}
+.front-card{align-items:center;text-align:center}
+.course-card{align-items:flex-start;text-align:left}
+.support-card{align-items:center;text-align:center}
+.front-mark,.course-mark{
+  width:55px;height:55px;display:grid;place-items:center;border-radius:var(--g9-radius);
+  background:var(--accent,var(--g9-green));color:var(--g9-cream);
+  font:400 16px/1 var(--g9-display);
+}
+.front-card h3,.course-card h3,.support-card h3{
+  margin:14px 0 9px;color:var(--g9-charcoal);font:400 24px/1.25 var(--g9-display);
+}
+.front-card p,.course-card p,.support-card p{
+  margin:0 0 22px;color:var(--g9-muted);font-size:16px;line-height:1.6;
+}
+.front-card>.btn,.support-card>.btn{margin-top:auto;width:100%}
+.course-card .actions{justify-content:flex-start;width:100%;margin-top:auto;padding-top:18px}
+.course-card .actions>.btn{flex:1 1 142px}
+.status{
+  display:inline-flex;align-items:center;min-height:33px;padding:5px 9px;
+  border:1px solid var(--g9-line);border-radius:var(--g9-radius);
+  background:var(--g9-parchment);color:var(--g9-charcoal);
+  font:400 16px/1.3 var(--g9-body);
+}
+.note{
+  max-width:980px;margin:33px auto 0;padding:18px 20px;border:1px solid var(--g9-line);
+  border-left:4px solid var(--g9-gold);border-radius:var(--g9-radius);
+  background:#fff9eb;color:#66502b;text-align:left;font-size:16px;line-height:1.65;
+}
+.section.dark .support-card{
+  background:var(--g9-paper);color:var(--g9-charcoal);border-color:var(--g9-line);
+}
+.section.dark .support-card h3{color:var(--g9-charcoal)}
+.section.dark .support-card p{color:var(--g9-muted)}
+.section.dark .support-card .btn{background:var(--g9-charcoal);color:var(--g9-cream)}
+
+/* Footer */
+.grade09-unified-footer{
+  display:flex;flex-direction:column;align-items:center;justify-content:center;gap:7px;
+  padding:33px 16px;background:var(--g9-charcoal);color:var(--g9-cream);
+  border-top:1px solid var(--g9-gold);text-align:center;
+  font:400 16px/1.4 var(--g9-display);
+}
+.grade09-unified-footer small{
+  color:#ead9b8;font:400 16px/1.5 var(--g9-body);
+}
+
+/* Responsive layout changes only; typography remains benchmark-sized. */
+@media(max-width:850px){
+  .front-grid,.support-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@media(max-width:700px){
+  .grade09-local-links{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .course-grid,.grade09-eight-subject-grid{grid-template-columns:1fr!important}
+  .hero-actions{grid-template-columns:1fr}
+  .front-grid,.support-grid{grid-template-columns:1fr}
+}
+@media(max-width:430px){
+  .grade09-local-links{grid-template-columns:1fr}
+}
+@media print{
+  .grade09-local-links,.hero-actions,#vnvClassToolsToolbar,#vnvEcosystemUtilityDock{display:none!important}
+  body{background:#fff;color:#000}
+  .hero,.section,.section.paper,.section.dark{background:#fff!important;color:#000!important}
+  .hero:before{display:none}
+  .hero :is(h1,.grade-title,.eyebrow,.hero-lead),.heading :is(h2,p,.kicker){color:#000!important}
+  .front-card,.course-card,.support-card{break-inside:avoid;box-shadow:none}
+}
