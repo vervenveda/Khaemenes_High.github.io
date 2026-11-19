@@ -25,6 +25,7 @@ const HIGH="https://vervenveda.com/Khaemenes_High.github.io/";
 const HEADER="vnv-header-autopopulate.js";
 const TOOLBAR="vnv-ecosystem-toolbar.js";
 const TICKER_GUARD="vnv-dual-ticker-v1.js";
+const ENGLISH_RECOVERY="high-school-english-worker-recovery-v1.js";
 const HEADER_ID="vnvHeaderAutoPopulate";
 const TOOLBAR_ID="vnvEcosystemUtilityDock";
 
@@ -62,6 +63,16 @@ function loadOnce(filename,dataKey,readyCheck){
     node.addEventListener("error",()=>finish(false),{once:true});
     (document.head||document.documentElement).appendChild(node);
   });
+}
+
+function ensureEnglishRecovery(){
+  if(!/\/courses\/language-arts\/english-(?:9|10|11|12)(?:\/|$)/i.test(location.pathname))return;
+  if(scriptFor(ENGLISH_RECOVERY))return;
+  const node=document.createElement("script");
+  node.src=HIGH+"assets/"+ENGLISH_RECOVERY;
+  node.defer=true;
+  node.dataset.khaemenesHighEnglishRecovery="true";
+  (document.head||document.documentElement).appendChild(node);
 }
 
 function ensureTickerGuard(){
@@ -136,6 +147,7 @@ async function start(){
   if(!document.body)return;
   document.documentElement.dataset.khaemenesHighChrome="minimal-v3";
   ensureTickerGuard();
+  ensureEnglishRecovery();
   await Promise.allSettled([ensureHeader(),ensureToolbar()]);
   window.dispatchEvent(new CustomEvent("khaemenes-high-chrome-ready",{detail:{
     version:"3.0.0",
