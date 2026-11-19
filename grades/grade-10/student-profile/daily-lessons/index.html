@@ -103,7 +103,7 @@ if(valid&&catalog){
   const card=make("article");card.className="g10-card";
   card.append(make("h3",slot.label),make("p",slot.title));
   const snaps=ctx?.learnerId&&continuation?.readLearner?.(ctx.learnerId)||[];const snap=snaps.find(x=>x?.courseId===slot.id);
-  const href=url(snap?.nextHref)||url(slot.href);
+  const href=url(snap?.nextHref)||url(slot.firstStepHref)||url(slot.href);
   if(href){const a=make("a",snap?.stale?"Refresh Class":snap?.status==="corrections"?"Review Corrections":snap?.nextLabel||"Continue Class");a.className="g10-button";a.href=href;a.title=snap?.nextTitle||snap?.summary||"Continue this class";card.append(a)}
   else card.append(make("p","This course link is not published in the current catalog."));
   cards.append(card);
