@@ -182,15 +182,9 @@ function arrange(){
 }
 function schedule(){if(!pending){pending=true;requestAnimationFrame(arrange)}}
 if(document.readyState==="loading")document.addEventListener("DOMContentLoaded",schedule,{once:true});else schedule();
-new MutationObserver(records=>{
- for(const record of records){
-  if([...record.addedNodes].some(n=>n.nodeType===1&&(
-   (record.target===root()&&n.matches?.("section,article,aside,.card"))||
-   n.matches?.("[data-week-source-custody-v1],#english9-daily-view-tools,#khae-english-unified-lesson-map,#vnv333NetworkTicker,#vnvTickerAutoPopulate,#vnvHeaderAutoPopulate")||
-   n.querySelector?.("[data-week-source-custody-v1],#english9-daily-view-tools,#khae-english-unified-lesson-map")
-  ))){schedule();break}
- }
-}).observe(document.documentElement,{childList:true,subtree:true});
+[80,240,700,1600].forEach(ms=>setTimeout(schedule,ms));
+window.addEventListener("khaemenes-high-chrome-ready",schedule,{once:true});
+window.addEventListener("pageshow",schedule,{once:true});
 })();
 </script>
 </head><body data-english9-day="1">
