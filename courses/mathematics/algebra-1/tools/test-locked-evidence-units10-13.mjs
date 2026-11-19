@@ -39,8 +39,8 @@ for(const marker of [
 
 assert.match(
   src,
-  /function save\(p\)\{try\{localStorage\.setItem\(KEY,JSON\.stringify\(p\)\);return true\}catch\{return false\}\}/,
-  "late-unit storage writes must return a success flag"
+  /function save\(p\)\{try\{const raw=JSON\.stringify\(p\);localStorage\.setItem\(KEY,raw\);return localStorage\.getItem\(KEY\)===raw\}catch\{return false\}\}/,
+  "late-unit storage writes must require exact read-back verification"
 );
 assert.ok(!src.includes('Best ${s.scores.mastery}% saved.'),"legacy unconditional saved-success message remains");
 assert.ok(src.includes('if(persisted){'),"saved-success UI must be guarded by persistence success");
