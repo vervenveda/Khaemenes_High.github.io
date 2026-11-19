@@ -1,0 +1,22 @@
+name: Algebra II representative canary source proof
+on:
+  push:
+    branches:
+      - recovery/algebra2-v230-representative-canary-20261119
+    paths:
+      - "courses/mathematics/algebra-2/**"
+      - "tools/validate-algebra2-canary-source.mjs"
+      - ".github/workflows/algebra2-canary-source-proof.yml"
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  canary-source-proof:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - name: Verify representative lessons retain native architecture
+        run: node tools/validate-algebra2-canary-source.mjs
