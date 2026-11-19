@@ -434,3 +434,20 @@ else if(current){
  style.textContent='@media screen{html:root:root body{font-size:16px!important}html:root:root body :is(button,input,select,textarea,a,p,li,label,summary){font-size:max(16px,1em)}html:root:root body :is(button,input,select,textarea){min-height:44px}}';
  (document.head||document.documentElement).appendChild(style);
 })();
+
+
+/* Khaemenes Math Lesson Engine v2 · Algebra II course-wide shell adapter. */
+;(()=>{
+ if(window.KhaemenesAlgebra2LessonV2||document.getElementById("algebra2MathLessonV2Adapter"))return;
+ const load=()=>{
+  if(window.KhaemenesAlgebra2LessonV2||document.getElementById("algebra2MathLessonV2Adapter"))return;
+  const s=document.createElement("script");
+  s.id="algebra2MathLessonV2Adapter";
+  s.src=new URL("algebra2-math-lesson-v2-adapter.js?v=2.3.0",document.currentScript?.src||location.href).href;
+  s.async=false;
+  s.dataset.khaemenesMathEngineAdapter="algebra2-v2";
+  s.onerror=()=>console.warn("Algebra II Math Engine v2 adapter unavailable; existing lesson behavior remains active.");
+  (document.head||document.documentElement).appendChild(s);
+ };
+ document.readyState==="loading"?document.addEventListener("DOMContentLoaded",load,{once:true}):load();
+})();
