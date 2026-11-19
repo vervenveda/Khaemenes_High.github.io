@@ -41,11 +41,20 @@ for(const file of pages){
   assert.ok(source.includes('data-high-profile-door="true"')&&source.includes('data-high-profile-editor-door="true"'),
     file+" missing grade-local profile doors");
  }else{
+  const departmentShell=source.includes("high-department-landing-shell-v1.js");
   if(frontDoor){
    assert.ok(source.includes("vnv-header-autopopulate.js"),file+" missing canonical homepage header");
    assert.ok(/<style>/i.test(source),file+" missing homepage inline styles");
   }
   if(preAlgebra)assert.ok(source.includes("high-school-return-to-classes.js"),file+" missing course return control");
+  if(departmentShell){
+   const match=source.match(/(?:src|href)=["']([^"']*high-department-landing-shell-v1\.js(?:\?[^"']*)?)["']/);
+   assert.ok(match,file+" missing canonical department shell");
+   const href=match[1].split("?")[0];
+   const resolved=path.posix.normalize(path.posix.join(path.posix.dirname(file),href));
+   assert.ok(fs.existsSync(resolved),file+" broken department shell asset "+resolved);
+   assert.ok(!source.includes("high-school-global-chrome-v2.js"),file+" retired chrome reference returned");
+  }else{
   const suffixes=frontDoor?[".js"]:preAlgebra?[".css"]:[".js",".css"];
   for(const suffix of suffixes){
    const assetPattern=suffix===".js"
@@ -56,6 +65,7 @@ for(const file of pages){
    const href=match[1].split("?")[0];
    const resolved=path.posix.normalize(path.posix.join(path.posix.dirname(file),href));
    assert.ok(fs.existsSync(resolved),file+" broken local navigation asset "+resolved);
+  }
   }
  }
  assert.ok(/<main\b/i.test(source),file+" missing main landmark");
