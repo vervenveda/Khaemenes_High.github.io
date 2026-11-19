@@ -140,6 +140,73 @@ if(!document.getElementById("khaeProfileToolRail")){
  }
  rail.append(heading,grid);
  top.insertBefore(rail,firstStep||null);
+
+ // Pinned classes live directly under the 2×4 Profile Tools rail.
+ // They use the canonical Grade 09 continuation authority, never a second progress store.
+ const pinnedRail=document.createElement("section");
+ pinnedRail.id="grade09PinnedClasses";
+ pinnedRail.className="grade09-pinned-classes";
+ pinnedRail.setAttribute("aria-labelledby","grade09PinnedClassesTitle");
+ const pinnedTitle=document.createElement("h2");
+ pinnedTitle.id="grade09PinnedClassesTitle";
+ pinnedTitle.textContent="My Pinned Classes";
+ const pinnedHelp=document.createElement("p");
+ pinnedHelp.textContent="Open the exact lesson or required step you are working on. Pin or unpin classes from Schedule at any time.";
+ const pinnedGrid=document.createElement("div");
+ pinnedGrid.className="grade09-pinned-class-grid";
+ pinnedRail.append(pinnedTitle,pinnedHelp,pinnedGrid);
+ top.insertBefore(pinnedRail,firstStep||null);
+
+ const renderPinnedClasses=async()=>{
+  const registry=window.KhaemenesGrade09Courses;
+  if(!registry||!pinnedGrid)return;
+  const courses=registry.pinnedCourses();
+  pinnedGrid.replaceChildren();
+  if(!courses.length){
+   const empty=document.createElement("p");
+   empty.className="grade09-pinned-empty";
+   empty.textContent="No classes are pinned yet. Open Schedule and choose Pin Class on the courses you want here.";
+   pinnedGrid.append(empty);return;
+  }
+  for(const course of courses){
+   const current=await registry.resolveContinueFor(course.id);
+   const card=document.createElement("article");
+   card.className="grade09-pinned-class-card";
+   const subject=document.createElement("span");
+   subject.className="grade09-pinned-class-subject";
+   subject.textContent=course.subject;
+   const title=document.createElement("h3");
+   title.textContent=course.title;
+   const detail=document.createElement("p");
+   detail.textContent=current?.detail||"Your next class step is ready.";
+   const actions=document.createElement("div");
+   actions.className="grade09-pinned-class-actions";
+   const open=document.createElement("a");
+   open.className="grade09-pinned-class-open";
+   open.href=current?.url||course.defaultContinue||course.home;
+   open.dataset.launchCourse=course.id;
+   open.textContent=current?.actionLabel||"Continue Class";
+   open.addEventListener("click",()=>registry.recordLaunch(course.id,open.href.replace(location.origin,""),course.title));
+   const unpin=document.createElement("button");
+   unpin.type="button";
+   unpin.className="grade09-pinned-class-unpin";
+   unpin.textContent="Unpin";
+   unpin.setAttribute("aria-label","Unpin "+course.title+" from My Profile");
+   unpin.addEventListener("click",()=>{
+    if(registry.setPinned(course.id,false)){
+     window.dispatchEvent(new CustomEvent("khaemenes-course-pins-changed"));
+     void renderPinnedClasses();
+    }
+   });
+   actions.append(open,unpin);
+   card.append(subject,title,detail,actions);
+   pinnedGrid.append(card);
+  }
+ };
+ window.KhaemenesGrade09PinnedClasses=Object.freeze({render:renderPinnedClasses});
+ window.addEventListener("khaemenes-course-pins-changed",()=>void renderPinnedClasses());
+ window.addEventListener("storage",event=>{if(window.KhaemenesGrade09Courses?.shouldRefreshForStorageKey?.(event.key))void renderPinnedClasses()});
+ void renderPinnedClasses();
 }
 
 /* Yearbook Studio lives in its own repository and browser-storage origin.
@@ -395,9 +462,9 @@ function khaeCanonicalProfileShell(){
  const identity=document.querySelector(".grade09-profile-first .profile-row")?.closest(".card");
  const rail=document.getElementById("khaeProfileToolRail");
  const titleFor=node=>{
-   const heading=node.querySelector?.("h2,h3,h4");
+   const heading=node.querySelector?.("h2,h3,h4,strong[id]");
    if(heading?.textContent.trim())return heading.textContent.trim();
-   return node.getAttribute?.("aria-label")||node.id?.replace(/([a-z])([A-Z])/g,"$1 $2")||"Profile Section";
+   return node.getAttribute?.("aria-label")||node.id?.replace(/([a-z])([A-Z])/g,"$1 $2")||"Student Section";
  };
  const wrap=node=>{
    if(!node||!node.isConnected||node===identity||node===rail||node.closest("dialog")||node.closest("details.khae-profile-accordion"))return;
@@ -417,7 +484,7 @@ function khaeCanonicalProfileShell(){
    for(const child of [...top.children]){
     // Only the public identity/photo hero and Profile Tools rail remain exposed.
     // Daily To Do and every other lower profile surface are accordions.
-    if(child===identity||child===rail)continue;
+    if(child===identity||child===rail||child.id==="grade09PinnedClasses")continue;
     if(child.id==="grade09BlueprintTools"&&child.querySelector("#khaeProfileToolRail")){
       for(const nested of [...child.children]){
         if(nested===rail||nested.contains?.(rail))continue;
