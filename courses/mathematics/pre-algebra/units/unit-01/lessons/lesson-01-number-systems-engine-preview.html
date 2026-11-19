@@ -49,7 +49,7 @@ Inside this file:
 <!-- =========================
      01. HEAD + INLINE LESSON CSS
      ========================= --><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="description" content="Pre-Algebra Unit 1 Lesson 1: Number Families &amp; the Real Number System."><meta name="theme-color" content="#0b1730"><title>Prototype · Lesson 1 · Number Families &amp; the Real Number System</title><link rel="stylesheet" href="../assets/unit.css">
-<link rel="stylesheet" href="https://vervenveda.com/assets/khaemenes-math-engine-v1.css" data-khaemenes-math-engine-style="v1"><style>
+<link rel="stylesheet" href="https://vervenveda.com/assets/khaemenes-math-engine-v1.css?v=1.2.2" data-khaemenes-math-engine-style="v1"><style>
 .lesson-layout{display:grid;grid-template-columns:minmax(0,1fr);gap:24px;align-items:stretch}
 .lesson-main,.lesson-side{padding:24px}.lesson-side{position:static;top:auto}
 .objective-list{display:grid;gap:11px;padding:0;list-style:none}.objective-list li{padding:14px;border:1px solid var(--line);border-radius:7px;background:var(--bg2)}.objective-list li::before{content:"✓";margin-inline-end:11px;color:var(--green);font-weight:444}
@@ -407,10 +407,78 @@ canvas{
 <!-- =========================
      23. LESSON ENGINE
      ========================= -->
-<script src="https://vervenveda.com/assets/khaemenes-math-engine-v1.js"></script>
+<script src="https://vervenveda.com/assets/khaemenes-math-engine-v1.js?v=1.0.1"></script>
 <script>window.KhaemenesMathEngine?.mount({level:"high-school",courseId:"pre-algebra",unitId:"unit-01",lessonId:"lesson-01",evidenceMode:"procedural",assessmentMode:false,closedBook:false,tools:["calculator","notepad","whiteboard","number-line"],resources:["worksheet","game"],masteryAuthority:"unit-01-core"});</script>
 <script src="../assets/lesson-engine-core.js"></script>
-<script src="https://vervenveda.com/assets/vnv-class-tools-toolbar.js?v=1.5.0" defer data-vnv-class-tools="canonical-math"></script><!-- KHAEMENES_HIGH_FORMATIVE_EVIDENCE_V1 -->
+<script>
+window.KhaemenesClassToolsConfigV1={
+ id:"math-engine",
+ match:()=>true,
+ toggleLabel:"Tools",
+ ariaLabel:"Mathematics learning tools",
+ tools:[
+  {type:"lesson-games",label:"Games",sub:""},
+  {type:"materials",label:"Materials",sub:""},
+  {type:"notes",label:"Notes",sub:""},
+  {type:"link",label:"Calculator",sub:"",href:"https://vervenveda.github.io/proresource_hub.github.io/Protools/Khaemenes_Scientific_Calculator/"},
+  {type:"action",label:"Translate",sub:"",action:"translate"},
+  {type:"link",label:"Parent",sub:"",href:"https://vervenveda.com/Khaemenes_Academy.github.io/family/"},
+  {type:"link",label:"Search",sub:"",href:"https://vervenveda.com/PLERASearch.github.io/"},
+  {type:"help",label:"Help",sub:""}
+ ],
+ materials:{
+  title:"Learning Materials",
+  intro:"Open resources matched to this lesson.",
+  links:[{label:"Scientific Calculator",href:"https://vervenveda.github.io/proresource_hub.github.io/Protools/Khaemenes_Scientific_Calculator/"}]
+ },
+ help:{
+  title:"Mathematics Tools",
+  paragraphs:[
+   "Lessons stay primary. Use tools only when they support the mathematics you are doing.",
+   "Assessment rules still apply. Closed-book assessments may restrict tools."
+  ]
+ },
+ actions:{
+  translate:({root})=>{
+    const openDialog=()=>{
+      let dialog=document.getElementById("kmeTranslatorDialog");
+      if(!dialog){
+        dialog=document.createElement("dialog");
+        dialog.id="kmeTranslatorDialog";
+        dialog.setAttribute("aria-labelledby","kmeTranslatorHeading");
+        dialog.innerHTML='<div class="kme-translator-card"><h2 id="kmeTranslatorHeading">Translate</h2><p>Choose a language for the public lesson interface.</p><div class="kme-language-grid"></div><button type="button" data-close-translate>Close</button></div>';
+        const labels={en:"English",es:"Español",fr:"Français",ar:"العربية",zh:"中文",de:"Deutsch",ru:"Русский",pt:"Português",hi:"हिन्दी",ja:"日本語",ko:"한국어",it:"Italiano",bn:"বাংলা"};
+        const grid=dialog.querySelector(".kme-language-grid");
+        Object.entries(labels).forEach(([code,label])=>{
+          const b=document.createElement("button");
+          b.type="button";b.textContent=label;b.dataset.lang=code;
+          b.addEventListener("click",()=>{window.VNVLanguage?.setLanguage(code);dialog.close()});
+          grid.append(b);
+        });
+        dialog.querySelector("[data-close-translate]").addEventListener("click",()=>dialog.close());
+        document.body.append(dialog);
+      }
+      dialog.showModal();
+    };
+    if(window.VNVLanguage){openDialog();return}
+    const s=document.createElement("script");
+    s.src="https://vervenveda.com/assets/vnv-language.js";
+    s.onload=openDialog;
+    document.head.append(s);
+  }
+ }
+};
+</script>
+<style>
+#kmeTranslatorDialog{width:min(560px,calc(100vw - 24px));padding:0;border:3px solid #202724;border-radius:7px;background:#fffdf3;color:#202724}
+#kmeTranslatorDialog::backdrop{background:rgba(32,39,36,.46)}
+#kmeTranslatorDialog .kme-translator-card{padding:24px;text-align:center;font:400 16px/1.5 Nunito,"Brandon Grotesque",Arial,sans-serif}
+#kmeTranslatorDialog h2{margin:0 0 11px;font:400 33px/1.2 Cinzel,Georgia,serif}
+#kmeTranslatorDialog .kme-language-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:7px;margin:18px 0}
+#kmeTranslatorDialog button{min-height:44px;border:3px solid #202724;border-radius:7px;background:#fffdf3;color:#202724;font:400 16px/1.2 Nunito,"Brandon Grotesque",Arial,sans-serif}
+#kmeTranslatorDialog button:hover{background:#e9dfcc}
+</style>
+<script src="https://vervenveda.com/assets/vnv-class-tools-toolbar.js?v=1.6.0" defer data-vnv-class-tools="canonical-math"></script><!-- KHAEMENES_HIGH_FORMATIVE_EVIDENCE_V1 -->
 <script src="../../../../../shared/high-school-learning-context-v1.js"></script>
 <script>window.VNV_TICKER?.autoPopulate?.({label:"Pre-Algebra · Unit 01 · Lesson 01",max:14});</script>
 </body></html>
