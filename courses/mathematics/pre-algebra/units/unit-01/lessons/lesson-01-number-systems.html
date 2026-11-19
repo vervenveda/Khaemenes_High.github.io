@@ -41,7 +41,7 @@ Inside this file:
 22. VOCAB_FALLBACK
 23. lesson-engine.js
 -->
-<html lang="en" data-theme="dark"><head>
+<html lang="en" data-theme="light"><head>
 <script src="../../../../../shared/course-entry-contract.js?v=20261012"></script>
 <script src="../../../../../shared/learner-scope-v1.js?v=20261012" data-learner-scope="pre-algebra"></script>
 
@@ -49,7 +49,8 @@ Inside this file:
 <!-- =========================
      01. HEAD + INLINE LESSON CSS
      ========================= --><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="description" content="Pre-Algebra Unit 1 Lesson 1: Number Families &amp; the Real Number System."><meta name="theme-color" content="#0b1730"><title>Lesson 1 · Number Families &amp; the Real Number System</title><link rel="stylesheet" href="../assets/unit.css"><link rel="stylesheet" href="https://vervenveda.com/assets/khaemenes-lesson-standard-v1.css" data-ka-shared-lesson-standard="v1">
-<link rel="stylesheet" href="../assets/lesson01-vnv-ka-blueprint-v1.css" data-ka-blueprint="prealgebra-lesson01"><style>
+<link rel="stylesheet" href="../assets/lesson01-vnv-ka-blueprint-v1.css" data-ka-blueprint="prealgebra-lesson01">
+<link rel="stylesheet" href="../../../../assets/math-lesson-workspace-v1.css" data-math-lesson-workspace="v1"><style>
 .lesson-layout{display:grid;grid-template-columns:minmax(0,1fr);gap:24px;align-items:stretch}
 .lesson-main,.lesson-side{padding:24px}.lesson-side{position:static;top:auto}
 .objective-list{display:grid;gap:11px;padding:0;list-style:none}.objective-list li{padding:14px;border:1px solid var(--line);border-radius:7px;background:var(--bg2)}.objective-list li::before{content:"✓";margin-inline-end:11px;color:var(--green);font-weight:444}
@@ -293,7 +294,7 @@ canvas{
   <script src="/Khaemenes_High.github.io/assets/high-school-global-chrome-v2.js" defer data-high-school-global-chrome="v2"></script>
 </head>
 
-<body class="ka-prealgebra-lesson01" data-ka-lesson-standard="v1"><a class="skip" href="#main">Skip to main content</a>
+<body class="ka-prealgebra-lesson01 math-lesson-surface" data-ka-lesson-standard="v1"><a class="skip" href="#main">Skip to main content</a>
 <!-- =========================
      04. HEADER
      ========================= -->
@@ -312,27 +313,27 @@ canvas{
 <!-- =========================
      06. LEARN + LESSON RECORD
      ========================= -->
-<section id="learn"><div class="wrap lesson-layout"><article class="card lesson-main"><p class="eyebrow">Learning goals</p><ul class="objective-list" id="objectives"></ul><h2 style="margin-top:24px">Warm-up</h2><ol class="warmup" id="warmup"></ol></article><section class="card lesson-side" aria-label="Your lesson record"><p class="eyebrow">Your lesson record</p><div class="field"><label for="pathwaySelect">Pathway support</label><select id="pathwaySelect"><option>Foundation</option><option selected>Core</option><option>Extended</option></select></div><p class="notice" id="lessonStatus">Complete the practice to save a lesson score.</p><div class="side-actions"><a class="btn" href="#reading">Reading</a><a class="btn" href="#practice">Practice</a><button class="btn primary" id="markComplete" type="button">Save Lesson Review</button><button class="btn" id="exportLesson" type="button">Export Lesson Record</button></div></section></div></section>
+<section id="learn" data-math-phase="remember"><div class="wrap lesson-layout"><article class="card lesson-main"><p class="eyebrow">Learning goals</p><ul class="objective-list" id="objectives"></ul><h2 style="margin-top:24px">Warm-up</h2><ol class="warmup" id="warmup"></ol></article><section class="card lesson-side" aria-label="Your lesson record"><p class="eyebrow">Your lesson record</p><div class="field"><label for="pathwaySelect">Pathway support</label><select id="pathwaySelect"><option>Foundation</option><option selected>Core</option><option>Extended</option></select></div><p class="notice" id="lessonStatus">Complete the practice to save a lesson score.</p><div class="side-actions"><a class="btn" href="#reading">Reading</a><a class="btn" href="#practice">Practice</a><button class="btn primary" id="markComplete" type="button">Save Lesson Review</button><button class="btn" id="exportLesson" type="button">Export Lesson Record</button></div></section></div></section>
 
 <!-- =========================
      07. CONCEPT DEVELOPMENT
      ========================= -->
-<section><div class="wrap"><div class="section-head"><p class="eyebrow">Concept development</p><h2>Build the idea before memorizing the labels.</h2></div><div class="grid concept-grid" id="conceptGrid"></div></div></section>
+<section data-math-phase="learn"><div class="wrap"><div class="section-head"><p class="eyebrow">Concept development</p><h2>Build the idea before memorizing the labels.</h2></div><div class="grid concept-grid" id="conceptGrid"></div></div></section>
 
 <!-- =========================
      08. READING ROOM
      ========================= -->
-<section id="reading"><div class="wrap"><div class="section-head"><p class="eyebrow">Reading room</p><h2>Read the structure of the real number system.</h2><p class="help-text">Read one panel at a time. The examples and practice below use the same reasoning.</p></div><div class="reading-stack" id="readingSections"></div></div></section>
+<section id="reading" data-math-phase="learn"><div class="wrap"><div class="section-head"><p class="eyebrow">Reading room</p><h2>Read the structure of the real number system.</h2><p class="help-text">Read one panel at a time. The examples and practice below use the same reasoning.</p></div><div class="reading-stack" id="readingSections"></div></div></section>
 
 <!-- =========================
      09. NUMBER-FAMILY EXPLORER
      ========================= -->
-<section><div class="wrap"><div class="section-head"><p class="eyebrow">Interactive number-family explorer</p><h2>Open each family and inspect its place in the system.</h2></div><div class="set-explorer" id="setExplorer"></div></div></section>
+<section data-math-phase="learn"><div class="wrap"><div class="section-head"><p class="eyebrow">Interactive number-family explorer</p><h2>Open each family and inspect its place in the system.</h2></div><div class="set-explorer" id="setExplorer"></div></div></section>
 
 <!-- =========================
      10. QUICK CHECK
      ========================= -->
-<section><div class="wrap"><div class="section-head"><p class="eyebrow">Quick check · Not graded</p><h2>Try four classifications before the worked examples.</h2></div><div class="quick-check-grid" id="quickCheckList"></div></div></section>
+<section data-math-phase="guided"><div class="wrap"><div class="section-head"><p class="eyebrow">Quick check · Not graded</p><h2>Try four classifications before the worked examples.</h2></div><div class="quick-check-grid" id="quickCheckList"></div></div></section>
 
 <!-- =========================
      11. 33-SECOND RESET
@@ -342,7 +343,7 @@ canvas{
 <!-- =========================
      12. MATH BREAK · SKILL GAME
      ========================= -->
-<section class="section-tight" id="math-break">
+<section class="section-tight" id="math-break" data-math-phase="practice-break">
   <div class="wrap">
     <article class="card lesson-main">
       <p class="eyebrow">Math Break · Skill Game</p>
@@ -364,37 +365,37 @@ canvas{
 <!-- =========================
      13. WORKED EXAMPLES
      ========================= -->
-<section><div class="wrap"><div class="section-head"><p class="eyebrow">Worked examples</p><h2>Follow the reasoning one step at a time.</h2></div><div class="example-list" id="exampleList"></div></div></section>
+<section data-math-phase="worked-example"><div class="wrap"><div class="section-head"><p class="eyebrow">Worked examples</p><h2>Follow the reasoning one step at a time.</h2></div><div class="example-list" id="exampleList"></div></div></section>
 
 <!-- =========================
      14. PATHWAY SUPPORT
      ========================= -->
-<section><div class="wrap"><div class="section-head"><p class="eyebrow">Pathway support</p><h2>Choose support or extension for this skill.</h2></div><article class="card lesson-main"><div class="pathway-tabs" id="pathwayTabs"></div><div class="pathway-panel" id="pathwayPanel"></div></article></div></section>
+<section data-math-phase="guided"><div class="wrap"><div class="section-head"><p class="eyebrow">Pathway support</p><h2>Choose support or extension for this skill.</h2></div><article class="card lesson-main"><div class="pathway-tabs" id="pathwayTabs"></div><div class="pathway-panel" id="pathwayPanel"></div></article></div></section>
 
 <!-- =========================
      15. VOCABULARY BRIDGE
      ========================= -->
-<section><div class="wrap"><div class="section-head"><p class="eyebrow">Vocabulary bridge</p><h2>Connect mathematical language across languages.</h2></div><article class="card lesson-main"><div class="vocab-controls field"><label for="vocabLanguage">Bridge language</label><select id="vocabLanguage"></select></div><div style="overflow-x:auto"><table class="vocab-table"><thead><tr><th>English</th><th id="languageHeading">Translation</th><th>Meaning</th></tr></thead><tbody id="vocabBody"></tbody></table></div></article></div></section>
+<section data-math-phase="reference"><div class="wrap"><div class="section-head"><p class="eyebrow">Vocabulary bridge</p><h2>Connect mathematical language across languages.</h2></div><article class="card lesson-main"><div class="vocab-controls field"><label for="vocabLanguage">Bridge language</label><select id="vocabLanguage"></select></div><div style="overflow-x:auto"><table class="vocab-table"><thead><tr><th>English</th><th id="languageHeading">Translation</th><th>Meaning</th></tr></thead><tbody id="vocabBody"></tbody></table></div></article></div></section>
 
 <!-- =========================
      16. GLOBAL APPLICATION
      ========================= -->
-<section><div class="wrap"><div class="section-head"><p class="eyebrow">Global application</p><h2>Use the mathematics in a real setting.</h2></div><p class="notice" id="application"></p></div></section>
+<section data-math-phase="apply"><div class="wrap"><div class="section-head"><p class="eyebrow">Global application</p><h2>Use the mathematics in a real setting.</h2></div><p class="notice" id="application"></p></div></section>
 
 <!-- =========================
      17. GUIDED NOTES
      ========================= -->
-<section><div class="wrap"><div class="section-head"><p class="eyebrow">Guided notes</p><h2>Put the structure into your own words.</h2></div><article class="card guided-note"><div class="field"><label for="guidedNotes">How would you explain the difference between an integer, a rational number, and an irrational number to another student?</label><textarea id="guidedNotes"></textarea></div><div class="actions"><button class="btn primary" id="saveNotes" type="button">Save Guided Notes</button></div><p id="notesMessage" aria-live="polite"></p></article></div></section>
+<section data-math-phase="guided"><div class="wrap"><div class="section-head"><p class="eyebrow">Guided notes</p><h2>Put the structure into your own words.</h2></div><article class="card guided-note"><div class="field"><label for="guidedNotes">How would you explain the difference between an integer, a rational number, and an irrational number to another student?</label><textarea id="guidedNotes"></textarea></div><div class="actions"><button class="btn primary" id="saveNotes" type="button">Save Guided Notes</button></div><p id="notesMessage" aria-live="polite"></p></article></div></section>
 
 <!-- =========================
      18. PRACTICE / SUBMIT ASSIGNMENT
      ========================= -->
-<section id="practice"><div class="wrap"><div class="section-head"><p class="eyebrow">Lesson practice · 20 questions</p><h2>Check understanding and study every explanation.</h2><p class="help-text">Your selected answers save automatically in this browser. Reach <strong data-mastery-threshold>80%</strong> to unlock Lesson 2.</p></div><div class="practice-meter" aria-label="Practice completion"><div class="practice-meter-row"><strong>Practice progress</strong><span id="practiceProgressLabel">0 of 20 answered</span></div><div class="progress-track" id="practiceProgressBar" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" style="--value:0%"></div></div><form class="question-list" id="questionList"></form><div class="actions"><button class="btn primary" id="submitPractice" type="button">Submit Assignment</button><button class="btn" id="resetPractice" type="button">Reset Practice</button></div><p class="notice" id="scoreMessage" aria-live="polite">No practice score yet.</p></div></section>
+<section id="practice" data-math-phase="your-turn"><div class="wrap"><div class="section-head"><p class="eyebrow">Lesson practice · 20 questions</p><h2>Check understanding and study every explanation.</h2><p class="help-text">Your selected answers save automatically in this browser. Reach <strong data-mastery-threshold>80%</strong> to unlock Lesson 2.</p></div><div class="practice-meter" aria-label="Practice completion"><div class="practice-meter-row"><strong>Practice progress</strong><span id="practiceProgressLabel">0 of 20 answered</span></div><div class="progress-track" id="practiceProgressBar" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" style="--value:0%"></div></div><form class="question-list" id="questionList"></form><div class="actions"><button class="btn primary" id="submitPractice" type="button">Submit Assignment</button><button class="btn" id="resetPractice" type="button">Reset Practice</button></div><p class="notice" id="scoreMessage" aria-live="polite">No practice score yet.</p></div></section>
 
 <!-- =========================
      19. REFLECTION + NEXT LESSON
      ========================= -->
-<section><div class="wrap"><div class="section-head"><p class="eyebrow">Reflection</p><h2>Explain what changed in your thinking.</h2></div><article class="card lesson-main"><div class="field"><label for="reflection">What idea, strategy, or error will you remember?</label><textarea id="reflection"></textarea></div><div class="actions"><button class="btn primary" id="saveReflection" type="button">Save Reflection</button></div><p id="reflectionMessage" aria-live="polite"></p><nav class="lesson-nav" aria-label="Lesson navigation"><a class="btn" id="previousLesson" href="#">← Previous</a><a class="btn primary" id="nextLesson" href="#">Next →</a></nav></article></div></section></main>
+<section data-math-phase="exit"><div class="wrap"><div class="section-head"><p class="eyebrow">Reflection</p><h2>Explain what changed in your thinking.</h2></div><article class="card lesson-main"><div class="field"><label for="reflection">What idea, strategy, or error will you remember?</label><textarea id="reflection"></textarea></div><div class="actions"><button class="btn primary" id="saveReflection" type="button">Save Reflection</button></div><p id="reflectionMessage" aria-live="polite"></p><nav class="lesson-nav" aria-label="Lesson navigation"><a class="btn" id="previousLesson" href="#">← Previous</a><a class="btn primary" id="nextLesson" href="#">Next →</a></nav></article></div></section></main>
 <footer class="footer"><div class="wrap footer-inner"><span>KH-MATH-PA-U01-L1</span><span>Local progress · 80% mastery · Multilingual vocabulary · Printable</span></div></footer>
 
 
