@@ -3,6 +3,8 @@ name: High School Mathematics Lesson Launch Validation
 on:
   pull_request:
     paths:
+      - 'courses/shared/course-entry-contract.js'
+      - 'courses/mathematics/assets/math-shared-game-bridge-v1.js'
       - 'courses/mathematics/pre-algebra/**'
       - 'courses/mathematics/algebra-1/**'
       - 'courses/mathematics/geometry/**'
@@ -21,6 +23,8 @@ on:
       - '.github/workflows/math-launch-day-validation.yml'
   push:
     paths:
+      - 'courses/shared/course-entry-contract.js'
+      - 'courses/mathematics/assets/math-shared-game-bridge-v1.js'
       - 'courses/mathematics/pre-algebra/**'
       - 'courses/mathematics/algebra-1/**'
       - 'courses/mathematics/geometry/**'
