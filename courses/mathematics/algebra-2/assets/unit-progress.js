@@ -9,11 +9,11 @@ let data=window.KhaemenesAlgebra2Progression?.readJSON?.(KEY,{})||{};
 const cards=[...document.querySelectorAll("[data-lesson-id]")];
 let done=0;
 cards.forEach(card=>{
- const id=card.dataset.lessonId,on=!!data[id]?.complete;
- if(on){done++;card.classList.add("completed");const p=card.querySelector(".lesson-state");if(p)p.textContent="Completed on this device";}
+ const id=card.dataset.lessonId,on=window.KhaemenesAlgebra2Progression?.lessonMastered?.(id)===true;
+ if(on){done++;card.classList.add("completed");const p=card.querySelector(".lesson-state");if(p)p.textContent="80% lesson mastery met";}
 });
 const out=document.getElementById("unitProgress");
-if(out)out.textContent=`${done}/${cards.length} detailed lessons marked complete`;
+if(out)out.textContent=`${done}/${cards.length} detailed lessons at 80% mastery`;
 };
 if(window.KhaemenesAlgebra2Progression)run();
 else if(current){
