@@ -1,8 +1,15 @@
 /* Khaemenes Academy · universal High School mathematics responsive hardening v1 */
 :root{--khae-touch:44px}
 html,body{max-width:100%;overflow-x:hidden}
-body{font-size:max(16px,1rem)}
-button,input,select,textarea,a[role="button"],summary,.btn,.button{font-size:max(16px,1rem)}
+html:root:root body{font-size:16px!important}
+html:root:root body :is(
+ p,li,label,button,input,select,textarea,option,output,td,th,legend,small,summary,
+ .btn,.button,.eyebrow,.kicker,.dialog-eyebrow,.dialog-kicker,.worksheet-kicker,
+ .pill,.day,.metric span,.breadcrumb,.breadcrumb *,.header-control,
+ .problem-prompt,.feedback,.notice,.help-text,.lesson-meta,.formula-chip,
+ .caption,.meta,.hint,.helper,.status,.kme-completion-note
+){font-size:max(16px,1em)!important}
+button,input,select,textarea,a[role="button"],summary,.btn,.button{font-size:max(16px,1rem)!important}
 button,.btn,.button,a[role="button"],summary,input,select{min-height:var(--khae-touch)}
 img,svg,canvas,video,iframe{max-width:100%;height:auto}
 table{max-width:100%}
