@@ -137,3 +137,75 @@ Commit:
 `06dfe2ce6cfe6b36abdbb40d7114446b490d9f53`
 
 Status: **next CI run pending**
+
+
+## Verification checkpoint 2
+
+### Geometry release and higher-math gate
+
+- **Geometry Release Validation: PASS**
+- **Higher Mathematics Local Regression: PASS**
+- Mathematics Engine lesson-shell integrity has remained **PASS** throughout this repair cycle.
+- Geometry now has course-local regression coverage for all 90 adopted lessons, adapter version parity, course-entry coverage, native mastery authority, and the assessment firewall.
+- Algebra II now has a course-local engine-readiness/HOLD regression covering all 92 lessons and protected assessment routes.
+- A repository-level higher-math gate blocks an Algebra II Mathematics Engine adapter until Geometry is formally authorized for the next migration stage.
+
+### Pre-Algebra hardening discovered during launch validation
+
+The department launch chain exposed one real service-worker boundary issue: successful assessment navigations could be cached by the generic navigation path.
+
+Repaired:
+- `courses/mathematics/pre-algebra/service-worker.js`
+- cache release advanced to `v24-assessment-firewall-20261119`;
+- runtime navigation caching now stores only reusable lesson pages;
+- assessment / diagnostic / records exclusions remain outside reusable offline storage;
+- canonical component hashes refreshed after the approved service-worker repair.
+
+No assessment question, scoring routine, mastery threshold, Midterm, Final, or diagnostic content changed.
+
+The Pre-Algebra launch chain now passes:
+- lesson launch contract;
+- component integrity;
+- assessment depth;
+- Academy mastery gates.
+
+### Algebra I validator modernization
+
+The launch chain then exposed older audit assumptions left behind by the rebuilt assessment architecture.
+
+Completed:
+- whole-course validator now recognizes the current 60-selected + 6-constructed Midterm and 100-selected + 10-constructed Final;
+- reset validation recognizes current draft replacement while preserving scored evidence;
+- assessment-depth harness is isolated from browser-only hardening-loader DOM dependencies;
+- late-unit assessment audit now targets the current `unit-mastery-engine-v3.js` architecture:
+  - 25 fixed lesson-balanced questions;
+  - exact 20/25 = 80% mastery;
+  - fixed no-shuffle retry form;
+  - verified persistence required before mastery credit;
+  - canonical prior-unit, Midterm, lesson, and weekly prerequisites;
+  - reconstructable answer evidence;
+  - current Unit 10–13 supplemental/rebuilt banks;
+- cumulative audit now targets the current self-contained mixed-evidence Midterm/Final rather than retired `window.EXAM_CONFIG` surfaces.
+
+Latest Algebra I assessment-depth modernization commit:
+`001c8fd8c05fc623853270e0c170dc198495a189`
+
+### Shared-game architecture
+
+The shared-game chain now passes its canonical registry, repair-behavior, cross-course synchronization, formative-game, and storage/link stages.
+
+Headless test harness modernization completed so current accessible game DOM patterns are supported:
+- external chrome scripts are excluded from inline gameplay extraction;
+- removable dynamic nodes are supported;
+- text nodes are supported;
+- Model Forge `newChallenge` interface is recognized.
+
+The canonical registry-driven lesson bridge remains practice-only and assessment-excluded.
+
+### Bubble status
+
+1. Geometry strict-release regression — **PUSHED OUT / PASS**
+2. Four-course lesson-launch contract — **substantially cleared; final downstream chain verification in progress**
+3. Shared-game registration/wiring — **architecture repaired; final downstream suite verification in progress**
+4. Geometry / Algebra II local validation density — **PUSHED OUT / PASS**
+5. Algebra II Mathematics Engine migration gate — **PUSHED OUT / HOLD ENFORCED**
