@@ -46,8 +46,8 @@ for(let unit=1;unit<=13;unit++){
   const unitRoot=path.join(repo,base,"units","unit-"+n);
   const index=fs.readFileSync(path.join(unitRoot,"index.html"),"utf8");
   const lessonRoot=path.join(unitRoot,"lessons");
-  const actual=fs.readdirSync(lessonRoot).filter(f=>new RegExp("^u"+n+"-l\\d{2}\\.html$").test(f)).sort();
-  const hrefs=[...index.matchAll(/href=["']lessons\\/(u\\d{2}-l\\d{2}\\.html)/g)].map(x=>x[1]);
+  const actual=fs.readdirSync(lessonRoot).filter(f=>new RegExp("^u"+n+"-l[0-9]{2}[.]html$").test(f)).sort();
+  const hrefs=[...index.matchAll(/href=["']([^"']+)["']/g)].map(m=>m[1]).filter(h=>h.startsWith("lessons/u"+n+"-l")&&h.endsWith(".html")).map(h=>h.slice("lessons/".length));
   const unique=[...new Set(hrefs)].sort();
   assert.deepEqual(unique,actual,"unit "+n+": exact native lesson links");
   assert.ok(hrefs.includes("u"+n+"-l01.html"),"unit "+n+": Begin Unit route");
