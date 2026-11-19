@@ -26,6 +26,7 @@
   ["lesson-practice","Lesson Practice","mastery"],
   ["reflection","Reflection","reflection"]
  ];
+ let bound=false,observing=false;
  const $=(s,r=document)=>r.querySelector(s);
  const $$=(s,r=document)=>[...r.querySelectorAll(s)];
  const lessonId=()=>window.LESSON_DATA?.id||document.body?.dataset?.lessonId||location.pathname.split("/").pop()?.replace(/\.html$/,"")||"lesson";
@@ -340,6 +341,7 @@
    });
  }
  function bind(){
+   if(bound)return; bound=true;
    $("#lessonCompletionChecklist")?.addEventListener("change",e=>{const i=e.target.closest("[data-checklist-key]");if(i)setManual(i.dataset.checklistKey,i.checked)});
    $("#lessonCompletionChecklist")?.addEventListener("click",e=>{const b=e.target.closest("[data-nav-section]");if(b)jump(b.dataset.navSection)});
    document.addEventListener("click",e=>{
@@ -367,7 +369,18 @@
    document.addEventListener("input",e=>{if(e.target.matches("textarea,input[type=text]"))setTimeout(()=>{renderChecklist();gateNext()},0)},{passive:true});
    document.documentElement.dataset.khaemenesMathEngineActive=VERSION;
  }
+ function observeGeneratedLesson(){
+   if(observing)return; observing=true;
+   const main=$("#main")||$("main"); if(!main)return;
+   let queued=false;
+   const observer=new MutationObserver(()=>{
+     if(queued)return; queued=true;
+     requestAnimationFrame(()=>{queued=false;normalize()});
+   });
+   observer.observe(main,{childList:true,subtree:true});
+ }
  const api={version:VERSION,normalize,renderChecklist,gateNext};
  window.KhaemenesAlgebra1LessonV2=Object.freeze(api);
- if(document.readyState==="loading")document.addEventListener("DOMContentLoaded",normalize,{once:true});else normalize();
+ const start=()=>{normalize();observeGeneratedLesson();setTimeout(normalize,120);setTimeout(normalize,500)};
+ if(document.readyState==="loading")document.addEventListener("DOMContentLoaded",start,{once:true});else start();
 })();
