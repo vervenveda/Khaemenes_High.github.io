@@ -290,7 +290,12 @@
       const add=(label,href)=>{const a=document.createElement("a");a.className="btn";a.href=href;a.textContent=label;a.style.margin="5px 10px 5px 0";panel.append(a);};
       const unitMatch=location.pathname.match(/unit-(\d{2})/),unit=unitMatch?Number(unitMatch[1]):0;
       if(MASTERY_TARGET==null){add("Continue to Algebra II units","../index.html#units");}
-      else if(mastery===true){add("Return to course pathway",unit?"../../../index.html#units":"../index.html#units");if(unit&&unit<13)add("Check next unit","../../unit-"+String(unit+1).padStart(2,"0")+"/");}
+      else if(mastery===true){
+        add("Return to course pathway",unit?"../../../index.html#units":"../index.html#units");
+        if(unit===6)add("Continue to Midterm","../../../assessments/midterm.html");
+        else if(unit===13)add("Continue to Final","../../../assessments/final.html");
+        else if(unit&&unit<13)add("Begin next unit","../../unit-"+String(unit+1).padStart(2,"0")+"/");
+      }
       else {add("Review unit lessons",unit?"../index.html":"../index.html#units");}
       document.getElementById("assessmentMessage")?.after(panel);
       document.getElementById("submitAssessment")?.setAttribute("disabled", "true");
