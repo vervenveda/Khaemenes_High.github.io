@@ -212,3 +212,16 @@ New canonical companions:
 - Surface & Volume Studio — U11-L07
 
 Pre-Algebra now has **86/97** lessons with canonical game companions. The remaining 11 lessons are intentionally tool-sufficient. Genuine new-game gaps: **0**.
+
+
+## 2026-11-19 · Mathematics Engine v2.2.1 rollout
+
+Approved canonical Pre-Algebra lesson shell finalized from Unit 01 Lesson 01.
+
+- workflow exact-reference clone: `workflow/blueprints/pre-algebra-mathematics-engine-v2.2.1-reference.html`
+- live reference promoted: `units/unit-01/lessons/lesson-01-number-systems.html`
+- canonical presentation: `https://vervenveda.com/assets/khaemenes-math-engine-v2.css?v=2.2.1`
+- shared Unit 01 lesson engine now contains completion-checklist evidence and combined checklist + 80% mastery advancement gate.
+- prototype-only read-only guards and forensic probe are not part of the live lesson.
+- course landing `pre-algebra/index.html` remains protected and unchanged.
+- later lesson files still require unit-aware migration because they contain specialized labs and legacy embedded typography; do not perform blind whole-file cloning.
