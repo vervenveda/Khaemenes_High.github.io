@@ -14,6 +14,10 @@ on:
       - 'courses/mathematics/assets/course-lesson-workflow-v1.js'
       - 'tools/test-geometry-loading-boundary.mjs'
       - 'tools/test-algebra2-historical-mastery.mjs'
+      - 'tools/test-math-assessment-submission-integrity.mjs'
+      - 'tools/test-math-manual-score-input-integrity.mjs'
+      - 'tools/test-algebra2-note-preservation.mjs'
+      - 'tools/test-algebra2-midterm-continuity.mjs'
       - '.github/workflows/math-launch-day-validation.yml'
   push:
     paths:
@@ -28,6 +32,10 @@ on:
       - 'courses/mathematics/assets/course-lesson-workflow-v1.js'
       - 'tools/test-geometry-loading-boundary.mjs'
       - 'tools/test-algebra2-historical-mastery.mjs'
+      - 'tools/test-math-assessment-submission-integrity.mjs'
+      - 'tools/test-math-manual-score-input-integrity.mjs'
+      - 'tools/test-algebra2-note-preservation.mjs'
+      - 'tools/test-algebra2-midterm-continuity.mjs'
       - '.github/workflows/math-launch-day-validation.yml'
 
 permissions:
