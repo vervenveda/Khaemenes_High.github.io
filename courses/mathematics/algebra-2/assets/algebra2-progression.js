@@ -236,6 +236,15 @@
     link.append(note);
   }
 
+  function unitRequirement(unit) {
+    if (!readinessRecorded()) return {href:"../../diagnostic/",label:"Open readiness diagnostic",message:`Complete the Algebra II readiness diagnostic at ${MASTERY}% or higher before opening the course sequence.`};
+    if (unit <= 1) return null;
+    const prior=unit-1;
+    if (!unitProgressionComplete(prior)) return {href:`../unit-${String(prior).padStart(2,"0")}/assessment/mastery-check.html`,label:"Return to required mastery",message:`Complete the full Unit ${String(prior).padStart(2,"0")} lesson, weekly, and unit mastery evidence chain before beginning Unit ${String(unit).padStart(2,"0")}.`};
+    if (unit >= 7 && !midtermMastered()) return {href:"../../assessments/midterm.html",label:"Open reviewed midterm",message:`Complete the reviewed Midterm at ${MASTERY}% before beginning Unit ${String(unit).padStart(2,"0")}.`};
+    return null;
+  }
+
   function unitGate() {
     const unit = Number(document.body.dataset.unit);
     if (!unit) return;
@@ -244,12 +253,8 @@
       return;
     }
     if (!unitUnlocked(unit)) {
-      const prior = `Unit ${String(unit - 1).padStart(2, "0")}`;
-      const href = unit === 7 ? "../../assessments/midterm.html" : `../unit-${String(unit - 1).padStart(2, "0")}/assessment/mastery-check.html`;
-      const message = unit === 7
-        ? `Complete Unit 06 and the reviewed midterm at ${MASTERY}% before beginning Unit 07.`
-        : `Complete ${prior} mastery at ${MASTERY}% before beginning this unit.`;
-      lockMain(`Unit ${String(unit).padStart(2, "0")} is locked`, message, href, "Return to required mastery");
+      const requirement=unitRequirement(unit);
+      lockMain(`Unit ${String(unit).padStart(2, "0")} is locked`,requirement?.message||"Required progression evidence could not be verified.",requirement?.href||"../../",requirement?.label||"Return to Course Home");
       return;
     }
     const cards = [...document.querySelectorAll('.lesson-grid > a.card[href*="lessons/"]')];
@@ -319,6 +324,7 @@
     storageKey,
     unitMastered,
     unitProgressionComplete,
+    unitRequirement,
     weekMastered,
     unitUnlocked,
     writeJSON
