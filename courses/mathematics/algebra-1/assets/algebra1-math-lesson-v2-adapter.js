@@ -31,7 +31,11 @@
  const $$=(s,r=document)=>[...r.querySelectorAll(s)];
  const lessonId=()=>window.LESSON_DATA?.id||document.body?.dataset?.lessonId||location.pathname.split("/").pop()?.replace(/\.html$/,"")||"lesson";
  const threshold=()=>Number(window.LESSON_DATA?.mastery_threshold||80);
- const progressKey=()=>window.UNIT_MAP_FALLBACK?.unit?.progress_key||"khaemenes-algebra1-unit-progress-v2";
+ const progressKey=()=>{
+   if(window.UNIT_MAP_FALLBACK?.unit?.progress_key)return window.UNIT_MAP_FALLBACK.unit.progress_key;
+   const unit=location.pathname.match(/\/unit-(\d+)\//i)?.[1];
+   return unit?"khaemenes-algebra1-unit"+String(Number(unit)).padStart(2,"0")+"-lesson-shell-v2":"khaemenes-algebra1-unit-progress-v2";
+ };
  const readProgress=()=>{try{return JSON.parse(localStorage.getItem(progressKey())||"{}")||{}}catch{return {}}};
  const writeProgress=p=>{try{localStorage.setItem(progressKey(),JSON.stringify(p));return true}catch{return false}};
  const ensureProgress=()=>{
@@ -172,14 +176,22 @@
    });
    return true;
  }
+ function nextLessonTarget(){
+   const n=Number(document.body?.dataset?.lesson||0);
+   const dataKey=Object.keys(window).find(k=>/^KHAE_UNIT\d+$/.test(k)&&Array.isArray(window[k]?.lessons));
+   const lessons=dataKey?window[dataKey].lessons:null;
+   const next=Array.isArray(lessons)?lessons.find(x=>Number(x.number)===n+1):null;
+   if(next?.file)return {href:next.file,title:"Lesson "+String(n+1).padStart(2,"0")+" · "+(next.title||"Continue")};
+   return {href:"../index.html",title:"Unit Home"};
+ }
  function ensureStageCompletionCard(){
    if($("#lessonCompletion"))return;
-   const stages=$("details.kme-algebra-stage");
+   const stages=$$("details.kme-algebra-stage");
    if(!stages.length)return;
-   const last=stages[stages.length-1];
+   const last=stages[stages.length-1],target=nextLessonTarget();
    const section=document.createElement("section");
    section.className="kme-section"; section.id="lessonCompletion";
-   section.innerHTML='<div class="wrap"><article class="kme-completion-card"><header class="section-head"><h2>Lesson Completion Checklist</h2><p>Open every lesson stage, complete the written evidence, and reach at least '+threshold()+'% on Lesson Check before moving forward.</p></header><div id="lessonCompletionChecklist" class="kme-completion-list" aria-live="polite"></div><div class="kme-completion-status" id="lessonCompletionStatus" role="status"></div><nav class="lesson-nav" aria-label="Lesson navigation"></nav></article></div>';
+   section.innerHTML='<div class="wrap"><article class="kme-completion-card"><header class="section-head"><h2>Lesson Completion Checklist</h2><p>Open every lesson stage, complete the written evidence, and reach at least '+threshold()+'% on Lesson Check before moving forward.</p></header><div id="lessonCompletionChecklist" class="kme-completion-list" aria-live="polite"></div><div class="kme-completion-status" id="lessonCompletionStatus" role="status"></div><nav class="lesson-nav" aria-label="Lesson navigation"><a class="btn locked" id="nextLesson" data-target-href="'+target.href+'" data-target-title="'+target.title+'" href="#lessonCompletion" aria-disabled="true">Next Lesson · Locked until checklist + '+threshold()+'% mastery</a></nav></article></div>';
    last.closest(".block,.section")?.after(section) || last.after(section);
  }
  function installFineTuneStyles(){
