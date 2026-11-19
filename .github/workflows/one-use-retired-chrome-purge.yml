@@ -28,19 +28,47 @@ jobs:
               re.I
           )
 
-          replacements = {
-              "../../shared/high-school-class-tools-universal-v1.js":
-                  "/Khaemenes_High.github.io/courses/shared/high-school-class-tools-universal-v1.js",
-              "../../assets/math-learning-tools-v2.js":
-                  "/Khaemenes_High.github.io/courses/mathematics/assets/math-learning-tools-v2.js",
-              "../assets/math-learning-tools-v2.js":
-                  "/Khaemenes_High.github.io/courses/mathematics/assets/math-learning-tools-v2.js",
-              "../../../../assets/vnv-language.js?v=20261118-high-school-bounded-refresh-1":
-                  "/Khaemenes_High.github.io/assets/vnv-language.js?v=20261118-high-school-bounded-refresh-1",
-              "../../../assets/vnv-language.js?v=20261118-high-school-bounded-refresh-1":
-                  "/Khaemenes_High.github.io/assets/vnv-language.js?v=20261118-high-school-bounded-refresh-1",
-              "/Khaemenes_High.github.io/courses/mathematics/pre-algebra/assets/algebra1-worker-recovery-v1.js":
-                  "/Khaemenes_High.github.io/courses/mathematics/algebra-1/assets/algebra1-worker-recovery-v1.js",
+          targeted = {
+              "courses/physical-education/index.html": {
+                  "../../shared/high-school-class-tools-universal-v1.js":
+                      "/Khaemenes_High.github.io/courses/shared/high-school-class-tools-universal-v1.js",
+              },
+              "courses/electives/index.html": {
+                  "../../shared/high-school-class-tools-universal-v1.js":
+                      "/Khaemenes_High.github.io/courses/shared/high-school-class-tools-universal-v1.js",
+              },
+              "courses/mathematics/geometry/units/unit-01/assessment/mastery-check.html": {
+                  "../../assets/math-learning-tools-v2.js":
+                      "/Khaemenes_High.github.io/courses/mathematics/assets/math-learning-tools-v2.js",
+                  "../../../../assets/vnv-language.js?v=20261118-high-school-bounded-refresh-1":
+                      "/Khaemenes_High.github.io/assets/vnv-language.js?v=20261118-high-school-bounded-refresh-1",
+              },
+              "courses/mathematics/pre-algebra/assessments/midterm-units-01-07.html": {
+                  "../assets/math-learning-tools-v2.js":
+                      "/Khaemenes_High.github.io/courses/mathematics/assets/math-learning-tools-v2.js",
+                  "../../../assets/vnv-language.js?v=20261118-high-school-bounded-refresh-1":
+                      "/Khaemenes_High.github.io/assets/vnv-language.js?v=20261118-high-school-bounded-refresh-1",
+              },
+              "courses/mathematics/pre-algebra/assessments/final-exam-36-weeks.html": {
+                  "../assets/math-learning-tools-v2.js":
+                      "/Khaemenes_High.github.io/courses/mathematics/assets/math-learning-tools-v2.js",
+                  "../../../assets/vnv-language.js?v=20261118-high-school-bounded-refresh-1":
+                      "/Khaemenes_High.github.io/assets/vnv-language.js?v=20261118-high-school-bounded-refresh-1",
+              },
+              "courses/mathematics/algebra-1/assessments/final-exam-36-weeks.html": {
+                  "/Khaemenes_High.github.io/courses/mathematics/pre-algebra/assets/algebra1-worker-recovery-v1.js":
+                      "/Khaemenes_High.github.io/courses/mathematics/algebra-1/assets/algebra1-worker-recovery-v1.js",
+                  "../assets/math-learning-tools-v2.js":
+                      "/Khaemenes_High.github.io/courses/mathematics/assets/math-learning-tools-v2.js",
+                  "../../../assets/vnv-language.js?v=20261118-high-school-bounded-refresh-1":
+                      "/Khaemenes_High.github.io/assets/vnv-language.js?v=20261118-high-school-bounded-refresh-1",
+              },
+              "courses/mathematics/algebra-2/units/unit-01/assessment/mastery-check.html": {
+                  "../../assets/math-learning-tools-v2.js":
+                      "/Khaemenes_High.github.io/courses/mathematics/assets/math-learning-tools-v2.js",
+                  "../../../../assets/vnv-language.js?v=20261118-high-school-bounded-refresh-1":
+                      "/Khaemenes_High.github.io/assets/vnv-language.js?v=20261118-high-school-bounded-refresh-1",
+              },
           }
 
           changed = []
@@ -52,19 +80,19 @@ jobs:
               before = text
               text, n = script_tag.subn("", text)
               retired_removed += n
-              for old, new in replacements.items():
+              rel = p.as_posix().lstrip("./")
+              for old, new in targeted.get(rel, {}).items():
                   text = text.replace(old, new)
               if text != before:
                   p.write_text(text, encoding="utf-8")
-                  changed.append(str(p))
+                  changed.append(rel)
 
           remaining = []
           for p in root.rglob("*.html"):
               if ".git" in p.parts or "workflow" in p.parts:
                   continue
-              text = p.read_text(encoding="utf-8")
-              if retired in text:
-                  remaining.append(str(p))
+              if retired in p.read_text(encoding="utf-8"):
+                  remaining.append(p.as_posix())
 
           print(f"HTML files changed: {len(changed)}")
           print(f"Retired script tags removed: {retired_removed}")
