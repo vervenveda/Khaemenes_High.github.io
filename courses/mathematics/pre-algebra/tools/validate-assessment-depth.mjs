@@ -121,7 +121,7 @@ const onDemandAssessmentAssets=["prealgebra-assessment-depth-v2.js",...parts.map
 for(const rel of onDemandAssessmentAssets){
   ok(!sw.includes(`"./${rel}"`)&&!sw.includes(`'./${rel}'`),`assessment asset ${rel} is not eagerly pinned in the core offline shell`);
 }
-ok(sw.includes('CORE_FILES.some')&&sw.includes('isReusableLessonPage(url)')&&sw.includes('if(isReusableLessonPage(url))await cacheGoodResponse(request,response)')&&sw.includes('assessment|assessments|teacher-keys|records|diagnostic'),"precache stays declared and runtime offline storage excludes official assessment pages");
+ok(sw.includes('CORE_FILES.some')&&sw.includes('isReusableLessonPage(url)')&&(/response\?\.ok&&isReusableLessonPage\(url\)\)await cacheGoodResponse\(request,response\)/.test(sw)||sw.includes('if(isReusableLessonPage(url))await cacheGoodResponse(request,response)'))&&sw.includes('assessment|assessments|teacher-keys|records|diagnostic'),"precache stays declared and runtime offline storage excludes official assessment pages");
 
 if(failures){
   console.error(`Pre-Algebra assessment-depth validation failed: ${failures} problem(s).`);
