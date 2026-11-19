@@ -1,0 +1,34 @@
+name: Social Studies 10 Minimal Landing
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'courses/social-studies/grade-10/index.html'
+      - 'courses/social-studies/assets/social-studies-minimal-landing-v1.css'
+      - 'courses/social-studies/assets/social-studies-minimal-header-mount-v1.js'
+      - 'courses/social-studies/assets/social-studies-landing-class-tools-v1.js'
+      - 'tools/validate-social-studies10-minimal-landing.mjs'
+      - '.github/workflows/social-studies10-minimal-landing.yml'
+  pull_request:
+    paths:
+      - 'courses/social-studies/grade-10/index.html'
+      - 'courses/social-studies/assets/social-studies-*'
+      - 'tools/validate-social-studies10-minimal-landing.mjs'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Validate Grade 10 Social Studies minimal landing contract
+        run: node tools/validate-social-studies10-minimal-landing.mjs
+      - name: Validate patch formatting
+        run: git diff --check
