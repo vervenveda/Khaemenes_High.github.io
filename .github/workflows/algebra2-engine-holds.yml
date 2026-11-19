@@ -1,0 +1,29 @@
+name: Algebra II Engine HOLD Regression
+
+on:
+  push:
+    paths:
+      - "courses/mathematics/algebra-2/assets/algebra2-progression.js"
+      - "courses/mathematics/algebra-2/assets/lesson-tools.js"
+      - "courses/mathematics/algebra-2/assets/unit-progress.js"
+      - "courses/mathematics/algebra-2/assets/assessment-engine.js"
+      - "courses/mathematics/algebra-2/workflow/tests/validate-engine-holds.mjs"
+      - ".github/workflows/algebra2-engine-holds.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  engine-holds:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      - name: Use Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "24"
+      - name: Run Algebra II HOLD regression
+        run: node courses/mathematics/algebra-2/workflow/tests/validate-engine-holds.mjs
