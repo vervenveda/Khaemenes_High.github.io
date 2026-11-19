@@ -206,3 +206,36 @@ test("Geometry and Algebra II diagnostics use fresh cache-distinct assessment as
   assert.match(page,/assessment-engine\.js\?v=20261118-assessment-recovery-1/,name);
  }
 });
+
+
+const englishAssessmentRecoveryPages=[
+ ...["9","10","11","12"].flatMap(grade=>[
+  `courses/language-arts/english-${grade}/assessments/index.html`,
+  `courses/language-arts/english-${grade}/assessments/diagnostic/index.html`,
+  `courses/language-arts/english-${grade}/assessments/midterm/index.html`,
+  `courses/language-arts/english-${grade}/assessments/final/index.html`,
+  ...Array.from({length:12},(_,i)=>`courses/language-arts/english-${grade}/assessments/unit-${String(i+1).padStart(2,"0")}/index.html`)
+ ])
+];
+
+test("all English assessment entries load exactly one direct-entry worker recovery bridge",()=>{
+ for(const path of englishAssessmentRecoveryPages){
+  const page=read(path);
+  const loads=page.match(/high-school-english-worker-recovery-v1\.js/g)||[];
+  assert.equal(loads.length,1,path);
+ }
+});
+
+test("all English diagnostics use fresh cache-distinct course assets",()=>{
+ for(const grade of ["9","10","11","12"]){
+  const page=read(`courses/language-arts/english-${grade}/assessments/diagnostic/index.html`);
+  assert.match(page,/course\.css\?v=20261118-english-recovery-1/,grade);
+  assert.match(page,/course\.js\?v=20261118-english-recovery-1/,grade);
+ }
+});
+
+test("shared High School chrome routes English pages into the English worker recovery bridge",()=>{
+ const chrome=read("assets/high-school-global-chrome-v2.js");
+ assert.match(chrome,/high-school-english-worker-recovery-v1\.js/);
+ assert.match(chrome,/ensureEnglishRecovery/);
+});
