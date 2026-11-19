@@ -1,98 +1,638 @@
-<!doctype html><html lang="en" data-theme="dark"><head>
-<script src="../../../shared/course-entry-contract.js?v=20261012"></script>
-<script src="../../../shared/learner-scope-v1.js?v=20261012" data-learner-scope="algebra-1"></script>
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#242c29">
+<title>Algebra I Readiness Diagnostic · Khaemenes Academy</title>
 
-<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="theme-color" content="#17344a"><title>Algebra I Readiness Diagnostic</title>
-<link rel="stylesheet" href="../assets/styles.css">
-<link rel="stylesheet" href="../../assets/math-assessment-workspace-v1.css?v=20261118-assessment-recovery-1"><style id="khaemenes-typography-standard">
-/* Khaemenes High presentation typography · 55 / 33 / 24 / 14 px.
-   All public pages receive this local, embedded policy for offline use.
-   Only presentation changes. Existing grids, gates, learner records, assessments and STOS are preserved.
-   Font names are optional installed system fonts; no downloads or third-party font services. */
-html:root:root body {
-  font-family: "Brandon Grotesque", "Avenir Next", Avenir, "Segoe UI", Arial, sans-serif !important;
-  font-size:16px !important;
-  font-weight: 400 !important;
-  line-height: 1.65 !important;
-  -webkit-text-size-adjust: 100%;
-  overflow-wrap: break-word;
+<script src="/Khaemenes_High.github.io/assets/high-school-global-chrome-v2.js" defer data-high-school-global-chrome="v2"></script>
+<script src="/Khaemenes_High.github.io/courses/mathematics/algebra-1/assets/algebra1-worker-recovery-v1.js" defer data-algebra1-worker-recovery="v1"></script>
+
+<style id="algebra1-diagnostic-clean-v1">
+:root{
+  --charcoal:#242c29;
+  --charcoal-2:#303936;
+  --cream:#fff8eb;
+  --parchment:#f6efe2;
+  --paper:#fffdf8;
+  --ink:#242624;
+  --muted:#655f55;
+  --gold:#b48b45;
+  --gold-soft:#d8c59f;
+  --line:#d9cdb8;
+  --green:#365b49;
+  --rose:#8f4e4e;
+  --radius:7px;
+  --max:1100px;
 }
-html:root:root body :is(button, input, select, textarea) {
-  font-family: "Brandon Grotesque", "Avenir Next", Avenir, "Segoe UI", Arial, sans-serif !important;
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:120px}
+body{
+  margin:0;
+  min-width:300px;
+  background:var(--parchment);
+  color:var(--ink);
+  font:400 16px/1.6 "Brandon Grotesque","Avenir Next",Avenir,"Segoe UI",Arial,sans-serif;
+  -webkit-font-smoothing:antialiased;
 }
-html:root:root body :is(h1, h2, h3, h4, h5, h6, .page-title, .hero-title, .brand-title, .display-title, .site-title) {
-  font-family: Cinzel, "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif !important;
-  font-weight: 400 !important;
-  overflow-wrap: anywhere;
+button,input,textarea{font:inherit}
+button{cursor:pointer}
+a{color:inherit}
+.wrap{width:min(calc(100% - 28px),var(--max));margin-inline:auto}
+.skip{position:fixed;left:12px;top:-80px;z-index:9999;padding:10px 14px;border-radius:var(--radius);background:#111;color:white}
+.skip:focus{top:12px}
+.breadcrumb{
+  width:min(calc(100% - 28px),var(--max));
+  margin:12px auto;
+  color:#6d6558;
+  font-size:16px;
+  text-align:center;
 }
-html:root:root body :is(.eyebrow, .kicker, .dialog-eyebrow, .dialog-kicker, .worksheet-kicker) {
-  font-family: Cinzel, "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif !important;
-  font-size: 55px !important;
-  font-weight: 400 !important;
-  line-height: 1.15 !important;
-  letter-spacing: .02em !important;
-  white-space: normal !important;
-  overflow-wrap: anywhere;
+.breadcrumb a{text-decoration:none}
+.breadcrumb a:hover{text-decoration:underline}
+
+.hero{
+  background:var(--charcoal);
+  color:var(--cream);
+  border-top:1px solid rgba(180,139,69,.65);
+  border-bottom:4px solid var(--gold);
+  padding:44px 18px 38px;
+  text-align:center;
 }
-html:root:root body h1 {
-  font-size: 33px !important;
-  line-height: 1.2 !important;
-  white-space: normal !important;
-  overflow-wrap: anywhere;
+.hero-inner{width:min(calc(100% - 20px),960px);margin:auto}
+.hero .kicker{
+  margin:0 0 8px;
+  color:#ead9b7;
+  font:400 16px/1.35 Cinzel,Georgia,serif;
+  letter-spacing:.08em;
+  text-transform:uppercase;
 }
-html:root:root body h2,
-html:root:root body :is(.subtitle, .hero-subtitle, .hero-sub, .academy-comment),
-html:root:root body .hero .comment {
-  font-size: 24px !important;
-  line-height: 1.35 !important;
-  white-space: normal !important;
-  overflow-wrap: anywhere;
+.hero h1{
+  margin:0;
+  color:var(--cream);
+  font:400 clamp(33px,5vw,55px)/1.12 Cinzel,Georgia,serif;
 }
-/* Do not replace responsive grids or fixed elements; prevent oversized titles from
-   demanding horizontal scrolling on narrow phone and tablet displays. */
-html:root:root body :is(.hero, .header, .page-header, .section-head, .lesson-header) {
-  min-width: 0;
+.hero .subtitle{
+  margin:10px auto 0;
+  max-width:760px;
+  color:#f3e8d2;
+  font:400 24px/1.4 Cinzel,Georgia,serif;
 }
-@media print {
-  html:root:root body { font-size:16px !important; }
+.hero .lead{
+  max-width:780px;
+  margin:18px auto 0;
+  color:#f0e7d7;
+  font-size:18px;
+}
+.hero-actions{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;margin-top:24px}
+.btn{
+  min-height:44px;
+  border:1px solid var(--gold);
+  border-radius:var(--radius);
+  padding:10px 16px;
+  background:var(--paper);
+  color:var(--charcoal);
+  text-decoration:none;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:6px;
+}
+.btn.primary{background:var(--gold);color:#181b19;border-color:var(--gold)}
+.btn.dark{background:var(--charcoal);color:var(--cream);border-color:var(--charcoal)}
+.btn:hover{filter:brightness(.98);transform:translateY(-1px)}
+.btn:focus-visible,input:focus-visible,textarea:focus-visible{outline:3px solid #d6ad59;outline-offset:2px}
+
+.info-strip{
+  width:min(calc(100% - 28px),960px);
+  margin:18px auto 0;
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:11px;
+}
+.info-strip button{
+  min-height:55px;
+  border:1px solid var(--gold);
+  border-radius:var(--radius);
+  background:var(--charcoal);
+  color:var(--cream);
+  padding:10px 14px;
+  font:400 16px/1.3 Cinzel,Georgia,serif;
+}
+.info-strip button:hover{background:var(--charcoal-2)}
+
+.sheet{
+  width:min(calc(100% - 28px),var(--max));
+  margin:26px auto 44px;
+}
+.identity-row{
+  display:grid;
+  grid-template-columns:1.4fr 1fr 1fr .8fr;
+  gap:10px;
+  padding:14px;
+  border:1px solid var(--line);
+  border-radius:var(--radius);
+  background:#fbf5ea;
+}
+.identity-row label{display:grid;gap:5px;color:#494238}
+.identity-row input{
+  min-height:44px;
+  width:100%;
+  border:1px solid #bcae98;
+  border-radius:var(--radius);
+  background:white;
+  padding:8px 10px;
+  color:var(--ink);
+}
+.objective-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:16px 0}
+.objective{
+  display:grid;
+  grid-template-columns:auto 1fr;
+  align-items:stretch;
+  border:1px solid var(--line);
+  border-radius:var(--radius);
+  overflow:hidden;
+  background:var(--paper);
+}
+.objective strong{
+  min-width:145px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:12px;
+  background:linear-gradient(135deg,#8c6427,#c49a50);
+  color:#fffaf0;
+  font:400 16px/1.25 Cinzel,Georgia,serif;
+  text-align:center;
+}
+.objective span{padding:12px 14px;display:flex;align-items:center}
+
+.assessment-panel{
+  margin-top:18px;
+  border:1px solid var(--line);
+  border-radius:var(--radius);
+  background:var(--paper);
+  box-shadow:0 12px 30px rgba(55,45,25,.08);
+  overflow:hidden;
+}
+.assessment-top{
+  display:grid;
+  grid-template-columns:1fr auto;
+  gap:14px;
+  align-items:center;
+  padding:16px 18px;
+  border-bottom:1px solid var(--line);
+  background:#fbf7ef;
+}
+.assessment-top h2{margin:0;font:400 24px/1.3 Cinzel,Georgia,serif}
+.assessment-top p{margin:4px 0 0;color:var(--muted)}
+.progress-wrap{min-width:240px}
+.progress-label{margin:0 0 6px!important;text-align:right;color:var(--muted)}
+.progress{height:10px;border:1px solid #b9a988;border-radius:999px;background:white;overflow:hidden}
+.progress span{display:block;height:100%;width:0;background:linear-gradient(90deg,#8c6427,#c49a50)}
+.section-nav{
+  display:grid;
+  grid-template-columns:auto repeat(3,minmax(0,1fr)) auto;
+  gap:8px;
+  align-items:center;
+  padding:12px 16px;
+  border-bottom:1px solid var(--line);
+  background:#efe5d4;
+}
+.section-nav button{min-height:44px;border:1px solid #a89373;border-radius:var(--radius);background:#fffaf1;color:#29312d;padding:8px 10px}
+.section-nav button.current{background:var(--charcoal);color:var(--cream);border-color:var(--charcoal)}
+.section-nav button:disabled{opacity:.45;cursor:default}
+
+.question-list{display:grid;gap:14px;padding:18px}
+.question{
+  display:grid;
+  grid-template-columns:52px 1fr;
+  border:1px solid #c9bda9;
+  border-left:4px solid var(--gold);
+  border-radius:var(--radius);
+  background:#fffefb;
+  overflow:hidden;
+}
+.q-number{
+  display:flex;
+  align-items:flex-start;
+  justify-content:center;
+  padding-top:16px;
+}
+.q-number span{
+  width:38px;height:38px;border-radius:7px;
+  display:grid;place-items:center;
+  background:linear-gradient(180deg,#3a3f3d,#222725);
+  color:white;
+  font:400 20px/1 Cinzel,Georgia,serif;
+}
+.q-body{padding:14px 16px 16px 0}
+.q-prompt{margin:0 0 12px;font:400 18px/1.5 Georgia,"Times New Roman",serif;color:#202421}
+.options{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+.option{
+  display:flex;align-items:flex-start;gap:9px;
+  min-height:48px;
+  padding:10px 12px;
+  border:1px solid #d8cdb7;
+  border-radius:var(--radius);
+  background:#faf6ed;
+  cursor:pointer;
+}
+.option:hover{border-color:#b48b45;background:#fffaf0}
+.option input{margin-top:4px;accent-color:#7f5d25}
+.work-label{display:block;margin:12px 0 6px;color:#554d42}
+.work{
+  width:100%;
+  min-height:88px;
+  resize:vertical;
+  border:1px solid #cbbfae;
+  border-radius:var(--radius);
+  padding:10px 12px;
+  background:white;
+  color:var(--ink);
+}
+.feedback{
+  margin-top:10px;
+  padding:10px 12px;
+  border-left:4px solid #7a6f5d;
+  border-radius:var(--radius);
+  background:#f7f1e6;
+}
+.feedback.good{border-color:var(--green);background:#eef5f1}
+.feedback.bad{border-color:var(--rose);background:#f8eeee}
+
+.assessment-actions{
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:center;
+  gap:9px;
+  padding:16px;
+  border-top:1px solid var(--line);
+  background:#fbf7ef;
+}
+#status{
+  min-height:24px;
+  margin:0;
+  padding:0 16px 16px;
+  text-align:center;
+  color:#514a40;
+}
+.results{
+  margin:20px 18px 18px;
+  padding:18px;
+  border:1px solid var(--gold-soft);
+  border-radius:var(--radius);
+  background:#fffaf1;
+}
+.results[hidden]{display:none}
+.results h2{margin:0 0 6px;text-align:center;font:400 24px/1.3 Cinzel,Georgia,serif}
+.score{margin:0 0 14px;text-align:center;font:400 33px/1.2 Cinzel,Georgia,serif;color:#6e4d1c}
+.breakdown{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+.breakdown p{margin:0;padding:9px 10px;border:1px solid var(--line);border-radius:var(--radius);background:white}
+
+dialog{
+  width:min(calc(100% - 32px),680px);
+  border:1px solid var(--gold);
+  border-radius:var(--radius);
+  padding:0;
+  background:var(--paper);
+  color:var(--ink);
+  box-shadow:0 24px 70px rgba(0,0,0,.3);
+}
+dialog::backdrop{background:rgba(20,25,23,.58)}
+.dialog-head{background:var(--charcoal);color:var(--cream);padding:18px 20px;border-bottom:3px solid var(--gold)}
+.dialog-head h2{margin:0;font:400 24px/1.3 Cinzel,Georgia,serif}
+.dialog-body{padding:18px 20px}
+.dialog-body p{margin:0 0 12px}
+.dialog-actions{display:flex;justify-content:flex-end;padding:0 20px 18px}
+
+footer{
+  min-height:66px;
+  padding:22px 16px;
+  display:grid;
+  place-items:center;
+  background:var(--charcoal);
+  color:var(--cream);
+  text-align:center;
+  border-top:1px solid rgba(255,248,235,.2);
+}
+
+@media(max-width:760px){
+  .info-strip,.objective-grid,.identity-row{grid-template-columns:1fr}
+  .assessment-top{grid-template-columns:1fr}
+  .progress-wrap{min-width:0}
+  .progress-label{text-align:left}
+  .section-nav{grid-template-columns:1fr 1fr}
+  .section-nav button:nth-child(2),
+  .section-nav button:nth-child(3),
+  .section-nav button:nth-child(4){grid-column:auto}
+  .options,.breakdown{grid-template-columns:1fr}
+  .question{grid-template-columns:46px 1fr}
+  .q-body{padding-right:12px}
+}
+@media print{
+  .skip,.hero-actions,.info-strip,.section-nav,.assessment-actions,dialog{display:none!important}
+  body{background:white;color:black}
+  .hero{background:white!important;color:black!important;border-bottom:2px solid #999}
+  .hero *{color:black!important}
+  .sheet{width:100%;margin:0}
+  .question-list{padding:0}
+  .question{break-inside:avoid;margin:0 0 10px}
+  .work{min-height:70px}
+  footer{display:none}
 }
 </style>
+</head>
+<body>
+<a class="skip" href="#assessment">Skip to assessment</a>
 
+<nav class="breadcrumb" aria-label="Breadcrumb">
+  <a href="https://vervenveda.com/">Verve N Veda</a> ›
+  <a href="https://vervenveda.com/Khaemenes_High.github.io/">Khaemenes High</a> ›
+  <a href="https://vervenveda.com/Khaemenes_High.github.io/courses/mathematics/">Mathematics</a> ›
+  <a href="../">Algebra I</a> › Readiness Diagnostic
+</nav>
 
-  <script src="/Khaemenes_High.github.io/assets/vnv-dual-ticker-v1.js" defer data-grade09-dual-ticker="true"></script>
-  <script src="/Khaemenes_High.github.io/assets/high-school-global-chrome-v2.js" defer data-high-school-global-chrome="v2"></script>
-<style id="algebra1-diagnostic-start-action-v1">#assessmentQuestions{scroll-margin-top:110px}#startAssessmentButton{min-height:44px;display:inline-flex;align-items:center;justify-content:center}#assessmentQuestions:focus{outline:none}#assessmentQuestions:focus-visible{outline:2px solid var(--gold,#b48b45);outline-offset:5px}</style><style id="algebra1-diagnostic-navigation-v1">
-/* Accessible diagnostic question ranges. Assessment scoring and draft authority remain in exam-engine.js. */
-#questionHost{min-height:0;overflow:visible;scroll-margin-top:130px}
-#questionHost .diagnostic-question-navigation{display:grid;gap:12px;margin:0 0 24px;padding:16px;border:1px solid #9c8767;border-radius:7px;background:#f0e6d5;color:#26312b}
-#questionHost .diagnostic-question-navigation:last-child{margin:26px 0 0}
-#questionHost .diagnostic-page-label{font:400 18px/1.5 "Brandon Grotesque","Avenir Next",Arial,sans-serif;text-align:center;margin:0;color:#26312b}
-#questionHost .diagnostic-page-actions{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:8px}
-#questionHost .diagnostic-page-actions .btn{min-height:44px;padding:9px 12px;border-radius:7px!important;color:#26312b!important;background:#fffaf1!important;border:1px solid #aa9475!important;font-weight:400!important}
-#questionHost .diagnostic-page-actions .btn.primary{background:#303737!important;color:#fffaf0!important;border-color:#303737!important}
-#questionHost .diagnostic-page-actions .btn:disabled{opacity:.58;cursor:default}
-#questionHost .question-list,#questionHost .question,#questionHost fieldset{max-height:none!important;overflow:visible!important}
-@media(max-width:600px){#questionHost .diagnostic-page-actions{display:grid;grid-template-columns:repeat(2,minmax(0,1fr))}#questionHost .diagnostic-page-actions .btn{white-space:normal}}
-@media print{#questionHost .diagnostic-question-navigation{display:none!important}}
-</style><script src="/Khaemenes_High.github.io/courses/mathematics/algebra-1/assets/algebra1-worker-recovery-v1.js" defer data-algebra1-worker-recovery="v1"></script>
-</head><body class="math-assessment-surface"><script>Object.assign(document.documentElement.dataset,{mathEntry:"diagnostic",mathCourseId:"math-algebra1",mathReadinessKey:"khaemenes-math-algebra1-readiness-v1",mathStoragePrefixes:"khaemenes-algebra1-,khaemenes-math-algebra1-readiness-v1",mathEvidenceKey:"khaemenes-algebra1-diagnostic-result-v1"});</script><script src="../../../shared/math-entry-gate.js"></script><a class="skip" href="#main">Skip to main content</a>
-<nav class="algebra1-local-nav" aria-label="Algebra I course navigation"><div class="wrap algebra1-local-nav-inner"><span class="algebra1-local-nav-title">Algebra I</span><div class="algebra1-local-nav-links"><a href="../">Course Home</a><a href="../#scope">36 Weeks</a><a href="../#units">Units</a><a href="../#lessons">Lessons</a><a href="../assessments/">Assessments</a><a href="../teacher/">Teacher</a></div><button class="icon-btn" id="themeToggle" type="button" aria-label="Toggle theme">◐</button></div></nav>
-<nav class="breadcrumb" aria-label="Breadcrumb"><div class="wrap"><a href="https://vervenveda.com/">Verve N Veda</a><span>›</span><a href="https://vervenveda.com/Khaemenes_High.github.io/">Khaemenes High</a><span>›</span><a href="https://vervenveda.com/Khaemenes_High.github.io/courses/mathematics/">Mathematics</a><span>›</span><a href="../">Algebra I</a><span>›</span><span>Readiness Diagnostic</span></div></nav>
+<header class="hero">
+  <div class="hero-inner">
+    <p class="kicker">Week 01 · Readiness Assessment</p>
+    <h1>Algebra I Readiness Diagnostic</h1>
+    <p class="subtitle">A structured readiness worksheet for Algebra I</p>
+    <p class="lead">Thirty-six questions covering prerequisite number sense, expressions, equations, functions, slope, units, statistics, and evidence interpretation.</p>
+    <div class="hero-actions">
+      <button class="btn primary" id="startButton" type="button">Start Assessment</button>
+      <button class="btn" id="printButton" type="button">Print Assessment</button>
+      <a class="btn" href="../readiness/">Readiness Bridge</a>
+    </div>
+  </div>
+</header>
 
-<main id="main">
-<section class="hero"><div class="wrap"><p class="eyebrow">Week 01 · Readiness Assessment</p><h1>Algebra I Readiness Diagnostic</h1><p class="lead">A 36-question diagnostic covering prerequisite number sense, expressions, equations, functions, slope, units, statistics, and evidence interpretation. Results guide support by skill rather than labeling a learner.</p>
-<div class="actions no-print"><a class="btn primary" id="startAssessmentButton" href="#assessmentQuestions">Start Assessment ↓</a><button class="btn" id="printButton">Print Assessment</button><a class="btn" href="../assessments/administration-guide.html">Administration Guide</a><a class="btn" href="../readiness/">Readiness Bridge</a></div></div></section>
-<section class="block"><div class="wrap"><p class="notice"><strong>Readiness evidence, not a grade:</strong> this Week 1 diagnostic is separate from the official Algebra I course grade. Use the category breakdown together with prior work and learner needs to select Foundation, Core, or Extended support; no single unfinished prerequisite automatically bars the learner from Algebra I.</p><p class="notice"><strong>Definitive-answer standard:</strong> every scored item has exactly one mathematically or definitionally correct option. Equivalent duplicate choices, overlapping forms, and undefined subjective criteria are excluded.</p></div></section>
-<section class="block" id="assessmentQuestions" tabindex="-1" aria-label="Algebra I readiness assessment questions"><div class="wrap practice-layout"><article class="card"><div id="questionHost"></div></article>
-<aside class="card practice-side"><h3>Assessment record</h3><p><strong>36 questions</strong><br>Untimed. Suggested working time: 45–70 minutes.</p>
-<p id="progressLabel">0/36 answered</p><div class="progress"><span id="progressBar"></span></div>
-<div class="actions"><button class="btn primary" id="submitButton">Submit &amp; Score</button><button class="btn" id="saveButton">Save Draft</button><button class="btn" id="exportButton">Export Result</button><button class="btn" id="resetButton">Reset</button></div><p id="status"></p></aside></div></section>
-<section class="block" id="results" hidden><div class="wrap"><article class="card"><h2 id="resultTitle"></h2><p class="score" id="resultScore"></p><div id="breakdown"></div>
-<div id="academy-diagnostic-continue"><p>Assessment complete. Your next step is to enter the Algebra I learning pathway. Your readiness score guides support; it does not replace course mastery checks.</p><a class="btn primary" href="../#units">Continue to Algebra I Units →</a><a class="btn" href="../readiness/">View Readiness Guidance</a></div><p class="notice">Preserve the exported result, corrections, and representative work with the learner’s portfolio. The score is browser-local readiness evidence and should be interpreted with the category breakdown rather than as an age or grade label.</p></article></div></section>
+<div class="info-strip" aria-label="Assessment information">
+  <button type="button" data-info="evidence">Readiness Evidence</button>
+  <button type="button" data-info="standard">Answer Standard</button>
+  <button type="button" data-info="results">Using Results</button>
+</div>
+
+<main class="sheet" id="assessment">
+  <section class="identity-row" aria-label="Worksheet information">
+    <label>Name<input id="studentName" autocomplete="name"></label>
+    <label>Class / Period<input id="classPeriod"></label>
+    <label>Date<input id="assessmentDate"></label>
+    <label>Score<input id="scoreBox" readonly aria-label="Assessment score"></label>
+  </section>
+
+  <section class="objective-grid" aria-label="Learning objective and directions">
+    <div class="objective"><strong>Learning Objective</strong><span>Demonstrate prerequisite Algebra I readiness and identify areas where targeted support will help.</span></div>
+    <div class="objective"><strong>Directions</strong><span>Select one answer for each item. Use the work space beneath every problem for calculations, checks, or reasoning.</span></div>
+  </section>
+
+  <section class="assessment-panel">
+    <div class="assessment-top">
+      <div>
+        <h2>Assessment Record</h2>
+        <p>36 questions · Untimed · Suggested working time: 45–70 minutes</p>
+      </div>
+      <div class="progress-wrap">
+        <p class="progress-label" id="progressLabel">0/36 answered</p>
+        <div class="progress" aria-hidden="true"><span id="progressBar"></span></div>
+      </div>
+    </div>
+
+    <nav class="section-nav" aria-label="Question sections">
+      <button id="prevSection" type="button">← Previous</button>
+      <button type="button" data-section="0">1–12</button>
+      <button type="button" data-section="1">13–24</button>
+      <button type="button" data-section="2">25–36</button>
+      <button id="nextSection" type="button">Next →</button>
+    </nav>
+
+    <div class="question-list" id="questionList"></div>
+
+    <section class="results" id="results" hidden aria-live="polite">
+      <h2 id="resultTitle"></h2>
+      <p class="score" id="resultScore"></p>
+      <div class="breakdown" id="breakdown"></div>
+    </section>
+
+    <div class="assessment-actions">
+      <button class="btn dark" id="submitButton" type="button">Submit &amp; Score</button>
+      <button class="btn" id="saveButton" type="button">Save Draft</button>
+      <button class="btn" id="exportButton" type="button">Export Result</button>
+      <button class="btn" id="resetButton" type="button">Reset</button>
+    </div>
+    <p id="status" role="status" aria-live="polite">Ready.</p>
+  </section>
 </main>
-<script>window.EXAM_CONFIG={"id":"KH-MATH-A1-DIAGNOSTIC","title":"Algebra I Readiness Diagnostic","question_count":36,"duration":"Untimed. Suggested working time: 45–70 minutes.","storage_key":"khaemenes-algebra1-diagnostic-v1","result_key":"khaemenes-algebra1-diagnostic-result-v1","export_name":"algebra1-readiness-diagnostic-result.json","questions":[{"prompt":"Which method verifies a proposed equation solution?","options":["substitute it into the original equation","repeat the same steps","round it","change all signs"],"answer":0,"answer_text":"substitute it into the original equation","explanation":"A solution must make the original equation true.","unit":70,"lesson":1,"category":"reasoning","difficulty":1},{"prompt":"Which property justifies a(b+c)=ab+ac?","options":["commutative property","distributive property","identity property","zero-product property"],"answer":1,"answer_text":"distributive property","explanation":"The factor multiplies every term inside the parentheses.","unit":70,"lesson":1,"category":"reasoning","difficulty":2},{"prompt":"Which number is irrational?","options":["−7","0.125","√2","3/5"],"answer":2,"answer_text":"√2","explanation":"√2 cannot be written as a ratio of integers.","unit":71,"lesson":1,"category":"real_numbers","difficulty":1},{"prompt":"Which value is irrational?","options":["√49","0.121212…","π/4","−11/5"],"answer":2,"answer_text":"π/4","explanation":"π is irrational, and dividing it by a nonzero rational number remains irrational.","unit":71,"lesson":1,"category":"real_numbers","difficulty":2},{"prompt":"Evaluate 3+2·3−2.","options":["7","5","13","6"],"answer":0,"answer_text":"7","explanation":"Multiply before adding and subtracting.","unit":72,"lesson":1,"category":"order_ops","difficulty":1},{"prompt":"Evaluate 9+5·3−1.","options":["19","23","41","16"],"answer":1,"answer_text":"23","explanation":"Multiply before adding and subtracting.","unit":72,"lesson":1,"category":"order_ops","difficulty":2},{"prompt":"Convert 6 meters to centimeters.","options":["60 cm","0.06 cm","600 cm","6000 cm"],"answer":2,"answer_text":"600 cm","explanation":"Multiply by 100 centimeters per meter.","unit":73,"lesson":1,"category":"units","difficulty":1},{"prompt":"Convert 2.4 kilometers to meters.","options":["24 m","240 m","2400 m","24,000 m"],"answer":2,"answer_text":"2400 m","explanation":"Multiply kilometers by 1000 meters per kilometer.","unit":73,"lesson":1,"category":"units","difficulty":2},{"prompt":"A measurement is 108 and the accepted value is 100. What is the percent error?","options":["8%","108%","0.08%","92%"],"answer":0,"answer_text":"8%","explanation":"Percent error is absolute error divided by accepted value, multiplied by 100.","unit":74,"lesson":1,"category":"precision","difficulty":1},{"prompt":"A measurement is 103 and the accepted value is 100. What is the percent error?","options":["103%","3%","0.03%","97%"],"answer":1,"answer_text":"3%","explanation":"The absolute error is 3; 3/100 × 100% = 3%.","unit":74,"lesson":1,"category":"precision","difficulty":2},{"prompt":"Evaluate 2x+3 when x=−3.","options":["2","0","−3","−9"],"answer":2,"answer_text":"−3","explanation":"Substitute −3 for x: 2(−3)+3=−3.","unit":75,"lesson":1,"category":"expressions","difficulty":1},{"prompt":"Evaluate 9x+7 when x=−2.","options":["14","45","−25","−11"],"answer":3,"answer_text":"−11","explanation":"Substitute −2 for x: 9(−2)+7=−11.","unit":75,"lesson":1,"category":"expressions","difficulty":2},{"prompt":"Simplify 6x+8+4x−0.","options":["10x+8","24x+8","18x","10x"],"answer":0,"answer_text":"10x+8","explanation":"Combine the variable terms; subtracting zero does not change the constant.","unit":76,"lesson":1,"category":"combine","difficulty":1},{"prompt":"Simplify 5x+3+9x−1.","options":["45x+2","14x+2","16x","14x+4"],"answer":1,"answer_text":"14x+2","explanation":"Combine variable terms and constants separately.","unit":76,"lesson":1,"category":"combine","difficulty":2},{"prompt":"Solve 9x+7=−29.","options":["x=−3","x=−5","x=−4","x=4"],"answer":2,"answer_text":"x=−4","explanation":"Subtract 7, divide by 9, and verify in the original equation.","unit":77,"lesson":1,"category":"equations","difficulty":1},{"prompt":"Solve 7x+6=6.","options":["x=1","x=−1","x=3","x=0"],"answer":3,"answer_text":"x=0","explanation":"Subtract 6 to get 7x=0, then divide by 7.","unit":77,"lesson":1,"category":"equations","difficulty":2},{"prompt":"Solve x/2=5/10.","options":["x=1","x=5","x=2","x=10"],"answer":0,"answer_text":"x=1","explanation":"5/10=1/2, so x/2=1/2 and x=1.","unit":78,"lesson":1,"category":"proportion","difficulty":1},{"prompt":"Solve x/6=7/3.","options":["x=7","x=12","x=14","x=21"],"answer":2,"answer_text":"x=14","explanation":"Multiply both sides by 6: x=6·7/3=14.","unit":78,"lesson":1,"category":"proportion","difficulty":2},{"prompt":"Solve x+8≤10.","options":["x≥2","x<2","x≤2","x>2"],"answer":2,"answer_text":"x≤2","explanation":"Subtract 8 from both sides.","unit":79,"lesson":1,"category":"inequalities","difficulty":1},{"prompt":"Solve −3x>12.","options":["x>−4","x<−4","x>4","x<4"],"answer":1,"answer_text":"x<−4","explanation":"Divide by −3 and reverse the inequality direction.","unit":79,"lesson":1,"category":"inequalities","difficulty":2},{"prompt":"Which relation is not a function?","options":["{(1,2),(1,5),(3,7)}","{(1,2),(2,5)}","y=3x+1","{(0,4),(1,4)}"],"answer":0,"answer_text":"{(1,2),(1,5),(3,7)}","explanation":"Input 1 is paired with two different outputs.","unit":80,"lesson":1,"category":"functions","difficulty":1},{"prompt":"Which relation is a function?","options":["{(2,1),(2,4),(5,7)}","{(−1,2),(0,2),(1,3)}","{(0,1),(0,2),(0,3)}","{(4,5),(4,5),(4,8)}"],"answer":1,"answer_text":"{(−1,2),(0,2),(1,3)}","explanation":"Each input appears with exactly one output.","unit":80,"lesson":1,"category":"functions","difficulty":2},{"prompt":"For f(x)=5x+7, find f(−2).","options":["10","25","−3","−17"],"answer":2,"answer_text":"−3","explanation":"Substitute −2: 5(−2)+7=−3.","unit":81,"lesson":1,"category":"function_eval","difficulty":1},{"prompt":"For f(x)=5x+4, find f(−6).","options":["3","−10","−34","−26"],"answer":3,"answer_text":"−26","explanation":"Substitute −6: 5(−6)+4=−26.","unit":81,"lesson":1,"category":"function_eval","difficulty":2},{"prompt":"For f(x)=1/(x−4), which input is excluded from the domain?","options":["4","0","1","−4"],"answer":0,"answer_text":"4","explanation":"x=4 makes the denominator zero.","unit":82,"lesson":1,"category":"domain","difficulty":1},{"prompt":"For g(x)=3/(2x+6), which input is excluded from the domain?","options":["3","−3","−6","0"],"answer":1,"answer_text":"−3","explanation":"2(−3)+6=0, and division by zero is undefined.","unit":82,"lesson":1,"category":"domain","difficulty":2},{"prompt":"What is the slope through (0,8) and (2,16)?","options":["5","3","4","−4"],"answer":2,"answer_text":"4","explanation":"Slope=(16−8)/(2−0)=8/2=4.","unit":83,"lesson":1,"category":"slope","difficulty":1},{"prompt":"What is the slope through (0,1) and (2,7)?","options":["4","2","−3","3"],"answer":3,"answer_text":"3","explanation":"Slope=(7−1)/(2−0)=6/2=3.","unit":83,"lesson":1,"category":"slope","difficulty":2},{"prompt":"Which equation has slope 7 and y-intercept 8?","options":["y=7x+8","y=8x+7","x=7y+8","y=15x"],"answer":0,"answer_text":"y=7x+8","explanation":"Slope-intercept form is y=mx+b.","unit":84,"lesson":1,"category":"lines","difficulty":1},{"prompt":"Which equation has slope 9 and y-intercept 7?","options":["y=7x+9","y=9x+7","x=9y+7","y=16x"],"answer":1,"answer_text":"y=9x+7","explanation":"Slope-intercept form is y=mx+b.","unit":84,"lesson":1,"category":"lines","difficulty":2},{"prompt":"What is the mean of 2, 5, 7, 7, and 9?","options":["30","7","6","9"],"answer":2,"answer_text":"6","explanation":"The sum is 30; 30÷5=6.","unit":85,"lesson":1,"category":"statistics","difficulty":1},{"prompt":"What is the mean of 7, 8, 8, 15, and 10?","options":["48","8","12","9.6"],"answer":3,"answer_text":"9.6","explanation":"The sum is 48; 48÷5=9.6.","unit":85,"lesson":1,"category":"statistics","difficulty":2},{"prompt":"Which display shows the median, quartiles, and possible outliers?","options":["box plot","pie chart","single bar","pictograph"],"answer":0,"answer_text":"box plot","explanation":"A box plot represents the five-number summary and can flag possible outliers.","unit":86,"lesson":1,"category":"displays","difficulty":1},{"prompt":"Which display is most useful for comparing the medians and quartile spreads of two groups?","options":["two box plots on the same scale","two unrelated pie charts","a single pictograph","one unlabeled bar"],"answer":0,"answer_text":"two box plots on the same scale","explanation":"Aligned box plots make median and quartile spread directly comparable.","unit":86,"lesson":1,"category":"displays","difficulty":2},{"prompt":"What information is essential for evaluating a percentage claim?","options":["chart color","largest number only","denominator, time period, and source","speaker confidence"],"answer":2,"answer_text":"denominator, time period, and source","explanation":"A percentage needs a comparison base and enough context to interpret it responsibly.","unit":87,"lesson":1,"category":"evidence","difficulty":1},{"prompt":"A headline says a risk 'doubled.' What should you check before deciding how large the change really is?","options":["the font size","the baseline risk and study context","whether the headline rhymes","only the final percentage"],"answer":1,"answer_text":"the baseline risk and study context","explanation":"A relative change can sound large even when the absolute baseline is small; context is required.","unit":87,"lesson":1,"category":"evidence","difficulty":2}]};</script>
-<script>document.getElementById("startAssessmentButton")?.addEventListener("click",()=>{const target=document.getElementById("assessmentQuestions");if(target)setTimeout(()=>target.focus({preventScroll:true}),0)});</script><script src="../assets/exam-engine.js?v=20261118-assessment-recovery-1"></script><script src="https://vervenveda.com/assets/vnv-ecosystem-toolbar.js"></script>
-<script src="../../../../assets/vnv-language.js" defer data-official-vnv-language="true"></script>
-<script src="../../assets/math-learning-tools-v2.js"></script>
-</body></html>
+
+<dialog id="infoDialog">
+  <div class="dialog-head"><h2 id="infoTitle"></h2></div>
+  <div class="dialog-body" id="infoBody"></div>
+  <div class="dialog-actions"><button class="btn dark" id="closeInfo" type="button">Close</button></div>
+</dialog>
+
+<footer>Khaemenes Academy · Algebra I · Readiness evidence remains separate from the official course grade.</footer>
+
+<script>
+const CONFIG={"id":"KH-MATH-A1-DIAGNOSTIC","title":"Algebra I Readiness Diagnostic","question_count":36,"duration":"Untimed. Suggested working time: 45–70 minutes.","storage_key":"khaemenes-algebra1-diagnostic-v1","result_key":"khaemenes-algebra1-diagnostic-result-v1","export_name":"algebra1-readiness-diagnostic-result.json","questions":[{"prompt":"Which method verifies a proposed equation solution?","options":["substitute it into the original equation","repeat the same steps","round it","change all signs"],"answer":0,"answer_text":"substitute it into the original equation","explanation":"A solution must make the original equation true.","unit":70,"lesson":1,"category":"reasoning","difficulty":1},{"prompt":"Which property justifies a(b+c)=ab+ac?","options":["commutative property","distributive property","identity property","zero-product property"],"answer":1,"answer_text":"distributive property","explanation":"The factor multiplies every term inside the parentheses.","unit":70,"lesson":1,"category":"reasoning","difficulty":2},{"prompt":"Which number is irrational?","options":["−7","0.125","√2","3/5"],"answer":2,"answer_text":"√2","explanation":"√2 cannot be written as a ratio of integers.","unit":71,"lesson":1,"category":"real_numbers","difficulty":1},{"prompt":"Which value is irrational?","options":["√49","0.121212…","π/4","−11/5"],"answer":2,"answer_text":"π/4","explanation":"π is irrational, and dividing it by a nonzero rational number remains irrational.","unit":71,"lesson":1,"category":"real_numbers","difficulty":2},{"prompt":"Evaluate 3+2·3−2.","options":["7","5","13","6"],"answer":0,"answer_text":"7","explanation":"Multiply before adding and subtracting.","unit":72,"lesson":1,"category":"order_ops","difficulty":1},{"prompt":"Evaluate 9+5·3−1.","options":["19","23","41","16"],"answer":1,"answer_text":"23","explanation":"Multiply before adding and subtracting.","unit":72,"lesson":1,"category":"order_ops","difficulty":2},{"prompt":"Convert 6 meters to centimeters.","options":["60 cm","0.06 cm","600 cm","6000 cm"],"answer":2,"answer_text":"600 cm","explanation":"Multiply by 100 centimeters per meter.","unit":73,"lesson":1,"category":"units","difficulty":1},{"prompt":"Convert 2.4 kilometers to meters.","options":["24 m","240 m","2400 m","24,000 m"],"answer":2,"answer_text":"2400 m","explanation":"Multiply kilometers by 1000 meters per kilometer.","unit":73,"lesson":1,"category":"units","difficulty":2},{"prompt":"A measurement is 108 and the accepted value is 100. What is the percent error?","options":["8%","108%","0.08%","92%"],"answer":0,"answer_text":"8%","explanation":"Percent error is absolute error divided by accepted value, multiplied by 100.","unit":74,"lesson":1,"category":"precision","difficulty":1},{"prompt":"A measurement is 103 and the accepted value is 100. What is the percent error?","options":["103%","3%","0.03%","97%"],"answer":1,"answer_text":"3%","explanation":"The absolute error is 3; 3/100 × 100% = 3%.","unit":74,"lesson":1,"category":"precision","difficulty":2},{"prompt":"Evaluate 2x+3 when x=−3.","options":["2","0","−3","−9"],"answer":2,"answer_text":"−3","explanation":"Substitute −3 for x: 2(−3)+3=−3.","unit":75,"lesson":1,"category":"expressions","difficulty":1},{"prompt":"Evaluate 9x+7 when x=−2.","options":["14","45","−25","−11"],"answer":3,"answer_text":"−11","explanation":"Substitute −2 for x: 9(−2)+7=−11.","unit":75,"lesson":1,"category":"expressions","difficulty":2},{"prompt":"Simplify 6x+8+4x−0.","options":["10x+8","24x+8","18x","10x"],"answer":0,"answer_text":"10x+8","explanation":"Combine the variable terms; subtracting zero does not change the constant.","unit":76,"lesson":1,"category":"combine","difficulty":1},{"prompt":"Simplify 5x+3+9x−1.","options":["45x+2","14x+2","16x","14x+4"],"answer":1,"answer_text":"14x+2","explanation":"Combine variable terms and constants separately.","unit":76,"lesson":1,"category":"combine","difficulty":2},{"prompt":"Solve 9x+7=−29.","options":["x=−3","x=−5","x=−4","x=4"],"answer":2,"answer_text":"x=−4","explanation":"Subtract 7, divide by 9, and verify in the original equation.","unit":77,"lesson":1,"category":"equations","difficulty":1},{"prompt":"Solve 7x+6=6.","options":["x=1","x=−1","x=3","x=0"],"answer":3,"answer_text":"x=0","explanation":"Subtract 6 to get 7x=0, then divide by 7.","unit":77,"lesson":1,"category":"equations","difficulty":2},{"prompt":"Solve x/2=5/10.","options":["x=1","x=5","x=2","x=10"],"answer":0,"answer_text":"x=1","explanation":"5/10=1/2, so x/2=1/2 and x=1.","unit":78,"lesson":1,"category":"proportion","difficulty":1},{"prompt":"Solve x/6=7/3.","options":["x=7","x=12","x=14","x=21"],"answer":2,"answer_text":"x=14","explanation":"Multiply both sides by 6: x=6·7/3=14.","unit":78,"lesson":1,"category":"proportion","difficulty":2},{"prompt":"Solve x+8≤10.","options":["x≥2","x\u003c2","x≤2","x>2"],"answer":2,"answer_text":"x≤2","explanation":"Subtract 8 from both sides.","unit":79,"lesson":1,"category":"inequalities","difficulty":1},{"prompt":"Solve −3x>12.","options":["x>−4","x\u003c−4","x>4","x\u003c4"],"answer":1,"answer_text":"x\u003c−4","explanation":"Divide by −3 and reverse the inequality direction.","unit":79,"lesson":1,"category":"inequalities","difficulty":2},{"prompt":"Which relation is not a function?","options":["{(1,2),(1,5),(3,7)}","{(1,2),(2,5)}","y=3x+1","{(0,4),(1,4)}"],"answer":0,"answer_text":"{(1,2),(1,5),(3,7)}","explanation":"Input 1 is paired with two different outputs.","unit":80,"lesson":1,"category":"functions","difficulty":1},{"prompt":"Which relation is a function?","options":["{(2,1),(2,4),(5,7)}","{(−1,2),(0,2),(1,3)}","{(0,1),(0,2),(0,3)}","{(4,5),(4,5),(4,8)}"],"answer":1,"answer_text":"{(−1,2),(0,2),(1,3)}","explanation":"Each input appears with exactly one output.","unit":80,"lesson":1,"category":"functions","difficulty":2},{"prompt":"For f(x)=5x+7, find f(−2).","options":["10","25","−3","−17"],"answer":2,"answer_text":"−3","explanation":"Substitute −2: 5(−2)+7=−3.","unit":81,"lesson":1,"category":"function_eval","difficulty":1},{"prompt":"For f(x)=5x+4, find f(−6).","options":["3","−10","−34","−26"],"answer":3,"answer_text":"−26","explanation":"Substitute −6: 5(−6)+4=−26.","unit":81,"lesson":1,"category":"function_eval","difficulty":2},{"prompt":"For f(x)=1/(x−4), which input is excluded from the domain?","options":["4","0","1","−4"],"answer":0,"answer_text":"4","explanation":"x=4 makes the denominator zero.","unit":82,"lesson":1,"category":"domain","difficulty":1},{"prompt":"For g(x)=3/(2x+6), which input is excluded from the domain?","options":["3","−3","−6","0"],"answer":1,"answer_text":"−3","explanation":"2(−3)+6=0, and division by zero is undefined.","unit":82,"lesson":1,"category":"domain","difficulty":2},{"prompt":"What is the slope through (0,8) and (2,16)?","options":["5","3","4","−4"],"answer":2,"answer_text":"4","explanation":"Slope=(16−8)/(2−0)=8/2=4.","unit":83,"lesson":1,"category":"slope","difficulty":1},{"prompt":"What is the slope through (0,1) and (2,7)?","options":["4","2","−3","3"],"answer":3,"answer_text":"3","explanation":"Slope=(7−1)/(2−0)=6/2=3.","unit":83,"lesson":1,"category":"slope","difficulty":2},{"prompt":"Which equation has slope 7 and y-intercept 8?","options":["y=7x+8","y=8x+7","x=7y+8","y=15x"],"answer":0,"answer_text":"y=7x+8","explanation":"Slope-intercept form is y=mx+b.","unit":84,"lesson":1,"category":"lines","difficulty":1},{"prompt":"Which equation has slope 9 and y-intercept 7?","options":["y=7x+9","y=9x+7","x=9y+7","y=16x"],"answer":1,"answer_text":"y=9x+7","explanation":"Slope-intercept form is y=mx+b.","unit":84,"lesson":1,"category":"lines","difficulty":2},{"prompt":"What is the mean of 2, 5, 7, 7, and 9?","options":["30","7","6","9"],"answer":2,"answer_text":"6","explanation":"The sum is 30; 30÷5=6.","unit":85,"lesson":1,"category":"statistics","difficulty":1},{"prompt":"What is the mean of 7, 8, 8, 15, and 10?","options":["48","8","12","9.6"],"answer":3,"answer_text":"9.6","explanation":"The sum is 48; 48÷5=9.6.","unit":85,"lesson":1,"category":"statistics","difficulty":2},{"prompt":"Which display shows the median, quartiles, and possible outliers?","options":["box plot","pie chart","single bar","pictograph"],"answer":0,"answer_text":"box plot","explanation":"A box plot represents the five-number summary and can flag possible outliers.","unit":86,"lesson":1,"category":"displays","difficulty":1},{"prompt":"Which display is most useful for comparing the medians and quartile spreads of two groups?","options":["two box plots on the same scale","two unrelated pie charts","a single pictograph","one unlabeled bar"],"answer":0,"answer_text":"two box plots on the same scale","explanation":"Aligned box plots make median and quartile spread directly comparable.","unit":86,"lesson":1,"category":"displays","difficulty":2},{"prompt":"What information is essential for evaluating a percentage claim?","options":["chart color","largest number only","denominator, time period, and source","speaker confidence"],"answer":2,"answer_text":"denominator, time period, and source","explanation":"A percentage needs a comparison base and enough context to interpret it responsibly.","unit":87,"lesson":1,"category":"evidence","difficulty":1},{"prompt":"A headline says a risk 'doubled.' What should you check before deciding how large the change really is?","options":["the font size","the baseline risk and study context","whether the headline rhymes","only the final percentage"],"answer":1,"answer_text":"the baseline risk and study context","explanation":"A relative change can sound large even when the absolute baseline is small; context is required.","unit":87,"lesson":1,"category":"evidence","difficulty":2}]};
+const PAGE_SIZE=12;
+let section=0;
+let draft=loadDraft();
+
+const $=s=>document.querySelector(s);
+const esc=s=>String(s??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","'":"&#39;"}[c]));
+function safeGet(key){try{return localStorage.getItem(key)}catch{return null}}
+function safeSet(key,value){try{localStorage.setItem(key,value);return localStorage.getItem(key)===value}catch{return false}}
+function loadDraft(){
+  try{
+    const raw=safeGet(CONFIG.storage_key);
+    const parsed=raw?JSON.parse(raw):null;
+    return {
+      answers:parsed&&typeof parsed.answers==="object"?parsed.answers:{},
+      work:parsed&&typeof parsed.work==="object"?parsed.work:{},
+      submitted:Boolean(parsed?.submitted)
+    };
+  }catch{return {answers:{},work:{},submitted:false}}
+}
+function saveDraft(message=true){
+  const payload=JSON.stringify({answers:draft.answers,work:draft.work,submitted:draft.submitted,updated:new Date().toISOString()});
+  const ok=safeSet(CONFIG.storage_key,payload);
+  if(message) $("#status").textContent=ok?"Draft saved and verified locally.":"Draft could not be verified. Keep this page open and export your work before leaving.";
+  return ok;
+}
+function answeredCount(){return Object.keys(draft.answers).filter(k=>Number(k)>=0&&Number(k)<CONFIG.questions.length).length}
+function updateProgress(){
+  const n=answeredCount(),total=CONFIG.questions.length;
+  $("#progressLabel").textContent=n+"/"+total+" answered";
+  $("#progressBar").style.width=(n/total*100)+"%";
+}
+function render(){
+  const start=section*PAGE_SIZE,end=Math.min(CONFIG.questions.length,start+PAGE_SIZE);
+  const host=$("#questionList");
+  host.innerHTML="";
+  for(let i=start;i<end;i++){
+    const q=CONFIG.questions[i],selected=draft.answers[i],work=draft.work[i]||"";
+    const article=document.createElement("article");
+    article.className="question";
+    const feedback=draft.submitted
+      ? '<div class="feedback '+(Number(selected)===q.answer?'good':'bad')+'">'+(Number(selected)===q.answer?'Correct.':'Review. Correct answer: '+esc(q.options[q.answer])+'.')+' '+esc(q.explanation)+'</div>'
+      : "";
+    article.innerHTML=
+      '<div class="q-number"><span>'+(i+1)+'</span></div>'+
+      '<div class="q-body">'+
+        '<p class="q-prompt">'+esc(q.prompt)+'</p>'+
+        '<div class="options">'+q.options.map((opt,j)=>
+          '<label class="option"><input type="radio" name="q'+i+'" value="'+j+'" '+(Number(selected)===j?'checked':'')+' '+(draft.submitted?'disabled':'')+'><span>'+esc(opt)+'</span></label>'
+        ).join("")+'</div>'+
+        '<label class="work-label" for="work'+i+'">Show your work · ungraded workspace</label>'+
+        '<textarea class="work" id="work'+i+'" data-work="'+i+'" '+(draft.submitted?'readonly':'')+' placeholder="Calculations, graph notes, checks, or reasoning…">'+esc(work)+'</textarea>'+
+        feedback+
+      '</div>';
+    host.append(article);
+  }
+  document.querySelectorAll("[data-section]").forEach(b=>b.classList.toggle("current",Number(b.dataset.section)===section));
+  $("#prevSection").disabled=section===0;
+  $("#nextSection").disabled=section===2;
+  updateProgress();
+}
+function goSection(n){
+  if(n<0||n>2)return;
+  section=n;render();
+  $("#assessment").scrollIntoView({behavior:"smooth",block:"start"});
+}
+function buildResult(){
+  let correct=0;
+  const breakdown={};
+  CONFIG.questions.forEach((q,i)=>{
+    const key=q.category||"Assessment";
+    breakdown[key]??={correct:0,total:0};
+    breakdown[key].total++;
+    if(Number(draft.answers[i])===q.answer){correct++;breakdown[key].correct++}
+  });
+  const percent=Math.round(correct/CONFIG.questions.length*1000)/10;
+  const result={
+    id:CONFIG.id,assessment_id:CONFIG.id,title:CONFIG.title,
+    score:correct,total:CONFIG.questions.length,percent,selected_response_percent:percent,
+    breakdown,answer_snapshot:CONFIG.questions.map((q,i)=>({
+      item_id:q.id||CONFIG.id+"-item-"+(i+1),
+      selected_original_index:Number(draft.answers[i]),
+      correct_original_index:q.answer
+    })),
+    work_snapshot:{...draft.work},
+    mastery_threshold:80,
+    selected_response_mastery_met:percent>=80,
+    overall_percent:percent,
+    mastery:percent>=80,
+    mastery_met:percent>=80,
+    mastery_status:percent>=80?"mastery-met":"review-required",
+    submitted:new Date().toISOString(),
+    trust:{classification:"browser-local-self-scored",authoritative:false,confidential:false,digitally_signed:false,cryptographically_verified:false,editable_storage:true,review_required:true}
+  };
+  return result;
+}
+function persistResult(result){
+  let prior=null;
+  try{prior=JSON.parse(safeGet(CONFIG.result_key)||"null")}catch{}
+  const evidence=prior&&typeof prior==="object"?prior:{
+    result_schema:"khaemenes-algebra1-cumulative-evidence-v2",
+    assessment_id:CONFIG.id,attempt_history:[],bestScore:null,bestSelectedScore:null,bestOverallScore:null,mastery:false,lastResult:null
+  };
+  evidence.attempt_history=[...(Array.isArray(evidence.attempt_history)?evidence.attempt_history:[]),result];
+  evidence.bestScore=Math.max(Number.isFinite(evidence.bestScore)?evidence.bestScore:0,result.percent);
+  evidence.bestSelectedScore=Math.max(Number.isFinite(evidence.bestSelectedScore)?evidence.bestSelectedScore:0,result.percent);
+  evidence.bestOverallScore=evidence.bestScore;
+  evidence.mastery=evidence.bestScore>=80;
+  evidence.lastResult=result;
+  evidence.updated=new Date().toISOString();
+  return safeSet(CONFIG.result_key,JSON.stringify(evidence))?evidence:null;
+}
+function showResult(result){
+  $("#results").hidden=false;
+  $("#resultTitle").textContent=result.percent>=80?"Readiness demonstrated":"Targeted review recommended";
+  $("#resultScore").textContent=result.percent+"% · "+result.score+"/"+result.total;
+  $("#scoreBox").value=result.score+" / "+result.total;
+  $("#breakdown").innerHTML=Object.entries(result.breakdown).map(([k,v])=>'<p><strong>'+esc(k.replaceAll("_"," "))+'</strong><br>'+v.correct+'/'+v.total+' ('+Math.round(v.correct/v.total*100)+'%)</p>').join("");
+}
+function submit(){
+  const count=answeredCount();
+  if(count!==CONFIG.questions.length){
+    const missing=CONFIG.questions.findIndex((_,i)=>!Object.prototype.hasOwnProperty.call(draft.answers,String(i)));
+    section=Math.floor(missing/PAGE_SIZE);
+    render();
+    $("#status").textContent="Answer all 36 questions before scoring. First unanswered item: question "+(missing+1)+".";
+    setTimeout(()=>document.querySelector('input[name="q'+missing+'"]')?.focus(),0);
+    return;
+  }
+  draft.submitted=true;
+  if(!saveDraft(false)){draft.submitted=false;$("#status").textContent="Submission paused because the draft could not be verified in browser storage.";return}
+  const result=buildResult();
+  const evidence=persistResult(result);
+  if(!evidence){draft.submitted=false;saveDraft(false);$("#status").textContent="Result could not be verified in browser storage. Export your work before leaving.";return}
+  render();showResult(result);
+  $("#status").textContent="Assessment scored. Review any missed items and preserve your exported result.";
+  $("#results").scrollIntoView({behavior:"smooth",block:"center"});
+}
+function exportResult(){
+  let data=null;
+  try{data=JSON.parse(safeGet(CONFIG.result_key)||"null")}catch{}
+  const payload=data||{assessment_id:CONFIG.id,draft};
+  const blob=new Blob([JSON.stringify(payload,null,2)],{type:"application/json"});
+  const url=URL.createObjectURL(blob),a=document.createElement("a");
+  a.href=url;a.download=CONFIG.export_name||"algebra1-readiness-diagnostic-result.json";a.click();
+  setTimeout(()=>URL.revokeObjectURL(url),500);
+}
+function reset(){
+  if(!confirm("Clear this diagnostic draft? Previously saved scored evidence will be preserved."))return;
+  draft={answers:{},work:{},submitted:false};
+  safeSet(CONFIG.storage_key,JSON.stringify(draft));
+  section=0;$("#scoreBox").value="";$("#results").hidden=true;render();$("#status").textContent="Draft reset. Saved scored evidence was preserved.";
+}
+const info={
+  evidence:{title:"Readiness Evidence",body:"This Week 1 diagnostic is separate from the official Algebra I course grade. Use the category breakdown together with prior work and learner needs to select Foundation, Core, or Extended support. No single unfinished prerequisite automatically bars the learner from Algebra I."},
+  standard:{title:"Answer Standard",body:"Every scored item has exactly one mathematically or definitionally correct option. Equivalent duplicate choices, overlapping forms, and undefined subjective criteria are excluded."},
+  results:{title:"Using Results",body:"The score is browser-local readiness evidence. Use the skill-category breakdown to identify targeted review and preserve the exported result with representative work. Readiness evidence guides support; it does not replace course mastery checks."}
+};
+
+$("#questionList").addEventListener("change",e=>{
+  const input=e.target.closest('input[type="radio"]');
+  if(!input||draft.submitted)return;
+  const m=input.name.match(/^q(\d+)$/);if(!m)return;
+  draft.answers[m[1]]=Number(input.value);
+  saveDraft(false);updateProgress();
+});
+$("#questionList").addEventListener("input",e=>{
+  const ta=e.target.closest("[data-work]");if(!ta||draft.submitted)return;
+  draft.work[ta.dataset.work]=ta.value;
+});
+$("#questionList").addEventListener("change",e=>{
+  const ta=e.target.closest("[data-work]");if(!ta||draft.submitted)return;
+  draft.work[ta.dataset.work]=ta.value;saveDraft(false);
+});
+document.querySelectorAll("[data-section]").forEach(b=>b.addEventListener("click",()=>goSection(Number(b.dataset.section))));
+$("#prevSection").addEventListener("click",()=>goSection(section-1));
+$("#nextSection").addEventListener("click",()=>goSection(section+1));
+$("#submitButton").addEventListener("click",submit);
+$("#saveButton").addEventListener("click",()=>saveDraft(true));
+$("#exportButton").addEventListener("click",exportResult);
+$("#resetButton").addEventListener("click",reset);
+$("#startButton").addEventListener("click",()=>{$("#assessment").scrollIntoView({behavior:"smooth",block:"start"});setTimeout(()=>$("#questionList input")?.focus(),250)});
+$("#printButton").addEventListener("click",()=>window.print());
+document.querySelectorAll("[data-info]").forEach(b=>b.addEventListener("click",()=>{
+  const item=info[b.dataset.info];$("#infoTitle").textContent=item.title;$("#infoBody").innerHTML="<p>"+esc(item.body)+"</p>";$("#infoDialog").showModal();
+}));
+$("#closeInfo").addEventListener("click",()=>$("#infoDialog").close());
+$("#infoDialog").addEventListener("click",e=>{if(e.target===$("#infoDialog"))$("#infoDialog").close()});
+$("#assessmentDate").value=new Date().toLocaleDateString();
+
+render();
+try{
+  const evidence=JSON.parse(safeGet(CONFIG.result_key)||"null");
+  if(evidence?.lastResult)showResult(evidence.lastResult);
+}catch{}
+</script>
+
+<script src="../../assets/math-learning-tools-v2.js" defer></script>
+<script src="https://vervenveda.com/assets/vnv-ecosystem-toolbar.js" defer></script>
+<script src="../../../../assets/vnv-language.js?v=20261118-high-school-bounded-refresh-1" defer data-official-vnv-language="true"></script>
+</body>
+</html>
