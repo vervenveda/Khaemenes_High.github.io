@@ -2,8 +2,9 @@
 (()=>{"use strict";
 const A=window.KhaemenesMathWeeklyAdapter,host=document.getElementById("weeklyRoot");if(!A||!host)return;
 const M=80,COUNT=10,$=s=>document.querySelector(s),esc=v=>String(v??"").replace(/[&<>"\']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","\'":"&#39;"}[c]));
-const read=()=>{try{return JSON.parse(localStorage.getItem(A.storageKey)||"null")||{weeks:{}}}catch{return{weeks:{}}}};
-const save=v=>{try{const raw=JSON.stringify(v);localStorage.setItem(A.storageKey,raw);return localStorage.getItem(A.storageKey)===raw}catch{return false}};
+const scopedKey=()=>{const L=window.KhaemenesLearnerScope;try{return L?.scopedKey?L.scopedKey(A.storageKey):A.storageKey}catch{return A.storageKey}};
+const read=()=>{const key=scopedKey(),S=window.KhaemenesMathStorageAdapter;try{if(S?.readJSON)return S.readJSON(key,{weeks:{}})||{weeks:{}};return JSON.parse(localStorage.getItem(key)||"null")||{weeks:{}}}catch{return{weeks:{}}}};
+const save=v=>{const key=scopedKey(),S=window.KhaemenesMathStorageAdapter;try{if(S?.writeJSON)return S.writeJSON(key,v)?.persisted===true;const raw=JSON.stringify(v);localStorage.setItem(key,raw);return localStorage.getItem(key)===raw}catch{return false}};
 let week=Number(new URLSearchParams(location.search).get("week"))||Number(A.defaultWeek)||1,set=[],submitted=false;
 function questions(w){const row=A.bank?.[String(w)]||A.bank?.[w];return Array.isArray(row?.questions)?row.questions:[]}
 function record(w){const d=read();d.weeks??={};d.weeks[w]??={attempts:[],best:null,mastery:false};return[d,d.weeks[w]]}
