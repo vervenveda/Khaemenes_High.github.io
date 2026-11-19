@@ -4,14 +4,19 @@
  */
 (()=>{"use strict";
  if(window.KhaemenesAlgebra1LessonV2)return;
- const VERSION="2.2.1";
+ const VERSION="2.2.2";
  const MANUAL_KEY="sectionChecks";
  const QUICK_KEY="quickChecks";
  const ITEMS=[
   ["learning-goals-warmup","Learning Goals & Warm-up","manual"],
   ["lesson-record","Your Lesson Record","reviewed"],
+  ["mystery","Mystery","manual"],
+  ["discover","Discover","evidence"],
+  ["learn","Learn","manual"],
+  ["interactive-lab","Experiment","evidence"],
+  ["challenge","Challenge","manual"],
+  ["defend","Defend","evidence"],
   ["reading-room","Reading Room","manual"],
-  ["interactive-lab","Interactive Lab","manual"],
   ["quick-check","Quick Check","quick"],
   ["worked-examples","Worked Examples","manual"],
   ["pathway-support","Pathway Support","manual"],
@@ -136,6 +141,70 @@
    layout.remove();
    (wrap||section).classList.add("kme-opening-stack");
  }
+ function stageKey(card){
+   const eyebrow=(card.querySelector(".eyebrow")?.textContent||"").toLowerCase();
+   const title=(card.querySelector("h2,h3")?.textContent||"").toLowerCase();
+   const text=eyebrow+" "+title;
+   if(/mystery/.test(text))return "mystery";
+   if(/discover/.test(text))return "discover";
+   if(/learn|objective/.test(text))return "learn";
+   if(/experiment|laboratory/.test(text))return "interactive-lab";
+   if(/challenge|wrong answer/.test(text))return "challenge";
+   if(/defend|defense/.test(text))return "defend";
+   if(/reflect|retrieve|lesson check/.test(text))return "lesson-practice";
+   return "";
+ }
+ function normalizeStageCards(){
+   const cards=$("#main article.card");
+   if(!cards.length)return false;
+   cards.forEach(card=>{
+    const key=stageKey(card); if(!key||card.closest("details.kme-lesson-accordion"))return;
+    const details=document.createElement("details");
+    details.className="kme-lesson-accordion kme-algebra-stage";
+    details.dataset.checklistSection=key;
+    const summary=document.createElement("summary");
+    const eyebrow=(card.querySelector(".eyebrow")?.textContent||"").replace(/^\s*\d+\s*·\s*/,"").trim();
+    const title=(card.querySelector("h2,h3")?.textContent||"").trim();
+    summary.textContent=eyebrow&&title?eyebrow+" · "+title:(title||eyebrow||labelFor(key,card));
+    const body=document.createElement("div"); body.className="kme-accordion-body";
+    card.replaceWith(details); body.append(card); details.append(summary,body);
+   });
+   return true;
+ }
+ function ensureStageCompletionCard(){
+   if($("#lessonCompletion"))return;
+   const stages=$("details.kme-algebra-stage");
+   if(!stages.length)return;
+   const last=stages[stages.length-1];
+   const section=document.createElement("section");
+   section.className="kme-section"; section.id="lessonCompletion";
+   section.innerHTML='<div class="wrap"><article class="kme-completion-card"><header class="section-head"><h2>Lesson Completion Checklist</h2><p>Open every lesson stage, complete the written evidence, and reach at least '+threshold()+'% on Lesson Check before moving forward.</p></header><div id="lessonCompletionChecklist" class="kme-completion-list" aria-live="polite"></div><div class="kme-completion-status" id="lessonCompletionStatus" role="status"></div><nav class="lesson-nav" aria-label="Lesson navigation"></nav></article></div>';
+   last.closest(".block,.section")?.after(section) || last.after(section);
+ }
+ function installFineTuneStyles(){
+   if($("#khaemenesAlgebraFineTune"))return;
+   const style=document.createElement("style"); style.id="khaemenesAlgebraFineTune";
+   style.textContent=`
+    html:root:root body{font-size:16px!important;line-height:1.68!important}
+    html:root:root body :is(p,li,label,button,input,select,textarea,summary,.feedback,.notice){font-size:max(16px,1em)!important}
+    #main{max-width:100%;overflow-x:clip}
+    #main .wrap{width:min(calc(100% - 33px),1180px);margin-inline:auto}
+    details.kme-algebra-stage{margin:14px auto;border-radius:7px;overflow:hidden}
+    details.kme-algebra-stage>summary{min-height:55px;display:flex;align-items:center;padding:14px 18px;cursor:pointer}
+    details.kme-algebra-stage .card{margin:0!important;border-radius:0!important;box-shadow:none!important}
+    .question{display:grid!important;grid-template-columns:33px minmax(0,1fr);column-gap:11px;align-items:start}
+    .question>strong{grid-column:1/-1;display:grid;grid-template-columns:33px minmax(0,1fr);gap:11px}
+    .question>strong::first-letter{font-variant-numeric:tabular-nums}
+    .question .option,.question .feedback{grid-column:2}
+    .actions{display:flex;flex-wrap:wrap;gap:11px!important;align-items:center}
+    .actions .btn,.actions button{margin:0!important}
+    textarea{min-height:180px;padding:14px!important}
+    #lessonCompletion{padding-top:24px;padding-bottom:55px}
+    .kme-completion-item{gap:14px!important}
+    @media(max-width:700px){#main .wrap{width:min(calc(100% - 24px),1180px)}.question{grid-template-columns:24px minmax(0,1fr)}}
+   `;
+   document.head.append(style);
+ }
  function normalizeReset(){
    $$("strong,h2,h3").forEach(el=>{
      if(/33-second reset/i.test(el.textContent||"")){
@@ -145,15 +214,40 @@
      }
    });
  }
+ function algebraLegacyScore(){
+   const bodyLesson=Number(document.body?.dataset?.lesson||0);
+   const unitMatch=location.pathname.match(/\/unit-(\d+)\//i);
+   const unit=unitMatch?String(Number(unitMatch[1])).padStart(2,"0"):"";
+   if(!bodyLesson||!unit)return null;
+   const keys=[
+    "khaemenes-algebra1-unit"+unit+"-a3-v1",
+    "khaemenes-algebra1-unit"+unit+"-progress-v1",
+    "khaemenes-algebra1-unit"+unit+"-progress-v2"
+   ];
+   for(const key of keys){
+    try{
+     const x=JSON.parse(localStorage.getItem(key)||"null");
+     const raw=x?.best?.["lesson-"+bodyLesson] ?? x?.lessonScores?.["lesson-"+bodyLesson] ?? x?.lessonScores?.[lessonId()];
+     if(Number.isFinite(Number(raw)))return Number(raw);
+    }catch{}
+   }
+   return null;
+ }
  function score(){
    const p=readProgress(),raw=p.lessonScores?.[lessonId()];
-   return Number.isFinite(Number(raw))?Number(raw):null;
+   if(Number.isFinite(Number(raw)))return Number(raw);
+   return algebraLegacyScore();
  }
  function itemComplete(key,mode){
    const p=ensureProgress(),id=lessonId();
    if(mode==="reviewed")return Array.isArray(p.reviewedLessons)&&p.reviewedLessons.includes(id);
    if(mode==="notes")return Boolean((p.lessonNotes?.[id]||"").trim());
    if(mode==="reflection")return Boolean((p.reflections?.[id]||"").trim());
+   if(mode==="evidence"){
+     const d=document.querySelector('[data-checklist-section="'+CSS.escape(key)+'"]');
+     const fields=d?[...d.querySelectorAll("textarea,input[type=text]")]:[];
+     return fields.length>0&&fields.every(field=>String(field.value||"").trim().length>=3);
+   }
    if(mode==="mastery")return Number(score())>=threshold();
    if(mode==="quick"){
      const total=window.LESSON_DATA?.quick_checks?.length||$$('[data-quick-check]').length;
@@ -261,11 +355,16 @@
  }
  function normalize(){
    const main=$("#main")||$("main");if(main){main.classList.add("khaemenes-math-engine");main.dataset.khaemenesMathEngine=VERSION}
-   normalizeOpening();
-   $$("section").forEach(section=>{normalizeHead(section);const key=keyFor(section);if(key)collapseSection(section,key)});
+   installFineTuneStyles();
+   const staged=normalizeStageCards();
+   if(!staged){
+    normalizeOpening();
+    $("section").forEach(section=>{normalizeHead(section);const key=keyFor(section);if(key)collapseSection(section,key)});
+   }
    normalizeReset();
-   ensureCompletionCard();
+   if(staged)ensureStageCompletionCard(); else ensureCompletionCard();
    renderChecklist();gateNext();bind();
+   document.addEventListener("input",e=>{if(e.target.matches("textarea,input[type=text]"))setTimeout(()=>{renderChecklist();gateNext()},0)},{passive:true});
    document.documentElement.dataset.khaemenesMathEngineActive=VERSION;
  }
  const api={version:VERSION,normalize,renderChecklist,gateNext};
