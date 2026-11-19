@@ -44,7 +44,7 @@ const FIRST_STEPS=Object.freeze({
  "algebra-1":"https://vervenveda.com/Khaemenes_High.github.io/courses/mathematics/algebra-1/diagnostic/",
  "geometry":"https://vervenveda.com/Khaemenes_High.github.io/courses/mathematics/geometry/diagnostic/",
  "algebra-2":"https://vervenveda.com/Khaemenes_High.github.io/courses/mathematics/algebra-2/diagnostic/",
- "english-9":"https://vervenveda.com/Khaemenes_High.github.io/courses/language-arts/english-9/weeks/week-01/day-01/",
+ "english-9":"https://vervenveda.com/Khaemenes_High.github.io/courses/language-arts/english-9/daily-learning/",
  "english-10":"https://vervenveda.com/Khaemenes_High.github.io/courses/language-arts/english-10/weeks/week-01/monday/",
  "english-11":"https://vervenveda.com/Khaemenes_High.github.io/courses/language-arts/english-11/weeks/week-01/lessons/day-01.html",
  "english-12":"https://vervenveda.com/Khaemenes_High.github.io/courses/language-arts/english-12/weeks/week-01/lessons/day-01.html",
