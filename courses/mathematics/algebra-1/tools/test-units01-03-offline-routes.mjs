@@ -44,7 +44,8 @@ for(let n=1;n<=3;n++){
     const inCourse=path.posix.relative(siteBase,abs);
     const cacheKey="./"+inCourse;
     if(!inCourse.startsWith("..")){
-     assert.ok(cached.has(cacheKey)||sw.includes('"'+cacheKey+'"'),
+     const versioned=[...cached].some(item=>item===cacheKey||item.startsWith(cacheKey+"?"));
+     assert.ok(versioned||sw.includes('"'+cacheKey+'"')||sw.includes('"'+cacheKey+'?'),
        "not offline-ready "+cacheKey);
     } else {
      assert.ok(sw.includes('"'+inCourse+'"')||cached.has(inCourse),
