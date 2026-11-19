@@ -509,6 +509,44 @@ html body .grade09-contribute-panel .grade09-contribute-action:focus-visible{
 
 
 
+<script id="vnv-high-profile-class-tools-config">
+(()=>{"use strict";
+ if(window.KhaemenesClassToolsConfigV1?.id==="high-school-profile")return;
+ const openLocal=(selector)=>{
+  const target=document.querySelector(selector);
+  if(!target)return false;
+  const details=target.closest("details.khae-profile-accordion");
+  if(details)details.open=true;
+  target.scrollIntoView({behavior:"smooth",block:"start"});
+  target.querySelector("a,button,input,select,textarea")?.focus?.({preventScroll:true});
+  return true;
+ };
+ window.KhaemenesClassToolsConfigV1={
+  id:"high-school-profile",
+  match:()=>/\/grades\/grade-(09|10|11|12)\/student-profile\/(?:index\.html)?$/i.test(location.pathname),
+  toggleLabel:"Tools",
+  ariaLabel:"Student profile tools",
+  tools:[
+   {type:"ecosystem-link",label:"Art",sub:"Bazaar Art",ecosystemId:"bazaar",fallbackHref:"https://vervenveda.github.io/bazaarart.github.io/"},
+   {type:"ecosystem-link",label:"Arcade",sub:"Games",ecosystemId:"arcade",fallbackHref:"https://vervenveda.github.io/arcade.github.io/"},
+   {type:"ecosystem-link",label:"Music",sub:"The Refrain",ecosystemId:"refrain",fallbackHref:"https://vervenveda.github.io/the_refrain.github.io/"},
+   {type:"ecosystem-link",label:"News",sub:"The Verifier",ecosystemId:"verifier",fallbackHref:"https://vervenveda.github.io/theverifier.github.io/"},
+   {type:"action",label:"Classes",sub:"My classes",action:"classes"},
+   {type:"ecosystem-list",label:"Learning",sub:"Learning tools",filter:{category:"education",limit:12}},
+   {type:"ecosystem-link",label:"Pro",sub:"Pro tools",ecosystemId:"proresources",fallbackHref:"https://vervenveda.github.io/proresource_hub.github.io/ProReSources_updated_index.html"},
+   {type:"ecosystem-link",label:"Aurora",sub:"Wellness",ecosystemId:"aurora",fallbackHref:"https://vervenveda.github.io/aurora.github.io/"},
+   {type:"ecosystem-link",label:"Weather",sub:"Solanar",ecosystemId:"solanar",fallbackHref:"https://vervenveda.github.io/solanar.github.io/"},
+   {type:"ecosystem-link",label:"Legal",sub:"Firmament Law",ecosystemId:"firmament-law",fallbackHref:"https://vervenveda.github.io/firmament.github.io/apps/Law_Governance_hall_index.html"},
+   {type:"ecosystem-link",label:"Medical",sub:"Medicament",ecosystemId:"medicament",fallbackHref:"https://vervenveda.github.io/medicament-hub.github.io/"}
+  ],
+  actions:{
+   classes:()=>openLocal("#courseManagerGrid")||openLocal('[aria-labelledby="manageClassesTitle"]')
+  },
+  help:{title:"Student Profile Tools",paragraphs:[]}
+ };
+})();
+</script>
+<script src="https://vervenveda.com/assets/vnv-class-tools-toolbar.js?v=1.6.1" defer data-vnv-class-tools-toolbar="profile"></script>
 <script src="https://vervenveda.com/assets/vnv-ecosystem-toolbar.js?v=20261106-profile-idempotent-104"></script>
 <script src="../../shared/learning-today-placement.js?v=9362d9e6"></script>
 <script src="../../shared/student-rooms-placement.js?v=20261107-empty-wrapper-v2"></script>
