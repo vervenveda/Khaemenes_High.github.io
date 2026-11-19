@@ -313,13 +313,13 @@ The live lesson and assessment environments belong to the same visual family.
 
 - Khaemenes Academy / Khaemenes Higher Learning identity centered and clear;
 - parchment or paper working surface with charcoal ink;
-- restrained gold/forest/navy/burgundy accents according to level;
+- no secondary accent colors in the canonical mathematics surface; use only charcoal, crisp cream, and khaki parchment;
 - Cinzel institutional/title hierarchy;
 - Brandon Grotesque or Nunito body;
 - minimum readable text: 16px;
 - body preferred: 18px;
 - 7px control/card radius;
-- 3px contrast borders on cards, controls, text boxes, and mathematical work surfaces using approved palette colors;
+- 3px contrast borders on cards, controls, text boxes, and mathematical work surfaces using only charcoal, crisp cream, and khaki parchment;
 - grouped grids use even column counts at full/tablet widths and collapse to one column only when needed for small screens;
 - one-column mathematical reading flow unless the mathematics itself requires a paired representation;
 - generous whitespace;
