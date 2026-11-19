@@ -5,9 +5,9 @@ import assert from "node:assert/strict";
 const root="courses/mathematics/algebra-2/";
 const specs=[
  {lesson:"unit-10/lessons/u10-l05.html",slug:"trigonometric-wave-studio",sections:["Visual model · one period of sine and cosine","Independent transfer · check only after solving"],terms:["cos x=sin(x+π/2)","sin(7π/2)=sin(3π/2)=−1","range [−3,1]","sin(x+2π)=sin x"]},
- {lesson:"unit-11/lessons/u11-l06.html",slug:"triangle-law-expedition",sections:["Visual model · side–angle correspondence","Independent transfer · check only after solving"],terms:["a=7, b=10","B₂=180°−B₁≈134.42°","c₁=7sin C₁/sin30°≈13.56","c₂=7sin C₂/sin30°≈3.76"]},
- {lesson:"unit-11/lessons/u11-l07.html",slug:"triangle-law-expedition",sections:["Visual model · included angles and opposite sides","Independent transfer · check only after solving"],terms:["c²=25+64−(2×5×8)cos60°","K=√[10(10−5)(10−8)(10−7)]","C=arccos(−11/24)≈117.28°","c=√67≈8.19"]},
- {lesson:"unit-11/lessons/u11-l08.html",slug:"triangle-law-expedition",sections:["Visual model · two-leg bearing displacement","Independent transfer · check only after solving"],terms:["d≈17.90 km","4√19≈17.44 km","atan2(14,6√3)≈53.41°","2√7≈5.29 km"]}
+ {lesson:"unit-11/lessons/u11-l06.html",slug:"triangle-law-expedition",sections:["Visual model · side–angle correspondence","Independent transfer · check only after solving"],terms:["A=30°","a=7","b=10","zero, one or two triangles"]},
+ {lesson:"unit-11/lessons/u11-l07.html",slug:"triangle-law-expedition",sections:["Visual model · included angles and opposite sides","Independent transfer · check only after solving"],terms:["c²=a²+b²−2ab cosC","a=7, b=9, C=60°","Heron","c=√67≈8.19"]},
+ {lesson:"unit-11/lessons/u11-l08.html",slug:"triangle-law-expedition",sections:["Visual model · two-leg bearing displacement","Independent transfer · check only after solving"],terms:["4√19 km","Bearing ≈53.41°","N60°E","2√7≈5.29 km"]}
 ];
 const standardFlow=["recall","see","worked","explain","guided","independent","error","transfer","feedback","reflect"];
 const depthCompanion=fs.readFileSync(root+"assets/algebra2-exceptional-lesson-depth-units10-11-v1.js","utf8");
