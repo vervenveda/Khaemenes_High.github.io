@@ -68,10 +68,11 @@ function passRoute(course,kind,detail){
  if(!c)return{href:location.href,label:"Continue"};
  if(kind==="readiness")return{href:c.unit1,label:cfg.passLabels.readiness};
  if(kind==="unit"){
+  if(unit&&unit===Number(c.midtermAfterUnit))return{href:c.midterm,label:"Continue to Midterm"};
   if(unit&&unit<13)return{href:c.root+"units/unit-"+String(unit+1).padStart(2,"0")+"/",label:"Continue to Unit "+String(unit+1).padStart(2,"0")};
   return{href:c.final,label:"Continue to Final Examination"};
  }
- if(kind==="midterm")return{href:c.unit7,label:cfg.passLabels.midterm};
+ if(kind==="midterm")return{href:c.root+"units/unit-"+String(c.secondHalfStart).padStart(2,"0")+"/",label:cfg.passLabels.midterm};
  if(kind==="final")return{href:c.records,label:cfg.passLabels.final};
  if(kind==="weekly"&&week&&week<36)return{href:c.root+"assessments/weekly-mastery.html?week="+(week+1),label:"Continue to Week "+String(week+1).padStart(2,"0")};
  return{href:c.root,label:cfg.passLabels[kind]||cfg.passLabels.assessment};
