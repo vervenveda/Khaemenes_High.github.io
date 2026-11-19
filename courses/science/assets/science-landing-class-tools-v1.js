@@ -30,11 +30,11 @@ function openTranslator({root}){
 }
 if(document.readyState==="loading")document.addEventListener("DOMContentLoaded",ensureTranslatorMount,{once:true});else ensureTranslatorMount();
 
-const grade=/\/integrated-science-9\//i.test(location.pathname)?"09":"09";
+const grade=/\/biology-10\//i.test(location.pathname)?"10":"09";
 const profileBase="/Khaemenes_High.github.io/grades/grade-"+grade+"/student-profile/";
 window.KhaemenesClassToolsConfigV1={
  id:"high-school-science-landing",
- match:()=>/\/courses\/science\/integrated-science-9\/(?:index\.html)?$/i.test(location.pathname),
+ match:()=>/\/courses\/science\/(?:integrated-science-9|biology-10)\/(?:index\.html)?$/i.test(location.pathname),
  toggleLabel:"Tools",
  ariaLabel:"Science learning tools",
  tools:[
