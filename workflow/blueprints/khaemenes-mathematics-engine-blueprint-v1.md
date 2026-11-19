@@ -564,6 +564,24 @@ if (window.KhaemenesMathEngine) return;
 
 ---
 
+## 12A. Canonical shared implementation assets
+
+All mathematics pages that adopt the universal engine must reference the shared canonical assets below rather than copying their CSS or bootstrap logic locally.
+
+- **Universal stylesheet:** `https://vervenveda.com/assets/khaemenes-math-engine-v1.css`
+- **Universal engine/bootstrap:** `https://vervenveda.com/assets/khaemenes-math-engine-v1.js`
+
+These files are the presentation and ownership source of truth.
+
+Rules:
+
+- typography, spacing, radius, worksheet surfaces, problem cards, work areas, responsive breakpoints, and print behavior are upgraded in the canonical stylesheet;
+- engine ownership, context, mount guards, and duplicate-component audits are upgraded in the canonical bootstrap;
+- adopted lesson pages must not fork these rules into course-local copies except for narrowly scoped course-specific extensions;
+- course-local extensions must never override global typography or structural ownership without an explicit documented exception;
+- changing a canonical asset intentionally propagates the upgrade to all adopted mathematics pages on their next load;
+- deployment must preserve version history and must be tested against representative High School and Higher Learning pages before major visual changes.
+
 ## 13. Required engine modules
 
 The implementation should be divided into small modules.
