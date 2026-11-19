@@ -4,6 +4,8 @@
   const MASTERY = 80;
   const ASSESSMENT_KEY = "khaemenes-algebra2-assessment-records-v1";
   const LESSON_KEY = "khaemenes-algebra2-lesson-progress-v1";
+  const WEEKLY_KEY = "khaemenes-algebra2-weekly-mastery-v1";
+  const UNIT_WEEKS = {1:[2,3],2:[4,5,6],3:[7,8,9],4:[10,11,12],5:[13,14],6:[15,16,17],7:[19,20,21],8:[22,23],9:[24,25,26],10:[27,28,29,30],11:[31,32,33],12:[34,35],13:[36]};
   const ACTIVE_LEARNER_KEY = "khaemenes_active_learner_v1";
   const FAMILY_REGISTRY_KEY = "khaemenes_family_registry_v1";
   const LESSON_COUNTS = { 1: 6, 2: 8, 3: 7, 4: 8, 5: 6, 6: 7, 7: 7, 8: 6, 9: 7, 10: 10, 11: 8, 12: 7, 13: 5 };
@@ -115,6 +117,22 @@
     return allLessonsMastered(unit);
   }
 
+  function weeklyData() {
+    return readJSON(WEEKLY_KEY, { weeks:{} }) || { weeks:{} };
+  }
+
+  function weekMastered(week) {
+    const record = weeklyData()?.weeks?.[week];
+    if (!record || typeof record !== "object") return false;
+    if (Number(record.best) >= MASTERY) return true;
+    return Array.isArray(record.attempts) && record.attempts.some(attempt => recordedScore(attempt?.score) >= MASTERY);
+  }
+
+  function allWeeksMastered(unit) {
+    const weeks = UNIT_WEEKS[unit] || [];
+    return weeks.length > 0 && weeks.every(weekMastered);
+  }
+
   function unitUnlocked(unit) {
     if (!readinessRecorded()) return false;
     if (unit === 1) return true;
@@ -137,6 +155,7 @@
       if (unit > 1 && !unitMastered(unit - 1)) missing.push(`Unit ${String(unit - 1).padStart(2, "0")} mastery at ${MASTERY}%`);
       if (unit >= 7 && !midtermMastered()) missing.push(`Reviewed midterm mastery at ${MASTERY}%`);
       if (!allLessonsMastered(unit)) missing.push(`Master all Unit ${String(unit).padStart(2, "0")} lessons at ${MASTERY}%`);
+      if (!allWeeksMastered(unit)) missing.push(`Complete all Unit ${String(unit).padStart(2, "0")} weekly mastery checks at ${MASTERY}%`);
       return missing;
     }
     if (config?.recordKey === "midterm") {
@@ -207,10 +226,10 @@
       }
     });
     const mastery = document.querySelector('a.btn[href*="assessment/mastery-check.html"]');
-    if (mastery && !allLessonsMastered(unit)) disableLink(mastery, `Mastery Check locked · every lesson in this unit must reach ${MASTERY}% first.`);
+    if (mastery && (!allLessonsMastered(unit) || !allWeeksMastered(unit))) disableLink(mastery, `Mastery Check locked · every lesson and instructional weekly mastery check in this unit must reach ${MASTERY}% first.`);
     const note = document.createElement("p");
     note.className = "notice";
-    note.textContent = `Progression is sequential: each lesson must reach ${MASTERY}% mastery, then the unit mastery check must reach ${MASTERY}%. Completion alone never unlocks the next lesson.`;
+    note.textContent = `Progression is sequential: each lesson and instructional weekly mastery check must reach ${MASTERY}%, then the unit mastery check must reach ${MASTERY}%. Completion alone never unlocks the next stage.`;
     document.querySelector(".unit-hero .wrap")?.append(note);
   }
 
@@ -244,6 +263,7 @@
     assessmentData,
     allLessonsComplete,
     allLessonsMastered,
+    allWeeksMastered,
     lessonComplete,
     lessonEvidence,
     lessonMastered,
@@ -255,6 +275,7 @@
     readJSON,
     storageKey,
     unitMastered,
+    weekMastered,
     unitUnlocked,
     writeJSON
   });
