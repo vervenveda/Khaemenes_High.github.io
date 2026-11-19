@@ -428,6 +428,30 @@ function khaeCanonicalProfileShell(){
     color:#fff8e9!important;-webkit-text-fill-color:#fff8e9!important;
     font-size:16px!important;font-weight:400!important;text-align:center!important
    }
+   html:root:root body #grade09PinnedClasses{
+    box-sizing:border-box;width:min(calc(100% - 33px),1100px)!important;max-width:1100px!important;
+    margin:0 auto 14px!important;padding:16px!important;border:1px solid #b48b45!important;
+    border-radius:7px!important;background:#fffaf0!important;color:#243038!important
+   }
+   html:root:root body #grade09PinnedClasses>h2{margin:0 0 7px!important;text-align:center!important;font:400 24px/1.3 Cinzel,Georgia,serif!important}
+   html:root:root body #grade09PinnedClasses>p{margin:0 auto 14px!important;text-align:center!important;max-width:760px}
+   html:root:root body .grade09-pinned-class-grid{display:grid!important;grid-template-columns:repeat(4,minmax(0,1fr))!important;gap:11px!important}
+   html:root:root body .grade09-pinned-class-card{box-sizing:border-box;display:flex;flex-direction:column;min-width:0;padding:14px;border:1px solid #c8b997;border-radius:7px;background:#fffdf8}
+   html:root:root body .grade09-pinned-class-subject{font-size:14px!important;letter-spacing:.08em;text-transform:uppercase;color:#685738}
+   html:root:root body .grade09-pinned-class-card h3{margin:6px 0 8px;font:400 18px/1.35 Cinzel,Georgia,serif}
+   html:root:root body .grade09-pinned-class-card p{margin:0 0 12px;font-size:16px!important;line-height:1.45}
+   html:root:root body .grade09-pinned-class-actions{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:7px;margin-top:auto}
+   html:root:root body .grade09-pinned-class-actions :is(a,button){
+    box-sizing:border-box;display:flex;align-items:center;justify-content:center;min-height:46px;padding:8px 11px;
+    border:1px solid #b48b45;border-radius:7px;background:#243038;color:#fff8e9!important;-webkit-text-fill-color:#fff8e9!important;
+    text-decoration:none;font:400 16px/1.25 "Brandon Grotesque",Nunito,Arial,sans-serif;cursor:pointer
+   }
+   html:root:root body .grade09-pinned-class-unpin{background:#fffaf0!important;color:#243038!important;-webkit-text-fill-color:#243038!important}
+   html:root:root body #vnvClassToolsToolbar{
+    width:max-content!important;min-width:0!important;max-width:calc(100vw - 24px)!important;
+   }
+   @media(max-width:900px){html:root:root body .grade09-pinned-class-grid{grid-template-columns:repeat(2,minmax(0,1fr))!important}}
+   @media(max-width:520px){html:root:root body .grade09-pinned-class-grid{grid-template-columns:1fr!important}}
    html:root:root body details.khae-profile-accordion{
     box-sizing:border-box;width:min(calc(100% - 33px),1100px)!important;
     max-width:1100px!important;margin:14px auto!important;border:1px solid #b48b45!important;
