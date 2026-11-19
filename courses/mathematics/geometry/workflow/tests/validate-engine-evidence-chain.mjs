@@ -5,7 +5,7 @@ import path from "node:path";
 import {fileURLToPath} from "node:url";
 const here=path.dirname(fileURLToPath(import.meta.url)),src=fs.readFileSync(path.resolve(here,"../../assets/unit-index-gates.js"),"utf8");
 const m=new Map(),localStorage={getItem:k=>m.get(k)??null,setItem:(k,v)=>m.set(k,String(v))};
-const window={},document={readyState:"loading",addEventListener(){},querySelector(){return null},querySelectorAll(){return []}},location={pathname:"/courses/mathematics/geometry/units/unit-02/"};
+const window={},document={readyState:"loading",addEventListener(){},querySelector(sel){return String(sel).includes("geometry-presentation-unifier-v1.js")?{}:null},querySelectorAll(){return []}},location={pathname:"/courses/mathematics/geometry/units/unit-02/"};
 const context={window,document,location,localStorage,JSON,Number,String,Array,Object,Math};vm.createContext(context);vm.runInContext(src,context);
 const G=window.KhaemenesGeometryUnitGateV2;
 const ids=Array.from(G.unitLessonIds(1));m.set("khaemenes-geometry-lesson-progress-v1",JSON.stringify(Object.fromEntries(ids.map(id=>[id,{bestScore:80}]))));m.set("khaemenes-geometry-weekly-mastery-v2",JSON.stringify({weeks:{1:{best:80},2:{best:80}}}));m.set("khaemenes-geometry-assessment-records-v1",JSON.stringify({"unit-01":{bestScore:80}}));
