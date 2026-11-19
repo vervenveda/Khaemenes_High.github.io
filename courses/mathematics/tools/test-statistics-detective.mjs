@@ -74,24 +74,31 @@ for(const mode of modes){
 }
 const reg=JSON.parse(fs.readFileSync('courses/mathematics/assets/learning-games/game-registry.json','utf8'));
 const placements=reg.games[slug]?.placements||[];
-assert.equal(placements.length,9,'six Algebra I and three Algebra II lessons connected');
+const byCourse=course=>placements.filter(p=>p.course===course);
+assert.ok(byCourse('algebra-1').length>=6,'Algebra I statistics/regression placements remain registered');
+assert.ok(byCourse('algebra-2').length>=3,'Algebra II statistics placements remain registered');
+assert.ok(byCourse('pre-algebra').length>=1,'Pre-Algebra data/statistics progression placements are registered');
+assert.ok(placements.every(p=>p.wired===true),'every Statistics Detective placement is marked wired');
+assert.equal(new Set(placements.map(p=>[p.course,p.unit,p.lesson,p.mode].join('|'))).size,placements.length,'registry placements are unique');
+const entryContract=fs.readFileSync('courses/shared/course-entry-contract.js','utf8');
+assert.ok(entryContract.includes('math-shared-game-bridge-v1.js'),'canonical registry-driven lesson bridge is installed');
 const uniquePlacements=new Set();
-for(const p of placements){
+for(const p of placements.filter(p=>p.course==='algebra-2'||(p.course==='algebra-1'&&String(p.unit)==='12'))){
  const u=String(p.unit).padStart(2,'0'),l=String(p.lesson).match(/\d+$/)[0].padStart(2,'0');
- assert.equal(u,'12');
  const base='courses/mathematics/'+p.course+'/units/unit-'+u+'/lessons/';
  let file;
- if(p.course==='algebra-2')file=base+'u12-l'+l+'.html';
+ if(p.course==='algebra-2')file=base+'u'+u+'-l'+l+'.html';
  else{
-  const map=JSON.parse(fs.readFileSync('courses/mathematics/algebra-1/units/unit-12/unit-map.json','utf8'));
-  file=base+map.lessons.find(x=>x.id==='u12-l'+l).file.replace(/^lessons\//,'');
+  const map=JSON.parse(fs.readFileSync('courses/mathematics/algebra-1/units/unit-'+u+'/unit-map.json','utf8'));
+  const hit=map.lessons.find(x=>String(x.id||'').toLowerCase()==='u'+u+'-l'+l||String(x.number??'').padStart(2,'0')===l);
+  file=base+(hit.file||hit.path).replace(/^lessons\//,'');
  }
  const contents=fs.readFileSync(file,'utf8');
- assert.ok(contents.includes('data-game="'+slug+'"'),file+' game link');
- assert.ok(contents.includes('data-mode="'+p.mode+'"'),file+' route mode');
- assert.ok(contents.includes('src="../../../../assets/shared-game-launcher.js"'),file+' correct relative launcher');
- assert.ok(!uniquePlacements.has(file),file+' no duplicate entry');
- uniquePlacements.add(file);
+ const explicit=contents.includes('data-game="'+slug+'"')&&contents.includes('data-mode="'+p.mode+'"')&&contents.includes('shared-game-launcher.js');
+ const bridged=contents.includes('course-entry-contract.js');
+ assert.ok(explicit||bridged,file+' has explicit launcher or canonical registry bridge');
+ assert.ok(!uniquePlacements.has(file+'|'+p.mode),file+' no duplicate mode entry');
+ uniquePlacements.add(file+'|'+p.mode);
 }
 
 const nodes=new Map(),store=new Map();
@@ -130,4 +137,4 @@ const initialChoice=state.task.baseline===0?'zero':'truncated';
 get('baseline').value='zero';get('baseline').events.get('change')();
 assert.deepEqual([state.task.before,state.task.after],counts,'toggle cannot change underlying counts');
 assert.equal(M.expected(state.task).choice,initialChoice,'correct interpretation based on original presented axis');
-console.log('PASS: Statistics Detective 8 mathematical modes, 9 placements, distribution / regression / sampling / CDF calculations, retry, persistence and honest graph comparison');
+console.log('PASS: Statistics Detective 8 mathematical modes, registry-driven placements, distribution / regression / sampling / CDF calculations, retry, persistence and honest graph comparison');
