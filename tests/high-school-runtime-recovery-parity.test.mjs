@@ -288,3 +288,20 @@ test("Algebra I readiness diagnostic is a single-owner assessment surface",()=>{
  assert.match(page,/const CONFIG=\{/);
  assert.match(page,/Algebra I Readiness Diagnostic/);
 });
+
+
+test("Pre-Algebra readiness diagnostic is a single-owner assessment surface",()=>{
+ const page=read("courses/mathematics/pre-algebra/diagnostic/index.html");
+ assert.doesNotMatch(page,/course-entry-contract\.js/);
+ assert.doesNotMatch(page,/learner-scope-v1\.js/);
+ assert.doesNotMatch(page,/math-entry-gate\.js/);
+ assert.doesNotMatch(page,/ka-prealgebra-canonical-landing-v1/);
+ assert.doesNotMatch(page,/new\s+MutationObserver/);
+ assert.doesNotMatch(page,/setInterval\s*\(/);
+ assert.equal((page.match(/id="questionList"/g)||[]).length,1);
+ assert.equal((page.match(/id="submitButton"/g)||[]).length,1);
+ assert.equal((page.match(/data-info="/g)||[]).length,3);
+ assert.match(page,/khaemenes-prealgebra-readiness-result-v3/);
+ assert.match(page,/khaemenes-naib-readiness-profile-v1/);
+ assert.match(page,/Unit 0 Foundations & Readiness/);
+});
