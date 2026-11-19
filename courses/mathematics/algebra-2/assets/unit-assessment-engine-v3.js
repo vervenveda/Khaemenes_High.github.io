@@ -319,6 +319,7 @@
       else if(mastery===true){add("Return to course pathway",unit?"../../../index.html#units":"../index.html#units");if(unit&&unit<13)add("Check next unit","../../unit-"+String(unit+1).padStart(2,"0")+"/");}
       else {add("Review unit lessons",unit?"../index.html":"../index.html#units");}
       document.getElementById("assessmentMessage")?.after(panel);
+      window.KhaemenesMathAssessmentDirective?.show({kind:unit?"unit":key==="midterm"?"midterm":key==="final"?"final":MASTERY_TARGET==null?"readiness":"assessment",score:scoreValue,mastered:mastery===true,unit:unit||undefined});
       document.getElementById("submitAssessment")?.setAttribute("disabled", "true");
     }
 
