@@ -298,6 +298,7 @@
       }
       else {add("Review unit lessons",unit?"../index.html":"../index.html#units");}
       document.getElementById("assessmentMessage")?.after(panel);
+      window.KhaemenesMathAssessmentDirective?.show({kind:key==="midterm"?"midterm":key==="final"?"final":unit?"unit":MASTERY_TARGET==null?"readiness":"assessment",score:scoreValue,mastered:MASTERY_TARGET==null?scoreValue>=80:mastery===true,unit:unit||undefined});
       document.getElementById("submitAssessment")?.setAttribute("disabled", "true");
     }
 
