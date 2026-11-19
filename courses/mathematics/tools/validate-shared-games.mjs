@@ -10,6 +10,11 @@ let canonicalCount=0,placementCount=0,higherCount=0,legacyCount=0,scriptCount=0,
 const read=(p)=>fs.readFileSync(path.join(ROOT,p),"utf8");
 const exists=(p)=>fs.existsSync(path.join(ROOT,p));
 const registry=JSON.parse(read(registryPath));
+const bridgePath="courses/mathematics/assets/math-shared-game-bridge-v1.js";
+const entryContractPath="courses/shared/course-entry-contract.js";
+const bridgeReady=exists(bridgePath)&&exists(entryContractPath)&&read(entryContractPath).includes("math-shared-game-bridge-v1.js");
+if(!bridgeReady)errors.push("shared-game bridge: canonical lesson bridge is not installed through course-entry-contract");
+if(exists(bridgePath)){try{new vm.Script(read(bridgePath),{filename:bridgePath});}catch(err){errors.push("shared-game bridge: JavaScript syntax: "+err.message)}}
 
 function normLesson(value){
   const s=String(value);
@@ -92,25 +97,24 @@ for(const [slug,game] of Object.entries(registry.games||{})){
       continue;
     }
 
+    const lessonHtml=read(lessonPath);
+    const autoBridge=bridgeReady&&lessonHtml.includes("course-entry-contract.js");
     if(p.course==="pre-algebra"){
       const unit=String(p.unit).padStart(2,"0");
       const lesson=normLesson(p.lesson);
       const enginePath="courses/mathematics/pre-algebra/units/unit-"+unit+"/assets/lesson-engine.js";
-      if(!exists(enginePath)){errors.push(slug+": missing Pre-Algebra engine "+enginePath);continue}
-      const engine=read(enginePath);
+      const engine=exists(enginePath)?read(enginePath):"";
       const start=engine.indexOf("l"+lesson+":");
       const nextLesson=String(Number(lesson)+1).padStart(2,"0");
       const next=engine.indexOf("l"+nextLesson+":",start+1);
       const block=start>=0?engine.slice(start,next>=0?next:Math.min(engine.length,start+2600)):"";
-      const launcherWired = new RegExp(`shared-game-launcher[^>]*data-game="${slug}"`).test(read(lessonPath));
-      if(start<0 && !launcherWired && !read(lessonPath).includes("/learning-games/"+slug+"/index.html")) errors.push(slug+": Pre-Algebra engine missing l"+lesson);
-      if(!launcherWired && !block.includes('sharedGame:"'+slug+'"') && !block.includes('game:"'+slug+'"') && !read(lessonPath).includes('/learning-games/'+slug+'/index.html')) errors.push(slug+": Pre-Algebra l"+lesson+" does not map to sharedGame");
+      const launcherWired = new RegExp(`shared-game-launcher[^>]*data-game="${slug}"`).test(lessonHtml);
+      const explicit=launcherWired||block.includes('sharedGame:"'+slug+'"')||block.includes('game:"'+slug+'"')||lessonHtml.includes('/learning-games/'+slug+'/index.html');
+      if(!explicit&&!autoBridge)errors.push(slug+": Pre-Algebra placement lacks explicit launcher or canonical registry bridge in "+lessonPath);
     }else{
       higherCount++;
-      const lessonHtml=read(lessonPath);
-      if(!lessonHtml.includes("shared-game-launcher.js")) errors.push(slug+": launcher missing in "+lessonPath);
-      if(!lessonHtml.includes('data-game="'+slug+'"')) errors.push(slug+": game id missing in "+lessonPath);
-      if(p.mode && !lessonHtml.includes('data-mode="'+p.mode+'"')) errors.push(slug+": mode "+p.mode+" missing in "+lessonPath);
+      const explicit=lessonHtml.includes("shared-game-launcher.js")&&lessonHtml.includes('data-game="'+slug+'"')&&(!p.mode||lessonHtml.includes('data-mode="'+p.mode+'"'));
+      if(!explicit&&!autoBridge)errors.push(slug+": placement lacks explicit launcher or canonical registry bridge in "+lessonPath);
     }
   }
 }
@@ -133,6 +137,7 @@ if(errors.length){
   console.error(errors.map(x=>"ERROR: "+x).join("\n"));
   process.exit(1);
 }
+console.log("PASS: canonical registry-driven lesson bridge "+(bridgeReady?"installed":"missing"));
 console.log("PASS: "+canonicalCount+" canonical shared games");
 console.log("PASS: "+placementCount+" registry placements ("+higherCount+" higher-course placements)");
 console.log("PASS: "+legacyCount+" verified retired game paths");
