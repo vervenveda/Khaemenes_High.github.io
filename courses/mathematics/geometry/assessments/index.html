@@ -1,62 +1,179 @@
 <!doctype html>
-<html lang="en" data-theme="dark">
+<html lang="en">
 <head>
-<script src="../../../shared/course-entry-contract.js?v=20261012"></script>
-<script src="../../../shared/learner-scope-v1.js?v=20261012" data-learner-scope="geometry"></script>
-
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<meta name="color-scheme" content="dark light">
-<meta name="theme-color" content="#090b10">
-<title>Geometry Assessment Center</title>
-<link rel="stylesheet" href="../assets/styles.css?v=geometry-1">
-<!-- Superseded 14px page presentation removed; use shared Academy assessment landing standard. -->
-<link rel="stylesheet" href="../../../shared/assessment-landing-vnv-ka.css?v=1.0.0">
-  <script src="/Khaemenes_High.github.io/assets/high-school-global-chrome-v2.js" defer data-high-school-global-chrome="v2"></script>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#242c29">
+<title>Geometry Assessment Center · Khaemenes Academy</title>
+
+<script src="/Khaemenes_High.github.io/assets/high-school-global-chrome-v2.js" defer data-high-school-global-chrome="v2"></script>
 <script src="/Khaemenes_High.github.io/courses/mathematics/geometry/assets/geometry-worker-recovery-v1.js" defer data-geometry-worker-recovery="v1"></script>
+
+<style id="geometry-assessment-center-blueprint-v1">
+:root{--charcoal:#242c29;--charcoal2:#303936;--cream:#fff8eb;--parchment:#f6efe2;--paper:#fffdf8;--ink:#242624;--muted:#655f55;--gold:#b48b45;--gold2:#d8c59f;--line:#d9cdb8;--radius:7px;--max:1120px}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;min-width:300px;background:var(--parchment);color:var(--ink);font:400 16px/1.6 "Brandon Grotesque","Avenir Next",Avenir,"Segoe UI",Arial,sans-serif}
+a{color:inherit}
+button{font:inherit;cursor:pointer}
+.breadcrumb{width:min(calc(100% - 28px),var(--max));margin:12px auto;text-align:center;color:#6d6558}
+.breadcrumb a{text-decoration:none}
+.hero{background:var(--charcoal);color:var(--cream);border-bottom:4px solid var(--gold);padding:44px 18px 38px;text-align:center}
+.hero-inner{width:min(calc(100% - 20px),960px);margin:auto}
+.kicker{margin:0 0 8px;color:#ead9b7;font:400 16px/1.35 Cinzel,Georgia,serif;letter-spacing:.08em;text-transform:uppercase}
+.hero h1{margin:0;font:400 clamp(33px,5vw,55px)/1.12 Cinzel,Georgia,serif}
+.subtitle{margin:10px auto 0;max-width:760px;color:#f3e8d2;font:400 24px/1.4 Cinzel,Georgia,serif}
+.lead{max-width:800px;margin:18px auto 0;color:#f0e7d7;font-size:18px}
+.actions{display:flex;justify-content:center;flex-wrap:wrap;gap:10px;margin-top:24px}
+.btn{min-height:44px;border:1px solid var(--gold);border-radius:var(--radius);padding:10px 16px;background:var(--paper);color:var(--charcoal);text-decoration:none;display:inline-flex;align-items:center;justify-content:center}
+.btn.primary{background:var(--gold);color:#181b19}
+.btn.dark{background:var(--charcoal);color:var(--cream);border-color:var(--charcoal)}
+.info-strip{width:min(calc(100% - 28px),960px);margin:18px auto 0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:11px}
+.info-strip button{min-height:55px;border:1px solid var(--gold);border-radius:var(--radius);background:var(--charcoal);color:var(--cream);padding:10px 14px;font:400 16px/1.3 Cinzel,Georgia,serif}
+main{width:min(calc(100% - 28px),var(--max));margin:26px auto 48px}
+.section{margin-top:22px}
+.section-head{text-align:center;margin-bottom:14px}
+.section-head h2{margin:0;font:400 33px/1.25 Cinzel,Georgia,serif}
+.section-head p{max-width:820px;margin:8px auto 0;color:var(--muted)}
+.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.card{min-width:0;border:1px solid var(--line);border-radius:var(--radius);background:var(--paper);padding:18px;text-align:center;box-shadow:0 10px 24px rgba(55,45,25,.06)}
+.card h3{margin:0;font:400 24px/1.3 Cinzel,Georgia,serif}
+.card p{margin:9px 0 14px;color:var(--muted)}
+.card .btn{width:100%}
+.mastery-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+.mastery-card{display:grid;grid-template-columns:auto 1fr auto;gap:12px;align-items:center;border:1px solid var(--line);border-radius:var(--radius);background:var(--paper);padding:12px 14px;text-decoration:none}
+.mastery-num{width:44px;height:44px;display:grid;place-items:center;border-radius:var(--radius);background:var(--charcoal);color:var(--cream);font:400 18px/1 Cinzel,Georgia,serif}
+.mastery-copy{text-align:left}
+.mastery-copy strong{display:block;font:400 18px/1.3 Cinzel,Georgia,serif}
+.mastery-copy span{display:block;margin-top:3px;color:var(--muted)}
+.mastery-arrow{font-size:24px;color:var(--gold)}
+.notice{margin-top:18px;padding:14px 16px;border:1px solid var(--gold2);border-left:4px solid var(--gold);border-radius:var(--radius);background:#fffaf1;text-align:center}
+dialog{width:min(calc(100% - 32px),680px);border:1px solid var(--gold);border-radius:var(--radius);padding:0;background:var(--paper);color:var(--ink);box-shadow:0 24px 70px rgba(0,0,0,.3)}
+dialog::backdrop{background:rgba(20,25,23,.58)}
+.dialog-head{background:var(--charcoal);color:var(--cream);padding:18px 20px;border-bottom:3px solid var(--gold)}
+.dialog-head h2{margin:0;font:400 24px/1.3 Cinzel,Georgia,serif}
+.dialog-body{padding:18px 20px}
+.dialog-body p{margin:0 0 12px}
+.dialog-actions{display:flex;justify-content:flex-end;padding:0 20px 18px}
+footer{min-height:66px;padding:22px 16px;display:grid;place-items:center;background:var(--charcoal);color:var(--cream);text-align:center}
+@media(max-width:760px){.info-strip,.grid,.mastery-grid{grid-template-columns:1fr}.mastery-card{grid-template-columns:auto 1fr auto}}
+@media print{.actions,.info-strip,dialog{display:none!important}body{background:white}.hero{background:white!important;color:black!important;border-bottom:2px solid #999}.hero *{color:black!important}.card,.mastery-card{box-shadow:none}footer{display:none}}
+</style>
 </head>
-<body data-ka-assessment-landing data-ka-course="Geometry" data-ka-course-url="../" data-ka-assessment-title="Geometry Assessment Center">
-<header class="site-header"><div class="wrap header-inner">
-<div class="brand-group"><a class="brand-home" href="https://khaemenesacademy.org/">K</a><a class="brand-copy" href="../index.html"><strong>Khaemenes Geometry</strong><small>Strict Mastery Evidence</small></a></div>
-<div class="header-tools"><a class="header-control" href="../index.html">Course Home</a><a class="header-control" href="administration-guide.html">Administration Guide</a><button class="header-control" onclick="print()">Print / Save PDF</button></div>
-</div></header>
+<body data-math-assessment-blueprint="v1" data-assessment-runtime="gateway-single-owner">
+
+<nav class="breadcrumb" aria-label="Breadcrumb">
+  <a href="https://vervenveda.com/">Verve N Veda</a> ›
+  <a href="https://vervenveda.com/Khaemenes_High.github.io/">Khaemenes High</a> ›
+  <a href="../">Geometry</a> › Assessment Center
+</nav>
+
+<header class="hero">
+  <div class="hero-inner">
+    <p class="kicker">Geometry · Assessment &amp; Mastery</p>
+    <h1>Geometry Assessment Center</h1>
+    <p class="subtitle">One clear pathway from readiness to course completion</p>
+    <p class="lead">Use the readiness diagnostic for planning, weekly and unit assessments for mastery evidence, and cumulative midterm/final assessments for mixed-evidence course completion.</p>
+    <div class="actions">
+      <a class="btn primary" href="../diagnostic/">Readiness Diagnostic</a>
+      <a class="btn" href="weekly-mastery.html">Weekly Mastery</a>
+      <a class="btn" href="../">Course Home</a>
+    </div>
+  </div>
+</header>
+
+<div class="info-strip" aria-label="Assessment information">
+  <button type="button" data-info="mastery">Mastery Standard</button>
+  <button type="button" data-info="evidence">Evidence Sequence</button>
+  <button type="button" data-info="completion">Course Completion</button>
+</div>
+
 <main>
-<section class="unit-hero"><div class="wrap"><p class="eyebrow">Evidence, correction, retake, mastery</p><h1>Geometry Assessment Center</h1><p>Every graded progression gate requires at least 80% mastery. Browser-local results are learning and evaluator evidence; official credit is determined from the retained evidence record.</p><div class="actions"><a class="btn primary" href="weekly-mastery.html">Weekly Mastery</a><a class="btn" href="administration-guide.html">Read Administration Guide</a><a class="btn" href="../records/course-completion-certificate.html">Completion Record</a></div></div></section>
+  <section class="section">
+    <div class="section-head">
+      <h2>Course-Wide Assessments</h2>
+      <p>Readiness, weekly mastery, retention, and cumulative assessments each have a distinct role. Formal mastery gates retain the 80% standard.</p>
+    </div>
+    <div class="grid">
+      <article class="card">
+        <h3>Readiness Diagnostic</h3>
+        <p>40 non-gating questions covering equations, proportions, coordinate graphing, radicals, measurement, and geometric reasoning.</p>
+        <a class="btn dark" href="../diagnostic/">Open Diagnostic</a>
+      </article>
+      <article class="card">
+        <h3>Weekly Mastery</h3>
+        <p>36 weekly mastery gates with 10 questions per week and an 8/10 mastery requirement.</p>
+        <a class="btn dark" href="weekly-mastery.html">Open Weekly Mastery</a>
+      </article>
+      <article class="card">
+        <h3>Spaced Retention Lab</h3>
+        <p>Non-gating retrieval forms combining current and delayed evidence to strengthen retention.</p>
+        <a class="btn dark" href="retention-lab.html">Open Retention Lab</a>
+      </article>
+      <article class="card">
+        <h3>Midterm · Mixed Evidence</h3>
+        <p>60 selected-response questions across Units 01–06 plus 6 required human-reviewed constructed responses.</p>
+        <a class="btn dark" href="midterm.html">Open Midterm</a>
+      </article>
+      <article class="card">
+        <h3>Final · Mixed Evidence</h3>
+        <p>100 selected-response questions across Units 01–13 plus 10 required human-reviewed constructed responses.</p>
+        <a class="btn dark" href="final.html">Open Final</a>
+      </article>
+      <article class="card">
+        <h3>Administration Guide</h3>
+        <p>Mastery rules, correction/retake sequence, accommodations, integrity, privacy, and evaluator guidance.</p>
+        <a class="btn dark" href="administration-guide.html">Open Guide</a>
+      </article>
+    </div>
+  </section>
 
-<section class="section"><div class="wrap"><div class="section-head"><p class="eyebrow">Course-wide evidence</p><h2>Readiness and cumulative assessments</h2></div><div class="resource-grid">
-<a class="card" href="../diagnostic/"><h3>40-Question Diagnostic</h3><p>Non-gating Algebra I, proportion, coordinate, measurement, and reasoning readiness evidence.</p></a>
-<a class="card" href="weekly-mastery.html"><h3>36 Weekly Mastery Gates</h3><p>10 questions per week · 360 unique prompts · 8/10 required · five depth dimensions represented every week.</p></a>
-<a class="card" href="retention-lab.html"><h3>Spaced Retention Lab</h3><p>Non-gating 10-question forms · 8 current + 2 delayed · five-dimension balance preserved.</p></a>
-<a class="card" href="weekly-mastery-answer-key-v2.json"><h3>Weekly Evaluator Key</h3><p>All 360 graded weekly prompts with answers, explanations, and reasoning dimensions.</p></a>
-<a class="card" href="midterm.html"><h3>Midterm · Mixed Evidence</h3><p>60 selected-response questions across Units 01–06 plus 6 required human-reviewed constructed responses. All three 80% thresholds must be met.</p></a>
-<a class="card" href="final.html"><h3>Final · Mixed Evidence</h3><p>100 selected-response questions across Units 01–13 plus 10 required human-reviewed constructed responses. All three 80% thresholds must be met.</p></a>
-<a class="card" href="administration-guide.html"><h3>Administration Guide</h3><p>Mastery rules, evidence sequence, constructed-response rubric, accommodations, corrections, integrity, privacy, and record status.</p></a>
-<a class="card" href="../records/course-completion-certificate.html"><h3>Completion Record</h3><p>Locks until all 90 lesson gates, 36 weekly gates, 13 unit checks, both cumulative exams, 13 investigations, and the capstone/defense evidence are complete.</p></a>
-</div></div></section>
-
-<section class="section"><div class="wrap"><div class="section-head"><p class="eyebrow">Formal unit evidence</p><h2>13 cumulative 20-question mastery checks</h2><p>Each unit check represents every instructional week in the unit and balances procedural fluency, multi-step application, representation/interpretation, error analysis, and transfer reasoning. All unit lesson and weekly gates must already be mastered before the check opens.</p></div><div class="resource-grid">
-<a class="card" href="../units/unit-01/assessment/mastery-check.html"><h3>Unit 01 Mastery</h3><p>Foundations, Constructions &amp; Geometric Reasoning · 20 questions · ≥80% required</p></a>
-<a class="card" href="../units/unit-02/assessment/mastery-check.html"><h3>Unit 02 Mastery</h3><p>Transformations, Symmetry &amp; Congruence · 20 questions · ≥80% required</p></a>
-<a class="card" href="../units/unit-03/assessment/mastery-check.html"><h3>Unit 03 Mastery</h3><p>Triangle Congruence &amp; Proof · 20 questions · ≥80% required</p></a>
-<a class="card" href="../units/unit-04/assessment/mastery-check.html"><h3>Unit 04 Mastery</h3><p>Parallel Lines, Slopes &amp; Coordinate Proof · 20 questions · ≥80% required</p></a>
-<a class="card" href="../units/unit-05/assessment/mastery-check.html"><h3>Unit 05 Mastery</h3><p>Similarity, Dilations &amp; Proportional Reasoning · 20 questions · ≥80% required</p></a>
-<a class="card" href="../units/unit-06/assessment/mastery-check.html"><h3>Unit 06 Mastery</h3><p>Right Triangles, Trigonometry &amp; Bearings · 20 questions · ≥80% required</p></a>
-<a class="card" href="../units/unit-07/assessment/mastery-check.html"><h3>Unit 07 Mastery</h3><p>Polygons &amp; Quadrilaterals · 20 questions · ≥80% required</p></a>
-<a class="card" href="../units/unit-08/assessment/mastery-check.html"><h3>Unit 08 Mastery</h3><p>Circles, Arcs &amp; Tangency · 20 questions · ≥80% required</p></a>
-<a class="card" href="../units/unit-09/assessment/mastery-check.html"><h3>Unit 09 Mastery</h3><p>Analytic Geometry, Loci &amp; Conic Connections · 20 questions · ≥80% required</p></a>
-<a class="card" href="../units/unit-10/assessment/mastery-check.html"><h3>Unit 10 Mastery</h3><p>Area, Measurement &amp; Geometric Probability · 20 questions · ≥80% required</p></a>
-<a class="card" href="../units/unit-11/assessment/mastery-check.html"><h3>Unit 11 Mastery</h3><p>Solids, Surface Area &amp; Volume · 20 questions · ≥80% required</p></a>
-<a class="card" href="../units/unit-12/assessment/mastery-check.html"><h3>Unit 12 Mastery</h3><p>CAD, Scale Drawing &amp; Spatial Design · 20 questions · ≥80% required</p></a>
-<a class="card" href="../units/unit-13/assessment/mastery-check.html"><h3>Unit 13 Mastery</h3><p>Geometry Modeling Capstone &amp; Defense · 20 questions · ≥80% required</p></a>
-</div></div></section>
+  <section class="section">
+    <div class="section-head">
+      <h2>Unit Mastery Checks</h2>
+      <p>Each formal unit check contains 20 questions and requires at least 80% mastery. Prior lesson and weekly evidence must already be complete where the course gate requires it.</p>
+    </div>
+    <div class="mastery-grid">
+      <a class="mastery-card" href="../units/unit-01/assessment/mastery-check.html"><span class="mastery-num">01</span><span class="mastery-copy"><strong>Foundations &amp; Geometric Reasoning</strong><span>20 questions · ≥80%</span></span><span class="mastery-arrow">→</span></a>
+      <a class="mastery-card" href="../units/unit-02/assessment/mastery-check.html"><span class="mastery-num">02</span><span class="mastery-copy"><strong>Transformations, Symmetry &amp; Congruence</strong><span>20 questions · ≥80%</span></span><span class="mastery-arrow">→</span></a>
+      <a class="mastery-card" href="../units/unit-03/assessment/mastery-check.html"><span class="mastery-num">03</span><span class="mastery-copy"><strong>Triangle Congruence &amp; Proof</strong><span>20 questions · ≥80%</span></span><span class="mastery-arrow">→</span></a>
+      <a class="mastery-card" href="../units/unit-04/assessment/mastery-check.html"><span class="mastery-num">04</span><span class="mastery-copy"><strong>Parallel Lines, Slopes &amp; Coordinate Proof</strong><span>20 questions · ≥80%</span></span><span class="mastery-arrow">→</span></a>
+      <a class="mastery-card" href="../units/unit-05/assessment/mastery-check.html"><span class="mastery-num">05</span><span class="mastery-copy"><strong>Similarity, Dilations &amp; Proportional Reasoning</strong><span>20 questions · ≥80%</span></span><span class="mastery-arrow">→</span></a>
+      <a class="mastery-card" href="../units/unit-06/assessment/mastery-check.html"><span class="mastery-num">06</span><span class="mastery-copy"><strong>Right Triangles, Trigonometry &amp; Bearings</strong><span>20 questions · ≥80%</span></span><span class="mastery-arrow">→</span></a>
+      <a class="mastery-card" href="../units/unit-07/assessment/mastery-check.html"><span class="mastery-num">07</span><span class="mastery-copy"><strong>Polygons &amp; Quadrilaterals</strong><span>20 questions · ≥80%</span></span><span class="mastery-arrow">→</span></a>
+      <a class="mastery-card" href="../units/unit-08/assessment/mastery-check.html"><span class="mastery-num">08</span><span class="mastery-copy"><strong>Circles, Arcs &amp; Tangency</strong><span>20 questions · ≥80%</span></span><span class="mastery-arrow">→</span></a>
+      <a class="mastery-card" href="../units/unit-09/assessment/mastery-check.html"><span class="mastery-num">09</span><span class="mastery-copy"><strong>Analytic Geometry, Loci &amp; Conic Connections</strong><span>20 questions · ≥80%</span></span><span class="mastery-arrow">→</span></a>
+      <a class="mastery-card" href="../units/unit-10/assessment/mastery-check.html"><span class="mastery-num">10</span><span class="mastery-copy"><strong>Area, Measurement &amp; Geometric Probability</strong><span>20 questions · ≥80%</span></span><span class="mastery-arrow">→</span></a>
+      <a class="mastery-card" href="../units/unit-11/assessment/mastery-check.html"><span class="mastery-num">11</span><span class="mastery-copy"><strong>Solids, Surface Area &amp; Volume</strong><span>20 questions · ≥80%</span></span><span class="mastery-arrow">→</span></a>
+      <a class="mastery-card" href="../units/unit-12/assessment/mastery-check.html"><span class="mastery-num">12</span><span class="mastery-copy"><strong>CAD, Scale Drawing &amp; Spatial Design</strong><span>20 questions · ≥80%</span></span><span class="mastery-arrow">→</span></a>
+      <a class="mastery-card" href="../units/unit-13/assessment/mastery-check.html"><span class="mastery-num">13</span><span class="mastery-copy"><strong>Geometry Modeling Capstone &amp; Defense</strong><span>20 questions · ≥80%</span></span><span class="mastery-arrow">→</span></a>
+    </div>
+    <p class="notice">Sub-80 mastery attempts remain learning evidence. They do not unlock the next gated stage until the required mastery standard is met.</p>
+  </section>
 </main>
-<footer class="ka-assessment-footer"><div>Khaemenes Academy · Geometry · Assessment & Completion</div><nav aria-label="Course footer navigation"><a href="../">Course Home</a><a href="./">Assessments</a><a href="https://vervenveda.com/Khaemenes_High.github.io/">High School</a><a href="https://vervenveda.com/">Verve N Veda</a></nav></footer>
-<!-- Canonical KA page chrome. The toolbar remains governed by its protected-assessment safety policy. -->
-<script src="https://vervenveda.com/assets/vnv-333-ticker.js"></script>
-<script src="https://vervenveda.com/assets/vnv-ticker-autopopulate.js" data-vnv-ticker-autopopulate></script>
-<script src="https://vervenveda.com/assets/vnv-header-autopopulate.js"></script>
-<script src="../../../shared/assessment-landing-chrome.js?v=1.0.1"></script>
-<script src="https://vervenveda.com/assets/vnv-language.js" data-official-vnv-language="true"></script>
-<script src="https://vervenveda.com/assets/vnv-ecosystem-toolbar.js" data-official-vnv-ecosystem-toolbar="true"></script>
+
+<dialog id="infoDialog">
+  <div class="dialog-head"><h2 id="infoTitle"></h2></div>
+  <div class="dialog-body" id="infoBody"></div>
+  <div class="dialog-actions"><button class="btn dark" id="closeInfo" type="button">Close</button></div>
+</dialog>
+
+<footer>Khaemenes Academy · Geometry · Assessment &amp; Completion</footer>
+
+<script>
+const info={
+ mastery:{title:"Mastery Standard",body:"Formal Geometry progression gates require at least 80% mastery. Scores below 80% remain useful learning evidence and lead to correction and retry rather than unlocking the next gated stage."},
+ evidence:{title:"Evidence Sequence",body:"Readiness is planning evidence. Weekly mastery confirms current learning. Unit mastery confirms cumulative unit evidence. Midterm and final combine selected responses with required constructed-response review."},
+ completion:{title:"Course Completion",body:"Completion depends on the retained course evidence record, including lessons, weekly gates, unit checks, cumulative exams, investigations, and capstone/defense requirements."}
+};
+const dialog=document.getElementById("infoDialog"),title=document.getElementById("infoTitle"),body=document.getElementById("infoBody");
+document.querySelectorAll("[data-info]").forEach(button=>button.addEventListener("click",()=>{const item=info[button.dataset.info];title.textContent=item.title;body.textContent=item.body;if(typeof dialog.showModal==="function")dialog.showModal();else dialog.setAttribute("open","")}));
+document.getElementById("closeInfo").addEventListener("click",()=>dialog.close());
+dialog.addEventListener("click",e=>{if(e.target===dialog)dialog.close()});
+</script>
+
+<script src="../../assets/math-learning-tools-v2.js" defer></script>
+<script src="https://vervenveda.com/assets/vnv-ecosystem-toolbar.js" defer></script>
+<script src="../../../../assets/vnv-language.js?v=20261118-high-school-bounded-refresh-1" defer data-official-vnv-language="true"></script>
 </body>
 </html>
