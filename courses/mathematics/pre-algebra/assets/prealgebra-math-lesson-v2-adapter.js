@@ -294,3 +294,15 @@
  window.KhaemenesPreAlgebraLessonV2=Object.freeze(api);
  if(document.readyState==="loading")document.addEventListener("DOMContentLoaded",normalize,{once:true});else normalize();
 })();
+
+/* Shared High School mathematics hardening layer.
+   Non-destructive: verified storage, learner record, evidence authority and progression ledger. */
+;(()=>{
+ if(window.KhaemenesMathHardeningLoader||document.getElementById("khaeMathHardeningLoaderScript"))return;
+ const s=document.createElement("script");
+ s.id="khaeMathHardeningLoaderScript";
+ s.src=new URL("../../assets/math-hardening-loader-v1.js",document.currentScript?.src||location.href).href;
+ s.async=false;
+ s.onerror=()=>console.warn("Shared mathematics hardening layer unavailable; existing lesson behavior remains active.");
+ (document.head||document.documentElement).appendChild(s);
+})();
