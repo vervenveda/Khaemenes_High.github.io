@@ -44,7 +44,7 @@ ok(patchedW8?.answer===0,"Week 8 perimeter answer key correction is applied");ok
 
 const authorityRel="assets/mastery-authority-v1.js",authorityStore={};
 ok(exists(authorityRel),"canonical mastery authority exists");
-const authorityContext={window:{},localStorage:{getItem:key=>authorityStore[key]??null}};
+const authorityContext={window:{KhaemenesMathHardeningLoader:true},localStorage:{getItem:key=>authorityStore[key]??null}};
 if(exists(authorityRel))loadScript(authorityRel,authorityContext);
 const authority=authorityContext.window.KhaemenesAlgebra1MasteryAuthority;
 ok(authority?.version==="1.4"&&authority?.threshold===80&&authority?.focused_assessment==="v1.2","canonical mastery authority exposes v1.4 / 80% / focused-assessment contract");
