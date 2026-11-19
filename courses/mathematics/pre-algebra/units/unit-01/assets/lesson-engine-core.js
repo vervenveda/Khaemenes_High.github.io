@@ -955,12 +955,16 @@
 
       if (readyToAdvance) {
         nextLink.href = targetHref;
-        nextLink.textContent = `${targetTitle} →`;
+        nextLink.textContent = `Next Lesson · ${targetTitle} →`;
         nextLink.classList.remove("locked");
+        nextLink.classList.add("is-ready");
+        nextLink.setAttribute("aria-label", `Next Lesson: ${targetTitle}`);
       } else {
-        nextLink.href = "#practice";
-        nextLink.textContent = `Complete checklist + ${CONFIG.masteryThreshold}% mastery to unlock ${targetTitle} →`;
+        nextLink.href = "#lessonCompletion";
+        nextLink.textContent = `Next Lesson · Locked until checklist + ${CONFIG.masteryThreshold}% mastery`;
         nextLink.classList.add("locked");
+        nextLink.classList.remove("is-ready");
+        nextLink.setAttribute("aria-label", `Next Lesson locked. Complete every checklist item and reach ${CONFIG.masteryThreshold}% mastery.`);
       }
     }
   }
@@ -1104,6 +1108,7 @@
       if (link.dataset.locked !== "true") return;
       event.preventDefault();
       showMasteryModal(link.dataset.targetTitle || "the next lesson");
+      $("#lessonCompletion")?.scrollIntoView({ behavior: "smooth", block: "start" });
     });
 
     document.addEventListener("click", event => {
