@@ -11,7 +11,6 @@
 <meta content="#07111d" name="theme-color"/>
 <meta content="dark light" name="color-scheme"/>
 <link rel="manifest" href="manifest.webmanifest"/>
-<link rel="stylesheet" href="../assets/math-assessment-workspace-v1.css"/>
 <meta content="width=device-width,initial-scale=1" name="viewport"/>
 <title>Pre-Algebra</title>
 <style>
@@ -4342,10 +4341,8 @@ const LEGACY_STORAGE_KEYS = ["KHAE_MATH9_PREALGEBRA_FORGE_V1"];
 const PROFILE_PIN_KEY = "khaemenes-high-pinned-courses-v2";
 const PROFILE_COURSE_ID = "pre-algebra";
 let state=loadState(),view="dashboard",activeWeek=1;
-let weeklyMasteryMode=false;
 let activeQuiz=[];
 let activeExams={};
-let activeExamName="midterm";
 const $=id=>document.getElementById(id);
 const esc=v=>String(v??"").replace(/[&<>"']/g,m=>({"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","'":"&#39;"}[m]));
 function validState(candidate){
@@ -4452,20 +4449,7 @@ function readPinnedCourses(){return window.KhaemenesHighCoursePins?.readPins()||
 function courseIsPinned(){return readPinnedCourses().includes(PROFILE_COURSE_ID)}
 function updatePinButton(){const button=$("pinCourseButton");if(!button)return;const ready=!!window.KhaemenesHighCoursePins;const pinned=ready&&courseIsPinned();button.disabled=!ready;button.setAttribute("aria-pressed",String(pinned));button.textContent=!ready?"Pin unavailable":pinned?"★ Pinned to Profile":"☆ Pin to Profile";button.title=!ready?"Course pin storage is temporarily unavailable":pinned?"Remove Pre-Algebra from the student profile":"Pin Pre-Algebra to the student profile"}
 function toggleCoursePin(){const store=window.KhaemenesHighCoursePins;if(!store)return alert("Course pin storage is unavailable; reload the page.");let pinned=readPinnedCourses();const wasPinned=pinned.includes(PROFILE_COURSE_ID);pinned=wasPinned?pinned.filter(id=>id!==PROFILE_COURSE_ID):[PROFILE_COURSE_ID,...pinned.filter(id=>id!==PROFILE_COURSE_ID)];if(!store.writePins(pinned))return alert("This browser could not save the profile pin.");updatePinButton();const status=$("pinCourseStatus");if(status)status.textContent=wasPinned?"Pre-Algebra was removed from the student profile.":"Pre-Algebra was pinned to the student profile."}
-function syncAssessmentSurface(){
-  const enabled=view==="exams"||(view==="week"&&weeklyMasteryMode);
-  const mode=view==="exams"?activeExamName:(weeklyMasteryMode?"weekly":null);
-  document.body.classList.toggle("math-assessment-surface",enabled);
-  if(enabled&&mode)document.body.dataset.mathAssessmentMode=mode;
-  else delete document.body.dataset.mathAssessmentMode;
-  window.dispatchEvent(new CustomEvent("khaemenes-math-assessment-mode",{detail:{enabled,mode}}));
-}
-function render(){
-  syncAssessmentSurface();
-  renderStudentSelect();renderWeekList();setActiveButtons();updatePinButton();
-  ({dashboard,overview,week,scope,tools,games,exams,capstone,reports,standards}[view]||dashboard)();
-  window.dispatchEvent(new CustomEvent("khaemenes-prealgebra-rendered",{detail:{view,activeWeek}}));
-}function setActiveButtons(){document.querySelectorAll("[data-view]").forEach(b=>b.classList.toggle("active",b.dataset.view===view))}function renderStudentSelect(){$("studentSelect").innerHTML=state.students.map(s=>`<option value="${s.id}" ${s.id===state.activeId?"selected":""}>${esc(s.name)}</option>`).join("")}function renderWeekList(){let s=student();$("weekList").innerHTML=APP.weeks.map(w=>{let qb=s?quizBest(s,w.week):0,tag=qb>=APP.passingTarget?"good":qb?"bad":"";return`<button class="weekBtn ${w.week===activeWeek?"active":""}" data-week="${w.week}"><span><strong>${w.week}</strong> ${esc(w.title)}</span><span class="pill ${tag}">${qb||"—"}</span></button>`}).join("");document.querySelectorAll("[data-week]").forEach(b=>b.onclick=()=>{activeWeek=+b.dataset.week;view="week";weeklyMasteryMode=false;render()})}
+function render(){renderStudentSelect();renderWeekList();setActiveButtons();updatePinButton();({dashboard,overview,week,scope,tools,games,exams,capstone,reports,standards}[view]||dashboard)()}function setActiveButtons(){document.querySelectorAll("[data-view]").forEach(b=>b.classList.toggle("active",b.dataset.view===view))}function renderStudentSelect(){$("studentSelect").innerHTML=state.students.map(s=>`<option value="${s.id}" ${s.id===state.activeId?"selected":""}>${esc(s.name)}</option>`).join("")}function renderWeekList(){let s=student();$("weekList").innerHTML=APP.weeks.map(w=>{let qb=s?quizBest(s,w.week):0,tag=qb>=APP.passingTarget?"good":qb?"bad":"";return`<button class="weekBtn ${w.week===activeWeek?"active":""}" data-week="${w.week}"><span><strong>${w.week}</strong> ${esc(w.title)}</span><span class="pill ${tag}">${qb||"—"}</span></button>`}).join("");document.querySelectorAll("[data-week]").forEach(b=>b.onclick=()=>{activeWeek=+b.dataset.week;view="week";render()})}
 
 function dashboard(){
   let s=student(),st=stats(s),needs=st.needs.length?`Recommended review: Weeks ${st.needs.slice(0,12).join(", ")}${st.needs.length>12?"…":""}`:"No review flags yet.";
@@ -4519,17 +4503,9 @@ function lessonsHTML(w,r){
   return days.map((d,i)=>`<div class="lesson"><div class="lessonHead"><div><h4>${d}: ${titles[i]}</h4><p><strong>Objective:</strong> ${objectives[i]}</p></div><label class="check"><input id="l_${d}" type="checkbox" ${r.lessons[d]?"checked":""}> Done</label></div><p>${activities[i]}</p>${i===0?`<div class="actions"><a class="button" href="${esc(unitHref(w))}">Open Complete ${w.unitNumber===0?"Diagnostic":"Unit"}</a></div>`:""}<label for="n_${d}">Notes, reasoning, or correction record</label><textarea id="n_${d}">${esc(r.notes[d]||"")}</textarea></div>`).join("");
 }
 
-function weeklyMasterySummary(w,r){
-  const official=quizBest(student(),w.week),valid=(r.quiz.attempts||[]).filter(validWeeklyMasteryAttempt),draft=r.quiz.draft;
-  const stateLabel=draft?"Resume current draft":"Start mastery check";
-  return`<div class="unit-link-card weekly-mastery-launch"><h3>Weekly Mastery Check</h3><p class="section-note">10 questions · 2 in each reasoning dimension · mastery target ${APP.passingTarget}%. Open the check in the dedicated one-column assessment workspace.</p><p><strong>Official v2 best:</strong> ${official?official+"%":"—"} · <strong>Valid attempts:</strong> ${valid.length}</p><div class="actions"><button type="button" onclick="startWeeklyMastery()">${stateLabel}</button></div></div>`;
-}
-function startWeeklyMastery(){weeklyMasteryMode=true;syncAssessmentSurface();render()}
-function closeWeeklyMastery(){weeklyMasteryMode=false;syncAssessmentSurface();render()}
 function week(){
   let s=student(),w=APP.weeks.find(x=>x.week===activeWeek),r=weekRec(s,w.week),qb=quizBest(s,w.week),completion=weekCompletion(s,w.week);
-  if(weeklyMasteryMode){weeklyMasteryAssessment(w,r);return}
-  $("content").innerHTML=`<div class="card"><span class="pill">Week ${w.week}</span><span class="pill">Unit ${w.unitNumber}</span><span class="pill">${esc(w.domain)}</span><h3>${esc(w.title)}</h3><p><strong>Unit:</strong> ${esc(w.unitTitle)}</p><p><strong>Big Idea:</strong> ${esc(w.bigIdea)}</p><p>${w.tags.map(x=>`<span class="pill">${esc(x)}</span>`).join("")}</p><div class="progress" aria-label="Weekly completion"><span style="width:${completion}%"></span></div><p class="small">${lessonPct(s,w.week)}% lesson plan · ${assignPct(s,w.week)}% assignments · ${qb||0}% quiz mastery · ${completion}% completion</p>${qb&&qb<APP.passingTarget?`<p class="notice">Below ${APP.passingTarget}% mastery. Review the complete unit lesson, correct errors, and retake. The best score and attempt history are preserved.</p>`:""}<div class="unit-link-card"><strong>Complete instruction lives in the unit.</strong><p class="section-note">The full unit page connects the actual lessons, worked examples, pathway support, practice, projects, and assessments. The planner below helps organize the week; it does not replace those lessons.</p><div class="actions"><a class="button" href="${esc(unitHref(w))}">Open Full ${w.unitNumber===0?"Diagnostic":"Unit"}</a><a class="button secondary" target="_blank" rel="noopener" href="${APP.tools[0].url}">Scientific Calculator</a></div></div><div class="actions"><button class="secondary" type="button" onclick="weeklyMasteryMode=false;activeWeek=Math.max(1,activeWeek-1);render()">← Previous</button><button class="secondary" type="button" onclick="weeklyMasteryMode=false;activeWeek=Math.min(APP.weeks.length,activeWeek+1);render()">Next →</button><button class="ghost" type="button" onclick="repeatWeek()">Log a Review Cycle</button></div></div><div class="grid"><div class="card col8"><h3>Weekly Study Planner</h3><p class="section-note">Use these five sessions flexibly. A learner may combine or repeat sessions based on diagnostic evidence and mastery.</p>${lessonsHTML(w,r)}</div><div class="card col4"><h3>Assignments</h3>${[["Practice & Corrections",20,"Complete the linked unit practice with written work, checking, and corrections."],["Tool / Model Lab",20,"Use a calculator, graph, table, number line, diagram, or model to investigate and explain."],["Application & Reflection",30,"Solve contextual problems with units, judge reasonableness, and reflect on readiness."]].map((a,i)=>`<div class="assignment"><label class="check"><input id="a_${i}" type="checkbox" ${r.assignments[i]?"checked":""}> Complete</label><h4>${a[0]}</h4><p>${a[2]}</p><p class="small">Suggested evidence: ${a[1]} points</p></div>`).join("")}${weeklyMasterySummary(w,r)}<h3>Work Space</h3><label for="work">Calculations, explanations, questions, or correction notes</label><textarea id="work">${esc(r.work||"")}</textarea></div></div>`;
+  $("content").innerHTML=`<div class="card"><span class="pill">Week ${w.week}</span><span class="pill">Unit ${w.unitNumber}</span><span class="pill">${esc(w.domain)}</span><h3>${esc(w.title)}</h3><p><strong>Unit:</strong> ${esc(w.unitTitle)}</p><p><strong>Big Idea:</strong> ${esc(w.bigIdea)}</p><p>${w.tags.map(x=>`<span class="pill">${esc(x)}</span>`).join("")}</p><div class="progress" aria-label="Weekly completion"><span style="width:${completion}%"></span></div><p class="small">${lessonPct(s,w.week)}% lesson plan · ${assignPct(s,w.week)}% assignments · ${qb||0}% quiz mastery · ${completion}% completion</p>${qb&&qb<APP.passingTarget?`<p class="notice">Below ${APP.passingTarget}% mastery. Review the complete unit lesson, correct errors, and retake. The best score and attempt history are preserved.</p>`:""}<div class="unit-link-card"><strong>Complete instruction lives in the unit.</strong><p class="section-note">The full unit page connects the actual lessons, worked examples, pathway support, practice, projects, and assessments. The planner below helps organize the week; it does not replace those lessons.</p><div class="actions"><a class="button" href="${esc(unitHref(w))}">Open Full ${w.unitNumber===0?"Diagnostic":"Unit"}</a><a class="button secondary" target="_blank" rel="noopener" href="${APP.tools[0].url}">Scientific Calculator</a></div></div><div class="actions"><button class="secondary" type="button" onclick="activeWeek=Math.max(1,activeWeek-1);render()">← Previous</button><button class="secondary" type="button" onclick="activeWeek=Math.min(APP.weeks.length,activeWeek+1);render()">Next →</button><button class="ghost" type="button" onclick="repeatWeek()">Log a Review Cycle</button></div></div><div class="grid"><div class="card col8"><h3>Weekly Study Planner</h3><p class="section-note">Use these five sessions flexibly. A learner may combine or repeat sessions based on diagnostic evidence and mastery.</p>${lessonsHTML(w,r)}</div><div class="card col4"><h3>Assignments</h3>${[["Practice & Corrections",20,"Complete the linked unit practice with written work, checking, and corrections."],["Tool / Model Lab",20,"Use a calculator, graph, table, number line, diagram, or model to investigate and explain."],["Application & Reflection",30,"Solve contextual problems with units, judge reasonableness, and reflect on readiness."]].map((a,i)=>`<div class="assignment"><label class="check"><input id="a_${i}" type="checkbox" ${r.assignments[i]?"checked":""}> Complete</label><h4>${a[0]}</h4><p>${a[2]}</p><p class="small">Suggested evidence: ${a[1]} points</p></div>`).join("")}<h3>Weekly Mastery Check</h3>${quizForm(w,r)}<h3>Work Space</h3><label for="work">Calculations, explanations, questions, or correction notes</label><textarea id="work">${esc(r.work||"")}</textarea></div></div>`;
   ["Monday","Tuesday","Wednesday","Thursday","Friday"].forEach(d=>{$(`l_${d}`).onchange=e=>{r.lessons[d]=e.target.checked;save();render()};$(`n_${d}`).oninput=e=>{r.notes[d]=e.target.value;save()}});
   [0,1,2].forEach(i=>$(`a_${i}`).onchange=e=>{r.assignments[i]=e.target.checked;save();render()});
   $("work").oninput=e=>{r.work=e.target.value;save()};
@@ -4544,49 +4520,12 @@ function prepareQuestion(q){
   const mixed=shuffle(q[1].map((text,original)=>({text,original})));
   return{prompt:q[0],choices:mixed.map(x=>x.text),answer:mixed.findIndex(x=>x.original===q[2]),id:q[3]||null,dimension:q[4]||null,retrievalFromWeek:q[5]??null};
 }
-function ensureWeeklyQuizDraft(w,r){
-  const sourceIds=w.quiz.map(q=>q[3]).filter(Boolean);
-  const prior=r.quiz.draft;
-  const valid=prior&&prior.schema==="prealgebra-weekly-mastery-draft-v1"&&prior.assessmentVersion===WEEKLY_MASTERY_VERSION&&prior.week===w.week&&Array.isArray(prior.questions)&&prior.questions.length===10&&
-    prior.questions.every(q=>q?.id)&&sourceIds.length===10&&prior.questions.every(q=>sourceIds.includes(q.id));
-  if(valid){
-    prior.answers??={};prior.work??={};activeQuiz=prior.questions;return prior;
-  }
-  const questions=w.quiz.map(prepareQuestion);
-  const draft={schema:"prealgebra-weekly-mastery-draft-v1",assessmentVersion:WEEKLY_MASTERY_VERSION,week:w.week,createdAt:new Date().toISOString(),questions,answers:{},work:{}};
-  r.quiz.draft=draft;activeQuiz=questions;
-  if(!save())console.warn("Pre-Algebra weekly mastery draft could not be verified as persistent.");
-  return draft;
-}
-function recordWeeklyAnswer(index,value){
-  const w=APP.weeks.find(x=>x.week===activeWeek),r=weekRec(student(),w.week),draft=ensureWeeklyQuizDraft(w,r);
-  draft.answers[String(index)]=Number(value);
-  const ok=save(),status=document.getElementById("weeklyMasteryDraftStatus");
-  if(status)status.textContent=ok?"Answer saved and verified.":"Answer is retained on this page, but browser storage could not be verified.";
-}
-function recordWeeklyWork(index,value,persistNow=false){
-  const w=APP.weeks.find(x=>x.week===activeWeek),r=weekRec(student(),w.week),draft=ensureWeeklyQuizDraft(w,r);
-  draft.work[String(index)]=String(value??"");
-  if(!persistNow)return;
-  const ok=save(),status=document.getElementById("weeklyMasteryDraftStatus");
-  if(status)status.textContent=ok?"Problem-solving work saved and verified.":"Problem-solving work is retained on this page, but browser storage could not be verified.";
-}
-function clearWeeklyMasteryDraft(){
-  const w=APP.weeks.find(x=>x.week===activeWeek),r=weekRec(student(),w.week);
-  if(!confirm("Clear this Week "+w.week+" mastery-check draft? Submitted attempt history will be preserved."))return;
-  const prior=r.quiz.draft;r.quiz.draft=null;activeQuiz=[];
-  if(!save()){r.quiz.draft=prior;activeQuiz=prior?.questions||[];return alert("The draft reset could not be verified, so the current draft was kept.");}
-  weeklyMasteryAssessment(w,r);
-}
 function quizForm(w,r){
-  const draft=ensureWeeklyQuizDraft(w,r),s=student(),official=quizBest(s,w.week),valid=(r.quiz.attempts||[]).filter(validWeeklyMasteryAttempt),legacy=(r.quiz.attempts||[]).length-valid.length;
+  activeQuiz=w.quiz.map(prepareQuestion);
+  const s=student(),official=quizBest(s,w.week),valid=(r.quiz.attempts||[]).filter(validWeeklyMasteryAttempt),legacy=(r.quiz.attempts||[]).length-valid.length;
   const feedback=(r.quiz.lastFeedback||[]).length?`<div class="feedback-list"><strong>Last-attempt review</strong><ul>${r.quiz.lastFeedback.map(f=>`<li>${esc(f)}</li>`).join("")}</ul></div>`:"";
   const blueprint=w.week===1?"10 current-focus questions":"8 current-focus + 2 delayed-retrieval questions";
-  return`<p class="notice"><strong>Canonical weekly mastery v2:</strong> 10 questions · 2 in each reasoning dimension · ${blueprint}. Legacy five-question attempts remain history only.</p><p class="score">Official v2 best: ${official||"—"}%</p><p class="small">${valid.length?`Valid v2 attempts: ${valid.map(a=>Math.round(a.score)+"%").join(" | ")}`:"No canonical v2 attempts yet."}${legacy? ` · Legacy attempts preserved: ${legacy}`:""}</p><p id="weeklyMasteryDraftStatus" class="small" role="status" aria-live="polite">Draft started ${new Date(draft.createdAt).toLocaleString()} · selections and work remain stable until submitted or cleared.</p><form onsubmit="return false">${activeQuiz.map((q,i)=>`<fieldset class="q"><legend><strong>${i+1}. ${esc(q.prompt)}</strong></legend>${q.retrievalFromWeek?`<p class="small">Retrieval bridge · Week ${q.retrievalFromWeek}</p>`:""}${q.choices.map((choice,j)=>`<label class="choice"><input type="radio" name="q${i}" value="${j}" ${Number(draft.answers[String(i)])===j?"checked":""} onchange="recordWeeklyAnswer(${i},this.value)"> ${esc(choice)}</label>`).join("")}<label class="math-work-label" for="weekly_work_${i}">Show your work · ungraded workspace</label><textarea class="math-workspace" id="weekly_work_${i}" oninput="recordWeeklyWork(${i},this.value,false)" onchange="recordWeeklyWork(${i},this.value,true)" placeholder="Use this space for calculations, representations, checks, or reasoning…">${esc(draft.work[String(i)]||"")}</textarea></fieldset>`).join("")}<div class="actions"><button type="button" onclick="submitQuiz()">Submit Mastery Check</button><button class="secondary" type="button" onclick="clearWeeklyMasteryDraft()">Clear Draft</button><button class="ghost" type="button" onclick="closeWeeklyMastery()">Return to Weekly Planner</button></div></form>${feedback}`;
-}
-function weeklyMasteryAssessment(w,r){
-  const objective=w.week===1?"Demonstrate current readiness across the week’s five reasoning dimensions.":"Demonstrate current-week mastery while retrieving earlier mathematics and explaining reasoning.";
-  $("content").innerHTML=`<div class="grid"><div class="card col12" id="assessmentWorkspace" tabindex="-1"><p class="eyebrow">Week ${w.week} · Pre-Algebra Mastery</p><h3>${esc(w.title)}</h3><p class="section-note">${esc(objective)}</p><div class="notice"><strong>Directions:</strong> Complete all 10 questions. Use the large workspace beneath each problem for calculations, representations, checks, or corrections. A score of ${APP.passingTarget}% or higher meets the weekly mastery target.</div>${quizForm(w,r)}</div></div>`;
+  return`<p class="notice"><strong>Canonical weekly mastery v2:</strong> 10 questions · 2 in each reasoning dimension · ${blueprint}. Legacy five-question attempts remain history only.</p><p class="score">Official v2 best: ${official||"—"}</p><p class="small">${valid.length?`Valid v2 attempts: ${valid.map(a=>Math.round(a.score)+"%").join(" | ")}`:"No canonical v2 attempts yet."}${legacy? ` · Legacy attempts preserved: ${legacy}`:""}</p><form>${activeQuiz.map((q,i)=>`<fieldset class="q"><legend><strong>${i+1}. ${esc(q.prompt)}</strong></legend>${q.retrievalFromWeek?`<p class="small">Retrieval bridge · Week ${q.retrievalFromWeek}</p>`:""}${q.choices.map((c,j)=>`<label class="choice"><input type="radio" name="q${i}" value="${j}"> ${esc(c)}</label>`).join("")}</fieldset>`).join("")}<div class="actions"><button type="button" onclick="submitQuiz()">Submit Mastery Check</button><button class="secondary" type="reset">Clear</button></div></form>${feedback}`;
 }
 
 function scope(){ $("content").innerHTML=`<div class="card"><h3>36-Week Scope & Sequence</h3><p class="section-note">Every row opens the corresponding complete unit or diagnostic page.</p><div class="actions"><button type="button" onclick="downloadScope()">Download Scope CSV</button></div><div class="table-wrap">${scopeTable(APP.weeks)}</div></div>`}
@@ -4615,79 +4554,12 @@ function makeExam(domains){
   domains.forEach(d=>shuffle(APP.quizBank[d]).slice(0,4).forEach(q=>{const p=prepareQuestion(q);arr.push({skill:d,title:p.prompt,choices:p.choices,answer:p.answer})}));
   return arr;
 }
-function examRecord(name){
-  let s=student();ensure(s);
-  s.progress.exams[name]??={best:0,attempts:[]};
-  s.progress.exams[name].attempts??=[];
-  return s.progress.exams[name];
-}
-function ensureExamDraft(name){
-  const rec=examRecord(name),domains=name==="midterm"?APP.midtermDomains:APP.finalDomains,expected=domains.length*4;
-  if(rec.draft&&Array.isArray(rec.draft.questions)&&rec.draft.questions.length===expected){
-    activeExams[name]=rec.draft.questions;
-    rec.draft.answers??={};
-    rec.draft.work??={};
-    return rec.draft;
-  }
-  const questions=makeExam(domains);
-  rec.draft={schema:"khae-prealgebra-cumulative-draft-v1",createdAt:new Date().toISOString(),questions,answers:{},work:{}};
-  activeExams[name]=questions;
-  if(!save())console.warn("Pre-Algebra cumulative draft could not be verified as persistent.");
-  return rec.draft;
-}
-function selectExam(name){
-  if(!["midterm","final"].includes(name))return;
-  activeExamName=name;
-  syncAssessmentSurface();
-  exams();
-  document.getElementById("assessmentWorkspace")?.focus({preventScroll:true});
-}
-function recordExamAnswer(name,index,value){
-  const draft=ensureExamDraft(name);
-  draft.answers[String(index)]=Number(value);
-  const ok=save(),status=document.getElementById("assessmentDraftStatus");
-  if(status)status.textContent=ok?"Answer saved.":"Answer is retained on this page, but browser storage could not be verified.";
-}
-function recordExamWork(name,index,value,persistNow=false){
-  const draft=ensureExamDraft(name);
-  draft.work[String(index)]=String(value??"");
-  if(!persistNow)return;
-  const ok=save(),status=document.getElementById("assessmentDraftStatus");
-  if(status)status.textContent=ok?"Problem-solving work saved.":"Problem-solving work is retained on this page, but browser storage could not be verified.";
-}
-function clearExamDraft(name){
-  if(!confirm("Clear the current "+name+" draft? Previous submitted attempts will be preserved."))return;
-  const rec=examRecord(name),priorDraft=rec.draft,priorActive=activeExams[name];
-  rec.draft=null;activeExams[name]=[];
-  if(!save()){rec.draft=priorDraft;activeExams[name]=priorActive;return alert("The draft reset could not be verified, so the current draft was kept.");}
-  exams();
-}
 function exams(){
   let s=student();ensure(s);
-  const name=activeExamName,mid=examRecord("midterm"),fin=examRecord("final"),draft=ensureExamDraft(name),qs=draft.questions;
-  const label=name==="midterm"?"Midterm":"Final Examination";
-  const best=Math.round(examRecord(name).best||0)||"—";
-  $("content").innerHTML=`<div class="grid"><div class="card col12" id="assessmentWorkspace" tabindex="-1">
-    <p class="eyebrow">Cumulative Assessment Center</p>
-    <h3>${label}</h3>
-    <p class="section-note">Work on one assessment at a time. Your current randomized form and selections are preserved as a local draft until you submit or deliberately clear it.</p>
-    <div class="tabs" role="tablist" aria-label="Choose cumulative assessment">
-      <button class="tab ${name==="midterm"?"active":""}" type="button" onclick="selectExam('midterm')" aria-selected="${name==="midterm"}">Midterm · 28 Questions · Best ${Math.round(mid.best||0)||"—"}%</button>
-      <button class="tab ${name==="final"?"active":""}" type="button" onclick="selectExam('final')" aria-selected="${name==="final"}">Final · 52 Questions · Best ${Math.round(fin.best||0)||"—"}%</button>
-    </div>
-    <div class="notice"><strong>Current assessment:</strong> ${label} · ${qs.length} questions · mastery target ${APP.passingTarget}%. Question order remains stable for this draft.</div>
-    <p id="assessmentDraftStatus" class="small" role="status" aria-live="polite">Draft started ${new Date(draft.createdAt).toLocaleString()} · Best recorded score: ${best}%.</p>
-    ${examForm(name,qs,draft.answers||{},draft.work||{})}
-  </div></div>`;
+  activeExams.midterm=makeExam(APP.midtermDomains);activeExams.final=makeExam(APP.finalDomains);
+  $("content").innerHTML=`<div class="grid"><div class="card col6"><h3>Midterm</h3><p>Best: <span class="score">${Math.round(s.progress.exams.midterm?.best||0)||"—"}</span></p><p class="section-note">Question and answer order are regenerated when this page opens.</p>${examForm("midterm",activeExams.midterm)}</div><div class="card col6"><h3>Final</h3><p>Best: <span class="score">${Math.round(s.progress.exams.final?.best||0)||"—"}</span></p><p class="section-note">The final samples every course domain and randomizes answer positions.</p>${examForm("final",activeExams.final)}</div></div>`;
 }
-function examForm(name,qs,answers={},work={}){
-  const blocks=[];
-  for(let start=0;start<qs.length;start+=10){
-    const slice=qs.slice(start,start+10),end=start+slice.length;
-    blocks.push(`<section class="panel"><h4>Questions ${start+1}–${end} of ${qs.length}</h4><div class="question-list">${slice.map((q,offset)=>{const i=start+offset;return`<fieldset class="q"><legend><strong>${i+1}. ${esc(q.skill)}: ${esc(q.title)}</strong></legend>${q.choices.map((c,j)=>`<label class="choice"><input type="radio" name="${name}_${i}" value="${j}" ${Number(answers[String(i)])===j?"checked":""} onchange="recordExamAnswer('${name}',${i},this.value)"> ${esc(c)}</label>`).join("")}<label class="math-work-label" for="${name}_work_${i}">Show your work · ungraded workspace</label><textarea class="math-workspace" id="${name}_work_${i}" oninput="recordExamWork('${name}',${i},this.value,false)" onchange="recordExamWork('${name}',${i},this.value,true)" placeholder="Use this space for calculations, graphs, checks, or reasoning…">${esc(work[String(i)]||"")}</textarea></fieldset>`}).join("")}</div></section>`);
-  }
-  return`<form onsubmit="return false">${blocks.join("")}<div class="actions"><button type="button" onclick="submitExam('${name}')">Submit ${name==="midterm"?"Midterm":"Final"}</button><button class="secondary" type="button" onclick="clearExamDraft('${name}')">Clear Draft</button><button class="ghost" type="button" onclick="window.print()">Print Current Form</button></div></form>`;
-}
+function examForm(name,qs){return`<form>${qs.map((q,i)=>`<details class="q"><summary><strong>${i+1}. ${esc(q.skill)}: ${esc(q.title)}</strong></summary>${q.choices.map((c,j)=>`<label class="choice"><input type="radio" name="${name}_${i}" value="${j}"> ${esc(c)}</label>`).join("")}</details>`).join("")}<div class="actions"><button type="button" onclick="submitExam('${name}')">Submit</button><button class="secondary" type="reset">Clear</button></div></form>`}
 
 function capstone(){
   let s=student();ensure(s);const rubric=s.progress.capstone.rubric;
@@ -4718,59 +4590,45 @@ function dataTool(){let tokens=$("dataSet").value.split(",").map(x=>x.trim()).fi
 function sciTool(){let n=num("sciNum");if(!need([n],"sciOut"))return;if(n===0)return $("sciOut").textContent="0 is written as 0 × 10^0 by convention.";let e=Math.floor(Math.log10(Math.abs(n))),a=n/10**e;$("sciOut").textContent=`${n} = ${a.toFixed(8).replace(/0+$/,'').replace(/\.$/,'')} × 10^${e}`}
 
 function submitQuiz(){
-  let s=student(),w=APP.weeks.find(x=>x.week===activeWeek),r=weekRec(s,w.week),draft=ensureWeeklyQuizDraft(w,r),correct=0,answers=[],feedback=[];
+  let s=student(),w=APP.weeks.find(x=>x.week===activeWeek),r=weekRec(s,w.week),correct=0,answers=[],feedback=[];
+  for(let i=0;i<activeQuiz.length;i++){
+    let chosen=document.querySelector(`input[name="q${i}"]:checked`);
+    if(!chosen)return alert("Please answer every mastery-check question.");
+    let val=+chosen.value;answers.push(val);
+    if(val===activeQuiz[i].answer)correct++;else feedback.push(`${i+1}. Review: ${activeQuiz[i].prompt} Correct answer: ${activeQuiz[i].choices[activeQuiz[i].answer]}`);
+  }
+  let score=Math.round(correct/activeQuiz.length*100);
   if(activeQuiz.length!==10||activeQuiz.some(item=>!item.id||!item.dimension)){
     alert("The canonical 10-question weekly mastery form is not available. Refresh this page before submitting; no mastery attempt was recorded.");
     return;
   }
-  for(let i=0;i<activeQuiz.length;i++){
-    const raw=draft.answers?.[String(i)];
-    if(raw===undefined||raw===null)return alert("Please answer every mastery-check question. Question "+(i+1)+" is unanswered.");
-    const val=Number(raw);answers.push(val);
-    if(val===activeQuiz[i].answer)correct++;else feedback.push(`${i+1}. Review: ${activeQuiz[i].prompt} Correct answer: ${activeQuiz[i].choices[activeQuiz[i].answer]}`);
-  }
-  document.querySelectorAll("[id^=\"weekly_work_\"]").forEach((node,i)=>{draft.work[String(i)]=node.value});
-  const score=Math.round(correct/activeQuiz.length*100);
   if(r.quiz.attempts.length&&!r.quiz.legacyBest&&Number(r.quiz.best)>0)r.quiz.legacyBest=Number(r.quiz.best);
   const attempt={
-    date:new Date().toISOString(),score,answers,work_snapshot:{...(draft.work||{})},
+    date:new Date().toISOString(),score,answers,
     question_count:activeQuiz.length,
     assessment_version:WEEKLY_MASTERY_VERSION,
     question_ids:activeQuiz.map(item=>item.id),
     dimensions:activeQuiz.map(item=>item.dimension),
     retrieval_from_weeks:[...new Set(activeQuiz.map(item=>item.retrievalFromWeek).filter(Number.isFinite))]
   };
-  const priorQuiz=JSON.parse(JSON.stringify(r.quiz));
   r.quiz.attempts.push(attempt);
   r.quiz.v2Best=Math.max(Number(r.quiz.v2Best)||0,score);
   r.quiz.best=Math.max(Number(r.quiz.best)||0,score);
   r.quiz.lastFeedback=feedback.length?feedback:["All answers were correct. Explain one solution in writing to preserve the reasoning."];
-  r.quiz.draft=null;activeQuiz=[];
-  if(!save()){r.quiz=priorQuiz;activeQuiz=priorQuiz.draft?.questions||[];return alert("Mastery-check submission paused because browser storage could not be verified. Your current draft was restored; export your learner record before leaving if storage remains unavailable.");}
-  weeklyMasteryMode=false;syncAssessmentSurface();
-  alert(`Mastery check submitted: ${score}%. Official v2 best: ${quizBest(s,w.week)}%.`);
-  render();
+  save();alert(`Mastery check submitted: ${score}%. Official v2 best: ${quizBest(s,w.week)}%.`);render();
 }
 function submitExam(name){
-  let s=student(),draft=ensureExamDraft(name),qs=draft.questions||[],correct=0,answers=[];
+  let s=student(),qs=activeExams[name]||[],correct=0,answers=[];
   if(!qs.length)return alert("Reopen the assessment page to generate this assessment.");
-  for(let i=0;i<qs.length;i++){
-    const value=draft.answers?.[String(i)];
-    if(value===undefined||value===null)return alert("Please answer every question before submitting. Question "+(i+1)+" is unanswered.");
-    const val=Number(value);answers.push(val);if(val===qs[i].answer)correct++;
-  }
-  const score=Math.round(correct/qs.length*100);ensure(s);
-  const rec=examRecord(name),attempt={date:new Date().toISOString(),score,answers,work_snapshot:{...(draft.work||{})},version:qs.map(q=>q.title),question_count:qs.length,mastery_met:score>=APP.passingTarget},priorBest=Number(rec.best)||0;
-  rec.attempts.push(attempt);rec.best=Math.max(priorBest,score);rec.draft=null;activeExams[name]=[];
-  if(!save()){rec.attempts.pop();rec.best=priorBest;rec.draft=draft;activeExams[name]=qs;return alert("Submission paused because browser storage could not be verified. Your draft remains available on this page.");}
-  alert(`${name==="midterm"?"Midterm":"Final"} submitted: ${score}%. ${score>=APP.passingTarget?"Mastery target met.":"Review and retake when ready."}`);
-  exams();
+  for(let i=0;i<qs.length;i++){let chosen=document.querySelector(`input[name="${name}_${i}"]:checked`);if(!chosen)return alert("Please answer every question.");let val=+chosen.value;answers.push(val);if(val===qs[i].answer)correct++}
+  let score=Math.round(correct/qs.length*100);ensure(s);s.progress.exams[name]??={best:0,attempts:[]};s.progress.exams[name].attempts.push({date:new Date().toISOString(),score,answers,version:qs.map(q=>q.title)});s.progress.exams[name].best=Math.max(s.progress.exams[name].best||0,score);save();alert(`${name} submitted: ${score}%.`);render();
 }
 function repeatWeek(){let r=weekRec(student(),activeWeek);r.repeats=(r.repeats||0)+1;r.lastRepeat=new Date().toISOString();save();alert("Review cycle logged. Reopen the complete unit, correct work, and retake when ready.");render()}
 function addCapstone(){let s=student();ensure(s);let note=$("capNote").value.trim();if(!note)return alert("Add a capstone note.");s.progress.capstone.logs.push({date:new Date().toISOString(),stage:$("capStage").value,note});save();render()}
 function addStudent(name){let s={id:uid(),name,created:new Date().toISOString(),progress:{weeks:{},exams:{},capstone:{logs:[],score:0,rubric:{}}}};state.students.push(s);state.activeId=s.id;save();render()}
 
 function reportHTML(){let s=student(),st=stats(s);return`<!doctype html><html><head><meta charset="utf-8"><title>Pre-Algebra Report - ${esc(s.name)}</title><style>body{font-family:Aptos,"Segoe UI",Arial,sans-serif;padding:32px;color:#111;line-height:1.55}table{width:100%;border-collapse:collapse}td,th{border:1px solid #aaa;padding:8px;vertical-align:top}.kpi{display:inline-block;border:1px solid #999;padding:12px;margin:5px}th{background:#eee}a{color:#123e77}</style></head><body><h1>Khaemenes Open-Age Pre-Algebra Report</h1><p><strong>Learner:</strong> ${esc(s.name)}<br><strong>Date:</strong> ${new Date().toLocaleDateString()}</p><div class="kpi"><strong>Overall mastery:</strong> ${st.course||"—"}%</div><div class="kpi"><strong>Lesson completion:</strong> ${st.lessons}%</div><div class="kpi"><strong>Assignment completion:</strong> ${st.assignments||"—"}%</div><div class="kpi"><strong>Quiz mastery:</strong> ${st.quizzes||"—"}%</div>${progressTable(s)}<h2>Capstone Logs</h2>${capstoneTable(s)}
+<script src="../../../assets/vnv-dual-ticker-v1.js" defer data-high-dual-ticker-guard="1"></script>
 </body></html>`}
 function printReport(){let w=window.open("","_blank");if(!w)return alert("Allow pop-ups to print the report.");w.document.write(reportHTML());w.document.close();w.focus();setTimeout(()=>w.print(),400)}
 function downloadReport(){download(`PreAlgebra_Report_${safe(student().name)}.html`,reportHTML(),"text/html")}
@@ -4794,7 +4652,6 @@ function openActivity(launcher){
 function closeActivity(){if(!activityDialog)return;activityFrame.src="about:blank";if(typeof activityDialog.close==="function"&&activityDialog.open)activityDialog.close();else activityDialog.removeAttribute("open");document.body.classList.remove("activity-open");lastActivityLauncher?.focus()}
 document.querySelectorAll("[data-view]").forEach(b=>b.onclick=()=>openCourseView(b.dataset.view));
 function openCourseView(target,{moveFocus=true}={}){
-  weeklyMasteryMode=false;
   view=target;
   closeCourseMenus();
   render();
@@ -4837,17 +4694,10 @@ if(!state.students.length)addStudent("First Learner");else render();
 <script>
 if("serviceWorker" in navigator){
   window.addEventListener("load",()=>{
-    const hadController=Boolean(navigator.serviceWorker.controller);
-    let recoveryReload=false;
-    navigator.serviceWorker.addEventListener("controllerchange",()=>{
-      if(!hadController||recoveryReload)return;
-      recoveryReload=true;
-      location.reload();
-    },{once:true});
-    navigator.serviceWorker.register("service-worker.js",{scope:"./",updateViaCache:"none"})
-      .then(registration=>registration.update())
-      .catch(error=>console.warn("Pre-Algebra offline core could not be registered.",error));
-  },{once:true});
+    navigator.serviceWorker.register("service-worker.js",{scope:"./"}).catch(error=>{
+      console.warn("Pre-Algebra offline core could not be registered.",error);
+    });
+  });
 }
 </script>
 <script defer src="https://vervenveda.com/assets/vnv-333-ticker.js" data-ka-blueprint="ticker-333"></script>
