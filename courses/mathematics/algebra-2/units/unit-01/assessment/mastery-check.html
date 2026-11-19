@@ -360,7 +360,7 @@ footer{
     <p class="kicker">Unit 01 · Mastery Assessment</p>
     <h1>Algebra II Unit 01 Mastery Check</h1>
     <p class="subtitle">Advanced Functions, Transformations & Inverses</p>
-    <p class="lead">Twenty questions selected from a 36-question depth bank, balanced across five reasoning dimensions and six Unit 01 lessons.</p>
+    <p class="lead">Twenty-five questions selected from a 36-question depth bank, balanced as five questions in each reasoning dimension across all six Unit 01 lessons.</p>
     <div class="hero-actions">
       <button class="btn primary" id="startButton" type="button">Start Assessment</button>
       <button class="btn" id="printButton" type="button">Print Assessment</button>
@@ -392,10 +392,10 @@ footer{
     <div class="assessment-top">
       <div>
         <h2>Assessment Record</h2>
-        <p>20 questions · Mastery threshold: 80% · Novelty-aware retakes</p>
+        <p>25 questions · Exact mastery threshold: 20/25 = 80% · Fixed-form retries</p>
       </div>
       <div class="progress-wrap">
-        <p class="progress-label" id="progressLabel">0/20 answered</p>
+        <p class="progress-label" id="progressLabel">0/25 answered</p>
         <div class="progress" aria-hidden="true"><span id="progressBar"></span></div>
       </div>
     </div>
@@ -404,7 +404,7 @@ footer{
       <button id="prevSection" type="button">← Previous</button>
       <button type="button" data-section="0">1–10</button>
       <button type="button" data-section="1">11–20</button>
-      
+      <button type="button" data-section="2">21–25</button>
       <button id="nextSection" type="button">Next →</button>
     </nav>
 
@@ -420,7 +420,7 @@ footer{
       <button class="btn dark" id="submitButton" type="button">Submit &amp; Score</button>
       <button class="btn" id="saveButton" type="button">Save Draft</button>
       <button class="btn" id="exportButton" type="button">Export Result</button>
-      <button class="btn" id="resetButton" type="button">Reset</button>
+      <button class="btn" id="resetButton" type="button">Retry Same Form</button>
     </div>
     <p id="status" role="status" aria-live="polite">Ready.</p>
   </section>
@@ -444,7 +444,7 @@ const CONFIG={
   lesson_key:"khaemenes-algebra2-lesson-progress-v1",
   record_key:"u01-mastery",
   mastery_threshold:80,
-  question_count:20,
+  question_count:25,
   page_size:10
 };
 const DIMS=["procedural-fluency","multi-step-application","representation-interpretation","error-analysis","transfer-reasoning"];
@@ -494,36 +494,30 @@ function priorQuestionIds(){
   const last=attempts.length?attempts[attempts.length-1]:null;
   return new Set(Array.isArray(last?.question_ids)?last.question_ids.map(String):[]);
 }
-function shuffle(values){
-  const out=[...values];
-  for(let i=out.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[out[i],out[j]]=[out[j],out[i]]}
-  return out;
-}
 function selectForm(){
-  const prior=priorQuestionIds(),used=new Set(),lessonCounts={},picked=[];
+  const used=new Set(),lessonCounts={},picked=[];
   const choose=list=>{
     const available=list.filter(q=>!used.has(String(q.id)));
     if(!available.length)return null;
     const min=Math.min(...available.map(q=>lessonCounts[q.lesson]||0));
-    const least=available.filter(q=>(lessonCounts[q.lesson]||0)===min);
-    const unseen=least.filter(q=>!prior.has(String(q.id)));
-    return shuffle(unseen.length?unseen:least)[0]||null;
+    return available.filter(q=>(lessonCounts[q.lesson]||0)===min)
+      .sort((a,b)=>(Number(a.lesson)-Number(b.lesson))||(Number(a.difficulty||2)-Number(b.difficulty||2))||String(a.id).localeCompare(String(b.id)))[0]||null;
   };
   for(const dim of DIMS){
-    for(let i=0;i<4;i++){
+    for(let i=0;i<5;i++){
       const q=choose(BANK.filter(item=>item.dimension===dim));if(!q)break;
       picked.push(q);used.add(String(q.id));lessonCounts[q.lesson]=(lessonCounts[q.lesson]||0)+1;
     }
   }
-  while(picked.length<20){
+  while(picked.length<25){
     const q=choose(BANK);if(!q)break;
     picked.push(q);used.add(String(q.id));lessonCounts[q.lesson]=(lessonCounts[q.lesson]||0)+1;
   }
-  return shuffle(picked).slice(0,20);
+  return picked.slice(0,25);
 }
 function loadDraft(){
   const d=readJSON(CONFIG.storage_key,null);
-  if(d&&Array.isArray(d.question_ids)&&d.question_ids.length===20){
+  if(d&&Array.isArray(d.question_ids)&&d.question_ids.length===25){
     const byId=new Map(BANK.map(q=>[String(q.id),q]));
     const qs=d.question_ids.map(id=>byId.get(String(id)));
     if(qs.every(Boolean))return {...d,questions:qs,answers:d.answers||{},work:d.work||{},submitted:Boolean(d.submitted)};
@@ -539,8 +533,8 @@ function saveDraft(message=true){
   if(message)$("#status").textContent=ok?"Draft saved and verified locally.":"Draft could not be verified. Keep the page open and export before leaving.";
   return ok;
 }
-function answeredCount(){return Object.keys(draft.answers).filter(k=>Number(k)>=0&&Number(k)<20).length}
-function updateProgress(){const n=answeredCount();$("#progressLabel").textContent=n+"/20 answered";$("#progressBar").style.width=(n/20*100)+"%"}
+function answeredCount(){return Object.keys(draft.answers).filter(k=>Number(k)>=0&&Number(k)<25).length}
+function updateProgress(){const n=answeredCount();$("#progressLabel").textContent=n+"/25 answered";$("#progressBar").style.width=(n/25*100)+"%"}
 function applyGate(){
   const missing=missingPrereqs(),gate=$("#gateNotice");
   if(!missing.length){gate.hidden=true;return true}
@@ -550,7 +544,7 @@ function applyGate(){
   return false;
 }
 function render(){
-  const start=section*10,end=Math.min(20,start+10),host=$("#questionList");
+  const start=section*10,end=Math.min(25,start+10),host=$("#questionList");
   host.innerHTML="";
   for(let i=start;i<end;i++){
     const q=draft.questions[i],selected=draft.answers[i],work=draft.work[i]||"";
@@ -560,21 +554,21 @@ function render(){
     host.append(article);
   }
   document.querySelectorAll("[data-section]").forEach(b=>b.classList.toggle("current",Number(b.dataset.section)===section));
-  $("#prevSection").disabled=section===0;$("#nextSection").disabled=section===1;
-  $("#bottomPrevSection").disabled=section===0;$("#bottomNextSection").textContent=section===1?"Review / Submit ↑":"Next →";
+  $("#prevSection").disabled=section===0;$("#nextSection").disabled=section===2;
+  $("#bottomPrevSection").disabled=section===0;$("#bottomNextSection").textContent=section===2?"Review / Submit ↑":"Next →";
   updateProgress();applyGate();
 }
 function buildResult(){
   let right=0;const missed=[],breakdown={};
   draft.questions.forEach((q,i)=>{breakdown[q.dimension]??={correct:0,total:0};breakdown[q.dimension].total++;if(Number(draft.answers[i])===q.answer){right++;breakdown[q.dimension].correct++}else missed.push(q.id)});
-  const score=Math.round(right/20*100);
+  const score=Math.round(right/25*100);
   const prior=priorQuestionIds();
   return {
     result_schema:"khaemenes-algebra2-assessment-v2",
     attempt_id:"a2-"+Date.now()+"-"+Math.random().toString(36).slice(2,11),
     question_ids:draft.questions.map(q=>String(q.id)),
     answer_locked:true,assessment_id:CONFIG.record_key,title:CONFIG.title,submitted_at:new Date().toISOString(),
-    score,right,total:20,missed,learner:$("#studentName").value.trim()||activeProfile()?.name||"",pathway:"Core",purpose:"mastery",
+    score,right,total:25,missed,learner:$("#studentName").value.trim()||activeProfile()?.name||"",pathway:"Core",purpose:"mastery",
     dimension_counts:Object.fromEntries(DIMS.map(d=>[d,draft.questions.filter(q=>q.dimension===d).length])),
     lesson_coverage:[...new Set(draft.questions.map(q=>q.lesson))].sort((a,b)=>a-b),
     difficulty_counts:Object.fromEntries([1,2,3].map(d=>[d,draft.questions.filter(q=>Number(q.difficulty)===d).length])),
@@ -596,14 +590,14 @@ function showResult(result){
   $("#results").hidden=false;
   $("#resultTitle").textContent=result.mastery?"Unit 01 mastery demonstrated":"Correction and retake required";
   $("#resultScore").textContent=result.score+"% · "+result.right+"/"+result.total;
-  $("#scoreBox").value=result.right+" / "+result.total;
+  $("#scoreBox").value=result.score+"%";
   $("#breakdown").innerHTML=Object.entries(result.breakdown||{}).map(([k,v])=>'<p><strong>'+esc(k.replaceAll("-"," "))+'</strong><br>'+v.correct+'/'+v.total+' ('+Math.round(v.correct/v.total*100)+'%)</p>').join("");
 }
 function submit(){
   if(!applyGate())return;
-  if(answeredCount()!==20){
+  if(answeredCount()!==25){
     const missing=draft.questions.findIndex((_,i)=>!Object.prototype.hasOwnProperty.call(draft.answers,String(i)));
-    section=Math.floor(missing/10);render();$("#status").textContent="Answer all 20 questions before scoring. First unanswered item: question "+(missing+1)+".";return;
+    section=Math.floor(missing/10);render();$("#status").textContent="Answer all 25 questions before scoring. First unanswered item: question "+(missing+1)+".";return;
   }
   const result=buildResult();
   draft.submitted=true;
@@ -615,27 +609,27 @@ function submit(){
   $("#results").scrollIntoView({behavior:"smooth",block:"center"});
 }
 function newAttempt(){
-  if(!confirm("Start a new Unit 01 attempt? Saved attempt history will remain intact."))return;
+  if(!confirm("Retry the same Unit 01 mastery form? Saved attempt history will remain intact."))return;
   const questions=selectForm();draft={question_ids:questions.map(q=>q.id),questions,answers:{},work:{},submitted:false,begun_at:new Date().toISOString()};
   writeJSON(CONFIG.storage_key,{question_ids:draft.question_ids,answers:{},work:{},submitted:false,begun_at:draft.begun_at});
-  section=0;$("#results").hidden=true;$("#scoreBox").value="";render();$("#status").textContent="New novelty-aware form created.";
+  section=0;$("#results").hidden=true;$("#scoreBox").value="";render();$("#status").textContent="Fixed Unit 01 mastery form reopened. Saved attempt history remains intact.";
 }
 function exportResult(){
   const payload={assessment_record:readJSON(CONFIG.result_key,{}),draft:{question_ids:draft.question_ids,answers:draft.answers,work:draft.work}};
   const blob=new Blob([JSON.stringify(payload,null,2)],{type:"application/json"}),url=URL.createObjectURL(blob),a=document.createElement("a");
   a.href=url;a.download="algebra2-unit-01-mastery-result.json";a.click();setTimeout(()=>URL.revokeObjectURL(url),500);
 }
-function goSection(n){if(n<0||n>1)return;section=n;render();$("#assessment").scrollIntoView({behavior:"smooth",block:"start"})}
+function goSection(n){if(n<0||n>2)return;section=n;render();$("#assessment").scrollIntoView({behavior:"smooth",block:"start"})}
 const info={
- evidence:{title:"Mastery Evidence",body:"Unit 01 is a formal Algebra II mastery gate. The form contains 20 questions balanced across five reasoning dimensions. At least 80% is required for mastery."},
+ evidence:{title:"Mastery Evidence",body:"Unit 01 is a formal Algebra II mastery gate. The form contains 25 questions: five in each reasoning dimension. Exactly 20/25 is required for 80% mastery."},
  standard:{title:"Prerequisite Gate",body:"Before Unit 01 mastery opens, the Algebra II readiness diagnostic and all six Unit 01 lessons must each reach the 80% progression standard."},
- results:{title:"Retakes & Evidence",body:"Retakes preserve every prior attempt and prioritize questions not used on the immediately prior form. A later failed retake never erases an earlier passing score."}
+ results:{title:"Retakes & Evidence",body:"Retakes preserve every prior attempt and reopen the same 25-question form with the same option order. A later failed retry never erases an earlier passing score."}
 };
 $("#questionList").addEventListener("change",e=>{const input=e.target.closest('input[type="radio"]');if(!input||draft.submitted)return;const m=input.name.match(/^q(\d+)$/);if(!m)return;draft.answers[m[1]]=Number(input.value);saveDraft(false);updateProgress()});
 $("#questionList").addEventListener("input",e=>{const t=e.target.closest("[data-work]");if(!t||draft.submitted)return;draft.work[t.dataset.work]=t.value});
 $("#questionList").addEventListener("change",e=>{const t=e.target.closest("[data-work]");if(!t||draft.submitted)return;draft.work[t.dataset.work]=t.value;saveDraft(false)});
 document.querySelectorAll("[data-section]").forEach(b=>b.addEventListener("click",()=>goSection(Number(b.dataset.section))));
-$("#prevSection").onclick=()=>goSection(section-1);$("#nextSection").onclick=()=>goSection(section+1);$("#bottomPrevSection").onclick=()=>goSection(section-1);$("#bottomNextSection").onclick=()=>section<1?goSection(1):$("#submitButton").scrollIntoView({behavior:"smooth",block:"center"});
+$("#prevSection").onclick=()=>goSection(section-1);$("#nextSection").onclick=()=>goSection(section+1);$("#bottomPrevSection").onclick=()=>goSection(section-1);$("#bottomNextSection").onclick=()=>section<2?goSection(section+1):$("#submitButton").scrollIntoView({behavior:"smooth",block:"center"});
 $("#submitButton").onclick=submit;$("#saveButton").onclick=()=>saveDraft(true);$("#exportButton").onclick=exportResult;$("#resetButton").onclick=newAttempt;$("#startButton").onclick=()=>{$("#assessment").scrollIntoView({behavior:"smooth"});setTimeout(()=>$("#questionList input")?.focus(),250)};$("#printButton").onclick=()=>window.print();
 document.querySelectorAll("[data-info]").forEach(b=>b.onclick=()=>{const x=info[b.dataset.info];$("#infoTitle").textContent=x.title;$("#infoBody").textContent=x.body;const d=$("#infoDialog");if(typeof d.showModal==="function")d.showModal();else d.setAttribute("open","")});
 $("#closeInfo").onclick=()=>$("#infoDialog").close();
