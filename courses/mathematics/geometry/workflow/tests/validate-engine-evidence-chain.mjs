@@ -4,6 +4,7 @@ import assert from "node:assert/strict";
 import path from "node:path";
 import {fileURLToPath} from "node:url";
 const here=path.dirname(fileURLToPath(import.meta.url)),src=fs.readFileSync(path.resolve(here,"../../assets/unit-index-gates.js"),"utf8");
+const lessonTools=fs.readFileSync(path.resolve(here,"../../assets/lesson-tools.js"),"utf8");
 const m=new Map(),localStorage={getItem:k=>m.get(k)??null,setItem:(k,v)=>m.set(k,String(v))};
 const window={},document={readyState:"loading",addEventListener(){},querySelector(sel){return String(sel).includes("geometry-presentation-unifier-v1.js")?{}:null},querySelectorAll(){return []}},location={pathname:"/courses/mathematics/geometry/units/unit-02/"};
 const context={window,document,location,localStorage,JSON,Number,String,Array,Object,Math};vm.createContext(context);vm.runInContext(src,context);
@@ -12,4 +13,9 @@ const ids=Array.from(G.unitLessonIds(1));m.set("khaemenes-geometry-lesson-progre
 assert.equal(G.unitProgressionComplete(1),true);assert.equal(G.unitUnlocked(),true);
 let lessons=JSON.parse(m.get("khaemenes-geometry-lesson-progress-v1"));delete lessons[ids.at(-1)];m.set("khaemenes-geometry-lesson-progress-v1",JSON.stringify(lessons));assert.equal(G.unitProgressionComplete(1),false);assert.equal(G.unitUnlocked(),false);
 m.set("khaemenes-geometry-lesson-progress-v1",JSON.stringify(Object.fromEntries(ids.map(id=>[id,{bestScore:80}]))));m.set("khaemenes-geometry-weekly-mastery-v2",JSON.stringify({weeks:{1:{best:101},2:{best:80}}}));assert.equal(G.weekMastered(1),false);assert.equal(G.unitProgressionComplete(1),false);
+assert.match(lessonTools,/function score\(v\).*n>=0&&n<=100/);
+assert.match(lessonTools,/function unitProgressionComplete\(n\)/);
+assert.match(lessonTools,/unit===7\)return unitProgressionComplete\(6\)&&midtermMastered\(\)/);
+assert.match(lessonTools,/return unitProgressionComplete\(unit-1\)/);
+assert.doesNotMatch(lessonTools,/a=>a\.mastery_met===true\)/);
 console.log("GEOMETRY_ENGINE_REGRESSION=PASS");
