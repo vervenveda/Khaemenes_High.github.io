@@ -35,6 +35,8 @@ assert.ok(!course.includes('document.querySelectorAll("body > :not(script)")'),"
 assert.ok(!course.includes('gate.style.cssText'),"Do not reintroduce inline readiness layout overrides");
 assert.ok(!course.includes('English 9 home";home.style.cssText'),"Do not return a blocked student to same home");
 assert.ok(course.includes('home.textContent="Student Profile"'),"Provide explicit Student Profile exit");
+assert.ok(course.includes('footer.className="english9-entry-footer"'),"Readiness view must render its centered charcoal footer");
+assert.ok(html.includes("body>.english9-entry-gate .english9-entry-footer"),"Readiness footer must be styled in existing canonical CSS");
 
 const scripts=[...html.matchAll(/<script(?:\s+[^>]*)?>([\s\S]*?)<\/script>/g)].map(x=>x[1]).filter(x=>x.trim());
 for(const [i,source] of scripts.entries())new vm.Script(source,{filename:"english9-index-inline-"+i+".js"});
