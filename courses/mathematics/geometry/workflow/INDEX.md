@@ -1,4 +1,4 @@
-# Geometry · Workflow Index
+| 2026-11-19 | upgrade · Mathematics Engine v2.2.3 | [Geometry Mathematics Engine rollout](logs/2026/11/2026-11-19-mathematics-engine-v2.2.3-rollout.md) | 90/90 standard lessons enrolled; SVG/proof architecture and Geometry mastery authority preserved; assessments protected; browser/device HOLD |\n# Geometry · Workflow Index
 
 | Date | Type | Entry | State |
 | --- | --- | --- | --- |
