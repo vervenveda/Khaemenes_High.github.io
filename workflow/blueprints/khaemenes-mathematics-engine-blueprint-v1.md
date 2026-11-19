@@ -1,4 +1,4 @@
-# Khaemenes Mathematics Engine Blueprint — Version 1.0
+# Khaemenes Mathematics Engine Blueprint — Version 1.1
 
 **Program:** Verve N Veda · Khaemenes Academy Mathematics  
 **Scope:** Foundational mathematics through Higher Learning  
@@ -853,3 +853,200 @@ When migrating an existing Pre-Algebra lesson:
 5. Verify no declared text size is below 16px.
 6. Verify the lesson gate requires both checklist completion and >=80% mastery.
 7. Keep the protected Pre-Algebra course landing page unchanged unless separately approved.
+
+---
+
+## 18. Guarded higher-mathematics rollout protocol — lesson shell v2.2.3
+
+This protocol is mandatory when extending the Mathematics Engine from a proven lower course into Geometry, Algebra II, Precalculus & Trigonometry, Calculus, or Higher Learning mathematics.
+
+### 18.1 Preserve before migration
+
+Before any rollout:
+
+1. preserve the last approved lesson surface and identify its canonical reference;
+2. inventory the target course's lesson renderers, data files, laboratories, games, learner-record keys, mastery authority, and navigation;
+3. classify pages by route type:
+   - standard lesson;
+   - unit landing;
+   - practice;
+   - project/laboratory;
+   - diagnostic;
+   - quiz/unit mastery;
+   - midterm/final;
+4. record explicit protected paths.
+
+**Default protection rule:** assessment, diagnostic, midterm, final, practice, project, and mastery-check routes are excluded unless a separate assessment migration is explicitly authorized.
+
+### 18.2 One representative lesson first
+
+Do not start with a course-wide rewrite.
+
+For each new course:
+
+1. select one ordinary lesson;
+2. select one specialized lesson containing a graph, proof, construction, laboratory, simulation, or course-specific interaction;
+3. adapt the engine to the course's native lesson architecture;
+4. validate both representatives before course-wide rollout.
+
+The adapter must understand the course's real DOM/data architecture. Do not force a lower-course DOM pattern onto a higher course merely to achieve visual parity.
+
+### 18.3 Adapter ownership and release version
+
+Each adopted course receives one course-local lesson adapter that delegates presentation to the canonical Mathematics Engine while preserving course authority.
+
+Required rules:
+
+- one adapter owner per course;
+- adapter mount is idempotent;
+- dynamic lesson renderers are handled explicitly;
+- event listeners are bound once;
+- checklist interactions must work whether content exists at initial load or is rendered later;
+- the adapter may read course mastery evidence but may not replace the course mastery authority;
+- learner-record fallback keys must be course- and unit-scoped;
+- no visual migration may clear, rename, or overwrite existing learner evidence without a documented migration.
+
+Every adapter release must have a semantic version. The adapter's internal version and every adopted lesson's cache-busting query string must match.
+
+Current hardened lesson-shell release:
+
+```text
+2.2.3
+```
+
+Example:
+
+```html
+<script src="../../../assets/<course>-math-lesson-v2-adapter.js?v=2.2.3"></script>
+```
+
+A release is incomplete if the adapter code is updated but adopted lesson pages still request an older query version.
+
+### 18.4 Cache/version synchronization gate
+
+Before declaring a course rollout complete:
+
+- enumerate every adopted standard lesson page;
+- verify exactly one current course adapter reference;
+- verify the adapter query version equals the adapter's internal version;
+- verify the canonical Mathematics Engine stylesheet version is current;
+- verify no lesson still advertises prototype/read-only wording when learner evidence is live;
+- verify no stale copied engine CSS or competing local shell remains authoritative.
+
+Version drift is a release-blocking defect, not cosmetic debt.
+
+### 18.5 Completion and mastery contract
+
+Where a lesson uses a completion checklist:
+
+- passive study sections may be manually acknowledged;
+- evidence-bearing sections auto-complete only from actual evidence;
+- scored lesson practice auto-completes only when the course's mastery authority reports the required threshold;
+- a score event must immediately refresh checklist and navigation state;
+- Next Lesson remains locked until all required checklist evidence and the mastery threshold are satisfied;
+- the final lesson routes to Unit Home, synthesis, or the next authorized course step rather than inventing a nonexistent lesson.
+
+The default High School Mathematics mastery threshold remains 80% unless the course explicitly declares a different approved threshold.
+
+### 18.6 Typography and responsive acceptance
+
+Every adopted mathematics lesson must enforce:
+
+- 16px absolute minimum ordinary text and controls;
+- 18px preferred instructional body where space permits;
+- Cinzel title hierarchy;
+- Brandon Grotesque or Nunito body;
+- centered, bounded instructional width;
+- no horizontal page overflow;
+- no touching buttons;
+- adequate written-work space;
+- tablet portrait and landscape acceptance;
+- phone single-column fallback;
+- desktop centered symmetry.
+
+Older embedded CSS may not lower the effective text floor beneath the current Mathematics Engine standard.
+
+### 18.7 Navigation integrity gate
+
+For every representative lesson and then one lesson per unit, verify:
+
+- Course Home route;
+- Unit Home route;
+- Previous Lesson route where applicable;
+- Next Lesson target;
+- final-lesson destination;
+- calculator/tool route where relevant;
+- translator availability;
+- canonical header/hamburger ownership;
+- one 333 ticker and one AutoPopulate ticker where required.
+
+No lesson navigation may send a learner into a repository page, family portal, or unrelated ecosystem surface.
+
+### 18.8 Assessment firewall
+
+Lesson-engine rollout and assessment migration are separate operations.
+
+During lesson rollout:
+
+- do not edit files under `assessment/`;
+- do not edit midterm/final pages;
+- do not change assessment banks;
+- do not change scoring or closed-book restrictions;
+- do not change assessment learner-record keys.
+
+After rollout, verify representative protected assessment SHAs or confirm absence of the lesson adapter on every protected assessment route.
+
+### 18.9 Course-wide rollout order
+
+After representative lessons pass:
+
+1. migrate one unit;
+2. run source/runtime checks;
+3. verify specialized controls;
+4. verify mastery/checklist synchronization;
+5. verify version parity;
+6. continue unit-by-unit;
+7. run a full adopted-lesson inventory;
+8. verify protected assessment routes;
+9. write a dated workflow log;
+10. only then use the course as the source pattern for the next higher mathematics course.
+
+### 18.10 Required release record
+
+Every Mathematics Engine course rollout log must record:
+
+- course and repository;
+- adapter path and version;
+- canonical stylesheet version;
+- number of standard lessons adopted;
+- intentionally excluded route types;
+- representative lessons tested;
+- specialized interactions preserved;
+- typography result;
+- navigation result;
+- checklist/mastery result;
+- persistence-key result;
+- assessment-firewall result;
+- remaining browser/device HOLD items;
+- commit or release identifiers where available.
+
+### 18.11 Higher-mathematics sequence
+
+The approved progression for applying this protocol is:
+
+```text
+Pre-Algebra
+→ Algebra I
+→ Geometry
+→ Algebra II
+→ Precalculus & Trigonometry
+→ Calculus I
+→ Higher Learning mathematics
+```
+
+Each course inherits the protocol, not the lower course's exact lesson DOM. Geometry must preserve diagram/proof interactions; Algebra II must preserve advanced symbolic/modeling work; Precalculus/Trigonometry must preserve multi-representation and graphing work; Calculus must preserve analytical, numerical, graphical, and limiting-process evidence.
+
+The rule is:
+
+> Clone the governance and quality contract. Adapt the instructional shell to the mathematics.
+
