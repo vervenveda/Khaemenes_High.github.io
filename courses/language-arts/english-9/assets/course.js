@@ -73,14 +73,25 @@
     window.KhaemenesEnglish9Entry=Object.freeze({decision:()=>result});
     if(result.allow)return;
     document.documentElement.dataset.english9EntryBlocked="true";
-    const gate=document.createElement("section");gate.className="english9-entry-gate";gate.setAttribute("role","dialog");gate.setAttribute("aria-modal","true");gate.setAttribute("aria-labelledby","english9EntryTitle");
-    gate.style.cssText="position:fixed;inset:0;z-index:99999;display:grid;place-items:center;padding:20px;background:#191919eF;color:#fff";
-    const card=document.createElement("article");card.style.cssText="max-width:620px;padding:26px;border:1px solid #d7d1c5;border-radius:7px;background:#fff;color:#191919";
-    const title=document.createElement("h1");title.id="english9EntryTitle";title.textContent=result.title;title.style.fontWeight="400";
-    const message=document.createElement("p");message.textContent=result.message;
-    const link=document.createElement("a");link.href=result.href;link.textContent=result.label;link.style.cssText="display:inline-block;padding:12px 16px;border:1px solid #705719;border-radius:7px;background:#705719;color:#fff;text-decoration:none";
-    const home=document.createElement("a");home.href=new URL("../",new URL("../",document.currentScript?.src||location.href)).href;home.textContent="English 9 home";home.style.cssText="display:inline-block;margin-left:10px;padding:12px 16px;border:1px solid #d7d1c5;border-radius:7px;color:#191919;text-decoration:none";
-    card.append(title,message,link,home);gate.append(card);document.querySelectorAll("body > :not(script)").forEach(node=>{node.inert=true});document.body.append(gate);link.focus();
+    // Single reusable readiness dialog with existing canonical page CSS.
+    // Do not inert canonical tickers/header/toolbars; only the academic dashboard
+    // must be inaccessible until readiness has been completed.
+    const gate=document.createElement("section");
+    gate.className="english9-entry-gate";
+    gate.setAttribute("role","dialog");
+    gate.setAttribute("aria-labelledby","english9EntryTitle");
+    gate.setAttribute("aria-describedby","english9EntryDescription");
+    const card=document.createElement("article");card.className="english9-entry-card";
+    const title=document.createElement("h1");title.id="english9EntryTitle";title.textContent=result.title;
+    const message=document.createElement("p");message.id="english9EntryDescription";message.textContent=result.message;
+    const actions=document.createElement("div");actions.className="english9-entry-actions";
+    const link=document.createElement("a");link.href=result.href;link.textContent=result.label;
+    const home=document.createElement("a");
+    home.href="https://vervenveda.com/Khaemenes_High.github.io/grades/grade-09/student-profile/";
+    home.textContent="Student Profile";home.className="english9-entry-back";
+    actions.append(link,home);card.append(title,message,actions);gate.append(card);
+    const dashboard=document.querySelector("body > .app");if(dashboard)dashboard.inert=true;
+    document.body.append(gate);link.focus();
   }
   const pathName=typeof location!=="undefined"?String(location.pathname||""):"";
   const requiresEntry=document.body?.hasAttribute("data-english9-require-entry")||/\/weeks\/week-\d+(?:\/|$)/.test(pathName);
