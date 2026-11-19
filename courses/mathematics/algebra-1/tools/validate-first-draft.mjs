@@ -80,7 +80,7 @@ ok(transition.outgoing?.algebra2?.course === 'KH-MATH-A2', 'Algebra II outgoing 
 ok(transition.principles?.courseGradeIsNotReadinessProfile === true, 'grade and readiness remain separate');
 ok(transition.principles?.unfinishedLearningDoesNotAutomaticallyBlockProgression === true, 'unfinished learning does not automatically block progression');
 
-const surfaces = ['index.html','teacher/index.html','family/index.html','remediation/index.html','labs/index.html','projects/index.html','readiness/index.html','records/index.html','records/course-completion-certificate.html'];
+const surfaces = ['index.html','course-workspace.html','teacher/index.html','family/index.html','remediation/index.html','labs/index.html','projects/index.html','readiness/index.html','records/index.html','records/course-completion-certificate.html'];
 for (const file of surfaces) {
   ok(exists(file), `${file} exists`);
   if (exists(file)) {
@@ -89,8 +89,10 @@ for (const file of surfaces) {
   }
 }
 
-const courseHome = read('index.html');
-ok(/Algebra I/i.test(courseHome) && /id=["']units["']/.test(courseHome), 'course home identifies Algebra I and exposes unit navigation');
+const courseDoorway = read('index.html');
+ok(/Algebra I/i.test(courseDoorway) && courseDoorway.includes('href="course-workspace.html"') && courseDoorway.includes("math-minimal-landing-v1.css"), 'public course doorway is minimalist and links full instruction');
+const courseHome = read('course-workspace.html');
+ok(/Algebra I/i.test(courseHome) && /id=["']units["']/.test(courseHome), 'full course workspace identifies Algebra I and exposes unit navigation');
 ok(!/Unit 06 · The Linear Model Laboratory/i.test(courseHome), 'course root is not a leaked Unit 06 shell');
 const teacher = read('teacher/index.html');
 ok(!teacher.includes('answer-keys.json'), 'teacher portal does not reference deleted plural answer-key path');
