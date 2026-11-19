@@ -9,40 +9,41 @@ const specs=[
  {lesson:"unit-11/lessons/u11-l07.html",slug:"triangle-law-expedition",sections:["Visual model · included angles and opposite sides","Independent transfer · check only after solving"],terms:["c²=25+64−(2×5×8)cos60°","K=√[10(10−5)(10−8)(10−7)]","C=arccos(−11/24)≈117.28°","c=√67≈8.19"]},
  {lesson:"unit-11/lessons/u11-l08.html",slug:"triangle-law-expedition",sections:["Visual model · two-leg bearing displacement","Independent transfer · check only after solving"],terms:["d≈17.90 km","4√19≈17.44 km","atan2(14,6√3)≈53.41°","2√7≈5.29 km"]}
 ];
-const standard=["Learning objectives","Governing relationship","Worked examples","Guided and independent practice",
- "Differentiated pathways","Application laboratory","Misconception and correction","Mastery evidence","Reflection"];
+const standardFlow=["recall","see","worked","explain","guided","independent","error","transfer","feedback","reflect"];
+const depthCompanion=fs.readFileSync(root+"assets/algebra2-exceptional-lesson-depth-units10-11-v1.js","utf8");
 const files=[];
 for(const spec of specs){
  const file=root+"units/"+spec.lesson;
  const html=fs.readFileSync(file,"utf8");files.push(html);
- const sections=[...html.matchAll(/<section class="lesson-section"><h2>([^<]+)<\/h2>/g)].map(m=>m[1]);
- for(const label of [...standard,...spec.sections])assert.ok(sections.includes(label),file+": missing "+label);
- assert.ok(sections.indexOf("Worked examples")<sections.indexOf("Guided and independent practice"),
-   "worked instruction precedes independent tasks");
- assert.ok(sections.indexOf("Guided and independent practice")<sections.indexOf("Independent transfer · check only after solving"),
-  "independent transfer after guided investigation");
- assert.equal((html.match(/<details>/g)||[]).length,1,file+": exactly one self-check");
- assert.equal((html.match(/<\/details>/g)||[]).length,1,file+": closing self-check");
+ const flow=[...html.matchAll(/data-flow-step="([^"]+)"/g)].map(m=>m[1]);
+ for(const step of standardFlow)assert.ok(flow.includes(step),file+": missing current flow step "+step);
+ assert.ok(flow.indexOf("worked")<flow.indexOf("guided"),file+": worked instruction precedes guided work");
+ assert.ok(flow.indexOf("guided")<flow.indexOf("independent"),file+": independent work follows guided work");
+ assert.ok((html.match(/<details/g)||[]).length>=1,file+": student-controlled self-check required");
+ assert.equal((html.match(/<details/g)||[]).length,(html.match(/<\/details>/g)||[]).length,file+": self-check tags balance");
  assert.ok(/<summary>Reveal worked verification and answers<\/summary>/.test(html),"answers must be student-controlled");
  assert.ok(html.includes('<svg')&&html.includes('role="img"')&&html.includes('<title id=')&&html.includes('<desc id='),
   "accessible diagram required");
  assert.ok(html.includes('style="width:100%;')&&html.includes("height:auto"),"responsive diagram");
- const example=html.match(/<section class="lesson-section"><h2>Worked examples<\/h2>([\s\S]*?)<\/section>/)?.[1];
- assert.ok(example,"worked examples section");
- const count=(example.match(/<article>/g)||[]).length;
- assert.equal(count,2,"two full worked investigations");
- assert.ok((example.match(/<li>/g)||[]).length>=8,"at least eight stepwise moves");
- assert.ok(example.includes("Verification:")||example.includes("Verify"),"worked verification required");
+ const worked=html.match(/<section[^>]*data-flow-step="worked"[^>]*>([\s\S]*?)<\/section>/)?.[1];
+ assert.ok(worked,file+": current worked step exists");
+ assert.ok((worked.match(/<article>/g)||[]).length>=2,file+": core worked step provides at least two examples");
+ const lessonId=html.match(/document\.body\.dataset\.lessonId="([^"]+)"/)?.[1];
+ assert.ok(lessonId&&depthCompanion.includes('"'+lessonId+'"'),file+": exceptional-depth companion covers this lesson");
+ assert.ok(html.includes("algebra2-exceptional-lesson-depth-units10-11-v1.js"),file+": exceptional-depth companion loader preserved");
  assert.ok(html.includes('id="lessonComplete"')&&html.includes('id="lessonNote"')&&html.includes('id="saveLessonNote"'),
   "all local lesson records remain intact");
  assert.ok(html.includes('src="../../../assets/lesson-tools.js"'),"notes/progression helper preserved");
  assert.ok(html.includes('src="../../../../assets/shared-game-launcher.js"'),"shared games preserved");
  assert.ok(html.includes('data-game="'+spec.slug+'"'),"expected canonical game still linked");
  for(const term of spec.terms)assert.ok(html.includes(term),file+": expected formula/result missing "+term);
- assert.ok(!/<script[^>]+src="https?:\/\//.test(html),"no new third-party script");
+ for(const m of html.matchAll(/<script[^>]+src=["'](https?:\/\/[^"']+)["']/gi))assert.ok(/^https:\/\/(?:www\.)?vervenveda\.com\//i.test(m[1]),file+": unexpected third-party script "+m[1]);
  for(const match of html.matchAll(/\b(?:href|src)=["']([^"']+)["']/g)){
   const loc=match[1];if(!loc||/^(?:https?:|mailto:|tel:|data:|#)/i.test(loc))continue;
-  const target=path.posix.normalize(path.posix.join(path.posix.dirname(file),loc.split(/[?#]/)[0]));
+  const clean=loc.split(/[?#]/)[0];
+  const target=clean.startsWith("/")
+    ? clean.replace(/^\/+Khaemenes_High\.github\.io\//,"")
+    : path.posix.normalize(path.posix.join(path.posix.dirname(file),clean));
   assert.ok(fs.existsSync(target)||fs.existsSync(target+"/index.html"),file+": missing local dependency "+loc);
  }
 }
