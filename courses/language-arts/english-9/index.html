@@ -139,9 +139,61 @@ summary{cursor:pointer;font-weight:600;padding:8px 0}details details{margin:10px
 <link rel="stylesheet" href="../../../assets/vervenveda-parchment.css" data-vervenveda-parchment>
 <link rel="stylesheet" href="../../../assets/grade09-subject-parchment.css?v=20261013" data-grade09-consistency>
 <script defer src="../../../assets/academy-unified-print-header.js"></script><link rel="stylesheet" href="../../../assets/high-navigation-v1.css" data-high-navigation-css>
-  <script src="/Khaemenes_High.github.io/assets/high-school-global-chrome-v2.js" defer data-high-school-global-chrome="v2"></script>
 <script src="/Khaemenes_High.github.io/assets/high-school-root-worker-recovery-v1.js" defer data-high-root-worker-recovery="v1"></script>
-  <script src="../../../assets/vnv-dual-ticker-v1.js" defer data-high-dual-ticker-guard="1"></script>
+  <!-- Canonical VNV universal chrome: one owner per shared element. -->
+  <script src="https://vervenveda.com/assets/vnv-333-ticker.js?v=1.0.0" defer data-vnv-333-ticker="canonical"></script>
+  <script src="https://vervenveda.com/assets/vnv-ticker-autopopulate.js?v=1.0.1" defer data-vnv-ticker-autopopulate="canonical"></script>
+  <script src="https://vervenveda.com/assets/vnv-header-autopopulate.js?v=2.1.0" defer data-vnv-header-autopopulate="canonical"></script>
+  <script>
+  window.KhaemenesClassToolsConfigV1 = Object.freeze({
+    id:"english-9",
+    match:()=>/\/courses\/language-arts\/english-9\/(?:index\.html)?$/i.test(location.pathname),
+    toggleLabel:"Tools",
+    ariaLabel:"English 9 class tools",
+    tools:[
+      {type:"link",label:"Lessons",sub:"Current course work",href:"./"},
+      {type:"link",label:"Materials",sub:"Learning tools",href:"learning-tools.html"},
+      {type:"link",label:"Notes",sub:"Writing evidence",href:"evidence-studio.html"},
+      {type:"link",label:"Parent",sub:"Family support",href:"https://vervenveda.com/Khaemenes_Academy.github.io/family/"},
+      {type:"ecosystem-link",label:"Search",sub:"Search ecosystem",ecosystemId:"plera",fallbackHref:"https://vervenveda.com/PLERASearch.github.io/"},
+      {type:"help",label:"Instructions",sub:"How to use tools"}
+    ],
+    help:{
+      title:"English 9 Class Tools",
+      paragraphs:[
+        "<strong>Lessons stay primary.</strong> Use these shortcuts to return to course work, learning materials, and writing evidence.",
+        "<strong>Records stay separate.</strong> These navigation tools do not change grades, mastery, assessment results, or learner records."
+      ]
+    }
+  });
+  </script>
+  <script src="https://vervenveda.com/assets/vnv-class-tools-toolbar.js?v=1.6.1" defer data-vnv-class-tools-toolbar="canonical"></script>
+  <script src="https://vervenveda.com/assets/vnv-ecosystem-toolbar.js?v=1.0.10" defer data-vnv-ecosystem-toolbar="canonical"></script>
+  <script>
+  document.addEventListener("DOMContentLoaded",()=>{
+    window.VNV_TICKER?.autoPopulate?.({
+      label:"English 9",
+      links:[
+        {label:"Home",href:"./"},
+        {label:"Lessons",href:"./#landing-navigation"},
+        {label:"Tools",href:"learning-tools.html"},
+        {label:"Writing",href:"evidence-studio.html"},
+        {label:"Assess",href:"assessments/index.html"},
+        {label:"Guide",href:"teacher-guide.html"}
+      ]
+    });
+    window.VNV_HEADER?.mount?.({
+      title:"English 9 · Language Arts",
+      subtitle:"Khaemenes Academy · Grade 09",
+      icon:"K",
+      home:"https://vervenveda.com/Khaemenes_Academy.github.io/",
+      actions:[
+        {label:"Lessons",href:"./#landing-navigation"},
+        {label:"Assess",href:"assessments/index.html"}
+      ]
+    });
+  },{once:true});
+  </script>
   
 
 <style id="khaemenes-english-landing-release-v1">
@@ -370,7 +422,62 @@ body .main .footer{margin-top:30px!important;padding:23px 16px!important;
 }
 @media print{body .centered-course-controls .english9-primary-navigation{display:none!important}}
 </style>
-<script defer src="../../shared/high-school-class-tools-left-v1.js" data-english-course="english-9" data-ka-left-toolbar="canonical"></script>
+
+<style id="english9-universal-chrome-cleanup-v1">
+/* English 9 universal chrome compliance: presentation only. */
+html,body{min-height:100%}
+body{
+  font-size:16px!important;
+}
+body :is(button,a,input,select,textarea,summary){
+  border-radius:7px;
+}
+body :is(button,.button,.btn,.navBtn,.courseLink){
+  font-size:16px!important;
+}
+#khaeLocalEcosystemToggle,
+#khaeLocalEcosystemPanel,
+.high-nav-menu.high-nav-menu-fixed,
+#vnvEcosystemMenuButton{
+  display:none!important;
+}
+
+/* Keep the course-entry/readiness surface visually centered and readable. */
+body>[role="dialog"],
+body>.course-entry-gate,
+body>[data-course-entry-gate],
+body>[data-readiness-gate]{
+  left:50%!important;
+  right:auto!important;
+  transform:translateX(-50%)!important;
+}
+body :is(.course-entry-gate,[data-course-entry-gate],[data-readiness-gate]) :is(button,a),
+body>[role="dialog"] :is(button,a){
+  border-radius:7px!important;
+  font-size:16px!important;
+  color:#fff8e9!important;
+  -webkit-text-fill-color:#fff8e9!important;
+}
+body :is(.course-entry-gate,[data-course-entry-gate],[data-readiness-gate]) :is(button,a).secondary,
+body>[role="dialog"] :is(button,a).secondary{
+  color:#22231f!important;
+  -webkit-text-fill-color:#22231f!important;
+  background:#fffdf8!important;
+}
+body .footer{
+  width:100%!important;
+  max-width:1100px!important;
+  margin:30px auto 0!important;
+  padding:24px 18px!important;
+  border-radius:7px!important;
+  text-align:center!important;
+  font-size:16px!important;
+}
+@media print{
+  #vnv333NetworkTicker,#vnvTickerAutoPopulate,#vnvHeaderAutoPopulate,
+  #vnvClassToolsToolbar,#vnvEcosystemUtilityDock{display:none!important}
+}
+</style>
 </head>
 <body data-english9-require-entry>
 <a class="skip-link" href="#content">Skip to student workspace</a>
