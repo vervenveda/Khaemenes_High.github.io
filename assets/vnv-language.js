@@ -393,6 +393,16 @@ document.addEventListener("click",event=>{
 function init(){
  makeSelector();
  setLanguage(lang);
+ const highCourse=/\/Khaemenes_High\.github\.io\/courses\//i.test(location.pathname);
+ if(highCourse){
+  const refresh=()=>{translateTree(document.body);translatePageTitle();scheduleCoverage()};
+  [120,480,1400,3200].forEach(ms=>setTimeout(refresh,ms));
+  window.addEventListener("khaemenes-high-chrome-ready",refresh,{once:true});
+  window.addEventListener("khaemenes-math-content-ready",refresh,{once:true});
+  window.addEventListener("khaemenes-learning-continuation-ready",refresh,{once:true});
+  window.addEventListener("pageshow",refresh,{once:true});
+  return;
+ }
  const observer=new MutationObserver(records=>{
   let changed=false;
   for(const record of records){
