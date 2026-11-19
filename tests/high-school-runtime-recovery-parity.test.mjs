@@ -247,3 +247,17 @@ test("English 9 Day 1 uses finite layout retries instead of a document MutationO
  assert.match(page,/\[80,240,700,1600\]\.forEach\(ms=>setTimeout\(schedule,ms\)\)/);
  assert.match(page,/khaemenes-high-chrome-ready/);
 });
+
+
+test("persistent learner utility runtime has no perpetual DOM MutationObservers",()=>{
+ const runtime=read("assets/vnv-beta-link.js");
+ assert.doesNotMatch(runtime,/new\s+MutationObserver/);
+ assert.match(runtime,/\[120,480,1400\]\.forEach\(ms=>setTimeout\(retireLegacyBetaButton,ms\)\)/);
+ assert.match(runtime,/\[120,480,1400\]\.forEach\(ms=>setTimeout\(alignHighProfileSurface,ms\)\)/);
+ assert.match(runtime,/\[250,900,2200\]\.forEach\(ms=>setTimeout\(scan,ms\)\)/);
+});
+
+test("course entry contract requests the repaired learner utility runtime with a cache-distinct URL",()=>{
+ const contract=read("courses/shared/course-entry-contract.js");
+ assert.match(contract,/vnv-beta-link\.js\?v=20261118-runtime-recovery-2/);
+});
