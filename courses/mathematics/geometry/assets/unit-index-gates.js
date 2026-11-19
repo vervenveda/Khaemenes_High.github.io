@@ -24,6 +24,7 @@ function boot(){
  const begin=document.querySelector('.unit-hero a.btn.primary[href*="lessons/"]');if(begin&&!lessonUnlocked(1,cards))disable(begin,"Begin Unit Locked");
  const note=document.createElement("p");note.className="notice";note.innerHTML=`<strong>Strict progression:</strong> each lesson requires ${MASTERY}%, week boundaries require the prior weekly mastery gate, and formal unit mastery opens only after all lesson and weekly gates are satisfied.`;document.querySelector(".unit-hero .wrap")?.append(note)
 }
+window.KhaemenesGeometryUnitGateV2=Object.freeze({version:"2.0",threshold:MASTERY,score,lessonMastered,weekMastered,unitMastered,midtermMastered,unitLessonIds,unitProgressionComplete,unitUnlocked,weekForLesson,previousWeekForBoundary});
 if(document.readyState==="loading")document.addEventListener("DOMContentLoaded",boot,{once:true});else boot();
 })();
 ;(()=>{if(document.querySelector('script[src*="geometry-presentation-unifier-v1.js"]'))return;const s=document.createElement("script");s.src=new URL("geometry-presentation-unifier-v1.js",document.currentScript?.src||location.href).href;s.defer=true;s.dataset.geometryPresentationUnifier="v1";document.head.appendChild(s)})();
