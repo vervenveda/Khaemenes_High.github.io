@@ -222,8 +222,14 @@ function showUpperSchedule(){
   for(const item of slots()){
    const card=make("article");card.className="grade09-blueprint-schedule-item";
    card.append(make("strong",item.label),make("span",item.title));
-   const route=href(item);
-   if(route)card.append(link((grade10Copy||grade11Copy||grade12Copy)?"Continue Class":"Open class",route,"btn secondary"));
+   const current=step(item);
+   const route=current?.dest||href(item);
+   if(route){
+    const launch=link(current?.label||((grade10Copy||grade11Copy||grade12Copy)?"Continue Class":"Open class"),route,"btn secondary");
+    launch.dataset.courseId=item.id||"";
+    launch.title=current?.detail||"Continue this class";
+    card.append(launch);
+   }
    grid.append(card);
   }
   content.append(grid);
