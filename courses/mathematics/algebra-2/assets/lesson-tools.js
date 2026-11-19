@@ -41,7 +41,15 @@ if(card&&!document.getElementById("lessonMasteryScore")){
 <p id="lessonRubricPreview">Prior best: ${ev.best??"—"}%</p><button class="btn primary" id="saveLessonMastery" type="button">Record Evaluated Evidence</button><p class="notice">Rubric levels describe the quality of demonstrated evidence. A lower attempt is retained for correction and retake; activity completion alone is not mastery.</p>`;
  card.insertBefore(gate,card.firstChild);
 }
-const nextLessonLink=document.querySelector(".lesson-hero .actions a.primary[href]");
+const heroActions=document.querySelector(".lesson-hero .actions");
+let nextLessonLink=document.querySelector(".lesson-hero .actions a.primary[href]");
+if(!nextLessonLink&&heroActions){
+ nextLessonLink=document.createElement("a");
+ nextLessonLink.className="btn primary";
+ nextLessonLink.dataset.algebra2ProgressionAction="true";
+ nextLessonLink.textContent="Mastery required to continue";
+ heroActions.appendChild(nextLessonLink);
+}
 if(nextLessonLink&&!nextLessonLink.dataset.masteryHref)nextLessonLink.dataset.masteryHref=nextLessonLink.getAttribute("href")||"";
 function syncNextLesson(mastered){
  if(!nextLessonLink)return;
