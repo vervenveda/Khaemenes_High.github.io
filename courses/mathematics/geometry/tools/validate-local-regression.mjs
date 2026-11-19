@@ -3,7 +3,7 @@ import path from "node:path";
 
 const ROOT=path.resolve("courses/mathematics/geometry");
 const ADAPTER="geometry-math-lesson-v2-adapter.js";
-const VERSION="2.2.3";
+const VERSION="2.3.0";
 const errors=[];
 const fail=m=>errors.push(m),assert=(c,m)=>c?undefined:fail(m);
 function walk(dir){return fs.readdirSync(dir,{withFileTypes:true}).flatMap(e=>e.isDirectory()?walk(path.join(dir,e.name)):[path.join(dir,e.name)])}
