@@ -125,7 +125,7 @@
   function weekMastered(week) {
     const record = weeklyData()?.weeks?.[week];
     if (!record || typeof record !== "object") return false;
-    if (Number(record.best) >= MASTERY) return true;
+    if (recordedScore(record.best) >= MASTERY) return true;
     return Array.isArray(record.attempts) && record.attempts.some(attempt => recordedScore(attempt?.score) >= MASTERY);
   }
 
@@ -134,11 +134,15 @@
     return weeks.length > 0 && weeks.every(weekMastered);
   }
 
+  function unitProgressionComplete(unit) {
+    return unitMastered(unit) && allLessonsMastered(unit) && allWeeksMastered(unit);
+  }
+
   function unitUnlocked(unit) {
     if (!readinessRecorded()) return false;
     if (unit === 1) return true;
-    if (!unitMastered(unit - 1)) return false;
-    return unit < 7 || midtermMastered();
+    if (!unitProgressionComplete(unit - 1)) return false;
+    return unit < 7 || (midtermMastered() && Array.from({length:6},(_,i)=>i+1).every(unitProgressionComplete));
   }
 
   function lessonWeek(unit, lesson) {
@@ -195,12 +199,16 @@
     if (config?.recordKey === "midterm") {
       for (let unit = 1; unit <= 6; unit += 1) {
         if (!unitMastered(unit)) missing.push(`Unit ${String(unit).padStart(2, "0")} mastery at ${MASTERY}%`);
+        if (!allLessonsMastered(unit)) missing.push(`Unit ${String(unit).padStart(2, "0")} lesson evidence complete at ${MASTERY}%`);
+        if (!allWeeksMastered(unit)) missing.push(`Unit ${String(unit).padStart(2, "0")} weekly mastery evidence complete at ${MASTERY}%`);
       }
       return missing;
     }
     if (config?.recordKey === "final") {
       for (let unit = 1; unit <= 13; unit += 1) {
         if (!unitMastered(unit)) missing.push(`Unit ${String(unit).padStart(2, "0")} mastery at ${MASTERY}%`);
+        if (!allLessonsMastered(unit)) missing.push(`Unit ${String(unit).padStart(2, "0")} lesson evidence complete at ${MASTERY}%`);
+        if (!allWeeksMastered(unit)) missing.push(`Unit ${String(unit).padStart(2, "0")} weekly mastery evidence complete at ${MASTERY}%`);
       }
       if (!midtermMastered()) missing.push(`Reviewed midterm mastery at ${MASTERY}%`);
     }
@@ -256,7 +264,7 @@
         card.prepend(tag);
       }
       if (!lessonUnlocked(unit, lesson)) {
-        disableLink(card, `Locked · master Lesson ${String(lesson - 1).padStart(2, "0")} at ${MASTERY}% first.`);
+        const requirement=lessonRequirement(unit,lesson);disableLink(card,requirement?.message||`Locked · required mastery evidence is incomplete.`);
       }
     });
     const mastery = document.querySelector('a.btn[href*="assessment/mastery-check.html"]');
@@ -267,29 +275,27 @@
     document.querySelector(".unit-hero .wrap")?.append(note);
   }
 
+  function lessonRequirement(unit, lesson) {
+    if (!readinessRecorded()) return {href:"../../../diagnostic/",label:"Open readiness diagnostic",message:`Complete the Algebra II readiness diagnostic at ${MASTERY}% or higher before opening lessons.`};
+    if (unit === 7 && unitProgressionComplete(6) && !midtermMastered()) return {href:"../../../assessments/midterm.html",label:"Open reviewed midterm",message:`Complete the reviewed midterm at ${MASTERY}% before opening Unit 07 lessons.`};
+    if (unit > 1 && !unitProgressionComplete(unit - 1)) return {href:`../../unit-${String(unit - 1).padStart(2,"0")}/assessment/mastery-check.html`,label:"Return to prior unit mastery",message:`Complete the full Unit ${String(unit - 1).padStart(2,"0")} lesson, weekly, and unit mastery evidence chain before opening this unit.`};
+    if (lesson > 1) {
+      const previousId=lessonKey(unit,lesson-1),previousWeek=lessonWeek(unit,lesson-1),currentWeek=lessonWeek(unit,lesson);
+      if (!lessonMastered(previousId)) return {href:`u${String(unit).padStart(2,"0")}-l${String(lesson-1).padStart(2,"0")}.html`,label:"Return to previous lesson",message:`Master Lesson ${String(lesson-1).padStart(2,"0")} at ${MASTERY}% before opening this lesson.`};
+      if (previousWeek&&currentWeek&&previousWeek!==currentWeek&&!weekMastered(previousWeek)) return {href:`../../../assessments/weekly-mastery.html?week=${previousWeek}`,label:`Open Week ${String(previousWeek).padStart(2,"0")} mastery`,message:`Complete Week ${String(previousWeek).padStart(2,"0")} mastery at ${MASTERY}% before beginning the next instructional week.`};
+    }
+    return null;
+  }
+
   function lessonGate() {
     const match = String(document.body.dataset.lessonId || "").match(/^u(\d{2})-l(\d{2})$/);
     if (!match) return;
     const unit = Number(match[1]);
     const lesson = Number(match[2]);
     if (lessonUnlocked(unit, lesson)) return;
-    let href = "../../../diagnostic/";
-    let label = "Open readiness diagnostic";
-    let message = `Complete the Algebra II readiness diagnostic at ${MASTERY}% or higher before opening lessons.`;
-    if (readinessRecorded() && unit === 7 && unitMastered(6) && !midtermMastered()) {
-      href = "../../../assessments/midterm.html";
-      label = "Open reviewed midterm";
-      message = `Complete the reviewed midterm at ${MASTERY}% before opening Unit 07 lessons.`;
-    } else if (readinessRecorded() && unit > 1 && !unitMastered(unit - 1)) {
-      href = `../../unit-${String(unit - 1).padStart(2, "0")}/assessment/mastery-check.html`;
-      label = "Return to prior unit mastery";
-      message = `Complete Unit ${String(unit - 1).padStart(2, "0")} mastery at ${MASTERY}% before opening this lesson.`;
-    } else if (readinessRecorded() && lesson > 1) {
-      href = `u${String(unit).padStart(2, "0")}-l${String(lesson - 1).padStart(2, "0")}.html`;
-      label = "Return to previous lesson";
-      message = `Complete Lesson ${String(lesson - 1).padStart(2, "0")} before opening this lesson.`;
-    }
-    lockMain("Lesson locked", message, href, label, "../../../");
+    const requirement=lessonRequirement(unit,lesson);
+    if(!requirement){lockMain("Lesson locked","Required mastery evidence could not be verified.","../../../","Return to Course Home","../../../");return;}
+    lockMain("Lesson locked", requirement.message, requirement.href, requirement.label, "../../../");
   }
 
   window.KhaemenesAlgebra2Progression = Object.freeze({
@@ -312,6 +318,7 @@
     readJSON,
     storageKey,
     unitMastered,
+    unitProgressionComplete,
     weekMastered,
     unitUnlocked,
     writeJSON
