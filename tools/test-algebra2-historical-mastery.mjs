@@ -42,9 +42,16 @@ data.set(key,JSON.stringify({"readiness-diagnostic":{attempts:[{score:80}]},
  "unit-01-mastery":{attempts:[{score:79,mastery:true}]} }));
 assert.equal(P.unitUnlocked(1),true,"Passing readiness unlocks the first unit");
 assert.equal(P.unitUnlocked(2),false,"Contradictory previous unit record does not unlock Unit 02");
+data.set("khaemenes-algebra2-lesson-progress-v1",JSON.stringify(Object.fromEntries(
+ Array.from({length:6},(_,i)=>["u01-l"+String(i+1).padStart(2,"0"),{bestScore:80,score:80,mastery:true,complete:true,attempts:[{score:80}]}])
+)));
+data.set("khaemenes-algebra2-weekly-mastery-v1",JSON.stringify({weeks:{
+ 2:{best:80,attempts:[{score:80,mastery_met:true}]},
+ 3:{best:80,attempts:[{score:80,mastery_met:true}]}
+}}));
 data.set(key,JSON.stringify({"readiness-diagnostic":{attempts:[{score:80}]},
  "unit-01-mastery":{attempts:[{score:90},{score:70}]} }));
-assert.equal(P.unitUnlocked(2),true,"Valid historical passing unit score survives a failed later retake");
+assert.equal(P.unitUnlocked(2),true,"Valid historical passing unit score survives a failed later retake when the underlying lesson/week evidence chain is complete");
 win.KhaemenesCourseEntryContract={readAcademyProfile:()=>null};
 assert.equal(P.readinessRecorded(),false,"Absent Academy profile must not consume anonymous legacy grades");
 assert.equal(P.writeJSON("test",{success:true}),false,"No writes without Academy learner identity");
