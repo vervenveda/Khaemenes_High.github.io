@@ -8,7 +8,7 @@ const $=id=>document.getElementById(id);
 const esc=v=>String(v??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
 const safeParse=(raw,fallback)=>{try{const v=JSON.parse(raw);return v&&typeof v==="object"?v:fallback}catch{return fallback}};
 function store(){const s=safeParse(localStorage.getItem(STORE),{version:2,weeks:{}});s.version=2;s.weeks=s.weeks&&typeof s.weeks==="object"?s.weeks:{};return s}
-function write(s){const S=window.KhaemenesMathStorageAdapter;if(S?.writeJSON)return S.writeJSON(STORE,s).persisted===true;try{const data=JSON.stringify(s);localStorage.setItem(STORE,data);return localStorage.getItem(STORE)===data}catch{return false}}
+function write(s){const S=window.KhaemenesMathStorageAdapter;if(S?.writeJSON){const result=S.writeJSON(STORE,s)||{};return result.persisted===true&&(result.verified!==false)}try{const data=JSON.stringify(s);localStorage.setItem(STORE,data);return localStorage.getItem(STORE)===data}catch{return false}}
 function weekState(n){const s=store();s.weeks[n]??={draft:{answers:{},scratch:{}},attempts:[],best:null};s.weeks[n].draft??={answers:{},scratch:{}};s.weeks[n].draft.answers??={};s.weeks[n].draft.scratch??={};s.weeks[n].attempts=Array.isArray(s.weeks[n].attempts)?s.weeks[n].attempts:[];return [s,s.weeks[n]]}
 function weekMastered(n){if(n===1)return true;const s=store(),r=s.weeks?.[n];return Number(r?.best)>=MASTERY||Array.isArray(r?.attempts)&&r.attempts.some(a=>a?.mastery_met===true)}
 function weekGate(n){
@@ -18,7 +18,7 @@ function weekGate(n){
  if(!w)return {ok:false,reason:"configuration"};
  if(week>2&&!weekMastered(week-1))return {ok:false,reason:"previous-week",prior_week:week-1};
  const unit=Number(w.unit);
- if(unit>1&&!A.unitMastered(unit-1))return {ok:false,reason:"previous-unit",prior_unit:unit-1};
+ if(unit>1&&A.unitProgressionComplete?.(unit-1)!==true)return {ok:false,reason:"previous-unit",prior_unit:unit-1};
  if(unit>=7&&!A.midtermMastered())return {ok:false,reason:"midterm"};
  const lessonEvidence=A.weekLessonEvidence(week);
  if(!lessonEvidence?.configured)return {ok:false,reason:"lesson-map"};
