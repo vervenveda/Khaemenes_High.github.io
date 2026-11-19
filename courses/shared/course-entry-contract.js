@@ -173,6 +173,22 @@
   }
   ensureMathHardeningLayer();
 
+  /* Registry-driven shared mathematics game bridge · lesson routes only */
+  function ensureMathSharedGameBridge(){
+    if(typeof document==="undefined"||typeof location==="undefined")return;
+    const path=String(location.pathname||"");
+    if(!/\/courses\/mathematics\/(pre-algebra|algebra-1|geometry|algebra-2)\/units\/unit-\d{2}\/lessons\//i.test(path))return;
+    if(/\/(?:assessment|assessments|diagnostic)\//i.test(path))return;
+    if(document.querySelector('script[data-khaemenes-math-game-bridge="v1"]'))return;
+    const source=document.currentScript?.src||location.href;
+    const s=document.createElement("script");
+    s.src=new URL("../mathematics/assets/math-shared-game-bridge-v1.js",source).href;
+    s.async=false;
+    s.dataset.khaemenesMathGameBridge="v1";
+    (document.head||document.documentElement).appendChild(s);
+  }
+  ensureMathSharedGameBridge();
+
   // High School mathematics continuation publisher. It summarizes existing
   // course evidence only; it never changes progression, grades, or mastery.
   function ensureMathContinuationPublisher() {
