@@ -50,7 +50,7 @@ for(let unit=1;unit<=13;unit++){
   const hrefs=[...index.matchAll(/href=["']lessons\\/(u\\d{2}-l\\d{2}\\.html)/g)].map(x=>x[1]);
   const unique=[...new Set(hrefs)].sort();
   assert.deepEqual(unique,actual,"unit "+n+": exact native lesson links");
-  assert.match(index,new RegExp('href=["\\']lessons/u'+n+'-l01\\.html'),"unit "+n+": Begin Unit route");
+  assert.ok(hrefs.includes("u"+n+"-l01.html"),"unit "+n+": Begin Unit route");
   routeTotal+=actual.length;
 }
 assert.equal(routeTotal,92,"Algebra II must retain all 92 native instructional lessons");
