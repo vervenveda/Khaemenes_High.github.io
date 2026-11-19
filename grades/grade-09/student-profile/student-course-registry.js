@@ -309,7 +309,7 @@ function genericContinue(course){
     try{
       const u=new URL(normalizeLegacyRoute(value),location.origin);
       const h=new URL(course.home,location.origin);
-      const canonical=p=>p.replace(/index\\.html$/i,"").replace(/\\/+$/,"/");
+      const canonical=p=>p.replace(/index\.html$/i,"").replace(/\/+$/,"/");
       return u.origin===h.origin&&canonical(u.pathname)===canonical(h.pathname)&&!u.search&&!u.hash;
     }catch{return false}
   };
