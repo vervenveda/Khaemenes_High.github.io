@@ -357,7 +357,7 @@
    $("#lessonCompletionChecklist")?.addEventListener("change",e=>{const i=e.target.closest("[data-checklist-key]");if(i)setManual(i.dataset.checklistKey,i.checked)});
    $("#lessonCompletionChecklist")?.addEventListener("click",e=>{const b=e.target.closest("[data-nav-section]");if(b)jump(b.dataset.navSection)});
    document.addEventListener("click",e=>{
-     if(e.target.closest("#saveNotes,#saveReflection,#markComplete,#submitPractice"))setTimeout(()=>{renderChecklist();gateNext()},20);
+     if(e.target.closest("#saveNotes,#saveReflection,#markComplete,#submitPractice,#score"))setTimeout(()=>{renderChecklist();gateNext()},20);
      const next=e.target.closest("#nextLesson");
      if(next&&next.dataset.locked==="true"){e.preventDefault();e.stopImmediatePropagation();$("#lessonCompletion")?.scrollIntoView({behavior:"smooth",block:"start"})}
    },true);
