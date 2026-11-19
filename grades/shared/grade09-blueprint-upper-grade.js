@@ -67,7 +67,7 @@ function href(item){
 function snapshots(){const id=identity();return id&&continuation?.readLearner?.(id)||[]}
 function step(item){
  const snap=snapshots().find(s=>s.courseId===item.id);
- const dest=href(item);
+ const dest=item.firstStepHref||href(item);
  return {dest:snap?.nextHref&&item.subject!=="foreignLanguage"?snap.nextHref:dest,
  label:snap?.stale?"Refresh course":snap?.status==="corrections"?"Review corrections":"Open class",
  detail:snap?.nextTitle||snap?.summary||"Ready to open the assigned course."};
