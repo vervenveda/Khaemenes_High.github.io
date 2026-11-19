@@ -47,6 +47,21 @@ for(const [grade,blob] of Object.entries(preserved)){
  assert.ok(routeSource.includes('"english-'+grade+'"')&&routeSource.includes(first[grade].replace(/index\.html$/,"")),"English "+grade+": configured first-step route absent");
  console.log("ENGLISH_COURSE_BOUNDARY_PASS",grade,"36/36 weekly pages","first lesson:",first[grade]);
 }
+// Day 1 presentation canary: no new engine, only semantic wayfinding.
+const day1=read(path.join(base,"english-9","weeks/week-01/day-01/index.html"));
+assert.ok(day1.includes('id="english9-day01-canonical-lesson-v7"'),"English 9 day 1 canonical CSS owner preserved");
+assert.ok(day1.includes('id="english9-day01-layout-v7"'),"English 9 day 1 canonical layout owner preserved");
+assert.ok(day1.includes('guide.id="e9-stage-guide"'),"English 9 day 1 accessible six-stage map mounted");
+for(const heading of ["reasoning-lab-1","heading-1-read","heading-1-practice","daily-practice-title","heading-1-write","heading-1-check"]){
+  assert.ok(day1.includes('id="'+heading+'"'),"Day 1 existing heading missing: "+heading);
+  assert.ok(day1.includes('["'+heading+'"'),"Day 1 stage map missing: "+heading);
+}
+for(const engine of ["../../../assets/daily-lesson.js","../../../../../shared/high-school-formative-evidence-v1.js"]){
+  assert.ok(day1.includes('src="'+engine+'"'),"Day 1 academic engine changed: "+engine);
+}
+assert.ok(day1.includes('id="daily-evidence-button" disabled'),"Day 1 evidence preparation control changed");
+assert.ok(day1.includes('data-managed-save="week1"'),"Day 1 original evidence fields missing");
+console.log("ENGLISH_9_DAY1_STAGE_MAP_PRESENTATION_PASS");
 const registry=read("grades/grade-09/student-profile/student-course-registry.js");
 assert.match(registry,/isEnglish9Landing\(last\.url\)/,"English 9: old course-home launch must not mask active lesson");
 const upper=read("grades/shared/grade09-blueprint-upper-grade.js");
