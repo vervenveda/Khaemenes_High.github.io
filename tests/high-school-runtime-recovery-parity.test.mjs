@@ -330,3 +330,18 @@ test("all four High School math diagnostics follow the canonical single-owner as
   assert.match(page,/class="question-list"/);
  }
 });
+
+
+test("canonical math diagnostics expose assessment-safe single-owner markers and bounded shared dependencies",()=>{
+ for(const path of canonicalMathDiagnostics){
+  const page=read(path);
+  assert.match(page,/data-math-assessment-blueprint="v1"/,path);
+  assert.match(page,/data-assessment-runtime="single-owner"/,path);
+  assert.equal((page.match(/high-school-global-chrome-v2\.js/g)||[]).length,1,path+" chrome");
+  assert.equal((page.match(/math-learning-tools-v2\.js/g)||[]).length,1,path+" math tools");
+  assert.equal((page.match(/vnv-language\.js/g)||[]).length,1,path+" translator");
+  assert.equal((page.match(/vnv-ecosystem-toolbar\.js/g)||[]).length,1,path+" ecosystem toolbar");
+  assert.doesNotMatch(page,/course-entry-contract\.js|math-entry-gate\.js|assessment-engine\.js|exam-engine\.js/);
+  assert.doesNotMatch(page,/new\s+MutationObserver|setInterval\s*\(/);
+ });
+});
