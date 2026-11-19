@@ -129,6 +129,12 @@ test("storage adapter verified false is rejected",()=>{
   assert.equal(P.writeJSON(L,{x:1}),false);
 });
 
+test("direct localStorage denial fails closed",()=>{
+  const {P,storage}=boot({});
+  storage.setItem=()=>{throw Error("quota-denied")};
+  assert.equal(P.writeJSON(L,{x:1}),false);
+});
+
 const failures=results.filter(r=>!r.pass);
 for(const r of results)console.log((r.pass?"PASS":"FAIL")+" · "+r.name+(r.error?" · "+r.error:""));
 if(failures.length){console.error("ALGEBRA2_HOLD_VALIDATION=FAIL ("+failures.length+"/"+results.length+")");process.exit(1)}
