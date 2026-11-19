@@ -2,6 +2,7 @@
 
 | Date | Type | Entry | State |
 | --- | --- | --- | --- |
+| 2026-11-19 | repair · five-bubble forensic hardening | [Forensic Bubble Repair Pass](logs/2026/11/2026-11-19-forensic-bubble-repair-pass.md) | Geometry release PASS · math launch PASS · shared games PASS · higher-math local regression PASS · engine firewall PASS · Algebra II engine migration HOLD enforced · physical/browser-device acceptance HOLD |
 | 2026-11-18 | runtime acceptance · rendered browser laboratory | [Four-Course Runtime Acceptance Laboratory](logs/2026/11/2026-11-18-four-course-runtime-acceptance-laboratory.md) | Core/Full viewport sweeps + storage-failure fixture + ticker timing + Algebra II single-column lesson repair + canonical footer fallback; laboratory source PASS; production rendered sweep HOLD |
 | 2026-11-18 | department re-audit · four-course Exceptional status | [Four-Course Exceptional Source Status](logs/2026/11/2026-11-18-four-course-exceptional-source-status.md) | Pre-Algebra, Algebra I, Geometry, Algebra II all source-level Exceptional; live browser/device acceptance HOLD |
 | 2026-11-17 | full re-audit · Algebra II | [Full Exceptional Source Re-Audit](../algebra-2/workflow/logs/2026/11/2026-11-17-full-exceptional-source-reaudit.md) | 92 lessons · 552 depth items · all source-controlled categories Exceptional; browser/device HOLD |
