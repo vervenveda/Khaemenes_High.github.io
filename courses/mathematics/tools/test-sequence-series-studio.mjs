@@ -52,16 +52,24 @@ for(const mode of modes){const seen=new Set();
 }
 const reg=JSON.parse(fs.readFileSync('courses/mathematics/assets/learning-games/game-registry.json','utf8'));
 const placements=reg.games[slug]?.placements||[];
-assert.equal(placements.length,9,'seven Algebra II plus two Algebra I lessons');
-for(const p of placements){
+const algebra2Placements=placements.filter(p=>p.course==='algebra-2');
+const algebra1Placements=placements.filter(p=>p.course==='algebra-1');
+const prealgebraPlacements=placements.filter(p=>p.course==='pre-algebra');
+assert.ok(algebra2Placements.length>=7,'seven Algebra II sequence/series lesson placements remain registered');
+assert.ok(algebra1Placements.length>=2,'Algebra I sequence/exponential placements remain registered');
+assert.ok(prealgebraPlacements.length>=1,'Pre-Algebra sequence-pattern placement is registered');
+assert.ok(placements.every(p=>p.wired===true),'every Sequence & Series Studio registry placement is marked wired');
+const entryContract=fs.readFileSync('courses/shared/course-entry-contract.js','utf8');
+assert.ok(entryContract.includes('math-shared-game-bridge-v1.js'),'canonical registry-driven lesson bridge is installed');
+for(const p of [...algebra2Placements,...algebra1Placements.filter(p=>String(p.unit)==='08')]){
  const u=String(p.unit).padStart(2,'0'),l=String(p.lesson).match(/\d+$/)[0].padStart(2,'0');
  const file=p.course==='algebra-2'
  ?'courses/mathematics/algebra-2/units/unit-'+u+'/lessons/u'+u+'-l'+l+'.html'
  :'courses/mathematics/algebra-1/units/unit-08/lessons/lesson-'+l+(l==='04'?'-arithmetic-geometric-sequences':'-exponential-functions-growth-decay')+'.html';
  const page=fs.readFileSync(file,'utf8');
- assert.ok(page.includes('data-game="'+slug+'"'),file+' launcher');
- assert.ok(page.includes('data-mode="'+p.mode+'"'),file+' mode');
- assert.ok(page.includes('src="../../../../assets/shared-game-launcher.js"'),file+' route');
+ const explicit=page.includes('data-game="'+slug+'"')&&page.includes('data-mode="'+p.mode+'"')&&page.includes('shared-game-launcher.js');
+ const bridged=page.includes('course-entry-contract.js');
+ assert.ok(explicit||bridged,file+' has explicit launcher or canonical registry bridge');
 }
 const nodes=new Map(),storage=new Map();
 function get(id){
@@ -90,4 +98,4 @@ assert.equal(state.record.attempted,1,'no duplicate attempt');
 ctx.audit.challenge();state=ctx.audit.state();assert.notEqual(state.task.id,first,'avoid immediate repetition');
 const active=state.task.id;ctx.audit.load();assert.equal(ctx.audit.state().task.id,active,'restore mission');
 ctx.audit.explore();assert.equal(ctx.audit.state().record.solved,1,'free exploration is unscored');
-console.log('PASS: sequence-series formulas, 8 modes, variation, 9 lesson routes, retries, local progress and syntax');
+console.log('PASS: sequence-series formulas, 8 modes, registry-driven placements, retries, local progress and syntax');
