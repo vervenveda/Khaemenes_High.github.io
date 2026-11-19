@@ -1,0 +1,36 @@
+name: Mathematics Landing Chrome Validation
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "courses/mathematics/pre-algebra/index.html"
+      - "courses/mathematics/algebra-1/index.html"
+      - "courses/mathematics/geometry/index.html"
+      - "courses/mathematics/algebra-2/index.html"
+      - "assets/high-school-global-chrome-v2.js"
+      - "assets/vnv-dual-ticker-v1.js"
+      - "tools/validate-math-landing-chrome.mjs"
+      - ".github/workflows/math-landing-chrome-validation.yml"
+  pull_request:
+    paths:
+      - "courses/mathematics/**/index.html"
+      - "assets/high-school-global-chrome-v2.js"
+      - "assets/vnv-dual-ticker-v1.js"
+      - "tools/validate-math-landing-chrome.mjs"
+      - ".github/workflows/math-landing-chrome-validation.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "24"
+      - name: Validate mathematics landing chrome
+        run: node tools/validate-math-landing-chrome.mjs
