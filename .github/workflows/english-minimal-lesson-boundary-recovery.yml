@@ -7,6 +7,9 @@ on:
       - "courses/language-arts/english-*/index.html"
       - "courses/language-arts/english-*/course-workspace.html"
       - "courses/language-arts/english-*/weeks/**"
+      - "courses/language-arts/english-9/daily-learning/**"
+      - "courses/shared/high-school-eight-class.js"
+      - "courses/language-arts/assets/english-landing-class-tools-v1.js"
       - "grades/grade-09/student-profile/student-course-registry.js"
       - "tools/validate-english-minimal-lesson-boundary.mjs"
       - ".github/workflows/english-minimal-lesson-boundary-recovery.yml"
@@ -21,6 +24,9 @@ jobs:
         with:
           node-version: '24'
       - name: Check routing source syntax
-        run: node --check grades/grade-09/student-profile/student-course-registry.js
+        run: |
+          node --check grades/grade-09/student-profile/student-course-registry.js
+          node --check courses/shared/high-school-eight-class.js
+          node --check courses/language-arts/assets/english-landing-class-tools-v1.js
       - name: Verify four minimal entrances and 36-week instructional paths
         run: node tools/validate-english-minimal-lesson-boundary.mjs
