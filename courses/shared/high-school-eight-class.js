@@ -39,6 +39,29 @@ const COURSES=Object.freeze({
  })
 });
 const LANGS=Object.freeze(["spanish","french","german","mandarin","japanese","arabic","russian"]);
+const FIRST_STEPS=Object.freeze({
+ "pre-algebra":"https://vervenveda.com/Khaemenes_High.github.io/courses/mathematics/pre-algebra/diagnostic/",
+ "algebra-1":"https://vervenveda.com/Khaemenes_High.github.io/courses/mathematics/algebra-1/diagnostic/",
+ "geometry":"https://vervenveda.com/Khaemenes_High.github.io/courses/mathematics/geometry/diagnostic/",
+ "algebra-2":"https://vervenveda.com/Khaemenes_High.github.io/courses/mathematics/algebra-2/diagnostic/",
+ "english-9":"https://vervenveda.com/Khaemenes_High.github.io/courses/language-arts/english-9/weeks/week-01/day-01/",
+ "english-10":"https://vervenveda.com/Khaemenes_High.github.io/courses/language-arts/english-10/weeks/week-01/monday/",
+ "english-11":"https://vervenveda.com/Khaemenes_High.github.io/courses/language-arts/english-11/weeks/week-01/lessons/day-01.html",
+ "english-12":"https://vervenveda.com/Khaemenes_High.github.io/courses/language-arts/english-12/weeks/week-01/lessons/day-01.html",
+ "integrated-science-9":"https://vervenveda.com/Khaemenes_High.github.io/courses/science/integrated-science-9/diagnostic/readiness-diagnostic.html",
+ "biology-10":"https://vervenveda.com/Khaemenes_High.github.io/courses/science/biology-10/weeks/week-01/lessons/day-01.html",
+ "chemistry-11":"https://vervenveda.com/Khaemenes_High.github.io/courses/science/chemistry-11/weeks/week-01/lessons/day-01.html",
+ "physics-engineering-12":"https://vervenveda.com/Khaemenes_High.github.io/courses/science/physics-engineering-12/weeks/week-01/lessons/day-01.html",
+ "global-studies-9":"https://vervenveda.com/Khaemenes_High.github.io/courses/social-studies/grade-09/week-01/student-packet.html",
+ "social-studies-10":"https://vervenveda.com/Khaemenes_High.github.io/courses/social-studies/grade-10/week-01/student-packet.html",
+ "social-studies-11":"https://vervenveda.com/Khaemenes_High.github.io/courses/social-studies/grade-11/weeks/week-01/student-packet.html",
+ "social-studies-12":"https://vervenveda.com/Khaemenes_High.github.io/courses/social-studies/grade-12/weeks/week-01/student-packet.html",
+ "physical-education-9":"https://vervenveda.com/Khaemenes_High.github.io/courses/physical-education/?start=grade09-week01",
+ "physical-education-10":"https://vervenveda.com/Khaemenes_High.github.io/courses/physical-education/?start=grade10-week01",
+ "physical-education-11":"https://vervenveda.com/Khaemenes_High.github.io/courses/physical-education/?start=grade11-week01",
+ "physical-education-12":"https://vervenveda.com/Khaemenes_High.github.io/courses/physical-education/?start=grade12-week01",
+ "psychology-101":"https://vervenveda.com/Khaemenes_High.github.io/electives/grades/grade-09/psych-101/lessons/week-01/day-01.html"
+});
 function gradeOf(value){
  const grade=String(Number(value));
  return Object.prototype.hasOwnProperty.call(COURSES,grade)?grade:null;
@@ -61,6 +84,7 @@ function slots(grade,options={}){
    index:index+1,subject,label,id:id||null,
    title:meta?.title||(subject==="math"?"Choose mathematics pathway":subject==="foreignLanguage"?"Choose foreign language":label),
    href:meta?.href||null,
+   firstStepHref:id?FIRST_STEPS[id]||meta?.href||null:null,
    pinAvailable:!!(id&&meta),
    resourceOnly:subject==="psychology"&&key!=="9",
    isElective:subject==="elective"
@@ -77,6 +101,6 @@ function summary(grade,pinned=[],options={}){
  });
 }
 window.KhaemenesHighEightClass=Object.freeze({
- version:1,subjects:SUBJECTS,gradeOf,slots,summary
+ version:2,subjects:SUBJECTS,FIRST_STEPS,gradeOf,slots,summary
 });
 })();
