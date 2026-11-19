@@ -1,0 +1,35 @@
+name: Psychology Minimal Landing
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'electives/psychology/index.html'
+      - 'electives/psychology/assets/psychology-minimal-landing-v1.css'
+      - 'electives/psychology/assets/psychology-minimal-header-mount-v1.js'
+      - 'electives/psychology/assets/psychology-landing-class-tools-v1.js'
+      - 'electives/index.html'
+      - 'tools/validate-psychology-minimal-landing.mjs'
+      - '.github/workflows/psychology-minimal-landing.yml'
+  pull_request:
+    paths:
+      - 'electives/psychology/**'
+      - 'electives/index.html'
+      - 'tools/validate-psychology-minimal-landing.mjs'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Validate Psychology four-course gateway
+        run: node tools/validate-psychology-minimal-landing.mjs
+      - name: Validate patch formatting
+        run: git diff --check
