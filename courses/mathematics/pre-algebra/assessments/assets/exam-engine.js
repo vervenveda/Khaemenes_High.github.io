@@ -312,8 +312,10 @@
       r.mastery_met=selected>=threshold&&constructedPercent>=threshold&&overall>=threshold;
       r.mastery_status=r.mastery_met?"mastery-met":"review-required";
       r.evaluator_review={completed:true,completed_at:new Date().toISOString(),local_unverified:true};
-      if(!persist(resultKey,r)){$("status").textContent="Evaluator review is retained in this page memory only. Export the result before closing or reloading.";}
+      const persisted=persist(resultKey,r);
+      if(!persisted){$("status").textContent="Evaluator review is retained in this page memory only. Export the result before closing or reloading.";}
       showResult(r,false);
+      if(persisted)window.KhaemenesMathAssessmentDirective?.show({kind:location.pathname.includes("midterm")?"midterm":"final",score:overall,mastered:r.mastery_met===true});
     }
 
     function showResult(r,scroll=false){
