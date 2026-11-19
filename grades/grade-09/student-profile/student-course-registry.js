@@ -39,7 +39,7 @@ const COURSES=Object.freeze([
     short:"Pre-Algebra",
     className:"math",
     home:repoPath("courses/mathematics/pre-algebra/"),
-    defaultContinue:repoPath("courses/mathematics/pre-algebra/"),
+    defaultContinue:repoPath("courses/mathematics/pre-algebra/diagnostic/"),
     prefix:repoPath("courses/mathematics/pre-algebra/"),
     mentorSubject:"mathematics",
     placementBased:true
@@ -298,6 +298,17 @@ function safeCourseURL(course,value){
   const normalized=normalizeLegacyRoute(value);
   return typeof normalized==="string"&&normalized.startsWith(course.prefix)?normalized:course.defaultContinue
 }
+function instructionalRoute(course,url){
+  if(typeof url!=="string")return false;
+  try{
+    const parsed=new URL(url,location.origin);
+    if(parsed.origin!==location.origin)return false;
+    const pathname=parsed.pathname;
+    if(!pathname.startsWith(course.prefix))return false;
+    const relative=pathname.slice(course.prefix.length);
+    return /^(?:diagnostic\/(?:[^?#]*)?|units\/unit-\d{2}\/(?:lessons\/[^?#]+\.html|assessment\/[^?#]+\.html)|assessments\/[^?#]+\.html)$/.test(relative);
+  }catch{return false}
+}
 function genericContinue(course){
   const launches=readJSON(LAST_LAUNCH_KEY,{}),last=launches&&typeof launches==="object"?launches[course.id]:null;
   const first=window.KhaemenesHighEightClass?.FIRST_STEPS?.[course.id]||course.defaultContinue||course.home;
@@ -310,8 +321,8 @@ function continueFor(id){
   if(!course)return null;
   if(id==="pre-algebra"){
     const last=readJSON(PREALGEBRA_CONTINUE_KEY,null);
-    if(last&&(last.course==="pre-algebra"||last.course==="prealgebra")&&last.url){
-      return {url:safeCourseURL(course,last.url),label:last.title?String(last.title):course.title,hasSpecificLocation:true,actionLabel:"Continue Pre-Algebra",detail:`Continue: ${last.title?String(last.title):"current Pre-Algebra lesson"}`};
+    if(last&&(last.course==="pre-algebra"||last.course==="prealgebra")&&instructionalRoute(course,normalizeLegacyRoute(last.url))){
+      return {url:normalizeLegacyRoute(last.url),label:last.title?String(last.title):course.title,hasSpecificLocation:true,actionLabel:"Continue Pre-Algebra",detail:`Continue: ${last.title?String(last.title):"current Pre-Algebra lesson"}`};
     }
     const first=window.KhaemenesHighEightClass?.FIRST_STEPS?.["pre-algebra"]||course.home;
     return {url:first,label:course.title,hasSpecificLocation:first!==course.home,actionLabel:"Begin Pre-Algebra Readiness",detail:"Begin with the Pre-Algebra readiness pathway before Unit 01."};
