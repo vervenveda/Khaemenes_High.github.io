@@ -365,6 +365,7 @@
      if(e.target.closest("#questionList,#pathwaySelect,#vocabLanguage"))setTimeout(()=>{renderChecklist();gateNext()},20);
    });
    observeQuickChecks();
+   document.addEventListener("input",e=>{if(e.target.matches("textarea,input[type=text]"))setTimeout(()=>{renderChecklist();gateNext()},0)},{passive:true});
    window.addEventListener("storage",()=>{renderChecklist();gateNext()});
  }
  function normalize(){
@@ -378,7 +379,6 @@
    normalizeReset();
    if(staged)ensureStageCompletionCard(); else ensureCompletionCard();
    renderChecklist();gateNext();bind();
-   document.addEventListener("input",e=>{if(e.target.matches("textarea,input[type=text]"))setTimeout(()=>{renderChecklist();gateNext()},0)},{passive:true});
    document.documentElement.dataset.khaemenesMathEngineActive=VERSION;
  }
  function observeGeneratedLesson(){
