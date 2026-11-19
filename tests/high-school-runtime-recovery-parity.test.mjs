@@ -129,3 +129,12 @@ test("Grade 10 Social Studies uses centered-course desktop parity",()=>{
  assert.match(css,/\.app\{\s*display:block;/);
  assert.match(css,/grid-template-columns:repeat\(2,minmax\(0,1fr\)\)/);
 });
+
+
+test("Algebra I diagnostic uses canonical assessment runtime without legacy journey theme",()=>{
+ const page=read("courses/mathematics/algebra-1/diagnostic/index.html");
+ assert.doesNotMatch(page,/academy-math-journey-v1/);
+ assert.match(page,/math-assessment-workspace-v1\.css\?v=20261118-assessment-recovery-1/);
+ assert.match(page,/exam-engine\.js\?v=20261118-assessment-recovery-1/);
+ assert.match(page,/algebra1-worker-recovery-v1\.js/);
+});
