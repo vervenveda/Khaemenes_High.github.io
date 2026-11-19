@@ -4,6 +4,7 @@
  */
 (()=>{"use strict";
  if(window.KhaemenesPreAlgebraLessonV2)return;
+ let bound=false;
  const VERSION="2.2.1";
  const MANUAL_KEY="sectionChecks";
  const QUICK_KEY="quickChecks";
@@ -250,6 +251,7 @@
    });
  }
  function bind(){
+   if(bound)return; bound=true;
    document.addEventListener("change",e=>{const i=e.target.closest("#lessonCompletionChecklist [data-checklist-key]");if(i)setManual(i.dataset.checklistKey,i.checked)});
    document.addEventListener("click",e=>{const b=e.target.closest("#lessonCompletionChecklist [data-nav-section]");if(b)jump(b.dataset.navSection)});
    document.addEventListener("click",e=>{
@@ -263,8 +265,25 @@
    observeQuickChecks();
    window.addEventListener("storage",()=>{renderChecklist();gateNext()});
  }
+ function installReadabilityFloor(){
+   if($("#khaemenesPreAlgebraFineTune"))return;
+   const style=document.createElement("style");
+   style.id="khaemenesPreAlgebraFineTune";
+   style.textContent=`
+    html:root:root body{font-size:16px!important;line-height:1.68!important}
+    html:root:root body :is(p,li,label,button,input,select,textarea,summary,.feedback,.notice){font-size:max(16px,1em)!important}
+    #main{max-width:100%;overflow-x:clip}
+    #main .wrap{width:min(calc(100% - 33px),1180px);margin-inline:auto}
+    .actions,.side-actions,.kme-field-actions,.kme-practice-actions{display:flex;flex-wrap:wrap;gap:11px!important;align-items:center}
+    .actions .btn,.side-actions .btn,.kme-field-actions .btn,.kme-practice-actions .btn{margin:0!important}
+    textarea{min-height:180px;padding:14px!important}
+    @media(max-width:700px){#main .wrap{width:min(calc(100% - 24px),1180px)}}
+   `;
+   document.head.append(style);
+ }
  function normalize(){
    const main=$("#main")||$("main");if(main){main.classList.add("khaemenes-math-engine");main.dataset.khaemenesMathEngine=VERSION}
+   installReadabilityFloor();
    normalizeOpening();
    $$("section").forEach(section=>{normalizeHead(section);const key=keyFor(section);if(key)collapseSection(section,key)});
    normalizeReset();
