@@ -1,16 +1,16 @@
 {
   "schema_version": "1.0",
   "component_set": "KH-MATH-PA",
-  "release": "2026.10.29-prealgebra-safe-entry-learner-drafts",
+  "release": "2026.11.19-forensic-integrity-refresh",
   "hash_format": "git-blob-sha1",
   "components": [
     {
       "path": "service-worker.js",
-      "sha": "ad901935540b9bc6896a1b61e7523534cec55d74"
+      "sha": "35a23e375b19e0db9d672124992b37467c3af9e8"
     },
     {
       "path": "assets/prealgebra-student-navigation.js",
-      "sha": "217b371bb12b24bf31f3ffee421444cf14243eb7"
+      "sha": "5d4efc645cb209772bf3b941ab7ed57febc8acc3"
     },
     {
       "path": "assets/prealgebra-archaemenes-upgrade.js",
@@ -30,7 +30,7 @@
     },
     {
       "path": "assets/prealgebra-course-gates-v1.js",
-      "sha": "4a382184824dbc7a19f4632f36840574c9aa1a93"
+      "sha": "263718ccaeff2f2717e95a2f978bf71e5a8abad5"
     },
     {
       "path": "assets/prealgebra-course-navigator-v1.js",
@@ -42,7 +42,7 @@
     },
     {
       "path": "assets/prealgebra-generic-lesson-engine-v1.js",
-      "sha": "817b2d0a12f35c746932290f3f275c0257f3992d"
+      "sha": "ee9e64b986e70992a1c10168ba974d5f45849538"
     },
     {
       "path": "assets/prealgebra-generic-unit-dashboard-v1.js",
@@ -58,7 +58,7 @@
     },
     {
       "path": "assets/prealgebra-unit-assessment-wrapper-v1.js",
-      "sha": "e23cabd784f9fc36baf0aa398d2c91c4f6410daa"
+      "sha": "662784c5ffa1ee87d2703a17fb1e33c07f1d13d3"
     },
     {
       "path": "assets/unit01-lesson-mastery-wrapper-v1.js",
@@ -70,11 +70,11 @@
     },
     {
       "path": "units/unit-01/assets/lesson-engine.js",
-      "sha": "62f9f2cac34ba5c08d1019cc8721ad9fc09a6342"
+      "sha": "9d8dba320677dff7738567aec00cd59b20839a6d"
     },
     {
       "path": "units/unit-01/assets/unit-dashboard.js",
-      "sha": "29c32b7e788ca13086e318e4050e8e8afdf43992"
+      "sha": "583ac0885708eb115e307156c1507f4790eb9c46"
     },
     {
       "path": "units/unit-01/assets/student-workroom.js",
@@ -98,7 +98,7 @@
     },
     {
       "path": "assessments/assets/exam-engine.js",
-      "sha": "c70abc98bde0fbe0a790155f2068e07f05009498"
+      "sha": "7d310444b48b2132dc6a822d81066ddf0ecad21c"
     },
     {
       "path": "assessments/assets/exam-depth-v2.js",
@@ -110,31 +110,31 @@
     },
     {
       "path": "assessments/administration-guide.html",
-      "sha": "6a7ca1936fc661d63076d6c03d0ba1ee48a17565"
+      "sha": "662bc5910f07ff9c84fdc1a50be5aa2f6deeb4f9"
     },
     {
       "path": "records/course-completion-certificate.html",
-      "sha": "0a2b8f85e44f50daf140a1aff1a39369e667d134"
+      "sha": "467887541ad251616bc06e234121ff82d947b193"
     },
     {
       "path": "units/unit-01/assets/assessment-engine.js",
-      "sha": "e23cabd784f9fc36baf0aa398d2c91c4f6410daa"
+      "sha": "1425578cbd7b09dd55bf8707351078d6dbee6621"
     },
     {
       "path": "units/unit-01/assets/assessment-engine-core.js",
-      "sha": "0af53a64b6e66d43783498c6a866b2eec4018be4"
+      "sha": "429097785de9268f6c5e71c114797bd3f2bb147b"
     },
     {
       "path": "units/unit-02/assets/assessment-engine.js",
-      "sha": "e23cabd784f9fc36baf0aa398d2c91c4f6410daa"
+      "sha": "1425578cbd7b09dd55bf8707351078d6dbee6621"
     },
     {
       "path": "units/unit-02/assets/assessment-engine-core.js",
-      "sha": "e086b19bddff0f331a10db4f05c2ffffeba5301e"
+      "sha": "9a70eff55b5d15764692dae4e82ff24cff63880f"
     },
     {
       "path": "units/unit-03/assets/assessment-engine.js",
-      "sha": "e23cabd784f9fc36baf0aa398d2c91c4f6410daa"
+      "sha": "1425578cbd7b09dd55bf8707351078d6dbee6621"
     },
     {
       "path": "units/unit-03/assets/assessment-engine-core.js",
@@ -142,7 +142,7 @@
     },
     {
       "path": "units/unit-04/assets/assessment-engine.js",
-      "sha": "e23cabd784f9fc36baf0aa398d2c91c4f6410daa"
+      "sha": "1425578cbd7b09dd55bf8707351078d6dbee6621"
     },
     {
       "path": "units/unit-04/assets/assessment-engine-core.js",
@@ -150,7 +150,7 @@
     },
     {
       "path": "units/unit-05/assets/assessment-engine.js",
-      "sha": "e23cabd784f9fc36baf0aa398d2c91c4f6410daa"
+      "sha": "1425578cbd7b09dd55bf8707351078d6dbee6621"
     },
     {
       "path": "units/unit-05/assets/assessment-engine-core.js",
@@ -158,7 +158,7 @@
     },
     {
       "path": "units/unit-06/assets/assessment-engine.js",
-      "sha": "e23cabd784f9fc36baf0aa398d2c91c4f6410daa"
+      "sha": "1425578cbd7b09dd55bf8707351078d6dbee6621"
     },
     {
       "path": "units/unit-06/assets/assessment-engine-core.js",
@@ -166,7 +166,7 @@
     },
     {
       "path": "units/unit-07/assets/assessment-engine.js",
-      "sha": "e23cabd784f9fc36baf0aa398d2c91c4f6410daa"
+      "sha": "1425578cbd7b09dd55bf8707351078d6dbee6621"
     },
     {
       "path": "units/unit-07/assets/assessment-engine-core.js",
@@ -174,7 +174,7 @@
     },
     {
       "path": "units/unit-08/assets/assessment-engine.js",
-      "sha": "e23cabd784f9fc36baf0aa398d2c91c4f6410daa"
+      "sha": "1425578cbd7b09dd55bf8707351078d6dbee6621"
     },
     {
       "path": "units/unit-08/assets/assessment-engine-core.js",
@@ -182,7 +182,7 @@
     },
     {
       "path": "units/unit-09/assets/assessment-engine.js",
-      "sha": "e23cabd784f9fc36baf0aa398d2c91c4f6410daa"
+      "sha": "1425578cbd7b09dd55bf8707351078d6dbee6621"
     },
     {
       "path": "units/unit-09/assets/assessment-engine-core.js",
@@ -190,7 +190,7 @@
     },
     {
       "path": "units/unit-10/assets/assessment-engine.js",
-      "sha": "e23cabd784f9fc36baf0aa398d2c91c4f6410daa"
+      "sha": "1425578cbd7b09dd55bf8707351078d6dbee6621"
     },
     {
       "path": "units/unit-10/assets/assessment-engine-core.js",
@@ -198,7 +198,7 @@
     },
     {
       "path": "units/unit-11/assets/assessment-engine.js",
-      "sha": "e23cabd784f9fc36baf0aa398d2c91c4f6410daa"
+      "sha": "1425578cbd7b09dd55bf8707351078d6dbee6621"
     },
     {
       "path": "units/unit-11/assets/assessment-engine-core.js",
@@ -206,7 +206,7 @@
     },
     {
       "path": "units/unit-12/assets/assessment-engine.js",
-      "sha": "e23cabd784f9fc36baf0aa398d2c91c4f6410daa"
+      "sha": "1425578cbd7b09dd55bf8707351078d6dbee6621"
     },
     {
       "path": "units/unit-12/assets/assessment-engine-core.js",
@@ -214,7 +214,7 @@
     },
     {
       "path": "units/unit-13/assets/assessment-engine.js",
-      "sha": "e23cabd784f9fc36baf0aa398d2c91c4f6410daa"
+      "sha": "1425578cbd7b09dd55bf8707351078d6dbee6621"
     },
     {
       "path": "units/unit-13/assets/assessment-engine-core.js",
@@ -224,5 +224,6 @@
       "path": "assets/prealgebra-answer-draft-v1.js",
       "sha": "ee1f8643993ac0105de5321d03392082fab6cf14"
     }
-  ]
+  ],
+  "integrity_note": "Hashes synchronized to the current canonical Pre-Algebra components after the approved assessment-blueprint and lesson-engine hardening passes. This manifest refresh changes no assessment behavior."
 }
