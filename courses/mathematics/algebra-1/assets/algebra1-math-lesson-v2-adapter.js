@@ -406,3 +406,15 @@
  const start=()=>{normalize();observeGeneratedLesson();setTimeout(normalize,120);setTimeout(normalize,500)};
  if(document.readyState==="loading")document.addEventListener("DOMContentLoaded",start,{once:true});else start();
 })();
+
+/* Shared High School mathematics hardening layer.
+   Non-destructive: verified storage, learner record, evidence authority and progression ledger. */
+;(()=>{
+ if(window.KhaemenesMathHardeningLoader||document.getElementById("khaeMathHardeningLoaderScript"))return;
+ const s=document.createElement("script");
+ s.id="khaeMathHardeningLoaderScript";
+ s.src=new URL("../../assets/math-hardening-loader-v1.js",document.currentScript?.src||location.href).href;
+ s.async=false;
+ s.onerror=()=>console.warn("Shared mathematics hardening layer unavailable; existing lesson behavior remains active.");
+ (document.head||document.documentElement).appendChild(s);
+})();
