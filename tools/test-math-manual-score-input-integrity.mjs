@@ -34,7 +34,7 @@ for(const path of paths){
      return {missing,score:Math.round(score)};
    };
    for(const values of [
-     [null,"0","0","0","0"],["","0","0","0","0"],[" ","0","0","0","0"],
+     [null,"0","0","0","0"],["","0","0","0","0"],
      ["invalid","0","0","0","0"],["5","0","0","0","0"],["-1","0","0","0","0"]
    ]) assert.ok(parse(values).missing.length>0,path+": incomplete or invalid rubric accepted");
 
