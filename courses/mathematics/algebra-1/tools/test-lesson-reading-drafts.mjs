@@ -64,7 +64,7 @@ assert.equal(a.storage.size,1);assert.ok([...a.storage.keys()][0].startsWith('kh
 assert.ok(a.created.find(n=>n.className==='lesson-draft-status').textContent.includes('does not submit'));
 const b=fixture({storage:a.storage});assert.equal(b.notes.value,a.notes.value);assert.equal(b.reflection.value,a.reflection.value);assert.equal(b.radio.checked,true);
 b.radio.checked=false;b.reset.fire('click');b.callbacks.forEach(cb=>cb());const after=fixture({storage:b.storage});assert.equal(after.radio.checked,false);assert.equal(after.notes.value,a.notes.value);
-const failed=fixture({throwRead:true,throwWrite:true});failed.notes.value='Still editable';failed.main.fire('input');assert.equal(failed.notes.value,'Still editable');assert.ok(failed.created.find(n=>n.className==='lesson-draft-status').textContent.includes('could not be saved'));
+const failed=fixture({throwRead:true,throwWrite:true});failed.notes.value='Still editable';failed.main.fire('input');assert.equal(failed.notes.value,'Still editable');assert.ok(failed.created.find(n=>n.className==='lesson-draft-status').textContent.includes('retained in this page only'));
 const gate=fixture({locked:true});assert.ok(!gate.created.some(n=>n.id==='lessonReading'));assert.equal(gate.storage.size,0);
 const dedicated=fixture({dedicated:true,lesson:{unit:2,number:1,title:'Expressions',concepts:['Read each term.'],objectives:['Explain structure.'],mystery:'Why?',mystery_answer:'Because.'}});assert.ok(dedicated.created.find(n=>n.id==='lessonReading').innerHTML.includes('shared study guide'));assert.ok(dedicated.notes.getAttribute('aria-label'));
 a.w.events.beforeprint[0]();assert.equal(a.readerDetails.open,true);a.w.events.afterprint[0]();assert.equal(a.readerDetails.open,false);
