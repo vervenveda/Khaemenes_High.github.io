@@ -38,7 +38,7 @@ window.KhaemenesClassToolsConfigV1={
  tools:[
   {type:"link",label:"Reading",sub:"Reading resources",href:"reading-list.html"},
   {type:"link",label:"Writing",sub:"Evidence studio",href:"evidence-studio.html"},
-  {type:"link",label:"Vocabulary",sub:"Vocabulary studio",href:"../mathematics/tools/vocabulary-studio.html?course=english-9&unit=01&week=1"},
+  {type:"link",label:"Vocabulary",sub:"Vocabulary studio",href:"../../mathematics/tools/vocabulary-studio.html?course=english-9&unit=01&week=1"},
   {type:"link",label:"Search",sub:"Search ecosystem",href:"https://vervenveda.com/PLERASearch.github.io/"},
   {type:"action",label:"Translate",sub:"Change language",action:"translate"},
   {type:"link",label:"Parent",sub:"Family support",href:"https://vervenveda.com/Khaemenes_Academy.github.io/family/"}
