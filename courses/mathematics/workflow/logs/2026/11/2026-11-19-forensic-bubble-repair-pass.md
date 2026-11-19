@@ -95,3 +95,45 @@ Algebra II remains academically Exceptional, but Mathematics Engine v2.2.3 migra
 ## Assessment firewall
 
 No assessment page, question bank, scoring routine, mastery threshold, Midterm, Final, or diagnostic content was modified in this repair pass so far.
+
+
+## Verification checkpoint 1
+
+After the first validator repairs:
+
+- Geometry strict release errors dropped from **70 → 4**.
+- Four-course / launch-day validation dropped to **3 Algebra I assertions** after the site-root dependency fix.
+- Shared-game validation no longer reports false global-chrome path failures; remaining failures represent real placement/wiring mismatches.
+
+Additional repairs:
+
+### Algebra I launch contract modernization
+Updated:
+`courses/mathematics/tools/validate-prealgebra-algebra1-launch.mjs`
+
+The validator now accepts:
+- canonical shared-chrome/ticker mounting rather than requiring a literal ticker DOM copy;
+- the current readiness/grade separation wording;
+- the current self-contained `const CONFIG` diagnostic blueprint as well as the historical `window.EXAM_CONFIG` form.
+
+Commit:
+`c22b600b01ba95481dedc55fd639e9396ca91e5e`
+
+### Geometry cumulative assessment literal verification
+Updated:
+`courses/mathematics/geometry/tools/validate-release.mjs`
+
+Midterm/Final validation now verifies the live JavaScript-literal `CONFIG` contract directly:
+- `record_key`;
+- `mastery_threshold:80`;
+- selected-response count;
+- constructed-response count;
+- selected / constructed / overall 80% rules;
+- evaluator/reviewer evidence.
+
+No assessment content or scoring logic changed.
+
+Commit:
+`06dfe2ce6cfe6b36abdbb40d7114446b490d9f53`
+
+Status: **next CI run pending**
