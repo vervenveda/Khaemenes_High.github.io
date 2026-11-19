@@ -359,9 +359,12 @@ popup.addEventListener("close",()=>{refresh();if(opener.isConnected)opener.focus
 popup.addEventListener("click",event=>{if(event.target===popup)popup.close()});
 // Keep the existing background dialog and student permission checks intact.
 // Place its launcher between Edit Profile and Yearbook in the second toolbar row.
-const yearbookTool=[...toolGrid.children].find(node=>node.textContent.trim()==="Yearbook");
-if(yearbookTool)toolGrid.insertBefore(opener,yearbookTool);
-else toolGrid.append(opener);
+const existingBackgroundTool=[...toolGrid.children].find(node=>node.textContent.trim()==="Edit Background");
+if(!existingBackgroundTool){
+ const yearbookTool=[...toolGrid.children].find(node=>node.textContent.trim()==="Yearbook");
+ if(yearbookTool)toolGrid.insertBefore(opener,yearbookTool);
+ else toolGrid.append(opener);
+}
 
 function refresh(){
  const owner=person();
