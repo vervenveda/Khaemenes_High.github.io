@@ -1,0 +1,24 @@
+name: English 9 readiness popup and canonical chrome integrity
+on:
+  push:
+    branches:
+      - fix/english9-readiness-centered-canonical-chrome-20261119
+    paths:
+      - "courses/language-arts/english-9/index.html"
+      - "courses/language-arts/english-9/assets/course.js"
+      - "tools/validate-english9-readiness-canonical-chrome.mjs"
+      - ".github/workflows/english9-readiness-canonical-chrome-integrity.yml"
+permissions:
+  contents: read
+jobs:
+  source-and-script-integrity:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - name: Verify readiness presentation without changing academic authority
+        run: |
+          node --check courses/language-arts/english-9/assets/course.js
+          node tools/validate-english9-readiness-canonical-chrome.mjs
