@@ -4,13 +4,22 @@ import assert from "node:assert/strict";
 
 /* Read-only fictional learner progression. No real account or grades touched. */
 const source=fs.readFileSync("courses/mathematics/algebra-2/assets/algebra2-progression.js","utf8");
-const records={
- "readiness-diagnostic":{bestScore:90,attempts:[{score:90}]},
- "unit-06-mastery":{bestScore:88,mastery:true},
- "unit-07-mastery":{bestScore:86,mastery:true},
- "unit-12-mastery":{bestScore:83,mastery:true}
-};
-const backing=new Map([["khaemenes-algebra2-assessment-records-v1",JSON.stringify(records)]]);
+const records={"readiness-diagnostic":{bestScore:90,attempts:[{score:90}]}};
+const lessonCounts={1:6,2:8,3:7,4:8,5:6,6:7,7:7,12:7};
+const unitWeeks={1:[2,3],2:[4,5,6],3:[7,8,9],4:[10,11,12],5:[13,14],6:[15,16,17],7:[19,20,21],12:[34,35]};
+const lessonRecords={},weekly={weeks:{}};
+function seedUnit(unit,score=80){
+ records["unit-"+String(unit).padStart(2,"0")+"-mastery"]={bestScore:score,mastery:score>=80,attempts:[{score}]};
+ for(let n=1;n<=lessonCounts[unit];n++)lessonRecords["u"+String(unit).padStart(2,"0")+"-l"+String(n).padStart(2,"0")]={bestScore:score,score,mastery:score>=80,complete:score>=80,attempts:[{score}]};
+ for(const week of unitWeeks[unit])weekly.weeks[week]={best:score,attempts:[{score,mastery_met:score>=80}]};
+}
+for(let unit=1;unit<=7;unit++)seedUnit(unit);
+seedUnit(12);
+const backing=new Map([
+ ["khaemenes-algebra2-assessment-records-v1",JSON.stringify(records)],
+ ["khaemenes-algebra2-lesson-progress-v1",JSON.stringify(lessonRecords)],
+ ["khaemenes-algebra2-weekly-mastery-v1",JSON.stringify(weekly)]
+]);
 const localStorage={getItem:key=>backing.get(key)||null,setItem:(key,val)=>backing.set(key,String(val))};
 const window={};
 const document={body:{dataset:{}},readyState:"loading",addEventListener(){}};
@@ -41,4 +50,4 @@ records["unit-07-mastery"].bestScore=79;records["unit-07-mastery"].mastery=false
 records["unit-07-mastery"].attempts=[{score:79}];
 backing.set("khaemenes-algebra2-assessment-records-v1",JSON.stringify(records));
 assert.equal(P.unitUnlocked(8),false,"Prior unit at 79% cannot unlock Unit 08");
-console.log("PASS Algebra II fictional learner: Units 07–13 require midterm >=80, 79% fails, 80% passes, prior-unit mastery still enforced.");
+console.log("PASS Algebra II fictional learner: full first-half evidence chain plus Midterm >=80 unlocks second-half entry; 79% prior-unit mastery remains locked.");
