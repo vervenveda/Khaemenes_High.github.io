@@ -1,0 +1,18 @@
+import fs from "node:fs";
+import vm from "node:vm";
+import assert from "node:assert/strict";
+import path from "node:path";
+import {fileURLToPath} from "node:url";
+const here=path.dirname(fileURLToPath(import.meta.url)),src=fs.readFileSync(path.resolve(here,"../../assets/mastery-authority-v1.js"),"utf8");
+const m=new Map(),localStorage={getItem:k=>m.get(k)??null,setItem:(k,v)=>m.set(k,String(v))},window={KhaemenesMathHardeningLoader:true};
+vm.createContext({window,localStorage,JSON,Number,String,Array,Object,Set,Math,Date});vm.runInContext(src,{window,localStorage,JSON,Number,String,Array,Object,Set,Math,Date});
+const A=window.KhaemenesAlgebra1MasteryAuthority;
+m.set("khaemenes-algebra1-unit10-progress-v1",JSON.stringify({completed:["u10-l01","mastery"],scores:{}}));
+assert.equal(A.lessonMastered(10,1,"u10-l01"),false);assert.equal(A.unitMastered(10),false);
+const u=2,refs=Array.from(A.unitLessonRefs(u)),weeks=Array.from(A.unitWeekRefs(u)),best={mastery:80};for(const r of refs)best["lesson-"+r.lesson]=80;
+m.set("khaemenes-algebra1-unit02-a3-v1",JSON.stringify({best}));
+m.set("khaemenes-algebra1-weekly-mastery-v2",JSON.stringify({weeks:Object.fromEntries(weeks.map(w=>[w,{best:80,attempts:[]}]))}));
+assert.equal(A.unitProgressionComplete(2),true);
+const bad=JSON.parse(m.get("khaemenes-algebra1-unit02-a3-v1"));delete bad.best["lesson-"+refs.at(-1).lesson];m.set("khaemenes-algebra1-unit02-a3-v1",JSON.stringify(bad));assert.equal(A.unitProgressionComplete(2),false);
+m.set("khaemenes-algebra1-unit02-a3-v1",JSON.stringify({best}));const ws=JSON.parse(m.get("khaemenes-algebra1-weekly-mastery-v2"));delete ws.weeks[weeks[0]];m.set("khaemenes-algebra1-weekly-mastery-v2",JSON.stringify(ws));assert.equal(A.unitProgressionComplete(2),false);
+console.log("ALGEBRA1_ENGINE_REGRESSION=PASS");
