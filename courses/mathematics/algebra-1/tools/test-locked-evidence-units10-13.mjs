@@ -50,7 +50,7 @@ assert.ok(src.includes('if(persisted){'),"saved-success UI must be guarded by pe
 
 for(let unit=10;unit<=13;unit++){
   const page=fs.readFileSync(path.join(base,"units",`unit-${unit}`,"assessment","mastery-check.html"),"utf8");
-  assert.ok(page.includes("legacy-mastery-engine-v2.js"),`Unit ${unit} formal mastery does not load the hardened shared engine`);
+  assert.ok(page.includes("unit-mastery-engine-v3.js"),`Unit ${unit} formal mastery does not load the current hardened v3 engine`);
 }
 
-console.log("PASS Units 10–13 lock graded mastery answers, preserve v2 evidence, and record Monte Carlo form metadata");
+console.log("PASS Units 10–13 retain hardened compatibility evidence semantics and live mastery pages load the current v3 engine");
