@@ -53,9 +53,13 @@ for(const file of scripts){
  try{new vm.Script(read(root+file),{filename:file})}catch(err){failures.push("Invalid Grade 10 JS "+file+": "+err.message)}
 }
 ensure(dashboard.includes('data-grade="10"'),"Grade 10 dashboard has no grade marker");
-ensure(dashboard.includes('grade10-grade09-visual-parity-20261105'),"Grade 09 visual parity styles missing");
+ensure(dashboard.includes("../../grade-09/student-profile/student-profile.css"),"Canonical Grade 09 profile stylesheet missing");
+ensure(dashboard.includes("grade09-blueprint-upper-grade.js"),"Canonical Grade 09 upper-grade blueprint missing");
+ensure(!dashboard.includes("upper-grade-seven-class.js"),"Retired upper-grade schedule authority must not load");
+ensure(!dashboard.includes("../../shared/upper-grade-profile.css"),"Retired upper-grade profile CSS must not load");
+ensure(/font-size:\\s*16px\\s*!important/.test(dashboard),"Grade 10 dashboard must keep 16px minimum interface typography");
 ensure(!dashboard.includes("Khaemenes_High.github.io/grades/grade-09/student-profile/profile/"),"Grade 10 dashboard still routes to Grade 09 profile editor");
-ensure(blueprint.includes('const builder=grade==="10"?highRoot+"grades/grade-10/student-profile/profile/"'),"Shared Grade 10 profile tools still route to Grade 09");
+ensure(blueprint.includes('const builder=highRoot+"grades/grade-"+grade+"/student-profile/profile/"'),"Shared upper-grade profile tools must route to the same-grade editor");
 for(const page of ["profile","daily-lessons","grades","games","settings"])ensure(dashboard.includes('href="'+page+'/')||dashboard.includes('href="'+page+'/'),"Dashboard missing local "+page+" doorway");
 ensure(look.includes('String(Number(record.grade))!=="10"'),"Grade 10 photo editor is not registration-gated");
 ensure(profile.includes("String(Number(learner.grade))!=='10'"),"Grade 10 profile saver is not grade-gated");
