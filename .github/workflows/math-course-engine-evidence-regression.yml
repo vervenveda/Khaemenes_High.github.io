@@ -1,0 +1,34 @@
+name: Mathematics Course Engine Evidence Regression
+
+on:
+  push:
+    paths:
+      - "courses/mathematics/pre-algebra/assets/prealgebra-cumulative-gates-v1.js"
+      - "courses/mathematics/pre-algebra/workflow/tests/validate-engine-evidence-chain.mjs"
+      - "courses/mathematics/algebra-1/assets/mastery-authority-v1.js"
+      - "courses/mathematics/algebra-1/workflow/tests/validate-engine-evidence-chain.mjs"
+      - "courses/mathematics/geometry/assets/unit-index-gates.js"
+      - "courses/mathematics/geometry/workflow/tests/validate-engine-evidence-chain.mjs"
+      - ".github/workflows/math-course-engine-evidence-regression.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  evidence-chain:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      - name: Use Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "24"
+      - name: Pre-Algebra evidence-chain regression
+        run: node courses/mathematics/pre-algebra/workflow/tests/validate-engine-evidence-chain.mjs
+      - name: Algebra I evidence-chain regression
+        run: node courses/mathematics/algebra-1/workflow/tests/validate-engine-evidence-chain.mjs
+      - name: Geometry evidence-chain regression
+        run: node courses/mathematics/geometry/workflow/tests/validate-engine-evidence-chain.mjs
