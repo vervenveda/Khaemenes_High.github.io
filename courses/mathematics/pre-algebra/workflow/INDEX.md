@@ -2,6 +2,7 @@
 
 | Date | Type | Entry | State |
 | --- | --- | --- | --- |
+| 2026-11-19 | audit · repair · hardening | [Pre-Algebra hardening pass 01](logs/2026/11/2026-11-19-prealgebra-hardening-pass-01.md) | Shared lesson adapter/core hardened: typography hierarchy, verified persistence warnings, richer evidence export, checklist + ≥80% final gate; assessments untouched; browser/device HOLD |
 | 2026-11-18 | full re-audit · Exceptional source architecture | [Full Exceptional Source Re-Audit](logs/2026/11/2026-11-18-full-exceptional-source-reaudit.md) | 360 canonical weekly items + five-dimension 8+2 retrieval + project/evaluator/storage parity; all source-controlled categories Exceptional; browser/device HOLD |
 | 2026-11-17 | audit · repair · closeout | [Student-facing topology closeout sweep](logs/2026/11/2026-11-17-student-facing-topology-closeout-sweep.md) | Diagnostic centered + translator restored; Unit 00 translator restored; Unit 01 worksheet grids equalized; student-facing source architecture substantially normalized; browser/device + universal typography acceptance HOLD |
 | 2026-11-17 | audit · accessibility · repair | [Course-wide lesson readability floor repair](logs/2026/11/2026-11-17-coursewide-lesson-readability-floor-repair.md) | Units 04–13 shared lesson engines now enforce 18px body / 16px ordinary text floor; representative lesson architecture parity PASS; browser/device acceptance HOLD |
