@@ -28,7 +28,7 @@ const WEEKLY_KEY="khaemenes-algebra1-weekly-mastery-v2";
 const MIDTERM_KEY="khaemenes-algebra1-midterm-result-v1";
 const FINAL_KEY="khaemenes-algebra1-final-result-v1";
 const safe=(key,fallback=null)=>{try{const value=JSON.parse(localStorage.getItem(key)||"null");return value&&typeof value==="object"?value:fallback}catch{return fallback}};
-const numeric=value=>{if(value===null||value===undefined||value==="")return null;const n=Number(value);return Number.isFinite(n)?n:null};
+const numeric=value=>{if(value===null||value===undefined||value==="")return null;const n=Number(value);return Number.isFinite(n)&&n>=0&&n<=100?n:null};
 const unitId=n=>String(Number(n)).padStart(2,"0");
 const lessonId=(u,l)=>`u${unitId(u)}-l${String(Number(l)).padStart(2,"0")}`;
 const dedicatedKey=n=>`khaemenes-algebra1-unit${unitId(n)}-a3-v1`;
@@ -75,7 +75,7 @@ function weekLessonEvidence(n){
  return {week,threshold:MASTERY,configured:week===1||required.length>0,mastery:week===1||(required.length>0&&missing.length===0),required,evidence,missing};
 }
 function weekEvidence(n){
- const week=Number(n),store=safe(WEEKLY_KEY,{weeks:{}}),record=store?.weeks?.[week]||store?.weeks?.[String(week)]||null,best=numeric(record?.best),attemptMastery=Array.isArray(record?.attempts)&&record.attempts.some(a=>a?.mastery_met===true);
+ const week=Number(n),store=safe(WEEKLY_KEY,{weeks:{}}),record=store?.weeks?.[week]||store?.weeks?.[String(week)]||null,best=numeric(record?.best),attemptMastery=Array.isArray(record?.attempts)&&record.attempts.some(a=>{const s=numeric(a?.score??a?.percent??a?.overall_percent);return a?.mastery_met===true&&s!==null&&s>=MASTERY});
  return {week,threshold:MASTERY,mastery:(best!==null&&best>=MASTERY)||attemptMastery,best,source:WEEKLY_KEY};
 }
 const REVIEW_ROLES=new Set(["parent-guardian","teacher","program-evaluator","tutor-mentor"]);
@@ -109,10 +109,10 @@ function unitProgressionComplete(unitNumber){
  const unit=Number(unitNumber),lessons=unitLessonRefs(unit),weeks=unitWeekRefs(unit);
  return unitEvidence(unit).mastery&&lessons.length>0&&lessons.every(ref=>lessonEvidence(ref.unit,ref.lesson,ref.lesson_id).mastery)&&weeks.length>0&&weeks.every(w=>weekEvidence(w).mastery);
 }
-function allUnitsMastered(first=1,last=13){for(let n=Number(first);n<=Number(last);n++)if(!unitEvidence(n).mastery)return false;return true}
+function allUnitsMastered(first=1,last=13){for(let n=Number(first);n<=Number(last);n++)if(!unitProgressionComplete(n))return false;return true}
 function allWeeksMastered(first=2,last=36){for(let n=Number(first);n<=Number(last);n++)if(!weekEvidence(n).mastery)return false;return true}
 window.KhaemenesAlgebra1MasteryAuthority={
- version:"1.5",
+ version:"1.6",
  threshold:MASTERY,
  // Browser-local progression is not a trusted official transcript or
  // authenticated evaluator decision. Additive metadata only; current gates
