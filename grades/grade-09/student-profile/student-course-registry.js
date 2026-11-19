@@ -63,7 +63,7 @@ const COURSES=Object.freeze([
     short:"English",
     className:"ela",
     home:repoPath("courses/language-arts/english-9/"),
-    defaultContinue:repoPath("courses/language-arts/english-9/"),
+    defaultContinue:repoPath("courses/language-arts/english-9/daily-learning/"),
     prefix:repoPath("courses/language-arts/english-9/"),
     mentorSubject:"language-arts"
   }),
@@ -321,6 +321,10 @@ function genericContinue(course){
 function continueFor(id){
   const course=COURSE_MAP.get(id);
   if(!course)return null;
+  if(id==="english-9"){
+    const url=repoPath("courses/language-arts/english-9/daily-learning/");
+    return {url,label:"English 9 Daily Learning",hasSpecificLocation:true,actionLabel:"Open English 9 Class",detail:"Open your daily English workspace; use its lesson link to enter or resume native instruction."};
+  }
   if(id==="pre-algebra"){
     const last=readJSON(PREALGEBRA_CONTINUE_KEY,null);
     if(last&&(last.course==="pre-algebra"||last.course==="prealgebra")&&last.url){
@@ -397,6 +401,9 @@ function recordLaunch(id,url,title){
   const course=COURSE_MAP.get(id);
   if(!course)return false;
   if(MATH_ID_SET.has(id))writeJSON(MATH_PATHWAY_KEY,id);
+  // Opening the class organizer is not the same as completing/opening a lesson.
+  // Preserve the last genuine English 9 lesson so the organizer can resume it.
+  if(id==="english-9" && /^\/Khaemenes_High\.github\.io\/courses\/language-arts\/english-9\/daily-learning\/?(?:index\.html)?$/.test(String(url||"")))return true;
   const launches=readJSON(LAST_LAUNCH_KEY,{}),next=launches&&typeof launches==="object"?launches:{};
   next[id]={url:safeCourseURL(course,url||course.home),title:title||course.title,at:new Date().toISOString()};
   return writeJSON(LAST_LAUNCH_KEY,next);
