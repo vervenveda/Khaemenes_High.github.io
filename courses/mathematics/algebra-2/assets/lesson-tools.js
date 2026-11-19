@@ -84,7 +84,7 @@ buttons.style.cssText="display:flex;flex-wrap:wrap;gap:8px;margin-top:10px;";
 const makeButton=(text,callback)=>{
  const b=document.createElement("button");
  b.type="button";b.className="btn";b.textContent=text;
- b.style.cssText="min-height:44px;font-size:14px;padding:8px 12px;";
+ b.style.cssText="min-height:44px;font-size:16px;padding:8px 12px;";
  b.addEventListener("click",callback);buttons.appendChild(b);return b;
 };
 const fileInput=document.createElement("input");
@@ -152,7 +152,9 @@ function writeDraft(value,reason="typing"){
  if(!scopeReady())return false;
  if(value.length>MAX_NOTE){announce("Note exceeds 25,000 characters. Shorten it or export your work before saving.");return false;}
  try{
-  localStorage.setItem(draftKey,JSON.stringify({schema:2,lesson:id,note:value,changedAt:Date.now(),reason}));
+  const raw=JSON.stringify({schema:2,lesson:id,note:value,changedAt:Date.now(),reason});
+  localStorage.setItem(draftKey,raw);
+  if(localStorage.getItem(draftKey)!==raw)throw Error("draft-write-verification-mismatch");
   refreshRecovery();return true;
  }catch{
   announce("Draft storage is unavailable. Keep this page open and use Export note JSON to keep a separate copy.");
@@ -239,8 +241,8 @@ function overwriteNote(){
  }
  // Archive the newer stored version separately so the intentional replacement can be reversed.
  const archiveKey=draftPrefix+"saved-copy-"+Date.now()+"-"+Math.random().toString(36).slice(2);
- try{localStorage.setItem(archiveKey,JSON.stringify({schema:2,lesson:id,note:latest,changedAt:Date.now(),reason:"overwritten-saved-copy"}));}
- catch{announce("Could not create a recovery copy. Export both notes before overwriting.");return;}
+ try{const raw=JSON.stringify({schema:2,lesson:id,note:latest,changedAt:Date.now(),reason:"overwritten-saved-copy"});localStorage.setItem(archiveKey,raw);if(localStorage.getItem(archiveKey)!==raw)throw Error("archive-write-verification-mismatch");}
+ catch{announce("Could not create a verified recovery copy. Export both notes before overwriting.");return;}
  seenNote=latest;saveNote(true);
 }
 function restoreDraft(){
