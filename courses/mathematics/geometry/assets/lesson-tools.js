@@ -6,10 +6,11 @@ const UNIT_WEEKS={1:[1,2],2:[3,4,5],3:[6,7,8],4:[9,10],5:[11,12,13],6:[14,15,16,
 const LESSON_GROUPS={1:[[1,2,3],[4,5,6]],2:[[1,2,3],[4,5],[6,7]],3:[[1,2,3],[4,5],[6,7]],4:[[1,2,3],[4,5,6]],5:[[1,2,3],[4,5],[6,7]],6:[[1,2],[3,4],[5,6],[7,8]],7:[[1,2,3],[4,5],[6,7]],8:[[1,2,3],[4,5,6],[7,8]],9:[[1,2,3],[4,5],[6,7]],10:[[1,2,3,4],[5,6,7]],11:[[1,2,3,4],[5,6,7]],12:[[1,2,3],[4,5],[6,7]],13:[[1,2,3],[4,5,6]]};
 const m=id.match(/^u(\d{2})-l(\d{2})$/);if(!m)return;const unit=Number(m[1]),lesson=Number(m[2]);
 function parse(key,fallback={}){const S=window.KhaemenesMathStorageAdapter;if(S?.readJSON)return S.readJSON(key,fallback)||fallback;try{return JSON.parse(localStorage.getItem(key)||"null")||fallback}catch{return fallback}}
-function save(data){const S=window.KhaemenesMathStorageAdapter;if(S?.writeJSON)return S.writeJSON(KEY,data).persisted===true;try{const raw=JSON.stringify(data);localStorage.setItem(KEY,raw);return localStorage.getItem(KEY)===raw}catch{return false}}
+function save(data){const S=window.KhaemenesMathStorageAdapter;if(S?.writeJSON){const result=S.writeJSON(KEY,data)||{};return result.persisted===true&&(result.verified!==false)}try{const raw=JSON.stringify(data);localStorage.setItem(KEY,raw);return localStorage.getItem(KEY)===raw}catch{return false}}
 function lessonMastered(key){const r=parse(KEY,{})[key];return Number(r?.bestScore??r?.score)>=MASTERY&&(r?.mastery===true||r?.complete===true)}
 function unitMastered(n){const rec=parse(ASSESS,{})[`unit-${String(n).padStart(2,"0")}`];return Number(rec?.bestScore)>=MASTERY||rec?.mastery===true||Array.isArray(rec?.attempts)&&rec.attempts.some(a=>Number(a.score)>=MASTERY)}
 function midtermMastered(){const rec=parse(ASSESS,{})["midterm"];return rec?.mastery===true||Number(rec?.bestScore)>=MASTERY}
+function finalMastered(){const rec=parse(ASSESS,{})["final"];return rec?.mastery===true||Number(rec?.bestScore)>=MASTERY}
 function weekMastered(n){const r=parse(WEEK_STORE,{weeks:{}})?.weeks?.[n];return Number(r?.best)>=MASTERY||r?.attempts?.some(a=>a.mastery_met===true)}
 function boundaryPreviousWeek(){const groups=LESSON_GROUPS[unit]||[],weeks=UNIT_WEEKS[unit]||[],i=groups.findIndex(g=>g.includes(lesson));return i>0&&groups[i][0]===lesson?weeks[i-1]:null}
 function unitEntryReady(){if(unit===1)return true;if(unit===7)return unitMastered(6)&&midtermMastered();return unitMastered(unit-1)}
@@ -55,6 +56,7 @@ function nextStepSpec(){
  }
  return {label:"Course evidence complete",title:"Review Completion Record",text:"Final mastery is recorded. Review portfolio, capstone, and completion evidence with the evaluator.",href:"../../../records/course-completion-certificate.html",action:"Completion Record"};
 }
+window.KhaemenesGeometryProgressionContract=Object.freeze({version:"1.0.0",nextTarget:nextStepSpec});
 function renderNextStep(){
  if(!completion)return;
  let card=document.getElementById("lessonNextStep");
@@ -66,8 +68,8 @@ function updateStatus(){
  if(status)status.textContent=rec.mastery?`Mastery demonstrated · Best ${rec.bestScore}% · progression evidence recorded.`:`Not yet mastered · ${rec.bestScore?`best ${rec.bestScore}% · `:""}${MASTERY}% required.`;
  renderNextStep();
 }
-document.getElementById("saveLessonMastery")?.addEventListener("click",()=>{const scoreField=document.getElementById("lessonMasteryScore"),rawScore=scoreField?.value;const score=rawScore==null||String(rawScore).trim()===""?NaN:Number(rawScore);if(!Number.isFinite(score)||score<0||score>100){alert("Enter a score from 0 to 100.");return}rec.attempts.push({score,mastery_threshold:MASTERY,mastery_met:score>=MASTERY,recorded_at:new Date().toISOString(),classification:"local-evaluator-score"});rec.bestScore=Math.max(rec.bestScore||0,score);rec.mastery=rec.bestScore>=MASTERY;rec.complete=rec.mastery;rec.updated=new Date().toISOString();data[id]=rec;save(data);if(box)box.checked=rec.mastery;updateStatus();alert(rec.mastery?"Lesson mastery recorded. Continue to the weekly gate when this week's assigned lessons are complete.":`Score recorded. ${MASTERY}% mastery is required before progression.`)});
-document.getElementById("saveLessonNote")?.addEventListener("click",()=>{rec.note=note?.value.trim()||"";rec.updated=new Date().toISOString();data[id]=rec;save(data);alert("Lesson note saved locally.")});document.getElementById("printLesson")?.addEventListener("click",()=>print());updateStatus();
+document.getElementById("saveLessonMastery")?.addEventListener("click",()=>{const scoreField=document.getElementById("lessonMasteryScore"),rawScore=scoreField?.value;const score=rawScore==null||String(rawScore).trim()===""?NaN:Number(rawScore);if(!Number.isFinite(score)||score<0||score>100){alert("Enter a score from 0 to 100.");return}rec.attempts.push({score,mastery_threshold:MASTERY,mastery_met:score>=MASTERY,recorded_at:new Date().toISOString(),classification:"local-evaluator-score"});rec.bestScore=Math.max(rec.bestScore||0,score);rec.mastery=rec.bestScore>=MASTERY;rec.complete=rec.mastery;rec.updated=new Date().toISOString();data[id]=rec;const persisted=save(data);if(!persisted){alert("This mastery attempt could not be verified as persistent. The progression record was not confirmed; export or copy important evidence before leaving.");return}if(box)box.checked=rec.mastery;updateStatus();alert(rec.mastery?"Lesson mastery recorded and verified. Continue to the weekly gate when this week's assigned lessons are complete.":`Score recorded and verified. ${MASTERY}% mastery is required before progression.`)});
+document.getElementById("saveLessonNote")?.addEventListener("click",()=>{rec.note=note?.value.trim()||"";rec.updated=new Date().toISOString();data[id]=rec;const persisted=save(data);alert(persisted?"Lesson note saved and verified locally.":"Lesson note could not be verified as persistent. Copy or export it before leaving this page.")});document.getElementById("printLesson")?.addEventListener("click",()=>print());updateStatus();
 })();
 /* Shared Learn → Practice → Submit → Mastery → Review workflow. */
 (()=>{
