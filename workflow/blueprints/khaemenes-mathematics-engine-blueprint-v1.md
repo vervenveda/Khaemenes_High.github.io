@@ -570,7 +570,7 @@ if (window.KhaemenesMathEngine) return;
 
 All mathematics pages that adopt the universal engine must reference the shared canonical assets below rather than copying their CSS or bootstrap logic locally.
 
-- **Universal stylesheet:** `https://vervenveda.com/assets/khaemenes-math-engine-v1.css`
+- **Universal stylesheet:** `https://vervenveda.com/assets/khaemenes-math-engine-v2.css`
 - **Universal engine/bootstrap:** `https://vervenveda.com/assets/khaemenes-math-engine-v1.js`
 
 These files are the presentation and ownership source of truth.
@@ -780,3 +780,33 @@ The goal is to create a rigorous, beautiful, resilient, globally accessible math
 
 **Canonical principle:**  
 **One mathematical continuum. One engine architecture. Many levels of reasoning. Free access. Exceptional depth.**
+
+
+## Canonical presentation asset · Mathematics Engine v2.0.0
+
+The canonical mathematics presentation stylesheet is:
+
+`https://vervenveda.com/assets/khaemenes-math-engine-v2.css`
+
+For engine-driven mathematics pages, this stylesheet is the single presentation authority. Do not layer legacy course stylesheets or page-level presentation CSS beneath or above it.
+
+Typography contract:
+- Cinzel: institutional, course, section, and card titles.
+- Brandon Grotesque / Nunito: body, labels, buttons, forms, and supporting copy.
+- No bold typography.
+- No text below 16px.
+- Primary course title 66px.
+- Academy title 33px.
+- Section title 33px Cinzel.
+- Section descriptor 24px body type.
+- Card title 24px Cinzel.
+- Body copy 18px preferred; controls/supporting copy 16px minimum.
+
+Visual contract:
+- charcoal + crisp cream + khaki parchment only;
+- 7px radius;
+- 3px borders;
+- centered single-column page rhythm;
+- even grids;
+- collapsed charcoal expandable bars where progressive disclosure is appropriate;
+- global tickers, official header, and ecosystem toolbars remain owned by their canonical shared scripts.
