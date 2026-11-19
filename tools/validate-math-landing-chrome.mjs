@@ -13,20 +13,22 @@ for(const course of courses){
   const body=(html.match(/<body\b[^>]*>([\s\S]*?)<\/body>/i)||[])[1]||"";
   const scripts=[...html.matchAll(/<script\b[^>]*src=["']([^"']+)["'][^>]*>/gi)].map(m=>m[1]);
   const dual=scripts.filter(s=>/vnv-dual-ticker-v1\.js/.test(s));
-  const globalChrome=scripts.filter(s=>/high-school-global-chrome-v2\.js/.test(s));\n  const officialHeader=scripts.filter(s=>/vnv-header-autopopulate\.js/.test(s));
+  const globalChrome=scripts.filter(s=>/high-school-global-chrome-v2\.js/.test(s));
+  const officialHeader=scripts.filter(s=>/vnv-header-autopopulate\.js/.test(s));
   const direct333=scripts.filter(s=>/vnv-333-ticker\.js/.test(s));
   const directAuto=scripts.filter(s=>/vnv-ticker-autopopulate\.js/.test(s));
 
   ok(dual.length===1,`${course}: expected exactly one canonical dual-ticker loader, found ${dual.length}`);
-  ok(globalChrome.length===0,`${course}: high-school-global-chrome-v2.js must not load on mathematics landing pages`);\n  ok(officialHeader.length===1,`${course}: expected exactly one official VNV header loader, found ${officialHeader.length}`);
+  ok(globalChrome.length===0,`${course}: high-school-global-chrome-v2.js must not load on mathematics landing pages`);
+  ok(officialHeader.length===1,`${course}: expected exactly one official VNV header loader, found ${officialHeader.length}`);
   ok(direct333.length===0,`${course}: direct 333 ticker loader must not appear in index.html`);
   ok(directAuto.length===0,`${course}: direct AutoPopulate ticker loader must not appear in index.html`);
   ok(!/<header\b/i.test(body),`${course}: local <header> markup is not allowed in the landing page body`);
   ok(!/class=["'][^"']*site-header/i.test(body),`${course}: legacy site-header markup is not allowed`);
 
   const dualPos=html.indexOf("vnv-dual-ticker-v1.js");
-  const chromePos=html.indexOf("high-school-global-chrome-v2.js");
-  ok(dualPos>=0&&chromePos>dualPos,`${course}: dual ticker must load before global chrome`);
+  const headerPos=html.indexOf("vnv-header-autopopulate.js");
+  ok(dualPos>=0&&headerPos>dualPos,`${course}: dual ticker must load before the official VNV header`);
 }
 
 const ticker=read("assets/vnv-dual-ticker-v1.js");
@@ -36,7 +38,8 @@ ok(ticker.includes('vnv333NetworkTicker'),"dual ticker guard must verify the 333
 ok(ticker.includes('vnvTickerAutoPopulate'),"dual ticker guard must verify the AutoPopulate ticker mount");
 
 if(fail.length){
-  console.error("\nMathematics landing chrome validation failed:");
+  console.error("
+Mathematics landing chrome validation failed:");
   fail.forEach(x=>console.error(" - "+x));
   process.exit(1);
 }
