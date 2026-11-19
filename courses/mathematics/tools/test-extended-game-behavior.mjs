@@ -6,7 +6,7 @@ import assert from 'node:assert/strict';
 const base='courses/mathematics/assets/learning-games';
 const registry=JSON.parse(fs.readFileSync(path.join(base,'game-registry.json'),'utf8'));
 
-const names=['generate','answerFor','correct','next','challenge','start','check','qCongruence','qCorrespondence','qSimilarity','qScale','formula','solution','expected','KEY'];
+const names=['generate','answerFor','correct','next','challenge','newChallenge','start','check','qCongruence','qCorrespondence','qSimilarity','qScale','formula','solution','expected','KEY'];
 for(const slug of fs.readdirSync(base).filter(s=>fs.existsSync(path.join(base,s,'index.html')))){
  const html=fs.readFileSync(path.join(base,slug,'index.html'),'utf8');
  // Standalone Pre-Algebra form games have a different interaction contract:
@@ -38,7 +38,7 @@ for(const slug of fs.readdirSync(base).filter(s=>fs.existsSync(path.join(base,s,
   vm.runInContext(code,context,{timeout:1500});
  }
  const api=context.gameAudit;
- const next=[api.challenge,api.next,api.start].find(candidate=>typeof candidate==='function');
+ const next=[api.challenge,api.newChallenge,api.next,api.start].find(candidate=>typeof candidate==='function');
  assert.equal(typeof next,'function',slug+': no callable challenge interface');
  // Repeated challenges must remain usable and contain a fresh valid problem.
  for(let i=0;i<30;i++){
