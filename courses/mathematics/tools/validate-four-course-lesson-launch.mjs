@@ -26,7 +26,7 @@ function localScriptDependencies(htmlFile){
     const ref=cleanRef(match[1]);
     if(!ref||/^(?:https?:)?\/\//i.test(ref)||ref.startsWith("data:"))continue;
     const target=ref.startsWith("/")
-      ? path.join(repoRoot,ref.replace(/^\/+/,""))
+      ? path.join(repoRoot,ref.replace(/^\/+/,"").replace(/^Khaemenes_High\.github\.io\//,""))
       : path.resolve(path.dirname(htmlFile),ref);
     if(!exists(target))missing.push(match[1]);
   }
