@@ -345,3 +345,28 @@ test("canonical math diagnostics expose assessment-safe single-owner markers and
   assert.doesNotMatch(page,/new\s+MutationObserver|setInterval\s*\(/);
  });
 });
+
+
+test("Geometry assessment center follows the canonical assessment gateway blueprint",()=>{
+ const page=read("courses/mathematics/geometry/assessments/index.html");
+ assert.match(page,/data-math-assessment-blueprint="v1"/);
+ assert.match(page,/data-assessment-runtime="gateway-single-owner"/);
+ assert.doesNotMatch(page,/assessment-landing-vnv-ka\.css|assessment-landing-chrome\.js|course-entry-contract\.js|learner-scope-v1\.js/);
+ assert.doesNotMatch(page,/new\s+MutationObserver|setInterval\s*\(/);
+ assert.equal((page.match(/data-info="/g)||[]).length,3);
+ assert.equal((page.match(/high-school-global-chrome-v2\.js/g)||[]).length,1);
+});
+
+test("Geometry Unit 01 mastery is a single-owner 20-question 80 percent gated assessment",()=>{
+ const page=read("courses/mathematics/geometry/units/unit-01/assessment/mastery-check.html");
+ assert.match(page,/data-math-assessment-blueprint="v1"/);
+ assert.match(page,/data-assessment-runtime="single-owner-mastery"/);
+ assert.doesNotMatch(page,/assessment-engine\.js|question-bank\.js|unit-mastery-source-v2\.js|weekly-mastery-v2-01-03\.js|course-entry-contract\.js|learner-scope-v1\.js/);
+ assert.doesNotMatch(page,/new\s+MutationObserver|setInterval\s*\(/);
+ assert.equal((page.match(/data-section="/g)||[]).length,2);
+ assert.equal((page.match(/class="bottom-section-nav"/g)||[]).length,1);
+ assert.equal((page.match(/id="submitButton"/g)||[]).length,1);
+ assert.match(page,/mastery_threshold:80/);
+ assert.match(page,/for\(let l=1;l<=6;l\+\+\)/);
+ assert.match(page,/for\(const w of \[1,2\]\)/);
+});
