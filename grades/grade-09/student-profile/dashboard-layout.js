@@ -1,7 +1,7 @@
 /* Grade 09 layout steward: keep features, restore a readable daily-start hierarchy. */
 (()=>{"use strict";
 const main=document.querySelector("main"),schedule=document.querySelector(".grade09-priority-schedule");
-if(!main||!schedule)return;
+if(!main)return;
 const progress=document.getElementById("studentCourseProgress");
 const dashboardWidth="min(calc(100% - 33px), 1100px)";
 const align=node=>{if(!node)return;node.style.setProperty("width",dashboardWidth,"important");node.style.setProperty("max-width","1100px","important");node.style.setProperty("margin-left","auto","important");node.style.setProperty("margin-right","auto","important")};
@@ -30,7 +30,7 @@ if(!document.getElementById("khaeProfileToolRail")){
  heading.textContent="My Profile Tools";
  heading.style.cssText="margin:0 0 12px;text-align:center;color:#e2bd78;font:400 24px/1.3 Cinzel,Georgia,serif";
  const grid=document.createElement("div");
- grid.style.cssText="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,220px),1fr));gap:9px";
+ grid.style.cssText="display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:11px";
  const openConnectedResource=url=>{
   // Same-tab navigation survives popup blockers; never open an untrusted origin.
   if(!/^https:\/\/vervenveda\.com\//i.test(url))return false;
@@ -46,6 +46,11 @@ if(!document.getElementById("khaeProfileToolRail")){
  };
  const tools=[
   {label:"Edit Profile",href:"profile/"},
+  {label:"Edit Background",target:"grade09BackgroundDialog",run:()=>{
+    const popup=document.getElementById("grade09BackgroundDialog");
+    if(popup&&typeof popup.showModal==="function"){if(!popup.open)popup.showModal();return true}
+    return false;
+   }},
   {label:"Student Progress",target:"grade09ClassProgressDialog",fallback:"#studentCourseProgress",run:()=>{
     const popup=document.getElementById("grade09ClassProgressDialog");
     if(popup&&!popup.open){popup.showModal();return true}
@@ -325,4 +330,106 @@ if(!region.querySelector("#grade09ExploreYearbook")){
 if(portfolio)portfolio.style.maxWidth="none";
 main.append(region);
 align(region);
+
+function khaeCanonicalProfileShell(){
+ if(document.body?.dataset.khaeCanonicalProfileShell==="1")return;
+ document.body.dataset.khaeCanonicalProfileShell="1";
+ const grade=String(document.body.dataset.grade||"09").padStart(2,"0");
+ const hero=document.querySelector(".grade09-local-masthead .hero");
+ if(hero){
+   const eyebrow=hero.querySelector(".eyebrow");
+   const h1=hero.querySelector("h1");
+   const p=hero.querySelector("p:not(.eyebrow)");
+   if(eyebrow)eyebrow.textContent="Khaemenes Academy · Grade "+grade;
+   if(h1)h1.textContent="My Profile";
+   if(p)p.textContent="Your personal High School profile space for identity, progress, learning tools, portfolio work, and the parts of your school experience you choose to share.";
+   hero.style.setProperty("padding","55px 24px","important");
+   hero.style.setProperty("text-align","center","important");
+ }
+ if(!document.getElementById("khaeCanonicalProfileShellStyle")){
+  const style=document.createElement("style");
+  style.id="khaeCanonicalProfileShellStyle";
+  style.textContent=`
+   html:root:root body #khaeProfileToolRail>div,
+   html:root:root body .grade09-blueprint-tool-grid{
+    display:grid!important;grid-template-columns:repeat(4,minmax(0,1fr))!important;
+    gap:11px!important;align-items:stretch!important
+   }
+   html:root:root body #khaeProfileToolRail :is(.grade09-profile-tool,.grade09-blueprint-tool){
+    min-width:0!important;min-height:55px!important;border-radius:7px!important;
+    background:#243038!important;background-image:none!important;
+    color:#fff8e9!important;-webkit-text-fill-color:#fff8e9!important;
+    font-size:16px!important;font-weight:400!important;text-align:center!important
+   }
+   html:root:root body details.khae-profile-accordion{
+    box-sizing:border-box;width:min(calc(100% - 33px),1100px)!important;
+    max-width:1100px!important;margin:14px auto!important;border:1px solid #b48b45!important;
+    border-radius:7px!important;background:#fffaf0!important;overflow:hidden!important;
+    grid-column:1/-1!important
+   }
+   html:root:root body details.khae-profile-accordion>summary{
+    box-sizing:border-box;display:flex;align-items:center;justify-content:space-between;
+    min-height:55px;padding:14px 18px;cursor:pointer;list-style:none;
+    background:#243038!important;color:#fff8e9!important;-webkit-text-fill-color:#fff8e9!important;
+    font:400 20px/1.3 Cinzel,Georgia,serif!important
+   }
+   html:root:root body details.khae-profile-accordion>summary::-webkit-details-marker{display:none}
+   html:root:root body details.khae-profile-accordion>summary::after{content:"+";font:400 24px/1 Cinzel,Georgia,serif}
+   html:root:root body details.khae-profile-accordion[open]>summary::after{content:"−"}
+   html:root:root body details.khae-profile-accordion>.khae-profile-accordion-body{
+    padding:18px;background:#fffaf0;color:#243038
+   }
+   html:root:root body footer{box-sizing:border-box!important;width:100%!important;text-align:center!important;
+    align-items:center!important;justify-content:center!important;margin-inline:auto!important}
+   @media(max-width:820px){
+    html:root:root body #khaeProfileToolRail>div,
+    html:root:root body .grade09-blueprint-tool-grid{grid-template-columns:repeat(2,minmax(0,1fr))!important}
+   }
+   @media(max-width:520px){
+    html:root:root body #khaeProfileToolRail>div,
+    html:root:root body .grade09-blueprint-tool-grid{grid-template-columns:1fr!important}
+   }`;
+  document.head.append(style);
+ }
+ const identity=document.querySelector(".grade09-profile-first .profile-row")?.closest(".card");
+ const rail=document.getElementById("khaeProfileToolRail");
+ const titleFor=node=>{
+   const heading=node.querySelector?.("h2,h3,h4");
+   if(heading?.textContent.trim())return heading.textContent.trim();
+   return node.getAttribute?.("aria-label")||node.id?.replace(/([a-z])([A-Z])/g,"$1 $2")||"Profile Section";
+ };
+ const wrap=node=>{
+   if(!node||!node.isConnected||node===identity||node===rail||node.closest("dialog")||node.closest("details.khae-profile-accordion"))return;
+   if(node.closest("#khaeProfileToolRail"))return;
+   const details=document.createElement("details");
+   details.className="khae-profile-accordion";
+   details.open=false;
+   const summary=document.createElement("summary");
+   summary.textContent=titleFor(node);
+   const body=document.createElement("div");
+   body.className="khae-profile-accordion-body";
+   node.parentNode.insertBefore(details,node);
+   body.append(node);details.append(summary,body);
+ };
+ const top=document.getElementById("grade09ProfileFirst");
+ if(top){
+   for(const child of [...top.children]){
+    if(child===identity||child===rail||child.id==="grade09BlueprintTools")continue;
+    if(child.id==="grade09BlueprintTools"&&child.querySelector("#khaeProfileToolRail"))continue;
+    wrap(child);
+   }
+ }
+ const main=document.querySelector("main");
+ if(main){
+  for(const child of [...main.children]){
+   if(child===top||child.matches?.("script,style"))continue;
+   wrap(child);
+  }
+ }
+ for(const d of document.querySelectorAll("details.khae-profile-accordion"))d.open=false;
+}
+if(document.readyState==="loading")document.addEventListener("DOMContentLoaded",()=>setTimeout(khaeCanonicalProfileShell,0),{once:true});
+else setTimeout(khaeCanonicalProfileShell,0);
+window.addEventListener("load",()=>setTimeout(khaeCanonicalProfileShell,0),{once:true});
+
 })();
