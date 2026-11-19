@@ -423,3 +423,25 @@ test("Pre-Algebra midterm uses the mixed-evidence single-owner blueprint",()=>{
  assert.match(page,/store\.attempts\.push\(result\)/);
  assert.match(page,/Prior evidence was preserved/);
 });
+
+
+test("Algebra I midterm uses the mixed-evidence single-owner blueprint",()=>{
+ const page=read("courses/mathematics/algebra-1/assessments/midterm-units-01-06.html");
+ assert.match(page,/data-math-assessment-blueprint="v1"/);
+ assert.match(page,/data-assessment-runtime="single-owner-midterm"/);
+ assert.doesNotMatch(page,/exam-engine\.js|exam-depth-v2\.js|course-entry-contract\.js|learner-scope-v1\.js/);
+ assert.doesNotMatch(page,/new\s+MutationObserver|setInterval\s*\(/);
+ assert.equal((page.match(/data-section="/g)||[]).length,6);
+ assert.equal((page.match(/class="bottom-section-nav"/g)||[]).length,1);
+ assert.equal((page.match(/id="submitButton"/g)||[]).length,1);
+ assert.match(page,/result_key:"khaemenes-algebra1-midterm-result-v1"/);
+ assert.match(page,/selected_weight":70/);
+ assert.match(page,/constructed_weight":30/);
+ assert.match(page,/response_min_chars":50/);
+ assert.match(page,/selected>=80&&constructedPct>=80&&overall>=80/);
+ assert.match(page,/schema:"khaemenes-algebra1-evaluator-review-v1"/);
+ assert.match(page,/for\(let u=1;u<=6;u\+\+\)/);
+ assert.match(page,/for\(let w=2;w<=18;w\+\+\)/);
+ assert.match(page,/attempt_history/);
+ assert.match(page,/Earlier evidence was preserved/);
+});
