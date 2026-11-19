@@ -30,15 +30,17 @@ function openTranslator({root}){
 }
 if(document.readyState==="loading")document.addEventListener("DOMContentLoaded",ensureTranslatorMount,{once:true});else ensureTranslatorMount();
 
+const grade=/\/english-10\//i.test(location.pathname)?"10":"09";
+const profileBase="/Khaemenes_High.github.io/grades/grade-"+grade+"/student-profile/";
 window.KhaemenesClassToolsConfigV1={
  id:"high-school-english-landing",
  match:()=>/\/courses\/language-arts\/english-9\/(?:index\.html)?$/i.test(location.pathname),
  toggleLabel:"Tools",
  ariaLabel:"English learning tools",
  tools:[
-  {type:"link",label:"Student",sub:"Student profile",href:"/Khaemenes_High.github.io/grades/grade-09/student-profile/"},
-  {type:"link",label:"Classes",sub:"Daily classes",href:"/Khaemenes_High.github.io/grades/grade-09/student-profile/daily-lessons/"},
-  {type:"link",label:"Schedule",sub:"My schedule",href:"/Khaemenes_High.github.io/grades/grade-09/student-profile/#scheduleBarTitle"},
+  {type:"link",label:"Student",sub:"Student profile",href:profileBase},
+  {type:"link",label:"Classes",sub:"Daily classes",href:profileBase+"daily-lessons/"},
+  {type:"link",label:"Schedule",sub:"My schedule",href:profileBase+"#scheduleBarTitle"},
   {type:"link",label:"Search",sub:"Search ecosystem",href:"https://vervenveda.com/PLERASearch.github.io/"},
   {type:"action",label:"Translate",sub:"Change language",action:"translate"},
   {type:"link",label:"Parent",sub:"Family support",href:"https://vervenveda.com/Khaemenes_Academy.github.io/family/"}
