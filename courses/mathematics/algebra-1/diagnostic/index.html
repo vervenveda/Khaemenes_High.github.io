@@ -493,6 +493,8 @@ function render(){
   document.querySelectorAll("[data-section]").forEach(b=>b.classList.toggle("current",Number(b.dataset.section)===section));
   $("#prevSection").disabled=section===0;
   $("#nextSection").disabled=section===2;
+  $("#bottomPrevSection").disabled=section===0;
+  $("#bottomNextSection").textContent=section===2?"Review / Submit ↑":"Next →";
   updateProgress();
 }
 function goSection(n){
