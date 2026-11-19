@@ -216,57 +216,69 @@
     </section>
 
     <section class="kme-section" data-math-phase="apply" aria-labelledby="applicationTitle">
-      <div class="wrap">
-        <header class="section-head">
-          <h2 id="applicationTitle">Global Application</h2>
-          <p>Use the mathematics in a real setting.</p>
-        </header>
-        <p class="notice" id="application"></p>
+      <div class="wrap kme-disclosure-wrap">
+        <details class="kme-lesson-accordion">
+          <summary id="applicationTitle">Global Application</summary>
+          <div class="kme-accordion-body">
+            <header class="section-head">
+              <p>Use the mathematics in a real setting.</p>
+            </header>
+            <p class="notice" id="application"></p>
+          </div>
+        </details>
       </div>
     </section>
 
     <section class="kme-section" data-math-phase="guided" aria-labelledby="notesTitle">
-      <div class="wrap">
-        <header class="section-head">
-          <h2 id="notesTitle">Guided Notes</h2>
-          <p>Put the structure into your own words.</p>
-        </header>
-        <article class="card guided-note">
-          <div class="field">
-            <label for="guidedNotes">How would you explain the difference between an integer, a rational number, and an irrational number to another student?</label>
-            <textarea id="guidedNotes"></textarea>
+      <div class="wrap kme-disclosure-wrap">
+        <details class="kme-lesson-accordion">
+          <summary id="notesTitle">Guided Notes</summary>
+          <div class="kme-accordion-body">
+            <header class="section-head">
+              <p>Put the structure into your own words.</p>
+            </header>
+            <article class="card guided-note">
+              <div class="field">
+                <label for="guidedNotes">How would you explain the difference between an integer, a rational number, and an irrational number to another student?</label>
+                <textarea id="guidedNotes"></textarea>
+              </div>
+              <div class="actions kme-field-actions">
+                <button class="btn" id="saveNotes" type="button">Save Guided Notes</button>
+              </div>
+              <p id="notesMessage" aria-live="polite"></p>
+            </article>
           </div>
-          <div class="actions">
-            <button class="btn" id="saveNotes" type="button">Save Guided Notes</button>
-          </div>
-          <p id="notesMessage" aria-live="polite"></p>
-        </article>
+        </details>
       </div>
     </section>
 
     <section class="kme-section" id="practice" data-math-phase="your-turn" aria-labelledby="practiceTitle">
-      <div class="wrap">
-        <header class="section-head">
-          <h2 id="practiceTitle">Lesson Practice</h2>
-          <p>Check understanding across 20 questions and study every explanation.</p>
-          <p class="help-text">Reach <strong data-mastery-threshold>80%</strong> to unlock Lesson 2.</p>
-        </header>
+      <div class="wrap kme-disclosure-wrap">
+        <details class="kme-lesson-accordion">
+          <summary id="practiceTitle">Lesson Practice</summary>
+          <div class="kme-accordion-body">
+            <header class="section-head">
+              <p>Check understanding across 20 questions and study every explanation.</p>
+              <p class="help-text">Reach <strong data-mastery-threshold>80%</strong> to unlock Lesson 2.</p>
+            </header>
 
-        <div class="practice-meter" aria-label="Practice completion">
-          <div class="practice-meter-row">
-            <strong>Practice Progress</strong>
-            <span id="practiceProgressLabel">0 of 20 answered</span>
+            <div class="practice-meter" aria-label="Practice completion">
+              <div class="practice-meter-row">
+                <strong>Practice Progress</strong>
+                <span id="practiceProgressLabel">0 of 20 answered</span>
+              </div>
+              <div class="progress-track" id="practiceProgressBar" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"></div>
+            </div>
+
+            <form class="question-list" id="questionList"></form>
+
+            <div class="actions kme-practice-actions">
+              <button class="btn" id="submitPractice" type="button">Submit Assignment</button>
+              <button class="btn" id="resetPractice" type="button">Reset Practice</button>
+            </div>
+            <p class="notice" id="scoreMessage" aria-live="polite">No practice score yet.</p>
           </div>
-          <div class="progress-track" id="practiceProgressBar" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"></div>
-        </div>
-
-        <form class="question-list" id="questionList"></form>
-
-        <div class="actions">
-          <button class="btn" id="submitPractice" type="button">Submit Assignment</button>
-          <button class="btn" id="resetPractice" type="button">Reset Practice</button>
-        </div>
-        <p class="notice" id="scoreMessage" aria-live="polite">No practice score yet.</p>
+        </details>
       </div>
     </section>
 
