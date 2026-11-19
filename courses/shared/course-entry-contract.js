@@ -189,6 +189,22 @@
   }
   ensureMathSharedGameBridge();
 
+  /* Canonical shared mathematics game return navigation.
+     Existing explicit helpers remain authoritative; this fills only missing game pages. */
+  function ensureMathGameReturnRoute(){
+    if(typeof document==="undefined"||typeof location==="undefined")return;
+    const path=String(location.pathname||"");
+    if(!/\/courses\/mathematics\/assets\/learning-games\/[^/]+\/(?:index\.html)?$/i.test(path))return;
+    if(document.querySelector('script[src*="game-return-route.js"],script[data-khaemenes-game-return-route="v1"]'))return;
+    const source=document.currentScript?.src||location.href;
+    const s=document.createElement("script");
+    s.src=new URL("../mathematics/assets/game-return-route.js",source).href;
+    s.async=false;
+    s.dataset.khaemenesGameReturnRoute="v1";
+    (document.head||document.documentElement).appendChild(s);
+  }
+  ensureMathGameReturnRoute();
+
   // High School mathematics continuation publisher. It summarizes existing
   // course evidence only; it never changes progression, grades, or mastery.
   function ensureMathContinuationPublisher() {
