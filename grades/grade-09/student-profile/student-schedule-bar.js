@@ -21,7 +21,8 @@ function addCourseActions(card,course,id,current,pinned){
    if(!url)return true;
    try{
      const a=new URL(url,location.href),home=new URL(course.home,location.href);
-     return a.origin===home.origin&&a.pathname.replace(/\\/+$/,"/")===home.pathname.replace(/\\/+$/,"/")&&!a.search;
+     const norm=p=>p.replace(/index\.html$/i,"").replace(/\/+$/,"/");
+     return a.origin===home.origin&&norm(a.pathname)===norm(home.pathname)&&!a.search;
    }catch{return true}
  };
  const target=!landing(current?.url)?current.url:!landing(first)?first:null;
