@@ -16,6 +16,9 @@ html:root:root:root body :is(
   .pill,.day,.metric span,.breadcrumb,.breadcrumb *,.header-control,.course-menu>summary,
   .notice,.feedback,.lesson-meta
 ){font-size:max(16px,1em)!important;line-height:1.55}
+html:root:root:root body :is(.eyebrow,.kicker,.dialog-eyebrow,.dialog-kicker,.worksheet-kicker){
+  font-size:14px!important;line-height:1.35!important;letter-spacing:.12em!important;text-transform:uppercase!important
+}
 @media print{html:root:root:root body{font-size:16px!important}}
 `;
   document.head.appendChild(style);
