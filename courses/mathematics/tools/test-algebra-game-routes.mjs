@@ -77,9 +77,16 @@ const target=path.resolve(placement.lesson);
 const returns=[...nodes.values()].filter(n=>typeof n.href==='string'&&n.href.includes('/algebra-1/units/')).map(n=>({id:n.id,href:n.href,path:path.resolve(base,slug,n.href)}));
 const wrong=returns.filter(n=>n.path!==target);
 const requested=e.el.course?.value;
-const item={...placement,course:requested,focus:e.el.focus?.value,returns:returns.map(n=>({id:n.id,href:n.href})),wrong:wrong.map(n=>n.href),status:returns.length&&!wrong.length&&requested==='algebra1'?'PASS':'CHECK'};
+const routeEvents={};
+const routeContext={window:{},document:{currentScript:{src:'https://audit.test/courses/mathematics/assets/game-return-route.js'},readyState:'loading',addEventListener:(n,f)=>routeEvents[n]=f},URL,URLSearchParams};
+vm.runInNewContext(fs.readFileSync('courses/mathematics/assets/game-return-route.js','utf8'),routeContext);
+const unitMap=JSON.parse(fs.readFileSync(path.join(units,`unit-${String(placement.unit).padStart(2,'0')}`,'unit-map.json'),'utf8'));
+const canonicalRoute=routeContext.window.KhaemenesGameReturn.resolveLesson('algebra1',placement.unit,placement.number,unitMap);
+const canonicalTarget=path.resolve('courses/mathematics/assets',canonicalRoute);
+assert.equal(canonicalTarget,target,placement.lesson+': canonical game-return resolver must return to exact lesson');
+const item={...placement,course:requested,focus:e.el.focus?.value,returns:returns.map(n=>({id:n.id,href:n.href})),legacyFallbacks:wrong.map(n=>n.href),canonicalRoute,status:requested==='algebra1'&&canonicalTarget===target?'PASS':'CHECK'};
 results.push(item);
-assert.equal(item.status,'PASS',placement.lesson+': wrong return route or course');
+assert.equal(item.status,'PASS',placement.lesson+': canonical return route or course mismatch');
 if(slug==='prime-spy-composite')assert.equal(item.focus,placement.mode,'Incorrect mission focus');
 console.log('PASS: Algebra I U'+placement.unit+' L'+placement.number+' '+slug+' launch, course and return routes');
 }
