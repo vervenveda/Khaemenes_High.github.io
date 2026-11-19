@@ -23,9 +23,35 @@ for(const unit of fs.readdirSync(units)){
  }
 }
 const registry=JSON.parse(fs.readFileSync(path.join(base,'game-registry.json'),'utf8'));
-const expected=Object.values(registry.games).flatMap(game=>(game.placements||[]).filter(p=>p.course==='algebra-1'));
+const expected=Object.entries(registry.games).flatMap(([game,record])=>(record.placements||[]).filter(p=>p.course==='algebra-1').map(p=>({game,...p})));
+const entryContract=fs.readFileSync('courses/shared/course-entry-contract.js','utf8');
+assert.ok(entryContract.includes('math-shared-game-bridge-v1.js'),'canonical registry-driven lesson bridge is installed');
+
+function resolveAlgebra1Lesson(item){
+ const unit=String(item.unit).padStart(2,'0'),lesson=String(Number(String(item.lesson).match(/\d+$/)?.[0])).padStart(2,'0');
+ const root=path.join(units,'unit-'+unit),map=JSON.parse(fs.readFileSync(path.join(root,'unit-map.json'),'utf8'));
+ const entries=Array.isArray(map.lessons)?map.lessons:[];
+ const hit=entries.find((x,i)=>{
+   const id=String(x.id||'').toLowerCase(),n=String(Number(x.number??i+1)).padStart(2,'0');
+   return id==='l'+lesson||id==='u'+unit+'-l'+lesson||n===lesson;
+ });
+ const ref=hit?.file||hit?.path;
+ return ref?path.normalize(path.join(root,ref)):null;
+}
+
+for(const item of expected){
+ const lessonNo=Number(String(item.lesson).match(/\d+$/)?.[0]);
+ const explicit=placements.some(p=>p.game===item.game&&Number(p.unit)===Number(item.unit)&&Number(String(p.number).match(/\d+$/)?.[0])===lessonNo);
+ if(explicit)continue;
+ const lesson=resolveAlgebra1Lesson(item);
+ assert.ok(lesson&&fs.existsSync(lesson),`Missing registered placement route U${item.unit} L${item.lesson} ${item.game}`);
+ const html=fs.readFileSync(lesson,'utf8');
+ assert.ok(html.includes('course-entry-contract.js'),lesson+': registry placement lacks explicit launcher and canonical bridge');
+ const query=item.query||`?course=algebra1&unit=${String(item.unit).padStart(2,'0')}&lesson=${String(item.lesson).match(/\d+$/)?.[0]}${item.mode?'&mode='+encodeURIComponent(item.mode):''}`;
+ placements.push({lesson,game:item.game,unit:item.unit,number:item.lesson,mode:item.mode||'',query,source:'registry-bridge'});
+}
 assert.ok(placements.length>0,'No Algebra I game placements found');
-for(const item of expected)assert.ok(placements.some(p=>Number(p.unit)===Number(item.unit)&&Number(String(p.number).match(/\d+$/)?.[0])===Number(String(item.lesson).match(/\d+$/)?.[0])),`Missing registered placement U${item.unit} L${item.lesson}`);
+for(const item of expected)assert.ok(placements.some(p=>p.game===item.game&&Number(p.unit)===Number(item.unit)&&Number(String(p.number).match(/\d+$/)?.[0])===Number(String(item.lesson).match(/\d+$/)?.[0])),`Missing registered placement U${item.unit} L${item.lesson} ${item.game}`);
 assert.equal(new Set(placements.map(p=>p.lesson+'|'+p.game)).size,placements.length,'Duplicate lesson/game placements');
 const results=[];for(const placement of placements){
 const slug=placement.game;
