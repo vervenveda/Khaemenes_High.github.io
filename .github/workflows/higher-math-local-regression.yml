@@ -1,0 +1,33 @@
+name: Higher Mathematics Local Regression
+
+on:
+  pull_request:
+    paths:
+      - "courses/mathematics/geometry/**"
+      - "courses/mathematics/algebra-2/**"
+      - "courses/shared/course-entry-contract.js"
+      - "tools/validate-higher-math-engine-gate.mjs"
+      - ".github/workflows/higher-math-local-regression.yml"
+  push:
+    branches: [ main ]
+    paths:
+      - "courses/mathematics/geometry/**"
+      - "courses/mathematics/algebra-2/**"
+      - "courses/shared/course-entry-contract.js"
+      - "tools/validate-higher-math-engine-gate.mjs"
+      - ".github/workflows/higher-math-local-regression.yml"
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+      - name: Geometry local regression
+        run: node courses/mathematics/geometry/tools/validate-local-regression.mjs
+      - name: Algebra II engine-readiness hold
+        run: node courses/mathematics/algebra-2/tools/validate-engine-readiness.mjs
+      - name: Enforce higher-math rollout gate
+        run: node tools/validate-higher-math-engine-gate.mjs
