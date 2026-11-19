@@ -88,9 +88,9 @@ const unitGates=read('assets/unit-index-gates.js'),lessonTools=read('assets/less
 assert(/MASTERY=80/.test(unitGates),'unit-index-gates: mastery 80 missing');assert(/MASTERY=80/.test(lessonTools),'lesson-tools: mastery 80 missing');ok('Lesson and unit progression authority verified');
 
 for(const [file,label,selected,written] of [['assessments/midterm.html','Midterm',60,6],['assessments/final.html','Final',100,10]]){
- const html=read(file),cfg=normalizeCfg(parseInlineConst(html));
- assert(cfg?.recordKey===label.toLowerCase(),label+': current inline config missing');
- assert(cfg?.masteryTarget===80,label+': 80% mastery threshold missing');
+ const html=read(file),key=label.toLowerCase();
+ assert(new RegExp('record_key\\s*:\\s*["\\\']'+key+'["\\\']').test(html),label+': current inline config missing');
+ assert(/mastery_threshold\s*:\s*80/.test(html),label+': 80% mastery threshold missing');
  assert(html.includes(selected+' selected-response'),label+': selected-response count text mismatch');
  assert(html.includes(written+' required constructed-response')||html.includes(written+' written geometry tasks'),label+': constructed-response count text mismatch');
  assert(/selected[^\n]{0,160}>=?80|selected[^\n]{0,160}≥80/i.test(html),label+': selected-response 80% rule missing');
