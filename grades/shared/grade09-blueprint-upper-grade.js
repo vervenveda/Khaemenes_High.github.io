@@ -83,7 +83,8 @@ function step(item){
  const clean=url=>{try{const u=new URL(url,location.href);return u.origin+u.pathname.replace(/\/+$/,"/")}catch{return String(url||"").replace(/[?#].*$/,"").replace(/\/+$/,"/")}};
  const snapshotHref=snap?.nextHref&&item.subject!=="foreignLanguage"?snap.nextHref:null;
  const snapshotIsLanding=Boolean(snapshotHref&&courseHome&&clean(snapshotHref)===clean(courseHome));
- const destination=snapshotHref&&!snapshotIsLanding?snapshotHref:first;
+ const firstIsLanding=Boolean(courseHome&&first&&clean(first)===clean(courseHome)&&!(new URL(first,location.href)).search);
+ const destination=snapshotHref&&!snapshotIsLanding?snapshotHref:(firstIsLanding?null:first);
  return {dest:destination,
  label:snap?.stale?"Refresh course":snap?.status==="corrections"?"Review corrections":"Open class",
  detail:snapshotIsLanding?"Open the first required lesson or readiness step.":snap?.nextTitle||snap?.summary||"Ready to open the assigned course."};
@@ -239,7 +240,7 @@ function showUpperSchedule(){
    const card=make("article");card.className="grade09-blueprint-schedule-item";
    card.append(make("strong",item.label),make("span",item.title));
    const current=step(item);
-   const route=current?.dest||href(item);
+   const route=current?.dest||null;
    if(route){
     const launch=link(grade10Copy?"Class":(current?.label||((grade11Copy||grade12Copy)?"Continue Class":"Open class")),route,"btn secondary");
     launch.dataset.courseId=item.id||"";
