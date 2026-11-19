@@ -8,6 +8,7 @@ if(window.KhaemenesAlgebra2LessonV2)return;
 const VERSION="2.3.0",MASTERY=80,SHELL_PREFIX="khaemenes-algebra2-lesson-shell-v2";
 let bound=false,observer=null;
 const $=(s,r=document)=>r.querySelector(s), $$=(s,r=document)=>[...r.querySelectorAll(s)];
+const ensureSharedStyle=()=>{if(document.querySelector('link[data-khaemenes-math-engine-style]'))return;const l=document.createElement("link");l.rel="stylesheet";l.href="https://vervenveda.com/assets/khaemenes-math-engine-v2.css?v=2.2.1";l.dataset.khaemenesMathEngineStyle="v2.2.1";(document.head||document.documentElement).appendChild(l)};
 const lessonId=()=>document.body?.dataset?.lessonId||"algebra2-lesson";
 const unitNumber=()=>Number(lessonId().match(/^u(\d{2})-/)?.[1]||0);
 const lessonNumber=()=>Number(lessonId().match(/-l(\d{2})$/)?.[1]||0);
@@ -148,7 +149,7 @@ function observeDynamic(){
 }
 function normalize(){
  const main=$("#main");if(main){main.classList.add("khaemenes-math-engine");main.dataset.khaemenesMathEngine=VERSION}
- installStyles();normalizeSections();ensureCompletion();renderChecklist();gateNext();bind();observeDynamic();
+ ensureSharedStyle();installStyles();normalizeSections();ensureCompletion();renderChecklist();gateNext();bind();observeDynamic();
  document.documentElement.dataset.khaemenesMathEngineActive=VERSION;
 }
 window.KhaemenesAlgebra2LessonV2=Object.freeze({version:VERSION,normalize,renderChecklist,gateNext});
