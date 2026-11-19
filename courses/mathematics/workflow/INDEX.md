@@ -2,6 +2,7 @@
 
 | Date | Type | Entry | State |
 | --- | --- | --- | --- |
+| 2026-11-19 | repair · release parity · validation | [Mathematics Engine v2.3.0 Release Parity Closeout](logs/2026/11/2026-11-19-math-engine-v230-release-parity-closeout.md) | Pre-Algebra v25 + Algebra I v47 + Geometry v20 aligned to adapter 2.3.0; Mathematics Engine lesson-shell integrity run 115 PASS; assessment firewall preserved |
 | 2026-11-19 | forensic audit · four-course sweep | [Fresh Four-Course Forensic Sweep](logs/2026/11/2026-11-19-four-course-forensic-sweep.md) | Curriculum remains Exceptional; Algebra II engine strongest; Pre-Algebra/Algebra I/Geometry have v2.3.0 adapter token drift and evidence-chain parity gaps; all rendered-device acceptance HOLD |
 | 2026-11-19 | repair · five-bubble forensic hardening | [Forensic Bubble Repair Pass](logs/2026/11/2026-11-19-forensic-bubble-repair-pass.md) | Geometry release PASS · math launch PASS · shared games PASS · higher-math local regression PASS · engine firewall PASS · Algebra II engine migration HOLD enforced · physical/browser-device acceptance HOLD |
 | 2026-11-18 | runtime acceptance · rendered browser laboratory | [Four-Course Runtime Acceptance Laboratory](logs/2026/11/2026-11-18-four-course-runtime-acceptance-laboratory.md) | Core/Full viewport sweeps + storage-failure fixture + ticker timing + Algebra II single-column lesson repair + canonical footer fallback; laboratory source PASS; production rendered sweep HOLD |
