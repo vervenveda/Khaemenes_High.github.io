@@ -14,7 +14,8 @@ ok(!index.includes("Promise.all(Array.from({length:unitCount}"),"course home no 
 
 const css=read("courses/mathematics/algebra-1/assets/algebra1-student-experience-v2.css");
 ok(css.includes("#main:empty::before"),"empty JS-rendered pages expose a loading surface");
-ok(css.includes("font-size:12px!important"),"oversized eyebrow typography is overridden");
+ok(/:is\(\.eyebrow,[\s\S]*?font-size:16px!important/.test(css),"eyebrow/kicker typography preserves the 16px minimum");
+ok(!/font-size\s*:\s*(?:[0-9]|1[0-5](?:\.\d+)?)px\s*!important/i.test(css),"shared Algebra I student-experience CSS contains no sub-16px !important font rule");
 ok(css.includes("--a1-radius:7px"),"student experience preserves the 7px card/button radius");
 
 for(const p of [
@@ -38,4 +39,4 @@ if(fail.length){
   fail.forEach(x=>console.error(" - "+x));
   process.exit(1);
 }
-console.log("Algebra I student-experience validation passed: course dashboard, lazy lesson maps, compact typography, loading surface, and shared unit/lesson enhancement are wired across Units 01-13.");
+console.log("Algebra I student-experience validation passed: course dashboard, lazy lesson maps, 16px minimum typography, loading surface, and shared unit/lesson enhancement are wired across Units 01-13.");
