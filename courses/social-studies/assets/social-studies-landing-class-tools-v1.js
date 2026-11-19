@@ -29,11 +29,11 @@ function openTranslator({root}){
 }
 if(document.readyState==="loading")document.addEventListener("DOMContentLoaded",ensureTranslatorMount,{once:true});else ensureTranslatorMount();
 
-const grade=/\/grade-11\//i.test(location.pathname)?"11":/\/grade-10\//i.test(location.pathname)?"10":"09";
+const grade=/\/grade-12\//i.test(location.pathname)?"12":/\/grade-11\//i.test(location.pathname)?"11":/\/grade-10\//i.test(location.pathname)?"10":"09";
 const profileBase="/Khaemenes_High.github.io/grades/grade-"+grade+"/student-profile/";
 window.KhaemenesClassToolsConfigV1={
  id:"high-school-social-studies-landing",
- match:()=>/\/courses\/social-studies\/grade-(?:09|10|11)\/(?:index\.html)?$/i.test(location.pathname),
+ match:()=>/\/courses\/social-studies\/grade-(?:09|10|11|12)\/(?:index\.html)?$/i.test(location.pathname),
  toggleLabel:"Tools",
  ariaLabel:"Social Studies learning tools",
  tools:[
