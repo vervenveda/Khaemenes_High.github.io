@@ -17,12 +17,19 @@ for(const file of pages){
  ok(/<!doctype html>/i.test(html),file+' doctype');
  ok(/<html lang="en"/i.test(html),file+' language');
  ok(/<meta name="viewport"/i.test(html),file+' responsive viewport');
- // Allow only the Academy-owned, same-site student toolbar; instructional
- // application code itself remains a standalone local script.
+ // Allow only the current Academy-owned chrome/ticker/toolbar surfaces.
+ // Instructional application code itself remains a standalone local script.
  const injected=[...html.matchAll(/<script\b[^>]*\bsrc\s*=\s*["']([^"']+)["']/gi)].map(m=>m[1]);
- ok(injected.length<=1&&injected.every(url=>
-  url==='https://vervenveda.com/Khaemenes_High.github.io/assets/vnv-beta-link.js'&&
-  fs.existsSync(path.resolve(here,'../../../../assets/vnv-beta-link.js'))),file+' only Academy-owned toolbar');
+ const allowed=new Set([
+  '/Khaemenes_High.github.io/assets/vnv-dual-ticker-v1.js',
+  '/Khaemenes_High.github.io/assets/high-school-global-chrome-v2.js',
+  'https://vervenveda.com/assets/vnv-ecosystem-toolbar.js'
+ ]);
+ ok(injected.length<=3&&injected.every(url=>allowed.has(url)),file+' only canonical Academy chrome/ticker/toolbar');
+ for(const url of injected.filter(url=>url.startsWith('/Khaemenes_High.github.io/'))){
+  const rel=url.slice('/Khaemenes_High.github.io/'.length);
+  ok(fs.existsSync(path.resolve(process.cwd(),rel)),file+' canonical local surface exists: '+rel);
+ }
  ok(!/\b(?:localStorage|sessionStorage|indexedDB)\s*[.(]/.test(html),file+' no learner storage');
  ok(!/\b(?:fetch|XMLHttpRequest)\s*\(/.test(html),file+' no network calls');
  const scripts=[...html.matchAll(/<script\b(?![^>]*\bsrc\s*=)[^>]*>([\s\S]*?)<\/script>/gi)];
