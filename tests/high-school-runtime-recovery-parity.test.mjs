@@ -404,3 +404,22 @@ test("Algebra II diagnostic title remains Algebra II",()=>{
  assert.match(page,/Algebra II Readiness Diagnostic/);
  assert.doesNotMatch(page,/Algebra III Readiness Diagnostic/);
 });
+
+
+test("Pre-Algebra midterm uses the mixed-evidence single-owner blueprint",()=>{
+ const page=read("courses/mathematics/pre-algebra/assessments/midterm-units-01-07.html");
+ assert.match(page,/data-math-assessment-blueprint="v1"/);
+ assert.match(page,/data-assessment-runtime="single-owner-midterm"/);
+ assert.doesNotMatch(page,/exam-engine\.js|exam-depth-v2\.js|course-entry-contract\.js|learner-scope-v1\.js/);
+ assert.doesNotMatch(page,/new\s+MutationObserver|setInterval\s*\(/);
+ assert.equal((page.match(/data-section="/g)||[]).length,7);
+ assert.equal((page.match(/class="bottom-section-nav"/g)||[]).length,1);
+ assert.equal((page.match(/id="submitButton"/g)||[]).length,1);
+ assert.match(page,/selected_weight":70/);
+ assert.match(page,/constructed_weight":30/);
+ assert.match(page,/response_min_chars":40/);
+ assert.match(page,/selected>=80&&constructedPct>=80&&overall>=80/);
+ assert.match(page,/legacy_result_key:"khaemenes-prealgebra-midterm-result-v1"/);
+ assert.match(page,/store\.attempts\.push\(result\)/);
+ assert.match(page,/Prior evidence was preserved/);
+});
