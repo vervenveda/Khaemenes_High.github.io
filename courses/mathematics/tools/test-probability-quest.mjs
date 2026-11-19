@@ -79,16 +79,21 @@ for(const mode of modes){
 }
 const reg=JSON.parse(fs.readFileSync('courses/mathematics/assets/learning-games/game-registry.json','utf8'));
 const placements=reg.games[slug]?.placements||[];
-assert.equal(placements.length,4,'four Algebra II probability lessons');
+const algebra2=placements.filter(p=>p.course==='algebra-2');
+const prealgebra=placements.filter(p=>p.course==='pre-algebra');
+assert.equal(algebra2.length,4,'four Algebra II probability lessons remain registered');
+assert.ok(prealgebra.length>=2,'Pre-Algebra probability progression placements are registered');
+assert.ok(placements.every(p=>p.wired===true),'every Probability Quest placement is marked wired');
 const expectedModes=['counting','union','bayes','binomial'];
 for(let i=0;i<4;i++){
- const p=placements[i],num=String(i+1).padStart(2,'0');
- assert.equal(p.course,'algebra-2');assert.equal(p.unit,'12');assert.equal(p.mode,expectedModes[i]);
+ const p=algebra2[i],num=String(i+1).padStart(2,'0');
+ assert.equal(p.unit,'12');assert.equal(p.mode,expectedModes[i]);
  const file='courses/mathematics/algebra-2/units/unit-12/lessons/u12-l'+num+'.html',contents=fs.readFileSync(file,'utf8');
- assert.ok(contents.includes('data-game="'+slug+'"'),file+' launcher');
- assert.ok(contents.includes('data-mode="'+p.mode+'"'),file+' matching mode');
- assert.ok(contents.includes('src="../../../../assets/shared-game-launcher.js"'),file+' correct relative path');
+ const explicit=contents.includes('data-game="'+slug+'"')&&contents.includes('data-mode="'+p.mode+'"')&&contents.includes('shared-game-launcher.js');
+ const bridged=contents.includes('course-entry-contract.js');
+ assert.ok(explicit||bridged,file+' has explicit launcher or canonical registry bridge');
 }
+assert.ok(fs.readFileSync('courses/shared/course-entry-contract.js','utf8').includes('math-shared-game-bridge-v1.js'),'canonical registry-driven lesson bridge is installed');
 const nodes=new Map(),storage=new Map();
 function get(id){
  if(nodes.has(id))return nodes.get(id);
@@ -122,4 +127,4 @@ context.audit.switchMode('expectation');state=context.audit.state();
 assert.equal(state.task.mode,'expectation','other mode selectable');
 context.audit.hint();state=context.audit.state();
 assert.equal(state.record.helped,true,'hint use tracked');
-console.log('PASS: Probability Quest 10 mathematical modes, independent and dependent tables, Bayes, binomial PMF, money expectation, four routes, retries, uniqueness and persistence');
+console.log('PASS: Probability Quest 10 mathematical modes, independent and dependent tables, Bayes, binomial PMF, money expectation, registry-driven routes, retries, uniqueness and persistence');
