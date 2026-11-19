@@ -90,7 +90,7 @@ button{cursor:pointer}
   max-width:760px;margin:18px auto 0;color:var(--g9-cream);font:400 16px/1.65 var(--g9-body);
 }
 .hero-actions,.actions{display:flex;justify-content:center;gap:9px;flex-wrap:wrap;margin-top:22px}
-.hero-actions{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));width:min(760px,100%);margin-inline:auto}
+.hero-actions{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));width:min(620px,100%);margin-inline:auto}
 .btn{
   box-sizing:border-box;display:flex;align-items:center;justify-content:center;min-height:44px;
   padding:9px 12px;border:1px solid var(--g9-charcoal);border-radius:var(--g9-radius);
@@ -99,6 +99,7 @@ button{cursor:pointer}
 }
 .btn:hover,.btn:focus-visible{border-color:var(--g9-gold)}
 .hero .btn,.hero .btn.primary,.hero .btn.gold{
+  min-height:40px;padding:7px 12px;
   background:var(--g9-cream);color:var(--g9-charcoal);border-color:var(--g9-line);
 }
 
@@ -158,7 +159,7 @@ button{cursor:pointer}
 .note{
   max-width:980px;margin:33px auto 0;padding:18px 20px;border:1px solid var(--g9-line);
   border-left:4px solid var(--g9-gold);border-radius:var(--g9-radius);
-  background:#fff9eb;color:#66502b;text-align:left;font-size:16px;line-height:1.65;
+  background:#fff9eb;color:#66502b;text-align:center;font-size:16px;line-height:1.65;
 }
 .section.dark .support-card{
   background:var(--g9-paper);color:var(--g9-charcoal);border-color:var(--g9-line);
