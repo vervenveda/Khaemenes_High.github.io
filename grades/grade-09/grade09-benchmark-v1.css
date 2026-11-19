@@ -81,13 +81,13 @@ button{cursor:pointer}
 }
 .hero .eyebrow{color:#ead9b8}
 .hero h1{
-  margin:11px 0 0;color:var(--g9-cream);font:400 55px/1.08 var(--g9-display);letter-spacing:.01em;
+  margin:14px 0 0;color:var(--g9-cream);font:400 55px/1.16 var(--g9-display);letter-spacing:.01em;
 }
 .grade-title{
-  margin:11px 0 0;color:var(--g9-cream);font:400 33px/1.15 var(--g9-display);
+  margin:16px 0 0;color:var(--g9-cream);font:400 33px/1.24 var(--g9-display);
 }
 .hero-lead{
-  max-width:760px;margin:18px auto 0;color:var(--g9-cream);font:400 16px/1.65 var(--g9-body);
+  max-width:760px;margin:22px auto 0;color:var(--g9-cream);font:400 16px/1.82 var(--g9-body);
 }
 .hero-actions,.actions{display:flex;justify-content:center;gap:9px;flex-wrap:wrap;margin-top:22px}
 .hero-actions{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));width:min(620px,100%);margin-inline:auto}
