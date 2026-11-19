@@ -31,6 +31,6 @@ else if(current){
  if(document.getElementById("algebra2MinScreenTypeV1"))return;
  const style=document.createElement("style");
  style.id="algebra2MinScreenTypeV1";
- style.textContent='@media screen{html:root:root body{font-size:16px!important}html:root:root body :is(button,input,select,textarea,a,p,li,label,summary){font-size:max(16px,1em)}html:root:root body :is(button,input,select,textarea){min-height:44px}}';
+ style.textContent='@media screen{html:root:root body{font-size:16px!important}html:root:root body :is(button,input,select,textarea,a,p,li,label,summary){font-size:max(16px,1em)}html:root:root body :is(.eyebrow,.kicker,.dialog-eyebrow,.dialog-kicker,.worksheet-kicker){font-size:14px!important;line-height:1.35!important;letter-spacing:.12em!important;text-transform:uppercase!important}html:root:root body :is(button,input,select,textarea){min-height:44px}}';
  (document.head||document.documentElement).appendChild(style);
 })();
