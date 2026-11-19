@@ -55,9 +55,31 @@ for(const [grade,blob] of Object.entries(preserved)){
  const lesson=path.join(dir,first[grade]);
  assert.ok(fs.existsSync(lesson),"English "+grade+": first daily lesson missing");
  assert.ok(read(lesson).length>4000,"English "+grade+": first lesson lacks substantive HTML");
- assert.ok(routeSource.includes('"english-'+grade+'"')&&routeSource.includes(first[grade].replace(/index\.html$/,"")),"English "+grade+": configured first-step route absent");
+ const expectedLaunch=grade==="9"?"english-9/daily-learning/":first[grade].replace(/index\\.html$/,"");
+ assert.ok(routeSource.includes('"english-'+grade+'"')&&routeSource.includes(expectedLaunch),"English "+grade+": configured class launch route absent");
  console.log("ENGLISH_COURSE_BOUNDARY_PASS",grade,"36/36 weekly pages","first lesson:",first[grade]);
 }
+// Canonical Grade 9 Class route lands on the approved full six-card daily organizer.
+const daily=read(path.join(base,"english-9","daily-learning","index.html"));
+const dailyRoute="/Khaemenes_High.github.io/courses/language-arts/english-9/daily-learning/";
+const grade09Registry=read("grades/grade-09/student-profile/student-course-registry.js");
+const classTools=read(path.join(base,"assets","english-landing-class-tools-v1.js"));
+assert.ok(daily.length>17000,"Daily landing source is incomplete");
+assert.equal((daily.match(/data-task="/g)||[]).length,6,"Must preserve six original daily learning task cards");
+for(const section of ["schedule","vocabulary","journal","reading","questionnaire","reflection"]){
+  assert.ok(daily.includes('data-task="'+section+'"'),"Missing daily section "+section);
+}
+assert.ok(daily.includes('href="../weeks/week-01/day-01/"'),"Daily page must link to real Week 1 Day 1 lesson");
+assert.ok(daily.includes('href="../course-workspace.html"'),"Daily page must link to preserved full course workspace");
+assert.ok(daily.includes('id="resume-last-english9-lesson"'),"Must allow revisiting last opened lesson");
+assert.ok(daily.includes("officialMastery:false"),"Draft checkmarks cannot declare academic mastery");
+for(const component of ["vnv-dual-ticker-v1.js","vnv-header-autopopulate.js","english-minimal-header-mount-v1.js","english-landing-class-tools-v1.js","vnv-language.js","vnv-class-tools-toolbar.js","vnv-ecosystem-toolbar.js"]){
+  assert.ok(daily.includes(component),"Daily portal missing canonical component "+component);
+}
+assert.ok(grade09Registry.includes('if(id==="english-9"){')&&grade09Registry.includes('repoPath("courses/language-arts/english-9/daily-learning/")'),"Grade 9 Class button route not connected to daily organizer");
+assert.ok(grade09Registry.includes("Preserve the last genuine English 9 lesson"),"Class button must not overwrite last actual lesson");
+assert.ok(classTools.includes("english-9\\/daily-learning"),"Shared translator/toolbox not enabled on new daily route");
+console.log("ENGLISH9_DAILY_LANDING_AND_CLASS_ROUTE_PASS",dailyRoute);
 // Day 1 presentation canary: no new engine, only semantic wayfinding.
 const day1=read(path.join(base,"english-9","weeks/week-01/day-01/index.html"));
 assert.ok(day1.includes('id="english9-day01-canonical-lesson-v7"'),"English 9 day 1 canonical CSS owner preserved");
