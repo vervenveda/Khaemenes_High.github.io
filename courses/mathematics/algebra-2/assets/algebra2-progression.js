@@ -9,6 +9,7 @@
   const ACTIVE_LEARNER_KEY = "khaemenes_active_learner_v1";
   const FAMILY_REGISTRY_KEY = "khaemenes_family_registry_v1";
   const LESSON_COUNTS = { 1: 6, 2: 8, 3: 7, 4: 8, 5: 6, 6: 7, 7: 7, 8: 6, 9: 7, 10: 10, 11: 8, 12: 7, 13: 5 };
+  const LESSON_WEEK = {"u01-l01":2,"u01-l02":2,"u01-l03":2,"u01-l04":3,"u01-l05":3,"u01-l06":3,"u02-l01":4,"u02-l02":4,"u02-l03":4,"u02-l04":5,"u02-l05":5,"u02-l06":6,"u02-l07":6,"u02-l08":6,"u03-l01":7,"u03-l02":7,"u03-l03":8,"u03-l04":8,"u03-l05":8,"u03-l06":9,"u03-l07":9,"u04-l01":10,"u04-l02":10,"u04-l03":10,"u04-l04":11,"u04-l05":11,"u04-l06":12,"u04-l07":12,"u04-l08":12,"u05-l01":13,"u05-l02":13,"u05-l03":13,"u05-l04":14,"u05-l05":14,"u05-l06":14,"u06-l01":15,"u06-l02":15,"u06-l03":16,"u06-l04":16,"u06-l05":16,"u06-l06":17,"u06-l07":17,"u07-l01":19,"u07-l02":19,"u07-l03":20,"u07-l04":20,"u07-l05":20,"u07-l06":21,"u07-l07":21,"u08-l01":22,"u08-l02":22,"u08-l03":22,"u08-l04":23,"u08-l05":23,"u08-l06":23,"u09-l01":24,"u09-l02":24,"u09-l03":25,"u09-l04":25,"u09-l05":25,"u09-l06":26,"u09-l07":26,"u10-l01":27,"u10-l02":27,"u10-l03":28,"u10-l04":28,"u10-l05":28,"u10-l06":29,"u10-l07":29,"u10-l08":29,"u10-l09":30,"u10-l10":30,"u11-l01":31,"u11-l02":31,"u11-l03":31,"u11-l04":32,"u11-l05":32,"u11-l06":33,"u11-l07":33,"u11-l08":33,"u12-l01":34,"u12-l02":34,"u12-l03":34,"u12-l04":34,"u12-l05":35,"u12-l06":35,"u12-l07":35,"u13-l01":36,"u13-l02":36,"u13-l03":36,"u13-l04":36,"u13-l05":36};
 
   function activeLearnerId() {
     try {
@@ -42,7 +43,7 @@
       const contract = window.KhaemenesCourseEntryContract;
       if (contract && (!contract.readAcademyProfile?.() || !activeLearnerId())) return false;
       const actualKey=storageKey(key),S=window.KhaemenesMathStorageAdapter;
-      if(S?.writeJSON)return S.writeJSON(actualKey,value).persisted===true;
+      if(S?.writeJSON){const result=S.writeJSON(actualKey,value)||{};return result.persisted===true&&(result.verified!==false);}
       const raw=JSON.stringify(value);localStorage.setItem(actualKey,raw);
       return localStorage.getItem(actualKey)===raw;
     } catch {
@@ -140,9 +141,42 @@
     return unit < 7 || midtermMastered();
   }
 
+  function lessonWeek(unit, lesson) {
+    return Number(LESSON_WEEK[lessonKey(unit, lesson)]) || null;
+  }
+
   function lessonUnlocked(unit, lesson) {
     if (!unitUnlocked(unit)) return false;
-    return lesson === 1 || lessonMastered(lessonKey(unit, lesson - 1));
+    if (lesson === 1) return true;
+    if (!lessonMastered(lessonKey(unit, lesson - 1))) return false;
+    const previousWeek=lessonWeek(unit,lesson-1),currentWeek=lessonWeek(unit,lesson);
+    return !previousWeek || !currentWeek || currentWeek===previousWeek || weekMastered(previousWeek);
+  }
+
+  function finalMastered() {
+    return recordMastered(assessmentData().final);
+  }
+
+  function nextTarget(unit, lesson) {
+    unit=Number(unit);lesson=Number(lesson);
+    if(!unit||!lesson)return null;
+    const id=lessonKey(unit,lesson);
+    if(!lessonMastered(id))return {kind:"lesson",href:"#main",label:"Review Lesson",title:"Master this lesson before moving on"};
+    const count=LESSON_COUNTS[unit]||0,nextLesson=lesson+1;
+    if(nextLesson<=count){
+      const currentWeek=lessonWeek(unit,lesson),nextWeek=lessonWeek(unit,nextLesson);
+      if(currentWeek&&nextWeek&&nextWeek!==currentWeek&&!weekMastered(currentWeek)){
+        return {kind:"weekly",href:`../../../assessments/weekly-mastery.html?week=${currentWeek}`,label:`Open Week ${String(currentWeek).padStart(2,"0")} Mastery`,title:`Week ${String(currentWeek).padStart(2,"0")} Mastery`};
+      }
+      return {kind:"lesson",href:`u${String(unit).padStart(2,"0")}-l${String(nextLesson).padStart(2,"0")}.html`,label:`Next Lesson · ${String(nextLesson).padStart(2,"0")}`,title:`Lesson ${String(nextLesson).padStart(2,"0")}`};
+    }
+    const pendingWeek=(UNIT_WEEKS[unit]||[]).find(week=>!weekMastered(week));
+    if(pendingWeek)return {kind:"weekly",href:`../../../assessments/weekly-mastery.html?week=${pendingWeek}`,label:`Open Week ${String(pendingWeek).padStart(2,"0")} Mastery`,title:`Week ${String(pendingWeek).padStart(2,"0")} Mastery`};
+    if(!unitMastered(unit))return {kind:"unit",href:"../assessment/mastery-check.html",label:"Open Unit Mastery",title:`Unit ${String(unit).padStart(2,"0")} Mastery`};
+    if(unit===6&&!midtermMastered())return {kind:"midterm",href:"../../../assessments/midterm.html",label:"Open Midterm",title:"Midterm Examination"};
+    if(unit<13)return {kind:"unit",href:`../../unit-${String(unit+1).padStart(2,"0")}/lessons/u${String(unit+1).padStart(2,"0")}-l01.html`,label:`Begin Unit ${String(unit+1).padStart(2,"0")}`,title:`Unit ${String(unit+1).padStart(2,"0")} · Lesson 01`};
+    if(!finalMastered())return {kind:"final",href:"../../../assessments/final.html",label:"Open Final Examination",title:"Comprehensive Final Examination"};
+    return {kind:"completion",href:"../../../records/course-completion-certificate.html",label:"Review Completion Record",title:"Course Completion Record"};
   }
 
   function missingFor(config) {
@@ -268,7 +302,10 @@
     lessonEvidence,
     lessonMastered,
     lessonUnlocked,
+    lessonWeek,
     midtermMastered,
+    finalMastered,
+    nextTarget,
     missingFor,
     readinessRecorded,
     recordMastered,
