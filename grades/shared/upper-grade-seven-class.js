@@ -1,3 +1,9 @@
+/* RETIRED PROFILE AUTHORITY · 2026-11-19
+ * Historical upper-grade schedule renderer retained for compatibility/reference only.
+ * Active Grade 10–12 Student Profile pages MUST use grade09-blueprint-upper-grade.js
+ * with high-school-eight-class.js as the single class topology authority.
+ * Do not reattach this file to active profile pages without a deliberate migration.
+ */
 (()=>{"use strict";
 const grade=Number(document.body.dataset.grade),root="../../../",pin=window.KhaemenesHighCoursePins;
 const continuation=window.KhaemenesLearningContinuation,profile=window.KhaemenesStudentProfileV2,quick=window.KhaemenesStudentQuickPinsV1;
