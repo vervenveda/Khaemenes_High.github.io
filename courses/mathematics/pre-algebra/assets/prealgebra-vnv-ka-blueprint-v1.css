@@ -79,3 +79,77 @@ html:root:root body .app .ka-course-footer :is(p,a){color:#fff8e9!important;font
 html:root:root body .app .sidebar .seal{background:#b8995c!important;color:#1f2926!important;border-radius:7px!important}
 @media(max-width:800px){html:root:root body .app>.main{width:min(calc(100% - 24px),1120px)!important}html:root:root body .app .sidebar{grid-template-columns:minmax(0,1fr)!important}html:root:root body .app .sidebar>nav.panel,html:root:root body .app .tabs{grid-template-columns:repeat(2,minmax(0,1fr))!important}html:root:root body .app .sidebar>.ka-week-drawer[open] #weekList{grid-template-columns:repeat(2,minmax(0,1fr))!important}}
 @media(max-width:520px){html:root:root body .app .hero-topline{flex-direction:column!important;align-items:stretch!important}html:root:root body .app .hero .eyebrow{text-align:center!important;font-size:25px!important}html:root:root body .app .hero .hero-identity{justify-content:center!important}html:root:root body .app .hero h1{font-size:40px!important}html:root:root body .app .sidebar>nav.panel,html:root:root body .app .tabs{grid-template-columns:minmax(0,1fr)!important}html:root:root body .app .sidebar>.ka-week-drawer[open] #weekList{grid-template-columns:minmax(0,1fr)!important}}
+
+
+/* Pre-Algebra landing chrome cleanup v1.1
+   Presentation only. The recovered course index remains untouched.
+   Required visual order: dual tickers → official header → centered translator → hero. */
+html:root:root body #vnv333NetworkTicker,
+html:root:root body #vnvTickerAutoPopulate,
+html:root:root body #vnvHeaderAutoPopulate{
+  width:100%!important;
+  max-width:none!important;
+  margin-left:0!important;
+  margin-right:0!important;
+  box-sizing:border-box!important;
+}
+html:root:root body #vnv-language-switch{
+  width:min(calc(100% - 32px),1120px)!important;
+  margin:14px auto 18px!important;
+  padding:9px 12px!important;
+  display:flex!important;
+  align-items:center!important;
+  justify-content:center!important;
+  flex-wrap:wrap!important;
+  gap:8px!important;
+  border:1px solid #cdbf9f!important;
+  border-radius:7px!important;
+  background:#fffdf8!important;
+  color:#27302d!important;
+  box-shadow:none!important;
+}
+html:root:root body #vnv-language-switch :is(label,select,button,span){
+  font-size:16px!important;
+}
+html:root:root body #vnv-language-switch select,
+html:root:root body #vnv-language-switch button{
+  min-height:44px!important;
+  border-radius:7px!important;
+}
+html:root:root body .app .hero{
+  display:flex!important;
+  flex-direction:column!important;
+}
+html:root:root body .app .hero h1{order:1!important}
+html:root:root body .app .hero>p{order:2!important}
+html:root:root body .app .hero>.actions{order:3!important}
+html:root:root body .app .hero>.hero-topline{
+  order:4!important;
+  margin:20px 0 0!important;
+  padding:16px 0 0!important;
+  border-top:1px solid rgba(233,201,137,.35)!important;
+  justify-content:center!important;
+  align-items:center!important;
+}
+html:root:root body .app .hero>.hero-topline .hero-identity,
+html:root:root body .app .hero>.hero-topline #courseMenu{
+  display:none!important;
+}
+html:root:root body .app .hero>.hero-topline .header-tools{
+  width:100%!important;
+  margin:0!important;
+  justify-content:center!important;
+}
+html:root:root body .app .hero>.hero-topline .header-tools>*{
+  flex:0 0 auto!important;
+}
+@media(max-width:620px){
+  html:root:root body #vnv-language-switch{
+    width:min(calc(100% - 20px),1120px)!important;
+    margin:10px auto 14px!important;
+  }
+  html:root:root body .app .hero>.hero-topline .header-tools{
+    display:flex!important;
+    justify-content:center!important;
+  }
+}
