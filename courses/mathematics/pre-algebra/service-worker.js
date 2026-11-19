@@ -49,14 +49,15 @@ self.addEventListener("install",event=>{
     const cache=await caches.open(CACHE_NAME);
     const extras=CORE_FILES.filter(file=>!MISSION_CRITICAL.includes(file));
     await Promise.allSettled(extras.map(file=>cache.add(new Request(file,{cache:"reload"}))));
-    await self.skipWaiting();
+    // Recovery safety: do not force an already-open course tab onto a new worker.
+    // The protected course index listens for controllerchange and reloads; allowing
+    // the worker to activate naturally prevents a reload cycle during deployment.
   })());
 });
 self.addEventListener("activate",event=>{
   event.waitUntil(
     caches.keys()
       .then(names=>Promise.all(names.filter(name=>name.startsWith(CACHE_PREFIX)&&name!==CACHE_NAME).map(name=>caches.delete(name))))
-      .then(()=>self.clients.claim())
   );
 });
 
