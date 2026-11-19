@@ -66,7 +66,7 @@ if(!/function (best|bestValue)\(\)/.test(html)){
  const unitMap=JSON.parse(fs.readFileSync(path.join(units,`unit-${String(placement.unit).padStart(2,'0')}`,'unit-map.json'),'utf8'));
  const route=routeContext.window.KhaemenesGameReturn.resolveLesson('algebra1',placement.unit,placement.number,unitMap);
  assert.equal(path.resolve('courses/mathematics/assets',route),path.resolve(placement.lesson));
- assert.ok(html.includes('../../game-return-route.js'),slug+': shared return helper missing');
+ assert.ok(html.includes('../../game-return-route.js') || (html.includes('course-entry-contract.js') && entryContract.includes('game-return-route.js')),slug+': explicit or course-entry mounted shared return helper missing');
  console.log('PASS: Algebra I '+slug+' canonical query, lesson map and return helper');continue;
 }
 const extra=[...new Set([...scripts.join('\n').matchAll(/const\s+([A-Z_][A-Z_0-9]*)\s*=/g)].map(x=>x[1]))];const names=[...new Set([...extra,'BANK','COURSE_BANKS','BANKS','COURSE_CONFIG','SINGLE_LEVEL','BEST','best','bestValue','bestKey','makeDeck','buildDeck','levels','activeBank','isPrime','primeFactors','kind','gcd','lcm','factors','expected','buildRound','start','startRound','render','submit','next','finish','finishRound','intValue','el','hint','reveal','saveBest','stats','updateStats'])];
