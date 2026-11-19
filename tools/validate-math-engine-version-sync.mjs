@@ -1,87 +1,100 @@
 import fs from "node:fs";
 import path from "node:path";
 
+/*
+ * Khaemenes Mathematics Engine guarded lesson-shell contract.
+ * Static inspection only: no learner storage, DOM mutation, or assessment execution.
+ * The established 01–13 unit workload counts are release baselines, not invented
+ * substitutes for course-specific scoring and teaching architecture.
+ */
 const root=process.cwd();
 const mathRoot=path.join(root,"courses/mathematics");
+const baseline=Object.freeze({
+  "pre-algebra":{lessons:97,adapter:"prealgebra-math-lesson-v2-adapter.js"},
+  "algebra-1":{lessons:87,adapter:"algebra1-math-lesson-v2-adapter.js"},
+  "geometry":{lessons:90,adapter:"geometry-math-lesson-v2-adapter.js"},
+  "algebra-2":{lessons:92,adapter:"algebra2-math-lesson-v2-adapter.js"}
+});
 const protectedRoute=/(^|\/)(assessment|assessments|diagnostic|diagnostics|midterm|midterms|final|finals)(\/|$)/i;
-const lessonRoute=/(^|\/)lessons\/.*\.html$/i;
-const adapterPattern=/-math-lesson-v2-adapter\.js$/;
-const failures=[];
-const report=[];
+const standardLesson=/^units\/unit-(?:0[1-9]|1[0-3])\/lessons\/[^/]+\.html$/i;
+const adapterPattern=/[-\w]+-math-lesson-v2-adapter\.js/gi;
+const failures=[],report=[];
 
 function walk(dir){
-  const out=[];
-  if(!fs.existsSync(dir)) return out;
-  for(const entry of fs.readdirSync(dir,{withFileTypes:true})){
-    const full=path.join(dir,entry.name);
-    if(entry.isDirectory()) out.push(...walk(full));
-    else out.push(full);
-  }
-  return out;
+  if(!fs.existsSync(dir))return [];
+  return fs.readdirSync(dir,{withFileTypes:true}).flatMap(e=>{
+    const full=path.join(dir,e.name);
+    return e.isDirectory()?walk(full):e.isFile()?[full]:[];
+  });
 }
-
-const courseDirs=fs.readdirSync(mathRoot,{withFileTypes:true})
-  .filter(entry=>entry.isDirectory())
-  .map(entry=>path.join(mathRoot,entry.name));
-
-for(const courseRoot of courseDirs){
-  const assets=path.join(courseRoot,"assets");
-  if(!fs.existsSync(assets)) continue;
-  const adapterFiles=fs.readdirSync(assets)
-    .filter(name=>adapterPattern.test(name));
-
-  for(const adapterName of adapterFiles){
-    const adapterPath=path.join(assets,adapterName);
-    const adapter=fs.readFileSync(adapterPath,"utf8");
-    const versionMatch=adapter.match(/const VERSION="([^"]+)"/);
-    const course=path.basename(courseRoot);
-
-    if(!versionMatch){
-      failures.push(course+": adapter VERSION not found in "+adapterName);
+function isStandard(course,rel){
+  if(!standardLesson.test(rel))return false;
+  const name=path.posix.basename(rel);
+  // Preview is a separate shell: the original 97-lesson baseline excludes it.
+  if(course==="pre-algebra")return /^lesson-\d{2}-.+\.html$/i.test(name)&&!/-engine-preview\.html$/i.test(name);
+  if(course==="algebra-1")return /^lesson-\d{2}-.+\.html$/i.test(name);
+  return /^u\d{2}-l\d{2}\.html$/i.test(name);
+}
+if(!fs.existsSync(mathRoot))failures.push("Mathematics course root missing");
+const courses=fs.existsSync(mathRoot)?fs.readdirSync(mathRoot,{withFileTypes:true}).filter(e=>e.isDirectory()).map(e=>e.name):[];
+for(const [course,expected] of Object.entries(baseline)){
+  if(!courses.includes(course)){
+    failures.push(course+": course root missing");
+    continue;
+  }
+  const courseRoot=path.join(mathRoot,course);
+  const adapterPath=path.join(courseRoot,"assets",expected.adapter);
+  if(!fs.existsSync(adapterPath)){
+    failures.push(course+": canonical adapter missing: "+expected.adapter);
+    continue;
+  }
+  const adapter=fs.readFileSync(adapterPath,"utf8");
+  const match=adapter.match(/const VERSION=["']([^"']+)["']/);
+  if(!match){failures.push(course+": internal VERSION missing");continue}
+  const version=match[1];
+  const files=walk(courseRoot).filter(x=>x.endsWith(".html"));
+  let adopted=0,protectedHits=0,missing=0;
+  const standard=files.filter(file=>isStandard(course,path.relative(courseRoot,file).split(path.sep).join("/")));
+  if(standard.length!==expected.lessons)
+    failures.push(course+": course lesson inventory changed: "+standard.length+" (approved baseline "+expected.lessons+"); review syllabus before accepting a new count");
+  for(const file of files){
+    const rel=path.relative(courseRoot,file).split(path.sep).join("/");
+    const html=fs.readFileSync(file,"utf8");
+    const names=[...html.matchAll(adapterPattern)].map(m=>m[0]);
+    const localCount=names.filter(name=>name===expected.adapter).length;
+    if(protectedRoute.test(rel)){
+      if(names.length){protectedHits+=names.length;failures.push(course+": lesson adapter on protected assessment route: "+rel)}
       continue;
     }
-
-    const version=versionMatch[1];
-    const files=walk(courseRoot);
-    let adoptedLessons=0;
-    let protectedAdapterHits=0;
-
-    for(const file of files){
-      if(!file.endsWith(".html")) continue;
-      const rel=path.relative(courseRoot,file).split(path.sep).join("/");
-      const html=fs.readFileSync(file,"utf8");
-      const count=html.split(adapterName).length-1;
-      const hasRef=count>0;
-
-      if(protectedRoute.test(rel) && hasRef){
-        protectedAdapterHits++;
-        failures.push(course+": protected route contains lesson adapter: "+rel);
-        continue;
-      }
-
-      if(!lessonRoute.test(rel) || !hasRef) continue;
-      adoptedLessons++;
-
-      const expected=adapterName+"?v="+version;
-      if(count!==1) failures.push(course+": expected exactly one adapter reference in "+rel+"; found "+count);
-      if(!html.includes(expected)) failures.push(course+": stale cache/version token in "+rel+"; expected "+expected);
+    if(!isStandard(course,rel))continue;
+    if(localCount!==1){
+      if(localCount===0)missing++;
+      failures.push(course+": "+rel+" requires exactly one "+expected.adapter+" (found "+localCount+")");
+    }else{
+      adopted++;
+      const escaped=expected.adapter.replace(/[.*+?^\x24{}()|[\]\\]/g,"\\$&");
+      const script=new RegExp("<script\\b[^>]*\\bsrc=[\\\"'][^\\\"']*"+escaped+"\\?v="+version.replace(/\./g,"\\.")+"(?:[\\\"'&#]|$)","i");
+      if(!script.test(html))failures.push(course+": stale or absent versioned script source on "+rel+" (expected ?v="+version+")");
     }
-
-    report.push({course,adapter:adapterName,version,adoptedLessons,protectedAdapterHits});
+    if(names.some(name=>name!==expected.adapter))
+      failures.push(course+": foreign lesson engine adapter found: "+rel);
+  }
+  if(adopted!==expected.lessons)failures.push(course+": adopted lessons "+adopted+" / "+expected.lessons);
+  report.push({course,version,expected:expected.lessons,standard:standard.length,adopted,missing,protectedHits});
+}
+// Future course adapters cannot be silently introduced without an explicit
+// approved syllabus inventory and assessment-firewall release review.
+for(const course of courses){
+  if(baseline[course])continue;
+  const assets=path.join(mathRoot,course,"assets");
+  if(fs.existsSync(assets)){
+    const found=fs.readdirSync(assets).filter(x=>/-math-lesson-v2-adapter\.js$/.test(x));
+    if(found.length)failures.push(course+": new adapter detected ("+found.join(", ")+"); add reviewed course baseline");
   }
 }
-
 console.table(report);
-
-if(!report.length){
-  console.error("No Mathematics Engine lesson adapters were discovered.");
-  process.exit(1);
-}
-
 if(failures.length){
-  console.error("\nMathematics Engine lesson-shell integrity FAILED");
-  for(const failure of failures) console.error(" - "+failure);
-  process.exit(1);
-}
-
-console.log("\nMathematics Engine lesson-shell integrity PASS");
+  console.error("\nMathematics Engine integrity FAIL ("+failures.length+" issue(s))");
+  for(const msg of failures)console.error(" - "+msg);
+  process.exitCode=1;
+}else console.log("\nMathematics Engine integrity PASS: lesson coverage, cache versions, and assessment firewall");
