@@ -117,7 +117,7 @@ const COURSES=Object.freeze([
     // makes every Grade 09 surface (dashboard, seven-class profile, pins and
     // continuation) resolve to the same course entrance without bypassing the
     // lesson-level 80% mastery gates inside French 101.
-    const returnTo=encodeURIComponent("https://vervenveda.com/Khaemenes_High.github.io/grades/grade-09/student-profile/");
+    const returnTo=encodeURIComponent(`https://vervenveda.com${repoPath("grades/grade-09/student-profile/")}`);
     const source="khaemenes-high-grade09";
     const french101=`https://vervenveda.com/Khaemenes_Linguistics.github.io/apps/French_101_index.html?source=${source}&return=${returnTo}`;
     const handoff=id==="french"
