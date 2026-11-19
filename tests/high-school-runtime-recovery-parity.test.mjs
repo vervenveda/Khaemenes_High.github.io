@@ -239,3 +239,11 @@ test("shared High School chrome routes English pages into the English worker rec
  assert.match(chrome,/high-school-english-worker-recovery-v1\.js/);
  assert.match(chrome,/ensureEnglishRecovery/);
 });
+
+
+test("English 9 Day 1 uses finite layout retries instead of a document MutationObserver",()=>{
+ const page=read("courses/language-arts/english-9/weeks/week-01/day-01/index.html");
+ assert.doesNotMatch(page,/new\s+MutationObserver/);
+ assert.match(page,/\[80,240,700,1600\]\.forEach\(ms=>setTimeout\(schedule,ms\)\)/);
+ assert.match(page,/khaemenes-high-chrome-ready/);
+});
