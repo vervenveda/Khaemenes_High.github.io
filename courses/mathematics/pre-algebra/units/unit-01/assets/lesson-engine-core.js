@@ -33,7 +33,9 @@
     lessonScores: {},
     reflections: {},
     lessonNotes: {},
-    practiceDrafts: {}
+    practiceDrafts: {},
+    sectionChecks: {},
+    quickChecks: {}
   };
 
   let progress = loadJSON(PROGRESS_KEY, clone(DEFAULT_PROGRESS));
@@ -81,6 +83,8 @@
     if (!progress.reflections || typeof progress.reflections !== "object") progress.reflections = {};
     if (!progress.lessonNotes || typeof progress.lessonNotes !== "object") progress.lessonNotes = {};
     if (!progress.practiceDrafts || typeof progress.practiceDrafts !== "object") progress.practiceDrafts = {};
+    if (!progress.sectionChecks || typeof progress.sectionChecks !== "object") progress.sectionChecks = {};
+    if (!progress.quickChecks || typeof progress.quickChecks !== "object") progress.quickChecks = {};
     if (!progress.pathway) progress.pathway = CONFIG.defaultPathway;
 
     const reviewed = new Set(progress.reviewedLessons);
@@ -98,6 +102,88 @@
   function saveProgress() {
     normalizeProgress();
     saveJSON(PROGRESS_KEY, progress);
+  }
+
+  const CHECKLIST_ITEMS = Object.freeze([
+    { key:"learning-goals-warmup", label:"Learning Goals & Warm-up", mode:"manual" },
+    { key:"lesson-record", label:"Your Lesson Record", mode:"reviewed" },
+    { key:"reading-room", label:"Reading Room", mode:"manual" },
+    { key:"number-family-explorer", label:"Number-Family Explorer", mode:"manual" },
+    { key:"quick-check", label:"Quick Check", mode:"quick-check" },
+    { key:"worked-examples", label:"Worked Examples", mode:"manual" },
+    { key:"pathway-support", label:"Pathway Support", mode:"manual" },
+    { key:"vocabulary-bridge", label:"Vocabulary Bridge", mode:"manual" },
+    { key:"global-application", label:"Global Application", mode:"manual" },
+    { key:"guided-notes", label:"Guided Notes", mode:"notes" },
+    { key:"lesson-practice", label:"Lesson Practice", mode:"mastery" },
+    { key:"reflection", label:"Reflection", mode:"reflection" }
+  ]);
+
+  function manualChecksForLesson() {
+    const raw=progress.sectionChecks?.[lesson.id];
+    return raw && typeof raw==="object" ? raw : {};
+  }
+
+  function quickChecksForLesson() {
+    const raw=progress.quickChecks?.[lesson.id];
+    return raw && typeof raw==="object" ? raw : {};
+  }
+
+  function checklistItemComplete(item) {
+    if (item.mode === "reviewed") return progress.reviewedLessons.includes(lesson.id);
+    if (item.mode === "notes") return Boolean((progress.lessonNotes?.[lesson.id] || "").trim());
+    if (item.mode === "reflection") return Boolean((progress.reflections?.[lesson.id] || "").trim());
+    if (item.mode === "mastery") return Number(progress.lessonScores?.[lesson.id]) >= CONFIG.masteryThreshold;
+    if (item.mode === "quick-check") {
+      const state=quickChecksForLesson();
+      const total=(lesson.quick_checks || []).length;
+      return total > 0 && Array.from({length:total},(_,index)=>state[index] === true).every(Boolean);
+    }
+    return manualChecksForLesson()[item.key] === true;
+  }
+
+  function checklistComplete() {
+    return CHECKLIST_ITEMS.every(checklistItemComplete);
+  }
+
+  function renderCompletionChecklist() {
+    const target=$("#lessonCompletionChecklist");
+    if (!target) return;
+    const manual=manualChecksForLesson();
+    target.innerHTML=CHECKLIST_ITEMS.map(item=>{
+      const checked=checklistItemComplete(item);
+      const automatic=item.mode!=="manual";
+      return `<label class="kme-completion-item${checked ? " is-complete" : ""}">
+        <input type="checkbox"
+          data-checklist-key="${escapeHTML(item.key)}"
+          ${checked ? "checked" : ""}
+          ${automatic ? "disabled aria-readonly=\"true\"" : ""}>
+        <span class="kme-completion-copy">
+          <span class="kme-completion-label">${escapeHTML(item.label)}</span>
+          <span class="kme-completion-note">${automatic ? "Completes automatically when its activity requirement is met." : "Check when you have reviewed this section."}</span>
+        </span>
+      </label>`;
+    }).join("");
+
+    const done=CHECKLIST_ITEMS.filter(checklistItemComplete).length;
+    const score=Number(progress.lessonScores?.[lesson.id]);
+    const mastered=Number.isFinite(score) && score >= CONFIG.masteryThreshold;
+    const status=$("#lessonCompletionStatus");
+    if(status){
+      status.textContent=`${done} of ${CHECKLIST_ITEMS.length} sections complete · Practice mastery: ${Number.isFinite(score) ? score+"%" : "not scored"} · ${checklistComplete() && mastered ? "Ready to move forward." : "Complete every box and reach 80% mastery to continue."}`;
+    }
+  }
+
+  function setManualChecklistItem(key, checked) {
+    const item=CHECKLIST_ITEMS.find(entry=>entry.key===key);
+    if(!item || item.mode!=="manual") return;
+    if(!progress.sectionChecks[lesson.id] || typeof progress.sectionChecks[lesson.id]!=="object"){
+      progress.sectionChecks[lesson.id]={};
+    }
+    progress.sectionChecks[lesson.id][key]=Boolean(checked);
+    saveProgress();
+    renderCompletionChecklist();
+    renderNavigation();
   }
 
   function setTheme(theme) {
@@ -138,6 +224,7 @@
     renderVocabulary();
     renderQuestions();
     renderRecord();
+    renderCompletionChecklist();
     renderNavigation();
     renderMasteryLanguage();
     renderNotes();
@@ -495,6 +582,13 @@
     const correct = Number(selected.value) === Number(check.answer);
     feedback.className = `feedback ${correct ? "correct" : "incorrect"}`;
     feedback.textContent = `${correct ? "Correct." : "Try again."} ${check.explanation || ""}`;
+    if(!progress.quickChecks[lesson.id] || typeof progress.quickChecks[lesson.id]!=="object"){
+      progress.quickChecks[lesson.id]={};
+    }
+    progress.quickChecks[lesson.id][index]=correct;
+    saveProgress();
+    renderCompletionChecklist();
+    renderNavigation();
   }
 
   function renderExamples() {
@@ -689,6 +783,7 @@
 
     saveProgress();
     renderRecord();
+    renderCompletionChecklist();
     renderNavigation();
 
     setMessage(
@@ -748,6 +843,8 @@
       : [...progress.reviewedLessons, lesson.id];
     saveProgress();
     renderRecord();
+    renderCompletionChecklist();
+    renderNavigation();
   }
 
   function renderNotes() {
@@ -761,6 +858,8 @@
     progress.lessonNotes[lesson.id] = notes.value.trim();
     saveProgress();
     setMessage("#notesMessage", "Guided notes saved in this browser.");
+    renderCompletionChecklist();
+    renderNavigation();
   }
 
   function saveReflection() {
@@ -769,6 +868,8 @@
     progress.reflections[lesson.id] = field.value.trim();
     saveProgress();
     setMessage("#reflectionMessage", "Reflection saved in this browser.");
+    renderCompletionChecklist();
+    renderNavigation();
   }
 
   function ensureMasteryModal() {
@@ -797,9 +898,10 @@
     const hasScore = Number.isFinite(score);
     const text = $("#masteryModalText");
     if (text) {
+      const listDone=checklistComplete();
       text.textContent = hasScore
-        ? `Your current practice score is ${score}%. Reach ${CONFIG.masteryThreshold}% or higher to unlock ${nextTitle}.`
-        : `Complete all lesson practice questions and reach ${CONFIG.masteryThreshold}% or higher to unlock ${nextTitle}.`;
+        ? `Your current practice score is ${score}%. ${listDone ? "The lesson checklist is complete." : "Complete every lesson checklist item."} Reach ${CONFIG.masteryThreshold}% or higher and complete the checklist to unlock ${nextTitle}.`
+        : `Complete every lesson checklist item and reach ${CONFIG.masteryThreshold}% or higher on Lesson Practice to unlock ${nextTitle}.`;
     }
     modal.hidden = false;
     $("#jumpToPractice")?.focus();
@@ -829,22 +931,24 @@
     }
 
     if (nextLink) {
-      const mastered = progress.completedLessons.includes(lesson.id);
+      const mastered = Number(progress.lessonScores?.[lesson.id]) >= CONFIG.masteryThreshold;
+      const checklistReady = checklistComplete();
+      const readyToAdvance = mastered && checklistReady;
       const targetHref = next ? next.file.split("/").pop() : "../practice/core.html";
       const targetTitle = next ? next.title : "Core Practice";
 
       nextLink.dataset.targetHref = targetHref;
       nextLink.dataset.targetTitle = targetTitle;
-      nextLink.dataset.locked = String(!mastered);
-      nextLink.setAttribute("aria-disabled", String(!mastered));
+      nextLink.dataset.locked = String(!readyToAdvance);
+      nextLink.setAttribute("aria-disabled", String(!readyToAdvance));
 
-      if (mastered) {
+      if (readyToAdvance) {
         nextLink.href = targetHref;
         nextLink.textContent = `${targetTitle} →`;
         nextLink.classList.remove("locked");
       } else {
         nextLink.href = "#practice";
-        nextLink.textContent = `Master ${CONFIG.masteryThreshold}% to unlock ${targetTitle} →`;
+        nextLink.textContent = `Complete checklist + ${CONFIG.masteryThreshold}% mastery to unlock ${targetTitle} →`;
         nextLink.classList.add("locked");
       }
     }
@@ -968,6 +1072,10 @@
     });
 
     $("#questionList")?.addEventListener("change", savePracticeDraft);
+    $("#lessonCompletionChecklist")?.addEventListener("change", event => {
+      const input=event.target.closest("input[data-checklist-key]");
+      if(input) setManualChecklistItem(input.dataset.checklistKey,input.checked);
+    });
     $("#submitPractice")?.addEventListener("click", scorePractice);
     $("#resetPractice")?.addEventListener("click", resetPractice);
     $("#markComplete")?.addEventListener("click", toggleReviewed);
