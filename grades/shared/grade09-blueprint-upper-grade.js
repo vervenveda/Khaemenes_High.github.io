@@ -458,8 +458,9 @@ function khaeCanonicalProfileShell(){
    html:root:root body details.khae-profile-accordion>summary{
     box-sizing:border-box;display:flex;align-items:center;justify-content:space-between;
     min-height:55px;padding:14px 18px;cursor:pointer;list-style:none;
-    background:#243038!important;color:#fff8e9!important;-webkit-text-fill-color:#fff8e9!important;
-    font:400 20px/1.3 Cinzel,Georgia,serif!important
+    background:#243038!important;background-image:none!important;
+    color:#fff8e9!important;-webkit-text-fill-color:#fff8e9!important;
+    border:0!important;font:400 20px/1.3 Cinzel,Georgia,serif!important
    }
    html:root:root body details.khae-profile-accordion>summary::-webkit-details-marker{display:none}
    html:root:root body details.khae-profile-accordion>summary::after{content:"+";font:400 24px/1 Cinzel,Georgia,serif}
@@ -502,8 +503,16 @@ function khaeCanonicalProfileShell(){
  const top=document.getElementById("grade09ProfileFirst");
  if(top){
    for(const child of [...top.children]){
-    if(child===identity||child===rail||child.id==="grade09BlueprintTools")continue;
-    if(child.id==="grade09BlueprintTools"&&child.querySelector("#khaeProfileToolRail"))continue;
+    // Only the public identity/photo hero and Profile Tools rail remain exposed.
+    // Daily To Do and every other lower profile surface are accordions.
+    if(child===identity||child===rail)continue;
+    if(child.id==="grade09BlueprintTools"&&child.querySelector("#khaeProfileToolRail")){
+      for(const nested of [...child.children]){
+        if(nested===rail||nested.contains?.(rail))continue;
+        wrap(nested);
+      }
+      continue;
+    }
     wrap(child);
    }
  }
