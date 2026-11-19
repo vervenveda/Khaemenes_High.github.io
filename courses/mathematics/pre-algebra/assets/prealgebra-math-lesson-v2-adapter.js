@@ -32,7 +32,7 @@
    return unit?"khaemenes-prealgebra-unit"+String(Number(unit)).padStart(2,"0")+"-lesson-shell-v2":"khaemenes-prealgebra-unit-progress-v2";
  };
  const readProgress=()=>{try{return JSON.parse(localStorage.getItem(progressKey())||"{}")||{}}catch{return {}}};
- const writeProgress=p=>{try{localStorage.setItem(progressKey(),JSON.stringify(p));return true}catch{return false}};
+ const writeProgress=p=>{try{const raw=JSON.stringify(p),key=progressKey();localStorage.setItem(key,raw);return localStorage.getItem(key)===raw}catch{return false}};
  const ensureProgress=()=>{
    const p=readProgress(),id=lessonId();
    if(!p[MANUAL_KEY]||typeof p[MANUAL_KEY]!=="object")p[MANUAL_KEY]={};
@@ -271,7 +271,7 @@
    style.id="khaemenesPreAlgebraFineTune";
    style.textContent=`
     html:root:root body{font-size:16px!important;line-height:1.68!important}
-    html:root:root body :is(p,li,label,button,input,select,textarea,summary,.feedback,.notice){font-size:max(16px,1em)!important}\n    html:root:root body :is(.eyebrow,.kicker,.dialog-eyebrow,.dialog-kicker,.worksheet-kicker){font-size:14px!important;line-height:1.35!important;letter-spacing:.12em!important}\n    #main{max-width:100%;overflow-x:clip}
+    html:root:root body :is(p,li,label,button,input,select,textarea,summary,.feedback,.notice){font-size:max(16px,1em)!important}\n    html:root:root body :is(.eyebrow,.kicker,.dialog-eyebrow,.dialog-kicker,.worksheet-kicker){font-size:16px!important;line-height:1.35!important;letter-spacing:.12em!important}\n    #main{max-width:100%;overflow-x:clip}
     #main .wrap{width:min(calc(100% - 33px),1180px);margin-inline:auto}
     .actions,.side-actions,.kme-field-actions,.kme-practice-actions{display:flex;flex-wrap:wrap;gap:11px!important;align-items:center}
     .actions .btn,.side-actions .btn,.kme-field-actions .btn,.kme-practice-actions .btn{margin:0!important}
