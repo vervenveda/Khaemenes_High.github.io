@@ -358,3 +358,47 @@ html:root:root body .app>.main>.ka-course-footer{
     width:100%!important;
   }
 }
+
+
+/* Pre-Algebra course/profile boundary v1.3
+   Student-profile presentation belongs only on grade student-profile pages.
+   Keep course learner records and academic progress; suppress profile-only chrome here. */
+
+/* Old course-to-profile controls */
+html:root:root body .app .header-tools > a[href="#student-profile"],
+html:root:root body .app #pinCourseButton,
+html:root:root body .app .course-menu-panel a[href="#student-profile"],
+html:root:root body .app .course-menu-panel a[href*="/student-profile/"],
+html:root:root body .app .course-menu-panel a[href*="/family/"]{
+  display:none!important;
+}
+
+/* Shared official header: do not surface student-profile/family shortcuts on a math course page. */
+html:root:root body #vnvHeaderAutoPopulate .vnv-header-actions a[href*="/student-profile/"],
+html:root:root body #vnvHeaderAutoPopulate .vnv-header-actions a[href*="/family/"],
+html:root:root body #vnvHeaderAutoPopulate .vnv-header-actions a[href*="#student-portal"]{
+  display:none!important;
+}
+
+/* The lower-right profile-style utility dock does not belong on this course landing page. */
+html:root:root body #vnvEcosystemUtilityDock{
+  display:none!important;
+}
+
+/* Defensive isolation: if a cached/shared profile module ever mounts on this route,
+   keep the math course free of profile photo-hero and profile-toolbar surfaces. */
+html:root:root body :is(
+  .student-profile-photo,
+  .student-profile-photo-hero,
+  .profile-photo-hero,
+  .student-profile-hero,
+  .profile-hero-editor,
+  .student-profile-toolbar,
+  .profile-toolbar,
+  [data-student-profile-photo],
+  [data-student-profile-hero],
+  [data-student-profile-toolbar],
+  [data-profile-toolbar]
+){
+  display:none!important;
+}
