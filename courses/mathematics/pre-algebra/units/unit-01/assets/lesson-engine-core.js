@@ -153,16 +153,18 @@
     target.innerHTML=CHECKLIST_ITEMS.map(item=>{
       const checked=checklistItemComplete(item);
       const automatic=item.mode!=="manual";
-      return `<label class="kme-completion-item${checked ? " is-complete" : ""}">
+      return `<div class="kme-completion-item${checked ? " is-complete" : ""}">
         <input type="checkbox"
           data-checklist-key="${escapeHTML(item.key)}"
           ${checked ? "checked" : ""}
           ${automatic ? "disabled aria-readonly=\"true\"" : ""}>
-        <span class="kme-completion-copy">
-          <span class="kme-completion-label">${escapeHTML(item.label)}</span>
-          <span class="kme-completion-note">${automatic ? "Completes automatically when its activity requirement is met." : "Check when you have reviewed this section."}</span>
-        </span>
-      </label>`;
+        <button type="button" class="kme-completion-jump" data-nav-section="${escapeHTML(item.key)}">
+          <span class="kme-completion-copy">
+            <span class="kme-completion-label">${escapeHTML(item.label)}</span>
+            <span class="kme-completion-note">${automatic ? "Completes automatically when its activity requirement is met." : "Check when you have reviewed this section."}</span>
+          </span>
+        </button>
+      </div>`;
     }).join("");
 
     const done=CHECKLIST_ITEMS.filter(checklistItemComplete).length;
@@ -172,6 +174,15 @@
     if(status){
       status.textContent=`${done} of ${CHECKLIST_ITEMS.length} sections complete · Practice mastery: ${Number.isFinite(score) ? score+"%" : "not scored"} · ${checklistComplete() && mastered ? "Ready to move forward." : "Complete every box and reach 80% mastery to continue."}`;
     }
+  }
+
+  function jumpToChecklistSection(key) {
+    const target=document.querySelector(`[data-checklist-section="${CSS.escape(key)}"]`);
+    if(!target) return;
+    if(target.tagName==="DETAILS") target.open=true;
+    target.scrollIntoView({behavior:"smooth",block:"start"});
+    const summary=target.querySelector(":scope > summary");
+    if(summary) setTimeout(()=>summary.focus({preventScroll:true}),350);
   }
 
   function setManualChecklistItem(key, checked) {
@@ -1075,6 +1086,10 @@
     $("#lessonCompletionChecklist")?.addEventListener("change", event => {
       const input=event.target.closest("input[data-checklist-key]");
       if(input) setManualChecklistItem(input.dataset.checklistKey,input.checked);
+    });
+    $("#lessonCompletionChecklist")?.addEventListener("click", event => {
+      const jump=event.target.closest("[data-nav-section]");
+      if(jump) jumpToChecklistSection(jump.dataset.navSection);
     });
     $("#submitPractice")?.addEventListener("click", scorePractice);
     $("#resetPractice")?.addEventListener("click", resetPractice);
