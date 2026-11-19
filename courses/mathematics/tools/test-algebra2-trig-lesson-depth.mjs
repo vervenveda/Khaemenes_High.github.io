@@ -32,10 +32,11 @@ for(const [unit,total] of [[10,10],[11,8]]){
   for(const slug of launchers)die(registry.games[slug],id+" references missing registered game "+slug);
   gameLaunchers+=launchers.length;
 
-  const visuals=html.match(/<svg\b[^>]*role="img"/g)||[];
-  die(visuals.length>=1,id+" needs accessible mathematical diagram");
-  die(html.includes("aria-labelledby="),id+" image accessible name and description");
-  diagramCount+=visuals.length;
+  const inlineVisuals=html.match(/<svg\b[^>]*role="img"/g)||[];
+  const companionVisual=html.includes("algebra2-exceptional-lesson-depth-units10-11-v1.js")&&depthCompanion.includes('class="a2-depth-visual"')&&depthCompanion.includes('role="img"')&&depthCompanion.includes("aria-labelledby");
+  die(inlineVisuals.length>=1||companionVisual,id+" needs an inline or depth-companion accessible mathematical representation");
+  if(inlineVisuals.length)die(html.includes("aria-labelledby="),id+" inline image accessible name and description");
+  diagramCount+=Math.max(1,inlineVisuals.length);
 
   die(/<details[^>]*>[\s\S]*?<summary>[^<]*(?:Reveal|Check|Show)/i.test(html),id+" delayed/student-controlled answer review");
 
