@@ -299,8 +299,11 @@ function safeCourseURL(course,value){
   return typeof normalized==="string"&&normalized.startsWith(course.prefix)?normalized:course.defaultContinue
 }
 function genericContinue(course){
-  const launches=readJSON(LAST_LAUNCH_KEY,{}),last=launches&&typeof launches==="object"?launches[course.id]:null,url=safeCourseURL(course,last?.url||course.defaultContinue);
-  return {url,label:last?.title?String(last.title):course.title,hasSpecificLocation:Boolean(last&&last.url&&last.url!==course.home),actionLabel:`Open ${course.short}`,detail:`${course.subject} · ready to open`};
+  const launches=readJSON(LAST_LAUNCH_KEY,{}),last=launches&&typeof launches==="object"?launches[course.id]:null;
+  const first=window.KhaemenesHighEightClass?.FIRST_STEPS?.[course.id]||course.defaultContinue||course.home;
+  const url=safeCourseURL(course,last?.url||first);
+  const specific=Boolean(last?.url)||url!==course.home;
+  return {url,label:last?.title?String(last.title):course.title,hasSpecificLocation:specific,actionLabel:last?.url?`Continue ${course.short}`:`Begin ${course.short}`,detail:last?.url?`Return to ${last.title?String(last.title):"your last class location"}.`:`${course.subject} · open the first required instructional step`};
 }
 function continueFor(id){
   const course=COURSE_MAP.get(id);
@@ -310,13 +313,15 @@ function continueFor(id){
     if(last&&(last.course==="pre-algebra"||last.course==="prealgebra")&&last.url){
       return {url:safeCourseURL(course,last.url),label:last.title?String(last.title):course.title,hasSpecificLocation:true,actionLabel:"Continue Pre-Algebra",detail:`Continue: ${last.title?String(last.title):"current Pre-Algebra lesson"}`};
     }
-    return {url:course.home,label:course.title,hasSpecificLocation:false,actionLabel:"Open Pre-Algebra",detail:"Open the Pre-Algebra course home to begin or resume from its mastery pathway."};
+    const first=window.KhaemenesHighEightClass?.FIRST_STEPS?.["pre-algebra"]||course.home;
+    return {url:first,label:course.title,hasSpecificLocation:first!==course.home,actionLabel:"Begin Pre-Algebra Readiness",detail:"Begin with the Pre-Algebra readiness pathway before Unit 01."};
   }
   if(id==="algebra-1"){
     if(!hasDiagnosticEvidence()&&!hasAlgebraCourseEvidence())return {url:A1_DIAGNOSTIC,label:"Algebra I Readiness Diagnostic",hasSpecificLocation:true,actionLabel:"Begin Algebra I Readiness",detail:"Week 1 readiness comes before Unit 01."};
     const launches=readJSON(LAST_LAUNCH_KEY,{}),last=launches&&typeof launches==="object"?launches[id]:null;
     if(last?.url&&last.url.startsWith(A1_HOME)&&!last.url.includes("/diagnostic/"))return {url:safeCourseURL(course,last.url),label:last.title?String(last.title):course.title,hasSpecificLocation:true,actionLabel:"Continue Algebra I",detail:`Return to ${last.title?String(last.title):"your last Algebra I location"}.`};
-    return {url:A1_HOME,label:course.title,hasSpecificLocation:false,actionLabel:"Open Algebra I",detail:"Readiness evidence is present. Open Algebra I to continue."};
+    const first=window.KhaemenesHighEightClass?.FIRST_STEPS?.["algebra-1"]||A1_HOME;
+    return {url:first,label:course.title,hasSpecificLocation:first!==A1_HOME,actionLabel:"Continue Algebra I",detail:"Readiness evidence is present. Continue from the first required Algebra I step."};
   }
   return genericContinue(course);
 }
