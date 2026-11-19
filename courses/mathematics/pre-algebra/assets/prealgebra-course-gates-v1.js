@@ -74,5 +74,5 @@ function decorate(){
   if(note)note.innerHTML=e.ok?`<strong>Academy mastery gate active.</strong> Each new week requires the prior week's lesson work and an 80%+ canonical 10-question weekly mastery check. Legacy five-question planner scores remain history only.`:`<strong>Course entrance locked.</strong> ${e.message} <a href="${e.href}">Open required step</a>.`;
 }
 document.addEventListener("click",e=>{const b=e.target.closest?.('.weekBtn[data-week][data-mastery-locked="true"]');if(!b)return;e.preventDefault();e.stopImmediatePropagation();showGate(allowedWeek(Number(b.dataset.week)))},true);
-const observer=new MutationObserver(()=>decorate());const list=document.getElementById("weekList");if(list)observer.observe(list,{childList:true,subtree:true});window.addEventListener("storage",decorate);window.addEventListener("pageshow",decorate);window.addEventListener("khaemenes-prealgebra-weekly-mastery-v2-ready",decorate);setTimeout(decorate,0);
+window.addEventListener("storage",decorate);window.addEventListener("pageshow",decorate);window.addEventListener("khaemenes-prealgebra-weekly-mastery-v2-ready",decorate);window.addEventListener("khaemenes-prealgebra-rendered",decorate);setTimeout(decorate,0);
 })();
