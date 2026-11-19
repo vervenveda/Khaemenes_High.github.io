@@ -98,7 +98,7 @@ function freshDocument(){
  querySelector:s=>s==='main'?main:body.querySelector(s),querySelectorAll:s=>body.querySelectorAll(s)};
  return {document,body,main,column,guided};
 }
-const site=freshDocument(),cx=vm.createContext({document:site.document,URL,console});
+const site=freshDocument(),cx=vm.createContext({document:site.document,URL,console,navigator:{}});
 function launch(slug,mode,title){
  site.document.currentScript={src:'https://academy.example/courses/mathematics/assets/shared-game-launcher.js',
  dataset:{game:slug,course:'algebra2',unit:'11',lesson:'u11-l08',mode,title}};
@@ -123,7 +123,7 @@ assert.equal(site.column.querySelectorAll('.math-shared-game-companion').length,
 const payload=freshDocument();
 payload.document.currentScript={src:'https://academy.example/courses/mathematics/assets/shared-game-launcher.js',
  dataset:{game:'triangle-law-expedition',course:'algebra2',unit:'11',lesson:'u11-l07',mode:'cosine-sas',title:'Forge <img src=x onerror=alert(1)>'}};
-vm.runInNewContext(launcher,{document:payload.document,URL,console},{timeout:2000});
+vm.runInNewContext(launcher,{document:payload.document,URL,console,navigator:{}},{timeout:2000});
 assert.ok(payload.column.all().some(n=>n.tag==='h2'&&n.textContent.includes('<img')),'title handled as literal text');
 
 async function checkReturn(unit,lesson){
