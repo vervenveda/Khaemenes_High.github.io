@@ -4,7 +4,7 @@
  */
 (()=>{"use strict";
  if(window.KhaemenesAlgebra1LessonV2)return;
- const VERSION="2.2.3";
+ const VERSION="2.3.0";
  const MANUAL_KEY="sectionChecks";
  const QUICK_KEY="quickChecks";
  const ITEMS=[
@@ -36,8 +36,10 @@
    const unit=location.pathname.match(/\/unit-(\d+)\//i)?.[1];
    return unit?"khaemenes-algebra1-unit"+String(Number(unit)).padStart(2,"0")+"-lesson-shell-v2":"khaemenes-algebra1-unit-progress-v2";
  };
+ let persistenceHealthy=true,persistenceError="";
  const readProgress=()=>{try{return JSON.parse(localStorage.getItem(progressKey())||"{}")||{}}catch{return {}}};
- const writeProgress=p=>{try{localStorage.setItem(progressKey(),JSON.stringify(p));return true}catch{return false}};
+ const writeProgress=p=>{const key=progressKey(),raw=JSON.stringify(p);try{localStorage.setItem(key,raw);const ok=localStorage.getItem(key)===raw;persistenceHealthy=ok;persistenceError=ok?"":"write-verification-mismatch";return ok}catch(error){persistenceHealthy=false;persistenceError=String(error?.name||error?.message||error||"storage-unavailable");return false}};
+ const persistenceNote=()=>persistenceHealthy?"":" · Storage warning: this checklist change is not verified as persistent. Export or copy important work before leaving.";
  const ensureProgress=()=>{
    const p=readProgress(),id=lessonId();
    if(!p[MANUAL_KEY]||typeof p[MANUAL_KEY]!=="object")p[MANUAL_KEY]={};
@@ -177,6 +179,7 @@
    return true;
  }
  function nextLessonTarget(){
+   try{const explicit=window.KhaemenesAlgebra1ProgressionContract?.nextTarget?.();if(explicit?.href)return {href:explicit.href,title:explicit.title||explicit.label||"Continue",kind:explicit.kind||"contract"}}catch{}
    const n=Number(document.body?.dataset?.lesson||0);
    const dataKey=Object.keys(window).find(k=>/^KHAE_UNIT\d+$/.test(k)&&Array.isArray(window[k]?.lessons));
    const lessons=dataKey?window[dataKey].lessons:null;
@@ -200,6 +203,7 @@
    style.textContent=`
     html:root:root body{font-size:16px!important;line-height:1.68!important}
     html:root:root body :is(p,li,label,button,input,select,textarea,summary,.feedback,.notice){font-size:max(16px,1em)!important}
+    html:root:root body :is(.eyebrow,.kicker,.dialog-eyebrow,.dialog-kicker,.worksheet-kicker){font-size:14px!important;line-height:1.35!important;letter-spacing:.12em!important}
     #main{max-width:100%;overflow-x:clip}
     #main .wrap{width:min(calc(100% - 33px),1180px);margin-inline:auto}
     details.kme-algebra-stage{margin:14px auto;border-radius:7px;overflow:hidden}
@@ -310,7 +314,7 @@
    const done=items.filter(([k,,m])=>itemComplete(k,m)).length;
    const s=score(),ready=complete()&&Number(s)>=threshold();
    const status=$("#lessonCompletionStatus");
-   if(status)status.textContent=done+" of "+items.length+" sections complete · Practice mastery: "+(s===null?"not scored":s+"%")+" · "+(ready?"Ready to move forward.":"Complete every box and reach "+threshold()+"% mastery to continue.");
+   if(status)status.textContent=done+" of "+items.length+" sections complete · Practice mastery: "+(s===null?"not scored":s+"%")+" · "+(ready?"Ready to move forward.":"Complete every box and reach "+threshold()+"% mastery to continue.")+persistenceNote();
  }
  function ensureCompletionCard(){
    if($("#lessonCompletion"))return;
@@ -322,11 +326,14 @@
    const nav=$(".lesson-nav",reflection);
    if(nav)$(".lesson-nav",section).replaceWith(nav);
  }
+ function suppressLegacyNextStep(){const native=$("#lessonNextStep");if(native&&native!==$("#nextLesson")&&$("#lessonCompletion")){native.hidden=true;native.style.display="none";native.setAttribute("aria-hidden","true")}}
  function gateNext(){
    const next=$("#nextLesson");if(!next)return;
-   const mastered=Number(score())>=threshold(),ready=mastered&&complete();
+   const mastered=Number(score())>=threshold(),ready=mastered&&complete(),target=nextLessonTarget();
+   if(target?.href){next.dataset.targetHref=target.href;next.dataset.targetTitle=target.title||"Continue";next.dataset.targetKind=target.kind||"contract"}
    const targetHref=next.dataset.targetHref||next.getAttribute("href")||"#";
    const targetTitle=next.dataset.targetTitle||"Next Lesson";
+   suppressLegacyNextStep();
    if(!next.dataset.targetHref&&targetHref&&targetHref!=="#practice"&&targetHref!=="#lessonCompletion")next.dataset.targetHref=targetHref;
    next.dataset.locked=String(!ready);
    next.setAttribute("aria-disabled",String(!ready));
