@@ -1,0 +1,22 @@
+import fs from "node:fs";
+import vm from "node:vm";
+import assert from "node:assert/strict";
+import path from "node:path";
+import {fileURLToPath} from "node:url";
+const here=path.dirname(fileURLToPath(import.meta.url));
+const src=fs.readFileSync(path.resolve(here,"../../assets/prealgebra-cumulative-gates-v1.js"),"utf8");
+class Store{constructor(){this.m=new Map()}get length(){return this.m.size}key(i){return [...this.m.keys()][i]??null}getItem(k){return this.m.get(k)??null}setItem(k,v){this.m.set(k,String(v))}}
+const localStorage=new Store(),window={};vm.createContext({window,localStorage,JSON,Number,String,Array,Object,Set,Math,encodeURIComponent});vm.runInContext(src,{window,localStorage,JSON,Number,String,Array,Object,Set,Math,encodeURIComponent});
+const G=window.KhaemenesPreAlgebraCumulativeGate;
+const counts=G.lessonCounts,weeks=G.unitWeeks;
+const passUnit=u=>localStorage.setItem("khaemenes-prealgebra-u"+String(u).padStart(2,"0")+"-mastery-v1",JSON.stringify({best_percent:80}));
+const passLessons=u=>{const s={lessonBestScores:{}};for(let i=1;i<=counts[u];i++)s.lessonBestScores["l"+String(i).padStart(2,"0")]=80;localStorage.setItem("khaemenes-prealgebra-unit"+String(u).padStart(2,"0")+"-progress-v1",JSON.stringify(s))};
+const passWeeks=units=>{const p={weeks:{}};for(const u of units)for(const w of weeks[u])p.weeks[w]={quiz:{attempts:[{assessment_version:"prealgebra-weekly-mastery-v2",question_count:10,question_ids:Array.from({length:10},(_,i)=>"w"+w+"q"+i),dimensions:Array(10).fill("d"),score:80}]}};localStorage.setItem("KHAE_OPEN_PREALGEBRA_FORGE_V2",JSON.stringify({students:[{id:"s",progress:p}],activeId:"s"}))};
+for(let u=1;u<=13;u++){passUnit(u);passLessons(u)}passWeeks(Array.from({length:13},(_,i)=>i+1));
+assert.equal(G.unitProgressionComplete(1),true);
+let rec=JSON.parse(localStorage.getItem("khaemenes-prealgebra-unit01-progress-v1"));delete rec.lessonBestScores.l06;localStorage.setItem("khaemenes-prealgebra-unit01-progress-v1",JSON.stringify(rec));assert.equal(G.unitProgressionComplete(1),false);passLessons(1);
+let state=JSON.parse(localStorage.getItem("KHAE_OPEN_PREALGEBRA_FORGE_V2"));state.students[0].progress.weeks[2].quiz.attempts[0].score=101;localStorage.setItem("KHAE_OPEN_PREALGEBRA_FORGE_V2",JSON.stringify(state));assert.equal(G.weekMastered(2),false);passWeeks(Array.from({length:13},(_,i)=>i+1));
+assert.deepEqual(Array.from(G.missing(7)),[]);
+localStorage.removeItem?.("khaemenes-prealgebra-u07-mastery-v1");if(!localStorage.removeItem)localStorage.m.delete("khaemenes-prealgebra-u07-mastery-v1");assert.ok(Array.from(G.missing(7)).some(x=>x.includes("Unit 07 unit mastery")));passUnit(7);
+localStorage.setItem("khaemenes-prealgebra-midterm-result-v2",JSON.stringify({attempts:[{mastery_met:true,selected_response_percent:80,overall_percent:80,constructed_response:{review_complete:true,percent:80}}]}));assert.equal(G.midtermMastered(),true);assert.deepEqual(Array.from(G.missing(13,{requireMidterm:true})),[]);
+console.log("PREALGEBRA_ENGINE_REGRESSION=PASS");
