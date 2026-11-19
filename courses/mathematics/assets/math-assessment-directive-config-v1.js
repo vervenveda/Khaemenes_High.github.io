@@ -6,19 +6,21 @@
 "use strict";
 if(global.KhaemenesMathAssessmentDirectiveConfig)return;
 const ROOT="/Khaemenes_High.github.io/courses/mathematics/";
-const course=(slug,finalPath)=>Object.freeze({
+const course=(slug,{midtermPath,finalPath,midtermAfterUnit,secondHalfStart})=>Object.freeze({
  root:ROOT+slug+"/",
  unit0:ROOT+slug+"/units/unit-00/",
  unit1:ROOT+slug+"/units/unit-01/",
- unit7:ROOT+slug+"/units/unit-07/",
  records:ROOT+slug+"/records/",
- final:ROOT+slug+"/"+finalPath
+ midterm:ROOT+slug+"/"+midtermPath,
+ final:ROOT+slug+"/"+finalPath,
+ midtermAfterUnit,
+ secondHalfStart
 });
 const courses=Object.freeze({
- "pre-algebra":course("pre-algebra","assessments/final-exam-36-weeks.html"),
- "algebra-1":course("algebra-1","assessments/final-exam-36-weeks.html"),
- "geometry":course("geometry","assessments/final.html"),
- "algebra-2":course("algebra-2","assessments/final.html")
+ "pre-algebra":course("pre-algebra",{midtermPath:"assessments/midterm-units-01-07.html",finalPath:"assessments/final-exam-36-weeks.html",midtermAfterUnit:7,secondHalfStart:8}),
+ "algebra-1":course("algebra-1",{midtermPath:"assessments/midterm-units-01-06.html",finalPath:"assessments/final-exam-36-weeks.html",midtermAfterUnit:6,secondHalfStart:7}),
+ "geometry":course("geometry",{midtermPath:"assessments/midterm.html",finalPath:"assessments/final.html",midtermAfterUnit:6,secondHalfStart:7}),
+ "algebra-2":course("algebra-2",{midtermPath:"assessments/midterm.html",finalPath:"assessments/final.html",midtermAfterUnit:6,secondHalfStart:7})
 });
 global.KhaemenesMathAssessmentDirectiveConfig=Object.freeze({
  version:"1.0.0",
