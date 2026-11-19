@@ -218,7 +218,7 @@
     const tag=document.createElement("script");
     tag.src=/\/courses\/mathematics\/geometry(?:\/|$)/i.test(location.pathname)
       ? new URL("../../assets/vnv-beta-link.js",entryAssetSource).href
-      : "https://vervenveda.com/Khaemenes_High.github.io/assets/vnv-beta-link.js";
+      : "https://vervenveda.com/Khaemenes_High.github.io/assets/vnv-beta-link.js?v=20261118-runtime-recovery-2";
     tag.async=true;
     tag.dataset.academyLearnerToolbar="course-entry";
     document.head.appendChild(tag);
@@ -256,5 +256,5 @@
   if(!high)return;
   const already=document.getElementById("vnvBetaProgramLink")||Array.from(document.scripts).some(s=>String(s.src||"").includes("/assets/vnv-beta-link.js"));
   if(already)return;
-  const s=document.createElement("script");s.src="https://vervenveda.com/Khaemenes_High.github.io/assets/vnv-beta-link.js";s.defer=true;s.dataset.khaemenesStudentToolbar="persistent-v1";(document.head||document.documentElement).append(s);
+  const s=document.createElement("script");s.src="https://vervenveda.com/Khaemenes_High.github.io/assets/vnv-beta-link.js?v=20261118-runtime-recovery-2";s.defer=true;s.dataset.khaemenesStudentToolbar="persistent-v1";(document.head||document.documentElement).append(s);
 }catch{}})();
