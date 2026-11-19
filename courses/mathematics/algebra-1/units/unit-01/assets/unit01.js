@@ -1,7 +1,7 @@
 (()=>{"use strict";
 const D=window.KHAE_UNIT01,$=s=>document.querySelector(s),$$=s=>[...document.querySelectorAll(s)],MASTERY=80,KEY="khaemenes-algebra1-unit01-a3-v1",WEEK_STORE="khaemenes-algebra1-weekly-mastery-v2";
 const esc=s=>String(s).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
-function parse(k,f={}){try{return JSON.parse(localStorage.getItem(k)||"null")||f}catch{return f}}function load(){return parse(KEY,{attempts:[],best:{}})}function save(r){try{localStorage.setItem(KEY,JSON.stringify(r));return true}catch{return false}}function best(key){return Number(load()?.best?.[key])||0}function lessonMastered(n){return best(`lesson-${n}`)>=MASTERY}function weekMastered(n){const r=parse(WEEK_STORE,{weeks:{}})?.weeks?.[n];return Number(r?.best)>=MASTERY||Boolean(r?.attempts?.some(a=>a.mastery_met===true))}function allLessonsMastered(){return D.lessons.every(l=>lessonMastered(l.number))}function allUnitWeeksMastered(){return weekMastered(2)&&weekMastered(3)}function lessonWeek(n){return n<=3?2:3}function lessonUnlocked(n){if(n===1)return true;if(!lessonMastered(n-1))return false;return n===4?weekMastered(2):true}
+function parse(k,f={}){try{return JSON.parse(localStorage.getItem(k)||"null")||f}catch{return f}}function load(){return parse(KEY,{attempts:[],best:{}})}function verifiedWrite(key,value){try{const raw=typeof value==="string"?value:JSON.stringify(value);localStorage.setItem(key,raw);return localStorage.getItem(key)===raw}catch{return false}}function save(r){return verifiedWrite(KEY,r)}function best(key){return Number(load()?.best?.[key])||0}function lessonMastered(n){return best(`lesson-${n}`)>=MASTERY}function weekMastered(n){const r=parse(WEEK_STORE,{weeks:{}})?.weeks?.[n];return Number(r?.best)>=MASTERY||Boolean(r?.attempts?.some(a=>a.mastery_met===true))}function allLessonsMastered(){return D.lessons.every(l=>lessonMastered(l.number))}function allUnitWeeksMastered(){return weekMastered(2)&&weekMastered(3)}function lessonWeek(n){return n<=3?2:3}function lessonUnlocked(n){if(n===1)return true;if(!lessonMastered(n-1))return false;return n===4?weekMastered(2):true}
 function shuffle(a){a=[...a];for(let i=a.length-1;i>0;i--){let j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]]}return a}
 function synthesisVariantBank(){
  const bank=[];
@@ -29,7 +29,7 @@ function nextStepHtml(n){
  if(n===3)return {href:D.lessons[3].file,label:"Go to Next Lesson · 04",kind:"lesson"};
  return {href:"../index.html",label:"Return to Unit Pathway",kind:"unit"};
 }
-function itemDifficulty(q){const n=Number(q?.difficulty??q?.level);return n>=1&&n<=3?n:2}
+window.KhaemenesAlgebra1ProgressionContract=Object.freeze({version:"1.0.0",unit:1,nextTarget(){const n=Number(document.body?.dataset?.lesson||0);if(!n)return null;const step=nextStepHtml(n);return step?{href:step.href,label:step.label,title:step.label,kind:step.kind}:null}});\nfunction itemDifficulty(q){const n=Number(q?.difficulty??q?.level);return n>=1&&n<=3?n:2}
 function balanceOptions(chosen){const targets=shuffle(chosen.map((_,i)=>i%4));return chosen.map((q,qi)=>{const sourceOptions=q.options.map((text,i)=>({text,i}));if(sourceOptions.length!==4){const order=shuffle(sourceOptions);return {...q,options:order.map(o=>o.text),answer:order.findIndex(o=>o.i===q.answer),_originalAnswer:q.answer,_optionOrder:order.map(o=>o.i)}}const correct=sourceOptions.find(o=>o.i===q.answer),distractors=shuffle(sourceOptions.filter(o=>o.i!==q.answer)),target=targets[qi],order=[];let d=0;for(let pos=0;pos<4;pos++)order.push(pos===target?correct:distractors[d++]);return {...q,options:order.map(o=>o.text),answer:target,_originalAnswer:q.answer,_optionOrder:order.map(o=>o.i)}})}
 function blueprintSelect(pool,previousIds,count=10){const previous=new Set(previousIds||[]),selected=[],used=new Set(),targets=shuffle([1,1,1,2,2,2,2,3,3,3]);const take=candidates=>{const q=shuffle(candidates.filter(x=>!used.has(x.id)))[0];if(!q)return false;selected.push(q);used.add(q.id);return true};for(const target of targets){if(take(pool.filter(q=>!previous.has(q.id)&&itemDifficulty(q)===target)))continue;if(take(pool.filter(q=>!previous.has(q.id))))continue;if(take(pool.filter(q=>itemDifficulty(q)===target)))continue;take(pool)}return shuffle(selected).slice(0,count)}
 function bind(items,key){
@@ -73,8 +73,8 @@ function installLessonWritingDraft(n){
   el.value=typeof draft[key]==='string'?draft[key]:'';
   el.addEventListener('input',()=>{
    draft[key]=el.value;
-   try{localStorage.setItem(draftKey,JSON.stringify(draft));status.textContent='Lesson writing saved locally. This is not graded mastery evidence.'}
-   catch{status.textContent='Unable to save lesson writing on this device. Copy or print your responses before leaving.'}
+   if(verifiedWrite(draftKey,draft))status.textContent='Lesson writing saved and verified in this browser. This is not graded mastery evidence.';
+   else status.textContent='Unable to verify persistent lesson writing on this device. Copy, print, or export your responses before leaving.';
   });
  });
 }
@@ -90,7 +90,7 @@ function lesson(n){if(!lessonUnlocked(n)){const weekly=n===4&&!weekMastered(2);r
   grid.insertBefore(section,grid.querySelector("article.card.lab")||checkpoint);
   const response=section.querySelector("textarea"),key="khaemenes-algebra1-unit01-lesson"+String(n).padStart(2,"0")+"-transfer-v1";
   try{response.value=localStorage.getItem(key)||""}catch{}
-  response.addEventListener("input",()=>{try{localStorage.setItem(key,response.value)}catch{}});
+  response.addEventListener("input",()=>{if(!verifiedWrite(key,response.value))response.dataset.storageWarning="true";else delete response.dataset.storageWarning});
  }
 }
 installLessonWritingDraft(n);bind(items,`lesson-${n}`);showLessonVideo(n)}
@@ -114,7 +114,7 @@ bind(items,"synthesis-challenge");
 let draft={responses:{},rubric:{}};try{draft=JSON.parse(localStorage.getItem(draftKey)||"{}")||draft}catch{}draft.responses=draft.responses&&typeof draft.responses==="object"?draft.responses:{};draft.rubric=draft.rubric&&typeof draft.rubric==="object"?draft.rubric:{};
 document.querySelectorAll("[data-synthesis-field]").forEach(el=>{el.value=draft.responses[el.dataset.synthesisField]||"";el.addEventListener("input",()=>{draft.responses[el.dataset.synthesisField]=el.value})});
 document.querySelectorAll("[data-synthesis-rubric]").forEach(el=>{el.value=draft.rubric[el.dataset.synthesisRubric]??"";el.addEventListener("change",()=>{draft.rubric[el.dataset.synthesisRubric]=el.value===""?"":Number(el.value)})});
-$("#saveSynthesis")?.addEventListener("click",()=>{draft.saved_at=new Date().toISOString();draft.assessment_id="KH-MATH-A1-U01-SYNTHESIS";draft.classification="browser-local-unverified-synthesis-evidence";try{localStorage.setItem(draftKey,JSON.stringify(draft));const vals=Object.values(draft.rubric).filter(v=>Number.isFinite(v));const total=vals.length===5?vals.reduce((a,b)=>a+b,0):null;$("#synthesisStatus").textContent=total===null?"Written evidence saved locally. Rubric is not yet complete.":`Written evidence saved locally · Rubric ${total}/20 · ${total>=16?"Recommended synthesis benchmark reached":"Revision recommended"}.`}catch{$("#synthesisStatus").textContent="This browser could not save the synthesis evidence. Print or copy the work before leaving."}});
+$("#saveSynthesis")?.addEventListener("click",()=>{draft.saved_at=new Date().toISOString();draft.assessment_id="KH-MATH-A1-U01-SYNTHESIS";draft.classification="browser-local-unverified-synthesis-evidence";if(verifiedWrite(draftKey,draft)){const vals=Object.values(draft.rubric).filter(v=>Number.isFinite(v));const total=vals.length===5?vals.reduce((a,b)=>a+b,0):null;$("#synthesisStatus").textContent=total===null?"Written evidence saved and verified locally. Rubric is not yet complete.":`Written evidence saved and verified locally · Rubric ${total}/20 · ${total>=16?"Recommended synthesis benchmark reached":"Revision recommended"}.`}else{$("#synthesisStatus").textContent="This browser could not verify the synthesis evidence as persistent. Print, copy, or export the work before leaving."}});
 }
 /* Core lesson must render independently of optional student-experience add-ons. */
 try{
