@@ -1,12 +1,12 @@
 {
   "schema_version": "1.0",
   "component_set": "KH-MATH-PA",
-  "release": "2026.11.19-forensic-integrity-refresh",
+  "release": "2026.11.19-assessment-firewall-v24",
   "hash_format": "git-blob-sha1",
   "components": [
     {
       "path": "service-worker.js",
-      "sha": "35a23e375b19e0db9d672124992b37467c3af9e8"
+      "sha": "ebc9380540cae289087c04722b6ca8321f80bf04"
     },
     {
       "path": "assets/prealgebra-student-navigation.js",
@@ -225,5 +225,5 @@
       "sha": "ee1f8643993ac0105de5321d03392082fab6cf14"
     }
   ],
-  "integrity_note": "Hashes synchronized to the current canonical Pre-Algebra components after the approved assessment-blueprint and lesson-engine hardening passes. This manifest refresh changes no assessment behavior."
+  "integrity_note": "Hashes synchronized after the Pre-Algebra v24 lesson-only navigation cache firewall. Assessment content and scoring were not modified."
 }
