@@ -305,3 +305,28 @@ test("Pre-Algebra readiness diagnostic is a single-owner assessment surface",()=
  assert.match(page,/khaemenes-naib-readiness-profile-v1/);
  assert.match(page,/Unit 0 Foundations & Readiness/);
 });
+
+
+const canonicalMathDiagnostics=[
+ "courses/mathematics/pre-algebra/diagnostic/index.html",
+ "courses/mathematics/algebra-1/diagnostic/index.html",
+ "courses/mathematics/geometry/diagnostic/index.html",
+ "courses/mathematics/algebra-2/diagnostic/index.html"
+];
+
+test("all four High School math diagnostics follow the canonical single-owner assessment blueprint",()=>{
+ for(const path of canonicalMathDiagnostics){
+  const page=read(path);
+  assert.doesNotMatch(page,/assessment-engine\.js|exam-engine\.js/);
+  assert.doesNotMatch(page,/course-entry-contract\.js/);
+  assert.doesNotMatch(page,/new\s+MutationObserver/);
+  assert.doesNotMatch(page,/setInterval\s*\(/);
+  assert.equal((page.match(/data-info="/g)||[]).length,3,path+" must have three info buttons");
+  assert.equal((page.match(/class="bottom-section-nav"/g)||[]).length,1,path+" must have bottom section navigation");
+  assert.equal((page.match(/id="submitButton"/g)||[]).length,1,path+" must have one submit button");
+  assert.match(page,/class="hero"/);
+  assert.match(page,/class="identity-row"/);
+  assert.match(page,/class="objective-grid"/);
+  assert.match(page,/class="question-list"/);
+ }
+});
