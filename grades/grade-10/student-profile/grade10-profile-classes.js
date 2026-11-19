@@ -6,7 +6,7 @@
 "use strict";
 const host=document.getElementById("grade09SevenClassSchedule");
 if(!host||document.body.dataset.grade!=="10")return;
-const catalog=window.KhaemenesHighEightClass,context=window.KhaemenesHighProfileGradeContext;
+const catalog=window.KhaemenesHighEightClass,context=window.KhaemenesHighProfileGradeContext,continuation=window.KhaemenesLearningContinuation;
 const create=(tag,text)=>{const n=document.createElement(tag);if(text!==undefined)n.textContent=text;return n};
 function render(){
  host.replaceChildren();
@@ -27,7 +27,8 @@ function render(){
   const heading=create("h3",slot.label),course=create("p",slot.title);
   card.append(heading,course);
   if(typeof slot.href==="string"&&/^https:\/\//i.test(slot.href)){
-   const link=create("a","Open Class");link.href=slot.href;
+   const learner=context?.active?.();const snaps=learner?.learnerId&&continuation?.readLearner?.(learner.learnerId)||[];const snap=snaps.find(x=>x?.courseId===slot.id);const route=snap?.nextHref||slot.href;
+   const link=create("a",snap?.stale?"Refresh Class":snap?.status==="corrections"?"Review Corrections":snap?.nextLabel||"Continue Class");link.href=route;link.title=snap?.nextTitle||snap?.summary||"Continue this class";
    card.append(link);
   }else{
    const note=create("p","Course doorway is not yet available. No class has been assigned or graded by this page.");
