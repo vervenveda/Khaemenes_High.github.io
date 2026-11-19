@@ -47,7 +47,7 @@ ok(exists(authorityRel),"canonical mastery authority exists");
 const authorityContext={window:{KhaemenesMathHardeningLoader:true},localStorage:{getItem:key=>authorityStore[key]??null}};
 if(exists(authorityRel))loadScript(authorityRel,authorityContext);
 const authority=authorityContext.window.KhaemenesAlgebra1MasteryAuthority;
-ok(authority?.version==="1.5"&&authority?.threshold===80&&authority?.focused_assessment==="v1.2"&&typeof authority?.unitProgressionComplete==="function","canonical mastery authority exposes v1.5 / 80% / full evidence-chain / focused-assessment contract");
+ok(authority?.version==="1.6"&&authority?.threshold===80&&authority?.focused_assessment==="v1.2"&&typeof authority?.unitProgressionComplete==="function","canonical mastery authority exposes v1.6 / 80% / bounded full evidence-chain / focused-assessment contract");
 const mappedWeeks=authority?Object.keys(authority.weekLessonMap||{}).map(Number).sort((a,b)=>a-b):[];
 ok(mappedWeeks.length===35&&mappedWeeks.every((w,i)=>w===i+2),"canonical authority maps every graded week 2-36");
 let mappedLessonCount=0;
