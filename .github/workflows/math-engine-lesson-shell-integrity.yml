@@ -1,0 +1,32 @@
+name: Mathematics Engine lesson-shell integrity
+
+on:
+  push:
+    paths:
+      - "courses/mathematics/pre-algebra/**"
+      - "courses/mathematics/algebra-1/**"
+      - "courses/mathematics/geometry/**"
+      - "courses/mathematics/algebra-2/**"
+      - "courses/mathematics/precalculus-trigonometry/**"
+      - "courses/mathematics/calculus-1/**"
+      - "tools/validate-math-engine-version-sync.mjs"
+      - "workflow/blueprints/khaemenes-mathematics-engine-blueprint-v1.md"
+  pull_request:
+    paths:
+      - "courses/mathematics/**"
+      - "tools/validate-math-engine-version-sync.mjs"
+      - "workflow/blueprints/khaemenes-mathematics-engine-blueprint-v1.md"
+
+permissions:
+  contents: read
+
+jobs:
+  lesson-shell-integrity:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+      - name: Validate Mathematics Engine adapter versions and assessment firewall
+        run: node tools/validate-math-engine-version-sync.mjs
