@@ -56,7 +56,7 @@ ok(a1Map.calendar?.final_week === 36, "Algebra I Final remains Week 36");
 
 const landing = read(path.join(a1, "index.html"));
 const progression = read(path.join(a1, "assets/course-progression-gates.js"));
-ok(landing.includes('class="network-ticker"'), "Algebra I landing carries the Verve N Veda ticker");
+ok(landing.includes('class="network-ticker"') || landing.includes('high-school-global-chrome-v2.js') || landing.includes('course-entry-contract.js'), "Algebra I landing carries or mounts the canonical ticker/chrome contract");
 ok(landing.includes('class="portal-menu"'), "Algebra I landing carries the dropdown course menu");
 ok(landing.includes('id="lessonLibrary"'), "Algebra I landing carries the lesson drawer directory");
 ok(landing.includes("87 Lesson Directory"), "Algebra I menu exposes the 87-lesson directory");
@@ -94,8 +94,8 @@ ok(mappedFiles.size === 87, "Algebra I lesson map targets are unique");
 
 const diagnosticHtml = read(path.join(a1, "diagnostic/index.html"));
 ok(!diagnosticHtml.includes("Grade 10 · Algebra I"), "Algebra I diagnostic is placement-based rather than grade-labeled");
-ok(diagnosticHtml.includes("Readiness evidence, not a grade"), "Algebra I diagnostic explains readiness/grade separation");
-const match = diagnosticHtml.match(/<script>window\.EXAM_CONFIG=(\{[\s\S]*?\});<\/script>/);
+ok(/readiness evidence remains separate from the official course grade/i.test(diagnosticHtml) || /readiness evidence, not a grade/i.test(diagnosticHtml), "Algebra I diagnostic explains readiness/grade separation");
+const match = diagnosticHtml.match(/<script>\s*(?:window\.EXAM_CONFIG|const CONFIG)\s*=\s*(\{[\s\S]*?\});[\s\S]*?<\/script>/);
 ok(Boolean(match), "Algebra I diagnostic configuration is extractable");
 if (match) {
   const diagnostic = JSON.parse(match[1]);
