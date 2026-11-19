@@ -1,6 +1,6 @@
 (()=>{"use strict";
  if(window.KhaemenesGeometryLessonV2)return;
- const VERSION="2.2.3",MASTERY=80,KEY="khaemenes-geometry-lesson-progress-v1";
+ const VERSION="2.3.0",MASTERY=80,KEY="khaemenes-geometry-lesson-progress-v1";
  let bound=false,observer=null;
  const $=(s,r=document)=>r.querySelector(s), $$=(s,r=document)=>[...r.querySelectorAll(s)];
  const lessonId=()=>document.body?.dataset?.lessonId||"geometry-lesson";
@@ -8,7 +8,9 @@
  const lessonNumber=()=>Number(lessonId().match(/-l(\d{2})$/)?.[1]||0);
  const shellKey=()=>{const u=unitNumber();return "khaemenes-geometry-unit"+String(u).padStart(2,"0")+"-lesson-shell-v2"};
  const readJSON=(key,fallback={})=>{try{return JSON.parse(localStorage.getItem(key)||"null")||fallback}catch{return fallback}};
- const writeJSON=(key,value)=>{try{const raw=JSON.stringify(value);localStorage.setItem(key,raw);return localStorage.getItem(key)===raw}catch{return false}};
+ let persistenceHealthy=true,persistenceError="";
+ const writeJSON=(key,value)=>{try{const raw=JSON.stringify(value);localStorage.setItem(key,raw);const ok=localStorage.getItem(key)===raw;persistenceHealthy=ok;persistenceError=ok?"":"write-verification-mismatch";return ok}catch(error){persistenceHealthy=false;persistenceError=String(error?.name||error?.message||error||"storage-unavailable");return false}};
+ const persistenceNote=()=>persistenceHealthy?"":" · Storage warning: checklist evidence is not verified as persistent. Export or copy important work before leaving.";
  const lessonRecord=()=>readJSON(KEY,{})[lessonId()]||{};
  const masteryScore=()=>Number(lessonRecord()?.bestScore??lessonRecord()?.score);
  const mastered=()=>Number.isFinite(masteryScore())&&masteryScore()>=MASTERY&&(lessonRecord()?.mastery===true||lessonRecord()?.complete===true);
@@ -62,8 +64,7 @@
   const style=document.createElement("style");style.id="khaemenesGeometryFineTune";
   style.textContent=`
    html:root:root body{font-family:"Brandon Grotesque","Avenir Next",Avenir,"Segoe UI",Arial,sans-serif!important;font-size:16px!important;line-height:1.68!important}
-   html:root:root body :is(p,li,label,button,input,select,textarea,summary,.notice,.feedback){font-size:max(16px,1em)!important}
-   html:root:root body :is(h1,h2,h3,h4,.worksheet-title){font-family:Cinzel,"Iowan Old Style","Palatino Linotype",Palatino,Georgia,serif!important;font-weight:400!important}
+   html:root:root body :is(p,li,label,button,input,select,textarea,summary,.notice,.feedback){font-size:max(16px,1em)!important}\n   html:root:root body :is(.eyebrow,.kicker,.dialog-eyebrow,.dialog-kicker,.worksheet-kicker){font-size:14px!important;line-height:1.35!important;letter-spacing:.12em!important;text-transform:uppercase!important}\n   html:root:root body :is(h1,h2,h3,h4,.worksheet-title){font-family:Cinzel,"Iowan Old Style","Palatino Linotype",Palatino,Georgia,serif!important;font-weight:400!important}
    .lesson-shell{width:min(calc(100% - 33px),1180px)!important;margin-inline:auto!important}
    .lesson-layout{grid-template-columns:minmax(0,1fr)!important;gap:14px!important}
    .lesson-sidebar{display:grid!important;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px!important}
@@ -125,8 +126,9 @@
   }).join("");
   const finished=xs.filter(([k,,m])=>done(k,m)).length,s=masteryScore();
   const status=$("#geometryLessonCompletionStatus");
-  if(status)status.textContent=finished+" of "+xs.length+" sections complete · Geometry mastery: "+(Number.isFinite(s)?s+"%":"not scored")+" · "+(complete()&&mastered()?"Ready for the authorized next step.":"Complete every required section and reach 80% mastery.");
+  if(status)status.textContent=finished+" of "+xs.length+" sections complete · Geometry mastery: "+(Number.isFinite(s)?s+"%":"not scored")+" · "+(complete()&&mastered()?"Ready for the authorized next step.":"Complete every required section and reach 80% mastery.")+persistenceNote();
  }
+ function progressionTarget(){try{return window.KhaemenesGeometryProgressionContract?.nextTarget?.()||null}catch{return null}}
  function nextLink(){
   const card=$("#lessonNextStep");if(!card)return null;
   return card.querySelector(".actions .btn.primary");
@@ -134,9 +136,11 @@
  function gateNext(){
   const link=nextLink();if(!link)return;
   const ready=complete()&&mastered();
-  const action=(link.textContent||"").trim();
+  const target=progressionTarget();
+  const action=(target?.action||link.textContent||"").trim();
   const lessonProgression=/Next Lesson|Begin Next Unit/i.test(action);
   if(!lessonProgression)return;
+  if(target?.href){link.dataset.geometryTargetHref=target.href;link.dataset.geometryTargetTitle=target.title||target.action||"Continue"}
   if(!link.dataset.geometryTargetHref)link.dataset.geometryTargetHref=link.getAttribute("href")||"#";
   link.dataset.geometryLocked=String(!ready);
   link.setAttribute("aria-disabled",String(!ready));
