@@ -261,3 +261,13 @@ test("course entry contract requests the repaired learner utility runtime with a
  const contract=read("courses/shared/course-entry-contract.js");
  assert.match(contract,/vnv-beta-link\.js\?v=20261118-runtime-recovery-2/);
 });
+
+
+test("High School course translator uses bounded refreshes instead of continuous DOM observation",()=>{
+ const language=read("assets/vnv-language.js");
+ assert.match(language,/const highCourse=\/\\\/Khaemenes_High\\\.github\\\.io\\\/courses\\\//);
+ assert.match(language,/\[120,480,1400,3200\]\.forEach\(ms=>setTimeout\(refresh,ms\)\)/);
+ assert.match(language,/khaemenes-high-chrome-ready/);
+ assert.match(language,/khaemenes-math-content-ready/);
+ assert.match(language,/khaemenes-learning-continuation-ready/);
+});
