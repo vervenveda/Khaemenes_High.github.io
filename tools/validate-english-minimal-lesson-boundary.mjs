@@ -27,15 +27,26 @@ for(const [grade,blob] of Object.entries(preserved)){
  assert.equal(hash(workspace),blob,"English "+grade+": intact pre-recovery workspace blob");
  assert.ok(landing.length<9000,"English "+grade+": course landing must remain minimal");
  assert.match(landing,/english-minimal-landing-v1\.css/,"English "+grade+": expected approved style");
- assert.match(landing,/english-action-grid/,"English "+grade+": 2×2 course access grid");
- assert.doesNotMatch(landing,/upper-english-records\.js|high-school-english-continuation\.js|assets\/curriculum-data\.js/,"English "+grade+": no course data engine on public doorway");
- for(const link of ["course-workspace.html","weeks/week-01/","assessments/"]){
-  assert.ok(landing.includes('href="'+link+'"'),"English "+grade+": doorway link "+link);
-  const file=path.join(dir,link,link.endsWith("/")?"index.html":"");
-  assert.ok(fs.statSync(file).isFile(),"English "+grade+": target "+link);
- }
- assert.ok(landing.includes("grades/grade-"+grade+"/student-profile/"),"English "+grade+": registered-grade student profile");
- assert.ok(landing.includes("grid-template-columns:repeat(2,minmax(0,1fr))"),"English "+grade+": symmetric two-column entrance");
+ assert.match(landing,/english-action-grid/,"English "+grade+": centered three-button access");
+ assert.doesNotMatch(landing,/<style\\b/i,"English "+grade+": no duplicate page-level CSS layer");
+ assert.doesNotMatch(landing,/upper-english-records\\.js|high-school-english-continuation\\.js|assets\\/curriculum-data\\.js/,"English "+grade+": no academic engine on course introduction");
+ assert.ok(landing.includes('src="../../../assets/vnv-dual-ticker-v1.js"'),"English "+grade+": shared canonical 333 and auto ticker mount");
+ assert.ok(landing.includes("vnv-header-autopopulate.js"),"English "+grade+": official shared header mount");
+ assert.ok(landing.includes("english-minimal-header-mount-v1.js"),"English "+grade+": header mount guard");
+ assert.ok(landing.includes("english-landing-class-tools-v1.js")&&landing.includes("vnv-class-tools-toolbar.js"),"English "+grade+": lower-left shared toolbar");
+ assert.ok(landing.includes("vnv-ecosystem-toolbar.js"),"English "+grade+": lower-right official ecosystem toolbar");
+ assert.ok(landing.includes("vnv-language.js"),"English "+grade+": canonical translator resource");
+ const nav=landing.match(/<nav class="english-action-grid"[^>]*>([\\s\\S]*?)<\\/nav>/);
+ assert.ok(nav,"English "+grade+": missing access menu");
+ const links=[...nav[1].matchAll(/<a\\s+href="([^"]+)"[^>]*>([^<]+)<\\/a>/g)];
+ assert.deepEqual(links.map(x=>x[2]),["Learner Profile","Parent Profile","Enrollment"],"English "+grade+": exactly three required access buttons");
+ assert.ok(links[0][1].includes("grades/grade-"+grade+"/student-profile/"),"English "+grade+": correct student grade");
+ assert.ok(links[1][1].includes("Khaemenes_Academy.github.io/family/"),"English "+grade+": correct parent profile");
+ assert.ok(links[2][1].includes("Khaemenes_Academy.github.io/family/enroll/"),"English "+grade+": correct enrollment");
+ assert.ok(landing.includes("english-feature-grid"),"English "+grade+": 2x2 course-feature grid retained");
+ assert.equal((landing.match(/class="english-feature"/g)||[]).length,4,"English "+grade+": exactly four feature cards");
+ assert.ok(landing.includes("english-footer"),"English "+grade+": centered footer");
+ assert.ok(fs.existsSync(path.join(dir,"course-workspace.html")),"English "+grade+": preserved full course workspace");
  for(let n=1;n<=36;n++){
   const week=path.join(dir,"weeks","week-"+String(n).padStart(2,"0"),"index.html");
   assert.ok(fs.existsSync(week),"English "+grade+": week "+n+" missing");
