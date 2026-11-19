@@ -13,19 +13,19 @@ ok(gate.includes('weekMastered')&&gate.includes('Number(cur?.week)>Number(prev?.
 ok(gate.includes('unitNo>=7&&!midtermMastered()'),'Units 07-13 require reviewed Midterm mastery');
 ok(gate.includes('allLessonsMastered()')&&gate.includes('allWeeksMastered()'),'formal shared-unit mastery requires lesson and weekly gates');
 ok(gate.includes('lockPage')&&gate.includes('R.type==="lesson"')&&gate.includes('R.type==="mastery"'),'direct shared lesson and mastery URLs are guarded');
-ok(exists('assets/dedicated-unit-gates-v1.js')&&dedicated.includes('A.unitMastered')&&dedicated.includes('A.lessonMastered')&&dedicated.includes('A.weekMastered'),'dedicated Units 02-09 use canonical unit, lesson, and weekly evidence');
+ok(exists('assets/dedicated-unit-gates-v1.js')&&dedicated.includes('A.unitProgressionComplete')&&dedicated.includes('A.lessonMastered')&&dedicated.includes('A.weekMastered'),'dedicated Units 02-09 use canonical full prior-unit, lesson, and weekly evidence');
 ok(dedicated.includes('c.unit>=7&&!A.midtermMastered()'),'dedicated Units 07-09 preserve reviewed Midterm gate');
 for(let unit=2;unit<=9;unit++){const id=String(unit).padStart(2,'0'),wrapper=read(`units/unit-${id}/assets/unit${id}.js`);ok(exists(`units/unit-${id}/assets/unit${id}-core.js`),`Unit ${id} preserved core exists`);ok(wrapper.includes('mastery-authority-v1.js')&&wrapper.includes('dedicated-unit-gates-v1.js')&&wrapper.includes(`unit${id}-core.js`),`Unit ${id} direct routes gate before preserved runtime`)}
 ok(u1.includes('weekMastered(2)')&&u1.includes('weekMastered(3)'),'Unit 01 requires Weeks 02 and 03 mastery');
 ok(u1.includes('n===4?weekMastered(2)'),'Unit 01 Week 02→03 lesson boundary is gated');
 ok(u1.includes('allLessonsMastered()&&allUnitWeeksMastered()'),'Unit 01 formal mastery requires lessons and weekly gates');
-ok(authority.includes('version:"1.4"')&&authority.includes('weekLessonMap:WEEK_LESSONS')&&authority.includes('weekLessonsMastered')&&authority.includes('focused_assessment:"v1.2"'),'canonical authority owns the Week 02-36 lesson prerequisite map and focused-assessment contract');
+ok(authority.includes('version:"1.5"')&&authority.includes('unitProgressionComplete')&&authority.includes('weekLessonMap:WEEK_LESSONS')&&authority.includes('weekLessonsMastered')&&authority.includes('focused_assessment:"v1.2"'),'canonical authority owns the full unit evidence chain, Week 02-36 lesson prerequisite map, and focused-assessment contract');
 ok(authority.includes("validEvaluatorReview")&&authority.includes("khaemenes-algebra1-evaluator-review-v1")&&authority.includes("rejected_unstructured_review_attempts"),'canonical authority requires structured cumulative reviewer evidence and rejects boolean-only reviews');
 ok(weeklyPage.includes('../assets/mastery-authority-v1.js'),'weekly mastery page preloads canonical authority');
 ok(/MASTERY=80/.test(weekly)&&weekly.includes('function weekGate')&&weekly.includes('A.weekLessonEvidence(week)'),'weekly engine uses canonical current-week lesson gating');
-ok(weekly.includes('reason:"previous-week"')&&weekly.includes('A.unitMastered(unit-1)')&&weekly.includes('A.midtermMastered()'),'weekly engine independently enforces previous-week, prior-unit, and Midterm prerequisites');
+ok(weekly.includes('reason:"previous-week"')&&weekly.includes('A.unitProgressionComplete?.(unit-1)')&&weekly.includes('A.midtermMastered()'),'weekly engine independently enforces previous-week, full prior-unit, and Midterm prerequisites');
 ok(weekly.includes('lesson_prerequisite_verified')&&weekly.includes('KhaemenesAlgebra1WeeklyGateV2'),'weekly attempts preserve prerequisite verification and expose testable gate logic');
-ok(depth.includes('function missingFor(id)')&&depth.includes('A.unitMastered(u)')&&depth.includes('A.weekMastered(w)'),'cumulative gates consume canonical unit and weekly evidence');
+ok(depth.includes('function missingFor(id)')&&depth.includes('A.unitProgressionComplete?.(u)')&&depth.includes('A.weekMastered(w)'),'cumulative gates consume canonical full-unit and weekly evidence');
 ok(depth.includes('for(let u=1;u<=6;u++)')&&depth.includes('for(let w=2;w<=18;w++)'),'Midterm gate covers Units 01–06 and Weeks 02–18');
 ok(depth.includes('for(let u=1;u<=13;u++)')&&depth.includes('for(let w=2;w<=36;w++)')&&depth.includes('A.midtermMastered()'),'Final gate covers all units/weeks plus reviewed Midterm');
 ok(home.includes('KhaemenesAlgebra1MasteryAuthority')&&home.includes('unit>=7&&previousOk&&!midtermOk'),'course home uses canonical evidence and preserves second-half Midterm gate');
