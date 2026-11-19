@@ -25,7 +25,11 @@
  const $$=(s,r=document)=>[...r.querySelectorAll(s)];
  const lessonId=()=>window.LESSON_DATA?.id||document.body?.dataset?.lessonId||location.pathname.split("/").pop()?.replace(/\.html$/,"")||"lesson";
  const threshold=()=>Number(window.LESSON_DATA?.mastery_threshold||80);
- const progressKey=()=>window.UNIT_MAP_FALLBACK?.unit?.progress_key||"khaemenes-prealgebra-unit-progress-v2";
+ const progressKey=()=>{
+   if(window.UNIT_MAP_FALLBACK?.unit?.progress_key)return window.UNIT_MAP_FALLBACK.unit.progress_key;
+   const unit=location.pathname.match(/\/unit-(\d+)\//i)?.[1];
+   return unit?"khaemenes-prealgebra-unit"+String(Number(unit)).padStart(2,"0")+"-lesson-shell-v2":"khaemenes-prealgebra-unit-progress-v2";
+ };
  const readProgress=()=>{try{return JSON.parse(localStorage.getItem(progressKey())||"{}")||{}}catch{return {}}};
  const writeProgress=p=>{try{localStorage.setItem(progressKey(),JSON.stringify(p));return true}catch{return false}};
  const ensureProgress=()=>{
