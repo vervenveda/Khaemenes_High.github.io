@@ -20,6 +20,7 @@ const draftPrefix=scopedKey("khaemenes-algebra2-note-drafts-v2")+":"+id+":";
 const scopedProgressKey=scopedKey(KEY);
 const MAX_NOTE=25000;
 const MASTERY=Number(progress.MASTERY)||80;
+const idMatch=String(id).match(/^u(\d{2})-l(\d{2})$/),unitNumber=Number(idMatch?.[1]||0),lessonNumber=Number(idMatch?.[2]||0);
 function masteryEvidence(){return progress.lessonEvidence?.(id)||{lessonId:id,threshold:MASTERY,mastery:false,best:null,source:KEY}}
 if(box){
  box.disabled=true;box.setAttribute("aria-disabled","true");box.setAttribute("aria-label","Lesson mastery status");
@@ -45,7 +46,11 @@ if(nextLessonLink&&!nextLessonLink.dataset.masteryHref)nextLessonLink.dataset.ma
 function syncNextLesson(mastered){
  if(!nextLessonLink)return;
  if(mastered){
-  if(nextLessonLink.dataset.masteryHref)nextLessonLink.href=nextLessonLink.dataset.masteryHref;
+  const target=progress.nextTarget?.(unitNumber,lessonNumber)||null;
+  const href=target?.href||nextLessonLink.dataset.masteryHref||"";
+  if(href)nextLessonLink.href=href;
+  if(target?.label)nextLessonLink.textContent=target.label+" →";
+  nextLessonLink.dataset.progressionKind=target?.kind||"lesson";
   nextLessonLink.removeAttribute("aria-disabled");nextLessonLink.removeAttribute("tabindex");
   nextLessonLink.style.opacity="";
  }else{
@@ -212,7 +217,7 @@ function saveNote(force=false){
  seenNote=value;conflict=false;
  try{localStorage.removeItem(draftKey);}catch{}
  refreshRecovery();
- announce("Lesson note saved locally. Other lesson records and completion states were preserved.");
+ announce("Lesson note saved and verified locally. Other lesson records and completion states were preserved.");
  return true;
 }
 function overwriteNote(){
