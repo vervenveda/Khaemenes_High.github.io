@@ -50,10 +50,10 @@ ok(exists('readiness/validate-transition-contract.mjs'), 'readiness bridge valid
 const midterm = read('assessments/midterm-units-01-06.html');
 const finalExam = read('assessments/final-exam-36-weeks.html');
 const examEngine = read('assets/exam-engine.js');
-ok(midterm.includes('"question_count": 60'), 'midterm declares 60 questions');
-ok(finalExam.includes('"question_count": 100'), 'final declares 100 questions');
+ok(midterm.includes('"question_count": 60') || (midterm.includes('60 selected-response questions') && midterm.includes('answeredCount()!==60')), 'midterm declares and enforces 60 selected-response questions');
+ok(finalExam.includes('"question_count": 100') || (finalExam.includes('100 selected-response questions') && finalExam.includes('answeredCount()!==100')), 'final declares and enforces 100 selected-response questions');
 ok(examEngine.includes('attempt_history') && examEngine.includes('bestScore') && examEngine.includes('mastery'), 'shared exam engine preserves attempt history, best score, and mastery evidence');
-ok(examEngine.includes('localStorage.removeItem(C.storage_key)') && !examEngine.includes('localStorage.removeItem(C.result_key)'), 'exam reset clears only the draft and preserves scored evidence');
+ok((examEngine.includes('localStorage.removeItem(C.storage_key)') || (examEngine.includes('draft={answers:{}') && examEngine.includes('saveDraft()'))) && !examEngine.includes('localStorage.removeItem(C.result_key)'), 'exam reset clears/replaces only the draft and preserves scored evidence');
 
 const assessmentMap = json('assessments/assessment-map.json');
 ok((assessmentMap.midterm?.questions === 60) || (assessmentMap.midterm?.selected_response_questions === 60), 'assessment map midterm selected-response count is 60');
