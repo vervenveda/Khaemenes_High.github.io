@@ -9,7 +9,7 @@ function config(){return window.KhaemenesAlgebra1DedicatedGateConfig||null}
 function authority(){return window.KhaemenesAlgebra1MasteryAuthority||null}
 function data(c){return c?window[`KHAE_UNIT${String(c.unit).padStart(2,"0")}`]||null:null}
 function lessonWeek(c,n){return Number(c?.lesson_weeks?.[Number(n)-1])||null}
-function unitUnlocked(c,A){if(c.unit<=1)return true;if(!A.unitMastered(c.unit-1))return false;if(c.unit>=7&&!A.midtermMastered())return false;return true}
+function unitUnlocked(c,A){if(c.unit<=1)return true;if(A.unitProgressionComplete?.(c.unit-1)!==true)return false;if(c.unit>=7&&!A.midtermMastered())return false;return true}
 function lessonUnlocked(c,A,n){if(!unitUnlocked(c,A))return false;if(n<=1)return true;if(!A.lessonMastered(c.unit,n-1))return false;const priorWeek=lessonWeek(c,n-1),currentWeek=lessonWeek(c,n);if(priorWeek&&currentWeek&&currentWeek>priorWeek&&!A.weekMastered(priorWeek))return false;return true}
 function allLessonsMastered(c,A,D){return Array.isArray(D?.lessons)&&D.lessons.length>0&&D.lessons.every(l=>A.lessonMastered(c.unit,l.number))}
 function allWeeksMastered(c,A){const weeks=[...new Set((c.lesson_weeks||[]).map(Number).filter(Number.isFinite))];return weeks.length>0&&weeks.every(w=>A.weekMastered(w))}
@@ -87,6 +87,6 @@ function after(){const c=config(),A=authority(),D=data(c),mode=document.body?.da
  loadStudentExperience();
  loadLearningExperience();
 }
-window.KhaemenesAlgebra1DedicatedGate={version:"1.2",before,after,lessonUnlocked,allLessonsMastered,allWeeksMastered,progressionTarget};
+window.KhaemenesAlgebra1DedicatedGate={version:"1.3",before,after,lessonUnlocked,allLessonsMastered,allWeeksMastered,progressionTarget};
 window.KhaemenesAlgebra1ProgressionContract=Object.freeze({version:"1.0.0",nextTarget(){const c=config(),A=authority(),D=data(c),n=Number(document.body?.dataset?.lesson||0);return progressionTarget(c,A,D,n)}});
 })();
