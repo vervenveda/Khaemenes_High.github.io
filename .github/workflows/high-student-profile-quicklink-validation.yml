@@ -11,6 +11,11 @@ on:
       - 'grades/shared/upper-grade-profile.css'
       - 'grades/shared/student-profile-compact-panels.js'
       - 'courses/shared/high-school-course-pins.js'
+      - 'courses/shared/high-school-eight-class.js'
+      - 'grades/shared/grade09-blueprint-upper-grade.js'
+      - 'grades/grade-10/student-profile/**'
+      - 'grades/grade-11/student-profile/**'
+      - 'grades/grade-12/student-profile/**'
       - 'courses/**/index.html'
       - 'assets/vnv-beta-link.js'
       - 'stos/khaemenes/assets/vnv-beta-link.js'
@@ -21,6 +26,7 @@ on:
       - 'tools/validate-grade09-profile-isolation.mjs'
       - 'tools/validate-grade09-schedule-personalization.mjs'
       - 'tools/validate-upper-grade-profile-parity.mjs'
+      - 'tools/validate-high-class-continuation-routing.mjs'
       - 'tools/validate-student-profile-quicklink.mjs'
       - 'tests/grade09-dashboard-entry-regression.test.mjs'
       - '.github/workflows/high-student-profile-quicklink-validation.yml'
@@ -33,6 +39,11 @@ on:
       - 'grades/shared/upper-grade-profile.css'
       - 'grades/shared/student-profile-compact-panels.js'
       - 'courses/shared/high-school-course-pins.js'
+      - 'courses/shared/high-school-eight-class.js'
+      - 'grades/shared/grade09-blueprint-upper-grade.js'
+      - 'grades/grade-10/student-profile/**'
+      - 'grades/grade-11/student-profile/**'
+      - 'grades/grade-12/student-profile/**'
       - 'courses/**/index.html'
       - 'assets/vnv-beta-link.js'
       - 'stos/khaemenes/assets/vnv-beta-link.js'
@@ -43,6 +54,7 @@ on:
       - 'tools/validate-grade09-profile-isolation.mjs'
       - 'tools/validate-grade09-schedule-personalization.mjs'
       - 'tools/validate-upper-grade-profile-parity.mjs'
+      - 'tools/validate-high-class-continuation-routing.mjs'
       - 'tools/validate-student-profile-quicklink.mjs'
       - '.github/workflows/high-student-profile-quicklink-validation.yml'
 
@@ -87,3 +99,5 @@ jobs:
         run: node tools/validate-grade09-resume-convenience.mjs
       - name: Validate upper-grade profile parity
         run: node tools/validate-upper-grade-profile-parity.mjs
+      - name: Validate Student Profile class continuation routing
+        run: node tools/validate-high-class-continuation-routing.mjs
