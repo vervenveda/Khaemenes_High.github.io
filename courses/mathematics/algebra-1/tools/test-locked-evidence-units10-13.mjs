@@ -37,10 +37,13 @@ for(const marker of [
   assert.ok(src.includes(marker),"late-unit mastery engine is missing "+marker);
 }
 
-assert.match(
-  src,
-  /function save\(p\)\{try\{const raw=JSON\.stringify\(p\);localStorage\.setItem\(KEY,raw\);return localStorage\.getItem\(KEY\)===raw\}catch\{return false\}\}/,
-  "late-unit storage writes must require exact read-back verification"
+assert.ok(
+  src.includes("result.persisted===true&&result.verified===true"),
+  "shared storage adapter writes must require explicit persistence verification"
+);
+assert.ok(
+  src.includes("localStorage.setItem(KEY,raw)")&&src.includes("localStorage.getItem(KEY)===raw"),
+  "direct local storage fallback must require exact read-back verification"
 );
 assert.ok(!src.includes('Best ${s.scores.mastery}% saved.'),"legacy unconditional saved-success message remains");
 assert.ok(src.includes('if(persisted){'),"saved-success UI must be guarded by persistence success");
