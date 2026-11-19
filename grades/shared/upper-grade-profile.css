@@ -1,3 +1,9 @@
+/* RETIRED PROFILE AUTHORITY · 2026-11-19
+ * Historical upper-grade profile stylesheet retained for compatibility/reference only.
+ * Active Grade 10–12 Student Profile pages inherit the canonical Grade 09 profile CSS
+ * and grade09-blueprint-upper-grade.js. Do not reattach this stylesheet to active
+ * profile pages without a deliberate migration and regression review.
+ */
 :root{
   --ug-bg:#101c2e;--ug-panel:#15243a;--ug-panel2:#1b2d46;--ug-ink:#f0e9d9;--ug-muted:#bcc7d2;
   --ug-line:rgba(232,213,167,.22);--ug-gold:#e8d5a7;--ug-forest:#9ec5b4;--ug-danger:#d59a9a;
