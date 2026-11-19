@@ -301,9 +301,22 @@ function safeCourseURL(course,value){
 function genericContinue(course){
   const launches=readJSON(LAST_LAUNCH_KEY,{}),last=launches&&typeof launches==="object"?launches[course.id]:null;
   const first=window.KhaemenesHighEightClass?.FIRST_STEPS?.[course.id]||course.defaultContinue||course.home;
-  const url=safeCourseURL(course,last?.url||first);
-  const specific=Boolean(last?.url)||url!==course.home;
-  return {url,label:last?.title?String(last.title):course.title,hasSpecificLocation:specific,actionLabel:last?.url?`Continue ${course.short}`:`Begin ${course.short}`,detail:last?.url?`Return to ${last.title?String(last.title):"your last class location"}.`:`${course.subject} · open the first required instructional step`};
+  // Old Grade 09 English launches may point to the course landing from the rollback.
+  // That entrance must not mask the real daily lesson. Preserve all legitimate
+  // learner-scoped URLs; discard only this exact non-instructional fallback.
+  const isEnglish9Landing=value=>{
+    if(course.id!=="english-9"||typeof value!=="string")return false;
+    try{
+      const u=new URL(normalizeLegacyRoute(value),location.origin);
+      const h=new URL(course.home,location.origin);
+      const canonical=p=>p.replace(/index\\.html$/i,"").replace(/\\/+$/,"/");
+      return u.origin===h.origin&&canonical(u.pathname)===canonical(h.pathname)&&!u.search&&!u.hash;
+    }catch{return false}
+  };
+  const recent=last?.url&&!isEnglish9Landing(last.url)?last:null;
+  const url=safeCourseURL(course,recent?.url||first);
+  const specific=Boolean(recent?.url)||url!==course.home;
+  return {url,label:recent?.title?String(recent.title):course.title,hasSpecificLocation:specific,actionLabel:recent?.url?`Continue ${course.short}`:`Begin ${course.short}`,detail:recent?.url?`Return to ${recent.title?String(recent.title):"your last class location"}.`:`${course.subject} · open the first required instructional step`};
 }
 function continueFor(id){
   const course=COURSE_MAP.get(id);
