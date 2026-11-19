@@ -29,36 +29,32 @@
       <p>Select a course to view its current status and pathway information.</p>
 
       <div class="psych-grid">
-        <article class="psych-card">
+        <article class="psych-card" data-vnv-descriptive-card data-vnv-eyebrow="Grade 9 · Foundations of Human Behavior" data-vnv-status="Student Ready · 13 Weeks · 65 Lessons · 80% Mastery" data-vnv-detail="Psychology 101 is a complete introductory course in psychological science. Students study research methods, brain and behavior, perception, learning, memory, thinking, emotion, development, personality, social and cultural psychology, health, psychological disorders and treatment ethics, and applied research synthesis. The course preserves a strict boundary between psychological education and amateur diagnosis." data-vnv-href="../grades/grade-09/psych-101/" data-vnv-action-label="Open Psychology 101" data-vnv-button-label="View Course">
           <p class="code">Course 01 · Grade 9</p>
           <h3>Psychology 101</h3>
           <p>Foundations of Human Behavior</p>
           <span class="status">Student Ready</span>
-          <button type="button" data-course="101">View Course</button>
         </article>
 
-        <article class="psych-card">
+        <article class="psych-card" data-vnv-descriptive-card data-vnv-eyebrow="Psychology Pathway · Course 02" data-vnv-status="Under Construction" data-vnv-detail="Psychology 102 is reserved as the second course in the Khaemenes Academy Psychology sequence. Its final curriculum, course description, assessments, and student-facing tools are still in development and will not be represented as complete until they pass Academy review." data-vnv-context="This course placecard will remain informational until Psychology 102 is academically complete and approved for student release." data-vnv-button-label="Course Information">
           <p class="code">Course 02</p>
           <h3>Psychology 102</h3>
           <p>Second course in the Psychology pathway.</p>
           <span class="status">Under Construction</span>
-          <button type="button" data-course="102">Course Information</button>
         </article>
 
-        <article class="psych-card">
+        <article class="psych-card" data-vnv-descriptive-card data-vnv-eyebrow="Psychology Pathway · Course 03" data-vnv-status="Under Construction" data-vnv-detail="Psychology 201 is reserved as an advanced continuation of the Khaemenes Academy Psychology sequence. Course scope and academic requirements will be published only after the curriculum has been fully developed, audited, and approved." data-vnv-context="This course placecard will remain informational until Psychology 201 is academically complete and approved for student release." data-vnv-button-label="Course Information">
           <p class="code">Course 03</p>
           <h3>Psychology 201</h3>
           <p>Advanced course in the Psychology pathway.</p>
           <span class="status">Under Construction</span>
-          <button type="button" data-course="201">Course Information</button>
         </article>
 
-        <article class="psych-card">
+        <article class="psych-card" data-vnv-descriptive-card data-vnv-eyebrow="Psychology Pathway · Course 04" data-vnv-status="Under Construction" data-vnv-detail="Psychology 202 is reserved as the upper-level continuation of the Khaemenes Academy Psychology sequence. The Academy will publish its final identity and course requirements after curriculum, assessment, accessibility, and student-experience review are complete." data-vnv-context="This course placecard will remain informational until Psychology 202 is academically complete and approved for student release." data-vnv-button-label="Course Information">
           <p class="code">Course 04</p>
           <h3>Psychology 202</h3>
           <p>Upper-level continuation of the Psychology pathway.</p>
           <span class="status">Under Construction</span>
-          <button type="button" data-course="202">Course Information</button>
         </article>
       </div>
     </div>
@@ -78,83 +74,9 @@
 <footer class="psych-footer">
   <p>Khaemenes Academy · Psychology · <a href="https://vervenveda.com/">Verve N Veda</a></p>
 </footer>
-
-<dialog class="psych-dialog" id="psychCourseDialog" aria-labelledby="psychDialogTitle">
-  <div class="dialog-inner">
-    <p class="dialog-eyebrow" id="psychDialogEyebrow">Psychology Pathway</p>
-    <h2 id="psychDialogTitle">Course Information</h2>
-    <p class="dialog-status" id="psychDialogStatus"></p>
-    <div id="psychDialogBody"></div>
-    <div class="dialog-actions" id="psychDialogActions"></div>
-  </div>
-</dialog>
-
-<script>
-(()=>{
-"use strict";
-const dialog=document.getElementById("psychCourseDialog");
-const title=document.getElementById("psychDialogTitle");
-const eyebrow=document.getElementById("psychDialogEyebrow");
-const status=document.getElementById("psychDialogStatus");
-const body=document.getElementById("psychDialogBody");
-const actions=document.getElementById("psychDialogActions");
-
-const courses={
- "101":{
-   eyebrow:"Grade 9 · Foundations of Human Behavior",
-   title:"Psychology 101",
-   status:"Student Ready · 13 Weeks · 65 Lessons · 80% Mastery",
-   body:"Psychology 101 is a complete introductory course in psychological science. Students study research methods, brain and behavior, perception, learning, memory, thinking, emotion, development, personality, social and cultural psychology, health, psychological disorders and treatment ethics, and applied research synthesis. The course preserves a strict boundary between psychological education and amateur diagnosis.",
-   href:"../grades/grade-09/psych-101/"
- },
- "102":{
-   eyebrow:"Psychology Pathway · Course 02",
-   title:"Psychology 102",
-   status:"Under Construction",
-   body:"Psychology 102 is reserved as the second course in the Khaemenes Academy Psychology sequence. Its final curriculum, course description, assessments, and student-facing tools are still in development and will not be represented as complete until they pass Academy review."
- },
- "201":{
-   eyebrow:"Psychology Pathway · Course 03",
-   title:"Psychology 201",
-   status:"Under Construction",
-   body:"Psychology 201 is reserved as an advanced continuation of the Khaemenes Academy Psychology sequence. Course scope and academic requirements will be published only after the curriculum has been fully developed, audited, and approved."
- },
- "202":{
-   eyebrow:"Psychology Pathway · Course 04",
-   title:"Psychology 202",
-   status:"Under Construction",
-   body:"Psychology 202 is reserved as the upper-level continuation of the Khaemenes Academy Psychology sequence. The Academy will publish its final identity and course requirements after curriculum, assessment, accessibility, and student-experience review are complete."
- }
-};
-
-function closeButton(){
- const b=document.createElement("button");
- b.type="button"; b.className="secondary"; b.textContent="Close";
- b.addEventListener("click",()=>dialog.close());
- return b;
-}
-function openCourse(id){
- const c=courses[id]; if(!c)return;
- eyebrow.textContent=c.eyebrow;
- title.textContent=c.title;
- status.textContent=c.status;
- body.replaceChildren();
- const p=document.createElement("p"); p.textContent=c.body; body.append(p);
- actions.replaceChildren();
- if(c.href){
-   const a=document.createElement("a"); a.href=c.href; a.textContent="Open Psychology 101"; actions.append(a);
- }
- actions.append(closeButton());
- dialog.showModal();
-}
-document.querySelectorAll("[data-course]").forEach(b=>b.addEventListener("click",()=>openCourse(b.dataset.course)));
-dialog.addEventListener("click",e=>{if(e.target===dialog)dialog.close()});
-})();
-</script>
-
 <script src="./assets/psychology-landing-class-tools-v1.js" defer data-psychology-landing-class-tools="v1"></script>
 <script src="../../assets/vnv-language.js" defer data-official-vnv-language="true"></script>
 <script src="https://vervenveda.com/assets/vnv-class-tools-toolbar.js" defer data-vnv-class-tools="high-school-psychology-landing"></script>
-<script src="https://vervenveda.com/assets/vnv-ecosystem-toolbar.js" defer data-official-vnv-ecosystem-toolbar="true"></script>
+<script src="https://vervenveda.com/assets/vnv-descriptive-card-dialog-v1.js" defer data-vnv-descriptive-card-dialog="v1"></script>\n<script src="https://vervenveda.com/assets/vnv-ecosystem-toolbar.js" defer data-official-vnv-ecosystem-toolbar="true"></script>
 </body>
 </html>
