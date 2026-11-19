@@ -1,0 +1,29 @@
+name: Minimal math doorway and student lesson route recovery
+on:
+  push:
+    branches:
+      - recovery/minimal-landings-student-lesson-routing-20261119
+    paths:
+      - "courses/mathematics/**"
+      - "grades/grade-09/student-profile/student-course-registry.js"
+      - "grades/grade-09/student-profile/student-schedule-bar.js"
+      - "grades/shared/grade09-blueprint-upper-grade.js"
+      - "tools/validate-math-minimal-landing-lesson-boundary.mjs"
+      - ".github/workflows/minimal-math-lesson-boundary-recovery.yml"
+permissions:
+  contents: read
+jobs:
+  architecture:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - name: Syntax-check student lesson routing
+        run: |
+          node --check grades/grade-09/student-profile/student-course-registry.js
+          node --check grades/grade-09/student-profile/student-schedule-bar.js
+          node --check grades/shared/grade09-blueprint-upper-grade.js
+      - name: Assert independent minimalist doorways, preserved workspaces and instructional routes
+        run: node tools/validate-math-minimal-landing-lesson-boundary.mjs

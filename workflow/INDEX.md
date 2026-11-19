@@ -1,6 +1,8 @@
 | 2026-11-19 | math engine · recovery · guard | [Mathematics Engine coverage firewall and Algebra II pending rollout](logs/2026/11/2026-11-19-math-engine-recovery-coverage-firewall.md) | Pre-Algebra 97, Algebra I 87, Geometry 90 source-enrolled; Algebra II 0/92 pending; assessments protected; browser HOLD |
 | 2026-11-19 | math engine · release · protocol | [Mathematics Engine v2.2.3 higher-math rollout protocol](logs/2026/11/2026-11-19-math-engine-v2.2.3-higher-math-rollout-protocol.md) | Pre-Algebra 97 + Algebra I 87 lesson cache/version sync; guarded higher-math protocol + auto-discovered integrity validator installed; assessments protected |\n\n# Workflow Index
 
+| 2026-11-19 | recovery · minimalist math entrances · student Class routing | [Four-course minimal doorway and lesson-routing recovery](logs/2026/11/2026-11-19-minimal-math-course-doorway-student-route-recovery.md) | Protected branch; four full workspaces preserved; source routing test PASS; live browser and independent release errors HOLD |
+
 | Date | Type | Entry | State |
 | --- | --- | --- | --- |
 | 2026-11-19 | geometry · Mathematics Engine rollout | [Geometry Mathematics Engine v2.2.3 rollout](../courses/mathematics/geometry/workflow/logs/2026/11/2026-11-19-mathematics-engine-v2.2.3-rollout.md) | 90/90 standard lessons enrolled; proof/SVG architecture preserved; Geometry mastery authority retained; assessments protected |

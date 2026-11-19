@@ -16,13 +16,28 @@ const SCIENCE_NOTEBOOK="https://vervenveda.com/Khaemenes_High.github.io/courses/
 function addCourseActions(card,course,id,current,pinned){
  const actions=el("div","schedule-actions");
  const open=el("a","schedule-open","Class");
- const first=window.KhaemenesHighEightClass?.FIRST_STEPS?.[id]||course.defaultContinue||course.home;
- open.href=current?.url||first;
- open.dataset.launchCourse=id;
- open.title=current?.detail||"Open the current required lesson or course step";
- open.setAttribute("aria-label","Open "+course.title+" at the current required lesson or step");
- open.addEventListener("click",()=>registry.recordLaunch(id,open.href.replace(location.origin,""),current?.label||course.title));
- actions.append(open);
+ const first=window.KhaemenesHighEightClass?.FIRST_STEPS?.[id]||course.defaultContinue||null;
+ const landing=url=>{
+   if(!url)return true;
+   try{
+     const a=new URL(url,location.href),home=new URL(course.home,location.href);
+     const norm=p=>p.replace(/index\.html$/i,"").replace(/\/+$/,"/");
+     return a.origin===home.origin&&norm(a.pathname)===norm(home.pathname)&&!a.search;
+   }catch{return true}
+ };
+ const target=!landing(current?.url)?current.url:!landing(first)?first:null;
+ if(target){
+   open.href=target;
+   open.dataset.launchCourse=id;
+   open.title=current?.detail||"Open the current required lesson or course step";
+   open.setAttribute("aria-label","Open "+course.title+" at the current required lesson or step");
+   open.addEventListener("click",()=>registry.recordLaunch(id,open.href.replace(location.origin,""),current?.label||course.title));
+   actions.append(open);
+ }else{
+   const notice=el("span","schedule-open schedule-secondary","Lesson route under verification");
+   notice.setAttribute("role","status");
+   actions.append(notice);
+ }
  const toggle=el("button","schedule-open schedule-secondary",pinned?"Unpin Class":"Pin Class");
  toggle.type="button";
  toggle.setAttribute("aria-pressed",String(pinned));
