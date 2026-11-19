@@ -72,11 +72,11 @@ function render(){
   const actions=el("div");actions.className="grade09-eight-class-actions";
   card.append(title,name);
   if(course){
-   const link=el("a","Open class");link.href=course.home;link.style.cssText="display:inline-block;margin-right:12px;text-decoration:underline";
+   const link=el("a","Course Home");link.href=course.home;link.style.cssText="display:inline-block;margin-right:12px;text-decoration:underline";
    const button=el("button",registry.isPinned(id)?"★ Pinned":"☆ Pin class");button.type="button";button.setAttribute("aria-pressed",String(registry.isPinned(id)));
    button.addEventListener("click",()=>{registry.setPinned(id,!registry.isPinned(id));render()});
    actions.append(link);
-   const first=firstLessonFor(id);
+   const first=window.KhaemenesHighEightClass?.FIRST_STEPS?.[id]||firstLessonFor(id);
    if(first){const start=el("a",id==="physical-education-9"?"Start PE Week 01 lesson":id==="pre-algebra"||id==="algebra-1"?"Start mathematics readiness":"Week 01 · First lesson");start.href=first;start.style.cssText="display:inline-block;margin-right:12px;text-decoration:underline";actions.append(start)}
    else if(id.startsWith("world-language-9-")){const target=languageStart(id);if(target){const a=el("a",["french","german"].includes(id.replace("world-language-9-",""))?"Open language course":"Week 01 · Language lesson");a.href=target;actions.append(a)}else actions.append(el("p","Open Linguistics Halls to select the appropriate first-language lesson."));}
    actions.append(button);
