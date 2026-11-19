@@ -20,14 +20,26 @@ assert.equal(pages.length,36);
 for(const file of pages){
  const source=fs.readFileSync(file,"utf8");
  const studentProfile=/^grades\/grade-(09|10|11|12)\/student-profile\/index\.html$/.test(file);
+ const gradeLanding=/^grades\/grade-(09|10|11|12)\/index\.html$/.exec(file);
  const frontDoor=file==="index.html";
  const preAlgebra=file==="courses/mathematics/pre-algebra/index.html";
- // The Academy homepage has its own inline styles. Student profiles use the canonical
- // VNV header and toolbar, while Pre-Algebra has its own course return control.
+
  if(studentProfile){
   assert.ok(source.includes("vnv-header-autopopulate.js"),file+" missing canonical profile header");
   assert.ok(source.includes("vnv-ecosystem-toolbar.js"),file+" missing canonical profile toolbar");
   assert.ok(/(?:study-studio\.js|upper-grade-klasaipeer-studio\.js)/.test(source),file+" missing study studio entrypoint");
+ }else if(gradeLanding){
+  const g=gradeLanding[1];
+  assert.ok(source.includes("vnv-header-autopopulate.js"),file+" missing official auto header");
+  assert.ok(source.includes("vnv-333-ticker.js"),file+" missing 333 ticker");
+  assert.ok(source.includes("vnv-ticker-autopopulate.js"),file+" missing auto ticker");
+  assert.ok(source.includes("vnv-language.js"),file+" missing language loader");
+  assert.ok(source.includes("vnv-class-tools-toolbar.js"),file+" missing class-tools toolbar");
+  assert.ok(source.includes("vnv-ecosystem-toolbar.js"),file+" missing ecosystem toolbar");
+  assert.ok(source.includes("grade"+g+"-benchmark-v1.css"),file+" missing benchmark stylesheet");
+  assert.ok(source.includes('class="grade'+g+'-local-links"'),file+" missing benchmark local navigation");
+  assert.ok(source.includes('data-high-profile-door="true"')&&source.includes('data-high-profile-editor-door="true"'),
+    file+" missing grade-local profile doors");
  }else{
   if(frontDoor){
    assert.ok(source.includes("vnv-header-autopopulate.js"),file+" missing canonical homepage header");
@@ -37,8 +49,8 @@ for(const file of pages){
   const suffixes=frontDoor?[".js"]:preAlgebra?[".css"]:[".js",".css"];
   for(const suffix of suffixes){
    const assetPattern=suffix===".js"
-    ?/(?:src|href)="([^"]*high-navigation-v1\.js(?:\?[^"]*)?)"/
-    :/(?:src|href)="([^"]*high-navigation-v1\.css(?:\?[^"]*)?)"/;
+    ?/(?:src|href)=["']([^"']*high-navigation-v1\.js(?:\?[^"']*)?)["']/
+    :/(?:src|href)=["']([^"']*high-navigation-v1\.css(?:\?[^"']*)?)["']/;
    const match=source.match(assetPattern);
    assert.ok(match,file+" missing navigation "+suffix);
    const href=match[1].split("?")[0];
@@ -100,6 +112,6 @@ assert.deepEqual(gradeCrumbs,["High School","Grade 10","Student Profile"]);
 for(const key of ["vnvEcosystemMenuButton","vnvEcosystemMenuOverlay","khaeLocalEcosystemToggle","aria-expanded","Escape","aria-controls","aria-label","data-high-profile-resolved","pageshow","storage"]){
  assert.ok(nav.includes(key),"navigation contract missing "+key);
 }
-assert.ok(nav.includes("wrap.contains(event.target)")&&nav.includes("panel.querySelector(\"a\")?.focus()"),"outside click and keyboard focus");
-assert.ok(nav.includes("document.getElementById(\"vnvEcosystemMenuButton\")"),"canonical menu must be preserved");
-console.log("PASS: 36 pages, 2 opt-in Higher Learning handoffs, two independent learners, 4 grade profiles, safe guest routing, Back/switch re-resolution, lesson breadcrumbs, mobile focus and local menu contracts.");
+assert.ok(nav.includes("wrap.contains(event.target)")&&nav.includes('panel.querySelector("a")?.focus()'),"outside click and keyboard focus");
+assert.ok(nav.includes('document.getElementById("vnvEcosystemMenuButton")'),"canonical menu must be preserved");
+console.log("PASS: 36 pages, 4 benchmark grade landings, 2 opt-in Higher Learning handoffs, two independent learners, 4 grade profiles, safe guest routing, Back/switch re-resolution, lesson breadcrumbs, mobile focus and local menu contracts.");
