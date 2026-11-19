@@ -2,6 +2,7 @@
 
 | Date | Type | Entry | State |
 | --- | --- | --- | --- |
+| 2026-11-19 | forensic audit · four-course sweep | [Fresh Four-Course Forensic Sweep](logs/2026/11/2026-11-19-four-course-forensic-sweep.md) | Curriculum remains Exceptional; Algebra II engine strongest; Pre-Algebra/Algebra I/Geometry have v2.3.0 adapter token drift and evidence-chain parity gaps; all rendered-device acceptance HOLD |
 | 2026-11-19 | repair · five-bubble forensic hardening | [Forensic Bubble Repair Pass](logs/2026/11/2026-11-19-forensic-bubble-repair-pass.md) | Geometry release PASS · math launch PASS · shared games PASS · higher-math local regression PASS · engine firewall PASS · Algebra II engine migration HOLD enforced · physical/browser-device acceptance HOLD |
 | 2026-11-18 | runtime acceptance · rendered browser laboratory | [Four-Course Runtime Acceptance Laboratory](logs/2026/11/2026-11-18-four-course-runtime-acceptance-laboratory.md) | Core/Full viewport sweeps + storage-failure fixture + ticker timing + Algebra II single-column lesson repair + canonical footer fallback; laboratory source PASS; production rendered sweep HOLD |
 | 2026-11-18 | department re-audit · four-course Exceptional status | [Four-Course Exceptional Source Status](logs/2026/11/2026-11-18-four-course-exceptional-source-status.md) | Pre-Algebra, Algebra I, Geometry, Algebra II all source-level Exceptional; live browser/device acceptance HOLD |
