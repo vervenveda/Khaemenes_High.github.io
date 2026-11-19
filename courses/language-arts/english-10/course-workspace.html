@@ -1,0 +1,410 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+<head>
+<script src="../../shared/course-entry-contract.js?v=20261012"></script>
+<script src="../../shared/learner-scope-v1.js?v=20261012" data-learner-scope="english-10"></script>
+<script src="../../shared/upper-english-records.js?v=20261012"></script>
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="description" content="Khaemenes Academy English II: a comprehensive 36-week Grade 10 Language Arts and Literature student portal.">
+<meta name="theme-color" content="#0b111c">
+<title>English II · Grade 10 Language Arts · 36 Weeks</title>
+<link rel="manifest" href="manifest.webmanifest">
+<style>
+:root{
+  color-scheme:dark;
+  --bg:#080d15;--bg2:#101827;--panel:#111a2a;--panel2:#162236;
+  --ink:#f7f1e6;--muted:#b8c3d2;--gold:#d9b878;--gold2:#f0d6a0;
+  --blue:#91baf5;--green:#8fdfb0;--red:#f4a0a0;--line:rgba(255,255,255,.14);
+  --shadow:0 24px 70px rgba(0,0,0,.35);--radius:11px;--radius-lg:21px;
+}
+html[data-theme="light"]{
+  color-scheme:light;--bg:#eee8dc;--bg2:#f8f4eb;--panel:#fffdf8;--panel2:#f5efe3;
+  --ink:#171b22;--muted:#5e6875;--gold:#8d681e;--gold2:#6e4e13;--blue:#275d9e;
+  --green:#1c6c43;--red:#9a3434;--line:rgba(25,31,39,.16);--shadow:0 24px 60px rgba(46,38,24,.12);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;min-height:100vh;background:
+  radial-gradient(circle at 12% 0%,rgba(217,184,120,.14),transparent 34rem),
+  radial-gradient(circle at 88% 7%,rgba(84,126,190,.14),transparent 30rem),var(--bg);color:var(--ink);
+  font-family:Inter,Avenir,"Segoe UI",system-ui,sans-serif;font-size:16px;line-height:1.6}
+a{color:inherit}
+button,input,select,textarea{font:inherit}
+button,.button{border:1px solid var(--line);border-radius:9px;padding:.72rem 1rem;background:var(--panel2);color:var(--ink);cursor:pointer;text-decoration:none;display:inline-flex;align-items:center;justify-content:center;gap:.45rem;transition:.2s ease}
+button:hover,.button:hover{transform:translateY(-1px);border-color:rgba(217,184,120,.65)}
+button.primary,.button.primary{background:linear-gradient(135deg,var(--gold),var(--gold2));color:#17120a;border-color:transparent;font-weight:700}
+button.ghost,.button.ghost{background:transparent;color:var(--gold2)}
+button.danger{color:#ffd7d7;border-color:rgba(244,160,160,.5);background:rgba(120,35,45,.24)}
+button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{outline:3px solid rgba(145,186,245,.45);outline-offset:3px}
+.skip{position:absolute;left:-9999px;top:8px;z-index:99}.skip:focus{left:8px;background:var(--panel);padding:.8rem;border-radius:7px}
+.shell{width:min(1440px,100%);margin:auto}
+.topbar{position:sticky;top:0;z-index:30;background:rgba(8,13,21,.84);backdrop-filter:blur(18px);border-bottom:1px solid var(--line)}
+html[data-theme="light"] .topbar{background:rgba(248,244,235,.9)}
+.topbar-inner{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:12px clamp(14px,3vw,34px)}
+.brand{display:flex;align-items:center;gap:12px;text-decoration:none;min-width:0}
+.brand-mark{width:44px;height:44px;border:1px solid var(--gold);border-radius:50%;display:grid;place-items:center;color:var(--gold2);font-family:Georgia,serif;letter-spacing:.08em}
+.brand-copy{min-width:0}.brand-copy strong{display:block;font-family:Georgia,"Times New Roman",serif;font-size:1.05rem;letter-spacing:.025em;font-weight:500}.brand-copy small{display:block;color:var(--muted)}
+.top-actions{display:flex;flex-wrap:wrap;gap:8px;justify-content:flex-end}
+.breadcrumb{border-bottom:1px solid var(--line);background:rgba(255,255,255,.025)}
+.breadcrumb-inner{padding:8px clamp(14px,3vw,34px);display:flex;flex-wrap:wrap;gap:8px;color:var(--muted);font-size:1rem}.breadcrumb a{text-decoration:none}.breadcrumb a:hover{color:var(--gold2)}
+.hero{min-height:68vh;display:grid;align-items:center;padding:clamp(52px,9vw,110px) clamp(18px,5vw,72px);border-bottom:1px solid var(--line)}
+.hero-grid{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(280px,.8fr);gap:clamp(24px,6vw,80px);align-items:center}
+.eyebrow{text-transform:uppercase;letter-spacing:.18em;font-size:1rem;color:var(--gold2);margin:0 0 12px}
+h1,h2,h3{font-family:Georgia,"Times New Roman",serif;font-weight:500;line-height:1.15}
+h1{font-size:clamp(2.7rem,7vw,6.2rem);margin:0;letter-spacing:-.045em;max-width:950px}
+.hero .subtitle{font-family:Georgia,"Times New Roman",serif;color:var(--gold2);font-size:clamp(1.15rem,2.2vw,1.65rem);margin:.6rem 0 0}
+.hero .lead{font-size:clamp(1.05rem,1.7vw,1.28rem);color:var(--muted);max-width:780px;margin:1.4rem 0}
+.actions{display:flex;flex-wrap:wrap;gap:10px}
+.hero-panel{border:1px solid var(--line);border-radius:var(--radius-lg);background:linear-gradient(145deg,rgba(255,255,255,.07),rgba(255,255,255,.025));padding:clamp(20px,3vw,32px);box-shadow:var(--shadow)}
+.stats{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}.stat{border:1px solid var(--line);background:var(--panel);border-radius:11px;padding:16px;text-align:center}.stat strong{display:block;color:var(--gold2);font-family:Georgia,serif;font-size:2rem}.stat span{font-size:1rem;color:var(--muted)}
+.portal{display:grid;grid-template-columns:280px minmax(0,1fr);gap:24px;padding:28px clamp(14px,3vw,34px) 60px}
+.sidebar{position:sticky;top:86px;align-self:start;max-height:calc(100vh - 108px);overflow:auto;border:1px solid var(--line);border-radius:var(--radius-lg);background:var(--panel);padding:16px}
+.student-box{padding:4px 2px 14px;border-bottom:1px solid var(--line);margin-bottom:14px}
+label{display:block;color:var(--muted);font-size:1rem;margin:.4rem 0 .3rem}
+input,select,textarea{width:100%;border:1px solid var(--line);border-radius:9px;background:var(--bg2);color:var(--ink);padding:.72rem}
+textarea{min-height:92px;resize:vertical}
+.inline{display:grid;grid-template-columns:1fr auto;gap:8px;margin-top:8px}
+.nav-list{display:grid;gap:7px}.nav-button{width:100%;justify-content:flex-start;background:transparent}.nav-button.active{background:rgba(217,184,120,.13);border-color:rgba(217,184,120,.5);color:var(--gold2)}
+.progress-mini{height:9px;border:1px solid var(--line);border-radius:999px;overflow:hidden;background:var(--bg)}.progress-mini span{display:block;height:100%;background:linear-gradient(90deg,var(--gold),var(--green));width:0}
+.main{min-width:0}.view{display:none}.view.active{display:block}
+.section-head{display:flex;justify-content:space-between;gap:18px;align-items:end;margin:0 0 18px}.section-head h2{font-size:clamp(2rem,4vw,3.6rem);margin:.2rem 0}.section-head p{color:var(--muted);max-width:740px;margin:0}
+.grid{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:14px}.card{grid-column:span 4;border:1px solid var(--line);border-radius:var(--radius-lg);background:linear-gradient(145deg,var(--panel),rgba(255,255,255,.025));padding:20px;box-shadow:0 12px 34px rgba(0,0,0,.12)}
+.card.wide{grid-column:span 8}.card.full{grid-column:1/-1}.card.half{grid-column:span 6}.card h3{font-size:1.35rem;margin:.2rem 0 .55rem}.card p{color:var(--muted);margin:.4rem 0}.card .actions{margin-top:14px}
+.kpi{grid-column:span 3;text-align:center}.kpi strong{display:block;color:var(--gold2);font-family:Georgia,serif;font-size:2.1rem}.kpi span{color:var(--muted);font-size:1rem}
+.tag{display:inline-flex;border:1px solid var(--line);border-radius:999px;padding:.25rem .58rem;margin:.15rem .2rem .15rem 0;color:var(--muted);font-size:1rem}.tag.good{color:var(--green);border-color:rgba(143,223,176,.45)}.tag.warn{color:var(--gold2);border-color:rgba(217,184,120,.45)}
+.week-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}.week-card{border:1px solid var(--line);border-radius:var(--radius-lg);background:var(--panel);padding:18px;display:flex;flex-direction:column;min-height:310px}.week-card.complete{border-color:rgba(143,223,176,.55)}.week-top{display:flex;justify-content:space-between;gap:12px}.week-card h3{font-size:1.28rem;margin:.45rem 0}.week-card p{color:var(--muted);font-size:1rem}.week-card .actions{margin-top:auto}.week-card .button{font-size:1rem;padding:.62rem .72rem}
+.reading-box{border-left:3px solid var(--gold);padding:11px 13px;background:rgba(217,184,120,.075);border-radius:9px;margin:12px 0}.reading-box strong{display:block;color:var(--gold2)}.reading-box small{color:var(--muted)}
+.unit-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}.unit-card{border:1px solid var(--line);border-radius:var(--radius-lg);background:var(--panel);padding:22px}.unit-card h3{font-size:1.45rem}.unit-card p{color:var(--muted)}
+.reading-list{display:grid;gap:12px}.reading-row{display:grid;grid-template-columns:74px minmax(0,1fr) auto;gap:15px;align-items:start;border:1px solid var(--line);border-radius:var(--radius);background:var(--panel);padding:16px}.reading-week{font-family:Georgia,serif;color:var(--gold2);font-size:1.25rem}.reading-row h3{margin:0 0 .25rem;font-size:1.18rem}.reading-row p{margin:.2rem 0;color:var(--muted)}.source-links{display:flex;flex-wrap:wrap;gap:7px;justify-content:flex-end}.source-links .button{font-size:1rem;padding:.52rem .67rem}
+.notice{border-left:4px solid var(--gold);background:rgba(217,184,120,.09);border-radius:9px;padding:13px 15px;color:var(--gold2)}
+table{width:100%;border-collapse:collapse}th,td{padding:.78rem;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}th{color:var(--gold2);font-size:1rem;text-transform:uppercase;letter-spacing:.08em}td{color:var(--muted)}
+.footer{border-top:1px solid var(--line);padding:24px clamp(14px,3vw,34px);display:flex;flex-wrap:wrap;gap:12px;justify-content:space-between;color:var(--muted);font-size:1rem}
+.only-print{display:none}
+@media(max-width:1100px){.week-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.card{grid-column:span 6}.kpi{grid-column:span 6}}
+@media(max-width:900px){.hero-grid{grid-template-columns:1fr}.hero{min-height:auto}.portal{grid-template-columns:1fr}.sidebar{position:relative;top:auto;max-height:none}.nav-list{grid-template-columns:repeat(3,1fr)}.reading-row{grid-template-columns:64px 1fr}.source-links{grid-column:2;justify-content:flex-start}}
+@media(max-width:670px){body{font-size:16px}.topbar-inner{align-items:flex-start}.brand-copy small{display:none}.top-actions .button:not(#themeToggle){display:none}.week-grid,.unit-grid{grid-template-columns:1fr}.grid{grid-template-columns:1fr}.card,.card.wide,.card.half,.kpi{grid-column:1}.nav-list{grid-template-columns:repeat(2,1fr)}.section-head{align-items:start;flex-direction:column}.reading-row{grid-template-columns:1fr}.source-links{grid-column:1}.hero{padding-top:52px}h1{font-size:clamp(2.7rem,16vw,4.7rem)}}
+@media print{body{background:#fff;color:#111}.topbar,.breadcrumb,.sidebar,.actions,.no-print,.source-links{display:none!important}.portal{display:block;padding:0}.main{width:100%}.view{display:none!important}.view.active{display:block!important}.card,.week-card,.unit-card,.reading-row{box-shadow:none;background:#fff;color:#111;border:1px solid #bbb;break-inside:avoid}.card p,.week-card p,.unit-card p,.reading-row p,td{color:#222}.only-print{display:block}.footer{color:#222}}
+</style>
+<script defer src="../../../assets/academy-unified-print-header.js"></script><link rel="stylesheet" href="../../../assets/high-navigation-v1.css" data-high-navigation-css>
+
+  <script src="/Khaemenes_High.github.io/assets/high-school-global-chrome-v2.js" defer data-high-school-global-chrome="v2"></script>
+
+<style id="khaemenes-english-landing-release-v1">
+/* KHAEMENES_ENGLISH_LANDING_RELEASE_V1
+   Canonical Academy presentation only. Dashboard behavior, learner records,
+   assessment routes, and grade-specific architecture are preserved. */
+:root{
+  --bg:#f2efe8!important;
+  --bg2:#f7f3ea!important;
+  --panel:#fffdf8!important;
+  --panel2:#f1ece2!important;
+  --ink:#1b1b18!important;
+  --muted:#5f5a50!important;
+  --gold:#9b7b35!important;
+  --gold2:#705719!important;
+  --line:rgba(34,31,25,.18)!important;
+  --radius:7px!important;
+  --radius-lg:7px!important;
+  color-scheme:light!important;
+}
+html[data-theme="dark"],html[data-theme="light"]{color-scheme:light!important}
+body{
+  background:#f2efe8!important;
+  color:var(--ink)!important;
+  font-family:"Brandon Grotesque",Nunito,"Avenir Next",Avenir,"Segoe UI",Arial,sans-serif!important;
+  font-size:16px!important;
+  line-height:1.65!important;
+}
+body :is(h1,h2,h3,h4,h5,h6,.brand-copy strong,.brand-title,.page-title,.hero-title){
+  font-family:Cinzel,"Iowan Old Style","Palatino Linotype",Palatino,Georgia,serif!important;
+  font-weight:400!important;
+}
+body :is(button,.button,input,select,textarea,.nav-button,.navBtn){
+  font-weight:400!important;
+  border-radius:7px!important;
+  font-size:16px!important;
+}
+body :is(.card,.week-card,.unit-card,.reading-row,.hero-panel,.sidebar,.navBox,.student-box,.stat,.course-note){
+  border-radius:7px!important;
+  box-shadow:none!important;
+}
+body :is(.card,.week-card,.unit-card,.reading-row,.hero-panel,.sidebar,.navBox,.student-box,.stat){
+  background:#fffdf8!important;
+  color:var(--ink)!important;
+}
+body :is(.card p,.week-card p,.unit-card p,.reading-row p,.lead,.subtitle,.notice,.brand-copy small){
+  color:var(--muted)!important;
+}
+body :is(button.primary,.button.primary,.btn.primary){
+  background:#22231f!important;
+  color:#f7f2e8!important;
+  border-color:#22231f!important;
+  font-weight:400!important;
+}
+body :is(button,.button,.btn,.nav-button,.navBtn){
+  min-height:44px;
+}
+body .hero{
+  background:#f7f3ea!important;
+  border-color:var(--line)!important;
+}
+body .breadcrumb{
+  background:#ebe6dc!important;
+  border-color:var(--line)!important;
+}
+body .footer{background:#22231f!important;color:#f7f2e8!important}
+@media(max-width:820px){
+  body :is(.portal,.app){min-width:0!important}
+}
+</style>
+
+<style id="khaemenes-english-centered-landing-v1">
+/* KHAEMENES_ENGLISH_CENTERED_LANDING_V1
+   VNV / Khaemenes Academy landing geometry: centered, no side navigation columns. */
+body .shell{width:min(1180px,calc(100% - 32px))!important;margin-inline:auto!important}
+body .hero{min-height:0!important;padding:55px 24px!important;text-align:center!important}
+body .hero-grid{display:block!important;max-width:1040px!important;margin:0 auto!important}
+body .hero-grid>div{max-width:900px!important;margin:0 auto!important}
+body .hero .lead{margin:18px auto!important}
+body .hero .actions{justify-content:center!important}
+body .hero-panel{max-width:900px!important;margin:28px auto 0!important}
+body .stats{grid-template-columns:repeat(4,minmax(0,1fr))!important}
+body .portal,
+body .app{
+  display:block!important;
+  width:min(1180px,calc(100% - 32px))!important;
+  margin:0 auto!important;
+  padding:28px 0 55px!important;
+}
+body .centered-course-controls{
+  position:static!important;
+  width:100%!important;
+  max-width:1040px!important;
+  margin:0 auto 28px!important;
+  padding:20px!important;
+  border:1px solid var(--line)!important;
+  background:#fffdf8!important;
+  border-radius:7px!important;
+  max-height:none!important;
+  overflow:visible!important;
+  text-align:center!important;
+}
+body .centered-course-controls .student-box,
+body .centered-course-controls .studentBox{
+  max-width:760px!important;
+  margin:0 auto 18px!important;
+  border-bottom:1px solid var(--line)!important;
+  padding-bottom:18px!important;
+}
+body .centered-course-controls .inline{
+  grid-template-columns:minmax(0,1fr) auto!important;
+  max-width:620px!important;
+  margin:8px auto 0!important;
+}
+body .centered-course-controls .actions{justify-content:center!important}
+body .centered-course-controls .nav-list,
+body .centered-course-controls .navBox{
+  display:grid!important;
+  grid-template-columns:repeat(3,minmax(0,1fr))!important;
+  gap:10px!important;
+  max-width:900px!important;
+  margin:12px auto!important;
+}
+body .centered-course-controls details.navBox{
+  display:block!important;
+  text-align:left!important;
+}
+body .centered-course-controls .nav-button,
+body .centered-course-controls .navBtn{
+  width:100%!important;
+  justify-content:center!important;
+  text-align:center!important;
+}
+body .main{
+  width:100%!important;
+  max-width:1100px!important;
+  margin:0 auto!important;
+  padding:0!important;
+}
+body .section-head{text-align:center!important;align-items:center!important;justify-content:center!important}
+body .section-head p{margin-inline:auto!important}
+@media(max-width:820px){
+ body .stats{grid-template-columns:repeat(2,minmax(0,1fr))!important}
+ body .centered-course-controls .nav-list,
+ body .centered-course-controls .navBox{grid-template-columns:repeat(2,minmax(0,1fr))!important}
+}
+@media(max-width:560px){
+ body .shell,body .portal,body .app{width:min(100% - 20px,1180px)!important}
+ body .centered-course-controls .nav-list,
+ body .centered-course-controls .navBox,
+ body .stats{grid-template-columns:1fr!important}
+ body .centered-course-controls .inline{grid-template-columns:1fr!important}
+}
+</style>
+<script defer src="../../shared/high-school-class-tools-left-v1.js" data-english-course="english-10" data-ka-left-toolbar="canonical"></script>
+<style id="vnv-ka-english-canonical-buttons-v1">
+/* Six equal landing-page choices; centered buttons + Academy footer. Shared chrome retains ownership. */
+body .hero .actions{display:grid!important;grid-template-columns:repeat(3,minmax(0,1fr))!important;gap:11px!important;max-width:720px;margin:18px auto}
+body .hero .actions :is(a,button){display:flex!important;align-items:center;justify-content:center;text-align:center;min-height:49px;min-width:0;border-radius:7px!important;padding:11px 14px;font-size:16px!important;font-weight:400!important}
+body .footer{display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;gap:10px;background:#202724;color:#fff8e9;margin-left:auto;margin-right:auto;max-width:none;width:100%;padding:26px 18px;font-size:16px}
+body .footer span{color:#fff8e9;font-size:16px}
+@media(max-width:640px){body .hero .actions{grid-template-columns:repeat(2,minmax(0,1fr))!important}}
+</style></head>
+<body>
+<a class="skip" href="#portalMain">Skip to course portal</a>
+<header class="topbar" data-retired-course-header="true" hidden>
+  <div class="shell topbar-inner">
+    <a class="brand" href="../../../index.html" aria-label="Khaemenes High School home">
+      <span class="brand-mark">KA</span>
+      <span class="brand-copy"><strong>Khaemenes Academy</strong><small>English II · Grade 10</small></span>
+    </a>
+    <div class="top-actions">
+      <a class="button ghost" href="../index.html">Language Arts</a>
+      <a class="button ghost" href="teacher-guide.html">Teacher Guide</a>
+      <button class="ghost" id="themeToggle" type="button">Light</button>
+    </div>
+  </div>
+</header>
+<nav class="breadcrumb" aria-label="Breadcrumb"><div class="shell breadcrumb-inner">
+  <a href="../../../index.html">Khaemenes High</a><span>›</span><a href="../index.html">Language Arts</a><span>›</span><span aria-current="page">English II</span>
+</div></nav>
+<section class="hero">
+  <div class="shell hero-grid">
+    <div>
+      <p class="eyebrow">Khaemenes High · Advanced Universal Curriculum</p>
+      <h1>English II</h1>
+      <p class="subtitle">10th Grade Language Arts & Literature · 36 Weeks</p>
+      <p class="lead">A complete year of close reading, literary analysis, rhetoric, argument, poetry, adaptation, research, digital publication, drama, novel study, portfolio development, and cumulative assessment.</p>
+      <div class="actions">
+        <button class="primary" type="button" data-open-view="weeks">Begin the Course</button>
+        <button type="button" data-open-view="reading">Weekly Reading</button>
+        <a class="button" href="standards.html">Standards Crosswalk</a>
+        <a class="button" href="learning-tools.html#literary-toolbox">Literary Toolkit</a>
+        <a class="button" href="evidence-studio.html">Evidence Studio</a>
+        <a class="button" href="teacher-guide.html">Teacher Guide</a>
+      </div>
+    </div>
+    <aside class="hero-panel" aria-label="Course summary">
+      <p class="eyebrow">Course Architecture</p>
+      <div class="stats">
+        <div class="stat"><strong>36</strong><span>instructional weeks</span></div>
+        <div class="stat"><strong>12</strong><span>three-week units</span></div>
+        <div class="stat"><strong>180</strong><span>Monday–Friday lessons</span></div>
+        <div class="stat"><strong>80%</strong><span>mastery target</span></div>
+      </div>
+      <p class="notice" style="margin-top:14px">Each week includes a curated reading suggestion, a complete lesson page, a weekly mastery quiz, portfolio evidence, and repeat-to-mastery support.</p>
+    </aside>
+  </div>
+</section>
+<div class="shell portal">
+  <section class="centered-course-controls no-print" aria-label="Course navigation and learner controls">
+    <div class="student-box">
+      <p class="eyebrow">Student Record</p>
+      <label for="studentSelect">Active student</label><select id="studentSelect"></select>
+      <div class="inline"><input id="studentName" placeholder="New student name"><button class="primary" id="addStudent" type="button">Add</button></div>
+      <div class="actions"><button id="demoStudent" type="button">Demo</button><button class="danger" id="deleteStudent" type="button">Delete</button></div>
+      <p style="margin:.8rem 0 .35rem;color:var(--muted);font-size:1rem">Landing-page progress</p><div class="progress-mini"><span id="sideProgress"></span></div><p id="sideProgressText" style="font-size:1rem;color:var(--muted);margin:.35rem 0 0"></p>
+    </div>
+    <div class="nav-list">
+      <button class="nav-button active" data-view="overview" type="button">Overview</button>
+      <button class="nav-button" data-view="weeks" type="button">36 Weeks</button>
+      <button class="nav-button" data-view="units" type="button">12 Units</button>
+      <button class="nav-button" data-view="reading" type="button">Reading</button>
+      <button class="nav-button" data-view="assessments" type="button">Assessments</button>
+      <button class="nav-button" data-view="reports" type="button">Reports</button>
+    </div>
+  </section>
+  <main class="main" id="portalMain">
+    <section class="view active" id="view-overview"></section>
+    <section class="view" id="view-weeks"></section>
+    <section class="view" id="view-units"></section>
+    <section class="view" id="view-reading"></section>
+    <section class="view" id="view-assessments"></section>
+    <section class="view" id="view-reports"></section>
+  <section data-evidence-studio-launch="english-10" aria-label="Reading-to-Writing Evidence Studio" style="max-width:1070px;margin:26px auto;padding:22px;border:2px solid #ac812c;border-radius:7px;background:#fff8ed;color:#242629;text-align:center;font:400 17px/1.5 Nunito,'Avenir Next',Arial,sans-serif">
+<h2 style="font:400 30px/1.25 Cinzel,Georgia,serif;color:#242629;margin:0 0 12px">Reading-to-Writing Evidence Studio</h2>
+<p style="margin:0 auto 12px;max-width:880px">Use this week's assigned reading to build evidence, draft an interpretation, revise it, and export a learning artifact for teacher review. Developmental feedback never changes academic grades or mastery.</p>
+<a href="evidence-studio.html" style="display:inline-block;padding:11px 20px;border-radius:7px;background:#242629;border:1px solid #242629;color:#fffaf1;text-decoration:none;font:400 17px/1.4 Nunito,Arial,sans-serif">Open Evidence Studio</a>
+</section>
+</main>
+</div>
+<footer class="footer shell"><span>Khaemenes Academy · English II · 36-Week Student Portal</span><span>Jennifer Pearl · Verve N Veda · 2026</span></footer>
+<script src="assets/curriculum-data.js"></script>
+<script>
+const FALLBACK_UNITS = [{"unit": 1, "term": "Term I", "title": "Foundations of Scholarly Reading & Writing", "essential": "How do disciplined readers and writers build trustworthy interpretations?", "weeks": [1, 2, 3]}, {"unit": 2, "term": "Term I", "title": "Coming-of-Age & Literary Layers", "essential": "How do authors use character, conflict, setting, and perspective to create layered meaning?", "weeks": [4, 5, 6]}, {"unit": 3, "term": "Term I", "title": "Theme, Voice & Literary Analysis", "essential": "How do theme, diction, syntax, voice, and revision shape a literary interpretation?", "weeks": [7, 8, 9]}, {"unit": 4, "term": "Term II", "title": "American Speeches, Essays & Rhetoric", "essential": "How do historical writers shape central ideas and persuade particular audiences?", "weeks": [10, 11, 12]}, {"unit": 5, "term": "Term II", "title": "Argument, Debate & Civic Discourse", "essential": "How can a writer or speaker argue responsibly, fairly, and persuasively?", "weeks": [13, 14, 15]}, {"unit": 6, "term": "Term II", "title": "Synthesis & Midyear Mastery", "essential": "How do readers synthesize sources and use feedback to demonstrate midyear mastery?", "weeks": [16, 17, 18]}, {"unit": 7, "term": "Term III", "title": "Poetry, Ambiguity & Sound", "essential": "How do poets create layered meaning through speaker, image, sound, form, and ambiguity?", "weeks": [19, 20, 21]}, {"unit": 8, "term": "Term III", "title": "Classical, Mythic & Religious Adaptation", "essential": "What changes—and what remains—when foundational stories are adapted across time, culture, genre, or medium?", "weeks": [22, 23, 24]}, {"unit": 9, "term": "Term III", "title": "Research Foundations", "essential": "How do researchers ask focused questions and build reliable, ethical source records?", "weeks": [25, 26, 27]}, {"unit": 10, "term": "Term IV", "title": "Research Writing & Digital Publication", "essential": "How do writers transform research into clear, ethical, audience-ready publications?", "weeks": [28, 29, 30]}, {"unit": 11, "term": "Term IV", "title": "Drama, Shakespeare & Performance", "essential": "How does performance reveal conflict, irony, rhetoric, and character more fully than silent reading alone?", "weeks": [31, 32, 33]}, {"unit": 12, "term": "Term IV", "title": "Novel Study, Final Portfolio & Examination", "essential": "What evidence best demonstrates mature reading, writing, research, speaking, and reflection?", "weeks": [34, 35, 36]}];
+const CANONICAL_READING = window.ELA10_COURSE?.readingAssignments || [];
+const COURSE = window.ELA10_COURSE || {title:"10th Grade Language Arts",subtitle:"English II · 36-Week Comprehensive Course",passingTarget:80,units:FALLBACK_UNITS,weeks:CANONICAL_READING.map((r,i)=>({week:i+1,unit:Math.ceil((i+1)/3),term:`Term ${["I","II","III","IV"][Math.floor(i/9)]}`,unitTitle:FALLBACK_UNITS[Math.ceil((i+1)/3)-1].title,title:r.title,essentialQuestion:r.purpose,reading:r.title,writingTask:"Complete the weekly analytical, argumentative, research, or portfolio product.",vocabulary:[],standards:[]}))};
+const READING_SUGGESTIONS = COURSE.readingAssignments || CANONICAL_READING;
+const STORAGE_KEY="KA_ENGLISH10_LANDING_V1";
+const academyProfile=window.KhaemenesCourseEntryContract.readAcademyProfile();
+const LESSON_KEY="khae-ela10-state-v1";
+let state=loadState();
+let landingSnapshot=null;try{landingSnapshot=localStorage.getItem(STORAGE_KEY)}catch{}
+let landingBlocked=false;
+function lessonRecord(){try{const record=JSON.parse(localStorage.getItem(LESSON_KEY)||"null");return window.KhaemenesEnglishRecords.valid(record,"ela10")?record:null}catch{return null}}
+function evidenceWeeks(){return window.KhaemenesEnglishRecords.weeksComplete(lessonRecord())}
+
+let currentView="overview";
+const $=id=>document.getElementById(id);
+const esc=value=>String(value??"").replace(/[&<>"']/g,ch=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[ch]));
+const pad=n=>String(n).padStart(2,"0");
+function loadState(){try{const raw=localStorage.getItem(STORAGE_KEY);if(raw===null)return{students:[],activeId:null};const v=JSON.parse(raw);if(!v||!Array.isArray(v.students)||v.students.some(x=>!x||typeof x.id!=="string"||typeof x.name!=="string"||!x.weeks||typeof x.weeks!=="object"||Array.isArray(x.weeks)))throw Error("Invalid saved planner");return v}catch{return{students:[],activeId:null,recoveryRequired:true}}}
+function saveState(){try{if(landingBlocked||state.recoveryRequired||localStorage.getItem(STORAGE_KEY)!==landingSnapshot)throw Error("The planner changed or needs recovery. Export it before reloading.");const text=JSON.stringify(state);localStorage.setItem(STORAGE_KEY,text);landingSnapshot=text;return true}catch(e){landingBlocked=true;alert(`${e.message} Planner saving is paused. Your current work can still be exported.`);return false}}
+function makeId(){return `s_${Date.now().toString(36)}_${Math.random().toString(36).slice(2,7)}`}
+function activeStudent(){const s=state.students.find(s=>s.id===state.activeId)||null;if(s){s.planningMarks||={...s.weeks};s.weeks=Object.fromEntries(evidenceWeeks().map((v,i)=>[i+1,v]))}return s}
+function ensureStudent(){const id=academyProfile?.learnerId||"preview";let s=state.students.find(x=>x.id===id);if(!s){s={id,name:academyProfile?.name||"Select Academy learner",created:new Date().toISOString(),weeks:{},notes:{}};state.students.push(s)}state.activeId=id;return s}
+function addStudent(){location.href="https://vervenveda.com/Khaemenes_Academy.github.io/"}
+function deleteStudent(){alert("Course evidence is preserved. Use the Academy learner selector to change students.")}
+function completedCount(){return evidenceWeeks().filter(Boolean).length}
+function coursePercent(s=activeStudent()){return Math.round(completedCount(s)/36*100)}
+function getReading(week){return READING_SUGGESTIONS[week-1]||{title:"Teacher-approved reading",author:"Teacher selection",genre:"Grade 10 reading",purpose:"Practice this week’s target skills.",sources:[]}}
+function weekData(n){return COURSE.weeks?.find(w=>Number(w.week)===Number(n))||COURSE.weeks?.[n-1]}
+function unitData(n){return COURSE.units?.find(u=>Number(u.unit)===Number(n))||FALLBACK_UNITS[n-1]}
+function sourceButtons(reading){const links=[...(reading.sources||[])];if(!links.some(x=>x[1]==="reading-list.html"))links.push(["Course reading list","reading-list.html"]);return links.map(([label,url])=>`<a class="button" href="${esc(url)}" ${/^https?:/.test(url)?'target="_blank" rel="noopener"':''}>${esc(label)}</a>`).join("")}
+function openView(view,scroll=true){currentView=view;document.querySelectorAll(".view").forEach(v=>v.classList.toggle("active",v.id===`view-${view}`));document.querySelectorAll("[data-view]").forEach(b=>b.classList.toggle("active",b.dataset.view===view));if(scroll)window.scrollTo({top:document.querySelector(".portal").offsetTop-72,behavior:"smooth"})}
+function renderStudentSelect(){ensureStudent();$("studentSelect").disabled=true;$("studentSelect").innerHTML=state.students.filter(s=>s.id===state.activeId).map(s=>`<option value="${esc(s.id)}" ${s.id===state.activeId?"selected":""}>${esc(s.name)}</option>`).join("");const pct=coursePercent();$("sideProgress").style.width=`${pct}%`;$("sideProgressText").textContent=`${completedCount()} of 36 weeks with completed lessons and ≥80% quiz mastery · ${pct}%`}
+function renderOverview(){const s=activeStudent(),pct=coursePercent(s),next=Math.min(36,Math.max(1,[...Array(36)].findIndex((_,i)=>!evidenceWeeks()[i])+1||36));const unit=Math.ceil(next/3);$("view-overview").innerHTML=`<div class="section-head"><div><p class="eyebrow">Student Dashboard</p><h2>Welcome, ${esc(s.name)}</h2><p>Continue through the 36-week course, preserve strong evidence, and return to any week that has not yet reached mastery.</p></div></div><div class="grid"><div class="card kpi"><strong>${pct}%</strong><span>landing-page completion</span></div><div class="card kpi"><strong>${completedCount(s)}</strong><span>weeks with completed lessons and ≥80% quiz mastery</span></div><div class="card kpi"><strong>${unit}</strong><span>current unit</span></div><div class="card kpi"><strong>${COURSE.passingTarget||80}%</strong><span>mastery target</span></div><article class="card wide"><p class="eyebrow">Continue Learning</p><h3>Week ${next}: ${esc(weekData(next)?.title||getReading(next).title)}</h3><p>${esc(weekData(next)?.essentialQuestion||getReading(next).purpose)}</p><div class="reading-box"><small>WEEKLY READING SUGGESTION</small><strong>${esc(getReading(next).title)}</strong><span>${esc(getReading(next).author)}</span></div><div class="actions"><a class="button primary" href="weeks/week-${pad(next)}/">Open Week ${next}</a><button type="button" data-jump-week="${next}">View in Course Map</button></div></article><article class="card"><p class="eyebrow">Course Rule</p><h3>Repeat to Mastery</h3><p>Complete Monday–Friday work, take the weekly quiz, correct missed items, and repeat targeted practice whenever the score is below the course target.</p><div class="actions"><a class="button" href="portfolio/">Portfolio</a><a class="button" href="rubrics/">Rubrics</a></div></article><article class="card full"><p class="eyebrow">Evidence & Records</p><h3>Keep the academic record complete</h3><p>Preserve reading logs, annotations, drafts, feedback, revisions, quiz corrections, formal assessments, research records, presentations, and reflections. The individual weekly pages hold the full instructional work; this landing page provides course navigation and a simple completion record.</p><div class="actions"><a class="button" href="records/">Student Records</a><a class="button" href="teacher-guide.html">Teacher Guide</a><button type="button" onclick="downloadBackup()">Export Landing Backup</button></div></article></div>`}
+function renderWeeks(){const s=activeStudent();$("view-weeks").innerHTML=`<div class="section-head"><div><p class="eyebrow">Complete Course Map</p><h2>36 Weeks</h2><p>Every week links to its full Monday–Friday lesson page, weekly quiz, reflection, and portfolio evidence.</p></div><div class="actions"><button type="button" onclick="markAll(false)">Clear Planning Marks</button><button class="primary" type="button" onclick="window.print()">Print Map</button></div></div><div class="week-grid">${COURSE.weeks.slice(0,36).map(w=>{const r=getReading(w.week),done=!!s.weeks[w.week];return `<article class="week-card ${done?"complete":""}" id="week-card-${w.week}"><div class="week-top"><span class="tag">Week ${w.week}</span><label style="margin:0;display:flex;gap:7px;align-items:center"><input style="width:auto" type="checkbox" data-week-complete="${w.week}" ${s.planningMarks?.[w.week]?"checked":""}> Planning mark</label></div><p class="eyebrow" style="margin-top:10px">Unit ${w.unit} · ${esc(w.term||unitData(w.unit)?.term||"")}</p><h3>${esc(w.title)}</h3><p>${esc(w.essentialQuestion)}</p><div class="reading-box"><small>READING SUGGESTION</small><strong>${esc(r.title)}</strong><span>${esc(r.author)}</span></div><div class="actions"><a class="button primary" href="weeks/week-${pad(w.week)}/">Open Full Week</a><a class="button" href="units/unit-${pad(w.unit)}/">Unit Map</a></div></article>`}).join("")}</div>`}
+function renderUnits(){$("view-units").innerHTML=`<div class="section-head"><div><p class="eyebrow">Twelve Three-Week Studies</p><h2>Course Units</h2><p>The year advances from foundational analysis through rhetoric, research, publication, performance, novel study, and final portfolio defense.</p></div></div><div class="unit-grid">${COURSE.units.slice(0,12).map(u=>`<article class="unit-card"><p class="eyebrow">${esc(u.term||"")} · Unit ${u.unit} · Weeks ${(u.weeks||[]).join("–")}</p><h3>${esc(u.title)}</h3><p><strong>Essential inquiry:</strong> ${esc(u.essential||"")}</p><p>${esc(u.summary||"")}</p>${u.assessment?`<p class="notice"><strong>Unit evidence:</strong> ${esc(u.assessment)}</p>`:""}<div class="actions"><a class="button primary" href="units/unit-${pad(u.unit)}/">Open Unit ${u.unit}</a><a class="button" href="assessments/unit-${pad(u.unit)}/">Assessment</a></div></article>`).join("")}</div>`}
+function renderReading(){$("view-reading").innerHTML=`<div class="section-head"><div><p class="eyebrow">Curated & Source-Linked</p><h2>Weekly Reading Suggestions</h2><p>These selections support the weekly skill focus. Teachers may substitute an accessible, age-appropriate edition while preserving the same analytical target.</p></div><a class="button primary" href="reading-list.html">Open Full Reading List</a></div><div class="reading-list">${READING_SUGGESTIONS.map((r,i)=>`<article class="reading-row"><div class="reading-week">W${pad(i+1)}</div><div><h3>${esc(r.title)}</h3><p><strong>${esc(r.author)}</strong> · ${esc(r.genre)}</p><p>${esc(r.purpose)}</p></div><div class="source-links">${sourceButtons(r)}</div></article>`).join("")}</div>`}
+function renderAssessments(){$("view-assessments").innerHTML=`<div class="section-head"><div><p class="eyebrow">Mastery & Documentation</p><h2>Assessments</h2><p>Weekly quizzes support repetition and correction. Unit assessments, the midterm, final, portfolio, and records provide formal evidence.</p></div></div><div class="grid"><article class="card half"><p class="eyebrow">Semester I</p><h3>Cumulative Midterm</h3><p>Administer after Week 18. Review Units 1–6, corrections, synthesis evidence, and the midyear portfolio.</p><div class="actions"><a class="button primary" href="assessments/midterm/">Open Midterm</a></div></article><article class="card half"><p class="eyebrow">Semester II</p><h3>Cumulative Final</h3><p>Administer after Week 36. Review the complete course, final portfolio, novel study, and cumulative mastery.</p><div class="actions"><a class="button primary" href="assessments/final/">Open Final</a></div></article><article class="card full"><h3>Unit Assessment Directory</h3><div class="actions">${[...Array(12)].map((_,i)=>`<a class="button" href="assessments/unit-${pad(i+1)}/">Unit ${i+1}</a>`).join("")}</div></article><article class="card"><h3>Portfolio</h3><p>Collect the strongest artifacts and the revision evidence that demonstrates growth.</p><div class="actions"><a class="button" href="portfolio/">Open Portfolio</a></div></article><article class="card"><h3>Rubrics</h3><p>Use consistent criteria for literary analysis, argument, research, speaking, and presentation.</p><div class="actions"><a class="button" href="rubrics/">Open Rubrics</a></div></article><article class="card"><h3>Records</h3><p>Preserve progress, scores, conferences, completion evidence, and evaluator-ready documentation.</p><div class="actions"><a class="button" href="records/">Open Records</a></div></article></div>`}
+function renderReports(){const s=activeStudent();$("view-reports").innerHTML=`<div class="section-head"><div><p class="eyebrow">Printable Summary</p><h2>Progress Report</h2><p>Completion shown here comes from the learner’s saved daily lessons and quiz mastery. Manual planner marks are separate. Formal grades and assessment records remain in the course’s assessment and records sections.</p></div><div class="actions"><button class="primary" onclick="window.print()">Print Report</button><button onclick="downloadBackup()">Export Backup</button></div></div><article class="card full"><div class="only-print"><h1>English II Progress Report</h1></div><table><tr><th>Student</th><td>${esc(s.name)}</td></tr><tr><th>Course</th><td>10th Grade Language Arts & Literature · English II</td></tr><tr><th>Program</th><td>36 weeks · 12 units · 180 daily lessons</td></tr><tr><th>Weeks with lesson and quiz mastery</th><td>${completedCount(s)} of 36</td></tr><tr><th>Completion</th><td>${coursePercent(s)}%</td></tr><tr><th>Report date</th><td>${new Date().toLocaleDateString()}</td></tr></table><h3 style="margin-top:24px">Weekly Completion Record</h3><table><tr><th>Week</th><th>Unit</th><th>Focus</th><th>Status</th></tr>${COURSE.weeks.slice(0,36).map(w=>`<tr><td>${w.week}</td><td>${w.unit}</td><td>${esc(w.title)}</td><td>${s.weeks[w.week]?"Complete":"Not marked"}</td></tr>`).join("")}</table><p class="notice" style="margin-top:18px">This report is a navigation and completion summary. Attach weekly quiz results, unit assessments, the midterm, final, portfolio artifacts, and evaluator documentation for a complete academic record.</p></article>`}
+function renderAll(){renderStudentSelect();renderOverview();renderWeeks();renderUnits();renderReading();renderAssessments();renderReports();openView(currentView,false)}
+function markAll(value){const s=activeStudent();for(let i=1;i<=36;i++)s.planningMarks[i]=value;saveState();renderAll()}
+function downloadBackup(){const blob=new Blob([JSON.stringify({course:"English II",exported:new Date().toISOString(),state,lessonRecord:lessonRecord()},null,2)],{type:"application/json"});const a=document.createElement("a");a.href=URL.createObjectURL(blob);a.download=`english-10-landing-backup-${new Date().toISOString().slice(0,10)}.json`;a.click();URL.revokeObjectURL(a.href)}
+document.addEventListener("click",e=>{const view=e.target.closest("[data-open-view]");if(view)openView(view.dataset.openView);const jump=e.target.closest("[data-jump-week]");if(jump){openView("weeks");setTimeout(()=>document.getElementById(`week-card-${jump.dataset.jumpWeek}`)?.scrollIntoView({behavior:"smooth",block:"center"}),250)}})
+document.addEventListener("change",e=>{if(e.target.matches("[data-week-complete]")){const s=activeStudent();s.planningMarks[e.target.dataset.week]=e.target.checked;saveState();renderAll()}if(e.target.id==="studentSelect"){state.activeId=e.target.value;saveState();renderAll()}})
+document.querySelectorAll("[data-view]").forEach(b=>b.addEventListener("click",()=>openView(b.dataset.view)))
+
+$("studentName").addEventListener("keydown",e=>{if(e.key==="Enter")$("addStudent").click()})
+$("deleteStudent").addEventListener("click",deleteStudent)
+$("demoStudent").hidden=true;$("deleteStudent").hidden=true;$("studentName").hidden=true;$("addStudent").textContent="Select Academy learner";$("addStudent").onclick=addStudent
+$("themeToggle").addEventListener("click",()=>{const next=document.documentElement.dataset.theme==="dark"?"light":"dark";document.documentElement.dataset.theme=next;localStorage.setItem("KA_ENGLISH10_THEME",next);$("themeToggle").textContent=next==="dark"?"Light":"Dark"})
+const savedTheme=localStorage.getItem("KA_ENGLISH10_THEME")||"dark";document.documentElement.dataset.theme=savedTheme;$("themeToggle").textContent=savedTheme==="dark"?"Light":"Dark";
+ensureStudent();renderAll();
+if(state.recoveryRequired)window.KhaemenesEnglishRecords.warning("The saved planner needs recovery. It was preserved; saving is paused.",()=>landingSnapshot||JSON.stringify(state));
+window.addEventListener("storage",e=>{if(e.key===window.KhaemenesLearnerScope.scopedKey(STORAGE_KEY))landingBlocked=true;if(e.key===window.KhaemenesLearnerScope.scopedKey(LESSON_KEY))renderAll()});
+if("serviceWorker" in navigator){window.addEventListener("load",()=>{
+  const hadController=Boolean(navigator.serviceWorker.controller);
+  let recoveryReload=false;
+  navigator.serviceWorker.addEventListener("controllerchange",()=>{
+    if(!hadController||recoveryReload)return;
+    recoveryReload=true;
+    location.reload();
+  },{once:true});
+  navigator.serviceWorker.register("service-worker.js",{updateViaCache:"none"})
+    .then(registration=>registration.update())
+    .catch(()=>{});
+},{once:true})}
+</script>
+<script src="../../shared/high-school-english-continuation.js?v=20261016"></script>
+
+<aside aria-label="Shared Academy evidence companion" style="max-width:920px;margin:16px auto;padding:16px;border:1px solid #ada599;border-radius:7px;background:#faf5e9;color:#292d31;overflow-wrap:anywhere"><h2 style="font-weight:400;margin:0 0 8px">Khaemenes Academy · Academic Evidence</h2><p style="margin:0 0 10px">Keep English 10 research, vocabulary, source citations and reflections in the Academy's optional printable homeschool format. This companion never changes course grades or mastery.</p><a style="display:inline-block;padding:9px;border:1px solid currentColor;border-radius:7px;color:#22516e" href="../../science/integrated-science-9/academic-evidence-companion.html?course=english-10">Open English 10 evidence companion</a></aside>
+<script src="../../../assets/high-school-return-to-classes.js" data-grade="10" defer></script>
+<script src="../../../assets/high-navigation-v1.js" defer></script>
+<aside aria-label="Vocabulary Studio access" style="margin:18px auto;padding:16px;max-width:920px;border:1px solid #9ca9a3;border-radius:7px"><p style="margin:0 0 9px">English 10 · Weekly Vocabulary Studio</p><p style="margin:0 0 11px">Study the canonical vocabulary assigned to each unit and week. Definitions awaiting academic review are marked clearly. This tool does not change official grades or mastery.</p><a href="../../mathematics/tools/vocabulary-studio.html?course=english-10&unit=01&week=1" style="display:inline-block;padding:9px 13px;border:1px solid #9ca9a3;border-radius:7px;color:inherit;text-decoration:underline">Open English 10 Vocabulary Studio</a></aside>
+
+</body>
+</html>

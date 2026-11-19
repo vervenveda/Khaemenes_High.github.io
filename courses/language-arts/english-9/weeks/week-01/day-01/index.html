@@ -66,6 +66,18 @@ body[data-english9-day="1"] .e9-open-map{display:inline-flex;align-items:center;
 #e9-lesson-map-dialog #khae-english-unified-lesson-map{width:100%!important;max-width:100%!important;margin:0!important;padding:0!important;border:0!important;box-shadow:none}
 @media(max-width:640px){body[data-english9-day="1"] #daily-main{padding:12px}body[data-english9-day="1"] .e9-resources-content .e9-resource-links{grid-template-columns:1fr}}
 @media print{body[data-english9-day="1"] #daily-main>.e9-resources>summary{background:#fff!important;color:#202724!important;border-bottom:1px solid #202724}body[data-english9-day="1"] #daily-main>.daily-hero{background:#fff!important;color:#202724!important}body[data-english9-day="1"] #daily-main>.daily-hero :is(h1,h2,p){color:#202724!important}body[data-english9-day="1"] .e9-resources-content{display:block!important}body[data-english9-day="1"] #daily-main>.phase{break-inside:avoid}}
+/* Research-aligned stage navigation, owned by the existing single CSS layer. */
+body[data-english9-day="1"] #daily-main>.e9-stage-guide{width:100%;max-width:var(--e9-max);margin:0 auto 16px;padding:16px 20px;box-sizing:border-box;border:var(--e9-border);border-radius:7px;background:#fffdf8}
+body[data-english9-day="1"] .e9-stage-guide h2{font:400 24px/1.35 Cinzel,Georgia,serif;margin:0 0 8px;color:var(--e9-ink)}
+body[data-english9-day="1"] .e9-stage-guide p{margin:0 0 12px;max-width:70ch}
+body[data-english9-day="1"] .e9-stage-links{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
+body[data-english9-day="1"] .e9-stage-links a{display:flex;align-items:center;justify-content:center;text-align:center;min-height:44px;padding:10px;border:1px solid var(--e9-ink);border-radius:7px;color:var(--e9-ink);background:#f7edda;text-decoration:none;font-size:16px;font-weight:400;line-height:1.35}
+body[data-english9-day="1"] .e9-stage-links a:hover{background:#eed9ad}
+body[data-english9-day="1"] .e9-stage-links a:focus-visible{outline:3px solid #886018;outline-offset:3px}
+body[data-english9-day="1"] :is(.phase,.daily-tool) h2{scroll-margin-top:24px}
+@media(max-width:680px){body[data-english9-day="1"] .e9-stage-links{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:390px){body[data-english9-day="1"] .e9-stage-links{grid-template-columns:1fr}}
+@media print{body[data-english9-day="1"] .e9-stage-guide{display:none}}
 </style>
 <script id="english9-day01-layout-v7">
 /* Presentation-only progressive disclosure. Never reads, writes, or evaluates learner records. */
@@ -149,6 +161,28 @@ function arrange(){
      for(const n of order)main.insertBefore(n,boundary);
    }
  }
+  // Navigation only; never manipulates grades, saved work, or mastery.
+  let guide=main.querySelector("#e9-stage-guide");
+  if(!guide){
+    guide=document.createElement("nav");guide.id="e9-stage-guide";
+    guide.className="e9-stage-guide";
+    guide.setAttribute("aria-label","English 9 Day 1 learning stages");
+    const heading=document.createElement("h2");heading.textContent="Today's Learning Path";
+    const description=document.createElement("p");
+    description.textContent="Move through the reading, thinking and writing stages. Return to a stage when you need to revise.";
+    const links=document.createElement("div");links.className="e9-stage-links";
+    const steps=[
+      ["reasoning-lab-1","1 · Recall"],["heading-1-read","2 · Read"],
+      ["heading-1-practice","3 · Practice"],["daily-practice-title","4 · Check"],
+      ["heading-1-write","5 · Write"],["heading-1-check","6 · Reflect"]
+    ];
+    for(const [target,label] of steps){
+      if(!document.getElementById(target))continue;
+      const a=document.createElement("a");a.href="#"+target;a.textContent=label;links.append(a);
+    }
+    guide.append(heading,description,links);
+  }
+  if(guide.parentElement!==main||guide.nextElementSibling!==lab)main.insertBefore(guide,lab);
  const stages=[[lab,"01 · Retrieve and reason"],[read,"02 · Learn from the text"],[practice,"03 · Guided practice"],[quiz,"03 · Check your inference"],[write,"04 · Apply through writing"],[reflect,"05 · Reflect"]];
  for(const [section,label] of stages){
    if(!section||section.querySelector(".e9-stage-eyebrow"))continue;
