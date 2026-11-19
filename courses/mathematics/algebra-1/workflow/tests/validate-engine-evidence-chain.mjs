@@ -15,4 +15,7 @@ m.set("khaemenes-algebra1-weekly-mastery-v2",JSON.stringify({weeks:Object.fromEn
 assert.equal(A.unitProgressionComplete(2),true);
 const bad=JSON.parse(m.get("khaemenes-algebra1-unit02-a3-v1"));delete bad.best["lesson-"+refs.at(-1).lesson];m.set("khaemenes-algebra1-unit02-a3-v1",JSON.stringify(bad));assert.equal(A.unitProgressionComplete(2),false);
 m.set("khaemenes-algebra1-unit02-a3-v1",JSON.stringify({best}));const ws=JSON.parse(m.get("khaemenes-algebra1-weekly-mastery-v2"));delete ws.weeks[weeks[0]];m.set("khaemenes-algebra1-weekly-mastery-v2",JSON.stringify(ws));assert.equal(A.unitProgressionComplete(2),false);
+m.set("khaemenes-algebra1-weekly-mastery-v2",JSON.stringify({weeks:{[weeks[0]]:{best:101,attempts:[]}}}));assert.equal(A.weekMastered(weeks[0]),false);
+m.set("khaemenes-algebra1-weekly-mastery-v2",JSON.stringify({weeks:{[weeks[0]]:{attempts:[{mastery_met:true}]}}}));assert.equal(A.weekMastered(weeks[0]),false);
+m.set("khaemenes-algebra1-unit02-a3-v1",JSON.stringify({best:{...best,mastery:101}}));assert.equal(A.unitMastered(2),false);
 console.log("ALGEBRA1_ENGINE_REGRESSION=PASS");
