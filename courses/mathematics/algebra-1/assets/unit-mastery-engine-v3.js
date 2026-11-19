@@ -155,6 +155,7 @@ function run(){
     if(persisted){
    attemptNumber=record.attempts.length+1;
    $("#scoreMsg").innerHTML=`<span class="score">${pct}%</span> · ${correct}/${current.length} correct · Best ${record.scores.mastery}% saved.${pct>=MASTERY?" · Mastery demonstrated.":" · Review, correct, and begin a new attempt."}`;
+   window.KhaemenesMathAssessmentDirective?.show({kind:"unit",score:pct,mastered:pct>=MASTERY,unit:R.unit});
   }else{
    attemptNumber+=1;
    $("#scoreMsg").innerHTML=`<span class="score">${pct}%</span> · ${correct}/${current.length} correct · <strong>No mastery credit was recorded because this browser could not save the attempt.</strong> Export evidence if needed, then restore browser storage before retrying.`;
