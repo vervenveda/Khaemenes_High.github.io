@@ -84,6 +84,7 @@ def render(name, rel, profile):
     return True, lifecycle
 
 failed = 0
+environment_failures = 0
 try:
     with tempfile.TemporaryDirectory(prefix="khae-math-browser-") as profiles:
         for number, (name, rel) in enumerate(paths):
@@ -98,8 +99,13 @@ try:
             else:
                 print("FAIL", name, detail, flush=True)
                 failed += 1
+                if "no rendered HTML" in detail and ("DBus" in detail or "dbus" in detail):
+                    environment_failures += 1
 finally:
     server.shutdown()
 
 print("Browser smoke failures:", failed)
+if failed and environment_failures == len(paths):
+    print("HOLD_BROWSER_ENVIRONMENT: hosted Chrome could not initialize far enough to render any control page; browser/device acceptance remains HOLD.")
+    sys.exit(2)
 sys.exit(1 if failed else 0)
