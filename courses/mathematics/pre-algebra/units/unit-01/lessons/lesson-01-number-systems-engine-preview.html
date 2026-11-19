@@ -42,8 +42,6 @@ Inside this file:
 23. lesson-engine.js
 -->
 <html lang="en" data-theme="light"><head>
-<script src="../../../../../shared/course-entry-contract.js?v=20261012"></script>
-<script src="../../../../../shared/learner-scope-v1.js?v=20261012" data-learner-scope="pre-algebra"></script>
 
 
 <!-- =========================
@@ -293,7 +291,7 @@ canvas{
   <script src="/Khaemenes_High.github.io/assets/high-school-global-chrome-v2.js" defer data-high-school-global-chrome="v2"></script>
 </head>
 
-<body class="ka-prealgebra-lesson01" data-khaemenes-math-prototype="u01-l01"><a class="skip" href="#main">Skip to main content</a>
+<body class="ka-prealgebra-lesson01" data-khaemenes-math-prototype="u01-l01" data-preview-mode="visual-read-only"><a class="skip" href="#main">Skip to main content</a>
 <!-- =========================
      04. HEADER
      ========================= -->
@@ -305,7 +303,7 @@ canvas{
 <nav class="ka-lesson-breadcrumb-row" aria-label="Lesson navigation">
  <nav class="breadcrumb" aria-label="Breadcrumb"><a href="../../../">Pre-Algebra</a><span>›</span><a href="../">Unit 1</a><span>›</span><span aria-current="page">Lesson 1</span></nav>
 </nav>
-<main id="main" class="khaemenes-math-engine" data-khaemenes-math-engine="1.0.0" data-engine-owner="canonical"><div class="kme-status" role="status"><strong>Mathematics Engine Prototype · Pre-Algebra Unit 01 Lesson 01</strong></div>
+<main id="main" class="khaemenes-math-engine" data-khaemenes-math-engine="1.0.0" data-engine-owner="canonical"><div class="kme-status" role="status">Visual tuning prototype · No learner data is read or written</div>
 <section class="hero kme-hero"><div class="wrap"><p class="academy-eyebrow">Khaemenes Academy</p><h1>Pre Algebra</h1><p class="eyebrow">High School Mathematics</p><p class="lead">Unit 01 · Lesson 01 · Number Families &amp; the Real Number System</p><p class="lead">How can the same number belong to more than one mathematical family?</p><div class="actions"><a class="btn primary" href="#learn">Begin Lesson</a><a class="btn" href="#math-break" aria-label="Jump to this lesson’s learning game">🎮 Learning Game ↓</a><button class="btn" id="printLesson" type="button">Print Lesson</button></div></div></section>
 
 <!-- =========================
@@ -411,6 +409,21 @@ canvas{
 <script>window.KhaemenesMathEngine?.mount({level:"high-school",courseId:"pre-algebra",unitId:"unit-01",lessonId:"lesson-01",evidenceMode:"procedural",assessmentMode:false,closedBook:false,tools:["calculator","notepad","whiteboard","number-line"],resources:["worksheet","game"],masteryAuthority:"unit-01-core"});</script>
 <script src="../assets/lesson-engine-core.js"></script>
 <script>
+(()=> {
+  const lockPreview=()=> {
+    for (const id of ["markComplete","exportLesson","saveNotes","saveReflection","submitPractice","resetPractice"]) {
+      const el=document.getElementById(id);
+      if(!el) continue;
+      el.disabled=true;
+      el.setAttribute("aria-disabled","true");
+      el.title="Disabled in visual tuning preview";
+    }
+  };
+  if(document.readyState==="loading") document.addEventListener("DOMContentLoaded",()=>setTimeout(lockPreview,0),{once:true});
+  else setTimeout(lockPreview,0);
+})();
+</script>
+<script>
 window.KhaemenesClassToolsConfigV1={
  id:"math-engine",
  match:()=>true,
@@ -479,6 +492,5 @@ window.KhaemenesClassToolsConfigV1={
 #kmeTranslatorDialog button:hover{background:#e9dfcc}
 </style>
 <script src="https://vervenveda.com/assets/vnv-class-tools-toolbar.js?v=1.6.0" defer data-vnv-class-tools="canonical-math"></script><!-- KHAEMENES_HIGH_FORMATIVE_EVIDENCE_V1 -->
-<script src="../../../../../shared/high-school-learning-context-v1.js"></script>
 <script>window.VNV_TICKER?.autoPopulate?.({label:"Pre-Algebra · Unit 01 · Lesson 01",max:14});</script>
 </body></html>
