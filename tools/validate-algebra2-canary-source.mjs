@@ -38,4 +38,22 @@ for(const rel of protectedExamples){
 }
 assert.match(source,/KhaemenesAlgebra2Progression/, "adapter must use native progression");
 assert.match(source,/MASTERY=80/, "mastery threshold remains 80%");
+
+// Confirm that the minimal landing shell has not replaced the real 92 lessons.
+let routeTotal=0;
+for(let unit=1;unit<=13;unit++){
+  const n=String(unit).padStart(2,"0");
+  const unitRoot=path.join(repo,base,"units","unit-"+n);
+  const index=fs.readFileSync(path.join(unitRoot,"index.html"),"utf8");
+  const lessonRoot=path.join(unitRoot,"lessons");
+  const actual=fs.readdirSync(lessonRoot).filter(f=>new RegExp("^u"+n+"-l\\d{2}\\.html$").test(f)).sort();
+  const hrefs=[...index.matchAll(/href=["']lessons\\/(u\\d{2}-l\\d{2}\\.html)/g)].map(x=>x[1]);
+  const unique=[...new Set(hrefs)].sort();
+  assert.deepEqual(unique,actual,"unit "+n+": exact native lesson links");
+  assert.match(index,new RegExp('href=["\\']lessons/u'+n+'-l01\\.html'),"unit "+n+": Begin Unit route");
+  routeTotal+=actual.length;
+}
+assert.equal(routeTotal,92,"Algebra II must retain all 92 native instructional lessons");
+console.log("ALGEBRA_II_92_LESSON_UNIT_ROUTE_PASS");
+
 console.log("ALGEBRA_II_CANARY_SOURCE_PROOF_PASS");
