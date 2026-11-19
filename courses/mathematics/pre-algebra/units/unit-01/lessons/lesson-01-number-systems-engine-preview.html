@@ -98,7 +98,7 @@
 
     <section class="kme-section" id="reading" data-math-phase="learn" aria-labelledby="readingTitle">
       <div class="wrap kme-reading-wrap">
-        <details class="kme-lesson-accordion kme-reading-accordion">
+        <details class="kme-lesson-accordion kme-reading-accordion" data-checklist-section="reading-room">
           <summary id="readingTitle">Reading Room</summary>
           <div class="kme-accordion-body">
             <header class="section-head">
@@ -166,52 +166,54 @@
     </section>
 
     <section class="kme-section" data-math-phase="worked-example" aria-labelledby="examplesTitle">
-      <div class="wrap">
-        <header class="section-head">
-          <h2 id="examplesTitle">Worked Examples</h2>
-          <p>Follow the reasoning one step at a time.</p>
-        </header>
-        <div class="example-list" id="exampleList"></div>
+      <div class="wrap kme-disclosure-wrap">
+        <details class="kme-lesson-accordion" data-checklist-section="worked-examples">
+          <summary id="examplesTitle">Worked Examples</summary>
+          <div class="kme-accordion-body">
+            <header class="section-head"><p>Follow the reasoning one step at a time.</p></header>
+            <div class="example-list" id="exampleList"></div>
+          </div>
+        </details>
       </div>
     </section>
 
     <section class="kme-section" data-math-phase="guided" aria-labelledby="pathwayTitle">
-      <div class="wrap">
-        <header class="section-head">
-          <h2 id="pathwayTitle">Pathway Support</h2>
-          <p>Choose support or extension for this skill.</p>
-        </header>
-        <article class="card">
-          <div class="pathway-tabs" id="pathwayTabs"></div>
-          <div class="pathway-panel" id="pathwayPanel"></div>
-        </article>
+      <div class="wrap kme-disclosure-wrap">
+        <details class="kme-lesson-accordion" data-checklist-section="pathway-support">
+          <summary id="pathwayTitle">Pathway Support</summary>
+          <div class="kme-accordion-body">
+            <header class="section-head"><p>Choose support or extension for this skill.</p></header>
+            <article class="card">
+              <div class="pathway-tabs" id="pathwayTabs"></div>
+              <div class="pathway-panel" id="pathwayPanel"></div>
+            </article>
+          </div>
+        </details>
       </div>
     </section>
 
     <section class="kme-section" data-math-phase="reference" aria-labelledby="vocabTitle">
-      <div class="wrap">
-        <header class="section-head">
-          <h2 id="vocabTitle">Vocabulary Bridge</h2>
-          <p>Connect mathematical language across languages.</p>
-        </header>
-        <article class="card">
-          <div class="vocab-controls field">
-            <label for="vocabLanguage">Bridge Language</label>
-            <select id="vocabLanguage"></select>
+      <div class="wrap kme-disclosure-wrap">
+        <details class="kme-lesson-accordion" data-checklist-section="vocabulary-bridge">
+          <summary id="vocabTitle">Vocabulary Bridge</summary>
+          <div class="kme-accordion-body">
+            <header class="section-head"><p>Connect mathematical language across languages.</p></header>
+            <article class="card vocab-card">
+              <div class="vocab-toolbar">
+                <div class="field vocab-field">
+                  <label for="vocabLanguage">Bridge Language</label>
+                  <select id="vocabLanguage"></select>
+                </div>
+              </div>
+              <div class="table-scroll" tabindex="0" aria-label="Vocabulary table">
+                <table class="vocab-table">
+                  <thead><tr><th>English</th><th id="languageHeading">Translation</th><th>Meaning</th></tr></thead>
+                  <tbody id="vocabBody"></tbody>
+                </table>
+              </div>
+            </article>
           </div>
-          <div class="table-scroll" tabindex="0" aria-label="Vocabulary table">
-            <table class="vocab-table">
-              <thead>
-                <tr>
-                  <th>English</th>
-                  <th id="languageHeading">Translation</th>
-                  <th>Meaning</th>
-                </tr>
-              </thead>
-              <tbody id="vocabBody"></tbody>
-            </table>
-          </div>
-        </article>
+        </details>
       </div>
     </section>
 
@@ -283,21 +285,35 @@
     </section>
 
     <section class="kme-section" data-math-phase="exit" aria-labelledby="reflectionTitle">
-      <div class="wrap">
-        <header class="section-head">
-          <h2 id="reflectionTitle">Reflection</h2>
-          <p>Explain what changed in your thinking.</p>
-        </header>
-        <article class="card">
-          <div class="field">
-            <label for="reflection">What idea, strategy, or error will you remember?</label>
-            <textarea id="reflection"></textarea>
+      <div class="wrap kme-disclosure-wrap">
+        <details class="kme-lesson-accordion" data-checklist-section="reflection">
+          <summary id="reflectionTitle">Reflection</summary>
+          <div class="kme-accordion-body">
+            <header class="section-head"><p>Explain what changed in your thinking.</p></header>
+            <article class="card">
+              <div class="field">
+                <label for="reflection">What idea, strategy, or error will you remember?</label>
+                <textarea id="reflection"></textarea>
+              </div>
+              <div class="actions kme-field-actions">
+                <button class="btn" id="saveReflection" type="button">Save Reflection</button>
+              </div>
+              <p id="reflectionMessage" aria-live="polite"></p>
+            </article>
           </div>
-          <div class="actions">
-            <button class="btn" id="saveReflection" type="button">Save Reflection</button>
-          </div>
-          <p id="reflectionMessage" aria-live="polite"></p>
+        </details>
+      </div>
+    </section>
 
+    <section class="kme-section" id="lessonCompletion" aria-labelledby="lessonCompletionTitle">
+      <div class="wrap">
+        <article class="kme-completion-card">
+          <header class="section-head">
+            <h2 id="lessonCompletionTitle">Lesson Completion Checklist</h2>
+            <p>Complete every required section and reach at least 80% mastery before moving forward.</p>
+          </header>
+          <div id="lessonCompletionChecklist" class="kme-completion-list" aria-live="polite"></div>
+          <div class="kme-completion-status" id="lessonCompletionStatus" role="status"></div>
           <nav class="lesson-nav" aria-label="Lesson navigation">
             <a class="btn" id="previousLesson" href="#">Previous Lesson</a>
             <a class="btn" id="nextLesson" href="#">Next Lesson</a>
