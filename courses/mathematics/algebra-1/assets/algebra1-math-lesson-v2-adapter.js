@@ -370,14 +370,17 @@
    document.documentElement.dataset.khaemenesMathEngineActive=VERSION;
  }
  function observeGeneratedLesson(){
-   if(observing)return; observing=true;
+   if(observing)return;
    const main=$("#main")||$("main"); if(!main)return;
-   let queued=false;
+   if(main.querySelector("article.card, section .wrap"))return;
+   observing=true;
    const observer=new MutationObserver(()=>{
-     if(queued)return; queued=true;
-     requestAnimationFrame(()=>{queued=false;normalize()});
+     if(!main.querySelector("article.card, section .wrap"))return;
+     observer.disconnect(); observing=false;
+     requestAnimationFrame(normalize);
    });
    observer.observe(main,{childList:true,subtree:true});
+   setTimeout(()=>{observer.disconnect();observing=false},3000);
  }
  const api={version:VERSION,normalize,renderChecklist,gateNext};
  window.KhaemenesAlgebra1LessonV2=Object.freeze(api);
