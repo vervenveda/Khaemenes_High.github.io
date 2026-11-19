@@ -2,13 +2,10 @@ import fs from "node:fs";
 import path from "node:path";
 
 const root=process.cwd();
-const courses=[
-  {id:"pre-algebra",root:"courses/mathematics/pre-algebra",adapter:"assets/prealgebra-math-lesson-v2-adapter.js",ref:"prealgebra-math-lesson-v2-adapter.js"},
-  {id:"algebra-1",root:"courses/mathematics/algebra-1",adapter:"assets/algebra1-math-lesson-v2-adapter.js",ref:"algebra1-math-lesson-v2-adapter.js"}
-];
-
-const protectedRoute=/(^|\\/)(assessment|assessments|diagnostic|diagnostics|midterm|midterms|final|finals)(\\/|$)/i;
-const lessonRoute=/(^|\\/)lessons\\/.*\\.html$/i;
+const mathRoot=path.join(root,"courses/mathematics");
+const protectedRoute=/(^|\/)(assessment|assessments|diagnostic|diagnostics|midterm|midterms|final|finals)(\/|$)/i;
+const lessonRoute=/(^|\/)lessons\/.*\.html$/i;
+const adapterPattern=/-math-lesson-v2-adapter\.js$/;
 const failures=[];
 const report=[];
 
@@ -23,46 +20,68 @@ function walk(dir){
   return out;
 }
 
-for(const course of courses){
-  const courseRoot=path.join(root,course.root);
-  const adapterPath=path.join(courseRoot,course.adapter);
-  const adapter=fs.readFileSync(adapterPath,"utf8");
-  const m=adapter.match(/const VERSION="([^"]+)"/);
-  if(!m) throw new Error(course.id+": adapter VERSION not found");
-  const version=m[1];
-  const files=walk(courseRoot);
-  const adopted=[];
-  const protectedHits=[];
+const courseDirs=fs.readdirSync(mathRoot,{withFileTypes:true})
+  .filter(entry=>entry.isDirectory())
+  .map(entry=>path.join(mathRoot,entry.name));
 
-  for(const file of files){
-    if(!file.endsWith(".html")) continue;
-    const rel=path.relative(courseRoot,file).split(path.sep).join("/");
-    const html=fs.readFileSync(file,"utf8");
-    const hasRef=html.includes(course.ref);
+for(const courseRoot of courseDirs){
+  const assets=path.join(courseRoot,"assets");
+  if(!fs.existsSync(assets)) continue;
+  const adapterFiles=fs.readdirSync(assets)
+    .filter(name=>adapterPattern.test(name));
 
-    if(protectedRoute.test(rel) && hasRef){
-      protectedHits.push(rel);
-      failures.push(course.id+": protected route contains lesson adapter: "+rel);
+  for(const adapterName of adapterFiles){
+    const adapterPath=path.join(assets,adapterName);
+    const adapter=fs.readFileSync(adapterPath,"utf8");
+    const versionMatch=adapter.match(/const VERSION="([^"]+)"/);
+    const course=path.basename(courseRoot);
+
+    if(!versionMatch){
+      failures.push(course+": adapter VERSION not found in "+adapterName);
       continue;
     }
 
-    if(!lessonRoute.test(rel) || !hasRef) continue;
-    adopted.push(rel);
+    const version=versionMatch[1];
+    const files=walk(courseRoot);
+    let adoptedLessons=0;
+    let protectedAdapterHits=0;
 
-    const expected=course.ref+"?v="+version;
-    const escaped=course.ref.replace(/[.*+?^\${}()|[\\]\\\\]/g,"\\$&");
-    const count=(html.match(new RegExp(escaped,"g"))||[]).length;
-    if(count!==1) failures.push(course.id+": expected exactly one adapter reference in "+rel+"; found "+count);
-    if(!html.includes(expected)) failures.push(course.id+": stale cache/version token in "+rel+"; expected "+expected);
+    for(const file of files){
+      if(!file.endsWith(".html")) continue;
+      const rel=path.relative(courseRoot,file).split(path.sep).join("/");
+      const html=fs.readFileSync(file,"utf8");
+      const count=html.split(adapterName).length-1;
+      const hasRef=count>0;
+
+      if(protectedRoute.test(rel) && hasRef){
+        protectedAdapterHits++;
+        failures.push(course+": protected route contains lesson adapter: "+rel);
+        continue;
+      }
+
+      if(!lessonRoute.test(rel) || !hasRef) continue;
+      adoptedLessons++;
+
+      const expected=adapterName+"?v="+version;
+      if(count!==1) failures.push(course+": expected exactly one adapter reference in "+rel+"; found "+count);
+      if(!html.includes(expected)) failures.push(course+": stale cache/version token in "+rel+"; expected "+expected);
+    }
+
+    report.push({course,adapter:adapterName,version,adoptedLessons,protectedAdapterHits});
   }
-
-  report.push({course:course.id,version,adoptedLessons:adopted.length,protectedAdapterHits:protectedHits.length});
 }
 
 console.table(report);
+
+if(!report.length){
+  console.error("No Mathematics Engine lesson adapters were discovered.");
+  process.exit(1);
+}
+
 if(failures.length){
-  console.error("\\nMathematics Engine lesson-shell integrity FAILED");
+  console.error("\nMathematics Engine lesson-shell integrity FAILED");
   for(const failure of failures) console.error(" - "+failure);
   process.exit(1);
 }
-console.log("\\nMathematics Engine lesson-shell integrity PASS");
+
+console.log("\nMathematics Engine lesson-shell integrity PASS");
