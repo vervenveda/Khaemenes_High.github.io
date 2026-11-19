@@ -1,0 +1,149 @@
+name: One-use mathematics assessment directive rollout
+on:
+  push:
+    branches: [main]
+    paths:
+      - ".github/workflows/one-use-math-assessment-directive-rollout.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  rollout:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "24"
+      - name: Roll out shared directive scripts and Pre-Algebra unit bridge
+        shell: bash
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          import re
+
+          root=Path(".")
+          tags='''<script src="/Khaemenes_High.github.io/courses/mathematics/assets/math-assessment-directive-config-v1.js"></script>
+          <script src="/Khaemenes_High.github.io/courses/mathematics/assets/math-assessment-directive-v1.js"></script>
+          '''
+          targets=[]
+
+          # Readiness diagnostics.
+          for course in ("pre-algebra","algebra-1","geometry","algebra-2"):
+              targets.append(root/f"courses/mathematics/{course}/diagnostic/index.html")
+
+          # Weekly mastery centers.
+          for course in ("pre-algebra","algebra-1","geometry","algebra-2"):
+              targets.append(root/f"courses/mathematics/{course}/assessments/weekly-mastery.html")
+
+          # Cumulative assessments.
+          targets += [
+              root/"courses/mathematics/pre-algebra/assessments/midterm-units-01-07.html",
+              root/"courses/mathematics/pre-algebra/assessments/final-exam-36-weeks.html",
+              root/"courses/mathematics/algebra-1/assessments/midterm-units-01-06.html",
+              root/"courses/mathematics/algebra-1/assessments/final-exam-36-weeks.html",
+              root/"courses/mathematics/geometry/assessments/midterm.html",
+              root/"courses/mathematics/geometry/assessments/final.html",
+              root/"courses/mathematics/algebra-2/assessments/midterm.html",
+              root/"courses/mathematics/algebra-2/assessments/final.html",
+          ]
+
+          # Formal unit mastery surfaces.
+          for course in ("pre-algebra","algebra-1","geometry","algebra-2"):
+              for unit in range(1,14):
+                  targets.append(root/f"courses/mathematics/{course}/units/unit-{unit:02d}/assessment/mastery-check.html")
+
+          # Pre-Algebra preparatory exit gate.
+          targets.append(root/"courses/mathematics/pre-algebra/units/unit-00/assessment/exit-mastery.html")
+
+          missing=[str(p) for p in targets if not p.exists()]
+          if missing:
+              raise SystemExit("Missing expected assessment pages:\n" + "\n".join(missing))
+
+          changed_pages=0
+          for p in targets:
+              text=p.read_text(encoding="utf-8")
+              before=text
+              # Normalize accidental duplicate copies before inserting exactly once.
+              text=re.sub(r'\s*<script src="/Khaemenes_High\.github\.io/courses/mathematics/assets/math-assessment-directive-config-v1\.js"></script>\s*',"\n",text)
+              text=re.sub(r'\s*<script src="/Khaemenes_High\.github\.io/courses/mathematics/assets/math-assessment-directive-v1\.js"></script>\s*',"\n",text)
+              if "</head>" not in text:
+                  raise SystemExit(f"No </head> in {p}")
+              text=text.replace("</head>",tags+"</head>",1)
+              if text!=before:
+                  p.write_text(text,encoding="utf-8")
+                  changed_pages+=1
+
+          # Pre-Algebra unit wrapper bridge: capture the result stamp before the
+          # scoring handler, then show a directive only when a new verified result
+          # exists after the scoring handler completes.
+          wrappers=sorted(root.glob("courses/mathematics/pre-algebra/units/unit-*/assets/assessment-engine.js"))
+          wrappers=[p for p in wrappers if re.search(r"unit-\d{2}/assets/assessment-engine\.js$",p.as_posix())]
+          if len(wrappers)!=13:
+              raise SystemExit(f"Expected 13 Pre-Algebra unit wrappers, found {len(wrappers)}")
+
+          bridge='''function directiveStamp(){const r=read(config?.storage_key);if(!r||typeof r!=="object")return"";return String(r.completed_at||r.timestamp||r.latest_completed_at||"")+"|"+String(r.latest_percent??r.score??"")}
+          '''
+          old_re=re.compile(r'document\.getElementById\("submitButton"\)\?\.addEventListener\("click",\(\)=>setTimeout\(\(\)=>\{harden\(\);decorate\(\)\},0\)\);')
+          replacement='''(()=>{const b=document.getElementById("submitButton");if(b){let before="";b.addEventListener("click",()=>{before=directiveStamp()},true);b.addEventListener("click",()=>setTimeout(()=>{const r=harden();decorate();const after=directiveStamp();if(r&&after&&after!==before&&r.__persistence!=="memory-only")window.KhaemenesMathAssessmentDirective?.show({kind:"unit",unit:unitNo,score:Number(r.latest_percent),mastered:Number(r.latest_percent)>=MIN})},0))}})();'''
+          wrapped=0
+          for p in wrappers:
+              text=p.read_text(encoding="utf-8")
+              if "KhaemenesMathAssessmentDirective?.show" in text:
+                  wrapped+=1
+                  continue
+              if "function install()" not in text:
+                  raise SystemExit(f"Install hook missing in {p}")
+              text=text.replace("function install()",bridge+"function install()",1)
+              text,n=old_re.subn(replacement,text,count=1)
+              if n!=1:
+                  raise SystemExit(f"Submit bridge pattern missing in {p}")
+              p.write_text(text,encoding="utf-8")
+              wrapped+=1
+
+          # Acceptance: exact one shared directive pair per target.
+          for p in targets:
+              text=p.read_text(encoding="utf-8")
+              if text.count("math-assessment-directive-config-v1.js")!=1:
+                  raise SystemExit(f"Config directive count invalid in {p}")
+              if text.count("math-assessment-directive-v1.js")!=1:
+                  raise SystemExit(f"Directive script count invalid in {p}")
+
+          for p in wrappers:
+              text=p.read_text(encoding="utf-8")
+              if text.count("KhaemenesMathAssessmentDirective?.show")!=1:
+                  raise SystemExit(f"Directive bridge count invalid in {p}")
+
+          print(f"Assessment pages certified: {len(targets)}")
+          print(f"Assessment pages changed: {changed_pages}")
+          print(f"Pre-Algebra unit wrappers certified: {wrapped}")
+          PY
+
+      - name: Parse changed JavaScript
+        shell: bash
+        run: |
+          node --check courses/mathematics/assets/math-assessment-directive-config-v1.js
+          node --check courses/mathematics/assets/math-assessment-directive-v1.js
+          for f in courses/mathematics/pre-algebra/units/unit-*/assets/assessment-engine.js; do node --check "$f"; done
+
+      - name: Run existing assessment regressions
+        shell: bash
+        run: |
+          node --test tests/math-assessment-organization-recovery.test.mjs
+          node --test tests/math-assessment-worksheet-surface.test.mjs
+          node tools/test-math-assessment-submission-integrity.mjs
+
+      - name: Commit rollout
+        shell: bash
+        run: |
+          if git diff --quiet; then
+            echo "No rollout changes required."
+            exit 0
+          fi
+          git config user.name "Khaemenes repair workflow"
+          git config user.email "actions@users.noreply.github.com"
+          git add courses/mathematics
+          git commit -m "feat(math): roll out assessment directive across learner surfaces"
+          git push
