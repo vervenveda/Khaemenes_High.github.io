@@ -6,7 +6,7 @@ import {fileURLToPath} from "node:url";
 const here=path.dirname(fileURLToPath(import.meta.url));
 const src=fs.readFileSync(path.resolve(here,"../../assets/prealgebra-cumulative-gates-v1.js"),"utf8");
 class Store{constructor(){this.m=new Map()}get length(){return this.m.size}key(i){return [...this.m.keys()][i]??null}getItem(k){return this.m.get(k)??null}setItem(k,v){this.m.set(k,String(v))}}
-const localStorage=new Store(),window={};vm.createContext({window,localStorage,JSON,Number,String,Array,Object,Set,Math,encodeURIComponent});vm.runInContext(src,{window,localStorage,JSON,Number,String,Array,Object,Set,Math,encodeURIComponent});
+const localStorage=new Store(),window={},context={window,localStorage,JSON,Number,String,Array,Object,Set,Math,encodeURIComponent};vm.createContext(context);vm.runInContext(src,context);
 const G=window.KhaemenesPreAlgebraCumulativeGate;
 const counts=G.lessonCounts,weeks=G.unitWeeks;
 const passUnit=u=>localStorage.setItem("khaemenes-prealgebra-u"+String(u).padStart(2,"0")+"-mastery-v1",JSON.stringify({best_percent:80}));
