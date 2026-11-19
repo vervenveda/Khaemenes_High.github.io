@@ -55,7 +55,6 @@ function unitEvidence(n){
  if(dedicatedBest!==null)candidates.push({source:"dedicated-a3",score:dedicatedBest,key:dedicatedKey(unit)});
  const sharedBest=numeric(records.shared?.scores?.mastery);
  if(sharedBest!==null)candidates.push({source:"shared-progress",score:sharedBest,key:sharedKey(unit)});
- if(Array.isArray(records.shared?.completed)&&records.shared.completed.includes("mastery")&&sharedBest===null)candidates.push({source:"shared-progress-completed",score:MASTERY,key:sharedKey(unit)});
  candidates.sort((a,b)=>b.score-a.score);
  const best=candidates[0]||null;
  return {unit,threshold:MASTERY,mastery:!!best&&best.score>=MASTERY,best:best?.score??null,source:best?.source??null,key:best?.key??null,candidates};
@@ -66,7 +65,6 @@ function lessonEvidence(unitNumber,lessonNumber,lessonIdValue=null){
  if(dedicated!==null)candidates.push({source:"dedicated-a3",score:dedicated,key:dedicatedKey(unit)});
  const shared=numeric(records.shared?.scores?.[id]);
  if(shared!==null)candidates.push({source:"shared-progress",score:shared,key:sharedKey(unit)});
- if(Array.isArray(records.shared?.completed)&&records.shared.completed.includes(id)&&shared===null)candidates.push({source:"shared-progress-completed",score:MASTERY,key:sharedKey(unit)});
  candidates.sort((a,b)=>b.score-a.score);
  const best=candidates[0]||null;
  return {unit,lesson,lesson_id:id,threshold:MASTERY,mastery:!!best&&best.score>=MASTERY,best:best?.score??null,source:best?.source??null,key:best?.key??null,candidates};
@@ -97,10 +95,24 @@ function cumulativeEvidence(key){
  const record=safe(key,null),attempts=Array.isArray(record?.attempt_history)?record.attempt_history:[],masteryAttempts=attempts.filter(a=>a?.mastery===true&&!a?.legacy_selected_only),valid=masteryAttempts.filter(validEvaluatorReview),scores=valid.map(a=>numeric(a?.overall_percent)).filter(v=>v!==null),best=scores.length?Math.max(...scores):null;
  return {key,threshold:MASTERY,mastery:best!==null&&best>=MASTERY,best,reviewed_mastery_attempts:valid.length,rejected_unstructured_review_attempts:masteryAttempts.length-valid.length,evaluator_review_schema:"khaemenes-algebra1-evaluator-review-v1",evaluator_identity_required:true,evaluator_attestation_required:true};
 }
+function unitLessonRefs(unitNumber){
+ const unit=Number(unitNumber),seen=new Set(),out=[];
+ Object.values(WEEK_LESSONS).flat().forEach(ref=>{const [u,l]=ref||[];if(Number(u)!==unit)return;const id=lessonId(u,l);if(seen.has(id))return;seen.add(id);out.push({unit:Number(u),lesson:Number(l),lesson_id:id})});
+ return out;
+}
+function unitWeekRefs(unitNumber){
+ const unit=Number(unitNumber),out=[];
+ Object.entries(WEEK_LESSONS).forEach(([week,refs])=>{if((refs||[]).some(ref=>Number(ref?.[0])===unit))out.push(Number(week))});
+ return out;
+}
+function unitProgressionComplete(unitNumber){
+ const unit=Number(unitNumber),lessons=unitLessonRefs(unit),weeks=unitWeekRefs(unit);
+ return unitEvidence(unit).mastery&&lessons.length>0&&lessons.every(ref=>lessonEvidence(ref.unit,ref.lesson,ref.lesson_id).mastery)&&weeks.length>0&&weeks.every(w=>weekEvidence(w).mastery);
+}
 function allUnitsMastered(first=1,last=13){for(let n=Number(first);n<=Number(last);n++)if(!unitEvidence(n).mastery)return false;return true}
 function allWeeksMastered(first=2,last=36){for(let n=Number(first);n<=Number(last);n++)if(!weekEvidence(n).mastery)return false;return true}
 window.KhaemenesAlgebra1MasteryAuthority={
- version:"1.4",
+ version:"1.5",
  threshold:MASTERY,
  // Browser-local progression is not a trusted official transcript or
  // authenticated evaluator decision. Additive metadata only; current gates
@@ -119,6 +131,9 @@ window.KhaemenesAlgebra1MasteryAuthority={
  weekLessonMap:WEEK_LESSONS,
  unitEvidence,
  unitMastered:n=>unitEvidence(n).mastery,
+ unitLessonRefs,
+ unitWeekRefs,
+ unitProgressionComplete,
  lessonEvidence,
  lessonMastered:(u,l,id=null)=>lessonEvidence(u,l,id).mastery,
  weekLessonRefs,
