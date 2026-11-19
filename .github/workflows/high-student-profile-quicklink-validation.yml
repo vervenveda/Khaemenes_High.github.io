@@ -7,8 +7,6 @@ on:
       - 'index.html'
       - 'grades/**/index.html'
       - 'grades/grade-09/student-profile/**'
-      - 'grades/shared/upper-grade-seven-class.js'
-      - 'grades/shared/upper-grade-profile.css'
       - 'grades/shared/student-profile-compact-panels.js'
       - 'courses/shared/high-school-course-pins.js'
       - 'courses/shared/high-school-eight-class.js'
@@ -35,8 +33,6 @@ on:
       - 'index.html'
       - 'grades/**/index.html'
       - 'grades/grade-09/student-profile/**'
-      - 'grades/shared/upper-grade-seven-class.js'
-      - 'grades/shared/upper-grade-profile.css'
       - 'grades/shared/student-profile-compact-panels.js'
       - 'courses/shared/high-school-course-pins.js'
       - 'courses/shared/high-school-eight-class.js'
@@ -73,8 +69,8 @@ jobs:
         run: node --check assets/vnv-beta-link.js
       - name: Syntax check High School pin store
         run: node --check courses/shared/high-school-course-pins.js
-      - name: Syntax check upper-grade profile engine
-        run: node --check grades/shared/upper-grade-seven-class.js
+      - name: Syntax check canonical upper-grade profile blueprint
+        run: node --check grades/shared/grade09-blueprint-upper-grade.js
       - name: Syntax check compact profile dialogs
         run: node --check grades/shared/student-profile-compact-panels.js
       - name: Syntax check student personalization scripts
