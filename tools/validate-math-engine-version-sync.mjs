@@ -13,7 +13,7 @@ const baseline=Object.freeze({
   "pre-algebra":{lessons:97,adapter:"prealgebra-math-lesson-v2-adapter.js"},
   "algebra-1":{lessons:87,adapter:"algebra1-math-lesson-v2-adapter.js"},
   "geometry":{lessons:90,adapter:"geometry-math-lesson-v2-adapter.js"},
-  "algebra-2":{lessons:92,adapter:"algebra2-math-lesson-v2-adapter.js"}
+  "algebra-2":{lessons:92,adapter:"algebra2-math-lesson-v2-adapter.js",rollout:"pending"}
 });
 const protectedRoute=/(^|\/)(assessment|assessments|diagnostic|diagnostics|midterm|midterms|final|finals)(\/|$)/i;
 const standardLesson=/^units\/unit-(?:0[1-9]|1[0-3])\/lessons\/[^/]+\.html$/i;
@@ -69,7 +69,8 @@ for(const [course,expected] of Object.entries(baseline)){
     if(!isStandard(course,rel))continue;
     if(localCount!==1){
       if(localCount===0)missing++;
-      failures.push(course+": "+rel+" requires exactly one "+expected.adapter+" (found "+localCount+")");
+      if(expected.rollout!=="pending" || localCount>1)
+        failures.push(course+": "+rel+" requires exactly one "+expected.adapter+" (found "+localCount+")");
     }else{
       adopted++;
       const escaped=expected.adapter.replace(/[.*+?^\x24{}()|[\]\\]/g,"\\$&");
@@ -79,8 +80,10 @@ for(const [course,expected] of Object.entries(baseline)){
     if(names.some(name=>name!==expected.adapter))
       failures.push(course+": foreign lesson engine adapter found: "+rel);
   }
-  if(adopted!==expected.lessons)failures.push(course+": adopted lessons "+adopted+" / "+expected.lessons);
-  report.push({course,version,expected:expected.lessons,standard:standard.length,adopted,missing,protectedHits});
+  if(expected.rollout==="pending"){
+    if(adopted!==0)failures.push(course+": partial adapter rollout "+adopted+"/"+expected.lessons+"; perform representative lesson acceptance and authorize atomic rollout before certification");
+  }else if(adopted!==expected.lessons)failures.push(course+": adopted lessons "+adopted+" / "+expected.lessons);
+  report.push({course,rollout:expected.rollout||"certified-source",version,expected:expected.lessons,standard:standard.length,adopted,missing,protectedHits});
 }
 // Future course adapters cannot be silently introduced without an explicit
 // approved syllabus inventory and assessment-firewall release review.
@@ -97,4 +100,4 @@ if(failures.length){
   console.error("\nMathematics Engine integrity FAIL ("+failures.length+" issue(s))");
   for(const msg of failures)console.error(" - "+msg);
   process.exitCode=1;
-}else console.log("\nMathematics Engine integrity PASS: lesson coverage, cache versions, and assessment firewall");
+}else console.log("\nMathematics Engine integrity PASS for certified course rollouts. Algebra II is explicitly pending (0/92), not certified.");
