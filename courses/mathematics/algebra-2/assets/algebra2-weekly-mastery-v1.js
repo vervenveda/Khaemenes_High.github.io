@@ -1,0 +1,15 @@
+/* Algebra II · canonical weekly mastery adapter v1 */
+(()=>{"use strict";
+const D=window.ALGEBRA2_DATA,depth=Array.isArray(window.ALGEBRA2_DEPTH_QUESTIONS)?window.ALGEBRA2_DEPTH_QUESTIONS:[],P=window.KhaemenesAlgebra2Progression;
+if(!D||!P)return;
+const dims=["procedural-fluency","multi-step-application","representation-interpretation","error-analysis","transfer-reasoning"],storageKey="khaemenes-algebra2-weekly-mastery-v1";
+const graded=(D.weeks||[]).filter(w=>Number(w.week)>=2&&Number(w.week)<=36&&Number(w.week)!==18&&Number(w.unit));
+function select(w){const pool=depth.filter(q=>Number(q.week)===Number(w)),used=new Set(),lessonCounts={},out=[];const choose=list=>{const avail=list.filter(q=>!used.has(String(q.id)));if(!avail.length)return null;const min=Math.min(...avail.map(q=>lessonCounts[q.lesson]||0));return avail.filter(q=>(lessonCounts[q.lesson]||0)===min).sort((a,b)=>(Number(a.lesson)-Number(b.lesson))||(Number(a.difficulty||2)-Number(b.difficulty||2))||String(a.id).localeCompare(String(b.id)))[0]||null};for(const d of dims){for(let i=0;i<2;i++){const q=choose(pool.filter(x=>x.dimension===d));if(!q)break;out.push(q);used.add(String(q.id));lessonCounts[q.lesson]=(lessonCounts[q.lesson]||0)+1}}return out.slice(0,10)}
+const bank={};for(const row of graded){const qs=select(row.week);bank[String(row.week)]={week:Number(row.week),unit:Number(row.unit),title:row.title,questions:qs}}
+function readWeekly(){try{const key=window.KhaemenesLearnerScope?.scopedKey?.(storageKey)||storageKey;return window.KhaemenesMathStorageAdapter?.readJSON?.(key,{weeks:{}})||JSON.parse(localStorage.getItem(key)||"null")||{weeks:{}}}catch{return{weeks:{}}}}
+function weekMastered(w){const r=readWeekly()?.weeks?.[w];return Number(r?.best)>=80||r?.attempts?.some(a=>Number(a?.score)>=80)}
+function priorGraded(w){const idx=graded.findIndex(x=>Number(x.week)===Number(w));return idx>0?Number(graded[idx-1].week):null}
+function missingFor(w){const row=(D.weeks||[]).find(x=>Number(x.week)===Number(w)),missing=[];if(!P.readinessRecorded())missing.push("Complete the Algebra II readiness diagnostic at 80%.");for(const id of row?.lesson_ids||[])if(!P.lessonMastered(id))missing.push("Master "+id+" at 80% before this weekly check.");if(Number(w)===19&&!P.midtermMastered())missing.push("Complete the reviewed Midterm at 80% before Week 19.");const prior=priorGraded(w);if(prior&&prior!==17&&!weekMastered(prior))missing.push("Complete Week "+String(prior).padStart(2,"0")+" weekly mastery at 80% first.");return missing}
+const invalid=graded.filter(w=>bank[String(w.week)].questions.length!==10);
+window.KhaemenesMathWeeklyAdapter={course:"algebra-2",title:"Algebra II Weekly Mastery",storageKey,weeks:graded.map(w=>({week:Number(w.week),title:w.title,unit:Number(w.unit)})),bank,defaultWeek:2,missingFor,ready:invalid.length===0,invalidWeeks:invalid.map(x=>x.week)};
+})();
