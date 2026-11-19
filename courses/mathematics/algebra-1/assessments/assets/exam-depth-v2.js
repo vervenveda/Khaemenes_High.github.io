@@ -55,10 +55,10 @@ function missingFor(id){
  const A=authority();if(!A)return ["Canonical Algebra I mastery evidence authority"];
  const missing=[];
  if(id==="KH-MATH-A1-MIDTERM-U01-U06"){
-  for(let u=1;u<=6;u++)if(!A.unitMastered(u))missing.push(`Unit ${String(u).padStart(2,"0")} mastery`);
+  for(let u=1;u<=6;u++)if(A.unitProgressionComplete?.(u)!==true)missing.push(`Unit ${String(u).padStart(2,"0")} full lesson, weekly, and unit mastery evidence`);
   for(let w=2;w<=18;w++)if(!A.weekMastered(w))missing.push(`Week ${String(w).padStart(2,"0")} mastery`);
  }else if(id==="KH-MATH-A1-FINAL-36W"){
-  for(let u=1;u<=13;u++)if(!A.unitMastered(u))missing.push(`Unit ${String(u).padStart(2,"0")} mastery`);
+  for(let u=1;u<=13;u++)if(A.unitProgressionComplete?.(u)!==true)missing.push(`Unit ${String(u).padStart(2,"0")} full lesson, weekly, and unit mastery evidence`);
   for(let w=2;w<=36;w++)if(!A.weekMastered(w))missing.push(`Week ${String(w).padStart(2,"0")} mastery`);
   if(!A.midtermMastered())missing.push("reviewed Midterm mastery");
  }
