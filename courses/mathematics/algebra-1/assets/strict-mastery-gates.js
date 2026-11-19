@@ -8,7 +8,7 @@ function unitMastered(n){return n<1||!!A?.unitMastered(n)}
 function midtermMastered(){return !!A?.midtermMastered()}
 function weekMastered(n){return !!A?.weekMastered(n)}
 function lessonMastered(l){return !!(l&&A?.lessonMastered(unitNo,l.number,l.id))}
-function unitUnlocked(){if(!A)return false;if(unitNo===1)return true;if(!unitMastered(unitNo-1))return false;if(unitNo>=7&&!midtermMastered())return false;return true}
+function unitUnlocked(){if(!A)return false;if(unitNo===1)return true;if(A.unitProgressionComplete?.(unitNo-1)!==true)return false;if(unitNo>=7&&!midtermMastered())return false;return true}
 function lessonUnlocked(number){if(!unitUnlocked())return false;if(number<=1)return true;const prev=lessons.find(l=>l.number===number-1),cur=lessons.find(l=>l.number===number);if(!lessonMastered(prev))return false;if(Number(cur?.week)>Number(prev?.week)&&!weekMastered(Number(prev.week)))return false;return true}
 function allLessonsMastered(){return lessons.length>0&&lessons.every(lessonMastered)}
 function allWeeksMastered(){const weeks=[...new Set(lessons.map(l=>Number(l.week)).filter(Number.isFinite))];return weeks.length>0&&weeks.every(weekMastered)}
