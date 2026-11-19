@@ -5,7 +5,7 @@ import path from "node:path";
 import {fileURLToPath} from "node:url";
 const here=path.dirname(fileURLToPath(import.meta.url)),src=fs.readFileSync(path.resolve(here,"../../assets/mastery-authority-v1.js"),"utf8");
 const m=new Map(),localStorage={getItem:k=>m.get(k)??null,setItem:(k,v)=>m.set(k,String(v))},window={KhaemenesMathHardeningLoader:true};
-vm.createContext({window,localStorage,JSON,Number,String,Array,Object,Set,Math,Date});vm.runInContext(src,{window,localStorage,JSON,Number,String,Array,Object,Set,Math,Date});
+const context={window,localStorage,JSON,Number,String,Array,Object,Set,Math,Date};vm.createContext(context);vm.runInContext(src,context);
 const A=window.KhaemenesAlgebra1MasteryAuthority;
 m.set("khaemenes-algebra1-unit10-progress-v1",JSON.stringify({completed:["u10-l01","mastery"],scores:{}}));
 assert.equal(A.lessonMastered(10,1,"u10-l01"),false);assert.equal(A.unitMastered(10),false);
