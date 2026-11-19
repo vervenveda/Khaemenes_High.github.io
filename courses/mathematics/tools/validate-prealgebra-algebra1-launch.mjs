@@ -54,16 +54,19 @@ ok(a1Map.units.reduce((sum, unit) => sum + Number(unit.lesson_count || 0), 0) ==
 ok(a1Map.calendar?.midterm_after_week === 18, "Algebra I Midterm remains after Week 18");
 ok(a1Map.calendar?.final_week === 36, "Algebra I Final remains Week 36");
 
-const landing = read(path.join(a1, "index.html"));
+const doorway = read(path.join(a1,"index.html"));
+ok(doorway.includes("math-minimal-landing-v1.css"),"Algebra I public doorway retains minimalist layout");
+ok(doorway.includes('href="course-workspace.html"'),"Algebra I minimal doorway links full native course workspace");
+const landing = read(path.join(a1,"course-workspace.html"));
 const progression = read(path.join(a1, "assets/course-progression-gates.js"));
-ok(landing.includes('class="network-ticker"') || landing.includes('high-school-global-chrome-v2.js') || landing.includes('course-entry-contract.js'), "Algebra I landing carries or mounts the canonical ticker/chrome contract");
-ok(landing.includes('class="portal-menu"'), "Algebra I landing carries the dropdown course menu");
-ok(landing.includes('id="lessonLibrary"'), "Algebra I landing carries the lesson drawer directory");
-ok(landing.includes("87 Lesson Directory"), "Algebra I menu exposes the 87-lesson directory");
-ok(landing.includes('assets/course-progression-gates.js') && progression.includes("Capstone Planning Runway · Weeks 33–35") && progression.includes("intentionally non-graded") && progression.includes("awards no lesson, weekly, unit, capstone, or Final mastery credit"), "Algebra I landing renders the non-graded Weeks 33–35 capstone planning runway");
+ok(landing.includes('class="network-ticker"') || landing.includes('high-school-global-chrome-v2.js') || landing.includes('course-entry-contract.js'), "Algebra I full workspace carries or mounts the canonical ticker/chrome contract");
+ok(landing.includes('class="portal-menu"'), "Algebra I full workspace carries the dropdown course menu");
+ok(landing.includes('id="lessonLibrary"'), "Algebra I full workspace carries the lesson drawer directory");
+ok(landing.includes("87 Lesson Directory"), "Algebra I workspace menu exposes the 87-lesson directory");
+ok(landing.includes('assets/course-progression-gates.js') && progression.includes("Capstone Planning Runway · Weeks 33–35") && progression.includes("intentionally non-graded") && progression.includes("awards no lesson, weekly, unit, capstone, or Final mastery credit"), "Algebra I full workspace renders the non-graded Weeks 33–35 capstone planning runway");
 const authorityPos = landing.indexOf('assets/mastery-authority-v1.js');
 const progressionPos = landing.indexOf('assets/course-progression-gates.js');
-ok(authorityPos >= 0 && progressionPos > authorityPos, "Algebra I landing loads mastery authority before progression gates");
+ok(authorityPos >= 0 && progressionPos > authorityPos, "Algebra I full workspace loads mastery authority before progression gates");
 ok(landing.includes("lessonGate(unit,lesson)") && landing.includes("A.weekMastered(previousWeek)"), "Algebra I lesson buttons honor lesson and weekly prerequisites");
 
 let mappedLessons = 0;
