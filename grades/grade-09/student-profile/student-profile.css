@@ -187,7 +187,7 @@ main>aside[aria-label="Student Learning Portfolio"] h2{font-size:20px!important;
 @media(max-width:450px){.door-grid{grid-template-columns:1fr}.hero{padding:24px 0 14px}.profile-row{grid-template-columns:1fr;text-align:center}.chip-row{justify-content:center}}
 
 
-/* Persistent learner schedule rail: seven academic slots plus personal Quick Pins. */
+/* Persistent learner schedule rail: eight academic slots plus personal Quick Pins. */
 .schedule-card{overflow:hidden}
 .schedule-bar-head{display:flex;align-items:flex-end;justify-content:space-between;gap:14px;flex-wrap:wrap}
 .schedule-bar-head strong{display:block;color:var(--forest);font:500 24px/1.35 var(--formal)}
