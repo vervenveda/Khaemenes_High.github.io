@@ -3,6 +3,7 @@
 
 | Date | Type | Entry | State |
 | --- | --- | --- | --- |
+| 2026-11-20 | curriculum · Grade 09 retention | [Grade 09 retention curriculum implementation](logs/2026/11/2026-11-20-grade09-retention-curriculum-implementation.md) | Science 8+2; English non-grading delayed retrieval; PE 15+5 with provenance; source PASS |
 | 2026-11-20 | repair · Grade 09 Science routing | [Grade 09 Science 9 routing repair](logs/2026/11/2026-11-20-grade09-science-routing-repair.md) | Student Profile now resolves first incomplete detailed Science lesson; Unit 00 fallback repaired; source routing PASS |
 | 2026-11-20 | closeout · Science 9 laboratory evidence | [Course-wide laboratory/evidence closeout](logs/2026/11/2026-11-20-science9-coursewide-laboratory-evidence-closeout.md) | Units 01–12 labs/checks normalized; Unit 12 totals corrected; 116-page Science 9 validator coverage; source PASS |
 | 2026-11-20 | repair · Science 9 laboratories | [Units 10–12 laboratory evidence layer](logs/2026/11/2026-11-20-science9-units10-12-laboratory-evidence-layer.md) | 12 labs + 12 linked 7/8 checks canonicalized; lab/question runtimes retained; source PASS |
