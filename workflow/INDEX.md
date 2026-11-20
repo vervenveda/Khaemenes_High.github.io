@@ -1,4 +1,6 @@
 | 2026-11-19 | math engine · recovery · guard | [Mathematics Engine coverage firewall and Algebra II pending rollout](logs/2026/11/2026-11-19-math-engine-recovery-coverage-firewall.md) | Pre-Algebra 97, Algebra I 87, Geometry 90 source-enrolled; Algebra II 0/92 pending; assessments protected; browser HOLD |
+
+| 2026-11-19 | English 9–12 · readiness UI · unified CSS | [Four-grade readiness presentation regression and source preservation](logs/2026/11/2026-11-19-english09-12-readiness-ui-cross-grade-regression.md) | 8-page source guard PASS; diagnostic academic blobs unchanged; missing upper-grade global chrome asset HOLD |
 | 2026-11-19 | math engine · release · protocol | [Mathematics Engine v2.2.3 higher-math rollout protocol](logs/2026/11/2026-11-19-math-engine-v2.2.3-higher-math-rollout-protocol.md) | Pre-Algebra 97 + Algebra I 87 lesson cache/version sync; guarded higher-math protocol + auto-discovered integrity validator installed; assessments protected |\n\n# Workflow Index
 
 | Date | Type | Entry | State |
