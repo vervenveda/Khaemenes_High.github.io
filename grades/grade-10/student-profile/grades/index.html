@@ -96,7 +96,8 @@ const cards=document.getElementById("g10GradeCards"),continuation=window.Khaemen
 const raw=valid?continuation?.readLearner?.(learnerId)||[]:[];
 const byCourse=new Map(raw.map(item=>[item.courseId,item]));
 for(const slot of slots){
- const entry=byCourse.get(slot.id);
+ const alias=slot.id==="english-10"?"ela10":null;
+ const entry=byCourse.get(slot.id)||(alias?byCourse.get(alias):null);
  const card=make("article");card.className="g10-card";
  card.append(make("h3",slot.label),make("p",slot.title));
  const pct=entry?.progress?.percent;
