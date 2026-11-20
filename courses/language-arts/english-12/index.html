@@ -103,7 +103,7 @@ table{width:100%;border-collapse:collapse}th,td{padding:.78rem;border-bottom:1px
       });
     };
     if(document.documentElement.dataset.khaeDualTicker==="mounted")mount();
-    else document.addEventListener("khaemenes-high-dual-ticker-ready",mount,{once:true});
+    else window.addEventListener("khaemenes-high-dual-ticker-ready",mount,{once:true});
   },{once:true});
   </script>
 
