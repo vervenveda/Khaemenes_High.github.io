@@ -2,6 +2,7 @@ name: Purged retired High School global chrome guard
 on:
   push:
     branches:
+      - main
       - fix/purge-retired-high-school-global-chrome-v2-20261119
     paths:
       - "courses/language-arts/english-*/index.html"
