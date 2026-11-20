@@ -27,7 +27,7 @@ function mount(){
 const grade=document.body?.dataset.socialStudiesEngine;
 const demo=document.body.hasAttribute("data-social-studies-demo");
 const path=location.pathname;
-const route=!demo&&path.match(/\/social-studies\/grade-(09|10|11|12)\/(?:weeks\/)?week-(\d{2})\/student-packet\.html$/);
+const route=!demo&&path.match(/\/social-studies\/grade-(09|10|11|12)\/(?:weeks\/)?week-(\d{2})\/student-packet(?:-v2)?\.html$/);
 const weekNumber=route?Number(route[2]):null;
 const week02=weekNumber===2,week03=weekNumber===3;
 const laterWeek=weekNumber!==null&&weekNumber>=4&&weekNumber<=36;
