@@ -45,8 +45,23 @@ for(const [grade,expect] of Object.entries(expected)){
  const text=course.mission+" "+course.steps.map(x=>x.join(" ")).join(" ");
  for(const signal of expect.must)assert.ok(text.includes(signal),"Missing curriculum-specific Grade "+grade+" detail: "+signal);
 }
-for(const p of ["courses/social-studies/grade-10/week-01/student-packet.html","courses/social-studies/grade-11/weeks/week-01/student-packet.html","courses/social-studies/grade-12/weeks/week-01/student-packet.html"]){
- assert.ok(fs.existsSync(p),"Original upper-grade packet missing: "+p);
- assert.ok(!read(p).includes("data-social-studies-engine"),"Unapproved upper-grade rollout: "+p);
+const weekOne={
+ "10":{path:"courses/social-studies/grade-10/week-01/student-packet.html",names:["Monday · Frame the Inquiry","Tuesday · Source, Contextualize, and Corroborate","Wednesday · Map, Measure, and Model","Thursday · Deliberate and Write","Friday · Synthesize, Assess, and Correct"]},
+ "11":{path:"courses/social-studies/grade-11/weeks/week-01/student-packet.html",names:["Monday · Frame the Inquiry","Tuesday · Source, Case, or Contract Laboratory","Wednesday · Model, Measure, and Test","Thursday · Argument, Deliberation, and Policy","Friday · Assess, Correct, and Transfer"]},
+ "12":{path:"courses/social-studies/grade-12/weeks/week-01/student-packet.html",names:["Monday · Concept and Inquiry Laboratory","Tuesday · Primary and Authoritative Source Laboratory","Wednesday · Comparative Data and Case Laboratory","Thursday · Argument, Seminar, and Performance Studio","Friday · Mastery, Correction, and Capstone Checkpoint"]}
+};
+for(const [grade,{path,names}] of Object.entries(weekOne)){
+ assert.ok(fs.existsSync(path),"Original upper-grade packet missing: "+path);
+ const html=read(path);
+ assert.ok(html.includes('data-social-studies-engine="'+grade+'"'),"Grade "+grade+" packet not opted in");
+ assert.ok(html.includes("social-studies-lesson-engine-v0.1.js?v=20261119-social-studies-all-grades-v2"),"Missing shared source on Grade "+grade);
+ for(const heading of names){
+  assert.ok(html.includes(">"+heading+"</h3>"),"Grade "+grade+" daily lesson anchor absent: "+heading);
+  assert.ok(js.includes(heading),"Shared engine lacks Grade "+grade+" native anchor: "+heading);
+ }
 }
-console.log("PASS Social Studies 9–12 curriculum mapping; Grade 09 native controls/evidence; isolated prototype; no grade or storage authority");
+assert.ok(js.includes('heading?.closest("article.lesson,section.card,article")'),"Upper-grade adapter must target actual original instructional sections");
+assert.ok(js.includes('if(targets&&(!targets.length||targets.some(x=>!x)))return false'),"Upper-grade adapter must fail open on unrecognized lesson packet");
+assert.ok(pilot.includes("social-studies-lesson-engine-v0.1.js?v=20261119-social-studies-all-grades-v2"),"Grade 09 must refresh latest shared engine");
+
+console.log("PASS Social Studies 9–12 Week 01 engine adapters, source-aligned day targets, Grade 09 original controls, no learner storage authority");
