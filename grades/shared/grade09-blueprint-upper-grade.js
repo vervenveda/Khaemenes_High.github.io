@@ -363,7 +363,7 @@ function renderTools(){
     return false;
    }},
   {label:"Student Progress",run:showUpperProgress},
-  {label:"Schedule",run:showUpperSchedule},
+  {label:"Schedule",url:highRoot+"grades/grade-"+grade+"/student-profile/schedule/"},
   {label:"KlasaiPeer",fallback:"https://vervenveda.com/Klasaipeer.github.io/",run:()=>{const studio=window.KhaemenesUpperGradeStudyStudio;if(studio?.open){studio.open(document.activeElement);return true}return false}},
   {label:"Yearbook",fallback:"https://vervenveda.com/Academy-Yearbook.github.io/",run:()=>{const yearbook=window.KhaemenesUpperGradeYearbook;if(yearbook?.open){yearbook.open(document.activeElement);return true}return false}},
   {label:"Creative Tools",run:()=>revealUpper("grade09BlueprintRooms")},
