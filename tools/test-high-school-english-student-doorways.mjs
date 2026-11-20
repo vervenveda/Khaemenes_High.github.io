@@ -17,6 +17,11 @@ for(const [grade,lesson] of Object.entries(paths)){
 for(const grade of [10,11,12]){
  const week=read(root+"english-"+grade+"/weeks/week-02/index.html");
  assert.match(week,/id=["']monday["']/,"Week 02 must provide the existing Monday lesson anchor");
+ const dailyRoom=read("grades/grade-"+grade+"/student-profile/daily-lessons/index.html");
+ assert.ok(dailyRoom.includes('const englishId={"english-10":"ela10","english-11":"ela11","english-12":"ela12"}'),"Grade "+grade+" Daily Lessons must recognize canonical English record ID");
+ assert.ok(dailyRoom.includes('const week=target.pathname.match('),"Grade "+grade+" Daily Lessons must select the native weekly lesson");
+ assert.ok(dailyRoom.includes('"#monday"')&&dailyRoom.includes('"#quiz"'),"Grade "+grade+" Daily Lessons must preserve native lesson/quiz anchors");
+ assert.ok(dailyRoom.includes('href=home; // Explicit existing record-recovery surface'),"Grade "+grade+" recovery must be explicit and fail closed");
  const profile=read("grades/grade-"+grade+"/student-profile/index.html");
  assert.ok(profile.includes("grade09-blueprint-upper-grade.js?v=20261119-english-student-lessons-v2"),"Grade "+grade+" must refresh course-door script");
  assert.ok(profile.includes("upper-grade-daily-focus.js?v=20261119-english-student-lessons-v1"),"Grade "+grade+" must refresh Daily Focus script");
@@ -29,6 +34,7 @@ assert.ok(upper.includes('const englishRecordId={"english-10":"ela10","english-1
 assert.ok(upper.includes('destination=week[1]==="01"'),"Week 01 must use native first-day file");
 assert.ok(upper.includes('"#monday"'),"Later weeks must use native instructional day anchors");
 assert.ok(upper.includes('const needQuiz=snap?.status==="mastery"||snap?.status==="corrections"'),"Pending quiz/corrections must not route back to the Monday lesson");
+assert.ok(upper.includes('englishCourse&&snap?.status==="paused"'),"Saved-record recovery must not be bypassed");
 assert.ok(upper.includes('"#quiz"'),"Mastery and corrections must enter native weekly quiz section");
 const daily=read("grades/shared/upper-grade-daily-focus.js");
 assert.ok(daily.includes("const shared=window.KhaemenesUpperGradeClassRoute"),"Daily Focus must reuse Schedule lesson resolver");
