@@ -1,0 +1,63 @@
+{
+  "schema": "khaemenes-high-profile-runtime-contract-v1",
+  "policy": {
+    "exact_once": "Each required runtime fragment must occur exactly once in the grade profile entry.",
+    "no_legacy": "Legacy global chrome and seven-class schedule owners are forbidden on canonical profiles.",
+    "no_record_authority_change": "This manifest describes runtime ownership only; it does not alter learner identity, grades, mastery, pins, or course persistence."
+  },
+  "grades": {
+    "10": {
+      "entry": "grades/grade-10/student-profile/index.html",
+      "required": [
+        "../../../courses/shared/course-entry-contract.js",
+        "../../../courses/shared/high-school-course-pins.js",
+        "../../../courses/shared/high-school-eight-class.js",
+        "khaemenes-learning-continuation.js",
+        "../../shared/high-school-profile-grade-context.js",
+        "../../shared/grade09-blueprint-upper-grade.js",
+        "../../shared/upper-grade-class-progress-dialog.js"
+      ]
+    },
+    "11": {
+      "entry": "grades/grade-11/student-profile/index.html",
+      "required": [
+        "../../../courses/shared/course-entry-contract.js",
+        "../../../courses/shared/high-school-course-pins.js",
+        "../../../courses/shared/high-school-eight-class.js",
+        "khaemenes-learning-continuation.js",
+        "../../shared/high-school-profile-grade-context.js",
+        "../../shared/grade09-blueprint-upper-grade.js",
+        "../../shared/upper-grade-class-progress-dialog.js"
+      ]
+    },
+    "12": {
+      "entry": "grades/grade-12/student-profile/index.html",
+      "required": [
+        "../../../courses/shared/course-entry-contract.js",
+        "../../../courses/shared/high-school-course-pins.js",
+        "../../../courses/shared/high-school-eight-class.js",
+        "khaemenes-learning-continuation.js",
+        "../../shared/high-school-profile-grade-context.js",
+        "../../shared/grade09-blueprint-upper-grade.js",
+        "../../shared/upper-grade-class-progress-dialog.js"
+      ]
+    },
+    "09": {
+      "entry": "grades/grade-09/student-profile/index.html",
+      "required": [
+        "../../../courses/shared/course-entry-contract.js",
+        "../../../courses/shared/high-school-course-pins.js",
+        "../../../courses/shared/high-school-eight-class.js",
+        "khaemenes-learning-continuation.js",
+        "student-schedule-bar.js",
+        "dashboard-layout.js",
+        "class-progress-dialog.js"
+      ]
+    }
+  },
+  "forbidden": [
+    "high-school-global-chrome-v2.js",
+    "seven-class-schedule.js",
+    "upper-grade-seven-class.js"
+  ]
+}
