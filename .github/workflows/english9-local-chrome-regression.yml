@@ -1,0 +1,19 @@
+name: English 9 Local Chrome and Contrast
+on:
+  pull_request:
+    paths:
+      - "courses/language-arts/english-9/index.html"
+      - "tools/validate-english9-local-chrome.mjs"
+      - ".github/workflows/english9-local-chrome-regression.yml"
+  push:
+    paths:
+      - "courses/language-arts/english-9/index.html"
+      - "tools/validate-english9-local-chrome.mjs"
+      - ".github/workflows/english9-local-chrome-regression.yml"
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: English 9 canonical chrome regression
+        run: node tools/validate-english9-local-chrome.mjs
