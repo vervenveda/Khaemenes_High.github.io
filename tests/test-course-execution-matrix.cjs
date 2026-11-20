@@ -35,8 +35,16 @@ for (const c of registry.courses) {
   }
   if(/^english-/.test(c.id)) {
     const map = JSON.parse(fs.readFileSync(path.join(root,c.source),"utf8"));
-    record(map.weeksCount===36,c.id+": curriculum not 36 weeks");
-    record(map.passingTarget===80,c.id+": curriculum mastery gate not 80%");
+    const totalWeeks=Number.isInteger(map.weeksCount)?map.weeksCount:map.weeks;
+    record(totalWeeks===36,c.id+": curriculum not 36 weeks");
+    // English 9's actual curriculum schema stores 36 as 'weeks' and
+    // its 80% gate in the executable course application. Never silently
+    // invent a missing course-level property.
+    const gate=map.passingTarget!==undefined?map.passingTarget:
+      c.id==="english-9"&&exists(c.entry)
+      ?(/"passingTarget"\s*:\s*80/.test(fs.readFileSync(path.join(root,c.entry),"utf8"))?80:null)
+      :null;
+    record(gate===80,c.id+": curriculum mastery gate not 80%");
     record(exists(c.root+"weeks/week-01/index.html"),c.id+": first weekly route missing");
     record(exists(c.root+"weeks/week-36/index.html"),c.id+": final weekly route missing");
   }
