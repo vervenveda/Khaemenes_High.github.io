@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Khaemenes Academy · Senior Capstone</title>
+<style>
+:root{--ink:#243038;--paper:#f4f0e7;--cream:#fff8e9;--gold:#b48b45;--line:#c5b494}
+*{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);font:400 16px/1.65 "Avenir Next","Segoe UI",Arial,sans-serif}
+header,footer{background:#243038;color:var(--cream);text-align:center;padding:24px}h1,h2,h3{font-family:Cinzel,Georgia,serif;font-weight:400}
+main{width:min(1100px,calc(100% - 28px));margin:24px auto}.hero,.card{background:#fffdf8;border:1px solid var(--line);border-radius:7px;padding:24px;margin:16px 0}
+.hero{text-align:center}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:11px}
+button,a.btn{border:1px solid var(--gold);border-radius:7px;background:#243038;color:var(--cream);padding:11px 14px;font:inherit;text-decoration:none;cursor:pointer;text-align:center}
+button.secondary{background:#fffdf8;color:var(--ink)}textarea{width:100%;min-height:120px;padding:11px;border:1px solid var(--line);border-radius:7px;font:inherit}
+.week{display:none}.week.active{display:block}.day{border-top:1px solid var(--line);padding:12px 0}.small{font-size:16px;color:#4b5d51}.status{padding:10px;border-left:4px solid var(--gold);background:#f7f1e5}
+</style></head>
+<body><header><div>Khaemenes Academy</div><h1>Senior Capstone</h1><p>Research · Build · Test · Revise · Defend</p></header>
+<main><section class="hero"><p>Grade 12 · 36-week evidence pathway</p><h2>Turn sustained inquiry into a defensible contribution.</h2><p>Capstone work preserves process evidence, source custody, revision history, evaluator feedback, a final artifact, and an oral/visual defense. Browser-local entries remain provisional until reviewed.</p><div><a class="btn" href="../../../grades/grade-12/student-profile/">Student Profile</a> <a class="btn" href="../../../grades/grade-12/">Grade 12</a></div></section>
+<section class="card"><h2>Weeks</h2><div id="weeks" class="grid"></div></section><section id="workspace"></section>
+<section class="card"><h2>Portfolio export</h2><p class="small">Export preserves your local capstone evidence for transfer into the authorized student portfolio workflow. It does not certify a grade by itself.</p><button id="exportBtn">Export Capstone Evidence JSON</button></section></main>
+<footer>Khaemenes Academy · Senior Capstone · Grade 12</footer>
+<script>
+const KEY="khae.senior.capstone.v1";let DATA=null;let state={week:1,evidence:{},reviewed:{}};
+const esc=s=>String(s??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+function load(){try{const x=JSON.parse(localStorage.getItem(KEY));if(x)state={...state,...x}}catch{}}
+function save(){try{localStorage.setItem(KEY,JSON.stringify(state))}catch{}}
+function render(){const w=DATA.weeks.find(x=>x.week===state.week);document.getElementById("weeks").innerHTML=DATA.weeks.map(x=>'<button class="'+(x.week===state.week?'secondary':'')+'" data-w="'+x.week+'">Week '+x.week+' · '+esc(x.title)+'</button>').join("");document.querySelectorAll("[data-w]").forEach(b=>b.onclick=()=>{state.week=+b.dataset.w;save();render()});const key=String(w.week);const ev=state.evidence[key]||"";document.getElementById("workspace").innerHTML='<section class="card week active"><p class="small">Week '+w.week+'</p><h2>'+esc(w.title)+'</h2><p><strong>Essential question:</strong> '+esc(w.essentialQuestion)+'</p>'+w.days.map(d=>'<div class="day"><h3>Day '+d.day+' · '+esc(d.phase)+'</h3><p>'+esc(d.task)+'</p><p class="small"><strong>Evidence:</strong> '+esc(d.evidence)+'</p></div>').join("")+(w.evaluatorCheckpoint?'<div class="status"><strong>Evaluator checkpoint:</strong> preserve the artifact, feedback, corrections, and reviewer receipt. Learner self-completion cannot certify this checkpoint.</div>':'')+'<label for="evidence"><strong>Weekly evidence / revision record</strong></label><textarea id="evidence">'+esc(ev)+'</textarea><label><input type="checkbox" id="reviewed" '+(state.reviewed[key]?'checked':'')+'> Work assembled for evaluator review</label><p><button id="save">Save local evidence</button></p></section>';document.getElementById("save").onclick=()=>{state.evidence[key]=document.getElementById("evidence").value;state.reviewed[key]=document.getElementById("reviewed").checked;save();render()}}
+fetch("./course-map.json").then(r=>r.json()).then(d=>{DATA=d;load();render()}).catch(e=>document.getElementById("workspace").innerHTML='<section class="card"><h2>Course unavailable</h2><p>'+esc(e.message)+'</p></section>');
+document.getElementById("exportBtn").onclick=()=>{const payload={course:"senior-capstone",grade:12,exportedAt:new Date().toISOString(),state};const blob=new Blob([JSON.stringify(payload,null,2)],{type:"application/json"});const u=URL.createObjectURL(blob),a=document.createElement("a");a.href=u;a.download="senior-capstone-evidence.json";a.click();setTimeout(()=>URL.revokeObjectURL(u),800)}
+</script></body></html>
