@@ -77,7 +77,7 @@ a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible{
 <a href="../profile/" >My Profile</a>
 <a href="../settings/" >Settings</a><a href="../../">Exit to Grade 10</a></nav><nav class="g10-breadcrumbs" aria-label="Breadcrumb"><a href="../../../../">High School</a><span aria-hidden="true">›</span><a href="../../">Grade 10</a><span aria-hidden="true">›</span><a href="../">Student Dashboard</a><span aria-hidden="true">›</span><strong aria-current="page">Daily Lessons</strong></nav><div class="g10-hero"><p class="eyebrow">Khaemenes Academy</p><h1>Daily Lessons</h1><p>Grade 10 · A calm daily study flow, your eight subjects, practical habits, and your personal notes.</p></div>
 <main class="g10-shell g10-content"><p class="g10-note" role="status" id="g10RoomMessage">Checking the registered learner…</p><div class="g10-grid" id="g10RoomContent"><details class="g10-card g10-wide g10-class-doors" id="g10ClassDoors" aria-label="Grade 10 class doors"><summary>Class Doors · Eight Subjects <span>Expand course links</span></summary><p>Open your current classes and continue lessons from the course that owns them. Pinned courses are personal shortcuts, not enrollment or grades.</p><div class="g10-grid" id="g10SubjectCards"></div></details>
-<section class="g10-card g10-wide" data-owner-only><h2>To Do Today</h2><p>Eight personal planning checks, separate from course assessment and mastery.</p><div id="g10DailyChecks" class="g10-list"></div><p id="g10DailyStatus" class="g10-status" role="status"></p></section>
+<section class="g10-card g10-wide" data-owner-only><h2>To Do Today</h2><p>Ten personal planning checks: readiness, reflection, and all eight Grade 10 subjects. These checks never award course mastery.</p><div id="g10DailyChecks" class="g10-list"></div><p id="g10DailyStatus" class="g10-status" role="status"></p></section>
 <section class="g10-card g10-wide" data-owner-only><h2>My Study Note</h2><p>Your short daily journal stays in this browser and belongs to your selected Grade 10 learner.</p><label for="g10DailyNote">Today's plan or reflection</label><textarea id="g10DailyNote" maxlength="1600"></textarea><div class="g10-actions"><button type="button" id="g10SaveNote" class="g10-button">Save My Note</button><button type="button" id="g10ClearNote" class="g10-button secondary">Clear Today's Note</button></div><p id="g10NoteStatus" role="status" class="g10-status"></p></section></div></main>
 <footer class="g10-footer">Khaemenes Academy · Grade 10 · Daily Lessons<div>Local learner work remains separate from course grading and parent authority.</div><nav aria-label="Footer navigation"><a href="../">Student Dashboard</a><a href="../../">Grade 10</a><a href="https://vervenveda.com/Khaemenes_Academy.github.io/family/">Family Portal</a></nav></footer>
 <script src="../../../../courses/shared/high-school-course-pins.js"></script>
@@ -164,7 +164,18 @@ const prefix="khaemenes.grade10.daily.v1:"+encodeURIComponent(learnerId)+":"+dat
 const safeRead=(key,empty)=>{try{return JSON.parse(localStorage.getItem(key)||"null")??empty}catch{return empty}};
 const saved=safeRead(prefix+"checks",{});
 const grid=document.getElementById("g10DailyChecks"),status=document.getElementById("g10DailyStatus");
-const tasks=[["Ready for class","Prepare today's materials"],["Personal care","Breakfast, hygiene and mindful breathing"],["Journal","Plan or reflect before lessons"],["Mathematics","Open the current math pathway"],["Language Arts","Read, write or discuss"],["Science & Lab","Work from the registered course"],["Movement","Physical education and a healthy break"],["Family & Life Skills","Connect, contribute and rest"]];
+const tasks=[
+ ["Ready for class","Prepare today's materials"],
+ ["Journal","Plan or reflect before lessons"],
+ ["Mathematics","Open the current math pathway"],
+ ["Language Arts","Read, write, discuss, or revise"],
+ ["Social Studies","Read sources, analyze evidence, or write"],
+ ["Science & Lab","Work from the registered biology course"],
+ ["PE / Health","Movement, fitness, and health habits"],
+ ["Psychology / Life Skills","Human development, decisions, and practical skills"],
+ ["Foreign Language","Continue the selected language pathway"],
+ ["Elective","Continue the learner-selected elective"]
+];
 const controls=[];
 tasks.forEach(([title,detail],i)=>{
  const row=make("label");row.className="g10-check";
