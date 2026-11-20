@@ -355,18 +355,23 @@
       answer:0,
       explanation:String(row?.[2]||""),
       skill:String(row?.[3]||"Week-specific reasoning"),
-      source:row?.[4]?.anchor===true?"passage-anchor":"week-specific-supplement",
-      difficulty:"core"
+      source:row?.[4]?.anchor===true?"current-anchor":"current",
+      difficulty:"core",
+      week
     })).filter(q=>q.question&&q.choices.length===4):[];
-    const candidateQuestions=rawQuestions.concat(supplemental);
+    const currentCanonical=rawQuestions.map((q,i)=>({...q,id:q.id||`${COURSE_ID}-week-${week}-current-${i+1}`,source:"current",week}));
+    const retrievalWeek=week>1?Math.max(1,week-(1+(week%3))):null;
+    const retrievalCanonical=retrievalWeek?((window.ELA10_COURSE?.weeks?.find(item=>item.week===retrievalWeek)?.quiz)||[]).map((q,i)=>({...q,id:`${COURSE_ID}-retrieval-week-${retrievalWeek}-${i+1}`,source:"retrieval",week:retrievalWeek,retrievalFromWeek:retrievalWeek})).filter(q=>Array.isArray(q.choices)&&q.choices.length===4):[];
+    const candidateQuestions=currentCanonical.concat(supplemental,retrievalCanonical);
     const adapter=window.KhaemenesHighAssessmentAdapter||null;
-    const storageKey=`${STATE_KEY}:monte-carlo:week:${week}`;
+    const storageKey=`${STATE_KEY}:monte-carlo:week:retention-v1:${week}`;
     let opened=null;
     let questions=rawQuestions;
     if(adapter&&window.KhaeMonteCarloAssessment&&candidateQuestions.length){
       try{
-        opened=adapter.open({courseId:COURSE_ID,storageKey,bank:candidateQuestions,kind:"weekly",count:rawQuestions.length,sourceQuotas:supplemental.some(q=>q.source==="passage-anchor")?{"passage-anchor":1}:null});
-        questions=opened.questions;
+        const sourceQuotas=week>1?{"current-anchor":1,"current":3,"retrieval":1}:(supplemental.some(q=>q.source==="current-anchor")?{"current-anchor":1,"current":4}:{"current":5});
+        opened=adapter.open({courseId:COURSE_ID,storageKey,bank:candidateQuestions,kind:"weekly",count:rawQuestions.length,sourceQuotas});
+        questions=opened.questions.map(q=>({...q,retrievalFromWeek:q.retrievalFromWeek??(q.source==="retrieval"?retrievalWeek:null)}));
       }catch(_err){opened=null;questions=rawQuestions}
     }
     renderQuestionSet($("[data-question-container]",form),questions,`week-${week}`);
@@ -376,12 +381,12 @@
     syncBest();
     if(opened){
       const note=document.createElement("p");note.className="notice";
-      note.textContent=`Randomized open-book weekly check · ${opened.count} questions drawn from ${opened.bankSize} week-specific candidates · at least one passage/source anchor required · question and answer order randomized · 80% mastery target.`;
+      note.textContent=`Randomized open-book weekly check · ${opened.count} questions · ${week===1?"current learning only":"4 current + 1 delayed retrieval"} · at least one passage/source anchor required · question and answer order randomized · 80% mastery target.`;
       form.prepend(note);
     }
     form.addEventListener("submit",e=>{
       e.preventDefault();
-      let correct=0, complete=true;
+      let correct=0, complete=true,currentCorrect=0,currentTotal=0,delayedCorrect=0,delayedTotal=0;
       const responses=[],reviewSkills=[];
       questions.forEach((q,i)=>{
         const selected=form.querySelector(`input[name="week-${week}-${i}"]:checked`);
@@ -389,8 +394,9 @@
         const feedback=$(".quiz-feedback",field);
         if(!selected){complete=false;feedback.hidden=false;feedback.textContent="Choose an answer before submitting.";return}
         const answer=Number(selected.value), ok=answer===q.answer;
+        if(q.source==="retrieval"){delayedTotal++;if(ok)delayedCorrect++}else{currentTotal++;if(ok)currentCorrect++}
         if(ok)correct++;else if(q.skill)reviewSkills.push(q.skill);
-        responses.push({id:q.id||null,selected:answer,correct:ok,skill:q.skill||q.domain||""});
+        responses.push({id:q.id||null,selected:answer,correct:ok,skill:q.skill||q.domain||"",source:q.source||"current",retrievalFromWeek:q.retrievalFromWeek??null});
         feedback.hidden=false;
         feedback.className=`quiz-feedback ${ok?"good":"bad"}`;
         feedback.innerHTML=`<strong>${ok?"Correct.":"Review."}</strong> ${esc(q.explanation||"")}`;
@@ -398,12 +404,13 @@
       if(!complete){result.textContent="Please answer every question.";return}
       const attemptScore=Math.round(correct/questions.length*100);
       const record=weekState(week).quiz;
-      const attempt={date:nowISO(),score:attemptScore,correct,total:questions.length,mastered:attemptScore>=80,attemptId:opened?.sessionId||null,questionIds:opened?.questionIds||questions.map(q=>q.id).filter(Boolean),reviewSkills:[...new Set(reviewSkills)].slice(0,8),responses};
+      const retention={blueprint:week===1?"5-current":"4-current+1-delayed",current:{correct:currentCorrect,total:currentTotal,percent:currentTotal?Math.round(currentCorrect/currentTotal*100):null},delayed:{correct:delayedCorrect,total:delayedTotal,percent:delayedTotal?Math.round(delayedCorrect/delayedTotal*100):null},retrievalFromWeek:delayedTotal?retrievalWeek:null};
+      const attempt={date:nowISO(),score:attemptScore,correct,total:questions.length,mastered:attemptScore>=80,attemptId:opened?.sessionId||null,questionIds:opened?.questionIds||questions.map(q=>q.id).filter(Boolean),reviewSkills:[...new Set(reviewSkills)].slice(0,8),responses,retention};
       record.attempts.push(attempt);
       record.best=Math.max(record.best||0,attemptScore);
-      if(opened)adapter.complete(opened,{score:attemptScore,correct,total:questions.length,mastered:attemptScore>=80,reviewSkills:attempt.reviewSkills});
+      if(opened)adapter.complete(opened,{score:attemptScore,correct,total:questions.length,mastered:attemptScore>=80,reviewSkills:attempt.reviewSkills,retention});
       const saved=save();syncBest();updateProgress();
-      result.innerHTML=`${saved?"Saved. ":"Not saved — export a recovery copy. "}Score: <strong>${attemptScore}%</strong> (${correct}/${questions.length}). Best score retained: <strong>${record.best}%</strong>. ${attemptScore<80?"Complete corrections, review the lesson, and draw a new attempt.":"Mastery target met."}`;
+      result.innerHTML=`${saved?"Saved. ":"Not saved — export a recovery copy. "}Score: <strong>${attemptScore}%</strong> (${correct}/${questions.length})${retention.delayed.total?` · delayed retention ${retention.delayed.percent}% (${retention.delayed.correct}/${retention.delayed.total}) from Week ${retention.retrievalFromWeek}`:""}. Best score retained: <strong>${record.best}%</strong>. ${attemptScore<80?"Complete corrections, review the lesson, and draw a new attempt.":"Mastery target met."}`;
     });
     $("[data-reset-quiz]")?.addEventListener("click",()=>{
       if(opened){adapter.newAttempt(storageKey);location.reload();return}
