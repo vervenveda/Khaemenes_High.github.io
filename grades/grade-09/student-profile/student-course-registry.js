@@ -315,9 +315,13 @@ function safeCourseURL(course,value){
 function genericContinue(course){
   const launches=readJSON(LAST_LAUNCH_KEY,{}),last=launches&&typeof launches==="object"?launches[course.id]:null;
   const first=window.KhaemenesHighEightClass?.FIRST_STEPS?.[course.id]||course.defaultContinue||course.home;
-  const url=safeCourseURL(course,last?.url||first);
-  const specific=Boolean(last?.url)||url!==course.home;
-  return {url,label:last?.title?String(last.title):course.title,hasSpecificLocation:specific,actionLabel:last?.url?`Continue ${course.short}`:`Begin ${course.short}`,detail:last?.url?`Return to ${last.title?String(last.title):"your last class location"}.`:`${course.subject} · open the first required instructional step`};
+  const saved=safeCourseURL(course,last?.url||first);
+  // A prior click on a public English 9 landing is not a lesson resume point.
+  // Preserve stored history unchanged; resolve the Class door to Week 01 Day 01.
+  const validLast=course.id==="english-9"&&saved===course.home?false:Boolean(last?.url);
+  const url=course.id==="english-9"&&saved===course.home?safeCourseURL(course,first):saved;
+  const specific=validLast||url!==course.home;
+  return {url,label:validLast&&last?.title?String(last.title):course.title,hasSpecificLocation:specific,actionLabel:validLast?`Continue ${course.short}`:`Begin ${course.short}`,detail:validLast?`Return to ${last.title?String(last.title):"your last class location"}.`:`${course.subject} · open the first required instructional step`};
 }
 function continueFor(id){
   const course=COURSE_MAP.get(id);
