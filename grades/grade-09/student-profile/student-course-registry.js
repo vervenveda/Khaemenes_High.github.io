@@ -296,7 +296,21 @@ function togglePinned(id){const next=!isPinned(id);return setPinned(id,next)?nex
 
 function safeCourseURL(course,value){
   const normalized=normalizeLegacyRoute(value);
-  return typeof normalized==="string"&&normalized.startsWith(course.prefix)?normalized:course.defaultContinue
+  if(typeof normalized!=="string")return course.defaultContinue;
+  // Existing cross-repository language handoffs must retain their exact approved
+  // prefix; never broaden acceptance to arbitrary external destinations.
+  if(normalized.startsWith(course.prefix))return normalized;
+  try{
+    const target=new URL(normalized,location.origin);
+    const base=new URL(course.prefix,location.origin);
+    // FIRST_STEPS uses canonical absolute VNV URLs, while course.prefix is a
+    // repository-relative path. Compare their parsed same-origin paths.
+    if(base.origin===location.origin&&target.origin===base.origin&&
+       target.pathname.startsWith(base.pathname)){
+      return target.pathname+target.search+target.hash;
+    }
+  }catch{}
+  return course.defaultContinue;
 }
 function genericContinue(course){
   const launches=readJSON(LAST_LAUNCH_KEY,{}),last=launches&&typeof launches==="object"?launches[course.id]:null;
