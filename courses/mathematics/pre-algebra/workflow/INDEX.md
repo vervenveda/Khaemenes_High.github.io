@@ -2,6 +2,7 @@
 
 | Date | Type | Entry | State |
 | --- | --- | --- | --- |
+| 2026-11-20 | assessment support · records | [Assessment support layer](logs/2026/11/2026-11-20-assessment-support-layer.md) | Administration guide + completion record canonicalized; integrity/export protections retained; support validator PASS |
 | 2026-11-20 | assessment shell · workflow verification | [Assessment shell workflow verification](logs/2026/11/2026-11-20-assessment-shell-workflow-verification.md) | Weekly + Units 01–13 + cumulative surfaces recorded; source validators PASS; hosted CI unverified; browser/device HOLD |
 | 2026-11-19 | audit · repair · hardening | [Pre-Algebra hardening pass 01](logs/2026/11/2026-11-19-prealgebra-hardening-pass-01.md) | Shared lesson adapter/core hardened: typography hierarchy, verified persistence warnings, richer evidence export, checklist + ≥80% final gate; assessments untouched; browser/device HOLD |
 | 2026-11-18 | full re-audit · Exceptional source architecture | [Full Exceptional Source Re-Audit](logs/2026/11/2026-11-18-full-exceptional-source-reaudit.md) | 360 canonical weekly items + five-dimension 8+2 retrieval + project/evaluator/storage parity; all source-controlled categories Exceptional; browser/device HOLD |
