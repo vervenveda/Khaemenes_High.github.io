@@ -8,6 +8,8 @@ on:
       - "portfolio/**"
       - "tools/validate-student-portfolio-workspace.mjs"
       - "tools/validate-student-portfolio-refresh.mjs"
+      - "tools/validate-algebra1-readiness-continuation-publisher.mjs"
+      - "courses/shared/algebra1-readiness-continuation-publisher.js"
       - ".github/workflows/student-portfolio-workspace-regression.yml"
   push:
     paths:
@@ -17,6 +19,8 @@ on:
       - "portfolio/**"
       - "tools/validate-student-portfolio-workspace.mjs"
       - "tools/validate-student-portfolio-refresh.mjs"
+      - "tools/validate-algebra1-readiness-continuation-publisher.mjs"
+      - "courses/shared/algebra1-readiness-continuation-publisher.js"
       - ".github/workflows/student-portfolio-workspace-regression.yml"
 jobs:
   verify:
@@ -27,3 +31,4 @@ jobs:
         run: |
           node tools/validate-student-portfolio-workspace.mjs
           node tools/validate-student-portfolio-refresh.mjs
+          node tools/validate-algebra1-readiness-continuation-publisher.mjs
