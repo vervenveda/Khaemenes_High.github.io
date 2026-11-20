@@ -62,3 +62,20 @@ A further forensic check discovered previously uncounted original packet variant
 `tools/test-social-studies-full-course-integration.mjs` has been revised to make this distinction and fail on missing or duplicate lesson controls. This corrects the earlier source-census estimate; it does not certify the GitHub Actions or authenticated browser result.
 
 **Release hold remains:** Grade 09 Week 27 course source missing; browser, learner storage, accessibility and workflow run PASS still unverified.
+
+
+## RESOLVED — Grade 09 Week 27 recovered from authoritative existing source (2026-11-20)
+
+**This section supersedes every earlier Week 27 missing/HOLD statement above.**
+
+The canonical Grade 09 `courses/social-studies/grade-09/app.js` explicitly uses `weeks/week-27/student-packet-v2.html` for Week 27. The original **Student Packet v2** was located and inspected at that path. It is not missing or an invented replacement. Original course-data.js confirms its approved topic **Capitalism, Socialism, Labor, and Reform**, Unit 6; essential question: *What should markets, governments, employers, workers, and communities each control?* Its original five weekday activities, source laboratory, economic reasoning lab, assessment v2.0, and evidence authority remain intact.
+
+Recovery changes:
+- Shared lesson engine now accepts the exact historical filename `student-packet-v2.html` as well as standard `student-packet.html` within approved Social Studies grade/week routes.
+- Real Grade 9 Week 27 `weeks/week-27/student-packet-v2.html` opted in using the existing shared engine, with no curriculum rewrite or record/grading ownership changes.
+- Standard `weeks/week-27/student-packet.html` and alternate `week-27/student-packet.html` are **redirect-only compatibility doorways** to that original v2 packet. Their old URLs now lead to the authoritative file.
+- `tools/test-social-studies-full-course-integration.mjs` now expects **144/144 unique grade-weeks**, **210 genuine instructional HTML packet files**, **1,045 native weekday headings** outside the original Grade 9 Week 1 20-phase player, and **7 intentional compatibility redirects**. The test verifies that course app.js and course-data.js still identify the v2 original and that Week 27's original content/evidence contracts exist.
+
+Focused post-commit connector verification confirms: shared JS parses, exact v2 route recognized, five Week 27 day headings preserved, original assessment and economic lab intact, both redirect URLs correct, course app and data ownership unchanged, no new engine persistence. **Actual GitHub Actions successful conclusion and authenticated browser acceptance remain unverified.**
+
+The old missing Week 27 finding was a filename-discovery false alarm, now resolved without recreating teaching material.
