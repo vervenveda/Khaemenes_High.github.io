@@ -66,7 +66,20 @@ function preLessonPct(r){
 function preAssignPct(r){
   return Math.round([0,1,2].filter(i=>r?.assignments?.[i]).length/3*100);
 }
-function preQuizBest(r){return Math.round(number(r?.quiz?.best)||0)}
+function preQuizBest(r){
+  // Follow the canonical weekly gate: legacy quiz.best is historical, not proof of v2 mastery.
+  const attempts=Array.isArray(r?.quiz?.attempts)?r.quiz.attempts:[];
+  const valid=attempts.filter(a=>{
+    const ids=Array.isArray(a?.question_ids)?a.question_ids:[];
+    const dims=Array.isArray(a?.dimensions)?a.dimensions:[];
+    return a?.assessment_version==="prealgebra-weekly-mastery-v2"
+      && Number(a?.question_count)===10
+      && ids.length===10 && new Set(ids).size===10
+      && dims.length===10
+      && Number.isFinite(Number(a?.score));
+  });
+  return valid.length?Math.max(...valid.map(a=>Math.round(Number(a.score)||0))):0;
+}
 function preAlgebraSnapshot(){
   const cfg=COURSE["pre-algebra"];
   const naib=parse("khaemenes-naib-readiness-profile-v1",null);
