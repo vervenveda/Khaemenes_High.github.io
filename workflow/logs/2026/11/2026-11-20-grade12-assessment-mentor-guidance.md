@@ -35,3 +35,17 @@ The test checks one correct mount per hosted entry page, syntax and idempotence,
 
 ## Acceptance limits
 This is isolated static source regression, not a live authenticated browser/student assessment, verified teacher review, STOS Account Cloud records synchronization or end-to-end homeschool credit approval. No student records, grading engines, scores, question banks, or Vervenveda gateway content were modified.
+
+## Verified CI closeout — 2026-11-20 ET
+
+**Grade 12 assessment mentor guidance regression: PASS.**
+
+- GitHub Actions run `44773558648`: **completed / success**.
+- Run: https://github.com/vervenveda/Khaemenes_High.github.io/actions/runs/44773558648
+- Verified head SHA: `014e554307b6279cb36f044362d369784ce6e875`
+- Job `136417237341`: **success**.
+- The job log confirms **5/5** High School assessment entry-page mounts PASS, English 12 human-review contract PASS, Physics & Engineering 12 mastery description PASS, Social Studies existing 70% published requirements preserved PASS, and Senior mathematics Higher Learning handoffs untouched PASS.
+- The initial QUEUED status above is historical and superseded by this verified outcome.
+- **Open governance hold:** Grade 12 Social Studies 70% semester/final thresholds versus general 80% Academy mastery policy. No scoring or course record change was authorized or performed.
+- **Open integration hold:** Senior mathematics assessment ownership is in the separately hosted Higher Learning school, not in these High School handoff pages.
+- **Open acceptance hold:** authenticated learner browser/device testing and STOS account/cloud record synchronization were not covered by this regression.
