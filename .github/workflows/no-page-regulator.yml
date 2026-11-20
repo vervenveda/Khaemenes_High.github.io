@@ -26,4 +26,5 @@ jobs:
       - run: node tools/validate-grade09-science-routing.mjs
       - run: node tools/validate-grade09-retention-curriculum-v1.mjs
       - run: node tools/validate-grade10-retention-curriculum-v1.mjs
+      - run: node tools/validate-grade11-retention-curriculum-v1.mjs
       - run: node tools/validate-grade10-12-assessment-vnv-shell.mjs
