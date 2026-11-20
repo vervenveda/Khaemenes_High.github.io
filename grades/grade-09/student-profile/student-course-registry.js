@@ -120,20 +120,23 @@ const COURSES=Object.freeze([
     const returnTo=encodeURIComponent(`https://vervenveda.com${repoPath("grades/grade-09/student-profile/")}`);
     const source="khaemenes-high-grade09";
     const french101=`https://vervenveda.com/Khaemenes_Linguistics.github.io/apps/French_101_index.html?source=${source}&return=${returnTo}`;
+    const yearOne=({"arabic":"arabic-1","russian":"russian-1"})[id]||null;
     const handoff=id==="french"
       ? french101
-      : `https://vervenveda.com/Khaemenes_Linguistics.github.io/Halls/index.html?language=${encodeURIComponent(id)}&${formal?"course=hs1":"mode=atlas"}&source=${source}&return=${returnTo}`;
+      : yearOne
+        ? `https://vervenveda.com/Khaemenes_Linguistics.github.io/Halls/courses/${yearOne}/?source=${source}&return=${returnTo}`
+        : `https://vervenveda.com/Khaemenes_Linguistics.github.io/Halls/index.html?language=${encodeURIComponent(id)}&course=hs1&source=${source}&return=${returnTo}`;
     return Object.freeze({
       id:"world-language-9-"+id,
-      title:id==="french"?"French 101":(formal?name+" I":name+" · Exploration"),
+      title:id==="french"?"French 101":(formal?name+" I":name+" I · Instructional Draft"),
       subject:"World Languages",
       short:name,
       className:"ela",
       home:handoff,
       defaultContinue:handoff,
-      prefix:id==="french"?french101:"https://vervenveda.com/Khaemenes_Linguistics.github.io/Halls/",
+      prefix:id==="french"?french101:yearOne?`https://vervenveda.com/Khaemenes_Linguistics.github.io/Halls/courses/${yearOne}/`:"https://vervenveda.com/Khaemenes_Linguistics.github.io/Halls/",
       mentorSubject:"language-arts",
-      courseMode:formal?"formal":"exploration"
+      courseMode:formal?"formal":"instructional-draft"
     });
   })
 ]);
