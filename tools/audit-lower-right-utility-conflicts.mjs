@@ -42,7 +42,7 @@ for(const [name,source] of [["assets/vnv-beta-link.js",highBeta],["assets/high-n
 }
 if(highBeta.includes('label.textContent="Beta Program"'))failures.push("assets/vnv-beta-link.js: legacy standalone Beta constructor returned");
 if(!highBeta.includes("removeLegacyUtilitySurfaces"))failures.push("assets/vnv-beta-link.js: legacy lower-right cleanup missing");
-if(!highNav.includes("highUtilityConflictGuard"))failures.push("assets/high-navigation-v1.js: lower-right conflict guard missing");
+if(!highNav.includes('document.getElementById("vnvEcosystemUtilityDock")'))failures.push("assets/high-navigation-v1.js: canonical lower-right dock guard missing");
 
 if(failures.length){
   console.error("Lower-right utility conflict audit FAILED ("+failures.length+" issue"+(failures.length===1?"":"s")+"):");
