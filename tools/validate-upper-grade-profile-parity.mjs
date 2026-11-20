@@ -9,7 +9,6 @@ const expect=(value,message)=>{if(!value)failures.push(message)};
 
 const blueprint=read("grades/shared/grade09-blueprint-upper-grade.js");
 const grade09Css=read("grades/grade-09/student-profile/student-profile.css");
-const compact=read("grades/shared/student-profile-compact-panels.js");
 const pins=read("courses/shared/high-school-course-pins.js");
 const catalog=read("courses/shared/high-school-eight-class.js");
 const grade9Quick=read("grades/grade-09/student-profile/student-quick-pins.js");
@@ -45,21 +44,22 @@ for(const grade of ["10","11","12"]){
   expect(!html.includes("../../shared/upper-grade-profile.css"),"Grade "+grade+" must not load retired upper-grade profile CSS authority");
   expect(html.includes("khaemenes-learning-continuation.js"),"Grade "+grade+" loads continuation contract");
   expect(html.includes("khaemenes-student-profile-v2.js"),"Grade "+grade+" loads Academy profile contract");
-  expect(html.includes("khaemenes-student-quick-pins-v1.js"),"Grade "+grade+" loads Academy Quick Pins");
-  expect(html.includes("khaemenes-student-workspace-v2.js"),"Grade "+grade+" loads workspace preferences");
-  expect(html.includes("student-profile-compact-panels.js"),"Grade "+grade+" loads compact profile dialogs");
-  expect(html.indexOf("student-profile-compact-panels.js")>html.indexOf("student-ecosystem-tools.js"),"Grade "+grade+" initializes dialogs after secondary panels");
+  expect(!html.includes("khaemenes-student-quick-pins-v1.js"),"Grade "+grade+" does not reload the retired duplicate Quick Pins rail");
+  expect(html.includes("../../grade-09/student-profile/student-profile-preferences.js"),"Grade "+grade+" uses learner-owned shared profile preferences");
+  expect(!html.includes("student-profile-compact-panels.js"),"Grade "+grade+" does not load the retired compact-dialog steward");
+  expect(html.includes("student-ecosystem-tools.js"),"Grade "+grade+" keeps the shared creative-tools panel");
+  expect(blueprint.includes("upperGradeDialog("),"canonical Grade 09 blueprint owns upper-grade dialogs");
   expect(html.includes("vnv-language.js"),"Grade "+grade+" keeps official translator");
   expect(/font-size:\s*16px\s*!important/.test(html),"Grade "+grade+" keeps the 16px minimum interface typography");
   expect(!/href=[\"']https:\/\/vervenveda\.com\/Khaemenes_Academy\.github\.io\/family\//i.test(html),"Grade "+grade+" student profile does not expose the Family Portal");
 }
 
 expect(grade9Quick.includes("KhaemenesStudentQuickPinsV1"),"Grade 09 Quick Pins bridge to canonical Academy store");
-for(const label of ["Mathematics","Language Arts","Social Studies","Science","Physical Education","World Language","Psychology / Elective"]){
+for(const label of ["Mathematics","Language Arts","Social Studies","Science","Physical Education","World Language","Psychology / Life Skills","Elective"]){
   expect(grade9Grades.includes(label),"Grade 09 report room includes "+label);
 }
 expect(grade9Grades.includes("student-course-registry.js"),"Grade 09 report room derives from shared course registry");
-expect(grade9Grades.includes("seven-class-summary"),"Grade 09 export retains its legacy report schema label until a separate migration is approved");
+expect(grade9Grades.includes("khaemenes-grade09-eight-class-summary"),"Grade 09 export uses the canonical eight-class report schema");
 
 if(failures.length){
   console.error("Upper-grade/student-profile parity: FAIL");
