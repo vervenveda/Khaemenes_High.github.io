@@ -19,6 +19,39 @@ for(const card of [identity,firstStep])if(card)top.append(card);
 main.prepend(top);
 align(top);
 
+// Canonical Grade 09 Schedule surface: one native dialog owns the live schedule DOM.
+// The standalone schedule/ page remains the non-dialog fallback.
+if(schedule&&!document.getElementById("grade09ScheduleDialog")){
+ const dialog=document.createElement("dialog");
+ dialog.id="grade09ScheduleDialog";
+ dialog.setAttribute("aria-labelledby","grade09ScheduleDialogTitle");
+ dialog.style.cssText="box-sizing:border-box;width:min(1100px,calc(100vw - 24px));max-height:91dvh;margin:auto;padding:0;border:2px solid #b48b45;border-radius:7px;background:#f4f0e7;color:#243038;box-shadow:0 22px 70px rgba(0,0,0,.42);overflow:auto";
+ const shell=document.createElement("div");
+ shell.style.cssText="display:flex;flex-direction:column;min-height:0";
+ const head=document.createElement("div");
+ head.style.cssText="position:sticky;top:0;z-index:3;display:flex;align-items:center;justify-content:space-between;gap:14px;padding:14px 18px;background:#243038;color:#fff8e9;border-bottom:1px solid #b48b45";
+ const title=document.createElement("h2");
+ title.id="grade09ScheduleDialogTitle";
+ title.textContent="My Schedule";
+ title.style.cssText="margin:0;color:#fff8e9;font:400 24px/1.3 Cinzel,Georgia,serif";
+ const close=document.createElement("button");
+ close.type="button";
+ close.textContent="Close";
+ close.style.cssText="min-height:44px;padding:8px 16px;border:1px solid #b48b45;border-radius:7px;background:#fff8e9;color:#243038;font:400 16px/1.3 'Brandon Grotesque',Nunito,Arial,sans-serif;cursor:pointer";
+ const body=document.createElement("div");
+ body.style.cssText="padding:18px";
+ schedule.style.setProperty("width","100%","important");
+ schedule.style.setProperty("max-width","none","important");
+ schedule.style.setProperty("margin","0","important");
+ body.append(schedule);
+ head.append(title,close);
+ shell.append(head,body);
+ dialog.append(shell);
+ document.body.append(dialog);
+ close.addEventListener("click",()=>dialog.close());
+ dialog.addEventListener("click",event=>{if(event.target===dialog)dialog.close()});
+}
+
 // Profile photo and personal information must lead; the Profile Tools toolbar follows the identity card.
 // It reuses existing Grade 09 features; no course records or learner storage are changed.
 if(!document.getElementById("khaeProfileToolRail")){
@@ -57,7 +90,11 @@ if(!document.getElementById("khaeProfileToolRail")){
     if(!popup)return reveal("studentCourseProgress");
     return true;
    }},
-  {label:"Schedule",href:"schedule/"},
+  {label:"Schedule",target:"grade09ScheduleDialog",fallback:"schedule/",run:()=>{
+    const popup=document.getElementById("grade09ScheduleDialog");
+    if(popup&&typeof popup.showModal==="function"){if(!popup.open)popup.showModal();return true}
+    return false;
+   }},
   {label:"KlasaiPeer",target:"grade09StudyStudioDialog",fallback:"https://vervenveda.com/Klasaipeer.github.io/",run:()=>{
     const studio=window.KhaemenesGrade09StudyStudio;
     if(studio?.open){studio.open(document.activeElement);return true}
