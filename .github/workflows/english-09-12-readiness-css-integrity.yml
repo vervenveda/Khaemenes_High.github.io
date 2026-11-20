@@ -1,0 +1,26 @@
+name: English 9–12 unified readiness CSS integrity
+on:
+  push:
+    branches:
+      - fix/english09-12-unified-readiness-css-regression-20261119
+    paths:
+      - "courses/language-arts/english-*/index.html"
+      - "courses/language-arts/english-*/assessments/diagnostic/index.html"
+      - "courses/language-arts/assets/english-readiness-ui-v1.css"
+      - "tools/validate-english-09-12-readiness-css.mjs"
+      - ".github/workflows/english-09-12-readiness-css-integrity.yml"
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  source-boundary:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "24"
+      - name: Confirm source-identical assessments and single readiness CSS
+        run: |
+          node --check tools/validate-english-09-12-readiness-css.mjs
+          node tools/validate-english-09-12-readiness-css.mjs
