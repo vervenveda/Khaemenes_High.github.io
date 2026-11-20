@@ -14,10 +14,11 @@ function el(tag,cls,text){const n=document.createElement(tag);if(cls)n.className
 function mount(){
 const grade=document.body?.dataset.socialStudiesEngine,spec=CURRICULUM[grade];
 if(!spec||document.getElementById("khaeSocialStudiesEngineV01"))return false;
-const root=document.querySelector(grade==="9"?"main.workspace":"main[data-social-studies-prototype]");
+const demo=document.body.hasAttribute("data-social-studies-demo");
+const root=document.querySelector(grade==="9"&&!demo?"main.workspace":"main[data-social-studies-prototype]");
 if(!root)return false;
-if(grade==="9"&&(!root.querySelector('[data-day-select="1"]')||!root.querySelector('[data-phase-select="read"]')||!root.querySelector("#source-pack")))return false;
-const header=root.querySelector("h1"),host=grade==="9"?root.querySelector('[aria-label="Choose day"]'):root.querySelector('[data-ss-stage="1"]');
+if(grade==="9"&&!demo&&(!root.querySelector('[data-day-select="1"]')||!root.querySelector('[data-phase-select="read"]')||!root.querySelector("#source-pack")))return false;
+const header=root.querySelector("h1"),host=grade==="9"&&!demo?root.querySelector('[aria-label="Choose day"]'):root.querySelector('[data-ss-stage="1"]');
 if(!header||!host)return false;
 const style=el("style");style.id="khaeSocialStudiesEngineV01Style";style.textContent=CSS;
 const panel=el("section","khae-ss-engine");panel.id="khaeSocialStudiesEngineV01";panel.setAttribute("aria-label","Social Studies inquiry guide");
@@ -40,7 +41,7 @@ title.textContent="Stage "+(current+1)+" · "+step[0];description.textContent=st
 status.textContent="Inquiry stage "+(current+1)+" of "+spec.steps.length+" · No mastery credit";
 buttons.forEach((b,j)=>b.setAttribute("aria-current",j===current?"step":"false"));prev.disabled=current===0;next.disabled=current===spec.steps.length-1;
 if(!openNative)return;
-if(grade==="9"){
+if(grade==="9"&&!demo){
 const day=root.querySelector('[data-day-select="'+step[2]+'"]'),phase=root.querySelector('[data-phase-select="'+step[3]+'"]');
 day?.click();phase?.click(); // Existing day/phase code alone owns its course state.
 root.querySelector("#step-caption")?.scrollIntoView({block:"start"});
