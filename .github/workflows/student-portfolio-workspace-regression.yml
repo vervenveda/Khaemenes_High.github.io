@@ -1,0 +1,25 @@
+name: Student Portfolio and Homeschool Report
+on:
+  pull_request:
+    paths:
+      - "grades/grade-*/student-profile/index.html"
+      - "grades/grade-09/student-profile/dashboard-layout.js"
+      - "grades/shared/grade09-blueprint-upper-grade.js"
+      - "portfolio/**"
+      - "tools/validate-student-portfolio-workspace.mjs"
+      - ".github/workflows/student-portfolio-workspace-regression.yml"
+  push:
+    paths:
+      - "grades/grade-*/student-profile/index.html"
+      - "grades/grade-09/student-profile/dashboard-layout.js"
+      - "grades/shared/grade09-blueprint-upper-grade.js"
+      - "portfolio/**"
+      - "tools/validate-student-portfolio-workspace.mjs"
+      - ".github/workflows/student-portfolio-workspace-regression.yml"
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Validate portfolio workspace and learner-scoped homeschool report
+        run: node tools/validate-student-portfolio-workspace.mjs
