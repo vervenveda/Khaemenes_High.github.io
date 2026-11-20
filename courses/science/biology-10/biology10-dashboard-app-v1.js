@@ -140,7 +140,35 @@ function assessmentView(){return `<article class="card"><h3>Monte Carlo Practice
 let activeTestQuestions=[],activeTestSession=null,assessmentConflict=false;
 window.addEventListener("storage",e=>{if(e.key===KEY||String(e.key||"").startsWith(KEY+"::mc::"))assessmentConflict=true});
 function assessmentConfig(kind){return kind==="midterm"?{count:20,sourceQuotas:{"H1-concept":5,"H1-model":3,"H1-quantitative":6,"H1-evidence":6}}:{count:30,sourceQuotas:{"H1-concept":4,"H1-model":2,"H1-quantitative":5,"H1-evidence":4,"H2-concept":3,"H2-model":5,"H2-quantitative":5,"H2-evidence":2}}}
-function testMarkup(kind){const cfg=assessmentConfig(kind),MC=window.KhaeMonteCarloAssessment,BANK=window.KhaemenesBiology10QuestionBank||[],mcKey=KEY+"::mc::"+kind;activeTestSession=MC.openSession(mcKey,BANK,{kind:"biology-"+kind,count:cfg.count,sourceQuotas:cfg.sourceQuotas});activeTestQuestions=MC.materialize(BANK,activeTestSession);assessmentConflict=false;const prior=MC.getResponses(mcKey,activeTestSession.id);return `<form id="testForm"><h3>${kind==="midterm"?"Practice Midterm":"Practice Comprehensive Final"}</h3><p class="small">Generated form ${esc(activeTestSession.id)} · ${activeTestQuestions.length} questions · source bank ${BANK.length}.</p>${activeTestQuestions.map((q,i)=>`<section class="question" role="group" aria-labelledby="question-title-${i}"><p id="question-title-${i}"><strong>${i+1}. ${esc(q.prompt)}</strong></p><p class="small">Week ${q.week} · ${esc(q.type)}</p>${q.options.map((o,oi)=>`<label><input type="radio" name="q${i}" value="${oi}" data-qid="${esc(q.id)}" required ${Number(prior[q.id])===oi?"checked":""}> <span>${esc(o)}</span></label>`).join("")}</section>`).join("")}<button type="submit">Score Assessment</button></form><div id="testFeedback" role="status" aria-live="polite" aria-atomic="true"></div>`}
+function testMarkup(kind){const cfg=assessmentConfig(kind),MC=window.KhaeMonteCarloAssessment,BANK=window.KhaemenesBiology10QuestionBank||[],mcKey=KEY+"::mc::"+kind;activeTestSession=MC.openSession(mcKey,BANK,{kind:"biology-"+kind,count:cfg.count,sourceQuotas:cfg.sourceQuotas});activeTestQuestions=MC.materialize(BANK,activeTestSession);assessmentConflict=false;const prior=MC.getResponses(mcKey,activeTestSession.id);return `<form id="testForm"><h3>${kind==="midterm"?"Practice Midterm":"Practice Comprehensive Final"}</h3><p class="small">Generated form ${esc(activeTestSession.id)} · ${activeTestQuestions.length} questions · source bank ${BANK.length}.</p><details class="bio10-progress" id="bio10PracticeProgress"><summary>View Progress &amp; Question Navigator <span aria-hidden="true">+</span></summary><div class="bio10-progress-body"><p id="bio10ProgressCount" role="status">Question navigation</p><div class="bio10-progress-buttons" id="bio10ProgressButtons"></div></div></details>${activeTestQuestions.map((q,i)=>`<section class="question" role="group" aria-labelledby="question-title-${i}"><p id="question-title-${i}"><strong>${i+1}. ${esc(q.prompt)}</strong></p><p class="small">Week ${q.week} · ${esc(q.type)}</p>${q.options.map((o,oi)=>`<label><input type="radio" name="q${i}" value="${oi}" data-qid="${esc(q.id)}" required ${Number(prior[q.id])===oi?"checked":""}> <span>${esc(o)}</span></label>`).join("")}</section>`).join("")}<button type="submit">Score Assessment</button></form><div id="testFeedback" role="status" aria-live="polite" aria-atomic="true"></div>`}
+function mountBiologyPracticeProgress(){
+ const form=$("testForm"),details=$("bio10PracticeProgress"),grid=$("bio10ProgressButtons"),status=$("bio10ProgressCount");
+ if(!form||!details||!grid||!status)return;
+ const questions=[...form.querySelectorAll("section.question")];
+ const buttons=questions.map((question,i)=>{
+  question.id="bio10-practice-question-"+(i+1);
+  const button=document.createElement("button");
+  button.type="button";button.className="bio10-progress-jump";
+  button.textContent=String(i+1);
+  button.addEventListener("click",()=>{
+   details.open=false;
+   question.scrollIntoView({block:"start"});
+   question.querySelector('input[type="radio"]')?.focus({preventScroll:true});
+  });
+  grid.append(button);return button;
+ });
+ const sync=()=>{
+  let answered=0;
+  questions.forEach((question,i)=>{
+   const done=Boolean(question.querySelector('input[type="radio"]:checked'));
+   if(done)answered++;
+   buttons[i].classList.toggle("answered",done);
+   buttons[i].setAttribute("aria-label","Question "+(i+1)+(done?" answered":" unanswered"));
+  });
+  status.textContent=answered+" of "+questions.length+" questions answered";
+ };
+ form.addEventListener("change",sync);sync();
+}
 function wireTestPersistence(kind){const MC=window.KhaeMonteCarloAssessment,mcKey=KEY+"::mc::"+kind;document.querySelectorAll("#testForm input[data-qid]").forEach(x=>x.onchange=()=>MC.saveResponse(mcKey,x.dataset.qid,+x.value,activeTestSession.id)||((assessmentConflict=true),alert("This practice form changed in another tab. Reload before continuing.")))}
 function scoreTest(kind,form){const MC=window.KhaeMonteCarloAssessment,mcKey=KEY+"::mc::"+kind,pool=activeTestQuestions;if(assessmentConflict||localStorage.getItem(KEY)!==stateSnapshot||!MC.isActive(mcKey,activeTestSession?.id)){alert("This learner or practice record changed in another tab. Reload before submitting to protect newer work.");return}let correct=0,misses=[],domains={};pool.forEach((q,i)=>{const chosen=form.querySelector(`input[name="q${i}"]:checked`);domains[q.type]||={correct:0,total:0};domains[q.type].total++;if(chosen&&+chosen.value===q.answer){correct++;domains[q.type].correct++}else{const selected=chosen?+chosen.value:null;const reviewed=window.KhaeScienceMisconceptionGuidance?.reviewed(window.KhaemenesBiology10Misconceptions,q,selected)||null;const diagnostic=reviewed||window.KhaeScienceMisconceptionGuidance?.forQuestion("biology-10",q,selected)||null;misses.push({n:i+1,itemId:q.id,week:q.week,type:q.type,topic:q.topic||"",selectedIndex:selected,answer:q.options[q.answer],why:q.explanation,diagnostic})}});const pct=Math.round(correct/pool.length*100),passed=pct>=80;state.scores[kind]=Math.max(state.scores[kind]||0,pct);state.assessmentHistory=Array.isArray(state.assessmentHistory)?state.assessmentHistory:[];const completedAt=new Date().toISOString();
   const diagnosticMisses=misses.filter(m=>m.diagnostic).map(m=>({itemId:m.itemId,week:m.week,type:m.type,selectedIndex:m.selectedIndex,tag:m.diagnostic.tag,label:m.diagnostic.label,remediationRoute:m.diagnostic.remediationRoute,certainty:m.diagnostic.certainty}));
@@ -163,7 +191,7 @@ function standardsView(){return `<div class="grid"><article class="card c6"><h3>
 function render(){navState();renderWeekList();biologyRecordNotice();$("studentName").value=state.profile.name||"";$("pathway").value=state.profile.pathway||"Core";let out="";if(state.view==="dashboard")out=dashboard();if(state.view==="week")out=weekView();if(state.view==="scope")out=scopeView();if(state.view==="lab")out=labView();if(state.view==="assess")out=assessmentView();if(state.view==="report")out=reportView();if(state.view==="standards")out=standardsView();$("content").innerHTML=out;
 if(state.view==="week"&&$("weekDone")){$("weekDone").onchange=e=>{state.completed[state.week]=e.target.checked};$("saveWeek").onclick=()=>{state.notes[state.week]=$("weekNote").value;save();render()};$("prevWeek").onclick=()=>{state.week=Math.max(1,state.week-1);save();render()};$("nextWeek").onclick=()=>{const target=Math.min(36,state.week+1);if(target>state.week&&!weekUnlocked(target)){alert(weekLockReason(target));return}state.week=target;save();render()};wireWeeklyMastery()}
 if(state.view==="week"&&$("lockedPrevWeek")){$("lockedPrevWeek").onclick=()=>{state.week=firstUnmasteredBefore(state.week)||1;save();render()};document.querySelectorAll("[data-view-jump]").forEach(b=>b.onclick=()=>setView(b.dataset.viewJump))}
-if(state.view==="assess")document.querySelectorAll("[data-test]").forEach(b=>b.onclick=()=>{const kind=b.dataset.test;$("testArea").innerHTML=testMarkup(kind);wireTestPersistence(kind);$("testForm").onsubmit=e=>{e.preventDefault();scoreTest(kind,e.currentTarget)}});
+if(state.view==="assess")document.querySelectorAll("[data-test]").forEach(b=>b.onclick=()=>{const kind=b.dataset.test;$("testArea").innerHTML=testMarkup(kind);wireTestPersistence(kind);mountBiologyPracticeProgress();$("testForm").onsubmit=e=>{e.preventDefault();scoreTest(kind,e.currentTarget)}});
 if(state.view==="report"&&$("export2"))$("export2").onclick=exportData;
 }
 function exportData(){const payload={course:COURSE.code,title:COURSE.title,exportedAt:new Date().toISOString(),state};const blob=new Blob([JSON.stringify(payload,null,2)],{type:"application/json"});const url=URL.createObjectURL(blob);const a=document.createElement("a");a.href=url;a.download=`${COURSE.code.toLowerCase()}-progress.json`;document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),800)}
