@@ -1,5 +1,5 @@
 /* One dedicated Schedule presentation owner. VNV canonical scripts own all chrome. */
-:root{--ink:#243038;--cream:#fff8e9;--khaki:#d6c4a1;--parchment:#eee5d4;--border:#bda982}
+:root{--ink:#243038;--cream:#fffdf5;--khaki:#d6c4a1;--parchment:#eee5d4;--border:#bda982}
 *{box-sizing:border-box}
 html{scroll-behavior:smooth;overflow-y:auto}
 body{margin:0;background:var(--parchment);color:var(--ink);font:400 16px/1.55 "Brandon Grotesque",Nunito,Arial,sans-serif;min-width:0;overflow-x:hidden}
