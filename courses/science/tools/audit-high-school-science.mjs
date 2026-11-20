@@ -78,8 +78,8 @@ function auditUpperCourse(slug,label){
   }
   need(totalLessons===180,label+" has 180/180 daily modules ("+totalLessons+")");
   const portal=path.join(root,"index.html");
-  if(exists(portal)){
-    const c=read(portal);
+  const c=exists(portal)?read(portal):"";
+  if(c){
     need(c.includes("../inquiry-ledger/?course="+slug),label+" links shared inquiry-time ledger");
     need(c.includes("monte-carlo-assessment-v1.js"),label+" portal uses Monte Carlo engine");
     need(c.includes("assessmentHistory"),label+" portal retains assessment history");
