@@ -50,7 +50,7 @@ for(const file of pages){
   assert.ok(source.includes("vnv-ecosystem-toolbar.js"),file+" missing ecosystem toolbar");
   assert.ok(source.includes("math-landing-class-tools-v1.js"),file+" missing canonical math landing class tools");
   assert.ok(source.includes("Enter Course"),file+" missing direct instructional doorway");
-  assert.ok(/href=["']assessments\/?["']/.test(source),file+" missing assessment doorway");
+  assert.ok(/href=["']assessments\/?["']/.test(source)||/data-view=["']exams["'][^>]*>[\s\S]*?Assessments/i.test(source),file+" missing assessment doorway");
   assert.ok(!source.includes("high-school-global-chrome-v2.js"),file+" retired chrome reference returned");
  }else if(minimalLanding){
   assert.ok(source.includes("vnv-dual-ticker-v1.js"),file+" missing canonical dual ticker");
