@@ -397,9 +397,17 @@ function resumePriorityCourse(){
 function recordLaunch(id,url,title){
   const course=COURSE_MAP.get(id);
   if(!course)return false;
+  const requested=url||course.home;
+  const approved=safeCourseURL(course,requested);
+  try{
+    // Never replace a valid last lesson with a different course's URL or an
+    // unapproved external address disguised as this course's continuation.
+    if(new URL(normalizeLegacyRoute(requested),location.origin).href!==
+       new URL(approved,location.origin).href)return false;
+  }catch{return false}
   if(MATH_ID_SET.has(id))writeJSON(MATH_PATHWAY_KEY,id);
   const launches=readJSON(LAST_LAUNCH_KEY,{}),next=launches&&typeof launches==="object"?launches:{};
-  next[id]={url:safeCourseURL(course,url||course.home),title:title||course.title,at:new Date().toISOString()};
+  next[id]={url:approved,title:title||course.title,at:new Date().toISOString()};
   return writeJSON(LAST_LAUNCH_KEY,next);
 }
 function mentorFor(id,source=location.pathname){
