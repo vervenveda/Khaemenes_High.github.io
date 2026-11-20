@@ -1,0 +1,176 @@
+/* Khaemenes High · read-only homeschool academic progress / transcript-preparation.
+ * Sources: registered Academy learner + course-owned continuation ledger.
+ * Never writes course results, calculates credit, certifies transcripts, or guesses grades.
+ */
+(()=>{"use strict";
+const host=document.getElementById("homeschoolReportBody");if(!host)return;
+const $=id=>document.getElementById(id);
+const number=n=>typeof n==="number"&&Number.isFinite(n)&&n>=0&&n<=100?n:null;
+const display=n=>n===null?"Not reported":(Number.isInteger(n)?n:n.toFixed(1))+"%";
+const mk=(tag,cls,content)=>{const node=document.createElement(tag);if(cls)node.className=cls;if(content!==undefined)node.textContent=String(content);return node};
+const profileApi=window.KhaemenesCourseEntryContract;
+const gradeContext=window.KhaemenesHighProfileGradeContext;
+const ledger=window.KhaemenesLearningContinuation;
+const pinApi=window.KhaemenesHighCoursePins;
+const catalog=window.KhaemenesHighEightClass;
+const normalizeGrade=g=>{const s=String(g??"").replace(/^grade[\s-]*/i,"").padStart(2,"0");return ["09","10","11","12"].includes(s)?s:null};
+const aliases=id=>/^english-(10|11|12)$/.test(id||"")?[id,"ela"+id.slice(-2)]:id?[id]:[];
+function learner(){
+ const current=profileApi?.readAcademyProfile?.(),ctx=gradeContext?.active?.(),pin=pinApi?.activeLearner?.();
+ if(!current?.learnerId||!ctx?.learnerId||ctx.learnerId!==current.learnerId||pin!==current.learnerId)return null;
+ const grade=normalizeGrade(ctx.grade);
+ if(!grade)return null;
+ return {id:String(ctx.learnerId),grade,name:String(current.nickname||current.name||ctx.nickname||"Registered learner").slice(0,100)};
+}
+function scoreBucket(a){
+ const key=String(a?.title||"")+" "+String(a?.id||"");
+ if(/\bmid[ -]?term\b/i.test(key))return "Midterm";
+ if(/\bfinal(?:\s+exam|\s+assessment)?\b/i.test(key))return "Final";
+ return a.kind==="quiz"?"Quiz":"Other test";
+}
+function assessments(record){
+ const seen=new Set(),rows=[];
+ for(const a of Array.isArray(record?.assessments)?record.assessments:[]){
+  if(!a||!["quiz","test"].includes(a.kind)||typeof a.id!=="string"||seen.has(a.id))continue;
+  if(!Number.isFinite(a.earned)||!Number.isFinite(a.possible)||a.earned<0||a.possible<=0||a.earned>a.possible)continue;
+  seen.add(a.id);
+  rows.push({id:a.id,title:String(a.title||a.id).slice(0,120),type:scoreBucket(a),earned:a.earned,possible:a.possible,percent:Math.round(1000*a.earned/a.possible)/10,gradedAt:String(a.gradedAt||"").slice(0,40)});
+ }
+ return rows;
+}
+function summary(rows){
+ let totalEarned=0,totalPossible=0;
+ for(const a of rows){totalEarned+=a.earned;totalPossible+=a.possible}
+ return totalPossible?Math.round(1000*totalEarned/totalPossible)/10:null;
+}
+function progress(record){return number(record?.progress?.percent)}
+function slotsFor(grade){
+ const mathSelected=grade==="09"?(pinApi?.readPins?.()||[]).filter(id=>id==="algebra-1"||id==="pre-algebra"):null;
+ const mathId=mathSelected?.length===1?mathSelected[0]:null;
+ const language=pinApi?.readLanguageChoices?.()?.[String(Number(grade))]||null;
+ try{return catalog?.slots?.(Number(grade),{mathId,language})||[]}catch{return []}
+}
+function currentRecords(user){
+ const list=ledger?.readLearner?.(user.id)||[];
+ return list.filter(record=>{
+  if(!record||record.learnerId!==user.id||typeof record.courseId!=="string")return false;
+  const tagged=record.grade?normalizeGrade(record.grade):null;
+  return !record.grade||tagged===user.grade;
+ });
+}
+function evidenceCount(user){
+ try{
+  const key="khae-learning-portfolio-v1:learner:"+encodeURIComponent(user.id);
+  const list=JSON.parse(localStorage.getItem(key)||"[]");
+  return Array.isArray(list)?list.filter(e=>e&&typeof e.id==="string"&&typeof e.title==="string"&&typeof e.detail==="string").length:0;
+ }catch{return null}
+}
+function rowsFor(user){
+ const list=currentRecords(user),slots=slotsFor(user.grade),matched=new Set();
+ const rows=slots.map(slot=>{
+  const candidates=list.filter(record=>aliases(slot.id).includes(record.courseId));
+  for(const record of candidates)matched.add(record.courseId);
+  const fresh=candidates.find(r=>!r.stale)||null;
+  const old=candidates[0]||null;
+  return {courseId:slot.id||"",title:String(fresh?.courseTitle||old?.courseTitle||slot.title||slot.label),
+   subject:slot.label,status:!slot.id?"Selection required":fresh?"Evidence received":old?"Stale evidence":"No evidence reported",
+   stale:!fresh&&!!old,record:fresh||null};
+ });
+ // Add evidence from extra courses only when it explicitly matches the registered grade.
+ for(const record of list){
+  if(matched.has(record.courseId)||!record.grade||normalizeGrade(record.grade)!==user.grade)continue;
+  matched.add(record.courseId);
+  rows.push({courseId:record.courseId,title:record.courseTitle||record.courseId,subject:record.subject||"Additional course",
+   status:record.stale?"Stale evidence":"Evidence received",stale:!!record.stale,record:record.stale?null:record});
+ }
+ return rows;
+}
+function definition(label,value){const line=mk("div","portfolio-report-pair");line.append(mk("dt","",label),mk("dd","",value));return line}
+function renderCard(row){
+ const card=mk("article","portfolio-report-course"),title=mk("h3","",row.title);
+ card.append(title,mk("p","portfolio-report-note",row.subject+" · "+row.status));
+ const items=assessments(row.record);
+ const defs=mk("dl","portfolio-report-definitions");
+ defs.append(definition("Course completion",display(progress(row.record))));
+ defs.append(definition("Recorded quiz/test points",display(summary(items))));
+ defs.append(definition("Final transcript grade","Pending evaluator review"));
+ defs.append(definition("Credit awarded","Not determined"));
+ card.append(defs);
+ const groups=["Quiz","Other test","Midterm","Final"];
+ for(const category of groups){
+  const group=items.filter(a=>a.type===category);
+  const label=category==="Quiz"?"Quizzes":category==="Other test"?"Other tests":category+" scores";
+  const section=mk("section","portfolio-report-assessments");
+  section.append(mk("h4","",label));
+  if(!group.length)section.append(mk("p","portfolio-report-note","Not reported"));
+  else{
+   const list=mk("ul","portfolio-report-scores");
+   for(const a of group)list.append(mk("li","",a.title+" — "+a.earned+" / "+a.possible+" ("+display(a.percent)+")"+(a.gradedAt?" · "+a.gradedAt:"")));
+   section.append(list);
+  }
+  card.append(section);
+ }
+ return card;
+}
+function reportData(){
+ const user=learner();if(!user)return null;
+ const rows=rowsFor(user);
+ return {schema:"khaemenes-homeschool-progress-report-v1",reportType:"evidence-summary-not-certified-transcript",
+  generatedAt:new Date().toISOString(),learner:{name:user.name,grade:user.grade},
+  portfolioEvidenceCount:evidenceCount(user),
+  courses:rows.map(row=>({courseId:row.courseId,title:row.title,subject:row.subject,status:row.status,
+   completionPercent:progress(row.record),recordedAssessmentAveragePercent:summary(assessments(row.record)),
+   assessments:assessments(row.record),
+   officialFinalGrade:null,creditAwarded:null,
+   source:row.record?"Academy learner-scoped continuation ledger":"No current published ledger record"})),
+  evaluatorReview:{attendanceHours:"Not supplied",daysOfInstruction:"Not supplied",curriculumVerification:"Pending",
+   finalGrades:"Pending",awardedCredits:"Pending",reviewSignature:"Pending"},
+  notice:"Learner-scoped, locally available academic evidence. This report is not a certified transcript, proof of legal compliance, or a final credit decision."};
+}
+function refresh(){
+ const report=reportData();host.replaceChildren();
+ if(!report){
+  $("reportIdentity").textContent="Select a registered High School learner to view this private academic report.";
+  $("reportCourseCount").textContent="—";$("reportAssessmentCount").textContent="—";
+  $("printReport").disabled=true;$("exportReport").disabled=true;
+  host.append(mk("p","portfolio-report-note","No private academic report can be displayed without a verified active learner."));
+  return;
+ }
+ $("printReport").disabled=false;$("exportReport").disabled=false;
+ $("reportIdentity").textContent="Learner: "+report.learner.name+" · Grade "+Number(report.learner.grade)+" · Updated "+new Date(report.generatedAt).toLocaleDateString();
+ $("reportCourseCount").textContent=String(report.courses.filter(c=>c.status==="Evidence received").length);
+ $("reportAssessmentCount").textContent=String(report.courses.reduce((n,c)=>n+c.assessments.length,0));
+ const head=mk("div","portfolio-report-print-heading");
+ head.append(mk("h3","","Homeschool Academic Progress Report"),mk("p","",report.learner.name+" · Grade "+Number(report.learner.grade)+" · "+new Date(report.generatedAt).toLocaleDateString()),
+  mk("p","portfolio-report-note","Draft evidence report · Final transcript grades and credit require evaluator review."));
+ host.append(head);
+ const grid=mk("div","portfolio-report-grid");
+ for(const row of rowsFor(learner()))grid.append(renderCard(row));
+ host.append(grid);
+ const review=mk("section","portfolio-report-evaluator");
+ review.append(mk("h3","","Parent / Evaluator Review"),
+  mk("p","","Student portfolio entries available on this device: "+(report.portfolioEvidenceCount===null?"Not available":report.portfolioEvidenceCount)),
+  mk("p","","Instruction days: ____________________    Hours: ____________________"),
+  mk("p","","Curriculum / assessment verification: __________________________________________"),
+  mk("p","","Final grade and credit determination: ________________________________________"),
+  mk("p","","Parent or evaluator: _____________________    Date: _____________________"));
+ host.append(review);
+}
+function downloadReport(){
+ const report=reportData();if(!report)return;
+ const blob=new Blob([JSON.stringify(report,null,2)],{type:"application/json"}),url=URL.createObjectURL(blob);
+ const a=document.createElement("a");a.href=url;a.download="khaemenes-homeschool-progress-grade-"+report.learner.grade+".json";
+ document.body.append(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),1000);
+}
+$("refreshReport")?.addEventListener("click",refresh);
+$("exportReport")?.addEventListener("click",downloadReport);
+$("printReport")?.addEventListener("click",()=>{
+ if(!reportData())return;
+ refresh();document.body.classList.add("portfolio-report-print");
+ window.print();
+});
+window.addEventListener("afterprint",()=>document.body.classList.remove("portfolio-report-print"));
+for(const event of ["pageshow","khaemenes-learning-continuation-changed","khaemenes-student-profile-changed"])window.addEventListener(event,refresh);
+refresh();
+window.KhaemenesPortfolioAcademicReport=Object.freeze({refresh,version:"1.0.0"});
+})();
