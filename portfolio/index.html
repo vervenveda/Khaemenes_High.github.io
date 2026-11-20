@@ -31,6 +31,18 @@
 <script>window.VNV_HEADER?.mount?.({replaceLegacy:true,title:"Khaemenes Academy",subtitle:"Student Portfolio",icon:"K",home:"https://vervenveda.com/Khaemenes_Academy.github.io/",actions:[]});</script>
 <script src="https://vervenveda.com/assets/vnv-language.js" defer data-official-vnv-language="true"></script>
 <script id="portfolio-official-tools-config">
+const portfolioToolbarGrade=(()=>{
+ try{
+  const id=JSON.parse(localStorage.getItem("khaemenes_active_learner_v1")||"null");
+  const person=JSON.parse(localStorage.getItem("khaemenes_family_registry_v1")||"null")?.learners?.[id];
+  if(person?.learnerId===id&&person?.stage==="high"){
+   const g=String(person.grade??"").replace(/^grade[\\s-]*/i,"").padStart(2,"0");
+   if(["09","10","11","12"].includes(g))return g;
+  }
+ }catch{}
+ const incoming=new URLSearchParams(location.search).get("grade");
+ return ["09","10","11","12"].includes(incoming)?incoming:"09";
+})();
 window.KhaemenesClassToolsConfigV1=Object.freeze({
  id:"khae-student-portfolio",match:()=>/\/Khaemenes_High\.github\.io\/portfolio\/(?:index\.html)?$/i.test(location.pathname),
  toggleLabel:"Tools",ariaLabel:"Verve N Veda portfolio tools",
@@ -41,7 +53,7 @@ window.KhaemenesClassToolsConfigV1=Object.freeze({
   {type:"ecosystem-list",label:"Creative",sub:"Art and music",filter:{category:"creative",limit:12}},
   {type:"link",label:"Calculator",sub:"Scientific calculator",href:"https://vervenveda.github.io/proresource_hub.github.io/Protools/Khaemenes_Scientific_Calculator/"},
   {type:"action",label:"Language",sub:"Translator",action:"language"},
-  {type:"link",label:"Profile",sub:"Student profile",href:"../grades/grade-09/student-profile/"},
+  {type:"link",label:"Profile",sub:"Student profile",href:"../grades/grade-"+portfolioToolbarGrade+"/student-profile/"},
   {type:"help",label:"Instructions",sub:"Tool guidance"}
  ],
  actions:{language:()=>{
@@ -55,6 +67,21 @@ window.KhaemenesClassToolsConfigV1=Object.freeze({
  }},
  help:{title:"Portfolio Tools",paragraphs:["Save learning evidence intentionally, and export backups. The portfolio does not change course scores or lesson progression."]}
 });
+const attachPortfolioTranslator=()=>{
+ const toolbar=document.getElementById("vnvClassToolsToolbar");
+ const select=document.getElementById("vnv-language-switch");
+ if(!toolbar||!select)return false;
+ let panel=toolbar.querySelector("[data-vct-language-panel]");
+ if(!panel){panel=document.createElement("div");panel.className="vct-pop";panel.dataset.vctLanguagePanel="1";panel.hidden=true;
+  const heading=document.createElement("h2");heading.textContent="Language";panel.append(heading);
+  toolbar.querySelector("#vnvClassToolsPanel")?.append(panel);}
+ if(panel.parentElement&&select.parentElement!==panel)panel.append(select);
+ return !!panel.parentElement&&panel.contains(select);
+};
+const portfolioToolObserver=new MutationObserver(()=>{
+ if(attachPortfolioTranslator())portfolioToolObserver.disconnect();
+});
+portfolioToolObserver.observe(document.documentElement,{childList:true,subtree:true});
 </script>
 <script src="https://vervenveda.com/assets/vnv-class-tools-toolbar.js?v=1.6.1" defer data-vnv-class-tools-toolbar="portfolio"></script>
 <script src="https://vervenveda.com/assets/vnv-ecosystem-toolbar.js" defer data-official-vnv-ecosystem-toolbar="true"></script>
