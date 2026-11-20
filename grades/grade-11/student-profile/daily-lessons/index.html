@@ -102,8 +102,32 @@ if(valid&&catalog){
  for(const slot of slots){
   const card=make("article");card.className="g11-card";
   card.append(make("h3",slot.label),make("p",slot.title));
-  const snaps=ctx?.learnerId&&continuation?.readLearner?.(ctx.learnerId)||[];const snap=snaps.find(x=>x?.courseId===slot.id);
-  const href=url(snap?.nextHref)||url(slot.firstStepHref)||url(slot.href);
+  const snaps=ctx?.learnerId&&continuation?.readLearner?.(ctx.learnerId)||[];
+  const englishId={"english-10":"ela10","english-11":"ela11","english-12":"ela12"}[slot.id];
+  const snap=snaps.find(x=>x?.courseId===slot.id)||
+    (englishId?snaps.find(x=>x?.courseId===englishId):null);
+  let href=url(snap?.nextHref)||url(slot.firstStepHref)||url(slot.href);
+  if(englishId&&href){
+    const home=url(slot.href),first=url(slot.firstStepHref);
+    try{
+      const target=new URL(href),base=new URL(home);
+      const inside=target.origin===base.origin&&target.pathname.startsWith(base.pathname);
+      // A recovery-needed record keeps its explicit recovery route;
+      // ordinary Class buttons must not silently fall back to public home.
+      if(snap?.status!=="paused"&&(!inside||target.pathname===base.pathname)){
+        href=first;
+      }else if(snap?.status!=="paused"&&inside){
+        const week=target.pathname.match(/\/weeks\/week-(\d{2})\/?$/);
+        if(week){
+          const quiz=snap?.status==="mastery"||snap?.status==="corrections";
+          const leaf=slot.id==="english-10"?"monday/":"lessons/day-01.html";
+          href=quiz?target.href.replace(/#.*$/,"")+"#quiz":
+             week[1]==="01"?new URL("weeks/week-01/"+leaf,home).href:
+             target.href.replace(/#.*$/,"")+"#monday";
+        }
+      }
+    }catch{href=first}
+  }
   if(href){const a=make("a",snap?.stale?"Refresh Class":snap?.status==="corrections"?"Review Corrections":snap?.nextLabel||"Continue Class");a.className="g11-button";a.href=href;a.title=snap?.nextTitle||snap?.summary||"Continue this class";card.append(a)}
   else card.append(make("p","This course link is not published in the current catalog."));
   cards.append(card);
