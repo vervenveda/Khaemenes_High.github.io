@@ -73,12 +73,14 @@ async function render(){
 }
 function summary(){
  const learner=window.KhaemenesStudentProfileV2?.activeLearner?.()||null;
+ const published=learner?.learnerId?window.KhaemenesLearningContinuation?.readLearner?.(learner.learnerId)||[]:[];
+ const recordFor=id=>id?published.find(item=>item?.courseId===id)||null:null;
  return {
   kind:'khaemenes-grade09-eight-class-summary',
   createdAt:new Date().toISOString(),
   learner:learner?{learnerId:learner.learnerId,nickname:learner.nickname||learner.displayName||'Learner',grade:'09'}:null,
-  note:'This is a navigation/configuration summary only. Source course pages are authoritative for grades, scores, mastery, unlocks, assessments, and certificates.',
-  classes:subjects.map(([subject,idFn])=>{const id=idFn(),course=id?registry.getCourse(id):null;return {subject,courseId:id||null,title:course?.title||'Not selected',home:course?.home||null}})
+  note:'Not an official transcript. Source course pages remain authoritative for grades, scores, mastery, unlocks, assessments, and certificates. This export includes only currently published continuation evidence.',
+  classes:subjects.map(([subject,idFn])=>{const id=idFn(),course=id?registry.getCourse(id):null;return {subject,courseId:id||null,title:course?.title||'Not selected',home:course?.home||null,record:recordFor(id)}})
  };
 }
 document.getElementById('exportGrades').onclick=()=>{
