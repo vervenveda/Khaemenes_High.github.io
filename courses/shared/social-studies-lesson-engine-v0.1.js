@@ -21,7 +21,7 @@ function mount(){
 const grade=document.body?.dataset.socialStudiesEngine;
 const demo=document.body.hasAttribute("data-social-studies-demo");
 const week02=!demo&&/\/(?:weeks\/)?week-02\/student-packet\.html$/.test(location.pathname);
-const isGrade9Workspace=isGrade9Workspace&&!week02;
+const isGrade9Workspace=grade==="9"&&!demo&&!week02;
 const base=CURRICULUM[grade];
 const spec=week02&&WEEK02[grade]?Object.assign({},base,WEEK02[grade]):base;
 if(!spec||document.getElementById("khaeSocialStudiesEngineV01"))return false;
@@ -41,7 +41,7 @@ const targets=!demo&&!isGrade9Workspace?(week02&&WEEK02[grade]?.headings||headin
  return heading?.closest("article.lesson,section.card,article")||null;
 }):null;
 if(targets&&(!targets.length||targets.some(x=>!x)))return false;
-const header=root.querySelector("h1"),host=demo?root.querySelector('[data-ss-stage="1"]'):grade==="9"?root.querySelector('[aria-label="Choose day"]'):targets[0];
+const header=root.querySelector("h1"),host=demo?root.querySelector('[data-ss-stage="1"]'):isGrade9Workspace?root.querySelector('[aria-label="Choose day"]'):targets?.[0];
 if(!header||!host)return false;
 const style=el("style");style.id="khaeSocialStudiesEngineV01Style";style.textContent=CSS;
 const panel=el("section","khae-ss-engine");panel.id="khaeSocialStudiesEngineV01";panel.setAttribute("aria-label","Social Studies inquiry guide");
