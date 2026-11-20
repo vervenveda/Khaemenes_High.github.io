@@ -68,7 +68,54 @@ const laboratoryChecks=[
   ["courses/science/integrated-science-9/units/unit-12/lifecycle-question-check.html","lifecycle-question-app.js"],
   ["courses/science/integrated-science-9/units/unit-12/risk-question-check.html","risk-question-app.js"]
 ];
-const pages=[...cumulative,...unitPages,...support,...focusedPractice,...laboratories,...laboratoryChecks.map(x=>x[0])],fail=[];
+const earlierLaboratories=[
+  "courses/science/integrated-science-9/units/unit-01/dataset-laboratory.html",
+  "courses/science/integrated-science-9/units/unit-02/membrane-transport-lab.html",
+  "courses/science/integrated-science-9/units/unit-03/exercise-response-lab.html",
+  "courses/science/integrated-science-9/units/unit-03/feedback-laboratory.html",
+  "courses/science/integrated-science-9/units/unit-04/cell-cycle-laboratory.html",
+  "courses/science/integrated-science-9/units/unit-04/meiosis-laboratory.html",
+  "courses/science/integrated-science-9/units/unit-04/inheritance-probability-lab.html",
+  "courses/science/integrated-science-9/units/unit-04/variation-data-lab.html",
+  "courses/science/integrated-science-9/units/unit-05/food-web-energy-lab.html",
+  "courses/science/integrated-science-9/units/unit-05/population-evidence-lab.html",
+  "courses/science/integrated-science-9/units/unit-05/evidence-classification-lab.html",
+  "courses/science/integrated-science-9/units/unit-06/atomic-composition-lab.html",
+  "courses/science/integrated-science-9/units/unit-06/isotope-mass-lab.html",
+  "courses/science/integrated-science-9/units/unit-06/electron-configuration-lab.html",
+  "courses/science/integrated-science-9/units/unit-06/periodic-patterns-lab.html",
+  "courses/science/integrated-science-9/units/unit-07/bonding-formula-lab.html",
+  "courses/science/integrated-science-9/units/unit-07/structure-property-lab.html",
+  "courses/science/integrated-science-9/units/unit-07/equation-conservation-lab.html",
+  "courses/science/integrated-science-9/units/unit-07/energy-rate-lab.html",
+  "courses/science/integrated-science-9/units/unit-08/motion-graph-lab.html",
+  "courses/science/integrated-science-9/units/unit-08/force-newton-lab.html",
+  "courses/science/integrated-science-9/units/unit-08/momentum-impulse-lab.html",
+  "courses/science/integrated-science-9/units/unit-08/energy-work-power-lab.html",
+  "courses/science/integrated-science-9/units/unit-09/circuit-data-lab.html",
+  "courses/science/integrated-science-9/units/unit-09/magnetism-induction-lab.html",
+  "courses/science/integrated-science-9/units/unit-09/wave-equation-lab.html",
+  "courses/science/integrated-science-9/units/unit-09/information-signal-lab.html"
+];
+const earlierLaboratoryChecks=[
+  ["courses/science/integrated-science-9/units/unit-06/atomic-composition-lab-check.html","atomic-composition-app.js"],
+  ["courses/science/integrated-science-9/units/unit-06/isotope-question-check.html","isotope-question-app.js"],
+  ["courses/science/integrated-science-9/units/unit-06/electron-question-check.html","electron-question-app.js"],
+  ["courses/science/integrated-science-9/units/unit-06/periodic-question-check.html","periodic-question-app.js"],
+  ["courses/science/integrated-science-9/units/unit-07/bonding-question-check.html","bonding-question-app.js"],
+  ["courses/science/integrated-science-9/units/unit-07/structure-question-check.html","structure-question-app.js"],
+  ["courses/science/integrated-science-9/units/unit-07/equation-question-check.html","equation-question-app.js"],
+  ["courses/science/integrated-science-9/units/unit-07/energy-question-check.html","energy-question-app.js"],
+  ["courses/science/integrated-science-9/units/unit-08/motion-question-check.html","motion-question-app.js"],
+  ["courses/science/integrated-science-9/units/unit-08/force-question-check.html","force-question-app.js"],
+  ["courses/science/integrated-science-9/units/unit-08/momentum-question-check.html","momentum-question-app.js"],
+  ["courses/science/integrated-science-9/units/unit-08/energy-question-check.html","energy-question-app.js"],
+  ["courses/science/integrated-science-9/units/unit-09/circuit-question-check.html","circuit-question-app.js"],
+  ["courses/science/integrated-science-9/units/unit-09/magnet-question-check.html","magnet-question-app.js"],
+  ["courses/science/integrated-science-9/units/unit-09/wave-question-check.html","wave-question-app.js"],
+  ["courses/science/integrated-science-9/units/unit-09/information-question-check.html","information-question-app.js"]
+];
+const pages=[...cumulative,...unitPages,...support,...focusedPractice,...earlierLaboratories,...earlierLaboratoryChecks.map(x=>x[0]),...laboratories,...laboratoryChecks.map(x=>x[0])],fail=[];
 const count=(s,re)=>(s.match(re)||[]).length;
 
 for(const file of pages){
@@ -98,6 +145,32 @@ for(const file of cumulative.filter(f=>f.includes("/assessments/")&&!f.endsWith(
 {
   const s=fs.readFileSync("courses/science/integrated-science-9/diagnostic/readiness-diagnostic.html","utf8");
   for(const token of ["readiness-app.js","readiness-routing.js"]) if(!s.includes(token)) fail.push("Science 9 readiness · protected runtime missing "+token);
+}
+for(const file of earlierLaboratories){
+  const s=fs.readFileSync(file,"utf8");
+  if(!/unit-?\d\d?\.js|unit\d\d\.js/.test(s)) fail.push(file+" · unit laboratory runtime missing");
+}
+for(const file of [
+  "courses/science/integrated-science-9/units/unit-02/membrane-transport-lab.html",
+  "courses/science/integrated-science-9/units/unit-03/exercise-response-lab.html",
+  "courses/science/integrated-science-9/units/unit-04/cell-cycle-laboratory.html",
+  "courses/science/integrated-science-9/units/unit-04/meiosis-laboratory.html",
+  "courses/science/integrated-science-9/units/unit-04/inheritance-probability-lab.html",
+  "courses/science/integrated-science-9/units/unit-05/food-web-energy-lab.html",
+  "courses/science/integrated-science-9/units/unit-05/population-evidence-lab.html",
+  "courses/science/integrated-science-9/units/unit-05/evidence-classification-lab.html",
+  "courses/science/integrated-science-9/units/unit-06/atomic-composition-lab.html",
+  "courses/science/integrated-science-9/units/unit-06/isotope-mass-lab.html",
+  "courses/science/integrated-science-9/units/unit-06/electron-configuration-lab.html",
+  "courses/science/integrated-science-9/units/unit-06/periodic-patterns-lab.html"
+]){
+  const s=fs.readFileSync(file,"utf8");
+  if(!s.includes("science-formative-evidence.js")) fail.push(file+" · formative evidence bridge missing");
+}
+for(const [file,app] of earlierLaboratoryChecks){
+  const s=fs.readFileSync(file,"utf8");
+  if(!s.includes(app)) fail.push(file+" · protected question-check runtime missing "+app);
+  if(!/7\/8/.test(s)) fail.push(file+" · 7/8 mastery threshold missing");
 }
 for(const file of laboratories){
   const s=fs.readFileSync(file,"utf8");
@@ -138,6 +211,8 @@ console.log(JSON.stringify({
   pages:pages.length,
   support_pages:support.length,
   focused_practice_pages:focusedPractice.length,
+  earlier_laboratory_pages:earlierLaboratories.length,
+  earlier_laboratory_check_pages:earlierLaboratoryChecks.length,
   laboratory_pages:laboratories.length,
   laboratory_check_pages:laboratoryChecks.length,
   contract:"canonical VNV shell; readiness, Monte Carlo, question banks, unit app runtimes, print/record support and Unit 12 zero-baseline guard retained"
