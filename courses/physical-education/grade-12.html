@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Physical Education 11 · Khaemenes Academy</title>
+<title>Physical Education 12 · Khaemenes Academy</title>
 <script src="assessment-engine.js"></script>
 <style>
 :root{--charcoal:#252823;--cream:#fffaf0;--parchment:#e8dfca;--khaki:#b8aa83;--line:#9d9275}
@@ -22,7 +22,7 @@ textarea{width:100%;min-height:110px;border:1px solid var(--line);border-radius:
 </head>
 <body>
 <main>
-<section class="hero"><p>Khaemenes Academy</p><h1>Physical Education 11</h1><p>Leadership · Exercise Science · Ethics · Community Wellness</p></section>
+<section class="hero"><p>Khaemenes Academy</p><h1>Physical Education 12</h1><p>Lifetime Movement · Independent Planning · Evidence · Community Wellness</p></section>
 <section class="card"><h2>36-Week Course</h2><p>Each week contains five substantive instructional days and a 20-question randomized mastery form. Week 1 is current-learning only; Weeks 2–36 use 15 current + 5 delayed-retrieval questions. Browser results remain provisional until authorized teacher review.</p><div class="grid" id="weeks"></div></section>
 <section id="workspace"></section>
 </main>
@@ -53,11 +53,11 @@ function renderWeeks(){
 }
 function openWeek(n){if(n>firstOpen())return;week=n;day=1;renderWorkspace()}
 function openAssessment(){
- const w=DATA.weeks[week-1],r=weekRecord(week),identity=r.activeAssessmentIdentity||r.assessmentAttempt||"g11-week-"+week+"-retention-v1";
+ const w=DATA.weeks[week-1],r=weekRecord(week),identity=r.activeAssessmentIdentity||r.assessmentAttempt||"g12-week-"+week+"-retention-v1";
  activeAttempt=KhaeAssessment.load(identity);
  if(!passed(week)&&(!activeAttempt||activeAttempt.status==="submitted")){
   const hasPrior=!!activeAttempt||Array.isArray(r.assessmentAttempts)&&r.assessmentAttempts.length;
-  const nextIdentity=hasPrior?"g11-week-"+week+"-attempt-"+Date.now()+"-"+Math.random().toString(36).slice(2,7):identity;
+  const nextIdentity=hasPrior?"g12-week-"+week+"-attempt-"+Date.now()+"-"+Math.random().toString(36).slice(2,7):identity;
   activeAttempt=KhaeAssessment.store(KhaeAssessment.build(retentionBank(week),20,nextIdentity));
   r.activeAssessmentIdentity=nextIdentity;r.assessmentAttempts=Array.isArray(r.assessmentAttempts)?r.assessmentAttempts:[];
   if(!r.assessmentAttempts.includes(nextIdentity))r.assessmentAttempts.push(nextIdentity);save();
@@ -78,7 +78,7 @@ function submit(){
  const answers=activeAttempt.items.map((_,i)=>{const x=document.querySelector('input[name="q'+i+'"]:checked');return x?Number(x.value):null});
  try{
   const result=KhaeAssessment.submit(activeAttempt,answers);KhaeAssessment.store(result);
-  const r=weekRecord(week);r.practice=practice;r.reflection=reflection;r.knowledgeScore=result.score;r.knowledgePass=result.passed;r.assessmentSchema="khae-pe-g10-w"+week+"-weekly20-retention-v1";r.assessmentAttempt=result.identity;r.activeAssessmentIdentity=result.identity;r.quiz=result.passed;r.verified=false;r.reviewStatus="teacher-review-required";r.savedAt=result.submittedAt;save();
+  const r=weekRecord(week);r.practice=practice;r.reflection=reflection;r.knowledgeScore=result.score;r.knowledgePass=result.passed;r.assessmentSchema="khae-pe-g12-w"+week+"-weekly20-retention-v1";r.assessmentAttempt=result.identity;r.activeAssessmentIdentity=result.identity;r.quiz=result.passed;r.verified=false;r.reviewStatus="teacher-review-required";r.savedAt=result.submittedAt;save();
   document.getElementById("feedback").textContent="Saved "+result.correctCount+"/20 · "+result.score+"%"+(result.retention?.delayed?.total?" · delayed "+result.retention.delayed.percent+"%":"")+". Teacher review remains required.";
   renderWeeks();renderWorkspace();
  }catch(e){document.getElementById("feedback").textContent=e.message}
