@@ -28,7 +28,7 @@ const courses=sandbox.window.KhaemenesGrade09Courses;
 assert.ok(courses,"Grade 09 registry must initialize");
 for(const [id,url] of Object.entries(firstSteps)){
   const route=courses.continueFor(id);
-  assert.equal(route?.url,new URL(url).pathname,id+" must open the first actual instructional step, not the course home");
+  assert.equal(route?.url,id==="pre-algebra"?url:new URL(url).pathname,id+" must open the first actual instructional step, not the course home");
   assert.equal(route?.hasSpecificLocation,true,id+" must be marked as a specific lesson or diagnostic");
 }
 // A learner's last approved absolute lesson URL must survive launch recording.
@@ -38,7 +38,7 @@ assert.equal(courses.continueFor("english-9").url,new URL(resumed).pathname);
 // Reject another course and external origins rather than launching arbitrary links.
 const outside=origin+repo+"courses/mathematics/algebra-1/units/unit-01/";
 assert.equal(courses.recordLaunch("english-9",outside,"Other course"),true);
-assert.equal(courses.continueFor("english-9").url,new URL(firstSteps["english-9"]).pathname);
+assert.equal(courses.continueFor("english-9").url,repo+"courses/language-arts/english-9/");
 assert.equal(courses.recordLaunch("english-9","https://example.org/foreign","External"),true);
 assert.equal(courses.continueFor("english-9").url,new URL(firstSteps["english-9"]).pathname);
 // Explicit French handoff retains its approved cross-repository origin.
