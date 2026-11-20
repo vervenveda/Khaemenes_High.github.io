@@ -1,0 +1,32 @@
+name: English 11 Assessment Quality
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'courses/language-arts/english-11/assessments/**'
+      - 'courses/language-arts/english-11/assets/quiz-primary-bank.json'
+      - 'courses/language-arts/english-11/assets/quiz-specific-bank.json'
+      - 'tools/validate-english11-assessment-quality.mjs'
+      - '.github/workflows/english11-assessment-quality.yml'
+  pull_request:
+    paths:
+      - 'courses/language-arts/english-11/assessments/**'
+      - 'courses/language-arts/english-11/assets/quiz-primary-bank.json'
+      - 'courses/language-arts/english-11/assets/quiz-specific-bank.json'
+      - 'tools/validate-english11-assessment-quality.mjs'
+      - '.github/workflows/english11-assessment-quality.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: node tools/validate-english11-assessment-quality.mjs
