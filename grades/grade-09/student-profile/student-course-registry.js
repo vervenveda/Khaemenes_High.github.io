@@ -313,6 +313,32 @@ function safeCourseURL(course,value){
   return course.defaultContinue;
 }
 function genericContinue(course){
+  // Science 9 publishes learner-owned readiness, week and mastery next steps.
+  // Use that authoritative continuation when present rather than a historical
+  // public-landing launch. Global Studies may provide the same course-scoped
+  // continuation; never infer academic completion from a browser shortcut.
+  if(["integrated-science-9","global-studies-9"].includes(course.id)){
+    const learnerId=activeProfile()?.learnerId;
+    const stream=learnerId?window.KhaemenesLearningContinuation?.readLearner?.(learnerId):null;
+    const snapshot=Array.isArray(stream)?stream.find(x=>x?.courseId===course.id):null;
+    if(snapshot?.nextHref){
+      const approved=safeCourseURL(course,snapshot.nextHref);
+      const raw=normalizeLegacyRoute(snapshot.nextHref);
+      let valid=false;
+      try{valid=new URL(raw,location.origin).href===new URL(approved,location.origin).href}catch{}
+      if(valid){
+        const paused=snapshot.status==="paused";
+        const start=snapshot.courseId==="integrated-science-9"&&approved===course.home&&snapshot.status==="continue"
+          ?repoPath("courses/science/integrated-science-9/units/unit-01/lessons/day-01.html")
+          :approved;
+        const url=paused?course.home:start===course.home
+          ?window.KhaemenesHighEightClass?.FIRST_STEPS?.[course.id]||course.home:start;
+        return {url,label:String(snapshot.nextTitle||course.title),hasSpecificLocation:url!==course.home,
+          actionLabel:paused?"Recover Course Record":String(snapshot.nextLabel||"Continue "+course.short),
+          detail:String(snapshot.summary||"Open the next required course-owned learning step.")};
+      }
+    }
+  }
   const launches=readJSON(LAST_LAUNCH_KEY,{}),last=launches&&typeof launches==="object"?launches[course.id]:null;
   const first=window.KhaemenesHighEightClass?.FIRST_STEPS?.[course.id]||course.defaultContinue||course.home;
   const saved=safeCourseURL(course,last?.url||first);
