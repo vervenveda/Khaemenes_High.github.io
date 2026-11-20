@@ -37,5 +37,5 @@ assert.ok(api&&api.curriculum,"All-four-grade engine missing");
 assert.ok(js.includes("Geography and Human Systems")&&js.includes("Map Projections"),"Grade 9 Week 02 geography specialization missing");
 assert.ok(js.includes("Indigenous Nations, Atlantic Encounters")&&js.includes("Native diplomacy"),"Grade 10 Week 02 source specialization missing");
 assert.ok(js.includes("Philosophical Foundations of Government")&&js.includes("natural rights"),"Grade 11 Week 02 political philosophy specialization missing");
-assert.ok(js.includes("Evidence, Methodology, and Academic Integrity")&&js.includes("research integrity"),"Grade 12 Week 02 research specialization missing");
+assert.ok(js.includes("Evidence, Methodology, and Academic Integrity")&&js.includes("Research Integrity"),"Grade 12 Week 02 research specialization missing");
 console.log("PASS Social Studies Week 02: 5 original packets, 25 day headings, explicit curriculum guidance, no independent assessment/storage");
