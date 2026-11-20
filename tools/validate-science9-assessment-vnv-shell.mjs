@@ -40,7 +40,35 @@ const focusedPractice=[
   "courses/science/integrated-science-9/units/unit-05/biodiversity-conservation-check.html",
   "courses/science/integrated-science-9/units/unit-05/evolution-evidence-check.html"
 ];
-const pages=[...cumulative,...unitPages,...support,...focusedPractice],fail=[];
+const laboratories=[
+  "courses/science/integrated-science-9/units/unit-10/earth-interior-plate-lab.html",
+  "courses/science/integrated-science-9/units/unit-10/watershed-surface-lab.html",
+  "courses/science/integrated-science-9/units/unit-10/biogeochemical-cycle-lab.html",
+  "courses/science/integrated-science-9/units/unit-10/climate-energy-balance-lab.html",
+  "courses/science/integrated-science-9/units/unit-11/solar-system-orbit-lab.html",
+  "courses/science/integrated-science-9/units/unit-11/stellar-spectra-lab.html",
+  "courses/science/integrated-science-9/units/unit-11/exoplanet-transit-lab.html",
+  "courses/science/integrated-science-9/units/unit-11/galaxy-expansion-lab.html",
+  "courses/science/integrated-science-9/units/unit-12/decision-matrix-lab.html",
+  "courses/science/integrated-science-9/units/unit-12/prototype-testing-lab.html",
+  "courses/science/integrated-science-9/units/unit-12/life-cycle-lab.html",
+  "courses/science/integrated-science-9/units/unit-12/risk-reliability-lab.html"
+];
+const laboratoryChecks=[
+  ["courses/science/integrated-science-9/units/unit-10/interior-question-check.html","interior-question-app.js"],
+  ["courses/science/integrated-science-9/units/unit-10/watershed-question-check.html","watershed-question-app.js"],
+  ["courses/science/integrated-science-9/units/unit-10/cycles-question-check.html","cycles-question-app.js"],
+  ["courses/science/integrated-science-9/units/unit-10/climate-question-check.html","climate-question-app.js"],
+  ["courses/science/integrated-science-9/units/unit-11/orbit-question-check.html","orbit-question-app.js"],
+  ["courses/science/integrated-science-9/units/unit-11/spectra-question-check.html","spectra-question-app.js"],
+  ["courses/science/integrated-science-9/units/unit-11/exoplanet-question-check.html","exoplanet-question-app.js"],
+  ["courses/science/integrated-science-9/units/unit-11/cosmology-question-check.html","cosmology-question-app.js"],
+  ["courses/science/integrated-science-9/units/unit-12/decision-question-check.html","decision-question-app.js"],
+  ["courses/science/integrated-science-9/units/unit-12/testing-question-check.html","testing-question-app.js"],
+  ["courses/science/integrated-science-9/units/unit-12/lifecycle-question-check.html","lifecycle-question-app.js"],
+  ["courses/science/integrated-science-9/units/unit-12/risk-question-check.html","risk-question-app.js"]
+];
+const pages=[...cumulative,...unitPages,...support,...focusedPractice,...laboratories,...laboratoryChecks.map(x=>x[0])],fail=[];
 const count=(s,re)=>(s.match(re)||[]).length;
 
 for(const file of pages){
@@ -71,6 +99,16 @@ for(const file of cumulative.filter(f=>f.includes("/assessments/")&&!f.endsWith(
   const s=fs.readFileSync("courses/science/integrated-science-9/diagnostic/readiness-diagnostic.html","utf8");
   for(const token of ["readiness-app.js","readiness-routing.js"]) if(!s.includes(token)) fail.push("Science 9 readiness · protected runtime missing "+token);
 }
+for(const file of laboratories){
+  const s=fs.readFileSync(file,"utf8");
+  const labOwners=[...s.matchAll(/src=["']([^"']+-lab\.js)["']/g)].map(m=>m[1]);
+  if(!labOwners.length) fail.push(file+" · protected laboratory runtime missing");
+}
+for(const [file,app] of laboratoryChecks){
+  const s=fs.readFileSync(file,"utf8");
+  if(!s.includes(app)) fail.push(file+" · protected question-check runtime missing "+app);
+  if(!/7\/8/.test(s)) fail.push(file+" · 7/8 mastery threshold missing");
+}
 for(const file of focusedPractice){
   const s=fs.readFileSync(file,"utf8");
   for(const token of ["focused-practice-bank.js","focused-practice-app.js"]){
@@ -100,5 +138,7 @@ console.log(JSON.stringify({
   pages:pages.length,
   support_pages:support.length,
   focused_practice_pages:focusedPractice.length,
+  laboratory_pages:laboratories.length,
+  laboratory_check_pages:laboratoryChecks.length,
   contract:"canonical VNV shell; readiness, Monte Carlo, question banks, unit app runtimes, print/record support and Unit 12 zero-baseline guard retained"
 },null,2));
