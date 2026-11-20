@@ -15,7 +15,7 @@ const list=[
 for(const [grade,path,headings] of list){
  const html=read(path);
  assert.ok(html.includes('data-social-studies-engine="'+grade+'"'),path+" missing opt-in");
- assert.ok(html.includes("social-studies-lesson-engine-v0.1.js?v=20261119-social-studies-week03-v4"),path+" old engine URL");
+ assert.ok(html.includes("social-studies-lesson-engine-v0.1.js?v=20261119-social-studies-complete-v5"),path+" old engine URL");
  assert.equal(headings.length,5,"Expected five original weekday activities");
  for(const heading of headings){
   assert.ok(html.includes(">"+heading+"</h3>"),path+" missing original lesson: "+heading);
@@ -23,8 +23,8 @@ for(const [grade,path,headings] of list){
  }
  assert.ok(html.includes("high-school-formative-evidence-v1.js"),"Existing formative evidence owner removed: "+path);
 }
-assert.ok(js.includes('const week02=!demo&&/'),"Week 02 context guard absent");
-assert.ok(js.includes('const isGrade9Workspace=grade==="9"&&!demo&&!week02;'),"Week 01 Grade 09 native controls not isolated");
+assert.ok(js.includes('const week02=weekNumber===2'),"Week 02 context guard absent");
+assert.ok(js.includes('const isGrade9Workspace=grade==="9"&&!demo&&!week02&&!week03&&!laterWeek;'),"Week 01 Grade 09 native controls not isolated");
 assert.ok(js.includes('if(targets&&(!targets.length||targets.some(x=>!x)))return false'),"Missing fail-open behavior");
 assert.ok(js.includes('heading?.closest("article.lesson,section.card,article")'),"Must navigate the original lesson rather than redraw it");
 for(const forbidden of ["localStorage","sessionStorage","indexedDB","fetch(","XMLHttpRequest","document.cookie"]){
