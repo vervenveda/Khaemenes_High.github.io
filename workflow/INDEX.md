@@ -1,6 +1,7 @@
 | 2026-11-19 | math engine · recovery · guard | [Mathematics Engine coverage firewall and Algebra II pending rollout](logs/2026/11/2026-11-19-math-engine-recovery-coverage-firewall.md) | Pre-Algebra 97, Algebra I 87, Geometry 90 source-enrolled; Algebra II 0/92 pending; assessments protected; browser HOLD |
 | 2026-11-19 | math engine · release · protocol | [Mathematics Engine v2.2.3 higher-math rollout protocol](logs/2026/11/2026-11-19-math-engine-v2.2.3-higher-math-rollout-protocol.md) | Pre-Algebra 97 + Algebra I 87 lesson cache/version sync; guarded higher-math protocol + auto-discovered integrity validator installed; assessments protected |\n\n# Workflow Index
 
+| 2026-11-20 | curriculum · Grade 12 parity · execution authority | [Grade 12 parity and 9–12 execution expansion](logs/2026/11/2026-11-20-grade12-parity-and-execution-matrix.md) | PE12 36×5 + 15/5 retention; Physics delayed retrieval; Senior Capstone 36×5; 22-entry execution matrix; advanced-math outbound verified / return bridge pending |
 | Date | Type | Entry | State |
 | --- | --- | --- | --- |
 | 2026-11-20 | curriculum · Grade 11 retention | [Grade 11 retention curriculum implementation](logs/2026/11/2026-11-20-grade11-retention-curriculum-implementation.md) | Algebra II 8+2; English 4+1; Chemistry delayed retrieval; PE11 commissioned 36×5 with 15+5; source PASS |
