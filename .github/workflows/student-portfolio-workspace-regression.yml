@@ -7,6 +7,7 @@ on:
       - "grades/shared/grade09-blueprint-upper-grade.js"
       - "portfolio/**"
       - "tools/validate-student-portfolio-workspace.mjs"
+      - "tools/validate-student-portfolio-refresh.mjs"
       - ".github/workflows/student-portfolio-workspace-regression.yml"
   push:
     paths:
@@ -15,6 +16,7 @@ on:
       - "grades/shared/grade09-blueprint-upper-grade.js"
       - "portfolio/**"
       - "tools/validate-student-portfolio-workspace.mjs"
+      - "tools/validate-student-portfolio-refresh.mjs"
       - ".github/workflows/student-portfolio-workspace-regression.yml"
 jobs:
   verify:
@@ -22,4 +24,6 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - name: Validate portfolio workspace and learner-scoped homeschool report
-        run: node tools/validate-student-portfolio-workspace.mjs
+        run: |
+          node tools/validate-student-portfolio-workspace.mjs
+          node tools/validate-student-portfolio-refresh.mjs
