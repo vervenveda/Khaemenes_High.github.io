@@ -41,4 +41,25 @@ records.set(scopedKey("khaemenes-algebra1-diagnostic-result-v1"),JSON.stringify(
 route=await api.resolveContinueFor("algebra-1");
 check(route.url.endsWith("/units/unit-01/"+lesson),"36/36 routes to actual Algebra I Lesson 01");
 check(api.mathPathway()==="algebra-1","passing evidence selects Algebra I pathway without modifying the assessment");
-console.log("GRADE 09 ALGEBRA / LINGUISTICS HANDOFF: PASS (3 routing states; source authorities checked).");
+const preferences=read("courses/shared/high-school-course-pins.js");
+check(preferences.includes('["9","10","11","12"]'),"all four High School grades accept seven-language preferences");
+check(preferences.includes('if(!learner)return false;'),"no unscoped learner preference writes");
+check(preferences.includes('Halls/courses/arabic-1/'),"Grade 9 Arabic pinned destination uses 32-week navigator");
+check(preferences.includes('Halls/courses/russian-1/'),"Grade 9 Russian pinned destination uses 32-week navigator");
+check(registry.includes('"arabic":"arabic-1"')&&registry.includes('"russian":"russian-1"'),"Grade 9 registry uses course-owned Arabic/Russian Year I");
+check(schedule.includes("Explore seven language pathways"),"Grades 10-12 select among seven languages");
+const preferencesWindow={localStorage:storage,dispatchEvent:()=>{}};
+const familyId=id;
+records.set("khaemenes_active_learner_v1",JSON.stringify(familyId));
+records.set("khaemenes_family_registry_v1",JSON.stringify({learners:{[id]:{learnerId:id,grade:"09",stage:"high"}}}));
+vm.runInNewContext(preferences,{window:preferencesWindow,localStorage:storage,CustomEvent:function(){}});
+const pinApi=preferencesWindow.KhaemenesHighCoursePins;
+check(pinApi.writeLanguageChoices({"9":"arabic"}),"Arabic choice saves for verified Grade 9 learner");
+check(pinApi.readLanguageChoices()["9"]==="arabic","Arabic preference readback verifies");
+check(pinApi.writeLanguageChoices({"9":"russian"}),"Russian choice saves for verified Grade 9 learner");
+check(pinApi.readLanguageChoices()["9"]==="russian","Russian preference readback verifies");
+check(pinApi.writeLanguageChoices({"9":"french","10":"mandarin","11":"german","12":"japanese"}),"grades 9-12 choices accepted");
+for(const [grade,lang] of [["9","french"],["10","mandarin"],["11","german"],["12","japanese"]])
+ check(pinApi.readLanguageChoices()[grade]===lang,"preference readback "+grade);
+check(!pinApi.writeLanguageChoices({"9":"invalid"}),"invalid language refused");
+console.log("GRADE 09 ALGEBRA / SEVEN-LANGUAGE HANDOFF: PASS (3 Algebra routes, 7 languages, 4 grade keys, learner-scoped preferences).");
