@@ -27,11 +27,14 @@ def test_entrance_and_original_tools(browser,site,width):
  page=ctx.new_page();errors=[]
  page.on("pageerror",lambda error: errors.append(str(error)))
  page.goto(site+BASE+"index.html",wait_until="domcontentloaded")
- assert page.locator("#ss10-tools .ss10-tools-grid a").count()==6
- assert page.locator('button[data-view="week"]').count()>=1
+ # The current canonical dashboard has six course-view buttons in its own nav.
+ nav=page.locator('nav[aria-label="Course sections"] .navBtn')
+ assert nav.count()==6
+ assert page.locator('.tabs button[data-view="week"]').count()==1
+ assert page.locator("#weekList .weekBtn").count()==36
+ assert page.locator('#content h2').first.is_visible()
  assert page.evaluate("document.documentElement.scrollWidth <= innerWidth + 2"),f"Horizontal overflow: {width}px"
- # In a fresh browser no Academy learner is selected: the write boundary must refuse saving.
- assert all("Select an Academy learner before saving course work." in error for error in errors),errors
+ assert not errors,errors
 
  ctx.close()
 
@@ -39,20 +42,27 @@ def test_grade10_portal_does_not_expose_javascript_as_lesson_text(browser,site):
  ctx=browser.new_context(viewport={"width":375,"height":850})
  page=ctx.new_page()
  page.goto(site+BASE+"index.html",wait_until="domcontentloaded")
- # Earlier a literal </script> inside printable reportHTML cut the main JS
- # short and surfaced the remaining JavaScript as visible page text.
- assert page.evaluate("typeof reportHTML")== "function"
- assert page.evaluate("typeof printReport")== "function"
- assert page.evaluate("typeof downloadReport")== "function"
+ # Earlier an inline report string broke the application script and leaked code.
+ # The canonical app.js now uses module-local report functions; do not expose
+ # them as writable globals merely to satisfy a historical browser check.
+ assert page.locator('#content h2').first.inner_text()
+ assert page.locator('.tabs button[data-view="reports"]').count()==1
+ page.locator('.tabs button[data-view="reports"]').click()
+ assert page.locator('#content').get_by_text("Reports and Backups").count()==1
  assert not page.evaluate("document.body.innerText.includes('function printReport(){')")
  assert not page.evaluate("document.body.innerText.includes('function downloadCSV(){')")
- assert page.locator('button[data-view="week"]').count()>=1
+ assert not page.evaluate("document.body.innerText.includes('function saveDB(){')")
+ assert page.locator('nav[aria-label="Course sections"] .navBtn').count()==6
  ctx.close()
 
 def test_resources_are_local_and_present(browser,site):
  ctx=browser.new_context();page=ctx.new_page()
  page.goto(site+BASE+"index.html",wait_until="domcontentloaded")
- for href in page.locator("#ss10-tools a").evaluate_all("(els)=>els.map(x=>x.getAttribute('href'))"):
+ # Verify actual locally hosted resources rather than iterating an obsolete
+ # selector that now returns zero matches (a false-positive PASS).
+ hrefs=page.locator('.sidebar a[href]').evaluate_all("(els)=>els.map(x=>x.getAttribute('href')).filter(x=>x && !x.startsWith('http'))")
+ assert len(hrefs)>=2
+ for href in hrefs:
   response=page.request.get(site+BASE+href)
   assert response.status==200,(href,response.status)
  ctx.close()
@@ -73,8 +83,16 @@ def test_grade10_requires_academy_learner_for_persistence(browser,site):
  page=ctx.new_page(); errors=[]
  page.on("pageerror",lambda error:errors.append(str(error)))
  page.goto(site+BASE+"index.html",wait_until="domcontentloaded")
- assert any("Select an Academy learner before saving course work." in error for error in errors)
- assert page.locator("#ss10-tools").count()==1
+ assert page.locator('nav[aria-label="Course sections"] .navBtn').count()==6
+ assert not errors,errors
+ page.locator("#studentName").fill("Synthetic Browser Learner")
+ # Saving is forbidden without Academy learner identity; errors arise on the
+ # attempted write, not on initial page load.
+ page.locator("#addStudentBtn").click()
+ page.wait_for_timeout(150)
+ assert any("Select an Academy learner before saving course work." in error for error in errors),errors
+ assert page.locator("#studentSelect").input_value()==""
+ assert page.evaluate("Object.keys(localStorage).every(k=>!k.includes(':academy:'))")
  ctx.close()
 
 @pytest.mark.parametrize("week",list(range(1,37)))
