@@ -59,6 +59,7 @@ if(!document.getElementById("khaeProfileToolRail")){
    }},
   {label:"Schedule",target:"grade09ScheduleDialog",fallback:"#grade09ProfileFirst",run:()=>{
     const popup=document.getElementById("grade09ScheduleDialog");
+    if(window.KhaemenesGrade09ScheduleDialog?.open){window.KhaemenesGrade09ScheduleDialog.open(document.activeElement);return true}
     if(popup&&!popup.open){popup.showModal();return true}
     const schedule=document.querySelector(".grade09-priority-schedule");
     if(schedule){schedule.scrollIntoView({behavior:"smooth",block:"start"});return true}
@@ -331,6 +332,51 @@ if(shortcuts)shortcuts.insertAdjacentElement("afterend",schedule);
 else top.insertAdjacentElement("afterend",schedule);
 if(progress)schedule.insertAdjacentElement("afterend",progress);
 [shortcuts,schedule,progress,portfolio].forEach(align);
+// Schedule is one modal ownership boundary: rehome the existing live rail, never clone its
+// listener-bearing class cards or create another course registry.
+if(schedule&&!document.getElementById("grade09ScheduleDialog")){
+ const dlg=document.createElement("dialog");
+ dlg.id="grade09ScheduleDialog";
+ dlg.setAttribute("aria-label","My Schedule · Grade 9");
+ dlg.className="grade09-schedule-dialog";
+ const style=document.createElement("style");style.id="grade09ScheduleDialogOwnerStyle";
+ style.textContent=`
+ #grade09ScheduleDialog{box-sizing:border-box;width:min(1180px,calc(100vw - 24px));max-width:1180px;height:min(90dvh,900px);max-height:90dvh;padding:0;margin:auto;overflow:hidden;overscroll-behavior:contain;border:2px solid #b48b45;border-radius:7px;background:#fffaf0;color:#243038;box-shadow:0 18px 70px #0008}
+ #grade09ScheduleDialog::backdrop{background:rgba(12,23,25,.76)}
+ #grade09ScheduleDialog .grade09-schedule-shell{height:100%;min-height:0;display:flex;flex-direction:column}
+ #grade09ScheduleDialog .grade09-schedule-header{display:flex;flex:none;align-items:center;justify-content:space-between;gap:14px;padding:12px 18px;background:#243038;color:#fff8e9}
+ #grade09ScheduleDialog .grade09-schedule-header h2{font:400 24px/1.3 Cinzel,Georgia,serif;color:#fff8e9;margin:0}
+ #grade09ScheduleDialog .grade09-schedule-close{min-height:44px;padding:8px 16px;font:400 16px Nunito,Arial,sans-serif;border:1px solid #b48b45;border-radius:7px;background:#fffaf0;color:#243038;cursor:pointer}
+ #grade09ScheduleDialog .grade09-schedule-body{min-height:0;flex:1;overflow-y:auto;overflow-x:hidden;overscroll-behavior:contain;-webkit-overflow-scrolling:touch;padding:16px}
+ #grade09ScheduleDialog .grade09-priority-schedule{display:block!important;margin:0!important;max-width:none!important;width:100%!important}
+ #grade09ScheduleDialog .schedule-card{max-width:none!important;width:100%!important;margin:0!important;box-sizing:border-box}
+ #grade09ScheduleDialog .schedule-rail{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;align-items:stretch}
+ #grade09ScheduleDialog .schedule-tile{min-width:0;display:flex;flex-direction:column;border-radius:7px}
+ #grade09ScheduleDialog .schedule-actions{margin-top:auto;display:grid;grid-template-columns:minmax(0,1fr);gap:7px}
+ #grade09ScheduleDialog .schedule-actions :is(a,button){box-sizing:border-box;width:100%;min-width:0;min-height:44px;border-radius:7px;font-size:16px!important;text-align:center}
+ #grade09ScheduleDialog :is(button,a):focus-visible{outline:3px solid #b48b45;outline-offset:2px}
+ @media(max-width:900px){#grade09ScheduleDialog .schedule-rail{grid-template-columns:repeat(2,minmax(0,1fr))}}
+ @media(max-width:520px){#grade09ScheduleDialog{width:calc(100vw - 12px);height:94dvh;max-height:94dvh}#grade09ScheduleDialog .schedule-rail{grid-template-columns:1fr}#grade09ScheduleDialog .grade09-schedule-body{padding:10px}}
+ `;
+ document.head.append(style);
+ const shell=document.createElement("div");shell.className="grade09-schedule-shell";
+ const header=document.createElement("div");header.className="grade09-schedule-header";
+ const title=document.createElement("h2");title.id="grade09ScheduleDialogTitle";title.textContent="My Schedule";
+ dlg.setAttribute("aria-labelledby",title.id);
+ const close=document.createElement("button");close.className="grade09-schedule-close";close.type="button";close.textContent="Close";
+ close.addEventListener("click",()=>dlg.close());header.append(title,close);
+ const body=document.createElement("div");body.className="grade09-schedule-body";body.append(schedule);
+ shell.append(header,body);dlg.append(shell);document.body.append(dlg);
+ let returnFocus=null;
+ dlg.addEventListener("close",()=>{if(returnFocus?.isConnected)returnFocus.focus({preventScroll:true});});
+ dlg.addEventListener("click",event=>{if(event.target===dlg)dlg.close()});
+ window.KhaemenesGrade09ScheduleDialog=Object.freeze({open(opener){
+  returnFocus=opener||document.activeElement;
+  if(!dlg.open)dlg.showModal();
+  body.scrollTop=0;close.focus({preventScroll:true});
+ }});
+}
+
 const region=document.createElement("section");region.id="grade09Explore";region.className="grade09-explore";
 const title=document.createElement("h2");title.textContent="Explore, Create & Celebrate";region.append(title);
 const summary=document.createElement("p");summary.textContent="Your creative spaces, personal dreams and earned stickers—organized together so daily classes stay easy to find.";region.append(summary);

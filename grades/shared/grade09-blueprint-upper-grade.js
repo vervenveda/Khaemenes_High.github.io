@@ -247,7 +247,7 @@ function upperGradeDialog(id,title,renderContents){
  if(!dlg){
   dlg=make("dialog");dlg.id=id;
   dlg.setAttribute("aria-label",title+" · Grade "+grade);
-  dlg.style.cssText="box-sizing:border-box;width:min(94vw,820px);max-width:820px;max-height:90vh;overflow:auto;margin:auto;padding:18px;border:2px solid #b48b45;border-radius:7px;background:#fffaf0;color:#243038;box-shadow:0 18px 55px #0007";
+  dlg.style.cssText="box-sizing:border-box;width:min(96vw,1180px);max-width:1180px;height:min(90dvh,900px);max-height:90dvh;overflow-y:auto;overflow-x:hidden;overscroll-behavior:contain;-webkit-overflow-scrolling:touch;margin:auto;padding:18px;border:2px solid #b48b45;border-radius:7px;background:#fffaf0;color:#243038;box-shadow:0 18px 55px #0007";
   const top=make("div");
   top.style.cssText="display:flex;align-items:center;justify-content:space-between;gap:14px;flex-wrap:wrap;margin-bottom:15px";
   const h=make("h2",title+" · Grade "+grade);
@@ -260,13 +260,14 @@ function upperGradeDialog(id,title,renderContents){
   content.style.cssText="display:grid;gap:12px";
   dlg.append(top,content);document.body.append(dlg);
   dlg.addEventListener("click",e=>{if(e.target===dlg)dlg.close()});
-  dlg.addEventListener("close",()=>{if(grade==="11"&&dlg._khaeOpener?.isConnected)dlg._khaeOpener.focus({preventScroll:true})});
+  dlg.addEventListener("close",()=>{if(dlg.id==="upperGradeScheduleDialog")restoreScheduleManager();if(dlg._khaeOpener?.isConnected)dlg._khaeOpener.focus({preventScroll:true})});
  }
- if(grade==="11")dlg._khaeOpener=opener;
+ dlg._khaeOpener=opener;
  renderContents(dlg.querySelector("[data-upper-grade-dialog-content]"));
  if(typeof dlg.showModal==="function"){
   if(!dlg.open)dlg.showModal();
-  dlg.querySelector("button")?.focus();
+  dlg.scrollTop=0;
+  dlg.querySelector("button")?.focus({preventScroll:true});
  }else dlg.setAttribute("open","");
 }
 function showUpperProgress(){
@@ -292,11 +293,25 @@ function showUpperProgress(){
   }
  });
 }
+// Return the original class manager to its original DOM owner when the dialog
+// closes or its contents refresh. Its bound listeners and learner context survive.
+function restoreScheduleManager(){
+ const manager=document.querySelector("#upperGradeScheduleDialog .upper-grade-schedule-manager");
+ const home=manager?._khaeScheduleHome;
+ if(manager&&home?.isConnected){
+  home.parentNode.insertBefore(manager,home);
+  manager.hidden=manager._khaeScheduleWasHidden===true;
+  if(manager._khaeScheduleWasAriaHidden===null)manager.removeAttribute("aria-hidden");
+  else manager.setAttribute("aria-hidden",manager._khaeScheduleWasAriaHidden);
+  manager.classList.remove("upper-grade-schedule-manager","grade10-schedule-manager");
+ }
+}
 function showUpperSchedule(){
  upperGradeDialog("upperGradeScheduleDialog","My Schedule",content=>{
   // Every upper grade owns one live class manager. Move its existing node,
   // preserving grade-scoped course choices, listeners and learner storage.
   const manager=document.getElementById("manageClassesTitle")?.closest("section.card")||null;
+  restoreScheduleManager();
   content.replaceChildren();
   const registered=gradeContext();
   if(!registered||registered.gradeNumber!==Number(grade)){
@@ -309,19 +324,28 @@ function showUpperSchedule(){
    const card=make("article");card.className="grade09-blueprint-schedule-item";
    card.append(make("strong",item.label),make("span",item.title));
    const current=step(item);
-   const route=current?.dest||href(item);
+   const route=current?.dest||null;
+   const resourceDoor=!!(route&&item.href&&route===item.href);
    if(route){
-    const launch=link(grade10Copy?"Class":(current?.label||((grade11Copy||grade12Copy)?"Continue Class":"Open class")),route,"btn secondary");
+    const launch=link(resourceDoor?"Course Options":"Class",route,"btn secondary");
     launch.dataset.courseId=item.id||"";
     launch.title=current?.detail||"Continue this class";
     card.append(launch);
    }
+   if(!route)card.append(make("span","Choose a course or finish route verification before opening this class."));
    grid.append(card);
   }
   content.append(grid);
   // Rehome the existing pin and language controls; do not clone or recreate.
   // Keep this operation behind the registered-grade verification above.
   if(manager){
+   if(!manager._khaeScheduleHome){
+    const placeholder=document.createComment("Schedule class-manager original owner");
+    manager.parentNode.insertBefore(placeholder,manager);
+    manager._khaeScheduleHome=placeholder;
+    manager._khaeScheduleWasHidden=manager.hidden;
+    manager._khaeScheduleWasAriaHidden=manager.getAttribute("aria-hidden");
+   }
    manager.hidden=false;
    manager.removeAttribute("aria-hidden");
    manager.classList.remove("grade10-retired-manager-data");
