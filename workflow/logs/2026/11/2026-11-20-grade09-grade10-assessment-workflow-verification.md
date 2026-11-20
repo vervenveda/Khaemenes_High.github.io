@@ -84,3 +84,37 @@ Two Grade 09/10 assessment-guidance workflows are **PASS**. The latest reviewed 
 - `.github/workflows/grade10-assessment-mentor-guidance.yml`
 
 **Closeout:** Grade 09 assessment guidance: **PASS**. Grade 10 assessment guidance: **PASS**. Grade 10 Social Studies browser QA: **FAIL / HOLD**. Full student-journey acceptance: **HOLD**.
+
+---
+
+## Follow-up closure — Grade 10 Social Studies Browser QA (2026-11-20 ET)
+
+**Resolution:** The previously recorded Grade 10 Social Studies browser QA failures above are historical and are now **CLOSED for the verified Chromium suite**. Their original run URLs and diagnostics are retained for audit history. This section supersedes their *current* HOLD status only for the named browser workflow.
+
+### Root-cause analysis and surgical repairs
+
+1. **Retired test contract, not missing production controls** — `tests/test_social_studies_grade10_dashboard.py` expected a former `#ss10-tools` grid of six anchors and global report functions. The canonical dashboard instead has six native course-view buttons and module-local report functionality in `app.js`. The tests were updated to validate the current navigation, report view, non-exposure of JS source, and actual local resource links. No obsolete controls or globally exposed report methods were introduced.
+2. **Persistence check exercised the wrong event** — the old test expected an Academy identity error on initial page load. The canonical `app.js` rejects the save when the learner attempts to add a student without Academy authorization. The updated Chromium test performs that attempted write and confirms the denial and lack of Academy-scoped saved records. The underlying learner-identity guard and course persistence logic were unchanged.
+3. **Actual responsive defect at 255 px** — the intermediate run was **123 passed, 1 failed**. Element-level Chromium diagnostics identified course navigation tabs extending to x=258 in a 255 px viewport. The existing owner `courses/social-studies/grade-10/assets/grade10-socialstudies-unified-upgrade.js` received a narrowly scoped `minmax(0,1fr)` small-screen tab-grid change with bounded tab widths, wrapping, and padding. No global overflow clipping, duplicate stylesheet, grading patch, or Vervenveda gateway change was made.
+
+### Commit and run evidence
+
+- Browser-test contract alignment commit: `76c82223d1ebb32332db8cba3bf0dc3f1fc9e204`
+- Narrow-screen overflow diagnostics commit: `5f4af323ab4da39c55d2aa20cd6dbd3d4947fe3f`
+- Original course responsive rule repair commit: `348f66561b8bb3142c7700ea9d7b3fa56b8259f4`
+- **Final browser workflow run ID:** `44771680376`
+- **GitHub Actions URL:** https://github.com/vervenveda/Khaemenes_High.github.io/actions/runs/44771680376
+- **Run status:** `completed / success`
+- **Run head SHA:** `348f66561b8bb3142c7700ea9d7b3fa56b8259f4`
+- **Chromium job:** `136410678592`, **success**
+- **Observed job-log conclusion:** `124 passed in 58.87s` — **124/124 PASS, 0 FAIL**
+
+### Updated disposition
+
+- Grade 09 Assessment Mentor Guidance: **PASS** (run `44765457204`).
+- Grade 09 synthetic assessment journey: **PASS** (same run).
+- Grade 10 Assessment Mentor Guidance: **PASS** (run `44769371372`).
+- Grade 10 Social Studies Browser QA: **PASS** (run `44771680376`).
+- Grade 09 student live device acceptance: **HOLD** until user completes actual learner walkthrough.
+- Grade 10 authenticated cloud synchronization and end-to-end submitted assessment acceptance: **HOLD**; this Chromium suite does not verify Account Cloud commissioning.
+- **All four named regression checks above are now PASS**, not every historical workflow in the entire High School repository.
