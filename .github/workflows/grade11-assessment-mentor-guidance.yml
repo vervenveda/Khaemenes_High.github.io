@@ -1,0 +1,36 @@
+name: Grade 11 Assessment Mentor Guidance
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'assets/grade11-assessment-mentor-guidance-v1.js'
+      - 'courses/mathematics/algebra-2/assessments/index.html'
+      - 'courses/mathematics/algebra-2/diagnostic/index.html'
+      - 'courses/language-arts/english-11/assessments/index.html'
+      - 'courses/language-arts/english-11/assessments/diagnostic/index.html'
+      - 'courses/science/chemistry-11/assessments/index.html'
+      - 'courses/social-studies/grade-11/assessments/government-final.html'
+      - 'courses/social-studies/grade-11/assessments/economics-final.html'
+      - 'tests/grade11-assessment-mentor-guidance.test.cjs'
+      - '.github/workflows/grade11-assessment-mentor-guidance.yml'
+  pull_request:
+    paths:
+      - 'assets/grade11-assessment-mentor-guidance-v1.js'
+      - 'tests/grade11-assessment-mentor-guidance.test.cjs'
+      - '.github/workflows/grade11-assessment-mentor-guidance.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  static-integrity:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Verify seven mounts and subject authority boundaries
+        run: node tests/grade11-assessment-mentor-guidance.test.cjs
