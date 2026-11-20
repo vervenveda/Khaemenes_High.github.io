@@ -453,16 +453,34 @@ function loadDraft(){
     return {
       answers:parsed&&typeof parsed.answers==="object"?parsed.answers:{},
       work:parsed&&typeof parsed.work==="object"?parsed.work:{},
-      submitted:Boolean(parsed?.submitted)
+      submitted:Boolean(parsed?.submitted),
+      form:parsed?.form||null
     };
   }catch{return {answers:{},work:{},submitted:false}}
 }
 function saveDraft(message=true){
-  const payload=JSON.stringify({answers:draft.answers,work:draft.work,submitted:draft.submitted,updated:new Date().toISOString()});
+  const payload=JSON.stringify({answers:draft.answers,work:draft.work,submitted:draft.submitted,form:draft.form||null,updated:new Date().toISOString()});
   const ok=safeSet(CONFIG.storage_key,payload);
   if(message) $("#status").textContent=ok?"Draft saved and verified locally.":"Draft could not be verified. Keep this page open and export your work before leaving.";
   return ok;
 }
+function shuffleIndexes(n){
+ const a=Array.from({length:n},(_,i)=>i);
+ for(let i=n-1;i>0;i--){
+   let j;
+   if(window.crypto?.getRandomValues){const r=new Uint32Array(1);window.crypto.getRandomValues(r);j=r[0]%(i+1)}
+   else j=Math.floor(Math.random()*(i+1));
+   [a[i],a[j]]=[a[j],a[i]];
+ }
+ return a;
+}
+function newRetakeForm(previous){
+ const order=shuffleIndexes(CONFIG.questions.length);
+ if(previous?.order?.length===order.length&&order.every((v,i)=>v===previous.order[i]))[order[0],order[1]]=[order[1],order[0]];
+ return {version:"readiness-monte-carlo-retake-v1",order,options:CONFIG.questions.map(()=>shuffleIndexes(4))};
+}
+function questionIndex(position){return draft.form?.order?.[position]??position}
+function optionOrder(questionIndex){return draft.form?.options?.[questionIndex]||[0,1,2,3]}
 function answeredCount(){return Object.keys(draft.answers).filter(k=>Number(k)>=0&&Number(k)<CONFIG.questions.length).length}
 function updateProgress(){
   const n=answeredCount(),total=CONFIG.questions.length;
@@ -474,7 +492,7 @@ function render(){
   const host=$("#questionList");
   host.innerHTML="";
   for(let i=start;i<end;i++){
-    const q=CONFIG.questions[i],selected=draft.answers[i],work=draft.work[i]||"";
+    const questionNumber=questionIndex(i),q=CONFIG.questions[questionNumber],selected=draft.answers[questionNumber],work=draft.work[questionNumber]||"";
     const article=document.createElement("article");
     article.className="question";
     const feedback=draft.submitted
@@ -484,11 +502,11 @@ function render(){
       '<div class="q-number"><span>'+(i+1)+'</span></div>'+
       '<div class="q-body">'+
         '<p class="q-prompt">'+esc(q.prompt)+'</p>'+
-        '<div class="options">'+q.options.map((opt,j)=>
-          '<label class="option"><input type="radio" name="q'+i+'" value="'+j+'" '+(Number(selected)===j?'checked':'')+' '+(draft.submitted?'disabled':'')+'><span>'+esc(opt)+'</span></label>'
-        ).join("")+'</div>'+
-        '<label class="work-label" for="work'+i+'">Show your work · ungraded workspace</label>'+
-        '<textarea class="work" id="work'+i+'" data-work="'+i+'" '+(draft.submitted?'readonly':'')+' placeholder="Calculations, graph notes, checks, or reasoning…">'+esc(work)+'</textarea>'+
+        '<div class="options">'+optionOrder(questionNumber).map(j=>{const opt=q.options[j];return 
+          '<label class="option"><input type="radio" name="q'+questionNumber+'" value="'+j+'" '+(Number(selected)===j?'checked':'')+' '+(draft.submitted?'disabled':'')+'><span>'+esc(opt)+'</span></label>'
+        }).join("")+'</div>'+
+        '<label class="work-label" for="work'+questionNumber+'">Show your work · ungraded workspace</label>'+
+        '<textarea class="work" id="work'+questionNumber+'" data-work="'+i+'" '+(draft.submitted?'readonly':'')+' placeholder="Calculations, graph notes, checks, or reasoning…">'+esc(work)+'</textarea>'+
         feedback+
       '</div>';
     host.append(article);
@@ -596,8 +614,9 @@ function exportResult(){
 }
 function reset(){
   if(!confirm("Clear this diagnostic draft? Previously saved scored evidence will be preserved."))return;
-  draft={answers:{},work:{},submitted:false};
-  safeSet(CONFIG.storage_key,JSON.stringify(draft));
+  const previous=draft.form;
+  draft={answers:{},work:{},submitted:false,form:newRetakeForm(previous)};
+  if(!saveDraft(false)){$("#status").textContent="A new shuffled form could not be saved. Existing scored history remains unchanged.";return}
   section=0;$("#scoreBox").value="";$("#results").hidden=true;render();$("#status").textContent="Draft reset. Saved scored evidence was preserved.";
 }
 const info={
