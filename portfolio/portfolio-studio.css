@@ -64,3 +64,34 @@ button:disabled{opacity:.5;cursor:not-allowed}
 .portfolio-nav a{min-width:126px;min-height:42px;padding:7px 13px}
 .portfolio-hero .intro{font-size:24px;max-width:960px}
 @media(max-width:650px){.portfolio-quick-grid{grid-template-columns:1fr}.portfolio-hero .eyebrow{font-size:24px}.portfolio-hero .intro{font-size:18px}}
+
+/* Homeschool academic report — private read-only ledger presentation. */
+.homeschool-report-body{display:grid;gap:18px}
+.portfolio-report-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:13px;align-items:stretch}
+.portfolio-report-course,.portfolio-report-evaluator{min-width:0;background:var(--cream);border:3px solid var(--ink);border-radius:7px;padding:18px}
+.portfolio-report-course h3,.portfolio-report-evaluator h3,.portfolio-report-print-heading h3{font:400 24px/1.3 Cinzel,Georgia,serif;color:var(--ink);margin:0 0 9px}
+.portfolio-report-assessments h4{font:400 18px/1.3 Cinzel,Georgia,serif;margin:11px 0 5px;color:var(--ink)}
+.portfolio-report-note{font-size:16px;color:var(--ink)}
+.portfolio-report-definitions{display:grid;gap:5px;margin:12px 0;padding:9px 0;border-top:3px solid var(--ink);border-bottom:3px solid var(--ink)}
+.portfolio-report-pair{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:11px}
+.portfolio-report-pair dt,.portfolio-report-pair dd{font-size:16px;margin:0;overflow-wrap:anywhere}
+.portfolio-report-pair dd{text-align:right}
+.portfolio-report-scores{padding-left:20px;margin:6px 0 14px}
+.portfolio-report-scores li{margin:6px 0;overflow-wrap:anywhere}
+.portfolio-report-print-heading{text-align:center;border:3px solid var(--ink);border-radius:7px;padding:15px;background:var(--cream)}
+.portfolio-report-evaluator p{margin:10px 0;overflow-wrap:anywhere}
+@media(max-width:800px){.portfolio-report-grid{grid-template-columns:1fr}}
+@media print{
+ body.portfolio-report-print .portfolio-hero,
+ body.portfolio-report-print .portfolio-footer,
+ body.portfolio-report-print .portfolio-main> :not(#homeschoolReport),
+ body.portfolio-report-print #homeschoolReport> :not(.homeschool-report-body),
+ body.portfolio-report-print #homeschoolReport .portfolio-action-row{display:none!important}
+ body.portfolio-report-print .portfolio-main{display:block;width:100%;margin:0;padding:0}
+ body.portfolio-report-print #homeschoolReport{display:block!important;margin:0;padding:0;border:0}
+ body.portfolio-report-print .homeschool-report-body{display:block!important}
+ body.portfolio-report-print .portfolio-report-grid{display:block!important}
+ body.portfolio-report-print .portfolio-report-course{break-inside:avoid;page-break-inside:avoid;margin:10px 0;padding:10px;border:1px solid #444}
+ body.portfolio-report-print .portfolio-report-evaluator{break-inside:avoid;margin:14px 0;border:1px solid #444}
+ body.portfolio-report-print .portfolio-report-print-heading{border:0;border-bottom:1px solid #444}
+}
