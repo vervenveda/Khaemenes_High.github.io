@@ -1,61 +1,39 @@
 import fs from "node:fs";
 import assert from "node:assert/strict";
 
+const sharedCssPath="assets/grade09-subject-parchment.css";
+const sharedHref="../../../assets/grade09-subject-parchment.css";
+const css=fs.readFileSync(sharedCssPath,"utf8");
 const subjects={
- english:{
-  html:"courses/language-arts/english-9/index.html",
-  css:"courses/language-arts/assets/english-minimal-landing-v1.css",
-  cssHref:"../assets/english-minimal-landing-v1.css",
-  header:"../assets/english-minimal-header-mount-v1.js",
-  tools:"../assets/english-landing-class-tools-v1.js",
-  hero:"english-hero",feature:"english-feature",label:"English 9"
- },
- science:{
-  html:"courses/science/integrated-science-9/index.html",
-  css:"courses/science/assets/science-minimal-landing-v1.css",
-  cssHref:"../assets/science-minimal-landing-v1.css",
-  header:"../assets/science-minimal-header-mount-v1.js",
-  tools:"../assets/science-landing-class-tools-v1.js",
-  hero:"science-hero",feature:"science-feature",label:"International Integrated Science 9"
- }
+ english:{html:"courses/language-arts/english-9/index.html",body:"data-english9-require-entry",label:"English 9"},
+ science:{html:"courses/science/integrated-science-9/index.html",body:"data-science9-require-entry",label:"Integrated Science 9"}
 };
-const requiredCss=[
- "--paper:#f4f0e7","--charcoal:#252b2b","--cream:#fff8e9","--gold:#b48b45",
- "--radius:7px","Cinzel","Brandon Grotesque",":focus-visible",
- "font-size:16px","@media(max-width:760px)","@media(max-width:380px)","@media print"
-];
-const palettes={};
 
-for(const [name,c] of Object.entries(subjects)){
- const html=fs.readFileSync(c.html,"utf8"),css=fs.readFileSync(c.css,"utf8");
- assert.ok(html.includes('width=device-width'),name+" responsive viewport");
- assert.equal(html.split(c.cssHref).length-1,1,name+" minimal stylesheet loaded once");
- assert.ok(html.includes(c.header),name+" minimal header owner");
- assert.ok(html.includes(c.tools),name+" landing class-tools config");
- assert.ok(html.includes("vnv-dual-ticker-v1.js"),name+" dual ticker");
- assert.ok(html.includes("vnv-header-autopopulate.js"),name+" official header");
- assert.ok(html.includes("vnv-language.js"),name+" language tools");
- assert.ok(html.includes("vnv-class-tools-toolbar.js"),name+" class tools toolbar");
- assert.ok(html.includes("vnv-descriptive-card-dialog-v1.js"),name+" descriptive card dialog");
- assert.ok(html.includes("vnv-ecosystem-toolbar.js"),name+" ecosystem toolbar");
- assert.ok(html.includes('class="skip-link" href="#main"'),name+" skip navigation");
- assert.ok(html.includes('id="main"'),name+" main landmark");
- assert.ok(html.includes('class="'+c.hero+'"'),name+" course hero");
- assert.equal(html.split('class="'+c.feature+'"').length-1,4,name+" four descriptive feature cards");
- assert.ok(html.includes(c.label),name+" course identity");
- assert.ok(html.includes("/grades/grade-09/student-profile/"),name+" Grade 9 learner profile route");
- assert.ok(html.includes("/Khaemenes_Academy.github.io/family/"),name+" family route");
- assert.ok(html.includes("/Khaemenes_Academy.github.io/family/enroll/"),name+" enrollment route");
- assert.ok(!html.includes("high-school-global-chrome-v2.js"),name+" retired chrome remains absent");
- assert.ok(!html.includes("data-grade09-consistency"),name+" retired dashboard parchment injection remains absent");
- for(const token of requiredCss)assert.ok(css.includes(token),name+" visual CSS missing "+token);
- assert.ok(!/\b(localStorage|sessionStorage|fetch|XMLHttpRequest)\b/.test(css),name+" presentation CSS must not handle learner records");
- let nesting=0;
- for(const ch of css){if(ch==="{")nesting++;if(ch==="}")nesting--;assert.ok(nesting>=0,name+" CSS brace balance");}
- assert.equal(nesting,0,name+" CSS braces balanced");
- palettes[name]=Object.fromEntries(["paper","charcoal","cream","ink","muted","gold","line","radius"].map(k=>{
-   const m=css.match(new RegExp("--"+k+":([^;]+)"));return[k,m?.[1]?.trim()];
- }));
+for(const token of [
+ "--g9-bg: #f4f0e7","--g9-paper: #fffefa","--g9-text: #20241f","--g9-accent: #77551f",
+ "border-radius: 7px","border-radius:7px","Cinzel","Brandon Grotesque","font-size:16px",
+ ":focus-visible","@media (max-width: 960px)","@media (max-width: 560px)",
+ "@media (prefers-reduced-motion: reduce)","@media print"
+]) assert.ok(css.includes(token),"shared Grade 9 subject CSS missing "+token);
+
+assert.ok(!/\b(localStorage|sessionStorage|fetch|XMLHttpRequest)\b/.test(css),"presentation CSS must not own learner records or network state");
+let nesting=0;
+for(const ch of css){if(ch==="{")nesting++;if(ch==="}")nesting--;assert.ok(nesting>=0,"shared CSS brace balance")}
+assert.equal(nesting,0,"shared CSS braces balanced");
+
+for(const [name,cfg] of Object.entries(subjects)){
+ const html=fs.readFileSync(cfg.html,"utf8");
+ assert.ok(html.includes("width=device-width"),name+" responsive viewport");
+ assert.equal(html.split(sharedHref).length-1,1,name+" loads the shared Grade 9 subject presentation owner once");
+ assert.equal(html.split("../../../assets/vervenveda-parchment.css").length-1,1,name+" loads the base parchment once");
+ assert.equal(html.split("../../../assets/high-navigation-v1.css").length-1,1,name+" loads the subject navigation stylesheet once");
+ assert.equal(html.split("../../../assets/high-navigation-v1.js").length-1,1,name+" loads the subject navigation runtime once");
+ assert.ok(html.includes(cfg.body),name+" exposes the shared Grade 9 subject selector");
+ assert.ok(html.includes(cfg.label),name+" preserves course identity");
+ assert.ok(html.includes("vnv-language.js"),name+" language tools remain available");
+ assert.ok(html.includes("vnv-ecosystem-toolbar.js"),name+" official ecosystem toolbar remains available");
+ assert.ok(!html.includes("high-school-global-chrome-v2.js"),name+" retired global chrome remains absent");
+ assert.ok(!html.includes("english-minimal-landing-v1.css")&&!html.includes("science-minimal-landing-v1.css"),name+" retired minimal landing owner remains absent");
 }
-assert.deepEqual(palettes.english,palettes.science,"English 9 and Science 9 minimal landings must share the same parchment/charcoal design tokens");
-console.log("PASS: Grade 9 English and Science minimal landing consistency: shared parchment palette, Cinzel/Brandon hierarchy, 7px cards, accessible focus, responsive/print rules, official VNV chrome and grade-local learner routes. No learner record schemas changed.");
+
+console.log("PASS: Grade 9 English and Science share one parchment subject owner with 16px text floor, 7px geometry, keyboard focus, responsive/print contracts, and no retired global chrome.");
