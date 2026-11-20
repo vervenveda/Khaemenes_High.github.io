@@ -1,0 +1,28 @@
+name: Grade 09 Science and English Readiness UI
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'courses/science/integrated-science-9/diagnostic/readiness-diagnostic.html'
+      - 'courses/science/integrated-science-9/diagnostic/readiness-vnv-ka-blueprint-v1.css'
+      - 'courses/language-arts/english-9/assets/course.js'
+      - 'courses/language-arts/english-9/index.html'
+      - 'courses/language-arts/english-9/assessments/diagnostic/index.html'
+      - 'tools/test-grade09-readiness-layout-contract.mjs'
+      - '.github/workflows/grade09-readiness-ui-regression.yml'
+  pull_request:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  readiness-presentation:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: node --check courses/language-arts/english-9/assets/course.js
+      - run: node --check courses/science/integrated-science-9/diagnostic/readiness-app.js
+      - run: node --check courses/science/integrated-science-9/diagnostic/readiness-routing.js
+      - run: node tools/test-grade09-readiness-layout-contract.mjs
