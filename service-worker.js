@@ -108,6 +108,7 @@ const OTHER_PRECACHE_FILES = [
   "./grades/shared/upper-grade-class-progress-dialog.js",
   "./portfolio/index.html",
   "./portfolio/portfolio-academic-report.js",
+  "./portfolio/portfolio-evidence-receipts.js",
   "./portfolio/portfolio-student-record-connections.js",
   "./courses/physical-education/grade-12.html",
   "./courses/physical-education/grade-12-instruction.json",
