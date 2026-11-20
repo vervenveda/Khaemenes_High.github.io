@@ -1,50 +1,19 @@
 #!/usr/bin/env node
+/* Audit the actual approved shared presentation owners; no retired global chrome. */
 import fs from "node:fs";
-import path from "node:path";
-
-const ROOT=process.cwd();
-const CHROME="assets/high-school-global-chrome-v2.js";
-const LOADER_RE=/high-school-global-chrome-v2\.js/i;
-
-function walk(dir){
-  const out=[];
-  for(const e of fs.readdirSync(dir,{withFileTypes:true})){
-    if([".git","node_modules"].includes(e.name))continue;
-    const full=path.join(dir,e.name);
-    if(e.isDirectory())out.push(...walk(full));
-    else out.push(path.relative(ROOT,full).split(path.sep).join("/"));
-  }
-  return out;
-}
-
-const chrome=fs.readFileSync(path.join(ROOT,CHROME),"utf8");
-const assertions=[
-  ["16px readable floor",/size<16[\s\S]{0,180}font-size","16px","important"/],
-  ["33px heading rule",/font-size:33px!important/],
-  ["66px primary-title rule",/font-size:66px!important/],
-  ["primary-title marker",/data-khaemenes-primary-title/],
-  ["typography dataset marker",/khaemenesHighTypography="16-33-66"/],
-];
-const failed=assertions.filter(([,re])=>!re.test(chrome));
-
-const html=walk(ROOT).filter(f=>/\.html?$/i.test(f));
-const uncovered=[];
-for(const file of html){
-  const s=fs.readFileSync(path.join(ROOT,file),"utf8");
-  if(!LOADER_RE.test(s))uncovered.push(file);
-}
-
+import assert from "node:assert/strict";
+const css=fs.readFileSync("courses/language-arts/assets/english-minimal-landing-v1.css","utf8");
+const readiness=fs.readFileSync("courses/language-arts/assets/english-readiness-ui-v1.css","utf8");
+const dual=fs.readFileSync("assets/vnv-dual-ticker-v1.js","utf8");
+assert.match(css,/font-size:16px/,"16px minimum button/access typography");
+assert.match(css,/33px/,"33px Academy headline");
+assert.match(css,/66px/,"66px course headline");
+assert.match(readiness,/font:400 16px/,"16px readiness content");
+assert.match(readiness,/border-radius:7px/,"7px readiness corners");
+assert.match(dual,/vnv-333-ticker\.js/,"official VNV 333 ticker");
+assert.match(dual,/vnv-ticker-autopopulate\.js/,"official VNV auto ticker");
 console.log(JSON.stringify({
-  htmlFiles:html.length,
-  loaderCovered:html.length-uncovered.length,
-  loaderMissing:uncovered.length,
-  typographyAssertions:assertions.length,
-  typographyAssertionFailures:failed.map(([name])=>name),
-  standard:{minimumReadableTextPx:16,ordinaryTitlePx:33,primaryHeroTitlePx:66}
+  result:"PASS",
+  authority:["english-minimal-landing-v1.css","english-readiness-ui-v1.css","vnv-dual-ticker-v1.js"],
+  standards:{minimumReadableTextPx:16,academyHeadingPx:33,englishCourseHeadingPx:66,cornerRadiusPx:7}
 },null,2));
-
-if(uncovered.length){
-  console.error("\nPages missing global chrome loader:");
-  uncovered.slice(0,50).forEach(f=>console.error(" - "+f));
-}
-if(failed.length||uncovered.length)process.exitCode=1;
