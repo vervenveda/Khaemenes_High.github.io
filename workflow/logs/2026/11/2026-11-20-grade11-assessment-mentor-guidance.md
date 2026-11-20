@@ -38,3 +38,14 @@ Head commit: b7b3dcab3a02d18273f0475110206a977525000d
 ## Holds
 
 Authenticated browser learner journey, teacher review, Account Cloud sync, and cross-device acceptance are not verified by this source-only check. No question banks, grade engines, progression contracts, or learner records were changed.
+
+## Verified closeout — Grade 11 mentor guidance
+
+GitHub Actions run **44772774399** completed with **success**, head commit `b7b3dcab3a02d18273f0475110206a977525000d`.
+- Job ID: `136414485190`; job conclusion **success**
+- Run: https://github.com/vervenveda/Khaemenes_High.github.io/actions/runs/44772774399
+- Job log: **7/7** actual entry surfaces PASS; English 11 human-review contract PASS; Algebra II single-owner marker PASS; Chemistry 11 80% course description PASS; Government/Economics final redirects PASS.
+- Scope conclusion: **Grade 11 isolated mentor guidance static regression PASS**.
+- Real learner browser testing, submitted exam assessment behavior, authenticated cloud sync and evaluator authorization: **HOLD / not tested**.
+
+This verified closeout supersedes only the pending CI disposition above, not the outstanding end-to-end acceptance holds.
