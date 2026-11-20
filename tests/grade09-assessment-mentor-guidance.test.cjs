@@ -18,7 +18,7 @@ const targets=[
  ["courses/social-studies/grade-09/assessments/midterm.html","social-studies-9"],
  ["courses/social-studies/grade-09/assessments/final.html","social-studies-9"]
 ];
-assert.equal((pilot.match(/id="kaGrade09AssessmentMentors"/g)||[]).length,0);
+assert.match(pilot,/section\.id="kaGrade09AssessmentMentors"/);
 assert.match(pilot,/getElementById\("kaGrade09AssessmentMentors"\)/);
 assert.match(pilot,/hero\.insertAdjacentElement\("afterend",section\)/);
 assert.match(pilot,/grid-template-columns:repeat\(2,minmax\(0,1fr\)\)/);
