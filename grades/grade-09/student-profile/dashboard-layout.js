@@ -57,13 +57,7 @@ if(!document.getElementById("khaeProfileToolRail")){
     if(!popup)return reveal("studentCourseProgress");
     return true;
    }},
-  {label:"Schedule",target:"grade09ScheduleDialog",fallback:"#grade09ProfileFirst",run:()=>{
-    const popup=document.getElementById("grade09ScheduleDialog");
-    if(popup&&!popup.open){popup.showModal();return true}
-    const schedule=document.querySelector(".grade09-priority-schedule");
-    if(schedule){schedule.scrollIntoView({behavior:"smooth",block:"start"});return true}
-    return false;
-   }},
+  {label:"Schedule",href:"schedule/"},
   {label:"KlasaiPeer",target:"grade09StudyStudioDialog",fallback:"https://vervenveda.com/Klasaipeer.github.io/",run:()=>{
     const studio=window.KhaemenesGrade09StudyStudio;
     if(studio?.open){studio.open(document.activeElement);return true}
@@ -114,7 +108,6 @@ if(!document.getElementById("khaeProfileToolRail")){
     // A failed optional popup must not disable the rest of the profile toolbar.
     if(handled===false&&tool.fallback){
       if(tool.target==="grade09ClassProgressDialog"){reveal("studentCourseProgress");return}
-      if(tool.target==="grade09ScheduleDialog"){reveal("grade09ProfileFirst");return}
       if(/^https:\/\/vervenveda\.com\/(?:Klasaipeer|Academy-Yearbook)\.github\.io\//i.test(tool.fallback))openConnectedResource(tool.fallback);
       else window.location.assign(tool.fallback);
     }
@@ -330,6 +323,8 @@ if(shortcuts)top.insertAdjacentElement("afterend",shortcuts);
 if(shortcuts)shortcuts.insertAdjacentElement("afterend",schedule);
 else top.insertAdjacentElement("afterend",schedule);
 if(progress)schedule.insertAdjacentElement("afterend",progress);
+// Schedule is a dedicated page. Retain the existing nonvisual data mount only.
+if(schedule){schedule.hidden=true;schedule.setAttribute("aria-hidden","true");}
 [shortcuts,schedule,progress,portfolio].forEach(align);
 const region=document.createElement("section");region.id="grade09Explore";region.className="grade09-explore";
 const title=document.createElement("h2");title.textContent="Explore, Create & Celebrate";region.append(title);
