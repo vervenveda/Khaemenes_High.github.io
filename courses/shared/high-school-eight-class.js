@@ -35,7 +35,7 @@ const COURSES=Object.freeze({
  "12":Object.freeze({
   math:"algebra-2",science:"physics-engineering-12",languageArts:"english-12",
   socialStudies:"social-studies-12",peHealth:"physical-education-12",
-  psychology:"life-skills-12",foreignLanguage:"world-language-12",elective:"elective-12"
+  psychology:"senior-capstone",foreignLanguage:"world-language-12",elective:"elective-12"
  })
 });
 const LANGS=Object.freeze(["spanish","french","german","mandarin","japanese","arabic","russian"]);
@@ -59,7 +59,8 @@ const FIRST_STEPS=Object.freeze({
  "physical-education-9":"https://vervenveda.com/Khaemenes_High.github.io/courses/physical-education/?start=grade09-week01",
  "physical-education-10":"https://vervenveda.com/Khaemenes_High.github.io/courses/physical-education/?start=grade10-week01",
  "physical-education-11":"https://vervenveda.com/Khaemenes_High.github.io/courses/physical-education/?start=grade11-week01",
- "physical-education-12":"https://vervenveda.com/Khaemenes_High.github.io/courses/physical-education/?start=grade12-week01",
+ "physical-education-12":"https://vervenveda.com/Khaemenes_High.github.io/courses/physical-education/grade-12.html",
+ "senior-capstone":"https://vervenveda.com/Khaemenes_High.github.io/courses/capstone/senior-capstone/",
  "psychology-101":"https://vervenveda.com/Khaemenes_High.github.io/electives/grades/grade-09/psych-101/lessons/week-01/day-01.html"
 });
 function gradeOf(value){
@@ -80,13 +81,14 @@ function slots(grade,options={}){
  return SUBJECTS.map(([subject,label],index)=>{
   const id=subject==="math"?math:subject==="foreignLanguage"?language:base[subject];
   const meta=id?pin?.COURSE_META?.[id]:null;
+  const displayLabel=key==="12"&&subject==="psychology"?"Senior Capstone":label;
   return Object.freeze({
-   index:index+1,subject,label,id:id||null,
+   index:index+1,subject,label:displayLabel,id:id||null,
    title:meta?.title||(subject==="math"?"Choose mathematics pathway":subject==="foreignLanguage"?"Choose foreign language":label),
    href:meta?.href||null,
    firstStepHref:id?FIRST_STEPS[id]||meta?.href||null:null,
    pinAvailable:!!(id&&meta),
-   resourceOnly:subject==="psychology"&&key!=="9",
+   resourceOnly:subject==="psychology"&&key!=="9"&&key!=="12",
    isElective:subject==="elective"
   });
  });
