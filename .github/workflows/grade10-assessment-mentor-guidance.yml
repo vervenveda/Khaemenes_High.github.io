@@ -1,0 +1,36 @@
+name: Grade 10 Assessment Mentor Guidance
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'assets/grade10-assessment-mentor-guidance-v1.js'
+      - 'courses/mathematics/geometry/assessments/index.html'
+      - 'courses/mathematics/geometry/diagnostic/index.html'
+      - 'courses/language-arts/english-10/assessments/index.html'
+      - 'courses/language-arts/english-10/assessments/diagnostic/index.html'
+      - 'courses/science/biology-10/assessments/index.html'
+      - 'courses/social-studies/grade-10/assessments/midterm.html'
+      - 'courses/social-studies/grade-10/assessments/final.html'
+      - 'tests/grade10-assessment-mentor-guidance.test.cjs'
+      - '.github/workflows/grade10-assessment-mentor-guidance.yml'
+  pull_request:
+    paths:
+      - 'assets/grade10-assessment-mentor-guidance-v1.js'
+      - 'tests/grade10-assessment-mentor-guidance.test.cjs'
+      - '.github/workflows/grade10-assessment-mentor-guidance.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  static-integrity:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Verify Grade 10 assessment mentorship and course boundaries
+        run: node tests/grade10-assessment-mentor-guidance.test.cjs
