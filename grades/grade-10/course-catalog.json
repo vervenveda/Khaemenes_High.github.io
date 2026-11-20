@@ -1,5 +1,86 @@
 {
+  "schema_version": "2.0",
   "grade": 10,
+  "title": "Khaemenes High Grade 10 Course Catalog",
+  "masteryThreshold": 80,
+  "schedule_contract": {
+    "totalSubjects": 8,
+    "order": [
+      "Mathematics",
+      "English",
+      "Social Studies",
+      "Science",
+      "PE / Health",
+      "Psychology / Life Skills",
+      "Foreign Language",
+      "Elective"
+    ]
+  },
+  "schedule": [
+    {
+      "slot": 1,
+      "subject": "Mathematics",
+      "id": "math-placement-10",
+      "placementBased": true,
+      "hall": "../../courses/mathematics/",
+      "typical": [
+        "algebra-1",
+        "geometry"
+      ],
+      "summary": "Placement-based mathematics. Continue the learner's mastered pathway rather than assigning by age alone."
+    },
+    {
+      "slot": 2,
+      "subject": "English",
+      "id": "english-10",
+      "path": "../../courses/language-arts/english-10/",
+      "summary": "English 10: comparative reading, rhetoric, writing, research, speaking, and evidence."
+    },
+    {
+      "slot": 3,
+      "subject": "Social Studies",
+      "id": "social-studies-10",
+      "path": "../../courses/social-studies/grade-10/",
+      "summary": "United States History Honors with primary-source reasoning, evidence, continuity, change, and argument."
+    },
+    {
+      "slot": 4,
+      "subject": "Science",
+      "id": "biology-10",
+      "path": "../../courses/science/biology-10/",
+      "summary": "Biology & Biotechnology with five-day phenomenon, concepts, data, investigation, and CER learning cycles."
+    },
+    {
+      "slot": 5,
+      "subject": "PE / Health",
+      "id": "physical-education-10",
+      "path": "../../courses/physical-education/",
+      "summary": "Movement, fitness, health literacy, wellness, and lifelong activity."
+    },
+    {
+      "slot": 6,
+      "subject": "Psychology / Life Skills",
+      "id": "life-skills-10",
+      "path": "../../courses/electives/health-wellness-human-development/",
+      "summary": "Human development, decision-making, wellness, practical life skills, and evidence-based personal development."
+    },
+    {
+      "slot": 7,
+      "subject": "Foreign Language",
+      "id": "world-language-10",
+      "path": "https://vervenveda.com/Khaemenes_Linguistics.github.io/Halls/",
+      "selectionRequired": true,
+      "summary": "Learner-selected world language. The High School owns the schedule choice; Linguistics owns the course curriculum."
+    },
+    {
+      "slot": 8,
+      "subject": "Elective",
+      "id": "elective-10",
+      "path": "../../courses/electives/",
+      "selectionRequired": true,
+      "summary": "Learner-selected elective, arts, technology, finance, research, or interdisciplinary study."
+    }
+  ],
   "core": [
     {
       "id": "english-10",
@@ -22,7 +103,6 @@
       "geometry"
     ]
   },
-  "masteryThreshold": 80,
   "mentorAuthority": "archaemenes",
   "administration": "NAIB",
   "backendChancellor": "Noema"
