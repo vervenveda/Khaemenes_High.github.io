@@ -26,7 +26,7 @@ for(let grade=9;grade<=12;grade++){
 }
 for(let grade=10;grade<=12;grade++){
  const html=read("grades/grade-"+grade+"/student-profile/index.html");
- assert.ok(html.includes("english-continuation-alias-v1"),"Grade "+grade+" missing refreshed shared continuation");
+ assert.ok(html.includes("grade09-blueprint-upper-grade.js?v="),"Grade "+grade+" missing refreshed shared continuation");
  assert.ok(exists("courses/language-arts/english-"+grade+"/weeks/week-01/index.html"));
  const publisher=read("courses/shared/high-school-english-continuation.js");
  assert.ok(publisher.includes('courseId:"ela'+grade+'"'),"legacy English "+grade+" evidence identity must be preserved");
