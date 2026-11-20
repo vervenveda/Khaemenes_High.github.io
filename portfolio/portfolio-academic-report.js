@@ -12,6 +12,7 @@ const profileApi=window.KhaemenesCourseEntryContract;
 const gradeContext=window.KhaemenesHighProfileGradeContext;
 const getLedger=()=>window.KhaemenesLearningContinuation;
 const pinApi=window.KhaemenesHighCoursePins;
+const receiptApi=()=>window.KhaemenesPortfolioEvidenceReceipts;
 const catalog=window.KhaemenesHighEightClass;
 const normalizeGrade=g=>{const s=String(g??"").replace(/^grade[\s-]*/i,"").padStart(2,"0");return ["09","10","11","12"].includes(s)?s:null};
 const aliases=id=>/^english-(10|11|12)$/.test(id||"")?[id,"ela"+id.slice(-2)]:id?[id]:[];
