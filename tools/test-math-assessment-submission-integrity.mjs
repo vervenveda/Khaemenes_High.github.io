@@ -49,6 +49,7 @@ function simulate(course,{partiallyAnswered=false,constructed=false,saveFails=fa
  const browserWindow={KhaemenesMathAssessmentDirective:{show(){}}};
  const ctx=vm.createContext({
   window:browserWindow,document:doc,set:questions,host,submitted,
+  diagnostic:false,recordUnit:()=>11,
   MASTERY_TARGET:80,MASTERY:80,formalGate:true,Date,Math,location:{pathname:'/courses/mathematics/algebra-2/units/unit-11/assessment/mastery-check.html'},
   cfg:{recordKey:isGeo?'unit-11':'u11-mastery',title:'Assessment'},
   DEPTH:constructed?{constructed:[{domain:'reason'}],response_min_chars:60}:null,
