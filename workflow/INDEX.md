@@ -3,6 +3,7 @@
 
 | Date | Type | Entry | State |
 | --- | --- | --- | --- |
+| 2026-11-20 | closeout · Science 9 laboratory evidence | [Course-wide laboratory/evidence closeout](logs/2026/11/2026-11-20-science9-coursewide-laboratory-evidence-closeout.md) | Units 01–12 labs/checks normalized; Unit 12 totals corrected; 116-page Science 9 validator coverage; source PASS |
 | 2026-11-20 | repair · Science 9 laboratories | [Units 10–12 laboratory evidence layer](logs/2026/11/2026-11-20-science9-units10-12-laboratory-evidence-layer.md) | 12 labs + 12 linked 7/8 checks canonicalized; lab/question runtimes retained; source PASS |
 | 2026-11-20 | repair · Science 9 evidence | [Unit 05 focused evidence checks](logs/2026/11/2026-11-20-science9-unit05-focused-evidence-checks.md) | Four focused-practice checks canonicalized; focused bank/app preserved; validator coverage extended; source PASS |
 | 2026-11-20 | repair · validation · Science 9 support | [Science 9 assessment support / evidence layer](logs/2026/11/2026-11-20-science9-assessment-support-evidence-layer.md) | 12 printable/record pages canonicalized; Beta launcher removed; Unit 12 zero-baseline guard verified; source PASS |
