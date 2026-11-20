@@ -41,10 +41,10 @@ assert.match(css,/data-student-theme="midnight"/,"legacy-compatible Midnight Stu
 assert.match(css,/data-student-density="compact"/,"legacy-compatible compact density remains supported");
 
 assert.match(registry,/course=hs1/,"formal Grade 09 language links request the High School I program");
-assert.match(registry,/mode=atlas/,"exploration languages request the Linguistics Atlas");
-assert.match(registry,/!\["arabic","russian"\]\.includes\(id\)/,"Arabic and Russian are excluded from the current five formal programs");
-assert.match(registry,/formal\?name\+" I":name\+" · Exploration"/,"exploration languages receive non-formal titles");
-assert.match(seven,/Arabic \(exploration\)/,"schedule selector labels Arabic exploration");
-assert.match(seven,/Russian \(exploration\)/,"schedule selector labels Russian exploration");
+assert.match(registry,/"arabic":"arabic-1","russian":"russian-1"/,"Arabic and Russian route to their dedicated year-one instructional drafts");
+assert.match(registry,/courseMode:formal\?"formal":"instructional-draft"/,"language registry distinguishes formal courses from instructional drafts");
+assert.match(registry,/Instructional Draft/,"instructional-draft language titles are explicit");
+assert.match(seven,/Arabic \(exploration\)/,"schedule selector clearly labels Arabic as exploration-stage");
+assert.match(seven,/Russian \(exploration\)/,"schedule selector clearly labels Russian as exploration-stage");
 
 console.log("PASS Grade 09 schedule, Quick Pins, design personalization, and language handoff contract.");
