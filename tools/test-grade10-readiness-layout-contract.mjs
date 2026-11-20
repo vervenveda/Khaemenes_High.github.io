@@ -1,0 +1,31 @@
+// Grade 10 diagnostic presentation safeguards. Source-only test.
+// Biology practice (not official readiness) and English diagnostic keep their owners.
+import assert from "node:assert/strict";
+import fs from "node:fs";
+const read=p=>fs.readFileSync(p,"utf8");
+const englishRoot="courses/language-arts/english-10/";
+const biologyRoot="courses/science/biology-10/";
+const html=read(englishRoot+"assessments/diagnostic/index.html");
+const englishJs=read(englishRoot+"assets/course.js");
+const englishCss=read(englishRoot+"assets/course.css");
+const bioHtml=read(biologyRoot+"index.html");
+const biologyJs=read(biologyRoot+"biology10-dashboard-app-v1.js");
+assert.ok(html.includes('class="ka-english10-readiness"'),"English 10 diagnostic must opt into scoped layout");
+assert.ok(html.includes('<details class="english10-readiness-progress"'),"English 10 progress must be collapsible");
+assert.ok(html.indexOf('id="english10ReadinessProgress"')<html.indexOf('data-question-container'),"English 10 progress must precede questions");
+assert.ok(html.includes('data-assessment-id="diagnostic"'),"English 10 official diagnostic owner missing");
+assert.ok(html.includes('data-assessment-kind="exam"'),"English 10 original assessment kind changed");
+assert.ok(englishJs.includes('if(id==="diagnostic")'),"English 10 progress wiring missing");
+assert.ok(englishJs.includes('renderQuestionSet($("[data-question-container]",form),questions,id);'),"English 10 question renderer missing");
+assert.ok(englishJs.includes('button.type="button";button.className="english10-question-jump"'),"English 10 navigator must not submit form");
+assert.ok(englishCss.includes('body.ka-english10-readiness .english10-readiness-progress'),"English 10 course-owned CSS missing");
+assert.ok(html.includes("course.js?v=20261119-grade10-readiness-v1"),"English 10 JS refresh token missing");
+assert.ok(html.includes("course.css?v=20261119-grade10-readiness-v1"),"English 10 CSS refresh token missing");
+assert.ok(biologyJs.includes('<details class="bio10-progress"'),"Biology 10 progress accordion missing");
+assert.ok(biologyJs.includes("function mountBiologyPracticeProgress()"),"Biology 10 navigator event handler missing");
+assert.ok(biologyJs.includes('button.type="button";button.className="bio10-progress-jump"'),"Biology 10 navigator must not submit form");
+assert.ok(biologyJs.includes('MC.openSession')&&biologyJs.includes('MC.saveResponse')&&biologyJs.includes('MC.complete'),"Biology 10 assessment persistence/scoring authority missing");
+assert.ok(bioHtml.includes('#testArea #testForm{max-width:880px;margin:0 auto}'),"Biology 10 centered layout missing");
+assert.ok(bioHtml.includes("biology10-dashboard-app-v1.js?v=20261119-readiness-layout-v1"),"Biology 10 JS refresh missing");
+assert.ok(!bioHtml.includes('high-school-global-chrome-v2.js'),"Retired chrome must not be reintroduced");
+console.log("PASS: Grade 10 English diagnostic and Biology practice progress accordion, course-owned CSS, scoring boundaries");
