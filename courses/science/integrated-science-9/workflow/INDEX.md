@@ -2,6 +2,7 @@
 
 | Date | Type | Entry | State |
 | --- | --- | --- | --- |
+| 2026-11-20 | assessment shell · regression | [Assessment shell verification](logs/2026/11/2026-11-20-assessment-shell-verification.md) | Readiness + cumulative + Unit 01–12 mastery/assessment surfaces normalized; Science 9 validator added; source PASS |
 | 2026-11-16 | setup | [Workflow initialization](logs/2026/11/2026-11-16-workflow-initialization.md) | Documentation created; no curriculum changes |
 
 Add subsequent dated records newest first. Use types audit, test, repair, upgrade, codex, decision and follow-up.
