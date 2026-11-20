@@ -15,7 +15,7 @@ const routes=[
 for(const [grade,path,headings] of routes){
  const html=read(path);
  assert.ok(html.includes('data-social-studies-engine="'+grade+'"'),path+" missing grade opt-in");
- assert.ok(html.includes("social-studies-lesson-engine-v0.1.js?v=20261119-social-studies-week03-v4"),path+" wrong shared engine");
+ assert.ok(html.includes("social-studies-lesson-engine-v0.1.js?v=20261119-social-studies-complete-v5"),path+" wrong shared engine");
  assert.equal(headings.length,5,path+" expected five original daily lessons");
  for(const title of headings){
   assert.ok(html.includes(">"+title+"</h3>"),path+" original lesson heading absent "+title);
@@ -30,7 +30,7 @@ const cases=[
 ["Power, Authority, Legitimacy, and Sovereignty","Weber","sovereignty"]
 ];
 for(const row of cases)for(const phrase of row)assert.ok(js.toLowerCase().includes(phrase.toLowerCase()),"Week 03 curriculum map omitted "+phrase);
-assert.ok(js.includes('const isGrade9Workspace=grade==="9"&&!demo&&!week02&&!week03;'),"Grade 09 Week 01 interactive native controls not preserved");
+assert.ok(js.includes('const isGrade9Workspace=grade==="9"&&!demo&&!week02&&!week03&&!laterWeek;'),"Grade 09 Week 01 interactive native controls not preserved");
 assert.ok(js.includes('const specific=week03?WEEK03[grade]:week02?WEEK02[grade]:null;'),"Week 03 must not overwrite Weeks 01–02 guidance");
 assert.ok(js.includes('if(targets&&(!targets.length||targets.some(x=>!x)))return false'),"Missing fail-open on unmatched packet");
 for(const banned of ["localStorage","sessionStorage","indexedDB","fetch(","XMLHttpRequest","document.cookie"]){
