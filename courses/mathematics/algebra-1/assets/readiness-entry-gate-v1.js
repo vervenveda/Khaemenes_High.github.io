@@ -28,8 +28,20 @@ function hasObjectEvidence(v){
  if(v.weeks&&typeof v.weeks==="object"&&Object.values(v.weeks).some(hasObjectEvidence))return true;
  return false;
 }
+// A submitted attempt is not the same as a passing diagnostic. Grade 9's
+// learner-scoped record takes precedence over legacy browser-wide evidence.
+function passingReadiness(result){
+ const attempts=Array.isArray(result?.attempt_history)?result.attempt_history:[];
+ const all=[...attempts,result?.lastResult].filter(Boolean);
+ return all.some(a=>a?.id==="KH-MATH-A1-DIAGNOSTIC"&&a?.total===36&&
+  Number.isInteger(Number(a.score))&&Number(a.score)>=0&&Number(a.score)<=36&&
+  Number.isFinite(Number(a.percent))&&Number(a.percent)>=80&&Number(a.percent)<=100&&
+  Math.abs(Number(a.score)/36*100-Number(a.percent))<0.2);
+}
 function diagnosticComplete(){
- const r=parse(DIAGNOSTIC_RESULT_KEY);return hasObjectEvidence(r);
+ const contract=window.KhaemenesCourseEntryContract,learner=contract?.readAcademyProfile?.();
+ const evidence=learner?contract.readJSON(DIAGNOSTIC_RESULT_KEY,null,learner):parse(DIAGNOSTIC_RESULT_KEY);
+ return passingReadiness(evidence);
 }
 function courseEvidence(){
  const keys=[];
@@ -41,7 +53,7 @@ function courseEvidence(){
 }
 function status(){const returning=courseEvidence(),diagnostic=diagnosticComplete();return {ready:diagnostic||returning,diagnostic_complete:diagnostic,returning_learner:returning};}
 function routeLabel(){const s=status();if(s.returning_learner)return "Returning learner · course evidence found";if(s.diagnostic_complete)return "Readiness diagnostic complete";return "Readiness diagnostic required";}
-function gatePanel(){return `<section class="hero"><div class="wrap"><p class="eyebrow">Algebra I · Week 1 Readiness Entrance</p><h1>Begin with the readiness diagnostic.</h1><p class="lead">Before a first-time learner enters Unit 01, complete the 36-question Algebra I readiness diagnostic. It is placement evidence, not a course grade. Returning learners with existing Algebra I course evidence are never forced backward through the entrance.</p><div class="actions"><a class="btn primary" href="${esc(DIAGNOSTIC_URL)}">Open Readiness Diagnostic</a><a class="btn" href="${esc(COURSE_URL)}">Course Home</a></div></div></section><section class="block"><div class="wrap"><article class="card"><h2>Why this comes first</h2><p>The diagnostic identifies prerequisite strengths and gaps so Foundation, Core, or Extended support can be chosen intentionally. Completing it opens the official Unit 01 pathway; the diagnostic score itself does not enter the Algebra I course grade.</p><p class="notice"><strong>Returning learner protection:</strong> if genuine Algebra I lesson, weekly, unit, midterm, final, or course evidence already exists on this device, the entrance gate yields to that evidence and the learner resumes normally.</p></article></div></section>`}
+function gatePanel(){return `<section class="hero"><div class="wrap"><p class="eyebrow">Algebra I · Week 1 Readiness Entrance</p><h1>Begin with the readiness diagnostic.</h1><p class="lead">Before a first-time learner enters Unit 01, complete the 36-question Algebra I readiness diagnostic. It is placement evidence, not a course grade. Returning learners with existing Algebra I course evidence are never forced backward through the entrance.</p><div class="actions"><a class="btn primary" href="${esc(DIAGNOSTIC_URL)}">Open Readiness Diagnostic</a><a class="btn" href="${esc(COURSE_URL)}">Course Home</a></div></div></section><section class="block"><div class="wrap"><article class="card"><h2>Why this comes first</h2><p>The diagnostic identifies prerequisite strengths and gaps so Foundation, Core, or Extended support can be chosen intentionally. Passing it at 80% or higher opens the official Unit 01 pathway; the diagnostic score itself does not enter the Algebra I course grade.</p><p class="notice"><strong>Returning learner protection:</strong> if genuine Algebra I lesson, weekly, unit, midterm, final, or course evidence already exists on this device, the entrance gate yields to that evidence and the learner resumes normally.</p></article></div></section>`}
 function blockUnitOnePage(){
  const path=location.pathname.toLowerCase();if(!/\/algebra-1\/units\/unit-01\//.test(path))return false;
  const s=status();if(s.ready)return false;
