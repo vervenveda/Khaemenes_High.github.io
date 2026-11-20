@@ -80,10 +80,62 @@ function algebraReadiness(user){
    attempts:attempts.length,officialCourseGrade:false,cloudVerified:false};
  }
  try{
-  if(localStorage.getItem(base)!==null)return {state:"UNATTRIBUTED_LOCAL",
-   title:"Algebra I Readiness Diagnostic",officialCourseGrade:false,cloudVerified:false};
- }catch{}
+  const raw=localStorage.getItem(base);
+  if(raw!==null){
+   const legacy=JSON.parse(raw);
+   const qualified=Array.isArray(legacy?.attempt_history)?legacy.attempt_history.filter(valid):[];
+   if(!qualified.length&&valid(legacy?.lastResult))qualified.push(legacy.lastResult);
+   return {state:qualified.length?"UNATTRIBUTED_LOCAL":"LEGACY_UNVERIFIED",
+    title:"Algebra I Readiness Diagnostic",officialCourseGrade:false,cloudVerified:false};
+  }
+ }catch{return {state:"LEGACY_UNVERIFIED",title:"Algebra I Readiness Diagnostic",officialCourseGrade:false,cloudVerified:false};}
  return null;
+}
+
+// Explicit learner-confirmed local copy; no browser record is deleted, no cloud call.
+function linkLegacyAlgebraReadiness(){
+ const selected=learner(),profile=profileApi?.readAcademyProfile?.();
+ if(!selected||selected.grade!=="09"||profile?.learnerId!==selected.id){
+  refreshStatus("Verify the selected Grade 9 learner first. Nothing changed.");return;
+ }
+ const key="khaemenes-algebra1-diagnostic-result-v1";
+ const legacy=(()=>{try{return JSON.parse(localStorage.getItem(key)||"null")}catch{return null}})();
+ const valid=a=>a?.id==="KH-MATH-A1-DIAGNOSTIC"&&a.total===36&&
+  Number.isInteger(a.score)&&a.score>=0&&a.score<=36&&
+  Number.isFinite(a.percent)&&Math.abs(a.percent-100*a.score/36)<.2&&
+  typeof a.submitted==="string"&&Number.isFinite(Date.parse(a.submitted));
+ const attempts=(Array.isArray(legacy?.attempt_history)?legacy.attempt_history:[]).filter(valid);
+ if(!attempts.length&&valid(legacy?.lastResult))attempts.push(legacy.lastResult);
+ if(!attempts.length){refreshStatus("No valid original Algebra I readiness result found. Nothing changed.");return;}
+ if(!confirm("Link this saved Algebra I readiness result to the selected Grade 9 learner? Confirm only if this student completed the assessment on this browser. The original is preserved. This does not upload to Account Cloud or award course credit."))return;
+ const recheck=learner(),current=profileApi?.readAcademyProfile?.();
+ if(recheck?.id!==selected.id||current?.learnerId!==selected.id){
+  refreshStatus("Learner selection changed. No result was linked.");return;
+ }
+ try{
+  const old=profileApi.readJSON(key,null,current);
+  if(old!==null&&(!old||typeof old!=="object"||Array.isArray(old)||
+   (old.assessment_id&&old.assessment_id!=="KH-MATH-A1-DIAGNOSTIC"))){
+   refreshStatus("An existing learner-scoped record needs review; it was not overwritten.");return;
+  }
+  const previous=Array.isArray(old?.attempt_history)?old.attempt_history:[];
+  if(previous.some(a=>!valid(a))){refreshStatus("A previous diagnostic record needs review; no changes made.");return;}
+  const known=new Set(previous.map(a=>[a.id,a.submitted,a.score,a.total].join("|")));
+  const additions=attempts.filter(a=>!known.has([a.id,a.submitted,a.score,a.total].join("|")));
+  const combined=[...previous,...additions];
+  const latest=combined.slice().sort((a,b)=>Date.parse(b.submitted)-Date.parse(a.submitted))[0];
+  const best=Math.max(...combined.map(a=>a.percent));
+  const next={...(old||{}),result_schema:"khaemenes-algebra1-cumulative-evidence-v2",
+   assessment_id:"KH-MATH-A1-DIAGNOSTIC",attempt_history:combined,lastResult:latest,
+   bestScore:best,bestSelectedScore:best,bestOverallScore:best,mastery:best>=80,
+   attribution:{source:"browser-local-readiness",action:"learner-confirmed-portfolio-link",
+    learnerId:selected.id,at:new Date().toISOString(),officialCredit:false}};
+  profileApi.writeJSON(key,next,current);
+  const check=profileApi.readJSON(key,null,current);
+  if(!check||!Array.isArray(check.attempt_history)||check.attempt_history.length!==combined.length||
+   check.lastResult?.submitted!==latest.submitted)throw Error("READBACK_FAILED");
+  refresh("learner-confirmed-link");
+ }catch{refreshStatus("The learner-linked result could not be verified. Original diagnostic evidence was not altered. Export the original before retrying.");}
 }
 function evidenceCount(user){
  try{
@@ -169,14 +221,8 @@ function refresh(reason="automatic"){
   return;
  }
  host.replaceChildren();
- if(typeof getLedger()?.readLearner!=="function"){
-  $("reportIdentity").textContent="Academic ledger unavailable on this device.";
-  $("reportCourseCount").textContent="—";$("reportAssessmentCount").textContent="—";
-  $("printReport").disabled=true;$("exportReport").disabled=true;
-  refreshStatus("Refresh #"+iteration+": Academy course-record service has not loaded. No score can be confirmed and no records were changed.");
-  host.append(mk("p","portfolio-report-note","Academic records are temporarily unavailable. Reload the portfolio after returning to the registered Student Profile."));
-  return;
- }
+ // Independent learner-scoped readiness evidence can render even if the
+ // course-continuation ledger is not loaded. Never invent missing grades.
  if(!report){
   $("reportIdentity").textContent="Select a registered High School learner to view this private academic report.";
   $("reportCourseCount").textContent="—";$("reportAssessmentCount").textContent="—";
@@ -194,9 +240,10 @@ function refresh(reason="automatic"){
  const assessmentsFound=report.courses.reduce((n,c)=>n+c.assessments.length,0);
  const now=new Date().toLocaleTimeString([], {hour:"numeric",minute:"2-digit",second:"2-digit"});
  const sourceReady=typeof getLedger()?.readLearner==="function";
- if(!sourceReady)refreshStatus("Refresh #"+iteration+" · "+now+": Academy course-record service is unavailable. The display cannot verify published assessment scores. No student records were changed.");
+ if(!sourceReady)refreshStatus("Refresh #"+iteration+" · "+now+": Course-continuation records are unavailable. "+(readinessLinked?"Linked Algebra I readiness evidence is shown separately.":report.algebraReadiness?.state==="UNATTRIBUTED_LOCAL"?"An existing local Algebra I result needs learner confirmation.":"No published course results were confirmed.")+" No grades changed.");
  else if(reported===0&&readinessLinked)refreshStatus("Refresh #"+iteration+" · "+now+": Algebra I readiness evidence found for this learner. This is not an official course grade or a cloud backup.");
  else if(reported===0&&report.algebraReadiness?.state==="UNATTRIBUTED_LOCAL")refreshStatus("Refresh #"+iteration+" · "+now+": A local Algebra I readiness result was found without confirmed learner attribution. Open the diagnostic to link existing evidence. No student records were changed.");
+ else if(reported===0&&report.algebraReadiness?.state==="LEGACY_UNVERIFIED")refreshStatus("Refresh #"+iteration+" · "+now+": An older Algebra I record exists, but its score cannot be verified. No records changed.");
  else if(reported===0)refreshStatus("Refresh #"+iteration+" · "+now+": No current course evidence has been published for this learner on this device. Your original course scores were not modified. Open a course's gradebook or progress report to check its separate records.");
  else if(assessmentsFound===0)refreshStatus("Refresh #"+iteration+" · "+now+": Found "+reported+" course record"+(reported===1?"":"s")+", but none includes published quiz/test scores in the Academy continuation ledger. Midterm and final results may still be held by individual course gradebooks.");
  else refreshStatus("Refresh #"+iteration+" · "+now+": Checked "+reported+" course record"+(reported===1?"":"s")+" and "+assessmentsFound+" scored assessment"+(assessmentsFound===1?"":"s")+" in the Academy continuation ledger. Report updated from saved evidence; no grades were changed.");
@@ -216,10 +263,17 @@ function refresh(reason="automatic"){
    panel.append(mk("p","","Recorded readiness score: "+a.score+"/"+a.total+" ("+a.percent+"%) · Submitted "+new Date(a.submitted).toLocaleString()+" · "+a.attempts+" retained attempt(s)."));
    panel.append(mk("p","portfolio-report-note","Learner-linked evidence in this browser only. Not an official Algebra I course grade; Account Cloud backup is unverified."));
   }else{
-   panel.append(mk("p","","An older Algebra I readiness result exists on this device but has not been attributed to this learner. The score is withheld."));
-   const link=mk("a","","Open Algebra I Readiness Diagnostic to review the saved result");
-   link.href="../courses/mathematics/algebra-1/diagnostic/";
-   panel.append(link,mk("p","portfolio-report-note","Use the existing learner-confirmed Begin Lesson path to attach eligible readiness evidence. Do not retake the assessment solely to repair the link."));
+   const eligible=report.algebraReadiness.state==="UNATTRIBUTED_LOCAL";
+   panel.append(mk("p","",eligible?"A valid Algebra I readiness attempt is saved on this browser but is not yet linked to the selected learner. Confirm ownership to link it.":"Older diagnostic data was found, but its score could not be verified."));
+   if(eligible){
+    const linkButton=mk("button","","Review & Link My Saved Algebra I Result");
+    linkButton.type="button";
+    linkButton.addEventListener("click",linkLegacyAlgebraReadiness);
+    panel.append(linkButton);
+   }
+   const diagnostic=mk("a","","Open Algebra I Readiness Diagnostic");
+   diagnostic.href="../courses/mathematics/algebra-1/diagnostic/";
+   panel.append(diagnostic,mk("p","portfolio-report-note","Do not retake the assessment merely to fix this link. No cloud upload is performed."));
   }
   host.append(panel);
  }
