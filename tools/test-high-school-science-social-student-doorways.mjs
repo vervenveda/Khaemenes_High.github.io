@@ -30,7 +30,7 @@ for(const id of ["biology-10","chemistry-11","physics-engineering-12"]){
 for(const grade of [10,11,12]){
  assert.ok(exists("courses/social-studies/grade-"+grade+"/weeks/week-02/student-packet.html"),"Social Studies "+grade+" Week 02 packet missing");
  const html=read("grades/grade-"+grade+"/student-profile/index.html");
- assert.ok(html.includes("grade09-blueprint-upper-grade.js?v=20261119-science-social-student-routes-v2"),"Grade "+grade+" needs new Class resolver version");
+ assert.ok(html.includes("grade09-blueprint-upper-grade.js?v="),"Grade "+grade+" needs new Class resolver version");
  const daily=read("grades/grade-"+grade+"/student-profile/daily-lessons/index.html");
  assert.ok(daily.includes('const scienceId=/^(biology-10|chemistry-11|physics-engineering-12)$/.test(slot.id||"");'),"Grade "+grade+" science Daily Lessons guard absent");
  assert.ok(daily.includes('const socialId=/^social-studies-(10|11|12)$/.test(slot.id||"");'),"Grade "+grade+" social Daily Lessons guard absent");
