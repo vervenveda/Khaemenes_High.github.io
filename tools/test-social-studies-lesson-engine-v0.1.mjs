@@ -54,7 +54,7 @@ for(const [grade,{path,names}] of Object.entries(weekOne)){
  assert.ok(fs.existsSync(path),"Original upper-grade packet missing: "+path);
  const html=read(path);
  assert.ok(html.includes('data-social-studies-engine="'+grade+'"'),"Grade "+grade+" packet not opted in");
- assert.ok(html.includes("social-studies-lesson-engine-v0.1.js?v=20261119-social-studies-week03-v4"),"Missing shared source on Grade "+grade);
+ assert.ok(html.includes("social-studies-lesson-engine-v0.1.js?v=20261119-social-studies-complete-v5"),"Missing shared source on Grade "+grade);
  for(const heading of names){
   assert.ok(html.includes(">"+heading+"</h3>"),"Grade "+grade+" daily lesson anchor absent: "+heading);
   assert.ok(js.includes(heading),"Shared engine lacks Grade "+grade+" native anchor: "+heading);
@@ -62,6 +62,6 @@ for(const [grade,{path,names}] of Object.entries(weekOne)){
 }
 assert.ok(js.includes('heading?.closest("article.lesson,section.card,article")'),"Upper-grade adapter must target actual original instructional sections");
 assert.ok(js.includes('if(targets&&(!targets.length||targets.some(x=>!x)))return false'),"Upper-grade adapter must fail open on unrecognized lesson packet");
-assert.ok(pilot.includes("social-studies-lesson-engine-v0.1.js?v=20261119-social-studies-week03-v4"),"Grade 09 must refresh latest shared engine");
+assert.ok(pilot.includes("social-studies-lesson-engine-v0.1.js?v=20261119-social-studies-complete-v5"),"Grade 09 must refresh latest shared engine");
 
 console.log("PASS Social Studies 9–12 Week 01 engine adapters, source-aligned day targets, Grade 09 original controls, no learner storage authority");
