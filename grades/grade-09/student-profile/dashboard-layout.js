@@ -353,12 +353,25 @@ if(managerCard&&!document.getElementById("grade09ManageClassesDialog")){
 }
 if(shortcuts)top.insertAdjacentElement("afterend",shortcuts);
 
-if(shortcuts)shortcuts.insertAdjacentElement("afterend",schedule);
-else top.insertAdjacentElement("afterend",schedule);
-if(progress)schedule.insertAdjacentElement("afterend",progress);
-// Schedule is a dedicated page. Retain the existing nonvisual data mount only.
-if(schedule){schedule.hidden=true;schedule.setAttribute("aria-hidden","true");}
-[shortcuts,schedule,progress,portfolio].forEach(align);
+// The one redesigned Schedule dialog owns the original live schedule.
+// Never reparent it back into the page or hide it after mounting the dialog.
+const scheduleDialog=document.getElementById("grade09ScheduleDialog");
+if(scheduleDialog&&schedule){
+ if(!scheduleDialog.contains(schedule))scheduleDialog.querySelector("div")?.append(schedule);
+ schedule.hidden=false;
+ schedule.removeAttribute("aria-hidden");
+}else if(schedule){
+ // Fail visibly rather than silently suppressing the original schedule.
+ if(shortcuts)shortcuts.insertAdjacentElement("afterend",schedule);
+ else top.insertAdjacentElement("afterend",schedule);
+ schedule.hidden=false;
+ schedule.removeAttribute("aria-hidden");
+}
+if(progress){
+ const anchor=scheduleDialog?(shortcuts||top):(schedule||shortcuts||top);
+ anchor.insertAdjacentElement("afterend",progress);
+}
+[shortcuts,progress,portfolio].forEach(align);
 const region=document.createElement("section");region.id="grade09Explore";region.className="grade09-explore";
 const title=document.createElement("h2");title.textContent="Explore, Create & Celebrate";region.append(title);
 const summary=document.createElement("p");summary.textContent="Your creative spaces, personal dreams and earned stickers—organized together so daily classes stay easy to find.";region.append(summary);
