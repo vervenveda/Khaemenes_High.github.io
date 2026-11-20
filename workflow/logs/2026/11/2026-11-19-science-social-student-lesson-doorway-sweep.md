@@ -35,3 +35,13 @@ No lesson engine rewrite. No question bank, grading, readiness, mastery threshol
 - Static regression script and GitHub workflow: COMMITTED; successful execution of workflow jobs NOT independently observed in this session.
 - Deployed browser tests including signed-in learner progress continuity, tablet rotation, correct 80% gates, service-worker freshness, and Class/Today link behavior: HOLD.
 - Social Studies precise last unfinished week is not inferred if no authorized course-owned continuation snapshot exists. The verified first instructional packet is the safe starting doorway, without altering learner evidence.
+
+## Cross-course regression compatibility addendum
+- 9ec854f: Grade 09 continuation snapshot read is fail-closed when the Academy continuation service is unavailable.
+- b625d20 / c6f77b6: Grade 09 profile and Daily Lessons import the latest v2 registry script to avoid an older browser-cached continuation implementation.
+- 6756498: Grade 10–12 shared student Class resolver preserves explicit Science/Social recovery instead of launching a lesson over an invalid record.
+- 0761fe5 / dc2e004 / 42b484c: direct Daily Lessons pages maintain the same explicit recovery exception.
+- 8584bbf / 52b9ef5 / 3841d29: upper-grade profiles import v2 guarded shared resolver.
+- 89dbd90: source regression additionally checks native Science 9 query-based weekly view and paused-record boundary.
+- 57f0e21 / b30871c / 33092cb / 6b26634: existing English, mathematics, and new Science/Social source tests were reconciled so they verify shared class-route behavior rather than stale version token literals or previous English-only source snippets. No student/course behavior changed by these test-only commits.
+- Run conclusions and authenticated browser acceptance remain unverified; do not equate committed regression source with a passing runtime workload.
