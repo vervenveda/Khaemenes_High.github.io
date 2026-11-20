@@ -48,3 +48,17 @@ The shared engine JavaScript passed parsing via `new Function`. Representative G
 **Missing course source: Grade 09 Week 27.**
 **GitHub Actions PASS: unverified.**
 **Live browser/learner flow PASS: unverified.**
+
+## Final alternate-route reconciliation · 2026-11-19
+
+A further forensic check discovered previously uncounted original packet variants:
+- Grade 10 `courses/social-studies/grade-10/weeks/week-01/student-packet.html` is a genuine second Week 01 packet and now uses the engine.
+- Grade 09 `courses/social-studies/grade-09/week-NN/student-packet.html` contains genuine alternate (older) lesson packets for **30 weeks**, now also integrated with the same grade-specific engine. These legacy packets do **not** have the newer `high-school-formative-evidence-v1.js` module, so no existing evidence owner was invented or added there.
+- Grade 09 direct Week 01, 06, 07, 09, and 10 are canonical **redirect-only** compatibility pages; preserved untouched because their canonical destinations already include the engine.
+- Grade 09 Week 27 remains absent in both direct and nested directory layouts.
+
+**Revised and authoritative physical-file census:** 143 of 144 distinct grade/weeks covered; **209 genuine instructional HTML packets integrated** (replacing the earlier 178 estimate), **1040 original Monday–Friday headings** outside the Grade 09 Week 01 phase player, and five intact Grade 09 redirect pages. The Grade 10 alternate Week 01 and 30 older Grade 09 packets account for the 31 additional actual lesson files.
+
+`tools/test-social-studies-full-course-integration.mjs` has been revised to make this distinction and fail on missing or duplicate lesson controls. This corrects the earlier source-census estimate; it does not certify the GitHub Actions or authenticated browser result.
+
+**Release hold remains:** Grade 09 Week 27 course source missing; browser, learner storage, accessibility and workflow run PASS still unverified.
