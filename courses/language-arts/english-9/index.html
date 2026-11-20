@@ -472,74 +472,6 @@ body .main .footer{
   body .main>.hero{padding:30px 16px!important}
   body .main>#content :is(.col6,.col3){grid-column:span 12!important}
 }
-/* English 9 readiness presentation: one canonical CSS owner, no duplicated overlay styles. */
-#english9ChromeAnchor{display:none!important}
-body>.english9-entry-gate{
-  position:fixed!important;
-  inset:0!important;
-  z-index:2147479000!important; /* below official VNV sticky tickers and header */
-  display:grid!important;
-  place-items:center!important;
-  overflow-y:auto!important;
-  padding:clamp(90px,12vh,140px) 18px 26px!important;
-  background:rgba(242,239,232,.98)!important;
-  color:#252b2b!important;
-  font:400 16px/1.55 "Brandon Grotesque",Nunito,"Avenir Next",Arial,sans-serif!important;
-}
-body>.english9-entry-gate .english9-entry-card{
-  width:min(100%,620px)!important;
-  max-width:620px!important;
-  margin:auto!important;
-  padding:clamp(22px,3vw,33px)!important;
-  border:1px solid #bfa777!important;
-  border-radius:7px!important;
-  background:#fffdf8!important;
-  box-shadow:0 12px 38px rgba(17,21,18,.13)!important;
-  text-align:center!important;
-  color:#252b2b!important;
-}
-body>.english9-entry-gate .english9-entry-card h1{
-  margin:0 0 14px!important;
-  color:#252b2b!important;
-  font:400 clamp(24px,3vw,33px)/1.3 Cinzel,Georgia,serif!important;
-}
-body>.english9-entry-gate .english9-entry-card p{
-  margin:0 auto 22px!important;
-  max-width:53ch!important;
-  color:#353c37!important;
-  font:400 16px/1.65 "Brandon Grotesque",Nunito,"Avenir Next",Arial,sans-serif!important;
-}
-body>.english9-entry-gate .english9-entry-actions{
-  display:flex!important;flex-wrap:wrap!important;align-items:stretch!important;
-  justify-content:center!important;gap:11px!important
-}
-body>.english9-entry-gate .english9-entry-actions a{
-  display:inline-flex!important;align-items:center!important;justify-content:center!important;
-  flex:1 1 185px!important;min-width:0!important;min-height:48px!important;
-  padding:11px 16px!important;border:1px solid #252b2b!important;border-radius:7px!important;
-  background:#252b2b!important;color:#fff8e9!important;
-  -webkit-text-fill-color:#fff8e9!important;text-align:center!important;text-decoration:none!important;
-  font:400 16px/1.4 "Brandon Grotesque",Nunito,"Avenir Next",Arial,sans-serif!important
-}
-body>.english9-entry-gate .english9-entry-actions a.english9-entry-back{
-  background:#fffdf8!important;color:#252b2b!important;-webkit-text-fill-color:#252b2b!important
-}
-body>.english9-entry-gate .english9-entry-actions a:hover{background:#3c4a43!important;color:#fff8e9!important;-webkit-text-fill-color:#fff8e9!important}
-body>.english9-entry-gate .english9-entry-actions a:focus-visible{outline:3px solid #9b7b35!important;outline-offset:3px!important}
-body>.english9-entry-gate{grid-template-rows:minmax(0,1fr) auto!important}
-body>.english9-entry-gate .english9-entry-footer{
-  display:block!important;box-sizing:border-box!important;
-  width:min(100%,940px)!important;margin:17px auto 0!important;
-  padding:15px 18px!important;border-radius:7px!important;
-  background:#252b2b!important;color:#fff8e9!important;
-  font:400 16px/1.4 "Brandon Grotesque",Nunito,Arial,sans-serif!important;
-  text-align:center!important
-}
-
-@media(max-width:480px){
-  body>.english9-entry-gate{padding:86px 14px 22px!important}
-  body>.english9-entry-gate .english9-entry-actions{flex-direction:column!important}
-}
 @media print{
   body .centered-course-controls .english9-primary-navigation{display:none!important}
   #vnv333NetworkTicker,
@@ -555,6 +487,7 @@ body>.english9-entry-gate .english9-entry-footer{
 
 
 
+<link rel="stylesheet" href="../assets/english-readiness-ui-v1.css?v=1.0.0" data-ka-english-readiness-ui="v1">
 </head>
 <body data-english9-require-entry>
 <a class="skip-link" href="#content">Skip to student workspace</a>
