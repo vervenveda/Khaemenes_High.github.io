@@ -26,7 +26,7 @@ for(const grade of ["09","10","11","12"]){
  check(s.includes('id="averageCompletion"')&&s.includes('id="averageGrades"'),p+" progress indicators");
  check(s.includes("high-school-schedule-page.js")&&s.includes("high-school-schedule-page.css"),p+" canonical owners");
  check(!s.includes("<dialog")&&!s.includes("showModal("),p+" has no popup");
- check((s.match(/>Back to Profile<\\/a>/g)||[]).length===1,p+" exactly one back button");
+ check(s.split('>Back to Profile</a>').length===2,p+" exactly one back button");
  for(const file of ["vnv-333-ticker.js","vnv-ticker-autopopulate.js","vnv-header-autopopulate.js","vnv-class-tools-toolbar.js","vnv-ecosystem-toolbar.js","vnv-language.js"]){
   check(s.split(file).length===2,p+" canonical singleton "+file);
  }
