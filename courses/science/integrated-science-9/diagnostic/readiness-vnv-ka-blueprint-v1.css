@@ -116,8 +116,8 @@ body.ka-science9-readiness #diagnostic,body.ka-science9-readiness #results{
  width:100%;padding:26px 0 45px;background:#f4f0e7;
 }
 body.ka-science9-readiness .app-layout{
- display:grid;grid-template-columns:minmax(0,1fr) minmax(250px,300px);
- gap:18px;align-items:start;
+ display:grid;grid-template-columns:minmax(0,1fr);
+ gap:18px;align-items:start;justify-items:center;
 }
 body.ka-science9-readiness :is(.question-panel,.app-side,.result-panel,.review-item){
  padding:clamp(18px,3vw,34px);border:1px solid #cdbf9f;border-radius:7px;
@@ -281,4 +281,28 @@ html:root body.ka-science9-readiness .readiness-theme-toggle{
   flex-wrap:wrap;padding:10px 12px!important;
  }
 }
+}
+
+
+/* Science 9 readiness · single centered assessment surface, no extra CSS file */
+@media screen{
+body.ka-science9-readiness #diagnostic .app-layout{display:grid;grid-template-columns:minmax(0,1fr);justify-items:center;max-width:1100px;margin:0 auto}
+body.ka-science9-readiness #diagnostic .question-panel{width:min(100%,880px);max-width:880px;margin:0 auto;text-align:left}
+body.ka-science9-readiness #diagnostic .question-top{align-items:center;gap:12px;flex-wrap:wrap}
+body.ka-science9-readiness #diagnostic .domain-label{color:#57401c;-webkit-text-fill-color:#57401c;font-size:16px;font-weight:400;letter-spacing:.03em}
+body.ka-science9-readiness #diagnostic .pill{color:#4c3920;-webkit-text-fill-color:#4c3920}
+body.ka-science9-readiness #diagnostic .science-readiness-progress{width:100%;margin:16px 0 22px;border:1px solid #b7a581;border-radius:7px;background:#f7f1e5;color:#202724}
+body.ka-science9-readiness #diagnostic .science-readiness-progress>summary{cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:12px;min-height:48px;padding:11px 16px;color:#302719;-webkit-text-fill-color:#302719;font:400 16px/1.5 Nunito,Arial,sans-serif;list-style:none}
+body.ka-science9-readiness #diagnostic .science-readiness-progress>summary::-webkit-details-marker{display:none}
+body.ka-science9-readiness #diagnostic .science-readiness-progress[open]>summary{border-bottom:1px solid #b7a581}
+body.ka-science9-readiness #diagnostic .science-readiness-progress-content{padding:16px}
+body.ka-science9-readiness #diagnostic .question-dots{grid-template-columns:repeat(8,minmax(0,1fr));max-width:520px;margin:10px auto 18px}
+body.ka-science9-readiness #diagnostic .dot{min-width:36px;min-height:36px;font-size:16px}
+body.ka-science9-readiness #diagnostic .science-readiness-submit{display:flex;justify-content:center;margin:18px auto 0}
+body.ka-science9-readiness #diagnostic .science-readiness-submit .btn{min-width:200px}
+body.ka-science9-readiness #diagnostic :is(.question-panel h2,.option,.question-top,.notice){color:#202724;-webkit-text-fill-color:#202724}
+body.ka-science9-readiness #diagnostic .question-panel h2{text-align:center;font-size:clamp(24px,3vw,33px)}
+body.ka-science9-readiness #diagnostic .app-nav{justify-content:center;flex-wrap:wrap;gap:14px}
+body.ka-science9-readiness #diagnostic .option{font-size:16px}
+@media(max-width:560px){body.ka-science9-readiness #diagnostic .question-dots{grid-template-columns:repeat(6,minmax(0,1fr))}body.ka-science9-readiness #diagnostic .question-panel{padding:18px}}
 }
