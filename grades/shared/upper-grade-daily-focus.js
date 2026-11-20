@@ -72,9 +72,16 @@ else if(scheduleCard)scheduleCard.append(study);
 else wrap.append(study);
 let currentId="";
 function slots(){try{return catalog.slots(grade)}catch{return []}}
+function courseDestination(slot){
+ if(!slot)return null;
+ // Reuse the grade-aware Class continuation authority rather than its public
+ // course-home link; assessment and lesson state remain in their own engines.
+ const shared=window.KhaemenesUpperGradeClassRoute;
+ if(shared?.resolve)return shared.resolve(slot);
+ return slot.firstStepHref||null;
+}
 function route(subject){
- const slot=slots().find(item=>item.subject===subject);
- return slot?.href&&/^https:\/\//.test(slot.href)?slot.href:null;
+ return courseDestination(slots().find(item=>item.subject===subject));
 }
 function report(ctx,checks){
  if(!ctx||learner()?.learnerId!==ctx.learnerId)return;
@@ -172,8 +179,8 @@ function render(){
    box.append(create("strong","",slot.label));
    if(activity.kind)box.append(create("small","upper-grade-checkpoint-kind",activity.kind));
    box.append(create("small","",grade===11?"Practice doorway · not assessment evidence":"Not verified today"));
-   const link=slot.href&&/^https:\/\//.test(slot.href)?slot.href:null;
-   if(link){const a=create("a","grade09-academic-link",activity.action);a.href=link;box.append(a)}
+   const destination=courseDestination(slot);
+   if(destination){const a=create("a","grade09-academic-link",activity.action);a.href=destination;box.append(a)}
    else box.append(create("small","","Choose this class in Manage Classes"));
    classGrid.append(box);
   });
