@@ -5,6 +5,12 @@ on:
       - fix/purge-retired-high-school-global-chrome-v2-20261119
     paths:
       - "courses/language-arts/english-*/index.html"
+      - "courses/science/**/index.html"
+      - "courses/social-studies/**/index.html"
+      - "electives/index.html"
+      - "courses/mathematics/**/service-worker.js"
+      - "assets/high-navigation-v1.js"
+      - ".github/workflows/*.yml"
       - "assets/high-navigation-v1.js"
       - "tools/validate-retired-high-school-global-chrome-purge.mjs"
       - ".github/workflows/retired-high-school-global-chrome-purge.yml"
