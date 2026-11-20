@@ -11,7 +11,7 @@ const script=fs.readFileSync(path.join(root,"courses/shared/algebra1-readiness-c
 const page=fs.readFileSync(path.join(root,"portfolio/index.html"),"utf8");
 const report=fs.readFileSync(path.join(root,"portfolio/portfolio-academic-report.js"),"utf8");
 assert.match(page,/algebra1-readiness-continuation-publisher\.js\?v=20261120-linked-v1/);
-assert.match(report,/record.courseId==="algebra-1-readiness"/);
+assert.match(report,/\["algebra-1-readiness","english-9-readiness","integrated-science-9-readiness","english-9-objective-evidence"\]\.includes\(record\.courseId\)/);
 assert.match(report,/khaemenes-algebra1-readiness-linked/);
 function run({grade="09",scoped=true,score=36,ledger=true,foreign=false,malformed=false}={}){
  const result={assessment_id:"KH-MATH-A1-DIAGNOSTIC",attempt_history:[{
