@@ -109,8 +109,12 @@ function step(item){
    const target=new URL(destination,location.href);
    const week=target.pathname.match(/\/weeks\/week-(\d{2})\/?$/);
    if(week){
+    // Week 01 has a dedicated first-day file. Later weeks teach directly
+    // inside their existing weekly pages with #monday/#tuesday anchors.
     const leaf=item.id==="english-10"?"monday/":"lessons/day-01.html";
-    destination=new URL("weeks/week-"+week[1]+"/"+leaf,courseHome).href;
+    destination=week[1]==="01"
+     ?new URL("weeks/week-01/"+leaf,courseHome).href
+     :target.href.replace(/#.*$/,"")+"#monday";
    }
   }catch{}
  }
