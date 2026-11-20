@@ -1,37 +1,73 @@
 {
   "schema": "khaemenes-course-execution-matrix-v1",
-  "audited_base_commit": "245318e2d017afa82f73df00593bf31d6bea7be0",
+  "audited_base_commit": "2026-11-20-grade12-parity",
   "policy": {
     "mastery_floor_percent": 80,
     "format_rule": "A JSON course map is instructional data, not independently an executable lesson; the student route must resolve to an HTML execution surface or an explicitly verified equivalent.",
     "historical_records": "Never overwrite prior student attempts or change specialist grading authorities.",
     "grade_scope": "Enforce the assigned grade in the route and map; mathematics is placement-based and not automatically restricted to a single grade.",
-    "offline": "Never require a third-party runtime for core lesson completion."
+    "offline": "Never require a third-party runtime for core lesson completion.",
+    "handoff_boundary": "Precalculus and Calculus outbound destinations are verified; cross-repository return-record synchronization remains pending and must not be represented as certified."
   },
   "courses": [
     {
-      "id": "social-studies-12",
-      "grade": 12,
-      "department": "social-studies",
-      "root": "courses/social-studies/grade-12/",
-      "entry": "courses/social-studies/grade-12/index.html",
-      "source": "courses/social-studies/grade-12/data/course-data.json",
-      "format": "embedded-html-js-assessment+json-reference",
-      "assessment_authority": "courses/social-studies/grade-12/index.html",
-      "upgrade": "source-anchored-assessment-bank",
-      "status": "existing-specialist-engine",
-      "execution_note": "The student-facing index.html contains its own active assessment engine. The standalone app.js is not loaded by this route."
+      "id": "pre-algebra",
+      "grade": "placement",
+      "department": "mathematics",
+      "root": "courses/mathematics/pre-algebra/",
+      "entry": "courses/mathematics/pre-algebra/index.html",
+      "source": "courses/mathematics/pre-algebra/course-map.json",
+      "format": "json-curriculum+html-execution",
+      "assessment_authority": "course-specialist-assessments",
+      "upgrade": "full-course-math-engine",
+      "status": "existing-specialist-engine"
     },
     {
-      "id": "chemistry-11",
-      "grade": 11,
-      "department": "science",
-      "root": "courses/science/chemistry-11/",
-      "entry": "courses/science/chemistry-11/index.html",
-      "source": "courses/science/chemistry-11/course-map.json",
-      "format": "json-map+html-lessons+js-question-bank",
-      "assessment_authority": "courses/science/chemistry-11/question-bank.js",
-      "upgrade": "eight-anchor-investigations",
+      "id": "algebra-1",
+      "grade": "placement",
+      "department": "mathematics",
+      "root": "courses/mathematics/algebra-1/",
+      "entry": "courses/mathematics/algebra-1/index.html",
+      "source": "courses/mathematics/algebra-1/course-map.json",
+      "format": "json-curriculum+html-execution",
+      "assessment_authority": "course-specialist-assessments",
+      "upgrade": "full-course-math-engine",
+      "status": "existing-specialist-engine"
+    },
+    {
+      "id": "geometry",
+      "grade": "placement",
+      "department": "mathematics",
+      "root": "courses/mathematics/geometry/",
+      "entry": "courses/mathematics/geometry/index.html",
+      "source": "courses/mathematics/geometry/course-map.json",
+      "format": "json-curriculum+html-execution",
+      "assessment_authority": "course-specialist-assessments",
+      "upgrade": "full-course-math-engine",
+      "status": "existing-specialist-engine"
+    },
+    {
+      "id": "algebra-2",
+      "grade": "placement",
+      "department": "mathematics",
+      "root": "courses/mathematics/algebra-2/",
+      "entry": "courses/mathematics/algebra-2/index.html",
+      "source": "courses/mathematics/algebra-2/course-map.json",
+      "format": "json-curriculum+html-execution",
+      "assessment_authority": "course-specialist-assessments",
+      "upgrade": "full-course-math-engine",
+      "status": "existing-specialist-engine"
+    },
+    {
+      "id": "english-9",
+      "grade": 9,
+      "department": "english",
+      "root": "courses/language-arts/english-9/",
+      "entry": "courses/language-arts/english-9/index.html",
+      "source": "courses/language-arts/english-9/curriculum.json",
+      "format": "json-curriculum+html-execution",
+      "assessment_authority": "course-specialist-assessments",
+      "upgrade": "verified-reading-spine+vertical-rubrics",
       "status": "existing-specialist-engine"
     },
     {
@@ -41,7 +77,7 @@
       "root": "courses/language-arts/english-10/",
       "entry": "courses/language-arts/english-10/index.html",
       "source": "courses/language-arts/english-10/curriculum.json",
-      "format": "json-curriculum+html-weekly-lessons",
+      "format": "json-curriculum+html-execution",
       "assessment_authority": "course-specialist-assessments",
       "upgrade": "verified-reading-spine+vertical-rubrics",
       "status": "existing-specialist-engine"
@@ -53,7 +89,7 @@
       "root": "courses/language-arts/english-11/",
       "entry": "courses/language-arts/english-11/index.html",
       "source": "courses/language-arts/english-11/curriculum.json",
-      "format": "json-curriculum+html-weekly-lessons",
+      "format": "json-curriculum+html-execution",
       "assessment_authority": "course-specialist-assessments",
       "upgrade": "verified-reading-spine+vertical-rubrics",
       "status": "existing-specialist-engine"
@@ -65,9 +101,153 @@
       "root": "courses/language-arts/english-12/",
       "entry": "courses/language-arts/english-12/index.html",
       "source": "courses/language-arts/english-12/curriculum.json",
-      "format": "json-curriculum+html-weekly-lessons",
+      "format": "json-curriculum+html-execution",
       "assessment_authority": "course-specialist-assessments",
       "upgrade": "verified-reading-spine+vertical-rubrics",
+      "status": "existing-specialist-engine"
+    },
+    {
+      "id": "integrated-science-9",
+      "grade": 9,
+      "department": "science",
+      "root": "courses/science/integrated-science-9/",
+      "entry": "courses/science/integrated-science-9/index.html",
+      "source": "courses/science/integrated-science-9/course-map.json",
+      "format": "json-curriculum+html-execution",
+      "assessment_authority": "course-specialist-assessments",
+      "upgrade": "lab-evidence+retention",
+      "status": "existing-specialist-engine"
+    },
+    {
+      "id": "biology-10",
+      "grade": 10,
+      "department": "science",
+      "root": "courses/science/biology-10/",
+      "entry": "courses/science/biology-10/index.html",
+      "source": "courses/science/biology-10/course-map.json",
+      "format": "json-curriculum+html-execution",
+      "assessment_authority": "course-specialist-assessments",
+      "upgrade": "lab-evidence+retention",
+      "status": "existing-specialist-engine"
+    },
+    {
+      "id": "chemistry-11",
+      "grade": 11,
+      "department": "science",
+      "root": "courses/science/chemistry-11/",
+      "entry": "courses/science/chemistry-11/index.html",
+      "source": "courses/science/chemistry-11/course-map.json",
+      "format": "json-curriculum+html-execution",
+      "assessment_authority": "courses/science/chemistry-11/question-bank.js",
+      "upgrade": "eight-anchor-investigations+retention",
+      "status": "existing-specialist-engine"
+    },
+    {
+      "id": "physics-engineering-12",
+      "grade": 12,
+      "department": "science",
+      "root": "courses/science/physics-engineering-12/",
+      "entry": "courses/science/physics-engineering-12/index.html",
+      "source": "courses/science/physics-engineering-12/course-map.json",
+      "format": "json-curriculum+html-execution",
+      "assessment_authority": "courses/science/physics-engineering-12/question-bank.js",
+      "upgrade": "36-week-lab-engine+delayed-retrieval",
+      "status": "existing-specialist-engine"
+    },
+    {
+      "id": "social-studies-9",
+      "grade": 9,
+      "department": "social-studies",
+      "root": "courses/social-studies/grade-09/",
+      "entry": "courses/social-studies/grade-09/index.html",
+      "source": "courses/social-studies/grade-09/data/course-data.json",
+      "format": "json-curriculum+html-execution",
+      "assessment_authority": "course-specialist-assessments",
+      "upgrade": "source-analysis+retrieval",
+      "status": "existing-specialist-engine"
+    },
+    {
+      "id": "social-studies-10",
+      "grade": 10,
+      "department": "social-studies",
+      "root": "courses/social-studies/grade-10/",
+      "entry": "courses/social-studies/grade-10/index.html",
+      "source": "courses/social-studies/grade-10/data/course-data.json",
+      "format": "json-curriculum+html-execution",
+      "assessment_authority": "course-specialist-assessments",
+      "upgrade": "source-analysis+retrieval",
+      "status": "existing-specialist-engine"
+    },
+    {
+      "id": "social-studies-11",
+      "grade": 11,
+      "department": "social-studies",
+      "root": "courses/social-studies/grade-11/",
+      "entry": "courses/social-studies/grade-11/index.html",
+      "source": "courses/social-studies/grade-11/data/course-data.json",
+      "format": "json-curriculum+html-execution",
+      "assessment_authority": "course-specialist-assessments",
+      "upgrade": "source-analysis+retrieval",
+      "status": "existing-specialist-engine"
+    },
+    {
+      "id": "social-studies-12",
+      "grade": 12,
+      "department": "social-studies",
+      "root": "courses/social-studies/grade-12/",
+      "entry": "courses/social-studies/grade-12/index.html",
+      "source": "courses/social-studies/grade-12/data/course-data.json",
+      "format": "json-curriculum+html-execution",
+      "assessment_authority": "courses/social-studies/grade-12/index.html",
+      "upgrade": "source-anchored-assessment-bank",
+      "status": "existing-specialist-engine"
+    },
+    {
+      "id": "physical-education-10",
+      "grade": 10,
+      "department": "physical-education",
+      "root": "courses/physical-education/",
+      "entry": "courses/physical-education/grade-10.html",
+      "source": "courses/physical-education/grade-10-instruction.json",
+      "format": "json-curriculum+html-execution",
+      "assessment_authority": "teacher-reviewed-provisional-browser-attempts",
+      "upgrade": "36x5+15-current-5-delayed",
+      "status": "existing-specialist-engine"
+    },
+    {
+      "id": "physical-education-11",
+      "grade": 11,
+      "department": "physical-education",
+      "root": "courses/physical-education/",
+      "entry": "courses/physical-education/grade-11.html",
+      "source": "courses/physical-education/grade-11-instruction.json",
+      "format": "json-curriculum+html-execution",
+      "assessment_authority": "teacher-reviewed-provisional-browser-attempts",
+      "upgrade": "36x5+15-current-5-delayed",
+      "status": "existing-specialist-engine"
+    },
+    {
+      "id": "physical-education-12",
+      "grade": 12,
+      "department": "physical-education",
+      "root": "courses/physical-education/",
+      "entry": "courses/physical-education/grade-12.html",
+      "source": "courses/physical-education/grade-12-instruction.json",
+      "format": "json-curriculum+html-execution",
+      "assessment_authority": "teacher-reviewed-provisional-browser-attempts",
+      "upgrade": "36x5+15-current-5-delayed",
+      "status": "existing-specialist-engine"
+    },
+    {
+      "id": "senior-capstone",
+      "grade": 12,
+      "department": "capstone",
+      "root": "courses/capstone/senior-capstone/",
+      "entry": "courses/capstone/senior-capstone/index.html",
+      "source": "courses/capstone/senior-capstone/course-map.json",
+      "format": "json-curriculum+html-execution",
+      "assessment_authority": "evaluator-review-required",
+      "upgrade": "36-week-process-evidence+defense",
       "status": "existing-specialist-engine"
     },
     {
@@ -79,8 +259,9 @@
       "source": "courses/mathematics/precalculus-trigonometry/video-map.json",
       "format": "html-handoff+json-video-map",
       "assessment_authority": "not-complete",
-      "upgrade": "full-36-week-course",
-      "status": "placement-handoff"
+      "upgrade": "verified-outbound-handoff; return-record bridge pending",
+      "status": "placement-handoff",
+      "execution_note": "Higher Learning target exists as a complete 36-week course; High School return-record synchronization is not yet certified."
     },
     {
       "id": "calculus-1",
@@ -91,8 +272,9 @@
       "source": "courses/mathematics/calculus-1/video-map.json",
       "format": "html-handoff+json-video-map",
       "assessment_authority": "not-complete",
-      "upgrade": "full-36-week-course",
-      "status": "placement-handoff"
+      "upgrade": "verified-outbound-handoff; return-record bridge pending",
+      "status": "placement-handoff",
+      "execution_note": "Higher Learning target exists as a complete 36-week course; High School return-record synchronization is not yet certified."
     }
   ]
 }
