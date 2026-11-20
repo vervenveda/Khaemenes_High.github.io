@@ -23,6 +23,8 @@ on:
       - 'tools/test-social-studies-lesson-engine-v0.1.mjs'
       - 'tools/test-social-studies-week02-engine.mjs'
       - 'tools/test-social-studies-week03-engine.mjs'
+      - 'tools/test-social-studies-full-course-integration.mjs'
+      - 'courses/social-studies/grade-*/**/student-packet.html'
       - '.github/workflows/social-studies-lesson-engine-pilot.yml'
   pull_request:
   workflow_dispatch:
@@ -43,3 +45,5 @@ jobs:
       - run: node tools/test-social-studies-week02-engine.mjs
       - run: node --check tools/test-social-studies-week03-engine.mjs
       - run: node tools/test-social-studies-week03-engine.mjs
+      - run: node --check tools/test-social-studies-full-course-integration.mjs
+      - run: node tools/test-social-studies-full-course-integration.mjs
