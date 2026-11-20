@@ -27,3 +27,11 @@ No Assessment/learner records, grades, STOS cloud records, or VNV gateway files 
 
 ## Current acceptance boundary
 The latest full set of CI checks may still be running or awaiting completion. Successful checks at older commits do not certify a new release HEAD. High Mentor Bridge security hold remains. No PR merge decisions have been executed. Do not bulk merge #78–84 or overwrite canonical Grade09 navigation to satisfy outdated branches.
+
+## Follow-up CI repair, same-day
+- `tools/validate-high-student-journey.mjs` had two retired Schedule dialog assertions. Updated to verify the current dedicated Schedule route.
+- `tools/validate-high-class-continuation-routing.mjs` had older assumptions for upper-grade `step(item)` and Grade9 Algebra I `FIRST_STEPS`. Now asserts the current protected lesson resolver and the actual Unit01 Lesson01 fallback, without changing the source navigation.
+- `tools/test-grade09-visual-consistency.mjs` previously forced Grade9 English to load three competing CSS files, despite the approved single inline owner. Updated the test to honor that owner and leave Science9's separate shared CSS checks intact.
+- GitHub Actions `High School Student Profile Quick Link Validation` **PASS** at commit `0995096d83` after those changes.
+- GitHub Actions `Public Entry Route Validation` **PASS**, `Release Head Integrity` **PASS** at `0995096d83`; the record-and-route validation was still in progress on that commit at latest inspection.
+- Global release is NOT declared green: STOS neutral Beta bridge violates the stringent no-network marker test; independent security review required. Later head CI may be queued or in progress.
