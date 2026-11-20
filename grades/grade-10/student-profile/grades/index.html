@@ -88,16 +88,20 @@ const learnerId=valid?ctx.learnerId:null;
 const host=document.getElementById("g10RoomContent"),message=document.getElementById("g10RoomMessage");
 const make=(tag,text)=>{const el=document.createElement(tag);if(text!==undefined)el.textContent=text;return el};
 const url=(raw)=>typeof raw==="string"&&/^https:\/\//i.test(raw)?raw:null;
-const slots=valid&&catalog?catalog.slots(10):[];
+const raw=valid?window.KhaemenesLearningContinuation?.readLearner?.(learnerId)||[]:[];
+const mathId=raw.some(x=>x?.courseId==="geometry")?"geometry":raw.some(x=>x?.courseId==="algebra-1")?"algebra-1":null;
+const slots=valid&&catalog?catalog.slots(10,{mathId}):[];
 if(!valid){message.textContent="Select a registered Grade 10 learner in the Family Portal before accessing personal information. No other learner's records or settings are shown.";document.querySelectorAll("[data-owner-only]").forEach(x=>x.hidden=true)}
 else message.textContent="Your existing Grade 10 learner record is selected. Course scores and mastery are managed only by their source courses.";
 
 const cards=document.getElementById("g10GradeCards"),continuation=window.KhaemenesLearningContinuation;
-const raw=valid?continuation?.readLearner?.(learnerId)||[]:[];
 const byCourse=new Map(raw.map(item=>[item.courseId,item]));
-for(const slot of slots){
+const recordFor=slot=>{
  const alias=slot.id==="english-10"?"ela10":null;
- const entry=byCourse.get(slot.id)||(alias?byCourse.get(alias):null);
+ return byCourse.get(slot.id)||(alias?byCourse.get(alias):null)||null;
+};
+for(const slot of slots){
+ const entry=recordFor(slot);
  const card=make("article");card.className="g10-card";
  card.append(make("h3",slot.label),make("p",slot.title));
  const pct=entry?.progress?.percent;
@@ -116,7 +120,7 @@ const exportButton=document.getElementById("g10ExportReport");
 exportButton.disabled=!valid;
 exportButton.addEventListener("click",()=>{
  if(!valid||window.KhaemenesHighProfileGradeContext?.active?.()?.learnerId!==learnerId)return;
- const report={schema:"khaemenes-grade10-published-continuation-v1",grade:10,learnerId,exportedAt:new Date().toISOString(),disclaimer:"Not an official transcript; source courses control grades and mastery.",courses:slots.map(slot=>({subject:slot.label,courseId:slot.id,record:byCourse.get(slot.id)||null}))};
+ const report={schema:"khaemenes-grade10-published-continuation-v1",grade:10,learnerId,exportedAt:new Date().toISOString(),disclaimer:"Not an official transcript; source courses control grades and mastery.",courses:slots.map(slot=>({subject:slot.label,courseId:slot.id,record:recordFor(slot)}))};
  const url=URL.createObjectURL(new Blob([JSON.stringify(report,null,2)],{type:"application/json"}));
  const a=make("a");a.href=url;a.download="grade10-published-course-summary.json";a.click();setTimeout(()=>URL.revokeObjectURL(url),1000);
  document.getElementById("g10ReportStatus").textContent="Only currently published course snapshots were exported.";
