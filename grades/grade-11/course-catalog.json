@@ -1,5 +1,87 @@
 {
+  "schema_version": "2.0",
   "grade": 11,
+  "title": "Khaemenes High Grade 11 Course Catalog",
+  "masteryThreshold": 80,
+  "schedule_contract": {
+    "totalSubjects": 8,
+    "order": [
+      "Mathematics",
+      "English",
+      "Social Studies",
+      "Science",
+      "PE / Health",
+      "Psychology / Life Skills",
+      "Foreign Language",
+      "Elective"
+    ]
+  },
+  "schedule": [
+    {
+      "slot": 1,
+      "subject": "Mathematics",
+      "id": "math-placement-11",
+      "placementBased": true,
+      "hall": "../../courses/mathematics/",
+      "typical": [
+        "geometry",
+        "algebra-2",
+        "precalculus-trigonometry"
+      ],
+      "summary": "Placement-based mathematics with mastery continuity across the secondary sequence."
+    },
+    {
+      "slot": 2,
+      "subject": "English",
+      "id": "english-11",
+      "path": "../../courses/language-arts/english-11/",
+      "summary": "English 11: advanced synthesis, independent method, research-supported interpretation, and long-form evidence."
+    },
+    {
+      "slot": 3,
+      "subject": "Social Studies",
+      "id": "social-studies-11",
+      "path": "../../courses/social-studies/grade-11/",
+      "summary": "United States Government and Economics Honors with civic reasoning, institutions, policy, and evidence."
+    },
+    {
+      "slot": 4,
+      "subject": "Science",
+      "id": "chemistry-11",
+      "path": "../../courses/science/chemistry-11/",
+      "summary": "Chemistry & Materials Science with quantitative reasoning, data, investigation, and safe materials analysis."
+    },
+    {
+      "slot": 5,
+      "subject": "PE / Health",
+      "id": "physical-education-11",
+      "path": "../../courses/physical-education/",
+      "summary": "Movement, fitness, health literacy, wellness, and lifelong activity."
+    },
+    {
+      "slot": 6,
+      "subject": "Psychology / Life Skills",
+      "id": "life-skills-11",
+      "path": "../../courses/electives/health-wellness-human-development/",
+      "summary": "Practical life skills, human development, wellness, decision-making, and responsible independence."
+    },
+    {
+      "slot": 7,
+      "subject": "Foreign Language",
+      "id": "world-language-11",
+      "path": "https://vervenveda.com/Khaemenes_Linguistics.github.io/Halls/",
+      "selectionRequired": true,
+      "summary": "Learner-selected world language with continuity from prior study where applicable."
+    },
+    {
+      "slot": 8,
+      "subject": "Elective",
+      "id": "elective-11",
+      "path": "../../courses/electives/",
+      "selectionRequired": true,
+      "summary": "Learner-selected elective; Personal Financial Literacy is an available live companion."
+    }
+  ],
   "core": [
     {
       "id": "english-11",
@@ -29,7 +111,6 @@
       "path": "../../courses/social-studies/grade-11/personal-finance/"
     }
   ],
-  "masteryThreshold": 80,
   "mentorAuthority": "archaemenes",
   "administration": "NAIB",
   "backendChancellor": "Noema"
