@@ -502,11 +502,10 @@ function render(){
       '<div class="q-number"><span>'+(i+1)+'</span></div>'+
       '<div class="q-body">'+
         '<p class="q-prompt">'+esc(q.prompt)+'</p>'+
-        '<div class="options">'+optionOrder(questionNumber).map(j=>{const opt=q.options[j];return 
-          '<label class="option"><input type="radio" name="q'+questionNumber+'" value="'+j+'" '+(Number(selected)===j?'checked':'')+' '+(draft.submitted?'disabled':'')+'><span>'+esc(opt)+'</span></label>'
+        '<div class="options">'+optionOrder(questionNumber).map(j=>{const opt=q.options[j];return '<label class="option"><input type="radio" name="q'+questionNumber+'" value="'+j+'" '+(Number(selected)===j?'checked':'')+' '+(draft.submitted?'disabled':'')+'><span>'+esc(opt)+'</span></label>'
         }).join("")+'</div>'+
         '<label class="work-label" for="work'+questionNumber+'">Show your work · ungraded workspace</label>'+
-        '<textarea class="work" id="work'+questionNumber+'" data-work="'+i+'" '+(draft.submitted?'readonly':'')+' placeholder="Calculations, graph notes, checks, or reasoning…">'+esc(work)+'</textarea>'+
+        '<textarea class="work" id="work'+questionNumber+'" data-work="'+questionNumber+'" '+(draft.submitted?'readonly':'')+' placeholder="Calculations, graph notes, checks, or reasoning…">'+esc(work)+'</textarea>'+
         feedback+
       '</div>';
     host.append(article);
