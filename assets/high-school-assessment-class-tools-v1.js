@@ -2,6 +2,16 @@
 if(window.__KHAE_HIGH_ASSESSMENT_TOOLS_V1__)return;
 window.__KHAE_HIGH_ASSESSMENT_TOOLS_V1__=true;
 const ROOT="https://vervenveda.com/Khaemenes_High.github.io/";
+function gradeFromPath(){
+ const p=location.pathname;
+ const direct=p.match(/\/grade-(09|10|11|12)\//i);if(direct)return direct[1];
+ const english=p.match(/\/english-(9|10|11|12)\//i);if(english)return String(Number(english[1])).padStart(2,"0");
+ if(/\/biology-10\//i.test(p)||/\/mathematics\/geometry\//i.test(p))return "10";
+ if(/\/chemistry-11\//i.test(p)||/\/mathematics\/algebra-2\//i.test(p))return "11";
+ if(/\/physics-engineering-12\//i.test(p))return "12";
+ return "09";
+}
+const PROFILE=ROOT+"grades/grade-"+gradeFromPath()+"/student-profile/";
 function ensureTranslatorPanel(root){
  let panel=root?.querySelector("[data-vct-translator-panel]");
  if(panel)return panel;
@@ -26,7 +36,7 @@ window.KhaemenesClassToolsConfigV1=Object.freeze({
  match:()=>/\/Khaemenes_High\.github\.io\/.+\/(assessments|diagnostic|readiness)\//i.test(location.pathname),
  toggleLabel:"Tools",ariaLabel:"Assessment tools",
  tools:[
-  {type:"link",label:"Student",sub:"Learner profile",href:ROOT+"grades/grade-09/student-profile/"},
+  {type:"link",label:"Student",sub:"Learner profile",href:PROFILE},
   {type:"link",label:"Courses",sub:"High School courses",href:ROOT+"courses/"},
   {type:"link",label:"Search",sub:"Search ecosystem",href:"https://vervenveda.com/PLERASearch.github.io/"},
   {type:"action",label:"Translate",sub:"Change language",action:"translate"},
