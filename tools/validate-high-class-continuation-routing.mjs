@@ -16,7 +16,7 @@ ok(catalog.includes("firstStepHref:id?FIRST_STEPS[id]||meta?.href||null:null"),"
 
 const upper=read("grades/shared/grade09-blueprint-upper-grade.js");
 ok(upper.includes("const current=step(item);"),"upper-grade Schedule resolves through learner continuation");
-ok(upper.includes("const dest=item.firstStepHref||href(item);"),"upper-grade Schedule uses first instructional step when no snapshot exists");
+ok(upper.includes("const courseHome=href(item),first=item.firstStepHref||courseHome;")&&upper.includes("const current=step(item);"),"upper-grade Schedule resolves a validated learner step with first instructional fallback");
 ok(!upper.includes('const route=href(item);\n   if(route)card.append(link((grade10Copy||grade11Copy||grade12Copy)?"Continue Class"'),"raw landing-page Schedule route is retired");
 
 for(const grade of ["10","11","12"]){
@@ -31,7 +31,7 @@ for(const grade of ["10","11","12"]){
 const grade9=read("grades/grade-09/student-profile/student-course-registry.js");
 ok(grade9.includes("window.KhaemenesHighEightClass?.FIRST_STEPS?.[course.id]"),"Grade 9 generic class continuation uses shared first-step catalog");
 ok(grade9.includes('FIRST_STEPS?.["pre-algebra"]'),"Grade 9 Pre-Algebra fallback begins at readiness instead of course landing");
-ok(grade9.includes('FIRST_STEPS?.["algebra-1"]'),"Grade 9 Algebra I fallback remains instructional");
+ok(grade9.includes("if(!hasDiagnosticEvidence()&&!hasAlgebraCourseEvidence())")&&grade9.includes("units/unit-01/lessons/lesson-01-algebraic-habits-notation-mathematical-argument.html"),"Grade 9 Algebra I readiness must advance to the exact first instructional lesson");
 
 if(failed)process.exit(1);
 console.log("\nPASS High School Student Profile class continuation routing.");
