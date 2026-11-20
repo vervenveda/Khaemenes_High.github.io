@@ -2,6 +2,7 @@
 
 | Date | Type | Entry | State |
 | --- | --- | --- | --- |
+| 2026-11-20 | test · repair · Grade 9 assessments | [Grade 9 mathematics assessment-shell workflow verification](logs/2026/11/2026-11-20-grade09-assessment-shell-workflow-verification.md) | Pre-Algebra + Algebra I canonical shell source-PASS; workflow YAML repaired; hosted CI unverified; browser/device HOLD |
 | 2026-11-19 | repair · regression · four-course hardening | [Four-Course Forensic Hardening Closeout](logs/2026/11/2026-11-19-four-course-forensic-hardening-closeout.md) | Adapter parity 276 stale tokens repaired · full evidence-chain parity across all four · three-course engine regression PASS + Algebra II 12/12 · rendered tablet/phone acceptance HOLD |
 | 2026-11-19 | repair · release parity · validation | [Mathematics Engine v2.3.0 Release Parity Closeout](logs/2026/11/2026-11-19-math-engine-v230-release-parity-closeout.md) | Pre-Algebra v25 + Algebra I v47 + Geometry v20 aligned to adapter 2.3.0; Mathematics Engine lesson-shell integrity run 115 PASS; assessment firewall preserved |
 | 2026-11-19 | forensic audit · four-course sweep | [Fresh Four-Course Forensic Sweep](logs/2026/11/2026-11-19-four-course-forensic-sweep.md) | Curriculum remains Exceptional; Algebra II engine strongest; Pre-Algebra/Algebra I/Geometry have v2.3.0 adapter token drift and evidence-chain parity gaps; all rendered-device acceptance HOLD |
