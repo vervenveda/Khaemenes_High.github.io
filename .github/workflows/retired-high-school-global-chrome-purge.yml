@@ -29,3 +29,7 @@ jobs:
         run: |
           node --check assets/high-navigation-v1.js
           node tools/validate-retired-high-school-global-chrome-purge.mjs
+      - name: Check surviving Academy CSS and English readiness contracts
+        run: |
+          node tools/high-school-typography-audit.mjs
+          node tools/validate-english-09-12-readiness-css.mjs
