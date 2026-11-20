@@ -24,7 +24,8 @@ for(const id of ["prealgebra-games","academy-arcade","scientific-calculator","th
 }
 assert.match(quick,/khaemenes-grade09-quick-pins-v1/,"Quick Pins use a dedicated learner preference store");
 assert.match(quick,/scopedKey/,"Quick Pins are learner scoped");
-assert.match(bar,/const slots=\[\["Mathematics"/,"schedule keeps seven academic slot definitions");
+assert.match(bar,/const catalog=window\.KhaemenesHighEightClass/,"schedule uses the shared canonical eight-class catalog");
+assert.match(bar,/catalog\?\.slots\(9,/,"Grade 09 schedule resolves all eight academic slots from the canonical catalog");
 assert.match(bar,/schedule-quick/,"Quick Pins render separately from academic classes");
 assert.match(bar,/do not change enrollment, grades, or mastery/,"schedule explains Quick Pin academic boundary");
 
