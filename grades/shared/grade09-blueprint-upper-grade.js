@@ -100,11 +100,27 @@ function step(item){
   }catch{return null}
  })();
  const snapshotIsLanding=Boolean(approvedSnapshot&&courseHome&&clean(approvedSnapshot)===clean(courseHome));
- const destination=approvedSnapshot&&!snapshotIsLanding?approvedSnapshot:first;
+ let destination=approvedSnapshot&&!snapshotIsLanding?approvedSnapshot:first;
+ // Upper English publishes a Week URL when the precise day is not recorded.
+ // Student-facing Class doors enter that week's native first lesson instead
+ // of a week overview or public course landing. The course owns day mastery.
+ if(englishCourse&&destination){
+  try{
+   const target=new URL(destination,location.href);
+   const week=target.pathname.match(/\/weeks\/week-(\d{2})\/?$/);
+   if(week){
+    const leaf=item.id==="english-10"?"monday/":"lessons/day-01.html";
+    destination=new URL("weeks/week-"+week[1]+"/"+leaf,courseHome).href;
+   }
+  }catch{}
+ }
  return {dest:destination,
  label:snap?.stale?"Refresh course":snap?.status==="corrections"?"Review corrections":"Open class",
  detail:snapshotIsLanding?"Open the first required lesson or readiness step.":snap?.nextTitle||snap?.summary||"Ready to open the assigned course."};
 }
+// One read-only destination authority for Schedule, pinned classes, and
+// Daily Focus. No second learner or lesson progression engine is created.
+window.KhaemenesUpperGradeClassRoute=Object.freeze({resolve:item=>step(item).dest});
 function link(title,url,cls="btn secondary"){
  const a=make("a",title);a.className=cls;a.href=url;return a;
 }
@@ -381,7 +397,7 @@ function renderSchedule(items){
   card.append(make("span",String(item.index).padStart(2,"0")),make("strong",item.label));
   const detail=make("small",item.title);card.append(detail);
   if(selected.has(item.id))card.append(make("span","★ Pinned"));
-  const url=href(item);if(url&&identity())card.append(link("Open",url,"btn secondary"));
+  const url=step(item).dest;if(url&&identity())card.append(link("Open",url,"btn secondary"));
   grid.append(card);
  }
  schedule.append(grid);
