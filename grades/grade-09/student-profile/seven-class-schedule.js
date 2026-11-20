@@ -72,7 +72,10 @@ function render(){
   const actions=el("div");actions.className="grade09-eight-class-actions";
   card.append(title,name);
   if(course){
-   const link=el("a","Course Home");link.href=course.home;link.style.cssText="display:inline-block;margin-right:12px;text-decoration:underline";
+   const englishCurrent=id==="english-9"?registry.continueFor(id):null;
+   const link=el("a",id==="english-9"?"Continue English Lesson":"Course Home");
+   link.href=id==="english-9"?(englishCurrent?.url||firstLessonFor(id)):course.home;
+   link.style.cssText="display:inline-block;margin-right:12px;text-decoration:underline";
    const button=el("button",registry.isPinned(id)?"★ Pinned":"☆ Pin class");button.type="button";button.setAttribute("aria-pressed",String(registry.isPinned(id)));
    button.addEventListener("click",()=>{registry.setPinned(id,!registry.isPinned(id));render()});
    actions.append(link);
