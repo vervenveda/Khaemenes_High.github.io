@@ -119,15 +119,18 @@ const slots=valid&&catalog?catalog.slots(11):[];
 if(!valid){message.textContent="Select a registered Grade 11 learner in the Family Portal before accessing personal information. No other learner's records or settings are shown.";document.querySelectorAll("[data-owner-only]").forEach(x=>x.hidden=true)}
 else message.textContent="Your existing Grade 11 learner record is selected. Course scores and mastery are managed only by their source courses.";
 
-const mathSlot=catalog?.slots?.(11)?.find(slot=>slot.subject==="math")||null;
+const continuation=window.KhaemenesLearningContinuation;
+const records=valid&&continuation?.readLearner?.(learnerId)||[];
+const mathId=records.some(x=>x?.courseId==="algebra-2")?"algebra-2":records.some(x=>x?.courseId==="geometry")?"geometry":null;
+const mathSlot=catalog?.slots?.(11,{mathId})?.find(slot=>slot.subject==="math")||null;
 const mathLink=document.getElementById("g11MathPracticeLink");
 const mathDescription=document.getElementById("g11MathPracticeDescription");
 if(mathLink&&mathDescription){
  const mathURL=url(mathSlot?.href);
- const gradeCourse={10:"Algebra I",11:"Geometry",12:"Algebra II"}[11];
+ const gradeCourse=mathId==="algebra-2"?"Algebra II":"Geometry";
  mathLink.href=mathURL||"../daily-lessons/";
  mathLink.textContent=mathURL?gradeCourse:"Choose Math";
- mathDescription.textContent=mathURL?"Grade 11 catalogue pathway: "+gradeCourse+". Open its course for practice; this page does not certify placement.":
+ mathDescription.textContent=mathURL?"Current Grade 11 mathematics pathway: "+gradeCourse+". Open its course for practice; this page does not certify placement.":
  "Open Daily Lessons to find your mathematics pathway. This page never assigns placement.";
 }
 
