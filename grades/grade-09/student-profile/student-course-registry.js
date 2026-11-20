@@ -337,7 +337,7 @@ function genericContinue(course){
       if(valid){
         const paused=snapshot.status==="paused";
         const start=snapshot.courseId==="integrated-science-9"&&approved===course.home&&snapshot.status==="continue"
-          ?repoPath("courses/science/integrated-science-9/diagnostic/lessons/day-01.html")
+          ?repoPath("courses/science/integrated-science-9/units/unit-01/lessons/day-01.html")
           :approved;
         const url=paused?course.home:start===course.home
           ?window.KhaemenesHighEightClass?.FIRST_STEPS?.[course.id]||course.home:start;
