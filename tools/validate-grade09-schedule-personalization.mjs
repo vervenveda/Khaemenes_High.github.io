@@ -29,15 +29,16 @@ assert.match(bar,/catalog\?\.slots\(9,/,"Grade 09 schedule resolves all eight ac
 assert.match(bar,/schedule-quick/,"Quick Pins render separately from academic classes");
 assert.match(bar,/do not change enrollment, grades, or mastery/,"schedule explains Quick Pin academic boundary");
 
-for(const control of ["designTheme","designAccent","designDensity","avatarShape","avatarMark"]){
-  assert.match(profile,new RegExp('id="'+control+'"'),control+" exists in Profile Design Studio");
+for(const control of ["grade09LookPanel","grade09BadgeChoices","grade09FrameChoices","grade09ColorChoices","grade09PhotoInput","grade09RemovePhoto"]){
+  assert.match(profile,new RegExp('id="'+control+'"'),control+" exists in the current My Picture & Colors editor");
 }
-assert.match(profile,/Restore Academy Layout/,"student can safely restore Academy presentation");
-assert.match(design,/new Set\(\["parchment","forest","midnight"\]\)/,"themes are whitelisted");
-assert.match(design,/new Set\(\["gold","teal","plum"\]\)/,"accents are whitelisted");
-assert.match(design,/khaemenes-grade09-profile-design-v1/,"design preferences are learner owned");
-assert.match(css,/data-student-theme="midnight"/,"Midnight Study theme is styled");
-assert.match(css,/data-student-density="compact"/,"compact dashboard density is styled");
+assert.match(design,/khaemenes-grade09-profile-design-v1/,"profile visual preferences remain learner owned");
+for(const shape of ["oval","rhombus","semicircle","kite"]){
+  assert.match(design,new RegExp('"'+shape+'"'),shape+" remains an approved photo-frame shape");
+}
+assert.match(profile,/Your picture, frame, badge, and color stay with your student profile/,"profile explains learner-owned visual choices");
+assert.match(css,/data-student-theme="midnight"/,"legacy-compatible Midnight Study rendering remains supported");
+assert.match(css,/data-student-density="compact"/,"legacy-compatible compact density remains supported");
 
 assert.match(registry,/course=hs1/,"formal Grade 09 language links request the High School I program");
 assert.match(registry,/mode=atlas/,"exploration languages request the Linguistics Atlas");
