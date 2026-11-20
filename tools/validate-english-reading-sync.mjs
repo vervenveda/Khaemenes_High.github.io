@@ -56,7 +56,7 @@ for(const course of courses){
   daysLinked++;
  }
  assert(weeklyHtml.includes('id="quiz"')&&weeklyHtml.includes('id="reflection"'),course.slug+" assessment/portfolio anchors removed");
- const allowedUiScripts=new Set(["/Khaemenes_High.github.io/assets/high-school-global-chrome-v2.js","https://vervenveda.com/assets/vnv-ecosystem-toolbar.js"]);
+ const allowedUiScripts=new Set(["https://vervenveda.com/assets/vnv-ecosystem-toolbar.js"]);
  const scripts=[...dossierHtml.matchAll(/<script\b([^>]*)>([\s\S]*?)<\/script>/gi)];
  for(const script of scripts){
   const src=script[1].match(/\bsrc="([^"]+)"/i)?.[1]||"";
