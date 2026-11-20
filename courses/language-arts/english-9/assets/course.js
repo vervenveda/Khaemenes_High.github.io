@@ -130,6 +130,7 @@
     const week=Number(match[1]);
     const weekToken=String(week).padStart(2,"0");
     const fields=[...document.querySelectorAll("[data-save-field]")].filter(field=>{
+      if(field.hasAttribute("data-retention-only"))return false;
       const id=String(field.dataset.saveField||"");
       return id.includes("week-"+weekToken)||id.includes("week-"+week+"-");
     });
@@ -173,6 +174,40 @@
     if(label)label.textContent=`${done} of ${total} weeks with evidence prepared · ${pct}% · not an official mastery grade`;
   }
   updateProgress();
+
+  function attachDelayedRetrieval(){
+    const match=location.pathname.match(/\/weeks\/week-(\d{2})\/(?:index\.html)?$/);
+    if(!match)return;
+    const week=Number(match[1]);
+    if(week<2||week>36||document.querySelector("[data-english9-delayed-retrieval]"))return;
+    const assessment=document.querySelector("#assessment");
+    if(!assessment)return;
+    const near=Math.max(1,week-2),far=Math.max(1,week-6);
+    const section=document.createElement("section");
+    section.className="section-alt";
+    section.setAttribute("data-english9-delayed-retrieval","v1");
+    section.setAttribute("aria-labelledby","english9-retention-title");
+    const wrap=document.createElement("div");wrap.className="wrap";
+    const card=document.createElement("article");card.className="card lesson-detail";
+    const eyebrow=document.createElement("p");eyebrow.className="eyebrow";eyebrow.textContent="Delayed retrieval · non-grading";
+    const title=document.createElement("h2");title.id="english9-retention-title";title.textContent="Retrieve before you review";
+    const intro=document.createElement("p");intro.textContent="Without opening earlier notes, reconstruct prior learning first. Then verify against the earlier week and record any correction. These responses measure retention practice only and do not change the weekly mastery rubric, grade, or completion authority.";
+    card.append(eyebrow,title,intro);
+    const prompts=[
+      {lag:near,label:"Near retrieval",text:"From Week "+near+", reconstruct one analytical move, evidence habit, language choice, or writing strategy that you can still use this week. Give a concrete example from memory, then verify and note one correction or refinement."},
+      ...(far!==near?[{lag:far,label:"Longer-lag retrieval",text:"From Week "+far+", retrieve one skill or principle without notes and transfer it to this week’s work. Explain what stayed useful, what changed in the new context, and one limitation or uncertainty."}]:[])
+    ];
+    prompts.forEach((p,i)=>{
+      const box=document.createElement("div");box.className="workspace";
+      const strong=document.createElement("strong");strong.textContent=p.label+" · Week "+p.lag;
+      const desc=document.createElement("p");desc.textContent=p.text;
+      const ta=document.createElement("textarea");ta.className="lesson-response";ta.setAttribute("data-retention-only","true");ta.dataset.saveField="week-"+String(week).padStart(2,"0")+"-retention-"+(i+1);ta.setAttribute("aria-label",p.label+" from Week "+p.lag);
+      box.append(strong,desc,ta);card.append(box);
+    });
+    const note=document.createElement("p");note.className="note";note.innerHTML="<strong>Retention boundary:</strong> retrieval evidence is preserved separately from mastery evidence. It cannot award 8/10 mastery or mark a week academically complete.";
+    card.append(note);wrap.append(card);section.append(wrap);assessment.parentNode.insertBefore(section,assessment);
+  }
+  attachDelayedRetrieval();
 
   document.querySelectorAll("[data-save-field]").forEach(field=>{
     if(field.dataset.managedSave==="week1"||field.dataset.managedSave==="week2"||field.dataset.managedSave==="week3"||field.dataset.managedSave==="week4"||field.dataset.managedSave==="week5"||field.dataset.managedSave==="week6"||field.dataset.managedSave==="week7"||field.dataset.managedSave==="week8"||field.dataset.managedSave==="week9"||field.dataset.managedSave==="week10"||field.dataset.managedSave==="week11"||field.dataset.managedSave==="week12"||field.dataset.managedSave==="week13")return;
