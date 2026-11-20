@@ -8,7 +8,7 @@ const read=p=>fs.readFileSync(path.join(root,p),"utf8");
 const check=(condition,msg)=>{if(!condition)throw Error("ACADEMIC REFRESH FAIL: "+msg)};
 const page=read("portfolio/index.html"),report=read("portfolio/portfolio-academic-report.js"),css=read("portfolio/portfolio-studio.css");
 check(page.includes('id="refreshEvidenceStatus"'),"refresh result status area exists");
-check(page.includes("portfolio-academic-report.js?v=20261120-readiness-publisher-v5"),"current academic refresh script cache version");
+check(page.includes("portfolio-academic-report.js?v=20261120-english9-objective-v6"),"current academic refresh script cache version");
 check(css.includes(".portfolio-report-refresh-status"),"refresh feedback uses existing stylesheet");
 class Node {
  constructor(tag="div"){this.tag=tag;this.children=[];this.textContent="";this.disabled=false;this.listeners={}}
