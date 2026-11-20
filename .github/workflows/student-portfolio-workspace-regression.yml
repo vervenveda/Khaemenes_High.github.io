@@ -10,6 +10,8 @@ on:
       - "tools/validate-student-portfolio-refresh.mjs"
       - "tools/validate-algebra1-readiness-continuation-publisher.mjs"
       - "tools/validate-grade09-english-science-readiness-publisher.mjs"
+      - "tools/validate-english9-objective-assessment-publisher.mjs"
+      - "courses/shared/english9-objective-assessment-publisher.js"
       - "courses/shared/grade09-english-science-readiness-publisher.js"
       - "courses/shared/algebra1-readiness-continuation-publisher.js"
       - ".github/workflows/student-portfolio-workspace-regression.yml"
@@ -23,6 +25,8 @@ on:
       - "tools/validate-student-portfolio-refresh.mjs"
       - "tools/validate-algebra1-readiness-continuation-publisher.mjs"
       - "tools/validate-grade09-english-science-readiness-publisher.mjs"
+      - "tools/validate-english9-objective-assessment-publisher.mjs"
+      - "courses/shared/english9-objective-assessment-publisher.js"
       - "courses/shared/grade09-english-science-readiness-publisher.js"
       - "courses/shared/algebra1-readiness-continuation-publisher.js"
       - ".github/workflows/student-portfolio-workspace-regression.yml"
@@ -37,3 +41,4 @@ jobs:
           node tools/validate-student-portfolio-refresh.mjs
           node tools/validate-algebra1-readiness-continuation-publisher.mjs
           node tools/validate-grade09-english-science-readiness-publisher.mjs
+          node tools/validate-english9-objective-assessment-publisher.mjs
