@@ -2,6 +2,7 @@
 
 | Date | Type | Entry | State |
 | --- | --- | --- | --- |
+| 2026-11-20 | Grade 09 · Science routing | [Grade 09 Science routing verification](logs/2026/11/2026-11-20-grade09-science-routing-verification.md) | Readiness → Unit 00 → detailed lesson → weekly mastery → cumulative pathway protected; source PASS |
 | 2026-11-20 | Science 9 · laboratory closeout | [Course-wide laboratory/evidence closeout](logs/2026/11/2026-11-20-science9-coursewide-laboratory-evidence-closeout.md) | 116 major Science 9 assessment/evidence/support pages under regression coverage; source PASS |
 | 2026-11-20 | Science 9 · laboratory evidence | [Units 10–12 laboratory evidence verification](logs/2026/11/2026-11-20-science9-units10-12-laboratory-evidence.md) | 12 labs + 12 checks added to Science 9 regression coverage; source PASS; hosted CI unverified |
 | 2026-11-20 | Science 9 · support regression | [Science 9 support / evidence verification](logs/2026/11/2026-11-20-science9-support-evidence-verification.md) | Support pages + Beta-link rejection + Unit 12 zero-baseline protection added to regression coverage; source PASS |
