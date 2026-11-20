@@ -24,7 +24,7 @@ function validEnglish(a,id){
 }
 function validScience(a){
  const d=a?.diagnostic;
- return d?.completed===true&&Number.isInteger(d.score)&&d.score>=0&&
+ return d?.completed===true&&Number.isInteger(d.score)&&d.score>=0&&d.score<=24&&
   d.total===24&&typeof d.completedAt==="string"&&
   Number.isFinite(Date.parse(d.completedAt));
 }
