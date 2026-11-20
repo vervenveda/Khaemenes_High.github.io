@@ -10,7 +10,7 @@ const display=n=>n===null?"Not reported":(Number.isInteger(n)?n:n.toFixed(1))+"%
 const mk=(tag,cls,content)=>{const node=document.createElement(tag);if(cls)node.className=cls;if(content!==undefined)node.textContent=String(content);return node};
 const profileApi=window.KhaemenesCourseEntryContract;
 const gradeContext=window.KhaemenesHighProfileGradeContext;
-const ledger=window.KhaemenesLearningContinuation;
+const getLedger=()=>window.KhaemenesLearningContinuation;
 const pinApi=window.KhaemenesHighCoursePins;
 const catalog=window.KhaemenesHighEightClass;
 const normalizeGrade=g=>{const s=String(g??"").replace(/^grade[\s-]*/i,"").padStart(2,"0");return ["09","10","11","12"].includes(s)?s:null};
@@ -51,12 +51,39 @@ function slotsFor(grade){
  try{return catalog?.slots?.(Number(grade),{mathId,language})||[]}catch{return []}
 }
 function currentRecords(user){
- const list=ledger?.readLearner?.(user.id)||[];
+ const list=getLedger()?.readLearner?.(user.id)||[];
  return list.filter(record=>{
   if(!record||record.learnerId!==user.id||typeof record.courseId!=="string")return false;
   const tagged=record.grade?normalizeGrade(record.grade):null;
   return !record.grade||tagged===user.grade;
  });
+}
+// Read only learner-linked original Algebra I readiness results; no implicit
+// attribution of unscoped results and no mutation of assessment evidence.
+function algebraReadiness(user){
+ if(!user||user.grade!=="09")return null;
+ const base="khaemenes-algebra1-diagnostic-result-v1";
+ const profile=profileApi?.readAcademyProfile?.();
+ if(!profile||profile.learnerId!==user.id)return null;
+ const record=profileApi?.readJSON?.(base,null,profile);
+ const valid=a=>a&&a.id==="KH-MATH-A1-DIAGNOSTIC"&&a.total===36&&
+  Number.isInteger(a.score)&&a.score>=0&&a.score<=36&&
+  typeof a.percent==="number"&&Number.isFinite(a.percent)&&
+  Math.abs(a.percent-a.score/36*100)<0.2&&
+  typeof a.submitted==="string"&&!Number.isNaN(Date.parse(a.submitted));
+ const attempts=Array.isArray(record?.attempt_history)?record.attempt_history.filter(valid):[];
+ if(!attempts.length&&valid(record?.lastResult))attempts.push(record.lastResult);
+ if(attempts.length){
+  const last=attempts.slice().sort((a,b)=>Date.parse(b.submitted)-Date.parse(a.submitted))[0];
+  return {state:"LEARNER_LINKED_LOCAL",title:"Algebra I Readiness Diagnostic",
+   score:last.score,total:36,percent:last.percent,submitted:last.submitted,
+   attempts:attempts.length,officialCourseGrade:false,cloudVerified:false};
+ }
+ try{
+  if(localStorage.getItem(base)!==null)return {state:"UNATTRIBUTED_LOCAL",
+   title:"Algebra I Readiness Diagnostic",officialCourseGrade:false,cloudVerified:false};
+ }catch{}
+ return null;
 }
 function evidenceCount(user){
  try{
@@ -118,6 +145,7 @@ function reportData(){
  return {schema:"khaemenes-homeschool-progress-report-v1",reportType:"evidence-summary-not-certified-transcript",
   generatedAt:new Date().toISOString(),learner:{name:user.name,grade:user.grade},
   portfolioEvidenceCount:evidenceCount(user),
+   algebraReadiness:algebraReadiness(user),
   courses:rows.map(row=>({courseId:row.courseId,title:row.title,subject:row.subject,status:row.status,
    completionPercent:progress(row.record),recordedAssessmentAveragePercent:summary(assessments(row.record)),
    assessments:assessments(row.record),
@@ -141,7 +169,7 @@ function refresh(reason="automatic"){
   return;
  }
  host.replaceChildren();
- if(typeof ledger?.readLearner!=="function"){
+ if(typeof getLedger()?.readLearner!=="function"){
   $("reportIdentity").textContent="Academic ledger unavailable on this device.";
   $("reportCourseCount").textContent="—";$("reportAssessmentCount").textContent="—";
   $("printReport").disabled=true;$("exportReport").disabled=true;
@@ -160,12 +188,15 @@ function refresh(reason="automatic"){
  $("printReport").disabled=false;$("exportReport").disabled=false;
  $("reportIdentity").textContent="Learner: "+report.learner.name+" · Grade "+Number(report.learner.grade)+" · Updated "+new Date(report.generatedAt).toLocaleDateString();
  $("reportCourseCount").textContent=String(report.courses.filter(c=>c.status==="Evidence received").length);
- $("reportAssessmentCount").textContent=String(report.courses.reduce((n,c)=>n+c.assessments.length,0));
+ $("reportAssessmentCount").textContent=String(report.courses.reduce((n,c)=>n+c.assessments.length,0)+(report.algebraReadiness?.state==="LEARNER_LINKED_LOCAL"?1:0));
  const reported=report.courses.filter(c=>c.status==="Evidence received").length;
+ const readinessLinked=report.algebraReadiness?.state==="LEARNER_LINKED_LOCAL";
  const assessmentsFound=report.courses.reduce((n,c)=>n+c.assessments.length,0);
  const now=new Date().toLocaleTimeString([], {hour:"numeric",minute:"2-digit",second:"2-digit"});
- const sourceReady=typeof ledger?.readLearner==="function";
+ const sourceReady=typeof getLedger()?.readLearner==="function";
  if(!sourceReady)refreshStatus("Refresh #"+iteration+" · "+now+": Academy course-record service is unavailable. The display cannot verify published assessment scores. No student records were changed.");
+ else if(reported===0&&readinessLinked)refreshStatus("Refresh #"+iteration+" · "+now+": Algebra I readiness evidence found for this learner. This is not an official course grade or a cloud backup.");
+ else if(reported===0&&report.algebraReadiness?.state==="UNATTRIBUTED_LOCAL")refreshStatus("Refresh #"+iteration+" · "+now+": A local Algebra I readiness result was found without confirmed learner attribution. Open the diagnostic to link existing evidence. No student records were changed.");
  else if(reported===0)refreshStatus("Refresh #"+iteration+" · "+now+": No current course evidence has been published for this learner on this device. Your original course scores were not modified. Open a course's gradebook or progress report to check its separate records.");
  else if(assessmentsFound===0)refreshStatus("Refresh #"+iteration+" · "+now+": Found "+reported+" course record"+(reported===1?"":"s")+", but none includes published quiz/test scores in the Academy continuation ledger. Midterm and final results may still be held by individual course gradebooks.");
  else refreshStatus("Refresh #"+iteration+" · "+now+": Checked "+reported+" course record"+(reported===1?"":"s")+" and "+assessmentsFound+" scored assessment"+(assessmentsFound===1?"":"s")+" in the Academy continuation ledger. Report updated from saved evidence; no grades were changed.");
@@ -177,6 +208,21 @@ function refresh(reason="automatic"){
  const grid=mk("div","portfolio-report-grid");
  for(const row of rowsFor(learner()))grid.append(renderCard(row));
  host.append(grid);
+ if(report.algebraReadiness){
+  const panel=mk("section","portfolio-report-evaluator");
+  panel.append(mk("h3","","Algebra I Readiness — Separate Diagnostic Evidence"));
+  if(report.algebraReadiness.state==="LEARNER_LINKED_LOCAL"){
+   const a=report.algebraReadiness;
+   panel.append(mk("p","","Recorded readiness score: "+a.score+"/"+a.total+" ("+a.percent+"%) · Submitted "+new Date(a.submitted).toLocaleString()+" · "+a.attempts+" retained attempt(s)."));
+   panel.append(mk("p","portfolio-report-note","Learner-linked evidence in this browser only. Not an official Algebra I course grade; Account Cloud backup is unverified."));
+  }else{
+   panel.append(mk("p","","An older Algebra I readiness result exists on this device but has not been attributed to this learner. The score is withheld."));
+   const link=mk("a","","Open Algebra I Readiness Diagnostic to review the saved result");
+   link.href="../courses/mathematics/algebra-1/diagnostic/";
+   panel.append(link,mk("p","portfolio-report-note","Use the existing learner-confirmed Begin Lesson path to attach eligible readiness evidence. Do not retake the assessment solely to repair the link."));
+  }
+  host.append(panel);
+ }
  const review=mk("section","portfolio-report-evaluator");
  review.append(mk("h3","","Parent / Evaluator Review"),
   mk("p","","Student portfolio entries available on this device: "+(report.portfolioEvidenceCount===null?"Not available":report.portfolioEvidenceCount)),
@@ -200,7 +246,7 @@ $("printReport")?.addEventListener("click",()=>{
  window.print();
 });
 window.addEventListener("afterprint",()=>document.body.classList.remove("portfolio-report-print"));
-for(const event of ["pageshow","khaemenes-learning-continuation-changed","khaemenes-student-profile-changed"])window.addEventListener(event,()=>refresh("event"));
+for(const event of ["pageshow","khaemenes-learning-continuation-ready","khaemenes-learning-continuation-changed","khaemenes-student-profile-changed"])window.addEventListener(event,()=>refresh("event"));
 refresh();
 window.KhaemenesPortfolioAcademicReport=Object.freeze({refresh,version:"1.0.0"});
 })();
