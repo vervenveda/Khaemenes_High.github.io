@@ -132,6 +132,7 @@ html:root:root body .grade09-games-pin-status{
 <div class="card col6"><h2>Verve N Veda Arcade</h2><p>Logic, spelling, strategy, reasoning, vocabulary, and skill-building games.</p><div class="actions"><a class="btn" href="https://vervenveda.com/arcade.github.io/">Arcade</a><button class="btn secondary" type="button" data-quick-pin="academy-arcade">☆ Pin</button></div></div>
 <div class="card col6"><h2>Calculator Practice</h2><p>Use the scientific calculator and verify math steps carefully.</p><div class="actions"><a class="btn" href="https://vervenveda.com/proresource_hub.github.io/Protools/Khaemenes_Scientific_Calculator/">Calculator</a><button class="btn secondary" type="button" data-quick-pin="scientific-calculator">☆ Pin</button></div></div>
 <div class="card col6"><h2>Research Practice</h2><p>Evidence games and source-checking practice connect to The Verifier and citation tools.</p><div class="actions"><a class="btn" href="https://vervenveda.com/theverifier.github.io/">Verifier</a><button class="btn secondary" type="button" data-quick-pin="the-verifier">☆ Pin</button><a class="btn secondary" href="https://vervenveda.com/proresource_hub.github.io/Protools/Evidence_Citation_Studio/">Citations</a><button class="btn secondary" type="button" data-quick-pin="citation-studio">☆ Pin</button></div></div>
+<div class="card col6"><h2>Electives Hall</h2><p>Explore learner-selected electives without changing enrollment, grades, mastery, or the eight-class academic schedule.</p><div class="actions"><a class="btn" href="../../../../courses/electives/">Electives</a><button class="btn secondary" type="button" data-quick-pin="electives-hall">☆ Pin</button></div></div>
 <article class="card col6 grade09-creative-door"><h2>The Refrain Music</h2><p>Explore music composition, songwriting, lyrics, music education, and creative practice with Moirai.</p><div class="actions"><a class="btn" href="https://vervenveda.com/the_refrain.github.io/">Music</a><a class="btn secondary" href="https://github.com/vervenveda/the_refrain.github.io" target="_blank" rel="noopener noreferrer" aria-label="View The Refrain Music source repository (opens new tab)">Repo</a></div></article>
 <article class="card col6 grade09-creative-door"><h2>Bazaar Art Creativity</h2><p>Enter creative studios for visual art, art education, artist opportunities, sharing, and exhibitions.</p><div class="actions"><a class="btn" href="https://vervenveda.com/bazaarart.github.io/">Art</a><a class="btn secondary" href="https://github.com/vervenveda/bazaarart.github.io" target="_blank" rel="noopener noreferrer" aria-label="View Bazaar Art Creativity source repository (opens new tab)">Repo</a></div></article>
 <article class="card col6 grade09-creative-door"><h2>Aurora Mindfulness</h2><p>Find breathing, reflection, gentle movement, calm focus, and restorative mindfulness practices.</p><div class="actions"><a class="btn" href="https://vervenveda.com/aurora.github.io/">Mindfulness</a><a class="btn secondary" href="https://github.com/vervenveda/aurora.github.io" target="_blank" rel="noopener noreferrer" aria-label="View Aurora Mindfulness source repository (opens new tab)">Repo</a></div></article>
@@ -180,7 +181,7 @@ html:root:root body .grade09-games-pin-status{
       button.setAttribute('title',on?'Pinned to your personal schedule':'Pin to your personal schedule');
       const id=button.dataset.quickPin;
       button.textContent=on?'★ Pinned':'☆ Pin';
-      button.setAttribute('aria-label',(on?'Unpin ':'Pin ')+({ 'prealgebra-games':'Math Games','academy-arcade':'Arcade','scientific-calculator':'Calculator','the-verifier':'Verifier','citation-studio':'Citation Studio'}[id]||'tool')+' from schedule');
+      button.setAttribute('aria-label',(on?'Unpin ':'Pin ')+({ 'prealgebra-games':'Math Games','academy-arcade':'Arcade','scientific-calculator':'Calculator','the-verifier':'Verifier','citation-studio':'Citation Studio','electives-hall':'Electives Hall'}[id]||'tool')+' from schedule');
     });
   }
   const pinStatus=document.getElementById('grade09GamesPinStatus');
@@ -190,7 +191,7 @@ html:root:root body .grade09-games-pin-status{
     const result=quick.toggle(id);
     render();
     const current=quick.isPinned(id);
-    const name=({'prealgebra-games':'Math Games','academy-arcade':'Arcade','scientific-calculator':'Calculator','the-verifier':'Verifier','citation-studio':'Citations'}[id]||'Resource');
+    const name=({'prealgebra-games':'Math Games','academy-arcade':'Arcade','scientific-calculator':'Calculator','the-verifier':'Verifier','citation-studio':'Citations','electives-hall':'Electives Hall'}[id]||'Resource');
     pinStatus.textContent=current===previous?name+' could not be updated.':name+(current?' pinned to schedule.':' unpinned from schedule.');
   }));
   window.addEventListener('khaemenes-grade09-quick-pins-changed',render);
