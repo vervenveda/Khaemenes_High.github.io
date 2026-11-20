@@ -40,7 +40,7 @@ const g9=read("grades/grade-09/student-profile/dashboard-layout.js");
 const upper=read("grades/shared/grade09-blueprint-upper-grade.js");
 check(g9.includes('{label:"Schedule",href:"schedule/"}'),"Grade 9 toolbar uses page link");
 check(upper.includes('{label:"Schedule",url:highRoot+"grades/grade-"+grade+"/student-profile/schedule/"}'),"upper grade toolbar uses grade page links");
-check(css.includes("--parchment:#eee5d4")&&css.includes("--cream:#fff8e9")&&css.includes("--ink:#243038"),"VNV charcoal cream parchment palette");
+check(css.includes("--parchment:#eee5d4")&&css.includes("--cream:#fffdf5")&&css.includes("--ink:#243038"),"VNV charcoal cream parchment palette");
 check(!css.includes("border-radius:14px"),"7px corners only");
 check(css.includes(".schedule-card{background:var(--cream);border:3px solid var(--ink)"),"3px charcoal class-card border");
 check(css.includes(".schedule-stat,.schedule-feature{background:var(--cream);border:3px solid var(--ink)"),"3px charcoal stat and feature-card borders");
