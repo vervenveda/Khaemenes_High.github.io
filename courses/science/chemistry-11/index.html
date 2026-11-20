@@ -123,10 +123,25 @@ html:root:root body .app :is(a,button,input,select,textarea,summary):focus-visib
 }
 </style>
 <script defer src="https://vervenveda.com/assets/vnv-ecosystem-toolbar.js" data-official-vnv-ecosystem-toolbar="true"></script>
-  <script src="/Khaemenes_High.github.io/assets/high-school-global-chrome-v2.js" defer data-high-school-global-chrome="v2"></script>
+  <script src="https://vervenveda.com/assets/vnv-header-autopopulate.js?v=2.1.0" defer data-vnv-header-autopopulate="canonical"></script>
+<script>
+document.addEventListener("DOMContentLoaded",()=>{
+ const mount=()=>{
+  if(document.getElementById("vnvHeaderAutoPopulate"))return;
+  window.VNV_HEADER?.mount?.({
+   replaceLegacy:false,
+   title:"Chemistry 11",subtitle:"Science · Grade 11",
+   icon:"K",home:"https://vervenveda.com/KhaemenesAcademy_Home.github.io/",actions:[]
+  });
+ };
+ if(document.documentElement.dataset.khaeDualTicker==="mounted")mount();
+ else window.addEventListener("khaemenes-high-dual-ticker-ready",mount,{once:true});
+},{once:true});
+</script>
 <script src="/Khaemenes_High.github.io/assets/high-school-root-worker-recovery-v1.js" defer data-high-root-worker-recovery="v1"></script>
 </head>
 <body>
+<div data-khae-header hidden aria-hidden="true"></div>
 <div class="app">
 <aside class="side">
 <div class="brand"><div class="seal">S11</div><div><h1>International Chemistry &amp; Materials Science 11</h1><p>36 Week Student Portal</p></div></div>
