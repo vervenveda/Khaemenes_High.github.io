@@ -11,7 +11,7 @@ const quick=read("grades/grade-09/student-profile/student-quick-pins.js");
 const bar=read("grades/grade-09/student-profile/student-schedule-bar.js");
 const design=read("grades/grade-09/student-profile/student-profile-preferences.js");
 const registry=read("grades/grade-09/student-profile/student-course-registry.js");
-const seven=read("grades/grade-09/student-profile/seven-class-schedule.js");
+const eight=read("grades/grade-09/student-profile/eight-class-schedule.js");
 
 assert.match(dashboard,/data-grade09-schedule-bar/,"dashboard surfaces schedule rail");
 assert.match(daily,/data-grade09-schedule-bar/,"Daily Lessons surfaces schedule rail");
@@ -44,7 +44,7 @@ assert.match(registry,/course=hs1/,"formal Grade 09 language links request the H
 assert.match(registry,/"arabic":"arabic-1","russian":"russian-1"/,"Arabic and Russian route to their dedicated year-one instructional drafts");
 assert.match(registry,/courseMode:formal\?"formal":"instructional-draft"/,"language registry distinguishes formal courses from instructional drafts");
 assert.match(registry,/Instructional Draft/,"instructional-draft language titles are explicit");
-assert.match(seven,/Arabic \(exploration\)/,"schedule selector clearly labels Arabic as exploration-stage");
-assert.match(seven,/Russian \(exploration\)/,"schedule selector clearly labels Russian as exploration-stage");
+assert.match(eight,/Arabic \(exploration\)/,"schedule selector clearly labels Arabic as exploration-stage");
+assert.match(eight,/Russian \(exploration\)/,"schedule selector clearly labels Russian as exploration-stage");
 
 console.log("PASS Grade 09 schedule, Quick Pins, design personalization, and language handoff contract.");
