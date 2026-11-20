@@ -426,6 +426,41 @@
       }catch(_err){opened=null;questions=rawQuestions}
     }
     renderQuestionSet($("[data-question-container]",form),questions,id);
+    // Grade 10 Diagnostic presentation only. The assessment form, randomized
+    // questions, saved responses, scoring and 80% threshold remain untouched.
+    if(id==="diagnostic"){
+      const nav=form.querySelector("#english10ReadinessProgress");
+      const grid=nav?.querySelector(".english10-question-nav");
+      const count=nav?.querySelector(".english10-progress-count");
+      const fields=[...form.querySelectorAll("[data-question]")];
+      if(grid&&count&&fields.length){
+        const buttons=fields.map((field,i)=>{
+          field.id="english10-diagnostic-question-"+(i+1);
+          const button=document.createElement("button");
+          button.type="button";button.className="english10-question-jump";
+          button.textContent=String(i+1);
+          button.setAttribute("aria-label","Jump to question "+(i+1));
+          button.addEventListener("click",()=>{
+            nav.open=false;
+            field.scrollIntoView({block:"start"});
+            const target=field.querySelector("input");target?.focus({preventScroll:true});
+          });
+          grid.append(button);return button;
+        });
+        const sync=()=>{
+          let answered=0;
+          fields.forEach((field,i)=>{
+            const done=!!field.querySelector('input[type="radio"]:checked');
+            if(done)answered++;
+            buttons[i].classList.toggle("answered",done);
+            buttons[i].setAttribute("aria-label","Question "+(i+1)+(done?" answered":" unanswered"));
+          });
+          count.textContent=answered+" of "+fields.length+" questions answered";
+        };
+        form.addEventListener("change",sync);form.addEventListener("reset",()=>queueMicrotask(sync));
+        sync();
+      }
+    }
     const result=$("[data-assessment-result]");
     const best=$("[data-assessment-best]");
     const getRecord=()=>kind==="unit"?unitState(Number(form.dataset.unit)).assessment:examState(id);
