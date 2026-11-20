@@ -127,12 +127,25 @@ function reportData(){
    finalGrades:"Pending",awardedCredits:"Pending",reviewSignature:"Pending"},
   notice:"Learner-scoped, locally available academic evidence. This report is not a certified transcript, proof of legal compliance, or a final credit decision."};
 }
-function refresh(){
- const report=reportData();host.replaceChildren();
+let refreshNumber=0;
+const refreshStatus=message=>{const node=$("refreshEvidenceStatus");if(node)node.textContent=message};
+function refresh(reason="automatic"){
+ const iteration=++refreshNumber;
+ let report=null;
+ try{report=reportData()}catch(err){
+  host.replaceChildren();
+  $("reportCourseCount").textContent="—";$("reportAssessmentCount").textContent="—";
+  $("printReport").disabled=true;$("exportReport").disabled=true;
+  refreshStatus("Refresh #"+iteration+" could not read course evidence on this device. Your saved grades and portfolio entries were not changed. Reopen the learner profile, then return here.");
+  host.append(mk("p","portfolio-report-note","Unable to read academic evidence. The report did not change or erase any course records."));
+  return;
+ }
+ host.replaceChildren();
  if(!report){
   $("reportIdentity").textContent="Select a registered High School learner to view this private academic report.";
   $("reportCourseCount").textContent="—";$("reportAssessmentCount").textContent="—";
   $("printReport").disabled=true;$("exportReport").disabled=true;
+  refreshStatus("Refresh #"+iteration+": learner verification is required. Open your Student Profile, select the registered High School learner, then return to this report. No records were changed.");
   host.append(mk("p","portfolio-report-note","No private academic report can be displayed without a verified active learner."));
   return;
  }
@@ -140,6 +153,15 @@ function refresh(){
  $("reportIdentity").textContent="Learner: "+report.learner.name+" · Grade "+Number(report.learner.grade)+" · Updated "+new Date(report.generatedAt).toLocaleDateString();
  $("reportCourseCount").textContent=String(report.courses.filter(c=>c.status==="Evidence received").length);
  $("reportAssessmentCount").textContent=String(report.courses.reduce((n,c)=>n+c.assessments.length,0));
+ const reported=report.courses.filter(c=>c.status==="Evidence received").length;
+ const assessmentsFound=report.courses.reduce((n,c)=>n+c.assessments.length,0);
+ const now=new Date().toLocaleTimeString([], {hour:"numeric",minute:"2-digit",second:"2-digit"});
+ const sourceReady=typeof ledger?.readLearner==="function";
+ if(!sourceReady)refreshStatus("Refresh #"+iteration+" · "+now+": Academy course-record service is unavailable. The display cannot verify published assessment scores. No student records were changed.");
+ else if(reported===0)refreshStatus("Refresh #"+iteration+" · "+now+": No current course evidence has been published for this learner on this device. Your original course scores were not modified. Open a course's gradebook or progress report to check its separate records.");
+ else if(assessmentsFound===0)refreshStatus("Refresh #"+iteration+" · "+now+": Found "+reported+" course record"+(reported===1?"":"s")+", but none includes published quiz/test scores in the Academy continuation ledger. Midterm and final results may still be held by individual course gradebooks.");
+ else refreshStatus("Refresh #"+iteration+" · "+now+": Checked "+reported+" course record"+(reported===1?"":"s")+" and "+assessmentsFound+" scored assessment"+(assessmentsFound===1?"":"s")+" in the Academy continuation ledger. Report updated from saved evidence; no grades were changed.");
+
  const head=mk("div","portfolio-report-print-heading");
  head.append(mk("h3","","Homeschool Academic Progress Report"),mk("p","",report.learner.name+" · Grade "+Number(report.learner.grade)+" · "+new Date(report.generatedAt).toLocaleDateString()),
   mk("p","portfolio-report-note","Draft evidence report · Final transcript grades and credit require evaluator review."));
@@ -162,7 +184,7 @@ function downloadReport(){
  const a=document.createElement("a");a.href=url;a.download="khaemenes-homeschool-progress-grade-"+report.learner.grade+".json";
  document.body.append(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),1000);
 }
-$("refreshReport")?.addEventListener("click",refresh);
+$("refreshReport")?.addEventListener("click",()=>refresh("manual"));
 $("exportReport")?.addEventListener("click",downloadReport);
 $("printReport")?.addEventListener("click",()=>{
  if(!reportData())return;
@@ -170,7 +192,7 @@ $("printReport")?.addEventListener("click",()=>{
  window.print();
 });
 window.addEventListener("afterprint",()=>document.body.classList.remove("portfolio-report-print"));
-for(const event of ["pageshow","khaemenes-learning-continuation-changed","khaemenes-student-profile-changed"])window.addEventListener(event,refresh);
+for(const event of ["pageshow","khaemenes-learning-continuation-changed","khaemenes-student-profile-changed"])window.addEventListener(event,()=>refresh("event"));
 refresh();
 window.KhaemenesPortfolioAcademicReport=Object.freeze({refresh,version:"1.0.0"});
 })();
