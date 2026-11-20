@@ -18,7 +18,7 @@ for(const info of map.week_03_companions){
  assert.equal(plan.unit,info.unit);
  assert.equal(plan.lessons?.length,5);
  assert.equal(plan.title,info.title);
- const allowedUiScripts=new Set(["/Khaemenes_High.github.io/assets/high-school-global-chrome-v2.js","https://vervenveda.com/assets/vnv-ecosystem-toolbar.js"]);
+ const allowedUiScripts=new Set(["https://vervenveda.com/assets/vnv-ecosystem-toolbar.js"]);
   const scripts=[...doc.matchAll(/<script\b([^>]*)>([\s\S]*?)<\/script>/gi)];
  for(const script of scripts){
    const src=script[1].match(/\bsrc="([^"]+)"/i)?.[1]||"";
