@@ -208,10 +208,14 @@ function saveSelectedPins(selected){
 }
 function hasDiagnosticEvidence(){
   const result=readJSON(A1_DIAGNOSTIC_RESULT_KEY,null);
-  if(!result)return false;
-  if(Array.isArray(result.attempt_history)&&result.attempt_history.length)return true;
-  if(result.lastResult)return true;
-  return [result.percent,result.bestScore,result.bestSelectedScore].some(value=>numeric(value)!==null);
+  const attempts=[...(Array.isArray(result?.attempt_history)?result.attempt_history:[]),result?.lastResult].filter(Boolean);
+  // A learner-scoped, explicitly passed 36-item diagnostic is readiness
+  // evidence only. Never infer a passing gate from a saved draft or a failed
+  // attempt, and never silently import another browser user's unscoped record.
+  return attempts.some(a=>a?.id==="KH-MATH-A1-DIAGNOSTIC"&&a?.total===36&&
+    Number.isInteger(numeric(a.score))&&numeric(a.score)>=0&&numeric(a.score)<=36&&
+    numeric(a.percent)!==null&&numeric(a.percent)>=MASTERY&&numeric(a.percent)<=100&&
+    Math.abs(numeric(a.score)/36*100-numeric(a.percent))<0.2);
 }
 function a1UnitRecords(unit){return {dedicated:readJSON(a1DedicatedKey(unit),null),shared:readJSON(a1SharedKey(unit),null)}}
 function a1LessonMastered(unit,lesson){
@@ -367,8 +371,10 @@ function continueFor(id){
     if(!hasDiagnosticEvidence()&&!hasAlgebraCourseEvidence())return {url:A1_DIAGNOSTIC,label:"Algebra I Readiness Diagnostic",hasSpecificLocation:true,actionLabel:"Begin Algebra I Readiness",detail:"Week 1 readiness comes before Unit 01."};
     const launches=readJSON(LAST_LAUNCH_KEY,{}),last=launches&&typeof launches==="object"?launches[id]:null;
     if(last?.url&&last.url.startsWith(A1_HOME)&&!last.url.includes("/diagnostic/"))return {url:safeCourseURL(course,last.url),label:last.title?String(last.title):course.title,hasSpecificLocation:true,actionLabel:"Continue Algebra I",detail:`Return to ${last.title?String(last.title):"your last Algebra I location"}.`};
-    const first=window.KhaemenesHighEightClass?.FIRST_STEPS?.["algebra-1"]||A1_HOME;
-    return {url:first,label:course.title,hasSpecificLocation:first!==A1_HOME,actionLabel:"Continue Algebra I",detail:"Readiness evidence is present. Continue from the first required Algebra I step."};
+    // Never send a learner who has already demonstrated readiness back to
+    // the diagnostic just because the course-map fetch has not completed.
+    const first=`${A1_HOME}units/unit-01/lessons/lesson-01-algebraic-habits-notation-mathematical-argument.html`;
+    return {url:first,label:course.title,hasSpecificLocation:true,actionLabel:"Begin Algebra I · Unit 01 Lesson 01",detail:"Readiness evidence is present. Open the first Algebra I learning-engine lesson."};
   }
   return genericContinue(course);
 }
