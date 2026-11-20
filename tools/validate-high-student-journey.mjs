@@ -24,8 +24,8 @@ for(const grade of ["09","10","11","12"]){
 }
 
 const grade9Layout=read("grades/grade-09/student-profile/dashboard-layout.js");
-pass(grade9Layout.includes('dialog.id="grade09ScheduleDialog"'),"Grade 09 owns one Schedule dialog");
-pass(grade9Layout.includes('label:"Schedule",target:"grade09ScheduleDialog"'),"Grade 09 toolbar opens the Schedule dialog");
+pass(fs.existsSync("grades/grade-09/student-profile/schedule/index.html"),"Grade 09 owns the dedicated Schedule page");
+pass(grade9Layout.includes('label:"Schedule",href:"schedule/"'),"Grade 09 toolbar opens the canonical Schedule page");
 pass(grade9Layout.includes("grade09PinnedClasses"),"Grade 09 profile exposes pinned current classes");
 
 const registry=read("grades/grade-09/student-profile/student-course-registry.js");
