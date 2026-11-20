@@ -50,7 +50,12 @@ const weekdayNames=["Monday","Tuesday","Wednesday","Thursday","Friday"];
 const weekdayHeadings=laterWeek?[...root.querySelectorAll("h3")].filter(h=>weekdayNames.some(day=>h.textContent.trim().startsWith(day+" · "))):null;
 const chosenHeadings=laterWeek?weekdayHeadings:(specific?.headings||headings[grade])?.map(name=>[...root.querySelectorAll("h3")].find(h=>h.textContent.trim()===name));
 if(laterWeek&&(!weekdayHeadings||weekdayHeadings.length!==5||weekdayHeadings.some((h,i)=>!h.textContent.trim().startsWith(weekdayNames[i]+" · "))))return false;
-const targets=!demo&&!isGrade9Workspace?chosenHeadings?.map(heading=>heading?.closest("article.lesson,section.card,article")||null):null;
+const targets=!demo&&!isGrade9Workspace?chosenHeadings?.map(heading=>{
+ // Some Grade 09 packets put five H3 lessons inside one original card.
+ // Navigating the precise existing heading works in both packet schemas.
+ if(grade==="9"||laterWeek)return heading||null;
+ return heading?.closest("article.lesson,section.card,article")||heading||null;
+}):null;
 if(targets&&(!targets.length||targets.some(x=>!x)||new Set(targets).size!==5))return false;
 let spec=base&&(specific?Object.assign({},base,specific):base);
 if(laterWeek){
@@ -63,7 +68,8 @@ if(laterWeek){
  const mission=root.querySelector("h1")?.textContent?.replace(/\s+/g," ").trim()||"Social Studies";
  const steps=weekdayHeadings.map((heading,i)=>{
    const day=weekdayNames[i],label=heading.textContent.trim();
-   const block=targets[i],body=(block?.textContent||"").replace(/\s+/g," ");
+   const paragraph=heading.nextElementSibling;
+   const block=targets[i],body=((paragraph?.matches?.("p,div,article")?paragraph.textContent:"")||block?.textContent||"").replace(/\s+/g," ");
    const objective=body.match(/\bObjective:\s*(.{1,240}?)(?=\b(?:Warm-up|Lesson|Instruction|Guided practice|Independent practice|Completion|Deliverable|Materials|Check):|$)/i);
    const excerpt=objective?.[1]?.trim()||"Use this day's original reading, sources, tasks and evidence requirements.";
    return [day+" · "+label.split(" · ").slice(1).join(" · "),excerpt];
