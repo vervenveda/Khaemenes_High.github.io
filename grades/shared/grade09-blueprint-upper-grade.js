@@ -65,7 +65,14 @@ const identity=()=>learner()?.learnerId||pins.activeLearner?.()||null;
 const gradeContext=()=>window.KhaemenesHighProfileGradeContext?.active?.()||null;
 const readPins=()=>pins.readPins?.()||[];
 const lang=()=>pins.readLanguageChoices?.()?.[grade]||"spanish";
-const slots=()=>catalog.slots(Number(grade));
+const grade10MathPath=()=>{
+ if(!grade10Copy)return null;
+ const records=snapshots();
+ if(records.some(s=>s?.courseId==="geometry"))return "geometry";
+ if(records.some(s=>s?.courseId==="algebra-1"))return "algebra-1";
+ return null;
+};
+const slots=()=>catalog.slots(Number(grade),grade10Copy?{mathId:grade10MathPath()}:{});
 function href(item){
  if(item.subject==="foreignLanguage"){
   const language=lang(),returnTo=highRoot+"grades/grade-"+grade+"/student-profile/",params=new URLSearchParams({language,source:"khaemenes-high-grade"+grade,return:returnTo});
@@ -363,7 +370,7 @@ function renderTools(){
     return false;
    }},
   {label:"Student Progress",run:showUpperProgress},
-  {label:"Schedule",url:highRoot+"grades/grade-"+grade+"/student-profile/schedule/"},
+  {label:"Schedule",fallback:highRoot+"grades/grade-"+grade+"/student-profile/schedule/",run:showUpperSchedule},
   {label:"KlasaiPeer",fallback:"https://vervenveda.com/Klasaipeer.github.io/",run:()=>{const studio=window.KhaemenesUpperGradeStudyStudio;if(studio?.open){studio.open(document.activeElement);return true}return false}},
   {label:"Yearbook",fallback:"https://vervenveda.com/Academy-Yearbook.github.io/",run:()=>{const yearbook=window.KhaemenesUpperGradeYearbook;if(yearbook?.open){yearbook.open(document.activeElement);return true}return false}},
   {label:"Creative Tools",run:()=>revealUpper("grade09BlueprintRooms")},
