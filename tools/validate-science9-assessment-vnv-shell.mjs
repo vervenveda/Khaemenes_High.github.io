@@ -201,6 +201,16 @@ for(const file of unitPages){
     if(!s.includes(token)) fail.push("Unit 12 prototype testing lab · zero-baseline guard missing "+token);
   }
 }
+{
+  const quizPage=fs.readFileSync("courses/science/integrated-science-9/units/unit-12/mastery-quiz.html","utf8");
+  const quizApp=fs.readFileSync("courses/science/integrated-science-9/units/unit-12/quiz-app.js","utf8");
+  if(!quizPage.includes("15 objective questions · mastery threshold 12/15 (80%)")) fail.push("Unit 12 mastery quiz display/runtime mismatch");
+  if(!/FORM_COUNT=15\b/.test(quizApp)) fail.push("Unit 12 mastery quiz runtime count changed from 15");
+  const assessmentPage=fs.readFileSync("courses/science/integrated-science-9/units/unit-12/unit-assessment.html","utf8");
+  const assessmentApp=fs.readFileSync("courses/science/integrated-science-9/units/unit-12/assessment-app.js","utf8");
+  if(!assessmentPage.includes("25 objective questions · mastery threshold 20/25 (80%)")) fail.push("Unit 12 assessment display/runtime mismatch");
+  if(!/FORM_COUNT=25\b/.test(assessmentApp)) fail.push("Unit 12 assessment runtime count changed from 25");
+}
 if(fail.length){
   console.error(JSON.stringify({status:"FAIL",fail},null,2));
   process.exit(1);
