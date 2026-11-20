@@ -188,17 +188,25 @@ function writePins(value){
 }
 function writeLanguageChoices(choices){
  if(!choices||typeof choices!=="object"||Array.isArray(choices))return false;
- const next={...choices},selected=next["9"];
- if(selected!==undefined&&!validGrade09(selected))return false;
- // Preserve existing pin intent, replacing the prior language, not adding a second.
+ // Language choices are learner-scoped preferences, not course grades. Never
+ // create an unscoped record when no Academy learner is selected.
+ const learner=activeLearner();
+ if(!learner)return false;
+ const next={...choices};
+ for(const key of ["9","10","11","12"]){
+  if(next[key]!==undefined&&!validGrade09(next[key]))return false;
+ }
+ // Preserve Grade 09's existing pinned-language selection authority without
+ // writing a Grade 10–12 preference into the freshman pin namespace.
+ const selected=next["9"];
  const existing=storedPins(),hadPin=existing.some(pin=>languageFromPin(pin));
- if(!write(LANGUAGE_KEY,next))return false;
+ if(activeLearner()!==learner||!write(LANGUAGE_KEY,next))return false;
  if(hadPin&&selected){
   const filtered=existing.filter(pin=>!languageFromPin(pin));
   const updated=[...filtered,GRADE09_PREFIX+selected];
   if(!writePins(updated))return false;
  }
- return true;
+ return activeLearner()===learner;
 }
 function hasPinRecord(){try{return storage().getItem(scopedKey(PIN_KEY))!==null}catch{return false}}
 // Identified learners never inherit another learner's legacy unscoped values.
