@@ -27,6 +27,25 @@ function update(){
  empty.textContent=cards.length===0?"No portfolio entries yet. Use Add Learning Evidence to begin.":visible===0?"No entries match these filters. Try another search.":"";
  empty.hidden=visible!==0;
 }
+// Quick starts preselect an existing subject; they never silently save work.
+document.querySelectorAll("[data-portfolio-subject]").forEach(button=>{
+ button.addEventListener("click",()=>{
+  const subject=$("subject"),title=$("title"),save=$("save"),status=$("status");
+  if(!subject||!title||save?.disabled){
+   if(status)status.textContent="Select your registered Academy learner before creating portfolio evidence.";
+   return;
+  }
+  const chosen=button.dataset.portfolioSubject;
+  if(![...subject.options].some(x=>x.value===chosen)){
+   if(status)status.textContent="This evidence category is not available.";
+   return;
+  }
+  subject.value=chosen;
+  $("addEvidence")?.scrollIntoView({behavior:"smooth",block:"start"});
+  title.focus({preventScroll:true});
+  if(status)status.textContent=chosen+" selected. Add your title and learning evidence, then choose Save Evidence.";
+ });
+});
 search.addEventListener("input",update);filter.addEventListener("change",update);
 const observer=new MutationObserver(update);
 observer.observe(entries,{childList:true});update();
