@@ -6,6 +6,7 @@ on:
       - 'courses/shared/course-execution-matrix-v1.json'
       - 'tests/test-course-execution-matrix.cjs'
       - 'tests/test-grade-09-12-execution-sweep.cjs'
+      - 'tests/test-grade12-course-parity.cjs'
       - 'tests/test-math-placement-handoff-contract.cjs'
       - 'tests/test-chemistry11-anchor-investigations.cjs'
       - 'tests/test-chemistry11-full-year-lab-audit.cjs'
@@ -22,6 +23,8 @@ on:
       - 'grades/**'
       - 'courses/mathematics/**'
       - 'courses/science/**'
+      - 'courses/physical-education/**'
+      - 'courses/capstone/**'
       - 'courses/social-studies/**'
       - 'courses/language-arts/**'
       - 'courses/science/chemistry-11/**'
@@ -44,6 +47,7 @@ jobs:
         run: |
           node tests/test-course-execution-matrix.cjs
           node tests/test-grade-09-12-execution-sweep.cjs
+          node tests/test-grade12-course-parity.cjs
           node tests/test-math-placement-handoff-contract.cjs
           node tests/test-chemistry11-anchor-investigations.cjs
           node tests/test-chemistry11-full-year-lab-audit.cjs
