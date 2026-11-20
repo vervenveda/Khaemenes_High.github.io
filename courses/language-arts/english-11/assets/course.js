@@ -336,7 +336,7 @@
     })).filter(q=>q.question&&q.choices.length===4):[];
     const currentCanonical=rawQuestions.map((q,i)=>({...q,id:q.id||`${COURSE_ID}-week-${week}-current-${i+1}`,source:"current",week}));
     const retrievalWeek=week>1?Math.max(1,week-(1+(week%3))):null;
-    const retrievalCanonical=retrievalWeek?((window.ELA11_COURSE?.weeks?.find(item=>item.week===retrievalWeek)?.quiz)||[]).map((q,i)=>({...q,id:`${COURSE_ID}-retrieval-week-${retrievalWeek}-${i+1}`,source:"retrieval",week:retrievalWeek,retrievalFromWeek:retrievalWeek})).filter(q=>Array.isArray(q.choices)&&q.choices.length===4):[];
+    const retrievalCanonical=retrievalWeek?((window.ENGLISH_11_CURRICULUM?.weeks?.find(item=>item.week===retrievalWeek)?.quiz)||[]).map((q,i)=>({...q,id:`${COURSE_ID}-retrieval-week-${retrievalWeek}-${i+1}`,source:"retrieval",week:retrievalWeek,retrievalFromWeek:retrievalWeek})).filter(q=>Array.isArray(q.choices)&&q.choices.length===4):[];
     const candidateQuestions=currentCanonical.concat(supplemental,retrievalCanonical);
     const adapter=window.KhaemenesHighAssessmentAdapter||null;
     const storageKey=`${STATE_KEY}:monte-carlo:week:retention-v1:${week}`;
