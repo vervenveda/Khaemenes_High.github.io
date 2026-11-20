@@ -234,10 +234,13 @@ test("all English diagnostics use fresh cache-distinct course assets",()=>{
  }
 });
 
-test("shared High School chrome routes English pages into the English worker recovery bridge",()=>{
- const chrome=read("assets/high-school-global-chrome-v2.js");
- assert.match(chrome,/high-school-english-worker-recovery-v1\.js/);
- assert.match(chrome,/ensureEnglishRecovery/);
+test("English readiness diagnostics use the native worker recovery bridge without a chrome dependency",()=>{
+ const recovery=read("assets/high-school-english-worker-recovery-v1.js");
+ assert.ok(recovery.length>500,"English native worker-recovery script must remain substantive");
+ for(const grade of [10,11,12]){
+  const diagnostic=read("courses/language-arts/english-"+grade+"/assessments/diagnostic/index.html");
+  assert.match(diagnostic,/high-school-english-worker-recovery-v1\.js/,"Grade "+grade+" must retain the native worker guard");
+ }
 });
 
 

@@ -20,7 +20,7 @@ for(const course of courses){
  const html=source(dossier),unitHtml=source(unit);
  assert(unitHtml.includes('id="assigned-reading"'),course+" original assigned reading missing");
  assert(unitHtml.includes('href="reading-dossier.html#week-13"'),course+" unit entry missing");
- const allowedUiScripts=new Set(["/Khaemenes_High.github.io/assets/high-school-global-chrome-v2.js","https://vervenveda.com/assets/vnv-ecosystem-toolbar.js"]);
+ const allowedUiScripts=new Set(["https://vervenveda.com/assets/vnv-ecosystem-toolbar.js"]);
  for(const script of html.matchAll(/<script\b([^>]*)>([\s\S]*?)<\/script>/gi)){
   const src=script[1].match(/\bsrc="([^"]+)"/i)?.[1]||"";
   assert.equal(script[2].trim(),"","Unit 05 dossier must not contain inline executable code");

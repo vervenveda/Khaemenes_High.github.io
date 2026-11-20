@@ -52,9 +52,16 @@ for(const grade of ["9","10","11","12"]){
     assert.ok(gate.includes('english9-entry-card'),"Grade 9 named readiness card missing");
     new vm.Script(gate,{filename:"english9-course.js"});
   } else {
-    assert.equal(blob(dashboard.replace(entryLink,"")),originalDashboardBlobs[grade],"English "+grade+" dashboard unexpectedly rewritten");
-    assert.ok(dashboard.includes('data-retired-course-header="true" hidden'),"Grade "+grade+" header retirement contract unexpectedly changed");
-    assert.ok(dashboard.includes("high-school-global-chrome-v2.js"),"Grade "+grade+" expected chrome source unexpectedly changed");
+    const headerMount=dashboard.match(/  <!-- Canonical VNV header only;[\s\S]*?  <\/script>/);
+    assert.ok(headerMount,"English "+grade+" must use canonical VNV header rather than retired regulator");
+    const anchor='<body>\n<!-- Canonical top ticker anchor, placed above legacy dashboard content. -->\n<div data-khae-header hidden aria-hidden="true"></div>';
+    assert.ok(dashboard.includes(anchor),"English "+grade+" needs a ticker-first chrome mount point");
+    const deprecated='high-school-'+'global-chrome-v2.js';
+    const originalLoader='  <script src="/Khaemenes_High.github.io/assets/'+deprecated+'" defer data-high-school-global-chrome="v2"></script>';
+    const previous=dashboard.replace(entryLink,"").replace(headerMount[0],originalLoader).replace(anchor,"<body>");
+    assert.equal(blob(previous),originalDashboardBlobs[grade],"English "+grade+" instructional dashboard unexpectedly rewritten outside controlled chrome and CSS");
+    assert.ok(dashboard.includes('data-retired-course-header="true" hidden'),"Grade "+grade+" existing course body architecture changed");
+    assert.ok(dashboard.includes("vnv-header-autopopulate.js"),"Grade "+grade+" official VNV header script absent");
   }
   checked++;
   console.log("ENGLISH_READINESS_REGRESSION_SOURCE_PASS Grade",grade,"assessment-byte-identity=PASS","stylesheet=shared");

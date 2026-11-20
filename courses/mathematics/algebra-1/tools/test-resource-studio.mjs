@@ -22,7 +22,6 @@ for(const file of pages){
  const injected=[...html.matchAll(/<script\b[^>]*\bsrc\s*=\s*["']([^"']+)["']/gi)].map(m=>m[1]);
  const allowed=new Set([
   '/Khaemenes_High.github.io/assets/vnv-dual-ticker-v1.js',
-  '/Khaemenes_High.github.io/assets/high-school-global-chrome-v2.js',
   'https://vervenveda.com/assets/vnv-ecosystem-toolbar.js'
  ]);
  ok(injected.length<=3&&injected.every(url=>allowed.has(url)),file+' only canonical Academy chrome/ticker/toolbar');

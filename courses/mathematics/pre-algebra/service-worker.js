@@ -88,7 +88,6 @@ function isMutableRuntime(request,url){
     path.endsWith(".json")||
     path.includes("/courses/shared/")||
     path.includes("/courses/mathematics/assets/")||
-    path.endsWith("/assets/high-school-global-chrome-v2.js")||
     path.endsWith("/assets/vnv-dual-ticker-v1.js");
 }
 async function networkFirst(request,{ignoreSearch=false}={}){

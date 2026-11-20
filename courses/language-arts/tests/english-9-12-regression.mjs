@@ -27,12 +27,13 @@ assert.match(learningOrganizationSource,/Collapse All/);
 assert.match(learningOrganizationSource,/article\.lesson-day/);
 assert.match(learningOrganizationSource,/article\.lesson-detail/);
 
-const globalChrome=path.resolve(languageArts,"..","..","assets","high-school-global-chrome-v2.js");
-const globalChromeSource=read(globalChrome);
-assert.match(globalChromeSource,/khaemenesHighTypography="16-33-66"/,"global typography contract marker missing");
-assert.match(globalChromeSource,/font-size","16px","important"/,"global 16px readable floor missing");
-assert.match(globalChromeSource,/font-size:33px!important/,"global 33px heading rule missing");
-assert.match(globalChromeSource,/font-size:66px!important/,"global 66px primary-title rule missing");
+const canonicalLandingCss=read(path.resolve(languageArts,"assets","english-minimal-landing-v1.css"));
+assert.match(canonicalLandingCss,/font-size:16px/,"canonical readable body/button text missing");
+assert.match(canonicalLandingCss,/33px/,"canonical Academy heading size missing");
+assert.match(canonicalLandingCss,/66px/,"canonical English hero size missing");
+const officialChromeLoader=read(path.resolve(languageArts,"..","..","assets","high-navigation-v1.js"));
+assert.match(officialChromeLoader,/vnv-dual-ticker-v1\\.js/,"High School official two-ticker guard missing");
+assert.match(officialChromeLoader,/vnv-ecosystem-toolbar\\.js/,"Official ecosystem toolbar fallback missing");
 
 
 function duplicateIds(html){

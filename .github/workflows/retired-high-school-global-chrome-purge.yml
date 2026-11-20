@@ -1,0 +1,36 @@
+name: Purged retired High School global chrome guard
+on:
+  push:
+    branches:
+      - main
+      - fix/purge-retired-high-school-global-chrome-v2-20261119
+    paths:
+      - "courses/language-arts/english-*/index.html"
+      - "courses/science/**/index.html"
+      - "courses/social-studies/**/index.html"
+      - "electives/index.html"
+      - "courses/mathematics/**/service-worker.js"
+      - "assets/high-navigation-v1.js"
+      - ".github/workflows/*.yml"
+      - "assets/high-navigation-v1.js"
+      - "tools/validate-retired-high-school-global-chrome-purge.mjs"
+      - ".github/workflows/retired-high-school-global-chrome-purge.yml"
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  source-purge-integrity:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "24"
+      - name: Verify repository-wide retired chrome purge and canonical replacement
+        run: |
+          node --check assets/high-navigation-v1.js
+          node tools/validate-retired-high-school-global-chrome-purge.mjs
+      - name: Check surviving Academy CSS and English readiness contracts
+        run: |
+          node tools/high-school-typography-audit.mjs
+          node tools/validate-english-09-12-readiness-css.mjs

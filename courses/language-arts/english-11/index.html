@@ -89,7 +89,23 @@ table{width:100%;border-collapse:collapse}th,td{padding:.78rem;border-bottom:1px
 </style>
 <script defer src="../../../assets/academy-unified-print-header.js"></script><link rel="stylesheet" href="../../../assets/high-navigation-v1.css" data-high-navigation-css>
 
-  <script src="/Khaemenes_High.github.io/assets/high-school-global-chrome-v2.js" defer data-high-school-global-chrome="v2"></script>
+  <!-- Canonical VNV header only; the existing high-navigation-v1.js owns dual ticker discovery and ecosystem toolbar fallback. -->
+  <script src="https://vervenveda.com/assets/vnv-header-autopopulate.js?v=2.1.0" defer data-vnv-header-autopopulate="canonical"></script>
+  <script>
+  document.addEventListener("DOMContentLoaded",()=>{
+    const mount=()=>{
+      if(document.getElementById("vnvHeaderAutoPopulate"))return;
+      window.VNV_HEADER?.mount?.({
+        replaceLegacy:false,title:"English 11 · Language Arts",
+        subtitle:"Khaemenes Academy · Grade 11",icon:"K",
+        home:"https://vervenveda.com/KhaemenesAcademy_Home.github.io/",
+        actions:[]
+      });
+    };
+    if(document.documentElement.dataset.khaeDualTicker==="mounted")mount();
+    else window.addEventListener("khaemenes-high-dual-ticker-ready",mount,{once:true});
+  },{once:true});
+  </script>
 
 <style id="khaemenes-english-landing-release-v1">
 /* KHAEMENES_ENGLISH_LANDING_RELEASE_V1
@@ -254,6 +270,8 @@ body .footer span{color:#fff8e9;font-size:16px}
 </style><link rel="stylesheet" href="../assets/english-readiness-ui-v1.css?v=1.0.0" data-ka-english-readiness-ui="v1">
 </head>
 <body>
+<!-- Canonical top ticker anchor, placed above legacy dashboard content. -->
+<div data-khae-header hidden aria-hidden="true"></div>
 <a class="skip" href="#portalMain">Skip to course portal</a>
 <header class="topbar" data-retired-course-header="true" hidden>
   <div class="shell topbar-inner">
