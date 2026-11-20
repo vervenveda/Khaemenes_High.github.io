@@ -1,0 +1,21 @@
+name: Student Record Sync Readiness — Zero Writes
+on:
+  pull_request:
+    paths:
+      - "portfolio/index.html"
+      - "portfolio/portfolio-student-record-connections.js"
+      - "tools/validate-student-record-sync-preflight.mjs"
+      - ".github/workflows/student-record-sync-readiness.yml"
+  push:
+    paths:
+      - "portfolio/index.html"
+      - "portfolio/portfolio-student-record-connections.js"
+      - "tools/validate-student-record-sync-preflight.mjs"
+      - ".github/workflows/student-record-sync-readiness.yml"
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Verify learner isolation and absolutely no record writes
+        run: node tools/validate-student-record-sync-preflight.mjs
