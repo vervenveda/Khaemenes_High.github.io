@@ -20,7 +20,21 @@ for(let n=1;n<=12;n++){
     `courses/science/integrated-science-9/units/unit-${u}/unit-assessment.html`
   );
 }
-const pages=[...cumulative,...unitPages],fail=[];
+const support=[
+  "courses/science/integrated-science-9/assessments/units-01-04/printable-test.html",
+  "courses/science/integrated-science-9/assessments/units-01-04/student-record.html",
+  "courses/science/integrated-science-9/assessments/midterm-practice/printable-test.html",
+  "courses/science/integrated-science-9/assessments/midterm-practice/student-record.html",
+  "courses/science/integrated-science-9/assessments/units-05-07/printable-test.html",
+  "courses/science/integrated-science-9/assessments/units-05-07/student-record.html",
+  "courses/science/integrated-science-9/assessments/units-08-09/printable-test.html",
+  "courses/science/integrated-science-9/assessments/units-08-09/student-record.html",
+  "courses/science/integrated-science-9/assessments/units-10-12/printable-test.html",
+  "courses/science/integrated-science-9/assessments/units-10-12/student-record.html",
+  "courses/science/integrated-science-9/assessments/final-exam/printable-exam.html",
+  "courses/science/integrated-science-9/assessments/final-exam/student-record.html"
+];
+const pages=[...cumulative,...unitPages,...support],fail=[];
 const count=(s,re)=>(s.match(re)||[]).length;
 
 for(const file of pages){
@@ -40,7 +54,7 @@ for(const file of pages){
   ]) if(got!==want) fail.push(file+" · "+name+" expected "+want+" found "+got);
 
   if(/<header class="site-header"/i.test(s)) fail.push(file+" · local site header returned");
-  if(/high-school-global-chrome-v2\.js|assessment-landing-chrome\.js|khaemenes-typography-standard/.test(s)) fail.push(file+" · legacy presentation authority returned");
+  if(/high-school-global-chrome-v2\.js|assessment-landing-chrome\.js|khaemenes-typography-standard|vnv-beta-link\.js/.test(s)) fail.push(file+" · legacy presentation authority returned");
 }
 
 for(const file of cumulative.filter(f=>f.includes("/assessments/")&&!f.endsWith("/assessments/index.html"))){
@@ -58,6 +72,12 @@ for(const file of unitPages){
   const expected=file.endsWith("mastery-quiz.html")?"quiz-app.js":"assessment-app.js";
   if(!s.includes(expected)) fail.push(file+" · protected app runtime missing "+expected);
 }
+{
+  const s=fs.readFileSync("courses/science/integrated-science-9/units/unit-12/testing-lab.js","utf8");
+  for(const token of ["Math.abs(bm)>1e-12","improvement=hasBaseline","Not defined (zero baseline)"]){
+    if(!s.includes(token)) fail.push("Unit 12 prototype testing lab · zero-baseline guard missing "+token);
+  }
+}
 if(fail.length){
   console.error(JSON.stringify({status:"FAIL",fail},null,2));
   process.exit(1);
@@ -66,5 +86,6 @@ console.log(JSON.stringify({
   status:"PASS",
   scope:"Integrated Science 9 assessment surfaces",
   pages:pages.length,
-  contract:"canonical VNV shell; readiness, Monte Carlo, question banks and unit app runtimes retained"
+  support_pages:support.length,
+  contract:"canonical VNV shell; readiness, Monte Carlo, question banks, unit app runtimes, print/record support and Unit 12 zero-baseline guard retained"
 },null,2));
