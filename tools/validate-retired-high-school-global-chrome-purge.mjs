@@ -53,4 +53,36 @@ for(const grade of [10,11,12]){
   }
   console.log("RETIRED_CHROME_REMOVED English",grade,"official header and native ticker contract PASS");
 }
+const subjectPages=[
+  "courses/science/integrated-science-9/index.html",
+  "courses/science/biology-10/index.html",
+  "courses/science/chemistry-11/index.html",
+  "courses/science/physics-engineering-12/index.html",
+  "courses/social-studies/grade-09/index.html",
+  "courses/social-studies/grade-10/index.html",
+  "courses/social-studies/grade-11/index.html",
+  "courses/social-studies/grade-12/index.html"
+];
+for(const file of subjectPages){
+ const html=fs.readFileSync(file,"utf8");
+ assert.equal((html.match(/vnv-header-autopopulate\\.js\\?v=2\\.1\\.0/g)||[]).length,1,file+" must load exactly one official header");
+ assert.ok(html.includes('data-khae-header hidden aria-hidden="true"'),file+" must mount top ticker first");
+ assert.ok(html.includes('window.addEventListener("khaemenes-high-dual-ticker-ready",mount,{once:true});'),file+" must wait for canonical native tickers");
+ assert.ok(html.includes("high-navigation-v1.js"),file+" must retain the existing navigation, ticker and ecosystem dock owner");
+ assert.ok(html.includes("high-school-class-tools-universal-v1.js"),file+" must retain native left learning tools");
+}
+for(const file of [
+ "courses/mathematics/pre-algebra/service-worker.js",
+ "courses/mathematics/algebra-1/service-worker.js",
+ "courses/mathematics/geometry/service-worker.js",
+ "courses/mathematics/algebra-2/service-worker.js"
+]){
+ const worker=fs.readFileSync(file,"utf8");
+ assert.ok(!worker.includes(bannedAsset),file+" must not precache a missing resource");
+ new vm.Script(worker,{filename:file});
+}
+const electives=fs.readFileSync("electives/index.html","utf8");
+assert.ok(!electives.includes(bannedAsset),"Electives must not request the retired asset");
+assert.ok(electives.includes("khaemenes-global-header.js"),"Electives' existing Academy header retained");
+console.log("CANONICAL_SUBJECT_CHROME_PASS",subjectPages.length,"subject pages; 4 math service workers; electives");
 console.log("HIGH_SCHOOL_GLOBAL_CHROME_PURGE_PASS; no active source references remain");
