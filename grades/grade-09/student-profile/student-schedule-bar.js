@@ -93,6 +93,7 @@ async function renderHost(host){
    const quickSection=el("section","schedule-quick-section");
    quickSection.setAttribute("aria-label","Personal Quick Pins");
    quickSection.append(el("h3","schedule-quick-title","My Favorite Shortcuts"));
+   quickSection.append(el("p","schedule-quick-boundary","Quick Pins are personal shortcuts only. They do not change enrollment, grades, or mastery."));
    const quickGrid=el("div","schedule-quick-grid");
    for(const resource of quick.list()){
      const card=el("article","schedule-tile schedule-quick");
