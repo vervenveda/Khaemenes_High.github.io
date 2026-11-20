@@ -42,4 +42,10 @@ check(g9.includes('{label:"Schedule",href:"schedule/"}'),"Grade 9 toolbar uses p
 check(upper.includes('{label:"Schedule",url:highRoot+"grades/grade-"+grade+"/student-profile/schedule/"}'),"upper grade toolbar uses grade page links");
 check(css.includes("--parchment:#eee5d4")&&css.includes("--cream:#fff8e9")&&css.includes("--ink:#243038"),"VNV charcoal cream parchment palette");
 check(!css.includes("border-radius:14px"),"7px corners only");
+check(css.includes(".schedule-card{background:var(--cream);border:3px solid var(--ink)"),"3px charcoal class-card border");
+check(css.includes(".schedule-stat,.schedule-feature{background:var(--cream);border:3px solid var(--ink)"),"3px charcoal stat and feature-card borders");
+check(css.includes("padding:7px 14px;border:3px solid var(--ink);border-radius:7px"),"3px charcoal button border and 7px radius");
+check(js.includes('card.append(title);'),"class title first in DOM");
+check(!js.includes('(i+1)+". "+item.label'),"no repeated numbered subject label");
+check(js.includes('if(category&&name&&category!==name&&!name.includes(category))'),"nonredundant subject labels only");
 console.log("STANDALONE SCHEDULE: PASS (Grades 09–12, canonical gateway tools, core features, route/page, graphs, pins and scroll ownership source checks).");
