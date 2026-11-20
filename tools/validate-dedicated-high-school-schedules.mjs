@@ -26,9 +26,20 @@ for(const grade of ["09","10","11","12"]){
  check(s.includes('id="averageCompletion"')&&s.includes('id="averageGrades"'),p+" progress indicators");
  check(s.includes("high-school-schedule-page.js")&&s.includes("high-school-schedule-page.css"),p+" canonical owners");
  check(!s.includes("<dialog")&&!s.includes("showModal("),p+" has no popup");
+ check((s.match(/>Back to Profile<\\/a>/g)||[]).length===1,p+" exactly one back button");
+ for(const file of ["vnv-333-ticker.js","vnv-ticker-autopopulate.js","vnv-header-autopopulate.js","vnv-class-tools-toolbar.js","vnv-ecosystem-toolbar.js","vnv-language.js"]){
+  check(s.split(file).length===2,p+" canonical singleton "+file);
+ }
+ check(s.includes("id=\"vnv-schedule-tools-config\""),p+" gateway tools configuration");
+ check(s.includes("data-vct-language-panel"),p+" translator inside canonical left toolbar");
+ for(const label of ["Learner Profile","Parent Profile","Enrollment"])
+  check(s.includes(">"+label+"</a>"),p+" "+label+" doorway");
+ check((s.match(/class="schedule-feature"/g)||[]).length===4,p+" even 2x2 features");
 }
 const g9=read("grades/grade-09/student-profile/dashboard-layout.js");
 const upper=read("grades/shared/grade09-blueprint-upper-grade.js");
 check(g9.includes('{label:"Schedule",href:"schedule/"}'),"Grade 9 toolbar uses page link");
 check(upper.includes('{label:"Schedule",url:highRoot+"grades/grade-"+grade+"/student-profile/schedule/"}'),"upper grade toolbar uses grade page links");
-console.log("STANDALONE SCHEDULE: PASS (Grades 09–12, route/page, graphs, pins and scroll ownership source checks).");
+check(css.includes("--parchment:#eee5d4")&&css.includes("--cream:#fff8e9")&&css.includes("--ink:#243038"),"VNV charcoal cream parchment palette");
+check(!css.includes("border-radius:14px"),"7px corners only");
+console.log("STANDALONE SCHEDULE: PASS (Grades 09–12, canonical gateway tools, core features, route/page, graphs, pins and scroll ownership source checks).");
