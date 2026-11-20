@@ -74,13 +74,17 @@
     if(result.allow)return;
     document.documentElement.dataset.english9EntryBlocked="true";
     const gate=document.createElement("section");gate.className="english9-entry-gate";gate.setAttribute("role","dialog");gate.setAttribute("aria-modal","true");gate.setAttribute("aria-labelledby","english9EntryTitle");
-    gate.style.cssText="position:fixed;inset:0;z-index:99999;display:grid;place-items:center;padding:20px;background:#191919eF;color:#fff";
-    const card=document.createElement("article");card.style.cssText="max-width:620px;padding:26px;border:1px solid #d7d1c5;border-radius:7px;background:#fff;color:#191919";
-    const title=document.createElement("h1");title.id="english9EntryTitle";title.textContent=result.title;title.style.fontWeight="400";
-    const message=document.createElement("p");message.textContent=result.message;
-    const link=document.createElement("a");link.href=result.href;link.textContent=result.label;link.style.cssText="display:inline-block;padding:12px 16px;border:1px solid #705719;border-radius:7px;background:#705719;color:#fff;text-decoration:none";
-    const home=document.createElement("a");home.href=new URL("../",new URL("../",document.currentScript?.src||location.href)).href;home.textContent="English 9 home";home.style.cssText="display:inline-block;margin-left:10px;padding:12px 16px;border:1px solid #d7d1c5;border-radius:7px;color:#191919;text-decoration:none";
-    card.append(title,message,link,home);gate.append(card);document.querySelectorAll("body > :not(script)").forEach(node=>{node.inert=true});document.body.append(gate);link.focus();
+    // This is the existing learner-owned readiness gate, not another header,
+    // assessment engine, or competing global CSS layer.
+    gate.style.cssText="position:fixed;inset:0;z-index:99999;display:grid;place-items:center;padding:24px 16px;overflow:auto;background:rgba(15,24,21,.78);color:#25342b";
+    const card=document.createElement("article");card.style.cssText="box-sizing:border-box;width:min(100%,620px);max-height:calc(100dvh - 48px);overflow:auto;margin:auto;padding:clamp(24px,4vw,44px);border:2px solid #b08a4a;border-radius:7px;background:#fffaf0;color:#25342b;text-align:center;box-shadow:0 20px 55px rgba(0,0,0,.25)";
+    const eyebrow=document.createElement("p");eyebrow.textContent="NAIB · LANGUAGE ARTS 9 ENTRY CHECK";eyebrow.style.cssText="margin:0 auto 14px;color:#62471e;font:400 14px/1.5 Nunito,Arial,sans-serif;letter-spacing:.08em";
+    const title=document.createElement("h1");title.id="english9EntryTitle";title.textContent=result.title;title.style.cssText="margin:0 auto 18px;color:#25342b;font:400 clamp(28px,4vw,36px)/1.25 Cinzel,Georgia,serif";
+    const message=document.createElement("p");message.textContent=result.message;message.style.cssText="margin:0 auto 20px;max-width:510px;color:#35473c;font:400 17px/1.7 Nunito,Arial,sans-serif";
+    const actions=document.createElement("div");actions.style.cssText="display:flex;justify-content:center;flex-wrap:wrap;gap:11px";
+    const link=document.createElement("a");link.href=result.href;link.textContent=result.label;link.style.cssText="display:inline-flex;align-items:center;justify-content:center;min-height:48px;min-width:190px;padding:11px 18px;border:1px solid #2b3c33;border-radius:7px;background:#2b3c33;color:#fff8e9;text-decoration:none;font:400 16px/1.4 Nunito,Arial,sans-serif";
+    const home=document.createElement("a");home.href=new URL("../",new URL("../",document.currentScript?.src||location.href)).href;home.textContent="English 9 home";home.style.cssText="display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:11px 18px;border:1px solid #b08a4a;border-radius:7px;background:#fffaf0;color:#25342b;text-decoration:none;font:400 16px/1.4 Nunito,Arial,sans-serif";
+    actions.append(link,home);card.append(eyebrow,title,message,actions);gate.append(card);document.querySelectorAll("body > :not(script)").forEach(node=>{node.inert=true});document.body.append(gate);link.focus();
   }
   const pathName=typeof location!=="undefined"?String(location.pathname||""):"";
   const requiresEntry=document.body?.hasAttribute("data-english9-require-entry")||/\/weeks\/week-\d+(?:\/|$)/.test(pathName);
