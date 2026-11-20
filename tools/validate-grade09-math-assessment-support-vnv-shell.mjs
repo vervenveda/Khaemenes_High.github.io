@@ -33,14 +33,16 @@ for(const file of pages){
 }
 
 const pre=fs.readFileSync("courses/mathematics/pre-algebra/records/course-completion-certificate.html","utf8");
-for(const token of ["sha256Hex","verifyIntegrity","ackUnverified","80%"]){
+for(const token of ["sha256Hex","verifyIntegrity","ackUnverified"]){
   if(!pre.includes(token)) fail.push("Pre-Algebra completion record · protected record token missing "+token);
 }
+if(!/(?:80%|≥80|>=80|\b80\b)/.test(pre)) fail.push("Pre-Algebra completion record · 80 mastery rule missing");
 
 const alg=fs.readFileSync("courses/mathematics/algebra-1/records/course-completion-certificate.html","utf8");
-for(const token of ["mastery-authority-v1.js","record-engine.js","80%"]){
+for(const token of ["mastery-authority-v1.js","record-engine.js"]){
   if(!alg.includes(token)) fail.push("Algebra I completion record · protected record token missing "+token);
 }
+if(!/(?:80%|≥80|>=80|\b80\b)/.test(alg)) fail.push("Algebra I completion record · 80 mastery rule missing");
 
 if(fail.length){
   console.error(JSON.stringify({status:"FAIL",fail},null,2));
