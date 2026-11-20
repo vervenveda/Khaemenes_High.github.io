@@ -74,17 +74,24 @@ function masteryHistoryFor(week){return Array.isArray(state.masteryHistory?.[wee
 function masterySourceLabel(source){return({"weekly-open-book":"Weekly open-book mastery check","educator-review":"Educator-reviewed result","reassessment":"Correction / reassessment","imported-record":"Imported / prior record"}[source]||"Recorded result")}
 function appendMasteryRecord(week,score,source,note){state.masteryHistory[week]=masteryHistoryFor(week);state.masteryHistory[week].push({score,source,recordedAt:new Date().toISOString(),note:String(note||"").trim()});state.masteryHistory[week]=state.masteryHistory[week].slice(-12)}
 let activeWeeklySession=null,activeWeeklyQuestions=[],activeWeeklyWeek=null;
-function weeklyAssessmentKey(week){return KEY+"::mc::weekly::"+String(week)}
+function weeklyAssessmentKey(week){return KEY+"::mc::weekly::retention-v1::"+String(week)}
 function weeklyQuestionBank(week){return (window.KhaemenesBiology10QuestionBank||[]).filter(q=>Number(q.week)===Number(week))}
+function biologyRetentionPool(week){
+ const current=weeklyQuestionBank(week).map(q=>({...q,id:"current-w"+String(week).padStart(2,"0")+"::"+q.id,source:"current",originalId:q.id}));
+ if(week<=1)return{pool:current,sourceQuotas:{current:5},retrievalFrom:null,blueprint:"5-current"};
+ const lag=1+(week%3),priorWeek=Math.max(1,week-lag),prior=weeklyQuestionBank(priorWeek);
+ const delayed=prior.map(q=>({...q,id:"retrieval-w"+String(priorWeek).padStart(2,"0")+"::"+q.id,source:"retrieval",retrievalFromWeek:priorWeek,originalId:q.id}));
+ return{pool:[...current,...delayed],sourceQuotas:{current:4,retrieval:1},retrievalFrom:priorWeek,blueprint:"4-current+1-delayed"};
+}
 function weeklyMasteryMarkup(w){
- const MC=window.KhaeMonteCarloAssessment,bank=weeklyQuestionBank(w.week);
+ const MC=window.KhaeMonteCarloAssessment,retention=biologyRetentionPool(w.week),bank=retention.pool;
  if(!MC||bank.length<5)return '<div class="notice"><strong>Weekly mastery check unavailable:</strong> the public practice engine or five-question weekly bank did not load. No mastery will be recorded and the next week remains locked.</div>';
  const key=weeklyAssessmentKey(w.week);
  activeWeeklyWeek=w.week;
- activeWeeklySession=MC.openSession(key,bank,{kind:"biology-week-"+w.week,count:bank.length});
- activeWeeklyQuestions=MC.materialize(bank,activeWeeklySession);
+ activeWeeklySession=MC.openSession(key,bank,{kind:"biology-week-"+w.week,count:5,sourceQuotas:retention.sourceQuotas});
+ activeWeeklyQuestions=MC.materialize(bank,activeWeeklySession).map(q=>({...q,retrievalFromWeek:q.retrievalFromWeek??retention.retrievalFrom}));
  const prior=MC.getResponses(key,activeWeeklySession.id),best=masteryScore(w.week);
- return `<form id="weeklyMasteryForm"><p class="small">Open-book formative mastery · ${activeWeeklyQuestions.length} questions · 80% required · the same form and option order remain in place for corrections until mastery is reached.</p>${best!==null?`<div class="notice"><strong>Best demonstrated weekly mastery:</strong> ${best}%. ${best>=COURSE.passingTarget?"This week is mastered; optional review cannot remove that mastery.":"Correct missed reasoning below and resubmit this same form."}</div>`:""}${activeWeeklyQuestions.map((q,i)=>`<section class="question" role="group" aria-labelledby="weekly-question-title-${i}"><p id="weekly-question-title-${i}"><strong>${i+1}. ${esc(q.prompt)}</strong></p><p class="small">${esc(q.type)} · ${esc(q.topic||("Week "+w.week))}</p>${q.options.map((o,oi)=>`<label><input type="radio" name="wq${i}" value="${oi}" data-weekly-qid="${esc(q.id)}" required ${Number(prior[q.id])===oi?"checked":""}> <span>${esc(o)}</span></label>`).join("")}</section>`).join("")}<button type="submit">Score Weekly Mastery Check</button></form><div id="weeklyMasteryFeedback" role="status" aria-live="polite" aria-atomic="true"></div>`;
+ return `<form id="weeklyMasteryForm"><p class="small">Open-book formative mastery · 5 questions · ${w.week===1?"current learning only":"4 current + 1 delayed retrieval"} · 80% required · the same form and option order remain in place for corrections until mastery is reached.</p>${best!==null?`<div class="notice"><strong>Best demonstrated weekly mastery:</strong> ${best}%. ${best>=COURSE.passingTarget?"This week is mastered; optional review cannot remove that mastery.":"Correct missed reasoning below and resubmit this same form."}</div>`:""}${activeWeeklyQuestions.map((q,i)=>`<section class="question" role="group" aria-labelledby="weekly-question-title-${i}"><p id="weekly-question-title-${i}"><strong>${i+1}. ${esc(q.prompt)}</strong></p><p class="small">${esc(q.type)} · ${q.source==="retrieval"?`Delayed retrieval · Week ${q.retrievalFromWeek}`:`Current Week ${w.week}`} · ${esc(q.topic||("Week "+w.week))}</p>${q.options.map((o,oi)=>`<label><input type="radio" name="wq${i}" value="${oi}" data-weekly-qid="${esc(q.id)}" required ${Number(prior[q.id])===oi?"checked":""}> <span>${esc(o)}</span></label>`).join("")}</section>`).join("")}<button type="submit">Score Weekly Mastery Check</button></form><div id="weeklyMasteryFeedback" role="status" aria-live="polite" aria-atomic="true"></div>`;
 }
 function wireWeeklyMastery(){
  const form=$("weeklyMasteryForm");
@@ -103,20 +110,21 @@ function scoreWeeklyMastery(form){
  if(!MC||!activeWeeklySession||assessmentConflict||localStorage.getItem(KEY)!==stateSnapshot||!MC.isActive(key,activeWeeklySession.id)){
   alert("This learner or weekly mastery record changed in another tab. Reload before submitting to protect newer work.");return;
  }
- let correct=0,misses=[];
+ let correct=0,misses=[],currentCorrect=0,currentTotal=0,delayedCorrect=0,delayedTotal=0;
  activeWeeklyQuestions.forEach((q,i)=>{
-  const chosen=form.querySelector(`input[name="wq${i}"]:checked`),selected=chosen?+chosen.value:null;
-  if(chosen&&selected===q.answer)correct++;
+  const chosen=form.querySelector(`input[name="wq${i}"]:checked`),selected=chosen?+chosen.value:null,ok=!!chosen&&selected===q.answer;
+  if(q.source==="retrieval"){delayedTotal++;if(ok)delayedCorrect++}else{currentTotal++;if(ok)currentCorrect++}
+  if(ok)correct++;
   else misses.push({n:i+1,week:q.week,type:q.type,answer:q.options[q.answer],why:q.explanation});
  });
- const pct=Math.round(correct/activeWeeklyQuestions.length*100),prior=masteryScore(week),best=Math.max(prior===null?0:prior,pct);
+ const retention={blueprint:week===1?"5-current":"4-current+1-delayed",current:{correct:currentCorrect,total:currentTotal,percent:currentTotal?Math.round(currentCorrect/currentTotal*100):null},delayed:{correct:delayedCorrect,total:delayedTotal,percent:delayedTotal?Math.round(delayedCorrect/delayedTotal*100):null},retrieval_from_weeks:[...new Set(activeWeeklyQuestions.filter(q=>q.source==="retrieval").map(q=>q.retrievalFromWeek).filter(Number.isFinite))]},pct=Math.round(correct/activeWeeklyQuestions.length*100),prior=masteryScore(week),best=Math.max(prior===null?0:prior,pct);
  state.mastery[week]=best;
- appendMasteryRecord(week,pct,"weekly-open-book",pct>=COURSE.passingTarget?"Mastery check passed.":"Correction attempt preserved; same form retained without reshuffling.");
+ appendMasteryRecord(week,pct,"weekly-open-book",`${pct>=COURSE.passingTarget?"Mastery check passed.":"Correction attempt preserved; same form retained without reshuffling."}${retention.delayed.total?` Delayed retention ${retention.delayed.percent}% from Week ${retention.retrieval_from_weeks.join(", ")}.`:""}`);
  if(!save())return;
  const passed=pct>=COURSE.passingTarget;
- if(passed)MC.complete(key,{score:correct,total:activeWeeklyQuestions.length,percent:pct,passed:true,week},activeWeeklySession.id);
+ if(passed)MC.complete(key,{score:correct,total:activeWeeklyQuestions.length,percent:pct,passed:true,week,retention},activeWeeklySession.id);
  const feedback=$("weeklyMasteryFeedback");
- if(feedback)feedback.innerHTML=`<div class="feedback ${passed?"good":"bad"}"><strong>${pct}% · ${correct}/${activeWeeklyQuestions.length}</strong><p>${passed?"Weekly mastery target met. The next week is now available.":"Below 80%. Correct the missed reasoning and resubmit this same form; questions and option order will not reshuffle."}</p>${misses.length?`<details open><summary>Correction guidance</summary><ol>${misses.map(m=>`<li>Question ${m.n}: ${esc(m.why)} <span class="small">Correct response: ${esc(m.answer)}</span></li>`).join("")}</ol></details>`:""}</div>`;
+ if(feedback)feedback.innerHTML=`<div class="feedback ${passed?"good":"bad"}"><strong>${pct}% · ${correct}/${activeWeeklyQuestions.length}${retention.delayed.total?` · delayed retention ${retention.delayed.percent}% (${retention.delayed.correct}/${retention.delayed.total})`:""}</strong><p>${passed?"Weekly mastery target met. The next week is now available.":"Below 80%. Correct the missed reasoning and resubmit this same form; questions and option order will not reshuffle."}</p>${misses.length?`<details open><summary>Correction guidance</summary><ol>${misses.map(m=>`<li>Question ${m.n}: ${esc(m.why)} <span class="small">Correct response: ${esc(m.answer)}</span></li>`).join("")}</ol></details>`:""}</div>`;
  if(passed){
   form.querySelectorAll("input,button[type=submit]").forEach(el=>el.disabled=true);
  }
