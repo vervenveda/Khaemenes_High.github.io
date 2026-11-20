@@ -7,6 +7,7 @@ const gradeCtx=window.KhaemenesHighProfileGradeContext;
 const profile=window.KhaemenesStudentProfileV2,contract=window.KhaemenesCourseEntryContract;
 const g9=window.KhaemenesGrade09Courses;
 const pathBase="https://vervenveda.com/Khaemenes_High.github.io/grades/grade-"+grade+"/student-profile/";
+const languageDirectory="https://vervenveda.com/Khaemenes_Linguistics.github.io/Halls/high-school-language-directory/?grade="+grade;
 const $=id=>document.getElementById(id);
 const valid=n=>typeof n==="number"&&Number.isFinite(n)&&n>=0&&n<=100;
 const fmt=n=>Number.isInteger(n)?String(n):n.toFixed(1);
@@ -149,7 +150,8 @@ async function render(){
    if(grade==="09"&&g9?.recordLaunch)a.addEventListener("click",()=>g9.recordLaunch(item.id,result.url,item.title));
    actions.append(a);
   }else{
-   const choose=element("a","schedule-btn","Choose Course");choose.href=pathBase+"profile/";actions.append(choose);
+   const isLanguage=item.subject==="foreignLanguage";
+   const choose=element("a","schedule-btn",isLanguage?"Choose Language":"Choose Course");choose.href=isLanguage?languageDirectory:pathBase+"profile/";actions.append(choose);
   }
   if(item.id&&item.pinAvailable){
    const btn=element("button","schedule-btn secondary",pinned.has(item.id)?"Unpin":"Pin Class");
@@ -166,7 +168,16 @@ async function render(){
    });
    actions.append(btn);
   }
-  card.append(actions);grid.append(card);
+  card.append(actions);
+  // Course selection is a separate authority from Pin/Unpin. Keep the
+  // two-button class action row intact and expose language changes discreetly.
+  if(item.subject==="foreignLanguage"&&item.id){
+   const change=element("a","schedule-language-choice","Change language");
+   change.href=languageDirectory;
+   change.setAttribute("aria-label","Choose another foreign language");
+   card.append(change);
+  }
+  grid.append(card);
  }
  const reported=gathered.map(x=>x.pct).filter(valid);
  const graded=gathered.map(x=>x.average).filter(valid);
