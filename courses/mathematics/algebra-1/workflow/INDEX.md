@@ -2,6 +2,7 @@
 
 | Date | Type | Entry | State |
 | --- | --- | --- | --- |
+| 2026-11-20 | assessment support · records | [Assessment support layer](logs/2026/11/2026-11-20-assessment-support-layer.md) | Administration guide + completion record canonicalized; mastery authority + record engine retained; support validator PASS |
 | 2026-11-20 | assessment shell · workflow verification | [Assessment shell workflow verification](logs/2026/11/2026-11-20-assessment-shell-workflow-verification.md) | Weekly + Units 01–13 + midterm/final recorded; learner scope repaired; source validators PASS; hosted CI unverified; browser/device HOLD |
 | 2026-11-19 | forensic audit · repair · hardening | [Five-bubble Algebra I hardening pass](logs/2026/11/2026-11-19-five-bubble-hardening-pass.md) | Typography hierarchy + verified persistence + learner-scope confirmation + single progression authority + explicit next-step contracts; assessment content untouched; browser/device HOLD |
 | 2026-11-18 | full re-audit · Exceptional source architecture | [Full Exceptional Source Re-Audit](logs/2026/11/2026-11-18-full-exceptional-source-reaudit.md) | 360 weekly items + 8+2 retrieval + lesson-balanced unit mastery + mixed-evidence exams; all source-controlled categories Exceptional; browser/device HOLD |
