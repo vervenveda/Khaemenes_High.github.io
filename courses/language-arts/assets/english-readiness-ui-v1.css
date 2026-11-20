@@ -64,7 +64,7 @@ body > .english9-entry-gate .english9-entry-footer {
 
 /* English 9–12: actual diagnostic/readiness assessment page, never an overlay.
    Center the explanation, prevent 68vh empty heroes, and maintain native forms. */
-body[data-english-readiness-grade] {
+html:root:root body[data-english-readiness-grade] {
   --ka-readiness-charcoal:#252b2b;
   --ka-readiness-cream:#fff8e9;
   --ka-readiness-paper:#f4f0e7;
