@@ -78,7 +78,7 @@ jobs:
           node --check grades/grade-09/student-profile/student-quick-pins.js
           node --check grades/grade-09/student-profile/student-schedule-bar.js
           node --check grades/grade-09/student-profile/student-profile-preferences.js
-          node --check grades/grade-09/student-profile/seven-class-schedule.js
+          # Retired seven-class schedule removed; canonical eight-class Schedule is verified above.
       - name: Validate Grade 09 daily start and dashboard controls
         run: node --test tests/grade09-dashboard-entry-regression.test.mjs
       - name: Validate profile quick-link coverage
