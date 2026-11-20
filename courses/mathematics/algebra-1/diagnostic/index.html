@@ -6,6 +6,7 @@
 <meta name="theme-color" content="#242c29">
 <title>Algebra I Readiness Diagnostic · Khaemenes Academy</title>
 
+<script src="../../../shared/course-entry-contract.js"></script>
 <script src="/Khaemenes_High.github.io/courses/mathematics/algebra-1/assets/algebra1-worker-recovery-v1.js" defer data-algebra1-worker-recovery="v1"></script>
 
 <style id="algebra1-diagnostic-clean-v1">
@@ -415,7 +416,7 @@ footer{
       <h2 id="resultTitle"></h2>
       <p class="score" id="resultScore"></p>
       <div class="breakdown" id="breakdown"></div>
-      <div class="assessment-actions" id="readinessNextActions" aria-label="Readiness next steps"><a class="btn dark" id="readinessNextLink" href="../units/unit-01/">Open Unit 01</a><button class="btn" id="readinessRetakeButton" type="button">Retake Diagnostic</button></div>
+      <div class="assessment-actions" id="readinessNextActions" aria-label="Readiness next steps"><a class="btn dark" id="readinessNextLink" href="../units/unit-01/lessons/lesson-01-algebraic-habits-notation-mathematical-argument.html">Open Unit 01</a><button class="btn" id="readinessRetakeButton" type="button">Retake Diagnostic</button></div>
       <p id="readinessNextMessage" role="status" aria-live="polite"></p>
     </section>
 
@@ -569,6 +570,61 @@ function persistResult(result){
   evidence.updated=new Date().toISOString();
   return safeSet(CONFIG.result_key,JSON.stringify(evidence))?evidence:null;
 }
+// This 36-question readiness record is NOT an Algebra I course grade.
+function qualifyingReadinessAttempt(attempt){
+ if(!attempt||attempt.id!==CONFIG.id||attempt.total!==CONFIG.question_count)return false;
+ const score=Number(attempt.score),percent=Number(attempt.percent);
+ return Number.isInteger(score)&&score>=0&&score<=CONFIG.question_count&&
+  Number.isFinite(percent)&&percent>=80&&percent<=100&&
+  Math.abs((score/CONFIG.question_count)*100-percent)<0.2;
+}
+function hasPassingResult(evidence){
+ return (Array.isArray(evidence?.attempt_history)?evidence.attempt_history:[])
+  .some(qualifyingReadinessAttempt)||qualifyingReadinessAttempt(evidence?.lastResult);
+}
+function attachReadinessForCurrentLearner(event){
+ const contract=window.KhaemenesCourseEntryContract;
+ const profile=contract?.readAcademyProfile?.();
+ const message=$("#readinessNextMessage");
+ const evidence=(()=>{try{return JSON.parse(safeGet(CONFIG.result_key)||"null")}catch{return null}})();
+ if(!profile){
+  event.preventDefault();
+  if(message)message.textContent="Choose your registered Academy learner first. Your existing 36-question result remains saved and has not been changed.";
+  return;
+ }
+ if(!hasPassingResult(evidence)){
+  event.preventDefault();
+  if(message)message.textContent="The saved readiness result does not show a verified passing attempt on this device. No result was changed.";
+  return;
+ }
+ try{
+  const scoped=contract.readJSON(CONFIG.result_key,null,profile);
+  if(!hasPassingResult(scoped)){
+   // This is explicit, learner-initiated attribution of existing browser-local
+   // readiness evidence. Preserve all previous learner attempts, and never
+   // claim this unverified browser record is an official course grade.
+   const existing=Array.isArray(scoped?.attempt_history)?scoped.attempt_history:[];
+   const incoming=(Array.isArray(evidence.attempt_history)?evidence.attempt_history:[])
+    .filter(qualifyingReadinessAttempt);
+   if(!incoming.length&&qualifyingReadinessAttempt(evidence.lastResult))incoming.push(evidence.lastResult);
+   const known=new Set(existing.map(a=>[a?.id,a?.submitted,a?.score,a?.total].join("|")));
+   const combined=[...existing,...incoming.filter(a=>!known.has([a?.id,a?.submitted,a?.score,a?.total].join("|")))];
+   const best=Math.max(Number(scoped?.bestScore)||0,...combined.filter(qualifyingReadinessAttempt).map(a=>a.percent));
+   const merged={...(scoped||{}),result_schema:"khaemenes-algebra1-cumulative-evidence-v2",
+    assessment_id:CONFIG.id,attempt_history:combined,bestScore:best,
+    bestSelectedScore:best,bestOverallScore:best,mastery:best>=80,
+    lastResult:combined[combined.length-1]||evidence.lastResult,
+    attribution:{source:"browser-local-readiness",action:"learner-chose-begin-lesson",
+      learnerId:profile.learnerId,at:new Date().toISOString(),officialCredit:false}};
+   contract.writeJSON(CONFIG.result_key,merged,profile);
+   if(!hasPassingResult(contract.readJSON(CONFIG.result_key,null,profile)))
+    throw new Error("Readback did not confirm the passing readiness record.");
+  }
+ }catch{
+  event.preventDefault();
+  if(message)message.textContent="Could not connect readiness evidence to the active learner. The original result is preserved; do not retake solely to repair this link.";
+ }
+}
 function showResult(result){
   $("#results").hidden=false;
   $("#resultTitle").textContent=result.percent>=80?"Readiness demonstrated":"Targeted review recommended";
@@ -577,8 +633,8 @@ function showResult(result){
   $("#breakdown").innerHTML=Object.entries(result.breakdown).map(([k,v])=>'<p><strong>'+esc(k.replaceAll("_"," "))+'</strong><br>'+v.correct+'/'+v.total+' ('+Math.round(v.correct/v.total*100)+'%)</p>').join("");
   const passed=result.percent>=80;
   const next=$("#readinessNextLink");
-  next.href=passed?"../units/unit-01/":"../../pre-algebra/";
-  next.textContent=passed?"Open Unit 01 · Begin Lesson 01":"Continue to Pre-Algebra";
+  next.href=passed?"../units/unit-01/lessons/lesson-01-algebraic-habits-notation-mathematical-argument.html":"../../pre-algebra/";
+  next.textContent=passed?"Use saved readiness · Begin Unit 01 Lesson 01":"Continue to Pre-Algebra";
   $("#readinessNextMessage").textContent=passed
     ?"Readiness target met. Open Unit 01, where the lesson mastery gates remain in force."
     :"Readiness below 80%. Review the results, retake this diagnostic, or strengthen foundations in Pre-Algebra.";
@@ -660,6 +716,10 @@ $("#assessmentDate").value=new Date().toLocaleDateString();
 render();
 try{
   const evidence=JSON.parse(safeGet(CONFIG.result_key)||"null");
+  $("#readinessNextLink")?.addEventListener("click",event=>{
+    if($("#readinessNextLink")?.getAttribute("href")?.includes("/units/unit-01/"))
+      attachReadinessForCurrentLearner(event);
+  });
   if(evidence?.lastResult)showResult(evidence.lastResult);
 }catch{}
 </script>
