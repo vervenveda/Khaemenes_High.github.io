@@ -56,7 +56,7 @@ ok(a1Map.calendar?.final_week === 36, "Algebra I Final remains Week 36");
 
 const landing = read(path.join(a1, "index.html"));
 const progression = read(path.join(a1, "assets/course-progression-gates.js"));
-ok(landing.includes('class="network-ticker"') || landing.includes('high-school-global-chrome-v2.js') || landing.includes('course-entry-contract.js'), "Algebra I landing carries or mounts the canonical ticker/chrome contract");
+ok(landing.includes('class="network-ticker"') || landing.includes('vnv-dual-ticker-v1.js') || landing.includes('course-entry-contract.js'), "Algebra I landing carries or mounts the canonical ticker/chrome contract");
 ok(landing.includes('class="portal-menu"'), "Algebra I landing carries the dropdown course menu");
 ok(landing.includes('id="lessonLibrary"'), "Algebra I landing carries the lesson drawer directory");
 ok(landing.includes("87 Lesson Directory"), "Algebra I menu exposes the 87-lesson directory");
