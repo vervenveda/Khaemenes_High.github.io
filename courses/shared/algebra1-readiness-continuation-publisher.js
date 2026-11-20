@@ -45,15 +45,16 @@ function publish(){
  const ledger=global.KhaemenesLearningContinuation;
  if(!profile||!contract?.readJSON||typeof ledger?.publish!=="function"||typeof ledger?.readCourse!=="function")return false;
  const attempts=collect(contract.readJSON(KEY,null,profile));
- if(!attempts.length)return false;
+ if(!attempts.length||attempts.length>240)return false; // preserve source history; never truncate.
  // Never copy response choices, work snapshots, or other private answer data.
- const rows=attempts.slice(-100).map(a=>({
+ const rows=attempts.map(a=>({
   id:ASSESSMENT+":"+a.submitted,
   kind:"test",
   title:"Algebra I Readiness Diagnostic · placement only",
   earned:a.score,possible:36,gradedAt:a.submitted
  }));
  const current=ledger.readCourse(profile.learnerId,COURSE);
+ if(current&&current.source!=="algebra1-readiness-linked-diagnostic-v1")return false; // no foreign owner overwrite
  // Idempotence: comparing these content fields prevents publishing the same
  // evidence repeatedly and avoids spurious updates to the ledger timestamp.
  const old=Array.isArray(current?.assessments)?current.assessments:[];
