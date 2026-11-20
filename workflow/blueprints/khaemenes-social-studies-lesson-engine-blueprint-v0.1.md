@@ -60,3 +60,17 @@ The **Source Analysis & Corroboration Studio** opens in a native `<details>` acc
 
 ## Source-specific content boundaries
 Course curriculum was inspected directly from repository originals on November 19, 2026. The engine **does not claim that the four courses have identical assignments or assessment authorities**; the explicit four-grade maps are based on existing Week 1 source headings and named source activities.
+
+
+## Integration update · 2026-11-19 · Week 01 across all four grades
+
+The shared engine now has explicitly verified, fail-open adapters for all four existing first-week student packets, rather than just a Grade 09 pilot. Grade 09 continues using the original day and phase button events. The additional grade configurations each map their five inquiry stages to the actual first-week Monday–Friday lesson headings in the existing HTML:
+- Grade 10 `courses/social-studies/grade-10/week-01/student-packet.html` — original five `article.lesson` blocks.
+- Grade 11 `courses/social-studies/grade-11/weeks/week-01/student-packet.html` — original five `section.card` day blocks.
+- Grade 12 `courses/social-studies/grade-12/weeks/week-01/student-packet.html` — original five day `article` blocks in Five-Day Sequence.
+
+The engine does **not** hide, replace or submit original forms. It scrolls to the corresponding native instructional block. Missing or renamed lesson headings prevent the engine from mounting, leaving the original packet fully available. Four grade scripts use the same versioned owner `social-studies-lesson-engine-v0.1.js`, with version token `20261119-social-studies-all-grades-v2`.
+
+This implementation is **Week 01 in all four grades**. Week 02 onward has not been automatically altered; it needs individual packet-schema checks, particularly because course themes and evidence assignments change weekly.
+
+The four-grade regression test and GitHub workflow were extended to cover exact native Monday–Friday headings and opt-in markers. Source checks and JS parse passed in the connector session. Browser rendering and GitHub Actions job conclusion remain unverified.
