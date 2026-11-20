@@ -54,6 +54,6 @@ assert.equal(missing[0].path,"courses/social-studies/grade-09/weeks/week-27/stud
 assert.equal(originalWeekdayHeadings,885,"Expected 177 native five-day packets (Grade 9 Week 01 is a 20-phase native workspace)");
 assert.equal(examWeeks.length,10,"End-of-term source files must be preserved across all grade paths");
 assert.deepEqual(otherFailures,[],"Unexpected full-course integration failures");
-console.log("PASS Social Studies engine SOURCE integration: 143/144 grade-weeks, 178 packet files, 870 weekday headings, native exams/evidence intact.");
+console.log("PASS Social Studies engine SOURCE integration: 143/144 grade-weeks, 178 packet files, 885 weekday headings, native exams/evidence intact.");
 console.log("DOCUMENTED HOLD: Grade 9 Week 27 original student packet absent; no fabricated replacement.");
 console.log("CI browser/runtime mastery acceptance still requires separate evidence.");
