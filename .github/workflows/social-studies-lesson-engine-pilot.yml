@@ -13,10 +13,16 @@ on:
       - 'courses/social-studies/grade-10/weeks/week-02/student-packet.html'
       - 'courses/social-studies/grade-11/weeks/week-02/student-packet.html'
       - 'courses/social-studies/grade-12/weeks/week-02/student-packet.html'
+      - 'courses/social-studies/grade-09/weeks/week-03/student-packet.html'
+      - 'courses/social-studies/grade-10/week-03/student-packet.html'
+      - 'courses/social-studies/grade-10/weeks/week-03/student-packet.html'
+      - 'courses/social-studies/grade-11/weeks/week-03/student-packet.html'
+      - 'courses/social-studies/grade-12/weeks/week-03/student-packet.html'
       - 'workflow/engines/social-studies/social-studies-engine-prototype-v0.1.html'
       - 'workflow/blueprints/khaemenes-social-studies-lesson-engine-blueprint-v0.1.md'
       - 'tools/test-social-studies-lesson-engine-v0.1.mjs'
       - 'tools/test-social-studies-week02-engine.mjs'
+      - 'tools/test-social-studies-week03-engine.mjs'
       - '.github/workflows/social-studies-lesson-engine-pilot.yml'
   pull_request:
   workflow_dispatch:
@@ -35,3 +41,5 @@ jobs:
       - run: node tools/test-social-studies-lesson-engine-v0.1.mjs
       - run: node --check tools/test-social-studies-week02-engine.mjs
       - run: node tools/test-social-studies-week02-engine.mjs
+      - run: node --check tools/test-social-studies-week03-engine.mjs
+      - run: node tools/test-social-studies-week03-engine.mjs
