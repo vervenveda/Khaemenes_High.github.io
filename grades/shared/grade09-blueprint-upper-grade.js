@@ -78,7 +78,11 @@ function href(item){
 }
 function snapshots(){const id=identity();return id&&continuation?.readLearner?.(id)||[]}
 function step(item){
- const snap=snapshots().find(s=>s.courseId===item.id);
+ // Upper English's historical record authority publishes ela10/ela11/ela12.
+ // Class cards use english-10/11/12. Match both without migrating records.
+ const englishRecordId={"english-10":"ela10","english-11":"ela11","english-12":"ela12"}[item.id];
+ const snap=snapshots().find(s=>s.courseId===item.id)||
+  (englishRecordId?snapshots().find(s=>s.courseId===englishRecordId):null);
  const courseHome=href(item),first=item.firstStepHref||courseHome;
  const clean=url=>{try{const u=new URL(url,location.href);return u.origin+u.pathname.replace(/\/+$/,"/")}catch{return String(url||"").replace(/[?#].*$/,"").replace(/\/+$/,"/")}};
  const snapshotHref=snap?.nextHref&&item.subject!=="foreignLanguage"?snap.nextHref:null;
@@ -86,8 +90,9 @@ function step(item){
  // snapshot send a learner into another math course (or an external origin).
  // This only validates navigation; it cannot award progress or mastery.
  const mathCourse=/^(pre-algebra|algebra-1|geometry|algebra-2)$/.test(item.id||"");
+ const englishCourse=/^english-(?:10|11|12)$/.test(item.id||"");
  const approvedSnapshot=(()=>{
-  if(!snapshotHref||!mathCourse)return snapshotHref;
+  if(!snapshotHref||!(mathCourse||englishCourse))return snapshotHref;
   try{
    const target=new URL(snapshotHref,location.href),home=new URL(courseHome,location.href);
    const coursePath=home.pathname.endsWith("/")?home.pathname:home.pathname+"/";
