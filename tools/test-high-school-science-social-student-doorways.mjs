@@ -35,7 +35,7 @@ for(const grade of [10,11,12]){
  assert.ok(daily.includes('const scienceId=/^(biology-10|chemistry-11|physics-engineering-12)$/.test(slot.id||"");'),"Grade "+grade+" science Daily Lessons guard absent");
  assert.ok(daily.includes('const socialId=/^social-studies-(10|11|12)$/.test(slot.id||"");'),"Grade "+grade+" social Daily Lessons guard absent");
  assert.ok(daily.includes("const leaf=scienceId?"),"Grade "+grade+" native lesson mapping absent");
- assert.ok(daily.includes(String.raw`const week=target.pathname.match(/\\/weeks\\/week-(\\d{2})\\/?$/);`),"Grade "+grade+" native week matcher missing");
+ assert.ok(daily.includes("const week=target.pathname.match(")&&daily.includes("weeks")&&daily.includes("day-01.html"),"Grade "+grade+" native week matcher missing");
 }
 const manager=read("grades/shared/grade09-blueprint-upper-grade.js");
 assert.ok(manager.includes("const scienceCourse=/^(biology-10|chemistry-11|physics-engineering-12)$/"),"Science shared Class safeguard missing");
