@@ -41,10 +41,10 @@ const registry=fs.readFileSync(registryPath,"utf8");
 for(const token of [
  '["integrated-science-9","global-studies-9"].includes(course.id)',
  "window.KhaemenesLearningContinuation?.readLearner",
- 'repoPath("courses/science/integrated-science-9/diagnostic/lessons/day-01.html")',
+ 'repoPath("courses/science/integrated-science-9/units/unit-01/lessons/day-01.html")',
  "async function resolveContinueFor(id)"
 ]) if(!registry.includes(token))fail.push("Grade 09 course registry missing "+token);
-if(registry.includes('repoPath("courses/science/integrated-science-9/units/unit-01/lessons/day-01.html")'))fail.push("Science 9 post-readiness fallback still skips Unit 00");
+if(registry.includes('repoPath("courses/science/integrated-science-9/diagnostic/lessons/day-01.html")'))fail.push("Science 9 post-readiness fallback still returns to Unit 00 after continuation evidence");
 
 const daily=fs.readFileSync(dailyPath,"utf8");
 if(!daily.includes("registry.resolveContinueFor(course.id)"))fail.push("Grade 09 Daily Lessons is not resolving course-owned continuation");
@@ -62,5 +62,5 @@ console.log(JSON.stringify({
  scope:"Grade 09 Science 9 course continuation and detailed lesson routing",
  weeks:weeks.length,
  unit_lesson_contract:"Unit 00=5, Unit 01=10, Units 02-12=15",
- continuation:"first incomplete detailed lesson; weekly mastery remains in week workspace"
+ continuation:"pre-readiness diagnostic; post-readiness first Unit 01 lesson; weekly mastery remains in week workspace"
 },null,2));
