@@ -1,0 +1,35 @@
+name: Grade 09 Assessment Mentor Guidance
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'assets/grade09-assessment-mentor-guidance-v1.js'
+      - 'courses/mathematics/pre-algebra/assessments/index.html'
+      - 'courses/mathematics/pre-algebra/diagnostic/index.html'
+      - 'courses/language-arts/english-9/assessments/**'
+      - 'courses/science/integrated-science-9/assessments/index.html'
+      - 'courses/science/integrated-science-9/diagnostic/index.html'
+      - 'courses/social-studies/grade-09/assessments/**'
+      - 'tests/grade09-assessment-mentor-guidance.test.cjs'
+      - '.github/workflows/grade09-assessment-mentor-guidance.yml'
+  pull_request:
+    paths:
+      - 'assets/grade09-assessment-mentor-guidance-v1.js'
+      - 'tests/grade09-assessment-mentor-guidance.test.cjs'
+      - '.github/workflows/grade09-assessment-mentor-guidance.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  static-integrity:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Verify isolated mentor guide and all nine mounts
+        run: node tests/grade09-assessment-mentor-guidance.test.cjs
