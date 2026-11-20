@@ -1,0 +1,35 @@
+name: High School Science & Social Studies Student Doors
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'courses/science/*/index.html'
+      - 'courses/social-studies/grade-*/index.html'
+      - 'courses/shared/high-school-eight-class.js'
+      - 'grades/shared/grade09-blueprint-upper-grade.js'
+      - 'grades/shared/upper-grade-daily-focus.js'
+      - 'grades/grade-09/student-profile/**'
+      - 'grades/grade-1*/student-profile/index.html'
+      - 'grades/grade-1*/student-profile/daily-lessons/index.html'
+      - 'tools/test-high-school-science-social-student-doorways.mjs'
+      - 'tools/test-grade09-lesson-route-normalization.mjs'
+      - '.github/workflows/high-school-science-social-student-doorways.yml'
+  pull_request:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  route-integrity:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: node --check grades/shared/grade09-blueprint-upper-grade.js
+      - run: node --check grades/shared/upper-grade-daily-focus.js
+      - run: node --check grades/grade-09/student-profile/student-course-registry.js
+      - run: node --check grades/grade-09/student-profile/seven-class-schedule.js
+      - run: node tools/test-high-school-science-social-student-doorways.mjs
+      - run: node tools/test-grade09-lesson-route-normalization.mjs
+      - run: node tools/test-high-school-english-student-doorways.mjs
