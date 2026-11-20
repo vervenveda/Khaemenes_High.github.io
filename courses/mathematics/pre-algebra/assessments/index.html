@@ -272,17 +272,7 @@
     .assessment-nav a:hover{border-color:var(--line);background:#fff}
 
     /* Hero */
-    .hero{
-      min-height:calc(100svh - 122px);
-      display:grid;
-      align-items:center;
-      padding:clamp(76px,10vw,132px) 0;
-      text-align:center;
-      border-bottom:1px solid var(--line);
-      background:
-        linear-gradient(rgba(255,254,250,.89),rgba(248,245,238,.89)),
-        repeating-linear-gradient(0deg,transparent 0 39px,rgba(11,11,11,.045) 40px);
-    }
+    
     .hero .wrap{max-width:1160px}
     .eyebrow{
       margin:0 0 14px;
@@ -293,22 +283,8 @@
       text-align:center;
       text-transform:uppercase;
     }
-    .hero h1{
-      max-width:1120px;
-      margin:0 auto 22px;
-      color:#050505;
-      font:400 clamp(43px,7vw,84px)/.98 var(--math);
-      letter-spacing:-.035em;
-      overflow-wrap:anywhere;
-      text-wrap:balance;
-    }
-    .hero .lead{
-      max-width:900px;
-      margin:0 auto;
-      color:#35332f;
-      font-size:clamp(17px,2vw,21px);
-      line-height:1.72;
-    }
+    
+    .hero 
     .math-signature{
       max-width:1080px;
       margin:30px auto 0;
@@ -531,22 +507,8 @@
       gap:8px;
       margin-top:18px;
     }
-    .btn{
-      min-height:44px;
-      display:inline-flex;
-      justify-content:center;
-      align-items:center;
-      padding:9px 14px;
-      border:1px solid #aaa397;
-      border-radius:7px;
-      color:#111;
-      background:#fff;
-      text-decoration:none;
-      font-weight:444;
-      line-height:1.25;
-      white-space:normal;
-    }
-    .btn.primary{border-color:#111;color:#fff;background:#111}
+    
+    
     .btn:hover{border-color:#111;transform:translateY(-1px)}
 
     .evidence-summary dl{display:grid;gap:0;margin:22px 0}
@@ -650,8 +612,8 @@
       .campus-nav{justify-content:flex-start}
       .campus-nav a{min-height:36px;font-size:10px;padding:6px 8px}
       .course-breadcrumb .wrap{justify-content:flex-start;text-align:left}
-      .hero{min-height:auto;padding:72px 0 78px}
-      .hero h1{font-size:clamp(39px,11.5vw,62px)}
+      
+      
       .math-signature{display:grid;grid-template-columns:1fr 1fr}
       .math-signature span{justify-content:center;white-space:normal;text-align:center}
       .landing-grid{grid-template-columns:1fr}
@@ -663,7 +625,7 @@
       .math-signature{grid-template-columns:1fr}
       .checklist-head{display:grid}
       .checklist-progress{justify-self:start}
-      .checklist-actions .btn{width:100%}
+      .checklist-actions 
     }
     @media(max-width:430px){
       .brand-copy strong{font-size:9.5px}
@@ -694,10 +656,10 @@
 /* Cosmetic presentation only: no assessment or saved-data changes. */
 html:root body{--ka-charcoal:#202724;--ka-cream:#fff8e9;--ka-parchment:#f7f1e5;font:400 18px/1.65 "Brandon Grotesque",Nunito,"Avenir Next",Arial,sans-serif!important;background:var(--ka-parchment);color:var(--ka-charcoal)}
 html:root body :is(main,section,article,aside,nav,.wrap,.workspace){min-width:0}
-html:root body .hero{text-align:center;padding-block:clamp(33px,5vw,66px)}
+html:root body 
 html:root body .hero :is(.wrap,.container){max-width:1080px;margin-inline:auto}
 html:root body .hero .eyebrow{font:400 clamp(24px,3.6vw,33px)/1.3 Cinzel,Georgia,serif!important;text-align:center}
-html:root body .hero h1{font:400 clamp(36px,6.2vw,66px)/1.13 Cinzel,Georgia,serif!important;text-align:center;overflow-wrap:break-word}
+html:root body 
 html:root body .hero :is(.lead,p:not(.eyebrow)){max-width:850px;margin-inline:auto;font-size:18px;line-height:1.7}
 html:root body :is(main,section) h2{font-family:Cinzel,Georgia,serif;font-weight:400;line-height:1.25}
 html:root body :is(button,.btn,.button,input,select,textarea){font-family:"Brandon Grotesque",Nunito,Arial,sans-serif;font-size:16px;border-radius:7px}
@@ -707,12 +669,12 @@ html:root body footer.footer{background:#202724!important;color:#fff8e9!importan
 html:root body footer.footer a{color:#fff8e9!important}
 html:root body footer.footer :is(nav,.footer-links){justify-content:center;flex-wrap:wrap}
 html:root body footer.footer :is(p,small,a){font-size:16px}
-@media(max-width:680px){html:root body .hero{padding-inline:18px}html:root body .hero h1{font-size:clamp(33px,9vw,55px)!important}}
+@media(max-width:680px){html:root body html:root body }
 @media print{#vnv333NetworkTicker,#vnvTickerAutoPopulate,#vnvHeaderAutoPopulate,#vnvEnrichedMenuOverlay{display:none!important}html:root body{background:white!important;color:black!important}}
 
 /* Final Academy contrast and accessible text overrides; limited to these five landing pages. */
 html:root:root body{font-size:18px!important;color:#202724!important;background:#f7f1e5!important}
-html:root:root body .hero{background:#202724!important;color:#fff8e9!important}
+html:root:root body 
 html:root:root body .hero :is(h1,.eyebrow,.lead){color:#fff8e9!important;opacity:1!important}
 html:root:root body .hero p:not(.notice):not(.eyebrow){color:#fff8e9!important}
 html:root:root body .hero .notice{color:#202724!important;background:#f7f1e5!important;border-color:#bba67f!important}
@@ -726,7 +688,7 @@ html:root:root body :is(.field label,.form-label,.caption){font-size:18px!import
 html:root:root body :is(.grid,.actions){align-items:stretch}
 html:root:root body :is(.actions,.results-actions){justify-content:center}
 html:root:root body footer.footer{font-size:18px!important}
-@media print{html:root:root body{font-size:16px!important;background:#fff!important;color:#111!important}html:root:root body .hero{background:#fff!important;color:#111!important}}
+@media print{html:root:root body{font-size:16px!important;background:#fff!important;color:#111!important}html:root:root body }
 </style>
 <style id="ka-prealgebra-assessments-chrome-accessibility-v1">
 /* Limit typography adjustments to this landing page's shared chrome. */
@@ -750,10 +712,10 @@ html:root body #vnv-language-rail #vnv-language-switch{
 /* Forensic page typography and layout. Presentation only; preserves assessments and local records. */
 html:root:root body #main{font-family:"Brandon Grotesque",Nunito,"Avenir Next",Arial,sans-serif;font-size:18px;line-height:1.65;color:#202724}
 html:root:root body #main :is(p,li,dt,dd,span,small,label,button,a,summary,input,select,textarea){font-size:max(16px,1em);line-height:1.55}
-html:root:root body #main .hero{min-height:0!important;padding:66px 24px!important;background:#202724!important;color:#fff8e9!important}
+html:root:root body #main 
 html:root:root body #main .hero .eyebrow{font:400 clamp(24px,3vw,33px)/1.32 Cinzel,Georgia,serif!important;color:#fff8e9!important;letter-spacing:.035em!important;text-transform:none!important}
-html:root:root body #main .hero h1{font:400 clamp(40px,6vw,66px)/1.14 Cinzel,Georgia,serif!important;color:#fff8e9!important;letter-spacing:0!important;max-width:1100px}
-html:root:root body #main .hero .lead{font-size:18px!important;color:#fff8e9!important;line-height:1.7!important}
+html:root:root body #main 
+html:root:root body #main .hero 
 html:root:root body #main .math-signature span{font:400 16px/1.5 "Brandon Grotesque",Nunito,Arial,sans-serif!important;background:#f7f1e5!important;color:#202724!important;border-color:#b6a88e!important;white-space:normal;text-align:center}
 html:root:root body #main section:not(.hero){padding:clamp(33px,5vw,66px) 0}
 html:root:root body #main .wrap{width:min(1120px,calc(100% - 36px));margin-inline:auto}
@@ -790,8 +752,8 @@ html:root:root body footer.footer .footer-inner{justify-content:center;align-ite
 html:root:root body footer.footer .footer-links{justify-content:center}
 html:root:root body footer.footer :is(span,a){font-size:16px!important}
 @media(max-width:900px){html:root:root body #main .pathway-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
-@media(max-width:720px){html:root:root body #main .landing-grid,html:root:root body #main .pathway-grid{grid-template-columns:1fr}html:root:root body #main .landing-card{min-height:0}html:root:root body #main .hero{padding:44px 18px!important}html:root:root body #main .wrap{width:min(100% - 28px,1120px)}}
-@media print{html:root:root body #main .hero{display:none!important}html:root:root body #main :is(p,li,small,span,label,dt,dd){font-size:16px!important;color:#111!important}html:root:root body #main :is(.landing-card,.pathway-card,.evidence-checklist,.evidence-summary){background:#fff!important;color:#111!important;box-shadow:none!important;break-inside:avoid}}
+@media(max-width:720px){html:root:root body #main .landing-grid,html:root:root body #main .pathway-grid{grid-template-columns:1fr}html:root:root body #main .landing-card{min-height:0}html:root:root body #main html:root:root body #main .wrap{width:min(100% - 28px,1120px)}}
+@media print{html:root:root body #main html:root:root body #main :is(p,li,small,span,label,dt,dd){font-size:16px!important;color:#111!important}html:root:root body #main :is(.landing-card,.pathway-card,.evidence-checklist,.evidence-summary){background:#fff!important;color:#111!important;box-shadow:none!important;break-inside:avoid}}
 
 /* Semantic hierarchy repair: the title names the section; supporting text is body-size. */
 html:root:root body #main .section-head h2{font:400 clamp(33px,4.2vw,44px)/1.2 Cinzel,Georgia,serif!important;color:#202724!important;letter-spacing:0!important;margin:0 auto 14px!important;text-align:center}
