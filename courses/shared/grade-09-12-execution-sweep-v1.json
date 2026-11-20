@@ -1,6 +1,6 @@
 {
   "schema": "khaemenes-grade-09-12-route-sweep-v1",
-  "scope": "Grade 9–12 core entrances and placement mathematics; this registry validates routes, not release certification",
+  "scope": "Grade 9–12 core entrances, Grade 12 PE/Capstone, and placement mathematics; this registry validates routes, not release certification",
   "policy": {
     "mastery_floor_percent": 80,
     "offline_core_required": true,
@@ -132,6 +132,20 @@
       "entry": "courses/mathematics/calculus-1/index.html",
       "kind": "placement-mathematics",
       "release_status": "handoff-not-certified"
+    },
+    {
+      "id": "physical-education-12",
+      "grade": 12,
+      "entry": "courses/physical-education/grade-12.html",
+      "kind": "grade-core",
+      "release_status": "audit-required"
+    },
+    {
+      "id": "senior-capstone",
+      "grade": 12,
+      "entry": "courses/capstone/senior-capstone/index.html",
+      "kind": "grade-core",
+      "release_status": "audit-required"
     }
   ]
 }
