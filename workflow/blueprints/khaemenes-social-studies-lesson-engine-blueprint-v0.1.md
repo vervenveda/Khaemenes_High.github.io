@@ -87,3 +87,15 @@ The reusable shared engine now contains three **explicitly separate week context
 Each packet retains the five original daily `h3` lesson targets and the existing `high-school-formative-evidence-v1.js`. Engine progression only scrolls to native content; its Source Analysis & Corroboration Studio remains ungraded and temporary. Incorrect or missing headings cause the enhanced guide to abstain and leave the original packet accessible.
 
 `tools/test-social-studies-week03-engine.mjs` and the expanded Social Studies CI workflow provide regression coverage; source syntax and five packet/25 heading checks were verified after commit. Do not claim browser or CI success until those results are available. Week 04 onward is not integrated.
+
+## End-of-course integration contract · 2026-11-19
+
+**Current source coverage:** 143 of 144 grade/week entries (178 original HTML packet paths) for the four 36-week High School Social Studies courses. All existing first-week through final-week packet files except **Grade 09 Week 27** have the shared engine import and grade opt-in. The missing Week 27 is explicitly a **HOLD**, not a passing course.
+
+**Weeks 04–36 behavior:** Rather than copying five generic headings or overwriting original curriculum, the engine detects the approved grade-specific student packet route, reads the current weekly title and essential question from the original DOM where available, resolves the original **five Monday–Friday H3 headings in order**, and derives a short instructional guide from the existing source objective. Each guide button scrolls to the actual native daily heading, including Grade 09 pages where all five headings share one card. On missing/ambiguous headings, the engine refuses to mount and the entire original packet remains accessible.
+
+**Isolation:** Existing Grade 09 Week 01 Read/Practice/Write/Check player, Week 02 and Week 03 specialist guidance, native source investigations, rubric assignments, 80% mastery gates, source storage, assessment and midterm/final/capstone controls are not changed. The engine never saves learner data or awards mastery. Script version: `20261119-social-studies-complete-v5`.
+
+**Regression:** `tools/test-social-studies-full-course-integration.mjs` checks all 144 grade/week entry combinations; currently expects 143 present entries, 178 original physical HTML packets, 885 native later-week day headings, 10 term-boundary packet files, and exactly one missing packet: `courses/social-studies/grade-09/weeks/week-27/student-packet.html`. The GitHub Actions workflow runs this check alongside the previously existing Weeks 01–03 checks. No successful CI or authenticated browser conclusion has yet been observed; source integration is not production acceptance.
+
+**Next repair:** Recover Grade 09 Week 27 content from an approved historical version or curriculum source, then integrate that packet and revise the full-coverage regression expectations to 144/144. Never invent that week's source document or overwrite another week's packet.
