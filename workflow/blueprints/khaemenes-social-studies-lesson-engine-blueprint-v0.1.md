@@ -74,3 +74,16 @@ The engine does **not** hide, replace or submit original forms. It scrolls to th
 This implementation is **Week 01 in all four grades**. Week 02 onward has not been automatically altered; it needs individual packet-schema checks, particularly because course themes and evidence assignments change weekly.
 
 The four-grade regression test and GitHub workflow were extended to cover exact native Monday–Friday headings and opt-in markers. Source checks and JS parse passed in the connector session. Browser rendering and GitHub Actions job conclusion remain unverified.
+
+
+## Week 03 integration update · 2026-11-19
+
+The reusable shared engine now contains three **explicitly separate week contexts**, not a blanket page regulator: Week 01 original paths, Week 02 curriculum-specific guidance, and Week 03 curriculum-specific guidance. Week 03 is installed on:
+- Grade 09: `grade-09/weeks/week-03/student-packet.html` — early humanity, archaeology, domestication, agricultural change, inequality.
+- Grade 10: `grade-10/week-03/student-packet.html` **and** `grade-10/weeks/week-03/student-packet.html` — revolution, competing liberty claims, Declaration/Loyalist/enslaved/Haudenosaunee sources.
+- Grade 11: `grade-11/weeks/week-03/student-packet.html` — the Declaration, Articles, grievances, constitutional government and unfinished equality.
+- Grade 12: `grade-12/weeks/week-03/student-packet.html` — power, authority, legitimacy, sovereignty, Weber and constitutional preambles.
+
+Each packet retains the five original daily `h3` lesson targets and the existing `high-school-formative-evidence-v1.js`. Engine progression only scrolls to native content; its Source Analysis & Corroboration Studio remains ungraded and temporary. Incorrect or missing headings cause the enhanced guide to abstain and leave the original packet accessible.
+
+`tools/test-social-studies-week03-engine.mjs` and the expanded Social Studies CI workflow provide regression coverage; source syntax and five packet/25 heading checks were verified after commit. Do not claim browser or CI success until those results are available. Week 04 onward is not integrated.
