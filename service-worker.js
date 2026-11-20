@@ -1,6 +1,6 @@
 "use strict";
 
-const CACHE_VERSION = "khaemenes-high-v42-runtime-recovery-20261118";
+const CACHE_VERSION = "khaemenes-high-v43-eight-class-hardening-20261120";
 // Generated from canonical game-registry.json; validated by tools/test-math-game-offline-cache.mjs.
 // Every canonical game and its shared runtime must be available on a newly installed offline worker.
 const GAME_PRECACHE_FILES = [
@@ -103,17 +103,25 @@ const OTHER_PRECACHE_FILES = [
   "./courses/shared/high-school-course-pins.js",
   "./courses/shared/high-school-eight-class.js",
   "./courses/shared/high-school-eight-class-views.js",
+  "./grades/shared/grade09-blueprint-upper-grade.js",
+  "./grades/shared/high-school-profile-grade-context.js",
+  "./grades/shared/upper-grade-class-progress-dialog.js",
+  "./portfolio/index.html",
+  "./portfolio/portfolio-academic-report.js",
+  "./portfolio/portfolio-student-record-connections.js",
+  "./courses/physical-education/grade-12.html",
+  "./courses/physical-education/grade-12-instruction.json",
+  "./courses/capstone/senior-capstone/index.html",
+  "./courses/capstone/senior-capstone/course-map.json",
   "./grades/grade-09/student-profile/index.html",
   "./grades/grade-09/student-profile/profile/index.html",
   "./grades/grade-09/student-profile/student-profile.css",
   "./grades/grade-09/student-profile/student-course-registry.js",
   "./grades/grade-09/student-profile/student-schedule-bar.js",
-  "./grades/grade-09/student-profile/seven-class-schedule.js",
   "./grades/grade-10/student-profile/index.html",
   "./grades/grade-11/student-profile/index.html",
   "./grades/grade-12/student-profile/index.html",
   "./grades/shared/upper-grade-profile.css",
-  "./grades/shared/upper-grade-seven-class.js",
   "./courses/shared/upper-english-records.js",
   "./assets/vervenveda-parchment.css",
   "./index.html",
