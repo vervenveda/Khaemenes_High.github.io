@@ -1,7 +1,7 @@
 /* Grade 9 parchment consistency: presentation only; no learner-state or STOS changes. */
 /* Explicit first-paint title and body typography, even before embedded course overrides. */
 html:root:root body:is([data-english9-require-entry],[data-science9-require-entry]) {
- font-size:14px!important;
+ font-size:16px!important;
 }
 html:root:root body:is([data-english9-require-entry],[data-science9-require-entry])
  :is(h1,h2,h3,h4,h5,h6,.brand h1,.hero-title,.page-title) {
