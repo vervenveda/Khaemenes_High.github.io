@@ -57,13 +57,34 @@ function instructionalRoute(item,record){
  if(grade==="09"&&g9?.resolveContinueFor){
   // Grade 09 registry resolves placement, gates and next instructional step.
   return Promise.resolve(g9.resolveContinueFor(item.id)).then(next=>{
-   const url=safeDestination(next?.url,item)||safeDestination(first,item)||safeDestination(home,item);
+   const proposed=safeDestination(next?.url,item);
+   const toPath=value=>{try{return new URL(value).pathname.replace(new RegExp("/+$"),"/")}catch{return null}};
+   const wasOverview=proposed&&home&&toPath(proposed)===toPath(home)&&next?.hasSpecificLocation!==true;
+   const url=(wasOverview?safeDestination(first,item):proposed)||safeDestination(first,item)||safeDestination(home,item);
    return {url,detail:next?.detail||record?.nextTitle||"Select the next learning step.",label:labelFor(url,item),kind:next?.actionLabel||""};
   }).catch(()=>({url:safeDestination(first,item)||safeDestination(home,item),detail:"Open the required step.",label:labelFor(first||home,item)}));
  }
  if(record&&!record.stale&&record.status!=="paused")selected=record.nextHref;
  if(record?.status==="paused")selected=home;
- const url=safeDestination(selected,item)||safeDestination(first,item)||safeDestination(home,item);
+ let url=safeDestination(selected,item)||safeDestination(first,item)||safeDestination(home,item);
+ if(url&&record?.status!=="paused"){
+  try{
+   const target=new URL(url),course=new URL(home||first||url);
+   const week=target.pathname.match(new RegExp("/weeks/week-([0-9]{2})/?$"));
+   const quiz=record?.status==="mastery"||record?.status==="corrections";
+   if(week){
+    if(/^english-(10|11|12)$/.test(item.id)){
+     if(quiz)url=target.href.split("#")[0]+"#quiz";
+     else if(week[1]==="01")url=new URL("weeks/week-01/"+(item.id==="english-10"?"monday/":"lessons/day-01.html"),course).href;
+     else url=target.href.split("#")[0]+"#monday";
+    }else if(!quiz&&/^(biology-10|chemistry-11|physics-engineering-12)$/.test(item.id))
+     url=new URL("weeks/week-"+week[1]+"/lessons/day-01.html",course).href;
+    else if(!quiz&&/^social-studies-(10|11|12)$/.test(item.id))
+     url=new URL("weeks/week-"+week[1]+"/student-packet.html",course).href;
+   }
+  }catch{}
+ }
+ url=safeDestination(url,item);
  return Promise.resolve({url,detail:record?.nextTitle||record?.summary||"Ready for your next step.",label:labelFor(url,item)});
 }
 function labelFor(url,item){
