@@ -5,6 +5,8 @@ on:
     paths:
       - 'courses/science/biology-10/question-bank.js'
       - 'courses/science/chemistry-11/question-bank.js'
+      - 'courses/science/chemistry-11/index.html'
+      - 'courses/science/chemistry-11/assessment-misconceptions-v1.json'
       - 'courses/science/physics-engineering-12/question-bank.js'
       - 'courses/science/tools/audit-upper-science-question-banks.mjs'
       - 'courses/science/tools/audit-high-school-science.mjs'
@@ -14,6 +16,8 @@ on:
     paths:
       - 'courses/science/biology-10/question-bank.js'
       - 'courses/science/chemistry-11/question-bank.js'
+      - 'courses/science/chemistry-11/index.html'
+      - 'courses/science/chemistry-11/assessment-misconceptions-v1.json'
       - 'courses/science/physics-engineering-12/question-bank.js'
       - 'courses/science/tools/audit-upper-science-question-banks.mjs'
       - 'courses/science/tools/audit-high-school-science.mjs'
