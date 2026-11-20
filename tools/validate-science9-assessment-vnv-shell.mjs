@@ -34,7 +34,13 @@ const support=[
   "courses/science/integrated-science-9/assessments/final-exam/printable-exam.html",
   "courses/science/integrated-science-9/assessments/final-exam/student-record.html"
 ];
-const pages=[...cumulative,...unitPages,...support],fail=[];
+const focusedPractice=[
+  "courses/science/integrated-science-9/units/unit-05/energy-food-web-check.html",
+  "courses/science/integrated-science-9/units/unit-05/population-sampling-check.html",
+  "courses/science/integrated-science-9/units/unit-05/biodiversity-conservation-check.html",
+  "courses/science/integrated-science-9/units/unit-05/evolution-evidence-check.html"
+];
+const pages=[...cumulative,...unitPages,...support,...focusedPractice],fail=[];
 const count=(s,re)=>(s.match(re)||[]).length;
 
 for(const file of pages){
@@ -65,6 +71,12 @@ for(const file of cumulative.filter(f=>f.includes("/assessments/")&&!f.endsWith(
   const s=fs.readFileSync("courses/science/integrated-science-9/diagnostic/readiness-diagnostic.html","utf8");
   for(const token of ["readiness-app.js","readiness-routing.js"]) if(!s.includes(token)) fail.push("Science 9 readiness · protected runtime missing "+token);
 }
+for(const file of focusedPractice){
+  const s=fs.readFileSync(file,"utf8");
+  for(const token of ["focused-practice-bank.js","focused-practice-app.js"]){
+    if(!s.includes(token)) fail.push(file+" · protected focused-practice runtime missing "+token);
+  }
+}
 for(const file of unitPages){
   const s=fs.readFileSync(file,"utf8");
   if(!s.includes("monte-carlo-assessment-v1.js")) fail.push(file+" · Monte Carlo runtime missing");
@@ -87,5 +99,6 @@ console.log(JSON.stringify({
   scope:"Integrated Science 9 assessment surfaces",
   pages:pages.length,
   support_pages:support.length,
+  focused_practice_pages:focusedPractice.length,
   contract:"canonical VNV shell; readiness, Monte Carlo, question banks, unit app runtimes, print/record support and Unit 12 zero-baseline guard retained"
 },null,2));
