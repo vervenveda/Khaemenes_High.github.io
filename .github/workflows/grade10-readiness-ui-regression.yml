@@ -1,0 +1,27 @@
+name: Grade 10 English and Biology Assessment Presentation
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'courses/language-arts/english-10/assessments/diagnostic/index.html'
+      - 'courses/language-arts/english-10/assets/course.js'
+      - 'courses/language-arts/english-10/assets/course.css'
+      - 'courses/science/biology-10/index.html'
+      - 'courses/science/biology-10/biology10-dashboard-app-v1.js'
+      - 'tools/test-grade10-readiness-layout-contract.mjs'
+      - '.github/workflows/grade10-readiness-ui-regression.yml'
+  pull_request:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  presentation-contract:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: node --check courses/language-arts/english-10/assets/course.js
+      - run: node --check courses/science/biology-10/biology10-dashboard-app-v1.js
+      - run: node tools/test-grade10-readiness-layout-contract.mjs
