@@ -3,6 +3,7 @@
 
 | Date | Type | Entry | State |
 | --- | --- | --- | --- |
+| 2026-11-20 | curriculum · Grade 11 retention | [Grade 11 retention curriculum implementation](logs/2026/11/2026-11-20-grade11-retention-curriculum-implementation.md) | Algebra II 8+2; English 4+1; Chemistry delayed retrieval; PE11 commissioned 36×5 with 15+5; source PASS |
 | 2026-11-20 | curriculum · Grade 10 retention | [Grade 10 retention curriculum implementation](logs/2026/11/2026-11-20-grade10-retention-curriculum-implementation.md) | Geometry 8+2; Biology 4+1; English 4+1; PE10 commissioned 36×5 with 15+5; source PASS |
 | 2026-11-20 | curriculum · Grade 09 retention | [Grade 09 retention curriculum implementation](logs/2026/11/2026-11-20-grade09-retention-curriculum-implementation.md) | Science 8+2; English non-grading delayed retrieval; PE 15+5 with provenance; source PASS |
 | 2026-11-20 | repair · Grade 09 Science routing | [Grade 09 Science 9 routing repair](logs/2026/11/2026-11-20-grade09-science-routing-repair.md) | Student Profile now resolves first incomplete detailed Science lesson; Unit 00 fallback repaired; source routing PASS |
