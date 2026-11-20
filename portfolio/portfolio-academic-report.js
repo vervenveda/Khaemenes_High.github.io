@@ -175,6 +175,8 @@ function renderCard(row){
  const defs=mk("dl","portfolio-report-definitions");
  defs.append(definition("Course completion",display(progress(row.record))));
  defs.append(definition("Recorded quiz/test points",display(summary(items))));
+ const receipts=row.record?.courseId?(receiptApi()?.forCourse?.(row.record.learnerId,row.record.courseId)||[]):[];
+ defs.append(definition("Evidence receipts",String(receipts.length)));
  defs.append(definition("Final transcript grade","Pending evaluator review"));
  defs.append(definition("Credit awarded","Not determined"));
  card.append(defs);
@@ -213,6 +215,7 @@ function reportData(){
   courses:rows.map(row=>({courseId:row.courseId,title:row.title,subject:row.subject,status:row.status,
    completionPercent:progress(row.record),recordedAssessmentAveragePercent:summary(assessments(row.record)),
    assessments:assessments(row.record),
+   evidenceReceipts:row.record?.courseId?(receiptApi()?.forCourse?.(user.id,row.record.courseId)||[]):[],
    officialFinalGrade:null,creditAwarded:null,
    source:row.record?"Academy learner-scoped continuation ledger":"No current published ledger record"})),
   evaluatorReview:{attendanceHours:"Not supplied",daysOfInstruction:"Not supplied",curriculumVerification:"Pending",
