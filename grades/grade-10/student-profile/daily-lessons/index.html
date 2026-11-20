@@ -93,7 +93,9 @@ const learnerId=valid?ctx.learnerId:null;
 const host=document.getElementById("g10RoomContent"),message=document.getElementById("g10RoomMessage");
 const make=(tag,text)=>{const el=document.createElement(tag);if(text!==undefined)el.textContent=text;return el};
 const url=(raw)=>typeof raw==="string"&&/^https:\/\//i.test(raw)?raw:null;
-const slots=valid&&catalog?catalog.slots(10):[];
+const learnerRecords=valid&&continuation?.readLearner?.(learnerId)||[];
+const mathId=learnerRecords.some(x=>x?.courseId==="geometry")?"geometry":learnerRecords.some(x=>x?.courseId==="algebra-1")?"algebra-1":null;
+const slots=valid&&catalog?catalog.slots(10,{mathId}):[];
 if(!valid){message.textContent="Select a registered Grade 10 learner in the Family Portal before accessing personal information. No other learner's records or settings are shown.";document.querySelectorAll("[data-owner-only]").forEach(x=>x.hidden=true)}
 else message.textContent="Your existing Grade 10 learner record is selected. Course scores and mastery are managed only by their source courses.";
 
@@ -102,7 +104,7 @@ if(valid&&catalog){
  for(const slot of slots){
   const card=make("article");card.className="g10-card";
   card.append(make("h3",slot.label),make("p",slot.title));
-  const snaps=ctx?.learnerId&&continuation?.readLearner?.(ctx.learnerId)||[];
+  const snaps=learnerRecords;
   const englishId={"english-10":"ela10","english-11":"ela11","english-12":"ela12"}[slot.id];
   const snap=snaps.find(x=>x?.courseId===slot.id)||
     (englishId?snaps.find(x=>x?.courseId===englishId):null);
