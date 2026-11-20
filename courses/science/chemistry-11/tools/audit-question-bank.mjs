@@ -74,6 +74,56 @@ if(fs.existsSync(mapPath)){
 }
 
 
+
+// Assessment-quality and retention regressions.
+const answerCounts=[0,0,0,0];
+const typeCounts={concept:0,quantitative:0,evidence:0,model:0};
+const ordinaryWeeks=[...Array(17)].map((_,i)=>i+1).concat([...Array(17)].map((_,i)=>i+19));
+for(const q of bank){
+  if(Number.isInteger(q.answer)&&q.answer>=0&&q.answer<4)answerCounts[q.answer]++;
+  if(Object.prototype.hasOwnProperty.call(typeCounts,q.type))typeCounts[q.type]++;
+}
+const answerSpread=Math.max(...answerCounts)-Math.min(...answerCounts);
+if(answerCounts.some(n=>n===0))failures.push(`answer positions are not represented across all four choices: ${answerCounts.join("/")}`);
+if(answerSpread>4)failures.push(`answer-position distribution is too uneven: ${answerCounts.join("/")}`);
+for(const week of ordinaryWeeks){
+  const rows=bank.filter(q=>q.week===week);
+  if(rows.length<8)failures.push(`Week ${week} has only ${rows.length} public practice items; expected at least 8`);
+  if(!rows.some(q=>["quantitative","evidence","model"].includes(q.type)))failures.push(`Week ${week} lacks quantitative/evidence/model reasoning`);
+}
+const quantitativeShare=typeCounts.quantitative/bank.length;
+const reasoningShare=(typeCounts.evidence+typeCounts.model)/bank.length;
+if(quantitativeShare<0.35||quantitativeShare>0.65)failures.push(`quantitative item share outside 35–65%: ${(100*quantitativeShare).toFixed(1)}%`);
+if(reasoningShare<0.25)failures.push(`evidence+model share below 25%: ${(100*reasoningShare).toFixed(1)}%`);
+
+const preferred=bank.filter(q=>!String(q.id).startsWith("legacy-"));
+const requirements={
+ "U0":{quantitative:2,evidence:1,model:1},
+ "U1":{concept:2,quantitative:5,evidence:1,model:1},
+ "U2":{concept:2,quantitative:5,evidence:1,model:1},
+ "U3":{concept:2,quantitative:5,evidence:1,model:1},
+ "U4":{concept:2,quantitative:5,evidence:1,model:1},
+ "U5":{concept:1,quantitative:2,evidence:1,model:1},
+ "U6":{concept:1,quantitative:2,evidence:1,model:1},
+ "U7":{concept:1,quantitative:2,evidence:1,model:1},
+ "U8":{concept:1,quantitative:1,evidence:1,model:1},
+ "U9":{concept:1,quantitative:2,evidence:1,model:1},
+ "CAP":{concept:1,evidence:1,model:1}
+};
+for(const [unit,req] of Object.entries(requirements)){
+  for(const [type,min] of Object.entries(req)){
+    const have=preferred.filter(q=>q.unit===unit&&q.type===type).length;
+    if(have<min)failures.push(`modern assessment pool lacks ${unit} ${type}: ${have}/${min}`);
+  }
+}
+
+const indexPath=path.resolve(here,"..","index.html");
+const indexHtml=fs.readFileSync(indexPath,"utf8");
+if(!/const distances=\[1,3,6,10\]/.test(indexHtml))failures.push("spaced-retention intervals 1/3/6/10 missing from Chemistry dashboard");
+if(!/retentionHistory/.test(indexHtml)||!/scoreRetention/.test(indexHtml))failures.push("scored retention-history engine missing from Chemistry dashboard");
+if(!/does not set or change the reviewed weekly mastery score/.test(indexHtml)||!/does not set weekly mastery/.test(indexHtml))failures.push("retention/mastery separation language missing");
+if(!/filter\(q=>!String\(q\.id\|\|""\)\.startsWith\("legacy-"\)\)/.test(indexHtml))failures.push("practice assessment must exclude retired legacy concept pool");
+
 console.log(`Chemistry 11 question-bank audit: ${bank.length} items`);
 if(misconceptionSummary)console.log(`Misconception map: ${misconceptionSummary.reviewed}/${bank.length} reviewed items (${misconceptionSummary.coveragePct}%) · ${misconceptionSummary.rationaleCount} distractor rationales`);
 if(warnings.length){console.log("\nWarnings:");warnings.forEach(x=>console.log(" - "+x));}
