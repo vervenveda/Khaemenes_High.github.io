@@ -21,4 +21,5 @@ jobs:
       - run: node tools/validate-high-main-landings-vnv-shell.mjs
       - run: node tools/validate-high-subject-landings-vnv-shell.mjs
       - run: node tools/validate-grade09-assessment-vnv-shell.mjs
+      - run: node tools/validate-grade09-math-assessment-support-vnv-shell.mjs
       - run: node tools/validate-grade10-12-assessment-vnv-shell.mjs
