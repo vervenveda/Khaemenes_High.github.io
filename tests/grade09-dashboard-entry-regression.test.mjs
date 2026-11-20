@@ -20,8 +20,13 @@ test("Profile toolbar keeps expected interaction surfaces and daily rooms",()=>{
  for(const label of ["Student Progress","Schedule","KlasaiPeer","Student Portfolio","Edit Profile","Creative Tools","Yearbook"]){
    assert.ok(layout.includes('label:"'+label+'"'),label);
  }
- for(const id of ["grade09ClassProgressDialog","grade09ScheduleDialog","grade09StudyStudioDialog"]){
+ for(const id of ["grade09ClassProgressDialog","grade09StudyStudioDialog"]){
    assert.ok(layout.includes(id),id);
  }
+ const schedule=fs.readFileSync(new URL("../grades/grade-09/student-profile/schedule/index.html",import.meta.url),"utf8");
+ assert.match(layout,/\{label:"Schedule",href:"schedule\/"\}/);
+ assert.match(schedule,/id="scheduleGrid"/);
+ assert.match(schedule,/My Eight Classes/);
+ assert.doesNotMatch(layout,/grade09ScheduleDialog/);
  assert.match(source,/href="daily-lessons\/"/);
 });
