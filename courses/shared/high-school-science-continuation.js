@@ -1,7 +1,7 @@
 (function attachKhaemenesHighScienceContinuation(global){
 "use strict";
 if(global.KhaemenesHighScienceContinuation)return;
-const VERSION="1.1.0",PASS=80;
+const VERSION="1.2.0",PASS=80;
 const ROOT="https://vervenveda.com/Khaemenes_High.github.io/courses/science/";
 const CONFIG={
  "integrated-science-9":{id:"integrated-science-9",title:"Integrated Science 9",grade:"Grade 9",home:ROOT+"integrated-science-9/",key:"khae-grade09-integrated-science-portal-v1",mode:"mastery"},
@@ -26,6 +26,13 @@ function publish(x){
  const C=global.KhaemenesLearningContinuation,p=profile();if(!C?.publish||!p?.learnerId||!x)return false;
  try{C.publish({learnerId:p.learnerId,courseId:x.courseId,school:"Khaemenes High School",stage:"high",grade:x.grade,subject:"Science",courseTitle:x.courseTitle,status:x.status,nextLabel:x.nextLabel,nextTitle:x.nextTitle,nextHref:x.nextHref,summary:x.summary,progress:x.progress,mastery:{best:x.best??null,threshold:PASS,mastered:x.status==="complete"},family:x.family||{needsAction:false,label:"",summary:"",href:""},source:x.source});return true}catch{return false}
 }
+function science9DetailedLessonHref(cfg,weekNumber,dayIndex){
+ const data=global.KhaemenesScience9CourseData,weeks=Array.isArray(data?.weeks)?data.weeks:[];
+ const w=weeks.find(row=>Number(row?.week)===Number(weekNumber));if(!w)return cfg.home+"?view=week&week="+weekNumber;
+ const unit=Number(w.unitNumber),unitWeeks=weeks.filter(row=>Number(row?.unitNumber)===unit),unitWeekIndex=Math.max(0,unitWeeks.findIndex(row=>Number(row?.week)===Number(weekNumber)));
+ const day=String(unitWeekIndex*5+Number(dayIndex)+1).padStart(2,"0");
+ return unit===0?cfg.home+"diagnostic/lessons/day-"+day+".html":cfg.home+"units/unit-"+String(unit).padStart(2,"0")+"/lessons/day-"+day+".html";
+}
 function science9(cfg){
  const entry=global.KhaemenesScience9Entry?.decision?.();
  if(entry&&entry.allow===false){
@@ -38,7 +45,7 @@ function science9(cfg){
  for(let w=1;w<=36;w++){
   const days=Object.values(s.days?.[w]||{}).filter(Boolean).length,best=num(s.scores?.[w])||0;
   if(days===5&&best>=PASS){mastered++;continue}
-  if(days<5)return{courseId:cfg.id,courseTitle:cfg.title,grade:cfg.grade,status:"continue",nextLabel:"Continue Science 9",nextTitle:"Week "+String(w).padStart(2,"0"),nextHref:cfg.home+"?view=week&week="+w,summary:days+"/5 daily science lessons are recorded. Continue the phenomenon, model, evidence, investigation, and CER sequence.",best:best||null,progress:{completed:mastered,total:36,percent:Math.round(mastered/36*100)},source:"science9-weekly-evidence"};
+  if(days<5){const row=global.KhaemenesScience9CourseData?.weeks?.find?.(x=>Number(x?.week)===w),labels=Array.isArray(row?.lessons)?row.lessons.map(x=>x?.day):["Monday","Tuesday","Wednesday","Thursday","Friday"],dayIndex=Math.max(0,labels.findIndex(label=>!s.days?.[w]?.[label]));return{courseId:cfg.id,courseTitle:cfg.title,grade:cfg.grade,status:"continue",nextLabel:"Continue Science 9",nextTitle:"Week "+String(w).padStart(2,"0")+" · "+String(labels[dayIndex]||"Lesson"),nextHref:science9DetailedLessonHref(cfg,w,dayIndex),summary:days+"/5 daily science lessons are recorded. Continue directly with the next detailed lesson in the phenomenon, model, evidence, investigation, and CER sequence.",best:best||null,progress:{completed:mastered,total:36,percent:Math.round(mastered/36*100)},source:"science9-weekly-evidence"};}
   return{courseId:cfg.id,courseTitle:cfg.title,grade:cfg.grade,status:best>0?"corrections":"mastery",nextLabel:best>0?"Review & Reassess":"Complete Weekly Mastery",nextTitle:"Week "+String(w).padStart(2,"0")+" Mastery",nextHref:cfg.home+"?view=week&week="+w,summary:best>0?"Weekly mastery best is "+Math.round(best)+"%. Complete corrections and reassess to reach 80%.":"The five-day evidence sequence is complete. The weekly mastery check is next.",best:best||null,progress:{completed:mastered,total:36,percent:Math.round(mastered/36*100)},source:"science9-weekly-evidence"};
  }
  return{courseId:cfg.id,courseTitle:cfg.title,grade:cfg.grade,status:"mastery",nextLabel:"Final Assessment & Portfolio Review",nextTitle:"Science 9 · Cumulative Evidence",nextHref:cfg.home+"assessments/",summary:"All 36 weekly lesson/mastery records meet the local benchmark. Complete the repository's cumulative assessment, capstone, laboratory portfolio, corrections, and evaluator review before course completion.",best:100,progress:{completed:36,total:36,percent:100},source:"science9-weekly-evidence"};
