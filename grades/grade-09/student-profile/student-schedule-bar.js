@@ -17,7 +17,7 @@ function addCourseActions(card,course,id,current,pinned){
  const actions=el("div","schedule-actions");
  const first=window.KhaemenesHighEightClass?.FIRST_STEPS?.[id]||course.defaultContinue||course.home;
  const destination=current?.url||first;
- const publicLanding=Boolean(destination&&course.home&&new URL(destination,location.href).pathname.replace(/\\/+$/,"/")===new URL(course.home,location.href).pathname.replace(/\\/+$/,"/"));
+ const publicLanding=Boolean(destination&&course.home&&new URL(destination,location.href).pathname.replace(new RegExp("/+$"),"/")===new URL(course.home,location.href).pathname.replace(new RegExp("/+$"),"/"));
  const open=el("a","schedule-open",publicLanding?"Course Options":"Class");
  open.href=destination;
  open.dataset.launchCourse=id;
