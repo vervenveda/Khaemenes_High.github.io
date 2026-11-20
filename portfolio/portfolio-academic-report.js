@@ -141,6 +141,14 @@ function refresh(reason="automatic"){
   return;
  }
  host.replaceChildren();
+ if(typeof ledger?.readLearner!=="function"){
+  $("reportIdentity").textContent="Academic ledger unavailable on this device.";
+  $("reportCourseCount").textContent="—";$("reportAssessmentCount").textContent="—";
+  $("printReport").disabled=true;$("exportReport").disabled=true;
+  refreshStatus("Refresh #"+iteration+": Academy course-record service has not loaded. No score can be confirmed and no records were changed.");
+  host.append(mk("p","portfolio-report-note","Academic records are temporarily unavailable. Reload the portfolio after returning to the registered Student Profile."));
+  return;
+ }
  if(!report){
   $("reportIdentity").textContent="Select a registered High School learner to view this private academic report.";
   $("reportCourseCount").textContent="—";$("reportAssessmentCount").textContent="—";
