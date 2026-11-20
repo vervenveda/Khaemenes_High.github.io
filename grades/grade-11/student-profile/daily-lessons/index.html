@@ -114,9 +114,11 @@ if(valid&&catalog){
       const inside=target.origin===base.origin&&target.pathname.startsWith(base.pathname);
       // A recovery-needed record keeps its explicit recovery route;
       // ordinary Class buttons must not silently fall back to public home.
-      if(snap?.status!=="paused"&&(!inside||target.pathname===base.pathname)){
+      if(snap?.status==="paused"){
+        href=home; // Explicit existing record-recovery surface, not a lesson.
+      }else if(!inside||target.pathname===base.pathname){
         href=first;
-      }else if(snap?.status!=="paused"&&inside){
+      }else if(inside){
         const week=target.pathname.match(/\/weeks\/week-(\d{2})\/?$/);
         if(week){
           const quiz=snap?.status==="mastery"||snap?.status==="corrections";
@@ -128,7 +130,7 @@ if(valid&&catalog){
       }
     }catch{href=first}
   }
-  if(href){const a=make("a",snap?.stale?"Refresh Class":snap?.status==="corrections"?"Review Corrections":snap?.nextLabel||"Continue Class");a.className="g11-button";a.href=href;a.title=snap?.nextTitle||snap?.summary||"Continue this class";card.append(a)}
+  if(href){const a=make("a",snap?.status==="paused"?"Recover Course Record":snap?.stale?"Refresh Class":snap?.status==="corrections"?"Review Corrections":snap?.nextLabel||"Continue Class");a.className="g11-button";a.href=href;a.title=snap?.nextTitle||snap?.summary||"Continue this class";card.append(a)}
   else card.append(make("p","This course link is not published in the current catalog."));
   cards.append(card);
  }
