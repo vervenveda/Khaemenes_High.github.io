@@ -21,7 +21,11 @@ function student(){
 function slots(){
  const language=pins?.readLanguageChoices?.()?.[String(Number(grade))]||null;
  const math=grade==="09"?g9?.mathPathway?.()||null:null;
- return catalog?.slots?.(Number(grade),{mathId:math,language})||[];
+ const items=catalog?.slots?.(Number(grade),{mathId:math,language})||[];
+ if(grade==="09")return items;
+ return items.map(item=>item.subject==="foreignLanguage"&&language
+   ? {...item,title:language.charAt(0).toUpperCase()+language.slice(1)+" · Choose 101 or 102"}
+   : item);
 }
 const alias=id=>/^english-(10|11|12)$/.test(id||"")?[id,"ela"+id.slice(-2)]:id?[id]:[];
 function records(id){try{return (continuation?.readLearner?.(id)||[]).filter(r=>r?.learnerId===id&&r?.courseId)}catch{return []}}
@@ -51,6 +55,11 @@ function safeDestination(url,item){
  }catch{return null}
 }
 function instructionalRoute(item,record){
+ // Upper-grade world-language enrollment remains a selection doorway. A
+ // grade alone never implies French 102 or Spanish 102 placement.
+ if(item.subject==="foreignLanguage"&&grade!=="09")
+  return Promise.resolve({url:languageDirectory,label:"Choose Language",
+   detail:"Choose French or Spanish, then the appropriate 101 or 102 course."});
  if(!item.id)return null;
  const first=catalog.FIRST_STEPS?.[item.id]||null;
  const home=item.href||null;
@@ -171,7 +180,7 @@ async function render(){
   card.append(actions);
   // Course selection is a separate authority from Pin/Unpin. Keep the
   // two-button class action row intact and expose language changes discreetly.
-  if(item.subject==="foreignLanguage"&&item.id){
+  if(item.subject==="foreignLanguage"&&item.id&&grade==="09"){
    const change=element("a","schedule-language-choice","Change language");
    change.href=languageDirectory;
    change.setAttribute("aria-label","Choose another foreign language");
