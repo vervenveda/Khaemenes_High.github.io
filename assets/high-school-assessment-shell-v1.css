@@ -116,3 +116,24 @@ body[data-high-assessment-shell="true"] :is(.hero,.unit-hero) p:not(.eyebrow):no
   #vnvEcosystemUtilityDock{display:none!important}
   body[data-high-assessment-shell="true"]{font-size:12pt!important}
 }
+
+/* Canonical assessment landing grids */
+body[data-high-assessment-shell="true"] :is(.resource-grid,.unit-grid,.tool-grid){
+  display:grid!important;
+  grid-template-columns:repeat(2,minmax(0,1fr))!important;
+  gap:14px!important;
+  align-items:stretch!important;
+  max-width:1120px;
+  margin-inline:auto;
+}
+body[data-high-assessment-shell="true"] :is(.resource-grid,.unit-grid,.tool-grid) > .card,
+body[data-high-assessment-shell="true"] :is(.resource-grid,.unit-grid,.tool-grid) > a.card{
+  min-width:0!important;
+  height:100%!important;
+  border-radius:7px!important;
+}
+@media(max-width:720px){
+  body[data-high-assessment-shell="true"] :is(.resource-grid,.unit-grid,.tool-grid){
+    grid-template-columns:1fr!important;
+  }
+}
