@@ -15,10 +15,22 @@ function mount(){
 const grade=document.body?.dataset.socialStudiesEngine,spec=CURRICULUM[grade];
 if(!spec||document.getElementById("khaeSocialStudiesEngineV01"))return false;
 const demo=document.body.hasAttribute("data-social-studies-demo");
-const root=document.querySelector(grade==="9"&&!demo?"main.workspace":"main[data-social-studies-prototype]");
+const root=document.querySelector(demo?"main[data-social-studies-prototype]":grade==="9"?"main.workspace":"main.main");
 if(!root)return false;
 if(grade==="9"&&!demo&&(!root.querySelector('[data-day-select="1"]')||!root.querySelector('[data-phase-select="read"]')||!root.querySelector("#source-pack")))return false;
-const header=root.querySelector("h1"),host=grade==="9"&&!demo?root.querySelector('[aria-label="Choose day"]'):root.querySelector('[data-ss-stage="1"]');
+// The first-week upper-grade packets have their own day structures. Match
+// their original headings; do not inject parallel lesson pages or stages.
+const headings={
+ "10":["Monday · Frame the Inquiry","Tuesday · Source, Contextualize, and Corroborate","Wednesday · Map, Measure, and Model","Thursday · Deliberate and Write","Friday · Synthesize, Assess, and Correct"],
+ "11":["Monday · Frame the Inquiry","Tuesday · Source, Case, or Contract Laboratory","Wednesday · Model, Measure, and Test","Thursday · Argument, Deliberation, and Policy","Friday · Assess, Correct, and Transfer"],
+ "12":["Monday · Concept and Inquiry Laboratory","Tuesday · Primary and Authoritative Source Laboratory","Wednesday · Comparative Data and Case Laboratory","Thursday · Argument, Seminar, and Performance Studio","Friday · Mastery, Correction, and Capstone Checkpoint"]
+};
+const targets=!demo&&grade!=="9"?headings[grade]?.map(name=>{
+ const heading=[...root.querySelectorAll("h3")].find(h=>h.textContent.trim()===name);
+ return heading?.closest("article.lesson,section.card,article")||null;
+}):null;
+if(targets&&(!targets.length||targets.some(x=>!x)))return false;
+const header=root.querySelector("h1"),host=demo?root.querySelector('[data-ss-stage="1"]'):grade==="9"?root.querySelector('[aria-label="Choose day"]'):targets[0];
 if(!header||!host)return false;
 const style=el("style");style.id="khaeSocialStudiesEngineV01Style";style.textContent=CSS;
 const panel=el("section","khae-ss-engine");panel.id="khaeSocialStudiesEngineV01";panel.setAttribute("aria-label","Social Studies inquiry guide");
@@ -45,7 +57,8 @@ if(grade==="9"&&!demo){
 const day=root.querySelector('[data-day-select="'+step[2]+'"]'),phase=root.querySelector('[data-phase-select="'+step[3]+'"]');
 day?.click();phase?.click(); // Existing day/phase code alone owns its course state.
 root.querySelector("#step-caption")?.scrollIntoView({block:"start"});
-}else root.querySelector('[data-ss-stage="'+(current+1)+'"]')?.scrollIntoView({block:"start"});
+}else if(demo)root.querySelector('[data-ss-stage="'+(current+1)+'"]')?.scrollIntoView({block:"start"});
+else targets[current]?.scrollIntoView({block:"start"});
 }
 prev.addEventListener("click",()=>show(current-1,true));next.addEventListener("click",()=>show(current+1,true));show(0,false);return true;
 }
