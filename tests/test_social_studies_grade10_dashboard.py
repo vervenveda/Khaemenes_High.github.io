@@ -33,7 +33,16 @@ def test_entrance_and_original_tools(browser,site,width):
  assert page.locator('.tabs button[data-view="week"]').count()==1
  assert page.locator("#weekList .weekBtn").count()==36
  assert page.locator('#content h2').first.is_visible()
- assert page.evaluate("document.documentElement.scrollWidth <= innerWidth + 2"),f"Horizontal overflow: {width}px"
+ overflow=page.evaluate("""() => ({
+   scrollWidth:document.documentElement.scrollWidth,
+   viewport:innerWidth,
+   offenders:[...document.querySelectorAll('body *')]
+     .filter(e=>{const r=e.getBoundingClientRect();return r.right>innerWidth+2||r.left< -2})
+     .slice(0,18).map(e=>({tag:e.tagName,id:e.id,cls:String(e.className).slice(0,70),
+       text:(e.innerText||'').slice(0,55),left:Math.round(e.getBoundingClientRect().left),
+       right:Math.round(e.getBoundingClientRect().right)}))
+ })""")
+ assert overflow["scrollWidth"]<=width+2,f"Horizontal overflow at {width}px: {overflow}"
  assert not errors,errors
 
  ctx.close()
