@@ -24,15 +24,15 @@ body{margin:0;min-width:300px;background:var(--parchment);color:var(--ink);font:
 button,input,textarea{font:inherit}button{cursor:pointer}a{color:inherit}
 .skip{position:fixed;left:12px;top:-80px;z-index:9999;padding:10px 14px;border-radius:var(--radius);background:#111;color:white}.skip:focus{top:12px}
 .breadcrumb{width:min(calc(100% - 28px),var(--max));margin:12px auto;text-align:center;color:#6d6558}.breadcrumb a{text-decoration:none}
-.hero{background:var(--charcoal);color:var(--cream);border-bottom:4px solid var(--gold);padding:44px 18px 38px;text-align:center}
-.hero-inner{width:min(calc(100% - 20px),960px);margin:auto}
-.kicker{margin:0 0 8px;color:#ead9b7;font:400 16px/1.35 Cinzel,Georgia,serif;letter-spacing:.08em;text-transform:uppercase}
-.hero h1{margin:0;font:400 clamp(33px,5vw,55px)/1.12 Cinzel,Georgia,serif}
-.subtitle{margin:10px auto 0;max-width:800px;color:#f3e8d2;font:400 24px/1.4 Cinzel,Georgia,serif}
-.lead{max-width:850px;margin:18px auto 0;color:#f0e7d7;font-size:18px}
-.hero-actions{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;margin-top:24px}
-.btn{min-height:44px;border:1px solid var(--gold);border-radius:var(--radius);padding:10px 16px;background:var(--paper);color:var(--charcoal);text-decoration:none;display:inline-flex;align-items:center;justify-content:center}
-.btn.primary{background:var(--gold);color:#181b19}.btn.dark{background:var(--charcoal);color:var(--cream);border-color:var(--charcoal)}
+
+
+
+
+
+
+
+
+
 .info-strip{width:min(calc(100% - 28px),960px);margin:18px auto 0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:11px}
 .info-strip button{min-height:55px;border:1px solid var(--gold);border-radius:var(--radius);background:var(--charcoal);color:var(--cream);padding:10px 14px;font:400 16px/1.3 Cinzel,Georgia,serif}
 .sheet{width:min(calc(100% - 28px),var(--max));margin:26px auto 44px}
@@ -69,10 +69,11 @@ footer{min-height:66px;padding:22px 16px;display:grid;place-items:center;backgro
 @media(max-width:900px){.section-nav{grid-template-columns:repeat(4,minmax(0,1fr))}.section-nav #prevSection,.section-nav #nextSection{grid-column:span 2}}
 @media(max-width:760px){.info-strip,.objective-grid,.identity-row{grid-template-columns:1fr}.assessment-top{grid-template-columns:1fr}.progress-wrap{min-width:0}.progress-label{text-align:left}.options,.breakdown{grid-template-columns:1fr}.question{grid-template-columns:46px 1fr}.eval-row{grid-template-columns:1fr}}
 @media(max-width:600px){.bottom-section-nav{display:grid;grid-template-columns:1fr 1fr}.bottom-section-nav button{min-width:0;width:100%}.section-nav{grid-template-columns:1fr 1fr}}
-@media print{.skip,.hero-actions,.info-strip,.section-nav,.bottom-section-nav,.assessment-actions,dialog,.evaluator button{display:none!important}body{background:white;color:black}.hero{background:white!important;color:black!important;border-bottom:2px solid #999}.hero *{color:black!important}.sheet{width:100%;margin:0}.question{break-inside:avoid}.constructed{break-inside:auto}footer{display:none}}
+@media print{.skip,.hero-actions,.info-strip,.section-nav,.bottom-section-nav,.assessment-actions,dialog,.evaluator button{display:none!important}body{background:white;color:black}.hero *{color:black!important}.sheet{width:100%;margin:0}.question{break-inside:avoid}.constructed{break-inside:auto}footer{display:none}}
 </style>
+<link rel="stylesheet" href="/Khaemenes_High.github.io/assets/high-school-assessment-shell-v1.css" data-high-assessment-shell-style="v1">
 </head>
-<body data-math-assessment-blueprint="v1" data-assessment-runtime="single-owner-midterm">
+<body data-math-assessment-blueprint="v1" data-assessment-runtime="single-owner-midterm" data-high-assessment-shell="true">
 
 <a class="skip" href="#assessment">Skip to assessment</a>
 <nav class="breadcrumb"><a href="https://vervenveda.com/">Verve N Veda</a> › <a href="https://vervenveda.com/Khaemenes_High.github.io/">Khaemenes High</a> › <a href="../">Pre-Algebra</a> › Midterm</nav>
@@ -306,7 +307,19 @@ const store=resultStore();if(Array.isArray(store.attempts)&&store.attempts.lengt
 </script>
 
 <script src="/Khaemenes_High.github.io/courses/mathematics/assets/math-learning-tools-v2.js" defer></script>
-<script src="https://vervenveda.com/assets/vnv-ecosystem-toolbar.js" defer></script>
-<script src="/Khaemenes_High.github.io/assets/vnv-language.js?v=20261118-high-school-bounded-refresh-1" defer data-official-vnv-language="true"></script>
+
+<script src="/Khaemenes_High.github.io/assets/high-school-assessment-class-tools-v1.js" defer data-high-assessment-tools="v1"></script>
+<script src="https://vervenveda.com/assets/khaemenes-campus-phrases.js" defer></script>
+<script src="https://vervenveda.com/assets/khaemenes-interlingual-core.js" defer></script>
+<script src="https://vervenveda.com/Khaemenes_Linguistics.github.io/assets/khaemenes-translator-loader.js?v=1.1.1" defer></script>
+<script src="https://vervenveda.com/assets/vnv-language.js?v=20261108-cream-buttons" defer data-official-vnv-language="true"></script>
+<script src="https://vervenveda.com/assets/vnv-class-tools-toolbar.js?v=1.6.1" defer data-vnv-class-tools="high-assessment"></script>
+<script src="https://vervenveda.com/assets/vnv-333-ticker.js"></script>
+<script src="https://vervenveda.com/assets/vnv-ticker-autopopulate.js" data-vnv-ticker-autopopulate></script>
+<script>VNV_TICKER.autoPopulate({label:"Pre-Algebra Midterm Assessment · Khaemenes Academy",max:14});</script>
+<script src="https://vervenveda.com/assets/vnv-header-autopopulate.js"></script>
+<script>VNV_HEADER.mount({"title":"Khaemenes Academy","subtitle":"Pre-Algebra · Assessment","icon":"K","home":"https://vervenveda.com/Khaemenes_Academy.github.io/","actions":[]});</script>
+<script src="https://vervenveda.com/assets/vnv-ecosystem-toolbar.js" data-official-vnv-ecosystem-toolbar="true"></script>
+<script src="/Khaemenes_High.github.io/assets/grade09-assessment-mentor-guidance-v1.js" defer data-assessment-subject="pre-algebra" data-grade09-mentors="v1"></script>
 </body>
 </html>
