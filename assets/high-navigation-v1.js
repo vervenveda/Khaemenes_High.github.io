@@ -234,12 +234,11 @@
 })();
 
 /* Khaemenes High · canonical lower-right ecosystem toolbar */
-/* Fallback only. The minimal global chrome is the primary toolbar owner.
+/* Fallback only. The official VNV ecosystem toolbar is the sole dock owner.
    No MutationObserver, no element deletion, no continuous cleanup. */
 (()=>{try{
   const OFFICIAL="https://vervenveda.com/assets/vnv-ecosystem-toolbar.js";
   const start=()=>{
-    if(window.__KHAEMENES_HIGH_GLOBAL_CHROME_V2__)return;
     if(document.getElementById("vnvEcosystemUtilityDock"))return;
     const mount=()=>{try{window.VNVEcosystemToolbar?.mount?.()}catch{}};
     if(window.VNVEcosystemToolbar){mount();return}
