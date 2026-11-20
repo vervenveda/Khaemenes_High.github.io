@@ -109,12 +109,16 @@ function step(item){
    const target=new URL(destination,location.href);
    const week=target.pathname.match(/\/weeks\/week-(\d{2})\/?$/);
    if(week){
-    // Week 01 has a dedicated first-day file. Later weeks teach directly
-    // inside their existing weekly pages with #monday/#tuesday anchors.
+    // Weekly mastery and correction tasks must keep their quiz destination.
+    // Otherwise Week 01 has dedicated first-day files; later weeks teach
+    // inside existing weekly pages via the Monday instructional anchor.
+    const needQuiz=snap?.status==="mastery"||snap?.status==="corrections";
     const leaf=item.id==="english-10"?"monday/":"lessons/day-01.html";
-    destination=week[1]==="01"
-     ?new URL("weeks/week-01/"+leaf,courseHome).href
-     :target.href.replace(/#.*$/,"")+"#monday";
+    destination=needQuiz
+     ?target.href.replace(/#.*$/,"")+"#quiz"
+     :week[1]==="01"
+      ?new URL("weeks/week-01/"+leaf,courseHome).href
+      :target.href.replace(/#.*$/,"")+"#monday";
    }
   }catch{}
  }
