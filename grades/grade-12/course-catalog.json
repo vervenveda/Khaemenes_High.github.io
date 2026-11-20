@@ -1,5 +1,87 @@
 {
+  "schema_version": "2.0",
   "grade": 12,
+  "title": "Khaemenes High Grade 12 Course Catalog",
+  "masteryThreshold": 80,
+  "schedule_contract": {
+    "totalSubjects": 8,
+    "order": [
+      "Mathematics",
+      "English",
+      "Social Studies",
+      "Science",
+      "PE / Health",
+      "Psychology / Life Skills",
+      "Foreign Language",
+      "Elective"
+    ]
+  },
+  "schedule": [
+    {
+      "slot": 1,
+      "subject": "Mathematics",
+      "id": "math-placement-12",
+      "placementBased": true,
+      "hall": "../../courses/mathematics/",
+      "typical": [
+        "algebra-2",
+        "precalculus-trigonometry",
+        "calculus-1"
+      ],
+      "summary": "Placement-based senior mathematics with postsecondary transition and advanced pathways."
+    },
+    {
+      "slot": 2,
+      "subject": "English",
+      "id": "english-12",
+      "path": "../../courses/language-arts/english-12/",
+      "summary": "English 12: independent scholarship, seminar leadership, publication, capstone evidence, and oral defense."
+    },
+    {
+      "slot": 3,
+      "subject": "Social Studies",
+      "id": "social-studies-12",
+      "path": "../../courses/social-studies/grade-12/",
+      "summary": "Global Politics, International Relations, and Senior Research Honors."
+    },
+    {
+      "slot": 4,
+      "subject": "Science",
+      "id": "physics-engineering-12",
+      "path": "../../courses/science/physics-engineering-12/",
+      "summary": "Physics & Engineering with modelling, investigation, design, quantitative reasoning, and capstone defense."
+    },
+    {
+      "slot": 5,
+      "subject": "PE / Health",
+      "id": "physical-education-12",
+      "path": "../../courses/physical-education/",
+      "summary": "Movement, fitness, health literacy, wellness, and lifelong activity planning."
+    },
+    {
+      "slot": 6,
+      "subject": "Psychology / Life Skills",
+      "id": "life-skills-12",
+      "path": "../../courses/electives/health-wellness-human-development/",
+      "summary": "Independent living, wellness, decision-making, personal development, and postsecondary life skills."
+    },
+    {
+      "slot": 7,
+      "subject": "Foreign Language",
+      "id": "world-language-12",
+      "path": "https://vervenveda.com/Khaemenes_Linguistics.github.io/Halls/",
+      "selectionRequired": true,
+      "summary": "Learner-selected world language with advanced continuation where available."
+    },
+    {
+      "slot": 8,
+      "subject": "Elective",
+      "id": "elective-12",
+      "path": "../../courses/electives/",
+      "selectionRequired": true,
+      "summary": "Learner-selected senior elective, interdisciplinary study, or capstone-supporting course."
+    }
+  ],
   "core": [
     {
       "id": "english-12",
@@ -24,7 +106,6 @@
     ]
   },
   "capstone": true,
-  "masteryThreshold": 80,
   "mentorAuthority": "archaemenes",
   "administration": "NAIB",
   "backendChancellor": "Noema"
