@@ -20,7 +20,7 @@ for(const course of courses){
  assert(html.includes("Jennifer Kay Pearl"),"Canonical footer missing");
  assert(unitHTML.includes('id="assigned-reading"'),"Original assigned-reading section absent: "+unit);
  assert(unitHTML.includes('href="reading-dossier.html#week-19"'),"Unit entry not linked: "+unit);
- const allowedUiScripts=new Set(["/Khaemenes_High.github.io/assets/high-school-global-chrome-v2.js","https://vervenveda.com/assets/vnv-ecosystem-toolbar.js"]);
+ const allowedUiScripts=new Set(["https://vervenveda.com/assets/vnv-ecosystem-toolbar.js"]);
  for(const script of html.matchAll(/<script\b([^>]*)>([\s\S]*?)<\/script>/gi)){
   const src=script[1].match(/\bsrc="([^"]+)"/i)?.[1]||"";
   assert.equal(script[2].trim(),"","Companion must not contain inline executable code");
