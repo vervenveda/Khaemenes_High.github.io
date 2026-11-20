@@ -142,7 +142,7 @@ if(valid&&catalog){
       if(!inside||target.pathname===base.pathname){
         href=first;
       }else{
-        const week=target.pathname.match(/\\/weeks\\/week-(\\d{2})\\/?$/);
+        const week=target.pathname.match(/\/weeks\/week-(\d{2})\/?$/);
         if(week&&snap?.status!=="mastery"&&snap?.status!=="corrections"){
           const leaf=scienceId?"lessons/day-01.html":"student-packet.html";
           href=new URL("weeks/week-"+week[1]+"/"+leaf,home).href;
