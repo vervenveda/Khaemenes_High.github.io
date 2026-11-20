@@ -367,11 +367,7 @@ function renderTools(){
   {label:"KlasaiPeer",fallback:"https://vervenveda.com/Klasaipeer.github.io/",run:()=>{const studio=window.KhaemenesUpperGradeStudyStudio;if(studio?.open){studio.open(document.activeElement);return true}return false}},
   {label:"Yearbook",fallback:"https://vervenveda.com/Academy-Yearbook.github.io/",run:()=>{const yearbook=window.KhaemenesUpperGradeYearbook;if(yearbook?.open){yearbook.open(document.activeElement);return true}return false}},
   {label:"Creative Tools",run:()=>revealUpper("grade09BlueprintRooms")},
-  {label:"Student Portfolio",run:()=>{
-   const area=document.querySelector('aside[aria-label="Student Learning Portfolio"]');
-   if(area){area.scrollIntoView({behavior:"smooth",block:"start"});area.querySelector("a")?.focus({preventScroll:true})}
-   else location.assign(highRoot+"portfolio/index.html");
-  }}
+  {label:"Student Portfolio",url:highRoot+"portfolio/index.html?grade="+grade}
  ];
  // One 4 × 2 vocabulary for all high-school grades; preserve each action handler.
  const order=["Schedule","Student Progress","Student Portfolio","KlasaiPeer","Edit Profile","Edit Background","Yearbook","Creative Tools"];
