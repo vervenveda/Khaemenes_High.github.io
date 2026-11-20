@@ -1,0 +1,25 @@
+name: Grade 09 Algebra and Language Handoff
+on:
+  pull_request:
+    paths:
+      - "grades/shared/high-school-schedule-page.js"
+      - "grades/grade-09/student-profile/student-course-registry.js"
+      - "courses/mathematics/algebra-1/diagnostic/index.html"
+      - "courses/mathematics/algebra-1/assets/readiness-entry-gate-v1.js"
+      - "tools/validate-grade09-readiness-language-handoff.mjs"
+      - ".github/workflows/grade09-algebra-language-handoff.yml"
+  push:
+    paths:
+      - "grades/shared/high-school-schedule-page.js"
+      - "grades/grade-09/student-profile/student-course-registry.js"
+      - "courses/mathematics/algebra-1/diagnostic/index.html"
+      - "courses/mathematics/algebra-1/assets/readiness-entry-gate-v1.js"
+      - "tools/validate-grade09-readiness-language-handoff.mjs"
+      - ".github/workflows/grade09-algebra-language-handoff.yml"
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Verify sovereign source contracts
+        run: node tools/validate-grade09-readiness-language-handoff.mjs
