@@ -54,7 +54,7 @@ function currentRecords(user){
  const list=getLedger()?.readLearner?.(user.id)||[];
  return list.filter(record=>{
   // This separate readiness index is not an official Algebra I course grade.
-  if(!record||record.learnerId!==user.id||["algebra-1-readiness","english-9-readiness","integrated-science-9-readiness"].includes(record.courseId)||typeof record.courseId!=="string")return false;
+  if(!record||record.learnerId!==user.id||["algebra-1-readiness","english-9-readiness","integrated-science-9-readiness","english-9-objective-evidence"].includes(record.courseId)||typeof record.courseId!=="string")return false;
   const tagged=record.grade?normalizeGrade(record.grade):null;
   return !record.grade||tagged===user.grade;
  });
