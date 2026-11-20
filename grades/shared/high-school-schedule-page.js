@@ -20,7 +20,12 @@ function student(){
 }
 function slots(){
  const language=pins?.readLanguageChoices?.()?.[String(Number(grade))]||null;
- const math=grade==="09"?g9?.mathPathway?.()||null:null;
+ let math=grade==="09"?g9?.mathPathway?.()||null:null;
+ if(grade==="10"){
+  const id=student();
+  const data=id?records(id):[];
+  math=data.some(r=>r?.courseId==="geometry")?"geometry":data.some(r=>r?.courseId==="algebra-1")?"algebra-1":null;
+ }
  const items=catalog?.slots?.(Number(grade),{mathId:math,language})||[];
  if(grade==="09")return items;
  return items.map(item=>item.subject==="foreignLanguage"&&language
