@@ -105,7 +105,7 @@ function step(item){
  const snapshotIsLanding=Boolean(approvedSnapshot&&courseHome&&clean(approvedSnapshot)===clean(courseHome));
  // A damaged saved English record requires its original recovery interface;
  // never silently bypass it by launching a new lesson.
- let destination=englishCourse&&snap?.status==="paused"
+ let destination=(englishCourse||scienceCourse||socialCourse)&&snap?.status==="paused"
   ?courseHome
   :approvedSnapshot&&!snapshotIsLanding?approvedSnapshot:first;
  // Upper English publishes a Week URL when the precise day is not recorded.
