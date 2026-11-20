@@ -299,44 +299,7 @@ function showUpperProgress(){
   }
  });
 }
-function showUpperSchedule(){
- upperGradeDialog("upperGradeScheduleDialog","My Schedule",content=>{
-  // Every upper grade owns one live class manager. Move its existing node,
-  // preserving grade-scoped course choices, listeners and learner storage.
-  const manager=document.getElementById("manageClassesTitle")?.closest("section.card")||null;
-  content.replaceChildren();
-  const registered=gradeContext();
-  if(!registered||registered.gradeNumber!==Number(grade)){
-   content.append(make("p",grade10Copy?"Choose your Grade 10 student profile to see your schedule.":grade11Copy?"Choose your Grade 11 student profile to see your schedule.":grade12Copy?"Choose your Grade 12 student profile to see your schedule.":"Select your registered Grade "+grade+" learner to view your schedule."));return;
-  }
-  const intro=make("p",grade10Copy?"These are your Grade 10 classes. Open a class to continue learning, or use the class manager below to organize your schedule.":grade11Copy?"These are your Grade 11 classes. Use your schedule to keep priorities clear, continue active work, and stay aware of the classes that matter most for your goals.":grade12Copy?"These are your Grade 12 classes. Use your schedule to finish remaining work, keep priorities visible, and make sure nothing important gets lost in the final stretch.":"Your eight Grade "+grade+" subjects. Course choices remain managed by the grade-specific curriculum.");
-  intro.style.cssText="font-size:16px";content.append(intro);
-  const grid=make("div");grid.className="grade09-blueprint-schedule-grid";
-  for(const item of slots()){
-   const card=make("article");card.className="grade09-blueprint-schedule-item";
-   card.append(make("strong",item.label),make("span",item.title));
-   const current=step(item);
-   const route=current?.dest||href(item);
-   if(route){
-    const launch=link(grade10Copy?"Class":(current?.label||((grade11Copy||grade12Copy)?"Continue Class":"Open class")),route,"btn secondary");
-    launch.dataset.courseId=item.id||"";
-    launch.title=current?.detail||"Continue this class";
-    card.append(launch);
-   }
-   grid.append(card);
-  }
-  content.append(grid);
-  // Rehome the existing pin and language controls; do not clone or recreate.
-  // Keep this operation behind the registered-grade verification above.
-  if(manager){
-   manager.hidden=false;
-   manager.removeAttribute("aria-hidden");
-   manager.classList.remove("grade10-retired-manager-data");
-   manager.classList.add("grade10-schedule-manager","upper-grade-schedule-manager");
-   content.append(manager);
-  }
- });
-}
+// Schedule uses an independent HTML page. No Schedule dialog ownership here.
 const openConnectedUpperResource=url=>{try{return !!window.open(url,"_blank","noopener,noreferrer")}catch{return false}};
 function revealUpper(id){
  const target=$(id);
@@ -370,7 +333,7 @@ function renderTools(){
     return false;
    }},
   {label:"Student Progress",run:showUpperProgress},
-  {label:"Schedule",fallback:highRoot+"grades/grade-"+grade+"/student-profile/schedule/",run:showUpperSchedule},
+  {label:"Schedule",url:highRoot+"grades/grade-"+grade+"/student-profile/schedule/"},
   {label:"KlasaiPeer",fallback:"https://vervenveda.com/Klasaipeer.github.io/",run:()=>{const studio=window.KhaemenesUpperGradeStudyStudio;if(studio?.open){studio.open(document.activeElement);return true}return false}},
   {label:"Yearbook",fallback:"https://vervenveda.com/Academy-Yearbook.github.io/",run:()=>{const yearbook=window.KhaemenesUpperGradeYearbook;if(yearbook?.open){yearbook.open(document.activeElement);return true}return false}},
   {label:"Creative Tools",run:()=>revealUpper("grade09BlueprintRooms")},
@@ -409,21 +372,8 @@ function renderTools(){
   }
   grid.append(item);
  }
- // When a Grade 10 learner is visiting Grades 11 or 12, the private background
- // module intentionally does not mount. Preserve the 4×2 rail with a safe route
- // to the registered campus, never a second or unauthorized background editor.
- const ctx=gradeContext();
- if(["11","12"].includes(grade)&&ctx?.gradeNumber!==Number(grade)
-    &&!grid.querySelector("#openGrade09BackgroundDialog,[data-background-return]")){
-  const back=make("a","Edit Background");
-  back.className="grade09-blueprint-tool";
-  back.dataset.backgroundReturn="true";
-  back.href=ctx?.grade?highRoot+"grades/grade-"+ctx.grade+"/student-profile/":builder;
-  back.title="Open your registered student profile to customize its background";
-  back.setAttribute("aria-label","Customize background in your registered student profile");
-  const yearbook=[...grid.children].find(n=>n.textContent.trim()==="Yearbook");
-  if(yearbook)grid.insertBefore(back,yearbook);else grid.append(back);
- }
+ // Existing Edit Background action routes mismatched learners back to their registered profile.
+ // Never insert a ninth duplicate Edit Background toolbar control.
  // For a registered learner, Grade 09's original background-dialog module
  // creates the genuine eighth editor button. Do not duplicate it.
 }
