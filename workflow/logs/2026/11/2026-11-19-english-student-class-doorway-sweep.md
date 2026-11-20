@@ -43,3 +43,17 @@ All Student Profile Class/Schedule/pinned/Daily Lessons/Today and Daily Focus La
 - a2d3f7f: regression explicitly covers that Today shortcut.
 - de69da9: Grade 09 regression includes historical Course Home as a recorded destination and requires lesson fallback.
 - Read-only GitHub public source verification available; local full runner not executed here. No automated test pass or live learner acceptance should be inferred.
+
+## Final direct Daily Lessons sweep
+- Identified an independent Grades 10–12 Daily Lessons Class-card renderer in each grade-specific `student-profile/daily-lessons/index.html`. It previously read only IDs english-10/11/12, while the English publisher records ela10/ela11/ela12, then fell back to public `slot.href`.
+- d5fe01a / 290c1bb / 99c8a88: each direct Daily Lessons Class card now checks historical English continuation identifiers, confines ordinary navigation to its own English course, routes Week 01 into the existing dedicated first lesson, later weeks into their real #monday lesson section, and weekly mastery/corrections into #quiz.
+- 6bfe4a3: the main Student Profile Class resolver preserves a labelled paused/invalid-record recovery exception; it must not send a learner forward when their evidence needs recovery.
+- ad26bb7 / b8d021d / 1a5264c: direct Daily Lessons now similarly labels recovery as 'Recover Course Record' and confines that exceptional recovery URL to the known English course home; it is never disguised as lesson continuation.
+- 9104402: regression coverage added for all three direct Daily Lessons pages and explicit recovery.
+- b6b078c: CI file path filters include Grade 10–12 direct Daily Lessons entry pages.
+
+## Latest acceptance
+- GitHub source modifications and committed workflow config verified by GitHub contents API.
+- No browser-executed regression or deployed authenticated-user acceptance confirmed in this session.
+- Public course landing pages untouched. All changed links are inside student-owned surfaces or their existing route resolvers.
+- All course engines and 80% mastery policies unchanged. The explicitly labelled corrupted-record recovery path is the necessary exception to the lessons-only routing rule.
