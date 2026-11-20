@@ -1,0 +1,26 @@
+name: High School Social Studies Lesson Engine v0.1
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'courses/shared/social-studies-lesson-engine-v0.1.js'
+      - 'courses/social-studies/grade-09/weeks/week-01/student-packet.html'
+      - 'workflow/engines/social-studies/social-studies-engine-prototype-v0.1.html'
+      - 'workflow/blueprints/khaemenes-social-studies-lesson-engine-blueprint-v0.1.md'
+      - 'tools/test-social-studies-lesson-engine-v0.1.mjs'
+      - '.github/workflows/social-studies-lesson-engine-pilot.yml'
+  pull_request:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  curriculum-source-contract:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: node --check courses/shared/social-studies-lesson-engine-v0.1.js
+      - run: node --check tools/test-social-studies-lesson-engine-v0.1.mjs
+      - run: node tools/test-social-studies-lesson-engine-v0.1.mjs
