@@ -15,7 +15,7 @@ const list=[
 for(const [grade,path,headings] of list){
  const html=read(path);
  assert.ok(html.includes('data-social-studies-engine="'+grade+'"'),path+" missing opt-in");
- assert.ok(html.includes("social-studies-lesson-engine-v0.1.js?v=20261119-social-studies-week02-v3"),path+" old engine URL");
+ assert.ok(html.includes("social-studies-lesson-engine-v0.1.js?v=20261119-social-studies-week03-v4"),path+" old engine URL");
  assert.equal(headings.length,5,"Expected five original weekday activities");
  for(const heading of headings){
   assert.ok(html.includes(">"+heading+"</h3>"),path+" missing original lesson: "+heading);
