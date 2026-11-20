@@ -24,7 +24,7 @@ function slots(){
  const items=catalog?.slots?.(Number(grade),{mathId:math,language})||[];
  if(grade==="09")return items;
  return items.map(item=>item.subject==="foreignLanguage"&&language
-   ? {...item,title:language.charAt(0).toUpperCase()+language.slice(1)+" · Choose 101 or 102"}
+   ? {...item,title:language.charAt(0).toUpperCase()+language.slice(1)+" · Language Pathway"}
    : item);
 }
 const alias=id=>/^english-(10|11|12)$/.test(id||"")?[id,"ela"+id.slice(-2)]:id?[id]:[];
@@ -59,7 +59,7 @@ function instructionalRoute(item,record){
  // grade alone never implies French 102 or Spanish 102 placement.
  if(item.subject==="foreignLanguage"&&grade!=="09")
   return Promise.resolve({url:languageDirectory,label:"Choose Language",
-   detail:"Choose French or Spanish, then the appropriate 101 or 102 course."});
+   detail:"Explore seven language pathways and choose the appropriate level or available lessons."});
  if(!item.id)return null;
  const first=catalog.FIRST_STEPS?.[item.id]||null;
  const home=item.href||null;
