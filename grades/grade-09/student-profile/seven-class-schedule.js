@@ -72,9 +72,11 @@ function render(){
   const actions=el("div");actions.className="grade09-eight-class-actions";
   card.append(title,name);
   if(course){
-   const englishCurrent=id==="english-9"?registry.continueFor(id):null;
-   const link=el("a",id==="english-9"?"Continue English Lesson":"Course Home");
-   link.href=id==="english-9"?(englishCurrent?.url||firstLessonFor(id)):course.home;
+   const classDoor=["english-9","integrated-science-9","global-studies-9"].includes(id);
+   const current=classDoor?registry.continueFor(id):null;
+   const title=id==="english-9"?"Continue English Lesson":id==="integrated-science-9"?"Continue Science Lesson":id==="global-studies-9"?"Continue Social Studies":"Course Home";
+   const link=el("a",title);
+   link.href=classDoor?(current?.url||window.KhaemenesHighEightClass?.FIRST_STEPS?.[id]||firstLessonFor(id)):course.home;
    link.style.cssText="display:inline-block;margin-right:12px;text-decoration:underline";
    const button=el("button",registry.isPinned(id)?"★ Pinned":"☆ Pin class");button.type="button";button.setAttribute("aria-pressed",String(registry.isPinned(id)));
    button.addEventListener("click",()=>{registry.setPinned(id,!registry.isPinned(id));render()});
