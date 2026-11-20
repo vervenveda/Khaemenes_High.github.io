@@ -487,9 +487,13 @@ body .main .footer{
 
 
 
+<link rel="stylesheet" href="../assets/english-readiness-ui-v1.css?v=1.0.0" data-ka-english-readiness-ui="v1">
 </head>
 <body data-english9-require-entry>
 <a class="skip-link" href="#content">Skip to student workspace</a>
+<!-- Invisible positioning anchor for canonical 333 ticker, auto ticker and VNV header.
+     Prevents generic ticker discovery from nesting official chrome in the lesson dashboard. -->
+<div id="english9ChromeAnchor" data-khae-header hidden aria-hidden="true"></div>
 <div class="app">
 <section class="centered-course-controls" id="landing-navigation" aria-label="Course navigation and learner controls">
  <p class="english9-course-context">Grade 09 · Read · Think · Write</p>

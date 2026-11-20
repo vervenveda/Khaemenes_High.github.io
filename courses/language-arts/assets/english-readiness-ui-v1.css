@@ -1,0 +1,126 @@
+/* KHAEMENES ENGLISH READINESS · SHARED PRESENTATION v1.0
+   One stylesheet for English 9–12 readiness surfaces. Academic grade gates,
+   assessments, persistence, and lesson engines remain owned by native scripts.
+   Loaded after grade-specific styles; selectors are deliberately scoped.
+*/
+
+/* The top-level canonical chrome mount anchor is not a visible page component. */
+#english9ChromeAnchor {display:none!important}
+
+/* Grade 9: genuine readiness gate, not a substitute for the assessment page. */
+body > .english9-entry-gate {
+  position:fixed!important;inset:0!important;z-index:2147479000!important;
+  display:grid!important;grid-template-rows:minmax(0,1fr) auto!important;
+  place-items:center!important;overflow-y:auto!important;
+  padding:clamp(90px,12vh,140px) 18px 26px!important;
+  background:rgba(242,239,232,.98)!important;
+  color:#252b2b!important;
+  font:400 16px/1.55 "Brandon Grotesque",Nunito,"Avenir Next",Arial,sans-serif!important;
+}
+body > .english9-entry-gate .english9-entry-card {
+  width:min(100%,620px)!important;max-width:620px!important;margin:auto!important;
+  padding:clamp(22px,3vw,33px)!important;
+  border:1px solid #bfa777!important;border-radius:7px!important;
+  background:#fffdf8!important;color:#252b2b!important;
+  box-shadow:0 12px 38px rgba(17,21,18,.13)!important;text-align:center!important;
+}
+body > .english9-entry-gate .english9-entry-card h1 {
+  margin:0 0 14px!important;color:#252b2b!important;
+  font:400 clamp(24px,3vw,33px)/1.3 Cinzel,Georgia,serif!important;
+}
+body > .english9-entry-gate .english9-entry-card p {
+  margin:0 auto 22px!important;max-width:53ch!important;color:#353c37!important;
+  font:400 16px/1.65 "Brandon Grotesque",Nunito,Arial,sans-serif!important;
+}
+body > .english9-entry-gate .english9-entry-actions {
+  display:flex!important;flex-wrap:wrap!important;align-items:stretch!important;
+  justify-content:center!important;gap:11px!important;
+}
+body > .english9-entry-gate .english9-entry-actions a {
+  display:inline-flex!important;align-items:center!important;justify-content:center!important;
+  flex:1 1 185px!important;min-width:0!important;min-height:48px!important;
+  padding:11px 16px!important;border:1px solid #252b2b!important;border-radius:7px!important;
+  background:#252b2b!important;color:#fff8e9!important;-webkit-text-fill-color:#fff8e9!important;
+  text-align:center!important;text-decoration:none!important;
+  font:400 16px/1.4 "Brandon Grotesque",Nunito,Arial,sans-serif!important;
+}
+body > .english9-entry-gate .english9-entry-actions a.english9-entry-back {
+  background:#fffdf8!important;color:#252b2b!important;-webkit-text-fill-color:#252b2b!important;
+}
+body > .english9-entry-gate .english9-entry-actions a:hover {
+  background:#3c4a43!important;color:#fff8e9!important;-webkit-text-fill-color:#fff8e9!important;
+}
+body > .english9-entry-gate .english9-entry-actions a:focus-visible {
+  outline:3px solid #9b7b35!important;outline-offset:3px!important;
+}
+body > .english9-entry-gate .english9-entry-footer {
+  display:block!important;box-sizing:border-box!important;
+  width:min(100%,940px)!important;margin:17px auto 0!important;
+  padding:15px 18px!important;border-radius:7px!important;
+  background:#252b2b!important;color:#fff8e9!important;
+  font:400 16px/1.4 "Brandon Grotesque",Nunito,Arial,sans-serif!important;
+  text-align:center!important;
+}
+
+/* English 9–12: actual diagnostic/readiness assessment page, never an overlay.
+   Center the explanation, prevent 68vh empty heroes, and maintain native forms. */
+html:root:root body[data-english-readiness-grade] {
+  --ka-readiness-charcoal:#252b2b;
+  --ka-readiness-cream:#fff8e9;
+  --ka-readiness-paper:#f4f0e7;
+  --ka-readiness-gold:#b48b45;
+  background:var(--ka-readiness-paper)!important;color:var(--ka-readiness-charcoal)!important;
+  font:400 16px/1.6 "Brandon Grotesque",Nunito,"Avenir Next",Arial,sans-serif!important;
+}
+body[data-english-readiness-grade] main#main {width:100%!important;max-width:1120px!important;margin:0 auto!important;}
+body[data-english-readiness-grade] main#main > section.hero {
+  min-height:0!important;display:block!important;text-align:center!important;
+  padding:clamp(24px,5vw,48px) 18px!important;margin:12px auto 20px!important;
+  background:#fffdf8!important;border:1px solid #c9b894!important;border-radius:7px!important;
+}
+body[data-english-readiness-grade] main#main > section.hero > .wrap {
+  width:min(100%,920px)!important;margin:auto!important;
+}
+body[data-english-readiness-grade] main#main > section.hero .eyebrow {
+  font:400 24px/1.35 Cinzel,Georgia,serif!important;
+  color:#6d521e!important;margin:0 0 12px!important;
+}
+body[data-english-readiness-grade] main#main > section.hero h1 {
+  color:#252b2b!important;text-align:center!important;
+  font:400 clamp(27px,4vw,33px)/1.25 Cinzel,Georgia,serif!important;
+  margin:0 auto 12px!important;
+}
+body[data-english-readiness-grade] main#main > section.hero :is(.lead,.comment) {
+  max-width:68ch!important;margin:0 auto 20px!important;
+  color:#353c37!important;font:400 16px/1.6 "Brandon Grotesque",Nunito,Arial,sans-serif!important;
+}
+body[data-english-readiness-grade] main#main :is(.wrap,.content-layout) {
+  max-width:100%!important;min-width:0!important;margin-inline:auto!important;
+}
+body[data-english-readiness-grade] main#main :is(.card,.assessment-shell,.content-main) {
+  min-width:0!important;border-radius:7px!important;
+  background:#fffdf8!important;color:#252b2b!important;border-color:#c9b894!important;
+}
+body[data-english-readiness-grade] main#main :is(.card,.assessment-shell,.content-main) :is(h2,h3,p,li,label,.notice) {
+  color:#252b2b!important;
+}
+body[data-english-readiness-grade] main#main :is(a.btn,button.btn,.actions a,.actions button,.toolbar button) {
+  min-height:44px!important;border-radius:7px!important;
+  font:400 16px/1.4 "Brandon Grotesque",Nunito,Arial,sans-serif!important;
+  background:#252b2b!important;color:#fff8e9!important;-webkit-text-fill-color:#fff8e9!important;
+  border:1px solid #252b2b!important;
+}
+body[data-english-readiness-grade] main#main :is(a.btn,button.btn,.actions a,.actions button,.toolbar button):focus-visible {
+  outline:3px solid #9b7b35!important;outline-offset:3px!important;
+}
+body[data-english-readiness-grade] main#main :is(input,select,textarea) {
+  font-size:16px!important;border-radius:7px!important;
+}
+@media(max-width:480px) {
+  body > .english9-entry-gate {padding:86px 14px 22px!important}
+  body > .english9-entry-gate .english9-entry-actions {flex-direction:column!important}
+}
+@media print {
+  body > .english9-entry-gate {position:static!important;padding:0!important}
+  body[data-english-readiness-grade] main#main > section.hero {padding:16px!important}
+}
