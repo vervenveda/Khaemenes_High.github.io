@@ -25,6 +25,7 @@ on:
       - 'tools/test-social-studies-week03-engine.mjs'
       - 'tools/test-social-studies-full-course-integration.mjs'
       - 'courses/social-studies/grade-*/**/student-packet.html'
+      - 'courses/social-studies/grade-*/**/student-packet-v2.html'
       - '.github/workflows/social-studies-lesson-engine-pilot.yml'
   pull_request:
   workflow_dispatch:
