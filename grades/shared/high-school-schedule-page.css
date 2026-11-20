@@ -1,44 +1,47 @@
-/* Dedicated High School Schedule · page-owned layout, no modal or overlay. */
-:root{--ink:#243038;--paper:#fff8e9;--gold:#a98240;--line:#cbb991}
+/* One dedicated Schedule presentation owner. VNV canonical scripts own all chrome. */
+:root{--ink:#243038;--cream:#fff8e9;--khaki:#d6c4a1;--parchment:#eee5d4;--border:#bda982}
 *{box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{margin:0;background:#eee7db;color:var(--ink);font:400 16px/1.55 "Brandon Grotesque",Nunito,Arial,sans-serif;min-width:0}
-a,button{font:inherit}a{color:inherit}
-.schedule-main{width:min(1250px,calc(100% - 28px));margin:28px auto 55px}
-.schedule-hero{background:#243038;color:#fff8e9;border-radius:7px;padding:33px 24px;text-align:center}
-.schedule-hero .eyebrow{font:400 33px/1.2 Cinzel,Georgia,serif;margin:0;color:#e5c98f}
-.schedule-hero h1{font:400 clamp(36px,5vw,66px)/1.12 Cinzel,Georgia,serif;margin:12px 0}
-.schedule-hero p{font-size:24px;margin:10px auto 22px;max-width:960px}
-.schedule-actions,.card-actions{display:flex;flex-wrap:wrap;gap:10px;justify-content:center}
-.schedule-btn{display:inline-flex;align-items:center;justify-content:center;text-align:center;min-height:46px;min-width:0;padding:10px 16px;border:1px solid #b48b45;border-radius:7px;text-decoration:none;background:#243038;color:#fff8e9;font-size:16px;cursor:pointer}
-.schedule-hero .schedule-btn{background:#fff8e9;color:#243038}
-.schedule-btn.secondary{background:#fff8e9;color:#243038}
-.schedule-btn:focus-visible{outline:3px solid #c29b59;outline-offset:3px}
-.schedule-stat-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin:20px 0}
-.schedule-stat{background:#fffdf7;border:1px solid var(--line);border-radius:7px;padding:18px;text-align:center}
+html{scroll-behavior:smooth;overflow-y:auto}
+body{margin:0;background:var(--parchment);color:var(--ink);font:400 16px/1.55 "Brandon Grotesque",Nunito,Arial,sans-serif;min-width:0;overflow-x:hidden}
+a,button{font:inherit}
+.schedule-main{width:min(1250px,calc(100% - 24px));margin:24px auto 55px}
+.schedule-hero{background:var(--ink);color:var(--cream);border-radius:7px;padding:33px 24px;text-align:center}
+.schedule-hero .eyebrow{font:400 33px/1.2 Cinzel,Georgia,serif;margin:0;color:var(--khaki)}
+.schedule-hero h1{font:400 clamp(36px,5vw,66px)/1.12 Cinzel,Georgia,serif;margin:11px 0}
+.schedule-hero p{font-size:24px;margin:10px auto 19px;max-width:960px}
+.schedule-actions,.card-actions{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;align-items:stretch}
+.schedule-btn{display:inline-flex;align-items:center;justify-content:center;text-align:center;min-height:40px;min-width:0;padding:7px 14px;border:1px solid var(--ink);border-radius:7px;text-decoration:none;background:var(--ink);color:var(--cream);font:400 16px/1.3 "Brandon Grotesque",Nunito,Arial,sans-serif;cursor:pointer;overflow-wrap:anywhere}
+.schedule-hero .schedule-btn{background:var(--cream);color:var(--ink);border-color:var(--cream)}
+.schedule-btn.secondary{background:var(--cream);color:var(--ink);border-color:var(--ink)}
+.schedule-btn:focus-visible{outline:3px solid var(--khaki);outline-offset:3px}
+.schedule-access{display:flex;flex-wrap:wrap;gap:11px;justify-content:center;margin-top:13px}
+.schedule-access .schedule-btn{min-width:145px;max-width:200px}
+.schedule-stat-grid,.schedule-features{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin:18px auto}
+.schedule-stat,.schedule-feature{background:var(--cream);border:1px solid var(--border);border-radius:7px;padding:17px;text-align:center}
 .schedule-stat strong{display:block;font:400 33px/1.2 Cinzel,Georgia,serif}
-.schedule-stat span{display:block;margin-top:8px}
-.schedule-section{margin:22px 0;padding:21px;background:#fffaf1;border:1px solid var(--line);border-radius:7px}
-.schedule-section>h2{font:400 33px/1.25 Cinzel,Georgia,serif;text-align:center;margin:0 0 11px}
-.schedule-subtitle{text-align:center;margin:0 auto 20px;max-width:880px}
-.schedule-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;align-items:stretch}
-.schedule-card{background:#fffdf9;border:1px solid #bda982;border-radius:7px;min-width:0;padding:17px;display:flex;flex-direction:column;gap:9px}
-.schedule-card .subject{color:#765e30;font-size:16px;letter-spacing:.02em}
+.schedule-stat span{display:block;margin-top:6px}
+.schedule-feature h3{font:400 24px/1.3 Cinzel,Georgia,serif;margin:0 0 7px}
+.schedule-feature p{margin:0;color:var(--ink)}
+.schedule-section{margin:20px 0;padding:19px;background:var(--parchment);border:1px solid var(--border);border-radius:7px}
+.schedule-section>h2{font:400 33px/1.25 Cinzel,Georgia,serif;text-align:center;margin:0 0 12px}
+.schedule-subtitle{text-align:center;margin:0 auto 18px;max-width:880px}
+.schedule-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;align-items:stretch}
+.schedule-card{background:var(--cream);border:1px solid var(--border);border-radius:7px;min-width:0;padding:15px;display:flex;flex-direction:column;gap:9px}
+.schedule-card .subject{color:var(--ink);font-size:16px}
 .schedule-card h3{font:400 24px/1.25 Cinzel,Georgia,serif;overflow-wrap:anywhere;margin:0;min-height:62px}
-.schedule-card .detail{margin:0;min-height:50px;color:#465550}
-.schedule-card .metrics{display:grid;gap:12px;margin-top:auto}
+.schedule-card .detail{margin:0;min-height:50px;color:var(--ink)}
+.schedule-card .metrics{display:grid;gap:11px;margin-top:auto}
 .metric-head{display:flex;align-items:baseline;justify-content:space-between;gap:6px;font-size:16px}
-.metric-track{height:14px;background:#e2ddd2;border:1px solid #c5b9a2;border-radius:7px;overflow:hidden}
-.metric-fill{height:100%;background:#426953;border-radius:7px;max-width:100%}
-.metric-fill.grade{background:#87683b}
-.metric-note{font-size:16px;color:#465550;min-height:24px}
+.metric-track{height:14px;background:var(--parchment);border:1px solid var(--border);border-radius:7px;overflow:hidden}
+.metric-fill{height:100%;background:var(--ink);border-radius:7px;max-width:100%}
+.metric-fill.grade{background:#806c48}
+.metric-note{font-size:16px;color:var(--ink);min-height:24px}
 .schedule-card .card-actions{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));align-items:stretch;margin-top:8px}
-.schedule-card .card-actions .schedule-btn{width:100%;padding:8px 6px;overflow-wrap:anywhere}
+.schedule-card .card-actions .schedule-btn{width:100%;padding:7px 6px}
 .schedule-card .card-actions .schedule-btn:only-child{grid-column:1/-1}
-.schedule-card .card-actions button[disabled]{cursor:not-allowed;opacity:.65}
-.schedule-notice{padding:17px;border:1px solid #bda982;background:#fffdf9;border-radius:7px;text-align:center}
-.schedule-footer{background:#243038;color:#fff8e9;text-align:center;padding:24px;font-size:16px}
+.schedule-notice{padding:16px;border:1px solid var(--border);background:var(--cream);border-radius:7px;text-align:center}
+.schedule-footer{background:var(--ink);color:var(--cream);text-align:center;padding:24px;font-size:16px}
 [hidden]{display:none!important}
-@media(max-width:1000px){.schedule-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.schedule-stat-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
-@media(max-width:570px){.schedule-grid,.schedule-stat-grid{grid-template-columns:1fr}.schedule-hero .eyebrow{font-size:24px}.schedule-hero p{font-size:18px}.schedule-main{width:calc(100% - 18px)}.schedule-section{padding:13px}.schedule-card h3{min-height:0}.schedule-card .detail{min-height:0}}
+@media(max-width:1010px){.schedule-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:620px){.schedule-grid,.schedule-stat-grid,.schedule-features{grid-template-columns:1fr}.schedule-hero .eyebrow{font-size:24px}.schedule-hero p{font-size:18px}.schedule-main{width:calc(100% - 16px)}.schedule-section{padding:13px}.schedule-card h3,.schedule-card .detail{min-height:0}.schedule-access .schedule-btn{flex:1 1 140px}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
