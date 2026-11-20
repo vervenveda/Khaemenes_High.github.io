@@ -95,3 +95,6 @@ button:disabled{opacity:.5;cursor:not-allowed}
  body.portfolio-report-print .portfolio-report-evaluator{break-inside:avoid;margin:14px 0;border:1px solid #444}
  body.portfolio-report-print .portfolio-report-print-heading{border:0;border-bottom:1px solid #444}
 }
+
+/* Source-attributed refresh feedback inside the sole portfolio presentation owner. */
+.portfolio-report-refresh-status{padding:12px 15px;border:3px solid var(--ink);border-radius:7px;background:var(--cream);color:var(--ink);font:400 16px/1.5 "Brandon Grotesque",Nunito,Arial,sans-serif;margin:12px 0}
