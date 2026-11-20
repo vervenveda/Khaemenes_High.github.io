@@ -1,11 +1,14 @@
 name: No Page Regulator Regression
+
 on:
   push:
     branches: [main]
   pull_request:
   workflow_dispatch:
+
 permissions:
   contents: read
+
 jobs:
   verify:
     runs-on: ubuntu-latest
@@ -14,4 +17,8 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: '22'
-      - run: node tools/validate-no-page-regulator.mjs\n      - run: node tools/validate-high-main-landings-vnv-shell.mjs\n      - run: node tools/validate-high-subject-landings-vnv-shell.mjs\n      - run: node tools/validate-grade09-assessment-vnv-shell.mjs\n      - run: node tools/validate-grade10-12-assessment-vnv-shell.mjs
+      - run: node tools/validate-no-page-regulator.mjs
+      - run: node tools/validate-high-main-landings-vnv-shell.mjs
+      - run: node tools/validate-high-subject-landings-vnv-shell.mjs
+      - run: node tools/validate-grade09-assessment-vnv-shell.mjs
+      - run: node tools/validate-grade10-12-assessment-vnv-shell.mjs
