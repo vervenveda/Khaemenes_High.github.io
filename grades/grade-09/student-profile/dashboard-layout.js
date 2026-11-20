@@ -19,38 +19,10 @@ for(const card of [identity,firstStep])if(card)top.append(card);
 main.prepend(top);
 align(top);
 
-// Canonical Grade 09 Schedule surface: one native dialog owns the live schedule DOM.
-// The standalone schedule/ page remains the non-dialog fallback.
-if(schedule&&!document.getElementById("grade09ScheduleDialog")){
- const dialog=document.createElement("dialog");
- dialog.id="grade09ScheduleDialog";
- dialog.setAttribute("aria-labelledby","grade09ScheduleDialogTitle");
- dialog.style.cssText="box-sizing:border-box;width:min(1100px,calc(100vw - 24px));max-height:91dvh;margin:auto;padding:0;border:2px solid #b48b45;border-radius:7px;background:#f4f0e7;color:#243038;box-shadow:0 22px 70px rgba(0,0,0,.42);overflow:auto";
- const shell=document.createElement("div");
- shell.style.cssText="display:flex;flex-direction:column;min-height:0";
- const head=document.createElement("div");
- head.style.cssText="position:sticky;top:0;z-index:3;display:flex;align-items:center;justify-content:space-between;gap:14px;padding:14px 18px;background:#243038;color:#fff8e9;border-bottom:1px solid #b48b45";
- const title=document.createElement("h2");
- title.id="grade09ScheduleDialogTitle";
- title.textContent="My Schedule";
- title.style.cssText="margin:0;color:#fff8e9;font:400 24px/1.3 Cinzel,Georgia,serif";
- const close=document.createElement("button");
- close.type="button";
- close.textContent="Close";
- close.style.cssText="min-height:44px;padding:8px 16px;border:1px solid #b48b45;border-radius:7px;background:#fff8e9;color:#243038;font:400 16px/1.3 'Brandon Grotesque',Nunito,Arial,sans-serif;cursor:pointer";
- const body=document.createElement("div");
- body.style.cssText="padding:18px";
- schedule.style.setProperty("width","100%","important");
- schedule.style.setProperty("max-width","none","important");
- schedule.style.setProperty("margin","0","important");
- body.append(schedule);
- head.append(title,close);
- shell.append(head,body);
- dialog.append(shell);
- document.body.append(dialog);
- close.addEventListener("click",()=>dialog.close());
- dialog.addEventListener("click",event=>{if(event.target===dialog)dialog.close()});
-}
+// Schedule owns its independent HTML page at schedule/index.html.
+ // Keep the legacy schedule bar only as an inert data mount for existing
+ // course scripts; never create/reparent a native Schedule popup.
+if(schedule){schedule.hidden=true;schedule.setAttribute("aria-hidden","true");}
 
 // Profile photo and personal information must lead; the Profile Tools toolbar follows the identity card.
 // It reuses existing Grade 09 features; no course records or learner storage are changed.
@@ -90,11 +62,7 @@ if(!document.getElementById("khaeProfileToolRail")){
     if(!popup)return reveal("studentCourseProgress");
     return true;
    }},
-  {label:"Schedule",target:"grade09ScheduleDialog",fallback:"schedule/",run:()=>{
-    const popup=document.getElementById("grade09ScheduleDialog");
-    if(popup&&typeof popup.showModal==="function"){if(!popup.open)popup.showModal();return true}
-    return false;
-   }},
+  {label:"Schedule",href:"schedule/"},
   {label:"KlasaiPeer",target:"grade09StudyStudioDialog",fallback:"https://vervenveda.com/Klasaipeer.github.io/",run:()=>{
     const studio=window.KhaemenesGrade09StudyStudio;
     if(studio?.open){studio.open(document.activeElement);return true}
@@ -353,24 +321,9 @@ if(managerCard&&!document.getElementById("grade09ManageClassesDialog")){
 }
 if(shortcuts)top.insertAdjacentElement("afterend",shortcuts);
 
-// The one redesigned Schedule dialog owns the original live schedule.
-// Never reparent it back into the page or hide it after mounting the dialog.
-const scheduleDialog=document.getElementById("grade09ScheduleDialog");
-if(scheduleDialog&&schedule){
- if(!scheduleDialog.contains(schedule))scheduleDialog.querySelector("div")?.append(schedule);
- schedule.hidden=false;
- schedule.removeAttribute("aria-hidden");
-}else if(schedule){
- // Fail visibly rather than silently suppressing the original schedule.
- if(shortcuts)shortcuts.insertAdjacentElement("afterend",schedule);
- else top.insertAdjacentElement("afterend",schedule);
- schedule.hidden=false;
- schedule.removeAttribute("aria-hidden");
-}
-if(progress){
- const anchor=scheduleDialog?(shortcuts||top):(schedule||shortcuts||top);
- anchor.insertAdjacentElement("afterend",progress);
-}
+// The Schedule page is independent. Do not resurface the old schedule bar.
+if(schedule){schedule.hidden=true;schedule.setAttribute("aria-hidden","true");}
+if(progress)(shortcuts||top).insertAdjacentElement("afterend",progress);
 [shortcuts,progress,portfolio].forEach(align);
 const region=document.createElement("section");region.id="grade09Explore";region.className="grade09-explore";
 const title=document.createElement("h2");title.textContent="Explore, Create & Celebrate";region.append(title);
