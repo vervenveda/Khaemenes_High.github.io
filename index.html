@@ -836,8 +836,9 @@ html:root:root body[data-khae-campus-front-desk="true"] main#main .high-frontdes
  }
 }
 </style>
+<link rel="stylesheet" href="./assets/high-school-main-landing-shell-v1.css" data-high-main-landing-shell="v1">
 </head>
-<body id="top" data-khae-campus-front-desk="true">
+<body id="top" data-khae-campus-front-desk="true" data-high-universal-shell="true">
 
 <a class="skip-link" href="#main">Skip to main content</a>
 
@@ -848,20 +849,6 @@ html:root:root body[data-khae-campus-front-desk="true"] main#main .high-frontdes
     <span aria-current="page">High School</span>
   </nav>
 </div>
-
-<div class="drawer-bg" id="drawerBg" aria-hidden="true">
-  <aside class="drawer" role="dialog" aria-modal="true" aria-labelledby="drawerTitle">
-    <div class="drawer-head">
-      <h2 id="drawerTitle">High School Directory</h2>
-      <button class="drawer-close" id="closeButton" type="button" aria-label="Close High School directory">×</button>
-    </div>
-    <p>Search portals, grades, active courses, departments, Career, Higher Learning, and the live Verve N Veda resource federation.</p>
-    <label class="sr-only" for="drawerSearch">Search High School directory</label>
-    <input class="drawer-search" id="drawerSearch" type="search" placeholder="Search Grade 10, English, Career, health, coding…">
-    <div id="drawerContent"></div>
-  </aside>
-</div>
-
 <main id="main">
   <section class="hero high-frontdesk-hero">
     <div class="shell hero-inner">
@@ -873,9 +860,9 @@ html:root:root body[data-khae-campus-front-desk="true"] main#main .high-frontdes
         </div>
         <p class="hero-lead">Choose your grade to begin studying, return to your student profile, or open the full course directory. Every learning pathway begins with a clear doorway.</p>
         <div class="hero-actions">
-          <a class="button button-primary" href="#student-portal" data-high-profile-door="1" data-ticker data-ticker-label="Student Profile">😊 My Profile / Continue Learning</a>
-          <a class="button button-secondary" href="#grades" data-ticker data-ticker-label="Grades 9–12">Find My Classes</a>
-          <a class="button button-secondary" href="./courses/" data-ticker data-ticker-label="All Courses">All Courses</a>
+          <a class="button button-primary" href="#student-portal" data-high-profile-door="1">Learner Profile</a>
+          <a class="button button-secondary" href="https://vervenveda.com/Khaemenes_Academy.github.io/family/">Parent Profile</a>
+          <a class="button button-secondary" href="https://vervenveda.com/Khaemenes_Academy.github.io/family/enroll/">Enrollment</a>
         </div>
       </div>
     </div>
@@ -1711,7 +1698,7 @@ html:root:root body[data-khae-campus-front-desk="true"] main#main .high-frontdes
     ];
   }
 
-  function renderDirectory(query=""){
+  function renderDirectory(query=""){const drawerHost=$("drawerContent");if(!drawerHost)return;
     const q=normalize(query);
     let rows=coreDirectory().filter(r=>!q||normalize(`${r.group} ${r.title} ${r.description}`).includes(q));
     if(q){
@@ -1719,28 +1706,18 @@ html:root:root body[data-khae-campus-front-desk="true"] main#main .high-frontdes
       rows=[...rows,...dynamic];
     }
     const groups=[...new Set(rows.map(r=>r.group))];
-    $("drawerContent").innerHTML=groups.map(group=>`<p class="menu-group">${escapeHTML(group)}</p><div class="menu-list">${rows.filter(r=>r.group===group).map(r=>`<a class="menu-link" href="${r.url}"><i>${escapeHTML(r.icon)}</i><span><strong>${escapeHTML(r.title)}</strong><small>${escapeHTML(r.description)}</small></span><span>›</span></a>`).join("")}</div>`).join("")||'<p class="menu-group">No matching destination</p>';
-    $$(".menu-link",$("drawerContent")).forEach(link=>link.addEventListener("click",closeDrawer));
+    drawerHost.innerHTML=groups.map(group=>`<p class="menu-group">${escapeHTML(group)}</p><div class="menu-list">${rows.filter(r=>r.group===group).map(r=>`<a class="menu-link" href="${r.url}"><i>${escapeHTML(r.icon)}</i><span><strong>${escapeHTML(r.title)}</strong><small>${escapeHTML(r.description)}</small></span><span>›</span></a>`).join("")}</div>`).join("")||'<p class="menu-group">No matching destination</p>';
+    $(".menu-link",drawerHost).forEach(link=>link.addEventListener("click",closeDrawer));
   }
 
-  function openDrawer(){
-    $("drawerBg").classList.add("open");$("drawerBg").setAttribute("aria-hidden","false");$("menuButton")?.setAttribute("aria-expanded","true");document.body.classList.add("menu-open");
-    renderDirectory($("drawerSearch").value.trim());setTimeout(()=>$("drawerSearch").focus(),40);
-  }
-  function closeDrawer(){
-    $("drawerBg").classList.remove("open");$("drawerBg").setAttribute("aria-hidden","true");$("menuButton")?.setAttribute("aria-expanded","false");document.body.classList.remove("menu-open");
-  }
-  $("menuButton")?.addEventListener("click",openDrawer);
+  function openDrawer(){location.assign(new URL("./courses/",location.href).href)}
+  function closeDrawer(){}
   document.addEventListener("click",e=>{
     const link=e.target.closest?.('a[href="#high-school-directory"]');
     if(!link)return;
     e.preventDefault();
     openDrawer();
   });
-  $("closeButton").addEventListener("click",closeDrawer);
-  $("drawerBg").addEventListener("click",e=>{if(e.target===$("drawerBg"))closeDrawer();});
-  $("drawerSearch").addEventListener("input",e=>renderDirectory(e.target.value.trim()));
-  document.addEventListener("keydown",e=>{if(e.key==="Escape")closeDrawer();});
   $$("[data-scroll]").forEach(btn=>btn.addEventListener("click",()=>document.querySelector(btn.dataset.scroll)?.scrollIntoView({behavior:"smooth"})));
 
   function directorySummary(){
@@ -1813,7 +1790,6 @@ html:root:root body[data-khae-campus-front-desk="true"] main#main .high-frontdes
 <script src="./courses/shared/high-school-eight-class-views.js"></script>
 <!-- Legacy Beta launcher retired on the High School homepage; canonical ecosystem dock owns Beta. -->
 <script src="https://vervenveda.com/assets/vnv-support.js" defer></script>
-<script src="./assets/vnv-language.js" defer data-official-vnv-language="true"></script>
 <script>
 (()=>{"use strict";
 /* Student profile ownership: use Academy FamilyRegistry API; never send student profile clicks to Family Enrollment.
@@ -1926,7 +1902,13 @@ body[data-khae-campus-front-desk="true"] #khaemenesFamilyBridge{display:none!imp
 <script src="https://vervenveda.com/assets/vnv-333-ticker.js"></script>
 <script src="https://vervenveda.com/assets/vnv-ticker-autopopulate.js" data-vnv-ticker-autopopulate></script>
 <script>VNV_TICKER.autoPopulate({label:"High School Quick Links",max:12});</script>
-<script>VNV_HEADER.mount({"title":"Khaemenes Academy","subtitle":"High School · Grades 9–12","icon":"K","home":"https://vervenveda.com/KhaemenesAcademy_Home.github.io/","actions":[{"label":"My Profile","href":"#student-portal"},{"label":"Grades 9–12","href":"#grades"},{"label":"All Courses","href":"./courses/"},{"label":"Directory","href":"#high-school-directory"},{"label":"Family","href":"https://vervenveda.com/Khaemenes_Academy.github.io/family/"}]});</script>
+<script>VNV_HEADER.mount({"title":"Khaemenes Academy","subtitle":"High School · Grades 9–12","icon":"K","home":"https://vervenveda.com/Khaemenes_Academy.github.io/","actions":[]});</script>
+<script src="./assets/high-school-main-landing-class-tools-v1.js" defer data-high-main-landing-tools="v1"></script>
+<script src="https://vervenveda.com/assets/khaemenes-campus-phrases.js" defer></script>
+<script src="https://vervenveda.com/assets/khaemenes-interlingual-core.js" defer></script>
+<script src="https://vervenveda.com/Khaemenes_Linguistics.github.io/assets/khaemenes-translator-loader.js?v=1.1.1" defer></script>
+<script src="https://vervenveda.com/assets/vnv-language.js?v=20261108-cream-buttons" defer data-official-vnv-language="true"></script>
+<script src="https://vervenveda.com/assets/vnv-class-tools-toolbar.js?v=1.6.1" defer data-vnv-class-tools="high-main-landing"></script>
 <script src="https://vervenveda.com/assets/vnv-ecosystem-toolbar.js?v=1.0.3"></script>
 <!-- High School landing-only navigation and contrast repair; no shared ecosystem files modified. -->
 <style id="high-home-priority-repair-20261029">
@@ -1938,46 +1920,6 @@ body main .high-offline-aside a{color:#ffe1a3!important;text-decoration:underlin
 body main #departments .department-card :is(a.department-link,button.department-link){background:#25313a!important;color:#fff8e9!important;border:1px solid #25313a!important;border-radius:7px!important}
 body main #departments .department-card :is(a.department-link,button.department-link):hover{background:#344a55!important;border-color:#b48b45!important}
 body main #departments .department-card :is(a.department-link,button.department-link):focus-visible{outline:3px solid #b48b45!important;outline-offset:3px}
-</style>
-<style id="high-hero-type-spacing-20261029">
-/* Khaemenes High canonical hero: preserve the approved dark backdrop and geometry.
-   Typography only: institutional eyebrow 33px Cinzel, page title 55px Cinzel,
-   supporting copy Brandon Grotesque / Nunito >=16px. */
-html:root:root body .high-frontdesk-hero .eyebrow{
-  font:400 43px/1.18 var(--ceremonial)!important;
-  letter-spacing:.025em!important;
-  text-transform:none!important;
-  margin-bottom:3px!important;
-}
-html:root:root body .high-frontdesk-hero h1{;
-  letter-spacing:.01em!important;
-  margin-top:13px!important;
-  margin-bottom:3px!important;
-}
-html:root:root body main #grades .grade-card-actions a,
-html:root:root body main #grades .grade-language-details > summary,
-html:root:root body main #departments .department-card .department-link{
-  white-space:nowrap!important;
-  overflow-wrap:normal!important;
-}
-
-html:root:root body .high-frontdesk-hero .high-hero-sub{
-  font:400 18px/1.5 var(--sans)!important;
-  letter-spacing:.03em!important;
-  text-transform:none!important;
-  margin-top:16px!important;
-  margin-bottom:3px!important;
-}
-@media(max-width:430px){
-  html:root:root body .high-frontdesk-hero h1{}
-}
-html:root:root body .high-frontdesk-hero .hero-lead{
-  font:400 18px/1.6 var(--sans)!important;
-}
-html:root:root body .high-frontdesk-hero .hero-actions .button{
-  font-family:var(--sans)!important;
-  font-size:16px!important;
-}
 </style>
 <style id="high-network-final-support-20261029">
 /* Accessible connected-hall fallback, with the same cards upgraded by the existing renderer. */
@@ -2078,54 +2020,6 @@ html:root:root body #drawerBg .drawer :is(p,.menu-group,.menu-link strong,.menu-
   font-size:16px!important;line-height:1.45!important;
 }
 html:root:root body #drawerBg .drawer .menu-link{min-height:52px}
-</style><script id="high-vnv-ticker-header-offset-reconcile">
-/* High School-local fix: header sync can run before the second ticker mounts.
-   Match the canonical header top offset to all visible ticker heights.
-   No external services, profile reads, or component replacement. */
-(()=>{"use strict";
- if(window.__highVnvTickerOffsetReconcile)return;
- window.__highVnvTickerOffsetReconcile=true;
- const ids=["vnv333NetworkTicker","vnvTickerAutoPopulate"];
- let pending=false;
- const seen=new WeakSet();
- const observer=typeof ResizeObserver==="function"
-   ?new ResizeObserver(()=>schedule()):null;
- function measure(){
-   let total=0;
-   for(const id of ids){
-     const el=document.getElementById(id);
-     if(!el)continue;
-     if(observer&&!seen.has(el)){seen.add(el);observer.observe(el)}
-     const style=getComputedStyle(el);
-     if(style.display!=="none"&&style.visibility!=="hidden"){
-       total+=Math.ceil(el.getBoundingClientRect().height||0);
-     }
-   }
-   const root=document.documentElement;
-   const target=total+"px";
-   if(root.style.getPropertyValue("--vnv-header-top").trim()!==target){
-     root.style.setProperty("--vnv-header-top",target);
-   }
- }
- function schedule(){
-   if(pending)return;
-   pending=true;
-   requestAnimationFrame(()=>{pending=false;measure()});
- }
- function observeTickers(){
-   ids.forEach(id=>{
-     const el=document.getElementById(id);
-     if(el&&observer&&!seen.has(el)){seen.add(el);observer.observe(el)}
-   });
-   schedule();
- }
- if(document.body)observeTickers();else document.addEventListener("DOMContentLoaded",observeTickers,{once:true});
- [80,240,700,1600].forEach(ms=>setTimeout(observeTickers,ms));
- document.addEventListener("DOMContentLoaded",schedule,{once:true});
- window.addEventListener("load",observeTickers,{once:true});
- window.addEventListener("pageshow",observeTickers);
- window.addEventListener("resize",schedule,{passive:true});
-})();
-</script>
+</style>
 </body>
 </html>
