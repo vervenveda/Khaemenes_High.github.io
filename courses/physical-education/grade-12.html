@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Physical Education 11 · Khaemenes Academy</title>
+<script src="assessment-engine.js"></script>
+<style>
+:root{--charcoal:#252823;--cream:#fffaf0;--parchment:#e8dfca;--khaki:#b8aa83;--line:#9d9275}
+*{box-sizing:border-box}body{margin:0;background:var(--parchment);color:var(--charcoal);font:400 16px/1.6 Nunito,Arial,sans-serif}
+main{width:min(1100px,calc(100% - 28px));margin:auto;padding:24px 0 80px}h1,h2,h3{font-family:Cinzel,Georgia,serif;font-weight:400}.hero{background:var(--charcoal);color:var(--cream);padding:33px;border-radius:7px;text-align:center;margin-bottom:24px}.hero h1{font-size:55px;margin:7px 0}.hero p{font-size:24px}
+.card{background:var(--cream);border:1px solid var(--line);border-radius:7px;padding:24px;margin:14px 0}.grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:11px}.grid button{min-height:55px}
+button,a.btn{border:1px solid var(--charcoal);border-radius:7px;background:var(--charcoal);color:var(--cream);padding:10px 14px;font:400 16px/1.3 Nunito,Arial,sans-serif;text-decoration:none;cursor:pointer}
+button[disabled]{opacity:.45;cursor:not-allowed}.day-nav{display:grid;grid-template-columns:repeat(5,1fr);gap:7px}.question{border:1px solid var(--line);border-radius:7px;padding:14px;margin:11px 0}.question label{display:block;margin:7px 0}
+textarea{width:100%;min-height:110px;border:1px solid var(--line);border-radius:7px;padding:10px;font:400 16px/1.5 Nunito,Arial,sans-serif}.notice{border-left:4px solid var(--khaki);padding:11px;background:#f7f1e3;border-radius:7px}.good{border-left-color:#49694f}.bad{border-left-color:#8c4d46}
+@media(max-width:720px){.grid{grid-template-columns:repeat(2,minmax(0,1fr))}.day-nav{grid-template-columns:1fr}.hero h1{font-size:33px}.hero p{font-size:18px}}
+</style>
+<script defer src="https://vervenveda.com/assets/vnv-333-ticker.js"></script>
+<script defer src="https://vervenveda.com/assets/vnv-ticker-autopopulate.js" data-vnv-ticker-autopopulate></script>
+<script defer src="https://vervenveda.com/assets/vnv-header-autopopulate.js"></script>
+<script defer src="https://vervenveda.com/assets/vnv-class-tools-toolbar.js" data-vnv-class-tools="high-subject-landing"></script>
+<script defer src="https://vervenveda.com/assets/vnv-ecosystem-toolbar.js"></script>
+</head>
+<body>
+<main>
+<section class="hero"><p>Khaemenes Academy</p><h1>Physical Education 11</h1><p>Leadership · Exercise Science · Ethics · Community Wellness</p></section>
+<section class="card"><h2>36-Week Course</h2><p>Each week contains five substantive instructional days and a 20-question randomized mastery form. Week 1 is current-learning only; Weeks 2–36 use 15 current + 5 delayed-retrieval questions. Browser results remain provisional until authorized teacher review.</p><div class="grid" id="weeks"></div></section>
+<section id="workspace"></section>
+</main>
+<script>
+(()=>{"use strict";
+const STATE_KEY="khae.pe.v1.grade12", DATA_URL="./grade-12-instruction.json", PASS=80;
+let DATA=null,state=load(),week=1,day=1,activeAttempt=null;
+function load(){try{return JSON.parse(localStorage.getItem(STATE_KEY)||"{}")}catch{return{}}}
+function save(){try{localStorage.setItem(STATE_KEY,JSON.stringify(state));return true}catch{return false}}
+function esc(v){return String(v??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]))}
+function weekRecord(n){state[n]??={};return state[n]}
+function passed(n){const r=weekRecord(n);if(!r.assessmentAttempt||!window.KhaeAssessment)return false;try{const a=KhaeAssessment.load(r.assessmentAttempt);return !!(a&&a.status==="submitted"&&a.questionCount===20&&a.score>=PASS&&r.practice&&r.reflection)}catch{return false}}
+function firstOpen(){for(let n=1;n<=36;n++)if(!passed(n))return n;return 36}
+function shuffle(a){a=a.slice();for(let i=a.length-1;i>0;i--){let j=0;try{const x=new Uint32Array(1);crypto.getRandomValues(x);j=x[0]%(i+1)}catch{j=Math.floor(Math.random()*(i+1))}[a[i],a[j]]=[a[j],a[i]]}return a}
+function retentionBank(n){
+ const current=DATA.weeks[n-1].checks.map(q=>({...q,retentionSource:"current",retrievalFromWeek:null}));
+ if(n===1)return shuffle(current).slice(0,20);
+ const lag=1+(n%3),priorWeek=Math.max(1,n-lag),prior=DATA.weeks[priorWeek-1].checks.map(q=>({...q,retentionSource:"retrieval",retrievalFromWeek:priorWeek}));
+ const chosen=[],seen=new Set();
+ function take(pool,target){for(const q of shuffle(pool)){const k=q.prompt.toLowerCase();if(seen.has(k))continue;chosen.push(q);seen.add(k);if(chosen.length>=target)break}}
+ take(current,15);take(prior,20);if(chosen.length<20)take(current,20);
+ return shuffle(chosen.slice(0,20));
+}
+function renderWeeks(){
+ const open=firstOpen();
+ document.getElementById("weeks").innerHTML=DATA.weeks.map(w=>'<button '+(w.week<=open?'':'disabled')+' data-week="'+w.week+'">Week '+String(w.week).padStart(2,"0")+(passed(w.week)?' ✓':'')+'<br>'+esc(w.title)+'</button>').join("");
+ document.querySelectorAll("[data-week]").forEach(b=>b.onclick=()=>openWeek(+b.dataset.week));
+}
+function openWeek(n){if(n>firstOpen())return;week=n;day=1;renderWorkspace()}
+function openAssessment(){
+ const w=DATA.weeks[week-1],r=weekRecord(week),identity=r.activeAssessmentIdentity||r.assessmentAttempt||"g11-week-"+week+"-retention-v1";
+ activeAttempt=KhaeAssessment.load(identity);
+ if(!passed(week)&&(!activeAttempt||activeAttempt.status==="submitted")){
+  const hasPrior=!!activeAttempt||Array.isArray(r.assessmentAttempts)&&r.assessmentAttempts.length;
+  const nextIdentity=hasPrior?"g11-week-"+week+"-attempt-"+Date.now()+"-"+Math.random().toString(36).slice(2,7):identity;
+  activeAttempt=KhaeAssessment.store(KhaeAssessment.build(retentionBank(week),20,nextIdentity));
+  r.activeAssessmentIdentity=nextIdentity;r.assessmentAttempts=Array.isArray(r.assessmentAttempts)?r.assessmentAttempts:[];
+  if(!r.assessmentAttempts.includes(nextIdentity))r.assessmentAttempts.push(nextIdentity);save();
+ }
+ return activeAttempt;
+}
+function renderWorkspace(){
+ const w=DATA.weeks[week-1],r=weekRecord(week),d=w.days[day-1],a=openAssessment();
+ const questions=a&&a.status==="in-progress"?a.items.map((q,i)=>'<fieldset class="question"><legend>'+(i+1)+'. '+esc(q.prompt)+'</legend>'+(q.retentionSource==="retrieval"?'<p><small>Delayed retrieval · Week '+esc(q.retrievalFromWeek)+'</small></p>':'')+q.options.map((o,j)=>'<label><input type="radio" name="q'+i+'" value="'+j+'" '+(Array.isArray(a.answers)&&a.answers[i]===j?'checked':'')+'> '+esc(o)+'</label>').join("")+'</fieldset>').join(""):"";
+ document.getElementById("workspace").innerHTML='<section class="card"><h2>Week '+week+' · '+esc(w.title)+'</h2><p><strong>Essential question:</strong> '+esc(w.essentialQuestion)+'</p><p>'+esc(w.conceptExplanation)+'</p><div class="day-nav">'+w.days.map(x=>'<button data-day="'+x.day+'">Day '+x.day+' · '+esc(x.phase)+'</button>').join("")+'</div><h3>'+esc(d.studentTitle)+'</h3><p>'+esc(d.concept)+'</p><p><strong>Worked example:</strong> '+esc(d.workedExample)+'</p><p><strong>Independent task:</strong> '+esc(d.independentTask)+'</p><p><strong>Success criteria:</strong> '+esc(d.successCriteria)+'</p><label>Practice evidence<textarea id="practice">'+esc(r.practice||"")+'</textarea></label><label>Reasoned reflection<textarea id="reflection">'+esc(r.reflection||"")+'</textarea></label><h3>Weekly Mastery</h3><p class="notice">'+(week===1?'20 current questions':'15 current + 5 delayed-retrieval questions')+' · 80% local progression target · teacher review required for formal mastery.</p>'+questions+(a&&a.status==="in-progress"?'<button id="submit">Save evidence and score</button>':'<div class="notice">Submitted attempt preserved. '+(a?.retention?.delayed?.total?'Delayed retention: '+a.retention.delayed.percent+'%. ':'')+'Teacher review remains required.</div>')+'<p id="feedback"></p></section>';
+ document.querySelectorAll("[data-day]").forEach(b=>b.onclick=()=>{day=+b.dataset.day;renderWorkspace()});
+ document.querySelectorAll('input[name^="q"]').forEach(el=>el.onchange=()=>{const idx=Number(el.name.slice(1)),answers=Array.isArray(activeAttempt.answers)?activeAttempt.answers.slice():Array(activeAttempt.items.length).fill(null);answers[idx]=Number(el.value);activeAttempt=KhaeAssessment.store({...activeAttempt,answers})});
+ document.getElementById("submit")?.addEventListener("click",submit);
+}
+function submit(){
+ const practice=document.getElementById("practice").value.trim(),reflection=document.getElementById("reflection").value.trim();
+ if(!practice||!reflection){document.getElementById("feedback").textContent="Record practice evidence and reflection first.";return}
+ const answers=activeAttempt.items.map((_,i)=>{const x=document.querySelector('input[name="q'+i+'"]:checked');return x?Number(x.value):null});
+ try{
+  const result=KhaeAssessment.submit(activeAttempt,answers);KhaeAssessment.store(result);
+  const r=weekRecord(week);r.practice=practice;r.reflection=reflection;r.knowledgeScore=result.score;r.knowledgePass=result.passed;r.assessmentSchema="khae-pe-g10-w"+week+"-weekly20-retention-v1";r.assessmentAttempt=result.identity;r.activeAssessmentIdentity=result.identity;r.quiz=result.passed;r.verified=false;r.reviewStatus="teacher-review-required";r.savedAt=result.submittedAt;save();
+  document.getElementById("feedback").textContent="Saved "+result.correctCount+"/20 · "+result.score+"%"+(result.retention?.delayed?.total?" · delayed "+result.retention.delayed.percent+"%":"")+". Teacher review remains required.";
+  renderWeeks();renderWorkspace();
+ }catch(e){document.getElementById("feedback").textContent=e.message}
+}
+fetch(DATA_URL).then(r=>r.ok?r.json():Promise.reject(Error("Grade 12 instruction unavailable"))).then(d=>{if(d.weeks?.length!==36)throw Error("Grade 12 course must contain 36 weeks");DATA=d;renderWeeks();openWeek(Math.min(firstOpen(),36))}).catch(e=>document.getElementById("workspace").innerHTML='<section class="card"><h2>Course unavailable</h2><p>'+esc(e.message)+'</p></section>');
+})();
+</script>
+</body></html>
