@@ -65,7 +65,7 @@ const subjectPages=[
 ];
 for(const file of subjectPages){
  const html=fs.readFileSync(file,"utf8");
- assert.equal((html.match(/vnv-header-autopopulate\\.js\\?v=2\\.1\\.0/g)||[]).length,1,file+" must load exactly one official header");
+ assert.equal(html.split("vnv-header-autopopulate.js?v=2.1.0").length-1,1,file+" must load exactly one official header");
  assert.ok(html.includes('data-khae-header hidden aria-hidden="true"'),file+" must mount top ticker first");
  assert.ok(html.includes('window.addEventListener("khaemenes-high-dual-ticker-ready",mount,{once:true});'),file+" must wait for canonical native tickers");
  assert.ok(html.includes("high-navigation-v1.js"),file+" must retain the existing navigation, ticker and ecosystem dock owner");
