@@ -414,6 +414,8 @@ footer{
       <h2 id="resultTitle"></h2>
       <p class="score" id="resultScore"></p>
       <div class="breakdown" id="breakdown"></div>
+      <div class="assessment-actions" id="readinessNextActions" aria-label="Readiness next steps"><a class="btn dark" id="readinessNextLink" href="../units/unit-01/">Open Unit 01</a><button class="btn" id="readinessRetakeButton" type="button">Retake Diagnostic</button></div>
+      <p id="readinessNextMessage" role="status" aria-live="polite"></p>
     </section>
 
     <div class="assessment-actions">
@@ -555,6 +557,13 @@ function showResult(result){
   $("#resultScore").textContent=result.percent+"% · "+result.score+"/"+result.total;
   $("#scoreBox").value=result.score+" / "+result.total;
   $("#breakdown").innerHTML=Object.entries(result.breakdown).map(([k,v])=>'<p><strong>'+esc(k.replaceAll("_"," "))+'</strong><br>'+v.correct+'/'+v.total+' ('+Math.round(v.correct/v.total*100)+'%)</p>').join("");
+  const passed=result.percent>=80;
+  const next=$("#readinessNextLink");
+  next.href=passed?"../units/unit-01/":"../../pre-algebra/";
+  next.textContent=passed?"Open Unit 01 · Begin Lesson 01":"Continue to Pre-Algebra";
+  $("#readinessNextMessage").textContent=passed
+    ?"Readiness target met. Open Unit 01, where the lesson mastery gates remain in force."
+    :"Readiness below 80%. Review the results, retake this diagnostic, or strengthen foundations in Pre-Algebra.";
 }
 function submit(){
   const count=answeredCount();
@@ -619,6 +628,7 @@ $("#submitButton").addEventListener("click",submit);
 $("#saveButton").addEventListener("click",()=>saveDraft(true));
 $("#exportButton").addEventListener("click",exportResult);
 $("#resetButton").addEventListener("click",reset);
+$("#readinessRetakeButton").addEventListener("click",reset);
 $("#startButton").addEventListener("click",()=>{$("#assessment").scrollIntoView({behavior:"smooth",block:"start"});setTimeout(()=>$("#questionList input")?.focus(),250)});
 $("#printButton").addEventListener("click",()=>window.print());
 document.querySelectorAll("[data-info]").forEach(b=>b.addEventListener("click",()=>{
