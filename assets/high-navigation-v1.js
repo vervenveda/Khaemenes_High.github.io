@@ -217,7 +217,7 @@
    wrap.append(button,panel);slot.appendChild(wrap);
  }
  function init(){
-   const universal=document.body?.dataset.highUniversalShell==="true";
+   const universal=document.body?.dataset.highUniversalShell==="true"||document.body?.dataset.highSubjectShell==="true";
    if(!universal)ensureDualTickerGuard();
    updateProfiles();skip();headerBreadcrumbs();breadcrumbs();
    if(!universal)fallbackMenu();
@@ -242,7 +242,7 @@
 (()=>{try{
   const OFFICIAL="https://vervenveda.com/assets/vnv-ecosystem-toolbar.js";
   const start=()=>{
-    if(document.body?.dataset.highUniversalShell==="true")return;
+    if(document.body?.dataset.highUniversalShell==="true"||document.body?.dataset.highSubjectShell==="true")return;
     if(window.__KHAEMENES_HIGH_GLOBAL_CHROME_V2__)return;
     if(document.getElementById("vnvEcosystemUtilityDock"))return;
     const mount=()=>{try{window.VNVEcosystemToolbar?.mount?.()}catch{}};
