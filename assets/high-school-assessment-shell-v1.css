@@ -1,0 +1,27 @@
+:root{--ticker-height:33px;--vnv-autopopulate-ticker-height:33px;--high-assessment-radius:7px}
+body > #vnvTickerAutoPopulate{top:var(--ticker-height,33px)!important}
+body > #vnvHeaderAutoPopulate{top:calc(var(--ticker-height,33px) + var(--vnv-autopopulate-ticker-height,33px))!important}
+body[data-high-assessment-shell="true"]{font-size:16px!important}
+body[data-high-assessment-shell="true"] :where(button,a.btn,a.button,.nav-button,.icon-button,input,select,textarea,.card,.notice,.quizQ,.question-panel,.result-panel,.assessment-shell,.response,.sourceBox,.choice,details,summary){border-radius:7px!important}
+body[data-high-assessment-shell="true"] footer,
+body[data-high-assessment-shell="true"] .footer,
+body[data-high-assessment-shell="true"] .ka-assessment-footer{background:#243038!important;color:#fff8e9!important;text-align:center!important}
+body[data-high-assessment-shell="true"] footer :is(a,p,span,div,small,strong){color:#fff8e9!important}
+body[data-high-assessment-shell="true"] :is(.hero,.unit-hero){
+ background:#243038!important;background-image:none!important;color:#fff8e9!important;border-radius:0!important;text-align:center!important
+}
+body[data-high-assessment-shell="true"] :is(.hero,.unit-hero) :is(.eyebrow,.academy-eyebrow){
+ color:#fff8e9!important;font:400 24px/1.25 Cinzel,Georgia,serif!important;letter-spacing:.02em!important;text-transform:none!important
+}
+body[data-high-assessment-shell="true"] :is(.hero,.unit-hero) h1{
+ color:#fff8e9!important;font:400 55px/1.08 Cinzel,Georgia,serif!important;letter-spacing:.02em!important
+}
+body[data-high-assessment-shell="true"] :is(.hero,.unit-hero) :is(.comment,.lead,.unit-lead,p){
+ color:#e8dfcf!important
+}
+body[data-high-assessment-shell="true"] :is(button,a.btn,a.button,.nav-button){font-size:16px!important}
+@media(max-width:720px){body[data-high-assessment-shell="true"] :is(.hero,.unit-hero) h1{font-size:clamp(38px,12vw,55px)!important}}
+@media print{
+ #vnv333NetworkTicker,#vnvTickerAutoPopulate,#vnvHeaderAutoPopulate,#vnvClassToolsToolbar,#vnvEcosystemUtilityDock{display:none!important}
+ body[data-high-assessment-shell="true"]{font-size:12pt!important}
+}
