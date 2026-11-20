@@ -402,21 +402,9 @@ function renderTools(){
   }
   grid.append(item);
  }
- // When a Grade 10 learner is visiting Grades 11 or 12, the private background
- // module intentionally does not mount. Preserve the 4×2 rail with a safe route
- // to the registered campus, never a second or unauthorized background editor.
- const ctx=gradeContext();
- if(["11","12"].includes(grade)&&ctx?.gradeNumber!==Number(grade)
-    &&!grid.querySelector("#openGrade09BackgroundDialog,[data-background-return]")){
-  const back=make("a","Edit Background");
-  back.className="grade09-blueprint-tool";
-  back.dataset.backgroundReturn="true";
-  back.href=ctx?.grade?highRoot+"grades/grade-"+ctx.grade+"/student-profile/":builder;
-  back.title="Open your registered student profile to customize its background";
-  back.setAttribute("aria-label","Customize background in your registered student profile");
-  const yearbook=[...grid.children].find(n=>n.textContent.trim()==="Yearbook");
-  if(yearbook)grid.insertBefore(back,yearbook);else grid.append(back);
- }
+ // The eighth Edit Background action already exists above. For a learner
+ // visiting a different grade, its existing grade-context handler routes to
+ // the registered profile. Never add a ninth duplicate toolbar action.
  // For a registered learner, Grade 09's original background-dialog module
  // creates the genuine eighth editor button. Do not duplicate it.
 }
