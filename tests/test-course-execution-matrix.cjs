@@ -20,6 +20,13 @@ for (const c of registry.courses) {
   record(c.source.endsWith(".json"), c.id+": source is not a versioned JSON map");
   record(c.grade === "placement" || Number.isInteger(c.grade) && c.grade >= 9 && c.grade <= 12,
     c.id+": invalid grade designation");
+  const authority=c.authority_contract;
+  record(authority&&typeof authority==="object",c.id+": authority contract missing");
+  for(const key of ["current_lesson_resolver","weekly_assessment_owner","midterm_owner","final_owner","mastery_owner","persistence","portfolio_publisher","completion_record"]){
+    record(authority?.[key]&&typeof authority[key].owner==="string"&&authority[key].owner.length>0,c.id+": authority owner missing for "+key);
+    record(["declared","pending-verification","verified-outbound-only"].includes(authority?.[key]?.status),c.id+": invalid authority status for "+key);
+  }
+  record(authority?.persistence?.schema&&typeof authority.persistence.schema==="string",c.id+": persistence schema missing");
   if(c.status==="placement-handoff") {
     record(c.grade==="placement",c.id+": handoff must stay placement-based");
     record(c.assessment_authority==="not-complete",c.id+": handoff falsely claims complete grading");
@@ -41,4 +48,4 @@ for (const c of registry.courses) {
   }
 }
 if(problems.length){ console.error("FAIL execution-matrix ("+problems.length+")\n"+problems.join("\n"));process.exitCode=1; }
-else console.log("PASS execution-matrix "+registry.courses.length+" course routes; 80% floors; format/grade contracts; 36-week map checks");
+else console.log("PASS execution-matrix "+registry.courses.length+" course routes; authority/persistence contracts; 80% floors; format/grade contracts; 36-week map checks");
