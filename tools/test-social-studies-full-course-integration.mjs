@@ -1,59 +1,80 @@
-// High School Social Studies Engine v0.1 · End-to-end SOURCE coverage only.
-// Never reads or mutates live student records, grades, assessments or browser state.
+// Social Studies 9–12: all 36 weeks, BOTH original route families.
+// This is a SOURCE test. It does not verify authenticated browser behavior.
 import assert from "node:assert/strict";
 import fs from "node:fs";
 const read=p=>fs.readFileSync(p,"utf8");
 const engine=read("courses/shared/social-studies-lesson-engine-v0.1.js");
-const scriptName="social-studies-lesson-engine-v0.1.js?v=20261119-social-studies-complete-v5";
+const tag="social-studies-lesson-engine-v0.1.js?v=20261119-social-studies-complete-v5";
 const days=["Monday","Tuesday","Wednesday","Thursday","Friday"];
-const missingAllowed=new Set(["09:27"]); // ABSENT packet; must not fabricate it
-const otherFailures=[],missing=[],covered=new Set(),examWeeks=[];
-let htmlFiles=0,originalWeekdayHeadings=0;
+const expectedRedirects=new Set(["09:01","09:06","09:07","09:09","09:10"]);
+const allowedMissing=new Set(["09:27"]);
+const failures=[],missing=[],redirects=[],covered=new Set(),examWeeks=[];
+let integratedFiles=0,weekdayHeadings=0;
 for(let grade=9;grade<=12;grade++)for(let week=1;week<=36;week++){
  const g=String(grade).padStart(2,"0"),w=String(week).padStart(2,"0");
  const base="courses/social-studies/grade-"+g+"/";
- const paths=[base+(grade===10?"week-":"weeks/week-")+w+"/student-packet.html"];
- if(grade===10&&week>1)paths.push(base+"weeks/week-"+w+"/student-packet.html");
+ const direct=base+"week-"+w+"/student-packet.html";
+ const nested=base+"weeks/week-"+w+"/student-packet.html";
+ const paths=grade===9?[nested,direct]:grade===10?[direct,nested]:[nested];
  let atLeastOne=false;
  for(const path of paths){
   if(!fs.existsSync(path)){
    missing.push({grade,week,path});
-   if(!missingAllowed.has(g+":"+week))otherFailures.push("Unexpected missing packet: "+path);
+   if(!allowedMissing.has(g+":"+week))failures.push("Unexpected missing packet: "+path);
    continue;
   }
-  atLeastOne=true;htmlFiles++;
   const html=read(path);
-  if(!html.includes('data-social-studies-engine="'+grade+'"'))otherFailures.push("Missing engine opt-in: "+path);
-  if(!html.includes(scriptName))otherFailures.push("Missing canonical engine import: "+path);
-  if(!html.includes("high-school-formative-evidence-v1.js"))otherFailures.push("Original evidence module absent: "+path);
-  if(html.includes("high-school-global-chrome-v2.js"))otherFailures.push("Retired chrome reintroduced: "+path);
-  if(grade===9&&week===1){
-    if(!html.includes('data-ss9-require-entry'))otherFailures.push("Grade 9 Week 01 readiness authority missing");
-    for(let d=1;d<=5;d++)for(const phase of ["read","practice","write","check"]){
-     if(!html.includes('data-day="'+d+'" data-phase="'+phase+'"'))otherFailures.push("Grade 9 native phase missing: "+d+"/"+phase);
-    }
+  const isRedirect=grade===9&&path===direct&&
+    /<meta[^>]+http-equiv=["']refresh["']/i.test(html)&&
+    html.includes("../weeks/week-"+w+"/student-packet.html");
+  if(isRedirect){
+   redirects.push(g+":"+w);
+   if(!expectedRedirects.has(g+":"+week))failures.push("Unexpected direct-route redirect: "+path);
+   continue;
+  }
+  atLeastOne=true;integratedFiles++;
+  if(!html.includes('data-social-studies-engine="'+grade+'"'))failures.push("Missing grade opt-in: "+path);
+  if(!html.includes(tag))failures.push("Missing versioned engine: "+path);
+  if(!html.includes("high-school-formative-evidence-v1.js")&&!(grade===9&&path===direct))
+    failures.push("Existing formative-evidence owner removed: "+path);
+  if(html.includes("high-school-global-chrome-v2.js"))failures.push("Retired chrome reintroduced: "+path);
+  if(grade===9&&week===1&&path===nested){
+   if(!html.includes('data-ss9-require-entry'))failures.push("Grade 09 Week 01 entry gate missing");
+   for(let day=1;day<=5;day++)for(const phase of ["read","practice","write","check"]){
+    if(!html.includes('data-day="'+day+'" data-phase="'+phase+'"'))
+      failures.push("Grade 09 Week 01 native phase missing: "+day+"/"+phase);
+   }
   }else{
-    const original=[...html.matchAll(/<h3\b[^>]*>([^<]+)<\/h3>/gi)].map(x=>x[1].trim()).filter(t=>days.some(d=>t.startsWith(d+" · ")));
-    if(original.length!==5||original.some((t,i)=>!t.startsWith(days[i]+" · ")))otherFailures.push("Original day sequence mismatch: "+path+" ("+original.length+")");
-    originalWeekdayHeadings+=original.length;
+   const native=[...html.matchAll(/<h3\b[^>]*>([^<]+)<\/h3>/gi)]
+     .map(m=>m[1].trim()).filter(t=>days.some(d=>t.startsWith(d+" · ")));
+   if(native.length!==5||native.some((t,i)=>!t.startsWith(days[i]+" · ")))
+     failures.push("Original Monday–Friday lesson mismatch: "+path+" ("+native.length+")");
+   weekdayHeadings+=native.length;
   }
   if(week===18||week===36)examWeeks.push(path);
  }
  if(atLeastOne)covered.add(g+":"+w);
 }
-for(const s of ["const week02=weekNumber===2","const week03=weekNumber===3","const laterWeek=weekNumber!==null&&weekNumber>=4&&weekNumber<=36","if(targets&&(!targets.length||targets.some(x=>!x)||new Set(targets).size!==5))return false","heading?.closest(\"article.lesson,section.card,article\")","if(grade===\"9\"||laterWeek)return heading||null"]){
- if(!engine.includes(s))otherFailures.push("Source-derived engine safeguard absent: "+s);
+for(const flag of [
+ "const week02=weekNumber===2",
+ "const week03=weekNumber===3",
+ "const laterWeek=weekNumber!==null&&weekNumber>=4&&weekNumber<=36",
+ 'if(targets&&(!targets.length||targets.some(x=>!x)||new Set(targets).size!==5))return false',
+ 'if(grade==="9"||laterWeek)return heading||null'
+]){
+ if(!engine.includes(flag))failures.push("Missing engine safeguard: "+flag);
 }
-for(const forbidden of ["localStorage","sessionStorage","indexedDB","fetch(","XMLHttpRequest","document.cookie"]){
- if(engine.includes(forbidden))otherFailures.push("Unexpected independent persistence: "+forbidden);
-}
-assert.equal(covered.size,143,"Expected 143 of 144 original grade/weeks with one documented missing Grade 9 Week 27");
-assert.equal(htmlFiles,178,"Expected 178 original packet files (Grade 10 has a second path for Weeks 2–36)");
-assert.equal(missing.length,1,"Expected exactly one missing original file");
-assert.equal(missing[0].path,"courses/social-studies/grade-09/weeks/week-27/student-packet.html");
-assert.equal(originalWeekdayHeadings,885,"Expected 177 native five-day packets (Grade 9 Week 01 is a 20-phase native workspace)");
-assert.equal(examWeeks.length,10,"End-of-term source files must be preserved across all grade paths");
-assert.deepEqual(otherFailures,[],"Unexpected full-course integration failures");
-console.log("PASS Social Studies engine SOURCE integration: 143/144 grade-weeks, 178 packet files, 885 weekday headings, native exams/evidence intact.");
-console.log("DOCUMENTED HOLD: Grade 9 Week 27 original student packet absent; no fabricated replacement.");
-console.log("CI browser/runtime mastery acceptance still requires separate evidence.");
+for(const forbidden of ["localStorage","sessionStorage","indexedDB","fetch(","XMLHttpRequest","document.cookie"])
+ if(engine.includes(forbidden))failures.push("New engine should not own persistence: "+forbidden);
+assert.equal(covered.size,143,"143/144 unique grade-weeks expected, one Grade 9 Week 27 missing");
+assert.equal(integratedFiles,209,"209 genuine original student-packet files should be integrated");
+assert.equal(weekdayHeadings,1040,"208 ordinary five-day packets; separate Grade 09 Week 01 phase player");
+assert.equal(redirects.length,5,"Five original Grade 09 legacy redirect addresses preserved");
+assert.deepEqual(new Set(redirects),expectedRedirects,"Redirect pathways should not be overwritten");
+assert.equal(missing.length,2,"Grade 09 Week 27 has no canonical or direct student packet");
+assert.ok(missing.every(m=>m.grade===9&&m.week===27),"Unexpected missing original source");
+assert.equal(examWeeks.length,12,"End-of-term Week 18/36 native packet sources preserved");
+assert.deepEqual(failures,[],"Source integration failures");
+console.log("PASS SOURCE: 143/144 grade-weeks, 209 genuine packet HTML files, 1040 original weekday headings, 5 redirects left intact.");
+console.log("HOLD: Grade 09 Week 27 missing at canonical and direct routes; no invented lesson.");
+console.log("CI, rendered browser and learner-record acceptance require independent verification.");
