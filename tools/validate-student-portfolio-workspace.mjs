@@ -49,7 +49,7 @@ for(const action of ["refreshReport","printReport","exportReport"])
 check(page.includes("khaemenes-learning-continuation.js"),"Academy continuation ledger loaded");
 check(page.includes("high-school-course-pins.js")&&page.includes("high-school-eight-class.js")&&page.includes("high-school-profile-grade-context.js"),"shared course and identity authorities reused");
 check(page.includes("portfolio-academic-report.js"),"read-only academic report engine loaded");
-check(academic.includes("ledger?.readLearner?.(user.id)"),"actual learner-scoped academic evidence read");
+check(academic.includes("getLedger()?.readLearner?.(user.id)"),"dynamic learner-scoped academic evidence read");
 check(academic.includes('gradeContext?.active?.()')&&academic.includes('pinApi?.activeLearner?.()'),"three-way learner and grade check");
 check(academic.includes('["quiz","test"].includes(a.kind)'),"score types are explicit assessed items");
 check(academic.includes('Number.isFinite(a.earned)')&&academic.includes('Number.isFinite(a.possible)'),"require real scored points");
