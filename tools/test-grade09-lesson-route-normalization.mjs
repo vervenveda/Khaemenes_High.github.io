@@ -47,4 +47,38 @@ assert.equal(courses.recordLaunch("english-9",englishHome,"Course Home"),true);
 assert.equal(courses.continueFor("english-9").url,new URL(firstSteps["english-9"]).pathname);
 // Explicit French handoff retains its approved cross-repository origin.
 assert.ok(courses.continueFor("world-language-9-french").url.includes("/Khaemenes_Linguistics.github.io/apps/French_101_index.html"));
+// Learner-scoped Science and Social Studies continuation must beat a saved
+// public landing, without writing real learner records or bypassing mastery.
+let snapshots=[
+  {courseId:"integrated-science-9",status:"continue",
+   nextHref:origin+repo+"courses/science/integrated-science-9/?view=week&week=2",
+   nextLabel:"Continue Science 9",nextTitle:"Week 02"},
+  {courseId:"global-studies-9",status:"continue",
+   nextHref:origin+repo+"courses/social-studies/grade-09/weeks/week-02/student-packet.html",
+   nextLabel:"Continue Global Studies",nextTitle:"Week 02"}
+];
+const scoped={
+ window:{
+  KhaemenesHighEightClass:{FIRST_STEPS:firstSteps},
+  KhaemenesCourseEntryContract:{
+   readAcademyProfile:()=>({learnerId:"synthetic-student"}),
+   scopedKey:(key,p)=>key+":learner:"+p.learnerId
+  },
+  KhaemenesLearningContinuation:{readLearner:id=>id==="synthetic-student"?snapshots:[]}
+ },
+ location:{origin,pathname:repo+"grades/grade-09/student-profile/"},
+ localStorage:{getItem:()=>null,setItem:()=>{throw Error("unexpected storage write")}},
+ URL,URLSearchParams,Date,fetch:async()=>{throw Error("unexpected network")},console
+};
+vm.runInNewContext(script,scoped,{filename:"student-course-registry-scoped.js"});
+const actual=scoped.window.KhaemenesGrade09Courses;
+assert.equal(actual.continueFor("integrated-science-9").url,repo+"courses/science/integrated-science-9/?view=week&week=2");
+assert.equal(actual.continueFor("global-studies-9").url,repo+"courses/social-studies/grade-09/weeks/week-02/student-packet.html");
+snapshots=[
+ {courseId:"integrated-science-9",status:"continue",
+  nextHref:origin+repo+"courses/science/integrated-science-9/",
+  nextLabel:"Continue Science"}
+];
+assert.equal(actual.continueFor("integrated-science-9").url,
+ repo+"courses/science/integrated-science-9/units/unit-01/lessons/day-01.html");
 console.log("PASS Grade 09 lesson URL normalization, approved resume, route confinement and French handoff");
