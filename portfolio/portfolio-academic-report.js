@@ -193,12 +193,21 @@ function renderCard(row){
  }
  return card;
 }
+function english9ObjectiveEvidence(user){
+ if(!user||user.grade!=="09")return [];
+ const ledger=getLedger();
+ if(typeof ledger?.readCourse!=="function")return [];
+ const record=ledger.readCourse(user.id,"english-9-objective-evidence");
+ if(record?.learnerId!==user.id||record.source!=="english9-fixed-objective-assessment-v1"||record.grade!=="09"||record.stale)return [];
+ return assessments(record).filter(a=>a.possible===30||a.possible===50);
+}
 function reportData(){
  const user=learner();if(!user)return null;
  const rows=rowsFor(user);
  return {schema:"khaemenes-homeschool-progress-report-v1",reportType:"evidence-summary-not-certified-transcript",
   generatedAt:new Date().toISOString(),learner:{name:user.name,grade:user.grade},
   portfolioEvidenceCount:evidenceCount(user),
+   english9ObjectiveEvidence:english9ObjectiveEvidence(user),
    algebraReadiness:algebraReadiness(user),
   courses:rows.map(row=>({courseId:row.courseId,title:row.title,subject:row.subject,status:row.status,
    completionPercent:progress(row.record),recordedAssessmentAveragePercent:summary(assessments(row.record)),
@@ -236,7 +245,7 @@ function refresh(reason="automatic"){
  $("printReport").disabled=false;$("exportReport").disabled=false;
  $("reportIdentity").textContent="Learner: "+report.learner.name+" · Grade "+Number(report.learner.grade)+" · Updated "+new Date(report.generatedAt).toLocaleDateString();
  $("reportCourseCount").textContent=String(report.courses.filter(c=>c.status==="Evidence received").length);
- $("reportAssessmentCount").textContent=String(report.courses.reduce((n,c)=>n+c.assessments.length,0)+(report.algebraReadiness?.state==="LEARNER_LINKED_LOCAL"?1:0));
+ $("reportAssessmentCount").textContent=String(report.courses.reduce((n,c)=>n+c.assessments.length,0)+(report.algebraReadiness?.state==="LEARNER_LINKED_LOCAL"?1:0)+report.english9ObjectiveEvidence.length);
  const reported=report.courses.filter(c=>c.status==="Evidence received").length;
  const readinessLinked=report.algebraReadiness?.state==="LEARNER_LINKED_LOCAL";
  const assessmentsFound=report.courses.reduce((n,c)=>n+c.assessments.length,0);
@@ -257,6 +266,15 @@ function refresh(reason="automatic"){
  const grid=mk("div","portfolio-report-grid");
  for(const row of rowsFor(learner()))grid.append(renderCard(row));
  host.append(grid);
+ if(report.english9ObjectiveEvidence.length){
+  const panel=mk("section","portfolio-report-evaluator");
+  panel.append(mk("h3","","English 9 · Objective Midterm and Final Evidence"));
+  const list=mk("ul","portfolio-report-scores");
+  for(const a of report.english9ObjectiveEvidence)
+   list.append(mk("li","",a.title+" — "+a.earned+"/"+a.possible+" ("+display(a.percent)+") · "+a.gradedAt));
+  panel.append(list,mk("p","portfolio-report-note","Learner-scoped objective scores only. Teacher-reviewed writing, official course grades and awarded credit remain separate. Not cloud backed up."));
+  host.append(panel);
+ }
  if(report.algebraReadiness){
   const panel=mk("section","portfolio-report-evaluator");
   panel.append(mk("h3","","Algebra I Readiness — Separate Diagnostic Evidence"));
