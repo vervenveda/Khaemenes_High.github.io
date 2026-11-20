@@ -23,6 +23,7 @@ for(const grade of [10,11,12]){
 }
 const upper=read("grades/shared/grade09-blueprint-upper-grade.js");
 assert.ok(upper.includes("const url=step(item).dest;if(url&&identity())"),"Upper-grade Schedule Open must use continuing lesson");
+assert.ok(upper.includes('const url=step(item).dest;if(url&&identity())c.append(link("Open "+item.title,url,"btn secondary"));'),"Today secondary course shortcut must use continuing lesson");
 assert.ok(upper.includes("KhaemenesUpperGradeClassRoute=Object.freeze"),"Upper-grade student destination owner missing");
 assert.ok(upper.includes('const englishRecordId={"english-10":"ela10","english-11":"ela11","english-12":"ela12"}'),"Legacy English learner snapshots must stay readable");
 assert.ok(upper.includes('destination=week[1]==="01"'),"Week 01 must use native first-day file");
