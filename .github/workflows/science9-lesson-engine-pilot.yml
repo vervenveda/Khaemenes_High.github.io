@@ -1,0 +1,26 @@
+name: Science 9 Lesson Engine Pilot Integrity
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'courses/shared/science-lesson-engine-v0.1.js'
+      - 'courses/science/integrated-science-9/units/unit-01/lessons/day-01.html'
+      - 'workflow/engines/science/science-lesson-engine-prototype-v0.1.html'
+      - 'workflow/blueprints/khaemenes-science-lesson-engine-blueprint-v0.1.md'
+      - 'tools/test-science9-lesson-engine-prototype.mjs'
+      - '.github/workflows/science9-lesson-engine-pilot.yml'
+  pull_request:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  science9-pilot-contract:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: node --check courses/shared/science-lesson-engine-v0.1.js
+      - run: node --check tools/test-science9-lesson-engine-prototype.mjs
+      - run: node tools/test-science9-lesson-engine-prototype.mjs
