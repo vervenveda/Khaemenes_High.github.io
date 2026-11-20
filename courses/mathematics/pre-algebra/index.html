@@ -686,7 +686,9 @@ html:root:root body .app > .sidebar{min-width:0;box-sizing:border-box}
 }
 </style>
 <link rel="stylesheet" href="assets/prealgebra-vnv-ka-blueprint-v1.css" data-vnv-ka-blueprint="prealgebra-v1">
-  <script src="/Khaemenes_High.github.io/assets/vnv-dual-ticker-v1.js" defer data-high-school-dual-ticker="true"></script>
+  <script src="https://vervenveda.com/assets/vnv-333-ticker.js"></script>
+<script src="https://vervenveda.com/assets/vnv-ticker-autopopulate.js" data-vnv-ticker-autopopulate></script>
+<script>VNV_TICKER.autoPopulate({label:"Pre-Algebra",max:14});</script>
 <script src="https://vervenveda.com/assets/vnv-header-autopopulate.js" defer data-official-vnv-header="true"></script>
 
 </head>
@@ -4393,7 +4395,7 @@ function unitEvidenceView(){
  const rows=Array.from({length:13},(_,i)=>{
    const n=String(i+1).padStart(2,"0");
    const progress=parseRecord("khaemenes-prealgebra-unit"+n+"-progress-v1");
-   const check=parseRecord("khaemenes-prealgebra-u"+n+"-mastery-v1");
+   const check=parseRecord("khaemenes-prealgebra-u"+n+"-mastery-v1") || (n==="02"?parseRecord("khaemenes-prealgebra-u02-mastery-v2"):null);
    const scores=Object.values(progress?.lessonBestScores||progress?.lessonScores||{}).filter(v=>Number.isFinite(Number(v))&&Number(v)>=80).length;
    const attempts=Array.isArray(check?.attempts)?check.attempts:[];
    const values=[check?.best_percent,check?.percent,...attempts.map(a=>a?.percent)].filter(v=>v!==null&&v!==undefined&&Number.isFinite(Number(v))).map(Number);
