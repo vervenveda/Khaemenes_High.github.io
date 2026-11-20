@@ -117,11 +117,7 @@ if(!document.getElementById("khaeProfileToolRail")){
     destination.focus?.({preventScroll:true});
     return true;
    }},
-  {label:"Student Portfolio",target:"grade09LearningEvidence",fallback:"../../../portfolio/index.html",run:()=>{
-    const evidence=document.querySelector('aside[aria-label="Student Learning Portfolio"]');
-    if(evidence){evidence.scrollIntoView({behavior:"smooth",block:"start"});evidence.querySelector("a")?.focus({preventScroll:true});return true}
-    return false;
-   }}
+  {label:"Student Portfolio",href:"../../../portfolio/index.html?grade=09"}
  ];
  // Priority row: daily student controls. Bottom row: personal creation controls.
  const order=["Schedule","Student Progress","Student Portfolio","KlasaiPeer","Edit Profile","Edit Background","Yearbook","Creative Tools"];
