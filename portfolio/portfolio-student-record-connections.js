@@ -47,14 +47,29 @@ function snapshot(){
   add("Academy course continuation",compatible.length?stale?"STALE":"FOUND":"MISSING",compatible.length,
     scored+" scored quiz/test record(s); "+stale+" stale course snapshot(s). Source-owned grades were not reassigned");
  }
- const pinList=pins?.readPins?.(),langs=pins?.readLanguageChoices?.();
- if(!Array.isArray(pinList)){add("Pinned classes","UNAVAILABLE",null,"Pin reader is unavailable");}
- else add("Pinned classes",pinList.length?"FOUND":"MISSING",pinList.length,"Explicit learner-scoped shortcuts; not enrollment or mastery");
- const selected=langs?.[String(Number(grade))];
- add("Foreign-language selection",typeof selected==="string"&&selected?"FOUND":"MISSING",
-  selected?1:0,selected?"Language selection present for registered grade":"No language selected or preference not available");
+ // Pin APIs can mirror preferences on a read. Inventory reads raw
+ // learner-scoped bytes instead and never invokes a mutation-capable reader.
  const storage=window.localStorage;
  const readKey=key=>{try{return storage.getItem(key)}catch{return null}};
+ const enc=encodeURIComponent(id);
+ let highPins=null,academyPins=[];
+ try{
+  const a=JSON.parse(readKey("khaemenes-high-pinned-courses-v2:learner:"+enc)||"null");
+  if(Array.isArray(a))highPins=a.filter(x=>typeof x==="string");
+ }catch{}
+ try{
+  const all=JSON.parse(readKey("khaemenes_course_pins_v1")||"null");
+  const a=all?.learners?.[id];
+  if(Array.isArray(a))academyPins=a.map(x=>typeof x==="string"?x:x?.id||x?.courseId).filter(x=>typeof x==="string");
+ }catch{}
+ const distinct=[...new Set([...(highPins||[]),...academyPins])];
+ add("Pinned classes",highPins!==null||academyPins.length?"FOUND":"MISSING",
+   distinct.length,"Existing learner-scoped Academy/High School shortcuts; not enrollment or mastery");
+ let langs=null;
+ try{langs=JSON.parse(readKey("khaemenes-high-language-choices-v1:learner:"+enc)||"null")}catch{}
+ const selected=langs?.[String(Number(grade))];
+ add("Foreign-language selection",typeof selected==="string"&&selected?"FOUND":"MISSING",
+  selected?1:0,selected?"Language choice recorded for registered grade":"No language preference recorded on this browser");
  const portfolioKey="khae-learning-portfolio-v1:learner:"+encodeURIComponent(id);
  let entries=null;
  try{const data=JSON.parse(readKey(portfolioKey)||"null");if(Array.isArray(data))entries=data.filter(x=>x&&typeof x.title==="string"&&typeof x.detail==="string").length;}catch{}
@@ -68,7 +83,7 @@ function snapshot(){
   add("Daily parent reports",dated?"FOUND":"MISSING",dated,"Grade 9 dated family reports on this browser");
  }
  const keyPrefix="khaemenes.course:"+id+":";
- let courseKeys=0,foreignOwned=0,unattributed=0;
+ let courseKeys=0,unattributed=0;
  try{
   for(let i=0;i<storage.length;i++){
    const key=storage.key(i);
