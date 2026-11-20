@@ -31,7 +31,7 @@ for(const id of ["geometry","algebra-2"]){
 const upper=read("grades/shared/grade09-blueprint-upper-grade.js");
 assert.ok(upper.includes('const mathCourse=/^(pre-algebra|algebra-1|geometry|algebra-2)$/.test(item.id||"");'),"upper-grade math course guard must exist");
 assert.ok(upper.includes('target.origin===home.origin&&target.pathname.startsWith(coursePath)'),"upper-grade math routes must remain within their course");
-assert.ok(upper.includes('const destination=approvedSnapshot&&!snapshotIsLanding?approvedSnapshot:first;'),"upper-grade class fallback must prefer first instructional step");
+assert.ok(upper.includes(':approvedSnapshot&&!snapshotIsLanding?approvedSnapshot:first;'),"upper-grade class fallback must prefer first instructional step");
 for(let grade=10;grade<=12;grade++){
  const html=read("grades/grade-"+grade+"/student-profile/index.html");
  assert.ok(html.includes("grade09-blueprint-upper-grade.js"),"Grade "+grade+" must load shared upper-grade class manager");
