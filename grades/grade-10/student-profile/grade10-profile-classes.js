@@ -4,7 +4,7 @@
  */
 (()=>{
 "use strict";
-const host=document.getElementById("grade09SevenClassSchedule");
+const host=document.getElementById("grade10EightClassSchedule");
 if(!host||document.body.dataset.grade!=="10")return;
 const catalog=window.KhaemenesHighEightClass,context=window.KhaemenesHighProfileGradeContext,continuation=window.KhaemenesLearningContinuation;
 const create=(tag,text)=>{const n=document.createElement(tag);if(text!==undefined)n.textContent=text;return n};
@@ -21,13 +21,18 @@ function render(){
   host.append(note);return;
  }
  const legend=create("p","Your eight Grade 10 subjects. Course titles and links come from the canonical High School class plan; assessment results remain in the individual courses.");
+ const learner=context?.active?.();
+ const snaps=learner?.learnerId&&continuation?.readLearner?.(learner.learnerId)||[];
+ const mathId=snaps.some(x=>x?.courseId==="geometry")?"geometry":snaps.some(x=>x?.courseId==="algebra-1")?"algebra-1":null;
  const grid=create("div");grid.className="grade10-class-grid";
- for(const slot of catalog.slots(10)){
+ for(const slot of catalog.slots(10,{mathId})){
   const card=create("article");card.className="grade10-class-card";
   const heading=create("h3",slot.label),course=create("p",slot.title);
   card.append(heading,course);
   if(typeof slot.href==="string"&&/^https:\/\//i.test(slot.href)){
-   const learner=context?.active?.();const snaps=learner?.learnerId&&continuation?.readLearner?.(learner.learnerId)||[];const snap=snaps.find(x=>x?.courseId===slot.id);const route=snap?.nextHref||slot.firstStepHref||slot.href;
+   const englishRecordId=slot.id==="english-10"?"ela10":null;
+   const snap=snaps.find(x=>x?.courseId===slot.id)||(englishRecordId?snaps.find(x=>x?.courseId===englishRecordId):null);
+   const route=snap?.nextHref||slot.firstStepHref||slot.href;
    const link=create("a",snap?.stale?"Refresh Class":snap?.status==="corrections"?"Review Corrections":snap?.nextLabel||"Continue Class");link.href=route;link.title=snap?.nextTitle||snap?.summary||"Continue this class";
    card.append(link);
   }else{
