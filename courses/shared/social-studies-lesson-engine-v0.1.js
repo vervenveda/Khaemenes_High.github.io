@@ -26,13 +26,15 @@ function el(tag,cls,text){const n=document.createElement(tag);if(cls)n.className
 function mount(){
 const grade=document.body?.dataset.socialStudiesEngine;
 const demo=document.body.hasAttribute("data-social-studies-demo");
-const week02=!demo&&/\/(?:weeks\/)?week-02\/student-packet\.html$/.test(location.pathname);
-const week03=!demo&&/\/(?:weeks\/)?week-03\/student-packet\.html$/.test(location.pathname);
-const isGrade9Workspace=grade==="9"&&!demo&&!week02&&!week03;
+const path=location.pathname;
+const route=!demo&&path.match(/\/social-studies\/grade-(09|10|11|12)\/(?:weeks\/)?week-(\d{2})\/student-packet\.html$/);
+const weekNumber=route?Number(route[2]):null;
+const week02=weekNumber===2,week03=weekNumber===3;
+const laterWeek=weekNumber!==null&&weekNumber>=4&&weekNumber<=36;
+const isGrade9Workspace=grade==="9"&&!demo&&!week02&&!week03&&!laterWeek;
 const base=CURRICULUM[grade];
 const specific=week03?WEEK03[grade]:week02?WEEK02[grade]:null;
-const spec=base&&(specific?Object.assign({},base,specific):base);
-if(!spec||document.getElementById("khaeSocialStudiesEngineV01"))return false;
+if(!base||(!demo&&route&&route[1]!==String(grade).padStart(2,"0"))||document.getElementById("khaeSocialStudiesEngineV01"))return false;
 const root=document.querySelector(demo?"main[data-social-studies-prototype]":isGrade9Workspace?"main.workspace":"main.main");
 if(!root)return false;
 if(isGrade9Workspace&&(!root.querySelector('[data-day-select="1"]')||!root.querySelector('[data-phase-select="read"]')||!root.querySelector("#source-pack")))return false;
@@ -44,11 +46,30 @@ const headings={
  "11":["Monday · Frame the Inquiry","Tuesday · Source, Case, or Contract Laboratory","Wednesday · Model, Measure, and Test","Thursday · Argument, Deliberation, and Policy","Friday · Assess, Correct, and Transfer"],
  "12":["Monday · Concept and Inquiry Laboratory","Tuesday · Primary and Authoritative Source Laboratory","Wednesday · Comparative Data and Case Laboratory","Thursday · Argument, Seminar, and Performance Studio","Friday · Mastery, Correction, and Capstone Checkpoint"]
 };
-const targets=!demo&&!isGrade9Workspace?(specific?.headings||headings[grade])?.map(name=>{
- const heading=[...root.querySelectorAll("h3")].find(h=>h.textContent.trim()===name);
- return heading?.closest("article.lesson,section.card,article")||null;
-}):null;
-if(targets&&(!targets.length||targets.some(x=>!x)))return false;
+const weekdayNames=["Monday","Tuesday","Wednesday","Thursday","Friday"];
+const weekdayHeadings=laterWeek?[...root.querySelectorAll("h3")].filter(h=>weekdayNames.some(day=>h.textContent.trim().startsWith(day+" · "))):null;
+const chosenHeadings=laterWeek?weekdayHeadings:(specific?.headings||headings[grade])?.map(name=>[...root.querySelectorAll("h3")].find(h=>h.textContent.trim()===name));
+if(laterWeek&&(!weekdayHeadings||weekdayHeadings.length!==5||weekdayHeadings.some((h,i)=>!h.textContent.trim().startsWith(weekdayNames[i]+" · "))))return false;
+const targets=!demo&&!isGrade9Workspace?chosenHeadings?.map(heading=>heading?.closest("article.lesson,section.card,article")||null):null;
+if(targets&&(!targets.length||targets.some(x=>!x)||new Set(targets).size!==5))return false;
+let spec=base&&(specific?Object.assign({},base,specific):base);
+if(laterWeek){
+ // The original packet supplies the subject, essential question, exact daily
+ // lesson headings, and objectives: no invented week-specific source material.
+ const strong=[...root.querySelectorAll("strong")].find(n=>/^Essential question\s*:/i.test(n.textContent.trim()));
+ const questionHeading=[...root.querySelectorAll("h2,h3")].find(n=>/^Essential question\s*$/i.test(n.textContent.trim()));
+ const question=(strong?.parentElement?.textContent||questionHeading?.nextElementSibling?.textContent||"").replace(/\s+/g," ").trim();
+ const gradeFocus={"9":"Historical & Geographic Inquiry Studio","10":"United States Historical Evidence Studio","11":"Government, Law & Economics Inquiry Studio","12":"Comparative Politics & Senior Research Studio"};
+ const mission=root.querySelector("h1")?.textContent?.replace(/\s+/g," ").trim()||"Social Studies";
+ const steps=weekdayHeadings.map((heading,i)=>{
+   const day=weekdayNames[i],label=heading.textContent.trim();
+   const block=targets[i],body=(block?.textContent||"").replace(/\s+/g," ");
+   const objective=body.match(/\bObjective:\s*(.{1,240}?)(?=\b(?:Warm-up|Lesson|Instruction|Guided practice|Independent practice|Completion|Deliverable|Materials|Check):|$)/i);
+   const excerpt=objective?.[1]?.trim()||"Use this day's original reading, sources, tasks and evidence requirements.";
+   return [day+" · "+label.split(" · ").slice(1).join(" · "),excerpt];
+ });
+ spec=Object.assign({},base,{focus:gradeFocus[grade],mission,question:question||"Follow this week's original essential question and source evidence.",steps});
+}
 const header=root.querySelector("h1"),host=demo?root.querySelector('[data-ss-stage="1"]'):isGrade9Workspace?root.querySelector('[aria-label="Choose day"]'):targets?.[0];
 if(!header||!host)return false;
 const style=el("style");style.id="khaeSocialStudiesEngineV01Style";style.textContent=CSS;
