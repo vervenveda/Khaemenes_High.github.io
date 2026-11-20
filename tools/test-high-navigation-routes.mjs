@@ -78,7 +78,8 @@ for(const file of pages){
    assert.ok(fs.existsSync(resolved),file+" broken department shell asset "+resolved);
    assert.ok(!source.includes("high-school-global-chrome-v2.js"),file+" retired chrome reference returned");
   }else{
-  const suffixes=frontDoor?[".js"]:[".js",".css"];
+  const english9CanonicalInline=file==="courses/language-arts/english-9/index.html"&&source.includes("inline English 9 canonical stylesheet is the sole presentation owner.")&&/<style\b/.test(source);
+   const suffixes=frontDoor||english9CanonicalInline?[".js"]:[".js",".css"];
   for(const suffix of suffixes){
    const assetPattern=suffix===".js"
     ?/(?:src|href)=["']([^"']*high-navigation-v1\.js(?:\?[^"']*)?)["']/
