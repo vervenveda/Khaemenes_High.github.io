@@ -11,66 +11,9 @@
 .print-question{break-inside:avoid;margin:0 0 1rem;padding:1rem;border:1px solid var(--line);border-radius:var(--radius-small)}.print-question ol{margin:.55rem 0 0;padding-left:1.6rem}.answer-sheet{display:grid;grid-template-columns:repeat(4,1fr);gap:.5rem}.answer-row{padding:.55rem;border-bottom:1px solid var(--line)}.unit-section{margin-top:2.5rem}.unit-section>h2{border-bottom:2px solid var(--final);padding-bottom:.4rem}.signature-grid{display:grid;grid-template-columns:1fr 1fr;gap:2rem;margin-top:3rem}.signature-line{padding-top:.45rem;border-top:1px solid var(--text);text-align:center;font-size:.78rem}
 .formula-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem}.formula-card{padding:1rem}.formula-card h3{color:var(--final)}.formula{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;background:var(--bg-soft);padding:.45rem;border-radius:7px;margin:.35rem 0}
 @media(max-width:1080px){.summary-grid{grid-template-columns:repeat(3,1fr)}.unit-results,.record-grid{grid-template-columns:repeat(3,1fr)}}@media(max-width:900px){.app-layout{grid-template-columns:1fr}.app-side{position:static}.formula-grid{grid-template-columns:1fr 1fr}}@media(max-width:720px){.constructed-grid,.form-grid,.summary-grid,.unit-results,.record-grid,.answer-sheet,.signature-grid,.formula-grid{grid-template-columns:1fr}.full{grid-column:auto}.question-dots{grid-template-columns:repeat(6,1fr)}}@media print{.site-header,.course-breadcrumb,.exam-actions,.app-side,.app-nav,.no-print,.footer,.toast{display:none!important}body{background:white;color:black}.card,.print-question{box-shadow:none;background:white;color:black;border-color:#777}.exam-hero{padding:0 0 1rem}.exam-shell{width:100%}.response-lines{min-height:440px}}
-</style><script>document.addEventListener("DOMContentLoaded",()=>{const k="khaemenes_theme",b=document.querySelector("#themeToggle");function set(t){t=["dark","light"].includes(t)?t:"dark";document.documentElement.dataset.theme=t;localStorage.setItem(k,t);if(b)b.textContent=t==="dark"?"☼":"◐"}set(localStorage.getItem(k)||(matchMedia("(prefers-color-scheme: light)").matches?"light":"dark"));if(b)b.onclick=()=>set(document.documentElement.dataset.theme==="dark"?"light":"dark")});document.addEventListener("DOMContentLoaded",()=>{document.querySelector("#printPage").onclick=()=>print()});</script><style id="khaemenes-typography-standard">
-/* Khaemenes High presentation typography · 55 / 33 / 24 / 14 px.
-   All public pages receive this local, embedded policy for offline use.
-   Only presentation changes. Existing grids, gates, learner records, assessments and STOS are preserved.
-   Font names are optional installed system fonts; no downloads or third-party font services. */
-html:root:root body {
-  font-family: "Brandon Grotesque", "Avenir Next", Avenir, "Segoe UI", Arial, sans-serif !important;
-  font-size: 14px !important;
-  font-weight: 400 !important;
-  line-height: 1.65 !important;
-  -webkit-text-size-adjust: 100%;
-  overflow-wrap: break-word;
-}
-html:root:root body :is(button, input, select, textarea) {
-  font-family: "Brandon Grotesque", "Avenir Next", Avenir, "Segoe UI", Arial, sans-serif !important;
-}
-html:root:root body :is(h1, h2, h3, h4, h5, h6, .page-title, .hero-title, .brand-title, .display-title, .site-title) {
-  font-family: Cinzel, "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif !important;
-  font-weight: 400 !important;
-  overflow-wrap: anywhere;
-}
-html:root:root body :is(.eyebrow, .kicker, .dialog-eyebrow, .dialog-kicker, .worksheet-kicker) {
-  font-family: Cinzel, "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif !important;
-  font-size: 55px !important;
-  font-weight: 400 !important;
-  line-height: 1.15 !important;
-  letter-spacing: .02em !important;
-  white-space: normal !important;
-  overflow-wrap: anywhere;
-}
-html:root:root body h1 {
-  font-size: 33px !important;
-  line-height: 1.2 !important;
-  white-space: normal !important;
-  overflow-wrap: anywhere;
-}
-html:root:root body h2,
-html:root:root body :is(.subtitle, .hero-subtitle, .hero-sub, .academy-comment),
-html:root:root body .hero .comment {
-  font-size: 24px !important;
-  line-height: 1.35 !important;
-  white-space: normal !important;
-  overflow-wrap: anywhere;
-}
-/* Do not replace responsive grids or fixed elements; prevent oversized titles from
-   demanding horizontal scrolling on narrow phone and tablet displays. */
-html:root:root body :is(.hero, .header, .page-header, .section-head, .lesson-header) {
-  min-width: 0;
-}
-@media print {
-  html:root:root body { font-size: 14px !important; }
-}
-</style>
-  </head><body><a class="skip-link" href="#main">Skip to main content</a>
-<header class="site-header"><div class="wrap header-inner">
-<a class="brand" href="../../"><span class="brand-mark">S9</span><span class="brand-copy">
-<strong>INTEGRATED SCIENCE 9</strong><small>Comprehensive Final Examination</small></span></a>
-<div class="header-actions"><a class="nav-button secondary" href="../../../../../grades/grade-09/">Grade 9</a>
-<a class="nav-button" href="../">Assessments</a><button class="icon-button" id="themeToggle" type="button" aria-label="Switch theme">☼</button></div>
-</div></header><nav class="course-breadcrumb"><div class="wrap">
+</style><script>document.addEventListener("DOMContentLoaded",()=>{const k="khaemenes_theme",b=document.querySelector("#themeToggle");function set(t){t=["dark","light"].includes(t)?t:"dark";document.documentElement.dataset.theme=t;localStorage.setItem(k,t);if(b)b.textContent=t==="dark"?"☼":"◐"}set(localStorage.getItem(k)||(matchMedia("(prefers-color-scheme: light)").matches?"light":"dark"));if(b)b.onclick=()=>set(document.documentElement.dataset.theme==="dark"?"light":"dark")});document.addEventListener("DOMContentLoaded",()=>{document.querySelector("#printPage").onclick=()=>print()});</script><link rel="stylesheet" href="/Khaemenes_High.github.io/assets/high-school-assessment-shell-v1.css" data-high-assessment-shell-style="v1">
+</head><body data-high-assessment-shell="true"><a class="skip-link" href="#main">Skip to main content</a>
+<nav class="course-breadcrumb"><div class="wrap">
 <a href="../../../../../index.html">High School</a><span>›</span>
 <a href="../../../../../grades/grade-09/">Grade 9</a><span>›</span>
 <a href="../../">Science 9</a><span>›</span><a href="../">Assessments</a><span>›</span>
@@ -86,5 +29,18 @@ html:root:root body :is(.hero, .header, .page-header, .section-head, .lesson-hea
 <h2>Constructed Responses</h2><div class="constructed-grid"><article class="card constructed-card"><p class="eyebrow">Units 00–01</p><h3>Scientific Inquiry, Safety &amp; Evidence</h3><p>Design a safe investigation of how one controllable factor affects the cooling rate of water. Define the independent, dependent, and at least four controlled variables; write an operational definition; specify equipment resolution, repeated trials, a data table, graph choice, and analysis method; explain how you would handle anomalies and uncertainty; and identify safety, consent, privacy, and environmental boundaries. Conclude with an example claim, evidence statement, and scientific reasoning statement.</p><div class="response-lines"></div></article><article class="card constructed-card"><p class="eyebrow">Units 02–04</p><h3>Cells, Homeostasis &amp; Inheritance</h3><p>A multicellular organism experiences dehydration and must maintain cell function. Explain how membrane transport, surface-area-to-volume ratio, specialized cells, circulatory transport, kidney function, nervous/endocrine coordination, and negative feedback contribute to homeostasis. Then explain how mitosis supports repair, how meiosis and fertilization create variation, and why genotype does not determine phenotype with certainty. Include one calculation or quantitative model and two ethical limits on biological or genetic data.</p><div class="response-lines"></div></article><article class="card constructed-card"><p class="eyebrow">Units 05–07</p><h3>Ecosystems, Atoms &amp; Chemical Change</h3><p>A wetland receives nutrient-rich runoff and a proposed treatment material is evaluated. Construct a food-web and matter-cycle explanation for possible ecological effects; distinguish observation from evolutionary or historical inference; calculate one biodiversity or population measure; use atomic structure and periodic patterns to explain the treatment material; write and balance one relevant reaction; analyze conservation, energy transfer, reaction rate, and equilibrium; and evaluate safety, community, biodiversity, and source-quality tradeoffs.</p><div class="response-lines"></div></article><article class="card constructed-card"><p class="eyebrow">Units 08–09</p><h3>Motion, Energy, Circuits, Waves &amp; Information</h3><p>Design a low-voltage sensor system mounted on a 4.0 kg cart. The cart changes velocity from 1.0 m/s to 5.0 m/s in 2.0 s; calculate acceleration, net force, initial and final kinetic energy, and momentum change. The sensor uses 6.0 V across 12 Ω for 30 s; calculate current, power, charge, and energy. A 150 Hz signal travels at 300 m/s; calculate wavelength and period. Explain induction or motor action, analog-to-digital conversion, noise and error checking, and identify system boundaries, model limits, and safety requirements.</p><div class="response-lines"></div></article><article class="card constructed-card"><p class="eyebrow">Units 10–11</p><h3>Earth, Climate, Space &amp; Cosmic Evidence</h3><p>An Earth-observation satellite studies watershed change and climate. A watershed receives 120 mm precipitation, 50 mm evapotranspiration, and 45 mm runoff over 2.0 km²; calculate storage change and runoff volume. An energy model uses 340 W/m² incoming solar energy, albedo 0.30, and 236 W/m² outgoing energy; calculate reflected, absorbed, and net imbalance. A signal travels 1.50×10¹¹ m; calculate light time. A spectral line shifts from 500.0 to 500.5 nm; calculate redshift and the small-shift speed approximation. Connect plate processes, biogeochemical cycles, greenhouse forcing, orbital motion, spectra, and remote sensing while distinguishing observation, calculation, model, projection, and inference.</p><div class="response-lines"></div></article><article class="card constructed-card"><p class="eyebrow">Unit 12 and full-course integration</p><h3>Sustainable Engineering Capstone Synthesis</h3><p>Select a safe community sustainability challenge. Define stakeholders, need, baseline, system boundary, measurable criteria, hard constraints, and evidence sources. Generate at least three concepts and explain a weighted decision matrix with sensitivity analysis. Propose a model or low-risk prototype, repeated test plan, uncertainty analysis, and optimization strategy. Include life-cycle, circularity, risk, reliability, resilience, accessibility, privacy, cultural, labour, environmental-justice, monitoring, maintenance, and end-of-life considerations. Show how at least four scientific disciplines from the course inform the final recommendation.</p><div class="response-lines"></div></article></div></div></section></main><footer class="footer"><div class="wrap footer-inner">
 <span>Khaemenes Academy™ · International Integrated Science 9</span>
 <span>Comprehensive Final Examination</span></div></footer>
-<div class="toast" id="toast" role="status" hidden></div><script src="https://vervenveda.com/Khaemenes_High.github.io/assets/vnv-beta-link.js" defer data-khaemenes-student-toolbar="v1.8"></script>
+<div class="toast" id="toast" role="status" hidden></div>
+
+<script src="/Khaemenes_High.github.io/assets/high-school-assessment-class-tools-v1.js" defer data-high-assessment-tools="v1"></script>
+<script src="https://vervenveda.com/assets/khaemenes-campus-phrases.js" defer></script>
+<script src="https://vervenveda.com/assets/khaemenes-interlingual-core.js" defer></script>
+<script src="https://vervenveda.com/Khaemenes_Linguistics.github.io/assets/khaemenes-translator-loader.js?v=1.1.1" defer></script>
+<script src="https://vervenveda.com/assets/vnv-language.js?v=20261108-cream-buttons" defer data-official-vnv-language="true"></script>
+<script src="https://vervenveda.com/assets/vnv-class-tools-toolbar.js?v=1.6.1" defer data-vnv-class-tools="high-assessment"></script>
+<script src="https://vervenveda.com/assets/vnv-333-ticker.js"></script>
+<script src="https://vervenveda.com/assets/vnv-ticker-autopopulate.js" data-vnv-ticker-autopopulate></script>
+<script>VNV_TICKER.autoPopulate({label:"Printable Comprehensive Final Examination · Khaemenes Science 9",max:14});</script>
+<script src="https://vervenveda.com/assets/vnv-header-autopopulate.js"></script>
+<script>VNV_HEADER.mount({"title":"Khaemenes Academy","subtitle":"Printable Comprehensive Final Examination · Khaemenes Science 9","icon":"K","home":"https://vervenveda.com/Khaemenes_Academy.github.io/","actions":[]});</script>
+<script src="https://vervenveda.com/assets/vnv-ecosystem-toolbar.js" data-official-vnv-ecosystem-toolbar="true"></script>
 </body></html>
