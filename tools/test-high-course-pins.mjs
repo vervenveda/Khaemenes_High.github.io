@@ -35,12 +35,13 @@ assert(store.readPins().includes("english-10"),"Preserve other grade's pin");
 assert(grade9.setMathPathway("algebra-1"));
 assert(!grade9.pinnedIds().includes("pre-algebra"));
 assert(store.readPins().includes("english-10"));
-assert(store.writeLanguageChoices({"9":"russian"}));
+assert.equal(store.writeLanguageChoices({"9":"russian"}),false,"Language choice must not create an unscoped learner preference");
 assert(grade9.courses.some(c=>c.id==="world-language-9-russian"));
 data.set("khaemenes_family_registry_v1",JSON.stringify({learners:{
  a:{learnerId:"a",nickname:"A"},b:{learnerId:"b",nickname:"B"}
 }}));
 data.set("khaemenes_active_learner_v1",JSON.stringify("a"));
+assert(store.writeLanguageChoices({"9":"russian"}),"Active learner can save a scoped language preference");
 assert.equal(store.readPins().length,0,"No automatic legacy sharing");
 assert(grade9.setPinned("world-language-9-russian",true));
 const academyAfterA=JSON.parse(data.get(store.ACADEMY_PIN_KEY));
