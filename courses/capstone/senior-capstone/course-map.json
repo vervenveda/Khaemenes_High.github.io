@@ -10,32 +10,32 @@
         {
           "day": 1,
           "phase": "Recall/Plan",
-          "task": "Recall/Plan: complete a focused capstone action for orientation & capstone question.",
-          "evidence": "Retrieve prior commitments and identify today's decision."
+          "task": "Define this week's decision for Orientation & capstone question. Retrieve prior commitments, identify the unresolved question, and write the success criteria before consulting new material.",
+          "evidence": "Decision statement, retrieved prior evidence, success criteria, and one predicted risk."
         },
         {
           "day": 2,
-          "phase": "Model/Research",
-          "task": "Model/Research: complete a focused capstone action for orientation & capstone question.",
-          "evidence": "Examine a model/source and record what it contributes."
+          "phase": "Research/Model",
+          "task": "Gather or inspect the strongest evidence needed for Orientation & capstone question. Compare at least two relevant sources, examples, datasets, models, or prior artifacts when available.",
+          "evidence": "Source/model notes with provenance, credibility judgment, and one conflict or limitation."
         },
         {
           "day": 3,
-          "phase": "Practice/Build",
-          "task": "Practice/Build: complete a focused capstone action for orientation & capstone question.",
-          "evidence": "Produce or revise a concrete artifact."
+          "phase": "Build/Analyze",
+          "task": "Produce the central artifact for Orientation & capstone question. Show your reasoning, calculations/design logic, choices rejected, and how the evidence shaped the work.",
+          "evidence": "A focused capstone question/problem statement with scope, significance, audience, and explicit boundaries."
         },
         {
           "day": 4,
-          "phase": "Apply/Test",
-          "task": "Apply/Test: complete a focused capstone action for orientation & capstone question.",
-          "evidence": "Apply/test the work against criteria or audience needs."
+          "phase": "Test/Apply",
+          "task": "Test the week's artifact against its criteria, stakeholder/audience needs, or evidence standard. Record failures, edge cases, tradeoffs, and what must change.",
+          "evidence": "Test/application record with results, limitation, and revision decision."
         },
         {
           "day": 5,
           "phase": "Reflect/Defend",
-          "task": "Reflect/Defend: complete a focused capstone action for orientation & capstone question.",
-          "evidence": "Reflect, identify limitations, record corrections, and define the next action."
+          "task": "Revise the artifact, score it against the weekly rubric, answer the defense prompt, and identify the next dependency in the capstone.",
+          "evidence": "Revised artifact, self-assessment against rubric, defense response, and next-step statement."
         }
       ],
       "evaluatorCheckpoint": false,
@@ -44,7 +44,37 @@
         "source/evidence note",
         "decision or revision record",
         "next-step statement"
-      ]
+      ],
+      "deliverable": "A focused capstone question/problem statement with scope, significance, audience, and explicit boundaries.",
+      "sourceRequirement": "Use at least one relevant source, dataset, observation, interview note, model, or artifact and explain why it is trustworthy enough for this decision.",
+      "rubric": [
+        {
+          "criterion": "Question is specific and researchable",
+          "points": 4,
+          "descriptor": "4 = strong independent evidence; 3 = mostly complete; 2 = partial/inconsistent; 1 = minimal; 0 = absent or unsupported."
+        },
+        {
+          "criterion": "Scope is feasible",
+          "points": 4,
+          "descriptor": "4 = strong independent evidence; 3 = mostly complete; 2 = partial/inconsistent; 1 = minimal; 0 = absent or unsupported."
+        },
+        {
+          "criterion": "Significance is explained",
+          "points": 4,
+          "descriptor": "4 = strong independent evidence; 3 = mostly complete; 2 = partial/inconsistent; 1 = minimal; 0 = absent or unsupported."
+        },
+        {
+          "criterion": "Audience/stakeholder is identified",
+          "points": 4,
+          "descriptor": "4 = strong independent evidence; 3 = mostly complete; 2 = partial/inconsistent; 1 = minimal; 0 = absent or unsupported."
+        },
+        {
+          "criterion": "Limits and assumptions are named",
+          "points": 4,
+          "descriptor": "4 = strong independent evidence; 3 = mostly complete; 2 = partial/inconsistent; 1 = minimal; 0 = absent or unsupported."
+        }
+      ],
+      "defensePrompt": "Why is this question worth sustained investigation, and what would make it too broad or too weak?"
     },
     {
       "week": 2,
@@ -54,32 +84,32 @@
         {
           "day": 1,
           "phase": "Recall/Plan",
-          "task": "Recall/Plan: complete a focused capstone action for interest inventory & problem framing.",
-          "evidence": "Retrieve prior commitments and identify today's decision."
+          "task": "Define this week's decision for Interest inventory & problem framing. Retrieve prior commitments, identify the unresolved question, and write the success criteria before consulting new material.",
+          "evidence": "Decision statement, retrieved prior evidence, success criteria, and one predicted risk."
         },
         {
           "day": 2,
-          "phase": "Model/Research",
-          "task": "Model/Research: complete a focused capstone action for interest inventory & problem framing.",
-          "evidence": "Examine a model/source and record what it contributes."
+          "phase": "Research/Model",
+          "task": "Gather or inspect the strongest evidence needed for Interest inventory & problem framing. Compare at least two relevant sources, examples, datasets, models, or prior artifacts when available.",
+          "evidence": "Source/model notes with provenance, credibility judgment, and one conflict or limitation."
         },
         {
           "day": 3,
-          "phase": "Practice/Build",
-          "task": "Practice/Build: complete a focused capstone action for interest inventory & problem framing.",
-          "evidence": "Produce or revise a concrete artifact."
+          "phase": "Build/Analyze",
+          "task": "Produce the central artifact for Interest inventory & problem framing. Show your reasoning, calculations/design logic, choices rejected, and how the evidence shaped the work.",
+          "evidence": "A focused capstone question/problem statement with scope, significance, audience, and explicit boundaries."
         },
         {
           "day": 4,
-          "phase": "Apply/Test",
-          "task": "Apply/Test: complete a focused capstone action for interest inventory & problem framing.",
-          "evidence": "Apply/test the work against criteria or audience needs."
+          "phase": "Test/Apply",
+          "task": "Test the week's artifact against its criteria, stakeholder/audience needs, or evidence standard. Record failures, edge cases, tradeoffs, and what must change.",
+          "evidence": "Test/application record with results, limitation, and revision decision."
         },
         {
           "day": 5,
           "phase": "Reflect/Defend",
-          "task": "Reflect/Defend: complete a focused capstone action for interest inventory & problem framing.",
-          "evidence": "Reflect, identify limitations, record corrections, and define the next action."
+          "task": "Revise the artifact, score it against the weekly rubric, answer the defense prompt, and identify the next dependency in the capstone.",
+          "evidence": "Revised artifact, self-assessment against rubric, defense response, and next-step statement."
         }
       ],
       "evaluatorCheckpoint": false,
@@ -88,7 +118,37 @@
         "source/evidence note",
         "decision or revision record",
         "next-step statement"
-      ]
+      ],
+      "deliverable": "A focused capstone question/problem statement with scope, significance, audience, and explicit boundaries.",
+      "sourceRequirement": "Use at least one relevant source, dataset, observation, interview note, model, or artifact and explain why it is trustworthy enough for this decision.",
+      "rubric": [
+        {
+          "criterion": "Question is specific and researchable",
+          "points": 4,
+          "descriptor": "4 = strong independent evidence; 3 = mostly complete; 2 = partial/inconsistent; 1 = minimal; 0 = absent or unsupported."
+        },
+        {
+          "criterion": "Scope is feasible",
+          "points": 4,
+          "descriptor": "4 = strong independent evidence; 3 = mostly complete; 2 = partial/inconsistent; 1 = minimal; 0 = absent or unsupported."
+        },
+        {
+          "criterion": "Significance is explained",
+          "points": 4,
+          "descriptor": "4 = strong independent evidence; 3 = mostly complete; 2 = partial/inconsistent; 1 = minimal; 0 = absent or unsupported."
+        },
+        {
+          "criterion": "Audience/stakeholder is identified",
+          "points": 4,
+          "descriptor": "4 = strong independent evidence; 3 = mostly complete; 2 = partial/inconsistent; 1 = minimal; 0 = absent or unsupported."
+        },
+        {
+          "criterion": "Limits and assumptions are named",
+          "points": 4,
+          "descriptor": "4 = strong independent evidence; 3 = mostly complete; 2 = partial/inconsistent; 1 = minimal; 0 = absent or unsupported."
+        }
+      ],
+      "defensePrompt": "Why is this question worth sustained investigation, and what would make it too broad or too weak?"
     },
     {
       "week": 3,
@@ -98,32 +158,32 @@
         {
           "day": 1,
           "phase": "Recall/Plan",
-          "task": "Recall/Plan: complete a focused capstone action for stakeholder and audience map.",
-          "evidence": "Retrieve prior commitments and identify today's decision."
+          "task": "Define this week's decision for Stakeholder and audience map. Retrieve prior commitments, identify the unresolved question, and write the success criteria before consulting new material.",
+          "evidence": "Decision statement, retrieved prior evidence, success criteria, and one predicted risk."
         },
         {
           "day": 2,
-          "phase": "Model/Research",
-          "task": "Model/Research: complete a focused capstone action for stakeholder and audience map.",
-          "evidence": "Examine a model/source and record what it contributes."
+          "phase": "Research/Model",
+          "task": "Gather or inspect the strongest evidence needed for Stakeholder and audience map. Compare at least two relevant sources, examples, datasets, models, or prior artifacts when available.",
+          "evidence": "Source/model notes with provenance, credibility judgment, and one conflict or limitation."
         },
         {
           "day": 3,
-          "phase": "Practice/Build",
-          "task": "Practice/Build: complete a focused capstone action for stakeholder and audience map.",
-          "evidence": "Produce or revise a concrete artifact."
+          "phase": "Build/Analyze",
+          "task": "Produce the central artifact for Stakeholder and audience map. Show your reasoning, calculations/design logic, choices rejected, and how the evidence shaped the work.",
+          "evidence": "An ethics/accessibility/impact review identifying affected stakeholders, risks, benefits, access barriers, mitigation choices, and unresolved concerns."
         },
         {
           "day": 4,
-          "phase": "Apply/Test",
-          "task": "Apply/Test: complete a focused capstone action for stakeholder and audience map.",
-          "evidence": "Apply/test the work against criteria or audience needs."
+          "phase": "Test/Apply",
+          "task": "Test the week's artifact against its criteria, stakeholder/audience needs, or evidence standard. Record failures, edge cases, tradeoffs, and what must change.",
+          "evidence": "Test/application record with results, limitation, and revision decision."
         },
         {
           "day": 5,
           "phase": "Reflect/Defend",
-          "task": "Reflect/Defend: complete a focused capstone action for stakeholder and audience map.",
-          "evidence": "Reflect, identify limitations, record corrections, and define the next action."
+          "task": "Revise the artifact, score it against the weekly rubric, answer the defense prompt, and identify the next dependency in the capstone.",
+          "evidence": "Revised artifact, self-assessment against rubric, defense response, and next-step statement."
         }
       ],
       "evaluatorCheckpoint": false,
@@ -132,7 +192,37 @@
         "source/evidence note",
         "decision or revision record",
         "next-step statement"
-      ]
+      ],
+      "deliverable": "An ethics/accessibility/impact review identifying affected stakeholders, risks, benefits, access barriers, mitigation choices, and unresolved concerns.",
+      "sourceRequirement": "Use at least one relevant source, dataset, observation, interview note, model, or artifact and explain why it is trustworthy enough for this decision.",
+      "rubric": [
+        {
+          "criterion": "Stakeholders are represented fairly",
+          "points": 4,
+          "descriptor": "4 = strong independent evidence; 3 = mostly complete; 2 = partial/inconsistent; 1 = minimal; 0 = absent or unsupported."
+        },
+        {
+          "criterion": "Risks and benefits are concrete",
+          "points": 4,
+          "descriptor": "4 = strong independent evidence; 3 = mostly complete; 2 = partial/inconsistent; 1 = minimal; 0 = absent or unsupported."
+        },
+        {
+          "criterion": "Accessibility is considered",
+          "points": 4,
+          "descriptor": "4 = strong independent evidence; 3 = mostly complete; 2 = partial/inconsistent; 1 = minimal; 0 = absent or unsupported."
+        },
+        {
+          "criterion": "Mitigations are feasible",
+          "points": 4,
+          "descriptor": "4 = strong independent evidence; 3 = mostly complete; 2 = partial/inconsistent; 1 = minimal; 0 = absent or unsupported."
+        },
+        {
+          "criterion": "Unresolved concerns are disclosed",
+          "points": 4,
+          "descriptor": "4 = strong independent evidence; 3 = mostly complete; 2 = partial/inconsistent; 1 = minimal; 0 = absent or unsupported."
+        }
+      ],
+      "defensePrompt": "Who could be harmed, excluded, or misrepresented by this work, and what did you change because of that?"
     },
     {
       "week": 4,
@@ -142,32 +232,32 @@
         {
           "day": 1,
           "phase": "Recall/Plan",
-          "task": "Recall/Plan: complete a focused capstone action for source credibility & research plan.",
-          "evidence": "Retrieve prior commitments and identify today's decision."
+          "task": "Define this week's decision for Source credibility & research plan. Retrieve prior commitments, identify the unresolved question, and write the success criteria before consulting new material.",
+          "evidence": "Decision statement, retrieved prior evidence, success criteria, and one predicted risk."
         },
         {
           "day": 2,
-          "phase": "Model/Research",
-          "task": "Model/Research: complete a focused capstone action for source credibility & research plan.",
-          "evidence": "Examine a model/source and record what it contributes."
+          "phase": "Research/Model",
+          "task": "Gather or inspect the strongest evidence needed for Source credibility & research plan. Compare at least two relevant sources, examples, datasets, models, or prior artifacts when available.",
+          "evidence": "Source/model notes with provenance, credibility judgment, and one conflict or limitation."
         },
         {
           "day": 3,
-          "phase": "Practice/Build",
-          "task": "Practice/Build: complete a focused capstone action for source credibility & research plan.",
-          "evidence": "Produce or revise a concrete artifact."
+          "phase": "Build/Analyze",
+          "task": "Produce the central artifact for Source credibility & research plan. Show your reasoning, calculations/design logic, choices rejected, and how the evidence shaped the work.",
+          "evidence": "An annotated research artifact that compares sources, records provenance, identifies agreement/disagreement, and synthesizes evidence into a working claim."
         },
         {
           "day": 4,
-          "phase": "Apply/Test",
-          "task": "Apply/Test: complete a focused capstone action for source credibility & research plan.",
-          "evidence": "Apply/test the work against criteria or audience needs."
+          "phase": "Test/Apply",
+          "task": "Test the week's artifact against its criteria, stakeholder/audience needs, or evidence standard. Record failures, edge cases, tradeoffs, and what must change.",
+          "evidence": "Test/application record with results, limitation, and revision decision."
         },
         {
           "day": 5,
           "phase": "Reflect/Defend",
-          "task": "Reflect/Defend: complete a focused capstone action for source credibility & research plan.",
-          "evidence": "Reflect, identify limitations, record corrections, and define the next action."
+          "task": "Revise the artifact, score it against the weekly rubric, answer the defense prompt, and identify the next dependency in the capstone.",
+          "evidence": "Revised artifact, self-assessment against rubric, defense response, and next-step statement."
         }
       ],
       "evaluatorCheckpoint": false,
@@ -176,7 +266,37 @@
         "source/evidence note",
         "decision or revision record",
         "next-step statement"
-      ]
+      ],
+      "deliverable": "An annotated research artifact that compares sources, records provenance, identifies agreement/disagreement, and synthesizes evidence into a working claim.",
+      "sourceRequirement": "Use at least one relevant source, dataset, observation, interview note, model, or artifact and explain why it is trustworthy enough for this decision.",
+      "rubric": [
+        {
+          "criterion": "Source provenance",
+          "points": 4,
+          "descriptor": "4 = strong independent evidence; 3 = mostly complete; 2 = partial/inconsistent; 1 = minimal; 0 = absent or unsupported."
+        },
+        {
+          "criterion": "Credibility judgment",
+          "points": 4,
+          "descriptor": "4 = strong independent evidence; 3 = mostly complete; 2 = partial/inconsistent; 1 = minimal; 0 = absent or unsupported."
+        },
+        {
+          "criterion": "Cross-source synthesis",
+          "points": 4,
+          "descriptor": "4 = strong independent evidence; 3 = mostly complete; 2 = partial/inconsistent; 1 = minimal; 0 = absent or unsupported."
+        },
+        {
+          "criterion": "Counterevidence included",
+          "points": 4,
+          "descriptor": "4 = strong independent evidence; 3 = mostly complete; 2 = partial/inconsistent; 1 = minimal; 0 = absent or unsupported."
+        },
+        {
+          "criterion": "Citation/notes are traceable",
+          "points": 4,
+          "descriptor": "4 = strong independent evidence; 3 = mostly complete; 2 = partial/inconsistent; 1 = minimal; 0 = absent or unsupported."
+        }
+      ],
+      "defensePrompt": "Which source most changed your thinking, and where do credible sources disagree?"
     },
     {
       "week": 5,
@@ -186,32 +306,32 @@
         {
           "day": 1,
           "phase": "Recall/Plan",
-          "task": "Recall/Plan: complete a focused capstone action for annotated source set i.",
-          "evidence": "Retrieve prior commitments and identify today's decision."
+          "task": "Define this week's decision for Annotated source set I. Retrieve prior commitments, identify the unresolved question, and write the success criteria before consulting new material.",
+          "evidence": "Decision statement, retrieved prior evidence, success criteria, and one predicted risk."
         },
         {
           "day": 2,
-          "phase": "Model/Research",
-          "task": "Model/Research: complete a focused capstone action for annotated source set i.",
-          "evidence": "Examine a model/source and record what it contributes."
+          "phase": "Research/Model",
+          "task": "Gather or inspect the strongest evidence needed for Annotated source set I. Compare at least two relevant sources, examples, datasets, models, or prior artifacts when available.",
+          "evidence": "Source/model notes with provenance, credibility judgment, and one conflict or limitation."
         },
         {
           "day": 3,
-          "phase": "Practice/Build",
-          "task": "Practice/Build: complete a focused capstone action for annotated source set i.",
-          "evidence": "Produce or revise a concrete artifact."
+          "phase": "Build/Analyze",
+          "task": "Produce the central artifact for Annotated source set I. Show your reasoning, calculations/design logic, choices rejected, and how the evidence shaped the work.",
+          "evidence": "An annotated research artifact that compares sources, records provenance, identifies agreement/disagreement, and synthesizes evidence into a working claim."
         },
         {
           "day": 4,
-          "phase": "Apply/Test",
-          "task": "Apply/Test: complete a focused capstone action for annotated source set i.",
-          "evidence": "Apply/test the work against criteria or audience needs."
+          "phase": "Test/Apply",
+          "task": "Test the week's artifact against its criteria, stakeholder/audience needs, or evidence standard. Record failures, edge cases, tradeoffs, and what must change.",
+          "evidence": "Test/application record with results, limitation, and revision decision."
         },
         {
           "day": 5,
           "phase": "Reflect/Defend",
-          "task": "Reflect/Defend: complete a focused capstone action for annotated source set i.",
-          "evidence": "Reflect, identify limitations, record corrections, and define the next action."
+          "task": "Revise the artifact, score it against the weekly rubric, answer the defense prompt, and identify the next dependency in the capstone.",
+          "evidence": "Revised artifact, self-assessment against rubric, defense response, and next-step statement."
         }
       ],
       "evaluatorCheckpoint": false,
@@ -220,7 +340,37 @@
         "source/evidence note",
         "decision or revision record",
         "next-step statement"
-      ]
+      ],
+      "deliverable": "An annotated research artifact that compares sources, records provenance, identifies agreement/disagreement, and synthesizes evidence into a working claim.",
+      "sourceRequirement": "Use at least one relevant source, dataset, observation, interview note, model, or artifact and explain why it is trustworthy enough for this decision.",
+      "rubric": [
+        {
+          "criterion": "Source provenance",
+          "points": 4,
+          "descriptor": "4 = strong independent evidence; 3 = mostly complete; 2 = partial/inconsistent; 1 = minimal; 0 = absent or unsupported."
+        },
+        {
+          "criterion": "Credibility judgment",
+          "points": 4,
+          "descriptor": "4 = strong independent evidence; 3 = mostly complete; 2 = partial/inconsistent; 1 = minimal; 0 = absent or unsupported."
+        },
+        {
+          "criterion": "Cross-source synthesis",
+          "points": 4,
+          "descriptor": "4 = strong independent evidence; 3 = mostly complete; 2 = partial/inconsistent; 1 = minimal; 0 = absent or unsupported."
+        },
+        {
+          "criterion": "Counterevidence included",
+          "points": 4,
+          "descriptor": "4 = strong independent evidence; 3 = mostly complete; 2 = partial/inconsistent; 1 = minimal; 0 = absent or unsupported."
+        },
+        {
+          "criterion": "Citation/notes are traceable",
+          "points": 4,
+          "descriptor": "4 = strong independent evidence; 3 = mostly complete; 2 = partial/inconsistent; 1 = minimal; 0 = absent or unsupported."
+        }
+      ],
+      "defensePrompt": "Which source most changed your thinking, and where do credible sources disagree?"
     },
     {
       "week": 6,
@@ -230,32 +380,32 @@
         {
           "day": 1,
           "phase": "Recall/Plan",
-          "task": "Recall/Plan: complete a focused capstone action for annotated source set ii.",
-          "evidence": "Retrieve prior commitments and identify today's decision."
+          "task": "Define this week's decision for Annotated source set II. Retrieve prior commitments, identify the unresolved question, and write the success criteria before consulting new material.",
+          "evidence": "Decision statement, retrieved prior evidence, success criteria, and one predicted risk."
         },
         {
           "day": 2,
-          "phase": "Model/Research",
-          "task": "Model/Research: complete a focused capstone action for annotated source set ii.",
-          "evidence": "Examine a model/source and record what it contributes."
+          "phase": "Research/Model",
+          "task": "Gather or inspect the strongest evidence needed for Annotated source set II. Compare at least two relevant sources, examples, datasets, models, or prior artifacts when available.",
+          "evidence": "Source/model notes with provenance, credibility judgment, and one conflict or limitation."
         },
         {
           "day": 3,
-          "phase": "Practice/Build",
-          "task": "Practice/Build: complete a focused capstone action for annotated source set ii.",
-          "evidence": "Produce or revise a concrete artifact."
+          "phase": "Build/Analyze",
+          "task": "Produce the central artifact for Annotated source set II. Show your reasoning, calculations/design logic, choices rejected, and how the evidence shaped the work.",
+          "evidence": "An annotated research artifact that compares sources, records provenance, identifies agreement/disagreement, and synthesizes evidence into a working claim."
         },
         {
           "day": 4,
-          "phase": "Apply/Test",
-          "task": "Apply/Test: complete a focused capstone action for annotated source set ii.",
-          "evidence": "Apply/test the work against criteria or audience needs."
+          "phase": "Test/Apply",
+          "task": "Test the week's artifact against its criteria, stakeholder/audience needs, or evidence standard. Record failures, edge cases, tradeoffs, and what must change.",
+          "evidence": "Test/application record with results, limitation, and revision decision."
         },
         {
           "day": 5,
           "phase": "Reflect/Defend",
-          "task": "Reflect/Defend: complete a focused capstone action for annotated source set ii.",
-          "evidence": "Reflect, identify limitations, record corrections, and define the next action."
+          "task": "Revise the artifact, score it against the weekly rubric, answer the defense prompt, and identify the next dependency in the capstone.",
+          "evidence": "Revised artifact, self-assessment against rubric, defense response, and next-step statement."
         }
       ],
       "evaluatorCheckpoint": false,
@@ -264,7 +414,37 @@
         "source/evidence note",
         "decision or revision record",
         "next-step statement"
-      ]
+      ],
+      "deliverable": "An annotated research artifact that compares sources, records provenance, identifies agreement/disagreement, and synthesizes evidence into a working claim.",
+      "sourceRequirement": "Use at least one relevant source, dataset, observation, interview note, model, or artifact and explain why it is trustworthy enough for this decision.",
+      "rubric": [
+        {
+          "criterion": "Source provenance",
+          "points": 4,
+          "descriptor": "4 = strong independent evidence; 3 = mostly complete; 2 = partial/inconsistent; 1 = minimal; 0 = absent or unsupported."
+        },
+        {
+          "criterion": "Credibility judgment",
+          "points": 4,
+          "descriptor": "4 = strong independent evidence; 3 = mostly complete; 2 = partial/inconsistent; 1 = minimal; 0 = absent or unsupported."
+        },
+        {
+          "criterion": "Cross-source synthesis",
+          "points": 4,
+          "descriptor": "4 = strong independent evidence; 3 = mostly complete; 2 = partial/inconsistent; 1 = minimal; 0 = absent or unsupported."
+        },
+        {
+          "criterion": "Counterevidence included",
+          "points": 4,
+          "descriptor": "4 = strong independent evidence; 3 = mostly complete; 2 = partial/inconsistent; 1 = minimal; 0 = absent or unsupported."
+        },
+        {
+          "criterion": "Citation/notes are traceable",
+          "points": 4,
+          "descriptor": "4 = strong independent evidence; 3 = mostly complete; 2 = partial/inconsistent; 1 = minimal; 0 = absent or unsupported."
+        }
+      ],
+      "defensePrompt": "Which source most changed your thinking, and where do credible sources disagree?"
     },
     {
       "week": 7,
@@ -274,32 +454,32 @@
         {
           "day": 1,
           "phase": "Recall/Plan",
-          "task": "Recall/Plan: complete a focused capstone action for research synthesis.",
-          "evidence": "Retrieve prior commitments and identify today's decision."
+          "task": "Define this week's decision for Research synthesis. Retrieve prior commitments, identify the unresolved question, and write the success criteria before consulting new material.",
+          "evidence": "Decision statement, retrieved prior evidence, success criteria, and one predicted risk."
         },
         {
           "day": 2,
-          "phase": "Model/Research",
-          "task": "Model/Research: complete a focused capstone action for research synthesis.",
-          "evidence": "Examine a model/source and record what it contributes."
+          "phase": "Research/Model",
+          "task": "Gather or inspect the strongest evidence needed for Research synthesis. Compare at least two relevant sources, examples, datasets, models, or prior artifacts when available.",
+          "evidence": "Source/model notes with provenance, credibility judgment, and one conflict or limitation."
         },
         {
           "day": 3,
-          "phase": "Practice/Build",
-          "task": "Practice/Build: complete a focused capstone action for research synthesis.",
-          "evidence": "Produce or revise a concrete artifact."
+          "phase": "Build/Analyze",
+          "task": "Produce the central artifact for Research synthesis. Show your reasoning, calculations/design logic, choices rejected, and how the evidence shaped the work.",
+          "evidence": "An annotated research artifact that compares sources, records provenance, identifies agreement/disagreement, and synthesizes evidence into a working claim."
         },
         {
           "day": 4,
-          "phase": "Apply/Test",
-          "task": "Apply/Test: complete a focused capstone action for research synthesis.",
-          "evidence": "Apply/test the work against criteria or audience needs."
+          "phase": "Test/Apply",
+          "task": "Test the week's artifact against its criteria, stakeholder/audience needs, or evidence standard. Record failures, edge cases, tradeoffs, and what must change.",
+          "evidence": "Test/application record with results, limitation, and revision decision."
         },
         {
           "day": 5,
           "phase": "Reflect/Defend",
-          "task": "Reflect/Defend: complete a focused capstone action for research synthesis.",
-          "evidence": "Reflect, identify limitations, record corrections, and define the next action."
+          "task": "Revise the artifact, score it against the weekly rubric, answer the defense prompt, and identify the next dependency in the capstone.",
+          "evidence": "Revised artifact, self-assessment against rubric, defense response, and next-step statement."
         }
       ],
       "evaluatorCheckpoint": false,
@@ -308,7 +488,37 @@
         "source/evidence note",
         "decision or revision record",
         "next-step statement"
-      ]
+      ],
+      "deliverable": "An annotated research artifact that compares sources, records provenance, identifies agreement/disagreement, and synthesizes evidence into a working claim.",
+      "sourceRequirement": "Use at least one relevant source, dataset, observation, interview note, model, or artifact and explain why it is trustworthy enough for this decision.",
+      "rubric": [
+        {
+          "criterion": "Source provenance",
+          "points": 4,
+          "descriptor": "4 = strong independent evidence; 3 = mostly complete; 2 = partial/inconsistent; 1 = minimal; 0 = absent or unsupported."
+        },
+        {
+          "criterion": "Credibility judgment",
+          "points": 4,
+          "descriptor": "4 = strong independent evidence; 3 = mostly complete; 2 = partial/inconsistent; 1 = minimal; 0 = absent or unsupported."
+        },
+        {
+          "criterion": "Cross-source synthesis",
+          "points": 4,
+          "descriptor": "4 = strong independent evidence; 3 = mostly complete; 2 = partial/inconsistent; 1 = minimal; 0 = absent or unsupported."
+        },
+        {
+          "criterion": "Counterevidence included",
+          "points": 4,
+          "descriptor": "4 = strong independent evidence; 3 = mostly complete; 2 = partial/inconsistent; 1 = minimal; 0 = absent or unsupported."
+        },
+        {
+          "criterion": "Citation/notes are traceable",
+          "points": 4,
+          "descriptor": "4 = strong independent evidence; 3 = mostly complete; 2 = partial/inconsistent; 1 = minimal; 0 = absent or unsupported."
+        }
+      ],
+      "defensePrompt": "Which source most changed your thinking, and where do credible sources disagree?"
     },
     {
       "week": 8,
@@ -318,32 +528,32 @@
         {
           "day": 1,
           "phase": "Recall/Plan",
-          "task": "Recall/Plan: complete a focused capstone action for proposal draft.",
-          "evidence": "Retrieve prior commitments and identify today's decision."
+          "task": "Define this week's decision for Proposal draft. Retrieve prior commitments, identify the unresolved question, and write the success criteria before consulting new material.",
+          "evidence": "Decision statement, retrieved prior evidence, success criteria, and one predicted risk."
         },
         {
           "day": 2,
-          "phase": "Model/Research",
-          "task": "Model/Research: complete a focused capstone action for proposal draft.",
-          "evidence": "Examine a model/source and record what it contributes."
+          "phase": "Research/Model",
+          "task": "Gather or inspect the strongest evidence needed for Proposal draft. Compare at least two relevant sources, examples, datasets, models, or prior artifacts when available.",
+          "evidence": "Source/model notes with provenance, credibility judgment, and one conflict or limitation."
         },
         {
           "day": 3,
-          "phase": "Practice/Build",
-          "task": "Practice/Build: complete a focused capstone action for proposal draft.",
-          "evidence": "Produce or revise a concrete artifact."
+          "phase": "Build/Analyze",
+          "task": "Produce the central artifact for Proposal draft. Show your reasoning, calculations/design logic, choices rejected, and how the evidence shaped the work.",
+          "evidence": "A defensible proposal or method plan with criteria, constraints, sequence, evidence measures, risks, and revision triggers."
         },
         {
           "day": 4,
-          "phase": "Apply/Test",
-          "task": "Apply/Test: complete a focused capstone action for proposal draft.",
-          "evidence": "Apply/test the work against criteria or audience needs."
+          "phase": "Test/Apply",
+          "task": "Test the week's artifact against its criteria, stakeholder/audience needs, or evidence standard. Record failures, edge cases, tradeoffs, and what must change.",
+          "evidence": "Test/application record with results, limitation, and revision decision."
         },
         {
           "day": 5,
           "phase": "Reflect/Defend",
-          "task": "Reflect/Defend: complete a focused capstone action for proposal draft.",
-          "evidence": "Reflect, identify limitations, record corrections, and define the next action."
+          "task": "Revise the artifact, score it against the weekly rubric, answer the defense prompt, and identify the next dependency in the capstone.",
+          "evidence": "Revised artifact, self-assessment against rubric, defense response, and next-step statement."
         }
       ],
       "evaluatorCheckpoint": false,
@@ -352,7 +562,37 @@
         "source/evidence note",
         "decision or revision record",
         "next-step statement"
-      ]
+      ],
+      "deliverable": "A defensible proposal or method plan with criteria, constraints, sequence, evidence measures, risks, and revision triggers.",
+      "sourceRequirement": "Use at least one relevant source, dataset, observation, interview note, model, or artifact and explain why it is trustworthy enough for this decision.",
+      "rubric": [
+        {
+          "criterion": "Goal and criteria align",
+          "points": 4,
+          "descriptor": "4 = strong independent evidence; 3 = mostly complete; 2 = partial/inconsistent; 1 = minimal; 0 = absent or unsupported."
+        },
+        {
+          "criterion": "Method is feasible",
+          "points": 4,
+          "descriptor": "4 = strong independent evidence; 3 = mostly complete; 2 = partial/inconsistent; 1 = minimal; 0 = absent or unsupported."
+        },
+        {
+          "criterion": "Constraints are explicit",
+          "points": 4,
+          "descriptor": "4 = strong independent evidence; 3 = mostly complete; 2 = partial/inconsistent; 1 = minimal; 0 = absent or unsupported."
+        },
+        {
+          "criterion": "Evidence measures fit the question",
+          "points": 4,
+          "descriptor": "4 = strong independent evidence; 3 = mostly complete; 2 = partial/inconsistent; 1 = minimal; 0 = absent or unsupported."
+        },
+        {
+          "criterion": "Revision triggers are defined",
+          "points": 4,
+          "descriptor": "4 = strong independent evidence; 3 = mostly complete; 2 = partial/inconsistent; 1 = minimal; 0 = absent or unsupported."
+        }
+      ],
+      "defensePrompt": "What evidence would force you to change this plan?"
     },
     {
       "week": 9,
@@ -362,32 +602,32 @@
         {
           "day": 1,
           "phase": "Recall/Plan",
-          "task": "Recall/Plan: complete a focused capstone action for proposal defense & revision.",
-          "evidence": "Retrieve prior commitments and identify today's decision."
+          "task": "Define this week's decision for Proposal defense & revision. Retrieve prior commitments, identify the unresolved question, and write the success criteria before consulting new material.",
+          "evidence": "Decision statement, retrieved prior evidence, success criteria, and one predicted risk."
         },
         {
           "day": 2,
-          "phase": "Model/Research",
-          "task": "Model/Research: complete a focused capstone action for proposal defense & revision.",
-          "evidence": "Examine a model/source and record what it contributes."
+          "phase": "Research/Model",
+          "task": "Gather or inspect the strongest evidence needed for Proposal defense & revision. Compare at least two relevant sources, examples, datasets, models, or prior artifacts when available.",
+          "evidence": "Source/model notes with provenance, credibility judgment, and one conflict or limitation."
         },
         {
           "day": 3,
-          "phase": "Practice/Build",
-          "task": "Practice/Build: complete a focused capstone action for proposal defense & revision.",
-          "evidence": "Produce or revise a concrete artifact."
+          "phase": "Build/Analyze",
+          "task": "Produce the central artifact for Proposal defense & revision. Show your reasoning, calculations/design logic, choices rejected, and how the evidence shaped the work.",
+          "evidence": "A defensible proposal or method plan with criteria, constraints, sequence, evidence measures, risks, and revision triggers."
         },
         {
           "day": 4,
-          "phase": "Apply/Test",
-          "task": "Apply/Test: complete a focused capstone action for proposal defense & revision.",
-          "evidence": "Apply/test the work against criteria or audience needs."
+          "phase": "Test/Apply",
+          "task": "Test the week's artifact against its criteria, stakeholder/audience needs, or evidence standard. Record failures, edge cases, tradeoffs, and what must change.",
+          "evidence": "Test/application record with results, limitation, and revision decision."
         },
         {
           "day": 5,
           "phase": "Reflect/Defend",
-          "task": "Reflect/Defend: complete a focused capstone action for proposal defense & revision.",
-          "evidence": "Reflect, identify limitations, record corrections, and define the next action."
+          "task": "Revise the artifact, score it against the weekly rubric, answer the defense prompt, and identify the next dependency in the capstone.",
+          "evidence": "Revised artifact, self-assessment against rubric, defense response, and next-step statement."
         }
       ],
       "evaluatorCheckpoint": true,
@@ -396,7 +636,37 @@
         "source/evidence note",
         "decision or revision record",
         "next-step statement"
-      ]
+      ],
+      "deliverable": "A defensible proposal or method plan with criteria, constraints, sequence, evidence measures, risks, and revision triggers.",
+      "sourceRequirement": "Use at least one relevant source, dataset, observation, interview note, model, or artifact and explain why it is trustworthy enough for this decision.",
+      "rubric": [
+        {
+          "criterion": "Goal and criteria align",
+          "points": 4,
+          "descriptor": "4 = strong independent evidence; 3 = mostly complete; 2 = partial/inconsistent; 1 = minimal; 0 = absent or unsupported."
+        },
+        {
+          "criterion": "Method is feasible",
+          "points": 4,
+          "descriptor": "4 = strong independent evidence; 3 = mostly complete; 2 = partial/inconsistent; 1 = minimal; 0 = absent or unsupported."
+        },
+        {
+          "criterion": "Constraints are explicit",
+          "points": 4,
+          "descriptor": "4 = strong independent evidence; 3 = mostly complete; 2 = partial/inconsistent; 1 = minimal; 0 = absent or unsupported."
+        },
+        {
+          "criterion": "Evidence measures fit the question",
+          "points": 4,
+          "descriptor": "4 = strong independent evidence; 3 = mostly complete; 2 = partial/inconsistent; 1 = minimal; 0 = absent or unsupported."
+        },
+        {
+          "criterion": "Revision triggers are defined",
+          "points": 4,
+          "descriptor": "4 = strong independent evidence; 3 = mostly complete; 2 = partial/inconsistent; 1 = minimal; 0 = absent or unsupported."
+        }
+      ],
+      "defensePrompt": "What evidence would force you to change this plan?"
     },
     {
       "week": 10,
@@ -406,32 +676,32 @@
         {
           "day": 1,
           "phase": "Recall/Plan",
-          "task": "Recall/Plan: complete a focused capstone action for methods / production plan.",
-          "evidence": "Retrieve prior commitments and identify today's decision."
+          "task": "Define this week's decision for Methods / production plan. Retrieve prior commitments, identify the unresolved question, and write the success criteria before consulting new material.",
+          "evidence": "Decision statement, retrieved prior evidence, success criteria, and one predicted risk."
         },
         {
           "day": 2,
-          "phase": "Model/Research",
-          "task": "Model/Research: complete a focused capstone action for methods / production plan.",
-          "evidence": "Examine a model/source and record what it contributes."
+          "phase": "Research/Model",
+          "task": "Gather or inspect the strongest evidence needed for Methods / production plan. Compare at least two relevant sources, examples, datasets, models, or prior artifacts when available.",
+          "evidence": "Source/model notes with provenance, credibility judgment, and one conflict or limitation."
         },
         {
           "day": 3,
-          "phase": "Practice/Build",
-          "task": "Practice/Build: complete a focused capstone action for methods / production plan.",
-          "evidence": "Produce or revise a concrete artifact."
+          "phase": "Build/Analyze",
+          "task": "Produce the central artifact for Methods / production plan. Show your reasoning, calculations/design logic, choices rejected, and how the evidence shaped the work.",
+          "evidence": "A defensible proposal or method plan with criteria, constraints, sequence, evidence measures, risks, and revision triggers."
         },
         {
           "day": 4,
-          "phase": "Apply/Test",
-          "task": "Apply/Test: complete a focused capstone action for methods / production plan.",
-          "evidence": "Apply/test the work against criteria or audience needs."
+          "phase": "Test/Apply",
+          "task": "Test the week's artifact against its criteria, stakeholder/audience needs, or evidence standard. Record failures, edge cases, tradeoffs, and what must change.",
+          "evidence": "Test/application record with results, limitation, and revision decision."
         },
         {
           "day": 5,
           "phase": "Reflect/Defend",
-          "task": "Reflect/Defend: complete a focused capstone action for methods / production plan.",
-          "evidence": "Reflect, identify limitations, record corrections, and define the next action."
+          "task": "Revise the artifact, score it against the weekly rubric, answer the defense prompt, and identify the next dependency in the capstone.",
+          "evidence": "Revised artifact, self-assessment against rubric, defense response, and next-step statement."
         }
       ],
       "evaluatorCheckpoint": false,
@@ -440,7 +710,37 @@
         "source/evidence note",
         "decision or revision record",
         "next-step statement"
-      ]
+      ],
+      "deliverable": "A defensible proposal or method plan with criteria, constraints, sequence, evidence measures, risks, and revision triggers.",
+      "sourceRequirement": "Use at least one relevant source, dataset, observation, interview note, model, or artifact and explain why it is trustworthy enough for this decision.",
+      "rubric": [
+        {
+          "criterion": "Goal and criteria align",
+          "points": 4,
+          "descriptor": "4 = strong independent evidence; 3 = mostly complete; 2 = partial/inconsistent; 1 = minimal; 0 = absent or unsupported."
+        },
+        {
+          "criterion": "Method is feasible",
+          "points": 4,
+          "descriptor": "4 = strong independent evidence; 3 = mostly complete; 2 = partial/inconsistent; 1 = minimal; 0 = absent or unsupported."
+        },
+        {
+          "criterion": "Constraints are explicit",
+          "points": 4,
+          "descriptor": "4 = strong independent evidence; 3 = mostly complete; 2 = partial/inconsistent; 1 = minimal; 0 = absent or unsupported."
+        },
+        {
+          "criterion": "Evidence measures fit the question",
+          "points": 4,
+          "descriptor": "4 = strong independent evidence; 3 = mostly complete; 2 = partial/inconsistent; 1 = minimal; 0 = absent or unsupported."
+        },
+        {
+          "criterion": "Revision triggers are defined",
+          "points": 4,
+          "descriptor": "4 = strong independent evidence; 3 = mostly complete; 2 = partial/inconsistent; 1 = minimal; 0 = absent or unsupported."
+        }
+      ],
+      "defensePrompt": "What evidence would force you to change this plan?"
     },
     {
       "week": 11,
@@ -450,32 +750,32 @@
         {
           "day": 1,
           "phase": "Recall/Plan",
-          "task": "Recall/Plan: complete a focused capstone action for success criteria & evidence plan.",
-          "evidence": "Retrieve prior commitments and identify today's decision."
+          "task": "Define this week's decision for Success criteria & evidence plan. Retrieve prior commitments, identify the unresolved question, and write the success criteria before consulting new material.",
+          "evidence": "Decision statement, retrieved prior evidence, success criteria, and one predicted risk."
         },
         {
           "day": 2,
-          "phase": "Model/Research",
-          "task": "Model/Research: complete a focused capstone action for success criteria & evidence plan.",
-          "evidence": "Examine a model/source and record what it contributes."
+          "phase": "Research/Model",
+          "task": "Gather or inspect the strongest evidence needed for Success criteria & evidence plan. Compare at least two relevant sources, examples, datasets, models, or prior artifacts when available.",
+          "evidence": "Source/model notes with provenance, credibility judgment, and one conflict or limitation."
         },
         {
           "day": 3,
-          "phase": "Practice/Build",
-          "task": "Practice/Build: complete a focused capstone action for success criteria & evidence plan.",
-          "evidence": "Produce or revise a concrete artifact."
+          "phase": "Build/Analyze",
+          "task": "Produce the central artifact for Success criteria & evidence plan. Show your reasoning, calculations/design logic, choices rejected, and how the evidence shaped the work.",
+          "evidence": "A defensible proposal or method plan with criteria, constraints, sequence, evidence measures, risks, and revision triggers."
         },
         {
           "day": 4,
-          "phase": "Apply/Test",
-          "task": "Apply/Test: complete a focused capstone action for success criteria & evidence plan.",
-          "evidence": "Apply/test the work against criteria or audience needs."
+          "phase": "Test/Apply",
+          "task": "Test the week's artifact against its criteria, stakeholder/audience needs, or evidence standard. Record failures, edge cases, tradeoffs, and what must change.",
+          "evidence": "Test/application record with results, limitation, and revision decision."
         },
         {
           "day": 5,
           "phase": "Reflect/Defend",
-          "task": "Reflect/Defend: complete a focused capstone action for success criteria & evidence plan.",
-          "evidence": "Reflect, identify limitations, record corrections, and define the next action."
+          "task": "Revise the artifact, score it against the weekly rubric, answer the defense prompt, and identify the next dependency in the capstone.",
+          "evidence": "Revised artifact, self-assessment against rubric, defense response, and next-step statement."
         }
       ],
       "evaluatorCheckpoint": false,
@@ -484,7 +784,37 @@
         "source/evidence note",
         "decision or revision record",
         "next-step statement"
-      ]
+      ],
+      "deliverable": "A defensible proposal or method plan with criteria, constraints, sequence, evidence measures, risks, and revision triggers.",
+      "sourceRequirement": "Use at least one relevant source, dataset, observation, interview note, model, or artifact and explain why it is trustworthy enough for this decision.",
+      "rubric": [
+        {
+          "criterion": "Goal and criteria align",
+          "points": 4,
+          "descriptor": "4 = strong independent evidence; 3 = mostly complete; 2 = partial/inconsistent; 1 = minimal; 0 = absent or unsupported."
+        },
+        {
+          "criterion": "Method is feasible",
+          "points": 4,
+          "descriptor": "4 = strong independent evidence; 3 = mostly complete; 2 = partial/inconsistent; 1 = minimal; 0 = absent or unsupported."
+        },
+        {
+          "criterion": "Constraints are explicit",
+          "points": 4,
+          "descriptor": "4 = strong independent evidence; 3 = mostly complete; 2 = partial/inconsistent; 1 = minimal; 0 = absent or unsupported."
+        },
+        {
+          "criterion": "Evidence measures fit the question",
+          "points": 4,
+          "descriptor": "4 = strong independent evidence; 3 = mostly complete; 2 = partial/inconsistent; 1 = minimal; 0 = absent or unsupported."
+        },
+        {
+          "criterion": "Revision triggers are defined",
+          "points": 4,
+          "descriptor": "4 = strong independent evidence; 3 = mostly complete; 2 = partial/inconsistent; 1 = minimal; 0 = absent or unsupported."
+        }
+      ],
+      "defensePrompt": "What evidence would force you to change this plan?"
     },
     {
       "week": 12,
@@ -494,32 +824,32 @@
         {
           "day": 1,
           "phase": "Recall/Plan",
-          "task": "Recall/Plan: complete a focused capstone action for prototype / first implementation.",
-          "evidence": "Retrieve prior commitments and identify today's decision."
+          "task": "Define this week's decision for Prototype / first implementation. Retrieve prior commitments, identify the unresolved question, and write the success criteria before consulting new material.",
+          "evidence": "Decision statement, retrieved prior evidence, success criteria, and one predicted risk."
         },
         {
           "day": 2,
-          "phase": "Model/Research",
-          "task": "Model/Research: complete a focused capstone action for prototype / first implementation.",
-          "evidence": "Examine a model/source and record what it contributes."
+          "phase": "Research/Model",
+          "task": "Gather or inspect the strongest evidence needed for Prototype / first implementation. Compare at least two relevant sources, examples, datasets, models, or prior artifacts when available.",
+          "evidence": "Source/model notes with provenance, credibility judgment, and one conflict or limitation."
         },
         {
           "day": 3,
-          "phase": "Practice/Build",
-          "task": "Practice/Build: complete a focused capstone action for prototype / first implementation.",
-          "evidence": "Produce or revise a concrete artifact."
+          "phase": "Build/Analyze",
+          "task": "Produce the central artifact for Prototype / first implementation. Show your reasoning, calculations/design logic, choices rejected, and how the evidence shaped the work.",
+          "evidence": "A versioned prototype or implementation artifact with design rationale, testable criteria, observed performance, and revision notes."
         },
         {
           "day": 4,
-          "phase": "Apply/Test",
-          "task": "Apply/Test: complete a focused capstone action for prototype / first implementation.",
-          "evidence": "Apply/test the work against criteria or audience needs."
+          "phase": "Test/Apply",
+          "task": "Test the week's artifact against its criteria, stakeholder/audience needs, or evidence standard. Record failures, edge cases, tradeoffs, and what must change.",
+          "evidence": "Test/application record with results, limitation, and revision decision."
         },
         {
           "day": 5,
           "phase": "Reflect/Defend",
-          "task": "Reflect/Defend: complete a focused capstone action for prototype / first implementation.",
-          "evidence": "Reflect, identify limitations, record corrections, and define the next action."
+          "task": "Revise the artifact, score it against the weekly rubric, answer the defense prompt, and identify the next dependency in the capstone.",
+          "evidence": "Revised artifact, self-assessment against rubric, defense response, and next-step statement."
         }
       ],
       "evaluatorCheckpoint": false,
@@ -528,7 +858,37 @@
         "source/evidence note",
         "decision or revision record",
         "next-step statement"
-      ]
+      ],
+      "deliverable": "A versioned prototype or implementation artifact with design rationale, testable criteria, observed performance, and revision notes.",
+      "sourceRequirement": "Use at least one relevant source, dataset, observation, interview note, model, or artifact and explain why it is trustworthy enough for this decision.",
+      "rubric": [
+        {
+          "criterion": "Artifact addresses stated criteria",
+          "points": 4,
+          "descriptor": "4 = strong independent evidence; 3 = mostly complete; 2 = partial/inconsistent; 1 = minimal; 0 = absent or unsupported."
+        },
+        {
+          "criterion": "Design choices are justified",
+          "points": 4,
+          "descriptor": "4 = strong independent evidence; 3 = mostly complete; 2 = partial/inconsistent; 1 = minimal; 0 = absent or unsupported."
+        },
+        {
+          "criterion": "Testing is documented",
+          "points": 4,
+          "descriptor": "4 = strong independent evidence; 3 = mostly complete; 2 = partial/inconsistent; 1 = minimal; 0 = absent or unsupported."
+        },
+        {
+          "criterion": "Failure points are identified",
+          "points": 4,
+          "descriptor": "4 = strong independent evidence; 3 = mostly complete; 2 = partial/inconsistent; 1 = minimal; 0 = absent or unsupported."
+        },
+        {
+          "criterion": "Revision is evidence-driven",
+          "points": 4,
+          "descriptor": "4 = strong independent evidence; 3 = mostly complete; 2 = partial/inconsistent; 1 = minimal; 0 = absent or unsupported."
+        }
+      ],
+      "defensePrompt": "Which design choice is currently least defensible, and what test would resolve that uncertainty?"
     },
     {
       "week": 13,
@@ -538,32 +898,32 @@
         {
           "day": 1,
           "phase": "Recall/Plan",
-          "task": "Recall/Plan: complete a focused capstone action for evidence collection i.",
-          "evidence": "Retrieve prior commitments and identify today's decision."
+          "task": "Define this week's decision for Evidence collection I. Retrieve prior commitments, identify the unresolved question, and write the success criteria before consulting new material.",
+          "evidence": "Decision statement, retrieved prior evidence, success criteria, and one predicted risk."
         },
         {
           "day": 2,
-          "phase": "Model/Research",
-          "task": "Model/Research: complete a focused capstone action for evidence collection i.",
-          "evidence": "Examine a model/source and record what it contributes."
+          "phase": "Research/Model",
+          "task": "Gather or inspect the strongest evidence needed for Evidence collection I. Compare at least two relevant sources, examples, datasets, models, or prior artifacts when available.",
+          "evidence": "Source/model notes with provenance, credibility judgment, and one conflict or limitation."
         },
         {
           "day": 3,
-          "phase": "Practice/Build",
-          "task": "Practice/Build: complete a focused capstone action for evidence collection i.",
-          "evidence": "Produce or revise a concrete artifact."
+          "phase": "Build/Analyze",
+          "task": "Produce the central artifact for Evidence collection I. Show your reasoning, calculations/design logic, choices rejected, and how the evidence shaped the work.",
+          "evidence": "A documented evidence set with collection method, raw/processed evidence, pattern analysis, uncertainty, and limits on interpretation."
         },
         {
           "day": 4,
-          "phase": "Apply/Test",
-          "task": "Apply/Test: complete a focused capstone action for evidence collection i.",
-          "evidence": "Apply/test the work against criteria or audience needs."
+          "phase": "Test/Apply",
+          "task": "Test the week's artifact against its criteria, stakeholder/audience needs, or evidence standard. Record failures, edge cases, tradeoffs, and what must change.",
+          "evidence": "Test/application record with results, limitation, and revision decision."
         },
         {
           "day": 5,
           "phase": "Reflect/Defend",
-          "task": "Reflect/Defend: complete a focused capstone action for evidence collection i.",
-          "evidence": "Reflect, identify limitations, record corrections, and define the next action."
+          "task": "Revise the artifact, score it against the weekly rubric, answer the defense prompt, and identify the next dependency in the capstone.",
+          "evidence": "Revised artifact, self-assessment against rubric, defense response, and next-step statement."
         }
       ],
       "evaluatorCheckpoint": false,
@@ -572,7 +932,37 @@
         "source/evidence note",
         "decision or revision record",
         "next-step statement"
-      ]
+      ],
+      "deliverable": "A documented evidence set with collection method, raw/processed evidence, pattern analysis, uncertainty, and limits on interpretation.",
+      "sourceRequirement": "Use at least one relevant source, dataset, observation, interview note, model, or artifact and explain why it is trustworthy enough for this decision.",
+      "rubric": [
+        {
+          "criterion": "Collection method is transparent",
+          "points": 4,
+          "descriptor": "4 = strong independent evidence; 3 = mostly complete; 2 = partial/inconsistent; 1 = minimal; 0 = absent or unsupported."
+        },
+        {
+          "criterion": "Evidence is organized",
+          "points": 4,
+          "descriptor": "4 = strong independent evidence; 3 = mostly complete; 2 = partial/inconsistent; 1 = minimal; 0 = absent or unsupported."
+        },
+        {
+          "criterion": "Analysis matches evidence type",
+          "points": 4,
+          "descriptor": "4 = strong independent evidence; 3 = mostly complete; 2 = partial/inconsistent; 1 = minimal; 0 = absent or unsupported."
+        },
+        {
+          "criterion": "Uncertainty/limitations are explicit",
+          "points": 4,
+          "descriptor": "4 = strong independent evidence; 3 = mostly complete; 2 = partial/inconsistent; 1 = minimal; 0 = absent or unsupported."
+        },
+        {
+          "criterion": "Claims do not exceed evidence",
+          "points": 4,
+          "descriptor": "4 = strong independent evidence; 3 = mostly complete; 2 = partial/inconsistent; 1 = minimal; 0 = absent or unsupported."
+        }
+      ],
+      "defensePrompt": "What can this evidence support, and what can it not support?"
     },
     {
       "week": 14,
@@ -582,32 +972,32 @@
         {
           "day": 1,
           "phase": "Recall/Plan",
-          "task": "Recall/Plan: complete a focused capstone action for evidence collection ii.",
-          "evidence": "Retrieve prior commitments and identify today's decision."
+          "task": "Define this week's decision for Evidence collection II. Retrieve prior commitments, identify the unresolved question, and write the success criteria before consulting new material.",
+          "evidence": "Decision statement, retrieved prior evidence, success criteria, and one predicted risk."
         },
         {
           "day": 2,
-          "phase": "Model/Research",
-          "task": "Model/Research: complete a focused capstone action for evidence collection ii.",
-          "evidence": "Examine a model/source and record what it contributes."
+          "phase": "Research/Model",
+          "task": "Gather or inspect the strongest evidence needed for Evidence collection II. Compare at least two relevant sources, examples, datasets, models, or prior artifacts when available.",
+          "evidence": "Source/model notes with provenance, credibility judgment, and one conflict or limitation."
         },
         {
           "day": 3,
-          "phase": "Practice/Build",
-          "task": "Practice/Build: complete a focused capstone action for evidence collection ii.",
-          "evidence": "Produce or revise a concrete artifact."
+          "phase": "Build/Analyze",
+          "task": "Produce the central artifact for Evidence collection II. Show your reasoning, calculations/design logic, choices rejected, and how the evidence shaped the work.",
+          "evidence": "A documented evidence set with collection method, raw/processed evidence, pattern analysis, uncertainty, and limits on interpretation."
         },
         {
           "day": 4,
-          "phase": "Apply/Test",
-          "task": "Apply/Test: complete a focused capstone action for evidence collection ii.",
-          "evidence": "Apply/test the work against criteria or audience needs."
+          "phase": "Test/Apply",
+          "task": "Test the week's artifact against its criteria, stakeholder/audience needs, or evidence standard. Record failures, edge cases, tradeoffs, and what must change.",
+          "evidence": "Test/application record with results, limitation, and revision decision."
         },
         {
           "day": 5,
           "phase": "Reflect/Defend",
-          "task": "Reflect/Defend: complete a focused capstone action for evidence collection ii.",
-          "evidence": "Reflect, identify limitations, record corrections, and define the next action."
+          "task": "Revise the artifact, score it against the weekly rubric, answer the defense prompt, and identify the next dependency in the capstone.",
+          "evidence": "Revised artifact, self-assessment against rubric, defense response, and next-step statement."
         }
       ],
       "evaluatorCheckpoint": false,
@@ -616,7 +1006,37 @@
         "source/evidence note",
         "decision or revision record",
         "next-step statement"
-      ]
+      ],
+      "deliverable": "A documented evidence set with collection method, raw/processed evidence, pattern analysis, uncertainty, and limits on interpretation.",
+      "sourceRequirement": "Use at least one relevant source, dataset, observation, interview note, model, or artifact and explain why it is trustworthy enough for this decision.",
+      "rubric": [
+        {
+          "criterion": "Collection method is transparent",
+          "points": 4,
+          "descriptor": "4 = strong independent evidence; 3 = mostly complete; 2 = partial/inconsistent; 1 = minimal; 0 = absent or unsupported."
+        },
+        {
+          "criterion": "Evidence is organized",
+          "points": 4,
+          "descriptor": "4 = strong independent evidence; 3 = mostly complete; 2 = partial/inconsistent; 1 = minimal; 0 = absent or unsupported."
+        },
+        {
+          "criterion": "Analysis matches evidence type",
+          "points": 4,
+          "descriptor": "4 = strong independent evidence; 3 = mostly complete; 2 = partial/inconsistent; 1 = minimal; 0 = absent or unsupported."
+        },
+        {
+          "criterion": "Uncertainty/limitations are explicit",
+          "points": 4,
+          "descriptor": "4 = strong independent evidence; 3 = mostly complete; 2 = partial/inconsistent; 1 = minimal; 0 = absent or unsupported."
+        },
+        {
+          "criterion": "Claims do not exceed evidence",
+          "points": 4,
+          "descriptor": "4 = strong independent evidence; 3 = mostly complete; 2 = partial/inconsistent; 1 = minimal; 0 = absent or unsupported."
+        }
+      ],
+      "defensePrompt": "What can this evidence support, and what can it not support?"
     },
     {
       "week": 15,
@@ -626,32 +1046,32 @@
         {
           "day": 1,
           "phase": "Recall/Plan",
-          "task": "Recall/Plan: complete a focused capstone action for midpoint analysis.",
-          "evidence": "Retrieve prior commitments and identify today's decision."
+          "task": "Define this week's decision for Midpoint analysis. Retrieve prior commitments, identify the unresolved question, and write the success criteria before consulting new material.",
+          "evidence": "Decision statement, retrieved prior evidence, success criteria, and one predicted risk."
         },
         {
           "day": 2,
-          "phase": "Model/Research",
-          "task": "Model/Research: complete a focused capstone action for midpoint analysis.",
-          "evidence": "Examine a model/source and record what it contributes."
+          "phase": "Research/Model",
+          "task": "Gather or inspect the strongest evidence needed for Midpoint analysis. Compare at least two relevant sources, examples, datasets, models, or prior artifacts when available.",
+          "evidence": "Source/model notes with provenance, credibility judgment, and one conflict or limitation."
         },
         {
           "day": 3,
-          "phase": "Practice/Build",
-          "task": "Practice/Build: complete a focused capstone action for midpoint analysis.",
-          "evidence": "Produce or revise a concrete artifact."
+          "phase": "Build/Analyze",
+          "task": "Produce the central artifact for Midpoint analysis. Show your reasoning, calculations/design logic, choices rejected, and how the evidence shaped the work.",
+          "evidence": "A documented evidence set with collection method, raw/processed evidence, pattern analysis, uncertainty, and limits on interpretation."
         },
         {
           "day": 4,
-          "phase": "Apply/Test",
-          "task": "Apply/Test: complete a focused capstone action for midpoint analysis.",
-          "evidence": "Apply/test the work against criteria or audience needs."
+          "phase": "Test/Apply",
+          "task": "Test the week's artifact against its criteria, stakeholder/audience needs, or evidence standard. Record failures, edge cases, tradeoffs, and what must change.",
+          "evidence": "Test/application record with results, limitation, and revision decision."
         },
         {
           "day": 5,
           "phase": "Reflect/Defend",
-          "task": "Reflect/Defend: complete a focused capstone action for midpoint analysis.",
-          "evidence": "Reflect, identify limitations, record corrections, and define the next action."
+          "task": "Revise the artifact, score it against the weekly rubric, answer the defense prompt, and identify the next dependency in the capstone.",
+          "evidence": "Revised artifact, self-assessment against rubric, defense response, and next-step statement."
         }
       ],
       "evaluatorCheckpoint": false,
@@ -660,7 +1080,37 @@
         "source/evidence note",
         "decision or revision record",
         "next-step statement"
-      ]
+      ],
+      "deliverable": "A documented evidence set with collection method, raw/processed evidence, pattern analysis, uncertainty, and limits on interpretation.",
+      "sourceRequirement": "Use at least one relevant source, dataset, observation, interview note, model, or artifact and explain why it is trustworthy enough for this decision.",
+      "rubric": [
+        {
+          "criterion": "Collection method is transparent",
+          "points": 4,
+          "descriptor": "4 = strong independent evidence; 3 = mostly complete; 2 = partial/inconsistent; 1 = minimal; 0 = absent or unsupported."
+        },
+        {
+          "criterion": "Evidence is organized",
+          "points": 4,
+          "descriptor": "4 = strong independent evidence; 3 = mostly complete; 2 = partial/inconsistent; 1 = minimal; 0 = absent or unsupported."
+        },
+        {
+          "criterion": "Analysis matches evidence type",
+          "points": 4,
+          "descriptor": "4 = strong independent evidence; 3 = mostly complete; 2 = partial/inconsistent; 1 = minimal; 0 = absent or unsupported."
+        },
+        {
+          "criterion": "Uncertainty/limitations are explicit",
+          "points": 4,
+          "descriptor": "4 = strong independent evidence; 3 = mostly complete; 2 = partial/inconsistent; 1 = minimal; 0 = absent or unsupported."
+        },
+        {
+          "criterion": "Claims do not exceed evidence",
+          "points": 4,
+          "descriptor": "4 = strong independent evidence; 3 = mostly complete; 2 = partial/inconsistent; 1 = minimal; 0 = absent or unsupported."
+        }
+      ],
+      "defensePrompt": "What can this evidence support, and what can it not support?"
     },
     {
       "week": 16,
@@ -670,32 +1120,32 @@
         {
           "day": 1,
           "phase": "Recall/Plan",
-          "task": "Recall/Plan: complete a focused capstone action for mentor/evaluator feedback.",
-          "evidence": "Retrieve prior commitments and identify today's decision."
+          "task": "Define this week's decision for Mentor/evaluator feedback. Retrieve prior commitments, identify the unresolved question, and write the success criteria before consulting new material.",
+          "evidence": "Decision statement, retrieved prior evidence, success criteria, and one predicted risk."
         },
         {
           "day": 2,
-          "phase": "Model/Research",
-          "task": "Model/Research: complete a focused capstone action for mentor/evaluator feedback.",
-          "evidence": "Examine a model/source and record what it contributes."
+          "phase": "Research/Model",
+          "task": "Gather or inspect the strongest evidence needed for Mentor/evaluator feedback. Compare at least two relevant sources, examples, datasets, models, or prior artifacts when available.",
+          "evidence": "Source/model notes with provenance, credibility judgment, and one conflict or limitation."
         },
         {
           "day": 3,
-          "phase": "Practice/Build",
-          "task": "Practice/Build: complete a focused capstone action for mentor/evaluator feedback.",
-          "evidence": "Produce or revise a concrete artifact."
+          "phase": "Build/Analyze",
+          "task": "Produce the central artifact for Mentor/evaluator feedback. Show your reasoning, calculations/design logic, choices rejected, and how the evidence shaped the work.",
+          "evidence": "A before/after revision record showing feedback or test evidence, the decision made, rejected alternatives, and why the revision is stronger."
         },
         {
           "day": 4,
-          "phase": "Apply/Test",
-          "task": "Apply/Test: complete a focused capstone action for mentor/evaluator feedback.",
-          "evidence": "Apply/test the work against criteria or audience needs."
+          "phase": "Test/Apply",
+          "task": "Test the week's artifact against its criteria, stakeholder/audience needs, or evidence standard. Record failures, edge cases, tradeoffs, and what must change.",
+          "evidence": "Test/application record with results, limitation, and revision decision."
         },
         {
           "day": 5,
           "phase": "Reflect/Defend",
-          "task": "Reflect/Defend: complete a focused capstone action for mentor/evaluator feedback.",
-          "evidence": "Reflect, identify limitations, record corrections, and define the next action."
+          "task": "Revise the artifact, score it against the weekly rubric, answer the defense prompt, and identify the next dependency in the capstone.",
+          "evidence": "Revised artifact, self-assessment against rubric, defense response, and next-step statement."
         }
       ],
       "evaluatorCheckpoint": false,
@@ -704,7 +1154,37 @@
         "source/evidence note",
         "decision or revision record",
         "next-step statement"
-      ]
+      ],
+      "deliverable": "A before/after revision record showing feedback or test evidence, the decision made, rejected alternatives, and why the revision is stronger.",
+      "sourceRequirement": "Use at least one relevant source, dataset, observation, interview note, model, or artifact and explain why it is trustworthy enough for this decision.",
+      "rubric": [
+        {
+          "criterion": "Feedback/test is specific",
+          "points": 4,
+          "descriptor": "4 = strong independent evidence; 3 = mostly complete; 2 = partial/inconsistent; 1 = minimal; 0 = absent or unsupported."
+        },
+        {
+          "criterion": "Revision addresses evidence",
+          "points": 4,
+          "descriptor": "4 = strong independent evidence; 3 = mostly complete; 2 = partial/inconsistent; 1 = minimal; 0 = absent or unsupported."
+        },
+        {
+          "criterion": "Alternatives considered",
+          "points": 4,
+          "descriptor": "4 = strong independent evidence; 3 = mostly complete; 2 = partial/inconsistent; 1 = minimal; 0 = absent or unsupported."
+        },
+        {
+          "criterion": "Tradeoffs documented",
+          "points": 4,
+          "descriptor": "4 = strong independent evidence; 3 = mostly complete; 2 = partial/inconsistent; 1 = minimal; 0 = absent or unsupported."
+        },
+        {
+          "criterion": "New version is demonstrably stronger",
+          "points": 4,
+          "descriptor": "4 = strong independent evidence; 3 = mostly complete; 2 = partial/inconsistent; 1 = minimal; 0 = absent or unsupported."
+        }
+      ],
+      "defensePrompt": "Which piece of feedback or failed test mattered most, and why did you accept or reject it?"
     },
     {
       "week": 17,
@@ -714,32 +1194,32 @@
         {
           "day": 1,
           "phase": "Recall/Plan",
-          "task": "Recall/Plan: complete a focused capstone action for revision sprint i.",
-          "evidence": "Retrieve prior commitments and identify today's decision."
+          "task": "Define this week's decision for Revision sprint I. Retrieve prior commitments, identify the unresolved question, and write the success criteria before consulting new material.",
+          "evidence": "Decision statement, retrieved prior evidence, success criteria, and one predicted risk."
         },
         {
           "day": 2,
-          "phase": "Model/Research",
-          "task": "Model/Research: complete a focused capstone action for revision sprint i.",
-          "evidence": "Examine a model/source and record what it contributes."
+          "phase": "Research/Model",
+          "task": "Gather or inspect the strongest evidence needed for Revision sprint I. Compare at least two relevant sources, examples, datasets, models, or prior artifacts when available.",
+          "evidence": "Source/model notes with provenance, credibility judgment, and one conflict or limitation."
         },
         {
           "day": 3,
-          "phase": "Practice/Build",
-          "task": "Practice/Build: complete a focused capstone action for revision sprint i.",
-          "evidence": "Produce or revise a concrete artifact."
+          "phase": "Build/Analyze",
+          "task": "Produce the central artifact for Revision sprint I. Show your reasoning, calculations/design logic, choices rejected, and how the evidence shaped the work.",
+          "evidence": "A before/after revision record showing feedback or test evidence, the decision made, rejected alternatives, and why the revision is stronger."
         },
         {
           "day": 4,
-          "phase": "Apply/Test",
-          "task": "Apply/Test: complete a focused capstone action for revision sprint i.",
-          "evidence": "Apply/test the work against criteria or audience needs."
+          "phase": "Test/Apply",
+          "task": "Test the week's artifact against its criteria, stakeholder/audience needs, or evidence standard. Record failures, edge cases, tradeoffs, and what must change.",
+          "evidence": "Test/application record with results, limitation, and revision decision."
         },
         {
           "day": 5,
           "phase": "Reflect/Defend",
-          "task": "Reflect/Defend: complete a focused capstone action for revision sprint i.",
-          "evidence": "Reflect, identify limitations, record corrections, and define the next action."
+          "task": "Revise the artifact, score it against the weekly rubric, answer the defense prompt, and identify the next dependency in the capstone.",
+          "evidence": "Revised artifact, self-assessment against rubric, defense response, and next-step statement."
         }
       ],
       "evaluatorCheckpoint": false,
@@ -748,7 +1228,37 @@
         "source/evidence note",
         "decision or revision record",
         "next-step statement"
-      ]
+      ],
+      "deliverable": "A before/after revision record showing feedback or test evidence, the decision made, rejected alternatives, and why the revision is stronger.",
+      "sourceRequirement": "Use at least one relevant source, dataset, observation, interview note, model, or artifact and explain why it is trustworthy enough for this decision.",
+      "rubric": [
+        {
+          "criterion": "Feedback/test is specific",
+          "points": 4,
+          "descriptor": "4 = strong independent evidence; 3 = mostly complete; 2 = partial/inconsistent; 1 = minimal; 0 = absent or unsupported."
+        },
+        {
+          "criterion": "Revision addresses evidence",
+          "points": 4,
+          "descriptor": "4 = strong independent evidence; 3 = mostly complete; 2 = partial/inconsistent; 1 = minimal; 0 = absent or unsupported."
+        },
+        {
+          "criterion": "Alternatives considered",
+          "points": 4,
+          "descriptor": "4 = strong independent evidence; 3 = mostly complete; 2 = partial/inconsistent; 1 = minimal; 0 = absent or unsupported."
+        },
+        {
+          "criterion": "Tradeoffs documented",
+          "points": 4,
+          "descriptor": "4 = strong independent evidence; 3 = mostly complete; 2 = partial/inconsistent; 1 = minimal; 0 = absent or unsupported."
+        },
+        {
+          "criterion": "New version is demonstrably stronger",
+          "points": 4,
+          "descriptor": "4 = strong independent evidence; 3 = mostly complete; 2 = partial/inconsistent; 1 = minimal; 0 = absent or unsupported."
+        }
+      ],
+      "defensePrompt": "Which piece of feedback or failed test mattered most, and why did you accept or reject it?"
     },
     {
       "week": 18,
@@ -758,32 +1268,32 @@
         {
           "day": 1,
           "phase": "Recall/Plan",
-          "task": "Recall/Plan: complete a focused capstone action for midyear portfolio conference.",
-          "evidence": "Retrieve prior commitments and identify today's decision."
+          "task": "Define this week's decision for Midyear portfolio conference. Retrieve prior commitments, identify the unresolved question, and write the success criteria before consulting new material.",
+          "evidence": "Decision statement, retrieved prior evidence, success criteria, and one predicted risk."
         },
         {
           "day": 2,
-          "phase": "Model/Research",
-          "task": "Model/Research: complete a focused capstone action for midyear portfolio conference.",
-          "evidence": "Examine a model/source and record what it contributes."
+          "phase": "Research/Model",
+          "task": "Gather or inspect the strongest evidence needed for Midyear portfolio conference. Compare at least two relevant sources, examples, datasets, models, or prior artifacts when available.",
+          "evidence": "Source/model notes with provenance, credibility judgment, and one conflict or limitation."
         },
         {
           "day": 3,
-          "phase": "Practice/Build",
-          "task": "Practice/Build: complete a focused capstone action for midyear portfolio conference.",
-          "evidence": "Produce or revise a concrete artifact."
+          "phase": "Build/Analyze",
+          "task": "Produce the central artifact for Midyear portfolio conference. Show your reasoning, calculations/design logic, choices rejected, and how the evidence shaped the work.",
+          "evidence": "A dated capstone artifact showing this week's decision, evidence, revision, and next step."
         },
         {
           "day": 4,
-          "phase": "Apply/Test",
-          "task": "Apply/Test: complete a focused capstone action for midyear portfolio conference.",
-          "evidence": "Apply/test the work against criteria or audience needs."
+          "phase": "Test/Apply",
+          "task": "Test the week's artifact against its criteria, stakeholder/audience needs, or evidence standard. Record failures, edge cases, tradeoffs, and what must change.",
+          "evidence": "Test/application record with results, limitation, and revision decision."
         },
         {
           "day": 5,
           "phase": "Reflect/Defend",
-          "task": "Reflect/Defend: complete a focused capstone action for midyear portfolio conference.",
-          "evidence": "Reflect, identify limitations, record corrections, and define the next action."
+          "task": "Revise the artifact, score it against the weekly rubric, answer the defense prompt, and identify the next dependency in the capstone.",
+          "evidence": "Revised artifact, self-assessment against rubric, defense response, and next-step statement."
         }
       ],
       "evaluatorCheckpoint": true,
@@ -792,7 +1302,37 @@
         "source/evidence note",
         "decision or revision record",
         "next-step statement"
-      ]
+      ],
+      "deliverable": "A dated capstone artifact showing this week's decision, evidence, revision, and next step.",
+      "sourceRequirement": "Use at least one relevant source, dataset, observation, interview note, model, or artifact and explain why it is trustworthy enough for this decision.",
+      "rubric": [
+        {
+          "criterion": "Purpose and focus",
+          "points": 4,
+          "descriptor": "4 = strong independent evidence; 3 = mostly complete; 2 = partial/inconsistent; 1 = minimal; 0 = absent or unsupported."
+        },
+        {
+          "criterion": "Evidence quality",
+          "points": 4,
+          "descriptor": "4 = strong independent evidence; 3 = mostly complete; 2 = partial/inconsistent; 1 = minimal; 0 = absent or unsupported."
+        },
+        {
+          "criterion": "Method or design quality",
+          "points": 4,
+          "descriptor": "4 = strong independent evidence; 3 = mostly complete; 2 = partial/inconsistent; 1 = minimal; 0 = absent or unsupported."
+        },
+        {
+          "criterion": "Revision quality",
+          "points": 4,
+          "descriptor": "4 = strong independent evidence; 3 = mostly complete; 2 = partial/inconsistent; 1 = minimal; 0 = absent or unsupported."
+        },
+        {
+          "criterion": "Clarity and documentation",
+          "points": 4,
+          "descriptor": "4 = strong independent evidence; 3 = mostly complete; 2 = partial/inconsistent; 1 = minimal; 0 = absent or unsupported."
+        }
+      ],
+      "defensePrompt": "What changed because of the evidence you gathered this week, and what limitation remains?"
     },
     {
       "week": 19,
@@ -802,32 +1342,32 @@
         {
           "day": 1,
           "phase": "Recall/Plan",
-          "task": "Recall/Plan: complete a focused capstone action for revision sprint ii.",
-          "evidence": "Retrieve prior commitments and identify today's decision."
+          "task": "Define this week's decision for Revision sprint II. Retrieve prior commitments, identify the unresolved question, and write the success criteria before consulting new material.",
+          "evidence": "Decision statement, retrieved prior evidence, success criteria, and one predicted risk."
         },
         {
           "day": 2,
-          "phase": "Model/Research",
-          "task": "Model/Research: complete a focused capstone action for revision sprint ii.",
-          "evidence": "Examine a model/source and record what it contributes."
+          "phase": "Research/Model",
+          "task": "Gather or inspect the strongest evidence needed for Revision sprint II. Compare at least two relevant sources, examples, datasets, models, or prior artifacts when available.",
+          "evidence": "Source/model notes with provenance, credibility judgment, and one conflict or limitation."
         },
         {
           "day": 3,
-          "phase": "Practice/Build",
-          "task": "Practice/Build: complete a focused capstone action for revision sprint ii.",
-          "evidence": "Produce or revise a concrete artifact."
+          "phase": "Build/Analyze",
+          "task": "Produce the central artifact for Revision sprint II. Show your reasoning, calculations/design logic, choices rejected, and how the evidence shaped the work.",
+          "evidence": "A before/after revision record showing feedback or test evidence, the decision made, rejected alternatives, and why the revision is stronger."
         },
         {
           "day": 4,
-          "phase": "Apply/Test",
-          "task": "Apply/Test: complete a focused capstone action for revision sprint ii.",
-          "evidence": "Apply/test the work against criteria or audience needs."
+          "phase": "Test/Apply",
+          "task": "Test the week's artifact against its criteria, stakeholder/audience needs, or evidence standard. Record failures, edge cases, tradeoffs, and what must change.",
+          "evidence": "Test/application record with results, limitation, and revision decision."
         },
         {
           "day": 5,
           "phase": "Reflect/Defend",
-          "task": "Reflect/Defend: complete a focused capstone action for revision sprint ii.",
-          "evidence": "Reflect, identify limitations, record corrections, and define the next action."
+          "task": "Revise the artifact, score it against the weekly rubric, answer the defense prompt, and identify the next dependency in the capstone.",
+          "evidence": "Revised artifact, self-assessment against rubric, defense response, and next-step statement."
         }
       ],
       "evaluatorCheckpoint": false,
@@ -836,7 +1376,37 @@
         "source/evidence note",
         "decision or revision record",
         "next-step statement"
-      ]
+      ],
+      "deliverable": "A before/after revision record showing feedback or test evidence, the decision made, rejected alternatives, and why the revision is stronger.",
+      "sourceRequirement": "Use at least one relevant source, dataset, observation, interview note, model, or artifact and explain why it is trustworthy enough for this decision.",
+      "rubric": [
+        {
+          "criterion": "Feedback/test is specific",
+          "points": 4,
+          "descriptor": "4 = strong independent evidence; 3 = mostly complete; 2 = partial/inconsistent; 1 = minimal; 0 = absent or unsupported."
+        },
+        {
+          "criterion": "Revision addresses evidence",
+          "points": 4,
+          "descriptor": "4 = strong independent evidence; 3 = mostly complete; 2 = partial/inconsistent; 1 = minimal; 0 = absent or unsupported."
+        },
+        {
+          "criterion": "Alternatives considered",
+          "points": 4,
+          "descriptor": "4 = strong independent evidence; 3 = mostly complete; 2 = partial/inconsistent; 1 = minimal; 0 = absent or unsupported."
+        },
+        {
+          "criterion": "Tradeoffs documented",
+          "points": 4,
+          "descriptor": "4 = strong independent evidence; 3 = mostly complete; 2 = partial/inconsistent; 1 = minimal; 0 = absent or unsupported."
+        },
+        {
+          "criterion": "New version is demonstrably stronger",
+          "points": 4,
+          "descriptor": "4 = strong independent evidence; 3 = mostly complete; 2 = partial/inconsistent; 1 = minimal; 0 = absent or unsupported."
+        }
+      ],
+      "defensePrompt": "Which piece of feedback or failed test mattered most, and why did you accept or reject it?"
     },
     {
       "week": 20,
@@ -846,32 +1416,32 @@
         {
           "day": 1,
           "phase": "Recall/Plan",
-          "task": "Recall/Plan: complete a focused capstone action for advanced source update.",
-          "evidence": "Retrieve prior commitments and identify today's decision."
+          "task": "Define this week's decision for Advanced source update. Retrieve prior commitments, identify the unresolved question, and write the success criteria before consulting new material.",
+          "evidence": "Decision statement, retrieved prior evidence, success criteria, and one predicted risk."
         },
         {
           "day": 2,
-          "phase": "Model/Research",
-          "task": "Model/Research: complete a focused capstone action for advanced source update.",
-          "evidence": "Examine a model/source and record what it contributes."
+          "phase": "Research/Model",
+          "task": "Gather or inspect the strongest evidence needed for Advanced source update. Compare at least two relevant sources, examples, datasets, models, or prior artifacts when available.",
+          "evidence": "Source/model notes with provenance, credibility judgment, and one conflict or limitation."
         },
         {
           "day": 3,
-          "phase": "Practice/Build",
-          "task": "Practice/Build: complete a focused capstone action for advanced source update.",
-          "evidence": "Produce or revise a concrete artifact."
+          "phase": "Build/Analyze",
+          "task": "Produce the central artifact for Advanced source update. Show your reasoning, calculations/design logic, choices rejected, and how the evidence shaped the work.",
+          "evidence": "An annotated research artifact that compares sources, records provenance, identifies agreement/disagreement, and synthesizes evidence into a working claim."
         },
         {
           "day": 4,
-          "phase": "Apply/Test",
-          "task": "Apply/Test: complete a focused capstone action for advanced source update.",
-          "evidence": "Apply/test the work against criteria or audience needs."
+          "phase": "Test/Apply",
+          "task": "Test the week's artifact against its criteria, stakeholder/audience needs, or evidence standard. Record failures, edge cases, tradeoffs, and what must change.",
+          "evidence": "Test/application record with results, limitation, and revision decision."
         },
         {
           "day": 5,
           "phase": "Reflect/Defend",
-          "task": "Reflect/Defend: complete a focused capstone action for advanced source update.",
-          "evidence": "Reflect, identify limitations, record corrections, and define the next action."
+          "task": "Revise the artifact, score it against the weekly rubric, answer the defense prompt, and identify the next dependency in the capstone.",
+          "evidence": "Revised artifact, self-assessment against rubric, defense response, and next-step statement."
         }
       ],
       "evaluatorCheckpoint": false,
@@ -880,7 +1450,37 @@
         "source/evidence note",
         "decision or revision record",
         "next-step statement"
-      ]
+      ],
+      "deliverable": "An annotated research artifact that compares sources, records provenance, identifies agreement/disagreement, and synthesizes evidence into a working claim.",
+      "sourceRequirement": "Use at least one relevant source, dataset, observation, interview note, model, or artifact and explain why it is trustworthy enough for this decision.",
+      "rubric": [
+        {
+          "criterion": "Source provenance",
+          "points": 4,
+          "descriptor": "4 = strong independent evidence; 3 = mostly complete; 2 = partial/inconsistent; 1 = minimal; 0 = absent or unsupported."
+        },
+        {
+          "criterion": "Credibility judgment",
+          "points": 4,
+          "descriptor": "4 = strong independent evidence; 3 = mostly complete; 2 = partial/inconsistent; 1 = minimal; 0 = absent or unsupported."
+        },
+        {
+          "criterion": "Cross-source synthesis",
+          "points": 4,
+          "descriptor": "4 = strong independent evidence; 3 = mostly complete; 2 = partial/inconsistent; 1 = minimal; 0 = absent or unsupported."
+        },
+        {
+          "criterion": "Counterevidence included",
+          "points": 4,
+          "descriptor": "4 = strong independent evidence; 3 = mostly complete; 2 = partial/inconsistent; 1 = minimal; 0 = absent or unsupported."
+        },
+        {
+          "criterion": "Citation/notes are traceable",
+          "points": 4,
+          "descriptor": "4 = strong independent evidence; 3 = mostly complete; 2 = partial/inconsistent; 1 = minimal; 0 = absent or unsupported."
+        }
+      ],
+      "defensePrompt": "Which source most changed your thinking, and where do credible sources disagree?"
     },
     {
       "week": 21,
@@ -890,32 +1490,32 @@
         {
           "day": 1,
           "phase": "Recall/Plan",
-          "task": "Recall/Plan: complete a focused capstone action for quantitative or qualitative analysis.",
-          "evidence": "Retrieve prior commitments and identify today's decision."
+          "task": "Define this week's decision for Quantitative or qualitative analysis. Retrieve prior commitments, identify the unresolved question, and write the success criteria before consulting new material.",
+          "evidence": "Decision statement, retrieved prior evidence, success criteria, and one predicted risk."
         },
         {
           "day": 2,
-          "phase": "Model/Research",
-          "task": "Model/Research: complete a focused capstone action for quantitative or qualitative analysis.",
-          "evidence": "Examine a model/source and record what it contributes."
+          "phase": "Research/Model",
+          "task": "Gather or inspect the strongest evidence needed for Quantitative or qualitative analysis. Compare at least two relevant sources, examples, datasets, models, or prior artifacts when available.",
+          "evidence": "Source/model notes with provenance, credibility judgment, and one conflict or limitation."
         },
         {
           "day": 3,
-          "phase": "Practice/Build",
-          "task": "Practice/Build: complete a focused capstone action for quantitative or qualitative analysis.",
-          "evidence": "Produce or revise a concrete artifact."
+          "phase": "Build/Analyze",
+          "task": "Produce the central artifact for Quantitative or qualitative analysis. Show your reasoning, calculations/design logic, choices rejected, and how the evidence shaped the work.",
+          "evidence": "A documented evidence set with collection method, raw/processed evidence, pattern analysis, uncertainty, and limits on interpretation."
         },
         {
           "day": 4,
-          "phase": "Apply/Test",
-          "task": "Apply/Test: complete a focused capstone action for quantitative or qualitative analysis.",
-          "evidence": "Apply/test the work against criteria or audience needs."
+          "phase": "Test/Apply",
+          "task": "Test the week's artifact against its criteria, stakeholder/audience needs, or evidence standard. Record failures, edge cases, tradeoffs, and what must change.",
+          "evidence": "Test/application record with results, limitation, and revision decision."
         },
         {
           "day": 5,
           "phase": "Reflect/Defend",
-          "task": "Reflect/Defend: complete a focused capstone action for quantitative or qualitative analysis.",
-          "evidence": "Reflect, identify limitations, record corrections, and define the next action."
+          "task": "Revise the artifact, score it against the weekly rubric, answer the defense prompt, and identify the next dependency in the capstone.",
+          "evidence": "Revised artifact, self-assessment against rubric, defense response, and next-step statement."
         }
       ],
       "evaluatorCheckpoint": false,
@@ -924,7 +1524,37 @@
         "source/evidence note",
         "decision or revision record",
         "next-step statement"
-      ]
+      ],
+      "deliverable": "A documented evidence set with collection method, raw/processed evidence, pattern analysis, uncertainty, and limits on interpretation.",
+      "sourceRequirement": "Use at least one relevant source, dataset, observation, interview note, model, or artifact and explain why it is trustworthy enough for this decision.",
+      "rubric": [
+        {
+          "criterion": "Collection method is transparent",
+          "points": 4,
+          "descriptor": "4 = strong independent evidence; 3 = mostly complete; 2 = partial/inconsistent; 1 = minimal; 0 = absent or unsupported."
+        },
+        {
+          "criterion": "Evidence is organized",
+          "points": 4,
+          "descriptor": "4 = strong independent evidence; 3 = mostly complete; 2 = partial/inconsistent; 1 = minimal; 0 = absent or unsupported."
+        },
+        {
+          "criterion": "Analysis matches evidence type",
+          "points": 4,
+          "descriptor": "4 = strong independent evidence; 3 = mostly complete; 2 = partial/inconsistent; 1 = minimal; 0 = absent or unsupported."
+        },
+        {
+          "criterion": "Uncertainty/limitations are explicit",
+          "points": 4,
+          "descriptor": "4 = strong independent evidence; 3 = mostly complete; 2 = partial/inconsistent; 1 = minimal; 0 = absent or unsupported."
+        },
+        {
+          "criterion": "Claims do not exceed evidence",
+          "points": 4,
+          "descriptor": "4 = strong independent evidence; 3 = mostly complete; 2 = partial/inconsistent; 1 = minimal; 0 = absent or unsupported."
+        }
+      ],
+      "defensePrompt": "What can this evidence support, and what can it not support?"
     },
     {
       "week": 22,
@@ -934,32 +1564,32 @@
         {
           "day": 1,
           "phase": "Recall/Plan",
-          "task": "Recall/Plan: complete a focused capstone action for counterargument / limitation analysis.",
-          "evidence": "Retrieve prior commitments and identify today's decision."
+          "task": "Define this week's decision for Counterargument / limitation analysis. Retrieve prior commitments, identify the unresolved question, and write the success criteria before consulting new material.",
+          "evidence": "Decision statement, retrieved prior evidence, success criteria, and one predicted risk."
         },
         {
           "day": 2,
-          "phase": "Model/Research",
-          "task": "Model/Research: complete a focused capstone action for counterargument / limitation analysis.",
-          "evidence": "Examine a model/source and record what it contributes."
+          "phase": "Research/Model",
+          "task": "Gather or inspect the strongest evidence needed for Counterargument / limitation analysis. Compare at least two relevant sources, examples, datasets, models, or prior artifacts when available.",
+          "evidence": "Source/model notes with provenance, credibility judgment, and one conflict or limitation."
         },
         {
           "day": 3,
-          "phase": "Practice/Build",
-          "task": "Practice/Build: complete a focused capstone action for counterargument / limitation analysis.",
-          "evidence": "Produce or revise a concrete artifact."
+          "phase": "Build/Analyze",
+          "task": "Produce the central artifact for Counterargument / limitation analysis. Show your reasoning, calculations/design logic, choices rejected, and how the evidence shaped the work.",
+          "evidence": "A documented evidence set with collection method, raw/processed evidence, pattern analysis, uncertainty, and limits on interpretation."
         },
         {
           "day": 4,
-          "phase": "Apply/Test",
-          "task": "Apply/Test: complete a focused capstone action for counterargument / limitation analysis.",
-          "evidence": "Apply/test the work against criteria or audience needs."
+          "phase": "Test/Apply",
+          "task": "Test the week's artifact against its criteria, stakeholder/audience needs, or evidence standard. Record failures, edge cases, tradeoffs, and what must change.",
+          "evidence": "Test/application record with results, limitation, and revision decision."
         },
         {
           "day": 5,
           "phase": "Reflect/Defend",
-          "task": "Reflect/Defend: complete a focused capstone action for counterargument / limitation analysis.",
-          "evidence": "Reflect, identify limitations, record corrections, and define the next action."
+          "task": "Revise the artifact, score it against the weekly rubric, answer the defense prompt, and identify the next dependency in the capstone.",
+          "evidence": "Revised artifact, self-assessment against rubric, defense response, and next-step statement."
         }
       ],
       "evaluatorCheckpoint": false,
@@ -968,7 +1598,37 @@
         "source/evidence note",
         "decision or revision record",
         "next-step statement"
-      ]
+      ],
+      "deliverable": "A documented evidence set with collection method, raw/processed evidence, pattern analysis, uncertainty, and limits on interpretation.",
+      "sourceRequirement": "Use at least one relevant source, dataset, observation, interview note, model, or artifact and explain why it is trustworthy enough for this decision.",
+      "rubric": [
+        {
+          "criterion": "Collection method is transparent",
+          "points": 4,
+          "descriptor": "4 = strong independent evidence; 3 = mostly complete; 2 = partial/inconsistent; 1 = minimal; 0 = absent or unsupported."
+        },
+        {
+          "criterion": "Evidence is organized",
+          "points": 4,
+          "descriptor": "4 = strong independent evidence; 3 = mostly complete; 2 = partial/inconsistent; 1 = minimal; 0 = absent or unsupported."
+        },
+        {
+          "criterion": "Analysis matches evidence type",
+          "points": 4,
+          "descriptor": "4 = strong independent evidence; 3 = mostly complete; 2 = partial/inconsistent; 1 = minimal; 0 = absent or unsupported."
+        },
+        {
+          "criterion": "Uncertainty/limitations are explicit",
+          "points": 4,
+          "descriptor": "4 = strong independent evidence; 3 = mostly complete; 2 = partial/inconsistent; 1 = minimal; 0 = absent or unsupported."
+        },
+        {
+          "criterion": "Claims do not exceed evidence",
+          "points": 4,
+          "descriptor": "4 = strong independent evidence; 3 = mostly complete; 2 = partial/inconsistent; 1 = minimal; 0 = absent or unsupported."
+        }
+      ],
+      "defensePrompt": "What can this evidence support, and what can it not support?"
     },
     {
       "week": 23,
@@ -978,32 +1638,32 @@
         {
           "day": 1,
           "phase": "Recall/Plan",
-          "task": "Recall/Plan: complete a focused capstone action for ethics, accessibility & impact.",
-          "evidence": "Retrieve prior commitments and identify today's decision."
+          "task": "Define this week's decision for Ethics, accessibility & impact. Retrieve prior commitments, identify the unresolved question, and write the success criteria before consulting new material.",
+          "evidence": "Decision statement, retrieved prior evidence, success criteria, and one predicted risk."
         },
         {
           "day": 2,
-          "phase": "Model/Research",
-          "task": "Model/Research: complete a focused capstone action for ethics, accessibility & impact.",
-          "evidence": "Examine a model/source and record what it contributes."
+          "phase": "Research/Model",
+          "task": "Gather or inspect the strongest evidence needed for Ethics, accessibility & impact. Compare at least two relevant sources, examples, datasets, models, or prior artifacts when available.",
+          "evidence": "Source/model notes with provenance, credibility judgment, and one conflict or limitation."
         },
         {
           "day": 3,
-          "phase": "Practice/Build",
-          "task": "Practice/Build: complete a focused capstone action for ethics, accessibility & impact.",
-          "evidence": "Produce or revise a concrete artifact."
+          "phase": "Build/Analyze",
+          "task": "Produce the central artifact for Ethics, accessibility & impact. Show your reasoning, calculations/design logic, choices rejected, and how the evidence shaped the work.",
+          "evidence": "An ethics/accessibility/impact review identifying affected stakeholders, risks, benefits, access barriers, mitigation choices, and unresolved concerns."
         },
         {
           "day": 4,
-          "phase": "Apply/Test",
-          "task": "Apply/Test: complete a focused capstone action for ethics, accessibility & impact.",
-          "evidence": "Apply/test the work against criteria or audience needs."
+          "phase": "Test/Apply",
+          "task": "Test the week's artifact against its criteria, stakeholder/audience needs, or evidence standard. Record failures, edge cases, tradeoffs, and what must change.",
+          "evidence": "Test/application record with results, limitation, and revision decision."
         },
         {
           "day": 5,
           "phase": "Reflect/Defend",
-          "task": "Reflect/Defend: complete a focused capstone action for ethics, accessibility & impact.",
-          "evidence": "Reflect, identify limitations, record corrections, and define the next action."
+          "task": "Revise the artifact, score it against the weekly rubric, answer the defense prompt, and identify the next dependency in the capstone.",
+          "evidence": "Revised artifact, self-assessment against rubric, defense response, and next-step statement."
         }
       ],
       "evaluatorCheckpoint": false,
@@ -1012,7 +1672,37 @@
         "source/evidence note",
         "decision or revision record",
         "next-step statement"
-      ]
+      ],
+      "deliverable": "An ethics/accessibility/impact review identifying affected stakeholders, risks, benefits, access barriers, mitigation choices, and unresolved concerns.",
+      "sourceRequirement": "Use at least one relevant source, dataset, observation, interview note, model, or artifact and explain why it is trustworthy enough for this decision.",
+      "rubric": [
+        {
+          "criterion": "Stakeholders are represented fairly",
+          "points": 4,
+          "descriptor": "4 = strong independent evidence; 3 = mostly complete; 2 = partial/inconsistent; 1 = minimal; 0 = absent or unsupported."
+        },
+        {
+          "criterion": "Risks and benefits are concrete",
+          "points": 4,
+          "descriptor": "4 = strong independent evidence; 3 = mostly complete; 2 = partial/inconsistent; 1 = minimal; 0 = absent or unsupported."
+        },
+        {
+          "criterion": "Accessibility is considered",
+          "points": 4,
+          "descriptor": "4 = strong independent evidence; 3 = mostly complete; 2 = partial/inconsistent; 1 = minimal; 0 = absent or unsupported."
+        },
+        {
+          "criterion": "Mitigations are feasible",
+          "points": 4,
+          "descriptor": "4 = strong independent evidence; 3 = mostly complete; 2 = partial/inconsistent; 1 = minimal; 0 = absent or unsupported."
+        },
+        {
+          "criterion": "Unresolved concerns are disclosed",
+          "points": 4,
+          "descriptor": "4 = strong independent evidence; 3 = mostly complete; 2 = partial/inconsistent; 1 = minimal; 0 = absent or unsupported."
+        }
+      ],
+      "defensePrompt": "Who could be harmed, excluded, or misrepresented by this work, and what did you change because of that?"
     },
     {
       "week": 24,
@@ -1022,32 +1712,32 @@
         {
           "day": 1,
           "phase": "Recall/Plan",
-          "task": "Recall/Plan: complete a focused capstone action for second prototype / implementation.",
-          "evidence": "Retrieve prior commitments and identify today's decision."
+          "task": "Define this week's decision for Second prototype / implementation. Retrieve prior commitments, identify the unresolved question, and write the success criteria before consulting new material.",
+          "evidence": "Decision statement, retrieved prior evidence, success criteria, and one predicted risk."
         },
         {
           "day": 2,
-          "phase": "Model/Research",
-          "task": "Model/Research: complete a focused capstone action for second prototype / implementation.",
-          "evidence": "Examine a model/source and record what it contributes."
+          "phase": "Research/Model",
+          "task": "Gather or inspect the strongest evidence needed for Second prototype / implementation. Compare at least two relevant sources, examples, datasets, models, or prior artifacts when available.",
+          "evidence": "Source/model notes with provenance, credibility judgment, and one conflict or limitation."
         },
         {
           "day": 3,
-          "phase": "Practice/Build",
-          "task": "Practice/Build: complete a focused capstone action for second prototype / implementation.",
-          "evidence": "Produce or revise a concrete artifact."
+          "phase": "Build/Analyze",
+          "task": "Produce the central artifact for Second prototype / implementation. Show your reasoning, calculations/design logic, choices rejected, and how the evidence shaped the work.",
+          "evidence": "A versioned prototype or implementation artifact with design rationale, testable criteria, observed performance, and revision notes."
         },
         {
           "day": 4,
-          "phase": "Apply/Test",
-          "task": "Apply/Test: complete a focused capstone action for second prototype / implementation.",
-          "evidence": "Apply/test the work against criteria or audience needs."
+          "phase": "Test/Apply",
+          "task": "Test the week's artifact against its criteria, stakeholder/audience needs, or evidence standard. Record failures, edge cases, tradeoffs, and what must change.",
+          "evidence": "Test/application record with results, limitation, and revision decision."
         },
         {
           "day": 5,
           "phase": "Reflect/Defend",
-          "task": "Reflect/Defend: complete a focused capstone action for second prototype / implementation.",
-          "evidence": "Reflect, identify limitations, record corrections, and define the next action."
+          "task": "Revise the artifact, score it against the weekly rubric, answer the defense prompt, and identify the next dependency in the capstone.",
+          "evidence": "Revised artifact, self-assessment against rubric, defense response, and next-step statement."
         }
       ],
       "evaluatorCheckpoint": true,
@@ -1056,7 +1746,37 @@
         "source/evidence note",
         "decision or revision record",
         "next-step statement"
-      ]
+      ],
+      "deliverable": "A versioned prototype or implementation artifact with design rationale, testable criteria, observed performance, and revision notes.",
+      "sourceRequirement": "Use at least one relevant source, dataset, observation, interview note, model, or artifact and explain why it is trustworthy enough for this decision.",
+      "rubric": [
+        {
+          "criterion": "Artifact addresses stated criteria",
+          "points": 4,
+          "descriptor": "4 = strong independent evidence; 3 = mostly complete; 2 = partial/inconsistent; 1 = minimal; 0 = absent or unsupported."
+        },
+        {
+          "criterion": "Design choices are justified",
+          "points": 4,
+          "descriptor": "4 = strong independent evidence; 3 = mostly complete; 2 = partial/inconsistent; 1 = minimal; 0 = absent or unsupported."
+        },
+        {
+          "criterion": "Testing is documented",
+          "points": 4,
+          "descriptor": "4 = strong independent evidence; 3 = mostly complete; 2 = partial/inconsistent; 1 = minimal; 0 = absent or unsupported."
+        },
+        {
+          "criterion": "Failure points are identified",
+          "points": 4,
+          "descriptor": "4 = strong independent evidence; 3 = mostly complete; 2 = partial/inconsistent; 1 = minimal; 0 = absent or unsupported."
+        },
+        {
+          "criterion": "Revision is evidence-driven",
+          "points": 4,
+          "descriptor": "4 = strong independent evidence; 3 = mostly complete; 2 = partial/inconsistent; 1 = minimal; 0 = absent or unsupported."
+        }
+      ],
+      "defensePrompt": "Which design choice is currently least defensible, and what test would resolve that uncertainty?"
     },
     {
       "week": 25,
@@ -1066,32 +1786,32 @@
         {
           "day": 1,
           "phase": "Recall/Plan",
-          "task": "Recall/Plan: complete a focused capstone action for testing and validation.",
-          "evidence": "Retrieve prior commitments and identify today's decision."
+          "task": "Define this week's decision for Testing and validation. Retrieve prior commitments, identify the unresolved question, and write the success criteria before consulting new material.",
+          "evidence": "Decision statement, retrieved prior evidence, success criteria, and one predicted risk."
         },
         {
           "day": 2,
-          "phase": "Model/Research",
-          "task": "Model/Research: complete a focused capstone action for testing and validation.",
-          "evidence": "Examine a model/source and record what it contributes."
+          "phase": "Research/Model",
+          "task": "Gather or inspect the strongest evidence needed for Testing and validation. Compare at least two relevant sources, examples, datasets, models, or prior artifacts when available.",
+          "evidence": "Source/model notes with provenance, credibility judgment, and one conflict or limitation."
         },
         {
           "day": 3,
-          "phase": "Practice/Build",
-          "task": "Practice/Build: complete a focused capstone action for testing and validation.",
-          "evidence": "Produce or revise a concrete artifact."
+          "phase": "Build/Analyze",
+          "task": "Produce the central artifact for Testing and validation. Show your reasoning, calculations/design logic, choices rejected, and how the evidence shaped the work.",
+          "evidence": "A before/after revision record showing feedback or test evidence, the decision made, rejected alternatives, and why the revision is stronger."
         },
         {
           "day": 4,
-          "phase": "Apply/Test",
-          "task": "Apply/Test: complete a focused capstone action for testing and validation.",
-          "evidence": "Apply/test the work against criteria or audience needs."
+          "phase": "Test/Apply",
+          "task": "Test the week's artifact against its criteria, stakeholder/audience needs, or evidence standard. Record failures, edge cases, tradeoffs, and what must change.",
+          "evidence": "Test/application record with results, limitation, and revision decision."
         },
         {
           "day": 5,
           "phase": "Reflect/Defend",
-          "task": "Reflect/Defend: complete a focused capstone action for testing and validation.",
-          "evidence": "Reflect, identify limitations, record corrections, and define the next action."
+          "task": "Revise the artifact, score it against the weekly rubric, answer the defense prompt, and identify the next dependency in the capstone.",
+          "evidence": "Revised artifact, self-assessment against rubric, defense response, and next-step statement."
         }
       ],
       "evaluatorCheckpoint": false,
@@ -1100,7 +1820,37 @@
         "source/evidence note",
         "decision or revision record",
         "next-step statement"
-      ]
+      ],
+      "deliverable": "A before/after revision record showing feedback or test evidence, the decision made, rejected alternatives, and why the revision is stronger.",
+      "sourceRequirement": "Use at least one relevant source, dataset, observation, interview note, model, or artifact and explain why it is trustworthy enough for this decision.",
+      "rubric": [
+        {
+          "criterion": "Feedback/test is specific",
+          "points": 4,
+          "descriptor": "4 = strong independent evidence; 3 = mostly complete; 2 = partial/inconsistent; 1 = minimal; 0 = absent or unsupported."
+        },
+        {
+          "criterion": "Revision addresses evidence",
+          "points": 4,
+          "descriptor": "4 = strong independent evidence; 3 = mostly complete; 2 = partial/inconsistent; 1 = minimal; 0 = absent or unsupported."
+        },
+        {
+          "criterion": "Alternatives considered",
+          "points": 4,
+          "descriptor": "4 = strong independent evidence; 3 = mostly complete; 2 = partial/inconsistent; 1 = minimal; 0 = absent or unsupported."
+        },
+        {
+          "criterion": "Tradeoffs documented",
+          "points": 4,
+          "descriptor": "4 = strong independent evidence; 3 = mostly complete; 2 = partial/inconsistent; 1 = minimal; 0 = absent or unsupported."
+        },
+        {
+          "criterion": "New version is demonstrably stronger",
+          "points": 4,
+          "descriptor": "4 = strong independent evidence; 3 = mostly complete; 2 = partial/inconsistent; 1 = minimal; 0 = absent or unsupported."
+        }
+      ],
+      "defensePrompt": "Which piece of feedback or failed test mattered most, and why did you accept or reject it?"
     },
     {
       "week": 26,
@@ -1110,32 +1860,32 @@
         {
           "day": 1,
           "phase": "Recall/Plan",
-          "task": "Recall/Plan: complete a focused capstone action for failure analysis & redesign.",
-          "evidence": "Retrieve prior commitments and identify today's decision."
+          "task": "Define this week's decision for Failure analysis & redesign. Retrieve prior commitments, identify the unresolved question, and write the success criteria before consulting new material.",
+          "evidence": "Decision statement, retrieved prior evidence, success criteria, and one predicted risk."
         },
         {
           "day": 2,
-          "phase": "Model/Research",
-          "task": "Model/Research: complete a focused capstone action for failure analysis & redesign.",
-          "evidence": "Examine a model/source and record what it contributes."
+          "phase": "Research/Model",
+          "task": "Gather or inspect the strongest evidence needed for Failure analysis & redesign. Compare at least two relevant sources, examples, datasets, models, or prior artifacts when available.",
+          "evidence": "Source/model notes with provenance, credibility judgment, and one conflict or limitation."
         },
         {
           "day": 3,
-          "phase": "Practice/Build",
-          "task": "Practice/Build: complete a focused capstone action for failure analysis & redesign.",
-          "evidence": "Produce or revise a concrete artifact."
+          "phase": "Build/Analyze",
+          "task": "Produce the central artifact for Failure analysis & redesign. Show your reasoning, calculations/design logic, choices rejected, and how the evidence shaped the work.",
+          "evidence": "A documented evidence set with collection method, raw/processed evidence, pattern analysis, uncertainty, and limits on interpretation."
         },
         {
           "day": 4,
-          "phase": "Apply/Test",
-          "task": "Apply/Test: complete a focused capstone action for failure analysis & redesign.",
-          "evidence": "Apply/test the work against criteria or audience needs."
+          "phase": "Test/Apply",
+          "task": "Test the week's artifact against its criteria, stakeholder/audience needs, or evidence standard. Record failures, edge cases, tradeoffs, and what must change.",
+          "evidence": "Test/application record with results, limitation, and revision decision."
         },
         {
           "day": 5,
           "phase": "Reflect/Defend",
-          "task": "Reflect/Defend: complete a focused capstone action for failure analysis & redesign.",
-          "evidence": "Reflect, identify limitations, record corrections, and define the next action."
+          "task": "Revise the artifact, score it against the weekly rubric, answer the defense prompt, and identify the next dependency in the capstone.",
+          "evidence": "Revised artifact, self-assessment against rubric, defense response, and next-step statement."
         }
       ],
       "evaluatorCheckpoint": false,
@@ -1144,7 +1894,37 @@
         "source/evidence note",
         "decision or revision record",
         "next-step statement"
-      ]
+      ],
+      "deliverable": "A documented evidence set with collection method, raw/processed evidence, pattern analysis, uncertainty, and limits on interpretation.",
+      "sourceRequirement": "Use at least one relevant source, dataset, observation, interview note, model, or artifact and explain why it is trustworthy enough for this decision.",
+      "rubric": [
+        {
+          "criterion": "Collection method is transparent",
+          "points": 4,
+          "descriptor": "4 = strong independent evidence; 3 = mostly complete; 2 = partial/inconsistent; 1 = minimal; 0 = absent or unsupported."
+        },
+        {
+          "criterion": "Evidence is organized",
+          "points": 4,
+          "descriptor": "4 = strong independent evidence; 3 = mostly complete; 2 = partial/inconsistent; 1 = minimal; 0 = absent or unsupported."
+        },
+        {
+          "criterion": "Analysis matches evidence type",
+          "points": 4,
+          "descriptor": "4 = strong independent evidence; 3 = mostly complete; 2 = partial/inconsistent; 1 = minimal; 0 = absent or unsupported."
+        },
+        {
+          "criterion": "Uncertainty/limitations are explicit",
+          "points": 4,
+          "descriptor": "4 = strong independent evidence; 3 = mostly complete; 2 = partial/inconsistent; 1 = minimal; 0 = absent or unsupported."
+        },
+        {
+          "criterion": "Claims do not exceed evidence",
+          "points": 4,
+          "descriptor": "4 = strong independent evidence; 3 = mostly complete; 2 = partial/inconsistent; 1 = minimal; 0 = absent or unsupported."
+        }
+      ],
+      "defensePrompt": "What can this evidence support, and what can it not support?"
     },
     {
       "week": 27,
@@ -1154,32 +1934,32 @@
         {
           "day": 1,
           "phase": "Recall/Plan",
-          "task": "Recall/Plan: complete a focused capstone action for final production plan.",
-          "evidence": "Retrieve prior commitments and identify today's decision."
+          "task": "Define this week's decision for Final production plan. Retrieve prior commitments, identify the unresolved question, and write the success criteria before consulting new material.",
+          "evidence": "Decision statement, retrieved prior evidence, success criteria, and one predicted risk."
         },
         {
           "day": 2,
-          "phase": "Model/Research",
-          "task": "Model/Research: complete a focused capstone action for final production plan.",
-          "evidence": "Examine a model/source and record what it contributes."
+          "phase": "Research/Model",
+          "task": "Gather or inspect the strongest evidence needed for Final production plan. Compare at least two relevant sources, examples, datasets, models, or prior artifacts when available.",
+          "evidence": "Source/model notes with provenance, credibility judgment, and one conflict or limitation."
         },
         {
           "day": 3,
-          "phase": "Practice/Build",
-          "task": "Practice/Build: complete a focused capstone action for final production plan.",
-          "evidence": "Produce or revise a concrete artifact."
+          "phase": "Build/Analyze",
+          "task": "Produce the central artifact for Final production plan. Show your reasoning, calculations/design logic, choices rejected, and how the evidence shaped the work.",
+          "evidence": "A defensible proposal or method plan with criteria, constraints, sequence, evidence measures, risks, and revision triggers."
         },
         {
           "day": 4,
-          "phase": "Apply/Test",
-          "task": "Apply/Test: complete a focused capstone action for final production plan.",
-          "evidence": "Apply/test the work against criteria or audience needs."
+          "phase": "Test/Apply",
+          "task": "Test the week's artifact against its criteria, stakeholder/audience needs, or evidence standard. Record failures, edge cases, tradeoffs, and what must change.",
+          "evidence": "Test/application record with results, limitation, and revision decision."
         },
         {
           "day": 5,
           "phase": "Reflect/Defend",
-          "task": "Reflect/Defend: complete a focused capstone action for final production plan.",
-          "evidence": "Reflect, identify limitations, record corrections, and define the next action."
+          "task": "Revise the artifact, score it against the weekly rubric, answer the defense prompt, and identify the next dependency in the capstone.",
+          "evidence": "Revised artifact, self-assessment against rubric, defense response, and next-step statement."
         }
       ],
       "evaluatorCheckpoint": false,
@@ -1188,7 +1968,37 @@
         "source/evidence note",
         "decision or revision record",
         "next-step statement"
-      ]
+      ],
+      "deliverable": "A defensible proposal or method plan with criteria, constraints, sequence, evidence measures, risks, and revision triggers.",
+      "sourceRequirement": "Use at least one relevant source, dataset, observation, interview note, model, or artifact and explain why it is trustworthy enough for this decision.",
+      "rubric": [
+        {
+          "criterion": "Goal and criteria align",
+          "points": 4,
+          "descriptor": "4 = strong independent evidence; 3 = mostly complete; 2 = partial/inconsistent; 1 = minimal; 0 = absent or unsupported."
+        },
+        {
+          "criterion": "Method is feasible",
+          "points": 4,
+          "descriptor": "4 = strong independent evidence; 3 = mostly complete; 2 = partial/inconsistent; 1 = minimal; 0 = absent or unsupported."
+        },
+        {
+          "criterion": "Constraints are explicit",
+          "points": 4,
+          "descriptor": "4 = strong independent evidence; 3 = mostly complete; 2 = partial/inconsistent; 1 = minimal; 0 = absent or unsupported."
+        },
+        {
+          "criterion": "Evidence measures fit the question",
+          "points": 4,
+          "descriptor": "4 = strong independent evidence; 3 = mostly complete; 2 = partial/inconsistent; 1 = minimal; 0 = absent or unsupported."
+        },
+        {
+          "criterion": "Revision triggers are defined",
+          "points": 4,
+          "descriptor": "4 = strong independent evidence; 3 = mostly complete; 2 = partial/inconsistent; 1 = minimal; 0 = absent or unsupported."
+        }
+      ],
+      "defensePrompt": "What evidence would force you to change this plan?"
     },
     {
       "week": 28,
@@ -1198,32 +2008,32 @@
         {
           "day": 1,
           "phase": "Recall/Plan",
-          "task": "Recall/Plan: complete a focused capstone action for final artifact build i.",
-          "evidence": "Retrieve prior commitments and identify today's decision."
+          "task": "Define this week's decision for Final artifact build I. Retrieve prior commitments, identify the unresolved question, and write the success criteria before consulting new material.",
+          "evidence": "Decision statement, retrieved prior evidence, success criteria, and one predicted risk."
         },
         {
           "day": 2,
-          "phase": "Model/Research",
-          "task": "Model/Research: complete a focused capstone action for final artifact build i.",
-          "evidence": "Examine a model/source and record what it contributes."
+          "phase": "Research/Model",
+          "task": "Gather or inspect the strongest evidence needed for Final artifact build I. Compare at least two relevant sources, examples, datasets, models, or prior artifacts when available.",
+          "evidence": "Source/model notes with provenance, credibility judgment, and one conflict or limitation."
         },
         {
           "day": 3,
-          "phase": "Practice/Build",
-          "task": "Practice/Build: complete a focused capstone action for final artifact build i.",
-          "evidence": "Produce or revise a concrete artifact."
+          "phase": "Build/Analyze",
+          "task": "Produce the central artifact for Final artifact build I. Show your reasoning, calculations/design logic, choices rejected, and how the evidence shaped the work.",
+          "evidence": "A versioned prototype or implementation artifact with design rationale, testable criteria, observed performance, and revision notes."
         },
         {
           "day": 4,
-          "phase": "Apply/Test",
-          "task": "Apply/Test: complete a focused capstone action for final artifact build i.",
-          "evidence": "Apply/test the work against criteria or audience needs."
+          "phase": "Test/Apply",
+          "task": "Test the week's artifact against its criteria, stakeholder/audience needs, or evidence standard. Record failures, edge cases, tradeoffs, and what must change.",
+          "evidence": "Test/application record with results, limitation, and revision decision."
         },
         {
           "day": 5,
           "phase": "Reflect/Defend",
-          "task": "Reflect/Defend: complete a focused capstone action for final artifact build i.",
-          "evidence": "Reflect, identify limitations, record corrections, and define the next action."
+          "task": "Revise the artifact, score it against the weekly rubric, answer the defense prompt, and identify the next dependency in the capstone.",
+          "evidence": "Revised artifact, self-assessment against rubric, defense response, and next-step statement."
         }
       ],
       "evaluatorCheckpoint": false,
@@ -1232,7 +2042,37 @@
         "source/evidence note",
         "decision or revision record",
         "next-step statement"
-      ]
+      ],
+      "deliverable": "A versioned prototype or implementation artifact with design rationale, testable criteria, observed performance, and revision notes.",
+      "sourceRequirement": "Use at least one relevant source, dataset, observation, interview note, model, or artifact and explain why it is trustworthy enough for this decision.",
+      "rubric": [
+        {
+          "criterion": "Artifact addresses stated criteria",
+          "points": 4,
+          "descriptor": "4 = strong independent evidence; 3 = mostly complete; 2 = partial/inconsistent; 1 = minimal; 0 = absent or unsupported."
+        },
+        {
+          "criterion": "Design choices are justified",
+          "points": 4,
+          "descriptor": "4 = strong independent evidence; 3 = mostly complete; 2 = partial/inconsistent; 1 = minimal; 0 = absent or unsupported."
+        },
+        {
+          "criterion": "Testing is documented",
+          "points": 4,
+          "descriptor": "4 = strong independent evidence; 3 = mostly complete; 2 = partial/inconsistent; 1 = minimal; 0 = absent or unsupported."
+        },
+        {
+          "criterion": "Failure points are identified",
+          "points": 4,
+          "descriptor": "4 = strong independent evidence; 3 = mostly complete; 2 = partial/inconsistent; 1 = minimal; 0 = absent or unsupported."
+        },
+        {
+          "criterion": "Revision is evidence-driven",
+          "points": 4,
+          "descriptor": "4 = strong independent evidence; 3 = mostly complete; 2 = partial/inconsistent; 1 = minimal; 0 = absent or unsupported."
+        }
+      ],
+      "defensePrompt": "Which design choice is currently least defensible, and what test would resolve that uncertainty?"
     },
     {
       "week": 29,
@@ -1242,32 +2082,32 @@
         {
           "day": 1,
           "phase": "Recall/Plan",
-          "task": "Recall/Plan: complete a focused capstone action for final artifact build ii.",
-          "evidence": "Retrieve prior commitments and identify today's decision."
+          "task": "Define this week's decision for Final artifact build II. Retrieve prior commitments, identify the unresolved question, and write the success criteria before consulting new material.",
+          "evidence": "Decision statement, retrieved prior evidence, success criteria, and one predicted risk."
         },
         {
           "day": 2,
-          "phase": "Model/Research",
-          "task": "Model/Research: complete a focused capstone action for final artifact build ii.",
-          "evidence": "Examine a model/source and record what it contributes."
+          "phase": "Research/Model",
+          "task": "Gather or inspect the strongest evidence needed for Final artifact build II. Compare at least two relevant sources, examples, datasets, models, or prior artifacts when available.",
+          "evidence": "Source/model notes with provenance, credibility judgment, and one conflict or limitation."
         },
         {
           "day": 3,
-          "phase": "Practice/Build",
-          "task": "Practice/Build: complete a focused capstone action for final artifact build ii.",
-          "evidence": "Produce or revise a concrete artifact."
+          "phase": "Build/Analyze",
+          "task": "Produce the central artifact for Final artifact build II. Show your reasoning, calculations/design logic, choices rejected, and how the evidence shaped the work.",
+          "evidence": "A versioned prototype or implementation artifact with design rationale, testable criteria, observed performance, and revision notes."
         },
         {
           "day": 4,
-          "phase": "Apply/Test",
-          "task": "Apply/Test: complete a focused capstone action for final artifact build ii.",
-          "evidence": "Apply/test the work against criteria or audience needs."
+          "phase": "Test/Apply",
+          "task": "Test the week's artifact against its criteria, stakeholder/audience needs, or evidence standard. Record failures, edge cases, tradeoffs, and what must change.",
+          "evidence": "Test/application record with results, limitation, and revision decision."
         },
         {
           "day": 5,
           "phase": "Reflect/Defend",
-          "task": "Reflect/Defend: complete a focused capstone action for final artifact build ii.",
-          "evidence": "Reflect, identify limitations, record corrections, and define the next action."
+          "task": "Revise the artifact, score it against the weekly rubric, answer the defense prompt, and identify the next dependency in the capstone.",
+          "evidence": "Revised artifact, self-assessment against rubric, defense response, and next-step statement."
         }
       ],
       "evaluatorCheckpoint": false,
@@ -1276,7 +2116,37 @@
         "source/evidence note",
         "decision or revision record",
         "next-step statement"
-      ]
+      ],
+      "deliverable": "A versioned prototype or implementation artifact with design rationale, testable criteria, observed performance, and revision notes.",
+      "sourceRequirement": "Use at least one relevant source, dataset, observation, interview note, model, or artifact and explain why it is trustworthy enough for this decision.",
+      "rubric": [
+        {
+          "criterion": "Artifact addresses stated criteria",
+          "points": 4,
+          "descriptor": "4 = strong independent evidence; 3 = mostly complete; 2 = partial/inconsistent; 1 = minimal; 0 = absent or unsupported."
+        },
+        {
+          "criterion": "Design choices are justified",
+          "points": 4,
+          "descriptor": "4 = strong independent evidence; 3 = mostly complete; 2 = partial/inconsistent; 1 = minimal; 0 = absent or unsupported."
+        },
+        {
+          "criterion": "Testing is documented",
+          "points": 4,
+          "descriptor": "4 = strong independent evidence; 3 = mostly complete; 2 = partial/inconsistent; 1 = minimal; 0 = absent or unsupported."
+        },
+        {
+          "criterion": "Failure points are identified",
+          "points": 4,
+          "descriptor": "4 = strong independent evidence; 3 = mostly complete; 2 = partial/inconsistent; 1 = minimal; 0 = absent or unsupported."
+        },
+        {
+          "criterion": "Revision is evidence-driven",
+          "points": 4,
+          "descriptor": "4 = strong independent evidence; 3 = mostly complete; 2 = partial/inconsistent; 1 = minimal; 0 = absent or unsupported."
+        }
+      ],
+      "defensePrompt": "Which design choice is currently least defensible, and what test would resolve that uncertainty?"
     },
     {
       "week": 30,
@@ -1286,32 +2156,32 @@
         {
           "day": 1,
           "phase": "Recall/Plan",
-          "task": "Recall/Plan: complete a focused capstone action for documentation & process narrative.",
-          "evidence": "Retrieve prior commitments and identify today's decision."
+          "task": "Define this week's decision for Documentation & process narrative. Retrieve prior commitments, identify the unresolved question, and write the success criteria before consulting new material.",
+          "evidence": "Decision statement, retrieved prior evidence, success criteria, and one predicted risk."
         },
         {
           "day": 2,
-          "phase": "Model/Research",
-          "task": "Model/Research: complete a focused capstone action for documentation & process narrative.",
-          "evidence": "Examine a model/source and record what it contributes."
+          "phase": "Research/Model",
+          "task": "Gather or inspect the strongest evidence needed for Documentation & process narrative. Compare at least two relevant sources, examples, datasets, models, or prior artifacts when available.",
+          "evidence": "Source/model notes with provenance, credibility judgment, and one conflict or limitation."
         },
         {
           "day": 3,
-          "phase": "Practice/Build",
-          "task": "Practice/Build: complete a focused capstone action for documentation & process narrative.",
-          "evidence": "Produce or revise a concrete artifact."
+          "phase": "Build/Analyze",
+          "task": "Produce the central artifact for Documentation & process narrative. Show your reasoning, calculations/design logic, choices rejected, and how the evidence shaped the work.",
+          "evidence": "A dated capstone artifact showing this week's decision, evidence, revision, and next step."
         },
         {
           "day": 4,
-          "phase": "Apply/Test",
-          "task": "Apply/Test: complete a focused capstone action for documentation & process narrative.",
-          "evidence": "Apply/test the work against criteria or audience needs."
+          "phase": "Test/Apply",
+          "task": "Test the week's artifact against its criteria, stakeholder/audience needs, or evidence standard. Record failures, edge cases, tradeoffs, and what must change.",
+          "evidence": "Test/application record with results, limitation, and revision decision."
         },
         {
           "day": 5,
           "phase": "Reflect/Defend",
-          "task": "Reflect/Defend: complete a focused capstone action for documentation & process narrative.",
-          "evidence": "Reflect, identify limitations, record corrections, and define the next action."
+          "task": "Revise the artifact, score it against the weekly rubric, answer the defense prompt, and identify the next dependency in the capstone.",
+          "evidence": "Revised artifact, self-assessment against rubric, defense response, and next-step statement."
         }
       ],
       "evaluatorCheckpoint": false,
@@ -1320,7 +2190,37 @@
         "source/evidence note",
         "decision or revision record",
         "next-step statement"
-      ]
+      ],
+      "deliverable": "A dated capstone artifact showing this week's decision, evidence, revision, and next step.",
+      "sourceRequirement": "Use at least one relevant source, dataset, observation, interview note, model, or artifact and explain why it is trustworthy enough for this decision.",
+      "rubric": [
+        {
+          "criterion": "Purpose and focus",
+          "points": 4,
+          "descriptor": "4 = strong independent evidence; 3 = mostly complete; 2 = partial/inconsistent; 1 = minimal; 0 = absent or unsupported."
+        },
+        {
+          "criterion": "Evidence quality",
+          "points": 4,
+          "descriptor": "4 = strong independent evidence; 3 = mostly complete; 2 = partial/inconsistent; 1 = minimal; 0 = absent or unsupported."
+        },
+        {
+          "criterion": "Method or design quality",
+          "points": 4,
+          "descriptor": "4 = strong independent evidence; 3 = mostly complete; 2 = partial/inconsistent; 1 = minimal; 0 = absent or unsupported."
+        },
+        {
+          "criterion": "Revision quality",
+          "points": 4,
+          "descriptor": "4 = strong independent evidence; 3 = mostly complete; 2 = partial/inconsistent; 1 = minimal; 0 = absent or unsupported."
+        },
+        {
+          "criterion": "Clarity and documentation",
+          "points": 4,
+          "descriptor": "4 = strong independent evidence; 3 = mostly complete; 2 = partial/inconsistent; 1 = minimal; 0 = absent or unsupported."
+        }
+      ],
+      "defensePrompt": "What changed because of the evidence you gathered this week, and what limitation remains?"
     },
     {
       "week": 31,
@@ -1330,32 +2230,32 @@
         {
           "day": 1,
           "phase": "Recall/Plan",
-          "task": "Recall/Plan: complete a focused capstone action for public-facing summary.",
-          "evidence": "Retrieve prior commitments and identify today's decision."
+          "task": "Define this week's decision for Public-facing summary. Retrieve prior commitments, identify the unresolved question, and write the success criteria before consulting new material.",
+          "evidence": "Decision statement, retrieved prior evidence, success criteria, and one predicted risk."
         },
         {
           "day": 2,
-          "phase": "Model/Research",
-          "task": "Model/Research: complete a focused capstone action for public-facing summary.",
-          "evidence": "Examine a model/source and record what it contributes."
+          "phase": "Research/Model",
+          "task": "Gather or inspect the strongest evidence needed for Public-facing summary. Compare at least two relevant sources, examples, datasets, models, or prior artifacts when available.",
+          "evidence": "Source/model notes with provenance, credibility judgment, and one conflict or limitation."
         },
         {
           "day": 3,
-          "phase": "Practice/Build",
-          "task": "Practice/Build: complete a focused capstone action for public-facing summary.",
-          "evidence": "Produce or revise a concrete artifact."
+          "phase": "Build/Analyze",
+          "task": "Produce the central artifact for Public-facing summary. Show your reasoning, calculations/design logic, choices rejected, and how the evidence shaped the work.",
+          "evidence": "A presentation/defense artifact that states the problem, method, evidence, artifact/result, limitations, revisions, and next implications for a real audience."
         },
         {
           "day": 4,
-          "phase": "Apply/Test",
-          "task": "Apply/Test: complete a focused capstone action for public-facing summary.",
-          "evidence": "Apply/test the work against criteria or audience needs."
+          "phase": "Test/Apply",
+          "task": "Test the week's artifact against its criteria, stakeholder/audience needs, or evidence standard. Record failures, edge cases, tradeoffs, and what must change.",
+          "evidence": "Test/application record with results, limitation, and revision decision."
         },
         {
           "day": 5,
           "phase": "Reflect/Defend",
-          "task": "Reflect/Defend: complete a focused capstone action for public-facing summary.",
-          "evidence": "Reflect, identify limitations, record corrections, and define the next action."
+          "task": "Revise the artifact, score it against the weekly rubric, answer the defense prompt, and identify the next dependency in the capstone.",
+          "evidence": "Revised artifact, self-assessment against rubric, defense response, and next-step statement."
         }
       ],
       "evaluatorCheckpoint": false,
@@ -1364,7 +2264,37 @@
         "source/evidence note",
         "decision or revision record",
         "next-step statement"
-      ]
+      ],
+      "deliverable": "A presentation/defense artifact that states the problem, method, evidence, artifact/result, limitations, revisions, and next implications for a real audience.",
+      "sourceRequirement": "Use at least one relevant source, dataset, observation, interview note, model, or artifact and explain why it is trustworthy enough for this decision.",
+      "rubric": [
+        {
+          "criterion": "Argument is coherent",
+          "points": 4,
+          "descriptor": "4 = strong independent evidence; 3 = mostly complete; 2 = partial/inconsistent; 1 = minimal; 0 = absent or unsupported."
+        },
+        {
+          "criterion": "Evidence is visible and traceable",
+          "points": 4,
+          "descriptor": "4 = strong independent evidence; 3 = mostly complete; 2 = partial/inconsistent; 1 = minimal; 0 = absent or unsupported."
+        },
+        {
+          "criterion": "Limitations are acknowledged",
+          "points": 4,
+          "descriptor": "4 = strong independent evidence; 3 = mostly complete; 2 = partial/inconsistent; 1 = minimal; 0 = absent or unsupported."
+        },
+        {
+          "criterion": "Delivery supports audience understanding",
+          "points": 4,
+          "descriptor": "4 = strong independent evidence; 3 = mostly complete; 2 = partial/inconsistent; 1 = minimal; 0 = absent or unsupported."
+        },
+        {
+          "criterion": "Questions are answered with evidence",
+          "points": 4,
+          "descriptor": "4 = strong independent evidence; 3 = mostly complete; 2 = partial/inconsistent; 1 = minimal; 0 = absent or unsupported."
+        }
+      ],
+      "defensePrompt": "What is the strongest challenge an evaluator could make to your conclusion, and how would you answer it?"
     },
     {
       "week": 32,
@@ -1374,32 +2304,32 @@
         {
           "day": 1,
           "phase": "Recall/Plan",
-          "task": "Recall/Plan: complete a focused capstone action for presentation design.",
-          "evidence": "Retrieve prior commitments and identify today's decision."
+          "task": "Define this week's decision for Presentation design. Retrieve prior commitments, identify the unresolved question, and write the success criteria before consulting new material.",
+          "evidence": "Decision statement, retrieved prior evidence, success criteria, and one predicted risk."
         },
         {
           "day": 2,
-          "phase": "Model/Research",
-          "task": "Model/Research: complete a focused capstone action for presentation design.",
-          "evidence": "Examine a model/source and record what it contributes."
+          "phase": "Research/Model",
+          "task": "Gather or inspect the strongest evidence needed for Presentation design. Compare at least two relevant sources, examples, datasets, models, or prior artifacts when available.",
+          "evidence": "Source/model notes with provenance, credibility judgment, and one conflict or limitation."
         },
         {
           "day": 3,
-          "phase": "Practice/Build",
-          "task": "Practice/Build: complete a focused capstone action for presentation design.",
-          "evidence": "Produce or revise a concrete artifact."
+          "phase": "Build/Analyze",
+          "task": "Produce the central artifact for Presentation design. Show your reasoning, calculations/design logic, choices rejected, and how the evidence shaped the work.",
+          "evidence": "A presentation/defense artifact that states the problem, method, evidence, artifact/result, limitations, revisions, and next implications for a real audience."
         },
         {
           "day": 4,
-          "phase": "Apply/Test",
-          "task": "Apply/Test: complete a focused capstone action for presentation design.",
-          "evidence": "Apply/test the work against criteria or audience needs."
+          "phase": "Test/Apply",
+          "task": "Test the week's artifact against its criteria, stakeholder/audience needs, or evidence standard. Record failures, edge cases, tradeoffs, and what must change.",
+          "evidence": "Test/application record with results, limitation, and revision decision."
         },
         {
           "day": 5,
           "phase": "Reflect/Defend",
-          "task": "Reflect/Defend: complete a focused capstone action for presentation design.",
-          "evidence": "Reflect, identify limitations, record corrections, and define the next action."
+          "task": "Revise the artifact, score it against the weekly rubric, answer the defense prompt, and identify the next dependency in the capstone.",
+          "evidence": "Revised artifact, self-assessment against rubric, defense response, and next-step statement."
         }
       ],
       "evaluatorCheckpoint": false,
@@ -1408,7 +2338,37 @@
         "source/evidence note",
         "decision or revision record",
         "next-step statement"
-      ]
+      ],
+      "deliverable": "A presentation/defense artifact that states the problem, method, evidence, artifact/result, limitations, revisions, and next implications for a real audience.",
+      "sourceRequirement": "Use at least one relevant source, dataset, observation, interview note, model, or artifact and explain why it is trustworthy enough for this decision.",
+      "rubric": [
+        {
+          "criterion": "Argument is coherent",
+          "points": 4,
+          "descriptor": "4 = strong independent evidence; 3 = mostly complete; 2 = partial/inconsistent; 1 = minimal; 0 = absent or unsupported."
+        },
+        {
+          "criterion": "Evidence is visible and traceable",
+          "points": 4,
+          "descriptor": "4 = strong independent evidence; 3 = mostly complete; 2 = partial/inconsistent; 1 = minimal; 0 = absent or unsupported."
+        },
+        {
+          "criterion": "Limitations are acknowledged",
+          "points": 4,
+          "descriptor": "4 = strong independent evidence; 3 = mostly complete; 2 = partial/inconsistent; 1 = minimal; 0 = absent or unsupported."
+        },
+        {
+          "criterion": "Delivery supports audience understanding",
+          "points": 4,
+          "descriptor": "4 = strong independent evidence; 3 = mostly complete; 2 = partial/inconsistent; 1 = minimal; 0 = absent or unsupported."
+        },
+        {
+          "criterion": "Questions are answered with evidence",
+          "points": 4,
+          "descriptor": "4 = strong independent evidence; 3 = mostly complete; 2 = partial/inconsistent; 1 = minimal; 0 = absent or unsupported."
+        }
+      ],
+      "defensePrompt": "What is the strongest challenge an evaluator could make to your conclusion, and how would you answer it?"
     },
     {
       "week": 33,
@@ -1418,32 +2378,32 @@
         {
           "day": 1,
           "phase": "Recall/Plan",
-          "task": "Recall/Plan: complete a focused capstone action for defense rehearsal.",
-          "evidence": "Retrieve prior commitments and identify today's decision."
+          "task": "Define this week's decision for Defense rehearsal. Retrieve prior commitments, identify the unresolved question, and write the success criteria before consulting new material.",
+          "evidence": "Decision statement, retrieved prior evidence, success criteria, and one predicted risk."
         },
         {
           "day": 2,
-          "phase": "Model/Research",
-          "task": "Model/Research: complete a focused capstone action for defense rehearsal.",
-          "evidence": "Examine a model/source and record what it contributes."
+          "phase": "Research/Model",
+          "task": "Gather or inspect the strongest evidence needed for Defense rehearsal. Compare at least two relevant sources, examples, datasets, models, or prior artifacts when available.",
+          "evidence": "Source/model notes with provenance, credibility judgment, and one conflict or limitation."
         },
         {
           "day": 3,
-          "phase": "Practice/Build",
-          "task": "Practice/Build: complete a focused capstone action for defense rehearsal.",
-          "evidence": "Produce or revise a concrete artifact."
+          "phase": "Build/Analyze",
+          "task": "Produce the central artifact for Defense rehearsal. Show your reasoning, calculations/design logic, choices rejected, and how the evidence shaped the work.",
+          "evidence": "A presentation/defense artifact that states the problem, method, evidence, artifact/result, limitations, revisions, and next implications for a real audience."
         },
         {
           "day": 4,
-          "phase": "Apply/Test",
-          "task": "Apply/Test: complete a focused capstone action for defense rehearsal.",
-          "evidence": "Apply/test the work against criteria or audience needs."
+          "phase": "Test/Apply",
+          "task": "Test the week's artifact against its criteria, stakeholder/audience needs, or evidence standard. Record failures, edge cases, tradeoffs, and what must change.",
+          "evidence": "Test/application record with results, limitation, and revision decision."
         },
         {
           "day": 5,
           "phase": "Reflect/Defend",
-          "task": "Reflect/Defend: complete a focused capstone action for defense rehearsal.",
-          "evidence": "Reflect, identify limitations, record corrections, and define the next action."
+          "task": "Revise the artifact, score it against the weekly rubric, answer the defense prompt, and identify the next dependency in the capstone.",
+          "evidence": "Revised artifact, self-assessment against rubric, defense response, and next-step statement."
         }
       ],
       "evaluatorCheckpoint": false,
@@ -1452,7 +2412,37 @@
         "source/evidence note",
         "decision or revision record",
         "next-step statement"
-      ]
+      ],
+      "deliverable": "A presentation/defense artifact that states the problem, method, evidence, artifact/result, limitations, revisions, and next implications for a real audience.",
+      "sourceRequirement": "Use at least one relevant source, dataset, observation, interview note, model, or artifact and explain why it is trustworthy enough for this decision.",
+      "rubric": [
+        {
+          "criterion": "Argument is coherent",
+          "points": 4,
+          "descriptor": "4 = strong independent evidence; 3 = mostly complete; 2 = partial/inconsistent; 1 = minimal; 0 = absent or unsupported."
+        },
+        {
+          "criterion": "Evidence is visible and traceable",
+          "points": 4,
+          "descriptor": "4 = strong independent evidence; 3 = mostly complete; 2 = partial/inconsistent; 1 = minimal; 0 = absent or unsupported."
+        },
+        {
+          "criterion": "Limitations are acknowledged",
+          "points": 4,
+          "descriptor": "4 = strong independent evidence; 3 = mostly complete; 2 = partial/inconsistent; 1 = minimal; 0 = absent or unsupported."
+        },
+        {
+          "criterion": "Delivery supports audience understanding",
+          "points": 4,
+          "descriptor": "4 = strong independent evidence; 3 = mostly complete; 2 = partial/inconsistent; 1 = minimal; 0 = absent or unsupported."
+        },
+        {
+          "criterion": "Questions are answered with evidence",
+          "points": 4,
+          "descriptor": "4 = strong independent evidence; 3 = mostly complete; 2 = partial/inconsistent; 1 = minimal; 0 = absent or unsupported."
+        }
+      ],
+      "defensePrompt": "What is the strongest challenge an evaluator could make to your conclusion, and how would you answer it?"
     },
     {
       "week": 34,
@@ -1462,32 +2452,32 @@
         {
           "day": 1,
           "phase": "Recall/Plan",
-          "task": "Recall/Plan: complete a focused capstone action for final capstone defense.",
-          "evidence": "Retrieve prior commitments and identify today's decision."
+          "task": "Define this week's decision for Final capstone defense. Retrieve prior commitments, identify the unresolved question, and write the success criteria before consulting new material.",
+          "evidence": "Decision statement, retrieved prior evidence, success criteria, and one predicted risk."
         },
         {
           "day": 2,
-          "phase": "Model/Research",
-          "task": "Model/Research: complete a focused capstone action for final capstone defense.",
-          "evidence": "Examine a model/source and record what it contributes."
+          "phase": "Research/Model",
+          "task": "Gather or inspect the strongest evidence needed for Final capstone defense. Compare at least two relevant sources, examples, datasets, models, or prior artifacts when available.",
+          "evidence": "Source/model notes with provenance, credibility judgment, and one conflict or limitation."
         },
         {
           "day": 3,
-          "phase": "Practice/Build",
-          "task": "Practice/Build: complete a focused capstone action for final capstone defense.",
-          "evidence": "Produce or revise a concrete artifact."
+          "phase": "Build/Analyze",
+          "task": "Produce the central artifact for Final capstone defense. Show your reasoning, calculations/design logic, choices rejected, and how the evidence shaped the work.",
+          "evidence": "A presentation/defense artifact that states the problem, method, evidence, artifact/result, limitations, revisions, and next implications for a real audience."
         },
         {
           "day": 4,
-          "phase": "Apply/Test",
-          "task": "Apply/Test: complete a focused capstone action for final capstone defense.",
-          "evidence": "Apply/test the work against criteria or audience needs."
+          "phase": "Test/Apply",
+          "task": "Test the week's artifact against its criteria, stakeholder/audience needs, or evidence standard. Record failures, edge cases, tradeoffs, and what must change.",
+          "evidence": "Test/application record with results, limitation, and revision decision."
         },
         {
           "day": 5,
           "phase": "Reflect/Defend",
-          "task": "Reflect/Defend: complete a focused capstone action for final capstone defense.",
-          "evidence": "Reflect, identify limitations, record corrections, and define the next action."
+          "task": "Revise the artifact, score it against the weekly rubric, answer the defense prompt, and identify the next dependency in the capstone.",
+          "evidence": "Revised artifact, self-assessment against rubric, defense response, and next-step statement."
         }
       ],
       "evaluatorCheckpoint": true,
@@ -1496,7 +2486,37 @@
         "source/evidence note",
         "decision or revision record",
         "next-step statement"
-      ]
+      ],
+      "deliverable": "A presentation/defense artifact that states the problem, method, evidence, artifact/result, limitations, revisions, and next implications for a real audience.",
+      "sourceRequirement": "Use at least one relevant source, dataset, observation, interview note, model, or artifact and explain why it is trustworthy enough for this decision.",
+      "rubric": [
+        {
+          "criterion": "Argument is coherent",
+          "points": 4,
+          "descriptor": "4 = strong independent evidence; 3 = mostly complete; 2 = partial/inconsistent; 1 = minimal; 0 = absent or unsupported."
+        },
+        {
+          "criterion": "Evidence is visible and traceable",
+          "points": 4,
+          "descriptor": "4 = strong independent evidence; 3 = mostly complete; 2 = partial/inconsistent; 1 = minimal; 0 = absent or unsupported."
+        },
+        {
+          "criterion": "Limitations are acknowledged",
+          "points": 4,
+          "descriptor": "4 = strong independent evidence; 3 = mostly complete; 2 = partial/inconsistent; 1 = minimal; 0 = absent or unsupported."
+        },
+        {
+          "criterion": "Delivery supports audience understanding",
+          "points": 4,
+          "descriptor": "4 = strong independent evidence; 3 = mostly complete; 2 = partial/inconsistent; 1 = minimal; 0 = absent or unsupported."
+        },
+        {
+          "criterion": "Questions are answered with evidence",
+          "points": 4,
+          "descriptor": "4 = strong independent evidence; 3 = mostly complete; 2 = partial/inconsistent; 1 = minimal; 0 = absent or unsupported."
+        }
+      ],
+      "defensePrompt": "What is the strongest challenge an evaluator could make to your conclusion, and how would you answer it?"
     },
     {
       "week": 35,
@@ -1506,32 +2526,32 @@
         {
           "day": 1,
           "phase": "Recall/Plan",
-          "task": "Recall/Plan: complete a focused capstone action for corrections & final archive.",
-          "evidence": "Retrieve prior commitments and identify today's decision."
+          "task": "Define this week's decision for Corrections & final archive. Retrieve prior commitments, identify the unresolved question, and write the success criteria before consulting new material.",
+          "evidence": "Decision statement, retrieved prior evidence, success criteria, and one predicted risk."
         },
         {
           "day": 2,
-          "phase": "Model/Research",
-          "task": "Model/Research: complete a focused capstone action for corrections & final archive.",
-          "evidence": "Examine a model/source and record what it contributes."
+          "phase": "Research/Model",
+          "task": "Gather or inspect the strongest evidence needed for Corrections & final archive. Compare at least two relevant sources, examples, datasets, models, or prior artifacts when available.",
+          "evidence": "Source/model notes with provenance, credibility judgment, and one conflict or limitation."
         },
         {
           "day": 3,
-          "phase": "Practice/Build",
-          "task": "Practice/Build: complete a focused capstone action for corrections & final archive.",
-          "evidence": "Produce or revise a concrete artifact."
+          "phase": "Build/Analyze",
+          "task": "Produce the central artifact for Corrections & final archive. Show your reasoning, calculations/design logic, choices rejected, and how the evidence shaped the work.",
+          "evidence": "A final archive/reflection package with selected artifacts, revision history, evaluator feedback, learning analysis, and transfer plan beyond graduation."
         },
         {
           "day": 4,
-          "phase": "Apply/Test",
-          "task": "Apply/Test: complete a focused capstone action for corrections & final archive.",
-          "evidence": "Apply/test the work against criteria or audience needs."
+          "phase": "Test/Apply",
+          "task": "Test the week's artifact against its criteria, stakeholder/audience needs, or evidence standard. Record failures, edge cases, tradeoffs, and what must change.",
+          "evidence": "Test/application record with results, limitation, and revision decision."
         },
         {
           "day": 5,
           "phase": "Reflect/Defend",
-          "task": "Reflect/Defend: complete a focused capstone action for corrections & final archive.",
-          "evidence": "Reflect, identify limitations, record corrections, and define the next action."
+          "task": "Revise the artifact, score it against the weekly rubric, answer the defense prompt, and identify the next dependency in the capstone.",
+          "evidence": "Revised artifact, self-assessment against rubric, defense response, and next-step statement."
         }
       ],
       "evaluatorCheckpoint": true,
@@ -1540,7 +2560,37 @@
         "source/evidence note",
         "decision or revision record",
         "next-step statement"
-      ]
+      ],
+      "deliverable": "A final archive/reflection package with selected artifacts, revision history, evaluator feedback, learning analysis, and transfer plan beyond graduation.",
+      "sourceRequirement": "Use at least one relevant source, dataset, observation, interview note, model, or artifact and explain why it is trustworthy enough for this decision.",
+      "rubric": [
+        {
+          "criterion": "Archive is complete and navigable",
+          "points": 4,
+          "descriptor": "4 = strong independent evidence; 3 = mostly complete; 2 = partial/inconsistent; 1 = minimal; 0 = absent or unsupported."
+        },
+        {
+          "criterion": "Growth is evidenced, not asserted",
+          "points": 4,
+          "descriptor": "4 = strong independent evidence; 3 = mostly complete; 2 = partial/inconsistent; 1 = minimal; 0 = absent or unsupported."
+        },
+        {
+          "criterion": "Key revisions are documented",
+          "points": 4,
+          "descriptor": "4 = strong independent evidence; 3 = mostly complete; 2 = partial/inconsistent; 1 = minimal; 0 = absent or unsupported."
+        },
+        {
+          "criterion": "Evaluator feedback is incorporated",
+          "points": 4,
+          "descriptor": "4 = strong independent evidence; 3 = mostly complete; 2 = partial/inconsistent; 1 = minimal; 0 = absent or unsupported."
+        },
+        {
+          "criterion": "Transfer/next-step plan is concrete",
+          "points": 4,
+          "descriptor": "4 = strong independent evidence; 3 = mostly complete; 2 = partial/inconsistent; 1 = minimal; 0 = absent or unsupported."
+        }
+      ],
+      "defensePrompt": "Which artifact best demonstrates your growth, and what will you carry forward beyond this course?"
     },
     {
       "week": 36,
@@ -1550,32 +2600,32 @@
         {
           "day": 1,
           "phase": "Recall/Plan",
-          "task": "Recall/Plan: complete a focused capstone action for graduation reflection & transition.",
-          "evidence": "Retrieve prior commitments and identify today's decision."
+          "task": "Define this week's decision for Graduation reflection & transition. Retrieve prior commitments, identify the unresolved question, and write the success criteria before consulting new material.",
+          "evidence": "Decision statement, retrieved prior evidence, success criteria, and one predicted risk."
         },
         {
           "day": 2,
-          "phase": "Model/Research",
-          "task": "Model/Research: complete a focused capstone action for graduation reflection & transition.",
-          "evidence": "Examine a model/source and record what it contributes."
+          "phase": "Research/Model",
+          "task": "Gather or inspect the strongest evidence needed for Graduation reflection & transition. Compare at least two relevant sources, examples, datasets, models, or prior artifacts when available.",
+          "evidence": "Source/model notes with provenance, credibility judgment, and one conflict or limitation."
         },
         {
           "day": 3,
-          "phase": "Practice/Build",
-          "task": "Practice/Build: complete a focused capstone action for graduation reflection & transition.",
-          "evidence": "Produce or revise a concrete artifact."
+          "phase": "Build/Analyze",
+          "task": "Produce the central artifact for Graduation reflection & transition. Show your reasoning, calculations/design logic, choices rejected, and how the evidence shaped the work.",
+          "evidence": "A final archive/reflection package with selected artifacts, revision history, evaluator feedback, learning analysis, and transfer plan beyond graduation."
         },
         {
           "day": 4,
-          "phase": "Apply/Test",
-          "task": "Apply/Test: complete a focused capstone action for graduation reflection & transition.",
-          "evidence": "Apply/test the work against criteria or audience needs."
+          "phase": "Test/Apply",
+          "task": "Test the week's artifact against its criteria, stakeholder/audience needs, or evidence standard. Record failures, edge cases, tradeoffs, and what must change.",
+          "evidence": "Test/application record with results, limitation, and revision decision."
         },
         {
           "day": 5,
           "phase": "Reflect/Defend",
-          "task": "Reflect/Defend: complete a focused capstone action for graduation reflection & transition.",
-          "evidence": "Reflect, identify limitations, record corrections, and define the next action."
+          "task": "Revise the artifact, score it against the weekly rubric, answer the defense prompt, and identify the next dependency in the capstone.",
+          "evidence": "Revised artifact, self-assessment against rubric, defense response, and next-step statement."
         }
       ],
       "evaluatorCheckpoint": true,
@@ -1584,7 +2634,37 @@
         "source/evidence note",
         "decision or revision record",
         "next-step statement"
-      ]
+      ],
+      "deliverable": "A final archive/reflection package with selected artifacts, revision history, evaluator feedback, learning analysis, and transfer plan beyond graduation.",
+      "sourceRequirement": "Use at least one relevant source, dataset, observation, interview note, model, or artifact and explain why it is trustworthy enough for this decision.",
+      "rubric": [
+        {
+          "criterion": "Archive is complete and navigable",
+          "points": 4,
+          "descriptor": "4 = strong independent evidence; 3 = mostly complete; 2 = partial/inconsistent; 1 = minimal; 0 = absent or unsupported."
+        },
+        {
+          "criterion": "Growth is evidenced, not asserted",
+          "points": 4,
+          "descriptor": "4 = strong independent evidence; 3 = mostly complete; 2 = partial/inconsistent; 1 = minimal; 0 = absent or unsupported."
+        },
+        {
+          "criterion": "Key revisions are documented",
+          "points": 4,
+          "descriptor": "4 = strong independent evidence; 3 = mostly complete; 2 = partial/inconsistent; 1 = minimal; 0 = absent or unsupported."
+        },
+        {
+          "criterion": "Evaluator feedback is incorporated",
+          "points": 4,
+          "descriptor": "4 = strong independent evidence; 3 = mostly complete; 2 = partial/inconsistent; 1 = minimal; 0 = absent or unsupported."
+        },
+        {
+          "criterion": "Transfer/next-step plan is concrete",
+          "points": 4,
+          "descriptor": "4 = strong independent evidence; 3 = mostly complete; 2 = partial/inconsistent; 1 = minimal; 0 = absent or unsupported."
+        }
+      ],
+      "defensePrompt": "Which artifact best demonstrates your growth, and what will you carry forward beyond this course?"
     }
   ],
   "authority": "Capstone progress is provisional until evaluator review. Completion alone does not create an academic grade.",
@@ -1594,5 +2674,29 @@
     "midyear conference",
     "final capstone defense"
   ],
-  "portfolioRule": "Preserve process evidence, sources, revisions, final artifact, evaluator feedback, corrections, and final reflection."
+  "portfolioRule": "Preserve process evidence, sources, revisions, final artifact, evaluator feedback, corrections, and final reflection.",
+  "assessmentModel": {
+    "weeklyRubricPoints": 20,
+    "evaluatorCheckpoints": [
+      9,
+      18,
+      24,
+      34,
+      35,
+      36
+    ],
+    "evaluatorRule": "Checkpoint scores may be recorded only after evaluator review. Learner self-completion alone does not certify a score.",
+    "finalEvidence": [
+      "approved proposal",
+      "research/source dossier",
+      "method or production plan",
+      "prototype/implementation evidence",
+      "test/analysis record",
+      "revision history",
+      "final artifact",
+      "presentation/defense evidence",
+      "evaluator feedback",
+      "final reflection"
+    ]
+  }
 }
