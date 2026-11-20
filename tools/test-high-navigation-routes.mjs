@@ -41,6 +41,17 @@ for(const file of pages){
   assert.ok(source.includes('class="grade'+g+'-local-links"'),file+" missing benchmark local navigation");
   assert.ok(source.includes('data-high-profile-door="true"')&&source.includes('data-high-profile-editor-door="true"'),
     file+" missing grade-local profile doors");
+ }else if(preAlgebra){
+  assert.ok(source.includes("vnv-333-ticker.js"),file+" missing 333 ticker");
+  assert.ok(source.includes("vnv-ticker-autopopulate.js"),file+" missing auto ticker");
+  assert.ok(source.includes("vnv-header-autopopulate.js"),file+" missing official auto header");
+  assert.ok(source.includes("vnv-language.js"),file+" missing official language loader");
+  assert.ok(source.includes("vnv-class-tools-toolbar.js"),file+" missing class-tools toolbar");
+  assert.ok(source.includes("vnv-ecosystem-toolbar.js"),file+" missing ecosystem toolbar");
+  assert.ok(source.includes("math-landing-class-tools-v1.js"),file+" missing canonical math landing class tools");
+  assert.ok(source.includes("Enter Course"),file+" missing direct instructional doorway");
+  assert.ok(/href=["']assessments\/?["']/.test(source),file+" missing assessment doorway");
+  assert.ok(!source.includes("high-school-global-chrome-v2.js"),file+" retired chrome reference returned");
  }else if(minimalLanding){
   assert.ok(source.includes("vnv-dual-ticker-v1.js"),file+" missing canonical dual ticker");
   assert.ok(source.includes("vnv-header-autopopulate.js"),file+" missing official auto header");
