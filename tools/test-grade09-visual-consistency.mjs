@@ -24,9 +24,16 @@ assert.equal(nesting,0,"shared CSS braces balanced");
 for(const [name,cfg] of Object.entries(subjects)){
  const html=fs.readFileSync(cfg.html,"utf8");
  assert.ok(html.includes("width=device-width"),name+" responsive viewport");
- assert.equal(html.split(sharedHref).length-1,1,name+" loads the shared Grade 9 subject presentation owner once");
- assert.equal(html.split("../../../assets/vervenveda-parchment.css").length-1,1,name+" loads the base parchment once");
- assert.equal(html.split("../../../assets/high-navigation-v1.css").length-1,1,name+" loads the subject navigation stylesheet once");
+ if(name==="english"){
+  assert.ok(html.includes("inline English 9 canonical stylesheet is the sole presentation owner."),name+" preserves its approved single presentation owner");
+  assert.equal(html.split(sharedHref).length-1,0,name+" does not layer a competing subject CSS");
+  assert.equal(html.split("../../../assets/vervenveda-parchment.css").length-1,0,name+" does not layer legacy parchment");
+  assert.equal(html.split("../../../assets/high-navigation-v1.css").length-1,0,name+" does not layer legacy navigation CSS");
+ }else{
+  assert.equal(html.split(sharedHref).length-1,1,name+" loads the shared Grade 9 subject presentation owner once");
+  assert.equal(html.split("../../../assets/vervenveda-parchment.css").length-1,1,name+" loads the base parchment once");
+  assert.equal(html.split("../../../assets/high-navigation-v1.css").length-1,1,name+" loads the subject navigation stylesheet once");
+ }
  assert.equal(html.split("../../../assets/high-navigation-v1.js").length-1,1,name+" loads the subject navigation runtime once");
  assert.ok(html.includes(cfg.body),name+" exposes the shared Grade 9 subject selector");
  assert.ok(html.includes(cfg.label),name+" preserves course identity");
