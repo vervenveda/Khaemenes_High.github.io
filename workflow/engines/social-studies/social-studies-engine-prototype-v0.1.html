@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Social Studies Engine v0.1 · Curriculum Prototype</title>
+<style>
+:root{--paper:#f5f1e9;--ink:#29352d;--border:#c4b79f}*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);font:400 17px/1.65 Nunito,"Avenir Next",Arial,sans-serif}
+header{background:#28392f;color:#faf4e8;text-align:center;padding:24px 16px}
+header h1{font:400 clamp(30px,4vw,48px)/1.3 Cinzel,Georgia,serif;margin:8px 0}
+header p{margin:0}
+main{width:min(calc(100% - 28px),1020px);margin:22px auto 50px}
+.course-switch{display:flex;justify-content:center;flex-wrap:wrap;gap:9px;margin:0 auto 22px}
+.course-switch a{min-height:46px;display:inline-flex;align-items:center;justify-content:center;padding:11px 16px;border:1px solid #b6a37f;border-radius:7px;background:#293c33;color:#fff9ed;text-decoration:none;font-size:16px}
+.course-switch a[aria-current="page"]{background:#af8747;color:#1e2921}
+.intro,.stage,.source-notice{background:#fffdf9;border:1px solid var(--border);border-radius:7px;padding:20px;margin:16px auto}
+.intro h2,.stage h2{font:400 24px/1.35 Cinzel,Georgia,serif;color:#29352d}
+.intro h1{font:400 33px/1.35 Cinzel,Georgia,serif}
+.source-notice{border-left:5px solid #ad8747}
+footer{text-align:center;padding:22px;background:#293a32;color:#faf4e8;font-size:16px}
+</style></head>
+<body data-social-studies-demo data-social-studies-engine="9">
+<header><p>KHÆMENES ACADEMY · WORKFLOW DEMONSTRATION</p><h1>Social Studies Inquiry Engine</h1><p>Historical evidence · Civic reasoning · Comparative research</p></header>
+<main data-social-studies-prototype>
+<nav class="course-switch" aria-label="Select curriculum pathway">
+<a href="?grade=9" data-grade-link="9">Grade 9 · Global Studies</a>
+<a href="?grade=10" data-grade-link="10">Grade 10 · U.S. History</a>
+<a href="?grade=11" data-grade-link="11">Grade 11 · Government & Economics</a>
+<a href="?grade=12" data-grade-link="12">Grade 12 · Global Politics</a>
+</nav>
+<div class="intro"><p>CURRICULUM-ALIGNED PREVIEW · NO LEARNER RECORDS</p><h1 id="demo-title">Social Studies Inquiry</h1><p id="demo-course"></p><p id="demo-question"></p></div>
+<section class="source-notice"><strong>Evidence custody:</strong> This demonstration describes the actual course curriculum but does not reproduce or impersonate historical sources. The weekly packets remain the authoritative teaching materials. Scratchpad entries are temporary and are not saved, graded, or submitted.</section>
+<section class="stage" data-ss-stage="1"><h2>Stage 1</h2><p></p></section>
+<section class="stage" data-ss-stage="2"><h2>Stage 2</h2><p></p></section>
+<section class="stage" data-ss-stage="3"><h2>Stage 3</h2><p></p></section>
+<section class="stage" data-ss-stage="4"><h2>Stage 4</h2><p></p></section>
+<section class="stage" data-ss-stage="5"><h2>Stage 5</h2><p></p></section>
+<p><a id="demo-packet" href="#">Open the corresponding real Week 1 student packet</a></p>
+</main>
+<footer>Verve N Veda · Khaemenes Academy · Workflow prototype v0.1</footer>
+<script>
+(function(){
+const params=new URLSearchParams(location.search),g=params.get("grade");
+document.body.dataset.socialStudiesEngine=["9","10","11","12"].includes(g)?g:"9";
+document.querySelectorAll("[data-grade-link]").forEach(a=>{if(a.dataset.gradeLink===document.body.dataset.socialStudiesEngine)a.setAttribute("aria-current","page")});
+})();
+</script>
+<script src="../../../courses/shared/social-studies-lesson-engine-v0.1.js?v=20261119-social-studies-pilot-v1"></script>
+<script>
+(function(){
+const grade=document.body.dataset.socialStudiesEngine;
+const spec=window.KhaemenesSocialStudiesLessonEngineV01?.curriculum?.[grade];if(!spec)return;
+document.getElementById("demo-title").textContent=spec.mission;
+document.getElementById("demo-course").textContent=spec.course+" · "+spec.focus;
+document.getElementById("demo-question").textContent=spec.question;
+spec.steps.forEach((step,i)=>{const s=document.querySelector('[data-ss-stage="'+(i+1)+'"]');if(s){s.querySelector("h2").textContent="Stage "+(i+1)+" · "+step[0];s.querySelector("p").textContent=step[1]}});
+const path={"9":"courses/social-studies/grade-09/weeks/week-01/student-packet.html","10":"courses/social-studies/grade-10/week-01/student-packet.html","11":"courses/social-studies/grade-11/weeks/week-01/student-packet.html","12":"courses/social-studies/grade-12/weeks/week-01/student-packet.html"}[grade];
+document.getElementById("demo-packet").href="https://vervenveda.com/Khaemenes_High.github.io/"+path;
+})();
+</script></body></html>
