@@ -5,6 +5,7 @@ on:
       - "grades/grade-09/student-profile/dashboard-layout.js"
       - "grades/grade-09/student-profile/index.html"
       - "tools/validate-grade09-schedule-page-route.mjs"
+      - "tools/validate-high-school-profile-eight-tools.mjs"
       - ".github/workflows/grade09-schedule-page-route.yml"
   push:
     paths:
@@ -18,4 +19,6 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - name: Verify standalone schedule and no Grade 9 modal
-        run: node tools/validate-grade09-schedule-page-route.mjs
+        run: |
+          node tools/validate-grade09-schedule-page-route.mjs
+          node tools/validate-high-school-profile-eight-tools.mjs
