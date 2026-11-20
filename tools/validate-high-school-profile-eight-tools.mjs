@@ -55,7 +55,9 @@ for(const grade of ["09","10","11","12"]){
  const page=read(base+"index.html");
  assert.ok(exists(base+"profile/index.html"),"grade "+grade+" profile editor");
  assert.ok(exists(base+"schedule/index.html"),"grade "+grade+" standalone Schedule");
- assert.ok(page.includes('id="grade09BlueprintRooms"')||grade==="09"&&page.includes('id="khaeStudentEcosystemTools"'),"grade "+grade+" creative tools destination");
+ assert.ok(grade==="09"
+  ? page.includes('student-ecosystem-tools.js')&&read("grades/shared/student-ecosystem-tools.js").includes('section.id="khaeStudentEcosystemTools"')
+  : page.includes('id="grade09BlueprintRooms"'),"grade "+grade+" creative tools owner and destination");
  assert.ok(page.includes('student-profile-background.js'),"grade "+grade+" background editor loader");
  assert.ok(page.includes(grade==="09"?'dashboard-layout.js?v=20261120-standalone-schedule-restored-v2':"grade09-blueprint-upper-grade.js"),"grade "+grade+" toolbar loader");
  if(grade!=="09"){
