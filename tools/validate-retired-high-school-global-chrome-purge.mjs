@@ -7,13 +7,26 @@ import vm from "node:vm";
 const root=process.cwd();
 const bannedAsset="high-school-"+"global-chrome-v2.js";
 const bannedFlag="__KHAEMENES_HIGH_"+"GLOBAL_CHROME_V2__";
-const sourceExtensions=["*.html","*.js","*.mjs","*.css","*.json","*.yaml","*.yml","*.webmanifest","*.xml"];
-const grep=spawnSync("git",["grep","-nI","-e",bannedAsset,"-e",bannedFlag,"--",...sourceExtensions],{encoding:"utf8",cwd:root,maxBuffer:8*1024*1024});
-if(grep.error)throw grep.error;
-if(grep.status!==1){
-  const details=(grep.stdout||grep.stderr||"").trim();
-  throw new Error("Retired chrome reference still exists in active source:\n"+details);
+// Inspect only active runtime and deployment sources. Keep historical snapshots,
+// blueprint evidence and negative regression assertions, which must never run
+// as executable page dependencies, without falsely classifying them as runtime.
+const listed=spawnSync("git",["ls-files","-z"],{encoding:"buffer",cwd:root,maxBuffer:32*1024*1024});
+if(listed.error||listed.status!==0)throw listed.error||new Error("git ls-files failed");
+const allFiles=listed.stdout.toString("utf8").split("\0").filter(Boolean);
+const candidates=allFiles.filter(file=>{
+  if(file==="index.html")return true;
+  if(file.startsWith(".github/workflows/"))return /\.ya?ml$/.test(file);
+  if(!/^(assets|courses|grades|electives|scripts)\//.test(file))return false;
+  if(/(^|\/)(?:workflow|tests|tools)\//.test(file))return false;
+  return /\.(?:html?|js|mjs|css|json|ya?ml|webmanifest|xml)$/.test(file);
+});
+const hits=[];
+for(const file of candidates){
+  const body=fs.readFileSync(file,"utf8");
+  if(body.includes(bannedAsset)||body.includes(bannedFlag))hits.push(file);
 }
+assert.deepEqual(hits,[],"Retired global chrome must not be referenced by live HTML, JavaScript, service workers or CI workflows");
+console.log("ACTIVE_SOURCE_CENSUS_PASS",candidates.length,"files checked");
 const nav=fs.readFileSync("assets/high-navigation-v1.js","utf8");
 assert.doesNotMatch(nav,/GLOBAL_CHROME_V2|global chrome is the primary toolbar owner/i);
 assert.ok(nav.includes('const DUAL_TICKER_GUARD="vnv-dual-ticker-v1.js";'),"Native High School dual ticker must remain");
