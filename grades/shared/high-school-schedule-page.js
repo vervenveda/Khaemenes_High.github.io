@@ -121,8 +121,22 @@ async function render(){
   if(current!==sequence)return;
   gathered.push({pct,average:avg.percent});
   const card=element("article","schedule-card");
-  card.append(element("span","subject",(i+1)+". "+item.label),element("h3","",item.title));
-  card.append(element("p","detail",result?.detail||"Choose your course before continuing."));
+  // Course title leads every card. A subject label is only shown when it adds
+  // genuinely different information; never repeat the title or an ordinal.
+  const title=element("h3","schedule-card-title",item.title||item.label);
+  card.append(title);
+  const subject=String(item.label||"").trim(),courseName=String(item.title||"").trim();
+  const normalize=value=>value.toLowerCase().replace(/[^a-z0-9]+/g," ").trim();
+  const category=normalize(subject),name=normalize(courseName);
+  if(category&&name&&category!==name&&!name.includes(category))
+   card.append(element("span","subject",subject));
+  const detail=String(result?.detail||"").trim();
+  const fallback="Choose a course to begin learning.";
+  // Hide generic continuation filler if the actual Class/Options button
+  // already explains the only action available.
+  if(detail&&!/^(Ready for your next step\.|Open the required step\.|Select the next learning step\.)$/.test(detail))
+   card.append(element("p","detail",detail));
+  else if(!result?.url)card.append(element("p","detail",fallback));
   const metrics=element("div","metrics");
   metric(metrics,"Course completion",pct,"",record?.stale?"Saved record is stale; refresh course evidence.":null);
   metric(metrics,"Quiz and test average",avg.percent,"grade",avg.count?avg.count+" graded assessment"+(avg.count===1?"":"s"):"No published quiz/test points");
