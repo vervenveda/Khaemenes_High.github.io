@@ -54,10 +54,11 @@ html:root:root body :is(.hero, .header, .page-header, .section-head, .lesson-hea
   html:root:root body { font-size: 14px !important; }
 }
 </style>
-  </head>
-<body><main class="main" style="max-width:1100px;margin:auto">
-<header class="hero"><div class="eyebrow">Khaemenes High · Grade 10 United States History Honors</div><h1>Cumulative Final Examination</h1><p class="subtitle">Weeks 1–36 · United States History and Constitutional Synthesis</p>
-<div class="heroActions noPrint"><a class="button ghost" href="../index.html">Return to Course</a><button onclick="window.print()">Print</button></div></header>
+  <link rel="stylesheet" href="/Khaemenes_High.github.io/assets/high-school-assessment-shell-v1.css" data-high-assessment-shell-style="v1">
+</head>
+<body data-high-assessment-shell="true"><main class="main" style="max-width:1100px;margin:auto">
+<section class="hero"><div class="eyebrow">Khaemenes High · Grade 10 United States History Honors</div><h1>Cumulative Final Examination</h1><p class="subtitle">Weeks 1–36 · United States History and Constitutional Synthesis</p>
+<div class="heroActions noPrint"><a class="button ghost" href="../index.html">Return to Course</a><button onclick="window.print()">Print</button></div></section>
 <section class="card"><p><strong>Student:</strong> <input aria-label="Student" id="student" style="max-width:320px;display:inline-block"/> <strong>Date:</strong> <input aria-label="Date" id="date" style="max-width:190px;display:inline-block" type="date"/></p>
 <div class="notice">Complete all objective questions and written responses. Objective items are automatically scored. Written responses require teacher scoring using the included rubric.</div></section>
 <section class="card"><h2>Objective Section</h2><div id="questions"></div><div class="actions noPrint"><button id="scoreBtn">Score Objective Section</button><button class="secondary" id="saveBtn">Save Draft in Browser</button></div><div id="result"></div></section>
@@ -93,5 +94,18 @@ function collect(){
 document.getElementById('saveBtn').onclick=()=>{localStorage.setItem(STORE,JSON.stringify(collect()));alert('Draft saved in this browser.');};
 document.getElementById('scoreBtn').onclick=()=>{const d=collect();let correct=0;QUESTIONS.forEach((q,i)=>{const ok=d.answers[i]===q.answer;if(ok)correct++;document.getElementById('fb'+i).innerHTML=`<p class="${ok?'good':'bad'}">${ok?'Correct':'Review'}: ${esc(q.explanation)}</p>`;});const pct=Math.round(correct/QUESTIONS.length*100);const linked=persistCourseExam(pct,d);document.getElementById('result').innerHTML=`<p class="score">Objective score: ${correct} / ${QUESTIONS.length} (${pct}%)</p><p>${pct>=MASTERY?'80% mastery threshold met.':'Below 80%: complete corrections and take a fresh reassessment.'} Written responses are scored separately by the teacher.</p><p>${linked?'Course record updated.':'Select the active learner in the course portal so this score can satisfy the official gate.'}</p>`;localStorage.setItem(STORE,JSON.stringify(d));};
 render();
-</script><script src="https://vervenveda.com/Khaemenes_High.github.io/assets/vnv-beta-link.js" defer data-khaemenes-student-toolbar="v1.8"></script>
+</script>
+
+<script src="/Khaemenes_High.github.io/assets/high-school-assessment-class-tools-v1.js" defer data-high-assessment-tools="v1"></script>
+<script src="https://vervenveda.com/assets/khaemenes-campus-phrases.js" defer></script>
+<script src="https://vervenveda.com/assets/khaemenes-interlingual-core.js" defer></script>
+<script src="https://vervenveda.com/Khaemenes_Linguistics.github.io/assets/khaemenes-translator-loader.js?v=1.1.1" defer></script>
+<script src="https://vervenveda.com/assets/vnv-language.js?v=20261108-cream-buttons" defer data-official-vnv-language="true"></script>
+<script src="https://vervenveda.com/assets/vnv-class-tools-toolbar.js?v=1.6.1" defer data-vnv-class-tools="high-assessment"></script>
+<script src="https://vervenveda.com/assets/vnv-333-ticker.js"></script>
+<script src="https://vervenveda.com/assets/vnv-ticker-autopopulate.js" data-vnv-ticker-autopopulate></script>
+<script>VNV_TICKER.autoPopulate({label:"Social Studies 10 Final",max:14});</script>
+<script src="https://vervenveda.com/assets/vnv-header-autopopulate.js"></script>
+<script>VNV_HEADER.mount({"title":"Khaemenes Academy","subtitle":"U.S. History 10 · Final","icon":"K","home":"https://vervenveda.com/Khaemenes_Academy.github.io/","actions":[]});</script>
+<script src="https://vervenveda.com/assets/vnv-ecosystem-toolbar.js" data-official-vnv-ecosystem-toolbar="true"></script>
 </body></html>
