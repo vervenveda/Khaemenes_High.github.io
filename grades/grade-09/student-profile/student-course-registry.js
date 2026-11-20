@@ -319,7 +319,8 @@ function genericContinue(course){
   // continuation; never infer academic completion from a browser shortcut.
   if(["integrated-science-9","global-studies-9"].includes(course.id)){
     const learnerId=activeProfile()?.learnerId;
-    const stream=learnerId?window.KhaemenesLearningContinuation?.readLearner?.(learnerId):null;
+    let stream=null;
+    try{if(learnerId)stream=window.KhaemenesLearningContinuation?.readLearner?.(learnerId)||null}catch{}
     const snapshot=Array.isArray(stream)?stream.find(x=>x?.courseId===course.id):null;
     if(snapshot?.nextHref){
       const approved=safeCourseURL(course,snapshot.nextHref);
