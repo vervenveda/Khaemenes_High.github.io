@@ -5,66 +5,9 @@
 .score{font:444 clamp(3.2rem,9vw,6.4rem)/1 var(--serif);color:var(--bench)}.unit-results{display:grid;grid-template-columns:repeat(3,1fr);gap:.75rem;margin:1rem 0}.unit-result,.record-card{padding:1rem;border:1px solid var(--line);border-radius:var(--radius-small);background:var(--bg-soft)}.unit-result strong,.record-card strong{display:block;color:var(--bench);font-size:1.25rem}.review-list{display:grid;gap:.7rem}.review-item{padding:1rem;border:1px solid var(--line);border-radius:var(--radius-small);background:var(--bg-soft)}.review-item.correct{border-inline-start:5px solid var(--success)}.review-item.incorrect{border-inline-start:5px solid var(--danger)}
 .notice-strong{padding:1rem;border:1px solid color-mix(in srgb,var(--bench) 55%,var(--line));border-radius:var(--radius-small);background:var(--bg-soft)}.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:.8rem}.form-grid label{display:grid;gap:.35rem;color:var(--muted);font-size:.78rem}.form-grid input,.form-grid select,.form-grid textarea{width:100%;min-height:46px;padding:.7rem;border:1px solid var(--line);border-radius:var(--radius-small);color:var(--text);background:var(--bg-soft)}.full{grid-column:1/-1}.record-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:.8rem}.constructed-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem}.constructed-card{padding:1.2rem}.constructed-card h3{color:var(--bench)}.response-lines{min-height:310px;margin-top:.8rem;border-bottom:1px solid var(--line);background:repeating-linear-gradient(to bottom,transparent 0 29px,var(--line) 30px)}.print-question{break-inside:avoid;margin:0 0 1rem;padding:1rem;border:1px solid var(--line);border-radius:var(--radius-small)}.print-question ol{margin:.55rem 0 0;padding-left:1.6rem}.answer-sheet{display:grid;grid-template-columns:repeat(4,1fr);gap:.5rem}.answer-row{padding:.55rem;border-bottom:1px solid var(--line)}.signature-grid{display:grid;grid-template-columns:1fr 1fr;gap:2rem;margin-top:3rem}.signature-line{padding-top:.45rem;border-top:1px solid var(--text);text-align:center;font-size:.78rem}.bridge-note{border-color:var(--bench3)}
 @media(max-width:980px){.app-layout{grid-template-columns:1fr}.app-side{position:static}.summary-grid,.unit-results,.record-grid{grid-template-columns:repeat(2,1fr)}}@media(max-width:720px){.constructed-grid,.form-grid,.summary-grid,.unit-results,.record-grid,.answer-sheet,.signature-grid{grid-template-columns:1fr}.full{grid-column:auto}}@media print{.site-header,.course-breadcrumb,.bench-actions,.app-side,.app-nav,.no-print,.footer,.toast{display:none!important}body{background:white;color:black}.card,.print-question{box-shadow:none;background:white;color:black;border-color:#777}.bench-hero{padding:0 0 1rem}.bench-shell{width:100%}.response-lines{min-height:360px}}
-</style><script>document.addEventListener("DOMContentLoaded",()=>{const k="khaemenes_theme",b=document.querySelector("#themeToggle");function set(t){t=["dark","light"].includes(t)?t:"dark";document.documentElement.dataset.theme=t;localStorage.setItem(k,t);if(b)b.textContent=t==="dark"?"☼":"◐"}set(localStorage.getItem(k)||(matchMedia("(prefers-color-scheme: light)").matches?"light":"dark"));if(b)b.onclick=()=>set(document.documentElement.dataset.theme==="dark"?"light":"dark")});document.addEventListener("DOMContentLoaded",()=>{document.querySelector("#printPage").onclick=()=>print()});</script><style id="khaemenes-typography-standard">
-/* Khaemenes High presentation typography · 55 / 33 / 24 / 14 px.
-   All public pages receive this local, embedded policy for offline use.
-   Only presentation changes. Existing grids, gates, learner records, assessments and STOS are preserved.
-   Font names are optional installed system fonts; no downloads or third-party font services. */
-html:root:root body {
-  font-family: "Brandon Grotesque", "Avenir Next", Avenir, "Segoe UI", Arial, sans-serif !important;
-  font-size: 14px !important;
-  font-weight: 400 !important;
-  line-height: 1.65 !important;
-  -webkit-text-size-adjust: 100%;
-  overflow-wrap: break-word;
-}
-html:root:root body :is(button, input, select, textarea) {
-  font-family: "Brandon Grotesque", "Avenir Next", Avenir, "Segoe UI", Arial, sans-serif !important;
-}
-html:root:root body :is(h1, h2, h3, h4, h5, h6, .page-title, .hero-title, .brand-title, .display-title, .site-title) {
-  font-family: Cinzel, "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif !important;
-  font-weight: 400 !important;
-  overflow-wrap: anywhere;
-}
-html:root:root body :is(.eyebrow, .kicker, .dialog-eyebrow, .dialog-kicker, .worksheet-kicker) {
-  font-family: Cinzel, "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif !important;
-  font-size: 55px !important;
-  font-weight: 400 !important;
-  line-height: 1.15 !important;
-  letter-spacing: .02em !important;
-  white-space: normal !important;
-  overflow-wrap: anywhere;
-}
-html:root:root body h1 {
-  font-size: 33px !important;
-  line-height: 1.2 !important;
-  white-space: normal !important;
-  overflow-wrap: anywhere;
-}
-html:root:root body h2,
-html:root:root body :is(.subtitle, .hero-subtitle, .hero-sub, .academy-comment),
-html:root:root body .hero .comment {
-  font-size: 24px !important;
-  line-height: 1.35 !important;
-  white-space: normal !important;
-  overflow-wrap: anywhere;
-}
-/* Do not replace responsive grids or fixed elements; prevent oversized titles from
-   demanding horizontal scrolling on narrow phone and tablet displays. */
-html:root:root body :is(.hero, .header, .page-header, .section-head, .lesson-header) {
-  min-width: 0;
-}
-@media print {
-  html:root:root body { font-size: 14px !important; }
-}
-</style>
-  </head><body><a class="skip-link" href="#main">Skip to main content</a>
-<header class="site-header"><div class="wrap header-inner">
-<a class="brand" href="../../"><span class="brand-mark">S9</span><span class="brand-copy">
-<strong>INTEGRATED SCIENCE 9</strong><small>Units 05–07 Cumulative Benchmark</small></span></a>
-<div class="header-actions"><a class="nav-button secondary" href="../../../../../grades/grade-09/">Grade 9</a>
-<a class="nav-button" href="../">Assessments</a><button class="icon-button" id="themeToggle" type="button" aria-label="Switch theme">☼</button></div>
-</div></header><nav class="course-breadcrumb"><div class="wrap">
+</style><script>document.addEventListener("DOMContentLoaded",()=>{const k="khaemenes_theme",b=document.querySelector("#themeToggle");function set(t){t=["dark","light"].includes(t)?t:"dark";document.documentElement.dataset.theme=t;localStorage.setItem(k,t);if(b)b.textContent=t==="dark"?"☼":"◐"}set(localStorage.getItem(k)||(matchMedia("(prefers-color-scheme: light)").matches?"light":"dark"));if(b)b.onclick=()=>set(document.documentElement.dataset.theme==="dark"?"light":"dark")});document.addEventListener("DOMContentLoaded",()=>{document.querySelector("#printPage").onclick=()=>print()});</script><link rel="stylesheet" href="/Khaemenes_High.github.io/assets/high-school-assessment-shell-v1.css" data-high-assessment-shell-style="v1">
+</head><body data-high-assessment-shell="true"><a class="skip-link" href="#main">Skip to main content</a>
+<nav class="course-breadcrumb"><div class="wrap">
 <a href="../../../../../index.html">High School</a><span>›</span>
 <a href="../../../../../grades/grade-09/">Grade 9</a><span>›</span>
 <a href="../../">Science 9</a><span>›</span><a href="../">Assessments</a><span>›</span>
@@ -78,5 +21,18 @@ html:root:root body :is(.hero, .header, .page-header, .section-head, .lesson-hea
 <h2>Constructed Responses</h2><div class="constructed-grid"><article class="card constructed-card"><p class="eyebrow">Unit 05</p><h3>Ecological Evidence, Diversity, and Origins Reasoning</h3><p>A monitored population changes from 800 individuals to 680. At Site A, four species have counts 4, 4, 4, and 4. At Site B, the same four species have counts 13, 1, 1, and 1. Calculate the population percentage change. Compare richness, abundance, evenness, and likely diversity at the two sites. State one direct observation and one causal inference that would require additional evidence. Propose one conservation action and a measurable outcome. Finally, explain the difference among observed microevolution, evidence relevant to speciation, and macroevolutionary historical reconstruction. Distinguish a measured fossil feature from a phylogenetic relationship, and explain how creation, evolutionary, intelligent-design, evolutionary-creation, or undecided interpretations can be discussed without grading personal belief.</p><div class="response-lines"></div></article><article class="card constructed-card"><p class="eyebrow">Unit 06</p><h3>Atomic Identity, Isotopes, and Periodic Prediction</h3><p>For ³⁷₁₇Cl⁻, determine the numbers of protons, neutrons, and electrons; atomic number; mass number; and net charge. Using chlorine-35 mass 34.9689 u at 75.76% and chlorine-37 mass 36.9659 u at 24.24%, calculate the weighted atomic mass. Explain why that value is not the mass number of every chlorine atom. Write the neutral chlorine shell configuration, identify its period and group, predict its common simple ion, connect line spectra to quantized energy differences, and identify one limitation of the shell model.</p><div class="response-lines"></div></article><article class="card constructed-card"><p class="eyebrow">Unit 07</p><h3>Formulae, Conservation, Energy, and Reaction Rate</h3><p>Construct the neutral formula formed by Ca²⁺ and NO₃⁻ and show the charge audit. Balance CH₄(g) + O₂(g) → CO₂(g) + H₂O(l), then audit C, H, and O atoms. The displayed reaction has ΔH° ≈ −890.3 kJ per mole of methane under the stated conditions. Classify the energy change and explain what a catalyst changes and does not change. Explain why measured mass may decrease in an open gas-producing system even though atoms are conserved. Design a fair comparison of reaction rate using temperature or surface area, including controls and one safety boundary.</p><div class="response-lines"></div></article><article class="card constructed-card"><p class="eyebrow">Integration</p><h3>Matter and Energy Bridge to Unit 08</h3><p>Trace one carbon atom from atmospheric CO₂ into plant sugar, through a food web, into decomposer or fuel molecules, and back to CO₂. Explain why matter cycles while usable energy flows and becomes less available at higher trophic levels. Use the balanced methane-combustion equation to demonstrate atom conservation. Distinguish chemical potential energy from thermal energy transferred to the surroundings. Explain why conservation of atoms does not mean all transferred energy remains available for biological work. Identify one direct measurement, one model, and one inference in this explanation.</p><div class="response-lines"></div></article></div></div></section></main><footer class="footer"><div class="wrap footer-inner">
 <span>Khaemenes Academy™ · International Integrated Science 9</span>
 <span>Units 05–07 Cumulative Benchmark</span></div></footer>
-<div class="toast" id="toast" role="status" hidden></div><script src="https://vervenveda.com/Khaemenes_High.github.io/assets/vnv-beta-link.js" defer data-khaemenes-student-toolbar="v1.8"></script>
+<div class="toast" id="toast" role="status" hidden></div>
+
+<script src="/Khaemenes_High.github.io/assets/high-school-assessment-class-tools-v1.js" defer data-high-assessment-tools="v1"></script>
+<script src="https://vervenveda.com/assets/khaemenes-campus-phrases.js" defer></script>
+<script src="https://vervenveda.com/assets/khaemenes-interlingual-core.js" defer></script>
+<script src="https://vervenveda.com/Khaemenes_Linguistics.github.io/assets/khaemenes-translator-loader.js?v=1.1.1" defer></script>
+<script src="https://vervenveda.com/assets/vnv-language.js?v=20261108-cream-buttons" defer data-official-vnv-language="true"></script>
+<script src="https://vervenveda.com/assets/vnv-class-tools-toolbar.js?v=1.6.1" defer data-vnv-class-tools="high-assessment"></script>
+<script src="https://vervenveda.com/assets/vnv-333-ticker.js"></script>
+<script src="https://vervenveda.com/assets/vnv-ticker-autopopulate.js" data-vnv-ticker-autopopulate></script>
+<script>VNV_TICKER.autoPopulate({label:"Units 05–07 Printable Cumulative Test · Khaemenes Science 9",max:14});</script>
+<script src="https://vervenveda.com/assets/vnv-header-autopopulate.js"></script>
+<script>VNV_HEADER.mount({"title":"Khaemenes Academy","subtitle":"Units 05–07 Printable Cumulative Test · Khaemenes Science 9","icon":"K","home":"https://vervenveda.com/Khaemenes_Academy.github.io/","actions":[]});</script>
+<script src="https://vervenveda.com/assets/vnv-ecosystem-toolbar.js" data-official-vnv-ecosystem-toolbar="true"></script>
 </body></html>
