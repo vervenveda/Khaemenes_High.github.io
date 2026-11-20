@@ -3,8 +3,6 @@
 <meta name="description" content="Private Grade 11 class schedule, lesson continuation, pin preferences, completion graphs and assessment evidence.">
 <title>My Schedule · Grade 11 · Khaemenes Academy</title>
 <link rel="stylesheet" href="../../../shared/high-school-schedule-page.css">
-<link rel="stylesheet" href="https://vervenveda.com/Khaemenes_Academy.github.io/assets/khaemenes-global-header.css">
-<link rel="stylesheet" href="https://vervenveda.com/assets/vnv-ecosystem-menu.css">
 </head><body data-grade="11">
 <main class="schedule-main" id="scheduleApp">
  <header class="schedule-hero">
@@ -15,7 +13,22 @@
    <a class="schedule-btn" href="../">Back to Profile</a>
    <a class="schedule-btn" href="../daily-lessons/">Daily Lessons</a>
   </nav>
+  <nav class="schedule-access" aria-label="Academy access">
+   <a class="schedule-btn" href="../">Learner Profile</a>
+   <a class="schedule-btn" href="https://vervenveda.com/Khaemenes_Academy.github.io/family/">Parent Profile</a>
+   <a class="schedule-btn" href="https://vervenveda.com/Khaemenes_Academy.github.io/family/enroll/">Enrollment</a>
+  </nav>
  </header>
+ <section class="schedule-section" aria-labelledby="aboutScheduleHeading">
+  <h2 id="aboutScheduleHeading">About My Schedule</h2>
+  <p class="schedule-subtitle">Your Grade 11 learning headquarters: see today's classes, continue the right lesson, and understand progress without changing assessments or official grades.</p>
+ </section>
+ <section class="schedule-features" aria-label="Schedule features">
+  <article class="schedule-feature"><h3>Class Schedule</h3><p>Eight subjects organized in a balanced, scrollable page.</p></article>
+  <article class="schedule-feature"><h3>Continue Learning</h3><p>Open your current lesson or the next required step.</p></article>
+  <article class="schedule-feature"><h3>Course Progress</h3><p>Track reported completion and quiz or test averages.</p></article>
+  <article class="schedule-feature"><h3>My Class Pins</h3><p>Organize your favorite subjects on your student profile.</p></article>
+ </section>
  <section class="schedule-stat-grid" aria-label="Schedule overview">
   <div class="schedule-stat"><strong id="countClasses">8</strong><span>Subject slots</span></div>
   <div class="schedule-stat"><strong id="countPinned">—</strong><span>Pinned classes</span></div>
@@ -48,6 +61,49 @@
 <script>window.VNV_TICKER?.autoPopulate?.({label:"Grade 11 Schedule",max:14});</script>
 <script src="https://vervenveda.com/assets/vnv-header-autopopulate.js"></script>
 <script>window.VNV_HEADER?.mount?.({replaceLegacy:true,title:"Khaemenes Academy",subtitle:"Grade 11 · My Schedule",icon:"K",home:"https://vervenveda.com/Khaemenes_Academy.github.io/",actions:[]});</script>
-<script src="https://vervenveda.com/assets/vnv-class-tools-toolbar.js?v=1.6.1" defer data-vnv-class-tools-toolbar="profile"></script>
+<script src="https://vervenveda.com/assets/vnv-language.js?v=20261108-cream-buttons" defer data-official-vnv-language="true"></script>
+<script id="vnv-schedule-tools-config">
+/* The VNV gateway class-tools engine owns this rail. Page config only. */
+(()=>{"use strict";
+const ensureLanguage=()=>{
+ const root=document.getElementById("vnvClassToolsToolbar");
+ if(!root)return null;
+ let panel=root.querySelector("[data-vct-language-panel]");
+ if(!panel){
+  panel=document.createElement("div");panel.className="vct-pop";panel.dataset.vctLanguagePanel="1";panel.hidden=true;
+  const h=document.createElement("h2");h.textContent="Language";
+  const p=document.createElement("p");p.textContent="Choose your Verve N Veda interface language.";
+  panel.append(h,p);root.querySelector("#vnvClassToolsPanel")?.append(panel);
+ }
+ const switcher=document.getElementById("vnv-language-switch");
+ if(switcher&&!panel.contains(switcher))panel.append(switcher);
+ return panel;
+};
+window.KhaemenesClassToolsConfigV1=Object.freeze({
+ id:"vnv-high-schedule",match:()=>/\/grades\/grade-(09|10|11|12)\/student-profile\/schedule\/(?:index\.html)?$/i.test(location.pathname),
+ toggleLabel:"Tools",ariaLabel:"Verve N Veda schedule tools",
+ tools:[
+  {type:"link",label:"Search",sub:"Ecosystem search",href:"https://vervenveda.com/PLERASearch.github.io/"},
+  {type:"ecosystem-list",label:"Learning",sub:"Education resources",filter:{category:"education",limit:12}},
+  {type:"ecosystem-list",label:"Research",sub:"Research resources",filter:{category:"research",limit:12}},
+  {type:"ecosystem-list",label:"Creative",sub:"Art and music",filter:{category:"creative",limit:12}},
+  {type:"link",label:"Calculator",sub:"Scientific calculator",href:"https://vervenveda.github.io/proresource_hub.github.io/Protools/Khaemenes_Scientific_Calculator/"},
+  {type:"action",label:"Language",sub:"Translator",action:"language"},
+  {type:"link",label:"Profile",sub:"Student profile",href:"../"},
+  {type:"help",label:"Instructions",sub:"Tool guidance"}
+ ],
+ actions:{language:()=>{
+  const panel=ensureLanguage();if(!panel)return false;
+  const open=panel.hidden;panel.parentElement?.querySelectorAll(".vct-pop").forEach(p=>p.hidden=true);
+  panel.hidden=!open;if(open)panel.querySelector("select,button")?.focus();return true;
+ }},
+ help:{title:"Verve N Veda Schedule Tools",paragraphs:["The official gateway tools provide navigation and translation. Grades and progress come only from the Academy's course records."]}
+});
+const observer=new MutationObserver(()=>{if(ensureLanguage()?.contains(document.getElementById("vnv-language-switch")))observer.disconnect()});
+observer.observe(document.documentElement,{childList:true,subtree:true});
+window.addEventListener("pageshow",ensureLanguage);
+})();
+</script>
+<script src="https://vervenveda.com/assets/vnv-class-tools-toolbar.js?v=1.6.1" defer data-vnv-class-tools-toolbar="schedule"></script>
 <script src="https://vervenveda.com/assets/vnv-ecosystem-toolbar.js" defer data-official-vnv-ecosystem-toolbar="true"></script>
 </body></html>
