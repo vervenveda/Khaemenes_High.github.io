@@ -3,7 +3,7 @@ on:
   push:
     branches: [main]
     paths:
-      - 'assets/high-school-global-chrome-v2.js'
+      - 'assets/high-navigation-v1.js'
       - 'assets/high-vnv-chrome-audit-optin.js'
       - 'tests/high-chrome-observer-recovery.test.mjs'
       - 'grades/grade-09/student-profile/index.html'
@@ -35,7 +35,7 @@ jobs:
         run: node --check grades/grade-09/student-profile/dashboard-layout.js
       - name: Verify shared chrome and deep diagnostic syntax
         run: |
-          node --check assets/high-school-global-chrome-v2.js
+          node --check assets/high-navigation-v1.js
           node --check assets/high-vnv-chrome-audit-optin.js
       - name: Verify diagnostic syntax
         run: node --check grades/grade-09/student-profile/vnv-chrome-forensic-probe.js
