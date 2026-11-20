@@ -7,7 +7,8 @@
     "historical_records": "Never overwrite prior student attempts or change specialist grading authorities.",
     "grade_scope": "Enforce the assigned grade in the route and map; mathematics is placement-based and not automatically restricted to a single grade.",
     "offline": "Never require a third-party runtime for core lesson completion.",
-    "handoff_boundary": "Precalculus and Calculus outbound destinations are verified; cross-repository return-record synchronization remains pending and must not be represented as certified."
+    "handoff_boundary": "Precalculus and Calculus outbound destinations are verified; cross-repository return-record synchronization remains pending and must not be represented as certified.",
+    "authority_contract": "Every matrix entry declares navigation, assessment, mastery, persistence, portfolio publication and completion-record ownership. 'pending-verification' is an explicit HOLD, never an implied certification."
   },
   "courses": [
     {
@@ -20,7 +21,42 @@
       "format": "json-curriculum+html-execution",
       "assessment_authority": "course-specialist-assessments",
       "upgrade": "full-course-math-engine",
-      "status": "existing-specialist-engine"
+      "status": "existing-specialist-engine",
+      "authority_contract": {
+        "current_lesson_resolver": {
+          "owner": "courses/shared/high-school-math-continuation.js",
+          "status": "declared"
+        },
+        "weekly_assessment_owner": {
+          "owner": "course-specialist-assessments",
+          "status": "declared"
+        },
+        "midterm_owner": {
+          "owner": "course-specialist-assessments",
+          "status": "declared"
+        },
+        "final_owner": {
+          "owner": "course-specialist-assessments",
+          "status": "declared"
+        },
+        "mastery_owner": {
+          "owner": "course-specialist-assessments",
+          "status": "declared"
+        },
+        "persistence": {
+          "owner": "course-native-learner-scope",
+          "schema": "specialist-course-record",
+          "status": "declared"
+        },
+        "portfolio_publisher": {
+          "owner": "courses/shared/high-school-math-continuation.js",
+          "status": "declared"
+        },
+        "completion_record": {
+          "owner": "specialist-course-evaluator",
+          "status": "declared"
+        }
+      }
     },
     {
       "id": "algebra-1",
@@ -32,7 +68,42 @@
       "format": "json-curriculum+html-execution",
       "assessment_authority": "course-specialist-assessments",
       "upgrade": "full-course-math-engine",
-      "status": "existing-specialist-engine"
+      "status": "existing-specialist-engine",
+      "authority_contract": {
+        "current_lesson_resolver": {
+          "owner": "courses/shared/high-school-math-continuation.js",
+          "status": "declared"
+        },
+        "weekly_assessment_owner": {
+          "owner": "course-specialist-assessments",
+          "status": "declared"
+        },
+        "midterm_owner": {
+          "owner": "course-specialist-assessments",
+          "status": "declared"
+        },
+        "final_owner": {
+          "owner": "course-specialist-assessments",
+          "status": "declared"
+        },
+        "mastery_owner": {
+          "owner": "course-specialist-assessments",
+          "status": "declared"
+        },
+        "persistence": {
+          "owner": "course-native-learner-scope",
+          "schema": "specialist-course-record",
+          "status": "declared"
+        },
+        "portfolio_publisher": {
+          "owner": "courses/shared/high-school-math-continuation.js",
+          "status": "declared"
+        },
+        "completion_record": {
+          "owner": "specialist-course-evaluator",
+          "status": "declared"
+        }
+      }
     },
     {
       "id": "geometry",
@@ -44,7 +115,42 @@
       "format": "json-curriculum+html-execution",
       "assessment_authority": "course-specialist-assessments",
       "upgrade": "full-course-math-engine",
-      "status": "existing-specialist-engine"
+      "status": "existing-specialist-engine",
+      "authority_contract": {
+        "current_lesson_resolver": {
+          "owner": "courses/shared/high-school-math-continuation.js",
+          "status": "declared"
+        },
+        "weekly_assessment_owner": {
+          "owner": "course-specialist-assessments",
+          "status": "declared"
+        },
+        "midterm_owner": {
+          "owner": "course-specialist-assessments",
+          "status": "declared"
+        },
+        "final_owner": {
+          "owner": "course-specialist-assessments",
+          "status": "declared"
+        },
+        "mastery_owner": {
+          "owner": "course-specialist-assessments",
+          "status": "declared"
+        },
+        "persistence": {
+          "owner": "course-native-learner-scope",
+          "schema": "specialist-course-record",
+          "status": "declared"
+        },
+        "portfolio_publisher": {
+          "owner": "courses/shared/high-school-math-continuation.js",
+          "status": "declared"
+        },
+        "completion_record": {
+          "owner": "specialist-course-evaluator",
+          "status": "declared"
+        }
+      }
     },
     {
       "id": "algebra-2",
@@ -56,7 +162,42 @@
       "format": "json-curriculum+html-execution",
       "assessment_authority": "course-specialist-assessments",
       "upgrade": "full-course-math-engine",
-      "status": "existing-specialist-engine"
+      "status": "existing-specialist-engine",
+      "authority_contract": {
+        "current_lesson_resolver": {
+          "owner": "courses/shared/high-school-math-continuation.js",
+          "status": "declared"
+        },
+        "weekly_assessment_owner": {
+          "owner": "course-specialist-assessments",
+          "status": "declared"
+        },
+        "midterm_owner": {
+          "owner": "course-specialist-assessments",
+          "status": "declared"
+        },
+        "final_owner": {
+          "owner": "course-specialist-assessments",
+          "status": "declared"
+        },
+        "mastery_owner": {
+          "owner": "course-specialist-assessments",
+          "status": "declared"
+        },
+        "persistence": {
+          "owner": "course-native-learner-scope",
+          "schema": "specialist-course-record",
+          "status": "declared"
+        },
+        "portfolio_publisher": {
+          "owner": "courses/shared/high-school-math-continuation.js",
+          "status": "declared"
+        },
+        "completion_record": {
+          "owner": "specialist-course-evaluator",
+          "status": "declared"
+        }
+      }
     },
     {
       "id": "english-9",
@@ -68,7 +209,42 @@
       "format": "json-curriculum+html-execution",
       "assessment_authority": "course-specialist-assessments",
       "upgrade": "verified-reading-spine+vertical-rubrics",
-      "status": "existing-specialist-engine"
+      "status": "existing-specialist-engine",
+      "authority_contract": {
+        "current_lesson_resolver": {
+          "owner": "courses/shared/high-school-english-continuation.js",
+          "status": "declared"
+        },
+        "weekly_assessment_owner": {
+          "owner": "course-specialist-assessments",
+          "status": "declared"
+        },
+        "midterm_owner": {
+          "owner": "course-specialist-assessments",
+          "status": "declared"
+        },
+        "final_owner": {
+          "owner": "course-specialist-assessments",
+          "status": "declared"
+        },
+        "mastery_owner": {
+          "owner": "course-specialist-assessments",
+          "status": "declared"
+        },
+        "persistence": {
+          "owner": "course-native-learner-scope",
+          "schema": "specialist-course-record",
+          "status": "declared"
+        },
+        "portfolio_publisher": {
+          "owner": "courses/shared/high-school-english-continuation.js",
+          "status": "declared"
+        },
+        "completion_record": {
+          "owner": "specialist-course-evaluator",
+          "status": "declared"
+        }
+      }
     },
     {
       "id": "english-10",
@@ -80,7 +256,42 @@
       "format": "json-curriculum+html-execution",
       "assessment_authority": "course-specialist-assessments",
       "upgrade": "verified-reading-spine+vertical-rubrics",
-      "status": "existing-specialist-engine"
+      "status": "existing-specialist-engine",
+      "authority_contract": {
+        "current_lesson_resolver": {
+          "owner": "courses/shared/high-school-english-continuation.js",
+          "status": "declared"
+        },
+        "weekly_assessment_owner": {
+          "owner": "course-specialist-assessments",
+          "status": "declared"
+        },
+        "midterm_owner": {
+          "owner": "course-specialist-assessments",
+          "status": "declared"
+        },
+        "final_owner": {
+          "owner": "course-specialist-assessments",
+          "status": "declared"
+        },
+        "mastery_owner": {
+          "owner": "course-specialist-assessments",
+          "status": "declared"
+        },
+        "persistence": {
+          "owner": "course-native-learner-scope",
+          "schema": "specialist-course-record",
+          "status": "declared"
+        },
+        "portfolio_publisher": {
+          "owner": "courses/shared/high-school-english-continuation.js",
+          "status": "declared"
+        },
+        "completion_record": {
+          "owner": "specialist-course-evaluator",
+          "status": "declared"
+        }
+      }
     },
     {
       "id": "english-11",
@@ -92,7 +303,42 @@
       "format": "json-curriculum+html-execution",
       "assessment_authority": "course-specialist-assessments",
       "upgrade": "verified-reading-spine+vertical-rubrics",
-      "status": "existing-specialist-engine"
+      "status": "existing-specialist-engine",
+      "authority_contract": {
+        "current_lesson_resolver": {
+          "owner": "courses/shared/high-school-english-continuation.js",
+          "status": "declared"
+        },
+        "weekly_assessment_owner": {
+          "owner": "course-specialist-assessments",
+          "status": "declared"
+        },
+        "midterm_owner": {
+          "owner": "course-specialist-assessments",
+          "status": "declared"
+        },
+        "final_owner": {
+          "owner": "course-specialist-assessments",
+          "status": "declared"
+        },
+        "mastery_owner": {
+          "owner": "course-specialist-assessments",
+          "status": "declared"
+        },
+        "persistence": {
+          "owner": "course-native-learner-scope",
+          "schema": "specialist-course-record",
+          "status": "declared"
+        },
+        "portfolio_publisher": {
+          "owner": "courses/shared/high-school-english-continuation.js",
+          "status": "declared"
+        },
+        "completion_record": {
+          "owner": "specialist-course-evaluator",
+          "status": "declared"
+        }
+      }
     },
     {
       "id": "english-12",
@@ -104,7 +350,42 @@
       "format": "json-curriculum+html-execution",
       "assessment_authority": "course-specialist-assessments",
       "upgrade": "verified-reading-spine+vertical-rubrics",
-      "status": "existing-specialist-engine"
+      "status": "existing-specialist-engine",
+      "authority_contract": {
+        "current_lesson_resolver": {
+          "owner": "courses/shared/high-school-english-continuation.js",
+          "status": "declared"
+        },
+        "weekly_assessment_owner": {
+          "owner": "course-specialist-assessments",
+          "status": "declared"
+        },
+        "midterm_owner": {
+          "owner": "course-specialist-assessments",
+          "status": "declared"
+        },
+        "final_owner": {
+          "owner": "course-specialist-assessments",
+          "status": "declared"
+        },
+        "mastery_owner": {
+          "owner": "course-specialist-assessments",
+          "status": "declared"
+        },
+        "persistence": {
+          "owner": "course-native-learner-scope",
+          "schema": "specialist-course-record",
+          "status": "declared"
+        },
+        "portfolio_publisher": {
+          "owner": "courses/shared/high-school-english-continuation.js",
+          "status": "declared"
+        },
+        "completion_record": {
+          "owner": "specialist-course-evaluator",
+          "status": "declared"
+        }
+      }
     },
     {
       "id": "integrated-science-9",
@@ -116,7 +397,42 @@
       "format": "json-curriculum+html-execution",
       "assessment_authority": "course-specialist-assessments",
       "upgrade": "lab-evidence+retention",
-      "status": "existing-specialist-engine"
+      "status": "existing-specialist-engine",
+      "authority_contract": {
+        "current_lesson_resolver": {
+          "owner": "courses/shared/high-school-science-continuation.js",
+          "status": "declared"
+        },
+        "weekly_assessment_owner": {
+          "owner": "course-specialist-assessments",
+          "status": "declared"
+        },
+        "midterm_owner": {
+          "owner": "course-specialist-assessments",
+          "status": "declared"
+        },
+        "final_owner": {
+          "owner": "course-specialist-assessments",
+          "status": "declared"
+        },
+        "mastery_owner": {
+          "owner": "course-specialist-assessments",
+          "status": "declared"
+        },
+        "persistence": {
+          "owner": "course-native-learner-scope",
+          "schema": "specialist-course-record",
+          "status": "declared"
+        },
+        "portfolio_publisher": {
+          "owner": "courses/shared/high-school-science-continuation.js",
+          "status": "declared"
+        },
+        "completion_record": {
+          "owner": "specialist-course-evaluator",
+          "status": "declared"
+        }
+      }
     },
     {
       "id": "biology-10",
@@ -128,7 +444,42 @@
       "format": "json-curriculum+html-execution",
       "assessment_authority": "course-specialist-assessments",
       "upgrade": "lab-evidence+retention",
-      "status": "existing-specialist-engine"
+      "status": "existing-specialist-engine",
+      "authority_contract": {
+        "current_lesson_resolver": {
+          "owner": "courses/shared/high-school-science-continuation.js",
+          "status": "declared"
+        },
+        "weekly_assessment_owner": {
+          "owner": "course-specialist-assessments",
+          "status": "declared"
+        },
+        "midterm_owner": {
+          "owner": "course-specialist-assessments",
+          "status": "declared"
+        },
+        "final_owner": {
+          "owner": "course-specialist-assessments",
+          "status": "declared"
+        },
+        "mastery_owner": {
+          "owner": "course-specialist-assessments",
+          "status": "declared"
+        },
+        "persistence": {
+          "owner": "course-native-learner-scope",
+          "schema": "specialist-course-record",
+          "status": "declared"
+        },
+        "portfolio_publisher": {
+          "owner": "courses/shared/high-school-science-continuation.js",
+          "status": "declared"
+        },
+        "completion_record": {
+          "owner": "specialist-course-evaluator",
+          "status": "declared"
+        }
+      }
     },
     {
       "id": "chemistry-11",
@@ -140,7 +491,42 @@
       "format": "json-curriculum+html-execution",
       "assessment_authority": "courses/science/chemistry-11/question-bank.js",
       "upgrade": "eight-anchor-investigations+retention",
-      "status": "existing-specialist-engine"
+      "status": "existing-specialist-engine",
+      "authority_contract": {
+        "current_lesson_resolver": {
+          "owner": "courses/shared/high-school-science-continuation.js",
+          "status": "declared"
+        },
+        "weekly_assessment_owner": {
+          "owner": "courses/science/chemistry-11/question-bank.js",
+          "status": "declared"
+        },
+        "midterm_owner": {
+          "owner": "courses/science/chemistry-11/question-bank.js",
+          "status": "declared"
+        },
+        "final_owner": {
+          "owner": "courses/science/chemistry-11/question-bank.js",
+          "status": "declared"
+        },
+        "mastery_owner": {
+          "owner": "courses/science/chemistry-11/question-bank.js",
+          "status": "declared"
+        },
+        "persistence": {
+          "owner": "course-native-learner-scope",
+          "schema": "specialist-course-record",
+          "status": "declared"
+        },
+        "portfolio_publisher": {
+          "owner": "courses/shared/high-school-science-continuation.js",
+          "status": "declared"
+        },
+        "completion_record": {
+          "owner": "specialist-course-evaluator",
+          "status": "declared"
+        }
+      }
     },
     {
       "id": "physics-engineering-12",
@@ -152,7 +538,42 @@
       "format": "json-curriculum+html-execution",
       "assessment_authority": "courses/science/physics-engineering-12/question-bank.js",
       "upgrade": "36-week-lab-engine+delayed-retrieval",
-      "status": "existing-specialist-engine"
+      "status": "existing-specialist-engine",
+      "authority_contract": {
+        "current_lesson_resolver": {
+          "owner": "courses/shared/high-school-science-continuation.js",
+          "status": "declared"
+        },
+        "weekly_assessment_owner": {
+          "owner": "courses/science/physics-engineering-12/question-bank.js",
+          "status": "declared"
+        },
+        "midterm_owner": {
+          "owner": "courses/science/physics-engineering-12/question-bank.js",
+          "status": "declared"
+        },
+        "final_owner": {
+          "owner": "courses/science/physics-engineering-12/question-bank.js",
+          "status": "declared"
+        },
+        "mastery_owner": {
+          "owner": "courses/science/physics-engineering-12/question-bank.js",
+          "status": "declared"
+        },
+        "persistence": {
+          "owner": "course-native-learner-scope",
+          "schema": "specialist-course-record",
+          "status": "declared"
+        },
+        "portfolio_publisher": {
+          "owner": "courses/shared/high-school-science-continuation.js",
+          "status": "declared"
+        },
+        "completion_record": {
+          "owner": "specialist-course-evaluator",
+          "status": "declared"
+        }
+      }
     },
     {
       "id": "social-studies-9",
@@ -164,7 +585,42 @@
       "format": "json-curriculum+html-execution",
       "assessment_authority": "course-specialist-assessments",
       "upgrade": "source-analysis+retrieval",
-      "status": "existing-specialist-engine"
+      "status": "existing-specialist-engine",
+      "authority_contract": {
+        "current_lesson_resolver": {
+          "owner": "courses/social-studies/grade-09/index.html",
+          "status": "declared"
+        },
+        "weekly_assessment_owner": {
+          "owner": "course-specialist-assessments",
+          "status": "declared"
+        },
+        "midterm_owner": {
+          "owner": "course-specialist-assessments",
+          "status": "declared"
+        },
+        "final_owner": {
+          "owner": "course-specialist-assessments",
+          "status": "declared"
+        },
+        "mastery_owner": {
+          "owner": "course-specialist-assessments",
+          "status": "declared"
+        },
+        "persistence": {
+          "owner": "course-native-learner-scope",
+          "schema": "specialist-course-record",
+          "status": "declared"
+        },
+        "portfolio_publisher": {
+          "owner": "pending-standardization",
+          "status": "pending-verification"
+        },
+        "completion_record": {
+          "owner": "specialist-course-evaluator",
+          "status": "declared"
+        }
+      }
     },
     {
       "id": "social-studies-10",
@@ -176,7 +632,42 @@
       "format": "json-curriculum+html-execution",
       "assessment_authority": "course-specialist-assessments",
       "upgrade": "source-analysis+retrieval",
-      "status": "existing-specialist-engine"
+      "status": "existing-specialist-engine",
+      "authority_contract": {
+        "current_lesson_resolver": {
+          "owner": "courses/social-studies/grade-10/index.html",
+          "status": "declared"
+        },
+        "weekly_assessment_owner": {
+          "owner": "course-specialist-assessments",
+          "status": "declared"
+        },
+        "midterm_owner": {
+          "owner": "course-specialist-assessments",
+          "status": "declared"
+        },
+        "final_owner": {
+          "owner": "course-specialist-assessments",
+          "status": "declared"
+        },
+        "mastery_owner": {
+          "owner": "course-specialist-assessments",
+          "status": "declared"
+        },
+        "persistence": {
+          "owner": "course-native-learner-scope",
+          "schema": "specialist-course-record",
+          "status": "declared"
+        },
+        "portfolio_publisher": {
+          "owner": "pending-standardization",
+          "status": "pending-verification"
+        },
+        "completion_record": {
+          "owner": "specialist-course-evaluator",
+          "status": "declared"
+        }
+      }
     },
     {
       "id": "social-studies-11",
@@ -188,7 +679,42 @@
       "format": "json-curriculum+html-execution",
       "assessment_authority": "course-specialist-assessments",
       "upgrade": "source-analysis+retrieval",
-      "status": "existing-specialist-engine"
+      "status": "existing-specialist-engine",
+      "authority_contract": {
+        "current_lesson_resolver": {
+          "owner": "courses/social-studies/grade-11/index.html",
+          "status": "declared"
+        },
+        "weekly_assessment_owner": {
+          "owner": "course-specialist-assessments",
+          "status": "declared"
+        },
+        "midterm_owner": {
+          "owner": "course-specialist-assessments",
+          "status": "declared"
+        },
+        "final_owner": {
+          "owner": "course-specialist-assessments",
+          "status": "declared"
+        },
+        "mastery_owner": {
+          "owner": "course-specialist-assessments",
+          "status": "declared"
+        },
+        "persistence": {
+          "owner": "course-native-learner-scope",
+          "schema": "specialist-course-record",
+          "status": "declared"
+        },
+        "portfolio_publisher": {
+          "owner": "pending-standardization",
+          "status": "pending-verification"
+        },
+        "completion_record": {
+          "owner": "specialist-course-evaluator",
+          "status": "declared"
+        }
+      }
     },
     {
       "id": "social-studies-12",
@@ -200,7 +726,42 @@
       "format": "json-curriculum+html-execution",
       "assessment_authority": "courses/social-studies/grade-12/index.html",
       "upgrade": "source-anchored-assessment-bank",
-      "status": "existing-specialist-engine"
+      "status": "existing-specialist-engine",
+      "authority_contract": {
+        "current_lesson_resolver": {
+          "owner": "courses/social-studies/grade-12/index.html",
+          "status": "declared"
+        },
+        "weekly_assessment_owner": {
+          "owner": "courses/social-studies/grade-12/index.html",
+          "status": "declared"
+        },
+        "midterm_owner": {
+          "owner": "courses/social-studies/grade-12/index.html",
+          "status": "declared"
+        },
+        "final_owner": {
+          "owner": "courses/social-studies/grade-12/index.html",
+          "status": "declared"
+        },
+        "mastery_owner": {
+          "owner": "courses/social-studies/grade-12/index.html",
+          "status": "declared"
+        },
+        "persistence": {
+          "owner": "course-native-learner-scope",
+          "schema": "specialist-course-record",
+          "status": "declared"
+        },
+        "portfolio_publisher": {
+          "owner": "pending-standardization",
+          "status": "pending-verification"
+        },
+        "completion_record": {
+          "owner": "specialist-course-evaluator",
+          "status": "declared"
+        }
+      }
     },
     {
       "id": "physical-education-10",
@@ -212,7 +773,42 @@
       "format": "json-curriculum+html-execution",
       "assessment_authority": "teacher-reviewed-provisional-browser-attempts",
       "upgrade": "36x5+15-current-5-delayed",
-      "status": "existing-specialist-engine"
+      "status": "existing-specialist-engine",
+      "authority_contract": {
+        "current_lesson_resolver": {
+          "owner": "courses/physical-education/grade-10.html",
+          "status": "declared"
+        },
+        "weekly_assessment_owner": {
+          "owner": "teacher-reviewed-provisional-browser-attempts",
+          "status": "declared"
+        },
+        "midterm_owner": {
+          "owner": "teacher-reviewed-provisional-browser-attempts",
+          "status": "declared"
+        },
+        "final_owner": {
+          "owner": "teacher-reviewed-provisional-browser-attempts",
+          "status": "declared"
+        },
+        "mastery_owner": {
+          "owner": "teacher-reviewed-provisional-browser-attempts",
+          "status": "declared"
+        },
+        "persistence": {
+          "owner": "course-native-learner-scope",
+          "schema": "specialist-course-record",
+          "status": "declared"
+        },
+        "portfolio_publisher": {
+          "owner": "pending-standardization",
+          "status": "pending-verification"
+        },
+        "completion_record": {
+          "owner": "specialist-course-evaluator",
+          "status": "declared"
+        }
+      }
     },
     {
       "id": "physical-education-11",
@@ -224,7 +820,42 @@
       "format": "json-curriculum+html-execution",
       "assessment_authority": "teacher-reviewed-provisional-browser-attempts",
       "upgrade": "36x5+15-current-5-delayed",
-      "status": "existing-specialist-engine"
+      "status": "existing-specialist-engine",
+      "authority_contract": {
+        "current_lesson_resolver": {
+          "owner": "courses/physical-education/grade-11.html",
+          "status": "declared"
+        },
+        "weekly_assessment_owner": {
+          "owner": "teacher-reviewed-provisional-browser-attempts",
+          "status": "declared"
+        },
+        "midterm_owner": {
+          "owner": "teacher-reviewed-provisional-browser-attempts",
+          "status": "declared"
+        },
+        "final_owner": {
+          "owner": "teacher-reviewed-provisional-browser-attempts",
+          "status": "declared"
+        },
+        "mastery_owner": {
+          "owner": "teacher-reviewed-provisional-browser-attempts",
+          "status": "declared"
+        },
+        "persistence": {
+          "owner": "course-native-learner-scope",
+          "schema": "specialist-course-record",
+          "status": "declared"
+        },
+        "portfolio_publisher": {
+          "owner": "pending-standardization",
+          "status": "pending-verification"
+        },
+        "completion_record": {
+          "owner": "specialist-course-evaluator",
+          "status": "declared"
+        }
+      }
     },
     {
       "id": "physical-education-12",
@@ -236,7 +867,42 @@
       "format": "json-curriculum+html-execution",
       "assessment_authority": "teacher-reviewed-provisional-browser-attempts",
       "upgrade": "36x5+15-current-5-delayed",
-      "status": "existing-specialist-engine"
+      "status": "existing-specialist-engine",
+      "authority_contract": {
+        "current_lesson_resolver": {
+          "owner": "courses/physical-education/grade-12.html",
+          "status": "declared"
+        },
+        "weekly_assessment_owner": {
+          "owner": "teacher-reviewed-provisional-browser-attempts",
+          "status": "declared"
+        },
+        "midterm_owner": {
+          "owner": "teacher-reviewed-provisional-browser-attempts",
+          "status": "declared"
+        },
+        "final_owner": {
+          "owner": "teacher-reviewed-provisional-browser-attempts",
+          "status": "declared"
+        },
+        "mastery_owner": {
+          "owner": "teacher-reviewed-provisional-browser-attempts",
+          "status": "declared"
+        },
+        "persistence": {
+          "owner": "course-native-learner-scope",
+          "schema": "specialist-course-record",
+          "status": "declared"
+        },
+        "portfolio_publisher": {
+          "owner": "pending-standardization",
+          "status": "pending-verification"
+        },
+        "completion_record": {
+          "owner": "specialist-course-evaluator",
+          "status": "declared"
+        }
+      }
     },
     {
       "id": "senior-capstone",
@@ -248,7 +914,42 @@
       "format": "json-curriculum+html-execution",
       "assessment_authority": "evaluator-review-required",
       "upgrade": "36-week-process-evidence+defense",
-      "status": "existing-specialist-engine"
+      "status": "existing-specialist-engine",
+      "authority_contract": {
+        "current_lesson_resolver": {
+          "owner": "courses/capstone/senior-capstone/index.html",
+          "status": "declared"
+        },
+        "weekly_assessment_owner": {
+          "owner": "evaluator-review-required",
+          "status": "declared"
+        },
+        "midterm_owner": {
+          "owner": "evaluator-review-required",
+          "status": "declared"
+        },
+        "final_owner": {
+          "owner": "evaluator-review-required",
+          "status": "declared"
+        },
+        "mastery_owner": {
+          "owner": "evaluator-review-required",
+          "status": "declared"
+        },
+        "persistence": {
+          "owner": "course-native-learner-scope",
+          "schema": "specialist-course-record",
+          "status": "declared"
+        },
+        "portfolio_publisher": {
+          "owner": "courses/capstone/senior-capstone/index.html",
+          "status": "declared"
+        },
+        "completion_record": {
+          "owner": "specialist-course-evaluator",
+          "status": "declared"
+        }
+      }
     },
     {
       "id": "precalculus-trigonometry",
@@ -261,7 +962,42 @@
       "assessment_authority": "not-complete",
       "upgrade": "verified-outbound-handoff; return-record bridge pending",
       "status": "placement-handoff",
-      "execution_note": "Higher Learning target exists as a complete 36-week course; High School return-record synchronization is not yet certified."
+      "execution_note": "Higher Learning target exists as a complete 36-week course; High School return-record synchronization is not yet certified.",
+      "authority_contract": {
+        "current_lesson_resolver": {
+          "owner": "higher-learning-handoff",
+          "status": "verified-outbound-only"
+        },
+        "weekly_assessment_owner": {
+          "owner": "higher-learning-destination",
+          "status": "pending-verification"
+        },
+        "midterm_owner": {
+          "owner": "higher-learning-destination",
+          "status": "pending-verification"
+        },
+        "final_owner": {
+          "owner": "higher-learning-destination",
+          "status": "pending-verification"
+        },
+        "mastery_owner": {
+          "owner": "higher-learning-destination",
+          "status": "pending-verification"
+        },
+        "persistence": {
+          "owner": "cross-repository",
+          "schema": "return-record-bridge",
+          "status": "pending-verification"
+        },
+        "portfolio_publisher": {
+          "owner": "cross-repository-return-bridge",
+          "status": "pending-verification"
+        },
+        "completion_record": {
+          "owner": "higher-learning-destination",
+          "status": "pending-verification"
+        }
+      }
     },
     {
       "id": "calculus-1",
@@ -274,7 +1010,42 @@
       "assessment_authority": "not-complete",
       "upgrade": "verified-outbound-handoff; return-record bridge pending",
       "status": "placement-handoff",
-      "execution_note": "Higher Learning target exists as a complete 36-week course; High School return-record synchronization is not yet certified."
+      "execution_note": "Higher Learning target exists as a complete 36-week course; High School return-record synchronization is not yet certified.",
+      "authority_contract": {
+        "current_lesson_resolver": {
+          "owner": "higher-learning-handoff",
+          "status": "verified-outbound-only"
+        },
+        "weekly_assessment_owner": {
+          "owner": "higher-learning-destination",
+          "status": "pending-verification"
+        },
+        "midterm_owner": {
+          "owner": "higher-learning-destination",
+          "status": "pending-verification"
+        },
+        "final_owner": {
+          "owner": "higher-learning-destination",
+          "status": "pending-verification"
+        },
+        "mastery_owner": {
+          "owner": "higher-learning-destination",
+          "status": "pending-verification"
+        },
+        "persistence": {
+          "owner": "cross-repository",
+          "schema": "return-record-bridge",
+          "status": "pending-verification"
+        },
+        "portfolio_publisher": {
+          "owner": "cross-repository-return-bridge",
+          "status": "pending-verification"
+        },
+        "completion_record": {
+          "owner": "higher-learning-destination",
+          "status": "pending-verification"
+        }
+      }
     }
   ]
 }
