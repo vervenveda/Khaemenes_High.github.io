@@ -41,4 +41,24 @@ for(const [label,code] of [["portfolio-enhancer",enhancer],["grade-09-toolbar",g
 for(const [i,match] of [...page.matchAll(/<script(?: [^>]*)?>([\s\S]*?)<\/script>/g)].entries()){
  if(match[1].trim())new vm.Script(match[1],{filename:"portfolio-inline-"+i});
 }
-console.log("STUDENT PORTFOLIO: PASS (all four profile buttons, single workspace, scoped evidence, VNV tools, forms, backup/review).");
+const academic=read("portfolio/portfolio-academic-report.js");
+check(page.includes('id="homeschoolReport"'),"homeschool academic report section present");
+check(page.includes('id="homeschoolReportBody"'),"course report mount present");
+for(const action of ["refreshReport","printReport","exportReport"])
+ check(page.includes('id="'+action+'"'),"report action "+action);
+check(page.includes("khaemenes-learning-continuation.js"),"Academy continuation ledger loaded");
+check(page.includes("high-school-course-pins.js")&&page.includes("high-school-eight-class.js")&&page.includes("high-school-profile-grade-context.js"),"shared course and identity authorities reused");
+check(page.includes("portfolio-academic-report.js"),"read-only academic report engine loaded");
+check(academic.includes("ledger?.readLearner?.(user.id)"),"actual learner-scoped academic evidence read");
+check(academic.includes('gradeContext?.active?.()')&&academic.includes('pinApi?.activeLearner?.()'),"three-way learner and grade check");
+check(academic.includes('["quiz","test"].includes(a.kind)'),"score types are explicit assessed items");
+check(academic.includes('Number.isFinite(a.earned)')&&academic.includes('Number.isFinite(a.possible)'),"require real scored points");
+check(academic.includes("Midterm")&&academic.includes("Final")&&academic.includes("Other test"),"quiz midterm final test classifications");
+check(academic.includes('officialFinalGrade:null,creditAwarded:null'),"final transcript grade and credit never invented");
+check(academic.includes('attendanceHours:"Not supplied"')&&academic.includes('daysOfInstruction:"Not supplied"'),"attendance and hours never fabricated");
+check(academic.includes('portfolioEvidenceCount:evidenceCount(user)'),"student-authored portfolio evidence count included");
+check(academic.includes('reportType:"evidence-summary-not-certified-transcript"'),"academic report clearly preliminary");
+check(css.includes(".portfolio-report-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr))"),"balanced course report grid");
+check(css.includes("body.portfolio-report-print .portfolio-main> :not(#homeschoolReport)"),"report-only printable layout");
+new vm.Script(academic,{filename:"portfolio-academic-report.js"});
+console.log("STUDENT PORTFOLIO & HOMESCHOOL PROGRESS: PASS (all four profile buttons, single workspace, scoped evidence, VNV tools, forms, backup/review).");
