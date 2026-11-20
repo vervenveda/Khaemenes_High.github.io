@@ -9838,6 +9838,296 @@
       ],
       "reviewedAt": "2026-10-25",
       "reviewMethod": "human-authored unit-evidence-model misconception review"
+    },
+    "v2-u2-ionic-mobility": {
+      "itemId": "v2-u2-ionic-mobility",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "A substance does not conduct electricity as a solid but conducts when molten. Which particle-level explanation best supports an ionic-lattice model?",
+      "answerIndex": 1,
+      "correctRationale": "An ionic solid contains charged particles, but they cannot carry current through the rigid lattice; melting permits ion mobility.",
+      "distractors": [
+        {
+          "optionIndex": 0,
+          "optionText": "Its ions disappear when the solid melts.",
+          "misconceptionTag": "solid-has-no-ions",
+          "rationale": "The solid can contain ions even though those ions are not free to move through the lattice."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "Its nuclei begin moving between atoms only after melting.",
+          "misconceptionTag": "nuclear-transfer-melting",
+          "rationale": "Melting changes particle mobility and arrangement; it does not cause nuclei to move between atoms."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "Its conductivity is determined only by molar mass.",
+          "misconceptionTag": "molar-mass-controls-conductivity",
+          "rationale": "Electrical conduction depends on mobile charge carriers, not molar mass alone."
+        }
+      ],
+      "reviewedAt": "2026-11-20",
+      "reviewMethod": "human-authored misconception review"
+    },
+    "v2-u2-polarity-geometry": {
+      "itemId": "v2-u2-polarity-geometry",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "Two molecules contain bonds with similar polarity, yet one molecule is polar and the other is nonpolar. Which explanation is most defensible?",
+      "answerIndex": 3,
+      "correctRationale": "Overall molecular polarity depends on both bond dipoles and their three-dimensional arrangement.",
+      "distractors": [
+        {
+          "optionIndex": 0,
+          "optionText": "The nonpolar molecule must contain no electrons.",
+          "misconceptionTag": "nonpolar-means-no-electrons",
+          "rationale": "Nonpolar molecules still contain electrons; nonpolarity refers to the net distribution of charge."
+        },
+        {
+          "optionIndex": 1,
+          "optionText": "The polar molecule must have the larger molar mass.",
+          "misconceptionTag": "mass-determines-polarity",
+          "rationale": "Molar mass does not by itself determine whether bond dipoles cancel or reinforce."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "Bond polarity always determines molecular polarity without considering shape.",
+          "misconceptionTag": "ignore-geometry-polarity",
+          "rationale": "Bond polarity alone is insufficient because vector cancellation depends on molecular geometry."
+        }
+      ],
+      "reviewedAt": "2026-11-20",
+      "reviewMethod": "human-authored misconception review"
+    },
+    "v2-u3-imf-boiling": {
+      "itemId": "v2-u3-imf-boiling",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "Two molecular substances have similar molar masses. One forms extensive hydrogen bonds and has the higher boiling point. Which explanation best connects structure to the observation?",
+      "answerIndex": 2,
+      "correctRationale": "Boiling separates molecules from one another; stronger intermolecular attractions raise the energy needed for that separation.",
+      "distractors": [
+        {
+          "optionIndex": 0,
+          "optionText": "The higher boiling point proves its covalent bonds break during boiling.",
+          "misconceptionTag": "boiling-breaks-covalent-bonds",
+          "rationale": "Ordinary boiling overcomes intermolecular attractions rather than breaking the molecule's covalent framework."
+        },
+        {
+          "optionIndex": 1,
+          "optionText": "Similar molar masses guarantee identical intermolecular attractions.",
+          "misconceptionTag": "mass-guarantees-same-imf",
+          "rationale": "Similar molar mass does not guarantee similar polarity, hydrogen bonding, or intermolecular attraction."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "Hydrogen bonding makes every molecule chemically react before it can evaporate.",
+          "misconceptionTag": "hydrogen-bonding-requires-reaction",
+          "rationale": "Hydrogen bonding is an intermolecular attraction and does not require a chemical reaction before vaporization."
+        }
+      ],
+      "reviewedAt": "2026-11-20",
+      "reviewMethod": "human-authored misconception review"
+    },
+    "v2-u3-gas-pressure-model": {
+      "itemId": "v2-u3-gas-pressure-model",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "A gas is compressed at constant temperature. Which molecular explanation best accounts for the resulting pressure increase?",
+      "answerIndex": 3,
+      "correctRationale": "At constant temperature, reducing volume increases how frequently particles strike the container walls.",
+      "distractors": [
+        {
+          "optionIndex": 0,
+          "optionText": "Compression increases the number of gas particles by creating matter.",
+          "misconceptionTag": "compression-creates-particles",
+          "rationale": "Compression changes volume, not the number of particles in a closed sample."
+        },
+        {
+          "optionIndex": 1,
+          "optionText": "Compression raises the temperature even though temperature is stated constant.",
+          "misconceptionTag": "ignore-constant-temperature",
+          "rationale": "The stated condition holds temperature constant, so the explanation should not rely on a temperature increase."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "Compression removes collisions between particles and the container walls.",
+          "misconceptionTag": "compression-removes-collisions",
+          "rationale": "Gas pressure arises from wall collisions; compression increases rather than removes their frequency."
+        }
+      ],
+      "reviewedAt": "2026-11-20",
+      "reviewMethod": "human-authored misconception review"
+    },
+    "v2-u4-stoich-coefficients": {
+      "itemId": "v2-u4-stoich-coefficients",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "In a balanced chemical equation, what information allows a chemist to convert moles of one substance to moles of another?",
+      "answerIndex": 0,
+      "correctRationale": "Balanced-equation coefficients give the mole ratios connecting reactants and products.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "The ratio of their atomic numbers.",
+          "misconceptionTag": "atomic-number-as-mole-ratio",
+          "rationale": "Atomic number identifies an element but does not provide reaction stoichiometric ratios."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "The difference between their physical states.",
+          "misconceptionTag": "phase-as-mole-ratio",
+          "rationale": "Physical-state labels can matter chemically, but they do not define the mole conversion ratio."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "The order in which the formulas are written.",
+          "misconceptionTag": "formula-order-as-ratio",
+          "rationale": "Equation order is a notation choice; the numerical coefficients encode stoichiometric proportion."
+        }
+      ],
+      "reviewedAt": "2026-11-20",
+      "reviewMethod": "human-authored misconception review"
+    },
+    "v2-u4-limiting-evidence": {
+      "itemId": "v2-u4-limiting-evidence",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "What must be compared to identify the limiting reactant in a reaction mixture?",
+      "answerIndex": 2,
+      "correctRationale": "A limiting reactant is identified by comparing available quantities with the stoichiometric amount required for each reactant.",
+      "distractors": [
+        {
+          "optionIndex": 0,
+          "optionText": "Only the reactants' molar masses.",
+          "misconceptionTag": "molar-mass-alone-limiting",
+          "rationale": "Molar mass helps convert mass to moles, but limiting status depends on available amount relative to reaction ratio."
+        },
+        {
+          "optionIndex": 1,
+          "optionText": "Only which reactant appears first in the equation.",
+          "misconceptionTag": "equation-order-limiting",
+          "rationale": "Writing order has no chemical authority over which reactant is consumed first."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "Only which reactant has the larger coefficient.",
+          "misconceptionTag": "largest-coefficient-limiting",
+          "rationale": "A larger coefficient does not make a reactant limiting unless the available amount is insufficient relative to that ratio."
+        }
+      ],
+      "reviewedAt": "2026-11-20",
+      "reviewMethod": "human-authored misconception review"
+    },
+    "v2-u5-catalyst-equilibrium": {
+      "itemId": "v2-u5-catalyst-equilibrium",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "Which statement correctly distinguishes the effect of a catalyst from the effect of changing equilibrium conditions?",
+      "answerIndex": 1,
+      "correctRationale": "Catalysts accelerate approach to equilibrium by lowering pathway barriers; they do not change K at a fixed temperature.",
+      "distractors": [
+        {
+          "optionIndex": 0,
+          "optionText": "A catalyst makes only the forward reaction faster, permanently shifting equilibrium toward products.",
+          "misconceptionTag": "catalyst-forward-only",
+          "rationale": "A catalyst provides an alternative pathway for both forward and reverse processes rather than speeding only one direction."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "A catalyst increases product energy so equilibrium favors products.",
+          "misconceptionTag": "catalyst-changes-product-energy",
+          "rationale": "Catalysis changes kinetic pathway barriers, not the thermodynamic energy difference between reactants and products."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "A catalyst changes the reaction stoichiometry to create a new equilibrium constant.",
+          "misconceptionTag": "catalyst-changes-stoichiometry",
+          "rationale": "A catalyst does not rewrite the net balanced reaction or thereby create a different equilibrium constant."
+        }
+      ],
+      "reviewedAt": "2026-11-20",
+      "reviewMethod": "human-authored misconception review"
+    },
+    "v2-u6-hess-path": {
+      "itemId": "v2-u6-hess-path",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "Why can enthalpy changes from several reaction steps be added to obtain the enthalpy change of the overall reaction?",
+      "answerIndex": 3,
+      "correctRationale": "Hess's law follows from enthalpy being a state function, so the net change depends on endpoints rather than the chosen path.",
+      "distractors": [
+        {
+          "optionIndex": 0,
+          "optionText": "Because every reaction has the same activation energy.",
+          "misconceptionTag": "same-activation-energy",
+          "rationale": "Hess's law does not require reaction steps to have identical activation energies."
+        },
+        {
+          "optionIndex": 1,
+          "optionText": "Because catalysts force all reactions through one mechanism.",
+          "misconceptionTag": "one-mechanism-hess",
+          "rationale": "Thermochemical equations can be combined without requiring a common mechanism or catalyst."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "Because temperature never affects enthalpy values.",
+          "misconceptionTag": "temperature-never-matters",
+          "rationale": "Enthalpy values can depend on conditions; Hess's law rests on state-function behavior, not temperature irrelevance."
+        }
+      ],
+      "reviewedAt": "2026-11-20",
+      "reviewMethod": "human-authored misconception review"
+    },
+    "v2-u8-ph-scale": {
+      "itemId": "v2-u8-ph-scale",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "For an ideal strong monoprotic acid with [H⁺] = 1.0 × 10⁻³ mol/L, what pH is expected?",
+      "answerIndex": 0,
+      "correctRationale": "pH = −log10[H⁺], so −log10(1.0 × 10⁻³) = 3.0.",
+      "distractors": [
+        {
+          "optionIndex": 1,
+          "optionText": "11.0",
+          "misconceptionTag": "ph-complement-confusion",
+          "rationale": "A pH of 11 would correspond to a much lower hydrogen-ion concentration, not 10⁻³ mol/L."
+        },
+        {
+          "optionIndex": 2,
+          "optionText": "0.001",
+          "misconceptionTag": "ph-equals-concentration",
+          "rationale": "pH is logarithmic and is not numerically equal to the hydrogen-ion concentration."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "1.0 × 10³",
+          "misconceptionTag": "inverse-concentration-as-ph",
+          "rationale": "Taking the reciprocal of concentration does not calculate pH; the logarithmic definition must be used."
+        }
+      ],
+      "reviewedAt": "2026-11-20",
+      "reviewMethod": "human-authored misconception review"
+    },
+    "v2-cap-decision-uncertainty": {
+      "itemId": "v2-cap-decision-uncertainty",
+      "reviewStatus": "reviewed-v1",
+      "prompt": "A material ranks first in a weighted decision matrix, but small changes in the uncertainty range make another material rank first. What is the strongest conclusion?",
+      "answerIndex": 2,
+      "correctRationale": "A ranking that changes under plausible assumptions is sensitive; the decision should disclose that uncertainty and seek discriminating evidence.",
+      "distractors": [
+        {
+          "optionIndex": 0,
+          "optionText": "The first material is proven best because it won the original calculation.",
+          "misconceptionTag": "single-ranking-proves-best",
+          "rationale": "A single ranking does not justify certainty when plausible input changes reverse the result."
+        },
+        {
+          "optionIndex": 1,
+          "optionText": "The matrix should be discarded because quantitative comparison is never useful.",
+          "misconceptionTag": "reject-quantitative-tools",
+          "rationale": "Sensitivity does not make the method useless; it shows where the decision depends on uncertain inputs."
+        },
+        {
+          "optionIndex": 3,
+          "optionText": "The weights should be hidden so stakeholders cannot challenge the ranking.",
+          "misconceptionTag": "hide-decision-weights",
+          "rationale": "Transparent criteria and weights are necessary for accountable engineering decisions and stakeholder review."
+        }
+      ],
+      "reviewedAt": "2026-11-20",
+      "reviewMethod": "human-authored misconception review"
     }
   },
   "reviewedFamilies": [
