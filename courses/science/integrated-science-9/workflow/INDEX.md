@@ -2,6 +2,7 @@
 
 | Date | Type | Entry | State |
 | --- | --- | --- | --- |
+| 2026-11-20 | retention · weekly mastery | [Science 9 delayed-retention implementation](logs/2026/11/2026-11-20-delayed-retention-implementation.md) | Week 2–36 = 8 current + 2 delayed; delayed score recorded; 80% authority unchanged |
 | 2026-11-20 | routing · Student Profile | [Student Profile → Science 9 routing repair](logs/2026/11/2026-11-20-student-profile-routing-repair.md) | Active weekly work routes to detailed lesson; Unit 00 fallback restored; routing validator PASS |
 | 2026-11-20 | closeout · laboratory evidence | [Course-wide laboratory/evidence closeout](logs/2026/11/2026-11-20-coursewide-laboratory-evidence-closeout.md) | 39 lab/evidence workspaces + 28 linked checks protected; Unit 12 totals aligned; source PASS |
 | 2026-11-20 | Units 10–12 · laboratory evidence | [Laboratory evidence layer](logs/2026/11/2026-11-20-units10-12-laboratory-evidence-layer.md) | 24 lab/check surfaces canonicalized; engines + 7/8 thresholds + zero-baseline guard retained; source PASS |
