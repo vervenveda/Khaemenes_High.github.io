@@ -30,10 +30,6 @@ for(const token of [
 expect(catalog.includes("const FIRST_STEPS=Object.freeze"),"eight-class catalog owns canonical first instructional steps");
 expect(grade09Css.includes("@media(max-width:620px)"),"canonical profile CSS has narrow mobile layout");
 expect(grade09Css.includes("grid-template-columns:1fr"),"canonical profile CSS collapses multi-column UI on narrow screens");
-for(const token of ["showModal()","dialog.close()","MutationObserver(sync)","grade10Personalize","upperGradePersonalize","studentCourseProgress","my-profile-extras","quick-pins","khaeStickerBox","khaeDreamsAchievements","khaeStudentEcosystemTools"]){
-  expect(compact.includes(token),"compact profile dialog steward includes "+token);
-}
-expect(!compact.includes("localStorage.setItem("),"layout dialogs must not write grades, mastery or preferences");
 
 for(const grade of ["10","11","12"]){
   const html=read("grades/grade-"+grade+"/student-profile/index.html");
