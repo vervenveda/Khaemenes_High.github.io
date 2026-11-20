@@ -10,6 +10,7 @@ on:
       - 'grades/shared/upper-grade-daily-focus.js'
       - 'grades/grade-09/student-profile/**'
       - 'grades/grade-1*/student-profile/index.html'
+      - 'grades/grade-1*/student-profile/daily-lessons/index.html'
       - 'tools/test-high-school-english-class-routes.mjs'
       - 'tools/test-high-school-english-student-doorways.mjs'
       - '.github/workflows/high-school-english-class-routes.yml'
