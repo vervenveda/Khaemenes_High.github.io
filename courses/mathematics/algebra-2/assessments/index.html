@@ -23,8 +23,9 @@ footer{min-height:66px;padding:22px 16px;display:grid;place-items:center;backgro
 @media(max-width:760px){.info-strip,.grid,.mastery-grid{grid-template-columns:1fr}}
 @media print{.actions,.info-strip,dialog{display:none!important}body{background:white}.hero{background:white!important;color:black!important;border-bottom:2px solid #999}.hero *{color:black!important}.card,.mastery-card{box-shadow:none}footer{display:none}}
 </style>
+<link rel="stylesheet" href="/Khaemenes_High.github.io/assets/high-school-assessment-shell-v1.css" data-high-assessment-shell-style="v1">
 </head>
-<body data-math-assessment-blueprint="v1" data-assessment-runtime="gateway-single-owner">
+<body data-math-assessment-blueprint="v1" data-assessment-runtime="gateway-single-owner" data-high-assessment-shell="true">
 
 <nav class="breadcrumb" aria-label="Breadcrumb">
   <a href="https://vervenveda.com/">Verve N Veda</a> ›
@@ -32,13 +33,13 @@ footer{min-height:66px;padding:22px 16px;display:grid;place-items:center;backgro
   <a href="../">Algebra II</a> › Assessment Center
 </nav>
 
-<header class="hero"><div class="hero-inner">
+<section class="hero"><div class="hero-inner">
 <p class="kicker">Algebra II · Assessment &amp; Mastery</p>
 <h1>Algebra II Assessment Center</h1>
 <p class="subtitle">One clear pathway from readiness to advanced mastery</p>
 <p class="lead">Use the readiness diagnostic to confirm Algebra I prerequisites, unit mastery checks for progression, and cumulative midterm/final assessments for course-wide evidence.</p>
 <div class="actions"><a class="btn primary" href="../diagnostic/">Readiness Diagnostic</a><a class="btn" href="midterm.html">Midterm</a><a class="btn" href="../">Course Home</a></div>
-</div></header>
+</div></section>
 
 <div class="info-strip" aria-label="Assessment information">
 <button type="button" data-info="mastery">Mastery Standard</button>
@@ -93,12 +94,23 @@ document.getElementById("closeInfo").addEventListener("click",()=>dialog.close()
 dialog.addEventListener("click",e=>{if(e.target===dialog)dialog.close()});
 </script>
 <script src="../../assets/math-learning-tools-v2.js" defer></script>
-<script src="https://vervenveda.com/assets/vnv-ecosystem-toolbar.js" defer></script>
-<script src="../../../../assets/vnv-language.js?v=20261118-high-school-bounded-refresh-1" defer data-official-vnv-language="true"></script>
 
 <script src="../../assets/math-course-manifest-v1.js" defer></script>
 <script src="../../assets/math-progress-contract-v1.js" defer></script>
 <script src="../../assets/math-evidence-router-v1.js" defer></script>
 <script src="../../assets/math-assessment-hub-v1.js" defer></script>
+
+<script src="/Khaemenes_High.github.io/assets/high-school-assessment-class-tools-v1.js" defer data-high-assessment-tools="v1"></script>
+<script src="https://vervenveda.com/assets/khaemenes-campus-phrases.js" defer></script>
+<script src="https://vervenveda.com/assets/khaemenes-interlingual-core.js" defer></script>
+<script src="https://vervenveda.com/Khaemenes_Linguistics.github.io/assets/khaemenes-translator-loader.js?v=1.1.1" defer></script>
+<script src="https://vervenveda.com/assets/vnv-language.js?v=20261108-cream-buttons" defer data-official-vnv-language="true"></script>
+<script src="https://vervenveda.com/assets/vnv-class-tools-toolbar.js?v=1.6.1" defer data-vnv-class-tools="high-assessment"></script>
+<script src="https://vervenveda.com/assets/vnv-333-ticker.js"></script>
+<script src="https://vervenveda.com/assets/vnv-ticker-autopopulate.js" data-vnv-ticker-autopopulate></script>
+<script>VNV_TICKER.autoPopulate({label:"Algebra II Assessments",max:14});</script>
+<script src="https://vervenveda.com/assets/vnv-header-autopopulate.js"></script>
+<script>VNV_HEADER.mount({"title":"Khaemenes Academy","subtitle":"Algebra II · Assessment Center","icon":"K","home":"https://vervenveda.com/Khaemenes_Academy.github.io/","actions":[]});</script>
+<script src="https://vervenveda.com/assets/vnv-ecosystem-toolbar.js" data-official-vnv-ecosystem-toolbar="true"></script>
 </body>
 </html>
