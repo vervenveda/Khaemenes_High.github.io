@@ -136,9 +136,10 @@ summary{cursor:pointer;font-weight:600;padding:8px 0}details details{margin:10px
 @media(max-width:930px){.app{grid-template-columns:1fr}.sidebar{min-height:0;padding:14px;border-bottom:1px solid var(--line)}.sidebar>.navBox:first-of-type{display:flex;gap:8px;flex-wrap:wrap}.sidebar>.navBox:first-of-type .navBtn{width:auto;flex:1;text-align:center;justify-content:center;min-height:44px}.sidebar .brand{margin-bottom:8px}.sidebar>details{margin:4px 0;padding:4px 8px}.main{padding:20px 14px}.next-task{padding:20px}}
 
 </style>
-<link rel="stylesheet" href="../../../assets/vervenveda-parchment.css" data-vervenveda-parchment>
-<link rel="stylesheet" href="../../../assets/grade09-subject-parchment.css?v=20261013" data-grade09-consistency>
-<script defer src="../../../assets/academy-unified-print-header.js"></script><link rel="stylesheet" href="../../../assets/high-navigation-v1.css" data-high-navigation-css>
+<!-- The inline English 9 canonical stylesheet is the sole presentation owner.
+     Remove legacy global parchment and fallback navigation CSS on THIS page.
+     Preserve unified printing, readiness logic and original course work. -->
+<script defer src="../../../assets/academy-unified-print-header.js"></script>
 <script src="/Khaemenes_High.github.io/assets/high-school-root-worker-recovery-v1.js" defer data-high-root-worker-recovery="v1"></script>
   <!-- Canonical VNV universal chrome: one owner per shared element. -->
   <script src="https://vervenveda.com/assets/vnv-333-ticker.js?v=1.0.0" defer data-vnv-333-ticker="canonical"></script>
@@ -292,6 +293,48 @@ body .main>.hero{
   border-radius:7px!important;
 }
 body .main>.hero p{margin:12px auto!important;max-width:760px!important}
+/* One source-owned first-paint placement contract. Never vertically center
+   the document, reserve a false chrome spacer, or shrink the official chrome. */
+html{scroll-padding-top:0!important}
+html body[data-english9-require-entry]{
+  display:block!important;
+  min-height:100vh!important;
+  height:auto!important;
+  margin:0!important;
+  padding:0!important;
+  transform:none!important;
+  zoom:1!important;
+}
+html body[data-english9-require-entry] > .app{
+  margin-top:0!important;
+  padding-top:18px!important;
+  transform:none!important;
+  zoom:1!important;
+}
+html body[data-english9-require-entry] :is(#vnv333NetworkTicker,#vnvTickerAutoPopulate,#vnvHeaderAutoPopulate){
+  margin-top:0!important;
+  transform:none!important;
+  zoom:1!important;
+}
+html body[data-english9-require-entry] .main>.hero{margin-top:0!important}
+html body[data-english9-require-entry] :is(.centered-course-controls,.main){scroll-margin-top:0}
+/* Explicit charcoal-on-cream contrast on THIS English 9 page. */
+html body[data-english9-require-entry] :is(a,button,.btn,.button,.nav-button,.navBtn,.courseLink).english9-primary-action,
+html body[data-english9-require-entry] :is(button.primary,.btn.primary,.button.primary),
+html body[data-english9-require-entry] .english9-primary-navigation>.navBtn{
+  background:#243038!important;
+  border-color:#243038!important;
+  color:#fffdf5!important;
+  border-radius:7px!important;
+  text-align:center!important;
+  justify-content:center!important;
+  align-items:center!important;
+}
+html body[data-english9-require-entry] :is(button.primary,.btn.primary,.button.primary) * ,
+html body[data-english9-require-entry] .english9-primary-navigation>.navBtn * {
+  color:#fffdf5!important;
+}
+
 body .main>.hero h1{
   max-width:1000px;
   margin:0 auto!important;
@@ -488,7 +531,7 @@ body .main .footer{
 
 
 </head>
-<body data-english9-require-entry>
+<body data-english9-require-entry data-grade09-canonical-chrome="true">
 <a class="skip-link" href="#content">Skip to student workspace</a>
 <div class="app">
 <section class="centered-course-controls" id="landing-navigation" aria-label="Course navigation and learner controls">
