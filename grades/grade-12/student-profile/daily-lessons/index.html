@@ -134,9 +134,10 @@ if(valid&&catalog){
   // instructional pages. Course homes remain public/navigation surfaces.
   const scienceId=/^(biology-10|chemistry-11|physics-engineering-12)$/.test(slot.id||"");
   const socialId=/^social-studies-(10|11|12)$/.test(slot.id||"");
-  if((scienceId||socialId)&&href&&snap?.status!=="paused"){
+  if((scienceId||socialId)&&href){
     const home=url(slot.href),first=url(slot.firstStepHref);
-    try{
+    if(snap?.status==="paused")href=home;
+    else try{
       const target=new URL(href),base=new URL(home);
       const inside=target.origin===base.origin&&target.pathname.startsWith(base.pathname);
       if(!inside||target.pathname===base.pathname){
