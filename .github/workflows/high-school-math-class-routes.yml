@@ -1,0 +1,29 @@
+name: High School Mathematics Class Route Integrity
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'courses/shared/high-school-eight-class.js'
+      - 'courses/mathematics/**/diagnostic/index.html'
+      - 'courses/mathematics/**/units/unit-01/unit-map.json'
+      - 'courses/mathematics/**/units/unit-01/lessons/**'
+      - 'grades/shared/grade09-blueprint-upper-grade.js'
+      - 'grades/grade-1*/student-profile/index.html'
+      - 'tools/test-high-school-math-class-routes.mjs'
+      - '.github/workflows/high-school-math-class-routes.yml'
+  pull_request:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  math-class-routes:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: node --check grades/shared/grade09-blueprint-upper-grade.js
+      - run: node tools/test-high-school-math-class-routes.mjs
+      - run: node tools/test-grade09-lesson-route-normalization.mjs
+      - run: node tools/validate-math-engine-version-sync.mjs
