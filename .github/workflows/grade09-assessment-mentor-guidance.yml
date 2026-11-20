@@ -11,11 +11,13 @@ on:
       - 'courses/science/integrated-science-9/diagnostic/index.html'
       - 'courses/social-studies/grade-09/assessments/**'
       - 'tests/grade09-assessment-mentor-guidance.test.cjs'
+      - 'tests/grade09-assessment-student-journey.test.cjs'
       - '.github/workflows/grade09-assessment-mentor-guidance.yml'
   pull_request:
     paths:
       - 'assets/grade09-assessment-mentor-guidance-v1.js'
       - 'tests/grade09-assessment-mentor-guidance.test.cjs'
+      - 'tests/grade09-assessment-student-journey.test.cjs'
       - '.github/workflows/grade09-assessment-mentor-guidance.yml'
   workflow_dispatch:
 permissions:
@@ -32,4 +34,6 @@ jobs:
         with:
           node-version: '22'
       - name: Verify isolated mentor guide and all nine mounts
-        run: node tests/grade09-assessment-mentor-guidance.test.cjs
+        run: |
+          node tests/grade09-assessment-mentor-guidance.test.cjs
+          node tests/grade09-assessment-student-journey.test.cjs
