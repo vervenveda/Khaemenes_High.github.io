@@ -42,5 +42,5 @@ assert.equal(courses.continueFor("english-9").url,repo+"courses/language-arts/en
 assert.equal(courses.recordLaunch("english-9","https://example.org/foreign","External"),true);
 assert.equal(courses.continueFor("english-9").url,new URL(firstSteps["english-9"]).pathname);
 // Explicit French handoff retains its approved cross-repository origin.
-assert.match(courses.continueFor("world-language-9-french").url,/Khaemenes_Linguistics\\.github\\.io\\/apps\\/French_101_index\\.html/);
+assert.ok(courses.continueFor("world-language-9-french").url.includes("/Khaemenes_Linguistics.github.io/apps/French_101_index.html"));
 console.log("PASS Grade 09 lesson URL normalization, approved resume, route confinement and French handoff");
