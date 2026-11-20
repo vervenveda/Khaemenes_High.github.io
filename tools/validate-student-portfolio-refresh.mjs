@@ -8,7 +8,7 @@ const read=p=>fs.readFileSync(path.join(root,p),"utf8");
 const check=(condition,msg)=>{if(!condition)throw Error("ACADEMIC REFRESH FAIL: "+msg)};
 const page=read("portfolio/index.html"),report=read("portfolio/portfolio-academic-report.js"),css=read("portfolio/portfolio-studio.css");
 check(page.includes('id="refreshEvidenceStatus"'),"refresh result status area exists");
-check(page.includes("portfolio-academic-report.js?v=20261120-report-v2"),"new refresh script cache version");
+check(page.includes("portfolio-academic-report.js?v=20261120-readiness-publisher-v5"),"current academic refresh script cache version");
 check(css.includes(".portfolio-report-refresh-status"),"refresh feedback uses existing stylesheet");
 class Node {
  constructor(tag="div"){this.tag=tag;this.children=[];this.textContent="";this.disabled=false;this.listeners={}}
@@ -45,6 +45,6 @@ check(noScores.second.includes("No current course evidence has been published"),
 const wrongLearner=scenario(sample,false);
 check(wrongLearner.second.includes("learner verification is required")&&wrongLearner.disabled,"wrong learner cannot view or export");
 const noLedger=scenario([],true,false);
-check(noLedger.second.includes("course-record service has not loaded")&&noLedger.disabled,"unavailable ledger cannot generate report");
+check(noLedger.second.includes("Course-continuation records are unavailable")&&!noLedger.disabled,"unavailable ledger is reported but independent readiness remains available");
 for(const item of [scored,noScores,wrongLearner,noLedger])check(item.writes===0,"refresh has no student record writes");
 console.log("STUDENT PORTFOLIO ACADEMIC REFRESH: PASS (click, score evidence, empty ledger, wrong learner, unavailable ledger, zero writes).");
