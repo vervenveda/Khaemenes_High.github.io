@@ -34,3 +34,12 @@ All Student Profile Class/Schedule/pinned/Daily Lessons/Today and Daily Focus La
 - GitHub commits verified by content API; successful CI workflow execution and authenticated browser/device acceptance are NOT yet independently verified.
 - Explicitly unverified: exact intra-week last-incomplete day when publisher supplies only the week URL; currently follows native Monday lesson anchor. A new day-level continuation feature requires evidence-backed course-specific work, not guessed files.
 - Page chrome/toolbar runtime and all other independent student-facing cross-repository links remain separate QA items.
+
+## Follow-up · weekly mastery and corrections boundary
+- 5c9b32a: refined the week-to-instruction resolver. A weekly snapshot marked mastery/corrections enters the existing #quiz section, not the Monday lesson; ongoing instruction enters Week 01's existing daily lesson or later weeks' #monday. The exact unfinished day is not invented.
+- 668e714 / 412fdcb / 1e00164: rotated Grade 10–12 shared lesson resolver loader version to v2.
+- f59c472: regression asserts weekly quiz/corrections routing and v2 loader parity.
+- 59671ce: Today secondary Open course shortcuts now use the same class-step resolver.
+- a2d3f7f: regression explicitly covers that Today shortcut.
+- de69da9: Grade 09 regression includes historical Course Home as a recorded destination and requires lesson fallback.
+- Read-only GitHub public source verification available; local full runner not executed here. No automated test pass or live learner acceptance should be inferred.
