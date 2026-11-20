@@ -100,7 +100,11 @@ function step(item){
   }catch{return null}
  })();
  const snapshotIsLanding=Boolean(approvedSnapshot&&courseHome&&clean(approvedSnapshot)===clean(courseHome));
- let destination=approvedSnapshot&&!snapshotIsLanding?approvedSnapshot:first;
+ // A damaged saved English record requires its original recovery interface;
+ // never silently bypass it by launching a new lesson.
+ let destination=englishCourse&&snap?.status==="paused"
+  ?courseHome
+  :approvedSnapshot&&!snapshotIsLanding?approvedSnapshot:first;
  // Upper English publishes a Week URL when the precise day is not recorded.
  // Student-facing Class doors enter that week's native first lesson instead
  // of a week overview or public course landing. The course owns day mastery.
@@ -123,7 +127,7 @@ function step(item){
   }catch{}
  }
  return {dest:destination,
- label:snap?.stale?"Refresh course":snap?.status==="corrections"?"Review corrections":"Open class",
+ label:snap?.status==="paused"?"Recover Course Record":snap?.stale?"Refresh course":snap?.status==="corrections"?"Review corrections":"Open class",
  detail:snapshotIsLanding?"Open the first required lesson or readiness step.":snap?.nextTitle||snap?.summary||"Ready to open the assigned course."};
 }
 // One read-only destination authority for Schedule, pinned classes, and
