@@ -3,6 +3,7 @@
 
 | Date | Type | Entry | State |
 | --- | --- | --- | --- |
+| 2026-11-20 | repair · Science 9 evidence | [Unit 05 focused evidence checks](logs/2026/11/2026-11-20-science9-unit05-focused-evidence-checks.md) | Four focused-practice checks canonicalized; focused bank/app preserved; validator coverage extended; source PASS |
 | 2026-11-20 | repair · validation · Science 9 support | [Science 9 assessment support / evidence layer](logs/2026/11/2026-11-20-science9-assessment-support-evidence-layer.md) | 12 printable/record pages canonicalized; Beta launcher removed; Unit 12 zero-baseline guard verified; source PASS |
 | 2026-11-20 | repair · validation · Science 9 assessments | [Integrated Science 9 assessment shell verification](logs/2026/11/2026-11-20-science9-assessment-shell-verification.md) | 33 assessment surfaces covered; protected science runtimes retained; source verification PASS; hosted CI unverified; browser/device HOLD |
 | 2026-11-20 | repair · validation · Grade 9 math support | [Grade 9 mathematics assessment support layer](logs/2026/11/2026-11-20-grade09-math-assessment-support-layer.md) | Administration guides + completion records canonicalized; new support validator PASS; hosted CI unverified; browser/device HOLD |
