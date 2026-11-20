@@ -41,3 +41,19 @@ The Grade 09 legacy Week 1 redirect `grade-09/week-01/student-packet.html` is **
 
 ## Next step
 Proof the live Grade 09 Week 1 engine in browser using a synthetic authorized student; validate original day/phase state and learner evidence retention, then adapt the upper-grade course packet structures separately.
+
+
+## Grade 10–12 source integration follow-up
+
+After the Grade 09 proof-of-concept, the Social Studies inquiry engine was attached to Week 01 instructional packets in all four high-school grades:
+
+- `4c588c3`: shared engine resolves verified Grade 10–12 native Monday–Friday lesson sections via exact heading matches and fail-open behavior; Grade 09 day/phase click authority retained.
+- `ec4b265`: Grade 10 original Week 01 U.S. History packet opt-in.
+- `f51b12f`: Grade 11 original Week 01 Government, Law & Economics packet opt-in.
+- `dcf5f65`: Grade 12 original Week 01 Global Politics, International Relations & Senior Research packet opt-in.
+- `fe97870`: Grade 09 packet refreshed to the updated shared engine version.
+- `e786319`: workflow four-grade demo refreshed to the same shared version.
+- `bc05f64`: source regression test now verifies all four Grade 09–12 packet registrations, original native Monday–Friday headings, and failed-match safety.
+- `892bbd5`: CI path filters cover all four updated instructional packets.
+
+Re-fetched live sources and confirmed opt-in/script tags in each, confirmed exact five weekday heading matches for all three upper-grade packets, and parsed shared engine successfully. Existing HTML learning tasks, saved work owners, formative evidence adapters, question banks, and mastery authority were not rewritten. This is **Week 01 only**; broad auto-injection across 36 weeks is not authorized. CI job success, browser/device acceptance, and learner record regression remain outstanding.
