@@ -91,8 +91,11 @@ function step(item){
  // This only validates navigation; it cannot award progress or mastery.
  const mathCourse=/^(pre-algebra|algebra-1|geometry|algebra-2)$/.test(item.id||"");
  const englishCourse=/^english-(?:10|11|12)$/.test(item.id||"");
+ const scienceCourse=/^(biology-10|chemistry-11|physics-engineering-12)$/.test(item.id||"");
+ const socialCourse=/^social-studies-(10|11|12)$/.test(item.id||"");
+ const lessonCourse=mathCourse||englishCourse||scienceCourse||socialCourse;
  const approvedSnapshot=(()=>{
-  if(!snapshotHref||!(mathCourse||englishCourse))return snapshotHref;
+  if(!snapshotHref||!lessonCourse)return snapshotHref;
   try{
    const target=new URL(snapshotHref,location.href),home=new URL(courseHome,location.href);
    const coursePath=home.pathname.endsWith("/")?home.pathname:home.pathname+"/";
@@ -124,6 +127,28 @@ function step(item){
       ?new URL("weeks/week-01/"+leaf,courseHome).href
       :target.href.replace(/#.*$/,"")+"#monday";
    }
+  }catch{}
+ }
+ // Science weekly planner links are summaries, not the daily laboratory or
+ // instruction. Use each native Week NN Day 01 lesson unless the course
+ // explicitly requests its assessment/recovery surface.
+ if(scienceCourse&&destination&&snap?.status!=="paused"){
+  try{
+   const target=new URL(destination,location.href);
+   const week=target.pathname.match(/\/weeks\/week-(\d{2})\/?$/);
+   if(week&&snap?.status!=="mastery"&&snap?.status!=="corrections"){
+    destination=new URL("weeks/week-"+week[1]+"/lessons/day-01.html",courseHome).href;
+   }
+  }catch{}
+ }
+ // Social Studies uses weekly student packets as the actual instructional
+ // workspace; never send a student to a separate public course home.
+ if(socialCourse&&destination&&snap?.status!=="paused"){
+  try{
+   const target=new URL(destination,location.href);
+   const week=target.pathname.match(/\/weeks\/week-(\d{2})\/?$/);
+   if(week&&snap?.status!=="mastery"&&snap?.status!=="corrections")
+    destination=new URL("weeks/week-"+week[1]+"/student-packet.html",courseHome).href;
   }catch{}
  }
  return {dest:destination,
