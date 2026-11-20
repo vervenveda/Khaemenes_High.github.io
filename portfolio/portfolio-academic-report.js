@@ -53,7 +53,8 @@ function slotsFor(grade){
 function currentRecords(user){
  const list=getLedger()?.readLearner?.(user.id)||[];
  return list.filter(record=>{
-  if(!record||record.learnerId!==user.id||typeof record.courseId!=="string")return false;
+  // This separate readiness index is not an official Algebra I course grade.
+  if(!record||record.learnerId!==user.id||record.courseId==="algebra-1-readiness"||typeof record.courseId!=="string")return false;
   const tagged=record.grade?normalizeGrade(record.grade):null;
   return !record.grade||tagged===user.grade;
  });
@@ -134,6 +135,7 @@ function linkLegacyAlgebraReadiness(){
   const check=profileApi.readJSON(key,null,current);
   if(!check||!Array.isArray(check.attempt_history)||check.attempt_history.length!==combined.length||
    check.lastResult?.submitted!==latest.submitted)throw Error("READBACK_FAILED");
+  window.dispatchEvent(new Event("khaemenes-algebra1-readiness-linked"));
   refresh("learner-confirmed-link");
  }catch{refreshStatus("The learner-linked result could not be verified. Original diagnostic evidence was not altered. Export the original before retrying.");}
 }
