@@ -491,7 +491,7 @@ function renderToday(items){
  const other=$("learningTodayCourses");other.replaceChildren();
  for(const item of items.filter(i=>i!==current).slice(0,3)){
   const c=make("div");c.className="lesson-card";c.append(make("h3",item.label));
-  const url=href(item);if(url&&identity())c.append(link("Open "+item.title,url,"btn secondary"));
+  const url=step(item).dest;if(url&&identity())c.append(link("Open "+item.title,url,"btn secondary"));
   other.append(c);
  }
 }
