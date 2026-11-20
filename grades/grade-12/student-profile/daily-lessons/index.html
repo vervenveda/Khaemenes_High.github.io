@@ -130,6 +130,26 @@ if(valid&&catalog){
       }
     }catch{href=first}
   }
+  // Science daily labs and Social Studies weekly packets are the existing
+  // instructional pages. Course homes remain public/navigation surfaces.
+  const scienceId=/^(biology-10|chemistry-11|physics-engineering-12)$/.test(slot.id||"");
+  const socialId=/^social-studies-(10|11|12)$/.test(slot.id||"");
+  if((scienceId||socialId)&&href&&snap?.status!=="paused"){
+    const home=url(slot.href),first=url(slot.firstStepHref);
+    try{
+      const target=new URL(href),base=new URL(home);
+      const inside=target.origin===base.origin&&target.pathname.startsWith(base.pathname);
+      if(!inside||target.pathname===base.pathname){
+        href=first;
+      }else{
+        const week=target.pathname.match(/\\/weeks\\/week-(\\d{2})\\/?$/);
+        if(week&&snap?.status!=="mastery"&&snap?.status!=="corrections"){
+          const leaf=scienceId?"lessons/day-01.html":"student-packet.html";
+          href=new URL("weeks/week-"+week[1]+"/"+leaf,home).href;
+        }
+      }
+    }catch{href=first}
+  }
   if(href){const a=make("a",snap?.status==="paused"?"Recover Course Record":snap?.stale?"Refresh Class":snap?.status==="corrections"?"Review Corrections":snap?.nextLabel||"Continue Class");a.className="g12-button";a.href=href;a.title=snap?.nextTitle||snap?.summary||"Continue this class";card.append(a)}
   else card.append(make("p","This course link is not published in the current catalog."));
   cards.append(card);
