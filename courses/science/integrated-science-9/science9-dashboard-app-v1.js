@@ -78,7 +78,7 @@ function renderWeek(){
  <div class="card col8">${sequenceNote}<div class="phenomenon"><h3>Weekly phenomenon</h3><p>${esc(w.phenomenon)}</p></div><h4 style="margin-top:16px">Reading or source suggestion</h4><p>${esc(w.readingSuggestion)}</p><h4>Investigation mode</h4><div class="notice"><strong>${esc(w.mode)}</strong> · Safety instructions must appear before materials or procedures. Stop if supervision, equipment, or conditions are not appropriate.</div><div style="margin-top:12px">${w.vocabulary.map(v=>`<span class="pill">${esc(v)}</span>`).join("")}</div></div>
  <div class="card col12"><h3>Monday–Friday classroom</h3>${w.lessons.map((l,i)=>lessonHTML(w,l,p,i)).join("")}</div>
  <div class="card col12"><h3>Interactive science notebook</h3>${notebookHTML(w,p)}</div>
- <div class="card col12"><h3>Open-book formative mastery check</h3><p class="small">Ten randomized objective items draw from a larger reviewed bank, retain the generated form and answers through refresh, and provide explanations. Best score is retained; 80% unlocks the next week. Official midterm/final mastery remains separately supervised.</p><div id="problemSet">${problemSetHTML(w)}</div></div>
+ <div class="card col12"><h3>Open-book formative mastery check</h3><p class="small">Ten randomized objective items draw from reviewed banks, retain the generated form and answers through refresh, and provide explanations. Week 1 is current-readiness only; Weeks 2–36 use an 8-current + 2-delayed retrieval blueprint. Best score is retained; 80% unlocks the next week. Official midterm/final mastery remains separately supervised.</p><div id="problemSet">${problemSetHTML(w)}</div></div>
  </div>`;
  $$("[data-day]").forEach(x=>x.onchange=()=>{active().days[w.week]??={};active().days[w.week][x.dataset.day]=x.checked;save();renderWeeks()});
  $$("[data-note]").forEach(x=>x.oninput=()=>{active().notes[w.week]??={};active().notes[w.week][x.dataset.note]=x.value;save()});
@@ -197,13 +197,21 @@ function weeklyBankPool(w){
  const bank=(window.KhaemenesScience9QuestionBanks||{})["unit-"+String(cfg.unit).padStart(2,"0")]||[],domains=new Set(cfg.domains||[]);
  return bank.filter(q=>domains.has(q.domain)&&(!cfg.prompt||cfg.prompt.test(String(q.prompt||"")+" "+String(q.explanation||""))));
 }
-function weeklyMCKey(w){const version=w.week>=31&&w.week<=33?"::unit11-space-v2":"";return KEY+"::weekly-mc"+version+"::"+String(w.week).padStart(2,"0")}
+function weeklyMCKey(w){const version=w.week>=31&&w.week<=33?"::unit11-space-v2":"";return KEY+"::weekly-mc::retention-v1"+version+"::"+String(w.week).padStart(2,"0")}
+function scienceRetentionPool(w){
+ const current=weeklyBankPool(w).map(q=>({...q,id:"current-w"+String(w.week).padStart(2,"0")+"::"+q.id,source:"current",week:w.week}));
+ if(w.week<=1)return{pool:current,sourceQuotas:{current:10},retrievalFrom:null,blueprint:"10-current"};
+ const lag=1+(w.week%3),priorWeek=Math.max(1,w.week-lag),prior=APP.weeks[priorWeek-1];
+ const delayed=weeklyBankPool(prior).map(q=>({...q,id:"retrieval-w"+String(priorWeek).padStart(2,"0")+"::"+q.id,source:"retrieval",week:priorWeek,retrieval_from_week:priorWeek,retrieval_source_id:q.id}));
+ if(current.length<8||delayed.length<2)return{pool:current,sourceQuotas:{current:Math.min(10,current.length)},retrievalFrom:null,blueprint:"current-only-fallback"};
+ return{pool:[...current,...delayed],sourceQuotas:{current:8,retrieval:2},retrievalFrom:priorWeek,blueprint:"8-current+2-delayed"};
+}
 function openWeeklySet(w,n=10){
- const MC=window.KhaeMonteCarloAssessment,pool=weeklyBankPool(w);
+ const MC=window.KhaeMonteCarloAssessment,retention=scienceRetentionPool(w),pool=retention.pool;
  if(!MC||pool.length<n)return null;
- const key=weeklyMCKey(w),session=MC.openSession(key,pool,{kind:"science9-weekly-"+String(w.week).padStart(2,"0"),count:n}),materialized=MC.materialize(pool,session),responses=MC.getResponses(key,session.id);
- const questions=materialized.map(q=>({id:q.id,q:q.prompt,choices:q.options,answer:q.options[q.answer],answerIndex:q.answer,explanation:q.explanation,domain:q.domain,mc:true,selected:Number.isInteger(Number(responses[q.id]))?Number(responses[q.id]):null}));
- return {mode:"mc",key,session,questions,poolSize:pool.length,completed:false};
+ const key=weeklyMCKey(w),session=MC.openSession(key,pool,{kind:"science9-weekly-"+String(w.week).padStart(2,"0"),count:n,sourceQuotas:retention.sourceQuotas}),materialized=MC.materialize(pool,session),responses=MC.getResponses(key,session.id);
+ const questions=materialized.map(q=>({id:q.id,q:q.prompt,choices:q.options,answer:q.options[q.answer],answerIndex:q.answer,explanation:q.explanation,domain:q.domain,source:q.source,week:q.week,retrieval_from_week:q.retrieval_from_week??null,mc:true,selected:Number.isInteger(Number(responses[q.id]))?Number(responses[q.id]):null}));
+ return {mode:"mc",key,session,questions,poolSize:pool.length,completed:false,retentionBlueprint:retention.blueprint,retrievalFrom:retention.retrievalFrom};
 }
 function getSet(w,n=10){
  if(sets[w.week])return sets[w.week].questions;
@@ -211,7 +219,7 @@ function getSet(w,n=10){
  if(mc){sets[w.week]=mc;return mc.questions}
  const questions=Array.from({length:n},()=>makeQuestion(w.quizType));sets[w.week]={mode:"legacy",questions,completed:false};return questions
 }
-function problemSetHTML(w){const set=getSet(w),meta=sets[w.week];return set.map((p,i)=>`<div class="problem"><p><strong>${i+1}.</strong> ${esc(p.q)}</p>${p.domain?`<p class="small">${esc(p.domain)}${meta?.mode==="mc"?` · randomized from ${meta.poolSize}-question reviewed weekly pool`:""}</p>`:""}${p.choices?`<select data-answer="${i}" ${p.mc?`data-qid="${esc(p.id)}"`:""}><option value="">Choose an answer</option>${p.choices.map((choice,oi)=>`<option ${p.mc?`value="${oi}" ${p.selected===oi?"selected":""}`:`value="${esc(choice)}"`}>${esc(choice)}</option>`).join("")}</select>`:`<input data-answer="${i}" inputmode="decimal" placeholder="Enter answer">`}<div class="feedback hidden" id="fb_${w.week}_${i}"></div></div>`).join("")+`<div class="actions"><button id="submitPractice">Submit Mastery Check</button><button class="secondary" id="newPractice">New Randomized Set</button></div><p class="small">${meta?.mode==="mc"?`Generated form ${esc(meta.session.id)} persists through refresh; a new form opens only after submission.`:"Formative weekly mastery uses reviewed sovereign question banks; formal course assessments remain separate."}</p><p id="practiceScore"></p>`}
+function problemSetHTML(w){const set=getSet(w),meta=sets[w.week];return set.map((p,i)=>`<div class="problem"><p><strong>${i+1}.</strong> ${esc(p.q)}</p>${p.domain?`<p class="small">${esc(p.domain)}${p.source==="retrieval"?` · delayed retrieval from Week ${p.retrieval_from_week||p.week}`:""}${meta?.mode==="mc"?` · randomized from reviewed pool`:""}</p>`:""}${p.choices?`<select data-answer="${i}" ${p.mc?`data-qid="${esc(p.id)}"`:""}><option value="">Choose an answer</option>${p.choices.map((choice,oi)=>`<option ${p.mc?`value="${oi}" ${p.selected===oi?"selected":""}`:`value="${esc(choice)}"`}>${esc(choice)}</option>`).join("")}</select>`:`<input data-answer="${i}" inputmode="decimal" placeholder="Enter answer">`}<div class="feedback hidden" id="fb_${w.week}_${i}"></div></div>`).join("")+`<div class="actions"><button id="submitPractice">Submit Mastery Check</button><button class="secondary" id="newPractice">New Randomized Set</button></div><p class="small">${meta?.mode==="mc"?`Generated form ${esc(meta.session.id)} persists through refresh; a new form opens only after submission.`:"Formative weekly mastery uses reviewed sovereign question banks; formal course assessments remain separate."}</p><p id="practiceScore"></p>`}
 function correct(v,p){if(p.choices)return String(v).trim().toLowerCase()===String(p.answer).trim().toLowerCase();const n=Number(String(v).replace(/,/g,""));return Number.isFinite(n)&&Math.abs(n-p.answer)<=Math.max(p.tolerance||.001,Math.abs(p.answer)*.001)}
 function wireWeeklyMastery(w){
  const meta=sets[w.week];if(meta?.mode!=="mc")return;
