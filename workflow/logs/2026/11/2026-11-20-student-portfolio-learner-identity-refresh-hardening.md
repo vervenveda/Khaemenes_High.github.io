@@ -17,4 +17,4 @@
 - No live personal account data, Guardian permissions, family IDs, private credentials, VNV homepage or 333 Network modified.
 
 ## Verification
-Pending exact-SHA final GitHub Actions success; preliminary added test initially used a wrong literal declaration token (`const learner` vs existing `,learner`) and was corrected in the isolated regression without modifying Portfolio runtime. Do not claim PASS until rerun succeeds.
+**PASS** — [Student Portfolio and Homeschool Report CI 44843662848](https://github.com/vervenveda/Khaemenes_High.github.io/actions/runs/44843662848), completed/success on exact source/workflow/test SHA `7e7b6e38d96f3359893e2b19765f54d053c8fcf0`. Six new regression cases ran alongside the preexisting Portfolio workspace and academic refresh checks. Preliminary added test had a mismatched declaration assertion, corrected before the passing rerun; no runtime source rollback required. No real browser test or Account Cloud readback was performed.
