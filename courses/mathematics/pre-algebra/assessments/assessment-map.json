@@ -1,5 +1,5 @@
 {
-  "schema_version": "3.0",
+  "schema_version": "3.1",
   "course_id": "KH-MATH-PA",
   "course_title": "Khaemenes Global Pre-Algebra",
   "duration_weeks": 36,
@@ -53,22 +53,27 @@
       "selected_response_questions": 56,
       "constructed_responses": 7,
       "path": "midterm-units-01-07.html",
-      "result_key": "khaemenes-prealgebra-midterm-result-v1",
+      "result_key": "khaemenes-prealgebra-midterm-result-v2",
       "classification": "public-self-check-nonconfidential",
       "authoritative_result": false,
-      "full_mastery_requires_evaluator_review": true
+      "full_mastery_requires_evaluator_review": true,
+      "legacy_result_key": "khaemenes-prealgebra-midterm-result-v1",
+      "canonical_assessment_id": "KH-MATH-PA-MIDTERM-U01-U07"
     },
     {
       "id": "KH-MATH-PA-FINAL-36W",
       "title": "Pre-Algebra 36-Week Final Public Mixed-Evidence Self-Check",
       "scope": "Units 01-13 / 36 weeks",
-      "selected_response_questions": 80,
+      "selected_response_questions": 100,
       "constructed_responses": 10,
       "path": "final-exam-36-weeks.html",
-      "result_key": "khaemenes-prealgebra-final-result-v1",
+      "result_key": "khaemenes-prealgebra-final-result-v2",
       "classification": "public-self-check-nonconfidential",
       "authoritative_result": false,
-      "full_mastery_requires_evaluator_review": true
+      "full_mastery_requires_evaluator_review": true,
+      "legacy_result_key": "khaemenes-prealgebra-final-result-v1",
+      "canonical_assessment_id": "KH-MATH-PA-FINAL-36W-V2",
+      "legacy_assessment_id": "KH-MATH-PA-FINAL-36W"
     }
   ],
   "secure_release_policy": {
@@ -89,5 +94,6 @@
     "Use the shared 0-4 rubric for local evaluator review",
     "Do not mark full cumulative mastery until evaluator review is complete",
     "Retain the written response with the exported assessment result when used as portfolio evidence"
-  ]
+  ],
+  "cumulative_metadata_note": "Live cumulative examination metadata reflects the existing selected-response and written-task banks. Legacy identifiers and result keys remain recorded for historical data compatibility; the map does not modify or migrate learner records."
 }
