@@ -243,10 +243,12 @@
     "title": "Unit 2 Mastery Check",
     "file": "assessment/mastery-check.html",
     "threshold": 80,
-    "questions": 24,
+    "questions": 25,
     "version": "2.0",
     "evidence_model": "domain + skill + item outcome; learner-facing result stays local",
-    "program_signal": "privacy-safe curriculum-quality summary generated locally; no transmission is implemented in this unit"
+    "program_signal": "privacy-safe curriculum-quality summary generated locally; no transmission is implemented in this unit",
+    "pass_count": 20,
+    "scoring_note": "The existing 25-question official unit mastery check requires 20 correct for 80% mastery. Historical learner results are unchanged."
   },
   "project": {
     "title": "Signed Data Investigation",
