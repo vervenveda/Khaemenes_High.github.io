@@ -17,6 +17,7 @@ const catalog=window.KhaemenesHighEightClass;
 const normalizeGrade=g=>{const s=String(g??"").replace(/^grade[\s-]*/i,"").padStart(2,"0");return ["09","10","11","12"].includes(s)?s:null};
 const aliases=id=>/^english-(10|11|12)$/.test(id||"")?[id,"ela"+id.slice(-2)]:id?[id]:[];
 function learner(){
+ if(window.KhaemenesPortfolioIdentityLock?.isCurrent?.()===false)return null;
  const current=profileApi?.readAcademyProfile?.(),ctx=gradeContext?.active?.(),pin=pinApi?.activeLearner?.();
  if(!current?.learnerId||!ctx?.learnerId||ctx.learnerId!==current.learnerId||pin!==current.learnerId)return null;
  const grade=normalizeGrade(ctx.grade);
@@ -324,7 +325,7 @@ $("printReport")?.addEventListener("click",()=>{
  window.print();
 });
 window.addEventListener("afterprint",()=>document.body.classList.remove("portfolio-report-print"));
-for(const event of ["pageshow","khaemenes-learning-continuation-ready","khaemenes-learning-continuation-changed","khaemenes-student-profile-changed"])window.addEventListener(event,()=>refresh("event"));
+for(const event of ["pageshow","focus","storage","khaemenes-learning-continuation-ready","khaemenes-learning-continuation-changed","khaemenes-student-profile-changed"])window.addEventListener(event,()=>refresh("event"));
 refresh();
 window.KhaemenesPortfolioAcademicReport=Object.freeze({refresh,version:"1.0.0"});
 })();
