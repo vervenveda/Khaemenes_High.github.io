@@ -6,6 +6,7 @@
 | 2026-11-20 | curriculum · Grade 12 parity · execution authority | [Grade 12 parity and 9–12 execution expansion](logs/2026/11/2026-11-20-grade12-parity-and-execution-matrix.md) | PE12 36×5 + 15/5 retention; Physics delayed retrieval; Senior Capstone 36×5; 22-entry execution matrix; advanced-math outbound verified / return bridge pending |
 | Date | Type | Entry | State |
 | --- | --- | --- | --- |
+| 2026-11-20 | family/learner continuity · source CI | [Existing Grade09 learner, passed readiness and Account Cloud reconciliation](logs/2026/11/2026-11-20-grade09-family-course-account-cloud-existing-learner-reconciliation.md) | 11 synthetic no-write tests PASS (44841255391); exact ID, learner-scored assessment, cloud import and T03 commissioning HOLD |
 | 2026-11-20 | curriculum · Grade 11 retention | [Grade 11 retention curriculum implementation](logs/2026/11/2026-11-20-grade11-retention-curriculum-implementation.md) | Algebra II 8+2; English 4+1; Chemistry delayed retrieval; PE11 commissioned 36×5 with 15+5; source PASS |
 | 2026-11-20 | curriculum · Grade 10 retention | [Grade 10 retention curriculum implementation](logs/2026/11/2026-11-20-grade10-retention-curriculum-implementation.md) | Geometry 8+2; Biology 4+1; English 4+1; PE10 commissioned 36×5 with 15+5; source PASS |
 | 2026-11-20 | curriculum · Grade 09 retention | [Grade 09 retention curriculum implementation](logs/2026/11/2026-11-20-grade09-retention-curriculum-implementation.md) | Science 8+2; English non-grading delayed retrieval; PE 15+5 with provenance; source PASS |
