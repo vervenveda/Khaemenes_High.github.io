@@ -34,7 +34,7 @@ const grade=/\/english-12\//i.test(location.pathname)?"12":/\/english-11\//i.tes
 const profileBase="/Khaemenes_High.github.io/grades/grade-"+grade+"/student-profile/";
 window.KhaemenesClassToolsConfigV1={
  id:"high-school-english-landing",
- match:()=>/\/courses\/language-arts\/english-(?:9|10|11|12)\/(?:index\.html|grades\/grade-(?:09|10|11|12)\/(?:index\.html)?)?$/i.test(location.pathname),
+ match:()=>/\/courses\/language-arts\/english-(?:9|10|11|12)\/(?:index\.html)?$/i.test(location.pathname),
  toggleLabel:"Tools",
  ariaLabel:"English learning tools",
  tools:[
