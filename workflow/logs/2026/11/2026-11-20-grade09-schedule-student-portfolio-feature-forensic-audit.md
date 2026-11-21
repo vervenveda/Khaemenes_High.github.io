@@ -36,3 +36,7 @@
 5. Commission independent authenticated Academy Account Cloud/T03 before any remote write, idempotent receipt, or claim of “synced.”
 
 **Status:** source audit complete; browser QA and Account Cloud record transfer HOLD.
+
+## Exact-source CI result
+- [Grade 09 Schedule and Portfolio forensic audit — run 44842980555](https://github.com/vervenveda/Khaemenes_High.github.io/actions/runs/44842980555) completed **success** at exact tested commit `757ccc9be9e06e1ec7a125b921b5f06d664b798a`.
+- **Ten static source assertions passed.** This does not exercise a real Chrome session, learner's original readiness score, cross-device identity, or actual protected Account Cloud storage.
