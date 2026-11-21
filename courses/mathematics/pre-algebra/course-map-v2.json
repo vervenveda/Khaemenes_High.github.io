@@ -28,7 +28,9 @@
       "Summer bridge"
     ],
     "storage_key": null,
-    "version": null
+    "version": null,
+    "lesson_map_authority": "course-map-v2 lesson IDs + source paths; source-file H1 remains title authority",
+    "lesson_count": 97
   },
   "readiness": {
     "gateway": {
@@ -94,8 +96,39 @@
         "Cambridge: Number",
         "IB MYP: Number"
       ],
-      "lesson_count": null,
-      "lessons": [],
+      "lesson_count": 6,
+      "lessons": [
+        {
+          "id": "u01-l01",
+          "source_path": "units/unit-01/lessons/lesson-01-number-systems.html",
+          "title_authority": "source-file-h1"
+        },
+        {
+          "id": "u01-l02",
+          "source_path": "units/unit-01/lessons/lesson-02-factors-multiples.html",
+          "title_authority": "source-file-h1"
+        },
+        {
+          "id": "u01-l03",
+          "source_path": "units/unit-01/lessons/lesson-03-primes-divisibility.html",
+          "title_authority": "source-file-h1"
+        },
+        {
+          "id": "u01-l04",
+          "source_path": "units/unit-01/lessons/lesson-04-gcf-lcm.html",
+          "title_authority": "source-file-h1"
+        },
+        {
+          "id": "u01-l05",
+          "source_path": "units/unit-01/lessons/lesson-05-order-operations.html",
+          "title_authority": "source-file-h1"
+        },
+        {
+          "id": "u01-l06",
+          "source_path": "units/unit-01/lessons/lesson-06-estimation-reasonableness.html",
+          "title_authority": "source-file-h1"
+        }
+      ],
       "status": "open"
     },
     {
@@ -120,8 +153,49 @@
         "Cambridge: Number",
         "IB MYP: Number"
       ],
-      "lesson_count": null,
-      "lessons": [],
+      "lesson_count": 8,
+      "lessons": [
+        {
+          "id": "u02-l01",
+          "source_path": "units/unit-02/lessons/lesson-01-integers-in-context.html",
+          "title_authority": "source-file-h1"
+        },
+        {
+          "id": "u02-l02",
+          "source_path": "units/unit-02/lessons/lesson-02-opposites-absolute-value.html",
+          "title_authority": "source-file-h1"
+        },
+        {
+          "id": "u02-l03",
+          "source_path": "units/unit-02/lessons/lesson-03-compare-order-integers.html",
+          "title_authority": "source-file-h1"
+        },
+        {
+          "id": "u02-l04",
+          "source_path": "units/unit-02/lessons/lesson-04-adding-integers.html",
+          "title_authority": "source-file-h1"
+        },
+        {
+          "id": "u02-l05",
+          "source_path": "units/unit-02/lessons/lesson-05-subtracting-integers.html",
+          "title_authority": "source-file-h1"
+        },
+        {
+          "id": "u02-l06",
+          "source_path": "units/unit-02/lessons/lesson-06-multiply-divide-integers.html",
+          "title_authority": "source-file-h1"
+        },
+        {
+          "id": "u02-l07",
+          "source_path": "units/unit-02/lessons/lesson-07-coordinate-plane-signed-change.html",
+          "title_authority": "source-file-h1"
+        },
+        {
+          "id": "u02-l08",
+          "source_path": "units/unit-02/lessons/lesson-08-multi-step-integer-applications.html",
+          "title_authority": "source-file-h1"
+        }
+      ],
       "status": "open"
     },
     {
@@ -146,8 +220,49 @@
         "Cambridge: Number",
         "IB MYP: Number"
       ],
-      "lesson_count": null,
-      "lessons": [],
+      "lesson_count": 8,
+      "lessons": [
+        {
+          "id": "u03-l01",
+          "source_path": "units/unit-03/lessons/lesson-01-rational-numbers-fraction-meaning.html",
+          "title_authority": "source-file-h1"
+        },
+        {
+          "id": "u03-l02",
+          "source_path": "units/unit-03/lessons/lesson-02-equivalent-fractions-simplifying.html",
+          "title_authority": "source-file-h1"
+        },
+        {
+          "id": "u03-l03",
+          "source_path": "units/unit-03/lessons/lesson-03-compare-order-rational-numbers.html",
+          "title_authority": "source-file-h1"
+        },
+        {
+          "id": "u03-l04",
+          "source_path": "units/unit-03/lessons/lesson-04-add-subtract-rational-numbers.html",
+          "title_authority": "source-file-h1"
+        },
+        {
+          "id": "u03-l05",
+          "source_path": "units/unit-03/lessons/lesson-05-multiply-fractions-mixed-numbers.html",
+          "title_authority": "source-file-h1"
+        },
+        {
+          "id": "u03-l06",
+          "source_path": "units/unit-03/lessons/lesson-06-divide-fractions-complex-fractions.html",
+          "title_authority": "source-file-h1"
+        },
+        {
+          "id": "u03-l07",
+          "source_path": "units/unit-03/lessons/lesson-07-decimal-operations-repeating-decimals.html",
+          "title_authority": "source-file-h1"
+        },
+        {
+          "id": "u03-l08",
+          "source_path": "units/unit-03/lessons/lesson-08-conversions-estimation-applications.html",
+          "title_authority": "source-file-h1"
+        }
+      ],
       "status": "open"
     },
     {
@@ -172,8 +287,49 @@
         "Cambridge: Number and Algebra",
         "IB MYP: Relationships"
       ],
-      "lesson_count": null,
-      "lessons": [],
+      "lesson_count": 8,
+      "lessons": [
+        {
+          "id": "u04-l01",
+          "source_path": "units/unit-04/lessons/lesson-01-ratio-meaning-equivalent-ratios.html",
+          "title_authority": "source-file-h1"
+        },
+        {
+          "id": "u04-l02",
+          "source_path": "units/unit-04/lessons/lesson-02-ratio-tables-double-number-lines.html",
+          "title_authority": "source-file-h1"
+        },
+        {
+          "id": "u04-l03",
+          "source_path": "units/unit-04/lessons/lesson-03-rates-unit-rates-fair-comparisons.html",
+          "title_authority": "source-file-h1"
+        },
+        {
+          "id": "u04-l04",
+          "source_path": "units/unit-04/lessons/lesson-04-proportional-tables-graphs-equations.html",
+          "title_authority": "source-file-h1"
+        },
+        {
+          "id": "u04-l05",
+          "source_path": "units/unit-04/lessons/lesson-05-solving-proportions-direct-variation.html",
+          "title_authority": "source-file-h1"
+        },
+        {
+          "id": "u04-l06",
+          "source_path": "units/unit-04/lessons/lesson-06-scale-drawings-maps-similar-figures.html",
+          "title_authority": "source-file-h1"
+        },
+        {
+          "id": "u04-l07",
+          "source_path": "units/unit-04/lessons/lesson-07-proportional-vs-nonproportional.html",
+          "title_authority": "source-file-h1"
+        },
+        {
+          "id": "u04-l08",
+          "source_path": "units/unit-04/lessons/lesson-08-conversions-multistep-proportional-modelling.html",
+          "title_authority": "source-file-h1"
+        }
+      ],
       "status": "open"
     },
     {
@@ -198,8 +354,49 @@
         "Cambridge: Number",
         "PISA: Quantity and financial contexts"
       ],
-      "lesson_count": null,
-      "lessons": [],
+      "lesson_count": 8,
+      "lessons": [
+        {
+          "id": "u05-l01",
+          "source_path": "units/unit-05/lessons/lesson-01-percent-meaning-benchmarks-equivalent-forms.html",
+          "title_authority": "source-file-h1"
+        },
+        {
+          "id": "u05-l02",
+          "source_path": "units/unit-05/lessons/lesson-02-finding-percent-of-quantity.html",
+          "title_authority": "source-file-h1"
+        },
+        {
+          "id": "u05-l03",
+          "source_path": "units/unit-05/lessons/lesson-03-finding-percent-rate-or-whole.html",
+          "title_authority": "source-file-h1"
+        },
+        {
+          "id": "u05-l04",
+          "source_path": "units/unit-05/lessons/lesson-04-percent-increase-decrease-relative-change.html",
+          "title_authority": "source-file-h1"
+        },
+        {
+          "id": "u05-l05",
+          "source_path": "units/unit-05/lessons/lesson-05-discounts-tax-tips-commission.html",
+          "title_authority": "source-file-h1"
+        },
+        {
+          "id": "u05-l06",
+          "source_path": "units/unit-05/lessons/lesson-06-markup-profit-loss-break-even.html",
+          "title_authority": "source-file-h1"
+        },
+        {
+          "id": "u05-l07",
+          "source_path": "units/unit-05/lessons/lesson-07-simple-interest-fees-financial-comparisons.html",
+          "title_authority": "source-file-h1"
+        },
+        {
+          "id": "u05-l08",
+          "source_path": "units/unit-05/lessons/lesson-08-percentage-points-repeated-change-decisions.html",
+          "title_authority": "source-file-h1"
+        }
+      ],
       "status": "open"
     },
     {
@@ -224,8 +421,44 @@
         "Cambridge: Number",
         "IB MYP: Number"
       ],
-      "lesson_count": null,
-      "lessons": [],
+      "lesson_count": 7,
+      "lessons": [
+        {
+          "id": "u06-l01",
+          "source_path": "units/unit-06/lessons/lesson-01-exponent-meaning-powers-grouping.html",
+          "title_authority": "source-file-h1"
+        },
+        {
+          "id": "u06-l02",
+          "source_path": "units/unit-06/lessons/lesson-02-zero-negative-exponents-patterns.html",
+          "title_authority": "source-file-h1"
+        },
+        {
+          "id": "u06-l03",
+          "source_path": "units/unit-06/lessons/lesson-03-exponent-properties-equivalent-expressions.html",
+          "title_authority": "source-file-h1"
+        },
+        {
+          "id": "u06-l04",
+          "source_path": "units/unit-06/lessons/lesson-04-square-cube-roots-perfect-powers.html",
+          "title_authority": "source-file-h1"
+        },
+        {
+          "id": "u06-l05",
+          "source_path": "units/unit-06/lessons/lesson-05-estimating-irrational-roots.html",
+          "title_authority": "source-file-h1"
+        },
+        {
+          "id": "u06-l06",
+          "source_path": "units/unit-06/lessons/lesson-06-scientific-notation-powers-ten.html",
+          "title_authority": "source-file-h1"
+        },
+        {
+          "id": "u06-l07",
+          "source_path": "units/unit-06/lessons/lesson-07-operations-scientific-notation-applications.html",
+          "title_authority": "source-file-h1"
+        }
+      ],
       "status": "open"
     },
     {
@@ -250,8 +483,49 @@
         "Cambridge: Algebra",
         "IB MYP: Algebra"
       ],
-      "lesson_count": null,
-      "lessons": [],
+      "lesson_count": 8,
+      "lessons": [
+        {
+          "id": "u07-l01",
+          "source_path": "units/unit-07/lessons/lesson-01-variables-terms-coefficients-constants.html",
+          "title_authority": "source-file-h1"
+        },
+        {
+          "id": "u07-l02",
+          "source_path": "units/unit-07/lessons/lesson-02-translating-words-contexts-expressions.html",
+          "title_authority": "source-file-h1"
+        },
+        {
+          "id": "u07-l03",
+          "source_path": "units/unit-07/lessons/lesson-03-evaluating-expressions-substitution.html",
+          "title_authority": "source-file-h1"
+        },
+        {
+          "id": "u07-l04",
+          "source_path": "units/unit-07/lessons/lesson-04-properties-operations-equivalent-structure.html",
+          "title_authority": "source-file-h1"
+        },
+        {
+          "id": "u07-l05",
+          "source_path": "units/unit-07/lessons/lesson-05-distributive-property-factoring.html",
+          "title_authority": "source-file-h1"
+        },
+        {
+          "id": "u07-l06",
+          "source_path": "units/unit-07/lessons/lesson-06-combining-like-terms-simplifying.html",
+          "title_authority": "source-file-h1"
+        },
+        {
+          "id": "u07-l07",
+          "source_path": "units/unit-07/lessons/lesson-07-formulas-multivariable-expressions.html",
+          "title_authority": "source-file-h1"
+        },
+        {
+          "id": "u07-l08",
+          "source_path": "units/unit-07/lessons/lesson-08-structural-modelling-patterns-error-analysis.html",
+          "title_authority": "source-file-h1"
+        }
+      ],
       "status": "open"
     },
     {
@@ -276,8 +550,49 @@
         "Cambridge: Algebra",
         "IB MYP: Algebra"
       ],
-      "lesson_count": null,
-      "lessons": [],
+      "lesson_count": 8,
+      "lessons": [
+        {
+          "id": "u08-l01",
+          "source_path": "units/unit-08/lessons/lesson-01-equality-solutions-balance-model.html",
+          "title_authority": "source-file-h1"
+        },
+        {
+          "id": "u08-l02",
+          "source_path": "units/unit-08/lessons/lesson-02-one-step-addition-subtraction.html",
+          "title_authority": "source-file-h1"
+        },
+        {
+          "id": "u08-l03",
+          "source_path": "units/unit-08/lessons/lesson-03-one-step-multiplication-division.html",
+          "title_authority": "source-file-h1"
+        },
+        {
+          "id": "u08-l04",
+          "source_path": "units/unit-08/lessons/lesson-04-two-step-equations-operation-order.html",
+          "title_authority": "source-file-h1"
+        },
+        {
+          "id": "u08-l05",
+          "source_path": "units/unit-08/lessons/lesson-05-multistep-distribution-like-terms.html",
+          "title_authority": "source-file-h1"
+        },
+        {
+          "id": "u08-l06",
+          "source_path": "units/unit-08/lessons/lesson-06-variables-both-sides-identities-contradictions.html",
+          "title_authority": "source-file-h1"
+        },
+        {
+          "id": "u08-l07",
+          "source_path": "units/unit-08/lessons/lesson-07-rearranging-formulas-literal-equations.html",
+          "title_authority": "source-file-h1"
+        },
+        {
+          "id": "u08-l08",
+          "source_path": "units/unit-08/lessons/lesson-08-context-equations-verification-error-analysis.html",
+          "title_authority": "source-file-h1"
+        }
+      ],
       "status": "open"
     },
     {
@@ -302,8 +617,44 @@
         "Cambridge: Algebra",
         "IB MYP: Algebra"
       ],
-      "lesson_count": null,
-      "lessons": [],
+      "lesson_count": 7,
+      "lessons": [
+        {
+          "id": "u09-l01",
+          "source_path": "units/unit-09/lessons/lesson-01-inequality-meaning-symbols-solution-sets.html",
+          "title_authority": "source-file-h1"
+        },
+        {
+          "id": "u09-l02",
+          "source_path": "units/unit-09/lessons/lesson-02-number-line-graphs-interval-descriptions.html",
+          "title_authority": "source-file-h1"
+        },
+        {
+          "id": "u09-l03",
+          "source_path": "units/unit-09/lessons/lesson-03-one-step-inequalities-order-preservation.html",
+          "title_authority": "source-file-h1"
+        },
+        {
+          "id": "u09-l04",
+          "source_path": "units/unit-09/lessons/lesson-04-negative-multipliers-reversal.html",
+          "title_authority": "source-file-h1"
+        },
+        {
+          "id": "u09-l05",
+          "source_path": "units/unit-09/lessons/lesson-05-multistep-variables-both-sides.html",
+          "title_authority": "source-file-h1"
+        },
+        {
+          "id": "u09-l06",
+          "source_path": "units/unit-09/lessons/lesson-06-compound-inequalities-and-or.html",
+          "title_authority": "source-file-h1"
+        },
+        {
+          "id": "u09-l07",
+          "source_path": "units/unit-09/lessons/lesson-07-contextual-constraints-discrete-solutions.html",
+          "title_authority": "source-file-h1"
+        }
+      ],
       "status": "open"
     },
     {
@@ -329,8 +680,49 @@
         "Cambridge: Algebra",
         "IB MYP: Relationships"
       ],
-      "lesson_count": null,
-      "lessons": [],
+      "lesson_count": 8,
+      "lessons": [
+        {
+          "id": "u10-l01",
+          "source_path": "units/unit-10/lessons/lesson-01-coordinate-plane-ordered-pairs-quadrants.html",
+          "title_authority": "source-file-h1"
+        },
+        {
+          "id": "u10-l02",
+          "source_path": "units/unit-10/lessons/lesson-02-patterns-sequences-rules.html",
+          "title_authority": "source-file-h1"
+        },
+        {
+          "id": "u10-l03",
+          "source_path": "units/unit-10/lessons/lesson-03-relations-inputs-outputs-functions.html",
+          "title_authority": "source-file-h1"
+        },
+        {
+          "id": "u10-l04",
+          "source_path": "units/unit-10/lessons/lesson-04-tables-graphs-equations-words.html",
+          "title_authority": "source-file-h1"
+        },
+        {
+          "id": "u10-l05",
+          "source_path": "units/unit-10/lessons/lesson-05-rate-change-tables-graphs-contexts.html",
+          "title_authority": "source-file-h1"
+        },
+        {
+          "id": "u10-l06",
+          "source_path": "units/unit-10/lessons/lesson-06-slope-intercepts-linear-equations.html",
+          "title_authority": "source-file-h1"
+        },
+        {
+          "id": "u10-l07",
+          "source_path": "units/unit-10/lessons/lesson-07-linear-nonlinear-function-notation.html",
+          "title_authority": "source-file-h1"
+        },
+        {
+          "id": "u10-l08",
+          "source_path": "units/unit-10/lessons/lesson-08-linear-modelling-prediction-residuals.html",
+          "title_authority": "source-file-h1"
+        }
+      ],
       "status": "open"
     },
     {
@@ -356,8 +748,49 @@
         "Cambridge: Geometry and Measure",
         "IB MYP: Geometry"
       ],
-      "lesson_count": null,
-      "lessons": [],
+      "lesson_count": 8,
+      "lessons": [
+        {
+          "id": "u11-l01",
+          "source_path": "units/unit-11/lessons/lesson-01-measurement-systems-units-precision.html",
+          "title_authority": "source-file-h1"
+        },
+        {
+          "id": "u11-l02",
+          "source_path": "units/unit-11/lessons/lesson-02-angles-lines-transversals-polygons.html",
+          "title_authority": "source-file-h1"
+        },
+        {
+          "id": "u11-l03",
+          "source_path": "units/unit-11/lessons/lesson-03-perimeter-circumference-composite-boundaries.html",
+          "title_authority": "source-file-h1"
+        },
+        {
+          "id": "u11-l04",
+          "source_path": "units/unit-11/lessons/lesson-04-area-polygons-circles-composite-figures.html",
+          "title_authority": "source-file-h1"
+        },
+        {
+          "id": "u11-l05",
+          "source_path": "units/unit-11/lessons/lesson-05-scale-drawings-similarity-dilations.html",
+          "title_authority": "source-file-h1"
+        },
+        {
+          "id": "u11-l06",
+          "source_path": "units/unit-11/lessons/lesson-06-right-triangles-pythagorean-distance.html",
+          "title_authority": "source-file-h1"
+        },
+        {
+          "id": "u11-l07",
+          "source_path": "units/unit-11/lessons/lesson-07-surface-area-nets-volume.html",
+          "title_authority": "source-file-h1"
+        },
+        {
+          "id": "u11-l08",
+          "source_path": "units/unit-11/lessons/lesson-08-coordinate-geometry-design-constraints-error.html",
+          "title_authority": "source-file-h1"
+        }
+      ],
       "status": "open"
     },
     {
@@ -383,8 +816,49 @@
         "Cambridge: Statistics and Probability",
         "PISA: Uncertainty and Data"
       ],
-      "lesson_count": null,
-      "lessons": [],
+      "lesson_count": 8,
+      "lessons": [
+        {
+          "id": "u12-l01",
+          "source_path": "units/unit-12/lessons/lesson-01-data-questions-variables-populations-samples.html",
+          "title_authority": "source-file-h1"
+        },
+        {
+          "id": "u12-l02",
+          "source_path": "units/unit-12/lessons/lesson-02-frequency-tables-dot-plots-histograms-box-plots.html",
+          "title_authority": "source-file-h1"
+        },
+        {
+          "id": "u12-l03",
+          "source_path": "units/unit-12/lessons/lesson-03-measures-center-mean-median-mode-weighted-mean.html",
+          "title_authority": "source-file-h1"
+        },
+        {
+          "id": "u12-l04",
+          "source_path": "units/unit-12/lessons/lesson-04-variability-range-iqr-mad-outliers.html",
+          "title_authority": "source-file-h1"
+        },
+        {
+          "id": "u12-l05",
+          "source_path": "units/unit-12/lessons/lesson-05-comparing-distributions-misleading-displays.html",
+          "title_authority": "source-file-h1"
+        },
+        {
+          "id": "u12-l06",
+          "source_path": "units/unit-12/lessons/lesson-06-probability-models-sample-spaces-relative-frequency.html",
+          "title_authority": "source-file-h1"
+        },
+        {
+          "id": "u12-l07",
+          "source_path": "units/unit-12/lessons/lesson-07-compound-probability-tree-diagrams-simulation.html",
+          "title_authority": "source-file-h1"
+        },
+        {
+          "id": "u12-l08",
+          "source_path": "units/unit-12/lessons/lesson-08-sampling-bias-association-evidence-decisions.html",
+          "title_authority": "source-file-h1"
+        }
+      ],
       "status": "open"
     },
     {
@@ -409,8 +883,34 @@
         "PISA: Formulate, Employ, Interpret",
         "IB MYP: Applying mathematics in real-life contexts"
       ],
-      "lesson_count": null,
-      "lessons": [],
+      "lesson_count": 5,
+      "lessons": [
+        {
+          "id": "u13-l01",
+          "source_path": "units/unit-13/lessons/lesson-01-frame-meaningful-safe-answerable-question.html",
+          "title_authority": "source-file-h1"
+        },
+        {
+          "id": "u13-l02",
+          "source_path": "units/unit-13/lessons/lesson-02-select-variables-mathematics-data-representations.html",
+          "title_authority": "source-file-h1"
+        },
+        {
+          "id": "u13-l03",
+          "source_path": "units/unit-13/lessons/lesson-03-build-calculate-verify-revise-model.html",
+          "title_authority": "source-file-h1"
+        },
+        {
+          "id": "u13-l04",
+          "source_path": "units/unit-13/lessons/lesson-04-test-assumptions-sensitivity-uncertainty-fairness.html",
+          "title_authority": "source-file-h1"
+        },
+        {
+          "id": "u13-l05",
+          "source_path": "units/unit-13/lessons/lesson-05-communicate-defend-reflect-readiness.html",
+          "title_authority": "source-file-h1"
+        }
+      ],
       "status": "open"
     }
   ],
