@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0",
   "component_set": "KH-MATH-PA",
-  "release": "2026.11.19-assessment-firewall-v24",
+  "release": "2026.11.21-record-and-assessment-shell-alignment-v25",
   "hash_format": "git-blob-sha1",
   "components": [
     {
@@ -98,7 +98,7 @@
     },
     {
       "path": "assessments/assets/exam-engine.js",
-      "sha": "7d310444b48b2132dc6a822d81066ddf0ecad21c"
+      "sha": "c01078a7879e26f7eb02cb51b65337f99976dc63"
     },
     {
       "path": "assessments/assets/exam-depth-v2.js",
@@ -110,11 +110,11 @@
     },
     {
       "path": "assessments/administration-guide.html",
-      "sha": "662bc5910f07ff9c84fdc1a50be5aa2f6deeb4f9"
+      "sha": "f0cfce076f2d58e487c93243c8c2172ec362c14a"
     },
     {
       "path": "records/course-completion-certificate.html",
-      "sha": "467887541ad251616bc06e234121ff82d947b193"
+      "sha": "e6deb5f6011727b13fcbdc4299ced060011d200d"
     },
     {
       "path": "units/unit-01/assets/assessment-engine.js",
