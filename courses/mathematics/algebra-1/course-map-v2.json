@@ -23,7 +23,9 @@
     ],
     "delivery": [],
     "storage_key": "khaemenes-algebra1-course-v1",
-    "version": null
+    "version": null,
+    "lesson_map_authority": "course-map-v2 lesson IDs + source paths; source-file H1 remains title authority",
+    "lesson_count": 87
   },
   "readiness": {
     "gateway": {
@@ -62,7 +64,38 @@
       "objectives": [],
       "standards": [],
       "lesson_count": 6,
-      "lessons": [],
+      "lessons": [
+        {
+          "id": "u01-l01",
+          "source_path": "units/unit-01/lessons/lesson-01-algebraic-habits-notation-mathematical-argument.html",
+          "title_authority": "source-file-h1"
+        },
+        {
+          "id": "u01-l02",
+          "source_path": "units/unit-01/lessons/lesson-02-the-real-number-system-interval-representations.html",
+          "title_authority": "source-file-h1"
+        },
+        {
+          "id": "u01-l03",
+          "source_path": "units/unit-01/lessons/lesson-03-operations-properties-order-of-operations.html",
+          "title_authority": "source-file-h1"
+        },
+        {
+          "id": "u01-l04",
+          "source_path": "units/unit-01/lessons/lesson-04-units-rates-dimensional-analysis.html",
+          "title_authority": "source-file-h1"
+        },
+        {
+          "id": "u01-l05",
+          "source_path": "units/unit-01/lessons/lesson-05-precision-rounding-significant-figures-percent-error.html",
+          "title_authority": "source-file-h1"
+        },
+        {
+          "id": "u01-l06",
+          "source_path": "units/unit-01/lessons/lesson-06-algebra-readiness-synthesis-error-analysis.html",
+          "title_authority": "source-file-h1"
+        }
+      ],
       "status": "open"
     },
     {
@@ -77,7 +110,43 @@
       "objectives": [],
       "standards": [],
       "lesson_count": 7,
-      "lessons": [],
+      "lessons": [
+        {
+          "id": "u02-l01",
+          "source_path": "units/unit-02/lessons/lesson-01-variables-terms-factors-coefficients-degree.html",
+          "title_authority": "source-file-h1"
+        },
+        {
+          "id": "u02-l02",
+          "source_path": "units/unit-02/lessons/lesson-02-evaluating-expressions-formula-substitution.html",
+          "title_authority": "source-file-h1"
+        },
+        {
+          "id": "u02-l03",
+          "source_path": "units/unit-02/lessons/lesson-03-properties-equivalence-structural-reasoning.html",
+          "title_authority": "source-file-h1"
+        },
+        {
+          "id": "u02-l04",
+          "source_path": "units/unit-02/lessons/lesson-04-distributive-property-combining-like-terms.html",
+          "title_authority": "source-file-h1"
+        },
+        {
+          "id": "u02-l05",
+          "source_path": "units/unit-02/lessons/lesson-05-monomials-introductory-polynomial-classification.html",
+          "title_authority": "source-file-h1"
+        },
+        {
+          "id": "u02-l06",
+          "source_path": "units/unit-02/lessons/lesson-06-adding-subtracting-polynomials.html",
+          "title_authority": "source-file-h1"
+        },
+        {
+          "id": "u02-l07",
+          "source_path": "units/unit-02/lessons/lesson-07-multiplying-monomials-factoring-the-gcf.html",
+          "title_authority": "source-file-h1"
+        }
+      ],
       "status": "open"
     },
     {
@@ -92,7 +161,43 @@
       "objectives": [],
       "standards": [],
       "lesson_count": 7,
-      "lessons": [],
+      "lessons": [
+        {
+          "id": "u03-l01",
+          "source_path": "units/unit-03/lessons/lesson-01-equality-inverse-operations-solution-verification.html",
+          "title_authority": "source-file-h1"
+        },
+        {
+          "id": "u03-l02",
+          "source_path": "units/unit-03/lessons/lesson-02-one-step-two-step-linear-equations.html",
+          "title_authority": "source-file-h1"
+        },
+        {
+          "id": "u03-l03",
+          "source_path": "units/unit-03/lessons/lesson-03-multi-step-equations-with-distribution-like-terms.html",
+          "title_authority": "source-file-h1"
+        },
+        {
+          "id": "u03-l04",
+          "source_path": "units/unit-03/lessons/lesson-04-variables-on-both-sides-identities-contradictions.html",
+          "title_authority": "source-file-h1"
+        },
+        {
+          "id": "u03-l05",
+          "source_path": "units/unit-03/lessons/lesson-05-literal-equations-rearranging-formulas.html",
+          "title_authority": "source-file-h1"
+        },
+        {
+          "id": "u03-l06",
+          "source_path": "units/unit-03/lessons/lesson-06-proportions-direct-variation-percent-equations.html",
+          "title_authority": "source-file-h1"
+        },
+        {
+          "id": "u03-l07",
+          "source_path": "units/unit-03/lessons/lesson-07-rate-mixture-distance-financial-equation-models.html",
+          "title_authority": "source-file-h1"
+        }
+      ],
       "status": "open"
     },
     {
@@ -107,7 +212,38 @@
       "objectives": [],
       "standards": [],
       "lesson_count": 6,
-      "lessons": [],
+      "lessons": [
+        {
+          "id": "u04-l01",
+          "source_path": "units/unit-04/lessons/lesson-01-inequality-meaning-number-lines-interval-notation.html",
+          "title_authority": "source-file-h1"
+        },
+        {
+          "id": "u04-l02",
+          "source_path": "units/unit-04/lessons/lesson-02-one-step-multi-step-linear-inequalities.html",
+          "title_authority": "source-file-h1"
+        },
+        {
+          "id": "u04-l03",
+          "source_path": "units/unit-04/lessons/lesson-03-negative-multipliers-sign-reversal.html",
+          "title_authority": "source-file-h1"
+        },
+        {
+          "id": "u04-l04",
+          "source_path": "units/unit-04/lessons/lesson-04-compound-inequalities-and-or-intersections.html",
+          "title_authority": "source-file-h1"
+        },
+        {
+          "id": "u04-l05",
+          "source_path": "units/unit-04/lessons/lesson-05-absolute-value-equations.html",
+          "title_authority": "source-file-h1"
+        },
+        {
+          "id": "u04-l06",
+          "source_path": "units/unit-04/lessons/lesson-06-absolute-value-inequalities-contextual-constraints.html",
+          "title_authority": "source-file-h1"
+        }
+      ],
       "status": "open"
     },
     {
@@ -122,7 +258,43 @@
       "objectives": [],
       "standards": [],
       "lesson_count": 7,
-      "lessons": [],
+      "lessons": [
+        {
+          "id": "u05-l01",
+          "source_path": "units/unit-05/lessons/lesson-01-relations-inputs-outputs-function-tests.html",
+          "title_authority": "source-file-h1"
+        },
+        {
+          "id": "u05-l02",
+          "source_path": "units/unit-05/lessons/lesson-02-function-notation-evaluation.html",
+          "title_authority": "source-file-h1"
+        },
+        {
+          "id": "u05-l03",
+          "source_path": "units/unit-05/lessons/lesson-03-domain-range-from-tables-graphs-contexts.html",
+          "title_authority": "source-file-h1"
+        },
+        {
+          "id": "u05-l04",
+          "source_path": "units/unit-05/lessons/lesson-04-multiple-representations-function-rules.html",
+          "title_authority": "source-file-h1"
+        },
+        {
+          "id": "u05-l05",
+          "source_path": "units/unit-05/lessons/lesson-05-transformations-of-parent-functions.html",
+          "title_authority": "source-file-h1"
+        },
+        {
+          "id": "u05-l06",
+          "source_path": "units/unit-05/lessons/lesson-06-piecewise-functions-discrete-models.html",
+          "title_authority": "source-file-h1"
+        },
+        {
+          "id": "u05-l07",
+          "source_path": "units/unit-05/lessons/lesson-07-arithmetic-sequences-as-functions-inverse-thinking.html",
+          "title_authority": "source-file-h1"
+        }
+      ],
       "status": "open"
     },
     {
@@ -137,7 +309,48 @@
       "objectives": [],
       "standards": [],
       "lesson_count": 8,
-      "lessons": [],
+      "lessons": [
+        {
+          "id": "u06-l01",
+          "source_path": "units/unit-06/lessons/lesson-01-rate-of-change-slope.html",
+          "title_authority": "source-file-h1"
+        },
+        {
+          "id": "u06-l02",
+          "source_path": "units/unit-06/lessons/lesson-02-slope-from-tables-graphs-points.html",
+          "title_authority": "source-file-h1"
+        },
+        {
+          "id": "u06-l03",
+          "source_path": "units/unit-06/lessons/lesson-03-slope-intercept-form.html",
+          "title_authority": "source-file-h1"
+        },
+        {
+          "id": "u06-l04",
+          "source_path": "units/unit-06/lessons/lesson-04-point-slope-standard-form.html",
+          "title_authority": "source-file-h1"
+        },
+        {
+          "id": "u06-l05",
+          "source_path": "units/unit-06/lessons/lesson-05-parallel-perpendicular-lines.html",
+          "title_authority": "source-file-h1"
+        },
+        {
+          "id": "u06-l06",
+          "source_path": "units/unit-06/lessons/lesson-06-scatterplots-correlation-lines-of-fit.html",
+          "title_authority": "source-file-h1"
+        },
+        {
+          "id": "u06-l07",
+          "source_path": "units/unit-06/lessons/lesson-07-regression-residuals-model-limitations.html",
+          "title_authority": "source-file-h1"
+        },
+        {
+          "id": "u06-l08",
+          "source_path": "units/unit-06/lessons/lesson-08-linear-modelling-prediction-decision-making.html",
+          "title_authority": "source-file-h1"
+        }
+      ],
       "status": "open"
     },
     {
@@ -152,7 +365,43 @@
       "objectives": [],
       "standards": [],
       "lesson_count": 7,
-      "lessons": [],
+      "lessons": [
+        {
+          "id": "u07-l01",
+          "source_path": "units/unit-07/lessons/lesson-01-systems-as-intersections-number-of-solutions.html",
+          "title_authority": "source-file-h1"
+        },
+        {
+          "id": "u07-l02",
+          "source_path": "units/unit-07/lessons/lesson-02-solving-systems-by-graphing.html",
+          "title_authority": "source-file-h1"
+        },
+        {
+          "id": "u07-l03",
+          "source_path": "units/unit-07/lessons/lesson-03-solving-systems-by-substitution.html",
+          "title_authority": "source-file-h1"
+        },
+        {
+          "id": "u07-l04",
+          "source_path": "units/unit-07/lessons/lesson-04-solving-systems-by-elimination.html",
+          "title_authority": "source-file-h1"
+        },
+        {
+          "id": "u07-l05",
+          "source_path": "units/unit-07/lessons/lesson-05-systems-from-contexts-cost-mixture-motion.html",
+          "title_authority": "source-file-h1"
+        },
+        {
+          "id": "u07-l06",
+          "source_path": "units/unit-07/lessons/lesson-06-systems-of-linear-inequalities.html",
+          "title_authority": "source-file-h1"
+        },
+        {
+          "id": "u07-l07",
+          "source_path": "units/unit-07/lessons/lesson-07-feasible-regions-constraints-introductory-optimization.html",
+          "title_authority": "source-file-h1"
+        }
+      ],
       "status": "open"
     },
     {
@@ -167,7 +416,38 @@
       "objectives": [],
       "standards": [],
       "lesson_count": 6,
-      "lessons": [],
+      "lessons": [
+        {
+          "id": "u08-l01",
+          "source_path": "units/unit-08/lessons/lesson-01-exponent-laws-equivalent-forms.html",
+          "title_authority": "source-file-h1"
+        },
+        {
+          "id": "u08-l02",
+          "source_path": "units/unit-08/lessons/lesson-02-zero-negative-rational-exponents.html",
+          "title_authority": "source-file-h1"
+        },
+        {
+          "id": "u08-l03",
+          "source_path": "units/unit-08/lessons/lesson-03-scientific-notation-operations.html",
+          "title_authority": "source-file-h1"
+        },
+        {
+          "id": "u08-l04",
+          "source_path": "units/unit-08/lessons/lesson-04-arithmetic-geometric-sequences.html",
+          "title_authority": "source-file-h1"
+        },
+        {
+          "id": "u08-l05",
+          "source_path": "units/unit-08/lessons/lesson-05-exponential-functions-growth-decay.html",
+          "title_authority": "source-file-h1"
+        },
+        {
+          "id": "u08-l06",
+          "source_path": "units/unit-08/lessons/lesson-06-compound-interest-half-life-exponential-modelling.html",
+          "title_authority": "source-file-h1"
+        }
+      ],
       "status": "open"
     },
     {
@@ -182,7 +462,43 @@
       "objectives": [],
       "standards": [],
       "lesson_count": 7,
-      "lessons": [],
+      "lessons": [
+        {
+          "id": "u09-l01",
+          "source_path": "units/unit-09/lessons/lesson-01-polynomial-vocabulary-standard-form.html",
+          "title_authority": "source-file-h1"
+        },
+        {
+          "id": "u09-l02",
+          "source_path": "units/unit-09/lessons/lesson-02-adding-subtracting-polynomials.html",
+          "title_authority": "source-file-h1"
+        },
+        {
+          "id": "u09-l03",
+          "source_path": "units/unit-09/lessons/lesson-03-multiplying-monomials-polynomials.html",
+          "title_authority": "source-file-h1"
+        },
+        {
+          "id": "u09-l04",
+          "source_path": "units/unit-09/lessons/lesson-04-binomial-products-special-products.html",
+          "title_authority": "source-file-h1"
+        },
+        {
+          "id": "u09-l05",
+          "source_path": "units/unit-09/lessons/lesson-05-factoring-the-greatest-common-factor.html",
+          "title_authority": "source-file-h1"
+        },
+        {
+          "id": "u09-l06",
+          "source_path": "units/unit-09/lessons/lesson-06-factoring-trinomials-difference-of-squares.html",
+          "title_authority": "source-file-h1"
+        },
+        {
+          "id": "u09-l07",
+          "source_path": "units/unit-09/lessons/lesson-07-zeros-factors-polynomial-modelling.html",
+          "title_authority": "source-file-h1"
+        }
+      ],
       "status": "open"
     },
     {
@@ -197,7 +513,48 @@
       "objectives": [],
       "standards": [],
       "lesson_count": 8,
-      "lessons": [],
+      "lessons": [
+        {
+          "id": "u10-l01",
+          "source_path": "units/unit-10/lessons/lesson-01-quadratic-functions-parabolas-key-features.html",
+          "title_authority": "source-file-h1"
+        },
+        {
+          "id": "u10-l02",
+          "source_path": "units/unit-10/lessons/lesson-02-vertex-axis-of-symmetry-transformations.html",
+          "title_authority": "source-file-h1"
+        },
+        {
+          "id": "u10-l03",
+          "source_path": "units/unit-10/lessons/lesson-03-factored-form-zeros-graphs.html",
+          "title_authority": "source-file-h1"
+        },
+        {
+          "id": "u10-l04",
+          "source_path": "units/unit-10/lessons/lesson-04-solving-quadratics-by-factoring.html",
+          "title_authority": "source-file-h1"
+        },
+        {
+          "id": "u10-l05",
+          "source_path": "units/unit-10/lessons/lesson-05-solving-by-square-roots-completing-the-square.html",
+          "title_authority": "source-file-h1"
+        },
+        {
+          "id": "u10-l06",
+          "source_path": "units/unit-10/lessons/lesson-06-quadratic-formula-discriminant.html",
+          "title_authority": "source-file-h1"
+        },
+        {
+          "id": "u10-l07",
+          "source_path": "units/unit-10/lessons/lesson-07-quadratic-modelling-projectiles-optimization.html",
+          "title_authority": "source-file-h1"
+        },
+        {
+          "id": "u10-l08",
+          "source_path": "units/unit-10/lessons/lesson-08-linear-quadratic-systems-model-comparison.html",
+          "title_authority": "source-file-h1"
+        }
+      ],
       "status": "open"
     },
     {
@@ -212,7 +569,38 @@
       "objectives": [],
       "standards": [],
       "lesson_count": 6,
-      "lessons": [],
+      "lessons": [
+        {
+          "id": "u11-l01",
+          "source_path": "units/unit-11/lessons/lesson-01-radical-expressions-principal-roots.html",
+          "title_authority": "source-file-h1"
+        },
+        {
+          "id": "u11-l02",
+          "source_path": "units/unit-11/lessons/lesson-02-simplifying-operating-with-radicals.html",
+          "title_authority": "source-file-h1"
+        },
+        {
+          "id": "u11-l03",
+          "source_path": "units/unit-11/lessons/lesson-03-rational-exponents-equivalent-radical-forms.html",
+          "title_authority": "source-file-h1"
+        },
+        {
+          "id": "u11-l04",
+          "source_path": "units/unit-11/lessons/lesson-04-pythagorean-theorem-distance.html",
+          "title_authority": "source-file-h1"
+        },
+        {
+          "id": "u11-l05",
+          "source_path": "units/unit-11/lessons/lesson-05-midpoint-coordinate-geometry-geometric-constraints.html",
+          "title_authority": "source-file-h1"
+        },
+        {
+          "id": "u11-l06",
+          "source_path": "units/unit-11/lessons/lesson-06-circle-equations-radical-models-verification.html",
+          "title_authority": "source-file-h1"
+        }
+      ],
       "status": "open"
     },
     {
@@ -227,7 +615,43 @@
       "objectives": [],
       "standards": [],
       "lesson_count": 7,
-      "lessons": [],
+      "lessons": [
+        {
+          "id": "u12-l01",
+          "source_path": "units/unit-12/lessons/lesson-01-statistical-questions-study-design-data-ethics.html",
+          "title_authority": "source-file-h1"
+        },
+        {
+          "id": "u12-l02",
+          "source_path": "units/unit-12/lessons/lesson-02-distributions-center-spread-standard-deviation.html",
+          "title_authority": "source-file-h1"
+        },
+        {
+          "id": "u12-l03",
+          "source_path": "units/unit-12/lessons/lesson-03-box-plots-histograms-comparing-groups.html",
+          "title_authority": "source-file-h1"
+        },
+        {
+          "id": "u12-l04",
+          "source_path": "units/unit-12/lessons/lesson-04-bivariate-data-correlation-causation-residuals.html",
+          "title_authority": "source-file-h1"
+        },
+        {
+          "id": "u12-l05",
+          "source_path": "units/unit-12/lessons/lesson-05-two-way-tables-conditional-relative-frequency-probability.html",
+          "title_authority": "source-file-h1"
+        },
+        {
+          "id": "u12-l06",
+          "source_path": "units/unit-12/lessons/lesson-06-financial-mathematics-growth-loans-taxes-risk.html",
+          "title_authority": "source-file-h1"
+        },
+        {
+          "id": "u12-l07",
+          "source_path": "units/unit-12/lessons/lesson-07-evaluating-quantitative-claims-communicating-evidence.html",
+          "title_authority": "source-file-h1"
+        }
+      ],
       "status": "open"
     },
     {
@@ -242,7 +666,33 @@
       "objectives": [],
       "standards": [],
       "lesson_count": 5,
-      "lessons": [],
+      "lessons": [
+        {
+          "id": "u13-l01",
+          "source_path": "units/unit-13/lessons/lesson-01-frame-a-complex-ethical-modelling-question.html",
+          "title_authority": "source-file-h1"
+        },
+        {
+          "id": "u13-l02",
+          "source_path": "units/unit-13/lessons/lesson-02-choose-variables-assumptions-data-representations.html",
+          "title_authority": "source-file-h1"
+        },
+        {
+          "id": "u13-l03",
+          "source_path": "units/unit-13/lessons/lesson-03-build-calculate-validate-revise-the-model.html",
+          "title_authority": "source-file-h1"
+        },
+        {
+          "id": "u13-l04",
+          "source_path": "units/unit-13/lessons/lesson-04-test-sensitivity-uncertainty-fairness.html",
+          "title_authority": "source-file-h1"
+        },
+        {
+          "id": "u13-l05",
+          "source_path": "units/unit-13/lessons/lesson-05-present-defend-reflect-on-algebra-i-readiness.html",
+          "title_authority": "source-file-h1"
+        }
+      ],
       "status": "open"
     }
   ],
