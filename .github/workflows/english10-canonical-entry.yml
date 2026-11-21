@@ -1,0 +1,36 @@
+name: English 10 Canonical Landing Entry
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'courses/language-arts/english-10/grades/grade-10/index.html'
+      - 'courses/language-arts/assets/english-landing-class-tools-v1.js'
+      - 'courses/language-arts/assets/english-minimal-landing-v1.css'
+      - 'tests/english10-canonical-entry.test.mjs'
+      - '.github/workflows/english10-canonical-entry.yml'
+  pull_request:
+    paths:
+      - 'courses/language-arts/english-10/grades/grade-10/index.html'
+      - 'courses/language-arts/assets/english-landing-class-tools-v1.js'
+      - 'courses/language-arts/assets/english-minimal-landing-v1.css'
+      - 'tests/english10-canonical-entry.test.mjs'
+      - '.github/workflows/english10-canonical-entry.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  structural-entry:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Verify English 10 canonical landing structure
+        run: |
+          node --check tests/english10-canonical-entry.test.mjs
+          node --check courses/language-arts/assets/english-landing-class-tools-v1.js
+          node --test tests/english10-canonical-entry.test.mjs
