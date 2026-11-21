@@ -4,12 +4,12 @@ import vm from "node:vm";
 const root="grades/grade-09/student-profile/";
 const read=p=>fs.readFileSync(p,"utf8");
 const registry=read(root+"student-course-registry.js");
-const schedule=read(root+"seven-class-schedule.js");
+const schedule=read(root+"eight-class-schedule.js");
 const profile=read(root+"profile/index.html"),daily=read(root+"daily-lessons/index.html");
 new vm.Script(registry);new vm.Script(schedule);
 for(const [label,source] of [["student profile",profile],["daily lessons",daily]]){
- assert.match(source,/id="grade09SevenClassSchedule"/,label+" missing seven-class mount");
- assert.match(source,/seven-class-schedule\.js/,label+" missing schedule renderer");
+ assert.match(source,/id="grade09EightClassSchedule"/,label+" missing seven-class mount");
+ assert.match(source,/eight-class-schedule\.js/,label+" missing schedule renderer");
 }
 const required=["english-9","global-studies-9","integrated-science-9","physical-education-9","psychology-101"];
 for(const id of required)assert.ok(registry.includes('id:"'+id+'"'),"Missing course registry entry: "+id);
