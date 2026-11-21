@@ -16,8 +16,12 @@ const parseReference=html=>{
 function verifyDependencies(html,source) {
  for(const script of html.matchAll(/<script\b[^>]*\bsrc="([^"]+\.js)(?:\?[^"]*)?"[^>]*>/gi)){
   const src=script[1];if(/^https?:\/\//.test(src))continue;
-  const full=path.resolve(path.dirname(source),src);
-  assert.ok(fs.existsSync(full),source+" missing local script "+src);
+  const prefix="/Khaemenes_High.github.io/";
+  // Root-relative production URLs are relative to the published repository,
+  // not to the CI runner filesystem root.
+  const full=src.startsWith(prefix)?path.join(src.slice(prefix.length)):
+    src.startsWith("/")?null:path.resolve(path.dirname(source),src);
+  assert.ok(full&&fs.existsSync(full),source+" missing local script "+src);
   verifiedImports++;
  }
 }
