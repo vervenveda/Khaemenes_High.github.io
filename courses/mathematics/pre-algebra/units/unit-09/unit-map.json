@@ -1006,8 +1006,10 @@
   "assessment": {
     "title": "Unit 9 Mastery Check",
     "file": "assessment/mastery-check.html",
-    "questions": 24,
-    "threshold": 80
+    "questions": 25,
+    "threshold": 80,
+    "pass_count": 20,
+    "scoring_note": "The existing 25-question official unit mastery check requires 20 correct for 80% mastery. Historical learner results are unchanged."
   },
   "printables": {
     "hub": "worksheets/index.html",
