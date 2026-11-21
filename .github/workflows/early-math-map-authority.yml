@@ -1,0 +1,28 @@
+name: Early Mathematics Map Authority
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'courses/mathematics/pre-algebra/course-map-v2.json'
+      - 'courses/mathematics/algebra-1/course-map-v2.json'
+      - 'courses/mathematics/tools/validate-early-math-map-normalization.mjs'
+      - '.github/workflows/early-math-map-authority.yml'
+  pull_request:
+    paths:
+      - 'courses/mathematics/pre-algebra/course-map-v2.json'
+      - 'courses/mathematics/algebra-1/course-map-v2.json'
+      - 'courses/mathematics/tools/validate-early-math-map-normalization.mjs'
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - run: node courses/mathematics/tools/validate-early-math-map-normalization.mjs
