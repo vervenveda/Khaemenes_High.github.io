@@ -1,0 +1,42 @@
+name: Grade 09 Schedule and Student Portfolio forensic source audit
+on:
+  push:
+    paths:
+      - 'tests/grade09-schedule-portfolio-feature-audit.test.mjs'
+      - 'grades/grade-09/student-profile/dashboard-layout.js'
+      - 'grades/grade-09/student-profile/index.html'
+      - 'grades/grade-09/student-profile/schedule/index.html'
+      - 'grades/shared/high-school-schedule-page.js'
+      - 'grades/shared/grade09-blueprint-upper-grade.js'
+      - 'grades/grade-10/student-profile/index.html'
+      - 'grades/grade-11/student-profile/index.html'
+      - 'grades/grade-12/student-profile/index.html'
+      - 'portfolio/index.html'
+      - 'portfolio/portfolio-academic-report.js'
+      - 'portfolio/portfolio-student-record-connections.js'
+      - '.github/workflows/grade09-schedule-portfolio-audit.yml'
+  pull_request:
+    paths:
+      - 'tests/grade09-schedule-portfolio-feature-audit.test.mjs'
+      - 'grades/grade-09/student-profile/dashboard-layout.js'
+      - 'grades/grade-09/student-profile/index.html'
+      - 'grades/grade-09/student-profile/schedule/index.html'
+      - 'grades/shared/high-school-schedule-page.js'
+      - 'grades/shared/grade09-blueprint-upper-grade.js'
+      - 'portfolio/index.html'
+      - 'portfolio/portfolio-academic-report.js'
+      - 'portfolio/portfolio-student-record-connections.js'
+      - '.github/workflows/grade09-schedule-portfolio-audit.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  source-audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - name: Verify ten Grade 09 Schedule and Student Portfolio feature contracts
+        run: node --test tests/grade09-schedule-portfolio-feature-audit.test.mjs
