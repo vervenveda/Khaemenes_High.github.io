@@ -8,6 +8,7 @@ on:
       - "portfolio/**"
       - "tools/validate-student-portfolio-workspace.mjs"
       - "tools/validate-student-portfolio-refresh.mjs"
+      - "tests/portfolio-learner-identity-stale-tab.test.mjs"
       - "tools/validate-algebra1-readiness-continuation-publisher.mjs"
       - "tools/validate-grade09-english-science-readiness-publisher.mjs"
       - "tools/validate-english9-objective-assessment-publisher.mjs"
@@ -23,6 +24,7 @@ on:
       - "portfolio/**"
       - "tools/validate-student-portfolio-workspace.mjs"
       - "tools/validate-student-portfolio-refresh.mjs"
+      - "tests/portfolio-learner-identity-stale-tab.test.mjs"
       - "tools/validate-algebra1-readiness-continuation-publisher.mjs"
       - "tools/validate-grade09-english-science-readiness-publisher.mjs"
       - "tools/validate-english9-objective-assessment-publisher.mjs"
@@ -39,6 +41,7 @@ jobs:
         run: |
           node tools/validate-student-portfolio-workspace.mjs
           node tools/validate-student-portfolio-refresh.mjs
+          node --test tests/portfolio-learner-identity-stale-tab.test.mjs
           node tools/validate-algebra1-readiness-continuation-publisher.mjs
           node tools/validate-grade09-english-science-readiness-publisher.mjs
           node tools/validate-english9-objective-assessment-publisher.mjs
