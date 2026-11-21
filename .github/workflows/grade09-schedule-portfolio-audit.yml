@@ -3,10 +3,13 @@ on:
   push:
     paths:
       - 'tests/grade09-schedule-portfolio-feature-audit.test.mjs'
+      - 'tests/grade09-readiness-schedule-portfolio-review.test.mjs'
       - 'grades/grade-09/student-profile/dashboard-layout.js'
       - 'grades/grade-09/student-profile/index.html'
       - 'grades/grade-09/student-profile/schedule/index.html'
       - 'grades/shared/high-school-schedule-page.js'
+      - 'courses/shared/algebra1-readiness-continuation-publisher.js'
+      - 'grades/grade-09/student-profile/student-course-registry.js'
       - 'grades/shared/grade09-blueprint-upper-grade.js'
       - 'grades/grade-10/student-profile/index.html'
       - 'grades/grade-11/student-profile/index.html'
@@ -18,10 +21,13 @@ on:
   pull_request:
     paths:
       - 'tests/grade09-schedule-portfolio-feature-audit.test.mjs'
+      - 'tests/grade09-readiness-schedule-portfolio-review.test.mjs'
       - 'grades/grade-09/student-profile/dashboard-layout.js'
       - 'grades/grade-09/student-profile/index.html'
       - 'grades/grade-09/student-profile/schedule/index.html'
       - 'grades/shared/high-school-schedule-page.js'
+      - 'courses/shared/algebra1-readiness-continuation-publisher.js'
+      - 'grades/grade-09/student-profile/student-course-registry.js'
       - 'grades/shared/grade09-blueprint-upper-grade.js'
       - 'portfolio/index.html'
       - 'portfolio/portfolio-academic-report.js'
@@ -39,4 +45,4 @@ jobs:
         with:
           persist-credentials: false
       - name: Verify ten Grade 09 Schedule and Student Portfolio feature contracts
-        run: node --test tests/grade09-schedule-portfolio-feature-audit.test.mjs
+        run: node --test tests/grade09-schedule-portfolio-feature-audit.test.mjs tests/grade09-readiness-schedule-portfolio-review.test.mjs
