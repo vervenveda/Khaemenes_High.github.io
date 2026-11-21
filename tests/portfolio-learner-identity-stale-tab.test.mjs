@@ -13,7 +13,7 @@ test('portfolio inline scripts remain parseable after hardening',()=>{
  assert.ok(n>=2);
 });
 test('open Portfolio tab retains original selected learner ID and grade checks',()=>{
- assert.match(page,/const learner=profile\?\.learnerId\?String\(profile\.learnerId\):null/);
+ assert.match(page,/,learner=profile\?\.learnerId\?String\(profile\.learnerId\):null/);
  assert.match(page,/selected===learner&&person\?\.learnerId===learner/);
  assert.match(page,/person\.stage==="high"&&grade===destinationGrade/);
  assert.match(page,/KhaemenesPortfolioIdentityLock=Object\.freeze/);
