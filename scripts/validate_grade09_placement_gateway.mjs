@@ -76,6 +76,19 @@ assert(
     preAlgebraLessonEngine.includes("if(!g2.ok)"),
   "Pre-Algebra Unit 1 lessons enforce readiness and sequence gates on direct entry"
 );
+// Every official Unit 01 lesson must load the guarded wrapper, never the
+// unguarded teaching core. The wrapper verifies learner readiness and sequence.
+const preAlgebraUnitMap=JSON.parse(read("courses/mathematics/pre-algebra/units/unit-01/unit-map.json"));
+assert(preAlgebraUnitMap.lessons.length===6,"Pre-Algebra Unit 1 must retain six mapped lessons");
+for(const lesson of preAlgebraUnitMap.lessons){
+  const file="courses/mathematics/pre-algebra/units/unit-01/"+lesson.file;
+  const html=read(file),sources=scriptSources(html);
+  assert(sources.includes("../assets/lesson-engine.js"),file+" must load readiness and sequencing wrapper");
+  assert(!sources.includes("../assets/lesson-engine-core.js"),file+" must not launch core directly");
+  assert(sources.some(src=>src.includes("course-entry-contract.js")),file+" missing canonical entry contract");
+  assert(sources.some(src=>src.includes("learner-scope-v1.js")),file+" missing learner identity scope");
+}
+
 assert(
   scriptSources(englishIndex).some((src) => src.includes("shared/course-entry-contract.js")) &&
     scriptSources(englishIndex).some((src) => src.includes("assets/course.js")),
