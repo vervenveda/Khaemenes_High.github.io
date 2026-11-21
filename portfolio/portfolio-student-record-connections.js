@@ -139,5 +139,13 @@ function download(){
 button.addEventListener("click",paint);
 exportButton.addEventListener("click",download);
 window.addEventListener("pageshow",()=>{if(latest)paint()});
+for(const event of ["focus","storage","khaemenes-student-profile-changed"]){
+ window.addEventListener(event,()=>{
+  if(window.KhaemenesPortfolioIdentityLock?.isCurrent?.()===false){
+   latest=null;output.replaceChildren();exportButton.disabled=true;
+   status.textContent="Learner selection changed. Reopen the correct Student Profile and reload before inspecting private records.";
+  }
+ });
+}
 window.KhaemenesStudentRecordConnections=Object.freeze({check:paint,version:"1.0.0",writesStudentRecords:false,syncsCloud:false});
 })();
