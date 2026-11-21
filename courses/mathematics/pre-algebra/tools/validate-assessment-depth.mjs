@@ -108,7 +108,8 @@ ok(examEngine.includes('selected>=threshold&&constructedPercent>=threshold&&over
 ok(examEngine.includes('pending-evaluator-review')&&examEngine.includes('review_complete'),"cumulative result distinguishes auto-score from completed evaluator review");
 
 const map=JSON.parse(fs.readFileSync(path.join(root,"assessments/assessment-map.json"),"utf8"));
-ok(map.schema_version==="3.0"&&map.mastery_threshold===80,"assessment map declares v3 depth alignment and 80% mastery");
+ok(map.schema_version==="3.1"&&map.mastery_threshold===80,"assessment map declares v3.1 cumulative alignment and 80% mastery");
+ok(map.assessments?.length===2&&map.assessments[0].selected_response_questions===56&&map.assessments[1].selected_response_questions===100&&map.assessments.every(item=>item.result_key?.endsWith("-v2")&&item.legacy_result_key?.endsWith("-v1")),"assessment map retains live cumulative banks and historical result-key provenance");
 ok(map.weekly_mastery?.weeks===36&&map.weekly_mastery?.questions_per_week===10&&map.weekly_mastery?.total_unique_prompts===360,"assessment map records 36 × 10 weekly alignment");
 ok(map.cumulative_scoring?.selected_response_weight===70&&map.cumulative_scoring?.constructed_response_weight===30,"assessment map matches cumulative 70/30 weighting");
 ok(map.cumulative_scoring?.mastery_requires?.selected_response_percent===80&&map.cumulative_scoring?.mastery_requires?.constructed_response_percent===80&&map.cumulative_scoring?.mastery_requires?.overall_percent===80,"assessment map matches the three-part 80% cumulative rule");
