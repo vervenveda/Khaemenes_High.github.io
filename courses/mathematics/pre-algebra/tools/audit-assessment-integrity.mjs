@@ -1,4 +1,5 @@
 import fs from "node:fs";
+import vm from "node:vm";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 
@@ -88,18 +89,38 @@ if(diagnosticQuestions.length!==30)fail(`Readiness diagnostic: ${diagnosticQuest
 if(Number(readiness.mastery_threshold_percent||readiness.mastery_threshold)!==80)fail("Readiness diagnostic mastery threshold must be 80%");
 notes.push(`Readiness diagnostic v3: ${diagnosticQuestions.length} stable-ID placement questions before Unit 01`);
 
+// Cumulative exams use the current QUESTIONS + DEPTH + CONFIG layout, not
+// the retired window.EXAM_CONFIG format used by unit assessment pages.
+// Inspect the existing public banks without changing assessment execution.
 const assessmentMap=readJson("assessments/assessment-map.json");
+function cumulativeExam(relative){
+  const source=fs.readFileSync(path.join(courseRoot,relative),"utf8");
+  const questionsMatch=source.match(/const\s+QUESTIONS\s*=\s*(\[[^\n]*\]);/);
+  const depthMatch=source.match(/const\s+DEPTH\s*=\s*(\{[^\n]*\});/);
+  const configMatch=source.match(/const\s+CONFIG\s*=\s*(\{[\s\S]*?\});/);
+  if(!questionsMatch||!depthMatch||!configMatch)throw new Error(relative+": missing current cumulative assessment declarations");
+  const questions=JSON.parse(questionsMatch[1]);
+  const depth=JSON.parse(depthMatch[1]);
+  // CONFIG is a self-contained object literal, not a complete executable page.
+  const config=vm.runInNewContext("("+configMatch[1]+")",Object.create(null),{timeout:300});
+  return {questions,depth,config};
+}
 for(const record of assessmentMap.assessments){
-  const config=embeddedConfig(`assessments/${record.path}`,"EXAM_CONFIG");
-  inspectQuestions(record.id,config.questions);
-  if(config.question_count!==config.questions.length)fail(`${record.id}: embedded count ${config.question_count} does not match ${config.questions.length} questions`);
-  if(record.selected_response_questions!==config.questions.length)fail(`${record.id}: assessment-map selected-response count ${record.selected_response_questions} does not match ${config.questions.length} questions`);
-  if(config.mastery_threshold!==80)fail(`${record.id}: mastery threshold is ${config.mastery_threshold}, expected 80`);
-  if(config.result_key!==record.result_key)fail(`${record.id}: result key differs from assessment map`);
-  const covered=[...new Set(config.questions.map(question=>question.unit))].sort((a,b)=>a-b);
+  const {questions,depth,config}=cumulativeExam("assessments/"+record.path);
+  inspectQuestions(record.id,questions);
+  if(questions.length!==record.selected_response_questions)fail(record.id+": selected-response map count does not match live bank ("+questions.length+")");
+  if(depth.constructed?.length!==record.constructed_responses)fail(record.id+": constructed-response map count differs from live exam");
+  if(config.id!==record.canonical_assessment_id)fail(record.id+": canonical cumulative ID differs from live exam");
+  if(config.mastery_threshold!==80)fail(record.id+": cumulative threshold must remain 80%");
+  if(config.result_key!==record.result_key)fail(record.id+": current result key differs from live exam");
+  if(config.legacy_result_key!==record.legacy_result_key)fail(record.id+": legacy result key must remain documented");
+  if(config.selected_weight!==70||config.constructed_weight!==30||
+      depth.selected_weight!==70||depth.constructed_weight!==30)fail(record.id+": cumulative 70/30 evidence weights changed");
+  if(depth.rubric_max!==4||!Number.isInteger(depth.response_min_chars)||depth.response_min_chars<40)fail(record.id+": written-response rubric or minimum length invalid");
+  const covered=[...new Set(questions.map(question=>question.unit))].sort((a,b)=>a-b);
   const expected=record.id.includes("MIDTERM")?Array.from({length:7},(_,index)=>index+1):Array.from({length:13},(_,index)=>index+1);
-  if(JSON.stringify(covered)!==JSON.stringify(expected))fail(`${record.id}: unit coverage is ${covered.join(", ")}, expected ${expected.join(", ")}`);
-  notes.push(`${record.id}: ${config.questions.length} questions covering units ${covered[0]}–${covered.at(-1)}`);
+  if(JSON.stringify(covered)!==JSON.stringify(expected))fail(record.id+": unit coverage differs: "+covered.join(", "));
+  notes.push(record.id+": "+questions.length+" selected items and "+depth.constructed.length+" written tasks over units "+covered[0]+"–"+covered.at(-1));
 }
 
 if(failures.length){
