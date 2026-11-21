@@ -1,0 +1,24 @@
+name: Grade 09 Account Cloud reconciliation source-only
+on:
+  push:
+    paths:
+      - 'grades/grade-09/student-profile/account-cloud/grade09-family-course-reconciliation.mjs'
+      - 'grades/grade-09/student-profile/tests/grade09-family-course-reconciliation.test.mjs'
+      - '.github/workflows/grade09-family-cloud-reconciliation.yml'
+  pull_request:
+    paths:
+      - 'grades/grade-09/student-profile/account-cloud/grade09-family-course-reconciliation.mjs'
+      - 'grades/grade-09/student-profile/tests/grade09-family-course-reconciliation.test.mjs'
+      - '.github/workflows/grade09-family-cloud-reconciliation.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  source-only:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - name: Reject unverified family, grade and assessment cloud claims
+        run: node --test grades/grade-09/student-profile/tests/grade09-family-course-reconciliation.test.mjs
