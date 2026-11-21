@@ -11,6 +11,7 @@ if(!button||!exportButton||!output||!status)return;
 const label=(tag,content,cls)=>{const el=document.createElement(tag);el.textContent=String(content);if(cls)el.className=cls;return el};
 let latest=null,run=0;
 function snapshot(){
+ if(window.KhaemenesPortfolioIdentityLock?.isCurrent?.()===false)return {ok:false,reason:"Portfolio learner changed. Reopen the correct Student Profile and reload before viewing academic records. No records changed."};
  // Each check re-reads identities and their source authorities, without ever
  // relying on the portfolio's initial learner selection.
  const contract=window.KhaemenesCourseEntryContract;
