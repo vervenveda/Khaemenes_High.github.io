@@ -1,0 +1,32 @@
+name: High to Higher Mathematics Readiness Evidence
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'courses/mathematics/assets/high-to-higher-readiness-receipt-v1.js'
+      - 'courses/mathematics/algebra-2/index.html'
+      - 'courses/mathematics/algebra-2/assets/app.js'
+      - 'courses/mathematics/geometry/index.html'
+      - 'courses/mathematics/geometry/assets/app.js'
+      - 'courses/mathematics/tools/validate-high-to-higher-readiness-receipt.mjs'
+      - '.github/workflows/high-to-higher-math-readiness.yml'
+  pull_request:
+    paths:
+      - 'courses/mathematics/assets/high-to-higher-readiness-receipt-v1.js'
+      - 'courses/mathematics/algebra-2/**'
+      - 'courses/mathematics/geometry/**'
+      - 'courses/mathematics/tools/validate-high-to-higher-readiness-receipt.mjs'
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - run: node courses/mathematics/tools/validate-high-to-higher-readiness-receipt.mjs
