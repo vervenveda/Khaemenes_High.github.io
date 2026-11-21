@@ -118,13 +118,44 @@ function metric(card,title,value,colorClass,note){
  const fill=element("div","metric-fill "+(colorClass||""));fill.style.width=(valid(value)?value:0)+"%";bar.append(fill);
  group.append(head,bar);if(note)group.append(element("div","metric-note",note));card.append(group);
 }
+// Source-owned Algebra I readiness review: no unscoped reads or academic writes.
+function grade09ReadinessStatus(id){
+ if(grade!=="09"||!id)return null;
+ try{
+  const person=contract?.readAcademyProfile?.();
+  if(person?.learnerId!==id)return null;
+  const result=contract?.readJSON?.("khaemenes-algebra1-diagnostic-result-v1",null,person);
+  if(!result||result.assessment_id!=="KH-MATH-A1-DIAGNOSTIC"||
+    (result.attribution?.learnerId&&result.attribution.learnerId!==id))return null;
+  const validAttempt=a=>a?.id==="KH-MATH-A1-DIAGNOSTIC"&&a.total===36&&
+    Number.isInteger(a.score)&&a.score>=0&&a.score<=36&&
+    Number.isFinite(a.percent)&&Math.abs(a.percent-a.score*100/36)<0.2&&
+    typeof a.submitted==="string"&&Number.isFinite(Date.parse(a.submitted));
+  const all=Array.isArray(result.attempt_history)?result.attempt_history:[];
+  const valid=all.filter(validAttempt);
+  if(!valid.length&&validAttempt(result.lastResult))valid.push(result.lastResult);
+  if(!valid.length)return null;
+  return Object.freeze({best:Math.max(...valid.map(a=>a.score)),count:valid.length});
+ }catch{return null;}
+}
+function updateGrade09Readiness(id){
+ const panel=$("grade09ReadinessReview"),message=$("grade09ReadinessMessage");
+ if(!panel||!message)return;
+ if(!id){panel.hidden=true;message.textContent="";return;}
+ const evidence=grade09ReadinessStatus(id);
+ message.textContent=evidence
+  ?"A learner-scoped Algebra I readiness attempt is saved on this device (best recorded score: "+evidence.best+"/36). Review its date and provenance in Student Portfolio. This is not a certified course grade or cloud record."
+  :"No learner-linked Algebra I readiness attempt was found in the canonical browser records. Student Portfolio can review a separately saved result and offer explicit learner confirmation if eligible. Do not retake an assessment just to repair its link.";
+ panel.hidden=false;
+}
 let sequence=0;
 async function render(){
  const current=++sequence;
  const id=student(),grid=$("scheduleGrid"),message=$("scheduleNotice");
  grid.replaceChildren();
- if(!id){message.hidden=false;message.textContent="Select your registered Grade "+Number(grade)+" learner in the Academy to view this private schedule. No other learner's records are displayed."; $("scheduleSummary").textContent="Registered learner required";return;}
+ if(!id){updateGrade09Readiness(null);message.hidden=false;message.textContent="Select your registered Grade "+Number(grade)+" learner in the Academy to view this private schedule. No other learner's records are displayed."; $("scheduleSummary").textContent="Registered learner required";return;}
  message.hidden=true;
+ updateGrade09Readiness(id);
  const rows=slots(),all=records(id),chosen=pins.readPins?.()||[],pinned=new Set(chosen);
  $("scheduleSummary").textContent="Your eight subjects, current learning steps and available course evidence.";
  $("countClasses").textContent=String(rows.length);
