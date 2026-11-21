@@ -180,8 +180,10 @@
   "assessment": {
     "title": "Unit 1 Mastery Check",
     "file": "assessment/mastery-check.html",
-    "questions": 20,
-    "threshold": 80
+    "questions": 25,
+    "threshold": 80,
+    "pass_count": 20,
+    "scoring_note": "The existing 25-question official unit mastery check requires 20 correct for 80% mastery. Historical learner results are unchanged."
   },
   "project": {
     "title": "Number Structure Investigation",
