@@ -1,6 +1,8 @@
 | 2026-11-19 | math engine · recovery · guard | [Mathematics Engine coverage firewall and Algebra II pending rollout](logs/2026/11/2026-11-19-math-engine-recovery-coverage-firewall.md) | Pre-Algebra 97, Algebra I 87, Geometry 90 source-enrolled; Algebra II 0/92 pending; assessments protected; browser HOLD |
 | 2026-11-19 | math engine · release · protocol | [Mathematics Engine v2.2.3 higher-math rollout protocol](logs/2026/11/2026-11-19-math-engine-v2.2.3-higher-math-rollout-protocol.md) | Pre-Algebra 97 + Algebra I 87 lesson cache/version sync; guarded higher-math protocol + auto-discovered integrity validator installed; assessments protected |\n\n# Workflow Index
 
+| 2026-11-20 | Portfolio identity hardening · regression | [Student Portfolio learner lock and academic refresh](logs/2026/11/2026-11-20-student-portfolio-learner-identity-refresh-hardening.md) | 6 new tests plus existing Portfolio checks PASS (CI 44843662848); live learner browser and Account Cloud HOLD |
+
 | 2026-11-20 | Grade 09 · Schedule and Portfolio forensic audit | [Feature wiring, learner isolation and five bubbles](logs/2026/11/2026-11-20-grade09-schedule-student-portfolio-feature-forensic-audit.md) | 10 source-only tests PASS (CI 44842980555); original learner browser QA, assessment attribution and Account Cloud HOLD |
 
 | 2026-11-20 | High School · repository hardening | [Five-bubble hardening](logs/2026/11/2026-11-20-high-school-five-hardening-bubbles.md) | v43 eight-class cache; 22-course authority contracts; read-only evidence receipts; profile ownership guard; repository release gate |
