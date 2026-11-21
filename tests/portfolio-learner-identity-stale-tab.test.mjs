@@ -33,6 +33,7 @@ test('academic report refuses stale initial-learner lock and rechecks after stor
 });
 test('record check refuses stale learner lock and never uploads records',()=>{
  assert.match(checker,/if\(window\.KhaemenesPortfolioIdentityLock\?\.isCurrent\?\.\(\)===false\)/);
+ assert.match(checker,/latest=null;output.replaceChildren\(\);exportButton.disabled=true/);
  assert.match(checker,/cloudSynced:false/);
  assert.match(checker,/syncsCloud:false/);
 });
