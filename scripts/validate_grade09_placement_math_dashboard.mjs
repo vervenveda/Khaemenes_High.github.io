@@ -105,7 +105,10 @@ assert(next.actionLabel.includes('Readiness'), 'First-time Algebra I action must
 
 store.set('khaemenes-algebra1-diagnostic-result-v1', JSON.stringify({ attempt_history: [{ percent: 82 }] }));
 next = await R.resolveContinueFor('algebra-1');
-assert(next.url.includes('/units/unit-01/lessons/lesson-01-algebraic-habits-notation-mathematical-argument.html'), 'Completed diagnostic should route to the first unmastered canonical Algebra I lesson.');
+assert(next.url.endsWith('/algebra-1/diagnostic/'), 'A percent-only draft must never bypass Algebra I readiness.');
+store.set('khaemenes-algebra1-diagnostic-result-v1', JSON.stringify({ attempt_history: [{ id: 'KH-MATH-A1-DIAGNOSTIC', score: 30, total: 36, percent: (30 / 36) * 100 }] }));
+next = await R.resolveContinueFor('algebra-1');
+assert(next.url.includes('/units/unit-01/lessons/lesson-01-algebraic-habits-notation-mathematical-argument.html'), 'Verified passing diagnostic should route to the first unmastered canonical Algebra I lesson.');
 
 store.set('khaemenes-algebra1-unit01-a3-v1', JSON.stringify({ best: { 'lesson-1': 90, 'lesson-2': 88, 'lesson-3': 80 } }));
 next = await R.resolveContinueFor('algebra-1');
