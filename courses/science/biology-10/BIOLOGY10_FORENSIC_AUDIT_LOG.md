@@ -293,3 +293,31 @@ All ten pages verify:
 
 ### Next block
 - Weeks 34–35 — biodiversity/resilience/human impacts, then Biology & Biotechnology Capstone.
+
+
+## 2026-11-22 · Two-week hardening block 9 — Weeks 34–35
+
+### Audit findings
+- Week 34 lessons ranged approximately 333–463 visible words before hardening.
+- Week 35 capstone lessons ranged approximately 332–459 visible words before hardening.
+- All ten pages lacked the canonical upper-science engine.
+- Major gaps were biodiversity measurement nuance, conservation decision evidence, capstone source provenance, model validation, and explicit prototype-test logic.
+
+### Repairs
+- Mounted `upper-science-v1` on all ten Week 34–35 lessons with one canonical loader per page.
+- Week 34 strengthened richness/evenness/index interpretation, fragmentation/connectivity, resilience/thresholds/restoration, ecosystem services/equity, and conservation decision matrices with sensitivity analysis.
+- Week 35 strengthened solution-neutral problem framing, stakeholder analysis, source provenance/independence, quantitative uncertainty and model validation, prototype/test design, zero-baseline-safe percent-change reasoning, and final evidence/ethics recommendation defense.
+- Added vocabulary-in-context, evidence/source-quality tasks, quantitative transfer, retrieval, uncertainty/model limits, and misconception safeguards across all lessons.
+- Follow-up fortification targeted biodiversity metrics, corridor trade-offs, restoration evidence, stakeholder framing, source independence, validation vs sensitivity, and controlled prototype testing.
+
+### Verification
+All ten pages now verify:
+- upper-science engine marker present,
+- exactly one canonical loader,
+- vocabulary-in-context,
+- evidence/source-quality reasoning,
+- retrieval,
+- at or above the fortified upper-science depth target.
+
+### Next block
+- Week 36 — Comprehensive Final & Portfolio Defense, followed by a full Grade 10 source-level certification audit.
