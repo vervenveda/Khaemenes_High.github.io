@@ -7,7 +7,7 @@
 "use strict";
 if(global.KhaemenesUpperScienceInstructionEngine)return;
 
-const VERSION="1.0.0";
+const VERSION="1.1.0";
 const ENGINE_ID="khaeUpperScienceEngineV1";
 const STYLE_ID="khaeUpperScienceEngineV1Style";
 const STAGES=[
@@ -21,7 +21,6 @@ const STAGES=[
 ];
 
 function text(node){return String(node?.textContent||"").replace(/\s+/g," ").trim()}
-function sectionTitle(node){return text(node.querySelector("h2,h3"))}
 function style(){
  if(document.getElementById(STYLE_ID))return;
  const s=document.createElement("style");s.id=STYLE_ID;
@@ -49,8 +48,9 @@ function findLessonRoot(){
  return document.querySelector("main.grid, main.wrap, main");
 }
 function candidateSections(root){
- return [...root.querySelectorAll(":scope > section, :scope > article")].filter(node=>node.querySelector("h2,h3"));
+ return [...root.querySelectorAll(":scope > section, :scope > article, :scope > details.lesson-accordion")].filter(node=>node.querySelector("summary,h2,h3"));
 }
+function sectionTitle(node){return text(node.matches("details.lesson-accordion")?node.querySelector(":scope > summary"):node.querySelector("h2,h3"))}
 function mapStages(nodes){
  const assigned=new Set();
  return STAGES.map(stage=>{
@@ -71,6 +71,20 @@ function mount(){
  const root=findLessonRoot();if(!root)return false;
  const nodes=candidateSections(root),groups=mapStages(nodes);
  if(groups.slice(1).filter(g=>g.length).length<5)return false;
+
+ const accordionMode=document.body?.dataset.scienceLayout==="accordion";
+ if(accordionMode){
+   groups.forEach((group,stageIndex)=>group.forEach(node=>{
+     node.dataset.scienceStage=String(stageIndex+1);
+     node.addEventListener("toggle",()=>{
+       if(!node.open)return;
+       document.dispatchEvent(new CustomEvent("khaemenes:upper-science-engine-step",{detail:{version:VERSION,step:stageIndex+1,visited:null,mastery:false,persistence:false,layout:"accordion"}}));
+     });
+   }));
+   document.body.dataset.upperScienceEngineMounted="true";
+   document.dispatchEvent(new CustomEvent("khaemenes:upper-science-engine-mounted",{detail:{version:VERSION,mastery:false,persistence:false,chrome:false,layout:"accordion"}}));
+   return true;
+ }
 
  style();
  const safetyNodes=nodes.filter(n=>/safety/i.test(sectionTitle(n))||n.classList.contains("warning")&&/safety/i.test(text(n)));
