@@ -412,3 +412,29 @@ All ten pages verify:
 
 ### Certification status
 - Whole-course source-level certification remains HOLD until Weeks 06–17 are hardened and verified.
+
+
+## 2026-11-22 · First-semester certification recovery block 3 — Weeks 06–07
+
+### Audit findings
+- Week 06 already had strong substantive depth (~527–673 visible words).
+- Week 07 already had strong substantive depth (~498–641 visible words), with Day 04 the only page slightly under the ordinary 500-word target.
+- All ten pages lacked the canonical upper-science engine.
+- Source/evidence-quality reasoning was absent; explicit retrieval and evidence revision were inconsistent.
+
+### Repairs
+- Mounted `upper-science-v1` on all ten Week 06–07 lessons with one canonical loader per page.
+- Week 06 preserved membrane/transport/SA:V/diffusion-lab depth while adding source-quality boundaries, model limits, osmosis misconception repair, geometry assumptions, and evidence revision.
+- Week 07 preserved organelle/endosymbiosis/systems depth while adding source-quality reasoning, independence of evidence, systems-level revision, and stronger model comparison.
+- Week 07 Day 04 received a targeted depth extension distinguishing ancestry evidence from current-function evidence.
+
+### Verification
+All ten pages verify:
+- upper-science engine marker present,
+- exactly one canonical loader,
+- evidence-quality task present,
+- intended retrieval/evidence-revision layer present where appropriate.
+- Week 07 Day 04 now clears the ordinary depth target.
+
+### Certification status
+- Whole-course source-level certification remains HOLD until Weeks 08–17 are hardened and verified.
