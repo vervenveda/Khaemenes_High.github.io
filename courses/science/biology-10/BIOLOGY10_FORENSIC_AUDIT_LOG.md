@@ -174,3 +174,32 @@ Representative Days 01, 03, and 05 in both weeks verify:
 
 ### Standard
 - The target is substantive depth, not padding: mechanism, evidence, quantitative reasoning, model limits, and source quality must all be visible.
+
+
+## 2026-11-22 · Two-week hardening block 5 — Weeks 26–27
+
+### Audit findings
+- Week 26 lessons ranged approximately 342–461 visible words before hardening.
+- Week 27 ranged approximately 336–461 visible words before hardening.
+- All ten pages lacked the canonical upper-science engine.
+- Biotechnology lessons had useful worked examples and investigation language but lacked strong source/evidence-quality scaffolds.
+- Evolution-evidence lessons were especially thin in explicit source quality, historical-inference boundaries, and quantitative treatment.
+
+### Repairs
+- Mounted `upper-science-v1` on all ten Week 26–27 lessons with one canonical loader per page.
+- Week 26 strengthened PCR amplification models and controls, gel electrophoresis calibration, sequencing coverage/quality, CRISPR targeting and repair limits, genomics privacy/consent, and quantitative risk interpretation.
+- Week 27 strengthened fossils/stratigraphy/dating, homology vs analogy, biogeography, molecular sequence comparison, model-based historical inference, and convergence of independent evidence.
+- Every lesson now includes explicit vocabulary-in-context, evidence-quality/source evaluation, quantitative or model transfer, retrieval, and uncertainty/model limits.
+- Reinforced that biotechnology signals require controls; sequence similarity is evidence interpreted through models; and historical claims must distinguish observation from inference.
+
+### Verification
+All ten pages verify:
+- upper-science engine marker present,
+- exactly one canonical loader,
+- vocabulary-in-context,
+- evidence-quality task,
+- quantitative/model reasoning,
+- retrieval.
+
+### Next block
+- Weeks 28–29 — population genetics/changing allele frequencies, then natural selection and adaptation.
