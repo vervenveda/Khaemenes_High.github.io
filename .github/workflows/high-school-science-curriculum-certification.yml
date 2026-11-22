@@ -1,0 +1,40 @@
+name: High School Science Curriculum Certification
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "courses/science/**"
+      - ".github/workflows/high-school-science-curriculum-certification.yml"
+  pull_request:
+    paths:
+      - "courses/science/**"
+      - ".github/workflows/high-school-science-curriculum-certification.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  certify:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "24"
+
+      - name: Run 720-lesson curriculum certification audit
+        run: |
+          node courses/science/tools/audit-high-school-science-curriculum-certification-v1.mjs
+          node courses/science/tools/audit-high-school-science-curriculum-certification-v1.mjs --json > high-school-science-certification.json
+
+      - name: Preserve certification report
+        uses: actions/upload-artifact@v4
+        with:
+          name: high-school-science-certification
+          path: high-school-science-certification.json
+          if-no-files-found: error
