@@ -147,7 +147,7 @@ function mount(){
 }
 function inspectContract(root=document){
  const found={};
- for(const key of Object.keys(CONTRACT))found[key]=Boolean(root.querySelector('[data-science-contract="'+key+'"]'));
+ for(const key of Object.keys(CONTRACT))found[key]=Boolean(root.querySelector('[data-science-contract~="'+key+'"]'));
  const missing=Object.entries(found).filter(([,ok])=>!ok).map(([key])=>key);
  return Object.freeze({version:VERSION,found:Object.freeze(found),missing:Object.freeze(missing),complete:missing.length===0});
 }
