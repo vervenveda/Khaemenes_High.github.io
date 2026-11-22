@@ -513,3 +513,28 @@ All ten pages verify:
 
 ### Certification status
 - Whole-course source-level certification remains HOLD until Weeks 14–17 are hardened and verified.
+
+
+## 2026-11-22 · First-semester certification recovery block 7 — Weeks 14–15
+
+### Audit findings
+- Week 14 already had solid substantive depth (~500–584 visible words).
+- Week 15 already had solid substantive depth (~504–596 visible words).
+- All ten pages lacked the canonical upper-science engine.
+- Source/evidence-quality reasoning was absent; explicit retrieval and evidence revision were inconsistent outside synthesis days.
+
+### Repairs
+- Mounted `upper-science-v1` on all ten Week 14–15 lessons with one canonical loader per page.
+- Week 14 preserved homeostasis/feedback depth while strengthening range-based homeostasis, positive-feedback termination, recovery/stability metrics, feedback-model validation, and interacting-system trade-offs.
+- Week 15 preserved cell-cycle/mitosis depth while strengthening replication-vs-segregation distinctions, mitotic-index sampling, prepared-image uncertainty, chromosome-stage evidence, and genetic-continuity limits.
+- Added explicit source-quality boundaries, retrieval, evidence revision, uncertainty, and misconception repair without replacing strong existing instruction.
+
+### Verification
+All ten pages verify:
+- upper-science engine marker present,
+- exactly one canonical loader,
+- evidence-quality task present,
+- intended retrieval/evidence-revision layer present where appropriate.
+
+### Certification status
+- Whole-course source-level certification remains HOLD until Weeks 16–17 are hardened and verified.
