@@ -17,6 +17,43 @@ Use this file as the running source-of-truth for work performed after 2026-11-22
 
 ## Running entries
 
+### 2026-11-22 · Biology 10 curriculum ↔ engine deep audit
+
+**Type:** audit · curriculum hardening · engine contract
+
+**Detailed log:** [Biology 10 curriculum ↔ Upper Science Engine deep audit](2026-11-22-biology10-curriculum-engine-deep-audit.md)
+
+Findings and repairs:
+- confirmed a coherent 36-week Biology progression from quantitative readiness through molecular/cellular biology, genetics, evolution, ecology, capstone and final;
+- found eight vague reading placeholders and replaced them with explicit self-contained Tuesday Deep Lesson contracts;
+- synchronized canonical course-map and Biology dashboard data;
+- found only Day 01 of Week 01 mounted to the Upper Science engine; mounted all five days;
+- added missing first-class essential question, daily objectives, phenomena/retrieval, standards emphasis and constructed explanation/CER evidence;
+- upgraded Upper Science Engine to v1.2 with a 22-element explicit curriculum representation contract;
+- made `data-science-contract` semantic markers authoritative over heading heuristics;
+- added `inspectContract()` and a dedicated Biology curriculum-to-engine audit;
+- preserved the no-storage/no-grading/no-chrome authority firewall.
+
+Validation:
+- Biology curriculum-to-engine audit — PASS;
+- Upper Science Instruction Engine — PASS;
+- Upper High School Daily Instruction — PASS;
+- Biology 10 Course Integrity — PASS;
+- Biology upper-science structural validation — PASS;
+- Biology secure assessment blueprint validation — PASS;
+- Biology upper-science student regression — PASS;
+- Science Student Experience Regression — PASS;
+- Science 9 Lesson Engine Pilot Integrity — PASS;
+- No Page Regulator Regression — PASS;
+- Public Entry Route Validation — PASS.
+
+PR: **#102**
+
+Status: **VALIDATED · READY TO MERGE**
+
+---
+
+
 ### 2026-11-22 · Biology 10 lesson page hierarchy redesign
 
 **Type:** presentation · science lesson workflow · engine refinement
