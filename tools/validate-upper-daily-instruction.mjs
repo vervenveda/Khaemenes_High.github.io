@@ -33,7 +33,7 @@ for(const course of courses){
    assert(html.toLowerCase().includes(label.toLowerCase()),course.name+" lesson lacks "+label);
   }
   assert(html.length>2800,course.name+" daily lesson unexpectedly skeletal");
-   const allowedScriptSuffixes=["/shared/high-school-learning-context-v1.js","/shared/high-school-formative-evidence-v1.js","/assets/high-school-return-to-classes.js","https://vervenveda.com/assets/vnv-ecosystem-toolbar.js"];
+   const allowedScriptSuffixes=["/shared/upper-science-instruction-engine-v1.js","/shared/high-school-learning-context-v1.js","/shared/high-school-formative-evidence-v1.js","/assets/high-school-return-to-classes.js","/assets/unit01-evidence-v1.js?v=20261115","https://vervenveda.com/assets/vnv-ecosystem-toolbar.js"];
    for(const script of html.matchAll(/<script\b([^>]*)>([\s\S]*?)<\/script>/gi)){
     const src=script[1].match(/\bsrc="([^"]+)"/i)?.[1]||"";
     assert.equal(script[2].trim(),"","Deep lesson must not contain inline executable code");
