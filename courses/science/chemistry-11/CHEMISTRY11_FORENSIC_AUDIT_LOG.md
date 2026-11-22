@@ -286,3 +286,32 @@ All ten pages now verify:
 ### Certification status
 - Whole-course Chemistry 11 source-level curriculum certification remains **HOLD**.
 - Next block: Week 17 semester synthesis/reaction reasoning and Week 18 MID assessment/corrections/portfolio audit.
+
+
+## 2026-11-22 · Two-week hardening block 9 — Weeks 17–18
+
+### Audit findings
+- Week 17 redox/solution-stoichiometry lessons began at approximately 253–303 visible words.
+- Week 18 midterm-readiness/portfolio/correction lessons began at approximately 277–307 visible words.
+- All ten pages lacked the canonical `upper-science-v1` marker/loader.
+- Week 17 required deeper oxidation-state bookkeeping, charge conservation, solution-stoichiometry calculations, trial analysis, and uncertainty reasoning.
+- Week 18 required a stronger public readiness/correction/portfolio architecture while preserving protected summative authority.
+
+### Repairs
+- Mounted `upper-science-v1` on all ten Week 17–18 lessons with exactly one canonical loader per page.
+- Week 17 strengthened oxidation-number assignment, oxidizing/reducing-agent identification, electron accounting, atom/charge/electron balance, solution stoichiometry with n=MV, non-1:1 equivalence reasoning, replicate analysis, accuracy-versus-precision distinctions, and integrated redox/solution audit chains.
+- Week 18 strengthened evidence-based readiness mapping, mixed-model quantitative practice, error-family diagnosis, transfer checks, portfolio traceability, artifact authenticity, correction/reassessment protocols, semester defense, and measurable second-semester planning.
+- Preserved the public/protected assessment boundary: confidential midterm items, answer keys, signing custody, authoritative grading, and official reassessment remain outside the public lesson layer.
+
+### Verification
+- Week 17 Days 01–05 now measure approximately 503–518 visible words.
+- Week 18 Days 01–05 now measure approximately 507–522 visible words.
+- All ten pages verify the canonical upper-science marker.
+- All ten pages verify exactly one canonical upper-science loader.
+- All ten pages expose the science-contract depth layer.
+- Ordinary teaching-page depth target is met, and the assessment-week public layer remains substantive without exposing protected summative content.
+
+### Certification status
+- First-semester Week 01–18 hardening is now complete at the daily-lesson source level.
+- Whole-course Chemistry 11 source-level curriculum certification remains **HOLD** pending second-semester Weeks 19–36 hardening and final 180/180 sweep.
+- Next block: Weeks 19–20 — kinetics foundations, rate laws, collision theory, factors affecting rate, and experimental rate data.
