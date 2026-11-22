@@ -1,0 +1,30 @@
+name: Science 9 Curriculum Utilization Audit
+on:
+  pull_request:
+    paths:
+      - 'courses/science/integrated-science-9/**'
+      - 'courses/shared/science-lesson-engine-v0.1.js'
+      - 'courses/science/tools/audit-science9-curriculum-utilization.mjs'
+      - '.github/workflows/science9-curriculum-utilization.yml'
+  push:
+    branches: [main]
+    paths:
+      - 'courses/science/integrated-science-9/**'
+      - 'courses/shared/science-lesson-engine-v0.1.js'
+      - 'courses/science/tools/audit-science9-curriculum-utilization.mjs'
+      - '.github/workflows/science9-curriculum-utilization.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: node courses/science/tools/audit-science9-curriculum-utilization.mjs
