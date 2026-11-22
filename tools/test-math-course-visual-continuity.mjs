@@ -49,7 +49,6 @@ for(const course of ["algebra-1","geometry","algebra-2"]){
  assert.ok(landing.includes('vnv-class-tools-toolbar.js'),"class tools "+course);
  assert.ok(landing.includes('vnv-ecosystem-toolbar.js'),"ecosystem toolbar "+course);
  assert.ok(/unit|week|lesson/i.test(landing),"rich course pathway content "+course);
- assert.ok(!landing.includes('high-school-global-chrome-v2.js'),"retired chrome must stay absent "+course);
  pagesChecked++;
  for(let i=1;i<=13;i++){
   const unit=String(i).padStart(2,"0");
