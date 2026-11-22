@@ -7,9 +7,18 @@
 "use strict";
 if(global.KhaemenesUpperScienceInstructionEngine)return;
 
-const VERSION="1.1.0";
+const VERSION="1.2.0";
 const ENGINE_ID="khaeUpperScienceEngineV1";
 const STYLE_ID="khaeUpperScienceEngineV1Style";
+const CONTRACT=Object.freeze({
+ "essential-question":"prepare","objectives":"prepare","phenomenon":"prepare","safety":"prepare",
+ "explicit-teaching":"learn","vocabulary":"learn","worked-example":"learn","model":"learn",
+ "guided-practice":"guided",
+ "quantitative":"investigate","investigation":"investigate","independent-practice":"investigate",
+ "misconception":"check","formative-check":"check","retrieval":"check",
+ "explanation":"explain","cer":"explain","evidence-revision":"explain",
+ "differentiation":"reflect","teacher-guidance":"reflect","evidence-handoff":"reflect","standards":"reflect"
+});
 const STAGES=[
  {label:"Recall & Prepare",match:[/safety/i]},
  {label:"Learn & Model",match:[/explicit science instruction/i,/worked example/i,/read and reason/i,/reading and understanding/i]},
@@ -82,7 +91,7 @@ function mount(){
      });
    }));
    document.body.dataset.upperScienceEngineMounted="true";
-   document.dispatchEvent(new CustomEvent("khaemenes:upper-science-engine-mounted",{detail:{version:VERSION,mastery:false,persistence:false,chrome:false,layout:"accordion"}}));
+   document.dispatchEvent(new CustomEvent("khaemenes:upper-science-engine-mounted",{detail:{version:VERSION,mastery:false,persistence:false,chrome:false,layout:"accordion",curriculum:inspectContract(document)}}));
    return true;
  }
 
@@ -134,6 +143,12 @@ function mount(){
  document.dispatchEvent(new CustomEvent("khaemenes:upper-science-engine-mounted",{detail:{version:VERSION,mastery:false,persistence:false,chrome:false}}));
  return true;
 }
-global.KhaemenesUpperScienceInstructionEngine=Object.freeze({version:VERSION,mount,stages:STAGES.map(s=>s.label)});
+function inspectContract(root=document){
+ const found={};
+ for(const key of Object.keys(CONTRACT))found[key]=Boolean(root.querySelector('[data-science-contract="'+key+'"]'));
+ const missing=Object.entries(found).filter(([,ok])=>!ok).map(([key])=>key);
+ return Object.freeze({version:VERSION,found:Object.freeze(found),missing:Object.freeze(missing),complete:missing.length===0});
+}
+global.KhaemenesUpperScienceInstructionEngine=Object.freeze({version:VERSION,mount,inspectContract,contract:CONTRACT,stages:STAGES.map(s=>s.label)});
 if(document.readyState==="loading")document.addEventListener("DOMContentLoaded",mount,{once:true});else mount();
 })(window);
