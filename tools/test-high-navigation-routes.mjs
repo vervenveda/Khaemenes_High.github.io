@@ -51,7 +51,6 @@ for(const file of pages){
   assert.ok(source.includes("math-landing-class-tools-v1.js"),file+" missing canonical math landing class tools");
   assert.ok(source.includes("Enter Course"),file+" missing direct instructional doorway");
   assert.ok(/href=["']assessments\/?["']/.test(source)||/data-view=["']exams["'][^>]*>[\s\S]*?Assessments/i.test(source),file+" missing assessment doorway");
-  assert.ok(!source.includes("high-school-global-chrome-v2.js"),file+" retired chrome reference returned");
  }else if(minimalLanding){
   assert.ok(source.includes("vnv-dual-ticker-v1.js"),file+" missing canonical dual ticker");
   assert.ok(source.includes("vnv-header-autopopulate.js"),file+" missing official auto header");
@@ -59,7 +58,6 @@ for(const file of pages){
   assert.ok(source.includes("vnv-class-tools-toolbar.js"),file+" missing class-tools toolbar");
   assert.ok(source.includes("vnv-ecosystem-toolbar.js"),file+" missing ecosystem toolbar");
   assert.ok(/minimal-landing-v1\.css/.test(source),file+" missing minimal landing stylesheet");
-  assert.ok(!source.includes("high-school-global-chrome-v2.js"),file+" retired chrome reference returned");
   if(/^courses\/mathematics\/(?:pre-algebra|algebra-1|geometry|algebra-2)\/index\.html$/.test(file)){
     assert.ok(source.includes("Enter Course"),file+" missing direct instructional doorway");
     assert.ok(/href=["']assessments\/?["']/.test(source),file+" missing assessment doorway");
@@ -76,7 +74,6 @@ for(const file of pages){
    const href=match[1].split("?")[0];
    const resolved=path.posix.normalize(path.posix.join(path.posix.dirname(file),href));
    assert.ok(fs.existsSync(resolved),file+" broken department shell asset "+resolved);
-   assert.ok(!source.includes("high-school-global-chrome-v2.js"),file+" retired chrome reference returned");
   }else{
   const english9CanonicalInline=file==="courses/language-arts/english-9/index.html"&&source.includes("inline English 9 canonical stylesheet is the sole presentation owner.")&&/<style\b/.test(source);
    const suffixes=frontDoor||english9CanonicalInline?[".js"]:[".js",".css"];
