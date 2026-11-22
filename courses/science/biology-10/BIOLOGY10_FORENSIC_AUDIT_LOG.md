@@ -47,3 +47,27 @@
 3. Harden in two-week blocks, preserving strong content and adding only missing contract elements.
 4. Re-audit inquiry/lab percentage, quantitative progression, vocabulary/retrieval, and assessment coherence.
 5. Keep browser/device certification separate from source-level curriculum certification.
+
+
+## 2026-11-22 · Two-week hardening block 1 — Weeks 18–19
+
+### Breakpoint confirmed
+- Week 18 is the first clear systemic regression in the sampled course sequence.
+- Before hardening, all five Week 18 lessons were approximately 338–362 visible words, none mounted the canonical upper-science engine, and explicit phenomenon/worked-example/retrieval/evidence structure was sparse.
+- Week 19 began recovering content depth (approximately 447–578 visible words), but all five sampled pages still lacked the canonical upper-science engine and most lacked explicit phenomenon/retrieval/evidence structure.
+
+### Repairs
+- Mounted `upper-science-v1` on all 10 lessons across Weeks 18–19 with one canonical loader per page.
+- Week 18: added cumulative-case reasoning, worked synthesis/quantitative examples, retrieval, evidence revision, and transfer without turning the assessment week into a new content unit.
+- Week 19: strengthened meiosis with explicit phenomena, chromosome/ploidy reasoning, probability, recombination, retrieval, evidence revision, and transfer.
+- Preserved existing course content, mastery boundaries, routes, and public/practice assessment status.
+
+### Verification
+Representative Days 01, 03, and 05:
+- Week 18 now verifies engine=true, loader=1, checkpoint=true, phenomenon/cumulative case=true, retrieval=true, evidence revision=true.
+- Week 19 now verifies engine=true, loader=1, checkpoint=true, phenomenon=true, retrieval=true, evidence revision=true.
+- Representative Week 18 pages recovered to ~482–491 visible words; assessment-week brevity remains intentional and slightly below the 500-word ordinary upper-science target.
+- Representative Week 19 pages now measure ~579–687 visible words.
+
+### Next block
+- Weeks 20–21 — Mendelian inheritance, probability/pedigrees, and statistical reasoning.
