@@ -20,7 +20,6 @@ function stage(){
  "Literary cards: "+cards+" · Tool links: "+links.length+" · Missing link targets: "+bad.length,
  "Duplicate IDs: "+(duplicate.join(", ")||"none"),...parts,
  "Header: "+(document.querySelector(".e9-toolkit-header")?"lightweight recovery header":"MISSING"),
- "Shared orchestrator bypassed: "+(!scripts.includes("high-school-global-chrome-v2.js")?"YES":"NO"),
  "Direct canonical component files: "+["vnv-333-ticker.js","vnv-ticker-autopopulate.js","vnv-header-autopopulate.js","vnv-ecosystem-toolbar.js"].filter(x=>scripts.includes(x)).length+"/4",
  "Scripts: "+scripts.join(", "),
  "Captured script errors: "+(errors.join(" | ")||"none"),
