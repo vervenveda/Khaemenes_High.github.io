@@ -60,3 +60,19 @@ Science 9 contains multiple unit-specific lesson engines and laboratory boundari
 
 ## Current status
 Code and documentation committed to GitHub. JavaScript syntax was checked on authored source before commit. GitHub Actions conclusions, browser rendering, learner-specific functionality, and mobile acceptance still require independent verification.
+
+
+## Curriculum hardening update — 2026-11-22
+
+The Unit 01 Day 01 pilot now treats the Science A+++ daily lesson contract as an engine-level acceptance target, not only a presentation sequence.
+
+Added to the pilot contract:
+- explicit essential question;
+- six-term inquiry vocabulary module with retrieval;
+- Observe → Predict → Test writing scaffold;
+- quantitative fictional dataset example with units, means, comparison and accessible graph;
+- four feedback-enabled reasoning checks;
+- canonical Lesson 01 evidence rubric synchronized with `teacher-resources/science/unit-01/UNIT01_RUBRICS.md`;
+- rubric ID `sci9-u01-d01-evidence-v1` for drift detection.
+
+The engine still does not award grades, write mastery, replace learner-scoped evidence, or own the Unit 01 record. Human review and existing Unit 01 mastery authority remain canonical.
