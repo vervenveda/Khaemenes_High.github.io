@@ -164,7 +164,7 @@ check("Biology 10 weekly mastery gate is assessment-derived", () => {
   const source = html + "\n" + read("courses/science/biology-10/biology10-dashboard-app-v1.js");
   assert.ok(source.includes("function weeklyMasteryMarkup("), "weekly mastery form must be generated from the public Biology bank");
   assert.ok(source.includes("function scoreWeeklyMastery("), "weekly mastery scoring function must exist");
-  assert.ok(source.includes("weeklyQuestionBank(w.week)"), "weekly check must filter the Biology question bank by week");
+  assert.ok(source.includes("biologyRetentionPool(w.week)")&&source.includes("weeklyQuestionBank(week)"), "weekly check must derive the current-week Biology bank through the retention pool");
   assert.ok(source.includes("MC.openSession(key,bank"), "weekly mastery must use a persisted Monte Carlo session");
   assert.ok(source.includes("MC.saveResponse(key,input.dataset.weeklyQid"), "weekly answers must persist within the active session");
   assert.ok(source.includes("Math.max(prior===null?0:prior,pct)"), "best demonstrated mastery must not be erased by optional later practice");
