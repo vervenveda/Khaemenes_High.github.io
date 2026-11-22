@@ -42,7 +42,10 @@ integrated-science-9/
 │   ├── unit-01/
 │   ├── ...
 │   └── unit-12/
-├── assessments/                # Public formative benchmarks and practice exams
+├── assessments/                # Public formative benchmarks, quarterly investigations and practice exams
+├── SPIRAL_RETRIEVAL_VOCABULARY_MAP.md
+├── CROSS_UNIT_COHERENCE_MAP.md
+├── INQUIRY_LAB_SPINE.md
 ├── science-evidence-portfolio.html
 ├── course-ui.js
 ├── course-ui.css
