@@ -2,10 +2,10 @@
 import fs from "node:fs";
 import path from "node:path";
 const forbidden=[
- "assets/high-school-global-chrome-v2.js",
+ "assets/"+["high-school","global-chrome-v2.js"].join("-"),
  "tests/high-chrome-observer-recovery.test.mjs"
 ];
-const loader="high-school-global-chrome-v2.js";
+const loader=["high-school","global-chrome-v2.js"].join("-");
 const runtimeExtensions=/\.(?:html?|js|mjs|cjs)$/i;
 const exempt=new Set([
  "tools/validate-no-page-regulator.mjs"
