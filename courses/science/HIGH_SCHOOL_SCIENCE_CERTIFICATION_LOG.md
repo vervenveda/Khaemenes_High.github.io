@@ -197,3 +197,17 @@ Browser interaction testing, scientific-answer verification, laboratory safety r
 - Verified representative Days 01, 03, 07, 09, 12, 14, and 15 contain one engine loader and the Unit 07 chemistry-reasoning checkpoint.
 - Grade 9 known canonical engine coverage is now 105/180 daily lessons.
 - Next target: Unit 08 — Motion, Forces & Energy.
+
+
+### 2026-11-22 · Grade 9 engine hardening passes 8–9 — Units 08 and 09
+- Audited all 30 daily lessons across Unit 08 (Motion, Forces & Energy) and Unit 09 (Electricity, Waves & Information).
+- Unit 08 lessons were generally about 601–688 visible words; Unit 09 lessons were generally about 602–670 visible words.
+- Both units already had strong vocabulary, quantitative content, models/investigation, misconception work, retrieval, and evidence.
+- The major shared deficiency was explicit worked reasoning; Unit 08 also lacked clearly labeled phenomena on most ordinary lesson days.
+- Mounted the canonical Science 9 engine on all 30 daily lessons in native/non-destructive mode.
+- Unit 08: added a physics-reasoning checkpoint to every lesson with phenomenon framing, worked examples, and quantitative/model explanation. Strengthened SI/vector reasoning, motion graphs, uncertainty, free-body diagrams, Newton's laws, momentum/impulse, work, kinetic/gravitational energy, conservation, efficiency, power, and engineering trade-offs.
+- Unit 09: added an electricity-and-waves checkpoint to every lesson with phenomenon framing, worked examples, and quantitative/model explanation. Strengthened charge/current/voltage, Ohm's law, series/parallel circuits, circuit data uncertainty, electrical power/energy, electromagnets, induction, wave equation, wave behavior, sound, EM spectrum, wave-particle models, and analog/digital information transfer.
+- Preserved existing mastery, assessment, evidence-storage, navigation, and lesson content.
+- Verified representative Unit 08 Days 01, 05, 10, 15 and Unit 09 Days 01, 05, 09, 13, 15 contain one engine loader and their unit-specific reasoning checkpoint.
+- Grade 9 known canonical engine coverage is now 135/180 daily lessons.
+- Next two-unit block: Unit 10 — Earth Systems & Biogeochemical Cycles, and Unit 11 — Dynamic Earth, Climate & Space.
