@@ -147,3 +147,31 @@ All ten pages now verify:
 ### Certification status
 - Whole-course Chemistry 11 source-level curriculum certification remains **HOLD**.
 - Next block: Weeks 07–08 — covalent bonding, Lewis structures, molecular geometry, and polarity.
+
+
+## 2026-11-22 · Two-week hardening block 4 — Weeks 07–08
+
+### Audit findings
+- Week 07 covalent-bonding/Lewis lessons began at approximately 322–370 visible words.
+- Week 08 geometry/polarity lessons began at approximately 323–369 visible words.
+- All ten pages lacked the canonical `upper-science-v1` marker/loader.
+- Existing sequence and core chemistry were sound, but model limits, evidence quality, quantitative/model transfer, and delayed retrieval were too compressed.
+
+### Repairs
+- Mounted `upper-science-v1` on all ten Week 07–08 lessons with exactly one canonical loader per page.
+- Week 07 strengthened shared-electron-density reasoning, valence-electron accounting, formal-charge calculations, resonance/delocalization, bond-order interpretation, model comparison, and Lewis-model limitations.
+- Week 08 strengthened electron-domain counting, VSEPR geometry, lone-pair effects, bond-dipole vector reasoning, symmetry/cancellation, structure-property transfer, geometry validation, and polarity-model limitations.
+- Added retrieval, evidence/source-quality reasoning, quantitative/model transfer, evidence revision, uncertainty/model limits, and misconception repair across all ten lessons.
+- Preserved existing Lewis-model and VSEPR investigations while adding explicit audit criteria rather than replacing them.
+
+### Verification
+- Week 07 Days 01–05 now measure approximately 519–538 visible words.
+- Week 08 Days 01–05 now measure approximately 505–541 visible words.
+- All ten pages verify the canonical upper-science marker.
+- All ten pages verify exactly one canonical upper-science loader.
+- All ten pages expose the science-contract depth layer.
+- Ordinary teaching-page depth target is met across both weeks.
+
+### Certification status
+- Whole-course Chemistry 11 source-level curriculum certification remains **HOLD**.
+- Next block: Weeks 09–10 — metallic bonding/solids, then intermolecular forces and physical-property reasoning.
