@@ -51,6 +51,15 @@ const emptyObjectiveUnits=courseMap.units.filter(u=>!Array.isArray(u.objectives)
 const emptyFrameworkUnits=courseMap.units.filter(u=>!Array.isArray(u.framework_tags)||u.framework_tags.length===0).map(u=>u.id);
 const thin=records.filter(r=>!r.missing&&r.words<500).sort((a,b)=>a.words-b.words).slice(0,40).map(r=>({file:r.file,words:r.words}));
 const engineMounted=records.filter(r=>r.engine).map(r=>r.file);
+const totals={count:records.filter(r=>!r.missing).length};
+for(const k of featureNames)totals[k]=records.filter(r=>!r.missing&&r[k]).length;
+totals.avgWords=Math.round(records.filter(r=>!r.missing).reduce((n,r)=>n+r.words,0)/totals.count);
+const utilization={
+ engineMounted:engineMounted.length,
+ engineCoveragePercent:Number((engineMounted.length/totals.count*100).toFixed(1)),
+ fullEngineUtilization:engineMounted.length===totals.count,
+ curriculumRichButNotEngineMounted:records.filter(r=>!r.missing&&!r.engine&&r.objectives&&r.quantitative&&r.investigation&&r.evidence).length
+};
 const missing=records.filter(r=>r.missing).map(r=>r.file);
 console.log(JSON.stringify({
  expectedDailyDestinations:180,
@@ -60,6 +69,8 @@ console.log(JSON.stringify({
  engineMounted,
  emptyObjectiveUnits,
  emptyFrameworkUnits,
+ totals,
+ utilization,
  grouped,
  thinnestLessons:thin
 },null,2));
