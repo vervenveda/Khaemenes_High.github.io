@@ -157,3 +157,20 @@ Representative Days 01, 03, and 05 in both weeks verify:
 
 ### Next block
 - Weeks 26–27 — biotechnology/genomics/bioethics, then evidence for evolutionary change.
+
+
+## 2026-11-22 · Fortification pass — Weeks 24–25 brought to upper-science depth
+
+### Reason for second pass
+- Structural hardening restored the engine and reasoning contract, but several lessons remained below the ordinary ~500-word upper-science depth target.
+- Explicit vocabulary scaffolding and source/evidence-quality work were still inconsistent.
+
+### Fortification
+- Added an advanced depth section to every Week 24–25 lesson.
+- Week 24 additions: strand-direction precision, transcript processing/isoforms, open-reading-frame reasoning, mutation consequence analysis, evidence ladders from DNA to phenotype, source hierarchy, and quantitative sequence/expression tasks.
+- Week 25 additions: promoter/enhancer architecture, operon vs eukaryotic networks, chromatin/epigenetic evidence, expression-data normalization, fold-change interpretation, causal-evidence matrices, and source-quality controls.
+- Every lesson now contains explicit vocabulary-in-context, evidence-quality/source evaluation, and quantitative transfer.
+- Preserved one canonical upper-science engine loader per page.
+
+### Standard
+- The target is substantive depth, not padding: mechanism, evidence, quantitative reasoning, model limits, and source quality must all be visible.
