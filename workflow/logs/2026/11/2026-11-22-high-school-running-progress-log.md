@@ -17,6 +17,44 @@ Use this file as the running source-of-truth for work performed after 2026-11-22
 
 ## Running entries
 
+### 2026-11-22 · Biology 10 lesson page hierarchy redesign
+
+**Type:** presentation · science lesson workflow · engine refinement
+
+**Scope:** Biology 10 · Week 01 · Lesson 01 pilot.
+
+Work completed:
+- moved the 333 and AutoPopulate tickers to the top of the lesson shell before all page content;
+- added the approved compact Science lesson header as a single-line Khaemenes Academy bar;
+- placed breadcrumbs directly beneath the header;
+- reduced lesson identity to one eyebrow: `Khaemenes Academy`;
+- established the title hierarchy:
+  - Biology 10;
+  - Week 01 · Lesson 01;
+  - Variation, Repeated Measurement, and Testable Questions;
+- added a symmetrical four-card 2×2 Lesson Guidance grid;
+- converted lesson instruction into default-collapsed accordion sections;
+- upgraded Upper Science Instruction Engine to v1.1 accordion mode so it tracks instructional stages without injecting the former seven-button navigation panel;
+- preserved course-owned evidence, mastery, assessment, routes, learner records, and formative-evidence bridge;
+- added approved translator assets to the page shell without transferring translator ownership into the Science engine;
+- retained the retired page-regulator firewall.
+
+Validation:
+- Upper Science Instruction Engine v1 — PASS;
+- Upper High School Daily Instruction Validation — PASS;
+- Biology 10 Course Integrity — PASS;
+- Science Student Experience Regression — PASS;
+- No Page Regulator Regression — PASS;
+- Public Entry Route Validation — PASS;
+- Science 9 Lesson Engine Pilot Integrity remained unaffected and PASS.
+
+PR: **#100**
+
+Status: **VALIDATED · READY TO MERGE**
+
+---
+
+
 ### 2026-11-22 · Upper Science Instruction Engine v1 pilot
 
 **Type:** upgrade · science engine · architecture
