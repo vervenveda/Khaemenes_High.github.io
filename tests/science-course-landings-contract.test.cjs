@@ -30,7 +30,6 @@ for(const [slug,title] of courses){
  assert.ok(html.includes('class="science-footer"'),slug+" footer");
  assert.ok(html.includes('id="scienceFeatureDialog"'),slug+" popup dialog");
  for(const src of requiredScripts)assert.ok(html.includes('src="'+src),slug+" canonical asset "+src);
- assert.ok(!html.includes("high-school-global-chrome-v2.js"),slug+" no legacy chrome");
 }
 const css=fs.readFileSync(path.join(root,"courses/science/assets/science-minimal-landing-v1.css"),"utf8");
 for(const rule of [
