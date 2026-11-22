@@ -81,17 +81,19 @@ function mount(){
  const nodes=candidateSections(root),groups=mapStages(nodes);
  if(groups.slice(1).filter(g=>g.length).length<5)return false;
 
- const accordionMode=document.body?.dataset.scienceLayout==="accordion";
- if(accordionMode){
+ const layout=String(document.body?.dataset.scienceLayout||"guided");
+ const accordionMode=layout==="accordion";
+ const nativeMode=layout==="native";
+ if(accordionMode||nativeMode){
    groups.forEach((group,stageIndex)=>group.forEach(node=>{
      node.dataset.scienceStage=String(stageIndex+1);
-     node.addEventListener("toggle",()=>{
+     if(accordionMode)node.addEventListener("toggle",()=>{
        if(!node.open)return;
-       document.dispatchEvent(new CustomEvent("khaemenes:upper-science-engine-step",{detail:{version:VERSION,step:stageIndex+1,visited:null,mastery:false,persistence:false,layout:"accordion"}}));
+       document.dispatchEvent(new CustomEvent("khaemenes:upper-science-engine-step",{detail:{version:VERSION,step:stageIndex+1,visited:null,mastery:false,persistence:false,layout}}));
      });
    }));
    document.body.dataset.upperScienceEngineMounted="true";
-   document.dispatchEvent(new CustomEvent("khaemenes:upper-science-engine-mounted",{detail:{version:VERSION,mastery:false,persistence:false,chrome:false,layout:"accordion",curriculum:inspectContract(document)}}));
+   document.dispatchEvent(new CustomEvent("khaemenes:upper-science-engine-mounted",{detail:{version:VERSION,mastery:false,persistence:false,chrome:false,layout,curriculum:inspectContract(document)}}));
    return true;
  }
 
