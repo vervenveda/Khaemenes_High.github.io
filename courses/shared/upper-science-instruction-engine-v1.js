@@ -20,13 +20,13 @@ const CONTRACT=Object.freeze({
  "differentiation":"reflect","teacher-guidance":"reflect","evidence-handoff":"reflect","standards":"reflect"
 });
 const STAGES=[
- {label:"Recall & Prepare",match:[/safety/i]},
- {label:"Learn & Model",match:[/explicit science instruction/i,/worked example/i,/read and reason/i,/reading and understanding/i]},
- {label:"Guided Reasoning",match:[/guided question/i,/guided practice/i]},
- {label:"Investigate & Analyze",match:[/independent work/i,/independent notebook/i,/science journal/i,/data and graph studio/i,/investigation/i]},
- {label:"Check & Correct",match:[/misconception/i,/formative understanding check/i,/retrieval practice/i,/practice questions/i]},
- {label:"Explain & Revise",match:[/mentor evidence conference/i,/claim/i,/cer/i]},
- {label:"Reflect & Transfer",match:[/teacher guidance/i,/continue learning/i,/preserve learning evidence/i]}
+ {key:"prepare",label:"Recall & Prepare",match:[/safety/i,/lesson compass/i,/essential question/i]},
+ {key:"learn",label:"Learn & Model",match:[/explicit science instruction/i,/worked example/i,/read and reason/i,/reading and understanding/i]},
+ {key:"guided",label:"Guided Reasoning",match:[/guided question/i,/guided practice/i]},
+ {key:"investigate",label:"Investigate & Analyze",match:[/independent work/i,/independent notebook/i,/science journal/i,/data and graph studio/i,/investigation/i]},
+ {key:"check",label:"Check & Correct",match:[/misconception/i,/formative understanding check/i,/retrieval practice/i,/spiral retrieval/i,/practice questions/i]},
+ {key:"explain",label:"Explain & Revise",match:[/constructed explanation/i,/claim/i,/cer/i,/evidence revision/i]},
+ {key:"reflect",label:"Reflect & Transfer",match:[/teacher guidance/i,/continue learning/i,/preserve learning evidence/i,/mentor evidence conference/i]}
 ];
 
 function text(node){return String(node?.textContent||"").replace(/\s+/g," ").trim()}
@@ -66,8 +66,10 @@ function mapStages(nodes){
    const matches=[];
    for(const node of nodes){
      if(assigned.has(node))continue;
+     const tokens=String(node.dataset?.scienceContract||"").split(/\s+/).filter(Boolean);
+     const explicit=tokens.some(token=>CONTRACT[token]===stage.key);
      const title=sectionTitle(node);
-     if(stage.match.some(re=>re.test(title))){
+     if(explicit||stage.match.some(re=>re.test(title))){
        assigned.add(node);matches.push(node);
      }
    }
