@@ -111,3 +111,16 @@ Browser interaction testing, scientific-answer verification, laboratory safety r
 - Verified representative first/last pages expose `data-science-engine="science9-v1"` and exactly one engine loader.
 - Grade 9 canonical engine coverage has therefore moved from 0 known mounted daily lessons to 15/180 known mounted daily lessons.
 - Next target: Unit 02 (Cells & the Organization of Life), followed by Units 03–12 in controlled batches, with depth gaps repaired as they are discovered rather than only adding engine markers.
+
+
+### 2026-11-22 · Grade 9 engine hardening pass 2 — Unit 02
+- Audited all 15 Unit 02 daily lessons (Cells & the Organization of Life).
+- Confirmed existing pages are instructionally substantial, generally ~1,000–1,600 visible words, with strong evidence/investigation content.
+- Identified recurring representation gaps rather than wholesale curriculum gaps: inconsistent explicit vocabulary, worked-example, misconception-repair, and retrieval sections.
+- Mounted the canonical Science 9 engine on all 15 Unit 02 daily lessons in native/non-destructive mode.
+- Added a topic-specific Unit 02 reasoning checkpoint to every daily lesson covering vocabulary, worked reasoning, misconception repair, retrieval, and explanation.
+- Added explicit phenomenon/investigation reinforcement where the audit showed the clearest visibility gaps (including Days 12 and 15).
+- Preserved all existing lesson content, mastery rules, assessment logic, evidence storage, and student routes.
+- Verified representative Days 01, 08, 12, and 15 contain one engine loader, the Science 9 engine marker, the new reasoning checkpoint, and explicit curriculum-contract metadata.
+- Grade 9 known canonical engine coverage is now 30/180 daily lessons.
+- Next target: Unit 03 — Body Systems & Homeostasis.
