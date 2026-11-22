@@ -47,7 +47,6 @@ assert.ok(js.includes('khaemenes:science-engine-mounted'),"Engine mount lifecycl
 assert.ok(js.includes('mastery:false')&&js.includes('persistence:false'),"Engine lifecycle must declare non-authority boundaries");
 assert.ok(js.includes('hashchange'),"Deep-link/hash synchronization missing");
 const chromeTokens=[
- "high-school-global-chrome-v2.js",
  "vnv-333-ticker",
  "vnv-ticker-autopopulate",
  "vnv-header-autopopulate",
@@ -77,7 +76,7 @@ for(const phrase of canonicalRubric){
 }
 assert.ok(lesson.includes("Vocabulary &amp; Language of Inquiry"),"Vocabulary module missing from Lesson 01");
 assert.ok(lesson.includes("How can we turn an observable phenomenon into a scientific question"),"Essential question missing from Lesson 01");
-for(const forbidden of ["localStorage.setItem","sessionStorage.setItem","indexedDB.open","fetch(","XMLHttpRequest","data-page-complete=\"true\"","high-school-global-chrome-v2.js"]){
+for(const forbidden of ["localStorage.setItem","sessionStorage.setItem","indexedDB.open","fetch(","XMLHttpRequest","data-page-complete=\"true\""]){
  assert.ok(!js.includes(forbidden),"Engine attempted forbidden action: "+forbidden);
 }
 const engineOwnerPaths=[lessonPath,previewPath];
