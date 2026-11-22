@@ -88,8 +88,18 @@
       "path": "diagnostic/",
       "status": "open",
       "big_idea": "Safe, ethical, careful scientific work begins with habits that protect people, evidence, organisms, communities, and environments.",
-      "objectives": [],
-      "framework_tags": []
+      "objectives": [
+        "Distinguish observation, inference, model, and explanation in scientific reasoning.",
+        "Apply laboratory safety, risk, ethics, and stop-work boundaries before beginning an investigation.",
+        "Use SI units and repeated measurements to record quantitative evidence transparently.",
+        "Evaluate evidence, data, models, and sources for relevance, limitations, and uncertainty.",
+        "Use readiness evidence to set learning goals and establish a science portfolio without treating the diagnostic as a permanent grade."
+      ],
+      "framework_tags": [
+        "Science and engineering practices: asking questions, planning investigations, analyzing data, constructing explanations, communicating information",
+        "Crosscutting reasoning: patterns, cause and effect, systems and models, scale and proportion, stability and change",
+        "International scientific-literacy benchmark: safety, evidence evaluation, source quality, quantitative reasoning, reflection"
+      ]
     },
     {
       "id": "u01",
@@ -99,8 +109,25 @@
       "path": "units/unit-01/",
       "status": "open",
       "big_idea": "Scientific explanations become stronger when questions are testable, measurements are reliable, and claims are supported by transparent evidence.",
-      "objectives": [],
-      "framework_tags": []
+      "objectives": [
+        "Transform a phenomenon or broad topic into a focused investigable question.",
+        "Identify independent and dependent variables, controlled conditions, and operational definitions.",
+        "Design a fair and safe investigation with an appropriate sampling and repetition plan.",
+        "Use SI-compatible measurements and evaluate accuracy, precision, uncertainty, repeatability, and limitations.",
+        "Organize data in transparent tables and choose graph forms and scales appropriate to the variables.",
+        "Distinguish patterns, anomalies, uncertainty, correlation, and causal claims.",
+        "Construct a claim supported by relevant evidence and reasoning while stating limitations.",
+        "Evaluate source quality and distinguish observation, measurement, inference, assumption, model, and claim.",
+        "Revise a scientific design or explanation after feedback, error analysis, or new evidence.",
+        "Communicate scientific work with units, transparent methods, source attribution, and stated uncertainty."
+      ],
+      "framework_tags": [
+        "NGSS-style three-dimensional learning: science and engineering practices, crosscutting reasoning, evidence-based performance",
+        "IB MYP Sciences: inquiry, criteria-based evidence, reflection, communication, ethics",
+        "Cambridge / England science: working scientifically, experimental skills, measurement, data interpretation",
+        "Australian Curriculum / British Columbia / Singapore / New Zealand: inquiry skills, evidence evaluation, scientific communication, context and ethics",
+        "OECD PISA Science: scientific literacy, evidence interpretation, source evaluation, and real-world decision making"
+      ]
     },
     {
       "id": "u02",
