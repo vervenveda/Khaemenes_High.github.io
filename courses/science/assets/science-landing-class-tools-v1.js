@@ -34,7 +34,7 @@ const grade=/\/physics-engineering-12\//i.test(location.pathname)?"12":/\/chemis
 const profileBase="/Khaemenes_High.github.io/grades/grade-"+grade+"/student-profile/";
 window.KhaemenesClassToolsConfigV1={
  id:"high-school-science-landing",
- match:()=>/\/courses\/science\/(?:integrated-science-9|biology-10|chemistry-11|physics-engineering-12)\/(?:index\.html)?$/i.test(location.pathname),
+ match:()=>/\/courses\/science\/(?:integrated-science-9|biology-10|chemistry-11|physics-engineering-12)\/(?:landing\.html|index\.html)?$/i.test(location.pathname),
  toggleLabel:"Tools",
  ariaLabel:"Science learning tools",
  tools:[
