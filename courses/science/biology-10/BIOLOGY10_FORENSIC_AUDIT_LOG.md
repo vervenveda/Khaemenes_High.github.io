@@ -128,3 +128,32 @@ Representative Days 01, 03, and 05 in both weeks verify:
 
 ### Next block
 - Weeks 24–25 — transcription/translation/genetic code, then gene regulation and epigenetic mechanisms.
+
+
+## 2026-11-22 · Two-week hardening block 4 — Weeks 24–25
+
+### Audit findings
+- Week 24 daily lessons ranged approximately 322–417 visible words before hardening.
+- Week 25 ranged approximately 330–430 visible words before hardening.
+- All ten pages lacked the canonical upper-science engine.
+- Existing worked examples and uncertainty language were present, but these were the thinnest ordinary teaching weeks audited so far.
+- Mechanism-level explanation needed strengthening, especially strand orientation, RNA processing, reading frame, sequence consequences, regulatory architecture, chromatin context, and expression-data interpretation.
+
+### Repairs
+- Mounted `upper-science-v1` on all ten Week 24–25 lessons with one canonical loader per page.
+- Week 24 strengthened transcription directionality, coding vs template strands, RNA processing, alternative splicing, translation, codon/frame logic, mutation consequences, and information-flow synthesis.
+- Week 25 strengthened promoters/enhancers, transcription factors, operon vs eukaryotic regulation, chromatin and epigenetic mechanisms, heatmaps/fold change, and causal limits in expression interpretation.
+- Every lesson now includes explicit retrieval, evidence revision, and transfer.
+- Reinforced that expression differences do not by themselves prove a specific regulatory mechanism and that epigenetic marks are context-dependent rather than universal on/off switches.
+
+### Verification
+Representative Days 01, 03, and 05 in both weeks verify:
+- upper-science engine marker present,
+- exactly one canonical loader,
+- phenomenon,
+- retrieval,
+- evidence revision,
+- transfer.
+
+### Next block
+- Weeks 26–27 — biotechnology/genomics/bioethics, then evidence for evolutionary change.
