@@ -1,0 +1,36 @@
+name: Science Course Landing Canonical Contract
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'courses/science/**/landing.html'
+      - 'courses/science/assets/science-minimal-landing-v1.css'
+      - 'courses/science/assets/science-minimal-header-mount-v1.js'
+      - 'courses/science/assets/science-landing-class-tools-v1.js'
+      - 'courses/science/index.html'
+      - 'tests/science-course-landings-contract.test.cjs'
+      - '.github/workflows/science-course-landings.yml'
+  pull_request:
+    paths:
+      - 'courses/science/**/landing.html'
+      - 'courses/science/assets/science-minimal-landing-v1.css'
+      - 'courses/science/assets/science-minimal-header-mount-v1.js'
+      - 'courses/science/assets/science-landing-class-tools-v1.js'
+      - 'courses/science/index.html'
+      - 'tests/science-course-landings-contract.test.cjs'
+      - '.github/workflows/science-course-landings.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  contract:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: node tests/science-course-landings-contract.test.cjs
