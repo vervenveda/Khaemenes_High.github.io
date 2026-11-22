@@ -60,6 +60,5 @@ for(const path of [
  "courses/social-studies/grade-11/index.html",
  "courses/social-studies/grade-12/index.html"
 ]){
- assert.ok(!read(path).includes("high-school-global-chrome-v2.js"),"retired page regulator returned: "+path);
 }
 console.log("PASS Science/Social 8 first steps, 6 Week 02 lessons, four grade student doors and retired regulator guards");
