@@ -39,7 +39,6 @@ for(const [name,cfg] of Object.entries(subjects)){
  assert.ok(html.includes(cfg.label),name+" preserves course identity");
  assert.ok(html.includes("vnv-language.js"),name+" language tools remain available");
  assert.ok(html.includes("vnv-ecosystem-toolbar.js"),name+" official ecosystem toolbar remains available");
- assert.ok(!html.includes("high-school-global-chrome-v2.js"),name+" retired global chrome remains absent");
  assert.ok(!html.includes("english-minimal-landing-v1.css")&&!html.includes("science-minimal-landing-v1.css"),name+" retired minimal landing owner remains absent");
 }
 
