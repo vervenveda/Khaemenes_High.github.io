@@ -488,3 +488,28 @@ All ten pages verify:
 
 ### Certification status
 - Whole-course source-level certification remains HOLD until Weeks 12–17 are hardened and verified.
+
+
+## 2026-11-22 · First-semester certification recovery block 6 — Weeks 12–13
+
+### Audit findings
+- Week 12 already had strong substantive depth (~507–591 visible words).
+- Week 13 already had strong substantive depth (~520–613 visible words).
+- All ten pages lacked the canonical upper-science engine.
+- Source/evidence-quality reasoning was absent; explicit retrieval and evidence revision were inconsistent outside synthesis days.
+
+### Repairs
+- Mounted `upper-science-v1` on all ten Week 12–13 lessons with one canonical loader per page.
+- Week 12 preserved experimental-energetics depth while strengthening proxy-vs-process reasoning, controls/confounders, normalization, variability, safe follow-up design, and evidence audits.
+- Week 13 preserved cell-signaling depth while strengthening receptor specificity, transduction/amplification/feedback, dose-response interpretation, saturation alternatives, pathway-model testing, and evidence-chain limits.
+- Added explicit source-quality boundaries, retrieval, evidence revision, uncertainty, and misconception repair without replacing strong existing instruction.
+
+### Verification
+All ten pages verify:
+- upper-science engine marker present,
+- exactly one canonical loader,
+- evidence-quality task present,
+- intended retrieval/evidence-revision layer present where appropriate.
+
+### Certification status
+- Whole-course source-level certification remains HOLD until Weeks 14–17 are hardened and verified.
