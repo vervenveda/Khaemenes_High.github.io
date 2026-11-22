@@ -6,6 +6,13 @@ on:
       - 'courses/shared/upper-science-instruction-engine-v1.js'
       - 'courses/science/biology-10/weeks/week-01/lessons/day-01.html'
       - 'tools/test-upper-science-instruction-engine-v1.mjs'
+      - 'courses/science/tools/audit-biology10-curriculum-engine-v1.mjs'
+      - 'courses/science/biology-10/weeks/week-01/lessons/day-05.html'
+      - 'courses/science/biology-10/weeks/week-01/lessons/day-04.html'
+      - 'courses/science/biology-10/weeks/week-01/lessons/day-03.html'
+      - 'courses/science/biology-10/weeks/week-01/lessons/day-02.html'
+      - 'courses/science/biology-10/biology10-course-data-v1.js'
+      - 'courses/science/biology-10/course-map.json'
       - '.github/workflows/upper-science-instruction-engine-v1.yml'
   pull_request:
     paths:
@@ -29,3 +36,4 @@ jobs:
           node-version: '22'
       - run: node --check courses/shared/upper-science-instruction-engine-v1.js
       - run: node tools/test-upper-science-instruction-engine-v1.mjs
+      - run: node courses/science/tools/audit-biology10-curriculum-engine-v1.mjs
