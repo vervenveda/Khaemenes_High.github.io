@@ -438,3 +438,28 @@ All ten pages verify:
 
 ### Certification status
 - Whole-course source-level certification remains HOLD until Weeks 08–17 are hardened and verified.
+
+
+## 2026-11-22 · First-semester certification recovery block 4 — Weeks 08–09
+
+### Audit findings
+- Week 08 already had strong substantive depth (~554–683 visible words).
+- Week 09 already had strong substantive depth (~560–665 visible words).
+- All ten pages lacked the canonical upper-science engine.
+- Source/evidence-quality reasoning was absent; explicit retrieval and evidence revision were inconsistent outside synthesis days.
+
+### Repairs
+- Mounted `upper-science-v1` on all ten Week 08–09 lessons with one canonical loader per page.
+- Week 08 preserved differentiation/specialization depth while strengthening same-genome/differential-expression reasoning, hierarchical biological organization, quantitative cell-structure comparisons, classification evidence, and systems-model revision.
+- Week 09 preserved photosynthesis depth while strengthening chloroplast structure-function, light reactions vs carbon fixation, limiting-factor interpretation, proxy-measurement quality, experimental controls, and matter/energy evidence chains.
+- Added explicit source-quality boundaries, retrieval, evidence revision, uncertainty, and misconception repair without replacing strong existing instruction.
+
+### Verification
+All ten pages verify:
+- upper-science engine marker present,
+- exactly one canonical loader,
+- evidence-quality task present,
+- intended retrieval/evidence-revision layer present where appropriate.
+
+### Certification status
+- Whole-course source-level certification remains HOLD until Weeks 10–17 are hardened and verified.
