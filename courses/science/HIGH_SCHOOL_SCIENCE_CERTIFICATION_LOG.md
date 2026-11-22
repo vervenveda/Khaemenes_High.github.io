@@ -211,3 +211,17 @@ Browser interaction testing, scientific-answer verification, laboratory safety r
 - Verified representative Unit 08 Days 01, 05, 10, 15 and Unit 09 Days 01, 05, 09, 13, 15 contain one engine loader and their unit-specific reasoning checkpoint.
 - Grade 9 known canonical engine coverage is now 135/180 daily lessons.
 - Next two-unit block: Unit 10 — Earth Systems & Biogeochemical Cycles, and Unit 11 — Dynamic Earth, Climate & Space.
+
+
+### 2026-11-22 · Grade 9 engine hardening passes 10–11 — Units 10 and 11
+- Audited all 30 daily lessons across Unit 10 (Earth Systems & Biogeochemical Cycles) and Unit 11 (Dynamic Earth, Climate & Space).
+- Unit 10 lessons were generally about 589–669 visible words; Unit 11 lessons were generally about 645–704 visible words.
+- Unit 10 already had strong vocabulary, models/investigation, misconception work, retrieval, and evidence, but lacked explicit phenomena on nearly every ordinary lesson day and had no clear worked examples.
+- Unit 11 was already phenomenon-rich and structurally stronger; its main recurring gap was explicit worked quantitative/model reasoning.
+- Mounted the canonical Science 9 engine on all 30 daily lessons in native/non-destructive mode.
+- Unit 10: added an Earth-systems checkpoint to every lesson with phenomenon framing, worked examples, and systems/model explanation. Strengthened Earth-sphere interactions, interior evidence, convection and plate motion, boundary hazards, seismic inference, rock cycling, erosion, watersheds, carbon/nutrient cycles, residence time, greenhouse physics, climate data, feedbacks, and uncertainty.
+- Unit 11: added a space-systems checkpoint to every lesson with worked examples and model/evidence explanation. Strengthened frames of reference, seasons/phases, light-time, gravity/orbits, scale models, solar-system formation, fusion and space weather, spectra/telescopes, stellar evolution, exoplanet transit inference and bias, cosmic distance, expansion evidence, Big Bang model limits, and responsible exploration.
+- Preserved existing mastery, assessment, evidence-storage, navigation, and lesson content.
+- Verified representative Unit 10 Days 01, 05, 10, 15 and Unit 11 Days 01, 05, 10, 12, 14, 15 contain one engine loader and their unit-specific reasoning checkpoint.
+- Grade 9 known canonical engine coverage is now 165/180 daily lessons.
+- Next target: Unit 12 — Sustainable Engineering Capstone, followed by a full Grade 9 Science certification audit.
