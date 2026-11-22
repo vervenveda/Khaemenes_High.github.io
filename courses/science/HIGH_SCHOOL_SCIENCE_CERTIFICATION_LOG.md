@@ -168,3 +168,17 @@ Browser interaction testing, scientific-answer verification, laboratory safety r
 - Verified representative Days 01, 05, 10, 14, and 15 contain one engine loader and the Unit 05 depth checkpoint.
 - Grade 9 known canonical engine coverage is now 75/180 daily lessons.
 - Next target: Unit 06 — Atomic Structure & Periodic Patterns.
+
+
+### 2026-11-22 · Grade 9 engine hardening pass 6 — Unit 06
+- Audited all 15 Unit 06 daily lessons (Atomic Structure & Periodic Patterns).
+- Found Unit 06 structurally stronger than Units 04–05: all lessons already exposed phenomena, vocabulary, quantitative content, models/investigation, misconception work, retrieval, and evidence.
+- The consistent deficiency was explicit worked reasoning; only one daily page clearly exposed a worked example before this pass.
+- Mounted the canonical Science 9 engine on all 15 Unit 06 daily lessons in native/non-destructive mode.
+- Added a Unit 06 worked-reasoning checkpoint to every lesson with a worked example plus model/quantitative reasoning.
+- Strengthened atomic composition, isotope notation, relative atomic mass, spectral evidence, electron configurations, ion formation, periodic-table structure, classification, group trends, and periodic-pattern data interpretation.
+- Explicitly reinforced model limitations so shell diagrams, periodic trends, and spectra are treated as evidence-bearing models rather than literal pictures or memorized slogans.
+- Preserved existing mastery, assessment, evidence-storage, navigation, and lesson content.
+- Verified representative Days 01, 04, 07, 10, 14, and 15 contain one engine loader and the Unit 06 worked-reasoning checkpoint.
+- Grade 9 known canonical engine coverage is now 90/180 daily lessons.
+- Next target: Unit 07 — Bonding, Reactions & Matter.
