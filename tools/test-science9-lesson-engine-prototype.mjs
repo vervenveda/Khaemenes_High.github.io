@@ -46,6 +46,15 @@ assert.ok(js.includes('prefers-reduced-motion'),"Reduced-motion navigation prote
 assert.ok(js.includes('khaemenes:science-engine-mounted'),"Engine mount lifecycle event missing");
 assert.ok(js.includes('mastery:false')&&js.includes('persistence:false'),"Engine lifecycle must declare non-authority boundaries");
 assert.ok(js.includes('hashchange'),"Deep-link/hash synchronization missing");
+const chromeTokens=[
+ "high-school-global-chrome-v2.js",
+ "vnv-333-ticker",
+ "vnv-ticker-autopopulate",
+ "vnv-header-autopopulate",
+ "vnv-ecosystem-toolbar",
+ "vnv-language"
+];
+for(const token of chromeTokens)assert.ok(!js.includes(token),"Science lesson engine must not own page chrome: "+token);
 assert.ok(js.includes("Simulated Data")&&js.includes("Scientific Explanation Studio"),"Science-specific learning workspace missing");
 assert.ok(js.includes("Observe → Predict → Test"),"Prediction/revision workspace missing");
 assert.ok(js.includes("Reasoning Checks"),"Feedback-enabled reasoning checks missing");
