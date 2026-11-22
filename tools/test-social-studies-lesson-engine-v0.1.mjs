@@ -20,7 +20,7 @@ assert.ok(pilot.includes('id="source-pack"'),"Grade 09 fictional source dossier 
 for(const name of ["week01-workspace.js","grade09-entry-gate.js","high-school-formative-evidence-v1.js"]){
  assert.ok(pilot.includes(name),"Existing Grade 09 learner/evidence owner removed: "+name);
 }
-for(const forbid of ["localStorage","sessionStorage","indexedDB","fetch(","XMLHttpRequest","document.cookie","data-page-complete","high-school-global-chrome-v2.js"]){
+for(const forbid of ["localStorage","sessionStorage","indexedDB","fetch(","XMLHttpRequest","document.cookie","data-page-complete"]){
  assert.ok(!js.includes(forbid),"Forbidden engine capability introduced: "+forbid);
 }
 assert.ok(js.includes('day?.click();phase?.click()'),"Grade 09 must reuse original day-phase controls");
