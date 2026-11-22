@@ -16,7 +16,7 @@ for(const course of courses){
  const home=read(unit+"index.html");
  assert(home.includes('id="assigned-reading"'),"Original unit reading removed "+course);
  assert(home.includes('href="reading-dossier.html#week-16"'),"New source entry missing "+course);
- const allowedUiScripts=new Set(["/Khaemenes_High.github.io/assets/high-school-global-chrome-v2.js","https://vervenveda.com/assets/vnv-ecosystem-toolbar.js"]);
+ const allowedUiScripts=new Set(["https://vervenveda.com/assets/vnv-ecosystem-toolbar.js"]);
  for(const script of html.matchAll(/<script\b([^>]*)>([\s\S]*?)<\/script>/gi)){
   const src=script[1].match(/\bsrc="([^"]+)"/i)?.[1]||"";
   assert.equal(script[2].trim(),"","Unit 06 dossier must not contain inline executable code");
