@@ -71,3 +71,31 @@ Representative Days 01, 03, and 05:
 
 ### Next block
 - Weeks 20–21 — Mendelian inheritance, probability/pedigrees, and statistical reasoning.
+
+
+## 2026-11-22 · Two-week hardening block 2 — Weeks 20–21
+
+### Audit findings
+- Week 20 daily lessons ranged approximately 390–504 visible words before hardening; Week 21 ranged approximately 369–503.
+- All ten pages lacked the canonical upper-science engine.
+- Existing genetics content and worked examples were generally sound, but explicit retrieval, evidence revision, cumulative transfer, and regular CER/evidence framing were sparse.
+- The repair focus was therefore reasoning continuity rather than replacing the inheritance curriculum.
+
+### Repairs
+- Mounted `upper-science-v1` on all ten Week 20–21 lessons with one canonical loader per page.
+- Week 20 strengthened segregation, Punnett-square probability, expected vs observed ratios, incomplete dominance/codominance, and limits of simple Mendelian models.
+- Week 21 strengthened product/sum rules, pedigree logic, X-linked probability, chi-square reasoning, assumptions, privacy/ethics boundaries, and probabilistic synthesis.
+- Every lesson now includes explicit retrieval from earlier meiosis/Mendelian learning, evidence revision, and transfer to a changed context or model.
+- Reinforced that inheritance probabilities do not guarantee small-family outcomes and that pedigree patterns are not diagnoses.
+
+### Verification
+Representative Days 01, 03, and 05 in both weeks verify:
+- upper-science engine marker present,
+- exactly one canonical loader,
+- phenomenon,
+- retrieval,
+- evidence revision,
+- transfer.
+
+### Next block
+- Weeks 22–23 — complex traits/gene–environment interaction, then DNA structure and replication.
