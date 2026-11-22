@@ -124,3 +124,17 @@ Browser interaction testing, scientific-answer verification, laboratory safety r
 - Verified representative Days 01, 08, 12, and 15 contain one engine loader, the Science 9 engine marker, the new reasoning checkpoint, and explicit curriculum-contract metadata.
 - Grade 9 known canonical engine coverage is now 30/180 daily lessons.
 - Next target: Unit 03 — Body Systems & Homeostasis.
+
+
+### 2026-11-22 · Grade 9 engine hardening pass 3 — Unit 03
+- Audited all 15 Unit 03 daily lessons (Body Systems & Homeostasis).
+- Confirmed the unit is already substantial, with representative lesson bodies ranging from roughly 935 to 1,970 visible words and strong retrieval/evidence coverage.
+- Identified the recurring certification gaps as explicit worked examples and misconception repair; several lessons also lacked a clearly labeled phenomenon/investigation frame or constructed-evidence language.
+- Mounted the canonical Science 9 engine on all 15 Unit 03 daily lessons in native/non-destructive mode.
+- Added a topic-specific Unit 03 reasoning checkpoint to every lesson with vocabulary, worked reasoning, misconception repair, retrieval, and explanation.
+- Added explicit phenomenon/system-investigation prompts where visibility was weakest, including homeostasis, liver/glucose regulation, nervous coordination, and endocrine coordination.
+- Strengthened explicit CER/evidence-revision representation on the integrated case-study and synthesis/mastery lessons.
+- Preserved existing lesson content, assessment logic, mastery, evidence storage, and student routes.
+- Verified representative Days 01, 07, 11, 14, and 15 contain the engine marker, exactly one engine loader, and the new reasoning checkpoint.
+- Grade 9 known canonical engine coverage is now 45/180 daily lessons.
+- Next target: Unit 04 — Cell Division, Reproduction & Inheritance.
