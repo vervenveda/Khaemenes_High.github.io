@@ -15,6 +15,21 @@
 
 Suggested mastery: 19/24, with no zero in safety.
 
+## Lesson 01 Evidence Rubric — 8 points
+
+**Canonical rubric ID:** `sci9-u01-d01-evidence-v1`
+
+Use this rubric for the Unit 01 Lesson 01 portfolio evidence and CER-style explanation. The lesson engine may display this rubric, but only the existing course/educator evidence system may record or verify scores.
+
+| Criterion | 0 | 1 | 2 |
+|---|---|---|---|
+| Scientific accuracy | Incorrect, unsupported, or missing | Partly accurate but imprecise or incomplete | Scientifically accurate and appropriately qualified |
+| Relevant evidence or design detail | Missing or unrelated | Some relevant evidence/design detail | Specific, relevant evidence or design detail supports the response |
+| Reasoning linking evidence to claim | Missing or circular | Partial link between evidence and claim | Clear reasoning explains why the evidence supports the claim |
+| Limitations and communication | Missing limitations or unclear communication | Limitation or communication is partly developed | Relevant limitation is identified and the explanation is clear and scientifically transparent |
+
+**Interpretation:** 8 points maximum. Apply the Unit 01 ≥80% mastery policy through the existing human-review/course authority; the lesson engine itself does not award mastery.
+
 ## Constructed Response Rubric — 8 points each
 
 - Scientific accuracy: 0–2
