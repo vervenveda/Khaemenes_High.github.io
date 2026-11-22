@@ -1,10 +1,11 @@
-/* Khaemenes Academy Science Lesson Engine v0.1; Grade 09 Unit 01 Day 01 pilot.
+/* Khaemenes Academy Science Lesson Engine v0.1.1; Grade 09 Unit 01 Day 01 hardened pilot.
  * Presentation only: existing lesson DOM, assessment, completion and records stay authoritative.
  * No localStorage writes, no external scripts, no page-wide chrome or duplicate toolbar.
  */
 (function(){
 "use strict";
 if(window.KhaemenesScienceLessonEngineV01)return;
+const ENGINE_VERSION="0.1.1";
 const names=[
 ["Recall & Prepare","Learning objectives","Materials"],
 ["Observe & Predict","1. Begin with a phenomenon, not an answer"],
@@ -18,8 +19,10 @@ function element(tag,cls,text){const n=document.createElement(tag);if(cls)n.clas
 function mount(){
  if(document.body?.dataset.scienceEngine!=="science9-u01-d01"||document.getElementById("khaeScienceEngineV01"))return false;
  const root=document.querySelector("main .lesson-page");if(!root)return false;
+ if(root.dataset.scienceEngineMounted==="true")return true;
  const byName=new Map([...root.querySelectorAll(":scope > section.lesson-section")].map(s=>[s.querySelector("h2")?.textContent.trim(),s]));
  if(names.some(group=>group.slice(1).some(t=>!byName.has(t))))return false;
+ if(new Set(byName.values()).size!==byName.size)return false;
  const roadmap=root.querySelector(":scope > .ka-lesson-roadmap"),actions=root.querySelector(":scope > .lesson-actions"),safety=root.querySelector(":scope > .safety-panel");
  if(!roadmap||!actions||!safety)return false;
  const style=element("style");style.id="khaeScienceEngineV01Style";
@@ -29,8 +32,9 @@ function mount(){
  const grid=element("div","science-engine-steps"),meter=element("div","science-engine-meter"),bar=element("span"),state=element("p"),controls=element("div","science-engine-controls");
  meter.setAttribute("role","progressbar");meter.setAttribute("aria-valuemin","0");meter.setAttribute("aria-valuemax","7");meter.setAttribute("aria-label","Sections visited; not mastery");meter.append(bar);state.setAttribute("aria-live","polite");
  const groups=names.map(g=>g.slice(1).map(t=>byName.get(t))),visited=new Set();
+ groups.flat().forEach((node,i)=>{if(!node.id)node.id="science-engine-section-"+String(i+1).padStart(2,"0")});
  let current=0,expanded=false;
- const tabs=names.map((group,i)=>{const b=element("button",null,String(i+1).padStart(2,"0")+" · "+group[0]);b.type="button";b.addEventListener("click",()=>show(i));grid.append(b);return b});
+ const tabs=names.map((group,i)=>{const b=element("button",null,String(i+1).padStart(2,"0")+" · "+group[0]);b.type="button";b.dataset.scienceEngineStep=String(i+1);b.setAttribute("aria-controls",groups[i].map(n=>n.id).join(" "));b.addEventListener("click",()=>show(i,{focus:true}));grid.append(b);return b});
  const back=element("button",null,"Previous step"),forward=element("button",null,"Next step"),all=element("button",null,"Show complete lesson");
  [back,forward,all].forEach(x=>x.type="button");controls.append(back,forward,all);dock.append(grid,meter,state,controls);
  const data=element("section","science-engine-note");data.append(element("h2",null,"Evidence Investigation · Simulated Data"),element("p",null,"Fictional paper-helicopter descent times in seconds. These are teaching examples, not experimental results."));
@@ -48,25 +52,33 @@ function mount(){
  roadmap.before(dock);actions.before(data,cer,retrieval);document.head.append(style);
  document.body.classList.add("science-engine-on");roadmap.classList.add("science-engine-hidden");
  [...root.querySelectorAll(":scope > .ka-lesson-stage")].forEach(n=>n.classList.add("science-engine-hidden"));
- function show(i){expanded=false;current=Math.max(0,Math.min(6,i));visited.add(current);
-  groups.forEach((items,k)=>items.forEach(n=>n.classList.toggle("science-engine-hidden",k!==current)));
-  supplements.forEach(s=>s.node.classList.toggle("science-engine-hidden",s.step!==current));
-  actions.classList.toggle("science-engine-hidden",current!==6);
+ function setVisible(node,visible){node.classList.toggle("science-engine-hidden",!visible);node.setAttribute("aria-hidden",visible?"false":"true")}
+ function show(i,{focus=false,updateHash=false}={}){expanded=false;current=Math.max(0,Math.min(6,i));visited.add(current);
+  groups.forEach((items,k)=>items.forEach(n=>setVisible(n,k===current)));
+  supplements.forEach(s=>setVisible(s.node,s.step===current));
+  setVisible(actions,current===6);
   tabs.forEach((b,k)=>b.setAttribute("aria-current",k===current?"step":"false"));
   back.disabled=current===0;forward.disabled=current===6;
   bar.style.width=Math.round(visited.size/7*100)+"%";meter.setAttribute("aria-valuenow",String(visited.size));
   state.textContent="Step "+(current+1)+" of 7 · "+visited.size+" visited · no mastery credit";all.textContent="Show complete lesson";
+  dock.dataset.currentStep=String(current+1);
+  if(updateHash){const target=groups[current][0];if(target?.id&&history?.replaceState)history.replaceState(null,"","#"+target.id)}
+  if(focus)tabs[current].focus({preventScroll:true});
+  document.dispatchEvent(new CustomEvent("khaemenes:science-engine-step",{detail:{version:ENGINE_VERSION,step:current+1,visited:visited.size,mastery:false}}));
  }
- back.addEventListener("click",()=>{show(current-1);dock.scrollIntoView({block:"start"})});
- forward.addEventListener("click",()=>{show(current+1);dock.scrollIntoView({block:"start"})});
+ back.addEventListener("click",()=>{show(current-1,{focus:true,updateHash:true});dock.scrollIntoView({block:"start",behavior:matchMedia("(prefers-reduced-motion: reduce)").matches?"auto":"smooth"})});
+ forward.addEventListener("click",()=>{show(current+1,{focus:true,updateHash:true});dock.scrollIntoView({block:"start",behavior:matchMedia("(prefers-reduced-motion: reduce)").matches?"auto":"smooth"})});
  all.addEventListener("click",()=>{expanded=!expanded;
-  if(expanded){groups.flat().forEach(n=>n.classList.remove("science-engine-hidden"));supplements.forEach(s=>s.node.classList.remove("science-engine-hidden"));actions.classList.remove("science-engine-hidden");state.textContent="All instruction visible; no mastery awarded";all.textContent="Return to guided steps"}
+  if(expanded){groups.flat().forEach(n=>setVisible(n,true));supplements.forEach(s=>setVisible(s.node,true));setVisible(actions,true);state.textContent="All instruction visible; no mastery awarded";all.textContent="Return to guided steps"}
   else show(current);
  });
- const anchor=location.hash?document.getElementById(location.hash.substring(1)):null;
- const index=anchor?groups.findIndex(group=>group.some(n=>n===anchor||n.contains(anchor))):-1;
- show(index<0?0:index);return true;
+ root.dataset.scienceEngineMounted="true";
+ const resolveHash=()=>{const anchor=location.hash?document.getElementById(location.hash.substring(1)):null;return anchor?groups.findIndex(group=>group.some(n=>n===anchor||n.contains(anchor))):-1};
+ const initial=resolveHash();show(initial<0?0:initial);
+ window.addEventListener("hashchange",()=>{const i=resolveHash();if(i>=0)show(i)},{passive:true});
+ document.dispatchEvent(new CustomEvent("khaemenes:science-engine-mounted",{detail:{version:ENGINE_VERSION,pilot:"science9-u01-d01",mastery:false,persistence:false}}));
+ return true;
 }
-window.KhaemenesScienceLessonEngineV01=Object.freeze({version:"0.1.0",mount});
+window.KhaemenesScienceLessonEngineV01=Object.freeze({version:ENGINE_VERSION,mount});
 if(document.readyState==="loading")document.addEventListener("DOMContentLoaded",mount,{once:true});else mount();
 })();
