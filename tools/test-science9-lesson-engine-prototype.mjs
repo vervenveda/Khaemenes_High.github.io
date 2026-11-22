@@ -35,6 +35,14 @@ assert.ok(js.includes('if(!roadmap||!actions||!safety)return false'),"Engine mus
 assert.ok(js.includes('roadmap.before(dock)'),"Engine must leave original lesson nodes in place");
 assert.ok(js.includes('visited.size'),"Visited steps must be separate from official mastery");
 assert.ok(js.includes("science-engine-hidden"),"Stage presentation toggle missing");
+assert.ok(js.includes('ENGINE_VERSION="0.1.1"'),"Hardened engine version missing");
+assert.ok(js.includes('scienceEngineMounted'),"Idempotent mounted-state guard missing");
+assert.ok(js.includes('aria-controls'),"Step controls must expose controlled lesson regions");
+assert.ok(js.includes('aria-hidden'),"Stage visibility must be exposed to assistive technology");
+assert.ok(js.includes('prefers-reduced-motion'),"Reduced-motion navigation protection missing");
+assert.ok(js.includes('khaemenes:science-engine-mounted'),"Engine mount lifecycle event missing");
+assert.ok(js.includes('mastery:false')&&js.includes('persistence:false'),"Engine lifecycle must declare non-authority boundaries");
+assert.ok(js.includes('hashchange'),"Deep-link/hash synchronization missing");
 assert.ok(js.includes("Simulated Data")&&js.includes("Scientific Explanation Studio"),"Science-specific learning workspace missing");
 for(const forbidden of ["localStorage.setItem","sessionStorage.setItem","indexedDB.open","fetch(","XMLHttpRequest","data-page-complete=\"true\"","high-school-global-chrome-v2.js"]){
  assert.ok(!js.includes(forbidden),"Engine attempted forbidden action: "+forbidden);
