@@ -36,9 +36,10 @@ Key findings:
 Interpretation:
 **Science 9 is built, but the current shared engine is still a pilot and is not yet utilizing the full course.**
 
-PR: **#104**
+PR: **#104**  
+Final SHA: `6cae16f62ede0fd45846c87874d4274a33723b48`
 
-Status: **AUDITED · ENGINE UTILIZATION GAP CONFIRMED · READY FOR UNIT-BY-UNIT MIGRATION**
+Status: **MERGED · ENGINE UTILIZATION GAP CONFIRMED · READY FOR UNIT-BY-UNIT MIGRATION**
 
 ---
 
