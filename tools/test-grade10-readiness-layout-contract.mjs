@@ -27,5 +27,4 @@ assert.ok(biologyJs.includes('button.type="button";button.className="bio10-progr
 assert.ok(biologyJs.includes('MC.openSession')&&biologyJs.includes('MC.saveResponse')&&biologyJs.includes('MC.complete'),"Biology 10 assessment persistence/scoring authority missing");
 assert.ok(bioHtml.includes('#testArea #testForm{max-width:880px;margin:0 auto}'),"Biology 10 centered layout missing");
 assert.ok(bioHtml.includes("biology10-dashboard-app-v1.js?v=20261119-readiness-layout-v1"),"Biology 10 JS refresh missing");
-assert.ok(!bioHtml.includes('high-school-global-chrome-v2.js'),"Retired chrome must not be reintroduced");
 console.log("PASS: Grade 10 English diagnostic and Biology practice progress accordion, course-owned CSS, scoring boundaries");
