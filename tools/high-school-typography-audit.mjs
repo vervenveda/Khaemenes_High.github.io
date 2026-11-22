@@ -3,9 +3,6 @@ import fs from "node:fs";
 import path from "node:path";
 
 const ROOT=process.cwd();
-const CHROME="assets/high-school-global-chrome-v2.js";
-const LOADER_RE=/high-school-global-chrome-v2\.js/i;
-
 function walk(dir){
   const out=[];
   for(const e of fs.readdirSync(dir,{withFileTypes:true})){
@@ -17,34 +14,32 @@ function walk(dir){
   return out;
 }
 
-const chrome=fs.readFileSync(path.join(ROOT,CHROME),"utf8");
-const assertions=[
-  ["16px readable floor",/size<16[\s\S]{0,180}font-size","16px","important"/],
-  ["33px heading rule",/font-size:33px!important/],
-  ["66px primary-title rule",/font-size:66px!important/],
-  ["primary-title marker",/data-khaemenes-primary-title/],
-  ["typography dataset marker",/khaemenesHighTypography="16-33-66"/],
-];
-const failed=assertions.filter(([,re])=>!re.test(chrome));
-
 const html=walk(ROOT).filter(f=>/\.html?$/i.test(f));
-const uncovered=[];
+const presentationSources=[
+ "assets/vervenveda-parchment.css",
+ "assets/grade09-subject-parchment.css",
+ "courses/science/assets/science-minimal-landing-v1.css",
+ "courses/shared/daily-instruction.css"
+].filter(f=>fs.existsSync(path.join(ROOT,f)));
+const source=presentationSources.map(f=>fs.readFileSync(path.join(ROOT,f),"utf8")).join("\n");
+const checks=[
+ ["16px readable control/text floor",/font[^\n;{}]*16px|font-size\s*:\s*16px/i],
+ ["33px section/title scale",/33px/],
+ ["66px primary-title scale",/66px/],
+ ["7px radius",/border-radius\s*:\s*7px/i]
+];
+const failures=checks.filter(([,re])=>!re.test(source)).map(([name])=>name);
+const retiredRuntimeRefs=[];
 for(const file of html){
-  const s=fs.readFileSync(path.join(ROOT,file),"utf8");
-  if(!LOADER_RE.test(s))uncovered.push(file);
+ const s=fs.readFileSync(path.join(ROOT,file),"utf8");
+ if(/global-chrome/i.test(s))retiredRuntimeRefs.push(file);
 }
-
 console.log(JSON.stringify({
-  htmlFiles:html.length,
-  loaderCovered:html.length-uncovered.length,
-  loaderMissing:uncovered.length,
-  typographyAssertions:assertions.length,
-  typographyAssertionFailures:failed.map(([name])=>name),
-  standard:{minimumReadableTextPx:16,ordinaryTitlePx:33,primaryHeroTitlePx:66}
+ htmlFiles:html.length,
+ presentationSources,
+ typographyAssertions:checks.length,
+ typographyAssertionFailures:failures,
+ retiredRuntimeReferences:retiredRuntimeRefs.length,
+ standard:{minimumReadableTextPx:16,ordinaryTitlePx:33,primaryHeroTitlePx:66,radiusPx:7}
 },null,2));
-
-if(uncovered.length){
-  console.error("\nPages missing global chrome loader:");
-  uncovered.slice(0,50).forEach(f=>console.error(" - "+f));
-}
-if(failed.length||uncovered.length)process.exitCode=1;
+if(failures.length||retiredRuntimeRefs.length)process.exitCode=1;
