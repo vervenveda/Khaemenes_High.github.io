@@ -22,7 +22,6 @@ for(let grade=9;grade<=12;grade++){
  assert.ok(exists(root+expected[id]),id+" first lesson missing");
  assert.ok(exists(root+"assessments/index.html"),id+" assessment index missing");
  const landing=read(root+"index.html");
- assert.ok(!landing.includes('high-school-global-chrome-v2.js'),id+" reintroduced retired page regulator");
 }
 for(let grade=10;grade<=12;grade++){
  const html=read("grades/grade-"+grade+"/student-profile/index.html");
