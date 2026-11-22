@@ -182,3 +182,18 @@ Browser interaction testing, scientific-answer verification, laboratory safety r
 - Verified representative Days 01, 04, 07, 10, 14, and 15 contain one engine loader and the Unit 06 worked-reasoning checkpoint.
 - Grade 9 known canonical engine coverage is now 90/180 daily lessons.
 - Next target: Unit 07 — Bonding, Reactions & Matter.
+
+
+### 2026-11-22 · Grade 9 engine hardening pass 7 — Unit 07
+- Audited all 15 Unit 07 daily lessons (Bonding, Reactions & Matter).
+- Found the unit conceptually well organized but thin in visible instructional depth: most lessons were roughly 557–619 visible words.
+- Existing strengths included phenomena, vocabulary, quantitative/formula content, models/investigation, misconception work, retrieval, and evidence.
+- The recurring deficiency was explicit worked reasoning; no daily lesson clearly exposed a full worked example before this pass.
+- Mounted the canonical Science 9 engine on all 15 Unit 07 daily lessons in native/non-destructive mode.
+- Added a Unit 07 chemistry-reasoning checkpoint to every lesson with a worked example plus particle-model/quantitative explanation.
+- Strengthened ionic charge balance, covalent models, molecular polarity, giant structures, relative formula mass, word/symbol equations, state symbols, balancing equations, evidence of chemical change, reaction energy, bond energy, activation energy, catalysts, collision theory, rates, equilibrium, and industrial trade-offs.
+- Reinforced conservation by distinguishing coefficients from subscripts and energy transfer by distinguishing bond breaking/forming from temperature observations.
+- Preserved existing mastery, assessment, evidence-storage, navigation, and lesson content.
+- Verified representative Days 01, 03, 07, 09, 12, 14, and 15 contain one engine loader and the Unit 07 chemistry-reasoning checkpoint.
+- Grade 9 known canonical engine coverage is now 105/180 daily lessons.
+- Next target: Unit 08 — Motion, Forces & Energy.
