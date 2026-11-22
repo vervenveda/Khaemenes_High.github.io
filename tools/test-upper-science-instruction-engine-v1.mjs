@@ -6,7 +6,7 @@ const pilotPath="courses/science/biology-10/weeks/week-01/lessons/day-01.html";
 const engine=fs.readFileSync(enginePath,"utf8");
 const pilot=fs.readFileSync(pilotPath,"utf8");
 
-assert.ok(engine.includes('const VERSION="1.1.0"'),"Upper Science engine version missing");
+assert.ok(engine.includes('const VERSION="1.2.0"'),"Upper Science engine version missing");
 for(const stage of ["Recall & Prepare","Learn & Model","Guided Reasoning","Investigate & Analyze","Check & Correct","Explain & Revise","Reflect & Transfer"]){
  assert.ok(engine.includes(stage),"Missing stage: "+stage);
 }
@@ -16,8 +16,8 @@ assert.ok(engine.includes("visits are navigation only, not mastery"),"Navigation
 assert.ok(engine.includes("mastery:false"),"Mastery false lifecycle signal missing");
 assert.ok(engine.includes("persistence:false"),"Persistence false lifecycle signal missing");
 assert.ok(engine.includes("chrome:false"),"Chrome false lifecycle signal missing");
-assert.ok(engine.includes('dataset.scienceLayout==="accordion"'),"Accordion presentation mode missing");
-assert.ok(engine.includes('layout:"accordion"'),"Accordion lifecycle signal missing");
+assert.ok(engine.includes('const layout=String(document.body?.dataset.scienceLayout||"guided")'),"Science presentation mode contract missing");
+assert.ok(engine.includes('layout,curriculum:inspectContract(document)'),"Curriculum lifecycle signal missing");
 for(const forbidden of [
  "localStorage","sessionStorage","indexedDB","document.cookie","fetch(","XMLHttpRequest",
  "high-school-global-chrome","vnv-333-ticker","vnv-ticker-autopopulate","vnv-header-autopopulate",
