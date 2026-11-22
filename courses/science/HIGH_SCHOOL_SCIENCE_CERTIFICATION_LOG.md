@@ -225,3 +225,19 @@ Browser interaction testing, scientific-answer verification, laboratory safety r
 - Verified representative Unit 10 Days 01, 05, 10, 15 and Unit 11 Days 01, 05, 10, 12, 14, 15 contain one engine loader and their unit-specific reasoning checkpoint.
 - Grade 9 known canonical engine coverage is now 165/180 daily lessons.
 - Next target: Unit 12 — Sustainable Engineering Capstone, followed by a full Grade 9 Science certification audit.
+
+
+### 2026-11-22 · Grade 9 engine hardening pass 12 — Unit 12 + source-level Grade 9 certification
+- Audited all 15 Unit 12 daily lessons (Sustainable Engineering Capstone); visible lesson depth was approximately 621–692 words before this pass.
+- Existing strengths included vocabulary, quantitative/design content, investigation/prototyping, misconception work, retrieval, evidence, risk, and stakeholder reasoning.
+- Primary recurring gaps were explicit worked examples and phenomenon framing on ordinary lesson days.
+- Mounted the canonical Science 9 engine on all 15 Unit 12 daily lessons in native/non-destructive mode.
+- Added a Unit 12 engineering-evidence checkpoint to every lesson with design-phenomenon framing, worked examples, quantitative engineering reasoning, and evidence-based design decisions.
+- Strengthened need statements, criteria/constraints, baselines, decision matrices, biomimicry, materials/life-cycle reasoning, prototype plans, testing, uncertainty, zero-baseline-safe optimization, circularity, reliability, risk, iteration, ethics/equity/accessibility, and capstone evidence chains.
+- Historical score-total literals 20/30 and 15/25 were not found by repository code search on the current default branch; no claim is made here about browser-rendered totals without runtime verification.
+- Day 09 now explicitly states that percent improvement is undefined when baseline mean is zero and requires absolute change, a physically meaningful nonzero reference, or another appropriate metric rather than division by zero.
+- Representative Unit 12 Days 01, 05, 09, 12, and 15 verify one canonical engine loader plus the Unit 12 engineering-evidence checkpoint.
+- Grade 9 known canonical engine coverage is now 180/180 daily lessons.
+- Source-level Grade 9 curriculum certification result: PASS for inventory completion and canonical engine mounting across the tracked 180-lesson hardening program.
+- Curriculum depth was materially strengthened across all 12 units; unit-specific worked reasoning, phenomena, investigation/evidence, misconception repair, retrieval, differentiation, uncertainty, and model limitations were preserved or strengthened according to each unit's audit findings.
+- Browser/runtime behavior, confidential assessment security, and GitHub Actions workflow conclusion remain separate verification layers; this source-level certification does not claim those checks passed unless directly observed.
