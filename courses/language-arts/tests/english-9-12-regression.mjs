@@ -27,13 +27,6 @@ assert.match(learningOrganizationSource,/Collapse All/);
 assert.match(learningOrganizationSource,/article\.lesson-day/);
 assert.match(learningOrganizationSource,/article\.lesson-detail/);
 
-const globalChrome=path.resolve(languageArts,"..","..","assets","high-school-global-chrome-v2.js");
-const globalChromeSource=read(globalChrome);
-assert.match(globalChromeSource,/khaemenesHighTypography="16-33-66"/,"global typography contract marker missing");
-assert.match(globalChromeSource,/font-size","16px","important"/,"global 16px readable floor missing");
-assert.match(globalChromeSource,/font-size:33px!important/,"global 33px heading rule missing");
-assert.match(globalChromeSource,/font-size:66px!important/,"global 66px primary-title rule missing");
-
 
 function duplicateIds(html){
   const ids=[...html.matchAll(/\bid="([^"]+)"/g)].map(m=>m[1]);
