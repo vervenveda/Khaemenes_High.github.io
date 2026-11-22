@@ -100,3 +100,14 @@ Browser interaction testing, scientific-answer verification, laboratory safety r
 - Established one common certification rubric with grade-specific depth criteria.
 - Added repository audit tooling and CI workflow.
 - Next hardening target: Grade 9 curriculum-to-engine representation, followed by Grade 10.
+
+
+### 2026-11-22 · Grade 9 engine hardening pass 1
+- Confirmed Science 9 had no canonical dedicated instructional engine file; Grades 10–12 use the separate shared Upper Science engine.
+- Added `courses/science/integrated-science-9/science9-instruction-engine-v1.js`.
+- Engine is presentation/contract-only and does not own mastery, storage, grades, evidence, routes, tickers, header, translator, or toolbar.
+- Mounted the Science 9 engine in native/non-destructive mode on all 5 Unit 00 readiness lessons.
+- Mounted the Science 9 engine in native/non-destructive mode on all 10 Unit 01 lessons.
+- Verified representative first/last pages expose `data-science-engine="science9-v1"` and exactly one engine loader.
+- Grade 9 canonical engine coverage has therefore moved from 0 known mounted daily lessons to 15/180 known mounted daily lessons.
+- Next target: Unit 02 (Cells & the Organization of Life), followed by Units 03–12 in controlled batches, with depth gaps repaired as they are discovered rather than only adding engine markers.
