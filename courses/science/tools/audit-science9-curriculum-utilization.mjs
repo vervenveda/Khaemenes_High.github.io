@@ -9,7 +9,15 @@ for(let u=1;u<=12;u++){
  for(let d=1;d<=max;d++)lessonFiles.push(path.join(root,"units","unit-"+String(u).padStart(2,"0"),"lessons","day-"+String(d).padStart(2,"0")+".html"));
 }
 const read=p=>fs.readFileSync(p,"utf8");
-const strip=s=>s.replace(/<script[\s\S]*?<\/script>/gi," ").replace(/<style[\s\S]*?<\/style>/gi," ").replace(/<[^>]+>/g," ").replace(/&(?:[a-z]+|#\d+);/gi," ").replace(/\s+/g," ").trim();
+const strip=s=>s
+ .replace(/<!--[\s\S]*?-->/g," ")
+ .replace(/<script[\s\S]*?<\/script>/gi," ")
+ .replace(/<style[\s\S]*?<\/style>/gi," ")
+ .replace(/<template[\s\S]*?<\/template>/gi," ")
+ .replace(/<noscript[\s\S]*?<\/noscript>/gi," ")
+ .replace(/<[^>]+>/g," ")
+ .replace(/&(?:[a-z]+|#\d+);/gi," ")
+ .replace(/\s+/g," ").trim();
 const flags=(h)=>({
  engine:/science-lesson-engine-v0\.1\.js|data-science-engine=/.test(h),
  essential:/Essential question/i.test(h),
