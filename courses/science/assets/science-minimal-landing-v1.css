@@ -49,3 +49,21 @@ a{color:inherit}.shell{width:min(calc(100% - 44px),var(--max));margin-inline:aut
  .science-hero,.science-footer{background:#fff!important;color:#000!important}
  .science-hero *,.science-footer *{color:#000!important}
 }
+/* Canonical Science course landing contract · 2026-11-22 */
+.science-breadcrumbs{width:100%;display:flex;justify-content:center;align-items:center;gap:7px;flex-wrap:wrap;padding:11px 18px;background:var(--paper);color:var(--charcoal);font-size:16px;line-height:1.35;border-bottom:1px solid var(--line);text-align:center}
+.science-breadcrumbs a{color:var(--charcoal);text-decoration:none}.science-breadcrumbs a:hover{text-decoration:underline;text-underline-offset:3px}
+.science-about{padding:58px 0 22px}.science-about .about-card{max-width:900px;margin:auto;padding:28px 30px;border:1px solid var(--line);border-radius:7px;background:var(--paper-bright)}
+.science-about h2,.science-features h2{margin:0;color:var(--ink);font:400 33px/1.25 var(--display)}
+.science-about p{max-width:760px;margin:16px auto 0;color:var(--muted);font-size:18px;line-height:1.65}
+.science-features{padding:36px 0 78px}.science-feature-grid{max-width:900px;margin:30px auto 0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+.science-feature-trigger{min-height:170px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;padding:22px;border:1px solid var(--line);border-radius:7px;background:var(--paper-bright);color:var(--charcoal);text-align:center;cursor:pointer;font:400 18px/1.4 var(--sans)}
+.science-feature-trigger strong{font:400 24px/1.25 var(--display)}.science-feature-trigger span{font-size:16px;color:var(--muted)}
+.science-feature-trigger:hover,.science-feature-trigger:focus-visible{background:#fff;border-color:var(--gold)}
+.science-dialog{width:min(92vw,620px);padding:0;border:1px solid var(--gold);border-radius:7px;background:var(--paper-bright);color:var(--charcoal);box-shadow:0 28px 80px rgba(0,0,0,.26)}
+.science-dialog::backdrop{background:rgba(20,25,23,.64)}.science-dialog-inner{padding:28px;text-align:center}.science-dialog h2{margin:0;font:400 33px/1.2 var(--display)}
+.science-dialog p{margin:15px auto 0;color:var(--muted);font-size:18px;line-height:1.6}.science-dialog-actions{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;margin-top:24px}
+.science-dialog a,.science-dialog button{min-height:44px;padding:10px 18px;border:1px solid var(--charcoal);border-radius:7px;background:var(--charcoal);color:var(--cream);font:400 16px/1.25 var(--sans);text-decoration:none}
+.science-dialog button.secondary{background:var(--cream);color:var(--charcoal)}
+.science-footer p{font-size:14px}
+#vnvClassToolsToolbar :is(button,a),#vnvEcosystemUtilityDock :is(button,a){min-width:44px;min-height:44px}
+@media(max-width:760px){.science-feature-grid{grid-template-columns:1fr}.science-breadcrumbs{font-size:16px}.science-about,.science-features{padding-inline:14px}}
