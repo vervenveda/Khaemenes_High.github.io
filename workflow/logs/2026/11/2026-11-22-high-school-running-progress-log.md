@@ -17,6 +17,32 @@ Use this file as the running source-of-truth for work performed after 2026-11-22
 
 ## Running entries
 
+### 2026-11-22 · Science 9 curriculum utilization deep audit
+
+**Type:** audit · curriculum utilization · engine topology
+
+**Detailed log:** [Science 9 curriculum utilization deep audit](2026-11-22-science9-curriculum-utilization-deep-audit.md)
+
+Key findings:
+- verified **180/180** daily Grade 9 Science destinations;
+- confirmed **0** missing daily lesson pages;
+- confirmed the curriculum itself is substantial and broadly represented in lesson source;
+- found the shared Science 9 engine mounted on only **1/180 lessons (0.6%)**;
+- identified **169 curriculum-rich lessons** with objectives, quantitative work, investigation and evidence that are not engine-mounted;
+- repaired empty canonical objectives/framework tags for Readiness and Unit 01 using existing authoritative pacing/standards documents;
+- found uneven explicit representation of essential questions, phenomena, vocabulary, worked examples, CER/explanation, source attribution and teacher/parent guidance;
+- added a permanent repository-wide Science 9 curriculum-utilization audit and CI workflow.
+
+Interpretation:
+**Science 9 is built, but the current shared engine is still a pilot and is not yet utilizing the full course.**
+
+PR: **#104**
+
+Status: **AUDITED · ENGINE UTILIZATION GAP CONFIRMED · READY FOR UNIT-BY-UNIT MIGRATION**
+
+---
+
+
 ### 2026-11-22 · Biology 10 curriculum ↔ engine deep audit
 
 **Type:** audit · curriculum hardening · engine contract
