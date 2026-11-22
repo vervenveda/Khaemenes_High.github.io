@@ -538,3 +538,44 @@ All ten pages verify:
 
 ### Certification status
 - Whole-course source-level certification remains HOLD until Weeks 16–17 are hardened and verified.
+
+
+## 2026-11-22 · First-semester certification recovery block 8 — Weeks 16–17 + whole-course source certification
+
+### Weeks 16–17 repairs
+- Mounted `upper-science-v1` on all ten Week 16–17 lessons with one canonical loader per page.
+- Week 16 strengthened checkpoint regulation, DNA-damage/repair/apoptosis boundaries, proliferation-curve interpretation, regulatory-failure case analysis, and bounded cancer-model claims.
+- Week 17 strengthened testable-question design, source/method quality, statistics/graph choice, uncertainty, investigation audit/revision, and final CER challenge.
+- All ten pages verify engine=true, loader=1, evidence-quality work, and evidence revision; ordinary teaching pages clear the fortified depth target.
+
+### Whole-course direct source sweep
+- Directly read and checked all **180/180** Biology 10 daily lesson pages in 3-week batches to avoid connector call-limit artifacts.
+- **180/180** pages verify the canonical `upper-science-v1` marker.
+- **180/180** pages verify exactly one canonical upper-science loader.
+- Ordinary teaching weeks were checked against the fortified ~500-word depth target.
+- Weeks 18 and 36 remain intentionally shorter assessment/synthesis weeks and are exempt from the ordinary teaching-page depth threshold.
+- The full sweep found eight ordinary-page depth exceptions in Weeks 20–23; all eight were repaired.
+- Final exception recheck confirms the last two DNA pages now clear the threshold (Week 23 Day 01 = 514 words; Day 02 = 530 words).
+
+### Certification result
+**BIOLOGY 10 SOURCE-LEVEL CURRICULUM CERTIFICATION: PASS**
+
+This PASS covers:
+- 36-week / 180-lesson inventory completeness,
+- canonical upper-science engine coverage,
+- one-loader integrity,
+- ordinary teaching-page depth standard,
+- MID/FINAL topology,
+- explicit evidence-quality/retrieval/revision hardening across the recovery program,
+- source-level curriculum coherence.
+
+This PASS does **not** claim:
+- browser/device certification,
+- accessibility/assistive-technology certification,
+- protected summative-security certification,
+- transcript/credential authority,
+- accreditation,
+- AP authorization,
+- jurisdictional credit approval.
+
+The release therefore remains **SOURCE-VALIDATED / CONDITIONAL** until the separate browser/device and protected operational gates are completed.
