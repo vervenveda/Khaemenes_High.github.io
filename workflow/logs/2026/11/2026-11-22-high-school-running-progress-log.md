@@ -34,7 +34,21 @@ Work in progress:
 - added dedicated source/CI contract;
 - documented the engine in `workflow/blueprints/upper-science-instruction-engine-v1.md`.
 
-Status: **PILOT BRANCH · VALIDATION PENDING**
+Validation:
+- Upper Science Instruction Engine v1 — PASS;
+- Upper High School Daily Instruction Validation — PASS;
+- Biology 10 Course Integrity — PASS;
+- Biology 10 upper-science structural validation — PASS;
+- Biology 10 secure assessment blueprint validation — PASS;
+- Biology 10 upper-science student regression — PASS after aligning the regression with the current retention-pool architecture;
+- Science 9 Lesson Engine Pilot Integrity — PASS;
+- No Page Regulator Regression — PASS;
+- Public Entry Route Validation — PASS;
+- Grade 10 English and Biology Assessment Presentation — PASS.
+
+PR: **#98**
+
+Status: **PILOT VALIDATED · READY TO MERGE**
 
 ---
 
