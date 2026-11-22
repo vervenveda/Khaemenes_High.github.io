@@ -209,3 +209,32 @@ All ten pages verify:
 - Rechecked the first fortification pass against the >=500-word ordinary upper-science depth target.
 - Added targeted safeguards to remaining thin lessons: gel interpretation/data quality, sequencing coverage/mapping uncertainty, stratigraphy/dating limits, homology-vs-convergence evidence, biogeography alternatives, and a quantitative convergence-of-evidence check.
 - Reverified engine mounting remains one canonical loader per page.
+
+
+## 2026-11-22 · Two-week hardening block 6 — Weeks 28–29
+
+### Audit findings
+- Week 28 lessons ranged approximately 326–436 visible words before hardening.
+- Week 29 ranged approximately 315–432 visible words before hardening.
+- All ten pages lacked the canonical upper-science engine.
+- Source/evidence-quality scaffolding was nearly absent despite otherwise useful worked examples.
+- Core scientific risks were Hardy–Weinberg misuse, conflating drift/gene flow/selection, treating fitness as strength, and interpreting adaptation teleologically or without causal evidence.
+
+### Repairs
+- Mounted `upper-science-v1` on all ten Week 28–29 lessons with one canonical loader per page.
+- Week 28 strengthened allele/genotype frequency, Hardy–Weinberg null-model reasoning, drift/bottlenecks/founder effects, gene flow/mutation/selection mechanism separation, and replicate population simulations.
+- Week 29 strengthened conditions for selection, relative fitness, directional/stabilizing/disruptive selection, adaptation trade-offs, and causal evidence chains.
+- Added vocabulary-in-context, evidence-quality tasks, quantitative transfer, retrieval, and model/uncertainty limits across all lessons.
+- Follow-up fortification added sampling safeguards, explicit Hardy–Weinberg calculations, stochastic-drift interpretation, mechanism-separation calculations, fitness normalization, and distribution-based selection reasoning.
+
+### Verification
+All ten pages verify:
+- upper-science engine marker present,
+- exactly one canonical loader,
+- vocabulary-in-context,
+- source/evidence-quality reasoning,
+- retrieval.
+- All ordinary teaching pages meet or exceed the substantive upper-science depth target after follow-up fortification.
+
+### Next block
+- Weeks 30–31 — speciation/phylogeny/origins literacy, then ecosystem energy flow.
