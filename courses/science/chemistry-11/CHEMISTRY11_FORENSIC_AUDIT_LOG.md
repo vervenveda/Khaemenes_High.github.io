@@ -62,3 +62,32 @@ Harden in two-week blocks, beginning with Weeks 01–02, preserving strong conte
 - uncertainty/model limits,
 - misconception repair,
 - safe inquiry boundaries.
+
+
+## 2026-11-22 · Two-week hardening block 1 — Weeks 01–02
+
+### Audit findings
+- Week 01 lessons began around ~419–444 visible words.
+- Week 02 lessons began around ~344–439 visible words.
+- All ten pages lacked the canonical upper-science engine.
+- Week 01 had strong safety/inquiry intent but needed worked quantitative reasoning and explicit source/evidence-quality boundaries.
+- Week 02 had sound atomic-model content but needed stronger model-evidence distinction, retrieval, uncertainty, and quantitative interpretation.
+
+### Repairs
+- Mounted `upper-science-v1` on all ten Week 01–02 lessons with one canonical loader per page.
+- Week 01 strengthened measurement disagreement, SDS/hazard literacy, density/dimensional analysis/significant figures, safe investigation design, and chemistry CER/source transparency.
+- Week 02 strengthened historical model revision, Rutherford scattering distributions, atomic notation/particle accounting, model-evidence comparison, and evidence-based defense of atomic-model revision.
+- Added explicit retrieval, evidence revision, source-quality reasoning, uncertainty/model limits, and safety boundaries.
+- Follow-up depth extensions brought the thin Week 02 lessons above the ordinary teaching-page target.
+
+### Verification
+All ten pages now verify:
+- canonical upper-science engine marker present,
+- exactly one canonical loader,
+- substantive evidence/source-quality reasoning,
+- retrieval/evidence revision where appropriate,
+- ordinary teaching-page depth target met.
+
+### Certification status
+- Whole-course Chemistry 11 source-level curriculum certification remains HOLD.
+- Next block: Weeks 03–04 — isotopes/mass/nuclear composition, then electrons/spectra/quantized energy.
