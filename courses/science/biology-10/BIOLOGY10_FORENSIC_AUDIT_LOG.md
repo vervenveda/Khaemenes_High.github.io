@@ -266,3 +266,28 @@ All ten pages verify:
 
 ### Next block
 - Weeks 32–33 — biogeochemical cycles, then population and community dynamics.
+
+
+## 2026-11-22 · Two-week hardening block 8 — Weeks 32–33
+
+### Audit findings
+- Week 32 lessons ranged approximately 331–439 visible words before hardening.
+- Week 33 ranged approximately 305–407 visible words before hardening.
+- All ten pages lacked the canonical upper-science engine.
+- Major gaps were systems-model depth, source/evidence-quality scaffolding, explicit retrieval, and mathematical interpretation of population dynamics.
+
+### Repairs
+- Mounted `upper-science-v1` on all ten Week 32–33 lessons with one canonical loader per page.
+- Week 32 strengthened reservoirs, fluxes, residence time, carbon budgets, nitrogen/phosphorus limitation, human perturbation/feedback, and mass-balance reasoning.
+- Week 33 strengthened exponential and logistic growth, carrying capacity, predator-prey/competition dynamics, disturbance/succession, long-term data interpretation, and model selection.
+- Added vocabulary-in-context, evidence-quality tasks, quantitative transfer, retrieval, uncertainty/model limits, and misconception safeguards across all lessons.
+- Follow-up fortification targeted residence-time assumptions, carbon sign/boundary logic, nutrient co-limitation testing, proportional-vs-absolute exponential growth, dynamic carrying capacity, interaction-cycle causality, and residual-based model evaluation.
+
+### Verification
+All ten pages verify:
+- upper-science engine marker present,
+- exactly one canonical loader.
+- Ordinary teaching pages meet the fortified depth target after follow-up fortification.
+
+### Next block
+- Weeks 34–35 — biodiversity/resilience/human impacts, then Biology & Biotechnology Capstone.
