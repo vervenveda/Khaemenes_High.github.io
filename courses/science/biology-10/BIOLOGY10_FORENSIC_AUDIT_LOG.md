@@ -99,3 +99,32 @@ Representative Days 01, 03, and 05 in both weeks verify:
 
 ### Next block
 - Weeks 22–23 — complex traits/gene–environment interaction, then DNA structure and replication.
+
+
+## 2026-11-22 · Two-week hardening block 3 — Weeks 22–23
+
+### Audit findings
+- Week 22 daily lessons ranged approximately 356–439 visible words before hardening.
+- Week 23 ranged approximately 336–461 visible words before hardening.
+- All ten pages lacked the canonical upper-science engine.
+- Existing worked examples and uncertainty language were generally sound, but explicit phenomenon framing, retrieval, evidence revision, and transfer were sparse.
+- Week 23 showed the sharper depth regression and required more explicit molecular-mechanism reasoning.
+
+### Repairs
+- Mounted `upper-science-v1` on all ten Week 22–23 lessons with one canonical loader per page.
+- Week 22 strengthened polygenic traits, pleiotropy, penetrance, expressivity, reaction norms, gene–environment interaction, correlation-vs-causation, and limits of complex-trait inference.
+- Week 23 strengthened nucleotide architecture, antiparallel strands, Chargaff reasoning, semiconservative replication, enzyme directionality, leading/lagging synthesis, proofreading, repair, and replication fidelity.
+- Every lesson now includes explicit retrieval from previous inheritance/chromosome learning, evidence revision, and transfer to changed contexts.
+- Reinforced that complex-trait associations are not automatically causal and that replication fidelity is probabilistic rather than perfect.
+
+### Verification
+Representative Days 01, 03, and 05 in both weeks verify:
+- upper-science engine marker present,
+- exactly one canonical loader,
+- phenomenon,
+- retrieval,
+- evidence revision,
+- transfer.
+
+### Next block
+- Weeks 24–25 — transcription/translation/genetic code, then gene regulation and epigenetic mechanisms.
