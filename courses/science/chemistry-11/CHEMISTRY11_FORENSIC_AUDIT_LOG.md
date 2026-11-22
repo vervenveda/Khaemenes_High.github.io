@@ -232,3 +232,30 @@ All ten pages now verify:
 ### Certification status
 - Whole-course Chemistry 11 source-level curriculum certification remains **HOLD**.
 - Next block: Weeks 13–14 — mixtures/separation/spectroscopy, then reaction evidence and chemical equations.
+
+
+## 2026-11-22 · Two-week hardening block 7 — Weeks 13–14
+
+### Audit findings
+- Week 13 mixtures/separation/spectroscopy lessons began at approximately 289–335 visible words and required substantive curricular recovery.
+- Week 14 reaction-evidence/equation lessons were already unusually strong at approximately 590–613 visible words per lesson.
+- All ten pages lacked the canonical `upper-science-v1` engine marker at the start of this block.
+- Week 14 required engine/contract normalization rather than content expansion; Week 13 required deeper analytical reasoning, quantitative controls, and evidence-quality architecture.
+
+### Repairs
+- Mounted `upper-science-v1` across all ten Week 13–14 daily lessons with exactly one canonical loader per page.
+- Week 13 strengthened property-based separation logic, recovery versus purity, chromatography/Rf measurement, stationary/mobile-phase reasoning, spectroscopy calibration, interpolation versus extrapolation, residuals, blanks/standards/duplicates/spikes, detection limits, converging analytical methods, and full evidence-chain auditing.
+- Week 14 preserved its existing high-depth conservation/reaction content while adding explicit retrieval, evidence-quality, coefficient-only balancing revision, conservation boundaries, and the canonical science-contract layer.
+- Corrected a body-attribute edge case in Week 14 so the canonical engine marker is present without disturbing existing page attributes.
+
+### Verification
+- Week 13 Days 01–05 now measure approximately 506–534 visible words.
+- Week 14 Days 01–05 remain high-depth at approximately 660–683 visible words.
+- All ten pages verify the canonical upper-science marker.
+- All ten pages verify exactly one canonical upper-science loader.
+- All ten pages expose the science-contract depth layer.
+- Ordinary teaching-page depth target is met across both weeks.
+
+### Certification status
+- Whole-course Chemistry 11 source-level curriculum certification remains **HOLD**.
+- Next block: Weeks 15–16 — mole relationships/stoichiometry, then limiting reactants and percent yield.
