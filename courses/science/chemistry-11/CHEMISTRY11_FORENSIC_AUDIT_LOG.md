@@ -91,3 +91,31 @@ All ten pages now verify:
 ### Certification status
 - Whole-course Chemistry 11 source-level curriculum certification remains HOLD.
 - Next block: Weeks 03–04 — isotopes/mass/nuclear composition, then electrons/spectra/quantized energy.
+
+
+## 2026-11-22 · Two-week hardening block 2 — Weeks 03–04
+
+### Audit findings
+- Week 03 already contained strong isotope notation, mass-spectrum, weighted-average, and safe data-investigation content, including an anchored synthetic mass-spectrum investigation.
+- Week 04 contained sound line-spectrum, transition-energy, wavelength/frequency, and virtual spectroscopy content, but the daily pages were compressed and lacked the canonical upper-science engine.
+- All ten Week 03–04 daily lesson pages initially lacked the `upper-science-v1` marker/loader.
+- The main gaps were explicit delayed retrieval, evidence/source-quality reasoning, evidence revision, quantitative transfer, uncertainty/model limits, and cross-week model transfer.
+
+### Repairs
+- Mounted `upper-science-v1` on all ten Week 03–04 lessons with exactly one canonical loader per page.
+- Week 03 strengthened isotope-vs-ion bookkeeping, mass-spectrum assumptions, abundance normalization, weighted-average reasoning, raw-to-processed data lineage, uncertainty, inverse-abundance reasoning, and population-model interpretation.
+- Week 04 strengthened observation-vs-inference boundaries for line spectra, energy-level consistency tests, wavelength/frequency/photon-energy dimensional analysis, significant-figure and order-of-magnitude checks, tolerance/residual analysis, systematic-vs-random calibration error, and comparison of Rutherford, Bohr-style, and modern quantum model scope.
+- Preserved the existing Week 03 isotope investigation and Week 04 virtual spectroscopy investigation rather than replacing them.
+- Added retrieval, source/evidence quality, evidence revision, transfer, misconception repair, and model-limit language to every daily lesson.
+
+### Verification
+- Week 03 Days 01–05 now measure approximately 531–572 visible words.
+- Week 04 Days 01–05 now measure approximately 555–570 visible words after closing the four remaining depth exceptions.
+- All ten pages verify the canonical upper-science marker.
+- All ten pages verify exactly one canonical upper-science loader.
+- All ten pages expose the science-contract depth layer.
+- Ordinary teaching-page depth target is met across both weeks.
+
+### Certification status
+- Whole-course Chemistry 11 source-level curriculum certification remains **HOLD**.
+- Next block: Weeks 05–06 — periodic trends, then ionic bonding and lattice reasoning.
