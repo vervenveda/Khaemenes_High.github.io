@@ -17,6 +17,28 @@ Use this file as the running source-of-truth for work performed after 2026-11-22
 
 ## Running entries
 
+### 2026-11-22 · Upper Science Instruction Engine v1 pilot
+
+**Type:** upgrade · science engine · architecture
+
+**Scope:** Biology 10 pilot; future Chemistry 11 and Physics 12 expansion.
+
+Work in progress:
+- created shared `courses/shared/upper-science-instruction-engine-v1.js`;
+- established seven upper-science instructional stages;
+- mounted the engine opt-in on Biology 10 · Week 01 · Day 01;
+- preserved the existing lesson body, formative evidence bridge, course routes and provenance;
+- added a fail-open semantic section mapper;
+- keeps safety content visible during guided navigation;
+- added explicit engine firewall: no mastery, completion, records, storage, network, chrome, translator, ticker or toolbar ownership;
+- added dedicated source/CI contract;
+- documented the engine in `workflow/blueprints/upper-science-instruction-engine-v1.md`.
+
+Status: **PILOT BRANCH · VALIDATION PENDING**
+
+---
+
+
 ### 2026-11-22 · Retired High School chrome residue purge and permanent guard
 
 **Type:** repair · audit · regression hardening
