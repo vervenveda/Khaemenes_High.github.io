@@ -342,3 +342,30 @@ All ten pages now verify:
 ### Certification status
 - Whole-course Chemistry 11 source-level curriculum certification remains **HOLD** pending Weeks 21–36 hardening and the final 180/180 sweep.
 - Next block: Weeks 21–22 — rate laws/mechanisms and catalysis, then kinetic modeling and experimental design/application.
+
+
+## 2026-11-22 · Two-week hardening block 11 — Weeks 21–22
+
+### Audit findings
+- Week 21 mechanisms/catalysis lessons began at approximately 250–284 visible words.
+- Week 22 kinetics inquiry/modeling lessons began at approximately 239–295 visible words.
+- All ten pages lacked the canonical `upper-science-v1` marker/loader.
+- The core sequence was sound but mechanism constraints, catalyst energy reasoning, competing-model tests, residual analysis, experimental controls, and inquiry-defense evidence were substantially underdeveloped.
+
+### Repairs
+- Mounted `upper-science-v1` on all ten Week 21–22 lessons with exactly one canonical loader per page.
+- Week 21 strengthened elementary-step summation, intermediate/catalyst cancellation, rate-determining-step compatibility, rate-law constraints, multistep energy profiles, catalyst pathway effects, mechanism-evidence matrices, discriminating tests, and explicit support/inconsistency/unresolved language.
+- Week 22 strengthened falsifiable competing-model predictions, full controlled experimental design, replicate planning, variable levels, randomization, blanks/known-condition checks, residual analysis, model complexity limits, inquiry traceability, contrary-evidence handling, and evidence-based defense.
+- Added delayed retrieval, evidence/source-quality reasoning, quantitative/model transfer, evidence revision, uncertainty/model limits, misconception repair, and cross-week integration throughout the block.
+
+### Verification
+- Week 21 Days 01–05 now measure approximately 508–514 visible words.
+- Week 22 Days 01–05 now measure approximately 506–514 visible words.
+- All ten pages verify the canonical upper-science marker.
+- All ten pages verify exactly one canonical upper-science loader.
+- All ten pages expose the science-contract depth layer.
+- Ordinary teaching-page depth target is met across both weeks.
+
+### Certification status
+- Whole-course Chemistry 11 source-level curriculum certification remains **HOLD** pending Weeks 23–36 hardening and the final 180/180 sweep.
+- Next block: Weeks 23–24 — thermochemistry, calorimetry, enthalpy, and Hess-law energy accounting.
