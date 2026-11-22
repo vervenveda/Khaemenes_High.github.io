@@ -175,3 +175,32 @@ All ten pages now verify:
 ### Certification status
 - Whole-course Chemistry 11 source-level curriculum certification remains **HOLD**.
 - Next block: Weeks 09–10 — metallic bonding/solids, then intermolecular forces and physical-property reasoning.
+
+
+## 2026-11-22 · Two-week hardening block 5 — Weeks 09–10
+
+### Audit findings
+- Week 09 materials/solids lessons began at approximately 289–329 visible words.
+- Week 10 intermolecular-forces lessons began at approximately 279–337 visible words.
+- This was the thinnest audited block so far.
+- All ten pages lacked the canonical `upper-science-v1` marker/loader.
+- Existing scope was sound but structure-property reasoning, quantitative comparison, evidence-quality controls, confounders, and model limits were underdeveloped.
+
+### Repairs
+- Mounted `upper-science-v1` on all ten Week 09–10 lessons with exactly one canonical loader per page.
+- Week 09 strengthened metallic bonding, charge-carrier mobility, metallic/ionic/molecular/network solid comparison, density and conductivity calculations, engineering tradeoff matrices, property-data quality, material-classification uncertainty, and cross-scale structure-property reasoning.
+- Week 10 strengthened dispersion/polarizability, dipole-dipole and hydrogen-bonding distinctions, molecular-size/shape confounders, boiling/vapor-pressure/evaporation reasoning, quantitative rate comparisons, controlled-variable design, repeated-trial logic, and integrated IMF prediction.
+- Added delayed retrieval, evidence/source-quality reasoning, quantitative/model transfer, evidence revision, uncertainty/model limits, misconception repair, and cross-week transfer throughout the block.
+- Preserved the existing materials-property and evaporation investigations while strengthening their audit controls and causal reasoning.
+
+### Verification
+- Week 09 Days 01–05 now measure approximately 506–551 visible words.
+- Week 10 Days 01–05 now measure approximately 510–530 visible words.
+- All ten pages verify the canonical upper-science marker.
+- All ten pages verify exactly one canonical upper-science loader.
+- All ten pages expose the science-contract depth layer.
+- Ordinary teaching-page depth target is met across both weeks.
+
+### Certification status
+- Whole-course Chemistry 11 source-level curriculum certification remains **HOLD**.
+- Next block: Weeks 11–12 — gas behavior and quantitative gas laws, then solutions/concentration/dissolution reasoning.
