@@ -46,9 +46,10 @@ Validation:
 - Public Entry Route Validation — PASS;
 - Grade 10 English and Biology Assessment Presentation — PASS.
 
-PR: **#98**
+PR: **#98**  
+Final SHA: `b97937fbf5d5d2bc99d7ad92cea0e385d9044255`
 
-Status: **PILOT VALIDATED · READY TO MERGE**
+Status: **MERGED · BIOLOGY 10 PILOT VALIDATED**
 
 ---
 
