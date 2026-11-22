@@ -3,6 +3,7 @@
 **Course:** KH-SCI-BIO10  
 **Release classification:** SOURCE-VALIDATED / CONDITIONAL  
 **Passing target:** 80%
+**Curriculum source audit status:** PASS (180/180 daily lessons directly verified on 2026-11-22)
 
 ## Source certification
 
@@ -24,3 +25,17 @@ The repository release is considered source-valid when the Biology 10 Course Int
 Automated source validation cannot prove real-browser layout, keyboard behavior, print fidelity, actual offline cache behavior, assistive-technology behavior, or protected Academy credential issuance. Those remain separate gates.
 
 A passing source workflow therefore does **not** upgrade the course beyond SOURCE-VALIDATED / CONDITIONAL until the human/browser checklist is completed on the exact release SHA.
+
+
+## Curriculum source audit — 2026-11-22
+
+The direct Biology 10 curriculum audit now verifies:
+
+- 36 weeks and exactly 180 daily lesson pages.
+- 180/180 daily lessons expose the canonical `upper-science-v1` marker.
+- 180/180 daily lessons contain exactly one canonical upper-science loader.
+- Ordinary teaching lessons meet the fortified upper-science depth standard after closing the final eight Week 20–23 exceptions.
+- Week 18 MID and Week 36 FINAL are intentionally assessment/synthesis weeks and are not forced to the ordinary teaching-page word-depth threshold.
+- The curriculum source audit is therefore **PASS**.
+
+This does not change the overall release classification from **SOURCE-VALIDATED / CONDITIONAL** because browser/device, accessibility, offline behavior, protected assessment, and credential-authority gates remain separate.
