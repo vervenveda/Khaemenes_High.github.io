@@ -204,3 +204,31 @@ All ten pages now verify:
 ### Certification status
 - Whole-course Chemistry 11 source-level curriculum certification remains **HOLD**.
 - Next block: Weeks 11–12 — gas behavior and quantitative gas laws, then solutions/concentration/dissolution reasoning.
+
+
+## 2026-11-22 · Two-week hardening block 6 — Weeks 11–12
+
+### Audit findings
+- Week 11 gas-law lessons began at approximately 301–349 visible words.
+- Week 12 solution/concentration lessons began at approximately 272–345 visible words.
+- All ten pages lacked the canonical `upper-science-v1` marker/loader.
+- Quantitative work was present but too compressed, especially around proportional reasoning, unit discipline, molarity, dilution, experimental controls, and uncertainty.
+
+### Repairs
+- Mounted `upper-science-v1` on all ten Week 11–12 lessons with exactly one canonical loader per page.
+- Week 11 strengthened kinetic-molecular pressure reasoning, Boyle/Charles/Avogadro proportionality, kelvin conversion, ideal-gas dimensional analysis, transformed-variable graphing, control-variable design, unit-compatible gas constants, and real-gas model limits.
+- Week 12 strengthened particle models of dissolving, ionic dissociation versus molecular dispersion, molarity from mass/moles/volume, reverse concentration planning, dilution derived from mole conservation, serial dilution, volumetric-equipment/error reasoning, and solution-preparation uncertainty.
+- Added delayed retrieval, evidence/source-quality reasoning, quantitative transfer, evidence revision, uncertainty/model limits, misconception repair, and cross-week integration throughout the block.
+- Preserved the existing virtual gas-law and solution-concentration investigations while strengthening their experimental and audit logic.
+
+### Verification
+- Week 11 Days 01–05 now measure approximately 505–534 visible words.
+- Week 12 Days 01–05 now measure approximately 506–549 visible words.
+- All ten pages verify the canonical upper-science marker.
+- All ten pages verify exactly one canonical upper-science loader.
+- All ten pages expose the science-contract depth layer.
+- Ordinary teaching-page depth target is met across both weeks.
+
+### Certification status
+- Whole-course Chemistry 11 source-level curriculum certification remains **HOLD**.
+- Next block: Weeks 13–14 — mixtures/separation/spectroscopy, then reaction evidence and chemical equations.
