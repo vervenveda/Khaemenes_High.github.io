@@ -52,7 +52,19 @@ These must recur in every unit:
 ## Major assessments
 
 - Diagnostic and safety verification: Week 1
-- Quarterly interdisciplinary investigations: approximately Weeks 9, 18, 27, and 36
+- Quarterly interdisciplinary investigations:
+  - Week 9 — Quarter 1: Cells, Systems & Evidence (after Unit 03)
+  - Week 18 — Quarter 2: Inheritance, Ecosystems & Matter (after Unit 06; public midterm-practical practice layer)
+  - Week 27 — Quarter 3: Reactions, Motion & Information (after Unit 09)
+  - Week 36 — Quarter 4: Earth Systems & Sustainable Design (after Unit 12)
 - Midterm practical and written assessment: after Unit 06
 - Final cumulative examination: after Unit 12
 - Sustainable engineering capstone: Units 10–12, completed in Unit 12
+
+
+## Course-level coherence resources
+
+- `SPIRAL_RETRIEVAL_VOCABULARY_MAP.md` — delayed retrieval and vocabulary transfer across units.
+- `CROSS_UNIT_COHERENCE_MAP.md` — required conceptual bridges between disciplines and units.
+- `INQUIRY_LAB_SPINE.md` — cumulative investigation, laboratory, data, and engineering progression.
+- `assessments/quarterly-investigations/` — four student-facing interdisciplinary investigations at Weeks 9, 18, 27, and 36.
