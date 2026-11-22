@@ -138,3 +138,17 @@ Browser interaction testing, scientific-answer verification, laboratory safety r
 - Verified representative Days 01, 07, 11, 14, and 15 contain the engine marker, exactly one engine loader, and the new reasoning checkpoint.
 - Grade 9 known canonical engine coverage is now 45/180 daily lessons.
 - Next target: Unit 04 — Cell Division, Reproduction & Inheritance.
+
+
+### 2026-11-22 · Grade 9 engine hardening pass 4 — Unit 04
+- Audited all 15 Unit 04 daily lessons (Cell Division, Reproduction & Inheritance).
+- Found Unit 04 notably thinner than Units 02–03: most daily pages were roughly 590–805 visible words, with one laboratory lesson near 1,036 words.
+- Existing strengths included vocabulary, retrieval, misconception work, and evidence prompts.
+- Primary deficiencies were missing explicit phenomena, missing worked examples, inconsistent investigation framing, and limited explicit-teaching depth.
+- Mounted the canonical Science 9 engine on all 15 Unit 04 daily lessons in native/non-destructive mode.
+- Added a Unit 04 depth checkpoint to every lesson containing a phenomenon, expanded explicit teaching, a worked example, and an investigation/explanation prompt.
+- Strengthened chromosome-number reasoning, DNA replication, mitosis/meiosis distinctions, ploidy, genotype/phenotype logic, Punnett-square probability, non-Mendelian inheritance, mutation, genetic technology, and synthesis.
+- Preserved existing mastery, assessment, evidence-storage, navigation, and lesson content.
+- Verified representative Days 01, 05, 10, 12, and 15 contain one engine loader and the full Unit 04 depth checkpoint.
+- Grade 9 known canonical engine coverage is now 60/180 daily lessons.
+- Next target: Unit 05 — Ecosystems, Evolution & Biodiversity.
