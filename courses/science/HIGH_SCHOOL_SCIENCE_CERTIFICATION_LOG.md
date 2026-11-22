@@ -241,3 +241,14 @@ Browser interaction testing, scientific-answer verification, laboratory safety r
 - Source-level Grade 9 curriculum certification result: PASS for inventory completion and canonical engine mounting across the tracked 180-lesson hardening program.
 - Curriculum depth was materially strengthened across all 12 units; unit-specific worked reasoning, phenomena, investigation/evidence, misconception repair, retrieval, differentiation, uncertainty, and model limitations were preserved or strengthened according to each unit's audit findings.
 - Browser/runtime behavior, confidential assessment security, and GitHub Actions workflow conclusion remain separate verification layers; this source-level certification does not claim those checks passed unless directly observed.
+
+
+### 2026-11-22 · Grade 9 post-certification forensic audit — five curriculum bubbles pushed out
+- Scope: full Grade 9 Integrated Science course after 180/180 daily lesson engine hardening.
+- Bubble 1 — quarterly investigations existed in the curriculum promise but not as four explicit student-facing interdisciplinary experiences. Added four cumulative investigations at Weeks 9, 18, 27, and 36 plus a landing page and assessment-map wiring.
+- Bubble 2 — the curriculum promised a midterm practical + written assessment, while the public assessment layer exposed a written midterm-practice package without a clearly named practical practice layer. Quarter 2 now explicitly serves as the public midterm-practical practice layer while official midterm authority remains protected.
+- Bubble 3 — vocabulary and retrieval were strong inside lessons but lacked an explicit delayed cross-unit spiral. Added SPIRAL_RETRIEVAL_VOCABULARY_MAP.md with same-lesson, delayed, next-unit, quarterly, and cumulative retrieval expectations.
+- Bubble 4 — cross-unit conceptual coherence was implicit in the curriculum but not codified as required transfer. Added CROSS_UNIT_COHERENCE_MAP.md with bridges from inquiry → biology → chemistry → physics → Earth/space → engineering.
+- Bubble 5 — inquiry/lab/design work was distributed across units but lacked one course-level practical progression. Added INQUIRY_LAB_SPINE.md defining unit evidence artifacts, skill progression, quality requirements, and quarterly practical checkpoints.
+- Updated CURRICULUM_MAP.md, README.md, assessments/assessment-map.json, and assessments/index.html so the new course spine is canonical and discoverable.
+- This pass strengthens curriculum coherence and assessment architecture. It does not change the separate browser/device release-certification boundary in RELEASE-CERTIFICATION.md.
