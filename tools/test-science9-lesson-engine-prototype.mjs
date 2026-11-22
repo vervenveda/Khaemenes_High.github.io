@@ -51,7 +51,7 @@ assert.ok(js.includes("Observe → Predict → Test"),"Prediction/revision works
 assert.ok(js.includes("Reasoning Checks"),"Feedback-enabled reasoning checks missing");
 assert.ok(js.includes("mean short-wing time")&&js.includes("0.40 s"),"Worked quantitative evidence example missing");
 assert.ok(lesson.includes('data-science-rubric="sci9-u01-d01-evidence-v1"'),"Lesson rubric ID missing");
-assert.ok(rubric.includes('Canonical rubric ID: `sci9-u01-d01-evidence-v1`'),"Teacher rubric canonical ID missing");
+assert.match(rubric,/Canonical rubric ID:\*{0,2}\s*`sci9-u01-d01-evidence-v1`/,"Teacher rubric canonical ID missing");
 const canonicalRubric=[
 "Scientific accuracy",
 "Relevant evidence or design detail",
