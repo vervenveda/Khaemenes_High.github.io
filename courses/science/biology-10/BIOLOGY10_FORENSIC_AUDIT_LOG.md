@@ -463,3 +463,28 @@ All ten pages verify:
 
 ### Certification status
 - Whole-course source-level certification remains HOLD until Weeks 10–17 are hardened and verified.
+
+
+## 2026-11-22 · First-semester certification recovery block 5 — Weeks 10–11
+
+### Audit findings
+- Week 10 already had strong substantive depth (~516–631 visible words).
+- Week 11 already had strong substantive depth (~528–627 visible words).
+- All ten pages lacked the canonical upper-science engine.
+- Source/evidence-quality reasoning was absent; explicit retrieval and evidence revision were inconsistent outside synthesis days.
+
+### Repairs
+- Mounted `upper-science-v1` on all ten Week 10–11 lessons with one canonical loader per page.
+- Week 10 preserved cellular-respiration depth while strengthening energy-transformation language, glycolysis/fermentation boundaries, chemiosmosis/proton-gradient reasoning, respirometry normalization, and matter/energy evidence chains.
+- Week 11 preserved metabolic-network and carbon-cycling depth while strengthening atom conservation, pathway-network interpretation, tracer/model distinctions, system boundaries, and matter-vs-energy separation.
+- Added explicit source-quality boundaries, retrieval, evidence revision, uncertainty, and misconception repair without replacing strong existing instruction.
+
+### Verification
+All ten pages verify:
+- upper-science engine marker present,
+- exactly one canonical loader,
+- evidence-quality task present,
+- intended retrieval/evidence-revision layer present where appropriate.
+
+### Certification status
+- Whole-course source-level certification remains HOLD until Weeks 12–17 are hardened and verified.
