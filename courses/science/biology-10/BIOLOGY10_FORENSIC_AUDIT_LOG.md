@@ -321,3 +321,46 @@ All ten pages now verify:
 
 ### Next block
 - Week 36 — Comprehensive Final & Portfolio Defense, followed by a full Grade 10 source-level certification audit.
+
+
+## 2026-11-22 · Week 36 hardening + Grade 10 source-level certification audit
+
+### Week 36
+- All five Comprehensive Final & Portfolio Defense lessons now mount `upper-science-v1` with exactly one canonical loader.
+- Added cumulative integration maps, quantitative synthesis, protected final-exam reasoning strategy, correction/reassessment evidence, and portfolio-defense evidence ranking.
+- Week 36 remains intentionally shorter than ordinary teaching weeks because it is an assessment/defense week rather than a new instructional unit.
+- Confidential answer keys remain outside the public lesson layer.
+
+### Inventory
+- Repository tree verifies exactly **180 Biology 10 daily lesson pages**.
+- All 36 week directories contain exactly five daily lessons.
+- MID (Week 18) and FINAL (Week 36) are now explicitly represented in the canonical course-map unit registry.
+
+### Certification finding
+**SOURCE-LEVEL CERTIFICATION: HOLD — first-semester engine/contract coverage remains incomplete.**
+
+Evidence:
+- Representative Week 01 Day 02 verifies upper-science engine=true and strong phenomenon/worked/retrieval/evidence structure.
+- Representative Day 02 checks for Weeks 02–17 show engine=false on every sampled page.
+- Weeks 02–17 generally retain useful worked examples and mostly adequate content depth, but explicit phenomenon framing, retrieval, CER/evidence revision, source-quality work, and the canonical upper-science engine are inconsistent.
+- Therefore the course inventory and second-semester hardening are not sufficient to claim 180/180 engine coverage.
+
+### Verified boundary
+- Inventory completeness: PASS (180/180 daily lesson files).
+- Unit/week topology: PASS (36 weeks; MID and FINAL explicit).
+- Weeks 18–36 hardening program: PASS at source level for canonical engine coverage on the pages directly hardened and verified in this program.
+- Whole-course 180/180 upper-science engine coverage: HOLD.
+- Whole-course source-level curriculum certification: HOLD.
+- Browser/device certification, protected assessment security, transcript authority, accreditation, AP authorization, and jurisdictional credit approval remain separate and are not claimed.
+
+### Required next action
+- Harden Weeks 02–17 in two-week blocks using the fortified standard established for Weeks 24–35:
+  - canonical upper-science engine,
+  - substantive depth,
+  - vocabulary-in-context,
+  - source/evidence quality,
+  - quantitative/model reasoning,
+  - retrieval,
+  - uncertainty/model limits,
+  - misconception repair,
+  - evidence revision and transfer.
