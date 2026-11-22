@@ -203,3 +203,9 @@ All ten pages verify:
 
 ### Next block
 - Weeks 28–29 — population genetics/changing allele frequencies, then natural selection and adaptation.
+
+
+### Follow-up fortification — Weeks 26–27
+- Rechecked the first fortification pass against the >=500-word ordinary upper-science depth target.
+- Added targeted safeguards to remaining thin lessons: gel interpretation/data quality, sequencing coverage/mapping uncertainty, stratigraphy/dating limits, homology-vs-convergence evidence, biogeography alternatives, and a quantitative convergence-of-evidence check.
+- Reverified engine mounting remains one canonical loader per page.
