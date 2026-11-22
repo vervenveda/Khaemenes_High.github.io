@@ -364,3 +364,27 @@ Evidence:
   - uncertainty/model limits,
   - misconception repair,
   - evidence revision and transfer.
+
+
+## 2026-11-22 · First-semester certification recovery block 1 — Weeks 02–03
+
+### Audit findings
+- Weeks 02–03 already had strong substantive depth (~573–757 visible words) and sound worked biology content.
+- All ten pages lacked the canonical upper-science engine.
+- Explicit source/evidence-quality reasoning, retrieval, and evidence revision were inconsistent or absent.
+
+### Repairs
+- Mounted `upper-science-v1` on all ten Week 02–03 lessons with one canonical loader per page.
+- Week 02 preserved and strengthened water polarity/hydrogen bonding, carbon bonding/diversity, formula/ratio reasoning, capillary-action investigation, and water/carbon synthesis.
+- Week 03 preserved and strengthened macromolecule architecture, major macromolecule classes, quantitative data limits, molecular assembly/hydrolysis models, and structure–function synthesis.
+- Added targeted evidence-quality/source boundaries, retrieval, and evidence revision without rewriting already-strong lesson depth.
+
+### Verification
+All ten pages verify:
+- upper-science engine marker present,
+- exactly one canonical loader,
+- evidence-quality task present,
+- intended retrieval/evidence-revision layer present where appropriate.
+
+### Certification status
+- Whole-course source-level certification remains HOLD until Weeks 04–17 are hardened and verified.
