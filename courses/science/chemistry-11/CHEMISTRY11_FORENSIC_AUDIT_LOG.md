@@ -119,3 +119,31 @@ All ten pages now verify:
 ### Certification status
 - Whole-course Chemistry 11 source-level curriculum certification remains **HOLD**.
 - Next block: Weeks 05–06 — periodic trends, then ionic bonding and lattice reasoning.
+
+
+## 2026-11-22 · Two-week hardening block 3 — Weeks 05–06
+
+### Audit findings
+- Week 05 periodic-trend lessons began at approximately 323–397 visible words.
+- Week 06 ionic-bonding lessons began at approximately 325–380 visible words.
+- All ten pages lacked the canonical `upper-science-v1` marker/loader.
+- Existing content sequence was scientifically sound but too compressed for the fortified upper-science standard.
+
+### Repairs
+- Mounted `upper-science-v1` on all ten Week 05–06 lessons with exactly one canonical loader per page.
+- Week 05 strengthened periodicity as a predictive model, radius mechanism, shielding/effective attraction, ionization-energy/electronegativity distinctions, quantitative trend analysis, residuals/exceptions, data provenance, and bounded prediction.
+- Week 06 strengthened ion/electron bookkeeping, charge-balanced formula derivation, polyatomic-ion audits, lattice reasoning, qualitative Coulombic comparison, structure–property evidence, ambiguity handling, and discriminating-test design.
+- Added delayed retrieval, source/evidence-quality reasoning, quantitative transfer, evidence revision, uncertainty/model limits, misconception repair, and cross-week transfer to every lesson.
+- Preserved existing data-investigation and synthesis structures rather than replacing them.
+
+### Verification
+- Week 05 Days 01–05 now measure approximately 521–547 visible words.
+- Week 06 Days 01–05 now measure approximately 512–542 visible words.
+- All ten pages verify the canonical upper-science marker.
+- All ten pages verify exactly one canonical upper-science loader.
+- All ten pages expose the science-contract depth layer.
+- Ordinary teaching-page depth target is met across both weeks.
+
+### Certification status
+- Whole-course Chemistry 11 source-level curriculum certification remains **HOLD**.
+- Next block: Weeks 07–08 — covalent bonding, Lewis structures, molecular geometry, and polarity.
