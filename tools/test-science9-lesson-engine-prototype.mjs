@@ -8,6 +8,8 @@ const lessonPath="courses/science/integrated-science-9/units/unit-01/lessons/day
 const previewPath="workflow/engines/science/science-lesson-engine-prototype-v0.1.html";
 const rubricPath="teacher-resources/science/unit-01/UNIT01_RUBRICS.md";
 const js=read(jsPath),lesson=read(lessonPath),preview=read(previewPath),rubric=read(rubricPath);
+const normalizeHtml=s=>s.replaceAll("&amp;","&");
+const hasHeading=(source,heading)=>normalizeHtml(source).includes("<h2>"+heading+"</h2>");
 const stages=[
 ["Essential question","Learning objectives","Materials"],
 ["1. Begin with a phenomenon, not an answer"],
@@ -19,8 +21,8 @@ const stages=[
 ];
 for(const headings of stages){
  for(const heading of headings){
-  assert.ok(lesson.includes("<h2>"+heading+"</h2>"),"Original lesson heading changed: "+heading);
-  assert.ok(preview.includes("<h2>"+heading+"</h2>"),"Workflow prototype heading missing: "+heading);
+  assert.ok(hasHeading(lesson,heading),"Original lesson heading changed: "+heading);
+  assert.ok(hasHeading(preview,heading),"Workflow prototype heading missing: "+heading);
   assert.ok(js.includes(heading),"Engine does not map heading: "+heading);
  }
 }
