@@ -238,3 +238,31 @@ All ten pages verify:
 
 ### Next block
 - Weeks 30–31 — speciation/phylogeny/origins literacy, then ecosystem energy flow.
+
+
+## 2026-11-22 · Two-week hardening block 7 — Weeks 30–31
+
+### Audit findings
+- Week 30 lessons ranged approximately 346–513 visible words before hardening.
+- Week 31 ranged approximately 319–416 visible words before hardening.
+- All ten pages lacked the canonical upper-science engine.
+- Source/evidence-quality work was sparse, and several lessons needed stronger observation-vs-inference boundaries and quantitative ecology reasoning.
+
+### Repairs
+- Mounted `upper-science-v1` on all ten Week 30–31 lessons with one canonical loader per page.
+- Week 30 strengthened species concepts, reproductive isolation, phylogenetic-tree reading, character matrices/parsimony, molecular/gene-tree conflict, and respectful origins literacy with explicit empirical/historical/philosophical/theological boundaries.
+- Week 31 strengthened GPP/respiration/NPP, trophic transfer efficiency, food-web indirect effects, biomass-vs-production, energy-pyramid interpretation, and the distinction between energy flow and matter cycling.
+- Added vocabulary-in-context, evidence/source-quality tasks, quantitative/model transfer, retrieval, uncertainty, and misconception repair.
+- Follow-up fortification targeted tree-reading/parsimony misconceptions, origins-literacy retrieval, production estimates, non-universal ecological efficiency, food-web causality, and biomass/productivity distinctions.
+
+### Verification
+All ten pages verify:
+- upper-science engine marker present,
+- exactly one canonical loader,
+- vocabulary-in-context,
+- evidence/source-quality reasoning,
+- retrieval.
+- Ordinary teaching pages meet the fortified upper-science depth target after follow-up fortification.
+
+### Next block
+- Weeks 32–33 — biogeochemical cycles, then population and community dynamics.
