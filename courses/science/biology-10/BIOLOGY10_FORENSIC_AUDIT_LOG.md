@@ -388,3 +388,27 @@ All ten pages verify:
 
 ### Certification status
 - Whole-course source-level certification remains HOLD until Weeks 04–17 are hardened and verified.
+
+
+## 2026-11-22 · First-semester certification recovery block 2 — Weeks 04–05
+
+### Audit findings
+- Week 04 already had exceptional substantive depth (~819–884 visible words) with strong phenomenon-first, worked-example, investigation, and retrieval structure.
+- Week 05 already had strong substantive depth (~548–695 visible words).
+- All ten pages lacked the canonical upper-science engine.
+- Source/evidence-quality reasoning was absent across both weeks; Week 05 also lacked consistent retrieval/evidence revision.
+
+### Repairs
+- Mounted `upper-science-v1` on all ten Week 04–05 lessons with one canonical loader per page.
+- Week 04 preserved the existing enzyme/reaction-rate depth while adding evidence-quality boundaries, activation-energy misconception repair, dynamic active-site model cautions, graph/data-source checks, investigation design quality controls, and explicit final evidence revision.
+- Week 05 preserved cell-theory/cellular-organization depth while adding phenomenon framing, microscopy evidence limits, observation-vs-inference controls, scale-bar integrity, prepared-image artifact cautions, retrieval, and evidence revision.
+
+### Verification
+All ten pages verify:
+- upper-science engine marker present,
+- exactly one canonical loader,
+- evidence-quality task present,
+- intended retrieval/evidence-revision layer present where appropriate.
+
+### Certification status
+- Whole-course source-level certification remains HOLD until Weeks 06–17 are hardened and verified.
