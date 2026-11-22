@@ -287,7 +287,9 @@ All ten pages verify:
 All ten pages verify:
 - upper-science engine marker present,
 - exactly one canonical loader.
-- Ordinary teaching pages meet the fortified depth target after follow-up fortification.
+- Initial verification still found Week 33 Days 01–03 below the fortified depth target (480, 466, 475 words).
+- A final targeted extension strengthened proportional-vs-absolute growth, dynamic carrying-capacity inference, and consumer-resource causal evidence.
+- Reverification confirms those pages now meet the fortified depth target while retaining one canonical loader per page.
 
 ### Next block
 - Weeks 34–35 — biodiversity/resilience/human impacts, then Biology & Biotechnology Capstone.
