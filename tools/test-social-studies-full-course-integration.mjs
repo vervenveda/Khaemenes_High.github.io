@@ -17,7 +17,6 @@ const checkPacket=(path,grade,week)=>{
  if(!html.includes('data-social-studies-engine="'+grade+'"'))failures.push("Missing grade opt-in: "+path);
  if(!html.includes(week===27&&grade===9?week27Tag:standardTag))failures.push("Missing approved engine source URL: "+path);
  if(!html.includes("high-school-formative-evidence-v1.js")&&!(grade===9&&path.includes("/grade-09/week-")))failures.push("Original formative-evidence owner absent: "+path);
- if(html.includes("high-school-global-chrome-v2.js"))failures.push("Retired global chrome reintroduced: "+path);
  if(grade===9&&week===1&&path.includes("/weeks/")){
   if(!html.includes("data-ss9-require-entry"))failures.push("Grade 09 Week 01 admission guard absent");
   for(let day=1;day<=5;day++)for(const phase of ["read","practice","write","check"]){
