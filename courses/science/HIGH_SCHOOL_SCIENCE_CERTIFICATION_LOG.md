@@ -152,3 +152,19 @@ Browser interaction testing, scientific-answer verification, laboratory safety r
 - Verified representative Days 01, 05, 10, 12, and 15 contain one engine loader and the full Unit 04 depth checkpoint.
 - Grade 9 known canonical engine coverage is now 60/180 daily lessons.
 - Next target: Unit 05 — Ecosystems, Evolution & Biodiversity.
+
+
+### 2026-11-22 · Grade 9 engine hardening pass 5 — Unit 05
+- Audited all 15 Unit 05 daily lessons (Ecosystems, Evolution & Biodiversity).
+- Found the unit moderately thin compared with Units 02–03: most daily pages were roughly 640–880 visible words.
+- Existing strengths included misconception work, retrieval, evidence prompts, differentiation, and uncertainty/limitations.
+- Primary recurring gaps were explicit vocabulary and worked examples, with several ecology lessons also lacking clear quantitative/investigation framing.
+- Mounted the canonical Science 9 engine on all 15 Unit 05 daily lessons in native/non-destructive mode.
+- Added a Unit 05 depth checkpoint to every lesson with explicit vocabulary, worked examples, and investigation/explanation prompts.
+- Strengthened quantitative ecology reasoning for energy transfer, matter cycling, sampling, population growth, carrying capacity, indirect effects, disturbance, and conservation trade-offs.
+- Strengthened evolution reasoning for variation, natural selection, allele-frequency change, drift, gene flow, reproductive isolation, speciation, fossil inference, and phylogenetic evidence.
+- Clarified the human-origins lesson so scientific evidence/interpretation is distinguished from worldview or philosophical claims without conflating domains.
+- Preserved existing mastery, assessment, evidence-storage, navigation, and lesson content.
+- Verified representative Days 01, 05, 10, 14, and 15 contain one engine loader and the Unit 05 depth checkpoint.
+- Grade 9 known canonical engine coverage is now 75/180 daily lessons.
+- Next target: Unit 06 — Atomic Structure & Periodic Patterns.
