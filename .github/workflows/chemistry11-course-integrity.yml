@@ -23,6 +23,8 @@ jobs:
       - uses: actions/checkout@v6
       - name: Verify 36-week / 180-lesson Chemistry 11 source integrity
         run: node courses/science/chemistry-11/tools/validate-course-integrity.mjs
+      - name: Verify Chemistry 11 fictional two-learner persistence isolation
+        run: node courses/science/chemistry-11/tools/test-learner-isolation.mjs
       - name: Verify Chemistry 11 public question bank and misconception map
         run: node courses/science/chemistry-11/tools/audit-question-bank.mjs
       - name: Verify upper-science secure assessment blueprint boundaries
