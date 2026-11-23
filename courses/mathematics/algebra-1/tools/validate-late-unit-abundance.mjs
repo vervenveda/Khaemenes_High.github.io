@@ -48,36 +48,30 @@ for(const unit of [10,11,12,13]){
     : [...baseQuestions.filter(q=>Number(q.unit)===unit),...extra.filter(q=>Number(q.unit)===unit),...(unit===13?unit13Depth:[])];
   assert.equal(pool.length,expected[unit],"Unit "+unit+" eligible pool size drift");
   assert.equal(new Set(pool.map(q=>q.id)).size,pool.length,"Unit "+unit+" has duplicate eligible item IDs");
-  const baseQuota=Math.floor(20/lessons.length),remainder=20%lessons.length;
+  const baseQuota=Math.floor(25/lessons.length),remainder=25%lessons.length;
   lessons.forEach((lesson,index)=>{
     const need=baseQuota+(index<remainder?1:0);
     const available=pool.filter(q=>Number(q.lesson)===Number(lesson.number)).length;
-    assert.ok(available>=need*2,"Unit "+unit+" Lesson "+lesson.number+" cannot support a zero-overlap immediate retake: needs at least "+(need*2)+", has "+available);
+    assert.ok(available>=need,"Unit "+unit+" Lesson "+lesson.number+" lacks enough items for the fixed 25-question lesson-balanced form: needs "+need+", has "+available);
   });
 }
 
-const engine=read("assets/legacy-mastery-engine-v2.js");
+const engine=read("assets/unit-mastery-engine-v3.js");
 for(const marker of [
-  "randomSeed()",
-  "selectForm(previousIds,seed)",
-  "targetPoolSize=Number(R.unit)===11?120:Number(R.unit)===13?80:60",
-  "selectCapstoneLesson",
-  'selectionPolicy:Number(R.unit)===13?"lesson-balanced-capstone-depth-low-overlap-v1":"lesson-balanced-low-overlap-v1"',
-  "capstoneQuantitativeMinimum:Number(R.unit)===13?10:null",
-  "x.available>=x.need*2",
-  '"lesson-balanced-low-overlap-v1"',
-  '"algebra1-late-unit-monte-carlo-v1"',
-  '"algebra1-unit13-capstone-depth-v1"',
-  "immediatePriorOverlap",
-  "formSeed",
-  "previousIds=current.map(q=>q.id)",
-  "balancedOrder(q,target,seed)"
-]) assert.ok(engine.includes(marker),"late-unit Monte Carlo engine missing "+marker);
+  "MASTERY=80,COUNT=25",
+  'BLUEPRINT="algebra1-unit-mastery-v3"',
+  "fixedLessonSelection",
+  'selectionPolicy:"fixed-lesson-balanced-no-shuffle-v3"',
+  'retryFormPolicy:"fixed-no-shuffle"',
+  "lateExtra",
+  "capstoneExtra",
+  "eligiblePool"
+]) assert.ok(engine.includes(marker),"current v3 mastery engine missing "+marker);
 
 for(const unit of [10,11,12,13]){
   const page=read("units/unit-"+unit+"/assessment/mastery-check.html");
   const qIndex=page.indexOf('assets/question-bank.js');
-  const engineIndex=page.indexOf('assets/legacy-mastery-engine-v2.js');
+  const engineIndex=page.indexOf('assets/unit-mastery-engine-v3.js');
   assert.ok(qIndex>=0&&engineIndex>qIndex,"Unit "+unit+" mastery script order is invalid");
   if(unit===11){
     const upgradeIndex=page.indexOf('assets/unit-11-content-upgrade.js');
@@ -99,4 +93,4 @@ for(const rel of ["service-worker.js","service-worker-precache-v1.js"]){
   assert.ok(src.includes("unit13-capstone-depth-bank-v1.js"),rel+" does not cache the Unit 13 capstone depth bank");
 }
 
-console.log("PASS Units 10–13 expose 60/120/60/80 eligible items; Unit 13 adds 20 quantitative capstone items and a 10-item-per-form depth guarantee");
+console.log("PASS Units 10–13 expose 60/120/60/80 eligible items and current v3 fixed-form coverage; Unit 13 retains 20 quantitative capstone-source items");
