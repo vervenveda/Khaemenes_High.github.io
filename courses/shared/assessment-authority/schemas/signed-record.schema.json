@@ -1,0 +1,42 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "khaemenes://schemas/signed-record-v1",
+  "title": "Khaemenes Signed Course Record",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schemaVersion", "record", "signature"],
+  "properties": {
+    "schemaVersion": {"const": "1.0"},
+    "record": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["recordId", "learnerId", "courseCode", "courseTitle", "academicYear", "completionDate", "finalPercent", "assessmentVersion", "issuedAt"],
+      "properties": {
+        "recordId": {"type": "string", "minLength": 8},
+        "learnerId": {"type": "string", "minLength": 1},
+        "learnerName": {"type": ["string", "null"]},
+        "courseCode": {"type": "string", "minLength": 2},
+        "courseTitle": {"type": "string", "minLength": 2},
+        "academicYear": {"type": "string", "minLength": 4},
+        "completionDate": {"type": "string", "format": "date"},
+        "finalPercent": {"type": "number", "minimum": 0, "maximum": 100},
+        "letterGrade": {"type": ["string", "null"]},
+        "credit": {"type": ["number", "null"], "minimum": 0},
+        "assessmentVersion": {"type": "string", "minLength": 1},
+        "issuedAt": {"type": "string", "format": "date-time"},
+        "issuer": {"type": "string", "default": "Khaemenes Academy"}
+      }
+    },
+    "signature": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["algorithm", "keyId", "encoding", "value"],
+      "properties": {
+        "algorithm": {"const": "ECDSA-P256-SHA256"},
+        "keyId": {"type": "string", "minLength": 3},
+        "encoding": {"const": "base64url"},
+        "value": {"type": "string", "minLength": 16}
+      }
+    }
+  }
+}
