@@ -63,7 +63,8 @@ for(const row of COURSE_ROWS){
   const html=fs.readFileSync(file,"utf8");
   for(const [k,re] of Object.entries(diagnostic))if(re.test(html))counts[k]++;
  }
- const contractRow=contract.courses.find(c=>c.grade===row.grade);\n const release=read(contractRow.releaseEvidence);
+ const contractRow=contract.courses.find(c=>c.grade===row.grade);
+ const release=read(contractRow.releaseEvidence);
  let sourceEvidencePass=false;
  if(row.grade===9) sourceEvidencePass=/SOURCE-VALIDATED/i.test(release)&&/Units 00–12 are open/i.test(release);
  if(row.grade===10) sourceEvidencePass=/Curriculum source audit status:\s*PASS/i.test(release)&&/180\/180 daily lessons/i.test(release);
