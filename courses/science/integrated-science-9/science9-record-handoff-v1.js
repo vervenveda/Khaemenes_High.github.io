@@ -55,7 +55,7 @@ function build(input){
      signedRecordIssuance:true
    },
    targetContract:{
-     publicReference:"courses/shared/shared/assessment-authority/",
+     publicReference:"courses/shared/assessment-authority/",
      administratorHandoffSchema:"admin-approved-record-v1",
      signedRecordSchema:"signed-record-v1"
    }
