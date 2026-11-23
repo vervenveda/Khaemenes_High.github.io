@@ -141,3 +141,12 @@
 ### Weeks 21–22 final depth closure
 - Week 22 Day 02 was the only remaining below-floor page at 499 words; final closure raised it to **503 words**.
 - **Weeks 21–22 ordinary instructional depth: PASS — all ten lessons now meet or exceed 500 words.**
+## 2026-11-23 · Hardening block 12 — Weeks 23–24
+
+- Audited all ten Week 23–24 lessons. Both weeks began as a major depth regression with pages under ~205 words, inconsistent vocabulary markers, and no canonical Upper Science engine.
+- Mounted the canonical Upper Science engine on all ten pages with exactly one loader per lesson.
+- Week 23 was substantially deepened around SHM restoring behavior, spring/pendulum timing, phase relations, graph interpretation, energy exchange, damping, repeated-trial uncertainty, CER, and spiral retrieval.
+- Week 24 was substantially deepened around source/medium roles, v=fλ, wave-period transfer, superposition, reflection, standing waves, boundary conditions, wave-speed residuals, uncertainty, CER, and retrieval.
+- Final ordinary-depth verification: **HOLD — remaining below-floor lessons: W23D1:465, W23D2:422, W23D3:410, W23D4:428, W23D5:427, W24D1:443, W24D2:384, W24D3:386, W24D4:410, W24D5:424.**
+- Preserved simulation/safe-lightweight investigation boundaries, browser-local learner work, mastery semantics, routes, and navigation.
+- Next target: Weeks 25–26 — Sound, Resonance & Interference, then Fluids: Pressure & Buoyancy.
