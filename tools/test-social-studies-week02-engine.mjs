@@ -25,7 +25,7 @@ for(const [grade,path,headings] of list){
 }
 assert.ok(js.includes('const week02=weekNumber===2'),"Week 02 context guard absent");
 assert.ok(js.includes('const isGrade9Workspace=grade==="9"&&!demo&&!week02&&!week03&&!laterWeek;'),"Week 01 Grade 09 native controls not isolated");
-assert.ok(js.includes('if(targets&&(!targets.length||targets.some(x=>!x)))return false'),"Missing fail-open behavior");
+assert.ok(js.includes('if(targets&&(!targets.length||targets.some(x=>!x)||new Set(targets).size!==5))return false'),"Missing fail-open and five-target uniqueness behavior");
 assert.ok(js.includes('heading?.closest("article.lesson,section.card,article")'),"Must navigate the original lesson rather than redraw it");
 for(const forbidden of ["localStorage","sessionStorage","indexedDB","fetch(","XMLHttpRequest","document.cookie"]){
  assert.ok(!js.includes(forbidden),"Unexpected new engine persistence: "+forbidden);
