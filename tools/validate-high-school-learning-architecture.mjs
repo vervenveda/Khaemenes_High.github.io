@@ -25,9 +25,10 @@ for(const p of shared.filter(x=>x.endsWith(".js"))){
 const registry=JSON.parse(read("courses/shared/high-school-learning-registry.json"));
 assert(registry.schema==="khaemenes-high-learning-registry-v1","Wrong High School learning registry schema.");
 assert(registry.masteryThreshold===80,"High School registry mastery threshold must remain 80%.");
-assert(Array.isArray(registry.courses)&&registry.courses.length===16,"Expected 16 registered local High School core learning authorities; broader ownership belongs to the canonical ownership manifest.");
+assert(Array.isArray(registry.courses)&&registry.courses.length===22,"Expected 22 registered local High School learning authorities across academic, PE/Health, Psychology/Life Skills, and Capstone.");
 assert(registry.ownershipManifest==="courses/shared/high-school-course-ownership-manifest-v1.json","Learning registry must point to the canonical ownership manifest.");
-for(const id of ["english-9","english-10","english-11","english-12","pre-algebra","algebra-1","geometry","algebra-2","integrated-science-9","biology-10","chemistry-11","physics-engineering-12","global-studies-9","us-history-10","government-economics-11","global-politics-12"]){
+assert(registry.programContract==="courses/shared/high-school-program-contract-v1.json","Learning registry must point to the canonical High School program contract.");
+for(const id of ["english-9","english-10","english-11","english-12","pre-algebra","algebra-1","geometry","algebra-2","integrated-science-9","biology-10","chemistry-11","physics-engineering-12","global-studies-9","us-history-10","government-economics-11","global-politics-12","physical-education-9","physical-education-10","physical-education-11","physical-education-12","psychology-101","senior-capstone"]){
   assert(registry.courses.some(c=>c.id===id),"Registry missing "+id);
 }
 
