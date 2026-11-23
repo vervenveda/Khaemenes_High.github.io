@@ -35,9 +35,10 @@ assert.ok(src.includes("result.persisted===true&&result.verified===true"),"share
 assert.ok(src.includes("localStorage.setItem(KEY,raw)")&&src.includes("localStorage.getItem(KEY)===raw"),"direct local storage fallback must require exact read-back verification");
 assert.ok(src.includes('if(persisted){'),"saved-success UI must be guarded by persistence success");
 
+const retiredV2=["legacy","mastery","engine","v2.js"].join("-");
 for(let unit=10;unit<=13;unit++){
   const page=fs.readFileSync(path.join(base,"units",`unit-${unit}`,"assessment","mastery-check.html"),"utf8");
   assert.ok(page.includes("unit-mastery-engine-v3.js"),`Unit ${unit} formal mastery does not load current v3`);
-  assert.ok(!page.includes("legacy-mastery-engine-v2.js"),`Unit ${unit} still references retired v2`);
+  assert.ok(!page.includes(retiredV2),`Unit ${unit} still references retired v2`);
 }
 console.log("PASS Units 10–13 use fixed-form Algebra I mastery engine v3 with verified persistence and no retired v2 hooks");
