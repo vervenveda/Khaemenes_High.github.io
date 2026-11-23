@@ -158,6 +158,15 @@ else {
   for(let w=1;w<=36;w++) if(!covered.has(w)) failures.push(`vocabulary coverage missing Week ${w}`);
 }
 
+const weeklyShell=path.join(root,"weekly-shell-v1.js");
+if(!exists(weeklyShell)) failures.push("weekly-shell-v1.js missing");
+else {
+  const s=read(weeklyShell);
+  if(!s.includes("../../course-map.json")) failures.push("weekly-shell-v1.js must derive from canonical course-map.json");
+  if(!s.includes("fallback-canonical")) failures.push("weekly-shell-v1.js missing canonical offline fallback state");
+}
+const weeklyShellCheck=path.join(root,"tools","check-weekly-shell-sync.mjs");
+if(!exists(weeklyShellCheck)) failures.push("tools/check-weekly-shell-sync.mjs missing");
 const isolationTest=path.join(root,"tools","test-learner-isolation.mjs");
 if(!exists(isolationTest)) failures.push("tools/test-learner-isolation.mjs missing");
 const ledgerScript=path.join(root,"inquiry-ledger.js");
