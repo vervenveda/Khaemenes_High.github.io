@@ -23,6 +23,11 @@ for(const c of manifest.courses){
  }
  if(c.classification==="catalog-plan"){
    record(!matrixIds.has(c.id),"catalog plan falsely appears as executable matrix course: "+c.id);
+   if(c.curriculumMap)record(exists(c.curriculumMap),"catalog plan curriculum map missing: "+c.id+" -> "+c.curriculumMap);
+   if(c.curriculumStatus==="architecture-complete-production-pending"){
+     record(c.authority==="none","curriculum-ready catalog plan gained authority early: "+c.id);
+     record(c.promotionGate==="courses/electives/ELECTIVE_QUALITY_STANDARD_V1.md","catalog plan promotion gate drift: "+c.id);
+   }
  }
  if(c.classification==="federated-handoff"){
    const row=matrix.courses.find(x=>x.id===c.id);
