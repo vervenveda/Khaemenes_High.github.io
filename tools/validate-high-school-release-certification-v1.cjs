@@ -4,6 +4,7 @@ const fs=require("node:fs"),path=require("node:path"),assert=require("node:asser
 const root=path.resolve(__dirname,".."),read=p=>fs.readFileSync(path.join(root,p),"utf8");
 const matrix=JSON.parse(read("courses/shared/course-execution-matrix-v1.json"));
 const cert=JSON.parse(read("courses/shared/high-school-release-certification-v1.json"));
+const ownership=JSON.parse(read("courses/shared/high-school-course-ownership-manifest-v1.json"));
 assert.equal(cert.schema,"khaemenes-high-release-certification-v1");
 assert.equal(cert.policy.routeExistenceIsNotReleaseCertification,true);
 assert.equal(cert.policy.programContract,"courses/shared/high-school-program-contract-v1.json");
@@ -23,4 +24,24 @@ for(const course of matrix.courses){
   }
   if(course.status==="placement-handoff")assert.notEqual(row.releaseState,"release-certified",course.id+" federated handoff cannot be locally release-certified");
 }
-console.log("PASS explicit release-state machine covers "+cert.courses.length+" High School course routes; route presence cannot masquerade as release certification.");
+const expectedElectiveSurfaces=ownership.courses.filter(x=>x.family==="electives"&&x.classification!=="active-course"&&x.classification!=="active-course-compatibility-content-root");
+assert(Array.isArray(cert.catalogAndFederatedSurfaces),"Catalog/federated release surface ledger missing");
+assert.equal(cert.catalogAndFederatedSurfaces.length,expectedElectiveSurfaces.length,"Elective surface release ledger drift");
+for(const course of expectedElectiveSurfaces){
+  const row=cert.catalogAndFederatedSurfaces.find(x=>x.id===course.id);
+  assert(row,"Missing catalog/federated surface row for "+course.id);
+  assert.equal(row.entry,course.canonicalEntry,"Catalog/federated entry drift for "+course.id);
+  assert.equal(row.classification,course.classification,"Catalog/federated classification drift for "+course.id);
+  assert.equal(row.route,"pass",course.id+" catalog/federated landing route not recorded PASS");
+  if(course.classification==="catalog-plan"){
+    assert.equal(row.authority,"none"+(course.id==="career-professional-studies"?"-until-promotion":""),course.id+" catalog plan gained academic authority");
+    assert.equal(row.surfaceState,course.curriculumStatus,course.id+" catalog surface state drift");
+    assert.notEqual(row.surfaceState,"release-certified",course.id+" catalog plan falsely release-certified");
+  }
+  if(course.classification==="catalog-plan-federated"){
+    assert.equal(row.authority,"federated",course.id+" lost federated authority boundary");
+    assert.equal(row.transcriptReturn,"pending-audited-record-bridge",course.id+" falsely claims transcript return");
+    assert.equal(row.surfaceState,"federated-route-present",course.id+" federated surface state drift");
+  }
+}
+console.log("PASS explicit release-state machine covers "+cert.courses.length+" executable High School course routes plus "+cert.catalogAndFederatedSurfaces.length+" catalog/federated elective surfaces; route presence cannot masquerade as release certification.");
