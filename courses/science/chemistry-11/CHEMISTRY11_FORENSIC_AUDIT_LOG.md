@@ -477,3 +477,31 @@ All ten pages now verify:
 ### Certification status
 - Whole-course Chemistry 11 source-level curriculum certification remains **HOLD** pending Weeks 31–36 hardening and the final 180/180 sweep.
 - Next block: Weeks 31–32 — buffers/acid-base equilibrium, then free energy/electrochemistry foundations.
+
+
+## 2026-11-22 · Two-week hardening block 16 — Weeks 31–32
+
+### Audit findings
+- Week 31 buffer lessons began at approximately 239–354 visible words.
+- Week 32 free-energy lessons began at approximately 221–367 visible words.
+- All ten pages lacked the canonical `upper-science-v1` marker/loader.
+- Week 31 required stronger conjugate-pair stoichiometry, Henderson–Hasselbalch boundaries, half-equivalence reasoning, capacity distinctions, and buffer-design validation.
+- Week 32 was confirmed as a Gibbs free-energy block rather than electrochemistry and required deeper actual-state versus standard-state ΔG, crossover-temperature, equilibrium linkage, coupling, and data-consistency reasoning.
+
+### Repairs
+- Mounted `upper-science-v1` on all ten Week 31–32 lessons with exactly one canonical loader per page.
+- Week 31 strengthened buffer identity, acid/base challenge stoichiometry, pH versus capacity, Henderson–Hasselbalch use/limits, half-equivalence and pKa estimation, simulation controls, capacity normalization, and target-pH buffer design with finite-capacity checks.
+- Week 32 strengthened ΔG versus ΔG°, ΔG=ΔH−TΔS, crossover-temperature calculations, ΔG°=−RT ln K, conceptual ΔG=ΔG°+RT ln Q linkage, coupled-process free-energy accounting, independent-route consistency checks, and thermodynamics-versus-kinetics boundaries.
+- Added delayed retrieval, evidence/source-quality reasoning, quantitative/model transfer, evidence revision, uncertainty/model limits, misconception repair, and cross-week integration throughout the block.
+
+### Verification
+- Week 31 Days 01–05 now measure approximately 514–568 visible words.
+- Week 32 Days 01–05 now measure approximately 508–564 visible words.
+- All ten pages verify the canonical upper-science marker.
+- All ten pages verify exactly one canonical upper-science loader.
+- All ten pages expose the science-contract depth layer.
+- Ordinary teaching-page depth target is met across both weeks.
+
+### Certification status
+- Whole-course Chemistry 11 source-level curriculum certification remains **HOLD** pending Weeks 33–36 hardening and the final 180/180 sweep.
+- Next block: Weeks 33–34 — electrochemistry, nuclear/materials/environmental chemistry, with exact topics to be verified from the source before hardening.
