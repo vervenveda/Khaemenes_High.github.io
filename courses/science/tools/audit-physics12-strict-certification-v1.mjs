@@ -23,10 +23,9 @@ const CORE=[
  ["teacherGuidance",/teacher guidance|teacher note|parent note|expected response|rubric/i],
  ["standards",/NGSS|standard|HS-[A-Z]{2,4}\d/i]
 ];
-const DISC=[
- ["mathematicalModel",/equation|calculate|vector|graph|slope|model|quantitative/i],
- ["engineeringDecision",/constraint|criterion|prototype|design|trade[- ]?off|optimi[sz]|engineering/i]
-];
+const MATHEMATICAL_MODEL=/equation|calculate|vector|graph|slope|model|quantitative/i;
+const ENGINEERING_DECISION=/constraint|criterion|prototype|design|trade[- ]?off|optimi[sz]|engineering/i;
+const ENGINEERING_WEEKS=new Set([13,33,34,35]);
 const ENGINE=/data-science-engine=["']upper-science-v1["']|upper-science-instruction-engine-v1\.js/i;
 const PROTECTED_WEEKS=new Set([18,36]);
 const ASSESSMENT_BOUNDARY=/assessment boundary|protected final|protected midterm|supervised final|closed-book|protected content/i;
