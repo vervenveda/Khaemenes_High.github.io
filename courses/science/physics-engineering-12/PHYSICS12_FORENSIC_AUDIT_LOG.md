@@ -60,3 +60,11 @@
 - Week 10 preserved its work, dot-product, force-position area, work-energy theorem, and average-power architecture while adding uncertainty treatment to measured work/kinetic-energy quantities, explicit CER/evidence revision on Days 01–04, and Friday spiral retrieval.
 - Preserved existing digital laboratories, browser-local learner work, mastery semantics, routes, safety boundaries, and navigation.
 - Next target: Weeks 11–12 — potential energy/conservation, then power/efficiency.
+## 2026-11-22 · Hardening block 6 — Weeks 11–12
+
+- Audited all ten Week 11–12 lessons. Week 11 was conceptually sound but slightly under-depth on Days 01–03; Week 12 needed broader depth and contract hardening across all five days.
+- Mounted the canonical Upper Science engine on all ten pages with exactly one loader per lesson.
+- Week 11 was strengthened with reference-level invariance, system-boundary energy accounting, nonmechanical-transfer interpretation, Hooke-model validity limits, uncertainty in energy quantities, explicit CER/evidence revision, and cumulative retrieval.
+- Week 12 was strengthened with power-interval discipline, input/useful/other energy ledgers, efficiency validity boundaries, stored-energy caveats, measurement uncertainty, engineering tradeoff/sensitivity analysis, explicit CER, and capstone-style stress testing.
+- Preserved existing virtual laboratories, browser-local learner work, mastery semantics, safety boundaries, routes, and navigation.
+- Next target: Weeks 13–14 — Energy Systems & Engineering, then Momentum & Impulse.
