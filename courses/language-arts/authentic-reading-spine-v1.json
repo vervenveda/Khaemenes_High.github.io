@@ -1,0 +1,186 @@
+{
+  "schema": "khaemenes-english-authentic-reading-spine-v1",
+  "version": 1,
+  "policy": {
+    "purpose": "Add traceable authentic reading to existing English instruction without creating parallel grades, mastery, or learner records.",
+    "preserveExistingMicrotexts": true,
+    "assessmentAuthority": "existing-course-assessments-and-human-reviewed-writing",
+    "sourceCustodyRequired": [
+      "title",
+      "author",
+      "publicationYear",
+      "assignedSpan",
+      "provenance",
+      "publicDomainBasis",
+      "sourceUrl",
+      "evidenceTask"
+    ],
+    "offlineRule": "The existing first-party unit text remains available offline; authentic-source links must be printable/downloadable and should be locally archived in a later source-packet pass."
+  },
+  "unit01": {
+    "english-9": [
+      {
+        "week": 1,
+        "title": "The Story of an Hour",
+        "author": "Kate Chopin",
+        "publicationYear": 1894,
+        "genre": "short fiction",
+        "assignedSpan": "Complete short story",
+        "provenance": "First published in Vogue, 1894",
+        "publicDomainBasis": "Public domain in the United States",
+        "sourceUrl": "https://www.katechopin.org/the-story-of-an-hour/",
+        "focus": "observation versus inference; diction; reversal; evidence limits",
+        "evidenceTask": "Annotate three details whose meaning changes after the ending. Write a claim, identify one competing interpretation, and revise the claim after rereading."
+      },
+      {
+        "week": 2,
+        "title": "Gettysburg Address",
+        "author": "Abraham Lincoln",
+        "publicationYear": 1863,
+        "genre": "speech",
+        "assignedSpan": "Complete address",
+        "provenance": "Speech delivered at Gettysburg, Pennsylvania, November 19, 1863",
+        "publicDomainBasis": "Public-domain U.S. government-era historical text",
+        "sourceUrl": "https://www.loc.gov/resource/rbpe.24404500/?st=text",
+        "focus": "purpose; repetition; compression; claim and evidence",
+        "evidenceTask": "Trace how repeated words develop Lincoln's claim. Distinguish what the speech asserts from historical information it assumes."
+      },
+      {
+        "week": 3,
+        "title": "The Open Window",
+        "author": "Saki (H. H. Munro)",
+        "publicationYear": 1914,
+        "genre": "short fiction",
+        "assignedSpan": "Complete short story",
+        "provenance": "Published in Beasts and Super-Beasts, 1914",
+        "publicDomainBasis": "Published before 1931; public domain in the United States",
+        "sourceUrl": "https://en.wikisource.org/wiki/Beasts_and_Super-Beasts/The_Open_Window",
+        "focus": "narrative reliability; inference; revision; academic integrity",
+        "evidenceTask": "Build two interpretations of Vera's story, identify the textual evidence available at each stage, then explain why a responsible reader revises rather than hides an earlier inference."
+      }
+    ],
+    "english-10": [
+      {
+        "week": 1,
+        "title": "The Yellow Wallpaper",
+        "author": "Charlotte Perkins Gilman",
+        "publicationYear": 1892,
+        "genre": "short fiction",
+        "assignedSpan": "Complete short story",
+        "provenance": "First published in The New England Magazine, 1892",
+        "publicDomainBasis": "Public domain in the United States",
+        "sourceUrl": "https://www.gutenberg.org/ebooks/1952",
+        "focus": "perspective; narrator reliability; social context; interpretive qualification",
+        "evidenceTask": "Track three places where the narrator's description and the reader's inference diverge. Qualify a claim so it does not diagnose the narrator or exceed the text."
+      },
+      {
+        "week": 2,
+        "title": "Women's Rights Convention report of Sojourner Truth's speech",
+        "author": "Sojourner Truth; reported by Marius Robinson",
+        "publicationYear": 1851,
+        "genre": "reported speech / primary source",
+        "assignedSpan": "Complete Robinson report published June 21, 1851",
+        "provenance": "Anti-Slavery Bugle report by Marius Robinson, the earliest full report",
+        "publicDomainBasis": "Published in the United States in 1851; public domain",
+        "sourceUrl": "https://www.loc.gov/item/sn83035487/1851-06-21/ed-1/",
+        "focus": "source version; transcription; rhetoric; provenance",
+        "evidenceTask": "Separate Truth's reported argument from the reporter's framing. Record what can be claimed confidently from this version and what requires version comparison."
+      },
+      {
+        "week": 3,
+        "title": "Declaration of Sentiments",
+        "author": "Elizabeth Cady Stanton and Seneca Falls Convention participants",
+        "publicationYear": 1848,
+        "genre": "declaration / argument",
+        "assignedSpan": "Complete declaration and resolutions",
+        "provenance": "Seneca Falls Convention, 1848",
+        "publicDomainBasis": "Published in 1848; public domain",
+        "sourceUrl": "https://www.nps.gov/wori/learn/historyculture/declaration-of-sentiments.htm",
+        "focus": "paraphrase; structural imitation; argument; attribution",
+        "evidenceTask": "Paraphrase one grievance without flattening its meaning, compare its structure with the Declaration of Independence, and document exactly where the parallel ends."
+      }
+    ],
+    "english-11": [
+      {
+        "week": 1,
+        "title": "Narrative of the Life of Frederick Douglass, Chapter VII",
+        "author": "Frederick Douglass",
+        "publicationYear": 1845,
+        "genre": "autobiography",
+        "assignedSpan": "Chapter VII",
+        "provenance": "Narrative of the Life of Frederick Douglass, an American Slave, 1845",
+        "publicDomainBasis": "Published in 1845; public domain worldwide",
+        "sourceUrl": "https://en.wikisource.org/wiki/Narrative_of_the_Life_of_Frederick_Douglass%2C_an_American_Slave/Chapter_7",
+        "focus": "literacy; rhetoric; autobiographical evidence; historical context",
+        "evidenceTask": "Analyze how Douglass turns literacy into both narrative event and argument. Distinguish remembered experience, quoted dialogue, and later authorial interpretation."
+      },
+      {
+        "week": 2,
+        "title": "The Souls of Black Folk, Chapter I: Of Our Spiritual Strivings",
+        "author": "W. E. B. Du Bois",
+        "publicationYear": 1903,
+        "genre": "essay / cultural criticism",
+        "assignedSpan": "Chapter I",
+        "provenance": "The Souls of Black Folk, first published 1903",
+        "publicDomainBasis": "Published before 1931; public domain in the United States",
+        "sourceUrl": "https://en.wikisource.org/wiki/The_Souls_of_Black_Folk/Of_Our_Spiritual_Strivings",
+        "focus": "concept formation; metaphor; historical argument; scholarly qualification",
+        "evidenceTask": "Define one key concept using Du Bois's own development of it, then test whether a modern paraphrase preserves the concept's historical and rhetorical complexity."
+      },
+      {
+        "week": 3,
+        "title": "Self-Reliance",
+        "author": "Ralph Waldo Emerson",
+        "publicationYear": 1841,
+        "genre": "essay",
+        "assignedSpan": "Opening through the discussion of consistency; teacher may assign the complete essay",
+        "provenance": "Essays: First Series, 1841",
+        "publicDomainBasis": "Published in 1841; public domain",
+        "sourceUrl": "https://en.wikisource.org/wiki/Essays:_First_Series/Self-Reliance",
+        "focus": "aphorism; syntax; abstraction; thesis revision",
+        "evidenceTask": "Select two claims that appear to conflict. Explain the tension through syntax and context, then revise a simplistic summary into a defensible thesis."
+      }
+    ],
+    "english-12": [
+      {
+        "week": 1,
+        "title": "A Modest Proposal",
+        "author": "Jonathan Swift",
+        "publicationYear": 1729,
+        "genre": "satirical essay",
+        "assignedSpan": "Complete essay",
+        "provenance": "First published 1729",
+        "publicDomainBasis": "Public domain",
+        "sourceUrl": "https://www.gutenberg.org/ebooks/1080",
+        "focus": "satire; persona; quantitative rhetoric; ethical interpretation",
+        "evidenceTask": "Separate Swift's literal persona from the essay's satirical target. Audit one numerical claim for rhetorical function and explain what evidence would be needed to treat it as empirical rather than satirical."
+      },
+      {
+        "week": 2,
+        "title": "On Liberty, Chapter II: Of the Liberty of Thought and Discussion",
+        "author": "John Stuart Mill",
+        "publicationYear": 1859,
+        "genre": "philosophical argument",
+        "assignedSpan": "Chapter II, with teacher-selected passages for close reading",
+        "provenance": "On Liberty, first published 1859; public-domain fourth edition also available",
+        "publicDomainBasis": "Public-domain edition",
+        "sourceUrl": "https://www.gutenberg.org/ebooks/34901",
+        "focus": "argument architecture; counterargument; qualification; falsifiability",
+        "evidenceTask": "Map Mill's argument as claims, concessions, and consequences. Identify one assumption that must hold for the argument to work and one plausible challenge."
+      },
+      {
+        "week": 3,
+        "title": "A Room of One's Own",
+        "author": "Virginia Woolf",
+        "publicationYear": 1929,
+        "genre": "extended essay",
+        "assignedSpan": "Chapter I; optional continuation into Chapter III for advanced pathway",
+        "provenance": "Hogarth Press / Harcourt, 1929",
+        "publicDomainBasis": "Published in 1929; entered the U.S. public domain January 1, 2025",
+        "sourceUrl": "https://en.wikisource.org/wiki/A_Room_of_One%27s_Own_(Harcourt_1929)/Chapter_1",
+        "focus": "method; evidence limits; narrative essay voice; authorship and intellectual independence",
+        "evidenceTask": "Track how Woolf moves between scene, hypothetical reasoning, evidence, and qualification. Write a method note explaining which parts are observation, inference, example, or argument."
+      }
+    ]
+  }
+}
