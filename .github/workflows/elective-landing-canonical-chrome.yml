@@ -1,0 +1,30 @@
+name: Elective Landing Canonical Chrome Validation
+on:
+  pull_request:
+    paths:
+      - 'courses/electives/**/index.html'
+      - 'assets/high-department-landing-shell-v1.js'
+      - 'assets/high-school-subject-landing-class-tools-v1.js'
+      - 'assets/high-school-elective-landing-contract-v1.css'
+      - 'assets/high-school-elective-landing-features-v1.js'
+      - 'tools/validate-elective-landing-canonical-chrome-v1.cjs'
+      - '.github/workflows/elective-landing-canonical-chrome.yml'
+  push:
+    branches: [main]
+    paths:
+      - 'courses/electives/**/index.html'
+      - 'assets/high-department-landing-shell-v1.js'
+      - 'assets/high-school-subject-landing-class-tools-v1.js'
+      - 'assets/high-school-elective-landing-contract-v1.css'
+      - 'assets/high-school-elective-landing-features-v1.js'
+      - 'tools/validate-elective-landing-canonical-chrome-v1.cjs'
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: node tools/validate-elective-landing-canonical-chrome-v1.cjs
+      - run: node tools/validate-high-school-course-ownership-v1.cjs
