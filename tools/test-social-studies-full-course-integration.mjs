@@ -46,7 +46,7 @@ for(let grade=9;grade<=12;grade++)for(let week=1;week<=36;week++){
    (week===27?html.includes("student-packet-v2.html"):html.includes("../weeks/week-"+w+"/student-packet.html"));
   if(isGrade9Redirect){
    redirects.push(g+":"+w);
-   if(!expectedRedirects.has(g+":"+week))failures.push("Unexpected redirected route: "+path);
+   if(!expectedRedirects.has(g+":"+w))failures.push("Unexpected redirected route: "+path);
    if(week===27){
      const destination=path===nested?"student-packet-v2.html":"../weeks/week-27/student-packet-v2.html";
      if(!html.includes(destination))failures.push("Incorrect Week 27 redirect: "+path);
@@ -74,7 +74,7 @@ for(let grade=9;grade<=12;grade++)for(let week=1;week<=36;week++){
 }
 for(const safeguard of [
  "const week02=weekNumber===2",
- "const week03=weekNumber===3",
+ "week03=weekNumber===3",
  "const laterWeek=weekNumber!==null&&weekNumber>=4&&weekNumber<=36",
  "student-packet(?:-v2)?",
  'if(targets&&(!targets.length||targets.some(x=>!x)||new Set(targets).size!==5))return false',
