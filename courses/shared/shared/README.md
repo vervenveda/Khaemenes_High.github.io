@@ -5,7 +5,7 @@ This directory is retained for existing compatibility assets only.
 Canonical shared High School infrastructure belongs directly under `courses/shared/`.
 
 ## Classification
-- `assessment-authority/`: retained compatibility authority documentation/schemas.
+- `assessment-authority/`: retained compatibility copy only. Canonical authority documentation/schemas now live at `../assessment-authority/`; active learner/course surfaces must not reference this nested copy.
 - `course-readiness-template.json`: retained compatibility template.
 - New High School shared engines, registries, adapters, learner-scope modules, course manifests or general templates **must not** be added under `courses/shared/shared/`.
 - Existing consumers may continue to read these assets until a separately audited migration is performed.
