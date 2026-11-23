@@ -1,0 +1,41 @@
+{
+  "schema": "khaemenes-high-profile-runtime-v2",
+  "version": 2,
+  "policy": {
+    "canonicalMarkupBlueprint": "grades/grade-09/student-profile/index.html",
+    "upperGradeRuntimeOwner": "grades/shared/grade09-blueprint-upper-grade.js",
+    "learnerGradeAuthority": "grades/shared/high-school-profile-grade-context.js",
+    "upperGradeHtmlClassification": "compatibility-shell-with-local-presentation",
+    "noIndependentUpperGradeProgressionEngine": true,
+    "noIndependentUpperGradeLearnerIdentity": true,
+    "masteryAuthority": "course-engines-only"
+  },
+  "grades": {
+    "10": {
+      "entry": "grades/grade-10/student-profile/index.html",
+      "role": "shared-runtime-shell"
+    },
+    "11": {
+      "entry": "grades/grade-11/student-profile/index.html",
+      "role": "shared-runtime-shell"
+    },
+    "12": {
+      "entry": "grades/grade-12/student-profile/index.html",
+      "role": "shared-runtime-shell"
+    },
+    "09": {
+      "entry": "grades/grade-09/student-profile/index.html",
+      "role": "canonical-blueprint"
+    }
+  },
+  "requiredUpperGradeRuntime": [
+    "../../shared/high-school-profile-grade-context.js",
+    "../../shared/grade09-blueprint-upper-grade.js",
+    "../../shared/upper-grade-class-progress-dialog.js"
+  ],
+  "forbiddenRuntimeOwners": [
+    "high-school-global-chrome-v2.js",
+    "seven-class-schedule.js",
+    "upper-grade-seven-class.js"
+  ]
+}
