@@ -12,6 +12,7 @@ on:
       - 'tools/audit-student-toolbar-coverage.mjs'
       - 'tools/audit-lower-right-utility-conflicts.mjs'
       - '.github/workflows/high-profile-toolbar-coverage.yml'
+  pull_request:
   workflow_dispatch:
 permissions:
   contents: read
@@ -30,6 +31,7 @@ jobs:
           REQUIRE_FULL_TOOLBAR_COVERAGE: '1'
         run: node tools/audit-student-toolbar-coverage.mjs
       - name: Upload full uncovered-page report
+        if: always()
         uses: actions/upload-artifact@v4
         with:
           name: high-student-toolbar-coverage
