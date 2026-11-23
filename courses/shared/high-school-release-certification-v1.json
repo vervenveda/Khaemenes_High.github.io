@@ -283,5 +283,68 @@
       "offlineAcceptance": "pending",
       "releaseState": "curriculum-pass"
     }
+  ],
+  "catalogAndFederatedSurfaces": [
+    {
+      "id": "career-professional-studies",
+      "entry": "courses/electives/career-professional-studies/index.html",
+      "classification": "catalog-plan",
+      "route": "pass",
+      "curriculum": "student-production-complete",
+      "runtimeCertification": "pending",
+      "authority": "none-until-promotion",
+      "surfaceState": "student-production-complete-runtime-certification-pending"
+    },
+    {
+      "id": "computing-digital-technology",
+      "entry": "courses/electives/computing-digital-technology/index.html",
+      "classification": "catalog-plan",
+      "route": "pass",
+      "curriculum": "architecture-complete-production-pending",
+      "runtimeCertification": "not-applicable-until-production",
+      "authority": "none",
+      "surfaceState": "architecture-complete-production-pending"
+    },
+    {
+      "id": "fine-arts-visual-studio",
+      "entry": "courses/electives/fine-arts-visual-studio/index.html",
+      "classification": "catalog-plan",
+      "route": "pass",
+      "curriculum": "architecture-complete-production-pending",
+      "runtimeCertification": "not-applicable-until-production",
+      "authority": "none",
+      "surfaceState": "architecture-complete-production-pending"
+    },
+    {
+      "id": "health-wellness-human-development",
+      "entry": "courses/electives/health-wellness-human-development/index.html",
+      "classification": "catalog-plan",
+      "route": "pass",
+      "curriculum": "architecture-complete-production-pending",
+      "runtimeCertification": "not-applicable-until-production",
+      "authority": "none",
+      "surfaceState": "architecture-complete-production-pending"
+    },
+    {
+      "id": "music-music-theory",
+      "entry": "courses/electives/music-music-theory/index.html",
+      "classification": "catalog-plan",
+      "route": "pass",
+      "curriculum": "architecture-complete-production-pending",
+      "runtimeCertification": "not-applicable-until-production",
+      "authority": "none",
+      "surfaceState": "architecture-complete-production-pending"
+    },
+    {
+      "id": "world-languages-linguistics",
+      "entry": "courses/electives/world-languages-linguistics/index.html",
+      "classification": "catalog-plan-federated",
+      "route": "pass",
+      "curriculum": "federated-instruction",
+      "runtimeCertification": "owned-by-linguistics",
+      "authority": "federated",
+      "transcriptReturn": "pending-audited-record-bridge",
+      "surfaceState": "federated-route-present"
+    }
   ]
 }
