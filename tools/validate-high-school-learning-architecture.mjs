@@ -118,12 +118,14 @@ const formativeCoverage={targets:0,missing:[],duplicates:[],byFamily:{english:0,
 for(const file of walk(ROOT)){
   const rel=path.relative(ROOT,file).split(path.sep).join("/");
   if(!formativeTarget(rel))continue;
+  const html=fs.readFileSync(file,"utf8");
+  if(/<meta[^>]+http-equiv=["']refresh["']/i.test(html))continue;
   formativeCoverage.targets++;
   if(rel.includes("/language-arts/"))formativeCoverage.byFamily.english++;
   else if(rel.includes("/mathematics/"))formativeCoverage.byFamily.mathematics++;
   else if(rel.includes("/science/"))formativeCoverage.byFamily.science++;
   else if(rel.includes("/social-studies/"))formativeCoverage.byFamily.socialStudies++;
-  const html=fs.readFileSync(file,"utf8"),markers=html.split(FORMATIVE_MARKER).length-1;
+  const markers=html.split(FORMATIVE_MARKER).length-1;
   if(markers===0)formativeCoverage.missing.push(rel);
   if(markers>1)formativeCoverage.duplicates.push(rel);
   if(!html.includes("high-school-learning-context-v1.js"))formativeCoverage.missing.push(rel+" missing high-school-learning-context-v1.js");
