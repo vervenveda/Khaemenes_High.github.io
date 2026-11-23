@@ -10,6 +10,8 @@ on:
       - "courses/mathematics/precalculus-trigonometry/**"
       - "courses/mathematics/calculus-1/**"
       - "tools/validate-math-engine-version-sync.mjs"
+      - "tools/audit-retired-math-engine-hooks-v1.mjs"
+      - ".github/workflows/math-engine-lesson-shell-integrity.yml"
       - "workflow/blueprints/khaemenes-mathematics-engine-blueprint-v1.md"
   pull_request:
     paths:
