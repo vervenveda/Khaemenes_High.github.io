@@ -84,3 +84,7 @@
 - Week 16 was substantially deepened around independent momentum/kinetic-energy classification tests, elastic vs. inelastic boundaries, frame/system consistency, force-time sampling and waveform interpretation, dual residual analysis, uncertainty-sensitive classification, and safe collision-design tradeoffs.
 - Preserved simulation-only collision safety, browser-local learner work, mastery semantics, routes, and navigation.
 - Next target: Weeks 17–18 — Center of Mass & Semester Synthesis, then protected Midterm/Corrections boundary.
+### Verification correction — Weeks 15–16
+- The first post-hardening verification correctly found all ten lessons still below the 500-word ordinary-lesson floor despite improved contract coverage.
+- A second quantitative-depth pass added worked transfer cases, uncertainty interpretation, residual-pattern examples, dual momentum/energy classification, numerical force-time integration, and design tradeoff calculations.
+- Final verification after the second pass: remaining below-floor lessons: W16D1:494, W16D2:468, W16D3:471, W16D4:471.
