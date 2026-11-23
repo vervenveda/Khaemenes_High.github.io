@@ -11,7 +11,7 @@ for(const lesson of map.lessons){
  assert.match(html,/<\/body>\s*<\/html>\s*$/i,file+' unexpected content after the closing document');
  assert.equal((html.match(/<\/html>/gi)||[]).length,1,file+' exactly one closing document');
  if(lesson.number===1){
-  assert.ok(html.includes('../assets/lesson-engine-core.js'),file+' keeps canonical Unit 01 lesson core');
+  assert.ok(html.includes('../assets/lesson-engine.js'),file+' keeps current canonical Unit 01 lesson engine');
   assert.ok(html.includes('khaemenes-math-engine-v1.js'),file+' keeps canonical Mathematics Engine owner');
   assert.ok(html.includes('data-engine-owner="canonical"'),file+' keeps canonical engine ownership marker');
  }else{
@@ -35,4 +35,4 @@ for(const lesson of map.lessons){
 const lesson3=fs.readFileSync(root+map.lessons[2].file,'utf8');
 assert.ok(lesson3.includes('Prime')&&lesson3.includes('Divisibility'),'prime factorization lesson intact');
 assert.ok(!lesson3.includes('prealgebra_unit01_lesson03_organized_file_tree.html'),'stray filename removed');
-console.log('PASS: Pre-Algebra Unit 01 all six lesson documents close cleanly, '+scripts+' scripts resolve, Lesson 1 canonical owner + Lessons 2–6 legacy engines preserved under v2.3.0 adapter, 80% mastery untouched.');
+console.log('PASS: Pre-Algebra Unit 01 all six lesson documents close cleanly, '+scripts+' scripts resolve, current lesson engines remain under the canonical Math owner and v2.3.0 adapter, 80% mastery untouched.');
