@@ -198,3 +198,12 @@
 ### Weeks 27–28 final PASS closure
 - Final verification: **PASS — all ten Week 27–28 lessons meet or exceed 500 words.**
 - Weeks 27–28 now meet the ordinary instructional depth and Upper Science contract standards.
+## 2026-11-23 · Hardening block 15 — Weeks 29–30
+
+- Audited all ten Week 29–30 lessons. Both weeks were scientifically well-scoped but compressed, with no canonical Upper Science engine and uneven uncertainty/CER depth.
+- Mounted the canonical Upper Science engine on all ten pages with exactly one loader per lesson.
+- Week 29 was substantially deepened around Coulomb inverse-square reasoning, field-vector superposition, scalar potential/energy, transformed inverse-square testing, model choice, uncertainty, CER, and retrieval.
+- Week 30 was substantially deepened around current/voltage/resistance meanings, ohmic model limits, series/parallel topology, node conservation, electrical power/energy, V–I residuals, component tolerance, design constraints, CER, and retrieval.
+- Final ordinary-depth verification: **HOLD — remaining below-floor lessons: W29D1:435, W29D2:411, W29D3:387, W29D4:386, W29D5:440, W30D1:404, W30D2:418, W30D3:365, W30D4:393, W30D5:418.**
+- Preserved low-voltage/simulation-only safety boundaries, browser-local learner work, mastery semantics, routes, and navigation.
+- Next target: Weeks 31–32 — Magnetism & Electromagnetic Induction, then EM Waves, Light & Information.
