@@ -88,3 +88,6 @@
 - The first post-hardening verification correctly found all ten lessons still below the 500-word ordinary-lesson floor despite improved contract coverage.
 - A second quantitative-depth pass added worked transfer cases, uncertainty interpretation, residual-pattern examples, dual momentum/energy classification, numerical force-time integration, and design tradeoff calculations.
 - Final verification after the second pass: remaining below-floor lessons: W16D1:494, W16D2:468, W16D3:471, W16D4:471.
+### Final Weeks 15–16 verification
+- Final ordinary-lesson depth verification: **PASS — all ten Week 15–16 lessons meet or exceed 500 words.**
+- All ten pages mount exactly one canonical Upper Science engine and retain explicit CER/evidence revision, spiral retrieval, uncertainty/model-limit reasoning, and simulation-only collision safety boundaries.
