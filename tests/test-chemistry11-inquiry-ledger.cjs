@@ -16,7 +16,7 @@ function mount(){
  for(const id of ["ledger","status","total","records","week","day","minutes","inquiry","evidence"])ids.set(id,node());
  const doc={getElementById:id=>ids.get(id),createElement:()=>node()};
  const storage={getItem:k=>memory.get(active+"|"+k)??null,setItem:(k,v)=>memory.set(active+"|"+k,String(v))};
- const context={window:{KhaemenesCourseEntryContract:{readAcademyProfile:()=>({learnerId:active})},KhaemenesLearnerScope:{course:"chemistry-11"},addEventListener:()=>{}},document:doc,localStorage:storage,Date,Number,Math,JSON,Object};
+ const context={window:{KhaemenesCourseEntryContract:{readAcademyProfile:()=>({learnerId:active})},KhaemenesLearnerScope:{course:"chemistry-11",scopedKey:k=>k},addEventListener:()=>{}},document:doc,localStorage:storage,Date,Number,Math,JSON,Object};
  vm.runInNewContext(src,context);
  return context.window.KhaeInquiryLedger;
 }
