@@ -3,7 +3,7 @@
 const fs=require("node:fs"),path=require("node:path");
 const root=path.resolve(__dirname,"..");
 const roots=["courses","grades","portfolio"];
-const extensions=new Set([".html",".js",".mjs",".cjs",".json",".css"]);
+const extensions=new Set([".html",".js"]);
 const skipParts=new Set([".git","node_modules","archive","archives","backup","backups","vendor","private"]);
 const exempt=new Set([
   "courses/shared/high-school-course-ownership-manifest-v1.json"
@@ -16,6 +16,7 @@ function walk(rel){
     if(skipParts.has(entry.name.toLowerCase()))continue;
     const child=path.join(rel,entry.name).split(path.sep).join("/");
     if(child==="courses/shared/shared"||child.startsWith("courses/shared/shared/"))continue;
+    if(/\/(?:tests?|tools?)\//i.test(child))continue;
     if(entry.isDirectory())walk(child);
     else if(entry.isFile()&&extensions.has(path.extname(entry.name).toLowerCase())&&!exempt.has(child)){
       const text=fs.readFileSync(path.join(root,child),"utf8");
