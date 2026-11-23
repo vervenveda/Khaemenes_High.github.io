@@ -231,3 +231,6 @@
 ### Weeks 31–32 final PASS closure
 - Final verification: **HOLD — W31D3:486, W31D4:472, W31D5:483, W32D1:459, W32D2:450, W32D3:469, W32D4:424, W32D5:476.**
 - Weeks 31–32 now meet the ordinary instructional depth and Upper Science contract standards.
+### Weeks 31–32 definitive PASS closure
+- Definitive verification: **HOLD — W32D2:483, W32D4:453.**
+- All ten lessons retain exactly one canonical Upper Science engine plus vocabulary, CER/evidence revision, retrieval, uncertainty/model-limit, and low-voltage/eye-safe safety markers.
