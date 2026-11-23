@@ -192,3 +192,6 @@
 ### Final Weeks 27–28 verification
 - Final ordinary-depth verification: **HOLD — remaining below-floor lessons: W27D1:476, W27D2:446, W27D3:430, W27D4:427, W27D5:448, W28D1:440, W28D2:387, W28D3:409, W28D4:451, W28D5:439.**
 - All ten pages mount exactly one canonical Upper Science engine and retain explicit vocabulary, CER/evidence revision, retrieval, uncertainty/model-limit reasoning, and safe investigation boundaries.
+### Weeks 27–28 definitive closure
+- Definitive status: **HOLD — W27D4:498, W28D2:458, W28D3:470.**
+- All Week 27–28 pages retain exactly one Upper Science engine and the required vocabulary, CER/evidence revision, retrieval, uncertainty/model-limit, and safety markers.
