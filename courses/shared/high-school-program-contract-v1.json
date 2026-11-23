@@ -1,0 +1,126 @@
+{
+  "schema": "khaemenes-high-school-program-contract-v1",
+  "version": 1,
+  "masteryFloorPercent": 80,
+  "authority": {
+    "sharedProgramLayerOwns": [
+      "program-requirements",
+      "schedule-slots",
+      "learner-wide-progress-aggregation",
+      "graduation-readiness",
+      "federated-record-validation",
+      "release-state-aggregation"
+    ],
+    "sharedProgramLayerDoesNotOwn": [
+      "subject-pedagogy",
+      "subject-assessment-items",
+      "subject-mastery-decisions",
+      "subject-placement-decisions",
+      "locked-assessment-content"
+    ],
+    "independentSubjectEngines": [
+      "language-arts",
+      "mathematics",
+      "science",
+      "social-studies"
+    ]
+  },
+  "gradeBand": [
+    "09",
+    "10",
+    "11",
+    "12"
+  ],
+  "pathwaySlots": [
+    {
+      "id": "mathematics",
+      "label": "Mathematics",
+      "mode": "placement-driven",
+      "required": true,
+      "owner": "courses/mathematics/"
+    },
+    {
+      "id": "english",
+      "label": "English / Language Arts",
+      "mode": "grade-sequenced",
+      "required": true,
+      "owner": "courses/language-arts/"
+    },
+    {
+      "id": "social-studies",
+      "label": "Social Studies",
+      "mode": "grade-sequenced",
+      "required": true,
+      "owner": "courses/social-studies/"
+    },
+    {
+      "id": "science",
+      "label": "Science",
+      "mode": "grade-sequenced",
+      "required": true,
+      "owner": "courses/science/"
+    },
+    {
+      "id": "pe-health",
+      "label": "PE / Health",
+      "mode": "grade-sequenced",
+      "required": true,
+      "owner": "courses/physical-education/"
+    },
+    {
+      "id": "psychology-life-skills",
+      "label": "Psychology / Life Skills",
+      "mode": "program-slot",
+      "required": true,
+      "owner": "courses/electives/psychology-101/"
+    },
+    {
+      "id": "world-language",
+      "label": "World Language",
+      "mode": "federated",
+      "required": true,
+      "requirementYears": 2,
+      "continuationYearsSupported": 4,
+      "owner": "vervenveda/Khaemenes_Linguistics.github.io"
+    },
+    {
+      "id": "elective",
+      "label": "Elective",
+      "mode": "catalog-selection",
+      "required": true,
+      "owner": "courses/electives/"
+    }
+  ],
+  "graduation": {
+    "seniorCapstone": {
+      "required": true,
+      "grade": 12,
+      "owner": "courses/capstone/senior-capstone/",
+      "authority": "evaluator-reviewed"
+    },
+    "evidenceRequired": [
+      "course-completion-records",
+      "portfolio-evidence",
+      "senior-capstone-evaluator-record",
+      "federated-requirement-records"
+    ],
+    "transcriptAuthority": "Academy record layer after validated course/federated completion evidence",
+    "routePresenceNeverEqualsCompletion": true
+  },
+  "assessments": {
+    "weekly": "open-book-course-policy",
+    "midterm": "closed-book-or-supervised-course-policy",
+    "final": "closed-book-or-supervised-course-policy",
+    "retryBelowMastery": "correction/reassessment without fabricating mastery"
+  },
+  "canonical": {
+    "ownership": "courses/shared/high-school-course-ownership-manifest-v1.json",
+    "learningRegistry": "courses/shared/high-school-learning-registry.json",
+    "releaseCertification": "courses/shared/high-school-release-certification-v1.json",
+    "profileRuntime": "grades/shared/high-school-profile-runtime-v2.json",
+    "worldLanguages": "courses/shared/high-school-world-languages-federation-v1.json",
+    "progression": "courses/shared/HIGH_SCHOOL_WHOLE_STUDENT_PROGRESSION_V1.md",
+    "federationReturn": "courses/shared/high-school-federated-return-record-v1.json",
+    "runtimeCertification": "courses/shared/high-school-runtime-certification-matrix-v1.json"
+  }
+}
