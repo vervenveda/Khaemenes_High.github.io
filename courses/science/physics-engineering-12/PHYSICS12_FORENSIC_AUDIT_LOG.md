@@ -138,3 +138,6 @@
 ### Final Weeks 21–22 verification
 - Final ordinary-depth verification: **HOLD — remaining below-floor lessons: W22D2:499.**
 - All ten pages mount exactly one canonical Upper Science engine and retain explicit vocabulary, CER/evidence revision, spiral retrieval, uncertainty/model-limit reasoning, and safe simulation/lightweight-object boundaries.
+### Weeks 21–22 final depth closure
+- Week 22 Day 02 was the only remaining below-floor page at 499 words; final closure raised it to **503 words**.
+- **Weeks 21–22 ordinary instructional depth: PASS — all ten lessons now meet or exceed 500 words.**
