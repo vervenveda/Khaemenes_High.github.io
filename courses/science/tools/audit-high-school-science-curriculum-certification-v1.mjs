@@ -54,7 +54,7 @@ const DISCIPLINE = {
 
 const SAFETY = /safety|hazard|risk|stop condition|supervision|safe alternative/i;
 const UNCERTAINTY = /uncertaint|error|precision|accuracy|limitation|source of error/i;
-const ENGINE_UPPER = /data-science-engine=["']upper-science-v1["']|upper-science-instruction-engine-v1\.js/i;
+const RETIRED_UPPER = /data-science-engine=["']upper-science-v1["']|upper-science-instruction-engine-v1\.js/i;
 const ENGINE_G9 = /science-instruction-engine|data-science-engine|science lesson engine|curriculum-contract|lesson-engine/i;
 const WORD_TARGET = { 9: 350, 10: 500, 11: 500, 12: 500 };
 
@@ -114,7 +114,7 @@ for (const course of COURSES) {
     const html = fs.readFileSync(file, "utf8");
     const plain = strip(html);
     const words = countWords(plain);
-    const engineMounted = course.engine === "upper-science" ? has(html, ENGINE_UPPER) : has(html, ENGINE_G9);
+    const engineMounted = course.engine === "upper-science" ? !has(html, RETIRED_UPPER) : has(html, ENGINE_G9);
     const core = {};
     for (const [key, re] of CORE) {
       core[key] = has(html, re);
@@ -160,7 +160,7 @@ report.totals.rates = Object.fromEntries(
 
 for (const course of report.courses) {
   if (course.lessons !== course.expectedLessons) report.bubbles.push(`${course.label}: expected ${course.expectedLessons} daily lessons, found ${course.lessons}.`);
-  if (course.rates.engineMounted < 100) report.bubbles.push(`${course.label}: ${course.rates.engineMounted}% of daily lessons visibly mount the designated science engine.`);
+  if (course.rates.engineMounted < 100) report.bubbles.push(`${course.label}: ${course.rates.engineMounted}% of daily lessons satisfy the current engine-ownership contract (Science 9 current engine; upper courses retired-engine-free).`);
   if (course.rates.depthCertified < 100) report.bubbles.push(`${course.label}: ${course.rates.depthCertified}% meet the complete visible depth contract; certify remaining lessons before A+++ release.`);
   if (course.rates.inquiryEvidence < 25) report.bubbles.push(`${course.label}: only ${course.rates.inquiryEvidence}% of daily pages visibly expose investigation/lab/simulation/design language; verify the >=25% inquiry target.`);
   if (course.rates.uncertainty < 50) report.bubbles.push(`${course.label}: uncertainty/error/limitations are visible on only ${course.rates.uncertainty}% of daily lessons; strengthen evidence-quality progression.`);
@@ -174,7 +174,7 @@ if (jsonMode) {
   for (const course of report.courses) {
     console.log(`\nGrade ${course.grade} — ${course.label}`);
     console.log(`  lesson inventory: ${course.lessons}/${course.expectedLessons}`);
-    console.log(`  engine mounted: ${course.counts.engineMounted}/${course.lessons} (${course.rates.engineMounted}%)`);
+    console.log(`  engine ownership clean: ${course.counts.engineMounted}/${course.lessons} (${course.rates.engineMounted}%)`);
     console.log(`  complete core contract: ${course.counts.coreCertified}/${course.lessons} (${course.rates.coreCertified}%)`);
     console.log(`  complete depth certification: ${course.counts.depthCertified}/${course.lessons} (${course.rates.depthCertified}%)`);
     console.log(`  inquiry/lab/design evidence: ${course.counts.inquiryEvidence}/${course.lessons} (${course.rates.inquiryEvidence}%)`);
