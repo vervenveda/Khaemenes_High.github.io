@@ -450,3 +450,30 @@ All ten pages now verify:
 ### Certification status
 - Whole-course Chemistry 11 source-level curriculum certification remains **HOLD** pending Weeks 29–36 hardening and the final 180/180 sweep.
 - Next block: Weeks 29–30 — acids/bases, pH/pOH, strong/weak acid-base reasoning, and titration foundations.
+
+
+## 2026-11-22 · Two-week hardening block 15 — Weeks 29–30
+
+### Audit findings
+- Week 29 acid-base-model lessons began at approximately 209–358 visible words.
+- Week 30 pH/titration lessons began at approximately 222–337 visible words.
+- All ten pages lacked the canonical `upper-science-v1` marker/loader.
+- The sequence was scientifically sound but too compressed around conjugate-pair reasoning, strength-versus-concentration distinctions, logarithmic pH/pOH behavior, Kw, titration stoichiometry, curve regions, and endpoint/equivalence uncertainty.
+
+### Repairs
+- Mounted `upper-science-v1` on all ten Week 29–30 daily lessons with exactly one canonical loader per page.
+- Week 29 strengthened Arrhenius versus Brønsted–Lowry scope, conjugate-pair tracking, conjugate-strength relationships, amphiprotic water, autoionization bridge reasoning, indicator calibration/ranges, and strong-versus-weak versus concentration distinctions.
+- Week 30 strengthened logarithmic pH interpretation, inverse-log calculations, pOH/Kw cross-checks, strong-base stoichiometric factors, titration n=MV reasoning, non-1:1 stoichiometry, equivalence versus endpoint, titration-curve regions, sampling resolution, and end-to-end acid-base model selection.
+- Added delayed retrieval, evidence/source-quality reasoning, quantitative/model transfer, evidence revision, uncertainty/model limits, misconception repair, and cross-week integration throughout the block.
+
+### Verification
+- Week 29 Days 01–05 now measure approximately 505–522 visible words.
+- Week 30 Days 01–05 now measure approximately 500–520 visible words.
+- All ten pages verify the canonical upper-science marker.
+- All ten pages verify exactly one canonical upper-science loader.
+- All ten pages expose the science-contract depth layer.
+- Ordinary teaching-page depth target is met across both weeks.
+
+### Certification status
+- Whole-course Chemistry 11 source-level curriculum certification remains **HOLD** pending Weeks 31–36 hardening and the final 180/180 sweep.
+- Next block: Weeks 31–32 — buffers/acid-base equilibrium, then free energy/electrochemistry foundations.
