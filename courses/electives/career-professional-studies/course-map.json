@@ -6,8 +6,8 @@
   "durationWeeks": 13,
   "plannedLessons": 65,
   "masteryThreshold": 80,
-  "status": "curriculum-architecture-complete-student-production-pending",
-  "authority": "catalog-plan-until-promotion-gate-passes",
+  "status": "student-production-complete-runtime-certification-pending",
+  "authority": "catalog-plan-until-runtime-promotion-gate-passes",
   "qualityStandard": "courses/electives/ELECTIVE_QUALITY_STANDARD_V1.md",
   "permanentRoutine": "Goal → Evidence → Constraint → Decision → Communication → Revision",
   "assessmentModel": {
@@ -625,5 +625,13 @@
       "cumulativeCheckpoint": false,
       "culminating": true
     }
-  ]
+  ],
+  "productionEvidence": {
+    "lessonSurfaces": 65,
+    "weeklyAssessments": 13,
+    "cumulativeAssessments": 3,
+    "culminatingPortfolio": "courses/electives/career-professional-studies/portfolio/index.html",
+    "offlinePackage": true,
+    "runtimeCertification": "pending"
+  }
 }
