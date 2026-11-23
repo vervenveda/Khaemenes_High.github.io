@@ -34,7 +34,8 @@ for(const token of ["5–10%","Protected midterm/final boundary","Required corre
 for(const c of contract.courses){
   assert(exists(c.releaseEvidence),"Missing course release evidence "+c.releaseEvidence);
   const release=read(c.releaseEvidence);
-  assert(/180\/180|36 weeks|36\/36/i.test(release),"Release evidence lacks full inventory signal for "+c.id);
+  if(c.grade===9) assert(/SOURCE-VALIDATED/i.test(release)&&/Units 00–12 are open/i.test(release),"Science 9 release evidence boundary drift");
+  else assert(/180\/180|180 daily lesson|36 weeks|36\/36/i.test(release),"Release evidence lacks full inventory signal for "+c.id);
 }
 const expected={
  "biology-10":["integrated-science-9"],
