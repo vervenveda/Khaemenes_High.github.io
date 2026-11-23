@@ -26,6 +26,7 @@
     "outboundRoute": "verified",
     "instructionAuthority": "linguistics",
     "highSchoolTranscriptReturn": "pending-audited-record-bridge",
-    "doNotClaimCrossRepositoryCreditSync": true
+    "doNotClaimCrossRepositoryCreditSync": true,
+    "returnRecordContract": "courses/shared/high-school-federated-return-record-v1.json"
   }
 }
