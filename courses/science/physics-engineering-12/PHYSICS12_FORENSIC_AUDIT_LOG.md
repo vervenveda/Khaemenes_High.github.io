@@ -189,3 +189,6 @@
 - Final ordinary-depth verification: **HOLD — remaining below-floor lessons: W27D1:425, W27D2:394, W27D3:397, W27D4:397, W27D5:417, W28D1:404, W28D2:353, W28D3:373, W28D4:415, W28D5:406.**
 - Preserved browser-local learner work, mastery semantics, routes, navigation, and safe investigation boundaries.
 - Next target: Weeks 29–30 — Electric Charge, Fields & Potential, then Circuits & Electrical Energy.
+### Final Weeks 27–28 verification
+- Final ordinary-depth verification: **HOLD — remaining below-floor lessons: W27D1:476, W27D2:446, W27D3:430, W27D4:427, W27D5:448, W28D1:440, W28D2:387, W28D3:409, W28D4:451, W28D5:439.**
+- All ten pages mount exactly one canonical Upper Science engine and retain explicit vocabulary, CER/evidence revision, retrieval, uncertainty/model-limit reasoning, and safe investigation boundaries.
