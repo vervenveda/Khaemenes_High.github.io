@@ -44,8 +44,9 @@ const grade09=read("grades/grade-09/student-profile/student-course-registry.js")
 assert.ok(grade09.includes('learnerSubject&&saved===course.home'),"English 9 public-landing resume guard missing");
 const schedule=read("grades/grade-09/student-profile/student-schedule-bar.js");
 assert.ok(schedule.includes("const current=await registry.resolveContinueFor(id)"),"Grade 09 Schedule must resolve continuing lesson");
-const choices=read("grades/grade-09/student-profile/seven-class-schedule.js");
-assert.ok(choices.includes('"Continue English Lesson"')&&choices.includes('link.href=classDoor?'),"Grade 09 course-choice English door still points to public home");
+assert.ok(schedule.includes("KhaemenesHighEightClass?.FIRST_STEPS"),"Grade 09 Schedule must use the canonical eight-class first-step registry");
+assert.ok(schedule.includes("current?.url||first"),"Grade 09 Schedule must prefer learner continuation over a public course home");
 const grade09Daily=read("grades/grade-09/student-profile/daily-lessons/index.html");
-assert.ok(grade09Daily.includes("seven-class-schedule.js?v="),"Grade 09 Daily Lessons cache token missing");
+assert.ok(grade09Daily.includes("../student-schedule-bar.js"),"Grade 09 Daily Lessons must load the current schedule bar");
+assert.ok(!grade09Daily.includes("seven-class-schedule.js"),"Grade 09 Daily Lessons must not load the retired seven-class schedule");
 console.log("PASS: English 9–12 student-facing Schedule, Class, pinned, Daily Focus, and Week 02 learning doors");
