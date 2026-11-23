@@ -216,3 +216,12 @@
 ### Weeks 29–30 definitive PASS closure
 - Definitive verification: **PASS — all ten Week 29–30 lessons meet or exceed 500 words.**
 - All ten lessons retain exactly one canonical Upper Science engine plus vocabulary, CER/evidence revision, retrieval, uncertainty/model-limit, and low-voltage safety markers.
+## 2026-11-23 · Hardening block 16 — Weeks 31–32
+
+- Audited all ten Week 31–32 lessons. Both weeks were conceptually sound but compressed, with no canonical Upper Science engine and uneven CER/uncertainty depth.
+- Mounted the canonical Upper Science engine on all ten pages with exactly one loader per lesson.
+- Week 31 was substantially deepened around magnetic force direction/magnitude, circular magnetic motion, magnetic flux, Faraday/Lenz reasoning, generator/motor energy conversion, induction-trace analysis, uncertainty, CER, and retrieval.
+- Week 32 was substantially deepened around the EM spectrum, c=fλ, refraction/ray-model limits, digital signal thresholds, bit-error metrics, optics/communication evidence provenance, engineering tradeoffs, uncertainty, CER, and retrieval.
+- Final ordinary-depth verification: **HOLD — remaining below-floor lessons: W31D1:460, W31D2:426, W31D3:392, W31D4:393, W31D5:409, W32D1:365, W32D2:368, W32D3:387, W32D4:358, W32D5:401.**
+- Preserved low-voltage, simulation, and eye-safe investigation boundaries, browser-local learner work, mastery semantics, routes, and navigation.
+- Next target: Weeks 33–34 — Engineering Design Under Constraints, then Space Systems, Remote Sensing & Climate Energy.
