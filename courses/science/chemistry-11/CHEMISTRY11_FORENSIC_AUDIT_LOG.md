@@ -423,3 +423,30 @@ All ten pages now verify:
 ### Certification status
 - Whole-course Chemistry 11 source-level curriculum certification remains **HOLD** pending Weeks 27–36 hardening and the final 180/180 sweep.
 - Next block: Weeks 27–28 — equilibrium applications/solubility, then acids-bases and pH foundations.
+
+
+## 2026-11-22 · Two-week hardening block 14 — Weeks 27–28
+
+### Audit findings
+- Week 27 equilibrium-perturbation lessons began at approximately 209–246 visible words.
+- Week 28 solubility/Ksp lessons began at approximately 225–278 visible words.
+- All ten pages lacked the canonical `upper-science-v1` marker/loader.
+- Week 27 leaned too heavily on verbal Le Châtelier shortcuts; Week 28 lacked sufficient Ksp/Qsp, common-ion, precipitation-threshold, and post-mixing concentration depth.
+
+### Repairs
+- Mounted `upper-science-v1` on all ten Week 27–28 lessons with exactly one canonical loader per page.
+- Week 27 strengthened concentration disturbances, partial-pressure/volume reasoning, inert-gas distinctions, temperature effects on K, three-state perturbation analysis, simulation controls, and Q-versus-K-first Le Châtelier reasoning.
+- Week 28 strengthened saturation/dynamic dissolution, molar-solubility conversion, Ksp expressions, stoichiometric s relationships, Qsp precipitation tests, common-ion reasoning, coupled-equilibrium boundaries, post-mixing ion concentrations, solubility-data quality, detection limits, and uncertainty near precipitation thresholds.
+- Added delayed retrieval, evidence/source-quality reasoning, quantitative/model transfer, evidence revision, uncertainty/model limits, misconception repair, and cross-week integration throughout the block.
+
+### Verification
+- Week 27 Days 01–05 now measure approximately 503–518 visible words.
+- Week 28 Days 01–05 now measure approximately 505–517 visible words.
+- All ten pages verify the canonical upper-science marker.
+- All ten pages verify exactly one canonical upper-science loader.
+- All ten pages expose the science-contract depth layer.
+- Ordinary teaching-page depth target is met across both weeks.
+
+### Certification status
+- Whole-course Chemistry 11 source-level curriculum certification remains **HOLD** pending Weeks 29–36 hardening and the final 180/180 sweep.
+- Next block: Weeks 29–30 — acids/bases, pH/pOH, strong/weak acid-base reasoning, and titration foundations.
