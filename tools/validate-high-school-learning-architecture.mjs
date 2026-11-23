@@ -188,14 +188,10 @@ for(const p of ["courses/language-arts/english-9/assets/week04-assessment.js","c
   assert(/Human review|educator|review/i.test(js),p+" lost human-review boundary.");
 }
 
-// Social Studies 10–12 retain authentic course evidence while randomizing selected response.
-for(const grade of [10,11,12]){
+// Social Studies 10–11 use the shared assessment adapter; Grade 12 owns a specialist course runtime.
+for(const grade of [10,11]){
   const html=read("courses/social-studies/grade-"+grade+"/index.html");
-  // Grade 10 intentionally extracts course runtime to app.js; Grades 11–12
-  // still own their runtime inline. Check the executed source, not old layout.
-  const source=grade===10
-    ? read("courses/social-studies/grade-10/app.js")
-    : html;
+  const source=grade===10 ? read("courses/social-studies/grade-10/app.js") : html;
   if(grade===10){
     assert(/src="app[.]js(?:[?][^"]*)?"/.test(html),"Social Studies 10 canonical app.js must be loaded.");
     try{new Function(source)}catch(e){throw new Error("Social Studies 10 runtime syntax: "+e.message)}
@@ -208,7 +204,17 @@ for(const grade of [10,11,12]){
   }
   assert(/capstone|constructed response|source-based analysis/i.test(source),"Social Studies "+grade+" lost capstone/performance evidence.");
 }
-assert(/thesis/i.test(read("courses/social-studies/grade-12/index.html")),"Grade 12 Social Studies lost thesis evidence.");
+{
+  const html=read("courses/social-studies/grade-12/index.html");
+  const source=read("courses/social-studies/grade-12/app.js");
+  assert(/src="app[.]js(?:[?][^"]*)?"/.test(html),"Social Studies 12 specialist app.js must be loaded.");
+  try{new Function(source)}catch(e){throw new Error("Social Studies 12 runtime syntax: "+e.message)}
+  for(const token of ["META.weeklyMastery","bestPercent","constructed response","majorAssessments","teacher?.issued","semesterMinimum"]){
+    assert(source.includes(token),"Social Studies 12 specialist authority missing "+token);
+  }
+  assert(/capstone|thesis|oral defense/i.test(source),"Social Studies 12 lost capstone/thesis evidence.");
+  assert(/80%|weeklyMastery|threshold/i.test(source),"Social Studies 12 lost mastery-threshold evidence.");
+}
 
 // Mathematics course-specific authorities.
 const mathEngines=[
