@@ -39,7 +39,7 @@ for(const grade of [9,10,11,12]){
    const html=fs.readFileSync(p,"utf8");
    must(/<meta[^>]+name=["']viewport["']/i.test(html),"viewport meta missing: "+route.path);
    if(grade===9) must(/data-science-engine=["']science9-v1["']|science9-instruction-engine-v1\.js/i.test(html),"Science 9 engine marker missing: "+route.path);
-   else must(/data-science-engine=["']upper-science-v1["']|upper-science-instruction-engine-v1\.js/i.test(html),"Upper Science engine marker missing: "+route.path);
+   else must(!/data-science-engine=["']upper-science-v1["']|upper-science-instruction-engine-v1\.js/i.test(html),"Retired Upper Science engine hook remains: "+route.path);
   }
  }
 }
