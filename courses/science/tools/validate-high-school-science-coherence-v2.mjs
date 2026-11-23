@@ -16,6 +16,9 @@ assert.deepEqual(contract.lessonInventory,{grades:4,lessonsPerGrade:180,total:72
 assert.equal(contract.certificationPolicy.courseSpecificCertificationIsAuthoritative,true);
 assert.equal(contract.certificationPolicy.genericKeywordCoverageIsDiagnosticNotCourseCertification,true);
 assert.equal(contract.certificationPolicy.protectedAssessmentWeeksMayUseDistinctIntegrityContract,true);
+assert.equal(contract.subjectEngineBoundary.scienceOwnsOnlyScienceCurriculumAndProgression,true);
+assert.match(contract.subjectEngineBoundary.prohibition,/must not claim progression, mastery, assessment, persistence, or runtime authority for English, Social Studies, or Mathematics/);
+assert.deepEqual(contract.subjectEngineBoundary.peerSubjectEngines.map(x=>x.subject),["English / Language Arts","Social Studies","Mathematics","Science"]);
 
 for(const p of Object.values(contract.canonicalDocuments)) assert(exists(p),"Missing canonical science program document: "+p);
 
