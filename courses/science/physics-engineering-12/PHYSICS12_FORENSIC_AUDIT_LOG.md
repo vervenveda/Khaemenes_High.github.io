@@ -168,3 +168,6 @@
 - Final ordinary-depth verification: **HOLD — remaining below-floor lessons: W25D1:462, W25D2:420, W25D3:409, W25D4:423, W25D5:444, W26D1:390, W26D2:397, W26D3:400, W26D4:396, W26D5:421.**
 - Preserved browser-local learner work, mastery semantics, routes, navigation, and safe investigation boundaries.
 - Next target: Weeks 27–28 — Fluid Flow, then Thermal Physics & Gas Energy.
+### Final Weeks 25–26 verification
+- Final ordinary-depth verification: **HOLD — remaining below-floor lessons: W25D2:486, W25D3:466, W25D4:476, W26D1:451, W26D2:450, W26D3:446, W26D4:446, W26D5:477.**
+- All ten pages mount exactly one canonical Upper Science engine and retain explicit vocabulary, CER/evidence revision, retrieval, uncertainty/model-limit reasoning, and safe investigation boundaries.
