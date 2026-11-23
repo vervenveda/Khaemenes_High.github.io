@@ -132,3 +132,6 @@
 - Final ordinary-depth verification: **HOLD — remaining below-floor lessons: W21D1:468, W21D2:400, W21D3:374, W21D4:385, W21D5:413, W22D1:394, W22D2:384, W22D3:404, W22D4:400, W22D5:419.**
 - Preserved simulation/lightweight-object safety boundaries, browser-local learner work, mastery semantics, routes, and navigation.
 - Next target: Weeks 23–24 — Simple Harmonic Motion, then Waves & Sound.
+### Weeks 21–22 depth closure
+- Final ordinary-depth verification: **HOLD — W21D2:484, W21D3:445, W21D4:442, W21D5:481, W22D1:456, W22D2:446, W22D3:466, W22D4:463, W22D5:488.**
+- The earlier provisional HOLD was followed by targeted quantitative transfer checks rather than bulk padding.
