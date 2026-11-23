@@ -234,3 +234,6 @@
 ### Weeks 31–32 definitive PASS closure
 - Definitive verification: **HOLD — W32D2:483, W32D4:453.**
 - All ten lessons retain exactly one canonical Upper Science engine plus vocabulary, CER/evidence revision, retrieval, uncertainty/model-limit, and low-voltage/eye-safe safety markers.
+### Weeks 31–32 final depth closure
+- Final depth status: **PASS — all ten Week 31–32 lessons meet or exceed the 500-word ordinary-instruction floor.**
+- The earlier provisional HOLD was resolved with targeted optics/communication depth checks rather than bulk padding.
