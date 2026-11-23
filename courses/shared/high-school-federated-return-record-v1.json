@@ -1,0 +1,74 @@
+{
+  "schema": "khaemenes-high-school-federated-return-record-v1",
+  "version": 1,
+  "purpose": "Validate completion evidence returned from an external instructional authority without transferring instructional or assessment authority to High School.",
+  "authorities": {
+    "highSchool": [
+      "requirement-definition",
+      "record-validation",
+      "graduation-readiness-aggregation"
+    ],
+    "externalInstructionalRepository": [
+      "instruction",
+      "course-assessment",
+      "course-completion-decision"
+    ],
+    "forbiddenHighSchoolClaims": [
+      "external-assessment-key-ownership",
+      "external-grade-recalculation",
+      "external-instructional-mastery-override"
+    ]
+  },
+  "envelope": {
+    "requiredFields": [
+      "schema",
+      "issuer",
+      "learnerId",
+      "courseId",
+      "requirementId",
+      "completionStatus",
+      "completedAt",
+      "evidenceDigest",
+      "issuerRecordId"
+    ],
+    "optionalFields": [
+      "level",
+      "term",
+      "hours",
+      "publicEvidenceRefs",
+      "standardsSummary"
+    ],
+    "learnerIdRule": "must match the active Academy learner before import",
+    "evidenceDigestRule": "must be stable and verifiable by the issuing authority",
+    "completionStatusAllowed": [
+      "completed",
+      "in-progress",
+      "not-completed",
+      "revoked"
+    ]
+  },
+  "consumers": [
+    {
+      "id": "world-languages",
+      "issuer": "vervenveda/Khaemenes_Linguistics.github.io",
+      "status": "return-bridge-pending-commissioning"
+    },
+    {
+      "id": "precalculus-trigonometry",
+      "issuer": "higher-learning-mathematics",
+      "status": "return-bridge-pending-commissioning"
+    },
+    {
+      "id": "calculus-1",
+      "issuer": "higher-learning-mathematics",
+      "status": "return-bridge-pending-commissioning"
+    }
+  ],
+  "safeguards": {
+    "noPublicProtectedAssessmentContent": true,
+    "noAutomaticTranscriptCreditUntilValidated": true,
+    "preserveOriginalIssuerRecord": true,
+    "learnerMismatchFailClosed": true,
+    "revokedRecordRemovesGraduationSatisfactionButPreservesAuditHistory": true
+  }
+}
