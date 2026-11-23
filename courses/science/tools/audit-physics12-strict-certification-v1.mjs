@@ -12,7 +12,7 @@ const CORE=[
  ["phenomenon",/phenomen|hook|notice|observe|prediction/i],
  ["explicitTeaching",/explicit[- ]teaching|deep lesson|concept|reading|instruction/i],
  ["vocabulary",/vocab|key term|terminology/i],
- ["workedExample",/worked[- ]example|worked example|example\s*\d|model solution/i],
+ ["workedExample",/worked.{0,40}example|example\s*\d|model solution/i],
  ["dataOrModel",/data|graph|table|model|diagram/i],
  ["investigation",/investigat|laborator|lab\b|simulation|field study|engineering challenge/i],
  ["practice",/guided[- ]practice|independent[- ]practice|practice check|formative/i],
