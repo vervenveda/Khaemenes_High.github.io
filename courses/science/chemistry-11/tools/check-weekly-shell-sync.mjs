@@ -6,7 +6,7 @@ import {fileURLToPath} from "node:url";
 const here=path.dirname(fileURLToPath(import.meta.url));
 const root=path.resolve(here,"..");
 const map=JSON.parse(fs.readFileSync(path.join(root,"course-map.json"),"utf8"));
-const esc=s=>String(s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;").replace(/\x27/g,"&#x27;");
+const esc=s=>String(s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;");
 let checks=0;
 
 for(const w of map.weeks){
@@ -15,7 +15,8 @@ for(const w of map.weeks){
   const html=fs.readFileSync(file,"utf8");
   assert.ok(html.includes('data-weekly-shell-fallback="canonical"'),`Week ${ws}: canonical fallback marker missing`);checks++;
   assert.equal((html.match(/weekly-shell-v1\.js/g)||[]).length,1,`Week ${ws}: weekly shell controller must load exactly once`);checks++;
-  assert.ok(html.includes(`<h1>${esc(w.title)}</h1>`),`Week ${ws}: title stale`);checks++;
+  const titleRaw=`<h1>${esc(w.title)}</h1>`, titleEntity=titleRaw.replaceAll("\x27","&#x27;");
+  assert.ok(html.includes(titleRaw)||html.includes(titleEntity),`Week ${ws}: title stale`);checks++;
   assert.ok(html.includes(`<strong>Essential question:</strong> ${esc(w.essentialQuestion)}`),`Week ${ws}: essential question stale`);checks++;
   for(const value of [w.quantitative,w.evidence_contract,w.inquiry_contract,w.retrieval_contract]){
     assert.ok(html.includes(esc(value)),`Week ${ws}: canonical contract value missing: ${value}`);checks++;
