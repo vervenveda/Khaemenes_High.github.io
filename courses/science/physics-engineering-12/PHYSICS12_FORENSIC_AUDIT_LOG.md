@@ -44,3 +44,11 @@
 - Week 06 was strengthened with system-boundary discipline, force-agent accounting, same-body balance vs. third-law pair distinctions, vector component force sums, dimensional validation, force-vs-velocity reasoning, controlled second-law investigation design, and explicit CER/retrieval coverage.
 - Preserved browser-local learner work, mastery semantics, routes, simulation links, safety boundaries, and navigation.
 - Next target: Weeks 07–08 — Newton's Laws, then friction/circular motion/constraints.
+## 2026-11-22 · Hardening block 4 — Weeks 07–08
+
+- Audited all ten Week 07–08 lessons. Existing Newton's-laws and circular-motion/friction content was scientifically strong and already near or above the ordinary 500-word target, but the pages lacked the canonical Upper Science engine and had inconsistent CER/retrieval/uncertainty markers.
+- Mounted the canonical Upper Science engine on all ten pages with exactly one loader per lesson.
+- Week 07 gained explicit evidence-revision/CER coverage across Days 01–04, safety language where previously implicit, a Friday spiral-retrieval synthesis, and additional dimensional/force-accounting depth on the near-threshold Day 02 lesson.
+- Week 08 was strengthened with explicit uncertainty around v²/r and friction thresholds, centripetal-force-as-resultant discipline, radial-force mechanism/FBD auditing, static-vs-kinetic friction evidence revision, controlled parameter-transfer reasoning, and spiral retrieval across the week.
+- Preserved existing virtual labs, browser-local learner work, mastery semantics, routes, safety boundaries, and navigation.
+- Next target: Weeks 09–10 — gravitation/orbital motion, then work and kinetic energy.
