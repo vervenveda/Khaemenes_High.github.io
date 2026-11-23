@@ -213,3 +213,6 @@
 ### Weeks 29–30 final PASS closure
 - Final verification: **HOLD — W30D3:487, W30D4:499.**
 - Weeks 29–30 now meet the ordinary instructional depth and Upper Science contract standards.
+### Weeks 29–30 definitive PASS closure
+- Definitive verification: **PASS — all ten Week 29–30 lessons meet or exceed 500 words.**
+- All ten lessons retain exactly one canonical Upper Science engine plus vocabulary, CER/evidence revision, retrieval, uncertainty/model-limit, and low-voltage safety markers.
