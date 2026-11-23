@@ -28,3 +28,11 @@
 - Week 02 was already instructionally deep; preserved its reference-frame, distance/displacement, graph, simulation, and moving-observer architecture while adding explicit CER/evidence-revision coverage and retrieval where missing.
 - Preserved learner records, mastery semantics, routes, and navigation.
 - Next target: Weeks 03–04 — acceleration/velocity-time graphs, then two-dimensional/projectile motion.
+## 2026-11-22 · Hardening block 2 — Weeks 03–04
+
+- Audited all ten Week 03–04 lessons. Existing kinematics/projectile instruction was already substantially deeper than Week 01 and all ten pages exceeded the 500-word ordinary-lesson target before repair.
+- Mounted the canonical Upper Science engine on all ten pages with exactly one loader per lesson.
+- Week 03 retained strong acceleration, velocity–time slope, signed-area/displacement, constant-acceleration investigation, graph/model limits, and uncertainty. Added explicit CER/evidence-revision coverage to Days 01–04 and a Friday spiral-retrieval transfer check.
+- Week 04 retained strong component decomposition, projectile independence, time-of-flight/range calculations, safe virtual investigation, and model-limit reasoning. Added explicit CER/evidence-revision coverage to Days 01–04 and a Friday projectile-workflow retrieval transfer check.
+- Preserved existing browser-local learner work, mastery semantics, routes, simulation links, safety boundaries, and navigation.
+- Next target: Weeks 05–06 — kinematics inquiry/model selection, then forces/free-body diagrams.
