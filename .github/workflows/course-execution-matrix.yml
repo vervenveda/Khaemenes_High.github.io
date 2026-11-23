@@ -11,6 +11,10 @@ on:
       - 'tests/test-high-school-profile-runtime-contract.cjs'
       - 'tests/test-high-school-release-gate.cjs'
       - 'courses/shared/course-execution-matrix-v1.json'
+      - 'courses/shared/high-school-course-ownership-manifest-v1.json'
+      - 'tools/validate-high-school-course-ownership-v1.cjs'
+      - 'courses/electives/**'
+      - 'electives/**'
       - 'tests/test-course-execution-matrix.cjs'
       - 'tests/test-grade-09-12-execution-sweep.cjs'
       - 'tests/test-grade12-course-parity.cjs'
@@ -52,6 +56,7 @@ jobs:
           node-version: '22'
       - name: Check course routes, grade and engine contracts
         run: |
+          node tools/validate-high-school-course-ownership-v1.cjs
           node tests/test-high-school-release-gate.cjs
           node tests/test-service-worker-current-runtime.cjs
           node tests/test-portfolio-evidence-receipts.cjs
