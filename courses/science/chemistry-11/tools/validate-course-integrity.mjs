@@ -158,6 +158,16 @@ else {
   for(let w=1;w<=36;w++) if(!covered.has(w)) failures.push(`vocabulary coverage missing Week ${w}`);
 }
 
+const isolationTest=path.join(root,"tools","test-learner-isolation.mjs");
+if(!exists(isolationTest)) failures.push("tools/test-learner-isolation.mjs missing");
+const ledgerScript=path.join(root,"inquiry-ledger.js");
+if(!exists(ledgerScript)) failures.push("inquiry-ledger.js missing");
+else {
+  const s=read(ledgerScript);
+  if(!s.includes("KhaemenesLearnerScope?.scopedKey?.(KEY)")) failures.push("inquiry-ledger.js does not explicitly resolve learner-scoped storage key");
+  if(!s.includes("initial&&learner()===initial")) failures.push("inquiry-ledger.js missing stale-learner page lock");
+  if(!s.includes("if(!prior.ok)return false")) failures.push("inquiry-ledger.js missing invalid-record save lock");
+}
 const questionAudit=path.join(root,"tools","audit-question-bank.mjs");
 if(!exists(questionAudit)) failures.push("tools/audit-question-bank.mjs missing");
 const scienceBlueprintValidator=path.resolve(root,"..","validate-upper-science-assessment-blueprints.mjs");
