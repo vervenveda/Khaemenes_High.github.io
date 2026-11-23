@@ -67,9 +67,9 @@ for(const row of COURSE_ROWS){
  const release=read(contractRow.releaseEvidence);
  let sourceEvidencePass=false;
  if(row.grade===9) sourceEvidencePass=/SOURCE-VALIDATED/i.test(release)&&/Units 00–12 are open/i.test(release);
- if(row.grade===10) sourceEvidencePass=/Curriculum source audit status:\s*PASS/i.test(release)&&/180\/180 daily lessons/i.test(release);
+ if(row.grade===10) sourceEvidencePass=/Curriculum source audit status:\*{0,2}\s*PASS/i.test(release)&&/180\/180 daily lessons/i.test(release);
  if(row.grade===11) sourceEvidencePass=/CHEMISTRY 11 SOURCE-LEVEL CURRICULUM CERTIFICATION:\s*PASS/i.test(release)&&/180\/180|180 daily lesson/i.test(release);
- if(row.grade===12) sourceEvidencePass=/STRICT A\+\+\+ SOURCE CERTIFIED/i.test(release)&&/Strict source verdict:\s*PASS/i.test(release);
+ if(row.grade===12) sourceEvidencePass=/STRICT A\+\+\+ SOURCE CERTIFIED/i.test(release)&&/Strict source verdict:\s*\*{0,2}PASS/i.test(release);
  report.courses.push({
   grade:row.grade,slug:row.slug,label:row.label,lessons:files.length,expected:180,
   sourceStatus:row.status,sourceEvidencePass,
