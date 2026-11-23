@@ -396,3 +396,30 @@ All ten pages now verify:
 ### Certification status
 - Whole-course Chemistry 11 source-level curriculum certification remains **HOLD** pending Weeks 25–36 hardening and the final 180/180 sweep.
 - Next block: Weeks 25–26 — entropy/direction/spontaneity, then chemical equilibrium and equilibrium constants.
+
+
+## 2026-11-22 · Two-week hardening block 13 — Weeks 25–26
+
+### Audit findings
+- Week 25 entropy/direction lessons began at approximately 209–241 visible words.
+- Week 26 equilibrium lessons began at approximately 206–248 visible words.
+- All ten pages lacked the canonical `upper-science-v1` marker/loader.
+- Core scope was present but entropy was vulnerable to “disorder” shortcuts, spontaneity was weakly separated from kinetics, and equilibrium lacked sufficient K/Q quantitative depth and dynamic-rate reasoning.
+
+### Repairs
+- Mounted `upper-science-v1` on all ten Week 25–26 lessons with exactly one canonical loader per page.
+- Week 25 strengthened entropy as dispersal/multiplicity, phase-change entropy, microstate/macrostates, ΔG=ΔH−TΔS with unit discipline, temperature-dependent direction, phase coexistence, and explicit separation of thermodynamic favorability from kinetic speed.
+- Week 26 strengthened dynamic equilibrium, rate-versus-concentration graphs, K expressions and transformations, heterogeneous-equilibrium exclusions, Q-versus-K direction, instantaneous disturbance versus later adjustment, pressure/volume disturbances, catalyst non-shift behavior, and traceable equilibrium reasoning.
+- Added delayed retrieval, evidence/source-quality reasoning, quantitative/model transfer, evidence revision, uncertainty/model limits, misconception repair, and cross-week integration throughout the block.
+
+### Verification
+- Week 25 Days 01–05 now measure approximately 503–520 visible words.
+- Week 26 Days 01–05 now measure approximately 500–535 visible words.
+- All ten pages verify the canonical upper-science marker.
+- All ten pages verify exactly one canonical upper-science loader.
+- All ten pages expose the science-contract depth layer.
+- Ordinary teaching-page depth target is met across both weeks.
+
+### Certification status
+- Whole-course Chemistry 11 source-level curriculum certification remains **HOLD** pending Weeks 27–36 hardening and the final 180/180 sweep.
+- Next block: Weeks 27–28 — equilibrium applications/solubility, then acids-bases and pH foundations.
