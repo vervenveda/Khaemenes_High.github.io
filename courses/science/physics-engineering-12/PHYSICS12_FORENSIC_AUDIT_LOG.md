@@ -177,3 +177,6 @@
 ### Weeks 25–26 final PASS closure
 - Final verification: **HOLD — W26D3:498, W26D4:499.**
 - Week 25 and Week 26 now both meet the ordinary instructional depth and Upper Science contract standards.
+### Weeks 25–26 definitive closure
+- Definitive status: **PASS — all ten lessons meet or exceed 500 words.**
+- All Week 25–26 pages retain exactly one Upper Science engine and the required vocabulary, CER/evidence revision, retrieval, uncertainty/model-limit, and safety markers.
