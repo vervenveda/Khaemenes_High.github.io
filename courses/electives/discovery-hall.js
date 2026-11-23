@@ -16,7 +16,7 @@ const subjects=[
 {id:"investigative",name:"Psychology & Science",tag:"Explore",keywords:"psychology scientific research weather",href:"../../electives/grades/grade-09/psych-101/"},
 {id:"technical",name:"Computing & Technology",tag:"Planned",keywords:"technology coding engineering digital",href:"computing-digital-technology/"},
 {id:"social",name:"Human Development",tag:"Planned",keywords:"health communication mentoring wellbeing",href:"health-wellness-human-development/"},
-{id:"enterprising",name:"Career & Professional Studies",tag:"Planned",keywords:"finance business leadership career",href:"career-professional-studies/"},
+{id:"enterprising",name:"Career & Professional Studies",tag:"Explore",keywords:"finance business leadership career",href:"career-professional-studies/"},
 {id:"practical",name:"Movement & Practical Skills",tag:"Explore",keywords:"fitness environment movement",href:"../physical-education/index.html"}
 ];
 const challenges=[
