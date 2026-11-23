@@ -44,32 +44,29 @@ for(let lesson=1;lesson<=5;lesson++){
 const quantitativeSignal=/\d|\$|%|≤|≥|=|slope|residual|error|interval|break-even|prediction|model/i;
 assert.ok(depth.every(q=>quantitativeSignal.test(q.prompt+" "+q.explanation)),"Every Unit 13 depth item must contain an explicit quantitative/modeling signal");
 
-const engine=read("assets/legacy-mastery-engine-v2.js");
+const engine=read("assets/unit-mastery-engine-v3.js");
 for(const marker of [
  "ALGEBRA1_UNIT13_CAPSTONE_DEPTH",
- "selectCapstoneLesson",
- 'q.capstoneDepth==="quantitative"',
- 'targetPoolSize=Number(R.unit)===11?120:Number(R.unit)===13?80:60',
- '"lesson-balanced-capstone-depth-low-overlap-v1"',
- '"algebra1-unit13-capstone-depth-v1"',
- "capstoneQuantitativeMinimum:Number(R.unit)===13?10:null",
- "capstoneQuantitativeCount:Number(R.unit)===13?",
- "capstoneLessonQuantitativeCounts:Number(R.unit)===13?"
-]) assert.ok(engine.includes(marker),"Unit 13 capstone engine contract missing "+marker);
+ "fixedLessonSelection",
+ 'q.capstoneDepth||null',
+ 'selectionPolicy:"fixed-lesson-balanced-no-shuffle-v3"',
+ 'retryFormPolicy:"fixed-no-shuffle"',
+ "eligiblePool"
+]) assert.ok(engine.includes(marker),"Unit 13 current v3 engine contract missing "+marker);
 
 const page=read("units/unit-13/assessment/mastery-check.html");
 const qIndex=page.indexOf("assets/question-bank.js");
 const abundanceIndex=page.indexOf("assets/late-unit-abundant-bank-v1.js");
 const depthIndex=page.indexOf("assets/unit13-capstone-depth-bank-v1.js");
 const resolverIndex=page.indexOf("assets/misconception-resolver-v1.js");
-const engineIndex=page.indexOf("assets/legacy-mastery-engine-v2.js");
+const engineIndex=page.indexOf("assets/unit-mastery-engine-v3.js");
 assert.ok(qIndex>=0&&abundanceIndex>qIndex&&depthIndex>abundanceIndex&&resolverIndex>depthIndex&&engineIndex>resolverIndex,"Unit 13 mastery script load order drift");
 
 const key=json("units/unit-13/assessment/answer-key.json");
 assert.equal(key.schemaVersion,"2.0","Unit 13 answer key schema drift");
 assert.equal(key.eligibleItemCount,80,"Unit 13 answer key eligible count drift");
-assert.equal(key.deliveredPerAttempt,20,"Unit 13 answer key delivered count drift");
-assert.equal(key.capstoneQuantitativeMinimumPerAttempt,10,"Unit 13 answer key depth minimum drift");
+assert.equal(key.deliveredPerAttempt,25,"Unit 13 answer key delivered count drift");
+assert.equal(key.capstoneQuantitativeMinimumPerAttempt,null,"Unit 13 answer key must not claim the retired v2 quantitative-per-form guarantee");
 assert.equal(key.items.length,80,"Unit 13 answer key item coverage drift");
 const keyById=new Map(key.items.map(x=>[x.id,x]));
 for(const q of pool){
@@ -98,4 +95,4 @@ for(const rel of ["service-worker.js","service-worker-precache-v1.js"]){
  assert.ok(src.includes("unit-13-project-upgrade.js"),rel+" does not cache the active Unit 13 project enhancement");
 }
 
-console.log("PASS Unit 13 capstone depth: 80-item pool, 20 dedicated quantitative items, 10 quantitative items guaranteed per 20-question form, four depth items per lesson, active portfolio enhancement, and synchronized answer key");
+console.log("PASS Unit 13 capstone depth: 80-item pool, 20 dedicated quantitative source items, fixed 25-question v3 mastery form, active portfolio enhancement, and synchronized answer key");
