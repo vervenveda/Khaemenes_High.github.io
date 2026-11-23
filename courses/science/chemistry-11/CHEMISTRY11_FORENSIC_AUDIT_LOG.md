@@ -771,3 +771,57 @@ Boundary: this proves the published curriculum allocates >=25% of planned instru
 **Bubble 3 — learner isolation unproven for Chemistry inquiry/evidence persistence: CLOSED at the source/CI regression level.**
 
 Boundary: this does not establish authenticated educator approval, evidence-digest custody, revocation, authoritative credit issuance, or real-browser end-to-end learner-switch/reload/export behavior. Those remain separate fail-closed runtime/authority gates.
+
+
+## 2026-11-22 · Post-certification Bubble 5 closure — canonical weekly shell unification
+
+### Repair
+- Added `weekly-shell-v1.js`, a shared Chemistry 11 weekly-shell controller that loads the canonical `course-map.json` and applies the current week's:
+  - title,
+  - essential question,
+  - quantitative target,
+  - evidence target,
+  - inquiry target,
+  - retrieval/transfer target,
+  - Monday model/retrieval framing,
+  - Tuesday concept/evidence framing,
+  - Wednesday quantitative target,
+  - Thursday investigation target,
+  - Friday CER/transfer target,
+  - canonical daily deep-lesson route labels.
+- Preserved offline/local resilience: every week page contains a static canonical fallback and declares `data-weekly-shell-fallback="canonical"`. If the runtime map fetch is unavailable, the page remains instructionally aligned rather than reverting to a generic shell.
+- Converted all **36/36 Chemistry 11 weekly landing pages** to the canonical shell architecture and loaded `weekly-shell-v1.js` exactly once per page.
+- Static fallback text now mirrors `course-map.json` for the weekly instructional contract instead of maintaining an independent generic Monday–Friday curriculum description.
+
+### Regression protection
+- Added `tools/check-weekly-shell-sync.mjs`.
+- The checker validates all 36 weekly pages for:
+  - canonical fallback marker,
+  - exactly one weekly-shell controller,
+  - canonical title and essential question,
+  - quantitative/evidence/inquiry/retrieval contract values,
+  - synchronized Wednesday quantitative fallback,
+  - synchronized Thursday inquiry/source pathway,
+  - synchronized Friday retrieval/transfer focus,
+  - controller derivation from `../../course-map.json`,
+  - canonical fallback behavior.
+- Added the weekly-shell sync checker to `.github/workflows/chemistry11-course-integrity.yml`.
+- Hardened `tools/validate-course-integrity.mjs` to require the shared weekly-shell controller and sync checker.
+
+### Verification history
+- Initial strict sync run correctly exposed Week 24 title entity encoding and a Week 25 apostrophe comparison edge case.
+- The checker was repaired to compare curriculum text independent of apostrophe entity spelling while keeping exact content checks intact.
+- GitHub Actions `source-integrity` job `137460828208`: **PASS / success** on commit `e526bed016efa5408b43850c1b9df4ca3b591f88`.
+
+### Key commits
+- Shared weekly-shell controller: `f14781ae1d399bd4743378467151e7e624b26fb7`
+- Weekly-shell sync checker: `bf861904adbfe0ce68534e0aad9b87ca41f40a92`
+- Weeks 01–36 canonical shell conversion: completed across 36 commits, ending with Week 36 commit `cff1705139b289af08bcb8781f295ae2e451bca5`.
+- CI workflow integration: `7138d53ab22a13c9199ee11fec60130a60233173`
+- Course-integrity guard hardening: `6dfca279ae2cefba9954071c2ae53142aab2ca10`
+- Final sync-check normalization: `e526bed016efa5408b43850c1b9df4ca3b591f88`
+
+### Status
+**Bubble 5 — weekly landing/evidence surfaces not unified with the canonical upper-science contract: CLOSED.**
+
+Chemistry 11 now has one canonical curriculum authority (`course-map.json`) feeding both governance contracts and the visible weekly instructional shell, with an offline-safe static fallback and CI enforcement against future drift.
