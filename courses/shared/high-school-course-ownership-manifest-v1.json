@@ -260,8 +260,9 @@
       "classification": "catalog-plan",
       "authority": "none",
       "curriculumMap": "courses/electives/career-professional-studies/course-map.json",
-      "curriculumStatus": "architecture-complete-production-pending",
-      "promotionGate": "courses/electives/ELECTIVE_QUALITY_STANDARD_V1.md"
+      "curriculumStatus": "student-production-complete-runtime-certification-pending",
+      "promotionGate": "courses/electives/ELECTIVE_QUALITY_STANDARD_V1.md",
+      "productionEvidence": "courses/electives/career-professional-studies/course-map.json"
     },
     {
       "id": "computing-digital-technology",

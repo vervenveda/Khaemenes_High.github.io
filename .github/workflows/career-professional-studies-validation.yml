@@ -1,0 +1,23 @@
+name: Career & Professional Studies Production Validation
+on:
+  pull_request:
+    paths:
+      - 'courses/electives/career-professional-studies/**'
+      - 'tools/validate-career-professional-studies-v1.cjs'
+      - 'courses/shared/high-school-course-ownership-manifest-v1.json'
+      - '.github/workflows/career-professional-studies-validation.yml'
+  push:
+    branches: [main]
+    paths:
+      - 'courses/electives/career-professional-studies/**'
+      - 'tools/validate-career-professional-studies-v1.cjs'
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: node tools/validate-career-professional-studies-v1.cjs
+      - run: node tools/validate-high-school-course-ownership-v1.cjs

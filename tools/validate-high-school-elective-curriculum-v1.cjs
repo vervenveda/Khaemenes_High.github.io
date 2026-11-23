@@ -15,8 +15,10 @@ for(const id of ids){
  assert.equal(c.plannedLessons,65,id+" must declare 65 planned lessons");
  assert.equal(c.masteryThreshold,80,id+" mastery floor");
  assert.equal(c.qualityStandard,standard,id+" standard link");
- assert.equal(c.status,"curriculum-architecture-complete-student-production-pending",id+" status must remain honest before production");
- assert.equal(c.authority,"catalog-plan-until-promotion-gate-passes",id+" must not claim active authority early");
+ const allowedStatus=id==="career-professional-studies" ? new Set(["curriculum-architecture-complete-student-production-pending","student-production-complete-runtime-certification-pending"]) : new Set(["curriculum-architecture-complete-student-production-pending"]);
+ assert(allowedStatus.has(c.status),id+" status is not an allowed honest production state");
+ const allowedAuthority=id==="career-professional-studies" ? new Set(["catalog-plan-until-promotion-gate-passes","catalog-plan-until-runtime-promotion-gate-passes"]) : new Set(["catalog-plan-until-promotion-gate-passes"]);
+ assert(allowedAuthority.has(c.authority),id+" must not claim active authority early");
  assert(Array.isArray(c.weeks)&&c.weeks.length===13,id+" needs 13 weekly arcs");
  assert.deepEqual(c.assessmentModel.cumulative,[4,8,12],id+" cumulative checkpoints");
  assert.equal(c.assessmentModel.culminatingWeek,13,id+" culminating week");
