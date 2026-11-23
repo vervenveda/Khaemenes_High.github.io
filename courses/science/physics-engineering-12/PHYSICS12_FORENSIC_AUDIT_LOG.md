@@ -171,3 +171,6 @@
 ### Final Weeks 25–26 verification
 - Final ordinary-depth verification: **HOLD — remaining below-floor lessons: W25D2:486, W25D3:466, W25D4:476, W26D1:451, W26D2:450, W26D3:446, W26D4:446, W26D5:477.**
 - All ten pages mount exactly one canonical Upper Science engine and retain explicit vocabulary, CER/evidence revision, retrieval, uncertainty/model-limit reasoning, and safe investigation boundaries.
+### Weeks 25–26 final depth closure
+- Final depth status: **HOLD — W26D1:482, W26D2:483, W26D3:480, W26D4:483.**
+- The provisional HOLD was addressed with targeted evidence/model-quality checks rather than bulk padding.
