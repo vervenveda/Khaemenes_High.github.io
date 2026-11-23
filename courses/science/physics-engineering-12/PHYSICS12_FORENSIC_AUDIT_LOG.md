@@ -76,3 +76,11 @@
 - Week 14 was strengthened with momentum uncertainty, impulse/force distinction, force-time sampling and area reasoning, controlled duration-vs-pulse-shape comparisons, explicit CER/evidence revision, and Friday impulse-momentum retrieval.
 - Preserved the virtual engineering and impact laboratories, browser-local learner work, safety boundaries, mastery semantics, routes, and navigation.
 - Next target: Weeks 15–16 — Conservation of Momentum, then Elastic & Inelastic Collisions.
+## 2026-11-22 · Hardening block 8 — Weeks 15–16
+
+- Audited all ten Week 15–16 lessons. Both weeks were scientifically correct but represented a major depth regression: every lesson sat far below the ordinary 500-word target and none mounted the canonical Upper Science engine.
+- Mounted the canonical Upper Science engine on all ten pages with exactly one loader per lesson.
+- Week 15 was substantially deepened around system boundaries, net external impulse, signed vector momentum, perfectly inelastic calculations, recoil/internal-force reasoning, repeated-trial momentum residuals, uncertainty, CER/evidence revision, and cumulative momentum decision auditing.
+- Week 16 was substantially deepened around independent momentum/kinetic-energy classification tests, elastic vs. inelastic boundaries, frame/system consistency, force-time sampling and waveform interpretation, dual residual analysis, uncertainty-sensitive classification, and safe collision-design tradeoffs.
+- Preserved simulation-only collision safety, browser-local learner work, mastery semantics, routes, and navigation.
+- Next target: Weeks 17–18 — Center of Mass & Semester Synthesis, then protected Midterm/Corrections boundary.
