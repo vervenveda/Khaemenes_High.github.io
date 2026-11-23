@@ -6,6 +6,9 @@ const matrix=JSON.parse(read("courses/shared/course-execution-matrix-v1.json"));
 const cert=JSON.parse(read("courses/shared/high-school-release-certification-v1.json"));
 assert.equal(cert.schema,"khaemenes-high-release-certification-v1");
 assert.equal(cert.policy.routeExistenceIsNotReleaseCertification,true);
+assert.equal(cert.policy.programContract,"courses/shared/high-school-program-contract-v1.json");
+assert.equal(cert.policy.runtimeCertificationMatrix,"courses/shared/high-school-runtime-certification-matrix-v1.json");
+assert.equal(cert.policy.federatedReturnRecordContract,"courses/shared/high-school-federated-return-record-v1.json");
 assert.equal(cert.courses.length,matrix.courses.length,"Release certification matrix drift");
 const allowed=new Set(cert.policy.orderedStates);
 for(const course of matrix.courses){
