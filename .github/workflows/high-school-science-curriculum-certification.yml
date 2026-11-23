@@ -33,10 +33,16 @@ jobs:
       - name: Validate four-year program authority
         run: node courses/science/tools/validate-high-school-science-program-authority-v1.mjs
 
+      - name: Validate four-year curriculum coherence
+        run: node courses/science/tools/validate-high-school-science-coherence-v2.mjs
+
+      - name: Reconfirm Physics 12 dedicated strict source certification
+        run: node courses/science/tools/audit-physics12-strict-certification-v1.mjs
+
       - name: Run Chrome browser/device smoke matrix
         run: bash courses/science/tools/run-science-chrome-smoke-matrix.sh
 
-      - name: Run strict 720-lesson curriculum certification audit
+      - name: Run course-aware 720-lesson department certification audit
         run: |
           node courses/science/tools/audit-high-school-science-curriculum-certification-v1.mjs --strict
           node courses/science/tools/audit-high-school-science-curriculum-certification-v1.mjs --strict --json > high-school-science-certification.json
