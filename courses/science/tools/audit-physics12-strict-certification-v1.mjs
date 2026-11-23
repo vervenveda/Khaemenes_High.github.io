@@ -56,7 +56,8 @@ for(const item of files){
    if(!reasons.length) report.protected.passed++;
  }else{
    for(const [k,re] of CORE) if(!re.test(html)) reasons.push(k);
-   for(const [k,re] of DISC) if(!re.test(html)) reasons.push(k);
+   if(!MATHEMATICAL_MODEL.test(html)) reasons.push("mathematicalModel");
+   if(ENGINEERING_WEEKS.has(item.week)&&!ENGINEERING_DECISION.test(html)) reasons.push("engineeringDecision");
    if(words(html)<500) reasons.push(`depth:${words(html)}`);
    if(!reasons.length) report.ordinary.passed++;
  }
