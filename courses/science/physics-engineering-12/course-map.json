@@ -738,5 +738,60 @@
   "safety": {
     "lab_policy": "Target ≥25% hands-on/inquiry laboratory time using safe low-energy systems or supervised/virtual alternatives; no mains-voltage work.",
     "home_rule": "Use only explicitly safe investigations; substitute simulation/data analysis whenever proper supervision or facilities are unavailable."
+  },
+  "prior_year_retrieval": {
+    "contract": "courses/science/HIGH_SCHOOL_SCIENCE_RETRIEVAL_RETENTION_MAP.md",
+    "inherited_from": [
+      "integrated-science-9",
+      "biology-10",
+      "chemistry-11"
+    ],
+    "target_public_cumulative_practice_percent": "5-10",
+    "required_anchors": [
+      "motion-force-energy",
+      "waves-and-electricity",
+      "systems-and-Earth-space",
+      "energy-and-matter",
+      "rates-and-equilibrium",
+      "materials",
+      "measurement-and-calibration",
+      "graphing-and-uncertainty",
+      "model-limits-and-CER"
+    ],
+    "checkpoint_weeks": [
+      2,
+      3,
+      4,
+      5,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24,
+      25,
+      26,
+      27,
+      28,
+      29,
+      30,
+      31,
+      32,
+      33,
+      34,
+      35,
+      36
+    ],
+    "correction_requirement": "identify inherited concept/practice, current application, error type, corrected reasoning, and one changed-context transfer check",
+    "protected_assessment_boundary": "confidential or supervised evidence may satisfy inherited retrieval; protected items/keys must not be exposed in the public repository"
   }
 }
