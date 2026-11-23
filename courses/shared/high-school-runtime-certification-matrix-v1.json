@@ -1,0 +1,124 @@
+{
+  "schema": "khaemenes-high-school-runtime-certification-matrix-v1",
+  "version": 1,
+  "orderedStates": [
+    "route-present",
+    "engine-contract-pass",
+    "curriculum-pass",
+    "browser-runtime-pass",
+    "device-pass",
+    "offline-pass",
+    "release-certified"
+  ],
+  "representativeAcceptance": {
+    "browser": [
+      "Chrome desktop",
+      "Safari macOS"
+    ],
+    "device": [
+      "tablet portrait",
+      "tablet landscape",
+      "narrow viewport"
+    ],
+    "interaction": [
+      "keyboard navigation",
+      "learner switch",
+      "assessment resume/recovery",
+      "profile-course-lesson-progress return"
+    ],
+    "document": [
+      "print smoke"
+    ],
+    "offline": [
+      "cold-load cached core",
+      "offline lesson continuation where supported",
+      "reconnect without record loss"
+    ]
+  },
+  "policy": {
+    "sourceOrCurriculumPassCannotImplyRuntimePass": true,
+    "evidenceMustNameExactCommit": true,
+    "failedRepresentativeClassBlocksAffectedCourseClass": true,
+    "federatedInstructionIsNotLocallyOfflineCertified": true
+  },
+  "classes": [
+    {
+      "id": "english",
+      "courses": [
+        "english-9",
+        "english-10",
+        "english-11",
+        "english-12"
+      ],
+      "browserRuntime": "pending",
+      "deviceAcceptance": "pending",
+      "offlineAcceptance": "pending"
+    },
+    {
+      "id": "mathematics",
+      "courses": [
+        "pre-algebra",
+        "algebra-1",
+        "geometry",
+        "algebra-2"
+      ],
+      "browserRuntime": "pending",
+      "deviceAcceptance": "pending",
+      "offlineAcceptance": "pending"
+    },
+    {
+      "id": "science",
+      "courses": [
+        "integrated-science-9",
+        "biology-10",
+        "chemistry-11",
+        "physics-engineering-12"
+      ],
+      "browserRuntime": "partial-evidence",
+      "deviceAcceptance": "partial-evidence",
+      "offlineAcceptance": "pending"
+    },
+    {
+      "id": "social-studies",
+      "courses": [
+        "social-studies-9",
+        "social-studies-10",
+        "social-studies-11",
+        "social-studies-12"
+      ],
+      "browserRuntime": "partial-evidence",
+      "deviceAcceptance": "pending",
+      "offlineAcceptance": "pending"
+    },
+    {
+      "id": "physical-education",
+      "courses": [
+        "physical-education-9",
+        "physical-education-10",
+        "physical-education-11",
+        "physical-education-12"
+      ],
+      "browserRuntime": "pending",
+      "deviceAcceptance": "pending",
+      "offlineAcceptance": "pending"
+    },
+    {
+      "id": "psychology",
+      "courses": [
+        "psychology-101"
+      ],
+      "browserRuntime": "pending",
+      "deviceAcceptance": "pending",
+      "offlineAcceptance": "pending"
+    },
+    {
+      "id": "capstone",
+      "courses": [
+        "senior-capstone"
+      ],
+      "browserRuntime": "pending",
+      "deviceAcceptance": "pending",
+      "offlineAcceptance": "pending"
+    }
+  ]
+}
