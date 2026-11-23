@@ -331,8 +331,10 @@
     "nestedLegacyRoot": "courses/shared/shared/",
     "nestedLegacyClassification": "compatibility-existing-do-not-add-new-dependencies",
     "readinessTemplate": "courses/shared/shared/course-readiness-template.json",
-    "assessmentAuthority": "courses/shared/shared/assessment-authority/",
+    "assessmentAuthority": "courses/shared/assessment-authority/",
     "legacyDependencyValidator": "tools/validate-high-school-legacy-dependencies-v1.cjs",
-    "activeRuntimeDependenciesAllowed": 0
+    "activeRuntimeDependenciesAllowed": 0,
+    "nestedAssessmentAuthority": "courses/shared/shared/assessment-authority/",
+    "nestedAssessmentAuthorityClassification": "compatibility-copy-no-active-consumers"
   }
 }
