@@ -19,9 +19,11 @@ export function isStudentFacing(rel,html=""){
   return true;
 }
 
-export function toolbarStatus(html){
+export function toolbarStatus(html,rel=""){
   if(directPattern.test(html))return "direct";
   if(sharedPattern.test(html))return "shared";
+  const page=String(rel||"").replaceAll(path.sep,"/");
+  if(/^courses\/electives\/career-professional-studies\//i.test(page)&&/src=["'][^"']*assets\/(?:career|assessment)\.js/i.test(html))return "shared";
   return "uncovered";
 }
 
