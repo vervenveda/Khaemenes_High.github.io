@@ -47,13 +47,3 @@ html:root:root body:is([data-grade="11"],[data-grade="12"])
  html:root:root body:is([data-grade="11"],[data-grade="12"])
  #upperGradeScheduleDialog .upper-grade-schedule-manager {padding:12px!important;}
 }
-
-/* Schedule modal only: scrolling stays inside the Schedule dialog. Profile,
-   background and identity editors are intentionally outside this scope. */
-#upperGradeScheduleDialog{box-sizing:border-box!important;max-height:90dvh!important;overflow-y:auto!important;overflow-x:hidden!important;overscroll-behavior:contain!important;-webkit-overflow-scrolling:touch}
-#upperGradeScheduleDialog .grade09-blueprint-schedule-grid{display:grid!important;grid-template-columns:repeat(4,minmax(0,1fr))!important;gap:12px!important;align-items:stretch!important}
-#upperGradeScheduleDialog .grade09-blueprint-schedule-item{min-width:0!important;display:flex!important;flex-direction:column!important;border-radius:7px!important}
-#upperGradeScheduleDialog .grade09-blueprint-schedule-item>a{margin-top:auto!important;box-sizing:border-box!important;display:flex!important;align-items:center!important;justify-content:center!important;min-height:44px!important;width:100%!important;border-radius:7px!important;font-size:16px!important}
-#upperGradeScheduleDialog .upper-grade-schedule-manager .actions>a{display:none!important}
-@media(max-width:930px){#upperGradeScheduleDialog .grade09-blueprint-schedule-grid{grid-template-columns:repeat(2,minmax(0,1fr))!important}}
-@media(max-width:530px){#upperGradeScheduleDialog{max-height:94dvh!important}#upperGradeScheduleDialog .grade09-blueprint-schedule-grid{grid-template-columns:1fr!important}}
