@@ -771,5 +771,48 @@
   "safety": {
     "lab_policy": "Target ≥25% of instructional time in inquiry, lab, simulation-with-data, fieldwork, or supervised hands-on investigation.",
     "home_rule": "Use only explicitly safe investigations; substitute simulation/data analysis whenever proper supervision or facilities are unavailable."
+  },
+  "prior_year_retrieval": {
+    "contract": "courses/science/HIGH_SCHOOL_SCIENCE_RETRIEVAL_RETENTION_MAP.md",
+    "inherited_from": [
+      "integrated-science-9"
+    ],
+    "target_public_cumulative_practice_percent": "5-10",
+    "required_anchors": [
+      "cells/structure-function",
+      "energy-and-matter",
+      "homeostasis-and-feedback",
+      "inheritance-probability",
+      "ecosystems/evolution-evidence",
+      "graphing-and-uncertainty",
+      "source-quality-and-CER"
+    ],
+    "checkpoint_weeks": [
+      4,
+      5,
+      9,
+      10,
+      11,
+      12,
+      14,
+      15,
+      16,
+      17,
+      18,
+      21,
+      22,
+      27,
+      28,
+      29,
+      30,
+      31,
+      32,
+      33,
+      34,
+      35,
+      36
+    ],
+    "correction_requirement": "identify inherited concept/practice, current application, error type, corrected reasoning, and one changed-context transfer check",
+    "protected_assessment_boundary": "confidential or supervised evidence may satisfy inherited retrieval; protected items/keys must not be exposed in the public repository"
   }
 }
