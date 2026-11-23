@@ -135,3 +135,6 @@
 ### Weeks 21–22 depth closure
 - Final ordinary-depth verification: **HOLD — W21D2:484, W21D3:445, W21D4:442, W21D5:481, W22D1:456, W22D2:446, W22D3:466, W22D4:463, W22D5:488.**
 - The earlier provisional HOLD was followed by targeted quantitative transfer checks rather than bulk padding.
+### Final Weeks 21–22 verification
+- Final ordinary-depth verification: **HOLD — remaining below-floor lessons: W22D2:499.**
+- All ten pages mount exactly one canonical Upper Science engine and retain explicit vocabulary, CER/evidence revision, spiral retrieval, uncertainty/model-limit reasoning, and safe simulation/lightweight-object boundaries.
