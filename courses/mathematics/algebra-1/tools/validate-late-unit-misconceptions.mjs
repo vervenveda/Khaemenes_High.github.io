@@ -91,7 +91,7 @@ for(const marker of [
   'reviewedStatuses.has(rec.reviewStatus)'
 ]) assert.ok(resolver.includes(marker),"resolver missing "+marker);
 
-const engine=read("assets/legacy-mastery-engine-v2.js");
+const engine=read("assets/unit-mastery-engine-v3.js");
 for(const marker of [
   "async function score()",
   "KhaemenesAlgebra1Misconceptions",
@@ -107,7 +107,7 @@ for(const marker of [
 for(const unit of [10,11,12,13]){
  const page=read("units/unit-"+unit+"/assessment/mastery-check.html");
  const resolverIndex=page.indexOf("assets/misconception-resolver-v1.js");
- const engineIndex=page.indexOf("assets/legacy-mastery-engine-v2.js");
+ const engineIndex=page.indexOf("assets/unit-mastery-engine-v3.js");
  assert.ok(resolverIndex>=0&&engineIndex>resolverIndex,"Unit "+unit+" must load misconception resolver before mastery engine");
 }
 
