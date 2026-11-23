@@ -120,3 +120,6 @@
 ### Final Weeks 19–20 verification
 - Final ordinary-depth verification: **HOLD — remaining below-floor lessons: W19D3:493, W19D4:492, W19D5:490, W20D4:473.**
 - All ten pages mount exactly one canonical Upper Science engine and retain explicit vocabulary, CER/evidence revision, spiral retrieval, uncertainty/model-limit reasoning, and safe rotational/lever investigation boundaries.
+### Weeks 19–20 depth closure
+- Final depth status: **PASS — all ten lessons now meet or exceed the 500-word ordinary-instruction floor.**
+- The earlier provisional HOLD was resolved with targeted transfer checks rather than bulk padding.
