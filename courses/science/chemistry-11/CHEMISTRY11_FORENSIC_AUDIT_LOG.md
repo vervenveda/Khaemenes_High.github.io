@@ -893,3 +893,12 @@ Chemistry 11 now has one canonical curriculum authority (`course-map.json`) feed
 - Preserved the Upper Science engine, safety boundaries, learner records, evidence storage, and navigation.
 - Next target: Weeks 26–28 — Dynamic Equilibrium, Le Châtelier/System Response, and Solubility/Coupled Equilibria.
 
+## 2026-11-22 · Equilibrium, Le Châtelier, and solubility block
+
+- Audited Weeks 26–28 as one equilibrium sequence. Existing content correctly distinguished dynamic rate equality, equilibrium composition, Q/K direction, perturbations, Ksp, Qsp, saturation, common-ion effects, and precipitation.
+- Hardened Week 26 with rate-vs-composition distinctions, K transformation rules tied to reaction definitions, stricter Q-versus-K direction limits, immediate-change vs later response logic, and a reusable equilibrium decision sequence.
+- Hardened Week 27 with concentration-perturbation tracing, pressure/volume Q reasoning, temperature/K boundaries, inert-gas and catalyst distinctions, and a disturbance classification by whether Q, K, both, or only rates change.
+- Hardened Week 28 with solubility-vs-dissolution-rate separation, Ksp-vs-molar-solubility distinctions, coupled-equilibrium boundaries, mandatory post-mixing concentration calculations, and uncertainty-aware precipitation thresholds.
+- Preserved the Upper Science engine, safety boundaries, learner records, evidence storage, and navigation.
+- Next target: Weeks 29–31 — Acids/Bases, pH/Titration, and Buffers.
+
