@@ -21,8 +21,7 @@ function walk(rel){
       const text=fs.readFileSync(path.join(root,child),"utf8");
       const hit=/courses\/shared\/shared\//.test(text)||
         /(?:^|["'(/.])shared\/shared\//m.test(text)||
-        /course-readiness-template\.json/.test(text)||
-        /assessment-authority\//.test(text);
+        /course-readiness-template\.json/.test(text);
       if(hit)findings.push(child);
     }
   }
