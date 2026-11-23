@@ -1,0 +1,332 @@
+{
+  "schema": "khaemenes-high-school-course-ownership-v1",
+  "version": 1,
+  "policy": {
+    "academicAuthorityRoot": "courses/",
+    "gradeRoutes": "routing-and-compatibility-only-unless-explicitly-declared",
+    "masteryFloorPercent": 80,
+    "compatibilityRoutesOwnCurriculum": false,
+    "previewRoutesOwnCurriculum": false,
+    "catalogPlansOwnAssessmentAuthority": false,
+    "federatedHandoffsMustRemainExplicit": true
+  },
+  "families": [
+    {
+      "id": "language-arts",
+      "kind": "core",
+      "canonicalRoot": "courses/language-arts/",
+      "status": "active"
+    },
+    {
+      "id": "mathematics",
+      "kind": "core-placement",
+      "canonicalRoot": "courses/mathematics/",
+      "status": "active"
+    },
+    {
+      "id": "science",
+      "kind": "core",
+      "canonicalRoot": "courses/science/",
+      "status": "active"
+    },
+    {
+      "id": "social-studies",
+      "kind": "core",
+      "canonicalRoot": "courses/social-studies/",
+      "status": "active"
+    },
+    {
+      "id": "physical-education",
+      "kind": "core",
+      "canonicalRoot": "courses/physical-education/",
+      "status": "active"
+    },
+    {
+      "id": "capstone",
+      "kind": "graduation",
+      "canonicalRoot": "courses/capstone/",
+      "status": "active"
+    },
+    {
+      "id": "electives",
+      "kind": "elective-catalog",
+      "canonicalRoot": "courses/electives/",
+      "status": "active"
+    }
+  ],
+  "courses": [
+    {
+      "id": "english-9",
+      "grade": 9,
+      "family": "language-arts",
+      "canonicalEntry": "courses/language-arts/english-9/index.html",
+      "classification": "active-course",
+      "authority": "course-specific"
+    },
+    {
+      "id": "english-10",
+      "grade": 10,
+      "family": "language-arts",
+      "canonicalEntry": "courses/language-arts/english-10/index.html",
+      "classification": "active-course",
+      "authority": "course-specific"
+    },
+    {
+      "id": "english-11",
+      "grade": 11,
+      "family": "language-arts",
+      "canonicalEntry": "courses/language-arts/english-11/index.html",
+      "classification": "active-course",
+      "authority": "course-specific"
+    },
+    {
+      "id": "english-12",
+      "grade": 12,
+      "family": "language-arts",
+      "canonicalEntry": "courses/language-arts/english-12/index.html",
+      "classification": "active-course",
+      "authority": "course-specific"
+    },
+    {
+      "id": "pre-algebra",
+      "grade": "placement",
+      "family": "mathematics",
+      "canonicalEntry": "courses/mathematics/pre-algebra/index.html",
+      "classification": "active-course",
+      "authority": "course-specific"
+    },
+    {
+      "id": "algebra-1",
+      "grade": "placement",
+      "family": "mathematics",
+      "canonicalEntry": "courses/mathematics/algebra-1/index.html",
+      "classification": "active-course",
+      "authority": "course-specific"
+    },
+    {
+      "id": "geometry",
+      "grade": "placement",
+      "family": "mathematics",
+      "canonicalEntry": "courses/mathematics/geometry/index.html",
+      "classification": "active-course",
+      "authority": "course-specific"
+    },
+    {
+      "id": "algebra-2",
+      "grade": "placement",
+      "family": "mathematics",
+      "canonicalEntry": "courses/mathematics/algebra-2/index.html",
+      "classification": "active-course",
+      "authority": "course-specific"
+    },
+    {
+      "id": "precalculus-trigonometry",
+      "grade": "placement",
+      "family": "mathematics",
+      "canonicalEntry": "courses/mathematics/precalculus-trigonometry/index.html",
+      "classification": "federated-handoff",
+      "authority": "higher-learning-outbound-only"
+    },
+    {
+      "id": "calculus-1",
+      "grade": "placement",
+      "family": "mathematics",
+      "canonicalEntry": "courses/mathematics/calculus-1/index.html",
+      "classification": "federated-handoff",
+      "authority": "higher-learning-outbound-only"
+    },
+    {
+      "id": "integrated-science-9",
+      "grade": 9,
+      "family": "science",
+      "canonicalEntry": "courses/science/integrated-science-9/index.html",
+      "classification": "active-course",
+      "authority": "course-specific"
+    },
+    {
+      "id": "biology-10",
+      "grade": 10,
+      "family": "science",
+      "canonicalEntry": "courses/science/biology-10/index.html",
+      "classification": "active-course",
+      "authority": "course-specific"
+    },
+    {
+      "id": "chemistry-11",
+      "grade": 11,
+      "family": "science",
+      "canonicalEntry": "courses/science/chemistry-11/index.html",
+      "classification": "active-course",
+      "authority": "course-specific"
+    },
+    {
+      "id": "physics-engineering-12",
+      "grade": 12,
+      "family": "science",
+      "canonicalEntry": "courses/science/physics-engineering-12/index.html",
+      "classification": "active-course",
+      "authority": "course-specific"
+    },
+    {
+      "id": "social-studies-9",
+      "grade": 9,
+      "family": "social-studies",
+      "canonicalEntry": "courses/social-studies/grade-09/index.html",
+      "classification": "active-course",
+      "authority": "course-specific"
+    },
+    {
+      "id": "social-studies-10",
+      "grade": 10,
+      "family": "social-studies",
+      "canonicalEntry": "courses/social-studies/grade-10/index.html",
+      "classification": "active-course",
+      "authority": "course-specific"
+    },
+    {
+      "id": "social-studies-11",
+      "grade": 11,
+      "family": "social-studies",
+      "canonicalEntry": "courses/social-studies/grade-11/index.html",
+      "classification": "active-course",
+      "authority": "course-specific"
+    },
+    {
+      "id": "social-studies-12",
+      "grade": 12,
+      "family": "social-studies",
+      "canonicalEntry": "courses/social-studies/grade-12/index.html",
+      "classification": "active-course",
+      "authority": "course-specific"
+    },
+    {
+      "id": "physical-education-9",
+      "grade": 9,
+      "family": "physical-education",
+      "canonicalEntry": "courses/physical-education/index.html",
+      "classification": "active-course",
+      "authority": "course-specific"
+    },
+    {
+      "id": "physical-education-10",
+      "grade": 10,
+      "family": "physical-education",
+      "canonicalEntry": "courses/physical-education/grade-10.html",
+      "classification": "active-course",
+      "authority": "course-specific"
+    },
+    {
+      "id": "physical-education-11",
+      "grade": 11,
+      "family": "physical-education",
+      "canonicalEntry": "courses/physical-education/grade-11.html",
+      "classification": "active-course",
+      "authority": "course-specific"
+    },
+    {
+      "id": "physical-education-12",
+      "grade": 12,
+      "family": "physical-education",
+      "canonicalEntry": "courses/physical-education/grade-12.html",
+      "classification": "active-course",
+      "authority": "course-specific"
+    },
+    {
+      "id": "senior-capstone",
+      "grade": 12,
+      "family": "capstone",
+      "canonicalEntry": "courses/capstone/senior-capstone/index.html",
+      "classification": "active-course",
+      "authority": "evaluator-reviewed"
+    },
+    {
+      "id": "psychology-101",
+      "grade": 9,
+      "family": "electives",
+      "canonicalEntry": "courses/electives/psychology-101/index.html",
+      "contentRoot": "electives/grades/grade-09/psych-101/",
+      "classification": "active-course-compatibility-content-root",
+      "authority": "course-specific"
+    },
+    {
+      "id": "career-professional-studies",
+      "grade": "elective",
+      "family": "electives",
+      "canonicalEntry": "courses/electives/career-professional-studies/index.html",
+      "classification": "catalog-plan",
+      "authority": "none"
+    },
+    {
+      "id": "computing-digital-technology",
+      "grade": "elective",
+      "family": "electives",
+      "canonicalEntry": "courses/electives/computing-digital-technology/index.html",
+      "classification": "catalog-plan",
+      "authority": "none"
+    },
+    {
+      "id": "fine-arts-visual-studio",
+      "grade": "elective",
+      "family": "electives",
+      "canonicalEntry": "courses/electives/fine-arts-visual-studio/index.html",
+      "classification": "catalog-plan",
+      "authority": "none"
+    },
+    {
+      "id": "health-wellness-human-development",
+      "grade": "elective",
+      "family": "electives",
+      "canonicalEntry": "courses/electives/health-wellness-human-development/index.html",
+      "classification": "catalog-plan",
+      "authority": "none"
+    },
+    {
+      "id": "music-music-theory",
+      "grade": "elective",
+      "family": "electives",
+      "canonicalEntry": "courses/electives/music-music-theory/index.html",
+      "classification": "catalog-plan",
+      "authority": "none"
+    },
+    {
+      "id": "world-languages-linguistics",
+      "grade": "elective",
+      "family": "electives",
+      "canonicalEntry": "courses/electives/world-languages-linguistics/index.html",
+      "classification": "catalog-plan-federated",
+      "authority": "federated"
+    }
+  ],
+  "compatibilityRoutes": [
+    {
+      "path": "electives/index.html",
+      "target": "courses/electives/index.html",
+      "classification": "legacy-electives-hall"
+    },
+    {
+      "path": "grades/grade-10/algebra-1/index.html",
+      "target": "courses/mathematics/algebra-1/index.html",
+      "classification": "placement-compatibility"
+    },
+    {
+      "path": "grades/grade-09/language-arts/index.html",
+      "target": "courses/language-arts/english-9/index.html",
+      "classification": "grade-router"
+    }
+  ],
+  "previewRoutes": [
+    {
+      "path": "grades/grade-10/technology/index.html",
+      "classification": "preview-non-authoritative",
+      "ownsCurriculum": false,
+      "ownsAssessment": false
+    }
+  ],
+  "sharedTopology": {
+    "canonicalRoot": "courses/shared/",
+    "nestedLegacyRoot": "courses/shared/shared/",
+    "nestedLegacyClassification": "compatibility-existing-do-not-add-new-dependencies",
+    "readinessTemplate": "courses/shared/shared/course-readiness-template.json",
+    "assessmentAuthority": "courses/shared/shared/assessment-authority/"
+  }
+}
