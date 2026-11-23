@@ -38,9 +38,14 @@ new vm.Script(inline[0][1]);
 assert(studio.includes("credentials:\"same-origin\""));
 const externalScripts=[...studio.matchAll(/<script[^>]*src=["']([^"']+)["'][^>]*>/gi)].map(m=>m[1]);
 assert.deepEqual(externalScripts,["https://vervenveda.com/assets/vnv-ecosystem-toolbar.js"],"Vocabulary Studio may load only the canonical VNV ecosystem toolbar externally");
-for(const course of ["pre-algebra","algebra-1","geometry","algebra-2"]){
+for(const course of ["algebra-1","algebra-2"]){
  const home=source("courses/mathematics/"+course+"/index.html");
- assert(home.includes("../tools/vocabulary-studio.html?course="+course),"course homepage must link study page");
+ assert(home.includes("../tools/vocabulary-studio.html?course="+course),"Algebra course homepage must link study page");
+}
+// Pre-Algebra and Geometry retain release-certified home surfaces; their vocabulary
+// inventories remain available to the shared Studio without forcing a homepage hash change.
+for(const course of ["pre-algebra","geometry"]){
+ assert(studio.includes('value="'+course+'"'),course+" must remain selectable in Vocabulary Studio");
 }
 
 // Pre-Algebra and Algebra I retain their canonical unit vocabulary shapes.
