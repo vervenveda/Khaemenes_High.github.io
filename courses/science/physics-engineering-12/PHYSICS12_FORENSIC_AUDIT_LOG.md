@@ -52,3 +52,11 @@
 - Week 08 was strengthened with explicit uncertainty around v²/r and friction thresholds, centripetal-force-as-resultant discipline, radial-force mechanism/FBD auditing, static-vs-kinetic friction evidence revision, controlled parameter-transfer reasoning, and spiral retrieval across the week.
 - Preserved existing virtual labs, browser-local learner work, mastery semantics, routes, safety boundaries, and navigation.
 - Next target: Weeks 09–10 — gravitation/orbital motion, then work and kinetic energy.
+## 2026-11-22 · Hardening block 5 — Weeks 09–10
+
+- Audited all ten Week 09–10 lessons. Week 09 had good orbital/gravity concepts but inconsistent vocabulary visibility, uncertainty/CER markers, and several lessons below the ordinary 500-word depth target. Week 10 was already instructionally strong.
+- Mounted the canonical Upper Science engine on all ten pages with exactly one loader per lesson.
+- Week 09 was strengthened with explicit vocabulary markers, apparent-weightlessness CER, center-to-center inverse-square discipline, orbital dimensional analysis, rounded-input uncertainty, controlled central-body comparisons, orbit model provenance, and cumulative spiral retrieval/evidence revision.
+- Week 10 preserved its work, dot-product, force-position area, work-energy theorem, and average-power architecture while adding uncertainty treatment to measured work/kinetic-energy quantities, explicit CER/evidence revision on Days 01–04, and Friday spiral retrieval.
+- Preserved existing digital laboratories, browser-local learner work, mastery semantics, routes, safety boundaries, and navigation.
+- Next target: Weeks 11–12 — potential energy/conservation, then power/efficiency.
