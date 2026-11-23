@@ -225,3 +225,6 @@
 - Final ordinary-depth verification: **HOLD — remaining below-floor lessons: W31D1:460, W31D2:426, W31D3:392, W31D4:393, W31D5:409, W32D1:365, W32D2:368, W32D3:387, W32D4:358, W32D5:401.**
 - Preserved low-voltage, simulation, and eye-safe investigation boundaries, browser-local learner work, mastery semantics, routes, and navigation.
 - Next target: Weeks 33–34 — Engineering Design Under Constraints, then Space Systems, Remote Sensing & Climate Energy.
+### Weeks 31–32 definitive closure
+- Definitive status: **HOLD — W31D2:473, W31D3:442, W31D4:432, W31D5:450, W32D1:410, W32D2:413, W32D3:430, W32D4:395, W32D5:440.**
+- All Week 31–32 pages retain exactly one Upper Science engine and the required vocabulary, CER/evidence revision, retrieval, uncertainty/model-limit, and safety markers.
