@@ -1,0 +1,629 @@
+{
+  "schema": "khaemenes-high-school-elective-course-map-v1",
+  "id": "music-music-theory",
+  "title": "Music & Music Theory",
+  "gradeBand": "9-12",
+  "durationWeeks": 13,
+  "plannedLessons": 65,
+  "masteryThreshold": 80,
+  "status": "curriculum-architecture-complete-student-production-pending",
+  "authority": "catalog-plan-until-promotion-gate-passes",
+  "qualityStandard": "courses/electives/ELECTIVE_QUALITY_STANDARD_V1.md",
+  "permanentRoutine": "Listen → Identify → Notate → Perform/Create → Analyze → Revise",
+  "assessmentModel": {
+    "weekly": "open-book discipline-authentic evidence plus mastery check where appropriate",
+    "cumulative": [
+      4,
+      8,
+      12
+    ],
+    "culminatingWeek": 13,
+    "correction": "below 80% requires targeted correction/revision before reassessment",
+    "protectedBoundary": "browser-local drafts and self-checks do not create transcript credit"
+  },
+  "privacySafety": {
+    "forcedSensitiveDisclosure": false,
+    "accessibleAlternativeRequired": true,
+    "publicProtectedAssessmentContent": false
+  },
+  "weeks": [
+    {
+      "week": 1,
+      "title": "Sound, pulse & active listening",
+      "essentialQuestion": "How can focused listening reveal structure, texture, timbre, and expressive choices?",
+      "days": [
+        {
+          "day": 1,
+          "phase": "Retrieve/Listen/Observe",
+          "task": "Retrieve a prior idea or inspect a new example connected to Sound, pulse & active listening. Identify what you notice, what you already know, and one question worth testing.",
+          "evidence": "retrieval note or annotated observation tied to Sound, pulse & active listening"
+        },
+        {
+          "day": 2,
+          "phase": "Learn/Model",
+          "task": "Study the core concepts, vocabulary, and a worked model for Sound, pulse & active listening. Explain why the model works and where it could fail or mislead.",
+          "evidence": "annotated model with vocabulary used in context"
+        },
+        {
+          "day": 3,
+          "phase": "Practice/Analyze",
+          "task": "Complete guided practice for Sound, pulse & active listening. Compare at least two examples, alternatives, or interpretations and justify the stronger choice with evidence.",
+          "evidence": "guided analysis or practice artifact"
+        },
+        {
+          "day": 4,
+          "phase": "Create/Apply/Test",
+          "task": "Apply Sound, pulse & active listening in a new situation. Build, perform, design, plan, or solve something authentic to the discipline, then test it against explicit criteria.",
+          "evidence": "listening journal and pulse studies"
+        },
+        {
+          "day": 5,
+          "phase": "Revise/Defend",
+          "task": "Revise the week's work after feedback or self-check. Defend one decision, name one limitation, and identify what should transfer to a later week.",
+          "evidence": "revised artifact, reflection, and short defense"
+        }
+      ],
+      "vocabularyTarget": "5–9 discipline terms taught through use, examples, and retrieval",
+      "weeklyEvidence": "listening journal and pulse studies",
+      "masteryCheck": {
+        "mode": "open-book mixed evidence",
+        "threshold": 80,
+        "retake": "targeted correction then parallel-form or revised evidence"
+      },
+      "cumulativeCheckpoint": false,
+      "culminating": false
+    },
+    {
+      "week": 2,
+      "title": "Rhythm & meter",
+      "essentialQuestion": "How do beat, subdivision, meter, syncopation, and rests organize musical time?",
+      "days": [
+        {
+          "day": 1,
+          "phase": "Retrieve/Listen/Observe",
+          "task": "Retrieve a prior idea or inspect a new example connected to Rhythm & meter. Identify what you notice, what you already know, and one question worth testing.",
+          "evidence": "retrieval note or annotated observation tied to Rhythm & meter"
+        },
+        {
+          "day": 2,
+          "phase": "Learn/Model",
+          "task": "Study the core concepts, vocabulary, and a worked model for Rhythm & meter. Explain why the model works and where it could fail or mislead.",
+          "evidence": "annotated model with vocabulary used in context"
+        },
+        {
+          "day": 3,
+          "phase": "Practice/Analyze",
+          "task": "Complete guided practice for Rhythm & meter. Compare at least two examples, alternatives, or interpretations and justify the stronger choice with evidence.",
+          "evidence": "guided analysis or practice artifact"
+        },
+        {
+          "day": 4,
+          "phase": "Create/Apply/Test",
+          "task": "Apply Rhythm & meter in a new situation. Build, perform, design, plan, or solve something authentic to the discipline, then test it against explicit criteria.",
+          "evidence": "rhythm reading/composition set"
+        },
+        {
+          "day": 5,
+          "phase": "Revise/Defend",
+          "task": "Revise the week's work after feedback or self-check. Defend one decision, name one limitation, and identify what should transfer to a later week.",
+          "evidence": "revised artifact, reflection, and short defense"
+        }
+      ],
+      "vocabularyTarget": "5–9 discipline terms taught through use, examples, and retrieval",
+      "weeklyEvidence": "rhythm reading/composition set",
+      "masteryCheck": {
+        "mode": "open-book mixed evidence",
+        "threshold": 80,
+        "retake": "targeted correction then parallel-form or revised evidence"
+      },
+      "cumulativeCheckpoint": false,
+      "culminating": false
+    },
+    {
+      "week": 3,
+      "title": "Pitch, notation & keyboard map",
+      "essentialQuestion": "How do staff notation, clefs, intervals, and keyboard geography represent pitch?",
+      "days": [
+        {
+          "day": 1,
+          "phase": "Retrieve/Listen/Observe",
+          "task": "Retrieve a prior idea or inspect a new example connected to Pitch, notation & keyboard map. Identify what you notice, what you already know, and one question worth testing.",
+          "evidence": "retrieval note or annotated observation tied to Pitch, notation & keyboard map"
+        },
+        {
+          "day": 2,
+          "phase": "Learn/Model",
+          "task": "Study the core concepts, vocabulary, and a worked model for Pitch, notation & keyboard map. Explain why the model works and where it could fail or mislead.",
+          "evidence": "annotated model with vocabulary used in context"
+        },
+        {
+          "day": 3,
+          "phase": "Practice/Analyze",
+          "task": "Complete guided practice for Pitch, notation & keyboard map. Compare at least two examples, alternatives, or interpretations and justify the stronger choice with evidence.",
+          "evidence": "guided analysis or practice artifact"
+        },
+        {
+          "day": 4,
+          "phase": "Create/Apply/Test",
+          "task": "Apply Pitch, notation & keyboard map in a new situation. Build, perform, design, plan, or solve something authentic to the discipline, then test it against explicit criteria.",
+          "evidence": "notation and interval portfolio"
+        },
+        {
+          "day": 5,
+          "phase": "Revise/Defend",
+          "task": "Revise the week's work after feedback or self-check. Defend one decision, name one limitation, and identify what should transfer to a later week.",
+          "evidence": "revised artifact, reflection, and short defense"
+        }
+      ],
+      "vocabularyTarget": "5–9 discipline terms taught through use, examples, and retrieval",
+      "weeklyEvidence": "notation and interval portfolio",
+      "masteryCheck": {
+        "mode": "open-book mixed evidence",
+        "threshold": 80,
+        "retake": "targeted correction then parallel-form or revised evidence"
+      },
+      "cumulativeCheckpoint": false,
+      "culminating": false
+    },
+    {
+      "week": 4,
+      "title": "Scales, keys & tonal center",
+      "essentialQuestion": "How do scales, key signatures, and tonal centers organize melodic possibility?",
+      "days": [
+        {
+          "day": 1,
+          "phase": "Retrieve/Listen/Observe",
+          "task": "Retrieve a prior idea or inspect a new example connected to Scales, keys & tonal center. Identify what you notice, what you already know, and one question worth testing.",
+          "evidence": "retrieval note or annotated observation tied to Scales, keys & tonal center"
+        },
+        {
+          "day": 2,
+          "phase": "Learn/Model",
+          "task": "Study the core concepts, vocabulary, and a worked model for Scales, keys & tonal center. Explain why the model works and where it could fail or mislead.",
+          "evidence": "annotated model with vocabulary used in context"
+        },
+        {
+          "day": 3,
+          "phase": "Practice/Analyze",
+          "task": "Complete guided practice for Scales, keys & tonal center. Compare at least two examples, alternatives, or interpretations and justify the stronger choice with evidence.",
+          "evidence": "guided analysis or practice artifact"
+        },
+        {
+          "day": 4,
+          "phase": "Create/Apply/Test",
+          "task": "Apply Scales, keys & tonal center in a new situation. Build, perform, design, plan, or solve something authentic to the discipline, then test it against explicit criteria.",
+          "evidence": "scale/key analysis and short melody"
+        },
+        {
+          "day": 5,
+          "phase": "Revise/Defend",
+          "task": "Revise the week's work after feedback or self-check. Defend one decision, name one limitation, and identify what should transfer to a later week.",
+          "evidence": "revised artifact, reflection, and short defense"
+        }
+      ],
+      "vocabularyTarget": "5–9 discipline terms taught through use, examples, and retrieval",
+      "weeklyEvidence": "scale/key analysis and short melody",
+      "masteryCheck": {
+        "mode": "open-book mixed evidence",
+        "threshold": 80,
+        "retake": "targeted correction then parallel-form or revised evidence"
+      },
+      "cumulativeCheckpoint": true,
+      "culminating": false
+    },
+    {
+      "week": 5,
+      "title": "Intervals & melody",
+      "essentialQuestion": "How do interval patterns shape melodic contour, tension, and recognition?",
+      "days": [
+        {
+          "day": 1,
+          "phase": "Retrieve/Listen/Observe",
+          "task": "Retrieve a prior idea or inspect a new example connected to Intervals & melody. Identify what you notice, what you already know, and one question worth testing.",
+          "evidence": "retrieval note or annotated observation tied to Intervals & melody"
+        },
+        {
+          "day": 2,
+          "phase": "Learn/Model",
+          "task": "Study the core concepts, vocabulary, and a worked model for Intervals & melody. Explain why the model works and where it could fail or mislead.",
+          "evidence": "annotated model with vocabulary used in context"
+        },
+        {
+          "day": 3,
+          "phase": "Practice/Analyze",
+          "task": "Complete guided practice for Intervals & melody. Compare at least two examples, alternatives, or interpretations and justify the stronger choice with evidence.",
+          "evidence": "guided analysis or practice artifact"
+        },
+        {
+          "day": 4,
+          "phase": "Create/Apply/Test",
+          "task": "Apply Intervals & melody in a new situation. Build, perform, design, plan, or solve something authentic to the discipline, then test it against explicit criteria.",
+          "evidence": "melodic analysis and composition"
+        },
+        {
+          "day": 5,
+          "phase": "Revise/Defend",
+          "task": "Revise the week's work after feedback or self-check. Defend one decision, name one limitation, and identify what should transfer to a later week.",
+          "evidence": "revised artifact, reflection, and short defense"
+        }
+      ],
+      "vocabularyTarget": "5–9 discipline terms taught through use, examples, and retrieval",
+      "weeklyEvidence": "melodic analysis and composition",
+      "masteryCheck": {
+        "mode": "open-book mixed evidence",
+        "threshold": 80,
+        "retake": "targeted correction then parallel-form or revised evidence"
+      },
+      "cumulativeCheckpoint": false,
+      "culminating": false
+    },
+    {
+      "week": 6,
+      "title": "Triads & harmonic function",
+      "essentialQuestion": "How do chord construction and harmonic roles create stability and motion?",
+      "days": [
+        {
+          "day": 1,
+          "phase": "Retrieve/Listen/Observe",
+          "task": "Retrieve a prior idea or inspect a new example connected to Triads & harmonic function. Identify what you notice, what you already know, and one question worth testing.",
+          "evidence": "retrieval note or annotated observation tied to Triads & harmonic function"
+        },
+        {
+          "day": 2,
+          "phase": "Learn/Model",
+          "task": "Study the core concepts, vocabulary, and a worked model for Triads & harmonic function. Explain why the model works and where it could fail or mislead.",
+          "evidence": "annotated model with vocabulary used in context"
+        },
+        {
+          "day": 3,
+          "phase": "Practice/Analyze",
+          "task": "Complete guided practice for Triads & harmonic function. Compare at least two examples, alternatives, or interpretations and justify the stronger choice with evidence.",
+          "evidence": "guided analysis or practice artifact"
+        },
+        {
+          "day": 4,
+          "phase": "Create/Apply/Test",
+          "task": "Apply Triads & harmonic function in a new situation. Build, perform, design, plan, or solve something authentic to the discipline, then test it against explicit criteria.",
+          "evidence": "triad/harmony worksheet and progression"
+        },
+        {
+          "day": 5,
+          "phase": "Revise/Defend",
+          "task": "Revise the week's work after feedback or self-check. Defend one decision, name one limitation, and identify what should transfer to a later week.",
+          "evidence": "revised artifact, reflection, and short defense"
+        }
+      ],
+      "vocabularyTarget": "5–9 discipline terms taught through use, examples, and retrieval",
+      "weeklyEvidence": "triad/harmony worksheet and progression",
+      "masteryCheck": {
+        "mode": "open-book mixed evidence",
+        "threshold": 80,
+        "retake": "targeted correction then parallel-form or revised evidence"
+      },
+      "cumulativeCheckpoint": false,
+      "culminating": false
+    },
+    {
+      "week": 7,
+      "title": "Cadences, phrases & form",
+      "essentialQuestion": "How do phrases, cadences, repetition, and contrast create musical form?",
+      "days": [
+        {
+          "day": 1,
+          "phase": "Retrieve/Listen/Observe",
+          "task": "Retrieve a prior idea or inspect a new example connected to Cadences, phrases & form. Identify what you notice, what you already know, and one question worth testing.",
+          "evidence": "retrieval note or annotated observation tied to Cadences, phrases & form"
+        },
+        {
+          "day": 2,
+          "phase": "Learn/Model",
+          "task": "Study the core concepts, vocabulary, and a worked model for Cadences, phrases & form. Explain why the model works and where it could fail or mislead.",
+          "evidence": "annotated model with vocabulary used in context"
+        },
+        {
+          "day": 3,
+          "phase": "Practice/Analyze",
+          "task": "Complete guided practice for Cadences, phrases & form. Compare at least two examples, alternatives, or interpretations and justify the stronger choice with evidence.",
+          "evidence": "guided analysis or practice artifact"
+        },
+        {
+          "day": 4,
+          "phase": "Create/Apply/Test",
+          "task": "Apply Cadences, phrases & form in a new situation. Build, perform, design, plan, or solve something authentic to the discipline, then test it against explicit criteria.",
+          "evidence": "formal listening map"
+        },
+        {
+          "day": 5,
+          "phase": "Revise/Defend",
+          "task": "Revise the week's work after feedback or self-check. Defend one decision, name one limitation, and identify what should transfer to a later week.",
+          "evidence": "revised artifact, reflection, and short defense"
+        }
+      ],
+      "vocabularyTarget": "5–9 discipline terms taught through use, examples, and retrieval",
+      "weeklyEvidence": "formal listening map",
+      "masteryCheck": {
+        "mode": "open-book mixed evidence",
+        "threshold": 80,
+        "retake": "targeted correction then parallel-form or revised evidence"
+      },
+      "cumulativeCheckpoint": false,
+      "culminating": false
+    },
+    {
+      "week": 8,
+      "title": "Texture, instrumentation & arranging",
+      "essentialQuestion": "How do register, timbre, texture, and voicing change the character of an arrangement?",
+      "days": [
+        {
+          "day": 1,
+          "phase": "Retrieve/Listen/Observe",
+          "task": "Retrieve a prior idea or inspect a new example connected to Texture, instrumentation & arranging. Identify what you notice, what you already know, and one question worth testing.",
+          "evidence": "retrieval note or annotated observation tied to Texture, instrumentation & arranging"
+        },
+        {
+          "day": 2,
+          "phase": "Learn/Model",
+          "task": "Study the core concepts, vocabulary, and a worked model for Texture, instrumentation & arranging. Explain why the model works and where it could fail or mislead.",
+          "evidence": "annotated model with vocabulary used in context"
+        },
+        {
+          "day": 3,
+          "phase": "Practice/Analyze",
+          "task": "Complete guided practice for Texture, instrumentation & arranging. Compare at least two examples, alternatives, or interpretations and justify the stronger choice with evidence.",
+          "evidence": "guided analysis or practice artifact"
+        },
+        {
+          "day": 4,
+          "phase": "Create/Apply/Test",
+          "task": "Apply Texture, instrumentation & arranging in a new situation. Build, perform, design, plan, or solve something authentic to the discipline, then test it against explicit criteria.",
+          "evidence": "short arrangement or orchestration plan"
+        },
+        {
+          "day": 5,
+          "phase": "Revise/Defend",
+          "task": "Revise the week's work after feedback or self-check. Defend one decision, name one limitation, and identify what should transfer to a later week.",
+          "evidence": "revised artifact, reflection, and short defense"
+        }
+      ],
+      "vocabularyTarget": "5–9 discipline terms taught through use, examples, and retrieval",
+      "weeklyEvidence": "short arrangement or orchestration plan",
+      "masteryCheck": {
+        "mode": "open-book mixed evidence",
+        "threshold": 80,
+        "retake": "targeted correction then parallel-form or revised evidence"
+      },
+      "cumulativeCheckpoint": true,
+      "culminating": false
+    },
+    {
+      "week": 9,
+      "title": "Songwriting & motif development",
+      "essentialQuestion": "How can motifs, lyrics, harmony, and form develop into an original musical idea?",
+      "days": [
+        {
+          "day": 1,
+          "phase": "Retrieve/Listen/Observe",
+          "task": "Retrieve a prior idea or inspect a new example connected to Songwriting & motif development. Identify what you notice, what you already know, and one question worth testing.",
+          "evidence": "retrieval note or annotated observation tied to Songwriting & motif development"
+        },
+        {
+          "day": 2,
+          "phase": "Learn/Model",
+          "task": "Study the core concepts, vocabulary, and a worked model for Songwriting & motif development. Explain why the model works and where it could fail or mislead.",
+          "evidence": "annotated model with vocabulary used in context"
+        },
+        {
+          "day": 3,
+          "phase": "Practice/Analyze",
+          "task": "Complete guided practice for Songwriting & motif development. Compare at least two examples, alternatives, or interpretations and justify the stronger choice with evidence.",
+          "evidence": "guided analysis or practice artifact"
+        },
+        {
+          "day": 4,
+          "phase": "Create/Apply/Test",
+          "task": "Apply Songwriting & motif development in a new situation. Build, perform, design, plan, or solve something authentic to the discipline, then test it against explicit criteria.",
+          "evidence": "original song or instrumental sketch"
+        },
+        {
+          "day": 5,
+          "phase": "Revise/Defend",
+          "task": "Revise the week's work after feedback or self-check. Defend one decision, name one limitation, and identify what should transfer to a later week.",
+          "evidence": "revised artifact, reflection, and short defense"
+        }
+      ],
+      "vocabularyTarget": "5–9 discipline terms taught through use, examples, and retrieval",
+      "weeklyEvidence": "original song or instrumental sketch",
+      "masteryCheck": {
+        "mode": "open-book mixed evidence",
+        "threshold": 80,
+        "retake": "targeted correction then parallel-form or revised evidence"
+      },
+      "cumulativeCheckpoint": false,
+      "culminating": false
+    },
+    {
+      "week": 10,
+      "title": "Music technology & production basics",
+      "essentialQuestion": "How can recording, editing, layering, and effects support rather than obscure musical intent?",
+      "days": [
+        {
+          "day": 1,
+          "phase": "Retrieve/Listen/Observe",
+          "task": "Retrieve a prior idea or inspect a new example connected to Music technology & production basics. Identify what you notice, what you already know, and one question worth testing.",
+          "evidence": "retrieval note or annotated observation tied to Music technology & production basics"
+        },
+        {
+          "day": 2,
+          "phase": "Learn/Model",
+          "task": "Study the core concepts, vocabulary, and a worked model for Music technology & production basics. Explain why the model works and where it could fail or mislead.",
+          "evidence": "annotated model with vocabulary used in context"
+        },
+        {
+          "day": 3,
+          "phase": "Practice/Analyze",
+          "task": "Complete guided practice for Music technology & production basics. Compare at least two examples, alternatives, or interpretations and justify the stronger choice with evidence.",
+          "evidence": "guided analysis or practice artifact"
+        },
+        {
+          "day": 4,
+          "phase": "Create/Apply/Test",
+          "task": "Apply Music technology & production basics in a new situation. Build, perform, design, plan, or solve something authentic to the discipline, then test it against explicit criteria.",
+          "evidence": "small production experiment"
+        },
+        {
+          "day": 5,
+          "phase": "Revise/Defend",
+          "task": "Revise the week's work after feedback or self-check. Defend one decision, name one limitation, and identify what should transfer to a later week.",
+          "evidence": "revised artifact, reflection, and short defense"
+        }
+      ],
+      "vocabularyTarget": "5–9 discipline terms taught through use, examples, and retrieval",
+      "weeklyEvidence": "small production experiment",
+      "masteryCheck": {
+        "mode": "open-book mixed evidence",
+        "threshold": 80,
+        "retake": "targeted correction then parallel-form or revised evidence"
+      },
+      "cumulativeCheckpoint": false,
+      "culminating": false
+    },
+    {
+      "week": 11,
+      "title": "Music history, culture & context",
+      "essentialQuestion": "How can musical analysis respect historical and cultural context without flattening traditions into stereotypes?",
+      "days": [
+        {
+          "day": 1,
+          "phase": "Retrieve/Listen/Observe",
+          "task": "Retrieve a prior idea or inspect a new example connected to Music history, culture & context. Identify what you notice, what you already know, and one question worth testing.",
+          "evidence": "retrieval note or annotated observation tied to Music history, culture & context"
+        },
+        {
+          "day": 2,
+          "phase": "Learn/Model",
+          "task": "Study the core concepts, vocabulary, and a worked model for Music history, culture & context. Explain why the model works and where it could fail or mislead.",
+          "evidence": "annotated model with vocabulary used in context"
+        },
+        {
+          "day": 3,
+          "phase": "Practice/Analyze",
+          "task": "Complete guided practice for Music history, culture & context. Compare at least two examples, alternatives, or interpretations and justify the stronger choice with evidence.",
+          "evidence": "guided analysis or practice artifact"
+        },
+        {
+          "day": 4,
+          "phase": "Create/Apply/Test",
+          "task": "Apply Music history, culture & context in a new situation. Build, perform, design, plan, or solve something authentic to the discipline, then test it against explicit criteria.",
+          "evidence": "contextual listening comparison"
+        },
+        {
+          "day": 5,
+          "phase": "Revise/Defend",
+          "task": "Revise the week's work after feedback or self-check. Defend one decision, name one limitation, and identify what should transfer to a later week.",
+          "evidence": "revised artifact, reflection, and short defense"
+        }
+      ],
+      "vocabularyTarget": "5–9 discipline terms taught through use, examples, and retrieval",
+      "weeklyEvidence": "contextual listening comparison",
+      "masteryCheck": {
+        "mode": "open-book mixed evidence",
+        "threshold": 80,
+        "retake": "targeted correction then parallel-form or revised evidence"
+      },
+      "cumulativeCheckpoint": false,
+      "culminating": false
+    },
+    {
+      "week": 12,
+      "title": "Composition/performance project",
+      "essentialQuestion": "How can rehearsal, feedback, and revision strengthen an original or interpreted work?",
+      "days": [
+        {
+          "day": 1,
+          "phase": "Retrieve/Listen/Observe",
+          "task": "Retrieve a prior idea or inspect a new example connected to Composition/performance project. Identify what you notice, what you already know, and one question worth testing.",
+          "evidence": "retrieval note or annotated observation tied to Composition/performance project"
+        },
+        {
+          "day": 2,
+          "phase": "Learn/Model",
+          "task": "Study the core concepts, vocabulary, and a worked model for Composition/performance project. Explain why the model works and where it could fail or mislead.",
+          "evidence": "annotated model with vocabulary used in context"
+        },
+        {
+          "day": 3,
+          "phase": "Practice/Analyze",
+          "task": "Complete guided practice for Composition/performance project. Compare at least two examples, alternatives, or interpretations and justify the stronger choice with evidence.",
+          "evidence": "guided analysis or practice artifact"
+        },
+        {
+          "day": 4,
+          "phase": "Create/Apply/Test",
+          "task": "Apply Composition/performance project in a new situation. Build, perform, design, plan, or solve something authentic to the discipline, then test it against explicit criteria.",
+          "evidence": "final composition/performance artifact"
+        },
+        {
+          "day": 5,
+          "phase": "Revise/Defend",
+          "task": "Revise the week's work after feedback or self-check. Defend one decision, name one limitation, and identify what should transfer to a later week.",
+          "evidence": "revised artifact, reflection, and short defense"
+        }
+      ],
+      "vocabularyTarget": "5–9 discipline terms taught through use, examples, and retrieval",
+      "weeklyEvidence": "final composition/performance artifact",
+      "masteryCheck": {
+        "mode": "open-book mixed evidence",
+        "threshold": 80,
+        "retake": "targeted correction then parallel-form or revised evidence"
+      },
+      "cumulativeCheckpoint": true,
+      "culminating": false
+    },
+    {
+      "week": 13,
+      "title": "Portfolio, listening analysis & defense",
+      "essentialQuestion": "How can I demonstrate growth in listening, theory, creation, and revision?",
+      "days": [
+        {
+          "day": 1,
+          "phase": "Retrieve/Listen/Observe",
+          "task": "Retrieve a prior idea or inspect a new example connected to Portfolio, listening analysis & defense. Identify what you notice, what you already know, and one question worth testing.",
+          "evidence": "retrieval note or annotated observation tied to Portfolio, listening analysis & defense"
+        },
+        {
+          "day": 2,
+          "phase": "Learn/Model",
+          "task": "Study the core concepts, vocabulary, and a worked model for Portfolio, listening analysis & defense. Explain why the model works and where it could fail or mislead.",
+          "evidence": "annotated model with vocabulary used in context"
+        },
+        {
+          "day": 3,
+          "phase": "Practice/Analyze",
+          "task": "Complete guided practice for Portfolio, listening analysis & defense. Compare at least two examples, alternatives, or interpretations and justify the stronger choice with evidence.",
+          "evidence": "guided analysis or practice artifact"
+        },
+        {
+          "day": 4,
+          "phase": "Create/Apply/Test",
+          "task": "Apply Portfolio, listening analysis & defense in a new situation. Build, perform, design, plan, or solve something authentic to the discipline, then test it against explicit criteria.",
+          "evidence": "music portfolio and performance/composition defense"
+        },
+        {
+          "day": 5,
+          "phase": "Revise/Defend",
+          "task": "Revise the week's work after feedback or self-check. Defend one decision, name one limitation, and identify what should transfer to a later week.",
+          "evidence": "revised artifact, reflection, and short defense"
+        }
+      ],
+      "vocabularyTarget": "5–9 discipline terms taught through use, examples, and retrieval",
+      "weeklyEvidence": "music portfolio and performance/composition defense",
+      "masteryCheck": {
+        "mode": "open-book mixed evidence",
+        "threshold": 80,
+        "retake": "targeted correction then parallel-form or revised evidence"
+      },
+      "cumulativeCheckpoint": false,
+      "culminating": true
+    }
+  ]
+}
