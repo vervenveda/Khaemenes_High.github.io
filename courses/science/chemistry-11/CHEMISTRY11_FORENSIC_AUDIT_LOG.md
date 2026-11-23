@@ -884,3 +884,12 @@ Chemistry 11 now has one canonical curriculum authority (`course-map.json`) feed
 - Preserved the Upper Science engine, safety boundaries, learner records, evidence-storage behavior, and navigation.
 - Next target: Weeks 23–25 — Thermochemistry, Hess's Law, and Energy/Entropy/Direction.
 
+## 2026-11-22 · Thermochemistry, Hess, entropy, and free-energy block
+
+- Audited Weeks 23–25 as one thermodynamics sequence. Existing content correctly covered system/surroundings, q=mcΔT, molar enthalpy, calorimetry investigation, bond-energy estimates, Hess/state-function reasoning, entropy/microstates, phase change, ΔG, and thermodynamic direction.
+- Hardened Week 23 with explicit multi-reservoir energy bookkeeping, calorimeter heat capacity, reaction-amount normalization, directional heat-loss diagnosis, and cross-trial thermochemistry consistency checks.
+- Hardened Week 24 with bond-energy model limits, Hess path independence, state-label discipline, uncertainty accumulation, independent pathway validation, and a thermochemical evidence hierarchy.
+- Hardened Week 25 with microstate-probability reasoning, phase-equilibrium balance, strict ΔG unit/sign auditing, simulation sampling/scale interpretation, and a thermodynamic-direction audit separating favorability, equilibrium, and kinetics.
+- Preserved the Upper Science engine, safety boundaries, learner records, evidence storage, and navigation.
+- Next target: Weeks 26–28 — Dynamic Equilibrium, Le Châtelier/System Response, and Solubility/Coupled Equilibria.
+
