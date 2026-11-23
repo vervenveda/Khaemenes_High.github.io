@@ -1,6 +1,6 @@
 {
   "schema": "khaemenes-grade-09-12-route-sweep-v1",
-  "scope": "Grade 9–12 core entrances, Grade 12 PE/Capstone, and placement mathematics; this registry validates routes, not release certification",
+  "scope": "Grade 9–12 core entrances, PE 9–12, Grade 9 Psychology, Senior Capstone, and placement mathematics; validates routes, not release certification",
   "policy": {
     "mastery_floor_percent": 80,
     "offline_core_required": true,
@@ -144,6 +144,34 @@
       "id": "senior-capstone",
       "grade": 12,
       "entry": "courses/capstone/senior-capstone/index.html",
+      "kind": "grade-core",
+      "release_status": "audit-required"
+    },
+    {
+      "id": "physical-education-9",
+      "grade": 9,
+      "entry": "courses/physical-education/index.html",
+      "kind": "grade-core",
+      "release_status": "audit-required"
+    },
+    {
+      "id": "psychology-101",
+      "grade": 9,
+      "entry": "courses/electives/psychology-101/index.html",
+      "kind": "grade-elective",
+      "release_status": "audit-required"
+    },
+    {
+      "id": "physical-education-10",
+      "grade": 10,
+      "entry": "courses/physical-education/grade-10.html",
+      "kind": "grade-core",
+      "release_status": "audit-required"
+    },
+    {
+      "id": "physical-education-11",
+      "grade": 11,
+      "entry": "courses/physical-education/grade-11.html",
       "kind": "grade-core",
       "release_status": "audit-required"
     }
