@@ -100,3 +100,7 @@
 - Week 18 remains exempt from ordinary 500-word padding; its release criterion is assessment integrity and correction quality.
 - Preserved browser-local learner work, mastery semantics, routes, evidence portfolios, protected-assessment separation, and navigation.
 - Next target: Weeks 19–20 — Rotational Kinematics, then Torque & Rotational Equilibrium.
+### Final Weeks 17–18 verification
+- Week 17 ordinary-depth verification: **HOLD — W17D4:483.**
+- Week 18 assessment-boundary verification: **PASS** for public/protected separation, formative-only browser authority, correction integrity, and non-exposure of protected midterm content.
+- All ten pages mount exactly one canonical Upper Science engine and retain explicit evidence-revision/CER, retrieval, uncertainty/model-limit reasoning, and the appropriate instructional or assessment boundary.
