@@ -902,3 +902,12 @@ Chemistry 11 now has one canonical curriculum authority (`course-map.json`) feed
 - Preserved the Upper Science engine, safety boundaries, learner records, evidence storage, and navigation.
 - Next target: Weeks 29–31 — Acids/Bases, pH/Titration, and Buffers.
 
+## 2026-11-22 · Acids, bases, titration, and buffers block
+
+- Audited Weeks 29–31 as one acid–base sequence. Existing content correctly covered Arrhenius and Brønsted–Lowry models, conjugate pairs, amphiprotic behavior, indicator evidence, logarithmic pH/pOH, titration stoichiometry, endpoint/equivalence, buffer composition, capacity, and Henderson–Hasselbalch reasoning.
+- Hardened Week 29 with explicit model-scope comparisons, conjugate-strength logic, amphiprotic role auditing, indicator-range evidence, and strict separation of identity, strength, concentration, and pH.
+- Hardened Week 30 with inverse-log reasonableness checks, pH/pOH/Kw consistency, titration-region model selection, endpoint-vs-equivalence boundaries, and a stoichiometry-first acid–base calculation sequence.
+- Hardened Week 31 with stoichiometry-before-buffer-equilibrium discipline, half-equivalence validation, controlled capacity comparisons, and Henderson–Hasselbalch validity boundaries. Week 31 Day 02 already exceeded the depth floor and was retained without padding.
+- Preserved the Upper Science engine, safety boundaries, learner records, evidence storage, and navigation.
+- Next target: Weeks 32–35 — Free Energy/Driving Forces, Electrochemistry, Nuclear/Materials/Environmental Chemistry, and the Sustainable Materials Capstone.
+
