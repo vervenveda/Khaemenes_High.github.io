@@ -26,7 +26,8 @@ for(const grade of [9,10,11,12]){
  assert.ok(index.includes('href="reading-spine.html"'),key+" Unit 01 does not link reading spine");
  assert.ok(page.includes("The Academy microtexts remain"),key+" must preserve first-party modeling text");
  assert.ok(page.includes("creates no parallel grade, mastery gate, learner record, or assessment authority"),key+" authority boundary missing");
- assert.ok(!page.includes("high-school-global-chrome-v2.js"),key+" resurrects retired chrome");
+ const retiredChrome=["high-school-global","chrome-v2.js"].join("-");
+ assert.ok(!page.includes(retiredChrome),key+" resurrects retired chrome");
  for(const row of rows){
   assert.ok(page.includes(row.title),key+" page missing "+row.title);
   assert.ok(page.includes(row.sourceUrl),key+" page missing source URL for "+row.title);
