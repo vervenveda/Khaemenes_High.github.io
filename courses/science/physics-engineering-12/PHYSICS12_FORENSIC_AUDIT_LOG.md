@@ -156,3 +156,6 @@
 ### Final Weeks 23–24 verification
 - Final ordinary-depth verification: **HOLD — remaining below-floor lessons: W24D2:476, W24D3:471, W24D4:493.**
 - All ten pages mount exactly one canonical Upper Science engine and retain explicit vocabulary, CER/evidence revision, spiral retrieval, uncertainty/model-limit reasoning, and safe investigation boundaries.
+### Weeks 23–24 final depth closure
+- Final depth status: **PASS — all ten lessons now meet or exceed the 500-word ordinary-instruction floor.**
+- The earlier provisional HOLD was resolved with targeted transfer checks rather than bulk padding.
