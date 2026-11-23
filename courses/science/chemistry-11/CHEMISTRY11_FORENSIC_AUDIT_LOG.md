@@ -633,3 +633,23 @@ The 180-lesson curriculum source certification remains PASS. This fresh audit ex
 5. Weekly-shell derivation from the canonical upper-science contract.
 
 These are post-certification hardening targets; they do not revoke the existing curriculum-source PASS.
+
+
+## 2026-11-22 · Post-certification Bubble 1 closure — course-wide CI integrity guard
+
+### Repair
+- Added `courses/science/chemistry-11/tools/validate-course-integrity.mjs`.
+- Added `.github/workflows/chemistry11-course-integrity.yml`.
+- The validator now protects the complete Chemistry 11 source topology: 36 weekly indexes, 180 daily lessons, canonical `upper-science-v1` marker, exactly one loader per lesson, science-contract presence, lesson-depth floors, 36/180 course-map declarations, 80% mastery declaration, Week 18 MID / Week 36 FINAL topology, secure assessment boundaries, release-certification boundary, vocabulary week coverage, and required question-bank audit tooling.
+- The workflow also runs the existing Chemistry 11 question-bank/misconception audit and the shared upper-science secure-assessment blueprint validator.
+- Triggers cover Chemistry 11 source changes, shared upper-science assessment-blueprint validator changes, pull requests, and manual workflow dispatch.
+
+### Verification
+- Validator commit: `5a902f7263f7216ab5141aa09317c7014e55e30e`.
+- Workflow commit: `9a7a111431975508a0658155327f41353d1e24ef`.
+- GitHub Actions check `source-integrity` job `137418851926`: **PASS / success** on the workflow commit.
+
+### Status
+**Bubble 1 — no course-wide Chemistry 11 CI integrity workflow: CLOSED.**
+
+The source-level curriculum certification remains PASS. Runtime/browser/accessibility/protected-assessment authority remain separate gates.
