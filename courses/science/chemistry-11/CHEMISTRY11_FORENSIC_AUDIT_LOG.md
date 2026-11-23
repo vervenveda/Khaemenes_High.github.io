@@ -838,3 +838,13 @@ Chemistry 11 now has one canonical curriculum authority (`course-map.json`) feed
 - Hardened all five Week 11 lessons with added kinetic-distribution reasoning, inverse-model validation, dimensional/physical checks, residual-pattern analysis, tested-range limits, and an assumptions → mathematics → mechanism model-selection audit.
 - No mastery, learner records, evidence-storage, routes, assessment authority, or navigation logic was intentionally altered.
 - Next target: Week 12 — Solutions & Concentration, followed by Week 13 — Mixtures, Separation & Spectroscopic Evidence.
+
+## 2026-11-22 · Solutions and analytical chemistry block
+
+- Audited all five Week 12 lessons (Solutions & Concentration). Existing strengths: particle models, molarity, dilution, investigation, uncertainty, model limits, retrieval, and explicit misconception repair.
+- Hardened Week 12 with solution-model boundaries, concentration reasonableness checks, significant-figure/measurement discipline, realistic dilution planning, directional error analysis, and state-vs-process model selection.
+- Audited all five Week 13 lessons (Mixtures, Separation & Spectroscopic Evidence). Existing strengths: chromatography, Rf, calibration, spectroscopy, raw-vs-processed evidence, investigation, and bounded analytical claims.
+- Hardened Week 13 with recovery/purity tradeoffs, chromatography resolution and uncertainty, calibration-range validation, independent/converging evidence analysis, and full analytical chain-of-custody reasoning.
+- All ten pages retain the canonical Upper Science engine and preserve mastery, learner records, evidence storage, assessment authority, and navigation.
+- Next target: Weeks 14–15 — Reaction Evidence & Chemical Equations and The Mole & Stoichiometry.
+
