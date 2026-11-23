@@ -1,6 +1,6 @@
 {
   "schema": "khaemenes-high-learning-registry-v1",
-  "version": 1,
+  "version": 2,
   "masteryThreshold": 80,
   "policy": {
     "weekly": "open-book-randomized-verified-learning-evidence",
@@ -27,24 +27,24 @@
       "grade": 10,
       "department": "language-arts",
       "path": "courses/language-arts/english-10/",
-      "authority": "high-school-assessment-adapter",
-      "status": "adapter-target"
+      "authority": "course-specific",
+      "status": "specialized-existing-engine"
     },
     {
       "id": "english-11",
       "grade": 11,
       "department": "language-arts",
       "path": "courses/language-arts/english-11/",
-      "authority": "high-school-assessment-adapter",
-      "status": "adapter-target"
+      "authority": "course-specific",
+      "status": "specialized-existing-engine"
     },
     {
       "id": "english-12",
       "grade": 12,
       "department": "language-arts",
       "path": "courses/language-arts/english-12/",
-      "authority": "high-school-assessment-adapter",
-      "status": "adapter-target"
+      "authority": "course-specific",
+      "status": "specialized-existing-engine"
     },
     {
       "id": "pre-algebra",
@@ -123,24 +123,24 @@
       "grade": 10,
       "department": "social-studies",
       "path": "courses/social-studies/grade-10/",
-      "authority": "high-school-assessment-adapter",
-      "status": "adapter-target"
+      "authority": "course-specific",
+      "status": "specialized-existing-engine"
     },
     {
       "id": "government-economics-11",
       "grade": 11,
       "department": "social-studies",
       "path": "courses/social-studies/grade-11/",
-      "authority": "high-school-assessment-adapter",
-      "status": "adapter-target"
+      "authority": "course-specific",
+      "status": "specialized-existing-engine"
     },
     {
       "id": "global-politics-12",
       "grade": 12,
       "department": "social-studies",
       "path": "courses/social-studies/grade-12/",
-      "authority": "high-school-assessment-adapter",
-      "status": "adapter-target"
+      "authority": "course-specific",
+      "status": "specialized-existing-engine"
     }
   ],
   "federatedRequirements": [
@@ -156,12 +156,12 @@
     "bridge": "courses/shared/high-school-formative-evidence-v1.js",
     "ledger": "khaemenes_high_learning_ledger_v1",
     "oneSavePerPagePerDay": true,
-    "totalSurfaces": 1482,
+    "totalSurfaces": 1484,
     "byFamily": {
       "english": 224,
-      "mathematics": 372,
+      "mathematics": 373,
       "science": 720,
-      "socialStudies": 166
+      "socialStudies": 167
     },
     "authority": {
       "awardsMastery": false,
@@ -169,6 +169,8 @@
       "unlocksCurriculum": false,
       "changesPlacement": false,
       "replacesPerformanceEvidence": false
-    }
-  }
+    },
+    "countAuthority": "derived-by-learning-architecture-validator-from-canonical-target-rules"
+  },
+  "ownershipManifest": "courses/shared/high-school-course-ownership-manifest-v1.json"
 }
