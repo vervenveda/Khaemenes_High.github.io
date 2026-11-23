@@ -23,6 +23,9 @@ if(!exists(mapPath)) failures.push("course-map.json missing");
 const map=exists(mapPath)?JSON.parse(read(mapPath)):null;
 
 if(map){
+  if(map.schema_version!=="2.1") failures.push(`course-map schema_version=${map.schema_version}; expected 2.1`);
+  if(map.course?.authority_version!=="2026-11-22-hardened-v1") failures.push("course-map authority_version missing or stale");
+  if(!/canonical/i.test(String(map.course?.curriculum_authority||""))) failures.push("course-map curriculum_authority declaration missing");
   if(map.course?.duration_weeks!==36) failures.push(`course-map duration_weeks=${map.course?.duration_weeks}; expected 36`);
   if(map.course?.daily_lesson_blocks!==180) failures.push(`course-map daily_lesson_blocks=${map.course?.daily_lesson_blocks}; expected 180`);
   if(map.course?.passing_target!==80) failures.push(`course-map passing_target=${map.course?.passing_target}; expected 80`);
@@ -31,6 +34,12 @@ if(map){
     const nums=map.weeks.map(w=>w.week);
     const expected=Array.from({length:36},(_,i)=>i+1);
     if(JSON.stringify(nums)!==JSON.stringify(expected)) failures.push("course-map week numbers are not exactly 1..36 in order");
+    for(const w of map.weeks){
+      for(const key of ["quantitative","evidence_contract","inquiry_contract","retrieval_contract"]){
+        if(!String(w?.[key]||"").trim()) failures.push(`course-map Week ${w.week}: missing ${key}`);
+      }
+      if(w.authority_version!=="2026-11-22-hardened-v1") failures.push(`course-map Week ${w.week}: authority_version missing or stale`);
+    }
     const mid=map.weeks.find(w=>w.week===18);
     const fin=map.weeks.find(w=>w.week===36);
     if(!/midterm|\bMID\b/i.test(String(mid?.title||""))) failures.push("Week 18 is not identified as MID/midterm in course-map.json");
@@ -47,7 +56,20 @@ for(let w=1;w<=36;w++){
   const weekDir=path.join(root,"weeks",`week-${ws}`);
   const weekIndex=path.join(weekDir,"index.html");
   if(!exists(weekIndex)) failures.push(`missing weekly index: week-${ws}/index.html`);
-  else weeklyIndexCount++;
+  else {
+    weeklyIndexCount++;
+    const weekHtml=read(weekIndex);
+    const markerCount=(weekHtml.match(/data-canonical-week-contract="2026-11-22-hardened-v1"/g)||[]).length;
+    if(markerCount!==1) failures.push(`week-${ws}/index.html: canonical week-contract marker count ${markerCount}; expected 1`);
+    const mw=Array.isArray(map?.weeks)?map.weeks.find(x=>x.week===w):null;
+    if(mw){
+      const htmlEscape=s=>String(s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;");
+      for(const key of ["quantitative","evidence_contract","inquiry_contract","retrieval_contract"]){
+        const expected=htmlEscape(mw[key]||"");
+        if(expected && !weekHtml.includes(expected)) failures.push(`week-${ws}/index.html: stale ${key} versus course-map.json`);
+      }
+    }
+  }
   for(let d=1;d<=5;d++){
     const ds=String(d).padStart(2,"0");
     const rel=`weeks/week-${ws}/lessons/day-${ds}.html`;
