@@ -56,5 +56,27 @@
       "sourceStatus": "strict-source-pass",
       "dedicatedAudit": "courses/science/tools/audit-physics12-strict-certification-v1.mjs"
     }
-  ]
+  ],
+  "subjectEngineBoundary": {
+    "scienceOwnsOnlyScienceCurriculumAndProgression": true,
+    "peerSubjectEngines": [
+      {
+        "subject": "English / Language Arts",
+        "authority": "independent subject engine"
+      },
+      {
+        "subject": "Social Studies",
+        "authority": "independent subject engine"
+      },
+      {
+        "subject": "Mathematics",
+        "authority": "independent subject engine"
+      },
+      {
+        "subject": "Science",
+        "authority": "independent subject engine"
+      }
+    ],
+    "prohibition": "The Science program contract must not claim progression, mastery, assessment, persistence, or runtime authority for English, Social Studies, or Mathematics."
+  }
 }
