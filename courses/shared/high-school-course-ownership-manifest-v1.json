@@ -8,7 +8,11 @@
     "compatibilityRoutesOwnCurriculum": false,
     "previewRoutesOwnCurriculum": false,
     "catalogPlansOwnAssessmentAuthority": false,
-    "federatedHandoffsMustRemainExplicit": true
+    "federatedHandoffsMustRemainExplicit": true,
+    "activeLegacyDependencyRule": "zero-runtime-dependencies-on-courses/shared/shared",
+    "profileRuntimeContract": "grades/shared/high-school-profile-runtime-v2.json",
+    "releaseCertification": "courses/shared/high-school-release-certification-v1.json",
+    "worldLanguagesFederation": "courses/shared/high-school-world-languages-federation-v1.json"
   },
   "families": [
     {
@@ -327,6 +331,8 @@
     "nestedLegacyRoot": "courses/shared/shared/",
     "nestedLegacyClassification": "compatibility-existing-do-not-add-new-dependencies",
     "readinessTemplate": "courses/shared/shared/course-readiness-template.json",
-    "assessmentAuthority": "courses/shared/shared/assessment-authority/"
+    "assessmentAuthority": "courses/shared/shared/assessment-authority/",
+    "legacyDependencyValidator": "tools/validate-high-school-legacy-dependencies-v1.cjs",
+    "activeRuntimeDependenciesAllowed": 0
   }
 }
