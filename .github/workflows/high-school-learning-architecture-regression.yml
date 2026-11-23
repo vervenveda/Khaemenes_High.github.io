@@ -21,6 +21,11 @@ on:
       - 'courses/science/chemistry-11/**'
       - 'courses/science/physics-engineering-12/**'
       - 'courses/social-studies/grade-*/**'
+      - 'courses/physical-education/**'
+      - 'courses/electives/psychology-101/**'
+      - 'courses/capstone/senior-capstone/**'
+      - 'courses/shared/high-school-program-contract-v1.json'
+      - 'tools/validate-high-school-program-contract-v1.cjs'
       - 'mentor-contract.json'
       - 'tools/validate-high-school-learning-architecture.mjs'
       - 'tools/test-social-studies-grade10-session-bridge.mjs'
@@ -33,6 +38,10 @@ on:
       - 'courses/mathematics/**'
       - 'courses/science/**'
       - 'courses/social-studies/**'
+      - 'courses/physical-education/**'
+      - 'courses/electives/psychology-101/**'
+      - 'courses/capstone/**'
+      - 'tools/validate-high-school-program-contract-v1.cjs'
       - 'mentor-contract.json'
       - 'tools/validate-high-school-learning-architecture.mjs'
   workflow_dispatch:
@@ -52,6 +61,8 @@ jobs:
       - uses: actions/setup-node@v6
         with:
           node-version: '24'
+      - name: Validate High School program contract
+        run: node tools/validate-high-school-program-contract-v1.cjs
       - name: Validate High School learning architecture
         run: node tools/validate-high-school-learning-architecture.mjs
       - name: Verify Grade 10 learner-bound Monte Carlo sessions
