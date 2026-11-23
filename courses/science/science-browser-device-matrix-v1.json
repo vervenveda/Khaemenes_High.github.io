@@ -1,0 +1,65 @@
+{
+  "schema": "khaemenes.high-school-science.browser-device-matrix.v1",
+  "established": "2026-11-23",
+  "certification_boundary": "Chrome smoke/load matrix; not assistive-technology or human visual certification",
+  "viewports": [
+    {
+      "name": "desktop",
+      "width": 1440,
+      "height": 1000
+    },
+    {
+      "name": "tablet-landscape",
+      "width": 1024,
+      "height": 768
+    },
+    {
+      "name": "tablet-portrait",
+      "width": 768,
+      "height": 1024
+    },
+    {
+      "name": "narrow-stress",
+      "width": 255,
+      "height": 900
+    }
+  ],
+  "routes": [
+    {
+      "grade": 9,
+      "path": "courses/science/integrated-science-9/units/unit-02/lessons/day-01.html",
+      "engine": "science9-v1"
+    },
+    {
+      "grade": 10,
+      "path": "courses/science/biology-10/weeks/week-04/lessons/day-02.html",
+      "engine": "upper-science-v1"
+    },
+    {
+      "grade": 11,
+      "path": "courses/science/chemistry-11/weeks/week-14/lessons/day-03.html",
+      "engine": "upper-science-v1"
+    },
+    {
+      "grade": 12,
+      "path": "courses/science/physics-engineering-12/weeks/week-30/lessons/day-04.html",
+      "engine": "upper-science-v1"
+    }
+  ],
+  "smoke_expectations": [
+    "HTTP load succeeds",
+    "rendered DOM is non-empty",
+    "designated science engine marker is present",
+    "viewport meta is present",
+    "page can be loaded at desktop/tablet/narrow widths",
+    "representative page can be printed to PDF by headless Chrome"
+  ],
+  "manual_release_gates": [
+    "keyboard-only navigation",
+    "screen-reader semantics",
+    "touch target usability",
+    "visual clipping/overlap inspection",
+    "offline reload behavior",
+    "learner persistence and export/import round trip"
+  ]
+}
