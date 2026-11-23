@@ -13,6 +13,16 @@ on:
       - 'courses/shared/course-execution-matrix-v1.json'
       - 'courses/shared/high-school-course-ownership-manifest-v1.json'
       - 'tools/validate-high-school-course-ownership-v1.cjs'
+      - 'tools/validate-high-school-legacy-dependencies-v1.cjs'
+      - 'grades/shared/high-school-profile-runtime-v2.json'
+      - 'tools/validate-high-school-profile-runtime-v2.cjs'
+      - 'courses/shared/high-school-world-languages-federation-v1.json'
+      - 'tools/validate-high-school-world-languages-federation-v1.cjs'
+      - 'tools/validate-high-school-offline-topology-v1.cjs'
+      - 'courses/shared/high-school-release-certification-v1.json'
+      - 'tools/validate-high-school-release-certification-v1.cjs'
+      - 'service-worker.js'
+      - 'manifest.webmanifest'
       - 'courses/electives/**'
       - 'electives/**'
       - 'tests/test-course-execution-matrix.cjs'
@@ -57,6 +67,11 @@ jobs:
       - name: Check course routes, grade and engine contracts
         run: |
           node tools/validate-high-school-course-ownership-v1.cjs
+          node tools/validate-high-school-legacy-dependencies-v1.cjs
+          node tools/validate-high-school-profile-runtime-v2.cjs
+          node tools/validate-high-school-world-languages-federation-v1.cjs
+          node tools/validate-high-school-offline-topology-v1.cjs
+          node tools/validate-high-school-release-certification-v1.cjs
           node tests/test-high-school-release-gate.cjs
           node tests/test-service-worker-current-runtime.cjs
           node tests/test-portfolio-evidence-receipts.cjs
