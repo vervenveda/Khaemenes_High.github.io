@@ -36,7 +36,8 @@ const inline=[...studio.matchAll(/<script>([\s\S]*?)<\/script>/g)];
 assert.equal(inline.length,1);
 new vm.Script(inline[0][1]);
 assert(studio.includes("credentials:\"same-origin\""));
-assert(!/<script[^>]*src=/i.test(studio));
+const externalScripts=[...studio.matchAll(/<script[^>]*src=["']([^"']+)["'][^>]*>/gi)].map(m=>m[1]);
+assert.deepEqual(externalScripts,["https://vervenveda.com/assets/vnv-ecosystem-toolbar.js"],"Vocabulary Studio may load only the canonical VNV ecosystem toolbar externally");
 for(const course of ["pre-algebra","algebra-1","geometry","algebra-2"]){
  const home=source("courses/mathematics/"+course+"/index.html");
  assert(home.includes("../tools/vocabulary-studio.html?course="+course),"course homepage must link study page");
