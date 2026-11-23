@@ -1,0 +1,59 @@
+{
+  "schema": "khaemenes.high-school-science.program-contract.v2",
+  "version": 2,
+  "masteryFloor": 80,
+  "lessonInventory": {
+    "grades": 4,
+    "lessonsPerGrade": 180,
+    "total": 720
+  },
+  "canonicalDocuments": {
+    "progression": "courses/science/HIGH_SCHOOL_SCIENCE_PROGRESSION_MAP.md",
+    "retrieval": "courses/science/HIGH_SCHOOL_SCIENCE_RETRIEVAL_RETENTION_MAP.md",
+    "laboratory": "courses/science/HIGH_SCHOOL_SCIENCE_LAB_MASTERY_LADDER.md"
+  },
+  "certificationPolicy": {
+    "departmentAuditRole": "composite-program-coherence-and-inventory",
+    "courseSpecificCertificationIsAuthoritative": true,
+    "protectedAssessmentWeeksMayUseDistinctIntegrityContract": true,
+    "genericKeywordCoverageIsDiagnosticNotCourseCertification": true,
+    "operationalBrowserDeviceAndTranscriptGatesRemainSeparate": true
+  },
+  "priorYearRetrieval": {
+    "minimumPublicCumulativePracticePercent": 5,
+    "maximumTargetPercent": 10,
+    "grades": [
+      "10",
+      "11",
+      "12"
+    ],
+    "protectedAssessmentAlternative": "confidential items or supervised performance evidence; never expose protected items/keys to prove compliance"
+  },
+  "courses": [
+    {
+      "grade": 9,
+      "id": "integrated-science-9",
+      "releaseEvidence": "courses/science/integrated-science-9/RELEASE-CERTIFICATION.md",
+      "sourceStatus": "source-validated-conditional"
+    },
+    {
+      "grade": 10,
+      "id": "biology-10",
+      "releaseEvidence": "courses/science/biology-10/RELEASE_CERTIFICATION.md",
+      "sourceStatus": "source-curriculum-pass"
+    },
+    {
+      "grade": 11,
+      "id": "chemistry-11",
+      "releaseEvidence": "courses/science/chemistry-11/RELEASE_CERTIFICATION.md",
+      "sourceStatus": "source-curriculum-pass"
+    },
+    {
+      "grade": 12,
+      "id": "physics-engineering-12",
+      "releaseEvidence": "courses/science/physics-engineering-12/RELEASE_CERTIFICATION.md",
+      "sourceStatus": "strict-source-pass",
+      "dedicatedAudit": "courses/science/tools/audit-physics12-strict-certification-v1.mjs"
+    }
+  ]
+}
