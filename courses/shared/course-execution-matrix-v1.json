@@ -9,7 +9,10 @@
     "offline": "Never require a third-party runtime for core lesson completion.",
     "handoff_boundary": "Precalculus and Calculus outbound destinations are verified; cross-repository return-record synchronization remains pending and must not be represented as certified.",
     "authority_contract": "Every matrix entry declares navigation, assessment, mastery, persistence, portfolio publication and completion-record ownership. 'pending-verification' is an explicit HOLD, never an implied certification.",
-    "ownership_manifest": "courses/shared/high-school-course-ownership-manifest-v1.json"
+    "ownership_manifest": "courses/shared/high-school-course-ownership-manifest-v1.json",
+    "program_contract": "courses/shared/high-school-program-contract-v1.json",
+    "federated_return_record_contract": "courses/shared/high-school-federated-return-record-v1.json",
+    "runtime_certification_matrix": "courses/shared/high-school-runtime-certification-matrix-v1.json"
   },
   "courses": [
     {
