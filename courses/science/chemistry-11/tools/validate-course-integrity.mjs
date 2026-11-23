@@ -47,6 +47,30 @@ if(map){
   }
 }
 
+
+if(map?.course?.instructional_time_model){
+  const tm=map.course.instructional_time_model;
+  const blockMinutes=Number(tm.daily_block_minutes);
+  const recomputedDenominator=180*blockMinutes;
+  const recomputedNumerator=(map.weeks||[]).reduce((sum,w)=>sum+Number(w?.inquiry_minutes_plan?.total||0),0);
+  const recomputedPercent=recomputedDenominator?recomputedNumerator/recomputedDenominator*100:0;
+  if(blockMinutes!==50) failures.push(`inquiry-time daily_block_minutes=${blockMinutes}; expected 50`);
+  if(Number(tm.total_instructional_minutes)!==recomputedDenominator) failures.push(`inquiry-time denominator ${tm.total_instructional_minutes}; recomputed ${recomputedDenominator}`);
+  if(Number(tm.planned_qualifying_inquiry_minutes)!==recomputedNumerator) failures.push(`inquiry-time numerator ${tm.planned_qualifying_inquiry_minutes}; recomputed ${recomputedNumerator}`);
+  if(Math.abs(Number(tm.planned_inquiry_percent)-recomputedPercent)>0.01) failures.push(`inquiry-time percent ${tm.planned_inquiry_percent}; recomputed ${recomputedPercent.toFixed(2)}`);
+  if(recomputedPercent<25) failures.push(`planned inquiry share ${recomputedPercent.toFixed(2)}%; expected >=25%`);
+  for(const w of map.weeks||[]){
+    const plan=w.inquiry_minutes_plan||{};
+    if([18,36].includes(w.week)){
+      if(Number(plan.total||0)!==0) failures.push(`Week ${w.week}: assessment week must contribute 0 new inquiry minutes`);
+    }else{
+      if(Number(plan.monday)!==15||Number(plan.thursday)!==50||Number(plan.friday)!==15||Number(plan.total)!==80){
+        failures.push(`Week ${w.week}: inquiry minute plan must be Monday 15 + Thursday 50 + Friday 15 = 80`);
+      }
+    }
+  }
+}else failures.push("course-map instructional_time_model missing");
+
 let lessonCount=0;
 let weeklyIndexCount=0;
 let minWords=Infinity;
@@ -91,6 +115,14 @@ for(let w=1;w<=36;w++){
 }
 if(lessonCount!==180) failures.push(`lesson inventory ${lessonCount}/180`);
 if(weeklyIndexCount!==36) failures.push(`weekly index inventory ${weeklyIndexCount}/36`);
+
+
+const inquiryTimeDoc=path.join(root,"docs","INQUIRY_TIME_EVIDENCE_V1.md");
+if(!exists(inquiryTimeDoc)) failures.push("docs/INQUIRY_TIME_EVIDENCE_V1.md missing");
+else {
+  const s=read(inquiryTimeDoc);
+  if(!/30\.22%/.test(s)||!/2,720 qualifying inquiry minutes/.test(s)||!/9,000 planned instructional minutes/.test(s)) failures.push("inquiry-time evidence document totals are missing or stale");
+}
 
 const frameworkPath=path.join(root,"ASSESSMENT_FRAMEWORK.md");
 const securePath=path.join(root,"assessments","SECURE_ASSESSMENT_BLUEPRINT.md");
