@@ -117,3 +117,6 @@
 - Final ordinary-depth verification: **HOLD — remaining below-floor lessons: W19D1:494, W19D2:493, W19D3:462, W19D4:465, W19D5:462, W20D1:482, W20D2:476, W20D3:478, W20D4:442, W20D5:491.**
 - Preserved safe simulation/light-model boundaries, browser-local learner work, mastery semantics, routes, and navigation.
 - Next target: Weeks 21–22 — Angular Momentum, then Rotational Energy & Rolling.
+### Final Weeks 19–20 verification
+- Final ordinary-depth verification: **HOLD — remaining below-floor lessons: W19D3:493, W19D4:492, W19D5:490, W20D4:473.**
+- All ten pages mount exactly one canonical Upper Science engine and retain explicit vocabulary, CER/evidence revision, spiral retrieval, uncertainty/model-limit reasoning, and safe rotational/lever investigation boundaries.
