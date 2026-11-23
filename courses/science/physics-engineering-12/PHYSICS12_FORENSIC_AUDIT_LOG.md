@@ -159,3 +159,12 @@
 ### Weeks 23–24 final depth closure
 - Final depth status: **PASS — all ten lessons now meet or exceed the 500-word ordinary-instruction floor.**
 - The earlier provisional HOLD was resolved with targeted transfer checks rather than bulk padding.
+## 2026-11-23 · Hardening block 13 — Weeks 25–26
+
+- Audited all ten Week 25–26 lessons. Both weeks began as a major depth regression with pages under ~225 words, inconsistent vocabulary markers, and no canonical Upper Science engine.
+- Mounted the canonical Upper Science engine on all ten pages with exactly one loader per lesson.
+- Week 25 was substantially deepened around sound propagation, pitch/frequency vs. intensity/loudness, resonance curves, damping, beats, standing-wave boundaries, frequency-sweep uncertainty, hearing-safe investigation boundaries, CER, and retrieval.
+- Week 26 was substantially deepened around density, hydrostatic pressure, Archimedes' principle, displaced volume, floating fraction, stability, repeated-trial uncertainty, force balance, CER, and retrieval.
+- Final ordinary-depth verification: **HOLD — remaining below-floor lessons: W25D1:462, W25D2:420, W25D3:409, W25D4:423, W25D5:444, W26D1:390, W26D2:397, W26D3:400, W26D4:396, W26D5:421.**
+- Preserved browser-local learner work, mastery semantics, routes, navigation, and safe investigation boundaries.
+- Next target: Weeks 27–28 — Fluid Flow, then Thermal Physics & Gas Energy.
