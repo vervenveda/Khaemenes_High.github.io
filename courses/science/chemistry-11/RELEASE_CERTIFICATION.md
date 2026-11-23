@@ -29,3 +29,7 @@ This is a **source-level curriculum certification only**. Browser/device behavio
 
 ## Status
 **CHEMISTRY 11 SOURCE-LEVEL CURRICULUM CERTIFICATION: PASS**
+## Final re-audit confirmation
+The completed Week 01–36 forensic hardening pass reconfirmed the full **180-lesson / 36-week** Chemistry 11 inventory and closed the final instructional and assessment-boundary review through Week 36. The source-level curriculum certification remains **PASS**.
+
+Operational/runtime certification remains outside this source-level PASS.
