@@ -271,3 +271,14 @@
 - Week 36 remains intentionally exempt from the ordinary 500-word teaching-page floor; its certification criterion is assessment integrity, correction quality, and authority separation.
 - Week 36 source-level protected-boundary result: **PASS**.
 - Next target: full 180-lesson Physics 12 source certification and department-level 720-lesson science certification review.
+
+
+## 2026-11-23 · Full-course strict certification checkpoint
+
+- Completed Weeks 35–36 hardening and moved Physics 12 into full-course certification review.
+- Generic high-school science certification confirms Physics inventory **180/180** and canonical Upper Science engine coverage **180/180**.
+- The strict visible daily-page contract remains **HOLD**. The current generic audit reports vocabulary 180/180, CER/evidence 175/180, inquiry/lab/design 119/180, uncertainty/limitations 169/180, but still sees major visible-marker gaps in standards, phenomenon framing, differentiation, investigation language, and teacher guidance.
+- Confirmed the Upper Science engine organizes existing lesson sections and does not inject missing curriculum content; therefore the visible gaps cannot honestly be dismissed as runtime-provided.
+- Added `STANDARDS_CROSSWALK.md` and `RELEASE_CERTIFICATION.md` so course-level standards mapping, source-hardening status, strict A+++ HOLD, and separate operational gates are explicit.
+- Certification language is now normalized: Physics 12 is **SOURCE-HARDENED / STRICT A+++ CERTIFICATION HOLD**, not falsely declared fully certified.
+- Next target: reconcile daily visible-contract gaps against the canonical course map, then rerun the 180-lesson Physics strict audit before department-level 720-lesson certification.
