@@ -95,7 +95,7 @@ function boot(){
  $("#exportButton").onclick=()=>{const ev=normalizeEvidence();const blob=new Blob([JSON.stringify(ev,null,2)],{type:"application/json"}),url=URL.createObjectURL(blob),a=document.createElement("a");a.href=url;a.download=C.export_name||`${C.id}.json`;a.click();setTimeout(()=>URL.revokeObjectURL(url),500)};
  $("#themeToggle")?.addEventListener("click",()=>{document.documentElement.dataset.theme=document.documentElement.dataset.theme==="light"?"dark":"light"});
  $("#printButton")?.addEventListener("click",()=>print());
- installDepthStyles();installNotice();render();const ev=normalizeEvidence();if(ev.lastResult)showResult(ev.lastResult,false)
+ installDepthStyles();installNotice();render();const bootEvidence=normalizeEvidence();if(bootEvidence.lastResult)showResult(bootEvidence.lastResult,false)
 }
 if(window.KhaemenesAlgebra1ExamDepth)boot();else{const s=document.createElement("script");s.src=depthSrc;s.async=false;s.onload=boot;s.onerror=boot;document.head.appendChild(s)}
 })();
