@@ -15,12 +15,14 @@ function el(tag,className,text){const node=document.createElement(tag);if(classN
 const SCIENCE_NOTEBOOK="https://vervenveda.com/Khaemenes_High.github.io/courses/science/investigation-notebook/";
 function addCourseActions(card,course,id,current,pinned){
  const actions=el("div","schedule-actions");
- const open=el("a","schedule-open","Class");
  const first=window.KhaemenesHighEightClass?.FIRST_STEPS?.[id]||course.defaultContinue||course.home;
- open.href=current?.url||first;
+ const destination=current?.url||first;
+ const publicLanding=Boolean(destination&&course.home&&new URL(destination,location.href).pathname.replace(new RegExp("/+$"),"/")===new URL(course.home,location.href).pathname.replace(new RegExp("/+$"),"/"));
+ const open=el("a","schedule-open",publicLanding?"Course Options":"Class");
+ open.href=destination;
  open.dataset.launchCourse=id;
- open.title=current?.detail||"Open the current required lesson or course step";
- open.setAttribute("aria-label","Open "+course.title+" at the current required lesson or step");
+ open.title=current?.detail||(publicLanding?"Open course options":"Open the current required lesson or course step");
+ open.setAttribute("aria-label",(publicLanding?"Open course options for ":"Open current lesson or step in ")+course.title);
  open.addEventListener("click",()=>registry.recordLaunch(id,open.href.replace(location.origin,""),current?.label||course.title));
  actions.append(open);
  const toggle=el("button","schedule-open schedule-secondary",pinned?"Unpin Class":"Pin Class");
