@@ -46,7 +46,8 @@ const runtimeHolds=runtime.classes.map(row=>({
   id:row.id,
   browserRuntime:row.browserRuntime,
   deviceAcceptance:row.deviceAcceptance,
-  offlineAcceptance:row.offlineAcceptance
+  offlineAcceptance:row.offlineAcceptance,
+  evidence:row.evidence||null
 }));
 const commit=(spawnSync("git",["rev-parse","HEAD"],{cwd:root,encoding:"utf8"}).stdout||"").trim()||process.env.GITHUB_SHA||"unknown";
 const report={
