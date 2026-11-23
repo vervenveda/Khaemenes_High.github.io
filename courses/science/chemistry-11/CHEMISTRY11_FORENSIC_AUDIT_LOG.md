@@ -653,3 +653,39 @@ These are post-certification hardening targets; they do not revoke the existing 
 **Bubble 1 — no course-wide Chemistry 11 CI integrity workflow: CLOSED.**
 
 The source-level curriculum certification remains PASS. Runtime/browser/accessibility/protected-assessment authority remain separate gates.
+
+
+## 2026-11-22 · Post-certification Bubble 4 closure — canonical course-map / weekly authority synchronization
+
+### Repair
+- Upgraded `course-map.json` from schema 2.0 to **2.1**.
+- Added course-level curriculum-authority and authority-version declarations.
+- Added explicit hardened contracts to all **36 weeks**:
+  - `quantitative`
+  - `evidence_contract`
+  - `inquiry_contract`
+  - `retrieval_contract`
+  - `authority_version`
+- Synchronized `CURRICULUM_MAP.md` with a 36-row canonical weekly-contract table.
+- Synchronized all **36 weekly landing pages** with a visible `data-canonical-week-contract="2026-11-22-hardened-v1"` summary covering quantitative, evidence, inquiry, and retrieval/transfer expectations.
+- The refreshed authority now accurately reflects the hardened depth added during certification, including Ksp/Qsp and post-mixing calculations (Week 28), E°cell/ΔG° electrochemistry (Week 33), capstone sensitivity/source traceability (Week 35), and cross-unit readiness/portfolio correction architecture (Week 36).
+
+### Regression protection
+- Hardened `tools/validate-course-integrity.mjs` to require:
+  - schema 2.1 and current authority version,
+  - all four canonical week-contract fields for Weeks 01–36,
+  - exactly one canonical weekly-contract marker on every weekly landing page,
+  - exact weekly landing-page contract text synchronized to `course-map.json`.
+- GitHub compare from canonical-map commit through validator hardening confirms **36/36 weekly index pages changed**, plus governance map and validator updates.
+- GitHub Actions `source-integrity` job `137421386677`: **PASS / success** on commit `0b023922bb3d5c930b665274f5f6bf03286cbd3d`.
+
+### Key commits
+- Canonical map schema/contracts: `97264be3f9dd299069b0fbd8313f28b930eb75ba`
+- Governance map synchronization: `4aebf3103d8d9e0a20d3c1ae5435d86ff0876f5b`
+- Weekly landing synchronization: Weeks 01–36 completed across 36 commits.
+- CI synchronization guard: `0b023922bb3d5c930b665274f5f6bf03286cbd3d`
+
+### Status
+**Bubble 4 — governance/course-map descriptions lag hardened lesson depth: CLOSED.**
+
+The course-map, governance map, weekly landing summaries, and CI validator now share one hardened curriculum authority contract. Bubble 5 remains distinct: it concerns eliminating the separate generic weekly-shell implementation by deriving the shell itself from canonical data rather than merely keeping its summary synchronized.
