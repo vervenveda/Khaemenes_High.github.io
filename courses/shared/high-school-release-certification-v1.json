@@ -1,0 +1,284 @@
+{
+  "schema": "khaemenes-high-release-certification-v1",
+  "version": 1,
+  "policy": {
+    "orderedStates": [
+      "route-present",
+      "engine-contract-pass",
+      "curriculum-pass",
+      "browser-runtime-pass",
+      "device-pass",
+      "offline-pass",
+      "release-certified"
+    ],
+    "routeExistenceIsNotReleaseCertification": true,
+    "localStaticChecksCannotCertifyBrowserOrDeviceBehavior": true,
+    "federatedHandoffsCannotBeReleaseCertifiedWithoutReturnRecordAudit": true
+  },
+  "courses": [
+    {
+      "id": "pre-algebra",
+      "entry": "courses/mathematics/pre-algebra/index.html",
+      "route": "pass",
+      "engineContract": "pass",
+      "curriculum": "pass-static-contract",
+      "browserRuntime": "pending",
+      "deviceAcceptance": "pending",
+      "offlineAcceptance": "pending",
+      "releaseState": "curriculum-pass"
+    },
+    {
+      "id": "algebra-1",
+      "entry": "courses/mathematics/algebra-1/index.html",
+      "route": "pass",
+      "engineContract": "pass",
+      "curriculum": "pass-static-contract",
+      "browserRuntime": "pending",
+      "deviceAcceptance": "pending",
+      "offlineAcceptance": "pending",
+      "releaseState": "curriculum-pass"
+    },
+    {
+      "id": "geometry",
+      "entry": "courses/mathematics/geometry/index.html",
+      "route": "pass",
+      "engineContract": "pass",
+      "curriculum": "pass-static-contract",
+      "browserRuntime": "pending",
+      "deviceAcceptance": "pending",
+      "offlineAcceptance": "pending",
+      "releaseState": "curriculum-pass"
+    },
+    {
+      "id": "algebra-2",
+      "entry": "courses/mathematics/algebra-2/index.html",
+      "route": "pass",
+      "engineContract": "pass",
+      "curriculum": "pass-static-contract",
+      "browserRuntime": "pending",
+      "deviceAcceptance": "pending",
+      "offlineAcceptance": "pending",
+      "releaseState": "curriculum-pass"
+    },
+    {
+      "id": "english-9",
+      "entry": "courses/language-arts/english-9/index.html",
+      "route": "pass",
+      "engineContract": "pass",
+      "curriculum": "pass-static-contract",
+      "browserRuntime": "pending",
+      "deviceAcceptance": "pending",
+      "offlineAcceptance": "pending",
+      "releaseState": "curriculum-pass"
+    },
+    {
+      "id": "english-10",
+      "entry": "courses/language-arts/english-10/index.html",
+      "route": "pass",
+      "engineContract": "pass",
+      "curriculum": "pass-static-contract",
+      "browserRuntime": "pending",
+      "deviceAcceptance": "pending",
+      "offlineAcceptance": "pending",
+      "releaseState": "curriculum-pass"
+    },
+    {
+      "id": "english-11",
+      "entry": "courses/language-arts/english-11/index.html",
+      "route": "pass",
+      "engineContract": "pass",
+      "curriculum": "pass-static-contract",
+      "browserRuntime": "pending",
+      "deviceAcceptance": "pending",
+      "offlineAcceptance": "pending",
+      "releaseState": "curriculum-pass"
+    },
+    {
+      "id": "english-12",
+      "entry": "courses/language-arts/english-12/index.html",
+      "route": "pass",
+      "engineContract": "pass",
+      "curriculum": "pass-static-contract",
+      "browserRuntime": "pending",
+      "deviceAcceptance": "pending",
+      "offlineAcceptance": "pending",
+      "releaseState": "curriculum-pass"
+    },
+    {
+      "id": "integrated-science-9",
+      "entry": "courses/science/integrated-science-9/index.html",
+      "route": "pass",
+      "engineContract": "pass",
+      "curriculum": "pass-static-contract",
+      "browserRuntime": "pending",
+      "deviceAcceptance": "pending",
+      "offlineAcceptance": "pending",
+      "releaseState": "curriculum-pass"
+    },
+    {
+      "id": "biology-10",
+      "entry": "courses/science/biology-10/index.html",
+      "route": "pass",
+      "engineContract": "pass",
+      "curriculum": "pass-static-contract",
+      "browserRuntime": "pending",
+      "deviceAcceptance": "pending",
+      "offlineAcceptance": "pending",
+      "releaseState": "curriculum-pass"
+    },
+    {
+      "id": "chemistry-11",
+      "entry": "courses/science/chemistry-11/index.html",
+      "route": "pass",
+      "engineContract": "pass",
+      "curriculum": "pass-static-contract",
+      "browserRuntime": "pending",
+      "deviceAcceptance": "pending",
+      "offlineAcceptance": "pending",
+      "releaseState": "curriculum-pass"
+    },
+    {
+      "id": "physics-engineering-12",
+      "entry": "courses/science/physics-engineering-12/index.html",
+      "route": "pass",
+      "engineContract": "pass",
+      "curriculum": "pass-static-contract",
+      "browserRuntime": "pending",
+      "deviceAcceptance": "pending",
+      "offlineAcceptance": "pending",
+      "releaseState": "curriculum-pass"
+    },
+    {
+      "id": "social-studies-9",
+      "entry": "courses/social-studies/grade-09/index.html",
+      "route": "pass",
+      "engineContract": "pass",
+      "curriculum": "pass-static-contract",
+      "browserRuntime": "pending",
+      "deviceAcceptance": "pending",
+      "offlineAcceptance": "pending",
+      "releaseState": "curriculum-pass"
+    },
+    {
+      "id": "social-studies-10",
+      "entry": "courses/social-studies/grade-10/index.html",
+      "route": "pass",
+      "engineContract": "pass",
+      "curriculum": "pass-static-contract",
+      "browserRuntime": "pending",
+      "deviceAcceptance": "pending",
+      "offlineAcceptance": "pending",
+      "releaseState": "curriculum-pass"
+    },
+    {
+      "id": "social-studies-11",
+      "entry": "courses/social-studies/grade-11/index.html",
+      "route": "pass",
+      "engineContract": "pass",
+      "curriculum": "pass-static-contract",
+      "browserRuntime": "pending",
+      "deviceAcceptance": "pending",
+      "offlineAcceptance": "pending",
+      "releaseState": "curriculum-pass"
+    },
+    {
+      "id": "social-studies-12",
+      "entry": "courses/social-studies/grade-12/index.html",
+      "route": "pass",
+      "engineContract": "pass",
+      "curriculum": "pass-static-contract",
+      "browserRuntime": "pending",
+      "deviceAcceptance": "pending",
+      "offlineAcceptance": "pending",
+      "releaseState": "curriculum-pass"
+    },
+    {
+      "id": "physical-education-10",
+      "entry": "courses/physical-education/grade-10.html",
+      "route": "pass",
+      "engineContract": "pass",
+      "curriculum": "pass-static-contract",
+      "browserRuntime": "pending",
+      "deviceAcceptance": "pending",
+      "offlineAcceptance": "pending",
+      "releaseState": "curriculum-pass"
+    },
+    {
+      "id": "physical-education-11",
+      "entry": "courses/physical-education/grade-11.html",
+      "route": "pass",
+      "engineContract": "pass",
+      "curriculum": "pass-static-contract",
+      "browserRuntime": "pending",
+      "deviceAcceptance": "pending",
+      "offlineAcceptance": "pending",
+      "releaseState": "curriculum-pass"
+    },
+    {
+      "id": "physical-education-12",
+      "entry": "courses/physical-education/grade-12.html",
+      "route": "pass",
+      "engineContract": "pass",
+      "curriculum": "pass-static-contract",
+      "browserRuntime": "pending",
+      "deviceAcceptance": "pending",
+      "offlineAcceptance": "pending",
+      "releaseState": "curriculum-pass"
+    },
+    {
+      "id": "senior-capstone",
+      "entry": "courses/capstone/senior-capstone/index.html",
+      "route": "pass",
+      "engineContract": "pass",
+      "curriculum": "pass-static-contract",
+      "browserRuntime": "pending",
+      "deviceAcceptance": "pending",
+      "offlineAcceptance": "pending",
+      "releaseState": "curriculum-pass"
+    },
+    {
+      "id": "precalculus-trigonometry",
+      "entry": "courses/mathematics/precalculus-trigonometry/index.html",
+      "route": "pass",
+      "engineContract": "outbound-only",
+      "curriculum": "federated",
+      "browserRuntime": "pending",
+      "deviceAcceptance": "pending",
+      "offlineAcceptance": "pending",
+      "releaseState": "route-present"
+    },
+    {
+      "id": "calculus-1",
+      "entry": "courses/mathematics/calculus-1/index.html",
+      "route": "pass",
+      "engineContract": "outbound-only",
+      "curriculum": "federated",
+      "browserRuntime": "pending",
+      "deviceAcceptance": "pending",
+      "offlineAcceptance": "pending",
+      "releaseState": "route-present"
+    },
+    {
+      "id": "physical-education-9",
+      "entry": "courses/physical-education/index.html",
+      "route": "pass",
+      "engineContract": "pass",
+      "curriculum": "pass-static-contract",
+      "browserRuntime": "pending",
+      "deviceAcceptance": "pending",
+      "offlineAcceptance": "pending",
+      "releaseState": "curriculum-pass"
+    },
+    {
+      "id": "psychology-101",
+      "entry": "courses/electives/psychology-101/index.html",
+      "route": "pass",
+      "engineContract": "pass",
+      "curriculum": "pass-static-contract",
+      "browserRuntime": "pending",
+      "deviceAcceptance": "pending",
+      "offlineAcceptance": "pending",
+      "releaseState": "curriculum-pass"
+    }
+  ]
+}
