@@ -65,14 +65,20 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: '22'
+      - name: Validate canonical course ownership
+        run: node tools/validate-high-school-course-ownership-v1.cjs
+      - name: Validate zero legacy shared runtime dependencies
+        run: node tools/validate-high-school-legacy-dependencies-v1.cjs
+      - name: Validate canonical profile runtime ownership
+        run: node tools/validate-high-school-profile-runtime-v2.cjs
+      - name: Validate World Languages federation
+        run: node tools/validate-high-school-world-languages-federation-v1.cjs
+      - name: Validate offline topology
+        run: node tools/validate-high-school-offline-topology-v1.cjs
+      - name: Validate release certification states
+        run: node tools/validate-high-school-release-certification-v1.cjs
       - name: Check course routes, grade and engine contracts
         run: |
-          node tools/validate-high-school-course-ownership-v1.cjs
-          node tools/validate-high-school-legacy-dependencies-v1.cjs
-          node tools/validate-high-school-profile-runtime-v2.cjs
-          node tools/validate-high-school-world-languages-federation-v1.cjs
-          node tools/validate-high-school-offline-topology-v1.cjs
-          node tools/validate-high-school-release-certification-v1.cjs
           node tests/test-high-school-release-gate.cjs
           node tests/test-service-worker-current-runtime.cjs
           node tests/test-portfolio-evidence-receipts.cjs
