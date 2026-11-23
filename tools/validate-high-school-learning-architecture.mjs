@@ -25,7 +25,8 @@ for(const p of shared.filter(x=>x.endsWith(".js"))){
 const registry=JSON.parse(read("courses/shared/high-school-learning-registry.json"));
 assert(registry.schema==="khaemenes-high-learning-registry-v1","Wrong High School learning registry schema.");
 assert(registry.masteryThreshold===80,"High School registry mastery threshold must remain 80%.");
-assert(Array.isArray(registry.courses)&&registry.courses.length===16,"Expected 16 registered local High School core authorities.");
+assert(Array.isArray(registry.courses)&&registry.courses.length===16,"Expected 16 registered local High School core learning authorities; broader ownership belongs to the canonical ownership manifest.");
+assert(registry.ownershipManifest==="courses/shared/high-school-course-ownership-manifest-v1.json","Learning registry must point to the canonical ownership manifest.");
 for(const id of ["english-9","english-10","english-11","english-12","pre-algebra","algebra-1","geometry","algebra-2","integrated-science-9","biology-10","chemistry-11","physics-engineering-12","global-studies-9","us-history-10","government-economics-11","global-politics-12"]){
   assert(registry.courses.some(c=>c.id===id),"Registry missing "+id);
 }
@@ -128,11 +129,11 @@ for(const file of walk(ROOT)){
   if(!html.includes("high-school-learning-context-v1.js"))formativeCoverage.missing.push(rel+" missing high-school-learning-context-v1.js");
   if(!html.includes("high-school-formative-evidence-v1.js"))formativeCoverage.missing.push(rel+" missing high-school-formative-evidence-v1.js");
 }
-assert(formativeCoverage.targets===1482,"Expected 1482 High School formative lesson surfaces; found "+formativeCoverage.targets);
-assert(formativeCoverage.byFamily.english===224,"Expected 224 English formative surfaces; found "+formativeCoverage.byFamily.english);
-assert(formativeCoverage.byFamily.mathematics===372,"Expected 372 Mathematics formative surfaces; found "+formativeCoverage.byFamily.mathematics);
-assert(formativeCoverage.byFamily.science===720,"Expected 720 Science formative surfaces; found "+formativeCoverage.byFamily.science);
-assert(formativeCoverage.byFamily.socialStudies===166,"Expected 166 Social Studies formative surfaces; found "+formativeCoverage.byFamily.socialStudies);
+const expectedFormative=registry.formativeLessonEvidence;
+assert(formativeCoverage.targets===expectedFormative.totalSurfaces,"Registry/formative target drift: expected "+expectedFormative.totalSurfaces+", found "+formativeCoverage.targets);
+for(const family of ["english","mathematics","science","socialStudies"]){
+  assert(formativeCoverage.byFamily[family]===expectedFormative.byFamily[family],"Registry/formative "+family+" drift: expected "+expectedFormative.byFamily[family]+", found "+formativeCoverage.byFamily[family]);
+}
 assert(!formativeCoverage.missing.length,"High School formative coverage gaps:\n"+formativeCoverage.missing.slice(0,40).join("\n"));
 assert(!formativeCoverage.duplicates.length,"Duplicate High School formative markers:\n"+formativeCoverage.duplicates.slice(0,40).join("\n"));
 const formativeSource=read("courses/shared/high-school-formative-evidence-v1.js");
