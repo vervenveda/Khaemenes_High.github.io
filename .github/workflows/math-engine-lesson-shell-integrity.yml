@@ -28,5 +28,8 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 24
+      - name: Reject retired Mathematics engine hooks
+        run: node tools/audit-retired-math-engine-hooks-v1.mjs
+
       - name: Validate Mathematics Engine adapter versions and assessment firewall
         run: node tools/validate-math-engine-version-sync.mjs
