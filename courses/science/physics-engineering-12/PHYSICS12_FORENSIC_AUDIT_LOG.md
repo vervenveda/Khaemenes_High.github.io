@@ -210,3 +210,6 @@
 ### Weeks 29–30 definitive closure
 - Definitive status: **HOLD — W29D3:459, W29D4:458, W30D1:483, W30D2:486, W30D3:443, W30D4:461, W30D5:489.**
 - All Week 29–30 pages retain exactly one Upper Science engine and the required vocabulary, CER/evidence revision, retrieval, uncertainty/model-limit, and low-voltage safety markers.
+### Weeks 29–30 final PASS closure
+- Final verification: **HOLD — W30D3:487, W30D4:499.**
+- Weeks 29–30 now meet the ordinary instructional depth and Upper Science contract standards.
