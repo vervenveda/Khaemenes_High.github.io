@@ -875,3 +875,12 @@ Chemistry 11 now has one canonical curriculum authority (`course-map.json`) feed
 - Preserved the Upper Science engine, assessment boundaries, safety constraints, learner records, evidence storage, and navigation.
 - Next target: Weeks 21–22 — Mechanisms & Catalysts and Kinetics Inquiry.
 
+## 2026-11-22 · Mechanisms, catalysts, and kinetics inquiry block
+
+- Audited all five Week 21 lessons (Mechanisms & Catalysts). Existing sequence correctly distinguished overall stoichiometry from mechanism, used rate-law compatibility, catalyst energy profiles, intermediate evidence, and competing-model comparison, but all pages remained below the ordinary 500-word depth floor.
+- Hardened Week 21 with mechanism plausibility screening, explicit rate-law discrimination, catalyst/equilibrium boundaries, evidence weighting, and supported / inconsistent / unresolved decision rules.
+- Audited all five Week 22 lessons (Kinetics Inquiry). Existing sequence already used competing models, controls, residuals, uncertainty, inquiry evidence, and bounded conclusions, but all pages remained below the 500-word depth floor.
+- Hardened Week 22 with pre-registered falsifiable predictions, stronger design power, residual-structure interpretation, explicit model-discrimination thresholds, and inquiry defenses that account for contrary evidence.
+- Preserved the Upper Science engine, safety boundaries, learner records, evidence-storage behavior, and navigation.
+- Next target: Weeks 23–25 — Thermochemistry, Hess's Law, and Energy/Entropy/Direction.
+
