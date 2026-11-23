@@ -30,7 +30,7 @@ jobs:
       - run: node --check courses/shared/high-school-english-continuation.js
       - run: node --check grades/shared/upper-grade-daily-focus.js
       - run: node --check grades/grade-09/student-profile/student-course-registry.js
-      - run: node --check grades/grade-09/student-profile/seven-class-schedule.js
+      - run: node --check grades/grade-09/student-profile/student-schedule-bar.js
       - run: node tools/test-high-school-english-class-routes.mjs
       - run: node tools/test-high-school-english-student-doorways.mjs
       - run: node tools/test-grade09-lesson-route-normalization.mjs
