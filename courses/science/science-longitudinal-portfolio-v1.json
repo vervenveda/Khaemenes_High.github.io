@@ -1,0 +1,68 @@
+{
+  "schema": "khaemenes.high-school-science.longitudinal-portfolio.v1",
+  "established": "2026-11-23",
+  "authority": "department portfolio evidence spine",
+  "completion_states": [
+    "planned",
+    "started",
+    "submitted",
+    "reviewed",
+    "mastered",
+    "archived"
+  ],
+  "courses": [
+    {
+      "grade": 9,
+      "code": "KH-SCI-INT9",
+      "course": "Integrated Science 9",
+      "required_artifacts": [
+        "baseline investigation design and measurement evidence",
+        "cross-disciplinary quarterly practical evidence",
+        "quantitative graph/model artifact",
+        "sustainable engineering capstone evidence"
+      ]
+    },
+    {
+      "grade": 10,
+      "code": "KH-SCI-BIO10",
+      "course": "Biology & Biotechnology 10",
+      "required_artifacts": [
+        "controlled biological investigation",
+        "genetics or molecular-biology evidence artifact",
+        "evolution/ecology quantitative model",
+        "biology/biotechnology capstone defense"
+      ]
+    },
+    {
+      "grade": 11,
+      "code": "KH-SCI-CHEM11",
+      "course": "Chemistry & Materials Science 11",
+      "required_artifacts": [
+        "stoichiometry or analytical-chemistry evidence artifact",
+        "thermochemistry/equilibrium investigation",
+        "materials decision evidence",
+        "sustainable chemistry capstone defense"
+      ]
+    },
+    {
+      "grade": 12,
+      "code": "KH-SCI-PHY12",
+      "course": "Physics & Engineering 12",
+      "required_artifacts": [
+        "motion/force mathematical model",
+        "energy/waves/electrical investigation",
+        "engineering prototype/test evidence",
+        "senior science portfolio defense"
+      ]
+    }
+  ],
+  "graduation_evidence": [
+    "observation-to-model progression",
+    "quantitative prediction and uncertainty",
+    "investigation design and evidence quality",
+    "scientific explanation and model revision",
+    "engineering criteria constraints testing and trade-offs",
+    "cross-course retrieval and transfer"
+  ],
+  "authority_boundary": "Browser-local evidence is formative until separately reviewed and bound by authorized Academy record custody."
+}
