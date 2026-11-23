@@ -1,6 +1,6 @@
 "use strict";
 
-const CACHE_VERSION = "khaemenes-high-v43-eight-class-hardening-20261120";
+const CACHE_VERSION = "khaemenes-high-v44-topology-hardening-20261123";
 // Generated from canonical game-registry.json; validated by tools/test-math-game-offline-cache.mjs.
 // Every canonical game and its shared runtime must be available on a newly installed offline worker.
 const GAME_PRECACHE_FILES = [
@@ -99,6 +99,25 @@ const GAME_RUNTIME_FILES = [
 ];
 // Legacy Pre-Algebra/course pages are kept, with duplicate entries removed.
 const OTHER_PRECACHE_FILES = [
+  // Canonical execution-matrix entrances; generated topology coverage.
+  "./courses/language-arts/english-9/index.html",
+  "./courses/language-arts/english-10/index.html",
+  "./courses/language-arts/english-11/index.html",
+  "./courses/language-arts/english-12/index.html",
+  "./courses/science/integrated-science-9/index.html",
+  "./courses/science/biology-10/index.html",
+  "./courses/science/chemistry-11/index.html",
+  "./courses/science/physics-engineering-12/index.html",
+  "./courses/social-studies/grade-09/index.html",
+  "./courses/social-studies/grade-10/index.html",
+  "./courses/social-studies/grade-11/index.html",
+  "./courses/social-studies/grade-12/index.html",
+  "./courses/physical-education/grade-10.html",
+  "./courses/physical-education/grade-11.html",
+  "./courses/mathematics/precalculus-trigonometry/index.html",
+  "./courses/mathematics/calculus-1/index.html",
+  "./courses/physical-education/index.html",
+  "./courses/electives/psychology-101/index.html",
   // Shared eight-class learner views (best-effort offline; same cache policy as other pages).
   "./courses/shared/high-school-course-pins.js",
   "./courses/shared/high-school-eight-class.js",
