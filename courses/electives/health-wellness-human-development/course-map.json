@@ -1,0 +1,629 @@
+{
+  "schema": "khaemenes-high-school-elective-course-map-v1",
+  "id": "health-wellness-human-development",
+  "title": "Health, Wellness & Human Development",
+  "gradeBand": "9-12",
+  "durationWeeks": 13,
+  "plannedLessons": 65,
+  "masteryThreshold": 80,
+  "status": "curriculum-architecture-complete-student-production-pending",
+  "authority": "catalog-plan-until-promotion-gate-passes",
+  "qualityStandard": "courses/electives/ELECTIVE_QUALITY_STANDARD_V1.md",
+  "permanentRoutine": "Question → Verify → Compare Options → Assess Risk → Decide → Communicate → Revisit",
+  "assessmentModel": {
+    "weekly": "open-book discipline-authentic evidence plus mastery check where appropriate",
+    "cumulative": [
+      4,
+      8,
+      12
+    ],
+    "culminatingWeek": 13,
+    "correction": "below 80% requires targeted correction/revision before reassessment",
+    "protectedBoundary": "browser-local drafts and self-checks do not create transcript credit"
+  },
+  "privacySafety": {
+    "forcedSensitiveDisclosure": false,
+    "accessibleAlternativeRequired": true,
+    "publicProtectedAssessmentContent": false
+  },
+  "weeks": [
+    {
+      "week": 1,
+      "title": "Health literacy & trustworthy information",
+      "essentialQuestion": "How can I evaluate health claims without confusing popularity with evidence?",
+      "days": [
+        {
+          "day": 1,
+          "phase": "Retrieve/Listen/Observe",
+          "task": "Retrieve a prior idea or inspect a new example connected to Health literacy & trustworthy information. Identify what you notice, what you already know, and one question worth testing.",
+          "evidence": "retrieval note or annotated observation tied to Health literacy & trustworthy information"
+        },
+        {
+          "day": 2,
+          "phase": "Learn/Model",
+          "task": "Study the core concepts, vocabulary, and a worked model for Health literacy & trustworthy information. Explain why the model works and where it could fail or mislead.",
+          "evidence": "annotated model with vocabulary used in context"
+        },
+        {
+          "day": 3,
+          "phase": "Practice/Analyze",
+          "task": "Complete guided practice for Health literacy & trustworthy information. Compare at least two examples, alternatives, or interpretations and justify the stronger choice with evidence.",
+          "evidence": "guided analysis or practice artifact"
+        },
+        {
+          "day": 4,
+          "phase": "Create/Apply/Test",
+          "task": "Apply Health literacy & trustworthy information in a new situation. Build, perform, design, plan, or solve something authentic to the discipline, then test it against explicit criteria.",
+          "evidence": "health-source credibility audit"
+        },
+        {
+          "day": 5,
+          "phase": "Revise/Defend",
+          "task": "Revise the week's work after feedback or self-check. Defend one decision, name one limitation, and identify what should transfer to a later week.",
+          "evidence": "revised artifact, reflection, and short defense"
+        }
+      ],
+      "vocabularyTarget": "5–9 discipline terms taught through use, examples, and retrieval",
+      "weeklyEvidence": "health-source credibility audit",
+      "masteryCheck": {
+        "mode": "open-book mixed evidence",
+        "threshold": 80,
+        "retake": "targeted correction then parallel-form or revised evidence"
+      },
+      "cumulativeCheckpoint": false,
+      "culminating": false
+    },
+    {
+      "week": 2,
+      "title": "Human development across the lifespan",
+      "essentialQuestion": "How do biological, cognitive, social, and cultural factors interact across development?",
+      "days": [
+        {
+          "day": 1,
+          "phase": "Retrieve/Listen/Observe",
+          "task": "Retrieve a prior idea or inspect a new example connected to Human development across the lifespan. Identify what you notice, what you already know, and one question worth testing.",
+          "evidence": "retrieval note or annotated observation tied to Human development across the lifespan"
+        },
+        {
+          "day": 2,
+          "phase": "Learn/Model",
+          "task": "Study the core concepts, vocabulary, and a worked model for Human development across the lifespan. Explain why the model works and where it could fail or mislead.",
+          "evidence": "annotated model with vocabulary used in context"
+        },
+        {
+          "day": 3,
+          "phase": "Practice/Analyze",
+          "task": "Complete guided practice for Human development across the lifespan. Compare at least two examples, alternatives, or interpretations and justify the stronger choice with evidence.",
+          "evidence": "guided analysis or practice artifact"
+        },
+        {
+          "day": 4,
+          "phase": "Create/Apply/Test",
+          "task": "Apply Human development across the lifespan in a new situation. Build, perform, design, plan, or solve something authentic to the discipline, then test it against explicit criteria.",
+          "evidence": "lifespan case analysis"
+        },
+        {
+          "day": 5,
+          "phase": "Revise/Defend",
+          "task": "Revise the week's work after feedback or self-check. Defend one decision, name one limitation, and identify what should transfer to a later week.",
+          "evidence": "revised artifact, reflection, and short defense"
+        }
+      ],
+      "vocabularyTarget": "5–9 discipline terms taught through use, examples, and retrieval",
+      "weeklyEvidence": "lifespan case analysis",
+      "masteryCheck": {
+        "mode": "open-book mixed evidence",
+        "threshold": 80,
+        "retake": "targeted correction then parallel-form or revised evidence"
+      },
+      "cumulativeCheckpoint": false,
+      "culminating": false
+    },
+    {
+      "week": 3,
+      "title": "Sleep, stress & recovery",
+      "essentialQuestion": "How can evidence and context guide decisions about rest, routines, and recovery?",
+      "days": [
+        {
+          "day": 1,
+          "phase": "Retrieve/Listen/Observe",
+          "task": "Retrieve a prior idea or inspect a new example connected to Sleep, stress & recovery. Identify what you notice, what you already know, and one question worth testing.",
+          "evidence": "retrieval note or annotated observation tied to Sleep, stress & recovery"
+        },
+        {
+          "day": 2,
+          "phase": "Learn/Model",
+          "task": "Study the core concepts, vocabulary, and a worked model for Sleep, stress & recovery. Explain why the model works and where it could fail or mislead.",
+          "evidence": "annotated model with vocabulary used in context"
+        },
+        {
+          "day": 3,
+          "phase": "Practice/Analyze",
+          "task": "Complete guided practice for Sleep, stress & recovery. Compare at least two examples, alternatives, or interpretations and justify the stronger choice with evidence.",
+          "evidence": "guided analysis or practice artifact"
+        },
+        {
+          "day": 4,
+          "phase": "Create/Apply/Test",
+          "task": "Apply Sleep, stress & recovery in a new situation. Build, perform, design, plan, or solve something authentic to the discipline, then test it against explicit criteria.",
+          "evidence": "fictional routine analysis and revision"
+        },
+        {
+          "day": 5,
+          "phase": "Revise/Defend",
+          "task": "Revise the week's work after feedback or self-check. Defend one decision, name one limitation, and identify what should transfer to a later week.",
+          "evidence": "revised artifact, reflection, and short defense"
+        }
+      ],
+      "vocabularyTarget": "5–9 discipline terms taught through use, examples, and retrieval",
+      "weeklyEvidence": "fictional routine analysis and revision",
+      "masteryCheck": {
+        "mode": "open-book mixed evidence",
+        "threshold": 80,
+        "retake": "targeted correction then parallel-form or revised evidence"
+      },
+      "cumulativeCheckpoint": false,
+      "culminating": false
+    },
+    {
+      "week": 4,
+      "title": "Nutrition literacy without body targets",
+      "essentialQuestion": "How can I interpret nutrition information without shame, dieting pressure, or unsupported claims?",
+      "days": [
+        {
+          "day": 1,
+          "phase": "Retrieve/Listen/Observe",
+          "task": "Retrieve a prior idea or inspect a new example connected to Nutrition literacy without body targets. Identify what you notice, what you already know, and one question worth testing.",
+          "evidence": "retrieval note or annotated observation tied to Nutrition literacy without body targets"
+        },
+        {
+          "day": 2,
+          "phase": "Learn/Model",
+          "task": "Study the core concepts, vocabulary, and a worked model for Nutrition literacy without body targets. Explain why the model works and where it could fail or mislead.",
+          "evidence": "annotated model with vocabulary used in context"
+        },
+        {
+          "day": 3,
+          "phase": "Practice/Analyze",
+          "task": "Complete guided practice for Nutrition literacy without body targets. Compare at least two examples, alternatives, or interpretations and justify the stronger choice with evidence.",
+          "evidence": "guided analysis or practice artifact"
+        },
+        {
+          "day": 4,
+          "phase": "Create/Apply/Test",
+          "task": "Apply Nutrition literacy without body targets in a new situation. Build, perform, design, plan, or solve something authentic to the discipline, then test it against explicit criteria.",
+          "evidence": "label/source analysis and meal-planning scenario"
+        },
+        {
+          "day": 5,
+          "phase": "Revise/Defend",
+          "task": "Revise the week's work after feedback or self-check. Defend one decision, name one limitation, and identify what should transfer to a later week.",
+          "evidence": "revised artifact, reflection, and short defense"
+        }
+      ],
+      "vocabularyTarget": "5–9 discipline terms taught through use, examples, and retrieval",
+      "weeklyEvidence": "label/source analysis and meal-planning scenario",
+      "masteryCheck": {
+        "mode": "open-book mixed evidence",
+        "threshold": 80,
+        "retake": "targeted correction then parallel-form or revised evidence"
+      },
+      "cumulativeCheckpoint": true,
+      "culminating": false
+    },
+    {
+      "week": 5,
+      "title": "Movement, fitness & inclusive wellbeing",
+      "essentialQuestion": "How can physical activity plans adapt to goals, access, ability, safety, and preference?",
+      "days": [
+        {
+          "day": 1,
+          "phase": "Retrieve/Listen/Observe",
+          "task": "Retrieve a prior idea or inspect a new example connected to Movement, fitness & inclusive wellbeing. Identify what you notice, what you already know, and one question worth testing.",
+          "evidence": "retrieval note or annotated observation tied to Movement, fitness & inclusive wellbeing"
+        },
+        {
+          "day": 2,
+          "phase": "Learn/Model",
+          "task": "Study the core concepts, vocabulary, and a worked model for Movement, fitness & inclusive wellbeing. Explain why the model works and where it could fail or mislead.",
+          "evidence": "annotated model with vocabulary used in context"
+        },
+        {
+          "day": 3,
+          "phase": "Practice/Analyze",
+          "task": "Complete guided practice for Movement, fitness & inclusive wellbeing. Compare at least two examples, alternatives, or interpretations and justify the stronger choice with evidence.",
+          "evidence": "guided analysis or practice artifact"
+        },
+        {
+          "day": 4,
+          "phase": "Create/Apply/Test",
+          "task": "Apply Movement, fitness & inclusive wellbeing in a new situation. Build, perform, design, plan, or solve something authentic to the discipline, then test it against explicit criteria.",
+          "evidence": "inclusive movement-plan critique"
+        },
+        {
+          "day": 5,
+          "phase": "Revise/Defend",
+          "task": "Revise the week's work after feedback or self-check. Defend one decision, name one limitation, and identify what should transfer to a later week.",
+          "evidence": "revised artifact, reflection, and short defense"
+        }
+      ],
+      "vocabularyTarget": "5–9 discipline terms taught through use, examples, and retrieval",
+      "weeklyEvidence": "inclusive movement-plan critique",
+      "masteryCheck": {
+        "mode": "open-book mixed evidence",
+        "threshold": 80,
+        "retake": "targeted correction then parallel-form or revised evidence"
+      },
+      "cumulativeCheckpoint": false,
+      "culminating": false
+    },
+    {
+      "week": 6,
+      "title": "Mental health literacy & help-seeking",
+      "essentialQuestion": "How can I recognize when a situation needs support without diagnosing myself or others?",
+      "days": [
+        {
+          "day": 1,
+          "phase": "Retrieve/Listen/Observe",
+          "task": "Retrieve a prior idea or inspect a new example connected to Mental health literacy & help-seeking. Identify what you notice, what you already know, and one question worth testing.",
+          "evidence": "retrieval note or annotated observation tied to Mental health literacy & help-seeking"
+        },
+        {
+          "day": 2,
+          "phase": "Learn/Model",
+          "task": "Study the core concepts, vocabulary, and a worked model for Mental health literacy & help-seeking. Explain why the model works and where it could fail or mislead.",
+          "evidence": "annotated model with vocabulary used in context"
+        },
+        {
+          "day": 3,
+          "phase": "Practice/Analyze",
+          "task": "Complete guided practice for Mental health literacy & help-seeking. Compare at least two examples, alternatives, or interpretations and justify the stronger choice with evidence.",
+          "evidence": "guided analysis or practice artifact"
+        },
+        {
+          "day": 4,
+          "phase": "Create/Apply/Test",
+          "task": "Apply Mental health literacy & help-seeking in a new situation. Build, perform, design, plan, or solve something authentic to the discipline, then test it against explicit criteria.",
+          "evidence": "support-pathway scenario guide"
+        },
+        {
+          "day": 5,
+          "phase": "Revise/Defend",
+          "task": "Revise the week's work after feedback or self-check. Defend one decision, name one limitation, and identify what should transfer to a later week.",
+          "evidence": "revised artifact, reflection, and short defense"
+        }
+      ],
+      "vocabularyTarget": "5–9 discipline terms taught through use, examples, and retrieval",
+      "weeklyEvidence": "support-pathway scenario guide",
+      "masteryCheck": {
+        "mode": "open-book mixed evidence",
+        "threshold": 80,
+        "retake": "targeted correction then parallel-form or revised evidence"
+      },
+      "cumulativeCheckpoint": false,
+      "culminating": false
+    },
+    {
+      "week": 7,
+      "title": "Relationships, communication & boundaries",
+      "essentialQuestion": "How do consent, respect, communication, and boundaries support healthy relationships?",
+      "days": [
+        {
+          "day": 1,
+          "phase": "Retrieve/Listen/Observe",
+          "task": "Retrieve a prior idea or inspect a new example connected to Relationships, communication & boundaries. Identify what you notice, what you already know, and one question worth testing.",
+          "evidence": "retrieval note or annotated observation tied to Relationships, communication & boundaries"
+        },
+        {
+          "day": 2,
+          "phase": "Learn/Model",
+          "task": "Study the core concepts, vocabulary, and a worked model for Relationships, communication & boundaries. Explain why the model works and where it could fail or mislead.",
+          "evidence": "annotated model with vocabulary used in context"
+        },
+        {
+          "day": 3,
+          "phase": "Practice/Analyze",
+          "task": "Complete guided practice for Relationships, communication & boundaries. Compare at least two examples, alternatives, or interpretations and justify the stronger choice with evidence.",
+          "evidence": "guided analysis or practice artifact"
+        },
+        {
+          "day": 4,
+          "phase": "Create/Apply/Test",
+          "task": "Apply Relationships, communication & boundaries in a new situation. Build, perform, design, plan, or solve something authentic to the discipline, then test it against explicit criteria.",
+          "evidence": "boundary/communication scenario analysis"
+        },
+        {
+          "day": 5,
+          "phase": "Revise/Defend",
+          "task": "Revise the week's work after feedback or self-check. Defend one decision, name one limitation, and identify what should transfer to a later week.",
+          "evidence": "revised artifact, reflection, and short defense"
+        }
+      ],
+      "vocabularyTarget": "5–9 discipline terms taught through use, examples, and retrieval",
+      "weeklyEvidence": "boundary/communication scenario analysis",
+      "masteryCheck": {
+        "mode": "open-book mixed evidence",
+        "threshold": 80,
+        "retake": "targeted correction then parallel-form or revised evidence"
+      },
+      "cumulativeCheckpoint": false,
+      "culminating": false
+    },
+    {
+      "week": 8,
+      "title": "Digital wellbeing & attention",
+      "essentialQuestion": "How can design choices, habits, and context affect attention, sleep, mood, and time use?",
+      "days": [
+        {
+          "day": 1,
+          "phase": "Retrieve/Listen/Observe",
+          "task": "Retrieve a prior idea or inspect a new example connected to Digital wellbeing & attention. Identify what you notice, what you already know, and one question worth testing.",
+          "evidence": "retrieval note or annotated observation tied to Digital wellbeing & attention"
+        },
+        {
+          "day": 2,
+          "phase": "Learn/Model",
+          "task": "Study the core concepts, vocabulary, and a worked model for Digital wellbeing & attention. Explain why the model works and where it could fail or mislead.",
+          "evidence": "annotated model with vocabulary used in context"
+        },
+        {
+          "day": 3,
+          "phase": "Practice/Analyze",
+          "task": "Complete guided practice for Digital wellbeing & attention. Compare at least two examples, alternatives, or interpretations and justify the stronger choice with evidence.",
+          "evidence": "guided analysis or practice artifact"
+        },
+        {
+          "day": 4,
+          "phase": "Create/Apply/Test",
+          "task": "Apply Digital wellbeing & attention in a new situation. Build, perform, design, plan, or solve something authentic to the discipline, then test it against explicit criteria.",
+          "evidence": "digital-environment experiment plan"
+        },
+        {
+          "day": 5,
+          "phase": "Revise/Defend",
+          "task": "Revise the week's work after feedback or self-check. Defend one decision, name one limitation, and identify what should transfer to a later week.",
+          "evidence": "revised artifact, reflection, and short defense"
+        }
+      ],
+      "vocabularyTarget": "5–9 discipline terms taught through use, examples, and retrieval",
+      "weeklyEvidence": "digital-environment experiment plan",
+      "masteryCheck": {
+        "mode": "open-book mixed evidence",
+        "threshold": 80,
+        "retake": "targeted correction then parallel-form or revised evidence"
+      },
+      "cumulativeCheckpoint": true,
+      "culminating": false
+    },
+    {
+      "week": 9,
+      "title": "Substance-use risk & decision-making",
+      "essentialQuestion": "How can evidence, protective factors, and refusal/support strategies inform safer decisions?",
+      "days": [
+        {
+          "day": 1,
+          "phase": "Retrieve/Listen/Observe",
+          "task": "Retrieve a prior idea or inspect a new example connected to Substance-use risk & decision-making. Identify what you notice, what you already know, and one question worth testing.",
+          "evidence": "retrieval note or annotated observation tied to Substance-use risk & decision-making"
+        },
+        {
+          "day": 2,
+          "phase": "Learn/Model",
+          "task": "Study the core concepts, vocabulary, and a worked model for Substance-use risk & decision-making. Explain why the model works and where it could fail or mislead.",
+          "evidence": "annotated model with vocabulary used in context"
+        },
+        {
+          "day": 3,
+          "phase": "Practice/Analyze",
+          "task": "Complete guided practice for Substance-use risk & decision-making. Compare at least two examples, alternatives, or interpretations and justify the stronger choice with evidence.",
+          "evidence": "guided analysis or practice artifact"
+        },
+        {
+          "day": 4,
+          "phase": "Create/Apply/Test",
+          "task": "Apply Substance-use risk & decision-making in a new situation. Build, perform, design, plan, or solve something authentic to the discipline, then test it against explicit criteria.",
+          "evidence": "risk-analysis scenario brief"
+        },
+        {
+          "day": 5,
+          "phase": "Revise/Defend",
+          "task": "Revise the week's work after feedback or self-check. Defend one decision, name one limitation, and identify what should transfer to a later week.",
+          "evidence": "revised artifact, reflection, and short defense"
+        }
+      ],
+      "vocabularyTarget": "5–9 discipline terms taught through use, examples, and retrieval",
+      "weeklyEvidence": "risk-analysis scenario brief",
+      "masteryCheck": {
+        "mode": "open-book mixed evidence",
+        "threshold": 80,
+        "retake": "targeted correction then parallel-form or revised evidence"
+      },
+      "cumulativeCheckpoint": false,
+      "culminating": false
+    },
+    {
+      "week": 10,
+      "title": "Public health & community systems",
+      "essentialQuestion": "How do prevention, access, environment, policy, and communication shape community health?",
+      "days": [
+        {
+          "day": 1,
+          "phase": "Retrieve/Listen/Observe",
+          "task": "Retrieve a prior idea or inspect a new example connected to Public health & community systems. Identify what you notice, what you already know, and one question worth testing.",
+          "evidence": "retrieval note or annotated observation tied to Public health & community systems"
+        },
+        {
+          "day": 2,
+          "phase": "Learn/Model",
+          "task": "Study the core concepts, vocabulary, and a worked model for Public health & community systems. Explain why the model works and where it could fail or mislead.",
+          "evidence": "annotated model with vocabulary used in context"
+        },
+        {
+          "day": 3,
+          "phase": "Practice/Analyze",
+          "task": "Complete guided practice for Public health & community systems. Compare at least two examples, alternatives, or interpretations and justify the stronger choice with evidence.",
+          "evidence": "guided analysis or practice artifact"
+        },
+        {
+          "day": 4,
+          "phase": "Create/Apply/Test",
+          "task": "Apply Public health & community systems in a new situation. Build, perform, design, plan, or solve something authentic to the discipline, then test it against explicit criteria.",
+          "evidence": "community health systems map"
+        },
+        {
+          "day": 5,
+          "phase": "Revise/Defend",
+          "task": "Revise the week's work after feedback or self-check. Defend one decision, name one limitation, and identify what should transfer to a later week.",
+          "evidence": "revised artifact, reflection, and short defense"
+        }
+      ],
+      "vocabularyTarget": "5–9 discipline terms taught through use, examples, and retrieval",
+      "weeklyEvidence": "community health systems map",
+      "masteryCheck": {
+        "mode": "open-book mixed evidence",
+        "threshold": 80,
+        "retake": "targeted correction then parallel-form or revised evidence"
+      },
+      "cumulativeCheckpoint": false,
+      "culminating": false
+    },
+    {
+      "week": 11,
+      "title": "Health equity, access & ethics",
+      "essentialQuestion": "How can health decisions account for barriers, bias, resources, and dignity?",
+      "days": [
+        {
+          "day": 1,
+          "phase": "Retrieve/Listen/Observe",
+          "task": "Retrieve a prior idea or inspect a new example connected to Health equity, access & ethics. Identify what you notice, what you already know, and one question worth testing.",
+          "evidence": "retrieval note or annotated observation tied to Health equity, access & ethics"
+        },
+        {
+          "day": 2,
+          "phase": "Learn/Model",
+          "task": "Study the core concepts, vocabulary, and a worked model for Health equity, access & ethics. Explain why the model works and where it could fail or mislead.",
+          "evidence": "annotated model with vocabulary used in context"
+        },
+        {
+          "day": 3,
+          "phase": "Practice/Analyze",
+          "task": "Complete guided practice for Health equity, access & ethics. Compare at least two examples, alternatives, or interpretations and justify the stronger choice with evidence.",
+          "evidence": "guided analysis or practice artifact"
+        },
+        {
+          "day": 4,
+          "phase": "Create/Apply/Test",
+          "task": "Apply Health equity, access & ethics in a new situation. Build, perform, design, plan, or solve something authentic to the discipline, then test it against explicit criteria.",
+          "evidence": "access-and-equity case analysis"
+        },
+        {
+          "day": 5,
+          "phase": "Revise/Defend",
+          "task": "Revise the week's work after feedback or self-check. Defend one decision, name one limitation, and identify what should transfer to a later week.",
+          "evidence": "revised artifact, reflection, and short defense"
+        }
+      ],
+      "vocabularyTarget": "5–9 discipline terms taught through use, examples, and retrieval",
+      "weeklyEvidence": "access-and-equity case analysis",
+      "masteryCheck": {
+        "mode": "open-book mixed evidence",
+        "threshold": 80,
+        "retake": "targeted correction then parallel-form or revised evidence"
+      },
+      "cumulativeCheckpoint": false,
+      "culminating": false
+    },
+    {
+      "week": 12,
+      "title": "Personal wellbeing systems design",
+      "essentialQuestion": "How can I build a flexible, non-diagnostic plan that supports routines, help-seeking, and realistic constraints?",
+      "days": [
+        {
+          "day": 1,
+          "phase": "Retrieve/Listen/Observe",
+          "task": "Retrieve a prior idea or inspect a new example connected to Personal wellbeing systems design. Identify what you notice, what you already know, and one question worth testing.",
+          "evidence": "retrieval note or annotated observation tied to Personal wellbeing systems design"
+        },
+        {
+          "day": 2,
+          "phase": "Learn/Model",
+          "task": "Study the core concepts, vocabulary, and a worked model for Personal wellbeing systems design. Explain why the model works and where it could fail or mislead.",
+          "evidence": "annotated model with vocabulary used in context"
+        },
+        {
+          "day": 3,
+          "phase": "Practice/Analyze",
+          "task": "Complete guided practice for Personal wellbeing systems design. Compare at least two examples, alternatives, or interpretations and justify the stronger choice with evidence.",
+          "evidence": "guided analysis or practice artifact"
+        },
+        {
+          "day": 4,
+          "phase": "Create/Apply/Test",
+          "task": "Apply Personal wellbeing systems design in a new situation. Build, perform, design, plan, or solve something authentic to the discipline, then test it against explicit criteria.",
+          "evidence": "fictional or self-selected non-sensitive wellbeing system"
+        },
+        {
+          "day": 5,
+          "phase": "Revise/Defend",
+          "task": "Revise the week's work after feedback or self-check. Defend one decision, name one limitation, and identify what should transfer to a later week.",
+          "evidence": "revised artifact, reflection, and short defense"
+        }
+      ],
+      "vocabularyTarget": "5–9 discipline terms taught through use, examples, and retrieval",
+      "weeklyEvidence": "fictional or self-selected non-sensitive wellbeing system",
+      "masteryCheck": {
+        "mode": "open-book mixed evidence",
+        "threshold": 80,
+        "retake": "targeted correction then parallel-form or revised evidence"
+      },
+      "cumulativeCheckpoint": true,
+      "culminating": false
+    },
+    {
+      "week": 13,
+      "title": "Wellness evidence portfolio & defense",
+      "essentialQuestion": "What evidence shows that I can evaluate claims and make responsible health decisions?",
+      "days": [
+        {
+          "day": 1,
+          "phase": "Retrieve/Listen/Observe",
+          "task": "Retrieve a prior idea or inspect a new example connected to Wellness evidence portfolio & defense. Identify what you notice, what you already know, and one question worth testing.",
+          "evidence": "retrieval note or annotated observation tied to Wellness evidence portfolio & defense"
+        },
+        {
+          "day": 2,
+          "phase": "Learn/Model",
+          "task": "Study the core concepts, vocabulary, and a worked model for Wellness evidence portfolio & defense. Explain why the model works and where it could fail or mislead.",
+          "evidence": "annotated model with vocabulary used in context"
+        },
+        {
+          "day": 3,
+          "phase": "Practice/Analyze",
+          "task": "Complete guided practice for Wellness evidence portfolio & defense. Compare at least two examples, alternatives, or interpretations and justify the stronger choice with evidence.",
+          "evidence": "guided analysis or practice artifact"
+        },
+        {
+          "day": 4,
+          "phase": "Create/Apply/Test",
+          "task": "Apply Wellness evidence portfolio & defense in a new situation. Build, perform, design, plan, or solve something authentic to the discipline, then test it against explicit criteria.",
+          "evidence": "curated portfolio and evidence defense"
+        },
+        {
+          "day": 5,
+          "phase": "Revise/Defend",
+          "task": "Revise the week's work after feedback or self-check. Defend one decision, name one limitation, and identify what should transfer to a later week.",
+          "evidence": "revised artifact, reflection, and short defense"
+        }
+      ],
+      "vocabularyTarget": "5–9 discipline terms taught through use, examples, and retrieval",
+      "weeklyEvidence": "curated portfolio and evidence defense",
+      "masteryCheck": {
+        "mode": "open-book mixed evidence",
+        "threshold": 80,
+        "retake": "targeted correction then parallel-form or revised evidence"
+      },
+      "cumulativeCheckpoint": false,
+      "culminating": true
+    }
+  ]
+}
