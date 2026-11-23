@@ -27,7 +27,31 @@
     "benchmark_note": "AP Chemistry depth-informed benchmark; not an AP-authorized course.",
     "mapping_status": "National/international benchmark synthesis. Jurisdiction-specific review is required before formal standards or credit reporting.",
     "curriculum_authority": "course-map.json week contracts are canonical for quantitative, evidence, inquiry, and retrieval targets; daily lessons may provide deeper implementation detail.",
-    "authority_version": "2026-11-22-hardened-v1"
+    "authority_version": "2026-11-22-hardened-v1",
+    "instructional_time_model": {
+      "model_version": "2026-11-22-inquiry-minutes-v1",
+      "daily_block_minutes": 50,
+      "denominator_rule": "All 180 scheduled daily lesson blocks count toward course instructional time, including MID and FINAL support/assessment weeks.",
+      "total_instructional_minutes": 9000,
+      "qualifying_inquiry_definition": "Minutes count only when students frame/test a question or model, analyze/produce data or design evidence, or construct/revise an evidence-based explanation. Lecture/reading, routine practice, navigation, and protected assessment time do not count.",
+      "ordinary_week_minimum": {
+        "monday_inquiry_framing_minutes": 15,
+        "thursday_investigation_minutes": 50,
+        "friday_evidence_synthesis_minutes": 15,
+        "qualifying_minutes_per_ordinary_week": 80
+      },
+      "assessment_weeks_zero_new_inquiry": [
+        18,
+        36
+      ],
+      "ordinary_weeks_count": 34,
+      "planned_qualifying_inquiry_minutes": 2720,
+      "planned_inquiry_fraction": 0.3022222222,
+      "planned_inquiry_percent": 30.22,
+      "target_percent": 25,
+      "margin_minutes_above_target": 470,
+      "status": "PASS — source-planned minimum exceeds target; learner completion time remains a separate runtime/evidence question."
+    }
   },
   "standards": [
     "NGSS HS-PS1-1–8",
@@ -333,7 +357,17 @@
       "evidence_contract": "Trace measurement → units → uncertainty → claim; distinguish hazard evidence from safety rules.",
       "inquiry_contract": "Safety/SDS analysis and supervised or simulated measurement design.",
       "retrieval_contract": "Retrieve unit conversion and proportional reasoning; revise a measurement claim when uncertainty changes.",
-      "authority_version": "2026-11-22-hardened-v1"
+      "authority_version": "2026-11-22-hardened-v1",
+      "inquiry_minutes_plan": {
+        "monday": 15,
+        "thursday": 50,
+        "friday": 15,
+        "total": 80,
+        "classification": "source-planned qualifying inquiry minimum",
+        "monday_basis": "phenomenon/question/model framing",
+        "thursday_basis": "investigation/design/data-analysis block",
+        "friday_basis": "CER/evidence synthesis and revision"
+      }
     },
     {
       "week": 2,
@@ -349,7 +383,17 @@
       "evidence_contract": "Compare model predictions with scattering/evidence patterns; distinguish observation from historical model.",
       "inquiry_contract": "Model-evidence card investigation.",
       "retrieval_contract": "Retrieve conservation/particle-counting rules; revise atomic models from contradictory evidence.",
-      "authority_version": "2026-11-22-hardened-v1"
+      "authority_version": "2026-11-22-hardened-v1",
+      "inquiry_minutes_plan": {
+        "monday": 15,
+        "thursday": 50,
+        "friday": 15,
+        "total": 80,
+        "classification": "source-planned qualifying inquiry minimum",
+        "monday_basis": "phenomenon/question/model framing",
+        "thursday_basis": "investigation/design/data-analysis block",
+        "friday_basis": "CER/evidence synthesis and revision"
+      }
     },
     {
       "week": 3,
@@ -365,7 +409,17 @@
       "evidence_contract": "Audit mass-spectrum assumptions, abundance normalization, and data lineage.",
       "inquiry_contract": "Mass-spectrum data analysis; no radioactive materials.",
       "retrieval_contract": "Retrieve atomic notation; transfer isotope reasoning to unfamiliar abundance datasets.",
-      "authority_version": "2026-11-22-hardened-v1"
+      "authority_version": "2026-11-22-hardened-v1",
+      "inquiry_minutes_plan": {
+        "monday": 15,
+        "thursday": 50,
+        "friday": 15,
+        "total": 80,
+        "classification": "source-planned qualifying inquiry minimum",
+        "monday_basis": "phenomenon/question/model framing",
+        "thursday_basis": "investigation/design/data-analysis block",
+        "friday_basis": "CER/evidence synthesis and revision"
+      }
     },
     {
       "week": 4,
@@ -381,7 +435,17 @@
       "evidence_contract": "Separate raw spectral lines from model inference; compare residuals/tolerance and model limits.",
       "inquiry_contract": "Virtual emission-spectrum analysis.",
       "retrieval_contract": "Retrieve atomic-model revision; explain how spectra constrain electron-energy models.",
-      "authority_version": "2026-11-22-hardened-v1"
+      "authority_version": "2026-11-22-hardened-v1",
+      "inquiry_minutes_plan": {
+        "monday": 15,
+        "thursday": 50,
+        "friday": 15,
+        "total": 80,
+        "classification": "source-planned qualifying inquiry minimum",
+        "monday_basis": "phenomenon/question/model framing",
+        "thursday_basis": "investigation/design/data-analysis block",
+        "friday_basis": "CER/evidence synthesis and revision"
+      }
     },
     {
       "week": 5,
@@ -397,7 +461,17 @@
       "evidence_contract": "Use evidence to distinguish trend from exception; justify predictions with effective nuclear attraction and shielding.",
       "inquiry_contract": "Periodic-trend data investigation.",
       "retrieval_contract": "Retrieve electron structure; transfer trend reasoning to unfamiliar elements/ions.",
-      "authority_version": "2026-11-22-hardened-v1"
+      "authority_version": "2026-11-22-hardened-v1",
+      "inquiry_minutes_plan": {
+        "monday": 15,
+        "thursday": 50,
+        "friday": 15,
+        "total": 80,
+        "classification": "source-planned qualifying inquiry minimum",
+        "monday_basis": "phenomenon/question/model framing",
+        "thursday_basis": "investigation/design/data-analysis block",
+        "friday_basis": "CER/evidence synthesis and revision"
+      }
     },
     {
       "week": 6,
@@ -413,7 +487,17 @@
       "evidence_contract": "Connect ionic formulas and lattice models to macroscopic properties; preserve model boundaries.",
       "inquiry_contract": "Ionic model/property investigation or safe simulation.",
       "retrieval_contract": "Retrieve periodic trends and ion formation; revise formulas from charge-conservation errors.",
-      "authority_version": "2026-11-22-hardened-v1"
+      "authority_version": "2026-11-22-hardened-v1",
+      "inquiry_minutes_plan": {
+        "monday": 15,
+        "thursday": 50,
+        "friday": 15,
+        "total": 80,
+        "classification": "source-planned qualifying inquiry minimum",
+        "monday_basis": "phenomenon/question/model framing",
+        "thursday_basis": "investigation/design/data-analysis block",
+        "friday_basis": "CER/evidence synthesis and revision"
+      }
     },
     {
       "week": 7,
@@ -429,7 +513,17 @@
       "evidence_contract": "Compare Lewis/resonance models and state where octet/formal-charge heuristics fail.",
       "inquiry_contract": "Lewis-model comparison/design task.",
       "retrieval_contract": "Retrieve ionic/covalent distinctions; transfer bonding models to unfamiliar molecules.",
-      "authority_version": "2026-11-22-hardened-v1"
+      "authority_version": "2026-11-22-hardened-v1",
+      "inquiry_minutes_plan": {
+        "monday": 15,
+        "thursday": 50,
+        "friday": 15,
+        "total": 80,
+        "classification": "source-planned qualifying inquiry minimum",
+        "monday_basis": "phenomenon/question/model framing",
+        "thursday_basis": "investigation/design/data-analysis block",
+        "friday_basis": "CER/evidence synthesis and revision"
+      }
     },
     {
       "week": 8,
@@ -445,7 +539,17 @@
       "evidence_contract": "Validate shape/polarity predictions against symmetry and molecular evidence.",
       "inquiry_contract": "Physical or virtual molecular-model investigation.",
       "retrieval_contract": "Retrieve Lewis structures; revise polarity claims when geometry changes.",
-      "authority_version": "2026-11-22-hardened-v1"
+      "authority_version": "2026-11-22-hardened-v1",
+      "inquiry_minutes_plan": {
+        "monday": 15,
+        "thursday": 50,
+        "friday": 15,
+        "total": 80,
+        "classification": "source-planned qualifying inquiry minimum",
+        "monday_basis": "phenomenon/question/model framing",
+        "thursday_basis": "investigation/design/data-analysis block",
+        "friday_basis": "CER/evidence synthesis and revision"
+      }
     },
     {
       "week": 9,
@@ -461,7 +565,17 @@
       "evidence_contract": "Use conductivity, density, structure, and defect evidence to justify material choice.",
       "inquiry_contract": "Materials-property investigation/design challenge.",
       "retrieval_contract": "Retrieve bonding/structure; transfer evidence to a new material-selection problem.",
-      "authority_version": "2026-11-22-hardened-v1"
+      "authority_version": "2026-11-22-hardened-v1",
+      "inquiry_minutes_plan": {
+        "monday": 15,
+        "thursday": 50,
+        "friday": 15,
+        "total": 80,
+        "classification": "source-planned qualifying inquiry minimum",
+        "monday_basis": "phenomenon/question/model framing",
+        "thursday_basis": "investigation/design/data-analysis block",
+        "friday_basis": "CER/evidence synthesis and revision"
+      }
     },
     {
       "week": 10,
@@ -477,7 +591,17 @@
       "evidence_contract": "Separate molecular structure, IMF model, and bulk-property observation.",
       "inquiry_contract": "IMF/property data investigation.",
       "retrieval_contract": "Retrieve polarity; revise claims that confuse bond strength with intermolecular force.",
-      "authority_version": "2026-11-22-hardened-v1"
+      "authority_version": "2026-11-22-hardened-v1",
+      "inquiry_minutes_plan": {
+        "monday": 15,
+        "thursday": 50,
+        "friday": 15,
+        "total": 80,
+        "classification": "source-planned qualifying inquiry minimum",
+        "monday_basis": "phenomenon/question/model framing",
+        "thursday_basis": "investigation/design/data-analysis block",
+        "friday_basis": "CER/evidence synthesis and revision"
+      }
     },
     {
       "week": 11,
@@ -493,7 +617,17 @@
       "evidence_contract": "Use graph shape, controls, and residuals to test gas models; distinguish ideal from real behavior.",
       "inquiry_contract": "Gas-law data/simulation investigation.",
       "retrieval_contract": "Retrieve particle-motion model; transfer dimensional analysis to gas systems.",
-      "authority_version": "2026-11-22-hardened-v1"
+      "authority_version": "2026-11-22-hardened-v1",
+      "inquiry_minutes_plan": {
+        "monday": 15,
+        "thursday": 50,
+        "friday": 15,
+        "total": 80,
+        "classification": "source-planned qualifying inquiry minimum",
+        "monday_basis": "phenomenon/question/model framing",
+        "thursday_basis": "investigation/design/data-analysis block",
+        "friday_basis": "CER/evidence synthesis and revision"
+      }
     },
     {
       "week": 12,
@@ -509,7 +643,17 @@
       "evidence_contract": "Audit meniscus, calibration, transfer, and precision/accuracy evidence.",
       "inquiry_contract": "Solution-preparation simulation or supervised lab.",
       "retrieval_contract": "Retrieve mole/volume reasoning; correct dilution plans from conservation-of-solute errors.",
-      "authority_version": "2026-11-22-hardened-v1"
+      "authority_version": "2026-11-22-hardened-v1",
+      "inquiry_minutes_plan": {
+        "monday": 15,
+        "thursday": 50,
+        "friday": 15,
+        "total": 80,
+        "classification": "source-planned qualifying inquiry minimum",
+        "monday_basis": "phenomenon/question/model framing",
+        "thursday_basis": "investigation/design/data-analysis block",
+        "friday_basis": "CER/evidence synthesis and revision"
+      }
     },
     {
       "week": 13,
@@ -525,7 +669,17 @@
       "evidence_contract": "Separate raw signal, processed measurement, calibration model, and claim; use blanks/standards/duplicates.",
       "inquiry_contract": "Separation/spectroscopy investigation.",
       "retrieval_contract": "Retrieve solution concentration; transfer analytical-evidence logic to unknown samples.",
-      "authority_version": "2026-11-22-hardened-v1"
+      "authority_version": "2026-11-22-hardened-v1",
+      "inquiry_minutes_plan": {
+        "monday": 15,
+        "thursday": 50,
+        "friday": 15,
+        "total": 80,
+        "classification": "source-planned qualifying inquiry minimum",
+        "monday_basis": "phenomenon/question/model framing",
+        "thursday_basis": "investigation/design/data-analysis block",
+        "friday_basis": "CER/evidence synthesis and revision"
+      }
     },
     {
       "week": 14,
@@ -541,7 +695,17 @@
       "evidence_contract": "Distinguish reaction evidence from symbolic representation; use conservation as the governing check.",
       "inquiry_contract": "Reaction-evidence studio with safe supplied-data alternatives.",
       "retrieval_contract": "Retrieve particle/accounting rules; revise equations by conservation rather than visual balancing alone.",
-      "authority_version": "2026-11-22-hardened-v1"
+      "authority_version": "2026-11-22-hardened-v1",
+      "inquiry_minutes_plan": {
+        "monday": 15,
+        "thursday": 50,
+        "friday": 15,
+        "total": 80,
+        "classification": "source-planned qualifying inquiry minimum",
+        "monday_basis": "phenomenon/question/model framing",
+        "thursday_basis": "investigation/design/data-analysis block",
+        "friday_basis": "CER/evidence synthesis and revision"
+      }
     },
     {
       "week": 15,
@@ -557,7 +721,17 @@
       "evidence_contract": "Audit dimensional-analysis pathways and conservation/reasonableness.",
       "inquiry_contract": "Stoichiometry investigation/problem studio.",
       "retrieval_contract": "Retrieve balanced equations; transfer coefficient meaning to quantitative conversion chains.",
-      "authority_version": "2026-11-22-hardened-v1"
+      "authority_version": "2026-11-22-hardened-v1",
+      "inquiry_minutes_plan": {
+        "monday": 15,
+        "thursday": 50,
+        "friday": 15,
+        "total": 80,
+        "classification": "source-planned qualifying inquiry minimum",
+        "monday_basis": "phenomenon/question/model framing",
+        "thursday_basis": "investigation/design/data-analysis block",
+        "friday_basis": "CER/evidence synthesis and revision"
+      }
     },
     {
       "week": 16,
@@ -573,7 +747,17 @@
       "evidence_contract": "Compare common-product pathways, diagnose >100% yield, separate random/systematic causes.",
       "inquiry_contract": "Limiting-reactant/yield investigation.",
       "retrieval_contract": "Retrieve stoichiometry; revise limiting-reactant claims when near-stoichiometric uncertainty matters.",
-      "authority_version": "2026-11-22-hardened-v1"
+      "authority_version": "2026-11-22-hardened-v1",
+      "inquiry_minutes_plan": {
+        "monday": 15,
+        "thursday": 50,
+        "friday": 15,
+        "total": 80,
+        "classification": "source-planned qualifying inquiry minimum",
+        "monday_basis": "phenomenon/question/model framing",
+        "thursday_basis": "investigation/design/data-analysis block",
+        "friday_basis": "CER/evidence synthesis and revision"
+      }
     },
     {
       "week": 17,
@@ -589,7 +773,17 @@
       "evidence_contract": "Separate formal oxidation-state bookkeeping from observed solution evidence; preserve charge/atom conservation.",
       "inquiry_contract": "Redox/solution-stoichiometry virtual investigation.",
       "retrieval_contract": "Retrieve stoichiometry and ions; transfer electron/accounting logic to coupled redox problems.",
-      "authority_version": "2026-11-22-hardened-v1"
+      "authority_version": "2026-11-22-hardened-v1",
+      "inquiry_minutes_plan": {
+        "monday": 15,
+        "thursday": 50,
+        "friday": 15,
+        "total": 80,
+        "classification": "source-planned qualifying inquiry minimum",
+        "monday_basis": "phenomenon/question/model framing",
+        "thursday_basis": "investigation/design/data-analysis block",
+        "friday_basis": "CER/evidence synthesis and revision"
+      }
     },
     {
       "week": 18,
@@ -605,7 +799,14 @@
       "evidence_contract": "Use readiness evidence, correction classification, and portfolio traceability without exposing protected MID content.",
       "inquiry_contract": "Public practice/portfolio audit only; supervised MID authority remains separate.",
       "retrieval_contract": "Repair prerequisite chains, then verify transfer with new public practice items.",
-      "authority_version": "2026-11-22-hardened-v1"
+      "authority_version": "2026-11-22-hardened-v1",
+      "inquiry_minutes_plan": {
+        "monday": 0,
+        "thursday": 0,
+        "friday": 0,
+        "total": 0,
+        "classification": "assessment/support week; zero new inquiry minutes counted"
+      }
     },
     {
       "week": 19,
@@ -621,7 +822,17 @@
       "evidence_contract": "Separate raw measurements, calculated rates, fits, and mechanism claims; track timing/mixing uncertainty.",
       "inquiry_contract": "Rate-data investigation.",
       "retrieval_contract": "Retrieve concentration, stoichiometry, and graph reasoning; revise rate-law claims from controlled comparisons.",
-      "authority_version": "2026-11-22-hardened-v1"
+      "authority_version": "2026-11-22-hardened-v1",
+      "inquiry_minutes_plan": {
+        "monday": 15,
+        "thursday": 50,
+        "friday": 15,
+        "total": 80,
+        "classification": "source-planned qualifying inquiry minimum",
+        "monday_basis": "phenomenon/question/model framing",
+        "thursday_basis": "investigation/design/data-analysis block",
+        "friday_basis": "CER/evidence synthesis and revision"
+      }
     },
     {
       "week": 20,
@@ -637,7 +848,17 @@
       "evidence_contract": "Use collision frequency, energy distribution, and effective-collision fraction without overgeneralizing.",
       "inquiry_contract": "Controlled rate-factor simulation/data investigation.",
       "retrieval_contract": "Retrieve kinetic-temperature and concentration models; transfer collision theory to new rate scenarios.",
-      "authority_version": "2026-11-22-hardened-v1"
+      "authority_version": "2026-11-22-hardened-v1",
+      "inquiry_minutes_plan": {
+        "monday": 15,
+        "thursday": 50,
+        "friday": 15,
+        "total": 80,
+        "classification": "source-planned qualifying inquiry minimum",
+        "monday_basis": "phenomenon/question/model framing",
+        "thursday_basis": "investigation/design/data-analysis block",
+        "friday_basis": "CER/evidence synthesis and revision"
+      }
     },
     {
       "week": 21,
@@ -653,7 +874,17 @@
       "evidence_contract": "Test mechanisms against net stoichiometry, empirical rate law, intermediates, and catalyst behavior.",
       "inquiry_contract": "Competing-mechanism evidence investigation.",
       "retrieval_contract": "Retrieve rate laws; revise mechanism claims when one evidence category fails.",
-      "authority_version": "2026-11-22-hardened-v1"
+      "authority_version": "2026-11-22-hardened-v1",
+      "inquiry_minutes_plan": {
+        "monday": 15,
+        "thursday": 50,
+        "friday": 15,
+        "total": 80,
+        "classification": "source-planned qualifying inquiry minimum",
+        "monday_basis": "phenomenon/question/model framing",
+        "thursday_basis": "investigation/design/data-analysis block",
+        "friday_basis": "CER/evidence synthesis and revision"
+      }
     },
     {
       "week": 22,
@@ -669,7 +900,17 @@
       "evidence_contract": "Use falsifiable competing models, residual structure, controls, and contrary evidence.",
       "inquiry_contract": "Kinetics inquiry with competing-model design.",
       "retrieval_contract": "Retrieve Weeks 19–21; transfer model-discrimination logic to unfamiliar kinetics data.",
-      "authority_version": "2026-11-22-hardened-v1"
+      "authority_version": "2026-11-22-hardened-v1",
+      "inquiry_minutes_plan": {
+        "monday": 15,
+        "thursday": 50,
+        "friday": 15,
+        "total": 80,
+        "classification": "source-planned qualifying inquiry minimum",
+        "monday_basis": "phenomenon/question/model framing",
+        "thursday_basis": "investigation/design/data-analysis block",
+        "friday_basis": "CER/evidence synthesis and revision"
+      }
     },
     {
       "week": 23,
@@ -685,7 +926,17 @@
       "evidence_contract": "Trace raw mass/temperature → q → reaction heat → molar enthalpy; diagnose heat-loss bias.",
       "inquiry_contract": "Calorimetry investigation or safe data alternative.",
       "retrieval_contract": "Retrieve energy conservation and units; revise sign/scaling errors with independent checks.",
-      "authority_version": "2026-11-22-hardened-v1"
+      "authority_version": "2026-11-22-hardened-v1",
+      "inquiry_minutes_plan": {
+        "monday": 15,
+        "thursday": 50,
+        "friday": 15,
+        "total": 80,
+        "classification": "source-planned qualifying inquiry minimum",
+        "monday_basis": "phenomenon/question/model framing",
+        "thursday_basis": "investigation/design/data-analysis block",
+        "friday_basis": "CER/evidence synthesis and revision"
+      }
     },
     {
       "week": 24,
@@ -701,7 +952,17 @@
       "evidence_contract": "Compare bond-energy, Hess, and calorimetry pathways; preserve thermodynamic states and input uncertainty.",
       "inquiry_contract": "Hess-cycle/data investigation.",
       "retrieval_contract": "Retrieve enthalpy scaling; transfer state-function reasoning to alternate pathways.",
-      "authority_version": "2026-11-22-hardened-v1"
+      "authority_version": "2026-11-22-hardened-v1",
+      "inquiry_minutes_plan": {
+        "monday": 15,
+        "thursday": 50,
+        "friday": 15,
+        "total": 80,
+        "classification": "source-planned qualifying inquiry minimum",
+        "monday_basis": "phenomenon/question/model framing",
+        "thursday_basis": "investigation/design/data-analysis block",
+        "friday_basis": "CER/evidence synthesis and revision"
+      }
     },
     {
       "week": 25,
@@ -717,7 +978,17 @@
       "evidence_contract": "Replace 'disorder' slogans with dispersal/multiplicity evidence; separate thermodynamics from kinetics.",
       "inquiry_contract": "Entropy/probability simulation.",
       "retrieval_contract": "Retrieve thermochemistry; revise direction claims using ΔH, ΔS, T, and model limits.",
-      "authority_version": "2026-11-22-hardened-v1"
+      "authority_version": "2026-11-22-hardened-v1",
+      "inquiry_minutes_plan": {
+        "monday": 15,
+        "thursday": 50,
+        "friday": 15,
+        "total": 80,
+        "classification": "source-planned qualifying inquiry minimum",
+        "monday_basis": "phenomenon/question/model framing",
+        "thursday_basis": "investigation/design/data-analysis block",
+        "friday_basis": "CER/evidence synthesis and revision"
+      }
     },
     {
       "week": 26,
@@ -733,7 +1004,17 @@
       "evidence_contract": "Separate equal rates from equal concentrations; distinguish composition tendency from speed.",
       "inquiry_contract": "Equilibrium simulation/data investigation.",
       "retrieval_contract": "Retrieve kinetics and thermodynamics; predict direction from Q/K rather than slogans.",
-      "authority_version": "2026-11-22-hardened-v1"
+      "authority_version": "2026-11-22-hardened-v1",
+      "inquiry_minutes_plan": {
+        "monday": 15,
+        "thursday": 50,
+        "friday": 15,
+        "total": 80,
+        "classification": "source-planned qualifying inquiry minimum",
+        "monday_basis": "phenomenon/question/model framing",
+        "thursday_basis": "investigation/design/data-analysis block",
+        "friday_basis": "CER/evidence synthesis and revision"
+      }
     },
     {
       "week": 27,
@@ -749,7 +1030,17 @@
       "evidence_contract": "Separate instantaneous disturbance from later reaction response; identify whether Q, K, both, or only rates change.",
       "inquiry_contract": "Perturbation simulation with controls.",
       "retrieval_contract": "Retrieve Week 26; revise Le Châtelier explanations through explicit equilibrium-expression reasoning.",
-      "authority_version": "2026-11-22-hardened-v1"
+      "authority_version": "2026-11-22-hardened-v1",
+      "inquiry_minutes_plan": {
+        "monday": 15,
+        "thursday": 50,
+        "friday": 15,
+        "total": 80,
+        "classification": "source-planned qualifying inquiry minimum",
+        "monday_basis": "phenomenon/question/model framing",
+        "thursday_basis": "investigation/design/data-analysis block",
+        "friday_basis": "CER/evidence synthesis and revision"
+      }
     },
     {
       "week": 28,
@@ -765,7 +1056,17 @@
       "evidence_contract": "Separate Ksp, solubility, Qsp, and observed precipitation; preserve temperature, ionic background, units, and detection limits.",
       "inquiry_contract": "Solubility/precipitation data investigation.",
       "retrieval_contract": "Retrieve equilibrium expressions and solution concentration; transfer Q/K logic to coupled solubility systems.",
-      "authority_version": "2026-11-22-hardened-v1"
+      "authority_version": "2026-11-22-hardened-v1",
+      "inquiry_minutes_plan": {
+        "monday": 15,
+        "thursday": 50,
+        "friday": 15,
+        "total": 80,
+        "classification": "source-planned qualifying inquiry minimum",
+        "monday_basis": "phenomenon/question/model framing",
+        "thursday_basis": "investigation/design/data-analysis block",
+        "friday_basis": "CER/evidence synthesis and revision"
+      }
     },
     {
       "week": 29,
@@ -781,7 +1082,17 @@
       "evidence_contract": "Compare Arrhenius and Brønsted–Lowry scope; separate model classification from direct indicator/conductivity evidence.",
       "inquiry_contract": "Indicator/conjugate-pair investigation.",
       "retrieval_contract": "Retrieve equilibrium and water behavior; revise acid/base claims based on formula appearance alone.",
-      "authority_version": "2026-11-22-hardened-v1"
+      "authority_version": "2026-11-22-hardened-v1",
+      "inquiry_minutes_plan": {
+        "monday": 15,
+        "thursday": 50,
+        "friday": 15,
+        "total": 80,
+        "classification": "source-planned qualifying inquiry minimum",
+        "monday_basis": "phenomenon/question/model framing",
+        "thursday_basis": "investigation/design/data-analysis block",
+        "friday_basis": "CER/evidence synthesis and revision"
+      }
     },
     {
       "week": 30,
@@ -797,7 +1108,17 @@
       "evidence_contract": "Separate strength, concentration, pH, equivalence, and endpoint; audit logarithm and mole-ratio errors.",
       "inquiry_contract": "Virtual titration/data investigation.",
       "retrieval_contract": "Retrieve solution stoichiometry and logs; transfer model selection across titration regions.",
-      "authority_version": "2026-11-22-hardened-v1"
+      "authority_version": "2026-11-22-hardened-v1",
+      "inquiry_minutes_plan": {
+        "monday": 15,
+        "thursday": 50,
+        "friday": 15,
+        "total": 80,
+        "classification": "source-planned qualifying inquiry minimum",
+        "monday_basis": "phenomenon/question/model framing",
+        "thursday_basis": "investigation/design/data-analysis block",
+        "friday_basis": "CER/evidence synthesis and revision"
+      }
     },
     {
       "week": 31,
@@ -813,7 +1134,17 @@
       "evidence_contract": "Separate pH prediction from capacity prediction; use stoichiometry before equilibrium after strong-acid/base challenge.",
       "inquiry_contract": "Buffer challenge simulation/data investigation.",
       "retrieval_contract": "Retrieve conjugate pairs and titration curves; design and stress-test a buffer near target pH.",
-      "authority_version": "2026-11-22-hardened-v1"
+      "authority_version": "2026-11-22-hardened-v1",
+      "inquiry_minutes_plan": {
+        "monday": 15,
+        "thursday": 50,
+        "friday": 15,
+        "total": 80,
+        "classification": "source-planned qualifying inquiry minimum",
+        "monday_basis": "phenomenon/question/model framing",
+        "thursday_basis": "investigation/design/data-analysis block",
+        "friday_basis": "CER/evidence synthesis and revision"
+      }
     },
     {
       "week": 32,
@@ -829,7 +1160,17 @@
       "evidence_contract": "Cross-check free-energy direction through thermodynamic and equilibrium routes; preserve standard vs actual-state conditions.",
       "inquiry_contract": "Free-energy data investigation.",
       "retrieval_contract": "Retrieve entropy/equilibrium; revise sign/unit/state errors and validate physical coupling.",
-      "authority_version": "2026-11-22-hardened-v1"
+      "authority_version": "2026-11-22-hardened-v1",
+      "inquiry_minutes_plan": {
+        "monday": 15,
+        "thursday": 50,
+        "friday": 15,
+        "total": 80,
+        "classification": "source-planned qualifying inquiry minimum",
+        "monday_basis": "phenomenon/question/model framing",
+        "thursday_basis": "investigation/design/data-analysis block",
+        "friday_basis": "CER/evidence synthesis and revision"
+      }
     },
     {
       "week": 33,
@@ -845,7 +1186,17 @@
       "evidence_contract": "Connect redox bookkeeping, measured polarity, standard potential, and real-device limitations; keep electrons out of salt bridge.",
       "inquiry_contract": "Electrochemical-cell investigation or safe simulation.",
       "retrieval_contract": "Retrieve redox and free energy; transfer electron-flow/potential reasoning to unfamiliar cells.",
-      "authority_version": "2026-11-22-hardened-v1"
+      "authority_version": "2026-11-22-hardened-v1",
+      "inquiry_minutes_plan": {
+        "monday": 15,
+        "thursday": 50,
+        "friday": 15,
+        "total": 80,
+        "classification": "source-planned qualifying inquiry minimum",
+        "monday_basis": "phenomenon/question/model framing",
+        "thursday_basis": "investigation/design/data-analysis block",
+        "friday_basis": "CER/evidence synthesis and revision"
+      }
     },
     {
       "week": 34,
@@ -861,7 +1212,17 @@
       "evidence_contract": "Separate nuclear from chemical change; compare fission/fusion and lifecycle evidence; distinguish hazard from risk.",
       "inquiry_contract": "Decay/lifecycle data investigation; no radioactive materials.",
       "retrieval_contract": "Retrieve isotopes and energy; transfer exponential and evidence-matrix reasoning to materials/environmental decisions.",
-      "authority_version": "2026-11-22-hardened-v1"
+      "authority_version": "2026-11-22-hardened-v1",
+      "inquiry_minutes_plan": {
+        "monday": 15,
+        "thursday": 50,
+        "friday": 15,
+        "total": 80,
+        "classification": "source-planned qualifying inquiry minimum",
+        "monday_basis": "phenomenon/question/model framing",
+        "thursday_basis": "investigation/design/data-analysis block",
+        "friday_basis": "CER/evidence synthesis and revision"
+      }
     },
     {
       "week": 35,
@@ -877,7 +1238,17 @@
       "evidence_contract": "Trace source → calculation → criterion → recommendation; separate measured evidence from stakeholder weighting.",
       "inquiry_contract": "Sustainable-chemistry capstone design/evidence investigation.",
       "retrieval_contract": "Retrieve models across the course; stress-test recommendations under changed constraints and uncertain inputs.",
-      "authority_version": "2026-11-22-hardened-v1"
+      "authority_version": "2026-11-22-hardened-v1",
+      "inquiry_minutes_plan": {
+        "monday": 15,
+        "thursday": 50,
+        "friday": 15,
+        "total": 80,
+        "classification": "source-planned qualifying inquiry minimum",
+        "monday_basis": "phenomenon/question/model framing",
+        "thursday_basis": "investigation/design/data-analysis block",
+        "friday_basis": "CER/evidence synthesis and revision"
+      }
     },
     {
       "week": 36,
@@ -893,7 +1264,14 @@
       "evidence_contract": "Map readiness, portfolio traceability, correction-transfer evidence, and course-defense claims while preserving final-exam authority.",
       "inquiry_contract": "No new wet lab; public practice, portfolio audit, and supervised-final support only.",
       "retrieval_contract": "Repair earliest prerequisite weaknesses and verify transfer with new public examples.",
-      "authority_version": "2026-11-22-hardened-v1"
+      "authority_version": "2026-11-22-hardened-v1",
+      "inquiry_minutes_plan": {
+        "monday": 0,
+        "thursday": 0,
+        "friday": 0,
+        "total": 0,
+        "classification": "assessment/support week; zero new inquiry minutes counted"
+      }
     }
   ],
   "assessment": {
