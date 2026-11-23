@@ -91,3 +91,12 @@
 ### Final Weeks 15–16 verification
 - Final ordinary-lesson depth verification: **PASS — all ten Week 15–16 lessons meet or exceed 500 words.**
 - All ten pages mount exactly one canonical Upper Science engine and retain explicit CER/evidence revision, spiral retrieval, uncertainty/model-limit reasoning, and simulation-only collision safety boundaries.
+## 2026-11-22 · Hardening block 9 — Weeks 17–18
+
+- Audited Week 17 as an ordinary instructional/synthesis block and Week 18 as a protected assessment/correction boundary.
+- Mounted the canonical Upper Science engine on all ten pages with exactly one loader per lesson.
+- Week 17 was substantially deepened around center-of-mass system motion, model selection, multi-stage mechanics, residual propagation, uncertainty across stages, cross-checks, and semester synthesis using nonredundant representations.
+- Week 18 preserved its intentionally lean public-review architecture and was hardened around explicit authority boundaries for readiness maps, mixed practice, portfolio evidence, correction records, and semester defense. Public pages may support formative learning but may not expose protected questions/keys or authenticate official midterm mastery.
+- Week 18 remains exempt from ordinary 500-word padding; its release criterion is assessment integrity and correction quality.
+- Preserved browser-local learner work, mastery semantics, routes, evidence portfolios, protected-assessment separation, and navigation.
+- Next target: Weeks 19–20 — Rotational Kinematics, then Torque & Rotational Equilibrium.
