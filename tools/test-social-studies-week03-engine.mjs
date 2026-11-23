@@ -32,7 +32,7 @@ const cases=[
 for(const row of cases)for(const phrase of row)assert.ok(js.toLowerCase().includes(phrase.toLowerCase()),"Week 03 curriculum map omitted "+phrase);
 assert.ok(js.includes('const isGrade9Workspace=grade==="9"&&!demo&&!week02&&!week03&&!laterWeek;'),"Grade 09 Week 01 interactive native controls not preserved");
 assert.ok(js.includes('const specific=week03?WEEK03[grade]:week02?WEEK02[grade]:null;'),"Week 03 must not overwrite Weeks 01–02 guidance");
-assert.ok(js.includes('if(targets&&(!targets.length||targets.some(x=>!x)))return false'),"Missing fail-open on unmatched packet");
+assert.ok(js.includes('if(targets&&(!targets.length||targets.some(x=>!x)||new Set(targets).size!==5))return false'),"Missing fail-open on unmatched packet");
 for(const banned of ["localStorage","sessionStorage","indexedDB","fetch(","XMLHttpRequest","document.cookie"]){
  assert.ok(!js.includes(banned),"New engine must not manage storage: "+banned);
 }
