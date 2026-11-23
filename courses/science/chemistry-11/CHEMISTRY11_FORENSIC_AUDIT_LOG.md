@@ -848,3 +848,11 @@ Chemistry 11 now has one canonical curriculum authority (`course-map.json`) feed
 - All ten pages retain the canonical Upper Science engine and preserve mastery, learner records, evidence storage, assessment authority, and navigation.
 - Next target: Weeks 14–15 — Reaction Evidence & Chemical Equations and The Mole & Stoichiometry.
 
+## 2026-11-22 · Reaction evidence and stoichiometry block
+
+- Audited all five Week 14 lessons (Reaction Evidence & Chemical Equations). The block already exceeded the ordinary-lesson depth floor and showed strong conservation reasoning, system-boundary accounting, equation language, atom ledgers, gas-accounting simulation, safety boundaries, and CER synthesis. Week 14 accepted without content padding.
+- Audited all five Week 15 lessons (The Mole & Stoichiometry). Existing structure was scientifically correct but each page remained slightly below the 500-word depth target.
+- Hardened Week 15 with explicit entity-label discipline, molar-mass provenance, balanced-equation ratio provenance, full-chain mass-to-mass error diagnosis, and auditable conversion-factor defenses.
+- Preserved the canonical Upper Science engine, public-practice assessment boundary, learner evidence storage, mastery semantics, navigation, and safety constraints.
+- Next target: Weeks 16–17 — Limiting Reactants & Yield and Redox & Solution Stoichiometry.
+
