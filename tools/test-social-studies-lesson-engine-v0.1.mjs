@@ -61,7 +61,7 @@ for(const [grade,{path,names}] of Object.entries(weekOne)){
  }
 }
 assert.ok(js.includes('heading?.closest("article.lesson,section.card,article")'),"Upper-grade adapter must target actual original instructional sections");
-assert.ok(js.includes('if(targets&&(!targets.length||targets.some(x=>!x)))return false'),"Upper-grade adapter must fail open on unrecognized lesson packet");
+assert.ok(js.includes('if(targets&&(!targets.length||targets.some(x=>!x)||new Set(targets).size!==5))return false'),"Upper-grade adapter must fail open on missing, duplicate, or unrecognized five-day lesson targets");
 assert.ok(pilot.includes("social-studies-lesson-engine-v0.1.js?v=20261119-social-studies-complete-v5"),"Grade 09 must refresh latest shared engine");
 
 console.log("PASS Social Studies 9–12 Week 01 engine adapters, source-aligned day targets, Grade 09 original controls, no learner storage authority");
