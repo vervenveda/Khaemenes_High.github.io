@@ -180,3 +180,12 @@
 ### Weeks 25–26 definitive closure
 - Definitive status: **PASS — all ten lessons meet or exceed 500 words.**
 - All Week 25–26 pages retain exactly one Upper Science engine and the required vocabulary, CER/evidence revision, retrieval, uncertainty/model-limit, and safety markers.
+## 2026-11-23 · Hardening block 14 — Weeks 27–28
+
+- Audited all ten Week 27–28 lessons. Both weeks began as a major depth regression with pages under ~205 words, inconsistent vocabulary markers, and no canonical Upper Science engine.
+- Mounted the canonical Upper Science engine on all ten pages with exactly one loader per lesson.
+- Week 27 was substantially deepened around continuity, volume-flow conservation, Bernoulli energy terms, viscosity/turbulence limits, residual diagnostics, staged model testing, uncertainty, CER, and retrieval.
+- Week 28 was substantially deepened around temperature vs. internal energy, q=mcΔT, sign conventions, calorimetry/system boundaries, conduction/convection/radiation, cooling-curve residuals, uncertainty, CER, and retrieval.
+- Final ordinary-depth verification: **HOLD — remaining below-floor lessons: W27D1:425, W27D2:394, W27D3:397, W27D4:397, W27D5:417, W28D1:404, W28D2:353, W28D3:373, W28D4:415, W28D5:406.**
+- Preserved browser-local learner work, mastery semantics, routes, navigation, and safe investigation boundaries.
+- Next target: Weeks 29–30 — Electric Charge, Fields & Potential, then Circuits & Electrical Energy.
