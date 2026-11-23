@@ -1,0 +1,51 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "khaemenes://schemas/admin-approved-record-v1",
+  "title": "Khaemenes Administrator Approved Record Handoff",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schemaVersion", "kind", "reviewId", "record", "approval", "evidence"],
+  "properties": {
+    "schemaVersion": {"const": "1.0"},
+    "kind": {"const": "khaemenes-admin-approved-record"},
+    "reviewId": {"type": "string", "minLength": 8},
+    "record": {"type": "object"},
+    "approval": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["status", "reviewedBy", "reviewedAt", "checks"],
+      "properties": {
+        "status": {"const": "approved"},
+        "reviewedBy": {"type": "string", "minLength": 1},
+        "reviewedAt": {"type": "string", "format": "date-time"},
+        "notes": {"type": ["string", "null"]},
+        "checks": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["identityVerified", "evidenceReviewed", "scoreReviewed", "creditDecisionReviewed"],
+          "properties": {
+            "identityVerified": {"const": true},
+            "evidenceReviewed": {"const": true},
+            "scoreReviewed": {"const": true},
+            "creditDecisionReviewed": {"const": true}
+          }
+        }
+      }
+    },
+    "evidence": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["assessmentId", "assessmentVersion", "score", "gradedAt", "sourceIntegrity"],
+        "properties": {
+          "assessmentId": {"type": "string"},
+          "assessmentVersion": {"type": "string"},
+          "score": {"type": "object"},
+          "gradedAt": {"type": "string"},
+          "sourceIntegrity": {"type": "object"}
+        }
+      }
+    }
+  }
+}
