@@ -856,3 +856,12 @@ Chemistry 11 now has one canonical curriculum authority (`course-map.json`) feed
 - Preserved the canonical Upper Science engine, public-practice assessment boundary, learner evidence storage, mastery semantics, navigation, and safety constraints.
 - Next target: Weeks 16–17 — Limiting Reactants & Yield and Redox & Solution Stoichiometry.
 
+## 2026-11-22 · Limiting reactants, yield, redox, and solution stoichiometry block
+
+- Audited all five Week 16 lessons (Limiting Reactants & Yield). Existing chemistry was correct but the daily pages sat just below the 500-word depth target.
+- Hardened Week 16 with near-boundary limiting-reactant uncertainty, independent theoretical-yield validation, chemical-vs-procedural yield diagnosis, sensitivity analysis, and constraint → prediction → observed-evidence synthesis.
+- Audited all five Week 17 lessons (Redox & Solution Stoichiometry). Existing chemistry was correct but the daily pages also sat below the depth floor.
+- Hardened Week 17 with oxidation-state charge-sum validation, three-check redox balancing, explicit equivalence-vs-endpoint distinctions, replicate precision/accuracy analysis, and a four-level atoms → charge → electrons → moles conservation audit.
+- Preserved the Upper Science engine, safety boundaries, learner records, public-practice assessment boundary, navigation, and evidence-storage behavior.
+- Next target: Week 18 midterm/corrections boundary, then Weeks 19–20 kinetics.
+
