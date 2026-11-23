@@ -1,0 +1,629 @@
+{
+  "schema": "khaemenes-high-school-elective-course-map-v1",
+  "id": "career-professional-studies",
+  "title": "Career & Professional Studies",
+  "gradeBand": "9-12",
+  "durationWeeks": 13,
+  "plannedLessons": 65,
+  "masteryThreshold": 80,
+  "status": "curriculum-architecture-complete-student-production-pending",
+  "authority": "catalog-plan-until-promotion-gate-passes",
+  "qualityStandard": "courses/electives/ELECTIVE_QUALITY_STANDARD_V1.md",
+  "permanentRoutine": "Goal → Evidence → Constraint → Decision → Communication → Revision",
+  "assessmentModel": {
+    "weekly": "open-book discipline-authentic evidence plus mastery check where appropriate",
+    "cumulative": [
+      4,
+      8,
+      12
+    ],
+    "culminatingWeek": 13,
+    "correction": "below 80% requires targeted correction/revision before reassessment",
+    "protectedBoundary": "browser-local drafts and self-checks do not create transcript credit"
+  },
+  "privacySafety": {
+    "forcedSensitiveDisclosure": false,
+    "accessibleAlternativeRequired": true,
+    "publicProtectedAssessmentContent": false
+  },
+  "weeks": [
+    {
+      "week": 1,
+      "title": "Strengths, interests & transferable skills",
+      "essentialQuestion": "How can I describe what I can do without reducing myself to a label?",
+      "days": [
+        {
+          "day": 1,
+          "phase": "Retrieve/Listen/Observe",
+          "task": "Retrieve a prior idea or inspect a new example connected to Strengths, interests & transferable skills. Identify what you notice, what you already know, and one question worth testing.",
+          "evidence": "retrieval note or annotated observation tied to Strengths, interests & transferable skills"
+        },
+        {
+          "day": 2,
+          "phase": "Learn/Model",
+          "task": "Study the core concepts, vocabulary, and a worked model for Strengths, interests & transferable skills. Explain why the model works and where it could fail or mislead.",
+          "evidence": "annotated model with vocabulary used in context"
+        },
+        {
+          "day": 3,
+          "phase": "Practice/Analyze",
+          "task": "Complete guided practice for Strengths, interests & transferable skills. Compare at least two examples, alternatives, or interpretations and justify the stronger choice with evidence.",
+          "evidence": "guided analysis or practice artifact"
+        },
+        {
+          "day": 4,
+          "phase": "Create/Apply/Test",
+          "task": "Apply Strengths, interests & transferable skills in a new situation. Build, perform, design, plan, or solve something authentic to the discipline, then test it against explicit criteria.",
+          "evidence": "skills inventory and evidence map"
+        },
+        {
+          "day": 5,
+          "phase": "Revise/Defend",
+          "task": "Revise the week's work after feedback or self-check. Defend one decision, name one limitation, and identify what should transfer to a later week.",
+          "evidence": "revised artifact, reflection, and short defense"
+        }
+      ],
+      "vocabularyTarget": "5–9 discipline terms taught through use, examples, and retrieval",
+      "weeklyEvidence": "skills inventory and evidence map",
+      "masteryCheck": {
+        "mode": "open-book mixed evidence",
+        "threshold": 80,
+        "retake": "targeted correction then parallel-form or revised evidence"
+      },
+      "cumulativeCheckpoint": false,
+      "culminating": false
+    },
+    {
+      "week": 2,
+      "title": "Career research & source credibility",
+      "essentialQuestion": "How can I distinguish realistic career information from marketing or stereotypes?",
+      "days": [
+        {
+          "day": 1,
+          "phase": "Retrieve/Listen/Observe",
+          "task": "Retrieve a prior idea or inspect a new example connected to Career research & source credibility. Identify what you notice, what you already know, and one question worth testing.",
+          "evidence": "retrieval note or annotated observation tied to Career research & source credibility"
+        },
+        {
+          "day": 2,
+          "phase": "Learn/Model",
+          "task": "Study the core concepts, vocabulary, and a worked model for Career research & source credibility. Explain why the model works and where it could fail or mislead.",
+          "evidence": "annotated model with vocabulary used in context"
+        },
+        {
+          "day": 3,
+          "phase": "Practice/Analyze",
+          "task": "Complete guided practice for Career research & source credibility. Compare at least two examples, alternatives, or interpretations and justify the stronger choice with evidence.",
+          "evidence": "guided analysis or practice artifact"
+        },
+        {
+          "day": 4,
+          "phase": "Create/Apply/Test",
+          "task": "Apply Career research & source credibility in a new situation. Build, perform, design, plan, or solve something authentic to the discipline, then test it against explicit criteria.",
+          "evidence": "career-source comparison dossier"
+        },
+        {
+          "day": 5,
+          "phase": "Revise/Defend",
+          "task": "Revise the week's work after feedback or self-check. Defend one decision, name one limitation, and identify what should transfer to a later week.",
+          "evidence": "revised artifact, reflection, and short defense"
+        }
+      ],
+      "vocabularyTarget": "5–9 discipline terms taught through use, examples, and retrieval",
+      "weeklyEvidence": "career-source comparison dossier",
+      "masteryCheck": {
+        "mode": "open-book mixed evidence",
+        "threshold": 80,
+        "retake": "targeted correction then parallel-form or revised evidence"
+      },
+      "cumulativeCheckpoint": false,
+      "culminating": false
+    },
+    {
+      "week": 3,
+      "title": "Workplace communication",
+      "essentialQuestion": "How do audience, purpose, tone, and medium change professional communication?",
+      "days": [
+        {
+          "day": 1,
+          "phase": "Retrieve/Listen/Observe",
+          "task": "Retrieve a prior idea or inspect a new example connected to Workplace communication. Identify what you notice, what you already know, and one question worth testing.",
+          "evidence": "retrieval note or annotated observation tied to Workplace communication"
+        },
+        {
+          "day": 2,
+          "phase": "Learn/Model",
+          "task": "Study the core concepts, vocabulary, and a worked model for Workplace communication. Explain why the model works and where it could fail or mislead.",
+          "evidence": "annotated model with vocabulary used in context"
+        },
+        {
+          "day": 3,
+          "phase": "Practice/Analyze",
+          "task": "Complete guided practice for Workplace communication. Compare at least two examples, alternatives, or interpretations and justify the stronger choice with evidence.",
+          "evidence": "guided analysis or practice artifact"
+        },
+        {
+          "day": 4,
+          "phase": "Create/Apply/Test",
+          "task": "Apply Workplace communication in a new situation. Build, perform, design, plan, or solve something authentic to the discipline, then test it against explicit criteria.",
+          "evidence": "professional message set"
+        },
+        {
+          "day": 5,
+          "phase": "Revise/Defend",
+          "task": "Revise the week's work after feedback or self-check. Defend one decision, name one limitation, and identify what should transfer to a later week.",
+          "evidence": "revised artifact, reflection, and short defense"
+        }
+      ],
+      "vocabularyTarget": "5–9 discipline terms taught through use, examples, and retrieval",
+      "weeklyEvidence": "professional message set",
+      "masteryCheck": {
+        "mode": "open-book mixed evidence",
+        "threshold": 80,
+        "retake": "targeted correction then parallel-form or revised evidence"
+      },
+      "cumulativeCheckpoint": false,
+      "culminating": false
+    },
+    {
+      "week": 4,
+      "title": "Resumes, portfolios & evidence of work",
+      "essentialQuestion": "How can I present evidence of learning and experience truthfully and effectively?",
+      "days": [
+        {
+          "day": 1,
+          "phase": "Retrieve/Listen/Observe",
+          "task": "Retrieve a prior idea or inspect a new example connected to Resumes, portfolios & evidence of work. Identify what you notice, what you already know, and one question worth testing.",
+          "evidence": "retrieval note or annotated observation tied to Resumes, portfolios & evidence of work"
+        },
+        {
+          "day": 2,
+          "phase": "Learn/Model",
+          "task": "Study the core concepts, vocabulary, and a worked model for Resumes, portfolios & evidence of work. Explain why the model works and where it could fail or mislead.",
+          "evidence": "annotated model with vocabulary used in context"
+        },
+        {
+          "day": 3,
+          "phase": "Practice/Analyze",
+          "task": "Complete guided practice for Resumes, portfolios & evidence of work. Compare at least two examples, alternatives, or interpretations and justify the stronger choice with evidence.",
+          "evidence": "guided analysis or practice artifact"
+        },
+        {
+          "day": 4,
+          "phase": "Create/Apply/Test",
+          "task": "Apply Resumes, portfolios & evidence of work in a new situation. Build, perform, design, plan, or solve something authentic to the discipline, then test it against explicit criteria.",
+          "evidence": "resume and evidence portfolio"
+        },
+        {
+          "day": 5,
+          "phase": "Revise/Defend",
+          "task": "Revise the week's work after feedback or self-check. Defend one decision, name one limitation, and identify what should transfer to a later week.",
+          "evidence": "revised artifact, reflection, and short defense"
+        }
+      ],
+      "vocabularyTarget": "5–9 discipline terms taught through use, examples, and retrieval",
+      "weeklyEvidence": "resume and evidence portfolio",
+      "masteryCheck": {
+        "mode": "open-book mixed evidence",
+        "threshold": 80,
+        "retake": "targeted correction then parallel-form or revised evidence"
+      },
+      "cumulativeCheckpoint": true,
+      "culminating": false
+    },
+    {
+      "week": 5,
+      "title": "Interviewing & professional presence",
+      "essentialQuestion": "How can I prepare, listen, answer, and follow up in an interview ethically?",
+      "days": [
+        {
+          "day": 1,
+          "phase": "Retrieve/Listen/Observe",
+          "task": "Retrieve a prior idea or inspect a new example connected to Interviewing & professional presence. Identify what you notice, what you already know, and one question worth testing.",
+          "evidence": "retrieval note or annotated observation tied to Interviewing & professional presence"
+        },
+        {
+          "day": 2,
+          "phase": "Learn/Model",
+          "task": "Study the core concepts, vocabulary, and a worked model for Interviewing & professional presence. Explain why the model works and where it could fail or mislead.",
+          "evidence": "annotated model with vocabulary used in context"
+        },
+        {
+          "day": 3,
+          "phase": "Practice/Analyze",
+          "task": "Complete guided practice for Interviewing & professional presence. Compare at least two examples, alternatives, or interpretations and justify the stronger choice with evidence.",
+          "evidence": "guided analysis or practice artifact"
+        },
+        {
+          "day": 4,
+          "phase": "Create/Apply/Test",
+          "task": "Apply Interviewing & professional presence in a new situation. Build, perform, design, plan, or solve something authentic to the discipline, then test it against explicit criteria.",
+          "evidence": "mock interview record and reflection"
+        },
+        {
+          "day": 5,
+          "phase": "Revise/Defend",
+          "task": "Revise the week's work after feedback or self-check. Defend one decision, name one limitation, and identify what should transfer to a later week.",
+          "evidence": "revised artifact, reflection, and short defense"
+        }
+      ],
+      "vocabularyTarget": "5–9 discipline terms taught through use, examples, and retrieval",
+      "weeklyEvidence": "mock interview record and reflection",
+      "masteryCheck": {
+        "mode": "open-book mixed evidence",
+        "threshold": 80,
+        "retake": "targeted correction then parallel-form or revised evidence"
+      },
+      "cumulativeCheckpoint": false,
+      "culminating": false
+    },
+    {
+      "week": 6,
+      "title": "Workplace collaboration & conflict",
+      "essentialQuestion": "How can teams make decisions, divide work, and address conflict fairly?",
+      "days": [
+        {
+          "day": 1,
+          "phase": "Retrieve/Listen/Observe",
+          "task": "Retrieve a prior idea or inspect a new example connected to Workplace collaboration & conflict. Identify what you notice, what you already know, and one question worth testing.",
+          "evidence": "retrieval note or annotated observation tied to Workplace collaboration & conflict"
+        },
+        {
+          "day": 2,
+          "phase": "Learn/Model",
+          "task": "Study the core concepts, vocabulary, and a worked model for Workplace collaboration & conflict. Explain why the model works and where it could fail or mislead.",
+          "evidence": "annotated model with vocabulary used in context"
+        },
+        {
+          "day": 3,
+          "phase": "Practice/Analyze",
+          "task": "Complete guided practice for Workplace collaboration & conflict. Compare at least two examples, alternatives, or interpretations and justify the stronger choice with evidence.",
+          "evidence": "guided analysis or practice artifact"
+        },
+        {
+          "day": 4,
+          "phase": "Create/Apply/Test",
+          "task": "Apply Workplace collaboration & conflict in a new situation. Build, perform, design, plan, or solve something authentic to the discipline, then test it against explicit criteria.",
+          "evidence": "team operating agreement and conflict protocol"
+        },
+        {
+          "day": 5,
+          "phase": "Revise/Defend",
+          "task": "Revise the week's work after feedback or self-check. Defend one decision, name one limitation, and identify what should transfer to a later week.",
+          "evidence": "revised artifact, reflection, and short defense"
+        }
+      ],
+      "vocabularyTarget": "5–9 discipline terms taught through use, examples, and retrieval",
+      "weeklyEvidence": "team operating agreement and conflict protocol",
+      "masteryCheck": {
+        "mode": "open-book mixed evidence",
+        "threshold": 80,
+        "retake": "targeted correction then parallel-form or revised evidence"
+      },
+      "cumulativeCheckpoint": false,
+      "culminating": false
+    },
+    {
+      "week": 7,
+      "title": "Project planning & time management",
+      "essentialQuestion": "How can I turn a goal into a feasible project with milestones, dependencies, and buffers?",
+      "days": [
+        {
+          "day": 1,
+          "phase": "Retrieve/Listen/Observe",
+          "task": "Retrieve a prior idea or inspect a new example connected to Project planning & time management. Identify what you notice, what you already know, and one question worth testing.",
+          "evidence": "retrieval note or annotated observation tied to Project planning & time management"
+        },
+        {
+          "day": 2,
+          "phase": "Learn/Model",
+          "task": "Study the core concepts, vocabulary, and a worked model for Project planning & time management. Explain why the model works and where it could fail or mislead.",
+          "evidence": "annotated model with vocabulary used in context"
+        },
+        {
+          "day": 3,
+          "phase": "Practice/Analyze",
+          "task": "Complete guided practice for Project planning & time management. Compare at least two examples, alternatives, or interpretations and justify the stronger choice with evidence.",
+          "evidence": "guided analysis or practice artifact"
+        },
+        {
+          "day": 4,
+          "phase": "Create/Apply/Test",
+          "task": "Apply Project planning & time management in a new situation. Build, perform, design, plan, or solve something authentic to the discipline, then test it against explicit criteria.",
+          "evidence": "project plan and risk register"
+        },
+        {
+          "day": 5,
+          "phase": "Revise/Defend",
+          "task": "Revise the week's work after feedback or self-check. Defend one decision, name one limitation, and identify what should transfer to a later week.",
+          "evidence": "revised artifact, reflection, and short defense"
+        }
+      ],
+      "vocabularyTarget": "5–9 discipline terms taught through use, examples, and retrieval",
+      "weeklyEvidence": "project plan and risk register",
+      "masteryCheck": {
+        "mode": "open-book mixed evidence",
+        "threshold": 80,
+        "retake": "targeted correction then parallel-form or revised evidence"
+      },
+      "cumulativeCheckpoint": false,
+      "culminating": false
+    },
+    {
+      "week": 8,
+      "title": "Financial literacy for work",
+      "essentialQuestion": "How do wages, taxes, benefits, expenses, and trade-offs shape employment decisions?",
+      "days": [
+        {
+          "day": 1,
+          "phase": "Retrieve/Listen/Observe",
+          "task": "Retrieve a prior idea or inspect a new example connected to Financial literacy for work. Identify what you notice, what you already know, and one question worth testing.",
+          "evidence": "retrieval note or annotated observation tied to Financial literacy for work"
+        },
+        {
+          "day": 2,
+          "phase": "Learn/Model",
+          "task": "Study the core concepts, vocabulary, and a worked model for Financial literacy for work. Explain why the model works and where it could fail or mislead.",
+          "evidence": "annotated model with vocabulary used in context"
+        },
+        {
+          "day": 3,
+          "phase": "Practice/Analyze",
+          "task": "Complete guided practice for Financial literacy for work. Compare at least two examples, alternatives, or interpretations and justify the stronger choice with evidence.",
+          "evidence": "guided analysis or practice artifact"
+        },
+        {
+          "day": 4,
+          "phase": "Create/Apply/Test",
+          "task": "Apply Financial literacy for work in a new situation. Build, perform, design, plan, or solve something authentic to the discipline, then test it against explicit criteria.",
+          "evidence": "fictional compensation comparison"
+        },
+        {
+          "day": 5,
+          "phase": "Revise/Defend",
+          "task": "Revise the week's work after feedback or self-check. Defend one decision, name one limitation, and identify what should transfer to a later week.",
+          "evidence": "revised artifact, reflection, and short defense"
+        }
+      ],
+      "vocabularyTarget": "5–9 discipline terms taught through use, examples, and retrieval",
+      "weeklyEvidence": "fictional compensation comparison",
+      "masteryCheck": {
+        "mode": "open-book mixed evidence",
+        "threshold": 80,
+        "retake": "targeted correction then parallel-form or revised evidence"
+      },
+      "cumulativeCheckpoint": true,
+      "culminating": false
+    },
+    {
+      "week": 9,
+      "title": "Entrepreneurship & value creation",
+      "essentialQuestion": "What makes a product or service useful, ethical, and financially plausible?",
+      "days": [
+        {
+          "day": 1,
+          "phase": "Retrieve/Listen/Observe",
+          "task": "Retrieve a prior idea or inspect a new example connected to Entrepreneurship & value creation. Identify what you notice, what you already know, and one question worth testing.",
+          "evidence": "retrieval note or annotated observation tied to Entrepreneurship & value creation"
+        },
+        {
+          "day": 2,
+          "phase": "Learn/Model",
+          "task": "Study the core concepts, vocabulary, and a worked model for Entrepreneurship & value creation. Explain why the model works and where it could fail or mislead.",
+          "evidence": "annotated model with vocabulary used in context"
+        },
+        {
+          "day": 3,
+          "phase": "Practice/Analyze",
+          "task": "Complete guided practice for Entrepreneurship & value creation. Compare at least two examples, alternatives, or interpretations and justify the stronger choice with evidence.",
+          "evidence": "guided analysis or practice artifact"
+        },
+        {
+          "day": 4,
+          "phase": "Create/Apply/Test",
+          "task": "Apply Entrepreneurship & value creation in a new situation. Build, perform, design, plan, or solve something authentic to the discipline, then test it against explicit criteria.",
+          "evidence": "micro-venture concept and lean budget"
+        },
+        {
+          "day": 5,
+          "phase": "Revise/Defend",
+          "task": "Revise the week's work after feedback or self-check. Defend one decision, name one limitation, and identify what should transfer to a later week.",
+          "evidence": "revised artifact, reflection, and short defense"
+        }
+      ],
+      "vocabularyTarget": "5–9 discipline terms taught through use, examples, and retrieval",
+      "weeklyEvidence": "micro-venture concept and lean budget",
+      "masteryCheck": {
+        "mode": "open-book mixed evidence",
+        "threshold": 80,
+        "retake": "targeted correction then parallel-form or revised evidence"
+      },
+      "cumulativeCheckpoint": false,
+      "culminating": false
+    },
+    {
+      "week": 10,
+      "title": "Marketing, persuasion & ethics",
+      "essentialQuestion": "How can communication persuade without deception or manipulation?",
+      "days": [
+        {
+          "day": 1,
+          "phase": "Retrieve/Listen/Observe",
+          "task": "Retrieve a prior idea or inspect a new example connected to Marketing, persuasion & ethics. Identify what you notice, what you already know, and one question worth testing.",
+          "evidence": "retrieval note or annotated observation tied to Marketing, persuasion & ethics"
+        },
+        {
+          "day": 2,
+          "phase": "Learn/Model",
+          "task": "Study the core concepts, vocabulary, and a worked model for Marketing, persuasion & ethics. Explain why the model works and where it could fail or mislead.",
+          "evidence": "annotated model with vocabulary used in context"
+        },
+        {
+          "day": 3,
+          "phase": "Practice/Analyze",
+          "task": "Complete guided practice for Marketing, persuasion & ethics. Compare at least two examples, alternatives, or interpretations and justify the stronger choice with evidence.",
+          "evidence": "guided analysis or practice artifact"
+        },
+        {
+          "day": 4,
+          "phase": "Create/Apply/Test",
+          "task": "Apply Marketing, persuasion & ethics in a new situation. Build, perform, design, plan, or solve something authentic to the discipline, then test it against explicit criteria.",
+          "evidence": "ethical campaign critique and redesign"
+        },
+        {
+          "day": 5,
+          "phase": "Revise/Defend",
+          "task": "Revise the week's work after feedback or self-check. Defend one decision, name one limitation, and identify what should transfer to a later week.",
+          "evidence": "revised artifact, reflection, and short defense"
+        }
+      ],
+      "vocabularyTarget": "5–9 discipline terms taught through use, examples, and retrieval",
+      "weeklyEvidence": "ethical campaign critique and redesign",
+      "masteryCheck": {
+        "mode": "open-book mixed evidence",
+        "threshold": 80,
+        "retake": "targeted correction then parallel-form or revised evidence"
+      },
+      "cumulativeCheckpoint": false,
+      "culminating": false
+    },
+    {
+      "week": 11,
+      "title": "Workplace rights, responsibilities & safety",
+      "essentialQuestion": "How do policies, boundaries, documentation, and safety expectations support fair work?",
+      "days": [
+        {
+          "day": 1,
+          "phase": "Retrieve/Listen/Observe",
+          "task": "Retrieve a prior idea or inspect a new example connected to Workplace rights, responsibilities & safety. Identify what you notice, what you already know, and one question worth testing.",
+          "evidence": "retrieval note or annotated observation tied to Workplace rights, responsibilities & safety"
+        },
+        {
+          "day": 2,
+          "phase": "Learn/Model",
+          "task": "Study the core concepts, vocabulary, and a worked model for Workplace rights, responsibilities & safety. Explain why the model works and where it could fail or mislead.",
+          "evidence": "annotated model with vocabulary used in context"
+        },
+        {
+          "day": 3,
+          "phase": "Practice/Analyze",
+          "task": "Complete guided practice for Workplace rights, responsibilities & safety. Compare at least two examples, alternatives, or interpretations and justify the stronger choice with evidence.",
+          "evidence": "guided analysis or practice artifact"
+        },
+        {
+          "day": 4,
+          "phase": "Create/Apply/Test",
+          "task": "Apply Workplace rights, responsibilities & safety in a new situation. Build, perform, design, plan, or solve something authentic to the discipline, then test it against explicit criteria.",
+          "evidence": "scenario-based workplace decision brief"
+        },
+        {
+          "day": 5,
+          "phase": "Revise/Defend",
+          "task": "Revise the week's work after feedback or self-check. Defend one decision, name one limitation, and identify what should transfer to a later week.",
+          "evidence": "revised artifact, reflection, and short defense"
+        }
+      ],
+      "vocabularyTarget": "5–9 discipline terms taught through use, examples, and retrieval",
+      "weeklyEvidence": "scenario-based workplace decision brief",
+      "masteryCheck": {
+        "mode": "open-book mixed evidence",
+        "threshold": 80,
+        "retake": "targeted correction then parallel-form or revised evidence"
+      },
+      "cumulativeCheckpoint": false,
+      "culminating": false
+    },
+    {
+      "week": 12,
+      "title": "Career pathway experiment",
+      "essentialQuestion": "What can I learn by testing a small real-world task before making a long-term decision?",
+      "days": [
+        {
+          "day": 1,
+          "phase": "Retrieve/Listen/Observe",
+          "task": "Retrieve a prior idea or inspect a new example connected to Career pathway experiment. Identify what you notice, what you already know, and one question worth testing.",
+          "evidence": "retrieval note or annotated observation tied to Career pathway experiment"
+        },
+        {
+          "day": 2,
+          "phase": "Learn/Model",
+          "task": "Study the core concepts, vocabulary, and a worked model for Career pathway experiment. Explain why the model works and where it could fail or mislead.",
+          "evidence": "annotated model with vocabulary used in context"
+        },
+        {
+          "day": 3,
+          "phase": "Practice/Analyze",
+          "task": "Complete guided practice for Career pathway experiment. Compare at least two examples, alternatives, or interpretations and justify the stronger choice with evidence.",
+          "evidence": "guided analysis or practice artifact"
+        },
+        {
+          "day": 4,
+          "phase": "Create/Apply/Test",
+          "task": "Apply Career pathway experiment in a new situation. Build, perform, design, plan, or solve something authentic to the discipline, then test it against explicit criteria.",
+          "evidence": "career pathway mini-project"
+        },
+        {
+          "day": 5,
+          "phase": "Revise/Defend",
+          "task": "Revise the week's work after feedback or self-check. Defend one decision, name one limitation, and identify what should transfer to a later week.",
+          "evidence": "revised artifact, reflection, and short defense"
+        }
+      ],
+      "vocabularyTarget": "5–9 discipline terms taught through use, examples, and retrieval",
+      "weeklyEvidence": "career pathway mini-project",
+      "masteryCheck": {
+        "mode": "open-book mixed evidence",
+        "threshold": 80,
+        "retake": "targeted correction then parallel-form or revised evidence"
+      },
+      "cumulativeCheckpoint": true,
+      "culminating": false
+    },
+    {
+      "week": 13,
+      "title": "Professional portfolio & defense",
+      "essentialQuestion": "What evidence best demonstrates my growth, judgment, and readiness for a next step?",
+      "days": [
+        {
+          "day": 1,
+          "phase": "Retrieve/Listen/Observe",
+          "task": "Retrieve a prior idea or inspect a new example connected to Professional portfolio & defense. Identify what you notice, what you already know, and one question worth testing.",
+          "evidence": "retrieval note or annotated observation tied to Professional portfolio & defense"
+        },
+        {
+          "day": 2,
+          "phase": "Learn/Model",
+          "task": "Study the core concepts, vocabulary, and a worked model for Professional portfolio & defense. Explain why the model works and where it could fail or mislead.",
+          "evidence": "annotated model with vocabulary used in context"
+        },
+        {
+          "day": 3,
+          "phase": "Practice/Analyze",
+          "task": "Complete guided practice for Professional portfolio & defense. Compare at least two examples, alternatives, or interpretations and justify the stronger choice with evidence.",
+          "evidence": "guided analysis or practice artifact"
+        },
+        {
+          "day": 4,
+          "phase": "Create/Apply/Test",
+          "task": "Apply Professional portfolio & defense in a new situation. Build, perform, design, plan, or solve something authentic to the discipline, then test it against explicit criteria.",
+          "evidence": "curated professional portfolio and oral/written defense"
+        },
+        {
+          "day": 5,
+          "phase": "Revise/Defend",
+          "task": "Revise the week's work after feedback or self-check. Defend one decision, name one limitation, and identify what should transfer to a later week.",
+          "evidence": "revised artifact, reflection, and short defense"
+        }
+      ],
+      "vocabularyTarget": "5–9 discipline terms taught through use, examples, and retrieval",
+      "weeklyEvidence": "curated professional portfolio and oral/written defense",
+      "masteryCheck": {
+        "mode": "open-book mixed evidence",
+        "threshold": 80,
+        "retake": "targeted correction then parallel-form or revised evidence"
+      },
+      "cumulativeCheckpoint": false,
+      "culminating": true
+    }
+  ]
+}
