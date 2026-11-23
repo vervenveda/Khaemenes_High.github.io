@@ -53,6 +53,7 @@ on:
       - 'courses/mathematics/precalculus-trigonometry/**'
       - 'courses/mathematics/calculus-1/**'
       - '.github/workflows/course-execution-matrix.yml'
+  pull_request:
   workflow_dispatch:
 permissions:
   contents: read
