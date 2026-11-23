@@ -586,3 +586,50 @@ All ten pages now verify:
 **CHEMISTRY 11 SOURCE-LEVEL CURRICULUM CERTIFICATION: PASS**
 
 This PASS is intentionally limited to curriculum/source architecture. Browser/device behavior, accessibility, offline/runtime behavior, protected assessment operations, credential authority, accreditation, AP authorization, and jurisdictional credit approval remain separate gates and are not implied by this certification.
+
+
+## 2026-11-22 · Fresh post-certification forensic audit — five new bubbles
+
+The 180-lesson curriculum source certification remains PASS. This fresh audit examined current governance, course-map authority, inquiry/lab evidence, learner evidence storage, dedicated CI coverage, vocabulary/assessment infrastructure, and current course surfaces after the full hardening program.
+
+### Bubble 1 — No course-wide Chemistry 11 CI integrity workflow
+- The repository contains a dedicated `.github/workflows/chemistry11-week14-validation.yml`, but no Chemistry 11 workflow that continuously validates the full 36-week / 180-lesson course.
+- The source certification was established through cumulative direct block verification and a final repository-tree inventory, but a future edit could regress an earlier lesson without a Chemistry-specific whole-course CI guard catching it.
+- **Recommended repair:** add a `chemistry11-course-integrity.yml` workflow plus validator that checks 180 expected lesson routes, canonical engine marker, exactly one loader, science-contract presence, map/lesson route consistency, assessment-week boundaries, and ordinary-page depth floor.
+
+### Bubble 2 — 25% inquiry/laboratory target remains unproven by instructional-time evidence
+- `LAB_INVESTIGATION_QUALITY_V1.md` defines eight strong anchor investigations, but explicitly states that the anchors do not prove the >=25% course-time target.
+- `FORENSIC_LAB_AUDIT_2026-10-24.md` still lists the denominator/numerator time proof as an outstanding release blocker.
+- **Recommended repair:** establish a canonical inquiry-minute evidence model across all 36 weeks, distinguishing qualifying inquiry minutes from routine instruction, with safe simulation/data alternatives counted by the same reasoning standard.
+
+### Bubble 3 — Inquiry/evidence persistence and learner isolation are still browser-local and not authoritative
+- `inquiry-ledger.js` stores provisional records under a single browser-local key and intentionally keeps official review/sharing/credit locked.
+- Weekly index pages also retain direct browser-local evidence storage patterns.
+- The authority-gate document correctly states that authenticated educator approval, evidence digest binding, revocation, and authoritative learner/course identity are not implemented.
+- **Recommended repair:** harden learner-scoped evidence storage and fictional two-learner regression first; preserve fail-closed behavior and keep official signoff behind the Academy/STOS authority boundary.
+
+### Bubble 4 — Governance/course-map descriptions lag the newly hardened lesson depth
+- `course-map.json` still understates several quantitative strands. Examples: Week 28 describes ion-product work largely qualitatively even though the lessons now perform Ksp/Qsp and post-mixing calculations; Week 33 says to read cell diagrams/compare potential data while the lessons now calculate E°cell and connect it to ΔG°; Weeks 35–36 now contain deeper sensitivity, source-traceability, and cross-unit diagnostics than the map advertises.
+- The markdown `CURRICULUM_MAP.md` is intentionally broad and therefore does not preserve the new per-week quantitative/evidence contracts.
+- **Recommended repair:** synchronize `course-map.json`, weekly index summaries, and governance documentation to the hardened lesson contracts so the map becomes a reliable curriculum authority rather than a historical outline.
+
+### Bubble 5 — Weekly landing/evidence surfaces are not yet unified with the canonical upper-science lesson contract
+- Daily lessons now share the hardened upper-science contract, but weekly index pages remain a separate journal-shell implementation with generic Monday–Friday prompts and direct localStorage evidence fields.
+- This creates a second instructional surface that can drift from the daily lesson engine and can underrepresent week-specific quantitative, retrieval, vocabulary, and evidence expectations.
+- **Recommended repair:** create a Chemistry 11 weekly-shell contract/validator that derives week title, essential question, quantitative target, investigation target, vocabulary/retrieval prompts, and lesson links from canonical course data while preserving the current safe journal/portfolio functions.
+
+### Strong systems retained
+- 36 weeks / 180 lesson routes remain present.
+- Source-level curriculum certification remains PASS.
+- Vocabulary source is week-aligned and source-reviewed.
+- Public question-bank audit includes misconception mapping, reasoning-family coverage, answer-position distribution, ordinary-week minimum item counts, unit-level evidence families, and spaced-retention checks.
+- Secure assessment blueprint preserves protected summative boundaries.
+
+### Priority order
+1. Course-wide Chemistry 11 CI integrity workflow.
+2. Canonical course-map / weekly-shell synchronization.
+3. Inquiry-time denominator/numerator proof.
+4. Learner-isolated inquiry/evidence persistence regression.
+5. Weekly-shell derivation from the canonical upper-science contract.
+
+These are post-certification hardening targets; they do not revoke the existing curriculum-source PASS.
