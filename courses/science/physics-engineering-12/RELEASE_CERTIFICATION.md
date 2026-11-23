@@ -3,7 +3,7 @@
 **Course:** International Physics & Engineering 12  
 **Code:** KH-SCI-PHY12  
 **Updated:** 2026-11-23  
-**Current release state:** SOURCE-HARDENED / STRICT A+++ CERTIFICATION HOLD
+**Current release state:** STRICT A+++ SOURCE CERTIFIED
 
 ## Verified source architecture
 
@@ -59,3 +59,22 @@ This source document does not certify:
 3. Re-run the Physics 180-lesson strict audit.
 4. Run the complete 720-lesson department strict audit.
 5. Keep browser/device and protected operational certification as separate release gates.
+
+
+## 2026-11-23 · Strict certification result
+
+Dedicated workflow: `Physics 12 Strict Curriculum Certification`  
+Certified commit: `1406bab944291c2a9c7d6af301812e0cedf99e65`  
+Workflow run: `45207214341`
+
+- Inventory: **180/180**
+- Canonical Upper Science engine mounted: **180/180**
+- Ordinary instructional lessons: **170/170 PASS**
+- Protected assessment pages (Weeks 18 and 36): **10/10 PASS**
+- Strict source verdict: **PASS**
+
+The certification explicitly distinguishes ordinary instructional pages from protected assessment/correction pages. Weeks 18 and 36 are judged against assessment-integrity, authority-separation, and formative-support requirements rather than being padded to imitate ordinary lab lessons.
+
+### Operational boundary
+
+This PASS certifies the Physics 12 source curriculum contract. Browser/device behavior, accessibility, offline runtime, learner persistence, protected assessment custody, authoritative grade recording, transcript/credential issuance, accreditation, AP authorization, and jurisdiction-specific credit remain separate operational or institutional gates.
