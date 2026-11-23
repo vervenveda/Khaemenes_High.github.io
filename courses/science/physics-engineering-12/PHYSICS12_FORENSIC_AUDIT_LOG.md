@@ -282,3 +282,15 @@
 - Added `STANDARDS_CROSSWALK.md` and `RELEASE_CERTIFICATION.md` so course-level standards mapping, source-hardening status, strict A+++ HOLD, and separate operational gates are explicit.
 - Certification language is now normalized: Physics 12 is **SOURCE-HARDENED / STRICT A+++ CERTIFICATION HOLD**, not falsely declared fully certified.
 - Next target: reconcile daily visible-contract gaps against the canonical course map, then rerun the 180-lesson Physics strict audit before department-level 720-lesson certification.
+
+
+## 2026-11-23 · Strict Physics 12 certification — PASS
+
+- Reconciled the ordinary daily visible contract against canonical `course-map.json` metadata across Weeks 01–17 and 19–35 without replacing lesson bodies or weakening the audit.
+- Preserved Weeks 18 and 36 as protected assessment/correction boundaries and certified them under a separate integrity contract rather than the ordinary 500-word lesson contract.
+- Added dedicated `audit-physics12-strict-certification-v1.mjs` and workflow `physics12-strict-certification.yml`.
+- First clean strict run exposed a small set of true and audit-design gaps; corrected Week 06 misconception diagnosis, scoped engineering-decision requirements to engineering/application weeks, recognized legitimate worked-transfer examples, added an explicit thermal mathematical model on W28D01, and strengthened engineering decision/tradeoff work on W34D02 and W34D04.
+- Final dedicated strict workflow run `45207214341` on commit `1406bab944291c2a9c7d6af301812e0cedf99e65`: **SUCCESS**.
+- Final metrics: inventory **180/180**; engine **180/180**; ordinary lessons **170/170**; protected assessment pages **10/10**; verdict **PASS**.
+- Physics & Engineering 12 status is now **STRICT A+++ SOURCE CERTIFIED**.
+- Separate release gates remain for browser/device, accessibility, offline runtime, learner persistence, protected assessment custody, authoritative grades/credentials, accreditation/AP authorization, and jurisdiction-specific credit.
