@@ -4,8 +4,8 @@
   "unit": 13,
   "poolVersion": "unit13-capstone-depth-v1",
   "eligibleItemCount": 80,
-  "deliveredPerAttempt": 20,
-  "capstoneQuantitativeMinimumPerAttempt": 10,
+  "deliveredPerAttempt": 25,
+  "capstoneQuantitativeMinimumPerAttempt": null,
   "items": [
     {
       "id": "q0411",
@@ -887,5 +887,6 @@
       "explanation": "The tested range is 480 to 560, which is 40 below and 40 above the central value 520.",
       "capstoneDepth": "quantitative"
     }
-  ]
+  ],
+  "engineContract": "algebra1-unit-mastery-v3-fixed-25"
 }
