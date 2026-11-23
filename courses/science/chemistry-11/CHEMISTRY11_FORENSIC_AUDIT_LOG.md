@@ -921,3 +921,13 @@ Chemistry 11 now has one canonical curriculum authority (`course-map.json`) feed
 - Preserved the Upper Science engine, safety boundaries, learner records, evidence storage, and navigation.
 - Next target: Week 36 final assessment/corrections boundary, followed by a full-course Chemistry 11 certification pass.
 
+## 2026-11-22 · Week 36 final assessment and course-defense boundary
+
+- Audited all five Week 36 pages as a protected assessment/correction block rather than an ordinary instruction week.
+- Verified that the public learner-facing layer does not expose protected final questions, answer keys, grading logic, authentication details, or authoritative final-grade custody.
+- Day 01 readiness mapping remains formative and evidence-linked; Day 04 explicitly preserves the closed-book supervised-final boundary and generic correction protocol.
+- Hardened Days 02, 03, and 05 with explicit authority boundaries: public mixed practice, portfolio evidence, and course defense may document learning and correction but may not authenticate, infer, overwrite, or substitute for official final-exam mastery/grade authority.
+- Preserved generic transfer problems and corrections while requiring protected final items and official reassessment to remain in a separate authorized process.
+- Week 36 is complete at source-level assessment-boundary scope. Runtime authentication, confidential item custody, and authoritative grade-record integration remain separate operational certification gates.
+- Next target: full-course Chemistry 11 certification across the 180-lesson map and curriculum contract.
+
