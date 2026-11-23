@@ -1,0 +1,31 @@
+{
+  "schema": "khaemenes-high-world-languages-federation-v1",
+  "version": 1,
+  "requirement": {
+    "yearsRequired": 2,
+    "continuationYearsSupported": 4,
+    "highSchoolOwnsRequirement": true,
+    "linguisticsOwnsInstruction": true
+  },
+  "destination": {
+    "repository": "vervenveda/Khaemenes_Linguistics.github.io",
+    "publicEntry": "https://vervenveda.com/Khaemenes_Linguistics.github.io/Halls/index.html",
+    "sourceParameter": "khaemenes-high-grade{grade}",
+    "returnParameter": "https://vervenveda.com/Khaemenes_High.github.io/grades/grade-{grade}/student-profile/",
+    "supportedSelections": [
+      "spanish",
+      "french",
+      "german",
+      "mandarin",
+      "japanese",
+      "arabic",
+      "russian"
+    ]
+  },
+  "recordBoundary": {
+    "outboundRoute": "verified",
+    "instructionAuthority": "linguistics",
+    "highSchoolTranscriptReturn": "pending-audited-record-bridge",
+    "doNotClaimCrossRepositoryCreditSync": true
+  }
+}
