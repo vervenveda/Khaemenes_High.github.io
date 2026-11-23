@@ -250,3 +250,24 @@
 - Final source verification: **PASS — all ten lessons are 513–535 visible words, mount exactly one canonical Upper Science engine, and expose vocabulary, CER/evidence revision, retrieval, and uncertainty/model-limit reasoning.**
 - Preserved formative-evidence scripts, learner records, mastery semantics, routes, navigation, and the existing low-risk/supplied-data boundaries.
 - Next target: Week 35 culminating engineering/capstone work, then Week 36 protected final/portfolio defense and the full 180-lesson Physics 12 source certification.
+
+
+## 2026-11-23 · Hardening block 18 — Week 35 Capstone
+
+- Audited all five Week 35 culminating capstone lessons. The sequence was coherent but compressed and did not mount the canonical Upper Science engine at audit start.
+- Mounted `upper-science-v1` on all five pages with exactly one canonical loader per lesson.
+- Deepened the capstone around auditable system boundaries, measurable criteria/constraints, quantitative model choice, dimensional analysis, uncertainty and parameter sensitivity, discriminating test design, calibration, residual patterns, evidence-triggered iteration, robustness checks, and final engineering defense.
+- Added explicit CER/evidence revision, spiral retrieval, model-limit reasoning, safe low-risk/simulation testing boundaries, and portfolio-ready evidence lineage.
+- Initial verification correctly held Days 02–03 below the 500-word ordinary-instruction floor; targeted validation/discrimination checks raised them above threshold without bulk padding.
+- Final Week 35 ordinary-depth result: **PASS — all five lessons meet or exceed 500 visible words and retain the fortified Upper Science contract.**
+
+## 2026-11-23 · Hardening block 19 — Week 36 Final / Portfolio Boundary
+
+- Audited all five Week 36 pages as a protected assessment, correction, and portfolio-defense boundary rather than an ordinary instruction week.
+- Mounted `upper-science-v1` on all five pages with exactly one canonical loader per lesson.
+- Strengthened the readiness map, public mixed-transfer practice, portfolio evidence audit, supervised-final correction protocol, and final portfolio defense.
+- Explicitly preserved the boundary that public browser pages may support formative practice, corrections, portfolio evidence, and reflection but may not expose protected final questions/keys, authentication material, hidden grading logic, or independently issue authoritative final mastery/grade decisions.
+- Added evidence-lineage, authenticity, error-category, transfer-practice, and correction-integrity expectations while keeping protected item custody outside the public learner repository.
+- Week 36 remains intentionally exempt from the ordinary 500-word teaching-page floor; its certification criterion is assessment integrity, correction quality, and authority separation.
+- Week 36 source-level protected-boundary result: **PASS**.
+- Next target: full 180-lesson Physics 12 source certification and department-level 720-lesson science certification review.
