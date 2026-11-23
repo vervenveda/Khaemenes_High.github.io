@@ -825,3 +825,16 @@ Boundary: this does not establish authenticated educator approval, evidence-dige
 **Bubble 5 — weekly landing/evidence surfaces not unified with the canonical upper-science contract: CLOSED.**
 
 Chemistry 11 now has one canonical curriculum authority (`course-map.json`) feeding both governance contracts and the visible weekly instructional shell, with an offline-safe static fallback and CI enforcement against future drift.
+
+**Established:** 2026-11-22
+
+## 2026-11-22 · Bonding, materials, IMF, and gas-model block
+
+- Re-audited Week 07 — Covalent Bonds & Lewis Models. All five lessons visibly mount the Upper Science engine and expose valence-electron accounting, formal-charge/resonance reasoning, worked examples, misconceptions, retrieval, evidence revision, model limits, differentiation, and teacher guidance. Week 07 accepted as a strong certified block.
+- Re-audited Week 08 — Molecular Geometry & Polarity. Confirmed electron-domain/VSEPR reasoning, bond-dipole vector cancellation, structure–property transfer, investigation, uncertainty, and model limits across all five lessons. Week 08 accepted as a strong certified block.
+- Re-audited Week 09 — Metals, Solids & Materials Structure. Confirmed structure/property classification, quantitative density/conductivity reasoning, evidence matrices, uncertainty, engineering criteria/constraints, weighted tradeoffs, and cross-scale structure–property synthesis. Week 09 accepted as a strong certified block.
+- Weeks 10–11 were conceptually strong but several pages sat below the course's 500-word ordinary-lesson depth target.
+- Hardened all five Week 10 lessons with added matched-comparison analysis, polarizability/shape reasoning, donor/acceptor network reasoning, normalization, random-vs-systematic uncertainty, and competing-factor CER discipline.
+- Hardened all five Week 11 lessons with added kinetic-distribution reasoning, inverse-model validation, dimensional/physical checks, residual-pattern analysis, tested-range limits, and an assumptions → mathematics → mechanism model-selection audit.
+- No mastery, learner records, evidence-storage, routes, assessment authority, or navigation logic was intentionally altered.
+- Next target: Week 12 — Solutions & Concentration, followed by Week 13 — Mixtures, Separation & Spectroscopic Evidence.
