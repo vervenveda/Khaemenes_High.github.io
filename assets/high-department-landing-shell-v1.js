@@ -47,7 +47,8 @@ function style(){
  }
  #vnvHeaderAutoPopulate{width:100%!important}
  #vnv-language-rail[hidden]{display:none!important}
- #vnvClassToolsToggle,#vnvEcosystemUtilityDock button:first-child{height:44px!important;min-height:44px!important;border-radius:7px!important;font-size:16px!important}
+ #vnvClassToolsToggle{box-sizing:border-box!important;width:72px!important;min-width:72px!important;height:44px!important;min-height:44px!important;border-radius:7px!important;font-size:16px!important}
+ #vnvEcosystemUtilityDock>a,#vnvEcosystemUtilityDock>button{min-height:44px!important;border-radius:7px!important;font-size:16px!important}
  @media print{
   #vnv333NetworkTicker,#vnvTickerAutoPopulate,#vnvHeaderAutoPopulate,#vnvClassToolsToolbar,#vnvEcosystemUtilityDock{display:none!important}
  }`;
