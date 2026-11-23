@@ -193,4 +193,9 @@ if (jsonMode) {
 }
 
 const inventoryFailure = report.totals.lessons !== report.expectedDailyLessons || report.courses.some(c => c.lessons !== c.expectedLessons);
-if (inventoryFailure || (strictMode && report.courses.some(c => c.rates.depthCertified < 100))) process.exitCode = 1;
+const strictFailure = strictMode && report.courses.some(c =>
+  c.rates.engineMounted < 100 ||
+  c.rates.coreCertified < 100 ||
+  c.rates.depthCertified < 100
+);
+if (inventoryFailure || strictFailure) process.exitCode = 1;
