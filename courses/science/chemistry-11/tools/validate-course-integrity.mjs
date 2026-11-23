@@ -101,11 +101,9 @@ for(let w=1;w<=36;w++){
     if(!exists(file)){failures.push(`missing lesson: ${rel}`);continue}
     lessonCount++;
     const html=read(file);
-    const engineCount=(html.match(/data-science-engine="upper-science-v1"/g)||[]).length;
-    const loaderCount=(html.match(/data-upper-science-engine="v1"/g)||[]).length;
+    const retiredEngineCount=(html.match(/data-science-engine="upper-science-v1"|upper-science-instruction-engine-v1\.js/g)||[]).length;
     const contractCount=(html.match(/data-science-contract=/g)||[]).length;
-    if(engineCount!==1) failures.push(`${rel}: canonical engine marker count ${engineCount}; expected 1`);
-    if(loaderCount!==1) failures.push(`${rel}: canonical loader count ${loaderCount}; expected 1`);
+    if(retiredEngineCount!==0) failures.push(`${rel}: retired Upper Science engine hook remains`);
     if(contractCount<1) failures.push(`${rel}: science-contract depth layer missing`);
     const words=plainWords(html);
     if(words<minWords){minWords=words;minPath=rel}
