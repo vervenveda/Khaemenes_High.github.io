@@ -533,3 +533,56 @@ All ten pages now verify:
 ### Certification status
 - Whole-course Chemistry 11 source-level curriculum certification remains **HOLD** pending Weeks 35–36 hardening and the final 180/180 sweep.
 - Next block: Weeks 35–36 — materials/sustainable-chemistry capstone and final assessment/synthesis, with exact source topics to be verified before hardening.
+
+
+## 2026-11-22 · Two-week hardening block 18 — Weeks 35–36 + final course sweep
+
+### Audit findings
+- Week 35 sustainable-chemistry capstone lessons began at approximately 238–298 visible words.
+- Week 36 final-readiness/portfolio/correction lessons began at approximately 260–329 visible words.
+- All ten pages initially lacked the canonical `upper-science-v1` marker/loader.
+- Week 35 required stronger problem bounding, model-to-evidence selection, multi-criteria weighting, sensitivity analysis, source traceability, and design-defense quality.
+- Week 36 required stronger cross-unit retrieval, mixed-model diagnosis, portfolio authenticity, correction transfer, and protected-final boundaries.
+
+### Repairs
+- Mounted `upper-science-v1` on all ten Week 35–36 lessons with exactly one canonical loader per page.
+- Week 35 strengthened system boundaries, measurable functional units, chemistry-model selection, cross-model consistency, weighted decision matrices, sensitivity analysis, source ranges, uncertainty, and conditional design-defense logic.
+- Week 36 strengthened course-wide readiness mapping, prerequisite-chain repair, mixed-model contrast tasks, portfolio traceability, correction/reassessment separation, course-defense evidence mapping, and transfer beyond Chemistry 11.
+- Preserved the protected final-exam boundary: confidential prompts, answer keys, authoritative grading, custody, and official reassessment remain outside the public lesson layer.
+
+### Verification
+- Week 35 Days 01–05 now measure approximately 503–524 visible words.
+- Week 36 Days 01–05 now meet the fortified depth threshold, including the public assessment-support pages.
+- All ten pages verify the canonical upper-science marker.
+- All ten pages verify exactly one canonical upper-science loader.
+- All ten pages expose the science-contract depth layer.
+
+## 2026-11-22 · Final Chemistry 11 source certification sweep
+
+### Inventory
+- Repository Git tree confirms **180/180 expected daily lesson files** across Weeks 01–36 (5 lessons per week).
+- First expected lesson: `week-01/lessons/day-01.html`.
+- Final expected lesson: `week-36/lessons/day-05.html`.
+
+### Cumulative verification basis
+- Each two-week block was re-fetched from `main` after hardening and verified for canonical `upper-science-v1` marker, exactly one loader, science-contract depth layer, and substantive lesson depth.
+- Later work modified subsequent weeks and governance logs only; previously verified daily lesson blocks were not rewritten afterward.
+- GitHub code-search indexing lagged the newest marker commits during the final sweep, so certification does not rely on that stale index; it relies on the current Git tree plus the cumulative direct-source block verifications recorded above.
+
+### Source-level result
+- 36 weeks / 180 daily lessons: **PASS**
+- Week 18 MID topology and protected boundary: **PASS**
+- Week 36 FINAL topology and protected boundary: **PASS**
+- Canonical upper-science engine program across hardened blocks: **PASS**
+- Single-loader integrity across directly verified blocks: **PASS**
+- Substantive ordinary teaching-page depth: **PASS**
+- Quantitative chemistry with units/assumptions: **PASS**
+- Evidence/source-quality reasoning: **PASS**
+- Retrieval, revision, uncertainty, and model limits: **PASS**
+- Safe inquiry/laboratory alternatives and boundaries: **PASS**
+- Capstone/portfolio/correction architecture: **PASS**
+
+### Certification status
+**CHEMISTRY 11 SOURCE-LEVEL CURRICULUM CERTIFICATION: PASS**
+
+This PASS is intentionally limited to curriculum/source architecture. Browser/device behavior, accessibility, offline/runtime behavior, protected assessment operations, credential authority, accreditation, AP authorization, and jurisdictional credit approval remain separate gates and are not implied by this certification.
