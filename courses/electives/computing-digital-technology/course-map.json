@@ -1,0 +1,629 @@
+{
+  "schema": "khaemenes-high-school-elective-course-map-v1",
+  "id": "computing-digital-technology",
+  "title": "Computing & Digital Technology",
+  "gradeBand": "9-12",
+  "durationWeeks": 13,
+  "plannedLessons": 65,
+  "masteryThreshold": 80,
+  "status": "curriculum-architecture-complete-student-production-pending",
+  "authority": "catalog-plan-until-promotion-gate-passes",
+  "qualityStandard": "courses/electives/ELECTIVE_QUALITY_STANDARD_V1.md",
+  "permanentRoutine": "Problem → Decompose → Model → Build → Test → Debug → Document",
+  "assessmentModel": {
+    "weekly": "open-book discipline-authentic evidence plus mastery check where appropriate",
+    "cumulative": [
+      4,
+      8,
+      12
+    ],
+    "culminatingWeek": 13,
+    "correction": "below 80% requires targeted correction/revision before reassessment",
+    "protectedBoundary": "browser-local drafts and self-checks do not create transcript credit"
+  },
+  "privacySafety": {
+    "forcedSensitiveDisclosure": false,
+    "accessibleAlternativeRequired": true,
+    "publicProtectedAssessmentContent": false
+  },
+  "weeks": [
+    {
+      "week": 1,
+      "title": "Computational thinking & responsible computing",
+      "essentialQuestion": "How do decomposition, patterns, abstraction, and algorithms help solve problems responsibly?",
+      "days": [
+        {
+          "day": 1,
+          "phase": "Retrieve/Listen/Observe",
+          "task": "Retrieve a prior idea or inspect a new example connected to Computational thinking & responsible computing. Identify what you notice, what you already know, and one question worth testing.",
+          "evidence": "retrieval note or annotated observation tied to Computational thinking & responsible computing"
+        },
+        {
+          "day": 2,
+          "phase": "Learn/Model",
+          "task": "Study the core concepts, vocabulary, and a worked model for Computational thinking & responsible computing. Explain why the model works and where it could fail or mislead.",
+          "evidence": "annotated model with vocabulary used in context"
+        },
+        {
+          "day": 3,
+          "phase": "Practice/Analyze",
+          "task": "Complete guided practice for Computational thinking & responsible computing. Compare at least two examples, alternatives, or interpretations and justify the stronger choice with evidence.",
+          "evidence": "guided analysis or practice artifact"
+        },
+        {
+          "day": 4,
+          "phase": "Create/Apply/Test",
+          "task": "Apply Computational thinking & responsible computing in a new situation. Build, perform, design, plan, or solve something authentic to the discipline, then test it against explicit criteria.",
+          "evidence": "algorithm notebook and flowchart set"
+        },
+        {
+          "day": 5,
+          "phase": "Revise/Defend",
+          "task": "Revise the week's work after feedback or self-check. Defend one decision, name one limitation, and identify what should transfer to a later week.",
+          "evidence": "revised artifact, reflection, and short defense"
+        }
+      ],
+      "vocabularyTarget": "5–9 discipline terms taught through use, examples, and retrieval",
+      "weeklyEvidence": "algorithm notebook and flowchart set",
+      "masteryCheck": {
+        "mode": "open-book mixed evidence",
+        "threshold": 80,
+        "retake": "targeted correction then parallel-form or revised evidence"
+      },
+      "cumulativeCheckpoint": false,
+      "culminating": false
+    },
+    {
+      "week": 2,
+      "title": "Data representation & digital systems",
+      "essentialQuestion": "How do computers represent text, numbers, media, and instructions?",
+      "days": [
+        {
+          "day": 1,
+          "phase": "Retrieve/Listen/Observe",
+          "task": "Retrieve a prior idea or inspect a new example connected to Data representation & digital systems. Identify what you notice, what you already know, and one question worth testing.",
+          "evidence": "retrieval note or annotated observation tied to Data representation & digital systems"
+        },
+        {
+          "day": 2,
+          "phase": "Learn/Model",
+          "task": "Study the core concepts, vocabulary, and a worked model for Data representation & digital systems. Explain why the model works and where it could fail or mislead.",
+          "evidence": "annotated model with vocabulary used in context"
+        },
+        {
+          "day": 3,
+          "phase": "Practice/Analyze",
+          "task": "Complete guided practice for Data representation & digital systems. Compare at least two examples, alternatives, or interpretations and justify the stronger choice with evidence.",
+          "evidence": "guided analysis or practice artifact"
+        },
+        {
+          "day": 4,
+          "phase": "Create/Apply/Test",
+          "task": "Apply Data representation & digital systems in a new situation. Build, perform, design, plan, or solve something authentic to the discipline, then test it against explicit criteria.",
+          "evidence": "data representation lab"
+        },
+        {
+          "day": 5,
+          "phase": "Revise/Defend",
+          "task": "Revise the week's work after feedback or self-check. Defend one decision, name one limitation, and identify what should transfer to a later week.",
+          "evidence": "revised artifact, reflection, and short defense"
+        }
+      ],
+      "vocabularyTarget": "5–9 discipline terms taught through use, examples, and retrieval",
+      "weeklyEvidence": "data representation lab",
+      "masteryCheck": {
+        "mode": "open-book mixed evidence",
+        "threshold": 80,
+        "retake": "targeted correction then parallel-form or revised evidence"
+      },
+      "cumulativeCheckpoint": false,
+      "culminating": false
+    },
+    {
+      "week": 3,
+      "title": "Programming foundations",
+      "essentialQuestion": "How can variables, conditionals, loops, and functions express a solution?",
+      "days": [
+        {
+          "day": 1,
+          "phase": "Retrieve/Listen/Observe",
+          "task": "Retrieve a prior idea or inspect a new example connected to Programming foundations. Identify what you notice, what you already know, and one question worth testing.",
+          "evidence": "retrieval note or annotated observation tied to Programming foundations"
+        },
+        {
+          "day": 2,
+          "phase": "Learn/Model",
+          "task": "Study the core concepts, vocabulary, and a worked model for Programming foundations. Explain why the model works and where it could fail or mislead.",
+          "evidence": "annotated model with vocabulary used in context"
+        },
+        {
+          "day": 3,
+          "phase": "Practice/Analyze",
+          "task": "Complete guided practice for Programming foundations. Compare at least two examples, alternatives, or interpretations and justify the stronger choice with evidence.",
+          "evidence": "guided analysis or practice artifact"
+        },
+        {
+          "day": 4,
+          "phase": "Create/Apply/Test",
+          "task": "Apply Programming foundations in a new situation. Build, perform, design, plan, or solve something authentic to the discipline, then test it against explicit criteria.",
+          "evidence": "small program with tests"
+        },
+        {
+          "day": 5,
+          "phase": "Revise/Defend",
+          "task": "Revise the week's work after feedback or self-check. Defend one decision, name one limitation, and identify what should transfer to a later week.",
+          "evidence": "revised artifact, reflection, and short defense"
+        }
+      ],
+      "vocabularyTarget": "5–9 discipline terms taught through use, examples, and retrieval",
+      "weeklyEvidence": "small program with tests",
+      "masteryCheck": {
+        "mode": "open-book mixed evidence",
+        "threshold": 80,
+        "retake": "targeted correction then parallel-form or revised evidence"
+      },
+      "cumulativeCheckpoint": false,
+      "culminating": false
+    },
+    {
+      "week": 4,
+      "title": "Debugging & test design",
+      "essentialQuestion": "How can evidence from failures guide systematic debugging?",
+      "days": [
+        {
+          "day": 1,
+          "phase": "Retrieve/Listen/Observe",
+          "task": "Retrieve a prior idea or inspect a new example connected to Debugging & test design. Identify what you notice, what you already know, and one question worth testing.",
+          "evidence": "retrieval note or annotated observation tied to Debugging & test design"
+        },
+        {
+          "day": 2,
+          "phase": "Learn/Model",
+          "task": "Study the core concepts, vocabulary, and a worked model for Debugging & test design. Explain why the model works and where it could fail or mislead.",
+          "evidence": "annotated model with vocabulary used in context"
+        },
+        {
+          "day": 3,
+          "phase": "Practice/Analyze",
+          "task": "Complete guided practice for Debugging & test design. Compare at least two examples, alternatives, or interpretations and justify the stronger choice with evidence.",
+          "evidence": "guided analysis or practice artifact"
+        },
+        {
+          "day": 4,
+          "phase": "Create/Apply/Test",
+          "task": "Apply Debugging & test design in a new situation. Build, perform, design, plan, or solve something authentic to the discipline, then test it against explicit criteria.",
+          "evidence": "debugging log and test suite"
+        },
+        {
+          "day": 5,
+          "phase": "Revise/Defend",
+          "task": "Revise the week's work after feedback or self-check. Defend one decision, name one limitation, and identify what should transfer to a later week.",
+          "evidence": "revised artifact, reflection, and short defense"
+        }
+      ],
+      "vocabularyTarget": "5–9 discipline terms taught through use, examples, and retrieval",
+      "weeklyEvidence": "debugging log and test suite",
+      "masteryCheck": {
+        "mode": "open-book mixed evidence",
+        "threshold": 80,
+        "retake": "targeted correction then parallel-form or revised evidence"
+      },
+      "cumulativeCheckpoint": true,
+      "culminating": false
+    },
+    {
+      "week": 5,
+      "title": "Web structure & accessible interfaces",
+      "essentialQuestion": "How do semantic structure, styling, and accessibility shape usable web experiences?",
+      "days": [
+        {
+          "day": 1,
+          "phase": "Retrieve/Listen/Observe",
+          "task": "Retrieve a prior idea or inspect a new example connected to Web structure & accessible interfaces. Identify what you notice, what you already know, and one question worth testing.",
+          "evidence": "retrieval note or annotated observation tied to Web structure & accessible interfaces"
+        },
+        {
+          "day": 2,
+          "phase": "Learn/Model",
+          "task": "Study the core concepts, vocabulary, and a worked model for Web structure & accessible interfaces. Explain why the model works and where it could fail or mislead.",
+          "evidence": "annotated model with vocabulary used in context"
+        },
+        {
+          "day": 3,
+          "phase": "Practice/Analyze",
+          "task": "Complete guided practice for Web structure & accessible interfaces. Compare at least two examples, alternatives, or interpretations and justify the stronger choice with evidence.",
+          "evidence": "guided analysis or practice artifact"
+        },
+        {
+          "day": 4,
+          "phase": "Create/Apply/Test",
+          "task": "Apply Web structure & accessible interfaces in a new situation. Build, perform, design, plan, or solve something authentic to the discipline, then test it against explicit criteria.",
+          "evidence": "accessible multi-section webpage"
+        },
+        {
+          "day": 5,
+          "phase": "Revise/Defend",
+          "task": "Revise the week's work after feedback or self-check. Defend one decision, name one limitation, and identify what should transfer to a later week.",
+          "evidence": "revised artifact, reflection, and short defense"
+        }
+      ],
+      "vocabularyTarget": "5–9 discipline terms taught through use, examples, and retrieval",
+      "weeklyEvidence": "accessible multi-section webpage",
+      "masteryCheck": {
+        "mode": "open-book mixed evidence",
+        "threshold": 80,
+        "retake": "targeted correction then parallel-form or revised evidence"
+      },
+      "cumulativeCheckpoint": false,
+      "culminating": false
+    },
+    {
+      "week": 6,
+      "title": "Interaction & JavaScript logic",
+      "essentialQuestion": "How can event-driven programs respond predictably to users?",
+      "days": [
+        {
+          "day": 1,
+          "phase": "Retrieve/Listen/Observe",
+          "task": "Retrieve a prior idea or inspect a new example connected to Interaction & JavaScript logic. Identify what you notice, what you already know, and one question worth testing.",
+          "evidence": "retrieval note or annotated observation tied to Interaction & JavaScript logic"
+        },
+        {
+          "day": 2,
+          "phase": "Learn/Model",
+          "task": "Study the core concepts, vocabulary, and a worked model for Interaction & JavaScript logic. Explain why the model works and where it could fail or mislead.",
+          "evidence": "annotated model with vocabulary used in context"
+        },
+        {
+          "day": 3,
+          "phase": "Practice/Analyze",
+          "task": "Complete guided practice for Interaction & JavaScript logic. Compare at least two examples, alternatives, or interpretations and justify the stronger choice with evidence.",
+          "evidence": "guided analysis or practice artifact"
+        },
+        {
+          "day": 4,
+          "phase": "Create/Apply/Test",
+          "task": "Apply Interaction & JavaScript logic in a new situation. Build, perform, design, plan, or solve something authentic to the discipline, then test it against explicit criteria.",
+          "evidence": "interactive browser tool"
+        },
+        {
+          "day": 5,
+          "phase": "Revise/Defend",
+          "task": "Revise the week's work after feedback or self-check. Defend one decision, name one limitation, and identify what should transfer to a later week.",
+          "evidence": "revised artifact, reflection, and short defense"
+        }
+      ],
+      "vocabularyTarget": "5–9 discipline terms taught through use, examples, and retrieval",
+      "weeklyEvidence": "interactive browser tool",
+      "masteryCheck": {
+        "mode": "open-book mixed evidence",
+        "threshold": 80,
+        "retake": "targeted correction then parallel-form or revised evidence"
+      },
+      "cumulativeCheckpoint": false,
+      "culminating": false
+    },
+    {
+      "week": 7,
+      "title": "Data, files & privacy",
+      "essentialQuestion": "How should software collect, store, export, and protect user data?",
+      "days": [
+        {
+          "day": 1,
+          "phase": "Retrieve/Listen/Observe",
+          "task": "Retrieve a prior idea or inspect a new example connected to Data, files & privacy. Identify what you notice, what you already know, and one question worth testing.",
+          "evidence": "retrieval note or annotated observation tied to Data, files & privacy"
+        },
+        {
+          "day": 2,
+          "phase": "Learn/Model",
+          "task": "Study the core concepts, vocabulary, and a worked model for Data, files & privacy. Explain why the model works and where it could fail or mislead.",
+          "evidence": "annotated model with vocabulary used in context"
+        },
+        {
+          "day": 3,
+          "phase": "Practice/Analyze",
+          "task": "Complete guided practice for Data, files & privacy. Compare at least two examples, alternatives, or interpretations and justify the stronger choice with evidence.",
+          "evidence": "guided analysis or practice artifact"
+        },
+        {
+          "day": 4,
+          "phase": "Create/Apply/Test",
+          "task": "Apply Data, files & privacy in a new situation. Build, perform, design, plan, or solve something authentic to the discipline, then test it against explicit criteria.",
+          "evidence": "privacy-respecting data tool design"
+        },
+        {
+          "day": 5,
+          "phase": "Revise/Defend",
+          "task": "Revise the week's work after feedback or self-check. Defend one decision, name one limitation, and identify what should transfer to a later week.",
+          "evidence": "revised artifact, reflection, and short defense"
+        }
+      ],
+      "vocabularyTarget": "5–9 discipline terms taught through use, examples, and retrieval",
+      "weeklyEvidence": "privacy-respecting data tool design",
+      "masteryCheck": {
+        "mode": "open-book mixed evidence",
+        "threshold": 80,
+        "retake": "targeted correction then parallel-form or revised evidence"
+      },
+      "cumulativeCheckpoint": false,
+      "culminating": false
+    },
+    {
+      "week": 8,
+      "title": "Algorithms & efficiency",
+      "essentialQuestion": "How can I compare two correct approaches using clarity, scale, and performance?",
+      "days": [
+        {
+          "day": 1,
+          "phase": "Retrieve/Listen/Observe",
+          "task": "Retrieve a prior idea or inspect a new example connected to Algorithms & efficiency. Identify what you notice, what you already know, and one question worth testing.",
+          "evidence": "retrieval note or annotated observation tied to Algorithms & efficiency"
+        },
+        {
+          "day": 2,
+          "phase": "Learn/Model",
+          "task": "Study the core concepts, vocabulary, and a worked model for Algorithms & efficiency. Explain why the model works and where it could fail or mislead.",
+          "evidence": "annotated model with vocabulary used in context"
+        },
+        {
+          "day": 3,
+          "phase": "Practice/Analyze",
+          "task": "Complete guided practice for Algorithms & efficiency. Compare at least two examples, alternatives, or interpretations and justify the stronger choice with evidence.",
+          "evidence": "guided analysis or practice artifact"
+        },
+        {
+          "day": 4,
+          "phase": "Create/Apply/Test",
+          "task": "Apply Algorithms & efficiency in a new situation. Build, perform, design, plan, or solve something authentic to the discipline, then test it against explicit criteria.",
+          "evidence": "algorithm comparison report"
+        },
+        {
+          "day": 5,
+          "phase": "Revise/Defend",
+          "task": "Revise the week's work after feedback or self-check. Defend one decision, name one limitation, and identify what should transfer to a later week.",
+          "evidence": "revised artifact, reflection, and short defense"
+        }
+      ],
+      "vocabularyTarget": "5–9 discipline terms taught through use, examples, and retrieval",
+      "weeklyEvidence": "algorithm comparison report",
+      "masteryCheck": {
+        "mode": "open-book mixed evidence",
+        "threshold": 80,
+        "retake": "targeted correction then parallel-form or revised evidence"
+      },
+      "cumulativeCheckpoint": true,
+      "culminating": false
+    },
+    {
+      "week": 9,
+      "title": "Networks, internet & cybersecurity foundations",
+      "essentialQuestion": "How does information move across networks, and what defensive practices reduce risk?",
+      "days": [
+        {
+          "day": 1,
+          "phase": "Retrieve/Listen/Observe",
+          "task": "Retrieve a prior idea or inspect a new example connected to Networks, internet & cybersecurity foundations. Identify what you notice, what you already know, and one question worth testing.",
+          "evidence": "retrieval note or annotated observation tied to Networks, internet & cybersecurity foundations"
+        },
+        {
+          "day": 2,
+          "phase": "Learn/Model",
+          "task": "Study the core concepts, vocabulary, and a worked model for Networks, internet & cybersecurity foundations. Explain why the model works and where it could fail or mislead.",
+          "evidence": "annotated model with vocabulary used in context"
+        },
+        {
+          "day": 3,
+          "phase": "Practice/Analyze",
+          "task": "Complete guided practice for Networks, internet & cybersecurity foundations. Compare at least two examples, alternatives, or interpretations and justify the stronger choice with evidence.",
+          "evidence": "guided analysis or practice artifact"
+        },
+        {
+          "day": 4,
+          "phase": "Create/Apply/Test",
+          "task": "Apply Networks, internet & cybersecurity foundations in a new situation. Build, perform, design, plan, or solve something authentic to the discipline, then test it against explicit criteria.",
+          "evidence": "network model and defensive security checklist"
+        },
+        {
+          "day": 5,
+          "phase": "Revise/Defend",
+          "task": "Revise the week's work after feedback or self-check. Defend one decision, name one limitation, and identify what should transfer to a later week.",
+          "evidence": "revised artifact, reflection, and short defense"
+        }
+      ],
+      "vocabularyTarget": "5–9 discipline terms taught through use, examples, and retrieval",
+      "weeklyEvidence": "network model and defensive security checklist",
+      "masteryCheck": {
+        "mode": "open-book mixed evidence",
+        "threshold": 80,
+        "retake": "targeted correction then parallel-form or revised evidence"
+      },
+      "cumulativeCheckpoint": false,
+      "culminating": false
+    },
+    {
+      "week": 10,
+      "title": "Automation & physical/digital systems",
+      "essentialQuestion": "How can inputs, rules, and outputs automate a useful process?",
+      "days": [
+        {
+          "day": 1,
+          "phase": "Retrieve/Listen/Observe",
+          "task": "Retrieve a prior idea or inspect a new example connected to Automation & physical/digital systems. Identify what you notice, what you already know, and one question worth testing.",
+          "evidence": "retrieval note or annotated observation tied to Automation & physical/digital systems"
+        },
+        {
+          "day": 2,
+          "phase": "Learn/Model",
+          "task": "Study the core concepts, vocabulary, and a worked model for Automation & physical/digital systems. Explain why the model works and where it could fail or mislead.",
+          "evidence": "annotated model with vocabulary used in context"
+        },
+        {
+          "day": 3,
+          "phase": "Practice/Analyze",
+          "task": "Complete guided practice for Automation & physical/digital systems. Compare at least two examples, alternatives, or interpretations and justify the stronger choice with evidence.",
+          "evidence": "guided analysis or practice artifact"
+        },
+        {
+          "day": 4,
+          "phase": "Create/Apply/Test",
+          "task": "Apply Automation & physical/digital systems in a new situation. Build, perform, design, plan, or solve something authentic to the discipline, then test it against explicit criteria.",
+          "evidence": "automation prototype or simulation"
+        },
+        {
+          "day": 5,
+          "phase": "Revise/Defend",
+          "task": "Revise the week's work after feedback or self-check. Defend one decision, name one limitation, and identify what should transfer to a later week.",
+          "evidence": "revised artifact, reflection, and short defense"
+        }
+      ],
+      "vocabularyTarget": "5–9 discipline terms taught through use, examples, and retrieval",
+      "weeklyEvidence": "automation prototype or simulation",
+      "masteryCheck": {
+        "mode": "open-book mixed evidence",
+        "threshold": 80,
+        "retake": "targeted correction then parallel-form or revised evidence"
+      },
+      "cumulativeCheckpoint": false,
+      "culminating": false
+    },
+    {
+      "week": 11,
+      "title": "Human-centered design & accessibility",
+      "essentialQuestion": "How can testing with constraints improve usefulness for diverse users?",
+      "days": [
+        {
+          "day": 1,
+          "phase": "Retrieve/Listen/Observe",
+          "task": "Retrieve a prior idea or inspect a new example connected to Human-centered design & accessibility. Identify what you notice, what you already know, and one question worth testing.",
+          "evidence": "retrieval note or annotated observation tied to Human-centered design & accessibility"
+        },
+        {
+          "day": 2,
+          "phase": "Learn/Model",
+          "task": "Study the core concepts, vocabulary, and a worked model for Human-centered design & accessibility. Explain why the model works and where it could fail or mislead.",
+          "evidence": "annotated model with vocabulary used in context"
+        },
+        {
+          "day": 3,
+          "phase": "Practice/Analyze",
+          "task": "Complete guided practice for Human-centered design & accessibility. Compare at least two examples, alternatives, or interpretations and justify the stronger choice with evidence.",
+          "evidence": "guided analysis or practice artifact"
+        },
+        {
+          "day": 4,
+          "phase": "Create/Apply/Test",
+          "task": "Apply Human-centered design & accessibility in a new situation. Build, perform, design, plan, or solve something authentic to the discipline, then test it against explicit criteria.",
+          "evidence": "usability/accessibility test report"
+        },
+        {
+          "day": 5,
+          "phase": "Revise/Defend",
+          "task": "Revise the week's work after feedback or self-check. Defend one decision, name one limitation, and identify what should transfer to a later week.",
+          "evidence": "revised artifact, reflection, and short defense"
+        }
+      ],
+      "vocabularyTarget": "5–9 discipline terms taught through use, examples, and retrieval",
+      "weeklyEvidence": "usability/accessibility test report",
+      "masteryCheck": {
+        "mode": "open-book mixed evidence",
+        "threshold": 80,
+        "retake": "targeted correction then parallel-form or revised evidence"
+      },
+      "cumulativeCheckpoint": false,
+      "culminating": false
+    },
+    {
+      "week": 12,
+      "title": "Independent build sprint",
+      "essentialQuestion": "How do I plan, build, test, and revise a complete digital artifact?",
+      "days": [
+        {
+          "day": 1,
+          "phase": "Retrieve/Listen/Observe",
+          "task": "Retrieve a prior idea or inspect a new example connected to Independent build sprint. Identify what you notice, what you already know, and one question worth testing.",
+          "evidence": "retrieval note or annotated observation tied to Independent build sprint"
+        },
+        {
+          "day": 2,
+          "phase": "Learn/Model",
+          "task": "Study the core concepts, vocabulary, and a worked model for Independent build sprint. Explain why the model works and where it could fail or mislead.",
+          "evidence": "annotated model with vocabulary used in context"
+        },
+        {
+          "day": 3,
+          "phase": "Practice/Analyze",
+          "task": "Complete guided practice for Independent build sprint. Compare at least two examples, alternatives, or interpretations and justify the stronger choice with evidence.",
+          "evidence": "guided analysis or practice artifact"
+        },
+        {
+          "day": 4,
+          "phase": "Create/Apply/Test",
+          "task": "Apply Independent build sprint in a new situation. Build, perform, design, plan, or solve something authentic to the discipline, then test it against explicit criteria.",
+          "evidence": "functional project prototype with documentation"
+        },
+        {
+          "day": 5,
+          "phase": "Revise/Defend",
+          "task": "Revise the week's work after feedback or self-check. Defend one decision, name one limitation, and identify what should transfer to a later week.",
+          "evidence": "revised artifact, reflection, and short defense"
+        }
+      ],
+      "vocabularyTarget": "5–9 discipline terms taught through use, examples, and retrieval",
+      "weeklyEvidence": "functional project prototype with documentation",
+      "masteryCheck": {
+        "mode": "open-book mixed evidence",
+        "threshold": 80,
+        "retake": "targeted correction then parallel-form or revised evidence"
+      },
+      "cumulativeCheckpoint": true,
+      "culminating": false
+    },
+    {
+      "week": 13,
+      "title": "Portfolio, code review & defense",
+      "essentialQuestion": "How can I explain technical decisions, limitations, and responsible next steps?",
+      "days": [
+        {
+          "day": 1,
+          "phase": "Retrieve/Listen/Observe",
+          "task": "Retrieve a prior idea or inspect a new example connected to Portfolio, code review & defense. Identify what you notice, what you already know, and one question worth testing.",
+          "evidence": "retrieval note or annotated observation tied to Portfolio, code review & defense"
+        },
+        {
+          "day": 2,
+          "phase": "Learn/Model",
+          "task": "Study the core concepts, vocabulary, and a worked model for Portfolio, code review & defense. Explain why the model works and where it could fail or mislead.",
+          "evidence": "annotated model with vocabulary used in context"
+        },
+        {
+          "day": 3,
+          "phase": "Practice/Analyze",
+          "task": "Complete guided practice for Portfolio, code review & defense. Compare at least two examples, alternatives, or interpretations and justify the stronger choice with evidence.",
+          "evidence": "guided analysis or practice artifact"
+        },
+        {
+          "day": 4,
+          "phase": "Create/Apply/Test",
+          "task": "Apply Portfolio, code review & defense in a new situation. Build, perform, design, plan, or solve something authentic to the discipline, then test it against explicit criteria.",
+          "evidence": "code/design portfolio and technical defense"
+        },
+        {
+          "day": 5,
+          "phase": "Revise/Defend",
+          "task": "Revise the week's work after feedback or self-check. Defend one decision, name one limitation, and identify what should transfer to a later week.",
+          "evidence": "revised artifact, reflection, and short defense"
+        }
+      ],
+      "vocabularyTarget": "5–9 discipline terms taught through use, examples, and retrieval",
+      "weeklyEvidence": "code/design portfolio and technical defense",
+      "masteryCheck": {
+        "mode": "open-book mixed evidence",
+        "threshold": 80,
+        "retake": "targeted correction then parallel-form or revised evidence"
+      },
+      "cumulativeCheckpoint": false,
+      "culminating": true
+    }
+  ]
+}
