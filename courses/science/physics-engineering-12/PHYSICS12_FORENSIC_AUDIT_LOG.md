@@ -123,3 +123,12 @@
 ### Weeks 19–20 depth closure
 - Final depth status: **PASS — all ten lessons now meet or exceed the 500-word ordinary-instruction floor.**
 - The earlier provisional HOLD was resolved with targeted transfer checks rather than bulk padding.
+## 2026-11-23 · Hardening block 11 — Weeks 21–22
+
+- Audited all ten Week 21–22 lessons. Both weeks began as a major depth regression with pages under ~210 words, inconsistent vocabulary markers, and no canonical Upper Science engine.
+- Mounted the canonical Upper Science engine on all ten pages with exactly one loader per lesson.
+- Week 21 was substantially deepened around moment of inertia, L=Iω, system/external-torque conditions, angular impulse, torque-time area, inertia sensitivity, conservation residuals, uncertainty, CER, and retrieval.
+- Week 22 was substantially deepened around rotational kinetic energy, translational-plus-rotational energy accounting, rolling-without-slipping diagnostics, moment-of-inertia shape effects, energy residuals, uncertainty, staged model choice, CER, and retrieval.
+- Final ordinary-depth verification: **HOLD — remaining below-floor lessons: W21D1:468, W21D2:400, W21D3:374, W21D4:385, W21D5:413, W22D1:394, W22D2:384, W22D3:404, W22D4:400, W22D5:419.**
+- Preserved simulation/lightweight-object safety boundaries, browser-local learner work, mastery semantics, routes, and navigation.
+- Next target: Weeks 23–24 — Simple Harmonic Motion, then Waves & Sound.
