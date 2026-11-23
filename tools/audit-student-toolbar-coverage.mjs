@@ -13,7 +13,7 @@ function walk(dir){
     const rel=path.relative(root,p).replaceAll(path.sep,"/");
     const html=fs.readFileSync(p,"utf8");
     const studentFacing=isStudentFacing(rel,html);
-    records.push({page:rel,course:rel.split("/").slice(0,3).join("/"),studentFacing,status:studentFacing?toolbarStatus(html):"excluded"});
+    records.push({page:rel,course:rel.split("/").slice(0,3).join("/"),studentFacing,status:studentFacing?toolbarStatus(html,rel):"excluded"});
   }
 }
 walk(root);
