@@ -1,6 +1,6 @@
 {
   "schema": "khaemenes-course-execution-matrix-v1",
-  "audited_base_commit": "2026-11-20-grade12-parity",
+  "audited_base_commit": "2026-11-23-topology-normalization",
   "policy": {
     "mastery_floor_percent": 80,
     "format_rule": "A JSON course map is instructional data, not independently an executable lesson; the student route must resolve to an HTML execution surface or an explicitly verified equivalent.",
@@ -8,7 +8,8 @@
     "grade_scope": "Enforce the assigned grade in the route and map; mathematics is placement-based and not automatically restricted to a single grade.",
     "offline": "Never require a third-party runtime for core lesson completion.",
     "handoff_boundary": "Precalculus and Calculus outbound destinations are verified; cross-repository return-record synchronization remains pending and must not be represented as certified.",
-    "authority_contract": "Every matrix entry declares navigation, assessment, mastery, persistence, portfolio publication and completion-record ownership. 'pending-verification' is an explicit HOLD, never an implied certification."
+    "authority_contract": "Every matrix entry declares navigation, assessment, mastery, persistence, portfolio publication and completion-record ownership. 'pending-verification' is an explicit HOLD, never an implied certification.",
+    "ownership_manifest": "courses/shared/high-school-course-ownership-manifest-v1.json"
   },
   "courses": [
     {
@@ -1044,6 +1045,100 @@
         "completion_record": {
           "owner": "higher-learning-destination",
           "status": "pending-verification"
+        }
+      }
+    },
+    {
+      "id": "physical-education-9",
+      "grade": 9,
+      "department": "physical-education",
+      "root": "courses/physical-education/",
+      "entry": "courses/physical-education/index.html",
+      "source": "courses/physical-education/grade-09-instruction.json",
+      "format": "json-curriculum+html-execution",
+      "assessment_authority": "teacher-reviewed-provisional-browser-attempts",
+      "upgrade": "canonical-topology-registration",
+      "status": "existing-specialist-engine",
+      "authority_contract": {
+        "current_lesson_resolver": {
+          "owner": "course-native",
+          "status": "declared"
+        },
+        "weekly_assessment_owner": {
+          "owner": "teacher-reviewed-provisional-browser-attempts",
+          "status": "declared"
+        },
+        "midterm_owner": {
+          "owner": "teacher-reviewed-provisional-browser-attempts",
+          "status": "declared"
+        },
+        "final_owner": {
+          "owner": "teacher-reviewed-provisional-browser-attempts",
+          "status": "declared"
+        },
+        "mastery_owner": {
+          "owner": "teacher-reviewed-provisional-browser-attempts",
+          "status": "declared"
+        },
+        "persistence": {
+          "owner": "course-native-learner-scope",
+          "schema": "physical-education-grade09-record",
+          "status": "declared"
+        },
+        "portfolio_publisher": {
+          "owner": "course-native-export-or-review",
+          "status": "pending-verification"
+        },
+        "completion_record": {
+          "owner": "specialist-course-evaluator",
+          "status": "declared"
+        }
+      }
+    },
+    {
+      "id": "psychology-101",
+      "grade": 9,
+      "department": "psychology",
+      "root": "electives/grades/grade-09/psych-101/",
+      "entry": "courses/electives/psychology-101/index.html",
+      "source": "electives/grades/grade-09/psych-101/course-map.json",
+      "format": "json-curriculum+html-execution",
+      "assessment_authority": "course-specialist-assessments",
+      "upgrade": "canonical-topology-registration",
+      "status": "existing-specialist-engine",
+      "authority_contract": {
+        "current_lesson_resolver": {
+          "owner": "course-native",
+          "status": "declared"
+        },
+        "weekly_assessment_owner": {
+          "owner": "course-specialist-assessments",
+          "status": "declared"
+        },
+        "midterm_owner": {
+          "owner": "course-specialist-assessments",
+          "status": "declared"
+        },
+        "final_owner": {
+          "owner": "course-specialist-assessments",
+          "status": "declared"
+        },
+        "mastery_owner": {
+          "owner": "course-specialist-assessments",
+          "status": "declared"
+        },
+        "persistence": {
+          "owner": "course-native-learner-scope",
+          "schema": "psychology-101-local-course-record",
+          "status": "declared"
+        },
+        "portfolio_publisher": {
+          "owner": "course-native-export-or-review",
+          "status": "pending-verification"
+        },
+        "completion_record": {
+          "owner": "specialist-course-evaluator",
+          "status": "declared"
         }
       }
     }
