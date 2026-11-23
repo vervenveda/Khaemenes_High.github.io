@@ -153,3 +153,6 @@
 ### Weeks 23–24 depth closure
 - Final ordinary-depth verification after targeted transfer checks: **HOLD — remaining below-floor lessons: W23D2:479, W23D3:475, W23D4:484, W23D5:479, W24D1:499, W24D2:439, W24D3:440, W24D4:466, W24D5:491.**
 - All ten pages retain exactly one canonical Upper Science engine plus explicit vocabulary, CER/evidence revision, retrieval, uncertainty/model-limit reasoning, and safe investigation boundaries.
+### Final Weeks 23–24 verification
+- Final ordinary-depth verification: **HOLD — remaining below-floor lessons: W24D2:476, W24D3:471, W24D4:493.**
+- All ten pages mount exactly one canonical Upper Science engine and retain explicit vocabulary, CER/evidence revision, spiral retrieval, uncertainty/model-limit reasoning, and safe investigation boundaries.
