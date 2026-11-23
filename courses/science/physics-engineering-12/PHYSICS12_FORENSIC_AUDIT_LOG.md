@@ -104,3 +104,7 @@
 - Week 17 ordinary-depth verification: **HOLD — W17D4:483.**
 - Week 18 assessment-boundary verification: **PASS** for public/protected separation, formative-only browser authority, correction integrity, and non-exposure of protected midterm content.
 - All ten pages mount exactly one canonical Upper Science engine and retain explicit evidence-revision/CER, retrieval, uncertainty/model-limit reasoning, and the appropriate instructional or assessment boundary.
+### Week 17 final depth closure
+- Week 17 Day 04 was the only remaining below-floor lesson after the first verification pass. A final residual-transfer audit raised it to **538 words**.
+- **Week 17 ordinary instructional depth: PASS — all five lessons now meet or exceed 500 words.**
+- **Week 18 protected midterm/corrections boundary: PASS** without unnecessary instructional padding.
