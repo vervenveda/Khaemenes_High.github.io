@@ -195,3 +195,6 @@
 ### Weeks 27–28 definitive closure
 - Definitive status: **HOLD — W27D4:498, W28D2:458, W28D3:470.**
 - All Week 27–28 pages retain exactly one Upper Science engine and the required vocabulary, CER/evidence revision, retrieval, uncertainty/model-limit, and safety markers.
+### Weeks 27–28 final PASS closure
+- Final verification: **PASS — all ten Week 27–28 lessons meet or exceed 500 words.**
+- Weeks 27–28 now meet the ordinary instructional depth and Upper Science contract standards.
