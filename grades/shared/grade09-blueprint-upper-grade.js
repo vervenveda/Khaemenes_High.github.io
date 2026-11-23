@@ -299,7 +299,78 @@ function showUpperProgress(){
   }
  });
 }
-// Schedule uses an independent HTML page. No Schedule dialog ownership here.
+// Schedule popup is a read-only view over the existing live class manager.
+// Profile editing, background editing, learner identity, grades, mastery and
+// persistence remain owned by their existing modules.
+function restoreScheduleManager(){
+ const manager=document.querySelector("#upperGradeScheduleDialog .upper-grade-schedule-manager");
+ const home=manager?._khaeScheduleHome;
+ if(manager&&home?.isConnected){
+  home.parentNode.insertBefore(manager,home);
+  manager.hidden=manager._khaeScheduleWasHidden===true;
+  if(manager._khaeScheduleWasAriaHidden===null)manager.removeAttribute("aria-hidden");
+  else manager.setAttribute("aria-hidden",manager._khaeScheduleWasAriaHidden);
+  manager.classList.remove("upper-grade-schedule-manager","grade10-schedule-manager");
+ }
+}
+function showUpperSchedule(){
+ upperGradeDialog("upperGradeScheduleDialog","My Schedule",content=>{
+  content.replaceChildren();
+  const registered=gradeContext();
+  if(!registered||registered.gradeNumber!==Number(grade)){
+   content.append(make("p",grade10Copy?"Choose your Grade 10 student profile to see your schedule.":grade11Copy?"Choose your Grade 11 student profile to see your schedule.":grade12Copy?"Choose your Grade 12 student profile to see your schedule.":"Select your registered Grade "+grade+" learner to view your schedule."));
+   return;
+  }
+  const dlg=document.getElementById("upperGradeScheduleDialog");
+  if(dlg){
+   dlg.style.width="min(96vw,1180px)";
+   dlg.style.maxWidth="1180px";
+   dlg.style.height="min(90dvh,900px)";
+   dlg.style.maxHeight="90dvh";
+   dlg.style.overflowY="auto";
+   dlg.style.overflowX="hidden";
+   dlg.style.overscrollBehavior="contain";
+  }
+  const intro=make("p",grade10Copy?"These are your Grade 10 classes. Open a class to continue learning, or use the class manager below to organize your schedule.":grade11Copy?"These are your Grade 11 classes. Keep priorities clear and continue the work that matters most.":grade12Copy?"These are your Grade 12 classes. Keep remaining work visible as you finish senior year.":"Your eight Grade "+grade+" subjects.");
+  intro.style.cssText="font-size:16px";content.append(intro);
+  const grid=make("div");grid.className="grade09-blueprint-schedule-grid";
+  for(const item of slots()){
+   const card=make("article");card.className="grade09-blueprint-schedule-item";
+   card.append(make("strong",item.label),make("span",item.title));
+   const current=step(item),route=current?.dest||null;
+   const resourceDoor=!!(route&&href(item)&&route===href(item));
+   if(route){
+    const launch=link(resourceDoor?"Course Options":"Class",route,"btn secondary");
+    launch.dataset.courseId=item.id||"";
+    launch.title=current?.detail||"Continue this class";
+    card.append(launch);
+   }else card.append(make("span","Choose a course or finish route verification before opening this class."));
+   grid.append(card);
+  }
+  content.append(grid);
+  const manager=document.getElementById("manageClassesTitle")?.closest("section.card")||null;
+  restoreScheduleManager();
+  if(manager){
+   if(!manager._khaeScheduleHome){
+    const placeholder=document.createComment("Schedule class-manager original owner");
+    manager.parentNode.insertBefore(placeholder,manager);
+    manager._khaeScheduleHome=placeholder;
+    manager._khaeScheduleWasHidden=manager.hidden;
+    manager._khaeScheduleWasAriaHidden=manager.getAttribute("aria-hidden");
+   }
+   manager.hidden=false;
+   manager.removeAttribute("aria-hidden");
+   manager.classList.remove("grade10-retired-manager-data");
+   manager.classList.add("grade10-schedule-manager","upper-grade-schedule-manager");
+   content.append(manager);
+  }
+ });
+ const dlg=document.getElementById("upperGradeScheduleDialog");
+ if(dlg&&!dlg.dataset.scheduleRestoreBound){
+  dlg.dataset.scheduleRestoreBound="true";
+  dlg.addEventListener("close",restoreScheduleManager);
+ }
+}
 const openConnectedUpperResource=url=>{try{return !!window.open(url,"_blank","noopener,noreferrer")}catch{return false}};
 function revealUpper(id){
  const target=$(id);
@@ -333,7 +404,7 @@ function renderTools(){
     return false;
    }},
   {label:"Student Progress",run:showUpperProgress},
-  {label:"Schedule",url:highRoot+"grades/grade-"+grade+"/student-profile/schedule/"},
+  {label:"Schedule",run:showUpperSchedule},
   {label:"KlasaiPeer",fallback:"https://vervenveda.com/Klasaipeer.github.io/",run:()=>{const studio=window.KhaemenesUpperGradeStudyStudio;if(studio?.open){studio.open(document.activeElement);return true}return false}},
   {label:"Yearbook",fallback:"https://vervenveda.com/Academy-Yearbook.github.io/",run:()=>{const yearbook=window.KhaemenesUpperGradeYearbook;if(yearbook?.open){yearbook.open(document.activeElement);return true}return false}},
   {label:"Creative Tools",run:()=>revealUpper("grade09BlueprintRooms")},
