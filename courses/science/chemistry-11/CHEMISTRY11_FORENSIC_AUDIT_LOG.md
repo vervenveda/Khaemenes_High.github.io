@@ -911,3 +911,13 @@ Chemistry 11 now has one canonical curriculum authority (`course-map.json`) feed
 - Preserved the Upper Science engine, safety boundaries, learner records, evidence storage, and navigation.
 - Next target: Weeks 32–35 — Free Energy/Driving Forces, Electrochemistry, Nuclear/Materials/Environmental Chemistry, and the Sustainable Materials Capstone.
 
+## 2026-11-22 · Free energy, electrochemistry, nuclear/materials, and capstone block
+
+- Audited Weeks 32–35 as the final instructional block before the Week 36 assessment boundary. Existing content correctly covered free energy/equilibrium, electrochemistry, nuclear chemistry, materials/environmental decision evidence, and a sustainable-chemistry capstone.
+- Hardened Week 32 with actual-vs-standard free-energy distinctions, crossover-temperature validation, independent ΔG routes, and thermodynamic decision audits. Week 32 Day 03 already exceeded the ordinary depth floor and was retained without padding.
+- Hardened Week 33 with electron-accounting validation, cell-type/electrode sign conventions, intensive cell-potential logic, measurement-condition auditing, and a synthesis separating voltage, thermodynamic favorability, current, and capacity.
+- Hardened Week 34 with nuclear-equation conservation, half-life population reasoning, hazard-vs-exposure distinctions, lifecycle system boundaries, and explicit evidence-vs-values separation.
+- Hardened Week 35 with capstone system-boundary specification, model-to-evidence traceability, cross-model consistency, decision-boundary sensitivity analysis, evidence-range validation, and final recommendation stress testing.
+- Preserved the Upper Science engine, safety boundaries, learner records, evidence storage, and navigation.
+- Next target: Week 36 final assessment/corrections boundary, followed by a full-course Chemistry 11 certification pass.
+
