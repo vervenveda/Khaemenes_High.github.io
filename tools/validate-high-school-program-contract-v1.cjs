@@ -54,6 +54,18 @@ assert(runtime.representativeAcceptance.device.includes("tablet landscape"));
 assert(runtime.representativeAcceptance.interaction.includes("assessment resume/recovery"));
 
 for(const row of runtime.classes){
+  const partial=[row.browserRuntime,row.deviceAcceptance,row.offlineAcceptance].some(x=>x==="partial-evidence");
+  if(partial){
+    assert(row.evidence&&typeof row.evidence==="object",row.id+" partial evidence lacks evidence ledger");
+    assert(/^[0-9a-f]{40}$/.test(row.evidence.commit||""),row.id+" evidence must name exact commit");
+    assert(/^[0-9a-f]{40}$/.test(row.evidence.tree||""),row.id+" evidence must name exact tree");
+    assert(Array.isArray(row.evidence.runs)&&row.evidence.runs.length>0,row.id+" partial evidence lacks workflow runs");
+    for(const run of row.evidence.runs){
+      assert(Number.isInteger(run.runId),row.id+" evidence run ID missing");
+      assert.equal(run.conclusion,"success",row.id+" evidence includes non-success run");
+    }
+    assert(Array.isArray(row.evidence.holds)&&row.evidence.holds.length>0,row.id+" partial evidence must preserve remaining holds");
+  }
   for(const id of row.courses){
     const cert=release.courses.find(x=>x.id===id);
     assert(cert,"Runtime matrix course missing from release certification: "+id);
