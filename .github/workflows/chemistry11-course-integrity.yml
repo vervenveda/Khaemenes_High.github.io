@@ -1,0 +1,29 @@
+name: Chemistry 11 Course Integrity
+
+on:
+  push:
+    paths:
+      - 'courses/science/chemistry-11/**'
+      - 'courses/science/validate-upper-science-assessment-blueprints.mjs'
+      - '.github/workflows/chemistry11-course-integrity.yml'
+  pull_request:
+    paths:
+      - 'courses/science/chemistry-11/**'
+      - 'courses/science/validate-upper-science-assessment-blueprints.mjs'
+      - '.github/workflows/chemistry11-course-integrity.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  source-integrity:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v6
+      - name: Verify 36-week / 180-lesson Chemistry 11 source integrity
+        run: node courses/science/chemistry-11/tools/validate-course-integrity.mjs
+      - name: Verify Chemistry 11 public question bank and misconception map
+        run: node courses/science/chemistry-11/tools/audit-question-bank.mjs
+      - name: Verify upper-science secure assessment blueprint boundaries
+        run: node courses/science/validate-upper-science-assessment-blueprints.mjs
