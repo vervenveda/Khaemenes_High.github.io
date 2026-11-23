@@ -689,3 +689,50 @@ The source-level curriculum certification remains PASS. Runtime/browser/accessib
 **Bubble 4 — governance/course-map descriptions lag hardened lesson depth: CLOSED.**
 
 The course-map, governance map, weekly landing summaries, and CI validator now share one hardened curriculum authority contract. Bubble 5 remains distinct: it concerns eliminating the separate generic weekly-shell implementation by deriving the shell itself from canonical data rather than merely keeping its summary synchronized.
+
+
+## 2026-11-22 · Post-certification Bubble 2 closure — >=25% inquiry instructional-time proof
+
+### Repair
+- Added a canonical source-planning time model to `course-map.json` under `course.instructional_time_model`.
+- Added per-week `inquiry_minutes_plan` records for all 36 weeks.
+- Defined a conservative denominator of **180 daily blocks × 50 minutes = 9,000 planned instructional minutes**.
+- Counted only explicit qualifying inquiry activity in the numerator:
+  - Monday phenomenon/question/model framing: **15 minutes**
+  - Thursday investigation/design/data-analysis: **50 minutes**
+  - Friday evidence-based CER synthesis/revision: **15 minutes**
+- Ordinary instructional weeks: **34** (Weeks 01–17 and 19–35).
+- MID Week 18 and FINAL Week 36 contribute **0 new inquiry minutes** to the numerator but remain fully in the denominator.
+
+### Calculation
+- 34 ordinary weeks × 80 qualifying inquiry minutes = **2,720 qualifying inquiry minutes**.
+- 2,720 / 9,000 = **30.22% planned qualifying inquiry time**.
+- Target threshold: 25% of 9,000 = **2,250 minutes**.
+- Margin above target: **470 minutes**.
+
+### Evidence standard
+- Added `docs/INQUIRY_TIME_EVIDENCE_V1.md` defining what qualifies and what does not.
+- Qualifying work requires question/model framing, data/design analysis, competing-model evidence, or evidence-based explanation/revision.
+- Passive reading, lecture, navigation, routine practice, protected summative testing, and answer review without transfer/revision do not count.
+- Safe supplied-data/offline simulation alternatives count only when they preserve the same inquiry reasoning; unsafe improvisation never counts.
+
+### Regression protection
+- Hardened `tools/validate-course-integrity.mjs` to recompute:
+  - denominator,
+  - numerator,
+  - inquiry percentage,
+  - all 36 weekly minute plans,
+  - assessment-week zero-new-inquiry rules,
+  - evidence-document totals.
+- CI fails if the recomputed inquiry share drops below 25% or stored totals drift from the week plans.
+- GitHub Actions `source-integrity` job `137424133377`: **PASS / success** on commit `9e078e1e3570d15ce19ece15733c43905ec612fd`.
+
+### Key commits
+- Canonical inquiry-minute model: `d9f06698a40522a4b2bf1738e44fe25a8a09f9d9`
+- Inquiry-time evidence document: `25b09280f349ad984e3e60576c425f544cf9e083`
+- CI enforcement: `9e078e1e3570d15ce19ece15733c43905ec612fd`
+
+### Status
+**Bubble 2 — >=25% inquiry/laboratory instructional-time target unproven: CLOSED at the source-planning level.**
+
+Boundary: this proves the published curriculum allocates >=25% of planned instructional time to qualifying inquiry. It does not claim any individual learner actually completed 2,720 inquiry minutes; actual learner time, teacher review, attendance, browser timing, and credit authority remain separate runtime/evidence gates.
