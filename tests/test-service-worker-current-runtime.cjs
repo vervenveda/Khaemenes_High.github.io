@@ -5,7 +5,7 @@ const path=require("node:path");
 const assert=require("node:assert/strict");
 const root=path.resolve(__dirname,"..");
 const sw=fs.readFileSync(path.join(root,"service-worker.js"),"utf8");
-assert.match(sw,/khaemenes-high-v43-eight-class-hardening-20261120/);
+assert.match(sw,/khaemenes-high-v44-topology-hardening-20261123/);
 for(const legacy of ["seven-class-schedule.js","upper-grade-seven-class.js"]){
   assert(!sw.includes(legacy),"legacy seven-class asset still precached: "+legacy);
 }
@@ -27,4 +27,4 @@ for(const required of [
   assert(sw.includes(JSON.stringify(required)),"current runtime missing from precache: "+required);
   assert(fs.existsSync(path.join(root,required.replace(/^\.\//,""))),"precache target missing from repository: "+required);
 }
-console.log("PASS service-worker current eight-class/profile/portfolio/Grade12 precache contract");
+console.log("PASS service-worker v44 topology/profile/portfolio precache contract");
