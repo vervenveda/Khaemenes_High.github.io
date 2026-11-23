@@ -505,3 +505,31 @@ All ten pages now verify:
 ### Certification status
 - Whole-course Chemistry 11 source-level curriculum certification remains **HOLD** pending Weeks 33–36 hardening and the final 180/180 sweep.
 - Next block: Weeks 33–34 — electrochemistry, nuclear/materials/environmental chemistry, with exact topics to be verified from the source before hardening.
+
+
+## 2026-11-22 · Two-week hardening block 17 — Weeks 33–34
+
+### Audit findings
+- Week 33 electrochemistry lessons began at approximately 259–335 visible words.
+- Week 34 nuclear/materials/environmental lessons began at approximately 224–354 visible words.
+- All ten pages lacked the canonical `upper-science-v1` marker/loader.
+- Week 33 required deeper redox/electron-flow, galvanic-cell architecture, cell-potential/free-energy, measurement-quality, and real-device performance reasoning.
+- Week 34 required deeper nuclear-versus-chemical distinctions, isotope-equation conservation, exponential half-life, fission/fusion systems evidence, lifecycle analysis, and environmental decision-quality reasoning.
+
+### Repairs
+- Mounted `upper-science-v1` on all ten Week 33–34 lessons with exactly one canonical loader per page.
+- Week 33 strengthened half-reaction balancing, oxidizing/reducing-agent roles, anode/cathode/electron/salt-bridge logic, electrode-mass evidence, E°cell calculations, ΔG°=−nFE° linkage, nonstandard-condition boundaries, voltage measurement diagnostics, and voltage/current/energy/power distinctions.
+- Week 34 strengthened alpha/beta/gamma symbolic conservation, half-life exponential calculations, fission-versus-fusion evidence, energy-system engineering constraints, decay timelines, hazard-versus-risk distinctions, lifecycle monitoring, and transparent scientific-evidence versus value-weighting matrices.
+- Added delayed retrieval, evidence/source-quality reasoning, quantitative/model transfer, evidence revision, uncertainty/model limits, misconception repair, and cross-week integration throughout the block.
+
+### Verification
+- Week 33 Days 01–05 now measure approximately 513–538 visible words.
+- Week 34 Days 01–05 now measure approximately 502–530 visible words.
+- All ten pages verify the canonical upper-science marker.
+- All ten pages verify exactly one canonical upper-science loader.
+- All ten pages expose the science-contract depth layer.
+- Ordinary teaching-page depth target is met across both weeks.
+
+### Certification status
+- Whole-course Chemistry 11 source-level curriculum certification remains **HOLD** pending Weeks 35–36 hardening and the final 180/180 sweep.
+- Next block: Weeks 35–36 — materials/sustainable-chemistry capstone and final assessment/synthesis, with exact source topics to be verified before hardening.
