@@ -11,6 +11,11 @@ on:
       - 'tests/test-high-school-profile-runtime-contract.cjs'
       - 'tests/test-high-school-release-gate.cjs'
       - 'courses/shared/course-execution-matrix-v1.json'
+      - 'courses/shared/high-school-program-contract-v1.json'
+      - 'courses/shared/HIGH_SCHOOL_WHOLE_STUDENT_PROGRESSION_V1.md'
+      - 'courses/shared/high-school-federated-return-record-v1.json'
+      - 'courses/shared/high-school-runtime-certification-matrix-v1.json'
+      - 'tools/validate-high-school-program-contract-v1.cjs'
       - 'courses/shared/high-school-course-ownership-manifest-v1.json'
       - 'tools/validate-high-school-course-ownership-v1.cjs'
       - 'tools/validate-high-school-legacy-dependencies-v1.cjs'
@@ -65,6 +70,8 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: '22'
+      - name: Validate canonical High School program contract
+        run: node tools/validate-high-school-program-contract-v1.cjs
       - name: Validate canonical course ownership
         run: node tools/validate-high-school-course-ownership-v1.cjs
       - name: Validate zero legacy shared runtime dependencies
