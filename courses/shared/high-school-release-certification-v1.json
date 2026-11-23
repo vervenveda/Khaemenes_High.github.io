@@ -13,7 +13,10 @@
     ],
     "routeExistenceIsNotReleaseCertification": true,
     "localStaticChecksCannotCertifyBrowserOrDeviceBehavior": true,
-    "federatedHandoffsCannotBeReleaseCertifiedWithoutReturnRecordAudit": true
+    "federatedHandoffsCannotBeReleaseCertifiedWithoutReturnRecordAudit": true,
+    "programContract": "courses/shared/high-school-program-contract-v1.json",
+    "runtimeCertificationMatrix": "courses/shared/high-school-runtime-certification-matrix-v1.json",
+    "federatedReturnRecordContract": "courses/shared/high-school-federated-return-record-v1.json"
   },
   "courses": [
     {
