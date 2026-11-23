@@ -141,6 +141,54 @@
       "path": "courses/social-studies/grade-12/",
       "authority": "course-specific",
       "status": "specialized-existing-engine"
+    },
+    {
+      "id": "physical-education-9",
+      "grade": 9,
+      "department": "physical-education",
+      "path": "courses/physical-education/",
+      "authority": "course-specific",
+      "status": "existing-course-authority"
+    },
+    {
+      "id": "physical-education-10",
+      "grade": 10,
+      "department": "physical-education",
+      "path": "courses/physical-education/",
+      "authority": "course-specific",
+      "status": "existing-course-authority"
+    },
+    {
+      "id": "physical-education-11",
+      "grade": 11,
+      "department": "physical-education",
+      "path": "courses/physical-education/",
+      "authority": "course-specific",
+      "status": "existing-course-authority"
+    },
+    {
+      "id": "physical-education-12",
+      "grade": 12,
+      "department": "physical-education",
+      "path": "courses/physical-education/",
+      "authority": "course-specific",
+      "status": "existing-course-authority"
+    },
+    {
+      "id": "psychology-101",
+      "grade": 9,
+      "department": "psychology-life-skills",
+      "path": "courses/electives/psychology-101/",
+      "authority": "course-specific",
+      "status": "existing-course-authority"
+    },
+    {
+      "id": "senior-capstone",
+      "grade": 12,
+      "department": "capstone",
+      "path": "courses/capstone/senior-capstone/",
+      "authority": "evaluator-reviewed",
+      "status": "existing-course-authority"
     }
   ],
   "federatedRequirements": [
@@ -172,7 +220,17 @@
       "changesPlacement": false,
       "replacesPerformanceEvidence": false
     },
-    "countAuthority": "derived-by-learning-architecture-validator-from-canonical-target-rules-excluding-compatibility-redirects"
+    "countAuthority": "derived-by-learning-architecture-validator-from-canonical-target-rules-excluding-compatibility-redirects",
+    "scopeNote": "The 1,482-surface formative bridge currently covers the four independent academic subject-engine families only. PE, Psychology/Life Skills, and Senior Capstone are registered learning authorities but retain their own evidence/record contracts until explicitly adopted into this bridge.",
+    "registeredNonBridgeAuthorities": [
+      "physical-education",
+      "psychology-life-skills",
+      "capstone"
+    ]
   },
-  "ownershipManifest": "courses/shared/high-school-course-ownership-manifest-v1.json"
+  "ownershipManifest": "courses/shared/high-school-course-ownership-manifest-v1.json",
+  "programContract": "courses/shared/high-school-program-contract-v1.json",
+  "wholeStudentProgression": "courses/shared/HIGH_SCHOOL_WHOLE_STUDENT_PROGRESSION_V1.md",
+  "runtimeCertificationMatrix": "courses/shared/high-school-runtime-certification-matrix-v1.json",
+  "federatedReturnRecordContract": "courses/shared/high-school-federated-return-record-v1.json"
 }
