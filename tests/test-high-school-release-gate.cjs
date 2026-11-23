@@ -37,7 +37,7 @@ for(const grade of ["09","10","11","12"]){
  check(cfg&&exists(cfg.entry),"profile contract entry missing for Grade "+grade);
 }
 const sw=read("service-worker.js");
-check(sw.includes("khaemenes-high-v43-eight-class-hardening-20261120"),"service worker current runtime generation missing");
+check(sw.includes("khaemenes-high-v44-topology-hardening-20261123"),"service worker current runtime generation missing");
 check(!sw.includes("seven-class-schedule.js"),"service worker still references seven-class schedule");
 check(!sw.includes("upper-grade-seven-class.js"),"service worker still references upper-grade seven-class runtime");
 for(const p of ["portfolio/portfolio-evidence-receipts.js","portfolio/portfolio-academic-report.js","portfolio/portfolio-student-record-connections.js"]){
@@ -45,6 +45,16 @@ for(const p of ["portfolio/portfolio-evidence-receipts.js","portfolio/portfolio-
 }
 const portfolio=read("portfolio/index.html");
 check(portfolio.includes("portfolio-evidence-receipts.js"),"Portfolio does not load evidence receipt bridge");
+for(const p of [
+ "grades/shared/high-school-profile-runtime-v2.json",
+ "courses/shared/high-school-world-languages-federation-v1.json",
+ "courses/shared/high-school-release-certification-v1.json",
+ "tools/validate-high-school-legacy-dependencies-v1.cjs",
+ "tools/validate-high-school-profile-runtime-v2.cjs",
+ "tools/validate-high-school-offline-topology-v1.cjs",
+ "tools/validate-high-school-world-languages-federation-v1.cjs",
+ "tools/validate-high-school-release-certification-v1.cjs"
+]) check(exists(p),"topology hardening contract missing: "+p);
 const pending=matrix.courses.flatMap(c=>authorityKeys.filter(k=>c.authority_contract?.[k]?.status==="pending-verification").map(k=>c.id+":"+k));
 if(problems.length){
  console.error("FAIL high-school release gate ("+problems.length+")\n"+problems.join("\n"));
