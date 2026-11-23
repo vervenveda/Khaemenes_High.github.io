@@ -736,3 +736,38 @@ The course-map, governance map, weekly landing summaries, and CI validator now s
 **Bubble 2 — >=25% inquiry/laboratory instructional-time target unproven: CLOSED at the source-planning level.**
 
 Boundary: this proves the published curriculum allocates >=25% of planned instructional time to qualifying inquiry. It does not claim any individual learner actually completed 2,720 inquiry minutes; actual learner time, teacher review, attendance, browser timing, and credit authority remain separate runtime/evidence gates.
+
+
+## 2026-11-22 · Post-certification Bubble 3 closure — learner-isolated inquiry/evidence persistence
+
+### Repair
+- Hardened `inquiry-ledger.js` so the learner-scoped storage key is resolved explicitly through `KhaemenesLearnerScope.scopedKey(KEY)` before read/write operations.
+- Preserved the existing stale-page identity lock: a page opened for Learner A cannot write after the active Academy learner changes without reload.
+- Preserved invalid-record fail-closed behavior: malformed preserved ledger content blocks new saves rather than being overwritten.
+- Added `tools/test-learner-isolation.mjs`, a dedicated Chemistry 11 fictional A/B regression covering:
+  - inquiry-ledger isolation,
+  - weekly evidence-key isolation,
+  - foreign scoped-key read denial,
+  - independent A/B writes,
+  - stale-tab write denial after learner switch,
+  - fresh reload recovery,
+  - unclaimed legacy preservation and explicit claim,
+  - malformed preserved-record byte preservation,
+  - 36/36 weekly identity-contract + learner-scope script ordering,
+  - Chemistry evidence-key prefix presence.
+- Added the Chemistry isolation regression to `.github/workflows/chemistry11-course-integrity.yml`.
+- Hardened `tools/validate-course-integrity.mjs` to require the isolation test and the inquiry-ledger learner-scope/stale-lock/invalid-record protections.
+- Updated `docs/INQUIRY_REVIEW_AUTHORITY_GATE_V1.md` to reflect the newly established CI-backed source isolation proof while preserving the educator-authority boundary.
+
+### Verification
+- Explicit ledger-key commit: `aad3734015ba1b837063896f31c95550aab413a9`.
+- Fictional two-learner regression commit: `3b3bd8ebd0748e23ca7a934391975f9e278de306`.
+- CI workflow integration: `ebbe5e77976253449c1641c8886110223537b721`.
+- Integrity validator hardening: `cd25c58b2dfc1c618a936920c82e580076349c26`.
+- GitHub Actions `source-integrity` job `137456948194`: **PASS / success**.
+- Authority-gate status update: `cfa9520270c00fe7e8b64ea915d8d83a9b95afad`.
+
+### Status
+**Bubble 3 — learner isolation unproven for Chemistry inquiry/evidence persistence: CLOSED at the source/CI regression level.**
+
+Boundary: this does not establish authenticated educator approval, evidence-digest custody, revocation, authoritative credit issuance, or real-browser end-to-end learner-switch/reload/export behavior. Those remain separate fail-closed runtime/authority gates.
