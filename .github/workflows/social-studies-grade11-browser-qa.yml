@@ -4,6 +4,7 @@ on:
     branches: [main]
     paths:
       - 'courses/social-studies/grade-11/**'
+      - 'courses/social-studies/grade-*/index.html'
       - 'courses/social-studies/tools/visual-studio.html'
       - 'tests/test_social_studies_grade11_dashboard.py'
       - '.github/workflows/social-studies-grade11-browser-qa.yml'
