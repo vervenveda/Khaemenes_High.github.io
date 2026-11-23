@@ -68,3 +68,11 @@
 - Week 12 was strengthened with power-interval discipline, input/useful/other energy ledgers, efficiency validity boundaries, stored-energy caveats, measurement uncertainty, engineering tradeoff/sensitivity analysis, explicit CER, and capstone-style stress testing.
 - Preserved existing virtual laboratories, browser-local learner work, mastery semantics, safety boundaries, routes, and navigation.
 - Next target: Weeks 13–14 — Energy Systems & Engineering, then Momentum & Impulse.
+## 2026-11-22 · Hardening block 7 — Weeks 13–14
+
+- Audited all ten Week 13–14 lessons. Week 13 required the larger hardening pass across all five days; Week 14 had strong momentum/impulse concepts but was slightly compressed and inconsistent in CER/retrieval/uncertainty markers.
+- Mounted the canonical Upper Science engine on all ten pages with exactly one loader per lesson.
+- Week 13 was strengthened with energy-flow measurement uncertainty, audit provenance, constraint sensitivity, verification-vs-validation boundaries, decision stress testing, explicit CER/evidence revision, and spiral retrieval across the engineering-design sequence.
+- Week 14 was strengthened with momentum uncertainty, impulse/force distinction, force-time sampling and area reasoning, controlled duration-vs-pulse-shape comparisons, explicit CER/evidence revision, and Friday impulse-momentum retrieval.
+- Preserved the virtual engineering and impact laboratories, browser-local learner work, safety boundaries, mastery semantics, routes, and navigation.
+- Next target: Weeks 15–16 — Conservation of Momentum, then Elastic & Inelastic Collisions.
