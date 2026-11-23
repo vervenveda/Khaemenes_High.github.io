@@ -1,5 +1,5 @@
 {
-  "schema_version": "2.0",
+  "schema_version": "2.1",
   "course": {
     "id": "science-chemistry-11",
     "code": "KH-SCI-CHEM11",
@@ -25,7 +25,9 @@
     "lab_inquiry_target": ">=25% instructional time",
     "passing_target": 80,
     "benchmark_note": "AP Chemistry depth-informed benchmark; not an AP-authorized course.",
-    "mapping_status": "National/international benchmark synthesis. Jurisdiction-specific review is required before formal standards or credit reporting."
+    "mapping_status": "National/international benchmark synthesis. Jurisdiction-specific review is required before formal standards or credit reporting.",
+    "curriculum_authority": "course-map.json week contracts are canonical for quantitative, evidence, inquiry, and retrieval targets; daily lessons may provide deeper implementation detail.",
+    "authority_version": "2026-11-22-hardened-v1"
   },
   "standards": [
     "NGSS HS-PS1-1–8",
@@ -325,9 +327,13 @@
       "phenomenon": "Two measurements disagree even though both were recorded carefully.",
       "lab": "Safety/SDS literacy; balance/volume simulation or supervised measurement; never mix household chemicals.",
       "concepts": "hazard; PPE; SDS; significant figures; uncertainty; dimensional analysis",
-      "quantitative": "Significant figures, percent error, unit conversion, density.",
+      "quantitative": "Significant figures, density, dimensional analysis, percent error, uncertainty.",
       "standards": "SEP 1–8; HS-ETS1-1",
-      "reading": "Course safety charter and sample SDS excerpts."
+      "reading": "Course safety charter and sample SDS excerpts.",
+      "evidence_contract": "Trace measurement → units → uncertainty → claim; distinguish hazard evidence from safety rules.",
+      "inquiry_contract": "Safety/SDS analysis and supervised or simulated measurement design.",
+      "retrieval_contract": "Retrieve unit conversion and proportional reasoning; revise a measurement claim when uncertainty changes.",
+      "authority_version": "2026-11-22-hardened-v1"
     },
     {
       "week": 2,
@@ -337,9 +343,13 @@
       "phenomenon": "Scattering and emission data could not be explained by earlier atomic models.",
       "lab": "Model-evidence card investigation.",
       "concepts": "proton; neutron; electron; nucleus; model revision",
-      "quantitative": "Particle counting from atomic notation.",
+      "quantitative": "Atomic notation, proton/neutron/electron counts, charge accounting.",
       "standards": "HS-PS1-1",
-      "reading": "Open chemistry text on atomic models."
+      "reading": "Open chemistry text on atomic models.",
+      "evidence_contract": "Compare model predictions with scattering/evidence patterns; distinguish observation from historical model.",
+      "inquiry_contract": "Model-evidence card investigation.",
+      "retrieval_contract": "Retrieve conservation/particle-counting rules; revise atomic models from contradictory evidence.",
+      "authority_version": "2026-11-22-hardened-v1"
     },
     {
       "week": 3,
@@ -349,9 +359,13 @@
       "phenomenon": "Mass spectra show several peaks for a single element.",
       "lab": "Mass-spectrum data analysis; no radioactive materials.",
       "concepts": "isotope; mass number; atomic mass; abundance; ion",
-      "quantitative": "Weighted-average atomic mass.",
+      "quantitative": "Weighted-average atomic mass, isotope abundance, normalization checks.",
       "standards": "HS-PS1-1; HS-PS1-8",
-      "reading": "Read Tuesday's linked Deep Lesson for this week; study its worked model, vocabulary, evidence limits, and any referenced internal dataset or diagram. Record a one-sentence synthesis in the evidence notebook. The lesson page is the required reading; no external textbook is needed."
+      "reading": "Read Tuesday's linked Deep Lesson for this week; study its worked model, vocabulary, evidence limits, and any referenced internal dataset or diagram. Record a one-sentence synthesis in the evidence notebook. The lesson page is the required reading; no external textbook is needed.",
+      "evidence_contract": "Audit mass-spectrum assumptions, abundance normalization, and data lineage.",
+      "inquiry_contract": "Mass-spectrum data analysis; no radioactive materials.",
+      "retrieval_contract": "Retrieve atomic notation; transfer isotope reasoning to unfamiliar abundance datasets.",
+      "authority_version": "2026-11-22-hardened-v1"
     },
     {
       "week": 4,
@@ -361,9 +375,13 @@
       "phenomenon": "Atoms emit characteristic line spectra rather than every possible color.",
       "lab": "Virtual emission-spectrum analysis.",
       "concepts": "energy level; photon; spectrum; electron configuration; valence electron",
-      "quantitative": "Convert wavelength/frequency conceptually or with provided constants in Extended pathway.",
+      "quantitative": "c=λν, E=hν, unit conversion, graphical/tolerance reasoning.",
       "standards": "HS-PS1-1; HS-PS4-4",
-      "reading": "Read Tuesday's linked Deep Lesson for this week; study its worked model, vocabulary, evidence limits, and any referenced internal dataset or diagram. Record a one-sentence synthesis in the evidence notebook. The lesson page is the required reading; no external textbook is needed."
+      "reading": "Read Tuesday's linked Deep Lesson for this week; study its worked model, vocabulary, evidence limits, and any referenced internal dataset or diagram. Record a one-sentence synthesis in the evidence notebook. The lesson page is the required reading; no external textbook is needed.",
+      "evidence_contract": "Separate raw spectral lines from model inference; compare residuals/tolerance and model limits.",
+      "inquiry_contract": "Virtual emission-spectrum analysis.",
+      "retrieval_contract": "Retrieve atomic-model revision; explain how spectra constrain electron-energy models.",
+      "authority_version": "2026-11-22-hardened-v1"
     },
     {
       "week": 5,
@@ -373,9 +391,13 @@
       "phenomenon": "Element properties recur in patterns across the periodic table.",
       "lab": "Periodic-trend data investigation.",
       "concepts": "period; group; radius; ionization energy; electronegativity; valence",
-      "quantitative": "Graph periodic trends and identify anomalies.",
+      "quantitative": "Trend datasets, comparative ratios, graph-based periodic-property reasoning.",
       "standards": "HS-PS1-1",
-      "reading": "Read Tuesday's linked Deep Lesson for this week; study its worked model, vocabulary, evidence limits, and any referenced internal dataset or diagram. Record a one-sentence synthesis in the evidence notebook. The lesson page is the required reading; no external textbook is needed."
+      "reading": "Read Tuesday's linked Deep Lesson for this week; study its worked model, vocabulary, evidence limits, and any referenced internal dataset or diagram. Record a one-sentence synthesis in the evidence notebook. The lesson page is the required reading; no external textbook is needed.",
+      "evidence_contract": "Use evidence to distinguish trend from exception; justify predictions with effective nuclear attraction and shielding.",
+      "inquiry_contract": "Periodic-trend data investigation.",
+      "retrieval_contract": "Retrieve electron structure; transfer trend reasoning to unfamiliar elements/ions.",
+      "authority_version": "2026-11-22-hardened-v1"
     },
     {
       "week": 6,
@@ -385,9 +407,13 @@
       "phenomenon": "Salt crystals are brittle solids that conduct only under certain conditions.",
       "lab": "Conductivity/property dataset or supervised low-voltage test with safe materials.",
       "concepts": "ion; ionic bond; lattice; formula unit; charge balance",
-      "quantitative": "Write formulas from charges; molar-mass calculations.",
+      "quantitative": "Charge balance, formula-unit ratios, lattice/property comparisons.",
       "standards": "HS-PS1-2; HS-PS1-3",
-      "reading": "Read Tuesday's linked Deep Lesson for this week; study its worked model, vocabulary, evidence limits, and any referenced internal dataset or diagram. Record a one-sentence synthesis in the evidence notebook. The lesson page is the required reading; no external textbook is needed."
+      "reading": "Read Tuesday's linked Deep Lesson for this week; study its worked model, vocabulary, evidence limits, and any referenced internal dataset or diagram. Record a one-sentence synthesis in the evidence notebook. The lesson page is the required reading; no external textbook is needed.",
+      "evidence_contract": "Connect ionic formulas and lattice models to macroscopic properties; preserve model boundaries.",
+      "inquiry_contract": "Ionic model/property investigation or safe simulation.",
+      "retrieval_contract": "Retrieve periodic trends and ion formation; revise formulas from charge-conservation errors.",
+      "authority_version": "2026-11-22-hardened-v1"
     },
     {
       "week": 7,
@@ -397,9 +423,13 @@
       "phenomenon": "Different molecules can contain the same elements yet have different structures and properties.",
       "lab": "Molecular model kit or paper Lewis structures.",
       "concepts": "covalent bond; Lewis structure; octet model; bond order; resonance model",
-      "quantitative": "Count valence electrons and compare bond multiplicity.",
+      "quantitative": "Valence-electron accounting, formal charge, Lewis-structure comparison.",
       "standards": "HS-PS1-2; HS-PS1-3",
-      "reading": "Read Tuesday's linked Deep Lesson for this week; study its worked model, vocabulary, evidence limits, and any referenced internal dataset or diagram. Record a one-sentence synthesis in the evidence notebook. The lesson page is the required reading; no external textbook is needed."
+      "reading": "Read Tuesday's linked Deep Lesson for this week; study its worked model, vocabulary, evidence limits, and any referenced internal dataset or diagram. Record a one-sentence synthesis in the evidence notebook. The lesson page is the required reading; no external textbook is needed.",
+      "evidence_contract": "Compare Lewis/resonance models and state where octet/formal-charge heuristics fail.",
+      "inquiry_contract": "Lewis-model comparison/design task.",
+      "retrieval_contract": "Retrieve ionic/covalent distinctions; transfer bonding models to unfamiliar molecules.",
+      "authority_version": "2026-11-22-hardened-v1"
     },
     {
       "week": 8,
@@ -409,9 +439,13 @@
       "phenomenon": "Molecules with polar bonds can be overall polar or nonpolar.",
       "lab": "VSEPR model-building with safe kits or paper models.",
       "concepts": "electron domain; geometry; polarity; dipole; symmetry",
-      "quantitative": "Use geometry to predict net dipole qualitatively.",
+      "quantitative": "Electron-domain counting, VSEPR geometry, polarity/vector cancellation.",
       "standards": "HS-PS1-3",
-      "reading": "Read Tuesday's linked Deep Lesson for this week; study its worked model, vocabulary, evidence limits, and any referenced internal dataset or diagram. Record a one-sentence synthesis in the evidence notebook. The lesson page is the required reading; no external textbook is needed."
+      "reading": "Read Tuesday's linked Deep Lesson for this week; study its worked model, vocabulary, evidence limits, and any referenced internal dataset or diagram. Record a one-sentence synthesis in the evidence notebook. The lesson page is the required reading; no external textbook is needed.",
+      "evidence_contract": "Validate shape/polarity predictions against symmetry and molecular evidence.",
+      "inquiry_contract": "Physical or virtual molecular-model investigation.",
+      "retrieval_contract": "Retrieve Lewis structures; revise polarity claims when geometry changes.",
+      "authority_version": "2026-11-22-hardened-v1"
     },
     {
       "week": 9,
@@ -421,9 +455,13 @@
       "phenomenon": "Copper, glass, graphite, and salt behave very differently under stress and electrical conditions.",
       "lab": "Property comparison and material-selection design challenge.",
       "concepts": "metallic bonding; network solid; crystal; alloy; structure–property",
-      "quantitative": "Compare density/conductivity data and select materials using criteria.",
+      "quantitative": "Density/property comparisons, weighted engineering decisions.",
       "standards": "HS-PS1-3; HS-ETS1-3",
-      "reading": "Read Tuesday's linked Deep Lesson for this week; study its worked model, vocabulary, evidence limits, and any referenced internal dataset or diagram. Record a one-sentence synthesis in the evidence notebook. The lesson page is the required reading; no external textbook is needed."
+      "reading": "Read Tuesday's linked Deep Lesson for this week; study its worked model, vocabulary, evidence limits, and any referenced internal dataset or diagram. Record a one-sentence synthesis in the evidence notebook. The lesson page is the required reading; no external textbook is needed.",
+      "evidence_contract": "Use conductivity, density, structure, and defect evidence to justify material choice.",
+      "inquiry_contract": "Materials-property investigation/design challenge.",
+      "retrieval_contract": "Retrieve bonding/structure; transfer evidence to a new material-selection problem.",
+      "authority_version": "2026-11-22-hardened-v1"
     },
     {
       "week": 10,
@@ -433,9 +471,13 @@
       "phenomenon": "Two molecular liquids evaporate at very different rates.",
       "lab": "Evaporation dataset or supervised water/alcohol-free safe simulation.",
       "concepts": "dispersion; dipole-dipole; hydrogen bonding; IMF",
-      "quantitative": "Graph boiling point vs structure descriptors.",
+      "quantitative": "Boiling/vapor-pressure trends, comparative IMF reasoning.",
       "standards": "HS-PS1-3",
-      "reading": "Read Tuesday's linked Deep Lesson for this week; study its worked model, vocabulary, evidence limits, and any referenced internal dataset or diagram. Record a one-sentence synthesis in the evidence notebook. The lesson page is the required reading; no external textbook is needed."
+      "reading": "Read Tuesday's linked Deep Lesson for this week; study its worked model, vocabulary, evidence limits, and any referenced internal dataset or diagram. Record a one-sentence synthesis in the evidence notebook. The lesson page is the required reading; no external textbook is needed.",
+      "evidence_contract": "Separate molecular structure, IMF model, and bulk-property observation.",
+      "inquiry_contract": "IMF/property data investigation.",
+      "retrieval_contract": "Retrieve polarity; revise claims that confuse bond strength with intermolecular force.",
+      "authority_version": "2026-11-22-hardened-v1"
     },
     {
       "week": 11,
@@ -445,9 +487,13 @@
       "phenomenon": "A sealed flexible container changes volume when temperature or pressure changes.",
       "lab": "Syringe simulation with no sealed heating; virtual gas law lab.",
       "concepts": "pressure; temperature; volume; mole; kinetic molecular theory",
-      "quantitative": "Boyle/Charles/ideal gas calculations within course level.",
+      "quantitative": "Boyle/Charles/Avogadro relationships, PV=nRT, transformed graphs, unit-compatible R.",
       "standards": "HS-PS3-2; HS-PS3-4",
-      "reading": "Open gas-law text."
+      "reading": "Open gas-law text.",
+      "evidence_contract": "Use graph shape, controls, and residuals to test gas models; distinguish ideal from real behavior.",
+      "inquiry_contract": "Gas-law data/simulation investigation.",
+      "retrieval_contract": "Retrieve particle-motion model; transfer dimensional analysis to gas systems.",
+      "authority_version": "2026-11-22-hardened-v1"
     },
     {
       "week": 12,
@@ -457,9 +503,13 @@
       "phenomenon": "The same mass of solute produces different concentrations in different volumes.",
       "lab": "Safe salt/sugar solution calculation or virtual lab; no tasting.",
       "concepts": "solute; solvent; molarity; dilution; solubility",
-      "quantitative": "Molarity, dilution, percent concentration.",
+      "quantitative": "Molarity, dilution, serial dilution, reverse preparation planning.",
       "standards": "HS-PS1-3",
-      "reading": "Read Tuesday's linked Deep Lesson for this week; study its worked model, vocabulary, evidence limits, and any referenced internal dataset or diagram. Record a one-sentence synthesis in the evidence notebook. The lesson page is the required reading; no external textbook is needed."
+      "reading": "Read Tuesday's linked Deep Lesson for this week; study its worked model, vocabulary, evidence limits, and any referenced internal dataset or diagram. Record a one-sentence synthesis in the evidence notebook. The lesson page is the required reading; no external textbook is needed.",
+      "evidence_contract": "Audit meniscus, calibration, transfer, and precision/accuracy evidence.",
+      "inquiry_contract": "Solution-preparation simulation or supervised lab.",
+      "retrieval_contract": "Retrieve mole/volume reasoning; correct dilution plans from conservation-of-solute errors.",
+      "authority_version": "2026-11-22-hardened-v1"
     },
     {
       "week": 13,
@@ -469,9 +519,13 @@
       "phenomenon": "A colored mixture separates into distinct bands or signals.",
       "lab": "Paper chromatography with washable ink/water or virtual spectroscopy.",
       "concepts": "mixture; chromatography; spectrum; calibration; retention",
-      "quantitative": "Rf-style ratios or calibration-curve interpretation.",
+      "quantitative": "Recovery, purity, mass balance, Rf, calibration curves, interpolation/extrapolation.",
       "standards": "HS-PS1-3; SEP 4",
-      "reading": "Read Tuesday's linked Deep Lesson for this week; study its worked model, vocabulary, evidence limits, and any referenced internal dataset or diagram. Record a one-sentence synthesis in the evidence notebook. The lesson page is the required reading; no external textbook is needed."
+      "reading": "Read Tuesday's linked Deep Lesson for this week; study its worked model, vocabulary, evidence limits, and any referenced internal dataset or diagram. Record a one-sentence synthesis in the evidence notebook. The lesson page is the required reading; no external textbook is needed.",
+      "evidence_contract": "Separate raw signal, processed measurement, calibration model, and claim; use blanks/standards/duplicates.",
+      "inquiry_contract": "Separation/spectroscopy investigation.",
+      "retrieval_contract": "Retrieve solution concentration; transfer analytical-evidence logic to unknown samples.",
+      "authority_version": "2026-11-22-hardened-v1"
     },
     {
       "week": 14,
@@ -481,9 +535,13 @@
       "phenomenon": "Mass appears to change in an open reaction but is conserved in a closed-system model.",
       "lab": "Closed-system simulation or safe effervescent tablet dataset; no sealed pressure build-up.",
       "concepts": "reactant; product; coefficient; state symbol; conservation",
-      "quantitative": "Balance equations and perform atom audits.",
+      "quantitative": "Balanced equations, coefficient ratios, atom/mass conservation.",
       "standards": "HS-PS1-2; HS-PS1-7",
-      "reading": "Read Tuesday's linked Deep Lesson for this week; study its worked model, vocabulary, evidence limits, and any referenced internal dataset or diagram. Record a one-sentence synthesis in the evidence notebook. The lesson page is the required reading; no external textbook is needed."
+      "reading": "Read Tuesday's linked Deep Lesson for this week; study its worked model, vocabulary, evidence limits, and any referenced internal dataset or diagram. Record a one-sentence synthesis in the evidence notebook. The lesson page is the required reading; no external textbook is needed.",
+      "evidence_contract": "Distinguish reaction evidence from symbolic representation; use conservation as the governing check.",
+      "inquiry_contract": "Reaction-evidence studio with safe supplied-data alternatives.",
+      "retrieval_contract": "Retrieve particle/accounting rules; revise equations by conservation rather than visual balancing alone.",
+      "authority_version": "2026-11-22-hardened-v1"
     },
     {
       "week": 15,
@@ -493,9 +551,13 @@
       "phenomenon": "Small measured masses represent astronomical particle counts.",
       "lab": "Mass-to-mole paper/simulation practice.",
       "concepts": "mole; Avogadro constant; molar mass; stoichiometric ratio",
-      "quantitative": "Mole-mass-particle conversions and reaction ratios.",
+      "quantitative": "Moles, molar mass, mole ratios, mass↔mole and mass↔mass stoichiometry.",
       "standards": "HS-PS1-7",
-      "reading": "Open stoichiometry text."
+      "reading": "Open stoichiometry text.",
+      "evidence_contract": "Audit dimensional-analysis pathways and conservation/reasonableness.",
+      "inquiry_contract": "Stoichiometry investigation/problem studio.",
+      "retrieval_contract": "Retrieve balanced equations; transfer coefficient meaning to quantitative conversion chains.",
+      "authority_version": "2026-11-22-hardened-v1"
     },
     {
       "week": 16,
@@ -505,9 +567,13 @@
       "phenomenon": "A recipe model stops producing product when one component runs out.",
       "lab": "Paper-token limiting-reactant model.",
       "concepts": "limiting reactant; excess; theoretical yield; actual yield; percent yield",
-      "quantitative": "Limiting reactant and percent-yield calculations.",
+      "quantitative": "Limiting reactant, theoretical/actual yield, percent yield, boundary sensitivity.",
       "standards": "HS-PS1-7",
-      "reading": "Read Tuesday's linked Deep Lesson for this week; study its worked model, vocabulary, evidence limits, and any referenced internal dataset or diagram. Record a one-sentence synthesis in the evidence notebook. The lesson page is the required reading; no external textbook is needed."
+      "reading": "Read Tuesday's linked Deep Lesson for this week; study its worked model, vocabulary, evidence limits, and any referenced internal dataset or diagram. Record a one-sentence synthesis in the evidence notebook. The lesson page is the required reading; no external textbook is needed.",
+      "evidence_contract": "Compare common-product pathways, diagnose >100% yield, separate random/systematic causes.",
+      "inquiry_contract": "Limiting-reactant/yield investigation.",
+      "retrieval_contract": "Retrieve stoichiometry; revise limiting-reactant claims when near-stoichiometric uncertainty matters.",
+      "authority_version": "2026-11-22-hardened-v1"
     },
     {
       "week": 17,
@@ -517,9 +583,13 @@
       "phenomenon": "Some reactions transfer electrons and produce measurable electrical or color changes.",
       "lab": "Redox-number analysis and virtual/supervised solution stoichiometry.",
       "concepts": "oxidation; reduction; oxidation number; titration concept; equivalence",
-      "quantitative": "Balance simple redox conceptually; solution stoichiometry.",
+      "quantitative": "Oxidation numbers, electron accounting, n=MV solution stoichiometry, equivalence ratios.",
       "standards": "HS-PS1-2; HS-PS1-7",
-      "reading": "Open redox and solution-stoichiometry text."
+      "reading": "Open redox and solution-stoichiometry text.",
+      "evidence_contract": "Separate formal oxidation-state bookkeeping from observed solution evidence; preserve charge/atom conservation.",
+      "inquiry_contract": "Redox/solution-stoichiometry virtual investigation.",
+      "retrieval_contract": "Retrieve stoichiometry and ions; transfer electron/accounting logic to coupled redox problems.",
+      "authority_version": "2026-11-22-hardened-v1"
     },
     {
       "week": 18,
@@ -529,9 +599,13 @@
       "phenomenon": "A cumulative unknown requires structure–property and quantitative reasoning.",
       "lab": "No new wet lab; midterm and correction portfolio.",
       "concepts": "cumulative synthesis",
-      "quantitative": "Mixed dimensional analysis, stoichiometry, graphing.",
+      "quantitative": "Mixed semester quantitative retrieval across Weeks 01–17.",
       "standards": "HS-PS1; SEP 1–8",
-      "reading": "Review notebook and lab evidence."
+      "reading": "Review notebook and lab evidence.",
+      "evidence_contract": "Use readiness evidence, correction classification, and portfolio traceability without exposing protected MID content.",
+      "inquiry_contract": "Public practice/portfolio audit only; supervised MID authority remains separate.",
+      "retrieval_contract": "Repair prerequisite chains, then verify transfer with new public practice items.",
+      "authority_version": "2026-11-22-hardened-v1"
     },
     {
       "week": 19,
@@ -541,9 +615,13 @@
       "phenomenon": "Concentration changes nonlinearly with time during a reaction.",
       "lab": "Rate-curve data analysis.",
       "concepts": "rate; concentration; time; slope; rate law concept",
-      "quantitative": "Average/instantaneous rate from graphs.",
+      "quantitative": "Average/instantaneous rate, tangent slopes, initial-rate ratios, empirical order inference.",
       "standards": "HS-PS1-5",
-      "reading": "Open kinetics text."
+      "reading": "Open kinetics text.",
+      "evidence_contract": "Separate raw measurements, calculated rates, fits, and mechanism claims; track timing/mixing uncertainty.",
+      "inquiry_contract": "Rate-data investigation.",
+      "retrieval_contract": "Retrieve concentration, stoichiometry, and graph reasoning; revise rate-law claims from controlled comparisons.",
+      "authority_version": "2026-11-22-hardened-v1"
     },
     {
       "week": 20,
@@ -553,9 +631,13 @@
       "phenomenon": "A reaction speeds up as particles collide more frequently or energetically.",
       "lab": "Safe simulation/data analysis; no unsupervised reactive mixtures.",
       "concepts": "collision; activation energy; temperature; concentration; surface area",
-      "quantitative": "Compare rate ratios across conditions.",
+      "quantitative": "Rate ratios under temperature/concentration/surface-area changes.",
       "standards": "HS-PS1-5",
-      "reading": "Open collision-theory text."
+      "reading": "Open collision-theory text.",
+      "evidence_contract": "Use collision frequency, energy distribution, and effective-collision fraction without overgeneralizing.",
+      "inquiry_contract": "Controlled rate-factor simulation/data investigation.",
+      "retrieval_contract": "Retrieve kinetic-temperature and concentration models; transfer collision theory to new rate scenarios.",
+      "authority_version": "2026-11-22-hardened-v1"
     },
     {
       "week": 21,
@@ -565,9 +647,13 @@
       "phenomenon": "A catalyst changes reaction rate without changing overall reactants/products.",
       "lab": "Energy-profile/model analysis.",
       "concepts": "mechanism; elementary step; intermediate; catalyst; transition state",
-      "quantitative": "Read multistep energy profiles.",
+      "quantitative": "Mechanism step summation, rate-law compatibility, energy-profile comparison.",
       "standards": "HS-PS1-5",
-      "reading": "Open kinetics mechanisms overview."
+      "reading": "Open kinetics mechanisms overview.",
+      "evidence_contract": "Test mechanisms against net stoichiometry, empirical rate law, intermediates, and catalyst behavior.",
+      "inquiry_contract": "Competing-mechanism evidence investigation.",
+      "retrieval_contract": "Retrieve rate laws; revise mechanism claims when one evidence category fails.",
+      "authority_version": "2026-11-22-hardened-v1"
     },
     {
       "week": 22,
@@ -577,9 +663,13 @@
       "phenomenon": "Two rate datasets can fit different models until an additional variable is tested.",
       "lab": "Guided inquiry using simulation or teacher-supervised safe reaction.",
       "concepts": "hypothesis; variable; rate model; residual; uncertainty",
-      "quantitative": "Fit/compare simple rate models.",
+      "quantitative": "Replicate rate metrics, model predictions, residuals, controlled-variable analysis.",
       "standards": "HS-PS1-5; SEP 3–5",
-      "reading": "Read Tuesday's linked Deep Lesson for this week; study its worked model, vocabulary, evidence limits, and any referenced internal dataset or diagram. Record a one-sentence synthesis in the evidence notebook. The lesson page is the required reading; no external textbook is needed."
+      "reading": "Read Tuesday's linked Deep Lesson for this week; study its worked model, vocabulary, evidence limits, and any referenced internal dataset or diagram. Record a one-sentence synthesis in the evidence notebook. The lesson page is the required reading; no external textbook is needed.",
+      "evidence_contract": "Use falsifiable competing models, residual structure, controls, and contrary evidence.",
+      "inquiry_contract": "Kinetics inquiry with competing-model design.",
+      "retrieval_contract": "Retrieve Weeks 19–21; transfer model-discrimination logic to unfamiliar kinetics data.",
+      "authority_version": "2026-11-22-hardened-v1"
     },
     {
       "week": 23,
@@ -589,9 +679,13 @@
       "phenomenon": "A process warms or cools its surroundings by a measurable amount.",
       "lab": "Virtual calorimetry or teacher-supervised water-based calorimetry.",
       "concepts": "system; surroundings; heat; enthalpy; calorimeter",
-      "quantitative": "q=mcΔT and energy accounting.",
+      "quantitative": "q=mcΔT, calorimeter heat capacity, qsystem≈−qsurroundings, molar ΔH.",
       "standards": "HS-PS1-4; HS-PS3-1",
-      "reading": "Open thermochemistry text."
+      "reading": "Open thermochemistry text.",
+      "evidence_contract": "Trace raw mass/temperature → q → reaction heat → molar enthalpy; diagnose heat-loss bias.",
+      "inquiry_contract": "Calorimetry investigation or safe data alternative.",
+      "retrieval_contract": "Retrieve energy conservation and units; revise sign/scaling errors with independent checks.",
+      "authority_version": "2026-11-22-hardened-v1"
     },
     {
       "week": 24,
@@ -601,9 +695,13 @@
       "phenomenon": "Different reaction sequences can produce the same overall chemical change.",
       "lab": "Hess-cycle card model and bond-energy calculation.",
       "concepts": "bond energy; Hess's law; state function; pathway",
-      "quantitative": "Combine thermochemical equations and estimate ΔH.",
+      "quantitative": "Bond-energy estimates, Hess reversal/scaling/cancellation, state labels, uncertainty accumulation.",
       "standards": "HS-PS1-4",
-      "reading": "Read Tuesday's linked Deep Lesson for this week; study its worked model, vocabulary, evidence limits, and any referenced internal dataset or diagram. Record a one-sentence synthesis in the evidence notebook. The lesson page is the required reading; no external textbook is needed."
+      "reading": "Read Tuesday's linked Deep Lesson for this week; study its worked model, vocabulary, evidence limits, and any referenced internal dataset or diagram. Record a one-sentence synthesis in the evidence notebook. The lesson page is the required reading; no external textbook is needed.",
+      "evidence_contract": "Compare bond-energy, Hess, and calorimetry pathways; preserve thermodynamic states and input uncertainty.",
+      "inquiry_contract": "Hess-cycle/data investigation.",
+      "retrieval_contract": "Retrieve enthalpy scaling; transfer state-function reasoning to alternate pathways.",
+      "authority_version": "2026-11-22-hardened-v1"
     },
     {
       "week": 25,
@@ -613,9 +711,13 @@
       "phenomenon": "Some processes spread matter or energy even when they absorb heat.",
       "lab": "Particle-distribution simulation.",
       "concepts": "entropy; dispersal; microstate concept; spontaneity",
-      "quantitative": "Interpret qualitative entropy and energy tradeoffs.",
+      "quantitative": "ΔG=ΔH−TΔS, unit conversion, crossover temperature, microstate/probability models.",
       "standards": "HS-PS3-2; HS-PS3-4",
-      "reading": "Open introduction to entropy."
+      "reading": "Open introduction to entropy.",
+      "evidence_contract": "Replace 'disorder' slogans with dispersal/multiplicity evidence; separate thermodynamics from kinetics.",
+      "inquiry_contract": "Entropy/probability simulation.",
+      "retrieval_contract": "Retrieve thermochemistry; revise direction claims using ΔH, ΔS, T, and model limits.",
+      "authority_version": "2026-11-22-hardened-v1"
     },
     {
       "week": 26,
@@ -625,9 +727,13 @@
       "phenomenon": "A system reaches stable concentrations even though microscopic reactions continue.",
       "lab": "Equilibrium simulation.",
       "concepts": "dynamic equilibrium; equilibrium constant; reaction quotient concept",
-      "quantitative": "Write/interpret simple equilibrium expressions.",
+      "quantitative": "K expressions and transformations, Q vs K, dynamic rate/concentration graphs.",
       "standards": "HS-PS1-6",
-      "reading": "Open equilibrium text."
+      "reading": "Open equilibrium text.",
+      "evidence_contract": "Separate equal rates from equal concentrations; distinguish composition tendency from speed.",
+      "inquiry_contract": "Equilibrium simulation/data investigation.",
+      "retrieval_contract": "Retrieve kinetics and thermodynamics; predict direction from Q/K rather than slogans.",
+      "authority_version": "2026-11-22-hardened-v1"
     },
     {
       "week": 27,
@@ -637,9 +743,13 @@
       "phenomenon": "Changing concentration or temperature shifts the observed composition of a reversible system.",
       "lab": "Virtual equilibrium perturbation lab.",
       "concepts": "stress; shift; equilibrium position; temperature; concentration",
-      "quantitative": "Use tables/graphs to infer shifts.",
+      "quantitative": "Q/K response to concentration, volume/partial-pressure, inert-gas, and temperature changes.",
       "standards": "HS-PS1-6",
-      "reading": "Read Tuesday's linked Deep Lesson for this week; study its worked model, vocabulary, evidence limits, and any referenced internal dataset or diagram. Record a one-sentence synthesis in the evidence notebook. The lesson page is the required reading; no external textbook is needed."
+      "reading": "Read Tuesday's linked Deep Lesson for this week; study its worked model, vocabulary, evidence limits, and any referenced internal dataset or diagram. Record a one-sentence synthesis in the evidence notebook. The lesson page is the required reading; no external textbook is needed.",
+      "evidence_contract": "Separate instantaneous disturbance from later reaction response; identify whether Q, K, both, or only rates change.",
+      "inquiry_contract": "Perturbation simulation with controls.",
+      "retrieval_contract": "Retrieve Week 26; revise Le Châtelier explanations through explicit equilibrium-expression reasoning.",
+      "authority_version": "2026-11-22-hardened-v1"
     },
     {
       "week": 28,
@@ -649,9 +759,13 @@
       "phenomenon": "A small concentration change can trigger precipitation.",
       "lab": "Solubility-curve/data analysis; no unsupervised precipitation chemistry.",
       "concepts": "solubility; saturation; precipitation; Ksp concept; common-ion concept",
-      "quantitative": "Read solubility curves and compare ion products qualitatively.",
+      "quantitative": "Molar solubility, Ksp, Qsp, stoichiometric s relationships, post-mixing concentrations, precipitation thresholds.",
       "standards": "HS-PS1-6",
-      "reading": "Open solubility-equilibrium text."
+      "reading": "Open solubility-equilibrium text.",
+      "evidence_contract": "Separate Ksp, solubility, Qsp, and observed precipitation; preserve temperature, ionic background, units, and detection limits.",
+      "inquiry_contract": "Solubility/precipitation data investigation.",
+      "retrieval_contract": "Retrieve equilibrium expressions and solution concentration; transfer Q/K logic to coupled solubility systems.",
+      "authority_version": "2026-11-22-hardened-v1"
     },
     {
       "week": 29,
@@ -661,9 +775,13 @@
       "phenomenon": "Different substances change indicator behavior in repeatable ways.",
       "lab": "Use virtual indicators or teacher-supervised food-safe indicator only; never mix cleaners.",
       "concepts": "acid; base; proton donor/acceptor; conjugate pair; amphoteric",
-      "quantitative": "Classify acid/base reactions and simple concentration relations.",
+      "quantitative": "Conjugate-pair bookkeeping, qualitative strength/equilibrium comparisons, indicator-range bracketing.",
       "standards": "HS-PS1-2",
-      "reading": "Open acid–base text."
+      "reading": "Open acid–base text.",
+      "evidence_contract": "Compare Arrhenius and Brønsted–Lowry scope; separate model classification from direct indicator/conductivity evidence.",
+      "inquiry_contract": "Indicator/conjugate-pair investigation.",
+      "retrieval_contract": "Retrieve equilibrium and water behavior; revise acid/base claims based on formula appearance alone.",
+      "authority_version": "2026-11-22-hardened-v1"
     },
     {
       "week": 30,
@@ -673,9 +791,13 @@
       "phenomenon": "A tiny change in hydrogen-ion concentration produces a large pH shift.",
       "lab": "Virtual titration; supervised neutralization only in equipped lab.",
       "concepts": "pH; pOH; strong/weak; equivalence; indicator",
-      "quantitative": "pH calculations and titration stoichiometry at appropriate level.",
+      "quantitative": "pH=−log[H3O+], inverse logs, pOH/Kw, strong-species stoichiometry, n=MV titration calculations.",
       "standards": "HS-PS1-6",
-      "reading": "Read Tuesday's linked Deep Lesson for this week; study its worked model, vocabulary, evidence limits, and any referenced internal dataset or diagram. Record a one-sentence synthesis in the evidence notebook. The lesson page is the required reading; no external textbook is needed."
+      "reading": "Read Tuesday's linked Deep Lesson for this week; study its worked model, vocabulary, evidence limits, and any referenced internal dataset or diagram. Record a one-sentence synthesis in the evidence notebook. The lesson page is the required reading; no external textbook is needed.",
+      "evidence_contract": "Separate strength, concentration, pH, equivalence, and endpoint; audit logarithm and mole-ratio errors.",
+      "inquiry_contract": "Virtual titration/data investigation.",
+      "retrieval_contract": "Retrieve solution stoichiometry and logs; transfer model selection across titration regions.",
+      "authority_version": "2026-11-22-hardened-v1"
     },
     {
       "week": 31,
@@ -685,9 +807,13 @@
       "phenomenon": "Adding the same amount of acid changes pure water and a buffer differently.",
       "lab": "Buffer simulation; no biological/medical dosing contexts.",
       "concepts": "buffer; conjugate pair; capacity; equilibrium; regulation",
-      "quantitative": "Interpret buffer curves and compare capacity.",
+      "quantitative": "Henderson–Hasselbalch, half-equivalence/pKa, buffer stoichiometry, ratio vs total concentration, capacity.",
       "standards": "HS-PS1-6",
-      "reading": "Open buffer-system text."
+      "reading": "Open buffer-system text.",
+      "evidence_contract": "Separate pH prediction from capacity prediction; use stoichiometry before equilibrium after strong-acid/base challenge.",
+      "inquiry_contract": "Buffer challenge simulation/data investigation.",
+      "retrieval_contract": "Retrieve conjugate pairs and titration curves; design and stress-test a buffer near target pH.",
+      "authority_version": "2026-11-22-hardened-v1"
     },
     {
       "week": 32,
@@ -697,9 +823,13 @@
       "phenomenon": "A process can be spontaneous even when it absorbs heat.",
       "lab": "Free-energy graph/data analysis.",
       "concepts": "Gibbs free energy; enthalpy; entropy; spontaneity; coupling",
-      "quantitative": "Use ΔG=ΔH−TΔS in Extended pathway; interpret signs in Core.",
+      "quantitative": "ΔG vs ΔG°, ΔG=ΔH−TΔS, crossover T, ΔG°=−RT lnK, conceptual ΔG=ΔG°+RT lnQ.",
       "standards": "HS-PS3-1; HS-PS3-2",
-      "reading": "Open thermodynamics introduction."
+      "reading": "Open thermodynamics introduction.",
+      "evidence_contract": "Cross-check free-energy direction through thermodynamic and equilibrium routes; preserve standard vs actual-state conditions.",
+      "inquiry_contract": "Free-energy data investigation.",
+      "retrieval_contract": "Retrieve entropy/equilibrium; revise sign/unit/state errors and validate physical coupling.",
+      "authority_version": "2026-11-22-hardened-v1"
     },
     {
       "week": 33,
@@ -709,9 +839,13 @@
       "phenomenon": "Separated redox processes can drive electron flow through a circuit.",
       "lab": "Virtual galvanic-cell investigation or teacher-supervised low-risk cell.",
       "concepts": "anode; cathode; cell potential; oxidation; reduction",
-      "quantitative": "Read cell diagrams and compare potential data.",
+      "quantitative": "Half-reaction balancing, E°cell=E°cathode−E°anode, ΔG°=−nFE°, voltage/current/energy/power distinctions.",
       "standards": "HS-PS1-2; HS-PS3-3; HS-PS3-5",
-      "reading": "Open electrochemistry text."
+      "reading": "Open electrochemistry text.",
+      "evidence_contract": "Connect redox bookkeeping, measured polarity, standard potential, and real-device limitations; keep electrons out of salt bridge.",
+      "inquiry_contract": "Electrochemical-cell investigation or safe simulation.",
+      "retrieval_contract": "Retrieve redox and free energy; transfer electron-flow/potential reasoning to unfamiliar cells.",
+      "authority_version": "2026-11-22-hardened-v1"
     },
     {
       "week": 34,
@@ -721,9 +855,13 @@
       "phenomenon": "Radioactive decay changes nuclei while ordinary chemical reactions do not.",
       "lab": "Half-life simulation with coins; no radioactive sources.",
       "concepts": "isotope; decay; fission; fusion; polymer/material; lifecycle",
-      "quantitative": "Half-life modeling and material lifecycle data.",
+      "quantitative": "Nuclear equation conservation, exponential half-life, decay timelines, mass-energy reasoning.",
       "standards": "HS-PS1-8; HS-ESS3-2",
-      "reading": "Read Tuesday's linked Deep Lesson for this week; study its worked model, vocabulary, evidence limits, and any referenced internal dataset or diagram. Record a one-sentence synthesis in the evidence notebook. The lesson page is the required reading; no external textbook is needed."
+      "reading": "Read Tuesday's linked Deep Lesson for this week; study its worked model, vocabulary, evidence limits, and any referenced internal dataset or diagram. Record a one-sentence synthesis in the evidence notebook. The lesson page is the required reading; no external textbook is needed.",
+      "evidence_contract": "Separate nuclear from chemical change; compare fission/fusion and lifecycle evidence; distinguish hazard from risk.",
+      "inquiry_contract": "Decay/lifecycle data investigation; no radioactive materials.",
+      "retrieval_contract": "Retrieve isotopes and energy; transfer exponential and evidence-matrix reasoning to materials/environmental decisions.",
+      "authority_version": "2026-11-22-hardened-v1"
     },
     {
       "week": 35,
@@ -733,9 +871,13 @@
       "phenomenon": "A product must meet performance, cost, safety, and environmental constraints.",
       "lab": "Design/evaluate material or process using data; no synthesis of hazardous substances.",
       "concepts": "green chemistry; lifecycle; criterion; constraint; tradeoff; evidence",
-      "quantitative": "Multi-criteria decision matrix and quantitative comparison.",
+      "quantitative": "Functional-unit metrics, normalized decision scores, weighted matrices, sensitivity analysis, evidence ranges.",
       "standards": "HS-ETS1-1–4; HS-PS1",
-      "reading": "Read Tuesday's linked Deep Lesson for this week; study its worked model, vocabulary, evidence limits, and any referenced internal dataset or diagram. Record a one-sentence synthesis in the evidence notebook. The lesson page is the required reading; no external textbook is needed."
+      "reading": "Read Tuesday's linked Deep Lesson for this week; study its worked model, vocabulary, evidence limits, and any referenced internal dataset or diagram. Record a one-sentence synthesis in the evidence notebook. The lesson page is the required reading; no external textbook is needed.",
+      "evidence_contract": "Trace source → calculation → criterion → recommendation; separate measured evidence from stakeholder weighting.",
+      "inquiry_contract": "Sustainable-chemistry capstone design/evidence investigation.",
+      "retrieval_contract": "Retrieve models across the course; stress-test recommendations under changed constraints and uncertain inputs.",
+      "authority_version": "2026-11-22-hardened-v1"
     },
     {
       "week": 36,
@@ -745,9 +887,13 @@
       "phenomenon": "A multi-part industrial/environmental case requires several chemistry models.",
       "lab": "No new wet lab; cumulative final and portfolio defense.",
       "concepts": "cumulative synthesis",
-      "quantitative": "Mixed stoichiometry, graphs, energy, equilibrium, data analysis.",
+      "quantitative": "Mixed cross-unit quantitative retrieval and model selection; no protected-final item reproduction.",
       "standards": "HS-PS1; HS-PS3; HS-ETS1; SEP 1–8",
-      "reading": "Complete course portfolio."
+      "reading": "Complete course portfolio.",
+      "evidence_contract": "Map readiness, portfolio traceability, correction-transfer evidence, and course-defense claims while preserving final-exam authority.",
+      "inquiry_contract": "No new wet lab; public practice, portfolio audit, and supervised-final support only.",
+      "retrieval_contract": "Repair earliest prerequisite weaknesses and verify transfer with new public examples.",
+      "authority_version": "2026-11-22-hardened-v1"
     }
   ],
   "assessment": {
