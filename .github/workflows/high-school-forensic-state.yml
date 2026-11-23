@@ -1,0 +1,51 @@
+name: High School Forensic State
+on:
+  workflow_dispatch:
+  pull_request:
+    paths:
+      - 'courses/**'
+      - 'grades/**'
+      - 'assets/**'
+      - 'electives/**'
+      - 'family-activity-center/**'
+      - 'service-worker.js'
+      - 'manifest.webmanifest'
+      - 'tools/validate-high-school-forensic-state-v1.cjs'
+      - 'tools/validate-high-school-*.cjs'
+      - 'tools/validate-high-*.mjs'
+      - 'tools/audit-*.mjs'
+      - '.github/workflows/high-school-forensic-state.yml'
+  push:
+    branches: [main]
+    paths:
+      - 'courses/**'
+      - 'grades/**'
+      - 'assets/**'
+      - 'electives/**'
+      - 'family-activity-center/**'
+      - 'service-worker.js'
+      - 'manifest.webmanifest'
+      - 'tools/validate-high-school-forensic-state-v1.cjs'
+      - 'tools/validate-high-school-*.cjs'
+      - 'tools/validate-high-*.mjs'
+      - 'tools/audit-*.mjs'
+      - '.github/workflows/high-school-forensic-state.yml'
+permissions:
+  contents: read
+jobs:
+  forensic-state:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - name: Run repository-level forensic state audit
+        run: node tools/validate-high-school-forensic-state-v1.cjs
+      - name: Upload forensic state report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: high-school-forensic-state
+          path: reports/high-school-forensic-state.json
