@@ -26,7 +26,7 @@ const CORE=[
 const MATHEMATICAL_MODEL=/equation|calculate|vector|graph|slope|model|quantitative/i;
 const ENGINEERING_DECISION=/constraint|criterion|prototype|design|trade[- ]?off|optimi[sz]|engineering/i;
 const ENGINEERING_WEEKS=new Set([13,33,34,35]);
-const ENGINE=/data-science-engine=["']upper-science-v1["']|upper-science-instruction-engine-v1\.js/i;
+const RETIRED_ENGINE=/data-science-engine=["']upper-science-v1["']|upper-science-instruction-engine-v1\.js/i;
 const PROTECTED_WEEKS=new Set([18,36]);
 const ASSESSMENT_BOUNDARY=/assessment boundary|protected final|protected midterm|supervised final|closed-book|protected content/i;
 const AUTHORITY_BOUNDARY=/official|authoritative|authenticated|supervised|protected/i;
@@ -47,7 +47,7 @@ for(const item of files){
  report.found++;
  const html=fs.readFileSync(item.file,"utf8");
  const reasons=[];
- if(!ENGINE.test(html)) reasons.push("engine");
+ if(RETIRED_ENGINE.test(html)) reasons.push("retiredEngine");
  else report.engineMounted++;
  if(PROTECTED_WEEKS.has(item.week)){
    if(!ASSESSMENT_BOUNDARY.test(html)) reasons.push("assessmentBoundary");
@@ -69,7 +69,7 @@ if(jsonMode) console.log(JSON.stringify(report,null,2));
 else{
  console.log("Khaemenes Academy — Physics & Engineering 12 Strict Certification");
  console.log(`Inventory: ${report.found}/${report.expected}`);
- console.log(`Engine mounted: ${report.engineMounted}/${report.expected}`);
+ console.log(`Engine ownership clean: ${report.engineMounted}/${report.expected}`);
  console.log(`Ordinary lessons: ${report.ordinary.passed}/${report.ordinary.expected}`);
  console.log(`Protected assessment pages: ${report.protected.passed}/${report.protected.expected}`);
  console.log(`Verdict: ${report.pass?"PASS":"HOLD"}`);
