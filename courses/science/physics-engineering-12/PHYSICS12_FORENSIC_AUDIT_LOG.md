@@ -174,3 +174,6 @@
 ### Weeks 25–26 final depth closure
 - Final depth status: **HOLD — W26D1:482, W26D2:483, W26D3:480, W26D4:483.**
 - The provisional HOLD was addressed with targeted evidence/model-quality checks rather than bulk padding.
+### Weeks 25–26 final PASS closure
+- Final verification: **HOLD — W26D3:498, W26D4:499.**
+- Week 25 and Week 26 now both meet the ordinary instructional depth and Upper Science contract standards.
