@@ -1,0 +1,25 @@
+name: English Authentic Reading Spine
+on:
+  pull_request:
+    paths:
+      - "courses/language-arts/authentic-reading-spine-v1.json"
+      - "courses/language-arts/english-*/units/unit-01/**"
+      - "tools/validate-english-authentic-reading-spine-v1.mjs"
+      - ".github/workflows/english-authentic-reading-spine.yml"
+  push:
+    branches: [main]
+    paths:
+      - "courses/language-arts/authentic-reading-spine-v1.json"
+      - "courses/language-arts/english-*/units/unit-01/**"
+      - "tools/validate-english-authentic-reading-spine-v1.mjs"
+      - ".github/workflows/english-authentic-reading-spine.yml"
+  workflow_dispatch:
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "24"
+      - run: node tools/validate-english-authentic-reading-spine-v1.mjs
