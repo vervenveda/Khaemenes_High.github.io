@@ -5,12 +5,18 @@ on:
     paths:
       - "courses/electives/index.html"
       - "courses/electives/discovery-hall.js"
+      - "courses/electives/**/course-map.json"
+      - "courses/electives/ELECTIVE_QUALITY_STANDARD_V1.md"
+      - "tools/validate-high-school-elective-curriculum-v1.cjs"
       - "tests/discovery-hall-validation.cjs"
       - ".github/workflows/discovery-hall-validation.yml"
   pull_request:
     paths:
       - "courses/electives/index.html"
       - "courses/electives/discovery-hall.js"
+      - "courses/electives/**/course-map.json"
+      - "courses/electives/ELECTIVE_QUALITY_STANDARD_V1.md"
+      - "tools/validate-high-school-elective-curriculum-v1.cjs"
       - "tests/discovery-hall-validation.cjs"
   workflow_dispatch:
 jobs:
@@ -23,5 +29,7 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: "22"
+      - name: Validate five planned elective curriculum architectures
+        run: node tools/validate-high-school-elective-curriculum-v1.cjs
       - name: Validate question bank, privacy boundary, navigation and course doors
         run: node tests/discovery-hall-validation.cjs
