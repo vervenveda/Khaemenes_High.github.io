@@ -930,4 +930,15 @@ Chemistry 11 now has one canonical curriculum authority (`course-map.json`) feed
 - Preserved generic transfer problems and corrections while requiring protected final items and official reassessment to remain in a separate authorized process.
 - Week 36 is complete at source-level assessment-boundary scope. Runtime authentication, confidential item custody, and authoritative grade-record integration remain separate operational certification gates.
 - Next target: full-course Chemistry 11 certification across the 180-lesson map and curriculum contract.
+## 2026-11-22 · Final 180-lesson Chemistry 11 source certification
 
+### Inventory and authority verification
+- Current repository tree confirms **180/180 Chemistry 11 daily lesson pages** across **36/36 weeks**, with exactly five daily lesson files in every Week 01–36 directory.
+- Canonical course-map.json remains the course authority at 36 weeks / 180 daily blocks and preserves MID Week 18, FINAL Week 36, 80% mastery, and the planned >=25% inquiry target.
+- RELEASE_CERTIFICATION.md records Chemistry 11 as **SOURCE-VALIDATED / CONDITIONAL** with **curriculum source audit status: PASS**.
+- The forensic hardening record now covers Weeks 01–36, including ordinary instructional depth, chemistry-specific quantitative/model reasoning, inquiry/evidence quality, uncertainty/model limits, and protected assessment boundaries.
+
+### Certification result
+**CHEMISTRY 11 SOURCE-LEVEL CURRICULUM CERTIFICATION: PASS**
+
+This PASS certifies the curriculum/source architecture only. It does **not** certify browser/device behavior, accessibility, offline runtime, learner-switch persistence, protected assessment authentication/custody, authoritative grade recording, credential issuance, accreditation, AP authorization, or jurisdiction-specific credit approval. Those remain separate operational/release gates.
