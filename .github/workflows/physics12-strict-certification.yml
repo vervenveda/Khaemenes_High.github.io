@@ -1,0 +1,36 @@
+name: Physics 12 Strict Curriculum Certification
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "courses/science/physics-engineering-12/**"
+      - "courses/science/tools/audit-physics12-strict-certification-v1.mjs"
+      - ".github/workflows/physics12-strict-certification.yml"
+  pull_request:
+    paths:
+      - "courses/science/physics-engineering-12/**"
+      - "courses/science/tools/audit-physics12-strict-certification-v1.mjs"
+      - ".github/workflows/physics12-strict-certification.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  certify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "24"
+      - name: Run strict Physics 12 certification
+        run: |
+          node courses/science/tools/audit-physics12-strict-certification-v1.mjs
+          node courses/science/tools/audit-physics12-strict-certification-v1.mjs --json > physics12-strict-certification.json
+      - uses: actions/upload-artifact@v4
+        with:
+          name: physics12-strict-certification
+          path: physics12-strict-certification.json
+          if-no-files-found: error
