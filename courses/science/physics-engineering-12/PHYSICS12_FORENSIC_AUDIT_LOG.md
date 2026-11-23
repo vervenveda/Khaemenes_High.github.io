@@ -108,3 +108,12 @@
 - Week 17 Day 04 was the only remaining below-floor lesson after the first verification pass. A final residual-transfer audit raised it to **538 words**.
 - **Week 17 ordinary instructional depth: PASS — all five lessons now meet or exceed 500 words.**
 - **Week 18 protected midterm/corrections boundary: PASS** without unnecessary instructional padding.
+## 2026-11-22 · Hardening block 10 — Weeks 19–20
+
+- Audited all ten Week 19–20 lessons. Both weeks began as a major depth regression: every page was below 250 words, vocabulary markers were inconsistent, and none mounted the canonical Upper Science engine.
+- Mounted the canonical Upper Science engine on all ten pages with exactly one loader per lesson.
+- Week 19 was substantially deepened around radians, angular–linear bridges, radius scaling, rotational graph slope/area reasoning, tangential vs. centripetal acceleration, data lineage, residuals, uncertainty, CER, and spiral retrieval.
+- Week 20 was substantially deepened around torque geometry, τ=rF sinφ, signed torque conventions, complete ΣF=0 plus Στ=0 equilibrium, center-of-gravity stability, torque residual/uncertainty analysis, design tradeoffs, CER, and retrieval.
+- Final ordinary-depth verification: **HOLD — remaining below-floor lessons: W19D1:494, W19D2:493, W19D3:462, W19D4:465, W19D5:462, W20D1:482, W20D2:476, W20D3:478, W20D4:442, W20D5:491.**
+- Preserved safe simulation/light-model boundaries, browser-local learner work, mastery semantics, routes, and navigation.
+- Next target: Weeks 21–22 — Angular Momentum, then Rotational Energy & Rolling.
