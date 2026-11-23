@@ -237,3 +237,16 @@
 ### Weeks 31–32 final depth closure
 - Final depth status: **PASS — all ten Week 31–32 lessons meet or exceed the 500-word ordinary-instruction floor.**
 - The earlier provisional HOLD was resolved with targeted optics/communication depth checks rather than bulk padding.
+
+
+## 2026-11-23 · Hardening block 17 — Weeks 33–34
+
+- Audited all ten Week 33–34 lessons. Both weeks were scientifically well scoped but compressed and did not mount the canonical Upper Science engine at audit start.
+- Mounted the canonical `upper-science-v1` engine on all ten pages with exactly one loader per lesson.
+- Week 33 — Engineering Design Under Constraints — was deepened around measurable criteria vs hard constraints, decision-matrix normalization and sensitivity, physics-based prediction before prototyping, dimensional analysis, residuals, repeatability, evidence-triggered iteration, constrained optimization, and robustness to changed priorities.
+- Week 34 — Space Systems, Remote Sensing & Climate Energy — was deepened around circular-orbit modeling, orbit/sensing tradeoffs, radiative flux and albedo energy balance, feedback/model limits, spectral signatures, spatial/spectral/temporal resolution, dataset provenance, anomaly/baseline sensitivity, measurement-vs-inference discipline, and integrated mission design.
+- Added explicit evidence-revision/CER, spiral retrieval, uncertainty/model-limit reasoning, and cross-course transfer throughout both weeks. Safety/data boundaries remain explicit where investigation or supplied-dataset handling requires them.
+- Initial depth verification correctly held several pages below the ordinary 500-word floor. A targeted transfer/validation closure pass raised every ordinary Week 33–34 lesson above the threshold without bulk padding.
+- Final source verification: **PASS — all ten lessons are 513–535 visible words, mount exactly one canonical Upper Science engine, and expose vocabulary, CER/evidence revision, retrieval, and uncertainty/model-limit reasoning.**
+- Preserved formative-evidence scripts, learner records, mastery semantics, routes, navigation, and the existing low-risk/supplied-data boundaries.
+- Next target: Week 35 culminating engineering/capstone work, then Week 36 protected final/portfolio defense and the full 180-lesson Physics 12 source certification.
