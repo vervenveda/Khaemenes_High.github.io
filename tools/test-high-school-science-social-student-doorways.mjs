@@ -48,8 +48,10 @@ const focus=read("grades/shared/upper-grade-daily-focus.js");
 assert.ok(focus.includes("window.KhaemenesUpperGradeClassRoute"),"Daily Focus must reuse shared Class destination");
 const grade09=read("grades/grade-09/student-profile/student-course-registry.js");
 assert.ok(grade09.includes('["english-9","integrated-science-9","global-studies-9"]'),"Grade 09 saved public landing fallback missing");
-const choices=read("grades/grade-09/student-profile/seven-class-schedule.js");
-assert.ok(choices.includes('"Continue Science Lesson"')&&choices.includes('"Continue Social Studies"'),"Grade 09 course choice instruction links missing");
+const scheduleBar=read("grades/grade-09/student-profile/student-schedule-bar.js");
+assert.ok(scheduleBar.includes("KhaemenesHighEightClass?.FIRST_STEPS"),"Grade 09 schedule must resolve canonical first-step routes");
+assert.ok(scheduleBar.includes("current?.url||first"),"Grade 09 schedule must prefer learner continuation before the canonical first step");
+assert.ok(scheduleBar.includes("open.dataset.launchCourse=id"),"Grade 09 schedule must preserve course-scoped launch evidence");
 for(const path of [
  "courses/science/integrated-science-9/index.html",
  "courses/science/biology-10/index.html",
