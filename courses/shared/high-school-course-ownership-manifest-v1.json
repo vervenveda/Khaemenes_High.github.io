@@ -250,7 +250,9 @@
       "canonicalEntry": "courses/electives/psychology-101/index.html",
       "contentRoot": "electives/grades/grade-09/psych-101/",
       "classification": "active-course-compatibility-content-root",
-      "authority": "course-specific"
+      "authority": "course-specific",
+      "visualProofStatus": "main-branch-live-course",
+      "visualProofEntry": "courses/electives/psychology-101/index.html"
     },
     {
       "id": "career-professional-studies",
@@ -262,7 +264,10 @@
       "curriculumMap": "courses/electives/career-professional-studies/course-map.json",
       "curriculumStatus": "student-production-complete-runtime-certification-pending",
       "promotionGate": "courses/electives/ELECTIVE_QUALITY_STANDARD_V1.md",
-      "productionEvidence": "courses/electives/career-professional-studies/course-map.json"
+      "productionEvidence": "courses/electives/career-professional-studies/course-map.json",
+      "visualProofStatus": "main-branch-live-preview",
+      "visualProofEntry": "courses/electives/career-professional-studies/index.html",
+      "runtimeCertification": "pending"
     },
     {
       "id": "computing-digital-technology",
