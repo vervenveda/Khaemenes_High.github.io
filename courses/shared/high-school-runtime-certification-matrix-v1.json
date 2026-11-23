@@ -76,7 +76,37 @@
       ],
       "browserRuntime": "partial-evidence",
       "deviceAcceptance": "partial-evidence",
-      "offlineAcceptance": "pending"
+      "offlineAcceptance": "pending",
+      "evidence": {
+        "kind": "chrome-smoke-and-emulated-device-viewport",
+        "commit": "258380a6d32599376b993d059ce5506416b126c7",
+        "tree": "0d337d3c5d23b9035fed026118a08a9bb3f0eb56",
+        "runs": [
+          {
+            "workflow": "High School Science Curriculum Certification",
+            "runId": 45286434348,
+            "conclusion": "success"
+          }
+        ],
+        "coverage": [
+          "representative Grade 9–12 science routes",
+          "Chrome headless load/render smoke",
+          "desktop viewport",
+          "tablet-landscape viewport emulation",
+          "tablet-portrait viewport emulation",
+          "narrow-stress viewport",
+          "print-to-PDF smoke"
+        ],
+        "holds": [
+          "Safari macOS",
+          "human tablet touch usability",
+          "keyboard-only navigation",
+          "screen-reader semantics",
+          "visual clipping/overlap human review",
+          "offline reload behavior",
+          "learner persistence and export/import round trip"
+        ]
+      }
     },
     {
       "id": "social-studies",
@@ -88,7 +118,55 @@
       ],
       "browserRuntime": "partial-evidence",
       "deviceAcceptance": "pending",
-      "offlineAcceptance": "pending"
+      "offlineAcceptance": "pending",
+      "evidence": {
+        "kind": "chromium-playwright",
+        "commit": "1ba11e48ab9b25a148d641401c96b0d8520a421f",
+        "tree": "ea79fdfd4576b08904fa5d7da7a8296d247535c6",
+        "mergedEquivalentMain": "fd04ae6694d575fe4ffd5288880c4f2967b3198d",
+        "mergedEquivalentTree": "ea79fdfd4576b08904fa5d7da7a8296d247535c6",
+        "runs": [
+          {
+            "grade": 9,
+            "workflow": "Social Studies Grade 9 Browser QA",
+            "runId": 45287492562,
+            "conclusion": "success"
+          },
+          {
+            "grade": 10,
+            "workflow": "Social Studies Grade 10 Browser QA",
+            "runId": 45287493225,
+            "conclusion": "success"
+          },
+          {
+            "grade": 11,
+            "workflow": "Social Studies Grade 11 Browser QA",
+            "runId": 45287492413,
+            "conclusion": "success"
+          },
+          {
+            "grade": 12,
+            "workflow": "Social Studies Grade 12 Browser QA",
+            "runId": 45287492871,
+            "conclusion": "success"
+          }
+        ],
+        "coverage": [
+          "Chromium Playwright Grade 9 learner entrance",
+          "Chromium Playwright Grade 10 learner entrance",
+          "Chromium Playwright Grade 11 learner entrance and 36-week visual investigation smoke",
+          "Chromium Playwright Grade 12 learner entrance",
+          "cross-grade unified evidence ledger route"
+        ],
+        "holds": [
+          "Safari macOS",
+          "physical tablet portrait",
+          "physical tablet landscape",
+          "touch target usability",
+          "screen-reader semantics",
+          "offline acceptance"
+        ]
+      }
     },
     {
       "id": "physical-education",
