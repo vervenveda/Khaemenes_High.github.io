@@ -150,3 +150,6 @@
 - Final ordinary-depth verification: **HOLD — remaining below-floor lessons: W23D1:465, W23D2:422, W23D3:410, W23D4:428, W23D5:427, W24D1:443, W24D2:384, W24D3:386, W24D4:410, W24D5:424.**
 - Preserved simulation/safe-lightweight investigation boundaries, browser-local learner work, mastery semantics, routes, and navigation.
 - Next target: Weeks 25–26 — Sound, Resonance & Interference, then Fluids: Pressure & Buoyancy.
+### Weeks 23–24 depth closure
+- Final ordinary-depth verification after targeted transfer checks: **HOLD — remaining below-floor lessons: W23D2:479, W23D3:475, W23D4:484, W23D5:479, W24D1:499, W24D2:439, W24D3:440, W24D4:466, W24D5:491.**
+- All ten pages retain exactly one canonical Upper Science engine plus explicit vocabulary, CER/evidence revision, retrieval, uncertainty/model-limit reasoning, and safe investigation boundaries.
