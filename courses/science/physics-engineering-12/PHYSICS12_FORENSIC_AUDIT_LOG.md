@@ -207,3 +207,6 @@
 - Final ordinary-depth verification: **HOLD — remaining below-floor lessons: W29D1:435, W29D2:411, W29D3:387, W29D4:386, W29D5:440, W30D1:404, W30D2:418, W30D3:365, W30D4:393, W30D5:418.**
 - Preserved low-voltage/simulation-only safety boundaries, browser-local learner work, mastery semantics, routes, and navigation.
 - Next target: Weeks 31–32 — Magnetism & Electromagnetic Induction, then EM Waves, Light & Information.
+### Weeks 29–30 definitive closure
+- Definitive status: **HOLD — W29D3:459, W29D4:458, W30D1:483, W30D2:486, W30D3:443, W30D4:461, W30D5:489.**
+- All Week 29–30 pages retain exactly one Upper Science engine and the required vocabulary, CER/evidence revision, retrieval, uncertainty/model-limit, and low-voltage safety markers.
