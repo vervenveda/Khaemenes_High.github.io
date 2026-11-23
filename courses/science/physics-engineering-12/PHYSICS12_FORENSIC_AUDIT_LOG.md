@@ -36,3 +36,11 @@
 - Week 04 retained strong component decomposition, projectile independence, time-of-flight/range calculations, safe virtual investigation, and model-limit reasoning. Added explicit CER/evidence-revision coverage to Days 01–04 and a Friday projectile-workflow retrieval transfer check.
 - Preserved existing browser-local learner work, mastery semantics, routes, simulation links, safety boundaries, and navigation.
 - Next target: Weeks 05–06 — kinematics inquiry/model selection, then forces/free-body diagrams.
+## 2026-11-22 · Hardening block 3 — Weeks 05–06
+
+- Audited all ten Week 05–06 lessons. Week 05 was already deep and strong in model selection, residuals, holdout validation, fit quality, uncertainty, and scientific limitations; Week 06 needed substantive depth hardening.
+- Mounted the canonical Upper Science engine on all ten pages with exactly one loader per lesson.
+- Week 05 preserved its Motion Model Detective architecture and gained explicit CER/evidence-revision coverage on Days 01–04 plus a Friday spiral-retrieval model-selection transfer check.
+- Week 06 was strengthened with system-boundary discipline, force-agent accounting, same-body balance vs. third-law pair distinctions, vector component force sums, dimensional validation, force-vs-velocity reasoning, controlled second-law investigation design, and explicit CER/retrieval coverage.
+- Preserved browser-local learner work, mastery semantics, routes, simulation links, safety boundaries, and navigation.
+- Next target: Weeks 07–08 — Newton's Laws, then friction/circular motion/constraints.
