@@ -147,9 +147,11 @@
     {
       "id": "world-languages",
       "requirement": "Two years required in the High School pathway; continued study may extend through four years.",
-      "status": "academic-requirement-known-route-unresolved-in-this-repository",
+      "status": "outbound-route-verified-transcript-return-pending",
       "ownership": "federated",
-      "rule": "Do not invent or hard-code a language-course URL until the Academy/Linguistics federation publishes the canonical route."
+      "rule": "High School owns the graduation requirement; Linguistics owns instruction. Do not claim cross-repository transcript credit until the audited return-record bridge is commissioned.",
+      "routeContract": "courses/shared/high-school-world-languages-federation-v1.json",
+      "publicEntry": "https://vervenveda.com/Khaemenes_Linguistics.github.io/Halls/index.html"
     }
   ],
   "formativeLessonEvidence": {
