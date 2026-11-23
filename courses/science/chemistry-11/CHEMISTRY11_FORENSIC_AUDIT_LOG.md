@@ -865,3 +865,13 @@ Chemistry 11 now has one canonical curriculum authority (`course-map.json`) feed
 - Preserved the Upper Science engine, safety boundaries, learner records, public-practice assessment boundary, navigation, and evidence-storage behavior.
 - Next target: Week 18 midterm/corrections boundary, then Weeks 19–20 kinetics.
 
+## 2026-11-22 · Midterm boundary and kinetics block
+
+- Audited Week 18 as an assessment-boundary week rather than an ordinary instruction block. Public readiness, mixed practice, portfolio audit, corrections, and semester-defense pages consistently protect confidential midterm questions, keys, grading logic, authentication, and official mastery authority.
+- Week 18 intentionally remains leaner than the 500-word ordinary-lesson target; its release criterion is assessment integrity and correction quality, not instructional bulk.
+- Audited Weeks 19–20 kinetics. Existing content was scientifically sound but all ten ordinary lessons sat below the 500-word depth target.
+- Hardened Week 19 with explicit rate-sign/species conventions, average-vs-instantaneous slope interpretation, initial-rate ratio inference, residual/data-quality analysis, and empirical-rate-law vs mechanism boundaries.
+- Hardened Week 20 with effective-collision fraction reasoning, temperature-model validation, concentration-vs-surface-area mechanism distinctions, simulation-to-reality limits, and condition → collision property → measured-rate synthesis.
+- Preserved the Upper Science engine, assessment boundaries, safety constraints, learner records, evidence storage, and navigation.
+- Next target: Weeks 21–22 — Mechanisms & Catalysts and Kinetics Inquiry.
+
