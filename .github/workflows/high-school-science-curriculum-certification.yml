@@ -27,6 +27,9 @@ jobs:
         with:
           node-version: "24"
 
+      - name: Reject retired science engine hooks
+        run: node courses/science/tools/audit-retired-science-engine-hooks-v1.mjs
+
       - name: Validate four-year program authority
         run: node courses/science/tools/validate-high-school-science-program-authority-v1.mjs
 
