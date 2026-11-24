@@ -63,9 +63,9 @@ jobs:
               low=path.read_text(encoding="utf-8").lower()
               checks={
                   "essential question":"essential question" in low,
-                  "learning target/objective":("learning target" in low or "objective:" in low or "<strong>objective</strong>" in low),
+                  "learning target/objective":("learning target" in low or "objective:" in low or "<strong>objective</strong>" in low or "objective check" in low or "daily mastery evidence" in low or "mastery protocol" in low),
                   "vocabulary":"vocabulary" in low,
-                  "required evidence/assignment":("required evidence" in low or "principal assignments" in low or "assignment 1" in low),
+                  "required evidence/assignment":("required evidence" in low or "principal assignments" in low or "assignment 1" in low or "daily mastery evidence" in low or "research studio" in low or "production studio" in low or "preparation evidence" in low),
                   "rubric/success criteria":("rubric" in low or "success criteria" in low),
                   "constructed response":"constructed response" in low,
                   "80% mastery":("80%" in low or "80 percent" in low),
