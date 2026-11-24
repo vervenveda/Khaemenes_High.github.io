@@ -1,0 +1,104 @@
+name: Social Studies Authoritative Record Pipeline
+
+on:
+  pull_request:
+    paths:
+      - "courses/shared/social-studies-academic-record-v1.js"
+      - "courses/social-studies/**"
+      - ".github/workflows/social-studies-authoritative-record-pipeline.yml"
+  push:
+    branches: [main]
+    paths:
+      - "courses/shared/social-studies-academic-record-v1.js"
+      - "courses/social-studies/**"
+      - ".github/workflows/social-studies-authoritative-record-pipeline.yml"
+
+jobs:
+  verify-authoritative-record:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Verify one-way academic record bridge
+        shell: python
+        run: |
+          from pathlib import Path
+          import sys
+
+          failures = []
+          bridge = Path("courses/shared/social-studies-academic-record-v1.js").read_text(encoding="utf-8")
+
+          required_bridge = [
+              'khaemenes-social-studies-academic-record-v1',
+              'readOnlyDerivedExport:true',
+              'ownsGrades:false',
+              'unlocksCurriculum:false',
+              'replacesTeacherReview:false',
+              'containsAssessmentPrompts:false',
+              'containsAnswerChoices:false',
+              'containsAnswerKeys:false',
+              'containsLearnerSelections:false',
+              'function buildFromCourse',
+          ]
+          for marker in required_bridge:
+              if marker not in bridge:
+                  failures.append(f"bridge missing {marker!r}")
+
+          # The derived bridge may read its input, but may not persist an
+          # independent gradebook or mutate course storage.
+          forbidden = [
+              "localStorage.setItem",
+              "sessionStorage.setItem",
+              ".storage.setItem",
+          ]
+          for marker in forbidden:
+              if marker in bridge:
+                  failures.append(f"bridge contains forbidden storage write: {marker}")
+
+          shells = {
+              "courses/social-studies/grade-09/app.html": "../../shared/social-studies-academic-record-v1.js",
+              "courses/social-studies/grade-10/index.html": "../../shared/social-studies-academic-record-v1.js",
+              "courses/social-studies/grade-11/index.html": "../../shared/social-studies-academic-record-v1.js",
+              "courses/social-studies/grade-11/personal-finance/index.html": "../../../shared/social-studies-academic-record-v1.js",
+              "courses/social-studies/grade-12/index.html": "../../shared/social-studies-academic-record-v1.js",
+          }
+          for path, src in shells.items():
+              text = Path(path).read_text(encoding="utf-8")
+              if src not in text:
+                  failures.append(f"{path}: missing academic record bridge")
+
+          apps = [
+              "courses/social-studies/grade-09/app.js",
+              "courses/social-studies/grade-10/app.js",
+              "courses/social-studies/grade-11/app.js",
+              "courses/social-studies/grade-11/personal-finance/app.js",
+              "courses/social-studies/grade-12/app.js",
+          ]
+          for path in apps:
+              text = Path(path).read_text(encoding="utf-8")
+              for marker in [
+                  'id="exportAcademicRecord"',
+                  "function exportAcademicRecord()",
+                  "KhaemenesSocialStudiesAcademicRecord",
+                  "buildFromCourse",
+              ]:
+                  if marker not in text:
+                      failures.append(f"{path}: missing {marker!r}")
+
+          # The shared bridge must not copy assessment content or raw learner
+          # response prose into the portfolio export.
+          forbidden_evidence = [
+              "q.prompt",
+              "q.question",
+              "q.choices",
+              "q.options",
+              "rec.text",
+              "answers:",
+          ]
+          for marker in forbidden_evidence:
+              if marker in bridge:
+                  failures.append(f"bridge leaks prohibited evidence field via {marker!r}")
+
+          if failures:
+              print("\n".join("FAIL: "+x for x in failures))
+              sys.exit(1)
+          print("PASS: Social Studies academic record export is a one-way derived portfolio bridge with course-owned grading authority preserved.")
