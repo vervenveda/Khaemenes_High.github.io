@@ -46,7 +46,7 @@ for(const [grade,expect] of Object.entries(expected)){
  for(const signal of expect.must)assert.ok(text.includes(signal),"Missing curriculum-specific Grade "+grade+" detail: "+signal);
 }
 const weekOne={
- "10":{path:"courses/social-studies/grade-10/week-01/student-packet.html",names:["Monday · Frame the Inquiry","Tuesday · Source, Contextualize, and Corroborate","Wednesday · Map, Measure, and Model","Thursday · Deliberate and Write","Friday · Synthesize, Assess, and Correct"]},
+ "10":{path:"courses/social-studies/grade-10/weeks/week-01/student-packet.html",names:["Monday · Frame the Inquiry","Tuesday · Source, Contextualize, and Corroborate","Wednesday · Map, Measure, and Model","Thursday · Deliberate and Write","Friday · Synthesize, Assess, and Correct"]},
  "11":{path:"courses/social-studies/grade-11/weeks/week-01/student-packet.html",names:["Monday · Frame the Inquiry","Tuesday · Source, Case, or Contract Laboratory","Wednesday · Model, Measure, and Test","Thursday · Argument, Deliberation, and Policy","Friday · Assess, Correct, and Transfer"]},
  "12":{path:"courses/social-studies/grade-12/weeks/week-01/student-packet.html",names:["Monday · Concept and Inquiry Laboratory","Tuesday · Primary and Authoritative Source Laboratory","Wednesday · Comparative Data and Case Laboratory","Thursday · Argument, Seminar, and Performance Studio","Friday · Mastery, Correction, and Capstone Checkpoint"]}
 };
