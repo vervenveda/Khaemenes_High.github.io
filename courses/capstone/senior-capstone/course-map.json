@@ -98,7 +98,7 @@
           "day": 3,
           "phase": "Cause-boundary map",
           "task": "Distinguish symptoms, plausible causes, assumptions, and factors outside the project's control.",
-          "evidence": "Cause/boundary map."
+          "evidence": "Cause-and-boundary map with assumptions, symptoms, and out-of-scope factors."
         },
         {
           "day": 4,
@@ -173,7 +173,7 @@
           "day": 3,
           "phase": "Access and harm scan",
           "task": "Identify accessibility barriers, representation risks, privacy concerns, and likely uneven benefits or burdens.",
-          "evidence": "Access/harm scan."
+          "evidence": "Accessibility and harm scan with barriers, risks, and affected stakeholders."
         },
         {
           "day": 4,
@@ -236,13 +236,13 @@
           "day": 1,
           "phase": "Claim inventory",
           "task": "List the claims the capstone may need to support and classify each as background, factual, causal, evaluative, or design-related.",
-          "evidence": "Claim inventory."
+          "evidence": "Claim inventory classified by evidence type and decision relevance."
         },
         {
           "day": 2,
           "phase": "Source-role plan",
           "task": "Assign the strongest source type to each claim: primary source, scholarly source, dataset, expert record, policy, model, observation, or prior artifact.",
-          "evidence": "Source-role matrix."
+          "evidence": "Source-role matrix linking each claim to the evidence type it requires."
         },
         {
           "day": 3,
@@ -386,7 +386,7 @@
           "day": 1,
           "phase": "Gap-driven search",
           "task": "Use Week 5 gaps to choose new sources deliberately; each new source must fill a named evidence gap or test a prior claim.",
-          "evidence": "Gap-to-source log."
+          "evidence": "Gap-to-source log showing which missing evidence each new source addresses."
         },
         {
           "day": 2,
@@ -779,7 +779,7 @@
           "day": 4,
           "phase": "Bias and gaming check",
           "task": "Identify how chosen metrics could mislead, be gamed, exclude users, or reward the wrong behavior.",
-          "evidence": "Metric risk audit."
+          "evidence": "Metric risk audit identifying bias, gaming, exclusion, and mismeasurement risks."
         },
         {
           "day": 5,
@@ -836,7 +836,7 @@
           "day": 1,
           "phase": "Minimum viable build",
           "task": "Define the smallest prototype that can test the most uncertain or consequential design assumption.",
-          "evidence": "MVP specification."
+          "evidence": "Minimum viable prototype specification tied to the highest-uncertainty design assumption."
         },
         {
           "day": 2,
@@ -917,7 +917,7 @@
           "day": 2,
           "phase": "Raw evidence capture",
           "task": "Collect the planned evidence without silently cleaning, averaging, or discarding inconvenient observations.",
-          "evidence": "Raw evidence set."
+          "evidence": "Raw evidence set with timestamps, conditions, and collection notes preserved."
         },
         {
           "day": 3,
@@ -1073,7 +1073,7 @@
           "day": 3,
           "phase": "Pattern analysis",
           "task": "Apply the method transparently and preserve calculations, coding decisions, or transformation steps.",
-          "evidence": "Analysis workpaper."
+          "evidence": "Analysis workpaper preserving calculations, coding decisions, and intermediate results."
         },
         {
           "day": 4,
@@ -1217,7 +1217,7 @@
           "day": 2,
           "phase": "Root-cause analysis",
           "task": "Trace the weakness to design, method, evidence, communication, access, or implementation causes.",
-          "evidence": "Root-cause map."
+          "evidence": "Root-cause map separating design, method, evidence, access, and implementation causes."
         },
         {
           "day": 3,
@@ -1367,19 +1367,19 @@
           "day": 2,
           "phase": "Constraint review",
           "task": "Identify what now limits improvement: evidence, time, tool, access, method, or design.",
-          "evidence": "Constraint review."
+          "evidence": "Constraint review identifying the limiting evidence, time, tool, access, or method factor."
         },
         {
           "day": 3,
           "phase": "Focused rebuild",
           "task": "Rebuild the affected component while preserving a clear version history.",
-          "evidence": "Versioned rebuild."
+          "evidence": "Versioned rebuild showing the changed component, rationale, and preserved prior version."
         },
         {
           "day": 4,
           "phase": "Adversarial retest",
           "task": "Test the revision under a harder case, edge case, skeptical reader, or less favorable condition.",
-          "evidence": "Adversarial retest."
+          "evidence": "Adversarial retest record using a harder case, edge case, or skeptical condition."
         },
         {
           "day": 5,
@@ -1436,7 +1436,7 @@
           "day": 1,
           "phase": "Literature update",
           "task": "Search specifically for newer, more authoritative, or methodologically stronger sources relevant to current findings.",
-          "evidence": "Updated source set."
+          "evidence": "Updated source set with stronger, newer, or more authoritative evidence and custody notes."
         },
         {
           "day": 2,
@@ -1448,7 +1448,7 @@
           "day": 3,
           "phase": "Citation replacement",
           "task": "Replace weak or derivative sources with stronger originals where possible and preserve custody.",
-          "evidence": "Source-upgrade log."
+          "evidence": "Source-upgrade log showing weak sources replaced by stronger originals and why."
         },
         {
           "day": 4,
@@ -1517,7 +1517,7 @@
           "day": 2,
           "phase": "Computation/coding",
           "task": "Perform calculations or qualitative coding transparently and preserve intermediate work.",
-          "evidence": "Analysis workpaper."
+          "evidence": "Analysis workpaper preserving calculations, coding decisions, and intermediate results."
         },
         {
           "day": 3,
@@ -1529,7 +1529,7 @@
           "day": 4,
           "phase": "Robustness check",
           "task": "Test whether findings change under a reasonable alternative coding, denominator, subgroup, assumption, or comparison.",
-          "evidence": "Robustness check."
+          "evidence": "Robustness check showing whether findings change under a reasonable alternate assumption."
         },
         {
           "day": 5,
@@ -1586,7 +1586,7 @@
           "day": 1,
           "phase": "Strongest challenge",
           "task": "Write the strongest reasonable challenge to the current conclusion, not a weak strawman.",
-          "evidence": "Steelman challenge."
+          "evidence": "Steelman challenge stating the strongest reasonable objection to the current conclusion."
         },
         {
           "day": 2,
@@ -1598,7 +1598,7 @@
           "day": 3,
           "phase": "Boundary analysis",
           "task": "Identify where the project's claims stop being supported across population, setting, time, method, or use case.",
-          "evidence": "Claim boundary map."
+          "evidence": "Claim-boundary map marking where population, setting, time, method, or use-case support ends."
         },
         {
           "day": 4,
@@ -1661,7 +1661,7 @@
           "day": 1,
           "phase": "Impact inventory",
           "task": "Identify intended and unintended effects for different stakeholders, including who bears risk or extra work.",
-          "evidence": "Impact inventory."
+          "evidence": "Impact inventory naming intended and unintended effects across affected stakeholder groups."
         },
         {
           "day": 2,
@@ -1736,7 +1736,7 @@
           "day": 1,
           "phase": "Version comparison",
           "task": "Compare prototype v1 and v2 against the same criteria and explain each major design change.",
-          "evidence": "Version comparison."
+          "evidence": "Version comparison showing design changes, test evidence, and unresolved risks."
         },
         {
           "day": 2,
@@ -1835,7 +1835,7 @@
           "day": 5,
           "phase": "Validity memo",
           "task": "State which claims are validated, partially supported, unsupported, or still untested.",
-          "evidence": "Validity memo."
+          "evidence": "Validity memo classifying final claims as validated, partial, unsupported, or untested."
         }
       ],
       "evaluatorCheckpoint": false,
@@ -1886,19 +1886,19 @@
           "day": 1,
           "phase": "Failure inventory",
           "task": "Catalog failures, near-misses, negative results, and stakeholder complaints without hiding inconvenient cases.",
-          "evidence": "Failure inventory."
+          "evidence": "Failure inventory including negative results, near-misses, and stakeholder complaints."
         },
         {
           "day": 2,
           "phase": "Failure classification",
           "task": "Classify each failure as requirement, design, implementation, evidence, environment, access, or communication related.",
-          "evidence": "Failure taxonomy."
+          "evidence": "Failure taxonomy classifying requirement, design, implementation, evidence, and access failures."
         },
         {
           "day": 3,
           "phase": "Root-cause test",
           "task": "Choose the most consequential failure and test competing root-cause explanations.",
-          "evidence": "Root-cause test."
+          "evidence": "Root-cause test comparing competing explanations for the most consequential failure."
         },
         {
           "day": 4,
@@ -2036,7 +2036,7 @@
           "day": 1,
           "phase": "Build increment plan",
           "task": "Choose a coherent final-build increment that can be completed and tested without mixing unrelated changes.",
-          "evidence": "Increment plan."
+          "evidence": "Build-increment plan defining scope, dependencies, quality checks, and completion criteria."
         },
         {
           "day": 2,
@@ -2054,7 +2054,7 @@
           "day": 4,
           "phase": "Integration test",
           "task": "Verify the new increment works with prior components and does not break established requirements.",
-          "evidence": "Integration test."
+          "evidence": "Integration test record showing whether the new increment preserves prior requirements."
         },
         {
           "day": 5,
@@ -2135,7 +2135,7 @@
           "day": 5,
           "phase": "Release candidate",
           "task": "Freeze a release-candidate artifact with known limitations and final verification needs.",
-          "evidence": "Release candidate."
+          "evidence": "Release-candidate artifact with known limitations, version identifier, and final checks."
         }
       ],
       "evaluatorCheckpoint": false,
@@ -2186,7 +2186,7 @@
           "day": 1,
           "phase": "Process timeline",
           "task": "Reconstruct the capstone's major decisions, failures, revisions, and evidence milestones chronologically.",
-          "evidence": "Process timeline."
+          "evidence": "Process timeline linking major decisions, failures, revisions, and evidence milestones."
         },
         {
           "day": 2,
@@ -2261,13 +2261,13 @@
           "day": 1,
           "phase": "Audience selection",
           "task": "Define a real public-facing audience and what that audience needs, already knows, and could misunderstand.",
-          "evidence": "Audience profile."
+          "evidence": "Audience profile naming prior knowledge, needs, risks of misunderstanding, and access needs."
         },
         {
           "day": 2,
           "phase": "Message hierarchy",
           "task": "Reduce the project to problem, method, result, limitation, and significance without erasing complexity.",
-          "evidence": "Message hierarchy."
+          "evidence": "Message hierarchy separating problem, method, result, limitation, and significance."
         },
         {
           "day": 3,
@@ -2336,7 +2336,7 @@
           "day": 1,
           "phase": "Defense architecture",
           "task": "Design the presentation around a claim-evidence-reasoning sequence rather than a chronological slideshow.",
-          "evidence": "Defense outline."
+          "evidence": "Defense outline organized by claim, evidence, reasoning, limitations, and implications."
         },
         {
           "day": 2,
@@ -2561,7 +2561,7 @@
           "day": 1,
           "phase": "Correction ledger",
           "task": "Turn evaluator feedback into a numbered list of required, optional, and rejected corrections with reasons.",
-          "evidence": "Correction ledger."
+          "evidence": "Correction ledger separating required, optional, and rejected changes with reasons."
         },
         {
           "day": 2,
