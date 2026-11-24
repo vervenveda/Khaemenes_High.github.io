@@ -145,3 +145,13 @@ details{padding:.55rem 0}summary{cursor:pointer;}
     margin:0;
   }
 }
+
+
+/* Grade 10 index layout additions */
+
+    .skip-link{position:fixed;z-index:9999;top:10px;left:10px;transform:translateY(-160%);padding:.7rem 1rem;}
+    .skip-link:focus{transform:translateY(0)}
+    .brand .breadcrumbs a{text-decoration:none}
+    .course-note{line-height:1.55}
+    @media(min-width:981px){.sidebar{scrollbar-gutter:stable}}
+  
