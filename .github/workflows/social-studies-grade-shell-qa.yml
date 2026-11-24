@@ -1,0 +1,75 @@
+name: Social Studies Grade Door Shell QA
+
+on:
+  pull_request:
+    paths:
+      - 'courses/social-studies/grade-*/index.html'
+      - 'courses/social-studies/assets/social-studies-grade-shell-v1.js'
+      - 'assets/high-school-subject-landing-shell-v1.css'
+      - '.github/workflows/social-studies-grade-shell-qa.yml'
+  push:
+    branches: [ main ]
+    paths:
+      - 'courses/social-studies/grade-*/index.html'
+      - 'courses/social-studies/assets/social-studies-grade-shell-v1.js'
+      - 'assets/high-school-subject-landing-shell-v1.css'
+      - '.github/workflows/social-studies-grade-shell-qa.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  grade-door-contract:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Syntax check grade shell
+        run: node --check courses/social-studies/assets/social-studies-grade-shell-v1.js
+      - name: Validate all four grade doors
+        shell: python
+        run: |
+          from pathlib import Path
+          import sys
+
+          failures=[]
+          for grade in ("09","10","11","12"):
+              path=Path(f"courses/social-studies/grade-{grade}/index.html")
+              text=path.read_text(encoding="utf-8")
+              required=[
+                  'high-school-subject-landing-shell-v1.css',
+                  'social-studies-grade-shell-v1.js'
+              ]
+              for marker in required:
+                  if marker not in text:
+                      failures.append(f"Grade {grade}: missing {marker}")
+              if 'id="khaemenes-typography-standard"' in text:
+                  failures.append(f"Grade {grade}: obsolete 14px typography injection still present")
+
+          shell=Path("courses/social-studies/assets/social-studies-grade-shell-v1.js").read_text(encoding="utf-8")
+          for marker in [
+              "vnv-333-ticker.js",
+              "vnv-ticker-autopopulate.js",
+              "vnv-header-autopopulate.js",
+              "vnv-language.js",
+              "vnv-ecosystem-toolbar.js",
+              "Learner Profile",
+              "Parent Profile",
+              "Enrollment",
+              'font:400 33px',
+              '66px',
+              'font:400 24px'
+          ]:
+              if marker not in shell:
+                  failures.append(f"Shared grade shell missing contract marker: {marker}")
+
+          for forbidden in ["localStorage","sessionStorage","indexedDB","fetch(","XMLHttpRequest","document.cookie"]:
+              if forbidden in shell:
+                  failures.append(f"Grade shell must remain presentation-only: {forbidden}")
+
+          if failures:
+              print("\n".join("FAIL: "+item for item in failures))
+              sys.exit(1)
+          print("PASS: Social Studies Grade 9–12 doors use the canonical shell adapter without mutating academic state.")
