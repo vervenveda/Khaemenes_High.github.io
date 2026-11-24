@@ -412,15 +412,15 @@
           },
           {
             "id": "W01Q10",
-            "prompt": "Week 01 · History, Memory, and the American Story: Which response demonstrates the strongest geographic or quantitative reasoning?",
+            "prompt": "Week 01 · History, Memory, and the American Story: A map layers archaeological sites, Indigenous oral-tradition locations, and early European routes. Which conclusion uses the evidence most responsibly?",
             "choices": [
-              "State the observed pattern, propose an explanation, identify units and sources, and explain what the evidence cannot prove.",
-              "Assume every mapped relationship is a direct cause.",
-              "Ignore scale and units to focus on the overall appearance.",
-              "Use only data that confirms the original claim."
+              "The layers should be compared for convergence and contradiction while recognizing that each source type answers different questions.",
+              "The European route layer automatically overrides oral and archaeological evidence.",
+              "Any overlap proves direct contact between every community shown.",
+              "The oldest-looking layer is necessarily the most accurate."
             ],
             "answer": 0,
-            "explanation": "Strong data reasoning distinguishes observation, explanation, uncertainty, and limitation.",
+            "explanation": "Responsible historical geography corroborates different evidence types without treating overlap, age, or one source tradition as automatic proof.",
             "skill": "Unit 1 · Foundations and Founding · Week 01"
           }
         ],
@@ -792,15 +792,15 @@
           },
           {
             "id": "W02Q10",
-            "prompt": "Week 02 · Indigenous Nations, Atlantic Encounters, and Colonization: Which response demonstrates the strongest geographic or quantitative reasoning?",
+            "prompt": "Week 02 · Indigenous Nations, Atlantic Encounters, and Colonization: A map shows colonial settlements clustering near waterways while disease outbreaks spread well beyond permanent European towns. What is the strongest inference?",
             "choices": [
-              "State the observed pattern, propose an explanation, identify units and sources, and explain what the evidence cannot prove.",
-              "Assume every mapped relationship is a direct cause.",
-              "Ignore scale and units to focus on the overall appearance.",
-              "Use only data that confirms the original claim."
+              "Disease could only spread where Europeans built towns.",
+              "Water access shaped settlement, while disease transmission could travel through wider human networks than the settlement map alone shows.",
+              "Every Indigenous community experienced the same mortality rate.",
+              "The map proves colonization had only environmental causes."
             ],
-            "answer": 0,
-            "explanation": "Strong data reasoning distinguishes observation, explanation, uncertainty, and limitation.",
+            "answer": 1,
+            "explanation": "The two spatial patterns support different claims: waterways influenced settlement, while transmission networks could extend beyond permanent colonial sites.",
             "skill": "Unit 1 · Foundations and Founding · Week 02"
           }
         ],
@@ -1172,15 +1172,15 @@
           },
           {
             "id": "W03Q10",
-            "prompt": "Week 03 · Revolution, Independence, and Competing Liberties: Which response demonstrates the strongest geographic or quantitative reasoning?",
+            "prompt": "Week 03 · Revolution, Independence, and Competing Liberties: A timeline compares tax measures, protest events, military clashes, and declarations from 1763–1776. Which use of the timeline is strongest?",
             "choices": [
-              "State the observed pattern, propose an explanation, identify units and sources, and explain what the evidence cannot prove.",
-              "Assume every mapped relationship is a direct cause.",
-              "Ignore scale and units to focus on the overall appearance.",
-              "Use only data that confirms the original claim."
+              "Treat the first tax measure as the single cause of independence.",
+              "Use sequence and change over time to test competing causal explanations, then corroborate motives with contemporary sources.",
+              "Assume every colony reacted at the same time and for the same reason.",
+              "Ignore events that do not fit a single revolutionary narrative."
             ],
-            "answer": 0,
-            "explanation": "Strong data reasoning distinguishes observation, explanation, uncertainty, and limitation.",
+            "answer": 1,
+            "explanation": "Chronology helps evaluate causation, but motives and significance require corroboration with contemporary evidence.",
             "skill": "Unit 1 · Foundations and Founding · Week 03"
           }
         ],
@@ -1552,15 +1552,15 @@
           },
           {
             "id": "W04Q10",
-            "prompt": "Week 04 · Constitution, Federalism, and the Early Republic: Which response demonstrates the strongest geographic or quantitative reasoning?",
+            "prompt": "Week 04 · Constitution, Federalism, and the Early Republic: State ratification totals differ sharply across conventions. What can those vote counts establish most directly?",
             "choices": [
-              "State the observed pattern, propose an explanation, identify units and sources, and explain what the evidence cannot prove.",
-              "Assume every mapped relationship is a direct cause.",
-              "Ignore scale and units to focus on the overall appearance.",
-              "Use only data that confirms the original claim."
+              "They prove every adult resident had an equal political voice.",
+              "They show the Constitution had identical support in every state.",
+              "They reveal variation in convention-level support, but not the views of people excluded from those political processes.",
+              "They prove later federal policies were universally accepted."
             ],
-            "answer": 0,
-            "explanation": "Strong data reasoning distinguishes observation, explanation, uncertainty, and limitation.",
+            "answer": 2,
+            "explanation": "Convention vote totals measure ratification decisions, not universal public opinion or the views of excluded populations.",
             "skill": "Unit 1 · Foundations and Founding · Week 04"
           }
         ],
@@ -1932,15 +1932,15 @@
           },
           {
             "id": "W05Q10",
-            "prompt": "Week 05 · Democracy, Markets, and Reform: Which response demonstrates the strongest geographic or quantitative reasoning?",
+            "prompt": "Week 05 · Democracy, Markets, and Reform: A county table shows canal access, market-town growth, and population change. Which claim is best supported?",
             "choices": [
-              "State the observed pattern, propose an explanation, identify units and sources, and explain what the evidence cannot prove.",
-              "Assume every mapped relationship is a direct cause.",
-              "Ignore scale and units to focus on the overall appearance.",
-              "Use only data that confirms the original claim."
+              "Canal access may be associated with market expansion, but other factors must be tested before claiming it alone caused population growth.",
+              "Every county without a canal declined.",
+              "Population growth proves reform movements were caused by transportation.",
+              "A correlation between canal access and growth eliminates the need for other evidence."
             ],
             "answer": 0,
-            "explanation": "Strong data reasoning distinguishes observation, explanation, uncertainty, and limitation.",
+            "explanation": "Economic and geographic relationships should be treated as evidence for a hypothesis, not as proof of a single cause.",
             "skill": "Unit 2 · Expansion, Sectionalism, and Civil War · Week 05"
           }
         ],
@@ -2312,15 +2312,15 @@
           },
           {
             "id": "W06Q10",
-            "prompt": "Week 06 · Expansion, Removal, and the Mexican-American War: Which response demonstrates the strongest geographic or quantitative reasoning?",
+            "prompt": "Week 06 · Expansion, Removal, and the Mexican-American War: A territorial map displays treaty lines, military occupation, Indigenous homelands, and later state boundaries. What is the strongest historical use of the map?",
             "choices": [
-              "State the observed pattern, propose an explanation, identify units and sources, and explain what the evidence cannot prove.",
-              "Assume every mapped relationship is a direct cause.",
-              "Ignore scale and units to focus on the overall appearance.",
-              "Use only data that confirms the original claim."
+              "Assume a boundary drawn by a government proves all people within it consented.",
+              "Use the overlapping layers to distinguish legal claims, military control, settlement, and sovereignty rather than treating them as identical.",
+              "Treat later state borders as the only relevant geography.",
+              "Conclude that mapped borders make questions of removal and sovereignty unnecessary."
             ],
-            "answer": 0,
-            "explanation": "Strong data reasoning distinguishes observation, explanation, uncertainty, and limitation.",
+            "answer": 1,
+            "explanation": "Political boundaries, occupation, settlement, and sovereignty are distinct historical realities and should not be collapsed into one map layer.",
             "skill": "Unit 2 · Expansion, Sectionalism, and Civil War · Week 06"
           }
         ],
@@ -2692,15 +2692,15 @@
           },
           {
             "id": "W07Q10",
-            "prompt": "Week 07 · Slavery, Abolition, and Sectional Crisis: Which response demonstrates the strongest geographic or quantitative reasoning?",
+            "prompt": "Week 07 · Slavery, Abolition, and Sectional Crisis: A chart compares enslaved-population shares, cotton production, abolitionist newspaper circulation, and election returns by region. Which interpretation is strongest?",
             "choices": [
-              "State the observed pattern, propose an explanation, identify units and sources, and explain what the evidence cannot prove.",
-              "Assume every mapped relationship is a direct cause.",
-              "Ignore scale and units to focus on the overall appearance.",
-              "Use only data that confirms the original claim."
+              "One regional average reveals the beliefs of every individual living there.",
+              "The combined measures can reveal sectional patterns, but aggregate data cannot by itself establish each person's motives or opinions.",
+              "Newspaper circulation proves every reader supported abolition.",
+              "Cotton output alone explains every political position in the sectional crisis."
             ],
-            "answer": 0,
-            "explanation": "Strong data reasoning distinguishes observation, explanation, uncertainty, and limitation.",
+            "answer": 1,
+            "explanation": "Regional data can show patterns and relationships, but aggregate measures do not prove individual motives.",
             "skill": "Unit 2 · Expansion, Sectionalism, and Civil War · Week 07"
           }
         ],
@@ -3072,15 +3072,15 @@
           },
           {
             "id": "W08Q10",
-            "prompt": "Week 08 · Civil War, Emancipation, and Union: Which response demonstrates the strongest geographic or quantitative reasoning?",
+            "prompt": "Week 08 · Civil War, Emancipation, and Union: A map combines enlistment rates, major battles, railroad corridors, and wartime destruction. Which conclusion is methodologically strongest?",
             "choices": [
-              "State the observed pattern, propose an explanation, identify units and sources, and explain what the evidence cannot prove.",
-              "Assume every mapped relationship is a direct cause.",
-              "Ignore scale and units to focus on the overall appearance.",
-              "Use only data that confirms the original claim."
+              "The map can help compare regional burdens and strategic geography, but it cannot by itself identify a single cause of Union victory.",
+              "The county with the highest enlistment rate caused the war's outcome.",
+              "Railroad lines prove every nearby battle was planned around rail access.",
+              "Wartime destruction was evenly distributed wherever railroads existed."
             ],
             "answer": 0,
-            "explanation": "Strong data reasoning distinguishes observation, explanation, uncertainty, and limitation.",
+            "explanation": "Spatial evidence can clarify strategic and regional patterns while still requiring additional evidence for causal claims.",
             "skill": "Unit 2 · Expansion, Sectionalism, and Civil War · Week 08"
           }
         ],
@@ -3452,15 +3452,15 @@
           },
           {
             "id": "W09Q10",
-            "prompt": "Week 09 · Reconstruction and the Meaning of Freedom: Which response demonstrates the strongest geographic or quantitative reasoning?",
+            "prompt": "Week 09 · Reconstruction and the Meaning of Freedom: County records show Black voter registration and officeholding rising after federal enforcement, then declining after enforcement weakened. What is the strongest conclusion?",
             "choices": [
-              "State the observed pattern, propose an explanation, identify units and sources, and explain what the evidence cannot prove.",
-              "Assume every mapped relationship is a direct cause.",
-              "Ignore scale and units to focus on the overall appearance.",
-              "Use only data that confirms the original claim."
+              "The pattern is consistent with enforcement affecting political participation, while additional evidence is needed to explain local variation and later decline.",
+              "The data prove political equality was permanently secured.",
+              "Registration totals measure all dimensions of freedom.",
+              "Any later decline proves Reconstruction had no effects."
             ],
             "answer": 0,
-            "explanation": "Strong data reasoning distinguishes observation, explanation, uncertainty, and limitation.",
+            "explanation": "The timing supports an enforcement-related hypothesis, but political participation data do not measure all dimensions of freedom or prove a single cause.",
             "skill": "Unit 3 · Reconstruction and Industrial America · Week 09"
           }
         ],
@@ -3832,15 +3832,15 @@
           },
           {
             "id": "W10Q10",
-            "prompt": "Week 10 · Westward Expansion, Native Sovereignty, and the New South: Which response demonstrates the strongest geographic or quantitative reasoning?",
+            "prompt": "Week 10 · Westward Expansion, Native Sovereignty, and the New South: A GIS layer combines railroad expansion, reservation boundaries, allotment parcels, and federal land transfers. What should a historian avoid?",
             "choices": [
-              "State the observed pattern, propose an explanation, identify units and sources, and explain what the evidence cannot prove.",
-              "Assume every mapped relationship is a direct cause.",
-              "Ignore scale and units to focus on the overall appearance.",
-              "Use only data that confirms the original claim."
+              "Comparing how multiple policies changed access to land.",
+              "Distinguishing federal claims from Native sovereignty.",
+              "Treating mapped federal ownership or allotment as proof that Indigenous sovereignty or consent disappeared.",
+              "Using spatial change to identify questions for documentary research."
             ],
-            "answer": 0,
-            "explanation": "Strong data reasoning distinguishes observation, explanation, uncertainty, and limitation.",
+            "answer": 2,
+            "explanation": "A government land layer records a legal or administrative claim; it does not erase sovereignty, consent, or competing legal histories.",
             "skill": "Unit 3 · Reconstruction and Industrial America · Week 10"
           }
         ],
@@ -4212,15 +4212,15 @@
           },
           {
             "id": "W11Q10",
-            "prompt": "Week 11 · Industrial Capitalism, Labor, and Immigration: Which response demonstrates the strongest geographic or quantitative reasoning?",
+            "prompt": "Week 11 · Industrial Capitalism, Labor, and Immigration: A table reports wages, work hours, injury rates, and immigrant share across several industries. Which analysis is strongest?",
             "choices": [
-              "State the observed pattern, propose an explanation, identify units and sources, and explain what the evidence cannot prove.",
-              "Assume every mapped relationship is a direct cause.",
-              "Ignore scale and units to focus on the overall appearance.",
-              "Use only data that confirms the original claim."
+              "Compare industries and time periods, check units and sample coverage, and avoid using a national average to erase variation in working conditions.",
+              "Use the largest industry as representative of all workers.",
+              "Assume a higher immigrant share caused every difference in wages.",
+              "Ignore injury rates because they are not monetary data."
             ],
             "answer": 0,
-            "explanation": "Strong data reasoning distinguishes observation, explanation, uncertainty, and limitation.",
+            "explanation": "Labor history requires comparing multiple measures, checking definitions and coverage, and avoiding ecological or single-variable conclusions.",
             "skill": "Unit 3 · Reconstruction and Industrial America · Week 11"
           }
         ],
@@ -4592,15 +4592,15 @@
           },
           {
             "id": "W12Q10",
-            "prompt": "Week 12 · Gilded Age Politics, Jim Crow, and Populism: Which response demonstrates the strongest geographic or quantitative reasoning?",
+            "prompt": "Week 12 · Gilded Age Politics, Jim Crow, and Populism: A county dataset compares crop prices, farm debt, voter turnout, and Populist vote share. Which claim is most defensible?",
             "choices": [
-              "State the observed pattern, propose an explanation, identify units and sources, and explain what the evidence cannot prove.",
-              "Assume every mapped relationship is a direct cause.",
-              "Ignore scale and units to focus on the overall appearance.",
-              "Use only data that confirms the original claim."
+              "Economic stress may be associated with Populist support, but voting patterns also require attention to race, law, organization, and local politics.",
+              "Farm debt alone determined every vote.",
+              "Low crop prices prove all farmers supported the same party.",
+              "Turnout data make disfranchisement laws irrelevant."
             ],
             "answer": 0,
-            "explanation": "Strong data reasoning distinguishes observation, explanation, uncertainty, and limitation.",
+            "explanation": "Economic conditions matter, but political behavior must be interpreted alongside legal, racial, organizational, and local context.",
             "skill": "Unit 3 · Reconstruction and Industrial America · Week 12"
           }
         ],
@@ -4972,15 +4972,15 @@
           },
           {
             "id": "W13Q10",
-            "prompt": "Week 13 · Progressive Reform and the Modern State: Which response demonstrates the strongest geographic or quantitative reasoning?",
+            "prompt": "Week 13 · Progressive Reform and the Modern State: A city compares inspection violations before and after a new housing code. Which additional evidence would most strengthen a claim that the reform changed conditions?",
             "choices": [
-              "State the observed pattern, propose an explanation, identify units and sources, and explain what the evidence cannot prove.",
-              "Assume every mapped relationship is a direct cause.",
-              "Ignore scale and units to focus on the overall appearance.",
-              "Use only data that confirms the original claim."
+              "Enforcement records, comparable neighborhoods, inspection definitions, and evidence showing whether violations actually declined rather than merely being reported differently.",
+              "A speech praising the reform with no implementation evidence.",
+              "The number of pages in the ordinance.",
+              "A later photograph from an unrelated city."
             ],
             "answer": 0,
-            "explanation": "Strong data reasoning distinguishes observation, explanation, uncertainty, and limitation.",
+            "explanation": "Before-and-after comparisons are stronger when measurement, enforcement, and comparison conditions are documented.",
             "skill": "Unit 3 · Reconstruction and Industrial America · Week 13"
           }
         ],
@@ -5351,15 +5351,15 @@
           },
           {
             "id": "W14Q10",
-            "prompt": "Week 14 · American Expansion and the Spanish-American War: Which response demonstrates the strongest geographic or quantitative reasoning?",
+            "prompt": "Week 14 · American Expansion and the Spanish-American War: A map plots naval bases, shipping routes, cable stations, colonies, and trade flows. What can the map establish most directly?",
             "choices": [
-              "State the observed pattern, propose an explanation, identify units and sources, and explain what the evidence cannot prove.",
-              "Assume every mapped relationship is a direct cause.",
-              "Ignore scale and units to focus on the overall appearance.",
-              "Use only data that confirms the original claim."
+              "That strategic geography connected military and commercial networks, while motives for expansion still require documentary evidence.",
+              "That every trade route caused a military intervention.",
+              "That all people living near a naval base favored U.S. expansion.",
+              "That mapped proximity proves identical political goals."
             ],
             "answer": 0,
-            "explanation": "Strong data reasoning distinguishes observation, explanation, uncertainty, and limitation.",
+            "explanation": "The map can demonstrate strategic relationships and proximity but cannot by itself establish motives, consent, or causation.",
             "skill": "Unit 4 · The United States and the World · Week 14"
           }
         ],
@@ -5731,15 +5731,15 @@
           },
           {
             "id": "W15Q10",
-            "prompt": "Week 15 · World War I and the Home Front: Which response demonstrates the strongest geographic or quantitative reasoning?",
+            "prompt": "Week 15 · World War I and the Home Front: A chart compares military enlistment, industrial output, federal spending, and wartime casualties. Which interpretation is strongest?",
             "choices": [
-              "State the observed pattern, propose an explanation, identify units and sources, and explain what the evidence cannot prove.",
-              "Assume every mapped relationship is a direct cause.",
-              "Ignore scale and units to focus on the overall appearance.",
-              "Use only data that confirms the original claim."
+              "Mobilization expanded state and industrial capacity while imposing human and fiscal costs; causal claims about any one measure require further evidence.",
+              "Higher spending automatically reduced casualties.",
+              "Industrial output alone explains public support for the war.",
+              "Every region contributed equally to mobilization."
             ],
             "answer": 0,
-            "explanation": "Strong data reasoning distinguishes observation, explanation, uncertainty, and limitation.",
+            "explanation": "Multiple indicators show the scale and tradeoffs of mobilization without reducing a complex wartime system to one variable.",
             "skill": "Unit 4 · The United States and the World · Week 15"
           }
         ],
@@ -6111,15 +6111,15 @@
           },
           {
             "id": "W16Q10",
-            "prompt": "Week 16 · The 1920s: Mass Culture, Prosperity, and Conflict: Which response demonstrates the strongest geographic or quantitative reasoning?",
+            "prompt": "Week 16 · The 1920s: Mass Culture, Prosperity, and Conflict: Data show automobile ownership, radio access, consumer credit, and household income rising unevenly across regions. Which conclusion is strongest?",
             "choices": [
-              "State the observed pattern, propose an explanation, identify units and sources, and explain what the evidence cannot prove.",
-              "Assume every mapped relationship is a direct cause.",
-              "Ignore scale and units to focus on the overall appearance.",
-              "Use only data that confirms the original claim."
+              "Mass consumption expanded, but access was uneven and national averages may conceal regional and class differences.",
+              "Every household participated equally in the new consumer culture.",
+              "Credit growth proves all purchases were affordable.",
+              "Radio ownership alone measures the entire culture of the 1920s."
             ],
             "answer": 0,
-            "explanation": "Strong data reasoning distinguishes observation, explanation, uncertainty, and limitation.",
+            "explanation": "The data support expansion of consumer culture while also requiring attention to unequal access and distribution.",
             "skill": "Unit 4 · The United States and the World · Week 16"
           }
         ],
@@ -6491,15 +6491,15 @@
           },
           {
             "id": "W17Q10",
-            "prompt": "Week 17 · The Great Depression and the Crisis of Confidence: Which response demonstrates the strongest geographic or quantitative reasoning?",
+            "prompt": "Week 17 · The Great Depression and the Crisis of Confidence: A time series plots unemployment, bank failures, industrial output, and prices from 1929 onward. What is the safest inference?",
             "choices": [
-              "State the observed pattern, propose an explanation, identify units and sources, and explain what the evidence cannot prove.",
-              "Assume every mapped relationship is a direct cause.",
-              "Ignore scale and units to focus on the overall appearance.",
-              "Use only data that confirms the original claim."
+              "The measures document a severe, interconnected contraction, but movement together does not prove that one series alone caused the others.",
+              "The first series to rise caused every later change.",
+              "Unemployment data make banking evidence unnecessary.",
+              "A national time series proves every community experienced the crisis identically."
             ],
             "answer": 0,
-            "explanation": "Strong data reasoning distinguishes observation, explanation, uncertainty, and limitation.",
+            "explanation": "Time-series co-movement can reveal an interconnected crisis but does not by itself establish one-way causation or uniform local experience.",
             "skill": "Unit 4 · The United States and the World · Week 17"
           }
         ],
@@ -6871,15 +6871,15 @@
           },
           {
             "id": "W18Q10",
-            "prompt": "Week 18 · The New Deal and the Changing Federal Government: Which response demonstrates the strongest geographic or quantitative reasoning?",
+            "prompt": "Week 18 · The New Deal and the Changing Federal Government: A county table compares unemployment, relief spending, public-works projects, and later employment. Which question is essential before judging program effectiveness?",
             "choices": [
-              "State the observed pattern, propose an explanation, identify units and sources, and explain what the evidence cannot prove.",
-              "Assume every mapped relationship is a direct cause.",
-              "Ignore scale and units to focus on the overall appearance.",
-              "Use only data that confirms the original claim."
+              "Were allocations related to need, how were outcomes measured, and what comparison or counterfactual is available?",
+              "Which county received the largest dollar amount, regardless of population?",
+              "Did every program use the same administrative agency?",
+              "Can spending totals alone prove long-term economic recovery?"
             ],
             "answer": 0,
-            "explanation": "Strong data reasoning distinguishes observation, explanation, uncertainty, and limitation.",
+            "explanation": "Evaluating policy effects requires measures of need and outcomes plus appropriate comparison, not raw spending totals alone.",
             "skill": "Unit 4 · The United States and the World · Week 18"
           }
         ],
@@ -7251,15 +7251,15 @@
           },
           {
             "id": "W19Q10",
-            "prompt": "Week 19 · World War II: From Neutrality to Global War: Which response demonstrates the strongest geographic or quantitative reasoning?",
+            "prompt": "Week 19 · World War II: From Neutrality to Global War: A timeline layers neutrality laws, aid measures, Atlantic incidents, diplomatic negotiations, and the attack on Pearl Harbor. Which conclusion is strongest?",
             "choices": [
-              "State the observed pattern, propose an explanation, identify units and sources, and explain what the evidence cannot prove.",
-              "Assume every mapped relationship is a direct cause.",
-              "Ignore scale and units to focus on the overall appearance.",
-              "Use only data that confirms the original claim."
+              "The sequence helps identify escalation and turning points, but it does not make U.S. entry inevitable or explain motives without additional evidence.",
+              "The final event makes all earlier decisions irrelevant.",
+              "Any aid measure proves the United States had already formally entered the war.",
+              "Chronology alone proves leaders shared one motive."
             ],
             "answer": 0,
-            "explanation": "Strong data reasoning distinguishes observation, explanation, uncertainty, and limitation.",
+            "explanation": "A timeline establishes sequence and possible turning points; inevitability and motive require broader documentary analysis.",
             "skill": "Unit 5 · World War II and the Early Cold War · Week 19"
           }
         ],
@@ -7631,15 +7631,15 @@
           },
           {
             "id": "W20Q10",
-            "prompt": "Week 20 · World War II: Mobilization, Holocaust, and Victory: Which response demonstrates the strongest geographic or quantitative reasoning?",
+            "prompt": "Week 20 · World War II: Mobilization, Holocaust, and Victory: A map traces ghettos, deportation routes, killing centers, occupied territories, and rail networks. What is the most responsible interpretation?",
             "choices": [
-              "State the observed pattern, propose an explanation, identify units and sources, and explain what the evidence cannot prove.",
-              "Assume every mapped relationship is a direct cause.",
-              "Ignore scale and units to focus on the overall appearance.",
-              "Use only data that confirms the original claim."
+              "Infrastructure and occupation made mass deportation and murder logistically possible, while documentary evidence is still required to establish policy, intent, responsibility, and local variation.",
+              "Rail proximity alone caused the Holocaust.",
+              "Every occupied territory experienced identical policies at the same time.",
+              "A transport map is sufficient to explain perpetrators' motives."
             ],
             "answer": 0,
-            "explanation": "Strong data reasoning distinguishes observation, explanation, uncertainty, and limitation.",
+            "explanation": "Spatial logistics are crucial evidence, but genocide analysis also requires documentary evidence about intent, policy, institutions, perpetrators, victims, and local conditions.",
             "skill": "Unit 5 · World War II and the Early Cold War · Week 20"
           }
         ],
@@ -8011,15 +8011,15 @@
           },
           {
             "id": "W21Q10",
-            "prompt": "Week 21 · Cold War Origins and the Containment State: Which response demonstrates the strongest geographic or quantitative reasoning?",
+            "prompt": "Week 21 · Cold War Origins and the Containment State: A world map shows U.S. aid, military alliances, bases, and major crises. Which claim is best supported?",
             "choices": [
-              "State the observed pattern, propose an explanation, identify units and sources, and explain what the evidence cannot prove.",
-              "Assume every mapped relationship is a direct cause.",
-              "Ignore scale and units to focus on the overall appearance.",
-              "Use only data that confirms the original claim."
+              "Containment operated through different political, economic, and military instruments across regions; the map alone cannot establish why each government participated.",
+              "Every country receiving aid became a formal military ally.",
+              "Bases prove local populations supported U.S. policy.",
+              "All Cold War crises had the same regional causes."
             ],
             "answer": 0,
-            "explanation": "Strong data reasoning distinguishes observation, explanation, uncertainty, and limitation.",
+            "explanation": "Mapped networks reveal the varied geography of containment but do not by themselves establish motives, consent, or identical relationships.",
             "skill": "Unit 5 · World War II and the Early Cold War · Week 21"
           }
         ],
@@ -8391,15 +8391,15 @@
           },
           {
             "id": "W22Q10",
-            "prompt": "Week 22 · Postwar Prosperity, Suburbia, and Unequal Opportunity: Which response demonstrates the strongest geographic or quantitative reasoning?",
+            "prompt": "Week 22 · Postwar Prosperity, Suburbia, and Unequal Opportunity: A dataset compares mortgage lending, suburban homeownership, highway access, race, and household income. Which analysis is strongest?",
             "choices": [
-              "State the observed pattern, propose an explanation, identify units and sources, and explain what the evidence cannot prove.",
-              "Assume every mapped relationship is a direct cause.",
-              "Ignore scale and units to focus on the overall appearance.",
-              "Use only data that confirms the original claim."
+              "Examine how policy, credit access, geography, race, and income interacted, while avoiding the assumption that aggregate prosperity meant equal opportunity.",
+              "Use national homeownership growth to prove discrimination disappeared.",
+              "Treat highway access as the sole cause of suburbanization.",
+              "Ignore lending rules because income data are available."
             ],
             "answer": 0,
-            "explanation": "Strong data reasoning distinguishes observation, explanation, uncertainty, and limitation.",
+            "explanation": "Postwar opportunity was shaped by interacting policies and social conditions; aggregate growth can conceal unequal access.",
             "skill": "Unit 5 · World War II and the Early Cold War · Week 22"
           }
         ],
@@ -8771,15 +8771,15 @@
           },
           {
             "id": "W23Q10",
-            "prompt": "Week 23 · Brown, Montgomery, and the Modern Civil Rights Movement: Which response demonstrates the strongest geographic or quantitative reasoning?",
+            "prompt": "Week 23 · Brown, Montgomery, and the Modern Civil Rights Movement: A local evidence set includes boycott participation estimates, arrest records, transit revenue, court filings, and newspaper coverage. What is the strongest method?",
             "choices": [
-              "State the observed pattern, propose an explanation, identify units and sources, and explain what the evidence cannot prove.",
-              "Assume every mapped relationship is a direct cause.",
-              "Ignore scale and units to focus on the overall appearance.",
-              "Use only data that confirms the original claim."
+              "Triangulate the different measures because each captures a different part of movement participation, repression, economic pressure, and legal change.",
+              "Use one newspaper article as the definitive measure of participation.",
+              "Assume transit revenue alone explains the legal outcome.",
+              "Treat arrest totals as a direct count of all movement supporters."
             ],
             "answer": 0,
-            "explanation": "Strong data reasoning distinguishes observation, explanation, uncertainty, and limitation.",
+            "explanation": "Movement history is strongest when different source types are corroborated and their limits are made explicit.",
             "skill": "Unit 5 · World War II and the Early Cold War · Week 23"
           }
         ],
@@ -9151,15 +9151,15 @@
           },
           {
             "id": "W24Q10",
-            "prompt": "Week 24 · The Civil Rights Revolution, 1960–1968: Which response demonstrates the strongest geographic or quantitative reasoning?",
+            "prompt": "Week 24 · The Civil Rights Revolution, 1960–1968: County data show voter registration before and after federal voting-rights enforcement. Which conclusion is strongest?",
             "choices": [
-              "State the observed pattern, propose an explanation, identify units and sources, and explain what the evidence cannot prove.",
-              "Assume every mapped relationship is a direct cause.",
-              "Ignore scale and units to focus on the overall appearance.",
-              "Use only data that confirms the original claim."
+              "Large increases after enforcement can support a claim that federal protection affected access, while continued disparities must still be investigated.",
+              "Higher registration proves every barrier to political participation disappeared.",
+              "All counties should be expected to change by the same amount.",
+              "Registration totals alone measure every effect of the civil-rights movement."
             ],
             "answer": 0,
-            "explanation": "Strong data reasoning distinguishes observation, explanation, uncertainty, and limitation.",
+            "explanation": "Before-and-after registration data can show a strong policy-related change while still leaving questions about persistence, local variation, and broader political participation.",
             "skill": "Unit 6 · Rights, Reform, and Conflict · Week 24"
           }
         ],
@@ -9531,15 +9531,15 @@
           },
           {
             "id": "W25Q10",
-            "prompt": "Week 25 · Great Society, Immigration Reform, and Expanding Rights: Which response demonstrates the strongest geographic or quantitative reasoning?",
+            "prompt": "Week 25 · Great Society, Immigration Reform, and Expanding Rights: A chart shows immigration totals and regions of origin changing after 1965. What is the strongest interpretation?",
             "choices": [
-              "State the observed pattern, propose an explanation, identify units and sources, and explain what the evidence cannot prove.",
-              "Assume every mapped relationship is a direct cause.",
-              "Ignore scale and units to focus on the overall appearance.",
-              "Use only data that confirms the original claim."
+              "The composition of immigration changed substantially, but explaining why requires attention to the new legal framework as well as family networks, labor demand, conflict, and other conditions.",
+              "The chart proves one law alone determined every migration decision.",
+              "Changing regions of origin mean earlier immigration patterns had no influence.",
+              "Annual totals reveal the motives of every migrant."
             ],
             "answer": 0,
-            "explanation": "Strong data reasoning distinguishes observation, explanation, uncertainty, and limitation.",
+            "explanation": "Policy changes matter, but migration patterns emerge from interacting legal, economic, political, and social forces.",
             "skill": "Unit 6 · Rights, Reform, and Conflict · Week 25"
           }
         ],
@@ -9911,15 +9911,15 @@
           },
           {
             "id": "W26Q10",
-            "prompt": "Week 26 · Vietnam: Containment, Escalation, and Protest: Which response demonstrates the strongest geographic or quantitative reasoning?",
+            "prompt": "Week 26 · Vietnam: Containment, Escalation, and Protest: A graph compares U.S. troop levels, casualties, war spending, and public-opinion polling. Which use of the graph is strongest?",
             "choices": [
-              "State the observed pattern, propose an explanation, identify units and sources, and explain what the evidence cannot prove.",
-              "Assume every mapped relationship is a direct cause.",
-              "Ignore scale and units to focus on the overall appearance.",
-              "Use only data that confirms the original claim."
+              "Track how escalation, costs, and public opinion changed together, then use additional evidence before claiming any one series directly caused another.",
+              "Assume the highest troop level automatically identifies the moment of lowest public support.",
+              "Use one polling question as the complete measure of public opinion.",
+              "Ignore changes in question wording and sampling across polls."
             ],
             "answer": 0,
-            "explanation": "Strong data reasoning distinguishes observation, explanation, uncertainty, and limitation.",
+            "explanation": "The graph can reveal relationships and turning points, but causal interpretation requires attention to polling methods and broader historical evidence.",
             "skill": "Unit 6 · Rights, Reform, and Conflict · Week 26"
           }
         ],
@@ -10291,15 +10291,15 @@
           },
           {
             "id": "W27Q10",
-            "prompt": "Week 27 · Watergate, Economic Change, and Environmental Politics: Which response demonstrates the strongest geographic or quantitative reasoning?",
+            "prompt": "Week 27 · Watergate, Economic Change, and Environmental Politics: A dashboard combines inflation, unemployment, oil prices, environmental indicators, and trust-in-government polling. Which conclusion is strongest?",
             "choices": [
-              "State the observed pattern, propose an explanation, identify units and sources, and explain what the evidence cannot prove.",
-              "Assume every mapped relationship is a direct cause.",
-              "Ignore scale and units to focus on the overall appearance.",
-              "Use only data that confirms the original claim."
+              "The 1970s involved overlapping economic, political, and environmental pressures, and the measures should be analyzed separately before testing how they interacted.",
+              "One indicator should be selected as the cause of every other problem.",
+              "Trust polling directly measures inflation.",
+              "Oil prices make political evidence irrelevant."
             ],
             "answer": 0,
-            "explanation": "Strong data reasoning distinguishes observation, explanation, uncertainty, and limitation.",
+            "explanation": "Multiple simultaneous crises require multivariable reasoning rather than a single-factor explanation.",
             "skill": "Unit 6 · Rights, Reform, and Conflict · Week 27"
           }
         ],
@@ -10671,15 +10671,15 @@
           },
           {
             "id": "W28Q10",
-            "prompt": "Week 28 · Conservatism, Reagan, and the End of the Cold War: Which response demonstrates the strongest geographic or quantitative reasoning?",
+            "prompt": "Week 28 · Conservatism, Reagan, and the End of the Cold War: A table compares tax rates, inflation, unemployment, union membership, defense spending, and federal deficits across the 1980s. What is the strongest approach?",
             "choices": [
-              "State the observed pattern, propose an explanation, identify units and sources, and explain what the evidence cannot prove.",
-              "Assume every mapped relationship is a direct cause.",
-              "Ignore scale and units to focus on the overall appearance.",
-              "Use only data that confirms the original claim."
+              "Evaluate each policy claim against the relevant measure and time period, distinguish correlation from causation, and examine who experienced gains or costs.",
+              "Use whichever indicator changed most to judge every policy outcome.",
+              "Treat national averages as proof that every group experienced the decade similarly.",
+              "Assume any two trends moving together have the same cause."
             ],
             "answer": 0,
-            "explanation": "Strong data reasoning distinguishes observation, explanation, uncertainty, and limitation.",
+            "explanation": "Policy evaluation requires matching claims to appropriate measures, examining distribution, and avoiding simple correlation-equals-causation reasoning.",
             "skill": "Unit 6 · Rights, Reform, and Conflict · Week 28"
           }
         ],
