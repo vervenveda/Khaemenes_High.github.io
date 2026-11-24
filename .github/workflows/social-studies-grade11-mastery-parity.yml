@@ -1,0 +1,66 @@
+name: Social Studies Grade 11 Mastery Parity
+
+on:
+  pull_request:
+    paths:
+      - "courses/social-studies/grade-11/**"
+      - ".github/workflows/social-studies-grade11-mastery-parity.yml"
+  push:
+    branches: [main]
+    paths:
+      - "courses/social-studies/grade-11/**"
+      - ".github/workflows/social-studies-grade11-mastery-parity.yml"
+
+jobs:
+  verify-grade11-mastery-contract:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Verify Grade 11 mastery parity
+        shell: python
+        run: |
+          from pathlib import Path
+          import sys
+
+          checks = {
+              "courses/social-studies/grade-11/app.js": [
+                  "function governmentFinalMastered",
+                  "function economicsFinalMastered",
+                  "function courseMastered",
+                  "Learner Success Criteria &amp; Mastery",
+                  "all five daily lessons",
+                  "all three principal assignments",
+                  "weekly objective quiz",
+                  "Add the student response, evidence note",
+                  "Course mastery",
+              ],
+              "courses/social-studies/grade-11/personal-finance/app.js": [
+                  "function midtermMastered",
+                  "function finalMastered",
+                  "function courseMastered",
+                  "Learner Success Criteria &amp; Mastery",
+                  "all five daily lessons",
+                  "all three principal assignments",
+                  "weekly objective quiz",
+                  "Add the student response, evidence note",
+                  "Course mastery",
+              ],
+              "courses/social-studies/grade-11/README.md": [
+                  "## Canonical mastery policy",
+                  "80% is the fixed Academy mastery threshold",
+                  "A completion checkbox or a blank submission is not academic evidence",
+              ],
+          }
+
+          failures = []
+          for file_name, markers in checks.items():
+              text = Path(file_name).read_text(encoding="utf-8")
+              for marker in markers:
+                  if marker not in text:
+                      failures.append(f"{file_name}: missing {marker!r}")
+
+          if failures:
+              print("\n".join(f"FAIL: {item}" for item in failures))
+              sys.exit(1)
+
+          print("PASS: Grade 11 Government/Economics and Personal Finance share the documented 80% mastery-evidence contract.")
