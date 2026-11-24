@@ -105,19 +105,24 @@ jobs:
               Path("courses/social-studies/grade-11/personal-finance/app.js"),
               Path("courses/social-studies/grade-12/app.js"),
           ]
+          common_engine_markers = [
+              "KhaemenesHighAssessmentAdapter",
+              "attemptHistory",
+              'data-weekly-rubric-contract="v1"',
+              "currentWeek",
+              "exportAcademicRecord",
+              "KhaemenesSocialStudiesAcademicRecord",
+          ]
           for path in active:
               text = path.read_text(encoding="utf-8")
-              for marker in [
-                  "KhaemenesHighAssessmentAdapter",
-                  "attemptHistory",
-                  'data-weekly-rubric-contract="v1"',
-                  "weekMastered",
-                  "currentWeek",
-                  "exportAcademicRecord",
-                  "KhaemenesSocialStudiesAcademicRecord",
-              ]:
+              for marker in common_engine_markers:
                   if marker not in text:
                       failures.append(f"{path}: missing engine parity marker {marker}")
+              if path.name == "app.js" and "grade-09" in str(path):
+                  if "KhaemenesSS9Records.nextWeek" not in text:
+                      failures.append(f"{path}: missing authoritative Grade 9 evaluator gate")
+              elif "weekMastered" not in text:
+                  failures.append(f"{path}: missing weekMastered progression gate")
 
           # Active shells load assessment + portfolio bridge; companion also needs skip nav.
           shells = [
