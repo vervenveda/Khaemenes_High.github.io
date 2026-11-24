@@ -64,6 +64,28 @@ jobs:
                   if target not in text:
                       failures.append(f"Week {w}: {html.name} does not point into canonical weeks/week-{w}/")
 
+          for w in ("05","08"):
+              canonical_assessment = root / "weeks" / f"week-{w}" / "student-assessment.html"
+              versioned_assessment = root / "weeks" / f"week-{w}" / "student-assessment-v2.html"
+              compatibility_assessment = root / f"week-{w}" / "student-assessment.html"
+
+              if not canonical_assessment.is_file():
+                  failures.append(f"Week {w}: canonical student-assessment.html missing")
+              if versioned_assessment.is_file():
+                  text = versioned_assessment.read_text(encoding="utf-8")
+                  if "KHAEMENES_VERSION_COMPAT_REDIRECT" not in text or "student-assessment.html" not in text:
+                      failures.append(f"Week {w}: versioned assessment must redirect to canonical student-assessment.html")
+              else:
+                  failures.append(f"Week {w}: versioned assessment compatibility path missing")
+
+              if not compatibility_assessment.is_file():
+                  failures.append(f"Week {w}: historical student-assessment.html doorway missing")
+              else:
+                  text = compatibility_assessment.read_text(encoding="utf-8")
+                  target = f"../weeks/week-{w}/student-assessment.html"
+                  if "KHAEMENES_WEEK_COMPAT_REDIRECT" not in text or target not in text:
+                      failures.append(f"Week {w}: historical assessment doorway does not target canonical assessment")
+
           canonical_27 = root / "weeks" / "week-27" / "student-packet.html"
           v2_27 = root / "weeks" / "week-27" / "student-packet-v2.html"
           if canonical_27.is_file():
