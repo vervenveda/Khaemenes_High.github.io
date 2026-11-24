@@ -94,7 +94,8 @@ function demoStudent(){
  saveDB();
 }
 function lessonStats(s){let done=0;if(s)Object.values(s.completedLessons||{}).forEach(a=>done+=a.filter(Boolean).length);return{done,total:90,percent:Math.round(done/90*100)}}
-function assignmentStats(s){const arr=s?Object.values(s.assignments||{}):[];const submitted=arr.filter(a=>a.submitted).length;let earned=0,possible=0;arr.forEach(a=>{if(Number.isFinite(+a.score)){earned+=+a.score;possible+=30}});return{submitted,total:54,percent:Math.round(submitted/54*100),earned,possible}}
+function assignmentEvidenceComplete(a){return !!a?.submitted&&String(a.text||'').trim().length>0}
+function assignmentStats(s){const arr=s?Object.values(s.assignments||{}):[];const submitted=arr.filter(assignmentEvidenceComplete).length;let earned=0,possible=0;arr.forEach(a=>{if(Number.isFinite(+a.score)){earned+=+a.score;possible+=30}});return{submitted,total:54,percent:Math.round(submitted/54*100),earned,possible}}
 function quizStats(s){const arr=s?Object.values(s.quizzes||{}).filter(q=>q.completed):[];return{completed:arr.length,total:18,avg:arr.length?Math.round(arr.reduce((n,q)=>n+(q.bestPercent??q.percent??0),0)/arr.length):0}}
 function overall(s){if(!s)return 0;const l=lessonStats(s).percent,a=assignmentStats(s).percent,q=Math.round(quizStats(s).completed/18*100);return Math.round(l*.35+a*.40+q*.25)}
 function midtermMastered(s){return (s?.exams?.midterm?.bestPercent??s?.exams?.midterm?.percent??0)>=80}
@@ -102,7 +103,7 @@ function finalMastered(s){return (s?.exams?.final?.bestPercent??s?.exams?.final?
 function weekMastered(s,w){
  if(!s)return false;
  const lessons=(s.completedLessons?.[w.week]||[]).filter(Boolean).length===5;
- const assignments=w.assignments.every(a=>s.assignments?.[`${w.week}-${a.number}`]?.submitted);
+ const assignments=w.assignments.every(a=>assignmentEvidenceComplete(s.assignments?.[`${w.week}-${a.number}`]));
  const quiz=s.quizzes?.[w.week];
  const quizMastery=!!quiz?.completed&&(quiz.bestPercent??quiz.percent??0)>=80&&String(quiz.shortResponse||'').trim().length>0;
  if(!lessons||!assignments||!quizMastery)return false;
