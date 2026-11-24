@@ -52,6 +52,7 @@ function highAssessmentReviewSkills(questions,answers){
  return [...new Set(questions.map((q,i)=>Number(answers[i])===Number(q.answer)?null:(q.skill||q.domain||'Review')).filter(Boolean))].slice(0,10);
 }
 function freshDB(){return{version:1,activeId:null,students:[],settings:{theme:'dark',fontScale:100}}}
+// Historical recovery helper only. Canonical loadDB never calls this automatically.
 function migrateLegacyDB(raw){
  if(!raw||!Array.isArray(raw.students)||!raw.students.length)return null;
  const out=freshDB();
