@@ -1,7 +1,22 @@
 (() => {
 'use strict';
 const COURSE=window.KHAEMENES_SOCIAL_STUDIES_DATA;
-const META=COURSE.metadata, KEY=META.storageKey;
+const META=COURSE.metadata;
+const LEGACY_GRADEBOOK_KEY=META.storageKey;
+const ACADEMY_ENTRY=window.KhaemenesCourseEntryContract;
+const ENTRY_OWNER=ACADEMY_ENTRY?.readAcademyProfile?.()?.learnerId||null;
+const KEY=ENTRY_OWNER?LEGACY_GRADEBOOK_KEY+":academy:"+encodeURIComponent(ENTRY_OWNER):null;
+let savedSnapshot=null;
+function requireAcademyOwner(){
+ const current=ACADEMY_ENTRY?.readAcademyProfile?.()?.learnerId||null;
+ if(!ENTRY_OWNER||!current)throw new Error("Select an Academy learner before saving course work.");
+ if(current!==ENTRY_OWNER)throw new Error("The Academy learner changed. Export unsaved work and reload this page.");
+ return current;
+}
+function academyRead(key){
+ requireAcademyOwner();
+ return localStorage.getItem(key);
+}
 const LEGACY_KEY='KHAE_SS11_GLE_CIVIC_LEDGER_V1';
 const $=(s,r=document)=>r.querySelector(s), $$=(s,r=document)=>[...r.querySelectorAll(s)];
 const esc=(v='')=>String(v).replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]));
@@ -64,26 +79,40 @@ function migrateLegacyDB(raw){
  return out;
 }
 function loadDB(){
+ if(!KEY)return freshDB();
  try{
-   const x=JSON.parse(localStorage.getItem(KEY));
-   if(x&&Array.isArray(x.students))return Object.assign(freshDB(),x);
- }catch(e){}
- try{
-   const legacy=JSON.parse(localStorage.getItem(LEGACY_KEY));
-   const migrated=migrateLegacyDB(legacy);
-   if(migrated){
-     localStorage.setItem(KEY,JSON.stringify(migrated));
-     return migrated;
-   }
- }catch(e){}
- return freshDB();
+   const raw=academyRead(KEY);
+   savedSnapshot=raw;
+   if(raw===null)return freshDB();
+   const parsed=JSON.parse(raw);
+   if(!parsed||!Array.isArray(parsed.students)||parsed.academyLearnerId!==ENTRY_OWNER)
+     throw Error("Invalid or mismatched Grade 11 learner record");
+   return Object.assign(freshDB(),parsed);
+ }catch(error){
+   if(error.message?.includes("Academy learner"))throw error;
+   throw new Error("Grade 11 record requires recovery. Existing bytes were preserved.");
+ }
 }
-let db=loadDB();
-function saveDB(){localStorage.setItem(KEY,JSON.stringify(db))}
+let db;
+try{db=loadDB()}catch(error){console.error(error);db=freshDB();savedSnapshot="__blocked__";}
+function saveDB(){
+ const owner=requireAcademyOwner();
+ if(!KEY||savedSnapshot==="__blocked__")throw Error("Record recovery is required before saving.");
+ const current=academyRead(KEY);
+ if(current!==savedSnapshot)throw Error("Another tab modified the Grade 11 record. Export and reload.");
+ const next=JSON.stringify({...db,academyLearnerId:owner});
+ localStorage.setItem(KEY,next);
+ if(localStorage.getItem(KEY)!==next)throw Error("Grade 11 save could not be verified.");
+ savedSnapshot=next;
+}
 function normalize(s){s.completedLessons||={};s.assignments||={};s.quizzes||={};s.exams||={};s.journal||={};s.attendance||={};return s}
-function activeStudent(){return db.students.find(s=>s.id===db.activeId)||null}
-function createStudent(name){const s=normalize({id:uid(),name:name.trim(),created:new Date().toISOString().slice(0,10)});db.students.push(s);db.activeId=s.id;saveDB();return s}
+function activeStudent(){
+ if(!ENTRY_OWNER||ACADEMY_ENTRY?.readAcademyProfile?.()?.learnerId!==ENTRY_OWNER)return null;
+ return db.students.find(s=>s.id===db.activeId)||null;
+}
+function createStudent(name){requireAcademyOwner();const s=normalize({id:uid(),name:name.trim(),created:new Date().toISOString().slice(0,10)});db.students.push(s);db.activeId=s.id;saveDB();return s}
 function demoStudent(){
+ requireAcademyOwner();
  const s=createStudent('Demo Scholar');
  COURSE.weeks.slice(0,3).forEach(w=>{
    s.completedLessons[w.week]=[true,true,true,true,true];
