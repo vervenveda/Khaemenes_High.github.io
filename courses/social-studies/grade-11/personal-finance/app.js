@@ -275,12 +275,12 @@ function exportAcademicRecord(){
 }
 function exportBackup(){
  const s=activeStudent();if(!s)return;
- const blob=new Blob([JSON.stringify({course:META.courseCode,version:1,student:s},null,2)],{type:'application/json'});
+ const blob=new Blob([JSON.stringify({course:META.courseCode,version:2,academyLearnerId:ENTRY_OWNER,student:s},null,2)],{type:'application/json'});
  const a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download=`${s.name.replace(/[^a-z0-9]+/gi,'_')}_grade11_personal_finance_backup.json`;a.click();URL.revokeObjectURL(a.href);
 }
 function importBackup(e){
  const f=e.target.files[0];if(!f)return;const rd=new FileReader();
- rd.onload=()=>{try{const x=JSON.parse(rd.result);if(!x.student?.name)throw Error();const s=normalize(x.student);s.id=uid();db.students.push(s);db.activeId=s.id;saveDB();renderStudentControls();renderSidebarWeeks();render();}catch(err){alert('That file is not a valid Grade 11 student backup.')}};
+ rd.onload=()=>{try{const x=JSON.parse(rd.result);requireAcademyOwner();if(x.academyLearnerId&&x.academyLearnerId!==ENTRY_OWNER)throw Error('Backup belongs to a different Academy learner');if(!x.student?.name)throw Error();const s=normalize(x.student);s.id=uid();db.students.push(s);db.activeId=s.id;saveDB();renderStudentControls();renderSidebarWeeks();render();}catch(err){alert('That file is not a valid Grade 11 student backup.')}};
  rd.readAsText(f);
 }
 function applySettings(){
