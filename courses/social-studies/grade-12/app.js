@@ -35,7 +35,9 @@ const esc=(v='')=>String(v).replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'
 const uid=()=>`s12_${Date.now().toString(36)}${Math.random().toString(36).slice(2,7)}`;
 const today=()=>new Date().toISOString().slice(0,10);
 const stamp=()=>new Date().toLocaleString();
-let view='dashboard';
+const VALID_VIEWS=['dashboard','week','scope','assessments','capstone','graduation','reports','standards'];
+const ROUTE_PARAMS=new URLSearchParams(location.search);
+let view=VALID_VIEWS.includes(ROUTE_PARAMS.get('view'))?ROUTE_PARAMS.get('view'):'dashboard';
 let selectedWeek=Math.max(1,Math.min(36,Number(new URLSearchParams(location.search).get('week'))||1));
 function highAssessmentDraw(w,s){
  const adapter=window.KhaemenesHighAssessmentAdapter,mc=window.KhaeMonteCarloAssessment;
@@ -64,7 +66,8 @@ function loadDB(){
  }
 }
 let db;
-try{db=loadDB()}catch(error){console.error(error);db=freshDB();savedSnapshot="__blocked__";}
+try{db=loadDB()}catch(error){console.error(error);
+if(view==='week'&&!ROUTE_PARAMS.has('week'))selectedWeek=currentWeek(activeStudent());db=freshDB();savedSnapshot="__blocked__";}
 function saveDB(){
  const owner=requireAcademyOwner();
  if(!KEY||savedSnapshot==="__blocked__")throw Error("Record recovery is required before saving.");
@@ -163,13 +166,16 @@ function gateAudit(s,includeIssue=true){
  return{gates,majors,cps,ready:gates.filter(g=>g.id!=='issued').every(g=>g.pass),complete:gates.every(g=>g.pass),s1,s2,ov};
 }
 
-function setView(v){view=v;$$('.navBtn,.tab').forEach(b=>b.classList.toggle('active',b.dataset.view===v));render()}
-function setWeek(n){
- const requested=Math.max(1,Math.min(36,+n));
- const unlocked=currentWeek(activeStudent());
- if(requested>unlocked){alert(`Week ${requested} is locked. Complete Week ${unlocked}: all five lessons, all three assignments, the weekly quiz at 80%+, and its constructed response. Week 19 also requires the semester exam at 80%+.`);selectedWeek=unlocked;}
- else selectedWeek=requested;
- history.replaceState(null,'',`?week=${selectedWeek}`);view='week';renderSidebarWeeks();render();scrollTo({top:0,behavior:'smooth'})
+function setView(v){
+ if(!VALID_VIEWS.includes(v))v='dashboard';
+ view=v;
+ const url=new URL(location.href);
+ url.searchParams.set('view',view);
+ if(view==='week')url.searchParams.set('week',String(selectedWeek));
+ else url.searchParams.delete('week');
+ history.replaceState(null,'',url.pathname+url.search+url.hash);
+ $$('.navBtn,.tab').forEach(b=>b.classList.toggle('active',b.dataset.view===view));
+ render();
 }
 function renderStudentControls(){
  const el=$('#studentSelect');
