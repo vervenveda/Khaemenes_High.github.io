@@ -128,7 +128,7 @@ function setWeek(n){
  const requested=Math.max(1,Math.min(18,+n)),unlocked=currentWeek(activeStudent());
  if(requested>unlocked){
    const midtermNote=unlocked===9?' The Financial Literacy Midterm must also be mastered at 80% before Week 10.':'';
-   alert(`Week ${requested} is locked. Complete Week ${unlocked}: five lessons, three submitted assignments, the constructed response, and the weekly quiz at 80%+.${midtermNote}`);
+   alert(`Week ${requested} is locked. Complete Week ${unlocked}: five lessons, three submitted assignments with a written response, evidence note, or identified attachment, the constructed response, and the weekly quiz at 80%+.${midtermNote}`);
    selectedWeek=unlocked;
  }else selectedWeek=requested;
  view='week';{const url=new URL(location.href);url.searchParams.set('view','week');url.searchParams.set('week',String(selectedWeek));history.replaceState(null,'',url.pathname+url.search+url.hash)};renderSidebarWeeks();render();scrollTo({top:0,behavior:'smooth'})
