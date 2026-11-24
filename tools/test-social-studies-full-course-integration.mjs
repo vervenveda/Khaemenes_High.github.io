@@ -101,6 +101,14 @@ for(const safeguard of [
  'if(grade==="9"||laterWeek)return heading||null'
 ])if(!engine.includes(safeguard))failures.push("Engine safeguard absent: "+safeguard);
 
+for(const typographySafeguard of [
+ 'normalizePacketTypography',
+ 'khaemenes-typography-standard',
+ 'khaeSocialStudiesPacketTypographyV1',
+ 'font-size:16px!important',
+ 'font-weight:400!important'
+]) if(!engine.includes(typographySafeguard)) failures.push("Packet typography safeguard absent: "+typographySafeguard);
+
 for(const forbidden of ["localStorage","sessionStorage","indexedDB","fetch(","XMLHttpRequest","document.cookie"])
  if(engine.includes(forbidden))failures.push("Engine persistence is forbidden: "+forbidden);
 
