@@ -65,8 +65,8 @@ function loadDB(){
  }
 }
 let db;
-try{db=loadDB()}catch(error){console.error(error);
-if(view==='week'&&!ROUTE_PARAMS.has('week'))selectedWeek=currentWeek(activeStudent());db=freshDB();savedSnapshot="__blocked__";}
+try{db=loadDB()}catch(error){console.error(error);db=freshDB();savedSnapshot="__blocked__";}
+if(view==='week'&&!ROUTE_PARAMS.has('week'))selectedWeek=currentWeek(activeStudent());
 function saveDB(){
  const owner=requireAcademyOwner();
  if(!KEY||savedSnapshot==="__blocked__")throw Error("Record recovery is required before saving.");
