@@ -6,6 +6,13 @@
 
 **Migration safeguard:** the previous embedded production page was preserved at `workflow/legacy-index-pre-canonical-migration-2026-11-16.html`. On first load, `app.js` checks for the former `KHAE_SS10_USH_CLEAN_PORTAL_V1` browser record and migrates compatible lesson, assignment, quiz, and exam evidence into the canonical `khaemenes_grade10_social_studies_v1` record without deleting the legacy record.
 
+## Weekly path authority
+- **Canonical weekly curriculum owner:** `weeks/week-01/` through `weeks/week-36/`.
+- The historical sibling paths `week-01/` through `week-36/` are compatibility mirrors only; they are not an independent curriculum source.
+- Do not author or revise curriculum in the historical `week-XX/` paths.
+- Repository validation requires every compatibility-mirror filename and file body to remain byte-identical to its canonical `weeks/week-XX/` counterpart. Any drift fails CI.
+- The Grade 10 student runtime opens standalone weekly packets from the canonical `weeks/` tree.
+
 ## Course
 - 36 weeks, five lesson days each week, three principal assignments weekly.
 - Weekly objective mastery threshold: **80%**; midterm 80% before opening Week 19.
