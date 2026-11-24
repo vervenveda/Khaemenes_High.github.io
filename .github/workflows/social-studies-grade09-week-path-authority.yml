@@ -86,6 +86,22 @@ jobs:
                   if "KHAEMENES_WEEK_COMPAT_REDIRECT" not in text or target not in text:
                       failures.append(f"Week {w}: historical assessment doorway does not target canonical assessment")
 
+          week1 = root / "weeks" / "week-01" / "student-packet.html"
+          week1_text = week1.read_text(encoding="utf-8")
+          for marker in (
+              "Success Criteria · Assignment 1 · 20 points",
+              "Success Criteria · Assignment 2 · 20 points",
+              "Success Criteria · Assignment 3 · 30 points",
+              "Constructed Response Rubric · 5 points",
+              "Mastery & Recovery Contract",
+              "Week 1 Mastery Checklist",
+              "objective quiz score is at least 80%",
+              "complete an error analysis",
+              "teacher-scored"
+          ):
+              if marker not in week1_text:
+                  failures.append(f"Week 01: learner-facing rubric marker missing: {marker}")
+
           canonical_27 = root / "weeks" / "week-27" / "student-packet.html"
           v2_27 = root / "weeks" / "week-27" / "student-packet-v2.html"
           if canonical_27.is_file():
