@@ -1,6 +1,7 @@
-:root{--ticker-height:33px;--vnv-autopopulate-ticker-height:33px;--high-shell-radius:7px}
-body > #vnvTickerAutoPopulate{top:var(--ticker-height,33px)!important}
-body > #vnvHeaderAutoPopulate{top:calc(var(--ticker-height,33px) + var(--vnv-autopopulate-ticker-height,33px))!important}
+:root{--vnv-333-ticker-height:33px;--vnv-autopopulate-ticker-height:33px;--high-shell-radius:7px}
+body > #vnv333NetworkTicker{top:0!important;margin:0!important;box-shadow:none!important}
+body > #vnvTickerAutoPopulate{top:var(--vnv-333-ticker-height,33px)!important;margin:0!important}
+body > #vnvHeaderAutoPopulate{top:calc(var(--vnv-333-ticker-height,33px) + var(--vnv-autopopulate-ticker-height,33px))!important;margin-top:0!important}
 body[data-high-universal-shell="true"] .hero{background:#243038!important;background-image:none!important;color:#fff8e9!important}
 body[data-high-universal-shell="true"] .hero .eyebrow{margin:0!important;color:#fff8e9!important;font:400 33px/1.15 Cinzel,Georgia,serif!important;letter-spacing:.03em!important;text-transform:none!important}
 body[data-high-universal-shell="true"] .hero h1{margin:8px auto 0!important;color:#fff8e9!important;font:400 66px/1.05 Cinzel,Georgia,serif!important;letter-spacing:.02em!important}
