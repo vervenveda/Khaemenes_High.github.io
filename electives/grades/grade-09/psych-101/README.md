@@ -37,6 +37,7 @@ All 13 weeks are **academically audited and LOCKED**:
 - **13 / 13 locked weekly architectures**
 - **65 / 65 daily lesson planning files**
 - **65 / 65 Psychology Word of the Day anchors**
+- **65 / 65 longitudinal research-retrieval cards** spanning methods, data literacy, causation, replication, ethics, and bounded inference
 - final Psychology Research Brief + research defense
 - APA 2022 high-school psychology standards alignment
 
@@ -72,6 +73,7 @@ Every implemented lesson must include:
 10. Claims Laboratory
 11. Guided Investigation
 12. Independent Assignment
+12A. Longitudinal Research Retrieval — cumulative research-method, data, ethics, and inference transfer
 13. Research Notebook Checkpoint
 14. Academic Journal Reflection
 15. 5-Question Daily Review
@@ -113,6 +115,8 @@ Course weights:
 Weekly mastery uses a 10-question mixed-format blueprint and an **80% threshold**. Below mastery, students receive targeted review/correction followed by a parallel-form retake.
 
 The cumulative checkpoints after Weeks 4, 8, and 12 test transfer across units rather than pasting weekly quizzes together.
+
+Every daily lesson also carries a longitudinal research-retrieval card. These cards repeatedly revisit earlier methods and evidence rules in the context of the current psychology domain, so correlation/causation, measurement, sampling, validity, replication, ethics, data interpretation, and bounded inference remain active across the entire course rather than being isolated to Week 1.
 
 Week 13 uses the Research Brief and synthesis check rather than a giant conventional final exam.
 
