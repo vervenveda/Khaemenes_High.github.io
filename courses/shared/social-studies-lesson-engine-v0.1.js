@@ -3,6 +3,31 @@
 (function(){
 "use strict";
 if(window.KhaemenesSocialStudiesLessonEngineV01)return;
+const PACKET_TYPOGRAPHY_CSS=`
+html:root:root body[data-social-studies-engine]{
+ font-family:"Brandon Grotesque",Nunito,"Avenir Next","Segoe UI",Arial,sans-serif!important;
+ font-size:16px!important;font-weight:400!important;line-height:1.65!important;
+}
+html:root:root body[data-social-studies-engine] :is(button,input,select,textarea,summary,label,p,li,td,th){
+ font-size:max(16px,1em)!important;
+}
+html:root:root body[data-social-studies-engine] :is(h1,h2,h3,h4,h5,h6,.page-title,.hero-title,.brand-title,.display-title,.site-title){
+ font-family:Cinzel,"Iowan Old Style","Palatino Linotype",Palatino,Georgia,serif!important;
+ font-weight:400!important;
+}
+html:root:root body[data-social-studies-engine] :is(strong,b,th,label,summary,button,.button){
+ font-weight:400!important;
+}
+`;
+function normalizePacketTypography(){
+ const legacy=document.getElementById("khaemenes-typography-standard");
+ if(legacy)legacy.remove();
+ if(document.getElementById("khaeSocialStudiesPacketTypographyV1"))return;
+ const style=document.createElement("style");
+ style.id="khaeSocialStudiesPacketTypographyV1";
+ style.textContent=PACKET_TYPOGRAPHY_CSS;
+ document.head.append(style);
+}
 const CURRICULUM=Object.freeze({
 "9":{course:"Global Studies Honors",focus:"Historical Inquiry & Source Laboratory",mission:"How We Know the Past",question:"How can we build a trustworthy account when evidence is incomplete or disputed?",steps:[["Frame the inquiry","Separate recorded observation, reported information, inference and historical claim.",1,"read"],["Source and contextualize","Who created each record, when, why and for whom?",2,"read"],["Corroborate and map","Compare independent sources and locate geographic limitations.",3,"practice"],["Argue from evidence","Support a claim, answer a counterclaim, and acknowledge uncertainty.",4,"write"],["Revise and retrieve","Revisit your initial evidence ledger and complete the original weekly check.",5,"check"]]},
 "10":{course:"United States History Honors",focus:"Historical Evidence, Timeline & Geography Studio",mission:"History, Memory, and the American Story",question:"How should historians construct a national history when evidence, memory, and identity do not always agree?",steps:[["Frame historical inquiry","Place the case in chronological and geographic context."],["Source and corroborate","Compare Indigenous oral tradition, archaeological evidence and a sixteenth-century European map."],["Map and measure","Interpret spatial evidence and the uncertainty of population estimates."],["Deliberate and argue","Compare interpretations, defend a claim and address counterevidence."],["Synthesize and correct","Use the original weekly quiz and correction tasks."]]},
@@ -25,6 +50,7 @@ const CSS=".khae-ss-engine{width:min(100%,980px);margin:20px auto;padding:20px;b
 function el(tag,cls,text){const n=document.createElement(tag);if(cls)n.className=cls;if(text!==undefined)n.textContent=text;return n}
 function mount(){
 const grade=document.body?.dataset.socialStudiesEngine;
+if(grade)normalizePacketTypography();
 const demo=document.body.hasAttribute("data-social-studies-demo");
 const path=location.pathname;
 const route=!demo&&path.match(/\/social-studies\/grade-(09|10|11|12)\/(?:weeks\/)?week-(\d{2})\/student-packet(?:-v2)?\.html$/);
