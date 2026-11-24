@@ -121,3 +121,10 @@ h1,h2,h3,h4,summary,label,th,strong,b,.button,button{}body{}
 button,a.button,.button,.checkline{}
 h1{}h2{}
 [hidden]{display:none!important}
+
+
+/* Grade 09 index layout additions */
+*{box-sizing:border-box}body{margin:0;line-height:1.65}main{max-width:850px;margin:auto;padding:24px}h1{}.card{padding:22px;margin:22px 0}.button{display:inline-block;padding:12px 20px;min-height:44px;text-decoration:none}a{}details{margin:20px 0}summary{cursor:pointer;min-height:44px}nav{display:flex;gap:16px;flex-wrap:wrap}.notice{}:focus-visible{outline:3px solid #245786;outline-offset:3px}h1,h2,h3,h4,summary,label,th,strong,b{}button,.button{}h1{}h2{}h3{}body{}
+
+.ss9-hero{padding:12px 0 22px}.ss9-kicker{}.ss9-hero h1{margin:.25em 0}.ss9-tools{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin:18px 0}.ss9-tool{display:flex;flex-direction:column;gap:6px;padding:15px;text-decoration:none;min-height:120px}.ss9-tool span{}.ss9-tool:hover,.ss9-tool:focus-visible{}.ss9-actions{display:flex;gap:10px;flex-wrap:wrap}.ss9-actions a{flex:1 1 190px;text-align:center}.ss9-status{padding:9px 12px;}.ss9-section-title{}.ss9-tool-title{}.ss9-grade-nav{display:flex;flex-wrap:wrap;gap:10px;margin:16px 0}.ss9-grade-nav a{padding:8px 12px;}html{scroll-behavior:smooth}@media(max-width:430px){main{padding:12px}.card{padding:14px;margin:14px 0}.ss9-tools{grid-template-columns:minmax(0,1fr)}.ss9-actions a{flex-basis:100%}nav{gap:9px}a{overflow-wrap:anywhere}}@media(max-width:270px){main{padding:8px}.ss9-tool{padding:10px;min-height:100px}.button{max-width:100%;width:100%;padding:9px;overflow-wrap:anywhere}}@media print{.ss9-tools,.ss9-grade-nav,.ss9-actions{display:none!important}.card{break-inside:avoid}}
+
