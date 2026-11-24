@@ -7,92 +7,16 @@
 <meta charset="utf-8"/>
 <meta content="width=device-width,initial-scale=1" name="viewport"/>
 <title>Grade 12 Global Politics, International Relations &amp; Senior Research Honors</title>
-<style>
-/* =========================================================
-   GRADE 12 SOCIAL STUDIES — SENIOR DIPLOMATIC OBSERVATORY
-   Distinct format from Grade 9 Atlas, Grade 10 Archive, Grade 11 Ledger
-   1. Tokens
-   2. Layout
-   3. Components
-   4. Print / responsive
-   ========================================================= */
-
-/* 1. Tokens */
-:root{
-  --void:#050715; --night:#0b1028; --panel:#111a38; --panel2:#172348;
-  --ink:#f7f0e8; --muted:#c5bed1; --aether:#9cc7ff; --violet:#a986ff;
-  --rose:#e39aa8; --gold:#e3c376; --green:#8fd7aa; --red:#ef8e8e;
-  --line:rgba(227,195,118,.25); --shadow:0 18px 60px rgba(0,0,0,.38);
-  --r:15px; --rl:28px;
-}
-*{box-sizing:border-box}
-html,body{margin:0;min-height:100%;color:var(--ink);font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;background:
-  radial-gradient(circle at 18% 0%,rgba(156,199,255,.18),transparent 28%),
-  radial-gradient(circle at 84% 8%,rgba(169,134,255,.16),transparent 30%),
-  radial-gradient(circle at 50% 100%,rgba(227,195,118,.11),transparent 28%),
-  linear-gradient(135deg,#050715,#0b1028 48%,#040510)}
-body:before{content:"";position:fixed;inset:0;pointer-events:none;opacity:.10;background-image:
-  linear-gradient(rgba(227,195,118,.22) 1px,transparent 1px),
-  linear-gradient(90deg,rgba(156,199,255,.18) 1px,transparent 1px);
-  background-size:58px 58px;mask-image:linear-gradient(to bottom,black,transparent 80%)}
-
-/* 2. Layout */
-.app{display:grid;grid-template-columns:348px 1fr;min-height:100vh}
-.sidebar{position:sticky;top:0;height:100vh;overflow:auto;padding:18px;background:rgba(4,6,18,.93);border-right:1px solid var(--line);backdrop-filter:blur(12px)}
-.main{max-width:1440px;width:100%;margin:0 auto;padding:26px}
-.hero{position:relative;overflow:hidden;border:1px solid var(--line);border-radius:var(--rl);padding:29px;background:
-  linear-gradient(135deg,rgba(17,26,56,.96),rgba(9,14,34,.93)),
-  radial-gradient(circle at 78% 22%,rgba(227,195,118,.2),transparent 34%);box-shadow:var(--shadow)}
-.hero:after{content:"Ω";position:absolute;right:24px;bottom:-72px;font-family:Georgia,serif;font-size:15rem;color:rgba(227,195,118,.08)}
-.eyebrow{color:var(--gold);text-transform:uppercase;letter-spacing:.19em;font-weight:900;font-size:.76rem}
-.hero h1{font-family:Georgia,serif;font-size:clamp(2rem,4.1vw,3.8rem);line-height:1.02;margin:.28rem 0}
-.hero p{max-width:1040px;line-height:1.65;color:#ede3da}
-
-/* 3. Components */
-button,.button{border:0;border-radius:12px;padding:.72rem .95rem;background:linear-gradient(135deg,var(--gold),#f4dfaa);color:#1c1306;font-weight:850;cursor:pointer;text-decoration:none;box-shadow:0 10px 24px rgba(227,195,118,.16)}
-button.secondary,.button.secondary{background:#172348;color:var(--ink);border:1px solid var(--line);box-shadow:none}
-button.ghost,.button.ghost{background:transparent;color:var(--gold);border:1px solid rgba(227,195,118,.5);box-shadow:none}
-button.danger{background:#40202d;color:#ffe2e7;border:1px solid rgba(239,142,142,.55);box-shadow:none}
-button:focus,input:focus,select:focus,textarea:focus{outline:3px solid rgba(156,199,255,.35);outline-offset:2px}
-input,select,textarea{width:100%;border:1px solid var(--line);background:#070b1d;color:var(--ink);border-radius:12px;padding:.75rem;font:inherit}
-textarea{min-height:90px;resize:vertical}
-label{display:block;color:var(--muted);font-size:.85rem;margin:.35rem 0}
-a{color:#f0d28a}
-.brand,.panel,.card{background:rgba(17,26,56,.9);border:1px solid var(--line);border-radius:24px;padding:16px;box-shadow:0 12px 32px rgba(0,0,0,.15)}
-.panel{margin:14px 0;border-radius:18px}
-.seal{width:62px;height:62px;border:2px solid var(--gold);border-radius:50%;display:grid;place-items:center;color:var(--gold);font-weight:950;background:radial-gradient(circle,rgba(227,195,118,.16),transparent)}
-.brand h2{margin:.8rem 0 .2rem;font-size:1.12rem}.brand p,.small{color:var(--muted);font-size:.88rem}
-.panel h3,.card h3,.card h4{margin:.1rem 0 .7rem;color:#ffe2a3}
-.inline,.actions,.tabs{display:flex;gap:8px;flex-wrap:wrap;align-items:center}.inline>*{flex:1}.actions{margin-top:12px}
-.navBtn,.weekBtn,.tab{background:#0c1430;color:var(--ink);border:1px solid var(--line);box-shadow:none}
-.navBtn{width:100%;text-align:left;margin:6px 0}.tab{width:auto}.navBtn.active,.weekBtn.active,.tab.active{border-color:var(--gold);background:rgba(227,195,118,.14)}
-.weekList{display:grid;gap:6px;max-height:47vh;overflow:auto}.weekBtn{display:grid;grid-template-columns:1fr auto;gap:8px;text-align:left;align-items:center;padding:10px}
-.grid{display:grid;grid-template-columns:repeat(12,1fr);gap:14px}.col12{grid-column:span 12}.col8{grid-column:span 8}.col7{grid-column:span 7}.col6{grid-column:span 6}.col5{grid-column:span 5}.col4{grid-column:span 4}.kpi{grid-column:span 3;text-align:center}
-.kpi strong{display:block;font-size:2.05rem;color:var(--gold)}.kpi span{color:var(--muted)}
-.pill{display:inline-flex;border:1px solid var(--line);border-radius:999px;padding:.25rem .58rem;margin:.15rem;color:var(--muted);font-size:.78rem;background:rgba(255,255,255,.03)}
-.good{color:#c9f2d4;border-color:rgba(143,215,170,.55)}.warn{color:#ffe6a8}.bad{color:#ffc9c9;border-color:rgba(239,142,142,.55)}
-.progress{height:12px;border-radius:999px;background:#050715;border:1px solid var(--line);overflow:hidden}.progress span{display:block;height:100%;background:linear-gradient(90deg,var(--violet),var(--aether),var(--gold),var(--green))}
-.lesson,.assignment,.q,.gate{border:1px solid var(--line);background:#0a1029;border-radius:15px;padding:14px;margin:12px 0}
-.lessonHead{display:flex;justify-content:space-between;gap:12px}.check{display:flex;gap:7px;align-items:center;color:var(--green);font-weight:800}.check input,.choice input{width:auto}
-.choice{display:block;padding:9px 10px;margin:7px 0;border:1px solid rgba(227,195,118,.16);border-radius:12px;background:#10193a}
-.score{font-size:1.45rem;color:var(--gold);font-weight:950}
-.notice{border-left:4px solid var(--gold);background:rgba(227,195,118,.09);padding:12px 14px;border-radius:12px;color:#ffe1a0}
-table{width:100%;border-collapse:collapse}th,td{border-bottom:1px solid var(--line);padding:.72rem;text-align:left;vertical-align:top}th{color:var(--gold)}td{color:#eadfca}
-
-/* 4. Print / responsive */
-@media(max-width:1000px){.app{grid-template-columns:1fr}.sidebar{position:relative;height:auto}.main{padding:14px}.col4,.col5,.col6,.col7,.col8,.col12,.kpi{grid-column:span 12}.weekList{max-height:260px}}
-@media print{body{background:#fff;color:#111}.sidebar,.tabs,.actions,button,input,select,textarea{display:none!important}.main{max-width:none;padding:0}.hero,.card{background:#fff;color:#111;box-shadow:none;border:1px solid #999}.hero p,.card p,td{color:#111}.card h3,.card h4,th{color:#111}}
-</style>
-<link rel="stylesheet" href="../../../assets/vervenveda-parchment.css" data-vervenveda-parchment>
 <!-- KHAEMENES_HIGH_ASSESSMENT_ADAPTER_V1 -->
 <script src="../../shared/monte-carlo-assessment-v1.js"></script>
 <script src="../../shared/high-school-learning-context-v1.js"></script>
 <script src="../../shared/high-school-assessment-adapter-v1.js"></script>
-<script defer src="../../../assets/academy-unified-print-header.js"></script><style id="ss12-original-tools-v1">.ss12-learning-tools{margin:16px 0;padding:16px;border:1px solid #938567;border-radius:7px;min-width:0}.ss12-learning-tools h2{font:400 24px Cinzel,Georgia,serif}.ss12-tools-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}.ss12-tools-grid a{display:block;min-width:0;padding:12px;border:1px solid #897459;border-radius:7px;color:inherit;text-decoration:none;overflow-wrap:anywhere}.ss12-tools-grid small{display:block;opacity:.85;font-size:.9rem}.ss12-tools-grid a:focus-visible{outline:3px solid #a98552;outline-offset:2px}@media(max-width:650px){.ss12-tools-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}@media(max-width:320px){.ss12-tools-grid{grid-template-columns:1fr}.ss12-learning-tools{padding:9px}html,body{max-width:100%;overflow-x:clip}.app,.main,.sidebar,.hero,.tabs,#content{min-width:0!important;max-width:100%!important;box-sizing:border-box}.app{display:block!important}.sidebar,.main{width:100%!important}.main{padding:8px!important}.tabs,.actions{flex-wrap:wrap}.tabs button{white-space:normal;overflow-wrap:anywhere}}@media print{.ss12-learning-tools{display:none!important}}</style><link rel="stylesheet" href="../../../assets/high-navigation-v1.css" data-high-navigation-css>
+<script defer src="../../../assets/academy-unified-print-header.js"></script><link rel="stylesheet" href="../../../assets/high-navigation-v1.css" data-high-navigation-css>
 <script src="/Khaemenes_High.github.io/assets/high-school-root-worker-recovery-v1.js" defer data-high-root-worker-recovery="v1"></script>
-<link rel="stylesheet" href="../../../assets/high-school-subject-landing-shell-v1.css" data-high-subject-shell-style="v1">
+<link rel="stylesheet" href="../assets/social-studies-canonical-vnv-shell-v1.css" data-social-studies-canonical-css="v1">
+<link rel="stylesheet" href="styles.css" data-social-studies-layout="grade-12">
 </head>
-<body>
+<body data-social-studies-grade-shell="v1">
 <div class="app">
 <aside class="sidebar">
 <div class="brand">
@@ -126,7 +50,7 @@ table{width:100%;border-collapse:collapse}th,td{border-bottom:1px solid var(--li
 <h1>Grade 12 Global Politics, International Relations &amp; Senior Research Honors</h1>
 <p>A capstone-level honors portal for comparative politics, international relations, global law, human rights, development, political economy, technology governance, senior thesis writing, oral defense, and graduation-gate review.</p>
 <div class="actions"><button data-go="week">Open Research Lab</button><button class="secondary" data-go="capstone">Thesis Checkpoints</button><button class="ghost" data-go="audit">Graduation Audit</button></div>
-<p class="khaemenes-original-tools" style="margin:12px 0;padding:12px;border:1px solid currentColor;border-radius:7px"><a href="../tools/visual-studio.html" style="font:inherit;text-decoration:underline">Open Khaemenes Original Visual Studio — maps, timelines, graphs &amp; source documents</a></p><p class="academy-evidence-portal-link" style="margin:12px 0;padding:12px;border:1px solid currentColor;border-radius:7px"><a href="../tools/academic-evidence-printout.html?grade=12" style="color:inherit;text-decoration:underline">Academic Evidence Portfolio — printable homeschool record (Grade 12)</a></p></header><aside class="khaemenes-source-quality" aria-label="Common source quality checkpoint" style="margin:12px 0;padding:12px;border:1px solid #a5947d;border-radius:7px;overflow-wrap:anywhere"><p style="margin:0 0 5px;font-weight:400">Grades 9–12 · Source Quality Checkpoint</p><p style="margin:0 0 6px">Check author, date, direct support, corroboration and uncertainty before using a source in a visual investigation or portfolio. Works offline; print or export your own worksheet.</p><a href="../tools/source-quality-lab.html" style="color:inherit;text-decoration:underline">Open original Academy Source Quality Lab</a></aside><aside class="khaemenes-unified-evidence" aria-label="Unified academic evidence ledger" style="margin:14px 0;padding:12px;border:1px solid #a5947d;border-radius:7px;overflow-wrap:anywhere"><p style="margin:0 0 6px"><strong>Grades 9–12 · Common Evidence Ledger</strong></p><p style="margin:0 0 6px">Document sources, dates, visual accuracy, claims and limitations. Save locally, export JSON, or print with student, grade and lesson identifiers.</p><a href="../tools/evidence-ledger.html" style="color:inherit;text-decoration:underline">Open original Academy Evidence Ledger</a></aside>
+<p class="khaemenes-original-tools"><a href="../tools/visual-studio.html">Open Khaemenes Original Visual Studio — maps, timelines, graphs &amp; source documents</a></p><p class="academy-evidence-portal-link"><a href="../tools/academic-evidence-printout.html?grade=12">Academic Evidence Portfolio — printable homeschool record (Grade 12)</a></p></header><aside class="khaemenes-source-quality" aria-label="Common source quality checkpoint"><p>Grades 9–12 · Source Quality Checkpoint</p><p>Check author, date, direct support, corroboration and uncertainty before using a source in a visual investigation or portfolio. Works offline; print or export your own worksheet.</p><a href="../tools/source-quality-lab.html">Open original Academy Source Quality Lab</a></aside><aside class="khaemenes-unified-evidence" aria-label="Unified academic evidence ledger"><p><strong>Grades 9–12 · Common Evidence Ledger</strong></p><p>Document sources, dates, visual accuracy, claims and limitations. Save locally, export JSON, or print with student, grade and lesson identifiers.</p><a href="../tools/evidence-ledger.html">Open original Academy Evidence Ledger</a></aside>
 <section class="ss12-learning-tools" id="ss12-tools" aria-labelledby="ss12-tools-heading"><h2 id="ss12-tools-heading">Original Global Politics &amp; Senior Research Tools</h2><p>Independent research resources developed within Khaemenes Academy. The original lessons, graduation checks and assessment rules remain authoritative.</p><div class="ss12-tools-grid"><a href="../tools/visual-studio.html">Visual Studio<small>Original timelines, charts and source evidence</small></a><a href="resources/comparative-matrix.html">Comparative Politics<small>Compare institutions with contextual evidence</small></a><a href="resources/data-laboratory.html">Global Data Laboratory<small>Investigate sources, definitions and trends</small></a><a href="resources/international-law-brief.html">International Law Brief<small>Analyze obligations and jurisdiction</small></a><a href="resources/capstone-planner.html">Senior Thesis Planner<small>Research, argument and defense milestones</small></a><a href="resources/source-analysis.html">Source Analysis<small>Document authority, bias and limitations</small></a></div></section>
 <nav class="tabs"><button class="tab active" data-view="dashboard">Dashboard</button><button class="tab" data-view="week">Lessons</button><button class="tab" data-view="scope">Scope</button><button class="tab" data-view="assessments">Assessments</button><button class="tab" data-view="capstone">Thesis</button><button class="tab" data-view="audit">Audit</button><button class="tab" data-view="reports">Reports</button><button class="tab" data-view="standards">Standards</button></nav>
 <section id="content"></section>
