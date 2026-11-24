@@ -170,7 +170,7 @@ function setView(v){
 }
 function setWeek(n){
  const requested=Math.max(1,Math.min(36,+n)),unlocked=currentWeek(activeStudent());
- if(requested>unlocked){alert(`Week ${requested} is locked. Complete Week ${unlocked}: five lessons, three submitted assignments, the constructed response, and the weekly quiz at 80%+. Week 19 also requires the Government Final at 80%+.`);selectedWeek=unlocked;}
+ if(requested>unlocked){alert(`Week ${requested} is locked. Complete Week ${unlocked}: five lessons, three submitted assignments with a written response, evidence note, or identified attachment, the constructed response, and the weekly quiz at 80%+. Week 19 also requires the Government Final at 80%+.`);selectedWeek=unlocked;}
  else selectedWeek=requested;
  view='week';
  const url=new URL(location.href);url.searchParams.set('view','week');url.searchParams.set('week',String(selectedWeek));history.replaceState(null,'',url.pathname+url.search+url.hash);
