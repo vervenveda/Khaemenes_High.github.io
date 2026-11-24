@@ -39,4 +39,4 @@ for(const banned of ["localStorage","sessionStorage","indexedDB","fetch(","XMLHt
 const context={window:{},document:{readyState:"loading",addEventListener:()=>{}}};
 vm.runInNewContext(js,context);
 assert.equal(Object.keys(context.window.KhaemenesSocialStudiesLessonEngineV01.curriculum).length,4);
-console.log("PASS Week 03 Social Studies: five packet paths, 25 native lesson headings, curriculum-specific guide, preserved evidence ownership");
+console.log("PASS Week 03 Social Studies: four canonical packet paths, 20 native lesson headings, curriculum-specific guide, preserved evidence ownership");
