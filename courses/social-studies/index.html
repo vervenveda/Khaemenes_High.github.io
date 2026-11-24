@@ -5,107 +5,168 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Social Studies · Khaemenes High</title>
 <meta name="description" content="Khaemenes High Social Studies Department — Grades 9–12">
-<style>
-:root{--bg:#11100f;--panel:#1a1816;--panel2:#211e1b;--ink:#f4efe6;--muted:#c9c0b3;--line:#665c50;--accent:#d8bd8a}
-*{box-sizing:border-box}body{margin:0;background:radial-gradient(circle at 50% 0%,#28231e 0,#11100f 48%,#0b0b0a 100%);color:var(--ink);font-family:Arial,Helvetica,sans-serif;line-height:1.6}
-main{width:min(1180px,92vw);margin:auto;padding:34px 0 60px}header{text-align:center;padding:48px 20px 34px}
-.eyebrow{letter-spacing:.18em;text-transform:uppercase;font-size:.76rem;color:var(--accent)}
-h1{font-family:Georgia,"Times New Roman",serif;font-weight:500;letter-spacing:.04em;font-size:clamp(2.5rem,6vw,4.7rem);margin:10px 0}
-.subtitle{font-family:Georgia,"Times New Roman",serif;color:var(--muted);font-size:1.1rem;max-width:850px;margin:0 auto}
-.intro{max-width:850px;margin:24px auto 0;color:#ddd4c8}.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}
-.card{background:linear-gradient(145deg,var(--panel),var(--panel2));border:1px solid var(--line);border-radius:10px;padding:28px;box-shadow:0 12px 35px #0005}
-.card h2{font-family:Georgia,"Times New Roman",serif;font-weight:500;margin:5px 0 10px;font-size:1.7rem}.grade{font-size:.75rem;letter-spacing:.16em;text-transform:uppercase;color:var(--accent)}
-.card p{color:var(--muted)}.meta{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0}.meta span{border:1px solid #655b4e;border-radius:999px;padding:4px 9px;font-size:.74rem;color:#ddd3c6}
-.actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:20px}a.button{display:inline-block;text-decoration:none;color:#171411;background:var(--accent);border:1px solid var(--accent);padding:10px 17px;border-radius:5px;font-weight:700}
-a.button.secondary{background:transparent;color:var(--ink);border-color:#756858}.full{grid-column:1/-1}.note{margin-top:22px;text-align:center;border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:22px;color:var(--muted)}
-footer{text-align:center;color:#8f8579;font-size:.82rem;padding-top:32px}@media(max-width:760px){.grid{grid-template-columns:1fr}}
-</style>
-<link rel="stylesheet" href="../../assets/vervenveda-parchment.css" data-vervenveda-parchment>
-<style id="khaemenes-typography-standard">
-/* Khaemenes High presentation typography · 55 / 33 / 24 / 14 px.
-   All public pages receive this local, embedded policy for offline use.
-   Only presentation changes. Existing grids, gates, learner records, assessments and STOS are preserved.
-   Font names are optional installed system fonts; no downloads or third-party font services. */
-html:root:root body {
-  font-family: "Brandon Grotesque", "Avenir Next", Avenir, "Segoe UI", Arial, sans-serif !important;
-  font-size: 14px !important;
-  font-weight: 400 !important;
-  line-height: 1.65 !important;
-  -webkit-text-size-adjust: 100%;
-  overflow-wrap: break-word;
-}
-html:root:root body :is(button, input, select, textarea) {
-  font-family: "Brandon Grotesque", "Avenir Next", Avenir, "Segoe UI", Arial, sans-serif !important;
-}
-html:root:root body :is(h1, h2, h3, h4, h5, h6, .page-title, .hero-title, .brand-title, .display-title, .site-title) {
-  font-family: Cinzel, "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif !important;
-  font-weight: 400 !important;
-  overflow-wrap: anywhere;
-}
-html:root:root body :is(.eyebrow, .kicker, .dialog-eyebrow, .dialog-kicker, .worksheet-kicker) {
-  font-family: Cinzel, "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif !important;
-  font-size: 55px !important;
-  font-weight: 400 !important;
-  line-height: 1.15 !important;
-  letter-spacing: .02em !important;
-  white-space: normal !important;
-  overflow-wrap: anywhere;
-}
-html:root:root body h1 {
-  font-size: 33px !important;
-  line-height: 1.2 !important;
-  white-space: normal !important;
-  overflow-wrap: anywhere;
-}
-html:root:root body h2,
-html:root:root body :is(.subtitle, .hero-subtitle, .hero-sub, .academy-comment),
-html:root:root body .hero .comment {
-  font-size: 24px !important;
-  line-height: 1.35 !important;
-  white-space: normal !important;
-  overflow-wrap: anywhere;
-}
-/* Do not replace responsive grids or fixed elements; prevent oversized titles from
-   demanding horizontal scrolling on narrow phone and tablet displays. */
-html:root:root body :is(.hero, .header, .page-header, .section-head, .lesson-header) {
-  min-width: 0;
-}
-@media print {
-  html:root:root body { font-size: 14px !important; }
-}
-</style>
-
-
-<link rel="stylesheet" href="https://vervenveda.com/Khaemenes_Academy.github.io/assets/khaemenes-landing-standard.css">
-<link rel="stylesheet" href="https://vervenveda.com/Khaemenes_Academy.github.io/assets/khaemenes-hall-typography.css">
-<script src="../../assets/high-department-landing-shell-v1.js?v=1.0.0" defer data-high-department-shell="v1"></script>
 <link rel="stylesheet" href="../../assets/high-school-subject-landing-shell-v1.css" data-high-subject-shell-style="v1">
+<style>
+:root{
+ --charcoal:#243038;--cream:#fff8e9;--parchment:#f4f0e7;--khaki:#e9dfcc;--line:#cbbd9f;
+}
+*{box-sizing:border-box}
+html{background:var(--parchment)}
+body{
+ margin:0;background:var(--parchment);color:var(--charcoal);
+ font-family:"Brandon Grotesque",Nunito,"Avenir Next","Segoe UI",Arial,sans-serif;
+ font-size:16px;line-height:1.65
+}
+body :is(h1,h2,h3,h4,strong,b,button,.button){font-weight:400}
+body :is(button,.button,.course-feature,dialog){border-radius:7px}
+main{width:100%;margin:0 auto;padding:0 0 44px}
+.subject-breadcrumbs{
+ width:100%;min-height:44px;padding:9px 18px;display:flex;align-items:center;justify-content:center;gap:7px;flex-wrap:wrap;
+ text-align:center;background:var(--khaki);border-bottom:1px solid var(--line);color:var(--charcoal)
+}
+.subject-breadcrumbs a{color:var(--charcoal);text-decoration:none;font-size:16px}
+.subject-breadcrumbs a:hover{text-decoration:underline;text-underline-offset:3px}
+.high-subject-hero{padding:55px 24px!important}
+.high-subject-hero .subject-inner{max-width:1050px}
+.high-subject-access{max-width:760px}
+.subject-about,.course-features{
+ width:min(1040px,calc(100% - 32px));margin:24px auto 0
+}
+.subject-about{
+ padding:22px;text-align:center;background:var(--cream);border:1px solid var(--line);border-radius:7px
+}
+.subject-about h2,.course-features>h2{
+ margin:0 0 10px;font:400 33px/1.2 Cinzel,Georgia,serif;color:var(--charcoal);text-align:center
+}
+.subject-about p{max-width:850px;margin:0 auto;color:#35423e;font-size:16px}
+.feature-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+.course-feature{
+ min-height:210px;padding:22px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;
+ background:var(--khaki);border:1px solid var(--line);color:var(--charcoal)
+}
+.course-feature h3{margin:0 0 9px;font:400 24px/1.25 Cinzel,Georgia,serif}
+.course-feature p{margin:0 0 14px;max-width:440px;font-size:16px}
+.course-feature button,.feature-dialog :is(a,button){
+ min-height:44px;padding:9px 18px;border:1px solid var(--charcoal);border-radius:7px;
+ font:400 16px/1.2 Nunito,"Brandon Grotesque",Arial,sans-serif;text-decoration:none;cursor:pointer
+}
+.course-feature button{margin-top:auto;min-width:150px;background:var(--charcoal);color:var(--cream)}
+.feature-dialog{
+ width:min(650px,calc(100vw - 28px));padding:0;border:1px solid var(--charcoal);background:var(--cream);color:var(--charcoal)
+}
+.feature-dialog::backdrop{background:rgba(20,28,28,.58)}
+.feature-dialog-inner{padding:24px;text-align:center}
+.feature-dialog h2{margin:0 0 10px;font:400 33px/1.2 Cinzel,Georgia,serif}
+.feature-dialog p{font-size:16px}
+.feature-dialog-actions{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;margin-top:18px}
+.feature-dialog a{background:var(--charcoal);color:var(--cream)}
+.feature-dialog button{background:var(--cream);color:var(--charcoal)}
+footer{
+ margin-top:33px;padding:24px 18px!important;background:var(--charcoal)!important;color:var(--cream)!important;
+ text-align:center!important;font-size:14px!important;border-radius:0!important
+}
+#vnvClassToolsToggle{min-height:44px!important;border-radius:7px!important;font-size:16px!important}
+#vnvEcosystemUtilityDock>a,#vnvEcosystemUtilityDock>button{min-height:44px!important;border-radius:7px!important;font-size:16px!important}
+@media(max-width:720px){
+ .feature-grid,.high-subject-access{grid-template-columns:1fr!important}
+ .high-subject-hero{padding:44px 18px!important}
+}
+@media print{
+ #vnv333NetworkTicker,#vnvTickerAutoPopulate,#vnvHeaderAutoPopulate,#vnvClassToolsToolbar,#vnvEcosystemUtilityDock{display:none!important}
+ .subject-breadcrumbs,.high-subject-access{display:none!important}
+}
+</style>
 </head>
 <body data-khae-hall-landing="true" data-high-subject-shell="true">
 <main>
-<section class="high-subject-hero"><div class="subject-inner"><p class="subject-academy">Khaemenes Academy</p><h1>Social Studies</h1><p class="subject-descriptor">History · Geography · Civics · Government · Law · Economics</p><p class="subject-lead">A four-year honors pathway designed to teach students how to investigate the human past and present through evidence, context, comparison, geography, systems thinking, and responsible argument.</p><nav class="high-subject-access"><a href="../../#student-portal">Learner Profile</a><a href="https://vervenveda.com/Khaemenes_Academy.github.io/family/">Parent Profile</a><a href="https://vervenveda.com/Khaemenes_Academy.github.io/family/enroll/">Enrollment</a></nav></div></section>
-<section class="grid">
-<article class="card full"><div class="grade">Khaemenes Academy Original Tools</div><h2>Social Studies Visual Studio</h2><p>Explore an original vector atlas, construct historical timelines, create evidence-based graphs, and analyze primary documents. Runs locally without third-party educational platforms. Student work is printable and can be exported as JSON.</p><div class="actions"><a class="button" href="tools/visual-studio.html">Open Original Visual Studio</a><a class="button" href="games/high-school-monte-carlo-trivia.html">Play High School Monte Carlo Trivia</a><a class="button secondary" href="grade-09/resources/historical-systems-lab.html">Historical Systems Lab</a><a class="button secondary" href="grade-09/resources/media-verification-lab.html">Media Verification Lab</a><a class="button secondary" href="grade-11/resources/data-model-lab.html">Economics Data Lab</a></div></article>
-<article class="card"><div class="grade">Grade 9 · Foundations</div><h2>Global Studies Honors</h2><p>World history from early human societies through the modern world, integrated with geography, economics, comparative government, human rights, media literacy, historical systems, and a civic capstone.</p><div class="meta"><span>36-week core</span><span>Readiness Gateway</span><span>80% mastery</span><span>Systems Lab</span></div><div class="actions"><a class="button" href="grade-09/index.html">Enter Grade 9</a><a class="button secondary" href="grade-09/docs/CURRICULUM_MAP.md">Curriculum Map</a></div></article>
-<article class="card"><div class="grade">Grade 10 · United States</div><h2>United States History Honors</h2><p>Indigenous America, colonization, founding, constitutional development, expansion, Reconstruction, industrialization, world wars, civil rights, the Cold War, and contemporary constitutional challenges.</p><div class="meta"><span>36-week pathway</span><span>Historical reasoning</span><span>80% mastery</span><span>Research</span></div><div class="actions"><a class="button" href="grade-10/index.html">Enter Grade 10</a><a class="button secondary" href="grade-10/docs/CURRICULUM_MAP.md">Curriculum Map</a></div></article>
-<article class="card"><div class="grade">Grade 11 · Civic Systems</div><h2>Government, Law &amp; Economics Honors</h2><p>Constitutional government, civil rights, law, institutions, economics, public policy, media verification, and personal financial literacy as a companion pathway.</p><div class="meta"><span>Government</span><span>Law</span><span>Economics</span><span>Financial literacy</span></div><div class="actions"><a class="button" href="grade-11/index.html">Enter Grade 11</a><a class="button secondary" href="grade-11/personal-finance/index.html">Personal Finance</a><a class="button secondary" href="grade-11/docs/CURRICULUM_MAP.md">Curriculum Map</a></div></article>
-<article class="card"><div class="grade">Grade 12 · Senior Synthesis</div><h2>Global Politics, International Relations &amp; Senior Research Honors</h2><p>Comparative politics, international relations, international law, human rights, global challenges, ethical research, public communication, a senior thesis, and oral defense.</p><div class="meta"><span>Senior capstone</span><span>Research thesis</span><span>Oral defense</span><span>Graduation mastery</span></div><div class="actions"><a class="button" href="grade-12/index.html">Enter Grade 12</a><a class="button secondary" href="grade-12/docs/CURRICULUM_MAP.md">Curriculum Map</a><a class="button secondary" href="grade-12/docs/GRADUATION_REQUIREMENTS.md">Graduation Gates</a></div></article>
-<article class="card full"><h2>How We Study History</h2><p>Students are taught to distinguish evidence from interpretation, ideals from implementation, correlation from causation, and similarity from equivalence. Difficult histories are not erased because they are uncomfortable. Claims are examined through identifiable sources, chronology, geography, competing perspectives, uncertainty, and corroboration.</p><p>Across the four years, the pathway moves from foundational historical inquiry to independent research and public-facing argument. Mastery is demonstrated through knowledge, evidence analysis, geographic and quantitative reasoning, comparison, causation, and written argument—not vocabulary recognition alone.</p></article>
+<nav class="subject-breadcrumbs" aria-label="Breadcrumb">
+ <a href="../../">High School</a><span aria-hidden="true">›</span><span>Social Studies</span>
+</nav>
+
+<section class="high-subject-hero">
+ <div class="subject-inner">
+  <p class="subject-academy">Khaemenes Academy</p>
+  <h1>Social Studies</h1>
+  <p class="subject-descriptor">History · Geography · Civics · Government · Law · Economics</p>
+  <p class="subject-lead">A four-year honors pathway for investigating the human past and present through evidence, context, geography, comparison, systems thinking, and responsible argument.</p>
+  <nav class="high-subject-access" aria-label="Academy access">
+   <a href="../../#student-portal">Learner Profile</a>
+   <a href="https://vervenveda.com/Khaemenes_Academy.github.io/family/">Parent Profile</a>
+   <a href="https://vervenveda.com/Khaemenes_Academy.github.io/family/enroll/">Enrollment</a>
+  </nav>
+ </div>
 </section>
-<section class="card" aria-labelledby="civic-replay-lab"><h2 id="civic-replay-lab">Civic Replay Lab · Grades 9–12</h2><p>Practice any of the 144 canonical weekly question banks with a fresh question order and independently shuffled answer choices. Ungraded, private and separate from Academy mastery assessments.</p><p><a href="tools/civic-replay-lab.html">Open the original Civic Replay Lab</a></p></section>
-<div class="note">The four grade-level doors above are the department's canonical student entry points. Electives and interdisciplinary studies have their own hall so the core pathway remains clear.</div>
+
+<section class="subject-about" aria-labelledby="social-studies-about">
+ <h2 id="social-studies-about">About</h2>
+ <p>Students progress from foundational global inquiry to United States history, constitutional government and economics, then senior comparative politics and independent research. Across all four years, claims must be supported by identifiable evidence, chronology, geography, corroboration, and appropriately qualified reasoning.</p>
+</section>
+
+<section class="course-features" aria-labelledby="social-studies-features">
+ <h2 id="social-studies-features">Course Features</h2>
+ <div class="feature-grid">
+  <article class="course-feature">
+   <h3>Grade 9 · Global Studies</h3>
+   <p>Foundations in world history, geography, economics, historical inquiry, source verification, systems thinking, and civic transfer.</p>
+   <button type="button" data-dialog="grade9Dialog">Explore</button>
+  </article>
+  <article class="course-feature">
+   <h3>Grade 10 · United States History</h3>
+   <p>United States history through primary sources, chronology, constitutional development, civic literacy, geography, and historical argument.</p>
+   <button type="button" data-dialog="grade10Dialog">Explore</button>
+  </article>
+  <article class="course-feature">
+   <h3>Grade 11 · Government, Law & Economics</h3>
+   <p>Constitutional government, law, economics, public policy, media verification, civic reasoning, and personal financial literacy.</p>
+   <button type="button" data-dialog="grade11Dialog">Explore</button>
+  </article>
+  <article class="course-feature">
+   <h3>Grade 12 · Global Politics & Research</h3>
+   <p>Comparative politics, international relations, international law, global challenges, ethical research, senior thesis, and oral defense.</p>
+   <button type="button" data-dialog="grade12Dialog">Explore</button>
+  </article>
+ </div>
+</section>
+
+<dialog class="feature-dialog" id="grade9Dialog">
+ <div class="feature-dialog-inner"><h2>Global Studies Honors</h2><p>36-week core · readiness gateway · 80% mastery · historical systems and media-verification labs.</p>
+ <div class="feature-dialog-actions"><a href="grade-09/">Enter Grade 9</a><a href="grade-09/docs/CURRICULUM_MAP.md">Curriculum Map</a><a href="tools/visual-studio.html">Visual Studio</a><button type="button" data-close>Close</button></div></div>
+</dialog>
+<dialog class="feature-dialog" id="grade10Dialog">
+ <div class="feature-dialog-inner"><h2>United States History Honors</h2><p>36-week pathway · historical reasoning · constitutional development · research and evidence-based argument.</p>
+ <div class="feature-dialog-actions"><a href="grade-10/">Enter Grade 10</a><a href="grade-10/docs/CURRICULUM_MAP.md">Curriculum Map</a><button type="button" data-close>Close</button></div></div>
+</dialog>
+<dialog class="feature-dialog" id="grade11Dialog">
+ <div class="feature-dialog-inner"><h2>Government, Law & Economics Honors</h2><p>Government · law · economics · public policy · civic verification · companion personal-finance pathway.</p>
+ <div class="feature-dialog-actions"><a href="grade-11/">Enter Grade 11</a><a href="grade-11/personal-finance/">Personal Finance</a><a href="grade-11/docs/CURRICULUM_MAP.md">Curriculum Map</a><button type="button" data-close>Close</button></div></div>
+</dialog>
+<dialog class="feature-dialog" id="grade12Dialog">
+ <div class="feature-dialog-inner"><h2>Global Politics, International Relations & Senior Research Honors</h2><p>Senior capstone · comparative politics · research thesis · simulations · oral defense · cumulative graduation mastery.</p>
+ <div class="feature-dialog-actions"><a href="grade-12/">Enter Grade 12</a><a href="grade-12/docs/CURRICULUM_MAP.md">Curriculum Map</a><a href="grade-12/docs/GRADUATION_REQUIREMENTS.md">Graduation Gates</a><button type="button" data-close>Close</button></div></div>
+</dialog>
+
 <footer>Khaemenes High · Social Studies Department · 2026</footer>
 </main>
+
+<script>
+document.querySelectorAll("[data-dialog]").forEach(button=>{
+ const dialog=document.getElementById(button.dataset.dialog);
+ button.addEventListener("click",()=>dialog?.showModal());
+});
+document.querySelectorAll(".feature-dialog [data-close]").forEach(button=>button.addEventListener("click",()=>button.closest("dialog")?.close()));
+document.querySelectorAll(".feature-dialog").forEach(dialog=>dialog.addEventListener("click",event=>{if(event.target===dialog)dialog.close()}));
+</script>
 <script src="https://vervenveda.com/assets/vnv-header-autopopulate.js"></script>
-<script>VNV_HEADER.mount({"title":"Khaemenes Academy","subtitle":"High School Social Studies","icon":"K","home":"https://vervenveda.com/Khaemenes_Academy.github.io/","actions":[]});</script>
+<script>VNV_HEADER.mount({"title":"Khaemenes Academy","subtitle":"High School · Social Studies","icon":"K","home":"https://vervenveda.com/Khaemenes_High.github.io/","actions":[]});</script>
 <script src="../../assets/high-school-subject-landing-class-tools-v1.js" defer data-high-subject-tools="v1"></script>
 <script src="https://vervenveda.com/assets/khaemenes-campus-phrases.js" defer></script>
 <script src="https://vervenveda.com/assets/khaemenes-interlingual-core.js" defer></script>
 <script src="https://vervenveda.com/Khaemenes_Linguistics.github.io/assets/khaemenes-translator-loader.js?v=1.1.1" defer></script>
-<script src="https://vervenveda.com/assets/vnv-language.js?v=20261108-cream-buttons" defer data-official-vnv-language="true"></script>
+<script src="https://vervenveda.com/assets/vnv-language.js?v=20261121-half-height" defer data-official-vnv-language="true"></script>
 <script src="https://vervenveda.com/assets/vnv-class-tools-toolbar.js?v=1.6.1" defer data-vnv-class-tools="high-subject-landing"></script>
 <script src="https://vervenveda.com/assets/vnv-333-ticker.js"></script>
 <script src="https://vervenveda.com/assets/vnv-ticker-autopopulate.js" data-vnv-ticker-autopopulate></script>
 <script>VNV_TICKER.autoPopulate({label:"High School Social Studies",max:14});</script>
 <script src="https://vervenveda.com/assets/vnv-ecosystem-toolbar.js"></script>
-</body></html>
+</body>
+</html>
