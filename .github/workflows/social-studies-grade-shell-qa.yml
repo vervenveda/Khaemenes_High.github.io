@@ -3,6 +3,7 @@ name: Social Studies Grade Door Shell QA
 on:
   pull_request:
     paths:
+      - 'courses/social-studies/index.html'
       - 'courses/social-studies/grade-*/index.html'
       - 'courses/social-studies/assets/social-studies-grade-shell-v1.js'
       - 'assets/high-school-subject-landing-shell-v1.css'
@@ -10,6 +11,7 @@ on:
   push:
     branches: [ main ]
     paths:
+      - 'courses/social-studies/index.html'
       - 'courses/social-studies/grade-*/index.html'
       - 'courses/social-studies/assets/social-studies-grade-shell-v1.js'
       - 'assets/high-school-subject-landing-shell-v1.css'
@@ -48,22 +50,71 @@ jobs:
               if 'id="khaemenes-typography-standard"' in text:
                   failures.append(f"Grade {grade}: obsolete 14px typography injection still present")
 
+          department=Path("courses/social-studies/index.html").read_text(encoding="utf-8")
+          department_required=[
+              "vnv-333-ticker.js",
+              "vnv-ticker-autopopulate.js",
+              "vnv-header-autopopulate.js",
+              "vnv-class-tools-toolbar.js",
+              "vnv-ecosystem-toolbar.js",
+              "khaemenes-campus-phrases.js",
+              "khaemenes-interlingual-core.js",
+              "khaemenes-translator-loader.js",
+              "vnv-language.js",
+              'class="subject-breadcrumbs"',
+              'class="subject-about"',
+              'class="feature-grid"',
+              "Learner Profile",
+              "Parent Profile",
+              "Enrollment",
+              "Khaemenes Academy",
+              "<h1>Social Studies</h1>",
+              "Course Features"
+          ]
+          for marker in department_required:
+              if marker not in department:
+                  failures.append(f"Department landing missing canonical contract marker: {marker}")
+          if department.count('class="course-feature"') != 4:
+              failures.append("Department landing must retain exactly four symmetrical course-feature cards")
+          if 'id="khaemenes-typography-standard"' in department:
+              failures.append("Department landing: obsolete typography injector returned")
+          if "high-school-class-tools-universal-v1.js" in department:
+              failures.append("Department landing: local class tools implementation returned")
+
           shell=Path("courses/social-studies/assets/social-studies-grade-shell-v1.js").read_text(encoding="utf-8")
           for marker in [
               "vnv-333-ticker.js",
               "vnv-ticker-autopopulate.js",
               "vnv-header-autopopulate.js",
               "vnv-language.js",
+              "vnv-class-tools-toolbar.js",
               "vnv-ecosystem-toolbar.js",
+              "khaemenes-campus-phrases.js",
+              "khaemenes-interlingual-core.js",
+              "khaemenes-translator-loader.js",
+              "high-subject-breadcrumbs",
+              "ss-shell-intro",
+              "ss-feature-grid",
               "Learner Profile",
               "Parent Profile",
               "Enrollment",
               'font:400 33px',
               '66px',
-              'font:400 24px'
+              'font:400 24px',
+              'border-radius:7px'
           ]:
               if marker not in shell:
                   failures.append(f"Shared grade shell missing contract marker: {marker}")
+
+          if "high-school-class-tools-universal-v1.js" in shell:
+              failures.append("Shared grade shell must not load the repository-local class tools implementation")
+
+          for grade in ("09","10","11","12"):
+              text=Path(f"courses/social-studies/grade-{grade}/index.html").read_text(encoding="utf-8")
+              if "high-school-class-tools-universal-v1.js" in text:
+                  failures.append(f"Grade {grade}: local class tools implementation still loaded")
+              if "../../../assets/vnv-language.js" in text:
+                  failures.append(f"Grade {grade}: repository-local language loader still loaded")
 
           for forbidden in ["window.localStorage","localStorage.","window.sessionStorage","sessionStorage.","indexedDB.open(","fetch(","XMLHttpRequest(","document.cookie"]:
               if forbidden in shell:
