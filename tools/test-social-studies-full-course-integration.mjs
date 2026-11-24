@@ -1,68 +1,83 @@
 // Khaemenes Social Studies 9–12 full-course source integrity.
-// 36 weeks × 4 grades; preserves the real Week 27 v2 source and redirects.
+// Canonical curriculum lives only in weeks/week-XX. Grade 9–10 direct week-XX paths are compatibility redirects.
 // Source checks only: browser, CI and learner activity need separate acceptance.
 import assert from "node:assert/strict";
 import fs from "node:fs";
+import path from "node:path";
 const read=p=>fs.readFileSync(p,"utf8");
 const engine=read("courses/shared/social-studies-lesson-engine-v0.1.js");
 const standardTag="social-studies-lesson-engine-v0.1.js?v=20261119-social-studies-complete-v5";
 const week27Tag="social-studies-lesson-engine-v0.1.js?v=20261120-social-studies-week27-v6";
 const weekdays=["Monday","Tuesday","Wednesday","Thursday","Friday"];
-const expectedRedirects=new Set(["09:01","09:06","09:07","09:09","09:10","09:27"]);
-const failures=[],missing=[],redirects=[],covered=new Set(),examWeeks=[];
+const failures=[],missing=[],compatibilityRedirects=[],canonicalRedirects=[],covered=new Set(),examWeeks=[];
 let integratedFiles=0,weekdayHeadings=0;
-const checkPacket=(path,grade,week)=>{
- const html=read(path);
+
+const checkPacket=(packetPath,grade,week)=>{
+ const html=read(packetPath);
  integratedFiles++;
- if(!html.includes('data-social-studies-engine="'+grade+'"'))failures.push("Missing grade opt-in: "+path);
- if(!html.includes(week===27&&grade===9?week27Tag:standardTag))failures.push("Missing approved engine source URL: "+path);
- if(!html.includes("high-school-formative-evidence-v1.js")&&!(grade===9&&path.includes("/grade-09/week-")))failures.push("Original formative-evidence owner absent: "+path);
- if(grade===9&&week===1&&path.includes("/weeks/")){
+ if(!html.includes('data-social-studies-engine="'+grade+'"'))failures.push("Missing grade opt-in: "+packetPath);
+ if(!html.includes(week===27&&grade===9?week27Tag:standardTag))failures.push("Missing approved engine source URL: "+packetPath);
+ if(!html.includes("high-school-formative-evidence-v1.js"))failures.push("Original formative-evidence owner absent: "+packetPath);
+ if(grade===9&&week===1){
   if(!html.includes("data-ss9-require-entry"))failures.push("Grade 09 Week 01 admission guard absent");
   for(let day=1;day<=5;day++)for(const phase of ["read","practice","write","check"]){
    if(!html.includes('data-day="'+day+'" data-phase="'+phase+'"'))failures.push("Grade 09 Week 01 native "+day+"/"+phase+" missing");
   }
  }else{
   const heads=[...html.matchAll(/<h3\b[^>]*>([^<]+)<\/h3>/gi)]
-     .map(m=>m[1].trim()).filter(t=>weekdays.some(d=>t.startsWith(d+" · ")));
+    .map(m=>m[1].trim()).filter(t=>weekdays.some(d=>t.startsWith(d+" · ")));
   if(heads.length!==5||heads.some((h,i)=>!h.startsWith(weekdays[i]+" · ")))
-   failures.push("Five native weekdays not correctly ordered: "+path);
+    failures.push("Five native weekdays not correctly ordered: "+packetPath);
   weekdayHeadings+=heads.length;
  }
- if(week===18||week===36)examWeeks.push(path);
+ if(week===18||week===36)examWeeks.push(packetPath);
 };
+
 for(let grade=9;grade<=12;grade++)for(let week=1;week<=36;week++){
  const g=String(grade).padStart(2,"0"),w=String(week).padStart(2,"0");
  const base="courses/social-studies/grade-"+g+"/";
- const direct=base+"week-"+w+"/student-packet.html";
- const nested=base+"weeks/week-"+w+"/student-packet.html";
- const routes=grade===9?[nested,direct]:grade===10?[direct,nested]:[nested];
- let found=false;
- for(const path of routes){
-  if(!fs.existsSync(path)){missing.push(path);failures.push("Missing standard doorway: "+path);continue}
-  const html=read(path);
-  const isGrade9Redirect=grade===9&&
-   /<meta[^>]+http-equiv=["']refresh["']/i.test(html)&&
-   (week===27?html.includes("student-packet-v2.html"):html.includes("../weeks/week-"+w+"/student-packet.html"));
-  if(isGrade9Redirect){
-   redirects.push(g+":"+w);
-   if(!expectedRedirects.has(g+":"+w))failures.push("Unexpected redirected route: "+path);
-   if(week===27){
-     const destination=path===nested?"student-packet-v2.html":"../weeks/week-27/student-packet-v2.html";
-     if(!html.includes(destination))failures.push("Incorrect Week 27 redirect: "+path);
-   }
-  }else{found=true;checkPacket(path,grade,week)}
+ const canonical=base+"weeks/week-"+w+"/student-packet.html";
+
+ if(!fs.existsSync(canonical)){
+  missing.push(canonical);failures.push("Missing canonical weekly packet: "+canonical);continue;
  }
+
+ if(grade===9||grade===10){
+  const legacy=base+"week-"+w+"/student-packet.html";
+  if(!fs.existsSync(legacy)){
+   missing.push(legacy);failures.push("Missing compatibility weekly doorway: "+legacy);
+  }else{
+   const legacyHtml=read(legacy),target="../weeks/week-"+w+"/student-packet.html";
+   if(!legacyHtml.includes("KHAEMENES_WEEK_COMPAT_REDIRECT"))failures.push("Legacy weekly doorway is executable instead of compatibility-only: "+legacy);
+   if(!legacyHtml.includes(target))failures.push("Legacy weekly redirect target drift: "+legacy);
+   compatibilityRedirects.push(g+":"+w);
+  }
+ }
+
+ let authoritative=canonical;
+ const canonicalHtml=read(canonical);
+ const refresh=canonicalHtml.match(/<meta[^>]+http-equiv=["']refresh["'][^>]+content=["'][^"']*url=([^"']+)["'][^>]*>/i);
+ if(refresh){
+  const destination=path.posix.normalize(path.posix.join(path.posix.dirname(canonical),refresh[1].trim()));
+  if(!fs.existsSync(destination)){
+   missing.push(destination);failures.push("Canonical redirect target missing: "+canonical+" -> "+destination);
+  }else{
+   canonicalRedirects.push(g+":"+w);
+   authoritative=destination;
+  }
+ }
+
+ if(fs.existsSync(authoritative)){
+  checkPacket(authoritative,grade,week);
+  covered.add(g+":"+w);
+ }
+
  if(grade===9&&week===27){
   const original=base+"weeks/week-27/student-packet-v2.html";
-  if(!fs.existsSync(original)){missing.push(original);failures.push("Actual Week 27 original v2 missing")}
-  else{
-   const html=read(original);
-   for(const text of ["Capitalism, Socialism, Labor, and Reform","Five-Day Investigation","Economic Lab Record","Assessment v2.0"]){
-    if(!html.includes(text))failures.push("Authoritative Week 27 curriculum missing: "+text);
-   }
-   checkPacket(original,grade,week);
-   found=true;
+  if(authoritative!==original)failures.push("Grade 09 Week 27 canonical redirect must resolve to student-packet-v2.html");
+  const html=read(original);
+  for(const text of ["Capitalism, Socialism, Labor, and Reform","Five-Day Investigation","Economic Lab Record","Assessment v2.0"]){
+   if(!html.includes(text))failures.push("Authoritative Week 27 curriculum missing: "+text);
   }
   const app=read(base+"app.js"),data=read(base+"course-data.js");
   if(!app.includes("week===27?'weeks/week-27/student-packet-v2.html'"))
@@ -70,8 +85,8 @@ for(let grade=9;grade<=12;grade++)for(let week=1;week<=36;week++){
   if(!data.includes('"week":27,"title":"Capitalism, Socialism, Labor, and Reform"'))
    failures.push("Original Grade 9 Week 27 curriculum record absent");
  }
- if(found)covered.add(g+":"+w);
 }
+
 for(const safeguard of [
  "const week02=weekNumber===2",
  "week03=weekNumber===3",
@@ -80,16 +95,18 @@ for(const safeguard of [
  'if(targets&&(!targets.length||targets.some(x=>!x)||new Set(targets).size!==5))return false',
  'if(grade==="9"||laterWeek)return heading||null'
 ])if(!engine.includes(safeguard))failures.push("Engine safeguard absent: "+safeguard);
+
 for(const forbidden of ["localStorage","sessionStorage","indexedDB","fetch(","XMLHttpRequest","document.cookie"])
  if(engine.includes(forbidden))failures.push("Engine persistence is forbidden: "+forbidden);
-assert.equal(missing.length,0,"All standard links and original v2 packet must exist");
-assert.equal(covered.size,144,"Expected full 144/144 grade-week coverage");
-assert.equal(integratedFiles,210,"Expected 210 genuine instructional HTML packet files");
-assert.equal(weekdayHeadings,1045,"Expected 209 genuine five-day packet headings, plus separate Grade 09 Week 01 phase player");
-assert.equal(redirects.length,7,"Expected 7 redirect-only compatibility pages");
-assert.deepEqual(new Set(redirects),expectedRedirects,"Unexpected redirect source");
-assert.equal(examWeeks.length,12,"Exam and capstone packet paths must be preserved");
+
+assert.equal(missing.length,0,"All canonical packets, compatibility doorways and canonical redirect targets must exist");
+assert.equal(covered.size,144,"Expected full 144/144 grade-week canonical coverage");
+assert.equal(integratedFiles,144,"Expected exactly one authoritative instructional packet per grade-week");
+assert.equal(weekdayHeadings,715,"Expected 143 five-day canonical packets plus the Grade 09 Week 01 phase player");
+assert.equal(compatibilityRedirects.length,72,"Expected 72 Grade 9–10 historical compatibility doorways");
+assert.deepEqual(new Set(canonicalRedirects),new Set(["09:27"]),"Only Grade 09 Week 27 may redirect inside the canonical weekly tree");
+assert.equal(examWeeks.length,8,"Expected one Week 18 and Week 36 checkpoint per grade");
 assert.deepEqual(failures,[],"Full-course source inspection found failures");
-console.log("PASS SOURCE: 144/144 grade-weeks, 210 original packets, 1045 native weekday headings, 7 redirect pages.");
-console.log("Grade 09 Week 27: AUTHENTIC student-packet-v2.html; both standard links redirect to v2.");
+console.log("PASS SOURCE: 144/144 canonical grade-weeks, 72 historical compatibility redirects, 1 canonical v2 redirect.");
+console.log("Grade 09 Week 27: canonical student-packet.html redirects to AUTHENTIC student-packet-v2.html.");
 console.log("HOLD: deployed browser, learner session, print, tablet, and successful GitHub Actions job must still be independently verified.");
