@@ -1,0 +1,103 @@
+name: Social Studies Assessment Hardening
+
+on:
+  pull_request:
+    paths:
+      - "courses/social-studies/**"
+      - ".github/workflows/social-studies-assessment-hardening.yml"
+  push:
+    branches: [main]
+    paths:
+      - "courses/social-studies/**"
+      - ".github/workflows/social-studies-assessment-hardening.yml"
+
+jobs:
+  assessment-contract:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Verify Social Studies assessment parity
+        shell: python
+        run: |
+          from pathlib import Path
+          import json, sys
+
+          failures = []
+
+          # Grade 10: 36 unique weekly banks, no legacy generic reasoning stem,
+          # and compatibility quiz JSON must remain byte-identical.
+          data = json.loads(Path("courses/social-studies/grade-10/data/course-data.json").read_text(encoding="utf-8"))
+          questions = [q for w in data["weeks"] for q in w["quiz"]["questions"]]
+          prompts = [q["prompt"].strip() for q in questions]
+          legacy = "Which response demonstrates the strongest geographic or quantitative reasoning?"
+          if len(questions) != 360:
+              failures.append(f"Grade 10 expected 360 weekly objective items; found {len(questions)}")
+          if len(set(prompts)) != len(prompts):
+              failures.append("Grade 10 contains duplicate full prompt strings.")
+          if any(legacy in p for p in prompts):
+              failures.append("Grade 10 still contains the repeated generic geographic/quantitative reasoning stem.")
+          for week in range(1, 37):
+              ww = f"{week:02d}"
+              canonical = Path(f"courses/social-studies/grade-10/weeks/week-{ww}/quiz.json")
+              legacy_path = Path(f"courses/social-studies/grade-10/week-{ww}/quiz.json")
+              if canonical.read_bytes() != legacy_path.read_bytes():
+                  failures.append(f"Grade 10 Week {ww} compatibility quiz drift.")
+
+          # All active weekly engines must use persisted Monte Carlo sessions.
+          html_checks = {
+              "courses/social-studies/grade-09/app.html": [
+                  "monte-carlo-assessment-v1.js",
+                  "high-school-assessment-adapter-v1.js",
+              ],
+              "courses/social-studies/grade-10/index.html": [
+                  "monte-carlo-assessment-v1.js",
+                  "high-school-assessment-adapter-v1.js",
+              ],
+              "courses/social-studies/grade-11/index.html": [
+                  "monte-carlo-assessment-v1.js",
+                  "high-school-assessment-adapter-v1.js",
+              ],
+              "courses/social-studies/grade-11/personal-finance/index.html": [
+                  "monte-carlo-assessment-v1.js",
+                  "high-school-assessment-adapter-v1.js",
+              ],
+              "courses/social-studies/grade-12/index.html": [
+                  "monte-carlo-assessment-v1.js",
+                  "high-school-assessment-adapter-v1.js",
+              ],
+          }
+          for file_name, markers in html_checks.items():
+              text = Path(file_name).read_text(encoding="utf-8")
+              for marker in markers:
+                  if marker not in text:
+                      failures.append(f"{file_name}: missing {marker}")
+
+          js_checks = {
+              "courses/social-studies/grade-09/app.js",
+              "courses/social-studies/grade-10/app.js",
+              "courses/social-studies/grade-11/app.js",
+              "courses/social-studies/grade-11/personal-finance/app.js",
+              "courses/social-studies/grade-12/app.js",
+          }
+          for file_name in js_checks:
+              text = Path(file_name).read_text(encoding="utf-8")
+              if "KhaemenesHighAssessmentAdapter" not in text:
+                  failures.append(f"{file_name}: weekly engine is not calling the shared assessment adapter.")
+              if "attemptHistory" not in text:
+                  failures.append(f"{file_name}: immutable-style attempt history marker is missing.")
+
+          # Constructed responses remain human-reviewed evidence, not auto-certified grades.
+          for file_name in [
+              "courses/social-studies/grade-09/app.js",
+              "courses/social-studies/grade-10/app.js",
+              "courses/social-studies/grade-11/personal-finance/app.js",
+              "courses/social-studies/grade-12/app.js",
+          ]:
+              text = Path(file_name).read_text(encoding="utf-8")
+              if "evaluatorReviewRequired" not in text and "constructedResponsePendingReview" not in text:
+                  failures.append(f"{file_name}: evaluator-review marker missing from quiz attempts.")
+
+          if failures:
+              print("\n".join(f"FAIL: {item}" for item in failures))
+              sys.exit(1)
+          print("PASS: Social Studies weekly assessments use the shared randomized-session contract and Grade 10 generic item repetition is removed.")
