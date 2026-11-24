@@ -171,7 +171,7 @@ function reportsHTML(){
  return `<div class="grid"><section class="card col12" id="printReport"><div class="reportHeader"><div class="eyebrow" style="color:#775e2b">Khaemenes High</div><h2>Grade 11 Personal Financial Literacy & Money Management Honors Progress Report</h2><p><strong>Student:</strong> ${esc(s.name)} · <strong>Date:</strong> ${new Date().toLocaleDateString()}</p></div>
  <div class="tableWrap"><table><tbody><tr><th>Daily lessons</th><td>${ls.done}/90 (${ls.percent}%)</td></tr><tr><th>Assignments submitted</th><td>${as.submitted}/54 (${as.percent}%)</td></tr><tr><th>Weekly quizzes</th><td>${qs.completed}/18 · average ${qs.avg}%</td></tr><tr><th>Estimated completion</th><td>${pct}%</td></tr><tr><th>Midterm best</th><td>${s.exams?.midterm?.bestPercent??s.exams?.midterm?.percent??'Not recorded'}${(s.exams?.midterm?.bestPercent??s.exams?.midterm?.percent)!==undefined?'%':''}</td></tr><tr><th>Final best</th><td>${s.exams?.final?.bestPercent??s.exams?.final?.percent??'Not recorded'}${(s.exams?.final?.bestPercent??s.exams?.final?.percent)!==undefined?'%':''}</td></tr><tr><th>Course mastery</th><td>${courseMastered(s)?'Complete':'In progress'}</td></tr></tbody></table></div>
  <h3>Weekly Record</h3><div class="tableWrap"><table><thead><tr><th>Week</th><th>Lessons</th><th>Assignments</th><th>Quiz best</th></tr></thead><tbody>${COURSE.weeks.map(w=>`<tr><td>${w.week}. ${esc(w.title)}</td><td>${(s.completedLessons?.[w.week]||[]).filter(Boolean).length}/5</td><td>${w.assignments.filter(a=>s.assignments?.[`${w.week}-${a.number}`]?.submitted).length}/3</td><td>${s.quizzes?.[w.week]?.bestPercent!==undefined?s.quizzes[w.week].bestPercent+'%':'—'}</td></tr>`).join('')}</tbody></table></div></section>
- <section class="card col12 noPrint"><div class="actions"><button onclick="window.print()">Print Report</button><button class="secondary" id="exportBtn">Export Student Backup</button><label class="button ghost" style="cursor:pointer">Import Backup<input type="file" id="importFile" accept=".json" hidden></label></div></section></div>`;
+ <section class="card col12 noPrint"><div class="actions"><button onclick="window.print()">Print Report</button><button class="secondary" id="exportBtn">Export Student Backup</button><button class="secondary" id="exportAcademicRecord">Export Academic Record</button><label class="button ghost" style="cursor:pointer">Import Backup<input type="file" id="importFile" accept=".json" hidden></label></div></section></div>`;
 }
 function standardsHTML(){
  return `<div class="grid"><section class="card col12"><h2>Standards and Research Basis</h2><p>The portal uses a standards-overlay approach: one coherent universal course, with Florida content requirements, C3 inquiry practices, grades 11–12 disciplinary literacy, AP-style honors skills, and an international evidence-analysis overlay.</p><div class="tableWrap"><table><thead><tr><th>Framework</th><th>Role</th></tr></thead><tbody>${COURSE.frameworks.map(f=>`<tr><td><a href="${esc(f.url)}" target="_blank" rel="noopener">${esc(f.name)}</a></td><td>${esc(frameworkRole(f.name))}</td></tr>`).join('')}</tbody></table></div></section>
@@ -219,6 +219,17 @@ function scoreQuiz(doScore){
  s.quizzes[w.week]={...prev,answers,shortResponse,shortResponseDraft:shortResponse,score,percent,bestScore:Math.max(prev.bestScore||0,score),bestPercent:Math.max(prev.bestPercent||0,percent),attempts:(prev.attempts||0)+1,completed:true,attemptHistory:[...(prev.attemptHistory||[]),attempt]};
  saveDB();highAssessmentComplete(draw,{score:percent,mastered:percent>=80,reviewSkills,constructedResponsePendingReview:true,learnerId:String(s.id)});render();
 }
+function exportAcademicRecord(){
+ const s=activeStudent();if(!s)return alert('Select a learner before exporting the academic record.');
+ const api=window.KhaemenesSocialStudiesAcademicRecord;if(!api)return alert('The academic record bridge is unavailable.');
+ const record=api.buildFromCourse({
+  courseData:COURSE,student:s,grade:'11',courseId:'social-studies-11-personal-finance',courseTitle:META.courseTitle||document.title,
+  credit:META.credits??META.credit,masteryThreshold:80,lessonsPerWeek:5,weekMastered:weekMastered,
+  majorAssessments:s.exams||{},courseMastered:courseMastered(s),officialCreditIssued:false,
+  evaluatorStatus:null
+ });
+ api.download(record,'grade11-personal-finance-academic-record.json');
+}
 function exportBackup(){
  const s=activeStudent();if(!s)return;
  const blob=new Blob([JSON.stringify({course:META.courseCode,version:1,student:s},null,2)],{type:'application/json'});
@@ -234,6 +245,7 @@ function applySettings(){
  document.documentElement.classList.toggle('light',db.settings.theme==='light');
 }
 function init(){
+  document.addEventListener('click',e=>{if(e.target?.id==='exportAcademicRecord')exportAcademicRecord();},{capture:false});
  renderStudentControls();renderSidebarWeeks();render();
  $('#studentSelect').onchange=e=>{db.activeId=e.target.value||null;saveDB();renderSidebarWeeks();render()};
  $('#addStudentBtn').onclick=()=>{const n=$('#studentName').value.trim();if(!n)return;createStudent(n);$('#studentName').value='';renderStudentControls();renderSidebarWeeks();render()};
