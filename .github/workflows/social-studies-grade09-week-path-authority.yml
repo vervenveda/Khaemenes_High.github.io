@@ -1,0 +1,85 @@
+name: Social Studies Grade 9 Weekly Path Authority
+
+on:
+  pull_request:
+    paths:
+      - 'courses/social-studies/grade-09/**'
+      - '.github/workflows/social-studies-grade09-week-path-authority.yml'
+  push:
+    branches: [ main ]
+    paths:
+      - 'courses/social-studies/grade-09/**'
+      - '.github/workflows/social-studies-grade09-week-path-authority.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  validate-week-path-authority:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Validate canonical and compatibility week trees
+        shell: python
+        run: |
+          from pathlib import Path
+          import sys
+
+          root = Path("courses/social-studies/grade-09")
+          failures = []
+
+          for week in range(1, 37):
+              w = f"{week:02d}"
+              canonical = root / "weeks" / f"week-{w}"
+              compat = root / f"week-{w}"
+
+              if not canonical.is_dir():
+                  failures.append(f"Week {w}: missing canonical directory {canonical}")
+                  continue
+              if not compat.is_dir():
+                  failures.append(f"Week {w}: missing compatibility directory {compat}")
+                  continue
+
+              c_quiz = canonical / "quiz.json"
+              m_quiz = compat / "quiz.json"
+              if not c_quiz.is_file() or not m_quiz.is_file():
+                  failures.append(f"Week {w}: quiz.json missing from canonical or compatibility tree")
+              elif c_quiz.read_bytes() != m_quiz.read_bytes():
+                  failures.append(f"Week {w}: compatibility quiz.json diverges from canonical quiz.json")
+
+              readme = compat / "README.md"
+              if not readme.is_file():
+                  failures.append(f"Week {w}: compatibility README.md missing")
+              else:
+                  text = readme.read_text(encoding="utf-8")
+                  expected = f"weeks/week-{w}/"
+                  if "Compatibility mirror" not in text or expected not in text or "Do not author curriculum here" not in text:
+                      failures.append(f"Week {w}: compatibility README no longer declares canonical authority")
+
+              for html in compat.glob("*.html"):
+                  text = html.read_text(encoding="utf-8")
+                  target = f"../weeks/week-{w}/"
+                  if "KHAEMENES_WEEK_COMPAT_REDIRECT" not in text:
+                      failures.append(f"Week {w}: {html.name} lost compatibility redirect marker")
+                  if target not in text:
+                      failures.append(f"Week {w}: {html.name} does not point into canonical weeks/week-{w}/")
+
+          canonical_27 = root / "weeks" / "week-27" / "student-packet.html"
+          v2_27 = root / "weeks" / "week-27" / "student-packet-v2.html"
+          if canonical_27.is_file():
+              text = canonical_27.read_text(encoding="utf-8")
+              if 'http-equiv="refresh"' in text or 'location.replace("student-packet-v2.html")' in text:
+                  failures.append("Week 27: canonical student-packet.html still redirects to a versioned packet")
+          else:
+              failures.append("Week 27: canonical student-packet.html missing")
+
+          if v2_27.is_file():
+              text = v2_27.read_text(encoding="utf-8")
+              if "KHAEMENES_VERSION_COMPAT_REDIRECT" not in text or "student-packet.html" not in text:
+                  failures.append("Week 27: versioned packet is not a compatibility redirect to canonical student-packet.html")
+
+          if failures:
+              print("\n".join(f"FAIL: {item}" for item in failures))
+              sys.exit(1)
+
+          print("PASS: Grade 9 canonical weeks own curriculum; compatibility paths remain redirect-only and quiz-identical.")
