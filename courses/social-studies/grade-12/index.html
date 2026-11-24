@@ -84,59 +84,6 @@ table{width:100%;border-collapse:collapse}th,td{border-bottom:1px solid var(--li
 @media print{body{background:#fff;color:#111}.sidebar,.tabs,.actions,button,input,select,textarea{display:none!important}.main{max-width:none;padding:0}.hero,.card{background:#fff;color:#111;box-shadow:none;border:1px solid #999}.hero p,.card p,td{color:#111}.card h3,.card h4,th{color:#111}}
 </style>
 <link rel="stylesheet" href="../../../assets/vervenveda-parchment.css" data-vervenveda-parchment>
-<style id="khaemenes-typography-standard">
-/* Khaemenes High presentation typography · 55 / 33 / 24 / 14 px.
-   All public pages receive this local, embedded policy for offline use.
-   Only presentation changes. Existing grids, gates, learner records, assessments and STOS are preserved.
-   Font names are optional installed system fonts; no downloads or third-party font services. */
-html:root:root body {
-  font-family: "Brandon Grotesque", "Avenir Next", Avenir, "Segoe UI", Arial, sans-serif !important;
-  font-size: 14px !important;
-  font-weight: 400 !important;
-  line-height: 1.65 !important;
-  -webkit-text-size-adjust: 100%;
-  overflow-wrap: break-word;
-}
-html:root:root body :is(button, input, select, textarea) {
-  font-family: "Brandon Grotesque", "Avenir Next", Avenir, "Segoe UI", Arial, sans-serif !important;
-}
-html:root:root body :is(h1, h2, h3, h4, h5, h6, .page-title, .hero-title, .brand-title, .display-title, .site-title) {
-  font-family: Cinzel, "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif !important;
-  font-weight: 400 !important;
-  overflow-wrap: anywhere;
-}
-html:root:root body :is(.eyebrow, .kicker, .dialog-eyebrow, .dialog-kicker, .worksheet-kicker) {
-  font-family: Cinzel, "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif !important;
-  font-size: 55px !important;
-  font-weight: 400 !important;
-  line-height: 1.15 !important;
-  letter-spacing: .02em !important;
-  white-space: normal !important;
-  overflow-wrap: anywhere;
-}
-html:root:root body h1 {
-  font-size: 33px !important;
-  line-height: 1.2 !important;
-  white-space: normal !important;
-  overflow-wrap: anywhere;
-}
-html:root:root body h2,
-html:root:root body :is(.subtitle, .hero-subtitle, .hero-sub, .academy-comment),
-html:root:root body .hero .comment {
-  font-size: 24px !important;
-  line-height: 1.35 !important;
-  white-space: normal !important;
-  overflow-wrap: anywhere;
-}
-/* Do not replace responsive grids or fixed elements; prevent oversized titles from
-   demanding horizontal scrolling on narrow phone and tablet displays. */
-html:root:root body :is(.hero, .header, .page-header, .section-head, .lesson-header) {
-  min-width: 0;
-}
-@media print {
-  html:root:root body { font-size: 14px !important; }
-}
-</style>
 <!-- KHAEMENES_HIGH_ASSESSMENT_ADAPTER_V1 -->
 <script src="../../shared/monte-carlo-assessment-v1.js"></script>
 <script src="../../shared/high-school-learning-context-v1.js"></script>
@@ -145,6 +92,7 @@ html:root:root body :is(.hero, .header, .page-header, .section-head, .lesson-hea
 <script defer src="https://vervenveda.com/assets/vnv-ecosystem-toolbar.js" data-official-vnv-ecosystem-toolbar="true"></script>
   
 <script src="/Khaemenes_High.github.io/assets/high-school-root-worker-recovery-v1.js" defer data-high-root-worker-recovery="v1"></script>
+<link rel="stylesheet" href="../../../assets/high-school-subject-landing-shell-v1.css" data-high-subject-shell-style="v1">
 </head>
 <body>
 <div class="app">
@@ -195,5 +143,6 @@ html:root:root body :is(.hero, .header, .page-header, .section-head, .lesson-hea
 <script src="../../../assets/high-navigation-v1.js" defer></script>
 <script src="assets/grade12-socialstudies-unified-upgrade.js"></script>
 <script src="assets/socialstudies-beta-bridge.js"></script>
+  <script src="../assets/social-studies-grade-shell-v1.js?v=20261124" defer data-social-studies-grade-shell="v1"></script>
 </body>
 </html>
