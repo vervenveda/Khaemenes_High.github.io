@@ -73,15 +73,20 @@ for(let grade=9;grade<=12;grade++)for(let week=1;week<=36;week++){
  }
 
  if(grade===9&&week===27){
-  const original=base+"weeks/week-27/student-packet-v2.html";
-  if(authoritative!==original)failures.push("Grade 09 Week 27 canonical redirect must resolve to student-packet-v2.html");
-  const html=read(original);
+  const html=read(canonical);
   for(const text of ["Capitalism, Socialism, Labor, and Reform","Five-Day Investigation","Economic Lab Record","Assessment v2.0"]){
-   if(!html.includes(text))failures.push("Authoritative Week 27 curriculum missing: "+text);
+   if(!html.includes(text))failures.push("Canonical Week 27 curriculum missing: "+text);
+  }
+  const versioned=base+"weeks/week-27/student-packet-v2.html";
+  if(!fs.existsSync(versioned))failures.push("Grade 09 Week 27 compatibility doorway missing");
+  else{
+   const versionedHtml=read(versioned);
+   if(!versionedHtml.includes("KHAEMENES_VERSION_COMPAT_REDIRECT")||!versionedHtml.includes("student-packet.html"))
+    failures.push("Grade 09 Week 27 versioned path must redirect to canonical student-packet.html");
   }
   const app=read(base+"app.js"),data=read(base+"course-data.js");
-  if(!app.includes("week===27?'weeks/week-27/student-packet-v2.html'"))
-   failures.push("Original Grade 9 app must still point to v2");
+  if(app.includes("student-packet-v2.html"))
+   failures.push("Grade 09 app must not route learners to the versioned Week 27 packet");
   if(!data.includes('"week":27,"title":"Capitalism, Socialism, Labor, and Reform"'))
    failures.push("Original Grade 9 Week 27 curriculum record absent");
  }
@@ -104,9 +109,9 @@ assert.equal(covered.size,144,"Expected full 144/144 grade-week canonical covera
 assert.equal(integratedFiles,144,"Expected exactly one authoritative instructional packet per grade-week");
 assert.equal(weekdayHeadings,715,"Expected 143 five-day canonical packets plus the Grade 09 Week 01 phase player");
 assert.equal(compatibilityRedirects.length,72,"Expected 72 Grade 9–10 historical compatibility doorways");
-assert.deepEqual(new Set(canonicalRedirects),new Set(["09:27"]),"Only Grade 09 Week 27 may redirect inside the canonical weekly tree");
+assert.equal(canonicalRedirects.length,0,"Canonical weekly packets must not redirect to versioned lesson files");
 assert.equal(examWeeks.length,8,"Expected one Week 18 and Week 36 checkpoint per grade");
 assert.deepEqual(failures,[],"Full-course source inspection found failures");
-console.log("PASS SOURCE: 144/144 canonical grade-weeks, 72 historical compatibility redirects, 1 canonical v2 redirect.");
-console.log("Grade 09 Week 27: canonical student-packet.html redirects to AUTHENTIC student-packet-v2.html.");
+console.log("PASS SOURCE: 144/144 canonical grade-weeks, 72 historical compatibility redirects, 0 canonical version redirects.");
+console.log("Grade 09 Week 27: canonical student-packet.html owns the approved lesson; student-packet-v2.html is compatibility-only.");
 console.log("HOLD: deployed browser, learner session, print, tablet, and successful GitHub Actions job must still be independently verified.");
