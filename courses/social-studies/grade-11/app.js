@@ -241,15 +241,17 @@ function scoreQuiz(doScore){
  const s=activeStudent();if(!s)return alert('Add a student first.');
  const w=COURSE.weeks[selectedWeek-1],draw=highAssessmentDraw('weekly','week-'+w.week,w.quiz.questions,w.quiz.questions.length),qs=draw.questions;
  const answers=qs.map((q,i)=>{const x=$(`input[name="q${i}"]:checked`);return x?+x.value:null});
- const prev=s.quizzes[w.week]||{},base={...prev,answers,shortResponse:$('#quizShort').value};
+ const shortResponse=$('#quizShort').value,prev=s.quizzes[w.week]||{},base={...prev,answers,shortResponse};
  if(doScore){
    if(answers.some(x=>x===null))return alert('Please answer every objective question before scoring.');
+   if(!shortResponse.trim())return alert('Complete the constructed response before scoring; it remains evaluator-reviewed evidence.');
    let correct=0;
    qs.forEach((q,i)=>{const ok=answers[i]===Number(q.answer);if(ok)correct++;const fb=$(`#fb-${i}`);fb.innerHTML=`<p class="${ok?'good':'bad'}">${ok?'Correct':'Review'}: ${esc(q.explanation||q.explain||'Review the relevant lesson evidence.')}</p>`});
-   const score=correct*2,percent=Math.round(correct/qs.length*100),reviewSkills=highAssessmentReviewSkills(qs,answers);
+   const score=correct*2,percent=Math.round(correct/qs.length*100),reviewSkills=highAssessmentReviewSkills(qs,answers),attemptId=draw.opened?.sessionId||null,questionIds=draw.opened?.questionIds||qs.map(q=>q.id).filter(Boolean);
+   const attempt={attemptId,questionIds,score:percent,mastered:percent>=80,reviewSkills,submittedAt:new Date().toISOString(),constructedResponse:shortResponse,evaluatorReviewRequired:true,source:'monte-carlo-v1',authoritative:false};
    base.score=score;base.percent=percent;base.bestScore=Math.max(prev.bestScore||0,score);base.bestPercent=Math.max(prev.bestPercent||0,percent);base.attempts=(prev.attempts||0)+1;base.completed=true;
-   base.attemptId=draw.opened?.sessionId||null;base.questionIds=draw.opened?.questionIds||qs.map(q=>q.id).filter(Boolean);base.reviewSkills=reviewSkills;
-   highAssessmentComplete(draw,{score:percent,correct,total:qs.length,mastered:percent>=80,reviewSkills});
+   base.attemptId=attemptId;base.questionIds=questionIds;base.reviewSkills=reviewSkills;base.attemptHistory=[...(Array.isArray(prev.attemptHistory)?prev.attemptHistory:[]),attempt];
+   highAssessmentComplete(draw,{score:percent,correct,total:qs.length,mastered:percent>=80,reviewSkills,constructedResponsePendingReview:true,learnerId:String(s.id)});
  }
  s.quizzes[w.week]=base;saveDB();render();
 }
