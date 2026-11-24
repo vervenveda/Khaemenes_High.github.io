@@ -12,7 +12,7 @@ const nonStudentFile=/(?:^|\/)(?:404|HIGH_SCHOOL_PROFILE_SNIPPET|[^/]*(?:teacher
 export function isStudentFacing(rel,html=""){
   const page=String(rel||"").replaceAll(path.sep,"/");
   if(!/\.html$/i.test(page))return false;
-  if(/KHAEMENES_WEEK_COMPAT_REDIRECT/.test(html))return false;
+  if(/KHAEMENES_(?:WEEK|VERSION)_COMPAT_REDIRECT/.test(html))return false;
   if(nonStudentPath.test(page)||nonStudentFile.test(page))return false;
   if(/data-student-facing=["']false["']/i.test(html))return false;
   const title=(html.match(/<title[^>]*>([\s\S]*?)<\/title>/i)?.[1]||"").replace(/<[^>]+>/g," ").trim();
