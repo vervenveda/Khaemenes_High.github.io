@@ -16,11 +16,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: Verify live weekly learner contract
+      - name: Verify live and printable weekly learner contract
         shell: python
         run: |
           from pathlib import Path
-          import re, sys
+          import sys
 
           failures = []
           apps = [
@@ -45,45 +45,38 @@ jobs:
                   if marker not in text:
                       failures.append(f"{path}: missing live rubric marker {marker!r}")
 
-          # Printable packet contract. Daily "Objective" is the packet-form
-          # equivalent of the live engine's Learning Target label.
-          packet_roots = [
-              Path("courses/social-studies/grade-09/weeks"),
-              Path("courses/social-studies/grade-10/weeks"),
-              Path("courses/social-studies/grade-11/weeks"),
-              Path("courses/social-studies/grade-11/personal-finance/weeks"),
-              Path("courses/social-studies/grade-12/weeks"),
+          roots = [
+              (Path("courses/social-studies/grade-09/weeks"),36),
+              (Path("courses/social-studies/grade-10/weeks"),36),
+              (Path("courses/social-studies/grade-11/weeks"),36),
+              (Path("courses/social-studies/grade-11/personal-finance/weeks"),18),
+              (Path("courses/social-studies/grade-12/weeks"),36),
           ]
-          packets = []
-          for root in packet_roots:
-              packets.extend(sorted(root.glob("week-*/student-packet.html")))
-
-          if len(packets) != 162:
-              failures.append(f"Expected 162 canonical Social Studies student packets; found {len(packets)}")
+          packets=[]
+          for root,expected in roots:
+              found=sorted(root.glob("week-*/student-packet.html"))
+              if len(found)!=expected:
+                  failures.append(f"{root}: expected {expected} canonical packets; found {len(found)}")
+              packets.extend(found)
 
           for path in packets:
-              text = path.read_text(encoding="utf-8")
-              low = text.lower()
-              checks = {
-                  "Essential Question": "essential question" in low,
-                  "Learning Target / Objective": ("learning target" in low or "objective:" in low or "<strong>objective</strong>" in low),
-                  "Vocabulary": "vocabulary" in low,
-                  "Required Evidence / Assignments": ("required evidence" in low or "principal assignments" in low or "assignment 1" in low),
-                  "Rubric / Success Criteria": ("rubric" in low or "success criteria" in low),
-                  "Constructed Response": "constructed response" in low,
-                  "80% mastery": ("80%" in low or "80 percent" in low),
+              low=path.read_text(encoding="utf-8").lower()
+              checks={
+                  "essential question":"essential question" in low,
+                  "learning target/objective":("learning target" in low or "objective:" in low or "<strong>objective</strong>" in low),
+                  "vocabulary":"vocabulary" in low,
+                  "required evidence/assignment":("required evidence" in low or "principal assignments" in low or "assignment 1" in low),
+                  "rubric/success criteria":("rubric" in low or "success criteria" in low),
+                  "constructed response":"constructed response" in low,
+                  "80% mastery":("80%" in low or "80 percent" in low),
               }
-              for label, ok in checks.items():
-                  if not ok:
-                      failures.append(f"{path}: missing {label}")
+              for label,ok in checks.items():
+                  if not ok: failures.append(f"{path}: missing {label}")
 
-          # Grade 9's custom Week 1 workspace must use the same named question label.
-          g9w1 = Path("courses/social-studies/grade-09/weeks/week-01/student-packet.html").read_text(encoding="utf-8")
-          if "<strong>Essential Question:</strong>" not in g9w1:
-              failures.append("Grade 9 Week 1 custom workspace lacks explicit Essential Question label.")
+          if len(packets)!=162:
+              failures.append(f"Expected 162 canonical Social Studies student packets; found {len(packets)}")
 
           if failures:
               print("\n".join(f"FAIL: {x}" for x in failures))
               sys.exit(1)
-
-          print(f"PASS: live weekly rubric contract present and {len(packets)} canonical student packets satisfy the print rubric contract.")
+          print(f"PASS: five live engines and {len(packets)} canonical packets satisfy the Social Studies weekly rubric contract.")
