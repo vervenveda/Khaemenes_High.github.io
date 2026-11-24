@@ -66,8 +66,8 @@ function loadDB(){
  }
 }
 let db;
-try{db=loadDB()}catch(error){console.error(error);
-if(view==='week'&&!ROUTE_PARAMS.has('week'))selectedWeek=currentWeek(activeStudent());db=freshDB();savedSnapshot="__blocked__";}
+try{db=loadDB()}catch(error){console.error(error);db=freshDB();savedSnapshot="__blocked__";}
+if(view==='week'&&!ROUTE_PARAMS.has('week'))selectedWeek=currentWeek(activeStudent());
 function saveDB(){
  const owner=requireAcademyOwner();
  if(!KEY||savedSnapshot==="__blocked__")throw Error("Record recovery is required before saving.");
@@ -176,6 +176,14 @@ function setView(v){
  history.replaceState(null,'',url.pathname+url.search+url.hash);
  $$('.navBtn,.tab').forEach(b=>b.classList.toggle('active',b.dataset.view===view));
  render();
+}
+function setWeek(n){
+ const requested=Math.max(1,Math.min(36,+n));
+ const unlocked=currentWeek(activeStudent());
+ if(requested>unlocked){alert(`Week ${requested} is locked. Complete Week ${unlocked}: all five lessons, all three assignments, the weekly quiz at 80%+, and its constructed response. Week 19 also requires the semester exam at 80%+.`);selectedWeek=unlocked;}
+ else selectedWeek=requested;
+ const url=new URL(location.href);url.searchParams.set('view','week');url.searchParams.set('week',String(selectedWeek));history.replaceState(null,'',url.pathname+url.search+url.hash);
+ view='week';renderSidebarWeeks();render();scrollTo({top:0,behavior:'smooth'});
 }
 function renderStudentControls(){
  const el=$('#studentSelect');
