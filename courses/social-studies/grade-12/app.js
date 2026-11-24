@@ -153,10 +153,23 @@ function dashboardHTML(){
  </div>`;
 }
 function readingHTML(w){return w.reading.map(s=>`<details class="reading"><summary>${esc(s.heading)}</summary>${s.paragraphs.map(p=>`<p>${esc(p)}</p>`).join('')}</details>`).join('')}
+function weeklyRubricHTML(w){
+ const targets=(w.lessons||[]).map(l=>l.objective).filter(Boolean);
+ const evidence=(w.assignments||[]).map(a=>`Assignment ${a.number}: ${a.title}`);
+ const criteria=[...new Set((w.assignments||[]).flatMap(a=>Array.isArray(a.rubric)?a.rubric:Object.keys(a.rubric||{})))];
+ const unlock=w.week===18
+  ? 'Complete all five daily lessons; submit all three principal assignments; complete the constructed response; earn at least 80% on the weekly objective quiz; and submit/master the Semester Exam at the required threshold before Week 19 opens.'
+  : 'Complete all five daily lessons; submit all three principal assignments; complete the constructed response; and earn at least 80% on the weekly objective quiz.';
+ return `<section class="card col12" data-weekly-rubric-contract="v1"><h3>Learner Success Criteria &amp; Mastery</h3>
+ <details><summary>Learning Targets</summary><ul>${targets.map(x=>`<li>${esc(x)}</li>`).join('')}</ul></details>
+ <details><summary>Required Evidence</summary><ul><li>Five completed daily lessons</li>${evidence.map(x=>`<li>${esc(x)}</li>`).join('')}<li>Constructed response</li><li>Weekly objective quiz at 80% or higher</li>${w.capstoneCheckpoint?`<li>Capstone checkpoint: ${esc(w.capstoneCheckpoint.title)}</li>`:''}</ul></details>
+ <details><summary>Success Criteria / Rubric</summary><p>State a precise claim, use traceable evidence, explain method and reasoning, address competing explanations and limitations, and state the condition that would justify revision.</p><p class="small">Assignment rubric criteria: ${criteria.map(esc).join(' · ')}</p></details>
+ <div class="notice"><strong>Unlock Condition:</strong> ${esc(unlock)}</div></section>`;
+}
 function weekHTML(w){
  const s=activeStudent(),done=s?.completedLessons?.[w.week]||[], qrec=s?.quizzes?.[w.week]||{};
  return `<div class="grid">
- <section class="card col12"><span class="pill">Week ${w.week}</span><span class="pill">${esc(w.unit)}</span><h2>${esc(w.title)}</h2><p class="lead"><strong>Essential question:</strong> ${esc(w.essentialQuestion)}</p><p>${esc(w.focus)}</p>
+ <section class="card col12"><span class="pill">Week ${w.week}</span><span class="pill">${esc(w.unit)}</span><h2>${esc(w.title)}</h2><p class="lead"><strong>Essential Question:</strong> ${esc(w.essentialQuestion)}</p><p>${esc(w.focus)}</p>${weeklyRubricHTML(w)}
  <div class="actions noPrint"><a class="button secondary" href="weeks/week-${String(w.week).padStart(2,'0')}/student-packet.html">Printable Student Packet</a><a class="button ghost" href="weeks/week-${String(w.week).padStart(2,'0')}/teacher-guide.html">Teacher Guide</a><button id="speakBtn">Read Aloud</button></div></section>
  <section class="card col8"><h3>Original Senior Reading</h3>${readingHTML(w)}</section>
  <section class="card col4"><h3>Vocabulary</h3><dl>${w.vocabulary.map(v=>`<dt>${esc(v.term)}</dt><dd>${esc(v.definition)}</dd>`).join('')}</dl><h3>Key Understandings</h3><ul>${w.keyUnderstandings.map(x=>`<li>${esc(x)}</li>`).join('')}</ul></section>

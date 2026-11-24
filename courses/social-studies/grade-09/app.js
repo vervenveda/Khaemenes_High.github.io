@@ -218,13 +218,26 @@ function quizHTML(w,s){
 }
 function packetPath(w){return `weeks/week-${String(w.week).padStart(2,'0')}/student-packet.html`}
 function localLabHTML(w){if(w.week===26)return '<section class="card col12"><h2>Local Industrialization Simulation Lab</h2><p>Run the Academy local growth and supply/demand models, then corroborate model behavior with the historical record. No network connection is required.</p><div class="actions"><a class="button secondary" href="weeks/week-26/simulation-lab.html">Open Local Week 26 Lab</a></div></section>';if(w.week===27)return '<section class="card col12"><h2>Local Economic Reasoning Lab</h2><p>Test controlled market scenarios locally, record distributional effects and limitations, then compare the model with Week 27 historical evidence.</p><div class="actions"><a class="button secondary" href="weeks/week-27/economic-lab.html">Open Local Week 27 Lab</a></div></section>';return ''}
+function weeklyRubricHTML(w){
+  const targets=(w.dailyLessons||[]).map(l=>l.objective).filter(Boolean);
+  const evidence=(w.assignments||[]).map(a=>`Assignment ${a.number}: ${a.title}`);
+  const criteria=[...new Set((w.assignments||[]).flatMap(a=>Object.keys(a.rubric||{})))];
+  const unlock=w.week===18
+    ? 'Complete all five daily lessons; submit all three principal assignments and receive evaluator scores; earn at least 80% on the weekly objective quiz; receive an evaluator score on the constructed response; and master the Midterm at 80%+ before Week 19 opens.'
+    : 'Complete all five daily lessons; submit all three principal assignments and receive evaluator scores; earn at least 80% on the weekly objective quiz; and receive an evaluator score on the constructed response.';
+  return `<section class="card col12" data-weekly-rubric-contract="v1"><h3>Learner Success Criteria &amp; Mastery</h3>
+    <details><summary>Learning Targets</summary><ul>${targets.map(x=>`<li>${esc(x)}</li>`).join('')}</ul></details>
+    <details><summary>Required Evidence</summary><ul><li>Five completed daily lessons</li>${evidence.map(x=>`<li>${esc(x)}</li>`).join('')}<li>Weekly objective quiz at 80% or higher</li><li>Constructed response preserved for evaluator scoring</li></ul></details>
+    <details><summary>Success Criteria / Rubric</summary><p>Use accurate evidence, explain reasoning, address limitations or counterclaims, and revise when feedback or stronger evidence requires it.</p><p class="small">Recurring rubric dimensions: ${criteria.map(esc).join(' · ')}</p></details>
+    <div class="notice"><strong>Unlock Condition:</strong> ${esc(unlock)}</div></section>`;
+}
 function weekHTML(w){
   const s=activeStudent();
   const readingText=w.readingSections.map(x=>`${x.heading}. ${x.text}`).join(' ');
   return `<div class="grid">
     <section class="card col12">
       <div class="pills"><span class="pill">Week ${w.week}</span><span class="pill">${esc(w.unit)}</span><span class="pill">${esc(w.period)}</span><span class="pill">${esc(w.regions)}</span></div>
-      <h2>${esc(w.title)}</h2><div class="notice"><strong>Essential Question:</strong> ${esc(w.essentialQuestion)}</div>
+      <h2>${esc(w.title)}</h2><div class="notice"><strong>Essential Question:</strong> ${esc(w.essentialQuestion)}</div>${weeklyRubricHTML(w)}
       <div class="actions noPrint"><button id="speakReading">Read Weekly Text</button><button class="secondary" onclick="window.print()">Print Week Packet</button>
       <a class="button ghost" href="${packetPath(w)}">Open Standalone Packet</a></div>
       <p class="small">Standards: ${w.standards.map(x=>esc(x.code)).join(' · ')}</p>
