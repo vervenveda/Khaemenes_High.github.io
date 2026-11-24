@@ -38,7 +38,9 @@ const esc=(v='')=>String(v).replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'
 const uid=()=>`s_${Date.now().toString(36)}${Math.random().toString(36).slice(2,7)}`;
 const stamp=()=>new Date().toLocaleString();
 let selectedWeek=Math.max(1,Math.min(36,Number(new URLSearchParams(location.search).get('week'))||1));
-let view='dashboard';
+const VALID_VIEWS=['dashboard','week','scope','exams','reports','standards'];
+const ROUTE_PARAMS=new URLSearchParams(location.search);
+let view=VALID_VIEWS.includes(ROUTE_PARAMS.get('view'))?ROUTE_PARAMS.get('view'):'dashboard';
 
 function freshDB(){return{version:2,activeId:null,students:[],settings:{theme:'dark',fontScale:100}}}
 const LEGACY_KEY='KHAE_SS10_USH_CLEAN_PORTAL_V1';
@@ -63,6 +65,7 @@ function loadDB(){
 let db;
 try{db=loadDB()}catch(error){
  console.error(error);
+if(view==='week'&&!ROUTE_PARAMS.has('week'))selectedWeek=currentWeek(activeStudent());
  db=freshDB();
  savedSnapshot="__blocked__";
 }
@@ -105,12 +108,16 @@ function weekMastered(s,w){
  return true;
 }
 function currentWeek(s){if(!s)return 1;for(const w of COURSE.weeks){if(!weekMastered(s,w))return w.week}return 36}
-function setView(v){view=v;$$('.navBtn,.tab').forEach(b=>b.classList.toggle('active',b.dataset.view===v));render()}
-function setWeek(n){
- const requested=Math.max(1,Math.min(36,+n)),unlocked=currentWeek(activeStudent());
- if(requested>unlocked){alert(`Week ${requested} is locked. Complete Week ${unlocked}: five lessons, three submitted assignments, the constructed response, and the weekly quiz at 80%+. Week 19 also requires the midterm at 80%+.`);selectedWeek=unlocked;}
- else selectedWeek=requested;
- view='week';history.replaceState(null,'',`?week=${selectedWeek}`);renderSidebarWeeks();render();scrollTo({top:0,behavior:'smooth'})
+function setView(v){
+ if(!VALID_VIEWS.includes(v))v='dashboard';
+ view=v;
+ const url=new URL(location.href);
+ url.searchParams.set('view',view);
+ if(view==='week')url.searchParams.set('week',String(selectedWeek));
+ else url.searchParams.delete('week');
+ history.replaceState(null,'',url.pathname+url.search+url.hash);
+ $$('.navBtn,.tab').forEach(b=>b.classList.toggle('active',b.dataset.view===view));
+ render();
 }
 function renderStudentControls(){
  const s=$('#studentSelect');
