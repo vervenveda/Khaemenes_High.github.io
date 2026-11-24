@@ -1,11 +1,7 @@
-# Week 8: Civil War, Emancipation, and Union
+# Compatibility mirror · Grade 10 Week 8
 
-- Unit: Unit 2 · Expansion, Sectionalism, and Civil War
-- Period: 1861–1865
-- Regions: United States
-- Essential question: How and why did a war to preserve the Union become a war for emancipation?
-- Five daily lessons
-- Three graded assignments
-- Ten objective quiz questions and one constructed response
-- Student printable: `student-packet.html`
-- Teacher guide and key: `teacher-guide.html`
+This historical `week-08/` path is retained only for older bookmarks and references.
+
+**Canonical curriculum owner:** `../weeks/week-08/`
+
+Do not author curriculum here. HTML files in this directory redirect to the canonical weekly pages, and `quiz.json` mirrors the canonical machine-readable quiz data.

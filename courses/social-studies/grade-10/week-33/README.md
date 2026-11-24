@@ -1,11 +1,7 @@
-# Week 33: Contemporary America: Institutions, Movements, and Historical Distance
+# Compatibility mirror · Grade 10 Week 33
 
-- Unit: Unit 7 · Contemporary United States
-- Period: 2016–Present
-- Regions: United States
-- Essential question: How can students study very recent events responsibly when evidence is abundant, contested, and still developing?
-- Five daily lessons
-- Three graded assignments
-- Ten objective quiz questions and one constructed response
-- Student printable: `student-packet.html`
-- Teacher guide and key: `teacher-guide.html`
+This historical `week-33/` path is retained only for older bookmarks and references.
+
+**Canonical curriculum owner:** `../weeks/week-33/`
+
+Do not author curriculum here. HTML files in this directory redirect to the canonical weekly pages, and `quiz.json` mirrors the canonical machine-readable quiz data.

@@ -1,11 +1,7 @@
-# Week 9: Reconstruction and the Meaning of Freedom
+# Compatibility mirror · Grade 10 Week 9
 
-- Unit: Unit 3 · Reconstruction and Industrial America
-- Period: 1865–1877
-- Regions: United States and Florida
-- Essential question: Why did Reconstruction achieve constitutional transformation but fail to secure lasting equal protection?
-- Five daily lessons
-- Three graded assignments
-- Ten objective quiz questions and one constructed response
-- Student printable: `student-packet.html`
-- Teacher guide and key: `teacher-guide.html`
+This historical `week-09/` path is retained only for older bookmarks and references.
+
+**Canonical curriculum owner:** `../weeks/week-09/`
+
+Do not author curriculum here. HTML files in this directory redirect to the canonical weekly pages, and `quiz.json` mirrors the canonical machine-readable quiz data.
