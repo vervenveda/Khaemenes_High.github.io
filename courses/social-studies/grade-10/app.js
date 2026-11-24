@@ -94,13 +94,14 @@ function demoStudent(){
  saveDB();
 }
 function lessonStats(s){let done=0;if(s)Object.values(s.completedLessons||{}).forEach(a=>done+=a.filter(Boolean).length);return{done,total:180,percent:Math.round(done/180*100)}}
-function assignmentStats(s){const arr=s?Object.values(s.assignments||{}):[];const submitted=arr.filter(a=>a.submitted).length;let earned=0,possible=0;arr.forEach(a=>{if(Number.isFinite(+a.score)){earned+=+a.score;possible+=30}});return{submitted,total:108,percent:Math.round(submitted/108*100),earned,possible}}
+function assignmentEvidenceComplete(a){return !!a?.submitted&&String(a.text||'').trim().length>0}
+function assignmentStats(s){const arr=s?Object.values(s.assignments||{}):[];const submitted=arr.filter(assignmentEvidenceComplete).length;let earned=0,possible=0;arr.forEach(a=>{if(Number.isFinite(+a.score)){earned+=+a.score;possible+=30}});return{submitted,total:108,percent:Math.round(submitted/108*100),earned,possible}}
 function quizStats(s){const arr=s?Object.values(s.quizzes||{}).filter(q=>q.completed):[];return{completed:arr.length,total:36,avg:arr.length?Math.round(arr.reduce((n,q)=>n+(q.bestPercent??q.percent??0),0)/arr.length):0}}
 function overall(s){if(!s)return 0;const l=lessonStats(s).percent,a=assignmentStats(s).percent,q=Math.round(quizStats(s).completed/36*100);return Math.round(l*.35+a*.40+q*.25)}
 function weekMastered(s,w){
  if(!s)return false;
  const lessons=(s.completedLessons?.[w.week]||[]).filter(Boolean).length===5;
- const assignments=w.assignments.every(a=>s.assignments?.[`${w.week}-${a.number}`]?.submitted);
+ const assignments=w.assignments.every(a=>assignmentEvidenceComplete(s.assignments?.[`${w.week}-${a.number}`]));
  const quiz=s.quizzes?.[w.week];
  const quizMastery=!!quiz?.completed&&(quiz.bestPercent??quiz.percent??0)>=80&&String(quiz.shortResponse||'').trim().length>0;
  if(!lessons||!assignments||!quizMastery)return false;
@@ -236,8 +237,8 @@ function weeklyRubricHTML(w){
  const evidence=(w.assignments||[]).map(a=>`Assignment ${a.number}: ${a.title}`);
  const criteria=[...new Set((w.assignments||[]).flatMap(a=>Object.keys(a.rubric||{})))];
  const unlock=w.week===18
-  ? 'Complete all five daily lessons; submit all three principal assignments; complete the constructed response; earn at least 80% on the weekly objective quiz; and master the Midterm at 80%+ before Week 19 opens.'
-  : 'Complete all five daily lessons; submit all three principal assignments; complete the constructed response; and earn at least 80% on the weekly objective quiz.';
+  ? 'Complete all five daily lessons; submit all three principal assignments with a written response, evidence note, or identified attachment; complete the constructed response; earn at least 80% on the weekly objective quiz; and master the Midterm at 80%+ before Week 19 opens.'
+  : 'Complete all five daily lessons; submit all three principal assignments with a written response, evidence note, or identified attachment; complete the constructed response; and earn at least 80% on the weekly objective quiz.';
  return `<section class="card col12" data-weekly-rubric-contract="v1"><h3>Learner Success Criteria &amp; Mastery</h3>
  <details><summary>Learning Targets</summary><ul>${targets.map(x=>`<li>${esc(x)}</li>`).join('')}</ul></details>
  <details><summary>Required Evidence</summary><ul><li>Five completed daily lessons</li>${evidence.map(x=>`<li>${esc(x)}</li>`).join('')}<li>Constructed response</li><li>Weekly objective quiz at 80% or higher</li></ul></details>
@@ -302,7 +303,8 @@ function wireView(){
 }
 function saveAssignment(key,submit){
  const s=activeStudent();if(!s)return alert('Add a student first.');
- const ta=$(`[data-assignment="${key}"]`),prev=s.assignments[key]||{};
+ const ta=$(`[data-assignment="${key}"]`),prev=s.assignments[key]||{},text=ta.value.trim();
+ if(submit&&!text)return alert('Add the student response, evidence note, or a note identifying the submitted attachment before marking this assignment submitted.');
  s.assignments[key]={...prev,text:ta.value,submitted:submit||prev.submitted||false,updated:stamp()};saveDB();render();
 }
 function scoreQuiz(doScore){
