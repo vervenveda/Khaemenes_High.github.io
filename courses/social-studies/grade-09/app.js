@@ -4,7 +4,9 @@ const COURSE = window.KHAEMENES_SOCIAL_STUDIES_DATA;
 const META = COURSE.metadata;
 const KEY = META.storageKey;
 let selectedWeek = Math.max(1, Math.min(36, Math.floor(Number(new URLSearchParams(location.search).get('week'))) || 1));
-let view = ['dashboard','week','scope','exams','reports','standards'].includes(new URLSearchParams(location.search).get('view')) ? new URLSearchParams(location.search).get('view') : 'dashboard';
+const VALID_VIEWS=['dashboard','week','scope','exams','reports','standards'];
+const ROUTE_PARAMS=new URLSearchParams(location.search);
+let view=VALID_VIEWS.includes(ROUTE_PARAMS.get('view'))?ROUTE_PARAMS.get('view'):'dashboard';
 let examType = 'midterm';
 
 const $ = (s, r=document) => r.querySelector(s);
@@ -36,6 +38,7 @@ function loadDB(){
   return window.KhaemenesSS9Records.prepareDB(freshDB());
 }
 let db = loadDB();
+if(view==='week'&&!ROUTE_PARAMS.has('week'))selectedWeek=currentWeek(activeStudent());
 if(view==='week'&&!new URLSearchParams(location.search).has('week'))selectedWeek=currentWeek(activeStudent());
 function saveDB(){ window.KhaemenesSS9Records.storage.setItem(KEY, JSON.stringify(db)); }
 function activeStudent(){ return db.students.find(s=>s.id===db.activeId) || null; }
@@ -84,17 +87,23 @@ function combinedProgress(s){
   return Math.round(l*.35+a*.40+q*.25);
 }
 function currentWeek(s){return window.KhaemenesSS9Records.nextWeek(s);}
-function setView(next){
-  view=next;
-  $$('.navBtn,.tab').forEach(b=>b.classList.toggle('active',b.dataset.view===view));
-  render();
+function setView(v){
+ if(!VALID_VIEWS.includes(v))v='dashboard';
+ view=v;
+ const url=new URL(location.href);
+ url.searchParams.set('view',view);
+ if(view==='week')url.searchParams.set('week',String(selectedWeek));
+ else url.searchParams.delete('week');
+ history.replaceState(null,'',url.pathname+url.search+url.hash);
+ $$('.navBtn,.tab').forEach(b=>b.classList.toggle('active',b.dataset.view===view));
+ render();
 }
 function setWeek(n){
   const requested=Math.max(1,Math.min(36,Math.floor(+n)||1)),unlocked=currentWeek(activeStudent());
   if(requested>unlocked){alert(`Week ${requested} is locked. Complete Week ${unlocked}: all five lessons, all three scored/submitted assignments, the weekly quiz at 80%+, and the constructed-response score. Week 19 also requires the midterm at 80%+.`);selectedWeek=unlocked;}
   else selectedWeek=requested;
   view='week';
-  history.replaceState(null,'',`?week=${selectedWeek}`);
+  {const url=new URL(location.href);url.searchParams.set('view','week');url.searchParams.set('week',String(selectedWeek));history.replaceState(null,'',url.pathname+url.search+url.hash)};
   renderSidebarWeeks();
   render();
   window.scrollTo({top:0,behavior:'smooth'});
