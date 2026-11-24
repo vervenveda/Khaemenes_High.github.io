@@ -1,7 +1,22 @@
 (() => {
 'use strict';
 const COURSE=window.KHAEMENES_GRADE12_DATA;
-const META=COURSE.metadata, KEY=META.storageKey;
+const META=COURSE.metadata;
+const LEGACY_GRADEBOOK_KEY=META.storageKey;
+const ACADEMY_ENTRY=window.KhaemenesCourseEntryContract;
+const ENTRY_OWNER=ACADEMY_ENTRY?.readAcademyProfile?.()?.learnerId||null;
+const KEY=ENTRY_OWNER?LEGACY_GRADEBOOK_KEY+":academy:"+encodeURIComponent(ENTRY_OWNER):null;
+let savedSnapshot=null;
+function requireAcademyOwner(){
+ const current=ACADEMY_ENTRY?.readAcademyProfile?.()?.learnerId||null;
+ if(!ENTRY_OWNER||!current)throw new Error("Select an Academy learner before saving course work.");
+ if(current!==ENTRY_OWNER)throw new Error("The Academy learner changed. Export unsaved work and reload this page.");
+ return current;
+}
+function academyRead(key){
+ requireAcademyOwner();
+ return localStorage.getItem(key);
+}
 const $=(s,r=document)=>r.querySelector(s), $$=(s,r=document)=>[...r.querySelectorAll(s)];
 const esc=(v='')=>String(v).replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]));
 const uid=()=>`s12_${Date.now().toString(36)}${Math.random().toString(36).slice(2,7)}`;
@@ -20,18 +35,46 @@ function highAssessmentReviewSkills(qs,answers){return [...new Set(qs.map((q,i)=
 
 
 function freshDB(){return{version:1,activeId:null,students:[],settings:{theme:'dark',fontScale:100}}}
-function loadDB(){try{const x=JSON.parse(localStorage.getItem(KEY));if(x&&Array.isArray(x.students))return Object.assign(freshDB(),x)}catch(e){}return freshDB()}
-let db=loadDB();
-function saveDB(){localStorage.setItem(KEY,JSON.stringify(db))}
+function loadDB(){
+ if(!KEY)return freshDB();
+ try{
+   const raw=academyRead(KEY);
+   savedSnapshot=raw;
+   if(raw===null)return freshDB();
+   const parsed=JSON.parse(raw);
+   if(!parsed||!Array.isArray(parsed.students)||parsed.academyLearnerId!==ENTRY_OWNER)
+     throw Error("Invalid or mismatched Grade 12 Global Politics learner record");
+   return Object.assign(freshDB(),parsed);
+ }catch(error){
+   if(error.message?.includes("Academy learner"))throw error;
+   throw new Error("Grade 12 Global Politics record requires recovery. Existing bytes were preserved.");
+ }
+}
+let db;
+try{db=loadDB()}catch(error){console.error(error);db=freshDB();savedSnapshot="__blocked__";}
+function saveDB(){
+ const owner=requireAcademyOwner();
+ if(!KEY||savedSnapshot==="__blocked__")throw Error("Record recovery is required before saving.");
+ const current=academyRead(KEY);
+ if(current!==savedSnapshot)throw Error("Another tab modified this learner record. Export and reload.");
+ const next=JSON.stringify({...db,academyLearnerId:owner});
+ localStorage.setItem(KEY,next);
+ if(localStorage.getItem(KEY)!==next)throw Error("Learner record save could not be verified.");
+ savedSnapshot=next;
+}
 function normalize(s){
  s.completedLessons||={};s.assignments||={};s.quizzes||={};s.major||={};s.capstone||={};s.weekApprovals||={};s.journal||={};
  s.teacher=Object.assign({hours:0,integrity:false,evaluator:false,issued:false,issuedDate:'',notes:''},s.teacher||{});
  return s;
 }
 db.students.forEach(normalize);
-function activeStudent(){return db.students.find(s=>s.id===db.activeId)||null}
-function createStudent(name){const s=normalize({id:uid(),name:name.trim(),created:today()});db.students.push(s);db.activeId=s.id;saveDB();return s}
+function activeStudent(){
+ if(!ENTRY_OWNER||ACADEMY_ENTRY?.readAcademyProfile?.()?.learnerId!==ENTRY_OWNER)return null;
+ return db.students.find(s=>s.id===db.activeId)||null;
+}
+function createStudent(name){requireAcademyOwner();const s=normalize({id:uid(),name:name.trim(),created:today()});db.students.push(s);db.activeId=s.id;saveDB();return s}
 function demoStudent(){
+ requireAcademyOwner();
  const s=createStudent('Demo Senior Scholar');
  COURSE.weeks.slice(0,4).forEach(w=>{
   s.completedLessons[w.week]=[true,true,true,true,true];
