@@ -273,7 +273,8 @@ for(const course of ["biology-10","chemistry-11","physics-engineering-12"]){
 }
 
 // Social Studies Grade 9–10 weekly path authority.
-// The live course engines use weeks/week-XX. Historical week-XX paths remain compatibility mirrors only.
+// The live course engines use weeks/week-XX. Historical week-XX paths are compatibility surfaces only:
+// HTML redirects to canonical pages, quiz JSON mirrors canonical machine-readable data, and README marks deprecation.
 for(const grade of ["09","10"]){
   const root=path.join(ROOT,"courses/social-studies/grade-"+grade);
   for(let week=1;week<=36;week++){
@@ -284,13 +285,26 @@ for(const grade of ["09","10"]){
     assert(fs.existsSync(canonicalDir),"Social Studies "+grade+" canonical week missing weeks/week-"+ww);
     const legacyFiles=fs.readdirSync(legacyDir).sort();
     const canonicalFiles=fs.readdirSync(canonicalDir).sort();
-    assert(JSON.stringify(legacyFiles)===JSON.stringify(canonicalFiles),"Social Studies "+grade+" weekly mirror filename drift at week "+ww);
+    assert(JSON.stringify(legacyFiles)===JSON.stringify(canonicalFiles),"Social Studies "+grade+" weekly compatibility filename drift at week "+ww);
     for(const name of canonicalFiles){
       const legacyPath=path.join(legacyDir,name);
       const canonicalPath=path.join(canonicalDir,name);
-      if(!fs.statSync(canonicalPath).isFile())continue;
-      assert(fs.statSync(legacyPath).isFile(),"Social Studies "+grade+" legacy weekly mirror missing file "+ww+"/"+name);
-      assert(fs.readFileSync(legacyPath).equals(fs.readFileSync(canonicalPath)),"Social Studies "+grade+" weekly compatibility mirror drift at week "+ww+"/"+name);
+      assert(fs.statSync(canonicalPath).isFile(),"Social Studies "+grade+" canonical weekly entry must be a file: "+ww+"/"+name);
+      assert(fs.statSync(legacyPath).isFile(),"Social Studies "+grade+" compatibility weekly entry must be a file: "+ww+"/"+name);
+      if(name.endsWith(".html")){
+        const legacy=read(path.relative(ROOT,legacyPath));
+        const target="../weeks/week-"+ww+"/"+name;
+        assert(legacy.includes("KHAEMENES_WEEK_COMPAT_REDIRECT"),"Social Studies "+grade+" legacy HTML missing compatibility marker: "+ww+"/"+name);
+        assert(legacy.includes(target),"Social Studies "+grade+" legacy HTML redirect target drift: "+ww+"/"+name);
+      }else if(name==="quiz.json"){
+        assert(fs.readFileSync(legacyPath).equals(fs.readFileSync(canonicalPath)),"Social Studies "+grade+" legacy quiz JSON drift at week "+ww);
+      }else if(name==="README.md"){
+        const legacy=read(path.relative(ROOT,legacyPath));
+        assert(legacy.includes("Compatibility mirror"),"Social Studies "+grade+" legacy README missing compatibility notice at week "+ww);
+        assert(legacy.includes("../weeks/week-"+ww+"/"),"Social Studies "+grade+" legacy README canonical target drift at week "+ww);
+      }else{
+        throw new Error("Social Studies "+grade+" unsupported legacy weekly compatibility file type: "+ww+"/"+name);
+      }
     }
   }
 }
