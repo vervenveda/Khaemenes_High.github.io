@@ -102,6 +102,7 @@ function dashboardHTML(){
  <tr><td>Major examinations</td><td>2</td><td>Financial-literacy midterm and cumulative final</td></tr>
  <tr><td>Independent-living portfolio</td><td>1</td><td>Integrated plan, stress tests, and oral defense</td></tr></tbody></table></div></section>
  <section class="card dark col4"><h3>Weekly Rhythm</h3><ol><li>Monday: frame time, place, and inquiry.</li><li>Tuesday: source and corroborate.</li><li>Wednesday: map, measure, and model.</li><li>Thursday: deliberate and write.</li><li>Friday: synthesize, assess, and correct.</li></ol><p class="small">Every week includes an original reading, vocabulary, source study, three assignments, supports, honors extensions, and a retake-ready quiz.</p></section>
+ <section class="card col12"><h3>Mastery Contract</h3><p>Each official week unlocks only after all five daily lessons are complete, all three principal assignments contain documented evidence and are submitted, the constructed response is present, and the weekly objective quiz reaches at least 80%. Week 10 additionally requires the Financial Literacy Midterm at 80%+. Course mastery requires all 18 weeks plus the cumulative final at 80%+.</p></section>
  <section class="card col12"><h3>Academic Integrity and Responsible AI Use</h3><p>Students may use approved tools to brainstorm questions, define terms, or receive feedback. Submitted work must represent the student’s own reasoning. Every AI-assisted factual claim, quotation, statistic, and citation must be verified against a trustworthy original source. Invented citations receive no evidence credit.</p></section>
  </div>`;
 }
@@ -128,7 +129,7 @@ function quizHTML(w,s){
 }
 function weekHTML(w){
  const s=activeStudent(),reading=w.readingSections.map(x=>`${x.heading}. ${x.text}`).join(' ');
- return `<div class="grid"><section class="card col12"><div class="pills"><span class="pill">Week ${w.week}</span><span class="pill">${esc(w.unit)}</span><span class="pill">${esc(w.period)}</span><span class="pill">${esc(w.regions)}</span></div><h2>${esc(w.title)}</h2><div class="notice"><strong>Essential Question:</strong> ${esc(w.essentialQuestion)}</div><div class="actions noPrint"><button id="speakReading">Read Weekly Text</button><button class="secondary" onclick="window.print()">Print Week</button><a class="button ghost" href="weeks/week-${String(w.week).padStart(2,'0')}/student-packet.html">Standalone Packet</a></div><p class="small">Standards: ${w.standards.map(x=>esc(x.code)).join(' · ')}</p></section>
+ return `<div class="grid"><section class="card col12"><div class="pills"><span class="pill">Week ${w.week}</span><span class="pill">${esc(w.unit)}</span><span class="pill">${esc(w.period)}</span><span class="pill">${esc(w.regions)}</span></div><h2>${esc(w.title)}</h2><div class="notice"><strong>Essential Question:</strong> ${esc(w.essentialQuestion)}</div><div class="notice"><strong>Learner Success Criteria &amp; Mastery:</strong> Complete all five daily lessons; submit all three principal assignments with documented evidence; complete the constructed response; and earn at least 80% on the weekly objective quiz. Week 9 also requires the Financial Literacy Midterm at 80%+ before Week 10 opens.</div><div class="actions noPrint"><button id="speakReading">Read Weekly Text</button><button class="secondary" onclick="window.print()">Print Week</button><a class="button ghost" href="weeks/week-${String(w.week).padStart(2,'0')}/student-packet.html">Standalone Packet</a></div><p class="small">Standards: ${w.standards.map(x=>esc(x.code)).join(' · ')}</p></section>
  <section class="card col8"><h2>Original Weekly Reading</h2>${w.readingSections.map(r=>`<article class="readingSection"><h4>${esc(r.heading)}</h4><p>${esc(r.text)}</p></article>`).join('')}<div class="sourceBox"><h3>Source Study: ${esc(w.sourceStudy.title)}</h3><p>${esc(w.sourceStudy.context)}</p></div><input type="hidden" id="readingText" value="${esc(reading)}"></section>
  <aside class="card col4"><h3>Academic Vocabulary</h3><div class="vocabGrid">${Object.entries(w.vocabulary).map(([k,v])=>`<div class="vocabItem"><strong>${esc(k)}</strong>${esc(v)}</div>`).join('')}</div><h3>Key Understandings</h3><ul>${w.keyUnderstandings.map(k=>`<li>${esc(k)}</li>`).join('')}</ul><h3>Optional Official Resources</h3><ul>${w.resources.map((r,i)=>`<li><a href="${esc(r)}" target="_blank" rel="noopener">Resource ${i+1}</a></li>`).join('')}</ul></aside>
  <section class="card col12"><h2>Daily Lessons</h2>${w.dailyLessons.map((l,i)=>lessonBlock(w,l,i,s)).join('')}</section>
@@ -178,7 +179,8 @@ function wireView(){
 }
 function saveAssignment(key,submit){
  const s=activeStudent();if(!s)return alert('Add a student first.');
- const ta=$(`[data-assignment="${key}"]`),prev=s.assignments[key]||{};
+ const ta=$(`[data-assignment="${key}"]`),prev=s.assignments[key]||{},text=ta.value.trim();
+ if(submit&&!text)return alert('Add the student response, evidence note, or a note identifying the submitted attachment before marking this assignment submitted.');
  s.assignments[key]={...prev,text:ta.value,submitted:submit||prev.submitted||false,updated:stamp()};saveDB();render();
 }
 function scoreQuiz(doScore){
