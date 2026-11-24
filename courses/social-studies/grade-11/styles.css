@@ -104,3 +104,16 @@ details{padding:.55rem 0}summary{cursor:pointer;}
   .scopeWeek{grid-template-columns:minmax(0,1fr)}
   .scopeWeek .button{grid-column:auto}
 }
+
+
+/* Grade 11 index layout additions */
+
+    .skip-link{position:fixed;z-index:9999;top:10px;left:10px;transform:translateY(-160%);padding:.7rem 1rem;}
+    .skip-link:focus{transform:translateY(0)}
+    .brand .breadcrumbs a{text-decoration:none}
+    .course-note{line-height:1.55}
+    .toolLinks{display:grid;gap:7px}
+    .toolLinks a{display:block;padding:.65rem .7rem;text-decoration:none}
+    .toolLinks small{display:block;}
+    @media(min-width:981px){.sidebar{scrollbar-gutter:stable}}
+  
