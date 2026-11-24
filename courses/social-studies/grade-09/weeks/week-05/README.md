@@ -8,4 +8,5 @@
 - Three graded assignments
 - Ten objective quiz questions and one constructed response
 - Student printable: `student-packet.html`
+- Canonical mastery assessment: `student-assessment.html`
 - Teacher guide and key: `teacher-guide.html`
