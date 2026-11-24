@@ -261,3 +261,16 @@ body[data-social-studies-grade-shell="v1"] .footer :is(a,p,span,div,small,strong
   body[data-social-studies-department-shell="v1"],
   body[data-social-studies-grade-shell="v1"]{background:#fff!important;color:#111!important}
 }
+/* Former inline utility presentation now centralized here */
+body[data-social-studies-grade-shell="v1"] .ss-inline-gap{margin-top:8px}
+body[data-social-studies-grade-shell="v1"] :is(.academy-evidence-portal-link,.khaemenes-original-tools,.khaemenes-source-quality,.khaemenes-unified-evidence){
+  margin:14px auto!important;padding:12px!important;max-width:1180px;
+  border:1px solid var(--ss-line)!important;border-radius:var(--ss-radius)!important;
+  background:var(--ss-cream-soft)!important;color:var(--ss-charcoal)!important;overflow-wrap:anywhere
+}
+body[data-social-studies-grade-shell="v1"] :is(.academy-evidence-portal-link,.khaemenes-original-tools,.khaemenes-source-quality,.khaemenes-unified-evidence) p{
+  margin:0 0 6px!important;color:var(--ss-charcoal)!important
+}
+body[data-social-studies-grade-shell="v1"] :is(.academy-evidence-portal-link,.khaemenes-original-tools,.khaemenes-source-quality,.khaemenes-unified-evidence) a{
+  color:var(--ss-charcoal)!important;text-decoration:underline!important;text-underline-offset:3px
+}
