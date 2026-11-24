@@ -201,9 +201,10 @@ for(const grade of [10,11]){
       assert(source.includes(contract),"Social Studies 10 learner session safety contract missing "+contract);
     }
   }
-  for(const token of ["highAssessmentDraw","KhaemenesHighAssessmentAdapter","attemptId","questionIds","reviewSkills","score>=80","highAssessmentComplete"]){
+  for(const token of ["highAssessmentDraw","KhaemenesHighAssessmentAdapter","attemptId","questionIds","reviewSkills","highAssessmentComplete"]){
     assert(source.includes(token),"Social Studies "+grade+" missing "+token);
   }
+  assert(/(?:score|percent)\s*>=\s*80/.test(source),"Social Studies "+grade+" missing the 80% assessment mastery expression.");
   assert(/capstone|constructed response|source-based analysis/i.test(source),"Social Studies "+grade+" lost capstone/performance evidence.");
 }
 {
