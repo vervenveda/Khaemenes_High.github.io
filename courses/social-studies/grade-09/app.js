@@ -203,7 +203,7 @@ function quizHTML(w,s){
     <div id="quizResult">${saved.completed?`<p class="score">Best objective score: ${saved.bestScore}/20 (${saved.bestPercent}%)</p><p class="small">Attempts: ${saved.attempts||1}</p>`:''}</div>
   </section>`;
 }
-function packetPath(w){return w.week===27?'weeks/week-27/student-packet-v2.html':`weeks/week-${String(w.week).padStart(2,'0')}/student-packet.html`}
+function packetPath(w){return `weeks/week-${String(w.week).padStart(2,'0')}/student-packet.html`}
 function localLabHTML(w){if(w.week===26)return '<section class="card col12"><h2>Local Industrialization Simulation Lab</h2><p>Run the Academy local growth and supply/demand models, then corroborate model behavior with the historical record. No network connection is required.</p><div class="actions"><a class="button secondary" href="weeks/week-26/simulation-lab.html">Open Local Week 26 Lab</a></div></section>';if(w.week===27)return '<section class="card col12"><h2>Local Economic Reasoning Lab</h2><p>Test controlled market scenarios locally, record distributional effects and limitations, then compare the model with Week 27 historical evidence.</p><div class="actions"><a class="button secondary" href="weeks/week-27/economic-lab.html">Open Local Week 27 Lab</a></div></section>';return ''}
 function weekHTML(w){
   const s=activeStudent();
