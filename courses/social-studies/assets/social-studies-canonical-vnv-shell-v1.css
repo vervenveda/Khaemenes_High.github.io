@@ -1,0 +1,263 @@
+/* Khaemenes High · Social Studies canonical presentation authority v1
+   One visual owner for department + Grade 9–12 course doors.
+   Course-specific CSS may own structure/layout only; not color, typography, hero, buttons, cards, radii, breadcrumbs, footer or VNV chrome. */
+
+:root{
+  --ss-charcoal:#243038;
+  --ss-charcoal-2:#2f3c43;
+  --ss-cream:#fff8e9;
+  --ss-cream-soft:#f7f1e5;
+  --ss-parchment:#f4f0e7;
+  --ss-khaki:#e9dfcc;
+  --ss-line:#cbbd9f;
+  --ss-muted:#5d675f;
+  --ss-accent:#8b6f3e;
+  --ss-radius:7px;
+  --ss-body:"Brandon Grotesque",Nunito,"Avenir Next","Segoe UI",Arial,sans-serif;
+  --ss-display:Cinzel,Georgia,"Times New Roman",serif;
+}
+
+html{background:var(--ss-parchment);scroll-behavior:smooth}
+body[data-social-studies-department-shell="v1"],
+body[data-social-studies-grade-shell="v1"]{
+  margin:0!important;
+  background:var(--ss-parchment)!important;
+  background-image:none!important;
+  color:var(--ss-charcoal)!important;
+  font-family:var(--ss-body)!important;
+  font-size:16px!important;
+  font-weight:400!important;
+  line-height:1.65!important;
+}
+body[data-social-studies-grade-shell="v1"]::before,
+body[data-social-studies-grade-shell="v1"]::after{display:none!important}
+
+body[data-social-studies-department-shell="v1"] *,
+body[data-social-studies-grade-shell="v1"] *{box-sizing:border-box}
+
+body[data-social-studies-department-shell="v1"] :is(p,li,a,button,input,select,textarea,label,summary,td,th),
+body[data-social-studies-grade-shell="v1"] :is(p,li,a,button,input,select,textarea,label,summary,td,th){
+  font-size:max(16px,1em);
+}
+body[data-social-studies-department-shell="v1"] :is(h1,h2,h3,h4,h5,h6,strong,b,summary,button,.button),
+body[data-social-studies-grade-shell="v1"] :is(h1,h2,h3,h4,h5,h6,strong,b,summary,button,.button){
+  font-weight:400!important;
+}
+body[data-social-studies-department-shell="v1"] :is(h1,h2,h3,h4,h5,h6),
+body[data-social-studies-grade-shell="v1"] :is(h1,h2,h3,h4,h5,h6){
+  font-family:var(--ss-display)!important;
+  color:var(--ss-charcoal);
+}
+
+body[data-social-studies-department-shell="v1"] :where(
+ button,.button,a.button,input,select,textarea,.card,.panel,.course-feature,.ss-feature-card,
+ details,dialog,.notice,.lesson,.assignment,.readingSection,.quizQ,.sourceBox,.choice,.worksheet,.question,.option
+),
+body[data-social-studies-grade-shell="v1"] :where(
+ button,.button,a.button,input,select,textarea,.card,.panel,.course-feature,.ss-feature-card,
+ details,dialog,.notice,.lesson,.assignment,.readingSection,.quizQ,.sourceBox,.choice,.worksheet,.question,.option
+){border-radius:var(--ss-radius)!important}
+
+/* VNV stack spacing */
+body > #vnvTickerAutoPopulate{top:var(--vnv-333-ticker-height,33px)!important}
+body > #vnvHeaderAutoPopulate{
+  top:calc(var(--vnv-333-ticker-height,33px) + var(--vnv-autopopulate-ticker-height,33px))!important
+}
+
+/* Breadcrumbs */
+.subject-breadcrumbs,.high-subject-breadcrumbs{
+  width:100%;min-height:44px;padding:9px 18px;
+  display:flex;align-items:center;justify-content:center;gap:7px;flex-wrap:wrap;
+  text-align:center;background:var(--ss-khaki);border-bottom:1px solid var(--ss-line);
+  color:var(--ss-charcoal);font-family:var(--ss-body)
+}
+.subject-breadcrumbs a,.high-subject-breadcrumbs a{color:var(--ss-charcoal)!important;text-decoration:none}
+.subject-breadcrumbs a:hover,.high-subject-breadcrumbs a:hover{text-decoration:underline;text-underline-offset:3px}
+
+/* Hero */
+body[data-social-studies-department-shell="v1"] .high-subject-hero,
+body[data-social-studies-grade-shell="v1"] .hero{
+  width:100%!important;max-width:none!important;
+  margin:0!important;padding:55px 24px!important;
+  background:var(--ss-charcoal)!important;background-image:none!important;
+  color:var(--ss-cream)!important;border:0!important;border-radius:0!important;
+  box-shadow:none!important;text-align:center!important;overflow:visible!important
+}
+body[data-social-studies-grade-shell="v1"] .hero::before,
+body[data-social-studies-grade-shell="v1"] .hero::after{display:none!important}
+body[data-social-studies-department-shell="v1"] .subject-inner{
+  width:min(100%,1050px);margin:auto;display:grid;justify-items:center;gap:14px
+}
+body[data-social-studies-department-shell="v1"] .subject-academy,
+body[data-social-studies-grade-shell="v1"] .hero .eyebrow{
+  margin:0!important;color:var(--ss-cream)!important;
+  font:400 33px/1.15 var(--ss-display)!important;
+  letter-spacing:.03em!important;text-transform:none!important
+}
+body[data-social-studies-department-shell="v1"] .high-subject-hero h1,
+body[data-social-studies-grade-shell="v1"] .hero h1{
+  margin:0!important;color:var(--ss-cream)!important;
+  font:400 clamp(44px,7vw,66px)/1.05 var(--ss-display)!important;
+  letter-spacing:.02em!important;max-width:1120px!important
+}
+body[data-social-studies-department-shell="v1"] .subject-descriptor,
+body[data-social-studies-grade-shell="v1"] .hero .subtitle{
+  margin:0!important;color:var(--ss-cream)!important;
+  font:400 24px/1.35 var(--ss-body)!important;max-width:1000px!important
+}
+body[data-social-studies-department-shell="v1"] .subject-lead,
+body[data-social-studies-grade-shell="v1"] .hero>p:not(.eyebrow):not(.subtitle){
+  max-width:900px!important;margin:10px auto 0!important;color:#e8dfcf!important;
+  font:400 16px/1.65 var(--ss-body)!important
+}
+
+/* Access buttons */
+.high-subject-access{
+  width:min(100%,760px)!important;display:grid!important;
+  grid-template-columns:repeat(3,minmax(0,1fr))!important;
+  gap:11px!important;margin:20px auto 0!important
+}
+.high-subject-access :is(a,button){
+  box-sizing:border-box!important;display:flex!important;align-items:center!important;justify-content:center!important;
+  min-height:44px!important;padding:9px 14px!important;border:1px solid var(--ss-cream)!important;
+  border-radius:var(--ss-radius)!important;background:var(--ss-cream)!important;color:var(--ss-charcoal)!important;
+  -webkit-text-fill-color:var(--ss-charcoal)!important;
+  font:400 16px/1.3 var(--ss-body)!important;text-decoration:none!important;text-align:center!important
+}
+.high-subject-access :is(a,button):first-child{
+  background:var(--ss-charcoal)!important;color:var(--ss-cream)!important;-webkit-text-fill-color:var(--ss-cream)!important
+}
+
+/* About + features */
+.subject-about,.course-features,.ss-shell-intro,.ss-shell-features{
+  width:min(1040px,calc(100% - 32px));margin:24px auto 0
+}
+.subject-about,.ss-shell-intro{
+  padding:22px;text-align:center;background:var(--ss-cream);border:1px solid var(--ss-line);border-radius:var(--ss-radius)
+}
+.subject-about h2,.course-features>h2,.ss-shell-intro h2,.ss-shell-features>h2{
+  margin:0 0 10px;font:400 33px/1.2 var(--ss-display)!important;color:var(--ss-charcoal)!important;text-align:center
+}
+.subject-about p,.ss-shell-intro p{max-width:850px;margin:0 auto;color:#35423e!important;font-size:16px!important}
+.feature-grid,.ss-feature-grid{
+  display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px
+}
+.course-feature,.ss-feature-card{
+  min-height:190px;padding:22px;display:flex;flex-direction:column;align-items:center;justify-content:center;
+  text-align:center;background:var(--ss-khaki)!important;border:1px solid var(--ss-line)!important;
+  color:var(--ss-charcoal)!important;box-shadow:none!important
+}
+.course-feature h3,.ss-feature-card h3{
+  margin:0 0 9px;font:400 24px/1.25 var(--ss-display)!important;color:var(--ss-charcoal)!important
+}
+.course-feature p,.ss-feature-card p{margin:0 0 14px;max-width:440px;color:#35423e!important}
+.course-feature button,.ss-feature-card button{
+  margin-top:auto;min-width:150px;min-height:44px;padding:9px 18px;
+  border:1px solid var(--ss-charcoal)!important;background:var(--ss-charcoal)!important;color:var(--ss-cream)!important;
+  font:400 16px/1.2 var(--ss-body)!important;cursor:pointer;box-shadow:none!important
+}
+
+/* Shared dialogs */
+.feature-dialog,.ss-feature-dialog{
+  width:min(650px,calc(100vw - 28px));padding:0;border:1px solid var(--ss-charcoal)!important;
+  background:var(--ss-cream)!important;color:var(--ss-charcoal)!important;border-radius:var(--ss-radius)!important
+}
+.feature-dialog::backdrop,.ss-feature-dialog::backdrop{background:rgba(20,28,28,.58)}
+.feature-dialog-inner,.ss-feature-dialog-inner{padding:24px;text-align:center}
+.feature-dialog h2,.ss-feature-dialog h2{
+  margin:0 0 10px;font:400 33px/1.2 var(--ss-display)!important;color:var(--ss-charcoal)!important
+}
+.feature-dialog-actions,.ss-feature-dialog-actions{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;margin-top:18px}
+.feature-dialog :is(a,button),.ss-feature-dialog :is(a,button){
+  min-height:44px;padding:9px 18px;border:1px solid var(--ss-charcoal)!important;
+  font:400 16px/1.2 var(--ss-body)!important;text-decoration:none;box-shadow:none!important
+}
+.feature-dialog a,.ss-feature-dialog a{background:var(--ss-charcoal)!important;color:var(--ss-cream)!important}
+.feature-dialog button,.ss-feature-dialog button{background:var(--ss-cream)!important;color:var(--ss-charcoal)!important}
+
+/* Common course surfaces */
+body[data-social-studies-grade-shell="v1"] :is(.card,.panel,.lesson,.assignment,.readingSection,.quizQ,.sourceBox,.question,.worksheet){
+  background:var(--ss-cream)!important;color:var(--ss-charcoal)!important;
+  border:1px solid var(--ss-line)!important;box-shadow:none!important
+}
+body[data-social-studies-grade-shell="v1"] :is(.card,.panel,.lesson,.assignment,.readingSection,.quizQ,.sourceBox,.question,.worksheet)
+:is(p,li,td,label,small){color:#35423e!important}
+body[data-social-studies-grade-shell="v1"] :is(.card,.panel,.lesson,.assignment,.readingSection,.quizQ,.sourceBox,.question,.worksheet)
+:is(h2,h3,h4){color:var(--ss-charcoal)!important}
+body[data-social-studies-grade-shell="v1"] :is(.notice,.feedback){
+  background:#f3ead8!important;color:var(--ss-charcoal)!important;border-color:var(--ss-accent)!important;box-shadow:none!important
+}
+body[data-social-studies-grade-shell="v1"] :is(.choice,.option,.vocabItem){
+  background:var(--ss-cream-soft)!important;color:var(--ss-charcoal)!important;border:1px solid var(--ss-line)!important
+}
+body[data-social-studies-grade-shell="v1"] :is(input,select,textarea){
+  background:#fffdf8!important;color:var(--ss-charcoal)!important;border:1px solid var(--ss-line)!important;
+  font:400 16px/1.4 var(--ss-body)!important
+}
+body[data-social-studies-grade-shell="v1"] :is(button,.button,a.button,.navBtn,.tab,.weekBtn){
+  border:1px solid var(--ss-charcoal)!important;background:var(--ss-charcoal)!important;color:var(--ss-cream)!important;
+  font:400 16px/1.2 var(--ss-body)!important;box-shadow:none!important;transform:none!important
+}
+body[data-social-studies-grade-shell="v1"] :is(button,.button,a.button,.navBtn,.tab,.weekBtn).secondary,
+body[data-social-studies-grade-shell="v1"] :is(button.secondary,.button.secondary,a.button.secondary){
+  background:var(--ss-cream)!important;color:var(--ss-charcoal)!important
+}
+body[data-social-studies-grade-shell="v1"] :is(.navBtn,.tab,.weekBtn).active{
+  background:var(--ss-khaki)!important;color:var(--ss-charcoal)!important;border-color:var(--ss-accent)!important
+}
+body[data-social-studies-grade-shell="v1"] a{color:#3e5d55}
+body[data-social-studies-grade-shell="v1"] :is(.pill,.meta span){
+  border:1px solid var(--ss-line)!important;background:var(--ss-cream-soft)!important;color:var(--ss-charcoal)!important;
+  border-radius:7px!important;padding:.3rem .6rem!important
+}
+body[data-social-studies-grade-shell="v1"] :is(.progress,.progress span){border-radius:7px!important}
+body[data-social-studies-grade-shell="v1"] .progress{background:#ddd2bf!important;border:1px solid var(--ss-line)!important}
+body[data-social-studies-grade-shell="v1"] .progress span{background:var(--ss-accent)!important}
+body[data-social-studies-grade-shell="v1"] :is(th,td){border-color:var(--ss-line)!important}
+body[data-social-studies-grade-shell="v1"] th{background:var(--ss-charcoal)!important;color:var(--ss-cream)!important}
+body[data-social-studies-grade-shell="v1"] td{color:var(--ss-charcoal)!important}
+
+/* Sidebar and brand: structural container, canonical palette */
+body[data-social-studies-grade-shell="v1"] .sidebar{
+  background:var(--ss-charcoal)!important;background-image:none!important;color:var(--ss-cream)!important;
+  border-color:rgba(255,248,233,.18)!important;box-shadow:none!important
+}
+body[data-social-studies-grade-shell="v1"] .brand{
+  background:transparent!important;color:var(--ss-cream)!important;border-color:rgba(255,248,233,.18)!important;box-shadow:none!important
+}
+body[data-social-studies-grade-shell="v1"] .brand :is(h2,p,small,.breadcrumbs,a){color:var(--ss-cream)!important}
+body[data-social-studies-grade-shell="v1"] .seal{
+  border-color:var(--ss-cream)!important;color:var(--ss-cream)!important;background:transparent!important;
+  box-shadow:none!important;border-radius:50%!important
+}
+
+/* Footer */
+body[data-social-studies-department-shell="v1"] footer,
+body[data-social-studies-grade-shell="v1"] footer,
+body[data-social-studies-grade-shell="v1"] .footer{
+  margin-top:33px!important;padding:24px 18px!important;background:var(--ss-charcoal)!important;color:var(--ss-cream)!important;
+  text-align:center!important;font:400 14px/1.5 var(--ss-body)!important;border-radius:0!important
+}
+body[data-social-studies-department-shell="v1"] footer :is(a,p,span,div,small,strong),
+body[data-social-studies-grade-shell="v1"] footer :is(a,p,span,div,small,strong),
+body[data-social-studies-grade-shell="v1"] .footer :is(a,p,span,div,small,strong){color:var(--ss-cream)!important;font-size:14px!important}
+
+/* Tool symmetry */
+#vnvClassToolsToggle{
+  min-height:44px!important;border-radius:7px!important;font-size:16px!important
+}
+#vnvEcosystemUtilityDock>a,#vnvEcosystemUtilityDock>button{
+  min-height:44px!important;border-radius:7px!important;font-size:16px!important
+}
+
+@media(max-width:720px){
+  .feature-grid,.ss-feature-grid,.high-subject-access{grid-template-columns:1fr!important}
+  body[data-social-studies-department-shell="v1"] .high-subject-hero,
+  body[data-social-studies-grade-shell="v1"] .hero{padding:44px 18px!important}
+}
+@media print{
+  #vnv333NetworkTicker,#vnvTickerAutoPopulate,#vnvHeaderAutoPopulate,#vnvClassToolsToolbar,#vnvEcosystemUtilityDock{display:none!important}
+  .subject-breadcrumbs,.high-subject-breadcrumbs,.high-subject-access,.ss-shell-intro,.ss-shell-features{display:none!important}
+  body[data-social-studies-department-shell="v1"],
+  body[data-social-studies-grade-shell="v1"]{background:#fff!important;color:#111!important}
+}
