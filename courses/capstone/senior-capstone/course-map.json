@@ -1222,7 +1222,7 @@
         {
           "day": 3,
           "phase": "Alternative generation",
-          "task": "Create at least three plausible revisions and compare tradeoffs.",
+          "task": "Create at least three plausible revisions, compare their tradeoffs against the project criteria, and explain why one option should be tested first.",
           "evidence": "Revision alternatives."
         },
         {
@@ -1453,7 +1453,7 @@
         {
           "day": 4,
           "phase": "Conclusion stress test",
-          "task": "Revise claims that no longer survive the updated evidence base.",
+          "task": "Revise any claim that no longer survives the updated evidence base, preserving the old wording and documenting exactly which new evidence forced the change.",
           "evidence": "Stress-tested conclusion."
         },
         {
@@ -1822,7 +1822,7 @@
         {
           "day": 3,
           "phase": "Execute validation",
-          "task": "Run the tests and preserve raw results, deviations, and failed cases.",
+          "task": "Run the planned validation tests and preserve raw results, deviations from method, failed cases, and any unexpected observations before interpreting the outcome.",
           "evidence": "Validation evidence."
         },
         {
