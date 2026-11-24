@@ -8,46 +8,46 @@
       "choices": [
         "civic action",
         "stakeholder",
-        "synthesis",
-        "policy memo"
+        "policy memo",
+        "synthesis"
       ],
-      "answer": 2,
+      "answer": 3,
       "explanation": "Synthesis is the course term defined as: Combining evidence and ideas into a broader explanation."
     },
     {
       "id": "W36Q2",
       "prompt": "Which term best matches this definition: A recurring challenge that persists across time and place.",
       "choices": [
+        "enduring issue",
         "synthesis",
         "policy memo",
-        "stakeholder",
-        "enduring issue"
+        "stakeholder"
       ],
-      "answer": 3,
+      "answer": 0,
       "explanation": "Enduring Issue is the course term defined as: A recurring challenge that persists across time and place."
     },
     {
       "id": "W36Q3",
       "prompt": "Which term best matches this definition: Lawful, informed participation intended to address a public concern.",
       "choices": [
-        "civic action",
         "synthesis",
         "policy memo",
-        "portfolio"
+        "portfolio",
+        "civic action"
       ],
-      "answer": 0,
+      "answer": 3,
       "explanation": "Civic Action is the course term defined as: Lawful, informed participation intended to address a public concern."
     },
     {
       "id": "W36Q4",
       "prompt": "Which term best matches this definition: A person or group affected by or able to influence a decision.",
       "choices": [
-        "portfolio",
         "stakeholder",
+        "portfolio",
         "civic action",
         "enduring issue"
       ],
-      "answer": 1,
+      "answer": 0,
       "explanation": "Stakeholder is the course term defined as: A person or group affected by or able to influence a decision."
     },
     {
@@ -55,95 +55,77 @@
       "prompt": "Which term best matches this definition: A concise analysis of a public problem, options, evidence, and recommendation.",
       "choices": [
         "enduring issue",
-        "civic action",
         "policy memo",
+        "civic action",
         "portfolio"
       ],
-      "answer": 2,
+      "answer": 1,
       "explanation": "Policy Memo is the course term defined as: A concise analysis of a public problem, options, evidence, and recommendation."
     },
     {
       "id": "W36Q6",
-      "prompt": "A final essay connects industrialization, migration, imperialism, war, rights movements, and globalization. What makes the essay a synthesis rather than a list?",
+      "prompt": "Which statement best reflects the evidence and interpretation emphasized in Week 36?",
       "choices": [
-        "It includes the most dates.",
-        "It gives every unit equal word count.",
-        "It avoids comparing different regions.",
-        "It explains relationships across chronology, geography, economics, government, culture, and evidence to support a broader claim."
+        "Historical change always follows one universal path and can be explained by a single cause.",
+        "Global production can lower prices and expand opportunity while shifting labor, environmental, and security risks across borders.",
+        "Historical synthesis connects chronology, geography, economics, government, culture, and evidence rather than treating units as isolated.",
+        "Democratic systems vary in executive-legislative relations, electoral rules, federalism, courts, parties, and rights protections."
       ],
-      "answer": 3,
-      "explanation": "Synthesis explains connections and patterns across topics rather than merely placing facts next to one another.",
-      "type": "multiple-choice"
+      "answer": 2,
+      "explanation": "Historical synthesis connects chronology, geography, economics, government, culture, and evidence rather than treating units as isolated."
     },
     {
       "id": "W36Q7",
-      "prompt": "Which civic-capstone proposal is most ready for implementation?",
+      "prompt": "Which statement best reflects the evidence and interpretation emphasized in Week 36?",
       "choices": [
-        "One that identifies stakeholders and authority, weighs options and tradeoffs, gives implementation steps, and defines success measures.",
-        "One with a strong opinion but no responsible authority identified.",
-        "One with many sources but no recommended action.",
-        "One that promises benefits without naming costs or limitations."
+        "Historical change always follows one universal path and can be explained by a single cause.",
+        "A strong civic proposal identifies stakeholders, authority, evidence, tradeoffs, implementation steps, and measures of success.",
+        "Development must be evaluated through health, education, rights, inequality, resilience, and environment as well as income.",
+        "Formal constitutions matter, but democratic performance also depends on norms, institutions, participation, accountability, and access to information."
       ],
-      "answer": 0,
-      "explanation": "A feasible proposal connects evidence to authority, options, implementation, tradeoffs, and measurable outcomes.",
-      "type": "multiple-choice"
+      "answer": 1,
+      "explanation": "A strong civic proposal identifies stakeholders, authority, evidence, tradeoffs, implementation steps, and measures of success."
     },
     {
       "id": "W36Q8",
-      "prompt": "An unfamiliar graph appears on the final examination. What best demonstrates transfer of course habits?",
+      "prompt": "Which statement best reflects the evidence and interpretation emphasized in Week 36?",
       "choices": [
-        "Ignore the graph because it was not studied earlier.",
-        "Inspect source, units, scale, pattern, context, and limitations before using the graph as evidence in a new claim.",
-        "Memorize a conclusion from a previous unit and apply it unchanged.",
-        "Choose the visually largest category without checking the axis."
+        "Media literacy requires lateral reading, source tracing, evidence checking, image verification, and awareness of algorithmic incentives.",
+        "Final assessment should demonstrate transfer: using course habits to analyze unfamiliar evidence and contemporary problems.",
+        "Historical change always follows one universal path and can be explained by a single cause.",
+        "Migration is shaped by work, family, conflict, climate, policy, networks, and individual agency."
       ],
       "answer": 1,
-      "explanation": "Transfer means applying learned disciplinary practices to evidence and problems not rehearsed in advance.",
-      "type": "multiple-choice"
+      "explanation": "Final assessment should demonstrate transfer: using course habits to analyze unfamiliar evidence and contemporary problems."
     },
     {
       "id": "W36Q9",
-      "prompt": "A thematic map connects six regions to migration, state power, trade, and environmental change. What would make the map analytically strongest?",
+      "prompt": "What is the strongest method for evaluating “Civic Capstone Evidence File”?",
       "choices": [
-        "Use as many symbols as possible without a legend.",
-        "Place regions closer together to imply stronger causation.",
-        "Use arrows and annotations that explain relationships while distinguishing observed patterns from causal claims.",
-        "Remove chronology because maps should show only location."
+        "Use only the most dramatic sentence because memorable details are the most reliable.",
+        "Accept the source if it was created during the period because primary sources are automatically accurate.",
+        "Compare the source with independent evidence and evaluate its origin, purpose, context, and limits.",
+        "Reject the source if it contains a point of view because useful evidence must be neutral."
       ],
       "answer": 2,
-      "explanation": "Analytical mapping makes relationships explicit and preserves the distinction between spatial pattern and causal explanation.",
-      "type": "multiple-choice"
+      "explanation": "Compare the source with independent evidence and evaluate its origin, purpose, context, and limits."
     },
     {
       "id": "W36Q10",
-      "prompt": "A capstone budget is affordable, but its only success measure is 'people will like it.' What is the best revision?",
+      "prompt": "Which response demonstrates the strongest geographic or quantitative reasoning?",
       "choices": [
-        "Remove all evaluation because implementation is enough.",
-        "Increase the budget so the project appears more serious.",
-        "Replace evidence with a larger stakeholder list.",
-        "Add measurable indicators tied to the stated problem, a timeline for checking them, and limits that could affect interpretation."
+        "Assume that every mapped relationship is a direct cause.",
+        "State the observed pattern, propose an explanation, and identify what the map or data cannot prove.",
+        "Use the visualization only if it confirms the original claim.",
+        "Ignore units and scale so attention stays on the overall appearance."
       ],
-      "answer": 3,
-      "explanation": "A credible civic proposal defines observable success indicators and how they will be evaluated over time.",
-      "type": "multiple-choice"
+      "answer": 1,
+      "explanation": "State the observed pattern, propose an explanation, and identify what the map or data cannot prove."
     }
   ],
   "shortResponse": {
     "prompt": "Using at least two specific pieces of evidence, answer: What patterns from world history can help people make wiser civic decisions today?",
     "points": 5,
     "exemplar": "A full-credit response states a defensible answer to the essential question, uses two accurate details from the week, explains how each detail supports the claim, and acknowledges one complexity or limitation."
-  },
-  "masteryThreshold": 80,
-  "questionIds": [
-    "W36Q1",
-    "W36Q2",
-    "W36Q3",
-    "W36Q4",
-    "W36Q5",
-    "W36Q6",
-    "W36Q7",
-    "W36Q8",
-    "W36Q9",
-    "W36Q10"
-  ]
+  }
 }

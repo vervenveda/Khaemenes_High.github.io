@@ -1,4 +1,11 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Week 27 · Local Economic Reasoning Lab</title><style>*{box-sizing:border-box}body{margin:0;background:#071018;color:#edf5f2;font:16px/1.55 system-ui,sans-serif}.main{width:min(1050px,92%);margin:auto;padding:30px 0 60px}.hero,.card{background:#101d25;border:1px solid #38515b;border-radius:16px;padding:22px;margin:14px 0}.eyebrow{letter-spacing:.12em;text-transform:uppercase;color:#d7bd72;font-size:.78rem}h1,h2,h3{color:#fff}label{display:grid;gap:5px;margin:12px 0}input[type=range]{width:100%}.metrics{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}.metric{padding:12px;background:#0a151c;border:1px solid #314852;border-radius:12px;text-align:center}.metric strong{display:block;font-size:1.45rem;color:#f2d68a}textarea{width:100%;min-height:140px;background:#09131a;color:#fff;border:1px solid #405964;border-radius:10px;padding:10px}button,.button{display:inline-block;padding:9px 13px;border-radius:9px;border:1px solid #806f43;background:#d6b95f;color:#16130a;font-weight:700;text-decoration:none}.notice{border-left:4px solid #d6b95f;padding:12px;background:#151d20}.grid2{display:grid;grid-template-columns:1fr 1fr;gap:14px}@media(max-width:760px){.grid2,.metrics{grid-template-columns:1fr}}</style><link rel="stylesheet" href="../../../../assets/vervenveda-parchment.css" data-vervenveda-parchment>
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Week 27 · Local Economic Reasoning Lab</title>
+<link rel="stylesheet" href="../../styles.css?v=20261007">
+<script src="../../assets/grade09-records.js?v=20261007"></script>
+<script src="../../assets/grade09-economics-labs-v1.js?v=20261007" defer></script>
 <style id="khaemenes-typography-standard">
 /* Khaemenes High presentation typography · 55 / 33 / 24 / 14 px.
    All public pages receive this local, embedded policy for offline use.
@@ -52,8 +59,51 @@ html:root:root body :is(.hero, .header, .page-header, .section-head, .lesson-hea
   html:root:root body { font-size: 14px !important; }
 }
 </style>
-  </head><body><main class="main"><header class="hero"><div class="eyebrow">Grade 9 Global Studies Honors · Week 27 · Local-first</div><h1>Economic Reasoning Lab</h1><p>Test a simplified market model locally, then examine distribution, institutions, labor power, and historical evidence before drawing conclusions.</p><a class="button" href="../app.html?week=27">Return to Week 27</a></header><section class="card"><h2>Controlled Market Scenario</h2><label>Demand shift <output id="demOut"></output><input id="dem" type="range" min="-50" max="50" value="0"></label><label>Supply shift <output id="supOut"></output><input id="sup" type="range" min="-50" max="50" value="0"></label><div class="metrics"><div class="metric"><strong id="price"></strong>equilibrium price index</div><div class="metric"><strong id="qty"></strong>equilibrium quantity index</div><div class="metric"><strong id="surplus"></strong>model status</div></div><p class="notice"><strong>Reasoning safeguard:</strong> The model can test a mechanism under stated assumptions. It cannot decide whether capitalism, socialism, regulation, unions, public ownership, or another institution is historically or morally superior. Those conclusions require definitions, distributional evidence, institutional context, and argument.</p></section><section class="card"><h2>Five-Run Investigation</h2><ol><li>Define the institution or policy claim you are examining.</li><li>Predict the direction of price and quantity before moving a slider.</li><li>Change one variable and record the output.</li><li>Ask who could gain, lose, or remain excluded in the historical setting.</li><li>Identify one factor the model omits.</li><li>Corroborate or challenge the mechanism using Week 27 historical evidence.</li></ol><textarea aria-label="Week 27 economic reasoning evidence" placeholder="Run 1 → prediction → observed price/quantity → distribution → limitation → historical evidence...
+  </head>
+<body>
+<main class="main" data-ss9-economic-lab="week27">
+<header class="hero">
+  <div class="eyebrow">Grade 9 Global Studies Honors · Week 27</div>
+  <h1>Economic Reasoning Lab</h1>
+  <p>Use a local supply-and-demand model to investigate institutions, incentives, distribution, and tradeoffs. The output describes model behavior; it does not prove a historical outcome.</p>
+  <div class="heroActions noPrint"><a class="button secondary" href="../../app.html?view=week&amp;week=27">Return to Week 27</a><button class="button" id="print-lab" type="button">Print / Save Record</button></div>
+</header>
+<p id="lab-status" class="notice" role="status">Local course model loading.</p>
+<section class="card">
+  <h2>Protocol</h2>
+  <ol><li>Define the institution or market mechanism.</li><li>Predict before changing a variable.</li><li>Change one variable and hold the other steady.</li><li>Record the modeled price and quantity.</li><li>Ask who might gain, lose, or bear a cost.</li><li>Name a limitation and corroborate with historical evidence.</li></ol>
+</section>
+<section class="card">
+  <h2>Local supply-and-demand model</h2>
+  <p class="notice">Price index = 50 + 0.7×(demand − 50) − 0.6×(supply − 50). Quantity index = 50 + 0.45×(demand − 50) + 0.55×(supply − 50). Both outputs are bounded classroom indices from 0–100.</p>
+  <div class="grid">
+    <div class="col6"><label for="market-demand">Demand strength <output id="market-demand-out">50</output></label><input id="market-demand" data-save type="range" min="0" max="100" value="50"></div>
+    <div class="col6"><label for="market-supply">Supply strength <output id="market-supply-out">50</output></label><input id="market-supply" data-save type="range" min="0" max="100" value="50"></div>
+  </div>
+  <div class="grid">
+    <div class="card col6 kpi"><output id="market-price">0</output><span>Modeled price index</span></div>
+    <div class="card col6 kpi"><output id="market-quantity">0</output><span>Modeled quantity index</span></div>
+  </div>
+</section>
+<section class="card">
+  <h2>Five-run record</h2>
+  <p>Change one setting at a time. Complete each row with a prediction, the observed output, a distributional question, and a limitation.</p>
+  <div class="tableWrap"><table><thead><tr><th>Run</th><th>Prediction</th><th>Observed price</th><th>Observed quantity</th><th>Distributional question</th><th>Limitation</th></tr></thead><tbody>
+    <tr data-run><th scope="row">1</th><td><input data-field="prediction" aria-label="Run 1 prediction"></td><td><input data-field="price" aria-label="Run 1 observed price"></td><td><input data-field="quantity" aria-label="Run 1 observed quantity"></td><td><input data-field="distribution" aria-label="Run 1 distributional question"></td><td><input data-field="limitation" aria-label="Run 1 limitation"></td></tr>
+    <tr data-run><th scope="row">2</th><td><input data-field="prediction" aria-label="Run 2 prediction"></td><td><input data-field="price" aria-label="Run 2 observed price"></td><td><input data-field="quantity" aria-label="Run 2 observed quantity"></td><td><input data-field="distribution" aria-label="Run 2 distributional question"></td><td><input data-field="limitation" aria-label="Run 2 limitation"></td></tr>
+    <tr data-run><th scope="row">3</th><td><input data-field="prediction" aria-label="Run 3 prediction"></td><td><input data-field="price" aria-label="Run 3 observed price"></td><td><input data-field="quantity" aria-label="Run 3 observed quantity"></td><td><input data-field="distribution" aria-label="Run 3 distributional question"></td><td><input data-field="limitation" aria-label="Run 3 limitation"></td></tr>
+    <tr data-run><th scope="row">4</th><td><input data-field="prediction" aria-label="Run 4 prediction"></td><td><input data-field="price" aria-label="Run 4 observed price"></td><td><input data-field="quantity" aria-label="Run 4 observed quantity"></td><td><input data-field="distribution" aria-label="Run 4 distributional question"></td><td><input data-field="limitation" aria-label="Run 4 limitation"></td></tr>
+    <tr data-run><th scope="row">5</th><td><input data-field="prediction" aria-label="Run 5 prediction"></td><td><input data-field="price" aria-label="Run 5 observed price"></td><td><input data-field="quantity" aria-label="Run 5 observed quantity"></td><td><input data-field="distribution" aria-label="Run 5 distributional question"></td><td><input data-field="limitation" aria-label="Run 5 limitation"></td></tr>
+  </tbody></table></div>
+</section>
+<section class="card">
+  <h2>Historical corroboration</h2>
+  <label for="market-corroboration">Claim → model evidence → historical evidence → limitation → conclusion</label><textarea id="market-corroboration" data-save rows="12" placeholder="Choose one Week 27 claim. Explain whether the model supports it, complicates it, or cannot test it."></textarea>
+  <div class="actions noPrint"><button class="button" id="save-lab" type="button">Save local record</button><a class="button ghost" href="../../systems-lab-roadmap.html">Systems roadmap</a></div>
+</section>
+<footer class="footer">Khaemenes High · Jennifer Kay Pearl · Week 27</footer>
+</main>
 
-Repeat for five controlled scenarios."></textarea></section><section class="card"><h2>Historical Corroboration</h2><p>Choose one Week 27 claim about markets, labor, reform, ownership, regulation, or social welfare. Explain whether the model supports a narrow mechanism, complicates the claim, or cannot test it. Distinguish model evidence from historical evidence.</p><textarea aria-label="Historical corroboration"></textarea><button onclick="print()">Print Lab Record</button></section></main><script>(()=>{'use strict';const $=id=>document.getElementById(id);function run(){const D=+$('dem').value,S=+$('sup').value,p=Math.max(0,(120+D-S)/4),q=Math.max(0,20+S+2*p);$('demOut').textContent=(D>=0?'+':'')+D;$('supOut').textContent=(S>=0?'+':'')+S;$('price').textContent=p.toFixed(1);$('qty').textContent=q.toFixed(1);$('surplus').textContent='cleared';}['dem','sup'].forEach(x=>$(x).addEventListener('input',run));run();})();</script>
 <script src="https://vervenveda.com/assets/vnv-ecosystem-toolbar.js"></script>
-</body></html>
+</body>
+</html>

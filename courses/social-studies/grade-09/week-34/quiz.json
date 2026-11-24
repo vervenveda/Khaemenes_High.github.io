@@ -7,23 +7,23 @@
       "prompt": "Which term best matches this definition: Increasing cross-border connection in production, finance, information, culture, and movement.",
       "choices": [
         "sustainability",
-        "development indicator",
         "globalization",
+        "development indicator",
         "comparative advantage"
       ],
-      "answer": 2,
+      "answer": 1,
       "explanation": "Globalization is the course term defined as: Increasing cross-border connection in production, finance, information, culture, and movement."
     },
     {
       "id": "W34Q2",
       "prompt": "Which term best matches this definition: The linked stages through which a good or service is designed, produced, transported, and sold.",
       "choices": [
+        "supply chain",
         "sustainability",
         "development indicator",
-        "comparative advantage",
-        "supply chain"
+        "comparative advantage"
       ],
-      "answer": 3,
+      "answer": 0,
       "explanation": "Supply Chain is the course term defined as: The linked stages through which a good or service is designed, produced, transported, and sold."
     },
     {
@@ -43,107 +43,89 @@
       "prompt": "Which term best matches this definition: A measure used to describe economic or social conditions.",
       "choices": [
         "sustainability",
-        "development indicator",
         "supply chain",
-        "globalization"
+        "globalization",
+        "development indicator"
       ],
-      "answer": 1,
+      "answer": 3,
       "explanation": "Development Indicator is the course term defined as: A measure used to describe economic or social conditions."
     },
     {
       "id": "W34Q5",
       "prompt": "Which term best matches this definition: Money sent by migrants to people in another place, often family members.",
       "choices": [
+        "remittance",
         "comparative advantage",
         "development indicator",
-        "remittance",
         "supply chain"
       ],
-      "answer": 2,
+      "answer": 0,
       "explanation": "Remittance is the course term defined as: Money sent by migrants to people in another place, often family members."
     },
     {
       "id": "W34Q6",
-      "prompt": "A low-cost product creates jobs in one country but depends on hazardous labor and long-distance shipping. Which evaluation is strongest?",
+      "prompt": "Which statement best reflects the evidence and interpretation emphasized in Week 34?",
       "choices": [
-        "Low price proves the supply chain is beneficial overall.",
-        "Any global supply chain is harmful by definition.",
-        "Only the retailer's profit matters.",
-        "Evaluate price, employment, labor conditions, environmental costs, resilience, ownership, and who bears each risk or benefit."
+        "Decolonization resulted from organized movements, imperial weakness, global war, international pressure, and changing ideas of legitimacy.",
+        "Global production can lower prices and expand opportunity while shifting labor, environmental, and security risks across borders.",
+        "Historical synthesis connects chronology, geography, economics, government, culture, and evidence rather than treating units as isolated.",
+        "Democratic systems vary in executive-legislative relations, electoral rules, federalism, courts, parties, and rights protections."
       ],
-      "answer": 3,
-      "explanation": "Global production can create gains and shift costs; evaluation requires tracing benefits, risks, and distribution across the chain.",
-      "type": "multiple-choice"
+      "answer": 1,
+      "explanation": "Global production can lower prices and expand opportunity while shifting labor, environmental, and security risks across borders."
     },
     {
       "id": "W34Q7",
-      "prompt": "Why might two countries reverse places in a development ranking when the indicator changes from income to life expectancy?",
+      "prompt": "Which statement best reflects the evidence and interpretation emphasized in Week 34?",
       "choices": [
-        "Different indicators measure different dimensions of well-being, so no single ranking captures development completely.",
-        "Development rankings are fraudulent whenever they change.",
-        "Life expectancy is unrelated to development.",
-        "Income and health always move together."
+        "A strong civic proposal identifies stakeholders, authority, evidence, tradeoffs, implementation steps, and measures of success.",
+        "Formal constitutions matter, but democratic performance also depends on norms, institutions, participation, accountability, and access to information.",
+        "Development must be evaluated through health, education, rights, inequality, resilience, and environment as well as income.",
+        "Independence strategies ranged from negotiation and mass nonviolence to armed struggle and international diplomacy."
       ],
-      "answer": 0,
-      "explanation": "Income, health, education, inequality, rights, resilience, and environment capture different dimensions of development.",
-      "type": "multiple-choice"
+      "answer": 2,
+      "explanation": "Development must be evaluated through health, education, rights, inequality, resilience, and environment as well as income."
     },
     {
       "id": "W34Q8",
-      "prompt": "A family migrates because of employment, relatives abroad, drought, and a new visa rule. What does the case demonstrate?",
+      "prompt": "Which statement best reflects the evidence and interpretation emphasized in Week 34?",
       "choices": [
-        "Migration always has one dominant cause.",
-        "Migration can result from interacting economic, family, environmental, policy, network, and individual factors.",
-        "Climate is the only meaningful cause of migration.",
-        "Policy never affects migration decisions."
+        "New states inherited borders, economies, institutions, and conflicts shaped by colonial rule but made consequential choices of their own.",
+        "Media literacy requires lateral reading, source tracing, evidence checking, image verification, and awareness of algorithmic incentives.",
+        "Migration is shaped by work, family, conflict, climate, policy, networks, and individual agency.",
+        "Final assessment should demonstrate transfer: using course habits to analyze unfamiliar evidence and contemporary problems."
       ],
-      "answer": 1,
-      "explanation": "Migration decisions often combine structural pressures, networks, policy constraints, and individual agency.",
-      "type": "multiple-choice"
+      "answer": 2,
+      "explanation": "Migration is shaped by work, family, conflict, climate, policy, networks, and individual agency."
     },
     {
       "id": "W34Q9",
-      "prompt": "Students trace a phone from minerals through assembly, shipping, retail, disposal, and recycling. Which evidence set is strongest?",
+      "prompt": "What is the strongest method for evaluating “A Global Product Investigation”?",
       "choices": [
-        "A single advertisement from the retailer.",
-        "Price alone.",
-        "At least four source types covering materials, labor, transport/ownership, and environmental or end-of-life impacts.",
-        "Only a map of the final retail market."
+        "Use only the most dramatic sentence because memorable details are the most reliable.",
+        "Accept the source if it was created during the period because primary sources are automatically accurate.",
+        "Reject the source if it contains a point of view because useful evidence must be neutral.",
+        "Compare the source with independent evidence and evaluate its origin, purpose, context, and limits."
       ],
-      "answer": 2,
-      "explanation": "A global-product investigation is strongest when it corroborates multiple stages and dimensions of the supply chain.",
-      "type": "multiple-choice"
+      "answer": 3,
+      "explanation": "Compare the source with independent evidence and evaluate its origin, purpose, context, and limits."
     },
     {
       "id": "W34Q10",
-      "prompt": "Emissions are shown as national totals, per-person values, and values per unit of output. Why should students compare all three?",
+      "prompt": "Which response demonstrates the strongest geographic or quantitative reasoning?",
       "choices": [
-        "Only the largest national total is meaningful.",
-        "Per-person measures automatically identify responsibility.",
-        "Using more than one measure makes comparison impossible.",
-        "Changing denominators can reveal different questions about scale, individual burden, and production efficiency."
+        "State the observed pattern, propose an explanation, and identify what the map or data cannot prove.",
+        "Use the visualization only if it confirms the original claim.",
+        "Assume that every mapped relationship is a direct cause.",
+        "Ignore units and scale so attention stays on the overall appearance."
       ],
-      "answer": 3,
-      "explanation": "Totals and normalized measures answer different questions; responsible quantitative reasoning makes the denominator explicit.",
-      "type": "multiple-choice"
+      "answer": 0,
+      "explanation": "State the observed pattern, propose an explanation, and identify what the map or data cannot prove."
     }
   ],
   "shortResponse": {
     "prompt": "Using at least two specific pieces of evidence, answer: How should societies evaluate the gains, risks, and unequal effects of global interdependence?",
     "points": 5,
     "exemplar": "A full-credit response states a defensible answer to the essential question, uses two accurate details from the week, explains how each detail supports the claim, and acknowledges one complexity or limitation."
-  },
-  "masteryThreshold": 80,
-  "questionIds": [
-    "W34Q1",
-    "W34Q2",
-    "W34Q3",
-    "W34Q4",
-    "W34Q5",
-    "W34Q6",
-    "W34Q7",
-    "W34Q8",
-    "W34Q9",
-    "W34Q10"
-  ]
+  }
 }
