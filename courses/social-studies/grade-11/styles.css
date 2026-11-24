@@ -94,3 +94,17 @@ details{border-top:1px solid #d8cdb9;padding:.55rem 0}summary{cursor:pointer;fon
 .option{display:flex;gap:10px;align-items:flex-start;padding:10px;border:1px solid var(--line);border-radius:7px;margin:8px 0;cursor:pointer}.option:hover{border-color:var(--gold)}
 .feedback .good{color:#6fca99}.feedback .bad{color:#ff9c9c}
 .certificate{background:#f7f0df;color:#1c2430;border:11px double #98772f;border-radius:11px;padding:clamp(24px,6vw,70px);text-align:center;box-shadow:0 20px 60px rgba(0,0,0,.3)}.certificate h1,.certificate h2{color:#17263a}.certName{display:block;margin:20px auto;width:min(700px,90%);font:44px Cinzel,Georgia,serif;text-align:center;border:0;border-bottom:2px solid #98772f;background:transparent;color:#17263a}.signatureGrid{display:grid;grid-template-columns:1fr 1fr;gap:22px;text-align:left;margin-top:30px}.signatureGrid input{background:transparent;color:#17263a;border-color:#98772f}@media(max-width:700px){.signatureGrid{grid-template-columns:1fr}}
+
+
+/* Ultra-narrow browser QA: prevent course controls from creating root-level overflow. */
+@media(max-width:320px){
+  .app,.sidebar,.main,.panel,.hero,#content,.grid,.card,.toolLinks,.tabs{min-width:0;max-width:100%}
+  .main{padding:7px}
+  .panel{padding:11px}
+  .tabs{grid-template-columns:minmax(0,1fr)}
+  .tab,.navBtn,.weekBtn,.button,button{max-width:100%;white-space:normal;overflow-wrap:anywhere}
+  .inline{grid-template-columns:minmax(0,1fr)}
+  input,select,textarea{min-width:0;max-width:100%}
+  .scopeWeek{grid-template-columns:minmax(0,1fr)}
+  .scopeWeek .button{grid-column:auto}
+}
