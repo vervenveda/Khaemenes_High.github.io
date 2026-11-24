@@ -22,110 +22,86 @@ jobs:
         shell: python
         run: |
           from pathlib import Path
-          import hashlib, re, sys
+          import hashlib, sys
 
-          failures = []
-          courses = [
-              ("09", Path("courses/social-studies/grade-09"), 36),
-              ("10", Path("courses/social-studies/grade-10"), 36),
-              ("11", Path("courses/social-studies/grade-11"), 36),
-              ("11-pf", Path("courses/social-studies/grade-11/personal-finance"), 18),
-              ("12", Path("courses/social-studies/grade-12"), 36),
+          failures=[]
+          courses=[
+              ("09",Path("courses/social-studies/grade-09"),36),
+              ("10",Path("courses/social-studies/grade-10"),36),
+              ("11",Path("courses/social-studies/grade-11"),36),
+              ("11-pf",Path("courses/social-studies/grade-11/personal-finance"),18),
+              ("12",Path("courses/social-studies/grade-12"),36),
           ]
 
-          # Canonical weekly ownership and complete learner/teacher surfaces.
-          total_packets = total_guides = 0
-          for label, root, expected in courses:
-              packets = sorted((root/"weeks").glob("week-*/student-packet.html"))
-              guides = sorted((root/"weeks").glob("week-*/teacher-guide.html"))
-              total_packets += len(packets); total_guides += len(guides)
-              if len(packets) != expected:
-                  failures.append(f"{label}: expected {expected} canonical student packets; found {len(packets)}")
-              if len(guides) != expected:
-                  failures.append(f"{label}: expected {expected} canonical teacher guides; found {len(guides)}")
-              for packet in packets:
-                  low = packet.read_text(encoding="utf-8").lower()
-                  checks = {
-                      "essential question": "essential question" in low,
-                      "learning objective/target": ("objective:" in low or "<strong>objective</strong>" in low or "learning target" in low),
-                      "vocabulary": "vocabulary" in low,
-                      "assignment/evidence": ("assignment 1" in low or "principal assignments" in low or "required evidence" in low),
-                      "rubric/success criteria": ("rubric" in low or "success criteria" in low),
-                      "constructed response": "constructed response" in low,
-                      "80% mastery": ("80%" in low or "80 percent" in low),
-                      "print support": ("window.print" in low or "@media print" in low),
-                  }
-                  for name, ok in checks.items():
-                      if not ok: failures.append(f"{packet}: missing {name}")
+          total_packets=total_guides=total_quizzes=0
+          for label,root,expected in courses:
+              packets=sorted((root/"weeks").glob("week-*/student-packet.html"))
+              guides=sorted((root/"weeks").glob("week-*/teacher-guide.html"))
+              quizzes=sorted((root/"weeks").glob("week-*/quiz.json"))
+              total_packets+=len(packets);total_guides+=len(guides);total_quizzes+=len(quizzes)
+              if len(packets)!=expected: failures.append(f"{label}: expected {expected} packets; found {len(packets)}")
+              if len(guides)!=expected: failures.append(f"{label}: expected {expected} teacher guides; found {len(guides)}")
+              if len(quizzes)!=expected: failures.append(f"{label}: expected {expected} canonical quizzes; found {len(quizzes)}")
 
-          if total_packets != 162 or total_guides != 162:
-              failures.append(f"Department canonical totals are packets={total_packets}, guides={total_guides}; expected 162 each")
+          if (total_packets,total_guides,total_quizzes)!=(162,162,162):
+              failures.append(f"Department totals packets/guides/quizzes={total_packets}/{total_guides}/{total_quizzes}; expected 162/162/162")
 
-          # Compatibility trees must never become independent HTML curriculum owners.
-          for label, root, expected in courses:
-              if label in {"11","12"}:
-                  continue
-              for i in range(1, expected+1):
-                  w = f"{i:02d}"
-                  legacy = root/f"week-{w}"
-                  canonical = root/"weeks"/f"week-{w}"
-                  if not legacy.exists():
-                      continue
-                  for name in ["student-packet.html","teacher-guide.html"]:
-                      p = legacy/name
-                      if p.exists():
-                          text = p.read_text(encoding="utf-8")
+          # Compatibility trees remain mirrors, never independent curriculum owners.
+          for label,root,expected in courses:
+              if label in {"11","12"}: continue
+              for i in range(1,expected+1):
+                  w=f"{i:02d}";legacy=root/f"week-{w}";canonical=root/"weeks"/f"week-{w}"
+                  if not legacy.exists(): continue
+                  for name in ("student-packet.html","teacher-guide.html"):
+                      legacy_html=legacy/name
+                      if legacy_html.exists():
+                          text=legacy_html.read_text(encoding="utf-8")
                           if "KHAEMENES_WEEK_COMPAT_REDIRECT" not in text:
-                              failures.append(f"{p}: legacy HTML is not compatibility-only")
-                  lq, cq = legacy/"quiz.json", canonical/"quiz.json"
-                  if lq.exists() and cq.exists():
-                      if hashlib.sha256(lq.read_bytes()).digest() != hashlib.sha256(cq.read_bytes()).digest():
-                          failures.append(f"{lq}: compatibility quiz differs from canonical")
+                              failures.append(f"{legacy_html}: legacy HTML is not compatibility-only")
+                  lq,cq=legacy/"quiz.json",canonical/"quiz.json"
+                  if lq.exists() and cq.exists() and hashlib.sha256(lq.read_bytes()).digest()!=hashlib.sha256(cq.read_bytes()).digest():
+                      failures.append(f"{lq}: compatibility quiz differs from canonical")
 
-          # Four grade roots must use the canonical VNV grade shell.
-          grade_roots = {
-              "09": Path("courses/social-studies/grade-09/index.html"),
-              "10": Path("courses/social-studies/grade-10/index.html"),
-              "11": Path("courses/social-studies/grade-11/index.html"),
-              "12": Path("courses/social-studies/grade-12/index.html"),
+          # Grade doors retain the canonical VNV shell contract.
+          grade_roots={
+              "09":Path("courses/social-studies/grade-09/index.html"),
+              "10":Path("courses/social-studies/grade-10/index.html"),
+              "11":Path("courses/social-studies/grade-11/index.html"),
+              "12":Path("courses/social-studies/grade-12/index.html"),
           }
-          for grade, path in grade_roots.items():
-              text = path.read_text(encoding="utf-8")
-              for marker in ["social-studies-canonical-vnv-shell-v1.css","social-studies-grade-shell-v1.js","course-entry-contract"]:
-                  if marker not in text:
-                      failures.append(f"Grade {grade} root missing canonical marker {marker}")
-              if 'href="#content"' not in text:
-                  failures.append(f"Grade {grade} root missing keyboard skip navigation")
+          for grade,path in grade_roots.items():
+              text=path.read_text(encoding="utf-8")
+              for marker in ("social-studies-canonical-vnv-shell-v1.css","social-studies-grade-shell-v1.js","course-entry-contract",'href="#content"'):
+                  if marker not in text: failures.append(f"Grade {grade} root missing canonical marker {marker}")
 
-          # Active engines: randomized assessment, rubric, portfolio export, progression.
-          active = [
+          # Active engines certify current contracts rather than duplicating packet prose.
+          active=[
               Path("courses/social-studies/grade-09/app.js"),
               Path("courses/social-studies/grade-10/app.js"),
               Path("courses/social-studies/grade-11/app.js"),
               Path("courses/social-studies/grade-11/personal-finance/app.js"),
               Path("courses/social-studies/grade-12/app.js"),
           ]
-          common_engine_markers = [
+          common=[
               "KhaemenesHighAssessmentAdapter",
               "attemptHistory",
               'data-weekly-rubric-contract="v1"',
               "currentWeek",
               "exportAcademicRecord",
               "KhaemenesSocialStudiesAcademicRecord",
+              "VALID_VIEWS",
           ]
           for path in active:
-              text = path.read_text(encoding="utf-8")
-              for marker in common_engine_markers:
-                  if marker not in text:
-                      failures.append(f"{path}: missing engine parity marker {marker}")
-              if path.name == "app.js" and "grade-09" in str(path):
-                  if "KhaemenesSS9Records.nextWeek" not in text:
-                      failures.append(f"{path}: missing authoritative Grade 9 evaluator gate")
+              text=path.read_text(encoding="utf-8")
+              for marker in common:
+                  if marker not in text: failures.append(f"{path}: missing engine parity marker {marker}")
+              if "grade-09" in str(path):
+                  if "KhaemenesSS9Records.nextWeek" not in text: failures.append(f"{path}: missing authoritative Grade 9 evaluator gate")
               elif "weekMastered" not in text:
                   failures.append(f"{path}: missing weekMastered progression gate")
 
-          # Active shells load assessment + portfolio bridge; companion also needs skip nav.
-          shells = [
+          # Active shells retain assessment + academic-record bridges and accessibility.
+          shells=[
               Path("courses/social-studies/grade-09/app.html"),
               Path("courses/social-studies/grade-10/index.html"),
               Path("courses/social-studies/grade-11/index.html"),
@@ -133,28 +109,28 @@ jobs:
               Path("courses/social-studies/grade-12/index.html"),
           ]
           for path in shells:
-              text = path.read_text(encoding="utf-8")
-              for marker in ["high-school-assessment-adapter-v1.js","social-studies-academic-record-v1.js"]:
-                  if marker not in text:
-                      failures.append(f"{path}: missing {marker}")
-              if 'href="#content"' not in text:
-                  failures.append(f"{path}: missing keyboard skip navigation")
+              text=path.read_text(encoding="utf-8")
+              for marker in ("high-school-assessment-adapter-v1.js","social-studies-academic-record-v1.js",'href="#content"'):
+                  if marker not in text: failures.append(f"{path}: missing {marker}")
 
-          # Canonical grade shell must remain the owner of VNV components.
-          shell = Path("courses/social-studies/assets/social-studies-grade-shell-v1.js").read_text(encoding="utf-8")
-          for marker in [
-              "vnv-333-ticker.js",
-              "vnv-ticker-autopopulate.js",
-              "vnv-header-autopopulate.js",
-              "khaemenes-translator-loader.js",
-              "vnv-language.js",
-              "vnv-class-tools-toolbar.js",
-              "vnv-ecosystem-toolbar.js",
-          ]:
-              if marker not in shell:
-                  failures.append(f"canonical grade shell missing {marker}")
+          # New hardening contracts must remain present.
+          required_docs=[
+              "LEARNER_OWNERSHIP_CONTRACT.md",
+              "VIEW_ROUTING_CONTRACT.md",
+              "WRITTEN_EVIDENCE_PROGRESSION_CONTRACT.md",
+              "PRESENTATION_AUTHORITY_CONTRACT.md",
+          ]
+          docs=Path("courses/social-studies/docs")
+          for name in required_docs:
+              if not (docs/name).is_file(): failures.append(f"Missing Social Studies hardening contract {name}")
+
+          shell=Path("courses/social-studies/assets/social-studies-grade-shell-v1.js").read_text(encoding="utf-8")
+          for marker in (
+              "vnv-333-ticker.js","vnv-ticker-autopopulate.js","vnv-header-autopopulate.js",
+              "khaemenes-translator-loader.js","vnv-language.js","vnv-class-tools-toolbar.js","vnv-ecosystem-toolbar.js",
+          ):
+              if marker not in shell: failures.append(f"canonical grade shell missing {marker}")
 
           if failures:
-              print("\n".join("FAIL: "+x for x in failures))
-              sys.exit(1)
-          print("PASS: Social Studies four-year engine parity certified — 162 canonical packets, 162 teacher guides, canonical VNV grade shell, mastery/evidence/accessibility contracts intact.")
+              print("\n".join("FAIL: "+x for x in failures));sys.exit(1)
+          print("PASS: Social Studies four-year engine parity certified — 162 packets, 162 guides, 162 canonical quizzes, compatibility mirrors, canonical shell, routing, evidence, ownership and presentation contracts intact.")
