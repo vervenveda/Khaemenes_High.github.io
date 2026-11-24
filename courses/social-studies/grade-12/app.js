@@ -101,7 +101,8 @@ function demoStudent(){
 }
 const pct=(n,d)=>d?Math.round(n/d*100):0;
 function lessonStats(s){let done=0;if(s)Object.values(s.completedLessons||{}).forEach(a=>done+=a.filter(Boolean).length);return{done,total:180,percent:pct(done,180)}}
-function assignmentStats(s){const arr=s?Object.values(s.assignments||{}):[];const submitted=arr.filter(a=>a.submitted).length;return{submitted,total:108,percent:pct(submitted,108)}}
+function assignmentEvidenceComplete(a){return !!a?.submitted&&String(a.text||'').trim().length>0}
+function assignmentStats(s){const arr=s?Object.values(s.assignments||{}):[];const submitted=arr.filter(assignmentEvidenceComplete).length;return{submitted,total:108,percent:pct(submitted,108)}}
 function quizStats(s,from=1,to=36){
  const vals=[];if(s)for(let w=from;w<=to;w++){const q=s.quizzes?.[w];if(q?.completed)vals.push(q.bestPercent??q.percent??0)}
  return{completed:vals.length,total:to-from+1,avg:vals.length?Math.round(vals.reduce((a,b)=>a+b,0)/vals.length):0,mastered:vals.filter(x=>x>=META.weeklyMastery).length};
@@ -129,7 +130,7 @@ function overallGrade(s){
 function weekMastered(s,w){
  if(!s)return false;
  const lessons=(s.completedLessons?.[w.week]||[]).filter(Boolean).length===5;
- const assignments=w.assignments.every(a=>s.assignments?.[`${w.week}-${a.number}`]?.submitted);
+ const assignments=w.assignments.every(a=>assignmentEvidenceComplete(s.assignments?.[`${w.week}-${a.number}`]));
  const quiz=s.quizzes?.[w.week];
  const quizMastery=!!quiz?.completed&&(quiz.bestPercent??quiz.percent??0)>=META.weeklyMastery&&String(quiz.shortResponse||'').trim().length>0;
  if(!lessons||!assignments||!quizMastery)return false;
@@ -152,7 +153,7 @@ function gateAudit(s,includeIssue=true){
  const gates=[
   {id:'hours',label:`${META.minimumHours} documented instructional hours`,pass:+s?.teacher?.hours>=META.minimumHours,value:`${+s?.teacher?.hours||0}/${META.minimumHours}`},
   {id:'lessons',label:'All 180 daily lessons completed or documented as equivalent make-up work',pass:ls.done>=META.lessonMinimum,value:`${ls.done}/180`},
-  {id:'assignments',label:'All 108 principal assignments submitted',pass:as.submitted>=108,value:`${as.submitted}/108`},
+  {id:'assignments',label:'All 108 principal assignments submitted with substantive written evidence',pass:as.submitted>=108,value:`${as.submitted}/108`},
   {id:'quizzes',label:`All 36 weekly quizzes mastered at ${META.weeklyMastery}% or higher`,pass:allQuizMastery,value:`${qs.mastered}/36 mastered`},
   {id:'semester1',label:`Semester 1 average at least ${META.semesterMinimum}%`,pass:s1>=META.semesterMinimum,value:`${s1}%`},
   {id:'semester2',label:`Semester 2 average at least ${META.semesterMinimum}%`,pass:s2>=META.semesterMinimum,value:`${s2}%`},
@@ -228,8 +229,8 @@ function weeklyRubricHTML(w){
  const evidence=(w.assignments||[]).map(a=>`Assignment ${a.number}: ${a.title}`);
  const criteria=[...new Set((w.assignments||[]).flatMap(a=>Array.isArray(a.rubric)?a.rubric:Object.keys(a.rubric||{})))];
  const unlock=w.week===18
-  ? 'Complete all five daily lessons; submit all three principal assignments; complete the constructed response; earn at least 80% on the weekly objective quiz; and submit/master the Semester Exam at the required threshold before Week 19 opens.'
-  : 'Complete all five daily lessons; submit all three principal assignments; complete the constructed response; and earn at least 80% on the weekly objective quiz.';
+  ? 'Complete all five daily lessons; submit all three principal assignments with a written response, evidence note, or identified attachment; complete the constructed response; earn at least 80% on the weekly objective quiz; and submit/master the Semester Exam at the required threshold before Week 19 opens.'
+  : 'Complete all five daily lessons; submit all three principal assignments with a written response, evidence note, or identified attachment; complete the constructed response; and earn at least 80% on the weekly objective quiz.';
  return `<section class="card col12" data-weekly-rubric-contract="v1"><h3>Learner Success Criteria &amp; Mastery</h3>
  <details><summary>Learning Targets</summary><ul>${targets.map(x=>`<li>${esc(x)}</li>`).join('')}</ul></details>
  <details><summary>Required Evidence</summary><ul><li>Five completed daily lessons</li>${evidence.map(x=>`<li>${esc(x)}</li>`).join('')}<li>Constructed response</li><li>Weekly objective quiz at 80% or higher</li>${w.capstoneCheckpoint?`<li>Capstone checkpoint: ${esc(w.capstoneCheckpoint.title)}</li>`:''}</ul></details>
@@ -315,7 +316,7 @@ function wireView(){
  const cont=$('#continueBtn');if(cont)cont.onclick=()=>setWeek(currentWeek(activeStudent()));
  const speak=$('#speakBtn');if(speak)speak.onclick=()=>{speechSynthesis.cancel();const u=new SpeechSynthesisUtterance($('#content').innerText);u.rate=.92;speechSynthesis.speak(u)};
  $$('[data-lesson]').forEach(ch=>ch.onchange=()=>{const s=activeStudent();if(!s)return;s.completedLessons[selectedWeek]||=[false,false,false,false,false];s.completedLessons[selectedWeek][+ch.dataset.lesson]=ch.checked;saveDB();renderSidebarWeeks()});
- $$('.saveAssignment,.submitAssignment').forEach(b=>b.onclick=()=>{const s=activeStudent();if(!s)return;const key=b.dataset.key,ta=$(`[data-assignment="${key}"]`);s.assignments[key]=Object.assign(s.assignments[key]||{},{text:ta.value,updated:stamp(),submitted:b.classList.contains('submitAssignment')?true:(s.assignments[key]?.submitted||false)});saveDB();render()});
+ $('.saveAssignment,.submitAssignment').forEach(b=>b.onclick=()=>{const s=activeStudent();if(!s)return;const key=b.dataset.key,ta=$(`[data-assignment="${key}"]`),submit=b.classList.contains('submitAssignment'),text=ta.value.trim();if(submit&&!text){alert('Add the student response, evidence note, or a note identifying the submitted attachment before submitting this assignment.');return;}s.assignments[key]=Object.assign(s.assignments[key]||{},{text:ta.value,updated:stamp(),submitted:submit?true:(s.assignments[key]?.submitted||false)});saveDB();render()});
  const qf=$('#quizForm');if(qf)qf.onsubmit=e=>{e.preventDefault();const s=activeStudent();if(!s)return;const w=COURSE.weeks[selectedWeek-1],draw=highAssessmentDraw(w,s);if(draw.error)return alert(draw.error);const answers=draw.questions.map((q,i)=>{const x=qf.querySelector(`[name="q${i}"]:checked`);return x?+x.value:null});if(answers.some(x=>x===null)){alert('Complete every objective question before scoring.');return}const shortResponse=$('#shortResponse').value;if(!shortResponse.trim()){alert('Complete the constructed response before scoring; it remains evaluator-reviewed evidence.');return}answers.forEach((a,i)=>draw.mc.saveResponse(draw.storageKey,draw.questions[i].id,a,draw.opened.sessionId));const score=draw.questions.filter((q,i)=>answers[i]===q.answer).length,percent=Math.round(score/draw.questions.length*100),old=s.quizzes[w.week]||{},reviewSkills=highAssessmentReviewSkills(draw.questions,answers),attempt={attemptId:draw.opened.sessionId,questionIds:[...draw.opened.questionIds],score:percent,mastered:percent>=META.weeklyMastery,reviewSkills,submittedAt:new Date().toISOString(),evaluatorReviewRequired:true,source:'monte-carlo-v1'};s.quizzes[w.week]={...old,answers,score,percent,bestPercent:Math.max(old.bestPercent||0,percent),attempts:(old.attempts||0)+1,completed:true,shortResponse,shortResponseDraft:shortResponse,attemptHistory:[...(old.attemptHistory||[]),attempt],updated:stamp()};saveDB();highAssessmentComplete(draw,{score:percent,mastered:percent>=META.weeklyMastery,reviewSkills,constructedResponsePendingReview:true,learnerId:String(s.id)});render();};
  const ex=$('#exportBtn');if(ex)ex.onclick=()=>downloadJSON(`${safename(activeStudent().name)}-grade12-social-studies-backup.json`,{schema:'khaemenes-grade12-social-studies-backup-v2',exported:new Date().toISOString(),academyLearnerId:ENTRY_OWNER,course:META,student:activeStudent()});
  const imp=$('#importFile');if(imp)imp.onchange=async()=>{try{requireAcademyOwner();const x=JSON.parse(await imp.files[0].text());if(x.academyLearnerId&&x.academyLearnerId!==ENTRY_OWNER)throw Error('Backup belongs to a different Academy learner');const student=normalize(x.student||x);if(!student.id)student.id=uid();const idx=db.students.findIndex(y=>y.id===student.id);if(idx>=0)db.students[idx]=student;else db.students.push(student);db.activeId=student.id;saveDB();renderStudentControls();renderSidebarWeeks();render()}catch(err){alert('That file could not be imported.')}};
