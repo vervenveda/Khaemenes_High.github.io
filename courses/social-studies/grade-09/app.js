@@ -316,7 +316,7 @@ function reportsHTML(){
     <p style="margin-top:50px">Teacher signature: ________________________________ Date: __________________</p>
     <p class="small">This report documents work saved in this browser. Verify local district, umbrella-school, scholarship, or homeschool requirements before using it as an official transcript record.</p>
   </section>
-  <div class="actions noPrint"><button onclick="window.print()">Print Report</button><button class="secondary" id="exportJSON">Export Full Backup</button><button class="secondary" id="exportCSV">Export Gradebook CSV</button><label class="button ghost" for="importFile">Import Backup</label><input class="hidden" type="file" id="importFile" accept=".json"></div>`;
+  <div class="actions noPrint"><button onclick="window.print()">Print Report</button><button class="secondary" id="exportJSON">Export Full Backup</button><button class="secondary" id="exportAcademicRecord">Export Academic Record</button><button class="secondary" id="exportCSV">Export Gradebook CSV</button><label class="button ghost" for="importFile">Import Backup</label><input class="hidden" type="file" id="importFile" accept=".json"></div>`;
 }
 function standardsHTML(){
   return `<div class="grid">
@@ -419,11 +419,23 @@ function importJSON(e){
   reader.onload=()=>{try{if(f.size>8*1024*1024)throw new Error('Backup is too large');const next=window.KhaemenesSS9Records.importDB(JSON.parse(reader.result));window.KhaemenesSS9Records.storage.setItem(KEY,JSON.stringify(next));db=next;renderStudentControls();renderSidebarWeeks();render();alert('Backup imported.');}catch(err){alert('Could not import this backup: '+err.message);}};
   reader.readAsText(f);
 }
+function exportAcademicRecord(){
+ const s=activeStudent();if(!s)return alert('Select a learner before exporting the academic record.');
+ const api=window.KhaemenesSocialStudiesAcademicRecord;if(!api)return alert('The academic record bridge is unavailable.');
+ const record=api.buildFromCourse({
+  courseData:COURSE,student:s,grade:'09',courseId:'social-studies-09',courseTitle:META.courseTitle||document.title,
+  credit:META.credits??META.credit,masteryThreshold:80,lessonsPerWeek:5,weekMastered:(student,w)=>{const q=student.quizzes?.[w.week],days=student.completedLessons?.[w.week];const reviewed=[1,2,3].every(n=>{const a=student.assignments?.[`${w.week}-${n}`];return a?.submitted&&Number.isFinite(Number(a.score));});const base=Array.isArray(days)&&days.filter(Boolean).length===5&&reviewed&&q?.completed&&((q.bestPercent??q.percent??0)>=80)&&Number.isFinite(Number(q.shortScore));return base&&(w.week!==18||((student.exams?.midterm?.bestPercent??student.exams?.midterm?.percent??0)>=80));},
+  majorAssessments:s.exams||{},courseMastered:COURSE.weeks.every(w=>window.KhaemenesSS9Records.nextWeek(s)>w.week)&&((s.exams?.final?.bestPercent??s.exams?.final?.percent??0)>=80),officialCreditIssued:false,
+  evaluatorStatus:null
+ });
+ api.download(record,'grade09-global-studies-academic-record.json');
+}
 function applySettings(){
   document.body.classList.toggle('light',db.settings?.theme==='light');
   document.documentElement.style.fontSize=`${db.settings?.fontScale||100}%`;
 }
 function wireGlobal(){
+  document.addEventListener('click',e=>{if(e.target?.id==='exportAcademicRecord')exportAcademicRecord();},{capture:false});
   $('#heroContinueBtn')?.addEventListener('click',()=>setWeek(currentWeek(activeStudent())));
   $('#heroReadCourseBtn')?.addEventListener('click',()=>speak('Work at your own pace. Follow the lessons in order and preserve your evidence.'));
   if(window.KhaemenesSS9Records.profile){['studentName','addStudentBtn','demoBtn','deleteStudentBtn'].forEach(id=>{$('#'+id).hidden=true;});$('#studentSelect').disabled=true;}
