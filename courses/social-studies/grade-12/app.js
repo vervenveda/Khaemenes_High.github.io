@@ -229,7 +229,7 @@ function reportsHTML(){
  return `<div class="grid"><section class="card col12"><h2>Student Record Report</h2><p><strong>Student:</strong> ${esc(s.name)} · <strong>Course:</strong> ${esc(META.courseCode)} · <strong>Credit:</strong> ${META.credit}</p>
  <p>Lessons ${lessonStats(s).done}/180 · Assignments ${assignmentStats(s).submitted}/108 · Weekly mastery ${quizStats(s).mastered}/36 · Hours ${s.teacher.hours}/${META.minimumHours}</p>
  <p>Semester 1 ${a.s1}% · Semester 2 ${a.s2}% · Overall ${a.ov}% · Final status: ${a.complete?'Credit issued':a.ready?'Ready for evaluator issuance':'Incomplete'}</p>
- <div class="actions noPrint"><button onclick="window.print()">Print Report</button><button class="secondary" id="exportBtn">Export JSON Backup</button><label class="button ghost">Import JSON<input type="file" id="importFile" accept=".json" hidden></label></div></section>
+ <div class="actions noPrint"><button onclick="window.print()">Print Report</button><button class="secondary" id="exportBtn">Export JSON Backup</button><button class="secondary" id="exportAcademicRecord">Export Academic Record</button><label class="button ghost">Import JSON<input type="file" id="importFile" accept=".json" hidden></label></div></section>
  <section class="card col12"><h3>Required documentary record</h3><ul><li>Attendance and instructional hours</li><li>Weekly completion and mastery</li><li>Major assessment scores</li><li>Capstone checkpoint approvals</li><li>Thesis and oral-defense rubrics</li><li>Integrity and evaluator verification</li><li>Final-credit decision</li></ul></section></div>`;
 }
 function standardsHTML(){
@@ -251,9 +251,21 @@ function wireView(){
  const imp=$('#importFile');if(imp)imp.onchange=async()=>{try{const x=JSON.parse(await imp.files[0].text());const student=normalize(x.student||x);if(!student.id)student.id=uid();const idx=db.students.findIndex(y=>y.id===student.id);if(idx>=0)db.students[idx]=student;else db.students.push(student);db.activeId=student.id;saveDB();renderStudentControls();renderSidebarWeeks();render()}catch(err){alert('That file could not be imported.')}};
 }
 function safename(s){return String(s||'student').toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'')}
+function exportAcademicRecord(){
+ const s=activeStudent();if(!s)return alert('Select a learner before exporting the academic record.');
+ const api=window.KhaemenesSocialStudiesAcademicRecord;if(!api)return alert('The academic record bridge is unavailable.');
+ const record=api.buildFromCourse({
+  courseData:COURSE,student:s,grade:'12',courseId:'social-studies-12',courseTitle:META.courseTitle||document.title,
+  credit:META.credits??META.credit,masteryThreshold:80,lessonsPerWeek:5,weekMastered:weekMastered,
+  majorAssessments:s.major||{},courseMastered:gateAudit(s,false).ready===true,officialCreditIssued:s.teacher?.issued===true,
+  evaluatorStatus:{hours:s.teacher?.hours??0,integrityVerified:s.teacher?.integrity===true,evaluatorVerified:s.teacher?.evaluator===true,issued:s.teacher?.issued===true,issuedDate:s.teacher?.issuedDate||null}
+ });
+ api.download(record,'grade12-global-politics-academic-record.json');
+}
 function downloadJSON(name,obj){const a=document.createElement('a');a.href=URL.createObjectURL(new Blob([JSON.stringify(obj,null,2)],{type:'application/json'}));a.download=name;a.click();setTimeout(()=>URL.revokeObjectURL(a.href),1000)}
 function applySettings(){document.documentElement.dataset.theme=db.settings.theme;document.documentElement.style.setProperty('--font-scale',db.settings.fontScale/100)}
 function wireShell(){
+  document.addEventListener('click',e=>{if(e.target?.id==='exportAcademicRecord')exportAcademicRecord();},{capture:false});
  renderStudentControls();renderSidebarWeeks();render();
  $('#studentSelect').onchange=e=>{db.activeId=e.target.value||null;saveDB();renderSidebarWeeks();render()};
  $('#addStudentBtn').onclick=()=>{const i=$('#studentName');if(i.value.trim()){createStudent(i.value);i.value='';renderStudentControls();renderSidebarWeeks();render()}};
