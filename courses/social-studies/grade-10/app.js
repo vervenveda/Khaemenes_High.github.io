@@ -19,6 +19,19 @@ function academyRead(key){
  requireAcademyOwner();
  return localStorage.getItem(key);
 }
+function showLegacyOwnershipNotice(){
+ let exists=false;
+ try{exists=localStorage.getItem(LEGACY_GRADEBOOK_KEY)!==null}catch{}
+ if(!exists)return;
+ const panel=document.querySelector('#studentSelect')?.closest('.panel');
+ if(!panel||panel.querySelector('[data-legacy-unassigned-notice]'))return;
+ const note=document.createElement('p');
+ note.className='small notice';
+ note.setAttribute('data-legacy-unassigned-notice','');
+ note.textContent='An older unassigned browser record exists on this device. It has not been claimed by the active Academy learner. Recover it only through an explicit backup/import workflow for the correct learner.';
+ panel.append(note);
+}
+
 
 const $=(s,r=document)=>r.querySelector(s), $$=(s,r=document)=>[...r.querySelectorAll(s)];
 const esc=(v='')=>String(v).replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]));
@@ -365,6 +378,7 @@ function applySettings(){
  document.documentElement.classList.toggle('light',db.settings.theme==='light');
 }
 function init(){
+ showLegacyOwnershipNotice();
   document.addEventListener('click',e=>{if(e.target?.id==='exportAcademicRecord')exportAcademicRecord();},{capture:false});
  if(!ENTRY_OWNER)console.error('Select an Academy learner before saving course work.');
  renderStudentControls();renderSidebarWeeks();render();
