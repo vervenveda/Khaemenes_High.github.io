@@ -218,6 +218,28 @@ for(const grade of [10,11]){
   assert(/capstone|thesis|oral defense/i.test(source),"Social Studies 12 lost capstone/thesis evidence.");
   assert(/80%|weeklyMastery|threshold/i.test(source),"Social Studies 12 lost mastery-threshold evidence.");
 }
+{
+  const html=read("courses/social-studies/grade-11/personal-finance/index.html");
+  const source=read("courses/social-studies/grade-11/personal-finance/app.js");
+  const dataSource=read("courses/social-studies/grade-11/personal-finance/course-data.js");
+  assert(/src="app[.]js(?:[?][^"]*)?"/.test(html),"Personal Finance canonical app.js must be loaded.");
+  try{new Function(source)}catch(e){throw new Error("Personal Finance runtime syntax: "+e.message)}
+  const sandbox={window:{}};
+  vm.createContext(sandbox);
+  vm.runInContext(dataSource,sandbox);
+  const course=sandbox.window.KHAEMENES_SOCIAL_STUDIES_DATA;
+  assert(Array.isArray(course?.weeks)&&course.weeks.length===18,"Personal Finance must retain 18 canonical weeks.");
+  assert(course.weeks.every(w=>w.dailyLessons?.length===5),"Personal Finance each week must retain five daily lessons.");
+  assert(course.weeks.every(w=>w.assignments?.length===3),"Personal Finance each week must retain three principal assignments.");
+  assert(course.weeks.every(w=>w.quiz?.questions?.length===10),"Personal Finance each week must retain ten objective questions.");
+  assert(course.weeks.every(w=>String(w.quiz?.shortResponse||"").trim().length>0),"Personal Finance each week must retain a constructed response.");
+  for(const token of ["weekMastered","assignments=w.assignments.every","quizMastery","shortResponse","midtermMastered","finalMastered","requested>unlocked","disabled aria-disabled=\"true\"","selectedWeek=Math.min(selectedWeek,currentWeek(activeStudent()))"]){
+    assert(source.includes(token),"Personal Finance mastery contract missing "+token);
+  }
+  assert(/bestPercent\?\?quiz[.]percent\?\?0\)>=80/.test(source),"Personal Finance weekly mastery threshold must remain 80%.");
+  assert(source.includes("w.week===9&&!midtermMastered(s)"),"Personal Finance Week 10 must remain gated by 80% midterm mastery.");
+  assert(source.includes("COURSE.weeks.every(w=>weekMastered(s,w))&&finalMastered(s)"),"Personal Finance completion must retain final-exam mastery.");
+}
 
 // Mathematics course-specific authorities.
 const mathEngines=[
