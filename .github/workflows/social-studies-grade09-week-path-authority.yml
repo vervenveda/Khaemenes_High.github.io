@@ -102,6 +102,20 @@ jobs:
               if marker not in week1_text:
                   failures.append(f"Week 01: learner-facing rubric marker missing: {marker}")
 
+          rubric_markers_02_06 = {
+              "02": ("Learner Success Criteria &amp; Mastery", "Assignment 1 · Projection Comparison · 20 points", "80% Correction"),
+              "03": ("Learner Success Criteria &amp; Mastery", "Archaeological Evidence from an Early Village", "Constructed Response · 5 points"),
+              "04": ("Learner Success Criteria &amp; Mastery", "Assignment 1 · Source Lab", "80% Correction Protocol"),
+              "05": ("Learner Success Criteria &amp; Mastery", "Assignment 3 · Comparative Argument", "80% Correction Protocol"),
+              "06": ("Learner Success Criteria &amp; Mastery", "Assignment 3 · Evidence-Based Argument", "Mastery &amp; Recovery")
+          }
+          for w, markers in rubric_markers_02_06.items():
+              packet = root / "weeks" / f"week-{w}" / "student-packet.html"
+              text = packet.read_text(encoding="utf-8")
+              for rubric_marker in markers:
+                  if rubric_marker not in text:
+                      failures.append(f"Week {w}: learner-facing rubric marker missing: {rubric_marker}")
+
           canonical_27 = root / "weeks" / "week-27" / "student-packet.html"
           v2_27 = root / "weeks" / "week-27" / "student-packet-v2.html"
           if canonical_27.is_file():
