@@ -189,13 +189,14 @@ for(const p of ["courses/language-arts/english-9/assets/week04-assessment.js","c
   assert(/Human review|educator|review/i.test(js),p+" lost human-review boundary.");
 }
 
-// Social Studies 10–11 use the shared assessment adapter; Grade 12 owns a specialist course runtime.
+// Social Studies 10–11 use canonical external runtimes with the shared assessment adapter;
+// Grade 12 owns a specialist course runtime.
 for(const grade of [10,11]){
   const html=read("courses/social-studies/grade-"+grade+"/index.html");
-  const source=grade===10 ? read("courses/social-studies/grade-10/app.js") : html;
+  const source=read("courses/social-studies/grade-"+grade+"/app.js");
+  assert(/src="app[.]js(?:[?][^"]*)?"/.test(html),"Social Studies "+grade+" canonical app.js must be loaded.");
+  try{new Function(source)}catch(e){throw new Error("Social Studies "+grade+" runtime syntax: "+e.message)}
   if(grade===10){
-    assert(/src="app[.]js(?:[?][^"]*)?"/.test(html),"Social Studies 10 canonical app.js must be loaded.");
-    try{new Function(source)}catch(e){throw new Error("Social Studies 10 runtime syntax: "+e.message)}
     for(const contract of ["learner:",":monte-carlo:weekly:","getResponses","saveResponse","isActive","attemptHistory","constructedResponsePendingReview"]){
       assert(source.includes(contract),"Social Studies 10 learner session safety contract missing "+contract);
     }
