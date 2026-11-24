@@ -43,7 +43,13 @@ function weekMastered(s,w){
 }
 function courseMastered(s){return !!s&&COURSE.weeks.every(w=>weekMastered(s,w))&&finalMastered(s)}
 function currentWeek(s){if(!s)return 1;for(const w of COURSE.weeks){if(!weekMastered(s,w))return w.week}return 18}
-function setView(v){view=v;$('.navBtn,.tab').forEach(b=>b.classList.toggle('active',b.dataset.view===v));render()}
+function setView(v){
+ if(v==='week')selectedWeek=Math.min(selectedWeek,currentWeek(activeStudent()));
+ view=v;
+ $$('.navBtn,.tab').forEach(b=>b.classList.toggle('active',b.dataset.view===v));
+ renderSidebarWeeks();
+ render();
+}
 function setWeek(n){
  const requested=Math.max(1,Math.min(18,+n)),unlocked=currentWeek(activeStudent());
  if(requested>unlocked){
@@ -65,7 +71,7 @@ function renderSidebarWeeks(){
    const status=locked?'🔒':(mastered?'✓':(s?.completedLessons?.[w.week]||[]).filter(Boolean).length+'/5');
    return `<button class="weekBtn ${selectedWeek===w.week?'active':''} ${locked?'locked':''}" data-week="${w.week}" ${locked?'disabled aria-disabled="true"':''}><span><strong>Week ${w.week}</strong><br><small>${esc(w.title)}</small></span><span>${status}</span></button>`;
  }).join('');
- $('#weekList .weekBtn:not([disabled])').forEach(b=>b.onclick=()=>setWeek(b.dataset.week));
+ $$('#weekList .weekBtn:not([disabled])').forEach(b=>b.onclick=()=>setWeek(b.dataset.week));
 }
 function render(){
  applySettings();
