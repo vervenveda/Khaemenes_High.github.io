@@ -272,6 +272,29 @@ for(const course of ["biology-10","chemistry-11","physics-engineering-12"]){
   assert(/Questions\/keys remain behind/.test(policy),course+" lost locked-question authority boundary.");
 }
 
+// Social Studies Grade 9–10 weekly path authority.
+// The live course engines use weeks/week-XX. Historical week-XX paths remain compatibility mirrors only.
+for(const grade of ["09","10"]){
+  const root=path.join(ROOT,"courses/social-studies/grade-"+grade);
+  for(let week=1;week<=36;week++){
+    const ww=String(week).padStart(2,"0");
+    const legacyDir=path.join(root,"week-"+ww);
+    const canonicalDir=path.join(root,"weeks","week-"+ww);
+    assert(fs.existsSync(legacyDir),"Social Studies "+grade+" compatibility week missing week-"+ww);
+    assert(fs.existsSync(canonicalDir),"Social Studies "+grade+" canonical week missing weeks/week-"+ww);
+    const legacyFiles=fs.readdirSync(legacyDir).sort();
+    const canonicalFiles=fs.readdirSync(canonicalDir).sort();
+    assert(JSON.stringify(legacyFiles)===JSON.stringify(canonicalFiles),"Social Studies "+grade+" weekly mirror filename drift at week "+ww);
+    for(const name of canonicalFiles){
+      const legacyPath=path.join(legacyDir,name);
+      const canonicalPath=path.join(canonicalDir,name);
+      if(!fs.statSync(canonicalPath).isFile())continue;
+      assert(fs.statSync(legacyPath).isFile(),"Social Studies "+grade+" legacy weekly mirror missing file "+ww+"/"+name);
+      assert(fs.readFileSync(legacyPath).equals(fs.readFileSync(canonicalPath)),"Social Studies "+grade+" weekly compatibility mirror drift at week "+ww+"/"+name);
+    }
+  }
+}
+
 // Learner scope must cover the major adapted/high-value course families.
 const scope=read("courses/shared/learner-scope-v1.js");
 for(const token of ["english-10","english-11","english-12","social-studies-10","social-studies-11","social-studies-12","pre-algebra","algebra-1","geometry","algebra-2","integrated-science-9","biology-10","chemistry-11","physics-engineering-12"]){
