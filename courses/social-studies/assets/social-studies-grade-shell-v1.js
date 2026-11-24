@@ -47,9 +47,9 @@ const CONFIG={
    about:"A senior honors course in comparative politics, international relations, international law, global challenges, ethical research, public communication, thesis development, and oral defense.",
    features:[
     ["Official Weeks","Open the senior 36-week comparative politics and research pathway.","?view=week"],
-    ["Assessments","Open senior mastery checks, simulations, defenses, and cumulative assessments.","?view=exams"],
+    ["Assessments","Open senior mastery checks, simulations, defenses, and cumulative assessments.","?view=assessments"],
     ["Progress & Evidence","Review senior research evidence, reports, completion, and mastery status.","?view=reports"],
-    ["Graduation Gates","Review thesis, oral defense, cumulative assessment, and graduation requirements.","docs/GRADUATION_REQUIREMENTS.md"]
+    ["Graduation Gates","Review thesis, oral defense, cumulative assessment, and graduation requirements.","?view=graduation"]
    ]
  }
 }[grade];
