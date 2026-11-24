@@ -3,6 +3,7 @@ from functools import partial
 from http.server import SimpleHTTPRequestHandler, ThreadingHTTPServer
 from pathlib import Path
 from threading import Thread
+from urllib.parse import urljoin
 import pytest
 from playwright.sync_api import sync_playwright
 ROOT=Path(__file__).resolve().parents[1]
@@ -111,7 +112,7 @@ def test_original_visual_investigation_present(browser,site,week):
  page.goto(site+BASE+f"week-{week:02d}/student-packet.html",wait_until="domcontentloaded")
  assert page.locator(".khaemenes-visual-investigation").count()==1
  href=page.locator(".khaemenes-visual-investigation a").get_attribute("href")
- assert page.request.get(site+BASE+f"week-{week:02d}/"+href).status==200
+ assert page.request.get(urljoin(page.url,href)).status==200
  ctx.close()
 
 @pytest.mark.parametrize("week",[1,12,24,36])
@@ -158,4 +159,4 @@ def test_standardized_printable_evidence_bridge(browser,site,grade,relative):
 @pytest.mark.parametrize("week",list(range(1,37)))
 def test_grade10_weekly_portfolio_script_present(week):
  packet=ROOT/"courses"/"social-studies"/"grade-10"/"weeks"/f"week-{week:02d}"/"student-packet.html"
- assert 'src="../../../shared/high-school-formative-evidence-v1.js"' in packet.read_text(encoding="utf-8")
+ assert 'src="../../../../shared/high-school-formative-evidence-v1.js"' in packet.read_text(encoding="utf-8")
