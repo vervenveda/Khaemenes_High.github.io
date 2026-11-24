@@ -425,7 +425,7 @@ function exportAcademicRecord(){
  const record=api.buildFromCourse({
   courseData:COURSE,student:s,grade:'09',courseId:'social-studies-09',courseTitle:META.courseTitle||document.title,
   credit:META.credits??META.credit,masteryThreshold:80,lessonsPerWeek:5,weekMastered:(student,w)=>{const q=student.quizzes?.[w.week],days=student.completedLessons?.[w.week];const reviewed=[1,2,3].every(n=>{const a=student.assignments?.[`${w.week}-${n}`];return a?.submitted&&Number.isFinite(Number(a.score));});const base=Array.isArray(days)&&days.filter(Boolean).length===5&&reviewed&&q?.completed&&((q.bestPercent??q.percent??0)>=80)&&Number.isFinite(Number(q.shortScore));return base&&(w.week!==18||((student.exams?.midterm?.bestPercent??student.exams?.midterm?.percent??0)>=80));},
-  majorAssessments:s.exams||{},courseMastered:COURSE.weeks.every(w=>window.KhaemenesSS9Records.nextWeek(s)>w.week)&&((s.exams?.final?.bestPercent??s.exams?.final?.percent??0)>=80),officialCreditIssued:false,
+  majorAssessments:s.exams||{},courseMastered:COURSE.weeks.every(w=>{const q=s.quizzes?.[w.week],days=s.completedLessons?.[w.week];const reviewed=[1,2,3].every(n=>{const a=s.assignments?.[`${w.week}-${n}`];return a?.submitted&&Number.isFinite(Number(a.score));});const base=Array.isArray(days)&&days.filter(Boolean).length===5&&reviewed&&q?.completed&&((q.bestPercent??q.percent??0)>=80)&&Number.isFinite(Number(q.shortScore));return base&&(w.week!==18||((s.exams?.midterm?.bestPercent??s.exams?.midterm?.percent??0)>=80));})&&((s.exams?.final?.bestPercent??s.exams?.final?.percent??0)>=80),officialCreditIssued:false,
   evaluatorStatus:null
  });
  api.download(record,'grade09-global-studies-academic-record.json');
