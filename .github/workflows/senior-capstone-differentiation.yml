@@ -1,0 +1,23 @@
+name: Senior Capstone Differentiation
+on:
+  pull_request:
+    paths:
+      - "courses/capstone/senior-capstone/course-map.json"
+      - "tools/validate-senior-capstone-differentiation-v2.mjs"
+      - ".github/workflows/senior-capstone-differentiation.yml"
+  push:
+    branches: [main]
+    paths:
+      - "courses/capstone/senior-capstone/course-map.json"
+      - "tools/validate-senior-capstone-differentiation-v2.mjs"
+      - ".github/workflows/senior-capstone-differentiation.yml"
+  workflow_dispatch:
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "24"
+      - run: node tools/validate-senior-capstone-differentiation-v2.mjs
