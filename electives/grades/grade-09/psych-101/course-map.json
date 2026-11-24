@@ -23,5 +23,24 @@
     "Mental & Physical Health Psychology",
     "Psychological Disorders, Treatment & Ethics",
     "Applied Psychology & Research Synthesis"
-  ]
+  ],
+  "longitudinalRetrieval": {
+    "version": "psych101-longitudinal-research-retrieval-v1",
+    "delivery": "existing psych101.js lesson engine",
+    "dosage": "one retrieval/method/data/transfer card in each of 65 lessons",
+    "strands": [
+      "research methods",
+      "measurement",
+      "data literacy",
+      "correlation and causation",
+      "alternative explanations",
+      "sampling and generalization",
+      "reliability and validity",
+      "replication",
+      "ethics and privacy",
+      "bounded inference"
+    ],
+    "assessmentAuthority": "unchanged: existing daily reviews, weekly mastery assessments, cumulative assessments, and final research brief",
+    "recordsAuthority": "unchanged: existing learner-scoped Psychology 101 local records and explicit export/import"
+  }
 }
