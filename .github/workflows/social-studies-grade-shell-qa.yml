@@ -41,16 +41,29 @@ jobs:
               path=Path(f"courses/social-studies/grade-{grade}/index.html")
               text=path.read_text(encoding="utf-8")
               required=[
-                  'high-school-subject-landing-shell-v1.css',
-                  'social-studies-grade-shell-v1.js'
+                      'social-studies-grade-shell-v1.js',
+              'social-studies-canonical-vnv-shell-v1.css'
               ]
               for marker in required:
                   if marker not in text:
                       failures.append(f"Grade {grade}: missing {marker}")
               if 'id="khaemenes-typography-standard"' in text:
                   failures.append(f"Grade {grade}: obsolete 14px typography injection still present")
+              if "<style" in text.lower():
+                  failures.append(f"Grade {grade}: inline style block returned")
+              if ' style="' in text.lower() or " style='" in text.lower():
+                  failures.append(f"Grade {grade}: inline style attribute returned")
+              if "high-school-subject-landing-shell-v1.css" in text:
+                  failures.append(f"Grade {grade}: competing generic subject stylesheet returned")
 
           department=Path("courses/social-studies/index.html").read_text(encoding="utf-8")
+          if "<style" in department.lower():
+              failures.append("Department landing: inline style block returned")
+          if ' style="' in department.lower() or " style='" in department.lower():
+              failures.append("Department landing: inline style attribute returned")
+          if "high-school-subject-landing-shell-v1.css" in department:
+              failures.append("Department landing: competing generic subject stylesheet returned")
+
           department_required=[
               "vnv-333-ticker.js",
               "vnv-ticker-autopopulate.js",
@@ -82,6 +95,32 @@ jobs:
               failures.append("Department landing: local class tools implementation returned")
 
           shell=Path("courses/social-studies/assets/social-studies-grade-shell-v1.js").read_text(encoding="utf-8")
+          if "createElement(\"style\")" in shell or ".style.textContent" in shell or "function style()" in shell:
+              failures.append("Shared Social Studies shell must not inject CSS at runtime")
+
+          canonical_css=Path("courses/social-studies/assets/social-studies-canonical-vnv-shell-v1.css").read_text(encoding="utf-8")
+          for marker in [
+              "--ss-charcoal:#243038",
+              "--ss-cream:#fff8e9",
+              "--ss-parchment:#f4f0e7",
+              "--ss-radius:7px",
+              "font:400 33px",
+              "66px",
+              "font:400 24px",
+              "#vnvClassToolsToggle",
+              "#vnvEcosystemUtilityDock"
+          ]:
+              if marker not in canonical_css:
+                  failures.append(f"Canonical Social Studies CSS missing contract marker: {marker}")
+
+          visual_prop = ("background:", "background-color:", "color:", "font:", "font-size:", "font-family:",
+                         "font-weight:", "border-radius:", "box-shadow:")
+          for grade in ("09","10","11","12"):
+              layout=Path(f"courses/social-studies/grade-{grade}/styles.css").read_text(encoding="utf-8").lower()
+              for prop in visual_prop:
+                  if prop in layout:
+                      failures.append(f"Grade {grade} layout stylesheet regained visual property {prop}")
+
           for marker in [
               "vnv-333-ticker.js",
               "vnv-ticker-autopopulate.js",
