@@ -29,17 +29,43 @@ function lessonStats(s){let done=0;if(s)Object.values(s.completedLessons||{}).fo
 function assignmentStats(s){const arr=s?Object.values(s.assignments||{}):[];const submitted=arr.filter(a=>a.submitted).length;let earned=0,possible=0;arr.forEach(a=>{if(Number.isFinite(+a.score)){earned+=+a.score;possible+=30}});return{submitted,total:54,percent:Math.round(submitted/54*100),earned,possible}}
 function quizStats(s){const arr=s?Object.values(s.quizzes||{}).filter(q=>q.completed):[];return{completed:arr.length,total:18,avg:arr.length?Math.round(arr.reduce((n,q)=>n+(q.bestPercent??q.percent??0),0)/arr.length):0}}
 function overall(s){if(!s)return 0;const l=lessonStats(s).percent,a=assignmentStats(s).percent,q=Math.round(quizStats(s).completed/18*100);return Math.round(l*.35+a*.40+q*.25)}
-function currentWeek(s){if(!s)return 1;for(const w of COURSE.weeks){if((s.completedLessons[w.week]||[]).filter(Boolean).length<5)return w.week}return 18}
-function setView(v){view=v;$$('.navBtn,.tab').forEach(b=>b.classList.toggle('active',b.dataset.view===v));render()}
-function setWeek(n){selectedWeek=Math.max(1,Math.min(18,+n));view='week';history.replaceState(null,'',`?week=${selectedWeek}`);renderSidebarWeeks();render();scrollTo({top:0,behavior:'smooth'})}
+function midtermMastered(s){return (s?.exams?.midterm?.bestPercent??s?.exams?.midterm?.percent??0)>=80}
+function finalMastered(s){return (s?.exams?.final?.bestPercent??s?.exams?.final?.percent??0)>=80}
+function weekMastered(s,w){
+ if(!s)return false;
+ const lessons=(s.completedLessons?.[w.week]||[]).filter(Boolean).length===5;
+ const assignments=w.assignments.every(a=>s.assignments?.[`${w.week}-${a.number}`]?.submitted);
+ const quiz=s.quizzes?.[w.week];
+ const quizMastery=!!quiz?.completed&&(quiz.bestPercent??quiz.percent??0)>=80&&String(quiz.shortResponse||'').trim().length>0;
+ if(!lessons||!assignments||!quizMastery)return false;
+ if(w.week===9&&!midtermMastered(s))return false;
+ return true;
+}
+function courseMastered(s){return !!s&&COURSE.weeks.every(w=>weekMastered(s,w))&&finalMastered(s)}
+function currentWeek(s){if(!s)return 1;for(const w of COURSE.weeks){if(!weekMastered(s,w))return w.week}return 18}
+function setView(v){view=v;$('.navBtn,.tab').forEach(b=>b.classList.toggle('active',b.dataset.view===v));render()}
+function setWeek(n){
+ const requested=Math.max(1,Math.min(18,+n)),unlocked=currentWeek(activeStudent());
+ if(requested>unlocked){
+   const midtermNote=unlocked===9?' The Financial Literacy Midterm must also be mastered at 80% before Week 10.':'';
+   alert(`Week ${requested} is locked. Complete Week ${unlocked}: five lessons, three submitted assignments, the constructed response, and the weekly quiz at 80%+.${midtermNote}`);
+   selectedWeek=unlocked;
+ }else selectedWeek=requested;
+ view='week';history.replaceState(null,'',`?week=${selectedWeek}`);renderSidebarWeeks();render();scrollTo({top:0,behavior:'smooth'})
+}
 function renderStudentControls(){
  const s=$('#studentSelect');
  s.innerHTML=db.students.length?db.students.map(x=>`<option value="${x.id}" ${x.id===db.activeId?'selected':''}>${esc(x.name)}</option>`).join(''):'<option value="">No student added</option>';
 }
 function renderSidebarWeeks(){
- const s=activeStudent();
- $('#weekList').innerHTML=COURSE.weeks.map(w=>`<button class="weekBtn ${selectedWeek===w.week?'active':''}" data-week="${w.week}"><span><strong>Week ${w.week}</strong><br><small>${esc(w.title)}</small></span><span>${(s?.completedLessons?.[w.week]||[]).filter(Boolean).length}/5</span></button>`).join('');
- $$('#weekList .weekBtn').forEach(b=>b.onclick=()=>setWeek(b.dataset.week));
+ const s=activeStudent(),unlocked=currentWeek(s);
+ $('#weekList').innerHTML=COURSE.weeks.map(w=>{
+   const locked=!!s&&w.week>unlocked;
+   const mastered=!!s&&weekMastered(s,w);
+   const status=locked?'🔒':(mastered?'✓':(s?.completedLessons?.[w.week]||[]).filter(Boolean).length+'/5');
+   return `<button class="weekBtn ${selectedWeek===w.week?'active':''} ${locked?'locked':''}" data-week="${w.week}" ${locked?'disabled aria-disabled="true"':''}><span><strong>Week ${w.week}</strong><br><small>${esc(w.title)}</small></span><span>${status}</span></button>`;
+ }).join('');
+ $('#weekList .weekBtn:not([disabled])').forEach(b=>b.onclick=()=>setWeek(b.dataset.week));
 }
 function render(){
  applySettings();
@@ -53,20 +79,20 @@ function render(){
  wireView();
 }
 function dashboardHTML(){
- const s=activeStudent(),ls=lessonStats(s),as=assignmentStats(s),qs=quizStats(s),pct=overall(s),cw=currentWeek(s);
+ const s=activeStudent(),ls=lessonStats(s),as=assignmentStats(s),qs=quizStats(s),pct=overall(s),cw=currentWeek(s),done=courseMastered(s);
  return `<div class="grid">
  <section class="card col12"><h2>${s?`Welcome, ${esc(s.name)}`:'Welcome to Personal Financial Literacy & Money Management Honors'}</h2>
  <p>${s?'Continue building a documented financial system based on verified terms, realistic calculations, risk management, and revision.':'Add a student in the sidebar to record progress in this browser.'}</p>
- <div class="progress"><span style="width:${pct}%"></span></div><p class="small">Estimated course completion: ${pct}%</p>
- <div class="actions"><button id="continueBtn">Continue Week ${cw}</button><button class="secondary" data-go="scope">View 18-Week Scope</button><a class="button ghost" href="docs/COURSE_RATIONALE.md">Read Course Rationale</a></div></section>
+ <div class="progress"><span style="width:${pct}%"></span></div><p class="small">Estimated course completion: ${pct}%${done?' · Course mastery requirements met':''}</p>
+ <div class="actions"><button id="continueBtn">${done?'Review Week 18':`Continue Week ${cw}`}</button><button class="secondary" data-go="scope">View 18-Week Scope</button><a class="button ghost" href="docs/COURSE_RATIONALE.md">Read Course Rationale</a></div></section>
  <section class="card col3 kpi"><strong>${ls.done}/90</strong><span>Daily lessons completed</span></section>
  <section class="card col3 kpi"><strong>${as.submitted}/54</strong><span>Assignments submitted</span></section>
  <section class="card col3 kpi"><strong>${qs.completed}/18</strong><span>Weekly quizzes completed</span></section>
  <section class="card col3 kpi"><strong>${qs.avg}%</strong><span>Quiz average</span></section>
  <section class="card col8"><h3>Course Architecture</h3><div class="tableWrap"><table><thead><tr><th>Component</th><th>Total</th><th>Purpose</th></tr></thead><tbody>
- <tr><td>Daily lessons</td><td>90</td><td>Five-day inquiry rhythm across 36 weeks</td></tr>
+ <tr><td>Daily lessons</td><td>90</td><td>Five-day inquiry rhythm across 18 weeks</td></tr>
  <tr><td>Principal assignments</td><td>54</td><td>Contract and source analysis, financial modeling, and decision memos</td></tr>
- <tr><td>Weekly quizzes</td><td>36</td><td>Ten definitive-response questions plus a constructed response</td></tr>
+ <tr><td>Weekly quizzes</td><td>18</td><td>Ten definitive-response questions plus a constructed response</td></tr>
  <tr><td>Major examinations</td><td>2</td><td>Financial-literacy midterm and cumulative final</td></tr>
  <tr><td>Independent-living portfolio</td><td>1</td><td>Integrated plan, stress tests, and oral defense</td></tr></tbody></table></div></section>
  <section class="card dark col4"><h3>Weekly Rhythm</h3><ol><li>Monday: frame time, place, and inquiry.</li><li>Tuesday: source and corroborate.</li><li>Wednesday: map, measure, and model.</li><li>Thursday: deliberate and write.</li><li>Friday: synthesize, assess, and correct.</li></ol><p class="small">Every week includes an original reading, vocabulary, source study, three assignments, supports, honors extensions, and a retake-ready quiz.</p></section>
@@ -113,7 +139,7 @@ function reportsHTML(){
  const s=activeStudent();if(!s)return`<section class="card"><h2>Reports and Backups</h2><p>Add or select a student to create a report.</p></section>`;
  const ls=lessonStats(s),as=assignmentStats(s),qs=quizStats(s),pct=overall(s);
  return `<div class="grid"><section class="card col12" id="printReport"><div class="reportHeader"><div class="eyebrow" style="color:#775e2b">Khaemenes High</div><h2>Grade 11 Personal Financial Literacy & Money Management Honors Progress Report</h2><p><strong>Student:</strong> ${esc(s.name)} · <strong>Date:</strong> ${new Date().toLocaleDateString()}</p></div>
- <div class="tableWrap"><table><tbody><tr><th>Daily lessons</th><td>${ls.done}/90 (${ls.percent}%)</td></tr><tr><th>Assignments submitted</th><td>${as.submitted}/54 (${as.percent}%)</td></tr><tr><th>Weekly quizzes</th><td>${qs.completed}/18 · average ${qs.avg}%</td></tr><tr><th>Estimated completion</th><td>${pct}%</td></tr><tr><th>Midterm</th><td>${s.exams?.midterm?.percent??'Not recorded'}</td></tr><tr><th>Final</th><td>${s.exams?.final?.percent??'Not recorded'}</td></tr></tbody></table></div>
+ <div class="tableWrap"><table><tbody><tr><th>Daily lessons</th><td>${ls.done}/90 (${ls.percent}%)</td></tr><tr><th>Assignments submitted</th><td>${as.submitted}/54 (${as.percent}%)</td></tr><tr><th>Weekly quizzes</th><td>${qs.completed}/18 · average ${qs.avg}%</td></tr><tr><th>Estimated completion</th><td>${pct}%</td></tr><tr><th>Midterm best</th><td>${s.exams?.midterm?.bestPercent??s.exams?.midterm?.percent??'Not recorded'}${(s.exams?.midterm?.bestPercent??s.exams?.midterm?.percent)!==undefined?'%':''}</td></tr><tr><th>Final best</th><td>${s.exams?.final?.bestPercent??s.exams?.final?.percent??'Not recorded'}${(s.exams?.final?.bestPercent??s.exams?.final?.percent)!==undefined?'%':''}</td></tr><tr><th>Course mastery</th><td>${courseMastered(s)?'Complete':'In progress'}</td></tr></tbody></table></div>
  <h3>Weekly Record</h3><div class="tableWrap"><table><thead><tr><th>Week</th><th>Lessons</th><th>Assignments</th><th>Quiz best</th></tr></thead><tbody>${COURSE.weeks.map(w=>`<tr><td>${w.week}. ${esc(w.title)}</td><td>${(s.completedLessons?.[w.week]||[]).filter(Boolean).length}/5</td><td>${w.assignments.filter(a=>s.assignments?.[`${w.week}-${a.number}`]?.submitted).length}/3</td><td>${s.quizzes?.[w.week]?.bestPercent!==undefined?s.quizzes[w.week].bestPercent+'%':'—'}</td></tr>`).join('')}</tbody></table></div></section>
  <section class="card col12 noPrint"><div class="actions"><button onclick="window.print()">Print Report</button><button class="secondary" id="exportBtn">Export Student Backup</button><label class="button ghost" style="cursor:pointer">Import Backup<input type="file" id="importFile" accept=".json" hidden></label></div></section></div>`;
 }
