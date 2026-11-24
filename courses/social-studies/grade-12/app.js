@@ -9,6 +9,15 @@ const today=()=>new Date().toISOString().slice(0,10);
 const stamp=()=>new Date().toLocaleString();
 let view='dashboard';
 let selectedWeek=Math.max(1,Math.min(36,Number(new URLSearchParams(location.search).get('week'))||1));
+function highAssessmentDraw(w,s){
+ const adapter=window.KhaemenesHighAssessmentAdapter,mc=window.KhaeMonteCarloAssessment;
+ if(!s?.id||!adapter||!mc)return {error:'The randomized assessment engine is unavailable.'};
+ const storageKey=KEY+':learner:'+encodeURIComponent(String(s.id))+':monte-carlo:weekly:'+w.week;
+ try{const opened=adapter.open({courseId:'social-studies-12',storageKey,kind:'weekly',bank:w.quiz.questions,count:w.quiz.questions.length});return{adapter,mc,opened,storageKey,questions:opened.questions,responses:mc.getResponses(storageKey,opened.sessionId)}}catch{return{error:'The randomized assessment session could not be opened.'}}
+}
+function highAssessmentComplete(draw,summary){try{return draw?.adapter?.complete(draw.opened,summary)}catch{return null}}
+function highAssessmentReviewSkills(qs,answers){return [...new Set(qs.map((q,i)=>answers[i]===q.answer?null:(q.skill||q.domain||'Global politics reasoning')).filter(Boolean))].slice(0,10)}
+
 
 function freshDB(){return{version:1,activeId:null,students:[],settings:{theme:'dark',fontScale:100}}}
 function loadDB(){try{const x=JSON.parse(localStorage.getItem(KEY));if(x&&Array.isArray(x.students))return Object.assign(freshDB(),x)}catch(e){}return freshDB()}
@@ -167,9 +176,10 @@ function assignmentHTML(w,a,s){
  <div class="actions noPrint"><button class="saveAssignment secondary" data-key="${key}" ${s?'':'disabled'}>Save Draft</button><button class="submitAssignment" data-key="${key}" ${s?'':'disabled'}>${rec.submitted?'Update Submission':'Submit Assignment'}</button></div><p class="small">${rec.updated?`Last updated ${esc(rec.updated)}`:'Not yet saved.'}</p></details>`;
 }
 function quizHTML(w,qrec,s){
- return `<form id="quizForm">${w.quiz.questions.map((q,qi)=>`<fieldset><legend>${qi+1}. ${esc(q.question)}</legend>${q.options.map((o,oi)=>`<label class="choice"><input type="radio" name="q${qi}" value="${oi}" ${qrec.answers?.[qi]===oi?'checked':''} ${s?'':'disabled'}> ${esc(o)}</label>`).join('')}</fieldset>`).join('')}
- <label><strong>Constructed response</strong><textarea id="shortResponse" rows="8" ${s?'':'disabled'}>${esc(qrec.shortResponse||'')}</textarea></label><p class="small">${esc(w.quiz.rubric)}</p>
- <div class="actions noPrint"><button type="submit" ${s?'':'disabled'}>Score and Save Attempt</button><a class="button secondary" href="assessments/correction-form.html">Open Correction Form</a></div></form>
+ const draw=highAssessmentDraw(w,s),ready=!draw.error,qs=ready?draw.questions:[],responses=ready?draw.responses:{};
+ return `<form id="quizForm">${ready?'':`<p class="notice" role="alert">${esc(draw.error)}</p>`}${qs.map((q,qi)=>`<fieldset><legend>${qi+1}. ${esc(q.prompt)}</legend>${q.choices.map((o,oi)=>`<label class="choice"><input type="radio" name="q${qi}" value="${oi}" data-assessment-question="${esc(q.id)}" ${responses[q.id]===oi?'checked':''} ${s&&ready?'':'disabled'}> ${esc(o)}</label>`).join('')}</fieldset>`).join('')}
+ <label><strong>Constructed response</strong><textarea id="shortResponse" rows="8" ${s&&ready?'':'disabled'}>${esc(qrec.shortResponseDraft??qrec.shortResponse??'')}</textarea></label><p class="small">${esc(w.quiz.rubric)}</p>
+ <div class="actions noPrint"><button type="submit" ${s&&ready?'':'disabled'}>Score and Save Attempt</button><a class="button secondary" href="assessments/correction-form.html">Open Correction Form</a></div></form>
  ${qrec.completed?`<div class="notice"><strong>Best objective score: ${qrec.bestPercent}%</strong> · ${qrec.attempts} attempt(s) · ${qrec.bestPercent>=META.weeklyMastery?'Mastery gate passed':'Correction and reassessment required'}</div>`:''}`;
 }
 function scopeHTML(){
@@ -223,7 +233,7 @@ function wireView(){
  const speak=$('#speakBtn');if(speak)speak.onclick=()=>{speechSynthesis.cancel();const u=new SpeechSynthesisUtterance($('#content').innerText);u.rate=.92;speechSynthesis.speak(u)};
  $$('[data-lesson]').forEach(ch=>ch.onchange=()=>{const s=activeStudent();if(!s)return;s.completedLessons[selectedWeek]||=[false,false,false,false,false];s.completedLessons[selectedWeek][+ch.dataset.lesson]=ch.checked;saveDB();renderSidebarWeeks()});
  $$('.saveAssignment,.submitAssignment').forEach(b=>b.onclick=()=>{const s=activeStudent();if(!s)return;const key=b.dataset.key,ta=$(`[data-assignment="${key}"]`);s.assignments[key]=Object.assign(s.assignments[key]||{},{text:ta.value,updated:stamp(),submitted:b.classList.contains('submitAssignment')?true:(s.assignments[key]?.submitted||false)});saveDB();render()});
- const qf=$('#quizForm');if(qf)qf.onsubmit=e=>{e.preventDefault();const s=activeStudent();if(!s)return;const w=COURSE.weeks[selectedWeek-1],answers=[],missing=[];w.quiz.questions.forEach((q,i)=>{const x=qf.querySelector(`[name="q${i}"]:checked`);if(!x)missing.push(i+1);answers.push(x?+x.value:null)});if(missing.length){alert(`Complete questions: ${missing.join(', ')}`);return}const score=answers.filter((x,i)=>x===w.quiz.questions[i].answer).length,percent=Math.round(score/w.quiz.questions.length*100),old=s.quizzes[w.week]||{};s.quizzes[w.week]={answers,score,percent,bestPercent:Math.max(old.bestPercent||0,percent),attempts:(old.attempts||0)+1,completed:true,shortResponse:$('#shortResponse').value,updated:stamp()};saveDB();render();};
+ const qf=$('#quizForm');if(qf)qf.onsubmit=e=>{e.preventDefault();const s=activeStudent();if(!s)return;const w=COURSE.weeks[selectedWeek-1],draw=highAssessmentDraw(w,s);if(draw.error)return alert(draw.error);const answers=draw.questions.map((q,i)=>{const x=qf.querySelector(`[name="q${i}"]:checked`);return x?+x.value:null});if(answers.some(x=>x===null)){alert('Complete every objective question before scoring.');return}const shortResponse=$('#shortResponse').value;if(!shortResponse.trim()){alert('Complete the constructed response before scoring; it remains evaluator-reviewed evidence.');return}answers.forEach((a,i)=>draw.mc.saveResponse(draw.storageKey,draw.questions[i].id,a,draw.opened.sessionId));const score=draw.questions.filter((q,i)=>answers[i]===q.answer).length,percent=Math.round(score/draw.questions.length*100),old=s.quizzes[w.week]||{},reviewSkills=highAssessmentReviewSkills(draw.questions,answers),attempt={attemptId:draw.opened.sessionId,questionIds:[...draw.opened.questionIds],score:percent,mastered:percent>=META.weeklyMastery,reviewSkills,submittedAt:new Date().toISOString(),evaluatorReviewRequired:true,source:'monte-carlo-v1'};s.quizzes[w.week]={...old,answers,score,percent,bestPercent:Math.max(old.bestPercent||0,percent),attempts:(old.attempts||0)+1,completed:true,shortResponse,shortResponseDraft:shortResponse,attemptHistory:[...(old.attemptHistory||[]),attempt],updated:stamp()};saveDB();highAssessmentComplete(draw,{score:percent,mastered:percent>=META.weeklyMastery,reviewSkills,constructedResponsePendingReview:true,learnerId:String(s.id)});render();};
  const ex=$('#exportBtn');if(ex)ex.onclick=()=>downloadJSON(`${safename(activeStudent().name)}-grade12-social-studies-backup.json`,{exported:new Date().toISOString(),course:META,student:activeStudent()});
  const imp=$('#importFile');if(imp)imp.onchange=async()=>{try{const x=JSON.parse(await imp.files[0].text());const student=normalize(x.student||x);if(!student.id)student.id=uid();const idx=db.students.findIndex(y=>y.id===student.id);if(idx>=0)db.students[idx]=student;else db.students.push(student);db.activeId=student.id;saveDB();renderStudentControls();renderSidebarWeeks();render()}catch(err){alert('That file could not be imported.')}};
 }

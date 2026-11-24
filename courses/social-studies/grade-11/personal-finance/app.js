@@ -8,6 +8,15 @@ const uid=()=>`s_${Date.now().toString(36)}${Math.random().toString(36).slice(2,
 const stamp=()=>new Date().toLocaleString();
 let selectedWeek=Math.max(1,Math.min(18,Number(new URLSearchParams(location.search).get('week'))||1));
 let view='dashboard';
+function highAssessmentDraw(w,s){
+ const adapter=window.KhaemenesHighAssessmentAdapter,mc=window.KhaeMonteCarloAssessment;
+ if(!s?.id||!adapter||!mc)return {error:'The randomized assessment engine is unavailable.'};
+ const storageKey=KEY+':learner:'+encodeURIComponent(String(s.id))+':monte-carlo:weekly:'+w.week;
+ try{const opened=adapter.open({courseId:'personal-finance-11',storageKey,kind:'weekly',bank:w.quiz.questions,count:w.quiz.questions.length});return{adapter,mc,opened,storageKey,questions:opened.questions,responses:mc.getResponses(storageKey,opened.sessionId)}}catch{return{error:'The randomized assessment session could not be opened.'}}
+}
+function highAssessmentComplete(draw,summary){try{return draw?.adapter?.complete(draw.opened,summary)}catch{return null}}
+function highAssessmentReviewSkills(qs,answers){return [...new Set(qs.map((q,i)=>answers[i]===q.answer?null:(q.skill||q.domain||'Financial reasoning')).filter(Boolean))].slice(0,10)}
+
 
 function freshDB(){return{version:1,activeId:null,students:[],settings:{theme:'dark',fontScale:100}}}
 function loadDB(){try{const x=JSON.parse(localStorage.getItem(KEY));if(x&&Array.isArray(x.students))return Object.assign(freshDB(),x)}catch(e){}return freshDB()}
@@ -120,11 +129,12 @@ function assignmentBlock(w,a,s){
  <details><summary>Four-part rubric</summary>${Object.entries(a.rubric).map(([k,v])=>`<p><strong>${esc(k)}:</strong> ${esc(v)}</p>`).join('')}</details></article>`;
 }
 function quizHTML(w,s){
- const sv=s?.quizzes?.[w.week]||{};
- return `<section class="card col12" id="weeklyQuiz"><h2>${esc(w.quiz.title)}</h2><p>Ten automatically scored questions (20 points) and one teacher-scored constructed response (5 points). Retakes are permitted; the best objective score is retained.</p>
- ${w.quiz.questions.map((q,qi)=>`<div class="quizQ"><p><strong>${qi+1}. ${esc(q.prompt)}</strong></p>${q.choices.map((ch,ci)=>`<label class="choice"><input type="radio" name="q${qi}" value="${ci}" ${sv.answers?.[qi]===ci?'checked':''}> ${esc(ch)}</label>`).join('')}<div id="fb-${qi}"></div></div>`).join('')}
- <div class="quizQ"><p><strong>Constructed Response.</strong> ${esc(w.quiz.shortResponse)}</p><textarea id="quizShort">${esc(sv.shortResponse||'')}</textarea></div>
- <div class="actions"><button id="submitQuiz">Score Objective Questions</button><button class="secondary" id="saveQuiz">Save Without Scoring</button></div>
+ const sv=s?.quizzes?.[w.week]||{},draw=highAssessmentDraw(w,s),ready=!draw.error,qs=ready?draw.questions:[],responses=ready?draw.responses:{};
+ return `<section class="card col12" id="weeklyQuiz"><h2>${esc(w.quiz.title)}</h2><p>Ten randomized open-book objective questions (20 points) and one evaluator-reviewed constructed response (5 points). Retakes preserve the best objective score and open a fresh randomized form.</p>
+ ${ready?'':`<p class="notice" role="alert">${esc(draw.error)}</p>`}
+ ${qs.map((q,qi)=>`<div class="quizQ"><p><strong>${qi+1}. ${esc(q.prompt)}</strong></p>${q.choices.map((ch,ci)=>`<label class="choice"><input type="radio" name="q${qi}" value="${ci}" data-assessment-question="${esc(q.id)}" ${responses[q.id]===ci?'checked':''}> ${esc(ch)}</label>`).join('')}<div id="fb-${qi}"></div></div>`).join('')}
+ <div class="quizQ"><p><strong>Constructed Response.</strong> ${esc(w.quiz.shortResponse?.prompt||w.quiz.shortResponse)}</p><textarea id="quizShort">${esc(sv.shortResponseDraft??sv.shortResponse??'')}</textarea></div>
+ <div class="actions"><button id="submitQuiz" ${ready?'':'disabled'}>Score Objective Questions</button><button class="secondary" id="saveQuiz" ${ready?'':'disabled'}>Save Without Scoring</button></div>
  <div id="quizResult">${sv.completed?`<p class="score">Best objective score: ${sv.bestScore}/20 (${sv.bestPercent}%)</p><p class="small">Attempts: ${sv.attempts||1}</p>`:''}</div></section>`;
 }
 function weekHTML(w){
@@ -185,15 +195,16 @@ function saveAssignment(key,submit){
 }
 function scoreQuiz(doScore){
  const s=activeStudent();if(!s)return alert('Add a student first.');
- const w=COURSE.weeks[selectedWeek-1],answers=w.quiz.questions.map((q,i)=>{const x=$(`input[name="q${i}"]:checked`);return x?+x.value:null});
- const prev=s.quizzes[w.week]||{},base={...prev,answers,shortResponse:$('#quizShort').value};
- if(doScore){
-   let correct=0;
-   w.quiz.questions.forEach((q,i)=>{const ok=answers[i]===q.answer;if(ok)correct++;const fb=$(`#fb-${i}`);fb.innerHTML=`<p class="${ok?'good':'bad'}">${ok?'Correct':'Review'}: ${esc(q.explanation)}</p>`});
-   const score=correct*2,percent=Math.round(correct/10*100);
-   base.score=score;base.percent=percent;base.bestScore=Math.max(prev.bestScore||0,score);base.bestPercent=Math.max(prev.bestPercent||0,percent);base.attempts=(prev.attempts||0)+1;base.completed=true;
- }
- s.quizzes[w.week]=base;saveDB();render();
+ const w=COURSE.weeks[selectedWeek-1],draw=highAssessmentDraw(w,s);if(draw.error)return alert(draw.error);
+ const answers=draw.questions.map((q,i)=>{const x=$(`input[name="q${i}"]:checked`);return x?+x.value:null}),shortResponse=$('#quizShort').value,prev=s.quizzes[w.week]||{};
+ if(!doScore){s.quizzes[w.week]={...prev,shortResponseDraft:shortResponse};saveDB();return;}
+ if(answers.some(x=>x===null))return alert('Please answer every objective question before scoring.');
+ if(!shortResponse.trim())return alert('Complete the constructed response before scoring; it remains evaluator-reviewed evidence.');
+ answers.forEach((a,i)=>draw.mc.saveResponse(draw.storageKey,draw.questions[i].id,a,draw.opened.sessionId));
+ const correct=draw.questions.filter((q,i)=>answers[i]===q.answer).length,score=correct*2,percent=Math.round(correct/draw.questions.length*100),reviewSkills=highAssessmentReviewSkills(draw.questions,answers);
+ const attempt={attemptId:draw.opened.sessionId,questionIds:[...draw.opened.questionIds],score:percent,mastered:percent>=80,reviewSkills,submittedAt:new Date().toISOString(),evaluatorReviewRequired:true,source:'monte-carlo-v1'};
+ s.quizzes[w.week]={...prev,answers,shortResponse,shortResponseDraft:shortResponse,score,percent,bestScore:Math.max(prev.bestScore||0,score),bestPercent:Math.max(prev.bestPercent||0,percent),attempts:(prev.attempts||0)+1,completed:true,attemptHistory:[...(prev.attemptHistory||[]),attempt]};
+ saveDB();highAssessmentComplete(draw,{score:percent,mastered:percent>=80,reviewSkills,constructedResponsePendingReview:true,learnerId:String(s.id)});render();
 }
 function exportBackup(){
  const s=activeStudent();if(!s)return;
