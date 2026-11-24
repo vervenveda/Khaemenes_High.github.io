@@ -1,0 +1,87 @@
+name: Social Studies Learner Ownership
+
+on:
+  pull_request:
+    paths:
+      - "courses/social-studies/grade-10/**"
+      - "courses/social-studies/grade-11/**"
+      - "courses/social-studies/grade-12/**"
+      - "courses/social-studies/docs/LEARNER_OWNERSHIP_CONTRACT.md"
+      - ".github/workflows/social-studies-learner-ownership.yml"
+  push:
+    branches: [main]
+    paths:
+      - "courses/social-studies/grade-10/**"
+      - "courses/social-studies/grade-11/**"
+      - "courses/social-studies/grade-12/**"
+      - "courses/social-studies/docs/LEARNER_OWNERSHIP_CONTRACT.md"
+      - ".github/workflows/social-studies-learner-ownership.yml"
+
+jobs:
+  verify-learner-ownership:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Verify Academy learner scoping
+        shell: python
+        run: |
+          from pathlib import Path
+          import sys
+
+          failures = []
+          apps = [
+              Path("courses/social-studies/grade-10/app.js"),
+              Path("courses/social-studies/grade-11/app.js"),
+              Path("courses/social-studies/grade-11/personal-finance/app.js"),
+              Path("courses/social-studies/grade-12/app.js"),
+          ]
+
+          required = [
+              "KhaemenesCourseEntryContract",
+              "ENTRY_OWNER",
+              '":academy:"+encodeURIComponent(ENTRY_OWNER)',
+              "requireAcademyOwner",
+              "academyLearnerId",
+              "savedSnapshot",
+              "Another tab modified",
+              "localStorage.getItem(KEY)",
+              "localStorage.setItem(KEY",
+          ]
+
+          for path in apps:
+              text = path.read_text(encoding="utf-8")
+              for marker in required:
+                  if marker not in text:
+                      failures.append(f"{path}: missing ownership marker {marker!r}")
+              if "current!==ENTRY_OWNER" not in text:
+                  failures.append(f"{path}: missing active-learner mismatch block")
+              if "academyLearnerId&&x.academyLearnerId!==ENTRY_OWNER" not in text:
+                  failures.append(f"{path}: backup import does not reject known mismatched owner")
+              if "showLegacyOwnershipNotice" not in text:
+                  failures.append(f"{path}: missing unclaimed legacy record notice")
+
+          # Grade 11 must no longer auto-adopt Civic Ledger or shared gradebook bytes.
+          g11 = Path("courses/social-studies/grade-11/app.js").read_text(encoding="utf-8")
+          load_start = g11.index("function loadDB()")
+          load_end = g11.index("let db", load_start)
+          load_body = g11[load_start:load_end]
+          for forbidden in ["migrateLegacyDB(", "localStorage.getItem(LEGACY_KEY)", "localStorage.setItem(LEGACY_GRADEBOOK_KEY"]:
+              if forbidden in load_body:
+                  failures.append(f"Grade 11 loadDB auto-adopts legacy bytes via {forbidden!r}")
+
+          # Personal Finance must load the same Academy ownership infrastructure.
+          pf = Path("courses/social-studies/grade-11/personal-finance/index.html").read_text(encoding="utf-8")
+          for marker in ["course-entry-contract.js", "learner-scope-v1.js"]:
+              if marker not in pf:
+                  failures.append(f"Personal Finance shell missing {marker}")
+
+          # Grade 12 entry shell already owns these scripts and must keep them.
+          g12 = Path("courses/social-studies/grade-12/index.html").read_text(encoding="utf-8")
+          for marker in ["course-entry-contract.js", "learner-scope-v1.js"]:
+              if marker not in g12:
+                  failures.append(f"Grade 12 shell missing {marker}")
+
+          if failures:
+              print("\n".join("FAIL: "+x for x in failures))
+              sys.exit(1)
+          print("PASS: Social Studies Grade 10-12 records are Academy-learner scoped; legacy shared records remain unclaimed; known mismatched backups are rejected.")
