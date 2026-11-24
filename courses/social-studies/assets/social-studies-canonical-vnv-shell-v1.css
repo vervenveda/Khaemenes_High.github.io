@@ -25,7 +25,7 @@ body[data-social-studies-grade-shell="v1"]{
   background-image:none!important;
   color:var(--ss-charcoal)!important;
   font-family:var(--ss-body)!important;
-  font-size:16px!important;
+  font-size:max(16px,calc(16px * var(--font-scale,1)))!important;
   font-weight:400!important;
   line-height:1.65!important;
 }
