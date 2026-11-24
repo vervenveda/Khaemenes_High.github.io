@@ -139,7 +139,8 @@ function demoStudent(){
  saveDB();
 }
 function lessonStats(s){let done=0;if(s)Object.values(s.completedLessons||{}).forEach(a=>done+=a.filter(Boolean).length);return{done,total:180,percent:Math.round(done/180*100)}}
-function assignmentStats(s){const arr=s?Object.values(s.assignments||{}):[];const submitted=arr.filter(a=>a.submitted).length;let earned=0,possible=0;arr.forEach(a=>{if(Number.isFinite(+a.score)){earned+=+a.score;possible+=30}});return{submitted,total:108,percent:Math.round(submitted/108*100),earned,possible}}
+function assignmentEvidenceComplete(a){return !!a?.submitted&&String(a.text||'').trim().length>0}
+function assignmentStats(s){const arr=s?Object.values(s.assignments||{}):[];const submitted=arr.filter(assignmentEvidenceComplete).length;let earned=0,possible=0;arr.forEach(a=>{if(Number.isFinite(+a.score)){earned+=+a.score;possible+=30}});return{submitted,total:108,percent:Math.round(submitted/108*100),earned,possible}}
 function quizStats(s){const arr=s?Object.values(s.quizzes||{}).filter(q=>q.completed):[];return{completed:arr.length,total:36,avg:arr.length?Math.round(arr.reduce((n,q)=>n+(q.bestPercent??q.percent??0),0)/arr.length):0}}
 function overall(s){if(!s)return 0;const l=lessonStats(s).percent,a=assignmentStats(s).percent,q=Math.round(quizStats(s).completed/36*100);return Math.round(l*.35+a*.40+q*.25)}
 function governmentFinalMastered(s){return (s?.exams?.governmentFinal?.bestPercent??s?.exams?.governmentFinal?.percent??0)>=80}
@@ -148,7 +149,7 @@ function courseMastered(s){return !!s&&COURSE.weeks.every(w=>weekMastered(s,w))&
 function weekMastered(s,w){
  if(!s)return false;
  const lessons=(s.completedLessons?.[w.week]||[]).filter(Boolean).length===5;
- const assignments=w.assignments.every(a=>s.assignments?.[`${w.week}-${a.number}`]?.submitted);
+ const assignments=w.assignments.every(a=>assignmentEvidenceComplete(s.assignments?.[`${w.week}-${a.number}`]));
  const quiz=s.quizzes?.[w.week];
  const quizMastery=!!quiz?.completed&&(quiz.bestPercent??quiz.percent??0)>=80&&String(quiz.shortResponse||'').trim().length>0;
  if(!lessons||!assignments||!quizMastery)return false;
