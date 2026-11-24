@@ -34,7 +34,13 @@ jobs:
               "03": ("Learner Success Criteria &amp; Mastery", "Four Claims About Independence", "Constructed Response"),
               "04": ("Learner Success Criteria &amp; Mastery", "Designing a Republic", "Constructed Response"),
               "05": ("Learner Success Criteria &amp; Mastery", "Voices of the Market Revolution", "Constructed Response"),
-              "06": ("Learner Success Criteria &amp; Mastery", "Law, War, and Territorial Claims", "Constructed Response")
+              "06": ("Learner Success Criteria &amp; Mastery", "Law, War, and Territorial Claims", "Constructed Response"),
+              "07": ("Learner Success Criteria &amp; Mastery", "Freedom Claims and Proslavery Claims", "Constructed Response"),
+              "08": ("Learner Success Criteria &amp; Mastery", "From Union to Emancipation", "Constructed Response"),
+              "09": ("Learner Success Criteria &amp; Mastery", "Rights, Labor, and Enforcement", "Constructed Response"),
+              "10": ("Learner Success Criteria &amp; Mastery", "Land Policy and Lived Experience", "Constructed Response"),
+              "11": ("Learner Success Criteria &amp; Mastery", "Who Should Govern the Workplace?", "Constructed Response"),
+              "12": ("Learner Success Criteria &amp; Mastery", "Democracy Under Constraint", "Constructed Response")
           }
 
           for week, markers in rubric_markers.items():
@@ -51,4 +57,4 @@ jobs:
               print("\n".join(f"FAIL: {item}" for item in failures))
               sys.exit(1)
 
-          print("PASS: Grade 10 Weeks 01–06 expose learner-facing success criteria.")
+          print("PASS: Grade 10 Weeks 01–12 expose learner-facing success criteria.")
