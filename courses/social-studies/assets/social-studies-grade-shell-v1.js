@@ -73,121 +73,6 @@ function load(src,key){
  });
 }
 
-function style(){
- if(document.getElementById("socialStudiesGradeShellV1Style"))return;
- const s=document.createElement("style");
- s.id="socialStudiesGradeShellV1Style";
- s.textContent=`
- html:root:root body[data-social-studies-grade-shell="v1"]{
-   background:#f4f0e7!important;color:#243038!important;font-size:16px!important;
-   font-family:"Brandon Grotesque",Nunito,"Avenir Next","Segoe UI",Arial,sans-serif!important
- }
- html:root:root body[data-social-studies-grade-shell="v1"] :is(p,li,a,button,input,select,textarea,label,summary,td,th){font-size:max(16px,1em)}
- html:root:root body[data-social-studies-grade-shell="v1"] :is(h1,h2,h3,h4,h5,h6,strong,b,summary,button,.button){font-weight:400!important}
- html:root:root body[data-social-studies-grade-shell="v1"] :is(button,.button,a.button,.card,.panel,.ss9-tool,details,dialog,input,select,textarea){border-radius:7px!important}
-
- html:root:root body[data-social-studies-grade-shell="v1"] .high-subject-breadcrumbs{
-   width:min(100%,1100px);margin:0 auto;padding:11px 18px;text-align:center;
-   display:flex;align-items:center;justify-content:center;gap:7px;flex-wrap:wrap;
-   color:#243038;background:#eee7d8;border-bottom:1px solid #d8cdb9
- }
- html:root:root body[data-social-studies-grade-shell="v1"] .high-subject-breadcrumbs a{color:#243038;text-decoration:none}
- html:root:root body[data-social-studies-grade-shell="v1"] .high-subject-breadcrumbs a:hover{text-decoration:underline;text-underline-offset:3px}
-
- html:root:root body[data-social-studies-grade-shell="v1"] .hero{
-  background:#243038!important;background-image:none!important;color:#fff8e9!important;
-  border-radius:0!important;text-align:center!important;padding:55px 24px!important;box-shadow:none!important;
-  max-width:none!important;width:100%!important
- }
- html:root:root body[data-social-studies-grade-shell="v1"] .hero:before,
- html:root:root body[data-social-studies-grade-shell="v1"] .hero:after{display:none!important}
- html:root:root body[data-social-studies-grade-shell="v1"] .hero .eyebrow{
-  margin:0!important;color:#fff8e9!important;font:400 33px/1.15 Cinzel,Georgia,serif!important;
-  letter-spacing:.03em!important;text-transform:none!important
- }
- html:root:root body[data-social-studies-grade-shell="v1"] .hero h1{
-  margin:10px auto!important;color:#fff8e9!important;font:400 clamp(44px,7vw,66px)/1.05 Cinzel,Georgia,serif!important;
-  letter-spacing:.02em!important;max-width:1120px!important
- }
- html:root:root body[data-social-studies-grade-shell="v1"] .hero .subtitle{
-  margin:0 auto!important;color:#fff8e9!important;font:400 24px/1.35 "Brandon Grotesque",Nunito,Arial,sans-serif!important;
-  max-width:1000px!important
- }
- html:root:root body[data-social-studies-grade-shell="v1"] .hero>p:not(.eyebrow):not(.subtitle){
-  color:#e8dfcf!important;font-size:16px!important;line-height:1.65!important;margin:12px auto!important;max-width:900px!important
- }
- html:root:root body[data-social-studies-grade-shell="v1"] .high-subject-access{
-  width:min(100%,760px)!important;display:grid!important;grid-template-columns:repeat(3,minmax(0,1fr))!important;
-  gap:11px!important;margin:20px auto 0!important
- }
- html:root:root body[data-social-studies-grade-shell="v1"] .high-subject-access a{
-  box-sizing:border-box!important;display:flex!important;align-items:center!important;justify-content:center!important;
-  min-height:44px!important;padding:9px 14px!important;border:1px solid #fff8e9!important;border-radius:7px!important;
-  background:#fff8e9!important;color:#243038!important;-webkit-text-fill-color:#243038!important;
-  font:400 16px/1.3 "Brandon Grotesque",Nunito,Arial,sans-serif!important;text-decoration:none!important
- }
- html:root:root body[data-social-studies-grade-shell="v1"] .high-subject-access a:first-child{
-  background:#243038!important;color:#fff8e9!important;-webkit-text-fill-color:#fff8e9!important
- }
-
- html:root:root body[data-social-studies-grade-shell="v1"] .ss-shell-intro{
-   width:min(1040px,calc(100% - 32px));margin:24px auto 18px;padding:22px;
-   background:#fff8e9;border:1px solid #d4c7af;border-radius:7px;text-align:center;color:#243038
- }
- html:root:root body[data-social-studies-grade-shell="v1"] .ss-shell-intro h2,
- html:root:root body[data-social-studies-grade-shell="v1"] .ss-shell-features>h2{
-   margin:0 0 11px;font:400 33px/1.2 Cinzel,Georgia,serif;color:#243038;text-align:center
- }
- html:root:root body[data-social-studies-grade-shell="v1"] .ss-shell-intro p{margin:0 auto;max-width:850px;color:#35423e}
-
- html:root:root body[data-social-studies-grade-shell="v1"] .ss-shell-features{
-   width:min(1040px,calc(100% - 32px));margin:18px auto 28px
- }
- html:root:root body[data-social-studies-grade-shell="v1"] .ss-feature-grid{
-   display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px
- }
- html:root:root body[data-social-studies-grade-shell="v1"] .ss-feature-card{
-   min-height:170px;padding:20px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;
-   background:#eee7d8;border:1px solid #cbbd9f;border-radius:7px;color:#243038
- }
- html:root:root body[data-social-studies-grade-shell="v1"] .ss-feature-card h3{margin:0 0 8px;font:400 24px/1.25 Cinzel,Georgia,serif}
- html:root:root body[data-social-studies-grade-shell="v1"] .ss-feature-card p{margin:0 0 14px;max-width:420px}
- html:root:root body[data-social-studies-grade-shell="v1"] .ss-feature-card button{
-   margin-top:auto;min-width:150px;min-height:44px;padding:9px 18px;border:1px solid #243038;border-radius:7px;
-   background:#243038;color:#fff8e9;font:400 16px/1.2 Nunito,Arial,sans-serif;cursor:pointer
- }
- html:root:root body[data-social-studies-grade-shell="v1"] .ss-feature-dialog{
-   width:min(620px,calc(100vw - 28px));padding:0;border:1px solid #243038;border-radius:7px;background:#fff8e9;color:#243038
- }
- html:root:root body[data-social-studies-grade-shell="v1"] .ss-feature-dialog::backdrop{background:rgba(20,28,28,.58)}
- html:root:root body[data-social-studies-grade-shell="v1"] .ss-feature-dialog-inner{padding:24px;text-align:center}
- html:root:root body[data-social-studies-grade-shell="v1"] .ss-feature-dialog h2{margin:0 0 10px;font:400 33px/1.2 Cinzel,Georgia,serif}
- html:root:root body[data-social-studies-grade-shell="v1"] .ss-feature-dialog-actions{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;margin-top:18px}
- html:root:root body[data-social-studies-grade-shell="v1"] .ss-feature-dialog :is(a,button){
-   min-height:44px;padding:9px 18px;border:1px solid #243038;border-radius:7px;font:400 16px/1.2 Nunito,Arial,sans-serif;text-decoration:none
- }
- html:root:root body[data-social-studies-grade-shell="v1"] .ss-feature-dialog a{background:#243038;color:#fff8e9}
- html:root:root body[data-social-studies-grade-shell="v1"] .ss-feature-dialog button{background:#fff8e9;color:#243038;cursor:pointer}
-
- html:root:root body[data-social-studies-grade-shell="v1"] footer,
- html:root:root body[data-social-studies-grade-shell="v1"] .footer{
-   background:#243038!important;color:#fff8e9!important;text-align:center!important;border-radius:0!important;
-   padding:24px 18px!important;font-size:14px!important
- }
- #vnvClassToolsToolbar{--vct-button-min-height:44px}
- #vnvEcosystemUtilityDock>a,#vnvEcosystemUtilityDock>button{min-height:44px!important}
-
- @media(max-width:720px){
-  html:root:root body[data-social-studies-grade-shell="v1"] .high-subject-access,
-  html:root:root body[data-social-studies-grade-shell="v1"] .ss-feature-grid{grid-template-columns:1fr!important}
- }
- @media print{
-  #vnv333NetworkTicker,#vnvTickerAutoPopulate,#vnvHeaderAutoPopulate,#vnvEcosystemUtilityDock,#vnvClassToolsToolbar,
-  .high-subject-breadcrumbs,.high-subject-access,.ss-shell-intro,.ss-shell-features{display:none!important}
- }`;
- document.head.append(s);
-}
-
 function normalizeHero(){
  let hero=document.querySelector(".hero,.ss9-hero");
  if(!hero)return null;
@@ -288,7 +173,6 @@ async function mount(){
  if(!document.body)return;
  document.body.dataset.socialStudiesGradeShell="v1";
  document.body.dataset.highSubjectShell="true";
- style();
  const hero=normalizeHero();
  mountBreadcrumbs(hero);
  mountIntro(hero);
