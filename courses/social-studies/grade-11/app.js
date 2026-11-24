@@ -2,6 +2,7 @@
 'use strict';
 const COURSE=window.KHAEMENES_SOCIAL_STUDIES_DATA;
 const META=COURSE.metadata, KEY=META.storageKey;
+const LEGACY_KEY='KHAE_SS11_GLE_CIVIC_LEDGER_V1';
 const $=(s,r=document)=>r.querySelector(s), $$=(s,r=document)=>[...r.querySelectorAll(s)];
 const esc=(v='')=>String(v).replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]));
 const uid=()=>`s_${Date.now().toString(36)}${Math.random().toString(36).slice(2,7)}`;
@@ -10,7 +11,60 @@ let selectedWeek=Math.max(1,Math.min(36,Number(new URLSearchParams(location.sear
 let view='dashboard';
 
 function freshDB(){return{version:1,activeId:null,students:[],settings:{theme:'dark',fontScale:100}}}
-function loadDB(){try{const x=JSON.parse(localStorage.getItem(KEY));if(x&&Array.isArray(x.students))return Object.assign(freshDB(),x)}catch(e){}return freshDB()}
+function migrateLegacyDB(raw){
+ if(!raw||!Array.isArray(raw.students)||!raw.students.length)return null;
+ const out=freshDB();
+ out.version=2;
+ out.migration={source:LEGACY_KEY,migratedAt:new Date().toISOString(),preservedLegacyRecords:true};
+ out.students=raw.students.map(old=>{
+   const s=normalize({id:old.id||uid(),name:String(old.name||'Learner').trim()||'Learner',created:String(old.created||new Date().toISOString()).slice(0,10)});
+   const progress=old.progress||{},weeks=progress.weeks||{};
+   s.legacyCivicLedger={progress,source:LEGACY_KEY,migratedAt:out.migration.migratedAt};
+   COURSE.weeks.forEach(w=>{
+     const r=weeks[w.week]||weeks[String(w.week)];
+     if(!r)return;
+     const legacyLessons=r.lessons||{},days=['Monday','Tuesday','Wednesday','Thursday','Friday'];
+     s.completedLessons[w.week]=days.map((day,i)=>Boolean(legacyLessons[day]??legacyLessons[i]));
+     w.assignments.forEach((a,i)=>{
+       if(Boolean(r.assignments?.[i]??r.assignments?.[String(i)])){
+         s.assignments[`${w.week}-${a.number}`]={text:'Migrated completion record from Civic Ledger.',submitted:true,updated:'Migrated from Civic Ledger'};
+       }
+     });
+     const best=Math.max(0,Math.min(100,Number(r.quiz?.best)||0));
+     const attempts=Array.isArray(r.quiz?.attempts)?r.quiz.attempts.length:0;
+     const shortResponse=String(r.constructed||'').trim();
+     if(best>0||attempts||shortResponse){
+       s.quizzes[w.week]={
+         answers:[],score:Math.round(best*.2),bestScore:Math.round(best*.2),percent:best,bestPercent:best,
+         attempts:Math.max(attempts,best>0?1:0),completed:best>0,shortResponse,
+         migratedFromLegacy:true
+       };
+     }
+   });
+   const mid=Math.max(0,Math.min(100,Number(progress.exams?.midterm?.best)||0));
+   const fin=Math.max(0,Math.min(100,Number(progress.exams?.final?.best)||0));
+   if(mid>0)s.exams.governmentFinal={percent:mid,bestPercent:mid,completed:true,migratedFromLegacy:true,sourceAssessment:'Civic Ledger midterm'};
+   if(fin>0)s.exams.economicsFinal={percent:fin,bestPercent:fin,completed:true,migratedFromLegacy:true,sourceAssessment:'Civic Ledger final'};
+   return s;
+ });
+ out.activeId=out.students.some(s=>s.id===raw.activeId)?raw.activeId:out.students[0]?.id||null;
+ return out;
+}
+function loadDB(){
+ try{
+   const x=JSON.parse(localStorage.getItem(KEY));
+   if(x&&Array.isArray(x.students))return Object.assign(freshDB(),x);
+ }catch(e){}
+ try{
+   const legacy=JSON.parse(localStorage.getItem(LEGACY_KEY));
+   const migrated=migrateLegacyDB(legacy);
+   if(migrated){
+     localStorage.setItem(KEY,JSON.stringify(migrated));
+     return migrated;
+   }
+ }catch(e){}
+ return freshDB();
+}
 let db=loadDB();
 function saveDB(){localStorage.setItem(KEY,JSON.stringify(db))}
 function normalize(s){s.completedLessons||={};s.assignments||={};s.quizzes||={};s.exams||={};s.journal||={};s.attendance||={};return s}
@@ -127,7 +181,7 @@ function examsHTML(){
 function reportsHTML(){
  const s=activeStudent();if(!s)return`<section class="card"><h2>Reports and Backups</h2><p>Add or select a student to create a report.</p></section>`;
  const ls=lessonStats(s),as=assignmentStats(s),qs=quizStats(s),pct=overall(s);
- return `<div class="grid"><section class="card col12" id="printReport"><div class="reportHeader"><div class="eyebrow" style="color:#775e2b">Khaemenes High</div><h2>Grade 11 Grade 11 Government, Law & Economics Honors Progress Report</h2><p><strong>Student:</strong> ${esc(s.name)} · <strong>Date:</strong> ${new Date().toLocaleDateString()}</p></div>
+ return `<div class="grid"><section class="card col12" id="printReport"><div class="reportHeader"><div class="eyebrow" style="color:#775e2b">Khaemenes High</div><h2>Grade 11 Government, Law & Economics Honors Progress Report</h2><p><strong>Student:</strong> ${esc(s.name)} · <strong>Date:</strong> ${new Date().toLocaleDateString()}</p></div>
  <div class="tableWrap"><table><tbody><tr><th>Daily lessons</th><td>${ls.done}/180 (${ls.percent}%)</td></tr><tr><th>Assignments submitted</th><td>${as.submitted}/108 (${as.percent}%)</td></tr><tr><th>Weekly quizzes</th><td>${qs.completed}/36 · average ${qs.avg}%</td></tr><tr><th>Estimated completion</th><td>${pct}%</td></tr><tr><th>Government final</th><td>${s.exams?.governmentFinal?.bestPercent??s.exams?.governmentFinal?.percent??'Not recorded'}</td></tr><tr><th>Economics final</th><td>${s.exams?.economicsFinal?.bestPercent??s.exams?.economicsFinal?.percent??'Not recorded'}</td></tr></tbody></table></div>
  <h3>Weekly Record</h3><div class="tableWrap"><table><thead><tr><th>Week</th><th>Lessons</th><th>Assignments</th><th>Quiz best</th></tr></thead><tbody>${COURSE.weeks.map(w=>`<tr><td>${w.week}. ${esc(w.title)}</td><td>${(s.completedLessons?.[w.week]||[]).filter(Boolean).length}/5</td><td>${w.assignments.filter(a=>s.assignments?.[`${w.week}-${a.number}`]?.submitted).length}/3</td><td>${s.quizzes?.[w.week]?.bestPercent!==undefined?s.quizzes[w.week].bestPercent+'%':'—'}</td></tr>`).join('')}</tbody></table></div></section>
  <section class="card col12 noPrint"><div class="actions"><button onclick="window.print()">Print Report</button><button class="secondary" id="exportBtn">Export Student Backup</button><label class="button ghost" style="cursor:pointer">Import Backup<input type="file" id="importFile" accept=".json" hidden></label></div></section></div>`;
