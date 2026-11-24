@@ -8,9 +8,9 @@ Public path:
 
 ## Weekly path authority
 - **Canonical weekly curriculum owner:** `weeks/week-01/` through `weeks/week-36/`.
-- The historical sibling paths `week-01/` through `week-36/` are retained only as compatibility mirrors for older bookmarks and references.
+- The historical sibling paths `week-01/` through `week-36/` are retained only as compatibility surfaces for older bookmarks and references; they do not execute an independent curriculum.
 - Do not author or revise curriculum in the historical `week-XX/` paths.
-- Repository validation requires every compatibility-mirror filename and file body to remain byte-identical to its canonical `weeks/week-XX/` counterpart. Any drift fails CI.
+- Repository validation requires matching filenames; historical HTML files must redirect to canonical `weeks/week-XX/` pages, `quiz.json` must remain byte-identical to canonical quiz data, and historical READMEs must retain a compatibility notice. Any drift fails CI.
 - Student-facing Grade 9 runtime links, local labs, packets, and teacher-guide references resolve through the canonical `weeks/` tree.
 
 ## Canonical mastery policy
