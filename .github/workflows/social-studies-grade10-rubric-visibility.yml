@@ -1,0 +1,54 @@
+name: Social Studies Grade 10 Rubric Visibility
+
+on:
+  pull_request:
+    paths:
+      - 'courses/social-studies/grade-10/**'
+      - '.github/workflows/social-studies-grade10-rubric-visibility.yml'
+  push:
+    branches: [ main ]
+    paths:
+      - 'courses/social-studies/grade-10/**'
+      - '.github/workflows/social-studies-grade10-rubric-visibility.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  validate-rubric-visibility:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Validate learner-facing rubric coverage
+        shell: python
+        run: |
+          from pathlib import Path
+          import sys
+
+          root = Path("courses/social-studies/grade-10/weeks")
+          failures = []
+
+          rubric_markers = {
+              "01": ("Learner Success Criteria &amp; Mastery", "Three Ways of Knowing 1491", "Constructed Response"),
+              "02": ("Learner Success Criteria &amp; Mastery", "Charters, Covenants, and Native Diplomacy", "Constructed Response"),
+              "03": ("Learner Success Criteria &amp; Mastery", "Four Claims About Independence", "Constructed Response"),
+              "04": ("Learner Success Criteria &amp; Mastery", "Designing a Republic", "Constructed Response"),
+              "05": ("Learner Success Criteria &amp; Mastery", "Voices of the Market Revolution", "Constructed Response"),
+              "06": ("Learner Success Criteria &amp; Mastery", "Law, War, and Territorial Claims", "Constructed Response")
+          }
+
+          for week, markers in rubric_markers.items():
+              packet = root / f"week-{week}" / "student-packet.html"
+              if not packet.is_file():
+                  failures.append(f"Week {week}: missing canonical student-packet.html")
+                  continue
+              text = packet.read_text(encoding="utf-8")
+              for marker in markers:
+                  if marker not in text:
+                      failures.append(f"Week {week}: learner-facing rubric marker missing: {marker}")
+
+          if failures:
+              print("\n".join(f"FAIL: {item}" for item in failures))
+              sys.exit(1)
+
+          print("PASS: Grade 10 Weeks 01–06 expose learner-facing success criteria.")
