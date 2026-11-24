@@ -1,0 +1,73 @@
+name: Social Studies Written Evidence Progression
+
+on:
+  pull_request:
+    paths:
+      - "courses/social-studies/grade-10/app.js"
+      - "courses/social-studies/grade-11/app.js"
+      - "courses/social-studies/grade-11/personal-finance/app.js"
+      - "courses/social-studies/grade-12/app.js"
+      - "courses/social-studies/docs/WRITTEN_EVIDENCE_PROGRESSION_CONTRACT.md"
+      - ".github/workflows/social-studies-written-evidence-progression.yml"
+  push:
+    branches: [main]
+    paths:
+      - "courses/social-studies/grade-10/app.js"
+      - "courses/social-studies/grade-11/app.js"
+      - "courses/social-studies/grade-11/personal-finance/app.js"
+      - "courses/social-studies/grade-12/app.js"
+      - "courses/social-studies/docs/WRITTEN_EVIDENCE_PROGRESSION_CONTRACT.md"
+      - ".github/workflows/social-studies-written-evidence-progression.yml"
+
+jobs:
+  verify-written-evidence:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Verify substantive assignment evidence gates
+        shell: python
+        run: |
+          from pathlib import Path
+          import sys
+
+          failures = []
+          apps = [
+              Path("courses/social-studies/grade-10/app.js"),
+              Path("courses/social-studies/grade-11/app.js"),
+              Path("courses/social-studies/grade-11/personal-finance/app.js"),
+              Path("courses/social-studies/grade-12/app.js"),
+          ]
+
+          for path in apps:
+              text = path.read_text(encoding="utf-8")
+              required = [
+                  "function assignmentEvidenceComplete(a)",
+                  "String(a.text||'').trim().length>0",
+                  "assignments=w.assignments.every(a=>assignmentEvidenceComplete",
+                  "written response, evidence note, or identified attachment",
+              ]
+              for marker in required:
+                  if marker not in text:
+                      failures.append(f"{path}: missing {marker!r}")
+
+              if path.name == "app.js" and "grade-12" in str(path):
+                  if "if(submit&&!text){alert(" not in text:
+                      failures.append(f"{path}: blank assignment submission is not blocked")
+                  if "All 108 principal assignments submitted with substantive written evidence" not in text:
+                      failures.append(f"{path}: graduation audit wording does not use substantive evidence")
+              else:
+                  if "if(submit&&!text)return alert(" not in text:
+                      failures.append(f"{path}: blank assignment submission is not blocked")
+
+          g9 = Path("courses/social-studies/grade-09/assets/grade09-records.js").read_text(encoding="utf-8")
+          for marker in [
+              "a?.submitted&&typeof a.score==='number'",
+              "typeof quiz.shortScore!=='number'",
+          ]:
+              if marker not in g9:
+                  failures.append(f"Grade 9 stricter evaluator-owned mastery marker missing: {marker}")
+
+          if failures:
+              print("\n".join("FAIL: "+x for x in failures))
+              sys.exit(1)
+          print("PASS: Social Studies written assignment evidence cannot satisfy progression when blank; Grade 9 retains stricter evaluator-owned progression.")
