@@ -1,0 +1,88 @@
+name: Social Studies View Routing Contract
+
+on:
+  pull_request:
+    paths:
+      - "courses/social-studies/grade-09/app.js"
+      - "courses/social-studies/grade-10/app.js"
+      - "courses/social-studies/grade-11/app.js"
+      - "courses/social-studies/grade-11/personal-finance/app.js"
+      - "courses/social-studies/grade-12/app.js"
+      - "courses/social-studies/grade-12/index.html"
+      - "courses/social-studies/assets/social-studies-grade-shell-v1.js"
+      - "courses/social-studies/docs/VIEW_ROUTING_CONTRACT.md"
+      - ".github/workflows/social-studies-view-routing.yml"
+  push:
+    branches: [main]
+    paths:
+      - "courses/social-studies/grade-09/app.js"
+      - "courses/social-studies/grade-10/app.js"
+      - "courses/social-studies/grade-11/app.js"
+      - "courses/social-studies/grade-11/personal-finance/app.js"
+      - "courses/social-studies/grade-12/app.js"
+      - "courses/social-studies/grade-12/index.html"
+      - "courses/social-studies/assets/social-studies-grade-shell-v1.js"
+      - "courses/social-studies/docs/VIEW_ROUTING_CONTRACT.md"
+      - ".github/workflows/social-studies-view-routing.yml"
+
+jobs:
+  verify-view-routing:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Verify route and engine view parity
+        shell: python
+        run: |
+          from pathlib import Path
+          import sys
+
+          failures = []
+          specs = {
+              Path("courses/social-studies/grade-09/app.js"): ["dashboard","week","scope","exams","reports","standards"],
+              Path("courses/social-studies/grade-10/app.js"): ["dashboard","week","scope","exams","reports","standards"],
+              Path("courses/social-studies/grade-11/app.js"): ["dashboard","week","scope","exams","reports","standards"],
+              Path("courses/social-studies/grade-11/personal-finance/app.js"): ["dashboard","week","scope","exams","reports","standards"],
+              Path("courses/social-studies/grade-12/app.js"): ["dashboard","week","scope","assessments","capstone","graduation","reports","standards"],
+          }
+
+          for path, views in specs.items():
+              text = path.read_text(encoding="utf-8")
+              for marker in [
+                  "const VALID_VIEWS",
+                  "ROUTE_PARAMS",
+                  "function setView(",
+                  "function setWeek(",
+                  "url.searchParams.set('view'",
+                  "url.searchParams.set('week'",
+              ]:
+                  if marker not in text:
+                      failures.append(f"{path}: missing routing marker {marker}")
+              for view in views:
+                  if repr(view) not in text:
+                      failures.append(f"{path}: canonical view {view!r} missing")
+              if "view==='week'&&!ROUTE_PARAMS.has('week')" not in text:
+                  failures.append(f"{path}: missing current-week deep-link resolver")
+
+          g12app = Path("courses/social-studies/grade-12/app.js").read_text(encoding="utf-8")
+          if "'audit'" in g12app or "view==='audit'" in g12app:
+              failures.append("Grade 12 app still exposes stale 'audit' view")
+
+          g12html = Path("courses/social-studies/grade-12/index.html").read_text(encoding="utf-8")
+          for stale in ['data-view="audit"','data-go="audit"']:
+              if stale in g12html:
+                  failures.append(f"Grade 12 HTML still contains {stale}")
+          for required in ['data-view="assessments"','data-view="graduation"','data-go="graduation"']:
+              if required not in g12html:
+                  failures.append(f"Grade 12 HTML missing {required}")
+
+          shell = Path("courses/social-studies/assets/social-studies-grade-shell-v1.js").read_text(encoding="utf-8")
+          for route in ['"?view=assessments"','"?view=graduation"']:
+              if route not in shell:
+                  failures.append(f"Grade shell missing Grade 12 route {route}")
+          if '"?view=exams"' in shell.split('"12":{',1)[1]:
+              failures.append("Grade 12 shell still links senior assessments to ?view=exams")
+
+          if failures:
+              print("\n".join("FAIL: "+x for x in failures))
+              sys.exit(1)
+          print("PASS: Social Studies course-feature, tab, and direct URL routes match active engine view names.")
