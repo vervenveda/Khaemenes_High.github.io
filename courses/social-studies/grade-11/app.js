@@ -96,6 +96,9 @@ function lessonStats(s){let done=0;if(s)Object.values(s.completedLessons||{}).fo
 function assignmentStats(s){const arr=s?Object.values(s.assignments||{}):[];const submitted=arr.filter(a=>a.submitted).length;let earned=0,possible=0;arr.forEach(a=>{if(Number.isFinite(+a.score)){earned+=+a.score;possible+=30}});return{submitted,total:108,percent:Math.round(submitted/108*100),earned,possible}}
 function quizStats(s){const arr=s?Object.values(s.quizzes||{}).filter(q=>q.completed):[];return{completed:arr.length,total:36,avg:arr.length?Math.round(arr.reduce((n,q)=>n+(q.bestPercent??q.percent??0),0)/arr.length):0}}
 function overall(s){if(!s)return 0;const l=lessonStats(s).percent,a=assignmentStats(s).percent,q=Math.round(quizStats(s).completed/36*100);return Math.round(l*.35+a*.40+q*.25)}
+function governmentFinalMastered(s){return (s?.exams?.governmentFinal?.bestPercent??s?.exams?.governmentFinal?.percent??0)>=80}
+function economicsFinalMastered(s){return (s?.exams?.economicsFinal?.bestPercent??s?.exams?.economicsFinal?.percent??0)>=80}
+function courseMastered(s){return !!s&&COURSE.weeks.every(w=>weekMastered(s,w))&&governmentFinalMastered(s)&&economicsFinalMastered(s)}
 function weekMastered(s,w){
  if(!s)return false;
  const lessons=(s.completedLessons?.[w.week]||[]).filter(Boolean).length===5;
@@ -103,7 +106,7 @@ function weekMastered(s,w){
  const quiz=s.quizzes?.[w.week];
  const quizMastery=!!quiz?.completed&&(quiz.bestPercent??quiz.percent??0)>=80&&String(quiz.shortResponse||'').trim().length>0;
  if(!lessons||!assignments||!quizMastery)return false;
- if(w.week===18&&(s.exams?.governmentFinal?.bestPercent??0)<80)return false;
+ if(w.week===18&&!governmentFinalMastered(s))return false;
  return true;
 }
 function currentWeek(s){if(!s)return 1;for(const w of COURSE.weeks){if(!weekMastered(s,w))return w.week}return 36}
@@ -135,11 +138,11 @@ function render(){
  wireView();
 }
 function dashboardHTML(){
- const s=activeStudent(),ls=lessonStats(s),as=assignmentStats(s),qs=quizStats(s),pct=overall(s),cw=currentWeek(s);
+ const s=activeStudent(),ls=lessonStats(s),as=assignmentStats(s),qs=quizStats(s),pct=overall(s),cw=currentWeek(s),done=courseMastered(s);
  return `<div class="grid">
  <section class="card col12"><h2>${s?`Welcome, ${esc(s.name)}`:'Welcome to Government, Law & Economics Honors'}</h2>
  <p>${s?'Continue the evidence-based study of constitutional government, law, economics, media, and public policy.':'Add a student in the sidebar to record progress in this browser.'}</p>
- <div class="progress"><span style="width:${pct}%"></span></div><p class="small">Estimated course completion: ${pct}%</p>
+ <div class="progress"><span style="width:${pct}%"></span></div><p class="small">Estimated course completion: ${pct}%${done?' · Course mastery requirements met':''}</p>
  <div class="actions"><button id="continueBtn">Continue Week ${cw}</button><button class="secondary" data-go="scope">View 36-Week Scope</button><a class="button ghost" href="docs/COURSE_RATIONALE.md">Read Course Rationale</a></div></section>
  <section class="card col3 kpi"><strong>${ls.done}/180</strong><span>Daily lessons completed</span></section>
  <section class="card col3 kpi"><strong>${as.submitted}/108</strong><span>Assignments submitted</span></section>
@@ -152,6 +155,7 @@ function dashboardHTML(){
  <tr><td>Major examinations</td><td>2</td><td>Cumulative Government and Economics semester finals</td></tr>
  <tr><td>Civic capstone</td><td>1</td><td>Nonpartisan investigation of a public problem</td></tr></tbody></table></div></section>
  <section class="card dark col4"><h3>Weekly Rhythm</h3><ol><li>Monday: frame time, place, and inquiry.</li><li>Tuesday: source and corroborate.</li><li>Wednesday: map, measure, and model.</li><li>Thursday: deliberate and write.</li><li>Friday: synthesize, assess, and correct.</li></ol><p class="small">Every week includes an original reading, vocabulary, source study, three assignments, supports, honors extensions, and a retake-ready quiz.</p></section>
+ <section class="card col12"><h3>Mastery Contract</h3><p>Each official week unlocks only after all five daily lessons are complete, all three principal assignments contain documented evidence and are submitted, the constructed response is present, and the weekly objective quiz reaches at least 80%. Week 19 additionally requires the Government Final at 80%+. Course mastery requires all 36 weeks plus both the Government Final and Economics Final at 80%+.</p></section>
  <section class="card col12"><h3>Academic Integrity and Responsible AI Use</h3><p>Students may use approved tools to brainstorm questions, define terms, or receive feedback. Submitted work must represent the student’s own reasoning. Every AI-assisted factual claim, quotation, statistic, and citation must be verified against a trustworthy original source. Invented citations receive no evidence credit.</p></section>
  </div>`;
 }
@@ -179,7 +183,7 @@ function quizHTML(w,s){
 }
 function weekHTML(w){
  const s=activeStudent(),reading=w.readingSections.map(x=>`${x.heading}. ${x.text}`).join(' ');
- return `<div class="grid"><section class="card col12"><div class="pills"><span class="pill">Week ${w.week}</span><span class="pill">${esc(w.unit)}</span><span class="pill">${esc(w.period)}</span><span class="pill">${esc(w.regions)}</span></div><h2>${esc(w.title)}</h2><div class="notice"><strong>Essential Question:</strong> ${esc(w.essentialQuestion)}</div><div class="actions noPrint"><button id="speakReading">Read Weekly Text</button><button class="secondary" onclick="window.print()">Print Week</button><a class="button ghost" href="weeks/week-${String(w.week).padStart(2,'0')}/student-packet.html">Standalone Packet</a></div><p class="small">Standards: ${w.standards.map(x=>esc(x.code)).join(' · ')}</p></section>
+ return `<div class="grid"><section class="card col12"><div class="pills"><span class="pill">Week ${w.week}</span><span class="pill">${esc(w.unit)}</span><span class="pill">${esc(w.period)}</span><span class="pill">${esc(w.regions)}</span></div><h2>${esc(w.title)}</h2><div class="notice"><strong>Essential Question:</strong> ${esc(w.essentialQuestion)}</div><div class="notice"><strong>Learner Success Criteria &amp; Mastery:</strong> Complete all five daily lessons; submit all three principal assignments with documented evidence; complete the constructed response; and earn at least 80% on the weekly objective quiz. Week 18 also requires the Government Final at 80%+ before Week 19 opens.</div><div class="actions noPrint"><button id="speakReading">Read Weekly Text</button><button class="secondary" onclick="window.print()">Print Week</button><a class="button ghost" href="weeks/week-${String(w.week).padStart(2,'0')}/student-packet.html">Standalone Packet</a></div><p class="small">Standards: ${w.standards.map(x=>esc(x.code)).join(' · ')}</p></section>
  <section class="card col8"><h2>Original Weekly Reading</h2>${w.readingSections.map(r=>`<article class="readingSection"><h4>${esc(r.heading)}</h4><p>${esc(r.text)}</p></article>`).join('')}<div class="sourceBox"><h3>Source Study: ${esc(w.sourceStudy.title)}</h3><p>${esc(w.sourceStudy.context)}</p></div><input type="hidden" id="readingText" value="${esc(reading)}"></section>
  <aside class="card col4"><h3>Academic Vocabulary</h3><div class="vocabGrid">${Object.entries(w.vocabulary).map(([k,v])=>`<div class="vocabItem"><strong>${esc(k)}</strong>${esc(v)}</div>`).join('')}</div><h3>Key Understandings</h3><ul>${w.keyUnderstandings.map(k=>`<li>${esc(k)}</li>`).join('')}</ul><h3>Optional Official Resources</h3><ul>${w.resources.map((r,i)=>`<li><a href="${esc(r)}" target="_blank" rel="noopener">Resource ${i+1}</a></li>`).join('')}</ul></aside>
  <section class="card col12"><h2>Daily Lessons</h2>${w.dailyLessons.map((l,i)=>lessonBlock(w,l,i,s)).join('')}</section>
@@ -196,7 +200,7 @@ function reportsHTML(){
  const s=activeStudent();if(!s)return`<section class="card"><h2>Reports and Backups</h2><p>Add or select a student to create a report.</p></section>`;
  const ls=lessonStats(s),as=assignmentStats(s),qs=quizStats(s),pct=overall(s);
  return `<div class="grid"><section class="card col12" id="printReport"><div class="reportHeader"><div class="eyebrow" style="color:#775e2b">Khaemenes High</div><h2>Grade 11 Government, Law & Economics Honors Progress Report</h2><p><strong>Student:</strong> ${esc(s.name)} · <strong>Date:</strong> ${new Date().toLocaleDateString()}</p></div>
- <div class="tableWrap"><table><tbody><tr><th>Daily lessons</th><td>${ls.done}/180 (${ls.percent}%)</td></tr><tr><th>Assignments submitted</th><td>${as.submitted}/108 (${as.percent}%)</td></tr><tr><th>Weekly quizzes</th><td>${qs.completed}/36 · average ${qs.avg}%</td></tr><tr><th>Estimated completion</th><td>${pct}%</td></tr><tr><th>Government final</th><td>${s.exams?.governmentFinal?.bestPercent??s.exams?.governmentFinal?.percent??'Not recorded'}</td></tr><tr><th>Economics final</th><td>${s.exams?.economicsFinal?.bestPercent??s.exams?.economicsFinal?.percent??'Not recorded'}</td></tr></tbody></table></div>
+ <div class="tableWrap"><table><tbody><tr><th>Daily lessons</th><td>${ls.done}/180 (${ls.percent}%)</td></tr><tr><th>Assignments submitted</th><td>${as.submitted}/108 (${as.percent}%)</td></tr><tr><th>Weekly quizzes</th><td>${qs.completed}/36 · average ${qs.avg}%</td></tr><tr><th>Estimated completion</th><td>${pct}%</td></tr><tr><th>Government final</th><td>${s.exams?.governmentFinal?.bestPercent??s.exams?.governmentFinal?.percent??'Not recorded'}</td></tr><tr><th>Economics final</th><td>${s.exams?.economicsFinal?.bestPercent??s.exams?.economicsFinal?.percent??'Not recorded'}</td></tr><tr><th>Course mastery</th><td>${courseMastered(s)?'Complete':'In progress'}</td></tr></tbody></table></div>
  <h3>Weekly Record</h3><div class="tableWrap"><table><thead><tr><th>Week</th><th>Lessons</th><th>Assignments</th><th>Quiz best</th></tr></thead><tbody>${COURSE.weeks.map(w=>`<tr><td>${w.week}. ${esc(w.title)}</td><td>${(s.completedLessons?.[w.week]||[]).filter(Boolean).length}/5</td><td>${w.assignments.filter(a=>s.assignments?.[`${w.week}-${a.number}`]?.submitted).length}/3</td><td>${s.quizzes?.[w.week]?.bestPercent!==undefined?s.quizzes[w.week].bestPercent+'%':'—'}</td></tr>`).join('')}</tbody></table></div></section>
  <section class="card col12 noPrint"><div class="actions"><button onclick="window.print()">Print Report</button><button class="secondary" id="exportBtn">Export Student Backup</button><label class="button ghost" style="cursor:pointer">Import Backup<input type="file" id="importFile" accept=".json" hidden></label></div></section></div>`;
 }
@@ -229,7 +233,8 @@ function wireView(){
 }
 function saveAssignment(key,submit){
  const s=activeStudent();if(!s)return alert('Add a student first.');
- const ta=$(`[data-assignment="${key}"]`),prev=s.assignments[key]||{};
+ const ta=$(`[data-assignment="${key}"]`),prev=s.assignments[key]||{},text=ta.value.trim();
+ if(submit&&!text)return alert('Add the student response, evidence note, or a note identifying the submitted attachment before marking this assignment submitted.');
  s.assignments[key]={...prev,text:ta.value,submitted:submit||prev.submitted||false,updated:stamp()};saveDB();render();
 }
 function scoreQuiz(doScore){
