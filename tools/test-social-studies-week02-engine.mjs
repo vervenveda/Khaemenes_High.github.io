@@ -38,4 +38,4 @@ assert.ok(js.includes("Geography and Human Systems")&&js.includes("Map Projectio
 assert.ok(js.includes("Indigenous Nations, Atlantic Encounters")&&js.includes("Native diplomacy"),"Grade 10 Week 02 source specialization missing");
 assert.ok(js.includes("Philosophical Foundations of Government")&&js.includes("natural rights"),"Grade 11 Week 02 political philosophy specialization missing");
 assert.ok(js.includes("Evidence, Methodology, and Academic Integrity")&&js.includes("Research Integrity"),"Grade 12 Week 02 research specialization missing");
-console.log("PASS Social Studies Week 02: 5 original packets, 25 day headings, explicit curriculum guidance, no independent assessment/storage");
+console.log("PASS Social Studies Week 02: 4 canonical packets, 20 day headings, explicit curriculum guidance, no independent assessment/storage");
