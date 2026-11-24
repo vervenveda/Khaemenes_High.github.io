@@ -1,11 +1,7 @@
-# Week 10: Westward Expansion, Native Sovereignty, and the New South
+# Compatibility mirror · Grade 10 Week 10
 
-- Unit: Unit 3 · Reconstruction and Industrial America
-- Period: 1865–1890
-- Regions: West, South, and Florida
-- Essential question: How did federal expansion after the Civil War reshape land, citizenship, labor, and sovereignty?
-- Five daily lessons
-- Three graded assignments
-- Ten objective quiz questions and one constructed response
-- Student printable: `student-packet.html`
-- Teacher guide and key: `teacher-guide.html`
+This historical `week-10/` path is retained only for older bookmarks and references.
+
+**Canonical curriculum owner:** `../weeks/week-10/`
+
+Do not author curriculum here. HTML files in this directory redirect to the canonical weekly pages, and `quiz.json` mirrors the canonical machine-readable quiz data.

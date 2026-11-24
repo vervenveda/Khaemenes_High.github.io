@@ -1,11 +1,7 @@
-# Week 12: Gilded Age Politics, Jim Crow, and Populism
+# Compatibility mirror · Grade 10 Week 12
 
-- Unit: Unit 3 · Reconstruction and Industrial America
-- Period: 1877–1900
-- Regions: United States and Florida
-- Essential question: Why did democratic institutions coexist with corruption, disfranchisement, segregation, and concentrated power?
-- Five daily lessons
-- Three graded assignments
-- Ten objective quiz questions and one constructed response
-- Student printable: `student-packet.html`
-- Teacher guide and key: `teacher-guide.html`
+This historical `week-12/` path is retained only for older bookmarks and references.
+
+**Canonical curriculum owner:** `../weeks/week-12/`
+
+Do not author curriculum here. HTML files in this directory redirect to the canonical weekly pages, and `quiz.json` mirrors the canonical machine-readable quiz data.

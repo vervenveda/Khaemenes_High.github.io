@@ -1,11 +1,7 @@
-# Week 26: Vietnam: Containment, Escalation, and Protest
+# Compatibility mirror · Grade 10 Week 26
 
-- Unit: Unit 6 · Rights, Reform, and Conflict
-- Period: 1945–1975
-- Regions: Vietnam, Southeast Asia, and United States
-- Essential question: Why did the United States escalate in Vietnam, and why did public support collapse?
-- Five daily lessons
-- Three graded assignments
-- Ten objective quiz questions and one constructed response
-- Student printable: `student-packet.html`
-- Teacher guide and key: `teacher-guide.html`
+This historical `week-26/` path is retained only for older bookmarks and references.
+
+**Canonical curriculum owner:** `../weeks/week-26/`
+
+Do not author curriculum here. HTML files in this directory redirect to the canonical weekly pages, and `quiz.json` mirrors the canonical machine-readable quiz data.

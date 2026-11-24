@@ -1,11 +1,7 @@
-# Week 11: African Kingdoms and Trading Societies
+# Compatibility mirror · Grade 9 Week 11
 
-- Unit: Unit 3 · Regional Worlds and Expanding Faiths
-- Period: c. 300–1600 CE
-- Regions: Africa
-- Essential question: How did African states use trade, agriculture, religion, and political organization to build regional power?
-- Five daily lessons
-- Three graded assignments
-- Ten objective quiz questions and one constructed response
-- Student printable: `student-packet.html`
-- Teacher guide and key: `teacher-guide.html`
+This historical `week-11/` path is retained only for older bookmarks and references.
+
+**Canonical curriculum owner:** `../weeks/week-11/`
+
+Do not author curriculum here. HTML files in this directory redirect to the canonical weekly pages, and `quiz.json` mirrors the canonical machine-readable quiz data.

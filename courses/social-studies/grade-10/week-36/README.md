@@ -1,11 +1,7 @@
-# Week 36: Civic Capstone and Historical Synthesis
+# Compatibility mirror · Grade 10 Week 36
 
-- Unit: Unit 8 · Constitutional and Civic Synthesis
-- Period: 1491–Present
-- Regions: United States, Florida, and local community
-- Essential question: What does responsible citizenship require from people who disagree about history, policy, and national identity?
-- Five daily lessons
-- Three graded assignments
-- Ten objective quiz questions and one constructed response
-- Student printable: `student-packet.html`
-- Teacher guide and key: `teacher-guide.html`
+This historical `week-36/` path is retained only for older bookmarks and references.
+
+**Canonical curriculum owner:** `../weeks/week-36/`
+
+Do not author curriculum here. HTML files in this directory redirect to the canonical weekly pages, and `quiz.json` mirrors the canonical machine-readable quiz data.

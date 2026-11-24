@@ -1,11 +1,7 @@
-# Week 13: Progressive Reform and the Modern State
+# Compatibility mirror · Grade 10 Week 13
 
-- Unit: Unit 3 · Reconstruction and Industrial America
-- Period: 1890–1920
-- Regions: United States
-- Essential question: When does reform expand democracy, and when can reform create new forms of control?
-- Five daily lessons
-- Three graded assignments
-- Ten objective quiz questions and one constructed response
-- Student printable: `student-packet.html`
-- Teacher guide and key: `teacher-guide.html`
+This historical `week-13/` path is retained only for older bookmarks and references.
+
+**Canonical curriculum owner:** `../weeks/week-13/`
+
+Do not author curriculum here. HTML files in this directory redirect to the canonical weekly pages, and `quiz.json` mirrors the canonical machine-readable quiz data.

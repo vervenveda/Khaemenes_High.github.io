@@ -1,109 +1,15 @@
 <!doctype html>
 <html lang="en">
 <head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Week 27 · Local Economic Reasoning Lab</title>
-<link rel="stylesheet" href="../../styles.css?v=20261007">
-<script src="../../assets/grade09-records.js?v=20261007"></script>
-<script src="../../assets/grade09-economics-labs-v1.js?v=20261007" defer></script>
-<style id="khaemenes-typography-standard">
-/* Khaemenes High presentation typography · 55 / 33 / 24 / 14 px.
-   All public pages receive this local, embedded policy for offline use.
-   Only presentation changes. Existing grids, gates, learner records, assessments and STOS are preserved.
-   Font names are optional installed system fonts; no downloads or third-party font services. */
-html:root:root body {
-  font-family: "Brandon Grotesque", "Avenir Next", Avenir, "Segoe UI", Arial, sans-serif !important;
-  font-size: 14px !important;
-  font-weight: 400 !important;
-  line-height: 1.65 !important;
-  -webkit-text-size-adjust: 100%;
-  overflow-wrap: break-word;
-}
-html:root:root body :is(button, input, select, textarea) {
-  font-family: "Brandon Grotesque", "Avenir Next", Avenir, "Segoe UI", Arial, sans-serif !important;
-}
-html:root:root body :is(h1, h2, h3, h4, h5, h6, .page-title, .hero-title, .brand-title, .display-title, .site-title) {
-  font-family: Cinzel, "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif !important;
-  font-weight: 400 !important;
-  overflow-wrap: anywhere;
-}
-html:root:root body :is(.eyebrow, .kicker, .dialog-eyebrow, .dialog-kicker, .worksheet-kicker) {
-  font-family: Cinzel, "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif !important;
-  font-size: 55px !important;
-  font-weight: 400 !important;
-  line-height: 1.15 !important;
-  letter-spacing: .02em !important;
-  white-space: normal !important;
-  overflow-wrap: anywhere;
-}
-html:root:root body h1 {
-  font-size: 33px !important;
-  line-height: 1.2 !important;
-  white-space: normal !important;
-  overflow-wrap: anywhere;
-}
-html:root:root body h2,
-html:root:root body :is(.subtitle, .hero-subtitle, .hero-sub, .academy-comment),
-html:root:root body .hero .comment {
-  font-size: 24px !important;
-  line-height: 1.35 !important;
-  white-space: normal !important;
-  overflow-wrap: anywhere;
-}
-/* Do not replace responsive grids or fixed elements; prevent oversized titles from
-   demanding horizontal scrolling on narrow phone and tablet displays. */
-html:root:root body :is(.hero, .header, .page-header, .section-head, .lesson-header) {
-  min-width: 0;
-}
-@media print {
-  html:root:root body { font-size: 14px !important; }
-}
-</style>
-  </head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta http-equiv="refresh" content="0;url=../weeks/week-27/economic-lab.html">
+<link rel="canonical" href="../weeks/week-27/economic-lab.html">
+<title>Moved · Grade 9 Week 27</title>
+<!-- KHAEMENES_WEEK_COMPAT_REDIRECT -->
+</head>
 <body>
-<main class="main" data-ss9-economic-lab="week27">
-<header class="hero">
-  <div class="eyebrow">Grade 9 Global Studies Honors · Week 27</div>
-  <h1>Economic Reasoning Lab</h1>
-  <p>Use a local supply-and-demand model to investigate institutions, incentives, distribution, and tradeoffs. The output describes model behavior; it does not prove a historical outcome.</p>
-  <div class="heroActions noPrint"><a class="button secondary" href="../../app.html?view=week&amp;week=27">Return to Week 27</a><button class="button" id="print-lab" type="button">Print / Save Record</button></div>
-</header>
-<p id="lab-status" class="notice" role="status">Local course model loading.</p>
-<section class="card">
-  <h2>Protocol</h2>
-  <ol><li>Define the institution or market mechanism.</li><li>Predict before changing a variable.</li><li>Change one variable and hold the other steady.</li><li>Record the modeled price and quantity.</li><li>Ask who might gain, lose, or bear a cost.</li><li>Name a limitation and corroborate with historical evidence.</li></ol>
-</section>
-<section class="card">
-  <h2>Local supply-and-demand model</h2>
-  <p class="notice">Price index = 50 + 0.7×(demand − 50) − 0.6×(supply − 50). Quantity index = 50 + 0.45×(demand − 50) + 0.55×(supply − 50). Both outputs are bounded classroom indices from 0–100.</p>
-  <div class="grid">
-    <div class="col6"><label for="market-demand">Demand strength <output id="market-demand-out">50</output></label><input id="market-demand" data-save type="range" min="0" max="100" value="50"></div>
-    <div class="col6"><label for="market-supply">Supply strength <output id="market-supply-out">50</output></label><input id="market-supply" data-save type="range" min="0" max="100" value="50"></div>
-  </div>
-  <div class="grid">
-    <div class="card col6 kpi"><output id="market-price">0</output><span>Modeled price index</span></div>
-    <div class="card col6 kpi"><output id="market-quantity">0</output><span>Modeled quantity index</span></div>
-  </div>
-</section>
-<section class="card">
-  <h2>Five-run record</h2>
-  <p>Change one setting at a time. Complete each row with a prediction, the observed output, a distributional question, and a limitation.</p>
-  <div class="tableWrap"><table><thead><tr><th>Run</th><th>Prediction</th><th>Observed price</th><th>Observed quantity</th><th>Distributional question</th><th>Limitation</th></tr></thead><tbody>
-    <tr data-run><th scope="row">1</th><td><input data-field="prediction" aria-label="Run 1 prediction"></td><td><input data-field="price" aria-label="Run 1 observed price"></td><td><input data-field="quantity" aria-label="Run 1 observed quantity"></td><td><input data-field="distribution" aria-label="Run 1 distributional question"></td><td><input data-field="limitation" aria-label="Run 1 limitation"></td></tr>
-    <tr data-run><th scope="row">2</th><td><input data-field="prediction" aria-label="Run 2 prediction"></td><td><input data-field="price" aria-label="Run 2 observed price"></td><td><input data-field="quantity" aria-label="Run 2 observed quantity"></td><td><input data-field="distribution" aria-label="Run 2 distributional question"></td><td><input data-field="limitation" aria-label="Run 2 limitation"></td></tr>
-    <tr data-run><th scope="row">3</th><td><input data-field="prediction" aria-label="Run 3 prediction"></td><td><input data-field="price" aria-label="Run 3 observed price"></td><td><input data-field="quantity" aria-label="Run 3 observed quantity"></td><td><input data-field="distribution" aria-label="Run 3 distributional question"></td><td><input data-field="limitation" aria-label="Run 3 limitation"></td></tr>
-    <tr data-run><th scope="row">4</th><td><input data-field="prediction" aria-label="Run 4 prediction"></td><td><input data-field="price" aria-label="Run 4 observed price"></td><td><input data-field="quantity" aria-label="Run 4 observed quantity"></td><td><input data-field="distribution" aria-label="Run 4 distributional question"></td><td><input data-field="limitation" aria-label="Run 4 limitation"></td></tr>
-    <tr data-run><th scope="row">5</th><td><input data-field="prediction" aria-label="Run 5 prediction"></td><td><input data-field="price" aria-label="Run 5 observed price"></td><td><input data-field="quantity" aria-label="Run 5 observed quantity"></td><td><input data-field="distribution" aria-label="Run 5 distributional question"></td><td><input data-field="limitation" aria-label="Run 5 limitation"></td></tr>
-  </tbody></table></div>
-</section>
-<section class="card">
-  <h2>Historical corroboration</h2>
-  <label for="market-corroboration">Claim → model evidence → historical evidence → limitation → conclusion</label><textarea id="market-corroboration" data-save rows="12" placeholder="Choose one Week 27 claim. Explain whether the model supports it, complicates it, or cannot test it."></textarea>
-  <div class="actions noPrint"><button class="button" id="save-lab" type="button">Save local record</button><a class="button ghost" href="../../systems-lab-roadmap.html">Systems roadmap</a></div>
-</section>
-<footer class="footer">Khaemenes High · Jennifer Kay Pearl · Week 27</footer>
-</main>
-
-<script src="https://vervenveda.com/assets/vnv-ecosystem-toolbar.js"></script>
+<p>This historical weekly path is retained for compatibility. The canonical curriculum page is <a href="../weeks/week-27/economic-lab.html">../weeks/week-27/economic-lab.html</a>.</p>
+<script>location.replace("../weeks/week-27/economic-lab.html");</script>
 </body>
 </html>

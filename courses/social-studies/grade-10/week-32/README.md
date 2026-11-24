@@ -1,11 +1,7 @@
-# Week 32: The Financial Crisis, Recovery, and Political Realignment
+# Compatibility mirror · Grade 10 Week 32
 
-- Unit: Unit 7 · Contemporary United States
-- Period: 2007–2016
-- Regions: United States and global economy
-- Essential question: Why did financial risk become a national crisis, and why did recovery produce continuing political anger?
-- Five daily lessons
-- Three graded assignments
-- Ten objective quiz questions and one constructed response
-- Student printable: `student-packet.html`
-- Teacher guide and key: `teacher-guide.html`
+This historical `week-32/` path is retained only for older bookmarks and references.
+
+**Canonical curriculum owner:** `../weeks/week-32/`
+
+Do not author curriculum here. HTML files in this directory redirect to the canonical weekly pages, and `quiz.json` mirrors the canonical machine-readable quiz data.

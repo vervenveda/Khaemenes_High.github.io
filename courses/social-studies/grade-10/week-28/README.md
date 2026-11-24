@@ -1,11 +1,7 @@
-# Week 28: Conservatism, Reagan, and the End of the Cold War
+# Compatibility mirror · Grade 10 Week 28
 
-- Unit: Unit 6 · Rights, Reform, and Conflict
-- Period: 1970–1991
-- Regions: United States and global Cold War
-- Essential question: Why did modern conservatism gain power, and what caused the Cold War to end?
-- Five daily lessons
-- Three graded assignments
-- Ten objective quiz questions and one constructed response
-- Student printable: `student-packet.html`
-- Teacher guide and key: `teacher-guide.html`
+This historical `week-28/` path is retained only for older bookmarks and references.
+
+**Canonical curriculum owner:** `../weeks/week-28/`
+
+Do not author curriculum here. HTML files in this directory redirect to the canonical weekly pages, and `quiz.json` mirrors the canonical machine-readable quiz data.

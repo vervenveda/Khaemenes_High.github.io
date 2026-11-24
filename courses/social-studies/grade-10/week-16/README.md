@@ -1,11 +1,7 @@
-# Week 16: The 1920s: Mass Culture, Prosperity, and Conflict
+# Compatibility mirror · Grade 10 Week 16
 
-- Unit: Unit 4 · The United States and the World
-- Period: 1920–1929
-- Regions: United States
-- Essential question: Was the prosperity and cultural change of the 1920s broadly shared?
-- Five daily lessons
-- Three graded assignments
-- Ten objective quiz questions and one constructed response
-- Student printable: `student-packet.html`
-- Teacher guide and key: `teacher-guide.html`
+This historical `week-16/` path is retained only for older bookmarks and references.
+
+**Canonical curriculum owner:** `../weeks/week-16/`
+
+Do not author curriculum here. HTML files in this directory redirect to the canonical weekly pages, and `quiz.json` mirrors the canonical machine-readable quiz data.

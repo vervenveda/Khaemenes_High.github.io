@@ -1,11 +1,7 @@
-# Week 19: World War II: From Neutrality to Global War
+# Compatibility mirror · Grade 10 Week 19
 
-- Unit: Unit 5 · World War II and the Early Cold War
-- Period: 1939–1942
-- Regions: Europe, Pacific, and United States
-- Essential question: Why did the United States move from neutrality to full participation in World War II?
-- Five daily lessons
-- Three graded assignments
-- Ten objective quiz questions and one constructed response
-- Student printable: `student-packet.html`
-- Teacher guide and key: `teacher-guide.html`
+This historical `week-19/` path is retained only for older bookmarks and references.
+
+**Canonical curriculum owner:** `../weeks/week-19/`
+
+Do not author curriculum here. HTML files in this directory redirect to the canonical weekly pages, and `quiz.json` mirrors the canonical machine-readable quiz data.

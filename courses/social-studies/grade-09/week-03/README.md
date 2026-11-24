@@ -1,17 +1,7 @@
-# Week 3: Early Humanity and the Agricultural Revolution
+# Compatibility mirror · Grade 9 Week 3
 
-- Unit: Unit 1 · The Historian’s World
-- Period: Prehistory to c. 3000 BCE
-- Regions: Africa, Eurasia, Oceania, Americas
-- Essential question: Did agriculture improve human life, or did it exchange some freedoms for new forms of security and inequality?
-- Five topic-specific daily lessons
-- Three graded assignments
-- Ten objective mastery questions + one teacher-scored constructed response
-- Objective mastery gate: **80%**
-- Correction and retake workflow required below mastery
-- Student printable: `student-packet.html`
-- Teacher guide and key: `teacher-guide.html`
+This historical `week-03/` path is retained only for older bookmarks and references.
 
-## Week 3 forensic safeguards
+**Canonical curriculum owner:** `../weeks/week-03/`
 
-The hardened week avoids a universal progress narrative, treats Paleolithic mobility as an adaptive lifeway rather than a deficiency, recognizes multiple independent centers and gradual agricultural transitions, separates archaeological observation from inference, and requires corroboration before broad claims about hierarchy or institutions.
+Do not author curriculum here. HTML files in this directory redirect to the canonical weekly pages, and `quiz.json` mirrors the canonical machine-readable quiz data.

@@ -1,11 +1,7 @@
-# Week 21: Cold War Origins and the Containment State
+# Compatibility mirror · Grade 10 Week 21
 
-- Unit: Unit 5 · World War II and the Early Cold War
-- Period: 1945–1953
-- Regions: Europe, Asia, and United States
-- Essential question: Why did the wartime alliance between the United States and Soviet Union become a global rivalry?
-- Five daily lessons
-- Three graded assignments
-- Ten objective quiz questions and one constructed response
-- Student printable: `student-packet.html`
-- Teacher guide and key: `teacher-guide.html`
+This historical `week-21/` path is retained only for older bookmarks and references.
+
+**Canonical curriculum owner:** `../weeks/week-21/`
+
+Do not author curriculum here. HTML files in this directory redirect to the canonical weekly pages, and `quiz.json` mirrors the canonical machine-readable quiz data.

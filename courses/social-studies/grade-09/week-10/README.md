@@ -1,11 +1,7 @@
-# Week 10: Byzantium and the Islamic World
+# Compatibility mirror · Grade 9 Week 10
 
-- Unit: Unit 3 · Regional Worlds and Expanding Faiths
-- Period: c. 500–1258 CE
-- Regions: Mediterranean, Southwest Asia, North Africa
-- Essential question: How did cities, states, and scholarly networks preserve, debate, and create knowledge across regions?
-- Five daily lessons
-- Three graded assignments
-- Ten objective quiz questions and one constructed response
-- Student printable: `student-packet.html`
-- Teacher guide and key: `teacher-guide.html`
+This historical `week-10/` path is retained only for older bookmarks and references.
+
+**Canonical curriculum owner:** `../weeks/week-10/`
+
+Do not author curriculum here. HTML files in this directory redirect to the canonical weekly pages, and `quiz.json` mirrors the canonical machine-readable quiz data.

@@ -1,11 +1,7 @@
-# Week 12: Medieval Europe
+# Compatibility mirror · Grade 9 Week 12
 
-- Unit: Unit 3 · Regional Worlds and Expanding Faiths
-- Period: c. 500–1500 CE
-- Regions: Europe and Mediterranean
-- Essential question: How were land, labor, religion, law, and political authority negotiated in medieval Europe?
-- Five daily lessons
-- Three graded assignments
-- Ten objective quiz questions and one constructed response
-- Student printable: `student-packet.html`
-- Teacher guide and key: `teacher-guide.html`
+This historical `week-12/` path is retained only for older bookmarks and references.
+
+**Canonical curriculum owner:** `../weeks/week-12/`
+
+Do not author curriculum here. HTML files in this directory redirect to the canonical weekly pages, and `quiz.json` mirrors the canonical machine-readable quiz data.

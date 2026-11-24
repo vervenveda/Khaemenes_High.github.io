@@ -1,11 +1,7 @@
-# Week 4: Constitution, Federalism, and the Early Republic
+# Compatibility mirror · Grade 10 Week 4
 
-- Unit: Unit 1 · Foundations and Founding
-- Period: 1781–1824
-- Regions: United States
-- Essential question: How did the Constitution attempt to balance liberty, order, popular rule, and competing interests?
-- Five daily lessons
-- Three graded assignments
-- Ten objective quiz questions and one constructed response
-- Student printable: `student-packet.html`
-- Teacher guide and key: `teacher-guide.html`
+This historical `week-04/` path is retained only for older bookmarks and references.
+
+**Canonical curriculum owner:** `../weeks/week-04/`
+
+Do not author curriculum here. HTML files in this directory redirect to the canonical weekly pages, and `quiz.json` mirrors the canonical machine-readable quiz data.

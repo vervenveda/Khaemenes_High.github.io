@@ -1,11 +1,7 @@
-# Week 28: Imperialism and Resistance
+# Compatibility mirror · Grade 9 Week 28
 
-- Unit: Unit 6 · Revolutions, Industry, and Imperialism
-- Period: c. 1800–1914 CE
-- Regions: Africa, Asia, Pacific, and Europe
-- Essential question: How did industrial power, nationalism, racism, and local collaboration shape imperial expansion and resistance?
-- Five daily lessons
-- Three graded assignments
-- Ten objective quiz questions and one constructed response
-- Student printable: `student-packet.html`
-- Teacher guide and key: `teacher-guide.html`
+This historical `week-28/` path is retained only for older bookmarks and references.
+
+**Canonical curriculum owner:** `../weeks/week-28/`
+
+Do not author curriculum here. HTML files in this directory redirect to the canonical weekly pages, and `quiz.json` mirrors the canonical machine-readable quiz data.
