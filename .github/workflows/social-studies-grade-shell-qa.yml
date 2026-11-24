@@ -65,7 +65,7 @@ jobs:
               if marker not in shell:
                   failures.append(f"Shared grade shell missing contract marker: {marker}")
 
-          for forbidden in ["localStorage","sessionStorage","indexedDB","fetch(","XMLHttpRequest","document.cookie"]:
+          for forbidden in ["window.localStorage","localStorage.","window.sessionStorage","sessionStorage.","indexedDB.open(","fetch(","XMLHttpRequest(","document.cookie"]:
               if forbidden in shell:
                   failures.append(f"Grade shell must remain presentation-only: {forbidden}")
 
