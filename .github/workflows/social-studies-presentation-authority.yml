@@ -1,0 +1,75 @@
+name: Social Studies Presentation Authority
+
+on:
+  pull_request:
+    paths:
+      - "courses/social-studies/grade-09/app.html"
+      - "courses/social-studies/grade-09/styles.css"
+      - "courses/social-studies/grade-11/personal-finance/index.html"
+      - "courses/social-studies/grade-11/personal-finance/styles.css"
+      - "courses/social-studies/assets/social-studies-canonical-vnv-shell-v1.css"
+      - "courses/social-studies/docs/PRESENTATION_AUTHORITY_CONTRACT.md"
+      - ".github/workflows/social-studies-presentation-authority.yml"
+  push:
+    branches: [main]
+    paths:
+      - "courses/social-studies/grade-09/app.html"
+      - "courses/social-studies/grade-09/styles.css"
+      - "courses/social-studies/grade-11/personal-finance/index.html"
+      - "courses/social-studies/grade-11/personal-finance/styles.css"
+      - "courses/social-studies/assets/social-studies-canonical-vnv-shell-v1.css"
+      - "courses/social-studies/docs/PRESENTATION_AUTHORITY_CONTRACT.md"
+      - ".github/workflows/social-studies-presentation-authority.yml"
+
+jobs:
+  verify-presentation-authority:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Verify canonical CSS ownership
+        shell: python
+        run: |
+          from pathlib import Path
+          import re, sys
+
+          failures = []
+          pages = [
+              Path("courses/social-studies/grade-09/app.html"),
+              Path("courses/social-studies/grade-11/personal-finance/index.html"),
+          ]
+          for path in pages:
+              text = path.read_text(encoding="utf-8")
+              if 'data-social-studies-grade-shell="v1"' not in text:
+                  failures.append(f"{path}: missing canonical shell body marker")
+              if 'data-social-studies-canonical-css="v1"' not in text:
+                  failures.append(f"{path}: missing canonical stylesheet")
+              if 'khaemenes-typography-standard' in text:
+                  failures.append(f"{path}: embedded legacy typography block remains")
+              for style in re.findall(r'style="([^"]+)"', text):
+                  if re.search(r'background|color|font|border|shadow', style, re.I):
+                      failures.append(f"{path}: inline visual styling remains: {style}")
+
+          css_paths = [
+              Path("courses/social-studies/grade-09/styles.css"),
+              Path("courses/social-studies/grade-11/personal-finance/styles.css"),
+          ]
+          visual = re.compile(r'(?m)(?:^|[;{])\s*(?:background(?:-image)?|color|font(?:-family|-size|-weight)?|border(?:-color|-radius)?|box-shadow|text-shadow)\s*:')
+          for path in css_paths:
+              text = path.read_text(encoding="utf-8")
+              hits = visual.findall(text)
+              if hits:
+                  failures.append(f"{path}: local visual presentation declarations remain ({len(hits)})")
+
+          canonical = Path("courses/social-studies/assets/social-studies-canonical-vnv-shell-v1.css").read_text(encoding="utf-8")
+          for marker in [
+              "font-size:max(16px,calc(16px * var(--font-scale,1)))!important",
+              "font:400 16px/1.5 var(--ss-body)!important",
+              "font-size:16px!important",
+          ]:
+              if marker not in canonical:
+                  failures.append(f"canonical CSS missing {marker}")
+
+          if failures:
+              print("\n".join("FAIL: "+x for x in failures))
+              sys.exit(1)
+          print("PASS: Grade 9 and Personal Finance use one canonical Social Studies presentation authority.")
