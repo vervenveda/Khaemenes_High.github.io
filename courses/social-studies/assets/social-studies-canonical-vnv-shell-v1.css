@@ -236,11 +236,11 @@ body[data-social-studies-department-shell="v1"] footer,
 body[data-social-studies-grade-shell="v1"] footer,
 body[data-social-studies-grade-shell="v1"] .footer{
   margin-top:33px!important;padding:24px 18px!important;background:var(--ss-charcoal)!important;color:var(--ss-cream)!important;
-  text-align:center!important;font:400 14px/1.5 var(--ss-body)!important;border-radius:0!important
+  text-align:center!important;font:400 16px/1.5 var(--ss-body)!important;border-radius:0!important
 }
 body[data-social-studies-department-shell="v1"] footer :is(a,p,span,div,small,strong),
 body[data-social-studies-grade-shell="v1"] footer :is(a,p,span,div,small,strong),
-body[data-social-studies-grade-shell="v1"] .footer :is(a,p,span,div,small,strong){color:var(--ss-cream)!important;font-size:14px!important}
+body[data-social-studies-grade-shell="v1"] .footer :is(a,p,span,div,small,strong){color:var(--ss-cream)!important;font-size:16px!important}
 
 /* Tool symmetry */
 #vnvClassToolsToggle{
