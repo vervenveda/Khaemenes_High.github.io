@@ -6,12 +6,12 @@
       "id": "W31Q1",
       "prompt": "Which term best matches this definition: Acts committed with intent to destroy, in whole or in part, a national, ethnic, racial, or religious group.",
       "choices": [
-        "genocide",
         "antisemitism",
         "resistance",
-        "ghetto"
+        "ghetto",
+        "genocide"
       ],
-      "answer": 0,
+      "answer": 3,
       "explanation": "Genocide is the course term defined as: Acts committed with intent to destroy, in whole or in part, a national, ethnic, racial, or religious group."
     },
     {
@@ -31,11 +31,11 @@
       "prompt": "Which term best matches this definition: Prejudice, hostility, or discrimination directed against Jews.",
       "choices": [
         "resistance",
-        "collaboration",
         "antisemitism",
+        "collaboration",
         "ghetto"
       ],
-      "answer": 2,
+      "answer": 1,
       "explanation": "Antisemitism is the course term defined as: Prejudice, hostility, or discrimination directed against Jews."
     },
     {
@@ -64,86 +64,68 @@
     },
     {
       "id": "W31Q6",
-      "prompt": "A timeline shows discriminatory laws, property seizure, forced concentration, deportation, and mass killing. What conclusion does that sequence best support?",
+      "prompt": "Which statement best reflects the evidence and interpretation emphasized in Week 31?",
       "choices": [
-        "The Holocaust began only after military defeat was certain.",
-        "Persecution escalated through connected legal, bureaucratic, territorial, and violent stages rather than appearing all at once.",
-        "Bureaucratic records are more important than survivor testimony.",
-        "Every person under Nazi rule had equal power to resist."
+        "The Cold War combined ideology, security fears, nuclear weapons, alliances, economics, propaganda, and decolonization.",
+        "The Holocaust developed through escalating exclusion, law, dispossession, deportation, occupation, and mass murder.",
+        "Decolonization resulted from organized movements, imperial weakness, global war, international pressure, and changing ideas of legitimacy.",
+        "The Great Depression spread through interconnected finance, trade, production, and policy failures."
       ],
       "answer": 1,
-      "explanation": "The sequence shows escalation through policy, institutions, occupation, and mass violence; it should not be reduced to a single sudden event.",
-      "type": "multiple-choice"
+      "explanation": "The Holocaust developed through escalating exclusion, law, dispossession, deportation, occupation, and mass murder."
     },
     {
       "id": "W31Q7",
-      "prompt": "A deportation list records names and destinations while a survivor testimony describes fear, separation, and uncertainty. Why should a historian use both?",
+      "prompt": "Which statement best reflects the evidence and interpretation emphasized in Week 31?",
       "choices": [
-        "Only the list can establish historical truth.",
-        "Only testimony can establish historical truth.",
-        "They answer different questions: administrative records can document systems and scale while testimony preserves lived experience and perspective.",
-        "Using both removes all uncertainty from the historical record."
+        "Independence strategies ranged from negotiation and mass nonviolence to armed struggle and international diplomacy.",
+        "Authoritarian movements used crisis, propaganda, violence, nationalism, and institutional weakness to dismantle opposition.",
+        "Conflicts in Korea, Vietnam, Afghanistan, Africa, Latin America, and the Middle East had local causes as well as superpower involvement.",
+        "Nazi Germany targeted Jews for total destruction and also persecuted Roma, disabled people, Poles, Soviet prisoners, political opponents, LGBTQ people, and others."
       ],
-      "answer": 2,
-      "explanation": "Different source types illuminate different dimensions of the same process and should be corroborated rather than ranked automatically.",
-      "type": "multiple-choice"
+      "answer": 3,
+      "explanation": "Nazi Germany targeted Jews for total destruction and also persecuted Roma, disabled people, Poles, Soviet prisoners, political opponents, LGBTQ people, and others."
     },
     {
       "id": "W31Q8",
-      "prompt": "Which claim best preserves historical agency without pretending that everyone faced equal choices?",
+      "prompt": "Which statement best reflects the evidence and interpretation emphasized in Week 31?",
       "choices": [
-        "All bystanders were as powerful as state leaders.",
-        "Victims could have stopped persecution if they had organized differently.",
-        "Coercion made individual choices historically irrelevant.",
-        "Institutions, officials, collaborators, bystanders, rescuers, and resisters made consequential choices within radically unequal and dangerous conditions."
+        "Fascism, Nazism, Stalinism, militarism, and democratic responses must be distinguished rather than treated as identical.",
+        "New states inherited borders, economies, institutions, and conflicts shaped by colonial rule but made consequential choices of their own.",
+        "Nonaligned states pursued their own interests and challenged a simple two-bloc interpretation.",
+        "Choices by institutions, officials, collaborators, bystanders, rescuers, and resisters shaped events within unequal and dangerous conditions."
       ],
       "answer": 3,
-      "explanation": "Agency existed under unequal constraints; sound analysis neither erases choice nor invents equal power.",
-      "type": "multiple-choice"
+      "explanation": "Choices by institutions, officials, collaborators, bystanders, rescuers, and resisters shaped events within unequal and dangerous conditions."
     },
     {
       "id": "W31Q9",
-      "prompt": "Students map ghettos, killing sites, refugee routes, resistance, and liberation. Which practice best avoids reducing victims to statistics or dots?",
+      "prompt": "What is the strongest method for evaluating “Laws, Testimony, and Bureaucratic Records”?",
       "choices": [
-        "Pair spatial patterns with named biographies, testimony, and context while explaining what the map cannot show.",
-        "Remove individual stories so the map remains objective.",
-        "Use only the largest population totals.",
-        "Treat proximity on the map as proof of direct causation."
+        "Accept the source if it was created during the period because primary sources are automatically accurate.",
+        "Compare the source with independent evidence and evaluate its origin, purpose, context, and limits.",
+        "Reject the source if it contains a point of view because useful evidence must be neutral.",
+        "Use only the most dramatic sentence because memorable details are the most reliable."
       ],
-      "answer": 0,
-      "explanation": "Ethical spatial analysis connects scale to human experience and states the limits of what mapped patterns can establish.",
-      "type": "multiple-choice"
+      "answer": 1,
+      "explanation": "Compare the source with independent evidence and evaluate its origin, purpose, context, and limits."
     },
     {
       "id": "W31Q10",
-      "prompt": "Which evidence would most strengthen a claim that genocide prevention depends on action before mass killing reaches its final stages?",
+      "prompt": "Which response demonstrates the strongest geographic or quantitative reasoning?",
       "choices": [
-        "A single retrospective opinion with no chronology.",
-        "A documented sequence of warning signs, discriminatory measures, institutional responses, and points where protective action was still possible.",
-        "A map showing only postwar borders.",
-        "A list of vocabulary terms without source evidence."
+        "Use the visualization only if it confirms the original claim.",
+        "Ignore units and scale so attention stays on the overall appearance.",
+        "State the observed pattern, propose an explanation, and identify what the map or data cannot prove.",
+        "Assume that every mapped relationship is a direct cause."
       ],
-      "answer": 1,
-      "explanation": "A chronological evidence chain can show escalation and identify earlier intervention points without claiming prevention is simple or guaranteed.",
-      "type": "multiple-choice"
+      "answer": 2,
+      "explanation": "State the observed pattern, propose an explanation, and identify what the map or data cannot prove."
     }
   ],
   "shortResponse": {
     "prompt": "Using at least two specific pieces of evidence, answer: How did dictatorship, war, bureaucracy, racism, and individual choices make mass persecution and genocide possible?",
     "points": 5,
     "exemplar": "A full-credit response states a defensible answer to the essential question, uses two accurate details from the week, explains how each detail supports the claim, and acknowledges one complexity or limitation."
-  },
-  "masteryThreshold": 80,
-  "questionIds": [
-    "W31Q1",
-    "W31Q2",
-    "W31Q3",
-    "W31Q4",
-    "W31Q5",
-    "W31Q6",
-    "W31Q7",
-    "W31Q8",
-    "W31Q9",
-    "W31Q10"
-  ]
+  }
 }

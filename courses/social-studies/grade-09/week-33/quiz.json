@@ -6,12 +6,12 @@
       "id": "W33Q1",
       "prompt": "Which term best matches this definition: The ending of colonial rule and creation or recovery of political sovereignty.",
       "choices": [
-        "decolonization",
         "apartheid",
         "Universal Declaration of Human Rights",
+        "decolonization",
         "partition"
       ],
-      "answer": 0,
+      "answer": 2,
       "explanation": "Decolonization is the course term defined as: The ending of colonial rule and creation or recovery of political sovereignty."
     },
     {
@@ -19,11 +19,11 @@
       "prompt": "Which term best matches this definition: The division of territory into separate political units.",
       "choices": [
         "decolonization",
-        "partition",
         "nation-building",
-        "apartheid"
+        "apartheid",
+        "partition"
       ],
-      "answer": 1,
+      "answer": 3,
       "explanation": "Partition is the course term defined as: The division of territory into separate political units."
     },
     {
@@ -42,108 +42,90 @@
       "id": "W33Q4",
       "prompt": "Which term best matches this definition: South Africa’s legally enforced system of racial classification and domination.",
       "choices": [
+        "apartheid",
         "Universal Declaration of Human Rights",
         "nonviolence",
-        "decolonization",
-        "apartheid"
+        "decolonization"
       ],
-      "answer": 3,
+      "answer": 0,
       "explanation": "Apartheid is the course term defined as: South Africa’s legally enforced system of racial classification and domination."
     },
     {
       "id": "W33Q5",
       "prompt": "Which term best matches this definition: The 1948 United Nations statement of common human rights principles.",
       "choices": [
-        "Universal Declaration of Human Rights",
         "nonviolence",
+        "Universal Declaration of Human Rights",
         "partition",
         "nation-building"
       ],
-      "answer": 0,
+      "answer": 1,
       "explanation": "Universal Declaration Of Human Rights is the course term defined as: The 1948 United Nations statement of common human rights principles."
     },
     {
       "id": "W33Q6",
-      "prompt": "Which explanation best accounts for the wave of decolonization after World War II?",
+      "prompt": "Which statement best reflects the evidence and interpretation emphasized in Week 33?",
       "choices": [
-        "One speech caused empires to collapse.",
-        "Organized anticolonial movements, imperial weakness, global war, international pressure, and changing ideas of legitimacy interacted differently across cases.",
-        "European governments voluntarily ended empire for the same reason everywhere.",
-        "Decolonization was entirely a Cold War project."
+        "Global production can lower prices and expand opportunity while shifting labor, environmental, and security risks across borders.",
+        "Democratic systems vary in executive-legislative relations, electoral rules, federalism, courts, parties, and rights protections.",
+        "The Cold War combined ideology, security fears, nuclear weapons, alliances, economics, propaganda, and decolonization.",
+        "Decolonization resulted from organized movements, imperial weakness, global war, international pressure, and changing ideas of legitimacy."
       ],
-      "answer": 1,
-      "explanation": "Decolonization was multicausal and varied by region; no single factor explains every independence movement.",
-      "type": "multiple-choice"
+      "answer": 3,
+      "explanation": "Decolonization resulted from organized movements, imperial weakness, global war, international pressure, and changing ideas of legitimacy."
     },
     {
       "id": "W33Q7",
-      "prompt": "India, Ghana, Algeria, and Kenya pursued different paths toward independence. What does that comparison show?",
+      "prompt": "Which statement best reflects the evidence and interpretation emphasized in Week 33?",
       "choices": [
-        "Only armed struggle can produce independence.",
-        "All colonial governments responded identically.",
-        "Strategies ranged from negotiation and mass nonviolence to armed struggle and international diplomacy, depending on context.",
-        "Political organization mattered less than geography."
+        "Independence strategies ranged from negotiation and mass nonviolence to armed struggle and international diplomacy.",
+        "Formal constitutions matter, but democratic performance also depends on norms, institutions, participation, accountability, and access to information.",
+        "Conflicts in Korea, Vietnam, Afghanistan, Africa, Latin America, and the Middle East had local causes as well as superpower involvement.",
+        "Development must be evaluated through health, education, rights, inequality, resilience, and environment as well as income."
       ],
-      "answer": 2,
-      "explanation": "Comparative analysis reveals multiple strategies and conditions rather than a universal path to independence.",
-      "type": "multiple-choice"
+      "answer": 0,
+      "explanation": "Independence strategies ranged from negotiation and mass nonviolence to armed struggle and international diplomacy."
     },
     {
       "id": "W33Q8",
-      "prompt": "A new state inherits colonial borders, export dependence, and administrative institutions. Which claim best avoids colonial determinism?",
+      "prompt": "Which statement best reflects the evidence and interpretation emphasized in Week 33?",
       "choices": [
-        "Colonial rule completely predetermined every later outcome.",
-        "Independence erased colonial structures immediately.",
-        "Inherited institutions cannot influence later politics.",
-        "Colonial legacies constrained choices, but leaders and societies still made consequential post-independence decisions."
+        "Media literacy requires lateral reading, source tracing, evidence checking, image verification, and awareness of algorithmic incentives.",
+        "Migration is shaped by work, family, conflict, climate, policy, networks, and individual agency.",
+        "Nonaligned states pursued their own interests and challenged a simple two-bloc interpretation.",
+        "New states inherited borders, economies, institutions, and conflicts shaped by colonial rule but made consequential choices of their own."
       ],
       "answer": 3,
-      "explanation": "Historical constraints shape possibilities without eliminating later agency or contingency.",
-      "type": "multiple-choice"
+      "explanation": "New states inherited borders, economies, institutions, and conflicts shaped by colonial rule but made consequential choices of their own."
     },
     {
       "id": "W33Q9",
-      "prompt": "Why compare independence speeches with articles of the Universal Declaration of Human Rights?",
+      "prompt": "What is the strongest method for evaluating “Independence Voices and the UDHR”?",
       "choices": [
-        "To identify shared claims about dignity and self-determination while examining distinct goals, audiences, and strategies.",
-        "To prove every independence leader interpreted rights identically.",
-        "To replace local evidence with a global document.",
-        "To determine which speech is longest."
+        "Reject the source if it contains a point of view because useful evidence must be neutral.",
+        "Accept the source if it was created during the period because primary sources are automatically accurate.",
+        "Compare the source with independent evidence and evaluate its origin, purpose, context, and limits.",
+        "Use only the most dramatic sentence because memorable details are the most reliable."
       ],
-      "answer": 0,
-      "explanation": "The comparison can reveal shared principles and meaningful differences without flattening distinct movements.",
-      "type": "multiple-choice"
+      "answer": 2,
+      "explanation": "Compare the source with independent evidence and evaluate its origin, purpose, context, and limits."
     },
     {
       "id": "W33Q10",
-      "prompt": "Two countries gain independence with similar income levels but later differ in health, education, inequality, and political rights. What is the strongest conclusion?",
+      "prompt": "Which response demonstrates the strongest geographic or quantitative reasoning?",
       "choices": [
-        "Income alone measures the success of independence.",
-        "Post-independence development is multidimensional, so several indicators and historical contexts are needed.",
-        "The country with higher income automatically has stronger rights.",
-        "Later outcomes prove colonial history had no effect."
+        "State the observed pattern, propose an explanation, and identify what the map or data cannot prove.",
+        "Ignore units and scale so attention stays on the overall appearance.",
+        "Use the visualization only if it confirms the original claim.",
+        "Assume that every mapped relationship is a direct cause."
       ],
-      "answer": 1,
-      "explanation": "Development cannot responsibly be reduced to one indicator; multiple measures reveal different outcomes and tradeoffs.",
-      "type": "multiple-choice"
+      "answer": 0,
+      "explanation": "State the observed pattern, propose an explanation, and identify what the map or data cannot prove."
     }
   ],
   "shortResponse": {
     "prompt": "Using at least two specific pieces of evidence, answer: How did colonized peoples transform self-determination from a promise into political movements and new states?",
     "points": 5,
     "exemplar": "A full-credit response states a defensible answer to the essential question, uses two accurate details from the week, explains how each detail supports the claim, and acknowledges one complexity or limitation."
-  },
-  "masteryThreshold": 80,
-  "questionIds": [
-    "W33Q1",
-    "W33Q2",
-    "W33Q3",
-    "W33Q4",
-    "W33Q5",
-    "W33Q6",
-    "W33Q7",
-    "W33Q8",
-    "W33Q9",
-    "W33Q10"
-  ]
+  }
 }
