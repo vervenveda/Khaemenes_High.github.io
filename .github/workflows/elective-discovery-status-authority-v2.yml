@@ -1,0 +1,30 @@
+name: Elective Discovery Hall Status Authority v2
+
+on:
+  pull_request:
+    paths:
+      - 'courses/electives/index.html'
+      - 'courses/electives/discovery-hall.js'
+      - 'courses/shared/high-school-release-certification-v1.json'
+      - 'tools/validate-elective-discovery-status-v2.mjs'
+      - '.github/workflows/elective-discovery-status-authority-v2.yml'
+  push:
+    branches: [main]
+    paths:
+      - 'courses/electives/index.html'
+      - 'courses/electives/discovery-hall.js'
+      - 'courses/shared/high-school-release-certification-v1.json'
+      - 'tools/validate-elective-discovery-status-v2.mjs'
+      - '.github/workflows/elective-discovery-status-authority-v2.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - run: node tools/validate-elective-discovery-status-v2.mjs
