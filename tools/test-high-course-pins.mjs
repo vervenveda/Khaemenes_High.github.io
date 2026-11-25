@@ -36,12 +36,15 @@ assert(grade9.setMathPathway("algebra-1"));
 assert(!grade9.pinnedIds().includes("pre-algebra"));
 assert(store.readPins().includes("english-10"));
 assert.equal(store.writeLanguageChoices({"9":"russian"}),false,"Language choice must not create an unscoped learner preference");
+assert.equal(store.writeElectiveChoices({"9":"career-professional-studies"}),false,"Elective choice must not create an unscoped learner preference");
 assert.equal(grade9.getCourse("world-language-9-russian").id,"world-language-9-russian","Russian remains an available selector route without creating an unscoped schedule choice");
 data.set("khaemenes_family_registry_v1",JSON.stringify({learners:{
  a:{learnerId:"a",nickname:"A"},b:{learnerId:"b",nickname:"B"}
 }}));
 data.set("khaemenes_active_learner_v1",JSON.stringify("a"));
 assert(store.writeLanguageChoices({"9":"russian"}),"Active learner can save a scoped language preference");
+assert.equal(store.writeElectiveChoices({"9":"career-professional-studies"}),false,"Runtime-pending elective cannot be promoted into the learner schedule");
+assert.equal(store.electiveStatus("career-professional-studies").status,"runtime-certification-pending");
 assert(grade9.courses.some(c=>c.id==="world-language-9-russian"),"Selected learner language appears in the eight-slot course manager");
 assert.equal(store.readPins().length,0,"No automatic legacy sharing");
 assert(grade9.setPinned("world-language-9-russian",true));
