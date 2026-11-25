@@ -1,0 +1,32 @@
+name: English 9-12 Browser Certification
+
+on:
+  pull_request:
+    paths:
+      - 'courses/language-arts/**'
+      - '.github/workflows/english-9-12-browser-certification.yml'
+  push:
+    branches: [main]
+    paths:
+      - 'courses/language-arts/**'
+      - '.github/workflows/english-9-12-browser-certification.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  chromium:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Install Playwright Chromium
+        run: |
+          npm install --no-save playwright@1.56.1
+          npx playwright install --with-deps chromium
+      - name: Certify representative English 9-12 browser journeys
+        run: node courses/language-arts/tests/english-9-12-browser-certification.mjs
