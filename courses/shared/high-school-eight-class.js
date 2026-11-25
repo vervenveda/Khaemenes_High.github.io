@@ -77,9 +77,11 @@ function slots(grade,options={}){
  const language=key==="9"
   ? (LANGS.includes(options.language)?`world-language-9-${options.language}`:null)
   : base.foreignLanguage;
+ const electiveChoice=typeof options.electiveId==="string"&&window.KhaemenesHighCoursePins?.electiveStatus?.(options.electiveId)?.selectable===true
+  ? options.electiveId:null;
  const pin=window.KhaemenesHighCoursePins;
  return SUBJECTS.map(([subject,label],index)=>{
-  const id=subject==="math"?math:subject==="foreignLanguage"?language:base[subject];
+  const id=subject==="math"?math:subject==="foreignLanguage"?language:subject==="elective"?(electiveChoice||base[subject]):base[subject];
   const meta=id?pin?.COURSE_META?.[id]:null;
   const displayLabel=key==="12"&&subject==="psychology"?"Senior Capstone":label;
   return Object.freeze({
