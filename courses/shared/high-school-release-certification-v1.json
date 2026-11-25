@@ -306,16 +306,6 @@
       "surfaceState": "architecture-complete-production-pending"
     },
     {
-      "id": "fine-arts-visual-studio",
-      "entry": "courses/electives/fine-arts-visual-studio/index.html",
-      "classification": "catalog-plan",
-      "route": "pass",
-      "curriculum": "architecture-complete-production-pending",
-      "runtimeCertification": "not-applicable-until-production",
-      "authority": "none",
-      "surfaceState": "architecture-complete-production-pending"
-    },
-    {
       "id": "health-wellness-human-development",
       "entry": "courses/electives/health-wellness-human-development/index.html",
       "classification": "catalog-plan",
@@ -345,6 +335,26 @@
       "authority": "federated",
       "transcriptReturn": "pending-audited-record-bridge",
       "surfaceState": "federated-route-present"
+    },
+    {
+      "id": "art-101",
+      "entry": "courses/electives/art-101/index.html",
+      "classification": "live-source-course",
+      "route": "pass",
+      "curriculum": "established-bazaar-art-source",
+      "runtimeCertification": "source-runtime-preserved-during-migration",
+      "authority": "high-school-elective-doorway-with-bazaar-source",
+      "surfaceState": "available-source-course"
+    },
+    {
+      "id": "art-201",
+      "entry": "courses/electives/art-201/index.html",
+      "classification": "catalog-plan",
+      "route": "pass",
+      "curriculum": "architecture-complete-production-pending",
+      "runtimeCertification": "not-applicable-until-production",
+      "authority": "none",
+      "surfaceState": "architecture-complete-production-pending"
     }
   ]
 }
