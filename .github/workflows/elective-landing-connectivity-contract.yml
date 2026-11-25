@@ -1,0 +1,31 @@
+name: Elective Landing Connectivity Contract
+on:
+  pull_request:
+    paths:
+      - 'assets/high-school-elective-landing-contract-v1.css'
+      - 'assets/high-department-landing-shell-v1.js'
+      - 'assets/high-school-subject-landing-class-tools-v1.js'
+      - 'courses/electives/*/index.html'
+      - 'tools/validate-elective-landing-connectivity-v1.mjs'
+      - '.github/workflows/elective-landing-connectivity-contract.yml'
+  push:
+    branches: [main]
+    paths:
+      - 'assets/high-school-elective-landing-contract-v1.css'
+      - 'assets/high-department-landing-shell-v1.js'
+      - 'assets/high-school-subject-landing-class-tools-v1.js'
+      - 'courses/electives/*/index.html'
+      - 'tools/validate-elective-landing-connectivity-v1.mjs'
+      - '.github/workflows/elective-landing-connectivity-contract.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - run: node tools/validate-elective-landing-connectivity-v1.mjs
