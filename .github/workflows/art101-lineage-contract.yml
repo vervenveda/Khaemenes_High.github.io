@@ -1,0 +1,27 @@
+name: Art 101 Source Lineage Contract
+on:
+  pull_request:
+    paths:
+      - 'courses/electives/art-101/**'
+      - 'courses/electives/art-201/**'
+      - 'tools/validate-art101-lineage-v1.mjs'
+      - '.github/workflows/art101-lineage-contract.yml'
+  push:
+    branches: [main]
+    paths:
+      - 'courses/electives/art-101/**'
+      - 'courses/electives/art-201/**'
+      - 'tools/validate-art101-lineage-v1.mjs'
+      - '.github/workflows/art101-lineage-contract.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - run: node tools/validate-art101-lineage-v1.mjs
