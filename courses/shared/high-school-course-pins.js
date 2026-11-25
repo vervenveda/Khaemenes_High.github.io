@@ -5,6 +5,7 @@
 
 const PIN_KEY="khaemenes-high-pinned-courses-v2";
 const LANGUAGE_KEY="khaemenes-high-language-choices-v1";
+const ELECTIVE_KEY="khaemenes-high-elective-choices-v1";
 const ACADEMY_PIN_KEY="khaemenes_course_pins_v1";
 const ACTIVE_KEY="khaemenes_active_learner_v1";
 const FAMILY_KEY="khaemenes_family_registry_v1";
@@ -19,6 +20,7 @@ const COURSE_META=Object.freeze({
  "physical-education-9":Object.freeze({title:"Physical Education 9",subtitle:"Physical Education · Grade 09",href:"https://vervenveda.com/Khaemenes_High.github.io/courses/physical-education/"}),
  "psychology-101":Object.freeze({title:"Psychology 101",subtitle:"Psychology / Life Skills · Grade 09",href:"https://vervenveda.com/Khaemenes_High.github.io/electives/grades/grade-09/psych-101/"}),
  "elective-9":Object.freeze({title:"Elective · Grade 09",subtitle:"Learner-selected elective",href:"https://vervenveda.com/Khaemenes_High.github.io/courses/electives/"}),
+ "career-professional-studies":Object.freeze({title:"Career & Professional Studies",subtitle:"13-week elective · production complete · runtime certification pending",href:"https://vervenveda.com/Khaemenes_High.github.io/courses/electives/career-professional-studies/"}),
  "world-language-9-spanish":Object.freeze({title:"Spanish I",subtitle:"World Language · Grade 09",href:"https://vervenveda.com/Khaemenes_Linguistics.github.io/Halls/index.html?language=spanish&course=hs1&source=khaemenes-high-grade09"}),
  "world-language-9-french":Object.freeze({title:"French 101",subtitle:"World Language · Grade 09",href:"https://vervenveda.com/Khaemenes_Linguistics.github.io/apps/French_101_index.html"}),
  "world-language-9-german":Object.freeze({title:"German I",subtitle:"World Language · Grade 09",href:"https://vervenveda.com/Khaemenes_Linguistics.github.io/Halls/index.html?language=german&course=hs1&source=khaemenes-high-grade09"}),
@@ -209,13 +211,36 @@ function writeLanguageChoices(choices){
  }
  return activeLearner()===learner;
 }
+const ELECTIVE_META=Object.freeze({
+ "career-professional-studies":Object.freeze({status:"runtime-certification-pending",selectable:false}),
+ "computing-digital-technology":Object.freeze({status:"production-pending",selectable:false}),
+ "fine-arts-visual-studio":Object.freeze({status:"production-pending",selectable:false}),
+ "health-wellness-human-development":Object.freeze({status:"production-pending",selectable:false}),
+ "music-music-theory":Object.freeze({status:"production-pending",selectable:false}),
+ "world-languages-linguistics":Object.freeze({status:"federated",selectable:false})
+});
+function readElectiveChoices(){
+ const choices=read(ELECTIVE_KEY,{});
+ return choices&&typeof choices==="object"&&!Array.isArray(choices)?{...choices}:{};
+}
+function writeElectiveChoices(choices){
+ if(!choices||typeof choices!=="object"||Array.isArray(choices)||!activeLearner())return false;
+ const next={...choices};
+ for(const key of ["9","10","11","12"]){
+  if(next[key]===undefined||next[key]===null||next[key]===""){delete next[key];continue}
+  const meta=ELECTIVE_META[next[key]];
+  if(!meta||meta.selectable!==true)return false;
+ }
+ return write(ELECTIVE_KEY,next);
+}
+function electiveStatus(id){return ELECTIVE_META[id]||null}
 function hasPinRecord(){try{return storage().getItem(scopedKey(PIN_KEY))!==null}catch{return false}}
 // Identified learners never inherit another learner's legacy unscoped values.
 // Legacy records remain untouched for explicit migration or archival recovery.
 window.KhaemenesHighCoursePins=Object.freeze({
- PIN_KEY,LANGUAGE_KEY,ACADEMY_PIN_KEY,COURSE_META,
+ PIN_KEY,LANGUAGE_KEY,ELECTIVE_KEY,ACADEMY_PIN_KEY,COURSE_META,ELECTIVE_META,
  activeLearner,scopedKey,readPins,writePins,hasPinRecord,
  clearPins:()=>writePins([]),readLanguageChoices,writeLanguageChoices,
- syncAcademyPins
+ readElectiveChoices,writeElectiveChoices,electiveStatus,syncAcademyPins
 });
 })();
