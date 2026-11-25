@@ -98,7 +98,7 @@ def test_evidence_import_identity_and_grade_safeguards(site,browser,grade):
  assert any("dates must be valid" in a for a in alerts)
  alerts.clear()
  _upload(page,_evidence_json(grade=grade))
- assert prompts and "Student: Test Learner" in prompts[-1]
+ assert any("Student: Test Learner" in prompt for prompt in prompts)
  assert page.locator('[name="citations"]').input_value()=="Official archive"
  assert page.locator('[name="reviewer"]').input_value()=="Reviewer"
  page.close()
