@@ -19,14 +19,16 @@ function student(){
  return String(a);
 }
 function slots(){
- const language=pins?.readLanguageChoices?.()?.[String(Number(grade))]||null;
+ const gradeKey=String(Number(grade));
+ const language=pins?.readLanguageChoices?.()?.[gradeKey]||null;
+ const electiveId=pins?.readElectiveChoices?.()?.[gradeKey]||null;
  let math=grade==="09"?g9?.mathPathway?.()||null:null;
  if(grade==="10"){
   const id=student();
   const data=id?records(id):[];
   math=data.some(r=>r?.courseId==="geometry")?"geometry":data.some(r=>r?.courseId==="algebra-1")?"algebra-1":null;
  }
- const items=catalog?.slots?.(Number(grade),{mathId:math,language})||[];
+ const items=catalog?.slots?.(Number(grade),{mathId:math,language,electiveId})||[];
  if(grade==="09")return items;
  return items.map(item=>item.subject==="foreignLanguage"&&language
    ? {...item,title:language.charAt(0).toUpperCase()+language.slice(1)+" · Language Pathway"}
@@ -195,8 +197,10 @@ async function render(){
    if(grade==="09"&&g9?.recordLaunch)a.addEventListener("click",()=>g9.recordLaunch(item.id,result.url,item.title));
    actions.append(a);
   }else{
-   const isLanguage=item.subject==="foreignLanguage";
-   const choose=element("a","schedule-btn",isLanguage?"Choose Language":"Choose Course");choose.href=isLanguage?languageDirectory:pathBase+"profile/";actions.append(choose);
+   const isLanguage=item.subject==="foreignLanguage",isElective=item.subject==="elective";
+   const choose=element("a","schedule-btn",isLanguage?"Choose Language":isElective?"Choose Elective":"Choose Course");
+   choose.href=isLanguage?languageDirectory:isElective?"https://vervenveda.com/Khaemenes_High.github.io/courses/electives/":pathBase+"profile/";
+   actions.append(choose);
   }
   if(item.id&&item.pinAvailable){
    const btn=element("button","schedule-btn secondary",pinned.has(item.id)?"Unpin":"Pin Class");
