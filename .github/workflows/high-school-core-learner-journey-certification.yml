@@ -1,0 +1,84 @@
+name: High School Core Learner Journey Certification
+
+on:
+  pull_request:
+    paths:
+      - 'grades/**'
+      - 'courses/language-arts/**'
+      - 'courses/mathematics/**'
+      - 'courses/science/**'
+      - 'courses/social-studies/**'
+      - 'courses/shared/**'
+      - 'scripts/validate_grade09_seven_class_journey.mjs'
+      - 'scripts/validate_upper_grade_seven_class_journey.mjs'
+      - 'tools/validate-high-student-journey.mjs'
+      - '.github/workflows/high-school-core-learner-journey-certification.yml'
+  push:
+    branches: [main]
+    paths:
+      - 'grades/**'
+      - 'courses/language-arts/**'
+      - 'courses/mathematics/**'
+      - 'courses/science/**'
+      - 'courses/social-studies/**'
+      - 'courses/shared/**'
+      - 'scripts/validate_grade09_seven_class_journey.mjs'
+      - 'scripts/validate_upper_grade_seven_class_journey.mjs'
+      - 'tools/validate-high-student-journey.mjs'
+      - '.github/workflows/high-school-core-learner-journey-certification.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  source-journey:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - name: Validate four-grade learner routing
+        run: |
+          node scripts/validate_grade09_seven_class_journey.mjs
+          node scripts/validate_upper_grade_seven_class_journey.mjs
+          node tools/validate-high-student-journey.mjs
+      - name: Validate English learner evidence journey
+        run: node tests/test-english-weeks01-08-student-journey.cjs
+      - name: Validate Science 9 learner journey
+        run: node courses/science/integrated-science-9/tools/test-science9-learner-journey.mjs
+
+  mathematics-browser:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Install Playwright Chromium
+        run: |
+          npm install --no-save playwright@1.56.1
+          npx playwright install --with-deps chromium
+      - name: Run representative Algebra I browser journey
+        run: node courses/mathematics/algebra-1/tools/browser-regression-units01-05-09.mjs
+
+  social-studies-browser:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install Chromium testing dependencies
+        run: |
+          python -m pip install pytest playwright
+          python -m playwright install --with-deps chromium
+      - name: Run Grade 9 Social Studies learner entrance regression
+        run: python -m pytest -v tests/test_social_studies_grade09_dashboard.py
+
+# This gate is representative runtime evidence, not full device/offline certification.
+# Safari, physical tablet touch acceptance, screen-reader semantics and offline reload
+# remain separate release holds in the canonical runtime certification matrix.
