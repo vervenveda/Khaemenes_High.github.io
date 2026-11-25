@@ -79,23 +79,30 @@
       "offlineAcceptance": "pending",
       "evidence": {
         "kind": "chrome-smoke-and-emulated-device-viewport",
-        "commit": "258380a6d32599376b993d059ce5506416b126c7",
-        "tree": "0d337d3c5d23b9035fed026118a08a9bb3f0eb56",
+        "commit": "8e2826d7b30af4bfd4cd05457e8f89071777394d",
+        "tree": "2673d658b2b6c72248f2bc7f4785b3c74955fdc7",
         "runs": [
           {
             "workflow": "High School Science Curriculum Certification",
-            "runId": 45286434348,
+            "runId": 45518251299,
+            "conclusion": "success"
+          },
+          {
+            "workflow": "Science Student Experience Regression",
+            "runId": 45518251563,
             "conclusion": "success"
           }
         ],
         "coverage": [
           "representative Grade 9–12 science routes",
+          "strict 720/720 lesson source certification",
           "Chrome headless load/render smoke",
           "desktop viewport",
           "tablet-landscape viewport emulation",
           "tablet-portrait viewport emulation",
           "narrow-stress viewport",
-          "print-to-PDF smoke"
+          "print-to-PDF smoke",
+          "Science student-experience regression"
         ],
         "holds": [
           "Safari macOS",
