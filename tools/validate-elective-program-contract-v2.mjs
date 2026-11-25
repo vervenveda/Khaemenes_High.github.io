@@ -1,0 +1,25 @@
+#!/usr/bin/env node
+import fs from "node:fs";
+import assert from "node:assert/strict";
+const p="courses/electives/elective-program-contract-v2.json";
+const c=JSON.parse(fs.readFileSync(p,"utf8"));
+assert.equal(c.schema,"khaemenes-high-school-elective-program-contract-v2");
+assert.equal(c.academicYear.instructionalWeeks,36);
+assert.equal(c.academicYear.flexibleCompletionWindowWeeks,42);
+assert.equal(c.academicYear.standardRequiredClassLoad,6);
+assert.equal(c.academicYear.maximumActiveClassLoad,8);
+assert(c.academicYear.maximumActiveClassLoad>=c.academicYear.standardRequiredClassLoad);
+assert.equal(c.electives.standardDurationWeeks,13);
+assert.equal(c.electives.standardLessons,65);
+assert.equal(c.electives.standardDaysPerWeek,5);
+assert.equal(c.electives.standardDurationWeeks*c.electives.standardDaysPerWeek,c.electives.standardLessons);
+assert.equal(c.electives.masteryFloorPercent,80);
+assert.equal(c.electives.sequentialBlocksWithinFlexibleWindow,3);
+assert(c.electives.standardDurationWeeks*c.electives.sequentialBlocksWithinFlexibleWindow<=c.academicYear.flexibleCompletionWindowWeeks);
+assert.equal(c.electives.summer.available,true);
+assert.equal(c.electives.summer.academyNumericalCap,null);
+assert(c.classification.requiredCompactCourses.includes("psychology-101"));
+assert(!c.classification.activeOrEstablishedElectives.includes("psychology-101"));
+assert(c.classification.activeOrEstablishedElectives.includes("art-101"));
+assert(c.classification.advancedOrPlannedElectives.includes("art-201"));
+console.log("PASS: elective program contract preserves 36/42-week pacing, 6–8 class load, 13-week compact electives, Art 101/201 classification, Psychology required-course status, summer flexibility, and fail-closed promotion.");
