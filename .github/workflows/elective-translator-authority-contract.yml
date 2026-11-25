@@ -1,0 +1,31 @@
+name: Elective Translator Authority Contract
+on:
+  pull_request:
+    paths:
+      - 'assets/high-department-landing-shell-v1.js'
+      - 'assets/high-school-subject-landing-class-tools-v1.js'
+      - 'courses/electives/**/index.html'
+      - 'courses/electives/index.html'
+      - 'tools/validate-elective-translator-authority-v1.mjs'
+      - '.github/workflows/elective-translator-authority-contract.yml'
+  push:
+    branches: [main]
+    paths:
+      - 'assets/high-department-landing-shell-v1.js'
+      - 'assets/high-school-subject-landing-class-tools-v1.js'
+      - 'courses/electives/**/index.html'
+      - 'courses/electives/index.html'
+      - 'tools/validate-elective-translator-authority-v1.mjs'
+      - '.github/workflows/elective-translator-authority-contract.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - run: node tools/validate-elective-translator-authority-v1.mjs
