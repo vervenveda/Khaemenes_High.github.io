@@ -1,0 +1,648 @@
+{
+  "schema": "khaemenes-high-school-elective-course-map-v1",
+  "id": "writing-studio",
+  "title": "Writing Studio",
+  "gradeBand": "9-12",
+  "durationWeeks": 13,
+  "plannedLessons": 65,
+  "masteryThreshold": 80,
+  "status": "curriculum-architecture-complete-student-production-pending",
+  "authority": "catalog-plan-until-promotion-gate-passes",
+  "qualityStandard": "courses/electives/ELECTIVE_QUALITY_STANDARD_V1.md",
+  "plannedLocation": "courses/electives/plans/writing-studio/",
+  "permanentRoutine": "Notice → Draft → Test with Audience → Revise → Edit → Publish → Reflect",
+  "assessmentModel": {
+    "weekly": "open-book craft checks plus authentic writing artifacts",
+    "cumulative": [
+      4,
+      8,
+      12
+    ],
+    "culminatingWeek": 13,
+    "correction": "below 80% on objective/scored craft components requires targeted correction; writing artifacts require substantive revision against the rubric",
+    "protectedBoundary": "browser-local drafts and self-checks do not create transcript credit or evaluator-reviewed publication credit"
+  },
+  "privacySafety": {
+    "forcedPersonalDisclosure": false,
+    "fictionalAlternativeAlwaysAllowed": true,
+    "traumaDisclosureRequired": false,
+    "familyDisclosureRequired": false,
+    "accessibleAlternativeRequired": true,
+    "critiqueRule": "Critique the work, craft choices, evidence, clarity and revision—not identity, inherent talent, or private life."
+  },
+  "pathways": [
+    "creative writing",
+    "journalism",
+    "rhetoric and persuasion",
+    "research synthesis",
+    "technical and instructional writing",
+    "publishing and portfolio"
+  ],
+  "crossCurricularReuse": {
+    "sourceFamilies": [
+      "courses/language-arts/assets/video-library/",
+      "courses/social-studies/grade-09/resources/writing-studio.html"
+    ],
+    "rule": "Existing English and Social Studies resources may support instruction, but Writing Studio owns its own elective sequence, artifacts, assessment, and records."
+  },
+  "weeks": [
+    {
+      "week": 1,
+      "title": "Voice, Audience & Purpose",
+      "essentialQuestion": "How do writers make deliberate choices for a specific audience and purpose?",
+      "days": [
+        {
+          "day": 1,
+          "phase": "Read / Notice",
+          "task": "Study mentor examples connected to Voice, Audience & Purpose. Mark specific craft choices and infer the writer's audience, purpose, and constraints.",
+          "evidence": "mentor-text annotation for Voice, Audience & Purpose"
+        },
+        {
+          "day": 2,
+          "phase": "Learn / Model",
+          "task": "Study vocabulary and a worked writing model for Voice, Audience & Purpose. Explain which choices improve clarity, credibility, voice, structure, or effect.",
+          "evidence": "annotated craft model and short imitation exercise"
+        },
+        {
+          "day": 3,
+          "phase": "Draft / Experiment",
+          "task": "Create at least two approaches to Voice, Audience & Purpose. Test a change in structure, voice, evidence, detail, or form.",
+          "evidence": "draft alternatives with craft rationale"
+        },
+        {
+          "day": 4,
+          "phase": "Revise / Workshop",
+          "task": "Develop the week's main artifact for Voice, Audience & Purpose. Use a rubric, feedback, or self-review to make substantive revision rather than proofreading only.",
+          "evidence": "audience-purpose rewrite set"
+        },
+        {
+          "day": 5,
+          "phase": "Edit / Publish / Reflect",
+          "task": "Edit for correctness and accessibility, prepare a clean version for the intended audience, and write a short reflection explaining one meaningful revision.",
+          "evidence": "publication-ready artifact plus revision reflection"
+        }
+      ],
+      "vocabularyTarget": "5–9 writing/craft terms taught through mentor texts, drafting, revision, and retrieval",
+      "weeklyEvidence": "audience-purpose rewrite set",
+      "masteryCheck": {
+        "mode": "open-book mixed craft/evidence",
+        "threshold": 80,
+        "retake": "targeted correction and/or substantive revision"
+      },
+      "cumulativeCheckpoint": false,
+      "culminating": false
+    },
+    {
+      "week": 2,
+      "title": "Observation, Detail & Description",
+      "essentialQuestion": "How can precise observation create vivid, credible writing without unnecessary excess?",
+      "days": [
+        {
+          "day": 1,
+          "phase": "Read / Notice",
+          "task": "Study mentor examples connected to Observation, Detail & Description. Mark specific craft choices and infer the writer's audience, purpose, and constraints.",
+          "evidence": "mentor-text annotation for Observation, Detail & Description"
+        },
+        {
+          "day": 2,
+          "phase": "Learn / Model",
+          "task": "Study vocabulary and a worked writing model for Observation, Detail & Description. Explain which choices improve clarity, credibility, voice, structure, or effect.",
+          "evidence": "annotated craft model and short imitation exercise"
+        },
+        {
+          "day": 3,
+          "phase": "Draft / Experiment",
+          "task": "Create at least two approaches to Observation, Detail & Description. Test a change in structure, voice, evidence, detail, or form.",
+          "evidence": "draft alternatives with craft rationale"
+        },
+        {
+          "day": 4,
+          "phase": "Revise / Workshop",
+          "task": "Develop the week's main artifact for Observation, Detail & Description. Use a rubric, feedback, or self-review to make substantive revision rather than proofreading only.",
+          "evidence": "descriptive scene or profile sketch"
+        },
+        {
+          "day": 5,
+          "phase": "Edit / Publish / Reflect",
+          "task": "Edit for correctness and accessibility, prepare a clean version for the intended audience, and write a short reflection explaining one meaningful revision.",
+          "evidence": "publication-ready artifact plus revision reflection"
+        }
+      ],
+      "vocabularyTarget": "5–9 writing/craft terms taught through mentor texts, drafting, revision, and retrieval",
+      "weeklyEvidence": "descriptive scene or profile sketch",
+      "masteryCheck": {
+        "mode": "open-book mixed craft/evidence",
+        "threshold": 80,
+        "retake": "targeted correction and/or substantive revision"
+      },
+      "cumulativeCheckpoint": false,
+      "culminating": false
+    },
+    {
+      "week": 3,
+      "title": "Narrative Structure & Scene",
+      "essentialQuestion": "How do scene, sequence, tension, pacing, and reflection shape a meaningful narrative?",
+      "days": [
+        {
+          "day": 1,
+          "phase": "Read / Notice",
+          "task": "Study mentor examples connected to Narrative Structure & Scene. Mark specific craft choices and infer the writer's audience, purpose, and constraints.",
+          "evidence": "mentor-text annotation for Narrative Structure & Scene"
+        },
+        {
+          "day": 2,
+          "phase": "Learn / Model",
+          "task": "Study vocabulary and a worked writing model for Narrative Structure & Scene. Explain which choices improve clarity, credibility, voice, structure, or effect.",
+          "evidence": "annotated craft model and short imitation exercise"
+        },
+        {
+          "day": 3,
+          "phase": "Draft / Experiment",
+          "task": "Create at least two approaches to Narrative Structure & Scene. Test a change in structure, voice, evidence, detail, or form.",
+          "evidence": "draft alternatives with craft rationale"
+        },
+        {
+          "day": 4,
+          "phase": "Revise / Workshop",
+          "task": "Develop the week's main artifact for Narrative Structure & Scene. Use a rubric, feedback, or self-review to make substantive revision rather than proofreading only.",
+          "evidence": "revised narrative scene"
+        },
+        {
+          "day": 5,
+          "phase": "Edit / Publish / Reflect",
+          "task": "Edit for correctness and accessibility, prepare a clean version for the intended audience, and write a short reflection explaining one meaningful revision.",
+          "evidence": "publication-ready artifact plus revision reflection"
+        }
+      ],
+      "vocabularyTarget": "5–9 writing/craft terms taught through mentor texts, drafting, revision, and retrieval",
+      "weeklyEvidence": "revised narrative scene",
+      "masteryCheck": {
+        "mode": "open-book mixed craft/evidence",
+        "threshold": 80,
+        "retake": "targeted correction and/or substantive revision"
+      },
+      "cumulativeCheckpoint": false,
+      "culminating": false
+    },
+    {
+      "week": 4,
+      "title": "Character, Dialogue & Point of View",
+      "essentialQuestion": "How do writers reveal character and perspective through action, detail, and dialogue?",
+      "days": [
+        {
+          "day": 1,
+          "phase": "Read / Notice",
+          "task": "Study mentor examples connected to Character, Dialogue & Point of View. Mark specific craft choices and infer the writer's audience, purpose, and constraints.",
+          "evidence": "mentor-text annotation for Character, Dialogue & Point of View"
+        },
+        {
+          "day": 2,
+          "phase": "Learn / Model",
+          "task": "Study vocabulary and a worked writing model for Character, Dialogue & Point of View. Explain which choices improve clarity, credibility, voice, structure, or effect.",
+          "evidence": "annotated craft model and short imitation exercise"
+        },
+        {
+          "day": 3,
+          "phase": "Draft / Experiment",
+          "task": "Create at least two approaches to Character, Dialogue & Point of View. Test a change in structure, voice, evidence, detail, or form.",
+          "evidence": "draft alternatives with craft rationale"
+        },
+        {
+          "day": 4,
+          "phase": "Revise / Workshop",
+          "task": "Develop the week's main artifact for Character, Dialogue & Point of View. Use a rubric, feedback, or self-review to make substantive revision rather than proofreading only.",
+          "evidence": "character/dialogue portfolio"
+        },
+        {
+          "day": 5,
+          "phase": "Edit / Publish / Reflect",
+          "task": "Edit for correctness and accessibility, prepare a clean version for the intended audience, and write a short reflection explaining one meaningful revision.",
+          "evidence": "publication-ready artifact plus revision reflection"
+        }
+      ],
+      "vocabularyTarget": "5–9 writing/craft terms taught through mentor texts, drafting, revision, and retrieval",
+      "weeklyEvidence": "character/dialogue portfolio",
+      "masteryCheck": {
+        "mode": "open-book mixed craft/evidence",
+        "threshold": 80,
+        "retake": "targeted correction and/or substantive revision"
+      },
+      "cumulativeCheckpoint": true,
+      "culminating": false
+    },
+    {
+      "week": 5,
+      "title": "Poetry, Image & Sound",
+      "essentialQuestion": "How can image, line, rhythm, sound, and compression create meaning?",
+      "days": [
+        {
+          "day": 1,
+          "phase": "Read / Notice",
+          "task": "Study mentor examples connected to Poetry, Image & Sound. Mark specific craft choices and infer the writer's audience, purpose, and constraints.",
+          "evidence": "mentor-text annotation for Poetry, Image & Sound"
+        },
+        {
+          "day": 2,
+          "phase": "Learn / Model",
+          "task": "Study vocabulary and a worked writing model for Poetry, Image & Sound. Explain which choices improve clarity, credibility, voice, structure, or effect.",
+          "evidence": "annotated craft model and short imitation exercise"
+        },
+        {
+          "day": 3,
+          "phase": "Draft / Experiment",
+          "task": "Create at least two approaches to Poetry, Image & Sound. Test a change in structure, voice, evidence, detail, or form.",
+          "evidence": "draft alternatives with craft rationale"
+        },
+        {
+          "day": 4,
+          "phase": "Revise / Workshop",
+          "task": "Develop the week's main artifact for Poetry, Image & Sound. Use a rubric, feedback, or self-review to make substantive revision rather than proofreading only.",
+          "evidence": "original poem set with craft notes"
+        },
+        {
+          "day": 5,
+          "phase": "Edit / Publish / Reflect",
+          "task": "Edit for correctness and accessibility, prepare a clean version for the intended audience, and write a short reflection explaining one meaningful revision.",
+          "evidence": "publication-ready artifact plus revision reflection"
+        }
+      ],
+      "vocabularyTarget": "5–9 writing/craft terms taught through mentor texts, drafting, revision, and retrieval",
+      "weeklyEvidence": "original poem set with craft notes",
+      "masteryCheck": {
+        "mode": "open-book mixed craft/evidence",
+        "threshold": 80,
+        "retake": "targeted correction and/or substantive revision"
+      },
+      "cumulativeCheckpoint": false,
+      "culminating": false
+    },
+    {
+      "week": 6,
+      "title": "Rhetoric & Persuasion",
+      "essentialQuestion": "How do writers build ethical persuasive pieces using claims, evidence, audience awareness, and counterargument?",
+      "days": [
+        {
+          "day": 1,
+          "phase": "Read / Notice",
+          "task": "Study mentor examples connected to Rhetoric & Persuasion. Mark specific craft choices and infer the writer's audience, purpose, and constraints.",
+          "evidence": "mentor-text annotation for Rhetoric & Persuasion"
+        },
+        {
+          "day": 2,
+          "phase": "Learn / Model",
+          "task": "Study vocabulary and a worked writing model for Rhetoric & Persuasion. Explain which choices improve clarity, credibility, voice, structure, or effect.",
+          "evidence": "annotated craft model and short imitation exercise"
+        },
+        {
+          "day": 3,
+          "phase": "Draft / Experiment",
+          "task": "Create at least two approaches to Rhetoric & Persuasion. Test a change in structure, voice, evidence, detail, or form.",
+          "evidence": "draft alternatives with craft rationale"
+        },
+        {
+          "day": 4,
+          "phase": "Revise / Workshop",
+          "task": "Develop the week's main artifact for Rhetoric & Persuasion. Use a rubric, feedback, or self-review to make substantive revision rather than proofreading only.",
+          "evidence": "persuasive piece with source/evidence notes"
+        },
+        {
+          "day": 5,
+          "phase": "Edit / Publish / Reflect",
+          "task": "Edit for correctness and accessibility, prepare a clean version for the intended audience, and write a short reflection explaining one meaningful revision.",
+          "evidence": "publication-ready artifact plus revision reflection"
+        }
+      ],
+      "vocabularyTarget": "5–9 writing/craft terms taught through mentor texts, drafting, revision, and retrieval",
+      "weeklyEvidence": "persuasive piece with source/evidence notes",
+      "masteryCheck": {
+        "mode": "open-book mixed craft/evidence",
+        "threshold": 80,
+        "retake": "targeted correction and/or substantive revision"
+      },
+      "cumulativeCheckpoint": false,
+      "culminating": false
+    },
+    {
+      "week": 7,
+      "title": "Journalism, Interviewing & Verification",
+      "essentialQuestion": "How can a writer report accurately, attribute information, verify claims, and protect context?",
+      "days": [
+        {
+          "day": 1,
+          "phase": "Read / Notice",
+          "task": "Study mentor examples connected to Journalism, Interviewing & Verification. Mark specific craft choices and infer the writer's audience, purpose, and constraints.",
+          "evidence": "mentor-text annotation for Journalism, Interviewing & Verification"
+        },
+        {
+          "day": 2,
+          "phase": "Learn / Model",
+          "task": "Study vocabulary and a worked writing model for Journalism, Interviewing & Verification. Explain which choices improve clarity, credibility, voice, structure, or effect.",
+          "evidence": "annotated craft model and short imitation exercise"
+        },
+        {
+          "day": 3,
+          "phase": "Draft / Experiment",
+          "task": "Create at least two approaches to Journalism, Interviewing & Verification. Test a change in structure, voice, evidence, detail, or form.",
+          "evidence": "draft alternatives with craft rationale"
+        },
+        {
+          "day": 4,
+          "phase": "Revise / Workshop",
+          "task": "Develop the week's main artifact for Journalism, Interviewing & Verification. Use a rubric, feedback, or self-review to make substantive revision rather than proofreading only.",
+          "evidence": "reported article or interview feature"
+        },
+        {
+          "day": 5,
+          "phase": "Edit / Publish / Reflect",
+          "task": "Edit for correctness and accessibility, prepare a clean version for the intended audience, and write a short reflection explaining one meaningful revision.",
+          "evidence": "publication-ready artifact plus revision reflection"
+        }
+      ],
+      "vocabularyTarget": "5–9 writing/craft terms taught through mentor texts, drafting, revision, and retrieval",
+      "weeklyEvidence": "reported article or interview feature",
+      "masteryCheck": {
+        "mode": "open-book mixed craft/evidence",
+        "threshold": 80,
+        "retake": "targeted correction and/or substantive revision"
+      },
+      "cumulativeCheckpoint": false,
+      "culminating": false
+    },
+    {
+      "week": 8,
+      "title": "Research Writing & Synthesis",
+      "essentialQuestion": "How can multiple sources be synthesized without patchwriting or losing the writer's own reasoning?",
+      "days": [
+        {
+          "day": 1,
+          "phase": "Read / Notice",
+          "task": "Study mentor examples connected to Research Writing & Synthesis. Mark specific craft choices and infer the writer's audience, purpose, and constraints.",
+          "evidence": "mentor-text annotation for Research Writing & Synthesis"
+        },
+        {
+          "day": 2,
+          "phase": "Learn / Model",
+          "task": "Study vocabulary and a worked writing model for Research Writing & Synthesis. Explain which choices improve clarity, credibility, voice, structure, or effect.",
+          "evidence": "annotated craft model and short imitation exercise"
+        },
+        {
+          "day": 3,
+          "phase": "Draft / Experiment",
+          "task": "Create at least two approaches to Research Writing & Synthesis. Test a change in structure, voice, evidence, detail, or form.",
+          "evidence": "draft alternatives with craft rationale"
+        },
+        {
+          "day": 4,
+          "phase": "Revise / Workshop",
+          "task": "Develop the week's main artifact for Research Writing & Synthesis. Use a rubric, feedback, or self-review to make substantive revision rather than proofreading only.",
+          "evidence": "source-based synthesis brief"
+        },
+        {
+          "day": 5,
+          "phase": "Edit / Publish / Reflect",
+          "task": "Edit for correctness and accessibility, prepare a clean version for the intended audience, and write a short reflection explaining one meaningful revision.",
+          "evidence": "publication-ready artifact plus revision reflection"
+        }
+      ],
+      "vocabularyTarget": "5–9 writing/craft terms taught through mentor texts, drafting, revision, and retrieval",
+      "weeklyEvidence": "source-based synthesis brief",
+      "masteryCheck": {
+        "mode": "open-book mixed craft/evidence",
+        "threshold": 80,
+        "retake": "targeted correction and/or substantive revision"
+      },
+      "cumulativeCheckpoint": true,
+      "culminating": false
+    },
+    {
+      "week": 9,
+      "title": "Technical & Instructional Writing",
+      "essentialQuestion": "How can complex information become clear, usable instructions or documentation?",
+      "days": [
+        {
+          "day": 1,
+          "phase": "Read / Notice",
+          "task": "Study mentor examples connected to Technical & Instructional Writing. Mark specific craft choices and infer the writer's audience, purpose, and constraints.",
+          "evidence": "mentor-text annotation for Technical & Instructional Writing"
+        },
+        {
+          "day": 2,
+          "phase": "Learn / Model",
+          "task": "Study vocabulary and a worked writing model for Technical & Instructional Writing. Explain which choices improve clarity, credibility, voice, structure, or effect.",
+          "evidence": "annotated craft model and short imitation exercise"
+        },
+        {
+          "day": 3,
+          "phase": "Draft / Experiment",
+          "task": "Create at least two approaches to Technical & Instructional Writing. Test a change in structure, voice, evidence, detail, or form.",
+          "evidence": "draft alternatives with craft rationale"
+        },
+        {
+          "day": 4,
+          "phase": "Revise / Workshop",
+          "task": "Develop the week's main artifact for Technical & Instructional Writing. Use a rubric, feedback, or self-review to make substantive revision rather than proofreading only.",
+          "evidence": "instruction set or technical explainer"
+        },
+        {
+          "day": 5,
+          "phase": "Edit / Publish / Reflect",
+          "task": "Edit for correctness and accessibility, prepare a clean version for the intended audience, and write a short reflection explaining one meaningful revision.",
+          "evidence": "publication-ready artifact plus revision reflection"
+        }
+      ],
+      "vocabularyTarget": "5–9 writing/craft terms taught through mentor texts, drafting, revision, and retrieval",
+      "weeklyEvidence": "instruction set or technical explainer",
+      "masteryCheck": {
+        "mode": "open-book mixed craft/evidence",
+        "threshold": 80,
+        "retake": "targeted correction and/or substantive revision"
+      },
+      "cumulativeCheckpoint": false,
+      "culminating": false
+    },
+    {
+      "week": 10,
+      "title": "Revision, Editing & Style",
+      "essentialQuestion": "How do writers distinguish global revision from sentence-level editing and proofreading?",
+      "days": [
+        {
+          "day": 1,
+          "phase": "Read / Notice",
+          "task": "Study mentor examples connected to Revision, Editing & Style. Mark specific craft choices and infer the writer's audience, purpose, and constraints.",
+          "evidence": "mentor-text annotation for Revision, Editing & Style"
+        },
+        {
+          "day": 2,
+          "phase": "Learn / Model",
+          "task": "Study vocabulary and a worked writing model for Revision, Editing & Style. Explain which choices improve clarity, credibility, voice, structure, or effect.",
+          "evidence": "annotated craft model and short imitation exercise"
+        },
+        {
+          "day": 3,
+          "phase": "Draft / Experiment",
+          "task": "Create at least two approaches to Revision, Editing & Style. Test a change in structure, voice, evidence, detail, or form.",
+          "evidence": "draft alternatives with craft rationale"
+        },
+        {
+          "day": 4,
+          "phase": "Revise / Workshop",
+          "task": "Develop the week's main artifact for Revision, Editing & Style. Use a rubric, feedback, or self-review to make substantive revision rather than proofreading only.",
+          "evidence": "before/after revision dossier"
+        },
+        {
+          "day": 5,
+          "phase": "Edit / Publish / Reflect",
+          "task": "Edit for correctness and accessibility, prepare a clean version for the intended audience, and write a short reflection explaining one meaningful revision.",
+          "evidence": "publication-ready artifact plus revision reflection"
+        }
+      ],
+      "vocabularyTarget": "5–9 writing/craft terms taught through mentor texts, drafting, revision, and retrieval",
+      "weeklyEvidence": "before/after revision dossier",
+      "masteryCheck": {
+        "mode": "open-book mixed craft/evidence",
+        "threshold": 80,
+        "retake": "targeted correction and/or substantive revision"
+      },
+      "cumulativeCheckpoint": false,
+      "culminating": false
+    },
+    {
+      "week": 11,
+      "title": "Publishing, Layout & Accessibility",
+      "essentialQuestion": "How do format, headings, captions, typography, alt text, and document structure affect readers?",
+      "days": [
+        {
+          "day": 1,
+          "phase": "Read / Notice",
+          "task": "Study mentor examples connected to Publishing, Layout & Accessibility. Mark specific craft choices and infer the writer's audience, purpose, and constraints.",
+          "evidence": "mentor-text annotation for Publishing, Layout & Accessibility"
+        },
+        {
+          "day": 2,
+          "phase": "Learn / Model",
+          "task": "Study vocabulary and a worked writing model for Publishing, Layout & Accessibility. Explain which choices improve clarity, credibility, voice, structure, or effect.",
+          "evidence": "annotated craft model and short imitation exercise"
+        },
+        {
+          "day": 3,
+          "phase": "Draft / Experiment",
+          "task": "Create at least two approaches to Publishing, Layout & Accessibility. Test a change in structure, voice, evidence, detail, or form.",
+          "evidence": "draft alternatives with craft rationale"
+        },
+        {
+          "day": 4,
+          "phase": "Revise / Workshop",
+          "task": "Develop the week's main artifact for Publishing, Layout & Accessibility. Use a rubric, feedback, or self-review to make substantive revision rather than proofreading only.",
+          "evidence": "accessible publication-ready piece"
+        },
+        {
+          "day": 5,
+          "phase": "Edit / Publish / Reflect",
+          "task": "Edit for correctness and accessibility, prepare a clean version for the intended audience, and write a short reflection explaining one meaningful revision.",
+          "evidence": "publication-ready artifact plus revision reflection"
+        }
+      ],
+      "vocabularyTarget": "5–9 writing/craft terms taught through mentor texts, drafting, revision, and retrieval",
+      "weeklyEvidence": "accessible publication-ready piece",
+      "masteryCheck": {
+        "mode": "open-book mixed craft/evidence",
+        "threshold": 80,
+        "retake": "targeted correction and/or substantive revision"
+      },
+      "cumulativeCheckpoint": false,
+      "culminating": false
+    },
+    {
+      "week": 12,
+      "title": "Portfolio Curation & Editorial Judgment",
+      "essentialQuestion": "How should a writer select, sequence, annotate, and revise work for a portfolio?",
+      "days": [
+        {
+          "day": 1,
+          "phase": "Read / Notice",
+          "task": "Study mentor examples connected to Portfolio Curation & Editorial Judgment. Mark specific craft choices and infer the writer's audience, purpose, and constraints.",
+          "evidence": "mentor-text annotation for Portfolio Curation & Editorial Judgment"
+        },
+        {
+          "day": 2,
+          "phase": "Learn / Model",
+          "task": "Study vocabulary and a worked writing model for Portfolio Curation & Editorial Judgment. Explain which choices improve clarity, credibility, voice, structure, or effect.",
+          "evidence": "annotated craft model and short imitation exercise"
+        },
+        {
+          "day": 3,
+          "phase": "Draft / Experiment",
+          "task": "Create at least two approaches to Portfolio Curation & Editorial Judgment. Test a change in structure, voice, evidence, detail, or form.",
+          "evidence": "draft alternatives with craft rationale"
+        },
+        {
+          "day": 4,
+          "phase": "Revise / Workshop",
+          "task": "Develop the week's main artifact for Portfolio Curation & Editorial Judgment. Use a rubric, feedback, or self-review to make substantive revision rather than proofreading only.",
+          "evidence": "curated draft portfolio with annotations"
+        },
+        {
+          "day": 5,
+          "phase": "Edit / Publish / Reflect",
+          "task": "Edit for correctness and accessibility, prepare a clean version for the intended audience, and write a short reflection explaining one meaningful revision.",
+          "evidence": "publication-ready artifact plus revision reflection"
+        }
+      ],
+      "vocabularyTarget": "5–9 writing/craft terms taught through mentor texts, drafting, revision, and retrieval",
+      "weeklyEvidence": "curated draft portfolio with annotations",
+      "masteryCheck": {
+        "mode": "open-book mixed craft/evidence",
+        "threshold": 80,
+        "retake": "targeted correction and/or substantive revision"
+      },
+      "cumulativeCheckpoint": true,
+      "culminating": false
+    },
+    {
+      "week": 13,
+      "title": "Writing Portfolio & Author Defense",
+      "essentialQuestion": "How can a writer explain craft choices, revision, evidence, growth, and next goals?",
+      "days": [
+        {
+          "day": 1,
+          "phase": "Read / Notice",
+          "task": "Study mentor examples connected to Writing Portfolio & Author Defense. Mark specific craft choices and infer the writer's audience, purpose, and constraints.",
+          "evidence": "mentor-text annotation for Writing Portfolio & Author Defense"
+        },
+        {
+          "day": 2,
+          "phase": "Learn / Model",
+          "task": "Study vocabulary and a worked writing model for Writing Portfolio & Author Defense. Explain which choices improve clarity, credibility, voice, structure, or effect.",
+          "evidence": "annotated craft model and short imitation exercise"
+        },
+        {
+          "day": 3,
+          "phase": "Draft / Experiment",
+          "task": "Create at least two approaches to Writing Portfolio & Author Defense. Test a change in structure, voice, evidence, detail, or form.",
+          "evidence": "draft alternatives with craft rationale"
+        },
+        {
+          "day": 4,
+          "phase": "Revise / Workshop",
+          "task": "Develop the week's main artifact for Writing Portfolio & Author Defense. Use a rubric, feedback, or self-review to make substantive revision rather than proofreading only.",
+          "evidence": "final writing portfolio and author defense"
+        },
+        {
+          "day": 5,
+          "phase": "Edit / Publish / Reflect",
+          "task": "Edit for correctness and accessibility, prepare a clean version for the intended audience, and write a short reflection explaining one meaningful revision.",
+          "evidence": "publication-ready artifact plus revision reflection"
+        }
+      ],
+      "vocabularyTarget": "5–9 writing/craft terms taught through mentor texts, drafting, revision, and retrieval",
+      "weeklyEvidence": "final writing portfolio and author defense",
+      "masteryCheck": {
+        "mode": "open-book mixed craft/evidence",
+        "threshold": 80,
+        "retake": "targeted correction and/or substantive revision"
+      },
+      "cumulativeCheckpoint": false,
+      "culminating": true
+    }
+  ]
+}
