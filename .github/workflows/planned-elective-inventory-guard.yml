@@ -1,0 +1,35 @@
+name: Planned Elective Inventory Guard
+on:
+  pull_request:
+    paths:
+      - 'courses/electives/elective-program-contract-v2.json'
+      - 'courses/electives/plans/**'
+      - 'courses/electives/critical-thinking/**'
+      - 'courses/electives/writing-studio/**'
+      - 'courses/electives/life-skills/**'
+      - 'courses/electives/trades/**'
+      - 'tools/validate-planned-elective-inventory-v1.mjs'
+      - '.github/workflows/planned-elective-inventory-guard.yml'
+  push:
+    branches: [main]
+    paths:
+      - 'courses/electives/elective-program-contract-v2.json'
+      - 'courses/electives/plans/**'
+      - 'courses/electives/critical-thinking/**'
+      - 'courses/electives/writing-studio/**'
+      - 'courses/electives/life-skills/**'
+      - 'courses/electives/trades/**'
+      - 'tools/validate-planned-elective-inventory-v1.mjs'
+      - '.github/workflows/planned-elective-inventory-guard.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - run: node tools/validate-planned-elective-inventory-v1.mjs
