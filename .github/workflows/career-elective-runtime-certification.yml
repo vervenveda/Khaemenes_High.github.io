@@ -1,0 +1,32 @@
+name: Career Elective Runtime Certification
+
+on:
+  pull_request:
+    paths:
+      - 'courses/electives/career-professional-studies/**'
+      - '.github/workflows/career-elective-runtime-certification.yml'
+  push:
+    branches: [main]
+    paths:
+      - 'courses/electives/career-professional-studies/**'
+      - '.github/workflows/career-elective-runtime-certification.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  chromium:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Install Playwright Chromium
+        run: |
+          npm install --no-save playwright@1.56.1
+          npx playwright install --with-deps chromium
+      - name: Certify Career elective runtime
+        run: node courses/electives/career-professional-studies/tools/browser-runtime-certification.mjs
