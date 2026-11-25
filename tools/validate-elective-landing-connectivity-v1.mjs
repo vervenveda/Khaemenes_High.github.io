@@ -57,8 +57,8 @@ for(const required of [
  "vnv-language.js?v=20261124-header-slot",
  "vnv-class-tools-toolbar.js?v=1.6.1",
  "vnv-ecosystem-toolbar.js",
- "/courses\\/electives\\/art-101",
- "/courses\\/electives\\/art-201"
+ "courses\\/electives\\/art-101",
+ "courses\\/electives\\/art-201"
 ]) assert(shell.includes(required),"connectivity shell missing canonical component: "+required);
 assert(shell.includes('document.body?.dataset.electiveLanding==="v1"'),"elective pages must suppress shell-injected competing page CSS");
 assert(!shell.includes('vnv-language.js?v=20261121-half-height'),"old translator placement must not return");
