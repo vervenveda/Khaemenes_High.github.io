@@ -1,0 +1,28 @@
+{
+  "schema": "khaemenes-high-art-lineage-v1",
+  "course": "art-101",
+  "canonicalDoorway": "courses/electives/art-101/index.html",
+  "source": {
+    "repository": "vervenveda/bazaarart.github.io",
+    "entry": "academy/grade-9/unit-01/week-01/index.html",
+    "publicUrl": "https://vervenveda.com/bazaarart.github.io/academy/grade-9/unit-01/week-01/index.html",
+    "curriculumId": "ART-101",
+    "gradeOrigin": 9,
+    "relationship": "established source curriculum retained during High School relocation"
+  },
+  "higherLearningRelationship": {
+    "program": "ARTS-111",
+    "relationship": "Bazaar Art ART101 was used as source curriculum for Higher Learning conversion and expansion"
+  },
+  "successor": {
+    "course": "art-201",
+    "map": "courses/electives/art-201/course-map.json",
+    "relationship": "newer 13-week Fine Arts & Visual Studio architecture reserved for advanced High School study"
+  },
+  "authorityRules": [
+    "Art 101 High School authority begins at the canonical High School elective doorway.",
+    "Bazaar Art remains the source lesson library until migration is deliberately completed.",
+    "Art 201 must not overwrite or impersonate Art 101.",
+    "Legacy Fine Arts paths must not become competing curriculum authority."
+  ]
+}
