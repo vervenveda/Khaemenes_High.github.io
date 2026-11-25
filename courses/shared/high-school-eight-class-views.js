@@ -57,9 +57,11 @@ function stateFor(student){
   if(pinnedLanguages.length===1)language=pinnedLanguages[0].slice("world-language-9-".length);
  }
  const mathChoice=scopedRead("khaemenes-high-math-pathway-v1",id,null);
+ const electiveValues=scopedRead(pin.ELECTIVE_KEY,id,{});
+ const electiveId=typeof electiveValues?.[grade]==="string"?electiveValues[grade]:null;
  const selectedMath=grade==="9"?(["pre-algebra","algebra-1"].includes(mathChoice)?mathChoice:
   (pinned.filter(k=>k==="pre-algebra"||k==="algebra-1").length===1?pinned.find(k=>k==="pre-algebra"||k==="algebra-1"):null)):null;
- return plan.summary(grade,pinned,{mathId:selectedMath,language:language});
+ return plan.summary(grade,pinned,{mathId:selectedMath,language:language,electiveId});
 }
 function cardFor(entry,student,editable){
  const box=create("article",undefined,css.tile);
