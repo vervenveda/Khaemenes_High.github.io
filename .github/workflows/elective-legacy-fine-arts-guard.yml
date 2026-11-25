@@ -1,0 +1,27 @@
+name: Electives Legacy Fine Arts Guard
+on:
+  pull_request:
+    paths:
+      - 'courses/electives/fine-arts-visual-studio/**'
+      - 'courses/electives/art-201/**'
+      - 'tools/validate-elective-legacy-fine-arts-v1.mjs'
+      - '.github/workflows/elective-legacy-fine-arts-guard.yml'
+  push:
+    branches: [main]
+    paths:
+      - 'courses/electives/fine-arts-visual-studio/**'
+      - 'courses/electives/art-201/**'
+      - 'tools/validate-elective-legacy-fine-arts-v1.mjs'
+      - '.github/workflows/elective-legacy-fine-arts-guard.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - run: node tools/validate-elective-legacy-fine-arts-v1.mjs
