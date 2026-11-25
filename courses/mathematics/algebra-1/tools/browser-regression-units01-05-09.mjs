@@ -207,7 +207,8 @@ for(const test of cases){
   const consoleErrors=[];
   page.on("pageerror",err=>consoleErrors.push("pageerror: "+err.message));
   page.on("console",msg=>{if(msg.type()==="error")consoleErrors.push("console: "+msg.text())});
-  await page.goto(url,{waitUntil:"load"});
+  await page.goto(url,{waitUntil:"domcontentloaded",timeout:30000});
+  await page.waitForFunction(()=>document.readyState==="interactive"||document.readyState==="complete");
   try{
     await page.locator("#score").waitFor({state:"visible",timeout:15000});
   }catch(error){
