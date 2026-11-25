@@ -10,6 +10,8 @@ const configs=[
  [/\/courses\/science\/?$/i,{title:"Science",label:"Science Quick Links"}],
  [/\/courses\/social-studies\/?$/i,{title:"Social Studies",label:"Social Studies Quick Links"}],
  [/\/courses\/electives\/?$/i,{title:"Electives",label:"Electives Quick Links"}],
+ [/\/courses\/electives\/art-101\/?$/i,{title:"Art 101",label:"Art 101 Quick Links"}],
+ [/\/courses\/electives\/art-201\/?$/i,{title:"Art 201",label:"Art 201 Quick Links"}],
  [/\/courses\/electives\/career-professional-studies\/?$/i,{title:"Career & Professional Studies",label:"Career Studies Quick Links"}],
  [/\/courses\/electives\/computing-digital-technology\/?$/i,{title:"Computing & Digital Technology",label:"Computing Quick Links"}],
  [/\/courses\/electives\/fine-arts-visual-studio\/?$/i,{title:"Fine Arts & Visual Studio",label:"Fine Arts Quick Links"}],
@@ -26,6 +28,7 @@ function removeLegacyChrome(){
  ).forEach(n=>n.remove());
 }
 function style(){
+ if(document.body?.dataset.electiveLanding==="v1")return;
  if(document.getElementById("highDepartmentShellStyle"))return;
  const s=document.createElement("style");s.id="highDepartmentShellStyle";s.textContent=`
  html:root:root body[data-high-department-shell="v1"]{background:#f4f0e7;color:#243038}
@@ -76,12 +79,10 @@ async function mount(){
    replaceLegacy:true,title:"Khaemenes Academy",subtitle:"High School · "+config.title,
    icon:"K",home:"https://vervenveda.com/Khaemenes_High.github.io/",actions:[]
  })}catch{}
- let rail=document.getElementById("vnv-language-rail");
- if(!rail){rail=document.createElement("div");rail.id="vnv-language-rail";rail.setAttribute("role","group");rail.setAttribute("aria-label","Page translation tools");rail.hidden=true;document.body.append(rail)}
  await load("https://vervenveda.com/assets/khaemenes-campus-phrases.js","khaemenes-campus-phrases.js");
  await load("https://vervenveda.com/assets/khaemenes-interlingual-core.js","khaemenes-interlingual-core.js");
  await load("https://vervenveda.com/Khaemenes_Linguistics.github.io/assets/khaemenes-translator-loader.js?v=1.1.1","khaemenes-translator-loader.js");
- await load("https://vervenveda.com/assets/vnv-language.js?v=20261121-half-height","vnv-language.js");
+ await load("https://vervenveda.com/assets/vnv-language.js?v=20261124-header-slot","vnv-language.js");
  await load("https://vervenveda.com/Khaemenes_High.github.io/assets/high-school-subject-landing-class-tools-v1.js","high-school-subject-landing-class-tools-v1.js");
  await load("https://vervenveda.com/assets/vnv-class-tools-toolbar.js?v=1.6.1","vnv-class-tools-toolbar.js");
  await load("https://vervenveda.com/assets/vnv-ecosystem-toolbar.js","vnv-ecosystem-toolbar.js");
