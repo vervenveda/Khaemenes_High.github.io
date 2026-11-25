@@ -44,8 +44,8 @@ jobs:
 
       - name: Run course-aware 720-lesson department certification audit
         run: |
-          node courses/science/tools/audit-high-school-science-curriculum-certification-v1.mjs --strict
           node courses/science/tools/audit-high-school-science-curriculum-certification-v1.mjs --strict --json > high-school-science-certification.json
+          node courses/science/tools/validate-science-strict-release-report-v1.cjs high-school-science-certification.json
 
       - name: Preserve certification report
         uses: actions/upload-artifact@v4
