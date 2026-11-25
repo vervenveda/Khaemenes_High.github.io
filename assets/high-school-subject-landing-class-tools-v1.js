@@ -55,6 +55,7 @@ window.KhaemenesClassToolsConfigV1=Object.freeze({
  actions:{translate:openTranslator}
 });
 document.addEventListener("DOMContentLoaded",()=>setTimeout(()=>{
+ if(document.body?.dataset.electiveLanding==="v1")return;
  const root=document.getElementById("vnvClassToolsToolbar");if(!root)return;
  moveTranslator(ensureTranslatorPanel(root));
 },120),{once:true});
