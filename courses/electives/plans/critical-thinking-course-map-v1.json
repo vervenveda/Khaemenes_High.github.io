@@ -1,0 +1,641 @@
+{
+  "schema": "khaemenes-high-school-elective-course-map-v1",
+  "id": "critical-thinking",
+  "title": "Critical Thinking",
+  "gradeBand": "9-12",
+  "durationWeeks": 13,
+  "plannedLessons": 65,
+  "masteryThreshold": 80,
+  "status": "curriculum-architecture-complete-student-production-pending",
+  "authority": "catalog-plan-until-promotion-gate-passes",
+  "qualityStandard": "courses/electives/ELECTIVE_QUALITY_STANDARD_V1.md",
+  "plannedLocation": "courses/electives/plans/critical-thinking/",
+  "permanentRoutine": "Question → Claim → Evidence → Assumption → Alternative → Limitation → Conclusion → Revision",
+  "assessmentModel": {
+    "weekly": "open-book reasoning checks plus authentic argument/evidence artifacts",
+    "cumulative": [
+      4,
+      8,
+      12
+    ],
+    "culminatingWeek": 13,
+    "correction": "below 80% on objective/scored reasoning components requires targeted correction and parallel-form or revised evidence",
+    "protectedBoundary": "browser-local drafts and self-checks do not create transcript credit"
+  },
+  "privacySafety": {
+    "forcedSensitiveDisclosure": false,
+    "politicalIdentityDisclosureRequired": false,
+    "religiousIdentityDisclosureRequired": false,
+    "accessibleAlternativeRequired": true,
+    "publicProtectedAssessmentContent": false,
+    "disagreementRule": "Evaluate claims, evidence, assumptions, reasoning and trade-offs rather than assigning motives or identity labels."
+  },
+  "crossCurricularReuse": {
+    "sourceFamilies": [
+      "courses/language-arts/assets/video-library/",
+      "courses/mathematics/*/LOGIC_UPGRADE_2026-10-20.md",
+      "courses/social-studies/"
+    ],
+    "rule": "Existing resources may support instruction but do not become runtime dependencies or transfer assessment authority into this elective."
+  },
+  "weeks": [
+    {
+      "week": 1,
+      "title": "Claims, Questions & Evidence",
+      "essentialQuestion": "How can I tell the difference between a claim, a question, an observation, and evidence?",
+      "days": [
+        {
+          "day": 1,
+          "phase": "Retrieve / Notice",
+          "task": "Retrieve a prior reasoning move or inspect a new example connected to Claims, Questions & Evidence. Separate what is directly present from what is inferred.",
+          "evidence": "retrieval note and observation/inference split for Claims, Questions & Evidence"
+        },
+        {
+          "day": 2,
+          "phase": "Learn / Model",
+          "task": "Study the core vocabulary, reasoning structures, and a worked model for Claims, Questions & Evidence. Identify why the model is strong and where it could fail.",
+          "evidence": "annotated worked model with vocabulary used in context"
+        },
+        {
+          "day": 3,
+          "phase": "Practice / Compare",
+          "task": "Compare at least two claims, arguments, sources, interpretations, or decisions related to Claims, Questions & Evidence. Rank them using explicit criteria.",
+          "evidence": "guided comparison with criteria and justification"
+        },
+        {
+          "day": 4,
+          "phase": "Apply / Test",
+          "task": "Apply Claims, Questions & Evidence to a new scenario. Test the reasoning against evidence, alternatives, uncertainty, and counterexamples.",
+          "evidence": "claim-evidence map and source annotation"
+        },
+        {
+          "day": 5,
+          "phase": "Revise / Defend",
+          "task": "Revise the week's work after critique or self-check. Defend the conclusion, name a limitation, and state what evidence would change your mind.",
+          "evidence": "revised artifact, limitation statement, and short defense"
+        }
+      ],
+      "vocabularyTarget": "5–9 reasoning terms taught through use, examples, retrieval, and transfer",
+      "weeklyEvidence": "claim-evidence map and source annotation",
+      "masteryCheck": {
+        "mode": "open-book mixed reasoning/evidence",
+        "threshold": 80,
+        "retake": "targeted correction then parallel-form or revised evidence"
+      },
+      "cumulativeCheckpoint": false,
+      "culminating": false
+    },
+    {
+      "week": 2,
+      "title": "Reasoning, Assumptions & Warrants",
+      "essentialQuestion": "What connects evidence to a conclusion, and what assumptions are doing hidden work?",
+      "days": [
+        {
+          "day": 1,
+          "phase": "Retrieve / Notice",
+          "task": "Retrieve a prior reasoning move or inspect a new example connected to Reasoning, Assumptions & Warrants. Separate what is directly present from what is inferred.",
+          "evidence": "retrieval note and observation/inference split for Reasoning, Assumptions & Warrants"
+        },
+        {
+          "day": 2,
+          "phase": "Learn / Model",
+          "task": "Study the core vocabulary, reasoning structures, and a worked model for Reasoning, Assumptions & Warrants. Identify why the model is strong and where it could fail.",
+          "evidence": "annotated worked model with vocabulary used in context"
+        },
+        {
+          "day": 3,
+          "phase": "Practice / Compare",
+          "task": "Compare at least two claims, arguments, sources, interpretations, or decisions related to Reasoning, Assumptions & Warrants. Rank them using explicit criteria.",
+          "evidence": "guided comparison with criteria and justification"
+        },
+        {
+          "day": 4,
+          "phase": "Apply / Test",
+          "task": "Apply Reasoning, Assumptions & Warrants to a new scenario. Test the reasoning against evidence, alternatives, uncertainty, and counterexamples.",
+          "evidence": "argument map with explicit warrants and assumptions"
+        },
+        {
+          "day": 5,
+          "phase": "Revise / Defend",
+          "task": "Revise the week's work after critique or self-check. Defend the conclusion, name a limitation, and state what evidence would change your mind.",
+          "evidence": "revised artifact, limitation statement, and short defense"
+        }
+      ],
+      "vocabularyTarget": "5–9 reasoning terms taught through use, examples, retrieval, and transfer",
+      "weeklyEvidence": "argument map with explicit warrants and assumptions",
+      "masteryCheck": {
+        "mode": "open-book mixed reasoning/evidence",
+        "threshold": 80,
+        "retake": "targeted correction then parallel-form or revised evidence"
+      },
+      "cumulativeCheckpoint": false,
+      "culminating": false
+    },
+    {
+      "week": 3,
+      "title": "Deduction, Induction & Abduction",
+      "essentialQuestion": "How do different forms of reasoning support different kinds of conclusions?",
+      "days": [
+        {
+          "day": 1,
+          "phase": "Retrieve / Notice",
+          "task": "Retrieve a prior reasoning move or inspect a new example connected to Deduction, Induction & Abduction. Separate what is directly present from what is inferred.",
+          "evidence": "retrieval note and observation/inference split for Deduction, Induction & Abduction"
+        },
+        {
+          "day": 2,
+          "phase": "Learn / Model",
+          "task": "Study the core vocabulary, reasoning structures, and a worked model for Deduction, Induction & Abduction. Identify why the model is strong and where it could fail.",
+          "evidence": "annotated worked model with vocabulary used in context"
+        },
+        {
+          "day": 3,
+          "phase": "Practice / Compare",
+          "task": "Compare at least two claims, arguments, sources, interpretations, or decisions related to Deduction, Induction & Abduction. Rank them using explicit criteria.",
+          "evidence": "guided comparison with criteria and justification"
+        },
+        {
+          "day": 4,
+          "phase": "Apply / Test",
+          "task": "Apply Deduction, Induction & Abduction to a new scenario. Test the reasoning against evidence, alternatives, uncertainty, and counterexamples.",
+          "evidence": "reasoning-type comparison and justified conclusion set"
+        },
+        {
+          "day": 5,
+          "phase": "Revise / Defend",
+          "task": "Revise the week's work after critique or self-check. Defend the conclusion, name a limitation, and state what evidence would change your mind.",
+          "evidence": "revised artifact, limitation statement, and short defense"
+        }
+      ],
+      "vocabularyTarget": "5–9 reasoning terms taught through use, examples, retrieval, and transfer",
+      "weeklyEvidence": "reasoning-type comparison and justified conclusion set",
+      "masteryCheck": {
+        "mode": "open-book mixed reasoning/evidence",
+        "threshold": 80,
+        "retake": "targeted correction then parallel-form or revised evidence"
+      },
+      "cumulativeCheckpoint": false,
+      "culminating": false
+    },
+    {
+      "week": 4,
+      "title": "Logical Fallacies & Argument Repair",
+      "essentialQuestion": "How can I identify weak reasoning without merely labeling or dismissing a speaker?",
+      "days": [
+        {
+          "day": 1,
+          "phase": "Retrieve / Notice",
+          "task": "Retrieve a prior reasoning move or inspect a new example connected to Logical Fallacies & Argument Repair. Separate what is directly present from what is inferred.",
+          "evidence": "retrieval note and observation/inference split for Logical Fallacies & Argument Repair"
+        },
+        {
+          "day": 2,
+          "phase": "Learn / Model",
+          "task": "Study the core vocabulary, reasoning structures, and a worked model for Logical Fallacies & Argument Repair. Identify why the model is strong and where it could fail.",
+          "evidence": "annotated worked model with vocabulary used in context"
+        },
+        {
+          "day": 3,
+          "phase": "Practice / Compare",
+          "task": "Compare at least two claims, arguments, sources, interpretations, or decisions related to Logical Fallacies & Argument Repair. Rank them using explicit criteria.",
+          "evidence": "guided comparison with criteria and justification"
+        },
+        {
+          "day": 4,
+          "phase": "Apply / Test",
+          "task": "Apply Logical Fallacies & Argument Repair to a new scenario. Test the reasoning against evidence, alternatives, uncertainty, and counterexamples.",
+          "evidence": "fallacy diagnosis and repaired argument"
+        },
+        {
+          "day": 5,
+          "phase": "Revise / Defend",
+          "task": "Revise the week's work after critique or self-check. Defend the conclusion, name a limitation, and state what evidence would change your mind.",
+          "evidence": "revised artifact, limitation statement, and short defense"
+        }
+      ],
+      "vocabularyTarget": "5–9 reasoning terms taught through use, examples, retrieval, and transfer",
+      "weeklyEvidence": "fallacy diagnosis and repaired argument",
+      "masteryCheck": {
+        "mode": "open-book mixed reasoning/evidence",
+        "threshold": 80,
+        "retake": "targeted correction then parallel-form or revised evidence"
+      },
+      "cumulativeCheckpoint": true,
+      "culminating": false
+    },
+    {
+      "week": 5,
+      "title": "Source Credibility & Lateral Reading",
+      "essentialQuestion": "How can I investigate who is behind a claim and whether a source deserves trust?",
+      "days": [
+        {
+          "day": 1,
+          "phase": "Retrieve / Notice",
+          "task": "Retrieve a prior reasoning move or inspect a new example connected to Source Credibility & Lateral Reading. Separate what is directly present from what is inferred.",
+          "evidence": "retrieval note and observation/inference split for Source Credibility & Lateral Reading"
+        },
+        {
+          "day": 2,
+          "phase": "Learn / Model",
+          "task": "Study the core vocabulary, reasoning structures, and a worked model for Source Credibility & Lateral Reading. Identify why the model is strong and where it could fail.",
+          "evidence": "annotated worked model with vocabulary used in context"
+        },
+        {
+          "day": 3,
+          "phase": "Practice / Compare",
+          "task": "Compare at least two claims, arguments, sources, interpretations, or decisions related to Source Credibility & Lateral Reading. Rank them using explicit criteria.",
+          "evidence": "guided comparison with criteria and justification"
+        },
+        {
+          "day": 4,
+          "phase": "Apply / Test",
+          "task": "Apply Source Credibility & Lateral Reading to a new scenario. Test the reasoning against evidence, alternatives, uncertainty, and counterexamples.",
+          "evidence": "source credibility dossier using lateral checks"
+        },
+        {
+          "day": 5,
+          "phase": "Revise / Defend",
+          "task": "Revise the week's work after critique or self-check. Defend the conclusion, name a limitation, and state what evidence would change your mind.",
+          "evidence": "revised artifact, limitation statement, and short defense"
+        }
+      ],
+      "vocabularyTarget": "5–9 reasoning terms taught through use, examples, retrieval, and transfer",
+      "weeklyEvidence": "source credibility dossier using lateral checks",
+      "masteryCheck": {
+        "mode": "open-book mixed reasoning/evidence",
+        "threshold": 80,
+        "retake": "targeted correction then parallel-form or revised evidence"
+      },
+      "cumulativeCheckpoint": false,
+      "culminating": false
+    },
+    {
+      "week": 6,
+      "title": "Media Literacy, Framing & Persuasion",
+      "essentialQuestion": "How do framing, rhetoric, images, headlines, and platform design shape interpretation?",
+      "days": [
+        {
+          "day": 1,
+          "phase": "Retrieve / Notice",
+          "task": "Retrieve a prior reasoning move or inspect a new example connected to Media Literacy, Framing & Persuasion. Separate what is directly present from what is inferred.",
+          "evidence": "retrieval note and observation/inference split for Media Literacy, Framing & Persuasion"
+        },
+        {
+          "day": 2,
+          "phase": "Learn / Model",
+          "task": "Study the core vocabulary, reasoning structures, and a worked model for Media Literacy, Framing & Persuasion. Identify why the model is strong and where it could fail.",
+          "evidence": "annotated worked model with vocabulary used in context"
+        },
+        {
+          "day": 3,
+          "phase": "Practice / Compare",
+          "task": "Compare at least two claims, arguments, sources, interpretations, or decisions related to Media Literacy, Framing & Persuasion. Rank them using explicit criteria.",
+          "evidence": "guided comparison with criteria and justification"
+        },
+        {
+          "day": 4,
+          "phase": "Apply / Test",
+          "task": "Apply Media Literacy, Framing & Persuasion to a new scenario. Test the reasoning against evidence, alternatives, uncertainty, and counterexamples.",
+          "evidence": "media comparison with framing and persuasion analysis"
+        },
+        {
+          "day": 5,
+          "phase": "Revise / Defend",
+          "task": "Revise the week's work after critique or self-check. Defend the conclusion, name a limitation, and state what evidence would change your mind.",
+          "evidence": "revised artifact, limitation statement, and short defense"
+        }
+      ],
+      "vocabularyTarget": "5–9 reasoning terms taught through use, examples, retrieval, and transfer",
+      "weeklyEvidence": "media comparison with framing and persuasion analysis",
+      "masteryCheck": {
+        "mode": "open-book mixed reasoning/evidence",
+        "threshold": 80,
+        "retake": "targeted correction then parallel-form or revised evidence"
+      },
+      "cumulativeCheckpoint": false,
+      "culminating": false
+    },
+    {
+      "week": 7,
+      "title": "Numbers, Graphs & Statistical Claims",
+      "essentialQuestion": "How can percentages, averages, graphs, samples, and uncertainty clarify or distort a claim?",
+      "days": [
+        {
+          "day": 1,
+          "phase": "Retrieve / Notice",
+          "task": "Retrieve a prior reasoning move or inspect a new example connected to Numbers, Graphs & Statistical Claims. Separate what is directly present from what is inferred.",
+          "evidence": "retrieval note and observation/inference split for Numbers, Graphs & Statistical Claims"
+        },
+        {
+          "day": 2,
+          "phase": "Learn / Model",
+          "task": "Study the core vocabulary, reasoning structures, and a worked model for Numbers, Graphs & Statistical Claims. Identify why the model is strong and where it could fail.",
+          "evidence": "annotated worked model with vocabulary used in context"
+        },
+        {
+          "day": 3,
+          "phase": "Practice / Compare",
+          "task": "Compare at least two claims, arguments, sources, interpretations, or decisions related to Numbers, Graphs & Statistical Claims. Rank them using explicit criteria.",
+          "evidence": "guided comparison with criteria and justification"
+        },
+        {
+          "day": 4,
+          "phase": "Apply / Test",
+          "task": "Apply Numbers, Graphs & Statistical Claims to a new scenario. Test the reasoning against evidence, alternatives, uncertainty, and counterexamples.",
+          "evidence": "statistical-claim audit with corrected visualization/explanation"
+        },
+        {
+          "day": 5,
+          "phase": "Revise / Defend",
+          "task": "Revise the week's work after critique or self-check. Defend the conclusion, name a limitation, and state what evidence would change your mind.",
+          "evidence": "revised artifact, limitation statement, and short defense"
+        }
+      ],
+      "vocabularyTarget": "5–9 reasoning terms taught through use, examples, retrieval, and transfer",
+      "weeklyEvidence": "statistical-claim audit with corrected visualization/explanation",
+      "masteryCheck": {
+        "mode": "open-book mixed reasoning/evidence",
+        "threshold": 80,
+        "retake": "targeted correction then parallel-form or revised evidence"
+      },
+      "cumulativeCheckpoint": false,
+      "culminating": false
+    },
+    {
+      "week": 8,
+      "title": "Correlation, Causation & Competing Explanations",
+      "essentialQuestion": "What evidence is needed before saying one thing caused another?",
+      "days": [
+        {
+          "day": 1,
+          "phase": "Retrieve / Notice",
+          "task": "Retrieve a prior reasoning move or inspect a new example connected to Correlation, Causation & Competing Explanations. Separate what is directly present from what is inferred.",
+          "evidence": "retrieval note and observation/inference split for Correlation, Causation & Competing Explanations"
+        },
+        {
+          "day": 2,
+          "phase": "Learn / Model",
+          "task": "Study the core vocabulary, reasoning structures, and a worked model for Correlation, Causation & Competing Explanations. Identify why the model is strong and where it could fail.",
+          "evidence": "annotated worked model with vocabulary used in context"
+        },
+        {
+          "day": 3,
+          "phase": "Practice / Compare",
+          "task": "Compare at least two claims, arguments, sources, interpretations, or decisions related to Correlation, Causation & Competing Explanations. Rank them using explicit criteria.",
+          "evidence": "guided comparison with criteria and justification"
+        },
+        {
+          "day": 4,
+          "phase": "Apply / Test",
+          "task": "Apply Correlation, Causation & Competing Explanations to a new scenario. Test the reasoning against evidence, alternatives, uncertainty, and counterexamples.",
+          "evidence": "causal-claim analysis with alternative explanations"
+        },
+        {
+          "day": 5,
+          "phase": "Revise / Defend",
+          "task": "Revise the week's work after critique or self-check. Defend the conclusion, name a limitation, and state what evidence would change your mind.",
+          "evidence": "revised artifact, limitation statement, and short defense"
+        }
+      ],
+      "vocabularyTarget": "5–9 reasoning terms taught through use, examples, retrieval, and transfer",
+      "weeklyEvidence": "causal-claim analysis with alternative explanations",
+      "masteryCheck": {
+        "mode": "open-book mixed reasoning/evidence",
+        "threshold": 80,
+        "retake": "targeted correction then parallel-form or revised evidence"
+      },
+      "cumulativeCheckpoint": true,
+      "culminating": false
+    },
+    {
+      "week": 9,
+      "title": "Bias, Heuristics & Decision-Making",
+      "essentialQuestion": "How can predictable thinking shortcuts help or mislead judgment?",
+      "days": [
+        {
+          "day": 1,
+          "phase": "Retrieve / Notice",
+          "task": "Retrieve a prior reasoning move or inspect a new example connected to Bias, Heuristics & Decision-Making. Separate what is directly present from what is inferred.",
+          "evidence": "retrieval note and observation/inference split for Bias, Heuristics & Decision-Making"
+        },
+        {
+          "day": 2,
+          "phase": "Learn / Model",
+          "task": "Study the core vocabulary, reasoning structures, and a worked model for Bias, Heuristics & Decision-Making. Identify why the model is strong and where it could fail.",
+          "evidence": "annotated worked model with vocabulary used in context"
+        },
+        {
+          "day": 3,
+          "phase": "Practice / Compare",
+          "task": "Compare at least two claims, arguments, sources, interpretations, or decisions related to Bias, Heuristics & Decision-Making. Rank them using explicit criteria.",
+          "evidence": "guided comparison with criteria and justification"
+        },
+        {
+          "day": 4,
+          "phase": "Apply / Test",
+          "task": "Apply Bias, Heuristics & Decision-Making to a new scenario. Test the reasoning against evidence, alternatives, uncertainty, and counterexamples.",
+          "evidence": "decision log comparing intuitive and evidence-based choices"
+        },
+        {
+          "day": 5,
+          "phase": "Revise / Defend",
+          "task": "Revise the week's work after critique or self-check. Defend the conclusion, name a limitation, and state what evidence would change your mind.",
+          "evidence": "revised artifact, limitation statement, and short defense"
+        }
+      ],
+      "vocabularyTarget": "5–9 reasoning terms taught through use, examples, retrieval, and transfer",
+      "weeklyEvidence": "decision log comparing intuitive and evidence-based choices",
+      "masteryCheck": {
+        "mode": "open-book mixed reasoning/evidence",
+        "threshold": 80,
+        "retake": "targeted correction then parallel-form or revised evidence"
+      },
+      "cumulativeCheckpoint": false,
+      "culminating": false
+    },
+    {
+      "week": 10,
+      "title": "Disagreement, Steelmanning & Counterargument",
+      "essentialQuestion": "How can I represent an opposing position fairly before criticizing it?",
+      "days": [
+        {
+          "day": 1,
+          "phase": "Retrieve / Notice",
+          "task": "Retrieve a prior reasoning move or inspect a new example connected to Disagreement, Steelmanning & Counterargument. Separate what is directly present from what is inferred.",
+          "evidence": "retrieval note and observation/inference split for Disagreement, Steelmanning & Counterargument"
+        },
+        {
+          "day": 2,
+          "phase": "Learn / Model",
+          "task": "Study the core vocabulary, reasoning structures, and a worked model for Disagreement, Steelmanning & Counterargument. Identify why the model is strong and where it could fail.",
+          "evidence": "annotated worked model with vocabulary used in context"
+        },
+        {
+          "day": 3,
+          "phase": "Practice / Compare",
+          "task": "Compare at least two claims, arguments, sources, interpretations, or decisions related to Disagreement, Steelmanning & Counterargument. Rank them using explicit criteria.",
+          "evidence": "guided comparison with criteria and justification"
+        },
+        {
+          "day": 4,
+          "phase": "Apply / Test",
+          "task": "Apply Disagreement, Steelmanning & Counterargument to a new scenario. Test the reasoning against evidence, alternatives, uncertainty, and counterexamples.",
+          "evidence": "steelman/counterargument exchange and revision"
+        },
+        {
+          "day": 5,
+          "phase": "Revise / Defend",
+          "task": "Revise the week's work after critique or self-check. Defend the conclusion, name a limitation, and state what evidence would change your mind.",
+          "evidence": "revised artifact, limitation statement, and short defense"
+        }
+      ],
+      "vocabularyTarget": "5–9 reasoning terms taught through use, examples, retrieval, and transfer",
+      "weeklyEvidence": "steelman/counterargument exchange and revision",
+      "masteryCheck": {
+        "mode": "open-book mixed reasoning/evidence",
+        "threshold": 80,
+        "retake": "targeted correction then parallel-form or revised evidence"
+      },
+      "cumulativeCheckpoint": false,
+      "culminating": false
+    },
+    {
+      "week": 11,
+      "title": "Ethics, Values & Trade-offs",
+      "essentialQuestion": "How do facts, values, rights, risks, and trade-offs interact in difficult decisions?",
+      "days": [
+        {
+          "day": 1,
+          "phase": "Retrieve / Notice",
+          "task": "Retrieve a prior reasoning move or inspect a new example connected to Ethics, Values & Trade-offs. Separate what is directly present from what is inferred.",
+          "evidence": "retrieval note and observation/inference split for Ethics, Values & Trade-offs"
+        },
+        {
+          "day": 2,
+          "phase": "Learn / Model",
+          "task": "Study the core vocabulary, reasoning structures, and a worked model for Ethics, Values & Trade-offs. Identify why the model is strong and where it could fail.",
+          "evidence": "annotated worked model with vocabulary used in context"
+        },
+        {
+          "day": 3,
+          "phase": "Practice / Compare",
+          "task": "Compare at least two claims, arguments, sources, interpretations, or decisions related to Ethics, Values & Trade-offs. Rank them using explicit criteria.",
+          "evidence": "guided comparison with criteria and justification"
+        },
+        {
+          "day": 4,
+          "phase": "Apply / Test",
+          "task": "Apply Ethics, Values & Trade-offs to a new scenario. Test the reasoning against evidence, alternatives, uncertainty, and counterexamples.",
+          "evidence": "ethical decision matrix with defended trade-offs"
+        },
+        {
+          "day": 5,
+          "phase": "Revise / Defend",
+          "task": "Revise the week's work after critique or self-check. Defend the conclusion, name a limitation, and state what evidence would change your mind.",
+          "evidence": "revised artifact, limitation statement, and short defense"
+        }
+      ],
+      "vocabularyTarget": "5–9 reasoning terms taught through use, examples, retrieval, and transfer",
+      "weeklyEvidence": "ethical decision matrix with defended trade-offs",
+      "masteryCheck": {
+        "mode": "open-book mixed reasoning/evidence",
+        "threshold": 80,
+        "retake": "targeted correction then parallel-form or revised evidence"
+      },
+      "cumulativeCheckpoint": false,
+      "culminating": false
+    },
+    {
+      "week": 12,
+      "title": "Research Synthesis & Evidence Weight",
+      "essentialQuestion": "How should multiple sources with different strengths, limits, and findings be weighed together?",
+      "days": [
+        {
+          "day": 1,
+          "phase": "Retrieve / Notice",
+          "task": "Retrieve a prior reasoning move or inspect a new example connected to Research Synthesis & Evidence Weight. Separate what is directly present from what is inferred.",
+          "evidence": "retrieval note and observation/inference split for Research Synthesis & Evidence Weight"
+        },
+        {
+          "day": 2,
+          "phase": "Learn / Model",
+          "task": "Study the core vocabulary, reasoning structures, and a worked model for Research Synthesis & Evidence Weight. Identify why the model is strong and where it could fail.",
+          "evidence": "annotated worked model with vocabulary used in context"
+        },
+        {
+          "day": 3,
+          "phase": "Practice / Compare",
+          "task": "Compare at least two claims, arguments, sources, interpretations, or decisions related to Research Synthesis & Evidence Weight. Rank them using explicit criteria.",
+          "evidence": "guided comparison with criteria and justification"
+        },
+        {
+          "day": 4,
+          "phase": "Apply / Test",
+          "task": "Apply Research Synthesis & Evidence Weight to a new scenario. Test the reasoning against evidence, alternatives, uncertainty, and counterexamples.",
+          "evidence": "multi-source synthesis brief with confidence levels"
+        },
+        {
+          "day": 5,
+          "phase": "Revise / Defend",
+          "task": "Revise the week's work after critique or self-check. Defend the conclusion, name a limitation, and state what evidence would change your mind.",
+          "evidence": "revised artifact, limitation statement, and short defense"
+        }
+      ],
+      "vocabularyTarget": "5–9 reasoning terms taught through use, examples, retrieval, and transfer",
+      "weeklyEvidence": "multi-source synthesis brief with confidence levels",
+      "masteryCheck": {
+        "mode": "open-book mixed reasoning/evidence",
+        "threshold": 80,
+        "retake": "targeted correction then parallel-form or revised evidence"
+      },
+      "cumulativeCheckpoint": true,
+      "culminating": false
+    },
+    {
+      "week": 13,
+      "title": "Public Reasoning & Evidence Defense",
+      "essentialQuestion": "How can I build, revise, and defend a responsible conclusion in public?",
+      "days": [
+        {
+          "day": 1,
+          "phase": "Retrieve / Notice",
+          "task": "Retrieve a prior reasoning move or inspect a new example connected to Public Reasoning & Evidence Defense. Separate what is directly present from what is inferred.",
+          "evidence": "retrieval note and observation/inference split for Public Reasoning & Evidence Defense"
+        },
+        {
+          "day": 2,
+          "phase": "Learn / Model",
+          "task": "Study the core vocabulary, reasoning structures, and a worked model for Public Reasoning & Evidence Defense. Identify why the model is strong and where it could fail.",
+          "evidence": "annotated worked model with vocabulary used in context"
+        },
+        {
+          "day": 3,
+          "phase": "Practice / Compare",
+          "task": "Compare at least two claims, arguments, sources, interpretations, or decisions related to Public Reasoning & Evidence Defense. Rank them using explicit criteria.",
+          "evidence": "guided comparison with criteria and justification"
+        },
+        {
+          "day": 4,
+          "phase": "Apply / Test",
+          "task": "Apply Public Reasoning & Evidence Defense to a new scenario. Test the reasoning against evidence, alternatives, uncertainty, and counterexamples.",
+          "evidence": "culminating evidence defense with written or recorded brief"
+        },
+        {
+          "day": 5,
+          "phase": "Revise / Defend",
+          "task": "Revise the week's work after critique or self-check. Defend the conclusion, name a limitation, and state what evidence would change your mind.",
+          "evidence": "revised artifact, limitation statement, and short defense"
+        }
+      ],
+      "vocabularyTarget": "5–9 reasoning terms taught through use, examples, retrieval, and transfer",
+      "weeklyEvidence": "culminating evidence defense with written or recorded brief",
+      "masteryCheck": {
+        "mode": "open-book mixed reasoning/evidence",
+        "threshold": 80,
+        "retake": "targeted correction then parallel-form or revised evidence"
+      },
+      "cumulativeCheckpoint": false,
+      "culminating": true
+    }
+  ]
+}
