@@ -1,0 +1,30 @@
+name: Higher Learning Mathematics Handoff Contract
+
+on:
+  pull_request:
+    paths:
+      - 'courses/mathematics/precalculus-trigonometry/index.html'
+      - 'courses/mathematics/calculus-1/index.html'
+      - 'courses/shared/high-school-federated-return-record-v1.json'
+      - 'tools/validate-higher-learning-math-handoff-v1.mjs'
+      - '.github/workflows/higher-learning-math-handoff-contract.yml'
+  push:
+    branches: [main]
+    paths:
+      - 'courses/mathematics/precalculus-trigonometry/index.html'
+      - 'courses/mathematics/calculus-1/index.html'
+      - 'courses/shared/high-school-federated-return-record-v1.json'
+      - 'tools/validate-higher-learning-math-handoff-v1.mjs'
+      - '.github/workflows/higher-learning-math-handoff-contract.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - run: node tools/validate-higher-learning-math-handoff-v1.mjs
