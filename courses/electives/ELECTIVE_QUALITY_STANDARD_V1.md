@@ -1,6 +1,8 @@
 # Khaemenes Academy — High School Elective Quality Standard v1
 
-Psychology 101 is the current reference implementation for elective academic depth. New electives do not need identical pedagogy, but they must meet equivalent evidence, mastery, safety, privacy, and production standards before being promoted from catalog plan to active course authority.
+Program pacing and workload policy: `courses/electives/ELECTIVE_PROGRAM_MODEL_V2.md` and `courses/electives/elective-program-contract-v2.json`.
+
+Psychology 101 is the current reference implementation for compact-course academic depth. It is a required Grade 9 Academy course, not an elective-choice classification. New electives do not need identical pedagogy, but they must meet equivalent evidence, mastery, safety, privacy, and production standards before being promoted from catalog plan to active course authority.
 
 ## Minimum academic architecture
 Each 13-week elective must provide:
