@@ -1,5 +1,7 @@
 # Khaemenes Academy — High School Elective Quality Standard v1
 
+Program pacing and workload policy: `courses/electives/ELECTIVE_PROGRAM_MODEL_V1.md` and `courses/electives/elective-program-contract-v1.json`.
+
 Psychology 101 is the current reference implementation for elective academic depth. New electives do not need identical pedagogy, but they must meet equivalent evidence, mastery, safety, privacy, and production standards before being promoted from catalog plan to active course authority.
 
 ## Minimum academic architecture
