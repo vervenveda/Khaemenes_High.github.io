@@ -24,6 +24,7 @@ for(const file of pages){
  const frontDoor=file==="index.html";
  const preAlgebra=file==="courses/mathematics/pre-algebra/index.html";
  const minimalLanding=/minimal-header-mount-v1\.js/.test(source);
+ const socialStudiesShell=/data-social-studies-department-shell=["\']v1["\']/.test(source);
 
  if(studentProfile){
   assert.ok(source.includes("vnv-header-autopopulate.js"),file+" missing canonical profile header");
@@ -41,6 +42,14 @@ for(const file of pages){
   assert.ok(source.includes('class="grade'+g+'-local-links"'),file+" missing benchmark local navigation");
   assert.ok(source.includes('data-high-profile-door="true"')&&source.includes('data-high-profile-editor-door="true"'),
     file+" missing grade-local profile doors");
+ }else if(socialStudiesShell){
+  assert.ok(source.includes('data-social-studies-canonical-css="v1"'),file+" missing canonical Social Studies stylesheet");
+  assert.ok(source.includes("vnv-header-autopopulate.js"),file+" missing official auto header");
+  assert.ok(source.includes("vnv-333-ticker.js"),file+" missing 333 ticker");
+  assert.ok(source.includes("vnv-ticker-autopopulate.js"),file+" missing auto ticker");
+  assert.ok(source.includes("vnv-language.js"),file+" missing official language loader");
+  assert.ok(source.includes("vnv-class-tools-toolbar.js"),file+" missing class-tools toolbar");
+  assert.ok(source.includes("vnv-ecosystem-toolbar.js"),file+" missing ecosystem toolbar");
  }else if(preAlgebra){
   assert.ok(source.includes("vnv-333-ticker.js"),file+" missing 333 ticker");
   assert.ok(source.includes("vnv-ticker-autopopulate.js"),file+" missing auto ticker");
