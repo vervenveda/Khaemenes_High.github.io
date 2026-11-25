@@ -1,0 +1,88 @@
+{
+  "schema": "khaemenes-high-school-elective-program-contract-v2",
+  "version": 2,
+  "purpose": "Define elective pacing, workload, classification, promotion, and planned families without creating false course authority.",
+  "academicYear": {
+    "instructionalWeeks": 36,
+    "flexibleCompletionWindowWeeks": 42,
+    "standardRequiredClassLoad": 6,
+    "maximumActiveClassLoad": 8,
+    "pacing": "self-paced-within-academy-course-gates",
+    "note": "The flexible completion window preserves time for demanding core courses, interruptions, recovery, and learner-paced completion without lowering mastery expectations."
+  },
+  "electives": {
+    "standardDurationWeeks": 13,
+    "standardLessons": 65,
+    "standardDaysPerWeek": 5,
+    "masteryFloorPercent": 80,
+    "compactByDesign": true,
+    "rotationPurpose": "Allow meaningful exploration without turning every elective into another full-year academic burden.",
+    "sequentialBlocksWithinFlexibleWindow": 3,
+    "simultaneousEnrollmentRule": "Electives count toward the maximum active class load of eight during the regular academic year.",
+    "summer": {
+      "available": true,
+      "academyNumericalCap": null,
+      "policy": "Learners may take as many electives as they choose over summer, subject to course prerequisites, safety requirements, and reasonable learner-selected workload.",
+      "coreCatchUpCompatible": true
+    }
+  },
+  "classification": {
+    "requiredCompactCourses": [
+      "psychology-101"
+    ],
+    "activeOrEstablishedElectives": [
+      "art-101",
+      "world-languages-linguistics"
+    ],
+    "productionCompleteRuntimePending": [
+      "career-professional-studies"
+    ],
+    "advancedOrPlannedElectives": [
+      "art-201",
+      "computing-digital-technology",
+      "health-wellness-human-development",
+      "music-music-theory"
+    ]
+  },
+  "promotion": {
+    "standard": "courses/electives/ELECTIVE_QUALITY_STANDARD_V1.md",
+    "routePresenceIsCourseAuthority": false,
+    "curriculumMapAloneIsCourseAuthority": false,
+    "runtimeCertificationRequired": true,
+    "learnerScopedEvidenceRequiredWhereApplicable": true,
+    "transcriptCreditRequiresValidatedCourseAuthority": true
+  },
+  "plannedFamilies": [
+    {
+      "id": "critical-thinking",
+      "title": "Critical Thinking",
+      "status": "planned-no-route",
+      "intent": "Claims, evidence, logic, source credibility, statistical reasoning, media literacy, competing explanations, and evidence-based defense."
+    },
+    {
+      "id": "writing-studio",
+      "title": "Writing Studio",
+      "status": "planned-no-route",
+      "intent": "Creative, journalistic, rhetorical, technical, and publishing-centered writing pathways with drafting and revision evidence."
+    },
+    {
+      "id": "life-skills",
+      "title": "Life Skills",
+      "status": "planned-no-route",
+      "intent": "Practical independence, communication, organization, household management, decision-making, basic finance, safety, and planning."
+    },
+    {
+      "id": "trades",
+      "title": "Trades",
+      "status": "planned-no-route",
+      "intent": "Applied skilled-trade exploration using safety-first projects, construction math, tools, repair, mechanical literacy, and discipline-specific competency evidence."
+    }
+  ],
+  "guardrails": [
+    "Electives should add curiosity and capability without creating unnecessary academic congestion.",
+    "Discipline-authentic evidence is preferred over cloning one assessment model across every elective.",
+    "Compact duration does not lower academic quality, mastery, safety, privacy, or evidence standards.",
+    "Planned families do not become learner-selectable until their production and promotion gates pass.",
+    "Required Academy courses may use compact architecture without being classified as elective choice."
+  ]
+}
