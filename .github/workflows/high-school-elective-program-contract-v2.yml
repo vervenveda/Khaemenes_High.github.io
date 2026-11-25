@@ -1,0 +1,30 @@
+name: High School Elective Program Contract v2
+
+on:
+  pull_request:
+    paths:
+      - 'courses/electives/ELECTIVE_PROGRAM_MODEL_V2.md'
+      - 'courses/electives/ELECTIVE_QUALITY_STANDARD_V1.md'
+      - 'courses/electives/elective-program-contract-v2.json'
+      - 'tools/validate-elective-program-contract-v2.mjs'
+      - '.github/workflows/high-school-elective-program-contract-v2.yml'
+  push:
+    branches: [main]
+    paths:
+      - 'courses/electives/ELECTIVE_PROGRAM_MODEL_V2.md'
+      - 'courses/electives/ELECTIVE_QUALITY_STANDARD_V1.md'
+      - 'courses/electives/elective-program-contract-v2.json'
+      - 'tools/validate-elective-program-contract-v2.mjs'
+      - '.github/workflows/high-school-elective-program-contract-v2.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - run: node tools/validate-elective-program-contract-v2.mjs
