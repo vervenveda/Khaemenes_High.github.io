@@ -3,6 +3,7 @@ import fs from "node:fs";
 import assert from "node:assert/strict";
 
 const pages=[
+ "courses/electives/index.html",
  "courses/electives/art-101/index.html",
  "courses/electives/art-201/index.html",
  "courses/electives/career-professional-studies/index.html",
@@ -29,6 +30,12 @@ for(const page of pages){
  assert.equal((html.match(/class="elective-feature"/g)||[]).length,4,page+" must have exactly four symmetrical feature cards");
  assert.equal((html.match(/class="elective-button[^"]*" href="[^"]+">(?:Learner Profile|Parent Profile|Enrollment)<\/a>/g)||[]).length,3,page+" must expose Learner, Parent, and Enrollment access");
  assert.equal((html.match(/<h2>About<\/h2>/g)||[]).length,1,page+" must have one concise About section");
+ if(page==="courses/electives/index.html"){
+  assert(html.includes('data-discovery-hall="true"'),"Discovery Hall contract marker missing");
+  assert(!/<style[\\s>]/i.test(html),"Discovery Hall must not contain inline CSS");
+  assert(html.includes("14 of 14 pathways shown"),"Discovery Hall catalog count drifted");
+  assert.equal((html.match(/class="discovery-feature"/g)||[]).length,4,"Career feature grid must remain 2x2");
+ }
  assert(html.includes('class="elective-breadcrumbs"'),page+" missing centered breadcrumbs");
  assert(html.includes('class="elective-footer"'),page+" missing canonical charcoal footer");
 }
@@ -71,4 +78,7 @@ assert(tools.includes('document.body?.dataset.electiveLanding==="v1"'),"elective
 const psych=fs.readFileSync("courses/electives/psychology-101/index.html","utf8");
 assert(psych.includes("Required Grade 9 Course · 13-Week Compact Study"),"Psychology landing must not present itself as elective choice");
 
-console.log("PASS: all eight elective course landings share one CSS owner and the canonical VNV ticker/header/translator/toolbars contract.");
+const hallJs=fs.readFileSync("courses/electives/discovery-hall.js","utf8");
+assert(hallJs.includes("latestResults.slice(0,4)"),"Discovery recommendations must remain even-numbered");
+assert(hallJs.includes("shuffle(challenges).slice(0,4)"),"Discovery challenge grid must remain even-numbered");
+console.log("PASS: the Discovery Hall and all eight elective course landings share one CSS owner and the canonical VNV ticker/header/translator/toolbars contract.");
