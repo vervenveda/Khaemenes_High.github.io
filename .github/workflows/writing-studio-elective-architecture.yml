@@ -1,0 +1,28 @@
+name: Writing Studio Elective Architecture
+
+on:
+  pull_request:
+    paths:
+      - 'courses/electives/plans/writing-studio-course-map-v1.json'
+      - 'courses/electives/plans/WRITING_STUDIO_BLUEPRINT_V1.md'
+      - 'tools/validate-writing-studio-elective-plan-v1.mjs'
+      - '.github/workflows/writing-studio-elective-architecture.yml'
+  push:
+    branches: [main]
+    paths:
+      - 'courses/electives/plans/writing-studio-course-map-v1.json'
+      - 'courses/electives/plans/WRITING_STUDIO_BLUEPRINT_V1.md'
+      - 'tools/validate-writing-studio-elective-plan-v1.mjs'
+      - '.github/workflows/writing-studio-elective-architecture.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - run: node tools/validate-writing-studio-elective-plan-v1.mjs
