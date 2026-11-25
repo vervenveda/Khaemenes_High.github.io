@@ -12,15 +12,15 @@ enterprising:["Make an organized project plan","Explore a budget or business mod
 practical:["Build or repair something useful","Protect resources and habitats","Practice hands-on skills","Plan a sustainable real-world solution"]
 };
 const subjects=[
-{id:"creative",name:"Creative Arts",tag:"Planned",keywords:"creative arts studio design music visual",href:"fine-arts-visual-studio/"},
-{id:"investigative",name:"Psychology & Science",tag:"Explore",keywords:"psychology scientific research weather",href:"../../electives/grades/grade-09/psych-101/"},
+{id:"creative",name:"Creative Arts",tag:"Planned",keywords:"creative arts studio design music visual",href:"art-101/"},
+{id:"investigative",name:"Psychology & Science",tag:"Explore",keywords:"psychology scientific research weather",href:"psychology-101/"},
 {id:"technical",name:"Computing & Technology",tag:"Planned",keywords:"technology coding engineering digital",href:"computing-digital-technology/"},
 {id:"social",name:"Human Development",tag:"Planned",keywords:"health communication mentoring wellbeing",href:"health-wellness-human-development/"},
 {id:"enterprising",name:"Career & Professional Studies",tag:"Explore",keywords:"finance business leadership career",href:"career-professional-studies/"},
 {id:"practical",name:"Movement & Practical Skills",tag:"Explore",keywords:"fitness environment movement",href:"../physical-education/index.html"}
 ];
 const challenges=[
-{title:"Design a personal emblem",category:"Creative",time:"20 minutes",idea:"Sketch a symbol that represents an interest, then explain three choices.",href:"https://vervenveda.com/bazaarart.github.io/"},
+{title:"Design a personal emblem",category:"Creative",time:"20 minutes",idea:"Sketch a symbol that represents an interest, then explain three choices.",href:"art-101/"},
 {title:"Compose a four-line chorus",category:"Creative",time:"15 minutes",idea:"Write original lyrics and decide what feeling they should communicate.",href:"https://vervenveda.com/the_refrain.github.io/"},
 {title:"Read the sky",category:"Investigative",time:"20 minutes",idea:"Compare visible cloud types with a forecast and record your observations.",href:"https://vervenveda.com/solanar.github.io/"},
 {title:"Design a study timer",category:"Technical",time:"25 minutes",idea:"Draw a simple interface and plan how its controls could work.",href:"computing-digital-technology/"},
