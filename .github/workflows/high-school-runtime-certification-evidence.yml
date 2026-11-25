@@ -1,0 +1,28 @@
+name: High School Runtime Certification Evidence
+
+on:
+  pull_request:
+    paths:
+      - 'courses/shared/high-school-runtime-certification-matrix-v1.json'
+      - 'courses/shared/high-school-release-certification-v1.json'
+      - 'tools/validate-high-school-runtime-certification-evidence-v1.mjs'
+      - '.github/workflows/high-school-runtime-certification-evidence.yml'
+  push:
+    branches: [main]
+    paths:
+      - 'courses/shared/high-school-runtime-certification-matrix-v1.json'
+      - 'courses/shared/high-school-release-certification-v1.json'
+      - 'tools/validate-high-school-runtime-certification-evidence-v1.mjs'
+      - '.github/workflows/high-school-runtime-certification-evidence.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - run: node tools/validate-high-school-runtime-certification-evidence-v1.mjs
