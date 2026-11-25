@@ -82,6 +82,16 @@ async function mount(){
  await load("https://vervenveda.com/assets/khaemenes-campus-phrases.js","khaemenes-campus-phrases.js");
  await load("https://vervenveda.com/assets/khaemenes-interlingual-core.js","khaemenes-interlingual-core.js");
  await load("https://vervenveda.com/Khaemenes_Linguistics.github.io/assets/khaemenes-translator-loader.js?v=1.1.1","khaemenes-translator-loader.js");
+ try{
+   const report=await window.KhaemenesTranslatorLoader?.ensure?.({full:true,upgradeLegacyCore:true});
+   if(report?.canonicalCore && !report.records?.some(r=>r.state==="unavailable"||r.state==="skipped-incomplete-resources")){
+     document.documentElement.dataset.vnvTranslatorAuthority="linguistics";
+   }else{
+     document.documentElement.dataset.vnvTranslatorAuthority="vnv-fallback";
+   }
+ }catch{
+   document.documentElement.dataset.vnvTranslatorAuthority="vnv-fallback";
+ }
  await load("https://vervenveda.com/assets/vnv-language.js?v=20261124-header-slot","vnv-language.js");
  await load("https://vervenveda.com/Khaemenes_High.github.io/assets/high-school-subject-landing-class-tools-v1.js","high-school-subject-landing-class-tools-v1.js");
  await load("https://vervenveda.com/assets/vnv-class-tools-toolbar.js?v=1.6.1","vnv-class-tools-toolbar.js");
