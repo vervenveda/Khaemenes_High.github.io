@@ -1,0 +1,28 @@
+name: Critical Thinking Elective Architecture
+
+on:
+  pull_request:
+    paths:
+      - 'courses/electives/plans/critical-thinking-course-map-v1.json'
+      - 'courses/electives/plans/CRITICAL_THINKING_BLUEPRINT_V1.md'
+      - 'tools/validate-critical-thinking-elective-plan-v1.mjs'
+      - '.github/workflows/critical-thinking-elective-architecture.yml'
+  push:
+    branches: [main]
+    paths:
+      - 'courses/electives/plans/critical-thinking-course-map-v1.json'
+      - 'courses/electives/plans/CRITICAL_THINKING_BLUEPRINT_V1.md'
+      - 'tools/validate-critical-thinking-elective-plan-v1.mjs'
+      - '.github/workflows/critical-thinking-elective-architecture.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - run: node tools/validate-critical-thinking-elective-plan-v1.mjs
