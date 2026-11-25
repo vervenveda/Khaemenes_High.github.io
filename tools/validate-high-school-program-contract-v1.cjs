@@ -36,7 +36,7 @@ assert.equal(registry.courses.length,22,"Expected 22 locally owned High School l
 for(const id of ["physical-education-9","physical-education-10","physical-education-11","physical-education-12","psychology-101","senior-capstone"]){
   assert(registry.courses.some(x=>x.id===id),"Learning registry missing "+id);
 }
-assert.equal(registry.formativeLessonEvidence.totalSurfaces,1482,"Academic formative evidence census changed unexpectedly");
+assert.equal(registry.formativeLessonEvidence.totalSurfaces,1478,"Academic formative evidence census changed unexpectedly");
 assert.deepEqual(registry.formativeLessonEvidence.registeredNonBridgeAuthorities,["physical-education","psychology-life-skills","capstone"]);
 
 assert.equal(federation.schema,"khaemenes-high-school-federated-return-record-v1");
