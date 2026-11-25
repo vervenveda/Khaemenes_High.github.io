@@ -1,0 +1,48 @@
+name: Psychology 101 Authority and Runtime Certification
+
+on:
+  pull_request:
+    paths:
+      - 'courses/electives/psychology-101/**'
+      - 'electives/grades/grade-09/psych-101/**'
+      - 'courses/shared/high-school-course-ownership-manifest-v1.json'
+      - 'courses/shared/high-school-release-certification-v1.json'
+      - 'tools/validate-psychology-101-authority-v1.mjs'
+      - '.github/workflows/psychology-101-authority-runtime-certification.yml'
+  push:
+    branches: [main]
+    paths:
+      - 'courses/electives/psychology-101/**'
+      - 'electives/grades/grade-09/psych-101/**'
+      - 'courses/shared/high-school-course-ownership-manifest-v1.json'
+      - 'courses/shared/high-school-release-certification-v1.json'
+      - 'tools/validate-psychology-101-authority-v1.mjs'
+      - '.github/workflows/psychology-101-authority-runtime-certification.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  authority:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - run: node tools/validate-psychology-101-authority-v1.mjs
+  chromium:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Install Playwright Chromium
+        run: |
+          npm install --no-save playwright@1.56.1
+          npx playwright install --with-deps chromium
+      - name: Certify Psychology 101 browser runtime
+        run: node electives/grades/grade-09/psych-101/tools/browser-runtime-certification.mjs
